@@ -1,0 +1,42 @@
+.heading {
+
+    &.h1 {
+
+        @include breakpoint(medium down) {
+
+        }
+    }
+
+    &.h2 {
+
+        @include breakpoint(medium down) {
+
+        }
+    }
+
+    &.h3 {
+
+        @include breakpoint(medium down) {
+
+        }
+    }
+
+    &.h4 {
+
+        @include breakpoint(medium down){
+
+        }
+    }
+
+    &.h5 {
+
+        @include breakpoint(medium down){
+
+        }
+    }
+
+}
+
+.paragraph {
+
+}
