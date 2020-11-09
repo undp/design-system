@@ -65,8 +65,8 @@
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-font-size: 62.5%;
+$global-width: rem-calc(1440);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #1779ba,
@@ -129,7 +129,7 @@ $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
   small: 20px,
-  medium: 30px,
+  medium: 28px,
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
@@ -886,7 +886,7 @@ $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
   small: 20px,
-  medium: 30px
+  medium: 28px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
