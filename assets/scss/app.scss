@@ -2,10 +2,10 @@
 @import "vendor/foundation/foundation";
 
 // Common
-@import 'base/fonts';
 @import 'base/variables';
-@import 'base/typography';
+@import 'base/fonts';
 @import 'base/base';
+@import 'base/typography';
 @import 'base/buttons';
 
 // Partials
@@ -13,3 +13,6 @@
 @import 'partials/footer';
 
 //Components
+
+//pages
+@import 'pages/styleguide';

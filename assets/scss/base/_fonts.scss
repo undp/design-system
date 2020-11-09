@@ -1,2 +1,41 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700");
-@import url("https://fonts.googleapis.com/css?family=Lora");
+/* ProximaNova */
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('#{$font-path}ProximaNova-Regular.otf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('#{$font-path}ProximaNova-Semibold.otf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('#{$font-path}ProximaNova-Bold.otf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* SohneBreitTest */
+@font-face {
+    font-family: 'SohneBreitTest';
+    src: url('#{$font-path}SohneBreitTest-Dreiviertelfett.otf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SohneBreitTest';
+    src: url('#{$font-path}SohneBreitTest-Fett.otf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,42 +1,71 @@
 .heading {
-
     &.h1 {
-
-        @include breakpoint(medium down) {
-
-        }
+        font-size: 12rem;
+        line-height: 1.09;
+        letter-spacing: 12px;
+        font-weight: $extra-bold;
+        font-family: $secondary-font;
     }
 
     &.h2 {
-
-        @include breakpoint(medium down) {
-
-        }
+        font-size: 5.5rem;
+        line-height: 1.09;
+        font-weight: $bold;
     }
 
     &.h3 {
-
-        @include breakpoint(medium down) {
-
-        }
+        font-size: 3.5rem;
+        line-height: 1.14;
+        font-weight: $semi-bold;
     }
 
     &.h4 {
-
-        @include breakpoint(medium down){
-
-        }
+        font-size: 3.5rem;
+        line-height: 1.14;
+        font-weight: $regular;
     }
 
     &.h5 {
-
-        @include breakpoint(medium down){
-
-        }
+        line-height: 1.2;
+        font-size: 2.5rem;
+        font-weight: $regular;
     }
-
 }
 
-.paragraph {
+.numerals {
+    font-size: 11rem;
+    line-height: 1.08;
+    font-weight: $bold;
+    letter-spacing: 2.2px;
+    font-family: $secondary-font;
+}
 
+.big-copy {
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: $regular;
+}
+
+.small-copy {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    font-weight: $regular;
+}
+
+.cta-link {
+    line-height: 1.12;
+    font-size: 1.6rem;
+    font-weight: $bold;
+}
+
+.nav-item {
+    font-size: 1.4rem;
+    line-height: 1.14;
+    font-weight: $semi-bold;
+}
+
+.tag {
+    font-size: 1.2rem;
+    line-height: 1.33;
+    font-weight: $bold;
 }

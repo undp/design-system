@@ -153,3 +153,5 @@
   @include foundation-visibility-classes;
   @if $prototype { @include foundation-prototype-classes; }
 }
+
+@include foundation-everything();
