@@ -1,3 +1,36 @@
 .styleguide {
+    padding: 100px 0;
 
+    .heading {
+        .title {
+            margin-top: 100px;
+        }
+
+        table {
+            margin-top: 80px;
+        }
+    }
+
+    .heading-bg-dark {
+        padding: 135px 0;
+        margin-top: 100px;
+        background-color: $dark-blue-1;
+
+        table {
+            border: none;
+            margin-top: 80px;
+            background-color: $dark-blue-1;
+
+            thead,
+            tbody {
+                background-color: transparent;
+
+                tr {
+                    &:nth-child(even) {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
 }
