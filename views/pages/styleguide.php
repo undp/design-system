@@ -173,8 +173,415 @@ use helpers\View;
             </div>
         </div>
     </div>
-</div>
+    <!-- light -->
+    <div class="heading">
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell">
+                    <p class="heading h5 title">Interactions</p>
+                </div>
+                <div class="cell medium-6">
+                    <table class="unstriped">
+                        <thead>
+                            <tr>
+                                <th class="heading h5 dark">Class</th>
+                                <th class="heading h5 dark">Style preview</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="big-copy dark">
+                                    .btn
+                                </td>
+                                <td>
+                                    <button class="btn">
+                                        Submit
+                                        <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy dark">
+                                    .btn-round
+                                </td>
+                                <td>
+                                    <button class="btn-round">
+                                        <span class="arrow">
+                                            <?=  file_get_contents("assets/images/arrows/btn-arrow-white.svg");  ?>
+                                        </span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy dark">
+                                    .btn-round .rotate
+                                </td>
+                                <td>
+                                    <button class="btn-round rotate">
+                                        <span class="arrow">
+                                            <?=  file_get_contents("assets/images/arrows/btn-arrow-white.svg");  ?>
+                                        </span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy dark">
+                                    .btn-round
+                                </td>
+                                <td>
+                                    <button class="btn-round">
+                                        <span class="arrow">
+                                            <?=  file_get_contents("assets/images/arrows/btn-arrow-white-bold.svg");  ?>
+                                        </span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
+                <div class="cell medium-6">
+                    <table class="unstriped">
+                        <thead>
+                            <tr>
+                                <th class="heading h5 dark">Class</th>
+                                <th class="heading h5 dark">Style preview</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="big-copy dark">
+                                    .text-link .arrow-1
+                                </td>
+                                <td>
+                                    <a class="text-link arrow-1" href="#">
+                                        Read More
+                                        <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy dark">
+                                    .text-link .arrow-2
+                                </td>
+                                <td>
+                                    <a class="text-link arrow-2" href="#">
+                                        Explore
+                                        <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy dark">
+                                    .text-link .arrow-3
+                                </td>
+                                <td>
+                                    <a class="text-link arrow-3" href="#">
+                                        Read More
+                                        <?=  file_get_contents("assets/images/arrows/btn-arrow-external-red.svg");  ?>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy dark">
+                                    .text-link .underline
+                                </td>
+                                <td>
+                                    <a class="text-link underline" href="#">
+                                        www.helloworld.com
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy dark">
+                                    .filter-tag
+                                </td>
+                                <td>
+                                    <div class="filter-tag">
+                                        <input type="checkbox" id="check-1" class="check-button"/>
+                                        <label for="check-1">Filter tag</label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- dark -->
+    <div class="heading-bg-dark">
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell medium-6">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="heading h5 light">Class</th>
+                                <th class="heading h5 light">Style preview</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="big-copy light">
+                                    .btn .dark
+                                </td>
+                                <td>
+                                    <button class="btn dark">
+                                        Submit
+                                        <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    .btn-round .light-blue
+                                </td>
+                                <td>
+                                    <button class="btn-round light-blue">
+                                        <span class="arrow">
+                                            <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                                        </span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    .btn-round .light-blue .rotate
+                                </td>
+                                <td>
+                                    <button class="btn-round light-blue rotate">
+                                        <span class="arrow">
+                                            <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                                        </span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    .btn-round .light-blue
+                                </td>
+                                <td>
+                                    <button class="btn-round light-blue">
+                                        <span class="arrow">
+                                            <?=  file_get_contents("assets/images/arrows/btn-arrow-blue-bold.svg");  ?>
+                                        </span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cell medium-6">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="heading h5 light">Class</th>
+                                <th class="heading h5 light">Style preview</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="big-copy light">
+                                    .text-link .arrow-1 .light-red
+                                </td>
+                                <td>
+                                    <a class="text-link arrow-1 light-red" href="#">
+                                        Read More
+                                        <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    .text-link .arrow-2 .light-red
+                                </td>
+                                <td>
+                                    <a class="text-link arrow-2 light-red" href="#">
+                                        Explore
+                                        <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    .text-link .arrow-3 .light-red
+                                </td>
+                                <td>
+                                    <a class="text-link light-red arrow-3" href="#">
+                                        Read More
+                                        <?=  file_get_contents("assets/images/arrows/btn-arrow-external-red.svg");  ?>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    .text-link .light-red .underline
+                                </td>
+                                <td>
+                                    <a class="text-link light-red underline" href="#">
+                                        www.helloworld.com
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    <p>.filter-tag > input.check-button.light-blue</p>
+                                    <p>.filter-tag > label.light-blue</p>
+                                </td>
+                                <td>
+                                    <div class="filter-tag">
+                                        <input type="checkbox" id="check-2" class="check-button light-blue"/>
+                                        <label class="light-blue" for="check-2">Filter tag</label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="heading-bg-dark red">
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell medium-6">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="heading h5 light">Class</th>
+                                <th class="heading h5 light">Style preview</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="big-copy light">
+                                    .btn .light
+                                </td>
+                                <td>
+                                    <button class="btn light">
+                                        Submit
+                                        <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    .btn-round .light-red
+                                </td>
+                                <td>
+                                    <button class="btn-round light-red">
+                                        <span class="arrow">
+                                            <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                                        </span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    .btn-round .light-red .rotate
+                                </td>
+                                <td>
+                                    <button class="btn-round light-red rotate">
+                                        <span class="arrow">
+                                            <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                                        </span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    .btn-round .light-red
+                                </td>
+                                <td>
+                                    <button class="btn-round light-red">
+                                        <span class="arrow">
+                                            <?=  file_get_contents("assets/images/arrows/btn-arrow-blue-bold.svg");  ?>
+                                        </span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cell medium-6">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="heading h5 light">Class</th>
+                                <th class="heading h5 light">Style preview</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="big-copy light">
+                                    .text-link .arrow-1 .light-red
+                                </td>
+                                <td>
+                                    <a class="text-link arrow-1 light-blue" href="#">
+                                        Read More
+                                        <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    .text-link .arrow-2 .light-blue
+                                </td>
+                                <td>
+                                    <a class="text-link arrow-2 light-blue" href="#">
+                                        Explore
+                                        <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    .text-link .arrow-3 .light-blue
+                                </td>
+                                <td>
+                                    <a class="text-link light-blue arrow-3" href="#">
+                                        Read More
+                                        <?=  file_get_contents("assets/images/arrows/btn-arrow-external-blue.svg");  ?>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    .text-link .light-blue .underline
+                                </td>
+                                <td>
+                                    <a class="text-link light-blue underline" href="#">
+                                        www.helloworld.com
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="big-copy light">
+                                    <p>.filter-tag > input.check-button.light-red</p>
+                                    <p>.filter-tag > label.light-red</p>
+                                </td>
+                                <td>
+                                    <div class="filter-tag">
+                                        <input type="checkbox" id="check-3" class="check-button light-red"/>
+                                        <label class="light-red" for="check-3">Filter tag</label>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="height: 500px"></div>
 <!-- Footer -->
 <?php View::render('footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
