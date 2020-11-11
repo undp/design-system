@@ -3,9 +3,12 @@
         <div class="grid-x">
             <nav class="cell flex-container align-justify align-middle custom-cell">
                 <div class="dropdown">
-                    <button class="dropdown-btn">English</button>
+                    <button class="flex-container align-middle nav-item dark  dropdown-btn">English</button>
                     <div class="dropdown-content">
-
+                        <ul class="menu-items">
+                            <li><a class="nav-item dark" href="#">Français</a></li>
+                            <li><a class="nav-item dark" href="#">Español</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div>
