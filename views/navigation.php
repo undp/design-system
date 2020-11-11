@@ -1,28 +1,35 @@
-<header class="header">
+<section class="header">
     <div class="grid-container">
         <div class="grid-x">
-            <div class="cell flex-container align-justify align-middle custom-cell">
-                <div class="logo">
-                    <a class="nav-item dark" href="#">English</a>
-                </div>
-                <div class="flex-container align-middle middle-menu">
-                    <a class="nav-item dark active" href="#">Who we are</a>
-                    <a class="nav-item dark" href="#">What we do</a>
-                    <div class="middle-logo">
-                        <img src="../assets/images/logo.svg" alt="alt description">
+            <nav class="cell flex-container align-justify align-middle custom-cell">
+                <div class="dropdown">
+                    <button class="dropdown-btn">English</button>
+                    <div class="dropdown-content">
+
                     </div>
-                    <a class="nav-item dark" href="#">Our impact</a>
-                    <a class="nav-item dark" href="#">Get Involved</a>
+                </div>
+                <div>
+                    <ul class="flex-container align-middle middle-menu">
+                        <li><a class="nav-item dark active" href="#">Who we are</a></li>
+                        <li><a class="nav-item dark" href="#">What we do</a></li>
+                        <li>
+                            <a href="#" class="middle-logo">
+                                <img src="../assets/images/undp-logo.svg" alt="alt description">
+                            </a>
+                        </li>
+                        <li><a class="nav-item dark" href="#">Our impact</a></li>
+                        <li><a class="nav-item dark" href="#">Get Involved</a></li>
+                    </ul>
                 </div>
                 <div class="logo right-menu">
                     <a class="nav-item dark" href="#">
-                        <img src="../assets/images/site.svg" alt="alt description">
+                        <img src="../assets/images/icon-www.svg" alt="alt description">
                     </a>
                     <a class="nav-item dark" href="#">
-                        <img src="../assets/images/search.svg" alt="alt description">
+                        <img src="../assets/images/icon-search.svg" alt="alt description">
                     </a>
                 </div>
-            </div>
+            </nav>
         </div>
     </div>
-</header>
+</section>

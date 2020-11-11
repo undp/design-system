@@ -23,13 +23,14 @@
         .middle-menu {
             max-height: 105px;
 
-            .nav-item:not(:last-child) {
+            li:not(:last-child) {
+                color: red;
                 margin-right: 75px;
             }
 
             .middle-logo {
+                display: block;
                 margin-top: 25px;
-                margin-right: 75px;
             }
         }
 
