@@ -54,11 +54,19 @@
         transform: scaleX(-1);
     }
 
-    &.light {
+    &.light-blue {
         background: $white;
 
         &:hover {
             background: $dark-blue-4;
+        }
+    }
+
+    &.light-red {
+        background: $white;
+
+        &:hover {
+            background: $red-7;
         }
     }
 
@@ -84,9 +92,20 @@
     &:hover {
         color: $dark-blue-2;
 
-        &.light-red,
-        &.light-blue{
+        &.light-blue {
+            color: $red-7;
+        }
+
+        &.light-red {
             color: $dark-blue-4;
+        }
+    }
+
+    &.arrow-1 {
+        &:hover {
+            svg {
+                transform: translateX(70%);
+            }
         }
     }
 
@@ -132,6 +151,7 @@
 
     svg {
         margin-left: 13px;
+        transition: transform 0.2s ease;
     }
 }
 
