@@ -1,7 +1,189 @@
 .btn {
+    color: $white;
+    display: flex;
+    cursor: pointer;
+    background: $red;
+    font-size: 1.4rem;
+    font-weight: $bold;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 14px 24px 15px 29px;
 
+    svg {
+        margin-left: 14px;
+        transition: transform 0.2s ease;
+    }
+
+    &:hover {
+        background: $red-4;
+
+        svg {
+            transform: translateX(70%);
+        }
+    }
+
+    &.dark {
+        &:hover {
+            background: $red-1;
+        }
+    }
+
+    &.light {
+        background: $white;
+        color: $dark-blue-1;
+
+        &:hover {
+            background: $red-7;
+        }
+    }
+}
+
+.btn-round {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+    background: $dark-blue-1;
+
+    &:hover {
+        background: $dark-blue-2;
+    }
+
+    &.rotate {
+        transform: scaleX(-1);
+    }
+
+    &.light {
+        background: $white;
+
+        &:hover {
+            background: $dark-blue-4;
+        }
+    }
+
+    .arrow {
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .text-link {
+    color: $black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-items: center;
+    display: inline-flex;
+    text-transform: uppercase;
 
+    &:hover {
+        color: $dark-blue-2;
+
+        &.light-red,
+        &.light-blue{
+            color: $dark-blue-4;
+        }
+    }
+
+    &.arrow-3 {
+        display: unset;
+    }
+
+    &.light-red,
+    &.light-blue{
+        color: $white;
+    }
+
+    &.underline {
+        position: relative;
+        text-transform: unset;
+        font-weight: $regular;
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            display: block;
+            position: absolute;
+            background: $red ;
+        }
+
+        &.light-blue::before{
+            background: $dark-blue-1;
+        }
+
+        &:hover {
+            color: inherit;
+        }
+
+        &.light-blue,
+        &.light-red {
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    svg {
+        margin-left: 13px;
+    }
+}
+
+.filter-tag{
+    .check-button {
+        display: none;
+        padding: 14px 30px 15px 25px;
+    }
+    .check-button + label {
+        margin: 0;
+        color: $black;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: $bold;
+        background: $white;
+        border: 2px solid $red;
+        text-transform: uppercase;
+        padding: 5px 30px 5px 25px;
+
+        &.light-blue{
+            color: $white;
+            background: $dark-blue-1;
+        }
+
+        &.light-red{
+            color: $white;
+            background: $red;
+            border-color: $dark-blue-1;
+        }
+    }
+
+    .check-button:not(:checked) + label:hover {
+        color: $dark-blue-2;
+        border-color: rgba($red, 0.7);
+
+        &.light-blue{
+            color: rgba($white, 0.7);
+        }
+
+        &.light-red{
+            color: $red-7;
+            border-color: rgba($dark-blue-1, 0.7);
+        }
+    }
+
+    .check-button + label:active,
+    .check-button:checked + label {
+        color: $white;
+        background: $red;
+
+        &.light-red{
+            background: $dark-blue-1;
+        }
+    }
 }

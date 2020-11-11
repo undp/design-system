@@ -9,7 +9,13 @@ body {
 }
 
 a {
-
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+        outline: none;
+        color: inherit;
+    }
 }
 
 h1,
