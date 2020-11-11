@@ -178,7 +178,7 @@ use helpers\View;
         <div class="grid-container">
             <div class="grid-x">
                 <div class="cell">
-                    <h3 class="heading h3">Interactions</h3>
+                    <p class="heading h5 title">Interactions</p>
                 </div>
                 <div class="cell medium-6">
                     <table class="unstriped">
