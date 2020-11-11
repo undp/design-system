@@ -21,6 +21,10 @@
     .custom-cell {
         padding: 0 70px 0 70px;
 
+        @include breakpoint(large down) {
+            padding: 0 35px 0 35px;
+        }
+
         .middle-menu {
             max-height: 105px;
 
