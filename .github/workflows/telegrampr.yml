@@ -1,0 +1,22 @@
+name: Telegram
+
+on:
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Reporistory
+        uses: actions/checkout@v2
+
+      - name: Send Message to telegram
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: html
+          args: New <b>PR-${{github.event.number}}</b> by <u>${{github.event.pull_request.user.login}}</u>. Check it out <a href='${{ github.event.pull_request._links.html.href }}'>Here</a>
