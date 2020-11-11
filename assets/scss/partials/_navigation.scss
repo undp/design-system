@@ -1,0 +1,42 @@
+.header {
+    width: 100%;
+    position: fixed;
+    max-height: 105px;
+    background-color: $dark-blue-6;
+
+    .nav-item {
+        color: $dark-blue-1;
+
+        &:hover {
+            color: rgba($dark-blue-1, 0.7)
+        }
+
+        &.active {
+            padding-bottom: 2px;
+            border-bottom: 1px solid $red;
+        }
+    }
+
+    .custom-cell {
+        padding: 0 70px 0 70px;
+
+        .middle-menu {
+            max-height: 105px;
+
+            .nav-item:not(:last-child) {
+                margin-right: 75px;
+            }
+
+            .middle-logo {
+                margin-top: 25px;
+                margin-right: 75px;
+            }
+        }
+
+        .right-menu {
+            .nav-item {
+                margin-right: 22px;
+            }
+        }
+    }
+}
