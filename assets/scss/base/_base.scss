@@ -8,6 +8,10 @@ body {
     font-family: $primary-font;
 }
 
+ul {
+    list-style: none;
+}
+
 a {
     &:hover,
     &:active,
