@@ -1,3 +1,6 @@
+<?php
+ use helpers\Svg;
+?>
 <section class="header">
     <div class="grid-container">
         <div class="grid-x">
@@ -17,7 +20,7 @@
                         <li><a class="nav-item dark" href="#">What we do</a></li>
                         <li>
                             <a href="#" class="middle-logo">
-                                <img src="../assets/images/undp-logo.svg" alt="alt description">
+                                <?php Svg::render('undp-logo')?>
                             </a>
                         </li>
                         <li><a class="nav-item dark" href="#">Our impact</a></li>
@@ -26,10 +29,10 @@
                 </div>
                 <div class="logo right-menu">
                     <a class="nav-item dark" href="#">
-                        <img src="../assets/images/icon-www.svg" alt="alt description">
+                        <?php Svg::render('icon-www')?>
                     </a>
                     <a class="nav-item dark" href="#">
-                        <img src="../assets/images/icon-search.svg" alt="alt description">
+                        <?php Svg::render('icon-search')?>
                     </a>
                 </div>
             </nav>
