@@ -7,7 +7,7 @@ class Svg {
         $fullPath = $path . $svgName . '.svg';
 
         if(file_exists($fullPath)) {
-            echo file_get_contents('assets/images/' . $svgName.'.svg');
+            echo file_get_contents($fullPath);
         }
     }
 }
