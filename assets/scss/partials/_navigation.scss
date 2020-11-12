@@ -27,6 +27,7 @@
         }
 
         .middle-menu {
+            list-style: none;
             max-height: 105px;
 
             li:not(:last-child) {
@@ -83,6 +84,7 @@
             position: absolute;
 
             .menu-items {
+                list-style: none;
                 margin-top: 20px;
                 padding: 30px 30px 35px 12px;
                 background-color: $dark-blue-6;
