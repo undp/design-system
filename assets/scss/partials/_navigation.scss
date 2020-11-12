@@ -1,0 +1,103 @@
+.header {
+    width: 100%;
+    position: fixed;
+    max-height: 105px;
+    background-color: $dark-blue-6;
+    box-shadow: 0 3px 6px rgba($black, 0.09);
+
+    .nav-item {
+        color: $dark-blue-1;
+
+        &:hover {
+            color: rgba($dark-blue-1, 0.7)
+        }
+
+        &:active,
+        &.active {
+            padding-bottom: 2px;
+            border-bottom: 1px solid $red;
+        }
+    }
+
+    .custom-cell {
+        padding: 0 70px 0 70px;
+
+        @include breakpoint(large down) {
+            padding: 0 35px 0 35px;
+        }
+
+        .middle-menu {
+            list-style: none;
+            max-height: 105px;
+
+            li:not(:last-child) {
+                color: red;
+                margin-right: 75px;
+            }
+
+            .middle-logo {
+                display: block;
+                margin-top: 25px;
+            }
+        }
+
+        .right-menu {
+            .nav-item {
+                margin-right: 22px;
+            }
+        }
+    }
+
+    .dropdown {
+        position: relative;
+        
+        &:hover {
+            .dropdown-content {
+                display: block;
+            }
+
+            .dropdown-btn {
+                &:after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .dropdown-btn {
+            color: $blue-0;
+            cursor: pointer;
+
+            &:before {
+                margin-right: 9.5px;
+                content: url('#{$image-path}icon-languages.svg');
+            }
+
+            &:after {
+                margin-left: 10px;
+                content: url('#{$image-path}icon-arrow-down.svg');
+            }
+        }
+
+        .dropdown-content {
+            display: none;
+            min-width: 100px;
+            position: absolute;
+
+            .menu-items {
+                list-style: none;
+                margin-top: 20px;
+                padding: 30px 30px 35px 12px;
+                background-color: $dark-blue-6;
+                box-shadow: 0 3px 6px rgba($black, 0.09);
+            }
+
+            &:hover {
+                display: block;
+            }
+
+            li:not(:first-child) {
+                margin-top: 22px;
+            }
+        }
+    }
+}
