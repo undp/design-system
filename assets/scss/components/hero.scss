@@ -1,0 +1,104 @@
+.hero{
+    height: 700px;
+    position: relative;
+
+    @include breakpoint(medium down){
+        height: 800px;
+    }
+
+    @include breakpoint(small only){
+        height: 745px;
+    }
+
+    .text-box{
+        top: 77px;
+        left: 125px;
+        position: absolute;
+        background: $white;
+        padding: 43px 140px 68px 57px;
+
+        @include breakpoint(medium down){
+            top: 100px;
+            left: unset;
+            right: unset;
+            margin-left: 85px;
+            width: calc(100% - 85px);
+            padding: 43px 140px 68px 57px;
+        }
+
+        @include breakpoint(small only){
+            top: 60px;
+            margin-left: 45px;
+            width: calc(100% - 45px);
+            padding: 85px 60px 68px 25px;
+        }
+
+        .title{
+            max-width: 635px;
+
+            @include breakpoint(medium down){
+                max-width: 450px;
+            }
+
+            @include breakpoint(small only){
+                max-width: 245px;
+
+                .heading.h1{
+                    letter-spacing: 3px;
+                }
+            }
+        }
+
+        .subtitle{
+            max-width: 450px;
+            margin-top: 45px;
+
+            @include breakpoint(medium down){
+                max-width: 250px;
+
+                .heading.h3{
+                    font-size: 20px;
+                    line-height: 1.2;
+                }
+            }
+
+            @include breakpoint(small only){
+
+                .heading.h3{
+                    font-size: 20px;
+                    line-height: 1.2;
+                }
+            }
+        }
+
+        .separator{
+            width: 100px;
+            margin-top: 35px;
+            border-bottom: 3px solid $red;
+
+            @include breakpoint(small only){
+                margin-top: 50px;
+            }
+        }
+    }
+
+    .cta-button{
+        right: 60px;
+        bottom: 40px;
+        position: absolute;
+
+        @include breakpoint(medium down){
+            left: 85px;
+        }
+
+        @include breakpoint(small only){
+            left: 45px;
+        }
+    }
+
+    .cta-arrow{
+        left: 50%;
+        bottom: 40px;
+        position: absolute;
+    }
+}

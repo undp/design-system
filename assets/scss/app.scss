@@ -7,12 +7,14 @@
 @import 'base/base';
 @import 'base/typography';
 @import 'base/buttons';
+@import 'base/helpers';
 
 // Partials
 @import 'partials/header';
 @import 'partials/footer';
 
 //Components
+@import "components/hero";
 
 //pages
 @import 'pages/styleguide';
