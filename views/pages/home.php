@@ -6,7 +6,10 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php View::render('navigation') ?>
+<?php //View::render('navigation') ?>
+
+<!-- Featured Stories -->
+<?php View::render('pages/components/featured-stories') ?>
 
 <!-- Footer -->
 <?php View::render('footer'); ?>
