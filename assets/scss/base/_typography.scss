@@ -15,13 +15,17 @@
         font-weight: $extra-bold;
         font-family: $secondary-font;
 
-        @include breakpoint(medium down){
+        @include breakpoint(large-landscape only){
+
+        }
+
+        @include breakpoint(large only){
             font-size: 8.2rem;
             line-height: 1.08;
             font-weight: $extra-bold;
         }
 
-        @include breakpoint(small only){
+        @include breakpoint(medium down){
             font-size: 4.7rem;
         }
     }
