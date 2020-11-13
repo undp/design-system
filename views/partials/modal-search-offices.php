@@ -18,7 +18,7 @@
                     <div class="flex-container search-input-group">
                         <input class="big-copy input-search" type="text" placeholder="search">
                         <button type="submit" class="btn-search">
-                            <?php Svg::render('icon-search') ?>
+                            <?php Svg::render('icon-search-white') ?>
                         </button>
                     </div>
                 </form>
