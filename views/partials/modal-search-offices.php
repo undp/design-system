@@ -22,15 +22,21 @@
                         </button>
                     </div>
                 </form>
-                <div class="search-dropdown-group">
-                    <p class="tag">Filter by:</p>
-                    <div class="dropdown">
-                        <button class="dropdown-btn">Region/Continent</button>
-                        <div class="dropdown-content"></div>
+                <div class="search-select-group">
+                    <p class="tag uppercase">Filter by:</p>
+                    <div class="custom-select big-copy">
+                        <select>
+                            <option value="0" disabled selected>Region/Continent </option>
+                            <option value="1">option 1</option>
+                            <option value="2">option 2</option>
+                        </select>
                     </div>
-                    <div class="dropdown">
-                        <button class="dropdown-btn">Region/Continent</button>
-                        <div class="dropdown-content"></div>
+                    <div class="custom-select big-copy">
+                        <select>
+                            <option value="0" disabled selected>Office Type</option>
+                            <option value="1">option 1</option>
+                            <option value="2">option 2</option>
+                        </select>
                     </div>
                 </div>
             </div>
