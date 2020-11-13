@@ -1,5 +1,5 @@
 <div class="grid-container">
-    <div class="grid-x">
+    <div class="grid-x grid-margin-x">
         <div class="cell small-12 medium-4">
             <h2 class="heading h2">
                 Featured
