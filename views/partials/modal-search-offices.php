@@ -10,7 +10,7 @@
         <div class="grid-x height-full modal-body">
             <div class="cell medium-auto  cell-search height-full">
                 <h2 class="heading h2 title">Find Our Offices Around the World. </h2>
-                <p class="description">The UNDP works in 170 countries around the world. Lorem ipsum dolor sit amet,
+                <p class="big-copy description">The UNDP works in 170 countries around the world. Lorem ipsum dolor sit amet,
                     consectetur adipiscing
                     elit. Duis auctor, ante sed auctor faucibus, diam ante pellentesque turpis, sit amet dictum felis
                     felis bibendum nisl. </p>

@@ -1,8 +1,9 @@
 .modal-search-offices {
     width: 100%;
-    position: fixed;
+    position: sticky;
+    top: $height-nav;
+    overflow-y: auto;
     z-index: $z-index-1;
-    margin-top: $height-nav;
     min-height: calc(100vh - 105px);
 
     .modal-content {
