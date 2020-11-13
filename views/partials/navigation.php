@@ -1,5 +1,6 @@
 <?php
- use helpers\Svg;
+use helpers\Svg;
+use helpers\View;
 ?>
 <section class="header">
     <div class="grid-container">
@@ -39,3 +40,4 @@
         </div>
     </div>
 </section>
+<?php View::render('partials/modal-search-offices')?>

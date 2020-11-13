@@ -1,0 +1,120 @@
+.modal-search-offices {
+    width: 100%;
+    position: fixed;
+    z-index: $z-index-1;
+    margin-top: $height-nav;
+    min-height: calc(100vh - 105px);
+
+    .modal-content {
+        padding: 0;
+        position: relative;
+
+        .close-button {
+            top: 52px;
+            right: 44px;
+            cursor: pointer;
+            position: absolute;
+            z-index: $z-index-2;
+        }
+
+        .cell-search {
+            opacity: 0.86;
+            max-width: 525px;
+            padding: 75px 60px;
+            background-color: $dark-blue-8;
+            box-shadow: 0 3px 6px rgba($black, 0.16);
+            backdrop-filter: blur(30px) brightness(15%);
+
+            .description {
+                margin-top: 35px
+            }
+
+            .search-input-group {
+                margin-top: 20px;
+
+                .input-search {
+                    height: 58px;
+                    padding: 20px;
+                    border: 2px solid $black;
+                    border-right: 0;
+
+                    &::placeholder {
+                        color: rgba($black, 0.35);
+                    }
+                }
+
+                .btn-search {
+                    width: 58px;
+                    height: 58px;
+                    background: $red;
+                }
+            }
+
+            .search-dropdown-group {
+                margin-top: 60px;
+
+                .dropdown:not(:first-child) {
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        .cell-list-offices {
+            opacity: 0.87;
+            padding: 80px 50px;
+            position: relative;
+            background-color: $white;
+            box-shadow: 0 3px 6px rgba($black, 0.16);
+            backdrop-filter: blur(21px) brightness(31%);
+
+            .title {
+                color: $blue-0;
+                margin-top: 15px;
+            }
+
+            .countries {
+                left: 0;
+                right: 50px;
+                padding: 0 50px;
+                margin-top: 44px;
+                overflow-y: auto;
+                position: absolute;
+                max-height: calc(100% - 280px);
+                scrollbar-color: $white $black;
+
+
+                &::-webkit-scrollbar {
+                    width: 5px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: linear-gradient(90deg, $white 25%, $black 50%, $white 25%);
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: black;
+                }
+
+                .country-item {
+                    padding: 20px 25px 20px 5px;
+                    border-top: 1px solid rgba($black, 0.10);
+
+                    .languages {
+                        .language-link {
+                            &:after {
+                                content: url('#{$image-path}icon-visit-link.svg');
+                                margin: 0 20px 0 12px;
+                            }
+
+                            &:last-child {
+                                &:after {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
