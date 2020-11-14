@@ -13,19 +13,15 @@
         line-height: 1.09;
         letter-spacing: 12px;
         font-weight: $extra-bold;
+        text-transform: uppercase;
         font-family: $secondary-font;
 
-        @include breakpoint(large-landscape only){
-
-        }
-
-        @include breakpoint(large only){
+        @include breakpoint(medium-landscape down){
             font-size: 8.2rem;
             line-height: 1.08;
-            font-weight: $extra-bold;
         }
 
-        @include breakpoint(medium down){
+        @include breakpoint(small only){
             font-size: 4.7rem;
         }
     }
