@@ -1,0 +1,54 @@
+.featured-stories{
+    margin: 30px 0 25px;
+
+    .section-title{
+        margin-top: 43px;
+    }
+
+    .story-card{
+        padding: 45px 25px 45px;
+
+        &.light{
+            background: $dark-blue-7;
+        }
+
+        &.dark{
+            background: $yellow;
+        }
+
+        .heading.h5{
+            margin-top: 45px;
+        }
+
+        .small-copy{
+            margin-top: 25px;
+        }
+
+        .heading,
+        .small-copy{
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .cta{
+            margin-top: 73px;
+        }
+
+        &.large{
+            .heading.h4{
+                margin-top: 50px;
+            }
+
+            .small-copy{
+                margin-top: 35px;
+                -webkit-line-clamp: 2;
+            }
+
+            .cta{
+                margin-top: 90px;
+            }
+        }
+    }
+}
