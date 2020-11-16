@@ -11,6 +11,7 @@ use helpers\View;
 <!-- Navigation -->
 <?php View::render('modules/hero') ?>
 <?php View::render('modules/our-mission') ?>
+<?php View::render('modules/join-us') ?>
 
 <!-- Footer -->
 <?php View::render('partials/footer'); ?>
