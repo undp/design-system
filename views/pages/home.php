@@ -10,6 +10,7 @@ use helpers\View;
 
 <!-- Navigation -->
 <?php View::render('modules/hero') ?>
+<?php View::render('modules/our-mission') ?>
 
 <!-- Footer -->
 <?php View::render('partials/footer'); ?>

@@ -1,11 +1,8 @@
 .heading {
+    color: $black;
 
     &.light {
         color: $white;
-    }
-
-    &.dark {
-        color: $black;
     }
 
     &.h1 {
@@ -58,6 +55,7 @@
 }
 
 .numerals {
+    color: $black;
     font-size: 11rem;
     line-height: 1.08;
     font-weight: $bold;
@@ -72,13 +70,10 @@
     &.light {
         color: $white;
     }
-
-    &.dark {
-        color: $black;
-    }
 }
 
 .big-copy {
+    color: $black;
     font-size: 2rem;
     line-height: 1.3;
     font-weight: $regular;
@@ -86,27 +81,21 @@
     &.light {
         color: $white;
     }
-
-    &.dark {
-        color: $black;
-    }
 }
 
 .medium-copy {
-    font-size: 1.6rem;
+    color: $black;
     line-height: 1.3;
+    font-size: 1.6rem;
     font-weight: $regular;
 
     &.light {
         color: $white;
     }
-
-    &.dark {
-        color: $black;
-    }
 }
 
 .small-copy {
+    color: $black;
     font-size: 1.4rem;
     line-height: 1.4;
     font-weight: $regular;
@@ -114,13 +103,10 @@
     &.light {
         color: $white;
     }
-
-    &.dark {
-        color: $black;
-    }
 }
 
 .cta-link {
+    color: $black;
     line-height: 1.12;
     font-size: 1.6rem;
     font-weight: $bold;
@@ -128,13 +114,10 @@
     &.light {
         color: $white;
     }
-
-    &.dark {
-        color: $black;
-    }
 }
 
 .nav-item {
+    color: $black;
     font-size: 1.4rem;
     line-height: 1.14;
     font-weight: $semi-bold;
@@ -142,22 +125,15 @@
     &.light {
         color: $white;
     }
-
-    &.dark {
-        color: $black;
-    }
 }
 
 .tag {
+    color: $black;
     font-size: 1.2rem;
     line-height: 1.33;
     font-weight: $bold;
 
     &.light {
         color: $white;
-    }
-
-    &.dark {
-        color: $black;
     }
 }
