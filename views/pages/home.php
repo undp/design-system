@@ -9,7 +9,7 @@ use helpers\View;
 <?php View::render('partials/navigation') ?>
 
 <!-- Navigation -->
-<?php View::render('components/hero') ?>
+<?php View::render('modules/hero') ?>
 
 <!-- Footer -->
 <?php View::render('partials/footer'); ?>
