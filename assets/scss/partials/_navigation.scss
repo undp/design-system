@@ -2,6 +2,7 @@
     width: 100%;
     position: fixed;
     max-height: 105px;
+    z-index: $z-index-nav;
     background-color: $dark-blue-6;
     box-shadow: 0 3px 6px rgba($black, 0.09);
 
@@ -50,7 +51,7 @@
 
     .dropdown {
         position: relative;
-        
+
         &:hover {
             .dropdown-content {
                 display: block;

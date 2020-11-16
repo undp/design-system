@@ -1,4 +1,4 @@
-<div class="hero" style="background: url('assets/images/hero.png') center 0 / cover no-repeat;">
+<div class="hero" style="background: url('../../assets/images/hero.png') center 0 / cover no-repeat;">
     <div class="hero-content">
         <div class="text-box">
             <div class="title">
