@@ -29,7 +29,7 @@ use helpers\View;
                     </ul>
                 </div>
                 <div class="logo right-menu">
-                    <a class="nav-item dark" href="#">
+                    <a class="nav-item dark" href="#" data-modal-open data-modal="modal-search-offices">
                         <?php Svg::render('icon-www')?>
                     </a>
                     <a class="nav-item dark" href="#">

@@ -2,9 +2,9 @@
     use helpers\Svg;
 ?>
 
-<section class="modal-search-offices">
+<section id="modal-search-offices" class="modal-search-offices hide">
     <div class="grid-container modal-content height-full">
-        <button class="close-button">
+        <button class="close-button" data-btn-close>
             <?php Svg::render('icon-close') ?>
         </button>
         <div class="grid-x height-full modal-body">

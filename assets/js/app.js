@@ -1,6 +1,9 @@
+import modal from './components/modal.js';
 import select from './partials/select.js';
+
 function main() {
-    select();
+    modal()
+    select()
 }
 
 document.addEventListener("DOMContentLoaded", function () {
