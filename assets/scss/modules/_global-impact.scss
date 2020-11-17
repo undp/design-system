@@ -6,4 +6,19 @@
         margin-top: 120px;
         border-top: 1px solid rgba($white, 23%);
     }
+
+    @include breakpoint(small only) {
+        .heading-container {
+            padding-left: 45px;
+            padding-right: 45px;
+        }
+
+        .h4 {
+            margin-top: 50px;
+        }
+
+        .card-container {
+            margin-top: 80px;
+        }
+    }
 }

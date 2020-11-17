@@ -4,6 +4,10 @@
     position: relative;
     transition: $transition-primary;
 
+    @include breakpoint(small only) {
+        min-height: 390px;
+    }
+
     &:after {
         opacity: 0;
         z-index: 0;
@@ -24,6 +28,12 @@
         padding-left: 70px;
         flex-direction: column;
         justify-content: center;
+
+        @include breakpoint(small only) {
+            min-height: 390px;
+            padding-left: 45px;
+            padding-right: 45px;
+        }
     }
 
     .numerals {
