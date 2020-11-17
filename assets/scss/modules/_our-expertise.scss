@@ -19,18 +19,18 @@
 
     @include breakpoint(medium up){
         &::before{
-            position: absolute;
             content: '';
+            left: 50%;
             width: 100%;
+            z-index: -1;
             height: 100%;
             max-width: 1440px;
-            left: 50%;
-            -webkit-transform: translateX(-50%);
+            position: absolute;
             transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            border-right: 1px solid $dark-blue-4;
             background-image: linear-gradient(90deg, $dark-blue-4 1px, rgba($dark-blue-4,0) 1px);
             background-size: 25%;
-            border-right: 1px solid $dark-blue-4;
-            z-index: -1;
         }
     }
 
