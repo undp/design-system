@@ -107,8 +107,8 @@ $print-hrefs: true;
 
 $breakpoints: (
   small: 0,
-  medium: 640px,
-  large: 1024px,
+  medium: 834px,
+  large: 1194px,
   xlarge: 1200px,
   xxlarge: 1440px,
 );
@@ -120,7 +120,7 @@ $breakpoints-hidpi: (
   hidpi-3: 3
 );
 $print-breakpoint: large;
-$breakpoint-classes: (small medium large);
+$breakpoint-classes: (small medium large xlarge);
 
 // 3. The Grid
 // -----------
