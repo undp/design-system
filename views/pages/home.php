@@ -2,17 +2,21 @@
 use helpers\View;
 ?>
 <!-- Page Headers -->
-<?php View::render('header') ?>
+<?php View::render('partials/header') ?>
 
 <body>
 <!-- Navigation -->
-<?php //View::render('navigation') ?>
+<?php View::render('navigation') ?>
 
-<!-- Featured Stories -->
+
+<!-- Navigation -->
+<?php View::render('modules/hero') ?>
 <?php View::render('pages/components/featured-stories') ?>
+<?php View::render('modules/our-mission') ?>
+<?php View::render('modules/join-us') ?>
 
 <!-- Footer -->
-<?php View::render('footer'); ?>
+<?php View::render('partials/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 </html>

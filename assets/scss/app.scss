@@ -13,8 +13,14 @@
 @import 'partials/footer';
 @import 'partials/navigation';
 
-//Components
-@import "componets/featured-stories";
+// Modules
+@import "modules/hero";
+@import "modules/featured-stories";
+@import "modules/join-us";
+@import "modules/our-mission";
+
+// Components
+@import "components/image-card";
 
 //pages
 @import 'pages/styleguide';

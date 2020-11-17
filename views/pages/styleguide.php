@@ -2,11 +2,11 @@
 use helpers\View;
 ?>
 <!-- Page Headers -->
-<?php View::render('header') ?>
+<?php View::render('partials/header') ?>
 
 <body>
 <!-- Navigation -->
-<?php View::render('navigation') ?>
+<?php View::render('partials/navigation') ?>
 
 <div class="styleguide">
     <!--  headings  -->
@@ -583,7 +583,7 @@ use helpers\View;
 </div>
 <div style="height: 500px"></div>
 <!-- Footer -->
-<?php View::render('footer'); ?>
+<?php View::render('partials/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 </html>

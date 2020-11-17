@@ -1,0 +1,129 @@
+.featured-stories{
+    margin-bottom: 25px;
+
+    .title-container{
+        @include breakpoint(large up){
+            display: flex;
+            justify-content: center;
+        }
+
+        .section-title{
+            margin-top: 40px;
+
+            @include breakpoint(medium down){
+                margin-top: 20px;
+            }
+
+            @include breakpoint(small only){
+                margin: 120px 0 85px 40px;
+            }
+        }
+    }
+
+    .story-card{
+        margin-top: 25px;
+        padding: 45px 25px 45px;
+
+        @include breakpoint(small only){
+            margin-top: 15px;
+        }
+
+        &.hide-medium{
+            @include breakpoint(medium-landscape only){
+                display: none;
+            }
+
+            @include breakpoint(medium only){
+                display: none;
+            }
+        }
+
+        &.hide-small{
+            @include breakpoint(small only){
+                display: none;
+            }
+        }
+
+        &.light{
+            background: $dark-blue-7;
+        }
+
+        &.dark{
+            background: $yellow;
+        }
+
+        .heading.h5{
+            margin-top: 45px;
+        }
+
+        .small-copy{
+            margin-top: 25px;
+        }
+
+        .heading,
+        .small-copy{
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .cta{
+            margin-top: 73px;
+        }
+
+        &.large{
+            .heading.h4{
+                margin-top: 50px;
+                -webkit-line-clamp: 2;
+            }
+
+            .small-copy{
+                margin-top: 35px;
+                -webkit-line-clamp: 2;
+            }
+
+            .cta{
+                margin-top: 90px;
+            }
+        }
+    }
+
+    .story-card-image{
+        height: 100%;
+        margin-top: 25px;
+        max-height: 413px;
+        position: relative;
+
+        &.hide-medium{
+            @include breakpoint(medium-landscape only){
+                display: none;
+            }
+
+            @include breakpoint(medium only){
+                display: none;
+            }
+        }
+
+        &.hide-large{
+            @include breakpoint(large up){
+                display: none;
+            }
+        }
+
+        @include breakpoint(small only){
+            height: 320px;
+            margin-top: 15px;
+        }
+
+        .text-link{
+            left: 30px;
+            bottom: 40px;
+            position: absolute;
+
+            @include breakpoint(medium-landscape down){
+                display: none;
+            }
+        }
+    }
+}

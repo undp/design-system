@@ -1,3 +1,168 @@
 .footer {
+    background: $blue-0;
+    padding: 85px 0 30px 0;
+    font-weight: $semi-bold;
+    font-family: $primary-font;
 
+    .footer-head {
+        .undp-logo {
+            min-width: 60px;
+            margin-right: 25px;
+        }
+
+        .group-input-sign-up {
+            margin-top: 15px;
+
+            .input-sign-up {
+                color: $white;
+                max-height: 30px;
+                min-width: 185px;
+                border: 1px solid $white;
+                border-right: 0;
+                background-color: $blue-0;
+
+                &::placeholder {
+                    color: rgba($white, 0.43);
+                }
+            }
+
+            .btn-submit {
+                border: none;
+                max-height: 30px;
+                padding: 0 15px;
+                color: $blue-0;
+                background-color: $white;
+            }
+        }
+    }
+
+    .footer-body {
+        margin-top: 40px;
+        padding-top: 50px;
+        border-top: 2px solid $white;
+
+        .column {
+            .list {
+                list-style: none;
+                margin-top: 22px;
+
+                li:not(:first-child) {
+                    margin-top: 15px;
+                }
+            }
+
+            .icons-search {
+                .icon {
+                    &:not(:last-child) {
+                        margin-right: 22px;
+                    }
+                }
+            }
+
+            .terms-conditions {
+                margin-top: 50px;
+            }
+        }
+
+        .who-we-are {
+            max-width: 118px;
+        }
+
+        .who-we-do {
+            max-width: 160px;
+        }
+
+        .our-impact {
+            max-width: 85px;
+        }
+
+        .get-involved {
+            max-width: 145px;
+        }
+
+        .languages {
+            max-width: 80px;
+        }
+
+        .legal {
+            max-width: 230px;
+            text-align: right;
+
+            .social-links {
+                margin-top: 35px;
+
+                .social-link:not(:last-child) {
+                    margin-right: 15px;
+                }
+
+                .icon {
+                    width: 25px;
+                    height: 25px;
+                    background-size: cover;
+
+                    &:not(:last-child) {
+                        margin-right: 15px;
+                    }
+
+                    &.facebook {
+                        background-image: url('#{$image-path}icon-facebook-white.png');
+                    }
+
+                    &.twitter {
+                        background-image: url('#{$image-path}icon-twitter-white.png');
+                    }
+
+                    &.instagram {
+                        background-image: url('#{$image-path}icon-instagram-white.png');
+                    }
+
+                    &.linkedin {
+                        background-image: url('#{$image-path}icon-linkedin-white.png');
+                    }
+
+                    &.youtube {
+                        background-image: url('#{$image-path}icon-youtube-white.png');
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-foot {
+        margin-top: 80px;
+    }
+
+    .light {
+        color: $white;
+    }
+
+    .footer-title {
+        font-size: 2.3rem;
+        font-weight: $semi-bold;
+    }
+
+    .footer-subtitle {
+        line-height: 1.7;
+        font-size: 1.3rem;
+        font-weight: $semi-bold;
+    }
+
+    .footer-menu-item {
+        line-height: 1.2;
+        font-size: 1.4rem;
+        font-weight: $regular;
+
+        &.light {
+
+            &:hover {
+                color: rgba($white, 0.7);
+            }
+        }
+
+        &:active,
+        &.active {
+            padding-bottom: 3px;
+            border-bottom: 1px solid $white;
+        }
+    }
 }
