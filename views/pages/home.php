@@ -6,15 +6,16 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php View::render('partials/navigation') ?>
+<?php //View::render('partials/navigation') ?>
 
 <!-- Navigation -->
 <?php View::render('modules/hero') ?>
+<?php View::render('modules/our-expertise') ?>
 <?php View::render('modules/our-mission') ?>
 <?php View::render('modules/join-us') ?>
 
 <!-- Footer -->
-<?php View::render('partials/footer'); ?>
+<?php //View::render('partials/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 </html>

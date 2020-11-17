@@ -1,0 +1,128 @@
+.our-expertise{
+    position: relative;
+    margin-bottom: 70px;
+
+    @include breakpoint(small only){
+        .our-expertise-container{
+            width: auto;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+
+            .our-expertise-cards-container{
+                width: 290px;
+                min-width: 290px;
+                margin-right: 60px;
+            }
+        }
+    }
+
+    @include breakpoint(medium up){
+        &::before{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            max-width: 1440px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            background-image: linear-gradient(90deg, $dark-blue-4 1px, rgba($dark-blue-4,0) 1px);
+            background-size: 25%;
+            border-right: 1px solid $dark-blue-4;
+            z-index: -1;
+        }
+    }
+
+    .grid-container{
+        padding: 0 0 !important;
+    }
+
+    .section-title{
+        margin-top: 120px;
+
+        @include breakpoint(medium down){
+            margin-top: 95px ;
+        }
+
+        @include breakpoint(small only){
+            margin-top: 120px;
+            margin-bottom: 35px;
+        }
+    }
+
+    .expertise-card{
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+
+        .text{
+            padding-bottom: 55px;
+            border-bottom: 3px solid $black;
+
+            @include breakpoint(xlarge down){
+                padding-bottom: 25px;
+            }
+
+            @include breakpoint(small only){
+                margin-top: 30px;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            .heading.h3,
+            .heading.big-copy{
+                padding: 0 24px;
+
+                @include breakpoint(large down){
+                    padding: 0 20px;
+                }
+
+                @include breakpoint(medium down){
+                    padding: 0 15px;
+                }
+            }
+
+            .heading.big-copy{
+                margin-top: 30px;
+                overflow: hidden;
+                max-height: 210px;
+
+                @include breakpoint(large down){
+                    max-height: 200px;
+                }
+
+                @include breakpoint(medium down){
+                    margin-top: 25px;
+                    max-height: 125px;
+                }
+
+            }
+        }
+
+        .cta-container{
+            padding: 0 24px;
+
+            @include breakpoint(large down){
+                padding: 0 20px;
+            }
+
+            @include breakpoint(medium down){
+                padding: 0 15px;
+            }
+
+            @include breakpoint(small only){
+                margin-top: 40px;
+                padding-bottom: 45px;
+            }
+        }
+
+    }
+
+    .expertise-image{
+        img{
+            width: 100%;
+        }
+    }
+}
