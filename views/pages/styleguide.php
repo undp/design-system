@@ -14,7 +14,7 @@ use helpers\View;
         <div class="grid-container">
             <div class="grid-x">
                 <div class="cell headings-text-cta">
-                    <h3 class="heading h3">UNDP DIGITAL GUIDE</h3>
+                    <h3 class="heading h3">UNDP STYLE GUIDE</h3>
                     <p class="heading h5 title">Type System</p>
                     <table>
                         <thead>
