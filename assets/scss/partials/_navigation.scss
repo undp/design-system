@@ -39,6 +39,10 @@
             li:not(:last-child) {
                 color: red;
                 margin-right: 75px;
+
+                @include breakpoint(medium down){
+                    margin-right: 0;
+                }
             }
 
             .middle-logo {

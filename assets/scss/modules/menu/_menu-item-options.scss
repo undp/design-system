@@ -1,5 +1,19 @@
+body {
+    &.menu-open {
+        width: 100%;
+        height: 100vh;
+        overflow-y: hidden;
+    }
+}
+
+
 .menu-item-options {
-    margin: 0 0 0 22px;
+    width: 100%;
+    position: fixed;
+    overflow-y: auto;
+    z-index: $z-index-5;
+    padding: 25px 0 58px 45px;
+    background-color: $dark-blue-6;
 
     .menu-btn-back {
         font-size: 1.2rem;

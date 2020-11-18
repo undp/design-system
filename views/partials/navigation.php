@@ -2,7 +2,7 @@
 use helpers\Svg;
 use helpers\View;
 ?>
-<section class="header">
+<section class="header" data-navigation>
     <div class="grid-container">
         <nav class="grid-x">
             <div class="cell flex-container align-justify align-middle custom-cell">
@@ -24,15 +24,15 @@ use helpers\View;
                 </div>
                 <div>
                     <ul class="flex-container align-middle middle-menu">
-                        <li><a class="nav-item dark active show-for-large" href="#">Who we are</a></li>
-                        <li><a class="nav-item dark show-for-large" href="#">What we do</a></li>
+                        <li class="show-for-large"><a class="nav-item dark active" href="#">Who we are</a></li>
+                        <li class="show-for-large"><a class="nav-item dark" href="#">What we do</a></li>
                         <li>
                             <a href="#" class="middle-logo">
                                 <?php Svg::render('undp-logo')?>
                             </a>
                         </li>
-                        <li><a class="nav-item dark show-for-large" href="#">Our impact</a></li>
-                        <li><a class="nav-item dark show-for-large" href="#">Get Involved</a></li>
+                        <li class="show-for-large"><a class="nav-item dark" href="#">Our impact</a></li>
+                        <li class="show-for-large"><a class="nav-item dark" href="#">Get Involved</a></li>
                     </ul>
                 </div>
                 <div class="logo right-menu">
@@ -44,12 +44,15 @@ use helpers\View;
                     </a>
                 </div>
             </div>
-            <div class="cell">
-                <?php View::render('modules/menu/main-options')?>
-                <?php View::render('modules/menu/menu-item-options')?>
-            </div>
         </nav>
     </div>
+    <div class="primary-navigation">
+        <div class="hide" data-menu-main-options>
+            <?php View::render('modules/menu/main-options')?>
+        </div>
+        <?php View::render('modules/menu/menu-item-options')?>
+    </div>
+
 </section>
 <?php View::render('partials/modal-search-offices')?>
 <?php View::render('partials/modal-popular-search')?>
