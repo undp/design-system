@@ -6,12 +6,12 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php View::render('navigation') ?>
+<?php View::render('partials/navigation') ?>
 
 
 <!-- Navigation -->
 <?php View::render('modules/hero') ?>
-<?php View::render('pages/components/featured-stories') ?>
+<?php View::render('modules/featured-stories') ?>
 <?php View::render('modules/our-mission') ?>
 <?php View::render('modules/join-us') ?>
 <?php View::render('modules/global-impact') ?>
