@@ -2,18 +2,21 @@
     position: relative;
     margin-bottom: 70px;
 
-    @include breakpoint(small only){
-        .our-expertise-container{
-            width: auto;
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: scroll;
+    .our-expertise-row{
+        &:first-child{
+            padding-top: 140px;
 
-            .our-expertise-cards-container{
-                width: 290px;
-                min-width: 290px;
-                margin-right: 60px;
+            @include breakpoint(large down){
+                padding-top: 125px;
             }
+
+            @include breakpoint(medium down){
+                padding-top: 95px;
+            }
+        }
+
+        &:not(:first-child) {
+            margin-top: -40px;
         }
     }
 
@@ -35,20 +38,7 @@
     }
 
     .grid-container{
-        padding: 0 0 !important;
-    }
-
-    .section-title{
-        margin-top: 120px;
-
-        @include breakpoint(medium down){
-            margin-top: 95px ;
-        }
-
-        @include breakpoint(small only){
-            margin-top: 120px;
-            margin-bottom: 35px;
-        }
+        padding: 0 0;
     }
 
     .expertise-card{

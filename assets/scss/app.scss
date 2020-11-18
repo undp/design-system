@@ -13,14 +13,15 @@
 @import 'partials/footer';
 @import 'partials/navigation';
 
-// Components
-@import "components/image-card";
-
 // Modules
 @import "modules/hero";
 @import "modules/join-us";
 @import "modules/our-mission";
 @import "modules/our-expertise";
+
+// Components
+@import "components/image-card";
+@import "components/expertise-card";
 
 //pages
 @import 'pages/styleguide';
