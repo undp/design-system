@@ -1,5 +1,7 @@
 // Vendor
 @import "vendor/foundation/foundation";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+//@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
 
 // Common
 @import 'base/variables';
@@ -20,11 +22,13 @@
 @import "modules/join-us";
 @import "modules/our-mission";
 @import "modules/global-impact";
+@import "modules/publications";
 
 // Components
 @import "components/stat-card";
 @import "components/image-card";
 @import "components/story-card";
+@import "components/publication";
 
 //pages
 @import 'pages/styleguide';
