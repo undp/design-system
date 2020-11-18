@@ -31,10 +31,11 @@
             </div>
         </div>
         <div class="grid-x grid-padding-x">
-            <div class="cell medium-4 large-8">
+            <div class="cell medium-8 large-8">
                 <?php
                     View::render('components/story-card', [
-                        'size' => 'large'
+                        'size' => 'large',
+                        'image' => '/assets/images/featured-stories.png'
                     ])
                 ?>
             </div>
