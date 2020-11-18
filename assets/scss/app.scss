@@ -16,12 +16,14 @@
 @import 'partials/modal-search-offices';
 
 // Components
+@import "components/stat-card";
 @import "components/image-card";
 
 // Modules
 @import "modules/hero";
 @import "modules/join-us";
 @import "modules/our-mission";
+@import "modules/global-impact";
 
 //pages
 @import 'pages/styleguide';
