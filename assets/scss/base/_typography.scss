@@ -1,5 +1,6 @@
 .heading {
     color: $black;
+    font-family: $primary-font;
 
     &.light {
         color: $white;
@@ -38,7 +39,6 @@
         font-size: 3.5rem;
         line-height: 1.14;
         font-weight: $semi-bold;
-
     }
 
     &.h4 {

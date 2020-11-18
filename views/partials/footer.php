@@ -87,7 +87,7 @@ use helpers\Svg;
                     <div class="column legal">
                         <div >
                             <div class="flex-container align-right icons-search">
-                                <a class="icon" href="#">
+                                <a class="icon" href="#" data-modal-open data-modal="modal-search-offices">
                                     <?php Svg::render('icon-www-white') ?>
                                 </a>
                                 <a class="icon" href="#">
