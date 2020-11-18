@@ -40,6 +40,9 @@ class Menu {
         this.$menuItemDetails.each((i, item) => {
             $(item).click(() => {
                 const subMenu = $(item).data('submenu');
+                if (subMenu && subMenu === 'modal-search-offices') {
+                    this.closeMenu();
+                }
                 if (subMenu) {
                     this.currentSubmenu = $('#' + subMenu);
                     if (this.currentSubmenu) {

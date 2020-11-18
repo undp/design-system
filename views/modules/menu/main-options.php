@@ -36,7 +36,7 @@ use helpers\Svg;
             </a>
         </li>
         <li>
-            <a class="flex-container align-middle nav-item" class="flex-container align-middle" href="#">
+            <a class="flex-container align-middle nav-item" class="flex-container align-middle" href="#" data-item-details data-submenu="modal-search-offices" data-modal-open data-modal="modal-search-offices">
                 <?php Svg::render('icon-www') ?>
                 Locations
             </a>
