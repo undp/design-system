@@ -64,7 +64,6 @@
         }
 
         @include breakpoint(xlarge up){
-            z-index: 1;
             top: 0;
             left: 0;
             width: 100%;
@@ -129,9 +128,9 @@
     }
 
     .cta{
-        z-index: 999;
         margin-top: 75px;
         position: relative;
+        z-index: $z-index-1;
 
         @include breakpoint(large down){
             margin-top: 60px;
@@ -185,8 +184,8 @@
         .heading.h4,
         .small-copy,
         .cta{
-            z-index: 3;
             position: relative;
+            z-index: $z-index-1;
         }
     }
 }
