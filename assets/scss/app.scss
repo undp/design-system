@@ -9,17 +9,20 @@
 @import 'base/buttons';
 
 // Partials
-@import 'partials/header';
 @import 'partials/footer';
 @import 'partials/navigation';
+@import 'partials/custom-select';
+@import 'partials/modal-search-offices';
 
 // Modules
 @import "modules/hero";
 @import "modules/join-us";
 @import "modules/our-mission";
 @import "modules/our-expertise";
+@import "modules/global-impact";
 
 // Components
+@import "components/stat-card";
 @import "components/image-card";
 @import "components/expertise-card";
 

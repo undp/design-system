@@ -13,6 +13,7 @@ use helpers\View;
 <?php View::render('modules/our-expertise') ?>
 <?php View::render('modules/our-mission') ?>
 <?php View::render('modules/join-us') ?>
+<?php View::render('modules/global-impact') ?>
 
 <!-- Footer -->
 <?php //View::render('partials/footer'); ?>
