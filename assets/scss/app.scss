@@ -12,14 +12,18 @@
 @import 'partials/header';
 @import 'partials/footer';
 @import 'partials/navigation';
+@import 'partials/custom-select';
+@import 'partials/modal-search-offices';
 
 // Modules
 @import "modules/hero";
 @import "modules/featured-stories";
 @import "modules/join-us";
 @import "modules/our-mission";
+@import "modules/global-impact";
 
 // Components
+@import "components/stat-card";
 @import "components/image-card";
 
 //pages

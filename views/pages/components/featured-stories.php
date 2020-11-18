@@ -16,7 +16,10 @@
                 </div>
             </div>
             <div class="cell small-12 medium-4">
-                <div class="story-card light">
+                <div class="story-card">
+                    <div class="hover-image">
+                        <img src="/assets/images/featured-stories.png" alt="">
+                    </div>
                     <p class="tag">
                         Content Tag
                     </p>
@@ -34,15 +37,11 @@
                     </div>
                 </div>
             </div>
-            <div class="cell small-12 medium-4">
-                <div class="story-card-image hide-medium" style="background: url('../../../assets/images/featured-stories.png') center 0 / cover no-repeat;">
-                    <a class="text-link arrow-2" href="#">
-                        Explore
-                        <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
-                    </a>
-                </div>
-
-                <div class="story-card light hide-large">
+            <div class="cell small-12 medium-4" style="position: relative">
+                <div class="story-card">
+                    <div class="hover-image">
+                        <img src="/assets/images/featured-stories.png" alt="">
+                    </div>
                     <p class="tag">
                         Content Tag
                     </p>
@@ -54,7 +53,7 @@
                     </p>
                     <div class="cta">
                         <a class="text-link arrow-1" href="#">
-                            Read More
+                            Read More 2
                             <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
                         </a>
                     </div>
@@ -63,7 +62,7 @@
         </div>
         <div class="grid-x grid-padding-x">
             <div class="cell medium-4 large-8">
-                <div class="story-card large dark hide-medium hide-small">
+                <div class="story-card large hide-medium hide-small">
                     <p class="tag">
                         Content Tag
                     </p>

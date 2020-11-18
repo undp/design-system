@@ -20,16 +20,55 @@
         }
     }
 
+
+
     .story-card{
         margin-top: 25px;
+        overflow: hidden;
+        position: relative;
         padding: 45px 25px 45px;
+        background: $dark-blue-7;
+
+        .hover-image{
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: .4s ease;
+            transform: translateX(-100%);
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+
+            &::before{
+                content: '';
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background: transparent linear-gradient(207deg, rgba($white, 0.2) 30%,
+                        rgba($yellow, 0.5) 80%,
+                        rgba($yellow, 0.8) 100%) 0% 0% no-repeat padding-box;
+            }
+        }
+
+        &:hover{
+            .hover-image{
+                transform: translateX(0);
+            }
+        }
 
         @include breakpoint(small only){
             margin-top: 15px;
         }
 
         &.hide-medium{
-            @include breakpoint(medium-landscape only){
+            @include breakpoint(large only){
                 display: none;
             }
 
@@ -42,14 +81,6 @@
             @include breakpoint(small only){
                 display: none;
             }
-        }
-
-        &.light{
-            background: $dark-blue-7;
-        }
-
-        &.dark{
-            background: $yellow;
         }
 
         .heading.h5{
@@ -69,7 +100,14 @@
         }
 
         .cta{
+            height: 18px;
             margin-top: 73px;
+            position: relative;
+
+            .text-link{
+                z-index: 3;
+                position: absolute;
+            }
         }
 
         &.large{
@@ -96,7 +134,7 @@
         position: relative;
 
         &.hide-medium{
-            @include breakpoint(medium-landscape only){
+            @include breakpoint(large only){
                 display: none;
             }
 
@@ -121,7 +159,7 @@
             bottom: 40px;
             position: absolute;
 
-            @include breakpoint(medium-landscape down){
+            @include breakpoint(medium down){
                 display: none;
             }
         }
