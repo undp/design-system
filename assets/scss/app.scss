@@ -14,15 +14,17 @@
 @import 'partials/custom-select';
 @import 'partials/modal-search-offices';
 
-// Components
-@import "components/stat-card";
-@import "components/image-card";
-
 // Modules
 @import "modules/hero";
+@import "modules/featured-stories";
 @import "modules/join-us";
 @import "modules/our-mission";
 @import "modules/global-impact";
+
+// Components
+@import "components/stat-card";
+@import "components/image-card";
+@import "components/story-card";
 
 //pages
 @import 'pages/styleguide';
