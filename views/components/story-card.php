@@ -4,7 +4,7 @@
 <div class="story-card <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
     <div class="hover-image">
         <?php if($imageExist): ?>
-            <img src="<?= $image ?>" alt="">
+            <img src="<?= $image ?>" alt="story-image">
         <?php endif; ?>
     </div>
     <div class="content">
