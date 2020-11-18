@@ -29,6 +29,10 @@
         padding: 45px 25px 45px;
         background: $dark-blue-7;
 
+        @include breakpoint(small only){
+            margin-top: 15px;
+        }
+
         .hover-image{
             z-index: 1;
             top: 0;
@@ -37,7 +41,8 @@
             height: 100%;
             position: absolute;
             transition: .4s ease;
-            transform: translateX(-100%);
+            background-color: $yellow;
+            transform: translateX(-105%);
 
             img{
                 width: 100%;
@@ -63,26 +68,6 @@
             }
         }
 
-        @include breakpoint(small only){
-            margin-top: 15px;
-        }
-
-        &.hide-medium{
-            @include breakpoint(large only){
-                display: none;
-            }
-
-            @include breakpoint(medium only){
-                display: none;
-            }
-        }
-
-        &.hide-small{
-            @include breakpoint(small only){
-                display: none;
-            }
-        }
-
         .heading.h5{
             margin-top: 45px;
         }
@@ -100,14 +85,9 @@
         }
 
         .cta{
-            height: 18px;
+            z-index: 3;
             margin-top: 73px;
-            position: relative;
-
-            .text-link{
-                z-index: 3;
-                position: absolute;
-            }
+            position: inherit;
         }
 
         &.large{
@@ -125,42 +105,14 @@
                 margin-top: 90px;
             }
         }
-    }
 
-    .story-card-image{
-        height: 100%;
-        margin-top: 25px;
-        max-height: 413px;
-        position: relative;
-
-        &.hide-medium{
-            @include breakpoint(large only){
-                display: none;
-            }
-
-            @include breakpoint(medium only){
-                display: none;
-            }
-        }
-
-        &.hide-large{
-            @include breakpoint(large up){
-                display: none;
-            }
-        }
-
-        @include breakpoint(small only){
-            height: 320px;
-            margin-top: 15px;
-        }
-
-        .text-link{
-            left: 30px;
-            bottom: 40px;
-            position: absolute;
-
-            @include breakpoint(medium down){
-                display: none;
+        &.no-image{
+            .tag,
+            .heading.h4,
+            .small-copy,
+            .cta{
+                z-index: 3;
+                position: inherit;
             }
         }
     }

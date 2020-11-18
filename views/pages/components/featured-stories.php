@@ -16,82 +16,34 @@
                 </div>
             </div>
             <div class="cell small-12 medium-4">
-                <div class="story-card">
-                    <div class="hover-image">
-                        <img src="/assets/images/featured-stories.png" alt="">
-                    </div>
-                    <p class="tag">
-                        Content Tag
-                    </p>
-                    <h5 class="heading h5">
-                        Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt
-                    </h5>
-                    <p class="small-copy">
-                        This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action
-                    </p>
-                    <div class="cta">
-                        <a class="text-link arrow-1" href="#">
-                            Read More
-                            <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
-                        </a>
-                    </div>
-                </div>
+                <?php
+                    View::render('components/story-card', [
+                        'image' => '/assets/images/featured-stories.png'
+                    ])
+                ?>
             </div>
-            <div class="cell small-12 medium-4" style="position: relative">
-                <div class="story-card">
-                    <div class="hover-image">
-                        <img src="/assets/images/featured-stories.png" alt="">
-                    </div>
-                    <p class="tag">
-                        Content Tag
-                    </p>
-                    <h5 class="heading h5">
-                        Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt
-                    </h5>
-                    <p class="small-copy">
-                        This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action
-                    </p>
-                    <div class="cta">
-                        <a class="text-link arrow-1" href="#">
-                            Read More 2
-                            <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
-                        </a>
-                    </div>
-                </div>
+            <div class="cell small-12 medium-4">
+                <?php
+                    View::render('components/story-card', [
+                        'image' => '/assets/images/featured-stories.png'
+                    ])
+                ?>
             </div>
         </div>
         <div class="grid-x grid-padding-x">
             <div class="cell medium-4 large-8">
-                <div class="story-card large hide-medium hide-small">
-                    <p class="tag">
-                        Content Tag
-                    </p>
-                    <h4 class="heading h4">
-                        Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt
-                    </h4>
-                    <p class="small-copy">
-                        This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action
-                    </p>
-                    <div class="cta">
-                        <a class="text-link arrow-1" href="#">
-                            Read More
-                            <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="story-card-image hide-large" style="background: url('../../../assets/images/featured-stories.png') center 0 / cover no-repeat;">
-                    <a class="text-link arrow-2" href="#">
-                        Explore
-                        <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
-                    </a>
-                </div>
+                <?php
+                    View::render('components/story-card', [
+                        'size' => 'large'
+                    ])
+                ?>
             </div>
             <div class="cell small-12 medium-4">
-                <?php View::render('components/story-card') ?>
-            </div>
-            <div class="cell small-12 medium-4 hide-for-large">
-                <?php View::render('components/story-card') ?>
+                <?php
+                    View::render('components/story-card', [
+                        'image' => '/assets/images/featured-stories.png'
+                    ])
+                ?>
             </div>
         </div>
     </div>
