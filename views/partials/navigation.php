@@ -46,6 +46,7 @@ use helpers\View;
             </div>
             <div class="cell">
                 <?php View::render('modules/menu/main-options')?>
+                <?php View::render('modules/menu/menu-item-options')?>
             </div>
         </nav>
     </div>
