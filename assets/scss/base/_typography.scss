@@ -59,7 +59,6 @@
 }
 
 .numerals {
-    color: $black;
     font-size: 11rem;
     line-height: 1.08;
     font-weight: $bold;
@@ -74,6 +73,10 @@
     &.light {
         color: $white;
     }
+
+    &.dark {
+        color: $black;
+    }
 }
 
 .big-copy {
@@ -84,6 +87,10 @@
 
     &.light {
         color: $white;
+    }
+
+    &.dark {
+        color: $black;
     }
 }
 
