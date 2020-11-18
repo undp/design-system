@@ -2,7 +2,6 @@
     top: 0;
     width: 100%;
     position: fixed;
-    max-height: 105px;
     z-index: $z-index-nav;
     background-color: $dark-blue-6;
     box-shadow: 0 3px 6px rgba($black, 0.09);
@@ -25,12 +24,17 @@
         padding: 0 70px 0 70px;
 
         @include breakpoint(large down) {
-            padding: 0 35px 0 35px;
+            max-height: 70px;
+            padding: 0 10px 0 10px;
         }
 
         .middle-menu {
             list-style: none;
             max-height: 105px;
+
+            @include breakpoint(large down) {
+                max-height: 70px;
+            }
 
             li:not(:last-child) {
                 color: red;
@@ -46,6 +50,10 @@
         .right-menu {
             .nav-item {
                 margin-right: 22px;
+
+                @include breakpoint(large down) {
+                    margin-right: 0;
+                }
             }
         }
     }
@@ -99,6 +107,54 @@
 
             li:not(:first-child) {
                 margin-top: 22px;
+            }
+        }
+    }
+
+    .menu-hamburger {
+        top: 0;
+        left: 0;
+        width: 24px;
+        display: block;
+        min-height: 28px;
+        position: relative;
+        z-index: $z-index-5;
+
+        &.is-active {
+            .hamburger-line {
+                &.line-top {
+                    transform: translateY(0px) rotate(45deg);
+                }
+
+                &.line-middle {
+                    opacity: 0;
+                    transform: translateX(6.33px);
+                }
+
+                &.line-bottom {
+                    transform: translateY(0px) rotate(-45deg);
+                }
+            }
+        }
+
+        .hamburger-line {
+            left: 0;
+            right: 0;
+            top: 12px;
+            width: 100%;
+            margin: auto;
+            height: 1.5px;
+            display: block;
+            position: absolute;
+            transition: .2s ease-out;
+            background-color: $blue-0;
+
+            &.line-top {
+                transform: translateY(-6.5px);
+            }
+
+            &.line-bottom {
+                transform: translateY(6.5px);
             }
         }
     }
