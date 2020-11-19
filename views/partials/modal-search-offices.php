@@ -11,17 +11,16 @@
             <div class="cell large-auto  cell-search height-full">
                 <a class="flex-container hide-for-large align-middle menu-btn-back uppercase" href="#" data-action-back data-btn-close>
                     <div class="arrow-black">
-                        <?php Svg::render('arrow-back-bigger', 'assets/images/arrows/')?>
+                        <?php Svg::render('arrow-back-bigger', 'assets/images/arrows/') ?>
                     </div>
                     Back
                 </a>
-                <h2 class="heading h2 title">Find Our Offices Around the World. </h2>
-                <p class="big-copy description">The UNDP works in 170 countries around the world. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing
-                    elit. Duis auctor, ante sed auctor faucibus, diam ante pellentesque turpis, sit amet dictum felis
-                    felis bibendum nisl. </p>
-                <p class="tag uppercase hide-for-large">current selection</p>
-                <h3 class="heading h3 title hide-for-large">undp global</h3>
+                <div class="header-modal">
+                    <h2 class="heading h2 title">Find Our Offices Around the World. </h2>
+                    <p class="big-copy description">The UNDP works in 170 countries around the world. Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Duis auctor, ante sed auctor faucibus, diam ante pellentesque turpis, sit amet dictum felis felis bibendum nisl. </p>
+                    <p class="tag uppercase hide-for-large tag-current-section">current selection</p>
+                    <h3 class="heading h3 title hide-for-large title-undp">UNDP Global</h3>
+                </div>
                 <form action="">
                     <div class="flex-container search-input-group">
                         <input class="big-copy input-search" type="text" placeholder="search">
@@ -34,7 +33,7 @@
                     <p class="tag uppercase">Filter by:</p>
                     <div class="custom-select big-copy">
                         <select>
-                            <option value="0" disabled selected>Region/Continent </option>
+                            <option value="0" disabled selected>Region/Continent</option>
                             <option value="1">option 1</option>
                             <option value="2">option 2</option>
                         </select>
@@ -136,6 +135,12 @@
                             <a class="language-link small-copy dark" href="#">Spanish</a>
                         </div>
                     </div>
+                </div>
+                <div class="flex-container align-center hide-for-large filter-options uppercase">
+                    <button class="flex-container align-middle align-center uppercase">
+                        Filter
+                        <span class="flex-container align-middle align-center current-filters">2</span>
+                    </button>
                 </div>
             </div>
         </div>

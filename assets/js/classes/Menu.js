@@ -7,7 +7,7 @@ class Menu {
         this.currentSubmenu = '';
         this.hiddenClass = 'hide'
         this.menuOpenClass = 'is-active'
-        this.bodyMenuOpenClass = 'menu-open'
+        this.bodyMenuOpenClass = 'menu-open modal-open'
 
         this.$body = $('body')
         this.$container = container

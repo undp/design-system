@@ -55,8 +55,48 @@ body {
                 background-color: transparent;
             }
 
-            .description {
-                margin-top: 35px;
+            .menu-btn-back {
+                font-size: 1.2rem;
+                font-weight: $bold;
+                padding-left: 15px;
+
+                svg {
+                    margin-right: 15px;
+                }
+            }
+
+            .header-modal {
+                @include breakpoint(medium down){
+                    padding: 0 30px;
+                }
+
+                .title {
+                    @include breakpoint(medium down) {
+                        font-size: 2rem;
+                        margin-top: 40px;
+                        font-weight: $regular;
+                    }
+                }
+
+                .description {
+                    margin-top: 35px;
+
+                    @include breakpoint(medium down) {
+                        margin-top: 20px;
+                        font-size: 1.4rem;
+                    }
+                }
+
+                .tag-current-section {
+                    margin-top: 30px;
+                }
+
+                .title-undp {
+                    color: $blue-0;
+                    font-size: 2rem;
+                    margin-top: 10px;
+                    font-weight: $semi-bold;
+                }
             }
 
             .search-input-group {
@@ -65,8 +105,8 @@ body {
                 .input-search {
                     height: 58px;
                     padding: 20px;
-                    border: 2px solid $black;
                     border-right: 0;
+                    border: 2px solid $black;
 
                     &::placeholder {
                         color: rgba($black, 0.35);
@@ -88,6 +128,7 @@ body {
                     margin-top: 15px;
                 }
             }
+
         }
 
         .cell-list-offices {
@@ -98,6 +139,7 @@ body {
 
             @include breakpoint(medium down) {
                 padding: 0 15px;
+                position: static;
                 box-shadow: unset;
             }
 
@@ -118,9 +160,11 @@ body {
 
                 @include breakpoint(medium down) {
                     right: 0;
+                    padding: 0;
                     width: 100%;
-                    padding: 0 15px;
-                    max-height: unset;
+                    margin-top: 30px;
+                    position: static;
+                    max-height: 250px;
                 }
 
 
@@ -153,6 +197,29 @@ body {
                                 }
                             }
                         }
+                    }
+                }
+            }
+
+            .filter-options {
+                margin: 30px 0 15px 0;
+
+                button  {
+                    padding: 15px 0;
+                    min-width: 100%;
+                    max-width: 100%;
+                    font-size: 1.6rem;
+                    font-weight: $bold;
+                    background-color: $dark-blue-9;
+
+                    .current-filters {
+                        width: 24px;
+                        height: 24px;
+                        color: $white;
+                        margin-left: 50px;
+                        border-radius: 50%;
+                        background-color: $red;
+                        font-weight: $semi-bold;
                     }
                 }
             }
