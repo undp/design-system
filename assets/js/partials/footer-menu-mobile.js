@@ -1,7 +1,7 @@
 import Foundation from 'foundation-sites'
 
 const init = function () {
-    if($(window).width() < 834){
+    function openMenuOptions() {
         $('.footer-subtitle').click((e)=>{
 
             let $target = $(e.currentTarget);
@@ -17,9 +17,17 @@ const init = function () {
         });
     }
 
+    if($(window).width() < 834){
+        openMenuOptions();
+    }
+
     $(window).resize(()=>{
         if(Foundation.MediaQuery.is('medium up')){
             $('.footer-body').find('.list').show();
+        }
+
+        if($(window).width() < 834){
+            openMenuOptions();
         }
     })
 }
