@@ -1,0 +1,68 @@
+.expertise-card{
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+
+    .text{
+        padding-bottom: 55px;
+        border-bottom: 3px solid $black;
+
+        @include breakpoint(xlarge down){
+            padding-bottom: 25px;
+        }
+
+        @include breakpoint(small only){
+            margin-top: 30px;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .heading.h3,
+        .heading.big-copy{
+            padding: 0 24px;
+
+            @include breakpoint(large down){
+                padding: 0 20px;
+            }
+
+            @include breakpoint(medium down){
+                padding: 0 15px;
+            }
+        }
+
+        .heading.big-copy{
+            margin-top: 30px;
+            overflow: hidden;
+            max-height: 210px;
+
+            @include breakpoint(large down){
+                max-height: 200px;
+            }
+
+            @include breakpoint(medium down){
+                margin-top: 25px;
+                max-height: 125px;
+            }
+
+        }
+    }
+
+    .cta-container{
+        padding: 0 24px;
+
+        @include breakpoint(large down){
+            padding: 0 20px;
+        }
+
+        @include breakpoint(medium down){
+            padding: 0 15px;
+        }
+
+        @include breakpoint(small only){
+            margin-top: 40px;
+            padding-bottom: 45px;
+        }
+    }
+
+}
