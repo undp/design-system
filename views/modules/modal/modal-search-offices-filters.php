@@ -7,7 +7,7 @@ use helpers\Svg;
 <section id="modal-search-offices-filters" class="hide-for-large modal-search-offices-filters hide">
     <div class="grid-container modal-content height-full">
         <div class="grid-x modal-body">
-            <div class="cell  cell-search">
+            <div class="cell">
                 <a class="flex-container hide-for-large align-middle tag menu-btn-back uppercase" href="#"
                    data-action-back data-btn-close>
                     <div class="arrow-black">
@@ -90,7 +90,9 @@ use helpers\Svg;
                             </div>
                         </div>
                     </div>
-                    <button class="btn full">Show all results</button>
+                    <div class="btn-filters">
+                        <input type="submit" class="btn full" value="Show all results">
+                    </div>
                 </form>
             </div>
         </div>
