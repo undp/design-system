@@ -146,9 +146,6 @@ use helpers\Svg;
                         </div>
                     </div>
                 </div>
-                <!--<div class="footer-foot">-->
-                <!--    <p class="footer-subtitle light">Copyright Statement UNDP 2020</p>-->
-                <!--</div>-->
             </div>
         </div>
         <div class="grid-x hide-for-large footer-body">
@@ -190,8 +187,8 @@ use helpers\Svg;
                     </div>
                 </div>
             </div>
-            <div class="small-11 medium-4 hide-for-small-only">
-                <div class="column">
+            <div class="small-11 medium-6 hide-for-small-only">
+                <!--<div class="column">-->
                     <div class="terms-conditions">
                         <ul class="list">
                             <li><a class="footer-menu-item light" href="#">Legal</a></li>
@@ -199,6 +196,13 @@ use helpers\Svg;
                             <li><a class="footer-menu-item light" href="#">Table Of Contents</a></li>
                         </ul>
                     </div>
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="grid-x">
+            <div class="cell small-offset-1 small-11 medium-offset-1 medium-11">
+                <div class="footer-foot">
+                    <p class="footer-subtitle light">Copyright Statement UNDP 2020</p>
                 </div>
             </div>
         </div>
