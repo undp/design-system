@@ -1,0 +1,73 @@
+.modal-search-offices-filters {
+    width: 100%;
+    position: fixed;
+    top: $height-nav;
+    overflow-y: auto;
+    z-index: $z-index-1;
+    height: calc(100vh - 105px);
+    background-color: rgba($white, 0.87);
+    backdrop-filter: blur(30px);
+
+    @include breakpoint(medium down) {
+        top: $height-nav-medium;
+        height: calc(100% - 70px);
+    }
+
+    .modal-content {
+        padding: 0;
+        position: relative;
+
+        .modal-header {
+
+        }
+
+        .modal-body {
+            height: 1px;
+            min-height: 100%;
+            align-content: flex-start;
+
+            .menu-btn-back {
+                padding: 30px 0 0 30px;
+
+                svg {
+                    margin-right: 12px;
+                }
+            }
+
+            .header-modal {
+                padding: 40px 50px 0 30px;
+
+                .clear-filter {
+                    font-size: 1.2rem;
+                    font-weight: $medium;
+                    color: $dark-blue-10;
+                    text-decoration: underline;
+                }
+            }
+
+            .filters {
+                padding: 0 50px 0 30px;
+
+                .filter-region,
+                .filter-office-type {
+                    margin-top: 16px;
+                    padding-top: 16px;
+                    border-top: 1px solid rgba($black, 0.10);
+
+                    .checkbox-group {
+                        margin-top: 18px;
+
+                        .checkbox-item {
+                            margin-top: 12px;
+                        }
+                    }
+                }
+
+                .filter-office-type {
+                    margin-top: 30px;
+                }
+            }
+        }
+
+    }
+}

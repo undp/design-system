@@ -9,6 +9,11 @@
     text-transform: uppercase;
     padding: 14px 24px 15px 29px;
 
+    &.full {
+        width: 100%;
+        justify-content: center;
+    }
+
     svg {
         margin-left: 14px;
         transition: transform 0.2s ease;
