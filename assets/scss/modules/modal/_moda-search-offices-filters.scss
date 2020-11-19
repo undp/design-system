@@ -22,7 +22,7 @@
         }
 
         .modal-body {
-            height: 1px;
+            position: relative;
             min-height: 100%;
             align-content: flex-start;
 
@@ -46,6 +46,7 @@
             }
 
             .filters {
+                margin-bottom: 100px;
                 padding: 0 50px 0 30px;
 
                 .filter-region,
@@ -69,7 +70,14 @@
             }
 
             .btn-filters {
-                margin: 0 12px;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                position: absolute;
+
+                .btn {
+                    height: 50px;
+                }
             }
         }
 

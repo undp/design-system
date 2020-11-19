@@ -222,12 +222,9 @@ body {
                     position: absolute;
                     width: calc(100% - 30px);
 
-                    button {
-                        padding: 15px 0;
-                        min-width: 100%;
-                        max-width: 100%;
-                        font-size: 1.6rem;
-                        font-weight: $bold;
+                    .btn-filters {
+                        height: 50px;
+                        color: $black;
                         background-color: $dark-blue-9;
 
                         .current-filters {
