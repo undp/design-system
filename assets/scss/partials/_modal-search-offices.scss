@@ -40,7 +40,12 @@ body {
         .modal-body {
             height: 1px;
             min-height: 100%;
+            position: relative;
             align-content: flex-start;
+
+            @include breakpoint(medium down) {
+                height: unset;
+            }
 
             .cell-search {
                 min-height: 100%;
@@ -109,6 +114,8 @@ body {
                         height: 58px;
                         padding: 20px;
                         border: 2px solid $black;
+                        min-width: calc(100% - 58px);
+                        max-width: calc(100% - 58px);
 
                         &::placeholder {
                             color: rgba($black, 0.35);
@@ -156,9 +163,9 @@ body {
                     left: 0;
                     right: 50px;
                     padding: 0 50px;
-                    margin-top: 44px;
                     overflow-y: auto;
                     position: absolute;
+                    margin: 44px 0 100px 0;
                     max-height: calc(100% - 280px);
                     scrollbar-color: $white $black;
 
@@ -209,7 +216,11 @@ body {
                 }
 
                 .filter-options {
-                    margin: 30px 15px 15px 0;
+                    left: 15px;
+                    right: 15px;
+                    bottom: 15px;
+                    position: absolute;
+                    width: calc(100% - 30px);
 
                     button {
                         padding: 15px 0;
