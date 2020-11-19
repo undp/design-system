@@ -16,6 +16,7 @@ use helpers\View;
 <?php View::render('modules/our-expertise') ?>
 <?php View::render('modules/join-us') ?>
 <?php View::render('modules/global-impact') ?>
+<?php View::render('modules/publications') ?>
 <?php View::render('modules/twitter-feed') ?>
 
 <!-- Footer -->

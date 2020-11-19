@@ -1,0 +1,41 @@
+.publications{
+    background-color: $dark-blue-6;
+
+
+    .section-title{
+        margin-top: 120px;
+
+        @include breakpoint(medium down){
+            margin-top: 80px;
+        }
+
+        @include breakpoint(small only){
+            margin-top: 125px;
+        }
+    }
+
+    .publications-slider{
+        margin-top: 70px;
+
+        @include breakpoint(large down){
+            margin-top: 80px;
+        }
+
+        @include breakpoint(medium down){
+            margin-top: 70px;
+        }
+
+        @include breakpoint(small only){
+            margin-top: 0;
+        }
+
+        .glide--slider{
+            @include breakpoint(small only){
+                display: flex;
+                margin-bottom: 125px;
+                flex-direction: column-reverse;
+            }
+        }
+
+    }
+}

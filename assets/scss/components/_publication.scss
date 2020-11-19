@@ -1,0 +1,69 @@
+.publication{
+    margin-top: 80px;
+    margin-bottom: 120px;
+
+    @include breakpoint(medium down){
+        margin-top: 50px;
+    }
+
+    @include breakpoint(small only){
+        margin-bottom: 45px;
+    }
+
+    .publication-image img{
+        width: 100%;
+    }
+
+
+    .publication-content{
+        @include breakpoint(small only){
+            margin-top: 35px;
+        }
+
+        .heading.h3{
+            overflow: hidden;
+            margin-top: 25px;
+            max-height: 115px;
+
+            @include breakpoint(medium down){
+                max-height: 75px;
+            }
+
+            @include breakpoint(small only){
+                margin-top: 20px;
+            }
+        }
+
+        .big-copy{
+            height: 108px;
+            overflow: hidden;
+            margin-top: 25px;
+
+            @include breakpoint(medium down){
+                height: 55px;
+            }
+
+            @include breakpoint(small only){
+                margin-top: 20px;
+            }
+        }
+
+        .controls{
+            display: flex;
+            margin-top: 95px;
+            justify-content: space-between;
+
+            @include breakpoint(medium down){
+                margin-top: 70px;
+            }
+
+            @include breakpoint(small only){
+                margin-top: 30px;
+            }
+
+            .btn-round.rotate{
+                margin-right: 30px;
+            }
+        }
+    }
+}
