@@ -3,8 +3,13 @@
     width: 100%;
     position: fixed;
     z-index: $z-index-nav;
+    transform: translateY(0);
     background-color: $dark-blue-6;
     box-shadow: 0 3px 6px rgba($black, 0.09);
+
+    &.static {
+        position: static;
+    }
 
     .nav-item {
         color: $dark-blue-1;
@@ -60,6 +65,16 @@
                 }
             }
         }
+    }
+
+    .primary-navigation {
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        position: fixed;
+        transform: translateY(0px);
     }
 
     .dropdown {

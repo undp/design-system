@@ -24,7 +24,6 @@ class Menu {
 
     bindHamburgerEvents() {
         this.$hamburguer.click(() => {
-            console.log('testing::', this.$hamburguer);
             if (!this.expanded) {
                 this.openMenu()
                 this.$hamburguer.addClass(this.menuOpenClass);
@@ -42,6 +41,7 @@ class Menu {
                 const subMenu = $(item).data('submenu');
                 if (subMenu && subMenu === 'modal-search-offices') {
                     this.closeMenu();
+                    this.$container.addClass('static');
                 }
                 if (subMenu) {
                     this.currentSubmenu = $('#' + subMenu);
@@ -69,7 +69,6 @@ class Menu {
     openMenu() {
         this.$body.addClass(this.bodyMenuOpenClass)
         this.$mainMenu.removeClass(this.hiddenClass);
-
     }
 
     openSubmenu() {
@@ -78,6 +77,7 @@ class Menu {
 
     closeSubmenu() {
         this.currentSubmenu.addClass('hide');
+        this.$container.removeClass('static');
     }
 
     closeMenu() {
