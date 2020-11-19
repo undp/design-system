@@ -32,7 +32,7 @@ use helpers\View;
                     <a class="nav-item dark" href="#" data-modal-open data-modal="modal-search-offices">
                         <?php Svg::render('icon-www')?>
                     </a>
-                    <a class="nav-item dark" href="#">
+                    <a class="nav-item dark" href="#" data-modal-open data-modal="modal-popular-search">
                         <?php Svg::render('icon-search')?>
                     </a>
                 </div>
@@ -41,3 +41,4 @@ use helpers\View;
     </div>
 </section>
 <?php View::render('partials/modal-search-offices')?>
+<?php View::render('partials/modal-popular-search')?>

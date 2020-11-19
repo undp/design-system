@@ -13,6 +13,8 @@ body {
     overflow-y: auto;
     z-index: $z-index-1;
     height: calc(100vh - 105px);
+    backdrop-filter: blur(30px);
+    background-color: rgba($white, 0.87);
 
     .modal-content {
         padding: 0;
@@ -73,9 +75,7 @@ body {
             opacity: 0.87;
             padding: 80px 50px;
             position: relative;
-            background-color: $white;
             box-shadow: 0 3px 6px rgba($black, 0.16);
-            backdrop-filter: blur(21px) brightness(31%);
 
             .title {
                 color: $blue-0;
@@ -98,7 +98,7 @@ body {
                 }
 
                 &::-webkit-scrollbar-track {
-                    background: linear-gradient(90deg, $white 25%, $black 50%, $white 25%);
+                    background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
                 }
 
                 &::-webkit-scrollbar-thumb {

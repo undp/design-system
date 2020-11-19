@@ -1,0 +1,38 @@
+.our-expertise{
+    position: relative;
+    margin-bottom: 70px;
+
+    .our-expertise-row{
+        &:first-child{
+            padding-top: 140px;
+
+            @include breakpoint(large down){
+                padding-top: 125px;
+            }
+
+            @include breakpoint(medium down){
+                padding-top: 95px;
+            }
+        }
+
+        &:not(:first-child) {
+            margin-top: -40px;
+        }
+    }
+
+    @include breakpoint(medium up){
+        &::before{
+            content: '';
+            left: 50.6%;
+            width: 100%;
+            z-index: -1;
+            height: 100%;
+            max-width: 1440px;
+            position: absolute;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            background-image: linear-gradient(90deg, $dark-blue-4 1px, rgba($dark-blue-4,0) 1px);
+            background-size: 24.6%;
+        }
+    }
+}
