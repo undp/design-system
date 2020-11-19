@@ -1,0 +1,39 @@
+.twitter-feed{
+    padding-top: 120px;
+    padding-bottom: 125px;
+    background-color: $dark-blue-1;
+
+    @include breakpoint(medium down){
+        padding-top: 90px;
+        padding-bottom: 85px;
+    }
+
+    @include breakpoint(small only){
+        padding-top: 120px;
+        padding-bottom: 110px;
+    }
+
+    .section-title{
+        color: $white;
+        display: flex;
+        align-items: center;
+
+        img{
+            width: 35px;
+            height: 35px;
+            margin-left: 15px;
+        }
+    }
+
+    .tweets{
+        margin-top: 130px;
+
+        @include breakpoint(medium down){
+            margin-top: 90px;
+        }
+
+        @include breakpoint(small only){
+            margin-top: 100px;
+        }
+    }
+}
