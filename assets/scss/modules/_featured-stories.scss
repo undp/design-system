@@ -1,0 +1,22 @@
+.featured-stories{
+    margin-bottom: 25px;
+
+    .title-container{
+        @include breakpoint(large up){
+            display: flex;
+            justify-content: center;
+        }
+
+        .section-title{
+            margin-top: 40px;
+
+            @include breakpoint(medium down){
+                margin-top: 20px;
+            }
+
+            @include breakpoint(small only){
+                margin: 120px 0 85px 40px;
+            }
+        }
+    }
+}

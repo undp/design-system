@@ -8,12 +8,15 @@ use helpers\View;
 <!-- Navigation -->
 <?php //View::render('partials/navigation') ?>
 
+
 <!-- Navigation -->
 <?php View::render('modules/hero') ?>
-<?php View::render('modules/our-expertise') ?>
+<?php View::render('modules/featured-stories') ?>
 <?php View::render('modules/our-mission') ?>
+<?php View::render('modules/our-expertise') ?>
 <?php View::render('modules/join-us') ?>
 <?php View::render('modules/global-impact') ?>
+<?php View::render('modules/twitter-feed') ?>
 
 <!-- Footer -->
 <?php //View::render('partials/footer'); ?>
