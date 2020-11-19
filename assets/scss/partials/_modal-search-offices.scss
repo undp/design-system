@@ -17,10 +17,8 @@ body {
     overflow-y: auto;
     z-index: $z-index-1;
     height: calc(100vh - 105px);
-    backdrop-filter: blur(30px);
     background-color: rgba($white, 0.87);
     backdrop-filter: blur(30px);
-    background-color: rgba($white, 0.87);
 
     @include breakpoint(medium down) {
         top: $height-nav-medium;
@@ -46,25 +44,22 @@ body {
 
             .cell-search {
                 min-height: 100%;
-                opacity: 0.86;
                 max-width: 525px;
                 padding: 75px 60px;
-                background-color: $dark-blue-8;
                 box-shadow: 0 3px 6px rgba($black, 0.16);
+                background-color: rgba($dark-blue-8, 0.86);
                 backdrop-filter: blur(30px) brightness(15%);
 
                 @include breakpoint(medium down) {
-                    min-height: unset;
                     max-width: unset;
                     box-shadow: unset;
+                    min-height: unset;
                     backdrop-filter: unset;
                     padding: 25px 15px 0 15px;
                     background-color: transparent;
                 }
 
                 .menu-btn-back {
-                    font-size: 1.2rem;
-                    font-weight: $bold;
                     padding-left: 15px;
 
                     svg {
@@ -175,7 +170,6 @@ body {
                         position: static;
                         max-height: 250px;
                     }
-
 
                     &::-webkit-scrollbar {
                         width: 5px;

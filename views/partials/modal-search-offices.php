@@ -9,7 +9,7 @@
         </button>
         <div class="grid-x modal-body">
             <div class="cell large-auto  cell-search">
-                <a class="flex-container hide-for-large align-middle menu-btn-back uppercase" href="#" data-action-back data-btn-close>
+                <a class="flex-container hide-for-large align-middle tag menu-btn-back uppercase" href="#" data-action-back data-btn-close>
                     <div class="arrow-black">
                         <?php Svg::render('arrow-back-bigger', 'assets/images/arrows/') ?>
                     </div>
