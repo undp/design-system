@@ -39,196 +39,205 @@ body {
             z-index: $z-index-2;
         }
 
-        .cell-search {
-            opacity: 0.86;
-            max-width: 525px;
-            padding: 75px 60px;
-            background-color: $dark-blue-8;
-            box-shadow: 0 3px 6px rgba($black, 0.16);
-            backdrop-filter: blur(30px) brightness(15%);
+        .modal-body {
+            height: 1px;
+            min-height: 100%;
+            align-content: flex-start;
 
-            @include breakpoint(medium down) {
-                max-width: unset;
-                box-shadow: unset;
-                backdrop-filter: unset;
-                padding: 25px 15px 0 15px;
-                background-color: transparent;
-            }
+            .cell-search {
+                min-height: 100%;
+                opacity: 0.86;
+                max-width: 525px;
+                padding: 75px 60px;
+                background-color: $dark-blue-8;
+                box-shadow: 0 3px 6px rgba($black, 0.16);
+                backdrop-filter: blur(30px) brightness(15%);
 
-            .menu-btn-back {
-                font-size: 1.2rem;
-                font-weight: $bold;
-                padding-left: 15px;
-
-                svg {
-                    margin-right: 15px;
+                @include breakpoint(medium down) {
+                    min-height: unset;
+                    max-width: unset;
+                    box-shadow: unset;
+                    backdrop-filter: unset;
+                    padding: 25px 15px 0 15px;
+                    background-color: transparent;
                 }
+
+                .menu-btn-back {
+                    font-size: 1.2rem;
+                    font-weight: $bold;
+                    padding-left: 15px;
+
+                    svg {
+                        margin-right: 15px;
+                    }
+                }
+
+                .header-modal {
+                    @include breakpoint(medium down) {
+                        padding: 0 30px;
+                    }
+
+                    .title {
+                        @include breakpoint(medium down) {
+                            font-size: 2rem;
+                            margin-top: 40px;
+                            font-weight: $regular;
+                        }
+                    }
+
+                    .description {
+                        margin-top: 35px;
+
+                        @include breakpoint(medium down) {
+                            margin-top: 20px;
+                            font-size: 1.4rem;
+                        }
+                    }
+
+                    .tag-current-section {
+                        margin-top: 30px;
+                    }
+
+                    .title-undp {
+                        color: $blue-0;
+                        font-size: 2rem;
+                        margin-top: 10px;
+                        font-weight: $semi-bold;
+                    }
+                }
+
+                .search-input-group {
+                    margin-top: 20px;
+
+                    .input-search {
+                        margin: 0;
+                        height: 58px;
+                        padding: 20px;
+                        border: 2px solid $black;
+
+                        &::placeholder {
+                            color: rgba($black, 0.35);
+                        }
+                    }
+
+                    .btn-search {
+                        width: 58px;
+                        height: 58px;
+                        cursor: pointer;
+                        background: $red;
+                        border: 2px solid $black;
+                        border-left: 0;
+                    }
+                }
+
+                .search-select-group {
+                    margin-top: 60px;
+
+                    .custom-select:not(:first-child) {
+                        margin-top: 15px;
+                    }
+                }
+
             }
 
-            .header-modal {
-                @include breakpoint(medium down){
-                    padding: 0 30px;
+            .cell-list-offices {
+                opacity: 0.87;
+                padding: 80px 50px;
+                position: relative;
+                box-shadow: 0 3px 6px rgba($black, 0.16);
+
+                @include breakpoint(medium down) {
+                    position: static;
+                    box-shadow: unset;
+                    padding: 0 0 0 15px;
                 }
 
                 .title {
-                    @include breakpoint(medium down) {
-                        font-size: 2rem;
-                        margin-top: 40px;
-                        font-weight: $regular;
-                    }
-                }
-
-                .description {
-                    margin-top: 35px;
-
-                    @include breakpoint(medium down) {
-                        margin-top: 20px;
-                        font-size: 1.4rem;
-                    }
-                }
-
-                .tag-current-section {
-                    margin-top: 30px;
-                }
-
-                .title-undp {
                     color: $blue-0;
-                    font-size: 2rem;
-                    margin-top: 10px;
-                    font-weight: $semi-bold;
-                }
-            }
-
-            .search-input-group {
-                margin-top: 20px;
-
-                .input-search {
-                    height: 58px;
-                    padding: 20px;
-                    border-right: 0;
-                    border: 2px solid $black;
-
-                    &::placeholder {
-                        color: rgba($black, 0.35);
-                    }
-                }
-
-                .btn-search {
-                    width: 58px;
-                    height: 58px;
-                    cursor: pointer;
-                    background: $red;
-                }
-            }
-
-            .search-select-group {
-                margin-top: 60px;
-
-                .custom-select:not(:first-child) {
                     margin-top: 15px;
                 }
-            }
 
-        }
+                .countries {
+                    left: 0;
+                    right: 50px;
+                    padding: 0 50px;
+                    margin-top: 44px;
+                    overflow-y: auto;
+                    position: absolute;
+                    max-height: calc(100% - 280px);
+                    scrollbar-color: $white $black;
 
-        .cell-list-offices {
-            opacity: 0.87;
-            padding: 80px 50px;
-            position: relative;
-            box-shadow: 0 3px 6px rgba($black, 0.16);
-
-            @include breakpoint(medium down) {
-                padding: 0 15px;
-                position: static;
-                box-shadow: unset;
-            }
-
-            .title {
-                color: $blue-0;
-                margin-top: 15px;
-            }
-
-            .countries {
-                left: 0;
-                right: 50px;
-                padding: 0 50px;
-                margin-top: 44px;
-                overflow-y: auto;
-                position: absolute;
-                max-height: calc(100% - 280px);
-                scrollbar-color: $white $black;
-
-                @include breakpoint(medium down) {
-                    right: 0;
-                    padding: 0;
-                    width: 100%;
-                    margin-top: 30px;
-                    position: static;
-                    max-height: 250px;
-                }
+                    @include breakpoint(medium down) {
+                        right: 0;
+                        padding: 0;
+                        width: 100%;
+                        margin-top: 30px;
+                        position: static;
+                        max-height: 250px;
+                    }
 
 
-                &::-webkit-scrollbar {
-                    width: 5px;
-                }
+                    &::-webkit-scrollbar {
+                        width: 5px;
+                    }
 
-                &::-webkit-scrollbar-track {
-                    background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
-                }
+                    &::-webkit-scrollbar-track {
+                        background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
+                    }
 
-                &::-webkit-scrollbar-thumb {
-                    background-color: black;
-                }
+                    &::-webkit-scrollbar-thumb {
+                        background-color: black;
+                    }
 
-                .country-item {
-                    padding: 20px 25px 20px 5px;
-                    border-top: 1px solid rgba($black, 0.10);
+                    .country-item {
+                        padding: 20px 25px 20px 5px;
+                        border-top: 1px solid rgba($black, 0.10);
 
-                    .languages {
-                        .language-link {
-                            &:after {
-                                content: url('#{$image-path}icon-visit-link.svg');
-                                margin: 0 20px 0 12px;
-                            }
-
-                            &:last-child {
+                        .languages {
+                            .language-link {
                                 &:after {
-                                    margin-right: 0;
+                                    content: url('#{$image-path}icon-visit-link.svg');
+                                    margin: 0 20px 0 12px;
+
+                                    @include breakpoint(medium down) {
+                                        margin: 0 5px;
+                                    }
+                                }
+
+                                &:last-child {
+                                    &:after {
+                                        margin-right: 0;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
 
-            .filter-options {
-                margin: 30px 0 15px 0;
+                .filter-options {
+                    margin: 30px 15px 15px 0;
 
-                button  {
-                    padding: 15px 0;
-                    min-width: 100%;
-                    max-width: 100%;
-                    font-size: 1.6rem;
-                    font-weight: $bold;
-                    background-color: $dark-blue-9;
+                    button {
+                        padding: 15px 0;
+                        min-width: 100%;
+                        max-width: 100%;
+                        font-size: 1.6rem;
+                        font-weight: $bold;
+                        background-color: $dark-blue-9;
 
-                    .current-filters {
-                        width: 24px;
-                        height: 24px;
-                        color: $white;
-                        margin-left: 50px;
-                        border-radius: 50%;
-                        background-color: $red;
-                        font-weight: $semi-bold;
+                        .current-filters {
+                            width: 24px;
+                            height: 24px;
+                            color: $white;
+                            margin-left: 50px;
+                            border-radius: 50%;
+                            background-color: $red;
+                            font-weight: $semi-bold;
+                        }
                     }
                 }
             }
         }
-    }
 
-    .height-full {
-        @include breakpoint(medium down) {
-            height: unset;
-        }
     }
 }

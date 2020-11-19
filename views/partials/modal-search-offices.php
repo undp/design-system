@@ -7,8 +7,8 @@
         <button class="close-button show-for-large" data-btn-close>
             <?php Svg::render('icon-close') ?>
         </button>
-        <div class="grid-x height-full modal-body">
-            <div class="cell large-auto  cell-search height-full">
+        <div class="grid-x modal-body">
+            <div class="cell large-auto  cell-search">
                 <a class="flex-container hide-for-large align-middle menu-btn-back uppercase" href="#" data-action-back data-btn-close>
                     <div class="arrow-black">
                         <?php Svg::render('arrow-back-bigger', 'assets/images/arrows/') ?>
