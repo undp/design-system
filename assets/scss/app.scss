@@ -13,6 +13,7 @@
 @import 'partials/footer';
 @import 'partials/navigation';
 @import 'partials/custom-select';
+@import 'partials/custom-checkbox';
 @import 'partials/modal-search-offices';
 @import 'partials/modal-popular-search';
 @import 'partials/slider-bullets';
@@ -26,6 +27,10 @@
 @import "modules/global-impact";
 @import "modules/publications";
 @import "modules/twitter-feed";
+@import "modules/menu/hamburger";
+@import "modules/menu/main-options";
+@import "modules/menu/menu-item-options";
+@import "modules/modal/modal-search-offices-filters";
 
 // Components
 @import "components/stat-card";

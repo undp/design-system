@@ -1,9 +1,14 @@
 class Modal {
     constructor() {
+        this.modalFilter = null;
         this.currentModal = null;
 
         this.$body = $('body');
         this.$modals = $('[data-modal-open]');
+        this.$modalFilterName = 'modal-filter';
+        this.$btnOpenFilter = '[data-open-filters]';
+        this.$btnCloseCurrentModal = '[data-btn-close]';
+        this.$btnBackModalFilter = '[data-action-back]';
     }
 
     init() {
@@ -20,6 +25,7 @@ class Modal {
                     if (this.currentModal) {
                         this.open();
                         this.listenerCloseModal();
+                        this.listenerOpenFilters();
                     }
                 }
             });
@@ -27,8 +33,36 @@ class Modal {
     }
 
     listenerCloseModal() {
-        const btnCloseModal = this.currentModal.find('[data-btn-close]');
-        $(btnCloseModal).click(() => { this.close()})
+        const btnCloseModal = this.currentModal.find(this.$btnCloseCurrentModal);
+        $(btnCloseModal).click((evt) => {
+            evt.preventDefault();
+            this.close()
+        })
+    }
+
+    listenerOpenFilters() {
+        const btnFilters = this.currentModal.find(this.$btnOpenFilter)
+        if(btnFilters) {
+            $(btnFilters).click((evt) => {
+                evt.preventDefault();
+                const modalFilter = btnFilters.data(this.$modalFilterName);
+                if (modalFilter) {
+                    this.modalFilter = $('#' + modalFilter);
+                    this.openFilters()
+                    this.listenerCloseModalFilters();
+                }
+            })
+        }
+    }
+
+    listenerCloseModalFilters() {
+        const btnCloseFilters = this.modalFilter.find(this.$btnBackModalFilter);
+        if (btnCloseFilters) {
+            btnCloseFilters.click((evt) => {
+                evt.preventDefault();
+                this.closeFilters();
+            })
+        }
     }
 
     open() {
@@ -39,6 +73,16 @@ class Modal {
     close() {
         this.currentModal.addClass('hide');
         this.$body.removeClass('modal-open');
+    }
+
+    openFilters() {
+        this.currentModal.addClass('hide');
+        this.modalFilter.removeClass('hide');
+    }
+
+    closeFilters() {
+        this.currentModal.removeClass('hide');
+        this.modalFilter.addClass('hide');
     }
 }
 
