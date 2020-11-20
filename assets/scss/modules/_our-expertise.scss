@@ -1,6 +1,6 @@
 .our-expertise{
     position: relative;
-    margin-bottom: 70px;
+    //margin-bottom: 70px;
 
     .our-expertise-row{
         &:first-child{
@@ -17,6 +17,12 @@
 
         &:not(:first-child) {
             margin-top: -40px;
+        }
+
+        .section-title{
+            position: absolute;
+            top: 140px;
+            left: 140px;
         }
     }
 
