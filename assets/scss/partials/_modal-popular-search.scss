@@ -33,6 +33,18 @@
 
                 .icon {
                     margin-right: 20px;
+
+                    @include breakpoint(medium down){
+                        margin-right:0;
+
+                        svg {
+                            width: 22px;
+                        }
+                    }
+                }
+
+                @include breakpoint(medium down){
+                    border-bottom: 1px solid $dark-blue-1;
                 }
 
                 .input-search {
@@ -42,6 +54,11 @@
                     padding: 0 45px 0 30px;
                     background-color: transparent;
                     border-bottom: 1px solid $dark-blue-1;
+
+                    @include breakpoint(medium down) {
+                        border: none;
+                        padding: 10px 20px 10px 20px;
+                    }
 
                     &:active,
                     &:focus {
@@ -62,10 +79,6 @@
                 line-height: 1.4;
                 font-size: 4.5rem;
                 font-weight: $light;
-
-                @include breakpoint(medium down) {
-                    margin-top: 35px;
-                }
 
                 @include breakpoint(medium down) {
                     font-weight: $regular;
