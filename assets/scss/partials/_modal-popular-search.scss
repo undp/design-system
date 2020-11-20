@@ -25,6 +25,10 @@
         .modal-body {
             padding: 120px 170px 120px 120px;
 
+            @include breakpoint(medium down){
+                padding: 70px 45px;
+            }
+
             .input-group {
 
                 .icon {
@@ -32,35 +36,68 @@
                 }
 
                 .input-search {
+                    width: 100%;
                     border: none;
                     box-shadow: none;
-                    padding: 45px 45px 45px 30px;
+                    padding: 0 45px 0 30px;
                     background-color: transparent;
                     border-bottom: 1px solid $dark-blue-1;
+
+                    &:active,
+                    &:focus {
+                        outline: none;
+                    }
                 }
             }
 
             .list-popular-search {
                 padding-left: 70px;
+
+                @include breakpoint(medium down) {
+                    padding-left: 0;
+                }
             }
 
             .title {
                 line-height: 1.4;
                 font-size: 4.5rem;
                 font-weight: $light;
-                font-family: $primary-font;
+
+                @include breakpoint(medium down) {
+                    margin-top: 35px;
+                }
+
+                @include breakpoint(medium down) {
+                    font-weight: $regular;
+                    font-size: 1.4rem;
+                }
+
             }
 
             .lists {
                 margin-top: 115px;
 
+                @include breakpoint(medium down) {
+                    margin-top: 46px;
+                }
+
                 .list {
                     margin-top: 35px;
                     list-style-type: none;
 
+                    @include breakpoint(medium down) {
+                        margin-top: 20px;
+                        padding-left: 22px;
+                    }
+
                     li {
-                        font-weight: $bold;
                         font-size: 1.4rem;
+                        font-weight: $bold;
+
+                        @include breakpoint(medium down) {
+                            font-weight: $semi-bold;
+                            text-transform: lowercase;
+                        }
 
                         &:not(:first-child) {
                             margin-top: 15px;

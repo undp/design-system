@@ -6,7 +6,7 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php //View::render('partials/navigation') ?>
+<?php View::render('partials/navigation') ?>
 
 
 <!-- Navigation -->
