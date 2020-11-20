@@ -25,42 +25,98 @@
         .modal-body {
             padding: 120px 170px 120px 120px;
 
+            @include breakpoint(medium down) {
+                padding: 70px 45px;
+            }
+
             .input-group {
 
                 .icon {
                     margin-right: 20px;
+
+                    @include breakpoint(medium down) {
+                        margin-right: 0;
+
+                        svg {
+                            width: 22px;
+                        }
+                    }
+                }
+
+                @include breakpoint(medium down) {
+                    border-bottom: 1px solid $dark-blue-1;
                 }
 
                 .input-search {
+                    width: 100%;
                     border: none;
                     box-shadow: none;
-                    padding: 45px 45px 45px 30px;
+                    padding: 0 45px 0 30px;
                     background-color: transparent;
                     border-bottom: 1px solid $dark-blue-1;
+
+                    @include breakpoint(medium down) {
+                        border: none;
+                        padding: 10px 20px 10px 20px;
+                    }
+
+                    &:active,
+                    &:focus {
+                        outline: none;
+                    }
                 }
             }
 
             .list-popular-search {
                 padding-left: 70px;
+
+                @include breakpoint(medium down) {
+                    padding-left: 0;
+                }
+            }
+
+            .list-quick-links {
+                @include breakpoint(medium down) {
+                    margin-top: 35px;
+                }
             }
 
             .title {
                 line-height: 1.4;
                 font-size: 4.5rem;
                 font-weight: $light;
-                font-family: $primary-font;
+
+                @include breakpoint(medium down) {
+                    font-weight: $regular;
+                    font-size: 1.4rem;
+                }
+
             }
 
             .lists {
                 margin-top: 115px;
 
+                @include breakpoint(medium down) {
+                    margin-top: 46px;
+                }
+
                 .list {
                     margin-top: 35px;
                     list-style-type: none;
 
+                    @include breakpoint(medium down) {
+                        margin-top: 20px;
+                        padding-left: 22px;
+                    }
+
                     li {
-                        font-weight: $bold;
                         font-size: 1.4rem;
+                        font-weight: $bold;
+
+                        @include breakpoint(medium down) {
+                            font-weight: $semi-bold;
+                            text-transform: lowercase;
+                        }
 
                         &:not(:first-child) {
                             margin-top: 15px;
