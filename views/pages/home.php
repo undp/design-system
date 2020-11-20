@@ -10,7 +10,7 @@ use helpers\View;
 
 
 <!-- Navigation -->
-<?php View::render('modules/hero') ?>
+<?php //View::render('modules/hero') ?>
 <?php View::render('modules/featured-stories') ?>
 <?php View::render('modules/our-mission') ?>
 <?php View::render('modules/our-expertise') ?>
@@ -21,7 +21,7 @@ use helpers\View;
 <?php View::render('modules/twitter-feed') ?>
 
 <!-- Footer -->
-<?php //View::render('partials/footer'); ?>
+<?php View::render('partials/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 </html>

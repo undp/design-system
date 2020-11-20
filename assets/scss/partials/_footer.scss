@@ -5,33 +5,77 @@
     font-family: $primary-font;
 
     .footer-head {
+
+        @include breakpoint(medium down){
+            padding-left: 8.33%;
+            padding-right: 8.33%;
+        }
+
+        @include breakpoint(small only){
+            display: grid;
+            justify-items: center;
+            justify-content: center;
+        }
+
         .undp-logo {
             min-width: 60px;
             margin-right: 25px;
+        }
+
+        .footer-subtitle{
+            text-align: right;
+
+            @include breakpoint(small only){
+                text-align: left;
+            }
+        }
+
+        .sign-up{
+            @include breakpoint(small only){
+                width: 100%;
+                margin-top: 45px;
+            }
         }
 
         .group-input-sign-up {
             margin-top: 15px;
 
             .input-sign-up {
+                height: 30px;
                 color: $white;
-                max-height: 30px;
                 min-width: 185px;
+                padding: 8px 14px;
+                font-size: 1.4rem;
                 border: 1px solid $white;
-                border-right: 0;
                 background-color: $blue-0;
 
+                @include breakpoint(small only){
+                    width: 100%;
+                    height: 46px;
+                    padding: 16px;
+                }
+
                 &::placeholder {
+                    font-size: 1.4rem;
                     color: rgba($white, 0.43);
+                }
+
+                &:focus{
+                    outline: none;
                 }
             }
 
             .btn-submit {
                 border: none;
-                max-height: 30px;
-                padding: 0 15px;
                 color: $blue-0;
+                padding: 0 15px;
+                font-size: 1.4rem;
                 background-color: $white;
+                text-transform: uppercase;
+
+                &:focus{
+                    outline: none;
+                }
             }
         }
     }
@@ -41,58 +85,128 @@
         padding-top: 50px;
         border-top: 2px solid $white;
 
+        @include breakpoint(medium down){
+            padding-left: 8.33%;
+            padding-right: 8.33%;
+        }
+
+        @include breakpoint(small only){
+            display: grid;
+            padding-top: 40px;
+        }
+
         .column {
+            @include breakpoint(small only){
+                &:not(:first-child){
+                    margin-top: 40px;
+                }
+            }
+
             .list {
+                padding-left: 0;
+                margin-top: 25px;
                 list-style: none;
-                margin-top: 22px;
+
+                @include breakpoint(small only){
+                    display: none;
+                }
 
                 li:not(:first-child) {
                     margin-top: 15px;
                 }
             }
 
-            .icons-search {
-                .icon {
-                    &:not(:last-child) {
-                        margin-right: 22px;
+            .icons-search .icon:first-child {
+                margin-right: 22px;
+
+                @include breakpoint(small only){
+                    margin-right: 27px;
+                }
+            }
+
+            &:first-child {
+                max-width: 118px;
+
+                @include breakpoint(small only){
+                    max-width: unset;
+                }
+            }
+
+            &:nth-child(2) {
+                max-width: 160px;
+
+                @include breakpoint(small only){
+                    max-width: unset;
+                }
+            }
+
+            &:nth-child(3) {
+                max-width: 85px;
+
+                @include breakpoint(small only){
+                    max-width: unset;
+                }
+            }
+
+            &:nth-child(4) {
+                max-width: 145px;
+
+                @include breakpoint(small only){
+                    max-width: unset;
+                }
+            }
+
+            &:nth-child(5) {
+                max-width: 80px;
+
+                @include breakpoint(small only){
+                    max-width: unset;
+                }
+            }
+        }
+
+        .terms-conditions {
+            margin-top: 50px;
+            text-align: right;
+
+            @include breakpoint(medium down){
+                margin-top: 0;
+
+                .list{
+                    margin-top: 0;
+                    padding-left: 0;
+                    list-style: none;
+
+                    li:not(:first-child) {
+                        margin-top: 15px;
                     }
                 }
             }
 
-            .terms-conditions {
-                margin-top: 50px;
+            @include breakpoint(small only){
+                margin-top: 10px;
+                text-align: left;
+
+                .list{
+                    display: block;
+                }
             }
         }
 
-        .who-we-are {
-            max-width: 118px;
-        }
 
-        .who-we-do {
-            max-width: 160px;
-        }
-
-        .our-impact {
-            max-width: 85px;
-        }
-
-        .get-involved {
-            max-width: 145px;
-        }
-
-        .languages {
-            max-width: 80px;
-        }
 
         .legal {
-            max-width: 230px;
             text-align: right;
 
             .social-links {
                 margin-top: 35px;
 
+                @include breakpoint(small only){
+                    margin-top: 50px;
+                }
+
                 .social-link:not(:last-child) {
-                    margin-right: 15px;
+                    margin-right: 35px;
                 }
 
                 .icon {
@@ -128,10 +242,6 @@
         }
     }
 
-    .footer-foot {
-        margin-top: 80px;
-    }
-
     .light {
         color: $white;
     }
@@ -145,6 +255,27 @@
         line-height: 1.7;
         font-size: 1.3rem;
         font-weight: $semi-bold;
+
+        @include breakpoint(small only){
+            display: flex;
+            line-height: 1.1;
+            font-size: 1.4rem;
+            align-items: flex-start;
+        }
+
+        .footer-subtitle-arrow{
+            display: none;
+
+            @include breakpoint(small only){
+                display: unset;
+                margin-left: 20px;
+            }
+
+            &.rotate{
+                margin-bottom: -2px;
+                transform: scaleY(-1);
+            }
+        }
     }
 
     .footer-menu-item {
@@ -165,4 +296,13 @@
             border-bottom: 1px solid $white;
         }
     }
+
+    .footer-foot {
+        margin-top: 80px;
+
+        @include breakpoint(medium down){
+            margin-top: 50px;
+        }
+    }
+
 }

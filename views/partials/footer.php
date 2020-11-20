@@ -28,7 +28,12 @@ use helpers\Svg;
                 </div>
                 <div class="footer-body flex-container align-justify">
                     <div class="column who-we-are">
-                        <h4 class="footer-subtitle light uppercase">Who we are</h4>
+                        <h4 class="footer-subtitle light uppercase">
+                            Who we are
+                            <span class="footer-subtitle-arrow">
+                                <?php Svg::render('footer-arrow') ?>
+                            </span>
+                        </h4>
                         <ul class="list">
                             <li><a class="footer-menu-item light active" href="#">Mission and Vision</a></li>
                             <li><a class="footer-menu-item light" href="#">History</a></li>
@@ -41,7 +46,12 @@ use helpers\Svg;
                         </ul>
                     </div>
                     <div class="column who-we-do">
-                        <h4 class="footer-subtitle light uppercase">Who we do</h4>
+                        <h4 class="footer-subtitle light uppercase">
+                            Who we do
+                            <span class="footer-subtitle-arrow">
+                                <?php Svg::render('footer-arrow') ?>
+                            </span>
+                        </h4>
                         <ul class="list">
                             <li><a class="footer-menu-item light" href="#">Sustainable Development Goals</a></li>
                             <li><a class="footer-menu-item light" href="#">Human Development Report</a></li>
@@ -50,7 +60,12 @@ use helpers\Svg;
                         </ul>
                     </div>
                     <div class="column our-impact">
-                        <h4 class="footer-subtitle light uppercase">Our impact</h4>
+                        <h4 class="footer-subtitle light uppercase">
+                            Our impact
+                            <span class="footer-subtitle-arrow">
+                                <?php Svg::render('footer-arrow') ?>
+                            </span>
+                        </h4>
                         <ul class="list">
                             <li><a class="footer-menu-item light" href="#">Results</a></li>
                             <li><a class="footer-menu-item light" href="#">Expertise</a></li>
@@ -61,7 +76,12 @@ use helpers\Svg;
                         </ul>
                     </div>
                     <div class="column get-involved">
-                        <h4 class="footer-subtitle light uppercase">Get Involved</h4>
+                        <h4 class="footer-subtitle light uppercase">
+                            Get Involved
+                            <span class="footer-subtitle-arrow">
+                                <?php Svg::render('footer-arrow') ?>
+                            </span>
+                        </h4>
                         <ul class="list">
                             <li><a class="footer-menu-item light" href="#">For Governments</a></li>
                             <li><a class="footer-menu-item light" href="#">For Private Sector</a></li>
@@ -77,14 +97,19 @@ use helpers\Svg;
                         </ul>
                     </div>
                     <div class="column language">
-                        <h4 class="footer-subtitle light uppercase">Language</h4>
+                        <h4 class="footer-subtitle light uppercase">
+                            Language
+                            <span class="footer-subtitle-arrow">
+                                <?php Svg::render('footer-arrow') ?>
+                            </span>
+                        </h4>
                         <ul class="list">
                             <li><a class="footer-menu-item light" href="#">English</a></li>
                             <li><a class="footer-menu-item light" href="#">French</a></li>
                             <li><a class="footer-menu-item light" href="#">Spanish</a></li>
                         </ul>
                     </div>
-                    <div class="column legal">
+                    <div class="column legal show-for-large">
                         <div >
                             <div class="flex-container align-right icons-search">
                                 <a class="icon" href="#" data-modal-open data-modal="modal-search-offices">
@@ -121,6 +146,59 @@ use helpers\Svg;
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="grid-x hide-for-large footer-body">
+            <div class="small-11 medium-6 legal">
+                <div class="column">
+                    <div class="flex-container icons-search">
+                        <a class="icon" href="#" data-modal-open data-modal="modal-search-offices">
+                            <?php Svg::render('icon-www-white') ?>
+                        </a>
+                        <a class="icon" href="#">
+                            <?php Svg::render('icon-search-white') ?>
+                        </a>
+                    </div>
+                    <div class="column show-for-small-only">
+                        <div class="terms-conditions">
+                            <ul class="list">
+                                <li><a class="footer-menu-item light" href="#">Legal</a></li>
+                                <li><a class="footer-menu-item light" href="#">Terms And Conditions</a></li>
+                                <li><a class="footer-menu-item light" href="#">Table Of Contents</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex-container social-links">
+                        <a class="social-link" href="#">
+                            <div class="icon facebook"></div>
+                        </a>
+                        <a class="social-link" href="#">
+                            <div class="icon twitter"></div>
+                        </a>
+                        <a class="social-link "href="">
+                            <div class="icon instagram"></div>
+                        </a>
+                        <a class="social-link" href="#">
+                            <div class="icon linkedin"></div>
+                        </a>
+                        <a class="social-link" href="#">
+                            <div class="icon youtube"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="small-11 medium-6 hide-for-small-only">
+                <div class="terms-conditions">
+                    <ul class="list">
+                        <li><a class="footer-menu-item light" href="#">Legal</a></li>
+                        <li><a class="footer-menu-item light" href="#">Terms And Conditions</a></li>
+                        <li><a class="footer-menu-item light" href="#">Table Of Contents</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="grid-x">
+            <div class="cell small-offset-1 small-11 medium-offset-1 medium-11">
                 <div class="footer-foot">
                     <p class="footer-subtitle light">Copyright Statement UNDP 2020</p>
                 </div>
