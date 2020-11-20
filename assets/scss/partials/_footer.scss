@@ -7,8 +7,8 @@
     .footer-head {
 
         @include breakpoint(medium down){
-            padding-left: 8.3333333333%;
-            padding-right: 8.3333333333%;
+            padding-left: 8.33%;
+            padding-right: 8.33%;
         }
 
         @include breakpoint(small only){
@@ -45,10 +45,9 @@
                 height: 30px;
                 min-width: 185px;
                 padding: 8px 14px;
-                border: 1px solid $white;
-                border-right: 0;
-                background-color: $blue-0;
                 font-size: 1.4rem;
+                border: 1px solid $white;
+                background-color: $blue-0;
 
                 @include breakpoint(small only){
                     width: 100%;
@@ -87,8 +86,8 @@
         border-top: 2px solid $white;
 
         @include breakpoint(medium down){
-            padding-left: 8.3333333333%;
-            padding-right: 8.3333333333%;
+            padding-left: 8.33%;
+            padding-right: 8.33%;
         }
 
         @include breakpoint(small only){
@@ -117,15 +116,11 @@
                 }
             }
 
-            .icons-search {
-                .icon {
-                    &:first-child {
-                        margin-right: 22px;
+            .icons-search .icon:first-child {
+                margin-right: 22px;
 
-                        @include breakpoint(small only){
-                            margin-right: 27px;
-                        }
-                    }
+                @include breakpoint(small only){
+                    margin-right: 27px;
                 }
             }
 
@@ -201,7 +196,6 @@
 
 
         .legal {
-            //max-width: 230px;
             text-align: right;
 
             .social-links {

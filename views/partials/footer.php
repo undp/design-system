@@ -188,15 +188,13 @@ use helpers\Svg;
                 </div>
             </div>
             <div class="small-11 medium-6 hide-for-small-only">
-                <!--<div class="column">-->
-                    <div class="terms-conditions">
-                        <ul class="list">
-                            <li><a class="footer-menu-item light" href="#">Legal</a></li>
-                            <li><a class="footer-menu-item light" href="#">Terms And Conditions</a></li>
-                            <li><a class="footer-menu-item light" href="#">Table Of Contents</a></li>
-                        </ul>
-                    </div>
-                <!--</div>-->
+                <div class="terms-conditions">
+                    <ul class="list">
+                        <li><a class="footer-menu-item light" href="#">Legal</a></li>
+                        <li><a class="footer-menu-item light" href="#">Terms And Conditions</a></li>
+                        <li><a class="footer-menu-item light" href="#">Table Of Contents</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="grid-x">
