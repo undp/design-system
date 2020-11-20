@@ -1,28 +1,16 @@
-body {
-    &.modal-open {
-        width: 100%;
-        height: 100vh;
-        overflow-y: hidden;
-
-        @include breakpoint(medium down) {
-            position: fixed;
-        }
-    }
-}
-
 .modal-search-offices {
     width: 100%;
     position: fixed;
     top: $height-nav;
     overflow-y: auto;
-    z-index: $z-index-1;
-    height: calc(100vh - 105px);
-    background-color: rgba($white, 0.87);
+    z-index: $z-index-4;
     backdrop-filter: blur(30px);
+    background-color: rgba($white, 0.87);
+    height: calc(100vh - #{$height-nav});
 
     @include breakpoint(medium down) {
         top: $height-nav-medium;
-        height: calc(100% - 70px);
+        height: calc(100% - #{$height-nav-medium});
     }
 
     .modal-content {
@@ -34,7 +22,7 @@ body {
             right: 44px;
             cursor: pointer;
             position: absolute;
-            z-index: $z-index-2;
+            z-index: $z-index-5;
         }
 
         .modal-body {
@@ -62,14 +50,6 @@ body {
                     backdrop-filter: unset;
                     padding: 25px 15px 0 15px;
                     background-color: transparent;
-                }
-
-                .menu-btn-back {
-                    padding-left: 15px;
-
-                    svg {
-                        margin-right: 15px;
-                    }
                 }
 
                 .header-modal {
@@ -194,21 +174,19 @@ body {
                         padding: 20px 25px 20px 5px;
                         border-top: 1px solid rgba($black, 0.10);
 
-                        .languages {
-                            .language-link {
-                                &:after {
-                                    content: url('#{$image-path}icon-visit-link.svg');
-                                    margin: 0 20px 0 12px;
+                        .language-link {
+                            &:after {
+                                content: url('#{$image-path}icon-visit-link.svg');
+                                margin: 0 20px 0 12px;
 
-                                    @include breakpoint(medium down) {
-                                        margin: 0 5px;
-                                    }
+                                @include breakpoint(medium down) {
+                                    margin: 0 5px;
                                 }
+                            }
 
-                                &:last-child {
-                                    &:after {
-                                        margin-right: 0;
-                                    }
+                            &:last-child {
+                                &:after {
+                                    margin-right: 0;
                                 }
                             }
                         }

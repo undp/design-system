@@ -7,6 +7,16 @@ html {
 body {
     line-height: 1.2;
     font-family: $primary-font;
+
+    &.modal-open {
+        width: 100%;
+        height: 100vh;
+        overflow-y: hidden;
+
+        @include breakpoint(medium down) {
+            position: fixed;
+        }
+    }
 }
 
 a {
