@@ -1,11 +1,11 @@
 .checkbox-item {
     display: block;
     cursor: pointer;
+    margin-top: 12px;
     font-size: 1.6rem;
     user-select: none;
     position: relative;
     padding-left: 30px;
-    margin-bottom: 12px;
     font-weight: $regular;
 
     input {

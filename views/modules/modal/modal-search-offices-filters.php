@@ -6,19 +6,18 @@ use helpers\Svg;
 
 <section id="modal-search-offices-filters" class="hide-for-large modal-search-offices-filters hide">
     <div class="grid-container modal-content height-full">
-        <div class="grid-x modal-body">
-            <div class="cell">
-                <a class="flex-container hide-for-large align-middle tag menu-btn-back uppercase" href="#"
-                   data-action-back data-btn-close>
-                    <div class="arrow-black">
-                        <?php Svg::render('arrow-back-bigger', 'assets/images/arrows/') ?>
-                    </div>
-                    Back
-                </a>
+        <div class="grid-x custom-grid">
+            <div class="cell custom-cell">
                 <div class="header-modal">
-                    <div class="flex-container align-middle align-justify">
+                    <a class="hide-for-large btn-back" href="#" data-action-back data-btn-close>
+                        <div class="arrow-back">
+                            <?php Svg::render('arrow-back-bigger', 'assets/images/arrows/') ?>
+                        </div>
+                        Back
+                    </a>
+                    <div class="flex-container align-middle align-justify titles">
                         <h5 class="heading h5 title">Filters</h5>
-                        <a class="clear-filter" href="#" data-filter-clear>Clear all</a>
+                        <a class="btn-clear" href="#" data-filter-clear>Clear all</a>
                     </div>
                 </div>
                 <form action="">

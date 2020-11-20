@@ -24,14 +24,10 @@ class Menu {
 
     bindHamburgerEvents() {
         this.$hamburguer.click(() => {
-            if (!this.expanded) {
-                this.openMenu()
-                this.$hamburguer.addClass(this.menuOpenClass);
-            } else if (this.expanded) {
-                this.closeMenu()
-                this.$hamburguer.removeClass(this.menuOpenClass);
-            }
+            if (this.expanded) this.closeMenu()
+            else this.openMenu()
             this.expanded = !this.expanded;
+            this.$hamburguer.toggleClass(this.menuOpenClass);
         })
     }
 
