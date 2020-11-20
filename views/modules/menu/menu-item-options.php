@@ -35,6 +35,7 @@ use helpers\Svg;
         </li>
     </ul>
 </div>
+
 <div id="who-we-do" class="hide menu-item-options">
     <a class="flex-container align-middle menu-btn-back uppercase" href="#" data-action-back>
         <div class="arrow-black">
@@ -62,6 +63,7 @@ use helpers\Svg;
         </li>
     </ul>
 </div>
+
 <div id="languages" class="hide menu-item-options">
     <a class="flex-container align-middle menu-btn-back uppercase" href="#" data-action-back>
         <div class="arrow-black">
