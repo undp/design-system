@@ -1,4 +1,5 @@
 .btn {
+    border: none;
     color: $white;
     display: flex;
     cursor: pointer;
@@ -8,6 +9,11 @@
     align-items: center;
     text-transform: uppercase;
     padding: 14px 24px 15px 29px;
+
+    &.full {
+        width: 100%;
+        justify-content: center;
+    }
 
     svg {
         margin-left: 14px;
@@ -205,5 +211,37 @@
         &.light-red{
             background: $dark-blue-1;
         }
+    }
+}
+
+.btn-back {
+    color: $black;
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: $bold;
+    align-items: center;
+    text-transform: uppercase;
+
+    .arrow-back {
+        margin-right: 12px;
+    }
+
+    &:active,
+    &:hover,
+    &:visited {
+        color: $black;
+    }
+}
+
+.btn-clear {
+    font-size: 1.2rem;
+    font-weight: $medium;
+    color: $dark-blue-10;
+    text-decoration: underline;
+
+    &:active,
+    &:hover,
+    &:visited {
+        color: $dark-blue-10;
     }
 }
