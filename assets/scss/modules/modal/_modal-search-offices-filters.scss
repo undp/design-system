@@ -16,8 +16,8 @@
     .modal-content {
         min-height: 100%;
         position: relative;
+        padding: 25px 15px 15px;
         align-content: flex-start;
-        padding: 25px 12px  20px 12px;
 
         .custom-grid {
             height: 1px;
@@ -30,7 +30,7 @@
         }
 
         .header-modal {
-            padding: 0 38px 0 18px;
+            padding: 0 38px 0 15px;
 
             .titles {
                 margin-top: 40px;
@@ -59,9 +59,9 @@
         }
 
         .btn-filters {
+            bottom: 0;
             left: 15px;
             right: 15px;
-            bottom: 15px;
             position: absolute;
 
             .btn {

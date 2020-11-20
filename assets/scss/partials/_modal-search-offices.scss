@@ -52,6 +52,10 @@
                     background-color: transparent;
                 }
 
+                .btn-back {
+                    padding-left: 15px;
+                }
+
                 .header-modal {
                     @include breakpoint(medium down) {
                         padding: 0 30px;
