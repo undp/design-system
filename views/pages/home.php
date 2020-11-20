@@ -21,7 +21,7 @@ use helpers\View;
 <?php View::render('modules/twitter-feed') ?>
 
 <!-- Footer -->
-<?php //View::render('partials/footer'); ?>
+<?php View::render('partials/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 </html>
