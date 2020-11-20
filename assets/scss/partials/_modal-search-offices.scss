@@ -3,7 +3,7 @@
     position: fixed;
     top: $height-nav;
     overflow-y: auto;
-    z-index: $z-index-4;
+    z-index: $z-index-modal;
     backdrop-filter: blur(30px);
     background-color: rgba($white, 0.87);
     height: calc(100vh - #{$height-nav});
