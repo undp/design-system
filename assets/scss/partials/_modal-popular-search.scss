@@ -25,7 +25,7 @@
         .modal-body {
             padding: 120px 170px 120px 120px;
 
-            @include breakpoint(medium down){
+            @include breakpoint(medium down) {
                 padding: 70px 45px;
             }
 
@@ -34,8 +34,8 @@
                 .icon {
                     margin-right: 20px;
 
-                    @include breakpoint(medium down){
-                        margin-right:0;
+                    @include breakpoint(medium down) {
+                        margin-right: 0;
 
                         svg {
                             width: 22px;
@@ -43,7 +43,7 @@
                     }
                 }
 
-                @include breakpoint(medium down){
+                @include breakpoint(medium down) {
                     border-bottom: 1px solid $dark-blue-1;
                 }
 
@@ -74,8 +74,11 @@
                     padding-left: 0;
                 }
             }
+
             .list-quick-links {
-                margin-top: 35px;
+                @include breakpoint(medium down) {
+                    margin-top: 35px;
+                }
             }
 
             .title {
