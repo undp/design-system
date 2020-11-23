@@ -9,7 +9,7 @@
     height: calc(100vh - #{$height-nav});
 
     @include breakpoint(medium down) {
-        top: $height-nav-medium;
+        top: calc(#{$height-nav-medium} + 1px);
         height: calc(100% - #{$height-nav-medium});
     }
 
