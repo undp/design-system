@@ -10,13 +10,17 @@ class Menu {
         this.bodyMenuOpenClass = 'menu-open modal-open'
 
         this.$body = $('body')
+        this.$window = $(window)
         this.$container = container
+        this.$middleLogo = '[data-middle-logo]'
+        this.$primaryNav = $('[data-primary-navigation]')
         this.$hamburguer = this.$container.find('[data-hamburger]')
         this.$mainMenu = this.$container.find('[data-menu-main-options]')
         this.$menuItemDetails = this.$container.find('[data-item-details]')
     }
 
     init() {
+        this.bindScrollEvents()
         this.bindSubmenuEvents()
         this.bindHamburgerEvents()
     }
@@ -37,9 +41,8 @@ class Menu {
                 const subMenu = $(item).data('submenu');
                 if (subMenu && subMenu === 'modal-search-offices') {
                     this.closeMenu();
-                    this.$container.addClass('static');
-                }
-                if (subMenu) {
+                    this.$body.addClass(this.bodyMenuOpenClass)
+                } else if (subMenu) {
                     this.currentSubmenu = $('#' + subMenu);
                     if (this.currentSubmenu) {
                         this.closeMenu();
@@ -61,22 +64,36 @@ class Menu {
         }
     }
 
+    bindScrollEvents() {
+        this.$window.on('scroll', () => {
+            const navHeight = this.$container.height();
+            const currentScroll = this.$window.scrollTop();
+            const logo = this.$container.find(this.$middleLogo);
+            if (currentScroll > navHeight && logo) {
+                logo.addClass('scrolled')
+            } else {
+                logo.removeClass('scrolled')
+            }
+        })
+    }
 
     openMenu() {
+        this.$primaryNav.addClass('open');
         this.$body.addClass(this.bodyMenuOpenClass)
         this.$mainMenu.removeClass(this.hiddenClass);
     }
 
     openSubmenu() {
+        this.$primaryNav.addClass('open');
         this.currentSubmenu.removeClass('hide');
     }
 
     closeSubmenu() {
         this.currentSubmenu.addClass('hide');
-        this.$container.removeClass('static');
     }
 
     closeMenu() {
+        this.$primaryNav.removeClass('open');
         this.$mainMenu.addClass(this.hiddenClass);
         this.$body.removeClass(this.bodyMenuOpenClass)
         if (this.currentSubmenu) {
