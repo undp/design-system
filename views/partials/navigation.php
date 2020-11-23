@@ -13,9 +13,9 @@ use helpers\View;
                         <span class="hamburger-line line-bottom"></span>
                     </a>
                 </div>
-                <div class="dropdown show-for-large">
-                    <button class="flex-container align-middle nav-item dark  dropdown-btn">English</button>
-                    <div class="dropdown-content">
+                <div class="dropdown show-for-large" data-dropdown-languajes>
+                    <button class="flex-container align-middle nav-item dark  dropdown-btn" data-opening-action>English</button>
+                    <div class="dropdown-content hide" data-options>
                         <ul class="menu-items">
                             <li><a class="nav-item dark" href="#">Français</a></li>
                             <li><a class="nav-item dark" href="#">Español</a></li>

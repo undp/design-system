@@ -105,18 +105,6 @@
     .dropdown {
         position: relative;
 
-        &:hover {
-            .dropdown-content {
-                display: block;
-            }
-
-            .dropdown-btn {
-                &:after {
-                    transform: rotate(180deg);
-                }
-            }
-        }
-
         .dropdown-btn {
             color: $blue-0;
             cursor: pointer;
@@ -130,10 +118,15 @@
                 margin-left: 10px;
                 content: url('#{$image-path}icon-arrow-down.svg');
             }
+
+            &.active {
+                &:after {
+                    transform: rotate(180deg);
+                }
+            }
         }
 
         .dropdown-content {
-            display: none;
             min-width: 100px;
             position: absolute;
 
