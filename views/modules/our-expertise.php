@@ -59,5 +59,21 @@ use helpers\View;
                 </div>
             </div>
         </div>
+        <div class="grid-x our-expertise-row">
+            <div class="cell medium-3 expertise-section-left">
+                <div class="expertise-image">
+                    <?php
+                    View::render('components/image-card', [
+                        'route' => '/assets/images/placeholder/our-expertise.jpg'
+                    ])
+                    ?>
+                </div>
+            </div>
+            <div class="cell medium-3 expertise-section-left">
+                <?php
+                View::render('components/expertise-card')
+                ?>
+            </div>
+        </div>
     </div>
 </div>
