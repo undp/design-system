@@ -6,7 +6,7 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php //View::render('partials/navigation') ?>
+<?php View::render('partials/navigation') ?>
 
 
 <!-- Navigation -->
@@ -16,10 +16,12 @@ use helpers\View;
 <?php View::render('modules/our-expertise') ?>
 <?php View::render('modules/join-us') ?>
 <?php View::render('modules/global-impact') ?>
+<?php View::render('modules/publications') ?>
+<?php View::render('modules/recent-news') ?>
 <?php View::render('modules/twitter-feed') ?>
 
 <!-- Footer -->
-<?php //View::render('partials/footer'); ?>
+<?php View::render('partials/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 </html>

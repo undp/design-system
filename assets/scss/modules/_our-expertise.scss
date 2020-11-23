@@ -20,16 +20,17 @@
         }
 
         .section-title{
-            position: absolute;
             top: 140px;
             left: 140px;
+            position: absolute;
+            z-index: $z-index-3;
         }
     }
 
     @include breakpoint(medium up){
         &::before{
             content: '';
-            left: 50.6%;
+            left: 50.7%;
             width: 100%;
             z-index: -1;
             height: 100%;

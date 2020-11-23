@@ -17,7 +17,7 @@
         text-transform: uppercase;
         font-family: $secondary-font;
 
-        @include breakpoint(medium-landscape down){
+        @include breakpoint(large down){
             font-size: 8.2rem;
             line-height: 1.08;
         }

@@ -7,7 +7,7 @@ use helpers\Svg;
 <section id="modal-popular-search" class="modal-popular-search hide">
     <div class="grid-container modal-content">
         <div class="modal-head">
-            <button class="close-button" data-btn-close>
+            <button class="close-button show-for-large" data-btn-close>
                 <?php Svg::render('icon-close') ?>
             </button>
         </div>
@@ -22,7 +22,7 @@ use helpers\Svg;
             </div>
             <div class="cell lists">
                 <div class="grid-x">
-                    <div class="cell medium-6">
+                    <div class="cell large-6">
                         <div class="list-popular-search">
                             <h2 class="title">Popular Searches</h2>
                             <ul class="list uppercase">
@@ -36,7 +36,7 @@ use helpers\Svg;
                             </ul>
                         </div>
                     </div>
-                    <div class="cell medium-6 list-quick-links">
+                    <div class="cell large-6 list-quick-links">
                         <h2 class="title">Quick Links</h2>
                         <div>
                             <ul class="list uppercase">

@@ -1,20 +1,17 @@
-body {
-    &.modal-open {
-        width: 100%;
-        height: 100vh;
-        overflow-y: hidden;
-    }
-}
-
 .modal-search-offices {
     width: 100%;
     position: fixed;
     top: $height-nav;
     overflow-y: auto;
-    z-index: $z-index-1;
-    height: calc(100vh - 105px);
+    z-index: $z-index-modal;
     backdrop-filter: blur(30px);
     background-color: rgba($white, 0.87);
+    height: calc(100vh - #{$height-nav});
+
+    @include breakpoint(medium down) {
+        top: $height-nav-medium;
+        height: calc(100% - #{$height-nav-medium});
+    }
 
     .modal-content {
         padding: 0;
@@ -25,95 +22,170 @@ body {
             right: 44px;
             cursor: pointer;
             position: absolute;
-            z-index: $z-index-2;
+            z-index: $z-index-5;
         }
 
-        .cell-search {
-            opacity: 0.86;
-            max-width: 525px;
-            padding: 75px 60px;
-            background-color: $dark-blue-8;
-            box-shadow: 0 3px 6px rgba($black, 0.16);
-            backdrop-filter: blur(30px) brightness(15%);
+        .modal-body {
+            height: 1px;
+            min-height: 100%;
+            position: relative;
+            align-content: flex-start;
 
-            .description {
-                margin-top: 35px
+            @include breakpoint(medium down) {
+                height: unset;
             }
 
-            .search-input-group {
-                margin-top: 20px;
+            .cell-search {
+                min-height: 100%;
+                max-width: 525px;
+                padding: 75px 60px;
+                box-shadow: 0 3px 6px rgba($black, 0.16);
+                background-color: rgba($dark-blue-8, 0.86);
+                backdrop-filter: blur(30px) brightness(15%);
 
-                .input-search {
-                    height: 58px;
-                    padding: 20px;
-                    border: 2px solid $black;
-                    border-right: 0;
+                @include breakpoint(medium down) {
+                    max-width: unset;
+                    box-shadow: unset;
+                    min-height: unset;
+                    backdrop-filter: unset;
+                    padding: 25px 15px 0 15px;
+                    background-color: transparent;
+                }
 
-                    &::placeholder {
-                        color: rgba($black, 0.35);
+                .btn-back {
+                    padding-left: 15px;
+                }
+
+                .header-modal {
+                    @include breakpoint(medium down) {
+                        padding: 0 30px;
+                    }
+
+                    .title {
+                        @include breakpoint(medium down) {
+                            font-size: 2rem;
+                            margin-top: 40px;
+                            font-weight: $regular;
+                        }
+                    }
+
+                    .description {
+                        margin-top: 35px;
+
+                        @include breakpoint(medium down) {
+                            margin-top: 20px;
+                            font-size: 1.4rem;
+                        }
+                    }
+
+                    .tag-current-section {
+                        margin-top: 30px;
+                    }
+
+                    .title-undp {
+                        color: $blue-0;
+                        font-size: 2rem;
+                        margin-top: 10px;
+                        font-weight: $semi-bold;
                     }
                 }
 
-                .btn-search {
-                    width: 58px;
-                    height: 58px;
-                    cursor: pointer;
-                    background: $red;
+                .search-input-group {
+                    margin-top: 20px;
+
+                    .input-search {
+                        margin: 0;
+                        height: 58px;
+                        padding: 20px;
+                        border: 2px solid $black;
+                        min-width: calc(100% - 58px);
+                        max-width: calc(100% - 58px);
+
+                        &::placeholder {
+                            color: rgba($black, 0.35);
+                        }
+                    }
+
+                    .btn-search {
+                        width: 58px;
+                        height: 58px;
+                        cursor: pointer;
+                        background: $red;
+                        border: 2px solid $black;
+                        border-left: 0;
+                    }
                 }
+
+                .search-select-group {
+                    margin-top: 60px;
+
+                    .custom-select:not(:first-child) {
+                        margin-top: 15px;
+                    }
+                }
+
             }
 
-            .search-select-group {
-                margin-top: 60px;
+            .cell-list-offices {
+                opacity: 0.87;
+                padding: 80px 50px;
+                position: relative;
+                box-shadow: 0 3px 6px rgba($black, 0.16);
 
-                .custom-select:not(:first-child) {
+                @include breakpoint(medium down) {
+                    position: static;
+                    box-shadow: unset;
+                    padding: 0 0 0 15px;
+                }
+
+                .title {
+                    color: $blue-0;
                     margin-top: 15px;
                 }
-            }
-        }
 
-        .cell-list-offices {
-            opacity: 0.87;
-            padding: 80px 50px;
-            position: relative;
-            box-shadow: 0 3px 6px rgba($black, 0.16);
+                .countries {
+                    left: 0;
+                    right: 50px;
+                    padding: 0 50px;
+                    overflow-y: auto;
+                    position: absolute;
+                    margin: 44px 0 100px 0;
+                    max-height: calc(100% - 280px);
+                    scrollbar-color: $white $black;
 
-            .title {
-                color: $blue-0;
-                margin-top: 15px;
-            }
+                    @include breakpoint(medium down) {
+                        right: 0;
+                        padding: 0;
+                        width: 100%;
+                        margin-top: 30px;
+                        position: static;
+                        max-height: 250px;
+                    }
 
-            .countries {
-                left: 0;
-                right: 50px;
-                padding: 0 50px;
-                margin-top: 44px;
-                overflow-y: auto;
-                position: absolute;
-                max-height: calc(100% - 280px);
-                scrollbar-color: $white $black;
+                    &::-webkit-scrollbar {
+                        width: 5px;
+                    }
 
+                    &::-webkit-scrollbar-track {
+                        background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
+                    }
 
-                &::-webkit-scrollbar {
-                    width: 5px;
-                }
+                    &::-webkit-scrollbar-thumb {
+                        background-color: black;
+                    }
 
-                &::-webkit-scrollbar-track {
-                    background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
-                }
+                    .country-item {
+                        padding: 20px 25px 20px 5px;
+                        border-top: 1px solid rgba($black, 0.10);
 
-                &::-webkit-scrollbar-thumb {
-                    background-color: black;
-                }
-
-                .country-item {
-                    padding: 20px 25px 20px 5px;
-                    border-top: 1px solid rgba($black, 0.10);
-
-                    .languages {
                         .language-link {
                             &:after {
                                 content: url('#{$image-path}icon-visit-link.svg');
                                 margin: 0 20px 0 12px;
+
+                                @include breakpoint(medium down) {
+                                    margin: 0 5px;
+                                }
                             }
 
                             &:last-child {
@@ -124,7 +196,32 @@ body {
                         }
                     }
                 }
+
+                .filter-options {
+                    left: 15px;
+                    right: 15px;
+                    bottom: 15px;
+                    position: absolute;
+                    width: calc(100% - 30px);
+
+                    .btn-filters {
+                        height: 50px;
+                        color: $black;
+                        background-color: $dark-blue-9;
+
+                        .current-filters {
+                            width: 24px;
+                            height: 24px;
+                            color: $white;
+                            margin-left: 50px;
+                            border-radius: 50%;
+                            background-color: $red;
+                            font-weight: $semi-bold;
+                        }
+                    }
+                }
             }
         }
+
     }
 }

@@ -48,6 +48,8 @@ $dark-blue-5: #EDEFF0;
 $dark-blue-6: #F7F7F7;
 $dark-blue-7: #FAFAFA;
 $dark-blue-8: #E6E6E6;
+$dark-blue-9: #D8DADB;
+$dark-blue-10: #9B9B9B;
 $light-blue-1: #369BBE;
 $light-blue-2: #31AFD4;
 $light-blue-3: #29BFE6;
@@ -66,9 +68,9 @@ $extra-bold: 800;
 $primary-font: 'ProximaNova', sans-serif;
 $secondary-font: 'SohneBreitTest', sans-serif;
 
-
 // global margin and padding
 $height-nav: 105px;
+$height-nav-medium: 70px;
 
 // Z Index
 $z-index-0: 0;
@@ -78,6 +80,7 @@ $z-index-3: 15;
 $z-index-4: 20;
 $z-index-5: 25;
 $z-index-nav: 100;
+$z-index-modal: 105;
 
 // Transitions
 $transition-primary: all .4s cubic-bezier(0.64, 0.05, 0.35, 1.05);
