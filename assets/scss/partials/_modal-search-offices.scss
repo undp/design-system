@@ -104,6 +104,11 @@
                         &::placeholder {
                             color: rgba($black, 0.35);
                         }
+
+                        &:active,
+                        &:focus {
+                            outline: none;
+                        }
                     }
 
                     .btn-search {
