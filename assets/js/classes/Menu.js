@@ -77,7 +77,6 @@ class Menu {
         })
     }
 
-
     openMenu() {
         this.$body.addClass(this.bodyMenuOpenClass)
         this.$mainMenu.removeClass(this.hiddenClass);
