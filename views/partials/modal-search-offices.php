@@ -52,87 +52,87 @@
                 <h3 class="heading h3 title show-for-large">undp global</h3>
                 <div class="countries">
                     <div class="flex-container align-justify country-item">
-                        <div class="country small-copy dark">Afghanistan</div>
+                        <div class="country">Afghanistan</div>
                         <div class="languages">
-                            <a class="language-link small-copy dark" href="#">English</a>
-                            <a class="language-link small-copy dark" href="#">Pasto</a>
-                            <a class="language-link small-copy dark" href="#">Dari</a>
+                            <a class="language-link" href="#">English</a>
+                            <a class="language-link" href="#">Pasto</a>
+                            <a class="language-link" href="#">Dari</a>
                         </div>
                     </div>
                     <div class="flex-container align-justify country-item">
-                        <div class="country small-copy dark">Albania</div>
+                        <div class="country">Albania</div>
                         <div class="languages">
-                            <a class="language-link small-copy dark" href="#">English</a>
-                            <a class="language-link small-copy dark" href="#">Albanian</a>
+                            <a class="language-link" href="#">English</a>
+                            <a class="language-link" href="#">Albanian</a>
                         </div>
                     </div>
                     <div class="flex-container align-justify country-item">
-                        <div class="country small-copy dark">Algeria</div>
+                        <div class="country">Algeria</div>
                         <div class="languages">
-                            <a class="language-link small-copy dark" href="#">English</a>
-                            <a class="language-link small-copy dark" href="#">Arabic</a>
+                            <a class="language-link" href="#">English</a>
+                            <a class="language-link" href="#">Arabic</a>
                         </div>
                     </div>
                     <div class="flex-container align-justify country-item">
-                        <div class="country small-copy dark">Angola</div>
+                        <div class="country">Angola</div>
                         <div class="languages">
-                            <a class="language-link small-copy dark" href="#">English</a>
-                            <a class="language-link small-copy dark" href="#">Arabic</a>
+                            <a class="language-link" href="#">English</a>
+                            <a class="language-link" href="#">Arabic</a>
                         </div>
                     </div>
                     <div class="flex-container align-justify country-item">
-                        <div class="country small-copy dark">Argentina</div>
+                        <div class="country">Argentina</div>
                         <div class="languages">
-                            <a class="language-link small-copy dark" href="#">English</a>
-                            <a class="language-link small-copy dark" href="#">Spanish</a>
+                            <a class="language-link" href="#">English</a>
+                            <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
                     <div class="flex-container align-justify country-item">
-                        <div class="country small-copy dark">Armenia</div>
+                        <div class="country">Armenia</div>
                         <div class="languages">
-                            <a class="language-link small-copy dark" href="#">English</a>
-                            <a class="language-link small-copy dark" href="#">Spanish</a>
+                            <a class="language-link" href="#">English</a>
+                            <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
                     <div class="flex-container align-justify country-item">
-                        <div class="country small-copy dark">Azerbaijan</div>
+                        <div class="country">Azerbaijan</div>
                         <div class="languages">
-                            <a class="language-link small-copy dark" href="#">English</a>
-                            <a class="language-link small-copy dark" href="#">Spanish</a>
+                            <a class="language-link" href="#">English</a>
+                            <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
                     <div class="flex-container align-justify country-item">
-                        <div class="country small-copy dark">Bahrain</div>
+                        <div class="country">Bahrain</div>
                         <div class="languages">
-                            <a class="language-link small-copy dark" href="#">Bahrainian</a>
-                            <a class="language-link small-copy dark" href="#">English</a>
-                            <a class="language-link small-copy dark" href="#">Spanish</a>
+                            <a class="language-link" href="#">Bahrainian</a>
+                            <a class="language-link" href="#">English</a>
+                            <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
                     <div class="flex-container align-justify country-item">
-                        <div class="country small-copy dark">Bangladesh</div>
+                        <div class="country">Bangladesh</div>
                         <div class="languages">
-                            <a class="language-link small-copy dark" href="#">English</a>
-                            <a class="language-link small-copy dark" href="#">Spanish</a>
+                            <a class="language-link" href="#">English</a>
+                            <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
                     <div class="flex-container align-justify country-item">
-                        <div class="country small-copy dark">Barbados</div>
+                        <div class="country">Barbados</div>
                         <div class="languages">
-                            <a class="language-link small-copy dark" href="#">English</a>
+                            <a class="language-link" href="#">English</a>
                         </div>
                     </div>
                     <div class="flex-container align-justify country-item">
-                        <div class="country small-copy dark">Belarus</div>
+                        <div class="country">Belarus</div>
                         <div class="languages">
-                            <a class="language-link small-copy dark" href="#">English</a>
+                            <a class="language-link" href="#">English</a>
                         </div>
                     </div>
                     <div class="flex-container align-justify country-item">
-                        <div class="country small-copy dark">Belize</div>
+                        <div class="country">Belize</div>
                         <div class="languages">
-                            <a class="language-link small-copy dark" href="#">English</a>
-                            <a class="language-link small-copy dark" href="#">Spanish</a>
+                            <a class="language-link" href="#">English</a>
+                            <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
                 </div>
