@@ -19,7 +19,7 @@
                     <h2 class="heading h2 title">Find Our Offices Around the World. </h2>
                     <p class="big-copy description">The UNDP works in 170 countries around the world. Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Duis auctor, ante sed auctor faucibus, diam ante pellentesque turpis, sit amet dictum felis felis bibendum nisl. </p>
                     <p class="tag uppercase hide-for-large tag-current-section">current selection</p>
-                    <h3 class="heading h3 title hide-for-large title-undp">UNDP Global</h3>
+                    <h3 class="heading h3 title hide-for-large title-undp"><span class="uppercase">undp</span> Global</h3>
                 </div>
                 <form action="">
                     <div class="flex-container search-input-group">
@@ -49,7 +49,7 @@
             </div>
             <div class="cell large-auto cell-list-offices">
                 <p class="tag uppercase show-for-large">current selection</p>
-                <h3 class="heading h3 title show-for-large">undp global</h3>
+                <h3 class="heading h3 title show-for-large"><span class="uppercase">undp</span> global</h3>
                 <div class="countries">
                     <div class="flex-container align-justify country-item">
                         <div class="country small-copy dark">Afghanistan</div>
