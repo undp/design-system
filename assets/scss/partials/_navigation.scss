@@ -53,7 +53,28 @@
 
             .middle-logo {
                 display: block;
-                margin-top: 25px;
+                transition: $transition-primary;
+
+                @include breakpoint(medium down){
+                    svg {
+                        max-height: 74px;
+                    }
+                }
+
+                svg {
+                    margin-top: -1px;
+                }
+
+                &.scrolled {
+                    svg {
+                        max-height: 110px;
+                        transition: $transition-primary;
+
+                        @include breakpoint(medium down){
+                            max-height: 74px;
+                        }
+                    }
+                }
             }
         }
 

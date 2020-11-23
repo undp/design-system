@@ -26,8 +26,8 @@ use helpers\View;
                     <ul class="flex-container align-middle middle-menu">
                         <li class="show-for-large"><a class="nav-item dark active" href="#">Who we are</a></li>
                         <li class="show-for-large"><a class="nav-item dark" href="#">What we do</a></li>
-                        <li>
-                            <a href="#" class="middle-logo">
+                        <li class="align-self-top">
+                            <a href="#" class="middle-logo" data-middle-logo>
                                 <?php Svg::render('undp-logo')?>
                             </a>
                         </li>
