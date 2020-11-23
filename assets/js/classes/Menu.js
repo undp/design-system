@@ -41,7 +41,6 @@ class Menu {
                 const subMenu = $(item).data('submenu');
                 if (subMenu && subMenu === 'modal-search-offices') {
                     this.closeMenu();
-                    this.$container.addClass('static');
                     this.$body.addClass(this.bodyMenuOpenClass)
                 } else if (subMenu) {
                     this.currentSubmenu = $('#' + subMenu);
@@ -91,7 +90,6 @@ class Menu {
 
     closeSubmenu() {
         this.currentSubmenu.addClass('hide');
-        this.$container.removeClass('static');
     }
 
     closeMenu() {
