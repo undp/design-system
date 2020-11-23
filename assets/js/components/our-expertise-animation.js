@@ -14,10 +14,10 @@ const init = function () {
     let rightSections = document.querySelectorAll(".expertise-section-right");
     let leftSections = document.querySelectorAll(".expertise-section-left");
 
-    animate(rightSections, 'right');
-    animate(leftSections, 'left');
+    animateExpertiseSection(rightSections, 'right');
+    animateExpertiseSection(leftSections, 'left');
 
-    function animate(sections, side) {
+    function animateExpertiseSection(sections, side) {
 
 
         let end = "center 35%"
