@@ -5,11 +5,8 @@
     z-index: $z-index-nav;
     transform: translateY(0);
     background-color: $dark-blue-6;
+    border: 1px solid rgba($black, 0.10);
     box-shadow: 0 3px 6px rgba($black, 0.09);
-
-    &.static {
-        position: static;
-    }
 
     .nav-item {
         color: $dark-blue-1;
@@ -90,12 +87,19 @@
     }
 
     .primary-navigation {
-        top: 0;
-        z-index: -1;
         width: 100%;
         overflow: auto;
         position: fixed;
         transform: translateY(0px);
+        top: calc(#{$height-nav} + 1px);
+
+        @include breakpoint(medium down){
+            top: calc(#{$height-nav-medium} + 1px);
+        }
+
+        &.open {
+            height: 100vh;
+        }
     }
 
     .dropdown {

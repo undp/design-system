@@ -46,7 +46,7 @@ use helpers\View;
             </div>
         </nav>
     </div>
-    <div class="primary-navigation">
+    <div class="primary-navigation" data-primary-navigation>
         <div class="hide" data-menu-main-options>
             <?php View::render('modules/menu/main-options')?>
         </div>

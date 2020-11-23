@@ -4,9 +4,14 @@
     top: $height-nav;
     overflow-y: auto;
     z-index: $z-index-modal;
-    height: calc(100vh - 105px);
+    height: calc(100vh - #{$height-nav});
     backdrop-filter: blur(30px);
     background-color: rgba($white, 0.87);
+
+    @include breakpoint(medium down){
+        top: calc(#{$height-nav-medium} + 1px);
+        height: calc(100vh - #{$height-nav-medium});
+    }
 
     .modal-content {
         padding: 0;
