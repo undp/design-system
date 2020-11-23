@@ -21,6 +21,28 @@
         flex-direction: column;
     }
 
+    .arrow-2 {
+
+        .link-arrow {
+            height: 16px;
+            stroke: $red;
+            margin-top: -2px;
+            margin-left: 4px;
+            overflow: hidden;
+            fill: transparent;
+            vertical-align: middle;
+        }
+
+        .link-arrow-group {
+            transform: translateX(-31px);
+            transition: $transition-secondary;
+
+            .arrow-line{
+                display: none;
+            }
+        }
+    }
+
     .content{
         padding: 45px 25px;
 
@@ -96,6 +118,18 @@
     &:hover{
         .hover-image{
             transform: translateX(0);
+        }
+
+        .link-arrow-group {
+            transform: translateX(0);
+
+            .arrow-line{
+                display: unset;
+            }
+
+            .arrow-point{
+                transform: translateX(31px);
+            }
         }
     }
 

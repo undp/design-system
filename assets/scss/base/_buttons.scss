@@ -117,36 +117,36 @@
 
     &.arrow-2 {
 
-        .link__arrow {
-            overflow: hidden;
-            height: 1em;
+        .link-arrow {
+            height: 16px;
+            stroke: $red;
+            margin-top: -2px;
             margin-left: 4px;
-            vertical-align: middle;
-            stroke: red;
+            overflow: hidden;
             fill: transparent;
+            vertical-align: middle;
         }
 
-        .link__arrow-inner {
-            transform: translateX(-32px);
-            transition: transform 0.2s cubic-bezier(0.4, 0.22, 0.28, 1);
+        .link-arrow-group {
+            transform: translateX(-31px);
+            transition: $transition-secondary;
 
-            .line-test{
+            .arrow-line{
                 display: none;
             }
         }
 
         &:hover{
-            .line-test{
-                display: unset;
-            }
-
-            .arrow-test{
-                transform: translateX(32px);
-            }
-
-            .link__arrow-inner {
+            .link-arrow-group {
                 transform: translateX(0);
-                transition: transform 0.3s cubic-bezier(0.4, 0.22, 0.28, 1);
+
+                .arrow-line{
+                    display: unset;
+                }
+
+                .arrow-point{
+                    transform: translateX(31px);
+                }
             }
 
         }
