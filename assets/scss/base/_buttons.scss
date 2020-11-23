@@ -115,6 +115,52 @@
         }
     }
 
+    &.arrow-2 {
+
+        .link__arrow {
+            overflow: hidden;
+            height: 1em;
+            margin-left: 4px;
+            vertical-align: middle;
+            stroke: red;
+            fill: transparent;
+        }
+
+        .link__arrow-inner {
+            transform: translateX(-32px);
+            transition: transform 0.2s cubic-bezier(0.4, 0.22, 0.28, 1);
+
+            .line-test{
+                display: none;
+            }
+
+            //.text-link:hover &,
+            //.text-link:focus & {
+            //    .line-test{
+            //        display: unset;
+            //    }
+            //    transform: translateX(0);
+            //    transition: transform 0.3s cubic-bezier(0.4, 0.22, 0.28, 1);
+            //}
+        }
+
+        &:hover{
+            .line-test{
+                display: unset;
+            }
+
+            .arrow-test{
+                transform: translateX(32px);
+            }
+
+            .link__arrow-inner {
+                transform: translateX(0);
+                transition: transform 0.3s cubic-bezier(0.4, 0.22, 0.28, 1);
+            }
+
+        }
+    }
+
     &.arrow-3 {
         display: unset;
     }

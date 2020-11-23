@@ -18,9 +18,19 @@
             This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action
         </p>
         <div class="cta">
-            <a class="text-link arrow-1" href="#">
+            <a class="text-link arrow-2" href="#">
                 Read More
-                <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
+
+                <svg class="link__arrow" viewBox="0 0 80 16" xmlns="http://www.w3.org/2000/svg">
+                    <g class="link__arrow-inner" stroke-width="2">
+                        <line class="line-test" x1="0" y1="8" x2="80" y2="8"/>
+                        <polyline class="arrow-test" points="39.5 1, 46.5 8, 39.5 15" />
+                    </g>
+                </svg>
+
+                <!--<span  class="arrow-line">-->
+                <!--    --><?//=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
+                <!--</span>-->
             </a>
         </div>
     </div>
