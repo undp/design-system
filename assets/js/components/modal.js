@@ -68,6 +68,11 @@ class Modal {
     open() {
         this.$body.addClass('modal-open');
         this.currentModal.removeClass('hide');
+        this.inputSearchAutoFocus();
+    }
+
+    inputSearchAutoFocus() {
+        this.currentModal.find('.input-search').focus();
     }
 
     close() {

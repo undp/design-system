@@ -14,21 +14,20 @@ const init = function () {
     let rightSections = document.querySelectorAll(".expertise-section-right");
     let leftSections = document.querySelectorAll(".expertise-section-left");
 
-    animation(rightSections, 'right');
-    animation(leftSections, 'left');
+    animate(rightSections, 'right');
+    animate(leftSections, 'left');
 
-    function animation(sections, side) {
+    function animate(sections, side) {
 
-        let start = "";
-        let end = "";
+
+        let end = "center 35%"
+        let start = "top bottom-=180px"
 
         if(side == 'right'){
             start = "bottom bottom-=20px",
             end = "center 10%"
-        }else{
-            start = "top bottom-=180px";
-            end = "center 35%";
         }
+
         sections.forEach(target => {
             let sectionImage = target.querySelector('.image-card');
             gsap.timeline({

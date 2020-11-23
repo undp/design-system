@@ -1,15 +1,17 @@
 import modal from './components/modal.js';
 import select from './partials/select.js';
-import scrollTrigger from './components/scroll-trigger.js';
-import footerMenu from './partials/footer-menu-mobile.js';
+import ourExpertiseSectionAnimation from './components/our-expertise-animation.js';
 import navigation from './components/navigation.js';
+import dropdown from './components/dropdown-languajes';
+import footerMenu from './partials/footer-menu-mobile';
 import scrollTriggers from './components/scroll-triggers'
-import publicationsSlider from './components/publications-slider.js';
+import publicationsSlider from './components/publications-slider';
 
 function main() {
     modal()
     select()
-    scrollTrigger()
+    ourExpertiseSectionAnimation()
+    dropdown()
     footerMenu()
     navigation()
     scrollTriggers()

@@ -104,6 +104,11 @@
                         &::placeholder {
                             color: rgba($black, 0.35);
                         }
+
+                        &:active,
+                        &:focus {
+                            outline: none;
+                        }
                     }
 
                     .btn-search {
@@ -175,10 +180,21 @@
                     }
 
                     .country-item {
+                        font-size: 2rem;
+                        line-height: 1.2;
+                        font-weight: $medium;
                         padding: 20px 25px 20px 5px;
                         border-top: 1px solid rgba($black, 0.10);
 
+                        @include breakpoint(medium down) {
+                            font-size: 1.6rem;
+                            line-height: 1.18;
+                            font-weight: $semi-bold;
+                        }
+
                         .language-link {
+                            font-weight: $regular;
+
                             &:after {
                                 content: url('#{$image-path}icon-visit-link.svg');
                                 margin: 0 20px 0 12px;

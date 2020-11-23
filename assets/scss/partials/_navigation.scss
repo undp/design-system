@@ -18,7 +18,7 @@
         &:active,
         &.active {
             padding-bottom: 2px;
-            border-bottom: 1px solid $red;
+            border-bottom: 2px solid $red;
         }
     }
 
@@ -50,7 +50,6 @@
 
             .middle-logo {
                 display: block;
-                transition: $transition-primary;
 
                 @include breakpoint(medium down){
                     svg {
@@ -60,15 +59,15 @@
 
                 svg {
                     margin-top: -1px;
+                    transition: $transition-primary;
                 }
 
                 &.scrolled {
                     svg {
-                        max-height: 110px;
-                        transition: $transition-primary;
+                        height: 110px;
 
                         @include breakpoint(medium down){
-                            max-height: 74px;
+                            height: 74px;
                         }
                     }
                 }
@@ -105,18 +104,6 @@
     .dropdown {
         position: relative;
 
-        &:hover {
-            .dropdown-content {
-                display: block;
-            }
-
-            .dropdown-btn {
-                &:after {
-                    transform: rotate(180deg);
-                }
-            }
-        }
-
         .dropdown-btn {
             color: $blue-0;
             cursor: pointer;
@@ -130,10 +117,15 @@
                 margin-left: 10px;
                 content: url('#{$image-path}icon-arrow-down.svg');
             }
+
+            &.active {
+                &:after {
+                    transform: rotate(180deg);
+                }
+            }
         }
 
         .dropdown-content {
-            display: none;
             min-width: 100px;
             position: absolute;
 

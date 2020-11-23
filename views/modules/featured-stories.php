@@ -7,10 +7,10 @@
                 <div class="title-container">
                     <div class="section-title">
                         <h2 class="heading h2">
-                            Featured
+                            Discover
                         </h2>
                         <h2 class="heading h2">
-                            Stories
+                            More
                         </h2>
                     </div>
                 </div>

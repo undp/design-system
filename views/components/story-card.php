@@ -18,9 +18,9 @@
             This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action
         </p>
         <div class="cta">
-            <a class="text-link arrow-1" href="#">
+            <a class="text-link arrow-2" href="#">
                 Read More
-                <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
+                <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
             </a>
         </div>
     </div>
