@@ -10,13 +10,16 @@ class Menu {
         this.bodyMenuOpenClass = 'menu-open modal-open'
 
         this.$body = $('body')
+        this.$window = $(window)
         this.$container = container
+        this.$middleLogo = '[data-middle-logo]'
         this.$hamburguer = this.$container.find('[data-hamburger]')
         this.$mainMenu = this.$container.find('[data-menu-main-options]')
         this.$menuItemDetails = this.$container.find('[data-item-details]')
     }
 
     init() {
+        this.bindScrollEvents()
         this.bindSubmenuEvents()
         this.bindHamburgerEvents()
     }
@@ -61,6 +64,19 @@ class Menu {
         }
     }
 
+    bindScrollEvents() {
+        this.$window.on('scroll', () => {
+            const navHeight = this.$container.height();
+            const currentScroll = this.$window.scrollTop();
+            const logo = this.$container.find(this.$middleLogo);
+            if (currentScroll > navHeight && logo) {
+                logo.addClass('scrolled')
+            } else {
+                logo.removeClass('scrolled')
+            }
+        })
+    }
+
 
     openMenu() {
         this.$body.addClass(this.bodyMenuOpenClass)
@@ -83,6 +99,8 @@ class Menu {
             this.currentSubmenu.addClass(this.hiddenClass);
         }
     }
+
+
 }
 
 export default Menu
