@@ -97,6 +97,10 @@
         transform: translateY(0px);
         top: calc(#{$height-nav} + 1px);
 
+        @include breakpoint(medium down){
+            top: calc(#{$height-nav-medium} + 1px);
+        }
+
         &.open {
             height: 100vh;
         }
