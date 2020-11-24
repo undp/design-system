@@ -1,18 +1,20 @@
-import modal from './components/modal';
-import select from './partials/select';
-import ourExpertiseSectionAnimation from './components/our-expertise-animation';
-import modalNav from './components/modal-nav';
-import navigation from './components/navigation';
-import dropdown from './components/dropdown-languajes';
-import footerMenu from './partials/footer-menu-mobile';
+import modal from './components/modal'
+import select from './partials/select'
+import inputs from './components/inputs'
+import ourExpertiseSectionAnimation from './components/our-expertise-animation'
+import modalNav from './components/modal-nav'
+import navigation from './components/navigation'
+import dropdown from './components/dropdown-languajes'
+import footerMenu from './partials/footer-menu-mobile'
 import scrollTriggers from './components/scroll-triggers'
-import publicationsSlider from './components/publications-slider';
-import ourMissionAnimation from './components/our-mision-animation';
+import publicationsSlider from './components/publications-slider'
+import ourMissionAnimation from './components/our-mision-animation'
 import statCardBackground from './components/stat-card-background'
 
 function main() {
     modal()
     select()
+    inputs()
     ourExpertiseSectionAnimation()
     dropdown()
     modalNav()
