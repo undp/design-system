@@ -1,7 +1,8 @@
-import modal from './components/modal.js';
-import select from './partials/select.js';
-import ourExpertiseSectionAnimation from './components/our-expertise-animation.js';
-import navigation from './components/navigation.js';
+import modal from './components/modal';
+import select from './partials/select';
+import ourExpertiseSectionAnimation from './components/our-expertise-animation';
+import modalNav from './components/modal-nav';
+import navigation from './components/navigation';
 import dropdown from './components/dropdown-languajes';
 import footerMenu from './partials/footer-menu-mobile';
 import scrollTriggers from './components/scroll-triggers'
@@ -14,6 +15,7 @@ function main() {
     select()
     ourExpertiseSectionAnimation()
     dropdown()
+    modalNav()
     footerMenu()
     navigation()
     scrollTriggers()
