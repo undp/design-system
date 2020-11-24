@@ -1,7 +1,6 @@
 .our-mission {
     min-height: 820px;
     padding: 300px 0 200px;
-    background-color: $dark-blue-1;
 
     @include breakpoint(small only) {
         padding-left: 30px;
