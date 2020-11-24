@@ -20,7 +20,6 @@ function main() {
     publicationsSlider()
     ourMissionAnimation()
     statCardBackground()
-
 }
 
 document.addEventListener("DOMContentLoaded", function () {
