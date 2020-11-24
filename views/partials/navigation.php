@@ -24,7 +24,7 @@ use helpers\View;
                 </div>
                 <div>
                     <ul class="flex-container align-middle middle-menu">
-                        <li class="show-for-large"><a class="nav-item dark active" href="#">Who we are</a></li>
+                        <li class="show-for-large"><a class="nav-item dark active" data-modal-nav-hover data-modal="modal-nav-hover" href="#">Who we are</a></li>
                         <li class="show-for-large"><a class="nav-item dark" href="#">What we do</a></li>
                         <li class="align-self-top">
                             <a href="#" class="middle-logo" data-middle-logo>
