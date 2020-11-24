@@ -1,0 +1,33 @@
+.modal-nav-content {
+    .content-text {
+        padding: 0 20px 100px 75px;
+
+        .title {
+            line-height: 1.14;
+            font-size: 3.5rem;
+            font-weight: $bold;
+        }
+
+        .description {
+            margin-top: 25px;
+        }
+
+        .links {
+            margin-top: 40px;
+
+            .text-link {
+                display: block;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .content-image {
+        max-width: 390px;
+
+        .image {
+            object-fit: contain;
+            object-position: bottom;
+        }
+    }
+}

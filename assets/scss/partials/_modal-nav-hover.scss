@@ -1,0 +1,67 @@
+.modal-nav-hover {
+    width: 100%;
+    position: fixed;
+    top: $height-nav;
+    overflow-y: auto;
+    z-index: $z-index-modal;
+    backdrop-filter: blur(30px);
+    background-color: $dark-blue-11;
+    height: calc(100vh - #{$height-nav});
+
+    @include breakpoint(medium down) {
+        top: calc(#{$height-nav-medium} + 1px);
+        height: calc(100% - #{$height-nav-medium});
+    }
+
+    .modal-content {
+        padding: 0 116px
+    }
+
+    .modal-body {
+        padding: 105px 0 0 102px;
+        background-color: rgba($white, 0.87);
+
+        .cell-menu {
+            max-width: 230px;
+
+            .menu {
+                padding: 0;
+                list-style: none;
+
+                li {
+                    padding: 20px;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    border-bottom: 1px solid rgba($black, 0.10);
+
+                    &.active {
+                        background-color: $blue-0;
+
+                        a {
+                            color: $white;
+
+                            &:active,
+                            &:hover,
+                            &:visited {
+                                color: $white;
+                            }
+                        }
+                    }
+
+                    a {
+                        color: $black;
+                        line-height: 1.5;
+                        font-size: 1.5rem;
+                        font-weight: $bold;
+
+                        &:active,
+                        &:hover,
+                        &:visited {
+                            color: $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
