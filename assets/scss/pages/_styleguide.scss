@@ -42,4 +42,17 @@
             }
         }
     }
+    
+    .filters {
+        margin-top: 105px;
+
+        .filter-bg-light {
+            padding-bottom: 105px;
+        }
+        .filters-bg-dark{
+            padding-top: 105px;
+            padding-bottom: 105px;
+            background: $dark-blue-1;
+        }
+    }
 }
