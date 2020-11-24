@@ -18,6 +18,7 @@ use helpers\View;
         <div class="grid-x">
             <div class="cell medium-3">
                 <?php View::render('components/stat-card', [
+                    'image' => '../../assets/images/placeholder/global-1.jpg',
                     'number' => '31',
                     'title' => 'Million',
                     'description' => 'people had better access to services to tackle poverty'
@@ -25,6 +26,7 @@ use helpers\View;
             </div>
             <div class="cell medium-3">
                 <?php View::render('components/stat-card', [
+                    'image' => '../../assets/images/placeholder/global-2.jpg',
                     'number' => '20',
                     'title' => 'Million',
                     'description' => 'people gained access to financial services'
@@ -32,6 +34,7 @@ use helpers\View;
             </div>
             <div class="cell medium-3">
                 <?php View::render('components/stat-card', [
+                    'image' => '../../assets/images/placeholder/global-3.jpg',
                     'number' => '256',
                     'title' => 'Million',
                     'description' => 'tonnes of carbon emissions cut'
@@ -39,6 +42,7 @@ use helpers\View;
             </div>
             <div class="cell medium-3">
                 <?php View::render('components/stat-card', [
+                    'image' => '../../assets/images/placeholder/global-4.jpg',
                     'number' => '1+',
                     'title' => 'Million',
                     'description' => 'invested to strengthen resilience to crises'

@@ -1,4 +1,4 @@
-<div class="stat-card">
+<div class="stat-card" data-image="<?= $image ?? '' ?>">
     <div class="card-content">
         <div class="numerals outline">
             <?= $number ?? '' ?>
