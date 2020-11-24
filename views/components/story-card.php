@@ -9,17 +9,17 @@
     </div>
     <div class="content">
         <p class="tag">
-            Content Tag
+            <?= $tag ?? '' ?>
         </p>
         <h5 class="heading h5">
-            Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt
+            <?= $title ?? '' ?>
         </h5>
         <p class="small-copy">
-            This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action
+            <?= $description ?? '' ?>
         </p>
         <div class="cta">
             <a class="text-link arrow-2" href="#">
-                Read More
+                <?= $cta ?? 'Read more'?>
                 <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
             </a>
         </div>

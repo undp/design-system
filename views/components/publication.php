@@ -6,22 +6,24 @@ use helpers\View;
     <div class="grid-x">
         <div class="cell small-10 medium-4">
             <div class="publication-image">
-                <img src="/assets/images/placeholder/publications.jpg" alt="publication">
+                <img src="<?= $image ?>" alt="publication">
             </div>
         </div>
         <div class="cell small-offset-1 small-9 medium-offset-1 medium-6 flex-container align-center-middle">
             <div class="publication-content">
-                <tag class="tag">Featured content</tag>
+                <tag class="tag">
+                    <?= $tag ?? '' ?>
+                </tag>
                 <h3 class="heading h3">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    <?= $title ?? '' ?>
                 </h3>
                 <p class="big-copy">
-                    Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt.
+                    <?= $description ?? '' ?>
                 </p>
                 <div class="controls">
                     <div class="cta">
                         <button class="btn">
-                            Read More
+                           <?= $cta ?? '' ?>
                             <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
                         </button>
                     </div>

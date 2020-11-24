@@ -18,14 +18,22 @@
             <div class="cell small-12 medium-4">
                 <?php
                     View::render('components/story-card', [
-                        'image' => '/assets/images/featured-stories.png'
+                        'image' => '/assets/images/placeholder/featured-story-1.jpeg',
+                        'tag' => 'UNDP Response',
+                        'title' => 'A vineyard with a storied past receives an injection of new life',
+                        'description' => 'A Bosnian wine that once graced the tables of Austro-Hungarian royalty moves towards 21st century production.',
+                        'cta' => 'Discover more'
                     ])
                 ?>
             </div>
             <div class="cell small-12 medium-4">
                 <?php
                     View::render('components/story-card', [
-                        'image' => '/assets/images/featured-stories.png'
+                        'image' => '/assets/images/placeholder/featured-story-2.jpeg',
+                        'tag' => 'UNDP Response',
+                        'title' => '“We are a forgotten population.”',
+                        'description' => 'Local organizations in Panama continue to reach vulnerable groups during lockdown              ',
+                        'cta' => 'Discover more'
                     ])
                 ?>
             </div>
@@ -35,14 +43,22 @@
                 <?php
                     View::render('components/story-card', [
                         'size' => 'large',
-                        'image' => '/assets/images/featured-stories.png'
+                        'image' => '/assets/images/placeholder/featured-story-3.jpeg',
+                        'tag' => 'UNDP Response',
+                        'title' => 'In Costa Rica, rural women grow their own businesses',
+                        'description' => 'Working with organic agriculture and native stingless honey bee production',
+                        'cta' => 'Discover more'
                     ])
                 ?>
             </div>
             <div class="cell small-12 medium-4">
                 <?php
                     View::render('components/story-card', [
-                        'image' => '/assets/images/featured-stories.png'
+                        'image' => '/assets/images/placeholder/featured-story-4.jpeg',
+                        'tag' => 'UNDP Response',
+                        'title' => '“I cry for no apparent reason.”',
+                        'description' => "UNDP launches Syria's first online mental health service",
+                        'cta' => 'Discover more'
                     ])
                 ?>
             </div>
