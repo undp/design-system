@@ -1,6 +1,5 @@
 .our-expertise{
     position: relative;
-    margin-bottom: 70px;
 
     .our-expertise-row{
         &:first-child{
@@ -16,14 +15,21 @@
         }
 
         &:not(:first-child) {
-            margin-top: -40px;
+            margin-top: -180px;
+        }
+
+        .section-title{
+            top: 140px;
+            left: 140px;
+            position: absolute;
+            z-index: $z-index-3;
         }
     }
 
     @include breakpoint(medium up){
         &::before{
             content: '';
-            left: 50.6%;
+            left: 50.7%;
             width: 100%;
             z-index: -1;
             height: 100%;
