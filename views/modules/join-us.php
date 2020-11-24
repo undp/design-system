@@ -5,10 +5,14 @@ use helpers\View;
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell medium-6 medium-offset-1">
-                <h2 class="heading h2">Join Us in UNDP<br/>Partnership</h2>
-                <p class="big-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h2 class="heading h2">
+                    Trusted partnerships
+                </h2>
+                <p class="big-copy">
+                    Partnership is at the heart of everything UNDP does. We offer a nearly universal presence across the world. We are determined to mobilize the means to implement the 2030 Agenda through a revitalized Global Partnership for Sustainable Development, with a focus on the poorest and most vulnerable.
+                </p>
                 <button class="btn">
-                    Read More
+                    Join Us
                     <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
                 </button>
             </div>

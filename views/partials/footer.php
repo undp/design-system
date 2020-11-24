@@ -21,7 +21,7 @@ use helpers\Svg;
                             <h4 class="footer-subtitle light uppercase">Sign up for our newsletter</h4>
                             <div class="flex-container group-input-sign-up">
                                 <input class="input-sign-up" name="email" type="email" placeholder="Email">
-                                <input class="btn-submit footer-subtitle" type="submit" value="Sign up">
+                                <input class="btn-submit footer-subtitle" type="submit" value="GO">
                             </div>
                         </form>
                     </div>
@@ -35,14 +35,12 @@ use helpers\Svg;
                             </span>
                         </h4>
                         <ul class="list">
-                            <li><a class="footer-menu-item light active" href="#">Mission and Vision</a></li>
-                            <li><a class="footer-menu-item light" href="#">History</a></li>
-                            <li><a class="footer-menu-item light" href="#">The UN Charter</a></li>
+                            <li><a class="footer-menu-item light" href="#">About Us</a></li>
                             <li><a class="footer-menu-item light" href="#">Leadership</a></li>
                             <li><a class="footer-menu-item light" href="#">Executive Board</a></li>
-                            <li><a class="footer-menu-item light" href="#">Partnership</a></li>
+                            <li><a class="footer-menu-item light" href="#">Partnerships</a></li>
                             <li><a class="footer-menu-item light" href="#">Financials</a></li>
-                            <li><a class="footer-menu-item light" href="#">Transparency and Accountability</a></li>
+                            <li><a class="footer-menu-item light" href="#">Transparency and accountability</a></li>
                         </ul>
                     </div>
                     <div class="column who-we-do">
@@ -72,7 +70,8 @@ use helpers\Svg;
                             <li><a class="footer-menu-item light" href="#">Publications</a></li>
                             <li><a class="footer-menu-item light" href="#">Content</a></li>
                             <li><a class="footer-menu-item light" href="#">Stories</a></li>
-                            <li><a class="footer-menu-item light" href="#">Blogs</a></li>
+                            <li><a class="footer-menu-item light" href="#">Blog</a></li>
+                            <li><a class="footer-menu-item light" href="#">Newsroom</a></li>
                         </ul>
                     </div>
                     <div class="column get-involved">
@@ -83,17 +82,12 @@ use helpers\Svg;
                             </span>
                         </h4>
                         <ul class="list">
-                            <li><a class="footer-menu-item light" href="#">For Governments</a></li>
-                            <li><a class="footer-menu-item light" href="#">For Private Sector</a></li>
-                            <li><a class="footer-menu-item light" href="#">For Non-Governmental Organizations</a></li>
-                            <li><a class="footer-menu-item light" href="#">Online Consultations</a></li>
-                            <li><a class="footer-menu-item light" href="#">Donate</a></li>
-                            <li><a class="footer-menu-item light" href="#">Subscribe</a></li>
-                            <li><a class="footer-menu-item light" href="#">UNDP Social</a></li>
-                            <li><a class="footer-menu-item light" href="#">UNDP Shop</a></li>
                             <li><a class="footer-menu-item light" href="#">Careers</a></li>
                             <li><a class="footer-menu-item light" href="#">Procurement</a></li>
-                            <li><a class="footer-menu-item light" href="#">Contacts</a></li>
+                            <li><a class="footer-menu-item light" href="#">Expert Consultations</a></li>
+                            <li><a class="footer-menu-item light" href="#">UNDP Shop</a></li>
+                            <li><a class="footer-menu-item light" href="#">Donate</a></li>
+                            <li><a class="footer-menu-item light" href="#">Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="column language">
@@ -105,8 +99,8 @@ use helpers\Svg;
                         </h4>
                         <ul class="list">
                             <li><a class="footer-menu-item light" href="#">English</a></li>
-                            <li><a class="footer-menu-item light" href="#">French</a></li>
-                            <li><a class="footer-menu-item light" href="#">Spanish</a></li>
+                            <li><a class="footer-menu-item light" href="#">Español</a></li>
+                            <li><a class="footer-menu-item light" href="#">Français</a></li>
                         </ul>
                     </div>
                     <div class="column legal show-for-large">
@@ -121,9 +115,10 @@ use helpers\Svg;
                             </div>
                             <div class="terms-conditions">
                                 <ul class="list">
-                                    <li><a class="footer-menu-item light" href="#">Legal</a></li>
-                                    <li><a class="footer-menu-item light" href="#">Terms And Conditions</a></li>
-                                    <li><a class="footer-menu-item light" href="#">Table Of Contents</a></li>
+                                    <li><a class="footer-menu-item light" href="#">Report fraud, abuse, misconduct</a></li>
+                                    <li><a class="footer-menu-item light" href="#">Submit social or environmental complaint</a></li>
+                                    <li><a class="footer-menu-item light" href="#">Scam alert</a></li>
+                                    <li><a class="footer-menu-item light" href="#">Terms of use</a></li>
                                 </ul>
                             </div>
                             <div class="flex-container social-links">
@@ -162,9 +157,10 @@ use helpers\Svg;
                     <div class="column show-for-small-only">
                         <div class="terms-conditions">
                             <ul class="list">
-                                <li><a class="footer-menu-item light" href="#">Legal</a></li>
-                                <li><a class="footer-menu-item light" href="#">Terms And Conditions</a></li>
-                                <li><a class="footer-menu-item light" href="#">Table Of Contents</a></li>
+                                <li><a class="footer-menu-item light" href="#">Report fraud, abuse, misconduct</a></li>
+                                <li><a class="footer-menu-item light" href="#">Submit social or environmental complaint</a></li>
+                                <li><a class="footer-menu-item light" href="#">Scam alert</a></li>
+                                <li><a class="footer-menu-item light" href="#">Terms of use</a></li>
                             </ul>
                         </div>
                     </div>
@@ -200,7 +196,7 @@ use helpers\Svg;
         <div class="grid-x">
             <div class="cell small-offset-1 small-11 medium-offset-1 medium-11">
                 <div class="footer-foot">
-                    <p class="footer-subtitle light">Copyright Statement UNDP 2020</p>
+                    <p class="footer-subtitle light">© 2020 United Nations Development Programme</p>
                 </div>
             </div>
         </div>
