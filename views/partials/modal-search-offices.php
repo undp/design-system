@@ -2,7 +2,7 @@
     use helpers\Svg;
 ?>
 
-<section id="modal-search-offices" class="modal-search-offices hide">
+<section id="modal-search-offices" class="menu-modal modal-search-offices hide">
     <div class="grid-container modal-content height-full">
         <button class="close-button show-for-large" data-btn-close>
             <?php Svg::render('icon-close') ?>

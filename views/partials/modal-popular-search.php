@@ -4,7 +4,7 @@ use helpers\Svg;
 
 ?>
 
-<section id="modal-popular-search" class="modal-popular-search hide">
+<section id="modal-popular-search" class="menu-modal modal-popular-search hide">
     <div class="grid-container modal-content">
         <div class="modal-head">
             <button class="close-button show-for-large" data-btn-close>
