@@ -4,7 +4,7 @@ use helpers\View;
 
 <div class="publications">
     <div class="grid-container">
-        <div class="grid-x">
+        <div class="grid-x  scroll-track left-right delay-1">
             <div class="cell small-offset-1 small-11 medium-offset-1 medium-10 large-offset-1 large-10">
                 <div class="section-title">
                     <h2 class="heading h2">
@@ -13,7 +13,7 @@ use helpers\View;
                 </div>
             </div>
         </div>
-        <div class="grid-x">
+        <div class="grid-x  scroll-track right-left delay-1">
             <div class="cell medium-12 large-offset-1 large-10">
                 <div class="publications-slider">
                     <div class="glide">

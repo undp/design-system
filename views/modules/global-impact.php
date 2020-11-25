@@ -4,10 +4,10 @@ use helpers\View;
 <div class="global-impact">
     <div class="grid-container heading-container">
         <div class="grid-x grid-margin-x align-center">
-            <div class="cell medium-3">
+            <div class="cell medium-3  scroll-track left-right delay-1">
                 <h2 class="heading h2 light">Global<br/>Impact</h2>
             </div>
-            <div class="cell medium-7">
+            <div class="cell medium-7  scroll-track right-left delay-1">
                 <p class="heading h4 light">
                     Our work in sustainable development, governance, and resilience building.
                 </p>
@@ -15,7 +15,7 @@ use helpers\View;
         </div>
     </div>
     <div class="grid-container full card-container">
-        <div class="grid-x">
+        <div class="grid-x scroll-track left-right delay-2">
             <div class="cell medium-3">
                 <?php View::render('components/stat-card', [
                     'image' => '../../assets/images/placeholder/global-1.jpg',

@@ -1,6 +1,6 @@
 <div class="hero" style="background: url('../../assets/images/hero.png') center 0 / cover no-repeat;">
     <div class="hero-content">
-        <div class="text-box">
+        <div class="text-box scroll-track right-left delay-1">
             <div class="title">
                 <h1 class="heading h1">
                     What’s next?
