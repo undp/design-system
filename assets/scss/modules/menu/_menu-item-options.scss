@@ -13,7 +13,8 @@ body {
     overflow-y: auto;
     z-index: $z-index-5;
     padding: 25px 0 58px 45px;
-    background-color: $dark-blue-6;
+    backdrop-filter: blur(30px);
+    background-color: rgba($dark-blue-6, 0.87);
 
     .menu-btn-back {
         font-size: 1.2rem;

@@ -1,6 +1,7 @@
 .menu-mobile-main-options {
     padding: 85px 0 95px 0;
-    background-color: $dark-blue-6;
+    backdrop-filter: blur(30px);
+    background-color: rgba($dark-blue-6, 0.87);
 
     .menu-items {
         list-style: none;
