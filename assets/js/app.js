@@ -1,6 +1,6 @@
 import modal from './components/modal'
-import select from './partials/select'
 import inputs from './components/inputs'
+import customSelect from './components/select'
 import ourExpertiseSectionAnimation from './components/our-expertise-animation'
 import modalNav from './components/modal-nav'
 import navigation from './components/navigation'
@@ -13,13 +13,13 @@ import statCardBackground from './components/stat-card-background'
 
 function main() {
     modal()
-    select()
     inputs()
     ourExpertiseSectionAnimation()
     dropdown()
     modalNav()
     footerMenu()
     navigation()
+    customSelect()
     scrollTriggers()
     publicationsSlider()
     ourMissionAnimation()
