@@ -24,7 +24,7 @@ const init = function () {
         let start = "top bottom-=180px"
 
         if(side == 'right'){
-            start = "bottom bottom-=20px",
+            start = "bottom bottom-=20px"
             end = "center 10%"
         }
 
@@ -36,12 +36,12 @@ const init = function () {
                     trigger: target,
                     scrub: true,
                     start: start,
-                    end: end
+                    end: end,
                 }
             }).fromTo(target, {y: 0}, {y: -20})
                 .fromTo(sectionImage,{y: 100}, {y: -180})
                 .from(target, {opacity: 0, duration: 0.2}, 0)
-                .to(target, {opacity: 0, duration: 1}, '-=0.5')
+                .to(target, {opacity: 0, duration: 1}, '-=0.1')
         });
     }
 }
