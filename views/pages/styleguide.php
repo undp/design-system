@@ -695,7 +695,7 @@ use helpers\View;
                 <div class="cell">
                     <h5 class="heading h5">Custom select</h5>
                 </div>
-                <div class="cell medium-6">
+                <div class="cell medium-6 custom-cell">
                     <div class="select-box" data-select>
                         <div class="options-container" data-select-options>
                             <div class="option">
@@ -725,8 +725,8 @@ use helpers\View;
                         </div>
                     </div>
                 </div>
-                <div class="cell medium-6">
-                    <div class="select-box" data-select>
+                <div class="cell medium-6 custom-cell bg-dark">
+                    <div class="select-box dark" data-select>
                         <div class="options-container" data-select-options>
                             <div class="option">
                                 <input type="radio"

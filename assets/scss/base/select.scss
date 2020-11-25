@@ -8,8 +8,14 @@
     font-weight: $regular;
     flex-direction: column;
 
-    .dark {
+    &.dark {
         color: $white;
+
+        .selected,
+        .options-container {
+            border: 2px solid $white;
+            background-color: transparent;
+        }
     }
 
     .options-container {

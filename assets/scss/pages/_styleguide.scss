@@ -42,7 +42,7 @@
             }
         }
     }
-    
+
     .filters {
         margin-top: 105px;
 
@@ -58,5 +58,17 @@
 
     .bg-dark {
         background-color: $dark-blue-1;
+    }
+
+    .custom-select {
+        margin-top: 105px;
+
+        .custom-cell {
+            padding: 100px 100px 300px;
+        }
+
+        .bg-dark {
+            background: $dark-blue-1;
+        }
     }
 }
