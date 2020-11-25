@@ -2,7 +2,7 @@
     opacity: 0;
     color: transparent;
     transform: translateX(-100px);
-    transition: $transition-primary;
+    transition: $transition-tertiary;
 
     &.left-right-small {
         @include breakpoint(small only) {

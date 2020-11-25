@@ -1,7 +1,7 @@
 <?php
     $imageExist = isset($image) && !empty($image);
 ?>
-<div class="story-card scroll-track left-right delay-4 <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
+<div class="story-card scroll-track left-right delay-2 <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
     <div class="hover-image">
         <?php if($imageExist): ?>
             <img src="<?= $image ?>" alt="story-image">
