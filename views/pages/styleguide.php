@@ -696,6 +696,7 @@ use helpers\View;
                     <h5 class="heading h5">Custom select</h5>
                 </div>
                 <div class="cell medium-6 custom-cell">
+                    <p class="big-copy">.select-box</p>
                     <div class="select-box" data-select>
                         <div class="options-container" data-select-options>
                             <div class="option">
@@ -726,6 +727,7 @@ use helpers\View;
                     </div>
                 </div>
                 <div class="cell medium-6 custom-cell bg-dark">
+                    <p class="big-copy light">.select-box .dark</p>
                     <div class="select-box dark" data-select>
                         <div class="options-container" data-select-options>
                             <div class="option">
