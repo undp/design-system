@@ -688,6 +688,81 @@ use helpers\View;
         </div>
 
 </div>
+
+    <div class="custom-select">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <div class="cell">
+                    <h5 class="heading h5">Custom select</h5>
+                </div>
+                <div class="cell medium-6">
+                    <div class="select-box" data-select>
+                        <div class="options-container" data-select-options>
+                            <div class="option">
+                                <input type="radio"
+                                       class="radio"
+                                       id="list-item-1"
+                                        name="category">
+                                <label for="list-item-1">List item 1</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio"
+                                       class="radio"
+                                       id="list-item-2"
+                                        name="category">
+                                <label for="list-item-2">List item 2</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio"
+                                       class="radio"
+                                       id="list-item-3"
+                                        name="category">
+                                <label for="list-item-3">List item 3</label>
+                            </div>
+                        </div>
+                        <div class="selected" data-select-open>
+                            Category
+                        </div>
+                    </div>
+                </div>
+                <div class="cell medium-6">
+                    <div class="select-box" data-select>
+                        <div class="options-container" data-select-options>
+                            <div class="option">
+                                <input type="radio"
+                                       class="radio"
+                                       id="list-item-1"
+                                       name="category"
+                                       value="list-item-1">
+                                <label for="list-item-1">List item 1</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio"
+                                       class="radio"
+                                       id="list-item-2"
+                                       name="category"
+                                       value="list-item-2">
+                                <label for="list-item-2">List item 2</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio"
+                                       class="radio"
+                                       id="list-item-3"
+                                       name="category"
+                                       value="list-item-3">
+                                <label for="list-item-3">List item 3</label>
+                            </div>
+                        </div>
+                        <div class="selected" data-select-open>
+                            Category
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="height: 500px"></div>
 <!-- Footer -->
 <?php View::render('partials/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
