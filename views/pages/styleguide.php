@@ -580,8 +580,114 @@ use helpers\View;
             </div>
         </div>
     </div>
+
+    <!-- Filter light-->
+    <div class="filters">
+        <div class="grid-container filter-bg-light">
+            <div class="grid-x">
+                <div class="cell">
+                    <p class="heading h5 title">Filter</p>
+                </div>
+                <div class="cell">
+                    <table class="unstriped">
+                        <thead>
+                        <tr>
+                            <th class="heading h5 dark">Class</th>
+                            <th class="heading h5 dark">Style preview</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="big-copy dark">
+                                .custom-input
+                            </td>
+                            <td>
+                                <div class="custom-input" data-custom-input>
+                                    <div class="label" data-label>Enter name</div>
+                                    <input class="input" type="text" data-input>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="big-copy dark">
+                                .custom-input .error
+                            </td>
+                            <td>
+                                <div class="custom-input error" data-custom-input>
+                                    <div class="label" data-label>Enter name</div>
+                                    <input class="input" type="text" data-input>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="big-copy dark">
+                                .custom-input .disabled
+                            </td>
+                            <td>
+                                <div class="custom-input disabled" data-custom-input>
+                                    <div class="label" data-label>Enter name</div>
+                                    <input class="input" type="text" disabled data-input>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="bg-dark">
+            <div class="grid-container filters-bg-dark bg-dark">
+            <div class="grid-x">
+                <div class="cell">
+                    <table class="unstriped">
+                        <thead>
+                        <tr>
+                            <th class="heading h5 light">Class</th>
+                            <th class="heading h5 light">Style preview</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="big-copy light">
+                                .custom-input .dark
+                            </td>
+                            <td>
+                                <div class="custom-input dark" data-custom-input>
+                                    <div class="label" data-label>Enter name</div>
+                                    <input class="input" type="text"  data-input>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="big-copy light">
+                                .custom-input .dark .error
+                            </td>
+                            <td>
+                                <div class="custom-input error" data-custom-input>
+                                    <div class="label" data-label>Enter name</div>
+                                    <input class="input" type="text" data-input>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="big-copy light">
+                                .custom-input .dark .disabled
+                            </td>
+                            <td>
+                                <div class="custom-input disabled" data-custom-input>
+                                    <div class="label" data-label>Enter name</div>
+                                    <input class="input" type="text" disabled data-input>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+
 </div>
-<div style="height: 500px"></div>
 <!-- Footer -->
 <?php View::render('partials/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>

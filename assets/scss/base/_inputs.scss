@@ -1,0 +1,64 @@
+.custom-input {
+    display: flex;
+    font-size: 1.4rem;
+    padding: 20px 22px;
+    align-items: center;
+    color: $dark-blue-13;
+    border: 2px solid $black;
+
+    &.dark {
+        color: $dark-blue-15;
+        border-color: $white;
+
+        &.active {
+            border-color: $dark-blue-4;
+        }
+
+        &.disabled {
+            cursor: not-allowed;
+            color: $dark-blue-15;
+            border-color: $dark-blue-2;
+        }
+
+        input {
+            color: $dark-blue-15;
+        }
+    }
+
+    &.active {
+        border-color: $dark-blue-14;
+    }
+
+    &.error {
+        color: $red;
+        border-color: $red;
+
+        input {
+            color: $red;
+            caret-color: $red;
+        }
+    }
+
+    &.disabled {
+        cursor: not-allowed;
+        color: $dark-blue-4;
+        border-color: $dark-blue-4;
+
+        input {
+            cursor: not-allowed;
+            background-color: transparent;
+        }
+    }
+
+    input {
+        border: none;
+        margin-left: 6px;
+        caret-color: $dark-blue-12;
+        background-color: transparent;
+
+        &:active,
+        &:focus {
+            outline: none;
+        }
+    }
+}
