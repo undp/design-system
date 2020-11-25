@@ -635,9 +635,10 @@ use helpers\View;
                 </div>
             </div>
         </div>
-        <div class="grid-container filters-bg-dark">
+        <div class="bg-dark">
+            <div class="grid-container filters-bg-dark bg-dark">
             <div class="grid-x">
-                <div class="cell bg-dark">
+                <div class="cell">
                     <table class="unstriped">
                         <thead>
                         <tr>
@@ -684,7 +685,7 @@ use helpers\View;
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
 </div>
 <!-- Footer -->
