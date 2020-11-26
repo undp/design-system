@@ -76,6 +76,7 @@
 
         .right-menu {
             .nav-item {
+                border: none;
                 margin-right: 22px;
 
                 @include breakpoint(large down) {
@@ -105,6 +106,7 @@
         position: relative;
 
         .dropdown-btn {
+            border: none;
             color: $blue-0;
             cursor: pointer;
 
