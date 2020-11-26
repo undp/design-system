@@ -1,17 +1,17 @@
 .hero{
-    height: 100vh;
-    max-height: 805px;
+    //height: 100vh;
+    height: 805px;
 
     @include breakpoint(large){
-        max-height: 810px;
+        height: 810px;
     }
 
     @include breakpoint(medium){
-        max-height: 880px;
+        height: 880px;
     }
 
     @include breakpoint(small only){
-        max-height: 815px;
+        height: 815px;
     }
 
     .hero-content{

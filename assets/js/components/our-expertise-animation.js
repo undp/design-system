@@ -21,27 +21,31 @@ const init = function () {
 
 
         let end = "center 35%"
-        let start = "top bottom-=180px"
+        let start = "top bottom-=230px"
+        let position = 6
+
 
         if(side == 'right'){
-            start = "bottom bottom-=20px",
+            start = "bottom bottom-=10px",
             end = "center 10%"
+            position = 4.7
         }
 
         sections.forEach(target => {
             let sectionImage = target.querySelector('.image-card');
             gsap.timeline({
-                defaults: {duration: 0.5},
+                duration: 5,
                 scrollTrigger: {
                     trigger: target,
                     scrub: true,
                     start: start,
-                    end: end
+                    end: end,
+                    markers: side == 'right' ? {startColor: "blue", endColor: "red"} : {startColor: "green", endColor: "orange"}
                 }
-            }).fromTo(target, {y: 0}, {y: -20})
-                .fromTo(sectionImage,{y: 100}, {y: -180})
-                .from(target, {opacity: 0, duration: 0.2}, 0)
-                .to(target, {opacity: 0, duration: 1}, '-=0.5')
+            }).fromTo(target, {y: 0}, {duration: 5, y: -60})
+                .fromTo(sectionImage,{y: 70}, {duration: 5, y: -140}, 0)
+                .from(target, {opacity: 0, duration: 1}, 0)
+                .to(target, {opacity: 0, duration: 1}, position)
         });
     }
 }
