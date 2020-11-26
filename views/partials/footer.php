@@ -21,7 +21,7 @@ use helpers\Svg;
                             <h4 class="footer-subtitle light uppercase">Sign up for our newsletter</h4>
                             <div class="flex-container group-input-sign-up">
                                 <input class="input-sign-up" name="email" type="email" placeholder="Email">
-                                <input class="btn-submit footer-subtitle" type="submit" value="GO">
+                                <input class="btn-submit footer-subtitle" type="submit" value="SIGN UP">
                             </div>
                         </form>
                     </div>
