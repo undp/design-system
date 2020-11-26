@@ -1,3 +1,42 @@
+@keyframes circle-square-transition {
+    0% {
+        opacity: 0.1;
+        width: 100px;
+        height: 50px;
+        margin-top: -50px;
+        border-radius: 50%;
+    }
+
+    25% {
+        width: 150px;
+        height: 150px;
+        opacity: 0.25;
+        margin-top: -50px;
+        border-radius: 40%;
+    }
+
+    50% {
+        opacity: 0.5;
+        width: 350px;
+        height: 350px;
+        margin-top: -50px;
+        border-radius: 20%;
+    }
+
+    75% {
+        opacity: 0.75;
+        width: 450px;
+        height: 400px;
+        margin-top: -50px;
+        border-radius: 0 0 10% 10%;
+    }
+
+    100% {
+        opacity: 1;
+        border-radius: 0 0 5% 5%;
+    }
+}
+
 .modal-nav-hover {
     width: 100%;
     position: fixed;
@@ -14,12 +53,25 @@
     }
 
     .modal-content {
-        padding: 0 116px
+        padding: 0 116px;
+        transform: $transition-tertiary;
     }
 
     .modal-body {
+        overflow: hidden;
+        animation-duration: .4s;
         padding: 105px 0 0 102px;
+        transition: $transition-primary;
         background-color: rgba($white, 0.87);
+
+        &.circle-square-transition {
+            animation-name: circle-square-transition;
+        }
+
+        &.hide {
+            animation-direction: reverse;
+            animation-name: circle-square-transition;
+        }
 
         .cell-menu {
             max-width: 230px;

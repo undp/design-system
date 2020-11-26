@@ -7,9 +7,11 @@ class ModalNavHover {
         this.modalBody = '[data-modal-body]';
         this.menuOptions = '[data-menu-option]';
         this.dataMenuOptionId = 'menu-option-value';
+        this.classAnimation = 'circle-square-transition';
 
         this.$modalMenuOptions = null;
         this.$modals = $('[data-modal-nav-hover]');
+        this.$modalBody = null;
     }
 
     init() {
@@ -22,27 +24,29 @@ class ModalNavHover {
                 const modalId = $(modal).data(this.dataModalId);
                 this.currentModal = $('#' + modalId);
                 if (this.currentModal) {
-                    this.openModal();
                     this.listenerHoverCloseModal();
                     this.listenerOpenMenuOption();
+                    this.openModal();
                 }
             });
         })
     }
 
     listenerHoverCloseModal() {
-        const modalBody = this.currentModal.find(this.modalBody);
-        modalBody.mouseleave(() => {
+        this.$modalBody = this.currentModal.find(this.modalBody);
+        this.$modalBody.mouseleave(() => {
             this.closeModal();
         })
     }
 
     openModal() {
         this.currentModal.removeClass(this.classHide);
+        this.$modalBody.addClass(this.classAnimation).removeClass(this.classHide);
     }
 
     closeModal() {
         this.currentModal.addClass(this.classHide);
+        this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation);
     }
 
     closeMenuAllOption() {

@@ -1,7 +1,7 @@
 <?php
     use helpers\View;
 ?>
-<section id="modal-nav-hover" class="modal-nav-hover show-for-large hide">
+<section id="modal-nav-hover" class="flex-container align-center modal-nav-hover show-for-large hide">
     <div class="grid-container modal-content height-full">
         <div class="grid-x modal-body" data-modal-body>
             <div class="cell large-auto  cell-menu">
