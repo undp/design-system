@@ -6,12 +6,17 @@ gsap.registerPlugin(ScrollTrigger)
 const init = function () {
     const section = $(".our-mission");
 
-    ScrollTrigger.create({
-        trigger: section,
-        start: "top center",
-        onEnter: () => gsap.to(section, {backgroundColor: '#232E3E', overwrite: 'auto'}),
-        onLeaveBack: () => gsap.to(section, {backgroundColor: 'white', overwrite: 'auto'})
-    });
+    gsap.timeline({
+        duration: 5,
+        scrollTrigger: {
+            trigger: section,
+            scrub: true,
+            start: 'top+=120px bottom',
+            end: 'bottom center',
+        }
+    }).from('body', {backgroundColor: '#FFF'}, 0)
+        .to('body', {backgroundColor: '#232E3E'})
+        .to('body', {backgroundColor: '#FFF', duration: 2}, 3)
 }
 
 export default init
