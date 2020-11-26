@@ -4,8 +4,9 @@
     top: $height-nav;
     overflow-y: auto;
     z-index: $z-index-modal;
-    backdrop-filter: blur(30px);
-    background-color: rgba($white, 0.87);
+    //we defined the blur and background with transparencies on the parent to see over 1440px a background-blur on the side modal left and  right
+    backdrop-filter: blur(25px);
+    background-color: rgba($white, 0.7);
     height: calc(100vh - #{$height-nav});
 
     @include breakpoint(medium down) {
@@ -40,8 +41,10 @@
                 max-width: 525px;
                 padding: 75px 60px;
                 box-shadow: 0 3px 6px rgba($black, 0.16);
-                background-color: rgba($dark-blue-8, 0.86);
-                backdrop-filter: blur(30px) brightness(15%);
+                border-right: none;
+                //we use the blur parent and only here we added opacity to the background to see the left cell with blur and transparencies
+                //this approach(background-color and blur) is similar to the XD but not the same because the directly CSS values take from XD not match with the style
+                background-color: rgba($dark-blue-8, 0.7);
 
                 @include breakpoint(medium down) {
                     max-width: unset;
@@ -136,6 +139,8 @@
                 padding: 80px 50px;
                 position: relative;
                 box-shadow: 0 3px 6px rgba($black, 0.16);
+                //this approach(background-color and blur) is similar to the XD but not the same because the directly CSS values take from XD not match with the style
+                background-color: rgba($dark-blue-8, 0.5);
 
                 @include breakpoint(medium down) {
                     position: static;
