@@ -7,9 +7,13 @@ class ModalNavHover {
         this.modalBody = '[data-modal-body]';
         this.menuOptions = '[data-menu-option]';
         this.dataMenuOptionId = 'menu-option-value';
+        this.classAnimation = 'circle-square-transition';
+        this.classAnimationOpacity = 'opacity-transition';
 
         this.$modalMenuOptions = null;
         this.$modals = $('[data-modal-nav-hover]');
+        this.$modalBody = null;
+        this.$modalContent = null;
     }
 
     init() {
@@ -22,27 +26,32 @@ class ModalNavHover {
                 const modalId = $(modal).data(this.dataModalId);
                 this.currentModal = $('#' + modalId);
                 if (this.currentModal) {
-                    this.openModal();
+                    this.$modalContent  = this.currentModal.find('.opacity');
                     this.listenerHoverCloseModal();
                     this.listenerOpenMenuOption();
+                    this.openModal();
                 }
             });
         })
     }
 
     listenerHoverCloseModal() {
-        const modalBody = this.currentModal.find(this.modalBody);
-        modalBody.mouseleave(() => {
+        this.$modalBody = this.currentModal.find(this.modalBody);
+        this.$modalBody.mouseleave(() => {
             this.closeModal();
         })
     }
 
     openModal() {
         this.currentModal.removeClass(this.classHide);
+        this.$modalBody.addClass(this.classAnimation).removeClass(this.classHide);
+        this.$modalContent.addClass(this.classAnimationOpacity);
     }
 
     closeModal() {
         this.currentModal.addClass(this.classHide);
+        this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation);
+        this.$modalContent.removeClass(this.classAnimationOpacity);
     }
 
     closeMenuAllOption() {
