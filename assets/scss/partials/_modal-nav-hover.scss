@@ -74,27 +74,24 @@
 
     .modal-body {
         overflow: hidden;
-        animation-duration: 3s;
+        animation-duration: .4s;
         padding: 105px 0 0 102px;
         transition: $transition-primary;
         background-color: rgba($white, 0.87);
-        //opacity: 0;
 
         &.circle-square-transition {
             animation-name: circle-square-transition;
-            //transition : all 10s;
         }
 
         .opacity {
             opacity: 0;
 
             &.opacity-transition {
-                animation-delay: 3s;
-                animation-duration: 1s;
+                animation-delay: .4s;
+                animation-duration: .4s;
                 animation-name: circle-square-transition-2;
                 animation-fill-mode: forwards
             }
-
         }
 
 

@@ -8,7 +8,7 @@ class ModalNavHover {
         this.menuOptions = '[data-menu-option]';
         this.dataMenuOptionId = 'menu-option-value';
         this.classAnimation = 'circle-square-transition';
-        this.classAnimation2 = 'opacity-transition';
+        this.classAnimationOpacity = 'opacity-transition';
 
         this.$modalMenuOptions = null;
         this.$modals = $('[data-modal-nav-hover]');
@@ -45,13 +45,13 @@ class ModalNavHover {
     openModal() {
         this.currentModal.removeClass(this.classHide);
         this.$modalBody.addClass(this.classAnimation).removeClass(this.classHide);
-        this.$modalContent.addClass(this.classAnimation2);
+        this.$modalContent.addClass(this.classAnimationOpacity);
     }
 
     closeModal() {
         this.currentModal.addClass(this.classHide);
         this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation);
-        this.$modalContent.removeClass(this.classAnimation2);
+        this.$modalContent.removeClass(this.classAnimationOpacity);
     }
 
     closeMenuAllOption() {
