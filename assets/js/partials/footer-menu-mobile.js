@@ -2,6 +2,8 @@ import Foundation from 'foundation-sites'
 
 const init = function () {
     function openMenuOptions() {
+
+        let previousTarget = null;
         $('.footer-subtitle').click((e)=>{
 
             let $target = $(e.currentTarget);
@@ -11,8 +13,15 @@ const init = function () {
             $subtitle.parent().children('.list').hide();
             $subtitle.children('.footer-subtitle-arrow').removeClass('rotate');
 
-            $list.show();
-            $target.children('.footer-subtitle-arrow').addClass('rotate');
+            if(previousTarget == e.currentTarget){
+                $list.hide();
+                previousTarget = null;
+            }else{
+                $list.show();
+                $target.children('.footer-subtitle-arrow').addClass('rotate');
+
+                previousTarget = e.currentTarget;
+            }
 
         });
     }
