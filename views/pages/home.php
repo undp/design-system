@@ -18,6 +18,7 @@ use helpers\View;
 <?php View::render('modules/global-impact') ?>
 <?php View::render('modules/publications') ?>
 <?php View::render('modules/recent-news') ?>
+<?php View::render('modules/twitter-feed') ?>
 
 <!-- Footer -->
 <?php View::render('partials/footer'); ?>
