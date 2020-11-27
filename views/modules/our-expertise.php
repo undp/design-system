@@ -12,7 +12,7 @@ use helpers\View;
                     </h2>
                 </div>
             </div>
-            <div class="cell medium-3 expertise-section-right">
+            <div class="cell medium-3 expertise-section">
                 <?php
                     View::render('components/expertise-card', [
                         'title' => 'People',
@@ -21,7 +21,7 @@ use helpers\View;
                     ])
                 ?>
             </div>
-            <div class="cell medium-3 expertise-section-right">
+            <div class="cell medium-3 expertise-section">
                 <div class="expertise-image">
                     <?php
                         View::render('components/image-card', [
@@ -32,7 +32,7 @@ use helpers\View;
             </div>
         </div>
         <div class="grid-x our-expertise-row">
-            <div class="cell medium-3 expertise-section-left">
+            <div class="cell medium-3 expertise-section">
                 <div class="expertise-image">
                     <?php
                         View::render('components/image-card', [
@@ -41,7 +41,7 @@ use helpers\View;
                     ?>
                 </div>
             </div>
-            <div class="cell medium-3 expertise-section-left">
+            <div class="cell medium-3 expertise-section">
                 <?php
                     View::render('components/expertise-card', [
                         'title' => 'Planet',
@@ -52,7 +52,7 @@ use helpers\View;
             </div>
         </div>
         <div class="grid-x our-expertise-row">
-            <div class="cell medium-3 medium-offset-6 expertise-section-right">
+            <div class="cell medium-3 medium-offset-6 expertise-section">
                 <?php
                     View::render('components/expertise-card', [
                         'title' => 'Prosperity',
@@ -62,7 +62,7 @@ use helpers\View;
                 ?>
             </div>
             <div class="cell medium-3">
-                <div class="expertise-image expertise-section-right">
+                <div class="expertise-image expertise-section">
                     <?php
                         View::render('components/image-card', [
                                 'route' => '/assets/images/placeholder/expertise-3.jpeg'
@@ -72,7 +72,7 @@ use helpers\View;
             </div>
         </div>
         <div class="grid-x our-expertise-row">
-            <div class="cell medium-3 expertise-section-left">
+            <div class="cell medium-3 expertise-section">
                 <div class="expertise-image">
                     <?php
                         View::render('components/image-card', [
@@ -81,7 +81,7 @@ use helpers\View;
                     ?>
                 </div>
             </div>
-            <div class="cell medium-3 expertise-section-left">
+            <div class="cell medium-3 expertise-section">
                 <?php
                     View::render('components/expertise-card', [
                         'title' => 'Peace',
@@ -92,7 +92,7 @@ use helpers\View;
             </div>
         </div>
         <div class="grid-x our-expertise-row">
-            <div class="cell medium-3 medium-offset-6 expertise-section-right">
+            <div class="cell medium-3 medium-offset-6 expertise-section">
                 <?php
                     View::render('components/expertise-card', [
                         'title' => 'Partnership',
@@ -102,7 +102,7 @@ use helpers\View;
                 ?>
             </div>
             <div class="cell medium-3">
-                <div class="expertise-image expertise-section-right">
+                <div class="expertise-image expertise-section">
                     <?php
                         View::render('components/image-card', [
                             'route' => '/assets/images/placeholder/expertise-5.jpeg'
