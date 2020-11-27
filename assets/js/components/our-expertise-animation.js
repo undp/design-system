@@ -40,7 +40,6 @@ const init = function () {
                     scrub: true,
                     start: start,
                     end: end,
-                    markers: side == 'right' ? {startColor: "blue", endColor: "red"} : {startColor: "green", endColor: "orange"}
                 }
             }).fromTo(target, {y: 0}, {duration: 5, y: -60})
                 .fromTo(sectionImage,{y: 70}, {duration: 5, y: -140}, 0)
