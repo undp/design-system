@@ -16,15 +16,29 @@
             }
         }
 
-        &:not(:first-child) {
-            margin-top: -220px;
-        }
-
         .section-title{
             top: 140px;
             left: 140px;
             position: absolute;
             z-index: $z-index-3;
+        }
+
+        .image-card{
+            opacity: 0;
+            transform: translateY(150px);
+            transition: all 1s ease-in-out .15s;
+
+
+            &.visible{
+                transform: translateY(0);
+                opacity: 1;
+
+            }
+
+            &.in-visible{
+                transform: translateY(-150px);
+                opacity: 0;
+            }
         }
     }
 
