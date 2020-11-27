@@ -38,7 +38,7 @@
     }
 }
 
-@keyframes circle-square-transition-2 {
+@keyframes transition-opacity {
     0% {
         opacity: 0;
     }
@@ -68,7 +68,6 @@
         padding: 0 116px;
         animation-duration: 1s;
 
-
         transform: $transition-tertiary;
     }
 
@@ -89,7 +88,7 @@
             &.opacity-transition {
                 animation-delay: .4s;
                 animation-duration: .4s;
-                animation-name: circle-square-transition-2;
+                animation-name: transition-opacity;
                 animation-fill-mode: forwards
             }
         }
