@@ -1,6 +1,6 @@
 @keyframes circle-square-transition {
     0% {
-        opacity: 0.1;
+        opacity: 0.4;
         width: 100px;
         height: 50px;
         margin-top: -50px;
@@ -31,9 +31,21 @@
         border-radius: 0 0 10% 10%;
     }
 
-    100% {
+    80% {
         opacity: 1;
         border-radius: 0 0 5% 5%;
+
+    }
+}
+
+@keyframes circle-square-transition-2 {
+    0% {
+        opacity: 0;
+    }
+
+
+    100% {
+        opacity: 1;
     }
 }
 
@@ -54,19 +66,37 @@
 
     .modal-content {
         padding: 0 116px;
+        animation-duration: 1s;
+
+
         transform: $transition-tertiary;
     }
 
     .modal-body {
         overflow: hidden;
-        animation-duration: .4s;
+        animation-duration: 3s;
         padding: 105px 0 0 102px;
         transition: $transition-primary;
         background-color: rgba($white, 0.87);
+        //opacity: 0;
 
         &.circle-square-transition {
             animation-name: circle-square-transition;
+            //transition : all 10s;
         }
+
+        .opacity {
+            opacity: 0;
+
+            &.opacity-transition {
+                animation-delay: 3s;
+                animation-duration: 1s;
+                animation-name: circle-square-transition-2;
+                animation-fill-mode: forwards
+            }
+
+        }
+
 
         &.hide {
             animation-direction: reverse;

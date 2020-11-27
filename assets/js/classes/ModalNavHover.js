@@ -8,10 +8,12 @@ class ModalNavHover {
         this.menuOptions = '[data-menu-option]';
         this.dataMenuOptionId = 'menu-option-value';
         this.classAnimation = 'circle-square-transition';
+        this.classAnimation2 = 'opacity-transition';
 
         this.$modalMenuOptions = null;
         this.$modals = $('[data-modal-nav-hover]');
         this.$modalBody = null;
+        this.$modalContent = null;
     }
 
     init() {
@@ -24,6 +26,7 @@ class ModalNavHover {
                 const modalId = $(modal).data(this.dataModalId);
                 this.currentModal = $('#' + modalId);
                 if (this.currentModal) {
+                    this.$modalContent  = this.currentModal.find('.opacity');
                     this.listenerHoverCloseModal();
                     this.listenerOpenMenuOption();
                     this.openModal();
@@ -42,11 +45,13 @@ class ModalNavHover {
     openModal() {
         this.currentModal.removeClass(this.classHide);
         this.$modalBody.addClass(this.classAnimation).removeClass(this.classHide);
+        this.$modalContent.addClass(this.classAnimation2);
     }
 
     closeModal() {
         this.currentModal.addClass(this.classHide);
         this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation);
+        this.$modalContent.removeClass(this.classAnimation2);
     }
 
     closeMenuAllOption() {
