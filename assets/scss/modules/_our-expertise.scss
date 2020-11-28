@@ -28,23 +28,23 @@
             position: relative;
             overflow-x: hidden;
             transform: translateY(150px);
-            transition: all 1s ease-in-out .15s;
+            transition: $transition-expertise-image;
 
             &.visible{
-                transform: translateY(0);
                 opacity: 1;
+                transform: translateY(0);
 
             }
 
             &.in-visible{
-                transform: translateY(-150px);
                 opacity: 0;
+                transform: translateY(-150px);
             }
 
 
             .image-card{
                 transform: translateX(0);
-                transition: all 1s ease-in-out .15s;
+                transition: $transition-expertise-image;
             }
 
             &:hover{
