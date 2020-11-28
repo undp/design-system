@@ -10,6 +10,7 @@
 
     .nav-item {
         color: $dark-blue-1;
+        text-transform: uppercase;
 
         &:hover {
             color: rgba($dark-blue-1, 0.7)
