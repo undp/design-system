@@ -8,7 +8,7 @@ const init = function () {
     let sections = document.querySelectorAll(".expertise-section");
 
     sections.forEach(target => {
-        let image = $(target).find('.image-card');
+        let image = $(target).find('.expertise-image');
         gsap.timeline({
             defaults: {
                 duration: 2,
