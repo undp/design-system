@@ -3,7 +3,7 @@
         <h3 class="heading h3">
             <?= $title ?? '' ?>
         </h3>
-        <p class="heading big-copy">
+        <p class="heading medium-copy">
             <?= $description ?? '' ?>
         </p>
     </div>

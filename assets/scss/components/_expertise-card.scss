@@ -19,7 +19,7 @@
         }
 
         .heading.h3,
-        .heading.big-copy{
+        .heading.medium-copy{
             padding: 0 24px;
 
             @include breakpoint(large down){
@@ -31,7 +31,7 @@
             }
         }
 
-        .heading.big-copy{
+        .heading.medium-copy{
             margin-top: 30px;
             overflow: hidden;
             max-height: 210px;
@@ -42,7 +42,11 @@
 
             @include breakpoint(medium down){
                 margin-top: 25px;
-                max-height: 125px;
+                max-height: 130px;
+            }
+
+            @include breakpoint(small only){
+                max-height: unset;
             }
 
         }
