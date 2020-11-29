@@ -12,9 +12,6 @@ import ourMissionAnimation from './components/our-mision-animation'
 import statCardBackground from './components/stat-card-background'
 import ourExpertiseMobileSlider from './components/our-expertise-mobile-slider'
 
-
-import Glide from '@glidejs/glide/';
-
 function main() {
     modal()
     inputs()
