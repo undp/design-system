@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const init = function () {
 
-    let sections = document.querySelectorAll(".expertise-section");
+    let sections = document.querySelectorAll(".expertise-section-image");
 
     sections.forEach(target => {
         let image = $(target).find('.expertise-image');

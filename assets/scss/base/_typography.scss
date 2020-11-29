@@ -96,8 +96,13 @@
 
 .medium-copy {
     line-height: 1.3;
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: $regular;
+
+    @include breakpoint(medium down){
+        line-height: 1.4;
+        font-size: 1.4rem;
+    }
 
     &.light {
         color: $white;
