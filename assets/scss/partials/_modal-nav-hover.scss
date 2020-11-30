@@ -42,7 +42,6 @@
         opacity: 0;
     }
 
-
     100% {
         opacity: 1;
     }
@@ -51,9 +50,6 @@
 
 @keyframes transition-color {
     0% {
-        backdrop-filter: none;
-    }
-    50% {
         backdrop-filter: blur(0);
     }
 
@@ -94,7 +90,7 @@
     .modal-body {
         overflow: hidden;
         padding: 105px 0 0 102px;
-        transition: $transition-primary;
+        //transition: $transition-primary;
         background-color: rgba($white, 0.87);
         box-shadow: 0 3px 6px rgba($black, 0.16);
 
@@ -112,8 +108,8 @@
             &.opacity-transition {
                 animation-delay: .8s;
                 animation-duration: .4s;
-                animation-name: transition-opacity;
                 animation-fill-mode: forwards;
+                animation-name: transition-opacity;
             }
         }
 
