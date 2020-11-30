@@ -7,6 +7,7 @@ class ModalNavHover {
         this.modalBody = '[data-modal-body]';
         this.menuOptions = '[data-menu-option]';
         this.dataMenuOptionId = 'menu-option-value';
+        this.classAnimationColor = 'color-transition';
         this.classAnimation = 'circle-square-transition';
         this.classAnimationOpacity = 'opacity-transition';
 
@@ -43,13 +44,13 @@ class ModalNavHover {
     }
 
     openModal() {
-        this.currentModal.removeClass(this.classHide);
+        this.currentModal.removeClass(this.classHide).addClass(this.classAnimationColor);
         this.$modalBody.addClass(this.classAnimation).removeClass(this.classHide);
         this.$modalContent.addClass(this.classAnimationOpacity);
     }
 
     closeModal() {
-        this.currentModal.addClass(this.classHide);
+        this.currentModal.addClass(this.classHide).removeClass(this.classAnimationColor);
         this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation);
         this.$modalContent.removeClass(this.classAnimationOpacity);
     }

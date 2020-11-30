@@ -12,7 +12,7 @@
         height: 150px;
         opacity: 0.25;
         margin-top: -50px;
-        border-radius: 40%;
+        border-radius: 50%;
     }
 
     50% {
@@ -20,21 +20,20 @@
         width: 350px;
         height: 350px;
         margin-top: -50px;
-        border-radius: 20%;
+        border-radius: 50%;
+
     }
 
     75% {
-        opacity: 0.75;
         width: 450px;
         height: 400px;
         margin-top: -50px;
-        border-radius: 0 0 10% 10%;
+        border-radius: 0 0 20% 20%;
     }
 
     100% {
         opacity: 1;
-        border-radius: 0 0 5% 5%;
-
+        border-radius: 0;
     }
 }
 
@@ -43,9 +42,19 @@
         opacity: 0;
     }
 
-
     100% {
         opacity: 1;
+    }
+}
+
+
+@keyframes transition-blur {
+    0% {
+        backdrop-filter: blur(0);
+    }
+
+    100% {
+        backdrop-filter: blur(30px);
     }
 }
 
@@ -56,8 +65,15 @@
     overflow-y: auto;
     z-index: $z-index-modal;
     backdrop-filter: blur(30px);
-    background-color: $dark-blue-11;
     height: calc(100vh - #{$height-nav});
+
+
+    &.color-transition {
+        animation-delay: .8s;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-name: transition-blur;
+    }
 
     @include breakpoint(medium down) {
         top: calc(#{$height-nav-medium} + 1px);
@@ -73,12 +89,16 @@
 
     .modal-body {
         overflow: hidden;
-        animation-duration: .4s;
         padding: 105px 0 0 102px;
-        transition: $transition-primary;
+        //transition: $transition-primary;
         background-color: rgba($white, 0.87);
+        box-shadow: 0 3px 6px rgba($black, 0.16);
 
         &.circle-square-transition {
+            opacity: 0;
+            animation-delay: .4s;
+            animation-duration: .4s;
+            animation-fill-mode: forwards;
             animation-name: circle-square-transition;
         }
 
@@ -86,10 +106,10 @@
             opacity: 0;
 
             &.opacity-transition {
-                animation-delay: .4s;
+                animation-delay: .8s;
                 animation-duration: .4s;
+                animation-fill-mode: forwards;
                 animation-name: transition-opacity;
-                animation-fill-mode: forwards
             }
         }
 
