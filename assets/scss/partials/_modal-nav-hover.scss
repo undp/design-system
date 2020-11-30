@@ -48,7 +48,7 @@
 }
 
 
-@keyframes transition-color {
+@keyframes transition-blur {
     0% {
         backdrop-filter: blur(0);
     }
@@ -71,8 +71,8 @@
     &.color-transition {
         animation-delay: .8s;
         animation-direction: normal;
-        animation-name: transition-color;
         animation-fill-mode: forwards;
+        animation-name: transition-blur;
     }
 
     @include breakpoint(medium down) {
