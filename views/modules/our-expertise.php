@@ -3,8 +3,8 @@ use helpers\View;
 ?>
 <!-- Tablet & Desktop markup -->
 <div class="our-expertise">
-    <div class="grid-container hide-for-small-only ">
-        <div class="grid-x our-expertise-row ">
+    <div class="grid-container hide-for-small-only">
+        <div class="grid-x grid-padding-x large-padding-collapse our-expertise-row">
             <div class="small-offset-1 small-11 medium-offset-1 medium-5 hide-for-small-only">
                 <div class="section-title">
                     <h2 class="heading h2">Our</h2>
@@ -35,7 +35,7 @@ use helpers\View;
                 </div>
             </div>
         </div>
-        <div class="grid-x our-expertise-row">
+        <div class="grid-x grid-padding-x large-padding-collapse our-expertise-row">
             <div class="cell small-10 medium-3 expertise-section-image">
                 <div class="expertise-image">
                     <div class="background-video hide-for-small-only">
@@ -58,7 +58,7 @@ use helpers\View;
                 ?>
             </div>
         </div>
-        <div class="grid-x our-expertise-row">
+        <div class="grid-x grid-padding-x large-padding-collapse our-expertise-row">
             <div class="cell small-10 medium-3 medium-offset-6 expertise-section-text">
                 <?php
                     View::render('components/expertise-card', [
@@ -81,7 +81,7 @@ use helpers\View;
                 </div>
             </div>
         </div>
-        <div class="grid-x our-expertise-row">
+        <div class="grid-x grid-padding-x large-padding-collapse our-expertise-row">
             <div class="cell small-10 medium-3 expertise-section-image">
                 <div class="expertise-image">
                     <div class="background-video hide-for-small-only">
@@ -104,7 +104,7 @@ use helpers\View;
                 ?>
             </div>
         </div>
-        <div class="grid-x our-expertise-row">
+        <div class="grid-x grid-padding-x large-padding-collapse our-expertise-row">
             <div class="cell small-10 medium-3 medium-offset-6 expertise-section-text">
                 <?php
                     View::render('components/expertise-card', [
@@ -148,8 +148,8 @@ use helpers\View;
                 </div>
             </div>
         </div>
-        <div class="glide__track" data-glide-el="track"]>
-            <ul class="glide__slides">
+        <div class="glide__track" data-glide-el="track">
+            <div class="glide__slides">
                 <div class="grid-x our-expertise-row glide__slide">
                     <div class="small-offset-1 small-11 medium-offset-1 medium-5 hide-for-small-only">
                         <div class="section-title">
@@ -273,14 +273,24 @@ use helpers\View;
                         </div>
                     </div>
                 </div>
-            </ul>
+            </div>
         </div>
         <div class="glide__bullets" data-glide-el="controls[nav]">
-            <button class="glide__bullet" data-glide-dir="=0"></button>
-            <button class="glide__bullet" data-glide-dir="=1"></button>
-            <button class="glide__bullet" data-glide-dir="=2"></button>
-            <button class="glide__bullet" data-glide-dir="=3"></button>
-            <button class="glide__bullet" data-glide-dir="=4"></button>
+            <button class="glide__bullet" data-glide-dir="=0">
+                <span class="show-for-sr">Slide 1</span>
+            </button>
+            <button class="glide__bullet" data-glide-dir="=1">
+                <span class="show-for-sr">Slide 2</span>
+            </button>
+            <button class="glide__bullet" data-glide-dir="=2">
+                <span class="show-for-sr">Slide 3</span>
+            </button>
+            <button class="glide__bullet" data-glide-dir="=3">
+                <span class="show-for-sr">Slide 4</span>
+            </button>
+            <button class="glide__bullet" data-glide-dir="=4">
+                <span class="show-for-sr">Slide 5</span>
+            </button>
         </div>
     </div>
 </div>

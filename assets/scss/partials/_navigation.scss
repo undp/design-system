@@ -5,7 +5,7 @@
     z-index: $z-index-nav;
     transform: translateY(0);
     background-color: $dark-blue-6;
-    border: 1px solid rgba($black, 0.10);
+    border-bottom: 1px solid rgba($black, 0.10);
     box-shadow: 0 3px 6px rgba($black, 0.09);
 
     .nav-item {
@@ -130,15 +130,12 @@
 
         .dropdown-content {
             min-width: 100px;
+            list-style: none;
+            margin-top: 20px;
             position: absolute;
-
-            .menu-items {
-                list-style: none;
-                margin-top: 20px;
-                padding: 30px 30px 35px 12px;
-                background-color: $dark-blue-6;
-                box-shadow: 0 3px 6px rgba($black, 0.09);
-            }
+            padding: 30px 30px 35px 12px;
+            background-color: $dark-blue-6;
+            box-shadow: 0 3px 6px rgba($black, 0.09);
 
             &:hover {
                 display: block;

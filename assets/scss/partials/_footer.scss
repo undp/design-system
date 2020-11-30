@@ -63,10 +63,6 @@
                     font-size: 1.4rem;
                     color: rgba($white, 0.43);
                 }
-
-                &:focus{
-                    outline: none;
-                }
             }
 
             .btn-submit {
@@ -77,10 +73,6 @@
                 font-size: 1.4rem;
                 background-color: $white;
                 text-transform: uppercase;
-
-                &:focus{
-                    outline: none;
-                }
             }
         }
     }

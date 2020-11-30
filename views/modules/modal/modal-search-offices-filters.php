@@ -17,7 +17,7 @@ use helpers\View;
                         Back
                     </a>
                     <div class="flex-container align-middle align-justify titles">
-                        <h5 class="heading h5 title">Filters</h5>
+                        <h2 class="heading h5 title">Filters</h2>
                         <a class="btn-clear" href="#" data-filter-clear>Clear all</a>
                     </div>
                 </div>

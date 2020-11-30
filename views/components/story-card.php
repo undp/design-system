@@ -1,27 +1,27 @@
 <?php
     $imageExist = isset($image) && !empty($image);
 ?>
-<div class="story-card scroll-track left-right delay-2 <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
+<a href="#" class="story-card scroll-track left-right delay-2 <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
     <div class="hover-image">
         <?php if($imageExist): ?>
-            <img src="<?= $image ?>" alt="story-image">
+            <img src="<?= $image ?>" alt="Story Image">
         <?php endif; ?>
     </div>
     <div class="content">
         <p class="tag">
             <?= $tag ?? '' ?>
         </p>
-        <h5 class="heading h5">
+        <h3 class="heading h5">
             <?= $title ?? '' ?>
-        </h5>
+        </h3>
         <p class="small-copy">
             <?= $description ?? '' ?>
         </p>
         <div class="cta">
-            <a class="text-link arrow-2" href="#">
+            <span class="text-link arrow-2">
                 <?= $cta ?? 'Read more'?>
                 <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
-            </a>
+            </span>
         </div>
     </div>
-</div>
+</a>

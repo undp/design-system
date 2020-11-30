@@ -8,9 +8,9 @@
             </div>
             <div class="separator"></div>
             <div class="subtitle">
-                <h3 class="heading h3">
+                <h2 class="heading h3">
                     Re-imagining Life in a Post-pandemic World
-                </h3>
+                </h2>
             </div>
         </div>
         <div class="cta-button">
