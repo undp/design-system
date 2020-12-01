@@ -4,6 +4,7 @@ class ModalNavHover {
         this.dataModalId = 'modal';
         this.allowOpenModal = true;
         this.classMenuActive = 'active';
+        this.dataContentOpacity = '.opacity';
         this.modalBody = '[data-modal-body]';
         this.menuOptions = '[data-menu-option]';
         this.dataMenuOptionId = 'menu-option-value';
@@ -37,7 +38,7 @@ class ModalNavHover {
                     this.allowOpenModal = true;
                 }
                 if (this.$currentModal && this.allowOpenModal) {
-                    this.$modalContent = this.$currentModal.find('.opacity');
+                    this.$modalContent = this.$currentModal.find(this.dataContentOpacity);
                     this.listenerHoverCloseModal();
                     this.listenerOpenMenuOption();
                     this.openModal();
@@ -91,7 +92,7 @@ class ModalNavHover {
             const modalId = $(modal).data(this.dataModalId);
             this.$currentModal = $('#' + modalId);
             this.$modalBody = this.$currentModal.find(this.modalBody);
-            this.$modalContent = this.$currentModal.find('.opacity');
+            this.$modalContent = this.$currentModal.find(this.dataContentOpacity);
             this.addTransitions();
             this.closeModal();
         });

@@ -73,6 +73,11 @@
         animation-direction: normal;
         animation-fill-mode: forwards;
         animation-name: transition-blur;
+
+        &.change-modal {
+            animation-delay: 0s;
+            animation-duration: 0s;
+        }
     }
 
     @include breakpoint(medium down) {
@@ -90,7 +95,6 @@
     .modal-body {
         overflow: hidden;
         padding: 105px 0 0 102px;
-        //transition: $transition-primary;
         background-color: rgba($white, 0.87);
         box-shadow: 0 3px 6px rgba($black, 0.16);
 
@@ -100,6 +104,11 @@
             animation-duration: .4s;
             animation-fill-mode: forwards;
             animation-name: circle-square-transition;
+
+            &.change-modal {
+                animation-delay: 0s;
+                animation-duration: 0s;
+            }
         }
 
         .opacity {
@@ -110,6 +119,11 @@
                 animation-duration: .4s;
                 animation-fill-mode: forwards;
                 animation-name: transition-opacity;
+
+                &.change-modal {
+                    animation-delay: 0s;
+                    animation-duration: 0s;
+                }
             }
         }
 
