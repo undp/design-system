@@ -5,7 +5,7 @@ use helpers\Svg;
 ?>
 
 <section id="modal-popular-search" class="menu-modal modal-popular-search hide">
-    <div class="grid-container modal-content">
+    <div class="grid-container fluid modal-content">
         <div class="modal-head">
             <button class="close-button show-for-large" data-btn-close aria-label="Close">
                 <?php Svg::render('icon-close') ?>
