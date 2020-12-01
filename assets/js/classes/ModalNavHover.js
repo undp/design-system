@@ -2,19 +2,24 @@ class ModalNavHover {
     constructor() {
         this.classHide = 'hide';
         this.dataModalId = 'modal';
-        this.currentModal = null;
+        this.allowOpenModal = true;
         this.classMenuActive = 'active';
         this.modalBody = '[data-modal-body]';
         this.menuOptions = '[data-menu-option]';
         this.dataMenuOptionId = 'menu-option-value';
         this.classAnimationColor = 'color-transition';
+        this.classAnimationNextModal = 'change-modal';
         this.classAnimation = 'circle-square-transition';
         this.classAnimationOpacity = 'opacity-transition';
 
-        this.$modalMenuOptions = null;
-        this.$modals = $('[data-modal-nav-hover]');
+        this.$lastModal = null;
         this.$modalBody = null;
+        this.$window = $(window);
+        this.$currentModal = null;
         this.$modalContent = null;
+        this.$modalMenuOptions = null;
+        this.$nav = $('[data-navigation]');
+        this.$modals = $('[data-modal-nav-hover]');
     }
 
     init() {
@@ -25,32 +30,79 @@ class ModalNavHover {
         this.$modals.each((i, modal) => {
             $(modal).hover(() => {
                 const modalId = $(modal).data(this.dataModalId);
-                this.currentModal = $('#' + modalId);
-                if (this.currentModal) {
-                    this.$modalContent  = this.currentModal.find('.opacity');
+                this.$currentModal = $('#' + modalId);
+                if (this.$lastModal && this.$currentModal &&
+                    !this.$lastModal.is(this.$currentModal)) {
+                    this.closeModal();
+                    this.allowOpenModal = true;
+                }
+                if (this.$currentModal && this.allowOpenModal) {
+                    this.$modalContent = this.$currentModal.find('.opacity');
                     this.listenerHoverCloseModal();
                     this.listenerOpenMenuOption();
                     this.openModal();
+                    this.allowOpenModal = false;
                 }
+                this.$lastModal = this.$currentModal;
             });
         })
     }
 
     listenerHoverCloseModal() {
-        this.$modalBody = this.currentModal.find(this.modalBody);
-        this.$modalBody.mouseleave(() => {
-            this.closeModal();
+        this.$modalBody = this.$currentModal.find(this.modalBody);
+
+        this.$window.hover((evt) => {
+            //close modal when the hover event is outside of nav and modal content
+            if (!this.$modalBody.is(evt.target) && this.$modalBody.has(evt.target).length === 0 &&
+                !this.$nav.is(evt.target) && this.$nav.has(evt.target).length === 0) {
+                this.allowOpenModal = true;
+                if (this.$lastModal) {
+                    this.$lastModal = null;
+                    this.resetTransitionAllModals();
+                }
+            }
         })
     }
 
     openModal() {
-        this.currentModal.removeClass(this.classHide).addClass(this.classAnimationColor);
+        this.$currentModal.removeClass(this.classHide).addClass(this.classAnimationColor);
         this.$modalBody.addClass(this.classAnimation).removeClass(this.classHide);
         this.$modalContent.addClass(this.classAnimationOpacity);
+        this.removeTransitions();
+    }
+
+    //if we open our seconds modal, we not require transitions so remove it
+    removeTransitions() {
+        if (this.$lastModal) {
+            this.$currentModal.addClass(this.classAnimationNextModal);
+            this.$modalBody.addClass(this.classAnimationNextModal);
+            this.$modalContent.addClass(this.classAnimationNextModal);
+        }
+    }
+
+    addTransitions() {
+        this.$modalBody.removeClass(this.classAnimationNextModal);
+        this.$modalContent.removeClass(this.classAnimationNextModal);
+        this.$currentModal.removeClass(this.classAnimationNextModal);
+    }
+
+    resetTransitionAllModals() {
+        this.$modals.each((i, modal) => {
+            const modalId = $(modal).data(this.dataModalId);
+            this.$currentModal = $('#' + modalId);
+            this.$modalBody = this.$currentModal.find(this.modalBody);
+            this.$modalContent = this.$currentModal.find('.opacity');
+            this.addTransitions();
+            this.closeModal();
+        });
     }
 
     closeModal() {
-        this.currentModal.addClass(this.classHide).removeClass(this.classAnimationColor);
+        if (this.$lastModal) {
+            this.$lastModal.addClass(this.classHide).removeClass(this.classAnimationColor);
+        } else {
+            this.$currentModal.addClass(this.classHide).removeClass(this.classAnimationColor);
+        }
         this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation);
         this.$modalContent.removeClass(this.classAnimationOpacity);
     }
@@ -64,7 +116,7 @@ class ModalNavHover {
     }
 
     listenerOpenMenuOption() {
-        this.$modalMenuOptions = this.currentModal.find(this.menuOptions);
+        this.$modalMenuOptions = this.$currentModal.find(this.menuOptions);
         if (this.$modalMenuOptions) {
             this.$modalMenuOptions.each((i, menuOption) => {
                 $(menuOption).hover(() => {
