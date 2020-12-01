@@ -32,6 +32,27 @@
         }
     }
 
+    .arrow-2 {
+        .link-arrow {
+            height: 16px;
+            stroke: $red;
+            margin-top: -2px;
+            margin-left: 4px;
+            overflow: hidden;
+            fill: transparent;
+            vertical-align: middle;
+        }
+
+        .link-arrow-group {
+            transform: translateX(-31px);
+            transition: $transition-secondary;
+
+            .arrow-line{
+                display: none;
+            }
+        }
+    }
+
     .content{
         display: flex;
         padding: 45px 25px;
@@ -88,27 +109,6 @@
 
             @include breakpoint(small only){
                 margin-top: 30px;
-            }
-
-            .text-link.arrow-2 {
-                .link-arrow {
-                    height: 16px;
-                    stroke: $red;
-                    margin-top: -2px;
-                    margin-left: 4px;
-                    overflow: hidden;
-                    fill: transparent;
-                    vertical-align: middle;
-                }
-
-                .link-arrow-group {
-                    transform: translateX(-31px);
-                    transition: $transition-secondary;
-
-                    .arrow-line{
-                        display: none;
-                    }
-                }
             }
         }
     }
@@ -167,6 +167,7 @@
 
     .hover-image{
         position: relative;
+        pointer-events: none;
 
         @include breakpoint(large down){
             width: 52%;
@@ -187,10 +188,15 @@
             transition: $transition-primary;
         }
 
-        img{
+        .background-image {
+            --x: center;
+            --y: center;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            pointer-events: auto;
+            background-repeat: no-repeat;
+            background-size: calc(100% + 110px);
+            background-position: var(--x) var(--y);
         }
 
         &::before{
