@@ -11,12 +11,14 @@
         <p class="tag">
             <?= $tag ?? '' ?>
         </p>
-        <h3 class="heading h5">
-            <?= $title ?? '' ?>
-        </h3>
-        <p class="small-copy">
-            <?= $description ?? '' ?>
-        </p>
+        <div class="title-description">
+            <h3 class="heading h5">
+                <?= $title ?? '' ?>
+            </h3>
+            <p class="small-copy">
+                <?= $description ?? '' ?>
+            </p>
+        </div>
         <div class="cta">
             <span class="text-link arrow-2">
                 <?= $cta ?? 'Read more'?>
