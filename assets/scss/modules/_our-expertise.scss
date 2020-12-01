@@ -45,23 +45,8 @@
 
         .expertise-image{
             @include breakpoint(medium up){
-                opacity: 0;
                 position: relative;
                 overflow-x: hidden;
-                transform: translateY(150px);
-                transition: $transition-expertise-image;
-
-                &.visible{
-                    opacity: 1;
-                    transform: translateY(0);
-
-                }
-
-                &.in-visible{
-                    opacity: 0;
-                    transform: translateY(-150px);
-                }
-
 
                 .image-card{
                     transform: translateX(0);
