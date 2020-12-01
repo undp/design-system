@@ -1,7 +1,7 @@
 class ModalNavHover {
     constructor() {
         this.classHide = 'hide';
-        this.dataModalId = 'modal';
+        this.dataModalId = 'modal-nav';
         this.allowOpenModal = true;
         this.classMenuActive = 'active';
         this.dataContentOpacity = '.opacity';
@@ -20,7 +20,7 @@ class ModalNavHover {
         this.$modalContent = null;
         this.$modalMenuOptions = null;
         this.$nav = $('[data-navigation]');
-        this.$modals = $('[data-modal-nav-hover]');
+        this.$modals = $('[data-modal-nav]');
     }
 
     init() {
