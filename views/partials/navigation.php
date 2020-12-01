@@ -22,15 +22,15 @@ use helpers\View;
                 </div>
                 <div class="menu-desktop">
                     <ul class="flex-container align-middle middle-menu">
-                        <li class="show-for-xlarge"><a class="nav-item dark" data-modal-nav-hover data-modal="modal-nav-hover" href="#">Who we are</a></li>
-                        <li class="show-for-xlarge"><a class="nav-item dark" href="#" data-modal-nav-hover data-modal="modal-nav-what-we-do">What we do</a></li>
+                        <li class="show-for-xlarge"><a class="nav-item dark" data-modal-nav="modal-nav-hover" href="#">Who we are</a></li>
+                        <li class="show-for-xlarge"><a class="nav-item dark" href="#" data-modal-nav="modal-nav-what-we-do">What we do</a></li>
                         <li class="align-self-top">
                             <a href="#" class="middle-logo" data-middle-logo aria-label="UNDP Logo">
                                 <?php Svg::render('undp-logo')?>
                             </a>
                         </li>
-                        <li class="show-for-xlarge"><a class="nav-item dark" href="#" data-modal-nav-hover data-modal="modal-nav-our-impact">Our impact</a></li>
-                        <li class="show-for-xlarge"><a class="nav-item dark" href="#">Get Involved</a></li>
+                        <li class="show-for-xlarge"><a class="nav-item dark" href="#" data-modal-nav="modal-nav-our-impact">Our impact</a></li>
+                        <li class="show-for-xlarge"><a class="nav-item dark" href="#" data-modal-nav="modal-nav-get-involved">Get Involved</a></li>
                     </ul>
                 </div>
                 <div class="logo right-menu">
