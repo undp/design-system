@@ -6,8 +6,8 @@ class ModalNavHover {
         this.classMenuActive = 'active';
         this.dataContentOpacity = '.opacity';
         this.modalBody = '[data-modal-body]';
+        this.dataMenuOptionId = 'menu-option';
         this.menuOptions = '[data-menu-option]';
-        this.dataMenuOptionId = 'menu-option-value';
         this.classAnimationColor = 'color-transition';
         this.classAnimationNextModal = 'change-modal';
         this.classAnimation = 'circle-square-transition';
