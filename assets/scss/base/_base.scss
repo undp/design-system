@@ -27,7 +27,6 @@ a {
     &:active,
     &:focus,
     &:visited {
-        outline: none;
         color: inherit;
     }
 }
@@ -58,14 +57,14 @@ ul {
     margin: 0;
 }
 
-button{
-    outline: none;
-}
-
 .uppercase {
     text-transform: uppercase;
 }
 
 .height-full {
     height: 100%;
+}
+
+.overlfow-hidden {
+    overflow: hidden;
 }

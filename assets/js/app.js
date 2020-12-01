@@ -9,7 +9,6 @@ import footerMenu from './partials/footer-menu-mobile'
 import scrollTriggers from './components/scroll-triggers'
 import publicationsSlider from './components/publications-slider'
 import ourMissionAnimation from './components/our-mision-animation'
-import statCardBackground from './components/stat-card-background'
 import ourExpertiseMobileSlider from './components/our-expertise-mobile-slider'
 import heroAnimation from './components/hero-animation'
 
@@ -25,7 +24,6 @@ function main() {
     scrollTriggers()
     publicationsSlider()
     ourMissionAnimation()
-    statCardBackground()
     ourExpertiseMobileSlider()
     heroAnimation()
 }
