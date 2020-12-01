@@ -2,7 +2,7 @@
 
 <section class="featured-stories">
     <div class="grid-container">
-        <div class="grid-x grid-padding-x">
+        <div class="grid-x grid-padding-x overflow-hidden">
             <div class="cell small-12 medium-4 scroll-track left-right delay-4">
                 <div class="title-container">
                     <div class="section-title">
@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cell small-12 medium-4">
+            <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
                     View::render('components/story-card', [
                         'image' => '/assets/images/placeholder/featured-story-1.jpeg',
@@ -26,7 +26,7 @@
                     ])
                 ?>
             </div>
-            <div class="cell small-12 medium-4">
+            <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
                     View::render('components/story-card', [
                         'image' => '/assets/images/placeholder/featured-story-2.jpeg',
@@ -51,7 +51,7 @@
                     ])
                 ?>
             </div>
-            <div class="cell small-12 medium-4">
+            <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
                     View::render('components/story-card', [
                         'image' => '/assets/images/placeholder/featured-story-4.jpeg',

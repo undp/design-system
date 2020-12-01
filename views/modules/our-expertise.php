@@ -276,6 +276,7 @@ use helpers\View;
             </div>
         </div>
         <div class="glide__bullets" data-glide-el="controls[nav]">
+            <div class="control-slider"></div>
             <button class="glide__bullet" data-glide-dir="=0">
                 <span class="show-for-sr">Slide 1</span>
             </button>

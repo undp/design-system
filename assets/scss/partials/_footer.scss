@@ -202,8 +202,16 @@
                     margin-top: 50px;
                 }
 
+                .social-link {
+                    width: 25px;
+                }
+
                 .social-link:not(:last-child) {
                     margin-right: 35px;
+
+                    @include breakpoint(360px down){
+                        margin-right: 25px;
+                    }
                 }
 
                 .icon {

@@ -14,6 +14,11 @@
         width: 100%;
     }
 
+    @include breakpoint(360px down) {
+        .publication-image img{
+            width: 80%;
+        }
+    }
 
     .publication-content{
         @include breakpoint(small only){
