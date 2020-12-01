@@ -2,8 +2,10 @@ class Modal {
     constructor() {
         this.modalFilter = null;
         this.currentModal = null;
+        this.classModalActive = 'active';
 
         this.$body = $('body');
+        this.$modalReference = null;
         this.$modals = $('[data-modal-open]');
         this.$modalFilterName = 'modal-filter';
         this.$btnOpenFilter = '[data-open-filters]';
@@ -19,6 +21,7 @@ class Modal {
         this.$modals.each((i, modal) => {
             $(modal).click((env) => {
                 env.preventDefault();
+                this.$modalReference = $(modal);
                 $('.menu-modal').addClass('hide');
                 const idModalOpen = $(modal).data('modal');
                 if (idModalOpen) {
@@ -70,6 +73,7 @@ class Modal {
         this.$body.addClass('modal-open');
         this.currentModal.removeClass('hide');
         this.inputSearchAutoFocus();
+        this.$modalReference.addClass(this.classModalActive)
     }
 
     inputSearchAutoFocus() {
@@ -79,6 +83,7 @@ class Modal {
     close() {
         this.currentModal.addClass('hide');
         this.$body.removeClass('modal-open');
+        this.$modalReference.removeClass(this.classModalActive)
     }
 
     openFilters() {

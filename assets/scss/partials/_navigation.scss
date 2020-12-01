@@ -77,10 +77,18 @@
         .right-menu {
             .nav-item {
                 border: none;
+                color: $blue-0;
                 margin-right: 22px;
 
                 @include breakpoint(large down) {
                     margin-right: 0;
+                }
+
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    color: rgba($blue-0, 0.70);
                 }
             }
         }
