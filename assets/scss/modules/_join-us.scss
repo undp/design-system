@@ -1,5 +1,10 @@
 .join-us {
     padding: 240px 0 170px;
+    background-color: $white;
+
+    @include breakpoint(small only){
+        background-color: $dark-blue-6;
+    }
 
     .big-copy {
         margin-top: 90px;
