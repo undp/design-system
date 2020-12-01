@@ -39,7 +39,12 @@ use helpers\View;
                         <span class="show-for-sr">Locations</span>
                     </a>
                     <a class="nav-item dark icon-search" href="#" data-modal-open data-modal="modal-popular-search">
-                        <?php Svg::render('icon-search')?>
+                        <span data-icon>
+                            <?php Svg::render('icon-search')?>
+                        </span>
+                        <span class="hide" data-icon-close>
+                            <?php Svg::render('icon-close-big')?>
+                        </span>
                         <span class="show-for-sr">Search</span>
                     </a>
                 </div>
