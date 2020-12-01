@@ -1,13 +1,13 @@
 class ModalNavHover {
     constructor() {
         this.classHide = 'hide';
-        this.dataModalId = 'modal';
+        this.dataModalId = 'modal-nav';
         this.allowOpenModal = true;
         this.classMenuActive = 'active';
         this.dataContentOpacity = '.opacity';
         this.modalBody = '[data-modal-body]';
+        this.dataMenuOptionId = 'menu-option';
         this.menuOptions = '[data-menu-option]';
-        this.dataMenuOptionId = 'menu-option-value';
         this.classAnimationColor = 'color-transition';
         this.classAnimationNextModal = 'change-modal';
         this.classAnimation = 'circle-square-transition';
@@ -20,7 +20,7 @@ class ModalNavHover {
         this.$modalContent = null;
         this.$modalMenuOptions = null;
         this.$nav = $('[data-navigation]');
-        this.$modals = $('[data-modal-nav-hover]');
+        this.$modals = $('[data-modal-nav]');
     }
 
     init() {
