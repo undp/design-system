@@ -12,7 +12,7 @@ body {
     position: fixed;
     overflow-y: auto;
     z-index: $z-index-5;
-    padding: 25px 0 58px 45px;
+    padding: 25px 0 58px 25px;
     backdrop-filter: blur(30px);
     background-color: rgba($dark-blue-6, 0.87);
 
@@ -33,6 +33,7 @@ body {
     }
 
     .menu {
+        padding: 0;
         display: block;
         list-style: none;
 
@@ -49,6 +50,7 @@ body {
             }
 
             .submenu {
+                padding:0;
                 display: block;
                 list-style: none;
                 margin: 0 0 0 30px;
