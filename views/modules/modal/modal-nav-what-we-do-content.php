@@ -7,7 +7,7 @@
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/UNDP-Peru-2016-kids.jpg"
+        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-peru-2016-kids.jpg"
              alt="undp peru kids">
     </div>
 </div>
