@@ -1,6 +1,6 @@
 <div class="our-mission">
     <div class="grid-container">
-        <div class="grid-x grid-margin-x align-center">
+        <div class="grid-x grid-margin-x align-center overflow-hidden">
             <div class="cell medium-4 scroll-track left-right delay-1">
                 <h2 class="heading h2 light">Our<br/>mission</h2>
             </div>
