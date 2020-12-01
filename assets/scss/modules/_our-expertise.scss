@@ -44,6 +44,10 @@
         }
 
         .expertise-image{
+            @include breakpoint(360px down) {
+                width: 80%;
+            }
+
             @include breakpoint(medium up){
                 opacity: 0;
                 position: relative;
