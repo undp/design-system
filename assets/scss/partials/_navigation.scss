@@ -54,21 +54,20 @@
 
                 @include breakpoint(medium down){
                     svg {
-                        max-height: 74px;
+                        max-height: 71px;
                     }
                 }
 
                 svg {
-                    margin-top: -1px;
                     transition: $transition-primary;
                 }
 
                 &.scrolled {
                     svg {
-                        height: 110px;
+                        height: 106px;
 
                         @include breakpoint(medium down){
-                            height: 74px;
+                            height: 71px;
                         }
                     }
                 }
