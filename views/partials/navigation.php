@@ -6,14 +6,14 @@ use helpers\View;
     <div class="grid-container">
         <nav class="grid-x">
             <div class="cell flex-container align-justify align-middle custom-cell">
-                <div class="menu-mobile hide-for-large">
+                <div class="menu-mobile hide-for-xlarge">
                     <a class="menu-hamburger" data-hamburger>
                         <span class="hamburger-line line-top"></span>
                         <span class="hamburger-line line-middle"></span>
                         <span class="hamburger-line line-bottom"></span>
                     </a>
                 </div>
-                <div class="dropdown show-for-large" data-dropdown-languajes>
+                <div class="dropdown show-for-xlarge" data-dropdown-languajes>
                     <button class="flex-container align-middle nav-item dark  dropdown-btn" data-opening-action>English</button>
                     <div class="dropdown-content hide" data-options>
                         <ul class="menu-items">
@@ -24,19 +24,19 @@ use helpers\View;
                 </div>
                 <div>
                     <ul class="flex-container align-middle middle-menu">
-                        <li class="show-for-large"><a class="nav-item dark active" data-modal-nav-hover data-modal="modal-nav-hover" href="#">Who we are</a></li>
-                        <li class="show-for-large"><a class="nav-item dark" href="#">What we do</a></li>
+                        <li class="show-for-xlarge"><a class="nav-item dark active" data-modal-nav-hover data-modal="modal-nav-hover" href="#">Who we are</a></li>
+                        <li class="show-for-xlarge"><a class="nav-item dark" href="#">What we do</a></li>
                         <li class="align-self-top">
                             <a href="#" class="middle-logo" data-middle-logo>
                                 <?php Svg::render('undp-logo')?>
                             </a>
                         </li>
-                        <li class="show-for-large"><a class="nav-item dark" href="#">Our impact</a></li>
-                        <li class="show-for-large"><a class="nav-item dark" href="#">Get Involved</a></li>
+                        <li class="show-for-xlarge"><a class="nav-item dark" href="#">Our impact</a></li>
+                        <li class="show-for-xlarge"><a class="nav-item dark" href="#">Get Involved</a></li>
                     </ul>
                 </div>
                 <div class="logo right-menu">
-                    <a class="nav-item dark show-for-large" href="#" data-modal-open data-modal="modal-search-offices">
+                    <a class="nav-item dark show-for-xlarge" href="#" data-modal-open data-modal="modal-search-offices">
                         <?php Svg::render('icon-www') ?>
                     </a>
                     <a class="nav-item dark icon-search" href="#" data-modal-open data-modal="modal-popular-search">
