@@ -14,7 +14,12 @@ use helpers\View;
 <?php View::render('modules/featured-stories') ?>
 <?php View::render('modules/our-mission') ?>
 <?php View::render('modules/our-expertise') ?>
-<?php View::render('modules/join-us') ?>
+<?php
+    View::render('modules/join-us', [
+        'classes' => 'show-for-small-only',
+        'trackScroll' => true
+    ])
+?>
 <?php View::render('modules/global-impact') ?>
 <?php View::render('modules/publications') ?>
 <?php View::render('modules/recent-news') ?>
