@@ -13,12 +13,17 @@ const init = function () {
 
         if(index === array.length - 1){
             isLastElement = true;
+            let lastImageEnd = 'bottom top+=190px'
+
+            if(Foundation.MediaQuery.is('medium down')){
+                lastImageEnd = 'bottom top+=100px'
+            }
 
             gsap.timeline({
                 scrollTrigger: {
                     trigger: target,
                     start: "top top+=300px",
-                    end: "bottom top+=190px",
+                    end: lastImageEnd,
                     pin: true,
                     scrub: true,
                     pinSpacing: false,

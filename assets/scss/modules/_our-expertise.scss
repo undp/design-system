@@ -93,13 +93,14 @@
 
     @include breakpoint(medium up){
         &::before{
-            left: 0;
+            left: 50%;
             content: '';
             width: 100%;
             z-index: -1;
             height: 100%;
             position: absolute;
             max-width: $global-width;
+            transform: translateX(-50%);
             background-image: linear-gradient(90deg, $dark-blue-4 1px, rgba($dark-blue-4,0) 1px);
             background-size: 25%;
         }
