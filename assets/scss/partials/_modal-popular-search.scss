@@ -8,7 +8,7 @@
     backdrop-filter: blur(30px);
     background-color: rgba($white, 0.7);
 
-    @include breakpoint(medium down){
+    @include breakpoint(large down){
         top: calc(#{$height-nav-medium} + 1px);
         height: calc(100vh - #{$height-nav-medium});
     }
