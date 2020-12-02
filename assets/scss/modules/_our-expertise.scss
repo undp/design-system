@@ -1,18 +1,28 @@
 .our-expertise{
     position: relative;
+    transition: opacity 0.5s ease;
+    transform: translateY(-860px);
+
+    @include breakpoint(small only){
+        transform: translateY(0);
+    }
+
+    &.hide-section{
+        opacity: 0;
+    }
 
     .our-expertise-row{
         position: relative;
 
         &:first-child{
-            padding-top: 140px;
+            padding-top: 960px;
 
             @include breakpoint(large down){
-                padding-top: 125px;
+                padding-top: 960px;
             }
 
             @include breakpoint(medium down){
-                padding-top: 95px;
+                padding-top: 800px;
             }
 
             @include breakpoint(small only){
@@ -27,19 +37,6 @@
 
             .expertise-section-text{
                 order: 2
-            }
-        }
-
-        .section-title{
-            top: 140px;
-            left: 140px;
-            position: absolute;
-            z-index: $z-index-3;
-
-            @include breakpoint(small only){
-                top: 0;
-                left: 0;
-                position: relative;
             }
         }
 

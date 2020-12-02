@@ -129,6 +129,7 @@
 
         @include breakpoint(medium down){
             left: 85px;
+            bottom: 70px;
         }
 
         @include breakpoint(small only){
