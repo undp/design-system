@@ -16,7 +16,6 @@
             color: rgba($dark-blue-1, 0.7)
         }
 
-        &:active,
         &.active {
             padding-bottom: 2px;
             border-bottom: 2px solid $red;
@@ -83,6 +82,7 @@
             .nav-item {
                 border: none;
                 color: $blue-0;
+                cursor: pointer;
                 margin-right: 22px;
 
                 @include breakpoint(large down) {

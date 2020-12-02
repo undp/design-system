@@ -88,6 +88,11 @@
             }
         }
 
+        &.circle-square-transition-back {
+            opacity: 0;
+            animation: circle-square-transition .4s reverse;
+        }
+
         .opacity {
             opacity: 0;
 

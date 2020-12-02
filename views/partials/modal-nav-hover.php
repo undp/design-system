@@ -1,7 +1,7 @@
 <?php
     use helpers\View;
 ?>
-<section id="modal-nav-hover" class="flex-container align-center modal-nav-hover show-for-large hide">
+<section id="modal-nav-who-we-are" class="flex-container align-center modal-nav-hover show-for-large hide">
     <div class="grid-container modal-content height-full" data-modal-content>
         <div class="grid-x modal-body" data-modal-body>
             <div class="cell large-auto  cell-menu opacity">
@@ -25,6 +25,7 @@
                         <a href="#" class="menu-item">Transparency and accountability</a>
                     </li>
                 </ul>
+                <button class="show-on-focus text-link close-submenu">Close Submenu</button>
             </div>
             <div class="cell large-auto opacity">
                 <?php View::render('modules/modal/modal-who-we-are-content')?>
@@ -51,6 +52,7 @@
                         <a href="#" class="menu-item">Strategic Initiatives</a>
                     </li>
                 </ul>
+                <button class="show-on-focus text-link close-submenu">Close Submenu</button>
             </div>
             <div class="cell large-auto opacity">
                 <?php View::render('modules/modal/modal-nav-what-we-do-content'); ?>
@@ -83,6 +85,7 @@
                         <a href="#" class="menu-item">Newsroom</a>
                     </li>
                 </ul>
+                <button class="show-on-focus text-link close-submenu">Close Submenu</button>
             </div>
             <div class="cell large-auto opacity">
                 <?php View::render('modules/modal/modal-nav-our-impact-content'); ?>
@@ -115,6 +118,7 @@
                     <a href="#" class="menu-item">Contact Us</a>
                 </li>
             </ul>
+            <button class="show-on-focus text-link close-submenu">Close Submenu</button>
         </div>
         <div class="cell large-auto opacity">
             <?php View::render('modules/modal/modal-nav-get-involved-content')?>

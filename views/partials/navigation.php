@@ -22,15 +22,15 @@ use helpers\View;
                 </div>
                 <div class="menu-desktop">
                     <ul class="flex-container align-middle middle-menu">
-                        <li class="show-for-xlarge"><a class="nav-item dark" data-modal-nav="modal-nav-hover" href="#">Who we are</a></li>
-                        <li class="show-for-xlarge"><a class="nav-item dark" href="#" data-modal-nav="modal-nav-what-we-do">What we do</a></li>
+                        <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-who-we-are" aria-expanded="false" aria-haspopup="true">Who we are</button></li>
+                        <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-what-we-do" aria-expanded="false" aria-haspopup="true">What we do</button></li>
                         <li class="align-self-top">
                             <a href="#" class="middle-logo" data-middle-logo aria-label="UNDP Logo">
                                 <?php Svg::render('undp-logo')?>
                             </a>
                         </li>
-                        <li class="show-for-xlarge"><a class="nav-item dark" href="#" data-modal-nav="modal-nav-our-impact">Our impact</a></li>
-                        <li class="show-for-xlarge"><a class="nav-item dark" href="#" data-modal-nav="modal-nav-get-involved">Get Involved</a></li>
+                        <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-our-impact" aria-expanded="false" aria-haspopup="true">Our impact</button></li>
+                        <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-get-involved" aria-expanded="false" aria-haspopup="true">Get Involved</button></li>
                     </ul>
                 </div>
                 <div class="logo right-menu">
@@ -61,5 +61,5 @@ use helpers\View;
 </section>
 <?php View::render('partials/modal-nav-hover')?>
 <?php View::render('partials/modal-search-offices')?>
-<?php View::render('modules/modal/modal-search-offices-filters')?>
 <?php View::render('partials/modal-popular-search')?>
+<?php View::render('modules/modal/modal-search-offices-filters')?>
