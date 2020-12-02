@@ -11,6 +11,7 @@ import publicationsSlider from './components/publications-slider'
 import ourMissionAnimation from './components/our-mision-animation'
 import ourExpertiseMobileSlider from './components/our-expertise-mobile-slider'
 import heroAnimation from './components/hero-animation'
+import storyCardHover from './components/story-card-hover'
 
 function main() {
     modal()
@@ -26,6 +27,7 @@ function main() {
     ourMissionAnimation()
     ourExpertiseMobileSlider()
     heroAnimation()
+    storyCardHover()
 }
 
 document.addEventListener("DOMContentLoaded", function () {

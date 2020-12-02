@@ -4,19 +4,21 @@
 <a href="#" class="story-card scroll-track left-right delay-2 <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
     <div class="hover-image">
         <?php if($imageExist): ?>
-            <img src="<?= $image ?>" alt="Story Image">
+            <div class="background-image" style="background-image: url(<?= $image ?>)"></div>
         <?php endif; ?>
     </div>
     <div class="content">
         <p class="tag">
             <?= $tag ?? '' ?>
         </p>
-        <h3 class="heading h5">
-            <?= $title ?? '' ?>
-        </h3>
-        <p class="small-copy">
-            <?= $description ?? '' ?>
-        </p>
+        <div class="title-description">
+            <h3 class="heading h5">
+                <?= $title ?? '' ?>
+            </h3>
+            <p class="small-copy">
+                <?= $description ?? '' ?>
+            </p>
+        </div>
         <div class="cta">
             <span class="text-link arrow-2">
                 <?= $cta ?? 'Read more'?>

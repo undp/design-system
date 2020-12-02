@@ -48,37 +48,13 @@
 }
 
 
-@keyframes transition-blur {
-    0% {
-        backdrop-filter: blur(0);
-    }
-
-    100% {
-        backdrop-filter: blur(30px);
-    }
-}
-
 .modal-nav-hover {
     width: 100%;
     position: fixed;
     top: $height-nav;
     overflow-y: auto;
     z-index: $z-index-modal;
-    backdrop-filter: blur(30px);
     height: calc(100vh - #{$height-nav});
-
-
-    &.color-transition {
-        animation-delay: .8s;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-name: transition-blur;
-
-        &.change-modal {
-            animation-delay: 0s;
-            animation-duration: 0s;
-        }
-    }
 
     @include breakpoint(medium down) {
         top: calc(#{$height-nav-medium} + 1px);
@@ -95,7 +71,8 @@
     .modal-body {
         overflow: hidden;
         padding: 105px 0 0 102px;
-        background-color: rgba($white, 0.87);
+        backdrop-filter: blur(20px);
+        background-color: rgba($white, 0.7);
         box-shadow: 0 3px 6px rgba($black, 0.16);
 
         &.circle-square-transition {
@@ -109,6 +86,11 @@
                 animation-delay: 0s;
                 animation-duration: 0s;
             }
+        }
+
+        &.circle-square-transition-back {
+            opacity: 0;
+            animation: circle-square-transition .4s reverse;
         }
 
         .opacity {

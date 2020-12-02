@@ -16,7 +16,6 @@
             color: rgba($dark-blue-1, 0.7)
         }
 
-        &:active,
         &.active {
             padding-bottom: 2px;
             border-bottom: 2px solid $red;
@@ -52,8 +51,13 @@
             .middle-logo {
                 display: block;
 
-                @include breakpoint(medium down){
+                svg {
+                    width: 70px;
+                }
+
+                @include breakpoint(large down){
                     svg {
+                        width: auto;
                         max-height: 71px;
                     }
                 }
@@ -77,10 +81,19 @@
         .right-menu {
             .nav-item {
                 border: none;
+                color: $blue-0;
+                cursor: pointer;
                 margin-right: 22px;
 
                 @include breakpoint(large down) {
                     margin-right: 0;
+                }
+
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    color: rgba($blue-0, 0.70);
                 }
             }
         }
@@ -93,7 +106,7 @@
         transform: translateY(0px);
         top: calc(#{$height-nav} + 1px);
 
-        @include breakpoint(medium down){
+        @include breakpoint(large down){
             top: calc(#{$height-nav-medium} + 1px);
         }
 

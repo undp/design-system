@@ -4,10 +4,12 @@
     overflow: hidden;
     position: relative;
     background: $dark-blue-7;
+    height: calc(100% - 25px);
 
     @include breakpoint(large down){
         width: 100%;
         margin-top: 15px;
+        height: calc(100% - 15px);
 
         &:not(.large){
             .hover-image{
@@ -17,12 +19,20 @@
     }
 
     @include breakpoint(small only){
-        margin-top: 15px;
         flex-direction: column;
     }
 
-    .arrow-2 {
+    &.no-image{
+        .tag,
+        .heading.h4,
+        .small-copy,
+        .cta{
+            position: relative;
+            z-index: $z-index-1;
+        }
+    }
 
+    .arrow-2 {
         .link-arrow {
             height: 16px;
             stroke: $red;
@@ -44,7 +54,9 @@
     }
 
     .content{
+        display: flex;
         padding: 45px 25px;
+        flex-direction: column;
 
         @include breakpoint(medium down){
             padding: 30px 14px;
@@ -54,20 +66,50 @@
             padding: 35px 30px 45px;
         }
 
+        .title-description {
+            flex: 1 0 auto;
+            overflow: hidden;
+        }
+
         .heading.h5{
-            height: 85px;
+            margin-top: 45px;
 
             @include breakpoint(medium down){
-                height: 65px;
-            }
-
-            @include breakpoint(small only){
-                height: 85px;
+                margin-top: 30px;
             }
         }
 
         .small-copy{
-            height: 55px;
+            margin-top: 25px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+
+            @include breakpoint(medium down){
+                margin-top: 20px;
+            }
+
+            @include breakpoint(small only){
+                margin-top: 15px;
+            }
+        }
+
+        .cta{
+            margin-top: 75px;
+            position: relative;
+            z-index: $z-index-1;
+
+            @include breakpoint(large down){
+                margin-top: 60px;
+            }
+
+            @include breakpoint(medium down){
+                margin-top: 35px;
+            }
+
+            @include breakpoint(small only){
+                margin-top: 30px;
+            }
         }
     }
 
@@ -82,30 +124,35 @@
             }
 
             .heading.h5{
-                height: 80px;
+                margin-top: 50px;
 
-                @include breakpoint(large down){
-                    height: 85px;
+                @include breakpoint(xlarge up){
+                    font-size: 3.5rem;
                 }
 
-                @include breakpoint(medium down){
-                    height: 60px;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
+                @include breakpoint(large down){
+                    margin-top: 35px;
                 }
             }
 
             .small-copy{
-                height: 35px;
+                margin-top: 35px;
 
                 @include breakpoint(large down){
-                    height: 60px;
-                    margin-top: 30px;
+                    margin-top: 20px;
+                    -webkit-line-clamp: 3;
+                }
+            }
+
+            .cta{
+                margin-top: 85px;
+
+                @include breakpoint(large down){
+                    margin-top: 60px;
                 }
 
                 @include breakpoint(medium down){
-                    margin-top: 20px;
+                    margin-top: 30px;
                 }
             }
         }
@@ -120,6 +167,7 @@
 
     .hover-image{
         position: relative;
+        pointer-events: none;
 
         @include breakpoint(large down){
             width: 52%;
@@ -140,10 +188,15 @@
             transition: $transition-primary;
         }
 
-        img{
+        .background-image {
+            --x: center;
+            --y: center;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            pointer-events: auto;
+            background-repeat: no-repeat;
+            background-size: calc(100% + 110px);
+            background-position: var(--x) var(--y);
         }
 
         &::before{
@@ -174,106 +227,6 @@
             .arrow-point{
                 transform: translateX(31px);
             }
-        }
-    }
-
-    .heading.h5{
-        margin-top: 45px;
-
-        @include breakpoint(medium down){
-            margin-top: 30px;
-        }
-    }
-
-    .small-copy{
-        margin-top: 25px;
-
-        @include breakpoint(medium down){
-            margin-top: 20px;
-        }
-
-        @include breakpoint(small only){
-            margin-top: 15px;
-        }
-    }
-
-    .heading,
-    .small-copy{
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-    }
-
-    .cta{
-        margin-top: 75px;
-        position: relative;
-        z-index: $z-index-1;
-
-        @include breakpoint(large down){
-            margin-top: 60px;
-        }
-
-        @include breakpoint(medium down){
-            margin-top: 35px;
-        }
-
-        @include breakpoint(small only){
-            margin-top: 30px;
-        }
-    }
-
-    &.large{
-        .heading.h5{
-            margin-top: 50px;
-            -webkit-line-clamp: 2;
-
-            @include breakpoint(xlarge up){
-                font-size: 3.5rem;
-            }
-
-            @include breakpoint(large down){
-                margin-top: 35px;
-                -webkit-line-clamp: 3;
-            }
-
-            @include breakpoint(medium down){
-                -webkit-line-clamp: 2;
-            }
-        }
-
-        .small-copy{
-            height: 35px;
-            margin-top: 35px;
-            overflow: hidden;
-            -webkit-line-clamp: 2;
-
-            @include breakpoint(large down){
-                margin-top: 20px;
-                -webkit-line-clamp: 3;
-            }
-        }
-
-        .cta{
-            margin-top: 85px;
-
-            @include breakpoint(large down){
-                margin-top: 60px;
-            }
-
-            @include breakpoint(medium down){
-                margin-top: 30px;
-            }
-        }
-    }
-
-    &.no-image{
-        .tag,
-        .heading.h4,
-        .small-copy,
-        .cta{
-            position: relative;
-            z-index: $z-index-1;
         }
     }
 }

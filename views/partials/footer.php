@@ -12,8 +12,8 @@ use helpers\Svg;
                             <?php Svg::render('undp-logo-white') ?>
                         </div>
                         <div>
-                            <h3 class="footer-title uppercase light">United Nations</h3>
-                            <h3 class="footer-title uppercase light">Development Program</h3>
+                            <h3 class="footer-title light">United nations</h3>
+                            <h3 class="footer-title light">Development program</h3>
                         </div>
                     </div>
                     <div class="sign-up">

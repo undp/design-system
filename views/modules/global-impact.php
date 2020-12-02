@@ -3,7 +3,7 @@ use helpers\View;
 ?>
 <div class="global-impact">
     <div class="grid-container heading-container">
-        <div class="grid-x grid-margin-x align-center">
+        <div class="grid-x grid-margin-x align-center overflow-hidden">
             <div class="cell medium-3  scroll-track left-right delay-1">
                 <h2 class="heading h2 light">Global<br/>Impact</h2>
             </div>
@@ -14,7 +14,7 @@ use helpers\View;
             </div>
         </div>
     </div>
-    <div class="grid-container full card-container">
+    <div class="grid-container full card-container overflow-hidden">
         <div class="grid-x scroll-track left-right delay-2">
             <div class="cell medium-3">
                 <?php View::render('components/stat-card', [

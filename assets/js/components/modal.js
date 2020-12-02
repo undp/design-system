@@ -1,9 +1,19 @@
+import 'foundation-sites/dist/js/foundation'
+
 class Modal {
     constructor() {
+        this.classHide = 'hide';
         this.modalFilter = null;
         this.currentModal = null;
+        this.classModalActive = 'active';
+        this.dataOptionDefault = '[data-icon]';
+        this.dataOptionClose = '[data-icon-close]';
 
         this.$body = $('body');
+        this.$optionClose = null;
+        this.$window = $(window);
+        this.$optionDefalt = null;
+        this.$modalReference = null;
         this.$modals = $('[data-modal-open]');
         this.$modalFilterName = 'modal-filter';
         this.$btnOpenFilter = '[data-open-filters]';
@@ -13,17 +23,27 @@ class Modal {
 
     init() {
         this.listeners();
+        this.listenerWindowResize();
     }
 
     listeners() {
         this.$modals.each((i, modal) => {
             $(modal).click((env) => {
                 env.preventDefault();
+                this.$modalReference = $(modal);
                 $('.menu-modal').addClass('hide');
                 const idModalOpen = $(modal).data('modal');
+                if (Foundation.MediaQuery.is('large down') && this.$optionClose) {
+                    this.showOptionDefault();
+                    this.$optionClose = null;
+                    this.close();
+                    return;
+                }
                 if (idModalOpen) {
                     this.currentModal = $('#' + $(modal).data('modal'));
                     if (this.currentModal) {
+                        this.$optionClose = this.$modalReference.find(this.dataOptionClose);
+                        this.$optionDefalt = this.$modalReference.find(this.dataOptionDefault);
                         this.open();
                         this.listenerCloseModal();
                         this.listenerOpenFilters();
@@ -43,7 +63,7 @@ class Modal {
 
     listenerOpenFilters() {
         const btnFilters = this.currentModal.find(this.$btnOpenFilter)
-        if(btnFilters) {
+        if (btnFilters) {
             $(btnFilters).click((evt) => {
                 evt.preventDefault();
                 const modalFilter = btnFilters.data(this.$modalFilterName);
@@ -66,10 +86,25 @@ class Modal {
         }
     }
 
+    listenerWindowResize() {
+        this.$window.resize(() => {
+            if (Foundation.MediaQuery.is('large down') && this.$optionClose) {
+                this.showOptionClose();
+            } else if (this.$optionClose) {
+                this.showOptionDefault();
+            }
+        })
+    }
+
     open() {
         this.$body.addClass('modal-open');
         this.currentModal.removeClass('hide');
         this.inputSearchAutoFocus();
+        this.$modalReference.addClass(this.classModalActive);
+
+        if (Foundation.MediaQuery.is('large down')) {
+            this.showOptionClose();
+        }
     }
 
     inputSearchAutoFocus() {
@@ -79,6 +114,7 @@ class Modal {
     close() {
         this.currentModal.addClass('hide');
         this.$body.removeClass('modal-open');
+        this.$modalReference.removeClass(this.classModalActive)
     }
 
     openFilters() {
@@ -89,6 +125,16 @@ class Modal {
     closeFilters() {
         this.currentModal.removeClass('hide');
         this.modalFilter.addClass('hide');
+    }
+
+    showOptionClose() {
+        this.$optionDefalt.addClass(this.classHide);
+        this.$optionClose.removeClass(this.classHide);
+    }
+
+    showOptionDefault() {
+        this.$optionDefalt.removeClass(this.classHide);
+        this.$optionClose.addClass(this.classHide);
     }
 }
 
