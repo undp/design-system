@@ -49,11 +49,10 @@ const init = function () {
 
             // Our expertise to Trusted Partners pinned image
             if(side === 'right' && index === array.length - 1){
-                let lastImageEnd = 'bottom top-=50px'
 
-                if(Foundation.MediaQuery.is('medium down')){
-                    lastImageEnd = 'bottom top-=20%'
-                }
+                let height = $('.join-us').outerHeight();
+
+                let lastImageEnd = `bottom bottom-=${height}px`
 
                 gsap.timeline({
                     scrollTrigger: {
