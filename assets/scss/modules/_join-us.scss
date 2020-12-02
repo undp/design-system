@@ -2,6 +2,12 @@
     padding: 240px 0 170px;
     background-color: $white;
 
+    @include breakpoint(1441px){
+        display: flex;
+        height: 1000px;
+        justify-content: center;
+    }
+
     @include breakpoint(small only){
         background-color: $dark-blue-6;
     }
