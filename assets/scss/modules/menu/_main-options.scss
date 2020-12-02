@@ -4,8 +4,9 @@
     background-color: rgba($dark-blue-6, 0.87);
 
     .menu-items {
+        padding: 0;
         list-style: none;
-        margin: 0 0 0 20px;
+        margin: 0 0 0 30px;
 
         li:not(:first-child) {
             margin-top: 40px;

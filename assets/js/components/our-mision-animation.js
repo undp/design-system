@@ -26,7 +26,6 @@ const init = function () {
             scrub: true,
             start: start,
             end: end,
-            markers: true,
             onEnter: ()=>{
                 $section.addClass('color-background')
             },
@@ -40,6 +39,7 @@ const init = function () {
             },
             onEnterBack: ()=>{
                 $section.addClass('color-background')
+                $expertise.addClass('hide-section');
             }
         }
     })

@@ -1,13 +1,14 @@
 .our-expertise{
     position: relative;
-    margin-top: -860px;
+    transition: opacity 0.5s ease;
+    transform: translateY(-860px);
 
     @include breakpoint(small only){
-        margin-top: 0;
+        transform: translateY(0);
     }
 
     &.hide-section{
-        display: none;
+        opacity: 0;
     }
 
     .our-expertise-row{
@@ -40,6 +41,10 @@
         }
 
         .expertise-image{
+            @include breakpoint(360px down) {
+                width: 80%;
+            }
+
             @include breakpoint(medium up){
                 opacity: 0;
                 position: relative;

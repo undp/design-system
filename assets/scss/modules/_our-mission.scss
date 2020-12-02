@@ -2,6 +2,11 @@
     min-height: 820px;
     padding: 450px 0 800px;
     transition: background-color 0.5s linear;
+    background-color: $white;
+
+    @include breakpoint(medium down){
+        padding: 350px 0 800px;
+    }
 
     @include breakpoint(small only){
         padding: 300px 0 300px;

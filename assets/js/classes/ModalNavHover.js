@@ -21,7 +21,6 @@ class ModalNavHover {
         this.$modalMenuOptions = null;
         this.$nav = $('[data-navigation]');
         this.$modals = $('[data-modal-nav]');
-        this.$modalReference = null;
     }
 
     init() {
@@ -39,7 +38,6 @@ class ModalNavHover {
                     this.allowOpenModal = true;
                 }
                 if (this.$currentModal && this.allowOpenModal) {
-                    this.$modalReference = $(modal);
                     this.$modalContent = this.$currentModal.find(this.dataContentOpacity);
                     this.listenerHoverCloseModal();
                     this.listenerOpenMenuOption();
@@ -72,7 +70,6 @@ class ModalNavHover {
         this.$modalBody.addClass(this.classAnimation).removeClass(this.classHide);
         this.$modalContent.addClass(this.classAnimationOpacity);
         this.removeTransitions();
-        this.$modalReference.addClass(this.classMenuActive)
     }
 
     //if we open our seconds modal, we not require transitions so remove it
@@ -109,7 +106,6 @@ class ModalNavHover {
         }
         this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation);
         this.$modalContent.removeClass(this.classAnimationOpacity);
-        this.$modalReference.removeClass(this.classMenuActive);
     }
 
     closeMenuAllOption() {
