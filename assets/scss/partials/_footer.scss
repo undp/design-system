@@ -254,6 +254,7 @@
     .footer-title {
         font-size: 2.3rem;
         font-weight: $semi-bold;
+        text-transform: capitalize;
 
         @include breakpoint(medium down){
             font-size: 2.1rem;
