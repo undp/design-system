@@ -72,8 +72,12 @@
         overflow: hidden;
         padding: 105px 0 0 102px;
         backdrop-filter: blur(20px);
-        background-color: rgba($white, 0.7);
+        background-color: rgba($white, 0.98);
         box-shadow: 0 3px 6px rgba($black, 0.16);
+
+        @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+            background-color: rgba($white, 0.7);
+        }
 
         &.circle-square-transition {
             opacity: 0;
