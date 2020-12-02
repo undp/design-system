@@ -52,7 +52,7 @@ const init = function () {
                 let lastImageEnd = 'bottom top'
 
                 if(Foundation.MediaQuery.is('medium down')){
-                    lastImageEnd = 'bottom top-=10%'
+                    lastImageEnd = 'bottom top-=20%'
                 }
 
                 gsap.timeline({
