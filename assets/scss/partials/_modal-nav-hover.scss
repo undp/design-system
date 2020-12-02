@@ -78,8 +78,9 @@
         &.circle-square-transition {
             opacity: 0;
             animation-delay: .4s;
-            animation-duration: .4s;
+            animation-duration: .3s;
             animation-fill-mode: forwards;
+            animation-timing-function: ease;
             animation-name: circle-square-transition;
 
             &.change-modal {
