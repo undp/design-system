@@ -9,6 +9,7 @@
     box-shadow: 0 3px 6px rgba($black, 0.09);
 
     .nav-item {
+        cursor: pointer;
         color: $dark-blue-1;
         text-transform: uppercase;
 
@@ -82,7 +83,6 @@
             .nav-item {
                 border: none;
                 color: $blue-0;
-                cursor: pointer;
                 position: relative;
                 margin-right: 22px;
 

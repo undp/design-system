@@ -25,7 +25,7 @@ use helpers\View;
                         <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-who-we-are" aria-expanded="false" aria-haspopup="true">Who we are</button></li>
                         <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-what-we-do" aria-expanded="false" aria-haspopup="true">What we do</button></li>
                         <li class="align-self-top">
-                            <a href="#" class="middle-logo" data-middle-logo aria-label="UNDP Logo">
+                            <a href="/" class="middle-logo" data-middle-logo aria-label="UNDP Logo">
                                 <?php Svg::render('undp-logo')?>
                             </a>
                         </li>
