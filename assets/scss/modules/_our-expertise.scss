@@ -30,6 +30,10 @@
             }
         }
 
+        &:not(:first-child){
+            margin-top: -120px;
+        }
+
         .section-title{
             top: 140px;
             left: 140px;
