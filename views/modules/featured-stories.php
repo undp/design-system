@@ -37,29 +37,27 @@
                     ])
                 ?>
             </div>
-        </div>
-        <div class="grid-x grid-padding-x">
             <div class="cell medium-8 large-8">
                 <?php
-                    View::render('components/story-card', [
-                        'size' => 'large',
-                        'image' => '/assets/images/placeholder/featured-story-3.jpeg',
-                        'tag' => 'UNDP Response',
-                        'title' => 'In Costa Rica, rural women grow their own businesses',
-                        'description' => 'Working with organic agriculture and native stingless honey bee production',
-                        'cta' => 'Discover more'
-                    ])
+                View::render('components/story-card', [
+                    'size' => 'large',
+                    'image' => '/assets/images/placeholder/featured-story-3.jpeg',
+                    'tag' => 'UNDP Response',
+                    'title' => 'In Costa Rica, rural women grow their own businesses',
+                    'description' => 'Working with organic agriculture and native stingless honey bee production',
+                    'cta' => 'Discover more'
+                ])
                 ?>
             </div>
             <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
-                    View::render('components/story-card', [
-                        'image' => '/assets/images/placeholder/featured-story-4.jpeg',
-                        'tag' => 'UNDP Response',
-                        'title' => '“I cry for no apparent reason.”',
-                        'description' => "UNDP launches Syria's first online mental health service",
-                        'cta' => 'Discover more'
-                    ])
+                View::render('components/story-card', [
+                    'image' => '/assets/images/placeholder/featured-story-4.jpeg',
+                    'tag' => 'UNDP Response',
+                    'title' => '“I cry for no apparent reason.”',
+                    'description' => "UNDP launches Syria's first online mental health service",
+                    'cta' => 'Discover more'
+                ])
                 ?>
             </div>
         </div>

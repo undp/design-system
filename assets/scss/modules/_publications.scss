@@ -28,6 +28,13 @@
             margin-top: 0;
         }
 
+        .bullets-container {
+            @include breakpoint(medium down){
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
         .glide--slider{
             @include breakpoint(small only){
                 display: flex;
