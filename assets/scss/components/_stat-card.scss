@@ -40,6 +40,10 @@
         flex-direction: column;
         justify-content: center;
 
+        @media screen and #{breakpoint(medium)} and #{breakpoint(xlarge down)} {
+            padding-left: 10%;
+        }
+
         @include breakpoint(small only) {
             min-height: 390px;
             padding-left: 45px;
