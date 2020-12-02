@@ -83,6 +83,7 @@
                 border: none;
                 color: $blue-0;
                 cursor: pointer;
+                position: relative;
                 margin-right: 22px;
 
                 @include breakpoint(large down) {
@@ -93,6 +94,23 @@
                 &:focus,
                 &:active,
                 &.active {
+                    color: rgba($blue-0, 0.70);
+                }
+
+                &.active {
+                    &:before {
+                        top: -5px;
+                        right: -5px;
+                        content: '';
+                        width: 34px;
+                        padding:2px;
+                        height: 34px;
+                        display: block;
+                        border-radius: 50%;
+                        position: absolute;
+                        border:  2px solid rgba($dark-blue-3, 0.4);
+                    }
+
                     color: rgba($blue-0, 0.70);
                 }
             }
