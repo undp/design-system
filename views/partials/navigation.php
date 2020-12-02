@@ -33,7 +33,7 @@ use helpers\View;
                         <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-get-involved" aria-expanded="false" aria-haspopup="true">Get Involved</button></li>
                     </ul>
                 </div>
-                <div class="logo right-menu">
+                <div class="flex-container align-middle logo right-menu">
                     <a class="nav-item dark show-for-xlarge" href="#" data-modal-open data-modal="modal-search-offices">
                         <?php Svg::render('icon-www') ?>
                         <span class="show-for-sr">Locations</span>
