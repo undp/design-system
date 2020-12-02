@@ -1,10 +1,10 @@
 <?php
 use helpers\View;
 ?>
-<div class="join-us">
+<div class="join-us <?= $classes ?>">
     <div class="grid-container">
-        <div class="grid-x">
-            <div class="cell medium-6 medium-offset-1 scroll-track left-right delay-2">
+        <div class="grid-x overflow-hidden">
+            <div class="cell medium-6 medium-offset-1 join-us-header <?= $trackScroll? 'scroll-track' : '' ?> left-right delay-2">
                 <h2 class="heading h2">
                     Trusted partnerships
                 </h2>
@@ -15,9 +15,6 @@ use helpers\View;
                     Join Us
                     <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
                 </button>
-            </div>
-            <div class="cell medium-3 medium-offset-2 scroll-track right-left delay-2">
-                <?php View::render('components/image-card') ?>
             </div>
         </div>
     </div>

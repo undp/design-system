@@ -55,10 +55,5 @@
         margin-left: 6px;
         caret-color: $dark-blue-12;
         background-color: transparent;
-
-        &:active,
-        &:focus {
-            outline: none;
-        }
     }
 }

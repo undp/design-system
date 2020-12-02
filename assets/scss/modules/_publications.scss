@@ -1,7 +1,6 @@
 .publications{
     background-color: $dark-blue-6;
 
-
     .section-title{
         margin-top: 120px;
 
@@ -27,6 +26,13 @@
 
         @include breakpoint(small only){
             margin-top: 0;
+        }
+
+        .bullets-container {
+            @include breakpoint(medium down){
+                padding-left: 15px;
+                padding-right: 15px;
+            }
         }
 
         .glide--slider{

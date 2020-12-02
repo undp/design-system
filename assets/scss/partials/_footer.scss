@@ -63,10 +63,6 @@
                     font-size: 1.4rem;
                     color: rgba($white, 0.43);
                 }
-
-                &:focus{
-                    outline: none;
-                }
             }
 
             .btn-submit {
@@ -77,10 +73,6 @@
                 font-size: 1.4rem;
                 background-color: $white;
                 text-transform: uppercase;
-
-                &:focus{
-                    outline: none;
-                }
             }
         }
     }
@@ -210,8 +202,16 @@
                     margin-top: 50px;
                 }
 
+                .social-link {
+                    width: 25px;
+                }
+
                 .social-link:not(:last-child) {
                     margin-right: 35px;
+
+                    @include breakpoint(360px down){
+                        margin-right: 25px;
+                    }
                 }
 
                 .icon {
@@ -254,6 +254,7 @@
     .footer-title {
         font-size: 2.3rem;
         font-weight: $semi-bold;
+        text-transform: capitalize;
 
         @include breakpoint(medium down){
             font-size: 2.1rem;

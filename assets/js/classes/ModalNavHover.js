@@ -1,56 +1,157 @@
 class ModalNavHover {
     constructor() {
         this.classHide = 'hide';
-        this.dataModalId = 'modal';
-        this.currentModal = null;
+        this.dataModalId = 'modal-nav';
+        this.allowOpenModal = true;
         this.classMenuActive = 'active';
+        this.dataContentOpacity = '.opacity';
         this.modalBody = '[data-modal-body]';
+        this.dataMenuOptionId = 'menu-option';
         this.menuOptions = '[data-menu-option]';
-        this.dataMenuOptionId = 'menu-option-value';
+        this.classAnimationColor = 'color-transition';
+        this.classAnimationNextModal = 'change-modal';
         this.classAnimation = 'circle-square-transition';
         this.classAnimationOpacity = 'opacity-transition';
 
-        this.$modalMenuOptions = null;
-        this.$modals = $('[data-modal-nav-hover]');
+        this.$currentNavItem = null;
+        this.$lastModal = null;
         this.$modalBody = null;
+        this.$window = $(window);
+        this.$currentModal = null;
         this.$modalContent = null;
+        this.$modalMenuOptions = null;
+        this.$nav = $('[data-navigation]');
+        this.$navMenuItems = $('[data-modal-nav]');
     }
 
     init() {
         this.listenersHoverOpenModal();
+        this.listenerAccessibilityCloseModal();
     }
 
     listenersHoverOpenModal() {
-        this.$modals.each((i, modal) => {
-            $(modal).hover(() => {
-                const modalId = $(modal).data(this.dataModalId);
-                this.currentModal = $('#' + modalId);
-                if (this.currentModal) {
-                    this.$modalContent  = this.currentModal.find('.opacity');
+        this.$navMenuItems.each((i, navItem) => {
+
+            const $navItem = $(navItem)
+            const prepareModalForOpening = () => {
+                const modalId = $(navItem).data(this.dataModalId);
+                this.$currentModal = $('#' + modalId);
+                if (this.$lastModal && this.$currentModal &&
+                    !this.$lastModal.is(this.$currentModal)) {
+                    this.closeModal();
+                    this.allowOpenModal = true;
+                }
+                if (this.$currentModal && this.allowOpenModal) {
+                    this.$modalContent = this.$currentModal.find(this.dataContentOpacity);
                     this.listenerHoverCloseModal();
                     this.listenerOpenMenuOption();
                     this.openModal();
+                    this.allowOpenModal = false;
+                }
+
+                this.$lastModal = this.$currentModal;
+            };
+
+            $navItem.hover(prepareModalForOpening);
+
+            $navItem.keypress(e => {
+                e.preventDefault();
+
+                if (e.which === 32) {
+                    prepareModalForOpening();
+
+                    if(this.$currentNavItem) {
+                        this.$currentNavItem.attr("aria-expanded","false");
+                    }
+                    this.$currentNavItem = $navItem;
+                    $navItem.attr("aria-expanded","true");
+
+                    this.$currentModal.find('a').eq(0).focus();
                 }
             });
         })
     }
 
     listenerHoverCloseModal() {
-        this.$modalBody = this.currentModal.find(this.modalBody);
-        this.$modalBody.mouseleave(() => {
-            this.closeModal();
+        this.$modalBody = this.$currentModal.find(this.modalBody);
+
+        this.$window.hover((evt) => {
+            //close modal when the hover event is outside of nav and modal content
+            if (!this.$modalBody.is(evt.target) && this.$modalBody.has(evt.target).length === 0 &&
+                !this.$nav.is(evt.target) && this.$nav.has(evt.target).length === 0) {
+                this.allowOpenModal = true;
+                if (this.$lastModal) {
+                    this.$lastModal = null;
+                    this.animateCloseModal();
+                }
+            }
+        })
+    }
+
+    listenerAccessibilityCloseModal() {
+        const closeButtons = $('.modal-nav-hover .close-submenu');
+
+        closeButtons.click(() => {
+            this.$currentNavItem.focus();
+            this.allowOpenModal = true;
+            if (this.$lastModal) {
+                this.$lastModal = null;
+                this.resetTransitionAllModals();
+            }
         })
     }
 
     openModal() {
-        this.currentModal.removeClass(this.classHide);
+        this.$currentModal.removeClass(this.classHide).addClass(this.classAnimationColor);
         this.$modalBody.addClass(this.classAnimation).removeClass(this.classHide);
         this.$modalContent.addClass(this.classAnimationOpacity);
+        this.removeTransitions();
+    }
+
+    //if we open our seconds modal, we not require transitions so remove it
+    removeTransitions() {
+        if (this.$lastModal) {
+            this.$currentModal.addClass(this.classAnimationNextModal);
+            this.$modalBody.addClass(this.classAnimationNextModal);
+            this.$modalContent.addClass(this.classAnimationNextModal);
+        }
+    }
+
+    addTransitions() {
+        this.$modalBody.removeClass(this.classAnimationNextModal);
+        this.$modalContent.removeClass(this.classAnimationNextModal);
+        this.$currentModal.removeClass(this.classAnimationNextModal);
+    }
+
+    animateCloseModal() {
+        this.resetAnimation();
+        this.$modalBody.addClass('circle-square-transition-back');
+
+        setTimeout(() => {
+            this.resetTransitionAllModals();
+        }, 400)
+    }
+
+    resetTransitionAllModals() {
+        this.$navMenuItems.each((i, modal) => {
+            const modalId = $(modal).data(this.dataModalId);
+            this.$currentModal = $('#' + modalId);
+            this.$modalBody = this.$currentModal.find(this.modalBody);
+            this.$modalContent = this.$currentModal.find(this.dataContentOpacity);
+            this.addTransitions();
+            this.closeModal();
+        });
     }
 
     closeModal() {
-        this.currentModal.addClass(this.classHide);
-        this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation);
+        if (this.$lastModal) {
+            this.$lastModal.addClass(this.classHide).removeClass(this.classAnimationColor);
+        } else {
+            this.$currentModal.addClass(this.classHide).removeClass(this.classAnimationColor);
+        }
+
+        this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation)
+            .removeClass('circle-square-transition-back');
         this.$modalContent.removeClass(this.classAnimationOpacity);
     }
 
@@ -63,17 +164,31 @@ class ModalNavHover {
     }
 
     listenerOpenMenuOption() {
-        this.$modalMenuOptions = this.currentModal.find(this.menuOptions);
+        this.$modalMenuOptions = this.$currentModal.find(this.menuOptions);
         if (this.$modalMenuOptions) {
             this.$modalMenuOptions.each((i, menuOption) => {
-                $(menuOption).hover(() => {
+                const $menuOption = $(menuOption);
+                const openSubmenuData = () => {
                     this.closeMenuAllOption();
-                    const menuOptionId = $(menuOption).data(this.dataMenuOptionId);
+                    const menuOptionId = $menuOption.data(this.dataMenuOptionId);
                     $('#' + menuOptionId).removeClass(this.classHide);
-                    $(menuOption).addClass(this.classMenuActive);
-                })
+                    $menuOption.addClass(this.classMenuActive);
+                }
+
+                $menuOption.hover(openSubmenuData)
+
+                $menuOption.find('a').focus(() => {
+                    openSubmenuData();
+                });
             })
         }
+    }
+
+    resetAnimation() {
+        this.$modalBody.removeClass(this.classAnimation)
+        this.$modalBody[0].style.animation = 'none';
+        this.$modalBody[0].offsetHeight; /* trigger reflow */
+        this.$modalBody[0].style.animation = null;
     }
 }
 export default ModalNavHover;

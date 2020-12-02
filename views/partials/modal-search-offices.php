@@ -3,9 +3,10 @@
 ?>
 
 <section id="modal-search-offices" class="menu-modal modal-search-offices hide">
-    <div class="grid-container modal-content height-full">
-        <button class="close-button show-for-large" data-btn-close>
+    <div class="grid-container fluid modal-content height-full">
+        <button class="close-button show-for-large" data-btn-close aria-label="Close">
             <?php Svg::render('icon-close') ?>
+            <span class="show-for-sr">Close</span>
         </button>
         <div class="grid-x modal-body">
             <div class="cell large-auto  cell-search">
@@ -16,16 +17,18 @@
                     Back
                 </a>
                 <div class="header-modal">
-                    <h2 class="heading h2 title">Find Our Offices Around the World. </h2>
+                    <h2 class="heading h2 title">Find Our Offices Around the World.</h2>
                     <p class="big-copy description">The UNDP works in 170 countries around the world. Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Duis auctor, ante sed auctor faucibus, diam ante pellentesque turpis, sit amet dictum felis felis bibendum nisl. </p>
                     <p class="tag uppercase hide-for-large tag-current-section">current selection</p>
                     <h3 class="heading h3 title hide-for-large title-undp"><span class="uppercase">undp</span> Global</h3>
                 </div>
                 <form action="">
                     <div class="flex-container search-input-group">
-                        <input class="big-copy input-search" type="text" placeholder="search">
-                        <button type="submit" class="btn-search">
+                        <label class="show-for-sr" for="search-offices">Search Offices</label>
+                        <input class="big-copy input-search" type="text" name="search-offices" id="search-offices" placeholder="search">
+                        <button type="submit" class="btn-search" aria-label="Submit search">
                             <?php Svg::render('icon-search-white') ?>
+                            <span class="show-for-sr">Submit search</span>
                         </button>
                     </div>
                 </form>

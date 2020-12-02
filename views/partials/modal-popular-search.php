@@ -5,10 +5,11 @@ use helpers\Svg;
 ?>
 
 <section id="modal-popular-search" class="menu-modal modal-popular-search hide">
-    <div class="grid-container modal-content">
+    <div class="grid-container fluid modal-content">
         <div class="modal-head">
-            <button class="close-button show-for-large" data-btn-close>
+            <button class="close-button show-for-xlarge" data-btn-close aria-label="Close">
                 <?php Svg::render('icon-close') ?>
+                <span class="show-for-sr">Close</span>
             </button>
         </div>
         <div class="grid-x modal-body">
@@ -17,7 +18,8 @@ use helpers\Svg;
                     <div class="icon">
                         <?php Svg::render('icon-search-black') ?>
                     </div>
-                    <input class="input-search title" type="text">
+                    <label class="show-for-sr" for="search">Search</label>
+                    <input class="input-search title" type="text" name="search" id="search">
                 </div>
             </div>
             <div class="cell lists">

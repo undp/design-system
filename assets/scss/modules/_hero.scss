@@ -1,18 +1,32 @@
 .hero{
-    //height: 100vh;
-    height: 805px;
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 805px;
+    transition: max-width 0.5s ease;
 
     @include breakpoint(large){
-        height: 810px;
+        max-height: 810px;
     }
 
     @include breakpoint(medium){
-        height: 880px;
+        max-height: 880px;
     }
 
     @include breakpoint(small only){
-        height: 815px;
+        max-height: 815px;
     }
+
+    &.contract{
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+        max-width: calc(100% - 2.4rem);
+
+        @include breakpoint(1920){
+            max-width: 1896px;
+        }
+    }
+
 
     .hero-content{
         height: 100%;
@@ -119,6 +133,7 @@
 
         @include breakpoint(medium down){
             left: 85px;
+            bottom: 70px;
         }
 
         @include breakpoint(small only){

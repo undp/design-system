@@ -55,6 +55,7 @@ $dark-blue-12: #707070;
 $dark-blue-13: #454747;
 $dark-blue-14: #656E7B;
 $dark-blue-15: #EAEAEA;
+$dark-blue-16: #CEC7C7;
 $light-blue-1: #369BBE;
 $light-blue-2: #31AFD4;
 $light-blue-3: #29BFE6;
@@ -88,7 +89,7 @@ $z-index-nav: 100;
 $z-index-modal: 99;
 
 // Transitions
-$transition-expertise-image: all 1s ease-in-out .15s;
+$transition-expertise-image: all 0.5s ease-in-out;
 $transition-tertiary: all 1200ms cubic-bezier(.34,.41,.03,1);
 $transition-primary: all .4s cubic-bezier(0.64, 0.05, 0.35, 1.05);
 $transition-secondary: transform 0.2s cubic-bezier(0.4, 0.22, 0.28, 1);
