@@ -50,15 +50,19 @@ const init = function () {
             // Our expertise to Trusted Partners pinned image
             if(side === 'right' && index === array.length - 1){
 
-                let height = $('.join-us').outerHeight();
+                let height = $('.join-us').height();
+                let sectionHeight = $(sectionImage).outerHeight();
 
-                let lastImageEnd = `bottom bottom-=${height}px`
+                if(sectionHeight < height){
+                    height = height - (height - sectionHeight)
+                }
 
                 gsap.timeline({
                     scrollTrigger: {
                         trigger: target,
                         start: "top top+=300px",
-                        end: lastImageEnd,
+                        endTrigger:'.join-us',
+                        end: `center top+=${height}px`,
                         pin: true,
                         scrub: true,
                         pinSpacing: false
