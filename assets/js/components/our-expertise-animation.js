@@ -12,17 +12,17 @@ const init = function () {
     animateExpertiseSection(leftSections, 'left');
 
     function animateExpertiseSection(sections, side) {
-        let start = "top bottom-=230px"
-        let end = "bottom 55%"
+        let start = "top bottom"
+        let end = "bottom"
         let fromTargetY = 40
         let toTargetY = -170
         let fromImageY = 70
         let toImageY = -100
 
 
-        if(side == 'right'){
-            start = "bottom bottom-=10px",
-            end = "top 10%"
+        if(side === 'right'){
+            start = "top bottom"
+            end = "top"
             fromTargetY = 0
             toTargetY = -60
             fromImageY = 70
@@ -30,28 +30,9 @@ const init = function () {
         }
 
         sections.forEach((target, index, array) => {
-            if(side === 'right' && index === array.length - 1){
-                let lastImageEnd = 'bottom top+=150px'
-
-                if(Foundation.MediaQuery.is('medium down')){
-                    lastImageEnd = 'bottom top-=10%'
-                }
-
-                gsap.timeline({
-                    scrollTrigger: {
-                        trigger: target,
-                        start: "top top+=400px",
-                        end: lastImageEnd,
-                        pin: true,
-                        scrub: true,
-                        pinSpacing: false,
-                    }
-                });
-            }
-
-
             let sectionImage = target.querySelector('.expertise-image');
 
+            // Parallax
             gsap.timeline({
                 defaults: {
                     duration: 5,
@@ -61,10 +42,30 @@ const init = function () {
                     trigger: target,
                     scrub: true,
                     start: start,
-                    end: end,
+                    end: end
                 }
             }).fromTo(target, {y: fromTargetY}, {duration: 4, y: toTargetY})
                 .fromTo(sectionImage,{y: fromImageY}, {duration: 5, y: toImageY}, 0)
+
+            // Our expertise to Trusted Partners pinned image
+            if(side === 'right' && index === array.length - 1){
+                let lastImageEnd = 'bottom top'
+
+                if(Foundation.MediaQuery.is('medium down')){
+                    lastImageEnd = 'bottom top-=10%'
+                }
+
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: target,
+                        start: "top 38%",
+                        end: lastImageEnd,
+                        pin: true,
+                        scrub: true,
+                        pinSpacing: false
+                    }
+                });
+            }
         });
     }
 
