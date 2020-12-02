@@ -52,8 +52,13 @@
             .middle-logo {
                 display: block;
 
-                @include breakpoint(medium down){
+                svg {
+                    width: 70px;
+                }
+
+                @include breakpoint(large down){
                     svg {
+                        width: auto;
                         max-height: 71px;
                     }
                 }
@@ -101,7 +106,7 @@
         transform: translateY(0px);
         top: calc(#{$height-nav} + 1px);
 
-        @include breakpoint(medium down){
+        @include breakpoint(large down){
             top: calc(#{$height-nav-medium} + 1px);
         }
 

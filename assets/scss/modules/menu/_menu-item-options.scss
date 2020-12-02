@@ -15,6 +15,7 @@ body {
     padding: 25px 0 58px 30px;
     backdrop-filter: blur(30px);
     background-color: rgba($dark-blue-6, 0.87);
+    max-height: calc(100vh - #{$height-nav-medium});
 
     .menu-btn-back {
         font-size: 1.2rem;
