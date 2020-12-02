@@ -49,7 +49,7 @@ const init = function () {
 
             // Our expertise to Trusted Partners pinned image
             if(side === 'right' && index === array.length - 1){
-                let lastImageEnd = 'bottom top'
+                let lastImageEnd = 'bottom top-=50px'
 
                 if(Foundation.MediaQuery.is('medium down')){
                     lastImageEnd = 'bottom top-=20%'
@@ -58,7 +58,7 @@ const init = function () {
                 gsap.timeline({
                     scrollTrigger: {
                         trigger: target,
-                        start: "top 38%",
+                        start: "top top+=300px",
                         end: lastImageEnd,
                         pin: true,
                         scrub: true,
