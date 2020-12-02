@@ -61,8 +61,7 @@ const init = function () {
                         end: lastImageEnd,
                         pin: true,
                         scrub: true,
-                        pinSpacing: false,
-                        markers: true
+                        pinSpacing: false
                     }
                 });
             }
