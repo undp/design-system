@@ -57,6 +57,18 @@
                 z-index: auto;
             }
         }
+
+        &.large {
+            @include breakpoint(large down) {
+                .hover-slide{
+                    display: none;
+                }
+
+                .content {
+                    width: 100%;
+                }
+            }
+        }
     }
 
     &.large{
