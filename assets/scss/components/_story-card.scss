@@ -1,18 +1,23 @@
 .story-card{
+    height: 100%;
     display: flex;
-    margin-top: 25px;
     overflow: hidden;
     position: relative;
     background: $dark-blue-7;
-    height: calc(100% - 25px);
+
+    // Mantain aspect ratio
+    &:before {
+        content: "";
+        width: 100%;
+        display: block;
+        padding-top: (9 / 10) * 100%;
+    }
 
     @include breakpoint(large down){
         width: 100%;
-        margin-top: 15px;
-        height: calc(100% - 15px);
 
         &:not(.large){
-            .hover-image{
+            .hover-slide{
                 display: none;
             }
         }
@@ -22,13 +27,55 @@
         flex-direction: column;
     }
 
-    &.no-image{
-        .tag,
-        .heading.h4,
-        .small-copy,
-        .cta{
-            position: relative;
-            z-index: $z-index-1;
+    &.no-image {
+        .content {
+            .tag, .title-description {
+                z-index: auto;
+            }
+        }
+    }
+
+    &.large{
+        // Mantain aspect ratio
+        &:before {
+            content: "";
+            width: 100%;
+            display: block;
+            padding-top: (81 / 184) * 100%;
+        }
+
+        .content{
+            @include breakpoint(large down){
+                width: 48%;
+            }
+
+            @include breakpoint(small only){
+                width: 100%;
+            }
+
+            .heading.h5{
+                @include breakpoint(xlarge up){
+                    font-size: 3.5rem;
+                }
+
+                @include breakpoint(large down){
+                    margin-top: 35px;
+                }
+            }
+
+            .small-copy{
+                margin-top: 35px;
+
+                @include breakpoint(large down){
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        &.no-image{
+            .hover-slide::before{
+                background-color: $yellow;
+            }
         }
     }
 
@@ -54,21 +101,31 @@
     }
 
     .content{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         display: flex;
-        padding: 45px 25px;
+        padding: 35px 25px;
+        position: absolute;
         flex-direction: column;
 
         @include breakpoint(medium down){
-            padding: 30px 14px;
+            padding: 30px 15px;
         }
 
         @include breakpoint(small only){
-            padding: 35px 30px 45px;
+            padding: 35px 30px;
+        }
+
+        .tag, .title-description {
+            z-index: -1;
         }
 
         .title-description {
-            flex: 1 0 auto;
+            height: 100%;
             overflow: hidden;
+            margin-bottom: 40px;
         }
 
         .heading.h5{
@@ -99,111 +156,36 @@
         }
 
         .cta{
-            margin-top: 75px;
-            position: relative;
-            z-index: $z-index-1;
-
-            @include breakpoint(large down){
-                margin-top: 60px;
-            }
-
-            @include breakpoint(medium down){
-                margin-top: 35px;
-            }
-
-            @include breakpoint(small only){
-                margin-top: 30px;
-            }
+            bottom: 35px;
+            position: absolute;
         }
     }
 
-    &.large{
-        .content{
-            @include breakpoint(large down){
-                width: 48%;
-            }
-
-            @include breakpoint(small only){
-                width: 100%;
-            }
-
-            .heading.h5{
-                margin-top: 50px;
-
-                @include breakpoint(xlarge up){
-                    font-size: 3.5rem;
-                }
-
-                @include breakpoint(large down){
-                    margin-top: 35px;
-                }
-            }
-
-            .small-copy{
-                margin-top: 35px;
-
-                @include breakpoint(large down){
-                    margin-top: 20px;
-                }
-            }
-
-            .cta{
-                margin-top: 85px;
-
-                @include breakpoint(large down){
-                    margin-top: 60px;
-                }
-
-                @include breakpoint(medium down){
-                    margin-top: 30px;
-                }
-            }
-        }
-
-        &.no-image{
-
-            .hover-image::before{
-                background-color: $yellow;
-            }
-        }
-    }
-
-    .hover-image{
-        position: relative;
-        pointer-events: none;
+    .hover-slide{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: $yellow;
+        transform: translateX(-105%);
+        transition: $transition-primary;
 
         @include breakpoint(large down){
             width: 52%;
+            position: relative;
         }
 
         @include breakpoint(small only){
             width: 100%;
         }
 
-        @include breakpoint(xlarge up){
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            background-color: $yellow;
-            transform: translateX(-105%);
-            transition: $transition-primary;
-        }
-
         .background-image {
-            --x: center;
-            --y: center;
             width: 100%;
             height: 100%;
-            pointer-events: auto;
+            background-size: cover;
             background-repeat: no-repeat;
-            background-size: calc(100% + 110px);
-            background-position: var(--x) var(--y);
-
-            @include breakpoint(large down) {
-                background-size: cover;
-            }
+            background-position: top center;
         }
 
         &::before{
@@ -220,7 +202,7 @@
     }
 
     &:hover{
-        .hover-image{
+        .hover-slide{
             transform: translateX(0);
         }
 

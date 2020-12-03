@@ -20,4 +20,12 @@
             }
         }
     }
+
+    .cell {
+        margin-top: 25px;
+
+        @include breakpoint(large down){
+            margin-top: 15px;
+        }
+    }
 }
