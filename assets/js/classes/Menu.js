@@ -7,6 +7,8 @@ class Menu {
         this.currentSubmenu = '';
         this.hiddenClass = 'hide'
         this.menuOpenClass = 'is-active'
+        this.dataBtnBack = '[data-action-back]'
+        this.modalLocations = 'modal-search-offices'
         this.bodyMenuOpenClass = 'menu-open modal-open'
 
         this.$body = $('body')
@@ -39,23 +41,22 @@ class Menu {
         this.$menuItemDetails.each((i, item) => {
             $(item).click(() => {
                 const subMenu = $(item).data('submenu');
-                if (subMenu && subMenu === 'modal-search-offices') {
+                this.currentSubmenu = $('#' + subMenu);
+                if (this.currentSubmenu) {
                     this.closeMenu();
-                    this.$body.addClass(this.bodyMenuOpenClass)
-                } else if (subMenu) {
-                    this.currentSubmenu = $('#' + subMenu);
-                    if (this.currentSubmenu) {
-                        this.closeMenu();
-                        this.openSubmenu();
-                        this.bindCloseSubmenu();
+                    this.openSubmenu();
+                    this.$body.addClass(this.bodyMenuOpenClass);
+                    if (subMenu === this.modalLocations) {
+                        this.$primaryNav.removeClass('open')
                     }
+                    this.bindCloseSubmenu();
                 }
             })
         })
     }
 
     bindCloseSubmenu() {
-        const btnBack = this.currentSubmenu.find('[data-action-back]');
+        const btnBack = this.currentSubmenu.find(this.dataBtnBack);
         if (btnBack) {
             btnBack.click(() => {
                 this.openMenu();

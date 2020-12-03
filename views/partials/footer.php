@@ -111,8 +111,8 @@ use helpers\Svg;
                                     <?php Svg::render('icon-www-white') ?>
                                     <span class="show-for-sr">Locations</span>
                                 </a>
-                                <a class="icon" href="#" aria-label="Search">
-                                    <?php Svg::render('icon-search-white') ?>
+                                <a class="icon" href="#" aria-label="Search" data-modal-open data-modal="modal-popular-search">
+                                    <?php Svg::render('icon-search')?>
                                     <span class="show-for-sr">Search</span>
                                 </a>
                             </div>
@@ -159,8 +159,8 @@ use helpers\Svg;
                             <?php Svg::render('icon-www-white') ?>
                             <span class="show-for-sr">Locations</span>
                         </a>
-                        <a class="icon" href="#" aria-label="Search">
-                            <?php Svg::render('icon-search-white') ?>
+                        <a class="icon" href="#" aria-label="Search" data-modal-open data-modal="modal-popular-search">
+                            <?php Svg::render('icon-search')?>
                             <span class="show-for-sr">Search</span>
                         </a>
                     </div>
