@@ -6,7 +6,7 @@
     z-index: $z-index-4;
     backdrop-filter: blur(30px);
     height: calc(100vh - #{$height-nav});
-    background-color: rgba($white, 0.87);
+    background-color: rgba($white, 0.98);
 
     @include breakpoint(medium down) {
         top: $height-nav-medium;
