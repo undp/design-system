@@ -8,8 +8,7 @@
 
     @include breakpoint(large down){
         backdrop-filter: blur(21px);
-        //todo alternative to blur on firefox (color white with transparent)
-        background-color: rgba($white, 0.99);
+        background-color: rgba($white, 0.98);
 
         @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
             background-color: rgba($white, 0.87);
@@ -50,7 +49,6 @@
                 border-right: none;
                 backdrop-filter: blur(30px);
                 box-shadow: 0 3px 6px rgba($black, 0.16);
-                //todo: define the correct alternative blur to firefox
                 background-color: rgba($dark-blue-6, 0.98);
 
                 @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
