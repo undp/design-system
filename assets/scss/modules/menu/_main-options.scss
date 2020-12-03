@@ -16,7 +16,7 @@
     .menu-items-languages {
         list-style: none;
         padding-top: 45px;
-        margin: 50px 0 0 20px;
+        margin: 50px 0 0 30px;
         border-top: 1px solid rgba($black, 0.10);
 
         li:not(:first-child) {
@@ -30,5 +30,9 @@
                 margin-right: 15px;
             }
         }
+    }
+
+    ul {
+        padding: 0;
     }
 }
