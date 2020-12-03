@@ -48,7 +48,7 @@
                 ])
                 ?>
             </div>
-            <div class="cell small-12 medium-3">
+            <div class="cell small-12 medium-4 large-3">
                 <?php
                 View::render('components/story-card', [
                     'size' => 'tall',
@@ -60,7 +60,7 @@
                 ])
                 ?>
             </div>
-            <div class="cell small-12 medium-5">
+            <div class="cell small-12 medium-8 large-5">
                 <?php
                 View::render('components/story-card', [
                     'size' => 'wide',
@@ -82,7 +82,7 @@
                 ])
                 ?>
             </div>
-            <div class="cell small-12 medium-5">
+            <div class="cell small-12 medium-8 large-5">
                 <?php
                 View::render('components/story-card', [
                     'size' => 'wide',
@@ -93,7 +93,7 @@
                 ])
                 ?>
             </div>
-            <div class="cell small-12 medium-3">
+            <div class="cell small-12 medium-4 large-3">
                 <?php
                 View::render('components/story-card', [
                     'size' => 'tall',
