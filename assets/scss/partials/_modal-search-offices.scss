@@ -158,7 +158,8 @@
                     background-color: rgba($white, 0.87);
                 }
 
-                @include breakpoint(medium down){
+                @include breakpoint(large down){
+                    backdrop-filter: unset;
                     background-color: transparent;
 
                     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
