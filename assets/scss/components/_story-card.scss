@@ -5,20 +5,40 @@
     position: relative;
     background: $dark-blue-7;
 
-    // Mantain aspect ratio
-    &:before {
-        content: "";
-        width: 100%;
-        display: block;
-        padding-top: (9 / 10) * 100%;
+    // Aspect ratios
+    @include breakpoint(large){
+        // Default aspect (4 column)
+        &:before {
+            content: "";
+            width: 100%;
+            display: block;
+            padding-top: (9 / 10) * 100%;
+        }
+
+        // Large aspect (8 column)
+        &.large {
+            &:before {
+                padding-top: (10 / 23) * 100%;
+            }
+        }
+
+        // Wide aspect (6 column)
+        &.wide {
+            &:before {
+                padding-top: (406 / 569) * 100%;
+            }
+        }
+
+        // Tall aspect (3 column)
+        &.tall {
+            &:before {
+                padding-top: (405 / 331) * 100%;
+            }
+        }
     }
 
     @include breakpoint(large down){
         width: 100%;
-
-        &:before {
-            display: none;
-        }
 
         &:not(.large){
             .hover-slide{
@@ -40,13 +60,6 @@
     }
 
     &.large{
-        @include breakpoint(large){
-            // Mantain aspect ratio
-            &:before {
-                padding-top: (81 / 184) * 100%;
-            }
-        }
-
         .content{
             @include breakpoint(large down){
                 width: 48%;
