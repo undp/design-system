@@ -81,7 +81,7 @@
                 ])
                 ?>
             </div>
-            <div class="cell small-12 medium-6 ">
+            <div class="cell small-12 medium-8">
                 <?php
                 View::render('components/story-card', [
                     'size' => 'large',
@@ -92,7 +92,7 @@
                 ])
                 ?>
             </div>
-            <div class="cell small-12 medium-3">
+            <div class="cell small-12 medium-4">
                 <?php
                 View::render('components/story-card', [
                     'image' => '/assets/images/placeholder/news-8.jpeg',

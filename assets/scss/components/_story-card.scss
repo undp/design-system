@@ -16,6 +16,10 @@
     @include breakpoint(large down){
         width: 100%;
 
+        &:before {
+            display: none;
+        }
+
         &:not(.large){
             .hover-slide{
                 display: none;
@@ -36,12 +40,11 @@
     }
 
     &.large{
-        // Mantain aspect ratio
-        &:before {
-            content: "";
-            width: 100%;
-            display: block;
-            padding-top: (81 / 184) * 100%;
+        @include breakpoint(large){
+            // Mantain aspect ratio
+            &:before {
+                padding-top: (81 / 184) * 100%;
+            }
         }
 
         .content{
@@ -110,6 +113,10 @@
         position: absolute;
         flex-direction: column;
 
+        @include breakpoint(large down){
+            position: static;
+        }
+
         @include breakpoint(medium down){
             padding: 30px 15px;
         }
@@ -142,6 +149,7 @@
 
         .small-copy{
             margin-top: 25px;
+            overflow: hidden;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
@@ -173,6 +181,7 @@
 
         @include breakpoint(large down){
             width: 52%;
+            transform: none;
             position: relative;
         }
 
@@ -186,6 +195,10 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: top center;
+
+            @include breakpoint(small only){
+                padding-top: 100%;
+            }
         }
 
         &::before{
