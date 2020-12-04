@@ -103,6 +103,13 @@
                             </label>
                         </div>
                     </div>
+                    <div class="active-filters">
+                        <p class="tag uppercase">Active filters</p>
+                        <a class="filter" href="#">Sierra Leone</a>
+                        <a class="filter" href="#">Agenda 2030</a>
+                        <a class="filter" href="#">Women’s Empowerment</a>
+                        <a class="tag filter-clear" href="#" data-clear-all>Clear All</a>
+                    </div>
                 </div>
             </div>
             <div class="cell large-auto cell-list-offices">
