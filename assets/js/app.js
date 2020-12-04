@@ -1,3 +1,5 @@
+import 'what-input'
+
 import modal from './components/modal'
 import inputs from './components/inputs'
 import customSelect from './components/select'

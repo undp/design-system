@@ -82,8 +82,16 @@
             }
 
             .heading.h5{
-                @include breakpoint(xlarge up){
+                @include breakpoint(xlarge){
                     font-size: 3.5rem;
+                }
+
+                @include breakpoint(xxlarge) {
+                    font-size: 2.431vw;
+                }
+
+                @include breakpoint(1920) {
+                    font-size: 4.6rem;
                 }
 
                 @include breakpoint(large down){
@@ -167,6 +175,14 @@
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
 
+            @include breakpoint(xxlarge) {
+                font-size: 1.737vw;
+            }
+
+            @include breakpoint(1920) {
+                font-size: 3.3rem;
+            }
+
             @include breakpoint(medium down){
                 margin-top: 30px;
             }
@@ -178,6 +194,14 @@
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
+
+            @include breakpoint(xxlarge) {
+                font-size: 0.973vw;
+            }
+
+            @include breakpoint(1920) {
+                font-size: 1.8rem;
+            }
 
             @include breakpoint(medium down){
                 margin-top: 20px;

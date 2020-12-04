@@ -51,7 +51,7 @@ const init = function () {
             // Our expertise to Trusted Partners pinned image
             if(side === 'right' && index === array.length - 1){
 
-                let height = $('.join-us').height();
+                let height = $('.trusted-partnerships').height();
                 let sectionHeight = $(sectionImage).outerHeight();
 
                 if(sectionHeight < height){
@@ -60,7 +60,7 @@ const init = function () {
                 }
 
                 function recalculateSizes(){
-                    height = $('.join-us').height();
+                    height = $('.trusted-partnerships').height();
                     sectionHeight = $(sectionImage).outerHeight();
 
                     if(sectionHeight < height){
@@ -77,7 +77,7 @@ const init = function () {
                         scrollTrigger: {
                             trigger: target,
                             start: "top top+=300px",
-                            endTrigger:'.join-us',
+                            endTrigger:'.trusted-partnerships',
                             end: `center top+=${height}px`,
                             pin: true,
                             scrub: true,
@@ -108,12 +108,12 @@ const init = function () {
 
     gsap.timeline({
         scrollTrigger: {
-            trigger: ".join-us-header",
+            trigger: ".trusted-partnerships-header",
             start: "top center-=30px",
             end: "bottom top",
             scrub: true,
             onEnter: ()=>{
-                $('.join-us-header').addClass('in-viewport')
+                $('.trusted-partnerships-header').addClass('in-viewport')
             },
         }
     });

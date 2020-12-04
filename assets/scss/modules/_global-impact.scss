@@ -19,6 +19,20 @@
 
         .card-container {
             margin-top: 80px;
+
+            .cell:nth-child(odd) {
+                .stat-card {
+                    color: $dark-blue-1;
+
+                    .bg-image, &:after {
+                        opacity: 1;
+                    }
+
+                    .numerals {
+                        -webkit-text-stroke: unset;
+                    }
+                }
+            }
         }
     }
 }

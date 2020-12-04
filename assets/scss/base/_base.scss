@@ -4,6 +4,12 @@ html {
     font-family: $primary-font;
 }
 
+html[data-whatinput="mouse"] {
+    button:focus, a:focus {
+        outline: none;
+    }
+}
+
 body {
     line-height: 1.2;
     font-family: $primary-font;

@@ -1,10 +1,10 @@
 <?php
 use helpers\View;
 ?>
-<div class="join-us <?= $classes ?>">
+<div class="trusted-partnerships <?= $classes ?>">
     <div class="grid-container">
         <div class="grid-x overflow-hidden">
-            <div class="cell medium-6 medium-offset-1 join-us-header <?= $trackScroll? 'scroll-track' : '' ?> left-right delay-2">
+            <div class="cell medium-6 medium-offset-1 trusted-partnerships-header <?= $trackScroll? 'scroll-track' : '' ?> left-right delay-2">
                 <h2 class="heading h2">
                     Trusted partnerships
                 </h2>
