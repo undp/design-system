@@ -167,6 +167,10 @@
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
 
+            @include breakpoint(xxlarge) {
+                font-size: 1.737vw;
+            }
+
             @include breakpoint(medium down){
                 margin-top: 30px;
             }
@@ -178,6 +182,10 @@
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
+
+            @include breakpoint(xxlarge) {
+                font-size: 0.973vw;
+            }
 
             @include breakpoint(medium down){
                 margin-top: 20px;

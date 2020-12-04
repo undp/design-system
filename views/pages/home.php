@@ -15,7 +15,7 @@ use helpers\View;
 <?php View::render('modules/our-mission') ?>
 <?php View::render('modules/our-expertise') ?>
 <?php
-    View::render('modules/join-us', [
+    View::render('modules/trusted-partnerships', [
         'classes' => 'show-for-small-only',
         'trackScroll' => true
     ])

@@ -48,10 +48,11 @@
             }
         }
 
-        &:not(:first-child){
-            margin-top: -120px;
+        @include breakpoint(medium){
+            &:not(:first-child){
+                margin-top: -120px;
+            }
         }
-
 
         .expertise-image{
             @include breakpoint(360px down) {
