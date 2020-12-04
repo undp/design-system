@@ -53,7 +53,6 @@ class MultiSelect {
     totalOptionsSelected() {
         const inputs = this.$currentSelect.find('input[type="checkbox"]');
         inputs.change((evt) => {
-        inputs.change((evt) => {
             const total = this.$currentSelect.find("input:checked").length;
             const counter = this.$currentSelect.find(this.dataSelectControl + ' span');
             counter.text('(' + total + ')');
