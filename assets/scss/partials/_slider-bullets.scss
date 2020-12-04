@@ -10,7 +10,7 @@
         height: 1px;
         cursor: pointer;
         border-radius: 0;
-        border: 1px solid $black;
+        background-color: $black;
 
         &:focus {
             outline: $black;

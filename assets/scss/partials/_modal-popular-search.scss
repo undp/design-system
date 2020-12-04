@@ -5,10 +5,15 @@
     overflow-y: auto;
     z-index: $z-index-modal;
     height: calc(100vh - #{$height-nav});
-    backdrop-filter: blur(30px);
-    background-color: rgba($white, 0.7);
+    backdrop-filter: blur(21px);
+    //alternative blur to firefox
+    background-color: rgba($white, 0.98);
 
-    @include breakpoint(large down){
+    @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+        background-color: rgba($white, 0.87);
+    }
+
+    @include breakpoint(large down) {
         top: calc(#{$height-nav-medium} + 1px);
         height: calc(100vh - #{$height-nav-medium});
     }

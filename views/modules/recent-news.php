@@ -37,7 +37,7 @@
                     ])
                 ?>
             </div>
-            <div class="cell small-12 medium-3">
+            <div class="cell small-12 medium-4">
                 <?php
                 View::render('components/story-card', [
                     'image' => '/assets/images/placeholder/news-3.png',
@@ -48,9 +48,10 @@
                 ])
                 ?>
             </div>
-            <div class="cell small-12 medium-3">
+            <div class="cell small-12 medium-4 large-3">
                 <?php
                 View::render('components/story-card', [
+                    'size' => 'tall',
                     'image' => '/assets/images/placeholder/news-4.jpeg',
                     'tag' => 'What we are doing',
                     'title' => 'Padma Lakshmi, Alexis Ren and Ronen Rubinstein kick off UN Development Programme’s campaign to raise awareness of growing inequalities caused by COVID-19 and climate change',
@@ -59,10 +60,10 @@
                 ])
                 ?>
             </div>
-            <div class="cell small-12 medium-6 ">
+            <div class="cell small-12 medium-8 large-5">
                 <?php
                 View::render('components/story-card', [
-                    'size' => 'large',
+                    'size' => 'wide',
                     'image' => '/assets/images/placeholder/news-5.jpeg',
                     'tag' => 'News',
                     'title' => 'Mongolia receives new $23.1 million GCF grant to strengthen climate resilience',
@@ -81,10 +82,10 @@
                 ])
                 ?>
             </div>
-            <div class="cell small-12 medium-6 ">
+            <div class="cell small-12 medium-8 large-5">
                 <?php
                 View::render('components/story-card', [
-                    'size' => 'large',
+                    'size' => 'wide',
                     'image' => '/assets/images/placeholder/news-7.jpeg',
                     'tag' => 'News',
                     'title' => 'EIF and UNDP to strengthen cooperation for sustainable finance',
@@ -92,9 +93,10 @@
                 ])
                 ?>
             </div>
-            <div class="cell small-12 medium-3">
+            <div class="cell small-12 medium-4 large-3">
                 <?php
                 View::render('components/story-card', [
+                    'size' => 'tall',
                     'image' => '/assets/images/placeholder/news-8.jpeg',
                     'tag' => 'Speech',
                     'title' => 'Business and human rights, a global priority',

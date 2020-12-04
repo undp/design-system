@@ -4,6 +4,7 @@ import customSelect from './components/select'
 import ourExpertiseSectionAnimation from './components/our-expertise-animation'
 import modalNav from './components/modal-nav'
 import navigation from './components/navigation'
+import multiSelect from './components/multi-select'
 import dropdown from './components/dropdown-languajes'
 import footerMenu from './partials/footer-menu-mobile'
 import scrollTriggers from './components/scroll-triggers'
@@ -11,7 +12,6 @@ import publicationsSlider from './components/publications-slider'
 import ourMissionAnimation from './components/our-mision-animation'
 import ourExpertiseMobileSlider from './components/our-expertise-mobile-slider'
 import heroAnimation from './components/hero-animation'
-import storyCardHover from './components/story-card-hover'
 
 function main() {
     modal()
@@ -21,13 +21,13 @@ function main() {
     modalNav()
     footerMenu()
     navigation()
+    multiSelect()
     customSelect()
     scrollTriggers()
     publicationsSlider()
     ourMissionAnimation()
     ourExpertiseMobileSlider()
     heroAnimation()
-    storyCardHover()
 }
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -18,7 +18,7 @@
             <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
                     View::render('components/story-card', [
-                        'image' => '/assets/images/placeholder/featured-story-1.jpeg',
+                        //'image' => '/assets/images/placeholder/featured-story-1.jpeg',
                         'tag' => 'UNDP Response',
                         'title' => 'A vineyard with a storied past receives an injection of new life',
                         'description' => 'A Bosnian wine that once graced the tables of Austro-Hungarian royalty moves towards 21st century production.',

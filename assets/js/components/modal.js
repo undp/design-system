@@ -30,6 +30,7 @@ class Modal {
         this.$modals.each((i, modal) => {
             $(modal).click((env) => {
                 env.preventDefault();
+                this.$modals.removeClass(this.classModalActive);
                 this.$modalReference = $(modal);
                 $('.menu-modal').addClass('hide');
                 const idModalOpen = $(modal).data('modal');

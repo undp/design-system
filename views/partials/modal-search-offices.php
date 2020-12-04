@@ -18,6 +18,10 @@
                 </a>
                 <div class="header-modal">
                     <h2 class="heading h2 title">Find Our Offices Around the World.</h2>
+                    <a class="text-link arrow-3" href="#">
+                        Go to GLOBAL SITE
+                        <?=  file_get_contents("assets/images/arrows/btn-arrow-external-red.svg");  ?>
+                    </a>
                     <p class="big-copy description">The UNDP works in 170 countries around the world. Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Duis auctor, ante sed auctor faucibus, diam ante pellentesque turpis, sit amet dictum felis felis bibendum nisl. </p>
                     <p class="tag uppercase hide-for-large tag-current-section">current selection</p>
                     <h3 class="heading h3 title hide-for-large title-undp"><span class="uppercase">undp</span> Global</h3>
@@ -25,28 +29,79 @@
                 <form action="">
                     <div class="flex-container search-input-group">
                         <label class="show-for-sr" for="search-offices">Search Offices</label>
-                        <input class="big-copy input-search" type="text" name="search-offices" id="search-offices" placeholder="search">
-                        <button type="submit" class="btn-search" aria-label="Submit search">
-                            <?php Svg::render('icon-search-white') ?>
+                        <button type="submit" class="flex-container align-middle btn-search" aria-label="Submit search">
+                            <?php Svg::render('icon-search-modal-locations') ?>
                             <span class="show-for-sr">Submit search</span>
                         </button>
+                        <input class="big-copy input-search" type="text" name="search-offices" id="search-offices" placeholder="Search offices">
                     </div>
                 </form>
                 <div class="search-select-group show-for-large">
                     <p class="tag uppercase">Filter by:</p>
-                    <div class="custom-select big-copy">
-                        <select>
-                            <option value="0" disabled selected>Region/Continent</option>
-                            <option value="1">option 1</option>
-                            <option value="2">option 2</option>
-                        </select>
+                    <div class="multi-select" data-multi-select>
+                        <span class="select-control" data-select-control>Location <span></span></span>
+                        <div class="options" data-options>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                Arab States
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                East Asia and the Pacific
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                Europe and Central Asia
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                Latin America and the Caribbean
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                South Asia
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                Sub-Saharan Africa
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
                     </div>
-                    <div class="custom-select big-copy">
-                        <select>
-                            <option value="0" disabled selected>Office Type</option>
-                            <option value="1">option 1</option>
-                            <option value="2">option 2</option>
-                        </select>
+                    <div class="multi-select" data-multi-select>
+                        <span class="select-control" data-select-control>Office <span></span></span>
+                        <div class="options" data-options>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="option1" value="option 1">
+                                Sierra Leone
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                Agenda 2030
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="multi-select" data-multi-select>
+                        <span class="select-control" data-select-control>publication <span></span></span>
+                        <div class="options" data-options>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                Sierra Leone
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox">
+                                Agenda 2030
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
