@@ -12,6 +12,7 @@ import publicationsSlider from './components/publications-slider'
 import ourMissionAnimation from './components/our-mision-animation'
 import ourExpertiseMobileSlider from './components/our-expertise-mobile-slider'
 import heroAnimation from './components/hero-animation'
+import trapFocus from './components/trap-focus'
 
 function main() {
     modal()
@@ -28,6 +29,7 @@ function main() {
     ourMissionAnimation()
     ourExpertiseMobileSlider()
     heroAnimation()
+    trapFocus()
 }
 
 document.addEventListener("DOMContentLoaded", function () {
