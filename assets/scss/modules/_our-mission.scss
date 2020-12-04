@@ -1,14 +1,13 @@
 .our-mission {
-    min-height: 820px;
-    padding: 450px 0 800px;
-    transition: background-color 0.5s linear;
+    z-index: $z-index-1;
+    padding: 700px 0 1800px;
 
     @include breakpoint(medium down){
-        padding: 350px 0 800px;
+        padding: 600px 0 800px;
     }
 
     @include breakpoint(small only){
-        padding: 300px 0 300px;
+        padding: 500px 0 800px;
     }
 
     &.color-background{

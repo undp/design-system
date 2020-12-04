@@ -4,44 +4,81 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 const init = function () {
-    const $section = $(".our-mission");
-    const $container = $section.find('.title-container');
-    const $expertise = $('.our-expertise');
+    const $section = $(".our-mission")
+    const $startTrigger = $section.find('.title-container');
 
-    let start = 'top center+=50px';
-    let end = 'bottom+=100px top+=300px';
+    //white to blue
+    const whiteToBlue = gsap.fromTo($section,
+        { backgroundColor: "#fff" },
+        { backgroundColor: "#232E3E" })
 
-    if(Foundation.MediaQuery.is('medium down')){
-        start = 'top center+=20px'
-    }
+    let startWhiteToBlue = "top-=700px top+=105px"
+    let endWhiteToBlue = "+=400px"
+    let startBlueToWhite = "bottom top+=200px"
 
-    if(Foundation.MediaQuery.is('small only')){
-        end = 'bottom+=250% center'
-    }
 
-    gsap.timeline({
-        duration: 5,
-        scrollTrigger: {
-            trigger: $container,
-            scrub: true,
-            start: start,
-            end: end,
-            onEnter: ()=>{
-                $section.addClass('color-background')
-            },
-            onLeave: ()=>{
-                $section.removeClass('color-background')
-                $expertise.removeClass('hide-section');
-            },
-            onLeaveBack: ()=>{
-                $section.removeClass('color-background')
-                $expertise.addClass('hide-section');
-            },
-            onEnterBack: ()=>{
-                $section.addClass('color-background')
-                $expertise.addClass('hide-section');
-            }
+    function calculateSizes(){
+        if($(window).width() < 1194){
+            startWhiteToBlue = "top-=600px top+=70px"
+            endWhiteToBlue = "+=400px"
         }
+
+        if($(window).width() < 834){
+            startWhiteToBlue = "top-=500px top+=70px"
+            endWhiteToBlue = "+=400px"
+
+            startBlueToWhite = "bottom+=200px top+=70px"
+        }
+    }
+
+    calculateSizes()
+
+    let whiteToBlueScroll = ScrollTrigger.create({
+        trigger: $startTrigger,
+        start: startWhiteToBlue,
+        end: endWhiteToBlue,
+        scrub: true,
+        animation: whiteToBlue,
+        invalidateOnRefresh: false
+    });
+
+
+    //blue to white
+    const blueToWhite= gsap.fromTo($section,
+        { backgroundColor: "#232E3E" },
+        { backgroundColor: "#fff",
+            immediateRender: false })
+
+
+    let blueToWhiteScroll = ScrollTrigger.create({
+        trigger: $startTrigger,
+        start: startBlueToWhite,
+        end: "+=200px",
+        scrub: true,
+        animation: blueToWhite,
+        invalidateOnRefresh: false
+    });
+
+
+    //appear expertise section
+    let appearScroll = ScrollTrigger.create({
+        trigger: $startTrigger,
+        start: "bottom top+=105px",
+        scrub: true,
+        invalidateOnRefresh: false,
+        onEnter: () => {
+            $('.our-expertise').removeClass('hide-section')
+        },
+        onLeaveBack: () => {
+            $('.our-expertise').addClass('hide-section')
+        },
+    });
+
+    $(window).resize(()=>{
+        calculateSizes()
+        whiteToBlueScroll.update()
+        blueToWhiteScroll.update()
+        appearScroll.update()
     })
 }
 
