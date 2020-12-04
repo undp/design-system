@@ -39,10 +39,7 @@ const init = function () {
         end: endWhiteToBlue,
         scrub: true,
         animation: whiteToBlue,
-        invalidateOnRefresh: false,
-        onRefresh: () =>{
-            calculateSizes()
-        }
+        invalidateOnRefresh: false
     });
 
 
@@ -59,10 +56,7 @@ const init = function () {
         end: "+=200px",
         scrub: true,
         animation: blueToWhite,
-        invalidateOnRefresh: false,
-        onRefresh: () =>{
-            calculateSizes()
-        }
+        invalidateOnRefresh: false
     });
 
 
