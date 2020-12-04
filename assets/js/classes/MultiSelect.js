@@ -37,7 +37,6 @@ class MultiSelect {
             if (this.$currentSelect && !this.$currentSelect.is(evt.target) &&
                 this.$currentSelect.has(evt.target).length === 0 && this.$currentSelect.hasClass(this.classOpen)) {
                 this.closeAll();
-                console.log('window')
             }
         });
     }
@@ -53,7 +52,7 @@ class MultiSelect {
 
     totalOptionsSelected() {
         const inputs = this.$currentSelect.find('input[type="checkbox"]');
-        console.log('this,', inputs);
+        inputs.change((evt) => {
         inputs.change((evt) => {
             const total = this.$currentSelect.find("input:checked").length;
             const counter = this.$currentSelect.find(this.dataSelectControl + ' span');
