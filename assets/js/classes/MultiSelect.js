@@ -65,9 +65,25 @@ class MultiSelect {
         this.$containerFilter.html('');
         this.selects.find("input:checked").each((i, input) => {
             const value = $(input).parent().text();
-            this.$containerFilter.append('<a class="filter" href="#">' + value + '</a>')
+            this.$containerFilter.append('<a class="filter" href="#" data-close-filter>' + value + '</a>')
         });
-        this.$containerFilter.append('<a class="tag filter-clear" href="#" data-clear-all>Clear All</a>');
+        this.$containerFilter.append('<a class="tag filter-clear" data-close-all-select href="#" data-clear-all>Clear All</a>');
+        this.listenerCloseFilter()
+        this.listenerClearAllSelects();
+    }
+
+    listenerCloseFilter() {
+        $('[data-close-filter]').on('click', (evt) => {
+            evt.preventDefault();
+            $(evt.currentTarget).remove();
+        });
+    }
+
+    listenerClearAllSelects() {
+        $('[data-close-all-select]').on('click', (evt) => {
+            evt.preventDefault();
+            this.$containerFilter.html('');
+        });
     }
 }
 

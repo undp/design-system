@@ -35,12 +35,12 @@
         border: 2px solid $black;
         text-transform: uppercase;
         //backdrop-filter: blur(30px);
-        //background-color: rgba($dark-blue-6, 0.98);
+        background-color: rgba($dark-blue-6, 0.98);
         display: block;
 
-        //@supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
-        //    background-color: rgba($dark-blue-6, 0.86);
-        //}
+        @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+            background-color: rgba($dark-blue-6, 0.86);
+        }
 
         &:after {
             top: 50%;
