@@ -6,12 +6,12 @@ class MultiSelect {
         this.$window = $(window);
         this.$currentSelect = null;
         this.selects = $('[data-multi-select]');
+        this.$containerFilter = $('[data-container-filters]');
     }
 
     init() {
         this.listenerSelects();
         this.listenerWindowClick();
-        this.listenerTotalOptionsSelected();
     }
 
     closeAll() {
@@ -41,10 +41,6 @@ class MultiSelect {
         });
     }
 
-    listenerTotalOptionsSelected() {
-        this.$currentSelect
-    }
-
     toogleSelect() {
         this.$currentSelect.toggleClass(this.classOpen);
     }
@@ -53,13 +49,25 @@ class MultiSelect {
     totalOptionsSelected() {
         const inputs = this.$currentSelect.find('input[type="checkbox"]');
         inputs.change((evt) => {
-            const total = this.$currentSelect.find("input:checked").length;
+            const inputs = this.$currentSelect.find("input:checked");
+            const total = inputs.length;
             const counter = this.$currentSelect.find(this.dataSelectControl + ' span');
             counter.text('(' + total + ')');
             if (total == 0) {
                 counter.text('');
             }
+            this.printContainerFilters();
         })
+    }
+
+
+    printContainerFilters() {
+        this.$containerFilter.html('');
+        this.selects.find("input:checked").each((i, input) => {
+            const value = $(input).parent().text();
+            this.$containerFilter.append('<a class="filter" href="#">' + value + '</a>')
+        });
+        this.$containerFilter.append('<a class="tag filter-clear" href="#" data-clear-all>Clear All</a>');
     }
 }
 

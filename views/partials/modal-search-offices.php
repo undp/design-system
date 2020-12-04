@@ -105,10 +105,7 @@
                     </div>
                     <div class="active-filters">
                         <p class="tag uppercase">Active filters</p>
-                        <a class="filter" href="#">Sierra Leone</a>
-                        <a class="filter" href="#">Agenda 2030</a>
-                        <a class="filter" href="#">Women’s Empowerment</a>
-                        <a class="tag filter-clear" href="#" data-clear-all>Clear All</a>
+                        <div data-container-filters></div>
                     </div>
                 </div>
             </div>
