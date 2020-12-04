@@ -42,32 +42,32 @@
                         <span class="select-control" data-select-control>Location <span></span></span>
                         <div class="options" data-options>
                             <label class="checkbox-item">
-                                <input type="checkbox">
+                                <input type="checkbox" value="1">
                                 Arab States
                                 <span class="checkmark"></span>
                             </label>
                             <label class="checkbox-item">
-                                <input type="checkbox">
+                                <input type="checkbox" value="2">
                                 East Asia and the Pacific
                                 <span class="checkmark"></span>
                             </label>
                             <label class="checkbox-item">
-                                <input type="checkbox">
+                                <input type="checkbox" value="3">
                                 Europe and Central Asia
                                 <span class="checkmark"></span>
                             </label>
                             <label class="checkbox-item">
-                                <input type="checkbox">
+                                <input type="checkbox" value="4">
                                 Latin America and the Caribbean
                                 <span class="checkmark"></span>
                             </label>
                             <label class="checkbox-item">
-                                <input type="checkbox">
+                                <input type="checkbox" value="5">
                                 South Asia
                                 <span class="checkmark"></span>
                             </label>
                             <label class="checkbox-item">
-                                <input type="checkbox">
+                                <input type="checkbox" value="6">
                                 Sub-Saharan Africa
                                 <span class="checkmark"></span>
                             </label>
@@ -77,7 +77,7 @@
                         <span class="select-control" data-select-control>Office <span></span></span>
                         <div class="options" data-options>
                             <label class="checkbox-item">
-                                <input type="checkbox" name="option1" value="option 1">
+                                <input type="checkbox" name="option1" value="7">
                                 Sierra Leone
                                 <span class="checkmark"></span>
                             </label>
@@ -92,17 +92,18 @@
                         <span class="select-control" data-select-control>publication <span></span></span>
                         <div class="options" data-options>
                             <label class="checkbox-item">
-                                <input type="checkbox">
+                                <input type="checkbox" value="8">
                                 Sierra Leone
                                 <span class="checkmark"></span>
                             </label>
                             <label class="checkbox-item">
-                                <input type="checkbox">
+                                <input type="checkbox" value="9">
                                 Agenda 2030
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                     </div>
+                    <div class="active-filters" data-container-filters></div>
                 </div>
             </div>
             <div class="cell large-auto cell-list-offices">

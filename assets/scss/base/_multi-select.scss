@@ -1,6 +1,6 @@
 .multi-select {
+    height: 55px;
     display: flex;
-    height: 64px;
     position: relative;
 
     &.open {
@@ -30,12 +30,17 @@
         min-width: 400px;
         font-weight: bold;
         font-size: 1.6rem;
-        padding: 20px 25px;
+        padding: 18px 22px;
         position: absolute;
         border: 2px solid $black;
         text-transform: uppercase;
-        background-color: transparent;
+        //backdrop-filter: blur(30px);
+        background-color: rgba($dark-blue-6, 0.98);
         display: block;
+
+        @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+            background-color: rgba($dark-blue-6, 0.86);
+        }
 
         &:after {
             top: 50%;
@@ -55,14 +60,22 @@
         top: 55px;
         display: none;
         max-width: 100%;
-        padding: 0 25px;
+        padding: 0 22px;
         min-width: 400px;
+        overflow-y: auto;
+        min-height: 100px;
+        max-height: 200px;
         position: absolute;
         z-index: $z-index-1;
         font-weight: $regular;
         border: 2px solid $black;
-        background-color: rgba($white, 0.98);
+        backdrop-filter: blur(30px);
+        background-color: rgba($dark-blue-6, 0.98);
 
+
+        @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+            background-color: rgba($dark-blue-6, 0.86);
+        }
 
         .checkbox-item {
             margin: 0;
@@ -81,6 +94,19 @@
             input {
                 width: auto;
             }
+
+            &:hover {
+                color:  $dark-blue-17
+            }
+        }
+
+        &::-webkit-scrollbar {
+            width: 4px;
+            background-color: rgba($black, 0.30);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($black, 0.60);
         }
 
     }

@@ -150,6 +150,51 @@
                     .multi-select {
                         margin-top: 15px;
                     }
+
+                    .active-filters {
+                        padding: 20px;
+
+                        .tag {
+                            margin-bottom: 15px;
+                        }
+
+                        .filter {
+                            color: $black;
+                            display: block;
+                            line-height: 1.5;
+                            font-size: 1.4rem;
+                            font-weight: $regular;
+
+                            &:before {
+                                margin-right: 5px;
+                                content: url('#{$image-path}icon-close-modal-location.svg');
+                            }
+
+                            &:focus,
+                            &:active,
+                            &:hover
+                            {
+                                color: $black;
+                            }
+                        }
+
+                        .filter-clear  {
+                            color: $black;
+                            line-height: 1.5;
+                            margin-left: 15px;
+                            font-size: 1.4rem;
+                            font-weight: $regular;
+                            text-transform: capitalize;
+                            border-bottom: 1px solid $red;
+
+                            &:focus,
+                            &:active,
+                            &:hover
+                            {
+                                color: $black;
+                            }
+                        }
+                    }
                 }
 
             }
