@@ -51,7 +51,6 @@ const init = function () {
             if(side === 'right' && index === array.length - 1){
 
                 let height = $('.join-us').height();
-                console.log(height);
                 let sectionHeight = $(sectionImage).outerHeight();
 
                 if(sectionHeight < height){
@@ -59,17 +58,42 @@ const init = function () {
                     height -= 70;
                 }
 
-                gsap.timeline({
-                    scrollTrigger: {
-                        trigger: target,
-                        start: "top top+=300px",
-                        endTrigger:'.join-us',
-                        end: `center top+=${height}px`,
-                        pin: true,
-                        scrub: true,
-                        pinSpacing: false
+                $(window).resize(()=>{
+                    height = $('.join-us').height();
+                    sectionHeight = $(sectionImage).outerHeight();
+
+                    if(sectionHeight < height){
+                        height = height - (height - sectionHeight)
+                        height -= 70;
                     }
-                });
+                })
+
+                let animationScroll = null;
+
+                function createAnimationTimeline() {
+                    animationScroll = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: target,
+                            start: "top top+=300px",
+                            endTrigger:'.join-us',
+                            end: `center top+=${height}px`,
+                            pin: true,
+                            scrub: true,
+                            pinSpacing: false,
+                            invalidateOnRefresh: false,
+                        }
+                    });
+                }
+                createAnimationTimeline()
+
+                const handleResize = () => {
+                    animationScroll.kill();
+                    createAnimationTimeline()
+                };
+
+                $(window).resize(()=>{
+                    handleResize()
+                })
             }
         });
     }
@@ -85,6 +109,8 @@ const init = function () {
             },
         }
     });
+
+
 }
 
 export default init
