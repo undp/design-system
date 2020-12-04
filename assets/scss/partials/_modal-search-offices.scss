@@ -81,8 +81,13 @@
                         }
                     }
 
+                    .text-link {
+                        display: block;
+                        margin-top: 25px;
+                    }
+
                     .description {
-                        margin-top: 35px;
+                        margin-top: 25px;
 
                         @include breakpoint(medium down) {
                             margin-top: 20px;
@@ -106,10 +111,11 @@
                     margin-top: 20px;
 
                     .input-search {
+                        border: 0;
                         margin: 0;
                         height: 58px;
                         padding: 20px;
-                        border: 2px solid $black;
+                        border-bottom: 2px solid $black;
                         min-width: calc(100% - 58px);
                         max-width: calc(100% - 58px);
                         background-color: transparent;
@@ -125,19 +131,23 @@
                     }
 
                     .btn-search {
-                        width: 58px;
+                        border: 0;
+                        width: 35px;
                         height: 58px;
+                        color: $black;
                         cursor: pointer;
-                        background: $red;
-                        border: 2px solid $black;
-                        border-left: 0;
+                        border-bottom: 2px solid $black;
+
+                        svg {
+                            margin-left: 5px;
+                        }
                     }
                 }
 
                 .search-select-group {
                     margin-top: 60px;
 
-                    .custom-select:not(:first-child) {
+                    .multi-select {
                         margin-top: 15px;
                     }
                 }
