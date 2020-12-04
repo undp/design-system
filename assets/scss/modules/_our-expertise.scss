@@ -4,11 +4,11 @@
     z-index: $z-index-2;
 
     @include breakpoint(medium down){
-        margin-top: -1200px;
+        margin-top: -1600px;
     }
 
     @include breakpoint(small only){
-        margin-top: -300px;
+        margin-top: -700px;
     }
 
     &.hide-section{
@@ -26,7 +26,7 @@
             }
 
             @include breakpoint(medium down){
-                padding-top: 800px;
+                padding-top: 1200px;
             }
 
             @include breakpoint(small only){
