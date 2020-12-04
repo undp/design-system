@@ -80,7 +80,7 @@ const init = function () {
 
     createScrollsWhiteToBlue()
     createScrollsBlueToWhite()
-    
+
     //appear expertise section
     function createScrollsAppearExpertise(){
         appearScroll = ScrollTrigger.create({

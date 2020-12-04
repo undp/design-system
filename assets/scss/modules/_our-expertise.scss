@@ -4,10 +4,6 @@
     z-index: $z-index-2;
     transition: opacity 0.5s linear;
 
-    @include breakpoint(medium down){
-        //margin-top: -600px;
-    }
-
     @include breakpoint(small only){
         margin-top: 0;
     }
