@@ -5,31 +5,33 @@
         margin-bottom: 105px;
     }
 
-    .date{
-        margin-left: 35px;
-
-        @include breakpoint(medium down){
-            margin-left: 20px;
-        }
+    .avatar {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        margin-right: 15px;
+        border-radius: 50%;
+        background-color: $blue-0;
     }
 
     .text{
         margin-top: 30px;
-        padding: 25px 23px 0;
+        padding: 25px 5px 0 0;
         border-top: 3px solid $white;
 
         @include breakpoint(medium down){
             margin-top: 25px;
-            padding: 25px 10px 0;
+            padding: 25px 10px 0 0;
         }
 
         @include breakpoint(small only){
             margin-top: 30px;
-            padding: 25px 25px 0;
+            padding: 25px 25px 0 0;
         }
 
-        .big-copy{
+        .small-copy{
             color: $white;
+            margin-top: 18px;
 
             a{
                 border-bottom: 1px solid $red;
@@ -46,6 +48,11 @@
             @include breakpoint(small only){
                 margin-top: 45px;
             }
+        }
+
+        .nav-item{
+            font-weight: $bold;
+            color: $dark-blue-3;
         }
     }
 }
