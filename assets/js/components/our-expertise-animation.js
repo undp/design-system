@@ -1,5 +1,6 @@
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+let _ = require('lodash')
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -58,7 +59,7 @@ const init = function () {
                     height -= 70;
                 }
 
-                $(window).resize(()=>{
+                function recalculateSizes(){
                     height = $('.join-us').height();
                     sectionHeight = $(sectionImage).outerHeight();
 
@@ -66,7 +67,8 @@ const init = function () {
                         height = height - (height - sectionHeight)
                         height -= 70;
                     }
-                })
+
+                }
 
                 let animationScroll = null;
 
@@ -80,20 +82,26 @@ const init = function () {
                             pin: true,
                             scrub: true,
                             pinSpacing: false,
-                            invalidateOnRefresh: false,
+                            invalidateOnRefresh: false
                         }
                     });
                 }
+
                 createAnimationTimeline()
 
-                const handleResize = () => {
-                    animationScroll.kill();
-                    createAnimationTimeline()
-                };
+                function handleResize(){
 
-                $(window).resize(()=>{
+                    animationScroll.scrollTrigger.kill()
+                    animationScroll.kill()
+
+                    recalculateSizes()
+                    createAnimationTimeline()
+                }
+
+                $(window).resize('resize',_.debounce(() => {
                     handleResize()
-                })
+                }, 200))
+
             }
         });
     }
