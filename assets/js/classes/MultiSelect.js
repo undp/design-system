@@ -11,6 +11,7 @@ class MultiSelect {
     init() {
         this.listenerSelects();
         this.listenerWindowClick();
+        this.listenerTotalOptionsSelected();
     }
 
     closeAll() {
@@ -25,6 +26,7 @@ class MultiSelect {
                     this.closeAll();
                 }
                 this.toogleSelect();
+                this.totalOptionsSelected();
             });
         })
     }
@@ -40,8 +42,26 @@ class MultiSelect {
         });
     }
 
+    listenerTotalOptionsSelected() {
+        this.$currentSelect
+    }
+
     toogleSelect() {
         this.$currentSelect.toggleClass(this.classOpen);
+    }
+
+
+    totalOptionsSelected() {
+        const inputs = this.$currentSelect.find('input[type="checkbox"]');
+        console.log('this,', inputs);
+        inputs.change((evt) => {
+            const total = this.$currentSelect.find("input:checked").length;
+            const counter = this.$currentSelect.find(this.dataSelectControl + ' span');
+            counter.text('(' + total + ')');
+            if (total == 0) {
+                counter.text('');
+            }
+        })
     }
 }
 

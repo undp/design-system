@@ -77,7 +77,7 @@
                         <span class="select-control" data-select-control>Office <span></span></span>
                         <div class="options" data-options>
                             <label class="checkbox-item">
-                                <input type="checkbox">
+                                <input type="checkbox" name="option1" value="option 1">
                                 Sierra Leone
                                 <span class="checkmark"></span>
                             </label>
