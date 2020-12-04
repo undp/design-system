@@ -52,7 +52,6 @@ const init = function () {
             scrub: true,
             animation: whiteToBlue,
             invalidateOnRefresh: false,
-            markers: true,
         });
     }
 
