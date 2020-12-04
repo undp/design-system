@@ -99,13 +99,13 @@
 
                 &.active {
                     &:before {
-                        top: -5px;
-                        right: -5px;
+                        top: -8px;
+                        right: -8px;
                         content: '';
                         z-index: -1;
-                        width: 34px;
+                        width: 40px;
                         padding:2px;
-                        height: 34px;
+                        height: 40px;
                         display: block;
                         border-radius: 50%;
                         position: absolute;

@@ -67,10 +67,9 @@ class Menu {
 
     bindScrollEvents() {
         this.$window.on('scroll', () => {
-            const navHeight = this.$container.height();
             const currentScroll = this.$window.scrollTop();
             const logo = this.$container.find(this.$middleLogo);
-            if (currentScroll > navHeight && logo) {
+            if (currentScroll > 0) {
                 logo.addClass('scrolled')
             } else {
                 logo.removeClass('scrolled')
