@@ -51,10 +51,12 @@ const init = function () {
             if(side === 'right' && index === array.length - 1){
 
                 let height = $('.join-us').height();
+                console.log(height);
                 let sectionHeight = $(sectionImage).outerHeight();
 
                 if(sectionHeight < height){
                     height = height - (height - sectionHeight)
+                    height -= 70;
                 }
 
                 gsap.timeline({
