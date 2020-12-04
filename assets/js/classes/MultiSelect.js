@@ -78,7 +78,8 @@ class MultiSelect {
         $('[data-close-filter]').on('click', (evt) => {
             evt.preventDefault();
             const inputValue = $(evt.currentTarget).data('input-value');
-            $('input[value="'+inputValue+'"]').prop('checked', false);
+            const input = $('input[value="'+inputValue+'"]');
+            input.prop('checked', false);
             $(evt.currentTarget).remove();
             if (!this.selects.find('input[type="checkbox"]').length) {
                 this.$containerFilter.html('')
@@ -91,6 +92,11 @@ class MultiSelect {
             evt.preventDefault();
             this.$containerFilter.html('');
             this.selects.find("input:checked").prop('checked', false);
+
+            this.selects.each((i, select) => {
+                const counter = $(select).find(this.dataSelectControl + ' span');
+                counter.text('');
+            });
         });
     }
 }
