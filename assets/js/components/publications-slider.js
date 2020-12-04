@@ -11,7 +11,7 @@ const init = function () {
         $controlSlider.css('width', slideWidth + "%")
 
         const glide = new Glide('.publications-slider', {
-            type: 'carousel',
+            type: 'slider',
             peek: 118,
             gap: 92,
             breakpoints: {

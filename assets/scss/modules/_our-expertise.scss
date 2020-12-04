@@ -18,6 +18,10 @@
     .our-expertise-row{
         position: relative;
 
+        .pin-spacer {
+            width: 25% !important; // Solves bug with scrolltrigger pin calculations
+        }
+
         &:first-child{
             padding-top: 850px;
 
@@ -47,7 +51,7 @@
         &:not(:first-child){
             margin-top: -120px;
         }
-        
+
 
         .expertise-image{
             @include breakpoint(360px down) {
