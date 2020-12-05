@@ -60,6 +60,6 @@ use helpers\View;
 
 </section>
 <?php View::render('partials/modal-nav-hover')?>
-<?php View::render('partials/modal-search-offices')?>
-<?php View::render('partials/modal-popular-search')?>
-<?php View::render('modules/modal/modal-search-offices-filters')?>
+<?php View::render('partials/navigation/modals/search')?>
+<?php View::render('partials/navigation/modals/locations/main')?>
+<?php View::render('partials/navigation/modals/locations/filters')?>
