@@ -16,13 +16,13 @@ use helpers\Svg;
             </a>
         </li>
         <li>
-            <a class="text-link arrow-1" href="#">
+            <a class="text-link arrow-1" href="#" data-item-details data-submenu="our-impact">
                 Our impact
                 <?= file_get_contents("assets/images/arrows/btn-arrow-red.svg"); ?>
             </a>
         </li>
         <li>
-            <a class="text-link arrow-1" href="#">
+            <a class="text-link arrow-1" data-item-details data-submenu="get-involved" href="#">
                 Get involved
                 <?= file_get_contents("assets/images/arrows/btn-arrow-red.svg"); ?>
             </a>
