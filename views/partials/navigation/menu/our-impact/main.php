@@ -1,14 +1,15 @@
 <?php
-    use helpers\View;
+use helpers\View;
 ?>
-<section id="modal-nav-who-we-are" class="flex-container align-center modal-nav-hover show-for-large hide">
+
+<section id="modal-nav-our-impact" class="flex-container align-center modal-nav-hover show-for-large hide">
     <div class="grid-container modal-content height-full" data-modal-content>
         <div class="grid-x modal-body" data-modal-body>
             <div class="cell large-auto  cell-menu opacity">
-               <?php View::render('partials/navigation/hovers/who-we-are/menu') ?>
+                <?php View::render('partials/navigation/menu/our-impact/menu') ?>
             </div>
             <div class="cell large-auto opacity">
-                <?php View::render('partials/navigation/hovers/who-we-are/content')?>
+                <?php View::render('partials/navigation/menu/our-impact/content') ?>
             </div>
         </div>
     </div>

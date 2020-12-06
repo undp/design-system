@@ -5,10 +5,10 @@ use helpers\View;
     <div class="grid-container modal-content height-full" data-modal-content>
         <div class="grid-x modal-body" data-modal-body>
             <div class="cell large-auto  cell-menu opacity">
-              <?php View::render('partials/navigation/hovers/what-we-do/menu') ?>
+                <?php View::render('partials/navigation/menu/what-we-do/menu') ?>
             </div>
             <div class="cell large-auto opacity">
-                <?php View::render('partials/navigation/hovers/what-we-do/content') ?>
+                <?php View::render('partials/navigation/menu/what-we-do/content') ?>
             </div>
         </div>
     </div>
