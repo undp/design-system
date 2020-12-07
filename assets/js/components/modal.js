@@ -8,6 +8,7 @@ class Modal {
         this.classModalActive = 'active';
         this.dataOptionDefault = '[data-icon]';
         this.dataOptionClose = '[data-icon-close]';
+        this.classModalOpened = 'modal-opened';
 
         this.$body = $('body');
         this.$optionClose = null;
@@ -19,6 +20,14 @@ class Modal {
         this.$btnOpenFilter = '[data-open-filters]';
         this.$btnCloseCurrentModal = '[data-btn-close]';
         this.$btnBackModalFilter = '[data-action-back]';
+
+        //modals: references to close menu opened when the user open a new modal (this class)
+        this.menuOpenClass = 'is-active';
+        this.bodyMenuOpenClass = 'menu-open modal-open';
+
+        this.$hamburguer = $('[data-hamburger]');
+        this.$mainMenu = $('[data-menu-main-options]');
+        this.$primaryNav = $('[data-primary-navigation]');
     }
 
     init() {
@@ -29,20 +38,22 @@ class Modal {
     listeners() {
         this.$modals.each((i, modal) => {
             $(modal).click((env) => {
+                this.closeMenu();
                 env.preventDefault();
                 this.$modals.removeClass(this.classModalActive);
                 this.$modalReference = $(modal);
                 $('.menu-modal').addClass('hide');
                 const idModalOpen = $(modal).data('modal');
-                if (Foundation.MediaQuery.is('large down') && this.$optionClose) {
+                if (Foundation.MediaQuery.is('large down') && this.$modalReference.hasClass(this.classModalOpened)) {
                     this.showOptionDefault();
-                    this.$optionClose = null;
+                    this.$modalReference.removeClass(this.classModalOpened);
                     this.close();
                     return;
                 }
                 if (idModalOpen) {
                     this.currentModal = $('#' + $(modal).data('modal'));
                     if (this.currentModal) {
+                        this.$modalReference.addClass(this.classModalOpened)
                         this.$optionClose = this.$modalReference.find(this.dataOptionClose);
                         this.$optionDefalt = this.$modalReference.find(this.dataOptionDefault);
                         this.open();
@@ -136,6 +147,13 @@ class Modal {
     showOptionDefault() {
         this.$optionDefalt.removeClass(this.classHide);
         this.$optionClose.addClass(this.classHide);
+    }
+
+    closeMenu() {
+        this.$primaryNav.removeClass('open');
+        this.$mainMenu.addClass(this.classHide);
+        this.$body.removeClass(this.bodyMenuOpenClass)
+        this.$hamburguer.removeClass(this.menuOpenClass);
     }
 }
 
