@@ -80,6 +80,12 @@ class MultiSelect {
             const inputValue = $(evt.currentTarget).data('input-value');
             const input = $('input[value="'+inputValue+'"]');
             input.prop('checked', false);
+            const updateSelectCounter = () => {
+                const counter = input.closest('[data-options]').siblings(this.dataSelectControl).find('span');
+                const total = counter.text().match(/\d/g);
+                counter.text(total && total > 1 ? `(${total.join("") - 1})` : '');
+            };
+            updateSelectCounter();
             $(evt.currentTarget).remove();
             if (!this.selects.find('input[type="checkbox"]').length) {
                 this.$containerFilter.html('')
