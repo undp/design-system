@@ -7,11 +7,7 @@ gsap.registerPlugin(ScrollTrigger)
 const init = function () {
     let $section = $(".our-mission")
     let $startTrigger = $section.find('.title-container');
-    let startExpertise = "bottom-=100px top+=105px"
 
-    let startWhiteToBlue = "top-=600px top+=105px"
-    let endWhiteToBlue = "+=400px"
-    let startBlueToWhite = "bottom top+=200px"
     let whiteToBlueScroll = null,
         blueToWhiteScroll = null,
         whiteToBlue = null,
@@ -19,50 +15,41 @@ const init = function () {
         appearScroll = null
 
 
-    function calculateSizes() {
+    function createScrollsWhiteToBlue(){
+        let startWhiteToBlue = "top-=20% top+=105px"
+        let endWhiteToBlue = "+=400px"
 
-        if ($(window).width() > 1194) {
-            startWhiteToBlue = "top-=600px top+=105px"
-            endWhiteToBlue = "+=400px"
-            startBlueToWhite = "bottom top+=200px"
-
-            startExpertise = "bottom-=100px top+=105px"
-        }
-
-        if ($(window).width() < 1194) {
-            startWhiteToBlue = "top-=500px top+=70px"
+        if ($(window).width() < 834) {
+            startWhiteToBlue = "top-=20% top+=70px"
+            endWhiteToBlue = "+=100px"
+        }else if ($(window).width() < 1194) {
+            startWhiteToBlue = "top-=10% top+=70px"
             endWhiteToBlue = "+=200px"
         }
 
-        if ($(window).width() < 834) {
-            startWhiteToBlue = "top-=230px top+=70px"
-            endWhiteToBlue = "+=100px"
-
-            startBlueToWhite = "bottom+=200px top+=70px"
-
-            startExpertise = "bottom+=300px top+=105px"
-        }
-    }
-
-    calculateSizes()
-
-    function createScrollsWhiteToBlue(){
         whiteToBlue = gsap.fromTo('body',
             { backgroundColor: "#fff" },
             { backgroundColor: "#232E3E" })
 
         whiteToBlueScroll = ScrollTrigger.create({
-            trigger: $startTrigger,
+            trigger: $section,
             start: startWhiteToBlue,
             end: endWhiteToBlue,
             scrub: true,
             animation: whiteToBlue,
-            invalidateOnRefresh: false
+            invalidateOnRefresh: false,
+            markers: true,
+
         });
     }
 
     function createScrollsBlueToWhite(){
-        //blue to white
+        let startBlueToWhite = "bottom top+=200px"
+
+        if ($(window).width() < 834) {
+            startBlueToWhite = "bottom+=200px top+=70px"
+        }
+
         blueToWhite = gsap.fromTo('body',
             { backgroundColor: "#232E3E" },
             { backgroundColor: "#fff",
@@ -74,7 +61,6 @@ const init = function () {
             end: "+=200px",
             scrub: true,
             animation: blueToWhite,
-            invalidateOnRefresh: false,
         });
     }
 
@@ -83,11 +69,16 @@ const init = function () {
 
     //appear expertise section
     function createScrollsAppearExpertise(){
+        let startExpertise = "bottom-=100px top+=105px"
+
+        if ($(window).width() < 834) {
+            startExpertise = "bottom+=300px top+=105px"
+        }
+
         appearScroll = ScrollTrigger.create({
             trigger: $startTrigger,
             start: startExpertise,
             scrub: true,
-            invalidateOnRefresh: false,
             onEnter: () => {
                 $('.our-expertise').removeClass('hide-section')
             },
@@ -106,7 +97,6 @@ const init = function () {
         start: "bottom top+=70px",
         end: "bottom top+=70px",
         scrub: true,
-        invalidateOnRefresh: false,
         onEnter: () => {
             $('.our-expertise').addClass('lines-background')
         },
@@ -122,11 +112,10 @@ const init = function () {
         blueToWhiteScroll.kill()
         appearScroll.kill()
 
-        calculateSizes()
         createScrollsWhiteToBlue()
         createScrollsBlueToWhite()
         createScrollsAppearExpertise()
-    }, 200))
+    }, 2000))
 }
 
 export default init
