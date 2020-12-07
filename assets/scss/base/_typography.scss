@@ -69,9 +69,17 @@
     letter-spacing: 2.2px;
     font-family: $secondary-font;
 
-    @include breakpoint(medium down){
+    @include breakpoint(large down){
         font-size: 9.1rem;
         line-height: 1.07;
+    }
+
+    @include breakpoint(medium down){
+        font-size: 6.6rem;
+    }
+
+    @include breakpoint(small only){
+        font-size: 9.1rem;
     }
 
     &.light {
