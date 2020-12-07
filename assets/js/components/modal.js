@@ -19,6 +19,14 @@ class Modal {
         this.$btnOpenFilter = '[data-open-filters]';
         this.$btnCloseCurrentModal = '[data-btn-close]';
         this.$btnBackModalFilter = '[data-action-back]';
+
+        //modals: references to close menu opened when the user open a new modal (this class)
+        this.menuOpenClass = 'is-active';
+        this.bodyMenuOpenClass = 'menu-open modal-open';
+
+        this.$hamburguer = $('[data-hamburger]');
+        this.$mainMenu = $('[data-menu-main-options]');
+        this.$primaryNav = $('[data-primary-navigation]');
     }
 
     init() {
@@ -29,6 +37,8 @@ class Modal {
     listeners() {
         this.$modals.each((i, modal) => {
             $(modal).click((env) => {
+                // console.log('modal open');
+                this.closeMenu();
                 env.preventDefault();
                 this.$modals.removeClass(this.classModalActive);
                 this.$modalReference = $(modal);
@@ -136,6 +146,16 @@ class Modal {
     showOptionDefault() {
         this.$optionDefalt.removeClass(this.classHide);
         this.$optionClose.addClass(this.classHide);
+    }
+
+    closeMenu() {
+        this.$primaryNav.removeClass('open');
+        this.$mainMenu.addClass(this.classHide);
+        this.$body.removeClass(this.bodyMenuOpenClass)
+        this.$hamburguer.removeClass(this.menuOpenClass);
+        // if (this.currentSubmenu) {
+        //     this.currentSubmenu.addClass(this.hiddenClass);
+        // }
     }
 }
 
