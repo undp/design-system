@@ -37,7 +37,7 @@ const init = function () {
             }
         });
 
-        $glideTrack.click('click', function(e) {
+        $glideTrack.click(function(e) {
             if(e.target.localName !== 'button'){
                 if ((e.pageX - this.offsetLeft) < $(this).width() / 2) {
                     glide.go('<')
