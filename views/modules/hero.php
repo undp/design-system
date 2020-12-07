@@ -20,7 +20,7 @@
             </button>
         </div>
         <div class="cta-arrow show-for-large">
-            <?=  file_get_contents("assets/images/arrows/hero-arrow-down.svg");  ?>
+            <img src="/assets/images/arrows/hero-arrow-down.svg" alt="scroll-down-arrow">
         </div>
     </div>
 </div>
