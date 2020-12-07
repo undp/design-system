@@ -82,7 +82,7 @@
                                 <span class="checkmark"></span>
                             </label>
                             <label class="checkbox-item">
-                                <input type="checkbox">
+                                <input type="checkbox" value="8">
                                 Agenda 2030
                                 <span class="checkmark"></span>
                             </label>
@@ -92,12 +92,12 @@
                         <span class="select-control" data-select-control>publication <span></span></span>
                         <div class="options" data-options>
                             <label class="checkbox-item">
-                                <input type="checkbox" value="8">
+                                <input type="checkbox" value="9">
                                 Sierra Leone
                                 <span class="checkmark"></span>
                             </label>
                             <label class="checkbox-item">
-                                <input type="checkbox" value="9">
+                                <input type="checkbox" value="10">
                                 Agenda 2030
                                 <span class="checkmark"></span>
                             </label>
