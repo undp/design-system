@@ -37,9 +37,7 @@ const init = function () {
             end: endWhiteToBlue,
             scrub: true,
             animation: whiteToBlue,
-            invalidateOnRefresh: false,
-            markers: true,
-
+            invalidateOnRefresh: false
         });
     }
 
