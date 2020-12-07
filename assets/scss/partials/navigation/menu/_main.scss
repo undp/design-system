@@ -3,7 +3,7 @@
         opacity: 0.4;
         width: 100px;
         height: 50px;
-        margin-top: -50px;
+        margin-top: -70px;
         border-radius: 50%;
     }
 
@@ -28,7 +28,7 @@
         width: 450px;
         height: 400px;
         margin-top: -50px;
-        border-radius: 0 0 20% 20%;
+        border-radius: 0 0 30% 30%;
     }
 
     100% {
@@ -82,11 +82,8 @@
 
         &.circle-square-transition {
             opacity: 0;
-            animation-delay: .4s;
-            animation-duration: .3s;
+            animation: circle-square-transition .2s;
             animation-fill-mode: forwards;
-            animation-timing-function: ease;
-            animation-name: circle-square-transition;
 
             &.change-modal {
                 animation-delay: 0s;
@@ -96,15 +93,15 @@
 
         &.circle-square-transition-back {
             opacity: 0;
-            animation: circle-square-transition .4s reverse;
+            animation: circle-square-transition .2s reverse;
         }
 
         .opacity {
             opacity: 0;
 
             &.opacity-transition {
-                animation-delay: .8s;
-                animation-duration: .4s;
+                animation-delay: .2s;
+                animation-duration: .2s;
                 animation-fill-mode: forwards;
                 animation-name: transition-opacity;
 
