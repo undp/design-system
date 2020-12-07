@@ -52,14 +52,14 @@ use helpers\View;
         </nav>
     </div>
     <div class="primary-navigation" data-primary-navigation>
-        <div class="hide" data-menu-main-options>
-            <?php View::render('modules/menu/main-options')?>
+        <div class="hide hide-for-large" data-menu-main-options>
+            <?php View::render('partials/navigation/menu/mobile/main')?>
         </div>
-        <?php View::render('modules/menu/menu-item-options')?>
+        <?php View::render('partials/navigation/menu/mobile/submenus/main')?>
     </div>
 
 </section>
-<?php View::render('partials/modal-nav-hover')?>
-<?php View::render('partials/modal-search-offices')?>
-<?php View::render('partials/modal-popular-search')?>
-<?php View::render('modules/modal/modal-search-offices-filters')?>
+<?php View::render('partials/navigation/menu/main')?>
+<?php View::render('partials/navigation/modals/search')?>
+<?php View::render('partials/navigation/modals/locations/main')?>
+<?php View::render('partials/navigation/modals/locations/mobile/filters')?>
