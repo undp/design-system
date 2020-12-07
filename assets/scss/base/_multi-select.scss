@@ -5,6 +5,8 @@
 
     &.open {
         .select-control {
+            border-bottom: none;
+
             &:after {
                 top: 42%;
                 right: 15px;
@@ -34,7 +36,6 @@
         position: absolute;
         border: 2px solid $black;
         text-transform: uppercase;
-        //backdrop-filter: blur(30px);
         background-color: rgba($dark-blue-6, 0.98);
         display: block;
 
@@ -93,6 +94,7 @@
 
             input {
                 width: auto;
+                height: auto;
             }
 
             &:hover {
