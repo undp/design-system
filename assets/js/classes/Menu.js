@@ -23,6 +23,7 @@ class Menu {
 
         //modals: references to close modals opened when the user open the main menu (this class)
         this.classModalActive = 'active';
+        this.classModalOpen = 'modal-opened';
         this.$modals = $('[data-modal-open]');
     }
 
@@ -112,6 +113,7 @@ class Menu {
         this.$modals.find('[data-icon]').removeClass(this.hiddenClass);
         this.$modals.find('[data-icon-close]').addClass(this.hiddenClass);
         this.$modals.each((i, modal) => {
+            $(modal).removeClass(this.classModalOpen);
             $('#' + $(modal).data('modal')).addClass(this.hiddenClass);
         });
     }

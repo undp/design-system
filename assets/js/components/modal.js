@@ -8,6 +8,7 @@ class Modal {
         this.classModalActive = 'active';
         this.dataOptionDefault = '[data-icon]';
         this.dataOptionClose = '[data-icon-close]';
+        this.classModalOpened = 'modal-opened';
 
         this.$body = $('body');
         this.$optionClose = null;
@@ -37,22 +38,22 @@ class Modal {
     listeners() {
         this.$modals.each((i, modal) => {
             $(modal).click((env) => {
-                // console.log('modal open');
                 this.closeMenu();
                 env.preventDefault();
                 this.$modals.removeClass(this.classModalActive);
                 this.$modalReference = $(modal);
                 $('.menu-modal').addClass('hide');
                 const idModalOpen = $(modal).data('modal');
-                if (Foundation.MediaQuery.is('large down') && this.$optionClose) {
+                if (Foundation.MediaQuery.is('large down') && this.$modalReference.hasClass(this.classModalOpened)) {
                     this.showOptionDefault();
-                    this.$optionClose = null;
+                    this.$modalReference.removeClass(this.classModalOpened);
                     this.close();
                     return;
                 }
                 if (idModalOpen) {
                     this.currentModal = $('#' + $(modal).data('modal'));
                     if (this.currentModal) {
+                        this.$modalReference.addClass(this.classModalOpened)
                         this.$optionClose = this.$modalReference.find(this.dataOptionClose);
                         this.$optionDefalt = this.$modalReference.find(this.dataOptionDefault);
                         this.open();
