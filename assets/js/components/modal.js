@@ -154,9 +154,6 @@ class Modal {
         this.$mainMenu.addClass(this.classHide);
         this.$body.removeClass(this.bodyMenuOpenClass)
         this.$hamburguer.removeClass(this.menuOpenClass);
-        // if (this.currentSubmenu) {
-        //     this.currentSubmenu.addClass(this.hiddenClass);
-        // }
     }
 }
 
