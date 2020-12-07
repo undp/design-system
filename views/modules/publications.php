@@ -13,7 +13,7 @@ use helpers\View;
                 </div>
             </div>
         </div>
-        <div class="publications-slider scroll-track right-left delay-1">
+        <div class="publications-slider scroll-track left-right delay-1">
             <div class="grid-x">
                 <div class="cell large-10 large-offset-1">
                     <div class="bullets-container">
