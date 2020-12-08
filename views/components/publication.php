@@ -3,7 +3,7 @@ use helpers\View;
 ?>
 
 <div class="publication">
-    <div class="grid-x">
+    <div class="grid-x publication-content">
         <div class="cell small-10 medium-4">
             <div class="publication-image">
                 <img src="<?= $image ?>" alt="publication">

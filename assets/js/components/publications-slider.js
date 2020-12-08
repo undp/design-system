@@ -3,7 +3,7 @@ let _ = require('lodash');
 
 const init = function () {
     const $glide = $('.publications-slider')
-    const $glideTrack = $glide.find('.glide__track');
+    const $publicationSlide = $glide.find('.publication-content');
 
     if ($glide.length) {
         const $controlSlider = $glide.find('.control-slider')
@@ -30,17 +30,17 @@ const init = function () {
 
         glide.mount()
 
-        $glideTrack.on('mousemove', function(e){
-            if ((e.pageX - this.offsetLeft) < $(this).width() / 2) {
-                $(".glide__track").css('cursor', 'url("/assets/images/arrows/slider-arrow-left.svg"), auto')
+       $publicationSlide.on('mousemove', function(e){
+            if (e.pageX < $(this).width() / 2) {
+               $publicationSlide.css('cursor', 'url("/assets/images/arrows/slider-arrow-left.svg"), auto')
             } else {
-                $(".glide__track").css('cursor', 'url("/assets/images/arrows/slider-arrow-right.svg"), auto')
+               $publicationSlide.css('cursor', 'url("/assets/images/arrows/slider-arrow-right.svg"), auto')
             }
         });
 
-        $glideTrack.click(function(e) {
+       $publicationSlide.click(function(e) {
             if(!$(e.target).is(':button')){
-                if ((e.pageX - this.offsetLeft) < $(this).width() / 2) {
+                if (e.pageX < $(this).width() / 2) {
                     glide.go('<')
                 } else {
                     glide.go('>')
