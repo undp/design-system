@@ -18,12 +18,10 @@
     }
 
     &.contract{
-        padding-left: 1.2rem;
-        padding-right: 1.2rem;
         max-width: calc(100% - 2.4rem);
 
         @include breakpoint(1920){
-            max-width: 1896px;
+            max-width: calc(1940px - 4.4rem);
         }
     }
 
