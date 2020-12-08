@@ -22,7 +22,7 @@ use helpers\View;
                     </div>
                 </div>
                 <form action="">
-                    <?php View::render('modules/modal/modal-offices-filters') ?>
+                    <?php View::render('partials/navigation/modals/locations/mobile/filter-options') ?>
                     <div class="btn-filters">
                         <input type="submit" class="btn full" value="Show all results">
                     </div>

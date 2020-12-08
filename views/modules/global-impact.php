@@ -7,7 +7,7 @@ use helpers\View;
             <div class="cell medium-3  scroll-track left-right delay-1">
                 <h2 class="heading h2 light">Global<br/>Impact</h2>
             </div>
-            <div class="cell medium-7  scroll-track right-left delay-1">
+            <div class="cell medium-7 scroll-track right-left delay-1">
                 <p class="heading h4 light">
                     Our work in sustainable development, governance, and resilience building.
                 </p>

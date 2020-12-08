@@ -19,6 +19,12 @@ class Menu {
         this.$hamburguer = this.$container.find('[data-hamburger]')
         this.$mainMenu = this.$container.find('[data-menu-main-options]')
         this.$menuItemDetails = this.$container.find('[data-item-details]')
+
+
+        //modals: references to close modals opened when the user open the main menu (this class)
+        this.classModalActive = 'active';
+        this.classModalOpen = 'modal-opened';
+        this.$modals = $('[data-modal-open]');
     }
 
     init() {
@@ -30,9 +36,9 @@ class Menu {
 
     bindHamburgerEvents() {
         this.$hamburguer.click(() => {
+            this.expanded = this.$hamburguer.hasClass(this.menuOpenClass);
             if (this.expanded) this.closeMenu()
             else this.openMenu()
-            this.expanded = !this.expanded;
             this.$hamburguer.toggleClass(this.menuOpenClass);
         })
     }
@@ -67,10 +73,9 @@ class Menu {
 
     bindScrollEvents() {
         this.$window.on('scroll', () => {
-            const navHeight = this.$container.height();
             const currentScroll = this.$window.scrollTop();
             const logo = this.$container.find(this.$middleLogo);
-            if (currentScroll > navHeight && logo) {
+            if (currentScroll > 0) {
                 logo.addClass('scrolled')
             } else {
                 logo.removeClass('scrolled')
@@ -79,6 +84,7 @@ class Menu {
     }
 
     openMenu() {
+        this.closeModals();
         this.$primaryNav.addClass('open');
         this.$body.addClass(this.bodyMenuOpenClass)
         this.$mainMenu.removeClass(this.hiddenClass);
@@ -100,6 +106,16 @@ class Menu {
         if (this.currentSubmenu) {
             this.currentSubmenu.addClass(this.hiddenClass);
         }
+    }
+
+    closeModals() {
+        this.$modals.removeClass(this.classModalActive);
+        this.$modals.find('[data-icon]').removeClass(this.hiddenClass);
+        this.$modals.find('[data-icon-close]').addClass(this.hiddenClass);
+        this.$modals.each((i, modal) => {
+            $(modal).removeClass(this.classModalOpen);
+            $('#' + $(modal).data('modal')).addClass(this.hiddenClass);
+        });
     }
 }
 

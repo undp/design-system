@@ -61,18 +61,21 @@
     }
 
     .h5 {
+        height: 100px;
         margin-top: 20px;
     }
 
-    &:hover {
-        color: $dark-blue-1;
+    @include breakpoint(medium) {
+        &:hover {
+            color: $dark-blue-1;
 
-        .bg-image, &:after {
-            opacity: 1;
-        }
+            .bg-image, &:after {
+                opacity: 1;
+            }
 
-        .numerals {
-            -webkit-text-stroke: unset;
+            .numerals {
+                -webkit-text-stroke: unset;
+            }
         }
     }
 }

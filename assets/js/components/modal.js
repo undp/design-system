@@ -8,6 +8,9 @@ class Modal {
         this.classModalActive = 'active';
         this.dataOptionDefault = '[data-icon]';
         this.dataOptionClose = '[data-icon-close]';
+        this.classModalOpened = 'modal-opened';
+        this.navPreviewWidth = 0;
+        this.navCurrrentWidth = 0;
 
         this.$body = $('body');
         this.$optionClose = null;
@@ -15,10 +18,19 @@ class Modal {
         this.$optionDefalt = null;
         this.$modalReference = null;
         this.$modals = $('[data-modal-open]');
+        this.$header = $('[data-navigation]');
         this.$modalFilterName = 'modal-filter';
         this.$btnOpenFilter = '[data-open-filters]';
         this.$btnCloseCurrentModal = '[data-btn-close]';
         this.$btnBackModalFilter = '[data-action-back]';
+
+        //modals: references to close menu opened when the user open a new modal (this class)
+        this.menuOpenClass = 'is-active';
+        this.bodyMenuOpenClass = 'menu-open modal-open';
+
+        this.$hamburguer = $('[data-hamburger]');
+        this.$mainMenu = $('[data-menu-main-options]');
+        this.$primaryNav = $('[data-primary-navigation]');
     }
 
     init() {
@@ -29,25 +41,30 @@ class Modal {
     listeners() {
         this.$modals.each((i, modal) => {
             $(modal).click((env) => {
+                this.closeMenu();
                 env.preventDefault();
                 this.$modals.removeClass(this.classModalActive);
                 this.$modalReference = $(modal);
                 $('.menu-modal').addClass('hide');
                 const idModalOpen = $(modal).data('modal');
-                if (Foundation.MediaQuery.is('large down') && this.$optionClose) {
+                if (Foundation.MediaQuery.is('large down') && this.$modalReference.hasClass(this.classModalOpened)) {
                     this.showOptionDefault();
-                    this.$optionClose = null;
+                    this.$modalReference.removeClass(this.classModalOpened);
                     this.close();
                     return;
                 }
                 if (idModalOpen) {
                     this.currentModal = $('#' + $(modal).data('modal'));
                     if (this.currentModal) {
+                        this.navPreviewWidth = this.$header.width();
+                        this.$modalReference.addClass(this.classModalOpened)
                         this.$optionClose = this.$modalReference.find(this.dataOptionClose);
                         this.$optionDefalt = this.$modalReference.find(this.dataOptionDefault);
                         this.open();
+                        this.navCurrrentWidth =  this.$header.width();
                         this.listenerCloseModal();
                         this.listenerOpenFilters();
+                        this.navSetMargin();
                     }
                 }
             });
@@ -108,6 +125,11 @@ class Modal {
         }
     }
 
+    //the modal hide the (scroll y) so we add his width on navigation to keep the same size
+    navSetMargin() {
+        this.$header.css('padding-right', this.navCurrrentWidth - this.navPreviewWidth);
+    }
+
     inputSearchAutoFocus() {
         this.currentModal.find('.input-search').focus();
     }
@@ -116,6 +138,7 @@ class Modal {
         this.currentModal.addClass('hide');
         this.$body.removeClass('modal-open');
         this.$modalReference.removeClass(this.classModalActive)
+        this.$header.css('padding-right', 'unset')
     }
 
     openFilters() {
@@ -136,6 +159,13 @@ class Modal {
     showOptionDefault() {
         this.$optionDefalt.removeClass(this.classHide);
         this.$optionClose.addClass(this.classHide);
+    }
+
+    closeMenu() {
+        this.$primaryNav.removeClass('open');
+        this.$mainMenu.addClass(this.classHide);
+        this.$body.removeClass(this.bodyMenuOpenClass)
+        this.$hamburguer.removeClass(this.menuOpenClass);
     }
 }
 

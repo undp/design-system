@@ -1,5 +1,6 @@
 <?php
-    use helpers\Svg;
+use helpers\Svg;
+use helpers\View;
 ?>
 
 <section id="modal-search-offices" class="menu-modal modal-search-offices hide">
@@ -36,79 +37,13 @@
                         <input class="big-copy input-search" type="text" name="search-offices" id="search-offices" placeholder="Search offices">
                     </div>
                 </form>
-                <div class="search-select-group show-for-large">
-                    <p class="tag uppercase">Filter by:</p>
-                    <div class="multi-select" data-multi-select>
-                        <span class="select-control" data-select-control>Location <span></span></span>
-                        <div class="options" data-options>
-                            <label class="checkbox-item">
-                                <input type="checkbox">
-                                Arab States
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox">
-                                East Asia and the Pacific
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox">
-                                Europe and Central Asia
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox">
-                                Latin America and the Caribbean
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox">
-                                South Asia
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox">
-                                Sub-Saharan Africa
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="multi-select" data-multi-select>
-                        <span class="select-control" data-select-control>Office <span></span></span>
-                        <div class="options" data-options>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="option1" value="option 1">
-                                Sierra Leone
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox">
-                                Agenda 2030
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="multi-select" data-multi-select>
-                        <span class="select-control" data-select-control>publication <span></span></span>
-                        <div class="options" data-options>
-                            <label class="checkbox-item">
-                                <input type="checkbox">
-                                Sierra Leone
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox">
-                                Agenda 2030
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
+               <?php View::render('partials/navigation/modals/locations/multi-selects') ?>
             </div>
             <div class="cell large-auto cell-list-offices">
                 <p class="tag uppercase show-for-large">current selection</p>
                 <h3 class="heading h3 title show-for-large"><span class="uppercase">undp</span> global</h3>
                 <div class="countries">
+                    <?php for($i =0 ; $i < 60; $i++) {?>
                     <div class="flex-container align-justify country-item">
                         <div class="country">Afghanistan</div>
                         <div class="languages">
@@ -193,9 +128,10 @@
                             <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
                 <div class="flex-container align-center hide-for-large filter-options uppercase">
-                    <button class="btn full btn-filters" data-open-filters data-modal-filter="modal-search-offices-filters">
+                    <button class="btn full btn-filters" tabindex="-1" data-open-filters data-modal-filter="modal-search-offices-filters">
                         Filter
                         <span class="flex-container align-middle align-center current-filters">2</span>
                     </button>

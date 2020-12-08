@@ -11,6 +11,7 @@
     .nav-item {
         cursor: pointer;
         color: $dark-blue-1;
+        outline-offset: 4px;
         text-transform: uppercase;
 
         &:hover {
@@ -99,13 +100,13 @@
 
                 &.active {
                     &:before {
-                        top: -5px;
-                        right: -5px;
+                        top: -8px;
+                        right: -8px;
                         content: '';
                         z-index: -1;
-                        width: 34px;
+                        width: 40px;
                         padding:2px;
-                        height: 34px;
+                        height: 40px;
                         display: block;
                         border-radius: 50%;
                         position: absolute;
@@ -135,6 +136,8 @@
     }
 
     .dropdown {
+        height: 30px;
+        max-height: 30px;
         position: relative;
 
         .dropdown-btn {

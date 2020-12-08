@@ -130,13 +130,13 @@ use helpers\View;
     </div>
 
     <?php
-        View::render('modules/join-us', [
+        View::render('modules/trusted-partnerships', [
             'classes' => 'hide-for-small-only',
             'trackScroll' => false
         ])
     ?>
 
-    <!-- Mobile markup -->
+    <!-- Mobile markup for Slider -->
     <div class="glide-expertise show-for-small-only">
         <div class="grid-x">
             <div class="small-offset-1 small-11">

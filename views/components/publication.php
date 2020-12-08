@@ -27,7 +27,6 @@ use helpers\View;
                             <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
                         </button>
                     </div>
-                    <?php View::render('partials/slider-arrows') ?>
                 </div>
             </div>
         </div>

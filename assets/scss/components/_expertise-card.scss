@@ -65,7 +65,7 @@
 
         @include breakpoint(small only){
             margin-top: 40px;
-            padding-bottom: 45px;
+            padding-bottom: 0;
         }
     }
 

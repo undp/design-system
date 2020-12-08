@@ -6,12 +6,12 @@ class MultiSelect {
         this.$window = $(window);
         this.$currentSelect = null;
         this.selects = $('[data-multi-select]');
+        this.$containerFilter = $('[data-container-filters]');
     }
 
     init() {
         this.listenerSelects();
         this.listenerWindowClick();
-        this.listenerTotalOptionsSelected();
     }
 
     closeAll() {
@@ -41,10 +41,6 @@ class MultiSelect {
         });
     }
 
-    listenerTotalOptionsSelected() {
-        this.$currentSelect
-    }
-
     toogleSelect() {
         this.$currentSelect.toggleClass(this.classOpen);
     }
@@ -53,13 +49,61 @@ class MultiSelect {
     totalOptionsSelected() {
         const inputs = this.$currentSelect.find('input[type="checkbox"]');
         inputs.change((evt) => {
-            const total = this.$currentSelect.find("input:checked").length;
+            const inputs = this.$currentSelect.find("input:checked");
+            const total = inputs.length;
             const counter = this.$currentSelect.find(this.dataSelectControl + ' span');
             counter.text('(' + total + ')');
             if (total == 0) {
                 counter.text('');
             }
+            this.printContainerFilters();
         })
+    }
+
+
+    printContainerFilters() {
+        this.$containerFilter.html('');
+        this.$containerFilter.append('<p class="tag uppercase">Active filters</p>');
+        this.selects.find("input:checked").each((i, input) => {
+            const text = $(input).parent().text();
+            const inputValue = $(input).val();
+            this.$containerFilter.append('<a class="filter" href="#" data-close-filter data-input-value="'+inputValue+'">' + text + '</a>')
+        });
+        this.$containerFilter.append('<a class="tag filter-clear" data-close-all-select href="#" data-clear-all>Clear All</a>');
+        this.listenerCloseFilter()
+        this.listenerClearAllFilters();
+    }
+
+    listenerCloseFilter() {
+        $('[data-close-filter]').on('click', (evt) => {
+            evt.preventDefault();
+            const inputValue = $(evt.currentTarget).data('input-value');
+            const input = $('input[value="'+inputValue+'"]');
+            input.prop('checked', false);
+            const updateSelectCounter = () => {
+                const counter = input.closest('[data-options]').siblings(this.dataSelectControl).find('span');
+                const total = counter.text().match(/\d/g);
+                counter.text(total && total > 1 ? `(${total.join("") - 1})` : '');
+            };
+            updateSelectCounter();
+            $(evt.currentTarget).remove();
+            if (!this.selects.find('input[type="checkbox"]').length) {
+                this.$containerFilter.html('')
+            }
+        });
+    }
+
+    listenerClearAllFilters() {
+        $('[data-close-all-select]').on('click', (evt) => {
+            evt.preventDefault();
+            this.$containerFilter.html('');
+            this.selects.find("input:checked").prop('checked', false);
+
+            this.selects.each((i, select) => {
+                const counter = $(select).find(this.dataSelectControl + ' span');
+                counter.text('');
+            });
+        });
     }
 }
 

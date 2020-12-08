@@ -15,28 +15,30 @@
 
 // Partials
 @import 'partials/footer';
-@import 'partials/navigation';
 @import 'partials/custom-select';
-@import 'partials/custom-checkbox';
-@import 'partials/modal-nav-hover';
-@import 'partials/modal-search-offices';
-@import 'partials/modal-popular-search';
 @import 'partials/slider-bullets';
+@import 'partials/custom-checkbox';
+
+@import 'partials/navigation/main';
+@import 'partials/navigation/menu/main';
+@import 'partials/navigation/menu/mobile/main';
+@import 'partials/navigation/menu/item-options';
+@import 'partials/navigation/menu/item-content';
+@import 'partials/navigation/menu/mobile/hamburger';
+
+@import 'partials/navigation/modals/search';
+@import 'partials/navigation/modals/locations/main';
+@import "partials/navigation/modals/locations/mobile/filter-options";
 
 // Modules
 @import "modules/hero";
 @import "modules/featured-stories";
-@import "modules/join-us";
 @import "modules/our-mission";
 @import "modules/our-expertise";
 @import "modules/global-impact";
 @import "modules/publications";
 @import "modules/twitter-feed";
-@import "modules/menu/hamburger";
-@import "modules/menu/main-options";
-@import "modules/menu/menu-item-options";
-@import "modules/modal/modal-nav-content";
-@import "modules/modal/modal-search-offices-filters";
+@import "modules/trusted-partnerships";
 
 // Components
 @import "components/stat-card";

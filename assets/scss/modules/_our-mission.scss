@@ -1,13 +1,13 @@
 .our-mission {
     z-index: $z-index-1;
-    padding: 700px 0 1800px;
+    padding: 400px 0 400px;
 
     @include breakpoint(medium down){
-        padding: 600px 0 800px;
+        padding: 400px 0 400px;
     }
 
     @include breakpoint(small only){
-        padding: 500px 0 800px;
+        padding: 150px 0 100px;
     }
 
     &.color-background{
