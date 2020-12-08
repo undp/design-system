@@ -21,7 +21,6 @@ use helpers\View;
                     <h2 class="heading h2 title">Find Our Offices Around the World.</h2>
                     <a class="text-link arrow-3" href="#">
                         Go to GLOBAL SITE
-                        <?//=  file_get_contents("assets/images/arrows/btn-arrow-external-red.svg");  ?>
                         <?php Svg::render('btn-arrow-external-red', true, 'Go to GLOBAL SITE ', 'assets/images/arrows/')?>
                     </a>
                     <p class="big-copy description">The UNDP works in 170 countries around the world. Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Duis auctor, ante sed auctor faucibus, diam ante pellentesque turpis, sit amet dictum felis felis bibendum nisl. </p>

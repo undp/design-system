@@ -6,38 +6,38 @@ use helpers\Svg;
         <li>
             <a class="text-link arrow-1" href="#" data-item-details data-submenu="who-we-are">
                 Who we are
-                <?= file_get_contents("assets/images/arrows/btn-arrow-red.svg"); ?>
+                <?php Svg::render('btn-arrow-red', true, 'Back', 'assets/images/arrows/')?>
             </a>
         </li>
         <li>
             <a class="text-link arrow-1" href="#" data-item-details data-submenu="who-we-do">
                 What we do
-                <?= file_get_contents("assets/images/arrows/btn-arrow-red.svg"); ?>
+                <?php Svg::render('btn-arrow-red', true, 'Back', 'assets/images/arrows/')?>
             </a>
         </li>
         <li>
             <a class="text-link arrow-1" href="#" data-item-details data-submenu="our-impact">
                 Our impact
-                <?= file_get_contents("assets/images/arrows/btn-arrow-red.svg"); ?>
+                <?php Svg::render('btn-arrow-red', true, 'Back', 'assets/images/arrows/')?>
             </a>
         </li>
         <li>
             <a class="text-link arrow-1" data-item-details data-submenu="get-involved" href="#">
                 Get involved
-                <?= file_get_contents("assets/images/arrows/btn-arrow-red.svg"); ?>
+                <?php Svg::render('btn-arrow-red', true, 'Back', 'assets/images/arrows/')?>
             </a>
         </li>
     </ul>
     <ul class="menu-items-languages uppercase">
         <li>
             <a class="flex-container align-middle nav-item" href="#" data-item-details data-submenu="languages">
-                <?php Svg::render('icon-languages') ?>
+                <?php Svg::render('icon-languages', true, 'Languages') ?>
                 English
             </a>
         </li>
         <li>
             <a class="flex-container align-middle nav-item" class="flex-container align-middle" href="#" data-item-details data-submenu="modal-search-offices" data-modal-open data-modal="modal-search-offices">
-                <?php Svg::render('icon-www') ?>
+                <?php Svg::render('icon-www-blue', true, 'Languages') ?>
                 Locations
             </a>
         </li>

@@ -1,3 +1,8 @@
+<?php
+
+use helpers\Svg;
+
+?>
 <div class="tweet">
     <a href="#" class="flex-container align-top">
         <img class="avatar" src="<?= $urlImage ?? '../../assets/images/undp-twitter.jpg' ?>" alt="<?= $alt ?? 'undp logo twitter' ?>">
@@ -18,7 +23,7 @@
         <div class="cta">
             <a class="text-link arrow-1 light-red" href="#">
                 Read More
-                <?= file_get_contents("assets/images/arrows/btn-arrow-red.svg"); ?>
+                <?php Svg::render('btn-arrow-red', true, 'Read More', 'assets/images/arrows/')?>
             </a>
         </div>
     </div>
