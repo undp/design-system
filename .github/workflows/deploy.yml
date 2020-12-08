@@ -12,21 +12,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    
-    steps:
-    - name: Determine Composer cache directory
-      shell: bash
-      run: "echo \"COMPOSER_CACHE_DIR=$(composer config cache-dir)\" >> $GITHUB_ENV"
-
-    steps:
-    - name: Cache dependencies installed with Composer
-      uses: actions/cache@v2
-      with:
-        path: "${{ env.COMPOSER_CACHE_DIR }}"
-        key: os-${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
-        restore-keys: |
-          os-${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
-
     - uses: php-actions/composer@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
