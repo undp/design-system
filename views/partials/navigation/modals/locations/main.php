@@ -42,59 +42,59 @@ use helpers\View;
             <div class="cell large-auto cell-list-offices">
                 <p class="tag uppercase show-for-large">current selection</p>
                 <h3 class="heading h3 title show-for-large"><span class="uppercase">undp</span> global</h3>
-                <div class="countries">
+                <div class="countries" data-countries>
                     <?php for($i =0 ; $i < 60; $i++) {?>
-                    <div class="flex-container align-justify country-item">
-                        <div class="country">Afghanistan</div>
+                    <div class="flex-container align-justify country-item" data-country-item>
+                        <div class="country">pepito</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Pasto</a>
                             <a class="language-link" href="#">Dari</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item">
+                    <div class="flex-container align-justify country-item" data-country-item>
                         <div class="country">Albania</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Albanian</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item">
-                        <div class="country">Algeria</div>
+                    <div class="flex-container align-justify country-item" data-country-item>
+                        <div class="country">maria</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Arabic</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item">
+                    <div class="flex-container align-justify country-item" data-country-item>
                         <div class="country">Angola</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Arabic</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item">
+                    <div class="flex-container align-justify country-item" data-country-item>
                         <div class="country">Argentina</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item">
+                    <div class="flex-container align-justify country-item" data-country-item>
                         <div class="country">Armenia</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item">
+                    <div class="flex-container align-justify country-item" data-country-item>
                         <div class="country">Azerbaijan</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item">
+                    <div class="flex-container align-justify country-item" data-country-item>
                         <div class="country">Bahrain</div>
                         <div class="languages">
                             <a class="language-link" href="#">Bahrainian</a>
@@ -102,26 +102,26 @@ use helpers\View;
                             <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item">
+                    <div class="flex-container align-justify country-item" data-country-item>
                         <div class="country">Bangladesh</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item">
+                    <div class="flex-container align-justify country-item" data-country-item>
                         <div class="country">Barbados</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item">
+                    <div class="flex-container align-justify country-item" data-country-item>
                         <div class="country">Belarus</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item">
+                    <div class="flex-container align-justify country-item" data-country-item>
                         <div class="country">Belize</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>

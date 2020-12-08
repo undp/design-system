@@ -6,13 +6,14 @@ class MultiSelect {
         this.$window = $(window);
         this.$currentSelect = null;
         this.$searchInput = $('[data-input-search]');
-        this.$countryList = $('[data-countries]');
+        this.$countryList = $('[data-country-item]');
         this.$countryContainer = $('[data-countries]');
+        this.$countryContainerOriginal = $('[data-countries]');
         this.selects = $('[data-multi-select]');
         this.$containerFilter = $('[data-container-filters]');
         this.filters = {
             region: [],
-            officeType: [],
+            office: [],
             inputSearch: '',
         };
     }
@@ -56,7 +57,22 @@ class MultiSelect {
     totalOptionsSelected() {
         const inputs = this.$currentSelect.find('input[type="checkbox"]');
         inputs.change((evt) => {
-            console.log('value:: ', $(evt.currentTarget).val(), $(evt.currentTarget).is(":checked"))
+            const includeOrRemoveFilter = () => {
+                const inputType = $(evt.currentTarget).data('type');
+                const inputValue = $(evt.currentTarget).val();
+
+                if ($(evt.currentTarget).is(":checked")) {
+                    this.filters[inputType].push(inputValue)
+                } else {
+                    const index = this.filters[inputType].indexOf(inputValue);
+                    if (index > -1) {
+                        this.filters[inputType].splice(index, 1);
+                    }
+                }
+                this.search();
+            };
+            includeOrRemoveFilter();
+
             const inputs = this.$currentSelect.find("input:checked");
             const total = inputs.length;
             const counter = this.$currentSelect.find(this.dataSelectControl + ' span');
@@ -117,17 +133,23 @@ class MultiSelect {
         this.$searchInput.keyup(event => {
             this.filters.inputSearch = this.$searchInput.val().toLowerCase()
             console.log(this.filters);
-            // this.search();
+            this.search();
         });
     }
 
     search() {
-        if (searchValue.length > 1) {
-            let filtered = this.$countryList.filter(function () {
-                return $(this).find('.country').text().toLowerCase().includes(searchValue)
-            });
-
-            this.$countryContainer.html(filtered);
+        if (this.filters.inputSearch.length > 0 ||
+            this.filters.office.length > 0 ||
+            this.filters.region.length > 0) {
+                let filtered = this.$countryList.filter((index, node) => {
+                    const text = $(node).find('.country').text().toLowerCase();
+                    return (text.length > 0 && text.includes(this.filters.inputSearch) ||
+                        this.filters.region.filter(value => text.includes(value)).length >  0 ||
+                        this.filters.office.filter(value => text.includes(value)).length > 0)
+                });
+                this.$countryContainer.html(filtered);
+        } else {
+            this.$countryContainer.html(this.$countryContainerOriginal);
         }
 
     }
