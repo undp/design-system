@@ -56,6 +56,15 @@ class Modal {
                 if (idModalOpen) {
                     this.currentModal = $('#' + $(modal).data('modal'));
                     if (this.currentModal) {
+                        const addOptionClose  = () => {
+                            if (Foundation.MediaQuery.is('large down')) {
+                                if ($(modal).data('modal') === 'modal-popular-search'){
+                                    this.$modalReference = $('.icon-search')
+                                }
+                            }
+                        };
+                        addOptionClose();
+
                         this.navPreviewWidth = this.$header.width();
                         this.$modalReference.addClass(this.classModalOpened)
                         this.$optionClose = this.$modalReference.find(this.dataOptionClose);
