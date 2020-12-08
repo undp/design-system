@@ -108,11 +108,11 @@ use helpers\Svg;
                         <div >
                             <div class="flex-container align-right icons-search">
                                 <a class="icon" href="#" data-modal-open data-modal="modal-search-offices" aria-label="Locations">
-                                    <?php Svg::render('icon-www-white', 'location') ?>
+                                    <?php Svg::render('icon-www-white', true, 'location') ?>
                                     <span class="show-for-sr">Locations</span>
                                 </a>
                                 <a class="icon" href="#" aria-label="Search" data-modal-open data-modal="modal-popular-search">
-                                    <?php Svg::render('icon-search-white', 'search')?>
+                                    <?php Svg::render('icon-search-white', true, 'search')?>
                                     <span class="show-for-sr">Search</span>
                                 </a>
                             </div>

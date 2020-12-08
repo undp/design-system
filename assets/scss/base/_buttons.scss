@@ -15,7 +15,8 @@
         justify-content: center;
     }
 
-    svg {
+    svg,
+    img{
         margin-left: 14px;
         transition: transform 0.2s ease;
     }
@@ -23,7 +24,8 @@
     &:hover {
         background: $red-4;
 
-        svg {
+        svg,
+        img{
             transform: translateX(70%);
         }
     }
@@ -109,7 +111,8 @@
 
     &.arrow-1 {
         &:hover {
-            svg {
+            svg,
+            img{
                 transform: translateX(70%);
             }
         }
@@ -192,7 +195,8 @@
         }
     }
 
-    svg {
+    svg,
+    img{
         margin-left: 13px;
         transition: transform 0.2s ease;
     }

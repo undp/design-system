@@ -6,7 +6,7 @@ use helpers\View;
 <section id="modal-search-offices" class="menu-modal modal-search-offices hide">
     <div class="grid-container fluid modal-content height-full">
         <button class="close-button show-for-large" data-btn-close aria-label="Close">
-            <?php Svg::render('icon-close') ?>
+            <?php Svg::render('icon-close', true, 'Close Modal') ?>
             <span class="show-for-sr">Close</span>
         </button>
         <div class="grid-x modal-body">
@@ -21,7 +21,8 @@ use helpers\View;
                     <h2 class="heading h2 title">Find Our Offices Around the World.</h2>
                     <a class="text-link arrow-3" href="#">
                         Go to GLOBAL SITE
-                        <?=  file_get_contents("assets/images/arrows/btn-arrow-external-red.svg");  ?>
+                        <?//=  file_get_contents("assets/images/arrows/btn-arrow-external-red.svg");  ?>
+                        <?php Svg::render('btn-arrow-external-red', true, 'Go to GLOBAL SITE ', 'assets/images/arrows/')?>
                     </a>
                     <p class="big-copy description">The UNDP works in 170 countries around the world. Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Duis auctor, ante sed auctor faucibus, diam ante pellentesque turpis, sit amet dictum felis felis bibendum nisl. </p>
                     <p class="tag uppercase hide-for-large tag-current-section">current selection</p>
@@ -31,7 +32,7 @@ use helpers\View;
                     <div class="flex-container search-input-group">
                         <label class="show-for-sr" for="search-offices">Search Offices</label>
                         <button type="submit" class="flex-container align-middle btn-search" aria-label="Submit search">
-                            <?php Svg::render('icon-search-modal-locations') ?>
+                            <?php Svg::render('icon-search-modal-locations', true, 'Search Offices') ?>
                             <span class="show-for-sr">Submit search</span>
                         </button>
                         <input class="big-copy input-search" type="text" name="search-offices" id="search-offices" placeholder="Search offices">

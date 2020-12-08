@@ -1,3 +1,8 @@
+<?php
+
+use helpers\Svg;
+
+?>
 <div class="hero" style="background: url('../../assets/images/hero.png') center 0 / cover no-repeat;">
     <div class="hero-content">
         <div class="text-box scroll-track right-left delay-1">
@@ -16,7 +21,7 @@
         <div class="cta-button">
             <button class="btn">
                 Explore
-                <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                <?php Svg::render('btn-arrow-blue', true, 'Explore', 'assets/images/arrows/')?>
             </button>
         </div>
         <div class="cta-arrow show-for-large">

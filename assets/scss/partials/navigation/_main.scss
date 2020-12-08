@@ -55,17 +55,12 @@
 
                 svg {
                     width: 70px;
-                }
+                    transition: $transition-primary;
 
-                @include breakpoint(large down){
-                    svg {
+                    @include breakpoint(large down){
                         width: auto;
                         max-height: 71px;
                     }
-                }
-
-                svg {
-                    transition: $transition-primary;
                 }
 
                 &.scrolled {
