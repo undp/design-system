@@ -6,36 +6,46 @@
         margin-top: 50px;
     }
 
-    @include breakpoint(small only){
-        margin-bottom: 45px;
+    @include breakpoint(small down){
+        margin-top: 35px;
+        margin-bottom: 25px;
+    }
+
+    @include breakpoint(360px down){
+        margin-top: 25px;
     }
 
     .publication-image img{
         width: 100%;
-    }
 
-    @include breakpoint(360px down) {
-        .publication-image img{
+        @include breakpoint(small down){
             width: 80%;
+        }
+
+        @include breakpoint(360px down) {
+            width: 70%;
         }
     }
 
     .publication-content{
         @include breakpoint(small only){
-            margin-top: 35px;
+            margin-top: 25px;
         }
 
         .heading.h3{
             overflow: hidden;
             margin-top: 25px;
             max-height: 115px;
+            font-weight: $regular;
 
             @include breakpoint(medium down){
                 max-height: 75px;
+                font-size: 2.5rem;
             }
 
             @include breakpoint(small only){
                 margin-top: 20px;
+                font-size: 2rem;
             }
         }
 
@@ -50,6 +60,10 @@
 
             @include breakpoint(small only){
                 margin-top: 20px;
+                font-size: 1.4rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
             }
         }
 
@@ -63,7 +77,7 @@
             }
 
             @include breakpoint(small only){
-                margin-top: 30px;
+                margin-top: 25px;
             }
 
             .btn-round.rotate{

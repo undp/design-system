@@ -1,4 +1,5 @@
 import Glide from '@glidejs/glide/';
+let _ = require('lodash');
 
 const init = function () {
     const $glide = $('.publications-slider')
@@ -46,6 +47,17 @@ const init = function () {
                 }
             }
         });
+
+
+        let slideContainerWidth = $('.publications-slider').find('.glide__slide').width();
+        $('.bullets-container').width(slideContainerWidth);
+        $('.publication-title-container').width(slideContainerWidth);
+
+        $(window).resize(_.debounce(()=>{
+            slideContainerWidth = $('.publications-slider').find('.glide__slide').width()
+            $('.bullets-container').width(slideContainerWidth);
+            $('.publication-title-container').width(slideContainerWidth);
+        }, 200));
     }
 
 }
