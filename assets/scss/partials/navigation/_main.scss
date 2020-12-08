@@ -136,6 +136,8 @@
     }
 
     .dropdown {
+        height: 30px;
+        max-height: 30px;
         position: relative;
 
         .dropdown-btn {
