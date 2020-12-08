@@ -12,7 +12,7 @@ use helpers\View;
                 <div class="header-modal">
                     <a class="hide-for-large btn-back" href="#" data-action-back data-btn-close>
                         <div class="arrow-back">
-                            <?php Svg::render('arrow-back-bigger', 'assets/images/arrows/') ?>
+                            <?php Svg::render('arrow-back-bigger', true, 'back', 'assets/images/arrows/')?>
                         </div>
                         Back
                     </a>
