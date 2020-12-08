@@ -34,7 +34,7 @@ use helpers\View;
                             <?php Svg::render('icon-search-modal-locations') ?>
                             <span class="show-for-sr">Submit search</span>
                         </button>
-                        <input class="big-copy input-search" type="text" name="search-offices" id="search-offices" placeholder="Search offices">
+                        <input class="big-copy input-search" type="text" name="search-offices" id="search-offices" placeholder="Search offices" data-input-search>
                     </div>
                 </form>
                <?php View::render('partials/navigation/modals/locations/multi-selects') ?>

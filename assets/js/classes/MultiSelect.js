@@ -5,13 +5,22 @@ class MultiSelect {
 
         this.$window = $(window);
         this.$currentSelect = null;
+        this.$searchInput = $('[data-input-search]');
+        this.$countryList = $('[data-countries]');
+        this.$countryContainer = $('[data-countries]');
         this.selects = $('[data-multi-select]');
         this.$containerFilter = $('[data-container-filters]');
+        this.filters = {
+            region: [],
+            officeType: [],
+            inputSearch: '',
+        };
     }
 
     init() {
         this.listenerSelects();
         this.listenerWindowClick();
+        this.listenerInputSearch();
     }
 
     closeAll() {
@@ -31,7 +40,6 @@ class MultiSelect {
         })
     }
 
-
     listenerWindowClick() {
         this.$window.click(evt => {
             if (this.$currentSelect && !this.$currentSelect.is(evt.target) &&
@@ -45,10 +53,10 @@ class MultiSelect {
         this.$currentSelect.toggleClass(this.classOpen);
     }
 
-
     totalOptionsSelected() {
         const inputs = this.$currentSelect.find('input[type="checkbox"]');
         inputs.change((evt) => {
+            console.log('value:: ', $(evt.currentTarget).val(), $(evt.currentTarget).is(":checked"))
             const inputs = this.$currentSelect.find("input:checked");
             const total = inputs.length;
             const counter = this.$currentSelect.find(this.dataSelectControl + ' span');
@@ -60,14 +68,13 @@ class MultiSelect {
         })
     }
 
-
     printContainerFilters() {
         this.$containerFilter.html('');
         this.$containerFilter.append('<p class="tag uppercase">Active filters</p>');
         this.selects.find("input:checked").each((i, input) => {
             const text = $(input).parent().text();
             const inputValue = $(input).val();
-            this.$containerFilter.append('<a class="filter" href="#" data-close-filter data-input-value="'+inputValue+'">' + text + '</a>')
+            this.$containerFilter.append('<a class="filter" href="#" data-close-filter data-input-value="' + inputValue + '">' + text + '</a>')
         });
         this.$containerFilter.append('<a class="tag filter-clear" data-close-all-select href="#" data-clear-all>Clear All</a>');
         this.listenerCloseFilter()
@@ -78,7 +85,7 @@ class MultiSelect {
         $('[data-close-filter]').on('click', (evt) => {
             evt.preventDefault();
             const inputValue = $(evt.currentTarget).data('input-value');
-            const input = $('input[value="'+inputValue+'"]');
+            const input = $('input[value="' + inputValue + '"]');
             input.prop('checked', false);
             const updateSelectCounter = () => {
                 const counter = input.closest('[data-options]').siblings(this.dataSelectControl).find('span');
@@ -104,6 +111,25 @@ class MultiSelect {
                 counter.text('');
             });
         });
+    }
+
+    listenerInputSearch() {
+        this.$searchInput.keyup(event => {
+            this.filters.inputSearch = this.$searchInput.val().toLowerCase()
+            console.log(this.filters);
+            // this.search();
+        });
+    }
+
+    search() {
+        if (searchValue.length > 1) {
+            let filtered = this.$countryList.filter(function () {
+                return $(this).find('.country').text().toLowerCase().includes(searchValue)
+            });
+
+            this.$countryContainer.html(filtered);
+        }
+
     }
 }
 
