@@ -215,6 +215,10 @@
         .cta{
             bottom: 35px;
             position: absolute;
+
+            .text-link:hover {
+                color: inherit;
+            }
         }
     }
 
