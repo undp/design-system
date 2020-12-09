@@ -114,6 +114,7 @@ class MultiSelect {
             if (!this.selects.find('input[type="checkbox"]').length) {
                 this.$containerFilter.html('')
             }
+            this.search();
         });
     }
 
@@ -127,6 +128,9 @@ class MultiSelect {
                 const counter = $(select).find(this.dataSelectControl + ' span');
                 counter.text('');
             });
+            this.filters.region = [];
+            this.filters.office = [];
+            this.search();
         });
     }
 
@@ -139,6 +143,7 @@ class MultiSelect {
     }
 
     search() {
+        console.log('filters:', this.filters);
         if (this.filters.inputSearch.length > 0 ||
             this.filters.office.length > 0 ||
             this.filters.region.length > 0) {
