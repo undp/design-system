@@ -9,7 +9,9 @@ use helpers\Svg;
                 <div class="footer-head flex-container align-justify align-bottom">
                     <div class="flex-container align-middle logo">
                         <div class="undp-logo">
-                            <?php Svg::render('undp-logo-white') ?>
+                            <a href="/">
+                                <?php Svg::render('undp-logo-white') ?>
+                            </a>
                         </div>
                         <div>
                             <h3 class="footer-title light">United nations</h3>
