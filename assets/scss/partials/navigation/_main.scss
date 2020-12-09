@@ -89,6 +89,7 @@
 
                 @include breakpoint(large down) {
                     margin-right: 0;
+                    min-width: 23px;
                 }
 
                 &:hover,
