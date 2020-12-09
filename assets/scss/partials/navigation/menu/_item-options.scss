@@ -45,6 +45,16 @@ body {
         .menu-item {
             margin: 40px 0 0 0;
 
+            &:hover {
+                color: $dark-blue-2;
+
+                .text-link {
+                    svg {
+                        color: $red;
+                    }
+                }
+            }
+
             &:first-child {
                 margin-top: 45px;
             }
@@ -53,6 +63,11 @@ body {
                 font-size: 1.4rem;
                 font-weight: $regular;
             }
+
+            .text-link {
+                text-transform: capitalize;
+            }
+
 
             .submenu {
                 padding:0;

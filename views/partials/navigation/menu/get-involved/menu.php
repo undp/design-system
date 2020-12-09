@@ -6,13 +6,22 @@
         <a href="#" class="menu-item">Procurement</a>
     </li>
     <li data-menu-option="content-expert-consultations">
-        <a href="#" class="menu-item">Expert Consultations</a>
-    </li>
+        <a class="menu-item-title text-link arrow-4" href="#" target="_blank">
+            Expert Consultations
+            <?= file_get_contents("assets/images/arrows/btn-arrow-external-red.svg"); ?>
+        </a>
+        <a href="#" class="menu-item"></a>
     <li data-menu-option="content-undp-shop">
-        <a href="#" class="menu-item">UNDP Shop</a>
+        <a class="menu-item-title text-link arrow-4" href="#" target="_blank">
+            UNDP Shop
+            <?= file_get_contents("assets/images/arrows/btn-arrow-external-red.svg"); ?>
+        </a>
     </li>
     <li data-menu-option="content-donate">
-        <a href="#" class="menu-item">Donate</a>
+        <a class="menu-item-title text-link arrow-4" href="#" target="_blank">
+            Donate
+            <?= file_get_contents("assets/images/arrows/btn-arrow-external-red.svg"); ?>
+        </a>
     </li>
     <li data-menu-option="content-contact-us">
         <a href="#" class="menu-item">Contact Us</a>
