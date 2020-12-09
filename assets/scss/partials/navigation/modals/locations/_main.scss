@@ -262,6 +262,15 @@
                         background-color: black;
                     }
 
+                    .country {
+                        display: flex;
+                        align-items: center;
+
+                        @include breakpoint(small only){
+                            font-size: 1.1rem;
+                        }
+                    }
+
                     .country-item {
                         font-size: 2rem;
                         line-height: 1.2;
@@ -275,7 +284,13 @@
                             font-weight: $semi-bold;
                         }
 
+                        @include breakpoint(small only){
+                            font-size: 1.1rem;
+                        }
+
                         .language-link {
+                            display: inline-flex;
+                            align-items: center;
                             font-weight: $regular;
 
                             &:after {
