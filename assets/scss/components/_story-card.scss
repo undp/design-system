@@ -267,21 +267,25 @@
         }
     }
 
-    &:hover{
-        .hover-slide{
-            transform: translateX(0);
-        }
 
-        .link-arrow-group {
-            transform: translateX(0);
-
-            .arrow-line{
-                display: unset;
+    @media (hover: hover) and (pointer: fine) {
+        &:hover{
+            .hover-slide{
+                transform: translateX(0);
             }
 
-            .arrow-point{
-                transform: translateX(31px);
+            .link-arrow-group {
+                transform: translateX(0);
+
+                .arrow-line{
+                    display: unset;
+                }
+
+                .arrow-point{
+                    transform: translateX(31px);
+                }
             }
         }
     }
+
 }
