@@ -44,7 +44,7 @@ use helpers\View;
                 <h3 class="heading h3 title show-for-large"><span class="uppercase">undp</span> global</h3>
                 <div class="countries" data-countries>
                     <?php for($i =0 ; $i < 60; $i++) {?>
-                    <div class="flex-container align-justify country-item" data-country-item>
+                    <div class="flex-container align-justify country-item" data-city-filters="afghanistan europe office_1">
                         <div class="country">Afghanistan</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
@@ -52,49 +52,49 @@ use helpers\View;
                             <a class="language-link" href="#">Dari</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item" data-country-item>
+                    <div class="flex-container align-justify country-item" data-city-filters="albania europe office_1">
                         <div class="country">Albania</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Albanian</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item" data-country-item>
+                    <div class="flex-container align-justify country-item" data-city-filters="algeria africa office_2">
                         <div class="country">Algeria</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Arabic</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item" data-country-item>
+                    <div class="flex-container align-justify country-item" data-city-filters="angola africa office_2">
                         <div class="country">Angola</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Arabic</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item" data-country-item>
+                    <div class="flex-container align-justify country-item" data-city-filters="argentina latin-america office_3">
                         <div class="country">Argentina</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item" data-country-item>
+                    <div class="flex-container align-justify country-item" data-city-filters="armenia office_4">
                         <div class="country">Armenia</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item" data-country-item>
+                    <div class="flex-container align-justify country-item" data-city-filters="azerbaijan office_4">
                         <div class="country">Azerbaijan</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item" data-country-item>
+                    <div class="flex-container align-justify country-item" data-city-filters="bahrain office_4">
                         <div class="country">Bahrain</div>
                         <div class="languages">
                             <a class="language-link" href="#">Bahrainian</a>
@@ -102,26 +102,26 @@ use helpers\View;
                             <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item" data-country-item>
+                    <div class="flex-container align-justify country-item" data-city-filters="bangladesh office_4">
                         <div class="country">Bangladesh</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Spanish</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item" data-country-item>
+                    <div class="flex-container align-justify country-item" data-city-filters="barbados office_4">
                         <div class="country">Barbados</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item" data-country-item>
+                    <div class="flex-container align-justify country-item" data-city-filters="belarus office_4">
                         <div class="country">Belarus</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                         </div>
                     </div>
-                    <div class="flex-container align-justify country-item" data-country-item>
+                    <div class="flex-container align-justify country-item" data-city-filters="belize office_4">
                         <div class="country">Belize</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>

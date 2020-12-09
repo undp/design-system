@@ -7,7 +7,7 @@ class MultiSelect {
         this.$window = $(window);
         this.$currentSelect = null;
         this.$searchInput = $('[data-input-search]');
-        this.$countryList = $('[data-country-item]');
+        this.$countryList = $('[data-city-filters]');
         this.selects = $('[data-multi-select]');
         this.$containerFilter = $('[data-container-filters]');
         this.filters = {
@@ -57,22 +57,8 @@ class MultiSelect {
         const inputs = this.$currentSelect.find('input[type="checkbox"]');
         inputs.change((evt) => {
             evt.stopImmediatePropagation();
-            console.log($(evt.currentTarget));
-            const includeOrRemoveFilter = () => {
-                const inputType = $(evt.currentTarget).data('type');
-                const inputValue = $(evt.currentTarget).val();
 
-                if ($(evt.currentTarget).is(":checked")) {
-                    this.filters[inputType].push(inputValue)
-                } else {
-                    const index = this.filters[inputType].indexOf(inputValue);
-                    if (index > -1) {
-                        this.filters[inputType].splice(index, 1);
-                    }
-                }
-                this.search();
-            };
-            includeOrRemoveFilter();
+            this.updateFilters($(evt.currentTarget));
 
             const inputs = this.$currentSelect.find("input:checked");
             const total = inputs.length;
@@ -114,7 +100,8 @@ class MultiSelect {
             if (!this.selects.find('input[type="checkbox"]').length) {
                 this.$containerFilter.html('')
             }
-            this.search();
+
+            this.updateFilters(input);
         });
     }
 
@@ -137,18 +124,32 @@ class MultiSelect {
     listenerInputSearch() {
         this.$searchInput.keyup(event => {
             this.filters.inputSearch = this.$searchInput.val().toLowerCase()
-            console.log(this.filters);
             this.search();
         });
     }
 
+    updateFilters(input) {
+        //get input type(region, office) from parent node,
+        const inputType = input.closest('[data-type]').data('type');
+        const inputValue = input.val();
+
+        if (input.is(":checked")) {
+            this.filters[inputType].push(inputValue)
+        } else {
+            const index = this.filters[inputType].indexOf(inputValue);
+            if (index > -1) {
+                this.filters[inputType].splice(index, 1);
+            }
+        }
+        this.search();
+    }
+
     search() {
-        console.log('filters:', this.filters);
         if (this.filters.inputSearch.length > 0 ||
             this.filters.office.length > 0 ||
             this.filters.region.length > 0) {
             let filtered = this.$countryList.filter((index, node) => {
-                const text = $(node).find('.country').text().toLowerCase();
+                const text = $(node).data('city-filters').toLowerCase();
                 return (this.filters.inputSearch.length > 0 && text.includes(this.filters.inputSearch.toLowerCase()) ||
                     this.filters.region.filter(value => text.includes(value.toLowerCase())).length > 0 ||
                     this.filters.office.filter(value => text.includes(value.toLowerCase())).length > 0)
