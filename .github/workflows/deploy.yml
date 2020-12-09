@@ -20,7 +20,7 @@ jobs:
           os-${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
     - uses: php-actions/composer@v4
     - name: Use Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2-beta
       with:
         node-version: '12.x'
     - run: npm install
@@ -29,5 +29,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ftpupload.net
+        server-dir: htdocs/ 
         username: epiz_27417802
         password: ${{ secrets.FTP_PASSWORD }}
