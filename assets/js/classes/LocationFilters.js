@@ -1,17 +1,26 @@
-class MultiSelect {
+class LocationFilters {
     constructor() {
         this.classOpen = 'open';
+        this.classHide = 'hide';
         this.dataSelectControl = '[data-select-control]';
 
         this.$window = $(window);
         this.$currentSelect = null;
+        this.$searchInput = $('[data-input-search]');
+        this.$countryList = $('[data-city-filters]');
         this.selects = $('[data-multi-select]');
         this.$containerFilter = $('[data-container-filters]');
+        this.filters = {
+            region: [],
+            office: [],
+            inputSearch: '',
+        };
     }
 
     init() {
         this.listenerSelects();
         this.listenerWindowClick();
+        this.listenerInputSearch();
     }
 
     closeAll() {
@@ -31,7 +40,6 @@ class MultiSelect {
         })
     }
 
-
     listenerWindowClick() {
         this.$window.click(evt => {
             if (this.$currentSelect && !this.$currentSelect.is(evt.target) &&
@@ -45,10 +53,13 @@ class MultiSelect {
         this.$currentSelect.toggleClass(this.classOpen);
     }
 
-
     totalOptionsSelected() {
         const inputs = this.$currentSelect.find('input[type="checkbox"]');
         inputs.change((evt) => {
+            evt.stopImmediatePropagation();
+
+            this.updateFilters($(evt.currentTarget));
+
             const inputs = this.$currentSelect.find("input:checked");
             const total = inputs.length;
             const counter = this.$currentSelect.find(this.dataSelectControl + ' span');
@@ -60,14 +71,13 @@ class MultiSelect {
         })
     }
 
-
     printContainerFilters() {
         this.$containerFilter.html('');
         this.$containerFilter.append('<p class="tag uppercase">Active filters</p>');
         this.selects.find("input:checked").each((i, input) => {
             const text = $(input).parent().text();
             const inputValue = $(input).val();
-            this.$containerFilter.append('<a class="filter" href="#" data-close-filter data-input-value="'+inputValue+'">' + text + '</a>')
+            this.$containerFilter.append('<a class="filter" href="#" data-close-filter data-input-value="' + inputValue + '">' + text + '</a>')
         });
         this.$containerFilter.append('<a class="tag filter-clear" data-close-all-select href="#" data-clear-all>Clear All</a>');
         this.listenerCloseFilter()
@@ -78,7 +88,7 @@ class MultiSelect {
         $('[data-close-filter]').on('click', (evt) => {
             evt.preventDefault();
             const inputValue = $(evt.currentTarget).data('input-value');
-            const input = $('input[value="'+inputValue+'"]');
+            const input = $('input[value="' + inputValue + '"]');
             input.prop('checked', false);
             const updateSelectCounter = () => {
                 const counter = input.closest('[data-options]').siblings(this.dataSelectControl).find('span');
@@ -90,6 +100,8 @@ class MultiSelect {
             if (!this.selects.find('input[type="checkbox"]').length) {
                 this.$containerFilter.html('')
             }
+
+            this.updateFilters(input);
         });
     }
 
@@ -103,8 +115,52 @@ class MultiSelect {
                 const counter = $(select).find(this.dataSelectControl + ' span');
                 counter.text('');
             });
+            this.filters.region = [];
+            this.filters.office = [];
+            this.search();
         });
+    }
+
+    listenerInputSearch() {
+        this.$searchInput.keyup(event => {
+            this.filters.inputSearch = this.$searchInput.val().toLowerCase()
+            this.search();
+        });
+    }
+
+    updateFilters(input) {
+        //get input type(region, office) from parent node,
+        const inputType = input.closest('[data-type]').data('type');
+        const inputValue = input.val();
+
+        if (input.is(":checked")) {
+            this.filters[inputType].push(inputValue)
+        } else {
+            const index = this.filters[inputType].indexOf(inputValue);
+            if (index > -1) {
+                this.filters[inputType].splice(index, 1);
+            }
+        }
+        this.search();
+    }
+
+    search() {
+        if (this.filters.inputSearch.length > 0 ||
+            this.filters.office.length > 0 ||
+            this.filters.region.length > 0) {
+            let filtered = this.$countryList.filter((index, node) => {
+                const text = $(node).data('city-filters').toLowerCase();
+                return (this.filters.inputSearch.length > 0 && text.includes(this.filters.inputSearch.toLowerCase()) ||
+                    this.filters.region.filter(value => text.includes(value.toLowerCase())).length > 0 ||
+                    this.filters.office.filter(value => text.includes(value.toLowerCase())).length > 0)
+            });
+            this.$countryList.addClass(this.classHide);
+            filtered.removeClass(this.classHide);
+        } else {
+            this.$countryList.removeClass(this.classHide);
+        }
+
     }
 }
 
-export default MultiSelect;
+export default LocationFilters;
