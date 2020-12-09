@@ -239,7 +239,6 @@
                     position: absolute;
                     margin: 44px 0 100px 0;
                     max-height: calc(100% - 280px);
-                    scrollbar-color: $white $black;
 
                     @include breakpoint(medium down) {
                         right: 0;
