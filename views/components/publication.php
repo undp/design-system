@@ -1,5 +1,5 @@
 <?php
-use helpers\View;
+use helpers\Svg;
 ?>
 
 <div class="publication">
@@ -23,8 +23,8 @@ use helpers\View;
                 <div class="controls">
                     <div class="cta">
                         <button class="btn hide-for-small-only">
-                           <?= $cta ?? '' ?>
-                            <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                           <?= $cta ?? 'Read More' ?>
+                           <?php Svg::render('btn-arrow-blue', true, $cta ?? 'Read More', 'assets/images/arrows/')?>
                         </button>
                         <a class="text-link arrow-1 show-for-small-only" href="#">
                             Read More

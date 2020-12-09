@@ -8,7 +8,7 @@ use helpers\Svg;
     <div class="grid-container fluid modal-content">
         <div class="modal-head">
             <button class="close-button show-for-xlarge" data-btn-close aria-label="Close">
-                <?php Svg::render('icon-close') ?>
+                <?php Svg::render('icon-close', true, 'Close Modal') ?>
                 <span class="show-for-sr">Close</span>
             </button>
         </div>
@@ -16,7 +16,7 @@ use helpers\Svg;
             <div class="cell">
                 <div class="flex-container align-middle input-group">
                     <div class="icon">
-                        <?php Svg::render('icon-search-black') ?>
+                        <?php Svg::render('icon-search-black', true, 'Search Icon Input') ?>
                     </div>
                     <label class="show-for-sr" for="search">Search</label>
                     <input class="input-search title" type="text" name="search" id="search">

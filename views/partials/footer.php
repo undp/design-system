@@ -9,9 +9,7 @@ use helpers\Svg;
                 <div class="footer-head flex-container align-justify align-bottom">
                     <div class="flex-container align-middle logo">
                         <div class="undp-logo">
-                            <a href="/">
-                                <?php Svg::render('undp-logo-white') ?>
-                            </a>
+                            <?php Svg::render('undp-logo-white', true, 'undp-footer-logo') ?>
                         </div>
                         <div>
                             <h3 class="footer-title light">United nations</h3>
@@ -34,7 +32,7 @@ use helpers\Svg;
                         <h4 class="footer-subtitle light uppercase">
                             Who we are
                             <span class="footer-subtitle-arrow">
-                                <?php Svg::render('footer-arrow') ?>
+                                <?php Svg::render('footer-arrow', true, 'open options') ?>
                             </span>
                         </h4>
                         <ul class="list">
@@ -50,7 +48,7 @@ use helpers\Svg;
                         <h4 class="footer-subtitle light uppercase">
                             Who we do
                             <span class="footer-subtitle-arrow">
-                                <?php Svg::render('footer-arrow') ?>
+                                <?php Svg::render('footer-arrow', true, 'open options') ?>
                             </span>
                         </h4>
                         <ul class="list">
@@ -64,7 +62,7 @@ use helpers\Svg;
                         <h4 class="footer-subtitle light uppercase">
                             Our impact
                             <span class="footer-subtitle-arrow">
-                                <?php Svg::render('footer-arrow') ?>
+                                <?php Svg::render('footer-arrow', true, 'open options') ?>
                             </span>
                         </h4>
                         <ul class="list">
@@ -81,7 +79,7 @@ use helpers\Svg;
                         <h4 class="footer-subtitle light uppercase">
                             Get Involved
                             <span class="footer-subtitle-arrow">
-                                <?php Svg::render('footer-arrow') ?>
+                                <?php Svg::render('footer-arrow', true, 'open options') ?>
                             </span>
                         </h4>
                         <ul class="list">
@@ -97,7 +95,7 @@ use helpers\Svg;
                         <h4 class="footer-subtitle light uppercase">
                             Language
                             <span class="footer-subtitle-arrow">
-                                <?php Svg::render('footer-arrow') ?>
+                                <?php Svg::render('footer-arrow', true, 'open options') ?>
                             </span>
                         </h4>
                         <ul class="list">
@@ -110,11 +108,11 @@ use helpers\Svg;
                         <div >
                             <div class="flex-container align-right icons-search">
                                 <a class="icon" href="#" data-modal-open data-modal="modal-search-offices" aria-label="Locations">
-                                    <?php Svg::render('icon-www-white') ?>
+                                    <?php Svg::render('icon-www-white', true, 'location') ?>
                                     <span class="show-for-sr">Locations</span>
                                 </a>
                                 <a class="icon" href="#" aria-label="Search" data-modal-open data-modal="modal-popular-search">
-                                    <?php Svg::render('icon-search')?>
+                                    <?php Svg::render('icon-search-white', true, 'search')?>
                                     <span class="show-for-sr">Search</span>
                                 </a>
                             </div>
@@ -128,23 +126,23 @@ use helpers\Svg;
                             </div>
                             <div class="flex-container social-links">
                                 <a class="social-link" href="#" aria-label="UNDP on Facebook">
-                                    <div class="icon facebook"></div>
+                                    <img class="icon" src="/assets/images/icon-facebook-white.png" alt="UNDP on Facebook">
                                     <span class="show-for-sr">UNDP on Facebook</span>
                                 </a>
                                 <a class="social-link" href="#" aria-label="UNDP on Twitter">
-                                    <div class="icon twitter"></div>
+                                    <img class="icon" src="/assets/images/icon-twitter-white.png" alt="UNDP on Twitter">
                                     <span class="show-for-sr">UNDP on Twitter</span>
                                 </a>
                                 <a class="social-link" href="" aria-label="UNDP on Instagram">
-                                    <div class="icon instagram"></div>
+                                    <img class="icon" src="/assets/images/icon-instagram-white.png" alt="UNDP on Instagram">
                                     <span class="show-for-sr">UNDP on Instagram</span>
                                 </a>
                                 <a class="social-link" href="#" aria-label="UNDP on LinkedIn">
-                                    <div class="icon linkedin"></div>
+                                    <img class="icon" src="/assets/images/icon-linkedin-white.png" alt="UNDP on LinkedIn">
                                     <span class="show-for-sr">UNDP on LinkedIn</span>
                                 </a>
                                 <a class="social-link" href="#" aria-label="UNDP on Youtube">
-                                    <div class="icon youtube"></div>
+                                    <img class="icon" src="/assets/images/icon-youtube-white.png" alt="UNDP on Youtube">
                                     <span class="show-for-sr">UNDP on Youtube</span>
                                 </a>
                             </div>
@@ -158,11 +156,11 @@ use helpers\Svg;
                 <div class="column">
                     <div class="flex-container icons-search">
                         <a class="icon" href="#" data-modal-open data-modal="modal-search-offices" aria-label="Locations">
-                            <?php Svg::render('icon-www-white') ?>
+                            <?php Svg::render('icon-www-white', true, 'location') ?>
                             <span class="show-for-sr">Locations</span>
                         </a>
                         <a class="icon" href="#" aria-label="Search" data-modal-open data-modal="modal-popular-search">
-                            <?php Svg::render('icon-search')?>
+                            <?php Svg::render('icon-search-white', true, 'search')?>
                             <span class="show-for-sr">Search</span>
                         </a>
                     </div>
@@ -178,23 +176,23 @@ use helpers\Svg;
                     </div>
                     <div class="flex-container social-links">
                         <a class="social-link" href="#" aria-label="UNDP on Facebook">
-                            <div class="icon facebook"></div>
+                            <img class="icon" src="/assets/images/icon-facebook-white.png" alt="UNDP on Facebook">
                             <span class="show-for-sr">UNDP on Facebook</span>
                         </a>
                         <a class="social-link" href="#" aria-label="UNDP on Twitter">
-                            <div class="icon twitter"></div>
+                            <img class="icon" src="/assets/images/icon-twitter-white.png" alt="UNDP on Twitter">
                             <span class="show-for-sr">UNDP on Twitter</span>
                         </a>
                         <a class="social-link" href="" aria-label="UNDP on Instagram">
-                            <div class="icon instagram"></div>
+                            <img class="icon" src="/assets/images/icon-instagram-white.png" alt="UNDP on Instagram">
                             <span class="show-for-sr">UNDP on Instagram</span>
                         </a>
                         <a class="social-link" href="#" aria-label="UNDP on LinkedIn">
-                            <div class="icon linkedin"></div>
+                            <img class="icon" src="/assets/images/icon-linkedin-white.png" alt="UNDP on LinkedIn">
                             <span class="show-for-sr">UNDP on LinkedIn</span>
                         </a>
                         <a class="social-link" href="#" aria-label="UNDP on Youtube">
-                            <div class="icon youtube"></div>
+                            <img class="icon" src="/assets/images/icon-youtube-white.png" alt="UNDP on Youtube">
                             <span class="show-for-sr">UNDP on Youtube</span>
                         </a>
                     </div>

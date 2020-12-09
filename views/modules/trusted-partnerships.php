@@ -1,4 +1,6 @@
 <?php
+
+use helpers\Svg;
 use helpers\View;
 ?>
 <div class="trusted-partnerships <?= $classes ?>">
@@ -13,7 +15,7 @@ use helpers\View;
                 </p>
                 <button class="btn">
                     Join Us
-                    <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                    <?php Svg::render('btn-arrow-blue', true, 'Join Us', 'assets/images/arrows/')?>
                 </button>
             </div>
         </div>
