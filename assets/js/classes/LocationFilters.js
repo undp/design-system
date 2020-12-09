@@ -1,4 +1,4 @@
-class MultiSelect {
+class LocationFilters {
     constructor() {
         this.classOpen = 'open';
         this.classHide = 'hide';
@@ -163,4 +163,4 @@ class MultiSelect {
     }
 }
 
-export default MultiSelect;
+export default LocationFilters;
