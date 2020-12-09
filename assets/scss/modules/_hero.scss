@@ -14,7 +14,7 @@
     }
 
     @include breakpoint(small only){
-        max-height: 815px;
+        height: 815px;
     }
 
     &.contract{
@@ -75,11 +75,18 @@
 
             @include breakpoint(small only){
                 max-width: 245px;
+            }
 
-                .heading.h1{
+            .heading.h1{
+                @include breakpoint(small only){
                     letter-spacing: 3px;
                 }
+
+                @include breakpoint(360px down){
+                    font-size: 4rem;
+                }
             }
+
         }
 
         .subtitle{
@@ -138,7 +145,7 @@
 
         @include breakpoint(small only){
             left: 45px;
-            bottom: 25px;
+            bottom: 125px;
         }
     }
 
