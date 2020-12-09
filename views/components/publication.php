@@ -3,7 +3,7 @@ use helpers\Svg;
 ?>
 
 <div class="publication">
-    <div class="grid-x">
+    <div class="grid-x publication-content">
         <div class="cell small-10 medium-4">
             <div class="publication-image">
                 <img src="<?= $image ?>" alt="publication">
@@ -22,10 +22,14 @@ use helpers\Svg;
                 </p>
                 <div class="controls">
                     <div class="cta">
-                        <button class="btn">
+                        <button class="btn hide-for-small-only">
                            <?= $cta ?? 'Read More' ?>
                            <?php Svg::render('btn-arrow-blue', true, $cta ?? 'Read More', 'assets/images/arrows/')?>
                         </button>
+                        <a class="text-link arrow-1 show-for-small-only" href="#">
+                            Read More
+                            <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
+                        </a>
                     </div>
                 </div>
             </div>

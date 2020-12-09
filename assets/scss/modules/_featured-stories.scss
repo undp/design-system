@@ -16,7 +16,7 @@
             }
 
             @include breakpoint(small only){
-                margin: 120px 0 85px 40px;
+                margin: 105px 0 85px;
             }
         }
     }
@@ -27,5 +27,11 @@
         @include breakpoint(large down){
             margin-top: 15px;
         }
+    }
+}
+
+.recent-news .title-container .section-title{
+    @include breakpoint(small only){
+        margin: 60px 0 50px;
     }
 }

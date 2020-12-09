@@ -84,6 +84,7 @@
 
                 @include breakpoint(large down) {
                     margin-right: 0;
+                    min-width: 23px;
                 }
 
                 &:hover,
@@ -131,6 +132,8 @@
     }
 
     .dropdown {
+        height: 30px;
+        max-height: 30px;
         position: relative;
 
         .dropdown-btn {

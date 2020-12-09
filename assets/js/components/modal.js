@@ -9,6 +9,8 @@ class Modal {
         this.dataOptionDefault = '[data-icon]';
         this.dataOptionClose = '[data-icon-close]';
         this.classModalOpened = 'modal-opened';
+        this.navPreviewWidth = 0;
+        this.navCurrrentWidth = 0;
 
         this.$body = $('body');
         this.$optionClose = null;
@@ -16,6 +18,7 @@ class Modal {
         this.$optionDefalt = null;
         this.$modalReference = null;
         this.$modals = $('[data-modal-open]');
+        this.$header = $('[data-navigation]');
         this.$modalFilterName = 'modal-filter';
         this.$btnOpenFilter = '[data-open-filters]';
         this.$btnCloseCurrentModal = '[data-btn-close]';
@@ -53,12 +56,24 @@ class Modal {
                 if (idModalOpen) {
                     this.currentModal = $('#' + $(modal).data('modal'));
                     if (this.currentModal) {
+                        const addOptionClose  = () => {
+                            if (Foundation.MediaQuery.is('large down')) {
+                                if ($(modal).data('modal') === 'modal-popular-search'){
+                                    this.$modalReference = $('.icon-search')
+                                }
+                            }
+                        };
+                        addOptionClose();
+
+                        this.navPreviewWidth = this.$header.width();
                         this.$modalReference.addClass(this.classModalOpened)
                         this.$optionClose = this.$modalReference.find(this.dataOptionClose);
                         this.$optionDefalt = this.$modalReference.find(this.dataOptionDefault);
                         this.open();
+                        this.navCurrrentWidth =  this.$header.width();
                         this.listenerCloseModal();
                         this.listenerOpenFilters();
+                        this.navSetMargin();
                     }
                 }
             });
@@ -119,6 +134,11 @@ class Modal {
         }
     }
 
+    //the modal hide the (scroll y) so we add his width on navigation to keep the same size
+    navSetMargin() {
+        this.$header.css('padding-right', this.navCurrrentWidth - this.navPreviewWidth);
+    }
+
     inputSearchAutoFocus() {
         this.currentModal.find('.input-search').focus();
     }
@@ -127,6 +147,7 @@ class Modal {
         this.currentModal.addClass('hide');
         this.$body.removeClass('modal-open');
         this.$modalReference.removeClass(this.classModalActive)
+        this.$header.css('padding-right', 'unset')
     }
 
     openFilters() {
