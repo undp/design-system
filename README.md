@@ -1,3 +1,5 @@
+![CI](https://github.com/undp/butchershop-themaniaks-UNDP/workflows/CI/badge.svg)
+
 # UNDP 
 
 ## Server Requirements
