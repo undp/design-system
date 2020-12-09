@@ -25,7 +25,7 @@ use helpers\Svg;
             </button>
         </div>
         <div class="cta-arrow show-for-large">
-            <img src="/assets/images/arrows/hero-arrow-down.svg" alt="scroll-down-arrow">
+            <?php Svg::render('hero-arrow-down', true, 'Scroll Down', 'assets/images/arrows/')?>
         </div>
     </div>
 </div>
