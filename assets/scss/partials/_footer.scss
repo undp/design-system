@@ -14,7 +14,13 @@
         @include breakpoint(small only){
             display: grid;
             justify-items: center;
-            justify-content: center;
+            justify-content: unset;
+        }
+
+        .logo{
+            @include breakpoint(small only){
+                width: 100%;
+            }
         }
 
         .undp-logo {
