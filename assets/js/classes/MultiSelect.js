@@ -1,14 +1,13 @@
 class MultiSelect {
     constructor() {
         this.classOpen = 'open';
+        this.classHide = 'hide';
         this.dataSelectControl = '[data-select-control]';
 
         this.$window = $(window);
         this.$currentSelect = null;
         this.$searchInput = $('[data-input-search]');
         this.$countryList = $('[data-country-item]');
-        this.$countryContainer = $('[data-countries]');
-        this.$countryContainerOriginal = $('[data-countries]');
         this.selects = $('[data-multi-select]');
         this.$containerFilter = $('[data-container-filters]');
         this.filters = {
@@ -57,6 +56,8 @@ class MultiSelect {
     totalOptionsSelected() {
         const inputs = this.$currentSelect.find('input[type="checkbox"]');
         inputs.change((evt) => {
+            evt.stopImmediatePropagation();
+            console.log($(evt.currentTarget));
             const includeOrRemoveFilter = () => {
                 const inputType = $(evt.currentTarget).data('type');
                 const inputValue = $(evt.currentTarget).val();
@@ -141,15 +142,16 @@ class MultiSelect {
         if (this.filters.inputSearch.length > 0 ||
             this.filters.office.length > 0 ||
             this.filters.region.length > 0) {
-                let filtered = this.$countryList.filter((index, node) => {
-                    const text = $(node).find('.country').text().toLowerCase();
-                    return (text.length > 0 && text.includes(this.filters.inputSearch) ||
-                        this.filters.region.filter(value => text.includes(value)).length >  0 ||
-                        this.filters.office.filter(value => text.includes(value)).length > 0)
-                });
-                this.$countryContainer.html(filtered);
+            let filtered = this.$countryList.filter((index, node) => {
+                const text = $(node).find('.country').text().toLowerCase();
+                return (this.filters.inputSearch.length > 0 && text.includes(this.filters.inputSearch.toLowerCase()) ||
+                    this.filters.region.filter(value => text.includes(value.toLowerCase())).length > 0 ||
+                    this.filters.office.filter(value => text.includes(value.toLowerCase())).length > 0)
+            });
+            this.$countryList.addClass(this.classHide);
+            filtered.removeClass(this.classHide);
         } else {
-            this.$countryContainer.html(this.$countryContainerOriginal);
+            this.$countryList.removeClass(this.classHide);
         }
 
     }

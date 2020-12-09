@@ -4,12 +4,12 @@
         <span class="select-control" data-select-control>Region <span></span></span>
         <div class="options" data-options>
             <label class="checkbox-item">
-                <input type="checkbox" data-type="region" value="1">
+                <input type="checkbox" data-type="region" value="Alge">
                 Arab States
                 <span class="checkmark"></span>
             </label>
             <label class="checkbox-item">
-                <input type="checkbox" data-type="region" value="2">
+                <input type="checkbox" data-type="region" value="Beli">
                 East Asia and the Pacific
                 <span class="checkmark"></span>
             </label>

@@ -45,7 +45,7 @@ use helpers\View;
                 <div class="countries" data-countries>
                     <?php for($i =0 ; $i < 60; $i++) {?>
                     <div class="flex-container align-justify country-item" data-country-item>
-                        <div class="country">pepito</div>
+                        <div class="country">Afghanistan</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Pasto</a>
@@ -60,7 +60,7 @@ use helpers\View;
                         </div>
                     </div>
                     <div class="flex-container align-justify country-item" data-country-item>
-                        <div class="country">maria</div>
+                        <div class="country">Algeria</div>
                         <div class="languages">
                             <a class="language-link" href="#">English</a>
                             <a class="language-link" href="#">Arabic</a>
