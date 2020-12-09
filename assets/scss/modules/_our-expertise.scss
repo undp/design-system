@@ -113,11 +113,14 @@
     }
 
     .glide-expertise{
-        padding-top: 125px;
-        padding-left: 15px;
+        padding: 125px 0 80px 15px;
 
         @include breakpoint(small only){
             padding-top: 0;
+        }
+
+        .glide__track{
+            margin-top: 25px;
         }
 
         .section-title{
