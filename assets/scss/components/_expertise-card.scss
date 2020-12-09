@@ -18,6 +18,10 @@
             border-bottom: none;
         }
 
+        @include breakpoint(360px down){
+            margin-top: 20px;
+        }
+
         .heading.h3,
         .heading.medium-copy{
             padding: 0 24px;
