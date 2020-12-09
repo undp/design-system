@@ -17,7 +17,7 @@
         }
 
         @include breakpoint(small only){
-            margin-top: 125px;
+            margin: 125px 0 25px;
         }
 
         @include breakpoint(360px down){
@@ -41,24 +41,24 @@
             display: flex;
             flex-direction: column;
 
-            .bullets-container{
-                order: 2;
-            }
-
-            .glide__track{
-                order: 1;
-            }
+            //.bullets-container{
+            //    order: 2;
+            //}
+            //
+            //.glide__track{
+            //    order: 1;
+            //}
         }
 
-        @include breakpoint(360px down){
-            .bullets-container{
-                order: 1;
-            }
-
-            .glide__track{
-                order: 2;
-            }
-        }
+        //@include breakpoint(360px down){
+        //    .bullets-container{
+        //        order: 1;
+        //    }
+        //
+        //    .glide__track{
+        //        order: 2;
+        //    }
+        //}
 
         .bullets-container {
             margin: 0 auto;
