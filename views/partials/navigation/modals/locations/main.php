@@ -5,10 +5,6 @@ use helpers\View;
 
 <section id="modal-search-offices" class="menu-modal modal-search-offices hide">
     <div class="grid-container fluid modal-content height-full">
-        <button class="close-button show-for-large" data-btn-close aria-label="Close">
-            <?php Svg::render('icon-close', true, 'Close Modal') ?>
-            <span class="show-for-sr">Close</span>
-        </button>
         <div class="grid-x modal-body">
             <div class="cell large-auto  cell-search">
                 <a class="hide-for-large btn-back" href="#" data-action-back data-btn-close>
