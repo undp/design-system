@@ -82,3 +82,8 @@ ul {
         padding-right: map-get($grid-margin-gutters, "medium");
     }
 }
+
+.lazy {
+    background-image: none;
+    background-color: $dark-blue-8;
+}
