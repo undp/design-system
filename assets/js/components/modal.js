@@ -38,11 +38,11 @@ class Modal {
     listeners() {
         this.$modals.each((i, modal) => {
             $(modal).click((env) => {
-                this.closeMenu();
                 env.preventDefault();
                 this.$modals.removeClass(this.classModalActive);
                 const addOptionClose = () => {
                     if ($(modal).data('modal') === 'modal-popular-search') {
+                        this.closeMenu();
                         this.$modalReference = $('[data-modal="modal-popular-search"]')
                     }
                     if ($(modal).data('modal') === 'modal-search-offices') {
