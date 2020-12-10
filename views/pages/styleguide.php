@@ -9,6 +9,7 @@ use helpers\Svg;
 
 <body>
 <!-- Navigation -->
+<?php View::render('partials/navigation/main') ?>
 
 <div class="styleguide">
     <!--  headings  -->
@@ -762,6 +763,7 @@ use helpers\Svg;
     </div>
 </div>
 <!-- Footer -->
+<?php View::render('partials/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 </html>

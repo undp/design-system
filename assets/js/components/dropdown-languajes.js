@@ -32,6 +32,7 @@ class DropDown {
         this.$window.click(evt => {
             if (!this.$dropdowns.is(evt.target) &&
                 this.$dropdowns.has(evt.target).length === 0 &&
+                this.dropdownAcitionOpen &&
                 this.dropdownAcitionOpen.hasClass('active')) {
                 this.dropdownToggle();
             }
