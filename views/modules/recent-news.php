@@ -5,14 +5,14 @@
         <div class="grid-x grid-padding-x">
             <div class="cell small-11 small-offset-1 medium-4 scroll-track left-right delay-4">
                 <div class="title-container">
-                    <div class="section-title">
+                    <hgroup class="section-title">
                         <h2 class="heading h2">
                             Recent
                         </h2>
                         <h2 class="heading h2">
                             News
                         </h2>
-                    </div>
+                    </hgroup>
                 </div>
             </div>
             <div class="cell small-12 medium-4">

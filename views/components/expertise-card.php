@@ -3,7 +3,7 @@
 use helpers\Svg;
 
 ?>
-<div class="expertise-card">
+<article class="expertise-card">
     <div class="text">
         <h3 class="heading h3">
             <?= $title ?? '' ?>
@@ -18,4 +18,4 @@ use helpers\Svg;
             <?php Svg::render('btn-arrow-red', true, $cta ?? 'Read more', 'assets/images/arrows/')?>
         </a>
     </div>
-</div>
+</article>

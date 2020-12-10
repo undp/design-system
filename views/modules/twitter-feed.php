@@ -1,7 +1,7 @@
 <?php
 use helpers\View;
 ?>
-<div class="twitter-feed">
+<section class="twitter-feed">
     <div class="grid-container">
         <div class="grid-container">
             <div class="grid-x grid-padding-x tweets">
@@ -58,4 +58,4 @@ use helpers\View;
             </div>
         </div>
     </div>
-</div>
+</section>
