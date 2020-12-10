@@ -1,12 +1,13 @@
 <?php
 use helpers\View;
 ?>
-<div class="global-impact">
+<section class="global-impact">
     <div class="grid-container heading-container">
         <div class="grid-x grid-margin-x align-center overflow-hidden">
-            <div class="cell medium-3  scroll-track left-right delay-1">
-                <h2 class="heading h2 light">Global<br/>Impact</h2>
-            </div>
+            <hgroup class="cell medium-3  scroll-track left-right delay-1">
+                <h2 class="heading h2 light">Global</h2>
+                <h2 class="heading h2 light">Impact</h2>
+            </hgroup>
             <div class="cell medium-7 scroll-track left-right delay-1">
                 <p class="heading h4 light">
                     Our work in sustainable development, governance, and resilience building.
@@ -50,4 +51,4 @@ use helpers\View;
             </div>
         </div>
     </div>
-</div>
+</section>

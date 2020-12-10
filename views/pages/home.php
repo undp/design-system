@@ -9,21 +9,22 @@ use helpers\View;
 <?php View::render('partials/navigation/main') ?>
 
 
-<!-- Navigation -->
-<?php View::render('modules/hero') ?>
-<?php View::render('modules/featured-stories') ?>
-<?php View::render('modules/our-mission') ?>
-<?php View::render('modules/our-expertise') ?>
-<?php
-    View::render('modules/trusted-partnerships', [
-        'classes' => 'show-for-small-only',
-        'trackScroll' => true
-    ])
-?>
-<?php View::render('modules/global-impact') ?>
-<?php View::render('modules/publications') ?>
-<?php View::render('modules/recent-news') ?>
-<?php View::render('modules/twitter-feed') ?>
+<main>
+    <?php View::render('modules/hero') ?>
+    <?php View::render('modules/featured-stories') ?>
+    <?php View::render('modules/our-mission') ?>
+    <?php View::render('modules/our-expertise') ?>
+    <?php
+        View::render('modules/trusted-partnerships', [
+            'classes' => 'show-for-small-only',
+            'trackScroll' => true
+        ])
+    ?>
+    <?php View::render('modules/global-impact') ?>
+    <?php View::render('modules/publications') ?>
+    <?php View::render('modules/recent-news') ?>
+    <?php View::render('modules/twitter-feed') ?>
+</main>
 
 <!-- Footer -->
 <?php View::render('partials/footer'); ?>

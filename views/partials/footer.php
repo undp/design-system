@@ -6,15 +6,15 @@ use helpers\Svg;
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell medium-12 large-10 large-offset-1">
-                <div class="footer-head flex-container align-justify align-bottom">
+                <header class="footer-head flex-container align-justify align-bottom">
                     <div class="flex-container align-middle logo">
                         <div class="undp-logo">
                             <?php Svg::render('undp-logo-white', true, 'undp-footer-logo') ?>
                         </div>
-                        <div>
+                        <hgroup>
                             <h3 class="footer-title light">United nations</h3>
                             <h3 class="footer-title light">Development program</h3>
-                        </div>
+                        </hgroup>
                     </div>
                     <div class="sign-up">
                         <form action="">
@@ -26,7 +26,7 @@ use helpers\Svg;
                             </div>
                         </form>
                     </div>
-                </div>
+                </header>
                 <div class="footer-body flex-container align-justify">
                     <div class="column who-we-are">
                         <h4 class="footer-subtitle light uppercase">
