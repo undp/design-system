@@ -219,6 +219,15 @@
                 background-image: url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
                 mask-image: url("#{$image-path}arrows/btn-arrow-external.svg");
             }
+
+            &.icon-footer {
+                &:before,
+                &:after {
+                    bottom: 0;
+                    transform: scale(.8);
+                    background-color: $white;
+                }
+            }
         }
     }
 

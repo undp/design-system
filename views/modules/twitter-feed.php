@@ -23,7 +23,7 @@ use helpers\View;
                         'time' => '5:00:11 PM',
                         'description' => 'Despite the pandemic, 114 countries are working with us to deliver the #ClimatePromise.
             This International Day for Disaster Risk Reduction, see how we’re delivering the #ParisAgreement promise for a greener, safer, & healthier future:
-            <a href="">https://bit.ly/2FWFsqH</a>',
+            <a href="" target="_blank">https://bit.ly/2FWFsqH</a>',
                         'cta' => 'Read more',
                         'name' => 'UN Development',
                         'userName' => '@UNDP',
@@ -35,7 +35,7 @@ use helpers\View;
                     <?php View::render('components/tweet', [
                         'date' => '12/2/2020',
                         'time' => '5:00:11 PM',
-                        'description' => 'This #DayOfTheGirl, see seven ways girls and women are using tech to create social change in their communities this Decade of Action: <a href="">https://bit.ly/2FoCfR6</a>',
+                        'description' => 'This #DayOfTheGirl, see seven ways girls and women are using tech to create social change in their communities this Decade of Action: <a href="" target="_blank">https://bit.ly/2FoCfR6</a>',
                         'cta' => 'Read more',
                         'name' => 'UN Development',
                         'userName' => '@UNDP',
@@ -47,7 +47,7 @@ use helpers\View;
                     <?php View::render('components/tweet', [
                         'date' => '12/2/2020',
                         'time' => '5:00:11 PM',
-                        'description' => 'This #DayofTheGirl, meet some of the young activists who are on the frontlines of the global #ClimateAction movement: <a href="">https://bit.ly/2SQ5lvv</a>',
+                        'description' => 'This #DayofTheGirl, meet some of the young activists who are on the frontlines of the global #ClimateAction movement: <a href="" target="_blank">https://bit.ly/2SQ5lvv</a>',
                         'cta' => 'Read more',
                         'name' => 'UN Development',
                         'userName' => '@UNDP',

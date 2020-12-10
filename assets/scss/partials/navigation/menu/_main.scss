@@ -145,7 +145,10 @@
                         }
                     }
 
-                    &:hover {
+                    &:hover,
+                    &:focus,
+                    &:active,
+                    &.active{
                         .arrow-3 {
                             &:before {
                                 opacity: 0;

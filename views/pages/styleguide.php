@@ -411,7 +411,6 @@ use helpers\Svg;
                             <td>
                                 <a class="text-link light-red arrow-3" href="#">
                                     Read More
-                                    <?php Svg::render('btn-arrow-external-red', true, 'Read More', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>
@@ -546,7 +545,6 @@ use helpers\Svg;
                             <td>
                                 <a class="text-link light-blue arrow-3" href="#">
                                     Read More
-                                    <?php Svg::render('btn-arrow-external-blue', true, 'Arrow', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>
