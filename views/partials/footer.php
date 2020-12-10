@@ -125,24 +125,24 @@ use helpers\Svg;
                                 </ul>
                             </div>
                             <div class="flex-container social-links">
-                                <a class="social-link" href="#" aria-label="UNDP on Facebook">
-                                    <img class="icon" src="/assets/images/icon-facebook-white.png" alt="UNDP on Facebook">
+                                <a class="social-link" href="https://www.facebook.com/UNDP" aria-label="UNDP on Facebook">
+                                    <img class="icon" src="/assets/images/icon-facebook.svg" alt="UNDP on Facebook">
                                     <span class="show-for-sr">UNDP on Facebook</span>
                                 </a>
-                                <a class="social-link" href="#" aria-label="UNDP on Twitter">
-                                    <img class="icon" src="/assets/images/icon-twitter-white.png" alt="UNDP on Twitter">
+                                <a class="social-link" href="https://twitter.com/UNDP/" aria-label="UNDP on Twitter">
+                                    <img class="icon" src="/assets/images/icon-twitter.svg" alt="UNDP on Twitter">
                                     <span class="show-for-sr">UNDP on Twitter</span>
                                 </a>
-                                <a class="social-link" href="" aria-label="UNDP on Instagram">
-                                    <img class="icon" src="/assets/images/icon-instagram-white.png" alt="UNDP on Instagram">
+                                <a class="social-link" href="https://www.instagram.com/UNDP/" aria-label="UNDP on Instagram">
+                                    <img class="icon" src="/assets/images/icon-instagram.svg" alt="UNDP on Instagram">
                                     <span class="show-for-sr">UNDP on Instagram</span>
                                 </a>
-                                <a class="social-link" href="#" aria-label="UNDP on LinkedIn">
-                                    <img class="icon" src="/assets/images/icon-linkedin-white.png" alt="UNDP on LinkedIn">
+                                <a class="social-link" href="https://www.linkedin.com/company/undp/" aria-label="UNDP on LinkedIn">
+                                    <img class="icon" src="/assets/images/icon-linkedin.svg" alt="UNDP on LinkedIn">
                                     <span class="show-for-sr">UNDP on LinkedIn</span>
                                 </a>
-                                <a class="social-link" href="#" aria-label="UNDP on Youtube">
-                                    <img class="icon" src="/assets/images/icon-youtube-white.png" alt="UNDP on Youtube">
+                                <a class="social-link" href="https://www.youtube.com/UNDP/" aria-label="UNDP on Youtube">
+                                    <img class="icon" src="/assets/images/icon-youtube.svg" alt="UNDP on Youtube">
                                     <span class="show-for-sr">UNDP on Youtube</span>
                                 </a>
                             </div>
@@ -175,24 +175,24 @@ use helpers\Svg;
                         </div>
                     </div>
                     <div class="flex-container social-links">
-                        <a class="social-link" href="#" aria-label="UNDP on Facebook">
-                            <img class="icon" src="/assets/images/icon-facebook-white.png" alt="UNDP on Facebook">
+                        <a class="social-link" href="https://www.facebook.com/UNDP" aria-label="UNDP on Facebook">
+                            <img class="icon" src="/assets/images/icon-facebook.svg" alt="UNDP on Facebook">
                             <span class="show-for-sr">UNDP on Facebook</span>
                         </a>
-                        <a class="social-link" href="#" aria-label="UNDP on Twitter">
-                            <img class="icon" src="/assets/images/icon-twitter-white.png" alt="UNDP on Twitter">
+                        <a class="social-link" href="https://twitter.com/UNDP/" aria-label="UNDP on Twitter">
+                            <img class="icon" src="/assets/images/icon-twitter.svg" alt="UNDP on Twitter">
                             <span class="show-for-sr">UNDP on Twitter</span>
                         </a>
-                        <a class="social-link" href="" aria-label="UNDP on Instagram">
-                            <img class="icon" src="/assets/images/icon-instagram-white.png" alt="UNDP on Instagram">
+                        <a class="social-link" href="https://www.instagram.com/UNDP/" aria-label="UNDP on Instagram">
+                            <img class="icon" src="/assets/images/icon-instagram.svg" alt="UNDP on Instagram">
                             <span class="show-for-sr">UNDP on Instagram</span>
                         </a>
-                        <a class="social-link" href="#" aria-label="UNDP on LinkedIn">
-                            <img class="icon" src="/assets/images/icon-linkedin-white.png" alt="UNDP on LinkedIn">
+                        <a class="social-link" href="https://www.linkedin.com/company/undp/" aria-label="UNDP on LinkedIn">
+                            <img class="icon" src="/assets/images/icon-linkedin.svg" alt="UNDP on LinkedIn">
                             <span class="show-for-sr">UNDP on LinkedIn</span>
                         </a>
-                        <a class="social-link" href="#" aria-label="UNDP on Youtube">
-                            <img class="icon" src="/assets/images/icon-youtube-white.png" alt="UNDP on Youtube">
+                        <a class="social-link" href="https://www.youtube.com/UNDP/" aria-label="UNDP on Youtube">
+                            <img class="icon" src="/assets/images/icon-youtube.svg" alt="UNDP on Youtube">
                             <span class="show-for-sr">UNDP on Youtube</span>
                         </a>
                     </div>
