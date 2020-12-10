@@ -115,7 +115,7 @@ class Modal {
 
     listenerWindowResize() {
         this.$window.resize(() => {
-            if (Foundation.MediaQuery.is('large down') && this.$optionClose) {
+            if (Foundation.MediaQuery.is('large down') && this.$modalReference.hasClass(this.classModalOpened)) {
                 this.showOptionClose();
             } else if (this.$optionClose) {
                 this.showOptionDefault();

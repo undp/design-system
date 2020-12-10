@@ -32,9 +32,13 @@
         line-height: 1.09;
         font-weight: $bold;
 
-        @include breakpoint(medium down){
+        @include breakpoint(large down){
             font-size: 4.5rem;
             line-height: 1.11;
+        }
+
+        @include breakpoint(medium down){
+            font-size: 4rem;
         }
     }
 

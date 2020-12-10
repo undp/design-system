@@ -1,4 +1,4 @@
-<div class="stat-card">
+<article class="stat-card">
     <div class="bg-image" style="background-image: url(<?= $image ?>)"></div>
     <div class="card-content">
         <div class="numerals outline">
@@ -11,4 +11,4 @@
             <?= $description ?? '' ?>
         </p>
     </div>
-</div>
+</article>

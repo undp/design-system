@@ -75,3 +75,10 @@ ul {
     color: $white;
     font-size: 12px;
 }
+
+.grid-container{
+    @include breakpoint(medium up){
+        padding-left: map-get($grid-margin-gutters, "medium");
+        padding-right: map-get($grid-margin-gutters, "medium");
+    }
+}

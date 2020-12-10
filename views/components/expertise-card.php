@@ -1,4 +1,9 @@
-<div class="expertise-card">
+<?php
+
+use helpers\Svg;
+
+?>
+<article class="expertise-card">
     <div class="text">
         <h3 class="heading h3">
             <?= $title ?? '' ?>
@@ -10,7 +15,7 @@
     <div class="cta-container">
         <a class="text-link arrow-1" href="#">
             <?= $cta ?? 'Read more' ?>
-            <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
+            <?php Svg::render('btn-arrow-red', true, $cta ?? 'Read more', 'assets/images/arrows/')?>
         </a>
     </div>
-</div>
+</article>

@@ -45,7 +45,7 @@
             .cell-search {
                 min-height: 100%;
                 max-width: 525px;
-                padding: 75px 60px;
+                padding: 75px 60px 200px 60px;
                 border-right: none;
                 backdrop-filter: blur(30px);
                 box-shadow: 0 3px 6px rgba($black, 0.16);
@@ -84,6 +84,10 @@
                     .text-link {
                         display: block;
                         margin-top: 25px;
+
+                        img{
+                            margin-top: -5px;
+                        }
                     }
 
                     .description {
@@ -239,7 +243,6 @@
                     position: absolute;
                     margin: 44px 0 100px 0;
                     max-height: calc(100% - 280px);
-                    scrollbar-color: $white $black;
 
                     @include breakpoint(medium down) {
                         right: 0;
@@ -262,6 +265,15 @@
                         background-color: black;
                     }
 
+                    .country {
+                        display: flex;
+                        align-items: center;
+
+                        @include breakpoint(small only){
+                            font-size: 1.1rem;
+                        }
+                    }
+
                     .country-item {
                         font-size: 2rem;
                         line-height: 1.2;
@@ -275,7 +287,13 @@
                             font-weight: $semi-bold;
                         }
 
+                        @include breakpoint(small only){
+                            font-size: 1.1rem;
+                        }
+
                         .language-link {
+                            display: inline-flex;
+                            align-items: center;
                             font-weight: $regular;
 
                             &:after {

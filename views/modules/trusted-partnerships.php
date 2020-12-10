@@ -1,7 +1,9 @@
 <?php
+
+use helpers\Svg;
 use helpers\View;
 ?>
-<div class="trusted-partnerships <?= $classes ?>">
+<section class="trusted-partnerships <?= $classes ?>">
     <div class="grid-container">
         <div class="grid-x overflow-hidden">
             <div class="cell medium-6 medium-offset-1 trusted-partnerships-header <?= $trackScroll? 'scroll-track' : '' ?> left-right delay-2">
@@ -13,9 +15,9 @@ use helpers\View;
                 </p>
                 <button class="btn">
                     Join Us
-                    <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                    <?php Svg::render('btn-arrow-blue', true, 'Join Us', 'assets/images/arrows/')?>
                 </button>
             </div>
         </div>
     </div>
-</div>
+</section>

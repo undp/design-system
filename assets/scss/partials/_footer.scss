@@ -14,7 +14,13 @@
         @include breakpoint(small only){
             display: grid;
             justify-items: center;
-            justify-content: center;
+            justify-content: unset;
+        }
+
+        .logo{
+            @include breakpoint(small only){
+                width: 100%;
+            }
         }
 
         .undp-logo {
@@ -221,26 +227,6 @@
 
                     &:not(:last-child) {
                         margin-right: 15px;
-                    }
-
-                    &.facebook {
-                        background-image: url('#{$image-path}icon-facebook-white.png');
-                    }
-
-                    &.twitter {
-                        background-image: url('#{$image-path}icon-twitter-white.png');
-                    }
-
-                    &.instagram {
-                        background-image: url('#{$image-path}icon-instagram-white.png');
-                    }
-
-                    &.linkedin {
-                        background-image: url('#{$image-path}icon-linkedin-white.png');
-                    }
-
-                    &.youtube {
-                        background-image: url('#{$image-path}icon-youtube-white.png');
                     }
                 }
             }

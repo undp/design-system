@@ -1,29 +1,31 @@
 <?php
     $imageExist = isset($image) && !empty($image);
 ?>
-<a href="#" class="story-card scroll-track left-right delay-2 <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
-    <div class="hover-slide">
-        <?php if($imageExist): ?>
-            <div class="background-image" style="background-image: url(<?= $image ?>)"></div>
-        <?php endif; ?>
-    </div>
-    <div class="content">
-        <p class="tag">
-            <?= $tag ?? '' ?>
-        </p>
-        <div class="title-description">
-            <h3 class="heading h5">
-                <?= $title ?? '' ?>
-            </h3>
-            <p class="small-copy">
-                <?= $description ?? '' ?>
+<section>
+    <a href="#" class="story-card scroll-track left-right delay-2 <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
+        <div class="hover-slide">
+            <?php if($imageExist): ?>
+                <div class="background-image" style="background-image: url(<?= $image ?>)"></div>
+            <?php endif; ?>
+        </div>
+        <article class="content">
+            <p class="tag">
+                <?= $tag ?? '' ?>
             </p>
-        </div>
-        <div class="cta">
-            <span class="text-link arrow-2">
-                <?= $cta ?? 'Read more'?>
-                <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
-            </span>
-        </div>
-    </div>
-</a>
+            <div class="title-description">
+                <h3 class="heading h5">
+                    <?= $title ?? '' ?>
+                </h3>
+                <p class="small-copy">
+                    <?= $description ?? '' ?>
+                </p>
+            </div>
+            <div class="cta">
+                <span class="text-link arrow-2">
+                    <?= $cta ?? 'Read more'?>
+                    <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
+                </span>
+            </div>
+        </article>
+    </a>
+</section>

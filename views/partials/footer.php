@@ -6,17 +6,15 @@ use helpers\Svg;
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell medium-12 large-10 large-offset-1">
-                <div class="footer-head flex-container align-justify align-bottom">
+                <header class="footer-head flex-container align-justify align-bottom">
                     <div class="flex-container align-middle logo">
                         <div class="undp-logo">
-                            <a href="/">
-                                <?php Svg::render('undp-logo-white') ?>
-                            </a>
+                            <?php Svg::render('undp-logo-white', true, 'undp-footer-logo') ?>
                         </div>
-                        <div>
+                        <hgroup>
                             <h3 class="footer-title light">United nations</h3>
                             <h3 class="footer-title light">Development program</h3>
-                        </div>
+                        </hgroup>
                     </div>
                     <div class="sign-up">
                         <form action="">
@@ -28,13 +26,13 @@ use helpers\Svg;
                             </div>
                         </form>
                     </div>
-                </div>
+                </header>
                 <div class="footer-body flex-container align-justify">
                     <div class="column who-we-are">
                         <h4 class="footer-subtitle light uppercase">
                             Who we are
                             <span class="footer-subtitle-arrow">
-                                <?php Svg::render('footer-arrow') ?>
+                                <?php Svg::render('footer-arrow', true, 'open options') ?>
                             </span>
                         </h4>
                         <ul class="list">
@@ -50,7 +48,7 @@ use helpers\Svg;
                         <h4 class="footer-subtitle light uppercase">
                             Who we do
                             <span class="footer-subtitle-arrow">
-                                <?php Svg::render('footer-arrow') ?>
+                                <?php Svg::render('footer-arrow', true, 'open options') ?>
                             </span>
                         </h4>
                         <ul class="list">
@@ -64,7 +62,7 @@ use helpers\Svg;
                         <h4 class="footer-subtitle light uppercase">
                             Our impact
                             <span class="footer-subtitle-arrow">
-                                <?php Svg::render('footer-arrow') ?>
+                                <?php Svg::render('footer-arrow', true, 'open options') ?>
                             </span>
                         </h4>
                         <ul class="list">
@@ -81,7 +79,7 @@ use helpers\Svg;
                         <h4 class="footer-subtitle light uppercase">
                             Get Involved
                             <span class="footer-subtitle-arrow">
-                                <?php Svg::render('footer-arrow') ?>
+                                <?php Svg::render('footer-arrow', true, 'open options') ?>
                             </span>
                         </h4>
                         <ul class="list">
@@ -97,7 +95,7 @@ use helpers\Svg;
                         <h4 class="footer-subtitle light uppercase">
                             Language
                             <span class="footer-subtitle-arrow">
-                                <?php Svg::render('footer-arrow') ?>
+                                <?php Svg::render('footer-arrow', true, 'open options') ?>
                             </span>
                         </h4>
                         <ul class="list">
@@ -110,11 +108,11 @@ use helpers\Svg;
                         <div >
                             <div class="flex-container align-right icons-search">
                                 <a class="icon" href="#" data-modal-open data-modal="modal-search-offices" aria-label="Locations">
-                                    <?php Svg::render('icon-www-white') ?>
+                                    <?php Svg::render('icon-www-white', true, 'location') ?>
                                     <span class="show-for-sr">Locations</span>
                                 </a>
                                 <a class="icon" href="#" aria-label="Search" data-modal-open data-modal="modal-popular-search">
-                                    <?php Svg::render('icon-search')?>
+                                    <?php Svg::render('icon-search-white', true, 'search')?>
                                     <span class="show-for-sr">Search</span>
                                 </a>
                             </div>
@@ -127,24 +125,24 @@ use helpers\Svg;
                                 </ul>
                             </div>
                             <div class="flex-container social-links">
-                                <a class="social-link" href="#" aria-label="UNDP on Facebook">
-                                    <div class="icon facebook"></div>
+                                <a class="social-link" href="https://www.facebook.com/UNDP" aria-label="UNDP on Facebook">
+                                    <img class="icon" src="/assets/images/icon-facebook.svg" alt="UNDP on Facebook">
                                     <span class="show-for-sr">UNDP on Facebook</span>
                                 </a>
-                                <a class="social-link" href="#" aria-label="UNDP on Twitter">
-                                    <div class="icon twitter"></div>
+                                <a class="social-link" href="https://twitter.com/UNDP/" aria-label="UNDP on Twitter">
+                                    <img class="icon" src="/assets/images/icon-twitter.svg" alt="UNDP on Twitter">
                                     <span class="show-for-sr">UNDP on Twitter</span>
                                 </a>
-                                <a class="social-link" href="" aria-label="UNDP on Instagram">
-                                    <div class="icon instagram"></div>
+                                <a class="social-link" href="https://www.instagram.com/UNDP/" aria-label="UNDP on Instagram">
+                                    <img class="icon" src="/assets/images/icon-instagram.svg" alt="UNDP on Instagram">
                                     <span class="show-for-sr">UNDP on Instagram</span>
                                 </a>
-                                <a class="social-link" href="#" aria-label="UNDP on LinkedIn">
-                                    <div class="icon linkedin"></div>
+                                <a class="social-link" href="https://www.linkedin.com/company/undp/" aria-label="UNDP on LinkedIn">
+                                    <img class="icon" src="/assets/images/icon-linkedin.svg" alt="UNDP on LinkedIn">
                                     <span class="show-for-sr">UNDP on LinkedIn</span>
                                 </a>
-                                <a class="social-link" href="#" aria-label="UNDP on Youtube">
-                                    <div class="icon youtube"></div>
+                                <a class="social-link" href="https://www.youtube.com/UNDP/" aria-label="UNDP on Youtube">
+                                    <img class="icon" src="/assets/images/icon-youtube.svg" alt="UNDP on Youtube">
                                     <span class="show-for-sr">UNDP on Youtube</span>
                                 </a>
                             </div>
@@ -158,11 +156,11 @@ use helpers\Svg;
                 <div class="column">
                     <div class="flex-container icons-search">
                         <a class="icon" href="#" data-modal-open data-modal="modal-search-offices" aria-label="Locations">
-                            <?php Svg::render('icon-www-white') ?>
+                            <?php Svg::render('icon-www-white', true, 'location') ?>
                             <span class="show-for-sr">Locations</span>
                         </a>
                         <a class="icon" href="#" aria-label="Search" data-modal-open data-modal="modal-popular-search">
-                            <?php Svg::render('icon-search')?>
+                            <?php Svg::render('icon-search-white', true, 'search')?>
                             <span class="show-for-sr">Search</span>
                         </a>
                     </div>
@@ -177,24 +175,24 @@ use helpers\Svg;
                         </div>
                     </div>
                     <div class="flex-container social-links">
-                        <a class="social-link" href="#" aria-label="UNDP on Facebook">
-                            <div class="icon facebook"></div>
+                        <a class="social-link" href="https://www.facebook.com/UNDP" aria-label="UNDP on Facebook">
+                            <img class="icon" src="/assets/images/icon-facebook.svg" alt="UNDP on Facebook">
                             <span class="show-for-sr">UNDP on Facebook</span>
                         </a>
-                        <a class="social-link" href="#" aria-label="UNDP on Twitter">
-                            <div class="icon twitter"></div>
+                        <a class="social-link" href="https://twitter.com/UNDP/" aria-label="UNDP on Twitter">
+                            <img class="icon" src="/assets/images/icon-twitter.svg" alt="UNDP on Twitter">
                             <span class="show-for-sr">UNDP on Twitter</span>
                         </a>
-                        <a class="social-link" href="" aria-label="UNDP on Instagram">
-                            <div class="icon instagram"></div>
+                        <a class="social-link" href="https://www.instagram.com/UNDP/" aria-label="UNDP on Instagram">
+                            <img class="icon" src="/assets/images/icon-instagram.svg" alt="UNDP on Instagram">
                             <span class="show-for-sr">UNDP on Instagram</span>
                         </a>
-                        <a class="social-link" href="#" aria-label="UNDP on LinkedIn">
-                            <div class="icon linkedin"></div>
+                        <a class="social-link" href="https://www.linkedin.com/company/undp/" aria-label="UNDP on LinkedIn">
+                            <img class="icon" src="/assets/images/icon-linkedin.svg" alt="UNDP on LinkedIn">
                             <span class="show-for-sr">UNDP on LinkedIn</span>
                         </a>
-                        <a class="social-link" href="#" aria-label="UNDP on Youtube">
-                            <div class="icon youtube"></div>
+                        <a class="social-link" href="https://www.youtube.com/UNDP/" aria-label="UNDP on Youtube">
+                            <img class="icon" src="/assets/images/icon-youtube.svg" alt="UNDP on Youtube">
                             <span class="show-for-sr">UNDP on Youtube</span>
                         </a>
                     </div>

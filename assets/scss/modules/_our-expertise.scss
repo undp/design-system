@@ -99,13 +99,13 @@
             left: 50%;
             opacity: 0;
             content: '';
-            width: 100%;
             z-index: -1;
             height: 100%;
             position: absolute;
-            max-width: $global-width;
+            width: calc(100% - 2.4rem);
             transform: translateX(-50%);
             transition: opacity 0.2s linear;
+            max-width: calc(192rem - 2.4rem);
             border-right: 1px solid $dark-blue-4;
             background-image: linear-gradient(90deg, $dark-blue-4 1px, rgba($dark-blue-4, 0) 1px);
             background-size: 25%;
@@ -113,11 +113,14 @@
     }
 
     .glide-expertise{
-        padding-top: 125px;
-        padding-left: 15px;
+        padding: 125px 0 80px 15px;
 
         @include breakpoint(small only){
             padding-top: 0;
+        }
+
+        .glide__track{
+            margin-top: 25px;
         }
 
         .section-title{

@@ -43,7 +43,7 @@ use helpers\View;
                             <?php Svg::render('icon-search')?>
                         </span>
                         <span class="hide" data-icon-close>
-                            <?php Svg::render('icon-close-big')?>
+                            <?php Svg::render('icon-close-big', true, 'Close Modal') ?>
                         </span>
                         <span class="show-for-sr">Search</span>
                     </a>
