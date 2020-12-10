@@ -11,7 +11,7 @@ use helpers\Svg;
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-annual-report-cover-2019.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-annual-report-cover-2019.jpg"
              alt="undp annual report">
     </div>
 </div>
@@ -26,7 +26,7 @@ use helpers\Svg;
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-hero-covid-poverty-2020.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-hero-covid-poverty-2020.jpg"
              alt="undp covid19">
     </div>
 </div>
@@ -68,7 +68,7 @@ use helpers\Svg;
         </div>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-serbia-roma-poverty.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-serbia-roma-poverty.jpg"
              alt="undp serbia roma poverty">
     </div>
 </div>
@@ -84,7 +84,7 @@ use helpers\Svg;
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-serbia-roma-poverty.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-serbia-roma-poverty.jpg"
              alt="undp serbia roma poverty">
     </div>
 </div>
@@ -98,7 +98,7 @@ use helpers\Svg;
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-ecuador-cocoa-other-bar-2019.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-ecuador-cocoa-other-bar-2019.jpg"
              alt="undp ecuador cocoa other bar">
     </div>
 </div>
@@ -112,7 +112,7 @@ use helpers\Svg;
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/unwomen-bangladesh-covid19-woman-2020.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/unwomen-bangladesh-covid19-woman-2020.jpg"
              alt="undp unwomen bangladesh">
     </div>
 </div>

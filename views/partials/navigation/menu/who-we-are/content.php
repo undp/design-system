@@ -26,7 +26,7 @@ use helpers\Svg;
         </div>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-africa-field-staff.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-africa-field-staff.jpg"
              alt="undp africa">
     </div>
 </div>
@@ -47,7 +47,7 @@ use helpers\Svg;
         </div>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-nyc-2019-achim-steiner.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-nyc-2019-achim-steiner.jpg"
              alt="undp nyc 2019 achim">
     </div>
 </div>
@@ -99,7 +99,7 @@ use helpers\Svg;
         </div>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-nyc-2020-executive-board.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-nyc-2020-executive-board.jpg"
              alt="image nav placeholder">
     </div>
 </div>
@@ -152,7 +152,7 @@ use helpers\Svg;
         </div>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-papp-2019-partnership-japan-football.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-papp-2019-partnership-japan-football.jpg"
              alt="undp papp 2019">
     </div>
 </div>
@@ -182,7 +182,7 @@ use helpers\Svg;
 
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/annual-report-result-page-vertica.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/annual-report-result-page-vertica.jpg"
              alt="undp funding">
     </div>
 </div>
@@ -255,6 +255,6 @@ use helpers\Svg;
         </div>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/transparency-portal-screen-shot-2020.jpg" alt="undp transparency">
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/transparency-portal-screen-shot-2020.jpg" alt="undp transparency">
     </div>
 </div>

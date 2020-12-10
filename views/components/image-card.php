@@ -3,5 +3,5 @@
 ?>
 
 <div class="image-card">
-    <div class="content" style="background-image: url(<?= $route ?>);"></div>
+    <div class="content lazy" style="background-image: url(<?= $route ?>);"></div>
 </div>
