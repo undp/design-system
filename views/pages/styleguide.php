@@ -278,10 +278,7 @@ use helpers\Svg;
                                 .text-link .arrow-3
                             </td>
                             <td>
-                                <a class="text-link arrow-3" href="#">
-                                    Read More
-                                    <?php Svg::render('btn-arrow-external-red', true, 'Read More', 'assets/images/arrows/')?>
-                                </a>
+                                <a class="text-link arrow-3" href="#">Read More</a>
                             </td>
                         </tr>
                         <tr>
