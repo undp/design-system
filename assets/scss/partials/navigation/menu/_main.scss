@@ -141,10 +141,17 @@
                             &:hover,
                             &:visited {
                                 color: $white;
+                            }
+                        }
+                    }
 
-                                svg {
-                                    color: $white;
-                                }
+                    &:hover {
+                        .arrow-3 {
+                            &:before {
+                                opacity: 0;
+                            }
+                            &:after {
+                                opacity: 1;
                             }
                         }
                     }
