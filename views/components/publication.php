@@ -28,7 +28,7 @@ use helpers\Svg;
                         </button>
                         <a class="text-link arrow-1 show-for-small-only" href="#">
                             Read More
-                            <?=  file_get_contents("assets/images/arrows/btn-arrow-red.svg");  ?>
+                            <?php Svg::render('btn-arrow-red', true, 'Read More', 'assets/images/arrows/')?>
                         </a>
                     </div>
                 </div>

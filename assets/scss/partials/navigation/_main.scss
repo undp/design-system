@@ -53,8 +53,9 @@
             .middle-logo {
                 display: block;
 
-                svg {
+                svg, img {
                     width: 70px;
+                    height: 142px;
                     transition: $transition-primary;
 
                     @include breakpoint(large down){
@@ -64,7 +65,7 @@
                 }
 
                 &.scrolled {
-                    svg {
+                    svg, img {
                         height: 106px;
 
                         @include breakpoint(medium down){

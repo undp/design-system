@@ -1,6 +1,7 @@
 <?php
 
 use helpers\View;
+use helpers\Svg;
 
 ?>
 <!-- Page Headers -->
@@ -198,7 +199,7 @@ use helpers\View;
                             <td>
                                 <button class="btn">
                                     Submit
-                                    <?= file_get_contents("assets/images/arrows/btn-arrow-blue.svg"); ?>
+                                    <?php Svg::render('btn-arrow-blue', true, 'Submit', 'assets/images/arrows/')?>
                                 </button>
                             </td>
                         </tr>
@@ -209,7 +210,7 @@ use helpers\View;
                             <td>
                                 <button class="btn-round">
                                         <span class="arrow">
-                                            <?= file_get_contents("assets/images/arrows/btn-arrow-white.svg"); ?>
+                                            <?php Svg::render('btn-arrow-white', true, 'Button', 'assets/images/arrows/')?>
                                         </span>
                                 </button>
                             </td>
@@ -221,7 +222,7 @@ use helpers\View;
                             <td>
                                 <button class="btn-round rotate">
                                         <span class="arrow">
-                                            <?= file_get_contents("assets/images/arrows/btn-arrow-white.svg"); ?>
+                                            <?php Svg::render('btn-arrow-white', true, 'Button', 'assets/images/arrows/')?>
                                         </span>
                                 </button>
                             </td>
@@ -233,7 +234,7 @@ use helpers\View;
                             <td>
                                 <button class="btn-round">
                                         <span class="arrow">
-                                            <?= file_get_contents("assets/images/arrows/btn-arrow-white-bold.svg"); ?>
+                                            <?php Svg::render('btn-arrow-white-bold', true, 'Button', 'assets/images/arrows/')?>
                                         </span>
                                 </button>
                             </td>
@@ -258,7 +259,7 @@ use helpers\View;
                             <td>
                                 <a class="text-link arrow-1" href="#">
                                     Read More
-                                    <?= file_get_contents("assets/images/arrows/btn-arrow-red.svg"); ?>
+                                    <?php Svg::render('btn-arrow-red', true, 'Read More', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>
@@ -269,7 +270,7 @@ use helpers\View;
                             <td>
                                 <a class="text-link arrow-2" href="#">
                                     Explore
-                                    <?= file_get_contents("assets/images/arrows/btn-arrow-red.svg"); ?>
+                                    <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>
@@ -280,7 +281,7 @@ use helpers\View;
                             <td>
                                 <a class="text-link arrow-3" href="#">
                                     Read More
-                                    <?= file_get_contents("assets/images/arrows/btn-arrow-external-red.svg"); ?>
+                                    <?php Svg::render('btn-arrow-external-red', true, 'Read More', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>
@@ -332,7 +333,7 @@ use helpers\View;
                             <td>
                                 <button class="btn dark">
                                     Submit
-                                    <?= file_get_contents("assets/images/arrows/btn-arrow-blue.svg"); ?>
+                                    <?php Svg::render('btn-arrow-blue', true, 'Submit', 'assets/images/arrows/')?>
                                 </button>
                             </td>
                         </tr>
@@ -343,7 +344,7 @@ use helpers\View;
                             <td>
                                 <button class="btn-round light-blue">
                                         <span class="arrow">
-                                            <?= file_get_contents("assets/images/arrows/btn-arrow-blue.svg"); ?>
+                                            <?php Svg::render('btn-arrow-blue', true, 'Arrow', 'assets/images/arrows/')?>
                                         </span>
                                 </button>
                             </td>
@@ -355,7 +356,7 @@ use helpers\View;
                             <td>
                                 <button class="btn-round light-blue rotate">
                                         <span class="arrow">
-                                            <?= file_get_contents("assets/images/arrows/btn-arrow-blue.svg"); ?>
+                                            <?php Svg::render('btn-arrow-blue', true, 'Arrow', 'assets/images/arrows/')?>
                                         </span>
                                 </button>
                             </td>
@@ -367,7 +368,7 @@ use helpers\View;
                             <td>
                                 <button class="btn-round light-blue">
                                         <span class="arrow">
-                                            <?= file_get_contents("assets/images/arrows/btn-arrow-blue-bold.svg"); ?>
+                                            <?php Svg::render('btn-arrow-blue-bold', true, 'Arrow', 'assets/images/arrows/')?>
                                         </span>
                                 </button>
                             </td>
@@ -392,7 +393,7 @@ use helpers\View;
                             <td>
                                 <a class="text-link arrow-1 light-red" href="#">
                                     Read More
-                                    <?= file_get_contents("assets/images/arrows/btn-arrow-red.svg"); ?>
+                                    <?php Svg::render('btn-arrow-red', true, 'Read More', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>
@@ -403,7 +404,7 @@ use helpers\View;
                             <td>
                                 <a class="text-link arrow-2 light-red" href="#">
                                     Explore
-                                    <?= file_get_contents("assets/images/arrows/btn-arrow-red.svg"); ?>
+                                    <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>
@@ -414,7 +415,7 @@ use helpers\View;
                             <td>
                                 <a class="text-link light-red arrow-3" href="#">
                                     Read More
-                                    <?= file_get_contents("assets/images/arrows/btn-arrow-external-red.svg"); ?>
+                                    <?php Svg::render('btn-arrow-external-red', true, 'Read More', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>
@@ -467,7 +468,7 @@ use helpers\View;
                             <td>
                                 <button class="btn light">
                                     Submit
-                                    <?= file_get_contents("assets/images/arrows/btn-arrow-blue.svg"); ?>
+                                    <?php Svg::render('btn-arrow-blue', true, 'Submit', 'assets/images/arrows/')?>
                                 </button>
                             </td>
                         </tr>
@@ -478,7 +479,7 @@ use helpers\View;
                             <td>
                                 <button class="btn-round light-red">
                                         <span class="arrow">
-                                            <?= file_get_contents("assets/images/arrows/btn-arrow-blue.svg"); ?>
+                                            <?php Svg::render('btn-arrow-blue', true, 'Arrow', 'assets/images/arrows/')?>
                                         </span>
                                 </button>
                             </td>
@@ -490,7 +491,7 @@ use helpers\View;
                             <td>
                                 <button class="btn-round light-red rotate">
                                         <span class="arrow">
-                                            <?= file_get_contents("assets/images/arrows/btn-arrow-blue.svg"); ?>
+                                            <?php Svg::render('btn-arrow-blue', true, 'Arrow', 'assets/images/arrows/')?>
                                         </span>
                                 </button>
                             </td>
@@ -502,7 +503,7 @@ use helpers\View;
                             <td>
                                 <button class="btn-round light-red">
                                         <span class="arrow">
-                                            <?= file_get_contents("assets/images/arrows/btn-arrow-blue-bold.svg"); ?>
+                                            <?php Svg::render('btn-arrow-blue-bold', true, 'Arrow', 'assets/images/arrows/')?>
                                         </span>
                                 </button>
                             </td>
@@ -527,7 +528,7 @@ use helpers\View;
                             <td>
                                 <a class="text-link arrow-1 light-blue" href="#">
                                     Read More
-                                    <?= file_get_contents("assets/images/arrows/btn-arrow-blue.svg"); ?>
+                                    <?php Svg::render('btn-arrow-blue', true, 'Read More', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>
@@ -538,7 +539,7 @@ use helpers\View;
                             <td>
                                 <a class="text-link arrow-2 light-blue" href="#">
                                     Explore
-                                    <?= file_get_contents("assets/images/arrows/btn-arrow-blue.svg"); ?>
+                                    <?php Svg::render('btn-arrow-blue', true, 'Arrow', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>
@@ -549,7 +550,7 @@ use helpers\View;
                             <td>
                                 <a class="text-link light-blue arrow-3" href="#">
                                     Read More
-                                    <?= file_get_contents("assets/images/arrows/btn-arrow-external-blue.svg"); ?>
+                                    <?php Svg::render('btn-arrow-external-blue', true, 'Arrow', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>
