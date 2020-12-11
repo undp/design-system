@@ -125,6 +125,7 @@ use helpers\View;
                 </div>
             </div>
         </div>
+        <div class="gradient-container hide-for-small-only"></div>
     </div>
 
     <?php
