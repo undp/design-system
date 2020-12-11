@@ -4,7 +4,7 @@ use helpers\View;
 <section class="our-expertise hide-section">
     <!-- Tablet & Desktop markup -->
     <div class="grid-container hide-for-small-only">
-        <div class="grid-x grid-padding-x medium-padding-collapse our-expertise-row">
+        <div class="grid-x our-expertise-row">
             <div class="small-offset-1 small-11 medium-offset-1 medium-5 hide-for-small-only">
                 <hgroup class="section-title">
                     <h2 class="heading h2">Our</h2>
@@ -33,7 +33,7 @@ use helpers\View;
                 </div>
             </div>
         </div>
-        <div class="grid-x grid-padding-x medium-padding-collapse our-expertise-row">
+        <div class="grid-x our-expertise-row">
             <div class="cell small-10 medium-3 expertise-section-left">
                 <div class="expertise-image">
                     <div class="background-video hide-for-small-only">
@@ -56,7 +56,7 @@ use helpers\View;
                 ?>
             </div>
         </div>
-        <div class="grid-x grid-padding-x medium-padding-collapse our-expertise-row">
+        <div class="grid-x our-expertise-row">
             <div class="cell small-10 medium-3 medium-offset-6 expertise-section-right">
                 <?php
                     View::render('components/expertise-card', [
@@ -79,7 +79,7 @@ use helpers\View;
                 </div>
             </div>
         </div>
-        <div class="grid-x grid-padding-x medium-padding-collapse our-expertise-row">
+        <div class="grid-x our-expertise-row">
             <div class="cell small-10 medium-3 expertise-section-left">
                 <div class="expertise-image">
                     <div class="background-video hide-for-small-only">
@@ -102,7 +102,7 @@ use helpers\View;
                 ?>
             </div>
         </div>
-        <div class="grid-x grid-padding-x medium-padding-collapse our-expertise-row">
+        <div class="grid-x our-expertise-row">
             <div class="cell small-10 medium-3 medium-offset-6 expertise-section-right">
                 <?php
                     View::render('components/expertise-card', [
