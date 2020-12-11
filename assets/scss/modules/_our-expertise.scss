@@ -18,12 +18,12 @@
     }
 
     .pin-spacer{
-        z-index: 10;
+        z-index: $z-index-2;
     }
 
     .gradient-container{
-        z-index: 0;
         height: 300px;
+        z-index: $z-index-0;
         transition: opacity 0.2s ease;
         background: linear-gradient(rgba($white, 0), rgba($white, 1));
 
