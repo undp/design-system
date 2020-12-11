@@ -4,9 +4,9 @@ use helpers\Svg;
 
 <section class="publication">
     <div class="grid-x publication-content">
-        <div class="cell small-10 medium-4">
+        <div class="cell small-10 medium-4 flex-container align-justify align-center">
             <div class="publication-image">
-                <img src="<?= $image ?>" alt="publication">
+                <img class="image" src="<?= $image ?>">
             </div>
         </div>
         <div class="cell small-offset-1 small-9 medium-offset-1 medium-6 flex-container align-center-middle">

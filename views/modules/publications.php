@@ -31,7 +31,7 @@ use helpers\View;
                     <li class="glide__slide">
                         <?php
                         View::render('components/publication',[
-                            'image' => '/assets/images/placeholder/publication-1.jpg',
+                            'image' => '/assets/images/placeholder/publication-1.png',
                             'tag' => 'Report',
                             'title' => 'Human mobility, shared opportunities',
                             'description' => 'This UNDP publication recommends actions for policymakers to enhance the benefits and reduce the costs of human mobility to help achieve the Sustainable Development Goals.',
@@ -42,7 +42,7 @@ use helpers\View;
                     <li class="glide__slide">
                         <?php
                         View::render('components/publication',[
-                            'image' => '/assets/images/placeholder/publication-2.jpg',
+                            'image' => '/assets/images/placeholder/publication-2.png',
                             'tag' => 'Report',
                             'title' => 'UNDP Annual Report 2019',
                             'description' => 'As one of the world’s largest multilateral development agencies, present in over 170 countries and territories, UNDP is on the frontlines of anticipating, understanding and acting on today’s opportunities and risks.',
@@ -53,7 +53,7 @@ use helpers\View;
                     <li class="glide__slide">
                         <?php
                         View::render('components/publication',[
-                            'image' => '/assets/images/placeholder/publication-3.jpg',
+                            'image' => '/assets/images/placeholder/publication-3.png',
                             'tag' => 'Report',
                             'title' => 'UNDP Issues Brief on Resilient Livelihoods Value Chains',
                             'description' => 'Through this thematic area, UNDP supports the advancement of climate resilient livelihoods for vulnerable communities, including resilient agricultural value chain development.',
