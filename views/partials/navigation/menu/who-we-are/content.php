@@ -202,7 +202,36 @@ use helpers\Svg;
             <a class="text-link arrow-1" href="#">
                 Ethics
                 <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
-            </a>
+            </a><div class="links">
+                <a class="text-link arrow-1" href="#">
+                    Audit and Investigations
+                    <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+                </a>
+                <a class="text-link arrow-1" href="#">
+                    Ethics
+                    <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+                </a>
+                <a class="text-link arrow-1" href="#">
+                    Evaluation
+                    <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+                </a>
+                <a class="text-link arrow-1" href="#">
+                    Transparency
+                    <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+                </a>
+                <a class="text-link arrow-1" href="#">
+                    Policies and procedures
+                    <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+                </a>
+                <a class="text-link arrow-1" href="#">
+                    Prevention and Response to Sexual Misconduct
+                    <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+                </a>
+                <a class="text-link arrow-1" href="#">
+                    Social and Environmental Responsibility
+                    <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+                </a>
+            </div>
             <a class="text-link arrow-1" href="#">
                 Evaluation
                 <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
