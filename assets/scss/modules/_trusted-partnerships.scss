@@ -1,5 +1,5 @@
 .trusted-partnerships {
-    padding: 240px 0 170px;
+    padding: 240px 0 240px;
     background-color: $white;
 
     @include breakpoint(1441px){
@@ -10,6 +10,11 @@
 
     @include breakpoint(small only){
         background-color: $dark-blue-6;
+    }
+
+    &.background-color{
+        background: $dark-blue-6;
+        transition: background-color 0.5s ease;
     }
 
     .big-copy {

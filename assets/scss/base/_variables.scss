@@ -64,6 +64,9 @@ $light-blue-4: #4AC3EA;
 $light-blue-5: #78CEEE;
 $light-blue-6: #A2DAF3;
 $light-blue-7: #B4E0F5;
+$background-gray-1: #c9d0d6;
+$background-gray-2: #9ea5ac;
+$background-gray-3: #414648;
 
 // Fonts
 $bold: 700;
@@ -87,7 +90,8 @@ $z-index-3: 15;
 $z-index-4: 20;
 $z-index-5: 25;
 $z-index-nav: 100;
-$z-index-modal: 99;
+$z-index-modal: 90;
+$z-index-modal-nav-hover: 95;
 
 // Transitions
 $transition-expertise-image: all 0.5s ease-in-out;

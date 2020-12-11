@@ -53,7 +53,7 @@
     position: fixed;
     top: $height-nav;
     overflow-y: auto;
-    z-index: $z-index-nav;
+    z-index: $z-index-modal-nav-hover;
     height: calc(100vh - #{$height-nav});
 
     @include breakpoint(medium down) {

@@ -94,6 +94,10 @@
                     font-size: 4.6rem;
                 }
 
+                @media screen and (min-width: 1200px) and (max-width: 1350px) {
+                    margin-top: 15px;
+                }
+
                 @include breakpoint(large down){
                     margin-top: 35px;
                 }
@@ -101,6 +105,12 @@
 
             .small-copy{
                 margin-top: 35px;
+
+
+                @media screen and (min-width: 1200px) and (max-width: 1350px) {
+                    margin-top: 15px;
+                }
+
 
                 @include breakpoint(large down){
                     margin-top: 20px;

@@ -6,12 +6,6 @@ use helpers\Svg;
 
 <section id="modal-popular-search" class="menu-modal modal-popular-search hide">
     <div class="grid-container fluid modal-content">
-        <div class="modal-head">
-            <button class="close-button show-for-xlarge" data-btn-close aria-label="Close">
-                <?php Svg::render('icon-close', true, 'Close Modal') ?>
-                <span class="show-for-sr">Close</span>
-            </button>
-        </div>
         <div class="grid-x modal-body">
             <div class="cell">
                 <div class="flex-container align-middle input-group">
