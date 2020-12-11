@@ -77,6 +77,8 @@
 
         .right-menu {
             .nav-item {
+                width: 24px;
+                height: 24px;
                 border: none;
                 color: $blue-0;
                 position: relative;
@@ -94,22 +96,14 @@
                     color: rgba($blue-0, 0.70);
                 }
 
-                &.active {
-                    &:before {
-                        top: -8px;
-                        right: -8px;
-                        content: '';
-                        z-index: -1;
-                        width: 40px;
-                        padding:2px;
-                        height: 40px;
-                        display: block;
-                        border-radius: 50%;
-                        position: absolute;
-                        background-color: rgba($dark-blue-3, 0.4);
-                    }
+                &:last-child {
+                    margin-right: 38px;
 
-                    color: rgba($blue-0, 0.70);
+                    @include breakpoint(large down) {
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
                 }
             }
         }

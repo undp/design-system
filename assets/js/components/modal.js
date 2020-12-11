@@ -14,14 +14,12 @@ class Modal {
 
         this.$body = $('body');
         this.$optionClose = null;
-        this.$window = $(window);
         this.$optionDefalt = null;
         this.$modalReference = null;
         this.$modals = $('[data-modal-open]');
         this.$header = $('[data-navigation]');
         this.$modalFilterName = 'modal-filter';
         this.$btnOpenFilter = '[data-open-filters]';
-        this.$btnCloseCurrentModal = '[data-btn-close]';
         this.$btnBackModalFilter = '[data-action-back]';
 
         //modals: references to close menu opened when the user open a new modal (this class)
@@ -35,57 +33,47 @@ class Modal {
 
     init() {
         this.listeners();
-        this.listenerWindowResize();
     }
 
     listeners() {
         this.$modals.each((i, modal) => {
             $(modal).click((env) => {
-                this.closeMenu();
                 env.preventDefault();
                 this.$modals.removeClass(this.classModalActive);
-                this.$modalReference = $(modal);
+                const addOptionClose = () => {
+                    if ($(modal).data('modal') === 'modal-popular-search') {
+                        this.closeMenu();
+                        this.$modalReference = $('[data-modal="modal-popular-search"]')
+                    }
+                    if ($(modal).data('modal') === 'modal-search-offices') {
+                        this.$modalReference = $('[data-modal="modal-search-offices"]')
+                    }
+                };
+                addOptionClose();
                 $('.menu-modal').addClass('hide');
                 const idModalOpen = $(modal).data('modal');
-                if (Foundation.MediaQuery.is('large down') && this.$modalReference.hasClass(this.classModalOpened)) {
+                if (this.$modalReference.hasClass(this.classModalOpened)) {
                     this.showOptionDefault();
                     this.$modalReference.removeClass(this.classModalOpened);
                     this.close();
                     return;
                 }
+                this.closeAllModals();
                 if (idModalOpen) {
                     this.currentModal = $('#' + $(modal).data('modal'));
                     if (this.currentModal) {
-                        const addOptionClose  = () => {
-                            if (Foundation.MediaQuery.is('large down')) {
-                                if ($(modal).data('modal') === 'modal-popular-search'){
-                                    this.$modalReference = $('.icon-search')
-                                }
-                            }
-                        };
-                        addOptionClose();
-
                         this.navPreviewWidth = this.$header.width();
                         this.$modalReference.addClass(this.classModalOpened)
                         this.$optionClose = this.$modalReference.find(this.dataOptionClose);
                         this.$optionDefalt = this.$modalReference.find(this.dataOptionDefault);
                         this.open();
-                        this.navCurrrentWidth =  this.$header.width();
-                        this.listenerCloseModal();
+                        this.navCurrrentWidth = this.$header.width();
                         this.listenerOpenFilters();
                         this.navSetMargin();
                     }
                 }
             });
         });
-    }
-
-    listenerCloseModal() {
-        const btnCloseModal = this.currentModal.find(this.$btnCloseCurrentModal);
-        $(btnCloseModal).click((evt) => {
-            evt.preventDefault();
-            this.close()
-        })
     }
 
     listenerOpenFilters() {
@@ -113,25 +101,12 @@ class Modal {
         }
     }
 
-    listenerWindowResize() {
-        this.$window.resize(() => {
-            if (Foundation.MediaQuery.is('large down') && this.$modalReference.hasClass(this.classModalOpened)) {
-                this.showOptionClose();
-            } else if (this.$optionClose) {
-                this.showOptionDefault();
-            }
-        })
-    }
-
     open() {
         this.$body.addClass('modal-open');
         this.currentModal.removeClass('hide');
         this.inputSearchAutoFocus();
         this.$modalReference.addClass(this.classModalActive);
-
-        if (Foundation.MediaQuery.is('large down')) {
-            this.showOptionClose();
-        }
+        this.showOptionClose();
     }
 
     //the modal hide the (scroll y) so we add his width on navigation to keep the same size
@@ -148,6 +123,11 @@ class Modal {
         this.$body.removeClass('modal-open');
         this.$modalReference.removeClass(this.classModalActive)
         this.$header.css('padding-right', 'unset')
+    }
+    closeAllModals() {
+        this.$modals.removeClass(this.classModalOpened);
+        this.$modals.find('[data-icon]').removeClass(this.classHide);
+        this.$modals.find('[data-icon-close]').addClass(this.classHide);
     }
 
     openFilters() {

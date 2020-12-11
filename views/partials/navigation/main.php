@@ -35,17 +35,22 @@ use helpers\View;
                 </div>
                 <div class="flex-container align-middle logo right-menu">
                     <a class="nav-item dark show-for-xlarge" href="#" data-modal-open data-modal="modal-search-offices">
-                        <?php Svg::render('icon-www') ?>
-                        <span class="show-for-sr">Locations</span>
+                        <span data-icon>
+                            <?php Svg::render('icon-www')?>
+                        </span>
+                        <span class="hide" data-icon-close>
+                            <?php Svg::render('icon-close-red', true, 'Close Modal') ?>
+                        </span>
+                        <span class="show-for-sr">Open/close Locations</span>
                     </a>
                     <a class="nav-item dark icon-search" href="#" data-modal-open data-modal="modal-popular-search">
                         <span data-icon>
                             <?php Svg::render('icon-search')?>
                         </span>
                         <span class="hide" data-icon-close>
-                            <?php Svg::render('icon-close-big', true, 'Close Modal') ?>
+                            <?php Svg::render('icon-close-red', true, 'Close Modal') ?>
                         </span>
-                        <span class="show-for-sr">Search</span>
+                        <span class="show-for-sr">Open/close Search</span>
                     </a>
                 </div>
             </div>
