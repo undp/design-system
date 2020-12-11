@@ -24,7 +24,7 @@
             <div class="cta">
                 <span class="text-link arrow-2">
                     <?= $cta ?? 'Read more'?>
-                    <?php Svg::render('btn-arrow-red-secondary', true, $cta ?? 'Read more', 'assets/images/arrows/')?>
+                    <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
                 </span>
             </div>
         </article>

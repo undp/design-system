@@ -99,11 +99,13 @@ const init = function () {
                 $('.trusted-partnerships-header').addClass('in-viewport');
                 $('.trusted-partnerships').addClass('background-color');
                 $('.our-expertise').removeClass('lines-background').addClass('background-color');
+                $('.gradient-container').addClass('opacity');
 
             },
             onLeaveBack: ()=>{
                 $('.our-expertise').addClass('lines-background').removeClass('background-color');
                 $('.trusted-partnerships').removeClass('background-color');
+                $('.gradient-container').removeClass('opacity');
             },
         }
     });

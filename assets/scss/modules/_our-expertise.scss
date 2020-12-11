@@ -17,6 +17,29 @@
         opacity: 0;
     }
 
+    .pin-spacer{
+        z-index: $z-index-2;
+    }
+
+    .gradient-container{
+        height: 300px;
+        z-index: $z-index-0;
+        transition: opacity 0.2s ease;
+        background: linear-gradient(rgba($white, 0), rgba($white, 1));
+
+        @include breakpoint(1441px){
+            height: 500px;
+        }
+
+        @include breakpoint(medium down){
+            height: 200px;
+        }
+
+        &.opacity{
+            opacity: 0;
+        }
+    }
+
     .our-expertise-row{
         position: relative;
 
@@ -107,11 +130,11 @@
             z-index: -1;
             height: 100%;
             position: absolute;
-            width: calc(100% - 2.4rem);
+            width: calc(100% - 4.8rem);
             transform: translateX(-50%);
-            transition: opacity 0.2s linear;
-            max-width: calc(192rem - 2.4rem);
-            border-right: 1px solid $dark-blue-4;
+            transition: opacity 0.2s ease-out;
+            max-width: calc(192rem - 4.8rem);
+            border-right: 2px solid $dark-blue-4;
             background-image: linear-gradient(90deg, $dark-blue-4 1px, rgba($dark-blue-4, 0) 1px);
             background-size: 25%;
         }
