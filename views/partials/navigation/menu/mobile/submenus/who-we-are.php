@@ -74,6 +74,7 @@ use helpers\Svg;
                 <li><a class="text-link arrow-1" href="#">Transparency</a></li>
                 <li><a class="text-link arrow-1" href="#">Policies and procedures</a></li>
                 <li><a class="text-link arrow-1" href="#">Prevention and Response to Sexual Misconduct</a></li>
+                <li><a class="text-link arrow-1" href="#">Social and Environmental Responsibility</a></li>
             </ul>
         </li>
     </ul>

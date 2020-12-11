@@ -1,3 +1,6 @@
+<?php
+use helpers\Svg;
+?>
 <div id="content-publications" class="grid-x modal-nav-content">
     <div class="cell large-auto content-text">
         <h2 class="title">Research & publications</h2>
@@ -37,6 +40,32 @@
             extreme poverty, is the greatest global challenge and an indispensable requirement for sustainable
             development.
         </p>
+        <div class="links">
+            <a class="text-link arrow-1" href="#">
+                People
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+            <a class="text-link arrow-1" href="#">
+                Planet
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+            <a class="text-link arrow-1" href="#">
+                Prosperity
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+            <a class="text-link arrow-1" href="#">
+                Peace
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+            <a class="text-link arrow-1" href="#">
+                Partnerships
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+            <a class="text-link arrow-1" href="#">
+                SDG Integration
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+        </div>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
         <img class="image" src="../../assets/images/placeholder/nav-hover/undp-serbia-roma-poverty.jpg"
