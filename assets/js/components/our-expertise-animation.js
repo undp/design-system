@@ -33,42 +33,25 @@ const init = function () {
         sections.forEach((target, index, array) => {
             let sectionImage = target.querySelector('.expertise-image');
 
-            // Parallax
-            gsap.timeline({
-                defaults: {
-                    duration: 5,
-                    ease: "slow"
-                },
-                scrollTrigger: {
-                    trigger: target,
-                    scrub: true,
-                    start: start,
-                    end: end
-                }
-            }).fromTo(target, {y: fromTargetY}, {duration: 4, y: toTargetY})
-                .fromTo(sectionImage,{y: fromImageY}, {duration: 5, y: toImageY}, 0)
+            if(index !== array.length - 1){
+                // Parallax
+                gsap.timeline({
+                    defaults: {
+                        duration: 5,
+                        ease: "slow"
+                    },
+                    scrollTrigger: {
+                        trigger: target,
+                        scrub: true,
+                        start: start,
+                        end: end
+                    }
+                }).fromTo(target, {y: fromTargetY}, {duration: 4, y: toTargetY})
+                    .fromTo(sectionImage,{y: fromImageY}, {duration: 5, y: toImageY}, 0)
+            }
 
             // Our expertise to Trusted Partners pinned image
             if(side === 'right' && index === array.length - 1){
-
-                let height = $('.trusted-partnerships').height();
-                let sectionHeight = $(sectionImage).outerHeight();
-
-                if(sectionHeight < height){
-                    height = height - (height - sectionHeight)
-                    height -= 70;
-                }
-
-                function recalculateSizes(){
-                    height = $('.trusted-partnerships').height();
-                    sectionHeight = $(sectionImage).outerHeight();
-
-                    if(sectionHeight < height){
-                        height = height - (height - sectionHeight)
-                        height -= 70;
-                    }
-
-                }
 
                 let animationScroll = null;
 
@@ -76,13 +59,13 @@ const init = function () {
                     animationScroll = gsap.timeline({
                         scrollTrigger: {
                             trigger: target,
-                            start: "top top+=300px",
-                            endTrigger:'.trusted-partnerships',
-                            end: `center top+=${height}px`,
+                            start: "top-=300px top",
+                            endTrigger:'.trusted-partnerships-header',
+                            end: () => 'center-=300px top+=' + target.offsetHeight/2,
                             pin: true,
                             scrub: true,
                             pinSpacing: false,
-                            invalidateOnRefresh: false
+                            invalidateOnRefresh: false,
                         }
                     });
                 }
@@ -94,7 +77,6 @@ const init = function () {
                     animationScroll.scrollTrigger.kill()
                     animationScroll.kill()
 
-                    recalculateSizes()
                     createAnimationTimeline()
                 }
 
@@ -106,6 +88,7 @@ const init = function () {
         });
     }
 
+    //trusted partnership transition
     gsap.timeline({
         scrollTrigger: {
             trigger: ".trusted-partnerships-header",
@@ -113,7 +96,14 @@ const init = function () {
             end: "bottom top",
             scrub: true,
             onEnter: ()=>{
-                $('.trusted-partnerships-header').addClass('in-viewport')
+                $('.trusted-partnerships-header').addClass('in-viewport');
+                $('.trusted-partnerships').addClass('background-color');
+                $('.our-expertise').removeClass('lines-background').addClass('background-color');
+
+            },
+            onLeaveBack: ()=>{
+                $('.our-expertise').addClass('lines-background').removeClass('background-color');
+                $('.trusted-partnerships').removeClass('background-color');
             },
         }
     });
