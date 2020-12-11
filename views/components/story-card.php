@@ -1,4 +1,5 @@
 <?php
+    use helpers\Svg;
     $imageExist = isset($image) && !empty($image);
 ?>
 <section>
