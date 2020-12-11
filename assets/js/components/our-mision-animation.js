@@ -27,7 +27,7 @@ const init = function () {
             endWhiteToBlue = "+=200px"
         }
 
-        whiteToBlue = gsap.fromTo('body',
+        whiteToBlue = gsap.fromTo('main',
             { backgroundColor: "#fff" },
             { backgroundColor: "#232E3E" })
 
@@ -48,7 +48,7 @@ const init = function () {
             startBlueToWhite = "bottom+=200px top+=70px"
         }
 
-        blueToWhite = gsap.fromTo('body',
+        blueToWhite = gsap.fromTo('main',
             { backgroundColor: "#232E3E" },
             { backgroundColor: "#fff",
                 immediateRender: false })
