@@ -15,17 +15,42 @@
         margin-top: 25px;
     }
 
-    .publication-image img{
+
+    .publication-image{
+        max-width: 450px;
         width: 100%;
 
-        @include breakpoint(small down){
-            width: 80%;
+        background: linear-gradient(to bottom,
+                $background-gray-1 70%,
+                $background-gray-1 70%,
+                $background-gray-3 70.5%,
+                $background-gray-2 69.5%,
+                $background-gray-2 100%);
+
+        @include breakpoint(medium down){
+            max-width: 350px;
         }
 
-        @include breakpoint(360px down) {
-            width: 70%;
+        @include breakpoint(360px down){
+            max-width: 200px;
+        }
+
+        .image{
+            width: 100%;
+            max-width: 450px;
+            padding: 25% 15%;
+
+            @include breakpoint(medium down){
+                max-width: 350px
+            }
+
+            @include breakpoint(360px down){
+                padding: 10%;
+                max-width: 200px;
+            }
         }
     }
+
 
     .publication-content{
         @include breakpoint(small only){
