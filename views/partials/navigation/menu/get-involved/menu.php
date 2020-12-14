@@ -3,7 +3,7 @@
         <a href="#" class="menu-item">New partnerships</a>
     </li>
     <li data-menu-option="content-expert-consultations">
-    <a class="text-link arrow-3 light-white" href="#" target="_blank">Online Consultations</a>
+    <a class="menu-item text-link arrow-3 light-white" href="#" target="_blank">Online Consultations</a>
     </li>
     <li data-menu-option="content-donate">
         <a class="text-link arrow-3 light-white" href="#" target="_blank">Donate</a>

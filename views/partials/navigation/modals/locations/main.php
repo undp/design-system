@@ -15,10 +15,7 @@ use helpers\View;
                 </a>
                 <div class="header-modal">
                     <h2 class="heading h2 title">Find Our Offices Around the World.</h2>
-                    <a class="text-link arrow-3" href="#">
-                        Go to GLOBAL SITE
-                        <?php Svg::render('btn-arrow-external-red', true, 'Go to GLOBAL SITE ', 'assets/images/arrows/')?>
-                    </a>
+                    <a class="text-link arrow-3" href="#" target="_blank">Go to GLOBAL SITE</a>
                     <p class="big-copy description">The UNDP works in 170 countries around the world. Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Duis auctor, ante sed auctor faucibus, diam ante pellentesque turpis, sit amet dictum felis felis bibendum nisl. </p>
                     <p class="tag uppercase hide-for-large tag-current-section">current selection</p>
                     <h3 class="heading h3 title hide-for-large title-undp"><span class="uppercase">undp</span> Global</h3>
