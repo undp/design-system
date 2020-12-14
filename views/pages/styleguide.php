@@ -9,7 +9,7 @@ use helpers\Svg;
 
 <body>
 <!-- Navigation -->
-<?php View::render('partials/navigation') ?>
+<?php View::render('partials/navigation/main') ?>
 
 <div class="styleguide">
     <!--  headings  -->
@@ -279,10 +279,7 @@ use helpers\Svg;
                                 .text-link .arrow-3
                             </td>
                             <td>
-                                <a class="text-link arrow-3" href="#">
-                                    Read More
-                                    <?php Svg::render('btn-arrow-external-red', true, 'Read More', 'assets/images/arrows/')?>
-                                </a>
+                                <a class="text-link arrow-3" href="#">Read More</a>
                             </td>
                         </tr>
                         <tr>
@@ -415,7 +412,6 @@ use helpers\Svg;
                             <td>
                                 <a class="text-link light-red arrow-3" href="#">
                                     Read More
-                                    <?php Svg::render('btn-arrow-external-red', true, 'Read More', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>
@@ -550,7 +546,6 @@ use helpers\Svg;
                             <td>
                                 <a class="text-link light-blue arrow-3" href="#">
                                     Read More
-                                    <?php Svg::render('btn-arrow-external-blue', true, 'Arrow', 'assets/images/arrows/')?>
                                 </a>
                             </td>
                         </tr>

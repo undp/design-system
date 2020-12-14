@@ -17,13 +17,22 @@ use helpers\Svg;
             <a class="menu-item-title" href="#">Procurement</a>
         </li>
         <li class="menu-item">
-            <a class="menu-item-title" href="#">Expert Consultations</a>
+            <a class="menu-item-title text-link arrow-4" href="#" target="_blank">
+                Expert Consultations
+                <?= file_get_contents("assets/images/arrows/btn-arrow-external-red.svg"); ?>
+            </a>
         </li>
         <li class="menu-item">
-            <a class="menu-item-title" href="#">UNDP Shop</a>
+            <a class="menu-item-title text-link arrow-4" href="#" target="_blank">
+                UNDP Shop
+                <?= file_get_contents("assets/images/arrows/btn-arrow-external-red.svg"); ?>
+            </a>
         </li>
         <li class="menu-item">
-            <a class="menu-item-title" href="#">Donate</a>
+            <a class="menu-item-title text-link arrow-4" href="#" target="_blank">
+                Donate
+                <?= file_get_contents("assets/images/arrows/btn-arrow-external-red.svg"); ?>
+            </a>
         </li>
         <li class="menu-item">
             <a class="menu-item-title" href="#">Contact Us</a>

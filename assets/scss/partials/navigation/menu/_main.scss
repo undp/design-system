@@ -145,10 +145,23 @@
                         }
                     }
 
+                    &:hover,
+                    &:focus,
+                    &.active {
+                        .arrow-3 {
+                            &:before {
+                                opacity: 0;
+                            }
+                            &:after {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
                     a {
                         color: $black;
                         line-height: 1.5;
-                        font-size: 1.5rem;
+                        font-size: 1.3rem;
                         font-weight: $bold;
 
                         &:active,
