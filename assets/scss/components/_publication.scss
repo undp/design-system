@@ -17,8 +17,20 @@
 
 
     .publication-image{
-        max-width: 450px;
         width: 100%;
+        z-index: -2;
+        padding: 64px;
+        max-width: 450px;
+        position: relative;
+
+        @include breakpoint(medium down){
+            padding: 50px 35px;
+        }
+
+        @include breakpoint(small only){
+            padding: 20px;
+        }
+
 
         background: linear-gradient(to bottom,
                 $background-gray-1 70%,
@@ -38,7 +50,7 @@
         .image{
             width: 100%;
             max-width: 450px;
-            padding: 25% 15%;
+            z-index: $z-index-2;
 
             @include breakpoint(medium down){
                 max-width: 350px
@@ -48,66 +60,98 @@
                 padding: 10%;
                 max-width: 200px;
             }
+
+        }
+
+        &::before{
+            content: '';
+            left: 36px;
+            z-index: -1;
+            right: 70px;
+            height: 32px;
+            bottom: 64px;
+            filter: blur(8px);
+            border-radius: 21%;
+            position: absolute;
+            transform: skewX(64deg);
+            background: $background-gray-4;
+
+            @include breakpoint(medium down){
+                left: 14px;
+                right: 38px;
+                height: 23px;
+                bottom: 50px;
+                border-radius: 0;
+            }
+
+            @include breakpoint(small only){
+                left: 4px;
+                right: 30px;
+                height: 16px;
+                bottom: 20px;
+                filter: blur(4px);
+            }
+    }
+
+}
+
+
+.publication-content{
+    @include breakpoint(small only){
+        margin-top: 25px;
+    }
+
+    .heading.h3{
+        overflow: hidden;
+        margin-top: 25px;
+        max-height: 115px;
+        font-weight: $regular;
+
+        @include breakpoint(medium down){
+            max-height: 75px;
+            font-size: 2.5rem;
+        }
+
+        @include breakpoint(small only){
+            margin-top: 20px;
+            font-size: 2rem;
         }
     }
 
+    .big-copy{
+        height: 108px;
+        overflow: hidden;
+        margin-top: 25px;
 
-    .publication-content{
+        @include breakpoint(medium down){
+            height: 55px;
+        }
+
+        @include breakpoint(small only){
+            margin-top: 20px;
+            font-size: 1.4rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    }
+
+    .controls{
+        display: flex;
+        margin-top: 95px;
+        justify-content: space-between;
+
+        @include breakpoint(medium down){
+            margin-top: 70px;
+        }
+
         @include breakpoint(small only){
             margin-top: 25px;
         }
 
-        .heading.h3{
-            overflow: hidden;
-            margin-top: 25px;
-            max-height: 115px;
-            font-weight: $regular;
-
-            @include breakpoint(medium down){
-                max-height: 75px;
-                font-size: 2.5rem;
-            }
-
-            @include breakpoint(small only){
-                margin-top: 20px;
-                font-size: 2rem;
-            }
-        }
-
-        .big-copy{
-            height: 108px;
-            overflow: hidden;
-            margin-top: 25px;
-
-            @include breakpoint(medium down){
-                height: 55px;
-            }
-
-            @include breakpoint(small only){
-                margin-top: 20px;
-                font-size: 1.4rem;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-            }
-        }
-
-        .controls{
-            display: flex;
-            margin-top: 95px;
-            justify-content: space-between;
-
-            @include breakpoint(medium down){
-                margin-top: 70px;
-            }
-
-            @include breakpoint(small only){
-                margin-top: 25px;
-            }
-
-            .btn-round.rotate{
-                margin-right: 30px;
-            }
+        .btn-round.rotate{
+            margin-right: 30px;
         }
     }
+}
 }
