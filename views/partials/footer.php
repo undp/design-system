@@ -158,7 +158,7 @@ use helpers\Svg;
             <div class="small-11 medium-6 legal">
                 <div class="column">
                     <div class="flex-container icons-search">
-                        <a class="icon" href="#" data-modal-open data-modal="modal-search-offices" aria-label="Locations">
+                        <a class="icon" href="#" data-modal-open data-modal="modal-search-offices" data-open-from-footer aria-label="Locations">
                             <?php Svg::render('icon-www-white', true, 'location') ?>
                             <span class="show-for-sr">Locations</span>
                         </a>
