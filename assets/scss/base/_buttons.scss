@@ -116,6 +116,15 @@
             &:after {
                 opacity: 1;
             }
+
+            &.light-white {
+                &.icon-footer {
+                    &:after {
+                        background-color: rgba($white, 0.7);
+                    }
+                }
+            }
+
         }
     }
 
