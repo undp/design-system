@@ -21,6 +21,15 @@
             .text-link-inline {
                 margin-top: 30px;
             }
+
+            .text-link {
+                display: inline;
+                position: relative;
+
+                svg {
+                    position: absolute;
+                }
+            }
         }
     }
 
