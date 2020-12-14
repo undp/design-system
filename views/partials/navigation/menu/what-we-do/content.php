@@ -7,7 +7,7 @@
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-peru-2016-kids.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-peru-2016-kids.jpg"
              alt="undp peru kids">
     </div>
 </div>
@@ -20,7 +20,7 @@
             and their opportunities and choices.</p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-iraq-2018-education.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-iraq-2018-education.jpg"
              alt="undp iraq education">
     </div>
 </div>
@@ -35,7 +35,7 @@
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-yemen-2020-solar-panels-covid19.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-yemen-2020-solar-panels-covid19.jpg"
              alt="solar panel covid19">
     </div>
 </div>
@@ -49,7 +49,7 @@
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-guinee-bissau_2019.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-guinee-bissau_2019.jpg"
              alt="undp guinee bissau">
     </div>
 </div>

@@ -6,7 +6,7 @@ use helpers\Svg;
     <div class="grid-x publication-content">
         <div class="cell small-10 medium-4 flex-container align-justify align-center overflow-hidden">
             <div class="publication-image">
-                <img class="image" src="<?= $image ?>">
+                <img class="image lazy" data-src="<?= $image ?>">
             </div>
         </div>
         <div class="cell small-offset-1 small-9 medium-offset-1 medium-6 flex-container align-center-middle">

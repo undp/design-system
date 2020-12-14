@@ -1,4 +1,35 @@
-<div id="content-careers" class="grid-x modal-nav-content">
+<?php
+use helpers\Svg;
+?>
+
+<div id="content-new-partnerships" class="grid-x modal-nav-content">
+    <div class="cell large-auto content-text">
+        <h2 class="title">New partnerships</h2>
+        <p class="big-copy description">
+            UNDP Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae cupiditate dicta distinctio fugiat in inventore iusto maxime minima minus natus porro quibusdam, quos sapiente soluta ullam veniam voluptas voluptate voluptatum?
+        </p>
+        <div class="links">
+            <a class="text-link arrow-1" href="#">
+                For governments
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+            <a class="text-link arrow-1" href="#">
+                For private sector
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+            <a class="text-link arrow-1" href="#">
+                For non-governmental organizations
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+        </div>
+    </div>
+    <div class="cell large-auto flex-container align-right content-image">
+        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-iq-karbala-gis-mapping-covid.jpg"
+             alt="undp iq karbala gis mapping covid">
+    </div>
+</div>
+
+<div id="content-careers" class="grid-x modal-nav-content hide">
     <div class="cell large-auto content-text">
         <h2 class="title">Jobs</h2>
         <p class="big-copy description">
@@ -8,7 +39,7 @@
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-iq-karbala-gis-mapping-covid.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-iq-karbala-gis-mapping-covid.jpg"
              alt="undp iq karbala gis mapping covid">
     </div>
 </div>
@@ -20,9 +51,27 @@
             As a public organization entrusted with donor funds and committed to supporting developing economies, UNDP
             works to improve access to quality assured supplies in a cost effective and reliable way.
         </p>
+        <div class="links">
+            <a class="text-link arrow-1" href="#">
+                Sustainable procurement
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+            <a class="text-link arrow-1" href="#">
+                Doing business with UNDP
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+            <a class="text-link arrow-1" href="#">
+                Procurement training
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+            <a class="text-link arrow-1" href="#">
+                About us
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+            </a>
+        </div>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-vietnam-2020-face-mask-dstribution.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-vietnam-2020-face-mask-dstribution.jpg"
              alt="undp vietnam 2020 face mask distribution">
     </div>
 </div>
@@ -36,7 +85,7 @@
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/shutterstock-woman-online.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/shutterstock-woman-online.jpg"
              alt="shutterstock woman online">
     </div>
 </div>
@@ -50,7 +99,7 @@
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-nyc-marketing-bag.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-nyc-marketing-bag.jpg"
              alt="undp nyc marketing bag">
     </div>
 </div>
@@ -64,7 +113,7 @@
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-bangladesh-2020-covid-distribution.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-bangladesh-2020-covid-distribution.jpg"
              alt="undp bangladesh 2020 covid distribution">
     </div>
 </div>
@@ -78,7 +127,7 @@
         </p>
     </div>
     <div class="cell large-auto flex-container align-right content-image">
-        <img class="image" src="../../assets/images/placeholder/nav-hover/undp-uzbekistan-2018_girls-who-code.jpg"
+        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-uzbekistan-2018_girls-who-code.jpg"
              alt="undp girls who code">
     </div>
 </div>
