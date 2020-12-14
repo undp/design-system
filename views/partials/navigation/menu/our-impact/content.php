@@ -1,5 +1,7 @@
 <?php
+
 use helpers\Svg;
+
 ?>
 <div id="content-publications" class="grid-x modal-nav-content">
     <div class="cell large-auto content-text">
@@ -43,28 +45,30 @@ use helpers\Svg;
         <div class="links">
             <a class="text-link arrow-1" href="#">
                 People
-                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/') ?>
             </a>
             <a class="text-link arrow-1" href="#">
                 Planet
-                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/') ?>
             </a>
             <a class="text-link arrow-1" href="#">
                 Prosperity
-                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/') ?>
             </a>
             <a class="text-link arrow-1" href="#">
                 Peace
-                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/') ?>
             </a>
             <a class="text-link arrow-1" href="#">
                 Partnerships
-                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
+                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/') ?>
             </a>
-            <a class="text-link arrow-1" href="#">
-                SDG Integration
-                <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
-            </a>
+            <div class="text-link-inline">
+                <a class="text-link arrow-3" href="#" target="_blank">
+                    SDG Integration
+                </a>
+            </div>
+
         </div>
     </div>
     <div class="cell large-auto flex-container align-right content-image">

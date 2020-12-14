@@ -19,16 +19,16 @@ use helpers\Svg;
             </ul>
         </li>
         <li class="menu-item">
-            <a class="menu-item-title" href="#" target="_blank">Online Consultations</a>
+            <a class="menu-item-title text-link arrow-3" href="#" target="_blank">Online Consultations</a>
         </li>
         <li class="menu-item">
-            <a class="menu-item-title" href="#" target="_blank">Donate</a>
+            <a class="menu-item-title text-link arrow-3" href="#" target="_blank">Donate</a>
         </li>
         <li class="menu-item">
-            <a class="menu-item-title" href="#" target="_blank">UNDP Shop</a>
+            <a class="menu-item-title text-link arrow-3" href="#" target="_blank">UNDP Shop</a>
         </li>
         <li class="menu-item">
-            <a class="menu-item-title" href="#">Careers</a>
+            <a class="menu-item-title text-link arrow-3" href="#" target="_blank">Careers</a>
         </li>
         <li class="menu-item">
             <a class="menu-item-title" href="#">Procurement</a>
