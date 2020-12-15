@@ -244,8 +244,11 @@
                     background-image: url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
                     mask-image: url("#{$image-path}arrows/btn-arrow-external.svg");
                 }
+            }
 
-                &.icon-footer {
+            &.icon-footer {
+                .arrow {
+
                     &:before,
                     &:after {
                         bottom: 0;
