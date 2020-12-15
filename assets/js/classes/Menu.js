@@ -69,6 +69,7 @@ class Menu {
 
                 if(!btnBack.hasClass('open-from-footer')) {
                     this.openMenu();
+                    this.closeSubmenu();
                 }
             });
         }
