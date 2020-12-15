@@ -3,38 +3,28 @@
         <p class="text-link">Region</p>
         <div class="checkbox-group">
             <label class="checkbox-item">
-                <input type="checkbox">
+                <input type="checkbox" value="africa">
+                Africa
+                <span class="checkmark"></span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" value="arab-states">
                 Arab States
                 <span class="checkmark"></span>
             </label>
             <label class="checkbox-item">
-                <input type="checkbox">
-                East Asia and the Pacific
+                <input type="checkbox" value="east-asia">
+                Asia and the Pacific
                 <span class="checkmark"></span>
             </label>
             <label class="checkbox-item">
-                <input type="checkbox">
+                <input type="checkbox" value="europe">
                 Europe and Central Asia
                 <span class="checkmark"></span>
             </label>
             <label class="checkbox-item">
-                <input type="checkbox">
+                <input type="checkbox" value="latin-america">
                 Latin America and the Caribbean
-                <span class="checkmark"></span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox">
-                Latin America and the Caribbean
-                <span class="checkmark"></span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox">
-                South Asia
-                <span class="checkmark"></span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox">
-                Sub-Saharan Africa
                 <span class="checkmark"></span>
             </label>
         </div>
@@ -43,43 +33,24 @@
     <div class="filter-office-type">
         <p class="text-link">Office Type</p>
         <div class="checkbox-group">
-            <label class="checkbox-item">One
-                <input type="checkbox" checked="checked">
+            <label class="checkbox-item">
+                <input type="checkbox" value="regional_office">
+                Regional Office
                 <span class="checkmark"></span>
             </label>
             <label class="checkbox-item">
-                <input type="checkbox">
-                Arab States
+                <input type="checkbox" value="country_office">
+                Country Office
                 <span class="checkmark"></span>
             </label>
             <label class="checkbox-item">
-                <input type="checkbox">
-                East Asia and the Pacific
+                <input type="checkbox" value="representation_office">
+                Representation Office
                 <span class="checkmark"></span>
             </label>
             <label class="checkbox-item">
-                <input type="checkbox">
-                Europe and Central Asia
-                <span class="checkmark"></span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox">
-                Latin America and the Caribbean
-                <span class="checkmark"></span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox">
-                Latin America and the Caribbean
-                <span class="checkmark"></span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox">
-                South Asia
-                <span class="checkmark"></span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox">
-                Sub-Saharan Africa
+                <input type="checkbox" value="policy_centres_office">
+                Policy Centres
                 <span class="checkmark"></span>
             </label>
         </div>
