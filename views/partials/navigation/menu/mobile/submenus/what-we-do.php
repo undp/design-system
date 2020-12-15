@@ -17,7 +17,7 @@ use helpers\Svg;
         <li class="menu-item">
             <a class="menu-item-title text-link arrow-3" href="#" target="_blank">
                 Human development report
-                <span class="arrow">
+                <span class="arrow"></span>
             </a>
         </li>
         <li class="menu-item">

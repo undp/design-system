@@ -66,7 +66,7 @@ use helpers\Svg;
             <div class="text-link-inline">
                 <a class="text-link arrow-3" href="#" target="_blank">
                     SDG Integration
-                    <span class="arrow">
+                    <span class="arrow"></span>
                 </a>
             </div>
 

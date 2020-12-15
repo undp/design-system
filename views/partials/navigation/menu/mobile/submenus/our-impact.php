@@ -21,7 +21,7 @@ use helpers\Svg;
                 <li><a class="text-link arrow-1" href="#">Prosperity</a></li>
                 <li><a class="text-link arrow-1" href="#">Peace</a></li>
                 <li><a class="text-link arrow-1" href="#">Partnerships</a></li>
-                <li><a class="text-link arrow-3" href="#" target="_blank">SDG Integration <span class="arrow"></a></li>
+                <li><a class="text-link arrow-3" href="#" target="_blank">SDG Integration <span class="arrow"></span></a></li>
             </ul>
         </li>
         <li class="menu-item">

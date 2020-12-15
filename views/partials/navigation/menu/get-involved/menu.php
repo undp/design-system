@@ -6,13 +6,13 @@
     <a class="menu-item text-link arrow-3 light-white" href="#" target="_blank">Online Consultations <span class="arrow"></span></a>
     </li>
     <li data-menu-option="content-donate">
-        <a class="text-link arrow-3 light-white" href="#" target="_blank">Donate <span class="arrow"></a>
+        <a class="text-link arrow-3 light-white" href="#" target="_blank">Donate <span class="arrow"></span></a>
     </li>
     <li data-menu-option="content-undp-shop">
-        <a class="text-link arrow-3 light-white" href="#" target="_blank">UNDP Shop <span class="arrow"></a>
+        <a class="text-link arrow-3 light-white" href="#" target="_blank">UNDP Shop <span class="arrow"></span></a>
     </li>
     <li data-menu-option="content-careers">
-        <a class="text-link arrow-3 light-white" href="#" target="_blank">Careers <span class="arrow"></a>
+        <a class="text-link arrow-3 light-white" href="#" target="_blank">Careers <span class="arrow"></span></a>
     </li>
     <li data-menu-option="content-procurement">
         <a href="#" class="menu-item">Procurement</a>
