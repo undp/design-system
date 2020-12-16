@@ -1,5 +1,6 @@
 .styleguide {
     padding: 100px 0;
+    margin-top : calc(#{$height-nav} + 50px);
 
     .heading {
         .title {

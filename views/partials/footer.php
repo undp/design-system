@@ -53,7 +53,10 @@ use helpers\Svg;
                         </h4>
                         <ul class="list">
                             <li><a class="footer-menu-item light" href="#">Sustainable Development Goals</a></li>
-                            <li><a class="footer-menu-item light" href="#">Human Development Report</a></li>
+                            <li><a class="footer-menu-item light text-link arrow-3 light-white icon-footer" href="#" target="_blank">
+                                    Human Development Report
+                                </a>
+                            </li>
                             <li><a class="footer-menu-item light" href="#">Development Challenges and Solutions</a></li>
                             <li><a class="footer-menu-item light" href="#">Strategic Initiatives</a></li>
                         </ul>
@@ -85,9 +88,9 @@ use helpers\Svg;
                         <ul class="list">
                             <li><a class="footer-menu-item light" href="#">Careers</a></li>
                             <li><a class="footer-menu-item light" href="#">Procurement</a></li>
-                            <li><a class="footer-menu-item light" href="#">Expert Consultations</a></li>
-                            <li><a class="footer-menu-item light" href="#">UNDP Shop</a></li>
-                            <li><a class="footer-menu-item light" href="#">Donate</a></li>
+                            <li><a class="footer-menu-item light text-link arrow-3 light-white icon-footer" href="#" target="_blank">Expert <br>Consultations</a></li>
+                            <li><a class="footer-menu-item light text-link arrow-3 light-white icon-footer" href="#" target="_blank">UNDP Shop</a></li>
+                            <li><a class="footer-menu-item light text-link arrow-3 light-white icon-footer" href="#" target="_blank">Donate</a></li>
                             <li><a class="footer-menu-item light" href="#">Contact Us</a></li>
                         </ul>
                     </div>
@@ -155,7 +158,7 @@ use helpers\Svg;
             <div class="small-11 medium-6 legal">
                 <div class="column">
                     <div class="flex-container icons-search">
-                        <a class="icon" href="#" data-modal-open data-modal="modal-search-offices" aria-label="Locations">
+                        <a class="icon" href="#" data-modal-open data-modal="modal-search-offices" data-open-from-footer aria-label="Locations">
                             <?php Svg::render('icon-www-white', true, 'location') ?>
                             <span class="show-for-sr">Locations</span>
                         </a>

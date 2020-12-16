@@ -64,9 +64,12 @@ class Menu {
     bindCloseSubmenu() {
         const btnBack = this.currentSubmenu.find(this.dataBtnBack);
         if (btnBack) {
-            btnBack.click(() => {
-                this.openMenu();
-                this.closeSubmenu();
+            btnBack.click((event) => {
+                event.stopPropagation();
+
+                if(!btnBack.hasClass('open-from-footer')) {
+                    this.openMenu();
+                }
             });
         }
     }

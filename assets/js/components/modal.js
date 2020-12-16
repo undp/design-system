@@ -11,6 +11,8 @@ class Modal {
         this.classModalOpened = 'modal-opened';
         this.navPreviewWidth = 0;
         this.navCurrrentWidth = 0;
+        this.dataModalLocationClose = '[data-btn-close]';
+        this.classModalOpenFromFooter = 'open-from-footer';
 
         this.$body = $('body');
         this.$optionClose = null;
@@ -70,6 +72,19 @@ class Modal {
                         this.navCurrrentWidth = this.$header.width();
                         this.listenerOpenFilters();
                         this.navSetMargin();
+
+                        const mobileModalLocationListenerClose = () => {
+                            const btnBack = this.currentModal.find(this.dataModalLocationClose);
+
+                            if (typeof $(modal).data(this.classModalOpenFromFooter) !== 'undefined') {
+                                this.closeMenu();
+                                this.listenerCloseModal();
+                                btnBack.addClass(this.classModalOpenFromFooter);
+                            }else {
+                                btnBack.removeClass(this.classModalOpenFromFooter);
+                            }
+                        };
+                        mobileModalLocationListenerClose();
                     }
                 }
             });
@@ -155,6 +170,14 @@ class Modal {
         this.$mainMenu.addClass(this.classHide);
         this.$body.removeClass(this.bodyMenuOpenClass)
         this.$hamburguer.removeClass(this.menuOpenClass);
+    }
+
+    //modal opened from footer
+    listenerCloseModal() {
+        let btnBack = this.currentModal.find(this.dataModalLocationClose);
+        btnBack.click(() => {
+            this.close();
+        })
     }
 }
 

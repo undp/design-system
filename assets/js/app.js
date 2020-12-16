@@ -5,6 +5,7 @@ import inputs from './components/inputs'
 import customSelect from './components/select'
 import ourExpertiseSectionAnimation from './components/our-expertise-animation'
 import modalNav from './components/modal-nav'
+import lazyLoad from './components/lazy-load'
 import navigation from './components/navigation'
 import dropdown from './components/dropdown-languajes'
 import footerMenu from './partials/footer-menu-mobile'
@@ -22,6 +23,7 @@ function main() {
     ourExpertiseSectionAnimation()
     dropdown()
     modalNav()
+    lazyLoad()
     footerMenu()
     navigation()
     locationFilters()

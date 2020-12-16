@@ -1,5 +1,5 @@
 <article class="stat-card">
-    <div class="bg-image" style="background-image: url(<?= $image ?>)"></div>
+    <div class="bg-image lazy" style="background-image: url(<?= $image ?>)"></div>
     <div class="card-content">
         <div class="numerals outline">
             <?= $number ?? '' ?>

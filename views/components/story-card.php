@@ -6,7 +6,7 @@
     <a href="#" class="story-card scroll-track left-right delay-2 <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
         <div class="hover-slide">
             <?php if($imageExist): ?>
-                <div class="background-image" style="background-image: url(<?= $image ?>)"></div>
+                <div class="background-image lazy" style="background-image: url(<?= $image ?>)"></div>
             <?php endif; ?>
         </div>
         <article class="content">

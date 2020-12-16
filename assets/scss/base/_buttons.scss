@@ -107,6 +107,25 @@
         &.light-red {
             color: $dark-blue-4;
         }
+
+        &.arrow-3 {
+            &:before {
+                opacity: 0;
+            }
+
+            &:after {
+                opacity: 1;
+            }
+
+            &.light-white {
+                &.icon-footer {
+                    &:after {
+                        background-color: rgba($white, 0.7);
+                    }
+                }
+            }
+
+        }
     }
 
     &.arrow-1 {
@@ -157,11 +176,79 @@
 
     &.arrow-3 {
         display: unset;
+        position: relative;
+        padding-right: 32px;
+
+        &:after,
+        &:before {
+            right: 0;
+            bottom: 3px;
+            content: '';
+            width: 20px;
+            height: 18px;
+            display: block;
+            position: absolute;
+            mask-repeat: no-repeat;
+            background-position: center;
+        }
+
+        //arrow default
+        &:before {
+
+            background-color: $red;
+            background-image: url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
+            mask-image: url("#{$image-path}arrows/btn-arrow-external.svg");
+        }
+
+        // arrow hover
+        &:after {
+            opacity: 0;
+            background-color: $red;
+            background-image: url("#{$image-path}arrows/btn-arrow-external-hover.svg") no-repeat;
+            mask-image: url("#{$image-path}arrows/btn-arrow-external-hover.svg");
+        }
+
+        &.light-blue {
+            &:before,
+            &:after {
+                background-color: $dark-blue-1;
+            }
+        }
+
+        &.light-red {
+            &:before,
+            &:after {
+                background-color: $red;
+            }
+        }
+
+        &.light-white {
+            &:after {
+                background-color: $white;
+                background-image: url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
+                mask-image: url("#{$image-path}arrows/btn-arrow-external.svg");
+            }
+
+            &.icon-footer {
+                &:before,
+                &:after {
+                    bottom: 0;
+                    transform: scale(.8);
+                    background-color: $white;
+                }
+            }
+        }
     }
 
     &.light-red,
     &.light-blue{
         color: $white;
+    }
+
+    &.light-blue {
+        svg {
+            color: $dark-blue-1
+        }
     }
 
     &.underline {
