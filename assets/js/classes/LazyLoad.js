@@ -1,12 +1,15 @@
 class LazyLoad {
     constructor() {
         this.classLazy = 'lazy';
+        this.classLazyGroup = 'lazy-group';
         this.imageObserver;
+        this.imageGroupObserver;
         this.lazyloadThrottleTimeout;
 
         this.$window = $(window);
         this.$document = $(document);
         this.$images = $('.lazy'); // img with data-src or div with background image
+        this.$imagesGroup = $('.lazy-group'); //load all child images
         this.$videos = $('video.lazy');
     }
 
@@ -51,6 +54,20 @@ class LazyLoad {
         }, 20);
     }
 
+    loadImagesByGroup() {
+        if (this.lazyloadThrottleTimeout) {
+            clearTimeout(this.lazyloadThrottleTimeout);
+        }
+        this.lazyloadThrottleTimeout = setTimeout(() => {
+            this.loadImagesGroup();
+            if (this.$images.length == 0) {
+                this.$document.off('scroll', this.loadImagesByGroup());
+                this.$window.off('resize', this.loadImagesByGroup());
+                this.$window.off('reorientationChangesize', this.loadImagesByGroup());
+            }
+        }, 20);
+    }
+
 
     intersectionObserver() {
         this.imageObserver = new IntersectionObserver((entries, observer) => {
@@ -64,8 +81,33 @@ class LazyLoad {
             });
         });
 
+        this.imageGroupObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const groupImages = $(entry.target);
+                    let images = groupImages.find('.lazy');
+
+                    groupImages.removeClass(this.classLazyGroup);
+
+                    const loadImagesByGroup = () => {
+                        images.each((i, image) => {
+                            $(image).attr('src', $(image).data('src'));
+                            $(image).removeClass(this.classLazy);
+                        });
+                    };
+                    loadImagesByGroup();
+
+                    this.imageGroupObserver.unobserve(entry.target);
+                }
+            });
+        });
+
         this.$images.each((i, image) => {
             this.imageObserver.observe(image);
+        });
+
+        this.$imagesGroup.each((i, group) => {
+            this.imageGroupObserver.observe(group);
         });
     }
 
@@ -77,6 +119,21 @@ class LazyLoad {
                     $(image).attr('src', $(image).data('src'));
                     $(image).removeClass(this.classLazy);
                 }
+            })
+        }
+    }
+
+    loadImagesGroup() {
+        if (this.$imagesGroup) {
+            this.$imagesGroup.each((i, group) => {
+                const images = $(group).find(this.classLazy);
+                $(group).removeClass(this.classLazyGroup);
+                images.each((i, image) => {
+                    if ($(image).height() < this.$window.scrollTop()) {
+                        $(image).attr('src', $(image).data('src'));
+                        $(image).removeClass(this.classLazy);
+                    }
+                });
             })
         }
     }

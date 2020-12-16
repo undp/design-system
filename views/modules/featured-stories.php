@@ -2,7 +2,7 @@
 
 <section class="featured-stories">
     <div class="grid-container">
-        <div class="grid-x grid-padding-x overflow-hidden">
+        <div class="grid-x grid-padding-x overflow-hidden lazy-group">
             <div class="cell small-11 small-offset-1 medium-3 medium-offset-1 scroll-track left-right delay-4">
                 <div class="title-container">
                     <hgroup class="section-title">
