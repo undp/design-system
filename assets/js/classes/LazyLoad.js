@@ -60,7 +60,7 @@ class LazyLoad {
         }
         this.lazyloadThrottleTimeout = setTimeout(() => {
             this.loadImagesGroup();
-            if (this.$images.length == 0) {
+            if (this.$imagesGroup.length == 0) {
                 this.$document.off('scroll', this.loadImagesByGroup());
                 this.$window.off('resize', this.loadImagesByGroup());
                 this.$window.off('reorientationChangesize', this.loadImagesByGroup());
