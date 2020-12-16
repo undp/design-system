@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="multi-select" data-multi-select>
-        <button aria-label="Offices" class="select-control" data-select-control>Office type <span></span></button>
+        <button class="select-control" aria-label="Offices" data-select-control>Office type <span></span></button>
         <div class="options" data-options data-type="office">
             <label class="checkbox-item">
                 <input type="checkbox" value="regional_office">
