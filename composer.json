@@ -3,5 +3,8 @@
         "classmap": [
             "helpers"
         ]
-    }
+    },
+  "require": {
+    "ext-mysql": "*"
+  }
 }
