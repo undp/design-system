@@ -2,7 +2,7 @@
 
 <section class="recent-news">
     <div class="grid-container">
-        <div class="grid-x grid-padding-x">
+        <div class="grid-x grid-padding-x lazy-group">
             <div class="cell small-11 small-offset-1 medium-4 scroll-track left-right delay-4">
                 <div class="title-container">
                     <hgroup class="section-title">
