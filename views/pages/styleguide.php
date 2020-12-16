@@ -279,7 +279,9 @@ use helpers\Svg;
                                 .text-link .arrow-3
                             </td>
                             <td>
-                                <a class="text-link arrow-3" href="#">Read More</a>
+                                <a class="text-link arrow-3" href="#">
+                                    Read More Read More Read More Read More Read More Read More
+                                    <span class="arrow"></span></a>
                             </td>
                         </tr>
                         <tr>
@@ -412,6 +414,7 @@ use helpers\Svg;
                             <td>
                                 <a class="text-link light-red arrow-3" href="#">
                                     Read More
+                                    <span class="arrow"></span>
                                 </a>
                             </td>
                         </tr>
@@ -546,6 +549,7 @@ use helpers\Svg;
                             <td>
                                 <a class="text-link light-blue arrow-3" href="#">
                                     Read More
+                                    <span class="arrow"></span>
                                 </a>
                             </td>
                         </tr>
