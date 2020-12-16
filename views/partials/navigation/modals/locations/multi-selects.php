@@ -1,7 +1,7 @@
 <div class="search-select-group show-for-large">
     <p class="tag uppercase">Filter by:</p>
     <div class="multi-select" data-multi-select>
-        <span class="select-control" data-select-control>Region <span></span></span>
+        <button class="select-control" aria-label="Regions"  data-opening-action data-select-control>Region <span></span></button>
         <div class="options" data-options data-type="region">
             <label class="checkbox-item">
                 <input type="checkbox" value="africa">
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="multi-select" data-multi-select>
-        <span class="select-control" data-select-control>Office type <span></span></span>
+        <button aria-label="Offices" class="select-control" data-select-control>Office type <span></span></button>
         <div class="options" data-options data-type="office">
             <label class="checkbox-item">
                 <input type="checkbox" value="regional_office">

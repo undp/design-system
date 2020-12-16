@@ -35,7 +35,7 @@ use helpers\View;
             <div class="cell large-auto cell-list-offices">
                 <p class="tag uppercase show-for-large">current selection</p>
                 <h3 class="heading h3 title show-for-large"><span class="uppercase">undp</span> global</h3>
-                <div class="countries" data-countries>
+                <div class="countries" data-countries tabindex="-1">
                     <?php for($i =0 ; $i < 60; $i++) {?>
                     <div class="flex-container align-justify country-item" data-city-filters="afghanistan europe regional_office">
                         <div class="country">Afghanistan</div>

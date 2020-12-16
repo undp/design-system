@@ -153,6 +153,10 @@
 
                     .multi-select {
                         margin-top: 15px;
+
+                        .select-control {
+                            text-align: left;
+                        }
                     }
 
                     .active-filters {
