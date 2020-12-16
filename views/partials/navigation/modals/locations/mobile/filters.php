@@ -24,7 +24,7 @@ use helpers\View;
                 <form action="">
                     <?php View::render('partials/navigation/modals/locations/mobile/filter-options') ?>
                     <div class="btn-filters">
-                        <input type="submit" class="btn full" value="Show all results">
+                        <button type="button" class="btn full" data-btn-filters-show-matches data-action-back>Show&nbsp;<span class="counter"></span>&nbsp;results</button>
                     </div>
                 </form>
             </div>
