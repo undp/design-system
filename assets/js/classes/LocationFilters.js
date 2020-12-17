@@ -41,7 +41,8 @@ class LocationFilters {
 
     listenerSelects() {
         this.selects.each((i, select) => {
-            $(select).find(this.dataSelectControl).click(() => {
+            $(select).find(this.dataSelectControl).click((evt) => {
+                evt.preventDefault();
                 this.$currentSelect = $(select);
                 if (!this.$currentSelect.hasClass(this.classOpen)) {
                     this.closeAll();
