@@ -149,11 +149,14 @@
                     &:focus,
                     &.active {
                         .arrow-3 {
-                            &:before {
-                                opacity: 0;
-                            }
-                            &:after {
-                                opacity: 1;
+                            .arrow {
+                                &:before {
+                                    opacity: 0;
+                                }
+
+                                &:after {
+                                    opacity: 1;
+                                }
                             }
                         }
                     }

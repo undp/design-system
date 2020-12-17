@@ -3,7 +3,7 @@
         <a href="#" class="menu-item">Sustainable Development Goals</a>
     </li>
     <li data-menu-option="content-human-development-report">
-        <a class="text-link arrow-3 light-white" href="#" target="_blank">Human development report</a>
+        <a class="text-link arrow-3 light-white" href="#" target="_blank">Human development report <span class="arrow"></span></a>
     </li>
     <li data-menu-option="content-development-challenges">
         <a href="#" class="menu-item">Development challenges and solutions</a>

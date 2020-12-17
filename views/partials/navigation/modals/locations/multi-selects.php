@@ -1,8 +1,13 @@
 <div class="search-select-group show-for-large">
     <p class="tag uppercase">Filter by:</p>
     <div class="multi-select" data-multi-select>
-        <span class="select-control" data-select-control>Region <span></span></span>
+        <button class="select-control" aria-label="Regions"  data-opening-action data-select-control>Region <span></span></button>
         <div class="options" data-options data-type="region">
+            <label class="checkbox-item">
+                <input type="checkbox" value="africa">
+                Africa
+                <span class="checkmark"></span>
+            </label>
             <label class="checkbox-item">
                 <input type="checkbox" value="arab-states">
                 Arab States
@@ -10,7 +15,7 @@
             </label>
             <label class="checkbox-item">
                 <input type="checkbox" value="east-asia">
-                East Asia and the Pacific
+                Asia and the Pacific
                 <span class="checkmark"></span>
             </label>
             <label class="checkbox-item">
@@ -23,28 +28,31 @@
                 Latin America and the Caribbean
                 <span class="checkmark"></span>
             </label>
-            <label class="checkbox-item">
-                <input type="checkbox" value="south asia">
-                South Asia
-                <span class="checkmark"></span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox" value="africa">
-                Sub-Saharan Africa
-                <span class="checkmark"></span>
-            </label>
         </div>
     </div>
     <div class="multi-select" data-multi-select>
-        <span class="select-control" data-select-control>Office type <span></span></span>
+        <button class="select-control" aria-label="Offices" data-select-control>Office type <span></span></button>
         <div class="options" data-options data-type="office">
-            <?php for ($i = 1; $i <= 200; $i++) { ?>
-                <label class="checkbox-item">
-                    <input type="checkbox" name="option<?= $i ?>" value="office_<?= $i ?>">
-                    <?= "Value $i"?>
-                    <span class="checkmark"></span>
-                </label>
-            <?php } ?>
+            <label class="checkbox-item">
+                <input type="checkbox" value="regional_office">
+                Regional Office
+                <span class="checkmark"></span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" value="country_office">
+                Country Office
+                <span class="checkmark"></span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" value="representation_office">
+                Representation Office
+                <span class="checkmark"></span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" value="policy_centres_office">
+                Policy Centres
+                <span class="checkmark"></span>
+            </label>
         </div>
     </div>
     <div class="active-filters" data-container-filters></div>

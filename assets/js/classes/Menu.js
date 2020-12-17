@@ -15,6 +15,7 @@ class Menu {
         this.$window = $(window)
         this.$container = container
         this.$middleLogo = '[data-middle-logo]'
+        this.$subMenus = $('.menu-item-options')
         this.$primaryNav = $('[data-primary-navigation]')
         this.$hamburguer = this.$container.find('[data-hamburger]')
         this.$mainMenu = this.$container.find('[data-menu-main-options]')
@@ -40,6 +41,7 @@ class Menu {
             if (this.expanded) this.closeMenu()
             else this.openMenu()
             this.$hamburguer.toggleClass(this.menuOpenClass);
+            this.closeSubmenu()
         })
     }
 
@@ -69,6 +71,7 @@ class Menu {
 
                 if(!btnBack.hasClass('open-from-footer')) {
                     this.openMenu();
+                    this.closeSubmenu();
                 }
             });
         }
@@ -99,7 +102,7 @@ class Menu {
     }
 
     closeSubmenu() {
-        this.currentSubmenu.addClass('hide');
+        this.$subMenus.addClass('hide');
     }
 
     closeMenu() {
