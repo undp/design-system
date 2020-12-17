@@ -1,7 +1,7 @@
-<div class="filters">
+<div class="filters" data-filter-checkbox>
     <div class="filter-region">
         <p class="text-link">Region</p>
-        <div class="checkbox-group">
+        <div class="checkbox-group" data-type="region">
             <label class="checkbox-item">
                 <input type="checkbox" value="africa">
                 Africa
@@ -32,7 +32,7 @@
 
     <div class="filter-office-type">
         <p class="text-link">Office Type</p>
-        <div class="checkbox-group">
+        <div class="checkbox-group" data-type="office">
             <label class="checkbox-item">
                 <input type="checkbox" value="regional_office">
                 Regional Office

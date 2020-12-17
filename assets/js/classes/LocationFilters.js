@@ -1,3 +1,5 @@
+import Foundation from 'foundation-sites'
+
 class LocationFilters {
     constructor() {
         this.classOpen = 'open';
@@ -15,12 +17,22 @@ class LocationFilters {
             office: [],
             inputSearch: '',
         };
+
+        //mobile
+        this.totalMatches = 0;
+
+        this.$btnFilterCounter = $('[data-open-filters] .counter');
+        this.$checkboxs = $('[data-filter-checkbox] input[type="checkbox"]');
+        this.btnClearCheckboxs = $('[data-filter-clear]');
+        this.$btnFilterShowMatchesCounter = $('[data-btn-filters-show-matches] .counter');
+
     }
 
     init() {
         this.listenerSelects();
         this.listenerWindowClick();
         this.listenerInputSearch();
+        this.mobileListenerFilters();
     }
 
     closeAll() {
@@ -46,6 +58,21 @@ class LocationFilters {
                 this.$currentSelect.has(evt.target).length === 0 && this.$currentSelect.hasClass(this.classOpen)) {
                 this.closeAll();
             }
+        });
+    }
+
+    mobileListenerFilters() {
+        this.$checkboxs.change((evt) => {
+            evt.stopImmediatePropagation();
+            this.updateFilters($(evt.currentTarget));
+        });
+
+        this.btnClearCheckboxs.click((evt) =>{
+            evt.preventDefault();
+            this.$checkboxs.prop('checked', false);
+            this.filters.region = [];
+            this.filters.office = [];
+            this.search();
         });
     }
 
@@ -156,10 +183,32 @@ class LocationFilters {
             });
             this.$countryList.addClass(this.classHide);
             filtered.removeClass(this.classHide);
+            this.totalMatches = filtered.length;
         } else {
+            this.totalMatches = 0;
             this.$countryList.removeClass(this.classHide);
         }
+        this.mobileUpdateFilters();
+    }
 
+    mobileUpdateFilters() {
+        if (Foundation.MediaQuery.is('medium down')) {
+            this.printTotalMatches();
+            this.printTotalFiltersApplied();
+        }
+    }
+
+    //mobile
+    printTotalFiltersApplied() {
+        const totalFilters = this.filters.region.length + this.filters.office.length;
+        this.$btnFilterCounter.text(totalFilters);
+        this.$btnFilterCounter.toggleClass(this.classHide, totalFilters == 0);
+    }
+
+    printTotalMatches() {
+        this.$btnFilterShowMatchesCounter.text(` ${this.totalMatches} `);
+        console.log('matches', this.totalMatches);
+        this.$btnFilterShowMatchesCounter.toggleClass(this.classHide, this.totalMatches === 0);
     }
 }
 

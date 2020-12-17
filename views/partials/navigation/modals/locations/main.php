@@ -126,7 +126,7 @@ use helpers\View;
                 <div class="flex-container align-center hide-for-large filter-options uppercase">
                     <button class="btn full btn-filters" tabindex="-1" data-open-filters data-modal-filter="modal-search-offices-filters">
                         Filter
-                        <span class="flex-container align-middle align-center current-filters">2</span>
+                        <span class="flex-container align-middle align-center current-filters hide counter"></span>
                     </button>
                 </div>
             </div>
