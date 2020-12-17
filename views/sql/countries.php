@@ -1,18 +1,12 @@
 <?php
-//update credentials
-$servername = "localhost";
-$database = "undp";
-$username = "";
-$password = "";
+include '../../database-connection.php';
 
-$conn = mysqli_connect($servername, $username, $password, $database);
+$connection = connection();
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}else{
-    $query = "SELECT * FROM countries";
+$query = "SELECT * FROM countries";
 
-    $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+$result = $connection->query($query)->fetch_all(MYSQLI_ASSOC);
 
-    echo json_encode($result);
-}
+echo json_encode($result);
+
+mysqli_close($connection);

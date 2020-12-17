@@ -4,7 +4,7 @@ const init = function () {
         type: 'GET',
         url: '/views/sql/countries.php',
         success: function(response){
-            //
+            console.log(response);
         }
 
     });
