@@ -5,6 +5,6 @@
         ]
     },
   "require": {
-    "ext-mysql": "*"
-  }
+        "vlucas/phpdotenv": "^5.2"
+    }
 }
