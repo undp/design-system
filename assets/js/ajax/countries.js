@@ -2,7 +2,7 @@ const init = function () {
 
     $.ajax({
         type: 'GET',
-        url: '/views/sql/countries.php',
+        url: '/views/sql/queries.php',
         data: {
           type: 'countries'
         },
