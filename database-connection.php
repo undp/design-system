@@ -11,16 +11,22 @@
  *
  * */
 
-include 'database-credentials.php';
+require('vendor/autoload.php');
 
-function connection(){
-    global $servername, $username, $password, $database;
+function connection()
+{
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
 
-    $conn = mysqli_connect($servername, $username, $password, $database);
+    if ($_ENV['DB_HOST'] && $_ENV['DB_USERNAME'] && $_ENV['DB_PASSWORD'] && $_ENV['DB_DATABASE']) {
+        $conn = new mysqli($_ENV['DB_HOST'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD'], $_ENV['DB_DATABASE']);
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        return $conn;
     }
+    return false;
 
-    return $conn;
 }
