@@ -2,6 +2,10 @@
 .featured-stories{
     margin-bottom: 25px;
 
+    section{
+        height: 100%;
+    }
+
     .title-container{
         @include breakpoint(large up){
             display: flex;
