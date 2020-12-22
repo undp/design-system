@@ -15,7 +15,7 @@
                     </hgroup>
                 </div>
             </div>
-            <div class="cell small-12 medium-8 large-4">
+            <div class="cell small-12 medium-4">
                 <?php
                     View::render('components/story-card', [
                         'image' => '/assets/images/placeholder/news-1.jpeg',
