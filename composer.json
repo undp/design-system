@@ -4,7 +4,7 @@
             "helpers"
         ]
     },
-  "require": {
-    "ext-mysql": "*"
-  }
+    "require": {
+        "vlucas/phpdotenv": "^5.2"
+    }
 }
