@@ -18,10 +18,10 @@ if (isset($_GET['type'])) {
         case 'countries':
             $query = 'SELECT * FROM countries';
             break;
-        case 'region':
-            $query = 'SELECT * FROM region';
+        case 'regions':
+            $query = 'SELECT * FROM regions';
             break;
-        case 'office_type':
+        case 'offices':
             $query = 'SELECT * FROM offices';
             break;
     }
