@@ -176,6 +176,7 @@ class LocationFilters {
         if (this.filters.inputSearch.length > 0 ||
             this.filters.office.length > 0 ||
             this.filters.region.length > 0) {
+            this.$countryList = $('[data-city-filters]');
             let filtered = this.$countryList.filter((index, node) => {
                 const text = $(node).data('city-filters').toLowerCase();
                 return (this.filters.inputSearch.length > 0 && text.includes(this.filters.inputSearch.toLowerCase()) ||
