@@ -9,7 +9,6 @@
     .title-container{
         @include breakpoint(large up){
             display: flex;
-            justify-content: center;
         }
 
         .section-title{
