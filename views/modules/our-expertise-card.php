@@ -14,7 +14,7 @@
 
     <?php if ($index % 2 == 0) { ?>
 
-        <div class="cell small-10 medium-3 medium-offset-6 expertise-section-right">
+        <div class="cell small-10 medium-3 <?= $index > 0 ? 'medium-offset-6' : '' ?> expertise-section-right">
             <?php
             View::render('components/expertise-card', [
                 'title' => $title ?? '',

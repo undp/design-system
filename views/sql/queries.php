@@ -1,21 +1,6 @@
 <?php
 
-use helpers\View;
-
 include '../../database-connection.php';
-
-
-function ourExpertise($data)  {
-    foreach($data as $index => $item) {
-        echo View::render('modules/our-expertise-card', [
-            'title' => $item['title'],
-            'description' => $item['description'],
-            'videoUrl' => $item['video_url'],
-            'imageUrl' => $item['image_url'],
-            'index' => $index,
-        ]);
-    }
-}
 
 function getQuery($query)
 {
@@ -24,7 +9,7 @@ function getQuery($query)
     $result = $connection->query($query)->fetch_all(MYSQLI_ASSOC);
     $connection->close();
 
-    return $result;
+    return json_encode($result);
 }
 
 if (isset($_GET['type'])) {
@@ -39,14 +24,8 @@ if (isset($_GET['type'])) {
         case 'offices':
             $query = 'SELECT * FROM offices';
             break;
-        case 'our_expertise':
-            $query = 'SELECT * FROM our_expertise';
-            $results=  getQuery($query);
-            ourExpertise($results);
-//            die();
-            break;
     }
 
-//    echo getQuery($query);
+    echo getQuery($query);
 }
 die();
