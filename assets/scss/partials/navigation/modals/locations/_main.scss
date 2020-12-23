@@ -111,43 +111,6 @@
                     }
                 }
 
-                .search-input-group {
-                    margin-top: 20px;
-
-                    .input-search {
-                        border: 0;
-                        margin: 0;
-                        height: 58px;
-                        padding: 20px;
-                        border-bottom: 2px solid $black;
-                        min-width: calc(100% - 58px);
-                        max-width: calc(100% - 58px);
-                        background-color: transparent;
-
-                        &::placeholder {
-                            color: rgba($black, 0.35);
-                        }
-
-                        &:active,
-                        &:focus {
-                            outline: none;
-                        }
-                    }
-
-                    .btn-search {
-                        border: 0;
-                        width: 35px;
-                        height: 58px;
-                        color: $black;
-                        cursor: pointer;
-                        border-bottom: 2px solid $black;
-
-                        svg {
-                            margin-left: 5px;
-                        }
-                    }
-                }
-
                 .search-select-group {
                     margin-top: 60px;
 
@@ -237,6 +200,99 @@
                 .title {
                     color: $blue-0;
                     margin-top: 15px;
+                }
+
+                .inputs {
+                    .search-input-group {
+
+                        .input-search {
+                            border: 0;
+                            margin: 0;
+                            height: 58px;
+                            padding: 20px;
+                            border-bottom: 2px solid $black;
+                            min-width: calc(100% - 58px);
+                            max-width: calc(100% - 58px);
+                            background-color: transparent;
+
+                            &::placeholder {
+                                color: rgba($black, 0.35);
+                            }
+
+                            &:active,
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+
+                        .btn-search {
+                            border: 0;
+                            width: 35px;
+                            height: 58px;
+                            color: $black;
+                            cursor: pointer;
+                            border-bottom: 2px solid $black;
+
+                            svg {
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+                    .search-select-group {
+                        margin-right: 30px;
+
+                        .multi-select {
+
+                            .select-control {
+                                text-align: left;
+                            }
+                        }
+
+                        .active-filters {
+                            padding: 20px;
+
+                            .tag {
+                                margin-bottom: 15px;
+                            }
+
+                            .filter {
+                                color: $black;
+                                display: block;
+                                line-height: 1.5;
+                                font-size: 1.4rem;
+                                font-weight: $regular;
+
+                                &:before {
+                                    margin-right: 5px;
+                                    content: url('#{$image-path}icon-close-modal-location.svg');
+                                }
+
+                                &:focus,
+                                &:active,
+                                &:hover
+                                {
+                                    color: $black;
+                                }
+                            }
+
+                            .filter-clear  {
+                                color: $black;
+                                line-height: 1.5;
+                                margin-left: 15px;
+                                font-size: 1.4rem;
+                                font-weight: $regular;
+                                text-transform: capitalize;
+                                border-bottom: 1px solid $red;
+
+                                &:focus,
+                                &:active,
+                                &:hover
+                                {
+                                    color: $black;
+                                }
+                            }
+                        }
+                    }
                 }
 
                 .countries {

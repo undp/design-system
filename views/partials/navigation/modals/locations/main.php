@@ -17,27 +17,41 @@ $countries = $query->getCountries();
                     Back
                 </a>
                 <div class="header-modal">
+                    <p class="tag uppercase show-for-large">current selection</p>
+                    <h3 class="heading h3 title show-for-large"><span class="uppercase">undp</span> global</h3>
+
                     <h2 class="heading h2 title">Find Our Offices Around the World.</h2>
-                    <a class="text-link arrow-3" href="#" target="_blank">Go to GLOBAL SITE</a>
+                    <a class="text-link arrow-3 hide-for-large" href="#">
+                        Go to GLOBAL SITE
+                        <span class="arrow"></span>
+                    </a>
                     <p class="big-copy description">The UNDP works in 170 countries around the world. Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Duis auctor, ante sed auctor faucibus, diam ante pellentesque turpis, sit amet dictum felis felis bibendum nisl. </p>
                     <p class="tag uppercase hide-for-large tag-current-section">current selection</p>
                     <h3 class="heading h3 title hide-for-large title-undp"><span class="uppercase">undp</span> Global</h3>
+                    <a class="text-link arrow-3 hide-for-medium" href="#">
+                        Go to GLOBAL SITE
+                        <span class="arrow"></span>
+                    </a>
                 </div>
-                <form action="">
-                    <div class="flex-container search-input-group">
-                        <label class="show-for-sr" for="search-offices">Search Offices</label>
-                        <button type="submit" class="flex-container align-middle btn-search" aria-label="Submit search">
-                            <?php Svg::render('icon-search-modal-locations', true, 'Search Offices') ?>
-                            <span class="show-for-sr">Submit search</span>
-                        </button>
-                        <input class="big-copy input-search" type="text" name="search-offices" id="search-offices" placeholder="Search offices" data-input-search>
-                    </div>
-                </form>
-               <?php View::render('partials/navigation/modals/locations/multi-selects') ?>
             </div>
             <div class="cell large-auto cell-list-offices">
-                <p class="tag uppercase show-for-large">current selection</p>
-                <h3 class="heading h3 title show-for-large"><span class="uppercase">undp</span> global</h3>
+                <div>
+                    <div class="flex-container inputs">
+                        <div class="flex-container search-input-group">
+                            <label class="show-for-sr" for="search-offices">Search Offices</label>
+                            <button type="button" class="flex-container align-middle btn-search"
+                                    aria-label="Submit search">
+                                <?php Svg::render('icon-search-modal-locations', true, 'Search Offices') ?>
+                                <span class="show-for-sr">Submit search</span>
+                            </button>
+                            <input class="big-copy input-search" type="text" name="search-offices" id="search-offices"
+                                   placeholder="Search offices" data-input-search>
+                        </div>
+                        <?php View::render('partials/navigation/modals/locations/multi-selects') ?>
+                    </div>
+                </div>
+                <div class="active-filters" data-container-filters></div>
+
                 <div class="countries" tabindex="-1">
                     <?php foreach ($countries as $country) { ?>
                         <div class="flex-container align-justify country-item"

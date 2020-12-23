@@ -29,11 +29,10 @@
         top: 0;
         cursor: pointer;
         max-width: 100%;
-        min-width: 400px;
+        min-width: 230px;
         font-weight: bold;
         font-size: 1.6rem;
         padding: 18px 22px;
-        position: absolute;
         border: 2px solid $black;
         text-transform: uppercase;
         background-color: rgba($dark-blue-6, 0.98);
@@ -60,9 +59,9 @@
     .options {
         top: 55px;
         display: none;
-        max-width: 100%;
         padding: 0 22px;
-        min-width: 400px;
+        max-width: 100%;
+        min-width: 230px;
         overflow-y: auto;
         min-height: 100px;
         max-height: 200px;
