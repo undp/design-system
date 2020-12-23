@@ -33,7 +33,7 @@ class Queries
 
             $response[] = (object)[
                 'index' => $index,
-                'name' => $countryRow->name ? strtolower($countryRow->name): '',
+                'name' => $countryRow->name ? $countryRow->name : '',
                 'office' => $countryRow->office ? strtolower($countryRow->office) : '',
                 'continent' => $countryRow->continent ? strtolower($countryRow->continent) : '',
                 'languages' => $languages,
