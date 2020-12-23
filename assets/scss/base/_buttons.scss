@@ -15,6 +15,10 @@
         justify-content: center;
     }
 
+    &.not-flex {
+        display: inherit;
+    }
+
     svg,
     img{
         margin-left: 14px;

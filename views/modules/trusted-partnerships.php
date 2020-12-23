@@ -13,7 +13,7 @@ use helpers\View;
                 <p class="big-copy">
                     Partnership is at the heart of everything UNDP does. We offer a nearly universal presence across the world. We are determined to mobilize the means to implement the 2030 Agenda through a revitalized Global Partnership for Sustainable Development, with a focus on the poorest and most vulnerable.
                 </p>
-                <button class="btn">
+                <button class="btn not-flex">
                     Join Us
                     <?php Svg::render('btn-arrow-blue', true, 'Join Us', 'assets/images/arrows/')?>
                 </button>
