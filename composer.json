@@ -1,6 +1,7 @@
 {
     "autoload": {
         "classmap": [
+            "core",
             "helpers"
         ]
     },
