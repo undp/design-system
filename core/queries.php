@@ -59,6 +59,41 @@ class Queries
         return $response;
     }
 
+    function formatGlobalImpact($data)
+    {
+        $response = [];
+        foreach ($data as $index => $item) {
+
+            $response[] = (object)[
+                'index' => $index,
+                'number' => $item['number'] ?? '',
+                'title' => $item['title'] ?? '',
+                'description' => $item['description'] ?? '',
+                'image' => $item['image'] ?? '',
+
+            ];
+        }
+        return $response;
+    }
+
+    function formatPublications($data)
+    {
+        $response = [];
+        foreach ($data as $index => $item) {
+
+            $response[] = (object)[
+                'index' => $index,
+                'title' => $item['title'] ?? '',
+                'description' => $item['description'] ?? '',
+                'cta' => $item['cta'] ?? '',
+                'tag' => $item['tag'] ?? '',
+                'image' => $item['image'] ?? '',
+
+            ];
+        }
+        return $response;
+    }
+
     function getCountries()
     {
         $query = 'SELECT * FROM countries';
@@ -71,5 +106,19 @@ class Queries
         $query = 'SELECT * FROM our_expertise';
         $dataQuery = $this->getQuery($query);
         return $this->formatDataOurExpertise($dataQuery);
+    }
+
+    function getGlobalImpact()
+    {
+        $query = 'SELECT * FROM global';
+        $dataQuery = $this->getQuery($query);
+        return $this->formatGlobalImpact($dataQuery);
+    }
+
+    function getPublications()
+    {
+        $query = 'SELECT * FROM publications';
+        $dataQuery = $this->getQuery($query);
+        return $this->formatPublications($dataQuery);
     }
 }
