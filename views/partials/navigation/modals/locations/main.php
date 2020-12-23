@@ -1,6 +1,9 @@
 <?php
 use helpers\Svg;
 use helpers\View;
+use core\Queries;
+$query = new Queries();
+$countries = $query->getCountries();
 ?>
 
 <section id="modal-search-offices" class="menu-modal modal-search-offices hide">
@@ -35,92 +38,17 @@ use helpers\View;
             <div class="cell large-auto cell-list-offices">
                 <p class="tag uppercase show-for-large">current selection</p>
                 <h3 class="heading h3 title show-for-large"><span class="uppercase">undp</span> global</h3>
-                <div class="countries" data-countries tabindex="-1">
-                    <?php for($i =0 ; $i < 60; $i++) {?>
-                    <div class="flex-container align-justify country-item" data-city-filters="afghanistan europe regional_office">
-                        <div class="country">Afghanistan</div>
-                        <div class="languages">
-                            <a class="language-link" href="#">English</a>
-                            <a class="language-link" href="#">Pasto</a>
-                            <a class="language-link" href="#">Dari</a>
+                <div class="countries" tabindex="-1">
+                    <?php foreach ($countries as $country) { ?>
+                        <div class="flex-container align-justify country-item"
+                             data-city-filters="<?= $country->name ?> <?= $country->continent ?> <?= $country->office ?>">
+                            <div class="country"><?= $country->name ?></div>
+                            <div class="languages">
+                                <?php foreach ($country->languages as $language) { ?>
+                                    <a class="language-link" href="<?= $language->url ?>"><?= $language->name ?></a>
+                                <?php } ?>
+                            </div>
                         </div>
-                    </div>
-                    <div class="flex-container align-justify country-item" data-city-filters="albania europe regional_office">
-                        <div class="country">Albania</div>
-                        <div class="languages">
-                            <a class="language-link" href="#">English</a>
-                            <a class="language-link" href="#">Albanian</a>
-                        </div>
-                    </div>
-                    <div class="flex-container align-justify country-item" data-city-filters="algeria africa country_office">
-                        <div class="country">Algeria</div>
-                        <div class="languages">
-                            <a class="language-link" href="#">English</a>
-                            <a class="language-link" href="#">Arabic</a>
-                        </div>
-                    </div>
-                    <div class="flex-container align-justify country-item" data-city-filters="angola africa country_office">
-                        <div class="country">Angola</div>
-                        <div class="languages">
-                            <a class="language-link" href="#">English</a>
-                            <a class="language-link" href="#">Arabic</a>
-                        </div>
-                    </div>
-                    <div class="flex-container align-justify country-item" data-city-filters="argentina latin-america representation_office">
-                        <div class="country">Argentina</div>
-                        <div class="languages">
-                            <a class="language-link" href="#">English</a>
-                            <a class="language-link" href="#">Spanish</a>
-                        </div>
-                    </div>
-                    <div class="flex-container align-justify country-item" data-city-filters="armenia policy_centres_office">
-                        <div class="country">Armenia</div>
-                        <div class="languages">
-                            <a class="language-link" href="#">English</a>
-                            <a class="language-link" href="#">Spanish</a>
-                        </div>
-                    </div>
-                    <div class="flex-container align-justify country-item" data-city-filters="azerbaijan policy_centres_office">
-                        <div class="country">Azerbaijan</div>
-                        <div class="languages">
-                            <a class="language-link" href="#">English</a>
-                            <a class="language-link" href="#">Spanish</a>
-                        </div>
-                    </div>
-                    <div class="flex-container align-justify country-item" data-city-filters="bahrain policy_centres_office">
-                        <div class="country">Bahrain</div>
-                        <div class="languages">
-                            <a class="language-link" href="#">Bahrainian</a>
-                            <a class="language-link" href="#">English</a>
-                            <a class="language-link" href="#">Spanish</a>
-                        </div>
-                    </div>
-                    <div class="flex-container align-justify country-item" data-city-filters="bangladesh policy_centres_office">
-                        <div class="country">Bangladesh</div>
-                        <div class="languages">
-                            <a class="language-link" href="#">English</a>
-                            <a class="language-link" href="#">Spanish</a>
-                        </div>
-                    </div>
-                    <div class="flex-container align-justify country-item" data-city-filters="barbados policy_centres_office">
-                        <div class="country">Barbados</div>
-                        <div class="languages">
-                            <a class="language-link" href="#">English</a>
-                        </div>
-                    </div>
-                    <div class="flex-container align-justify country-item" data-city-filters="belarus policy_centres_office">
-                        <div class="country">Belarus</div>
-                        <div class="languages">
-                            <a class="language-link" href="#">English</a>
-                        </div>
-                    </div>
-                    <div class="flex-container align-justify country-item" data-city-filters="belize policy_centres_office">
-                        <div class="country">Belize</div>
-                        <div class="languages">
-                            <a class="language-link" href="#">English</a>
-                            <a class="language-link" href="#">Spanish</a>
-                        </div>
-                    </div>
                     <?php } ?>
                 </div>
                 <div class="flex-container align-center hide-for-large filter-options uppercase">
