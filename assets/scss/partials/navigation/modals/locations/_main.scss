@@ -74,9 +74,10 @@
                     }
 
                     .title {
+                        margin-top: 40px;
+
                         @include breakpoint(medium down) {
                             font-size: 2rem;
-                            margin-top: 40px;
                             font-weight: $regular;
                         }
                     }
@@ -91,7 +92,7 @@
                     }
 
                     .description {
-                        margin-top: 25px;
+                        margin-top: 40px;
 
                         @include breakpoint(medium down) {
                             margin-top: 20px;
@@ -166,6 +167,11 @@
                             }
                         }
                     }
+                }
+
+                .location-undp {
+                    color: $blue-0;
+                    margin-top: 15px;
                 }
 
             }

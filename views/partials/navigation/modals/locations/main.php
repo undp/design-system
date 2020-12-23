@@ -18,7 +18,7 @@ $countries = $query->getCountries();
                 </a>
                 <div class="header-modal">
                     <p class="tag uppercase show-for-large">current selection</p>
-                    <h3 class="heading h3 title show-for-large"><span class="uppercase">undp</span> global</h3>
+                    <h3 class="heading h3 location-undp show-for-large"><span class="uppercase">undp</span> global</h3>
 
                     <h2 class="heading h2 title">Find Our Offices Around the World.</h2>
                     <a class="text-link arrow-3 hide-for-large" href="#">
