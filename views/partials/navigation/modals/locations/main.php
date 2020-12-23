@@ -41,7 +41,7 @@ $countries = $query->getCountries();
                 <div class="countries" tabindex="-1">
                     <?php foreach ($countries as $country) { ?>
                         <div class="flex-container align-justify country-item"
-                             data-city-filters="<?= $country->name ?> <?= $country->continent ?> <?= $country->office ?>">
+                             data-city-filters="<?= strtolower($country->name) ?> <?= $country->continent ?> <?= $country->office ?>">
                             <div class="country"><?= $country->name ?></div>
                             <div class="languages">
                                 <?php foreach ($country->languages as $language) { ?>
