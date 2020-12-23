@@ -50,7 +50,7 @@ $countries = $query->getCountries();
                         <?php View::render('partials/navigation/modals/locations/multi-selects') ?>
                     </div>
                 </div>
-                <div class="active-filters" data-container-filters></div>
+                <div class="flex-container align-middle active-filters" data-container-filters></div>
 
                 <div class="countries" tabindex="-1">
                     <?php foreach ($countries as $country) { ?>

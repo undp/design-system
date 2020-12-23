@@ -204,6 +204,8 @@
 
                 .inputs {
                     .search-input-group {
+                        max-width: 230px;
+                        margin-right: 45px;
 
                         .input-search {
                             border: 0;
@@ -212,7 +214,6 @@
                             padding: 20px;
                             border-bottom: 2px solid $black;
                             min-width: calc(100% - 58px);
-                            max-width: calc(100% - 58px);
                             background-color: transparent;
 
                             &::placeholder {
@@ -238,6 +239,7 @@
                             }
                         }
                     }
+
                     .search-select-group {
                         margin-right: 30px;
 
@@ -292,6 +294,33 @@
                                 }
                             }
                         }
+                    }
+                }
+
+                .active-filters {
+                    margin-top: 40px;
+                    color: $dark-blue-18;
+
+                    .tag {
+                        margin-right: 15px;
+                    }
+
+                    .filter {
+                        color: $black;
+                        padding: 10px;
+                        font-size: 1.4rem;
+                        margin-right: 10px;
+                        border-radius: 17px;
+                        background-color: rgba($dark-blue-19, 0.36);
+
+                        &:before {
+                            margin-right: 5px;
+                            content: url("#{$image-path}/icon-close-modal-location.svg");
+                        }
+                    }
+
+                    .filter-clear {
+                        border-bottom: 1px solid $red;
                     }
                 }
 
