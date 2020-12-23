@@ -17,3 +17,7 @@
     - That file contains an import to each of the modules
     
     
+## Database
+    -Install composer dependencies
+    -Generate .env and copy .env.example file "cp .env.example .env"
+    -Update .env file with credentials
