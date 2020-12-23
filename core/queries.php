@@ -13,4 +13,39 @@ class Queries
         $connection->close();
         return $result;
     }
+
+    function formatDataCountries($data)
+    {
+        $response = [];
+        foreach ($data as $index => $country) {
+            $countryRow = (object)$country;
+            $languages = [];
+            if(isset($countryRow->languages)) {
+                $languagesRow = json_decode($countryRow->languages);
+                foreach ($languagesRow as $languageItem) {
+                    $languageObject = (object)$languageItem;
+                    $languages[] = (object)[
+                        'url' => $languageObject->url,
+                        'name' => $languageObject->name,
+                    ];
+                }
+            }
+
+            $response[] = (object)[
+                'index' => $index,
+                'name' => $countryRow->name ? strtolower($countryRow->name): '',
+                'office' => $countryRow->office ? strtolower($countryRow->office) : '',
+                'continent' => $countryRow->continent ? strtolower($countryRow->continent) : '',
+                'languages' => $languages,
+            ];
+        }
+        return $response;
+    }
+
+    function getCountries()
+    {
+        $query = 'SELECT * FROM countries';
+        $dataQuery = $this->getQuery($query);
+        return $this->formatDataCountries($dataQuery);
+    }
 }

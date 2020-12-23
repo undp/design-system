@@ -1,6 +1,9 @@
 <?php
 use helpers\Svg;
 use helpers\View;
+use core\Queries;
+$query = new Queries();
+$countries = $query->getCountries();
 ?>
 
 <section id="modal-search-offices" class="menu-modal modal-search-offices hide">
@@ -35,7 +38,19 @@ use helpers\View;
             <div class="cell large-auto cell-list-offices">
                 <p class="tag uppercase show-for-large">current selection</p>
                 <h3 class="heading h3 title show-for-large"><span class="uppercase">undp</span> global</h3>
-                <div class="countries" data-countries tabindex="-1"></div>
+                <div class="countries" tabindex="-1">
+                    <?php foreach ($countries as $country) { ?>
+                        <div class="flex-container align-justify country-item"
+                             data-city-filters="<?= $country->name ?> <?= $country->continent ?> <?= $country->office ?>">
+                            <div class="country"><?= $country->name ?></div>
+                            <div class="languages">
+                                <?php foreach ($country->languages as $language) { ?>
+                                    <a class="language-link" href="<?= $language->url ?>"><?= $language->name ?></a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
                 <div class="flex-container align-center hide-for-large filter-options uppercase">
                     <button class="btn full btn-filters" tabindex="-1" data-open-filters data-modal-filter="modal-search-offices-filters">
                         Filter
