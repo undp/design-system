@@ -21,14 +21,10 @@ $countries = $query->getCountries();
                     <h3 class="heading h3 location-undp show-for-large"><span class="uppercase">undp</span> global</h3>
 
                     <h2 class="heading h2 title">Find Our Offices Around the World.</h2>
-                    <a class="text-link arrow-3 hide-for-large" href="#">
-                        Go to GLOBAL SITE
-                        <span class="arrow"></span>
-                    </a>
                     <p class="big-copy description">The UNDP works in 170 countries around the world. Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Duis auctor, ante sed auctor faucibus, diam ante pellentesque turpis, sit amet dictum felis felis bibendum nisl. </p>
                     <p class="tag uppercase hide-for-large tag-current-section">current selection</p>
                     <h3 class="heading h3 title hide-for-large title-undp"><span class="uppercase">undp</span> Global</h3>
-                    <a class="text-link arrow-3 hide-for-medium" href="#">
+                    <a class="text-link arrow-3 show-for-large" href="#">
                         Go to GLOBAL SITE
                         <span class="arrow"></span>
                     </a>
