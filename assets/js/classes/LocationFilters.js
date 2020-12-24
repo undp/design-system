@@ -101,7 +101,7 @@ class LocationFilters {
 
     printContainerFilters() {
         this.$containerFilter.html('');
-        this.$containerFilter.append('<p class="tag uppercase">Active filters</p>');
+        this.$containerFilter.append('<p class="tag uppercase">Active filters:</p>');
         this.selects.find("input:checked").each((i, input) => {
             const text = $(input).parent().text();
             const inputValue = $(input).val();
