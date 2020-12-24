@@ -184,6 +184,10 @@
                 // alternative to blur on firefox (color white with transparent
                 background-color: rgba($white, 0.98);
 
+                @include breakpoint(xlarge down){
+                    padding: 80px 25px;
+                }
+
                 @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
                     background-color: rgba($white, 0.87);
                 }
@@ -212,6 +216,11 @@
                     .search-input-group {
                         max-width: 230px;
                         margin-right: 45px;
+
+                        @include breakpoint(xlarge down){
+                            max-width: 180px;
+                            margin-right: 8px;
+                        }
 
                         @include breakpoint(small only){
                             width: 100%;
@@ -254,6 +263,10 @@
 
                     .search-select-group {
                         margin-right: 30px;
+
+                        @include breakpoint(xlarge down){
+                            margin-right: 8px;
+                        }
 
                         .multi-select {
 
@@ -344,6 +357,10 @@
                     position: absolute;
                     margin: 44px 0 100px 0;
                     max-height: calc(100% - 280px);
+
+                    @include breakpoint(xlarge down){
+                        padding: 0 25px;
+                    }
 
                     @include breakpoint(medium down) {
                         right: 0;

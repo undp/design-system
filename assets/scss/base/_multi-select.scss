@@ -38,6 +38,10 @@
         background-color: rgba($dark-blue-6, 0.98);
         display: block;
 
+        @include breakpoint(xlarge down){
+            min-width: 215px;
+        }
+
         @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
             background-color: rgba($dark-blue-6, 0.86);
         }
@@ -72,6 +76,9 @@
         backdrop-filter: blur(30px);
         background-color: rgba($dark-blue-6, 0.98);
 
+        @include breakpoint(xlarge down){
+            min-width: 215px;
+        }
 
         @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
             background-color: rgba($dark-blue-6, 0.86);
