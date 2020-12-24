@@ -9,7 +9,7 @@
 
             &:after {
                 top: 42%;
-                right: 15px;
+                right: 30px;
                 transform: rotate(180deg);
             }
         }
@@ -32,7 +32,7 @@
         min-width: 230px;
         font-weight: bold;
         font-size: 1.6rem;
-        padding: 18px 22px;
+        padding: 18px 25px;
         border: 2px solid $black;
         text-transform: uppercase;
         background-color: rgba($dark-blue-6, 0.98);
@@ -50,7 +50,7 @@
             top: 50%;
             content: '';
             width: 20px;
-            right: 10px;
+            right: 25px;
             height: 10px;
             position: absolute;
             transform: translateY(-50%);
@@ -87,15 +87,14 @@
         .checkbox-item {
             margin: 0;
             font-size: 2rem;
-            padding: 20px 0 20px 52px;
+            padding: 20px 52px 20px 0;
 
             &:not(:first-child) {
                 border-top: 1px solid rgba($black, 0.10);
             }
 
             .checkmark {
-                top: 50%;
-                transform: translateY(-50%);
+                top: 20px;
             }
 
             input {

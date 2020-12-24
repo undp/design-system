@@ -5,7 +5,7 @@
     font-size: 1.6rem;
     user-select: none;
     position: relative;
-    padding-left: 30px;
+    padding-right: 30px;
     font-weight: $regular;
 
     input {
@@ -27,11 +27,11 @@
 
     .checkmark {
         top: 0;
-        left: 0;
+        right: 0;
         height: 16px;
         width: 16px;
         position: absolute;
-        border: 1px solid $dark-blue-10;
+        border: 2px solid $red-8;
 
         &:after {
             width: 16px;
