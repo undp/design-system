@@ -22,16 +22,6 @@
         padding: 64px;
         max-width: 450px;
         position: relative;
-
-        @include breakpoint(medium down){
-            padding: 50px 35px;
-        }
-
-        @include breakpoint(small only){
-            padding: 20px;
-        }
-
-
         background: linear-gradient(to bottom,
                 $background-gray-1 70%,
                 $background-gray-1 70%,
@@ -41,6 +31,11 @@
 
         @include breakpoint(medium down){
             max-width: 350px;
+            padding: 50px 35px;
+        }
+
+        @include breakpoint(small only){
+            padding: 20px;
         }
 
         @include breakpoint(360px down){
@@ -67,7 +62,7 @@
             content: '';
             left: 36px;
             z-index: -1;
-            right: 70px;
+            right: 90px;
             height: 32px;
             bottom: 64px;
             filter: blur(8px);
@@ -78,7 +73,7 @@
 
             @include breakpoint(medium down){
                 left: 14px;
-                right: 38px;
+                right: 60px;
                 height: 23px;
                 bottom: 50px;
                 border-radius: 0;
@@ -86,19 +81,20 @@
 
             @include breakpoint(small only){
                 left: 4px;
-                right: 30px;
+                right: 50px;
                 height: 16px;
                 bottom: 20px;
                 filter: blur(4px);
             }
+        }
+
     }
 
-}
 
-
-.publication-content{
-    @include breakpoint(small only){
-        margin-top: 25px;
+    .publication-content{
+        @include breakpoint(small only){
+            margin-top: 25px;
+        }
     }
 
     .heading.h3{
@@ -154,4 +150,4 @@
         }
     }
 }
-}
+

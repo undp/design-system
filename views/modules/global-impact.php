@@ -1,5 +1,9 @@
 <?php
 use helpers\View;
+use core\Queries;
+
+$queries = new Queries();
+$dataGlobalImpact = $queries->getGlobalImpact();
 ?>
 <section class="global-impact">
     <div class="grid-container heading-container">
@@ -17,38 +21,16 @@ use helpers\View;
     </div>
     <div class="grid-container full card-container overflow-hidden">
         <div class="grid-x scroll-track left-right delay-2">
-            <div class="cell medium-3">
-                <?php View::render('components/stat-card', [
-                    'image' => '../../assets/images/placeholder/global-1.jpg',
-                    'number' => '31',
-                    'title' => 'Million',
-                    'description' => 'people had better access to services to tackle poverty'
-                ]) ?>
-            </div>
-            <div class="cell medium-3">
-                <?php View::render('components/stat-card', [
-                    'image' => '../../assets/images/placeholder/global-2.jpg',
-                    'number' => '20',
-                    'title' => 'Million',
-                    'description' => 'people gained access to financial services'
-                ]) ?>
-            </div>
-            <div class="cell medium-3">
-                <?php View::render('components/stat-card', [
-                    'image' => '../../assets/images/placeholder/global-3.jpg',
-                    'number' => '256',
-                    'title' => 'Million',
-                    'description' => 'tonnes of carbon emissions cut'
-                ]) ?>
-            </div>
-            <div class="cell medium-3">
-                <?php View::render('components/stat-card', [
-                    'image' => '../../assets/images/placeholder/global-4.jpg',
-                    'number' => '1+',
-                    'title' => 'Million',
-                    'description' => 'invested to strengthen resilience to crises'
-                ]) ?>
-            </div>
+            <?php foreach($dataGlobalImpact as $item): ?>
+                <div class="cell medium-3">
+                    <?php View::render('components/stat-card', [
+                        'image' => $item->image,
+                        'number' => $item->number,
+                        'title' => $item->title,
+                        'description' => $item->description
+                    ]) ?>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

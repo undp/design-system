@@ -4,3 +4,5 @@ npm-debug.log
 yarn-error.log
 /dist
 /vendor
+database-credentials.php
+.env

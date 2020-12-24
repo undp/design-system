@@ -45,7 +45,7 @@
             .cell-search {
                 min-height: 100%;
                 max-width: 525px;
-                padding: 75px 60px 200px 60px;
+                padding: 75px 60px;
                 border-right: none;
                 backdrop-filter: blur(30px);
                 box-shadow: 0 3px 6px rgba($black, 0.16);
@@ -74,9 +74,10 @@
                     }
 
                     .title {
+                        margin-top: 40px;
+
                         @include breakpoint(medium down) {
                             font-size: 2rem;
-                            margin-top: 40px;
                             font-weight: $regular;
                         }
                     }
@@ -91,7 +92,7 @@
                     }
 
                     .description {
-                        margin-top: 25px;
+                        margin-top: 40px;
 
                         @include breakpoint(medium down) {
                             margin-top: 20px;
@@ -108,43 +109,6 @@
                         font-size: 2rem;
                         margin-top: 10px;
                         font-weight: $semi-bold;
-                    }
-                }
-
-                .search-input-group {
-                    margin-top: 20px;
-
-                    .input-search {
-                        border: 0;
-                        margin: 0;
-                        height: 58px;
-                        padding: 20px;
-                        border-bottom: 2px solid $black;
-                        min-width: calc(100% - 58px);
-                        max-width: calc(100% - 58px);
-                        background-color: transparent;
-
-                        &::placeholder {
-                            color: rgba($black, 0.35);
-                        }
-
-                        &:active,
-                        &:focus {
-                            outline: none;
-                        }
-                    }
-
-                    .btn-search {
-                        border: 0;
-                        width: 35px;
-                        height: 58px;
-                        color: $black;
-                        cursor: pointer;
-                        border-bottom: 2px solid $black;
-
-                        svg {
-                            margin-left: 5px;
-                        }
                     }
                 }
 
@@ -205,6 +169,11 @@
                     }
                 }
 
+                .location-undp {
+                    color: $blue-0;
+                    margin-top: 15px;
+                }
+
             }
 
             .cell-list-offices {
@@ -214,6 +183,10 @@
                 box-shadow: 0 3px 6px rgba($black, 0.16);
                 // alternative to blur on firefox (color white with transparent
                 background-color: rgba($white, 0.98);
+
+                @include breakpoint(xlarge down){
+                    padding: 80px 25px;
+                }
 
                 @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
                     background-color: rgba($white, 0.87);
@@ -239,6 +212,143 @@
                     margin-top: 15px;
                 }
 
+                .inputs {
+                    .search-input-group {
+                        max-width: 230px;
+                        margin-right: 45px;
+
+                        @include breakpoint(xlarge down){
+                            max-width: 180px;
+                            margin-right: 8px;
+                        }
+
+                        @include breakpoint(medium down){
+                            width: 100%;
+                            max-width: unset;
+                            margin-right: 0;
+                        }
+
+                        .input-search {
+                            border: 0;
+                            margin: 0;
+                            height: 58px;
+                            padding: 20px;
+                            border-bottom: 2px solid $black;
+                            min-width: calc(100% - 58px);
+                            background-color: transparent;
+
+                            &::placeholder {
+                                color: rgba($black, 0.35);
+                            }
+
+                            &:active,
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+
+                        .btn-search {
+                            border: 0;
+                            width: 35px;
+                            height: 58px;
+                            color: $black;
+                            cursor: pointer;
+                            border-bottom: 2px solid $black;
+
+                            svg {
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+
+                    .search-select-group {
+                        margin-right: 30px;
+
+                        @include breakpoint(xlarge down){
+                            margin-right: 8px;
+                        }
+
+                        .multi-select {
+
+                            .select-control {
+                                text-align: left;
+                            }
+                        }
+
+                        .active-filters {
+                            padding: 20px;
+
+                            .tag {
+                                margin-bottom: 15px;
+                            }
+
+                            .filter {
+                                color: $black;
+                                display: block;
+                                line-height: 1.5;
+                                font-size: 1.4rem;
+                                font-weight: $regular;
+
+                                &:before {
+                                    margin-right: 5px;
+                                    content: url('#{$image-path}icon-close-modal-location.svg');
+                                }
+
+                                &:focus,
+                                &:active,
+                                &:hover
+                                {
+                                    color: $black;
+                                }
+                            }
+
+                            .filter-clear  {
+                                color: $black;
+                                line-height: 1.5;
+                                margin-left: 15px;
+                                font-size: 1.4rem;
+                                font-weight: $regular;
+                                text-transform: capitalize;
+                                border-bottom: 1px solid $red;
+
+                                &:focus,
+                                &:active,
+                                &:hover
+                                {
+                                    color: $black;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .active-filters {
+                    margin-top: 40px;
+                    color: $dark-blue-18;
+
+                    .tag {
+                        margin-right: 15px;
+                    }
+
+                    .filter {
+                        color: $black;
+                        padding: 10px;
+                        font-size: 1.4rem;
+                        margin-right: 10px;
+                        border-radius: 17px;
+                        background-color: rgba($dark-blue-19, 0.36);
+
+                        &:before {
+                            margin-right: 5px;
+                            content: url("#{$image-path}/icon-close-modal-location.svg");
+                        }
+                    }
+
+                    .filter-clear {
+                        border-bottom: 1px solid $red;
+                    }
+                }
+
                 .countries {
                     left: 0;
                     right: 50px;
@@ -247,6 +357,10 @@
                     position: absolute;
                     margin: 44px 0 100px 0;
                     max-height: calc(100% - 280px);
+
+                    @include breakpoint(xlarge down){
+                        padding: 0 25px;
+                    }
 
                     @include breakpoint(medium down) {
                         right: 0;

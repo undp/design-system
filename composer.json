@@ -1,10 +1,11 @@
 {
     "autoload": {
         "classmap": [
+            "core",
             "helpers"
         ]
     },
-  "require": {
-    "ext-mysql": "*"
-  }
+    "require": {
+        "vlucas/phpdotenv": "^5.2"
+    }
 }

@@ -9,12 +9,10 @@
     }
 
     &.background-color{
-        background: $dark-blue-6;
-        transition: background-color 0.5s ease;
-    }
-
-    &.hide-section{
-        opacity: 0;
+        @include breakpoint(medium up){
+            background: $dark-blue-6;
+            transition: background-color 0.5s ease;
+        }
     }
 
     .pin-spacer{

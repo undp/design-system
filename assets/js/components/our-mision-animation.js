@@ -78,10 +78,10 @@ const init = function () {
             start: startExpertise,
             scrub: true,
             onEnter: () => {
-                $('.our-expertise').removeClass('hide-section')
+                //
             },
             onLeaveBack: () => {
-                $('.our-expertise').addClass('hide-section')
+                //
             },
 
         });
