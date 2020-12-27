@@ -25,6 +25,15 @@ jobs:
         node-version: '12.x'
     - run: npm install
     - run: npm run prod
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1
+      with:
+        envkey_APP_NAME: "UNDP"
+        envkey_DB_HOST: ${{ secrets.DB_HOST }}
+        envkey_DB_PORT: 3306
+        envkey_DB_DATABASE: ${{ secrets.DB_DATABASE }}
+        envkey_DB_USERNAME: ${{ secrets.DB_USERNAME }}
+        envkey_DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
