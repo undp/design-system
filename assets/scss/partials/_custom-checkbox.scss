@@ -1,12 +1,16 @@
 .checkbox-item {
     display: block;
     cursor: pointer;
-    margin-top: 12px;
     font-size: 1.6rem;
     user-select: none;
     position: relative;
     padding-right: 30px;
     font-weight: $regular;
+
+    @include breakpoint(large down){
+        padding: 15px 20px 15px 0;
+        border-bottom: 1px solid rgba($black, 0.10);
+    }
 
     input {
         opacity: 0;
@@ -26,7 +30,7 @@
     }
 
     .checkmark {
-        top: 0;
+        top: 16px;
         right: 0;
         height: 16px;
         width: 16px;
