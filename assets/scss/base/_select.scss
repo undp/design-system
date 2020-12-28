@@ -105,7 +105,6 @@
             height: 10px;
             position: absolute;
             transform: translateY(-50%);
-            transition: $transition-primary;
             background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
             background-size: contain;
         }
