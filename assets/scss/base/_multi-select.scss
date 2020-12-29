@@ -92,14 +92,11 @@
         .checkbox-item {
             margin: 0;
             font-size: 2rem;
-            padding: 20px 52px 20px 0;
+            max-height: 52px;
+            padding: 15px 52px 15px 0;
 
             &:not(:first-child) {
                 border-top: 1px solid rgba($black, 0.10);
-            }
-
-            .checkmark {
-                top: 20px;
             }
 
             input {
