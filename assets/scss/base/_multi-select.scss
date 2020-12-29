@@ -6,10 +6,10 @@
     &.open {
         .select-control {
             border-bottom: none;
+            padding-bottom: 20px;
 
             &:after {
                 top: 42%;
-                right: 30px;
                 transform: rotate(180deg);
             }
         }
@@ -49,12 +49,11 @@
         &:after {
             top: 50%;
             content: '';
-            width: 20px;
-            right: 25px;
-            height: 10px;
+            width: 14px;
+            right: 24px;
+            height: 9px;
             position: absolute;
             transform: translateY(-50%);
-            transition: $transition-primary;
             background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
             background-size: contain;
         }
@@ -63,7 +62,7 @@
     .options {
         top: 55px;
         display: none;
-        padding: 0 22px;
+        padding: 0 16px;
         max-width: 100%;
         min-width: 230px;
         overflow-y: auto;
