@@ -769,10 +769,10 @@ use helpers\Svg;
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
                 <div class="cell">
-                    <h5 class="heading h5">Custom select</h5>
+                    <h5 class="heading h5">Custom select-radio</h5>
                 </div>
                 <div class="cell medium-6 custom-cell">
-                    <p class="big-copy">.select-box</p>
+                    <p class="big-copy">.select-radio</p>
                     <div class="search-select-group show-for-large">
                         <?php
                         View::render('partials/multi-select-radio', [

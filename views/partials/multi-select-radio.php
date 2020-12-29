@@ -1,4 +1,4 @@
-<div class="multi-select <?= $class ?>" data-multi-select>
+<div class="select-radio <?= $class ?>" data-multi-select>
     <button class="select-control" aria-label="<?= $ariaLabel ?>" data-opening-action data-select-control>
         <?= $title ?> <span></span>
     </button>

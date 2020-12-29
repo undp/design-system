@@ -1,5 +1,6 @@
-.multi-select {
-    height: 55px;
+.multi-select,
+.select-radio {
+    height: 52px;
     display: flex;
     position: relative;
 
@@ -32,9 +33,10 @@
         max-width: 100%;
         text-align: left;
         min-width: 230px;
+        max-height: 52px;
         font-weight: bold;
         font-size: 1.6rem;
-        padding: 18px 25px;
+        padding: 15px 25px;
         border: 2px solid $black;
         text-transform: uppercase;
         background-color: rgba($dark-blue-6, 0.98);
@@ -51,7 +53,7 @@
             top: 50%;
             content: '';
             width: 14px;
-            right: 30px;
+            right: 28px;
             height: 9px;
             position: absolute;
             transform: translateY(-50%);
