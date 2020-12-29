@@ -12,6 +12,7 @@ $pageDescription = $pageDescription ?? 'UNDP';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="<?= $pageDescription ?>"/>
+    <meta name="EnlighterJS" content="Advanced javascript based syntax highlighting" data-indent="4" data-selector-block="pre" data-selector-inline="code.special" />
 
     <title><?= $pageTitle ?></title>
 

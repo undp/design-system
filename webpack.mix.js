@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+require('laravel-mix-polyfill');
 
 /*
  |--------------------------------------------------------------------------
@@ -14,7 +15,13 @@ let mix = require('laravel-mix');
 mix.js('assets/js/app.js', 'dist')
     .sass('assets/scss/app.scss', 'dist')
     .setPublicPath('dist')
-    .browserSync('undp.test');
+    .browserSync('undp.test')
+    .polyfill({
+        enabled: true,
+        useBuiltIns: "usage",
+        targets: {"ie": 11},
+        debug: true
+   });
 
 mix.webpackConfig(webpack => {
     return {
