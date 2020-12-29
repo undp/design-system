@@ -2,6 +2,10 @@
     .content-text {
         padding: 0 20px 100px 75px;
 
+        &.multiple-columns{
+            padding: 0 20px 10px 75px;
+        }
+
         .title {
             line-height: 1.14;
             font-size: 3.5rem;

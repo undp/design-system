@@ -53,12 +53,14 @@ use helpers\Svg;
 </div>
 
 <div id="content-executive-board" class="grid-x modal-nav-content hide">
-    <div class="cell large-auto content-text">
+    <div class="cell medium-8 content-text multiple-columns">
         <h2 class="title">Executive Board</h2>
         <p class="big-copy description">
             The Executive Board provides inter-governmental support to and supervision of UNDP activities, ensuring that
             the organization remains responsive to the evolving needs of programme countries.
         </p>
+    </div>
+    <div class="cell medium-6 content-text">
         <div class="links">
             <a class="text-link arrow-1" href="#">
                 Information note on the Executive Board
@@ -80,6 +82,10 @@ use helpers\Svg;
                 Secretariat of the Board
                 <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
             </a>
+        </div>
+    </div>
+    <div class="cell medium-6 content-text">
+        <div class="links">
             <a class="text-link arrow-1" href="#">
                 Decisions of the Board
                 <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
@@ -98,20 +104,18 @@ use helpers\Svg;
             </a>
         </div>
     </div>
-    <div class="cell large-auto flex-container align-right content-image">
-        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-nyc-2020-executive-board.jpg"
-             alt="image nav placeholder">
-    </div>
 </div>
 
 <div id="content-partnerships" class="grid-x modal-nav-content hide">
-    <div class="cell large-auto content-text">
+    <div class="cell medium-8 content-text multiple-columns">
         <h2 class="title">Our Partners</h2>
         <p class="big-copy description">
             Partnership is at the heart of everything UNDP does. We offer a nearly universal presence. Our
             substantial expertise—both intellectual acumen and practical experience—cuts across diverse
             development issues and settings.
         </p>
+    </div>
+    <div class="cell medium-6 content-text">
         <div class="links">
             <a class="text-link arrow-1" href="#">
                 Governments
@@ -133,6 +137,10 @@ use helpers\Svg;
                 Private Sector
                 <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
             </a>
+        </div>
+    </div>
+    <div class="cell medium-6 content-text">
+        <div class="links">
             <a class="text-link arrow-1" href="#">
                 Foundations
                 <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
@@ -150,10 +158,6 @@ use helpers\Svg;
                 <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
             </a>
         </div>
-    </div>
-    <div class="cell large-auto flex-container align-right content-image">
-        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/undp-papp-2019-partnership-japan-football.jpg"
-             alt="undp papp 2019">
     </div>
 </div>
 
@@ -188,12 +192,14 @@ use helpers\Svg;
 </div>
 
 <div id="content-transparency" class="grid-x modal-nav-content hide">
-    <div class="cell large-auto content-text">
+    <div class="cell medium-8 content-text multiple-columns">
         <h2 class="title">Accountability</h2>
         <p class="big-copy description">
             Accountability is the obligation to demonstrate that work has been conducted in accordance with agreed rules
             and standards and report fairly and accurately on performance results vis-à-vis mandated roles and/or plans.
         </p>
+    </div>
+    <div class="cell medium-6 content-text">
         <div class="links">
             <a class="text-link arrow-1" href="#">
                 Audit and Investigations
@@ -215,6 +221,10 @@ use helpers\Svg;
                 Policies and procedures
                 <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
             </a>
+        </div>
+    </div>
+    <div class="cell medium-6 content-text">
+        <div class="links">
             <a class="text-link arrow-1" href="#">
                 Prevention and Response to Sexual Misconduct
                 <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
@@ -224,8 +234,5 @@ use helpers\Svg;
                 <?php Svg::render('btn-arrow-red', false, '', 'assets/images/arrows/')?>
             </a>
         </div>
-    </div>
-    <div class="cell large-auto flex-container align-right content-image">
-        <img class="image lazy" data-src="../../assets/images/placeholder/nav-hover/transparency-portal-screen-shot-2020.jpg" alt="undp transparency">
     </div>
 </div>
