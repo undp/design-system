@@ -765,6 +765,29 @@ use helpers\Svg;
             </div>
         </div>
     </div>
+    <div class="custom-select">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <div class="cell">
+                    <h5 class="heading h5">Custom select</h5>
+                </div>
+                <div class="cell medium-6 custom-cell">
+                    <p class="big-copy">.select-box</p>
+                    <div class="search-select-group show-for-large">
+                        <?php
+                        View::render('partials/multi-select-radio', [
+                            'class' => 'lorem-radios',
+                            'ariaLabel' => 'Category',
+                            'title' => 'Category',
+                            'dataType' => 'lorem-radios',
+                            'radio' => true,
+                        ])
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Footer -->
 <?php View::render('partials/footer'); ?>
