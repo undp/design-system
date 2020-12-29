@@ -51,7 +51,7 @@
             top: 50%;
             content: '';
             width: 14px;
-            right: 24px;
+            right: 30px;
             height: 9px;
             position: absolute;
             transform: translateY(-50%);
@@ -73,7 +73,7 @@
         position: absolute;
         z-index: $z-index-1;
         font-weight: $regular;
-        padding: 0 16px 0 25px;
+        padding: 0 23px 0 25px;
         border: 2px solid $black;
         backdrop-filter: blur(30px);
         background-color: rgba($dark-blue-6, 0.98);
