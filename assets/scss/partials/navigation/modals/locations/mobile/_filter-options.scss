@@ -32,6 +32,10 @@
         .header-modal {
             padding: 0 38px 0 15px;
 
+            @include breakpoint(large down){
+               padding: 0 18px 0 18px;
+            }
+
             .titles {
                 margin-top: 40px;
             }
@@ -42,11 +46,14 @@
             margin-bottom: 100px;
             padding: 0 38px 0 18px;
 
+            @include breakpoint(large down){
+               padding: 0 18px 0 18px;
+            }
+
             .filter-region,
             .filter-office-type {
                 margin-top: 18px;
                 padding-top: 18px;
-                border-top: 1px solid rgba($black, 0.10);
 
                 .checkbox-group {
                     margin-top: 18px;

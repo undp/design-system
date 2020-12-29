@@ -323,19 +323,20 @@
                 }
 
                 .active-filters {
-                    margin-top: 40px;
+                    flex-wrap: wrap;
+                    margin-top: 20px;
                     color: $dark-blue-18;
 
                     .tag {
-                        margin-right: 15px;
+                        margin: 20px 15px 0 0;
                     }
 
                     .filter {
                         color: $black;
                         padding: 10px;
                         font-size: 1.4rem;
-                        margin-right: 10px;
                         border-radius: 17px;
+                        margin: 20px 10px 0 0;
                         background-color: rgba($dark-blue-19, 0.36);
 
                         &:before {
