@@ -40,7 +40,6 @@ function main() {
     multiSelectData()
     searchData()
     countriesData()
-    countriesData()
 }
 
 document.addEventListener("DOMContentLoaded", function () {
