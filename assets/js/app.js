@@ -16,7 +16,8 @@ import ourMissionAnimation from './components/our-mision-animation'
 import ourExpertiseMobileSlider from './components/our-expertise-mobile-slider'
 import heroAnimation from './components/hero-animation'
 import trapFocus from './components/trap-focus'
-import ajaxMultiSelects from './ajax/multi-selects'
+import ajaxMultiSelects from './dummy-data/multi-selects'
+import countriesRender  from './dummy-data/countries'
 
 function main() {
     modal()
@@ -36,6 +37,7 @@ function main() {
     heroAnimation()
     trapFocus()
     ajaxMultiSelects()
+    countriesRender();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
