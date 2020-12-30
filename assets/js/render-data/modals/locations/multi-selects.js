@@ -1,5 +1,5 @@
-import regions from '../../data/modals/locations/multi-select-region';
-import offices from '../../data/modals/locations/multi-select.-offices';
+import regions from '../../json/modals/locations/multi-select-region';
+import offices from '../../json/modals/locations/multi-select.-offices';
 
 const init = function () {
     function loadSelectItems(select, type) {

@@ -1,4 +1,4 @@
-import searchData from '../data/modals/search/search'
+import searchData from '../json/modals/search/search'
 
 const init = function () {
     const parentContainer = $('[data-modal-search]');

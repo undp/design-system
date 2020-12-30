@@ -1,4 +1,4 @@
-import countries from "../../data/modals/locations/countries";
+import countries from "../../json/modals/locations/countries";
 
 const init = function () {
     const parentContainer = $('.countries')
