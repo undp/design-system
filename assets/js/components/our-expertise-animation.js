@@ -29,8 +29,8 @@ const init = function () {
             fromImageY = 70
             toImageY = -140
         }
-
-        sections.forEach((target, index, array) => {
+        let sectionsArray = Array.prototype.slice.call(sections, 0);
+        sectionsArray.forEach((target, index, array) => {
             let sectionImage = target.querySelector('.expertise-image');
 
             if(index !== array.length - 1){

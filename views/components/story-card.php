@@ -3,7 +3,7 @@
     $imageExist = isset($image) && !empty($image);
 ?>
 <section>
-    <a href="#" class="story-card scroll-track left-right delay-2 <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
+    <a href="#" class="story-card <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
         <div class="hover-slide">
             <?php if($imageExist): ?>
                 <div class="background-image lazy" style="background-image: url(<?= $image ?>)"></div>
