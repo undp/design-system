@@ -17,36 +17,7 @@ use helpers\Svg;
                 </div>
             </div>
             <div class="cell lists">
-                <div class="grid-x">
-                    <div class="cell large-6">
-                        <div class="list-popular-search">
-                            <h2 class="title">Popular Searches</h2>
-                            <ul class="list uppercase">
-                                <li><a href="#">Covid 19 India</a></li>
-                                <li><a href="#">Covid 19 India</a></li>
-                                <li><a href="#">Covid 19 India</a></li>
-                                <li><a href="#">Covid 19 India</a></li>
-                                <li><a href="#">Covid 19 India</a></li>
-                                <li><a href="#">Covid 19 India</a></li>
-                                <li><a href="#">Covid 19 India</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cell large-6 list-quick-links">
-                        <h2 class="title">Quick Links</h2>
-                        <div>
-                            <ul class="list uppercase">
-                                <li><a href="#">Covid 19 India</a></li>
-                                <li><a href="#">Covid 19 India</a></li>
-                                <li><a href="#">Covid 19 India</a></li>
-                                <li><a href="#">Covid 19 India</a></li>
-                                <li><a href="#">Covid 19 India</a></li>
-                                <li><a href="#">Covid 19 India</a></li>
-                                <li><a href="#">Covid 19 India</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <div class="grid-x" data-modal-search></div>
             </div>
         </div>
 </section>
