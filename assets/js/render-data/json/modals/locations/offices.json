@@ -1,4 +1,4 @@
-const offices =  [
+[
     {
         "name": "Regional Office",
         "value": "regional_office"
@@ -15,6 +15,4 @@ const offices =  [
         "name": "Policy Centres",
         "value": "policy_centres_office"
     }
-];
-
-export default offices;
+]

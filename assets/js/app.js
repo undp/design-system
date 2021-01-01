@@ -17,7 +17,7 @@ import ourExpertiseMobileSlider from './components/our-expertise-mobile-slider'
 import heroAnimation from './components/hero-animation'
 import trapFocus from './components/trap-focus'
 import searchData  from './render-data/modals/search'
-import  countriesData  from './render-data/modals/locations/countries'
+import countriesData  from './render-data/modals/locations/countries'
 import multiSelectData from './render-data/modals/locations/multi-selects'
 
 function main() {

@@ -1,6 +1,6 @@
-const search = [
+[
     {
-        "name": 'Popular Searches',
+        "name": "Popular Searches",
         "links": [
             {
                 "name": "COVID 19 INDIA",
@@ -73,5 +73,4 @@ const search = [
             }
         ]
     },
-];
-export default search;
+]

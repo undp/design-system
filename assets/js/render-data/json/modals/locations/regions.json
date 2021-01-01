@@ -1,4 +1,4 @@
-const regions = [
+[
     {
         "name": "Africa",
         "value": "africa"
@@ -20,5 +20,3 @@ const regions = [
         "value": "latin-america"
     }
 ]
-
-export default regions;
