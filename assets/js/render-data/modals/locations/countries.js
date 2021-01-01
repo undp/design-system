@@ -3,17 +3,16 @@ const init = function () {
 
     $.ajax({
         type: 'POST',
-        url: '../../json/modals/locations/countries.json',
+        url: '/assets/js/render-data/json/modals/locations/countries.json',
         dataType: 'json',
         success: function(response){
             response.forEach((item) => {
-                const languages = JSON.parse(item.languages)
                 const countryItem = `
                     <div class="flex-container align-justify country-item"
                         data-city-filters="${ item.name.toLowerCase() } ${ item.continent.toLowerCase() } ${ item.office.toLowerCase() }">
                         <div class="country">${ item.name }</div>
                         <div class="languages">
-                            ${languages.map(language => {
+                            ${item.languages.map(language => {
                                 return `<a class="language-link" href="${ language.url }">${ language.name }</a>`;
                             }).join('')}
                         </div>

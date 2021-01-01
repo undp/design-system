@@ -4,7 +4,7 @@ const init = function () {
 
         $.ajax({
             type: 'POST',
-            url: `../../json/modals/locations/${type}.json`,
+            url: `/assets/js/render-data/json/modals/locations/${type}.json`,
             dataType: 'json',
             success: function(response){
                 response.forEach((item) => {
