@@ -325,10 +325,11 @@
                 .active-filters {
                     flex-wrap: wrap;
                     margin-top: 20px;
+                    min-height: 36px;
                     color: $dark-blue-18;
 
                     .tag {
-                        margin: 20px 15px 0 0;
+                        margin: 0 15px 0 0;
                     }
 
                     .filter {
@@ -336,7 +337,7 @@
                         padding: 10px;
                         font-size: 1.4rem;
                         border-radius: 17px;
-                        margin: 20px 10px 0 0;
+                        margin: 0 10px 0 0;
                         background-color: rgba($dark-blue-19, 0.36);
 
                         &:before {
