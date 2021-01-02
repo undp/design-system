@@ -6,10 +6,10 @@
     &.open {
         .select-control {
             border-bottom: none;
+            padding-bottom: 20px;
 
             &:after {
                 top: 42%;
-                right: 15px;
                 transform: rotate(180deg);
             }
         }
@@ -32,7 +32,7 @@
         min-width: 230px;
         font-weight: bold;
         font-size: 1.6rem;
-        padding: 18px 22px;
+        padding: 18px 25px;
         border: 2px solid $black;
         text-transform: uppercase;
         background-color: rgba($dark-blue-6, 0.98);
@@ -49,12 +49,11 @@
         &:after {
             top: 50%;
             content: '';
-            width: 20px;
-            right: 10px;
-            height: 10px;
+            width: 14px;
+            right: 24px;
+            height: 9px;
             position: absolute;
             transform: translateY(-50%);
-            transition: $transition-primary;
             background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
             background-size: contain;
         }
@@ -63,7 +62,7 @@
     .options {
         top: 55px;
         display: none;
-        padding: 0 22px;
+        padding: 0 16px;
         max-width: 100%;
         min-width: 230px;
         overflow-y: auto;
@@ -87,15 +86,14 @@
         .checkbox-item {
             margin: 0;
             font-size: 2rem;
-            padding: 20px 0 20px 52px;
+            padding: 20px 52px 20px 0;
 
             &:not(:first-child) {
                 border-top: 1px solid rgba($black, 0.10);
             }
 
             .checkmark {
-                top: 50%;
-                transform: translateY(-50%);
+                top: 20px;
             }
 
             input {

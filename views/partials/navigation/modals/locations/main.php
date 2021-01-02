@@ -1,9 +1,6 @@
 <?php
 use helpers\Svg;
 use helpers\View;
-use core\Queries;
-$query = new Queries();
-$countries = $query->getCountries();
 ?>
 
 <section id="modal-search-offices" class="menu-modal modal-search-offices hide">
@@ -48,19 +45,7 @@ $countries = $query->getCountries();
                 </div>
                 <div class="flex-container align-middle active-filters" data-container-filters></div>
 
-                <div class="countries" tabindex="-1">
-                    <?php foreach ($countries as $country) { ?>
-                        <div class="flex-container align-justify country-item"
-                             data-city-filters="<?= strtolower($country->name) ?> <?= $country->continent ?> <?= $country->office ?>">
-                            <div class="country"><?= $country->name ?></div>
-                            <div class="languages">
-                                <?php foreach ($country->languages as $language) { ?>
-                                    <a class="language-link" href="<?= $language->url ?>"><?= $language->name ?></a>
-                                <?php } ?>
-                            </div>
-                        </div>
-                    <?php } ?>
-                </div>
+                <div class="countries" tabindex="-1"></div>
                 <div class="flex-container align-center hide-for-large filter-options uppercase">
                     <button class="btn full btn-filters" tabindex="-1" data-open-filters data-modal-filter="modal-search-offices-filters">
                         Filter

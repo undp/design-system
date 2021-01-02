@@ -95,6 +95,7 @@
 
 .text-link {
     color: $black;
+    line-height: 1.3;
     font-size: 1.5rem;
     font-weight: bold;
     align-items: center;
@@ -140,6 +141,8 @@
     }
 
     &.arrow-1 {
+        padding-right: 17px;
+
         &:hover {
             svg,
             img{
