@@ -102,6 +102,11 @@
     display: inline-flex;
     text-transform: uppercase;
 
+    // For IE 11
+    & > * {
+        flex: 1 0 auto;
+    }
+
     &:hover {
         color: $dark-blue-2;
 

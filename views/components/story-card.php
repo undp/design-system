@@ -22,10 +22,10 @@
                 </p>
             </div>
             <div class="cta">
-                <span class="text-link arrow-2">
-                    <?= $cta ?? 'Read more'?>
+                <div class="text-link arrow-2">
+                    <span><?= $cta ?? 'Read more'?></span>
                     <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
-                </span>
+                </div>
             </div>
         </article>
     </a>

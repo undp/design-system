@@ -1,4 +1,5 @@
 .our-expertise{
+    overflow: hidden;
     position: relative;
     margin-top: -400px;
     z-index: $z-index-2;
@@ -40,6 +41,7 @@
 
     .our-expertise-row{
         position: relative;
+        pointer-events: none; // Fixes overlapping rows
 
         .pin-spacer {
             width: 25% !important; // Solves bug with scrolltrigger pin calculations
@@ -80,6 +82,8 @@
         }
 
         .expertise-image{
+            pointer-events: auto; // Override "none" from row
+
             @include breakpoint(360px down) {
                 width: 80%;
             }

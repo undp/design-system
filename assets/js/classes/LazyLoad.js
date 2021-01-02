@@ -33,7 +33,7 @@ class LazyLoad {
         if ("IntersectionObserver" in window) {
             this.intersectionObserver();
         } else {
-            this.$images = $(this.classLazy);
+            this.$images = $("."+this.classLazy);
             this.listenerWindowEvent();
             this.listenerDocumentEvent();
         }
