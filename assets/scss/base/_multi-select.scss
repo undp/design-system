@@ -60,6 +60,7 @@
     }
 
     .options {
+        left: 0;
         top: 55px;
         display: none;
         padding: 0 16px;
@@ -74,6 +75,7 @@
         border: 2px solid $black;
         backdrop-filter: blur(30px);
         background-color: rgba($dark-blue-6, 0.98);
+        -ms-overflow-style: -ms-autohiding-scrollbar;
 
         @include breakpoint(xlarge down){
             min-width: 215px;

@@ -31,8 +31,6 @@ const init = function () {
             { backgroundColor: "#fff" },
             { backgroundColor: "#232E3E" })
 
-        console.log('animation init')
-
         whiteToBlueScroll = ScrollTrigger.create({
             trigger: $section,
             start: startWhiteToBlue,

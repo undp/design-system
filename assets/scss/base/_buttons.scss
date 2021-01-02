@@ -120,7 +120,6 @@
 
         &.arrow-3 {
             .arrow {
-
                 &:before {
                     opacity: 0;
                 }
@@ -129,7 +128,6 @@
                     opacity: 1;
                 }
             }
-
 
             &.light-white {
                 &.icon-footer {
@@ -141,7 +139,6 @@
 
                 }
             }
-
         }
     }
 
@@ -214,10 +211,14 @@
 
             //arrow default
             &:before {
-
                 background-color: $red;
                 background-image: url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
                 mask-image: url("#{$image-path}arrows/btn-arrow-external.svg");
+
+                // For IE 11 (media is a hack to check for IE 10+)
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    background: transparent url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
+                }
             }
 
             // arrow hover
@@ -226,6 +227,11 @@
                 background-color: $red;
                 background-image: url("#{$image-path}arrows/btn-arrow-external-hover.svg") no-repeat;
                 mask-image: url("#{$image-path}arrows/btn-arrow-external-hover.svg");
+
+                // For IE 11 (media is a hack to check for IE 10+)
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    background: transparent url("#{$image-path}arrows/btn-arrow-external-hover.svg") no-repeat;
+                }
             }
 
         }
@@ -255,6 +261,11 @@
                     background-color: $white;
                     background-image: url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
                     mask-image: url("#{$image-path}arrows/btn-arrow-external.svg");
+
+                    // For IE 11 (media is a hack to check for IE 10+)
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        background: transparent url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
+                    }
                 }
             }
 

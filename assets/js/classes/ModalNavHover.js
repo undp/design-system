@@ -22,11 +22,13 @@ class ModalNavHover {
         this.$modalMenuOptions = null;
         this.$nav = $('[data-navigation]');
         this.$navMenuItems = $('[data-modal-nav]');
+        this.lazyLoadClass = null;
     }
 
-    init() {
+    init(lazyLoadClass) {
         this.listenersHoverOpenModal();
         this.listenerAccessibilityCloseModal();
+        this.lazyLoadClass = lazyLoadClass;
     }
 
     listenersHoverOpenModal() {
@@ -106,6 +108,8 @@ class ModalNavHover {
         this.$modalBody.addClass(this.classAnimation).removeClass(this.classHide);
         this.$modalContent.addClass(this.classAnimationOpacity);
         this.removeTransitions();
+
+        this.lazyLoadClass.loadImagesVideos();
     }
 
     //if we open our seconds modal, we not require transitions so remove it

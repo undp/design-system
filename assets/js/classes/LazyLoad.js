@@ -1,3 +1,13 @@
+$.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
 class LazyLoad {
     constructor() {
         this.classLazy = 'lazy';
@@ -36,6 +46,7 @@ class LazyLoad {
             this.$images = $("."+this.classLazy);
             this.listenerWindowEvent();
             this.listenerDocumentEvent();
+            this.loadImagesVideos(); // Initial load
         }
     }
 
@@ -46,7 +57,7 @@ class LazyLoad {
         this.lazyloadThrottleTimeout = setTimeout(() => {
             this.loadImage();
             this.loadVideo();
-            if (this.$images.length == 0) {
+            if (this.$images.length === 0) {
                 this.$document.off('scroll', this.loadImagesVideos());
                 this.$window.off('resize', this.loadImagesVideos());
                 this.$window.off('reorientationChangesize', this.loadImagesVideos());
@@ -60,7 +71,7 @@ class LazyLoad {
         }
         this.lazyloadThrottleTimeout = setTimeout(() => {
             this.loadImagesGroup();
-            if (this.$imagesGroup.length == 0) {
+            if (this.$imagesGroup.length === 0) {
                 this.$document.off('scroll', this.loadImagesByGroup());
                 this.$window.off('resize', this.loadImagesByGroup());
                 this.$window.off('reorientationChangesize', this.loadImagesByGroup());
@@ -115,7 +126,7 @@ class LazyLoad {
     loadImage() {
         if (this.$images) {
             this.$images.each((i, image) => {
-                if ($(image).height() < this.$window.scrollTop()) {
+                if ($(image).isInViewport()) {
                     $(image).attr('src', $(image).data('src'));
                     $(image).removeClass(this.classLazy);
                 }
@@ -129,7 +140,7 @@ class LazyLoad {
                 const images = $(group).find(this.classLazy);
                 $(group).removeClass(this.classLazyGroup);
                 images.each((i, image) => {
-                    if ($(image).height() < this.$window.scrollTop()) {
+                    if ($(image).isInViewport()) {
                         $(image).attr('src', $(image).data('src'));
                         $(image).removeClass(this.classLazy);
                     }
@@ -141,7 +152,7 @@ class LazyLoad {
     loadVideo() {
         if (this.$videos) {
             this.$videos.each((i, video) => {
-                if ($(video).height() < this.$window.scrollTop()) {
+                if ($(video).isInViewport()) {
                     $(video).attr('src', $(video).data('src'));
                     $(video).removeClass(this.classLazy);
                 }
