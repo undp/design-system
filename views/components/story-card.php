@@ -3,7 +3,7 @@
     $imageExist = isset($image) && !empty($image);
 ?>
 <section>
-    <a href="#" class="story-card scroll-track left-right delay-2 <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
+    <a href="#" class="story-card <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?>">
         <div class="hover-slide">
             <?php if($imageExist): ?>
                 <div class="background-image lazy" style="background-image: url(<?= $image ?>)"></div>
@@ -22,10 +22,10 @@
                 </p>
             </div>
             <div class="cta">
-                <span class="text-link arrow-2">
-                    <?= $cta ?? 'Read more'?>
+                <div class="text-link arrow-2">
+                    <span><?= $cta ?? 'Read more'?></span>
                     <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
-                </span>
+                </div>
             </div>
         </article>
     </a>

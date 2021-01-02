@@ -1,6 +1,7 @@
 const init = function () {
     const navSubmenus = document.querySelectorAll('.modal-nav-hover, .menu-modal'); // select the modals
-    navSubmenus.forEach(trapFocusOnModal);
+    const navSubmenusArray = Array.prototype.slice.call(navSubmenus, 0);
+    navSubmenusArray.forEach(trapFocusOnModal);
 
     function trapFocusOnModal(modal) {
         // add all the elements inside modal which you want to make focusable
