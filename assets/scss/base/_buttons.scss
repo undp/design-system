@@ -264,7 +264,7 @@
 
                     // For IE 11 (media is a hack to check for IE 10+)
                     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                        background: transparent url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
+                        background: transparent url("#{$image-path}arrows/btn-arrow-external-white.svg") no-repeat;
                     }
                 }
             }
