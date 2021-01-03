@@ -134,6 +134,11 @@
                     .arrow {
                         &:after {
                             background-color: rgba($white, 0.7);
+
+                            // For IE 11 (media is a hack to check for IE 10+)
+                            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                                background: transparent;
+                            }
                         }
                     }
 
@@ -271,12 +276,16 @@
 
             &.icon-footer {
                 .arrow {
-
                     &:before,
                     &:after {
                         bottom: 0;
                         transform: scale(.8);
                         background-color: $white;
+
+                        // For IE 11 (media is a hack to check for IE 10+)
+                        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                            background: transparent url("#{$image-path}arrows/btn-arrow-external-white.svg") no-repeat;
+                        }
                     }
                 }
             }
