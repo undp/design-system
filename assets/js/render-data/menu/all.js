@@ -51,7 +51,7 @@ const init = function () {
                                                     }else {
                                                         return `<a class="text-link arrow-1" href="${ link.link }">
                                                             ${ link.name }
-    <!--                                                        <?php Svg::render('btn-arrow-red', false, '', $_SERVER['DOCUMENT_ROOT'] . '/assets/images/arrows/') ?>-->
+                                                            <img src="../../../../assets/images/arrows/btn-arrow-red.svg" alt="dsjgdios">
                                                         </a>`
                                                     }
                                                 }).join('')}
@@ -74,7 +74,7 @@ const init = function () {
                                             } else {
                                                 return `<a class="text-link arrow-1" href="${ link.link }">
                                                             ${ link.name }
-    <!--                                                        <?php Svg::render('btn-arrow-red', false, '', $_SERVER['DOCUMENT_ROOT'] . '/assets/images/arrows/') ?>-->
+                                                                <img src="../../../../assets/images/arrows/btn-arrow-red.svg" alt="dsjgdios">
                                                         </a>`;
                                             }
                                         }).join('')}
