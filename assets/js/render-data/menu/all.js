@@ -91,7 +91,10 @@ const init = function () {
         });
     }
 
-    renderMenu('who-we-are', 'data-menu-who-we-are', '');
+    renderMenu('who-we-are', 'data-menu-who-we-are');
+    renderMenu('what-we-do', 'data-menu-what-we-do');
+    renderMenu('our-impact', 'data-menu-our-impact');
+    renderMenu('get-involved', 'data-menu-get-involved');
 }
 
 export default init;
