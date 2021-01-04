@@ -1,0 +1,32 @@
+[
+    {
+        "link": "#",
+        "name": "About us",
+        "menuOption": "content-about-us"
+    },
+    {
+        "link": "#",
+        "name": "Leadership",
+        "menuOption": "content-leadership"
+    },
+    {
+        "link": "#",
+        "name": "Executive Board",
+        "menuOption": "content-executive-board"
+    },
+    {
+        "link": "#",
+        "name": "Partnerships",
+        "menuOption": "content-partnerships"
+    },
+    {
+        "link": "#",
+        "name": "Financials",
+        "menuOption": "content-financials"
+    },
+    {
+        "link": "#",
+        "name": "Transparency and accountability",
+        "menuOption": "content-transparency"
+    }
+]

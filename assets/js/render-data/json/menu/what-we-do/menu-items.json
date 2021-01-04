@@ -1,0 +1,23 @@
+[
+    {
+        "link": "#",
+        "name": "Sustainable Development Goals",
+        "menuOption": "content-sustainable-development-goals"
+    },
+    {
+        "link": "#",
+        "name": "Human development report",
+        "menuOption": "content-human-development-report",
+        "external": true
+    },
+    {
+        "link": "#",
+        "name": "Development challenges and solutions",
+        "menuOption": "content-development-challenges"
+    },
+    {
+        "link": "#",
+        "name": "Strategic Initiatives",
+        "menuOption": "content-strategic-initiatives"
+    }
+]

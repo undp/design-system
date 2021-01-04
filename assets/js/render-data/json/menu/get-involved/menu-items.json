@@ -1,0 +1,41 @@
+[
+    {
+        "link": "#",
+        "name": "New partnerships",
+        "menuOption": "content-new-partnerships"
+    },
+    {
+        "link": "#",
+        "name": "Online Consultations",
+        "menuOption": "content-expert-consultations",
+        "external": true
+    },
+    {
+        "link": "#",
+        "name": "Donate",
+        "menuOption": "content-donate",
+        "external": true
+    },
+    {
+        "link": "#",
+        "name": "UNDP Shop",
+        "menuOption": "content-undp-shop",
+        "external": true
+    },
+    {
+        "link": "#",
+        "name": "Careers",
+        "menuOption": "content-careers",
+        "external": true
+    },
+    {
+        "link": "#",
+        "name": "Procurement",
+        "menuOption": "content-procurement"
+    },
+    {
+        "link": "#",
+        "name": "Contact Us",
+        "menuOption": "content-contact-us"
+    }
+]
