@@ -1,5 +1,5 @@
 .select-box {
-    height: 50px;
+    height: 52px;
     display: flex;
     color: $black;
     font-size: 2rem;
@@ -34,7 +34,7 @@
 
     .options-container {
         order: 1;
-        top: 55px;
+        top: 51px;
         width: 100%;
         display: none;
         user-select: none;
@@ -54,7 +54,6 @@
 
                 &:after {
                     top: 42%;
-                    right: 15px;
                     transform: rotate(180deg);
                 }
             }
@@ -62,7 +61,7 @@
 
         .option {
             cursor: pointer;
-            padding: 20px 22px 15px;
+            padding: 15px 22px 15px;
             border-top: 1px solid rgba($black, 0.10);
 
             &:hover {
@@ -91,18 +90,22 @@
     .selected {
         order: 0;
         cursor: pointer;
+        max-height: 52px;
+        font-size: 1.6rem;
         user-select: none;
-        padding: 15px 22px;
+        padding: 15px 25px;
         position: relative;
+        font-weight: $bold;
         border: 2px solid $black;
         background-color: $white;
+        text-transform: uppercase;
 
         &:after {
             top: 50%;
             content: '';
-            width: 20px;
-            right: 10px;
-            height: 10px;
+            width: 14px;
+            right: 25px;
+            height: 9px;
             position: absolute;
             transform: translateY(-50%);
             background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
