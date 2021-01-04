@@ -1,5 +1,6 @@
-.multi-select {
-    height: 55px;
+.multi-select,
+.select-radio {
+    height: 52px;
     display: flex;
     position: relative;
 
@@ -27,16 +28,18 @@
     .select-control {
         flex: 1;
         top: 0;
+        display: block;
         cursor: pointer;
         max-width: 100%;
+        text-align: left;
         min-width: 230px;
+        max-height: 52px;
         font-weight: bold;
         font-size: 1.6rem;
-        padding: 18px 25px;
+        padding: 15px 25px;
         border: 2px solid $black;
         text-transform: uppercase;
         background-color: rgba($dark-blue-6, 0.98);
-        display: block;
 
         @include breakpoint(xlarge down){
             min-width: 215px;
@@ -50,7 +53,7 @@
             top: 50%;
             content: '';
             width: 14px;
-            right: 24px;
+            right: 28px;
             height: 9px;
             position: absolute;
             transform: translateY(-50%);
@@ -60,9 +63,10 @@
     }
 
     .options {
-        top: 55px;
+        left: 0;
+        top: 51px;
+        width: 100%;
         display: none;
-        padding: 0 16px;
         max-width: 100%;
         min-width: 230px;
         overflow-y: auto;
@@ -71,9 +75,11 @@
         position: absolute;
         z-index: $z-index-1;
         font-weight: $regular;
+        padding: 0 23px 0 25px;
         border: 2px solid $black;
         backdrop-filter: blur(30px);
         background-color: rgba($dark-blue-6, 0.98);
+        -ms-overflow-style: -ms-autohiding-scrollbar;
 
         @include breakpoint(xlarge down){
             min-width: 215px;
@@ -86,14 +92,11 @@
         .checkbox-item {
             margin: 0;
             font-size: 2rem;
-            padding: 20px 52px 20px 0;
+            max-height: 52px;
+            padding: 15px 52px 15px 0;
 
             &:not(:first-child) {
                 border-top: 1px solid rgba($black, 0.10);
-            }
-
-            .checkmark {
-                top: 20px;
             }
 
             input {

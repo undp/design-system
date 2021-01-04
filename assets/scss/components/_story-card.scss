@@ -54,7 +54,7 @@
     &.no-image {
         .content {
             .tag, .title-description {
-                z-index: auto;
+                z-index: $z-index-3;
             }
         }
 
@@ -169,7 +169,7 @@
         }
 
         .tag, .title-description {
-            z-index: -1;
+            z-index: $z-index-0;
         }
 
         .title-description {
@@ -225,6 +225,7 @@
         .cta{
             bottom: 35px;
             position: absolute;
+            z-index: $z-index-3;
 
             .text-link:hover {
                 color: inherit;
@@ -238,6 +239,7 @@
         width: 100%;
         height: 100%;
         position: absolute;
+        z-index: $z-index-1;
         background-color: $yellow;
         transform: translateX(-105%);
         transition: $transition-primary;
@@ -298,4 +300,24 @@
         }
     }
 
+    // For IE 11 (media is a hack to check for IE 10+)
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:hover{
+            .hover-slide{
+                transform: translateX(0);
+            }
+
+            .link-arrow-group {
+                transform: translateX(0);
+
+                .arrow-line{
+                    display: unset;
+                }
+
+                .arrow-point{
+                    transform: translateX(31px);
+                }
+            }
+        }
+    }
 }

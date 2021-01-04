@@ -3,7 +3,7 @@ const init = function () {
         let $parentContainer = $(`#${select} .options`);
 
         $.ajax({
-            type: 'POST',
+            type: 'GET',
             url: `/assets/js/render-data/json/modals/locations/${type}.json`,
             dataType: 'json',
             success: function(response){

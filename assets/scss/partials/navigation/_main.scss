@@ -43,6 +43,7 @@
 
             li:not(:last-child) {
                 color: red;
+                max-height: 105px;
                 margin-right: 75px;
 
                 @include breakpoint(medium down){

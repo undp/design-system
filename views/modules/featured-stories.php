@@ -29,7 +29,7 @@
             <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
                     View::render('components/story-card', [
-                        'image' => '/assets/images/placeholder/featured-story-2.jpeg',
+                        'image' => 'assets/images/placeholder/featured-story-2.jpeg',
                         'tag' => 'UNDP Response',
                         'title' => '“We are a forgotten population.”',
                         'description' => 'Local organizations in Panama continue to reach vulnerable groups during lockdown              ',

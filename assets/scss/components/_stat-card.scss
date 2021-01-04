@@ -54,6 +54,7 @@
     .numerals {
         color: $dark-blue-1;
         -webkit-text-stroke: 1px $white;
+        text-shadow: -1px -1px 0 $white, 1px -1px 0 $white, -1px 1px 0 $white, 1px 1px 0 $white;
     }
 
     .h3 {
@@ -74,6 +75,7 @@
             }
 
             .numerals {
+                text-shadow: none;
                 -webkit-text-stroke: unset;
             }
         }

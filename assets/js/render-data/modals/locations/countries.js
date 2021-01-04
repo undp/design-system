@@ -2,7 +2,7 @@ const init = function () {
     const $parentContainer = $('.countries')
 
     $.ajax({
-        type: 'POST',
+        type: 'GET',
         url: '/assets/js/render-data/json/modals/locations/countries.json',
         dataType: 'json',
         success: function(response){

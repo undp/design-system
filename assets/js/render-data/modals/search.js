@@ -2,7 +2,7 @@ const init = function () {
     const $parentContainer = $('[data-modal-search]');
 
     $.ajax({
-        type: 'POST',
+        type: 'GET',
         url: '/assets/js/render-data/json/modals/search/search.json',
         dataType: 'json',
         success: function(response){

@@ -1,7 +1,8 @@
 import LazyLoad from "../classes/LazyLoad";
 
+export const lazyLoad = new LazyLoad();
+
 const init = function () {
-    const lazyLoad = new LazyLoad();
     lazyLoad.init();
 }
 

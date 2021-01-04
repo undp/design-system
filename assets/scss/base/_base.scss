@@ -21,6 +21,11 @@ body {
     }
 }
 
+// For IE 11
+main {
+    display: block;
+}
+
 a {
     color: inherit;
     text-decoration: none;
