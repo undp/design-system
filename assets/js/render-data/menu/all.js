@@ -81,7 +81,7 @@ const init = function () {
                                         </div>
                                     </div>
                                     <div class="cell large-auto flex-container align-right content-image">
-                                        <img class="image" src="${ item.image.link }" alt="${ item.image.alt }">
+                                        <img class="image lazy" data-src="${ item.image.link }" alt="${ item.image.alt }">
                                     </div>`
                             }
                         </div>`;
