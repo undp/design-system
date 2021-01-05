@@ -34,7 +34,7 @@ const init = function () {
             if (e.pageX < $(this).width() / 2) {
                $publicationSlide.css('cursor', 'url("/assets/images/arrows/slider-arrow-left.svg"), url("/assets/images/arrows/slider-arrow-left.cur"), auto')
             } else {
-               $publicationSlide.css('cursor', 'url("/assets/images/arrows/slider-arrow-right.svg"), url("/assets/images/arrows/slider-arrow-left.cur"), auto')
+               $publicationSlide.css('cursor', 'url("/assets/images/arrows/slider-arrow-right.svg"), url("/assets/images/arrows/slider-arrow-right.cur"), auto')
             }
         });
 
