@@ -144,6 +144,10 @@
                     animation: none;
                 }
             }
+
+            &.opacity-transition-back {
+                animation: transition-opacity .2s reverse;
+            }
         }
 
 
