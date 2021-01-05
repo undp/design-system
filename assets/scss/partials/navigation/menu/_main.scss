@@ -31,7 +31,6 @@
     }
 
     60% {
-        //width: 840px;
         width: 900px;
         height: 840px;
         margin-top: -330px;
@@ -102,11 +101,6 @@
             opacity: 0;
             animation: circle-square-transition .2s;
             animation-fill-mode: forwards;
-            //width: 840px;
-            //height: 840px;
-            //margin-top: -330px;
-            //border-radius: 0 0 80% 80% / 0 0 70% 70%;
-            //border-radius: 0 0 50% 50%/0 0 40% 40%;
 
             &.change-modal {
                 animation-delay: 0s;
