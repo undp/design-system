@@ -7,30 +7,42 @@
         border-radius: 50%;
     }
 
-    25% {
-        width: 150px;
-        height: 150px;
+    15% {
         opacity: 0.25;
-        margin-top: -50px;
+        width: 180px;
+        height: 150px;
+        margin-top: -70px;
         border-radius: 50%;
     }
 
-    50% {
+    30% {
         opacity: 0.5;
-        width: 350px;
-        height: 350px;
-        margin-top: -50px;
+        width: 600px;
+        height: 600px;
+        margin-top: -330px;
         border-radius: 50%;
+    }
 
+    45% {
+        width: 705px;
+        height: 705px;
+        margin-top: -330px;
+        border-radius: 45%;
+    }
+
+    60% {
+        width: 900px;
+        height: 840px;
+        margin-top: -330px;
+        border-radius: 0 0 80% 80% / 0 0 70% 70%;
     }
 
     75% {
-        width: 450px;
-        height: 400px;
-        margin-top: -50px;
-        border-radius: 0 0 30% 30%;
+        width: 1096px;
+        height: 900px;
+        margin-top: -330px;
+        border-radius: 0 0 50% 50%/0 0 20% 20%;
     }
-
     100% {
         opacity: 1;
         border-radius: 0;
