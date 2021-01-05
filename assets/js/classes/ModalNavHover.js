@@ -20,7 +20,7 @@ class ModalNavHover {
         this.$currentModal = null;
         this.$modalContent = null;
         this.$modalMenuOptions = null;
-        this.$nav = $('[data-navigation]');
+        this.$menuDesktop = $('[data-menu-desktop]');
         this.$navMenuItems = $('[data-modal-nav]');
         this.lazyLoadClass = null;
     }
@@ -80,7 +80,7 @@ class ModalNavHover {
         this.$window.hover((evt) => {
             //close modal when the hover event is outside of nav and modal content
             if (!this.$modalBody.is(evt.target) && this.$modalBody.has(evt.target).length === 0 &&
-                !this.$nav.is(evt.target) && this.$nav.has(evt.target).length === 0) {
+                !this.$menuDesktop.is(evt.target) && this.$menuDesktop.has(evt.target).length === 0) {
                 this.allowOpenModal = true;
                 if (this.$lastModal) {
                     this.$lastModal = null;

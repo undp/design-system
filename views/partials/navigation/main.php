@@ -20,7 +20,7 @@ use helpers\View;
                         <li><a class="nav-item dark" href="#">Español</a></li>
                     </ul>
                 </div>
-                <div class="menu-desktop">
+                <div class="menu-desktop" data-menu-desktop>
                     <ul class="flex-container align-middle middle-menu">
                         <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-who-we-are" aria-expanded="false" aria-haspopup="true">Who we are</button></li>
                         <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-what-we-do" aria-expanded="false" aria-haspopup="true">What we do</button></li>
