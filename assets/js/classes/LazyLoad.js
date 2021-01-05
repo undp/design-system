@@ -112,7 +112,7 @@ class LazyLoad {
                 }
             });
         });
-
+        this.$images = $('.lazy');
         this.$images.each((i, image) => {
             this.imageObserver.observe(image);
         });

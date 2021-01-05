@@ -110,6 +110,7 @@ class ModalNavHover {
         this.removeTransitions();
 
         this.lazyLoadClass.loadImagesVideos();
+        this.lazyLoadClass.intersectionObserver();
     }
 
     //if we open our seconds modal, we not require transitions so remove it
