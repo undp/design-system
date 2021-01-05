@@ -1,6 +1,8 @@
 const init = function () {
-    function renderMenu(type, parentContainer) {
+    function renderMenu(type, parentContainer, mobileParentContainer) {
         const $parentContainer = $(`[${parentContainer}]`)
+        const $mobileParentContainer = $(`[${mobileParentContainer}]`)
+
         $.ajax({
             type: 'GET',
             url:`/assets/js/render-data/json/menu/${type}.json`,
@@ -87,14 +89,42 @@ const init = function () {
                         </div>`;
                     }).join('')}
                 </div>`);
+
+
+                //menu mobile
+                $mobileParentContainer.append(`
+                ${response.menus.map((option) => {
+                    let subLinks = response.content.filter(content => content.contentId === option.menuOption)[0]
+                    
+                    if($.isArray(subLinks.links[0])) {
+                        subLinks.links = [].concat.apply([], subLinks.links)    
+                    }
+                    return `<li class="menu-item">
+                    ${option.external 
+                        ? `<a class="menu-item-title text-link arrow-3" href="${ option.link }" target="_blank">
+                                ${ option.name }
+                                <span class="arrow"></span>
+                           </a>`
+                        : `<a class="menu-item-title" href="${ option.link }">${ option.name }</a>`}
+                    
+                    <ul class="submenu">
+                        ${ subLinks.links.map((link) => {
+                         return `${ link.external 
+                             ? `<li><a class="text-link arrow-3" href="${ link.link }" target="_blank">${ link.name } <span class="arrow"></span></a></li>`
+                             : `<li><a class="text-link arrow-1" href="${ link.link }">${ link.name }</a></li>`}`   
+                        }).join('')}
+                    </ul>
+                </li>`
+                }).join('')} 
+               `)
             }
         });
     }
 
-    renderMenu('who-we-are', 'data-menu-who-we-are');
-    renderMenu('what-we-do', 'data-menu-what-we-do');
-    renderMenu('our-impact', 'data-menu-our-impact');
-    renderMenu('get-involved', 'data-menu-get-involved');
+    renderMenu('who-we-are', 'data-menu-who-we-are','data-mobile-menu-who-we-are');
+    renderMenu('what-we-do', 'data-menu-what-we-do', 'data-mobile-menu-what-we-do');
+    renderMenu('our-impact', 'data-menu-our-impact', 'data-mobile-menu-our-impact');
+    renderMenu('get-involved', 'data-menu-get-involved', 'data-mobile-menu-get-involved');
 }
 
 export default init;
