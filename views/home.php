@@ -10,7 +10,6 @@ use helpers\View;
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="UNDP Design Showcase"/>
     <title>UNDP Design Showcase</title>
-
     <link href="/dist/app.css" rel="stylesheet">
 </head>
 
