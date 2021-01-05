@@ -3,7 +3,7 @@ let _ = require('lodash');
 
 const init = function () {
     const $glide = $('.publications-slider')
-    const $publicationSlide = $glide.find('.publication-content');
+    const $publicationSlide = $glide.find('.publication-content-container');
 
     if ($glide.length) {
         const $controlSlider = $glide.find('.control-slider')
@@ -32,9 +32,9 @@ const init = function () {
 
        $publicationSlide.on('mousemove', function(e){
             if (e.pageX < $(this).width() / 2) {
-               $publicationSlide.css('cursor', 'url("/assets/images/arrows/slider-arrow-left.svg"), auto')
+               $publicationSlide.css('cursor', 'url("/assets/images/arrows/slider-arrow-left.svg"), url("/assets/images/arrows/slider-arrow-left.cur"), auto')
             } else {
-               $publicationSlide.css('cursor', 'url("/assets/images/arrows/slider-arrow-right.svg"), auto')
+               $publicationSlide.css('cursor', 'url("/assets/images/arrows/slider-arrow-right.svg"), url("/assets/images/arrows/slider-arrow-left.cur"), auto')
             }
         });
 

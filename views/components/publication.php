@@ -3,7 +3,7 @@ use helpers\Svg;
 ?>
 
 <section class="publication">
-    <div class="grid-x publication-content">
+    <div class="grid-x publication-content-container">
         <div class="cell small-10 medium-4 flex-container align-justify align-center overflow-hidden">
             <div class="publication-image">
                 <img class="image lazy" data-src="<?= $image ?>">
