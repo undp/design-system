@@ -15,7 +15,7 @@ require('laravel-mix-polyfill');
 mix.js('assets/js/app.js', 'dist')
     .sass('assets/scss/app.scss', 'dist')
     .setPublicPath('dist')
-    .browserSync('undp.test')
+    .browserSync('undp-design-showcase.test')
     .polyfill({
         enabled: true,
         useBuiltIns: "usage",
