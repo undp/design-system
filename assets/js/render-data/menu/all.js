@@ -104,14 +104,14 @@ const init = function () {
                     ${option.external 
                         ? `<a class="menu-item-title text-link arrow-3" href="${ option.link }" target="_blank">
                                 ${ option.name }
-                                <span class="arrow"></span>
+                                <span>${ arrowExternal.html() }</span>
                            </a>`
                         : `<a class="menu-item-title" href="${ option.link }">${ option.name }</a>`}
                     
                     <ul class="submenu">
                         ${ subLinks.links.map((link) => {
                          return `${ link.external 
-                             ? `<li><a class="text-link arrow-3" href="${ link.link }" target="_blank">${ link.name } <span class="arrow"></span></a></li>`
+                             ? `<li><a class="text-link arrow-3" href="${ link.link }" target="_blank">${ link.name }  <span>${ arrowExternal.html() }</span></a></li>`
                              : `<li><a class="text-link arrow-1" href="${ link.link }">${ link.name }</a></li>`}`   
                         }).join('')}
                     </ul>
