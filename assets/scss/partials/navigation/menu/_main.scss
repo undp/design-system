@@ -182,12 +182,9 @@
                     &:hover,
                     &:focus,
                     &.active {
-
-                        a {
-                            &.arrow-3 {
-                                svg {
-                                    color: $white;
-                                }
+                        .arrow-3 {
+                            svg {
+                                color: $white;
                             }
                         }
                     }
@@ -202,13 +199,6 @@
                         &:hover,
                         &:visited {
                             color: $black;
-                        }
-
-                        &.arrow-3 {
-
-                            svg {
-                                color :$black;
-                            }
                         }
                     }
                 }

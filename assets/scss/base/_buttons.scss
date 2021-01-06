@@ -209,8 +209,11 @@
         }
 
         &.light-white {
-            svg {
-                color: $white;
+            &.icon-footer {
+                svg {
+                    color: $white;
+                    transform: scale(.8);
+                }
             }
         }
     }
@@ -259,7 +262,7 @@
 
     svg,
     img{
-        margin-left: 13px;
+        margin-left: 12px;
         transition: transform 0.2s ease;
     }
 }
