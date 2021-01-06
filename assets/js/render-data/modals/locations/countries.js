@@ -13,7 +13,8 @@ const init = function () {
                         <div class="country">${ item.name }</div>
                         <div class="languages">
                             ${item.languages.map(language => {
-                                return `<a class="language-link" href="${ language.url }">${ language.name }</a>`;
+                                return `
+                                    <a class="text-link arrow-3" href="${ language.url }">${ language.name }<span class="arrow"></span></a>`;
                             }).join('')}
                         </div>
                     </div>`;

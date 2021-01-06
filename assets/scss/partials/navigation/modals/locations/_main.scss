@@ -431,6 +431,14 @@
                                 }
                             }
                         }
+
+                        .text-link {
+                            padding-right: 30px;
+
+                            &:not(:last-child) {
+                                margin-right: 10px;
+                            }
+                        }
                     }
                 }
 
