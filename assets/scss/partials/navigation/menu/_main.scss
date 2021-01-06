@@ -188,14 +188,8 @@
                     &:focus,
                     &.active {
                         .arrow-3 {
-                            .arrow {
-                                &:before {
-                                    opacity: 0;
-                                }
-
-                                &:after {
-                                    opacity: 1;
-                                }
+                            svg {
+                                color: $white;
                             }
                         }
                     }

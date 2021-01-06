@@ -119,29 +119,17 @@
         }
 
         &.arrow-3 {
-            .arrow {
-                &:before {
-                    opacity: 0;
-                }
-
-                &:after {
-                    opacity: 1;
+            svg {
+                .transition-arrow{
+                    transform: translate(3px, -3px);
                 }
             }
 
             &.light-white {
                 &.icon-footer {
-                    .arrow {
-                        &:after {
-                            background-color: rgba($white, 0.7);
-
-                            // For IE 11 (media is a hack to check for IE 10+)
-                            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                                background: transparent;
-                            }
-                        }
+                    svg {
+                        color: rgba($white, 0.7);
                     }
-
                 }
             }
         }
@@ -198,95 +186,33 @@
     &.arrow-3 {
         display: inline;
 
-        .arrow {
+        svg {
+            color: $red;
             position: relative;
 
-            &:after,
-            &:before {
-                left: 14px;
-                bottom: 3px;
-                content: '';
-                width: 20px;
-                height: 18px;
-                display: block;
-                position: absolute;
-                mask-repeat: no-repeat;
-                background-position: center;
+            .transition-arrow{
+                transition: transform 0.4s ease;
             }
-
-            //arrow default
-            &:before {
-                background-color: $red;
-                background-image: url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
-                mask-image: url("#{$image-path}arrows/btn-arrow-external.svg");
-
-                // For IE 11 (media is a hack to check for IE 10+)
-                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                    background: transparent url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
-                }
-            }
-
-            // arrow hover
-            &:after {
-                opacity: 0;
-                background-color: $red;
-                background-image: url("#{$image-path}arrows/btn-arrow-external-hover.svg") no-repeat;
-                mask-image: url("#{$image-path}arrows/btn-arrow-external-hover.svg");
-
-                // For IE 11 (media is a hack to check for IE 10+)
-                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                    background: transparent url("#{$image-path}arrows/btn-arrow-external-hover.svg") no-repeat;
-                }
-            }
-
         }
 
         &.light-blue {
-            .arrow {
-                &:before,
-                &:after {
-                    background-color: $dark-blue-1;
-                }
+            svg {
+                color: $dark-blue-1;
             }
 
         }
 
         &.light-red {
-            .arrow {
-                &:before,
-                &:after {
-                    background-color: $red;
-                }
+            svg {
+                color: $red;
             }
         }
 
         &.light-white {
-            .arrow {
-                &:after {
-                    background-color: $white;
-                    background-image: url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
-                    mask-image: url("#{$image-path}arrows/btn-arrow-external.svg");
-
-                    // For IE 11 (media is a hack to check for IE 10+)
-                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                        background: transparent url("#{$image-path}arrows/btn-arrow-external-white.svg") no-repeat;
-                    }
-                }
-            }
-
             &.icon-footer {
-                .arrow {
-                    &:before,
-                    &:after {
-                        bottom: 0;
-                        transform: scale(.8);
-                        background-color: $white;
-
-                        // For IE 11 (media is a hack to check for IE 10+)
-                        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                            background: transparent url("#{$image-path}arrows/btn-arrow-external-white.svg") no-repeat;
-                        }
-                    }
+                svg {
+                    color: $white;
+                    transform: scale(.8);
                 }
             }
         }
@@ -336,7 +262,7 @@
 
     svg,
     img{
-        margin-left: 13px;
+        margin-left: 12px;
         transition: transform 0.2s ease;
     }
 }

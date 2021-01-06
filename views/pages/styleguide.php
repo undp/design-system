@@ -281,7 +281,9 @@ use helpers\Svg;
                             <td>
                                 <a class="text-link arrow-3" href="#">
                                     Read More Read More Read More Read More Read More Read More
-                                    <span class="arrow"></span></a>
+                                    <span>
+                                        <?php Svg::render('btn-arrow-external', false, 'External link', 'assets/images/arrows/')?>
+                                    </span>
                             </td>
                         </tr>
                         <tr>
@@ -414,7 +416,9 @@ use helpers\Svg;
                             <td>
                                 <a class="text-link light-red arrow-3" href="#">
                                     Read More
-                                    <span class="arrow"></span>
+                                    <span>
+                                        <?php Svg::render('btn-arrow-external', false, 'External link', 'assets/images/arrows/')?>
+                                    </span>
                                 </a>
                             </td>
                         </tr>
@@ -549,7 +553,9 @@ use helpers\Svg;
                             <td>
                                 <a class="text-link light-blue arrow-3" href="#">
                                     Read More
-                                    <span class="arrow"></span>
+                                    <span>
+                                    <?php Svg::render('btn-arrow-external', false, 'External link', 'assets/images/arrows/')?>
+                                    </span>
                                 </a>
                             </td>
                         </tr>
