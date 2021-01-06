@@ -1,5 +1,6 @@
 const init = function () {
     const $parentContainer = $('.countries')
+    const arrowExternal = $('[data-arrow-external]')
 
     $.ajax({
         type: 'GET',
@@ -14,7 +15,7 @@ const init = function () {
                         <div class="languages">
                             ${item.languages.map(language => {
                                 return `
-                                    <a class="text-link arrow-3" href="${ language.url }">${ language.name }<span class="arrow"></span></a>`;
+                                    <a class="text-link arrow-3" href="${ language.url }">${ language.name }<span>${arrowExternal.html()}</span></a>`;
                             }).join('')}
                         </div>
                     </div>`;

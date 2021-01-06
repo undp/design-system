@@ -1,4 +1,5 @@
 const init = function () {
+    const arrowExternal = $('[data-arrow-external]');
     function renderMenu(type, parentContainer, mobileParentContainer) {
         const $parentContainer = $(`[${parentContainer}]`)
         const $mobileParentContainer = $(`[${mobileParentContainer}]`)
@@ -16,7 +17,7 @@ const init = function () {
                         ${response.menus.map((option, index) => {
                             return `<li class="${index === 0 ? 'active' : '' }" data-menu-option="${ option.menuOption }">
                                 ${option.external
-                                ? `<a class="text-link arrow-3 light-white" href="${ option.link }" target="_blank">${ option.name }<span class="arrow"></span></a>`
+                                ? `<a class="text-link arrow-3 light-white" href="${ option.link }" target="_blank">${ option.name } <span>${ arrowExternal.html() }</span></a>`
                                 : `<a href="${ option.link }" class="menu-item">${ option.name }</a>`}
                                 </li>`;     
                         }).join('')}
@@ -47,13 +48,13 @@ const init = function () {
                                                         return `<div class="text-link-inline">
                                                             <a class="text-link arrow-3" href="${ link.link }" target="_blank">
                                                                 ${ link.name }
-                                                                <span class="arrow"></span>
+                                                                <span>${ arrowExternal.html() }</span>
                                                             </a>
                                                         </div>`; 
                                                     }else {
                                                         return `<a class="text-link arrow-1" href="${ link.link }">
                                                             ${ link.name }
-                                                            <img src="../../../../assets/images/arrows/btn-arrow-red.svg" alt="dsjgdios">
+                                                            <img src="../../../../assets/images/arrows/btn-arrow-red.svg" alt="arrow link">
                                                         </a>`
                                                     }
                                                 }).join('')}
@@ -70,13 +71,13 @@ const init = function () {
                                                 return `<div class="text-link-inline">
                                                             <a class="text-link arrow-3" href="${ link.link }" target="_blank">
                                                                 ${ link.name }
-                                                                <span class="arrow"></span>
+                                                                 <span>${ arrowExternal.html() }</span>
                                                             </a>
                                                         </div>`; 
                                             } else {
                                                 return `<a class="text-link arrow-1" href="${ link.link }">
                                                             ${ link.name }
-                                                                <img src="../../../../assets/images/arrows/btn-arrow-red.svg" alt="dsjgdios">
+                                                                <img src="../../../../assets/images/arrows/btn-arrow-red.svg" alt="arrow link">
                                                         </a>`;
                                             }
                                         }).join('')}

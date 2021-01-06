@@ -182,14 +182,11 @@
                     &:hover,
                     &:focus,
                     &.active {
-                        .arrow-3 {
-                            .arrow {
-                                &:before {
-                                    opacity: 0;
-                                }
 
-                                &:after {
-                                    opacity: 1;
+                        a {
+                            &.arrow-3 {
+                                svg {
+                                    color: $white;
                                 }
                             }
                         }
@@ -205,6 +202,13 @@
                         &:hover,
                         &:visited {
                             color: $black;
+                        }
+
+                        &.arrow-3 {
+
+                            svg {
+                                color :$black;
+                            }
                         }
                     }
                 }

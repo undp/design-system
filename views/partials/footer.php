@@ -55,7 +55,9 @@ use helpers\Svg;
                             <li><a class="footer-menu-item light" href="#">Sustainable Development Goals</a></li>
                             <li><a class="footer-menu-item light text-link arrow-3 light-white icon-footer" href="#" target="_blank">
                                     Human Development Report
-                                    <span class="arrow"></span>
+                                       <span>
+                                        <?php Svg::render('btn-arrow-external', false, 'External link', 'assets/images/arrows/')?>
+                                    </span>
                                 </a>
                             </li>
                             <li><a class="footer-menu-item light" href="#">Development Challenges and Solutions</a></li>
@@ -89,9 +91,24 @@ use helpers\Svg;
                         <ul class="list">
                             <li><a class="footer-menu-item light" href="#">Careers</a></li>
                             <li><a class="footer-menu-item light" href="#">Procurement</a></li>
-                            <li><a class="footer-menu-item light text-link arrow-3 light-white icon-footer" href="#" target="_blank">Expert <br>Consultations <span class="arrow"></span></a></li>
-                            <li><a class="footer-menu-item light text-link arrow-3 light-white icon-footer" href="#" target="_blank">UNDP Shop <span class="arrow"></span></a></li>
-                            <li><a class="footer-menu-item light text-link arrow-3 light-white icon-footer" href="#" target="_blank">Donate <span class="arrow"></span></a></li>
+                            <li><a class="footer-menu-item light text-link arrow-3 light-white icon-footer" href="#" target="_blank">Expert <br>Consultations
+                                    <span>
+                                        <?php Svg::render('btn-arrow-external', false, 'External link', 'assets/images/arrows/')?>
+                                    </span>
+                                </a>
+                            </li>
+                            <li><a class="footer-menu-item light text-link arrow-3 light-white icon-footer" href="#" target="_blank">UNDP Shop
+                                    <span>
+                                        <?php Svg::render('btn-arrow-external', false, 'External link', 'assets/images/arrows/')?>
+                                    </span>
+                                </a>
+                            </li>
+                            <li><a class="footer-menu-item light text-link arrow-3 light-white icon-footer" href="#" target="_blank">Donate
+                                    <span>
+                                        <?php Svg::render('btn-arrow-external', false, 'External link', 'assets/images/arrows/')?>
+                                    </span>
+                                </a>
+                            </li>
                             <li><a class="footer-menu-item light" href="#">Contact Us</a></li>
                         </ul>
                     </div>
