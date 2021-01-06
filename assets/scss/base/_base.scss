@@ -1,0 +1,95 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: $primary-font;
+}
+
+html[data-whatinput="mouse"] {
+    button:focus, a:focus {
+        outline: none;
+    }
+}
+
+body {
+    line-height: 1.2;
+    font-family: $primary-font;
+
+    &.modal-open {
+        width: 100%;
+        height: 100vh;
+        overflow-y: hidden;
+    }
+}
+
+// For IE 11
+main {
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+        color: inherit;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6{
+    margin-bottom: 0;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.height-full {
+    height: 100%;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.show-for-sr {
+    color: $white;
+    font-size: 12px;
+}
+
+.grid-container{
+    @include breakpoint(medium up){
+        padding-left: map-get($grid-margin-gutters, "medium");
+        padding-right: map-get($grid-margin-gutters, "medium");
+    }
+}
+
+.lazy {
+    //the important rule is because the background is defined in-line
+    background-image: none !important;
+    background-color: $dark-blue-8 !important;
+}

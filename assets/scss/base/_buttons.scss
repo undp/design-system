@@ -1,0 +1,427 @@
+.btn {
+    border: none;
+    color: $white;
+    display: flex;
+    cursor: pointer;
+    background: $red;
+    font-size: 1.4rem;
+    font-weight: $bold;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 14px 24px 15px 29px;
+
+    &.full {
+        width: 100%;
+        justify-content: center;
+    }
+
+    &.not-flex {
+        display: inherit;
+    }
+
+    svg,
+    img{
+        margin-left: 14px;
+        transition: transform 0.2s ease;
+    }
+
+    &:hover {
+        background: $red-4;
+
+        svg,
+        img{
+            transform: translateX(70%);
+        }
+    }
+
+    &.dark {
+        &:hover {
+            background: $red-1;
+        }
+    }
+
+    &.light {
+        background: $white;
+        color: $dark-blue-1;
+
+        &:hover {
+            background: $red-7;
+        }
+    }
+}
+
+.btn-round {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+    background: $dark-blue-1;
+
+    &:hover {
+        background: $dark-blue-2;
+    }
+
+    &.rotate {
+        transform: scaleX(-1);
+    }
+
+    &.light-blue {
+        background: $white;
+
+        &:hover {
+            background: $dark-blue-4;
+        }
+    }
+
+    &.light-red {
+        background: $white;
+
+        &:hover {
+            background: $red-7;
+        }
+    }
+
+    .arrow {
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.text-link {
+    color: $black;
+    line-height: 1.3;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-items: center;
+    display: inline-flex;
+    text-transform: uppercase;
+
+    // For IE 11
+    & > * {
+        flex: 1 0 auto;
+    }
+
+    &:hover {
+        color: $dark-blue-2;
+
+        &.light-blue {
+            color: $red-7;
+        }
+
+        &.light-red {
+            color: $dark-blue-4;
+        }
+
+        &.arrow-3 {
+            .arrow {
+                &:before {
+                    opacity: 0;
+                }
+
+                &:after {
+                    opacity: 1;
+                }
+            }
+
+            &.light-white {
+                &.icon-footer {
+                    .arrow {
+                        &:after {
+                            background-color: rgba($white, 0.7);
+
+                            // For IE 11 (media is a hack to check for IE 10+)
+                            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                                background: transparent;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    &.arrow-1 {
+        padding-right: 17px;
+
+        &:hover {
+            svg,
+            img{
+                transform: translateX(70%);
+            }
+        }
+    }
+
+    &.arrow-2 {
+
+        .link-arrow {
+            height: 16px;
+            stroke: $red;
+            margin-top: -2px;
+            margin-left: 4px;
+            overflow: hidden;
+            fill: transparent;
+            vertical-align: middle;
+        }
+
+        .link-arrow-group {
+            transform: translateX(-31px);
+            transition: $transition-secondary;
+
+            .arrow-line{
+                display: none;
+            }
+        }
+
+        &:hover{
+            .link-arrow-group {
+                transform: translateX(0);
+
+                .arrow-line{
+                    display: unset;
+                }
+
+                .arrow-point{
+                    transform: translateX(31px);
+                }
+            }
+
+        }
+    }
+
+    &.arrow-3 {
+        display: inline;
+
+        .arrow {
+            position: relative;
+
+            &:after,
+            &:before {
+                left: 14px;
+                bottom: 3px;
+                content: '';
+                width: 20px;
+                height: 18px;
+                display: block;
+                position: absolute;
+                mask-repeat: no-repeat;
+                background-position: center;
+            }
+
+            //arrow default
+            &:before {
+                background-color: $red;
+                background-image: url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
+                mask-image: url("#{$image-path}arrows/btn-arrow-external.svg");
+
+                // For IE 11 (media is a hack to check for IE 10+)
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    background: transparent url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
+                }
+            }
+
+            // arrow hover
+            &:after {
+                opacity: 0;
+                background-color: $red;
+                background-image: url("#{$image-path}arrows/btn-arrow-external-hover.svg") no-repeat;
+                mask-image: url("#{$image-path}arrows/btn-arrow-external-hover.svg");
+
+                // For IE 11 (media is a hack to check for IE 10+)
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    background: transparent url("#{$image-path}arrows/btn-arrow-external-hover.svg") no-repeat;
+                }
+            }
+
+        }
+
+        &.light-blue {
+            .arrow {
+                &:before,
+                &:after {
+                    background-color: $dark-blue-1;
+                }
+            }
+
+        }
+
+        &.light-red {
+            .arrow {
+                &:before,
+                &:after {
+                    background-color: $red;
+                }
+            }
+        }
+
+        &.light-white {
+            .arrow {
+                &:after {
+                    background-color: $white;
+                    background-image: url("#{$image-path}arrows/btn-arrow-external.svg") no-repeat;
+                    mask-image: url("#{$image-path}arrows/btn-arrow-external.svg");
+
+                    // For IE 11 (media is a hack to check for IE 10+)
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        background: transparent url("#{$image-path}arrows/btn-arrow-external-white.svg") no-repeat;
+                    }
+                }
+            }
+
+            &.icon-footer {
+                .arrow {
+                    &:before,
+                    &:after {
+                        bottom: 0;
+                        transform: scale(.8);
+                        background-color: $white;
+
+                        // For IE 11 (media is a hack to check for IE 10+)
+                        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                            background: transparent url("#{$image-path}arrows/btn-arrow-external-white.svg") no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.light-red,
+    &.light-blue{
+        color: $white;
+    }
+
+    &.light-blue {
+        svg {
+            color: $dark-blue-1
+        }
+    }
+
+    &.underline {
+        position: relative;
+        text-transform: unset;
+        font-weight: $regular;
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            display: block;
+            position: absolute;
+            background: $red ;
+        }
+
+        &.light-blue::before{
+            background: $dark-blue-1;
+        }
+
+        &:hover {
+            color: inherit;
+        }
+
+        &.light-blue,
+        &.light-red {
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    svg,
+    img{
+        margin-left: 13px;
+        transition: transform 0.2s ease;
+    }
+}
+
+.filter-tag{
+    .check-button {
+        display: none;
+        padding: 14px 30px 15px 25px;
+    }
+    .check-button + label {
+        margin: 0;
+        color: $black;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: $bold;
+        background: $white;
+        border: 2px solid $red;
+        text-transform: uppercase;
+        padding: 5px 30px 5px 25px;
+
+        &.light-blue{
+            color: $white;
+            background: $dark-blue-1;
+        }
+
+        &.light-red{
+            color: $white;
+            background: $red;
+            border-color: $dark-blue-1;
+        }
+    }
+
+    .check-button:not(:checked) + label:hover {
+        color: $dark-blue-2;
+        border-color: rgba($red, 0.7);
+
+        &.light-blue{
+            color: rgba($white, 0.7);
+        }
+
+        &.light-red{
+            color: $red-7;
+            border-color: rgba($dark-blue-1, 0.7);
+        }
+    }
+
+    .check-button + label:active,
+    .check-button:checked + label {
+        color: $white;
+        background: $red;
+
+        &.light-red{
+            background: $dark-blue-1;
+        }
+    }
+}
+
+.btn-back {
+    color: $black;
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: $bold;
+    align-items: center;
+    text-transform: uppercase;
+
+    .arrow-back {
+        margin-right: 12px;
+    }
+
+    &:active,
+    &:hover,
+    &:visited {
+        color: $black;
+    }
+}
+
+.btn-clear {
+    font-size: 1.2rem;
+    font-weight: $medium;
+    color: $dark-blue-10;
+    text-decoration: underline;
+
+    &:active,
+    &:hover,
+    &:visited {
+        color: $dark-blue-10;
+    }
+}
