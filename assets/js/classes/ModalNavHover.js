@@ -36,7 +36,7 @@ class ModalNavHover {
 
             const $navItem = $(navItem)
             const prepareModalForOpening = () => {
-                const modalId = $(navItem).data(this.dataModalId);
+                let modalId = $(navItem).data(this.dataModalId);
                 this.$currentModal = $('#' + modalId);
                 if (this.$lastModal && this.$currentModal &&
                     !this.$lastModal.is(this.$currentModal)) {
@@ -50,7 +50,6 @@ class ModalNavHover {
                     this.openModal();
                     this.allowOpenModal = false;
                 }
-
                 this.$lastModal = this.$currentModal;
             };
 
@@ -109,8 +108,7 @@ class ModalNavHover {
         this.$modalContent.addClass(this.classAnimationOpacity);
         this.removeTransitions();
 
-        this.lazyLoadClass.loadImagesVideos();
-        this.lazyLoadClass.intersectionObserver();
+        this.lazyLoadClass.listenerDefault();
     }
 
     //if we open our seconds modal, we not require transitions so remove it
@@ -154,7 +152,6 @@ class ModalNavHover {
         } else {
             this.$currentModal.addClass(this.classHide).removeClass(this.classAnimationColor);
         }
-
         this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation)
             .removeClass('circle-square-transition-back');
         this.$modalContent.removeClass(this.classAnimationOpacity);
