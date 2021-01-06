@@ -91,11 +91,23 @@
                     min-width: 23px;
                 }
 
+
                 &:hover,
-                &:focus,
+                &.active:hover {
+                    color: $background-gray-4;
+                }
+
                 &:active,
                 &.active {
-                    color: rgba($blue-0, 0.70);
+                  color: $background-gray-3;
+                }
+
+                .icon-close {
+                    color: $blue-0;
+
+                    &:hover {
+                        color: $background-gray-4;
+                    }
                 }
 
                 &:last-child {

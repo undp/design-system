@@ -38,8 +38,8 @@ use helpers\View;
                         <span data-icon>
                             <?php Svg::render('icon-www')?>
                         </span>
-                        <span class="hide" data-icon-close>
-                            <?php Svg::render('icon-close-red', true, 'Close Modal') ?>
+                        <span class="hide icon-close" data-icon-close>
+                            <?php Svg::render('icon-close') ?>
                         </span>
                         <span class="show-for-sr">Open/close Locations</span>
                     </a>
@@ -47,8 +47,8 @@ use helpers\View;
                         <span data-icon>
                             <?php Svg::render('icon-search')?>
                         </span>
-                        <span class="hide" data-icon-close>
-                            <?php Svg::render('icon-close-red', true, 'Close Modal') ?>
+                        <span class="hide icon-close" data-icon-close>
+                            <?php Svg::render('icon-close') ?>
                         </span>
                         <span class="show-for-sr">Open/close Search</span>
                     </a>
