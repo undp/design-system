@@ -14,7 +14,10 @@ use helpers\View;
                     </a>
                 </div>
                 <div class="dropdown show-for-xlarge" data-dropdown-languajes>
-                    <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>English</button>
+                    <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>
+                        <?php Svg::render('icon-languages') ?>
+                        English
+                    </button>
                     <ul class="dropdown-content menu-items hide" data-options>
                         <li><a class="nav-item dark" href="#">Français</a></li>
                         <li><a class="nav-item dark" href="#">Español</a></li>
