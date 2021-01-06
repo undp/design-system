@@ -20,7 +20,13 @@
             border-top: none;
 
             .checkbox-item {
+                max-height: unset;
                 border-top: 1px solid rgba($black, 0.10);
+
+                .checkmark {
+                    top: 17px;
+                    transform: unset;
+                }
             }
         }
     }

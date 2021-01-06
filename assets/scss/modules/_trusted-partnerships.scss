@@ -40,4 +40,10 @@
             display: none;
         }
     }
+
+    .trusted-partnerships-header{
+        @include breakpoint(medium up){
+            max-width: 50%;
+        }
+    }
 }

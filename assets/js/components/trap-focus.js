@@ -33,7 +33,9 @@ const init = function () {
             }
         });
 
-        firstFocusableElement.focus();
+        if(firstFocusableElement) {
+            firstFocusableElement.focus();
+        }
     }
 }
 

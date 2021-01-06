@@ -9,38 +9,5 @@ use helpers\Svg;
         Back
     </a>
     <a href="#" class="title uppercase">get involved</a>
-    <ul class="menu">
-        <li class="menu-item">
-            <a class="menu-item-title" href="#">New partnerships</a>
-            <ul class="submenu">
-                <li><a class="text-link arrow-1" href="#">For governments</a></li>
-                <li><a class="text-link arrow-1" href="#">For private sector</a></li>
-                <li><a class="text-link arrow-1" href="#">For non-governmental organizations</a></li>
-            </ul>
-        </li>
-        <li class="menu-item">
-            <a class="menu-item-title text-link arrow-3" href="#" target="_blank">Online Consultations <span class="arrow"></span></a>
-        </li>
-        <li class="menu-item">
-            <a class="menu-item-title text-link arrow-3" href="#" target="_blank">Donate <span class="arrow"></span></a>
-        </li>
-        <li class="menu-item">
-            <a class="menu-item-title text-link arrow-3" href="#" target="_blank">UNDP Shop <span class="arrow"></span></a>
-        </li>
-        <li class="menu-item">
-            <a class="menu-item-title text-link arrow-3" href="#" target="_blank">Careers <span class="arrow"></span></a>
-        </li>
-        <li class="menu-item">
-            <a class="menu-item-title" href="#">Procurement</a>
-            <ul class="submenu">
-                <li><a class="text-link arrow-1" href="#">Sustainable procurement</a></li>
-                <li><a class="text-link arrow-1" href="#">Doing business with UNDP</a></li>
-                <li><a class="text-link arrow-1" href="#">Procurement training</a></li>
-                <li><a class="text-link arrow-1" href="#">About us</a></li>
-            </ul>
-        </li>
-        <li class="menu-item">
-            <a class="menu-item-title" href="#">Contact Us</a>
-        </li>
-    </ul>
+    <ul class="menu" data-mobile-menu-get-involved></ul>
 </div>
