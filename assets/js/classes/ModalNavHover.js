@@ -12,6 +12,7 @@ class ModalNavHover {
         this.classAnimationNextModal = 'change-modal';
         this.classAnimation = 'circle-square-transition';
         this.classAnimationOpacity = 'opacity-transition';
+        this.classAnimationOpacityBack = 'opacity-transition-back';
 
         this.$currentNavItem = null;
         this.$lastModal = null;
@@ -108,6 +109,8 @@ class ModalNavHover {
         this.$modalBody.addClass(this.classAnimation).removeClass(this.classHide);
         this.$modalContent.addClass(this.classAnimationOpacity);
         this.removeTransitions();
+        this.$modalBody.find('.' + this.classAnimationOpacity).removeClass(this.classAnimationOpacityBack);
+
 
         this.lazyLoadClass.loadImagesVideos();
         this.lazyLoadClass.intersectionObserver();
@@ -131,6 +134,7 @@ class ModalNavHover {
     animateCloseModal() {
         this.resetAnimation();
         this.$modalBody.addClass('circle-square-transition-back');
+        this.$modalBody.find('.' + this.classAnimationOpacity).removeClass(this.classAnimationOpacity).addClass(this.classAnimationOpacityBack);
 
         setTimeout(() => {
             this.resetTransitionAllModals();
