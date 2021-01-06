@@ -134,7 +134,6 @@ class ModalNavHover {
     animateCloseModal() {
         this.resetAnimation();
         this.$modalBody.addClass('circle-square-transition-back');
-        console.log('class', this.$modalBody.find('.opacity-transition'));
         this.$modalBody.find('.' + this.classAnimationOpacity).removeClass(this.classAnimationOpacity).addClass(this.classAnimationOpacityBack);
 
         setTimeout(() => {
