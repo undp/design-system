@@ -31,7 +31,7 @@ use helpers\Svg;
     <ul class="menu-items-languages uppercase">
         <li>
             <a class="flex-container align-middle nav-item" href="#" data-item-details data-submenu="languages">
-                <?php Svg::render('icon-languages', true, 'Languages') ?>
+                <?php Svg::render('icon-languages', false, 'Languages') ?>
                 English
             </a>
         </li>
