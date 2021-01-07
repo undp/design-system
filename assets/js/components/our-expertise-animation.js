@@ -59,9 +59,9 @@ const init = function () {
                     animationScroll = gsap.timeline({
                         scrollTrigger: {
                             trigger: target,
-                            start: "top-=300px top",
+                            start: "center-=50px center",
                             endTrigger:'.trusted-partnerships-header',
-                            end: () => 'center-=300px top+=' + target.offsetHeight/2,
+                            end: () => 'center-=50px center',
                             pin: true,
                             scrub: true,
                             pinSpacing: false,
