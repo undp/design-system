@@ -1,6 +1,6 @@
 .modal-nav-content {
     .content-text {
-        padding: 0 20px 100px 75px;
+        padding: 0 75px 100px 75px;
 
         &.multiple-columns{
             padding: 0 20px 10px 75px;
@@ -20,6 +20,14 @@
             display: flex;
             margin-top: 40px;
             flex-direction: column;
+
+            &:first-child {
+                padding-right: 35px;
+            }
+
+            &:last-child {
+                padding-left: 35px;
+            }
 
             .text-link,
             .text-link-inline {

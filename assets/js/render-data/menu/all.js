@@ -1,5 +1,6 @@
 const init = function () {
     const arrowExternal = $('[data-arrow-external]');
+    const arrowRight = $('[data-arrow-right]');
     function renderMenu(type, parentContainer, mobileParentContainer) {
         const $parentContainer = $(`[${parentContainer}]`)
         const $mobileParentContainer = $(`[${mobileParentContainer}]`)
@@ -38,29 +39,30 @@ const init = function () {
                                         <h2 class="title">${ item.title }</h2>
                                         <p class="big-copy description">${ item.description }</p>
                                     </div>
-                                    
-                                    ${item.links.map(linkGroup => {
-                                        return `
-                                        <div class="cell medium-6 content-text">
-                                            <div class="links">
-                                                ${linkGroup.map(link => {
-                                                    if(link.external){
-                                                        return `<div class="text-link-inline">
-                                                            <a class="text-link arrow-3" href="${ link.link }" target="_blank">
-                                                                ${ link.name }
-                                                                <span>${ arrowExternal.html() }</span>
-                                                            </a>
-                                                        </div>`; 
-                                                    }else {
-                                                        return `<a class="text-link arrow-1" href="${ link.link }">
-                                                            ${ link.name }
-                                                            <img src="../../../../assets/images/arrows/btn-arrow-red.svg" alt="arrow link">
-                                                        </a>`
-                                                    }
-                                                }).join('')}
-                                            </div>
-                                        </div>`;      
-                                    }).join('')}`
+                                    <div class="cell content-text">
+                                        <div class="grid-x">
+                                            ${item.links.map(linkGroup => {
+                                                return `
+                                                    <div class="links medium-6">
+                                                        ${linkGroup.map(link => {
+                                                            if(link.external){
+                                                                return `<div class="text-link-inline">
+                                                                    <a class="text-link arrow-3" href="${ link.link }" target="_blank">
+                                                                        <span>${ link.name }</span>
+                                                                        <span>${ arrowExternal.html() }</span>
+                                                                    </a>
+                                                                </div>`; 
+                                                            }else {
+                                                                return `<a class="text-link arrow-1" href="${ link.link }">
+                                                                    <span>${ link.name } </span> 
+                                                                     <span>${ arrowRight.html() }</span>
+                                                                </a>`
+                                                            }
+                                                        }).join('')}
+                                                    </div>`;      
+                                            }).join('')}
+                                         </div>
+                                    </div>`
                             
                                 : `<div class="cell large-auto content-text" > 
                                        <h2 class="title"> ${ item.title }</h2>
@@ -70,14 +72,14 @@ const init = function () {
                                             if (link.external) {
                                                 return `<div class="text-link-inline">
                                                             <a class="text-link arrow-3" href="${ link.link }" target="_blank">
-                                                                ${ link.name }
+                                                                <span>${ link.name }</span>
                                                                  <span>${ arrowExternal.html() }</span>
                                                             </a>
                                                         </div>`; 
                                             } else {
                                                 return `<a class="text-link arrow-1" href="${ link.link }">
-                                                            ${ link.name }
-                                                                <img src="../../../../assets/images/arrows/btn-arrow-red.svg" alt="arrow link">
+                                                            <span>${ link.name }</span>
+                                                            <span>${ arrowRight.html() }</span>
                                                         </a>`;
                                             }
                                         }).join('')}
