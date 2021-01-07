@@ -1,0 +1,195 @@
+.heading {
+    font-family: $primary-font;
+
+    &.light {
+        color: $white;
+    }
+
+    &.dark {
+        color: $black;
+    }
+
+    &.h1 {
+        font-size: 12rem;
+        line-height: 1.09;
+        letter-spacing: 12px;
+        font-weight: $extra-bold;
+        text-transform: uppercase;
+        font-family: $secondary-font;
+
+        @include breakpoint(large down){
+            font-size: 8.2rem;
+            line-height: 1.08;
+        }
+
+        @include breakpoint(small only){
+            font-size: 4.7rem;
+        }
+    }
+
+    &.h2 {
+        font-size: 5.5rem;
+        line-height: 1.09;
+        font-weight: $bold;
+
+        @include breakpoint(large down){
+            font-size: 4.5rem;
+            line-height: 1.11;
+        }
+
+        @include breakpoint(medium down){
+            font-size: 4rem;
+        }
+    }
+
+    &.h3 {
+        font-size: 3.5rem;
+        line-height: 1.14;
+        font-weight: $semi-bold;
+
+        @include breakpoint(medium down){
+            font-size: 3rem;
+            line-height: 1.16;
+        }
+    }
+
+    &.h4 {
+        font-size: 3.5rem;
+        line-height: 1.14;
+        font-weight: $regular;
+
+        @include breakpoint(medium down){
+            font-size: 2.4rem;
+        }
+    }
+
+    &.h5 {
+        line-height: 1.2;
+        font-size: 2.5rem;
+        font-weight: $regular;
+    }
+}
+
+.numerals {
+    font-size: 11rem;
+    line-height: 1.08;
+    font-weight: $bold;
+    letter-spacing: 2.2px;
+    font-family: $secondary-font;
+
+    @include breakpoint(large down){
+        font-size: 9.1rem;
+        line-height: 1.07;
+    }
+
+    @include breakpoint(medium down){
+        font-size: 6.6rem;
+    }
+
+    @include breakpoint(small only){
+        font-size: 9.1rem;
+    }
+
+    &.light {
+        color: $white;
+    }
+
+    &.dark {
+        color: $black;
+    }
+}
+
+.big-copy {
+    color: $black;
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: $regular;
+
+    @include breakpoint(medium down){
+        font-size: 1.6rem;
+    }
+
+    &.light {
+        color: $white;
+    }
+
+    &.dark {
+        color: $black;
+    }
+}
+
+.medium-copy {
+    line-height: 1.3;
+    font-size: 2rem;
+    font-weight: $regular;
+
+    @include breakpoint(medium down){
+        line-height: 1.4;
+        font-size: 1.4rem;
+    }
+
+    &.light {
+        color: $white;
+    }
+
+    &.dark {
+        color: $black;
+    }
+}
+
+.small-copy {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    font-weight: $regular;
+
+    &.light {
+        color: $white;
+    }
+
+    &.dark {
+        color: $black;
+    }
+}
+
+.cta-link {
+    line-height: 1.12;
+    font-size: 1.6rem;
+    font-weight: $bold;
+
+    &.light {
+        color: $white;
+    }
+
+    &.dark {
+        color: $black;
+    }
+}
+
+.nav-item {
+    font-size: 1.4rem;
+    line-height: 1.14;
+    font-weight: $semi-bold;
+
+    &.light {
+        color: $white;
+    }
+
+    &.dark {
+        color: $black;
+    }
+}
+
+.tag {
+    font-size: 1.2rem;
+    line-height: 1.33;
+    font-weight: $bold;
+    text-transform: uppercase;
+
+    &.light {
+        color: $white;
+    }
+
+    &.dark {
+        color: $black;
+    }
+}

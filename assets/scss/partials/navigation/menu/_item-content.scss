@@ -16,18 +16,22 @@
             margin-top: 25px;
         }
 
+        &.multiple-column {
+            .links {
+                &:first-child {
+                    padding-right: 35px;
+                }
+
+                &:last-child {
+                    padding-left: 35px;
+                }
+            }
+        }
+
         .links {
             display: flex;
             margin-top: 40px;
             flex-direction: column;
-
-            &:first-child {
-                padding-right: 35px;
-            }
-
-            &:last-child {
-                padding-left: 35px;
-            }
 
             .text-link,
             .text-link-inline {
