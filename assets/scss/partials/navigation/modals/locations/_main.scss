@@ -1,0 +1,472 @@
+.modal-search-offices {
+    width: 100%;
+    position: fixed;
+    top: $height-nav;
+    overflow-y: auto;
+    z-index: $z-index-modal;
+    height: calc(100vh - #{$height-nav});
+
+    @include breakpoint(large down){
+        backdrop-filter: blur(21px);
+        background-color: rgba($white, 0.98);
+
+        @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+            background-color: rgba($white, 0.87);
+        }
+    }
+
+    @include breakpoint(large down) {
+        top: calc(#{$height-nav-medium} + 1px);
+        height: calc(100% - #{$height-nav-medium});
+    }
+
+    .modal-content {
+        padding: 0;
+        position: relative;
+
+        .close-button {
+            top: 52px;
+            right: 44px;
+            cursor: pointer;
+            position: absolute;
+            z-index: $z-index-5;
+        }
+
+        .modal-body {
+            height: 1px;
+            min-height: 100%;
+            position: relative;
+            align-content: flex-start;
+
+            @include breakpoint(medium down) {
+                height: unset;
+            }
+
+            .cell-search {
+                min-height: 100%;
+                max-width: 525px;
+                padding: 75px 60px;
+                border-right: none;
+                backdrop-filter: blur(30px);
+                box-shadow: 0 3px 6px rgba($black, 0.16);
+                background-color: rgba($dark-blue-6, 0.98);
+
+                @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+                    background-color: rgba($dark-blue-6, 0.86);
+                }
+
+                @include breakpoint(medium down) {
+                    max-width: unset;
+                    box-shadow: unset;
+                    min-height: unset;
+                    backdrop-filter: unset;
+                    padding: 25px 15px 0 15px;
+                    background-color: transparent;
+                }
+
+                .btn-back {
+                    padding-left: 15px;
+                }
+
+                .header-modal {
+                    @include breakpoint(medium down) {
+                        padding: 0 30px;
+                    }
+
+                    .title {
+                        margin-top: 40px;
+
+                        @include breakpoint(medium down) {
+                            font-size: 2rem;
+                            font-weight: $regular;
+                        }
+                    }
+
+                    .text-link {
+                        margin-top: 25px;
+                        display: inline-block;
+
+                        img{
+                            margin-top: -5px;
+                        }
+                    }
+
+                    .description {
+                        margin-top: 40px;
+
+                        @include breakpoint(medium down) {
+                            margin-top: 20px;
+                            font-size: 1.4rem;
+                        }
+                    }
+
+                    .tag-current-section {
+                        margin-top: 30px;
+                    }
+
+                    .title-undp {
+                        color: $blue-0;
+                        font-size: 2rem;
+                        margin-top: 10px;
+                        font-weight: $semi-bold;
+                    }
+                }
+
+                .search-select-group {
+                    margin-top: 60px;
+
+                    .multi-select {
+                        margin-top: 15px;
+
+                        .select-control {
+                            text-align: left;
+                        }
+                    }
+
+                    .active-filters {
+                        padding: 20px;
+
+                        .tag {
+                            margin-bottom: 15px;
+                        }
+
+                        .filter {
+                            color: $black;
+                            display: block;
+                            line-height: 1.5;
+                            font-size: 1.4rem;
+                            font-weight: $regular;
+
+                            &:before {
+                                margin-right: 5px;
+                                content: url('#{$image-path}icon-close-modal-location.svg');
+                            }
+
+                            &:focus,
+                            &:active,
+                            &:hover
+                            {
+                                color: $black;
+                            }
+                        }
+
+                        .filter-clear  {
+                            color: $black;
+                            line-height: 1.5;
+                            margin-left: 15px;
+                            font-size: 1.4rem;
+                            font-weight: $regular;
+                            text-transform: capitalize;
+                            border-bottom: 1px solid $red;
+
+                            &:focus,
+                            &:active,
+                            &:hover
+                            {
+                                color: $black;
+                            }
+                        }
+                    }
+                }
+
+                .location-undp {
+                    color: $blue-0;
+                    margin-top: 15px;
+                }
+
+            }
+
+            .cell-list-offices {
+                padding: 80px 50px;
+                position: relative;
+                backdrop-filter: blur(21px);
+                box-shadow: 0 3px 6px rgba($black, 0.16);
+                // alternative to blur on firefox (color white with transparent
+                background-color: rgba($white, 0.98);
+
+                @include breakpoint(xlarge down){
+                    padding: 80px 25px;
+                }
+
+                @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+                    background-color: rgba($white, 0.87);
+                }
+
+                @include breakpoint(large down){
+                    backdrop-filter: unset;
+                    background-color: transparent;
+
+                    @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+                        background-color: transparent;
+                    }
+                }
+
+                @include breakpoint(medium down) {
+                    position: static;
+                    box-shadow: unset;
+                    padding: 0 0 0 15px;
+                }
+
+                .title {
+                    color: $blue-0;
+                    margin-top: 15px;
+                }
+
+                .inputs {
+                    .search-input-group {
+                        max-width: 230px;
+                        margin-right: 45px;
+
+                        @include breakpoint(xlarge down){
+                            max-width: 180px;
+                            margin-right: 8px;
+                        }
+
+                        @include breakpoint(medium down){
+                            width: 100%;
+                            max-width: unset;
+                            margin-right: 0;
+                        }
+
+                        .input-search {
+                            border: 0;
+                            margin: 0;
+                            height: 58px;
+                            padding: 20px;
+                            border-bottom: 2px solid $black;
+                            min-width: calc(100% - 58px);
+                            background-color: transparent;
+
+                            &::placeholder {
+                                color: rgba($black, 0.35);
+                            }
+
+                            &:active,
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+
+                        .btn-search {
+                            border: 0;
+                            width: 35px;
+                            height: 58px;
+                            color: $black;
+                            cursor: pointer;
+                            border-bottom: 2px solid $black;
+
+                            svg {
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+
+                    .search-select-group {
+                        margin-right: 30px;
+
+                        @include breakpoint(xlarge down){
+                            margin-right: 8px;
+                        }
+
+                        .multi-select {
+
+                            .select-control {
+                                text-align: left;
+                            }
+                        }
+
+                        .active-filters {
+                            padding: 20px;
+
+                            .tag {
+                                margin-bottom: 15px;
+                            }
+
+                            .filter {
+                                color: $black;
+                                display: block;
+                                line-height: 1.5;
+                                font-size: 1.4rem;
+                                font-weight: $regular;
+
+                                &:before {
+                                    margin-right: 5px;
+                                    content: url('#{$image-path}icon-close-modal-location.svg');
+                                }
+
+                                &:focus,
+                                &:active,
+                                &:hover
+                                {
+                                    color: $black;
+                                }
+                            }
+
+                            .filter-clear  {
+                                color: $black;
+                                line-height: 1.5;
+                                margin-left: 15px;
+                                font-size: 1.4rem;
+                                font-weight: $regular;
+                                text-transform: capitalize;
+                                border-bottom: 1px solid $red;
+
+                                &:focus,
+                                &:active,
+                                &:hover
+                                {
+                                    color: $black;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .active-filters {
+                    flex-wrap: wrap;
+                    margin-top: 20px;
+                    min-height: 36px;
+                    color: $dark-blue-18;
+
+                    .tag {
+                        margin: 0 15px 0 0;
+                    }
+
+                    .filter {
+                        color: $black;
+                        padding: 10px;
+                        font-size: 1.4rem;
+                        border-radius: 17px;
+                        margin: 0 10px 0 0;
+                        background-color: rgba($dark-blue-19, 0.36);
+
+                        &:before {
+                            margin-right: 5px;
+                            content: url("#{$image-path}/icon-close-modal-location.svg");
+                        }
+                    }
+
+                    .filter-clear {
+                        border-bottom: 1px solid $red;
+                    }
+                }
+
+                .countries {
+                    left: 0;
+                    right: 50px;
+                    padding: 0 50px;
+                    overflow-y: auto;
+                    position: absolute;
+                    margin: 44px 0 100px 0;
+                    max-height: calc(100% - 280px);
+
+                    @include breakpoint(xlarge down){
+                        padding: 0 25px;
+                    }
+
+                    @include breakpoint(medium down) {
+                        right: 0;
+                        padding: 0;
+                        width: 100%;
+                        margin-top: 30px;
+                        position: static;
+                        max-height: 250px;
+                    }
+
+                    &::-webkit-scrollbar {
+                        width: 5px;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: black;
+                    }
+
+                    .country {
+                        display: flex;
+                        align-items: center;
+
+                        @include breakpoint(small only){
+                            font-size: 1.1rem;
+                        }
+                    }
+
+                    .country-item {
+                        font-size: 2rem;
+                        line-height: 1.2;
+                        font-weight: $medium;
+                        padding: 20px 25px 20px 5px;
+                        border-top: 1px solid rgba($black, 0.10);
+
+                        @include breakpoint(medium down) {
+                            font-size: 1.6rem;
+                            line-height: 1.18;
+                            font-weight: $semi-bold;
+                        }
+
+                        @include breakpoint(small only){
+                            font-size: 1.1rem;
+                        }
+
+                        .language-link {
+                            display: inline-flex;
+                            align-items: center;
+                            font-weight: $regular;
+
+                            &:after {
+                                content: url('#{$image-path}icon-visit-link.svg');
+                                margin: 0 20px 0 12px;
+
+                                @include breakpoint(medium down) {
+                                    margin: 0 5px;
+                                }
+                            }
+
+                            &:last-child {
+                                &:after {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+
+                        .text-link {
+                            padding-right: 30px;
+
+                            &:not(:last-child) {
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+
+                .filter-options {
+                    left: 15px;
+                    right: 15px;
+                    bottom: 15px;
+                    position: absolute;
+                    width: calc(100% - 30px);
+
+                    .btn-filters {
+                        height: 50px;
+                        color: $black;
+                        background-color: $dark-blue-9;
+
+                        .current-filters {
+                            width: 24px;
+                            height: 24px;
+                            color: $white;
+                            margin-left: 50px;
+                            border-radius: 50%;
+                            background-color: $red;
+                            font-weight: $semi-bold;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
