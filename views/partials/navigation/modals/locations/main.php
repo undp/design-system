@@ -23,7 +23,9 @@ use helpers\View;
                     <h3 class="heading h3 title hide-for-large title-undp"><span class="uppercase">undp</span> Global</h3>
                     <a class="text-link arrow-3 show-for-large" href="#">
                         Go to GLOBAL SITE
-                        <span class="arrow"></span>
+                        <span>
+                            <?php Svg::render('btn-arrow-external', false, 'External link', 'assets/images/arrows/')?>
+                        </span>
                     </a>
                 </div>
             </div>

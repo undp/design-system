@@ -1,10 +1,17 @@
 <?php
+use helpers\Svg;
 use helpers\View;
 ?>
 <!-- Page Headers -->
 <?php View::render('partials/header') ?>
 
 <body>
+
+<!--special tag to get extenal SVG from JS-->
+<span class="hide" data-arrow-external>
+    <?php Svg::render('btn-arrow-external', false, 'External link', 'assets/images/arrows/')?>
+</span>
+
 <!-- Navigation -->
 <?php View::render('partials/navigation/main') ?>
 
