@@ -7,9 +7,13 @@ use helpers\View;
 
 <body>
 
-<!--special tag to get extenal SVG from JS-->
+<!--special tags to get extenal SVG from JS-->
 <span class="hide" data-arrow-external>
     <?php Svg::render('btn-arrow-external', false, 'External link', 'assets/images/arrows/')?>
+</span>
+
+<span class="hide" data-arrow-right>
+    <?php Svg::render('btn-arrow-red', false, 'Arrow right', 'assets/images/arrows/')?>
 </span>
 
 <!-- Navigation -->
