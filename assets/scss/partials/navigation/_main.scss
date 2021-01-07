@@ -86,17 +86,38 @@
                 position: relative;
                 margin-right: 22px;
 
+                &:hover,
+                &.active:hover {
+                    color: $background-gray-4;
+                }
+
+                &:active,
+                &.active {
+                    color: $background-gray-3;
+                }
+
+                .icon-close {
+                    color: $blue-0;
+
+                    &:hover {
+                        color: $background-gray-4;
+                    }
+                }
+
+                @include breakpoint(medium down) {
+                    &:hover,
+                    &:active,
+                    &.active,
+                    &.active:hover{
+                        color: $blue-0;
+                    }
+                }
+
                 @include breakpoint(large down) {
                     margin-right: 0;
                     min-width: 23px;
                 }
 
-                &:hover,
-                &:focus,
-                &:active,
-                &.active {
-                    color: rgba($blue-0, 0.70);
-                }
 
                 &:last-child {
                     margin-right: 38px;
@@ -137,9 +158,23 @@
             color: $blue-0;
             cursor: pointer;
 
-            &:before {
+            &:hover,
+            &.active:hover {
+                svg {
+                    color: $background-gray-4;
+                }
+            }
+
+            &:active,
+            &.active {
+                svg {
+                    color: $background-gray-3;
+                }
+            }
+
+            svg {
+                color: $blue-0;
                 margin-right: 9.5px;
-                content: url('#{$image-path}icon-languages.svg');
             }
 
             &:after {

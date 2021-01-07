@@ -14,7 +14,10 @@ use helpers\View;
                     </a>
                 </div>
                 <div class="dropdown show-for-xlarge" data-dropdown-languajes>
-                    <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>English</button>
+                    <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>
+                        <?php Svg::render('icon-languages') ?>
+                        English
+                    </button>
                     <ul class="dropdown-content menu-items hide" data-options>
                         <li><a class="nav-item dark" href="#">Français</a></li>
                         <li><a class="nav-item dark" href="#">Español</a></li>
@@ -38,8 +41,8 @@ use helpers\View;
                         <span data-icon>
                             <?php Svg::render('icon-www')?>
                         </span>
-                        <span class="hide" data-icon-close>
-                            <?php Svg::render('icon-close-red', true, 'Close Modal') ?>
+                        <span class="hide icon-close" data-icon-close>
+                            <?php Svg::render('icon-close') ?>
                         </span>
                         <span class="show-for-sr">Open/close Locations</span>
                     </a>
@@ -47,8 +50,8 @@ use helpers\View;
                         <span data-icon>
                             <?php Svg::render('icon-search')?>
                         </span>
-                        <span class="hide" data-icon-close>
-                            <?php Svg::render('icon-close-red', true, 'Close Modal') ?>
+                        <span class="hide icon-close" data-icon-close>
+                            <?php Svg::render('icon-close') ?>
                         </span>
                         <span class="show-for-sr">Open/close Search</span>
                     </a>
