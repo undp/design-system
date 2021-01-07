@@ -1,0 +1,43 @@
+.menu-mobile-main-options {
+    padding: 85px 0 95px 0;
+    backdrop-filter: blur(8px);
+    background-color: rgba($white, 0.98);
+
+    @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+        background-color: rgba($dark-blue-6, 0.96);
+    }
+
+    .menu-items {
+        padding: 0;
+        list-style: none;
+        margin: 0 0 0 30px;
+
+        li:not(:first-child) {
+            margin-top: 40px;
+        }
+    }
+
+    .menu-items-languages {
+        list-style: none;
+        padding-top: 45px;
+        margin: 50px 0 0 30px;
+        border-top: 1px solid rgba($black, 0.10);
+
+        li:not(:first-child) {
+            margin-top: 25px;
+        }
+
+        .nav-item {
+            color: $blue-0;
+
+            svg,
+            img{
+                margin-right: 15px;
+            }
+        }
+    }
+
+    ul {
+        padding: 0;
+    }
+}

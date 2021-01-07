@@ -1,0 +1,145 @@
+{
+    "menus": [
+        {
+            "link": "#",
+            "name": "New partnerships",
+            "menuOption": "content-new-partnerships"
+        },
+        {
+            "link": "#",
+            "name": "Online Consultations",
+            "menuOption": "content-expert-consultations",
+            "external": true
+        },
+        {
+            "link": "#",
+            "name": "Donate",
+            "menuOption": "content-donate",
+            "external": true
+        },
+        {
+            "link": "#",
+            "name": "UNDP Shop",
+            "menuOption": "content-undp-shop",
+            "external": true
+        },
+        {
+            "link": "#",
+            "name": "Careers",
+            "menuOption": "content-careers",
+            "external": true
+        },
+        {
+            "link": "#",
+            "name": "Procurement",
+            "menuOption": "content-procurement"
+        },
+        {
+            "link": "#",
+            "name": "Contact Us",
+            "menuOption": "content-contact-us"
+        }
+    ],
+    "content": [
+        {
+            "contentId" : "content-new-partnerships",
+            "title": "New partnerships",
+            "description": "UNDP Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae cupiditate dicta distinctio fugiat in inventore iusto maxime minima minus natus porro quibusdam, quos sapiente soluta ullam veniam voluptas voluptate voluptatum?",
+            "image": {
+                "link" : "../../../../assets/images/placeholder/nav-hover/undp-iq-karbala-gis-mapping-covid.jpg",
+                "alt" : "undp iq karbala gis mapping covid"
+            },
+            "links": [
+                {
+                    "link": "#",
+                    "name": "For governments"
+                },
+                {
+                    "link": "#",
+                    "name": "For private sector"
+                },
+                {
+                    "link": "#",
+                    "name": "For non-governmental organizations"
+                }
+            ]
+        },
+        {
+            "contentId" : "content-careers",
+            "title": "Jobs",
+            "description": "UNDP works in more than 170 countries and territories, helping to achieve the eradication of poverty and the reduction of inequalities and exclusion. We help countries develop policies, leadership skills, partnering abilities, institutional capabilities and build resilience in order to sustain development results.",
+            "image": {
+                "link" : "../../../../assets/images/placeholder/nav-hover/undp-iq-karbala-gis-mapping-covid.jpg",
+                "alt" : "undp iq karbala gis mapping covid"
+            },
+            "links": []
+        },
+        {
+            "contentId" : "content-procurement",
+            "title": "Procurement",
+            "description": "As a public organization entrusted with donor funds and committed to supporting developing economies, UNDP works to improve access to quality assured supplies in a cost effective and reliable way.",
+            "image": {
+                "link" : "../../../../assets/images/placeholder/nav-hover/undp-vietnam-2020-face-mask-dstribution.jpg",
+                "alt" : "undp vietnam 2020 face mask dstribution"
+            },
+            "links": [
+                {
+                    "link": "#",
+                    "name": "Sustainable procurement"
+                },
+                {
+                    "link": "#",
+                    "name": "Doing business with UNDP"
+                },
+                {
+                    "link": "#",
+                    "name": "Procurement training"
+                },
+                {
+                    "link": "#",
+                    "name": "About us"
+                }
+            ]
+        },
+        {
+            "contentId" : "content-expert-consultations",
+            "title": "Engage with experts",
+            "description": "UNDP has a long history of hosting online consultations where development actors can engage to think out loud, learn from each other, connect, collaborate and co-create.",
+            "image": {
+                "link" : "../../../../assets/images/placeholder/nav-hover/shutterstock-woman-online.jpg",
+                "alt" : "shutterstock woman online"
+            },
+            "links": []
+        },
+        {
+            "contentId" : "content-undp-shop",
+            "title": "UNDP Shop",
+            "description": "Show you care about poverty, gender equality, climate action and more. Check out our products featuring the causes you care about. Great ideas for presents too.",
+            "image": {
+                "link" : "../../../../assets/images/placeholder/nav-hover/undp-nyc-marketing-bag.jpg",
+                "alt" : "undp nyc marketing bag"
+            },
+            "links": []
+        },
+        {
+            "contentId" : "content-donate",
+            "title": "UNDP Giving",
+            "description": "Make a difference in the global response to the COVID-19 pandemic! Join us and learn about our work helping countries respond and recover from this crisis. Together, we can #BuildForwardBetter!",
+            "image": {
+                "link" : "../../../../assets/images/placeholder/nav-hover/undp-bangladesh-2020-covid-distribution.jpg",
+                "alt" : "undp bangladesh 2020 covid distribution"
+            },
+            "links": []
+        },
+        {
+            "contentId" : "content-contact-us",
+            "title": "Contact us",
+            "description": "You can contact our team with general questions about UNDP or about more specific topics by selecting a topic below.",
+            "image": {
+                "link" : "../../../../assets/images/placeholder/nav-hover/undp-uzbekistan-2018_girls-who-code.jpg",
+                "alt" : "undp uzbekistan 2018_girls who code"
+            },
+            "links": []
+        }
+    ]
+}

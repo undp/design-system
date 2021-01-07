@@ -99,6 +99,7 @@ $z-index-modal-nav-hover: 95;
 
 // Transitions
 $transition-expertise-image: all 0.5s ease-in-out;
+$transition-fourthly : cubic-bezier(.25,.27,.11,.99);
 $transition-tertiary: all 1200ms cubic-bezier(.34,.41,.03,1);
 $transition-primary: all .4s cubic-bezier(0.64, 0.05, 0.35, 1.05);
 $transition-secondary: transform 0.2s cubic-bezier(0.4, 0.22, 0.28, 1);

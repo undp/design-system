@@ -1,0 +1,213 @@
+@keyframes circle-square-transition {
+    0% {
+        opacity: 0.4;
+        width: 100px;
+        height: 50px;
+        margin-top: -70px;
+        border-radius: 50%;
+    }
+
+    15% {
+        opacity: 0.25;
+        width: 180px;
+        height: 150px;
+        margin-top: -70px;
+        border-radius: 50%;
+    }
+
+    30% {
+        opacity: 0.5;
+        width: 600px;
+        height: 600px;
+        margin-top: -330px;
+        border-radius: 50%;
+    }
+
+    45% {
+        width: 705px;
+        height: 705px;
+        margin-top: -330px;
+        border-radius: 45%;
+    }
+
+    60% {
+        width: 900px;
+        height: 840px;
+        margin-top: -330px;
+        border-radius: 0 0 80% 80% / 0 0 70% 70%;
+    }
+
+    75% {
+        max-width: 1096px;
+        height: 900px;
+        margin-top: -330px;
+        border-radius: 0 0 50% 50%/0 0 20% 20%;
+    }
+    100% {
+        opacity: 1;
+        border-radius: 0;
+    }
+}
+
+@keyframes transition-opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.modal-nav-hover {
+    width: 100%;
+    position: fixed;
+    top: $height-nav;
+    overflow-y: auto;
+    z-index: $z-index-modal-nav-hover;
+    height: calc(100vh - #{$height-nav});
+
+    @include breakpoint(medium down) {
+        top: calc(#{$height-nav-medium} + 1px);
+        height: calc(100% - #{$height-nav-medium});
+    }
+
+    .modal-content {
+        max-width: 1440px;
+        padding: 0 116px;
+        animation-duration: 1s;
+        transition: $transition-tertiary;
+
+        // For IE 11 (media is a hack to check for IE 10+)
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            width: 1440px;
+        }
+
+    }
+
+    .modal-body {
+        overflow: hidden;
+        padding: 105px 0 0 102px;
+        backdrop-filter: blur(21px);
+        background-color: rgba($white, 0.98);
+        box-shadow: 0 3px 6px rgba($black, 0.16);
+
+        @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+            background-color: rgba($white, 0.87);
+        }
+
+        &.circle-square-transition {
+            opacity: 0;
+            animation: circle-square-transition .2s $transition-fourthly;
+            animation-fill-mode: forwards;
+
+
+            &.change-modal {
+                animation-delay: 0s;
+                animation-duration: 0s;
+            }
+
+            // For IE 11 (media is a hack to check for IE 10+)
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                opacity: 1;
+                animation: none;
+            }
+        }
+
+        &.circle-square-transition-back {
+            opacity: 0;
+            animation: circle-square-transition .2s $transition-fourthly reverse;
+
+            // For IE 11 (media is a hack to check for IE 10+)
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                animation: none;
+            }
+        }
+
+        .opacity {
+            opacity: 0;
+
+            &.opacity-transition {
+                animation-delay: .2s;
+                animation-duration: .2s;
+                animation-fill-mode: forwards;
+                animation-name: transition-opacity;
+
+                &.change-modal {
+                    animation-delay: 0s;
+                    animation-duration: 0s;
+                }
+
+                // For IE 11 (media is a hack to check for IE 10+)
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    opacity: 1;
+                    animation: none;
+                }
+            }
+
+            &.opacity-transition-back {
+                animation: transition-opacity .2s reverse;
+            }
+        }
+
+
+        &.hide {
+            animation-direction: reverse;
+            animation-name: circle-square-transition;
+        }
+
+        .cell-menu {
+            max-width: 230px;
+
+            .menu {
+                padding: 0;
+                list-style: none;
+
+                li {
+                    padding: 20px;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    border-bottom: 1px solid rgba($black, 0.10);
+
+                    &.active {
+                        background-color: $blue-0;
+
+                        a {
+                            color: $white;
+
+                            &:active,
+                            &:hover,
+                            &:visited {
+                                color: $white;
+                            }
+                        }
+                    }
+
+                    &:hover,
+                    &:focus,
+                    &.active {
+                        .arrow-3 {
+                            svg {
+                                color: $white;
+                            }
+                        }
+                    }
+
+                    a {
+                        color: $black;
+                        line-height: 1.5;
+                        font-size: 1.3rem;
+                        font-weight: $bold;
+
+                        &:active,
+                        &:hover,
+                        &:visited {
+                            color: $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

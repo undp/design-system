@@ -10,3 +10,17 @@
 @import "~prismjs/themes/prism-okaidia.css";
 @import "~prismjs/plugins/toolbar/prism-toolbar.css";
 @import "~prismjs/plugins/line-numbers/prism-line-numbers.css";
+
+//partials
+@import "partials/footer";
+
+@import 'partials/navigation/main';
+@import 'partials/navigation/menu/main';
+@import 'partials/navigation/menu/mobile/main';
+@import 'partials/navigation/menu/item-options';
+@import 'partials/navigation/menu/item-content';
+@import 'partials/navigation/menu/mobile/hamburger';
+
+@import 'partials/navigation/modals/search';
+@import 'partials/navigation/modals/locations/main';
+@import "partials/navigation/modals/locations/mobile/filter-options";

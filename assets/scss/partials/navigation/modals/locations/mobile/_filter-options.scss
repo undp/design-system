@@ -1,0 +1,79 @@
+.modal-search-offices-filters {
+    width: 100%;
+    position: fixed;
+    top: $height-nav;
+    overflow-y: auto;
+    z-index: $z-index-4;
+    backdrop-filter: blur(30px);
+    height: calc(100vh - #{$height-nav});
+    background-color: rgba($white, 0.98);
+
+    @include breakpoint(medium down) {
+        top: $height-nav-medium;
+        height: calc(100% - #{$height-nav-medium});
+    }
+
+    .modal-content {
+        min-height: 100%;
+        position: relative;
+        padding: 25px 15px 15px;
+        align-content: flex-start;
+
+        .custom-grid {
+            height: 1px;
+            min-height: 100%;
+
+            .custom-cell {
+                min-height: 100%;
+                position: relative;
+            }
+        }
+
+        .header-modal {
+            padding: 0 38px 0 15px;
+
+            @include breakpoint(large down){
+               padding: 0 18px 0 18px;
+            }
+
+            .titles {
+                margin-top: 40px;
+            }
+        }
+
+        .filters {
+            position: relative;
+            margin-bottom: 100px;
+            padding: 0 38px 0 18px;
+
+            @include breakpoint(large down){
+               padding: 0 18px 0 18px;
+            }
+
+            .filter-region,
+            .filter-office-type {
+                margin-top: 18px;
+                padding-top: 18px;
+
+                .checkbox-group {
+                    margin-top: 18px;
+                }
+            }
+
+            .filter-office-type {
+                margin-top: 30px;
+            }
+        }
+
+        .btn-filters {
+            left: 0;
+            right: 0;
+            bottom: 15px;
+            position: absolute;
+
+            .btn {
+                height: 50px;
+            }
+        }
+    }
+}
