@@ -1,3 +1,11 @@
+@mixin sdg-background-color($color){
+    background-color: $color;
+
+    .hover-image .gradient{
+        background-image: linear-gradient(270deg, rgba($color, 0) 0%, rgba($color, 0) 80%, rgba($color, 1) 100%);
+    }
+}
+
 .sdg-card{
     width: 100%;
     display: flex;
@@ -85,5 +93,73 @@
                 }
             }
         }
+    }
+
+    &.color-1{
+        @include sdg-background-color($sdg-1);
+    }
+
+    &.color-2{
+        @include sdg-background-color($sdg-2);
+    }
+
+    &.color-3{
+        @include sdg-background-color($sdg-3);
+    }
+
+    &.color-4{
+        @include sdg-background-color($sdg-4);
+    }
+
+    &.color-5{
+        @include sdg-background-color($sdg-5);
+    }
+
+    &.color-6{
+        @include sdg-background-color($sdg-6);
+    }
+
+    &.color-7{
+        @include sdg-background-color($sdg-7);
+    }
+
+    &.color-8{
+        @include sdg-background-color($sdg-8);
+    }
+
+    &.color-9{
+        @include sdg-background-color($sdg-9);
+    }
+
+    &.color-10{
+        @include sdg-background-color($sdg-10);
+    }
+
+    &.color-11{
+        @include sdg-background-color($sdg-11);
+    }
+
+    &.color-12{
+        @include sdg-background-color($sdg-12);
+    }
+
+    &.color-13{
+        @include sdg-background-color($sdg-13);
+    }
+
+    &.color-14{
+        @include sdg-background-color($sdg-14);
+    }
+
+    &.color-15{
+        @include sdg-background-color($sdg-15);
+    }
+
+    &.color-16{
+        @include sdg-background-color($sdg-16);
+    }
+
+    &.color-17{
+        @include sdg-background-color($sdg-17);
     }
 }

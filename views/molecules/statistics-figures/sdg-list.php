@@ -3,7 +3,7 @@
 use helpers\View;
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#E4253A',
+    'class' => 'color-1',
     'number' => '1',
     'title' => 'No poverty',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -11,7 +11,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#DEA83C',
+    'class' => 'color-2',
     'number' => '2',
     'title' => 'Zero hunger',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -19,7 +19,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#4E9F38',
+    'class' => 'color-3',
     'number' => '3',
     'title' => 'Good Health and Well Being',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -27,7 +27,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#C51A2D',
+    'class' => 'color-4',
     'number' => '4',
     'title' => 'Quality Education',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -35,7 +35,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#FF3C23',
+    'class' => 'color-5',
     'number' => '5',
     'title' => 'Gender Equality ',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -43,7 +43,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#27BDE3',
+    'class' => 'color-6',
     'number' => '6',
     'title' => 'Clean Water and Sanitization ',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -51,7 +51,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#FDC30A',
+    'class' => 'color-7',
     'number' => '7',
     'title' => 'Affordable and Clean Energy ',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -59,7 +59,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#A21843',
+    'class' => 'color-8',
     'number' => '8',
     'title' => 'Decent Work And Economic Growth',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -67,7 +67,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#FE6924',
+    'class' => 'color-9',
     'number' => '9',
     'title' => 'Industry, Innovation and Infrastructure',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -75,7 +75,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#DE1568',
+    'class' => 'color-10',
     'number' => '10',
     'title' => 'Reduced inequalities ',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -83,7 +83,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#FE9C25',
+    'class' => 'color-11',
     'number' => '11',
     'title' => 'Sustainable Cities and Communities',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -91,7 +91,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#BF8B2E',
+    'class' => 'color-12',
     'number' => '12',
     'title' => 'Responsible Consumption and Production',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -99,7 +99,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#3E8045',
+    'class' => 'color-13',
     'number' => '13',
     'title' => 'Climate Action',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -107,7 +107,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#0C98DA',
+    'class' => 'color-14',
     'number' => '14',
     'title' => 'Life Below Water',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -115,7 +115,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#58C12C',
+    'class' => 'color-15',
     'number' => '15',
     'title' => 'Life On Land',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -123,7 +123,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#03689D',
+    'class' => 'color-16',
     'number' => '16',
     'title' => 'Peace, Justice and Strong Institutions',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
@@ -131,7 +131,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 ]);
 
 View::render('molecules/statistics-figures/sdg-card', [
-    'color' => '#1A496B',
+    'class' => 'color-17',
     'number' => '17',
     'title' => 'Partnerships for the Goals ',
     'image' => '/assets/images/placeholder/sdg/sdg-background.png',
