@@ -7,8 +7,8 @@ $subpath = $_SERVER['REQUEST_URI'];
 
 
 switch ($subpath) {
-    case '/the-sdgs':
-        View::render('pages/the-sdgs');
+    case '/sdgs':
+        View::render('pages/sdgs');
         break;
     case '/sierra-leone':
         View::render('pages/sierra-leone');

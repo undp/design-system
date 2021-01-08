@@ -4,7 +4,6 @@
     height: 160px;
     color: $white;
     position: relative;
-    background: #DEA83C;
     align-items: center;
     font-family: $secondary-font;
     cursor: url("/assets/images/arrows/sdg-hover-arrow.svg"), url("/assets/images/arrows/sdg-hover-arrow.cur"), auto;
@@ -35,6 +34,7 @@
         margin-left: 230px;
         z-index: $z-index-1;
         align-items: center;
+        text-transform: uppercase;
 
         @include breakpoint(small only){
             width: 100%;
@@ -67,10 +67,6 @@
             height: 100%;
             position: absolute;
             transition: background-color 0.5s linear;
-            background-image: linear-gradient(to left,
-            rgba(222,168,60,0) 0%,
-            rgba(222,168,60,0) 80%,
-            rgba(222,168,60)    100%);
         }
 
     }
