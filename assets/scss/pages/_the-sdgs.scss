@@ -1,12 +1,14 @@
-.sustainable-developments {
-    padding: 170px 0;
+.the-sdgs {
+    .sustainable-developments {
+        padding: 170px 0;
 
-    @include breakpoint(small only){
-        padding: 112px 0;
+        @include breakpoint(small only) {
+            padding: 112px 0;
 
-        .cell:not(:first-child) {
-            @include breakpoint(small only){
-                margin-top: 68px;
+            .cell:not(:first-child) {
+                @include breakpoint(small only) {
+                    margin-top: 68px;
+                }
             }
         }
     }
