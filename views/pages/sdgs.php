@@ -8,12 +8,14 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php //View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/main') ?>
+
+<!-- SDG Cards list -->
 <?php
     View::render('molecules/statistics-figures/sdg-list');
 ?>
 <!-- Footer -->
-<?php //View::render('layout/footer'); ?>
+<?php View::render('layout/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 </html>
