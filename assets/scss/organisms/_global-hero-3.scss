@@ -22,10 +22,8 @@
         width: calc(100% - 30px);
         background-position: 25%;
         margin: calc(#{$height-nav-medium} + 20px) 15px 0 15px;
-    }
 
-    .grid-container {
-        @include breakpoint(small only) {
+        .grid-container {
             padding: 0;
         }
     }
