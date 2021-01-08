@@ -1,0 +1,75 @@
+
+//.sdg-card-container{
+    //display: flex;
+    //flex-direction: column;
+
+    .sdg-card{
+        width: 100%;
+        display: flex;
+        height: 160px;
+        color: $white;
+        position: relative;
+        background: #DEA83C;
+        align-items: center;
+        font-family: $secondary-font;
+        cursor: url("/assets/images/arrows/sdg-hover-arrow.svg"), url("/assets/images/arrows/sdg-hover-arrow.cur"), auto;
+
+
+        .number{
+            font-size: 11rem;
+            padding: 0 160px 0 24px;
+
+            @include breakpoint(small only){
+
+            }
+        }
+
+        .title{
+            font-size: 3rem;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            margin-left: 230px;
+            z-index: $z-index-1;
+        }
+
+        .hover-image{
+            margin-left: auto;
+            position: relative;
+
+            img{
+                opacity: 0;
+                height: 100%;
+                object-fit: cover;
+                position: relative;
+                transition: opacity 0.5s ease;
+            }
+
+            .gradient{
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-image: linear-gradient(to left,
+                        rgba(222,168,60,0) 0%,
+                        rgba(222,168,60,0) 80%,
+                        rgba(222,168,60)    100%);
+                transition: background-color 0.5s linear;
+            }
+
+        }
+
+        &:hover{
+            color: $white;
+
+            @include breakpoint(large up){
+                .hover-image {
+                    img{
+                        opacity: 0.3;
+                    }
+                }
+            }
+        }
+    }
+//}
