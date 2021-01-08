@@ -11,7 +11,11 @@ use helpers\View;
 <?php View::render('layout/navigation/main') ?>
 
 <!--Global hero 3-->
-<?php View::render('organisms/hero/global-hero-3') ?>
+<?php View::render('organisms/hero/global-hero-3', [
+        'title' => 'The SDGs In ACTION.',
+        'breadcrumbLinks' => [['name' => 'About', 'link' => '#']],
+        'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.png'
+]) ?>
 
 <!-- Development Goals-->
 <div class="grid-container">
