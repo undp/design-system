@@ -18,8 +18,8 @@
         background-repeat: no-repeat;
 
         @include breakpoint(small only){
-            min-height: 564px;
             padding: 20px 0;
+            min-height: 564px;
             background-position: 25%;
         }
 
