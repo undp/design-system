@@ -39,7 +39,7 @@ const init = function () {
                                         <h2 class="title">${ item.title }</h2>
                                         <p class="big-copy description">${ item.description }</p>
                                     </div>
-                                    <div class="cell content-text">
+                                    <div class="cell content-text multiple-column">
                                         <div class="grid-x">
                                             ${item.links.map(linkGroup => {
                                                 return `
