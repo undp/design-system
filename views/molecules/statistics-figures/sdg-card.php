@@ -1,8 +1,8 @@
-<a href="#" class="sdg-card <?= $class ?>">
-    <div class="number"><?= $number ?></div>
-    <div class="title"><?= $title ?></div>
-    <div class="hover-image">
+<button class="sdg-card <?= $class ?>">
+    <span class="number"><?= $number ?></span>
+    <span class="title"><?= $title ?></span>
+    <span class="hover-image">
         <img src="<?= $image ?>" alt="<?= $imageAlt ?>">
-        <div class="gradient"></div>
-    </div>
-</a>
+        <span class="gradient"></span>
+    </span>
+</button>
