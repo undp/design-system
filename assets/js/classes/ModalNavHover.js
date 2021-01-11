@@ -179,6 +179,7 @@ class ModalNavHover {
                     const menuOptionId = $menuOption.data(this.dataMenuOptionId);
                     $('#' + menuOptionId).removeClass(this.classHide);
                     $menuOption.addClass(this.classMenuActive);
+                    this.lazyLoadClass.listenerDefault();
                 }
 
                 $menuOption.hover(openSubmenuData)
