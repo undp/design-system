@@ -1,0 +1,61 @@
+.sdg-deep-dive-hero{
+    .title {
+        padding: 55px 0 40px;
+
+        @include breakpoint(small only){
+
+        }
+
+        h2{
+            font-size: 5.5rem;
+            text-transform: uppercase;
+            font-family: $secondary-font;
+
+            @include breakpoint(small only){
+                font-size: 2.5rem;
+            }
+        }
+
+        @include sgd-colors('color');
+    }
+
+    .description-container{
+        display: flex;
+        padding: 70px 60px 90px 95px;
+
+        @include breakpoint(small only){
+            padding: 16px 12px 75px;
+        }
+
+        .description{
+            @include breakpoint(small only){
+                order: 2;
+                margin-top: 25px;
+            }
+
+            p{
+                color: $white;
+                max-width: 570px;
+            }
+        }
+
+        .description-image{
+            display: flex;
+            align-self: baseline;
+            justify-content: center;
+
+            img{
+                @include breakpoint(small only){
+                    max-height: 450px;
+                }
+            }
+
+            @include breakpoint(small only){
+                order: 1;
+            }
+        }
+
+        @include sgd-colors('background-color');
+    }
+
+}
