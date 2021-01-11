@@ -10,6 +10,10 @@ use helpers\View;
 <!-- Navigation -->
 <?php View::render('layout/navigation/main') ?>
 
+<!-- SDG Cards list -->
+<?php
+    View::render('molecules/statistics-figures/sdg-list');
+?>
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>

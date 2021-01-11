@@ -1,0 +1,170 @@
+@mixin sdg-background-color($color){
+    background-color: $color;
+
+    .hover-image .gradient{
+        background-image: linear-gradient(270deg, rgba($color, 0) 0%, rgba($color, 0) 80%, rgba($color, 1) 100%);
+    }
+}
+
+.sdg-card{
+    width: 100%;
+    display: flex;
+    height: 160px;
+    color: $white;
+    position: relative;
+    align-items: center;
+    font-family: $secondary-font;
+    cursor: url("/assets/images/arrows/sdg-hover-arrow.svg"), url("/assets/images/arrows/sdg-hover-arrow.cur"), auto;
+
+    @include breakpoint(small only){
+        height: 245px;
+        padding: 35px 24px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .number{
+        font-size: 11rem;
+        font-weight: $bold;
+        padding: 0 160px 0 24px;
+
+        @include breakpoint(small only){
+            padding: 0;
+            font-size: 4.7rem;
+        }
+    }
+
+    .title{
+        left: 0;
+        display: flex;
+        font-size: 3rem;
+        position: absolute;
+        margin-left: 230px;
+        z-index: $z-index-1;
+        align-items: center;
+        text-transform: uppercase;
+
+        @include breakpoint(small only){
+            width: 100%;
+            margin: 25px 0 0;
+            font-size: 2.5rem;
+            position: relative;
+        }
+    }
+
+    .hover-image{
+        margin-left: auto;
+        position: relative;
+
+        @include breakpoint(small only){
+            display: none;
+        }
+
+        img{
+            opacity: 0;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            transition: opacity 0.5s ease;
+        }
+
+        .gradient{
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: background-color 0.5s linear;
+        }
+
+    }
+
+    &:visited{
+        color: $white;
+    }
+
+    &:focus{
+        outline: none;
+    }
+
+    &:hover{
+        color: $white;
+
+        @include breakpoint(large up){
+            .hover-image {
+                img{
+                    opacity: 0.3;
+                }
+            }
+        }
+    }
+
+    &.color-1{
+        @include sdg-background-color($sdg-1);
+    }
+
+    &.color-2{
+        @include sdg-background-color($sdg-2);
+    }
+
+    &.color-3{
+        @include sdg-background-color($sdg-3);
+    }
+
+    &.color-4{
+        @include sdg-background-color($sdg-4);
+    }
+
+    &.color-5{
+        @include sdg-background-color($sdg-5);
+    }
+
+    &.color-6{
+        @include sdg-background-color($sdg-6);
+    }
+
+    &.color-7{
+        @include sdg-background-color($sdg-7);
+    }
+
+    &.color-8{
+        @include sdg-background-color($sdg-8);
+    }
+
+    &.color-9{
+        @include sdg-background-color($sdg-9);
+    }
+
+    &.color-10{
+        @include sdg-background-color($sdg-10);
+    }
+
+    &.color-11{
+        @include sdg-background-color($sdg-11);
+    }
+
+    &.color-12{
+        @include sdg-background-color($sdg-12);
+    }
+
+    &.color-13{
+        @include sdg-background-color($sdg-13);
+    }
+
+    &.color-14{
+        @include sdg-background-color($sdg-14);
+    }
+
+    &.color-15{
+        @include sdg-background-color($sdg-15);
+    }
+
+    &.color-16{
+        @include sdg-background-color($sdg-16);
+    }
+
+    &.color-17{
+        @include sdg-background-color($sdg-17);
+    }
+}
