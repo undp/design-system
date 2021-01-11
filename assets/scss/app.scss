@@ -8,6 +8,7 @@
 @import 'base/typography';
 @import 'base/buttons';
 @import 'base/breadcrumb';
+@import 'base/sdg-colors';
 
 @import "~prismjs/themes/prism-okaidia.css";
 @import "~prismjs/plugins/toolbar/prism-toolbar.css";
@@ -33,6 +34,7 @@
 
 //modules
 @import "molecules/statistics-figures/sdg-card";
+@import "molecules/statistics-figures/stat-card";
 
 //pages
 @import "pages/the-sdgs";
