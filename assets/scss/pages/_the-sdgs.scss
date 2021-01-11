@@ -21,8 +21,12 @@
     top: $height-nav;
     z-index: $z-index-modal;
     backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    background-color: rgba($white, 0.9);
     min-height: calc(100vh - #{$height-nav});
+
+    @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+        background-color: transparent;
+    }
 
     @include breakpoint(medium down){
         top: $height-nav-medium;
