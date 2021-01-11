@@ -3,7 +3,7 @@ use helpers\View;
 ?>
 
 <!-- Page Headers -->
-<?php View::render('layout/header', ['pageTitle' => 'UNDP - The SDGS']) ?>q
+<?php View::render('layout/header', ['pageTitle' => 'UNDP - The SDGS']) ?>
 
 <body>
 <!-- Navigation -->
