@@ -172,6 +172,18 @@
         color: $black;
         cursor: url("#{$image-path}/arrows/sdg-hover-arrow-black.svg"), url("#{$image-path}/arrows/sdg-hover-arrow-black.cur"), auto;
 
+        @include breakpoint(small only){
+            display: flex;
+            padding: 55px 24px;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+            .title {
+                margin: 0;
+            }
+        }
+
         .hover-image {
             width: 740px;
             height: 100%;
