@@ -82,26 +82,17 @@
                 width: 24px;
                 height: 24px;
                 border: none;
-                color: $blue-0;
+                color: $blue-8;
                 position: relative;
                 margin-right: 22px;
 
                 &:hover,
                 &.active:hover {
-                    color: $background-gray-4;
-                }
-
-                &:active,
-                &.active {
-                    color: $background-gray-3;
+                    color: $blue-9;
                 }
 
                 .icon-close {
-                    color: $blue-0;
-
-                    &:hover {
-                        color: $background-gray-4;
-                    }
+                    color: $black;
                 }
 
                 @include breakpoint(medium down) {
@@ -155,36 +146,32 @@
 
         .dropdown-btn {
             border: none;
-            color: $blue-0;
+            color: $blue-8;
             cursor: pointer;
 
             &:hover,
             &.active:hover {
-                svg {
-                    color: $background-gray-4;
-                }
+                color: $blue-9
             }
 
             &:active,
             &.active {
-                svg {
-                    color: $background-gray-3;
-                }
+                color: $blue-8;
             }
 
             svg {
-                color: $blue-0;
-                margin-right: 9.5px;
-            }
+                margin: 0 10px 0 0;
 
-            &:after {
-                margin-left: 10px;
-                content: url('#{$image-path}icon-arrow-down.svg');
+                &:last-child {
+                    margin: 0 0 0 10px;
+                }
             }
 
             &.active {
-                &:after {
-                    transform: rotate(180deg);
+                svg {
+                    &:last-child {
+                        transform: rotate(180deg);
+                    }
                 }
             }
         }
