@@ -42,7 +42,7 @@ use helpers\View;
 
 <!-- Modal sdgs deep dive -->
 <div id="modal-sdgs" class="modal-sdgs hide">
-    <div class="grid-container height-full">
+    <div class="grid-container full height-full">
         <div class="grid-x height-full">
             <div class="cell medium-2 flex-container align-center modal-header">
                 <a class="flex-container align-middle align-center btn-close" href="#">
