@@ -27,12 +27,12 @@
 @import 'partials/navigation/modals/locations/main';
 @import "partials/navigation/modals/locations/mobile/filter-options";
 
+//modules
+@import "molecules/statistics-figures/sdg-card";
 
 //organisms
 @import "organisms/global-hero-3";
-
-//modules
-@import "molecules/statistics-figures/sdg-card";
+@import "organisms/text/bulleted-list";
 
 //pages
 @import "pages/the-sdgs";
