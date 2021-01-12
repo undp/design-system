@@ -173,5 +173,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 
 View::render('molecules/statistics-figures/sdg-card-link', [
     'class' => 'link',
+    'image' => '/assets/images/placeholder/sdg/sdg-background-link.png',
+    'imageAlt' => 'SDG link',
     'title' => 'Sustainable Development Goals ',
 ]);
