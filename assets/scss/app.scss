@@ -10,12 +10,17 @@
 @import 'base/breadcrumb';
 @import 'base/sdg-colors';
 
+
 @import "~prismjs/themes/prism-okaidia.css";
 @import "~prismjs/plugins/toolbar/prism-toolbar.css";
 @import "~prismjs/plugins/line-numbers/prism-line-numbers.css";
 
 //partials
 @import "partials/footer";
+@import 'partials/multi-select';
+@import 'partials/custom-select';
+@import 'partials/custom-checkbox';
+
 
 @import 'partials/navigation/main';
 @import 'partials/navigation/menu/main';
