@@ -8,6 +8,7 @@
 @import 'base/typography';
 @import 'base/buttons';
 @import 'base/breadcrumb';
+@import 'base/sdg-colors';
 
 @import "~prismjs/themes/prism-okaidia.css";
 @import "~prismjs/plugins/toolbar/prism-toolbar.css";
@@ -31,7 +32,7 @@
 @import "molecules/statistics-figures/sdg-card";
 
 //organisms
-@import "organisms/global-hero-3";
+@import "organisms/hero/global-hero-3";
 @import "organisms/text/bulleted-list";
 
 //pages
