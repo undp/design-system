@@ -19,9 +19,7 @@
     @include breakpoint(small only) {
         padding: 20px 0;
         min-height: 564px;
-        width: calc(100% - 30px);
         background-position: 25%;
-        margin: calc(#{$height-nav-medium} + 20px) 15px 0 15px;
 
         .grid-container {
             padding: 0;
