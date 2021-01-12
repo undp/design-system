@@ -90,7 +90,6 @@
     }
 
     &:hover{
-        color: $white;
 
         @include breakpoint(large up){
             .hover-image {
@@ -167,5 +166,10 @@
 
     &.color-17{
         @include sdg-background-color($sdg-17);
+    }
+
+    &.link {
+        color: $black;
+        cursor: url("/assets/images/arrows/sdg-hover-arrow-black.svg"), url("/assets/images/arrows/sdg-hover-arrow-black.cur"), auto;
     }
 }
