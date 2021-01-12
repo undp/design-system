@@ -1,0 +1,129 @@
+.multi-select,
+.select-radio {
+    height: 52px;
+    display: flex;
+    position: relative;
+
+    &.open {
+        .select-control {
+            border-bottom: none;
+            padding-bottom: 20px;
+
+            &:after {
+                top: 42%;
+                transform: rotate(180deg);
+            }
+        }
+
+        .options {
+            display: block;
+            border-top: none;
+
+            .checkbox-item {
+                max-height: unset;
+                border-top: 1px solid rgba($black, 0.10);
+
+                .checkmark {
+                    top: 17px;
+                    transform: unset;
+                }
+            }
+        }
+    }
+
+    .select-control {
+        flex: 1;
+        top: 0;
+        display: block;
+        cursor: pointer;
+        max-width: 100%;
+        text-align: left;
+        min-width: 230px;
+        max-height: 52px;
+        font-weight: bold;
+        font-size: 1.6rem;
+        padding: 15px 25px;
+        border: 2px solid $black;
+        text-transform: uppercase;
+        background-color: rgba($dark-blue-6, 0.98);
+
+        @include breakpoint(xlarge down){
+            min-width: 215px;
+        }
+
+        @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+            background-color: rgba($dark-blue-6, 0.86);
+        }
+
+        &:after {
+            top: 50%;
+            content: '';
+            width: 14px;
+            right: 28px;
+            height: 9px;
+            position: absolute;
+            transform: translateY(-50%);
+            background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
+            background-size: contain;
+        }
+    }
+
+    .options {
+        left: 0;
+        top: 51px;
+        width: 100%;
+        display: none;
+        max-width: 100%;
+        min-width: 230px;
+        overflow-y: auto;
+        min-height: 100px;
+        max-height: 300px;
+        position: absolute;
+        z-index: $z-index-1;
+        font-weight: $regular;
+        padding: 0 23px 0 25px;
+        border: 2px solid $black;
+        backdrop-filter: blur(30px);
+        background-color: rgba($dark-blue-6, 0.98);
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+
+        @include breakpoint(xlarge down){
+            min-width: 215px;
+        }
+
+        @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+            background-color: rgba($dark-blue-6, 0.86);
+        }
+
+        .checkbox-item {
+            margin: 0;
+            font-size: 2rem;
+            max-height: 52px;
+            padding: 15px 52px 15px 0;
+
+            &:not(:first-child) {
+                border-top: 1px solid rgba($black, 0.10);
+            }
+
+            input {
+                width: auto;
+                height: auto;
+            }
+
+            &:hover {
+                color:  $dark-blue-17
+            }
+        }
+
+        &::-webkit-scrollbar {
+            width: 4px;
+            background-color: rgba($black, 0.30);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($black, 0.60);
+        }
+
+    }
+
+}

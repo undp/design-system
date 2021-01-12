@@ -1,0 +1,80 @@
+.checkbox-item {
+    display: block;
+    cursor: pointer;
+    font-size: 1.6rem;
+    user-select: none;
+    position: relative;
+    padding-right: 30px;
+    font-weight: $regular;
+
+    @include breakpoint(large down) {
+        padding: 15px 20px 15px 0;
+        border-bottom: 1px solid rgba($black, 0.10);
+    }
+
+    input {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        position: absolute;
+
+        &:checked + .checkmark:after {
+            display: block;
+        }
+    }
+
+    html[data-whatinput="keyboard"] & {
+        input {
+            &:focus + .checkmark {
+                outline: 1px dotted #212121;
+                outline: 5px auto -webkit-focus-ring-color;
+            }
+        }
+    }
+
+    .checkmark {
+        top: 50%;
+        right: 0;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        border: 2px solid $red-8;
+        transform: translateY(-50%);
+
+        &:after {
+            content: "";
+            width: 16px;
+            height: 16px;
+            display: none;
+            position: absolute;
+            background: url('#{$image-path}/icon-check.svg');
+            background-repeat: no-repeat;
+        }
+    }
+
+    &.radio {
+        &:hover {
+            color: $dark-blue-2;
+
+            .checkmark {
+                border-color: $red-5;
+            }
+        }
+
+        .checkmark {
+            display: flex;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+
+            &:after {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-image: none;
+                background-color: $red-8;
+            }
+        }
+    }
+}
