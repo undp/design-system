@@ -7,6 +7,7 @@ class ModalSdgs {
         this.$modalContent = this.$modal.find('.modal-content')
 
         this.url = null;
+        this.color = null;
         this.classBodyModalOpen = 'modal-open'
     }
 
@@ -18,6 +19,7 @@ class ModalSdgs {
     listenerLoadModalData() {
         this.$openModal.click((current) => {
             this.url = $(current.currentTarget).data('url');
+            this.color = $(current.currentTarget).data('color')
             this.ajax();
         })
     }
@@ -47,7 +49,6 @@ class ModalSdgs {
             success: ((response) => {
                 this.$modalContent.append(`
                     <h2 class="heading h2">${ response.title }</h2>
-                    <div class="${ response.color }"></div>
                 `)
 
                 //open modal after load data
