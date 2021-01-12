@@ -1,0 +1,35 @@
+.bulleted-list{
+    .list{
+        padding: 0;
+        list-style: none;
+
+        li{
+            font-size: 2rem;
+            position: relative;
+
+            @include breakpoint(small only){
+                margin-top: 55px;
+                font-size: 1.6rem;
+                padding-left: 20px;
+
+                &:first-child{
+                    margin-top: 50px;
+                }
+            }
+
+            &:not(:first-child){
+                margin-top: 65px;
+            }
+
+            &:before {
+                left: -25px;
+                position: absolute;
+                content: url("/assets/images/bullet-list.svg");
+
+                @include breakpoint(small only){
+                    left: 0;
+                }
+            }
+        }
+    }
+}
