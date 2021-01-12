@@ -1,4 +1,4 @@
-<button class="sdg-card <?= $class ?>">
+<button class="sdg-card <?= $class ?>" data-color="<?= $class ?? '' ?>" data-url="<?= $urlData ?? ''?>">
     <span class="number"><?= $number ?></span>
     <span class="title"><?= $title ?></span>
     <span class="hover-image">

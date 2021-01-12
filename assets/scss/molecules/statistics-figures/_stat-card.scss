@@ -1,0 +1,87 @@
+.stat-card{
+    height: 100%;
+    position: relative;
+    color: $dark-blue-1;
+    background-color: $dark-blue-6;
+    transition: background-color 0.5s ease;
+
+    &:before {
+        width: 100%;
+        content: "";
+        display: block;
+        padding-top: (276 / 235) * 100%;
+    }
+
+    &.small{
+        &:before{
+            padding-top: (276 / 235) * 100%;
+        }
+
+        .card-content{
+            padding: 40px 35px 15px;
+        }
+    }
+
+    .card-content{
+        top: 0;
+        left: 0;
+        height: 100%;
+        position: absolute;
+
+        .number{
+            font-size: 6.1rem;
+            color: $dark-blue-6;
+            font-weight: $bold;
+            font-family: $secondary-font;
+            -webkit-text-stroke: 1px $black;
+            text-shadow: -1px -1px 0 $black, 1px -1px 0 $black, -1px 1px 0 $black, 1px 1px 0 $black;
+        }
+
+        .title{
+            margin-top: 10px;
+            font-size: 2.4rem;
+            font-weight: $semi-bold;
+        }
+
+        .description{
+            margin-top: 20px;
+            font-size: 1.6rem;
+        }
+    }
+
+    &:hover{
+        @include sgd-colors('background-color');
+
+        &.accent-1{
+            background-color: $yellow-6;
+        }
+
+        &.accent-2{
+            background-color: $green-6;
+        }
+
+        &.accent-3{
+            background-color: $red-6;
+        }
+
+        &.accent-4{
+            background-color: $light-blue-6;
+        }
+
+        .card-content .number{
+            text-shadow: none;
+            color: $dark-blue-1;
+            -webkit-text-stroke: unset;
+        }
+
+        &.sdg{
+            color: $white;
+
+            .card-content .number{
+                color: $white;
+                text-shadow: none;
+                -webkit-text-stroke: unset;
+            }
+        }
+    }
+}

@@ -6,7 +6,7 @@ use Helpers\View;
 <div>
     <div class="search-select-group show-for-large">
         <?php
-        View::render('layout/multi-select', [
+        View::render('partials/multi-select', [
             'id' => 'regions-select',
             'class' => 'regions-select',
             'ariaLabel' => 'Regions',
@@ -19,7 +19,7 @@ use Helpers\View;
 <div>
     <div class="search-select-group show-for-large">
         <?php
-        View::render('layout/multi-select', [
+        View::render('partials/multi-select', [
             'id' => 'office-type-select',
             'class' => 'office-type-select',
             'ariaLabel' => 'Offices',
