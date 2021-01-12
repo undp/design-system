@@ -82,21 +82,33 @@
                 width: 24px;
                 height: 24px;
                 border: none;
-                color: $blue-0;
+                color: $blue-8;
                 position: relative;
                 margin-right: 22px;
+
+                &:hover,
+                &.active:hover {
+                    color: $blue-9;
+                }
+
+                .icon-close {
+                    color: $black;
+                }
+
+                @include breakpoint(medium down) {
+                    &:hover,
+                    &:active,
+                    &.active,
+                    &.active:hover{
+                        color: $blue-0;
+                    }
+                }
 
                 @include breakpoint(large down) {
                     margin-right: 0;
                     min-width: 23px;
                 }
 
-                &:hover,
-                &:focus,
-                &:active,
-                &.active {
-                    color: rgba($blue-0, 0.70);
-                }
 
                 &:last-child {
                     margin-right: 38px;
@@ -134,22 +146,32 @@
 
         .dropdown-btn {
             border: none;
-            color: $blue-0;
+            color: $blue-8;
             cursor: pointer;
 
-            &:before {
-                margin-right: 9.5px;
-                content: url('#{$image-path}icon-languages.svg');
+            &:hover,
+            &.active:hover {
+                color: $blue-9
             }
 
-            &:after {
-                margin-left: 10px;
-                content: url('#{$image-path}icon-arrow-down.svg');
+            &:active,
+            &.active {
+                color: $blue-8;
+            }
+
+            svg {
+                margin: 0 10px 0 0;
+
+                &:last-child {
+                    margin: 0 0 0 10px;
+                }
             }
 
             &.active {
-                &:after {
-                    transform: rotate(180deg);
+                svg {
+                    &:last-child {
+                        transform: rotate(180deg);
+                    }
                 }
             }
         }
