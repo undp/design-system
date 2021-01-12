@@ -2,17 +2,6 @@
 use helpers\Svg;
 use helpers\View;
 ?>
-
-<!--special tags to get extenal SVG from JS-->
-<span class="hide" data-arrow-external>
-    <?php Svg::render('btn-arrow-external', false, 'External link', 'assets/images/arrows/')?>
-</span>
-
-<span class="hide" data-arrow-right>
-    <?php Svg::render('btn-arrow-red', false, 'Arrow right', 'assets/images/arrows/')?>
-</span>
-
-
 <section class="header" data-navigation>
     <div class="grid-container">
         <nav class="grid-x">
@@ -25,7 +14,11 @@ use helpers\View;
                     </a>
                 </div>
                 <div class="dropdown show-for-xlarge" data-dropdown-languajes>
-                    <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>English</button>
+                    <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>
+                        <?php Svg::render('icon-languages') ?>
+                        English
+                        <?php Svg::render('icon-arrow-down') ?>
+                    </button>
                     <ul class="dropdown-content menu-items hide" data-options>
                         <li><a class="nav-item dark" href="#">Français</a></li>
                         <li><a class="nav-item dark" href="#">Español</a></li>
@@ -49,8 +42,8 @@ use helpers\View;
                         <span data-icon>
                             <?php Svg::render('icon-www')?>
                         </span>
-                        <span class="hide" data-icon-close>
-                            <?php Svg::render('icon-close-red', true, 'Close Modal') ?>
+                        <span class="hide icon-close" data-icon-close>
+                            <?php Svg::render('icon-close') ?>
                         </span>
                         <span class="show-for-sr">Open/close Locations</span>
                     </a>
@@ -58,15 +51,14 @@ use helpers\View;
                         <span data-icon>
                             <?php Svg::render('icon-search')?>
                         </span>
-                        <span class="hide" data-icon-close>
-                            <?php Svg::render('icon-close-red', true, 'Close Modal') ?>
+                        <span class="hide icon-close" data-icon-close>
+                            <?php Svg::render('icon-close') ?>
                         </span>
                         <span class="show-for-sr">Open/close Search</span>
                     </a>
                 </div>
             </div>
         </nav>
-    </div>
     </div>
     <div class="primary-navigation" data-primary-navigation>
         <div class="hide hide-for-large" data-menu-main-options>
