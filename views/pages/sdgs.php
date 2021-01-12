@@ -22,16 +22,11 @@ use helpers\View;
 
     <!--  Development Goals   -->
     <div class="grid-container">
-        <div class="grid-x sustainable-developments">
-            <div class="cell small-9 medium-3 small-offset-1 heading h2">
-                What are the Sustainable Development Goals?
-            </div>
-            <div class="cell small-10 medium-6 small-offset-1 large-copy">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.
-            </div>
-        </div>
+        <?php View::render('organisms/text/big-copy-h1', [
+                'title' => '        What are the Sustainable Development Goals?',
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+             ])
+        ?>
     </div>
 
     <!-- SDG Cards list -->
