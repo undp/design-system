@@ -110,10 +110,7 @@ class ModalNavHover {
         this.$modalContent.addClass(this.classAnimationOpacity);
         this.removeTransitions();
         this.$modalBody.find('.' + this.classAnimationOpacity).removeClass(this.classAnimationOpacityBack);
-
-
-        this.lazyLoadClass.loadImagesVideos();
-        this.lazyLoadClass.intersectionObserver();
+        this.lazyLoadClass.listenerDefault();
     }
 
     //if we open our seconds modal, we not require transitions so remove it
@@ -182,6 +179,7 @@ class ModalNavHover {
                     const menuOptionId = $menuOption.data(this.dataMenuOptionId);
                     $('#' + menuOptionId).removeClass(this.classHide);
                     $menuOption.addClass(this.classMenuActive);
+                    this.lazyLoadClass.listenerDefault();
                 }
 
                 $menuOption.hover(openSubmenuData)
