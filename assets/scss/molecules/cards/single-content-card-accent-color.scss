@@ -1,0 +1,39 @@
+.single-content-card-accent-color{
+    max-width: 330px;
+    max-height: 405px;
+    position: relative;
+    border-top: 1px solid $black;
+
+    &.accent-1{
+        background-color: $yellow-6;
+
+        &:hover{
+            background-color: $yellow;
+        }
+    }
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: (27 / 22) * 100%;
+    }
+
+    .card-content{
+        top: 0;
+        left: 0;
+        height: 100%;
+        position: absolute;
+        padding: 16px 30px 20px;
+
+        .title{
+            margin-top: 38px;
+            font-size: 3.5rem;
+        }
+
+        .cta{
+            bottom: 20px;
+            position: absolute;
+        }
+    }
+}
