@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="grid-x description-container color-2">
-        <div class="cell large-offset-1 large-11">
+        <div class="cell">
             <div class="grid-x grid-padding-x">
                 <div class="cell medium-6 description">
                     <p class="big-copy">
