@@ -4,9 +4,15 @@
     position: fixed;
     top: $height-nav;
     z-index: $z-index-modal;
+    transform: translateX(100%);
     backdrop-filter: blur(30px);
+    transition: $transition-primary;
     background-color: rgba($white, 0.9);
     min-height: calc(100vh - #{$height-nav});
+
+    &.open {
+        transform: translateX(0);
+    }
 
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
         background-color: transparent;

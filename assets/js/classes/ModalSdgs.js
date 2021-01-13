@@ -8,6 +8,7 @@ class ModalSdgs {
 
         this.url = null;
         this.color = null;
+        this.classModalOpen = 'open';
         this.classBodyModalOpen = 'modal-open'
     }
 
@@ -31,12 +32,12 @@ class ModalSdgs {
     }
 
     open() {
-        this.$modal.removeClass('hide');
+        this.$modal.addClass(this.classModalOpen);
         this.$body.addClass(this.classBodyModalOpen)
     }
 
     close() {
-        this.$modal.addClass('hide');
+        this.$modal.removeClass(this.classModalOpen)
         // this.$modalContent.html('');
         this.$body.removeClass(this.classBodyModalOpen)
     }
