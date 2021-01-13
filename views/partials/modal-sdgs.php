@@ -116,7 +116,6 @@ use helpers\Svg;
                     'class' => 'color-3 next-card',
                     'number' => '3',
                     'title' => 'Good Health and Well Being',
-                    'nextLink' => true,
                 ]); ?>
             </div>
         </div>
