@@ -113,6 +113,7 @@ use helpers\Svg;
                 </div>
 
                 <?php View::render('organisms/text/bulleted-list') ?>
+                <?php View::render('organisms/content-cards/sdg-content-cards') ?>
             </div>
         </div>
     </div>

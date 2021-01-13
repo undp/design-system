@@ -1,7 +1,10 @@
 <?php use helpers\View;?>
 
-<div class="grid-container">
+<div class="grid-container sdg-content-cards">
     <div class="grid-x grid-padding-x flex-container align-center">
+        <div class="cell medium-10 medium-offset-1">
+            <h3 class="heading h3">Explore more</h3>
+        </div>
         <div class="cell medium-6 large-3">
             <?php
                 View::render('molecules/cards/single-content-card-body', [
