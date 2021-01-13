@@ -37,7 +37,7 @@ class ModalSdgs {
 
     close() {
         this.$modal.addClass('hide');
-        this.$modalContent.html('');
+        // this.$modalContent.html('');
         this.$body.removeClass(this.classBodyModalOpen)
     }
 
@@ -47,9 +47,9 @@ class ModalSdgs {
             url: this.url,
             dataType: 'json',
             success: ((response) => {
-                this.$modalContent.append(`
-                    <h2 class="heading h2">${ response.title }</h2>
-                `)
+                // this.$modalContent.append(`
+                //     <h2 class="heading h2">${ response.title }</h2>
+                // `)
 
                 //open modal after load data
                 this.open();
