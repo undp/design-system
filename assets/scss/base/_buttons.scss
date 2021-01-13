@@ -10,6 +10,7 @@
     text-transform: uppercase;
     padding: 14px 24px 15px 29px;
 
+
     &.full {
         width: 100%;
         justify-content: center;
@@ -32,6 +33,18 @@
         img{
             transform: translateX(70%);
         }
+    }
+
+    &.blue{
+        background: $blue-0;
+
+        &:hover {
+            background: $blue-3;
+        }
+    }
+
+    &.no-arrow{
+        padding: 14px 35px;
     }
 
     &.dark {
