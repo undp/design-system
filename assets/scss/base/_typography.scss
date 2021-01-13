@@ -67,6 +67,11 @@
         line-height: 1.2;
         font-size: 2.5rem;
         font-weight: $regular;
+
+        @include breakpoint(medium down){
+            font-size: 2rem;
+            line-height: 1.04;
+        }
     }
 }
 

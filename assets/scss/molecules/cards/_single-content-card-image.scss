@@ -1,0 +1,87 @@
+.single-content-card-image{
+    min-height: 405px;
+    position: relative;
+    border-top: 1px solid $black;
+
+    @include breakpoint(medium down){
+        margin-top: 25px;
+        max-width: 545px;
+    }
+
+    &:hover{
+        background-color: $dark-blue-7;
+    }
+
+    .card-content{
+        .tag{
+            padding: 15px 25px 20px;
+        }
+
+        .image{
+            width: 100%;
+            display: flex;
+            height: 185px;
+            overflow: hidden;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+
+            img{
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+                position: absolute;
+            }
+
+            .gradient{
+                top: 0;
+                left: 0;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                transition: opacity 0.5s ease;
+                background-image: linear-gradient(45deg, rgba($yellow, 0.3) 0%, transparent 100%);
+            }
+        }
+
+        .title{
+            padding: 0 25px;
+            margin-top: 15px;
+            height: 90px;
+
+            @include breakpoint(medium down){
+                height: 100px;
+            }
+
+            h4{
+                height: 100%;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+
+                @include breakpoint(medium down){
+                    -webkit-line-clamp: 4;
+                }
+
+                @include breakpoint(medium only){
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        .cta{
+            cursor: pointer;
+            padding: 20px 25px 0;
+        }
+    }
+
+    &:hover{
+        .card-content .image .gradient{
+            opacity: 1;
+        }
+    }
+}
