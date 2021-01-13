@@ -1,10 +1,4 @@
 .sdg-deep-dive-hero{
-    padding: 0 40px;
-
-    @include breakpoint(small only){
-        padding: 0 12px;
-    }
-
     .title {
         margin-top: 120px;
 

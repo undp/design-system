@@ -1,4 +1,8 @@
 .bulleted-list{
+    @include breakpoint(small only){
+        padding-left: 8px;
+    }
+
     .list{
         padding: 0;
         list-style: none;
@@ -10,7 +14,7 @@
             @include breakpoint(small only){
                 margin-top: 55px;
                 font-size: 1.6rem;
-                padding-left: 20px;
+                padding-left: 30px;
 
                 &:first-child{
                     margin-top: 50px;
