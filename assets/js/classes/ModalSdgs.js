@@ -47,9 +47,9 @@ class ModalSdgs {
             url: this.url,
             dataType: 'json',
             success: ((response) => {
-                this.$modalContent.append(`
-                    <h2 class="heading h2">${ response.title }</h2>
-                `)
+                // this.$modalContent.append(`
+                //     <h2 class="heading h2">${ response.title }</h2>
+                // `)
 
                 //open modal after load data
                 this.open();
