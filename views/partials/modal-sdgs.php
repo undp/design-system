@@ -112,6 +112,11 @@ use helpers\Svg;
 
                 <?php View::render('organisms/text/bulleted-list') ?>
                 <?php View::render('organisms/content-cards/sdg-content-cards') ?>
+                <?php View::render('molecules/statistics-figures/sdg-card', [
+                    'class' => 'color-3 next-card',
+                    'number' => '3',
+                    'title' => 'Good Health and Well Being',
+                ]); ?>
             </div>
         </div>
     </div>
