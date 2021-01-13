@@ -1,0 +1,162 @@
+.hero{
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 805px;
+    transition: max-width 0.5s ease;
+    @include breakpoint(large){
+        max-height: 810px;
+    }
+
+    @include breakpoint(medium){
+        max-height: 880px;
+    }
+
+    @include breakpoint(small only){
+        height: 815px;
+    }
+
+    &.contract{
+        max-width: calc(100% - 4.8rem);
+
+        @include breakpoint(small only){
+            max-width: calc(100% - 3rem);
+        }
+
+        @include breakpoint(1921px up){
+            max-width: calc(1920px - 4.8rem);
+        }
+    }
+
+
+    .hero-content{
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        max-width: 1440px;
+        position: relative;
+    }
+
+    .text-box{
+        top: 175px;
+        left: 125px;
+        position: absolute;
+        background: $white;
+        padding: 70px 140px 68px 57px;
+
+        @include breakpoint(large down){
+            top: 170px;
+            left: 35px;
+            padding: 60px 290px 75px 70px;
+        }
+
+        @include breakpoint(medium down){
+            top: 135px;
+            left: unset;
+            right: unset;
+            margin-left: 85px;
+            width: calc(100% - 85px);
+            padding: 60px 0 75px 65px;
+        }
+
+
+        @include breakpoint(small only){
+            top: 130px;
+            margin-left: 45px;
+            width: calc(100% - 45px);
+            padding: 85px 0 105px 25px;
+        }
+
+        .title{
+            max-width: 635px;
+
+            @include breakpoint(large down){
+                max-width: 450px;
+            }
+
+            @include breakpoint(small only){
+                max-width: 245px;
+            }
+
+            .heading.h1{
+                @include breakpoint(small only){
+                    letter-spacing: 3px;
+                }
+
+                @include breakpoint(360px down){
+                    font-size: 4rem;
+                }
+            }
+
+        }
+
+        .subtitle{
+            max-width: 450px;
+            margin-top: 45px;
+
+            @include breakpoint(large down){
+                margin-top: 50px;
+                max-width: 250px;
+
+                .heading.h3{
+                    font-size: 20px;
+                    line-height: 1.2;
+                }
+            }
+
+            @include breakpoint(medium down){
+                max-width: 250px;
+            }
+
+            @include breakpoint(small only){
+                margin-top: 45px;
+            }
+        }
+
+        .separator{
+            width: 100px;
+            margin-top: 35px;
+            border-bottom: 3px solid $red;
+
+            @include breakpoint(large down){
+                margin-top: 40px;
+            }
+
+            @include breakpoint(small only){
+                margin-top: 55px;
+            }
+        }
+    }
+
+    .cta-button{
+        right: 60px;
+        bottom: 40px;
+        position: absolute;
+
+        @include breakpoint(large down){
+            left: 35px;
+            right: unset;
+            bottom: 110px;
+        }
+
+        @include breakpoint(medium down){
+            left: 85px;
+            bottom: 70px;
+        }
+
+        @include breakpoint(small only){
+            left: 45px;
+            bottom: 125px;
+        }
+    }
+
+    .cta-arrow{
+        left: 50%;
+        bottom: 40px;
+        position: absolute;
+
+        @include breakpoint(large down){
+            display: none;
+        }
+    }
+}

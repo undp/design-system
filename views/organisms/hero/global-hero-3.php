@@ -3,7 +3,7 @@ use helpers\Svg;
 use helpers\View;
 ?>
 
-<section class="global-hero-3"
+<section class="hero global-hero-3"
          style="background-image: url('<?= $imageUrl ?? '' ?>')">
     <div class="grid-container">
         <div class="grid-x">

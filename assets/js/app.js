@@ -8,6 +8,7 @@ import footerMenu from './partials/footer-menu-mobile'
 import locationFilters from './components/location-filters'
 import trapFocus from './components/trap-focus'
 import modalSdgs from './components/modal-sdgs'
+import heroAnimation from './components/hero-animation'
 import menusNav from './render-data/menu/all';
 import searchData  from './render-data/modals/search'
 import countriesData  from './render-data/modals/locations/countries'
@@ -31,6 +32,7 @@ function main() {
     countriesData()
     menusNav()
     modalSdgs()
+    heroAnimation()
 
     moleculeStatisticsSdgCard()
 }
