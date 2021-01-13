@@ -1,0 +1,45 @@
+.left-right {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: $transition-tertiary;
+
+    &.left-right-small {
+        @include breakpoint(small only) {
+            transform: translateX(-50px);
+        }
+    }
+
+
+    &.in-viewport {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.right-left {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: $transition-primary;
+
+    &.right-left-small {
+        @include breakpoint(small only) {
+            transform: translateX(50px);
+        }
+    }
+
+    &.not-opacity {
+        opacity: 1;
+    }
+
+    &.in-viewport {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@for $i from 1 to 20 {
+    .delay-#{$i} {
+        transition-delay: 100ms * $i;
+    }
+}

@@ -5,6 +5,7 @@ import lazyLoad from './components/lazy-load'
 import navigation from './components/navigation'
 import dropdown from './components/dropdown-languajes'
 import footerMenu from './partials/footer-menu-mobile'
+import scrollTriggers from './components/scroll-triggers'
 import locationFilters from './components/location-filters'
 import trapFocus from './components/trap-focus'
 import modalSdgs from './components/modal-sdgs'
@@ -33,6 +34,7 @@ function main() {
     menusNav()
     modalSdgs()
     heroAnimation()
+    scrollTriggers()
 
     moleculeStatisticsSdgCard()
 }

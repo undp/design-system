@@ -11,7 +11,7 @@ use helpers\View;
                 <?php View::render('partials/breadcrumb', [
                     'links' => $breadcrumbLinks ?? ''
                 ]) ?>
-                <div class="title"><?= $title ?? '' ?></div>
+                <div class="title scroll-track left-right delay-1"><?= $title ?? '' ?></div>
                 <div class="cta-arrow show-for-medium">
                     <?php Svg::render('hero-arrow-down', true, 'Scroll Down', 'assets/images/arrows/') ?>
                 </div>
