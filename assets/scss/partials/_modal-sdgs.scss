@@ -58,5 +58,19 @@
                 margin-top: 80px;
             }
         }
+
+        .cards-slider {
+            margin-top: 20px;
+
+            .cell {
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
     }
 }

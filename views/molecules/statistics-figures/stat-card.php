@@ -1,9 +1,9 @@
 <div class="stat-card small accent-yellow">
     <div class="card-content">
-        <div class="number">35</div>
-        <div class="title">Percent</div>
+        <div class="number"><?= $number ?? '' ?></div>
+        <div class="title"><?= $title ?? '' ?></div>
         <div class="description">
-            In 2017 Asia accounted for nearly two thirds, 63 percent, of the world’s hungry.
+            <?= $description ?? '' ?>
         </div>
     </div>
 </div>
