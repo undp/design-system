@@ -1,17 +1,19 @@
 <div class="single-content-card-image">
     <div class="card-content">
-        <div class="tag">Content tag</div>
-        <div class="image" style="background-image: url('/assets/images/placeholder/cards/single-content-card-image.png')">
+        <div class="tag">
+            <?= $tag ?>
+        </div>
+        <div class="image" style="background-image: url(<?= $image ?>)">
             <div class="gradient"></div>
         </div>
         <div class="title">
             <h4 class="heading h5">
-                A vineyard with a storied past receives an injection of new life.
+                <?= $title ?>
             </h4>
         </div>
         <div class="cta">
             <div class="text-link arrow-2">
-                <span>Read more</span>
+                <span><?= $cta ?></span>
                 <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
             </div>
         </div>
