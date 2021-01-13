@@ -13,7 +13,7 @@
     top: $height-nav;
     z-index: $z-index-modal;
     backdrop-filter: blur(30px);
-    background-color: rgba($white, 0.9);
+    background-color: rgba(237,239,240, .95);
     min-height: calc(100vh - #{$height-nav});
 
     .grid-container {
@@ -53,6 +53,7 @@
         .btn-close {
             width: 45px;
             height: 45px;
+            cursor: pointer;
             border-radius: 50%;
             background-color: $dark-blue-7;
 
