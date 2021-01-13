@@ -1,0 +1,23 @@
+.single-content-card-body{
+    .card-content{
+        padding: 15px 25px 20px;
+
+        .tag{
+
+        }
+
+        .title{
+            margin-top: 45px;
+        }
+
+        .description{
+            margin-top: 35px;
+        }
+
+        .cta{
+            bottom: 20px;
+            cursor: pointer;
+            position: absolute;
+        }
+    }
+}

@@ -1,17 +1,4 @@
 .single-content-card-image{
-    min-height: 405px;
-    position: relative;
-    border-top: 1px solid $black;
-
-    @include breakpoint(medium down){
-        margin-top: 25px;
-        max-width: 545px;
-    }
-
-    &:hover{
-        background-color: $dark-blue-7;
-    }
-
     .card-content{
         .tag{
             padding: 15px 25px 20px;
