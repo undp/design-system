@@ -5,36 +5,31 @@
     background-color: $dark-blue-6;
     transition: background-color 0.5s ease;
 
-    &:before {
-        width: 100%;
-        content: "";
-        display: block;
-        padding-top: (276 / 235) * 100%;
-    }
-
     &.small{
-        &:before{
-            padding-top: (276 / 235) * 100%;
-        }
+        min-height: 270px;
 
         .card-content{
             padding: 40px 35px 15px;
+
+            @include breakpoint(medium only){
+                padding: 20px 20px 15px;
+            }
         }
     }
 
     .card-content{
-        top: 0;
-        left: 0;
-        height: 100%;
-        position: absolute;
 
         .number{
-            font-size: 6.1rem;
-            color: $dark-blue-6;
+            font-size: 4rem;
             font-weight: $bold;
+            color: $dark-blue-6;
             font-family: $secondary-font;
             -webkit-text-stroke: 1px $black;
             text-shadow: -1px -1px 0 $black, 1px -1px 0 $black, -1px 1px 0 $black, 1px 1px 0 $black;
+
+            @include breakpoint(small only){
+                font-size: 5.5rem;
+            }
         }
 
         .title{
@@ -52,19 +47,19 @@
     &:hover{
         @include sgd-colors('background-color');
 
-        &.accent-1{
+        &.accent-yellow{
             background-color: $yellow-6;
         }
 
-        &.accent-2{
+        &.accent-green{
             background-color: $green-6;
         }
 
-        &.accent-3{
+        &.accent-red{
             background-color: $red-6;
         }
 
-        &.accent-4{
+        &.accent-blue{
             background-color: $light-blue-6;
         }
 
