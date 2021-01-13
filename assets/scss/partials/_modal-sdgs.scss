@@ -1,3 +1,11 @@
+@keyframes animate {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 .modal-sdgs {
     height: 1px;
     width: 100%;
@@ -7,6 +15,17 @@
     backdrop-filter: blur(30px);
     background-color: rgba($white, 0.9);
     min-height: calc(100vh - #{$height-nav});
+
+    .grid-container {
+        transform: translateX(100%);
+    }
+
+    &.open {
+        .grid-container {
+            animation: animate  .4s forwards;
+        }
+    }
+
 
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
         background-color: transparent;
