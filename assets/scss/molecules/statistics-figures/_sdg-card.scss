@@ -14,7 +14,7 @@
     position: relative;
     align-items: center;
     font-family: $secondary-font;
-    cursor: url("/assets/images/arrows/sdg-hover-arrow.svg"), url("/assets/images/arrows/sdg-hover-arrow.cur"), auto;
+    cursor: url("#{$image-path}/arrows/sdg-hover-arrow.svg"), url("#{$image-path}/arrows/sdg-hover-arrow.cur"), auto;
 
     @include breakpoint(small only){
         height: 245px;
@@ -90,7 +90,6 @@
     }
 
     &:hover{
-        color: $white;
 
         @include breakpoint(large up){
             .hover-image {
@@ -167,5 +166,31 @@
 
     &.color-17{
         @include sdg-background-color($sdg-17);
+    }
+
+    &.link {
+        color: $black;
+        cursor: url("#{$image-path}/arrows/sdg-hover-arrow-black.svg"), url("#{$image-path}/arrows/sdg-hover-arrow-black.cur"), auto;
+
+        @include breakpoint(small only){
+            display: flex;
+            padding: 55px 24px;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+            .title {
+                margin: 0;
+            }
+        }
+
+        .hover-image {
+            width: 740px;
+            height: 100%;
+
+            img {
+                object-fit: contain;
+            }
+        }
     }
 }
