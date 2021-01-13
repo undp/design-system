@@ -1,4 +1,4 @@
-<div class="stat-card small accent-yellow">
+<div class="stat-card small">
     <div class="card-content">
         <div class="number"><?= $number ?? '' ?></div>
         <div class="title"><?= $title ?? '' ?></div>

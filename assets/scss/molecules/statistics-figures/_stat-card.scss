@@ -8,6 +8,10 @@
     &.small{
         min-height: 270px;
 
+        @include breakpoint(small only){
+            max-width: 250px;
+        }
+
         .card-content{
             padding: 40px 35px 15px;
 
@@ -71,7 +75,7 @@
         }
 
         &.sdg{
-            color: $white;
+            color: $whiteq;
 
             .card-content .number{
                 color: $white;

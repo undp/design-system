@@ -72,43 +72,43 @@ use helpers\Svg;
                         </button>
                     </div>
                     <div class="glide__track" data-glide-el="track">
-                        <div class="glide__slides">
-                            <div class="glide__slide">
+                        <ul class="glide__slides">
+                            <li class="glide__slide">
                                 <?php View::render('molecules/statistics-figures/stat-card',[
                                         'number' => 821,
                                         'title' => 'Percent',
                                         'description' => 'The number of undernourished people reached 821 million in 2017.'
                                     ]) ?>
-                            </div>
-                            <div class="glide__slide">
+                            </li>
+                            <li class="glide__slide">
                                 <?php View::render('molecules/statistics-figures/stat-card',[
                                     'number' => 63,
                                     'title' => 'Percent',
                                     'description' => 'In 2017 Asia accounted for nearly two thirds, 63 percent, of the world’s hungry.'
                                 ]) ?>
-                            </div>
-                            <div class="glide__slide">
+                            </li>
+                            <li class="glide__slide">
                                 <?php View::render('molecules/statistics-figures/stat-card',[
                                     'number' => 22,
                                     'title' => 'Percent',
                                     'description' => 'Nearly 151 million children under five, 22 percent, were still stunted in 2017.'
                                 ]) ?>
-                            </div>
-                            <div class="glide__slide">
+                            </li>
+                            <li class="glide__slide">
                                 <?php View::render('molecules/statistics-figures/stat-card',[
                                     'number' => 13,
                                     'title' => 'Percent',
                                     'description' => 'More than 1 in 8 adults is obese.'
                                 ]) ?>
-                            </div>
-                            <div class="glide__slide">
+                            </li>
+                            <li class="glide__slide">
                                     <?php View::render('molecules/statistics-figures/stat-card',[
                                     'number' => 'One',
                                     'title' => 'Percent',
                                     'description' => '1 in 3 women of reproductive age is anemic.'
                                 ]) ?>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
