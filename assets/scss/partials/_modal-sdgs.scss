@@ -84,6 +84,18 @@
 
         .sdg-content-cards {
             margin-top: 120px;
+
+            @include breakpoint(small only){
+                margin-top: 25px;
+            }
+
+            .cta-container{
+                margin: 100px 0 60px;
+
+                @include breakpoint(small only){
+                    margin: 25px 0 35px;
+                }
+            }
         }
     }
 }
