@@ -37,7 +37,7 @@ class ModalSdgs {
 
     close() {
         this.$modal.addClass('hide');
-        this.$modalContent.html('');
+        // this.$modalContent.html('');
         this.$body.removeClass(this.classBodyModalOpen)
     }
 
