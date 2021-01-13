@@ -28,10 +28,12 @@
         font-size: 11rem;
         font-weight: $bold;
         padding: 0 160px 0 24px;
+        position: relative;
 
         @include breakpoint(small only){
             padding: 0;
             font-size: 4.7rem;
+            z-index: 9999;
         }
     }
 
