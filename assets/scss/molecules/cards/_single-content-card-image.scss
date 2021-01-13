@@ -18,21 +18,12 @@
         }
 
         .image{
-            width: 100%;
-            display: flex;
             height: 185px;
             overflow: hidden;
             position: relative;
-            align-items: center;
-            justify-content: center;
-
-            img{
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: auto;
-                position: absolute;
-            }
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
 
             .gradient{
                 top: 0;
@@ -65,6 +56,10 @@
 
                 @include breakpoint(medium down){
                     -webkit-line-clamp: 4;
+                }
+
+                @include breakpoint(small only){
+                    -webkit-line-clamp: 5;
                 }
 
                 @include breakpoint(medium only){
