@@ -1,4 +1,4 @@
-<div class="stat-card small accent-1">
+<div class="stat-card small accent-yellow">
     <div class="card-content">
         <div class="number">35</div>
         <div class="title">Percent</div>
