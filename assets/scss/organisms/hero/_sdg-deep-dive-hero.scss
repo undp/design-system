@@ -1,9 +1,15 @@
 .sdg-deep-dive-hero{
+    padding: 0 40px;
+
+    @include breakpoint(small only){
+        padding: 0 12px;
+    }
+
     .title {
-        padding: 55px 0 40px;
+        margin-top: 120px;
 
         @include breakpoint(small only){
-
+            margin-top: 0;
         }
 
         h2{
@@ -21,9 +27,15 @@
 
     .description-container{
         display: flex;
+        margin-top: 80px;
         padding: 70px 60px 90px 95px;
 
+        @include breakpoint(medium down){
+            padding: 70px 60px 90px 60px;
+        }
+
         @include breakpoint(small only){
+            margin-top: 40px;
             padding: 16px 12px 75px;
         }
 
