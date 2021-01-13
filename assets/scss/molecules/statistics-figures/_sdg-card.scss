@@ -195,4 +195,38 @@
             }
         }
     }
+
+    &.next-card {
+        flex-direction: row;
+        align-items: center;
+
+        .title {
+            max-width: calc(100% - 390px);
+        }
+
+        @include breakpoint(small only) {
+            height: 85px;
+            padding: 0 24px;
+
+            .number {
+                margin-top: 0;
+                font-size: 1.5rem;
+                margin-right: 18px;
+            }
+            .title {
+                margin-top: 0;
+                font-size: 1.5rem;
+                max-width: calc(100% - 55px);
+            }
+        }
+
+        .arrow-container {
+            right: 80px;
+            position: absolute;
+
+            @include breakpoint(small only){
+                right: 20px;
+            }
+        }
+    }
 }

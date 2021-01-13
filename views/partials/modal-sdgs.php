@@ -7,9 +7,9 @@ use helpers\Svg;
     <div class="grid-container full height-full">
         <div class="grid-x height-full">
             <div class="cell medium-2 flex-container align-center modal-header">
-                <a class="flex-container align-middle align-center btn-close" href="#">
+                <button class="flex-container align-middle align-center btn-close">
                     <?php Svg::render('icon-close') ?>
-                </a>
+                </button>
             </div>
             <div class="cell medium-10  height-full modal-content">
                 <?php View::render('organisms/hero/sdg-deep-dive-hero') ?>
@@ -112,6 +112,11 @@ use helpers\Svg;
 
                 <?php View::render('organisms/text/bulleted-list') ?>
                 <?php View::render('organisms/content-cards/sdg-content-cards') ?>
+                <?php View::render('molecules/statistics-figures/sdg-card', [
+                    'class' => 'color-3 next-card',
+                    'number' => '3',
+                    'title' => 'Good Health and Well Being',
+                ]); ?>
             </div>
         </div>
     </div>

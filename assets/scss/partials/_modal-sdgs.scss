@@ -1,3 +1,11 @@
+@keyframes animate {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 .modal-sdgs {
     height: 1px;
     width: 100%;
@@ -7,6 +15,17 @@
     backdrop-filter: blur(30px);
     background-color: rgba($white, 0.9);
     min-height: calc(100vh - #{$height-nav});
+
+    .grid-container {
+        transform: translateX(100%);
+    }
+
+    &.open {
+        .grid-container {
+            animation: animate  .4s forwards;
+        }
+    }
+
 
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
         background-color: transparent;
@@ -94,6 +113,19 @@
 
                 @include breakpoint(small only){
                     margin: 25px 0 35px;
+                }
+            }
+        }
+
+        .sdg-card {
+            &.next-card {
+                right: -40px;
+                margin-top: 60px;
+                margin-bottom: 10px;
+
+                @include breakpoint(small only){
+                    right: -12px;
+                    margin-top: 35px;
                 }
             }
         }
