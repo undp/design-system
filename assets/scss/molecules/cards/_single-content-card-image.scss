@@ -1,0 +1,68 @@
+.single-content-card-image{
+    .card-content{
+        .tag{
+            padding: 15px 25px 20px;
+        }
+
+        .image{
+            height: 185px;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+
+            .gradient{
+                top: 0;
+                left: 0;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                transition: opacity 0.5s ease;
+                background-image: linear-gradient(45deg, rgba($yellow, 0.3) 0%, transparent 100%);
+            }
+        }
+
+        .title{
+            padding: 0 25px;
+            margin-top: 15px;
+            height: 90px;
+
+            @include breakpoint(medium down){
+                height: 100px;
+            }
+
+            h4{
+                height: 100%;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+
+                @include breakpoint(medium down){
+                    -webkit-line-clamp: 4;
+                }
+
+                @include breakpoint(small only){
+                    -webkit-line-clamp: 5;
+                }
+
+                @include breakpoint(medium only){
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        .cta{
+            padding: 20px 25px 0;
+        }
+    }
+
+    &:hover{
+        .card-content .image .gradient{
+            opacity: 1;
+        }
+    }
+}

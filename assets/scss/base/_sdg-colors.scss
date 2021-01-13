@@ -1,69 +1,171 @@
-@mixin sgd-colors($property){
+@mixin sgd-colors($property, $hover: null){
     &.color-1{
         #{$property}: $sdg-1;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-1-hover;
+            }
+        }
     }
 
     &.color-2{
         #{$property}: $sdg-2;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-2-hover;
+            }
+        }
     }
 
     &.color-3{
         #{$property}: $sdg-3;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-3-hover;
+            }
+        }
     }
 
     &.color-4{
         #{$property}: $sdg-4;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-4-hover;
+            }
+        }
     }
 
     &.color-5{
         #{$property}: $sdg-5;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-5-hover;
+            }
+        }
     }
 
     &.color-6{
         #{$property}: $sdg-6;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-6-hover;
+            }
+        }
     }
 
     &.color-7{
         #{$property}: $sdg-7;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-7-hover;
+            }
+        }
     }
 
     &.color-8{
         #{$property}: $sdg-8;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-8-hover;
+            }
+        }
     }
 
     &.color-9{
         #{$property}: $sdg-9;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-9-hover;
+            }
+        }
     }
 
     &.color-10{
         #{$property}: $sdg-10;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-10-hover;
+            }
+        }
     }
 
     &.color-11{
         #{$property}: $sdg-11;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-11-hover;
+            }
+        }
     }
 
     &.color-12{
         #{$property}: $sdg-12;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-12-hover;
+            }
+        }
     }
 
     &.color-13{
         #{$property}: $sdg-13;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-13-hover;
+            }
+        }
     }
 
     &.color-14{
         #{$property}: $sdg-14;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-14-hover;
+            }
+        }
     }
 
     &.color-15{
         #{$property}: $sdg-15;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-15-hover;
+            }
+        }
     }
 
     &.color-16{
         #{$property}: $sdg-16;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-16-hover;
+            }
+        }
     }
 
     &.color-17{
         #{$property}: $sdg-17;
+
+        @if ($hover != null) {
+            &:hover{
+                #{$property}: $sdg-17-hover;
+            }
+        }
     }
 }

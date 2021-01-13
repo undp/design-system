@@ -30,6 +30,7 @@ use helpers\Svg;
             </pre>
         </div>
     </div>
+
 <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 </html>
