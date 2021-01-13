@@ -45,6 +45,12 @@
 
     &.no-arrow{
         padding: 14px 35px;
+
+        @include breakpoint(small only){
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
     }
 
     &.dark {
