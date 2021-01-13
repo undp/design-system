@@ -51,9 +51,7 @@ use helpers\View;
                     </span>
                 </a>
             </div>
-            <div class="cell medium-10  height-full modal-content">
-                View:sdgf-deep-vei
-            </div>
+            <div class="cell medium-10  height-full modal-content"></div>
         </div>
     </div>
 </div>
