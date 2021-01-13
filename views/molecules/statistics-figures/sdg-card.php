@@ -10,15 +10,5 @@ use helpers\Svg;
         <img src="<?= $image ?>" alt="<?= $imageAlt ?>">
         <span class="gradient"></span>
     </span>
-    <?php }
-    if (isset($nextLink)) { ?>
-        <div class="arrow-container">
-            <span class="show-for-medium">
-                <?php Svg::render('sdg-hover-arrow', false, '', 'assets/images/arrows/') ?>
-            </span>
-            <span class="show-for-small-only">
-                <?php Svg::render('btn-arrow-white', false, '', 'assets/images/arrows/') ?>
-           </span>
-        </div>
     <?php } ?>
 </button>

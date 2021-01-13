@@ -102,6 +102,7 @@
             &.next-card {
                 right: -40px;
                 margin-top: 60px;
+                margin-bottom: 10px;
 
                 @include breakpoint(small only){
                     right: -12px;
