@@ -52,7 +52,7 @@ use helpers\Svg;
                         ]) ?>
                     </div>
                 </div>
-                <div class="glide-sdgs-percent show-for-small-only">
+                <div class="sdg-stat-cards-slider show-for-small-only">
                     <div class="glide__bullets" data-glide-el="controls[nav]">
                         <div class="control-slider"></div>
                         <button class="glide__bullet" data-glide-dir="=0">

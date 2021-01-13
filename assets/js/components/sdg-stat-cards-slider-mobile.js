@@ -1,7 +1,7 @@
 import Glide from '@glidejs/glide/';
 
 const init = function () {
-    const $glideExpertiseSection = $('.glide-sdgs-percent')
+    const $glideExpertiseSection = $('.sdg-stat-cards-slider')
 
     if($glideExpertiseSection.length){
         const $controlSlider = $glideExpertiseSection.find('.control-slider')
@@ -10,7 +10,7 @@ const init = function () {
 
         $controlSlider.css('width', slideWidth + "%")
 
-        const glideExpertise = new Glide('.glide-sdgs-percent', {
+        const glideExpertise = new Glide('.sdg-stat-cards-slider', {
             peek: { before: 0, after: 40 }
         });
 
