@@ -97,5 +97,17 @@
                 }
             }
         }
+
+        .sdg-card {
+            &.next-card {
+                right: -40px;
+                margin-top: 60px;
+
+                @include breakpoint(small only){
+                    right: -12px;
+                    margin-top: 35px;
+                }
+            }
+        }
     }
 }
