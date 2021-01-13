@@ -56,6 +56,10 @@
             align-self: baseline;
             justify-content: center;
 
+            @include breakpoint(small only){
+                padding: 0;
+            }
+
             img{
                 @include breakpoint(small only){
                     max-height: 450px;
