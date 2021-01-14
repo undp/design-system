@@ -22,6 +22,7 @@ class ModalSdgs {
     init() {
         this.listenerLoadModalData();
         this.listenerCloseModal();
+        this.listenerWindowClick();
         this.listenerKeyPress();
     }
 
