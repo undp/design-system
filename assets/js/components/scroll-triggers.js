@@ -20,21 +20,17 @@ const init = function () {
 
 
     //SDG Cards trigger
-    let $cards = $('.sdg-card');
-
-    $cards.each((index, target)=>{
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: target,
-                start: 'bottom bottom',
-                scrub: true,
-                invalidateOnRefresh: false,
-                onEnter: ()=>{
-                    $(target).find('.track').addClass('in-viewport');
-                }
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '.sgd-animate',
+            start: 'bottom bottom',
+            scrub: true,
+            invalidateOnRefresh: false,
+            onEnter: ()=>{
+                $('.sgd-animate').find('.track').addClass('in-viewport');
             }
-        });
-    })
+        }
+    });
 }
 
 export default init
