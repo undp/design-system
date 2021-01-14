@@ -1,7 +1,7 @@
 <div class="grid-x bulleted-list">
     <div class="cell small-4 medium-offset-1 medium-3">
         <div class="title">
-            <h2 class="heading h2">Goal Targets</h2>
+            <h2 class="heading h2">Goal targets</h2>
         </div>
     </div>
     <div class="cell small-11 medium-offset-1 medium-7">

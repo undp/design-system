@@ -8,6 +8,7 @@
         list-style: none;
 
         li{
+            display: flex;
             font-size: 2rem;
             position: relative;
 
@@ -26,12 +27,11 @@
             }
 
             &:before {
-                left: -25px;
-                position: absolute;
+                margin-right: 25px;
                 content: url("/assets/images/bullet-list.svg");
 
                 @include breakpoint(small only){
-                    left: 0;
+                    margin-right: 18px;
                 }
             }
         }
