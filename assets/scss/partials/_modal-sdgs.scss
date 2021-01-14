@@ -91,7 +91,15 @@
             margin-top: 125px;
 
             @include breakpoint(medium down){
+
+            }
+
+            @include breakpoint(small only){
                 margin-top: 80px;
+            }
+
+            .list {
+                max-width: 600px;
             }
         }
 
