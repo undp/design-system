@@ -10,7 +10,7 @@
     <div class="grid-x description-container color-2">
         <div class="cell">
             <div class="grid-x grid-padding-x">
-                <div class="cell medium-6 description">
+                <div class="cell medium-6 large-8 description">
                     <p class="big-copy">
                         The number of undernourished people has dropped by almost half in the past two decades because
                         of rapid economic growth and increased agricultural productivity. Many developing countries that
@@ -34,7 +34,7 @@
                         and technology to improve agricultural productivity.
                     </p>
                 </div>
-                <div class="cell medium-6 description-image">
+                <div class="cell medium-6 large-4 description-image">
                     <img src="/assets/images/placeholder/hero/sdg-deep-dive-hero.jpg" alt="SDG Deep Dive image">
                 </div>
             </div>
