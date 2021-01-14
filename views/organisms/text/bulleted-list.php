@@ -1,5 +1,5 @@
 <div class="grid-x bulleted-list">
-    <div class="cell small-4 medium-offset-1 medium-3">
+    <div class="cell small-4 medium-4">
         <div class="title">
             <h2 class="heading h2">Goal targets</h2>
         </div>
