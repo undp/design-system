@@ -72,7 +72,7 @@
         min-height: 100%;
         overflow-y: auto;
         background-color: $white;
-        box-shadow: -3px 0 6 rgba($black, 0.16);
+        box-shadow: -3px 0 6px rgba($black, 0.16);
 
         @include breakpoint(small only){
             height: unset;
