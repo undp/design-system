@@ -1,6 +1,7 @@
 class ModalSdgs {
     constructor() {
         this.$body = $('body')
+        this.$window = $(window);
         this.$modal = $('#modal-sdgs')
         this.$openModal = $('.sdg-card')
         this.$modalBtnClose = this.$modal.find('.btn-close')
@@ -16,6 +17,8 @@ class ModalSdgs {
     init() {
         this.listenerLoadModalData();
         this.listenerCloseModal();
+        this.listenerWindowClick();
+        this.listenerKeyPress();
     }
 
     listenerLoadModalData() {
@@ -31,6 +34,24 @@ class ModalSdgs {
             this.close();
         })
     }
+
+    listenerWindowClick() {
+        this.$window.click(evt => {
+            if (this.$modalContent && !this.$modalContent.is(evt.target) &&
+                this.$modalContent.has(evt.target).length === 0) {
+                this.close();
+            }
+        });
+    }
+    listenerKeyPress() {
+        this.$window.keyup((e) => {
+            console.log('key::', e.keyCode);
+            if (e.keyCode === 27) { //esc
+                this.close()
+            }
+        });
+    }
+
 
     open() {
         this.$body.addClass(this.classBodyModalOpen)
