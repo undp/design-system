@@ -173,7 +173,7 @@ View::render('molecules/statistics-figures/sdg-card', [
 
 View::render('molecules/statistics-figures/sdg-card-link', [
     'class' => 'link color-white',
-    'image' => '/assets/images/placeholder/sdg/sdg-background-link.png',
+    'image' => '/assets/images/placeholder/sdg/sdg-link-image.png',
     'imageAlt' => 'SDG link',
     'title' => 'Sustainable Development Goals ',
     'link' => 'https://www.google.com',
