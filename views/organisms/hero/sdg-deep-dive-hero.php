@@ -1,6 +1,6 @@
 <section class="sdg-deep-dive-hero">
     <div class="grid-x">
-        <div class="cell small-10 medium-11 small-offset-2 medium-offset-1">
+        <div class="cell">
             <div class="title">
                 <h2>Goal 2:</h2>
                 <h2>Zero hunger</h2>

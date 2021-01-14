@@ -2,10 +2,10 @@
 
 <div class="sdg-content-cards">
     <div class="grid-x">
-        <div class="cell medium-11 medium-offset-1">
+        <div class="cell">
             <div class="grid-x grid-padding-x flex-container align-center">
                 <div class="cell hide-for-small-only">
-                    <h3 class="heading h3">Explore more</h3>
+                    <h3 class="heading h3">SDGs in Action</h3>
                 </div>
                 <div class="cell medium-6 large-4">
                     <?php
