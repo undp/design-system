@@ -61,31 +61,35 @@
                 "alt" : "undp serbia roma poverty"
             },
             "links": [
-                {
-                    "link": "#",
-                    "name": "People"
-                },
-                {
-                    "link": "#",
-                    "name": "Planet"
-                },
-                {
-                    "link": "#",
-                    "name": "Prosperity"
-                },
-                {
-                    "link": "#",
-                    "name": "Peace"
-                },
-                {
-                    "link": "#",
-                    "name": "Partnerships"
-                },
-                {
-                    "link": "#",
-                    "name": "SDG Integration",
-                    "external": true
-                }
+                [
+                    {
+                        "link": "#",
+                        "name": "People"
+                    },
+                    {
+                        "link": "#",
+                        "name": "Planet"
+                    },
+                    {
+                        "link": "#",
+                        "name": "Prosperity"
+                    }
+                ],
+                [
+                    {
+                        "link": "#",
+                        "name": "Peace"
+                    },
+                    {
+                        "link": "#",
+                        "name": "Partnerships"
+                    },
+                    {
+                        "link": "#",
+                        "name": "SDG Integration",
+                        "external": true
+                    }
+                ]
             ]
         },
         {
