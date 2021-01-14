@@ -174,6 +174,7 @@ class LocationFilters {
 
     search() {
         let filtered;
+        this.$countryList = $('[data-city-filters]');
         if(this.filters.office.length && this.filters.region.length) {
             filtered = this.$countryList.filter((index, node) => {
                 const text = $(node).data('city-filters').toLowerCase();
@@ -222,7 +223,6 @@ class LocationFilters {
         if (this.filters.inputSearch.length > 0 ||
             this.filters.office.length > 0 ||
             this.filters.region.length > 0) {
-                this.$countryList = $('[data-city-filters]');
                 this.$countryList.addClass(this.classHide);
                 filtered.removeClass(this.classHide);
                 this.totalMatches = filtered.length;
