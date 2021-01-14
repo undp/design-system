@@ -1,4 +1,5 @@
 import 'foundation-sites/dist/js/foundation'
+import ModalSdgs from "../classes/ModalSdgs";
 
 class Modal {
     constructor() {
@@ -117,6 +118,7 @@ class Modal {
     }
 
     open() {
+        this.closeModalSdg();
         this.$body.addClass('modal-open');
         this.currentModal.removeClass('hide');
         this.inputSearchAutoFocus();
@@ -170,6 +172,11 @@ class Modal {
         this.$mainMenu.addClass(this.classHide);
         this.$body.removeClass(this.bodyMenuOpenClass)
         this.$hamburguer.removeClass(this.menuOpenClass);
+    }
+
+    closeModalSdg() {
+        const modalSdg = new ModalSdgs();
+        modalSdg.close();
     }
 
     //modal opened from footer
