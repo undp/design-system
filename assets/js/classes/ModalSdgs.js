@@ -64,6 +64,7 @@ class ModalSdgs {
     open() {
         this.$body.addClass(this.classBodyModalOpen)
         this.$modal.removeClass(this.classHide).addClass(this.classModalOpen);
+        this.$modalContent.animate( { scrollTop : 0 }, 800 );
     }
 
     close() {
