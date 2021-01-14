@@ -10,6 +10,20 @@
         margin: 25px auto 0;
         max-width: 545px;
     }
+
+    &:hover{
+        .link-arrow-group {
+            transform: translateX(0);
+
+            .arrow-line{
+                display: unset;
+            }
+
+            .arrow-point{
+                transform: translateX(31px);
+            }
+        }
+    }
 }
 
 .single-content-card-image,
