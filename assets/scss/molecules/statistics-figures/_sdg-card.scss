@@ -57,19 +57,19 @@
     }
 
     .hover-image{
+        opacity: 0;
+        width: 100%;
+        height: 160px;
+        max-width: 650px;
         margin-left: auto;
         position: relative;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        transition: opacity 0.5s ease;
 
         @include breakpoint(small only){
             display: none;
-        }
-
-        img{
-            opacity: 0;
-            height: 100%;
-            object-fit: cover;
-            position: relative;
-            transition: opacity 0.5s ease;
         }
 
         .gradient{
@@ -95,9 +95,7 @@
 
         @include breakpoint(large up){
             .hover-image {
-                img{
-                    opacity: 0.3;
-                }
+                opacity: 0.3;
             }
         }
     }
@@ -170,6 +168,10 @@
         @include sdg-background-color($sdg-17);
     }
 
+    &.color-white{
+        @include sdg-background-color($white);
+    }
+
     &.link {
         color: $black;
         cursor: url("#{$image-path}/arrows/sdg-hover-arrow-black.svg"), url("#{$image-path}/arrows/sdg-hover-arrow-black.cur"), auto;
@@ -183,15 +185,6 @@
 
             .title {
                 margin: 0;
-            }
-        }
-
-        .hover-image {
-            width: 740px;
-            height: 100%;
-
-            img {
-                object-fit: contain;
             }
         }
     }
