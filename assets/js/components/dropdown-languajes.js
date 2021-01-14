@@ -41,7 +41,6 @@ class DropDown {
     }
     listenerKeyPress() {
         this.$window.keyup((e) => {
-            console.log('key::', e.keyCode);
             if (e.keyCode === 27 && this.dropdownAcitionOpen &&
                 this.dropdownAcitionOpen.hasClass('active')) { //esc
                 this.dropdownToggle()

@@ -14,6 +14,7 @@ class Modal {
         this.navCurrrentWidth = 0;
         this.dataModalLocationClose = '[data-btn-close]';
         this.classModalOpenFromFooter = 'open-from-footer';
+        this.window = $(window);
 
         this.$body = $('body');
         this.$optionClose = null;
@@ -36,6 +37,7 @@ class Modal {
 
     init() {
         this.listeners();
+        this.listenerKeyPress();
     }
 
     listeners() {
@@ -56,9 +58,7 @@ class Modal {
                 $('.menu-modal').addClass('hide');
                 const idModalOpen = $(modal).data('modal');
                 if (this.$modalReference.hasClass(this.classModalOpened)) {
-                    this.showOptionDefault();
-                    this.$modalReference.removeClass(this.classModalOpened);
-                    this.close();
+                    this.beforeCloseModal();
                     return;
                 }
                 this.closeAllModals();
@@ -185,6 +185,22 @@ class Modal {
         btnBack.click(() => {
             this.close();
         })
+    }
+
+    listenerKeyPress() {
+        this.window.keyup((e) => {
+            if (e.keyCode === 27) { //esc
+               this.beforeCloseModal();
+            }
+        });
+    }
+
+    beforeCloseModal() {
+        if (this.$modalReference && this.$modalReference.hasClass(this.classModalOpened)) {
+            this.showOptionDefault();
+            this.$modalReference.removeClass(this.classModalOpened);
+            this.close();
+        }
     }
 }
 
