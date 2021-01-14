@@ -173,16 +173,56 @@ class LocationFilters {
     }
 
     search() {
+        let filtered;
+        this.$countryList = $('[data-city-filters]');
+        if(this.filters.office.length && this.filters.region.length) {
+            filtered = this.$countryList.filter((index, node) => {
+                const text = $(node).data('city-filters').toLowerCase();
+
+                if(this.filters.inputSearch.length) {
+                    return (text.includes(this.filters.inputSearch.toLowerCase()) &&
+                        this.filters.region.filter(value => text.includes(value.toLowerCase())).length &&
+                        this.filters.office.filter(value => text.includes(value.toLowerCase())).length)
+                }
+
+                return (this.filters.region.filter(value => text.includes(value.toLowerCase())).length  &&
+                    this.filters.office.filter(value => text.includes(value.toLowerCase())).length);
+            });
+        }
+        else if(this.filters.office.length) {
+            filtered = this.$countryList.filter((index, node) => {
+                const text = $(node).data('city-filters').toLowerCase();
+
+                if (this.filters.inputSearch.length) {
+                    return (text.includes(this.filters.inputSearch.toLowerCase()) &&
+                        this.filters.office.filter(value => text.includes(value.toLowerCase())).length)
+                }
+
+                return this.filters.office.filter(value => text.includes(value.toLowerCase())).length;
+            });
+        }
+        else if( this.filters.region.length) {
+            filtered = this.$countryList.filter((index, node) => {
+                const text = $(node).data('city-filters').toLowerCase();
+
+                if(this.filters.inputSearch.length) {
+                    return (text.includes(this.filters.inputSearch.toLowerCase()) &&
+                        this.filters.region.filter(value => text.includes(value.toLowerCase())).length);
+                }
+
+                return this.filters.region.filter(value => text.includes(value.toLowerCase())).length;
+            });
+        }
+        else if(this.filters.inputSearch.length) {
+            filtered = this.$countryList.filter((index, node) => {
+                const text = $(node).data('city-filters').toLowerCase();
+                return text.includes(this.filters.inputSearch.toLowerCase())
+            });
+        }
+
         if (this.filters.inputSearch.length > 0 ||
             this.filters.office.length > 0 ||
             this.filters.region.length > 0) {
-            this.$countryList = $('[data-city-filters]');
-            let filtered = this.$countryList.filter((index, node) => {
-                const text = $(node).data('city-filters').toLowerCase();
-                return (this.filters.inputSearch.length > 0 && text.includes(this.filters.inputSearch.toLowerCase()) ||
-                    this.filters.region.filter(value => text.includes(value.toLowerCase())).length > 0 ||
-                    this.filters.office.filter(value => text.includes(value.toLowerCase())).length > 0)
-            });
             this.$countryList.addClass(this.classHide);
             filtered.removeClass(this.classHide);
             this.totalMatches = filtered.length;
