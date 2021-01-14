@@ -30,7 +30,7 @@
 
         @include breakpoint(small only){
             margin-top: 40px;
-            padding: 16px 12px 75px;
+            padding: 16px 0 75px;
         }
 
         .description{
@@ -41,7 +41,6 @@
 
             p{
                 color: $white;
-                max-width: 570px;
             }
         }
 
@@ -49,10 +48,6 @@
             display: flex;
             align-self: baseline;
             justify-content: center;
-
-            @include breakpoint(small only){
-                padding: 0;
-            }
 
             img{
                 @include breakpoint(small only){

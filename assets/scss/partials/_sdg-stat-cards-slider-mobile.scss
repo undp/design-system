@@ -1,20 +1,11 @@
 .sdg-stat-cards-slider{
-    margin-top: 40px;
-    padding: 125px 0 80px 15px;
+    margin-top: 20px;
 
-    @include breakpoint(small only){
-        padding-top: 0;
+    @include breakpoint(medium down){
+        margin-top: 105px;
     }
 
     .glide__track{
-        margin-top: 25px;
-    }
-
-    .section-title{
-        margin-bottom: 35px;
-    }
-
-    .glide__bullets{
-        padding-right: 15px;
+        margin-top: 45px;
     }
 }

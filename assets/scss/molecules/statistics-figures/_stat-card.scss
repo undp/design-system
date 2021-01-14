@@ -8,7 +8,7 @@
     &.small{
         min-height: 270px;
 
-        @include breakpoint(small only){
+        @include breakpoint(medium down){
             max-width: 250px;
         }
 
