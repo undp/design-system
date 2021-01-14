@@ -48,6 +48,7 @@
             padding: 20px 20px 0 0;
             background-color: $white;
             justify-content: flex-end;
+            box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);;
         }
 
         .btn-close {
@@ -76,7 +77,9 @@
 
         @include breakpoint(small only){
             height: unset;
+            margin-top: -1px;
             overflow-y: unset;
+            box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);;
         }
 
         .side-spacing{
