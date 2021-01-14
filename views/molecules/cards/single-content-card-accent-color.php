@@ -1,4 +1,4 @@
-<div class="single-content-card-accent-color sdg color-3">
+<div class="single-content-card-accent-color">
     <div class="card-content">
         <div class="tag">
             <?= $tag ?>

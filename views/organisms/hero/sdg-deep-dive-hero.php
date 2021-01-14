@@ -1,13 +1,13 @@
 <section class="sdg-deep-dive-hero">
     <div class="grid-x">
         <div class="cell small-10 medium-11 small-offset-2 medium-offset-1">
-            <div class="title color-2">
+            <div class="title">
                 <h2>Goal 2:</h2>
                 <h2>Zero hunger</h2>
             </div>
         </div>
     </div>
-    <div class="grid-x description-container color-2">
+    <div class="grid-x description-container">
         <div class="cell">
             <div class="grid-x grid-padding-x">
                 <div class="cell medium-6 large-8 description">

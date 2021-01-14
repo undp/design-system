@@ -14,7 +14,7 @@ use helpers\Svg;
             <div class="cell medium-10  height-full modal-content">
                 <div class="side-spacing">
                     <?php View::render('organisms/hero/sdg-deep-dive-hero') ?>
-                    <div class="grid-x grid-padding-x cards-slider hide-for-small-only scroll-track right-left delay-2">
+                    <div class="grid-x grid-padding-x cards-slider show-for-large scroll-track right-left delay-2">
                         <div class="cell auto">
                             <?php View::render('molecules/statistics-figures/stat-card',[
                                     'number' => 821,
@@ -51,7 +51,7 @@ use helpers\Svg;
                             ]) ?>
                         </div>
                     </div>
-                    <div class="sdg-stat-cards-slider show-for-small-only">
+                    <div class="sdg-stat-cards-slider hide-for-large">
                         <div class="glide__bullets" data-glide-el="controls[nav]">
                             <div class="control-slider"></div>
                             <button class="glide__bullet" data-glide-dir="=0">
@@ -110,7 +110,6 @@ use helpers\Svg;
                             </div>
                         </div>
                     </div>
-
                     <?php View::render('organisms/text/bulleted-list') ?>
                     <?php View::render('organisms/content-cards/sdg-content-cards') ?>
                 </div>

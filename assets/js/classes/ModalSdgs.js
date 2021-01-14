@@ -1,3 +1,5 @@
+import Glide from '@glidejs/glide/';
+
 class ModalSdgs {
     constructor() {
         this.$body = $('body')
@@ -12,12 +14,14 @@ class ModalSdgs {
         this.classHide = 'hide';
         this.classModalOpen = 'open';
         this.classBodyModalOpen = 'modal-open'
+
+        this.$sdgDeepDiveHero = $('.sdg-deep-dive-hero');
+        this.$glideExpertiseSection = $('.sdg-stat-cards-slider');
     }
 
     init() {
         this.listenerLoadModalData();
         this.listenerCloseModal();
-        this.listenerWindowClick();
         this.listenerKeyPress();
     }
 
@@ -25,7 +29,9 @@ class ModalSdgs {
         this.$openModal.click((current) => {
             this.url = $(current.currentTarget).data('url');
             this.color = $(current.currentTarget).data('color')
-            this.ajax();
+            this.open();
+            this.addColorClass();
+            this.createSlider();
         })
     }
 
@@ -37,15 +43,16 @@ class ModalSdgs {
 
     listenerWindowClick() {
         this.$window.click(evt => {
-            if (this.$modalContent && !this.$modalContent.is(evt.target) &&
-                this.$modalContent.has(evt.target).length === 0) {
+            if (this.$modal.has(evt.target).length &&
+                this.$modal.hasClass(this.classModalOpen) &&
+                !this.$modalContent.has(evt.target).length) {
                 this.close();
             }
         });
     }
+
     listenerKeyPress() {
         this.$window.keyup((e) => {
-            console.log('key::', e.keyCode);
             if (e.keyCode === 27) { //esc
                 this.close()
             }
@@ -60,24 +67,42 @@ class ModalSdgs {
 
     close() {
         this.$modal.addClass(this.classHide).removeClass(this.classModalOpen);
-        // this.$modalContent.html('');
         this.$body.removeClass(this.classBodyModalOpen)
+        this.removeColorClass();
     }
 
-    ajax() {
-        $.ajax({
-            type: 'GET',
-            url: this.url,
-            dataType: 'json',
-            success: ((response) => {
-                // this.$modalContent.append(`
-                //     <h2 class="heading h2">${ response.title }</h2>
-                // `)
+    addColorClass(){
+        this.$sdgDeepDiveHero.find('.title').addClass(this.color);
+        this.$sdgDeepDiveHero.find('.description-container').addClass(this.color);
+        this.$modal.find('.stat-card').addClass('sdg ' +  this.color);
+        this.$modal.find('.single-content-card-accent-color').addClass('sdg ' +  this.color);
+    }
 
-                //open modal after load data
-                this.open();
+    removeColorClass(){
+        this.$sdgDeepDiveHero.find('.title').removeClass(this.color);
+        this.$sdgDeepDiveHero.find('.description-container').removeClass(this.color);
+        this.$modal.find('.stat-card').removeClass('sdg ' +  this.color);
+        this.$modal.find('.single-content-card-accent-color').removeClass('sdg ' +  this.color);
+    }
+
+    createSlider(){
+
+        if(this.$glideExpertiseSection.length){
+            const $controlSlider = this.$glideExpertiseSection.find('.control-slider')
+            const numberOfSlides = this.$glideExpertiseSection.find('.glide__slide').length
+            const slideWidth = 100/numberOfSlides;
+
+            $controlSlider.css('width', slideWidth + "%")
+
+            const glideExpertise = new Glide('.sdg-stat-cards-slider', {
+            });
+
+            glideExpertise.on(['mount.after', 'run'], () => {
+                $controlSlider.css('left', (glideExpertise.index*slideWidth) + "%")
             })
-        })
+
+            glideExpertise.mount();
+        }
     }
 }
 export default ModalSdgs;

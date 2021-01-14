@@ -9,7 +9,6 @@ import scrollTriggers from './components/scroll-triggers'
 import locationFilters from './components/location-filters'
 import trapFocus from './components/trap-focus'
 import modalSdgs from './components/modal-sdgs'
-import sdgsPercentSlider from './components/sdg-stat-cards-slider-mobile'
 import heroAnimation from './components/hero-animation'
 import menusNav from './render-data/menu/all';
 import searchData  from './render-data/modals/search'
@@ -36,7 +35,6 @@ function main() {
     modalSdgs()
     heroAnimation()
     scrollTriggers()
-    sdgsPercentSlider()
 
     moleculeStatisticsSdgCard()
 }
