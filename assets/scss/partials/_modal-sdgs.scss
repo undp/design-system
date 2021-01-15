@@ -54,9 +54,15 @@
         .btn-close {
             width: 45px;
             height: 45px;
+            right: 1548px;
             cursor: pointer;
+            position: absolute;
             border-radius: 50%;
             background-color: $dark-blue-7;
+
+            @include breakpoint(1710px down){
+                position: static;
+            }
 
             &:hover {
                 color: $dark-blue-17;
