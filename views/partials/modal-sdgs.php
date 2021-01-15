@@ -14,7 +14,7 @@ use helpers\Svg;
             <div class="cell medium-10 height-full modal-content">
                 <div class="side-spacing">
                     <?php View::render('organisms/hero/sdg-deep-dive-hero') ?>
-                    <div class="grid-x grid-padding-x cards-slider show-for-large scroll-track right-left delay-2">
+                    <div class="grid-x grid-padding-x cards-slider show-for-large">
                         <div class="cell auto">
                             <?php View::render('molecules/statistics-figures/stat-card',[
                                     'number' => 821,
