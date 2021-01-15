@@ -87,10 +87,11 @@ $nav-mobile-height: 70px;
 
         .right-menu {
             .nav-item {
-                width: 24px;
-                height: 24px;
                 border: none;
                 color: $blue-8;
+                line-height: 0;
+                max-width: 24px;
+                max-height: 24px;
                 position: relative;
                 margin-right: 22px;
 
@@ -116,7 +117,6 @@ $nav-mobile-height: 70px;
                     margin-right: 0;
                     min-width: 23px;
                 }
-
 
                 &:last-child {
                     margin-right: 38px;
