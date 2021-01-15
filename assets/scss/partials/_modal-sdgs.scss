@@ -48,7 +48,7 @@
             padding: 20px 20px 0 0;
             background-color: $white;
             justify-content: flex-end;
-            box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);;
+            box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
         }
 
         .btn-close {
@@ -72,6 +72,8 @@
     .modal-content {
         min-height: 100%;
         overflow-y: auto;
+        margin-left: auto;
+        max-width: 1440px;
         background-color: $white;
         box-shadow: -3px 0 6px rgba($black, 0.16);
 
@@ -79,7 +81,7 @@
             height: unset;
             margin-top: -1px;
             overflow-y: unset;
-            box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);;
+            box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
         }
 
         .side-spacing{
@@ -117,8 +119,6 @@
         }
 
         .sdg-content-cards {
-            margin: 120px 0 0 93px;
-
             @include breakpoint(small only){
                 margin: 25px 0 0 0;
             }
