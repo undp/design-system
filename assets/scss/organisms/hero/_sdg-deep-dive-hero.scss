@@ -53,6 +53,12 @@
                 @include breakpoint(small only){
                     max-height: 450px;
                 }
+
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    @include breakpoint(medium only){
+                        flex: 1;
+                    }
+                }
             }
 
             @include breakpoint(small only){
