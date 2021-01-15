@@ -1,11 +1,18 @@
 .modal-nav-content {
     .content-text {
+        min-height: 544px;
         padding: 0 70px 70px 70px;
 
         .title {
             line-height: 1.14;
             font-size: 3.5rem;
             font-weight: $bold;
+
+            a {
+                &:hover {
+                    color: $dark-blue-2;
+                }
+            }
         }
 
         .description {
@@ -57,7 +64,6 @@
 
     .content-image {
         max-width: 390px;
-        min-height: 500px;
 
         .image {
             width: 100%;

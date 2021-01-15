@@ -15,8 +15,8 @@ const init = function () {
                     ${response.menus.map((option, index) => {
                         return `<li class="${index === 0 ? 'active' : '' }" data-menu-option="${ option.menuOption }">
                             ${option.external
-                            ? `<a class="text-link arrow-3 light-white" href="${ option.link }" target="_blank">${ option.name } <span>${ arrowExternal.html() }</span></a>`
-                            : `<a href="${ option.link }" class="menu-item">${ option.name }</a>`}
+                            ? `<a class="text-link arrow-3 light-white" href="${ option.pageLink }" target="_blank">${ option.name } <span>${ arrowExternal.html() }</span></a>`
+                            : `<a href="${ option.pageLink }" class="menu-item">${ option.name }</a>`}
                             </li>`;     
                     }).join('')}
                 `);
@@ -32,7 +32,7 @@ const init = function () {
                         return  `
                         <div id="${ item.contentId }" class="grid-x ${index > 0 ? 'hide' : '' }">
                             <div class="cell large-auto content-text ${!hasImage ? 'no-image' : ''}">
-                                <h2 class="title">${ item.title }</h2>
+                                <h2 class="title"><a href="${ item.pageLink }">${ item.title }</a></h2>
                                 <p class="description">${ item.description }</p>
                                 ${isLinkListArray
                                 ? `<div class="cell ${isLinkListArray ? 'multiple-column' : ''}">
@@ -96,11 +96,11 @@ const init = function () {
                     }
                     return `<li class="menu-item">
                     ${option.external 
-                        ? `<a class="menu-item-title text-link arrow-3" href="${ option.link }" target="_blank">
+                        ? `<a class="menu-item-title text-link arrow-3" href="${ option.pageLink }" target="_blank">
                                 ${ option.name }
                                 <span>${ arrowExternal.html() }</span>
                            </a>`
-                        : `<a class="menu-item-title" href="${ option.link }">${ option.name }</a>`}
+                        : `<a class="menu-item-title" href="${ option.pageLink }">${ option.name }</a>`}
                     
                     <ul class="submenu">
                         ${ subLinks.links.map((link) => {

@@ -1,36 +1,36 @@
 {
     "menus": [
         {
-            "link": "#",
+            "pageLink": "#",
             "name": "New partnerships",
             "menuOption": "content-new-partnerships"
         },
         {
-            "link": "#",
+            "pageLink": "#",
             "name": "Online Consultations",
             "menuOption": "content-expert-consultations",
             "external": true
         },
         {
-            "link": "#",
+            "pageLink": "#",
             "name": "Donate",
             "menuOption": "content-donate",
             "external": true
         },
         {
-            "link": "#",
+            "pageLink": "#",
             "name": "UNDP Shop",
             "menuOption": "content-undp-shop",
             "external": true
         },
         {
-            "link": "#",
+            "pageLink": "#",
             "name": "Careers",
             "menuOption": "content-careers",
             "external": true
         },
         {
-            "link": "#",
+            "pageLink": "#",
             "name": "Procurement",
             "menuOption": "content-procurement"
         },
@@ -44,6 +44,7 @@
         {
             "contentId" : "content-new-partnerships",
             "title": "New partnerships",
+            "pageLink": "#",
             "description": "UNDP Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae cupiditate dicta distinctio fugiat in inventore iusto maxime minima minus natus porro quibusdam, quos sapiente soluta ullam veniam voluptas voluptate voluptatum?",
             "image": {
                 "link" : "../../../../assets/images/placeholder/nav-hover/undp-iq-karbala-gis-mapping-covid.jpg",
@@ -67,6 +68,7 @@
         {
             "contentId" : "content-careers",
             "title": "Jobs",
+            "pageLink": "#",
             "description": "UNDP works in more than 170 countries and territories, helping to achieve the eradication of poverty and the reduction of inequalities and exclusion. We help countries develop policies, leadership skills, partnering abilities, institutional capabilities and build resilience in order to sustain development results.",
             "image": {
                 "link" : "../../../../assets/images/placeholder/nav-hover/undp-iq-karbala-gis-mapping-covid.jpg",
@@ -77,6 +79,7 @@
         {
             "contentId" : "content-procurement",
             "title": "Procurement",
+            "pageLink": "#",
             "description": "As a public organization entrusted with donor funds and committed to supporting developing economies, UNDP works to improve access to quality assured supplies in a cost effective and reliable way.",
             "image": {
                 "link" : "../../../../assets/images/placeholder/nav-hover/undp-vietnam-2020-face-mask-dstribution.jpg",
@@ -104,6 +107,7 @@
         {
             "contentId" : "content-expert-consultations",
             "title": "Engage with experts",
+            "pageLink": "#",
             "description": "UNDP has a long history of hosting online consultations where development actors can engage to think out loud, learn from each other, connect, collaborate and co-create.",
             "image": {
                 "link" : "../../../../assets/images/placeholder/nav-hover/shutterstock-woman-online.jpg",
@@ -114,6 +118,7 @@
         {
             "contentId" : "content-undp-shop",
             "title": "UNDP Shop",
+            "pageLink": "#",
             "description": "Show you care about poverty, gender equality, climate action and more. Check out our products featuring the causes you care about. Great ideas for presents too.",
             "image": {
                 "link" : "../../../../assets/images/placeholder/nav-hover/undp-nyc-marketing-bag.jpg",
@@ -124,6 +129,7 @@
         {
             "contentId" : "content-donate",
             "title": "UNDP Giving",
+            "pageLink": "#",
             "description": "Make a difference in the global response to the COVID-19 pandemic! Join us and learn about our work helping countries respond and recover from this crisis. Together, we can #BuildForwardBetter!",
             "image": {
                 "link" : "../../../../assets/images/placeholder/nav-hover/undp-bangladesh-2020-covid-distribution.jpg",
@@ -134,6 +140,7 @@
         {
             "contentId" : "content-contact-us",
             "title": "Contact us",
+            "pageLink": "#",
             "description": "You can contact our team with general questions about UNDP or about more specific topics by selecting a topic below.",
             "image": {
                 "link" : "../../../../assets/images/placeholder/nav-hover/undp-uzbekistan-2018_girls-who-code.jpg",
