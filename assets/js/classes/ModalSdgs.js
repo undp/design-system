@@ -20,13 +20,13 @@ class ModalSdgs {
     }
 
     init() {
-        this.listenerLoadModalData();
+        this.listnerOpenModal();
         this.listenerCloseModal();
         this.listenerWindowClick();
         this.listenerKeyPress();
     }
 
-    listenerLoadModalData() {
+    listnerOpenModal() {
         this.$openModal.click((current) => {
             this.url = $(current.currentTarget).data('url');
             this.color = $(current.currentTarget).data('color')

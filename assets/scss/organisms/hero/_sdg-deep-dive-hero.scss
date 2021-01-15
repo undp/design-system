@@ -7,12 +7,40 @@
         }
 
         h2{
-            font-size: 5.5rem;
-            text-transform: uppercase;
-            font-family: $secondary-font;
 
-            @include breakpoint(small only){
-                font-size: 2.5rem;
+            span {
+                display: block;
+
+                &.title-one {
+                    font-size: 3.5rem;
+                    line-height: 1.14;
+                    font-weight: $semi-bold;
+
+                    @include breakpoint(medium down){
+                        font-size: 2rem;
+                        line-height: 2;
+                    }
+                    // For IE 11 (media is a hack to check for IE 10+)
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        line-height: 2.23;
+
+                        @include breakpoint(medium down){
+                            line-height: 2.27;
+                        }
+                    }
+                }
+
+                &.title-two {
+                    font-size: 5.5rem;
+                    line-height: 1.09;
+                    font-weight: $bold;
+                    font-family: $secondary-font;
+
+                    @include breakpoint(medium down){
+                        font-size: 2.5rem;
+                        line-height: 1.04;
+                    }
+                }
             }
         }
 
