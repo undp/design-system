@@ -1,5 +1,5 @@
 import Glide from '@glidejs/glide/';
-
+import { tns } from 'tiny-slider/src/tiny-slider'
 class ModalSdgs {
     constructor() {
         this.$body = $('body')
@@ -89,22 +89,17 @@ class ModalSdgs {
 
     createSlider(){
 
-        if(this.$glideExpertiseSection.length){
-            const $controlSlider = this.$glideExpertiseSection.find('.control-slider')
-            const numberOfSlides = this.$glideExpertiseSection.find('.glide__slide').length
-            const slideWidth = 100/numberOfSlides;
-
-            $controlSlider.css('width', slideWidth + "%")
-
-            const glideExpertise = new Glide('.sdg-stat-cards-slider', {
-            });
-
-            glideExpertise.on(['mount.after', 'run'], () => {
-                $controlSlider.css('left', (glideExpertise.index*slideWidth) + "%")
-            })
-
-            glideExpertise.mount();
-        }
+        let slider = tns({
+            container: '.sdg-stat-cards-slider',
+            "autoWidth": true,
+            "items": 3.3,
+            "gutter": 10,
+            "mouseDrag": true,
+            "swipeAngle": false,
+            "speed": 400,
+            "controls": false,
+            "navAsThumbnails": true
+        });
     }
 }
 export default ModalSdgs;
