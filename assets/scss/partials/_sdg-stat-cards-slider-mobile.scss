@@ -1,11 +1,24 @@
-.sdg-stat-cards-slider{
-    margin-top: 20px;
+.tns-outer{
+    margin-top: 100px;
+}
 
-    @include breakpoint(medium down){
-        margin-top: 105px;
-    }
+.tns-ovh{
+    margin-top: 45px;
+}
 
-    .glide__track{
-        margin-top: 45px;
-    }
+.tns-nav{
+    display: flex;
+    width: 100%;
+}
+.tns-nav > .tns-nav-active {
+    height: 4px;
+    margin-top: -1px;
+    background-color: $black;
+}
+
+.tns-nav button{
+    width: 100%;
+    height: 1px;
+    display: flex;
+    background-color: $black;
 }
