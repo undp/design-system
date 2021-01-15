@@ -1,3 +1,3 @@
-<button class="btn no-arrow blue">
+<button class="btn no-arrow blue" <?= $data ?? ''?>>
     <?= $cta ?>
 </button>

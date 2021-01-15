@@ -3,7 +3,7 @@
 <div class="sdg-content-cards">
     <div class="grid-x">
         <div class="cell">
-            <div class="grid-x grid-padding-x flex-container align-center">
+            <div class="grid-x grid-padding-x flex-container align-center" data-sdg-container>
                 <div class="cell hide-for-small-only">
                     <h3 class="heading h3">SDGs in Action</h3>
                 </div>
@@ -69,7 +69,10 @@
             <div class="grid-x grid-padding-x">
                 <div class="cell">
                     <div class="cta-container">
-                        <?php View::render('molecules/buttons/cta-no-arrow', ['cta' => 'View More']); ?>
+                        <?php View::render('molecules/buttons/cta-no-arrow', [
+                            'cta' => 'View More',
+                            'data' => 'data-sdg-load'
+                        ]); ?>
                     </div>
                 </div>
             </div>

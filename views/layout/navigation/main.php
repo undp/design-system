@@ -12,6 +12,9 @@ use helpers\View;
     <?php Svg::render('btn-arrow-red', false, 'Arrow right', 'assets/images/arrows/')?>
 </span>
 
+<span class="hide" data-arrow-red-secondary>
+    <?php Svg::render('btn-arrow-red-secondary', false, 'Arrow right', 'assets/images/arrows/')?>
+</span>
 
 <section class="header" data-navigation>
     <div class="grid-container">
