@@ -11,7 +11,7 @@ use helpers\Svg;
                     <?php Svg::render('icon-close') ?>
                 </button>
             </div>
-            <div class="cell medium-10  height-full modal-content">
+            <div class="cell medium-10 height-full modal-content">
                 <div class="side-spacing">
                     <?php View::render('organisms/hero/sdg-deep-dive-hero') ?>
                     <div class="grid-x grid-padding-x cards-slider show-for-large scroll-track right-left delay-2">
