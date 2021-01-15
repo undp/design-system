@@ -7,6 +7,7 @@ import dropdown from './components/dropdown-languajes'
 import footerMenu from './partials/footer-menu-mobile'
 import scrollTriggers from './components/scroll-triggers'
 import locationFilters from './components/location-filters'
+import sdgCard from './components/sdg-card'
 import trapFocus from './components/trap-focus'
 import modalSdgs from './components/modal-sdgs'
 import heroAnimation from './components/hero-animation'
@@ -35,6 +36,7 @@ function main() {
     modalSdgs()
     heroAnimation()
     scrollTriggers()
+    sdgCard();
 
     moleculeStatisticsSdgCard()
 }
