@@ -1,20 +1,26 @@
 [
     {
-        "tag": "Content tag",
+        "link": "#",
+        "style": "style-1",
         "cta": "Read More",
+        "tag": "Content tag",
         "title": "Lorem ipsum dolor sit amet",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consectetur, eaque illo inventore magni perferendis quisquam tempore totam. Commodi dignissimos dolore earum id, itaque mollitia repudiandae suscipit velit veritatis voluptates?"
     },
     {
-        "tag": "Content tag",
+        "link": "#",
+
+        "style": "style-2",
         "cta": "Read More",
-        "title": "Lorem ipsum adipisicing",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consectetur, eaque illo inventore magni perferendis quisquam tempore totam. Commodi dignissimos dolore earum id, itaque mollitia repudiandae suscipit velit veritatis voluptates?"
+        "tag": "Content tag",
+        "title": "Lorem ipsum adipisicing"
     },
     {
-        "tag": "Content tag",
+        "link": "#",
+        "style": "style-3",
         "cta": "Read More",
+        "tag": "Content tag",
         "title": "Lorem ipsum dolor repudiandae",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consectetur, eaque illo inventore magni perferendis quisquam tempore totam. Commodi dignissimos dolore earum id, itaque mollitia repudiandae suscipit velit veritatis voluptates?"
+        "image": "/assets/images/placeholder/cards/single-content-card-image.png"
     }
 ]
