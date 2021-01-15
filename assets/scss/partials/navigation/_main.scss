@@ -1,12 +1,20 @@
+$nav-desktop-height: 115px;
+$nav-mobile-height: 70px;
+
 .header {
     top: 0;
     width: 100%;
     position: fixed;
     z-index: $z-index-nav;
     transform: translateY(0);
+    height: $nav-desktop-height;
     background-color: $dark-blue-6;
     border-bottom: 1px solid rgba($black, 0.10);
     box-shadow: 0 3px 6px rgba($black, 0.09);
+
+    @include breakpoint(large down) {
+        height: $nav-mobile-height;
+    }
 
     .nav-item {
         cursor: pointer;
@@ -28,22 +36,22 @@
         padding: 0 70px 0 70px;
 
         @include breakpoint(large down) {
-            max-height: 70px;
             padding: 0 10px 0 10px;
+            max-height: $nav-mobile-height;
         }
 
         .middle-menu {
             padding: 0;
             list-style: none;
-            max-height: 105px;
+            max-height: $nav-desktop-height;
 
             @include breakpoint(large down) {
-                max-height: 70px;
+                max-height: $nav-mobile-height;
             }
 
             li:not(:last-child) {
                 color: red;
-                max-height: 105px;
+                height: 100%;
                 margin-right: 75px;
 
                 @include breakpoint(medium down){
@@ -55,8 +63,8 @@
                 display: block;
 
                 svg, img {
-                    width: 69px;
-                    height: 139px;
+                    width: 62px;
+                    height: 125px;
                     transition: $transition-primary;
 
                     @include breakpoint(large down){
@@ -67,7 +75,7 @@
 
                 &.scrolled {
                     svg, img {
-                        height: 106px;
+                        height: $nav-desktop-height - 1;
 
                         @include breakpoint(medium down){
                             height: 71px;

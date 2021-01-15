@@ -147,7 +147,6 @@
     }
 
     &.arrow-2 {
-
         .link-arrow {
             height: 16px;
             stroke: $red;
@@ -211,8 +210,9 @@
         &.light-white {
             &.icon-footer {
                 svg {
+                    width: 16px;
+                    height: 14px;
                     color: $white;
-                    transform: scale(.8);
                 }
             }
         }
