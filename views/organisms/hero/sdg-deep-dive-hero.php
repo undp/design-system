@@ -3,8 +3,8 @@
         <div class="cell">
             <div class="title">
                 <h2>
-                    <span class="title-one heading h3">Goal 2:</span>
-                    <span class="title-two heading h2 uppercase">Zero hunger</span>
+                    <span class="title-one heading h3">Goal 2</span>
+                    <span class="title-two uppercase">Zero hunger</span>
                 </h2>
             </div>
         </div>
