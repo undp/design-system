@@ -125,6 +125,8 @@
         }
 
         .sdg-content-cards {
+            margin-top: 110px;
+
             @include breakpoint(small only){
                 margin: 25px 0 0 0;
             }
