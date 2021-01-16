@@ -1,6 +1,6 @@
 [
     {
-        "link": "#",
+        "link": "",
         "style": "style-1",
         "cta": "Read More",
         "tag": "Content tag",
@@ -8,15 +8,14 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consectetur, eaque illo inventore magni perferendis quisquam tempore totam. Commodi dignissimos dolore earum id, itaque mollitia repudiandae suscipit velit veritatis voluptates?"
     },
     {
-        "link": "#",
-
+        "link": "",
         "style": "style-2",
         "cta": "Read More",
         "tag": "Content tag",
         "title": "Lorem ipsum adipisicing"
     },
     {
-        "link": "#",
+        "link": "",
         "style": "style-3",
         "cta": "Read More",
         "tag": "Content tag",
