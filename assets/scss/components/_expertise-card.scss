@@ -2,8 +2,21 @@
     height: 100%;
     display: flex;
     flex-flow: column;
-    justify-content: space-evenly;
+    justify-content: center;
     pointer-events: auto; // Override "none" from row
+
+    a {
+        &:hover {
+            .text-link {
+                color: $dark-blue-2;
+
+                svg,
+                img{
+                    transform: translateX(70%);
+                }
+            }
+        }
+    }
 
     .text{
         padding-bottom: 55px;
@@ -59,6 +72,7 @@
 
     .cta-container{
         padding: 0 24px;
+        margin-top: 40px;
 
         @include breakpoint(large down){
             padding: 0 20px;
@@ -71,11 +85,6 @@
         @include breakpoint(small only){
             margin-top: 40px;
             padding-bottom: 0;
-        }
-
-        // For IE 11 (media is a hack to check for IE 10+)
-        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-            margin-top: 50px;
         }
     }
 
