@@ -35,5 +35,5 @@ switch ($subpath) {
         View::render('pages/next-gen-undp');
         break;
     default:
-        View::render('pages/home');
+        View::render('pages/docs');
 }
