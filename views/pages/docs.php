@@ -66,7 +66,7 @@ use helpers\Svg;
                 <div id="doc-button-cta">
                     <div class="panel callout radius">
                         <div>
-                            <p class="heading h4">Cta</p>
+                            <p class="heading h4 title">Cta</p>
                             <button class="btn dark">
                                 Submit
                                 <svg xmlns="http://www.w3.org/2000/svg" width="11.643" height="17.341">
@@ -201,7 +201,7 @@ use helpers\Svg;
                 </div>
                 <div id="doc-filter-select" class="hide">
                     <div class="grid-x grid-padding-x">
-                        <div class="cell medium-6">
+                        <div class="cell large-6">
                             <div class="panel callout radius">
                                 <p class="heading h4 title">Select radio</p>
                                 <div class="select-box" data-select>
@@ -269,9 +269,9 @@ use helpers\Svg;
                         </code>
                     </pre>
                         </div>
-                        <div class="cell medium-6 bg-dark">
+                        <div class="cell large-6 bg-dark">
                             <div class="panel callout radius">
-                                <p class="heading h4 title dark">Select radio</p>
+                                <p class="heading h4 title light">Select radio</p>
                                 <div class="select-box dark" data-select>
                                     <div class="options-container" data-select-options>
                                         <div class="option">
@@ -300,7 +300,7 @@ use helpers\Svg;
                                         </div>
                                     </div>
                                     <div class="selected" data-select-open>
-                                        Category
+                                        Select title
                                     </div>
                                 </div>
                             </div>
@@ -332,7 +332,7 @@ use helpers\Svg;
                                     </div>
                                 </div>
                                 <div class="selected" data-select-open>
-                                    Category
+                                    Select title
                                 </div>
                             </div>') ?>
                         </code>
