@@ -22,8 +22,8 @@ use helpers\Svg;
                 <ul class="vertical menu accordion-menu" data-accordion-menu data-multi-open="false">
                     <li>
                         <a class="menu-item" href="#">buttons</a>
-                        <ul class="menu vertical nested">
-                            <li data-doc-id="doc-button-cta"><a href="#">cta</a></li>
+                        <ul class="menu vertical nested is-active">
+                            <li class="is-active" data-doc-id="doc-button-cta"><a href="#">cta</a></li>
                             <li data-doc-id="doc-button-cta-mobile"><a href="#">cta mobile</a></li>
                             <li data-doc-id-="doc-button-checks-boxes"><a href="#">checks boxes</a></li>
                             <li data-doc-id="doc-button-cta-not-arrow"><a href="#">cta no arrow</a></li>
@@ -59,7 +59,7 @@ use helpers\Svg;
     <div class="grid-container docs-container">
         <div class="grid-x">
             <div class="cell" data-parent-docs>
-                <div id="doc-button-cta" class="hide">
+                <div id="doc-button-cta">
                     <div class="panel callout radius">
                         <div>
                             <button class="btn dark">
