@@ -1,6 +1,8 @@
 <?php
+
 use helpers\View;
 use helpers\Svg;
+
 ?>
 
 <!-- Page Headers -->
@@ -9,7 +11,8 @@ use helpers\Svg;
 <body>
 <div class="docs">
     <nav>
-        <div class="header hide-for-medium header flex-container align-middle" data-sticky-container data-margin-top="0">
+        <div class="header hide-for-medium header flex-container align-middle" data-sticky-container
+             data-margin-top="0">
             <button class="menu-hamburger" data-doc-hamburger data-toggle="offCanvasLeft1">
                 <span class="hamburger-line line-top"></span>
                 <span class="hamburger-line line-middle"></span>
@@ -29,7 +32,8 @@ use helpers\Svg;
                             <li data-doc-id="doc-button-cta-not-arrow"><a href="#">cta no arrow</a></li>
                             <li data-doc-id="doc-button-cta-not-arrow"><a href="#">cta no arrow</a></li>
                             <li data-doc-id="doc-button-cta-mobile-larage"><a href="#">cta mobile large</a></li>
-                            <li data-doc-id="doc-button-cta-mobile-no-arrow-large"><a href="#">cta no arrow mobile</a></li>
+                            <li data-doc-id="doc-button-cta-mobile-no-arrow-large"><a href="#">cta no arrow mobile</a>
+                            </li>
                             <li data-doc-id="doc-button-close-out"><a href="#">close out</a></li>
                             <li data-doc-id="doc-button-cta-not-arrow-mobile"><a href="#">cta mobile no arrow</a></li>
                             <li data-doc-id="doc-button-download"><a href="#">download button</a></li>
@@ -62,6 +66,7 @@ use helpers\Svg;
                 <div id="doc-button-cta">
                     <div class="panel callout radius">
                         <div>
+                            <p class="heading h4">Cta</p>
                             <button class="btn dark">
                                 Submit
                                 <svg xmlns="http://www.w3.org/2000/svg" width="11.643" height="17.341">
@@ -86,6 +91,64 @@ use helpers\Svg;
                 </div>
                 <div id="doc-button-cta-mobile" class="hide">
                     <h2>working on it</h2>
+                </div>
+                <div id="doc-filter-multi-select" class="hide">
+                    <div class="panel callout radius">
+                        <div>
+                            <p class="heading h4">Multi-select</p>
+                            <div id="example-multi-select-id" class="multi-select" data-multi-select>
+                                <button class="select-control" aria-label="Example multi-select" data-opening-action
+                                        data-select-control>
+                                    Multi select title <span></span>
+                                </button>
+                                <div class="options" data-options="" data-type="example-multi-select-type">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="example_value_1">
+                                        <span class="checkmark"></span>
+                                        <span class="name">Example value 1</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="example_value_2">
+                                        <span class="checkmark"></span>
+                                        <span class="name">Example value 2</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="example_value_3">
+                                        <span class="checkmark"></span>
+                                        <span class="name">Example value 3</span>
+                                    </label></div>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="language-html line-numbers" data-src-status="loaded">
+                        <code class="language-html">
+                            <?= htmlspecialchars('
+                            <div id="example-multi-select-id" class="multi-select" data-multi-select>
+                                <button class="select-control" aria-label="Example multi-select" data-opening-action
+                                        data-select-control>
+                                    Multi select title <span></span>
+                                </button>
+                                <div class="options" data-options="" data-type="example-multi-select-type">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="example_value_1">
+                                        <span class="checkmark"></span>
+                                        <span class="name">Example value 1</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="example_value_2">
+                                        <span class="checkmark"></span>
+                                        <span class="name">Example value 2</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="example_value_3">
+                                        <span class="checkmark"></span>
+                                        <span class="name">Example value 3</span>
+                                    </label></div>
+                            </div>
+                            ') ?>
+                        </code>
+                    </pre>
+
                 </div>
             </div>
         </div>
