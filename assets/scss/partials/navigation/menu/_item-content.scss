@@ -1,29 +1,41 @@
 .modal-nav-content {
     .content-text {
-        padding: 0 75px 100px 75px;
-
-        &.multiple-columns{
-            padding: 0 20px 10px 75px;
-        }
+        min-height: 544px;
+        padding: 0 70px 70px 70px;
 
         .title {
             line-height: 1.14;
             font-size: 3.5rem;
             font-weight: $bold;
+
+            a {
+                &:hover {
+                    color: $dark-blue-2;
+                }
+            }
         }
 
         .description {
+            font-size: 16px;
             margin-top: 25px;
+            line-height: 1.25;
         }
 
-        &.multiple-column {
+        &.no-image {
+            .title,
+            .description {
+                max-width: 75%;
+            }
+        }
+
+        .multiple-column {
             .links {
                 &:first-child {
-                    padding-right: 35px;
+                    padding-right: 10px;
                 }
 
                 &:last-child {
-                    padding-left: 35px;
+                    padding-left: 10px;
                 }
             }
         }
@@ -33,8 +45,8 @@
             margin-top: 40px;
             flex-direction: column;
 
-            .text-link,
-            .text-link-inline {
+            .text-link:not(:first-child),
+            .text-link-inline:not(:first-child) {
                 margin-top: 30px;
             }
 
@@ -54,8 +66,9 @@
         max-width: 390px;
 
         .image {
+            width: 100%;
             object-fit: contain;
-            object-position: bottom;
+            object-position: top;
         }
     }
 }
