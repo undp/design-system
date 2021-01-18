@@ -17,6 +17,7 @@ import searchData  from './render-data/modals/search'
 import countriesData  from './render-data/modals/locations/countries'
 import multiSelectData from './render-data/modals/locations/multi-selects'
 
+
 //molecules
 import moleculeStatisticsSdgCard from './molecules/statistics-figures/sdg-card'
 
