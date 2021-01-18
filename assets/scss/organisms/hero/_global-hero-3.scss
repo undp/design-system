@@ -38,14 +38,16 @@
     }
 
     .title {
-        max-width: 798px;
+        max-width: 810px;
         font-size: 11rem;
         line-height: 1.08;
+        letter-spacing: 12px;
         text-transform: uppercase;
 
         @include breakpoint(large down) {
             line-height: 1;
             font-size: 8.2rem;
+            letter-spacing: 8.2px;
         }
 
         @include breakpoint(small only) {
@@ -53,6 +55,7 @@
             line-height: 1.2;
             font-size: 2.5rem;
             margin-top: 195px;
+            letter-spacing: 2.5px;
         }
     }
 

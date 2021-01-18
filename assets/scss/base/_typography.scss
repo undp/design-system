@@ -20,10 +20,12 @@
         @include breakpoint(large down){
             font-size: 8.2rem;
             line-height: 1.08;
+            letter-spacing: 8.2px;
         }
 
         @include breakpoint(small only){
             font-size: 4.7rem;
+            letter-spacing: 4.7px;
         }
     }
 
@@ -85,14 +87,17 @@
     @include breakpoint(large down){
         font-size: 9.1rem;
         line-height: 1.07;
+        letter-spacing: 1.82px;
     }
 
     @include breakpoint(medium down){
         font-size: 6.6rem;
+        letter-spacing: 1.32px;
     }
 
     @include breakpoint(small only){
         font-size: 9.1rem;
+        letter-spacing: 1.82px;
     }
 
     &.light {
