@@ -6,8 +6,6 @@
 
     &.open {
         .select-control {
-            border-bottom: none;
-            padding-bottom: 20px;
 
             &:after {
                 top: 42%;
@@ -70,7 +68,7 @@
 
     .options {
         left: 0;
-        top: 51px;
+        top: 50px;
         width: 100%;
         display: none;
         max-width: 100%;

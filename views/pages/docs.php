@@ -1,6 +1,8 @@
 <?php
+
 use helpers\View;
 use helpers\Svg;
+
 ?>
 
 <!-- Page Headers -->
@@ -9,7 +11,8 @@ use helpers\Svg;
 <body>
 <div class="docs">
     <nav>
-        <div class="header hide-for-medium header flex-container align-middle" data-sticky-container data-margin-top="0">
+        <div class="header hide-for-medium header flex-container align-middle" data-sticky-container
+             data-margin-top="0">
             <button class="menu-hamburger" data-doc-hamburger data-toggle="offCanvasLeft1">
                 <span class="hamburger-line line-top"></span>
                 <span class="hamburger-line line-middle"></span>
@@ -29,7 +32,8 @@ use helpers\Svg;
                             <li data-doc-id="doc-button-cta-not-arrow"><a href="#">cta no arrow</a></li>
                             <li data-doc-id="doc-button-cta-not-arrow"><a href="#">cta no arrow</a></li>
                             <li data-doc-id="doc-button-cta-mobile-larage"><a href="#">cta mobile large</a></li>
-                            <li data-doc-id="doc-button-cta-mobile-no-arrow-large"><a href="#">cta no arrow mobile</a></li>
+                            <li data-doc-id="doc-button-cta-mobile-no-arrow-large"><a href="#">cta no arrow mobile</a>
+                            </li>
                             <li data-doc-id="doc-button-close-out"><a href="#">close out</a></li>
                             <li data-doc-id="doc-button-cta-not-arrow-mobile"><a href="#">cta mobile no arrow</a></li>
                             <li data-doc-id="doc-button-download"><a href="#">download button</a></li>
@@ -62,6 +66,7 @@ use helpers\Svg;
                 <div id="doc-button-cta">
                     <div class="panel callout radius">
                         <div>
+                            <p class="heading h4 title">Cta</p>
                             <button class="btn dark">
                                 Submit
                                 <svg xmlns="http://www.w3.org/2000/svg" width="11.643" height="17.341">
@@ -86,6 +91,254 @@ use helpers\Svg;
                 </div>
                 <div id="doc-button-cta-mobile" class="hide">
                     <h2>working on it</h2>
+                </div>
+                <div id="doc-filter-multi-select" class="hide">
+                    <div class="panel callout radius">
+                        <p class="heading h4 title">Multi-select</p>
+                        <div id="example-multi-select" class="multi-select" data-multi-select>
+                            <button class="select-control" aria-label="Example multi-select" data-opening-action data-select-control>
+                                Multi select title <span></span>
+                            </button>
+                            <div class="options" data-options data-type="example-multi-select-type">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="list_item_1">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 1</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="list_item_2">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 2</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="list_item_3">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item3</span>
+                                </label></div>
+                        </div>
+                    </div>
+                    <pre class="language-html line-numbers" data-src-status="loaded">
+                        <code class="language-html">
+                            <?= htmlspecialchars('
+                            <div id="example-multi-select" class="multi-select" data-multi-select>
+                            <button class="select-control" aria-label="Example multi-select" data-opening-action data-select-control>
+                                Multi select title <span></span>
+                            </button>
+                            <div class="options" data-options data-type="example-multi-select-type">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="list_item_1">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 1</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="list_item_2">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 2</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="list_item_3">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item3</span>
+                                </label></div>
+                        </div>') ?>
+                        </code>
+                    </pre>
+                </div>
+                <div id="doc-filter-radio" class="hide">
+                    <div class="panel callout radius">
+                        <p class="heading h4 title">Select radio</p>
+                        <div class="select-radio" data-multi-select>
+                            <button class="select-control" aria-label="Example select readio" data-opening-action data-select-control>
+                                Select radio title
+                            </button>
+                            <div class="options" data-options data-type="Example select radio">
+                                <label class="checkbox-item radio">
+                                    <input type="radio" value="list_item_1" name="select-radio">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 1</span>
+                                </label>
+                                <label class="checkbox-item radio">
+                                    <input type="radio" value="list_item_2" name="select-radio">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 2</span>
+                                </label>
+                                <label class="checkbox-item radio">
+                                    <input type="radio" value="list_item_3" name="select-radio">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 3</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="language-html line-numbers" data-src-status="loaded">
+                        <code class="language-html">
+                            <?= htmlspecialchars('
+                            <div class="select-radio" data-multi-select>
+                                <button class="select-control" aria-label="Example select readio" data-opening-action data-select-control>
+                                    Select radio title
+                                </button>
+                                <div class="options" data-options data-type="Example select radio">
+                                    <label class="checkbox-item radio">
+                                        <input type="radio" value="list_item_1" name="select-radio">
+                                        <span class="checkmark"></span>
+                                        <span class="name">List item 1</span>
+                                    </label>
+                                    <label class="checkbox-item radio">
+                                        <input type="radio" value="list_item_2" name="select-radio">
+                                        <span class="checkmark"></span>
+                                        <span class="name">List item 2</span>
+                                    </label>
+                                    <label class="checkbox-item radio">
+                                        <input type="radio" value="list_item_3" name="select-radio">
+                                        <span class="checkmark"></span>
+                                        <span class="name">List item 3</span>
+                                    </label>
+                                </div>
+                            </div>
+                        ') ?>
+                        </code>
+                    </pre>
+                </div>
+                <div id="doc-filter-select" class="hide">
+                    <div class="grid-x grid-padding-x">
+                        <div class="cell large-6">
+                            <div class="panel callout radius">
+                                <p class="heading h4 title">Select radio</p>
+                                <div class="select-box" data-select>
+                                    <div class="options-container" data-select-options>
+                                        <div class="option">
+                                            <input type="radio"
+                                                   class="radio"
+                                                   value="list_item_1"
+                                                   name="select-example">
+                                            <label for="list-item-1">List item 1</label>
+                                        </div>
+                                        <div class="option">
+                                            <input type="radio"
+                                                   class="radio"
+                                                   id="list-item-1"
+                                                   value="list_item_2"
+                                                   name="select-example">
+                                            <label for="list-item-1">List item 2</label>
+                                        </div>
+                                        <div class="option">
+                                            <input type="radio"
+                                                   class="radio"
+                                                   id="list-item-1"
+                                                   value="list_item_3"
+                                                   name="select-example">
+                                            <label for="list-item-1">List item 3</label>
+                                        </div>
+                                    </div>
+                                    <div class="selected" data-select-open>
+                                        Select title
+                                    </div>
+                                </div>
+                            </div>
+                            <pre class="language-html line-numbers" data-src-status="loaded">
+                        <code class="language-html">
+                            <?= htmlspecialchars('
+                            <div class="select-box" data-select>
+                                <div class="options-container" data-select-options>
+                                    <div class="option">
+                                        <input type="radio"
+                                               class="radio"
+                                               value="list_item_1"
+                                               name="select-example">
+                                        <label for="list-item-1">List item 1</label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="radio"
+                                               class="radio"
+                                               value="list_item_2"
+                                               name="select-example">
+                                        <label for="list-item-1">List item 2</label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="radio"
+                                               class="radio"
+                                               value="list_item_3"
+                                               name="select-example">
+                                        <label for="list-item-1">List item 3</label>
+                                    </div>
+                                </div>
+                                <div class="selected" data-select-open>
+                                    Select title
+                                </div>
+                            </div>') ?>
+                        </code>
+                    </pre>
+                        </div>
+                        <div class="cell large-6 bg-dark">
+                            <div class="panel callout radius">
+                                <p class="heading h4 title light">Select radio</p>
+                                <div class="select-box dark" data-select>
+                                    <div class="options-container" data-select-options>
+                                        <div class="option">
+                                            <input type="radio"
+                                                   class="radio"
+                                                   id="list-item-1"
+                                                   name="category"
+                                                   value="list-item-1">
+                                            <label for="list-item-1">List item 1</label>
+                                        </div>
+                                        <div class="option">
+                                            <input type="radio"
+                                                   class="radio"
+                                                   id="list-item-2"
+                                                   name="category"
+                                                   value="list-item-2">
+                                            <label for="list-item-2">List item 2</label>
+                                        </div>
+                                        <div class="option">
+                                            <input type="radio"
+                                                   class="radio"
+                                                   id="list-item-3"
+                                                   name="category"
+                                                   value="list-item-3">
+                                            <label for="list-item-3">List item 3</label>
+                                        </div>
+                                    </div>
+                                    <div class="selected" data-select-open>
+                                        Select title
+                                    </div>
+                                </div>
+                            </div>
+                            <pre class="language-html line-numbers" data-src-status="loaded">
+                        <code class="language-html">
+                            <?= htmlspecialchars('
+                            <div class="select-box dark" data-select>
+                                <div class="options-container" data-select-options>
+                                    <div class="option">
+                                        <input type="radio"
+                                               class="radio"
+                                               name="select-dark"
+                                               value="list-item-1">
+                                        <label for="list-item-1">List item 1</label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="radio"
+                                               class="radio"
+                                               name="select-dark"
+                                               value="list-item-2">
+                                        <label for="list-item-2">List item 2</label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="radio"
+                                               class="radio"
+                                               name="select-dark"
+                                               value="list-item-3">
+                                        <label for="list-item-3">List item 3</label>
+                                    </div>
+                                </div>
+                                <div class="selected" data-select-open>
+                                    Select title
+                                </div>
+                            </div>') ?>
+                        </code>
+                    </pre>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

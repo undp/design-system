@@ -1,0 +1,115 @@
+.select-box {
+    height: 52px;
+    display: flex;
+    color: $black;
+    font-size: 2rem;
+    max-width: 100%;
+    position: relative;
+    font-weight: $regular;
+    flex-direction: column;
+
+    &.dark {
+        color: $white;
+
+        .selected,
+        .options-container {
+            border: 2px solid $white;
+            background-color: $dark-blue-1;
+        }
+
+        .options-container {
+            border-top: none;
+
+            .option {
+                border-top: 1px solid rgba($white, 0.10);
+            }
+
+            &.active {
+                +.selected {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .options-container {
+        order: 1;
+        top: 51px;
+        width: 100%;
+        display: none;
+        user-select: none;
+        position: absolute;
+        z-index: $z-index-4;
+        background-color: $white;
+        border: 2px solid $black;
+        border-top: 0;
+        transition: $transition-primary;
+
+        &.active {
+            display: block;
+            overflow-y: auto;
+
+            +.selected {
+                border-bottom: 0;
+
+                &:after {
+                    top: 42%;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .option {
+            cursor: pointer;
+            padding: 15px 22px 15px;
+            border-top: 1px solid rgba($black, 0.10);
+
+            &:hover {
+                background-color: rgba($black, 0.10);
+            }
+
+            label {
+                cursor: pointer;
+            }
+
+            .radio {
+                display: none;
+            }
+        }
+
+        &::-webkit-scrollbar {
+            width: 4px;
+            background-color: rgba($black, 0.30);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($black, 0.60);
+        }
+    }
+
+    .selected {
+        order: 0;
+        cursor: pointer;
+        max-height: 52px;
+        font-size: 1.6rem;
+        user-select: none;
+        padding: 15px 25px;
+        position: relative;
+        font-weight: $bold;
+        border: 2px solid $black;
+        background-color: $white;
+        text-transform: uppercase;
+
+        &:after {
+            top: 50%;
+            content: '';
+            width: 14px;
+            right: 25px;
+            height: 9px;
+            position: absolute;
+            transform: translateY(-50%);
+            background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
+            background-size: contain;
+        }
+    }
+}

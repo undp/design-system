@@ -12,6 +12,7 @@ import trapFocus from './components/trap-focus'
 import modalSdgs from './components/modal-sdgs'
 import docs from './components/docs'
 import heroAnimation from './components/hero-animation'
+import select from './components/select'
 import menusNav from './render-data/menu/all';
 import searchData  from './render-data/modals/search'
 import countriesData  from './render-data/modals/locations/countries'
@@ -38,8 +39,9 @@ function main() {
     modalSdgs()
     heroAnimation()
     scrollTriggers()
-    sdgCard();
-    docs();
+    sdgCard()
+    select()
+    docs()
 
     moleculeStatisticsSdgCard()
 }

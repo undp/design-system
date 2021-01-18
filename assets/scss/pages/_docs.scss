@@ -47,10 +47,16 @@
         }
 
         .docs-container {
-            margin-top: 50px;
+            padding: 50px 15px;
 
             @include breakpoint(small only) {
-                margin-top: calc(#{$height-nav-medium} + 30px);
+                padding: calc(#{$height-nav-medium} + 30px) 15px 50px 15px;
+            }
+
+            .panel {
+                .title {
+                    margin-bottom: 10px;
+                }
             }
         }
     }
