@@ -19,35 +19,35 @@ use helpers\Svg;
         <div class="off-canvas-wrapper cell medium-2">
             <div class="off-canvas position-left  reveal-for-medium side-bar" id="offCanvasLeft1" data-off-canvas>
                 <h1>UNDP Docs</h1>
-                <ul class="vertical menu accordion-menu" data-accordion-menu data-multi-open="false">
+                <ul class="vertical menu accordion-menu" data-accordion-menu>
                     <li>
                         <a class="menu-item" href="#">buttons</a>
                         <ul class="menu vertical nested is-active">
                             <li class="is-active" data-doc-id="doc-button-cta"><a href="#">cta</a></li>
                             <li data-doc-id="doc-button-cta-mobile"><a href="#">cta mobile</a></li>
-                            <li data-doc-id-="doc-button-checks-boxes"><a href="#">checks boxes</a></li>
+                            <li data-doc-id="doc-button-checks-boxes"><a href="#">checks boxes</a></li>
                             <li data-doc-id="doc-button-cta-not-arrow"><a href="#">cta no arrow</a></li>
                             <li data-doc-id="doc-button-cta-not-arrow"><a href="#">cta no arrow</a></li>
                             <li data-doc-id="doc-button-cta-mobile-larage"><a href="#">cta mobile large</a></li>
                             <li data-doc-id="doc-button-cta-mobile-no-arrow-large"><a href="#">cta no arrow mobile</a></li>
-                            <li data-doc-id-="doc-button-close-out"><a href="#">close out</a></li>
+                            <li data-doc-id="doc-button-close-out"><a href="#">close out</a></li>
                             <li data-doc-id="doc-button-cta-not-arrow-mobile"><a href="#">cta mobile no arrow</a></li>
-                            <li data-doc-id-="doc-button-download"><a href="#">download button</a></li>
-                            <li data-doc-id-="doc-button-direct-arrow"><a href="#">directional arrow</a></li>
-                            <li data-doc-id-="doc-button-global"><a href="#">global</a></li>
-                            <li data-doc-id-="doc-button-language"><a href="#">language select</a></li>
+                            <li data-doc-id="doc-button-download"><a href="#">download button</a></li>
+                            <li data-doc-id="doc-button-direct-arrow"><a href="#">directional arrow</a></li>
+                            <li data-doc-id="doc-button-global"><a href="#">global</a></li>
+                            <li data-doc-id="doc-button-language"><a href="#">language select</a></li>
                             <li data-doc-id="doc-button-menu"><a href="#">menu</a></li>
-                            <li data-doc-id-="doc-button-pagination"><a href="#">pagination</a></li>
-                            <li data-doc-id-="doc-button-radio-buttons"><a href="#">radios buttons</a></li>
-                            <li data-doc-id-="doc-button-search"><a href="#">search</a></li>
-                            <li data-doc-id-="doc-button-video"><a href="#">video</a></li>
-                            <li data-doc-id-="doc-button-view-more"><a href="#">view more / mobile filter button</a></li>
+                            <li data-doc-id="doc-button-pagination"><a href="#">pagination</a></li>
+                            <li data-doc-id="doc-button-radio-buttons"><a href="#">radios buttons</a></li>
+                            <li data-doc-id="doc-button-search"><a href="#">search</a></li>
+                            <li data-doc-id="doc-button-video"><a href="#">video</a></li>
+                            <li data-doc-id="doc-button-view-more"><a href="#">view more / mobile filter button</a></li>
                         </ul>
                     </li>
                     <li>
                         <a class="menu-item" href="#">filters</a>
                         <ul class="menu vertical nested">
-                            <li data-doc-id-="doc-filter-multi-select"><a href="#">multi select</a></li>
+                            <li data-doc-id="doc-filter-multi-select"><a href="#">multi select</a></li>
                             <li data-doc-id="doc-filter-radio"><a href="#">radio</a></li>
                             <li data-doc-id="doc-filter-select"><a href="#">select</a></li>
                         </ul>
