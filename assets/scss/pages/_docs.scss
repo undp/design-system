@@ -1,0 +1,56 @@
+.docs {
+    // 250 is the size of off-canvas for medium up
+    padding-left: 250px;
+
+    @include breakpoint(small only) {
+        padding: 0;
+    }
+
+    .header {
+        width: 100%;
+        height: 70px;
+        padding: 10px 15px;
+
+        .hamburger-line {
+            min-height: 2px;
+        }
+    }
+
+    .side-bar {
+        font-size: 1.2rem;
+        padding: 20px 15px;
+        text-transform: capitalize;
+
+        @include breakpoint(small only) {
+            top: $height-nav-medium;
+        }
+    }
+
+        .accordion-menu {
+            margin-top: 10px;
+
+            .menu-item {
+                font-weight: $bold;
+
+                &:hover {
+                    background-color: $dark-blue-4;
+                }
+            }
+
+            .nested {
+                li {
+                    &:hover {
+                        background-color: $dark-blue-4;
+                    }
+                }
+            }
+        }
+
+        .docs-container {
+            margin-top: 50px;
+
+            @include breakpoint(small only) {
+                margin-top: calc(#{$height-nav-medium} + 30px);
+            }
+        }
+    }
