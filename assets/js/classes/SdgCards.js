@@ -3,6 +3,8 @@ class SdgCards {
         this.$btnLoad = $('[data-sdg-load]');
         this.$container = $('[data-sdg-container]');
         this.$arrowRed = $('[data-arrow-red-secondary]')
+
+        this.currentSite = window.location;
     }
 
     init() {
@@ -26,7 +28,7 @@ class SdgCards {
                         case 'style-1':
                             this.$container.append(`
                             <div class="cell medium-6 large-4">
-                                <a href="${ item.link ? item.link : '' }">
+                                <a href="${ item.link ? item.link :  this.currentSite }">
                                 <div class="single-content-card-body">
                                      <div class="card-content">
                                          <div class="tag">${ item.tag }</div>
@@ -51,7 +53,7 @@ class SdgCards {
                         case 'style-2':
                             this.$container.append(`
                             <div class="cell medium-6 large-4">
-                                <a href="${ item.link ? item.link : '' }">
+                                <a href="${ item.link ? item.link : this.currentSite }">
                                     <div class="single-content-card-accent-color">
                                         <div class="card-content">
                                             <div class="tag">${ item.tag }</div>
@@ -72,7 +74,7 @@ class SdgCards {
                         case 'style-3':
                             this.$container.append(`
                             <div class="cell medium-6 large-4">
-                                <a href="${ item.link ? item.link : '' }">
+                                <a href="${ item.link ? item.link : this.currentSite }">
                                     <div class="single-content-card-image">
                                         <div class="card-content">
                                             <div class="tag">${ item.tag }</div>
