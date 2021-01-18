@@ -94,61 +94,110 @@ use helpers\Svg;
                 </div>
                 <div id="doc-filter-multi-select" class="hide">
                     <div class="panel callout radius">
-                        <div>
-                            <p class="heading h4">Multi-select</p>
-                            <div id="example-multi-select-id" class="multi-select" data-multi-select>
-                                <button class="select-control" aria-label="Example multi-select" data-opening-action
-                                        data-select-control>
-                                    Multi select title <span></span>
-                                </button>
-                                <div class="options" data-options="" data-type="example-multi-select-type">
-                                    <label class="checkbox-item">
-                                        <input type="checkbox" value="example_value_1">
-                                        <span class="checkmark"></span>
-                                        <span class="name">Example value 1</span>
-                                    </label>
-                                    <label class="checkbox-item">
-                                        <input type="checkbox" value="example_value_2">
-                                        <span class="checkmark"></span>
-                                        <span class="name">Example value 2</span>
-                                    </label>
-                                    <label class="checkbox-item">
-                                        <input type="checkbox" value="example_value_3">
-                                        <span class="checkmark"></span>
-                                        <span class="name">Example value 3</span>
-                                    </label></div>
+                        <p class="heading h4 title">Multi-select</p>
+                        <div id="example-multi-select" class="multi-select" data-multi-select>
+                            <button class="select-control" aria-label="Example multi-select" data-opening-action data-select-control>
+                                Multi select title <span></span>
+                            </button>
+                            <div class="options" data-options data-type="example-multi-select-type">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="list_item_1">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 1</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="list_item_2">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 2</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="list_item_3">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item3</span>
+                                </label></div>
+                        </div>
+                    </div>
+                    <pre class="language-html line-numbers" data-src-status="loaded">
+                        <code class="language-html">
+                            <?= htmlspecialchars('
+                            <div id="example-multi-select" class="multi-select" data-multi-select>
+                            <button class="select-control" aria-label="Example multi-select" data-opening-action data-select-control>
+                                Multi select title <span></span>
+                            </button>
+                            <div class="options" data-options data-type="example-multi-select-type">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="list_item_1">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 1</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="list_item_2">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 2</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="list_item_3">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item3</span>
+                                </label></div>
+                        </div>') ?>
+                        </code>
+                    </pre>
+                </div>
+                <div id="doc-filter-radio" class="hide">
+                    <div class="panel callout radius">
+                        <p class="heading h4 title">Select radio</p>
+                        <div class="select-radio" data-multi-select>
+                            <button class="select-control" aria-label="Example select readio" data-opening-action data-select-control>
+                                Select radio title
+                            </button>
+                            <div class="options" data-options data-type="Example select radio">
+                                <label class="checkbox-item radio">
+                                    <input type="radio" value="list_item_1" name="select-radio">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 1</span>
+                                </label>
+                                <label class="checkbox-item radio">
+                                    <input type="radio" value="list_item_2" name="select-radio">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 2</span>
+                                </label>
+                                <label class="checkbox-item radio">
+                                    <input type="radio" value="list_item_3" name="select-radio">
+                                    <span class="checkmark"></span>
+                                    <span class="name">List item 3</span>
+                                </label>
                             </div>
                         </div>
                     </div>
                     <pre class="language-html line-numbers" data-src-status="loaded">
                         <code class="language-html">
                             <?= htmlspecialchars('
-                            <div id="example-multi-select-id" class="multi-select" data-multi-select>
-                                <button class="select-control" aria-label="Example multi-select" data-opening-action
-                                        data-select-control>
-                                    Multi select title <span></span>
+                            <div class="select-radio" data-multi-select>
+                                <button class="select-control" aria-label="Example select readio" data-opening-action data-select-control>
+                                    Select radio title
                                 </button>
-                                <div class="options" data-options="" data-type="example-multi-select-type">
-                                    <label class="checkbox-item">
-                                        <input type="checkbox" value="example_value_1">
+                                <div class="options" data-options data-type="Example select radio">
+                                    <label class="checkbox-item radio">
+                                        <input type="radio" value="list_item_1" name="select-radio">
                                         <span class="checkmark"></span>
-                                        <span class="name">Example value 1</span>
+                                        <span class="name">List item 1</span>
                                     </label>
-                                    <label class="checkbox-item">
-                                        <input type="checkbox" value="example_value_2">
+                                    <label class="checkbox-item radio">
+                                        <input type="radio" value="list_item_2" name="select-radio">
                                         <span class="checkmark"></span>
-                                        <span class="name">Example value 2</span>
+                                        <span class="name">List item 2</span>
                                     </label>
-                                    <label class="checkbox-item">
-                                        <input type="checkbox" value="example_value_3">
+                                    <label class="checkbox-item radio">
+                                        <input type="radio" value="list_item_3" name="select-radio">
                                         <span class="checkmark"></span>
-                                        <span class="name">Example value 3</span>
-                                    </label></div>
+                                        <span class="name">List item 3</span>
+                                    </label>
+                                </div>
                             </div>
-                            ') ?>
+                        ') ?>
                         </code>
                     </pre>
-
                 </div>
             </div>
         </div>
