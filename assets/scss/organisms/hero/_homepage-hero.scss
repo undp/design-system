@@ -16,19 +16,6 @@
         height: 815px;
     }
 
-    &.contract{
-        max-width: calc(100% - 4.8rem);
-
-        @include breakpoint(small only){
-            max-width: calc(100% - 3rem);
-        }
-
-        @include breakpoint(1921px up){
-            max-width: calc(1920px - 4.8rem);
-        }
-    }
-
-
     .hero-content{
         height: 100%;
         margin: 0 auto;
