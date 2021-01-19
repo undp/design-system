@@ -75,7 +75,7 @@ use helpers\View;
         </nav>
     </div>
     <div class="primary-navigation" data-primary-navigation>
-        <div class="hide hide-for-large" data-menu-main-options>
+        <div class="hide hide-for-xlarge" data-menu-main-options>
             <?php View::render('layout/navigation/menu/mobile/main')?>
         </div>
         <?php View::render('layout/navigation/menu/mobile/submenus/main')?>
