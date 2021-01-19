@@ -1,5 +1,5 @@
-$nav-desktop-height: 115px;
 $nav-mobile-height: 70px;
+$nav-desktop-height: 115px;
 
 .header {
     top: 0;
@@ -13,7 +13,110 @@ $nav-mobile-height: 70px;
     box-shadow: 0 3px 6px rgba($black, 0.09);
 
     @include breakpoint(large down) {
-        height: $nav-mobile-height;
+        height: calc(#{$nav-mobile-height} + 1px);
+    }
+
+    &.menu-justify {
+        background-color: $dark-blue-6;
+
+        .custom-cell {
+            padding: 0;
+
+            .menu-items {
+                padding: 0;
+                list-style: none;
+                margin-left: 84px;
+                height: $nav-desktop-height;
+
+                @include breakpoint(large down) {
+                    height: $nav-mobile-height;
+                }
+
+                li {
+                    margin-right: 60px;
+
+                    &:first-child,
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    &.logo-text {
+                        margin: 0 100px 0 0;
+
+                        a {
+                            font-size: 2rem;
+                            line-height: 1.2;
+                            max-width: 124px;
+                            font-weight: $bold;
+                            display: inline-block;
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    a {
+                        line-height: 1.64;
+                    }
+                }
+
+                .middle-logo {
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+
+                    @include breakpoint(large down) {
+                        height: $nav-mobile-height;
+                    }
+
+                    &.scrolled {
+                        svg, img {
+                            width: 56px;
+                            height: $nav-desktop-height - 1;
+
+                            @include breakpoint(large down) {
+                                width: auto;
+                                height: $nav-mobile-height;
+                            }
+                        }
+                    }
+
+                    svg,
+                    img {
+                        width: 62px;
+                        height: 125px;
+                        transition: $transition-primary;
+
+                        @include breakpoint(large down) {
+                            width: auto;
+                            max-height: $nav-mobile-height;
+                        }
+                    }
+                }
+            }
+
+            .menu-cell-right {
+                margin-right: 90px;
+
+                @include breakpoint(large down) {
+                    margin-right: 25px;
+                }
+
+                .dropdown {
+                    margin-right: 25px;
+                }
+
+                .right-menu {
+                    .nav-item {
+                        &.modal-ref {
+                            margin-right: 25px;
+
+                            @include breakpoint(medium down) {
+                                margin-right: 34px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .nav-item {
@@ -54,7 +157,7 @@ $nav-mobile-height: 70px;
                 height: 100%;
                 margin-right: 75px;
 
-                @include breakpoint(medium down){
+                @include breakpoint(medium down) {
                     margin-right: 0;
                 }
             }
@@ -67,7 +170,7 @@ $nav-mobile-height: 70px;
                     height: 125px;
                     transition: $transition-primary;
 
-                    @include breakpoint(large down){
+                    @include breakpoint(large down) {
                         width: auto;
                         max-height: 71px;
                     }
@@ -77,7 +180,7 @@ $nav-mobile-height: 70px;
                     svg, img {
                         height: $nav-desktop-height - 1;
 
-                        @include breakpoint(medium down){
+                        @include breakpoint(medium down) {
                             height: 71px;
                         }
                     }
@@ -108,7 +211,7 @@ $nav-mobile-height: 70px;
                     &:hover,
                     &:active,
                     &.active,
-                    &.active:hover{
+                    &.active:hover {
                         color: $blue-0;
                     }
                 }
@@ -138,7 +241,7 @@ $nav-mobile-height: 70px;
         transform: translateY(0px);
         top: calc(#{$height-nav} + 1px);
 
-        @include breakpoint(large down){
+        @include breakpoint(large down) {
             top: calc(#{$height-nav-medium} + 1px);
         }
 
