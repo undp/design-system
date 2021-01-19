@@ -85,7 +85,7 @@
             pointer-events: auto; // Override "none" from row
 
             @include breakpoint(360px down) {
-                width: 80%;
+                max-width: 150px;
             }
 
             @include breakpoint(medium up){
