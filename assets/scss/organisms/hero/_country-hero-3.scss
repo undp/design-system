@@ -1,0 +1,94 @@
+.country-hero-3 {
+    margin-top: 115px;
+    padding-top: 70px;
+
+    @include breakpoint(medium down) {
+        margin-top: 70px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .left-bar {
+        top: 0;
+        left: 0;
+        width: 60px;
+        position: absolute;
+        background: $dark-blue-5;
+        height: calc(100% - 60px);
+
+        @include breakpoint(medium down) {
+            width: 12px;
+        }
+    }
+
+    .hero-container {
+        position: relative;
+        padding-bottom: 60px;
+
+        @include breakpoint(medium down) {
+            padding-left:45px;
+        }
+
+        .title {
+            margin-top: 25px;
+        }
+
+        .article-container {
+            margin-top: 100px;
+
+            @include breakpoint(medium down) {
+                margin-top: 50px;
+            }
+
+            .article-description {
+                display: flex;
+                flex-direction: column;
+
+                .btn {
+                    margin-top: auto;
+                    max-width: 160px;
+
+                    @include breakpoint(medium down) {
+                        display: none;
+                    }
+                }
+            }
+
+            .article-image {
+                padding-left: 40px;
+
+                @include breakpoint(medium down) {
+                    display: none;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                @include breakpoint(medium down) {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    .hero-container-mobile {
+        display: none;
+
+        @include breakpoint(medium down) {
+            display: block
+        }
+
+        .article-image {
+            img {
+                width: 100%;
+            }
+        }
+
+        .btn {
+            width: 100%;
+            margin-top: 30px;
+            justify-content: center;
+        }
+    }
+}
