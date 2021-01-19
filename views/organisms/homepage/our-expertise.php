@@ -38,7 +38,7 @@ use helpers\View;
                         <video class="lazy" data-src="https://player.vimeo.com/external/478247383.sd.mp4?s=94744ea0dcaed3ec3f7a51dd1fc9ba4705ccc9df&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
                     </div>
                     <div class="image-card">
-                        <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-2.jpeg'');"></div>
+                        <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-2.jpeg');"></div>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@ use helpers\View;
                         <video class="lazy" data-src="https://player.vimeo.com/external/478247389.sd.mp4?s=b3b51d67a8018dae0e0cacc8bb0b18fa2c7e9b4a&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
                     </div>
                     <div class="image-card">
-                        <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-3.jpeg'');"></div>
+                        <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-3.jpeg');"></div>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@ use helpers\View;
                         <video class="lazy" data-src="https://player.vimeo.com/external/478247434.sd.mp4?s=1e617d39a7b53c5d3a7b47d8a7516f534effdb5b&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
                     </div>
                     <div class="image-card">
-                        <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-4.jpeg'');"></div>
+                        <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-4.jpeg');"></div>
                     </div>
                 </div>
             </div>
@@ -110,7 +110,7 @@ use helpers\View;
                         <video class="lazy" data-src="https://player.vimeo.com/external/478247411.sd.mp4?s=908b276285cd8792b5d7614afcac51f040daac07&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
                     </div>
                     <div class="image-card">
-                        <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-5.jpeg'');"></div>
+                        <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-5.jpeg');"></div>
                     </div>
                 </div>
             </div>
@@ -181,7 +181,7 @@ use helpers\View;
                                 <video class="lazy" data-src="https://player.vimeo.com/external/477328671.sd.mp4?s=802e70ad5a37b78d49301875e78f4c36c15418a0&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
                             </div>
                             <div class="image-card">
-                                <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-1.jpeg'');"></div>
+                                <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-1.jpeg');"></div>
                             </div>
                         </div>
                     </div>
@@ -193,7 +193,7 @@ use helpers\View;
                                 <video class="lazy" data-src="https://player.vimeo.com/external/478247383.sd.mp4?s=94744ea0dcaed3ec3f7a51dd1fc9ba4705ccc9df&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
                             </div>
                             <div class="image-card">
-                                <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-2.jpeg'');"></div>
+                                <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-2.jpeg');"></div>
                             </div>
                         </div>
                     </div>
@@ -223,7 +223,7 @@ use helpers\View;
                                 <video class="lazy" data-src="https://player.vimeo.com/external/478247389.sd.mp4?s=b3b51d67a8018dae0e0cacc8bb0b18fa2c7e9b4a&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
                             </div>
                             <div class="image-card">
-                                <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-3.jpeg'');"></div>
+                                <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-3.jpeg');"></div>
                             </div>
                         </div>
                     </div>
@@ -235,7 +235,7 @@ use helpers\View;
                                 <video class="lazy" data-src="https://player.vimeo.com/external/478247434.sd.mp4?s=1e617d39a7b53c5d3a7b47d8a7516f534effdb5b&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
                             </div>
                             <div class="image-card">
-                                <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-4.jpeg'');"></div>
+                                <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-4.jpeg');"></div>
                             </div>
                         </div>
                     </div>
@@ -265,7 +265,7 @@ use helpers\View;
                                 <video class="lazy" data-src="https://player.vimeo.com/external/478247411.sd.mp4?s=908b276285cd8792b5d7614afcac51f040daac07&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
                             </div>
                             <div class="image-card">
-                                <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-5.jpeg'');"></div>
+                                <div class="content lazy" style="background-image: url('/assets/images/placeholder/expertise-5.jpeg');"></div>
                             </div>
                         </div>
                     </div>

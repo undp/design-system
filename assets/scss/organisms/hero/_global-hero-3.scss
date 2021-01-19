@@ -39,7 +39,7 @@
     @include breakpoint(medium down) {
         margin-top: $height-nav-medium;
     }
-    
+
     @include breakpoint(small only) {
         padding: 20px 0;
         min-height: 564px;
