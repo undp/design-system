@@ -23,6 +23,16 @@ use helpers\View;
             <div class="cell large-8 image-container">
                 <img src="../../../assets/images/placeholder/hero/hero-news-image.jpg" alt="">
             </div>
+
+            <div class="news-hero-container-mobile">
+                <div class="hero-link mobile scroll-track left-right delay-1">
+                    <div class="link-title heading h3">Media Enquiries</div>
+                    <a class="text-link arrow-2" href="#">
+                        helen.mayelle@undp.org
+                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>

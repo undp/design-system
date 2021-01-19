@@ -3,8 +3,17 @@
     padding-top: 50px;
     padding-bottom: 50px;
 
+    @include breakpoint(medium down) {
+        margin-top: 70px;
+    }
+
     .subtitle {
         margin-top: 115px;
+
+        @include breakpoint(medium down) {
+            margin-top: 40px;
+            margin-left: 25px;
+        }
     }
 
     .news-hero-container {
@@ -19,25 +28,52 @@
             margin-top: 30px;
             text-transform: uppercase;
             font-family: $secondary-font;
+
+            @include breakpoint(medium down) {
+                margin-left: 25px;
+            }
         }
 
-        .hero-link {
-            margin-top: auto;
-            padding: 25px 30px;
-            background: $dark-blue-6;
+    }
 
-            .link-title {
-                font-size: 2rem;
-                font-weight: $regular;
-            }
+    .hero-link {
+        margin-top: auto;
+        padding: 25px 30px;
+        background: $dark-blue-6;
 
-            .text-link {
-                margin-top: 30px;
-            }
+        @include breakpoint(medium down) {
+            display: none;
+        }
+
+        &.mobile {
+            display: block;
+        }
+
+        .link-title {
+            font-size: 2rem;
+            font-weight: $regular;
+        }
+
+        .text-link {
+            margin-top: 30px;
+        }
+    }
+
+    .news-hero-container-mobile {
+        display: none;
+
+        @include breakpoint(medium down) {
+            width: 100%;
+            display: block;
         }
     }
 
     .image-container {
         padding-left: 25px;
+
+        @include breakpoint(medium down) {
+            padding-left: 0;
+            margin-top: 35px;
+        }
     }
 }
