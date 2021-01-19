@@ -1,15 +1,13 @@
 <?php
-
 use helpers\View;
 use helpers\Svg;
-
 ?>
 <!-- Page Headers -->
-<?php View::render('partials/header') ?>
+<?php View::render('layout/header') ?>
 
 <body>
 <!-- Navigation -->
-<?php View::render('partials/navigation/main') ?>
+<?php View::render('layout/navigation/main') ?>
 
 <div class="styleguide">
     <!--  headings  -->
@@ -796,7 +794,7 @@ use helpers\Svg;
     </div>
 </div>
 <!-- Footer -->
-<?php View::render('partials/footer'); ?>
+<?php View::render('layout/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 </html>

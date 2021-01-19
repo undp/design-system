@@ -1,0 +1,87 @@
+.stat-card{
+    height: 100%;
+    position: relative;
+    color: $dark-blue-1;
+    background-color: $dark-blue-6;
+    transition: background-color 0.5s ease;
+
+    &.small{
+        min-height: 270px;
+
+        @include breakpoint(medium down){
+            max-width: 250px;
+        }
+
+        .card-content{
+            padding: 40px 35px 15px;
+
+            @include breakpoint(medium only){
+                padding: 20px 20px 15px;
+            }
+        }
+    }
+
+    .card-content{
+
+        .number{
+            font-size: 4rem;
+            font-weight: $bold;
+            color: $dark-blue-6;
+            text-transform: uppercase;
+            font-family: $secondary-font;
+            -webkit-text-stroke: 1px $black;
+            text-shadow: -1px -1px 0 $black, 1px -1px 0 $black, -1px 1px 0 $black, 1px 1px 0 $black;
+
+            @include breakpoint(small only){
+                font-size: 5.5rem;
+            }
+        }
+
+        .title{
+            margin-top: 10px;
+            font-size: 2.4rem;
+            font-weight: $semi-bold;
+        }
+
+        .description{
+            margin-top: 20px;
+            font-size: 1.6rem;
+        }
+    }
+
+    &:hover{
+        @include sgd-colors('background-color');
+
+        &.accent-yellow{
+            background-color: $yellow-6;
+        }
+
+        &.accent-green{
+            background-color: $green-6;
+        }
+
+        &.accent-red{
+            background-color: $red-6;
+        }
+
+        &.accent-blue{
+            background-color: $light-blue-6;
+        }
+
+        .card-content .number{
+            text-shadow: none;
+            color: $dark-blue-1;
+            -webkit-text-stroke: unset;
+        }
+
+        &.sdg{
+            color: $white;
+
+            .card-content .number{
+                color: $white;
+                text-shadow: none;
+                -webkit-text-stroke: unset;
+            }
+        }
+    }
+}

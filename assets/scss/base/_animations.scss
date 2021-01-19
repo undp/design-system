@@ -1,6 +1,5 @@
 .left-right {
     opacity: 0;
-    color: transparent;
     transform: translateX(-100px);
     transition: $transition-tertiary;
 
@@ -13,7 +12,6 @@
 
     &.in-viewport {
         opacity: 1;
-        color: $black;
         transform: translateX(0);
     }
 }

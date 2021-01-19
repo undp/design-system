@@ -1,0 +1,152 @@
+@keyframes animate {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.modal-sdgs {
+    height: 1px;
+    width: 100%;
+    position: fixed;
+    top: $height-nav;
+    z-index: $z-index-modal;
+    backdrop-filter: blur(30px);
+    background-color: rgba(237,239,240, .95);
+    min-height: calc(100vh - #{$height-nav});
+
+    .grid-container {
+        transform: translateX(100%);
+    }
+
+    &.open {
+        .grid-container {
+            animation: animate  .4s forwards;
+        }
+    }
+
+
+    @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+        background-color: transparent;
+    }
+
+    @include breakpoint(medium down){
+        top: $height-nav-medium;
+        min-height: calc(100vh - #{$height-nav-medium})
+    }
+
+    @include breakpoint(small only) {
+        overflow-y: auto;
+        padding-left: 12px;
+    }
+
+    .modal-header {
+        padding-top: 60px;
+
+        @include breakpoint(small only){
+            padding: 20px 20px 0 0;
+            background-color: $white;
+            justify-content: flex-end;
+            box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
+        }
+
+        .btn-close {
+            width: 45px;
+            height: 45px;
+            right: 1548px;
+            cursor: pointer;
+            position: absolute;
+            border-radius: 50%;
+            background-color: $dark-blue-7;
+
+            @include breakpoint(1710px down){
+                position: static;
+            }
+
+            &:hover {
+                color: $dark-blue-17;
+            }
+
+            &:active,
+            .active {
+                color: $dark-blue-19;
+            }
+        }
+    }
+
+    .modal-content {
+        min-height: 100%;
+        overflow-y: auto;
+        margin-left: auto;
+        max-width: 1440px;
+        background-color: $white;
+        box-shadow: -3px 0 6px rgba($black, 0.16);
+
+        @include breakpoint(small only){
+            height: unset;
+            margin-top: -1px;
+            overflow-y: unset;
+            box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
+        }
+
+        .side-spacing{
+            padding: 0 25px 0 35px;
+
+            @include breakpoint(small only){
+                padding: 0 12px;
+            }
+        }
+
+        .bulleted-list {
+            margin: 125px 0 0 105px;
+
+            @include breakpoint(small only){
+                margin: 80px 0 0;
+            }
+
+            .list {
+                max-width: 600px;
+            }
+        }
+
+        .cards-slider {
+            margin-top: 20px;
+
+            .cell {
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+
+        .sdg-content-cards {
+            margin-top: 110px;
+
+            @include breakpoint(small only){
+                margin: 25px 0 0 0;
+            }
+
+            .cta-container{
+                margin: 85px 0 60px;
+
+                @include breakpoint(small only){
+                    margin: 25px 0 35px;
+                }
+            }
+        }
+
+        .next-sdg-container{
+            padding-left: 35px;
+
+            @include breakpoint(small only){
+                padding-left: 12px;
+            }
+        }
+
+    }
+}

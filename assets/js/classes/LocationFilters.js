@@ -181,8 +181,8 @@ class LocationFilters {
 
                 if(this.filters.inputSearch.length) {
                     return (text.includes(this.filters.inputSearch.toLowerCase()) &&
-                    this.filters.region.filter(value => text.includes(value.toLowerCase())).length &&
-                    this.filters.office.filter(value => text.includes(value.toLowerCase())).length)
+                        this.filters.region.filter(value => text.includes(value.toLowerCase())).length &&
+                        this.filters.office.filter(value => text.includes(value.toLowerCase())).length)
                 }
 
                 return (this.filters.region.filter(value => text.includes(value.toLowerCase())).length  &&

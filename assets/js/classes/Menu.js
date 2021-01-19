@@ -1,4 +1,5 @@
 import 'foundation-sites/dist/js/foundation'
+import ModalSdgs from "../classes/ModalSdgs";
 
 class Menu {
 
@@ -102,6 +103,7 @@ class Menu {
 
     openMenu() {
         this.closeModals();
+        this.closeModalSdg();
         this.$primaryNav.addClass('open');
         this.$body.addClass(this.bodyMenuOpenClass)
         this.$mainMenu.removeClass(this.hiddenClass);
@@ -133,6 +135,11 @@ class Menu {
             $(modal).removeClass(this.classModalOpen);
             $('#' + $(modal).data('modal')).addClass(this.hiddenClass);
         });
+    }
+
+    closeModalSdg() {
+        const modalSdg = new ModalSdgs();
+        modalSdg.close();
     }
 
     //the modal hide the (scroll y) so we add his width on navigation to keep the same size

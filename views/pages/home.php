@@ -3,7 +3,7 @@ use helpers\Svg;
 use helpers\View;
 ?>
 <!-- Page Headers -->
-<?php View::render('partials/header') ?>
+<?php View::render('layout/header') ?>
 
 <body>
 
@@ -17,28 +17,27 @@ use helpers\View;
 </span>
 
 <!-- Navigation -->
-<?php View::render('partials/navigation/main') ?>
-
+<?php View::render('layout/navigation/main') ?>
 
 <main>
-    <?php View::render('modules/hero') ?>
-    <?php View::render('modules/featured-stories') ?>
-    <?php View::render('modules/our-mission') ?>
-    <?php View::render('modules/our-expertise') ?>
+    <?php View::render('organisms/hero/homepage-hero') ?>
+    <?php View::render('organisms/content-cards/featured-stories') ?>
+    <?php View::render('organisms/homepage/our-mission') ?>
+    <?php View::render('organisms/homepage/our-expertise') ?>
     <?php
-        View::render('modules/trusted-partnerships', [
+        View::render('organisms/homepage/trusted-partnerships', [
             'classes' => 'show-for-small-only',
             'trackScroll' => true
         ])
     ?>
-    <?php View::render('modules/global-impact') ?>
-    <?php View::render('modules/publications') ?>
-    <?php View::render('modules/recent-news') ?>
-    <?php View::render('modules/twitter-feed') ?>
+    <?php View::render('organisms/homepage/global-impact') ?>
+    <?php View::render('organisms/carousel/publications') ?>
+    <?php View::render('organisms/homepage/recent-news') ?>
+    <?php View::render('organisms/homepage/twitter-feed') ?>
 </main>
 
 <!-- Footer -->
-<?php View::render('partials/footer'); ?>
+<?php View::render('layout/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 </html>

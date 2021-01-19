@@ -1,0 +1,68 @@
+.global-hero-3 {
+    width: 100%;
+    color: $white;
+    min-height: 790px;
+    position: relative;
+    background-size: cover;
+    margin-top: $height-nav;
+    background-position: top;
+    padding: 222px 0 260px 0;
+    background-repeat: no-repeat;
+    font-family: $secondary-font;
+
+
+    &:before {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        position: absolute;
+        background: rgba($black,0.25);
+    }
+
+
+    @include breakpoint(medium down) {
+        margin-top: $height-nav-medium;
+    }
+
+
+    @include breakpoint(small only) {
+        padding: 20px 0;
+        min-height: 564px;
+        background-position: 25%;
+
+        .grid-container {
+            padding: 0;
+        }
+    }
+
+    .title {
+        max-width: 810px;
+        font-size: 11rem;
+        line-height: 1.08;
+        letter-spacing: 12px;
+        text-transform: uppercase;
+
+        @include breakpoint(large down) {
+            line-height: 1;
+            font-size: 8.2rem;
+            letter-spacing: 8.2px;
+        }
+
+        @include breakpoint(small only) {
+            max-width: 261px;
+            line-height: 1.2;
+            font-size: 2.5rem;
+            margin-top: 195px;
+            letter-spacing: 2.5px;
+        }
+    }
+
+    .cta-arrow {
+        left: 50%;
+        bottom: 222px;
+        position: absolute;
+        transform: translateX(-50%);
+    }
+}
