@@ -144,8 +144,8 @@ class Menu {
 
     //the modal hide the (scroll y) so we add his width on navigation to keep the same size
     navSetMargin() {
-        let pixes = this.navCurrrentWidth - this.navPreviewWidth;
-        this.$header.css('padding-right', pixes > 0 ? pixes : 0);
+        let pixels = this.navCurrrentWidth - this.navPreviewWidth;
+        this.$header.css('padding-right', pixels > 0 ? pixels : 0);
     }
 }
 

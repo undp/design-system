@@ -128,7 +128,11 @@ class Modal {
 
     //the modal hide the (scroll y) so we add his width on navigation to keep the same size
     navSetMargin() {
-        this.$header.css('padding-right', this.navCurrrentWidth - this.navPreviewWidth);
+        let pixels = this.navCurrrentWidth - this.navPreviewWidth;
+        console.log(pixels);
+        if(pixels !== 0) {
+            this.$header.css('padding-right', pixels > 0 ? pixels : 0);
+        }
     }
 
     inputSearchAutoFocus() {
