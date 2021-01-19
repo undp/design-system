@@ -31,13 +31,13 @@ use helpers\Svg;
     <ul class="menu-items-languages uppercase">
         <li>
             <a class="flex-container align-middle nav-item" href="#" data-item-details data-submenu="languages">
-                <?php Svg::render('icon-languages', true, 'Languages') ?>
+                <?php Svg::render('icon-languages', false, 'Languages') ?>
                 English
             </a>
         </li>
         <li>
             <a class="flex-container align-middle nav-item" class="flex-container align-middle" href="#" data-item-details data-submenu="modal-search-offices" data-modal-open data-modal="modal-search-offices">
-                <?php Svg::render('icon-www-blue', true, 'Languages') ?>
+                <?php Svg::render('icon-www-blue', false, 'Languages') ?>
                 Locations
             </a>
         </li>
