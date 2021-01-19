@@ -12,7 +12,7 @@ use helpers\View;
 <!-- Navigation -->
 <?php View::render('layout/navigation/main-justify') ?>
 
-<div class="the-sdgs">
+<div class="news-centre">
     <!--Global hero 3-->
     <?php View::render('organisms/hero/news-centre-hero', [
         'subtitle' => 'Sierra Leone',
