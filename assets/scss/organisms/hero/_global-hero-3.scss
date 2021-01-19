@@ -1,15 +1,30 @@
 .global-hero-3 {
     width: 100%;
+    height: 100vh;
     color: $white;
+    max-width: 100%;
+    max-height: 805px;
     min-height: 790px;
     position: relative;
     background-size: cover;
-    margin-top: $height-nav;
     background-position: top;
     padding: 222px 0 260px 0;
+    margin: $height-nav auto 0;
     background-repeat: no-repeat;
     font-family: $secondary-font;
+    transition: max-width 0.5s ease;
 
+    @include breakpoint(large){
+        max-height: 810px;
+    }
+
+    @include breakpoint(medium){
+        max-height: 880px;
+    }
+
+    @include breakpoint(small only){
+        height: 815px;
+    }
 
     &:before {
         top: 0;
@@ -21,12 +36,10 @@
         background: rgba($black,0.25);
     }
 
-
     @include breakpoint(medium down) {
         margin-top: $height-nav-medium;
     }
-
-
+    
     @include breakpoint(small only) {
         padding: 20px 0;
         min-height: 564px;
