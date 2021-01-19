@@ -14,7 +14,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "appear": "^1.0.1",
     "browser-sync": "^2.26.12",
     "browser-sync-webpack-plugin": "^2.0.1",
     "cross-env": "^7.0.2",
@@ -30,8 +29,10 @@
     "@glidejs/glide": "^3.4.1",
     "appear": "^1.0.1",
     "foundation-sites": "^6.6.3",
-    "gsap": "^3.5.1",
+    "gsap": "^3.6.0",
     "lodash": "^4.17.20",
+    "prismjs": "^1.23.0",
+    "tiny-slider": "^2.9.3",
     "what-input": "^5.2.10"
   }
 }

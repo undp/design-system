@@ -37,7 +37,7 @@ class ModalNavHover {
 
             const $navItem = $(navItem)
             const prepareModalForOpening = () => {
-                let modalId = $(navItem).data(this.dataModalId);
+                const modalId = $(navItem).data(this.dataModalId);
                 this.$currentModal = $('#' + modalId);
                 if (this.$lastModal && this.$currentModal &&
                     !this.$lastModal.is(this.$currentModal)) {
@@ -51,6 +51,7 @@ class ModalNavHover {
                     this.openModal();
                     this.allowOpenModal = false;
                 }
+
                 this.$lastModal = this.$currentModal;
             };
 
@@ -109,8 +110,6 @@ class ModalNavHover {
         this.$modalContent.addClass(this.classAnimationOpacity);
         this.removeTransitions();
         this.$modalBody.find('.' + this.classAnimationOpacity).removeClass(this.classAnimationOpacityBack);
-
-
         this.lazyLoadClass.listenerDefault();
     }
 
@@ -156,6 +155,7 @@ class ModalNavHover {
         } else {
             this.$currentModal.addClass(this.classHide).removeClass(this.classAnimationColor);
         }
+
         this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation)
             .removeClass('circle-square-transition-back');
         this.$modalContent.removeClass(this.classAnimationOpacity);

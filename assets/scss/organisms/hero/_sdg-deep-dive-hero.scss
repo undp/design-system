@@ -1,0 +1,102 @@
+.sdg-deep-dive-hero{
+    .title {
+        margin: 120px 0 0 105px;
+
+        @include breakpoint(small only){
+            margin: 0 0 0 30px;
+        }
+
+        h2{
+
+            span {
+                display: block;
+
+                &.title-one {
+                    font-size: 3.5rem;
+                    line-height: 1.14;
+                    font-weight: $semi-bold;
+
+                    @include breakpoint(medium down){
+                        font-size: 2rem;
+                        line-height: 2;
+                    }
+                    // For IE 11 (media is a hack to check for IE 10+)
+                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        line-height: 2.23;
+
+                        @include breakpoint(medium down){
+                            line-height: 2.27;
+                        }
+                    }
+                }
+
+                &.title-two {
+                    font-size: 5.5rem;
+                    line-height: 1.09;
+                    font-weight: $bold;
+                    letter-spacing: 2.75px;
+                    font-family: $secondary-font;
+
+                    @include breakpoint(medium down){
+                        font-size: 2.5rem;
+                        line-height: 1.04;
+                        letter-spacing: 1.25px;
+                    }
+                }
+            }
+        }
+
+        @include sgd-colors('color');
+    }
+
+    .description-container{
+        display: flex;
+        margin-top: 80px;
+        padding: 70px 60px 90px 95px;
+
+        @include breakpoint(medium down){
+            padding: 70px 60px 90px 60px;
+        }
+
+        @include breakpoint(small only){
+            margin-top: 40px;
+            padding: 16px 0 75px;
+        }
+
+        .description{
+            @include breakpoint(small only){
+                order: 2;
+                margin-top: 25px;
+            }
+
+            p{
+                color: $white;
+            }
+        }
+
+        .description-image{
+            display: flex;
+            align-self: baseline;
+            justify-content: center;
+
+            img{
+                @include breakpoint(small only){
+                    max-height: 450px;
+                }
+
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    @include breakpoint(medium only){
+                        flex: 1;
+                    }
+                }
+            }
+
+            @include breakpoint(small only){
+                order: 1;
+            }
+        }
+
+        @include sgd-colors('background-color');
+    }
+
+}

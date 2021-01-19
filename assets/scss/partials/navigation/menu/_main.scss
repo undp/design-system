@@ -190,10 +190,10 @@
                         .arrow-3 {
                             svg {
                                 color: $white;
+                            }
 
-                                .transition-arrow {
-                                    transform: translate(3px, -3px);
-                                }
+                            .transition-arrow {
+                                transform: translate(3px, -3px);
                             }
                         }
                     }
