@@ -20,6 +20,7 @@ class ModalSdgs {
     }
 
     init() {
+        this.appearCards()
         this.listenerOpenModal()
         this.listenerCloseModal()
         this.listenerWindowClick()
@@ -66,6 +67,10 @@ class ModalSdgs {
     }
 
     close() {
+        const $cards = $('.cards-slider')
+
+        $cards.find('.sdg-card-container').removeClass('in-viewport')
+
         this.removeColorClass()
         this.$body.removeClass(this.classBodyModalOpen)
         this.$modal.addClass(this.classHide).removeClass(this.classModalOpen)
@@ -83,6 +88,24 @@ class ModalSdgs {
         this.$sdgDeepDiveHero.find('.description-container').removeClass(this.color)
         this.$modal.find('.stat-card').removeClass('sdg ' +  this.color)
         this.$modal.find('.single-content-card-accent-color').removeClass('sdg ' +  this.color)
+    }
+
+    appearCards() {
+        const $cards = $('.cards-slider')
+        const threshold = this.$window.height() * 0.75
+        const $animTarget = $cards.find('.sdg-card-container')
+
+        let cardsPos
+        let shouldAnimate = false
+
+        this.$modalContent.scroll(() => {
+            cardsPos = $cards.position()
+            shouldAnimate = cardsPos.top <= threshold
+
+            if (shouldAnimate && !$animTarget.hasClass('in-viewport')) {
+                $animTarget.addClass('in-viewport')
+            }
+        })
     }
 }
 

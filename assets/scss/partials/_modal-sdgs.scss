@@ -11,7 +11,7 @@
     width: 100%;
     position: fixed;
     top: $height-nav;
-    overflow: hidden;
+    overflow-x: hidden;
     z-index: $z-index-modal;
     backdrop-filter: blur(30px);
     background-color: rgba(237,239,240, .95);
@@ -37,7 +37,6 @@
     }
 
     @include breakpoint(small only) {
-        overflow-y: auto;
         padding-left: 12px;
     }
 
@@ -48,7 +47,6 @@
             padding: 20px 20px 0 0;
             background-color: $white;
             justify-content: flex-end;
-            box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
         }
 
         .btn-close {
@@ -84,9 +82,7 @@
         box-shadow: -3px 0 6px rgba($black, 0.16);
 
         @include breakpoint(small only){
-            height: unset;
             margin-top: -1px;
-            overflow-y: unset;
             box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
         }
 
