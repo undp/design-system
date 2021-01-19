@@ -1,0 +1,85 @@
+.single-content-card-accent-color{
+    position: relative;
+    border-top: 2px solid $black;
+    transition: background-color 0.5s ease;
+
+    .card-content{
+        padding: 15px 20px 20px;
+
+        .title{
+            margin-top: 35px;
+            overflow: hidden;
+            max-height: 275px;
+
+            @include breakpoint(medium down){
+                max-height: 270px;
+            }
+
+            h4{
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 7;
+                -webkit-box-orient: vertical;
+
+                @include breakpoint(medium down){
+                    -webkit-line-clamp: 10;
+                }
+            }
+        }
+
+        .cta{
+            bottom: 20px;
+            position: absolute;
+        }
+    }
+
+    &.accent-yellow{
+        background-color: $yellow-6;
+
+        &:hover{
+            background-color: $yellow;
+        }
+    }
+
+    &.accent-green{
+        background-color: $green-6;
+
+        &:hover{
+            background-color: $green-0;
+        }
+    }
+
+    &.accent-red{
+        background-color: $red-6;
+
+        &:hover{
+            background-color: $red-3;
+        }
+    }
+
+    &.accent-blue{
+        background-color: $light-blue-6;
+
+        &:hover{
+            background-color: $light-blue-0;
+        }
+    }
+
+    &.sdg{
+        color: $white;
+
+        @include sgd-colors('background-color', true);
+
+        .cta .text-link{
+            color: $white;
+
+            &.arrow-2 {
+
+                .link-arrow {
+                    stroke: $white;
+                }
+            }
+        }
+    }
+
+}

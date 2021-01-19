@@ -1,0 +1,25 @@
+[
+    {
+        "link": "",
+        "style": "style-1",
+        "cta": "Read More",
+        "tag": "Content tag",
+        "title": "Lorem ipsum dolor sit amet",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consectetur, eaque illo inventore magni perferendis quisquam tempore totam. Commodi dignissimos dolore earum id, itaque mollitia repudiandae suscipit velit veritatis voluptates?"
+    },
+    {
+        "link": "",
+        "style": "style-2",
+        "cta": "Read More",
+        "tag": "Content tag",
+        "title": "Lorem ipsum adipisicing"
+    },
+    {
+        "link": "",
+        "style": "style-3",
+        "cta": "Read More",
+        "tag": "Content tag",
+        "title": "Lorem ipsum dolor repudiandae",
+        "image": "/assets/images/placeholder/cards/single-content-card-image.png"
+    }
+]

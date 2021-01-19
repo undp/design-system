@@ -1,23 +1,32 @@
 // Vendor
 @import "vendor/foundation/foundation";
 @import "~@glidejs/glide/src/assets/sass/glide.core";
+@import "~tiny-slider/src/tiny-slider";
+@import "~prismjs/themes/prism-okaidia.css";
+@import "~prismjs/plugins/toolbar/prism-toolbar.css";
+@import "~prismjs/plugins/line-numbers/prism-line-numbers.css";
 
 // Common
 @import 'base/variables';
 @import 'base/fonts';
 @import 'base/base';
+@import 'base/select';
+@import 'base/inputs';
 @import 'base/typography';
 @import 'base/buttons';
+@import 'base/breadcrumb';
+@import 'base/sdg-colors';
 @import 'base/animations';
-@import 'base/inputs';
-@import 'base/select';
-@import 'base/multi-select';
+@import 'base/language-html';
 
 // Partials
-@import 'partials/footer';
+@import "partials/footer";
+@import 'partials/modal-sdgs';
+@import 'partials/multi-select';
 @import 'partials/custom-select';
-@import 'partials/slider-bullets';
 @import 'partials/custom-checkbox';
+@import 'partials/slider-bullets';
+@import 'partials/sdg-stat-cards-slider-mobile';
 
 @import 'partials/navigation/main';
 @import 'partials/navigation/menu/main';
@@ -30,27 +39,37 @@
 @import 'partials/navigation/modals/locations/main';
 @import "partials/navigation/modals/locations/mobile/filter-options";
 
-// Modules
-@import "modules/hero";
-@import "modules/featured-stories";
-@import "modules/our-mission";
-@import "modules/our-expertise";
-@import "modules/global-impact";
-@import "modules/publications";
-@import "modules/twitter-feed";
-@import "modules/trusted-partnerships";
+// Molecules
+@import "molecules/cards/stat-global";
+@import "molecules/cards/image-card";
+@import "molecules/cards/content-card";
+@import "molecules/cards/publication";
+@import "molecules/cards/tweet";
+@import "molecules/cards/expertise-card";
+@import "molecules/statistics-figures/sdg-card";
+@import "molecules/statistics-figures/stat-card";
+@import "molecules/cards/single-content-card-general";
+@import "molecules/cards/single-content-card-accent-color";
+@import "molecules/cards/single-content-card-image";
+@import "molecules/cards/single-content-card-body";
 
-// Components
-@import "components/stat-card";
-@import "components/image-card";
-@import "components/story-card";
-@import "components/publication";
-@import "components/tweet";
+// Organisms
+@import "organisms/hero/hero";
+@import "organisms/hero/homepage-hero";
+@import "organisms/hero/global-hero-3";
+@import "organisms/hero/country-hero-3";
+@import "organisms/hero/sdg-deep-dive-hero";
+@import "organisms/text/big-copy-h1";
+@import "organisms/text/bulleted-list";
+@import "organisms/content-cards/featured-stories";
+@import "organisms/carousel/publications";
+@import "organisms/homepage/our-mission";
+@import "organisms/homepage/our-expertise";
+@import "organisms/homepage/global-impact";
+@import "organisms/homepage/twitter-feed";
+@import "organisms/homepage/trusted-partnerships";
 
-// Components
-@import "components/stat-card";
-@import "components/image-card";
-@import "components/expertise-card";
-
-//pages
-@import 'pages/styleguide';
+// Pages
+@import "pages/docs";
+@import "pages/the-sdgs";
+@import "pages/styleguide";

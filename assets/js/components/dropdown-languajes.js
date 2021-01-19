@@ -11,6 +11,7 @@ class DropDown {
     init() {
         this.dropDownListeners();
         this.bindWindowListenerClick();
+        this.listenerKeyPress();
     }
 
     dropDownListeners() {
@@ -38,6 +39,15 @@ class DropDown {
             }
         });
     }
+    listenerKeyPress() {
+        this.$window.keyup((e) => {
+            if (e.keyCode === 27 && this.dropdownAcitionOpen &&
+                this.dropdownAcitionOpen.hasClass('active')) { //esc
+                this.dropdownToggle()
+            }
+        });
+    }
+
 
     dropdownToggle() {
         this.dropdownOptions.toggleClass('hide');

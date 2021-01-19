@@ -1,10 +1,13 @@
 import 'foundation-sites/dist/js/foundation'
+import ModalSdgs from "../classes/ModalSdgs";
 
 class Menu {
 
     constructor(container) {
         this.expanded = false
         this.currentSubmenu = '';
+        this.navPreviewWidth = 0
+        this.navCurrrentWidth = 0
         this.hiddenClass = 'hide'
         this.menuOpenClass = 'is-active'
         this.dataBtnBack = '[data-action-back]'
@@ -14,6 +17,7 @@ class Menu {
         this.$body = $('body')
         this.$window = $(window)
         this.$container = container
+        this.$header = $('[data-navigation]');
         this.$middleLogo = '[data-middle-logo]'
         this.$subMenus = $('.menu-item-options')
         this.$primaryNav = $('[data-primary-navigation]')
@@ -37,11 +41,19 @@ class Menu {
 
     bindHamburgerEvents() {
         this.$hamburguer.click(() => {
+            //get the current size ( if not open  window size  + scroll size)
+            this.navPreviewWidth = this.$header.width();
+
             this.expanded = this.$hamburguer.hasClass(this.menuOpenClass);
             if (this.expanded) this.closeMenu()
             else this.openMenu()
             this.$hamburguer.toggleClass(this.menuOpenClass);
             this.closeSubmenu()
+
+            //get the new current size after open/close menu (window size +/- scroll size
+            this.navCurrrentWidth = this.$header.width();
+
+            this.navSetMargin()
         })
     }
 
@@ -91,6 +103,7 @@ class Menu {
 
     openMenu() {
         this.closeModals();
+        this.closeModalSdg();
         this.$primaryNav.addClass('open');
         this.$body.addClass(this.bodyMenuOpenClass)
         this.$mainMenu.removeClass(this.hiddenClass);
@@ -122,6 +135,17 @@ class Menu {
             $(modal).removeClass(this.classModalOpen);
             $('#' + $(modal).data('modal')).addClass(this.hiddenClass);
         });
+    }
+
+    closeModalSdg() {
+        const modalSdg = new ModalSdgs();
+        modalSdg.close();
+    }
+
+    //the modal hide the (scroll y) so we add his width on navigation to keep the same size
+    navSetMargin() {
+        let pixels = this.navCurrrentWidth - this.navPreviewWidth;
+        this.$header.css('padding-right', pixels > 0 ? pixels : 0);
     }
 }
 

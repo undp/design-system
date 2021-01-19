@@ -1,0 +1,34 @@
+.single-content-card-image,
+.single-content-card-body,
+.single-content-card-accent-color{
+    margin-top: 25px;
+    min-height: 405px;
+    position: relative;
+    border-top: 2px solid $black;
+
+    @include breakpoint(medium down){
+        margin: 25px auto 0;
+        max-width: 545px;
+    }
+
+    &:hover{
+        .link-arrow-group {
+            transform: translateX(0);
+
+            .arrow-line{
+                display: unset;
+            }
+
+            .arrow-point{
+                transform: translateX(31px);
+            }
+        }
+    }
+}
+
+.single-content-card-image,
+.single-content-card-body{
+    &:hover{
+        background-color: $dark-blue-7;
+    }
+}
