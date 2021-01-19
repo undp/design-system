@@ -1,44 +1,44 @@
-import Glide from '@glidejs/glide/';
-import { tns } from 'tiny-slider/src/tiny-slider'
+
+
 class ModalSdgs {
+
     constructor() {
         this.$body = $('body')
-        this.$window = $(window);
+        this.$window = $(window)
         this.$modal = $('#modal-sdgs')
         this.$openModal = $('.sdg-card')
         this.$modalBtnClose = this.$modal.find('.btn-close')
         this.$modalContent = this.$modal.find('.modal-content')
 
-        this.url = null;
-        this.color = null;
-        this.classHide = 'hide';
-        this.classModalOpen = 'open';
+        this.url = null
+        this.color = null
+        this.classHide = 'hide'
+        this.classModalOpen = 'open'
         this.classBodyModalOpen = 'modal-open'
 
-        this.$sdgDeepDiveHero = $('.sdg-deep-dive-hero');
-        this.$glideExpertiseSection = $('.sdg-stat-cards-slider');
+        this.$sdgDeepDiveHero = $('.sdg-deep-dive-hero')
     }
 
     init() {
-        this.listnerOpenModal();
-        this.listenerCloseModal();
-        this.listenerWindowClick();
-        this.listenerKeyPress();
+        this.appearCards()
+        this.listenerOpenModal()
+        this.listenerCloseModal()
+        this.listenerWindowClick()
+        this.listenerKeyPress()
     }
 
-    listnerOpenModal() {
+    listenerOpenModal() {
         this.$openModal.click((current) => {
-            this.url = $(current.currentTarget).data('url');
+            this.url = $(current.currentTarget).data('url')
             this.color = $(current.currentTarget).data('color')
-            this.open();
-            this.addColorClass();
-            this.createSlider();
+            this.open()
+            this.addColorClass()
         })
     }
 
     listenerCloseModal() {
         this.$modalBtnClose.click(() => {
-            this.close();
+            this.close()
         })
     }
 
@@ -47,9 +47,9 @@ class ModalSdgs {
             if (this.$modal.has(evt.target).length &&
                 this.$modal.hasClass(this.classModalOpen) &&
                 !this.$modalContent.has(evt.target).length) {
-                this.close();
+                this.close()
             }
-        });
+        })
     }
 
     listenerKeyPress() {
@@ -57,49 +57,57 @@ class ModalSdgs {
             if (e.keyCode === 27) { //esc
                 this.close()
             }
-        });
+        })
     }
-
 
     open() {
         this.$body.addClass(this.classBodyModalOpen)
-        this.$modal.removeClass(this.classHide).addClass(this.classModalOpen);
-        this.$modalContent.animate( { scrollTop : 0 }, 800 );
+        this.$modal.removeClass(this.classHide).addClass(this.classModalOpen)
+        this.$modalContent.animate( { scrollTop : 0 }, 800 )
     }
 
     close() {
-        this.$modal.addClass(this.classHide).removeClass(this.classModalOpen);
+        const $cards = $('.cards-slider')
+
+        $cards.find('.sdg-card-container').removeClass('in-viewport')
+
+        this.removeColorClass()
         this.$body.removeClass(this.classBodyModalOpen)
-        this.removeColorClass();
+        this.$modal.addClass(this.classHide).removeClass(this.classModalOpen)
     }
 
     addColorClass(){
-        this.$sdgDeepDiveHero.find('.title').addClass(this.color);
-        this.$sdgDeepDiveHero.find('.description-container').addClass(this.color);
-        this.$modal.find('.stat-card').addClass('sdg ' +  this.color);
-        this.$modal.find('.single-content-card-accent-color').addClass('sdg ' +  this.color);
+        this.$sdgDeepDiveHero.find('.title').addClass(this.color)
+        this.$sdgDeepDiveHero.find('.description-container').addClass(this.color)
+        this.$modal.find('.stat-card').addClass('sdg ' +  this.color)
+        this.$modal.find('.single-content-card-accent-color').addClass('sdg ' +  this.color)
     }
 
     removeColorClass(){
-        this.$sdgDeepDiveHero.find('.title').removeClass(this.color);
-        this.$sdgDeepDiveHero.find('.description-container').removeClass(this.color);
-        this.$modal.find('.stat-card').removeClass('sdg ' +  this.color);
-        this.$modal.find('.single-content-card-accent-color').removeClass('sdg ' +  this.color);
+        this.$sdgDeepDiveHero.find('.title').removeClass(this.color)
+        this.$sdgDeepDiveHero.find('.description-container').removeClass(this.color)
+        this.$modal.find('.stat-card').removeClass('sdg ' +  this.color)
+        this.$modal.find('.single-content-card-accent-color').removeClass('sdg ' +  this.color)
     }
 
-    createSlider(){
+    appearCards() {
+        const $cards = $('.cards-slider')
+        const threshold = this.$window.height() * 0.75
+        const $animTarget = $cards.find('.sdg-card-container')
 
-        let slider = tns({
-            container: '.sdg-stat-cards-slider',
-            "autoWidth": true,
-            "items": 3.3,
-            "gutter": 10,
-            "mouseDrag": true,
-            "swipeAngle": false,
-            "speed": 400,
-            "controls": false,
-            "navAsThumbnails": true
-        });
+        let cardsPos
+        let shouldAnimate = false
+
+        this.$modalContent.scroll(() => {
+            cardsPos = $cards.position()
+            shouldAnimate = cardsPos.top <= threshold
+
+            if (shouldAnimate && !$animTarget.hasClass('in-viewport')) {
+                $animTarget.addClass('in-viewport')
+            }
+        })
     }
 }
-export default ModalSdgs;
+
+
+export default ModalSdgs

@@ -11,6 +11,7 @@
     width: 100%;
     position: fixed;
     top: $height-nav;
+    overflow-x: hidden;
     z-index: $z-index-modal;
     backdrop-filter: blur(30px);
     background-color: rgba(237,239,240, .95);
@@ -22,10 +23,9 @@
 
     &.open {
         .grid-container {
-            animation: animate  .4s forwards;
+            animation: animate .4s forwards;
         }
     }
-
 
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
         background-color: transparent;
@@ -37,7 +37,6 @@
     }
 
     @include breakpoint(small only) {
-        overflow-y: auto;
         padding-left: 12px;
     }
 
@@ -48,7 +47,6 @@
             padding: 20px 20px 0 0;
             background-color: $white;
             justify-content: flex-end;
-            box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
         }
 
         .btn-close {
@@ -84,9 +82,7 @@
         box-shadow: -3px 0 6px rgba($black, 0.16);
 
         @include breakpoint(small only){
-            height: unset;
             margin-top: -1px;
-            overflow-y: unset;
             box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
         }
 
@@ -111,15 +107,31 @@
         }
 
         .cards-slider {
-            margin-top: 20px;
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            margin-top: 103px;
+            padding-left: 83px;
+            margin-right: -25px;
+            padding-bottom: 40px;
 
-            .cell {
-                &:first-child {
-                    padding-left: 0;
-                }
+            &::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: linear-gradient(to bottom, transparent 0%, $black 50%, transparent 100%);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: black;
+            }
+
+            > .sdg-card-container {
+                padding: 0 12px;
+                min-width: 236px;
 
                 &:last-child {
-                    padding-right: 0;
+                    padding-right: 25px;
                 }
             }
         }
