@@ -27,7 +27,7 @@ class SdgCards {
                     switch (item.style) {
                         case 'style-1':
                             this.$container.append(`
-                            <div class="cell medium-6 large-4">
+                            <div class="cell medium-6 large-4 sdg-modal-card">
                                 <a href="${ item.link ? item.link :  this.currentSite }">
                                 <div class="single-content-card-body">
                                      <div class="card-content">
@@ -52,7 +52,7 @@ class SdgCards {
                             break;
                         case 'style-2':
                             this.$container.append(`
-                            <div class="cell medium-6 large-4">
+                            <div class="cell medium-6 large-4 sdg-modal-card">
                                 <a href="${ item.link ? item.link : this.currentSite }">
                                     <div class="single-content-card-accent-color">
                                         <div class="card-content">
@@ -73,7 +73,7 @@ class SdgCards {
                             break;
                         case 'style-3':
                             this.$container.append(`
-                            <div class="cell medium-6 large-4">
+                            <div class="cell medium-6 large-4 sdg-modal-card">
                                 <a href="${ item.link ? item.link : this.currentSite }">
                                     <div class="single-content-card-image">
                                         <div class="card-content">
