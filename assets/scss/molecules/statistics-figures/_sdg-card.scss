@@ -59,7 +59,10 @@
         text-transform: uppercase;
 
         @include breakpoint(medium down){
-            margin-left: 290px;
+            margin-left: 240px;
+        }
+
+        @include breakpoint(small only) {
             max-width: 450px;
         }
 
