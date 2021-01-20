@@ -7,7 +7,7 @@ class ModalSdgs {
         this.$body = $('body')
         this.$window = $(window)
         this.$modal = $('#modal-sdgs')
-        this.$openModal = $('.sdg-card')
+        this.$openModal = $('.sdg-card-list .sdg-card')
         this.$modalBtnClose = this.$modal.find('.btn-close')
         this.$modalContent = this.$modal.find('.modal-content')
         this.$cardsSliderContainer = this.$modal.find('.cards-slider-container')
@@ -15,11 +15,16 @@ class ModalSdgs {
         this.glide = null
         this.url = null
         this.color = null
+        this.title = null
+        this.number = null
         this.classHide = 'hide'
         this.classModalOpen = 'open'
         this.classBodyModalOpen = 'modal-open'
 
+        this.$nextSdg = null
+        this.$sdgCardList = $('.sdg-card-list')
         this.$sdgDeepDiveHero = $('.sdg-deep-dive-hero')
+        this.$nextSdgCta = this.$modal.find('.next-sdg-container')
     }
 
     init() {
@@ -33,11 +38,42 @@ class ModalSdgs {
 
     listenerOpenModal() {
         this.$openModal.click((current) => {
-            this.url = $(current.currentTarget).data('url')
-            this.color = $(current.currentTarget).data('color')
+            const $current = $(current.currentTarget);
+
+            this.url = $current.data('url')
+            this.color = $current.data('color')
+            this.title = $current.data('title')
+            this.number = $current.data('number')
+            this.$nextSdg = $current.next();
+
             this.open()
             this.addColorClass()
+            this.changeModalData()
         })
+
+        this.$nextSdgCta.click(() => {
+            const nextSdg = this.$nextSdgCta.find('.sdg-card')
+            this.$sdgCardList.find(`[data-number="${nextSdg.data('number')}"]`).trigger('click')
+        })
+    }
+
+    changeModalData() {
+        this.$sdgDeepDiveHero.find('.title-two').html(this.title)
+        this.$sdgDeepDiveHero.find('.title-one span').html(this.number)
+
+        if(this.number === 17) {
+            this.$nextSdgCta.addClass('hide')
+        } else {
+            this.$nextSdgCta.removeClass('hide')
+
+            const nextSdg = this.$nextSdgCta.find('.sdg-card')
+
+            nextSdg.removeClass('color-' + this.number)
+            nextSdg.addClass('color-' + this.$nextSdg.data('number'))
+            nextSdg.data('number', this.$nextSdg.data('number'))
+            this.$nextSdgCta.find('.number').html(this.$nextSdg.data('number'))
+            this.$nextSdgCta.find('.title').html(this.$nextSdg.data('title'))
+        }
     }
 
     listenerCloseModal() {

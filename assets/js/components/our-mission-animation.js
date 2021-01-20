@@ -21,11 +21,12 @@ const init = function () {
         let startWhiteToBlue = "top-=20% top+=105px"
         let endWhiteToBlue = "+=400px"
 
-        if ($(window).width() < Foundation.MediaQuery.get('medium')) {
-            startWhiteToBlue = "top-=20% top+=70px"
+        if (Foundation.MediaQuery.upTo('small')) {
+            startWhiteToBlue = "top-=30% top+=70px"
             endWhiteToBlue = "+=100px"
-        }else if ($(window).width() < Foundation.MediaQuery.get('large')) {
-            startWhiteToBlue = "top-=10% top+=70px"
+        }
+        else if (Foundation.MediaQuery.upTo('medium')) {
+            startWhiteToBlue = "top-=22% top+=70px"
             endWhiteToBlue = "+=200px"
         }
 
@@ -46,8 +47,8 @@ const init = function () {
     function createScrollsBlueToWhite(){
         let startBlueToWhite = "bottom top+=200px"
 
-        if ($(window).width() < Foundation.MediaQuery.get('medium')) {
-            startBlueToWhite = "bottom+=200px top+=70px"
+        if (Foundation.MediaQuery.upTo('small')) {
+            startBlueToWhite = "bottom+=100px top+=70px"
         }
 
         blueToWhite = gsap.fromTo('main',
@@ -60,7 +61,7 @@ const init = function () {
             start: startBlueToWhite,
             end: "+=200px",
             scrub: true,
-            animation: blueToWhite,
+            animation: blueToWhite
         });
     }
 
@@ -71,7 +72,7 @@ const init = function () {
     function createScrollsAppearExpertise(){
         let startExpertise = "bottom-=100px top+=105px"
 
-        if ($(window).width() < Foundation.MediaQuery.get('medium')) {
+        if (Foundation.MediaQuery.upTo('small')) {
             startExpertise = "bottom+=300px top+=105px"
         }
 

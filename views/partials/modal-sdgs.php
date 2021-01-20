@@ -1,8 +1,6 @@
 <?php
-
 use helpers\View;
 use helpers\Svg;
-
 ?>
 
 <div id="modal-sdgs" class="modal-sdgs hide">
@@ -47,7 +45,7 @@ use helpers\Svg;
 
                         <div class="glide__track cards-slider" data-glide-el="track">
                             <ul class="glide__slides">
-                                <li class="glide__slide sdg-card-container right-left delay-2">
+                                <li class="glide__slide sdg-card-container right-left delay-1">
                                     <?php View::render('molecules/statistics-figures/stat-card', [
                                         'number' => 821,
                                         'title' => 'Percent',
@@ -82,7 +80,6 @@ use helpers\Svg;
                                         'description' => '1 in 3 women of reproductive age is anemic.'
                                     ]) ?>
                                 </li>
-                            </li>
                             </ul>
                         </div>
                     </div>
@@ -92,9 +89,7 @@ use helpers\Svg;
                 </div>
                 <div class="next-sdg-container">
                     <?php View::render('molecules/statistics-figures/sdg-card', [
-                        'class' => 'color-3 next-card',
-                        'number' => '3',
-                        'title' => 'Good Health and Well Being',
+                        'class' => 'next-card'
                     ]); ?>
                 </div>
             </div>
