@@ -234,7 +234,7 @@ class LocationFilters {
     }
 
     mobileUpdateFilters() {
-        if (Foundation.MediaQuery.is('medium down')) {
+        if (Foundation.MediaQuery.upTo('medium')) {
             this.printTotalMatches();
             this.printTotalFiltersApplied();
         }

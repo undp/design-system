@@ -26,7 +26,7 @@ const init = function () {
         });
     }
 
-    if($(window).width() < Foundation.MediaQuery.get('medium')){
+    if(Foundation.MediaQuery.upTo('small')){
         openMenuOptions();
     }
 
@@ -35,7 +35,7 @@ const init = function () {
             $('.footer-body').find('.list').show();
         }
 
-        if($(window).width() < Foundation.MediaQuery.get('medium')){
+        if(Foundation.MediaQuery.upTo('small')){
             openMenuOptions();
         }
     })
