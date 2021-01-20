@@ -25,6 +25,9 @@ switch ($subpath) {
     case '/news-centre':
         View::render('pages/news-centre');
         break;
+    case '/article-deepdive':
+        View::render('pages/article-deepdive');
+        break;
     case '/stories':
         View::render('pages/stories');
         break;
