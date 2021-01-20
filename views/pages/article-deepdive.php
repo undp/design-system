@@ -38,7 +38,8 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
 
             <div class="cell small-12 large-9 large-offset-1">
                 <h2 class="article-title heading h2">
-                    Moyamba and Pujehun Districts score joint UNDP, WFP-supported project 80% for Peacebuilding Project’s Success amidst COVID-19
+                    Moyamba and Pujehun Districts score joint UNDP, WFP-supported project 80% for Peacebuilding
+                    Project’s Success amidst COVID-19
                 </h2>
 
                 <div class="posted-date tag">Posted on November 19, 2020</div>
@@ -51,8 +52,8 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
 
             <div class="image-container cell small-12">
                 <div
-                    class="featured-image"
-                    style="background-image: url('<?= "$imgPath/article-deepdive-featured-image.png" ?>')">
+                        class="featured-image"
+                        style="background-image: url('<?= "$imgPath/article-deepdive-featured-image.png" ?>')">
                 </div>
             </div>
 
@@ -78,18 +79,25 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
     <section class="article-authors grid-container">
         <div class="grid-x center-children">
             <div class="authors-container cell large-8">
-
-                <div class="grid-x">
-                    <div class="authors-title heading h5">
-                        Author(s)
-                    </div>
-
+                <div class="authors-title heading h5">
+                    Author(s)
+                </div>
+                <div class="authors-information">
                     <div class="author-item">
                         <div class="author-image">
                             <img src="<?= "$imgPath/author-jane-doe.png" ?>" alt="">
                         </div>
                         <div class="author-info">
-                            <div class="author-name medium-copy bold">Jane Doe</div>
+                            <div class="author-name medium-copy">Jane Doe</div>
+                            <div class="job-position medium-copy">Title Organization</div>
+                        </div>
+                    </div>
+                    <div class="author-item">
+                        <div class="author-image">
+                            <img src="<?= "$imgPath/john-smith-author.png" ?>" alt="">
+                        </div>
+                        <div class="author-info">
+                            <div class="author-name medium-copy">John Smith</div>
                             <div class="job-position medium-copy">Title Organization</div>
                         </div>
                     </div>
