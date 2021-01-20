@@ -149,6 +149,15 @@
         }
     }
 
+    .article-text {
+        margin-top: 50px;
+
+        .text-block {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+    }
+
     .separator {
         border-bottom: 3px solid $black;
     }
