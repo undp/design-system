@@ -1,8 +1,10 @@
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+
 let _ = require('lodash')
 
 gsap.registerPlugin(ScrollTrigger)
+
 
 const init = function () {
     let $section = $(".our-mission")
@@ -19,10 +21,10 @@ const init = function () {
         let startWhiteToBlue = "top-=20% top+=105px"
         let endWhiteToBlue = "+=400px"
 
-        if ($(window).width() < 834) {
+        if ($(window).width() < Foundation.MediaQuery.get('medium')) {
             startWhiteToBlue = "top-=20% top+=70px"
             endWhiteToBlue = "+=100px"
-        }else if ($(window).width() < 1194) {
+        }else if ($(window).width() < Foundation.MediaQuery.get('large')) {
             startWhiteToBlue = "top-=10% top+=70px"
             endWhiteToBlue = "+=200px"
         }
@@ -44,7 +46,7 @@ const init = function () {
     function createScrollsBlueToWhite(){
         let startBlueToWhite = "bottom top+=200px"
 
-        if ($(window).width() < 834) {
+        if ($(window).width() < Foundation.MediaQuery.get('medium')) {
             startBlueToWhite = "bottom+=200px top+=70px"
         }
 
@@ -69,7 +71,7 @@ const init = function () {
     function createScrollsAppearExpertise(){
         let startExpertise = "bottom-=100px top+=105px"
 
-        if ($(window).width() < 834) {
+        if ($(window).width() < Foundation.MediaQuery.get('medium')) {
             startExpertise = "bottom+=300px top+=105px"
         }
 
