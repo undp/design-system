@@ -47,6 +47,10 @@
             @include breakpoint(medium down){
                 padding: 0 15px;
             }
+
+            @include breakpoint(small only) {
+                padding: 0;
+            }
         }
 
         .heading.medium-copy{
