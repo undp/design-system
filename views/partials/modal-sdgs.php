@@ -20,50 +20,70 @@ use helpers\Svg;
 
                 <div class="side-spacing">
                     <?php View::render('organisms/hero/sdg-deep-dive-hero') ?>
-                    <div class="grid-x grid-padding-x cards-slider">
-                        <div class="sdg-card-container right-left delay-1">
-                            <?php View::render('molecules/statistics-figures/stat-card', [
-                                'number' => 821,
-                                'title' => 'Percent',
-                                'description' => 'The number of undernourished people reached 821 million in 2017.'
-                            ]) ?>
+
+                    <div class="grid-x grid-padding-x cards-slider-container">
+                        <div class="bullets-container">
+                            <div class="glide__bullets" data-glide-el="controls[nav]">
+                                <div class="control-slider"></div>
+                                <button class="glide__bullet" data-glide-dir="=0" aria-label="Slide 1">
+                                    <span class="show-for-sr">Slide 1</span>
+                                </button>
+                                <button class="glide__bullet" data-glide-dir="=1" aria-label="Slide 2">
+                                    <span class="show-for-sr">Slide 2</span>
+                                </button>
+                                <button class="glide__bullet" data-glide-dir="=2" aria-label="Slide 3">
+                                    <span class="show-for-sr">Slide 3</span>
+                                </button>
+                                <button class="glide__bullet" data-glide-dir="=3" aria-label="Slide 4">
+                                    <span class="show-for-sr">Slide 4</span>
+                                </button>
+                                <button class="glide__bullet" data-glide-dir="=4" aria-label="Slide 5">
+                                    <span class="show-for-sr">Slide 5</span>
+                                </button>
+                            </div>
                         </div>
-                        <div class="sdg-card-container right-left small-delay-3">
-                            <?php View::render('molecules/statistics-figures/stat-card', [
-                                'number' => 63,
-                                'title' => 'Percent',
-                                'description' => 'In 2017 Asia accounted for nearly two thirds, 63 percent, of the world’s hungry.'
-                            ]) ?>
-                        </div>
-                        <div class="sdg-card-container right-left small-delay-4">
-                            <?php View::render('molecules/statistics-figures/stat-card', [
-                                'number' => 22,
-                                'title' => 'Percent',
-                                'description' => 'Nearly 151 million children under five, 22 percent, were still stunted in 2017.'
-                            ]) ?>
-                        </div>
-                        <div class="sdg-card-container right-left small-delay-5">
-                            <?php View::render('molecules/statistics-figures/stat-card', [
-                                'number' => 13,
-                                'title' => 'Percent',
-                                'description' => 'More than 1 in 8 adults is obese.'
-                            ]) ?>
-                        </div>
-                        <div class="sdg-card-container right-left small-delay-6">
-                            <?php View::render('molecules/statistics-figures/stat-card', [
-                                'number' => 'One',
-                                'title' => 'Percent',
-                                'description' => '1 in 3 women of reproductive age is anemic.'
-                            ]) ?>
-                        </div>
-                        <div class="sdg-card-container right-left small-delay-7">
-                            <?php View::render('molecules/statistics-figures/stat-card', [
-                                'number' => 'One',
-                                'title' => 'Percent',
-                                'description' => '1 in 3 women of reproductive age is anemic.'
-                            ]) ?>
+
+                        <div class="glide__track cards-slider" data-glide-el="track">
+                            <ul class="glide__slides">
+                                <li class="glide__slide sdg-card-container right-left delay-1">
+                                    <?php View::render('molecules/statistics-figures/stat-card', [
+                                        'number' => 821,
+                                        'title' => 'Percent',
+                                        'description' => 'The number of undernourished people reached 821 million in 2017.'
+                                    ]) ?>
+                                </li>
+                                <li class="glide__slide sdg-card-container right-left delay-3">
+                                    <?php View::render('molecules/statistics-figures/stat-card', [
+                                        'number' => 63,
+                                        'title' => 'Percent',
+                                        'description' => 'In 2017 Asia accounted for nearly two thirds, 63 percent, of the world’s hungry.'
+                                    ]) ?>
+                                </li>
+                                <li class="glide__slide sdg-card-container right-left delay-4">
+                                    <?php View::render('molecules/statistics-figures/stat-card', [
+                                        'number' => 22,
+                                        'title' => 'Percent',
+                                        'description' => 'Nearly 151 million children under five, 22 percent, were still stunted in 2017.'
+                                    ]) ?>
+                                </li>
+                                <li class="glide__slide sdg-card-container right-left delay-5">
+                                    <?php View::render('molecules/statistics-figures/stat-card', [
+                                        'number' => 13,
+                                        'title' => 'Percent',
+                                        'description' => 'More than 1 in 8 adults is obese.'
+                                    ]) ?>
+                                </li>
+                                <li class="glide__slide sdg-card-container right-left delay-6">
+                                    <?php View::render('molecules/statistics-figures/stat-card', [
+                                        'number' => 'One',
+                                        'title' => 'Percent',
+                                        'description' => '1 in 3 women of reproductive age is anemic.'
+                                    ]) ?>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+
                     <?php View::render('organisms/text/bulleted-list') ?>
                     <?php View::render('organisms/content-cards/sdg-content-cards') ?>
                 </div>
