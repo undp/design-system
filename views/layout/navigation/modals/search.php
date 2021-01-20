@@ -13,7 +13,7 @@ use helpers\Svg;
                         <?php Svg::render('icon-search-black', true, 'Search Icon Input') ?>
                     </div>
                     <label class="show-for-sr" for="search">Search</label>
-                    <input class="input-search title" type="text" name="search" id="search">
+                    <input class="input-search title" type="search" name="search" id="search">
                 </div>
             </div>
             <div class="cell lists">
