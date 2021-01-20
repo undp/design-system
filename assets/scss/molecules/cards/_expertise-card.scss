@@ -83,7 +83,7 @@
         }
 
         @include breakpoint(medium down){
-            padding: 0 15px;
+            padding: 0 15px 0 0;
         }
 
         @include breakpoint(small only){

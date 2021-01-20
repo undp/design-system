@@ -158,15 +158,7 @@ use helpers\View;
         <div class="glide__track" data-glide-el="track">
             <div class="glide__slides">
                 <div class="grid-x our-expertise-row glide__slide">
-                    <div class="small-offset-1 small-11 medium-offset-1 medium-5 hide-for-small-only">
-                        <div class="section-title">
-                            <h2 class="heading h2">Our</h2>
-                            <h2 class="heading h2">
-                                Expertise
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="cell small-offset-1 small-11 medium-3 expertise-section-text">
+                    <div class="cell small-offset-1 small-9 medium-3 expertise-section-text">
                         <?php
                         View::render('molecules/cards/expertise-card', [
                             'title' => 'People',
@@ -197,7 +189,7 @@ use helpers\View;
                             </div>
                         </div>
                     </div>
-                    <div class="cell small-11 medium-3 expertise-section-text">
+                    <div class="cell small-offset-1 small-9 medium-3 expertise-section-text">
                         <?php
                         View::render('molecules/cards/expertise-card', [
                             'title' => 'Planet',
@@ -208,7 +200,7 @@ use helpers\View;
                     </div>
                 </div>
                 <div class="grid-x our-expertise-row glide__slide">
-                    <div class="cell small-11 medium-3 medium-offset-6 expertise-section-text">
+                    <div class="cell small-offset-1 small-9 medium-3 medium-offset-6 expertise-section-text">
                         <?php
                         View::render('molecules/cards/expertise-card', [
                             'title' => 'Prosperity',
@@ -239,7 +231,7 @@ use helpers\View;
                             </div>
                         </div>
                     </div>
-                    <div class="cell small-11 medium-3 expertise-section-text">
+                    <div class="cell small-offset-1 small-9 medium-3 expertise-section-text">
                         <?php
                         View::render('molecules/cards/expertise-card', [
                             'title' => 'Peace',
@@ -250,7 +242,7 @@ use helpers\View;
                     </div>
                 </div>
                 <div class="grid-x our-expertise-row glide__slide">
-                    <div class="cell small-11 medium-3 medium-offset-6 expertise-section-text">
+                    <div class="cell small-offset-1 small-9 medium-3 medium-offset-6 expertise-section-text">
                         <?php
                         View::render('molecules/cards/expertise-card', [
                             'title' => 'Partnership',
