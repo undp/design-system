@@ -40,6 +40,8 @@
 
             @include breakpoint(medium down) {
                 height: unset;
+                flex-flow: column;
+                flex-direction: column;
             }
 
             .cell-search {
@@ -70,7 +72,7 @@
 
                 .header-modal {
                     @include breakpoint(medium down) {
-                        padding: 0 30px;
+                        padding: 0 15px;
                     }
 
                     .title {
@@ -202,6 +204,7 @@
                 }
 
                 @include breakpoint(medium down) {
+                    flex: 1 0 auto;
                     position: static;
                     box-shadow: unset;
                     padding: 0 0 0 15px;
@@ -214,7 +217,7 @@
 
                 .inputs {
                     .search-input-group {
-                        max-width: 230px;
+                        flex: 1 0 auto;
                         margin-right: 45px;
 
                         @include breakpoint(xlarge down){
@@ -233,6 +236,7 @@
                             margin: 0;
                             height: 58px;
                             padding: 20px;
+                            border-radius: 0;
                             border-bottom: 2px solid $black;
                             min-width: calc(100% - 58px);
                             background-color: transparent;
@@ -262,7 +266,9 @@
                     }
 
                     .search-select-group {
-                        margin-right: 30px;
+                        &:not(:last-child) {
+                            margin-right: 30px;
+                        }
 
                         @include breakpoint(xlarge down){
                             margin-right: 8px;
@@ -368,9 +374,9 @@
                         right: 0;
                         padding: 0;
                         width: 100%;
-                        margin-top: 30px;
+                        margin-bottom: 0;
+                        margin-top: 20px;
                         position: static;
-                        max-height: 250px;
                     }
 
                     &::-webkit-scrollbar {
