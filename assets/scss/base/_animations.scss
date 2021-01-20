@@ -43,3 +43,10 @@
         transition-delay: 100ms * $i;
     }
 }
+
+
+@for $i from 1 to 20 {
+    .small-delay-#{$i} {
+        transition-delay: 50ms * $i;
+    }
+}
