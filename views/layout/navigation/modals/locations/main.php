@@ -30,40 +30,38 @@ use helpers\View;
                 </div>
             </div>
             <div class="cell large-auto cell-list-offices">
-                <div>
-                    <div class="flex-container inputs">
-                        <div class="flex-container search-input-group">
-                            <label class="show-for-sr" for="search-offices">Search Offices</label>
-                            <button type="button" class="flex-container align-middle btn-search"
-                                    aria-label="Submit search">
-                                <?php Svg::render('icon-search-modal-locations', true, 'Search Offices') ?>
-                                <span class="show-for-sr">Submit search</span>
-                            </button>
-                            <input class="big-copy input-search" type="text" name="search-offices" id="search-offices"
-                                   placeholder="Search offices" data-input-search>
-                        </div>
-                        <div class="search-select-group show-for-large">
-                            <?php
-                            View::render('partials/multi-select', [
-                                'id' => 'regions-select',
-                                'class' => 'regions-select',
-                                'ariaLabel' => 'Regions',
-                                'title' => 'Region',
-                                'dataType' => 'region'
-                            ])
-                            ?>
-                        </div>
-                        <div class="search-select-group show-for-large">
-                            <?php
-                            View::render('partials/multi-select', [
-                                'id' => 'office-type-select',
-                                'class' => 'office-type-select',
-                                'ariaLabel' => 'Offices',
-                                'title' => 'Office type',
-                                'dataType' => 'office'
-                            ])
-                            ?>
-                        </div>
+                <div class="flex-container inputs">
+                    <div class="flex-container search-input-group">
+                        <label class="show-for-sr" for="search-offices">Search Offices</label>
+                        <button type="button" class="flex-container align-middle btn-search"
+                                aria-label="Submit search">
+                            <?php Svg::render('icon-search-modal-locations', true, 'Search Offices') ?>
+                            <span class="show-for-sr">Submit search</span>
+                        </button>
+                        <input class="big-copy input-search" type="text" name="search-offices" id="search-offices"
+                               placeholder="Search offices" data-input-search>
+                    </div>
+                    <div class="search-select-group show-for-large">
+                        <?php
+                        View::render('partials/multi-select', [
+                            'id' => 'regions-select',
+                            'class' => 'regions-select',
+                            'ariaLabel' => 'Regions',
+                            'title' => 'Region',
+                            'dataType' => 'region'
+                        ])
+                        ?>
+                    </div>
+                    <div class="search-select-group show-for-large">
+                        <?php
+                        View::render('partials/multi-select', [
+                            'id' => 'office-type-select',
+                            'class' => 'office-type-select',
+                            'ariaLabel' => 'Offices',
+                            'title' => 'Office type',
+                            'dataType' => 'office'
+                        ])
+                        ?>
                     </div>
                 </div>
                 <div class="flex-container align-middle active-filters show-for-large" data-container-filters></div>
