@@ -38,7 +38,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         <div class="grid-x grid-padding-x overflow-hidden center-children">
 
             <div class="article-headings cell small-12 large-9 scroll-track left-right delay-1">
-                <h2 class="heading h2">
+                <h2 class="article-title heading h2">
                     Moyamba and Pujehun Districts score joint UNDP, WFP-supported project 80% for Peacebuilding Project’s Success amidst COVID-19
                 </h2>
 
@@ -64,6 +64,27 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
                         Photo:<br>
                         UNDP Taiwan/Jason Smith
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="authors grid-container">
+        <div class="grid-x">
+            <div class="cell authors-container large-8">
+                <div class="grid-x">
+                    <div class="authors-title heading h5">
+                        Author(s)
+                    </div>
+                    <div class="author-item">
+                        <div class="author-image">
+                            <img src="<?= "$imgPath/author-jane-doe.png" ?>" alt="">
+                        </div>
+                        <div class="author-info">
+                            <div class="author-name medium-copy bold">Jane Doe</div>
+                            <div class="job-position medium-copy">Title Organization</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

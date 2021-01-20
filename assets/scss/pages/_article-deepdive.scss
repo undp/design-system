@@ -19,7 +19,7 @@
         background-repeat: no-repeat;
     }
 
-    .heading {
+    .article-title {
         margin-top: 49px;
     }
 
@@ -61,6 +61,29 @@
 
             p {
                 line-height: 1.6rem;
+            }
+        }
+    }
+
+    .authors {
+        margin-top: 33px;
+
+        .authors-container {
+            margin: 0 auto;
+
+
+            .author-item {
+                display: flex;
+                margin-left: 40px;
+            }
+        }
+
+        .author-info {
+            margin-top: 20px;
+            margin-left: 25px;
+
+            .job-position {
+                margin-top: 15px;
             }
         }
     }
