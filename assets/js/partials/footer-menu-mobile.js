@@ -1,11 +1,11 @@
 import Foundation from 'foundation-sites'
 
 const init = function () {
+
     function openMenuOptions() {
-
         let previousTarget = null;
-        $('.footer-subtitle').click((e)=>{
 
+        $('.footer-subtitle').click((e)=>{
             let $target = $(e.currentTarget);
             let $list = $target.parent().children('.list');
             let $subtitle = $('.footer-subtitle');
@@ -26,7 +26,7 @@ const init = function () {
         });
     }
 
-    if($(window).width() < 834){
+    if($(window).width() < Foundation.MediaQuery.get('medium')){
         openMenuOptions();
     }
 
@@ -35,7 +35,7 @@ const init = function () {
             $('.footer-body').find('.list').show();
         }
 
-        if($(window).width() < 834){
+        if($(window).width() < Foundation.MediaQuery.get('medium')){
             openMenuOptions();
         }
     })
