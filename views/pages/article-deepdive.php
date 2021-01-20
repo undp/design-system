@@ -36,7 +36,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
     <section class="article-headings grid-container scroll-track left-right delay-2">
         <div class="grid-x overflow-hidden">
 
-            <div class="article-headings cell small-12 large-9 large-offset-1">
+            <div class="cell small-12 large-9 large-offset-1">
                 <h2 class="article-title heading h2">
                     Moyamba and Pujehun Districts score joint UNDP, WFP-supported project 80% for Peacebuilding Project’s Success amidst COVID-19
                 </h2>
@@ -56,7 +56,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
                 </div>
             </div>
 
-            <div class="image-caption cell small-9 large-7 large-offset-2">
+            <div class="image-caption cell small-8 small-offset-3 large-7 large-offset-2">
                 <div class="image-alt">
                     <p class="medium-copy">
                         Jitta Kanneh, Mammy Queen of Makpele Chiefdom, at one of the swamp-rice development livelihoods
@@ -65,11 +65,13 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
                 </div>
                 <div class="image-author">
                     <p class="medium-copy">
-                        Photo:<br>
+                        <span class="show-for-medium">Photo:<br></span>
                         UNDP Taiwan/Jason Smith
                     </p>
                 </div>
             </div>
+
+            <div class="separator cell small-12 large-7 large-offset-2"></div>
         </div>
     </section>
 

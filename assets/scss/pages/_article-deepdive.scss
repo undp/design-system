@@ -3,6 +3,14 @@
     padding: 48px 0 18.5px;
     margin: $height-nav auto 0;
 
+    @include breakpoint(medium down) {
+        margin-top: $height-nav-medium;
+    }
+
+    @include breakpoint(small only) {
+        padding: 26px 0 12px;
+    }
+
     .breadcrumb {
         color: $red;
     }
@@ -12,8 +20,10 @@
     }
 
     .article-headings {
-        .article-title {
-            margin-top: 49px;
+        margin-top: 49px;
+
+        @include breakpoint(small only) {
+            margin-top: 27px;
         }
 
         .posted-date {
@@ -22,12 +32,20 @@
     }
 
     .image-with-caption {
+        .image-container {
+            margin-top: 36px;
+        }
+
         .featured-image {
             width: 100%;
             height: 651px;
-            margin-top: 36px;
             background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
+
+            @include breakpoint(small only) {
+                height: 158px;
+            }
         }
 
         .image-alt {
@@ -41,10 +59,11 @@
 
         .image-author {
             flex-shrink: 0;
-            padding-left: 41px;
             position: relative;
 
             @include breakpoint(medium up) {
+                padding-left: 41px;
+
                 &:before {
                     content: '';
                     top: 0;
@@ -56,6 +75,10 @@
                 }
             }
 
+            @include breakpoint(small only) {
+                margin-top: 18px;
+            }
+
             p {
                 line-height: 1.6rem;
             }
@@ -65,7 +88,11 @@
             display: flex;
             margin-top: 49px;
             padding-bottom: 22.7px;
-            border-bottom: 3px solid $black;
+
+            @include breakpoint(small only) {
+                margin-top: 30px;
+                flex-direction: column;
+            }
         }
     }
 
@@ -85,5 +112,9 @@
                 margin-top: 15px;
             }
         }
+    }
+
+    .separator {
+        border-bottom: 3px solid $black;
     }
 }
