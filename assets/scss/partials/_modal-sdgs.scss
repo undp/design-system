@@ -87,6 +87,7 @@
         }
 
         .side-spacing{
+            overflow-x: hidden;
             padding: 0 25px 0 35px;
 
             @include breakpoint(small only){
