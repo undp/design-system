@@ -40,6 +40,8 @@ class ModalSdgs {
         this.$openModal.click((current) => {
             const $current = $(current.currentTarget);
 
+            console.log($current, $current.data('color'));
+
             this.url = $current.data('url')
             this.color = $current.data('color')
             this.title = $current.data('title')
@@ -52,6 +54,7 @@ class ModalSdgs {
         })
 
         this.$nextSdgCta.click(() => {
+            this.removeColorClass()
             const nextSdg = this.$nextSdgCta.find('.sdg-card')
             this.$sdgCardList.find(`[data-number="${nextSdg.data('number')}"]`).trigger('click')
         })
@@ -128,6 +131,7 @@ class ModalSdgs {
         this.$sdgDeepDiveHero.find('.description-container').removeClass(this.color)
         this.$modal.find('.stat-card').removeClass('sdg ' +  this.color)
         this.$modal.find('.single-content-card-accent-color').removeClass('sdg ' +  this.color)
+        this.$nextSdgCta.find('.sdg-card').removeClass('color-' + this.$nextSdg.data('number'))
     }
 
     destroyGlide() {
