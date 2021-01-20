@@ -202,6 +202,7 @@
                 }
 
                 @include breakpoint(medium down) {
+                    height: 100%;
                     flex: 0 1 auto;
                     position: static;
                     box-shadow: unset;
@@ -375,7 +376,6 @@
                         margin-top: 20px;
                         position: static;
                         max-height: none;
-                        min-height: 100%;
                         padding: 0 10px 0 0;
                         height: calc(100% - 160px);
                     }
@@ -400,6 +400,7 @@
                         border-top: 1px solid rgba($black, 0.10);
 
                         @include breakpoint(medium down) {
+                            padding: 20px 0;
                             font-size: 1.6rem;
                             line-height: 1.18;
                             font-weight: $semi-bold;
@@ -440,6 +441,10 @@
 
                             @include breakpoint(medium down) {
                                 font-size: 1.6rem;
+
+                                svg {
+                                    margin-left: 9px;
+                                }
                             }
 
                             &:not(:last-child) {
@@ -460,19 +465,24 @@
                     position: absolute;
                     width: calc(100% - 30px);
 
+                    @include breakpoint(medium down) {
+                        position: static;
+                        width: calc(100% - 15px);
+                    }
+
                     .btn-filters {
                         height: 50px;
-                        color: $black;
-                        background-color: $dark-blue-9;
+                        color: $white;
+                        background-color: $blue-0;
 
                         .current-filters {
                             width: 24px;
                             height: 24px;
-                            color: $white;
-                            margin-left: 50px;
+                            color: $black;
+                            margin-left: 15px;
                             border-radius: 50%;
-                            background-color: $red;
                             font-weight: $semi-bold;
+                            background-color: $yellow;
                         }
                     }
                 }

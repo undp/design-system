@@ -1,5 +1,6 @@
 import 'foundation-sites/dist/js/foundation'
 import ModalSdgs from "../classes/ModalSdgs";
+import Foundation from "foundation-sites";
 
 class Modal {
     constructor() {
@@ -121,7 +122,9 @@ class Modal {
         this.closeModalSdg();
         this.$body.addClass('modal-open');
         this.currentModal.removeClass('hide');
-        this.inputSearchAutoFocus();
+        if($(window).width() > Foundation.MediaQuery.get('medium')){
+            this.inputSearchAutoFocus();
+        }
         this.$modalReference.addClass(this.classModalActive);
         this.showOptionClose();
     }
