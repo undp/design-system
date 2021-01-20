@@ -54,6 +54,7 @@
                 height: 30px;
                 color: $white;
                 min-width: 185px;
+                border-radius: 0;
                 padding: 8px 14px;
                 font-size: 1.4rem;
                 border: 1px solid $white;
@@ -74,9 +75,9 @@
             .btn-submit {
                 border: none;
                 color: $blue-0;
-                padding: 0 15px;
-                padding-top: 5px;
+                border-radius: 0;
                 font-size: 1.4rem;
+                padding: 5px 15px 0;
                 background-color: $white;
                 text-transform: uppercase;
             }
