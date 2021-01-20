@@ -110,6 +110,10 @@ class ModalSdgs {
     }
 
     close() {
+        if(!this.$modal.length) {
+            return false;
+        }
+
         const $cards = $('.cards-slider')
 
         $cards.find('.sdg-card-container').removeClass('in-viewport')
@@ -127,6 +131,10 @@ class ModalSdgs {
     }
 
     removeColorClass(){
+        if(!this.$nextSdg) {
+            return false
+        }
+
         this.$sdgDeepDiveHero.find('.title').removeClass(this.color)
         this.$sdgDeepDiveHero.find('.description-container').removeClass(this.color)
         this.$modal.find('.stat-card').removeClass('sdg ' +  this.color)
@@ -167,28 +175,28 @@ class ModalSdgs {
             });
 
             this.glide.mount()
+
+            // Calculate cursor position from active slide index
+            this.glide.on(['mount.after', 'run'], () => {
+                $controlSlider.css('left', (this.glide.index * slideWidth) + "%")
+            })
+            // Change pointer to arrow image
+            $statCard.on('mousemove', e => {
+                let threshold = this.$window.outerWidth()
+                threshold -= this.$modalContent.outerWidth() / 2
+                const arrowDir = e.pageX < threshold ? 'left' : 'right'
+
+                $statCard.css('cursor',
+                    `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), url("/assets/images/arrows/slider-arrow-${arrowDir}.cur"), auto`
+                )
+            });
+            // Navigate through slides on slide click
+            $statCard.click(e => {
+                let threshold = this.$window.outerWidth()
+                threshold -= this.$modalContent.outerWidth() / 2
+                this.glide.go(e.pageX < threshold ? '<' : '>')
+            })
         }
-
-        // Calculate cursor position from active slide index
-        this.glide.on(['mount.after', 'run'], () => {
-            $controlSlider.css('left', (this.glide.index * slideWidth) + "%")
-        })
-        // Change pointer to arrow image
-        $statCard.on('mousemove', e => {
-            let threshold = this.$window.outerWidth()
-            threshold -= this.$modalContent.outerWidth() / 2
-            const arrowDir = e.pageX < threshold ? 'left' : 'right'
-
-            $statCard.css('cursor',
-                `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), url("/assets/images/arrows/slider-arrow-${arrowDir}.cur"), auto`
-            )
-        });
-        // Navigate through slides on slide click
-        $statCard.click(e => {
-            let threshold = this.$window.outerWidth()
-            threshold -= this.$modalContent.outerWidth() / 2
-            this.glide.go(e.pageX < threshold ? '<' : '>')
-        })
     }
 
     appearCards() {
