@@ -1,0 +1,20 @@
+.news-centre-cards {
+    margin-top: 60px;
+    padding-bottom: 90px;
+
+    .cards-container {
+        padding-left: 25px;
+
+        @include breakpoint(medium down) {
+            padding-left: 0;
+        }
+
+        .card-item {
+            margin-bottom: 30px;
+        }
+    }
+
+    .btn {
+        margin-top: 55px;
+    }
+}

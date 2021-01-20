@@ -20,8 +20,14 @@ use helpers\View;
         'breadcrumbLinks' => [['name' => 'Press Centre', 'link' => '#']],
         'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.png'
     ]) ?>
-</div>
 
+    <?php View::render('organisms/content-cards/news-centre-cards', [
+        'subtitle' => 'Sierra Leone',
+        'title' => 'News Centre',
+        'breadcrumbLinks' => [['name' => 'Press Centre', 'link' => '#']],
+        'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.png'
+    ]) ?>
+</div>
 
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>

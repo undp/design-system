@@ -40,7 +40,7 @@
     @include breakpoint(large down){
         width: 100%;
 
-        &:not(.large):not(.wide), {
+        &:not(.large):not(.wide) {
             .hover-slide{
                 display: none;
             }
