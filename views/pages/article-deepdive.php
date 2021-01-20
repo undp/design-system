@@ -16,14 +16,13 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
 
 <div class="article-deepdive">
 
-    <div class="breadcrumb-container grid-container">
-        <div class="grid-x grid-padding-x overflow-hidden">
+    <section class="grid-container scroll-track left-right delay-1">
+        <div class="grid-x overflow-hidden">
 
             <div class="cell small-12 large-9 large-offset-1">
                 <?php
                 View::render('partials/breadcrumb', [
                     'links' => [
-                        ['link' => '/', 'name' => 'Home'],
                         ['link' => '/press-centre', 'name' => 'Press Centre'],
                         ['link' => '/press-centre/articles', 'name' => 'Articles'],
                         ['link' => '/press-centre/articles/2020', 'name' => '2020'],
@@ -32,27 +31,32 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
                 ?>
             </div>
         </div>
-    </div>
+    </section>
 
-    <section class="article-hero grid-container">
-        <div class="grid-x grid-padding-x overflow-hidden center-children">
+    <section class="article-headings grid-container scroll-track left-right delay-2">
+        <div class="grid-x overflow-hidden">
 
-            <div class="article-headings cell small-12 large-9 scroll-track left-right delay-1">
+            <div class="article-headings cell small-12 large-9 large-offset-1">
                 <h2 class="article-title heading h2">
                     Moyamba and Pujehun Districts score joint UNDP, WFP-supported project 80% for Peacebuilding Project’s Success amidst COVID-19
                 </h2>
 
                 <div class="posted-date tag">Posted on November 19, 2020</div>
             </div>
+        </div>
+    </section>
 
-            <div class="featured-image-container cell small-12 scroll-track left-right delay-2">
+    <section class="image-with-caption grid-container scroll-track left-right delay-3">
+        <div class="grid-x overflow-hidden">
+
+            <div class="image-container cell small-12">
                 <div
                     class="featured-image"
                     style="background-image: url('<?= "$imgPath/article-deepdive-featured-image.png" ?>')">
                 </div>
             </div>
 
-            <div class="featured-image-information cell small-9 large-8 scroll-track left-right delay-3">
+            <div class="image-caption cell small-9 large-7 large-offset-2">
                 <div class="image-alt">
                     <p class="medium-copy">
                         Jitta Kanneh, Mammy Queen of Makpele Chiefdom, at one of the swamp-rice development livelihoods
@@ -69,13 +73,15 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         </div>
     </section>
 
-    <section class="authors grid-container">
-        <div class="grid-x">
-            <div class="cell authors-container large-8">
+    <section class="article-authors grid-container">
+        <div class="grid-x center-children">
+            <div class="authors-container cell large-8">
+
                 <div class="grid-x">
                     <div class="authors-title heading h5">
                         Author(s)
                     </div>
+
                     <div class="author-item">
                         <div class="author-image">
                             <img src="<?= "$imgPath/author-jane-doe.png" ?>" alt="">
