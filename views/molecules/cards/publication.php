@@ -23,7 +23,7 @@ use helpers\Svg;
                 <div class="controls">
                     <div class="cta">
                         <button class="btn hide-for-small-only">
-                           <?= $cta ?? 'Read More' ?>
+                           <span><?= $cta ?? 'Read More' ?></span>
                            <?php Svg::render('btn-arrow-blue', true, $cta ?? 'Read More', 'assets/images/arrows/')?>
                         </button>
                         <a class="text-link arrow-1 show-for-small-only" href="#">
