@@ -166,7 +166,7 @@ use helpers\View;
                             </h2>
                         </div>
                     </div>
-                    <div class="cell small-11 medium-3 expertise-section-text">
+                    <div class="cell small-offset-1 small-11 medium-3 expertise-section-text">
                         <?php
                         View::render('molecules/cards/expertise-card', [
                             'title' => 'People',
