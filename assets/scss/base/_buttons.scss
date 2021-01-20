@@ -10,6 +10,10 @@
     text-transform: uppercase;
     padding: 14px 24px 15px 29px;
 
+    > * {
+        flex: 1 0 auto;
+    }
+
     &.full {
         width: 100%;
         justify-content: center;
