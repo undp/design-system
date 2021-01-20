@@ -62,8 +62,15 @@
                     ?>
                 </div>
                 <div class="cell medium-6 large-4">
-
-
+                    <?php
+                    View::render('molecules/cards/single-content-card-accent-color', [
+                        'tag' => 'Content tag',
+                        'link' => $_SERVER['REQUEST_URI'],
+                        'title' => 'UN calls for comprehensive debt standstill in all developing countries.',
+                        'cta' => 'Read More',
+                        'color' => 'accent-green'
+                    ])
+                    ?>
                 </div>
             </div>
             <div class="grid-x grid-padding-x">
