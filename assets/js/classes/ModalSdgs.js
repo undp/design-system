@@ -142,6 +142,7 @@ class ModalSdgs {
     initSlider() {
         this.destroyGlide()
 
+        const contentOffset = this.$modalContent.offset()
         const $statCard = this.$cardsSliderContainer.find('.stat-card')
         const $controlSlider = this.$cardsSliderContainer.find('.control-slider')
         const numberOfSlides = this.$cardsSliderContainer.find('.glide__slide').length
@@ -169,18 +170,20 @@ class ModalSdgs {
             $controlSlider.css('left', (this.glide.index * slideWidth) + "%")
         })
         // Change pointer to arrow image
-        $statCard.on('mousemove', function(e){
-            const arrowDir = e.pageX < ($(this).width() / 2) ? 'left' : 'right'
+        $statCard.on('mousemove', e => {
+            let threshold = this.$window.outerWidth()
+            threshold -= this.$modalContent.outerWidth() / 2
+            const arrowDir = e.pageX < threshold ? 'left' : 'right'
+
             $statCard.css('cursor',
                 `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), url("/assets/images/arrows/slider-arrow-${arrowDir}.cur"), auto`
             )
         });
         // Navigate through slides on slide click
         $statCard.click(e => {
-            let $target = $(e.currentTarget)
-            this.glide.go(
-                e.pageX < ($target.width() / 2) ? '<' : '>'
-            )
+            let threshold = this.$window.outerWidth()
+            threshold -= this.$modalContent.outerWidth() / 2
+            this.glide.go(e.pageX < threshold ? '<' : '>')
         })
     }
 
