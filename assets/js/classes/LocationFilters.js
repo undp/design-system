@@ -249,7 +249,6 @@ class LocationFilters {
 
     printTotalMatches() {
         this.$btnFilterShowMatchesCounter.text(` ${this.totalMatches} `);
-        console.log('matches', this.totalMatches);
         this.$btnFilterShowMatchesCounter.toggleClass(this.classHide, this.totalMatches === 0);
     }
 }

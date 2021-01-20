@@ -1,8 +1,6 @@
 <?php
-
 use helpers\View;
 use helpers\Svg;
-
 ?>
 
 <div id="modal-sdgs" class="modal-sdgs hide">
@@ -71,9 +69,7 @@ use helpers\Svg;
                 </div>
                 <div class="next-sdg-container">
                     <?php View::render('molecules/statistics-figures/sdg-card', [
-                        'class' => 'color-3 next-card',
-                        'number' => '3',
-                        'title' => 'Good Health and Well Being',
+                        'class' => 'next-card'
                     ]); ?>
                 </div>
             </div>
