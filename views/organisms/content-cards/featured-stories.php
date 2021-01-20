@@ -39,7 +39,7 @@
                 <?php
                 View::render('molecules/cards/content-card', [
                     'size' => 'large',
-                    //'image' => '/assets/images/placeholder/featured-story-3.jpeg',
+                    'image' => '/assets/images/placeholder/featured-story-3.jpeg',
                     'tag' => 'UNDP Response',
                     'title' => 'In Costa Rica, rural women grow their own businesses',
                     'description' => 'Working with organic agriculture and native stingless honey bee production',
