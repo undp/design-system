@@ -13,7 +13,7 @@ $nav-desktop-height: 115px;
     box-shadow: 0 3px 6px rgba($black, 0.09);
 
     @include breakpoint(large down) {
-        height: calc(#{$nav-mobile-height} + 1px);
+        height: $nav-mobile-height;
     }
 
     &.menu-justify {
@@ -62,34 +62,6 @@ $nav-desktop-height: 115px;
                     top: 0;
                     left: 0;
                     position: absolute;
-
-                    @include breakpoint(large down) {
-                        height: $nav-mobile-height;
-                    }
-
-                    &.scrolled {
-                        svg, img {
-                            width: 56px;
-                            height: $nav-desktop-height - 1;
-
-                            @include breakpoint(large down) {
-                                width: auto;
-                                height: $nav-mobile-height;
-                            }
-                        }
-                    }
-
-                    svg,
-                    img {
-                        width: 62px;
-                        height: 125px;
-                        transition: $transition-primary;
-
-                        @include breakpoint(large down) {
-                            width: auto;
-                            max-height: $nav-mobile-height;
-                        }
-                    }
                 }
             }
 
@@ -143,6 +115,31 @@ $nav-desktop-height: 115px;
             max-height: $nav-mobile-height;
         }
 
+        .middle-logo {
+            display: block;
+
+            svg, img {
+                width: 62px;
+                height: 125px;
+                transition: $transition-primary;
+
+                @include breakpoint(large down) {
+                    width: auto;
+                    max-height: $nav-mobile-height+8;
+                }
+            }
+
+            &.scrolled {
+                svg, img {
+                    height: $nav-desktop-height;
+
+                    @include breakpoint(medium down) {
+                        height: $nav-mobile-height;
+                    }
+                }
+            }
+        }
+
         .middle-menu {
             padding: 0;
             list-style: none;
@@ -159,31 +156,6 @@ $nav-desktop-height: 115px;
 
                 @include breakpoint(medium down) {
                     margin-right: 0;
-                }
-            }
-
-            .middle-logo {
-                display: block;
-
-                svg, img {
-                    width: 62px;
-                    height: 125px;
-                    transition: $transition-primary;
-
-                    @include breakpoint(large down) {
-                        width: auto;
-                        max-height: 71px;
-                    }
-                }
-
-                &.scrolled {
-                    svg, img {
-                        height: $nav-desktop-height - 1;
-
-                        @include breakpoint(medium down) {
-                            height: 71px;
-                        }
-                    }
                 }
             }
         }
