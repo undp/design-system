@@ -22,7 +22,8 @@
 
     .gradient-container{
         height: 300px;
-        z-index: $z-index-0;
+        position: relative;
+        z-index: $z-index-negative;
         transition: opacity 0.2s ease;
         background: linear-gradient(rgba($white, 0), rgba($white, 1));
 
