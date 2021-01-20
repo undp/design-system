@@ -11,6 +11,7 @@
     width: 100%;
     position: fixed;
     top: $height-nav;
+    overflow-x: hidden;
     z-index: $z-index-modal;
     backdrop-filter: blur(30px);
     background-color: rgba(237,239,240, .95);
@@ -22,10 +23,9 @@
 
     &.open {
         .grid-container {
-            animation: animate  .4s forwards;
+            animation: animate .4s forwards;
         }
     }
-
 
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
         background-color: transparent;
@@ -37,7 +37,6 @@
     }
 
     @include breakpoint(small only) {
-        overflow-y: auto;
         padding-left: 12px;
     }
 
@@ -48,7 +47,6 @@
             padding: 20px 20px 0 0;
             background-color: $white;
             justify-content: flex-end;
-            box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
         }
 
         .btn-close {
@@ -84,13 +82,12 @@
         box-shadow: -3px 0 6px rgba($black, 0.16);
 
         @include breakpoint(small only){
-            height: unset;
             margin-top: -1px;
-            overflow-y: unset;
             box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
         }
 
         .side-spacing{
+            overflow-x: hidden;
             padding: 0 25px 0 35px;
 
             @include breakpoint(small only){
@@ -110,20 +107,6 @@
             }
         }
 
-        .cards-slider {
-            margin-top: 20px;
-
-            .cell {
-                &:first-child {
-                    padding-left: 0;
-                }
-
-                &:last-child {
-                    padding-right: 0;
-                }
-            }
-        }
-
         .sdg-content-cards {
             margin-top: 110px;
 
@@ -138,6 +121,10 @@
                     margin: 25px 0 35px;
                 }
             }
+
+            .sdg-modal-card {
+                margin-top: 25px;
+            }
         }
 
         .next-sdg-container{
@@ -148,5 +135,40 @@
             }
         }
 
+        .cards-slider-container {
+            margin-top: 103px;
+            padding-top: 40px;
+            position: relative;
+
+            .bullets-container {
+                top: 0;
+                width: 100%;
+                position: absolute;
+            }
+
+            .cards-slider {
+                overflow: visible;
+                flex-wrap: nowrap;
+                padding-left: 105px;
+                margin-right: -25px;
+
+                @include breakpoint(medium down) {
+                    padding-left: 73px;
+                }
+
+                @include breakpoint(small only) {
+                    padding-left: 0;
+                }
+
+                .glide__slides {
+                    width: 100% !important;
+                }
+
+                .sdg-card-container {
+                    width: 212px;
+                    min-width: 212px;
+                }
+            }
+        }
     }
 }

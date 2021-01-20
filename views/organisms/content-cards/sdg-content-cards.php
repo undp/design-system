@@ -7,7 +7,7 @@
                 <div class="cell hide-for-small-only">
                     <h3 class="heading h3">SDGs in Action</h3>
                 </div>
-                <div class="cell medium-6 large-4">
+                <div class="cell medium-6 large-4 sdg-modal-card">
                     <?php
                     View::render('molecules/cards/single-content-card-body', [
                         'tag' => 'Content tag',
@@ -18,7 +18,7 @@
                     ])
                     ?>
                 </div>
-                <div class="cell medium-6 large-4">
+                <div class="cell medium-6 large-4 sdg-modal-card">
                     <?php
                     View::render('molecules/cards/single-content-card-accent-color', [
                         'tag' => 'Content tag',
@@ -28,7 +28,7 @@
                     ])
                     ?>
                 </div>
-                <div class="cell medium-6 large-4">
+                <div class="cell medium-6 large-4 sdg-modal-card">
                     <?php
                     View::render('molecules/cards/single-content-card-image', [
                         'tag' => 'Content tag',
@@ -39,7 +39,7 @@
                     ])
                     ?>
                 </div>
-                <div class="cell medium-6 large-4">
+                <div class="cell medium-6 large-4 sdg-modal-card">
                     <?php
                     View::render('molecules/cards/single-content-card-image', [
                         'tag' => 'Content tag',
@@ -50,7 +50,7 @@
                     ])
                     ?>
                 </div>
-                <div class="cell medium-6 large-4">
+                <div class="cell medium-6 large-4 sdg-modal-card">
                     <?php
                     View::render('molecules/cards/single-content-card-body', [
                         'tag' => 'Content tag',
@@ -61,7 +61,7 @@
                     ])
                     ?>
                 </div>
-                <div class="cell medium-6 large-4">
+                <div class="cell medium-6 large-4 sdg-modal-card">
                     <?php
                     View::render('molecules/cards/single-content-card-accent-color', [
                         'tag' => 'Content tag',

@@ -82,6 +82,7 @@
 
                 @include breakpoint(medium down) {
                     padding-left: 0;
+                    margin-bottom: 55px;
                 }
             }
 
@@ -107,7 +108,7 @@
                 margin-top: 115px;
 
                 @include breakpoint(medium down) {
-                    margin-top: 46px;
+                    margin-top: 40px;
                 }
 
                 .list {

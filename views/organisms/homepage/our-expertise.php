@@ -158,15 +158,7 @@ use helpers\View;
         <div class="glide__track" data-glide-el="track">
             <div class="glide__slides">
                 <div class="grid-x our-expertise-row glide__slide">
-                    <div class="small-offset-1 small-11 medium-offset-1 medium-5 hide-for-small-only">
-                        <div class="section-title">
-                            <h2 class="heading h2">Our</h2>
-                            <h2 class="heading h2">
-                                Expertise
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="cell small-11 medium-3 expertise-section-text">
+                    <div class="cell small-offset-1 small-9 medium-3 expertise-section-text">
                         <?php
                         View::render('molecules/cards/expertise-card', [
                             'title' => 'People',
@@ -175,7 +167,7 @@ use helpers\View;
                         ])
                         ?>
                     </div>
-                    <div class="cell small-11 medium-3 expertise-section-image">
+                    <div class="cell small-7 medium-3 expertise-section-image">
                         <div class="expertise-image">
                             <div class="background-video hide-for-small-only">
                                 <video class="lazy" data-src="https://player.vimeo.com/external/477328671.sd.mp4?s=802e70ad5a37b78d49301875e78f4c36c15418a0&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
@@ -187,7 +179,7 @@ use helpers\View;
                     </div>
                 </div>
                 <div class="grid-x our-expertise-row glide__slide">
-                    <div class="cell small-11 medium-3 expertise-section-image">
+                    <div class="cell small-7 medium-3 expertise-section-image">
                         <div class="expertise-image">
                             <div class="background-video hide-for-small-only">
                                 <video class="lazy" data-src="https://player.vimeo.com/external/478247383.sd.mp4?s=94744ea0dcaed3ec3f7a51dd1fc9ba4705ccc9df&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
@@ -197,7 +189,7 @@ use helpers\View;
                             </div>
                         </div>
                     </div>
-                    <div class="cell small-11 medium-3 expertise-section-text">
+                    <div class="cell small-offset-1 small-9 medium-3 expertise-section-text">
                         <?php
                         View::render('molecules/cards/expertise-card', [
                             'title' => 'Planet',
@@ -208,7 +200,7 @@ use helpers\View;
                     </div>
                 </div>
                 <div class="grid-x our-expertise-row glide__slide">
-                    <div class="cell small-11 medium-3 medium-offset-6 expertise-section-text">
+                    <div class="cell small-offset-1 small-9 medium-3 medium-offset-6 expertise-section-text">
                         <?php
                         View::render('molecules/cards/expertise-card', [
                             'title' => 'Prosperity',
@@ -217,7 +209,7 @@ use helpers\View;
                         ])
                         ?>
                     </div>
-                    <div class="cell small-11 medium-3 expertise-section-image">
+                    <div class="cell small-7 medium-3 expertise-section-image">
                         <div class="expertise-image">
                             <div class="background-video hide-for-small-only">
                                 <video class="lazy" data-src="https://player.vimeo.com/external/478247389.sd.mp4?s=b3b51d67a8018dae0e0cacc8bb0b18fa2c7e9b4a&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
@@ -229,7 +221,7 @@ use helpers\View;
                     </div>
                 </div>
                 <div class="grid-x our-expertise-row glide__slide">
-                    <div class="cell small-11 medium-3 expertise-section-image">
+                    <div class="cell small-7 medium-3 expertise-section-image">
                         <div class="expertise-image">
                             <div class="background-video hide-for-small-only">
                                 <video class="lazy" data-src="https://player.vimeo.com/external/478247434.sd.mp4?s=1e617d39a7b53c5d3a7b47d8a7516f534effdb5b&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>
@@ -239,7 +231,7 @@ use helpers\View;
                             </div>
                         </div>
                     </div>
-                    <div class="cell small-11 medium-3 expertise-section-text">
+                    <div class="cell small-offset-1 small-9 medium-3 expertise-section-text">
                         <?php
                         View::render('molecules/cards/expertise-card', [
                             'title' => 'Peace',
@@ -250,7 +242,7 @@ use helpers\View;
                     </div>
                 </div>
                 <div class="grid-x our-expertise-row glide__slide">
-                    <div class="cell small-11 medium-3 medium-offset-6 expertise-section-text">
+                    <div class="cell small-offset-1 small-9 medium-3 medium-offset-6 expertise-section-text">
                         <?php
                         View::render('molecules/cards/expertise-card', [
                             'title' => 'Partnership',
@@ -259,7 +251,7 @@ use helpers\View;
                         ])
                         ?>
                     </div>
-                    <div class="cell small-11 medium-3 expertise-section-image">
+                    <div class="cell small-7 medium-3 expertise-section-image">
                         <div class="expertise-image">
                             <div class="background-video hide-for-small-only">
                                 <video class="lazy" data-src="https://player.vimeo.com/external/478247411.sd.mp4?s=908b276285cd8792b5d7614afcac51f040daac07&profile_id=164" autoplay muted loop playsinline aria-hidden="true"></video>

@@ -25,7 +25,6 @@ const init = function () {
                     e.preventDefault();
                 }
             } else { // if tab key is pressed
-                console.log(document.activeElement, lastFocusableElement)
                 if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
                     firstFocusableElement.focus(); // add focus for the first focusable element
                     e.preventDefault();

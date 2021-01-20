@@ -47,6 +47,10 @@
             @include breakpoint(medium down){
                 padding: 0 15px;
             }
+
+            @include breakpoint(small only) {
+                padding: 0;
+            }
         }
 
         .heading.medium-copy{
@@ -79,7 +83,7 @@
         }
 
         @include breakpoint(medium down){
-            padding: 0 15px;
+            padding: 0 15px 0 0;
         }
 
         @include breakpoint(small only){

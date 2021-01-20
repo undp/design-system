@@ -20,6 +20,7 @@
         width: 100%;
         z-index: -2;
         padding: 64px;
+        height: 260px;
         max-width: 450px;
         position: relative;
         background: linear-gradient(to bottom,
@@ -39,12 +40,13 @@
         }
 
         @include breakpoint(360px down){
-            max-width: 200px;
+            max-width: 150px;
         }
 
         .image{
             width: 100%;
             max-width: 450px;
+            object-fit: cover;
             z-index: $z-index-2;
 
             @include breakpoint(medium down){

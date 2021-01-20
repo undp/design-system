@@ -4,7 +4,7 @@ use helpers\Svg;
 
 <section class="publication">
     <div class="grid-x publication-content-container">
-        <div class="cell small-10 medium-4 flex-container align-justify align-center overflow-hidden">
+        <div class="cell small-7 medium-4 flex-container align-justify align-center overflow-hidden">
             <div class="publication-image">
                 <img class="image lazy" data-src="<?= $image ?>">
             </div>
@@ -23,7 +23,7 @@ use helpers\Svg;
                 <div class="controls">
                     <div class="cta">
                         <button class="btn hide-for-small-only">
-                           <?= $cta ?? 'Read More' ?>
+                           <span><?= $cta ?? 'Read More' ?></span>
                            <?php Svg::render('btn-arrow-blue', true, $cta ?? 'Read More', 'assets/images/arrows/')?>
                         </button>
                         <a class="text-link arrow-1 show-for-small-only" href="#">

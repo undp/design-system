@@ -2,10 +2,8 @@
     <div class="grid-x">
         <div class="cell">
             <div class="title">
-                <h2>
-                    <span class="title-one heading h3">Goal 2</span>
-                    <span class="title-two uppercase">Zero hunger</span>
-                </h2>
+                <div class="title-one heading h3">Goal <span>2</span></div>
+                <h2 class="title-two heading h2">Zero hunger</h2>
             </div>
         </div>
     </div>

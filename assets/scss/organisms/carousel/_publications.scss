@@ -17,6 +17,7 @@
         }
 
         @include breakpoint(small only){
+            padding-left: 8.3%; //this replicate the offset-1 on mobile
             margin: 125px 0 25px;
         }
 
