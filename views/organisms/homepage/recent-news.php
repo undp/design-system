@@ -7,9 +7,7 @@
                 <div class="title-container">
                     <hgroup class="section-title">
                         <h2 class="heading h2">
-                            Recent
-                        </h2>
-                        <h2 class="heading h2">
+                            Recent<br/>
                             News
                         </h2>
                     </hgroup>
