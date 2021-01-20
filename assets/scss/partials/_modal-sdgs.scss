@@ -107,36 +107,6 @@
             }
         }
 
-        .cards-slider {
-            overflow-x: auto;
-            flex-wrap: nowrap;
-            margin-top: 103px;
-            padding-left: 83px;
-            margin-right: -25px;
-            padding-bottom: 40px;
-
-            &::-webkit-scrollbar {
-                height: 4px;
-            }
-
-            &::-webkit-scrollbar-track {
-                background: linear-gradient(to bottom, transparent 0%, $black 50%, transparent 100%);
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background-color: black;
-            }
-
-            > .sdg-card-container {
-                padding: 0 12px;
-                min-width: 236px;
-
-                &:last-child {
-                    padding-right: 25px;
-                }
-            }
-        }
-
         .sdg-content-cards {
             margin-top: 110px;
 
@@ -161,5 +131,40 @@
             }
         }
 
+        .cards-slider-container {
+            margin-top: 103px;
+            padding-top: 40px;
+            position: relative;
+
+            .bullets-container {
+                top: 0;
+                width: 100%;
+                position: absolute;
+            }
+
+            .cards-slider {
+                overflow: visible;
+                flex-wrap: nowrap;
+                padding-left: 105px;
+                margin-right: -25px;
+
+                @include breakpoint(medium down) {
+                    padding-left: 73px;
+                }
+
+                @include breakpoint(small only) {
+                    padding-left: 0;
+                }
+
+                .glide__slides {
+                    width: 100% !important;
+                }
+
+                .sdg-card-container {
+                    width: 212px;
+                    min-width: 212px;
+                }
+            }
+        }
     }
 }
