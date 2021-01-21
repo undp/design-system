@@ -9,6 +9,14 @@
       {
         "url": "https://www.undp.org",
         "name": "Spanish"
+      },
+      {
+        "url": "https://www.undp.org",
+        "name": "Something Else"
+      },
+      {
+        "url": "https://www.undp.org",
+        "name": "Other"
       }
     ],
     "continent": "Asia",

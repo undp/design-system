@@ -1,8 +1,8 @@
 import LocationFilters from "../classes/LocationFilters";
 
 const init = function () {
-    const multiSelect = new LocationFilters();
-    multiSelect.init();
+    const locationFilters = new LocationFilters();
+    locationFilters.init();
 };
 
 export default  init;

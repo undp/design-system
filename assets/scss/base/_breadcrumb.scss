@@ -9,13 +9,18 @@
 
     .breadcrumb-item {
         display: inline;
+        transition: opacity .2s ease;
 
         &:not(:last-child) {
             &:after {
                 content: "/";
-                margin: 0 8px;
                 display: inline;
+                margin: 0 5px 0 8px;
             }
+        }
+
+        &:hover {
+            opacity: .7;
         }
     }
 }

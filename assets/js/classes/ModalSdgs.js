@@ -5,6 +5,7 @@ class ModalSdgs {
 
     constructor() {
         this.$body = $('body')
+        this.$html = $('html')
         this.$window = $(window)
         this.$modal = $('#modal-sdgs')
         this.$openModal = $('.sdg-card-list .sdg-card')
@@ -14,6 +15,7 @@ class ModalSdgs {
 
         this.glide = null
         this.url = null
+        this.slug = null
         this.color = null
         this.title = null
         this.number = null
@@ -28,6 +30,7 @@ class ModalSdgs {
     }
 
     init() {
+        this.checkUrlHash()
         this.initSlider()
         this.appearCards()
         this.listenerOpenModal()
@@ -37,21 +40,7 @@ class ModalSdgs {
     }
 
     listenerOpenModal() {
-        this.$openModal.click((current) => {
-            const $current = $(current.currentTarget);
-
-            console.log($current, $current.data('color'));
-
-            this.url = $current.data('url')
-            this.color = $current.data('color')
-            this.title = $current.data('title')
-            this.number = $current.data('number')
-            this.$nextSdg = $current.next();
-
-            this.open()
-            this.addColorClass()
-            this.changeModalData()
-        })
+        this.$openModal.click(ev => this.setModalSdg($(ev.currentTarget)))
 
         this.$nextSdgCta.click(() => {
             this.removeColorClass()
@@ -65,12 +54,15 @@ class ModalSdgs {
         this.$sdgDeepDiveHero.find('.title-one span').html(this.number)
 
         if(this.number === 17) {
+            location.hash = ''
             this.$nextSdgCta.addClass('hide')
-        } else {
-            this.$nextSdgCta.removeClass('hide')
-
+        }
+        else {
             const nextSdg = this.$nextSdgCta.find('.sdg-card')
 
+            location.hash = this.slug
+
+            this.$nextSdgCta.removeClass('hide')
             nextSdg.removeClass('color-' + this.number)
             nextSdg.addClass('color-' + this.$nextSdg.data('number'))
             nextSdg.data('number', this.$nextSdg.data('number'))
@@ -105,6 +97,7 @@ class ModalSdgs {
 
     open() {
         this.$body.addClass(this.classBodyModalOpen)
+        this.$html.addClass(this.classBodyModalOpen)
         this.$modal.removeClass(this.classHide).addClass(this.classModalOpen)
         this.$modalContent.animate( { scrollTop : 0 }, 800 )
     }
@@ -116,10 +109,12 @@ class ModalSdgs {
 
         const $cards = $('.cards-slider')
 
+        location.hash = ''
         $cards.find('.sdg-card-container').removeClass('in-viewport')
 
         this.removeColorClass()
         this.$body.removeClass(this.classBodyModalOpen)
+        this.$html.removeClass(this.classBodyModalOpen)
         this.$modal.addClass(this.classHide).removeClass(this.classModalOpen)
     }
 
@@ -154,7 +149,6 @@ class ModalSdgs {
     initSlider() {
         this.destroyGlide()
 
-        const contentOffset = this.$modalContent.offset()
         const $statCard = this.$cardsSliderContainer.find('.stat-card')
         const $controlSlider = this.$cardsSliderContainer.find('.control-slider')
         const numberOfSlides = this.$cardsSliderContainer.find('.glide__slide').length
@@ -196,6 +190,33 @@ class ModalSdgs {
                 threshold -= this.$modalContent.outerWidth() / 2
                 this.glide.go(e.pageX < threshold ? '<' : '>')
             })
+        }
+    }
+
+    setModalSdg($sdg) {
+        this.$nextSdg = $sdg.next()
+
+        this.url = $sdg.data('url')
+        this.slug = $sdg.data('slug')
+        this.color = $sdg.data('color')
+        this.title = $sdg.data('title')
+        this.number = $sdg.data('number')
+
+        this.open()
+        this.addColorClass()
+        this.changeModalData()
+    }
+
+    checkUrlHash() {
+        let hash = location.hash
+
+        if (hash) {
+            const slug = hash.replace('#', '')
+            const $targetSdg = $(`.sdg-card[data-slug=${slug}]`)
+
+            if (!$targetSdg.length) return false
+
+            this.setModalSdg($targetSdg)
         }
     }
 

@@ -18,7 +18,15 @@ body {
         width: 100%;
         height: 100vh;
         overflow-y: hidden;
-        -webkit-overflow-scrolling: auto;
+        position: relative;
+
+    }
+}
+
+html {
+
+    &.modal-open {
+        overflow: hidden;
     }
 }
 

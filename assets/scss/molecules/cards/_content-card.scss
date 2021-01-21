@@ -117,25 +117,9 @@
                 }
             }
         }
-
-        &.no-image{
-            .hover-slide::before{
-                background-color: $yellow;
-            }
-        }
     }
 
     .arrow-2 {
-        .link-arrow {
-            height: 16px;
-            stroke: $red;
-            margin-top: -2px;
-            margin-left: 4px;
-            overflow: hidden;
-            fill: transparent;
-            vertical-align: middle;
-        }
-
         .link-arrow-group {
             transform: translateX(-31px);
             transition: $transition-secondary;
@@ -240,6 +224,7 @@
         height: 100%;
         position: absolute;
         z-index: $z-index-1;
+        // Using yellow as default, can be changed with the classes below
         background-color: $yellow;
         transform: translateX(-105%);
         transition: $transition-primary;
@@ -273,6 +258,7 @@
             width: 100%;
             height: 100%;
             position: absolute;
+            // Using yellow as default, can be changed with the classes below
             background: transparent linear-gradient(207deg, rgba($white, 0.2) 30%,
                     rgba($yellow, 0.5) 80%,
                     rgba($yellow, 0.8) 100%) 0 0 no-repeat padding-box;
@@ -319,5 +305,25 @@
                 }
             }
         }
+    }
+
+    @mixin cardColors($color) {
+        .hover-slide {
+            background-color: $color;
+
+            &::before{
+                background: transparent linear-gradient(207deg, rgba($white, 0.2) 30%,
+                        rgba($color, 0.5) 80%,
+                        rgba($color, 0.8) 100%) 0 0 no-repeat padding-box;
+            }
+        }
+    }
+
+    //Define different colors here
+    &.yellow {
+        @include cardColors($yellow);
+    }
+    &.green {
+        @include cardColors($green-6);
     }
 }
