@@ -13,7 +13,7 @@ use helpers\View;
     <!--Global hero 3-->
     <?php View::render('organisms/hero/global-hero-3', [
         'title' => 'The SDGs In ACTION.',
-        'breadcrumbLinks' => [['name' => 'About', 'link' => '#']],
+        'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
         'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.png'
     ]) ?>
 
