@@ -12,6 +12,7 @@ import dropdown from './components/dropdown-languajes'
 import footerMenu from './partials/footer-menu-mobile'
 import scrollTriggers from './components/scroll-triggers'
 import locationFilters from './components/location-filters'
+import multiSelect from './components/multi-select'
 import publicationsSlider from './components/publications-slider'
 import ourMissionAnimation from './components/our-mission-animation'
 import ourExpertiseMobileSlider from './components/our-expertise-mobile-slider'
@@ -41,6 +42,7 @@ function main() {
     footerMenu()
     navigation()
     locationFilters()
+    multiSelect()
     customSelect()
     scrollTriggers()
     publicationsSlider()
