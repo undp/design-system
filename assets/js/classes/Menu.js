@@ -1,4 +1,3 @@
-import 'foundation-sites/dist/js/foundation'
 import ModalSdgs from "../classes/ModalSdgs";
 
 class Menu {
