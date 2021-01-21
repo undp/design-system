@@ -434,9 +434,14 @@
                             }
                         }
 
+                        .languages {
+                            text-align: right;
+                        }
+
                         .text-link {
                             font-size: 2rem;
                             font-weight: normal;
+                            white-space: nowrap;
                             text-transform: none;
 
                             @include breakpoint(medium down) {
@@ -447,11 +452,11 @@
                                 }
                             }
 
-                            &:not(:last-child) {
-                                margin-right: 20px;
+                            &:not(:first-child) {
+                                margin-left: 20px;
 
                                 @include breakpoint(medium down) {
-                                    margin-right: 5px;
+                                    margin-left: 5px;
                                 }
                             }
                         }

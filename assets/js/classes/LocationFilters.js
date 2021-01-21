@@ -17,7 +17,7 @@ class LocationFilters {
         this.totalMatches = 0;
 
         this.$btnFilterCounter = $('[data-open-filters] .counter');
-        this.$checkboxs = $('[data-filter-checkbox] input[type="checkbox"]');
+        this.$checkboxFilter = $('[data-filter-checkbox]');
         this.btnClearCheckboxs = $('[data-filter-clear]');
         this.$btnFilterShowMatchesCounter = $('[data-btn-filters-show-matches] .counter');
 
@@ -30,14 +30,14 @@ class LocationFilters {
     }
 
     mobileFiltersListener() {
-        this.$checkboxs.change((evt) => {
+        this.$checkboxFilter.on('change', 'input[type=checkbox]', (evt) => {
             evt.stopImmediatePropagation();
             this.updateFilters($(evt.currentTarget));
         });
 
         this.btnClearCheckboxs.click((evt) =>{
             evt.preventDefault();
-            this.$checkboxs.prop('checked', false);
+            this.$checkboxFilter.find('input[type=checkbox]').prop('checked', false);
             this.filters.region = [];
             this.filters.office = [];
             this.search();
@@ -69,16 +69,22 @@ class LocationFilters {
     }
 
     printContainerFilters() {
+        const checkedOptions = this.$multiSelectFilters.find("input:checked");
         this.$containerFilter.html('');
-        this.$containerFilter.append('<p class="tag uppercase">Active filters:</p>');
-        this.$multiSelectFilters.find("input:checked").each((i, input) => {
-            const text = $(input).parent().text();
-            const inputValue = $(input).val();
-            this.$containerFilter.append('<a class="filter" href="#" data-remove-filter data-input-value="' + inputValue + '">' + text + '</a>')
-        });
-        this.$containerFilter.append('<a class="tag filter-clear" data-close-all-select href="#">Clear All</a>');
-        this.listenerRemoveFilter()
-        this.listenerClearAllFilters();
+
+        if (checkedOptions.length) {
+            this.$containerFilter.append('<p class="tag uppercase">Active filters:</p>');
+
+            checkedOptions.each((i, input) => {
+                const text = $(input).parent().text();
+                const inputValue = $(input).val();
+                this.$containerFilter.append('<a class="filter" href="#" data-remove-filter data-input-value="' + inputValue + '">' + text + '</a>')
+            });
+
+            this.$containerFilter.append('<a class="tag filter-clear" data-close-all-select href="#">Clear All</a>');
+            this.listenerRemoveFilter()
+            this.listenerClearAllFilters();
+        }
     }
 
     listenerRemoveFilter() {
@@ -90,7 +96,7 @@ class LocationFilters {
             input.prop('checked', false);
 
             const updateSelectCounter = () => {
-                const counter = input.closest('[data-options]').siblings(this.dataSelectControl).find('span');
+                const counter = input.closest('[data-options]').siblings('[data-select-control]').find('span');
                 const total = counter.text().match(/\d/g);
                 counter.text(total && total > 1 ? `(${total.join("") - 1})` : '');
             };
@@ -112,7 +118,7 @@ class LocationFilters {
             this.$multiSelectFilters.find("input:checked").prop('checked', false);
 
             this.$multiSelectFilters.each((i, select) => {
-                const counter = $(select).find(this.dataSelectControl + ' span');
+                const counter = $(select).find('[data-select-control]' + ' span');
                 counter.text('');
             });
             this.filters.region = [];

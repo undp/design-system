@@ -27,9 +27,7 @@ import menusNav from './render-data/menu/all';
 import searchData  from './render-data/modals/search'
 import countriesData  from './render-data/modals/locations/countries'
 import multiSelectData from './render-data/modals/locations/multi-selects'
-
-//molecules
-import moleculeStatisticsSdgCard from './molecules/statistics-figures/sdg-card'
+import mobileFilterData from './render-data/modals/locations/mobile-filters'
 
 function main() {
     prism();
@@ -50,9 +48,6 @@ function main() {
     ourExpertiseMobileSlider()
     heroAnimation()
     trapFocus()
-    multiSelectData()
-    searchData()
-    countriesData()
     menusNav()
     modalSdgs()
     heroAnimation()
@@ -60,8 +55,10 @@ function main() {
     sdgCard()
     select()
     docs()
-
-    moleculeStatisticsSdgCard()
+    multiSelectData()
+    mobileFilterData()
+    searchData()
+    countriesData()
 }
 
 document.addEventListener("DOMContentLoaded", function () {
