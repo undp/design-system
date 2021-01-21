@@ -1,4 +1,10 @@
-<button class="sdg-card sgd-animate <?= $class ?>" data-number="<?= $number ?? '' ?>" data-title="<?= $title ?? '' ?>" data-color="<?= $class ?? '' ?>">
+<button
+    data-slug="<?= $slug ?? '' ?>"
+    data-title="<?= $title ?? '' ?>"
+    data-color="<?= $class ?? '' ?>"
+    data-number="<?= $number ?? '' ?>"
+    class="sdg-card sgd-animate <?= $class ?>" >
+
     <span class="number track left-right delay-<?= $delay ?? 1 ?>"><?= $number ?? '' ?></span>
     <span class="title track left-right delay-<?= $delay ?? 1 ?>"><?= $title ?? '' ?></span>
     <?php if (isset($image)): ?>
