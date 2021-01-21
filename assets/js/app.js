@@ -1,3 +1,4 @@
+import './helpers/findIndexPolyfill'
 import 'what-input'
 import prism from './prism.js'
 

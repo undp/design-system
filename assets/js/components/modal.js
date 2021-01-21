@@ -1,6 +1,5 @@
-import 'foundation-sites/dist/js/foundation'
+import Foundation from 'foundation-sites'
 import ModalSdgs from "../classes/ModalSdgs";
-import Foundation from "foundation-sites";
 
 class Modal {
     constructor() {
