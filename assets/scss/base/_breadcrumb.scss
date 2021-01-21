@@ -14,8 +14,8 @@
         &:not(:last-child) {
             &:after {
                 content: "/";
-                margin: 0 8px;
                 display: inline;
+                margin: 0 5px 0 8px;
             }
         }
 
