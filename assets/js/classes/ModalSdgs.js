@@ -5,6 +5,7 @@ class ModalSdgs {
 
     constructor() {
         this.$body = $('body')
+        this.$html = $('html')
         this.$window = $(window)
         this.$modal = $('#modal-sdgs')
         this.$openModal = $('.sdg-card-list .sdg-card')
@@ -96,6 +97,7 @@ class ModalSdgs {
 
     open() {
         this.$body.addClass(this.classBodyModalOpen)
+        this.$html.addClass(this.classBodyModalOpen)
         this.$modal.removeClass(this.classHide).addClass(this.classModalOpen)
         this.$modalContent.animate( { scrollTop : 0 }, 800 )
     }
@@ -112,6 +114,7 @@ class ModalSdgs {
 
         this.removeColorClass()
         this.$body.removeClass(this.classBodyModalOpen)
+        this.$html.removeClass(this.classBodyModalOpen)
         this.$modal.addClass(this.classHide).removeClass(this.classModalOpen)
     }
 
