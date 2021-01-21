@@ -9,6 +9,7 @@
 
     .breadcrumb-item {
         display: inline;
+        transition: opacity .2s ease;
 
         &:not(:last-child) {
             &:after {
@@ -16,6 +17,10 @@
                 margin: 0 8px;
                 display: inline;
             }
+        }
+
+        &:hover {
+            opacity: .7;
         }
     }
 }
