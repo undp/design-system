@@ -41,7 +41,7 @@
     font-family: $primary-font;
     padding: 14px 24px 15px 29px;
 
-    > span {
+    > span:not([class]) {
         flex: 1 0 auto;
         @include fontWhitespaceCrop($line-height: 1);
     }

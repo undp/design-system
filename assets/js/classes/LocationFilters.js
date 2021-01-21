@@ -2,15 +2,10 @@ import Foundation from 'foundation-sites'
 
 class LocationFilters {
     constructor() {
-        this.classOpen = 'open';
         this.classHide = 'hide';
-        this.dataSelectControl = '[data-select-control]';
-
-        this.$window = $(window);
-        this.$currentSelect = null;
+        this.$multiSelectFilters = $('[data-location-filters]');
         this.$searchInput = $('[data-input-search]');
         this.$countryList = $('[data-city-filters]');
-        this.selects = $('[data-multi-select]');
         this.$containerFilter = $('[data-container-filters]');
         this.filters = {
             region: [],
@@ -18,7 +13,7 @@ class LocationFilters {
             inputSearch: '',
         };
 
-        //mobile
+        // Mobile
         this.totalMatches = 0;
 
         this.$btnFilterCounter = $('[data-open-filters] .counter');
@@ -29,40 +24,12 @@ class LocationFilters {
     }
 
     init() {
-        this.listenerSelects();
-        this.listenerWindowClick();
-        this.listenerInputSearch();
-        this.mobileListenerFilters();
+        this.inputSearchListener();
+        this.mobileFiltersListener();
+        this.multiSelectFiltersListener();
     }
 
-    closeAll() {
-        this.selects.removeClass(this.classOpen);
-    }
-
-    listenerSelects() {
-        this.selects.each((i, select) => {
-            $(select).find(this.dataSelectControl).click((evt) => {
-                evt.preventDefault();
-                this.$currentSelect = $(select);
-                if (!this.$currentSelect.hasClass(this.classOpen)) {
-                    this.closeAll();
-                }
-                this.toogleSelect();
-                this.totalOptionsSelected();
-            });
-        })
-    }
-
-    listenerWindowClick() {
-        this.$window.click(evt => {
-            if (this.$currentSelect && !this.$currentSelect.is(evt.target) &&
-                this.$currentSelect.has(evt.target).length === 0 && this.$currentSelect.hasClass(this.classOpen)) {
-                this.closeAll();
-            }
-        });
-    }
-
-    mobileListenerFilters() {
+    mobileFiltersListener() {
         this.$checkboxs.change((evt) => {
             evt.stopImmediatePropagation();
             this.updateFilters($(evt.currentTarget));
@@ -77,55 +44,60 @@ class LocationFilters {
         });
     }
 
-    toogleSelect() {
-        this.$currentSelect.toggleClass(this.classOpen);
-    }
+    multiSelectFiltersListener() {
+        this.$multiSelectFilters.each((i, multiSelect) => {
+            let $currentMultiSelect = $(multiSelect)
 
-    totalOptionsSelected() {
-        const inputs = this.$currentSelect.find('input[type="checkbox"]');
-        inputs.change((evt) => {
-            evt.stopImmediatePropagation();
+            $currentMultiSelect.on('change', 'input[type="checkbox"]',(evt) => {
+                evt.stopImmediatePropagation();
 
-            this.updateFilters($(evt.currentTarget));
+                this.updateFilters($(evt.currentTarget));
 
-            const inputs = this.$currentSelect.find("input:checked");
-            const total = inputs.length;
-            const counter = this.$currentSelect.find(this.dataSelectControl + ' span');
-            counter.text('(' + total + ')');
-            if (total == 0) {
-                counter.text('');
-            }
-            this.printContainerFilters();
+                const inputs = $currentMultiSelect.find("input:checked");
+                const total = inputs.length;
+                const counter = $currentMultiSelect.find('[data-select-control] span');
+
+                counter.text('(' + total + ')');
+
+                if (total === 0) {
+                    counter.text('');
+                }
+
+                this.printContainerFilters();
+            })
         })
     }
 
     printContainerFilters() {
         this.$containerFilter.html('');
         this.$containerFilter.append('<p class="tag uppercase">Active filters:</p>');
-        this.selects.find("input:checked").each((i, input) => {
+        this.$multiSelectFilters.find("input:checked").each((i, input) => {
             const text = $(input).parent().text();
             const inputValue = $(input).val();
-            this.$containerFilter.append('<a class="filter" href="#" data-close-filter data-input-value="' + inputValue + '">' + text + '</a>')
+            this.$containerFilter.append('<a class="filter" href="#" data-remove-filter data-input-value="' + inputValue + '">' + text + '</a>')
         });
-        this.$containerFilter.append('<a class="tag filter-clear" data-close-all-select href="#" data-clear-all>Clear All</a>');
-        this.listenerCloseFilter()
+        this.$containerFilter.append('<a class="tag filter-clear" data-close-all-select href="#">Clear All</a>');
+        this.listenerRemoveFilter()
         this.listenerClearAllFilters();
     }
 
-    listenerCloseFilter() {
-        $('[data-close-filter]').on('click', (evt) => {
+    listenerRemoveFilter() {
+        $('[data-remove-filter]').on('click', (evt) => {
             evt.preventDefault();
+
             const inputValue = $(evt.currentTarget).data('input-value');
             const input = $('input[value="' + inputValue + '"]');
             input.prop('checked', false);
+
             const updateSelectCounter = () => {
                 const counter = input.closest('[data-options]').siblings(this.dataSelectControl).find('span');
                 const total = counter.text().match(/\d/g);
                 counter.text(total && total > 1 ? `(${total.join("") - 1})` : '');
             };
             updateSelectCounter();
+
             $(evt.currentTarget).remove();
-            if (!this.selects.find('input[type="checkbox"]').length) {
+            if (!this.$multiSelectFilters.find('input:checked').length) {
                 this.$containerFilter.html('')
             }
 
@@ -137,9 +109,9 @@ class LocationFilters {
         $('[data-close-all-select]').on('click', (evt) => {
             evt.preventDefault();
             this.$containerFilter.html('');
-            this.selects.find("input:checked").prop('checked', false);
+            this.$multiSelectFilters.find("input:checked").prop('checked', false);
 
-            this.selects.each((i, select) => {
+            this.$multiSelectFilters.each((i, select) => {
                 const counter = $(select).find(this.dataSelectControl + ' span');
                 counter.text('');
             });
@@ -149,7 +121,7 @@ class LocationFilters {
         });
     }
 
-    listenerInputSearch() {
+    inputSearchListener() {
         this.$searchInput.keyup(event => {
             this.filters.inputSearch = this.$searchInput.val().toLowerCase()
             this.search();
