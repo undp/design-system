@@ -163,12 +163,17 @@ $nav-desktop-height: 115px;
         .right-menu {
             .nav-item {
                 width: 24px;
+                height: 24px;
                 border: none;
                 color: $blue-8;
                 line-height: 0;
                 max-height: 24px;
                 position: relative;
                 margin-right: 22px;
+
+                svg {
+                    height: 24px;
+                }
 
                 &:hover,
                 &.active:hover {
