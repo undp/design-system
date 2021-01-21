@@ -44,9 +44,10 @@
         padding-top: 60px;
 
         @include breakpoint(small only){
+            position: absolute;
             padding: 20px 20px 0 0;
-            background-color: $white;
             justify-content: flex-end;
+            background-color: transparent;
         }
 
         .btn-close {
@@ -60,6 +61,11 @@
 
             @include breakpoint(1710px down){
                 position: static;
+            }
+
+            @include breakpoint(small only) {
+                right: 0;
+                position: sticky;
             }
 
             &:hover {
@@ -91,7 +97,7 @@
             padding: 0 25px 0 35px;
 
             @include breakpoint(small only){
-                padding: 0 12px;
+                padding: 70px 12px 0;
             }
         }
 
