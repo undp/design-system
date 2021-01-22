@@ -12,80 +12,45 @@
             ],
             'imageUrl' => '/assets/images/placeholder/hero/sdg-deep-dive-hero.jpg',
             'imageAlt' => 'SDG Deep Dive image'
-        ])
-    ?>
+        ]);
 
-    <div class="grid-x grid-padding-x cards-slider-container">
-        <div class="bullets-container">
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-                <div class="control-slider"></div>
-                <button class="glide__bullet" data-glide-dir="=0" aria-label="Slide 1">
-                    <span class="show-for-sr">Slide 1</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=1" aria-label="Slide 2">
-                    <span class="show-for-sr">Slide 2</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=2" aria-label="Slide 3">
-                    <span class="show-for-sr">Slide 3</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=3" aria-label="Slide 4">
-                    <span class="show-for-sr">Slide 4</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=4" aria-label="Slide 5">
-                    <span class="show-for-sr">Slide 5</span>
-                </button>
-            </div>
-        </div>
 
-        <div class="glide__track cards-slider" data-glide-el="track">
-            <ul class="glide__slides">
-                <li class="glide__slide sdg-card-container right-left delay-1">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => '1.3',
-                        'title' => 'Billion',
-                        'description' => '1.3 billion tonnes of food is wasted every year, while almost 2 billion people go hungry or undernourished.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-3">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 22,
-                        'title' => 'Percent',
-                        'description' => 'The food sector accounts for around 22 percent of total greenhouse gas emissions, largely from the conversion of forests into farmland.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-4">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 2,
-                        'title' => 'Billion',
-                        'description' => 'Globally, 2 billion people are overweight or obese.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-5">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 3,
-                        'title' => 'Percent',
-                        'description' => 'Only 3 percent of the world’s water is fresh (drinkable), and humans are using it faster than nature can replenish it.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => '$120',
-                        'title' => 'Billion',
-                        'description' => 'If people everywhere switched to energy efficient lightbulbs, the world would save US$120 billion annually.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 20,
-                        'title' => 'Percent',
-                        'description' => 'One-fifth of the world’s final energy consumption in 2013 was from renewable sources.'
-                    ]) ?>
-                </li>
-            </ul>
-        </div>
-    </div>
+        View::render('organisms/carousel/sdg-cards-slider', [
+            'slides' => [
+                [
+                    'number' => '1.3',
+                    'title' => 'Billion',
+                    'description' => '1.3 billion tonnes of food is wasted every year, while almost 2 billion people go hungry or undernourished.'
+                ],
+                [
+                    'number' => 22,
+                    'title' => 'Percent',
+                    'description' => 'The food sector accounts for around 22 percent of total greenhouse gas emissions, largely from the conversion of forests into farmland.'
+                ],
+                [
+                    'number' => 2,
+                    'title' => 'Billion',
+                    'description' => 'Globally, 2 billion people are overweight or obese.'
+                ],
+                [
+                    'number' => 3,
+                    'title' => 'Percent',
+                    'description' => 'Only 3 percent of the world’s water is fresh (drinkable), and humans are using it faster than nature can replenish it.'
+                ],
+                [
+                    'number' => '$120',
+                    'title' => 'Billion',
+                    'description' => 'If people everywhere switched to energy efficient lightbulbs, the world would save US$120 billion annually.'
+                ],
+                [
+                    'number' => 20,
+                    'title' => 'Percent',
+                    'description' => 'One-fifth of the world’s final energy consumption in 2013 was from renewable sources.'
+                ]
+            ]
+        ]);
 
-    <?php
+
         View::render('organisms/text/bulleted-list', [
             'heading' => 'Goal targets',
             'listItems' => [
@@ -101,7 +66,9 @@
                 'Develop and implement tools to monitor sustainable development impacts for sustainable tourism that creates jobs and promotes local culture and products',
                 'Rationalize inefficient fossil-fuel subsidies that encourage wasteful consumption by removing market distortions, in accordance with national circumstances, including by restructuring taxation and phasing out those harmful subsidies, where they exist, to reflect their environmental impacts, taking fully into account the specific needs and conditions of developing countries and minimizing the possible adverse impacts on their development in a manner that protects the poor and the affected communities'
             ]
-        ])
+        ]);
+
+
+        View::render('organisms/content-cards/sdg-content-cards');
     ?>
-    <?php View::render('organisms/content-cards/sdg-content-cards') ?>
 </div>

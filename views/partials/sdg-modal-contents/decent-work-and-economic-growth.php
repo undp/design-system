@@ -12,80 +12,45 @@
             ],
             'imageUrl' => '/assets/images/placeholder/hero/sdg-deep-dive-hero.jpg',
             'imageAlt' => 'SDG Deep Dive image'
-        ])
-    ?>
+        ]);
 
-    <div class="grid-x grid-padding-x cards-slider-container">
-        <div class="bullets-container">
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-                <div class="control-slider"></div>
-                <button class="glide__bullet" data-glide-dir="=0" aria-label="Slide 1">
-                    <span class="show-for-sr">Slide 1</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=1" aria-label="Slide 2">
-                    <span class="show-for-sr">Slide 2</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=2" aria-label="Slide 3">
-                    <span class="show-for-sr">Slide 3</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=3" aria-label="Slide 4">
-                    <span class="show-for-sr">Slide 4</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=4" aria-label="Slide 5">
-                    <span class="show-for-sr">Slide 5</span>
-                </button>
-            </div>
-        </div>
 
-        <div class="glide__track cards-slider" data-glide-el="track">
-            <ul class="glide__slides">
-                <li class="glide__slide sdg-card-container right-left delay-1">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 4,
-                        'title' => 'Percent',
-                        'description' => 'An estimated 172 million people worldwide were without work in 2018 - an unemployment rate of 5 percent.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-3">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 1,
-                        'title' => 'Million',
-                        'description' => 'As a result of an expanding labour force, the number of unemployed is projected to increase by 1 million every year and reach 174 million by 2020.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-4">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 700,
-                        'title' => 'Million',
-                        'description' => 'Some 700 million workers lived in extreme or moderate poverty in 2018, with less than US$3.20 per day.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-5">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 48,
-                        'title' => 'Percent',
-                        'description' => 'Women’s participation in the labour force stood at 48 per cent in 2018, compared with 75 percent for men. Around 3 in 5 of the 3.5 billion people in the labour force in 2018 were men.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 2,
-                        'title' => 'Million',
-                        'description' => 'Overall, 2 billion workers were in informal employment in 2016, accounting for 61 per cent of the world’s workforce.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 85,
-                        'title' => 'Million',
-                        'description' => 'Many more women than men are underutilized in the labour force—85 million compared to 55 million.'
-                    ]) ?>
-                </li>
-            </ul>
-        </div>
-    </div>
+        View::render('organisms/carousel/sdg-cards-slider', [
+            'slides' => [
+                [
+                    'number' => 4,
+                    'title' => 'Percent',
+                    'description' => 'An estimated 172 million people worldwide were without work in 2018 - an unemployment rate of 5 percent.'
+                ],
+                [
+                    'number' => 1,
+                    'title' => 'Million',
+                    'description' => 'As a result of an expanding labour force, the number of unemployed is projected to increase by 1 million every year and reach 174 million by 2020.'
+                ],
+                [
+                    'number' => 700,
+                    'title' => 'Million',
+                    'description' => 'Some 700 million workers lived in extreme or moderate poverty in 2018, with less than US$3.20 per day.'
+                ],
+                [
+                    'number' => 48,
+                    'title' => 'Percent',
+                    'description' => 'Women’s participation in the labour force stood at 48 per cent in 2018, compared with 75 percent for men. Around 3 in 5 of the 3.5 billion people in the labour force in 2018 were men.'
+                ],
+                [
+                    'number' => 2,
+                    'title' => 'Million',
+                    'description' => 'Overall, 2 billion workers were in informal employment in 2016, accounting for 61 per cent of the world’s workforce.'
+                ],
+                [
+                    'number' => 85,
+                    'title' => 'Million',
+                    'description' => 'Many more women than men are underutilized in the labour force—85 million compared to 55 million.'
+                ]
+            ]
+        ]);
 
-    <?php
+
         View::render('organisms/text/bulleted-list', [
             'heading' => 'Goal targets',
             'listItems' => [
@@ -102,7 +67,8 @@
                 'Increase Aid for Trade support for developing countries, in particular least developed countries, including through the Enhanced Integrated Framework for Trade-Related Technical Assistance to Least Developed Countries',
                 'By 2020, develop and operationalize a global strategy for youth employment and implement the Global Jobs Pact of the International Labour Organization'
             ]
-        ])
+        ]);
+
+        View::render('organisms/content-cards/sdg-content-cards')
     ?>
-    <?php View::render('organisms/content-cards/sdg-content-cards') ?>
 </div>

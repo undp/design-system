@@ -212,6 +212,7 @@ class SDGModal {
             if (!$targetSdg.length) return false
 
             this.setModalSdg($targetSdg)
+            this.setNextSdgCtaData()
         }
     }
 

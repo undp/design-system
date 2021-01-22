@@ -12,80 +12,46 @@
             ],
             'imageUrl' => '/assets/images/placeholder/hero/sdg-deep-dive-hero.jpg',
             'imageAlt' => 'SDG Deep Dive image'
-        ])
-    ?>
+        ]);
 
-    <div class="grid-x grid-padding-x cards-slider-container">
-        <div class="bullets-container">
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-                <div class="control-slider"></div>
-                <button class="glide__bullet" data-glide-dir="=0" aria-label="Slide 1">
-                    <span class="show-for-sr">Slide 1</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=1" aria-label="Slide 2">
-                    <span class="show-for-sr">Slide 2</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=2" aria-label="Slide 3">
-                    <span class="show-for-sr">Slide 3</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=3" aria-label="Slide 4">
-                    <span class="show-for-sr">Slide 4</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=4" aria-label="Slide 5">
-                    <span class="show-for-sr">Slide 5</span>
-                </button>
-            </div>
-        </div>
 
-        <div class="glide__track cards-slider" data-glide-el="track">
-            <ul class="glide__slides">
-                <li class="glide__slide sdg-card-container right-left delay-1">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 400,
-                        'title' => 'Million',
-                        'description' => 'At least 400 million people have no basic healthcare, and 40 percent lack social protection.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-3">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 1.6,
-                        'title' => 'Billion',
-                        'description' => 'More than 1.6 billion people live in fragile settings where protracted crises, combined with weak national capacity to deliver basic health services, present a significant challenge to global health.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-4">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 15,
-                        'title' => 'Million',
-                        'description' => 'By the end of 2017, 21.7 million people living with HIV were receiving antiretroviral therapy. Yet more than 15 million people are still waiting for treatment.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-5">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 2,
-                        'title' => 'Seconds',
-                        'description' => 'Every 2 seconds someone aged 30 to 70 years dies prematurely from noncommunicable diseases - cardiovascular disease, chronic respiratory disease, diabetes or cancer.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 7,
-                        'title' => 'Million',
-                        'description' => '7 million people die every year from exposure to fine particles in polluted air.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 1,
-                        'title' => 'In 3',
-                        'description' => 'More than one of every three women have experienced either physical or sexual violence at some point in their life resulting in both short- and long-term consequences for their physical, mental, and sexual and reproductive health.'
-                    ]) ?>
-                </li>
-            </ul>
-        </div>
-    </div>
+        View::render('organisms/carousel/sdg-cards-slider', [
+            'slides' => [
+                [
+                    'number' => 400,
+                    'title' => 'Million',
+                    'description' => 'At least 400 million people have no basic healthcare, and 40 percent lack social protection.'
+                ],
+                [
+                    'number' => 1.6,
+                    'title' => 'Billion',
+                    'description' => 'More than 1.6 billion people live in fragile settings where protracted crises, combined with weak national capacity to deliver basic health services, present a significant challenge to global health.'
+                ],
+                [
+                    'number' => 15,
+                    'title' => 'Million',
+                    'description' => 'By the end of 2017, 21.7 million people living with HIV were receiving antiretroviral therapy. Yet more than 15 million people are still waiting for treatment.'
+                ],
+                [
+                    'number' => 2,
+                    'title' => 'Seconds',
+                    'description' => 'Every 2 seconds someone aged 30 to 70 years dies prematurely from noncommunicable diseases - cardiovascular disease, chronic respiratory disease, diabetes or cancer.'
+                ],
+                [
+                    'number' => 7,
+                    'title' => 'Million',
+                    'description' => '7 million people die every year from exposure to fine particles in polluted air.'
+                ],
+                [
+                    'number' => 1,
+                    'title' => 'In 3',
+                    'description' => 'More than one of every three women have experienced either physical or sexual violence at some point in their life resulting in both short- and long-term consequences for their physical, mental, and sexual and reproductive health.'
+                ]
+            ]
+        ]);
 
-    <?php
+
+
         View::render('organisms/text/bulleted-list', [
             'heading' => 'Goal targets',
             'listItems' => [
@@ -103,7 +69,9 @@
                 'Substantially increase health financing and the recruitment, development, training and retention of the health workforce in developing countries, especially in least developed countries and small island developing States',
                 'Strengthen the capacity of all countries, in particular developing countries, for early warning, risk reduction and management of national and global health risks'
             ]
-        ])
+        ]);
+
+
+        View::render('organisms/content-cards/sdg-content-cards')
     ?>
-    <?php View::render('organisms/content-cards/sdg-content-cards') ?>
 </div>

@@ -12,80 +12,45 @@
             ],
             'imageUrl' => '/assets/images/placeholder/hero/sdg-deep-dive-hero.jpg',
             'imageAlt' => 'SDG Deep Dive image'
-        ])
-    ?>
+        ]);
 
-    <div class="grid-x grid-padding-x cards-slider-container">
-        <div class="bullets-container">
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-                <div class="control-slider"></div>
-                <button class="glide__bullet" data-glide-dir="=0" aria-label="Slide 1">
-                    <span class="show-for-sr">Slide 1</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=1" aria-label="Slide 2">
-                    <span class="show-for-sr">Slide 2</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=2" aria-label="Slide 3">
-                    <span class="show-for-sr">Slide 3</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=3" aria-label="Slide 4">
-                    <span class="show-for-sr">Slide 4</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=4" aria-label="Slide 5">
-                    <span class="show-for-sr">Slide 5</span>
-                </button>
-            </div>
-        </div>
 
-        <div class="glide__track cards-slider" data-glide-el="track">
-            <ul class="glide__slides">
-                <li class="glide__slide sdg-card-container right-left delay-1">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => '2.3',
-                        'title' => 'Billion',
-                        'description' => 'Worldwide, 2.3 billion people lack access to basic sanitation.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-3">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 40,
-                        'title' => 'Percent',
-                        'description' => 'In some low-income African countries, infrastructure constraints cut businesses’ productivity by around 40 percent.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-4">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => '2.6',
-                        'title' => 'Billion',
-                        'description' => '2.6 billion people in developing countries do not have access to constant electricity.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-5">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 90,
-                        'title' => 'Percent',
-                        'description' => 'More than 4 billion people still do not have access to the Internet; 90 percent of them are in the developing world.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => '2.3',
-                        'title' => 'Billion',
-                        'description' => 'The renewable energy sectors currently employ more than 2.3 million people; the number could reach 20 million by 2030.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 30,
-                        'title' => 'Percent',
-                        'description' => 'In developing countries, barely 30 percent of agricultural products undergo industrial processing, compared to 98 percent high-income countries.'
-                    ]) ?>
-                </li>
-            </ul>
-        </div>
-    </div>
+        View::render('organisms/carousel/sdg-cards-slider', [
+            'slides' => [
+                [
+                    'number' => '2.3',
+                    'title' => 'Billion',
+                    'description' => 'Worldwide, 2.3 billion people lack access to basic sanitation.'
+                ],
+                [
+                    'number' => 40,
+                    'title' => 'Percent',
+                    'description' => 'In some low-income African countries, infrastructure constraints cut businesses’ productivity by around 40 percent.'
+                ],
+                [
+                    'number' => '2.6',
+                    'title' => 'Billion',
+                    'description' => '2.6 billion people in developing countries do not have access to constant electricity.'
+                ],
+                [
+                    'number' => 90,
+                    'title' => 'Percent',
+                    'description' => 'More than 4 billion people still do not have access to the Internet; 90 percent of them are in the developing world.'
+                ],
+                [
+                    'number' => '2.3',
+                    'title' => 'Billion',
+                    'description' => 'The renewable energy sectors currently employ more than 2.3 million people; the number could reach 20 million by 2030.'
+                ],
+                [
+                    'number' => 30,
+                    'title' => 'Percent',
+                    'description' => 'In developing countries, barely 30 percent of agricultural products undergo industrial processing, compared to 98 percent high-income countries.'
+                ]
+            ]
+        ]);
 
-    <?php
+
         View::render('organisms/text/bulleted-list', [
             'heading' => 'Goal targets',
             'listItems' => [
@@ -98,7 +63,9 @@
                 'Support domestic technology development, research and innovation in developing countries, including by ensuring a conducive policy environment for, inter alia, industrial diversification and value addition to commodities',
                 'Significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020'
             ]
-        ])
+        ]);
+
+
+        View::render('organisms/content-cards/sdg-content-cards');
     ?>
-    <?php View::render('organisms/content-cards/sdg-content-cards') ?>
 </div>

@@ -12,80 +12,46 @@
             ],
             'imageUrl' => '/assets/images/placeholder/hero/sdg-deep-dive-hero.jpg',
             'imageAlt' => 'SDG Deep Dive image'
-        ])
-    ?>
+        ]);
 
-    <div class="grid-x grid-padding-x cards-slider-container">
-        <div class="bullets-container">
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-                <div class="control-slider"></div>
-                <button class="glide__bullet" data-glide-dir="=0" aria-label="Slide 1">
-                    <span class="show-for-sr">Slide 1</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=1" aria-label="Slide 2">
-                    <span class="show-for-sr">Slide 2</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=2" aria-label="Slide 3">
-                    <span class="show-for-sr">Slide 3</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=3" aria-label="Slide 4">
-                    <span class="show-for-sr">Slide 4</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=4" aria-label="Slide 5">
-                    <span class="show-for-sr">Slide 5</span>
-                </button>
-            </div>
-        </div>
 
-        <div class="glide__track cards-slider" data-glide-el="track">
-            <ul class="glide__slides">
-                <li class="glide__slide sdg-card-container right-left delay-1">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 821,
-                        'title' => 'Million',
-                        'description' => 'The number of undernourished people reached 821 million in 2017.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-3">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 63,
-                        'title' => 'Percent',
-                        'description' => 'In 2017 Asia accounted for nearly two thirds, 63 percent, of the world’s hungry.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-4">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 22,
-                        'title' => 'Percent',
-                        'description' => 'Nearly 151 million children under five, 22 percent, were still stunted in 2017.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-5">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 1,
-                        'title' => 'In 8',
-                        'description' => 'More than 1 in 8 adults is obese.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 1,
-                        'title' => 'In 3',
-                        'description' => '1 in 3 women of reproductive age is anemic.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => '26',
-                        'title' => 'Percent',
-                        'description' => '26 percent of workers are employed in agriculture.'
-                    ]) ?>
-                </li>
-            </ul>
-        </div>
-    </div>
+        View::render('organisms/carousel/sdg-cards-slider', [
+            'slides' => [
+                [
+                    'number' => 821,
+                    'title' => 'Million',
+                    'description' => 'The number of undernourished people reached 821 million in 2017.'
+                ],
+                [
+                    'number' => 63,
+                    'title' => 'Percent',
+                    'description' => 'In 2017 Asia accounted for nearly two thirds, 63 percent, of the world’s hungry.'
+                ],
+                [
+                    'number' => 22,
+                    'title' => 'Percent',
+                    'description' => 'Nearly 151 million children under five, 22 percent, were still stunted in 2017.'
+                ],
+                [
+                    'number' => 1,
+                    'title' => 'In 8',
+                    'description' => 'More than 1 in 8 adults is obese.'
+                ],
+                [
+                    'number' => 1,
+                    'title' => 'In 3',
+                    'description' => '1 in 3 women of reproductive age is anemic.'
+                ],
+                [
+                    'number' => '26',
+                    'title' => 'Percent',
+                    'description' => '26 percent of workers are employed in agriculture.'
+                ]
+            ]
+        ]);
 
-    <?php
+
+
         View::render('organisms/text/bulleted-list', [
             'heading' => 'Goal targets',
             'listItems' => [
@@ -98,7 +64,9 @@
                 'Correct and prevent trade restrictions and distortions in world agricultural markets, including through the parallel elimination of all forms of agricultural export subsidies and all export measures with equivalent effect, in accordance with the mandate of the Doha Development Round',
                 'Adopt measures to ensure the proper functioning of food commodity markets and their derivatives and facilitate timely access to market information, including on food reserves, in order to help limit extreme food price volatility.'
             ]
-        ])
+        ]);
+
+
+        View::render('organisms/content-cards/sdg-content-cards');
     ?>
-    <?php View::render('organisms/content-cards/sdg-content-cards') ?>
 </div>

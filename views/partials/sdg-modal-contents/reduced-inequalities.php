@@ -13,80 +13,45 @@
             ],
             'imageUrl' => '/assets/images/placeholder/hero/sdg-deep-dive-hero.jpg',
             'imageAlt' => 'SDG Deep Dive image'
-        ])
-    ?>
+        ]);
 
-    <div class="grid-x grid-padding-x cards-slider-container">
-        <div class="bullets-container">
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-                <div class="control-slider"></div>
-                <button class="glide__bullet" data-glide-dir="=0" aria-label="Slide 1">
-                    <span class="show-for-sr">Slide 1</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=1" aria-label="Slide 2">
-                    <span class="show-for-sr">Slide 2</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=2" aria-label="Slide 3">
-                    <span class="show-for-sr">Slide 3</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=3" aria-label="Slide 4">
-                    <span class="show-for-sr">Slide 4</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=4" aria-label="Slide 5">
-                    <span class="show-for-sr">Slide 5</span>
-                </button>
-            </div>
-        </div>
 
-        <div class="glide__track cards-slider" data-glide-el="track">
-            <ul class="glide__slides">
-                <li class="glide__slide sdg-card-container right-left delay-1">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 22,
-                        'title' => 'Percent',
-                        'description' => 'In 2016, 22 percent of global income was received by the top 1 percent compared with 10 percent of income for the bottom 50 percent.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-3">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 16,
-                        'title' => 'Percent',
-                        'description' => 'In 1980, the top one percent had 16 percent of global income. The bottom 50 percent had 8 percent of income.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-4">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 33,
-                        'title' => 'Percent',
-                        'description' => 'Economic inequality is largely driven by the unequal ownership of capital. Since 1980, very large transfers of public to private wealth occurred in nearly all countries. The global wealth share of the top 1 percent was 33 percent in 2016.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-5">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 39,
-                        'title' => 'Percent',
-                        'description' => 'Under "business as usual", the top 1 percent global wealth will reach 39 percent by 2050.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 2,
-                        'title' => 'Times',
-                        'description' => 'Women spend, on average, twice as much time on unpaid housework as men.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 60,
-                        'title' => 'Percent',
-                        'description' => 'Women have as much access to financial services as men in just 60 percent of the countries assessed and to land ownership in just 42 percent of the countries assessed.'
-                    ]) ?>
-                </li>
-            </ul>
-        </div>
-    </div>
+        View::render('organisms/carousel/sdg-cards-slider', [
+            'slides' => [
+                [
+                    'number' => 22,
+                    'title' => 'Percent',
+                    'description' => 'In 2016, 22 percent of global income was received by the top 1 percent compared with 10 percent of income for the bottom 50 percent.'
+                ],
+                [
+                    'number' => 16,
+                    'title' => 'Percent',
+                    'description' => 'In 1980, the top one percent had 16 percent of global income. The bottom 50 percent had 8 percent of income.'
+                ],
+                [
+                    'number' => 33,
+                    'title' => 'Percent',
+                    'description' => 'Economic inequality is largely driven by the unequal ownership of capital. Since 1980, very large transfers of public to private wealth occurred in nearly all countries. The global wealth share of the top 1 percent was 33 percent in 2016.'
+                ],
+                [
+                    'number' => 39,
+                    'title' => 'Percent',
+                    'description' => 'Under "business as usual", the top 1 percent global wealth will reach 39 percent by 2050.'
+                ],
+                [
+                    'number' => 2,
+                    'title' => 'Times',
+                    'description' => 'Women spend, on average, twice as much time on unpaid housework as men.'
+                ],
+                [
+                    'number' => 60,
+                    'title' => 'Percent',
+                    'description' => 'Women have as much access to financial services as men in just 60 percent of the countries assessed and to land ownership in just 42 percent of the countries assessed.'
+                ]
+            ]
+        ]);
 
-    <?php
+
         View::render('organisms/text/bulleted-list', [
             'heading' => 'Goal targets',
             'listItems' => [
@@ -101,7 +66,9 @@
                 'Encourage official development assistance and financial flows, including foreign direct investment, to States where the need is greatest, in particular least developed countries, African countries, small island developing States and landlocked developing countries, in accordance with their national plans and programmes',
                 'By 2030, reduce to less than 3 per cent the transaction costs of migrant remittances and eliminate remittance corridors with costs higher than 5 per cent'
             ]
-        ])
+        ]);
+
+
+        View::render('organisms/content-cards/sdg-content-cards');
     ?>
-    <?php View::render('organisms/content-cards/sdg-content-cards') ?>
 </div>

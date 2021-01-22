@@ -1,5 +1,6 @@
 <?php use helpers\View; ?>
 
+
 <div class="sdg-modal-content hide">
     <?php
         View::render('organisms/hero/sdg-deep-dive-hero', [
@@ -13,80 +14,45 @@
             ],
             'imageUrl' => '/assets/images/placeholder/hero/sdg-deep-dive-hero.jpg',
             'imageAlt' => 'SDG Deep Dive image'
-        ])
-    ?>
+        ]);
 
-    <div class="grid-x grid-padding-x cards-slider-container">
-        <div class="bullets-container">
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-                <div class="control-slider"></div>
-                <button class="glide__bullet" data-glide-dir="=0" aria-label="Slide 1">
-                    <span class="show-for-sr">Slide 1</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=1" aria-label="Slide 2">
-                    <span class="show-for-sr">Slide 2</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=2" aria-label="Slide 3">
-                    <span class="show-for-sr">Slide 3</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=3" aria-label="Slide 4">
-                    <span class="show-for-sr">Slide 4</span>
-                </button>
-                <button class="glide__bullet" data-glide-dir="=4" aria-label="Slide 5">
-                    <span class="show-for-sr">Slide 5</span>
-                </button>
-            </div>
-        </div>
 
-        <div class="glide__track cards-slider" data-glide-el="track">
-            <ul class="glide__slides">
-                <li class="glide__slide sdg-card-container right-left delay-1">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 736,
-                        'title' => 'Million',
-                        'description' => '736 million people still live in extreme poverty.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-3">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 10,
-                        'title' => 'Percent',
-                        'description' => '10 percent of the world’s population live in extreme poverty, down from 36 percent in 1990.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-4">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 1.3,
-                        'title' => 'Billion',
-                        'description' => 'Some 1.3 billion people live in multidimensional poverty.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-5">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 50,
-                        'title' => 'Percent',
-                        'description' => 'Half of all people living in poverty are under 18.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => '1',
-                        'title' => 'In 10',
-                        'description' => 'One person in every 10 is extremely poor.'
-                    ]) ?>
-                </li>
-                <li class="glide__slide sdg-card-container right-left delay-6">
-                    <?php View::render('molecules/statistics-figures/stat-card', [
-                        'number' => '80',
-                        'title' => 'Percent',
-                        'description' => '80 percent of people living on less than $1.90 are in South Asia and sub-Saharan Africa.'
-                    ]) ?>
-                </li>
-            </ul>
-        </div>
-    </div>
+        View::render('organisms/carousel/sdg-cards-slider', [
+            'slides' => [
+                [
+                    'number' => 736,
+                    'title' => 'Million',
+                    'description' => '736 million people still live in extreme poverty.'
+                ],
+                [
+                    'number' => 10,
+                    'title' => 'Percent',
+                    'description' => '10 percent of the world’s population live in extreme poverty, down from 36 percent in 1990.'
+                ],
+                [
+                    'number' => 1.3,
+                    'title' => 'Billion',
+                    'description' => 'Some 1.3 billion people live in multidimensional poverty.'
+                ],
+                [
+                    'number' => 50,
+                    'title' => 'Percent',
+                    'description' => 'Half of all people living in poverty are under 18.'
+                ],
+                [
+                    'number' => '1',
+                    'title' => 'In 10',
+                    'description' => 'One person in every 10 is extremely poor.'
+                ],
+                [
+                    'number' => '80',
+                    'title' => 'Percent',
+                    'description' => '80 percent of people living on less than $1.90 are in South Asia and sub-Saharan Africa.'
+                ]
+            ]
+        ]);
 
-    <?php
+
         View::render('organisms/text/bulleted-list', [
             'heading' => 'Goal targets',
             'listItems' => [
@@ -98,7 +64,9 @@
                 'Ensure significant mobilization of resources from a variety of sources, including through enhanced development cooperation, in order to provide adequate and predictable means for developing countries, in particular least developed countries, to implement programmes and policies to end poverty in all its dimensions',
                 'Create sound policy frameworks at the national, regional and international levels, based on pro-poor and gender-sensitive development strategies, to support accelerated investment in poverty eradication actions',
             ]
-        ])
+        ]);
+
+
+        View::render('organisms/content-cards/sdg-content-cards');
     ?>
-    <?php View::render('organisms/content-cards/sdg-content-cards') ?>
 </div>
