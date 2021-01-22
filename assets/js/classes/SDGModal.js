@@ -175,7 +175,22 @@ class SDGModal {
             $statCard.click(e => {
                 let threshold = this.$window.outerWidth()
                 threshold -= this.$modalContent.outerWidth() / 2
-                this.glide.go(e.pageX < threshold ? '<' : '>')
+
+                let $bullets = $bulletWrapper.find('.glide__bullet:not(.hide-bullet)');
+                let $currentBullet = $bullets.filter(`[data-glide-dir="=${this.glide.index}"]`)
+                let $currentPosition = $bullets.index($currentBullet);
+
+                if(e.pageX < threshold) {
+                    // go back
+                    if($currentPosition > 0 && $bullets[$currentPosition-1] !== undefined) {
+                        this.glide.go($($bullets[$currentPosition-1]).data('glide-dir'))
+                    }
+                } else {
+                    // go forward
+                    if($currentPosition < $bullets.length && $bullets[$currentPosition+1] !== undefined) {
+                        this.glide.go($($bullets[$currentPosition+1]).data('glide-dir'))
+                    }
+                }
             })
 
             const $bulletWrapper = $(this.glide.selector.querySelector('.glide__bullets'));
@@ -236,7 +251,7 @@ class SDGModal {
                 } else {
                     $bulletWrapper.removeClass('hide');
                 }
-                
+
                 numberOfViewportSlides = Math.floor(numberOfSlides/perViewSetting)
                 numberOfViewportSlides = numberOfSlides%perViewSetting !== 0 ? numberOfViewportSlides+1 : numberOfViewportSlides;
                 slideWidth = 100 / numberOfViewportSlides;
