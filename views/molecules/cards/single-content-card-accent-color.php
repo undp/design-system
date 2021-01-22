@@ -1,5 +1,5 @@
 <a href="<?= $link ?? '#' ?>">
-    <div class="single-content-card-accent-color <?= $color ?>">
+    <div class="single-content-card-accent-color <?= $color ?? '' ?>">
         <div class="card-content">
             <div class="tag">
                 <?= $tag ?>
