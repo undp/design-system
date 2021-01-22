@@ -137,6 +137,7 @@ class SDGModal {
         const $sliderContainer = this.$modalContentWrapper.find('.cards-slider-container')
         const $statCard = $sliderContainer.find('.stat-card')
         const numberOfSlides = $sliderContainer.find('.glide__slide').length
+        let viewportSlides = []
 
         if ($sliderContainer.length) {
             this.glide = new Glide($sliderContainer.get(0), {
@@ -160,36 +161,69 @@ class SDGModal {
                 }
             });
 
+            const getNavTarget = (currentPosition, direction) => {
+                let navTarget = false;
+
+                if(direction === "left" && currentPosition > 0) {
+                    navTarget = viewportSlides[currentPosition-1];
+                }
+
+                if(direction === "right" && currentPosition < viewportSlides.length) {
+                    navTarget = viewportSlides[currentPosition+1];
+                }
+
+                navTarget = navTarget === undefined ? false : navTarget;
+
+                return navTarget
+            }
+
             // Change pointer to arrow image
             $statCard.on('mousemove', e => {
+                let currentPosition = viewportSlides.indexOf(this.glide.index);
+                let thresholdArea = this.$modalContent.outerWidth() / 2;
+
+                // We're at the beginning of the slides
+                if(currentPosition === 0) {
+                    thresholdArea = this.$modalContent.outerWidth()
+                }
+
+                // We're at the end of the slides
+                if(currentPosition === viewportSlides.length-1) {
+                    thresholdArea = 0
+                }
+
                 let threshold = this.$window.outerWidth()
-                threshold -= this.$modalContent.outerWidth() / 2
+                threshold -= thresholdArea
                 const arrowDir = e.pageX < threshold ? 'left' : 'right'
 
                 $statCard.css('cursor',
-                    `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), url("/assets/images/arrows/slider-arrow-${arrowDir}.cur"), auto`
+                    `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), 
+                    url("/assets/images/arrows/slider-arrow-${arrowDir}.cur"), auto`
                 )
             });
 
             // Navigate through slides on slide click
             $statCard.click(e => {
+                let currentPosition = viewportSlides.indexOf(this.glide.index);
+                let thresholdArea = this.$modalContent.outerWidth() / 2;
+
+                // We're at the beginning of the slides
+                if(currentPosition === 0) {
+                    thresholdArea = this.$modalContent.outerWidth()
+                }
+
+                // We're at the end of the slides
+                if(currentPosition === viewportSlides.length-1) {
+                    thresholdArea = 0
+                }
+
                 let threshold = this.$window.outerWidth()
-                threshold -= this.$modalContent.outerWidth() / 2
+                threshold -= thresholdArea
+                const arrowDir = e.pageX < threshold ? 'left' : 'right'
 
-                let $bullets = $bulletWrapper.find('.glide__bullet:not(.hide-bullet)');
-                let $currentBullet = $bullets.filter(`[data-glide-dir="=${this.glide.index}"]`)
-                let $currentPosition = $bullets.index($currentBullet);
-
-                if(e.pageX < threshold) {
-                    // go back
-                    if($currentPosition > 0 && $bullets[$currentPosition-1] !== undefined) {
-                        this.glide.go($($bullets[$currentPosition-1]).data('glide-dir'))
-                    }
-                } else {
-                    // go forward
-                    if($currentPosition < $bullets.length && $bullets[$currentPosition+1] !== undefined) {
-                        this.glide.go($($bullets[$currentPosition+1]).data('glide-dir'))
-                    }
+                let target = getNavTarget(currentPosition, arrowDir);
+                if(target !== false) {
+                    this.glide.go(`=${target}`)
                 }
             })
 
@@ -244,6 +278,7 @@ class SDGModal {
                 // This will show and hide bullets depending on how many
                 // cards and "cards per view" there are
                 perViewSetting = this.glide.settings.perView;
+                viewportSlides = [] // Clear viewport slides
 
                 if(numberOfSlides === perViewSetting) {
                     this.glide.settings.peek = 0;
@@ -273,6 +308,7 @@ class SDGModal {
 
                     lastBulletIndex = bulletIndex;
                     $bulletWrapper.find(`.bullet-index-${bulletIndex}`).removeClass('hide-bullet');
+                    viewportSlides.push(bulletIndex)
                 }
             });
 
