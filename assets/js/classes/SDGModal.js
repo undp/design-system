@@ -126,8 +126,8 @@ class SDGModal {
     initSlider() {
         this.destroyGlide()
 
-        const $statCard = this.$cardsSliderContainer.find('.stat-card')
         const $sliderContainer = this.$modalContentWrapper.find('.cards-slider-container')
+        const $statCard = $sliderContainer.find('.stat-card')
 
         if ($sliderContainer.length) {
             this.glide = new Glide($sliderContainer.get(0), {
@@ -170,7 +170,7 @@ class SDGModal {
             })
 
 
-            const numberOfSlides = this.$cardsSliderContainer.find('.glide__slide').length
+            const numberOfSlides = $sliderContainer.find('.glide__slide').length
             const $bulletWrapper = $(this.glide.selector.querySelector('.glide__bullets'));
 
             let $controlSlider = null
@@ -195,7 +195,7 @@ class SDGModal {
                 slideWidth = 100 / numberOfViewportSlides;
 
                 $bulletWrapper.html('<div class="control-slider"></div>')
-                $controlSlider = this.$cardsSliderContainer.find('.control-slider')
+                $controlSlider = $sliderContainer.find('.control-slider')
                 $controlSlider.css('width', slideWidth + "%")
 
                 // Create all bullets
@@ -215,7 +215,7 @@ class SDGModal {
                 numberOfViewportSlides = numberOfSlides%perViewSetting !== 0 ? numberOfViewportSlides+1 : numberOfViewportSlides;
                 slideWidth = 100 / numberOfViewportSlides;
 
-                $controlSlider = this.$cardsSliderContainer.find('.control-slider')
+                $controlSlider = $sliderContainer.find('.control-slider')
                 $controlSlider.css('width', slideWidth + "%")
 
                 $bulletWrapper.find('.glide__bullet').addClass('hide-bullet');

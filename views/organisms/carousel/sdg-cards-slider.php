@@ -4,12 +4,7 @@
 <div class="grid-x grid-padding-x cards-slider-container">
     <div class="bullets-container">
         <div class="glide__bullets" data-glide-el="controls[nav]">
-            <div class="control-slider"></div>
-            <?php foreach ($slides as $i => $slide) : ?>
-                <button class="glide__bullet" data-glide-dir="=<?= $i ?>" aria-label="Slide <?= $i + 1 ?>">
-                    <span class="show-for-sr">Slide <?= $i + 1 ?></span>
-                </button>
-            <?php endforeach; ?>
+            <? // Bullets are initialized via JS ?>
         </div>
     </div>
 
