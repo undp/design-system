@@ -91,6 +91,12 @@
         @include breakpoint(small only){
             margin-top: -1px;
             box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
+
+            @media not all and (min-resolution:.001dpcm) {
+                @supports (-webkit-appearance:none) {
+                    padding-bottom: 110px;
+                }
+            }
         }
 
         .side-spacing{
