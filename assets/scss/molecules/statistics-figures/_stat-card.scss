@@ -9,7 +9,7 @@
         min-height: 270px;
 
         .card-content{
-            padding: 40px 35px 15px;
+            padding: 40px 35px 40px;
 
             @include breakpoint(medium only){
                 padding: 20px 20px 15px;
