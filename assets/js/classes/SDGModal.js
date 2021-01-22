@@ -214,12 +214,8 @@ class SDGModal {
                 }
             });
 
-            this.glide.on(['build.before', 'resize'], () => {
-                // This will show and hide bullets depending on how many
-                // cards and "cards per view" there are
+            this.glide.on(['mount.before'], () => {
                 perViewSetting = this.glide.settings.perView;
-
-                console.log(numberOfSlides, perViewSetting)
 
                 if(numberOfSlides === perViewSetting) {
                     this.glide.settings.peek = 0;
@@ -227,7 +223,20 @@ class SDGModal {
                 } else {
                     $bulletWrapper.removeClass('hide');
                 }
+            })
 
+            this.glide.on(['build.before', 'resize'], () => {
+                // This will show and hide bullets depending on how many
+                // cards and "cards per view" there are
+                perViewSetting = this.glide.settings.perView;
+
+                if(numberOfSlides === perViewSetting) {
+                    this.glide.settings.peek = 0;
+                    $bulletWrapper.addClass('hide');
+                } else {
+                    $bulletWrapper.removeClass('hide');
+                }
+                
                 numberOfViewportSlides = Math.floor(numberOfSlides/perViewSetting)
                 numberOfViewportSlides = numberOfSlides%perViewSetting !== 0 ? numberOfViewportSlides+1 : numberOfViewportSlides;
                 slideWidth = 100 / numberOfViewportSlides;
