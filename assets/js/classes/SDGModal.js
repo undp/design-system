@@ -232,6 +232,7 @@ class SDGModal {
 
             if (shouldAnimate && !$animTarget.hasClass('in-viewport')) {
                 $animTarget.addClass('in-viewport')
+                this.$modalContent.find('.track').addClass('in-viewport')
             }
         })
     }
