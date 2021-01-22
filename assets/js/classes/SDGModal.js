@@ -95,9 +95,9 @@ class SDGModal {
         const nextSdgTitle = this.$nextSdg.data('title')
         const nextSdgNumber = this.$nextSdg.data('number')
 
+        this.removeColorClasses(this.$nextSdgCta)
         nextSdg.data('number', nextSdgNumber)
         nextSdg.addClass(`color-${nextSdgNumber}`)
-        nextSdg.removeClass(`color-${this.number}`)
 
         this.$nextSdgCta.removeClass('hide')
         this.$nextSdgCta.find('.title').html(nextSdgTitle)
@@ -178,10 +178,22 @@ class SDGModal {
     addColorClasses() {
         const $sdgDeepDiveHero = this.$modalContentWrapper.find('.sdg-deep-dive-hero')
 
+        this.removeColorClasses(this.$modalContentWrapper)
         $sdgDeepDiveHero.find('.title').addClass(this.color)
         $sdgDeepDiveHero.find('.description-container').addClass(this.color)
         this.$modalContentWrapper.find('.stat-card').addClass(`sdg ${this.color}`)
         this.$modalContentWrapper.find('.single-content-card-accent-color').addClass(`sdg ${this.color}`)
+    }
+
+    removeColorClasses($container) {
+        const $colorClasses = $container.find('[class*=color-]')
+
+        $colorClasses.each((i, node) => {
+            node.className = node.className
+                .split(' ')
+                .filter(c => !c.startsWith('color-'))
+                .join(' ').trim()
+        })
     }
 
     setModalSdg($sdg) {
