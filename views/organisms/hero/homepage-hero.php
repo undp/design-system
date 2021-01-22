@@ -20,7 +20,7 @@ use helpers\Svg;
         </div>
         <div class="cta-button">
             <button class="btn">
-                Explore
+                <span>Explore</span>
                 <?php Svg::render('btn-arrow-blue', true, 'Explore', 'assets/images/arrows/')?>
             </button>
         </div>
