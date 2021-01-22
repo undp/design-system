@@ -15,7 +15,7 @@ use helpers\Svg;
         </div>
         <div class="cta-container">
             <span class="text-link arrow-1">
-                <?= $cta ?? 'Read more' ?>
+                <span><?= $cta ?? 'Read more' ?></span>
                 <?php Svg::render('btn-arrow-red', true, $cta ?? 'Read more', 'assets/images/arrows/')?>
             </span>
         </div>
