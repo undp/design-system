@@ -12,6 +12,7 @@ import dropdown from './components/dropdown-languajes'
 import footerMenu from './partials/footer-menu-mobile'
 import scrollTriggers from './components/scroll-triggers'
 import locationFilters from './components/location-filters'
+import multiSelect from './components/multi-select'
 import publicationsSlider from './components/publications-slider'
 import ourMissionAnimation from './components/our-mission-animation'
 import ourExpertiseMobileSlider from './components/our-expertise-mobile-slider'
@@ -26,9 +27,7 @@ import menusNav from './render-data/menu/all';
 import searchData  from './render-data/modals/search'
 import countriesData  from './render-data/modals/locations/countries'
 import multiSelectData from './render-data/modals/locations/multi-selects'
-
-//molecules
-import moleculeStatisticsSdgCard from './molecules/statistics-figures/sdg-card'
+import mobileFilterData from './render-data/modals/locations/mobile-filters'
 
 function main() {
     prism();
@@ -41,6 +40,7 @@ function main() {
     footerMenu()
     navigation()
     locationFilters()
+    multiSelect()
     customSelect()
     scrollTriggers()
     publicationsSlider()
@@ -48,9 +48,6 @@ function main() {
     ourExpertiseMobileSlider()
     heroAnimation()
     trapFocus()
-    multiSelectData()
-    searchData()
-    countriesData()
     menusNav()
     modalSdgs()
     heroAnimation()
@@ -58,8 +55,10 @@ function main() {
     sdgCard()
     select()
     docs()
-
-    moleculeStatisticsSdgCard()
+    multiSelectData()
+    mobileFilterData()
+    searchData()
+    countriesData()
 }
 
 document.addEventListener("DOMContentLoaded", function () {

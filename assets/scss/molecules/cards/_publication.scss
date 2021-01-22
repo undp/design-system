@@ -54,6 +54,10 @@
                 min-height: 210px;
             }
 
+            @include breakpoint(small only)  {
+                min-height: auto;
+            }
+
             @include breakpoint(360px down){
                 padding: 10%;
                 max-width: 200px;

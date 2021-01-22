@@ -5,6 +5,7 @@ class SDGModal {
 
     constructor(container = '#modal-sdgs', modalTrigger = '.sdg-card-list .sdg-card') {
         this.$body = $('body')
+        this.$html = $('html')
         this.$window = $(window)
         this.$modal = $(container)
         this.$openModal = $(modalTrigger)
@@ -23,7 +24,6 @@ class SDGModal {
         }
 
         this.$nextSdg = null
-        this.$sdgCardList = $('.sdg-card-list')
         this.$nextSdgCta = this.$modal.find('.next-sdg-container')
     }
 
@@ -41,6 +41,7 @@ class SDGModal {
 
     open() {
         this.$body.addClass(this.classes.lockBody)
+        this.$html.addClass(this.classes.lockBody)
         this.$modal.removeClass(this.classes.hide).addClass(this.classes.modalOpen)
         this.$modalContent.animate( { scrollTop : 0 }, 800 )
     }
@@ -55,6 +56,7 @@ class SDGModal {
         location.hash = ''
         $cards.find('.sdg-card-container').removeClass('in-viewport')
 
+        this.$html.removeClass(this.classes.lockBody)
         this.$body.removeClass(this.classes.lockBody)
         this.$modal.addClass(this.classes.hide).removeClass(this.classes.modalOpen)
     }

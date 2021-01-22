@@ -53,6 +53,7 @@
     .breadcrumb {
         margin-top: 30px;
         position: absolute;
+        z-index: $z-index-2;
     }
 
     .title {

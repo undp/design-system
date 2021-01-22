@@ -27,7 +27,7 @@ use helpers\Svg;
                            <?php Svg::render('btn-arrow-blue', true, $cta ?? 'Read More', 'assets/images/arrows/')?>
                         </button>
                         <a class="text-link arrow-1 show-for-small-only" href="#">
-                            Read More
+                            <span>Read More</span>
                             <?php Svg::render('btn-arrow-red', true, 'Read More', 'assets/images/arrows/')?>
                         </a>
                     </div>
