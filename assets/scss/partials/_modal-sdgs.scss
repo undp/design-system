@@ -88,10 +88,13 @@
         background-color: $white;
         box-shadow: -3px 0 6px rgba($black, 0.16);
 
-        @include breakpoint(small only){
+        @include breakpoint(small only) {
             margin-top: -1px;
             box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
+        }
 
+        // Target only the largest resolution for iphone devices
+        @include breakpoint(450px down){
             @media not all and (min-resolution:.001dpcm) {
                 @supports (-webkit-appearance:none) {
                     padding-bottom: 110px;
