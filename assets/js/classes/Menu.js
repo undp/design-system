@@ -1,4 +1,4 @@
-import ModalSdgs from "../classes/ModalSdgs";
+import SDGModal from "../classes/SDGModal";
 
 class Menu {
 
@@ -137,7 +137,7 @@ class Menu {
     }
 
     closeModalSdg() {
-        const modalSdg = new ModalSdgs();
+        const modalSdg = new SDGModal();
         modalSdg.close();
     }
 

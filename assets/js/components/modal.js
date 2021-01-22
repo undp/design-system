@@ -1,5 +1,5 @@
 import Foundation from 'foundation-sites'
-import ModalSdgs from "../classes/ModalSdgs";
+import SDGModal from "../classes/SDGModal";
 
 class Modal {
     constructor() {
@@ -183,7 +183,7 @@ class Modal {
     }
 
     closeModalSdg() {
-        const modalSdg = new ModalSdgs();
+        const modalSdg = new SDGModal();
         modalSdg.close();
     }
 

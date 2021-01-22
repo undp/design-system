@@ -1,7 +1,7 @@
-import ModalSdgs from "../classes/ModalSdgs";
+import SDGModal from "../classes/SDGModal";
 
 const init = function () {
-    const modalSdgs = new ModalSdgs();
+    const modalSdgs = new SDGModal();
     modalSdgs.init();
 }
 
