@@ -303,7 +303,7 @@ class SDGModal {
         let hash = location.hash
 
         if (hash) {
-            const slug = hash.replace('#', '/')
+            const slug = hash.replace('#', '')
             const $targetSdg = $(`.sdg-card[data-slug=${slug}]`)
 
             if (!$targetSdg.length) return false
