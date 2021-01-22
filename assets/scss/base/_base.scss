@@ -16,17 +16,16 @@ body {
 
     &.modal-open {
         width: 100%;
-        height: 100vh;
+        height: auto;//Needed for Safari
+        position: static;
         overflow-y: hidden;
-        position: relative;
-
     }
 }
 
 html {
 
     &.modal-open {
-        overflow: hidden;
+        overflow: hidden; //For Safari only
     }
 }
 
