@@ -39,6 +39,10 @@ class SDGModal {
         this.setWindowClickListener()
     }
 
+    removeHash() {
+        history.pushState("", document.title, location.pathname + location.search);
+    }
+
     open() {
         this.$body.addClass(this.classes.lockBody)
         this.$html.addClass(this.classes.lockBody)
@@ -47,13 +51,13 @@ class SDGModal {
     }
 
     close() {
-        if(!this.$modal.length) {
+       if(!this.$modal.length) {
             return false;
         }
 
         const $cards = $('.cards-slider')
 
-        location.hash = ''
+        this.removeHash()
         $cards.find('.sdg-card-container').removeClass('in-viewport')
 
         this.$html.removeClass(this.classes.lockBody)
@@ -62,8 +66,9 @@ class SDGModal {
     }
 
     setCloseModalListener() {
-        this.$modalBtnClose.click(() => {
-            this.close()
+        this.$modalBtnClose.click((e) => {
+            e.preventDefault();
+            this.close();
         })
     }
 
@@ -77,7 +82,10 @@ class SDGModal {
 
     setOpenModalListener() {
         const $sdgCardList = $('.sdg-card-list')
-        this.$openModal.click(ev => this.setModalSdg($(ev.currentTarget)))
+        this.$openModal.click((ev) => {
+            ev.preventDefault();
+            this.setModalSdg($(ev.currentTarget))
+        })
 
         this.$nextSdgCta.click(() => {
             const nextSdg = this.$nextSdgCta.find('.sdg-card')
@@ -220,7 +228,7 @@ class SDGModal {
         let hash = location.hash
 
         if (hash) {
-            const slug = hash.replace('#', '')
+            const slug = hash.replace('#', '/')
             const $targetSdg = $(`.sdg-card[data-slug=${slug}]`)
 
             if (!$targetSdg.length) return false
