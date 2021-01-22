@@ -187,7 +187,6 @@ class SDGModal {
 
         if (!$sdgModalContent.length) return false
 
-        location.hash = this.slug
         this.slug = $sdg.data('slug')
         this.color = $sdg.data('color')
         this.number = $sdg.data('number')
@@ -196,6 +195,7 @@ class SDGModal {
 
         this.$nextSdg = $sdg.parent().next().find('.sdg-card')
 
+        location.hash = this.slug
         this.open()
         this.initSlider()
         this.addColorClasses()
