@@ -157,29 +157,18 @@
                 top: 0;
                 width: 100%;
                 position: absolute;
+
+                .hide-bullet {
+                    display: none;
+                }
             }
 
             .cards-slider {
                 overflow: visible;
                 flex-wrap: nowrap;
-                padding-left: 105px;
-                margin-right: -25px;
-
-                @include breakpoint(medium down) {
-                    padding-left: 73px;
-                }
-
-                @include breakpoint(small only) {
-                    padding-left: 0;
-                }
 
                 .glide__slides {
                     width: 100% !important;
-                }
-
-                .sdg-card-container {
-                    width: 212px;
-                    min-width: 212px;
                 }
             }
         }

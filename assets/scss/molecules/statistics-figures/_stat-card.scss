@@ -8,10 +8,6 @@
     &.small{
         min-height: 270px;
 
-        @include breakpoint(medium down){
-            max-width: 250px;
-        }
-
         .card-content{
             padding: 40px 35px 15px;
 
