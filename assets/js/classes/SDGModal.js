@@ -136,6 +136,7 @@ class SDGModal {
 
         const $sliderContainer = this.$modalContentWrapper.find('.cards-slider-container')
         const $statCard = $sliderContainer.find('.stat-card')
+        const numberOfSlides = $sliderContainer.find('.glide__slide').length
 
         if ($sliderContainer.length) {
             this.glide = new Glide($sliderContainer.get(0), {
@@ -145,17 +146,17 @@ class SDGModal {
                 bound: true,
                 perView: 4,
                 breakpoints: {
-                    425: {
+                    600: {
                         peek: { before: 0, after: 100 },
                         perView: 1,
                     },
-                    819: {
+                    834: {
                         peek: 100,
                         perView: 2
                     },
                     1439: {
                         perView: 3
-                    },
+                    }
                 }
             });
 
@@ -177,8 +178,6 @@ class SDGModal {
                 this.glide.go(e.pageX < threshold ? '<' : '>')
             })
 
-
-            const numberOfSlides = $sliderContainer.find('.glide__slide').length
             const $bulletWrapper = $(this.glide.selector.querySelector('.glide__bullets'));
 
             let $controlSlider = null
@@ -219,6 +218,16 @@ class SDGModal {
                 // This will show and hide bullets depending on how many
                 // cards and "cards per view" there are
                 perViewSetting = this.glide.settings.perView;
+
+                console.log(numberOfSlides, perViewSetting)
+
+                if(numberOfSlides === perViewSetting) {
+                    this.glide.settings.peek = 0;
+                    $bulletWrapper.addClass('hide');
+                } else {
+                    $bulletWrapper.removeClass('hide');
+                }
+
                 numberOfViewportSlides = Math.floor(numberOfSlides/perViewSetting)
                 numberOfViewportSlides = numberOfSlides%perViewSetting !== 0 ? numberOfViewportSlides+1 : numberOfViewportSlides;
                 slideWidth = 100 / numberOfViewportSlides;
@@ -231,10 +240,10 @@ class SDGModal {
                 let lastBulletIndex = 0;
                 for (let index = 0; index < numberOfViewportSlides; index++) {
                     let bulletIndex = index * perViewSetting;
+                    let remainder = numberOfSlides%perViewSetting;
 
-                    if(index === numberOfViewportSlides - 1) {
-                        const remainder = numberOfSlides%perViewSetting !== 0 ?
-                            numberOfSlides%perViewSetting : 1;
+                    if(index === numberOfViewportSlides - 1 && remainder !== 0) {
+                        remainder = remainder !== 0 ? remainder : 1;
                         bulletIndex = index > 0 ? lastBulletIndex+remainder : index;
                     }
 

@@ -161,6 +161,10 @@
                 width: 100%;
                 position: absolute;
 
+                &.hide {
+                    display: none;
+                }
+
                 .hide-bullet {
                     display: none;
                 }
@@ -168,10 +172,9 @@
 
             .cards-slider {
                 overflow: visible;
-                flex-wrap: nowrap;
 
-                .glide__slides {
-                    width: 100% !important;
+                .glide__slide {
+                    height: auto;
                 }
             }
         }

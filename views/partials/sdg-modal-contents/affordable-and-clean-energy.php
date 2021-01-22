@@ -42,11 +42,6 @@
                     'number' => '17.5',
                     'title' => 'Percent',
                     'description' => 'As of 2017, 17.5 percent of power was generated through renewable sources.'
-                ],
-                [
-                    'number' => 18,
-                    'title' => 'Million',
-                    'description' => 'The renewable energy sector employed a record 11.5 million people in 2019. The changes needed in energy production and uses to achieve the Paris Agreement target of limiting the rise in temperature to below 2C can create 18 million jobs.'
                 ]
             ]
         ]);
