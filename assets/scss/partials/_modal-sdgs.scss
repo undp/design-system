@@ -88,9 +88,18 @@
         background-color: $white;
         box-shadow: -3px 0 6px rgba($black, 0.16);
 
-        @include breakpoint(small only){
+        @include breakpoint(small only) {
             margin-top: -1px;
             box-shadow: -3px 6px 6px 0px rgba(0, 0, 0, 0.16);
+        }
+
+        // Target only the largest resolution for iphone devices
+        @include breakpoint(450px down){
+            @media not all and (min-resolution:.001dpcm) {
+                @supports (-webkit-appearance:none) {
+                    padding-bottom: 110px;
+                }
+            }
         }
 
         .side-spacing{
@@ -151,29 +160,21 @@
                 top: 0;
                 width: 100%;
                 position: absolute;
+
+                &.hide {
+                    display: none;
+                }
+
+                .hide-bullet {
+                    display: none;
+                }
             }
 
             .cards-slider {
                 overflow: visible;
-                flex-wrap: nowrap;
-                padding-left: 105px;
-                margin-right: -25px;
 
-                @include breakpoint(medium down) {
-                    padding-left: 73px;
-                }
-
-                @include breakpoint(small only) {
-                    padding-left: 0;
-                }
-
-                .glide__slides {
-                    width: 100% !important;
-                }
-
-                .sdg-card-container {
-                    width: 212px;
-                    min-width: 212px;
+                .glide__slide {
+                    height: auto;
                 }
             }
         }

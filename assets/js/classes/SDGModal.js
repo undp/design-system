@@ -39,6 +39,10 @@ class SDGModal {
         this.setWindowClickListener()
     }
 
+    removeHash() {
+        history.pushState("", document.title, location.pathname + location.search);
+    }
+
     open() {
         this.$body.addClass(this.classes.lockBody)
         this.$html.addClass(this.classes.lockBody)
@@ -47,13 +51,13 @@ class SDGModal {
     }
 
     close() {
-        if(!this.$modal.length) {
+       if(!this.$modal.length) {
             return false;
         }
 
         const $cards = $('.cards-slider')
 
-        location.hash = ''
+        this.removeHash()
         $cards.find('.sdg-card-container').removeClass('in-viewport')
 
         this.$html.removeClass(this.classes.lockBody)
@@ -62,8 +66,9 @@ class SDGModal {
     }
 
     setCloseModalListener() {
-        this.$modalBtnClose.click(() => {
-            this.close()
+        this.$modalBtnClose.click((e) => {
+            e.preventDefault();
+            this.close();
         })
     }
 
@@ -77,7 +82,10 @@ class SDGModal {
 
     setOpenModalListener() {
         const $sdgCardList = $('.sdg-card-list')
-        this.$openModal.click(ev => this.setModalSdg($(ev.currentTarget)))
+        this.$openModal.click((ev) => {
+            ev.preventDefault();
+            this.setModalSdg($(ev.currentTarget))
+        })
 
         this.$nextSdgCta.click(() => {
             const nextSdg = this.$nextSdgCta.find('.sdg-card')
@@ -127,49 +135,184 @@ class SDGModal {
         this.destroyGlide()
 
         const $sliderContainer = this.$modalContentWrapper.find('.cards-slider-container')
-
         const $statCard = $sliderContainer.find('.stat-card')
-        const $slides = $sliderContainer.find('.glide__slide')
-        const $controlSlider = $sliderContainer.find('.control-slider')
-
-        const slideWidth = 100 / $slides.length;
-
-        $controlSlider.css('width', slideWidth + "%")
+        const numberOfSlides = $sliderContainer.find('.glide__slide').length
+        let viewportSlides = []
 
         if ($sliderContainer.length) {
             this.glide = new Glide($sliderContainer.get(0), {
                 type: 'slider',
                 gap: 24,
-                perView: 5,
+                peek: 115,
+                bound: true,
+                perView: 4,
                 breakpoints: {
-                    425: {perView: 2},
-                    820: {perView: 3},
-                    1194: {perView: 4},
+                    600: {
+                        peek: { before: 0, after: 100 },
+                        perView: 1,
+                    },
+                    834: {
+                        peek: 100,
+                        perView: 2
+                    },
+                    1439: {
+                        perView: 3
+                    }
                 }
             });
 
-            this.glide.mount()
+            const getNavTarget = (currentPosition, direction) => {
+                let navTarget = false;
 
-            // Calculate cursor position from active slide index
-            this.glide.on(['mount.after', 'run'], () => {
-                $controlSlider.css('left', (this.glide.index * slideWidth) + "%")
-            })
+                if(direction === "left" && currentPosition > 0) {
+                    navTarget = viewportSlides[currentPosition-1];
+                }
+
+                if(direction === "right" && currentPosition < viewportSlides.length) {
+                    navTarget = viewportSlides[currentPosition+1];
+                }
+
+                navTarget = navTarget === undefined ? false : navTarget;
+
+                return navTarget
+            }
+
             // Change pointer to arrow image
             $statCard.on('mousemove', e => {
+                let currentPosition = viewportSlides.indexOf(this.glide.index);
+                let thresholdArea = this.$modalContent.outerWidth() / 2;
+
+                // We're at the beginning of the slides
+                if(currentPosition === 0) {
+                    thresholdArea = this.$modalContent.outerWidth()
+                }
+
+                // We're at the end of the slides
+                if(currentPosition === viewportSlides.length-1) {
+                    thresholdArea = 0
+                }
+
                 let threshold = this.$window.outerWidth()
-                threshold -= this.$modalContent.outerWidth() / 2
+                threshold -= thresholdArea
                 const arrowDir = e.pageX < threshold ? 'left' : 'right'
 
                 $statCard.css('cursor',
-                    `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), url("/assets/images/arrows/slider-arrow-${arrowDir}.cur"), auto`
+                    `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), 
+                    url("/assets/images/arrows/slider-arrow-${arrowDir}.cur"), auto`
                 )
             });
+
             // Navigate through slides on slide click
             $statCard.click(e => {
+                let currentPosition = viewportSlides.indexOf(this.glide.index);
+                let thresholdArea = this.$modalContent.outerWidth() / 2;
+
+                // We're at the beginning of the slides
+                if(currentPosition === 0) {
+                    thresholdArea = this.$modalContent.outerWidth()
+                }
+
+                // We're at the end of the slides
+                if(currentPosition === viewportSlides.length-1) {
+                    thresholdArea = 0
+                }
+
                 let threshold = this.$window.outerWidth()
-                threshold -= this.$modalContent.outerWidth() / 2
-                this.glide.go(e.pageX < threshold ? '<' : '>')
+                threshold -= thresholdArea
+                const arrowDir = e.pageX < threshold ? 'left' : 'right'
+
+                let target = getNavTarget(currentPosition, arrowDir);
+                if(target !== false) {
+                    this.glide.go(`=${target}`)
+                }
             })
+
+            const $bulletWrapper = $(this.glide.selector.querySelector('.glide__bullets'));
+
+            let $controlSlider = null
+            let perViewSetting = this.glide.settings.perView;
+            let numberOfViewportSlides = Math.ceil(numberOfSlides/perViewSetting)
+            let slideWidth = 100 / numberOfViewportSlides;
+
+            this.glide.on(['mount.after', 'run'], () => {
+                // Calculate cursor position from active slide index
+                let bulletIndex = Math.floor(this.glide.index / perViewSetting);
+
+                if(this.glide.index % perViewSetting !== 0) {
+                    bulletIndex++;
+                }
+
+                $controlSlider.css('left', (bulletIndex * slideWidth) + "%")
+            })
+
+            this.glide.on(['mount.before'], () => {
+                perViewSetting = this.glide.settings.perView;
+                numberOfViewportSlides = Math.ceil(numberOfSlides/perViewSetting)
+                slideWidth = 100 / numberOfViewportSlides;
+
+                $bulletWrapper.html('<div class="control-slider"></div>')
+                $controlSlider = $sliderContainer.find('.control-slider')
+                $controlSlider.css('width', slideWidth + "%")
+
+                // Create all bullets
+                for (let index = 0; index < numberOfSlides; index++) {
+                    const button = document.createElement('button');
+                    button.className = `glide__bullet bullet-index-${index}`;
+                    button.setAttribute("data-glide-dir", '=' + index);
+                    $bulletWrapper.append(button);
+                }
+            });
+
+            this.glide.on(['mount.before'], () => {
+                perViewSetting = this.glide.settings.perView;
+
+                if(numberOfSlides === perViewSetting) {
+                    this.glide.settings.peek = 0;
+                    $bulletWrapper.addClass('hide');
+                } else {
+                    $bulletWrapper.removeClass('hide');
+                }
+            })
+
+            this.glide.on(['build.before', 'resize'], () => {
+                // This will show and hide bullets depending on how many
+                // cards and "cards per view" there are
+                perViewSetting = this.glide.settings.perView;
+                viewportSlides = [] // Clear viewport slides
+
+                if(numberOfSlides === perViewSetting) {
+                    this.glide.settings.peek = 0;
+                    $bulletWrapper.addClass('hide');
+                } else {
+                    $bulletWrapper.removeClass('hide');
+                }
+
+                numberOfViewportSlides = Math.floor(numberOfSlides/perViewSetting)
+                numberOfViewportSlides = numberOfSlides%perViewSetting !== 0 ? numberOfViewportSlides+1 : numberOfViewportSlides;
+                slideWidth = 100 / numberOfViewportSlides;
+
+                $controlSlider = $sliderContainer.find('.control-slider')
+                $controlSlider.css('width', slideWidth + "%")
+
+                $bulletWrapper.find('.glide__bullet').addClass('hide-bullet');
+
+                let lastBulletIndex = 0;
+                for (let index = 0; index < numberOfViewportSlides; index++) {
+                    let bulletIndex = index * perViewSetting;
+                    let remainder = numberOfSlides%perViewSetting;
+
+                    if(index === numberOfViewportSlides - 1 && remainder !== 0) {
+                        remainder = remainder !== 0 ? remainder : 1;
+                        bulletIndex = index > 0 ? lastBulletIndex+remainder : index;
+                    }
+
+                    lastBulletIndex = bulletIndex;
+                    $bulletWrapper.find(`.bullet-index-${bulletIndex}`).removeClass('hide-bullet');
+                    viewportSlides.push(bulletIndex)
+                }
+            });
+
+            this.glide.mount();
         }
 
         this.setCardsAnimation()

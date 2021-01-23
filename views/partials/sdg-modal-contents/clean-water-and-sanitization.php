@@ -38,16 +38,6 @@
                     'number' => 2,
                     'title' => 'Billion',
                     'description' => 'Water stress affects more than 2 billion people, with this figure projected to increase.'
-                ],
-                [
-                    'number' => 80,
-                    'title' => 'Percent',
-                    'description' => '80 percent of countries have laid the foundations for integrated water resources management.'
-                ],
-                [
-                    'number' => 70,
-                    'title' => 'Percent',
-                    'description' => 'The world has lost 70 percent of its natural wetlands over the last century.'
                 ]
             ]
         ]);

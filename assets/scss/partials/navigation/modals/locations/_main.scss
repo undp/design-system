@@ -411,6 +411,10 @@
                             flex: 1 0 40%;
                             align-items: center;
                             padding-right: 10px;
+
+                            @include breakpoint(large) {
+                                flex: 1 0 50%;
+                            }
                         }
 
                         .language-link {
