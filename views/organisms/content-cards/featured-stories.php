@@ -7,9 +7,7 @@
                 <div class="title-container">
                     <hgroup class="section-title">
                         <h2 class="heading h2">
-                            Discover
-                        </h2>
-                        <h2 class="heading h2">
+                            Discover<br/>
                             More
                         </h2>
                     </hgroup>

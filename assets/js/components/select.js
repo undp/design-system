@@ -1,4 +1,4 @@
-import Select from "../classes/select";
+import Select from "../classes/Select";
 
 const init = function () {
     const select = new Select();

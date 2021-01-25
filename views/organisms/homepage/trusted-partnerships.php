@@ -1,7 +1,6 @@
 <?php
 
 use helpers\Svg;
-use helpers\View;
 ?>
 <section class="trusted-partnerships <?= $classes ?>">
     <div class="grid-container">
@@ -13,8 +12,8 @@ use helpers\View;
                 <p class="big-copy">
                     Partnership is at the heart of everything UNDP does. We offer a nearly universal presence across the world. We are determined to mobilize the means to implement the 2030 Agenda through a revitalized Global Partnership for Sustainable Development, with a focus on the poorest and most vulnerable.
                 </p>
-                <button class="btn not-flex">
-                    Join Us
+                <button class="btn">
+                    <span>Join Us</span>
                     <?php Svg::render('btn-arrow-blue', true, 'Join Us', 'assets/images/arrows/')?>
                 </button>
             </div>

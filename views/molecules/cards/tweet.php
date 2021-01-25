@@ -25,7 +25,7 @@ use helpers\Svg;
         </p>
         <div class="cta">
             <a class="text-link arrow-1 light-red" href="#" target="_blank">
-                Read More
+                <span>Read More</span>
                 <?php Svg::render('btn-arrow-red', true, 'Read More', 'assets/images/arrows/')?>
             </a>
         </div>

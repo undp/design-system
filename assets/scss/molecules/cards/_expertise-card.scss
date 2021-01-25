@@ -82,13 +82,9 @@
             padding: 0 20px;
         }
 
-        @include breakpoint(medium down){
-            padding: 0 15px 0 0;
-        }
-
         @include breakpoint(small only){
             margin-top: 40px;
-            padding-bottom: 0;
+            padding: 0 15px 0 0;
         }
     }
 

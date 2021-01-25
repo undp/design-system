@@ -8,7 +8,7 @@
     position: relative;
     background-size: cover;
     background-position: top;
-    padding: 222px 0 260px 0;
+
     margin: $height-nav auto 0;
     background-repeat: no-repeat;
     font-family: $secondary-font;
@@ -50,11 +50,18 @@
         }
     }
 
+    .breadcrumb {
+        margin-top: 30px;
+        position: absolute;
+        z-index: $z-index-2;
+    }
+
     .title {
         max-width: 810px;
         font-size: 11rem;
         line-height: 1.08;
         letter-spacing: 12px;
+        padding: 222px 0 260px 0;
         text-transform: uppercase;
 
         @include breakpoint(large down) {

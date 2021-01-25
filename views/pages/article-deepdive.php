@@ -126,6 +126,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         </div>
     </section>
 
+    <?php View::render('organisms/content-cards/related-articles') ?>
 </div>
 
 <!-- Footer -->

@@ -2,6 +2,10 @@
     .title {
         margin: 120px 0 0 105px;
 
+        @include breakpoint(medium down){
+            margin-left: 72px;
+        }
+
         @include breakpoint(small only){
             margin: 0 0 0 30px;
         }

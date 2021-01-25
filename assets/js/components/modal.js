@@ -1,6 +1,5 @@
-import 'foundation-sites/dist/js/foundation'
-import ModalSdgs from "../classes/ModalSdgs";
-import Foundation from "foundation-sites";
+import Foundation from 'foundation-sites'
+import SDGModal from "../classes/SDGModal";
 
 class Modal {
     constructor() {
@@ -18,6 +17,7 @@ class Modal {
         this.window = $(window);
 
         this.$body = $('body');
+        this.$html = $('html');
         this.$optionClose = null;
         this.$optionDefalt = null;
         this.$modalReference = null;
@@ -121,6 +121,7 @@ class Modal {
     open() {
         this.closeModalSdg();
         this.$body.addClass('modal-open');
+        this.$html.addClass('modal-open');
         this.currentModal.removeClass('hide');
         if($(window).width() > Foundation.MediaQuery.get('medium')){
             this.inputSearchAutoFocus();
@@ -144,6 +145,7 @@ class Modal {
     close() {
         this.currentModal.addClass('hide');
         this.$body.removeClass('modal-open');
+        this.$html.removeClass('modal-open');
         this.$modalReference.removeClass(this.classModalActive)
         this.$header.css('padding-right', 'unset')
     }
@@ -181,7 +183,7 @@ class Modal {
     }
 
     closeModalSdg() {
-        const modalSdg = new ModalSdgs();
+        const modalSdg = new SDGModal();
         modalSdg.close();
     }
 
