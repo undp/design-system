@@ -3,6 +3,7 @@
 
     .gallery-container {
         display: flex;
+        justify-content: center;
 
         .image-item {
             margin-left: 25px;
@@ -12,5 +13,4 @@
             }
         }
     }
-
 }
