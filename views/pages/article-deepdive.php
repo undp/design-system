@@ -33,53 +33,41 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         </div>
     </section>
 
-    <section class="article-headings grid-container scroll-track left-right delay-2">
-        <div class="grid-x overflow-hidden">
+    <?php
+        View::render('organisms/article-deepdive/headings', [
+            'title' => '
+                Moyamba and Pujehun Districts score joint UNDP, WFP-supported project 80% for Peacebuilding
+                Project’s Success amidst COVID-19
+            ',
+            'postedDate' => 'November 19, 2020'
+        ]);
 
-            <div class="cell small-12 large-9 large-offset-1">
-                <h2 class="article-title heading h2">
-                    Moyamba and Pujehun Districts score joint UNDP, WFP-supported project 80% for Peacebuilding
-                    Project’s Success amidst COVID-19
-                </h2>
+        View::render('organisms/article-deepdive/image-with-caption', [
+            'image' => "$imgPath/article-deepdive-featured-image.png",
+            'caption' => '
+                Jitta Kanneh, Mammy Queen of Makpele Chiefdom, at one of the swamp-rice development 
+                livelihoods for peace initiative of the PBF project
+            ',
+            'imageAuthor' => 'UNDP Taiwan/Jason Smith'
+        ]);
 
-                <div class="posted-date tag">Posted on November 19, 2020</div>
-            </div>
-        </div>
-    </section>
+        View::render('organisms/article-deepdive/authors', [
+            'authors' => [
+                [
+                    'image' => "$imgPath/author-jane-doe.png",
+                    'name' => 'Jane Doe',
+                    'position' => 'Title Organization'
+                ],
+                [
+                    'image' => "$imgPath/john-smith-author.png",
+                    'name' => 'John Smith',
+                    'position' => 'Title Organization'
+                ],
+            ]
+        ]);
 
-    <section class="image-with-caption grid-container scroll-track left-right delay-3">
-        <div class="grid-x overflow-hidden">
-
-            <div class="image-container cell small-12">
-                <div
-                        class="featured-image"
-                        style="background-image: url('<?= "$imgPath/article-deepdive-featured-image.png" ?>')">
-                </div>
-            </div>
-
-            <div class="image-caption cell small-8 small-offset-3 large-7 large-offset-2">
-                <div class="image-alt">
-                    <p class="medium-copy">
-                        Jitta Kanneh, Mammy Queen of Makpele Chiefdom, at one of the swamp-rice development livelihoods
-                        for peace initiative of the PBF project
-                    </p>
-                </div>
-                <div class="image-author">
-                    <p class="medium-copy">
-                        <span class="show-for-medium">Photo:<br></span>
-                        UNDP Taiwan/Jason Smith
-                    </p>
-                </div>
-            </div>
-
-            <div class="separator cell small-12 large-7 large-offset-2"></div>
-        </div>
-    </section>
-
-
-    <?php View::render('organisms/article-deepdive/authors') ?>
-
-    <?php View::render('organisms/article-deepdive/article-text') ?>
+        View::render('organisms/article-deepdive/article-text')
+    ?>
 
     <?php View::render('organisms/content-cards/related-articles') ?>
 </div>
