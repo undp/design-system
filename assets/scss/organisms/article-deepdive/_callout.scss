@@ -1,0 +1,17 @@
+.callout {
+    margin: 100px 0;
+    max-width: 1086px;
+    padding: 140px 120px;
+
+    @include breakpoint(medium down) {
+        padding: 50px 30px;
+    }
+
+    &.green-background {
+        background: $green-6;
+    }
+
+    .quote-author {
+        margin-top: 40px;
+    }
+}
