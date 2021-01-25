@@ -1,0 +1,11 @@
+.article-headings {
+    margin-top: 49px;
+
+    @include breakpoint(small only) {
+        margin-top: 27px;
+    }
+
+    .posted-date {
+        margin-top: 24px;
+    }
+}

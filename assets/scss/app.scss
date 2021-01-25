@@ -69,9 +69,12 @@
 @import "organisms/homepage/our-expertise";
 @import "organisms/homepage/global-impact";
 @import "organisms/homepage/twitter-feed";
-@import "organisms/article-deepdive/authors";
 @import "organisms/article-deepdive/text";
 
+@import "organisms/homepage/trusted-partnerships";
+@import "organisms/article-deepdive/article-authors";
+@import "organisms/article-deepdive/article-headings";
+@import "organisms/article-deepdive/image-with-caption";
 
 // Pages
 @import "pages/docs";
