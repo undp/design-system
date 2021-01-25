@@ -102,10 +102,6 @@
         color: $white;
     }
 
-    &:focus{
-        outline: none;
-    }
-
     &:hover{
 
         @include breakpoint(large up){
