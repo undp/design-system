@@ -3,6 +3,7 @@ class ModalTrapFocus {
         this.modal = element;
         this.firstFocusableElement = null;
         this.lastFocusableElement = null;
+        this.currentFocusableElement = null;
 
         // Add all the elements inside modal which you want to make focusable
         this.focusableElements =
@@ -28,6 +29,10 @@ class ModalTrapFocus {
                     e.preventDefault();
                 }
             }
+        }
+
+        this.saveCurrentFocus = () => {
+            this.currentFocusableElement = document.activeElement;
         }
     }
 
@@ -58,9 +63,11 @@ class ModalTrapFocus {
         this.lastFocusableElement = this.focusableContent[this.focusableContent.length - 1]; // get last element to be focused inside modal
 
         this.modal.addEventListener('keydown', this.handleTrapFocus);
+        this.modal.addEventListener('keyup', this.saveCurrentFocus)
 
-
-        if(this.firstFocusableElement) {
+        if(this.currentFocusableElement !== null) {
+            this.currentFocusableElement.focus();
+        }else if(this.firstFocusableElement) {
             this.firstFocusableElement.focus();
         }
 
