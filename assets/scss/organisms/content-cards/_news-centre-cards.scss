@@ -22,4 +22,10 @@
             justify-content: center;
         }
     }
+
+    .select-box {
+        &:not(:first-of-type) {
+            margin-top: 14px;
+        }
+    }
 }
