@@ -69,6 +69,21 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         ]);
 
 
+    View::render('organisms/article-deepdive/gallery', [
+        'images' => [
+            [
+                'image' => "$imgPath/gallery_image01.jpg",
+            ],
+            [
+                'image' => "$imgPath/gallery_image02.jpg",
+            ],
+            [
+                'image' => "$imgPath/gallery_image03.jpg",
+            ],
+        ]
+    ]);
+
+
         View::render('organisms/content-cards/related-articles');
     ?>
 </div>

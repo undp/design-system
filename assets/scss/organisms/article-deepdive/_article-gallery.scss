@@ -1,0 +1,16 @@
+.article-gallery {
+    margin: 70px 0;
+
+    .gallery-container {
+        display: flex;
+
+        .image-item {
+            margin-left: 25px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+}
