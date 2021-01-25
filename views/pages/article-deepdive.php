@@ -34,42 +34,51 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
     </section>
 
     <?php
-        View::render('organisms/article-deepdive/headings', [
-            'title' => '
+    View::render('organisms/article-deepdive/headings', [
+        'title' => '
                 Moyamba and Pujehun Districts score joint UNDP, WFP-supported project 80% for Peacebuilding
                 Project’s Success amidst COVID-19
             ',
-            'postedDate' => 'November 19, 2020'
-        ]);
+        'postedDate' => 'November 19, 2020'
+    ]);
 
 
-        View::render('organisms/article-deepdive/image-with-caption', [
-            'image' => "$imgPath/article-deepdive-featured-image.png",
-            'caption' => '
+    View::render('organisms/article-deepdive/image-with-caption', [
+        'image' => "$imgPath/article-deepdive-featured-image.png",
+        'caption' => '
                 Jitta Kanneh, Mammy Queen of Makpele Chiefdom, at one of the swamp-rice development 
                 livelihoods for peace initiative of the PBF project
             ',
-            'imageAuthor' => 'UNDP Taiwan/Jason Smith'
-        ]);
+        'imageAuthor' => 'UNDP Taiwan/Jason Smith'
+    ]);
 
 
-        View::render('organisms/article-deepdive/authors', [
-            'authors' => [
-                [
-                    'image' => "$imgPath/author-jane-doe.png",
-                    'name' => 'Jane Doe',
-                    'position' => 'Title Organization'
-                ],
-                [
-                    'image' => "$imgPath/john-smith-author.png",
-                    'name' => 'John Smith',
-                    'position' => 'Title Organization'
-                ],
-            ]
-        ]);
+    View::render('organisms/article-deepdive/authors', [
+        'authors' => [
+            [
+                'image' => "$imgPath/author-jane-doe.png",
+                'name' => 'Jane Doe',
+                'position' => 'Title Organization'
+            ],
+            [
+                'image' => "$imgPath/john-smith-author.png",
+                'name' => 'John Smith',
+                'position' => 'Title Organization'
+            ],
+        ]
+    ]);
 
-        View::render('organisms/article-deepdive/article-text');
+    View::render('organisms/article-deepdive/article-text');
 
+    View::render('organisms/article-deepdive/callout', [
+        'background' => 'gray',
+        'quoteText' => 'It’s almost one year now, we have not witnessed road blockades or any act of violence in the Pujehun District
+            emanating from land related disputes or dissatisfied youth groups or a community member. We are grateful to
+            UNDP and WFP and the Government of Sierra Leone.',
+        'quoteAuthor' => '- Jitta Kanneh, Mammy Queen of Makpele Chiefdom.'
+
+
+    ]);
 
     View::render('organisms/article-deepdive/gallery', [
         'images' => [
@@ -85,8 +94,8 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         ]
     ]);
 
+    View::render('organisms/content-cards/related-articles');
 
-        View::render('organisms/content-cards/related-articles');
     ?>
 </div>
 
