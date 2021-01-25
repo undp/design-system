@@ -1,70 +1,74 @@
-class Select {
-    constructor() {
-        this.classShowOptions = 'active';
-        this.dataSelectOpen = '[data-select-open]';
-        this.dataSelectOptions = '[data-select-options]';
 
-        this.$window = $(window);
-        this.currentSelectOptions = null;
-        this.$selectOptionSelected = null;
-        this.$selects = $('[data-select]');
+
+class Select {
+
+    constructor() {
+        this.$window = $(window)
+        this.$currentSelect = null
+        this.$selects = $('[data-select]')
+
+        this.activeClass = 'active'
+        this.optionsSelector = '[data-select-options]'
+        this.selectedOptionSelector = '[data-select-open]'
     }
 
     init() {
-        this.listenerSelects();
-        this.listenerWindowClick();
+        this.bindEvents()
     }
 
-    listenerSelects() {
-        this.$selects.each((i, select) => {
-            $(select).find(this.dataSelectOpen).click(() => {
-                this.$selectOptionSelected = $(select).find(this.dataSelectOpen);
-                const currentOptions = $(select).find(this.dataSelectOptions);
-                if (!currentOptions.is(this.currentSelectOptions)) {
-                    this.closeAll();
-                }
-                this.currentSelectOptions = $(select).find(this.dataSelectOptions);
-                if (this.currentSelectOptions) {
-                    this.selectOptionsToggle();
-                    this.listenerOptionsSelect();
-                }
-            })
-        })
+    bindEvents() {
+        this.$window.click(ev => this.handleWindowClick(ev))
+        this.$selects.click(ev => this.handleSelectClick(ev))
     }
 
-    listenerWindowClick() {
-        this.$window.click(evt => {
-            if (!this.$selects.is(evt.target) &&
-                this.$selects.has(evt.target).length === 0 && this.currentSelectOptions && this.currentSelectOptions.hasClass('active')) {
-                this.selectOptionsToggle();
-            }
-        });
-    }
+    handleSelectClick(ev) {
+        ev.stopImmediatePropagation() // Only trigger once at a time
 
-    listenerOptionsSelect() {
-        const options = this.currentSelectOptions.find('.option');
-        options.each((i, option) => {
-            $(option).click(() => {
-                const value = $(option).find('label').text();
-                this.$selectOptionSelected.html(value);
-                this.currentSelectOptions.removeClass(this.classShowOptions);
-            });
-        })
-    }
+        const $select = $(ev.currentTarget)
+        const $options = $select.find(this.optionsSelector)
+        const isActive = $options.hasClass(this.activeClass)
 
-    selectOptionsToggle() {
-        if (this.currentSelectOptions) {
-            this.currentSelectOptions.toggleClass(this.classShowOptions);
+        this.closeAll()
+        if (isActive) {
+            // If the clicked select was initially active,
+            // set $currentSelect to null and prevent the rest of the code from firing
+            this.$currentSelect = null
+            return
         }
+
+        this.$currentSelect = $select
+        this.setSelectOptionListener()
+        $options.addClass(this.activeClass)
+    }
+
+    handleWindowClick(ev) {
+        if (!this.$currentSelect) {
+            return false
+        }
+
+        const isActive = this.$selects.find('.active').length > 0
+        const clickedOutside = !this.$selects.is(ev.target) & this.$selects.has(ev.target).length === 0
+
+        if (clickedOutside && isActive) this.closeAll()
+    }
+
+    setSelectOptionListener() {
+        let value = null
+        const $options = this.$currentSelect.find('.option')
+        const $selectedOption = this.$currentSelect.find(this.selectedOptionSelector)
+
+        $options.click(ev => {
+            ev.stopImmediatePropagation()
+            value = $(ev.currentTarget).find('label').text();
+
+            this.closeAll()
+            $selectedOption.html(value);
+        })
     }
 
     closeAll() {
-        this.$selects.each((i, select) => {
-            this.currentSelectOptions = $(select).find(this.dataSelectOptions);
-            if (this.currentSelectOptions) {
-                this.currentSelectOptions.removeClass(this.classShowOptions);
-            }
-        });
+        this.$selects.find('.option').off('click') // Unset select options click events
+        this.$selects.find(this.optionsSelector).removeClass(this.activeClass)
     }
 }
 
