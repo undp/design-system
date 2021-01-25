@@ -24,7 +24,6 @@ class ModalTrapFocus {
                 }
             } else { // if tab key is pressed
                 if (document.activeElement === this.lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
-                    console.log('in', this.firstFocusableElement)
                     this.firstFocusableElement.focus(); // add focus for the first focusable element
                     e.preventDefault();
                 }
