@@ -42,6 +42,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
             'postedDate' => 'November 19, 2020'
         ]);
 
+
         View::render('organisms/article-deepdive/image-with-caption', [
             'image' => "$imgPath/article-deepdive-featured-image.png",
             'caption' => '
@@ -50,6 +51,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
             ',
             'imageAuthor' => 'UNDP Taiwan/Jason Smith'
         ]);
+
 
         View::render('organisms/article-deepdive/authors', [
             'authors' => [
@@ -65,9 +67,10 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
                 ],
             ]
         ]);
-    ?>
 
-    <?php View::render('organisms/content-cards/related-articles') ?>
+
+        View::render('organisms/content-cards/related-articles');
+    ?>
 </div>
 
 <!-- Footer -->
