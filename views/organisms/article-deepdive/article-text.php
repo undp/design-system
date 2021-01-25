@@ -1,6 +1,6 @@
 <section class="article-text grid-container">
     <div class="grid-x">
-        <div class="article-text-container cell small-8 small-offset-3 large-7 large-offset-2">
+        <div class="article-text-container cell small-12 large-7 large-offset-2">
             <p class="text-block">
                 For fostering Peace and Social Cohesion in Pujehun and Moyamba districts, communities score the Government of Sierra Leone,
                 the United Nations Development Programme (UNDP) and the World Food Programme (WFP) over 80% in the Multi-Stakeholder Project
