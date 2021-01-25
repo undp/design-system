@@ -1,0 +1,46 @@
+.article-text {
+    margin-top: 50px;
+
+    a {
+        color: $red;
+        text-decoration: underline;
+    }
+
+    p, li {
+        font-size: 2rem;
+        line-height: 1.4;
+        margin-top: 20px;
+    }
+
+    ul {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+    li {
+        list-style: none;
+        padding-left: 35px;
+        position: relative;
+
+        &:before {
+            content: '';
+            left: 0;
+            top: 7px;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            background: $black;
+            border-radius: 50%;
+        }
+    }
+
+    h3 {
+        max-width: 600px;
+        margin-top: 20px;
+        margin-left: -150px;
+
+        @include breakpoint(medium down) {
+            margin-left: 0;
+        }
+    }
+}

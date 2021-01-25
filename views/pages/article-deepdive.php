@@ -68,6 +68,8 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
             ]
         ]);
 
+        View::render('organisms/article-deepdive/article-text');
+
 
     View::render('organisms/article-deepdive/gallery', [
         'images' => [
