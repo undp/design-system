@@ -1,9 +1,10 @@
 .callout {
+    width: 75%;
     margin: 100px 0;
-    max-width: 1086px;
     padding: 140px 120px;
 
     @include breakpoint(medium down) {
+        width: 100%;
         padding: 50px 30px;
     }
 
