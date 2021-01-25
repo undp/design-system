@@ -1,4 +1,4 @@
-import './helpers/findIndexPolyfill'
+import './helpers/findIndexPolyfill' // IE Polyfill
 import 'what-input'
 import prism from './prism.js'
 
@@ -18,16 +18,20 @@ import ourMissionAnimation from './components/our-mission-animation'
 import ourExpertiseMobileSlider from './components/our-expertise-mobile-slider'
 import ourExpertiseSectionAnimation from './components/our-expertise-animation'
 import sdgCard from './components/sdg-card'
-import trapFocus from './components/trap-focus'
 import modalSdgs from './components/modal-sdgs'
-import docs from './components/docs'
 import heroAnimation from './components/hero-animation'
 import select from './components/select'
+import docs from './components/docs'
+
+// JS to render nav/search DOM elements from JSON data files
 import menusNav from './render-data/menu/all';
 import searchData  from './render-data/modals/search'
 import countriesData  from './render-data/modals/locations/countries'
 import multiSelectData from './render-data/modals/locations/multi-selects'
 import mobileFilterData from './render-data/modals/locations/mobile-filters'
+
+// Trap focus for modals
+import trapFocus from './components/trap-focus'
 
 function main() {
     prism();
@@ -47,7 +51,6 @@ function main() {
     ourMissionAnimation()
     ourExpertiseMobileSlider()
     heroAnimation()
-    trapFocus()
     menusNav()
     modalSdgs()
     heroAnimation()
@@ -59,6 +62,7 @@ function main() {
     mobileFilterData()
     searchData()
     countriesData()
+    trapFocus()
 }
 
 document.addEventListener("DOMContentLoaded", function () {

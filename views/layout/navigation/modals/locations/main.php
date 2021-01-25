@@ -66,7 +66,7 @@ use helpers\View;
                 </div>
                 <div class="flex-container align-middle active-filters show-for-large" data-container-filters></div>
 
-                <div class="countries" tabindex="-1"></div>
+                <div class="countries"></div>
                 <div class="flex-container align-center hide-for-large filter-options uppercase">
                     <button class="btn full btn-filters" tabindex="-1" data-open-filters data-modal-filter="modal-search-offices-filters">
                         Filter

@@ -22,7 +22,6 @@ const init = function () {
 
     loadCheckboxOptions('region')
     loadCheckboxOptions('office')
-
 }
 
 export default init

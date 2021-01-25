@@ -5,9 +5,9 @@
                 <ul class="menu">
                     <?php // Menu content is being rendered on JS ?>
                 </ul>
-                <button class="show-on-focus text-link close-submenu">Close Submenu</button>
             </div>
             <div class="cell large-auto opacity modal-nav-content"></div>
+            <button class="show-on-focus text-link close-submenu">Close Submenu</button>
         </div>
     </div>
 </section>
