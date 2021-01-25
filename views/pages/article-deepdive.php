@@ -69,7 +69,15 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
     ]);
 
 
-    View::render('organisms/article-deepdive/callout');
+    View::render('organisms/article-deepdive/callout', [
+        'background' => 'gray',
+        'quoteText' => 'It’s almost one year now, we have not witnessed road blockades or any act of violence in the Pujehun District
+            emanating from land related disputes or dissatisfied youth groups or a community member. We are grateful to
+            UNDP and WFP and the Government of Sierra Leone.',
+        'quoteAuthor' => '- Jitta Kanneh, Mammy Queen of Makpele Chiefdom.'
+
+
+    ]);
 
     View::render('organisms/content-cards/related-articles');
     ?>

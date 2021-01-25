@@ -7,8 +7,24 @@
         padding: 50px 30px;
     }
 
-    &.green-background {
+    &.green {
         background: $green-6;
+    }
+
+    &.gray {
+        background: $dark-blue-6;
+    }
+
+    blockquote::before {
+        content: open-quote;
+    }
+    blockquote::after {
+        content: close-quote;
+    }
+
+    blockquote {
+        margin: 0;
+        quotes: "“" "”" "‘" "’";
     }
 
     .quote-author {
