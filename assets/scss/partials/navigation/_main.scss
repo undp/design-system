@@ -66,10 +66,6 @@ $nav-desktop-height: 115px;
                     top: 0;
                     left: 0;
                     position: absolute;
-
-                    &.scrolled > svg {
-                        width: auto;
-                    }
                 }
             }
 
@@ -139,6 +135,7 @@ $nav-desktop-height: 115px;
 
             &.scrolled {
                 svg, img {
+                    width: auto;
                     height: $nav-desktop-height;
 
                     @include breakpoint(medium down) {
