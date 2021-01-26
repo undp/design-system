@@ -3,14 +3,22 @@
     padding-bottom: 90px;
 
     .cards-container {
-        padding-left: 25px;
+        @include breakpoint(medium up) {
+            padding-left: 25px;
+        }
 
-        @include breakpoint(medium down) {
-            padding-left: 0;
+        @include breakpoint(small only) {
+            margin-top: 60px;
         }
 
         .card-item {
             margin-bottom: 30px;
+        }
+
+        .single-content-card-body,
+        .single-content-card-image,
+        .single-content-card-accent-color {
+            margin: 0 auto;
         }
     }
 
@@ -20,6 +28,50 @@
         @include breakpoint(small only) {
             width: 100%;
             justify-content: center;
+        }
+    }
+
+    .select-box {
+        &:not(:first-of-type) {
+            margin-top: 14px;
+        }
+    }
+
+    .select-control {
+        outline: none;
+    }
+
+    .active-filters {
+        padding: 18px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .tag.uppercase {
+            color: $gray-chateau;
+        }
+
+        .filter {
+            color: $black;
+            padding: 10px;
+            margin-top: 8px;
+            font-size: 1.4rem;
+            border-radius: 17px;
+            background-color: rgba($dark-blue-19, 0.36);
+
+            &:before {
+                margin-right: 5px;
+                content: url("#{$image-path}/icon-close-modal-location.svg");
+            }
+
+            &:first-of-type {
+                margin-top: 15px;
+            }
+        }
+
+        .filter-clear {
+            margin-top: 15px;
+            margin-left: 13px;
+            border-bottom: 1px solid $red;
         }
     }
 }

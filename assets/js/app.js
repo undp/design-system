@@ -11,6 +11,7 @@ import navigation from './components/navigation'
 import dropdown from './components/dropdown-languajes'
 import footerMenu from './partials/footer-menu-mobile'
 import scrollTriggers from './components/scroll-triggers'
+import newsCentreFilter from './components/news-centre-filter'
 import locationFilters from './components/location-filters'
 import multiSelect from './components/multi-select'
 import publicationsSlider from './components/publications-slider'
@@ -26,6 +27,7 @@ import docs from './components/docs'
 // JS to render nav/search DOM elements from JSON data files
 import menusNav from './render-data/menu/all';
 import searchData  from './render-data/modals/search'
+import contentTypeData  from './render-data/news-centre/content-types'
 import countriesData  from './render-data/modals/locations/countries'
 import multiSelectData from './render-data/modals/locations/multi-selects'
 import mobileFilterData from './render-data/modals/locations/mobile-filters'
@@ -43,7 +45,9 @@ function main() {
     lazyLoad()
     footerMenu()
     navigation()
+    contentTypeData()
     locationFilters()
+    newsCentreFilter()
     multiSelect()
     customSelect()
     scrollTriggers()
