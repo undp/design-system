@@ -32,6 +32,10 @@ $nav-desktop-height: 115px;
                     height: $nav-mobile-height;
                 }
 
+                &.dropdown-content {
+                    padding: 30px 30px 35px 12px;
+                }
+
                 li {
                     margin-right: 60px;
 
