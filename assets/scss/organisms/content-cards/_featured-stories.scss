@@ -38,8 +38,17 @@
     .featured-stories {
         margin-top: 85px;
         margin-bottom: 0;
-    }
 
+        @include breakpoint(small only) {
+            margin-top: 0;
+        }
+
+        .section-title {
+            @include breakpoint(small only){
+                margin: 70px 0 50px;
+            }
+        }
+    }
 }
 
 .recent-news .title-container .section-title{
