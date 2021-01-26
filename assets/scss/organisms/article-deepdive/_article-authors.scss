@@ -43,8 +43,13 @@
     }
 
     .author-info {
+        max-width: 120px;
         margin-top: 20px;
         margin-left: 25px;
+
+        @include breakpoint(small only) {
+            max-width: 107px;
+        }
 
         .job-position {
             margin-top: 15px;
