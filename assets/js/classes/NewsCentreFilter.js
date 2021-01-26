@@ -11,7 +11,7 @@ class NewsCentreFilter {
         this.$cardsContainer = this.$container.find('.cards-results')
         // this.$searchInput = this.$container.find('[data-input-search]') TBD
         this.$activeFilters = this.$container.find('[data-active-filters]')
-        this.$contentTypeFilter = this.$container.find('[data-multi-select]')
+        this.$contentTypeFilter = this.$container.find('[data-content-type-filter]')
 
         this.filters = {
             s: '', // TBD
