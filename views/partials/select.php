@@ -7,7 +7,8 @@
                 <input type="radio"
                        class="radio"
                        name="<?= $name ?>"
-                       id="<?= $option['id'] ?>">
+                       id="<?= $option['id'] ?>"
+                       value="<?= $option['value'] ?>">
 
                 <label for="<?= $option['id'] ?>"><?= $option['label'] ?></label>
             </div>

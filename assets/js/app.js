@@ -25,6 +25,7 @@ import heroAnimation from './components/hero-animation'
 import select from './components/select'
 import menusNav from './render-data/menu/all';
 import searchData  from './render-data/modals/search'
+import contentTypeData  from './render-data/news-centre/content-types'
 import countriesData  from './render-data/modals/locations/countries'
 import multiSelectData from './render-data/modals/locations/multi-selects'
 import mobileFilterData from './render-data/modals/locations/mobile-filters'
@@ -39,6 +40,7 @@ function main() {
     lazyLoad()
     footerMenu()
     navigation()
+    contentTypeData()
     locationFilters()
     multiSelect()
     customSelect()
