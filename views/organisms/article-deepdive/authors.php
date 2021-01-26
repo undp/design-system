@@ -1,6 +1,5 @@
 <?php $authors = isset($authors) && is_array($authors) ? $authors : []; ?>
 
-
 <section class="article-authors grid-container">
     <div class="grid-x center-children">
         <div class="authors-container cell large-8">
@@ -8,8 +7,8 @@
                 Author(s)
             </div>
             <div class="authors-information">
-                <?php foreach ($authors as $author) : ?>
-                    <div class="author-item">
+                <?php foreach ($authors as $i => $author) : ?>
+                    <div class="author-item scroll-track left-right delay-<?= $i+2 ?>">
                         <div class="author-image">
                             <?php if ($author['image']) : ?>
                                 <img src="<?= $author['image'] ?>" alt="">
