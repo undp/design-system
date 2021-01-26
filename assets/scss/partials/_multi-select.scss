@@ -109,7 +109,11 @@
             }
 
             &:hover {
-                color:  $dark-blue-17
+                color:  $dark-blue-17;
+
+                .checkmark {
+                    border-color: #FFB4AE;
+                }
             }
         }
 
