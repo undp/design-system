@@ -5,8 +5,8 @@
     <div class="gallery-container">
         <?php foreach ($images as $image) : ?>
             <div class="image-item">
-                <?php if ($image['image']) : ?>
-                    <img src="<?= $image['image'] ?>" alt="">
+                <?php if ($image) : ?>
+                    <img src="<?= $image ?>" alt="">
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>

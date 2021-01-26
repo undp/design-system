@@ -36,9 +36,9 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
     <?php
     View::render('organisms/article-deepdive/headings', [
         'title' => '
-                Moyamba and Pujehun Districts score joint UNDP, WFP-supported project 80% for Peacebuilding
-                Project’s Success amidst COVID-19
-            ',
+            Moyamba and Pujehun Districts score joint UNDP, WFP-supported project 80% for Peacebuilding
+            Project’s Success amidst COVID-19
+        ',
         'postedDate' => 'November 19, 2020'
     ]);
 
@@ -46,9 +46,9 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
     View::render('organisms/article-deepdive/image-with-caption', [
         'image' => "$imgPath/article-deepdive-featured-image.png",
         'caption' => '
-                Jitta Kanneh, Mammy Queen of Makpele Chiefdom, at one of the swamp-rice development 
-                livelihoods for peace initiative of the PBF project
-            ',
+            Jitta Kanneh, Mammy Queen of Makpele Chiefdom, at one of the swamp-rice development 
+            livelihoods for peace initiative of the PBF project
+        ',
         'imageAuthor' => 'UNDP Taiwan/Jason Smith'
     ]);
 
@@ -68,7 +68,9 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         ]
     ]);
 
+
     View::render('organisms/article-deepdive/article-text');
+
 
     View::render('organisms/article-deepdive/callout', [
         'background' => 'gray',
@@ -76,23 +78,17 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
             emanating from land related disputes or dissatisfied youth groups or a community member. We are grateful to
             UNDP and WFP and the Government of Sierra Leone.',
         'quoteAuthor' => '- Jitta Kanneh, Mammy Queen of Makpele Chiefdom.'
-
-
     ]);
+
 
     View::render('organisms/article-deepdive/gallery', [
         'images' => [
-            [
-                'image' => "$imgPath/gallery_image01.jpg",
-            ],
-            [
-                'image' => "$imgPath/gallery_image02.jpg",
-            ],
-            [
-                'image' => "$imgPath/gallery_image03.jpg",
-            ],
+            "$imgPath/gallery_image01.jpg",
+            "$imgPath/gallery_image02.jpg",
+            "$imgPath/gallery_image03.jpg",
         ]
     ]);
+
 
     View::render('organisms/content-cards/related-articles');
 
