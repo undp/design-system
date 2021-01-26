@@ -1,4 +1,4 @@
-<section class="callout grid-container <?= $background ?? '' ?>">
+<section class="callout grid-container scroll-track opacity-only delay-2 <?= $background ?? '' ?>">
     <div class="quote-text grid-x">
         <div class="cell quote-content">
             <h3 class="heading h3">

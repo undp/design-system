@@ -50,7 +50,8 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
             Jitta Kanneh, Mammy Queen of Makpele Chiefdom, at one of the swamp-rice development 
             livelihoods for peace initiative of the PBF project
         ',
-        'imageAuthor' => 'UNDP Taiwan/Jason Smith'
+        'imageAuthor' => 'UNDP Taiwan/Jason Smith',
+        'classes' => 'cover-image'
     ]);
 
 
@@ -99,11 +100,8 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         'quoteAuthor' => '- Jitta Kanneh, Mammy Queen of Makpele Chiefdom.'
     ]);
 
-
-    View::render('organisms/article-deepdive/gallery', [
-        'images' => [
-            "$imgPath/image-full.jpg",
-        ]
+    View::render('organisms/article-deepdive/image-with-caption', [
+        'image' => "$imgPath/image-full.jpg"
     ]);
 
     View::render('organisms/article-deepdive/article-text', [

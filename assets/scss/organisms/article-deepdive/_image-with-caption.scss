@@ -1,4 +1,10 @@
 .image-with-caption {
+    margin-bottom: 80px;
+
+    &.cover-image {
+        margin-bottom: 33px;
+    }
+
     .image-container {
         margin-top: 36px;
     }
@@ -18,7 +24,7 @@
     .image-caption {
         display: flex;
         margin-top: 49px;
-        padding-bottom: 22.7px;
+        padding-bottom: 23px;
         border-bottom: 3px solid $black;
 
         &.split-row {

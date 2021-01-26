@@ -28,8 +28,18 @@
     }
 }
 
+.scale-up {
+    transform: scale(0.8);
+    transition: transform $easing-3;
+
+    &.in-viewport {
+        transform: scale(1);
+    }
+}
+
 .opacity-only {
     opacity: 0;
+    transition: opacity $easing-3;
 
     &.in-viewport {
         opacity: 1;

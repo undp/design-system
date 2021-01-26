@@ -12,20 +12,17 @@
             <?php endforeach; ?>
 
             <?php if ($headingText ?? '') : ?>
-                <h3 class="heading h3"><?= $headingText ?? '' ?></h3>
+                <h3 class="heading h3 scroll-track left-right delay-2"><?= $headingText ?? '' ?></h3>
             <?php endif; ?>
 
             <?php if ($listElements ?? '') : ?>
-
             <ul>
                 <?php foreach ($listElements as $listElement) : ?>
                     <li>
                         <?= $listElement['text'] ?>
                     </li>
                 <?php endforeach; ?>
-
             </ul>
-
             <?php endif; ?>
         </div>
     </div>
