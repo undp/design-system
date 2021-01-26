@@ -1,7 +1,3 @@
-.featured-stories {
-    margin-top: 85px;
-}
-
 .recent-news,
 .featured-stories{
     margin-bottom: 25px;
@@ -35,6 +31,15 @@
             margin-top: 15px;
         }
     }
+}
+
+.article-deepdive {
+
+    .featured-stories {
+        margin-top: 85px;
+        margin-bottom: 0;
+    }
+
 }
 
 .recent-news .title-container .section-title{
