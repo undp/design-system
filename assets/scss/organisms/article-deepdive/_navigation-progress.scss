@@ -8,7 +8,7 @@
     height: $progress-bar-height;
     top: calc(#{$nav-desktop-height} - 1px);
 
-    @include breakpoint(medium down) {
+    @include breakpoint(large down) {
         height: $progress-bar-mobile-height;
         top: calc(#{$nav-mobile-height} - 1px);
     }
