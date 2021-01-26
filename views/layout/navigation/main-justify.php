@@ -26,7 +26,7 @@ use helpers\View;
                     <ul class="flex-container align-middle align-justify menu-items">
                         <li>
                             <a href="/" class="middle-logo" data-middle-logo aria-label="UNDP Logo">
-                                <?php Svg::render('undp-logo', false, 'UNDP Logo') ?>
+                                <?php Svg::render('undp-logo', true, 'UNDP Logo') ?>
                             </a>
                         </li>
                         <li class="show-for-xlarge logo-text">
