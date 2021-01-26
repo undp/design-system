@@ -9,11 +9,40 @@
         margin-bottom: 33px;
     }
 
+    &.small {
+        .image-caption {
+            flex-direction: column;
+            justify-content: flex-end;
+
+            @include breakpoint(medium up) {
+                margin-left: 27px;
+            }
+
+            .image-author {
+                padding-left: 0;
+
+                @include breakpoint(medium up) {
+                    margin-top: 30px;
+                }
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        .image-container {
+            .featured-image {
+                object-position: left center;
+            }
+        }
+    }
+
     .image-container {
         margin-top: 36px;
 
-        @include breakpoint(small only) {
-            margin-top: 0;
+        @include breakpoint(medium down) {
+            margin-top: 29px;
         }
     }
 
@@ -35,7 +64,7 @@
         padding-bottom: 23px;
         border-bottom: 3px solid $black;
 
-        &.split-row {
+        &.small {
             flex-direction: column;
             justify-content: flex-end;
 
