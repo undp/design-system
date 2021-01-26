@@ -1,5 +1,10 @@
 .article-authors {
     margin-top: 33px;
+    margin-bottom: 100px;
+
+    @include breakpoint(small only) {
+        margin-bottom: 70px;
+    }
 
     .authors-container {
         display: flex;

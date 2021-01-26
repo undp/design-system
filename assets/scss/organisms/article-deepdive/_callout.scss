@@ -1,6 +1,6 @@
 .callout {
     width: 75%;
-    margin: 100px 0 80px;
+    margin: 70px 0 80px;
     padding: 90px 110px 70px 140px;
 
     @include breakpoint(medium down) {
@@ -17,12 +17,20 @@
     }
 
     &.transparent {
+        width: 80%;
         margin-top: 20px;
         padding: 0 140px;
         margin-bottom: 50px;
 
+        @include breakpoint(medium down) {
+            width: 100%;
+            padding: 50px 30px;
+            background: $dark-blue-6;
+        }
+
         .quote-text {
             .heading {
+                font-size: 2.5rem;
                 font-weight: $regular;
             }
         }
