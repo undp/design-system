@@ -6,8 +6,10 @@ gsap.registerPlugin(ScrollTrigger)
 
 const init = function () {
 
-    let rightSections = document.querySelectorAll(".expertise-section-right");
-    let leftSections = document.querySelectorAll(".expertise-section-left");
+    const rightSections = document.querySelectorAll(".expertise-section-right");
+    const leftSections = document.querySelectorAll(".expertise-section-left");
+    const trustedPartnershipsHeader = document.querySelector(".trusted-partnerships-header");
+
 
     animateExpertiseSection(rightSections, 'right');
     animateExpertiseSection(leftSections, 'left');
@@ -86,6 +88,10 @@ const init = function () {
 
             }
         });
+    }
+
+    if(trustedPartnershipsHeader === null) {
+        return false;
     }
 
     //trusted partnership transition

@@ -5,15 +5,7 @@
 
     @include breakpoint(medium down) {
         margin-top: 70px;
-    }
-
-    .subtitle {
-        margin-top: 115px;
-
-        @include breakpoint(medium down) {
-            margin-top: 40px;
-            margin-left: 25px;
-        }
+        padding-top: 40px;
     }
 
     .news-hero-container {
@@ -24,16 +16,32 @@
             color: $red;
         }
 
+        .subtitle {
+            margin-top: 115px;
+
+            @include breakpoint(medium down) {
+                margin-top: 40px;
+                margin-left: 25px;
+            }
+        }
+
         .title {
             margin-top: 30px;
             text-transform: uppercase;
             font-family: $secondary-font;
 
             @include breakpoint(medium down) {
+                margin-top: 13px;
                 margin-left: 25px;
             }
         }
 
+        .title,
+        .subtitle {
+            @include breakpoint(small down) {
+                font-size: 25px;
+            }
+        }
     }
 
     .hero-link {
@@ -70,6 +78,10 @@
 
     .image-container {
         padding-left: 25px;
+
+        img {
+            width: 100%;
+        }
 
         @include breakpoint(medium down) {
             padding-left: 0;

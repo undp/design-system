@@ -10,6 +10,10 @@ const init = function () {
     let $section = $(".our-mission")
     let $startTrigger = $section.find('.title-container');
 
+    if(!$section.length) {
+        return false;
+    }
+
     let whiteToBlueScroll = null,
         blueToWhiteScroll = null,
         whiteToBlue = null,
