@@ -128,8 +128,8 @@ $nav-desktop-height: 115px;
                 transition: $transition-primary;
 
                 @include breakpoint(large down) {
-                    width: auto;
-                    max-height: $nav-mobile-height+8;
+                    width: 39px;
+                    height: $nav-mobile-height+8;
                 }
             }
 
@@ -139,6 +139,7 @@ $nav-desktop-height: 115px;
                     height: $nav-desktop-height;
 
                     @include breakpoint(medium down) {
+                        width: 35px;
                         height: $nav-mobile-height;
                     }
                 }
