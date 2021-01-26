@@ -13,6 +13,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
 <body>
 <!-- Navigation -->
 <?php View::render('layout/navigation/main-justify') ?>
+<?php View::render('organisms/article-deepdive/navigation-progress') ?>
 
 <div class="article-deepdive">
 
