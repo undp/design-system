@@ -63,6 +63,7 @@ class SDGModal {
         this.$html.removeClass(this.classes.lockBody)
         this.$body.removeClass(this.classes.lockBody)
         this.$modal.addClass(this.classes.hide).removeClass(this.classes.modalOpen)
+        this.destroyGlide()
     }
 
     setCloseModalListener() {

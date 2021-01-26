@@ -1,3 +1,5 @@
+
+
 class ModalNavHover {
     constructor() {
         this.classHide = 'hide';
@@ -8,7 +10,6 @@ class ModalNavHover {
         this.modalBody = '[data-modal-body]';
         this.dataMenuOptionId = 'menu-option';
         this.menuOptions = '[data-menu-option]';
-        this.classAnimationColor = 'color-transition';
         this.classAnimationNextModal = 'change-modal';
         this.classAnimation = 'circle-square-transition';
         this.classAnimationOpacity = 'opacity-transition';
@@ -29,16 +30,24 @@ class ModalNavHover {
     init(lazyLoadClass) {
         this.listenersHoverOpenModal();
         this.listenerAccessibilityCloseModal();
+        this.setKeyPressListener();
         this.lazyLoadClass = lazyLoadClass;
     }
 
     listenersHoverOpenModal() {
+        const removeAnimation = this.$menuDesktop.data('no-animation') === true;
+
         this.$navMenuItems.each((i, navItem) => {
 
             const $navItem = $(navItem)
             const prepareModalForOpening = () => {
                 const modalId = $(navItem).data(this.dataModalId);
                 this.$currentModal = $('#' + modalId);
+
+                if(removeAnimation) {
+                    this.$currentModal.addClass('no-animation');
+                }
+
                 if (this.$lastModal && this.$currentModal &&
                     !this.$lastModal.is(this.$currentModal)) {
                     this.closeModal();
@@ -46,8 +55,8 @@ class ModalNavHover {
                 }
                 if (this.$currentModal && this.allowOpenModal) {
                     this.$modalContent = this.$currentModal.find(this.dataContentOpacity);
-                    this.listenerHoverCloseModal();
                     this.listenerOpenMenuOption();
+                    this.listenerHoverCloseModal();
                     this.openModal();
                     this.allowOpenModal = false;
                 }
@@ -76,36 +85,61 @@ class ModalNavHover {
     }
 
     listenerHoverCloseModal() {
-        this.$modalBody = this.$currentModal.find(this.modalBody);
+        let mouseEnteredModal = false;
 
-        this.$window.hover((evt) => {
+        const hoverCallback = (evt) => {
+            let isHoverOutsideOfModal = !this.$modalBody.is(evt.target) && this.$modalBody.has(evt.target).length === 0 &&
+                !this.$menuDesktop.is(evt.target) && this.$menuDesktop.has(evt.target).length === 0;
+
+            if(!isHoverOutsideOfModal) {
+                mouseEnteredModal = true;
+            }
+
             //close modal when the hover event is outside of nav and modal content
-            if (!this.$modalBody.is(evt.target) && this.$modalBody.has(evt.target).length === 0 &&
-                !this.$menuDesktop.is(evt.target) && this.$menuDesktop.has(evt.target).length === 0) {
+            if (isHoverOutsideOfModal && mouseEnteredModal === true) {
                 this.allowOpenModal = true;
+                mouseEnteredModal = false;
+
                 if (this.$lastModal) {
                     this.$lastModal = null;
                     this.animateCloseModal();
                 }
             }
-        })
+        }
+
+        this.$window.off('hover', hoverCallback)
+        this.$modalBody = this.$currentModal.find(this.modalBody);
+
+        this.$window.hover(hoverCallback)
     }
 
     listenerAccessibilityCloseModal() {
         const closeButtons = $('.modal-nav-hover .close-submenu');
 
         closeButtons.click(() => {
-            this.$currentNavItem.focus();
-            this.allowOpenModal = true;
-            if (this.$lastModal) {
-                this.$lastModal = null;
-                this.resetTransitionAllModals();
+            this.closeModalFromKeyboard();
+        })
+    }
+
+    setKeyPressListener() {
+        this.$window.keyup((e) => {
+            if (e.keyCode === 27) { //esc
+                this.closeModalFromKeyboard();
             }
         })
     }
 
+    closeModalFromKeyboard() {
+        this.$currentNavItem.focus();
+        this.allowOpenModal = true;
+        if (this.$lastModal) {
+            this.$lastModal = null;
+            this.resetTransitionAllModals();
+        }
+    }
+
     openModal() {
-        this.$currentModal.removeClass(this.classHide).addClass(this.classAnimationColor);
+        this.$currentModal.removeClass(this.classHide);
         this.$modalBody.addClass(this.classAnimation).removeClass(this.classHide);
         this.$modalContent.addClass(this.classAnimationOpacity);
         this.removeTransitions();
@@ -151,9 +185,9 @@ class ModalNavHover {
 
     closeModal() {
         if (this.$lastModal) {
-            this.$lastModal.addClass(this.classHide).removeClass(this.classAnimationColor);
+            this.$lastModal.addClass(this.classHide);
         } else {
-            this.$currentModal.addClass(this.classHide).removeClass(this.classAnimationColor);
+            this.$currentModal.addClass(this.classHide);
         }
 
         this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation)
