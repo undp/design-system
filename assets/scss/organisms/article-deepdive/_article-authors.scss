@@ -8,7 +8,6 @@
 
     .authors-container {
         display: flex;
-        margin: 0 auto;
 
         @include breakpoint(small only) {
             padding-left: 35px;
@@ -43,13 +42,8 @@
     }
 
     .author-info {
-        max-width: 120px;
         margin-top: 20px;
         margin-left: 25px;
-
-        @include breakpoint(small only) {
-            max-width: 107px;
-        }
 
         .job-position {
             margin-top: 15px;

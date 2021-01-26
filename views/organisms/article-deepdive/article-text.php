@@ -11,10 +11,18 @@
                 </p>
             <?php endforeach; ?>
 
+            <!-- Two column paragraph example -->
+            <div class="grid-x grid-margin-x">
+                <?php foreach ($paragraphs as $paragraph) : ?>
+                    <div class="cell large-6"><p><?= $paragraph['text'] ?></p></div>
+                <?php endforeach; ?>
+            </div>
+
             <?php if ($headingText ?? '') : ?>
                 <h3 class="heading h3 scroll-track left-right delay-2"><?= $headingText ?? '' ?></h3>
             <?php endif; ?>
 
+            <!-- Bulleted list example -->
             <?php if ($listElements ?? '') : ?>
             <ul>
                 <?php foreach ($listElements as $listElement) : ?>

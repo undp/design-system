@@ -60,12 +60,14 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
             [
                 'image' => "$imgPath/author-jane-doe.png",
                 'name' => 'Jane Doe',
-                'position' => 'Title Organization'
+                'title' => 'Title',
+                'organization' => 'Organization'
             ],
             [
                 'image' => "$imgPath/john-smith-author.png",
                 'name' => 'John Smith',
-                'position' => 'Title Organization'
+                'title' => 'Title',
+                'organization' => 'Organization'
             ],
         ]
     ]);

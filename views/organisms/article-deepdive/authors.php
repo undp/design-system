@@ -1,8 +1,8 @@
 <?php $authors = isset($authors) && is_array($authors) ? $authors : []; ?>
 
 <section class="article-authors grid-container">
-    <div class="grid-x center-children">
-        <div class="authors-container cell large-8">
+    <div class="grid-x">
+        <div class="authors-container cell large-offset-2 large-7">
             <div class="authors-title heading h5">
                 Author(s)
             </div>
@@ -16,7 +16,10 @@
                         </div>
                         <div class="author-info">
                             <div class="author-name medium-copy"><?= $author['name'] ?></div>
-                            <div class="job-position medium-copy"><?= $author['position'] ?></div>
+                            <div class="job-position medium-copy">
+                                <?= $author['title'] ?><br/>
+                                <?= $author['organization'] ?>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>

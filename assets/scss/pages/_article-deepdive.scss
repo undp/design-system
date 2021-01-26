@@ -1,7 +1,6 @@
 $page-margin-top: calc(#{$nav-desktop-height} + #{$progress-bar-height});
 $page-mobile-margin-top: calc(#{$nav-mobile-height} + #{$progress-bar-mobile-height});
 
-
 .article-deepdive {
     padding: 48px 0 18.5px;
     margin: $page-margin-top auto 0;
@@ -16,9 +15,5 @@ $page-mobile-margin-top: calc(#{$nav-mobile-height} + #{$progress-bar-mobile-hei
 
     .breadcrumb {
         color: $red;
-    }
-
-    .center-children > * {
-        margin: 0 auto;
     }
 }
