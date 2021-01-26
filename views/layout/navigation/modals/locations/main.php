@@ -48,7 +48,8 @@ use helpers\View;
                             'class' => 'regions-select',
                             'ariaLabel' => 'Regions',
                             'title' => 'Region',
-                            'dataType' => 'region'
+                            'dataType' => 'region',
+                            'dataIdentifier' => 'data-location-filters'
                         ])
                         ?>
                     </div>
@@ -59,7 +60,8 @@ use helpers\View;
                             'class' => 'office-type-select',
                             'ariaLabel' => 'Offices',
                             'title' => 'Office type',
-                            'dataType' => 'office'
+                            'dataType' => 'office',
+                            'dataIdentifier' => 'data-location-filters'
                         ])
                         ?>
                     </div>
