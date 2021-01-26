@@ -1,7 +1,7 @@
 .callout {
     width: 75%;
-    margin: 100px 0;
-    padding: 140px 120px;
+    margin: 100px 0 80px;
+    padding: 90px 110px 70px 140px;
 
     @include breakpoint(medium down) {
         width: 100%;
@@ -14,6 +14,18 @@
 
     &.gray {
         background: $dark-blue-6;
+    }
+
+    &.transparent {
+        margin-top: 20px;
+        padding: 0 140px;
+        margin-bottom: 50px;
+
+        .quote-text {
+            .heading {
+                font-weight: $regular;
+            }
+        }
     }
 
     blockquote::before {

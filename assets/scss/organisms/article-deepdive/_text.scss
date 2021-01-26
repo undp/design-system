@@ -1,5 +1,5 @@
 .article-text {
-    margin-top: 50px;
+    margin-top: 98px;
 
     a {
         color: $red;
@@ -9,7 +9,7 @@
     p, li {
         font-size: 2rem;
         line-height: 1.4;
-        margin-top: 20px;
+        margin-bottom: 40px;
     }
 
     ul {
@@ -19,6 +19,7 @@
 
     li {
         list-style: none;
+        margin-top: 60px;
         padding-left: 35px;
         position: relative;
 
@@ -32,11 +33,15 @@
             background: $black;
             border-radius: 50%;
         }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     h3 {
         max-width: 600px;
-        margin-top: 20px;
+        margin-top: 95px;
         margin-left: -150px;
 
         @include breakpoint(medium down) {
