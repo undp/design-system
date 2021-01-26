@@ -30,12 +30,6 @@
                 }
             }
         }
-
-        .image-container {
-            .featured-image {
-                object-position: left center;
-            }
-        }
     }
 
     .image-container {
@@ -44,17 +38,11 @@
         @include breakpoint(medium down) {
             margin-top: 29px;
         }
-    }
 
-    .featured-image {
-        width: 100%;
-        height: 651px;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        @include breakpoint(small only) {
-            height: 158px;
+        img.featured-image {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
         }
     }
 

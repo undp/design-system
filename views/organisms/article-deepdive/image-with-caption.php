@@ -17,10 +17,7 @@ if ($imageSize === 'medium') {
     <div class="grid-x overflow-hidden">
 
         <div class="image-container cell small-12 <?= $imageContainerClasses ?>">
-            <div
-                class="featured-image"
-                style="background-image: url('<?= $image ?? '' ?>')">
-            </div>
+            <img class="featured-image" src="<?= $image ?? '' ?>" alt="">
         </div>
 
         <?php if(isset($caption) && isset($imageAuthor)): ?>

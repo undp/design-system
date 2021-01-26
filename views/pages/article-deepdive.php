@@ -252,7 +252,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
 
     View::render('organisms/article-deepdive/image-with-caption', [
         'imageSize' => 'medium',
-        'image' => "$imgPath/article-deepdive-featured-image-2.jpg",
+        'image' => "$imgPath/article-deepdive-featured-image--medium.jpg",
         'caption' => '
             Jitta Kanneh, Mammy Queen of Makpele Chiefdom, at one of the swamp-rice development 
             livelihoods for peace initiative of the PBF project
@@ -264,7 +264,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
 
     View::render('organisms/article-deepdive/image-with-caption', [
         'imageSize' => 'small',
-        'image' => "$imgPath/article-deepdive-featured-image-2.jpg",
+        'image' => "$imgPath/article-deepdive-featured-image--small.jpg",
         'caption' => '
             Jitta Kanneh, Mammy Queen of Makpele Chiefdom, at one of the swamp-rice development 
             livelihoods for peace initiative of the PBF project
