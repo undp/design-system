@@ -32,6 +32,8 @@ class NavigationProgress {
         this.scrollPosition = scrollTop + this.scrollThreshold
         this.progress = this.scrollPosition * 100 / this.totalDistance
 
+        if (scrollTop === 0) this.progress = 0
+
         this.$progress.css('width', this.progress / 100 * this.progressBarWidth)
     }
 
