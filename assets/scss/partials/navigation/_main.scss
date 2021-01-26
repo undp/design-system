@@ -62,6 +62,10 @@ $nav-desktop-height: 115px;
                     top: 0;
                     left: 0;
                     position: absolute;
+
+                    &.scrolled > svg {
+                        width: auto;
+                    }
                 }
             }
 
