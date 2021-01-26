@@ -21,6 +21,12 @@
         padding: 0 140px;
         margin-bottom: 50px;
 
+        @include breakpoint(medium down) {
+            width: 100%;
+            padding: 50px 30px;
+            background: $dark-blue-6;
+        }
+
         .quote-text {
             .heading {
                 font-weight: $regular;
