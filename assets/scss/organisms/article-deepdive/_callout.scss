@@ -6,6 +6,7 @@
     @include breakpoint(medium down) {
         width: 100%;
         padding: 50px 30px;
+        margin-bottom: 40px;
     }
 
     &.green {
@@ -39,6 +40,7 @@
     blockquote::before {
         content: open-quote;
     }
+
     blockquote::after {
         content: close-quote;
     }

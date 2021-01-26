@@ -1,12 +1,20 @@
 .image-with-caption {
     margin-bottom: 80px;
 
+    @include breakpoint(small only) {
+        margin-bottom: 50px;
+    }
+
     &.cover-image {
         margin-bottom: 33px;
     }
 
     .image-container {
         margin-top: 36px;
+
+        @include breakpoint(small only) {
+            margin-top: 0;
+        }
     }
 
     .featured-image {
