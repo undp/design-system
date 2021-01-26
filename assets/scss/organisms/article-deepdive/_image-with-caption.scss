@@ -64,24 +64,6 @@
         padding-bottom: 23px;
         border-bottom: 3px solid $black;
 
-        &.small {
-            flex-direction: column;
-            justify-content: flex-end;
-
-            @include breakpoint(medium up) {
-                margin-left: 27px;
-            }
-
-            .image-author {
-                padding-left: 0;
-                margin-top: 16px;
-
-                &::before {
-                    display: none;
-                }
-            }
-        }
-
         @include breakpoint(small only) {
             margin-top: 30px;
             flex-direction: column;
