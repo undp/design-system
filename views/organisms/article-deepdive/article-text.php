@@ -12,11 +12,13 @@
             <?php endforeach; ?>
 
             <!-- Two column paragraph example -->
+            <?php if($twoColumnParagraphs ?? ''): ?>
             <div class="grid-x grid-margin-x">
-                <?php foreach ($paragraphs as $paragraph) : ?>
+                <?php foreach ($twoColumnParagraphs as $paragraph) : ?>
                     <div class="cell large-6"><p><?= $paragraph['text'] ?></p></div>
                 <?php endforeach; ?>
             </div>
+            <?php endif ?>
 
             <?php if ($headingText ?? '') : ?>
                 <h3 class="heading h3 scroll-track left-right delay-2"><?= $headingText ?? '' ?></h3>
