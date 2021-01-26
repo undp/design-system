@@ -22,6 +22,7 @@ import modalSdgs from './components/modal-sdgs'
 import heroAnimation from './components/hero-animation'
 import select from './components/select'
 import docs from './components/docs'
+import navigationProgress from './components/navigation-progress'
 
 // JS to render nav/search DOM elements from JSON data files
 import menusNav from './render-data/menu/all';
@@ -63,6 +64,7 @@ function main() {
     searchData()
     countriesData()
     trapFocus()
+    navigationProgress()
 }
 
 document.addEventListener("DOMContentLoaded", function () {
