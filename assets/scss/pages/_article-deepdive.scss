@@ -1,9 +1,13 @@
+$page-margin-top: calc(#{$nav-desktop-height} + #{$progress-bar-height});
+$page-mobile-margin-top: calc(#{$nav-mobile-height} + #{$progress-bar-mobile-height});
+
+
 .article-deepdive {
     padding: 48px 0 18.5px;
-    margin: $height-nav auto 0;
+    margin: $page-margin-top auto 0;
 
     @include breakpoint(medium down) {
-        margin-top: $height-nav-medium;
+        margin-top: $page-mobile-margin-top;
     }
 
     @include breakpoint(small only) {
