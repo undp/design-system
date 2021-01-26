@@ -1,15 +1,15 @@
 
 #navigation-progress {
-    height: 17px;
     left: 0;
     width: 100%;
     position: fixed;
     z-index: $z-index-5;
     background: $dark-blue-4;
+    height: $progress-bar-height;
     top: calc(#{$nav-desktop-height} - 1px);
 
     @include breakpoint(medium down) {
-        height: 15px;
+        height: $progress-bar-mobile-height;
         top: calc(#{$nav-mobile-height} - 1px);
     }
 
