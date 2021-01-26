@@ -128,7 +128,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
             ],
             [
 
-                'text' => 'The project was launched at the end of 2019, UNDP and WFP through the Government of Sierra Leone
+                'text' => '<a href="">The project was launched at the end of 2019</a>, UNDP and WFP through the Government of Sierra Leone
                  launched the “Mitigating Localized Resources-Based Conflicts and Increasing Community Resilience” project 
                  piloted in Pujehun and Moyamba districts. Prior to this project, findings showed that the two districts were 
                  characterized by violent social unrest and land conflicts and overall deteriorating relationships between 

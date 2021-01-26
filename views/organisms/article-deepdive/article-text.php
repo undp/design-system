@@ -20,7 +20,7 @@
             <ul>
                 <?php foreach ($listElements as $listElement) : ?>
                     <li>
-                        <?= $paragraph['text'] ?>
+                        <?= $listElement['text'] ?>
                     </li>
                 <?php endforeach; ?>
 
