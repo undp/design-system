@@ -7,7 +7,9 @@ class NewsCentreFilter {
         this.$window = $(window)
         this.$container = $(container)
 
+        this.$navigation = $('[data-navigation]')
         this.$loadMore = this.$container.find('.load-more')
+        this.$scrollUp = this.$container.find('.scroll-up')
         this.$cardsContainer = this.$container.find('.cards-results')
         // this.$searchInput = this.$container.find('[data-input-search]') TBD
         this.$activeFilters = this.$container.find('[data-active-filters]')
@@ -21,6 +23,8 @@ class NewsCentreFilter {
         this.loadStep = 6 // Sets the number of cards to show on "load more"
         this.maxCards = 6
         this.hideClass = 'hide'
+        this.stickyClass = 'sticky'
+        this.showScrollButton = false
     }
 
     init() {
@@ -30,12 +34,14 @@ class NewsCentreFilter {
     }
 
     bindEvents() {
+        this.setScrollUpListeners()
         this.$loadMore.click(() => this.loadMore())
         this.$window.on('changed.zf.mediaquery', () => this.matchResults(true))
         this.$contentTypeFilter.on('change', 'input[type="checkbox"]', ev => this.handleMultiSelectChange(ev))
     }
 
     calculateCardsToShow() {
+        this.hideScrollUpButton()
         this.loadStep = Foundation.MediaQuery.upTo('medium') ? 4 : 6
         this.maxCards = Foundation.MediaQuery.upTo('medium') ? 4 : 6
     }
@@ -153,9 +159,57 @@ class NewsCentreFilter {
         })
     }
 
+    setScrollUpListeners() {
+        let bottom
+        let pageBottom
+        let unstickPosition
+        let scrollUpBottom = 22.5 // The distance between the button and the page bottom
+        const top = this.$container.offset().top
+
+        this.$scrollUp.click(() => {
+            $("html, body").animate({
+                scrollTop: top - (this.$navigation.height() * 1.5)
+            }, 800)
+        })
+
+        this.$window.scroll(() => {
+            if (!this.showScrollButton) return
+
+            bottom = top + this.$container.height()
+            unstickPosition = bottom + scrollUpBottom
+            pageBottom = this.$window.scrollTop() + this.$window.height()
+            // Add the button height to the unstickPosition for tablet/mobile
+            unstickPosition += Foundation.MediaQuery.upTo('medium')
+                ? this.$scrollUp.height()
+                : 0
+
+            // Unstick the button if we're at the end of the section
+            pageBottom >= unstickPosition
+                ? this.$scrollUp.removeClass('sticky')
+                : this.$scrollUp.addClass('sticky')
+
+            // Hide button if we reach the top of the component
+            this.$window.scrollTop() < top
+                ? this.$scrollUp.addClass(this.hideClass)
+                : this.$scrollUp.removeClass(this.hideClass)
+        })
+    }
+
     loadMore() {
         this.maxCards += this.loadStep
         this.matchResults()
+        this.showScrollUpButton()
+    }
+
+    hideScrollUpButton() {
+        this.showScrollButton = false
+        this.$scrollUp.addClass(this.hideClass)
+    }
+
+    showScrollUpButton() {
+        this.showScrollButton = true
+        this.$scrollUp.addClass('sticky')
+        this.$scrollUp.removeClass(this.hideClass)
     }
 }
 
