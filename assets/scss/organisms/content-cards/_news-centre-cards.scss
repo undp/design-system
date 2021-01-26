@@ -2,6 +2,10 @@
     margin-top: 60px;
     padding-bottom: 90px;
 
+    > .grid-container {
+        position: relative;
+    }
+
     .cards-container {
         @include breakpoint(medium up) {
             padding-left: 25px;
@@ -88,7 +92,8 @@
         transition: all 250ms ease-in-out;
 
         @include breakpoint(medium down) {
-            margin-top: 22px;
+            bottom: -66px;
+            position: absolute;
         }
 
         &.sticky {
