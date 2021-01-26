@@ -1,3 +1,5 @@
+
+
 class ModalNavHover {
     constructor() {
         this.classHide = 'hide';
@@ -29,6 +31,7 @@ class ModalNavHover {
     init(lazyLoadClass) {
         this.listenersHoverOpenModal();
         this.listenerAccessibilityCloseModal();
+        this.setKeyPressListener();
         this.lazyLoadClass = lazyLoadClass;
     }
 
@@ -46,8 +49,8 @@ class ModalNavHover {
                 }
                 if (this.$currentModal && this.allowOpenModal) {
                     this.$modalContent = this.$currentModal.find(this.dataContentOpacity);
-                    this.listenerHoverCloseModal();
                     this.listenerOpenMenuOption();
+                    this.listenerHoverCloseModal();
                     this.openModal();
                     this.allowOpenModal = false;
                 }
@@ -76,32 +79,57 @@ class ModalNavHover {
     }
 
     listenerHoverCloseModal() {
-        this.$modalBody = this.$currentModal.find(this.modalBody);
+        let mouseEnteredModal = false;
 
-        this.$window.hover((evt) => {
+        const hoverCallback = (evt) => {
+            let isHoverOutsideOfModal = !this.$modalBody.is(evt.target) && this.$modalBody.has(evt.target).length === 0 &&
+                !this.$menuDesktop.is(evt.target) && this.$menuDesktop.has(evt.target).length === 0;
+
+            if(!isHoverOutsideOfModal) {
+                mouseEnteredModal = true;
+            }
+
             //close modal when the hover event is outside of nav and modal content
-            if (!this.$modalBody.is(evt.target) && this.$modalBody.has(evt.target).length === 0 &&
-                !this.$menuDesktop.is(evt.target) && this.$menuDesktop.has(evt.target).length === 0) {
+            if (isHoverOutsideOfModal && mouseEnteredModal === true) {
                 this.allowOpenModal = true;
+                mouseEnteredModal = false;
+
                 if (this.$lastModal) {
                     this.$lastModal = null;
                     this.animateCloseModal();
                 }
             }
-        })
+        }
+
+        this.$window.off('hover', hoverCallback)
+        this.$modalBody = this.$currentModal.find(this.modalBody);
+
+        this.$window.hover(hoverCallback)
     }
 
     listenerAccessibilityCloseModal() {
         const closeButtons = $('.modal-nav-hover .close-submenu');
 
         closeButtons.click(() => {
-            this.$currentNavItem.focus();
-            this.allowOpenModal = true;
-            if (this.$lastModal) {
-                this.$lastModal = null;
-                this.resetTransitionAllModals();
+            this.closeModalFromKeyboard();
+        })
+    }
+
+    setKeyPressListener() {
+        this.$window.keyup((e) => {
+            if (e.keyCode === 27) { //esc
+                this.closeModalFromKeyboard();
             }
         })
+    }
+
+    closeModalFromKeyboard() {
+        this.$currentNavItem.focus();
+        this.allowOpenModal = true;
+        if (this.$lastModal) {
+            this.$lastModal = null;
+            this.resetTransitionAllModals();
+        }
     }
 
     openModal() {
