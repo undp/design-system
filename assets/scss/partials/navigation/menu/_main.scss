@@ -86,6 +86,27 @@
 
     }
 
+    &.no-animation {
+        .modal-body {
+            &.circle-square-transition {
+                opacity: 1;
+                animation: none;
+            }
+
+            &.circle-square-transition-back {
+                animation: none;
+            }
+
+            .opacity {
+                &.opacity-transition,
+                &.opacity-transition-back, {
+                    opacity: 1;
+                    animation: none;
+                }
+            }
+        }
+    }
+
     .modal-body {
         overflow: hidden;
         padding: 70px 0 0 70px;
@@ -108,11 +129,6 @@
                 animation-duration: 0s;
             }
 
-            &.no-animation {
-                opacity: 1;
-                animation: none;
-            }
-
             // For IE 11 (media is a hack to check for IE 10+)
             @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
                 opacity: 1;
@@ -123,11 +139,6 @@
         &.circle-square-transition-back {
             opacity: 0;
             animation: circle-square-transition .2s $transition-fourthly reverse;
-
-            &.no-animation {
-                opacity: 1;
-                animation: none;
-            }
 
             // For IE 11 (media is a hack to check for IE 10+)
             @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -149,11 +160,6 @@
                     animation-duration: 0s;
                 }
 
-                &.no-animation {
-                    opacity: 1;
-                    animation: none;
-                }
-
                 // For IE 11 (media is a hack to check for IE 10+)
                 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
                     opacity: 1;
@@ -163,11 +169,6 @@
 
             &.opacity-transition-back {
                 animation: transition-opacity .2s reverse;
-
-                &.no-animation {
-                    opacity: 1;
-                    animation: none;
-                }
             }
         }
 

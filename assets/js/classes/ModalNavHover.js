@@ -10,7 +10,6 @@ class ModalNavHover {
         this.modalBody = '[data-modal-body]';
         this.dataMenuOptionId = 'menu-option';
         this.menuOptions = '[data-menu-option]';
-        this.classAnimationColor = 'color-transition';
         this.classAnimationNextModal = 'change-modal';
         this.classAnimation = 'circle-square-transition';
         this.classAnimationOpacity = 'opacity-transition';
@@ -36,12 +35,19 @@ class ModalNavHover {
     }
 
     listenersHoverOpenModal() {
+        const removeAnimation = this.$menuDesktop.data('no-animation') === true;
+
         this.$navMenuItems.each((i, navItem) => {
 
             const $navItem = $(navItem)
             const prepareModalForOpening = () => {
                 const modalId = $(navItem).data(this.dataModalId);
                 this.$currentModal = $('#' + modalId);
+
+                if(removeAnimation) {
+                    this.$currentModal.addClass('no-animation');
+                }
+
                 if (this.$lastModal && this.$currentModal &&
                     !this.$lastModal.is(this.$currentModal)) {
                     this.closeModal();
@@ -133,7 +139,7 @@ class ModalNavHover {
     }
 
     openModal() {
-        this.$currentModal.removeClass(this.classHide).addClass(this.classAnimationColor);
+        this.$currentModal.removeClass(this.classHide);
         this.$modalBody.addClass(this.classAnimation).removeClass(this.classHide);
         this.$modalContent.addClass(this.classAnimationOpacity);
         this.removeTransitions();
@@ -179,9 +185,9 @@ class ModalNavHover {
 
     closeModal() {
         if (this.$lastModal) {
-            this.$lastModal.addClass(this.classHide).removeClass(this.classAnimationColor);
+            this.$lastModal.addClass(this.classHide);
         } else {
-            this.$currentModal.addClass(this.classHide).removeClass(this.classAnimationColor);
+            this.$currentModal.addClass(this.classHide);
         }
 
         this.$modalBody.addClass(this.classHide).removeClass(this.classAnimation)
