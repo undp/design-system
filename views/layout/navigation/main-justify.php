@@ -30,7 +30,7 @@ use helpers\View;
                             </a>
                         </li>
                         <li class="show-for-xlarge logo-text">
-                            <a href="#" class="nav-item dark" aria-expanded="false" aria-haspopup="true">Argentina</a>
+                            <a href="#" class="nav-item dark" aria-expanded="false" aria-haspopup="true">Sierra Leone</a>
                         </li>
                         <li class="show-for-xlarge">
                             <button class="nav-item dark" data-modal-nav="modal-nav-who-we-are"
