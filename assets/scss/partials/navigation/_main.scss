@@ -248,6 +248,7 @@ $nav-desktop-height: 115px;
             &:active,
             &.active {
                 color: $blue-8;
+                padding-bottom: 0;
             }
 
             svg {
