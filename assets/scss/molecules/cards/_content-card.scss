@@ -122,7 +122,7 @@
     .arrow-2 {
         .link-arrow-group {
             transform: translateX(-31px);
-            transition: $transition-secondary;
+            transition: transform $easing-2;
 
             .arrow-line{
                 display: none;
@@ -227,7 +227,7 @@
         // Using yellow as default, can be changed with the classes below
         background-color: $yellow;
         transform: translateX(-105%);
-        transition: $transition-primary;
+        transition: transform $easing-1;
 
         @include breakpoint(large down){
             width: 52%;

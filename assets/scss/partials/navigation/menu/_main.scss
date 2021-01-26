@@ -76,8 +76,6 @@
     .modal-content {
         max-width: 1440px;
         padding: 0 116px;
-        animation-duration: 1s;
-        transition: $transition-tertiary;
 
         // For IE 11 (media is a hack to check for IE 10+)
         @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -120,7 +118,7 @@
 
         &.circle-square-transition {
             opacity: 0;
-            animation: circle-square-transition .2s $transition-fourthly;
+            animation: circle-square-transition $easing-4;
             animation-fill-mode: forwards;
 
 
@@ -138,7 +136,7 @@
 
         &.circle-square-transition-back {
             opacity: 0;
-            animation: circle-square-transition .2s $transition-fourthly reverse;
+            animation: circle-square-transition $easing-4 reverse;
 
             // For IE 11 (media is a hack to check for IE 10+)
             @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

@@ -215,7 +215,7 @@
 
         .link-arrow-group {
             transform: translateX(-31px);
-            transition: $transition-secondary;
+            transition: transform $easing-2;
 
             .arrow-line{
                 display: none;
