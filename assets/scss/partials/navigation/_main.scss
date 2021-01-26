@@ -135,7 +135,7 @@ $nav-desktop-height: 115px;
 
             &.scrolled {
                 svg, img {
-                    width: auto;
+                    width: 57px;
                     height: $nav-desktop-height;
 
                     @include breakpoint(medium down) {
