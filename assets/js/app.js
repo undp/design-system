@@ -11,6 +11,7 @@ import navigation from './components/navigation'
 import dropdown from './components/dropdown-languajes'
 import footerMenu from './partials/footer-menu-mobile'
 import scrollTriggers from './components/scroll-triggers'
+import newsCentreFilter from './components/news-centre-filter'
 import locationFilters from './components/location-filters'
 import multiSelect from './components/multi-select'
 import publicationsSlider from './components/publications-slider'
@@ -42,6 +43,7 @@ function main() {
     navigation()
     contentTypeData()
     locationFilters()
+    newsCentreFilter()
     multiSelect()
     customSelect()
     scrollTriggers()
