@@ -129,7 +129,9 @@ class ModalNavHover {
     }
 
     closeModalFromKeyboard() {
-        this.$currentNavItem.focus();
+        if(this.$currentNavItem) {
+            this.$currentNavItem.focus();
+        }
         this.allowOpenModal = true;
         if (this.$lastModal) {
             this.$lastModal = null;
