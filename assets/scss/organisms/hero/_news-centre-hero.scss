@@ -23,6 +23,10 @@
                 margin-top: 40px;
                 margin-left: 25px;
             }
+
+            @include breakpoint(small down) {
+                font-weight: normal;
+            }
         }
 
         .title {
