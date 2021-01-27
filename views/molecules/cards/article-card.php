@@ -2,7 +2,7 @@
     $imageExist = isset($image) && !empty($image);
 ?>
 <section>
-    <a href="#" class="content-card <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?> <?= $colorClass ?? 'yellow'  ?>">
+    <a href="#" class="article-card <?= $size ?? 'regular'  ?> <?= !$imageExist? 'no-image' : ''?> <?= $colorClass ?? 'yellow'  ?>">
         <div class="hover-slide">
             <?php if($imageExist): ?>
                 <div class="background-image lazy" style="background-image: url(<?= $image ?>)"></div>

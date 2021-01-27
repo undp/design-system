@@ -1,6 +1,6 @@
 <?php use helpers\View; ?>
 
-<section class="recent-news">
+<section class="featured-stories recent-news">
     <div class="grid-container">
         <div class="grid-x grid-padding-x lazy-group">
             <div class="cell small-11 small-offset-1 medium-3 scroll-track left-right delay-4">
@@ -15,7 +15,7 @@
             </div>
             <div class="cell small-12 medium-4">
                 <?php
-                    View::render('molecules/cards/content-card', [
+                    View::render('molecules/cards/article-card', [
                         'image' => '/assets/images/placeholder/news-1.jpeg',
                         'tag' => 'What we are doing',
                         'title' => 'Migrants essential to post COVID-19 recovery',
@@ -26,7 +26,7 @@
             </div>
             <div class="cell small-12 medium-4">
                 <?php
-                    View::render('molecules/cards/content-card', [
+                    View::render('molecules/cards/article-card', [
                         'image' => '/assets/images/placeholder/news-2.jpeg',
                         'tag' => 'News',
                         'title' => 'In Uzbekistan, UN agencies, banks, governments work to rebuild after pandemic',
@@ -37,7 +37,7 @@
             </div>
             <div class="cell small-12 medium-4">
                 <?php
-                View::render('molecules/cards/content-card', [
+                View::render('molecules/cards/article-card', [
                     'image' => '/assets/images/placeholder/news-3.png',
                     'tag' => 'What we are doing',
                     'title' => 'UNDP at the Paris Peace Forum 2020',
@@ -48,7 +48,7 @@
             </div>
             <div class="cell small-12 medium-4 large-3">
                 <?php
-                View::render('molecules/cards/content-card', [
+                View::render('molecules/cards/article-card', [
                     'size' => 'tall',
                     'image' => '/assets/images/placeholder/news-4.jpeg',
                     'tag' => 'What we are doing',
@@ -60,7 +60,7 @@
             </div>
             <div class="cell small-12 medium-8 large-5">
                 <?php
-                View::render('molecules/cards/content-card', [
+                View::render('molecules/cards/article-card', [
                     'size' => 'wide',
                     'image' => '/assets/images/placeholder/news-5.jpeg',
                     'tag' => 'News',
@@ -71,7 +71,7 @@
             </div>
             <div class="cell small-12 medium-4">
                 <?php
-                View::render('molecules/cards/content-card', [
+                View::render('molecules/cards/article-card', [
                     'image' => '/assets/images/placeholder/news-6.jpeg',
                     'tag' => 'News',
                     'title' => 'Costa Rica receives 54 million dollars for its leadership in conservation and action for climate',
@@ -82,7 +82,7 @@
             </div>
             <div class="cell small-12 medium-8 large-5">
                 <?php
-                View::render('molecules/cards/content-card', [
+                View::render('molecules/cards/article-card', [
                     'size' => 'wide',
                     'image' => '/assets/images/placeholder/news-7.jpeg',
                     'tag' => 'News',
@@ -93,7 +93,7 @@
             </div>
             <div class="cell small-12 medium-4 large-3">
                 <?php
-                View::render('molecules/cards/content-card', [
+                View::render('molecules/cards/article-card', [
                     'size' => 'tall',
                     'image' => '/assets/images/placeholder/news-8.jpeg',
                     'tag' => 'Speech',
@@ -105,7 +105,7 @@
             </div>
             <div class="cell small-12 medium-4">
                 <?php
-                View::render('molecules/cards/content-card', [
+                View::render('molecules/cards/article-card', [
                     'image' => '/assets/images/placeholder/news-9.jpeg',
                     'tag' => 'News',
                     'title' => 'UN calls for comprehensive debt standstill in all developing countries',

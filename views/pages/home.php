@@ -21,7 +21,7 @@ use helpers\View;
 
 <main>
     <?php View::render('organisms/hero/homepage-hero') ?>
-    <?php View::render('organisms/content-cards/featured-stories') ?>
+    <?php View::render('organisms/article-cards/featured-stories') ?>
     <?php View::render('organisms/homepage/our-mission') ?>
     <?php View::render('organisms/homepage/our-expertise') ?>
     <?php
@@ -32,7 +32,7 @@ use helpers\View;
     ?>
     <?php View::render('organisms/homepage/global-impact') ?>
     <?php View::render('organisms/carousel/publications') ?>
-    <?php View::render('organisms/homepage/recent-news') ?>
+    <?php View::render('organisms/article-cards/recent-news') ?>
     <?php View::render('organisms/homepage/twitter-feed') ?>
 </main>
 
