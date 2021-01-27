@@ -1,7 +1,7 @@
 <?php use helpers\View; ?>
 
 
-<div class="grid-x grid-margin-x">
+<div class="grid-x grid-margin-x cards-container">
     <div class="cell large-4 medium-6 card-item">
         <?php
         View::render('molecules/cards/single-content-card-image', [
