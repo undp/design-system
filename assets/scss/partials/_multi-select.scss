@@ -29,6 +29,19 @@
         }
     }
 
+    &.white {
+        .options,
+        .select-control {
+            background-color: $white;
+        }
+
+        &.open {
+            .select-control {
+                border-bottom: none;
+            }
+        }
+    }
+
     .select-control {
         flex: 1;
         top: 0;
