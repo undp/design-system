@@ -1,0 +1,29 @@
+.author-page {
+    padding: 48px 0 89px;
+    margin: $nav-desktop-height auto 0;
+
+    @include breakpoint(large down) {
+        padding: 26px 0 67px;
+        margin-top: $nav-mobile-height;
+    }
+
+    .breadcrumb {
+        color: $red;
+    }
+
+    .author-cards {
+        margin-top: 82px;
+
+        @include breakpoint(large down) {
+            margin-top: 39px;
+        }
+
+        .cta-button {
+            margin-top: 70px;
+
+            @include breakpoint(large down) {
+                margin-top: 58px;
+            }
+        }
+    }
+}
