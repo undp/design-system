@@ -1,0 +1,59 @@
+.author-bio {
+    margin-top: 53px;
+
+    .align-middle {
+        @include breakpoint(large down) {
+            align-items: flex-start;
+        }
+    }
+
+    .separator {
+        height: 2px;
+        margin-bottom: 32px;
+        background-color: $black;
+
+        @include breakpoint(large down) {
+            margin-bottom: 25px;
+        }
+    }
+
+    .author-info {
+        margin-left: 24px;
+
+        @include breakpoint(large down) {
+            margin-left: 0;
+            margin-top: 29px;
+        }
+    }
+
+    .author-titles {
+        margin-top: 18px;
+
+        @include breakpoint(large down) {
+            margin-top: 24px;
+        }
+    }
+
+    .author-image {
+        width: 212px;
+        height: 212px;
+        flex-shrink: 0;
+        overflow: hidden;
+        border-radius: 50%;
+
+        @include breakpoint(large down) {
+            margin-top: 29px;
+        }
+
+        img {
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .bio {
+        @include breakpoint(large down) {
+            margin-top: 28px;
+        }
+    }
+}
