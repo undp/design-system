@@ -14,7 +14,7 @@
         width: 60px;
         position: absolute;
         background: $dark-blue-5;
-        height: calc(100% - 60px);
+        height: calc(100% - 50px);
 
         @include breakpoint(medium down) {
             width: 12px;
@@ -23,7 +23,7 @@
 
     .hero-container {
         position: relative;
-        padding-bottom: 60px;
+        padding-bottom: 50px;
 
         @include breakpoint(medium down) {
             padding-left:45px;
@@ -31,13 +31,26 @@
 
         .title {
             margin-top: 25px;
-        }
-
-        .article-container {
-            margin-top: 100px;
+            text-transform: uppercase;
+            font-family: $secondary-font;
 
             @include breakpoint(medium down) {
-                margin-top: 50px;
+                font-size: 2.5rem;
+            }
+        }
+
+        .subtitle {
+            @include breakpoint(small only) {
+                font-size: 1.6rem;
+            }
+        }
+
+
+        .article-container {
+            margin-top: 64px;
+
+            @include breakpoint(medium down) {
+                margin-top: 30px;
             }
 
             .article-description {
@@ -49,7 +62,11 @@
                     max-width: 160px;
 
                     @include breakpoint(medium down) {
-                        display: none;
+                        margin-top: 30px;
+                    }
+
+                    @include breakpoint(small only) {
+                        max-width: 100%;
                     }
                 }
             }
@@ -57,16 +74,12 @@
             .article-image {
                 padding-left: 40px;
 
-                @include breakpoint(medium down) {
-                    display: none;
-                }
-
                 img {
                     width: 100%;
                 }
 
                 @include breakpoint(medium down) {
-                    padding-left: 0;
+                    display: none;
                 }
             }
         }
