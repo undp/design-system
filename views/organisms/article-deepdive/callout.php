@@ -1,5 +1,5 @@
 <section class="callout grid-container scroll-track opacity-only delay-2 <?= $background ?? '' ?>">
-    <div class="quote-text grid-x grid-padding-x">
+    <div class="quote-text grid-x">
         <div class="cell small-10 small-offset-1 medium-7 quote-content flex-container flex-dir-column">
             <h3 class="heading h3">
                <blockquote><?= $quoteText ?? '' ?></blockquote>
