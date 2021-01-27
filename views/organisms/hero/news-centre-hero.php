@@ -21,7 +21,7 @@ use helpers\View;
                 </div>
             </div>
             <div class="cell large-8 image-container">
-                <img src="../../../assets/images/placeholder/hero/hero-news-image.jpg" alt="">
+                <img src="<?= $imageUrl ?? '' ?>" alt="">
             </div>
 
             <div class="news-hero-container-mobile">
