@@ -20,7 +20,7 @@ switch ($subpath) {
         View::render('pages/country-page');
         break;
     case '/about-us':
-        View::render('pages/about-us');
+        View::render('pages/standard-page');
         break;
     case '/news-centre':
         View::render('pages/news-centre');
