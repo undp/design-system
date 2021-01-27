@@ -7,6 +7,8 @@
     }
 
     .cards-container {
+        min-height: 400px;
+
         @include breakpoint(medium up) {
             padding-left: 25px;
         }
