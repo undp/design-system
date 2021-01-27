@@ -11,7 +11,7 @@
                     <?php
                     View::render('molecules/cards/photo-cta-card', [
                         'link' => $_SERVER['REQUEST_URI'],
-                        'description' => 'A vineyard with a storied past receives an injection of new life.',
+                        'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
                         'image' => '/assets/images/placeholder/cards/photo-cta-image01.png',
                         'cta' => 'Shop'
                     ])
@@ -21,8 +21,8 @@
                     <?php
                     View::render('molecules/cards/photo-cta-card', [
                         'link' => $_SERVER['REQUEST_URI'],
-                        'description' => 'A vineyard with a storied past receives an injection of new life.',
-                        'image' => '/assets/images/placeholder/cards/single-content-card-image-2.png',
+                        'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                        'image' => '/assets/images/placeholder/cards/photo-cta-image02.png',
                         'cta' => 'Donate'
                     ])
                     ?>
@@ -31,8 +31,8 @@
                     <?php
                     View::render('molecules/cards/photo-cta-card', [
                         'link' => $_SERVER['REQUEST_URI'],
-                        'description' => 'A vineyard with a storied past receives an injection of new life.',
-                        'image' => '/assets/images/placeholder/cards/single-content-card-image-2.png',
+                        'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                        'image' => '/assets/images/placeholder/cards/photo-cta-image03.png',
                         'cta' => 'Explore'
                     ])
                     ?>
