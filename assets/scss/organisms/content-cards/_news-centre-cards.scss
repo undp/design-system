@@ -45,11 +45,30 @@
 
     .active-filters {
         padding: 18px 25px;
+        position: relative;
         flex-direction: column;
         align-items: flex-start;
 
+        @include breakpoint(small only) {
+            padding: 27px 0 0;
+        }
+
         .tag.uppercase {
+            margin-left: 30px;
             color: $gray-chateau;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            @include breakpoint(small only) {
+                flex-wrap: wrap;
+                margin-top: 9px;
+                margin-left: -11px;
+                flex-direction: row;
+            }
         }
 
         .filter {
@@ -60,6 +79,11 @@
             border-radius: 17px;
             background-color: rgba($dark-blue-19, 0.36);
 
+            @include breakpoint(small only) {
+                margin-top: 6px;
+                margin-left: 11px;
+            }
+
             &:before {
                 margin-right: 5px;
                 content: url("#{$image-path}/icon-close-modal-location.svg");
@@ -67,6 +91,10 @@
 
             &:first-of-type {
                 margin-top: 15px;
+
+                @include breakpoint(small only) {
+                    margin-top: 6px;
+                }
             }
         }
 
@@ -74,34 +102,13 @@
             margin-top: 15px;
             margin-left: 13px;
             border-bottom: 1px solid $red;
-        }
-    }
 
-    .scroll-up {
-        width: 44px;
-        height: 44px;
-        display: flex;
-        cursor: pointer;
-        margin: auto 0 0;
-        border-radius: 50%;
-        align-items: center;
-        background: $blue-0;
-        justify-content: center;
-        transition: all 250ms ease-in-out;
-
-        @include breakpoint(medium down) {
-            bottom: -66px;
-            position: absolute;
-        }
-
-        &.sticky {
-            margin: 0;
-            bottom: 22.5px;
-            position: fixed;
-        }
-
-        svg {
-            transform: rotate(-90deg);
+            @include breakpoint(small only) {
+                top: 27px;
+                margin: 0;
+                right: 30px;
+                position: absolute;
+            }
         }
     }
 }
