@@ -50,11 +50,10 @@
         align-items: flex-start;
 
         @include breakpoint(small only) {
-            padding: 27px 0 0;
+            padding: 27px 30px;
         }
 
         .tag.uppercase {
-            margin-left: 30px;
             color: $gray-chateau;
         }
 
