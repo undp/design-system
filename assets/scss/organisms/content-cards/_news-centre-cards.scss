@@ -54,10 +54,11 @@
         align-items: flex-start;
 
         @include breakpoint(small only) {
-            padding: 27px 30px 0;
+            padding: 27px 0 0;
         }
 
         .tag.uppercase {
+            margin-left: 30px;
             color: $gray-chateau;
         }
 
@@ -69,7 +70,7 @@
             @include breakpoint(small only) {
                 flex-wrap: wrap;
                 margin-top: 9px;
-                margin-left: -16px;
+                margin-left: -11px;
                 flex-direction: row;
             }
         }
