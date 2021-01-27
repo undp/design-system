@@ -1,31 +1,35 @@
 .callout {
-    width: 75%;
-    margin: 70px 0 80px;
-    padding: 90px 110px 70px 140px;
+    margin-top: 70px;
+    padding-top: 90px;
+    margin-bottom: 80px;
+    padding-bottom: 70px;
 
     @include breakpoint(medium down) {
-        width: 100%;
-        padding: 50px 30px;
-        margin-bottom: 40px;
-    }
-
-    &.green {
-        background: $green-6;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     &.gray {
-        background: $dark-blue-6;
+        .bg-container {
+            background: $dark-blue-6;
+        }
+    }
+
+    &.green {
+        .bg-container {
+            background: $green-6;
+        }
     }
 
     &.transparent {
-        width: 80%;
+        padding-top: 0;
         margin-top: 20px;
-        padding: 0 140px;
+        padding-bottom: 0;
         margin-bottom: 50px;
 
         @include breakpoint(medium down) {
-            width: 100%;
-            padding: 50px 49px;
+            padding-top: 28px;
+            padding-bottom: 28px;
             background: $dark-blue-6;
         }
 
@@ -56,5 +60,13 @@
 
     .quote-author {
         margin-top: 40px;
+    }
+
+    .bg-container {
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        position: absolute;
     }
 }
