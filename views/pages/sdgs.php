@@ -19,7 +19,7 @@ use helpers\View;
 
     <!--  Development Goals   -->
     <div class="grid-container">
-        <?php View::render('organisms/text/big-copy-h1', [
+        <?php View::render('molecules/text/big-copy-h1', [
                 'title' => '        What are the Sustainable Development Goals?',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
              ])

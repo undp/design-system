@@ -6,7 +6,7 @@ use helpers\View;
 ?>
 
 <!-- Page Headers -->
-<?php View::render('layout/header', ['pageTitle' => 'UNDP - The SDGS']) ?>
+<?php View::render('layout/header', ['pageTitle' => 'UNDP - Country Page']) ?>
 
 <body>
 <!-- Navigation -->
@@ -24,7 +24,7 @@ use helpers\View;
 
     <?php View::render('organisms/article-cards/local-featured-stories'); ?>
 
-    <?php View::render('organisms/country-page/title-text'); ?>
+    <?php View::render('molecules/callouts/featured-callout'); ?>
 
     <?php View::render('organisms/content-cards/country-page-content-cards'); ?>
 
