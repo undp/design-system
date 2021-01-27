@@ -6,6 +6,7 @@
         justify-content: center;
 
         @include breakpoint(small only) {
+            align-items: center;
             flex-direction: column;
         }
 
@@ -15,6 +16,7 @@
             @include breakpoint(small only) {
                 margin-left: 0;
                 margin-top: 15px;
+                align-items: center;
             }
 
             &:first-child {
