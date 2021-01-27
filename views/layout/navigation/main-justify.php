@@ -62,7 +62,7 @@ use helpers\View;
                             English
                             <?php Svg::render('icon-arrow-down') ?>
                         </button>
-                        <ul class="dropdown-content menu-items hide" data-options>
+                        <ul class="dropdown-content hide" data-options>
                             <li><a class="nav-item dark" href="#">Français</a></li>
                             <li><a class="nav-item dark" href="#">Español</a></li>
                         </ul>
