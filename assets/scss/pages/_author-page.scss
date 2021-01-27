@@ -12,10 +12,18 @@
     }
 
     .author-cards {
-        margin-top: 82px;
+        margin-top: 133px;
 
         @include breakpoint(large down) {
-            margin-top: 39px;
+            margin-top: 66px;
+        }
+
+        .cards-container {
+            margin-top:57px;
+
+            @include breakpoint(large down) {
+                margin-top: 89px;
+            }
         }
 
         .cta-button {

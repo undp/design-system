@@ -52,6 +52,8 @@ $imgPath = '../../../assets/images/placeholder/author-page'
     <section class="author-cards grid-container scroll-track left-right delay-1">
         <div class="grid-x">
             <div class="cell large-9 large-offset-2">
+                <h2 class="heading h2">Explore More</h2>
+
                 <?php View::render('partials/author-page/author-cards') ?>
 
                 <div class="cta-button">
