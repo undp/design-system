@@ -5,9 +5,7 @@
                 <div class="gradient"></div>
                 <img src="<?= $image ?>" alt="">
                 <div class="description">
-                    <p class="medium-copy">
-                        <?= $description ?>
-                    </p>
+                    <div class="heading h5 card-description-text"><?= $description ?></div>
                 </div>
             </div>
             <div class="cta">
