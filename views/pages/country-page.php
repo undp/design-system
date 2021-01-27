@@ -27,6 +27,8 @@ use helpers\View;
     <?php View::render('organisms/country-page/title-text'); ?>
 
     <?php View::render('organisms/content-cards/country-page-content-cards'); ?>
+
+    <?php View::render('organisms/content-cards/photo-cta'); ?>
 </div>
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>
