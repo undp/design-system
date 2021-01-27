@@ -1,6 +1,5 @@
 <?php
 
-use helpers\Svg;
 use helpers\View;
 
 $imgPath = '../../../assets/images/placeholder/article-deepdive'

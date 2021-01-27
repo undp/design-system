@@ -4,7 +4,7 @@ $authorTitles = is_array($authorTitles) ? $authorTitles : [$authorTitles];
 ?>
 
 
-<section class="author-bio grid-container">
+<section class="author-bio grid-container scroll-track left-right delay-1">
     <div class="grid-x">
         <div class="cell large-10 large-offset-1 separator"></div>
 
