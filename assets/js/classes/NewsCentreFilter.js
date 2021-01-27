@@ -130,7 +130,7 @@ class NewsCentreFilter {
             this.$contentTypeFilter.find('[data-select-control] span').text('')
 
             this.filters.contentTypes = []
-            this.matchResults()
+            this.matchResults(true)
         })
     }
 
