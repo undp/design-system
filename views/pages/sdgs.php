@@ -14,7 +14,7 @@ use helpers\View;
     <?php View::render('organisms/hero/global-hero-3', [
         'title' => 'The SDGs In ACTION.',
         'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
-        'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.png'
+        'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.jpg'
     ]) ?>
 
     <!--  Development Goals   -->
