@@ -10,7 +10,7 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/main-justify') ?>
 
 <div class="country-page">
     <!--Country hero 3-->
