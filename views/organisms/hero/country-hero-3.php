@@ -20,8 +20,8 @@
                         <div class="heading h5 subtitle">
                             <?= $description ?? '' ?>
                         </div>
-                        <button class="btn dark">
-                            Read More
+                        <button class="btn">
+                            <span>Read</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="11.643" height="17.341">
                                 <path data-name="path 637" d="m.643.767l9.441 7.9-9.441 7.905" fill="none" stroke="#232e3e" stroke-width="2"/>
                             </svg>

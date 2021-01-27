@@ -64,6 +64,10 @@
                     @include breakpoint(medium down) {
                         margin-top: 30px;
                     }
+
+                    @include breakpoint(small only) {
+                        max-width: 100%;
+                    }
                 }
             }
 
