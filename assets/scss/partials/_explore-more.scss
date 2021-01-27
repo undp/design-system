@@ -1,0 +1,23 @@
+.explore-more {
+    margin-top: 133px;
+
+    @include breakpoint(large down) {
+        margin-top: 66px;
+    }
+
+    .cards-container {
+        margin-top:57px;
+
+        @include breakpoint(large down) {
+            margin-top: 89px;
+        }
+    }
+
+    .cta-button {
+        margin-top: 70px;
+
+        @include breakpoint(large down) {
+            margin-top: 58px;
+        }
+    }
+}
