@@ -65,8 +65,8 @@
     .bg-container {
         top: 0;
         left: 0;
-        z-index: -1;
         height: 100%;
         position: absolute;
+        z-index: $z-index-negative;
     }
 }
