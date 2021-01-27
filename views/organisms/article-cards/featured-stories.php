@@ -15,7 +15,7 @@
             </div>
             <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
-                    View::render('molecules/cards/content-card', [
+                    View::render('molecules/cards/article-card', [
                         //'image' => '/assets/images/placeholder/featured-story-1.jpeg',
                         'tag' => 'UNDP Response',
                         'title' => 'A vineyard with a storied past receives an injection of new life',
@@ -26,7 +26,7 @@
             </div>
             <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
-                    View::render('molecules/cards/content-card', [
+                    View::render('molecules/cards/article-card', [
                         'image' => 'assets/images/placeholder/featured-story-2.jpeg',
                         'tag' => 'UNDP Response',
                         'title' => '“We are a forgotten population.”',
@@ -37,7 +37,7 @@
             </div>
             <div class="cell medium-8 large-8">
                 <?php
-                View::render('molecules/cards/content-card', [
+                View::render('molecules/cards/article-card', [
                     'size' => 'large',
                     'image' => '/assets/images/placeholder/featured-story-3.jpeg',
                     'tag' => 'UNDP Response',
@@ -49,7 +49,7 @@
             </div>
             <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
-                View::render('molecules/cards/content-card', [
+                View::render('molecules/cards/article-card', [
                     'image' => '/assets/images/placeholder/featured-story-4.jpeg',
                     'tag' => 'UNDP Response',
                     'title' => '“I cry for no apparent reason.”',

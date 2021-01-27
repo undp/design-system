@@ -15,7 +15,7 @@
             </div>
             <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
-                    View::render('molecules/cards/content-card', [
+                    View::render('molecules/cards/article-card', [
                         'colorClass' => 'green',
                         'tag' => 'Sucess Story',
                         'title' => 'Communities score joint UNDP-WFP supported Peacebuilding Fund Project 80%',
@@ -26,18 +26,18 @@
             </div>
             <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
-                    View::render('molecules/cards/content-card', [
+                    View::render('molecules/cards/article-card', [
                         'colorClass' => 'green',
                         'tag' => 'UNDP Response',
                         'title' => '“We are a forgotten population.”',
-                        'description' => 'Local organizations in Panama continue to reach vulnerable groups during lockdown              ',
+                        'description' => 'Local organizations in Panama continue to reach vulnerable groups during lockdown',
                         'cta' => 'Discover more'
                     ])
                 ?>
             </div>
             <div class="cell medium-8 large-8">
                 <?php
-                View::render('molecules/cards/content-card', [
+                View::render('molecules/cards/article-card', [
                     'size' => 'large',
                     'colorClass' => 'green',
                     'tag' => 'UNDP Response',
@@ -49,7 +49,7 @@
             </div>
             <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
-                View::render('molecules/cards/content-card', [
+                View::render('molecules/cards/article-card', [
                     'colorClass' => 'green',
                     'tag' => 'UNDP Response',
                     'title' => '“I cry for no apparent reason.”',
