@@ -10,7 +10,7 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main-justify') ?>
+<?php View::render('layout/navigation/main') ?>
 
 <div class="news-centre">
     <!--Global hero 3-->
