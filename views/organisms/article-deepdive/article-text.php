@@ -4,7 +4,7 @@
 
 <section class="article-text grid-container">
     <div class="grid-x">
-        <div class="article-text-container cell small-12 large-7 large-offset-2">
+        <div class="article-text-container cell small-10 small-offset-1 large-7 large-offset-2">
             <?php foreach ($paragraphs as $paragraph) : ?>
                 <p>
                     <?= $paragraph['text'] ?>

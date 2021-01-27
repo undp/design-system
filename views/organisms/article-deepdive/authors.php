@@ -2,7 +2,7 @@
 
 <section class="article-authors grid-container">
     <div class="grid-x">
-        <div class="authors-container cell large-offset-2 large-7">
+        <div class="authors-container cell small-10 small-offset-1 large-offset-2 large-7">
             <div class="authors-title heading h5">
                 Author(s)
             </div>

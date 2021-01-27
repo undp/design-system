@@ -1,9 +1,5 @@
 .article-text {
 
-    @include breakpoint(small only) {
-        padding: 0 40px;
-    }
-
     a {
         color: $red;
         text-decoration: underline;

@@ -10,7 +10,6 @@
         display: flex;
 
         @include breakpoint(small only) {
-            padding-left: 35px;
             flex-direction: column;
         }
 
