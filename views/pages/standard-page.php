@@ -7,7 +7,7 @@ $imgPath = '../../../assets/images/placeholder/about-us'
 ?>
 
 <!-- Page Headers -->
-<?php View::render('layout/header', ['pageTitle' => 'Author - Dilara Umudova']) ?>
+<?php View::render('layout/header', ['pageTitle' => 'About us']) ?>
 
 <body>
 <!-- Navigation -->
