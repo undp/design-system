@@ -292,7 +292,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
     ]);
 
 
-    View::render('organisms/content-cards/related-articles');
+    View::render('organisms/article-cards/related-articles');
 
     ?>
 </div>

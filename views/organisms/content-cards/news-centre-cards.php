@@ -17,7 +17,7 @@
                         'dataIdentifier' => 'data-content-type-filter'
                     ]);
                 ?>
-                <div class="flex-container active-filters show-for-large" data-active-filters></div>
+                <div class="flex-container active-filters" data-active-filters></div>
 
                 <div class="scroll-up hide show-for-large">
                     <?php Svg::render('angle-right') ?>

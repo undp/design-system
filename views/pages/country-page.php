@@ -10,7 +10,7 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/main-justify') ?>
 
 <div class="country-page">
     <!--Country hero 3-->
@@ -21,6 +21,12 @@ use helpers\View;
                           messages on Covid-19 should be reinforced, border security enhanced…',
         'imageUrl' => '../../../assets/images/placeholder/hero/country-hero-img.jpg'
     ]) ?>
+
+    <?php View::render('organisms/article-cards/local-featured-stories'); ?>
+
+    <?php View::render('organisms/country-page/title-text'); ?>
+
+    <?php View::render('organisms/content-cards/country-page-content-cards'); ?>
 </div>
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>

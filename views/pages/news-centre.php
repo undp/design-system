@@ -18,15 +18,10 @@ use helpers\View;
         'subtitle' => 'Sierra Leone',
         'title' => 'News Centre',
         'breadcrumbLinks' => [['name' => 'Press Centre', 'link' => '#']],
-        'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.png'
+        'imageUrl' => '../../../assets/images/placeholder/hero/hero-news-image.jpg'
     ]) ?>
 
-    <?php View::render('organisms/content-cards/news-centre-cards', [
-        'subtitle' => 'Sierra Leone',
-        'title' => 'News Centre',
-        'breadcrumbLinks' => [['name' => 'Press Centre', 'link' => '#']],
-        'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.png'
-    ]) ?>
+    <?php View::render('organisms/content-cards/news-centre-cards') ?>
 </div>
 
 <!-- Footer -->

@@ -103,6 +103,7 @@ class NewsCentreFilter {
 
     showActiveFilters($checkedOptions) {
         this.$activeFilters.html('')
+        const $tagsContainer = $('<div class="tags-container">')
 
         if ($checkedOptions.length) {
             this.$activeFilters.append('<p class="tag uppercase">Active filters:</p>')
@@ -110,11 +111,12 @@ class NewsCentreFilter {
             $checkedOptions.each((i, input) => {
                 const text = $(input).parent().text()
                 const inputValue = $(input).val()
-                this.$activeFilters.append(`
+                $tagsContainer.append(`
                     <a class="filter" href="#" data-remove-filter data-input-value="${inputValue}">${text}</a>
                 `)
             })
 
+            this.$activeFilters.append($tagsContainer)
             this.$activeFilters.append('<a class="tag filter-clear" data-close-all-select href="#">Clear All</a>')
             this.setRemoveFilterListener()
             this.setClearAllFiltersListener()
