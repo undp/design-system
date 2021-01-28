@@ -19,9 +19,11 @@
         }
 
         .subtitle {
-            margin-top: 115px;
+            position: relative;
+            top: calc(20% - 17px);
 
             @include breakpoint(medium down) {
+                top: auto;
                 margin-top: 40px;
                 margin-left: 25px;
             }
@@ -32,7 +34,7 @@
         }
 
         .title {
-            max-width: 300px;
+            width: 100%;
             position: absolute;
             top: calc(50% - 130px);
             text-transform: uppercase;
