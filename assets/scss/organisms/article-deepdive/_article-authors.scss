@@ -44,6 +44,10 @@
         margin-top: 20px;
         margin-left: 25px;
 
+        .author-name a:hover {
+            color: $dark-blue-2;
+        }
+
         .job-position {
             margin-top: 15px;
         }

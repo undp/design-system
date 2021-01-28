@@ -59,3 +59,25 @@
         transition-delay: 50ms * $i;
     }
 }
+
+@keyframes lineLoop {
+    0% {
+        background-size: 100% 1px, 0 1px;
+        background-position: 100% 100%, -30px 100%;
+    }
+    100%{
+        background-size: 0 1px, 100% 1px;
+        background-position: calc(100% + 30px) 100%, 0 100%;
+    }
+}
+
+.animated-underline {
+    background-repeat: no-repeat;
+    background-size: 100% 1px, 0 1px;
+    background-position: 100% 100%, -30px 100%;
+    background-image: linear-gradient($red,$red), linear-gradient($red, $red);
+
+    &:hover {
+        animation: lineLoop 2s infinite linear;
+    }
+}

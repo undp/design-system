@@ -1,8 +1,7 @@
 .article-text {
 
     a {
-        color: $red;
-        text-decoration: underline;
+        @extend .animated-underline //from _animations.scss
     }
 
     p, li {

@@ -34,7 +34,7 @@
             margin-top: 18px;
 
             a{
-                border-bottom: 1px solid $red;
+                @extend .animated-underline //from _animations.scss
             }
         }
 
