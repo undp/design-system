@@ -95,6 +95,10 @@
                     margin-top: 6px;
                 }
             }
+
+            &:active, &:focus, &:hover {
+                background: #F6F6F6;
+            }
         }
 
         .filter-clear {
