@@ -10,6 +10,8 @@
 
     .news-hero-container {
         display: flex;
+        position: relative;
+
         flex-direction: column;
 
         .breadcrumb {
