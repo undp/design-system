@@ -34,4 +34,26 @@
             }
         }
     }
+
+    .explore-more {
+        margin-top: 147px;
+
+        @include breakpoint(medium down) {
+            margin-top: 113px;
+        }
+
+        .cta-button {
+            @include breakpoint(medium up) {
+                margin-top: 86px;
+            }
+        }
+
+        .cards-container {
+            margin-top: 71px;
+
+            @include breakpoint(medium down) {
+                margin-top: 48px;
+            }
+        }
+    }
 }
