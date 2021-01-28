@@ -26,6 +26,8 @@ use helpers\View;
 
     <?php View::render('molecules/callouts/featured-callout'); ?>
 
+    <?php View::render('molecules/cards/featured-content-card'); ?>
+
     <?php View::render('organisms/content-cards/country-page-content-cards'); ?>
 
     <?php View::render('organisms/content-cards/photo-cta'); ?>
