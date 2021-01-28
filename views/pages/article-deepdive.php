@@ -70,6 +70,13 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
                 'pageLink' => '/author-page',
                 'organization' => 'Organization'
             ],
+            [
+                'image' => "$imgPath/john-smith-author.png",
+                'name' => 'John Smith',
+                'title' => 'Title',
+                'pageLink' => '/author-page',
+                'organization' => 'Organization'
+            ],
         ]
     ]);
 

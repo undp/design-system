@@ -9,9 +9,9 @@
             <div class="authors-information">
                 <?php foreach ($authors as $i => $author) : ?>
                     <div class="author-item scroll-track left-right delay-<?= $i+2 ?>">
-                        <div class="author-image">
+                        <div class="author-image <?= count($authors) <= 3? 'active-image' : ''?>">
                             <a href="<?= $author['pageLink'] ?>">
-                            <?php if ($author['image']) : ?>
+                            <?php if (count($authors) <= 3 ) : ?>
                                 <img src="<?= $author['image'] ?>" alt="">
                             <?php endif; ?>
                             </a>
