@@ -6,7 +6,7 @@ use helpers\View;
 ?>
 
 <!-- Page Headers -->
-<?php View::render('layout/header', ['pageTitle' => 'UNDP - The SDGS']) ?>
+<?php View::render('layout/header', ['pageTitle' => 'UNDP - News Centre']) ?>
 
 <body>
 <!-- Navigation -->
