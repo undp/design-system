@@ -10,6 +10,8 @@
 
     .news-hero-container {
         display: flex;
+        position: relative;
+
         flex-direction: column;
 
         .breadcrumb {
@@ -17,9 +19,11 @@
         }
 
         .subtitle {
-            margin-top: 115px;
+            position: relative;
+            top: calc(20% - 17px);
 
             @include breakpoint(medium down) {
+                top: auto;
                 margin-top: 40px;
                 margin-left: 25px;
             }
@@ -30,13 +34,17 @@
         }
 
         .title {
-            margin-top: 30px;
+            width: 100%;
+            position: absolute;
+            top: calc(50% - 130px);
             text-transform: uppercase;
             font-family: $secondary-font;
 
             @include breakpoint(medium down) {
+                top: auto;
                 margin-top: 13px;
                 margin-left: 25px;
+                position: relative;
             }
         }
 
