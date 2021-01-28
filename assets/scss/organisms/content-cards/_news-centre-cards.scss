@@ -45,7 +45,6 @@
 
     .active-filters {
         padding: 18px 25px;
-        position: relative;
         flex-direction: column;
         align-items: flex-start;
 
@@ -53,39 +52,19 @@
             padding: 27px 30px;
         }
 
-        .tag.uppercase {
-            color: $gray-chateau;
-        }
-
-        .tags-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-
-            @include breakpoint(small only) {
-                flex-wrap: wrap;
-                margin-top: 9px;
-                margin-left: -11px;
-                flex-direction: row;
+        .tag {
+            &.gray,
+            &.filter-clear:hover {
+                color: $gray-chateau;
             }
         }
 
         .filter {
-            color: $black;
-            padding: 10px;
             margin-top: 8px;
-            font-size: 1.4rem;
-            border-radius: 17px;
-            background-color: rgba($dark-blue-19, 0.36);
 
             @include breakpoint(small only) {
                 margin-top: 6px;
                 margin-left: 11px;
-            }
-
-            &:before {
-                margin-right: 5px;
-                content: url("#{$image-path}/icon-close-modal-location.svg");
             }
 
             &:first-of-type {
@@ -95,16 +74,11 @@
                     margin-top: 6px;
                 }
             }
-
-            &:active, &:focus, &:hover {
-                background: #F6F6F6;
-            }
         }
 
         .filter-clear {
             margin-top: 15px;
             margin-left: 13px;
-            border-bottom: 1px solid $red;
 
             @include breakpoint(small only) {
                 top: 27px;
