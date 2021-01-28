@@ -5,7 +5,11 @@
     max-height: 805px;
     transition: max-width 0.5s ease;
 
-    .hero-container {
+    .hero-container, .text-container {
+        height: 100%;
+    }
+
+    .hero-content {
         color: $white;
 
         .breadcrumb {
