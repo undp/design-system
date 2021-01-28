@@ -1,0 +1,50 @@
+.active-filters {
+    position: relative;
+
+    .filter {
+        color: $black;
+        padding: 10px;
+        font-size: 1.4rem;
+        border-radius: 17px;
+        background-color: rgba($dark-blue-19, 0.36);
+
+        &:before {
+            margin-right: 5px;
+            content: url("#{$image-path}/icon-close-modal-location.svg");
+        }
+
+        &:active, &:focus, &:hover {
+            background: #F6F6F6;
+        }
+    }
+
+    .filter-clear {
+        border-bottom: 1px solid $red;
+
+        &:active, &:focus, &:hover {
+            color: $black;
+        }
+
+        &.caps {
+            color: $black;
+            line-height: 1.5;
+            margin-left: 15px;
+            font-size: 1.4rem;
+            font-weight: $regular;
+            text-transform: capitalize;
+        }
+    }
+
+    .tags-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include breakpoint(small only) {
+            flex-wrap: wrap;
+            margin-top: 9px;
+            margin-left: -11px;
+            flex-direction: row;
+        }
+    }
+}
