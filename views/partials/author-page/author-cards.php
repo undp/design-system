@@ -30,8 +30,7 @@
             'tag' => 'Content Tag',
             'link' => $_SERVER['REQUEST_URI'],
             'title' => 'UN calls for comprehensive debt standstill in all developing countries.',
-            'cta' => 'Read More',
-            'color' => 'accent-yellow'
+            'cta' => 'Read More'
         ])
         ?>
     </div>
@@ -52,8 +51,7 @@
             'tag' => 'Content Tag',
             'link' => $_SERVER['REQUEST_URI'],
             'title' => 'EIF and UNDP to strengthen cooperation for sustainable finance.',
-            'cta' => 'Read More',
-            'color' => 'accent-yellow'
+            'cta' => 'Read More'
         ])
         ?>
     </div>

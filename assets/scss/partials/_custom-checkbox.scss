@@ -39,7 +39,7 @@
         width: 16px;
         height: 16px;
         position: absolute;
-        border: 2px solid $red-8;
+        border: 2px solid $red-5;
         transform: translateY(-50%);
 
         &:after {
@@ -58,7 +58,7 @@
             color: $dark-blue-2;
 
             .checkmark {
-                border-color: $red-5;
+                border-color: $red-2;
             }
         }
 
@@ -73,7 +73,7 @@
                 height: 6px;
                 border-radius: 50%;
                 background-image: none;
-                background-color: $red-8;
+                background-color: $red-5;
             }
         }
     }

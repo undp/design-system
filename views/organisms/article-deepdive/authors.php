@@ -4,7 +4,7 @@
     <div class="grid-x">
         <div class="authors-container cell small-10 small-offset-1 large-offset-2 large-7">
             <div class="authors-title heading h5">
-                Author<?= count($authors) > 1? '(s)' : ''?>
+                Author<?= count($authors) > 1? 's' : ''?>
             </div>
             <div class="authors-information">
                 <?php foreach ($authors as $i => $author) : ?>
