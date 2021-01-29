@@ -9,9 +9,14 @@ use helpers\View;
             <div class="cell large-3 large-offset-1 news-hero-container">
                 <div class="breadcrumb"><?php View::render('partials/breadcrumb', [
                         'links' => $breadcrumbLinks ?? ''
-                    ]) ?></div>
-                <div class="heading h3 subtitle scroll-track left-right delay-1"><?= $subtitle ?? '' ?></div>
-                <div class="heading h2 title scroll-track left-right delay-1"><?= $title ?? '' ?></div>
+                    ]) ?>
+                </div>
+
+                <div class="heading h2 title scroll-track left-right delay-1">
+                    <div class="heading h3 subtitle scroll-track left-right delay-1"><?= $subtitle ?? '' ?></div>
+                    <?= $title ?? '' ?>
+                </div>
+
                 <div class="hero-link scroll-track left-right delay-1">
                     <div class="link-title heading h3">Media Enquiries</div>
                     <a class="text-link arrow-1" href="#">
@@ -37,6 +42,7 @@ use helpers\View;
 
                 </div>
             </div>
+
             <div class="cell large-8 image-container">
                 <img src="<?= $imageUrl ?? '' ?>" alt="">
             </div>
@@ -44,6 +50,7 @@ use helpers\View;
             <div class="news-hero-container-mobile">
                 <div class="hero-link mobile scroll-track left-right delay-1">
                     <div class="link-title heading h3">Media Enquiries</div>
+
                     <a class="text-link arrow-2" href="#">
                         helen.mayelle@undp.org
                         <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
