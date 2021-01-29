@@ -103,7 +103,7 @@
         .separator{
             width: 100px;
             margin-top: 35px;
-            border-bottom: 3px solid $red;
+            border-bottom: 3px solid $red-1;
 
             @include breakpoint(large down){
                 margin-top: 40px;

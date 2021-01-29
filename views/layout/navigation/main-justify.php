@@ -30,7 +30,7 @@ use helpers\View;
                             </a>
                         </li>
                         <li class="show-for-xlarge logo-text">
-                            <a href="#" class="nav-item dark" aria-expanded="false" aria-haspopup="true">Argentina</a>
+                            <a href="#" class="nav-item dark" aria-expanded="false" aria-haspopup="true">Sierra Leone</a>
                         </li>
                         <li class="show-for-xlarge">
                             <button class="nav-item dark" data-modal-nav="modal-nav-who-we-are"
@@ -62,7 +62,7 @@ use helpers\View;
                             English
                             <?php Svg::render('icon-arrow-down') ?>
                         </button>
-                        <ul class="dropdown-content menu-items hide" data-options>
+                        <ul class="dropdown-content hide" data-options>
                             <li><a class="nav-item dark" href="#">Français</a></li>
                             <li><a class="nav-item dark" href="#">Español</a></li>
                         </ul>

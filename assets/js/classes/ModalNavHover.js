@@ -38,11 +38,17 @@ class ModalNavHover {
         const removeAnimation = this.$menuDesktop.data('no-animation') === true;
 
         this.$navMenuItems.each((i, navItem) => {
-
             const $navItem = $(navItem)
+
             const prepareModalForOpening = () => {
                 const modalId = $(navItem).data(this.dataModalId);
                 this.$currentModal = $('#' + modalId);
+
+                if(this.$currentNavItem) {
+                    this.$currentNavItem.attr("aria-expanded","false");
+                }
+                this.$currentNavItem = $navItem;
+                $navItem.attr("aria-expanded","true");
 
                 if(removeAnimation) {
                     this.$currentModal.addClass('no-animation');
@@ -71,13 +77,6 @@ class ModalNavHover {
 
                 if (e.which === 32) {
                     prepareModalForOpening();
-
-                    if(this.$currentNavItem) {
-                        this.$currentNavItem.attr("aria-expanded","false");
-                    }
-                    this.$currentNavItem = $navItem;
-                    $navItem.attr("aria-expanded","true");
-
                     this.$currentModal.find('a').eq(0).focus();
                 }
             });
@@ -130,7 +129,9 @@ class ModalNavHover {
     }
 
     closeModalFromKeyboard() {
-        this.$currentNavItem.focus();
+        if(this.$currentNavItem) {
+            this.$currentNavItem.focus();
+        }
         this.allowOpenModal = true;
         if (this.$lastModal) {
             this.$lastModal = null;

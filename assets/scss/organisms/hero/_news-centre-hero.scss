@@ -5,35 +5,55 @@
 
     @include breakpoint(medium down) {
         margin-top: 70px;
-    }
-
-    .subtitle {
-        margin-top: 115px;
-
-        @include breakpoint(medium down) {
-            margin-top: 40px;
-            margin-left: 25px;
-        }
+        padding-top: 40px;
     }
 
     .news-hero-container {
         display: flex;
+        position: relative;
+
         flex-direction: column;
 
         .breadcrumb {
-            color: $red;
+            color: $red-1;
+        }
+
+        .subtitle {
+            position: relative;
+            top: calc(20% - 17px);
+
+            @include breakpoint(medium down) {
+                top: auto;
+                margin-top: 40px;
+                margin-left: 25px;
+            }
+
+            @include breakpoint(small down) {
+                font-weight: normal;
+            }
         }
 
         .title {
-            margin-top: 30px;
+            width: 100%;
+            position: absolute;
+            top: calc(50% - 130px);
             text-transform: uppercase;
             font-family: $secondary-font;
 
             @include breakpoint(medium down) {
+                top: auto;
+                margin-top: 13px;
                 margin-left: 25px;
+                position: relative;
             }
         }
 
+        .title,
+        .subtitle {
+            @include breakpoint(small down) {
+                font-size: 25px;
+            }
+        }
     }
 
     .hero-link {
@@ -51,11 +71,12 @@
 
         .link-title {
             font-size: 2rem;
+            margin-bottom: 15px;
             font-weight: $regular;
         }
 
         .text-link {
-            margin-top: 30px;
+            margin-top: 10px;
         }
     }
 
@@ -66,10 +87,18 @@
             width: 100%;
             display: block;
         }
+
+        .text-link {
+            margin-left: 10px;
+        }
     }
 
     .image-container {
         padding-left: 25px;
+
+        img {
+            width: 100%;
+        }
 
         @include breakpoint(medium down) {
             padding-left: 0;

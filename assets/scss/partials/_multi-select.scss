@@ -29,6 +29,19 @@
         }
     }
 
+    &.white {
+        .options,
+        .select-control {
+            background-color: $white;
+        }
+
+        &.open {
+            .select-control {
+                border-bottom: none;
+            }
+        }
+    }
+
     .select-control {
         flex: 1;
         top: 0;
@@ -56,9 +69,9 @@
         &:after {
             top: 50%;
             content: '';
-            width: 14px;
             right: 28px;
-            height: 9px;
+            width: 18px;
+            height: 12px;
             position: absolute;
             transform: translateY(-50%);
             background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
@@ -109,7 +122,11 @@
             }
 
             &:hover {
-                color:  $dark-blue-17
+                color:  $dark-blue-17;
+
+                .checkmark {
+                    border-color: $cornflower-lilac;
+                }
             }
         }
 

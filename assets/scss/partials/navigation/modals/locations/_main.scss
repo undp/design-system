@@ -24,6 +24,21 @@
         padding: 0;
         position: relative;
 
+        .active-filters {
+            flex-wrap: wrap;
+            min-height: 36px;
+            margin-top: 20px;
+            color: $dark-blue-18;
+
+            .tag {
+                margin: 0 15px 0 0;
+            }
+
+            .filter {
+                margin: 0 10px 0 0;
+            }
+        }
+
         .close-button {
             top: 52px;
             right: 44px;
@@ -105,7 +120,7 @@
                     }
 
                     .title-undp {
-                        color: $blue-0;
+                        color: $blue-2;
                         font-size: 2rem;
                         margin-top: 10px;
                         font-weight: $semi-bold;
@@ -122,55 +137,10 @@
                             text-align: left;
                         }
                     }
-
-                    .active-filters {
-                        padding: 20px;
-
-                        .tag {
-                            margin-bottom: 15px;
-                        }
-
-                        .filter {
-                            color: $black;
-                            display: block;
-                            line-height: 1.5;
-                            font-size: 1.4rem;
-                            font-weight: $regular;
-
-                            &:before {
-                                margin-right: 5px;
-                                content: url('#{$image-path}icon-close-modal-location.svg');
-                            }
-
-                            &:focus,
-                            &:active,
-                            &:hover
-                            {
-                                color: $black;
-                            }
-                        }
-
-                        .filter-clear  {
-                            color: $black;
-                            line-height: 1.5;
-                            margin-left: 15px;
-                            font-size: 1.4rem;
-                            font-weight: $regular;
-                            text-transform: capitalize;
-                            border-bottom: 1px solid $red;
-
-                            &:focus,
-                            &:active,
-                            &:hover
-                            {
-                                color: $black;
-                            }
-                        }
-                    }
                 }
 
                 .location-undp {
-                    color: $blue-0;
+                    color: $blue-2;
                     margin-top: 15px;
                 }
 
@@ -210,7 +180,7 @@
                 }
 
                 .title {
-                    color: $blue-0;
+                    color: $blue-2;
                     margin-top: 15px;
                 }
 
@@ -277,80 +247,6 @@
                                 text-align: left;
                             }
                         }
-
-                        .active-filters {
-                            padding: 20px;
-
-                            .tag {
-                                margin-bottom: 15px;
-                            }
-
-                            .filter {
-                                color: $black;
-                                display: block;
-                                line-height: 1.5;
-                                font-size: 1.4rem;
-                                font-weight: $regular;
-
-                                &:before {
-                                    margin-right: 5px;
-                                    content: url('#{$image-path}icon-close-modal-location.svg');
-                                }
-
-                                &:focus,
-                                &:active,
-                                &:hover
-                                {
-                                    color: $black;
-                                }
-                            }
-
-                            .filter-clear  {
-                                color: $black;
-                                line-height: 1.5;
-                                margin-left: 15px;
-                                font-size: 1.4rem;
-                                font-weight: $regular;
-                                text-transform: capitalize;
-                                border-bottom: 1px solid $red;
-
-                                &:focus,
-                                &:active,
-                                &:hover
-                                {
-                                    color: $black;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .active-filters {
-                    flex-wrap: wrap;
-                    margin-top: 20px;
-                    min-height: 36px;
-                    color: $dark-blue-18;
-
-                    .tag {
-                        margin: 0 15px 0 0;
-                    }
-
-                    .filter {
-                        color: $black;
-                        padding: 10px;
-                        font-size: 1.4rem;
-                        border-radius: 17px;
-                        margin: 0 10px 0 0;
-                        background-color: rgba($dark-blue-19, 0.36);
-
-                        &:before {
-                            margin-right: 5px;
-                            content: url("#{$image-path}/icon-close-modal-location.svg");
-                        }
-                    }
-
-                    .filter-clear {
-                        border-bottom: 1px solid $red;
                     }
                 }
 
@@ -482,7 +378,7 @@
                     .btn-filters {
                         height: 50px;
                         color: $white;
-                        background-color: $blue-0;
+                        background-color: $blue-2;
 
                         .current-filters {
                             width: 24px;

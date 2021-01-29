@@ -61,6 +61,7 @@
 
         .option {
             cursor: pointer;
+            position: relative;
             padding: 15px 22px 15px;
             border-top: 1px solid rgba($black, 0.10);
 
@@ -68,12 +69,14 @@
                 background-color: rgba($black, 0.10);
             }
 
-            label {
-                cursor: pointer;
-            }
-
             .radio {
-                display: none;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                position: absolute;
             }
         }
 

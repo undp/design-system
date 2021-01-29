@@ -1,70 +1,54 @@
-class Select {
-    constructor() {
-        this.classShowOptions = 'active';
-        this.dataSelectOpen = '[data-select-open]';
-        this.dataSelectOptions = '[data-select-options]';
 
-        this.$window = $(window);
-        this.currentSelectOptions = null;
-        this.$selectOptionSelected = null;
-        this.$selects = $('[data-select]');
+
+class Select {
+
+    constructor(element) {
+        this.$window = $(window)
+        this.$currentSelect = $(element)
+        this.$selectOptions = this.$currentSelect.find('[data-select-options]')
+
+        this.value = null
+        this.activeClass = 'active'
+        this.selectedOptionSelector = '[data-select-open]'
     }
 
     init() {
-        this.listenerSelects();
-        this.listenerWindowClick();
+        this.bindEvents()
+        this.setSelectOptionListener()
     }
 
-    listenerSelects() {
-        this.$selects.each((i, select) => {
-            $(select).find(this.dataSelectOpen).click(() => {
-                this.$selectOptionSelected = $(select).find(this.dataSelectOpen);
-                const currentOptions = $(select).find(this.dataSelectOptions);
-                if (!currentOptions.is(this.currentSelectOptions)) {
-                    this.closeAll();
-                }
-                this.currentSelectOptions = $(select).find(this.dataSelectOptions);
-                if (this.currentSelectOptions) {
-                    this.selectOptionsToggle();
-                    this.listenerOptionsSelect();
-                }
-            })
+    bindEvents() {
+        this.$window.click(ev => this.handleWindowClick(ev))
+        this.$currentSelect.click(ev => this.handleSelectClick(ev))
+    }
+
+    handleSelectClick(ev) {
+        ev.stopImmediatePropagation() // Only trigger once at a time
+        this.$selectOptions.toggleClass(this.activeClass)
+    }
+
+    handleWindowClick(ev) {
+        const isActive = this.$currentSelect.find('.active').length > 0
+        const clickedOutside = !this.$currentSelect.is(ev.target) & this.$currentSelect.has(ev.target).length === 0
+
+        if (clickedOutside && isActive) this.close()
+    }
+
+    setSelectOptionListener() {
+        const $options = this.$currentSelect.find('.option')
+        const $selectedOption = this.$currentSelect.find(this.selectedOptionSelector)
+
+        $options.click(ev => {
+            ev.stopImmediatePropagation()
+            this.value = $(ev.currentTarget).find('label').text();
+
+            this.close()
+            $selectedOption.html(this.value);
         })
     }
 
-    listenerWindowClick() {
-        this.$window.click(evt => {
-            if (!this.$selects.is(evt.target) &&
-                this.$selects.has(evt.target).length === 0 && this.currentSelectOptions && this.currentSelectOptions.hasClass('active')) {
-                this.selectOptionsToggle();
-            }
-        });
-    }
-
-    listenerOptionsSelect() {
-        const options = this.currentSelectOptions.find('.option');
-        options.each((i, option) => {
-            $(option).click(() => {
-                const value = $(option).find('label').text();
-                this.$selectOptionSelected.html(value);
-                this.currentSelectOptions.removeClass(this.classShowOptions);
-            });
-        })
-    }
-
-    selectOptionsToggle() {
-        if (this.currentSelectOptions) {
-            this.currentSelectOptions.toggleClass(this.classShowOptions);
-        }
-    }
-
-    closeAll() {
-        this.$selects.each((i, select) => {
-            this.currentSelectOptions = $(select).find(this.dataSelectOptions);
-            if (this.currentSelectOptions) {
-                this.currentSelectOptions.removeClass(this.classShowOptions);
-            }
-        });
+    close() {
+        this.$selectOptions.removeClass(this.activeClass)
     }
 }
 

@@ -1,0 +1,340 @@
+.article-card{
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background: $dark-blue-7;
+
+    // Aspect ratios
+    @include breakpoint(xlarge){
+        // Default aspect (4 column)
+        &:before {
+            content: "";
+            width: 100%;
+            display: block;
+            padding-top: (9 / 10) * 100%;
+        }
+
+        // Large aspect (8 column)
+        &.large {
+            &:before {
+                padding-top: (10 / 23) * 100%;
+            }
+        }
+
+        // Wide aspect (6 column)
+        &.wide {
+            &:before {
+                padding-top: (406 / 569) * 100%;
+            }
+        }
+
+        // Tall aspect (3 column)
+        &.tall {
+            &:before {
+                padding-top: (405 / 331) * 100%;
+            }
+        }
+    }
+
+    @include breakpoint(large down){
+        width: 100%;
+
+        &:not(.large):not(.wide) {
+            .hover-slide{
+                display: none;
+            }
+        }
+    }
+
+    @include breakpoint(small only){
+        flex-direction: column;
+    }
+
+    &.no-image {
+        .content {
+            .tag, .title-description {
+                z-index: $z-index-3;
+            }
+        }
+
+        &.large, &.wide {
+            @include breakpoint(large down) {
+                .hover-slide{
+                    display: none;
+                }
+
+                .content {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &.large, &.wide {
+        .content{
+            @include breakpoint(large down){
+                width: 48%;
+            }
+
+            @include breakpoint(small only){
+                width: 100%;
+            }
+
+            .heading.h5{
+                @include breakpoint(xlarge){
+                    font-size: 3.5rem;
+                }
+
+                @include breakpoint(xxlarge) {
+                    font-size: 2.431vw;
+                }
+
+                @include breakpoint(1920) {
+                    font-size: 4.6rem;
+                }
+
+                @media screen and (min-width: 1200px) and (max-width: 1350px) {
+                    margin-top: 15px;
+                }
+
+                @include breakpoint(large down){
+                    margin-top: 35px;
+                }
+            }
+
+            .small-copy{
+                margin-top: 35px;
+
+
+                @media screen and (min-width: 1200px) and (max-width: 1350px) {
+                    margin-top: 15px;
+                }
+
+
+                @include breakpoint(large down){
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    .arrow-2 {
+        .link-arrow-group {
+            transform: translateX(-31px);
+            transition: transform $easing-2;
+
+            .arrow-line{
+                display: none;
+            }
+        }
+    }
+
+    .content{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        padding: 35px 25px;
+        position: absolute;
+        flex-direction: column;
+
+        @include breakpoint(large down){
+            position: static;
+        }
+
+        @include breakpoint(medium down){
+            padding: 30px 15px;
+        }
+
+        @include breakpoint(small only){
+            min-height: 345px;
+            padding: 35px 30px;
+        }
+
+        .tag, .title-description {
+            z-index: $z-index-0;
+        }
+
+        .title-description {
+            height: 100%;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .heading.h5{
+            margin-top: 45px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+
+            @include breakpoint(xxlarge) {
+                font-size: 1.737vw;
+            }
+
+            @include breakpoint(1920) {
+                font-size: 3.3rem;
+            }
+
+            @include breakpoint(medium down){
+                margin-top: 30px;
+            }
+        }
+
+        .small-copy{
+            margin-top: 25px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+
+            @include breakpoint(xxlarge) {
+                font-size: 0.973vw;
+            }
+
+            @include breakpoint(1920) {
+                font-size: 1.8rem;
+            }
+
+            @include breakpoint(medium down){
+                margin-top: 20px;
+            }
+
+            @include breakpoint(small only){
+                margin-top: 15px;
+            }
+        }
+
+        .cta{
+            bottom: 35px;
+            position: absolute;
+            z-index: $z-index-3;
+
+            .text-link:hover {
+                color: inherit;
+            }
+        }
+    }
+
+    .hover-slide{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: $z-index-1;
+        // Using yellow as default, can be changed with the classes below
+        background-color: $yellow;
+        transform: translateX(-105%);
+        transition: transform $easing-1;
+
+        @include breakpoint(large down){
+            width: 52%;
+            transform: none;
+            position: relative;
+        }
+
+        @include breakpoint(small only){
+            width: 100%;
+        }
+
+        .background-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+
+            @include breakpoint(small only){
+                padding-top: 100%;
+            }
+        }
+
+        &::before{
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            // Using yellow as default, can be changed with the classes below
+            background: transparent linear-gradient(207deg, rgba($white, 0.2) 30%,
+                    rgba($yellow, 0.5) 80%,
+                    rgba($yellow, 0.8) 100%) 0 0 no-repeat padding-box;
+        }
+    }
+
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover{
+            .hover-slide{
+                transform: translateX(0);
+            }
+
+            .link-arrow-group {
+                transform: translateX(0);
+
+                .arrow-line{
+                    display: unset;
+                }
+
+                .arrow-point{
+                    transform: translateX(31px);
+                }
+            }
+        }
+    }
+
+    // For IE 11 (media is a hack to check for IE 10+)
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:hover{
+            .hover-slide{
+                transform: translateX(0);
+            }
+
+            .link-arrow-group {
+                transform: translateX(0);
+
+                .arrow-line{
+                    display: unset;
+                }
+
+                .arrow-point{
+                    transform: translateX(31px);
+                }
+            }
+        }
+    }
+
+    @mixin cardColors($color) {
+        .hover-slide {
+            background-color: $color;
+
+            &::before{
+                background: transparent linear-gradient(207deg, rgba($white, 0.2) 30%,
+                        rgba($color, 0.5) 80%,
+                        rgba($color, 0.8) 100%) 0 0 no-repeat padding-box;
+            }
+        }
+    }
+
+    // Default color, kept class for clarity
+    // Two ways of adding accent color:
+    // 1. Globally on an upper container (all up to the body)
+    // 2. Directly on the card
+    // Directly on the card overrides global color
+    .accent-yellow &, &.accent-yellow {
+        @include cardColors($yellow);
+    }
+    .accent-green &, &.accent-green {
+        @include cardColors($green-2);
+    }
+    .accent-red &, &.accent-red {
+        @include cardColors($red-2);
+    }
+    .accent-blue &, &.accent-blue {
+        @include cardColors($blue-accent-2);
+    }
+}

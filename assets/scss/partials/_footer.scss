@@ -1,5 +1,5 @@
 .footer {
-    background: $blue-0;
+    background: $blue-2;
     padding: 85px 0 30px 0;
     font-weight: $semi-bold;
     font-family: $primary-font;
@@ -63,7 +63,7 @@
                 padding: 8px 14px;
                 font-size: 1.4rem;
                 border: 1px solid $white;
-                background-color: $blue-0;
+                background-color: $blue-2;
 
                 @include breakpoint(small only){
                     width: 100%;
@@ -79,7 +79,7 @@
 
             .btn-submit {
                 border: none;
-                color: $blue-0;
+                color: $blue-2;
                 border-radius: 0;
                 font-size: 1.4rem;
                 padding: 5px 15px 0;

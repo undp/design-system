@@ -1,0 +1,27 @@
+.scroll-up {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    cursor: pointer;
+    margin: auto 0 0;
+    border-radius: 50%;
+    align-items: center;
+    background: $blue-2;
+    justify-content: center;
+    transition: all 250ms ease-in-out;
+
+    @include breakpoint(medium down) {
+        bottom: -66px;
+        position: absolute;
+    }
+
+    &.sticky {
+        margin: 0;
+        bottom: 22.5px;
+        position: fixed;
+    }
+
+    svg {
+        transform: rotate(-90deg);
+    }
+}

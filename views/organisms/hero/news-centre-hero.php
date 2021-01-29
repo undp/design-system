@@ -14,19 +14,48 @@ use helpers\View;
                 <div class="heading h2 title scroll-track left-right delay-1"><?= $title ?? '' ?></div>
                 <div class="hero-link scroll-track left-right delay-1">
                     <div class="link-title heading h3">Media Enquiries</div>
-                    <a class="text-link arrow-2" href="#">
+                    <a class="text-link arrow-1" href="#">
                         helen.mayelle@undp.org
                         <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
                     </a>
+                    <a class="text-link arrow-1" href="#">
+                        jane.peterson@undp.org
+                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
+                    </a>
+                    <a class="text-link arrow-1" href="#">
+                        allen.Fitzgerald@undp.org
+                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
+                    </a>
+                    <a class="text-link arrow-1" href="#">
+                        helen.mayelle@undp.org
+                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
+                    </a>
+                    <a class="text-link arrow-1" href="#">
+                        helen.mayelle@undp.org
+                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
+                    </a>
+
                 </div>
             </div>
             <div class="cell large-8 image-container">
-                <img src="../../../assets/images/placeholder/hero/hero-news-image.jpg" alt="">
+                <img src="<?= $imageUrl ?? '' ?>" alt="">
             </div>
 
             <div class="news-hero-container-mobile">
                 <div class="hero-link mobile scroll-track left-right delay-1">
                     <div class="link-title heading h3">Media Enquiries</div>
+                    <a class="text-link arrow-2" href="#">
+                        helen.mayelle@undp.org
+                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
+                    </a>
+                    <a class="text-link arrow-2" href="#">
+                        helen.mayelle@undp.org
+                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
+                    </a>
+                    <a class="text-link arrow-2" href="#">
+                        helen.mayelle@undp.org
+                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
+                    </a>
                     <a class="text-link arrow-2" href="#">
                         helen.mayelle@undp.org
                         <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>

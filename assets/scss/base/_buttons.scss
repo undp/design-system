@@ -33,13 +33,14 @@
     color: $white;
     display: flex;
     cursor: pointer;
-    background: $red;
+    background: $red-1;
     font-size: 1.4rem;
     font-weight: $bold;
     align-items: center;
+    justify-content: center;
     text-transform: uppercase;
     font-family: $primary-font;
-    padding: 14px 24px 15px 29px;
+    padding: 14px 25px 14px 25px;
 
     > span:not([class]) {
         flex: 1 0 auto;
@@ -62,7 +63,7 @@
     }
 
     &:hover {
-        background: $red-4;
+        background: $red-3;
 
         svg,
         img{
@@ -71,7 +72,7 @@
     }
 
     &.blue{
-        background: $blue-0;
+        background: $blue-2;
 
         &:hover {
             background: $blue-3;
@@ -88,18 +89,12 @@
         }
     }
 
-    &.dark {
-        &:hover {
-            background: $red-1;
-        }
-    }
-
     &.light {
         background: $white;
         color: $dark-blue-1;
 
         &:hover {
-            background: $red-7;
+            background: $red-4;
         }
     }
 }
@@ -132,7 +127,7 @@
         background: $white;
 
         &:hover {
-            background: $red-7;
+            background: $red-4;
         }
     }
 
@@ -165,7 +160,7 @@
         color: $dark-blue-2;
 
         &.light-blue {
-            color: $red-7;
+            color: $red-4;
         }
 
         &.light-red {
@@ -205,7 +200,7 @@
 
         .link-arrow {
             height: 16px;
-            stroke: $red;
+            stroke: $red-1;
             margin-top: -1px;
             margin-left: 4px;
             overflow: hidden;
@@ -215,7 +210,7 @@
 
         .link-arrow-group {
             transform: translateX(-31px);
-            transition: $transition-secondary;
+            transition: transform $easing-2;
 
             .arrow-line{
                 display: none;
@@ -242,7 +237,7 @@
         display: inline;
 
         svg {
-            color: $red;
+            color: $red-1;
             position: relative;
 
             .transition-arrow{
@@ -259,7 +254,7 @@
 
         &.light-red {
             svg {
-                color: $red;
+                color: $red-1;
             }
         }
 
@@ -297,7 +292,7 @@
             bottom: -2px;
             display: block;
             position: absolute;
-            background: $red ;
+            background: $red-1 ;
         }
 
         &.light-blue::before{
@@ -335,7 +330,7 @@
         font-size: 1.5rem;
         font-weight: $bold;
         background: $white;
-        border: 2px solid $red;
+        border: 2px solid $red-1;
         text-transform: uppercase;
         padding: 5px 30px 5px 25px;
 
@@ -346,21 +341,21 @@
 
         &.light-red{
             color: $white;
-            background: $red;
+            background: $red-1;
             border-color: $dark-blue-1;
         }
     }
 
     .check-button:not(:checked) + label:hover {
         color: $dark-blue-2;
-        border-color: rgba($red, 0.7);
+        border-color: rgba($red-1, 0.7);
 
         &.light-blue{
             color: rgba($white, 0.7);
         }
 
         &.light-red{
-            color: $red-7;
+            color: $red-4;
             border-color: rgba($dark-blue-1, 0.7);
         }
     }
@@ -368,7 +363,7 @@
     .check-button + label:active,
     .check-button:checked + label {
         color: $white;
-        background: $red;
+        background: $red-1;
 
         &.light-red{
             background: $dark-blue-1;

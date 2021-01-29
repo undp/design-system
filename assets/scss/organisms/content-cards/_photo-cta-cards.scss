@@ -1,0 +1,16 @@
+.photo-cta-cards {
+    margin-top: 150px;
+    margin-bottom: 70px;
+
+    @include breakpoint(small only) {
+        margin-top: 117px;
+    }
+
+    .cards-content {
+        margin-top: 40px;
+
+        @include breakpoint(small only) {
+            margin-top: 60px;
+        }
+    }
+}

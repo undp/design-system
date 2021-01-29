@@ -32,6 +32,10 @@ $nav-desktop-height: 115px;
                     height: $nav-mobile-height;
                 }
 
+                &.dropdown-content {
+                    padding: 30px 30px 35px 12px;
+                }
+
                 li {
                     margin-right: 60px;
 
@@ -103,7 +107,7 @@ $nav-desktop-height: 115px;
 
         &.active {
             padding-bottom: 2px;
-            border-bottom: 2px solid $red;
+            border-bottom: 2px solid $red-1;
         }
     }
 
@@ -124,16 +128,18 @@ $nav-desktop-height: 115px;
                 transition: $transition-primary;
 
                 @include breakpoint(large down) {
-                    width: auto;
-                    max-height: $nav-mobile-height+8;
+                    width: 39px;
+                    height: $nav-mobile-height+8;
                 }
             }
 
             &.scrolled {
                 svg, img {
+                    width: 57px;
                     height: $nav-desktop-height;
 
                     @include breakpoint(medium down) {
+                        width: 35px;
                         height: $nav-mobile-height;
                     }
                 }
@@ -165,7 +171,7 @@ $nav-desktop-height: 115px;
                 width: 24px;
                 height: 24px;
                 border: none;
-                color: $blue-8;
+                color: $blue-2;
                 line-height: 0;
                 max-height: 24px;
                 position: relative;
@@ -177,7 +183,7 @@ $nav-desktop-height: 115px;
 
                 &:hover,
                 &.active:hover {
-                    color: $blue-9;
+                    color: $blue-8;
                 }
 
                 .icon-close {
@@ -189,7 +195,7 @@ $nav-desktop-height: 115px;
                     &:active,
                     &.active,
                     &.active:hover {
-                        color: $blue-0;
+                        color: $blue-2;
                     }
                 }
 
@@ -228,23 +234,22 @@ $nav-desktop-height: 115px;
     }
 
     .dropdown {
-        height: 30px;
-        max-height: 30px;
         position: relative;
 
         .dropdown-btn {
             border: none;
-            color: $blue-8;
+            color: $blue-2;
             cursor: pointer;
 
             &:hover,
             &.active:hover {
-                color: $blue-9
+                color: $blue-8
             }
 
             &:active,
             &.active {
-                color: $blue-8;
+                color: $blue-2;
+                padding-bottom: 0;
             }
 
             svg {

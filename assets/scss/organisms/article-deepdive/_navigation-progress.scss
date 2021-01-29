@@ -1,0 +1,23 @@
+
+#navigation-progress {
+    left: 0;
+    width: 100%;
+    position: fixed;
+    z-index: $z-index-5;
+    background: $dark-blue-4;
+    height: $progress-bar-height;
+    top: calc(#{$nav-desktop-height} - 1px);
+
+    @include breakpoint(large down) {
+        height: $progress-bar-mobile-height;
+        top: calc(#{$nav-mobile-height} - 1px);
+    }
+
+    .progress {
+        width: 0;
+        height: 100%;
+        max-width: 100%;
+        background: $yellow;
+        transition: width 250ms;
+    }
+}

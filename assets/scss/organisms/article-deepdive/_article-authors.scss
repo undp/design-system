@@ -1,12 +1,15 @@
 .article-authors {
     margin-top: 33px;
+    margin-bottom: 100px;
+
+    @include breakpoint(small only) {
+        margin-bottom: 70px;
+    }
 
     .authors-container {
         display: flex;
-        margin: 0 auto;
 
         @include breakpoint(small only) {
-            padding-left: 35px;
             flex-direction: column;
         }
 
@@ -40,6 +43,10 @@
     .author-info {
         margin-top: 20px;
         margin-left: 25px;
+
+        .author-name a:hover {
+            color: $dark-blue-2;
+        }
 
         .job-position {
             margin-top: 15px;

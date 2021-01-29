@@ -6,11 +6,11 @@ use helpers\View;
 ?>
 
 <!-- Page Headers -->
-<?php View::render('layout/header', ['pageTitle' => 'UNDP - The SDGS']) ?>
+<?php View::render('layout/header', ['pageTitle' => 'UNDP - Country Page']) ?>
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/main-justify') ?>
 
 <div class="country-page">
     <!--Country hero 3-->
@@ -21,6 +21,16 @@ use helpers\View;
                           messages on Covid-19 should be reinforced, border security enhanced…',
         'imageUrl' => '../../../assets/images/placeholder/hero/country-hero-img.jpg'
     ]) ?>
+
+    <?php View::render('organisms/article-cards/local-featured-stories'); ?>
+
+    <?php View::render('molecules/callouts/featured-callout'); ?>
+
+    <?php View::render('molecules/cards/featured-content-card'); ?>
+
+    <?php View::render('organisms/content-cards/country-page-content-cards'); ?>
+
+    <?php View::render('organisms/content-cards/photo-cta'); ?>
 </div>
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>

@@ -2,15 +2,29 @@
     margin-top: 60px;
     padding-bottom: 90px;
 
-    .cards-container {
-        padding-left: 25px;
+    > .grid-container {
+        position: relative;
+    }
 
-        @include breakpoint(medium down) {
-            padding-left: 0;
+    .cards-container {
+        min-height: 400px;
+
+        @include breakpoint(medium up) {
+            padding-left: 25px;
+        }
+
+        @include breakpoint(small only) {
+            margin-top: 60px;
         }
 
         .card-item {
             margin-bottom: 30px;
+        }
+
+        .single-content-card-body,
+        .single-content-card-image,
+        .single-content-card-accent-color {
+            margin: 0 auto;
         }
     }
 
@@ -20,6 +34,58 @@
         @include breakpoint(small only) {
             width: 100%;
             justify-content: center;
+        }
+    }
+
+    .select-box {
+        &:not(:first-of-type) {
+            margin-top: 14px;
+        }
+    }
+
+    .active-filters {
+        padding: 18px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include breakpoint(small only) {
+            padding: 27px 30px;
+        }
+
+        .tag {
+            &.gray,
+            &.filter-clear:hover {
+                color: $gray-chateau;
+            }
+        }
+
+        .filter {
+            margin-top: 8px;
+
+            @include breakpoint(small only) {
+                margin-top: 6px;
+                margin-left: 11px;
+            }
+
+            &:first-of-type {
+                margin-top: 15px;
+
+                @include breakpoint(small only) {
+                    margin-top: 6px;
+                }
+            }
+        }
+
+        .filter-clear {
+            margin-top: 15px;
+            margin-left: 13px;
+
+            @include breakpoint(small only) {
+                top: 27px;
+                margin: 0;
+                right: 30px;
+                position: absolute;
+            }
         }
     }
 }

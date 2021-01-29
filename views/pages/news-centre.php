@@ -1,16 +1,13 @@
 <?php
-
-use helpers\Svg;
 use helpers\View;
-
 ?>
 
 <!-- Page Headers -->
-<?php View::render('layout/header', ['pageTitle' => 'UNDP - The SDGS']) ?>
+<?php View::render('layout/header', ['pageTitle' => 'UNDP - News Centre']) ?>
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main-justify') ?>
+<?php View::render('layout/navigation/main') ?>
 
 <div class="news-centre">
     <!--Global hero 3-->
@@ -18,15 +15,10 @@ use helpers\View;
         'subtitle' => 'Sierra Leone',
         'title' => 'News Centre',
         'breadcrumbLinks' => [['name' => 'Press Centre', 'link' => '#']],
-        'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.png'
+        'imageUrl' => '../../../assets/images/placeholder/hero/hero-news-image.jpg'
     ]) ?>
 
-    <?php View::render('organisms/content-cards/news-centre-cards', [
-        'subtitle' => 'Sierra Leone',
-        'title' => 'News Centre',
-        'breadcrumbLinks' => [['name' => 'Press Centre', 'link' => '#']],
-        'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.png'
-    ]) ?>
+    <?php View::render('organisms/content-cards/news-centre-cards') ?>
 </div>
 
 <!-- Footer -->

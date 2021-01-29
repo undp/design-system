@@ -1,9 +1,9 @@
 .article-deepdive {
-    padding: 48px 0 18.5px;
-    margin: $height-nav auto 0;
+    padding: 48px 0 19px;
+    margin-top: $nav-desktop-height;
 
     @include breakpoint(medium down) {
-        margin-top: $height-nav-medium;
+        margin-top: $nav-mobile-height;
     }
 
     @include breakpoint(small only) {
@@ -11,10 +11,6 @@
     }
 
     .breadcrumb {
-        color: $red;
-    }
-
-    .center-children > * {
-        margin: 0 auto;
+        color: $red-1;
     }
 }
