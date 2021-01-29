@@ -45,6 +45,10 @@
         padding-bottom: 0;
         margin-bottom: 50px;
 
+        .bg-container {
+            background: none !important;
+        }
+
         @include breakpoint(medium down) {
             padding-top: 28px;
             padding-bottom: 28px;
