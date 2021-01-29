@@ -16,7 +16,6 @@
             <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
                     View::render('molecules/cards/article-card', [
-                        'colorClass' => 'green',
                         'tag' => 'Sucess Story',
                         'title' => 'Communities score joint UNDP-WFP supported Peacebuilding Fund Project 80%',
                         'description' => 'Building peace and livelihoods to achieve and sustain development.',
@@ -27,7 +26,6 @@
             <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
                     View::render('molecules/cards/article-card', [
-                        'colorClass' => 'green',
                         'tag' => 'UNDP Response',
                         'title' => '“We are a forgotten population.”',
                         'description' => 'Local organizations in Panama continue to reach vulnerable groups during lockdown',
@@ -39,7 +37,6 @@
                 <?php
                 View::render('molecules/cards/article-card', [
                     'size' => 'large',
-                    'colorClass' => 'green',
                     'tag' => 'UNDP Response',
                     'title' => 'In Costa Rica, rural women grow their own businesses',
                     'description' => 'Working with organic agriculture and native stingless honey bee production',
@@ -50,7 +47,6 @@
             <div class="cell small-12 medium-4 overflow-hidden">
                 <?php
                 View::render('molecules/cards/article-card', [
-                    'colorClass' => 'green',
                     'tag' => 'UNDP Response',
                     'title' => '“I cry for no apparent reason.”',
                     'description' => "UNDP launches Syria's first online mental health service",

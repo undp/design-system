@@ -75,7 +75,7 @@
     background-repeat: no-repeat;
     background-size: 100% 1px, 0 1px;
     background-position: 100% 100%, -30px 100%;
-    background-image: linear-gradient($red,$red), linear-gradient($red, $red);
+    background-image: linear-gradient($red-1,$red-1), linear-gradient($red-1, $red-1);
 
     &:hover {
         animation: lineLoop 2s infinite linear;

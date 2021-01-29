@@ -4,9 +4,7 @@
             <div class="tag">
                 <?= $tag ?>
             </div>
-            <div class="image" style="background-image: url(<?= $image ?>)">
-                <div class="gradient"></div>
-            </div>
+            <div class="image" style="background-image: url(<?= $image ?>)"></div>
             <div class="title">
                 <h4 class="heading h5">
                     <?= $title ?>

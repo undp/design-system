@@ -10,15 +10,32 @@
         padding-bottom: 50px;
     }
 
-    &.gray {
+    // Default color, kept class for clarity
+    // Two ways of adding accent color:
+    // 1. Globally on an upper container (all up to the body)
+    // 2. Directly on the card
+    // Directly on the card overrides global color
+    .accent-yellow &, &.accent-yellow {
         .bg-container {
-            background: $dark-blue-6;
+            background: $yellow-2;
         }
     }
 
-    &.green {
+    .accent-green &, &.accent-green {
         .bg-container {
-            background: $green-6;
+            background: $green-2;
+        }
+    }
+
+    .accent-red &, &.accent-red {
+        .bg-container {
+            background: $red-2;
+        }
+    }
+
+    .accent-blue &, &.accent-blue {
+        .bg-container {
+            background: $blue-accent-2;
         }
     }
 
@@ -68,6 +85,7 @@
         left: 0;
         height: 100%;
         position: absolute;
+        background: $yellow-2;
         z-index: $z-index-negative;
     }
 }

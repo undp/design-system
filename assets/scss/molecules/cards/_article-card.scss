@@ -320,11 +320,21 @@
         }
     }
 
-    //Define different colors here
-    &.yellow {
+    // Default color, kept class for clarity
+    // Two ways of adding accent color:
+    // 1. Globally on an upper container (all up to the body)
+    // 2. Directly on the card
+    // Directly on the card overrides global color
+    .accent-yellow &, &.accent-yellow {
         @include cardColors($yellow);
     }
-    &.green {
-        @include cardColors($green-6);
+    .accent-green &, &.accent-green {
+        @include cardColors($green-2);
+    }
+    .accent-red &, &.accent-red {
+        @include cardColors($red-2);
+    }
+    .accent-blue &, &.accent-blue {
+        @include cardColors($blue-accent-2);
     }
 }

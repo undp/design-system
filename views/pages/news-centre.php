@@ -1,8 +1,5 @@
 <?php
-
-use helpers\Svg;
 use helpers\View;
-
 ?>
 
 <!-- Page Headers -->
