@@ -15,25 +15,20 @@
         .authors-information {
             display: flex;
             flex-wrap: wrap;
-            margin-top: 30px;
             margin-right: -30px;
 
             @include breakpoint(medium down) {
                 margin-right: -20px;
             }
-
-            @include breakpoint(small only) {
-                margin-top: 0;
-            }
         }
 
         .author-item {
             display: flex;
+            margin-top: 30px;
             margin-right: 30px;
 
             @include breakpoint(medium down) {
                 margin-left: 0;
-                margin-top: 40px;
                 margin-right: 20px;
             }
 
