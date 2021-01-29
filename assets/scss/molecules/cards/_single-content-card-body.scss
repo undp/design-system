@@ -12,6 +12,10 @@
 
         .description{
             margin-top: 35px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 8;
+            -webkit-box-orient: vertical;
         }
 
         .cta{

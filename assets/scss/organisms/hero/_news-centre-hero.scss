@@ -85,6 +85,10 @@
 
         .text-link {
             margin-top: 10px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
         }
     }
 
@@ -98,6 +102,13 @@
 
         .text-link {
             margin-left: 10px;
+
+            .link-text {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
         }
     }
 
