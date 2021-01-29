@@ -88,11 +88,17 @@
             margin-top: 10px;
 
             .text {
+                width: auto;
+                flex-grow: 0;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
-                width: calc(100% - 30px);
+                max-width: calc(100% - 30px);
             }
+        }
+
+        img {
+            max-width: 12px;
         }
     }
 
@@ -107,16 +113,18 @@
         .text-link {
             margin-left: 10px;
 
-            .link-text {
-                width: 100%;
-
-                .text {
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    width: calc(100% - 30px);
-                }
+            .text {
+                width: auto;
+                flex-grow: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                max-width: calc(100% - 30px);
             }
+        }
+
+        img {
+            max-width: 12px;
         }
     }
 
