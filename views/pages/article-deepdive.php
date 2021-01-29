@@ -292,11 +292,11 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         'imageAuthor' => 'UNDP Taiwan/Jason Smith',
         'classes' => 'cover-image'
     ]);
-
-
-    View::render('organisms/article-cards/related-articles');
-
     ?>
+
+    <div data-progress-end></div>
+
+    <?php View::render('organisms/article-cards/related-articles'); ?>
 </div>
 
 <!-- Footer -->

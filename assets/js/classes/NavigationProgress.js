@@ -4,17 +4,15 @@ import throttle from "lodash/throttle";
 class NavigationProgress {
 
     constructor(container = '#navigation-progress') {
-        this.$doc = $(document)
         this.$window = $(window)
         this.$footer = $('.footer')
         this.$progressBar = $(container)
-        this.$navigation = $('[data-navigation]')
         this.$progress = this.$progressBar.find('.progress')
 
-        this.$featuredStories = $('.featured-stories')
+        this.$scrollEnd = $('[data-progress-end]')
 
         this.progress = 0
-        this.totalDistance = 0
+        this.scrollEnd = 0
         this.scrollPosition = 0
         this.scrollThreshold = 0
         this.progressBarWidth = 0
@@ -32,7 +30,7 @@ class NavigationProgress {
 
     setProgress(scrollTop) {
         this.scrollPosition = scrollTop + this.scrollThreshold
-        this.progress = this.scrollPosition * 100 / this.totalDistance
+        this.progress = this.scrollPosition * 100 / this.scrollEnd
 
         if (scrollTop === 0) this.progress = 0
 
@@ -40,12 +38,9 @@ class NavigationProgress {
     }
 
     setInitialParameters() {
-        this.scrollThreshold = this.$window.height()
         this.progressBarWidth = this.$progressBar.width()
-        this.totalDistance = this.$doc.height() - this.$navigation.height() - this.$footer.height()
-
-        // Skip this section from the progress
-        if (this.$featuredStories.length) this.totalDistance -= this.$featuredStories.height()
+        this.scrollThreshold = this.$window.height() * .9
+        this.scrollEnd = this.$scrollEnd.length ? this.$scrollEnd.offset().top : this.$footer.offset().top
     }
 
     setScrollMonitor() {
