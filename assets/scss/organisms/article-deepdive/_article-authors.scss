@@ -39,11 +39,15 @@
             }
 
             &.no-image {
-                min-width: 270px;
-                width: calc(25% - 30px);
+                min-width: 250px;
+                max-width: calc(25% - 30px);
 
-                @include breakpoint(small only) {
-                    width: calc(50% - 20px);
+                @include breakpoint(medium down) {
+                    max-width: calc(50% - 20px);
+                }
+
+                @include breakpoint(653px down) {
+                    max-width: 100%
                 }
             }
         }
