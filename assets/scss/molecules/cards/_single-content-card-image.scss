@@ -1,5 +1,5 @@
 .single-content-card-image{
-    .card-content{
+    .card-content {
         .tag{
             padding: 15px 25px 20px;
         }
@@ -12,16 +12,17 @@
             background-position: top;
             background-repeat: no-repeat;
 
-            .gradient{
+            &:before{
                 top: 0;
                 left: 0;
                 opacity: 0;
+                content: '';
                 width: 100%;
                 height: 100%;
                 display: block;
                 position: absolute;
                 transition: opacity 0.5s ease;
-                background-image: linear-gradient(45deg, rgba($yellow, 0.3) 0%, transparent 100%);
+                background-image: linear-gradient(42deg, $yellow 0%, transparent 80%);
             }
         }
 
@@ -61,8 +62,37 @@
     }
 
     &:hover{
-        .card-content .image .gradient{
-            opacity: 1;
+        .card-content .image:before{
+            opacity: 0.75;
+        }
+    }
+
+    // Default color, kept class for clarity
+    // Two ways of adding accent color:
+    // 1. Globally on an upper container (all up to the body)
+    // 2. Directly on the card
+    // Directly on the card overrides global color
+    .accent-yellow &, &.accent-yellow {
+        .card-content .image:before {
+            background-image: linear-gradient(42deg, $yellow 0%, transparent 80%);
+        }
+    }
+
+    .accent-green &, &.accent-green {
+        .card-content .image:before {
+            background-image: linear-gradient(42deg, $green 0%, transparent 80%);
+        }
+    }
+
+    .accent-red &, &.accent-red {
+        .card-content .image:before {
+            background-image: linear-gradient(42deg, $red 0%, transparent 80%);
+        }
+    }
+
+    .accent-blue &, &.accent-blue {
+        .card-content .image:before {
+            background-image: linear-gradient(42deg, $blue-accent 0%, transparent 80%);
         }
     }
 }

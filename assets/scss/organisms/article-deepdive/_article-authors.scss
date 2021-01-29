@@ -7,7 +7,6 @@
     }
 
     .authors-container {
-        display: flex;
 
         @include breakpoint(small only) {
             flex-direction: column;
@@ -15,34 +14,51 @@
 
         .authors-information {
             display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            margin-right: -30px;
+
+            @include breakpoint(medium down) {
+                margin-right: -20px;
+            }
 
             @include breakpoint(small only) {
-                flex-direction: column;
+                margin-top: 0;
             }
         }
 
         .author-item {
             display: flex;
-            margin-left: 40px;
+            margin-right: 30px;
 
-            @include breakpoint(small only) {
+            @include breakpoint(medium down) {
                 margin-left: 0;
                 margin-top: 40px;
+                margin-right: 20px;
             }
 
-            &:nth-child(2n) {
-                margin-left: 120px;
+            &.no-image {
+                width: calc(25% - 30px);
 
                 @include breakpoint(small only) {
-                    margin-left: 0;
+                    width: calc(50% - 30px);
                 }
             }
         }
     }
 
+    .author-image {
+        &.active-image {
+            margin-right: 25px;
+        }
+    }
+
     .author-info {
         margin-top: 20px;
-        margin-left: 25px;
+
+        .author-name a:hover {
+            color: $dark-blue-2;
+        }
 
         .job-position {
             margin-top: 15px;

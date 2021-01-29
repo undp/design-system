@@ -31,12 +31,12 @@
     }
 
     &.error {
-        color: $red;
-        border-color: $red;
+        color: $red-1;
+        border-color: $red-1;
 
         input {
-            color: $red;
-            caret-color: $red;
+            color: $red-1;
+            caret-color: $red-1;
         }
     }
 

@@ -4,18 +4,24 @@
     <div class="grid-x">
         <div class="authors-container cell small-10 small-offset-1 large-offset-2 large-7">
             <div class="authors-title heading h5">
-                Author(s)
+                Author<?= count($authors) > 1? 's' : ''?>
             </div>
             <div class="authors-information">
                 <?php foreach ($authors as $i => $author) : ?>
-                    <div class="author-item scroll-track left-right delay-<?= $i+2 ?>">
-                        <div class="author-image">
-                            <?php if ($author['image']) : ?>
+                    <div class="author-item scroll-track left-right delay-<?= $i+2 ?> <?= count($authors) > 3? 'no-image' : ''?>">
+                        <div class="author-image <?= count($authors) <= 3? 'active-image' : ''?>">
+                            <a href="<?= $author['pageLink'] ?>">
+                            <?php if (count($authors) <= 3 ) : ?>
                                 <img src="<?= $author['image'] ?>" alt="">
                             <?php endif; ?>
+                            </a>
                         </div>
                         <div class="author-info">
-                            <div class="author-name medium-copy"><?= $author['name'] ?></div>
+                            <div class="author-name medium-copy">
+                                <a href="<?= $author['pageLink'] ?>">
+                                <?= $author['name'] ?>
+                                </a>
+                            </div>
                             <div class="job-position medium-copy">
                                 <?= $author['title'] ?><br/>
                                 <?= $author['organization'] ?>

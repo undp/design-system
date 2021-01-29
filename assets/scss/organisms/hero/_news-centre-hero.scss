@@ -10,40 +10,56 @@
 
     .news-hero-container {
         display: flex;
+        position: relative;
+
         flex-direction: column;
 
         .breadcrumb {
-            color: $red;
-        }
-
-        .subtitle {
-            margin-top: 115px;
-
-            @include breakpoint(medium down) {
-                margin-top: 40px;
-                margin-left: 25px;
-            }
-
-            @include breakpoint(small down) {
-                font-weight: normal;
-            }
+            color: $red-1;
         }
 
         .title {
-            margin-top: 30px;
+            width: 100%;
+            position: absolute;
+            top: calc(50% - 130px);
             text-transform: uppercase;
             font-family: $secondary-font;
 
             @include breakpoint(medium down) {
-                margin-top: 13px;
-                margin-left: 25px;
+                top: auto;
+                padding-left: 25px;
+                position: relative;
+            }
+
+            .subtitle {
+                @extend .heading, .h3;
+                text-transform: capitalize;
+
+                @include breakpoint(large up) {
+                    width: 300px;
+                    overflow: hidden;
+                    position: absolute;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    bottom: calc(100% + 16px);
+                    -webkit-box-orient: vertical;
+                }
+
+                @include breakpoint(medium down) {
+                    margin-top: 40px;
+                    margin-bottom: 13px;
+                }
+
+                @include breakpoint(small down) {
+                    font-weight: normal;
+                }
             }
         }
 
         .title,
         .subtitle {
             @include breakpoint(small down) {
-                font-size: 25px;
+                font-size: 25px !important;
             }
         }
     }
@@ -63,11 +79,13 @@
 
         .link-title {
             font-size: 2rem;
+            margin-bottom: 15px;
             font-weight: $regular;
         }
 
         .text-link {
-            margin-top: 30px;
+            width: 100%;
+            margin-top: 10px;
         }
     }
 
@@ -77,6 +95,10 @@
         @include breakpoint(medium down) {
             width: 100%;
             display: block;
+        }
+
+        .text-link {
+            margin-left: 10px;
         }
     }
 
@@ -90,6 +112,21 @@
         @include breakpoint(medium down) {
             padding-left: 0;
             margin-top: 35px;
+        }
+    }
+
+    .text-link {
+        .text {
+            width: auto;
+            flex-grow: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: calc(100% - 30px);
+        }
+
+        img {
+            max-width: 12px;
         }
     }
 }
