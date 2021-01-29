@@ -11,6 +11,8 @@ class NavigationProgress {
         this.$navigation = $('[data-navigation]')
         this.$progress = this.$progressBar.find('.progress')
 
+        this.$featuredStories = $('.featured-stories')
+
         this.progress = 0
         this.totalDistance = 0
         this.scrollPosition = 0
@@ -38,9 +40,12 @@ class NavigationProgress {
     }
 
     setInitialParameters() {
-        this.scrollThreshold = this.$window.height() * 0.75
+        this.scrollThreshold = this.$window.height()
         this.progressBarWidth = this.$progressBar.width()
         this.totalDistance = this.$doc.height() - this.$navigation.height() - this.$footer.height()
+
+        // Skip this section from the progress
+        if (this.$featuredStories.length) this.totalDistance -= this.$featuredStories.height()
     }
 
     setScrollMonitor() {
