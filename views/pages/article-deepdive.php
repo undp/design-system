@@ -59,21 +59,21 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
             [
                 'image' => "$imgPath/author-jane-doe.png",
                 'name' => 'Jane Doe',
-                'title' => 'Title',
+                'title' => 'Climate Investment Platform Global Lead and Senior Principal Advisor for Small Island Developing States',
                 'pageLink' => '/author-page',
                 'organization' => 'Organization'
             ],
             [
                 'image' => "$imgPath/john-smith-author.png",
                 'name' => 'John Smith',
-                'title' => 'Title',
+                'title' => 'UN Assistant Secretary-General, UNDP Assistant Administrator and Director of Bureau for Policy and Programme Support',
                 'pageLink' => '/author-page',
                 'organization' => 'Organization'
             ],
             [
                 'image' => "$imgPath/john-smith-author.png",
                 'name' => 'John Smith',
-                'title' => 'Title',
+                'title' => 'Climate Investment Platform Global Lead and Senior Principal Advisor for Small Island Developing States',
                 'pageLink' => '/author-page',
                 'organization' => 'Organization'
             ]
@@ -86,28 +86,28 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
             [
                 'image' => "$imgPath/author-jane-doe.png",
                 'name' => 'Jane Doe',
-                'title' => 'Title',
+                'title' => 'UN Assistant Secretary-General, UNDP Assistant Administrator and Director of Bureau for Policy and Programme Support',
                 'pageLink' => '/author-page',
                 'organization' => 'Organization'
             ],
             [
                 'image' => "$imgPath/john-smith-author.png",
                 'name' => 'John Smith',
-                'title' => 'Title',
+                'title' => 'Climate Investment Platform Global Lead and Senior Principal Advisor for Small Island Developing States',
                 'pageLink' => '/author-page',
                 'organization' => 'Organization'
             ],
             [
                 'image' => "$imgPath/john-smith-author.png",
                 'name' => 'John Smith',
-                'title' => 'Title',
+                'title' => 'UN Assistant Secretary-General, UNDP Assistant Administrator and Director of Bureau for Policy and Programme Support',
                 'pageLink' => '/author-page',
                 'organization' => 'Organization'
             ],
             [
                 'image' => "$imgPath/john-smith-author.png",
                 'name' => 'John Smith',
-                'title' => 'Title',
+                'title' => 'Climate Investment Platform Global Lead and Senior Principal Advisor for Small Island Developing States',
                 'pageLink' => '/author-page',
                 'organization' => 'Organization'
             ],

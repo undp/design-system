@@ -15,28 +15,35 @@
         .authors-information {
             display: flex;
             flex-wrap: wrap;
-            margin-right: -30px;
+            margin-left: -30px;
 
             @include breakpoint(medium down) {
-                margin-right: -20px;
+                margin-left: -20px;
             }
         }
 
         .author-item {
             display: flex;
+            min-width: 310px;
             margin-top: 30px;
-            margin-right: 30px;
+            margin-left: 30px;
+            max-width: calc(33% - 30px);
 
             @include breakpoint(medium down) {
-                margin-left: 0;
-                margin-right: 20px;
+                margin-left: 20px;
+                max-width: calc(33% - 20px);
+            }
+
+            @include breakpoint(small only) {
+                max-width: 100%;
             }
 
             &.no-image {
+                min-width: 270px;
                 width: calc(25% - 30px);
 
                 @include breakpoint(small only) {
-                    width: calc(50% - 30px);
+                    width: calc(50% - 20px);
                 }
             }
         }
@@ -44,6 +51,7 @@
 
     .author-image {
         &.active-image {
+            flex-shrink: 0;
             margin-right: 25px;
         }
     }
