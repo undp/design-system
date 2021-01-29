@@ -10,32 +10,37 @@
         padding-bottom: 50px;
     }
 
-    // Default color, kept class for clarity
-    // Two ways of adding accent color:
-    // 1. Globally on an upper container (all up to the body)
-    // 2. Directly on the card
-    // Directly on the card overrides global color
-    .accent-yellow &, &.accent-yellow {
-        .bg-container {
+    &:not(.transparent) {
+        .bg-container { // Default to yellow bg
             background: $yellow-2;
         }
-    }
-
-    .accent-green &, &.accent-green {
-        .bg-container {
-            background: $green-2;
+        // Default color, kept class for clarity
+        // Two ways of adding accent color:
+        // 1. Globally on an upper container (all up to the body)
+        // 2. Directly on the card
+        // Directly on the card overrides global color
+        .accent-yellow &, &.accent-yellow {
+            .bg-container {
+                background: $yellow-2;
+            }
         }
-    }
 
-    .accent-red &, &.accent-red {
-        .bg-container {
-            background: $red-2;
+        .accent-green &, &.accent-green {
+            .bg-container {
+                background: $green-2;
+            }
         }
-    }
 
-    .accent-blue &, &.accent-blue {
-        .bg-container {
-            background: $blue-accent-2;
+        .accent-red &, &.accent-red {
+            .bg-container {
+                background: $red-2;
+            }
+        }
+
+        .accent-blue &, &.accent-blue {
+            .bg-container {
+                background: $blue-accent-2;
+            }
         }
     }
 
@@ -44,10 +49,6 @@
         margin-top: 20px;
         padding-bottom: 0;
         margin-bottom: 50px;
-
-        .bg-container {
-            background: none !important;
-        }
 
         @include breakpoint(medium down) {
             padding-top: 28px;
@@ -89,7 +90,6 @@
         left: 0;
         height: 100%;
         position: absolute;
-        background: $yellow-2;
         z-index: $z-index-negative;
     }
 }
