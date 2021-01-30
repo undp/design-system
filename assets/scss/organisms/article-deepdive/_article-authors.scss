@@ -7,7 +7,6 @@
     }
 
     .authors-container {
-        display: flex;
 
         @include breakpoint(small only) {
             flex-direction: column;
@@ -15,34 +14,54 @@
 
         .authors-information {
             display: flex;
+            flex-wrap: wrap;
+            margin-left: -30px;
 
-            @include breakpoint(small only) {
-                flex-direction: column;
+            @include breakpoint(medium down) {
+                margin-left: -20px;
             }
         }
 
         .author-item {
             display: flex;
-            margin-left: 40px;
+            min-width: 310px;
+            margin-top: 30px;
+            margin-left: 30px;
+            max-width: calc(33% - 30px);
 
-            @include breakpoint(small only) {
-                margin-left: 0;
-                margin-top: 40px;
+            @include breakpoint(medium down) {
+                margin-left: 20px;
+                max-width: calc(33% - 20px);
             }
 
-            &:nth-child(2n) {
-                margin-left: 120px;
+            @include breakpoint(small only) {
+                max-width: 100%;
+            }
 
-                @include breakpoint(small only) {
-                    margin-left: 0;
+            &.no-image {
+                min-width: 250px;
+                max-width: calc(25% - 30px);
+
+                @include breakpoint(medium down) {
+                    max-width: calc(50% - 20px);
+                }
+
+                @include breakpoint(653px down) {
+                    max-width: 100%
                 }
             }
         }
     }
 
+    .author-image {
+        &.active-image {
+            flex-shrink: 0;
+            margin-right: 25px;
+        }
+    }
+
     .author-info {
         margin-top: 20px;
-        margin-left: 25px;
 
         .author-name a:hover {
             color: $dark-blue-2;

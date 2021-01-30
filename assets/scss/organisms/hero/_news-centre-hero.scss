@@ -18,21 +18,6 @@
             color: $red-1;
         }
 
-        .subtitle {
-            position: relative;
-            top: calc(20% - 17px);
-
-            @include breakpoint(medium down) {
-                top: auto;
-                margin-top: 40px;
-                margin-left: 25px;
-            }
-
-            @include breakpoint(small down) {
-                font-weight: normal;
-            }
-        }
-
         .title {
             width: 100%;
             position: absolute;
@@ -42,16 +27,39 @@
 
             @include breakpoint(medium down) {
                 top: auto;
-                margin-top: 13px;
-                margin-left: 25px;
+                padding-left: 25px;
                 position: relative;
+            }
+
+            .subtitle {
+                @extend .heading, .h3;
+                text-transform: capitalize;
+
+                @include breakpoint(large up) {
+                    width: 300px;
+                    overflow: hidden;
+                    position: absolute;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    bottom: calc(100% + 16px);
+                    -webkit-box-orient: vertical;
+                }
+
+                @include breakpoint(medium down) {
+                    margin-top: 40px;
+                    margin-bottom: 13px;
+                }
+
+                @include breakpoint(small down) {
+                    font-weight: normal;
+                }
             }
         }
 
         .title,
         .subtitle {
             @include breakpoint(small down) {
-                font-size: 25px;
+                font-size: 25px !important;
             }
         }
     }
@@ -76,6 +84,7 @@
         }
 
         .text-link {
+            width: 100%;
             margin-top: 10px;
         }
     }
@@ -103,6 +112,21 @@
         @include breakpoint(medium down) {
             padding-left: 0;
             margin-top: 35px;
+        }
+    }
+
+    .text-link {
+        .text {
+            width: auto;
+            flex-grow: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: calc(100% - 30px);
+        }
+
+        img {
+            max-width: 12px;
         }
     }
 }
