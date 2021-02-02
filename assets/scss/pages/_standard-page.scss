@@ -6,4 +6,18 @@
         padding: 26px 0 67px;
         margin-top: $nav-mobile-height;
     }
+
+    .side-nav-content {
+        margin-top: 42px;
+    }
+
+    .side-content {
+        .h2 {
+            margin-bottom: 28px;
+        }
+
+        .big-copy {
+            margin-top: 20px;
+        }
+    }
 }

@@ -1,9 +1,6 @@
 <?php
-
 use helpers\View;
-
 $imgPath = '../../../assets/images/placeholder/about-us'
-
 ?>
 
 <!-- Page Headers -->
@@ -33,24 +30,7 @@ $imgPath = '../../../assets/images/placeholder/about-us'
     </section>
 
 
-    <section class="side-nav-content grid-container scroll-track left-right delay-2"></section>
-
-
-    <section class="explore-more grid-container scroll-track left-right delay-1">
-        <div class="grid-x">
-            <div class="cell large-9 large-offset-2">
-                <h2 class="heading h2">Explore More</h2>
-
-                <?php View::render('partials/author-page/author-cards') ?>
-
-                <div class="cta-button">
-                    <button class="btn blue view-more">
-                        View More
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php View::render('organisms/standard-page/side-nav-content'); ?>
 </div>
 
 <!-- Footer -->
