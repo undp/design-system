@@ -40,6 +40,14 @@ $imgPath = '../../../assets/images/placeholder/author-page'
                 Curabitur nulla purus, vulputate at lorem a, dictum tincidunt est. Cras id mi a felis interdum interdum. 
                 In efficitur, lectus ut viverra auctor, mauris quam pharetra libero, ut finibus quam massa ac mi.
             ',
+            'authorMessage' => '
+                Next Generation UNDP builds on our existing assets—worldwide presence, thought leadership,
+                and over 50 years of experience—to help countries and communities respond to a fast-changing
+                development landscape. We are creating new solutions, building collaboration platforms,
+                and sparking new partnerships and instruments for development. These innovations are disrupting
+                the way our organization thinks, invests, manages, and delivers—so we can perform faster and
+                better than ever to accelerate progress towards the Sustainable Development Goals.
+            ',
             'authorName' => 'Dilara Umudova',
             'authorTitles' => [
                 'Associate Administrator (a.i.)',
@@ -51,9 +59,10 @@ $imgPath = '../../../assets/images/placeholder/author-page'
 
     <section class="explore-more grid-container scroll-track left-right delay-1">
         <div class="grid-x">
-            <div class="cell large-9 large-offset-2">
+            <div class="cell large-10 large-offset-1">
                 <h2 class="heading h2">Explore More</h2>
-
+            </div>
+            <div class="cell small-12">
                 <?php View::render('partials/author-page/author-cards') ?>
 
                 <div class="cta-button">

@@ -1,48 +1,26 @@
 .author-bio {
-    margin-top: 53px;
+    margin-top: 64px;
+
+    @include breakpoint(medium down) {
+        margin-top: 35px;
+    }
 
     .align-middle {
-        @include breakpoint(large down) {
+        @include breakpoint(medium down) {
             align-items: flex-start;
         }
     }
 
-    .separator {
-        height: 2px;
-        margin-bottom: 32px;
-        background-color: $black;
-
-        @include breakpoint(large down) {
-            margin-bottom: 25px;
-        }
-    }
-
-    .author-info {
-        margin-left: 24px;
-
-        @include breakpoint(large down) {
-            margin-left: 0;
-            margin-top: 29px;
-        }
-    }
-
-    .author-titles {
-        margin-top: 18px;
-
-        @include breakpoint(large down) {
-            margin-top: 24px;
-        }
-    }
-
     .author-image {
-        width: 212px;
-        height: 212px;
+        width: 180px;
+        height: 180px;
         flex-shrink: 0;
         overflow: hidden;
         border-radius: 50%;
 
-        @include breakpoint(large down) {
-            margin-top: 29px;
+        @include breakpoint(medium down) {
+            width: 152px;
+            height: 152px;
         }
 
         img {
@@ -51,9 +29,61 @@
         }
     }
 
+    .author-info {
+        margin-left: 56px;
+
+        @include breakpoint(medium down) {
+            margin-left: 0;
+            margin-top: 29px;
+        }
+
+        .author-titles {
+            margin-top: 18px;
+
+            @include breakpoint(medium down) {
+                margin-top: 39px;
+            }
+        }
+
+    }
+
+    .author-message {
+        margin-top: 93px;
+
+        @include breakpoint(medium down) {
+            margin-top: 32px;
+        }
+    }
+
     .bio {
-        @include breakpoint(large down) {
+        margin-top: 35px;
+
+        @include breakpoint(medium down) {
             margin-top: 28px;
+        }
+    }
+
+    .big-copy {
+        @include breakpoint(medium down) {
+            font-size: 2rem;
+        }
+    }
+
+    .break-words {
+        @include breakpoint(medium up) {
+            word-spacing: 100vw; // Forces each word to take all the width available
+        }
+    }
+
+    .separator {
+        height: 2px;
+        margin-top: 47px;
+        margin-bottom: 30px;
+        background-color: $black;
+
+        @include breakpoint(medium down) {
+            margin-top: 30px;
+            margin-bottom: 25px;
         }
     }
 }
