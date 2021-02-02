@@ -40,6 +40,9 @@ switch ($subpath) {
     case '/next-gen-undp':
         View::render('pages/next-gen-undp');
         break;
+    case '/single-publication':
+        View::render('pages/single-publication');
+        break;
     case '/documentation':
         View::render('pages/docs');
         break;
