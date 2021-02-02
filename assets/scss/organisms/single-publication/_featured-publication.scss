@@ -1,6 +1,9 @@
 .featured-publication {
+    padding-bottom: 100px;
 
     .publication {
+        position: fixed;
+        width: 33.33%; //his simulate the large-4 width
 
         .publication-image {
             max-width: 100%;
