@@ -1,13 +1,18 @@
 
 
 <div class="side-navigation <?= $classes ?? '' ?>">
-    <ul class="side-menu sticky">
+    <ul class="side-menu scroll-track left-right delay-1">
+
+        <li class="side-menu-item has-children mobile-menu-heading flex-container flex-dir-column hide-for-large">
+            <?= $menuTitle ?? '' ?>
+        </li>
 
         <?php foreach($menuItems as $index => $menuItem) : ?>
             <?php
                 $itemClasses = $index === 1 ? 'active' : '';
                 $itemClasses .= isset($menuItem['subMenuItems']) && $menuItem['subMenuItems'] ? ' has-children' : '';
             ?>
+
             <li class="side-menu-item flex-container flex-dir-column <?= $itemClasses ?>">
                 <a href="<?= $menuItem['link'] ?>"><?= $menuItem['name'] ?></a>
 
