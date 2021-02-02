@@ -5,7 +5,7 @@ $imgPath = '../../../assets/images/placeholder/about-us'
 
 <div class="side-content cell small-12 medium-8">
 
-    <div class="content-wrapper grid-container scroll-track left-right delay-1">
+    <div class="content-wrapper grid-container scroll-track left-right delay-2">
         <div class="grid-x">
             <div class="cell">
                 <h2 class="heading h2">Climate Change</h2>
