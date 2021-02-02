@@ -14,7 +14,7 @@ use helpers\View;
                 <div class="publication-social">
                     <div class="grid-x social-container">
                         <div class="cell large-6">
-                            <div class="download-btn flex-container align-center">
+                            <div class="download-btn flex-container">
                                 <div class="download">Download</div>
                                 <div class="icon-download">
                                     <div class="icon-item">
