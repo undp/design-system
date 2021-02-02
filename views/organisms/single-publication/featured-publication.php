@@ -36,7 +36,7 @@ use helpers\View;
                 </div>
             </div>
         </div>
-        <div class="cell large-offset-1 large-5">
+        <div class="cell large-offset-1 large-5 small-offset-1 small-11">
             <div class="publication-text-container">
                 <h2 class="heading h2">Publications</h2>
                 <div class="tag tag-text">Featured content tag</div>
@@ -61,6 +61,25 @@ use helpers\View;
                 <div class="tags-container">
                     <div class="tag tag-item">Tag</div>
                     <div class="tag tag-item">Tag</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell large-offset-6 large-6">
+            <div class="related-publications">
+                <div class="heading h2 related-title">Related Publications</div>
+                <div class="grid-x grid-margin-x related-items-content">
+                    <div class="cell large-6 related-item">
+                        <div>
+                            <div class="tag">Content Tag</div>
+                            <div class="heading h5 title">
+                                Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do
+                            </div>
+                            <div class="medium-copy body-copy">
+                                This year the world is commemorating the 25th anniversary of the Beijing Declaration
+                                and Platform for Action…
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

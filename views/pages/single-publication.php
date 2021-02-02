@@ -6,7 +6,7 @@ use helpers\View;
 ?>
 
 <!-- Page Headers -->
-<?php View::render('layout/header', ['pageTitle' => 'UNDP - Country Page']) ?>
+<?php View::render('layout/header', ['pageTitle' => 'UNDP - Single Publication']) ?>
 
 <body>
 <!-- Navigation -->
