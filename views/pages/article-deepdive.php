@@ -53,6 +53,18 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         'classes' => 'cover-image'
     ]);
 
+    View::render('organisms/article-deepdive/authors', [
+        'authors' => [
+            [
+                'image' => "$imgPath/author-jane-doe.png",
+                'name' => 'Jane Doe',
+                'title' => 'Climate Investment Platform Global Lead and Senior Principal Advisor for Small Island Developing States',
+                'pageLink' => '/author-page',
+                'organization' => 'Organization'
+            ]
+        ]
+    ]);
+
 
     View::render('organisms/article-deepdive/authors', [
         'authors' => [

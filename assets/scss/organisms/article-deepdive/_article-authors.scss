@@ -7,61 +7,58 @@
     }
 
     .authors-container {
+        &.one-author {
+            display: flex;
 
-        @include breakpoint(small only) {
-            flex-direction: column;
+            .authors-information {
+                margin-right: 0;
+                margin-left: 1.6rem;
+
+                .author-item {
+                    margin-top: 0;
+                }
+            }
         }
 
-        .authors-information {
+        @include breakpoint(small only) {
             display: flex;
-            flex-wrap: wrap;
-            margin-left: -30px;
 
-            @include breakpoint(medium down) {
-                margin-left: -20px;
+            .authors-information {
+                margin-left: 1.2rem;
+                margin-right: 1.2rem;
+
+                .author-item:first-child {
+                    margin-top: 0;
+                }
             }
         }
 
         .author-item {
             display: flex;
-            min-width: 310px;
-            margin-top: 30px;
-            margin-left: 30px;
-            max-width: calc(33% - 30px);
-
-            @include breakpoint(medium down) {
-                margin-left: 20px;
-                max-width: calc(33% - 20px);
-            }
-
-            @include breakpoint(small only) {
-                max-width: 100%;
-            }
+            margin-top: 35px;
 
             &.no-image {
-                min-width: 250px;
-                max-width: calc(25% - 30px);
-
-                @include breakpoint(medium down) {
-                    max-width: calc(50% - 20px);
+                .author-image {
+                    display: none;
                 }
-
-                @include breakpoint(653px down) {
-                    max-width: 100%
+                .author-info {
+                    margin-left: 0;
                 }
             }
         }
     }
 
     .author-image {
-        &.active-image {
-            flex-shrink: 0;
-            margin-right: 25px;
+        width: 68px;
+        flex: 1 0 auto;
+
+        @include breakpoint(medium down) {
+            width: 75px;
         }
     }
 
     .author-info {
-        margin-top: 20px;
+        margin-left: 20px;
 
         .author-name a:hover {
             color: $dark-blue-2;
