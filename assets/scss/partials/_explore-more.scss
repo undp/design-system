@@ -11,6 +11,10 @@
         @include breakpoint(large down) {
             margin-top: 89px;
         }
+
+        .card-item {
+            margin-bottom: 30px;
+        }
     }
 
     .cta-button {
