@@ -1,8 +1,23 @@
 .standard-page {
+    padding-bottom: 89px;
     margin: $nav-desktop-height auto 0;
 
     @include breakpoint(large down) {
         padding: 26px 0 67px;
         margin-top: $nav-mobile-height;
+    }
+
+    .side-nav-content {
+        margin-top: 42px;
+    }
+
+    .side-content {
+        .h2 {
+            margin-bottom: 28px;
+        }
+
+        .big-copy {
+            margin-top: 20px;
+        }
     }
 }
