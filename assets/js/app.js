@@ -24,6 +24,7 @@ import heroAnimation from './components/hero-animation'
 import select from './components/select'
 import docs from './components/docs'
 import navigationProgress from './components/navigation-progress'
+import sideNavigation from './components/side-navigation'
 
 // JS to render nav/search DOM elements from JSON data files
 import menusNav from './render-data/menu/all';
@@ -69,6 +70,7 @@ function main() {
     countriesData()
     trapFocus()
     navigationProgress()
+    sideNavigation()
 }
 
 document.addEventListener("DOMContentLoaded", function () {
