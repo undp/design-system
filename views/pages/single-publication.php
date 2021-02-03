@@ -1,8 +1,5 @@
 <?php
-
-use helpers\Svg;
 use helpers\View;
-
 ?>
 
 <!-- Page Headers -->
@@ -10,9 +7,12 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main-justify') ?>
+<?php View::render('layout/navigation/main') ?>
 
 <div class="single-publication">
+    <?php  ?>
+    <?php View::render('organisms/single-publication/modal-publication-download'); ?>
+
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell large-offset-1 large-4 medium-6 medium-offset-0">

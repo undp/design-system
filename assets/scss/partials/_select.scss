@@ -38,6 +38,7 @@
         width: 100%;
         display: none;
         user-select: none;
+        max-height: 300px;
         position: absolute;
         z-index: $z-index-4;
         background-color: $white;
@@ -50,7 +51,7 @@
             overflow-y: auto;
 
             +.selected {
-                border-bottom: 0;
+                border-bottom-color: transparent;
 
                 &:after {
                     top: 42%;

@@ -10,13 +10,13 @@ use helpers\View;
     <div class="publication-social">
         <div class="grid-x social-container">
             <div class="cell large-6">
-                <button class="download-btn flex-container">
-                    <div class="download">Download</div>
-                    <div class="icon-download">
-                        <div class="icon-item">
+                <button class="download-btn flex-container" data-publication-download>
+                    <span class="download">Download</span>
+                    <span class="icon-download">
+                        <span class="icon-item">
                             <?php Svg::render('icon-download') ?>
-                        </div>
-                    </div>
+                        </span>
+                    </span>
                 </button>
             </div>
             <div class="cell large-6">
