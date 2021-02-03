@@ -48,6 +48,7 @@
 @import "molecules/cards/image-card";
 @import "molecules/cards/article-card";
 @import "molecules/cards/publication";
+@import "molecules/cards/publication-card";
 @import "molecules/cards/tweet";
 @import "molecules/cards/expertise-card";
 @import "molecules/statistics-figures/sdg-card";
@@ -86,6 +87,7 @@
 @import "organisms/homepage/twitter-feed";
 @import "organisms/article-deepdive/text";
 @import "organisms/article-deepdive/navigation-progress";
+@import "organisms/single-publication/featured-publication";
 
 @import "organisms/homepage/trusted-partnerships";
 @import "organisms/article-deepdive/article-authors";
@@ -98,3 +100,4 @@
 @import "pages/author-page";
 @import "pages/standard-page";
 @import "pages/styleguide";
+@import "pages/single-publication";
