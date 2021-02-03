@@ -3,7 +3,7 @@ use helpers\View;
 use helpers\Svg;
 ?>
 
-<div class="modal-publication-download">
+<div class="modal-publication-download hide">
     <div class="modal-content">
         <button class="btn-close">
             <?php Svg::render('icon-close') ?>
