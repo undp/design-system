@@ -1,9 +1,6 @@
-<?php
-use helpers\View;
-$imgPath = '../../../assets/images/placeholder/about-us'
-?>
+<?php use helpers\View; ?>
 
-<div class="side-content cell small-12 medium-8">
+<div class="side-content cell small-12 large-9">
 
     <div class="content-wrapper grid-container scroll-track left-right delay-2">
         <div class="grid-x">
@@ -17,9 +14,7 @@ $imgPath = '../../../assets/images/placeholder/about-us'
                     disasters are in hundreds of billions of dollars.
                 </p>
 
-                <div class="content-slider">
-
-                </div>
+                <?php View::render('organisms/carousel/standard-page-slider') ?>
 
                 <p class="big-copy">
                     Sustainable Development Goal 13 on climate action aims to materialize the pledges made by developed

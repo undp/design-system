@@ -25,6 +25,7 @@ import select from './components/select'
 import docs from './components/docs'
 import navigationProgress from './components/navigation-progress'
 import sideNavigation from './components/side-navigation'
+import genericSlider from './components/generic-slider'
 import viewMoreLess from './components/view-more-less'
 
 // JS to render nav/search DOM elements from JSON data files
@@ -72,6 +73,7 @@ function main() {
     trapFocus()
     navigationProgress()
     sideNavigation()
+    genericSlider()
     viewMoreLess()
 }
 
