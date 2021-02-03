@@ -5,6 +5,10 @@
     max-height: 805px;
     transition: max-width 0.5s ease;
 
+    @include breakpoint(medium down) {
+        margin-top: 38px;
+    }
+
     .hero-container, .text-container {
         height: 100%;
     }
