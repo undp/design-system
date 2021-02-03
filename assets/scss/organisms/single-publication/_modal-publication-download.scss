@@ -1,0 +1,42 @@
+.modal-publication-download {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    pointer-events: none;
+    justify-content: center;
+    z-index: $z-index-modal;
+    top: $nav-desktop-height;
+    backdrop-filter: blur(21px);
+    //alternative blur to firefox
+    background-color: rgba($white, 0.98);
+
+    @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+        background-color: rgba($white, 0.87);
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .modal-content {
+        display: flex;
+        background: $white;
+        pointer-events: auto;
+        padding: 65px 80px 45px 75px;
+
+        .image-container {
+            .publication-image {
+                z-index: 0;
+                max-width: 355px;
+                padding: 45px 54px 64px;
+
+                .image {
+                    min-height: 0;
+                }
+            }
+        }
+    }
+}
