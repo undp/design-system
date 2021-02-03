@@ -65,8 +65,11 @@ class GenericSlider {
     }
 
     setCustomControls() {
+        let thresholdArea = this.$container.offset().left + (this.$container.width() / 2);
+        let threshold = this.$window.width() - thresholdArea
+
         this.$slidesContainer.click((e) => {
-            const slideDir = (e.pageX < this.$slidesContainer / 2) ? '<' : '>'
+            const slideDir = e.pageX < threshold ? '<' : '>'
 
             if(!$(e.target).is(':button')){
                 this.glide.go(slideDir)
@@ -75,11 +78,10 @@ class GenericSlider {
     }
 
     setCursorImage() {
-        let threshold = this.$window.outerWidth()
-        let thresholdArea = this.$slidesContainer.outerWidth() / 2;
+        let thresholdArea = this.$container.offset().left + (this.$container.width() / 2);
+        let threshold = this.$window.width() - thresholdArea
 
         this.$slidesContainer.on('mousemove', e => {
-            threshold -= thresholdArea
             const arrowDir = e.pageX < threshold ? 'left' : 'right'
 
             this.$slidesContainer.css('cursor',
