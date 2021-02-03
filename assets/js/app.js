@@ -25,6 +25,7 @@ import select from './components/select'
 import docs from './components/docs'
 import navigationProgress from './components/navigation-progress'
 import sideNavigation from './components/side-navigation'
+import genericSlider from './components/generic-slider'
 
 // JS to render nav/search DOM elements from JSON data files
 import menusNav from './render-data/menu/all';
@@ -71,6 +72,7 @@ function main() {
     trapFocus()
     navigationProgress()
     sideNavigation()
+    genericSlider()
 }
 
 document.addEventListener("DOMContentLoaded", function () {
