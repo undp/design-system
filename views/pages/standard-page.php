@@ -78,7 +78,7 @@ $menuItems = [
         </div>
     </section>
 
-    <section class="side-nav-content grid-container overflow-hidden">
+    <section class="side-nav-content grid-container">
         <div class="grid-x">
             <?php
                 View::render('partials/standard-page/side-navigation', [
