@@ -40,7 +40,7 @@
             padding: 60px 0;
 
             @include breakpoint(small only) {
-                padding: 28px 29px;
+                padding: 28px 5px;
             }
 
             img {
@@ -56,15 +56,55 @@
                 padding-left: 49px;
 
                 @include breakpoint(small only) {
+                    opacity: 0;
                     width: 100%;
                     padding-left: 0;
                     margin-top: 29px;
+                    transition: opacity 100ms ease-in-out;
+                }
+            }
+
+            .big-copy {
+                line-height: 2.6rem;
+
+                @include breakpoint(small only) {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+            }
+
+            .heading {
+                line-height: 4rem;
+
+                @include breakpoint(small only) {
+                    font-size: 3rem;
+                    line-height: 3.5rem;
+                    font-weight: $semi-bold;
                 }
             }
         }
 
+        .glide__slide--active {
+            .slide-content {
+                @include breakpoint(small only) {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .glide__bullets {
+            @include breakpoint(small only) {
+                margin-left: -15px;
+                width: calc(100% + 30px);
+            }
+        }
+
         .glide__track {
-            margin-right: -100%;
+            margin-right: -19.5%;
+
+            @include breakpoint(1955px up) {
+                margin-right: 0;
+            }
         }
     }
 }

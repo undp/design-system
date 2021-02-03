@@ -100,7 +100,7 @@
 
             @include breakpoint(medium down) {
                 > a {
-                    font-weight: $regular;
+                    font-weight: $semi-bold;
                 }
             }
         }
@@ -165,6 +165,7 @@
 
         @include breakpoint(medium down) {
             line-height: 2.2rem;
+            font-weight: $regular;
             background: $dark-blue-5;
         }
 
