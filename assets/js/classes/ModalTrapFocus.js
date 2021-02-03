@@ -102,7 +102,7 @@ class ModalTrapFocus {
 
         modalsWithCloseButtonsOutside.forEach(id => {
             if(this.modal.id === id) {
-                let openCloseButton = document.querySelector(`.header [data-modal-open][data-modal=${id}`)
+                let openCloseButton = document.querySelector(`.header [data-modal-open][data-modal=${id}]`)
                 this.focusableContent.unshift(openCloseButton)
                 this.firstFocusableElement = openCloseButton
             }
