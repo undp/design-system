@@ -1,0 +1,23 @@
+.publication-card {
+
+    &.hover-publication {
+        min-height: 400px;
+        .content {
+            .medium-copy {
+                margin-top: 35px;
+            }
+        }
+
+        .hover-slide {
+            .publication {
+                width: 100%;
+                margin-top:0;
+                height: 100%;
+
+                .publication-image {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

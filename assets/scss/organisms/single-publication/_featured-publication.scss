@@ -2,11 +2,12 @@
     padding-bottom: 100px;
 
     .publication {
-        width: 33.33%; //his simulate the large-4 width
+        max-width: 32%; //his simulate the large-4 width
         position: fixed;
 
         @include breakpoint(medium down) {
             width: 100%;
+            max-width: 100%;
             margin-bottom: 0;
             position: relative;
         }
@@ -22,6 +23,10 @@
         .publication-social {
             padding: 35px 30px;
             background: $dark-blue-6;
+
+            @include breakpoint(medium down) {
+                max-width: 350px;
+            }
 
             .social-container {
                 align-items: center;
