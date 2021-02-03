@@ -1,77 +1,7 @@
 .featured-publication {
 
-    .publication {
-        position: sticky;
-        top: calc(200px - 35px);
-
-        @include breakpoint(medium down) {
-            top: 0;
-            width: 100%;
-            max-width: 100%;
-            margin-bottom: 0;
-            position: relative;
-        }
-
-        .publication-image {
-            max-width: 100%;
-
-            @include breakpoint(medium down) {
-                max-width: 350px;
-            }
-        }
-
-        .publication-social {
-            padding: 35px 30px;
-            background: $dark-blue-6;
-
-            @include breakpoint(medium down) {
-                max-width: 350px;
-            }
-
-            .social-container {
-                align-items: center;
-
-                .download-btn {
-                    align-items: center;
-
-                    @include breakpoint(medium down) {
-                        padding-bottom: 25px;
-                        border-bottom: 1px solid $dark-blue-19;
-                    }
-                }
-
-                .download {
-                    font-size: 1.5rem;
-                    font-weight: $bold;
-                    text-transform: uppercase;
-                }
-
-                .icon-download {
-                    margin-left: 15px;
-                }
-
-                .social-icons {
-                    display: flex;
-                    justify-content: space-between;
-
-                    @include breakpoint(medium down) {
-                        padding-top: 25px;
-                    }
-
-                    .icon-item {
-                        width: 22px;
-
-                        .fill {
-                            color: $black;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     .publication-text-container {
-        margin-top: 80px;
+        margin-top: 90px;
         padding-right: 120px;
 
         @include breakpoint(medium down) {

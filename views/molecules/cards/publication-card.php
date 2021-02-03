@@ -1,16 +1,14 @@
 <?php
+use helpers\View;
 $imageExist = isset($image) && !empty($image);
 ?>
+
 <a href="#"
    class="publication-card <?= $type ?? 'hover-publication' ?> <?= !$imageExist ? 'no-image' : '' ?> <?= $color ?? '' ?>">
     <div class="hover-slide">
-        <?php if ($imageExist): ?>
-            <div class="publication">
-                <div class="publication-image">
-                    <div class="image"><img src="<?= $image ?>" alt=""></div>
-                </div>
-            </div>
-        <?php endif; ?>
+        <?php if ($imageExist):
+            View::render('molecules/images/publication-image', ['image' => $image]);
+        endif; ?>
     </div>
     <article class="content">
         <div class="tag"> <?= $tag ?? '' ?></div>
