@@ -26,6 +26,10 @@
         .big-copy {
             margin-top: 20px;
         }
+
+        a {
+            @extend .animated-underline;
+        }
     }
 
     .standard-page-slider {
