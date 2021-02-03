@@ -64,7 +64,11 @@
         }
 
         .glide__track {
-            margin-right: -100%;
+            margin-right: -19.5%;
+
+            @include breakpoint(1955px up) {
+                margin-right: 0;
+            }
         }
     }
 }
