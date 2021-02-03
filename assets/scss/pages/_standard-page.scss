@@ -12,12 +12,53 @@
     }
 
     .side-content {
+        .content-wrapper {
+            @include breakpoint(large up) {
+                padding-right: 14%;
+            }
+        }
+
         .h2 {
             margin-bottom: 28px;
         }
 
         .big-copy {
             margin-top: 20px;
+        }
+    }
+
+    .standard-page-slider {
+        margin-top: 50px;
+
+        .standard-page-slide {
+            padding: 60px 0;
+
+            @include breakpoint(small only) {
+                padding: 28px 29px;
+            }
+
+            img {
+                width: 62%;
+
+                @include breakpoint(small only) {
+                    width: 90%;
+                }
+            }
+
+            .slide-content {
+                width: 38%;
+                padding-left: 49px;
+
+                @include breakpoint(small only) {
+                    width: 100%;
+                    padding-left: 0;
+                    margin-top: 29px;
+                }
+            }
+        }
+
+        .glide__track {
+            margin-right: -100%;
         }
     }
 }

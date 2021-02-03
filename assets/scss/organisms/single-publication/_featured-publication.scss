@@ -1,0 +1,71 @@
+.featured-publication {
+
+    .publication-text-container {
+        margin-top: 90px;
+        padding-right: 120px;
+
+        @include breakpoint(medium down) {
+            margin-top: 50px;
+            padding-right: 0;
+        }
+
+        .tag-text {
+            margin-top: 30px;
+        }
+
+        .publication-title {
+            margin-top: 25px;
+        }
+
+        .publication-body {
+            margin-top: 30px;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid $black;
+
+            .tag-item {
+                width: 60px;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+.related-publications {
+    margin-top: 140px;
+
+    @include breakpoint(medium down) {
+        margin-top: 80px
+    }
+
+    .related-title {
+        max-width: 400px;
+    }
+
+    .related-items-content {
+        margin-top: 47px;
+
+        .card-item {
+            min-height: 400px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .related-item {
+        padding: 45px 35px;
+        background: $dark-blue-6;
+
+        .title {
+            margin-top: 35px;
+        }
+
+        .body-copy {
+            margin-top: 20px;
+        }
+    }
+}
