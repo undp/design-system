@@ -1,4 +1,15 @@
 .single-publication {
     margin-top: $nav-desktop-height;
+
+    .breadcrumb {
+        color: $red-1;
+        margin-top: 65px;
+    }
+
+    .publication-featured-card {
+        position: sticky;
+        margin-top: 20px;
+        top: calc(#{$nav-desktop-height} + 20px);
+    }
 }
 

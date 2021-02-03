@@ -14,13 +14,13 @@
 @import 'base/inputs';
 @import 'base/typography';
 @import 'base/buttons';
-@import 'base/breadcrumb';
 @import 'base/sdg-colors';
 @import 'base/animations';
 @import 'base/language-html';
 
 // Partials
 @import "partials/footer";
+@import 'partials/breadcrumb';
 @import 'partials/modal-sdgs';
 @import 'partials/explore-more';
 @import 'partials/multi-select';
@@ -49,6 +49,7 @@
 @import "molecules/cards/article-card";
 @import "molecules/cards/publication";
 @import "molecules/cards/publication-card";
+@import "molecules/cards/publication-featured-card";
 @import "molecules/cards/tweet";
 @import "molecules/cards/expertise-card";
 @import "molecules/statistics-figures/sdg-card";
@@ -61,6 +62,7 @@
 @import "molecules/callouts/callout";
 @import "molecules/images/image-with-caption";
 @import "molecules/images/article-gallery";
+@import "molecules/images/publication-image";
 @import "molecules/text/big-copy-h1";
 @import "molecules/cards/photo-cta-card";
 @import "molecules/cards/featured-content-card";
