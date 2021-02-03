@@ -7,28 +7,17 @@
     }
 
     .authors-container {
-        &.one-author {
-            display: flex;
+        @include breakpoint(medium) {
+            &.one-author {
+                display: flex;
 
-            .authors-information {
-                margin-right: 0;
-                margin-left: 1.6rem;
+                .authors-information {
+                    margin-right: 0;
+                    margin-left: 1.6rem;
 
-                .author-item {
-                    margin-top: 0;
-                }
-            }
-        }
-
-        @include breakpoint(small only) {
-            display: flex;
-
-            .authors-information {
-                margin-left: 1.2rem;
-                margin-right: 1.2rem;
-
-                .author-item:first-child {
-                    margin-top: 0;
+                    .author-item {
+                        margin-top: 0;
+                    }
                 }
             }
         }

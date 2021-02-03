@@ -1,11 +1,43 @@
 <?php
-
 use helpers\View;
 
 $imgPath = '../../../assets/images/placeholder/about-us';
-
-use helpers\Svg;
-
+$menuItems = [
+    [
+        'name' => 'Overview',
+        'link' => '#'
+    ],
+    [
+        'name' => 'Climate Change',
+        'link' => '#',
+        'subMenuItems' => [
+            [
+                'name' => 'Adapting to changes in climate and extreme weather events',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Mitigation through reducing emissions and increasing carbon storage',
+                'link' => '#'
+            ],
+            [
+                'name' => 'International frameworks and discussions',
+                'link' => '#'
+            ]
+        ]
+    ],
+    [
+        'name' => 'Disaster Risk Reduction and Recovery',
+        'link' => '#'
+    ],
+    [
+        'name' => 'Environment and Natural Capital',
+        'link' => '#'
+    ],
+    [
+        'name' => 'Sustainable Energy',
+        'link' => '#'
+    ]
+];
 ?>
 
 <!-- Page Headers -->
@@ -46,21 +78,18 @@ use helpers\Svg;
         </div>
     </section>
 
-    <section class="side-nav-content grid-container scroll-track left-right delay-2"></section>
+    <section class="side-nav-content grid-container">
+        <div class="grid-x grid-padding-x" data-sticky-container>
+            <?php
+            View::render('partials/standard-page/side-navigation', [
+                'menuItems' => $menuItems,
+                'menuTitle' => 'About us menu',
+                'classes' => 'cell small-12 medium-4 large-3'
+            ]);
 
-    <section class="explore-more grid-container scroll-track left-right delay-1">
-        <div class="grid-x">
-            <div class="cell large-9 large-offset-2">
-                <h2 class="heading h2">Explore More</h2>
 
-                <?php View::render('partials/author-page/author-cards') ?>
-
-                <div class="cta-button">
-                    <button class="btn blue view-more">
-                        View More
-                    </button>
-                </div>
-            </div>
+            View::render('partials/standard-page/side-content');
+            ?>
         </div>
     </section>
 </div>

@@ -1,0 +1,166 @@
+@mixin expand-submenu() {
+    &:after {
+        transform: rotate(-180deg);
+    }
+
+    .side-submenu {
+        opacity: 1;
+        max-height: 100vh;
+        visibility: visible;
+        padding: 30px 0 30px 36px;
+
+        @include breakpoint(medium down) {
+            padding: 15px 0 39px 47px;
+        }
+    }
+}
+
+
+.side-navigation {
+
+    &.menu-expanded {
+        .side-menu {
+            @include breakpoint(medium down) {
+                height: 100vh;
+                max-height: 100vh;
+            }
+        }
+
+        .mobile-menu-heading {
+            &:after {
+                @include breakpoint(medium down) {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
+
+    .side-menu,
+    .side-submenu {
+        list-style: none;
+        color: $dark-blue-1;
+    }
+
+    .side-menu {
+        padding: 0;
+        position: sticky;
+        top: calc(#{$height-nav} + 30px);
+        border-top: 1px solid rgba($black, 0.1);
+
+        @include breakpoint(medium down) {
+            left: 0;
+            width: 100%;
+            padding: 0 12px;
+            position: fixed;
+            border-top: none;
+            max-height: 63px;
+            overflow: hidden;
+            z-index: $z-index-5;
+            top: $height-nav-medium;
+            background-color: $dark-blue-5;
+        }
+    }
+
+    .side-submenu {
+        opacity: 0;
+        max-height: 0;
+        padding-left: 36px;
+        visibility: hidden;
+        transition: all 250ms ease-in-out;
+
+        @include breakpoint(medium down) {
+            padding-left: 47px;
+        }
+    }
+
+    .side-menu-item {
+        width: 100%;
+        font-size: 1.5rem;
+        font-weight: $bold;
+        position: relative;
+        line-height: 2.3rem;
+        text-transform: uppercase;
+
+        @include breakpoint(medium down) {
+            font-size: 1.4rem;
+            align-items: flex-start;
+        }
+
+        > a,
+        &.mobile-menu-heading {
+            padding: 24px 27px;
+
+            @include breakpoint(medium down) {
+                padding: 20px 19px;
+            }
+        }
+
+        &:not(.mobile-menu-heading) {
+            border-bottom: 1px solid rgba($black, 0.1);
+
+            @include breakpoint(medium down) {
+                > a {
+                    font-weight: $regular;
+                }
+            }
+        }
+
+        &.active > a {
+            color: $white;
+            background: $blue-2;
+
+            @include breakpoint(medium down) {
+                color: $black;
+                background: $dark-blue-5;
+            }
+        }
+
+        &.has-children {
+            &:after {
+                @include breakpoint(medium down) {
+                    content: '';
+                    top: 27px;
+                    width: 14px;
+                    right: 19px;
+                    height: 9px;
+                    position: absolute;
+                    transition: all 200ms ease-in-out;
+                    background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
+                    background-size: contain;
+                }
+            }
+
+            &:hover {
+                @include breakpoint(large up) {
+                    @include expand-submenu();
+                }
+            }
+        }
+
+        &.mobile-menu-heading {
+            border-bottom: 2px solid $black;
+        }
+
+        &.submenu-expanded {
+            @include breakpoint(medium down) {
+                @include expand-submenu();
+            }
+        }
+    }
+
+    .side-submenu-item {
+        font-size: 1.6rem;
+        background: $white;
+        line-height: 1.8rem;
+        font-weight: $regular;
+        text-transform: capitalize;
+
+        @include breakpoint(medium down) {
+            background: $dark-blue-5;
+        }
+
+        &:not(:first-of-type) {
+            margin-top: 26px;
+        }
+    }
+}
