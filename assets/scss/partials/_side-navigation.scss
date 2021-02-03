@@ -105,7 +105,11 @@
             }
         }
 
-        &.active > a {
+        &:hover > a {
+            background: $dark-blue-5;
+        }
+
+        &.active > a, &:active > a {
             color: $white;
             background: $blue-2;
 
