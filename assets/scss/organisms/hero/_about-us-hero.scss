@@ -20,10 +20,23 @@
             padding-top: 26px;
         }
 
+        .title {
+            @include breakpoint(small only) {
+                font-size: 2.5rem;
+                font-weight: $regular;
+            }
+        }
+
         .subtitle {
             margin-top: 30px;
             text-transform: uppercase;
             font-family: $secondary-font;
+
+            @include breakpoint(small only) {
+                margin-top: 18px;
+                font-size: 2.5rem;
+                font-weight: $bold;
+            }
         }
 
         .text-box {
@@ -31,6 +44,10 @@
             flex-direction: column;
             justify-content: center;
             height: calc(100% - 80px);
+
+            @include breakpoint(small only) {
+                height: calc(100% - 220px);
+            }
         }
     }
 }
