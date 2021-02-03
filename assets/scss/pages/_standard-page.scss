@@ -16,19 +16,19 @@
             @include breakpoint(large up) {
                 padding-right: 14%;
             }
-        }
 
-        .h2 {
-            margin-bottom: 28px;
-            text-transform: capitalize;
-        }
+            .h2 {
+                margin-bottom: 28px;
+                text-transform: capitalize;
+            }
 
-        .big-copy {
-            margin-top: 20px;
-        }
+            .big-copy {
+                margin-top: 20px;
+            }
 
-        a {
-            @extend .animated-underline;
+            a {
+                @extend .animated-underline;
+            }
         }
     }
 
