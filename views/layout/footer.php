@@ -197,23 +197,23 @@ use helpers\Svg;
                     </div>
                     <div class="flex-container social-links">
                         <a class="social-link" href="https://www.facebook.com/UNDP" aria-label="UNDP on Facebook">
-                            <img class="icon" src="/assets/images/icon-facebook.svg" alt="UNDP on Facebook">
+                            <div class="icon"><?php Svg::render('icon-facebook') ?></div>
                             <span class="show-for-sr">UNDP on Facebook</span>
                         </a>
                         <a class="social-link" href="https://twitter.com/UNDP/" aria-label="UNDP on Twitter">
-                            <img class="icon" src="/assets/images/icon-twitter.svg" alt="UNDP on Twitter">
+                            <div class="icon"><?php Svg::render('icon-twitter') ?></div>
                             <span class="show-for-sr">UNDP on Twitter</span>
                         </a>
                         <a class="social-link" href="https://www.instagram.com/UNDP/" aria-label="UNDP on Instagram">
-                            <img class="icon" src="/assets/images/icon-instagram.svg" alt="UNDP on Instagram">
+                            <div class="icon"><?php Svg::render('icon-instagram') ?></div>
                             <span class="show-for-sr">UNDP on Instagram</span>
                         </a>
                         <a class="social-link" href="https://www.linkedin.com/company/undp/" aria-label="UNDP on LinkedIn">
-                            <img class="icon" src="/assets/images/icon-linkedin.svg" alt="UNDP on LinkedIn">
+                            <div class="icon"><?php Svg::render('icon-linkedin') ?></div>
                             <span class="show-for-sr">UNDP on LinkedIn</span>
                         </a>
                         <a class="social-link" href="https://www.youtube.com/UNDP/" aria-label="UNDP on Youtube">
-                            <img class="icon" src="/assets/images/icon-youtube.svg" alt="UNDP on Youtube">
+                            <div class="icon"><?php Svg::render('icon-youtube') ?></div>
                             <span class="show-for-sr">UNDP on Youtube</span>
                         </a>
                     </div>
