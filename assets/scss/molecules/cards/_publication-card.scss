@@ -1,4 +1,5 @@
 .publication-card {
+    @extend .article-card;
 
     &.hover-publication {
 
@@ -16,6 +17,10 @@
                 display: -webkit-box;
                 -webkit-line-clamp: 5;
                 -webkit-box-orient: vertical;
+
+                @include breakpoint(medium down) {
+                    padding-right: 0;
+                }
             }
 
             .cta {
@@ -26,6 +31,8 @@
         }
 
         .hover-slide {
+            background: transparent;
+
             .publication {
                 width: 100%;
                 margin-top:0;
