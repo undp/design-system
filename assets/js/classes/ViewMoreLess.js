@@ -30,7 +30,7 @@ class ViewMoreLess {
         this.update()
     }
 
-    update() {
+    update(scrollToBottom = false) {
         let matches = 0
         let showing = []
 
@@ -48,6 +48,8 @@ class ViewMoreLess {
         $(showing).removeClass(this.hideClass)
         if (matches <= this.loadStep) this.$viewLess.addClass(this.hideClass)
         if (matches === this.totalCards) this.$viewMore.addClass(this.hideClass)
+
+        if (scrollToBottom) this.scrollToBottom()
     }
 
     viewMore() {
@@ -57,7 +59,14 @@ class ViewMoreLess {
 
     viewLess() {
         this.maxCards -= this.loadStep
-        this.update()
+        this.update(true)
+    }
+
+    scrollToBottom() {
+        const containerBottom = this.$container.offset().top + this.$container.height()
+        const scrollTop = containerBottom - ($(window).height() * .98)
+
+        $("html, body").animate({scrollTop: scrollTop}, 500)
     }
 }
 
