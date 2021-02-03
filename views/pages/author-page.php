@@ -57,7 +57,7 @@ $imgPath = '../../../assets/images/placeholder/author-page'
         ]);
     ?>
 
-    <section class="explore-more grid-container scroll-track left-right delay-1" data-view-more-less>
+    <section class="explore-more grid-container scroll-track left-right delay-1" data-load-step="8" data-view-more-less>
         <div class="grid-x">
             <div class="cell large-10 large-offset-1">
                 <h2 class="heading h2">Explore More</h2>

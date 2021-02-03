@@ -44,7 +44,7 @@
             <div class="cell">
                 <h2 class="heading h2">Explore More</h2>
 
-                <?php View::render('partials/author-page/author-cards') ?>
+                <?php View::render('partials/standard-page/explore-more-cards') ?>
 
                 <div class="cta-button flex-container">
                     <button class="btn blue view-more" data-view-more>
