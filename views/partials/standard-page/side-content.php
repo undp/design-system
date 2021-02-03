@@ -39,16 +39,19 @@
         </div>
     </div>
 
-    <div class="explore-more grid-container scroll-track left-right delay-2">
+    <div class="explore-more grid-container scroll-track left-right delay-2" data-view-more-less>
         <div class="grid-x">
             <div class="cell">
                 <h2 class="heading h2">Explore More</h2>
 
                 <?php View::render('partials/author-page/author-cards') ?>
 
-                <div class="cta-button">
-                    <button class="btn blue view-more">
+                <div class="cta-button flex-container">
+                    <button class="btn blue view-more" data-view-more>
                         View More
+                    </button>
+                    <button class="btn blue view-less" data-view-less>
+                        View Less
                     </button>
                 </div>
             </div>

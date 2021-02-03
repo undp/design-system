@@ -21,7 +21,7 @@
 
 <section class="article-authors grid-container">
     <div class="grid-x">
-        <div class="cell small-10 small-offset-1 large-offset-2 large-7 authors-container <?= $authorsLength === 1 ? 'one-author' : '' ?>">
+        <div class="cell small-9 small-offset-3 medium-7 medium-offset-2 authors-container <?= $authorsLength === 1 ? 'one-author' : '' ?>">
             <div class="authors-title heading h5">
                 Author<?= $authorsLength > 1 ? 's' : ' '?>
             </div>

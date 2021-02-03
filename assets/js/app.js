@@ -26,6 +26,7 @@ import docs from './components/docs'
 import navigationProgress from './components/navigation-progress'
 import sideNavigation from './components/side-navigation'
 import genericSlider from './components/generic-slider'
+import viewMoreLess from './components/view-more-less'
 
 // JS to render nav/search DOM elements from JSON data files
 import menusNav from './render-data/menu/all';
@@ -73,6 +74,7 @@ function main() {
     navigationProgress()
     sideNavigation()
     genericSlider()
+    viewMoreLess()
 }
 
 document.addEventListener("DOMContentLoaded", function () {
