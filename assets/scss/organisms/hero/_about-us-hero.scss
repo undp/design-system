@@ -3,7 +3,16 @@
     margin: 0 auto;
     max-width: 100%;
     max-height: 805px;
+    position: relative;
     transition: max-width 0.5s ease;
+
+    .overlay {
+        width: 100%;
+        opacity: .3;
+        height: 100%;
+        background: $black;
+        position: absolute;
+    }
 
     @include breakpoint(medium down) {
         margin-top: 38px;
