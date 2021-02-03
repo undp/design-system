@@ -33,21 +33,16 @@
         .hover-slide {
             background: transparent;
 
-            .publication {
-                width: 100%;
+            .publication-image {
                 height: 100%;
 
-                .publication-image {
+                .image {
                     height: 100%;
+                    min-width: 100%;
+                    min-height: 100%;
 
-                    .image {
+                    img {
                         height: 100%;
-                        min-width: 100%;
-                        min-height: 100%;
-
-                        img {
-                            height: 100%;
-                        }
                     }
                 }
             }

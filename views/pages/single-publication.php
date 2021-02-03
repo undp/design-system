@@ -40,7 +40,7 @@ use helpers\View;
                                 'image' => '/assets/images/placeholder/publication-1.png',
                                 'tag' => 'Content Tag',
                                 'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
                                 'cta' => 'Read more',
                                 'color' => 'transparent',
                                 'size' => 'large'
@@ -54,7 +54,7 @@ use helpers\View;
                                 'image' => '/assets/images/placeholder/publication-1.png',
                                 'tag' => 'What we are doing',
                                 'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
                                 'cta' => 'Read more',
                                 'color' => 'transparent',
                                 'size' => 'large'
@@ -68,7 +68,7 @@ use helpers\View;
                                 'image' => '/assets/images/placeholder/publication-1.png',
                                 'tag' => 'content Tag',
                                 'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
                                 'cta' => 'Read more',
                                 'color' => 'transparent',
                                 'size' => 'large'
@@ -82,7 +82,7 @@ use helpers\View;
                                 'image' => '/assets/images/placeholder/publication-1.png',
                                 'tag' => 'content Tag',
                                 'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
                                 'cta' => 'Read more',
                                 'color' => 'transparent',
                                 'size' => 'large'
@@ -96,7 +96,7 @@ use helpers\View;
                                 'image' => '/assets/images/placeholder/publication-1.png',
                                 'tag' => 'content Tag',
                                 'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
                                 'cta' => 'Read more',
                                 'color' => 'transparent',
                                 'size' => 'large'
@@ -110,7 +110,7 @@ use helpers\View;
                                 'image' => '/assets/images/placeholder/publication-1.png',
                                 'tag' => 'content Tag',
                                 'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
                                 'cta' => 'Read more',
                                 'color' => 'transparent',
                                 'size' => 'large'
@@ -124,7 +124,7 @@ use helpers\View;
                                 'image' => '/assets/images/placeholder/publication-1.png',
                                 'tag' => 'content Tag',
                                 'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
                                 'cta' => 'Read more',
                                 'color' => 'transparent',
                                 'size' => 'large'
@@ -138,7 +138,7 @@ use helpers\View;
                                 'image' => '/assets/images/placeholder/publication-1.png',
                                 'tag' => 'content Tag',
                                 'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
                                 'cta' => 'Read more',
                                 'color' => 'transparent',
                                 'size' => 'large'
