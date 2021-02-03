@@ -19,7 +19,6 @@
 
     .modal-content {
         width: 100%;
-        display: flex;
         max-width: 1029px;
         background: $white;
         position: relative;
@@ -45,6 +44,34 @@
             }
         }
 
+        .upper-container {
+            display: flex;
+        }
+
+        .bottom-container {
+            display: flex;
+            margin-top: 25px;
+            padding-right: 40px;
+            align-items: center;
+            justify-content: space-between;
+
+            .social-icons {
+                display: flex;
+
+                .icon-item {
+                    width: 22px;
+
+                    &:not(:first-child) {
+                        margin-left: 26px;
+                    }
+
+                    .fill {
+                        color: $black;
+                    }
+                }
+            }
+        }
+
         .image-container {
             flex: 1 0 auto;
 
@@ -61,12 +88,19 @@
 
         .download-controls {
             width: 100%;
+            display: flex;
+            max-height: 430px;
             padding-left: 40px;
+            flex-direction: column;
+
+            .select-box {
+                margin-right: 40px;
+                margin-bottom: 20px;
+            }
 
             .chapter-list {
                 list-style: none;
                 overflow-y: auto;
-                max-height: 430px;
                 padding: 0 35px 0 0;
 
                 &::-webkit-scrollbar {
@@ -84,10 +118,14 @@
                 .chapter-item {
                     @extend .small-copy;
 
-                    line-height: 1.3;
+                    line-height: 1.2;
                     position: relative;
                     padding: 19px 20px 15px 8px;
                     border-top: 1px solid rgba($black, 0.10);
+
+                    &:last-child {
+                        border-bottom: 1px solid rgba($black, 0.10);
+                    }
 
                     .chapter-metadata {
                         margin-top: 8px;

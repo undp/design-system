@@ -1,4 +1,6 @@
-
+<?php
+    $options = isset($options)? $options : []
+?>
 
 <div class="select-box <?= $additionalClasses ?? '' ?>" data-select>
     <div class="options-container" data-select-options>
