@@ -1,11 +1,11 @@
 .featured-publication {
-    padding-bottom: 100px;
 
     .publication {
-        max-width: 32%; //his simulate the large-4 width
-        position: fixed;
+        position: sticky;
+        top: calc(200px - 35px);
 
         @include breakpoint(medium down) {
+            top: 0;
             width: 100%;
             max-width: 100%;
             margin-bottom: 0;
@@ -72,9 +72,11 @@
 
     .publication-text-container {
         margin-top: 80px;
+        padding-right: 120px;
 
         @include breakpoint(medium down) {
             margin-top: 50px;
+            padding-right: 0;
         }
 
         .tag-text {
@@ -107,12 +109,21 @@
 .related-publications {
     margin-top: 140px;
 
+    @include breakpoint(medium down) {
+        margin-top: 80px
+    }
+
     .related-title {
         max-width: 400px;
     }
 
     .related-items-content {
         margin-top: 47px;
+
+        .card-item {
+            min-height: 400px;
+            margin-bottom: 20px;
+        }
     }
 
     .related-item {
