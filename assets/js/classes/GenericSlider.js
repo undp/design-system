@@ -20,7 +20,7 @@ class GenericSlider {
                     gap: 50
                 },
                 820: {
-                    gap: 10
+                    gap: 20
                 }
             }
         }
