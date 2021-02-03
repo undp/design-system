@@ -17,17 +17,37 @@
         background-color: rgba($white, 0.87);
     }
 
-    .hide {
-        display: none;
-    }
-
     .modal-content {
+        width: 100%;
         display: flex;
+        max-width: 1029px;
         background: $white;
+        position: relative;
         pointer-events: auto;
         padding: 65px 80px 45px 75px;
 
+        .btn-close {
+            top: 17px;
+            right: 19px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            cursor: pointer;
+            position: absolute;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            background-color: $dark-blue-7;
+
+            svg {
+                width: 19px;
+                height: 19px;
+            }
+        }
+
         .image-container {
+            flex: 1 0 auto;
+
             .publication-image {
                 z-index: 0;
                 max-width: 355px;
@@ -35,6 +55,54 @@
 
                 .image {
                     min-height: 0;
+                }
+            }
+        }
+
+        .download-controls {
+            width: 100%;
+            padding-left: 40px;
+
+            .chapter-list {
+                list-style: none;
+                overflow-y: auto;
+                max-height: 430px;
+                padding: 0 35px 0 0;
+
+                &::-webkit-scrollbar {
+                    width: 5px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: black;
+                }
+
+                .chapter-item {
+                    @extend .small-copy;
+
+                    line-height: 1.3;
+                    position: relative;
+                    padding: 19px 20px 15px 8px;
+                    border-top: 1px solid rgba($black, 0.10);
+
+                    .chapter-metadata {
+                        margin-top: 8px;
+                        color: $dark-blue-2;
+                    }
+
+                    .checkbox-item {
+                        top: 19px;
+                        right: 20px;
+                        position: absolute;
+
+                        .checkmark {
+                            transform: none;
+                        }
+                    }
                 }
             }
         }
