@@ -3,7 +3,7 @@ use helpers\View;
 use helpers\Svg;
 ?>
 
-<div class="modal-publication-download hide">
+<div class="modal-publication-download">
     <div class="modal-content">
         <button class="btn-close">
             <?php Svg::render('icon-close') ?>
@@ -18,6 +18,14 @@ use helpers\Svg;
                     'name' => 'publication-languages',
                     'placeholder' => 'Select Languages',
                     'options' => [
+                        ['id' => 'english-1', 'value' => 'en', 'label' => 'English'],
+                        ['id' => 'spanish-1', 'value' => 'es', 'label' => 'Spanish'],
+                        ['id' => 'english-1', 'value' => 'en', 'label' => 'English'],
+                        ['id' => 'spanish-1', 'value' => 'es', 'label' => 'Spanish'],
+                        ['id' => 'english-1', 'value' => 'en', 'label' => 'English'],
+                        ['id' => 'spanish-1', 'value' => 'es', 'label' => 'Spanish'],
+                        ['id' => 'english-1', 'value' => 'en', 'label' => 'English'],
+                        ['id' => 'spanish-1', 'value' => 'es', 'label' => 'Spanish'],
                         ['id' => 'english-1', 'value' => 'en', 'label' => 'English'],
                         ['id' => 'spanish-1', 'value' => 'es', 'label' => 'Spanish']
                     ]
