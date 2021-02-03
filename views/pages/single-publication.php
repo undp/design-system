@@ -90,6 +90,71 @@ use helpers\View;
                             ])
                             ?>
                         </div>
+                        <div class="cell medium-6 card-item">
+                            <?php
+                            View::render('molecules/cards/publication-card', [
+                                'image' => '/assets/images/placeholder/publication-1.png',
+                                'tag' => 'content Tag',
+                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'cta' => 'Read more',
+                                'color' => 'transparent',
+                                'size' => 'large'
+                            ])
+                            ?>
+                        </div>
+                        <div class="cell medium-6 card-item">
+                            <?php
+                            View::render('molecules/cards/publication-card', [
+                                'image' => '/assets/images/placeholder/publication-1.png',
+                                'tag' => 'content Tag',
+                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'cta' => 'Read more',
+                                'color' => 'transparent',
+                                'size' => 'large'
+                            ])
+                            ?>
+                        </div>
+                        <div class="cell medium-6 card-item">
+                            <?php
+                            View::render('molecules/cards/publication-card', [
+                                'image' => '/assets/images/placeholder/publication-1.png',
+                                'tag' => 'content Tag',
+                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'cta' => 'Read more',
+                                'color' => 'transparent',
+                                'size' => 'large'
+                            ])
+                            ?>
+                        </div>
+                        <div class="cell medium-6 card-item">
+                            <?php
+                            View::render('molecules/cards/publication-card', [
+                                'image' => '/assets/images/placeholder/publication-1.png',
+                                'tag' => 'content Tag',
+                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'cta' => 'Read more',
+                                'color' => 'transparent',
+                                'size' => 'large'
+                            ])
+                            ?>
+                        </div>
+                        <div class="cell medium-6 card-item">
+                            <?php
+                            View::render('molecules/cards/publication-card', [
+                                'image' => '/assets/images/placeholder/publication-1.png',
+                                'tag' => 'content Tag',
+                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
+                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action…",
+                                'cta' => 'Read more',
+                                'color' => 'transparent',
+                                'size' => 'large'
+                            ])
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
