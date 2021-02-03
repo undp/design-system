@@ -2,7 +2,8 @@
     padding-bottom: 89px;
     margin: $nav-desktop-height auto 0;
 
-    @include breakpoint(large down) {
+    @include breakpoint(medium down) {
+        overflow: hidden;
         padding: 26px 0 67px;
         margin-top: $nav-mobile-height;
     }
@@ -16,14 +17,19 @@
             @include breakpoint(large up) {
                 padding-right: 14%;
             }
-        }
 
-        .h2 {
-            margin-bottom: 28px;
-        }
+            .h2 {
+                margin-bottom: 28px;
+                text-transform: capitalize;
+            }
 
-        .big-copy {
-            margin-top: 20px;
+            .big-copy {
+                margin-top: 20px;
+            }
+
+            a {
+                @extend .animated-underline;
+            }
         }
     }
 

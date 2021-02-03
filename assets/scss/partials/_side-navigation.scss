@@ -53,7 +53,7 @@
             padding: 0 12px;
             position: fixed;
             border-top: none;
-            max-height: 63px;
+            max-height: 54px;
             overflow: hidden;
             z-index: $z-index-5;
             top: $height-nav-medium;
@@ -88,10 +88,10 @@
 
         > a,
         &.mobile-menu-heading {
-            padding: 24px 27px;
+            padding: 16.5px 27px;
 
             @include breakpoint(medium down) {
-                padding: 20px 19px;
+                padding: 15.5px 19px;
             }
         }
 
@@ -105,7 +105,11 @@
             }
         }
 
-        &.active > a {
+        &:hover > a {
+            background: $dark-blue-5;
+        }
+
+        &.active > a, &:active > a {
             color: $white;
             background: $blue-2;
 
@@ -119,7 +123,7 @@
             &:after {
                 @include breakpoint(medium down) {
                     content: '';
-                    top: 27px;
+                    top: 23px;
                     width: 14px;
                     right: 19px;
                     height: 9px;
@@ -139,6 +143,10 @@
 
         &.mobile-menu-heading {
             border-bottom: 2px solid $black;
+
+            @include breakpoint(medium down) {
+                font-size: 1.6rem;
+            }
         }
 
         &.submenu-expanded {
@@ -156,6 +164,7 @@
         text-transform: capitalize;
 
         @include breakpoint(medium down) {
+            line-height: 2.2rem;
             background: $dark-blue-5;
         }
 
