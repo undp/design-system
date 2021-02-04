@@ -11,13 +11,6 @@ const init = function() {
         $dropdowns.each((i, dd) => {
             const $dd = $(dd)
             $dd.on('click', () => $dd.toggleClass('submenu-expanded'))
-
-            $dd.on('keydown', ev => {
-                if (ev.keyCode === window.UNDP.keyCode.SPACE) {
-                    $dd.toggleClass('submenu-expanded')
-                    return false
-                }
-            })
         })
 
         $mobileNavTrigger.each((i, trigger) => {
