@@ -29,7 +29,7 @@ $authorTitles = is_array($authorTitles) ? $authorTitles : [$authorTitles];
             </div>
         </div>
 
-        <div class="cell small-10 small-offset-1 large-4 flex-container align-middle">
+        <div class="cell small-10 small-offset-1 large-4 flex-container">
             <p class="medium-copy flex-container bio">
                 <?= $authorBio ?>
             </p>
