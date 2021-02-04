@@ -46,6 +46,7 @@
             align-items: center;
 
             .download-btn {
+                cursor: pointer;
                 align-items: center;
 
                 @include breakpoint(medium down) {
