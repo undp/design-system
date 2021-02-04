@@ -1,8 +1,15 @@
 import ModalPublicationDownload from "../classes/ModalPublicationDownload";
 
+
 const init = function () {
-    const modalPublications = new ModalPublicationDownload();
-    modalPublications.init();
+
+    const $modal = $('.modal-publication-download')
+
+    if ($modal.length) {
+        const modalPublications = new ModalPublicationDownload();
+        modalPublications.init();
+    }
 }
+
 
 export default init;
