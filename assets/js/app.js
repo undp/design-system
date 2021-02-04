@@ -1,9 +1,9 @@
 import './helpers/findIndexPolyfill' // IE Polyfill
 import 'what-input'
 import prism from './prism.js'
+import './classes/UNDP'
 
 import inputs from './components/inputs'
-import customSelect from './components/select'
 import lazyLoad from './components/lazy-load'
 import navigation from './components/navigation'
 import dropdown from './components/dropdown-languajes'
@@ -55,7 +55,6 @@ function main() {
     locationFilters()
     newsCentreFilter()
     multiSelect()
-    customSelect()
     scrollTriggers()
     publicationsSlider()
     ourMissionAnimation()

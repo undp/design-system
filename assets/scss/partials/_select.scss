@@ -34,7 +34,7 @@
 
     &.expanded {
         .selected {
-            border-bottom: none;
+            border-bottom-color: transparent;
 
             &:after {
                 transform: rotate(-180deg);
@@ -45,6 +45,7 @@
     .options-container {
         order: 1;
         top: 51px;
+        padding: 0;
         width: 100%;
         display: none;
         max-height: 300px;
@@ -55,18 +56,13 @@
         border-top: 0;
         transition: $transition-primary;
 
+        &:focus {
+            outline: none;
+        }
+
         &.active {
             display: block;
             overflow-y: auto;
-
-            +.selected {
-                border-bottom-color: transparent;
-
-                &:after {
-                    top: 42%;
-                    transform: rotate(180deg);
-                }
-            }
         }
 
         .option {
@@ -149,10 +145,12 @@
         }
     }
 
-    /*html[data-whatinput=keyboard] & {
-        .option input:focus + label {
-            outline: 1px dotted #212121;
-            outline: 5px auto -webkit-focus-ring-color;
+    html[data-whatinput="keyboard"] & {
+        .option {
+            &.focused {
+                outline: 1px dotted #212121;
+                outline: 5px auto -webkit-focus-ring-color;
+            }
         }
-    }*/
+    }
 }
