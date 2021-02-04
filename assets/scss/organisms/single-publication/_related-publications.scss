@@ -46,4 +46,13 @@
             margin-left: 20px;
         }
     }
+
+    .publication-card {
+        .hover-slide .publication-image .image img {
+            @include breakpoint(medium down) {
+                height: auto;
+                min-height: 0;
+            }
+        }
+    }
 }
