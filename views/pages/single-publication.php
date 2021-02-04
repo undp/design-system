@@ -30,121 +30,19 @@ use helpers\View;
             <div class="cell large-offset-1 large-6 medium-6 medium-offset-0 small-offset-1 small-11">
                 <?php View::render('organisms/single-publication/featured-publication-text'); ?>
 
-                <div class="related-publications">
+
+                <div class="related-publications" data-view-more-less data-load-step="8">
                     <div class="heading h2 related-title">Related Publications</div>
-                    <div class="grid-x grid-margin-x related-items-content">
-                        <div class="cell medium-6 card-item">
-                            <?php
-                            View::render('molecules/cards/publication-card', [
-                                'url' => '/single-publication',
-                                'image' => '/assets/images/placeholder/publication-1.png',
-                                'tag' => 'Content Tag',
-                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
-                                'cta' => 'Read more',
-                                'color' => 'transparent',
-                                'size' => 'large'
-                            ])
-                            ?>
-                        </div>
-                        <div class="cell medium-6 card-item">
-                            <?php
-                            View::render('molecules/cards/publication-card', [
-                                'url' => '/single-publication',
-                                'image' => '/assets/images/placeholder/publication-1.png',
-                                'tag' => 'What we are doing',
-                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
-                                'cta' => 'Read more',
-                                'color' => 'transparent',
-                                'size' => 'large'
-                            ])
-                            ?>
-                        </div>
-                        <div class="cell medium-6 card-item">
-                            <?php
-                            View::render('molecules/cards/publication-card', [
-                                'url' => '/single-publication',
-                                'image' => '/assets/images/placeholder/publication-1.png',
-                                'tag' => 'content Tag',
-                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
-                                'cta' => 'Read more',
-                                'color' => 'transparent',
-                                'size' => 'large'
-                            ])
-                            ?>
-                        </div>
-                        <div class="cell medium-6 card-item">
-                            <?php
-                            View::render('molecules/cards/publication-card', [
-                                'url' => '/single-publication',
-                                'image' => '/assets/images/placeholder/publication-1.png',
-                                'tag' => 'content Tag',
-                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
-                                'cta' => 'Read more',
-                                'color' => 'transparent',
-                                'size' => 'large'
-                            ])
-                            ?>
-                        </div>
-                        <div class="cell medium-6 card-item">
-                            <?php
-                            View::render('molecules/cards/publication-card', [
-                                'url' => '/single-publication',
-                                'image' => '/assets/images/placeholder/publication-1.png',
-                                'tag' => 'content Tag',
-                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
-                                'cta' => 'Read more',
-                                'color' => 'transparent',
-                                'size' => 'large'
-                            ])
-                            ?>
-                        </div>
-                        <div class="cell medium-6 card-item">
-                            <?php
-                            View::render('molecules/cards/publication-card', [
-                                'url' => '/single-publication',
-                                'image' => '/assets/images/placeholder/publication-1.png',
-                                'tag' => 'content Tag',
-                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
-                                'cta' => 'Read more',
-                                'color' => 'transparent',
-                                'size' => 'large'
-                            ])
-                            ?>
-                        </div>
-                        <div class="cell medium-6 card-item">
-                            <?php
-                            View::render('molecules/cards/publication-card', [
-                                'url' => '/single-publication',
-                                'image' => '/assets/images/placeholder/publication-1.png',
-                                'tag' => 'content Tag',
-                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
-                                'cta' => 'Read more',
-                                'color' => 'transparent',
-                                'size' => 'large'
-                            ])
-                            ?>
-                        </div>
-                        <div class="cell medium-6 card-item">
-                            <?php
-                            View::render('molecules/cards/publication-card', [
-                                'url' => '/single-publication',
-                                'image' => '/assets/images/placeholder/publication-1.png',
-                                'tag' => 'content Tag',
-                                'title' => 'Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed do ',
-                                'description' => "This year the world is commemorating the 25th anniversary of the Beijing Declaration and Platform for Action",
-                                'cta' => 'Read more',
-                                'color' => 'transparent',
-                                'size' => 'large'
-                            ])
-                            ?>
-                        </div>
+                    <div class="grid-x grid-margin-x related-items-content cards-container">
+                        <?php View::render('partials/single-publication/publication-cards'); ?>
+                    </div>
+                    <div class="cta-button flex-container">
+                        <button class="btn blue view-more" data-view-more>
+                            View More
+                        </button>
+                        <button class="btn blue view-less" data-view-less>
+                            View Less
+                        </button>
                     </div>
                 </div>
             </div>
