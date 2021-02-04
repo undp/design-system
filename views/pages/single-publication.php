@@ -15,7 +15,7 @@ use helpers\View;
 
     <div class="grid-container">
         <div class="grid-x grid-margin-x">
-            <div class="cell large-offset-1 large-4 medium-6 medium-offset-0">
+            <div class="cell large-offset-1 large-4 medium-12 medium-offset-0">
                 <?php
                 View::render('partials/breadcrumb', [
                     'links' => [
@@ -27,7 +27,7 @@ use helpers\View;
                     'image' => '/assets/images/placeholder/publication-1.png'
                 ]); ?>
             </div>
-            <div class="cell large-offset-1 large-6 medium-6 medium-offset-0">
+            <div class="cell large-offset-1 large-6 medium-12 medium-offset-0">
                 <?php View::render('organisms/single-publication/featured-publication-text'); ?>
 
 
