@@ -13,14 +13,14 @@
             .medium-copy {
                 margin-top: 35px;
                 overflow: hidden;
-                padding-right: 100px;
                 display: -webkit-box;
                 -webkit-line-clamp: 5;
                 -webkit-box-orient: vertical;
 
-                @include breakpoint(medium down) {
-                    padding-right: 0;
+                @include breakpoint(1500px up) {
+                    -webkit-line-clamp: 4;
                 }
+
             }
 
             .cta {
