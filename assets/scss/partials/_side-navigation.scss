@@ -5,12 +5,12 @@
 
     .side-submenu {
         opacity: 1;
+        padding: 17px 0;
         max-height: 100vh;
         visibility: visible;
-        padding: 30px 0 30px 36px;
 
         @include breakpoint(medium down) {
-            padding: 15px 0 39px 47px;
+            padding: 19px 0 33px;
         }
     }
 }
@@ -63,14 +63,10 @@
 
     .side-submenu {
         opacity: 0;
+        padding: 0;
         max-height: 0;
-        padding-left: 36px;
         visibility: hidden;
         transition: all 250ms ease-in-out;
-
-        @include breakpoint(medium down) {
-            padding-left: 47px;
-        }
     }
 
     .side-menu-item {
@@ -157,6 +153,7 @@
     }
 
     .side-submenu-item {
+        display: flex;
         font-size: 1.6rem;
         background: $white;
         line-height: 1.8rem;
@@ -169,8 +166,16 @@
             background: $dark-blue-5;
         }
 
-        &:not(:first-of-type) {
-            margin-top: 26px;
+        > a {
+            padding: 13px 36px 13px 47px;
+
+            @include breakpoint(medium down) {
+                padding: 5px 28px;
+            }
+
+            &:hover {
+                background: $dark-blue-5;
+            }
         }
     }
 }
