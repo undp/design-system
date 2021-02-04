@@ -46,6 +46,7 @@
                 padding: 63px 30px;
 
                 @include breakpoint(small only) {
+                    max-height: 500px;
                     padding: 18px 30px;
                 }
 
