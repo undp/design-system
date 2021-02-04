@@ -47,6 +47,12 @@
             justify-content: center;
             background-color: $dark-blue-7;
 
+            &:hover {
+                svg path {
+                    stroke: $dark-blue-17
+                }
+            }
+
             svg {
                 width: 19px;
                 height: 19px;
