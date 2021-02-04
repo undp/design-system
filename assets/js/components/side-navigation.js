@@ -13,7 +13,7 @@ const init = function() {
             $dd.on('click', () => $dd.toggleClass('submenu-expanded'))
 
             $dd.on('keydown', ev => {
-                if (ev.keyCode == 32) {
+                if (ev.keyCode === window.UNDP.keyCode.SPACE) {
                     $dd.toggleClass('submenu-expanded')
                     return false
                 }

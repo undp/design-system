@@ -12,7 +12,7 @@ class ModalTrapFocus {
 
 
         this.handleTrapFocus = e => {
-            let isTabPressed = e.key === 'Tab' || e.wich === 9;
+            let isTabPressed = e.key === 'Tab' || e.wich === window.UNDP.keyCode.TAB;
 
             if (!isTabPressed) {
                 return;

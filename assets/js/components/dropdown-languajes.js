@@ -41,7 +41,7 @@ class DropDown {
     }
     listenerKeyPress() {
         this.$window.keyup((e) => {
-            if (e.keyCode === 27 && this.dropdownAcitionOpen &&
+            if (e.keyCode === window.UNDP.keyCode.ESC && this.dropdownAcitionOpen &&
                 this.dropdownAcitionOpen.hasClass('active')) { //esc
                 this.dropdownToggle()
             }

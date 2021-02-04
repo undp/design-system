@@ -75,7 +75,7 @@ class SDGModal {
 
     setKeyPressListener() {
         this.$window.keyup((e) => {
-            if (e.keyCode === 27) { //esc
+            if (e.keyCode === window.UNDP.keyCode.ESC) { //esc
                 this.close()
             }
         })
