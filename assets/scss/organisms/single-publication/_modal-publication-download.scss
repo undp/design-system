@@ -10,10 +10,10 @@
     top: $nav-desktop-height;
     backdrop-filter: blur(21px);
     //alternative blur to firefox
-    background-color: rgba($white, 0.98);
+    background-color: rgba($dark-blue-6, 0.98);
 
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
-        background-color: rgba($white, 0.87);
+        background-color: rgba($dark-blue-6, 0.87);
     }
 
     @include breakpoint(large down){
