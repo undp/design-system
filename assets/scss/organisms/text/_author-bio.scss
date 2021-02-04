@@ -58,29 +58,11 @@
         }
     }
 
-    .author-message {
-        margin-top: 93px;
-
-        @include breakpoint(medium down) {
-            margin-top: 32px;
-        }
-
-        .big-copy {
-            line-height: 2.8rem;
-
-            @include breakpoint(medium down) {
-                font-size: 1.6rem;
-                line-height: 2.2rem;
-            }
-        }
-    }
-
     .bio {
-        margin-top: 35px;
         line-height: 2.2rem;
 
         @include breakpoint(medium down) {
-            margin-top: 28px;
+            margin-top: 32px;
             line-height: 2rem;
         }
     }
