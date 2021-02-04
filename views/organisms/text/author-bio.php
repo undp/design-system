@@ -35,7 +35,7 @@ $authorTitles = is_array($authorTitles) ? $authorTitles : [$authorTitles];
             </p>
         </div>
 
-        <div class="cell small-10 small-offset-1 large-8 large-offset-4 flex-container align-middle">
+        <div class="cell small-10 small-offset-1 large-8 large-offset-3 flex-container align-middle">
             <div class="author-message">
                 <p class="big-copy">
                     <?= $authorMessage ?>
