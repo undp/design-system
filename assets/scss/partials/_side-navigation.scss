@@ -146,9 +146,7 @@
         }
 
         &.submenu-expanded {
-            @include breakpoint(medium down) {
-                @include expand-submenu();
-            }
+            @include expand-submenu();
         }
     }
 
