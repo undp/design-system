@@ -6,6 +6,10 @@
         margin-top: $nav-mobile-height;
     }
 
+    @include breakpoint(medium down) {
+        padding-bottom: 93px;
+    }
+
     .breadcrumb {
         color: $red-1;
         margin-top: 65px;

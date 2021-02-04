@@ -36,7 +36,11 @@
     }
 
     .cta-button {
-        margin: 40px 0;
+        margin-top: 40px;
+
+        @include breakpoint(medium down) {
+            margin-top: 33px;
+        }
 
         .view-less {
             margin-left: 20px;
