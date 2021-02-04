@@ -72,8 +72,8 @@
         background-color: $blue-accent-2;
     }
 
-    // Don't trigger hover on tap
-    @media (hover: hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // Don't trigger hover on tap on iOS
+    @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
         &:hover{
             background-color: $yellow;
         }

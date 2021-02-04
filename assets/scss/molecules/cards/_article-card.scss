@@ -267,28 +267,7 @@
     }
 
 
-    @media (hover: hover) and (pointer: fine) {
-        &:hover{
-            .hover-slide{
-                transform: translateX(0);
-            }
-
-            .link-arrow-group {
-                transform: translateX(0);
-
-                .arrow-line{
-                    display: unset;
-                }
-
-                .arrow-point{
-                    transform: translateX(31px);
-                }
-            }
-        }
-    }
-
-    // For IE 11 (media is a hack to check for IE 10+)
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
         &:hover{
             .hover-slide{
                 transform: translateX(0);

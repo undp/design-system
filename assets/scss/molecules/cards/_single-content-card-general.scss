@@ -10,8 +10,8 @@
         max-width: 545px;
     }
 
-    // Don't trigger hover on tap
-    @media (hover: hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // Don't trigger hover on tap on iOS
+    @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
         &:hover{
             .link-arrow-group {
                 transform: translateX(0);

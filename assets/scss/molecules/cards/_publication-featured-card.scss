@@ -73,13 +73,16 @@
                     transition: transform $easing-2;
                 }
 
-                &:hover {
+                // Don't trigger hover on tap on iOS
+                @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    &:hover {
 
-                    .path2 {
-                        transform: translate(0px, -3px);
-                    }
-                    .path4 {
-                        transform: translate(0px, -2px);
+                        .path2 {
+                            transform: translate(0px, -3px);
+                        }
+                        .path4 {
+                            transform: translate(0px, -2px);
+                        }
                     }
                 }
             }
