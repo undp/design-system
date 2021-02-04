@@ -48,7 +48,7 @@ use helpers\View;
                     ]);
                 ?>
             </div>
-            <div class="cell large-offset-1 large-5 medium-6 medium-offset-0">
+            <div class="cell large-offset-1 medium-6 medium-offset-0">
                 <?php View::render('organisms/single-publication/featured-publication-text'); ?>
 
 

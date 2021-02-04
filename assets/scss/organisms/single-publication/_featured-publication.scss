@@ -2,6 +2,7 @@
 
     .publication-text-container {
         margin-top: 90px;
+        padding-right: 120px;
 
         @include breakpoint(medium only) {
             padding-right: 50px;
