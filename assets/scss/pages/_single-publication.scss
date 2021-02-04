@@ -23,6 +23,10 @@
         position: sticky;
         margin-top: 20px;
         top: calc(#{$nav-desktop-height} + 20px);
+
+        @include breakpoint(medium down) {
+            top: calc(#{$nav-mobile-height} + 20px);
+        }
     }
 }
 
