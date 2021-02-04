@@ -27,7 +27,7 @@ use helpers\View;
                     'image' => '/assets/images/placeholder/publication-1.png'
                 ]); ?>
             </div>
-            <div class="cell large-offset-1 large-6 medium-6 medium-offset-0 small-offset-1 small-11">
+            <div class="cell large-offset-1 large-6 medium-6 medium-offset-0">
                 <?php View::render('organisms/single-publication/featured-publication-text'); ?>
 
                 <div class="related-publications">

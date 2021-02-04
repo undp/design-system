@@ -7,11 +7,29 @@
         position: relative;
     }
 
+    .heading.h2 {
+        display: none;
+    }
+
+    @include breakpoint(small only) {
+        .heading.h2 {
+            display: block;
+            margin-top: 40px;
+            padding-left: 25px;
+            margin-bottom: 30px;
+        }
+    }
+
     .publication-image {
         max-width: 100%;
 
         @include breakpoint(medium down) {
-            max-width: 350px;
+            margin: 0 auto;
+            max-width: 425px;
+        }
+
+        .image {
+            max-width: none;
         }
     }
 
@@ -20,7 +38,8 @@
         background: $dark-blue-6;
 
         @include breakpoint(medium down) {
-            max-width: 350px;
+            margin: 0 auto;
+            max-width: 425px;
         }
 
         .social-container {
