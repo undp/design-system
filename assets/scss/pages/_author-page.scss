@@ -51,7 +51,9 @@
         .cards-container {
             margin-top: 0;
 
-            .single-content-card-image {
+            .single-content-card-body,
+            .single-content-card-image,
+            .single-content-card-accent-color {
                 margin-top: 0;
             }
         }
