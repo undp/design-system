@@ -21,7 +21,7 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
                         View::render('partials/select', [
                             'options' => $languageOptions,
                             'name' => 'publication-languages',
-                            'placeholder' => 'Select Languages',
+                            'placeholder' => 'Select Language',
                         ]);
                     ?>
                 <?php endif; ?>
