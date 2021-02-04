@@ -1,6 +1,10 @@
 .publication-card {
     @extend .article-card;
 
+    @include breakpoint(medium down){
+        flex-direction: column;
+    }
+
     &.hover-publication {
 
         .content {
@@ -32,7 +36,7 @@
 
         &:not(.large):not(.wide) {
             .hover-slide {
-                @include breakpoint(small only) {
+                @include breakpoint(medium down) {
                     display: block;
                 }
             }
@@ -40,6 +44,10 @@
 
         .hover-slide {
             background: transparent;
+
+            @include breakpoint(medium down) {
+                width: 100%;
+            }
 
             .publication-image {
                 height: 100%;
@@ -57,7 +65,7 @@
                     }
                 }
 
-                @include breakpoint(small only) {
+                @include breakpoint(medium down) {
                     max-width: none;
                     padding: 18px 30px;
 
