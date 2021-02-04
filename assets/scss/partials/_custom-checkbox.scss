@@ -33,6 +33,12 @@
         }
     }
 
+    &:hover {
+        .checkmark {
+            border-color: $red-2;
+        }
+    }
+
     .checkmark {
         top: 50%;
         right: 0;
