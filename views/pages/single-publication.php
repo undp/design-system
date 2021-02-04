@@ -14,7 +14,7 @@ use helpers\View;
     <?php View::render('organisms/single-publication/modal-publication-download'); ?>
 
     <div class="grid-container">
-        <div class="grid-x">
+        <div class="grid-x grid-margin-x">
             <div class="cell large-offset-1 large-4 medium-6 medium-offset-0">
                 <?php
                 View::render('partials/breadcrumb', [
