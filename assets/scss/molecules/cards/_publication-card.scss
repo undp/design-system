@@ -30,16 +30,31 @@
             }
         }
 
+        &:not(.large):not(.wide) {
+            .hover-slide {
+                @include breakpoint(small only) {
+                    display: flex;
+                }
+            }
+        }
+
         .hover-slide {
             background: transparent;
 
             .publication-image {
                 height: 100%;
+                padding: 63px 30px;
+
+                @include breakpoint(small only) {
+                    padding: 18px 30px;
+                }
 
                 .image {
                     height: 100%;
+                    display: flex;
                     min-width: 100%;
                     min-height: 100%;
+                    justify-content: center;
 
                     img {
                         height: 100%;
