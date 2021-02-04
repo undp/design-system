@@ -54,6 +54,10 @@
             @include breakpoint(medium down) {
                 margin-top: 48px;
             }
+
+            .single-content-card-image {
+                margin-top: 0;
+            }
         }
     }
 }
