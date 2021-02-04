@@ -32,6 +32,16 @@
         }
     }
 
+    &.expanded {
+        .selected {
+            border-bottom: none;
+
+            &:after {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
     .options-container {
         order: 1;
         top: 51px;
@@ -62,12 +72,34 @@
         .option {
             display: block;
             cursor: pointer;
+            padding: 15px 22px;
             position: relative;
-            padding: 15px 22px 15px;
-            border-top: 1px solid rgba($black, 0.10);
+
+            @include breakpoint(medium down) {
+                font-size: 1.6rem;
+                line-height: 2.2rem;
+            }
+
+            &:after {
+                content: '';
+                top: 0;
+                left: 22px;
+                height: 1px;
+                position: absolute;
+                width: calc(100% - 44px);
+                background: rgba($black, 0.10);
+            }
 
             &:hover {
-                background-color: rgba($black, 0.10);
+                background-color: $dark-blue-5;
+
+                &::after {
+                    display: none;
+                }
+
+                + .option:after {
+                    display: none;
+                }
             }
 
             .radio {
@@ -106,13 +138,12 @@
         text-transform: uppercase;
 
         &:after {
-            top: 50%;
+            top: 20px;
             content: '';
             width: 14px;
             right: 25px;
             height: 9px;
             position: absolute;
-            transform: translateY(-50%);
             background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
             background-size: contain;
         }

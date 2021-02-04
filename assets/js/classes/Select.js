@@ -9,6 +9,7 @@ class Select {
 
         this.value = null
         this.activeClass = 'active'
+        this.expandedClass = 'expanded'
         this.selectedOptionSelector = '[data-select-open]'
     }
 
@@ -25,6 +26,7 @@ class Select {
     handleSelectClick(ev) {
         ev.stopImmediatePropagation() // Only trigger once at a time
         this.$selectOptions.toggleClass(this.activeClass)
+        this.$currentSelect.toggleClass(this.expandedClass)
     }
 
     handleWindowClick(ev) {
@@ -40,7 +42,6 @@ class Select {
 
         $options.click(ev => {
             ev.stopImmediatePropagation()
-            console.log('selected');
             this.value = $(ev.currentTarget).find('label').text();
 
             this.close()
