@@ -1,9 +1,17 @@
 .single-publication {
     margin-top: $nav-desktop-height;
 
+    @include breakpoint(large down) {
+        margin-top: $nav-mobile-height;
+    }
+
     .breadcrumb {
         color: $red-1;
         margin-top: 65px;
+
+        @include breakpoint(small only) {
+            margin-top: 40px;
+        }
     }
 
     .publication-featured-card {

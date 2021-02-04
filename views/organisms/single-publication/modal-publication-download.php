@@ -93,11 +93,11 @@ use helpers\Svg;
         </div>
         <div class="bottom-container">
             <div class="social-icons">
-                <div class="icon-item"><?php Svg::render('icon-facebook') ?></div>
-                <div class="icon-item"><?php Svg::render('icon-twitter') ?></div>
-                <div class="icon-item"><?php Svg::render('icon-instagram') ?></div>
-                <div class="icon-item"><?php Svg::render('icon-linkedin') ?></div>
-                <div class="icon-item"><?php Svg::render('icon-youtube') ?></div>
+                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-facebook') ?></a>
+                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-twitter') ?></a>
+                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-instagram') ?></a>
+                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-linkedin') ?></a>
+                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-youtube') ?></a>
             </div>
             <button class="btn">Download</button>
         </div>
