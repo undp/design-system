@@ -7,7 +7,7 @@ use helpers\View;
 
 <div class="publication-featured-card">
     <h2 class="heading h2">Publications</h2>
-    <?php View::render('molecules/images/publication-image', ['image' => '/assets/images/placeholder/publication-1.png']); ?>
+    <?php View::render('molecules/images/publication-image', ['image' => $image]); ?>
     <div class="publication-social">
         <div class="grid-x social-container">
             <div class="cell large-6">

@@ -1,3 +1,5 @@
+
+
 class ModalPublicationDownload {
 
     constructor() {
@@ -5,9 +7,11 @@ class ModalPublicationDownload {
         this.$html = $('html')
         this.$window = $(window)
         this.$modal = $('.modal-publication-download')
+        this.$chapters = this.$modal.find('.chapter-item')
         this.$openTrigger = $('[data-publication-download]')
         this.$modalBtnClose = this.$modal.find('.btn-close')
         this.$modalContent = this.$modal.find('.modal-content')
+        this.$languageSelect = this.$modal.find('input[name="publication-languages"]')
 
         this.classes = {
             hide: 'hide',
@@ -25,6 +29,7 @@ class ModalPublicationDownload {
         this.setOpenModalListener()
         this.setCloseModalListener()
         this.setWindowClickListener()
+        this.setLanguageChangedListener()
     }
 
     open() {
@@ -44,6 +49,23 @@ class ModalPublicationDownload {
         this.$modal.addClass(this.classes.hide).removeClass(this.classes.modalOpen)
     }
 
+    updateChaptersList() {
+        const matchingChapters = []
+
+        this.$chapters.each((i, chapter) => {
+            const $chapter = $(chapter)
+            const chapterLang = $chapter.data('lang')
+            const match = chapterLang === this.currentLang
+
+            if (match) {
+                matchingChapters.push(chapter)
+            }
+        })
+
+        this.$chapters.addClass(this.classes.hide)
+        $(matchingChapters).removeClass(this.classes.hide)
+    }
+
     setCloseModalListener() {
         this.$modalBtnClose.click((e) => {
             e.preventDefault();
@@ -53,7 +75,7 @@ class ModalPublicationDownload {
 
     setKeyPressListener() {
         this.$window.keyup((e) => {
-            if (e.keyCode === 27) { //esc
+            if (e.keyCode === 27) { // esc
                 this.close()
             }
         })
@@ -74,6 +96,13 @@ class ModalPublicationDownload {
 
                 this.close()
             }
+        })
+    }
+
+    setLanguageChangedListener() {
+        this.$languageSelect.click(ev => {
+            this.currentLang = $(ev.currentTarget).val()
+            this.updateChaptersList()
         })
     }
 }
