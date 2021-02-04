@@ -51,6 +51,7 @@ class Select {
 
     close() {
         this.$selectOptions.removeClass(this.activeClass)
+        this.$currentSelect.removeClass(this.expandedClass)
     }
 }
 
