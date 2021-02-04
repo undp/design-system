@@ -43,6 +43,12 @@ switch ($subpath) {
     case '/single-publication':
         View::render('pages/single-publication');
         break;
+    case '/single-publication-2':
+        View::render('pages/single-publication-2');
+        break;
+    case '/single-publication-3':
+        View::render('pages/single-publication-3');
+        break;
     case '/documentation':
         View::render('pages/docs');
         break;

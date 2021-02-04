@@ -3,12 +3,12 @@ use helpers\View;
 $imageExist = isset($image) && !empty($image);
 ?>
 
-<a href="#"
+<a href="<?= $url ?>"
    class="publication-card <?= $type ?? 'hover-publication' ?> <?= !$imageExist ? 'no-image' : '' ?> <?= $color ?? '' ?>">
     <div class="hover-slide">
-        <?php if ($imageExist):
-            View::render('molecules/images/publication-image', ['image' => $image]);
-        endif; ?>
+        <?php if ($imageExist) : ?>
+            <?php View::render('molecules/images/publication-image', ['image' => $image]); ?>
+        <?php endif; ?>
     </div>
     <article class="content">
         <div class="tag"> <?= $tag ?? '' ?></div>
