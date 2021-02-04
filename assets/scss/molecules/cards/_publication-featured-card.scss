@@ -63,6 +63,7 @@
 
 
                 @include breakpoint(medium down) {
+                    width: 100%;
                     padding-bottom: 25px;
                     border-bottom: 1px solid $dark-blue-19;
                 }
