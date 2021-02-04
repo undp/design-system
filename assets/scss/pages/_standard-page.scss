@@ -67,6 +67,10 @@
             .big-copy {
                 line-height: 2.6rem;
 
+                @include breakpoint(large down) {
+                    line-height: 1.3;
+                }
+
                 @include breakpoint(small only) {
                     font-size: 1.4rem;
                     line-height: 2rem;
