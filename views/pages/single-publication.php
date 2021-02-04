@@ -35,7 +35,7 @@ use helpers\View;
 
     <div class="grid-container">
         <div class="grid-x grid-margin-x">
-            <div class="cell large-offset-1 large-4 medium-6 medium-offset-0">
+            <div class="cell large-offset-1 large-4 medium-4 medium-offset-0">
                 <?php
                     View::render('partials/breadcrumb', [
                         'links' => [
@@ -48,7 +48,7 @@ use helpers\View;
                     ]);
                 ?>
             </div>
-            <div class="cell large-offset-1 medium-6 medium-offset-0">
+            <div class="cell large-offset-1 medium-6 medium-offset-1">
                 <?php View::render('organisms/single-publication/featured-publication-text'); ?>
 
 

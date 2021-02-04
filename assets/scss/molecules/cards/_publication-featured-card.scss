@@ -62,7 +62,7 @@
                 align-items: center;
 
 
-                @include breakpoint(small only) {
+                @include breakpoint(medium down) {
                     width: 100%;
                     padding-bottom: 25px;
                     border-bottom: 1px solid $dark-blue-19;
@@ -98,7 +98,7 @@
                 display: flex;
                 justify-content: space-between;
 
-                @include breakpoint(small only) {
+                @include breakpoint(medium down) {
                     padding-top: 25px;
                 }
 
