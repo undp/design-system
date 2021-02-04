@@ -10,16 +10,19 @@
         max-width: 545px;
     }
 
-    &:hover{
-        .link-arrow-group {
-            transform: translateX(0);
+    // Don't trigger hover on tap
+    @media (hover: hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:hover{
+            .link-arrow-group {
+                transform: translateX(0);
 
-            .arrow-line{
-                display: unset;
-            }
+                .arrow-line{
+                    display: unset;
+                }
 
-            .arrow-point{
-                transform: translateX(31px);
+                .arrow-point{
+                    transform: translateX(31px);
+                }
             }
         }
     }
