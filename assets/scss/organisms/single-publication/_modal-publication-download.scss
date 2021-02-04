@@ -5,7 +5,6 @@
     display: flex;
     position: fixed;
     align-items: center;
-    pointer-events: none;
     justify-content: center;
     z-index: $z-index-modal;
     top: $nav-desktop-height;
@@ -26,7 +25,6 @@
         max-width: 1029px;
         background: $white;
         position: relative;
-        pointer-events: auto;
         padding: 65px 80px 45px 75px;
 
         @include breakpoint(small only){

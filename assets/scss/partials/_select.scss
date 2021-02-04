@@ -37,7 +37,6 @@
         top: 51px;
         width: 100%;
         display: none;
-        user-select: none;
         max-height: 300px;
         position: absolute;
         z-index: $z-index-4;
@@ -61,6 +60,7 @@
         }
 
         .option {
+            display: block;
             cursor: pointer;
             position: relative;
             padding: 15px 22px 15px;
@@ -73,7 +73,7 @@
             .radio {
                 top: 0;
                 left: 0;
-                opacity: 0;
+                //opacity: 0;
                 width: 100%;
                 height: 100%;
                 cursor: pointer;
@@ -93,8 +93,9 @@
 
     .selected {
         order: 0;
+        height: 52px;
         cursor: pointer;
-        max-height: 52px;
+        text-align: left;
         font-size: 1.6rem;
         user-select: none;
         padding: 15px 25px;
@@ -116,4 +117,11 @@
             background-size: contain;
         }
     }
+
+    /*html[data-whatinput=keyboard] & {
+        .option input:focus + label {
+            outline: 1px dotted #212121;
+            outline: 5px auto -webkit-focus-ring-color;
+        }
+    }*/
 }

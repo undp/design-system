@@ -4,7 +4,8 @@ html {
     font-family: $primary-font;
 }
 
-html[data-whatinput="mouse"] {
+html[data-whatinput="mouse"],
+html[data-whatinput="touch"]{
     button:focus, a:focus {
         outline: none;
     }

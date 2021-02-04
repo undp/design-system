@@ -31,6 +31,7 @@ class ModalPublicationDownload {
         this.$body.addClass(this.classes.lockBody)
         this.$html.addClass(this.classes.lockBody)
         this.$modal.removeClass(this.classes.hide).addClass(this.classes.modalOpen)
+        this.$modalBtnClose.focus()
     }
 
     close() {
@@ -66,9 +67,11 @@ class ModalPublicationDownload {
 
     setWindowClickListener() {
         this.$window.click(evt => {
-            if (this.$modal.has(evt.target).length &&
+
+            if (this.$modal.is(evt.target) &&
                 this.$modal.hasClass(this.classes.modalOpen) &&
                 !this.$modalContent.has(evt.target).length) {
+
                 this.close()
             }
         })

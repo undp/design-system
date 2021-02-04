@@ -40,6 +40,7 @@ class Select {
 
         $options.click(ev => {
             ev.stopImmediatePropagation()
+            console.log('selected');
             this.value = $(ev.currentTarget).find('label').text();
 
             this.close()

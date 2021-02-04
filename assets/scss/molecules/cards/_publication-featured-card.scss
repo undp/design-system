@@ -24,11 +24,21 @@
         max-width: 100%;
 
         @include breakpoint(medium down) {
+            padding: 40px;
             margin: 0 auto;
             max-width: 425px;
+
+            &::before {
+                left: 25px;
+                right: 70px;
+                height: 15px;
+                bottom: 40px;
+                filter: blur(5px);
+            }
         }
 
         .image {
+            min-height: 0;
             max-width: none;
         }
     }

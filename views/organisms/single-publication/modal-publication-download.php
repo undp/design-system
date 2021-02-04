@@ -18,16 +18,12 @@ use helpers\Svg;
                     'name' => 'publication-languages',
                     'placeholder' => 'Select Languages',
                     'options' => [
+                        ['id' => 'pasto-1', 'value' => 'pasto', 'label' => 'Pasto'],
+                        ['id' => 'dari-1', 'value' => 'dari', 'label' => 'Dari'],
                         ['id' => 'english-1', 'value' => 'en', 'label' => 'English'],
-                        ['id' => 'spanish-1', 'value' => 'es', 'label' => 'Spanish'],
-                        ['id' => 'english-1', 'value' => 'en', 'label' => 'English'],
-                        ['id' => 'spanish-1', 'value' => 'es', 'label' => 'Spanish'],
-                        ['id' => 'english-1', 'value' => 'en', 'label' => 'English'],
-                        ['id' => 'spanish-1', 'value' => 'es', 'label' => 'Spanish'],
-                        ['id' => 'english-1', 'value' => 'en', 'label' => 'English'],
-                        ['id' => 'spanish-1', 'value' => 'es', 'label' => 'Spanish'],
-                        ['id' => 'english-1', 'value' => 'en', 'label' => 'English'],
-                        ['id' => 'spanish-1', 'value' => 'es', 'label' => 'Spanish']
+                        ['id' => 'albanian-1', 'value' => 'albanian', 'label' => 'Albanian'],
+                        ['id' => 'arabic-1', 'value' => 'en', 'label' => 'Arabic'],
+                        ['id' => 'portuguese-1', 'value' => 'portuguese', 'label' => 'Portuguese']
                     ]
                 ])
                 ?>
