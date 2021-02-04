@@ -61,9 +61,25 @@
                 cursor: pointer;
                 align-items: center;
 
+
                 @include breakpoint(medium down) {
                     padding-bottom: 25px;
                     border-bottom: 1px solid $dark-blue-19;
+                }
+
+                .path2, .path4 {
+                    transform: translate(0);
+                    transition: transform $easing-2;
+                }
+
+                &:hover {
+
+                    .path2 {
+                        transform: translate(0px, -3px);
+                    }
+                    .path4 {
+                        transform: translate(0px, -2px);
+                    }
                 }
             }
 
