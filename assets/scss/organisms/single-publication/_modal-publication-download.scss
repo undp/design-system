@@ -190,7 +190,7 @@
 
                     .checkbox-item {
                         top: 19px;
-                        right: 20px;
+                        right: 26px;
                         position: absolute;
 
                         @include breakpoint(large down){
@@ -200,6 +200,7 @@
 
                         @include breakpoint(small only){
                             top: 50%;
+                            right: 8px;
                             transform: translateY(-50%);
                         }
 
