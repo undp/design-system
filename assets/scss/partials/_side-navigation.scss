@@ -56,8 +56,8 @@
             max-height: 54px;
             overflow: hidden;
             z-index: $z-index-5;
-            top: $height-nav-medium;
             background-color: $dark-blue-5;
+            top: calc(#{$height-nav-medium} - 1px);
         }
     }
 
@@ -82,7 +82,14 @@
             align-items: flex-start;
         }
 
-        > a,
+        > a {
+            padding: 16.5px 60px 16.5px 27px;
+
+            @include breakpoint(medium down) {
+                padding: 15.5px 19px;
+            }
+        }
+
         &.mobile-menu-heading {
             padding: 16.5px 27px;
 
@@ -117,22 +124,31 @@
 
         &.has-children {
             &:after {
+                content: '';
+                top: 25px;
+                width: 14px;
+                right: 23px;
+                height: 9px;
+                position: absolute;
+                transition: all 200ms ease-in-out;
+                background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
+                background-size: contain;
+
                 @include breakpoint(medium down) {
-                    content: '';
                     top: 23px;
-                    width: 14px;
                     right: 19px;
-                    height: 9px;
-                    position: absolute;
-                    transition: all 200ms ease-in-out;
-                    background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
-                    background-size: contain;
                 }
             }
 
-            &:hover {
+            &.active {
                 @include breakpoint(large up) {
                     @include expand-submenu();
+                }
+
+                &:after {
+                    @include breakpoint(large up) {
+                        display: none;
+                    }
                 }
             }
         }
@@ -146,7 +162,9 @@
         }
 
         &.submenu-expanded {
-            @include expand-submenu();
+            @include breakpoint(medium down) {
+                @include expand-submenu();
+            }
         }
     }
 
