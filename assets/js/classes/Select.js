@@ -1,5 +1,3 @@
-
-
 class Select {
 
     constructor(element) {
@@ -32,7 +30,10 @@ class Select {
         this.$selectOptions.toggleClass(this.activeClass)
         this.$currentSelect.toggleClass(this.expandedClass)
 
-        this.$selectOptions.focus();
+        // Event fired on keyboard
+        if (ev.originalEvent.detail === 0) {
+            this.$selectOptions.focus();
+        }
     }
 
     handleWindowClick(ev) {
@@ -47,7 +48,9 @@ class Select {
 
         $options.click(ev => {
             ev.stopImmediatePropagation()
-            this.value = ev.currentTarget.innerText;
+            this.defocusItem(document.getElementById(this.optionSelectedId));
+            this.optionSelectedId = ev.currentTarget.id;
+            this.value = ev.currentTarget.dataset.value;
 
             this.close()
             this.changeSelectedOption()
@@ -55,9 +58,14 @@ class Select {
     }
 
     changeSelectedOption() {
-        const $selectedOption = this.$currentSelect.find(this.selectedOptionSelector)
+        const label = this.$selectOptions.find('#'+this.optionSelectedId).text();
+        const $buttonTrigger = this.$currentSelect.find(this.selectedOptionSelector)
+
         // Using this instead of innerText or innerHTML so trapFocus mutationObserver doesn't trigger
-        $selectedOption[0].firstChild.nodeValue = this.value;
+        $buttonTrigger[0].firstChild.nodeValue = label;
+
+        this.$currentSelect.data('selected-value', this.value);
+        this.$currentSelect.trigger('change');
     }
 
     close() {
@@ -88,7 +96,7 @@ class Select {
 
         this.$selectOptions.attr('aria-activedescendant', element.id);
         this.optionSelectedId = element.id;
-        this.value = element.innerText;
+        this.value = element.dataset.value;
 
         if (this.$selectOptions[0].scrollHeight > this.$selectOptions[0].clientHeight) {
             var scrollBottom = this.$selectOptions[0].clientHeight + this.$selectOptions[0].scrollTop;
@@ -135,7 +143,7 @@ class Select {
             case window.UNDP.keyCode.SPACE:
             case window.UNDP.keyCode.RETURN:
                 evt.preventDefault();
-                this.value = nextItem.innerText;
+                this.value = nextItem.dataset.value;
 
                 this.close()
                 this.changeSelectedOption()

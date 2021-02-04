@@ -11,7 +11,7 @@ class ModalPublicationDownload {
         this.$openTrigger = $('[data-publication-download]')
         this.$modalBtnClose = this.$modal.find('.btn-close')
         this.$modalContent = this.$modal.find('.modal-content')
-        this.$languageSelect = this.$modal.find('input[name="publication-languages"]')
+        this.$languageSelect = this.$modal.find('.select-box')
 
         this.classes = {
             hide: 'hide',
@@ -100,8 +100,8 @@ class ModalPublicationDownload {
     }
 
     setLanguageChangedListener() {
-        this.$languageSelect.click(ev => {
-            this.currentLang = $(ev.currentTarget).val()
+        this.$languageSelect.change(() => {
+            this.currentLang = this.$languageSelect.data('selected-value');
             this.updateChaptersList()
         })
     }

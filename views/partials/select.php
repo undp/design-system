@@ -11,7 +11,7 @@ $options = isset($options) ? $options : []
     <ul tabindex="-1" role="listbox" aria-labelledby="exp_button"
         class="options-container" data-select-options>
         <?php foreach ($options as $option) : ?>
-            <li id="<?= $option['id'] ?>" class="option" role="option">
+            <li id="<?= $option['id'] ?>" class="option" role="option" data-value="<?= $option['value'] ?>">
                 <?= $option['label'] ?>
             </li>
         <?php endforeach; ?>
