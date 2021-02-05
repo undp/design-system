@@ -26,9 +26,9 @@
                 </p>
                 <p class="big-copy">
                     UNDP works with countries to turn their climate goals into action. At the heart of this, UNDP’s support
-                    for designing and delivering ambitious climate plans, or Nationally Determined Contributions (NDCs),
-                    pave the way towards a more sustainable and prosperous world for all. UNDP’s climate adaptation and
-                    mitigation portfolio supports over 140 countries—we help to integrate climate risks into national and
+                    for designing and delivering ambitious climate plans, or <a href="#">Nationally Determined Contributions (NDCs)</a>,
+                    pave the way towards a more sustainable and prosperous world for all. UNDP’s climate <a href="#">adaptation</a> and
+                    <a href="#">mitigation</a> portfolio supports over 140 countries—we help to integrate climate risks into national and
                     sub-national development planning, and at the same time provide long-term support to countries to take
                     actions on the ground in the pursuit of carbon-neutral and sustainable economies, that are also resilient
                     to climate change impacts. This involves the sequestration, or removal of greenhouse gases already in the
@@ -44,7 +44,7 @@
             <div class="cell">
                 <h2 class="heading h2">Explore More</h2>
 
-                <?php View::render('partials/author-page/author-cards') ?>
+                <?php View::render('partials/standard-page/explore-more-cards') ?>
 
                 <div class="cta-button flex-container">
                     <button class="btn blue view-more" data-view-more>

@@ -1,5 +1,6 @@
 import Foundation from 'foundation-sites'
 import SDGModal from "../classes/SDGModal";
+import ModalPublicationDownload from "../classes/ModalPublicationDownload";
 
 class Modal {
     constructor() {
@@ -34,6 +35,9 @@ class Modal {
         this.$hamburguer = $('[data-hamburger]');
         this.$mainMenu = $('[data-menu-main-options]');
         this.$primaryNav = $('[data-primary-navigation]');
+
+        this.sdgModal = new SDGModal();
+        this.downloadPubModal = new ModalPublicationDownload();
     }
 
     init() {
@@ -119,7 +123,7 @@ class Modal {
     }
 
     open() {
-        this.closeModalSdg();
+        this.closeOtherModals();
         this.$body.addClass('modal-open');
         this.$html.addClass('modal-open');
         this.currentModal.removeClass('hide');
@@ -182,9 +186,9 @@ class Modal {
         this.$hamburguer.removeClass(this.menuOpenClass);
     }
 
-    closeModalSdg() {
-        const modalSdg = new SDGModal();
-        modalSdg.close();
+    closeOtherModals() {
+        this.sdgModal.close()
+        this.downloadPubModal.close();
     }
 
     //modal opened from footer
@@ -197,7 +201,7 @@ class Modal {
 
     listenerKeyPress() {
         this.window.keyup((e) => {
-            if (e.keyCode === 27) { //esc
+            if (e.keyCode === window.UNDP.keyCode.ESC) { //esc
                this.beforeCloseModal();
             }
         });

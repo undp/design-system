@@ -12,23 +12,9 @@ use helpers\View;
 <div class="single-publication">
     <?php
         View::render('organisms/single-publication/modal-publication-download', [
-            'image' => '/assets/images/placeholder/publication-1.png',
-            'languageOptions' => [
-                ['id' => 'pasto-1', 'value' => 'pasto', 'label' => 'Pasto'],
-                ['id' => 'dari-1', 'value' => 'dari', 'label' => 'Dari'],
-                ['id' => 'english-1', 'value' => 'en', 'label' => 'English'],
-                ['id' => 'albanian-1', 'value' => 'albanian', 'label' => 'Albanian'],
-                ['id' => 'arabic-1', 'value' => 'arabic', 'label' => 'Arabic'],
-                ['id' => 'portuguese-1', 'value' => 'portuguese', 'label' => 'Portuguese']
-            ],
+            'image' => '/assets/images/placeholder/publication-3.png',
             'chapters' => [
-                ['title' => 'Lorem Ipsum Title Goes Here - English', 'metadata' => 'PDF (1.9 MB)', 'lang' => 'en'],
-                ['title' => 'Lorem Ipsum Title Goes Here - English', 'metadata' => 'PDF (1.9 MB)', 'lang' => 'en'],
-                ['title' => 'Lorem Ipsum Title Goes Here - Pasto', 'metadata' => 'PDF (1.9 MB)', 'lang' => 'pasto'],
-                ['title' => 'Lorem Ipsum Title Goes Here - Dari', 'metadata' => 'PDF (1.9 MB)', 'lang' => 'dari'],
-                ['title' => 'Lorem Ipsum Title Goes Here - Albanian', 'metadata' => 'PDF (1.9 MB)', 'lang' => 'albanian'],
-                ['title' => 'Lorem Ipsum Title Goes Here - Arabic', 'metadata' => 'PDF (1.9 MB)', 'lang' => 'arabic'],
-                ['title' => 'Lorem Ipsum Title Goes Here - Portuguese', 'metadata' => 'PDF (1.9 MB)', 'lang' => 'portuguese']
+                ['title' => 'Lorem Ipsum Title Goes Here - English', 'metadata' => 'PDF (1.9 MB)', 'lang' => 'en']
             ]
         ]);
     ?>
@@ -44,11 +30,11 @@ use helpers\View;
                     ]);
 
                     View::render('molecules/cards/publication-featured-card', [
-                        'image' => '/assets/images/placeholder/publication-1.png'
+                        'image' => '/assets/images/placeholder/publication-3.png'
                     ]);
                 ?>
             </div>
-            <div class="cell large-offset-1 medium-6">
+            <div class="cell large-offset-1 large-5 medium-6 medium-offset-0">
                 <?php View::render('organisms/single-publication/featured-publication-text'); ?>
 
 

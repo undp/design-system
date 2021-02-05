@@ -1,6 +1,5 @@
 import Select from "../classes/Select";
 
-
 const init = function () {
     const selects = $('[data-select]')
 

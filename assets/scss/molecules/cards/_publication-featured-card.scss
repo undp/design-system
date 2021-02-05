@@ -1,17 +1,47 @@
 .publication-featured-card {
+
     @include breakpoint(medium down) {
         top: 0;
         width: 100%;
         max-width: 100%;
         margin-bottom: 0;
+        padding-bottom: 0;
         position: relative;
+    }
+
+    .heading.h2 {
+        display: none;
+    }
+
+    @include breakpoint(small only) {
+        .heading.h2 {
+            display: block;
+            margin-top: 40px;
+            padding-left: 25px;
+            margin-bottom: 30px;
+        }
     }
 
     .publication-image {
         max-width: 100%;
 
         @include breakpoint(medium down) {
-            max-width: 350px;
+            padding: 40px;
+            margin: 0 auto;
+            max-width: 425px;
+
+            &::before {
+                left: 25px;
+                right: 70px;
+                height: 15px;
+                bottom: 40px;
+                filter: blur(5px);
+            }
+        }
+
+        .image {
+            min-height: 0;
+            max-width: none;
         }
     }
 
@@ -20,18 +50,50 @@
         background: $dark-blue-6;
 
         @include breakpoint(medium down) {
-            max-width: 350px;
+            margin: 0 auto;
+            max-width: 425px;
         }
 
         .social-container {
             align-items: center;
 
             .download-btn {
+                cursor: pointer;
                 align-items: center;
 
-                @include breakpoint(medium down) {
+
+                @include breakpoint(small only) {
+                    width: 100%;
                     padding-bottom: 25px;
                     border-bottom: 1px solid $dark-blue-19;
+                }
+
+                .path2, .path4 {
+                    transform: translate(0);
+                    transition: all $easing-2;
+                }
+
+                // Don't trigger hover on tap on iOS
+                @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    &:hover {
+
+                        .download {
+                            color: $dark-blue-17;
+                        }
+
+                        .path1 {
+                            stroke: $red-2;
+                        }
+
+                        .path2 {
+                            stroke: $red-2;
+                            transform: translate(0px, -3px);
+                        }
+                        .path4 {
+                            stroke: $red-2;
+                            transform: translate(0px, -2px);
+                        }
+                    }
                 }
             }
 
@@ -49,7 +111,7 @@
                 display: flex;
                 justify-content: space-between;
 
-                @include breakpoint(medium down) {
+                @include breakpoint(small only) {
                     padding-top: 25px;
                 }
 

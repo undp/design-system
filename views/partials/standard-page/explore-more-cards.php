@@ -2,7 +2,7 @@
 
 
 <div class="grid-x grid-margin-x cards-container">
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-image', [
             'tag' => 'Content Tag',
@@ -13,7 +13,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-body', [
             'tag' => 'Content Tag',
@@ -24,7 +24,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-accent-color', [
             'tag' => 'Content Tag',
@@ -34,7 +34,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-body', [
             'tag' => 'Content Tag',
@@ -45,7 +45,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-accent-color', [
             'tag' => 'Content Tag',
@@ -55,7 +55,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-image', [
             'tag' => 'Content Tag',
@@ -66,7 +66,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-image', [
             'tag' => 'Content Tag',
@@ -77,7 +77,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-body', [
             'tag' => 'Content Tag',
@@ -88,7 +88,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-accent-color', [
             'tag' => 'Content Tag',
@@ -98,7 +98,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-body', [
             'tag' => 'Content Tag',
@@ -109,7 +109,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-accent-color', [
             'tag' => 'Content Tag',
@@ -119,7 +119,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-image', [
             'tag' => 'Content Tag',
@@ -130,7 +130,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-image', [
             'tag' => 'Content Tag',
@@ -141,7 +141,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-body', [
             'tag' => 'Content Tag',
@@ -152,7 +152,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-accent-color', [
             'tag' => 'Content Tag',
@@ -162,7 +162,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-body', [
             'tag' => 'Content Tag',
@@ -173,7 +173,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-accent-color', [
             'tag' => 'Content Tag',
@@ -183,7 +183,7 @@
         ])
         ?>
     </div>
-    <div class="cell large-3 medium-6 card-item hide">
+    <div class="cell large-4 medium-6 card-item hide">
         <?php
         View::render('molecules/cards/single-content-card-image', [
             'tag' => 'Content Tag',

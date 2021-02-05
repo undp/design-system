@@ -1,19 +1,23 @@
 .explore-more {
-    margin-top: 133px;
+    margin-top: 106px;
 
-    @include breakpoint(large down) {
+    @include breakpoint(medium down) {
         margin-top: 66px;
     }
 
-    .btn:not(:first-of-type) {
-        margin-left: 20px;
+    .h2 {
+        margin-bottom: 0;
+    }
+
+    .btn:not(:last-of-type) {
+        margin-right: 27px;
     }
 
     .cards-container {
-        margin-top: 57px;
+        margin-top: 56px;
 
-        @include breakpoint(large down) {
-            margin-top: 89px;
+        @include breakpoint(medium down) {
+            margin-top: 8px;
         }
 
         .card-item {
@@ -24,7 +28,7 @@
     .cta-button {
         margin-top: 70px;
 
-        @include breakpoint(large down) {
+        @include breakpoint(medium down) {
             margin-top: 58px;
         }
     }

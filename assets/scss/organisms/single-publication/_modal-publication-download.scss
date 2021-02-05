@@ -1,0 +1,217 @@
+.modal-publication-download {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    z-index: $z-index-modal;
+    top: $nav-desktop-height;
+    backdrop-filter: blur(21px);
+    //alternative blur to firefox
+    background-color: rgba($dark-blue-6, 0.98);
+
+    @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
+        background-color: rgba($dark-blue-6, 0.87);
+    }
+
+    @include breakpoint(large down){
+        top: $nav-mobile-height;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-width: 1029px;
+        background: $white;
+        position: relative;
+        padding: 65px 80px 45px 75px;
+
+        @include breakpoint(small only){
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 73px 12px 12px;
+        }
+
+        .btn-close {
+            top: 17px;
+            right: 19px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            cursor: pointer;
+            position: absolute;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            background-color: $dark-blue-7;
+
+            &:hover {
+                svg path {
+                    stroke: $dark-blue-17
+                }
+            }
+
+            svg {
+                width: 19px;
+                height: 19px;
+            }
+        }
+
+        .upper-container {
+            display: flex;
+
+            @include breakpoint(small only){
+                flex: 1 0 auto;
+                height: calc(100% - 65px);
+            }
+        }
+
+        .bottom-container {
+            display: flex;
+            margin-top: 25px;
+            padding-right: 40px;
+            align-items: center;
+            justify-content: space-between;
+
+            .social-icons {
+                display: flex;
+
+                @include breakpoint(small only){
+                    display: none;
+                }
+
+                .icon-item {
+                    width: 22px;
+
+                    &:not(:first-child) {
+                        margin-left: 26px;
+                    }
+
+                    .fill {
+                        color: $black;
+                    }
+                }
+            }
+
+            @include breakpoint(small only){
+                margin-top: 22px;
+                padding-right: 0;
+
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+
+        .image-container {
+            flex: 1 0 auto;
+
+            @include breakpoint(small only){
+                display: none;
+            }
+
+            .publication-image {
+                z-index: 0;
+                max-width: 355px;
+                padding: 45px 54px 64px;
+
+                .image {
+                    min-height: 0;
+                }
+            }
+        }
+
+        .download-controls {
+            width: 100%;
+            display: flex;
+            max-height: 430px;
+            padding-left: 40px;
+            flex-direction: column;
+
+            .select-box {
+                flex: 1 0 auto;
+                margin-right: 40px;
+                margin-bottom: 20px;
+            }
+
+            @include breakpoint(small only){
+                padding: 0;
+                max-height: none;
+
+                .select-box {
+                    margin-right: 0;
+                }
+            }
+
+            .chapter-list {
+                height: 100%;
+                list-style: none;
+                overflow-y: auto;
+                padding: 0 35px 0 0;
+
+                @include breakpoint(small only){
+                    padding: 0 17px 0 0;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 5px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: black;
+                }
+
+                .chapter-item {
+                    @extend .small-copy;
+
+                    line-height: 1.2;
+                    position: relative;
+                    padding: 19px 45px 15px 8px;
+                    border-top: 1px solid rgba($black, 0.10);
+
+                    @include breakpoint(small only){
+                        padding: 19px 7px 15px 14px;
+                    }
+
+                    &:last-child {
+                        border-bottom: 1px solid rgba($black, 0.10);
+                    }
+
+                    .chapter-metadata {
+                        margin-top: 8px;
+                        color: $dark-blue-2;
+                    }
+
+                    .checkbox-item {
+                        top: 19px;
+                        right: 26px;
+                        position: absolute;
+
+                        @include breakpoint(large down){
+                            padding: 0;
+                            border: none;
+                        }
+
+                        @include breakpoint(small only){
+                            top: 50%;
+                            right: 8px;
+                            transform: translateY(-50%);
+                        }
+
+                        @include breakpoint(medium){
+                            .checkmark {
+                                transform: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

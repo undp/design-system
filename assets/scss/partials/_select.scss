@@ -32,12 +32,23 @@
         }
     }
 
+    &.expanded {
+        .selected {
+            border-bottom-color: transparent;
+
+            &:after {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
     .options-container {
         order: 1;
         top: 51px;
+        padding: 0;
         width: 100%;
         display: none;
-        user-select: none;
+        max-height: 300px;
         position: absolute;
         z-index: $z-index-4;
         background-color: $white;
@@ -45,28 +56,46 @@
         border-top: 0;
         transition: $transition-primary;
 
+        &:focus {
+            outline: none;
+        }
+
         &.active {
             display: block;
             overflow-y: auto;
-
-            +.selected {
-                border-bottom: 0;
-
-                &:after {
-                    top: 42%;
-                    transform: rotate(180deg);
-                }
-            }
         }
 
         .option {
+            display: block;
             cursor: pointer;
+            padding: 15px 22px;
             position: relative;
-            padding: 15px 22px 15px;
-            border-top: 1px solid rgba($black, 0.10);
+
+            @include breakpoint(medium down) {
+                font-size: 1.6rem;
+                line-height: 2.2rem;
+            }
+
+            &:after {
+                content: '';
+                top: 0;
+                left: 22px;
+                height: 1px;
+                position: absolute;
+                width: calc(100% - 44px);
+                background: rgba($black, 0.10);
+            }
 
             &:hover {
-                background-color: rgba($black, 0.10);
+                background-color: $dark-blue-5;
+
+                &::after {
+                    display: none;
+                }
+
+                + .option:after {
+                    display: none;
+                }
             }
 
             .radio {
@@ -92,8 +121,9 @@
 
     .selected {
         order: 0;
+        height: 52px;
         cursor: pointer;
-        max-height: 52px;
+        text-align: left;
         font-size: 1.6rem;
         user-select: none;
         padding: 15px 25px;
@@ -104,15 +134,23 @@
         text-transform: uppercase;
 
         &:after {
-            top: 50%;
+            top: 20px;
             content: '';
             width: 14px;
             right: 25px;
             height: 9px;
             position: absolute;
-            transform: translateY(-50%);
             background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
             background-size: contain;
+        }
+    }
+
+    html[data-whatinput="keyboard"] & {
+        .option {
+            &.focused {
+                outline: 1px dotted #212121;
+                outline: 5px auto -webkit-focus-ring-color;
+            }
         }
     }
 }

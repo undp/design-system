@@ -10,7 +10,6 @@
 @import 'base/variables';
 @import 'base/fonts';
 @import 'base/base';
-@import 'base/select';
 @import 'base/inputs';
 @import 'base/typography';
 @import 'base/buttons';
@@ -23,8 +22,8 @@
 @import 'partials/breadcrumb';
 @import 'partials/modal-sdgs';
 @import 'partials/explore-more';
+@import 'partials/select';
 @import 'partials/multi-select';
-@import 'partials/custom-select';
 @import 'partials/custom-checkbox';
 @import "partials/scroll-up";
 @import 'partials/active-filters';
@@ -90,6 +89,8 @@
 @import "organisms/article-deepdive/text";
 @import "organisms/article-deepdive/navigation-progress";
 @import "organisms/single-publication/featured-publication";
+@import "organisms/single-publication/related-publications";
+@import "organisms/single-publication/modal-publication-download";
 
 @import "organisms/homepage/trusted-partnerships";
 @import "organisms/article-deepdive/article-authors";

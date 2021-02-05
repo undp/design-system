@@ -12,7 +12,7 @@ class ModalTrapFocus {
 
 
         this.handleTrapFocus = e => {
-            let isTabPressed = e.key === 'Tab' || e.wich === 9;
+            let isTabPressed = e.key === 'Tab' || e.wich === window.UNDP.keyCode.TAB;
 
             if (!isTabPressed) {
                 return;
@@ -102,7 +102,7 @@ class ModalTrapFocus {
 
         modalsWithCloseButtonsOutside.forEach(id => {
             if(this.modal.id === id) {
-                let openCloseButton = document.querySelector(`.header [data-modal-open][data-modal=${id}`)
+                let openCloseButton = document.querySelector(`.header [data-modal-open][data-modal=${id}]`)
                 this.focusableContent.unshift(openCloseButton)
                 this.firstFocusableElement = openCloseButton
             }

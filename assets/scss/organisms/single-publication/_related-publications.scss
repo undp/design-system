@@ -1,0 +1,72 @@
+.related-publications {
+    margin-top: 140px;
+
+    @include breakpoint(medium down) {
+        margin-top: 80px
+    }
+
+    .related-title {
+        max-width: 400px;
+
+        @include breakpoint(small only) {
+            padding-left: 25px;
+        }
+    }
+
+    .related-items-content {
+        margin-top: 47px;
+
+        .card-item {
+            min-height: 400px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .related-item {
+        padding: 45px 35px;
+        background: $dark-blue-6;
+
+        .title {
+            margin-top: 35px;
+        }
+
+        .body-copy {
+            margin-top: 20px;
+        }
+    }
+
+    .cta-button {
+        margin-top: 40px;
+
+        @include breakpoint(medium down) {
+            margin-top: 33px;
+        }
+
+        .view-less {
+            margin-left: 20px;
+        }
+    }
+
+    .publication-card {
+        .hover-slide {
+            @include breakpoint(medium down) {
+                flex: 0;
+            }
+
+            .publication-image {
+                &:before {
+                    @include breakpoint(medium down) {
+                        bottom: 7%;
+                    }
+                }
+
+                .image img {
+                    @include breakpoint(medium down) {
+                        height: auto;
+                        min-height: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -4,9 +4,17 @@
         margin-top: 90px;
         padding-right: 120px;
 
-        @include breakpoint(medium down) {
+        @include breakpoint(medium only) {
+            padding-right: 50px;
+        }
+
+        @include breakpoint(small only) {
+            padding: 0 26px;
             margin-top: 50px;
-            padding-right: 0;
+
+            .heading.h2 {
+                display: none;
+            }
         }
 
         .tag-text {
@@ -32,40 +40,6 @@
                 width: 60px;
                 margin-right: 20px;
             }
-        }
-    }
-}
-
-.related-publications {
-    margin-top: 140px;
-
-    @include breakpoint(medium down) {
-        margin-top: 80px
-    }
-
-    .related-title {
-        max-width: 400px;
-    }
-
-    .related-items-content {
-        margin-top: 47px;
-
-        .card-item {
-            min-height: 400px;
-            margin-bottom: 20px;
-        }
-    }
-
-    .related-item {
-        padding: 45px 35px;
-        background: $dark-blue-6;
-
-        .title {
-            margin-top: 35px;
-        }
-
-        .body-copy {
-            margin-top: 20px;
         }
     }
 }

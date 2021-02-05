@@ -1,15 +1,32 @@
 .single-publication {
+    padding-bottom: 76px;
     margin-top: $nav-desktop-height;
+
+    @include breakpoint(large down) {
+        margin-top: $nav-mobile-height;
+    }
+
+    @include breakpoint(medium down) {
+        padding-bottom: 93px;
+    }
 
     .breadcrumb {
         color: $red-1;
         margin-top: 65px;
+
+        @include breakpoint(small only) {
+            margin-top: 40px;
+        }
     }
 
     .publication-featured-card {
         position: sticky;
         margin-top: 20px;
         top: calc(#{$nav-desktop-height} + 20px);
+
+        @include breakpoint(medium down) {
+            top: calc(#{$nav-mobile-height} + 20px);
+        }
     }
 }
 

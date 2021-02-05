@@ -6,26 +6,27 @@ use helpers\View;
 ?>
 
 <div class="publication-featured-card">
-    <?php View::render('molecules/images/publication-image', ['image' => '/assets/images/placeholder/publication-1.png']); ?>
+    <h2 class="heading h2">Publications</h2>
+    <?php View::render('molecules/images/publication-image', ['image' => $image]); ?>
     <div class="publication-social">
         <div class="grid-x social-container">
-            <div class="cell large-6">
-                <button class="download-btn flex-container">
-                    <div class="download">Download</div>
-                    <div class="icon-download">
-                        <div class="icon-item">
+            <div class="cell medium-6">
+                <button class="download-btn flex-container" data-publication-download>
+                    <span class="download">Download</span>
+                    <span class="icon-download">
+                        <span class="icon-item">
                             <?php Svg::render('icon-download') ?>
-                        </div>
-                    </div>
+                        </span>
+                    </span>
                 </button>
             </div>
-            <div class="cell large-6">
+            <div class="cell medium-6">
                 <div class="social-icons">
-                    <div class="icon-item"><?php Svg::render('icon-facebook') ?></div>
-                    <div class="icon-item"><?php Svg::render('icon-twitter') ?></div>
-                    <div class="icon-item"><?php Svg::render('icon-instagram') ?></div>
-                    <div class="icon-item"><?php Svg::render('icon-linkedin') ?></div>
-                    <div class="icon-item"><?php Svg::render('icon-youtube') ?></div>
+                    <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-facebook') ?></a>
+                    <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-twitter') ?></a>
+                    <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-instagram') ?></a>
+                    <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-linkedin') ?></a>
+                    <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-youtube') ?></a>
                 </div>
             </div>
         </div>

@@ -61,9 +61,12 @@
         }
     }
 
-    &:hover{
-        .card-content .image:before{
-            opacity: 0.75;
+    // Don't trigger hover on tap on iOS
+    @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:hover{
+            .card-content .image:before{
+                opacity: 0.75;
+            }
         }
     }
 

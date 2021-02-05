@@ -36,10 +36,10 @@
     }
 
     .explore-more {
-        margin-top: 147px;
+        margin-top: 174px;
 
         @include breakpoint(medium down) {
-            margin-top: 113px;
+            margin-top: 94px;
         }
 
         .cta-button {
@@ -49,10 +49,12 @@
         }
 
         .cards-container {
-            margin-top: 71px;
+            margin-top: 0;
 
-            @include breakpoint(medium down) {
-                margin-top: 48px;
+            .single-content-card-body,
+            .single-content-card-image,
+            .single-content-card-accent-color {
+                margin-top: 0;
             }
         }
     }

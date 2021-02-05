@@ -9,7 +9,7 @@
 
         <?php foreach($menuItems as $index => $menuItem) : ?>
             <?php
-                $itemClasses = $index === 1 ? 'active' : '';
+                $itemClasses = $index === 1 ? 'active' : ''; // Backend -> Check url instead of index
                 $itemClasses .= isset($menuItem['subMenuItems']) && $menuItem['subMenuItems'] ? ' has-children' : '';
             ?>
 

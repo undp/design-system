@@ -3,7 +3,20 @@
     margin: 0 auto;
     max-width: 100%;
     max-height: 805px;
+    position: relative;
     transition: max-width 0.5s ease;
+
+    .overlay {
+        width: 100%;
+        opacity: .3;
+        height: 100%;
+        background: $black;
+        position: absolute;
+    }
+
+    @include breakpoint(medium down) {
+        margin-top: 28px;
+    }
 
     .hero-container, .text-container {
         height: 100%;
@@ -16,17 +29,34 @@
             padding-top: 26px;
         }
 
+        .title {
+            @include breakpoint(small only) {
+                font-size: 2.5rem;
+                font-weight: $regular;
+            }
+        }
+
         .subtitle {
             margin-top: 30px;
             text-transform: uppercase;
             font-family: $secondary-font;
+
+            @include breakpoint(small only) {
+                margin-top: 18px;
+                font-size: 2.5rem;
+                font-weight: $bold;
+            }
         }
 
         .text-box {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: calc(100% - 80px);
+            height: calc(100% - 170px);
+
+            @include breakpoint(small only) {
+                height: calc(100% - 220px);
+            }
         }
     }
 }
