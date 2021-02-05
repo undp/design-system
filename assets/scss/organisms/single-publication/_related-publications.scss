@@ -48,10 +48,24 @@
     }
 
     .publication-card {
-        .hover-slide .publication-image .image img {
+        .hover-slide {
             @include breakpoint(medium down) {
-                height: auto;
-                min-height: 0;
+                flex: 0;
+            }
+
+            .publication-image {
+                &:before {
+                    @include breakpoint(medium down) {
+                        bottom: 7%;
+                    }
+                }
+
+                .image img {
+                    @include breakpoint(medium down) {
+                        height: auto;
+                        min-height: 0;
+                    }
+                }
             }
         }
     }
