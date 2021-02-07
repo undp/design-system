@@ -13,11 +13,14 @@
     }
 
     input {
+        top: 50%;
+        right: 0;
         opacity: 0;
-        width: 100%;
-        height: 100%;
+        width: 16px;
+        height: 16px;
         cursor: pointer;
         position: absolute;
+        transform: translateY(-50%);
 
         &:checked + .checkmark:after {
             display: block;

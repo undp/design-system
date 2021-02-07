@@ -168,11 +168,8 @@
                 }
 
                 .chapter-item {
-                    @extend .small-copy;
-
-                    line-height: 1.2;
                     position: relative;
-                    padding: 19px 45px 15px 8px;
+                    padding: 19px 26px 15px 8px;
                     border-top: 1px solid rgba($black, 0.10);
 
                     @include breakpoint(small only){
@@ -189,25 +186,23 @@
                     }
 
                     .checkbox-item {
-                        top: 19px;
-                        right: 26px;
-                        position: absolute;
+                        @extend .small-copy;
+                        line-height: 1.2;
+
+                        .chapter-title, .chapter-metadata {
+                            display: block;
+                        }
+
+                        @include breakpoint(medium){
+                            .checkmark, input[type=checkbox] {
+                                top: 0;
+                                transform: none;
+                            }
+                        }
 
                         @include breakpoint(large down){
                             padding: 0;
                             border: none;
-                        }
-
-                        @include breakpoint(small only){
-                            top: 50%;
-                            right: 8px;
-                            transform: translateY(-50%);
-                        }
-
-                        @include breakpoint(medium){
-                            .checkmark {
-                                transform: none;
-                            }
                         }
                     }
                 }

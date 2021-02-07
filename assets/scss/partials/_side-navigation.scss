@@ -6,7 +6,7 @@
     .side-submenu {
         opacity: 1;
         padding: 17px 0;
-        max-height: 100vh;
+        max-height: none;
         visibility: visible;
 
         @include breakpoint(medium down) {
@@ -43,8 +43,8 @@
 
     .side-menu {
         padding: 0;
+        bottom: 30px;
         position: sticky;
-        top: calc(#{$height-nav} + 30px);
         border-top: 1px solid rgba($black, 0.1);
 
         @include breakpoint(medium down) {
