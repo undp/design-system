@@ -15,7 +15,7 @@ body {
     padding: 25px 0 58px 30px;
     backdrop-filter: blur(8px);
     background-color: rgba($white, 0.98);
-    max-height: calc(100vh - #{$height-nav-medium});
+    max-height: calc(100vh - #{$nav-mobile-height});
 
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
         background-color: rgba($dark-blue-6, 0.96);

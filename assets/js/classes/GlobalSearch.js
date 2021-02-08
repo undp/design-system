@@ -5,7 +5,7 @@ class GlobalSearch {
 
     init() {
         this.bindEvents();
-        this.populateQuickLinks()
+        //this.populateQuickLinks()
     }
 
     bindEvents() {

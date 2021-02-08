@@ -22,7 +22,7 @@
         text-transform: capitalize;
 
         @include breakpoint(small only) {
-            top: $height-nav-medium;
+            top: $nav-mobile-height;
         }
     }
 
@@ -50,7 +50,7 @@
             padding: 50px 15px;
 
             @include breakpoint(small only) {
-                padding: calc(#{$height-nav-medium} + 30px) 15px 50px 15px;
+                padding: calc(#{$nav-mobile-height} + 30px) 15px 50px 15px;
             }
 
             .panel {

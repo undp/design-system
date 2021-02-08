@@ -1,6 +1,3 @@
-$nav-mobile-height: 70px;
-$nav-desktop-height: 115px;
-
 .header {
     top: 0;
     width: 100%;
@@ -222,10 +219,10 @@ $nav-desktop-height: 115px;
         overflow: auto;
         position: fixed;
         transform: translateY(0px);
-        top: calc(#{$height-nav} + 1px);
+        top: calc(#{$nav-desktop-height} + 1px);
 
         @include breakpoint(large down) {
-            top: calc(#{$height-nav-medium} + 1px);
+            top: calc(#{$nav-mobile-height} + 1px);
         }
 
         &.open {

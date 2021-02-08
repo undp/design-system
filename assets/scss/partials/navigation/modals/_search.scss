@@ -1,21 +1,21 @@
 .modal-popular-search {
     width: 100%;
     position: fixed;
-    top: $height-nav;
     overflow-y: auto;
     z-index: $z-index-modal;
-    height: calc(100vh - #{$height-nav});
+    top: $nav-desktop-height;
     backdrop-filter: blur(21px);
     //alternative blur to firefox
     background-color: rgba($white, 0.98);
+    height: calc(100vh - #{$nav-desktop-height});
 
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
         background-color: rgba($white, 0.87);
     }
 
     @include breakpoint(large down) {
-        top: calc(#{$height-nav-medium} + 1px);
-        height: calc(100vh - #{$height-nav-medium});
+        top: calc(#{$nav-mobile-height} + 1px);
+        height: calc(100vh - #{$nav-mobile-height});
     }
 
     .modal-content {
@@ -24,6 +24,17 @@
         min-height: 100%;
         position: relative;
         align-items: center;
+
+        &.showing-results {
+            padding-top: 20px;
+            align-items: flex-start;
+
+            .modal-body .results-and-filters-container {
+                .search-results {
+                    padding-left: 20px;
+                }
+            }
+        }
 
         .close-button {
             top: 52px;
@@ -50,7 +61,7 @@
             }
 
             .title {
-                line-height: 1.4;
+                line-height: 1.2;
                 font-size: 4.5rem;
                 font-weight: $light;
 
@@ -61,37 +72,86 @@
             }
 
             .results-and-filters-container {
+                display: flex;
                 margin-top: 50px;
 
+                .search-filters,
+                .search-results {
+                    width: 100%;
+                }
+
                 .search-filters {
-                    padding-right: 30px;
+                    max-width: 355px;
 
                     .multi-select {
-                        margin-top: 16px;
+                        &:not(:first-child) {
+                            margin-top: 16px;
+                        }
                     }
                 }
 
-                .list {
-                    padding: 0;
-                    margin-top: 35px;
-                    list-style-type: none;
+                .search-results {
+                    padding-left: 45px;
 
-                    @include breakpoint(medium down) {
-                        margin-top: 20px;
-                        padding-left: 22px;
+                    .grid-x {
+                        margin: 0;
                     }
 
-                    li {
-                        font-size: 1.4rem;
-                        font-weight: $bold;
+                    .search-results-metadata {
+                        font-size: 1.6rem;
+                        margin-bottom: 25px;
 
-                        @include breakpoint(medium down) {
-                            font-weight: $semi-bold;
-                            text-transform: lowercase;
+                        span {
+                            font-weight: $bold;
+                        }
+                    }
+
+                    .search-result-card {
+                        padding: 22px 0 48px 0;
+                        border-top: 2px solid $black;
+
+                        &:last-child {
+                            border-bottom: 2px solid $black;
                         }
 
-                        &:not(:first-child) {
-                            margin-top: 15px;
+                        .title-link {
+                            margin-top: 10px;
+                            padding-right: 118px;
+                            display: inline-block;
+
+                            &:hover {
+                                color: $dark-blue-2;
+                            }
+                        }
+
+                        .medium-copy {
+                            margin-top: 25px;
+                            padding-right: 235px;
+                        }
+                    }
+
+                    .list {
+                        padding: 0;
+                        margin-top: 30px;
+                        list-style-type: none;
+
+                        @include breakpoint(medium down) {
+                            margin-top: 20px;
+                            padding-left: 22px;
+                        }
+
+                        li {
+                            font-size: 1.4rem;
+                            font-weight: $bold;
+
+                            @include breakpoint(medium down) {
+                                font-weight: $semi-bold;
+                                text-transform: lowercase;
+                            }
+
+                            &:not(:first-child) {
+                                margin-top: 15px;
+                            }
                         }
                     }
                 }

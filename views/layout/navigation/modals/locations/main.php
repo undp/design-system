@@ -39,16 +39,6 @@ use helpers\View;
                             'actionListener' => 'data-location-search'
                     ]);
                     ?>
-                    <!--div class="flex-container search-input-group">
-                        <label class="show-for-sr" for="search-offices">Search Offices</label>
-                        <button type="button" class="flex-container align-middle btn-search"
-                                aria-label="Submit search">
-                            <?php Svg::render('icon-search', true, 'Search Offices') ?>
-                            <span class="show-for-sr">Submit search</span>
-                        </button>
-                        <input type="search" class="big-copy input-search" type="text" name="search-offices" id="search-offices"
-                               placeholder="Search offices" data-input-search>
-                    </div-->
                     <div class="search-select-group show-for-large">
                         <?php
                         View::render('molecules/forms/multi-select', [
