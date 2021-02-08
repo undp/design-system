@@ -24,8 +24,6 @@ class NewsCentreFilter {
         this.matches = 0
         this.loadStep = 6 // Sets the number of cards to show on "load more"
         this.maxCards = 6
-        this.classes.hide = 'hide'
-        this.scrollUp = new ScrollUp(this.$container.get(0))
     }
 
     init() {
@@ -80,10 +78,7 @@ class NewsCentreFilter {
         const $cards = this.$cardsContainer.find('.card-item')
 
         $cards.addClass(this.classes.hide)
-        if (recalculate) {
-            this.calculateCardsToShow()
-            this.scrollUp.unbindEvents()
-        }
+        if (recalculate) this.calculateCardsToShow()
 
         $cards.each((i, card) => {
             const $card = $(card)
@@ -166,7 +161,6 @@ class NewsCentreFilter {
     loadMore() {
         this.maxCards += this.loadStep
         this.matchResults()
-        if (!this.scrollUp.initialized) this.scrollUp.bindEvents()
     }
 }
 

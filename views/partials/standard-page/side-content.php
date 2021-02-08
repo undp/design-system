@@ -1,4 +1,7 @@
-<?php use helpers\View; ?>
+<?php
+use helpers\Svg;
+use helpers\View;
+?>
 
 <div class="side-content cell small-12 large-9">
 
@@ -39,7 +42,7 @@
         </div>
     </div>
 
-    <div class="explore-more grid-container scroll-track left-right delay-2" data-view-more>
+    <div class="explore-more grid-container scroll-track left-right delay-2" data-view-more data-scroll-up>
         <div class="grid-x">
             <div class="cell">
                 <h2 class="heading h2">Explore More</h2>
@@ -50,6 +53,10 @@
                     <button class="btn blue view-more" data-view-more-btn>
                         View More
                     </button>
+                </div>
+
+                <div class="scroll-up" data-scroll-btn>
+                    <?php Svg::render('angle-right') ?>
                 </div>
             </div>
         </div>

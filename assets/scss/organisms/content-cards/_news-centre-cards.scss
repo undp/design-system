@@ -29,12 +29,17 @@
         }
     }
 
+    .cta-button {
+        @include breakpoint(small only) {
+            margin-right: 60px;
+        }
+    }
+
     .btn {
         margin-top: 55px;
 
         @include breakpoint(small only) {
             width: 100%;
-            justify-content: center;
         }
     }
 
@@ -88,11 +93,5 @@
                 position: absolute;
             }
         }
-    }
-
-    .visibility-hidden {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
     }
 }

@@ -106,3 +106,9 @@ ul {
 .bg-dark {
     background-color: $dark-blue-1;
 }
+
+.visibility-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
