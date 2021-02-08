@@ -118,8 +118,12 @@
                 .icon-item {
                     width: 22px;
 
-                    .fill {
-                        color: $black;
+                    svg {
+                        fill: $black;
+
+                        &:hover {
+                            fill: $dark-blue-17;
+                        }
                     }
                 }
             }
