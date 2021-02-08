@@ -1,5 +1,6 @@
 <?php
 
+use helpers\Svg;
 use helpers\View;
 
 ?>
@@ -68,7 +69,7 @@ use helpers\View;
                 ]); ?>
 
 
-                <div class="related-publications" data-load-step="8" data-view-more-less>
+                <div class="related-publications" data-load-step="8" data-view-more-less data-scroll-up>
                     <div class="heading h2 related-title">Related Publications</div>
 
                     <div class="grid-x grid-margin-x related-items-content cards-container">
@@ -79,9 +80,10 @@ use helpers\View;
                         <button class="btn blue view-more" data-view-more>
                             View More
                         </button>
-                        <button class="btn blue view-less" data-view-less>
-                            View Less
-                        </button>
+                    </div>
+
+                    <div class="scroll-up show-for-large" data-scroll-btn>
+                        <?php Svg::render('angle-right') ?>
                     </div>
                 </div>
             </div>
