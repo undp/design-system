@@ -19,7 +19,9 @@
         .side-content {
             .content-wrapper {
                 @include breakpoint(large up) {
+                    overflow: hidden;
                     padding-right: 14%;
+                    margin-right: -24px;
                 }
 
                 .h2 {
