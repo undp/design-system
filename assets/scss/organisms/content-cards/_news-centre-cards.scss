@@ -8,6 +8,7 @@
 
     .cards-container {
         min-height: 400px;
+        position: relative;
 
         @include breakpoint(medium up) {
             padding-left: 25px;
@@ -87,5 +88,11 @@
                 position: absolute;
             }
         }
+    }
+
+    .visibility-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
     }
 }

@@ -10,14 +10,21 @@ class ScrollUp {
         this.classes = {
             visible: 'visible'
         }
+        this.initialized = false
+
+        console.log('ScrollUp@constructor')
+        console.log('ScrollUp@this.$container::', this.$container)
+        console.log('ScrollUp@this.$scrollBtn::', this.$scrollBtn)
     }
 
     init() {
-        console.log('init')
         this.bindEvents()
     }
 
     bindEvents() {
+        console.log('ScrollUp@bindEvents')
+        this.initialized = true
+
         this.$scrollBtn.click(() => this.scrollTop())
         this.$window
             .resize(() => this.handleStickyToggle())
@@ -25,27 +32,26 @@ class ScrollUp {
     }
 
     unbindEvents() {
+        this.initialized = false
+        console.log('ScrollUp@unbindEvents')
+
         this.$scrollBtn.off('click')
         this.$window.off('resize, scroll')
-        this.unstick()
+        this.hide()
     }
 
     handleStickyToggle() {
         const topThresh = this.$window.scrollTop() + this.$navigation.height()
         const shouldStick = topThresh > this.$container.offset().top
 
-        console.log('handleStickyToggle.topThresh::', topThresh)
-        console.log('handleStickyToggle.this.$container.offset().top::', this.$container.offset().top)
-        console.log('handleStickyToggle.shouldStick::', shouldStick)
-
-        shouldStick ? this.stick() : this.unstick()
+        shouldStick ? this.show() : this.hide()
     }
 
-    stick() {
+    show() {
         this.$scrollBtn.addClass(this.classes.visible)
     }
 
-    unstick() {
+    hide() {
         this.$scrollBtn.removeClass(this.classes.visible)
     }
 
