@@ -38,7 +38,7 @@
 
     &:hover {
         .checkmark {
-            border-color: $red-2;
+            border-color: $red-5;
         }
     }
 
@@ -48,15 +48,18 @@
         width: 16px;
         height: 16px;
         position: absolute;
-        border: 2px solid $red-5;
+        border: 2px solid $red-2;
         transform: translateY(-50%);
 
         &:after {
             content: "";
+            top: -2px;
+            left: -2px;
             width: 16px;
             height: 16px;
             display: none;
             position: absolute;
+            border: 2px solid $red-5;
             background: url('#{$image-path}/icon-check.svg');
             background-repeat: no-repeat;
         }
