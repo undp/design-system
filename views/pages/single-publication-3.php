@@ -52,7 +52,7 @@ use helpers\View;
                 ]); ?>
 
 
-                <div class="related-publications" data-load-step="8" data-view-more-less>
+                <div class="related-publications" data-load-step="8" data-view-more>
                     <div class="heading h2 related-title">Related Publications</div>
 
                     <div class="grid-x grid-margin-x related-items-content cards-container">
@@ -60,11 +60,8 @@ use helpers\View;
                     </div>
 
                     <div class="cta-button flex-container">
-                        <button class="btn blue view-more" data-view-more>
+                        <button class="btn blue view-more" data-view-more-btn>
                             View More
-                        </button>
-                        <button class="btn blue view-less" data-view-less>
-                            View Less
                         </button>
                     </div>
                 </div>

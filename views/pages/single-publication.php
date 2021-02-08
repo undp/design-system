@@ -69,7 +69,7 @@ use helpers\View;
                 ]); ?>
 
 
-                <div class="related-publications" data-load-step="8" data-view-more-less data-scroll-up>
+                <div class="related-publications" data-load-step="8" data-view-more data-scroll-up>
                     <div class="heading h2 related-title">Related Publications</div>
 
                     <div class="grid-x grid-margin-x related-items-content cards-container">
@@ -77,12 +77,12 @@ use helpers\View;
                     </div>
 
                     <div class="cta-button flex-container">
-                        <button class="btn blue view-more" data-view-more>
+                        <button class="btn blue view-more" data-view-more-btn>
                             View More
                         </button>
                     </div>
 
-                    <div class="scroll-up show-for-large" data-scroll-btn>
+                    <div class="scroll-up" data-scroll-btn>
                         <?php Svg::render('angle-right') ?>
                     </div>
                 </div>

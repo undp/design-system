@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <div class="explore-more grid-container scroll-track left-right delay-2" data-view-more-less>
+    <div class="explore-more grid-container scroll-track left-right delay-2" data-view-more>
         <div class="grid-x">
             <div class="cell">
                 <h2 class="heading h2">Explore More</h2>
@@ -47,11 +47,8 @@
                 <?php View::render('partials/standard-page/explore-more-cards') ?>
 
                 <div class="cta-button flex-container">
-                    <button class="btn blue view-more" data-view-more>
+                    <button class="btn blue view-more" data-view-more-btn>
                         View More
-                    </button>
-                    <button class="btn blue view-less" data-view-less>
-                        View Less
                     </button>
                 </div>
             </div>

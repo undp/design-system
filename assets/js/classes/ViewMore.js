@@ -1,11 +1,10 @@
 
 
-class ViewMoreLess {
+class ViewMore {
     constructor(container, loadStep = 6) {
         this.$container = $(container)
         this.$navigation = $('[data-navigation]')
-        this.$viewMore = this.$container.find('[data-view-more]')
-        this.$viewLess = this.$container.find('[data-view-less]')
+        this.$viewMore = this.$container.find('[data-view-more-btn]')
         this.$cardsContainer = this.$container.find('.cards-container')
         this.$cards = this.$cardsContainer.find('.card-item')
 
@@ -21,7 +20,6 @@ class ViewMoreLess {
     }
 
     bindEvents() {
-        this.$viewLess.on('click', () => this.viewLess())
         this.$viewMore.on('click', () => this.viewMore())
     }
 
@@ -31,12 +29,11 @@ class ViewMoreLess {
         this.update()
     }
 
-    update(scrollTop = false) {
+    update() {
         let matches = 0
         let showing = []
 
         this.$cards.addClass(this.hideClass)
-        this.$viewLess.removeClass(this.hideClass)
         this.$viewMore.removeClass(this.hideClass)
 
         this.$cards.each((i, card) => {
@@ -47,20 +44,12 @@ class ViewMoreLess {
         })
 
         $(showing).removeClass(this.hideClass)
-        if (matches <= this.loadStep) this.$viewLess.addClass(this.hideClass)
         if (matches === this.totalCards) this.$viewMore.addClass(this.hideClass)
-
-        if (scrollTop) this.scrollTop()
     }
 
     viewMore() {
         this.maxCards += this.loadStep
         this.update()
-    }
-
-    viewLess() {
-        this.maxCards = this.loadStep
-        this.update(true)
     }
 
     scrollTop() {
@@ -71,4 +60,4 @@ class ViewMoreLess {
 }
 
 
-export default ViewMoreLess
+export default ViewMore

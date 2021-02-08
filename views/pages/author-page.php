@@ -48,17 +48,14 @@ $imgPath = '/assets/images/placeholder/author-page'
         ]);
     ?>
 
-    <section class="explore-more grid-container scroll-track left-right delay-1" data-load-step="8" data-view-more-less>
+    <section class="explore-more grid-container scroll-track left-right delay-1" data-load-step="8" data-view-more>
         <div class="grid-x">
             <div class="cell small-12">
                 <?php View::render('partials/author-page/author-cards') ?>
 
                 <div class="cta-button flex-container">
-                    <button class="btn blue view-more" data-view-more>
+                    <button class="btn blue view-more" data-view-more-btn>
                         View More
-                    </button>
-                    <button class="btn blue view-less" data-view-less>
-                        View Less
                     </button>
                 </div>
             </div>
