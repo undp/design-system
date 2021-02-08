@@ -19,6 +19,10 @@
         .card-item {
             min-height: 400px;
             margin-bottom: 20px;
+
+            @include breakpoint(small only) {
+                min-height: auto;
+            }
         }
     }
 
@@ -51,6 +55,10 @@
         .hover-slide {
             @include breakpoint(medium down) {
                 flex: 0;
+            }
+
+            @include breakpoint(small only) {
+                max-height: 405px;
             }
 
             .publication-image {
