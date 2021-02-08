@@ -23,7 +23,8 @@ import docs from './components/docs'
 import navigationProgress from './components/navigation-progress'
 import sideNavigation from './components/side-navigation'
 import genericSlider from './components/generic-slider'
-import viewMoreLess from './components/view-more-less'
+import viewMore from './components/view-more'
+import scrollUp from './components/scroll-up'
 
 import modal from './components/modal'
 import modalNav from './components/modal-nav'
@@ -75,8 +76,9 @@ function main() {
     navigationProgress()
     sideNavigation()
     genericSlider()
-    viewMoreLess()
+    viewMore()
     modalPublicationDownload()
+    scrollUp()
 }
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -46,8 +46,14 @@
             margin-top: 33px;
         }
 
-        .view-less {
-            margin-left: 20px;
+        @include breakpoint(small only) {
+            margin-right: 60px;
+        }
+
+        .btn {
+            @include breakpoint(small only) {
+                width: 100%;
+            }
         }
     }
 
