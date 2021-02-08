@@ -22,6 +22,54 @@ $menuItems = [
             [
                 'name' => 'International frameworks and discussions',
                 'link' => '#'
+            ],
+            [
+                'name' => 'Adapting to changes in climate and extreme weather events',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Mitigation through reducing emissions and increasing carbon storage',
+                'link' => '#'
+            ],
+            [
+                'name' => 'International frameworks and discussions',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Adapting to changes in climate and extreme weather events',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Mitigation through reducing emissions and increasing carbon storage',
+                'link' => '#'
+            ],
+            [
+                'name' => 'International frameworks and discussions',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Adapting to changes in climate and extreme weather events',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Mitigation through reducing emissions and increasing carbon storage',
+                'link' => '#'
+            ],
+            [
+                'name' => 'International frameworks and discussions',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Adapting to changes in climate and extreme weather events',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Mitigation through reducing emissions and increasing carbon storage',
+                'link' => '#'
+            ],
+            [
+                'name' => 'International frameworks and discussions',
+                'link' => '#'
             ]
         ]
     ],
