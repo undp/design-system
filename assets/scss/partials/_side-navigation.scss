@@ -183,9 +183,11 @@
         }
 
         > a {
+            width: 100%;
             padding: 13px 36px 13px 47px;
 
             @include breakpoint(medium down) {
+                width: auto;
                 padding: 5px 28px;
             }
 
