@@ -57,10 +57,6 @@
                 flex: 0;
             }
 
-            @include breakpoint(small only) {
-                max-height: 405px;
-            }
-
             .publication-image {
                 &:before {
                     @include breakpoint(medium down) {
