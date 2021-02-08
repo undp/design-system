@@ -20,7 +20,7 @@ class SdgCards {
     append() {
         $.ajax({
             type: 'GET',
-            url: `/assets/js/render-data/json/sdgs/sdg-in-action.json`,
+            url: `/assets/js/render-data/json-files/sdgs/sdg-in-action.json`,
             dataType: 'json',
             success: ((response) => {
                 response.forEach(item => {

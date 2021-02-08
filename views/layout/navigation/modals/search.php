@@ -1,34 +1,57 @@
 <?php
-
-use helpers\Svg;
 use helpers\View;
-
 ?>
 
 <section id="modal-popular-search" class="menu-modal modal-popular-search hide">
     <div class="modal-content">
         <div class="modal-body grid-container">
-            <div class="grid-x grid-margin-x search-bar">
+            <div class="grid-x grid-margin-x">
                 <div class="cell">
-                    <div class="flex-container align-middle input-group">
-                        <div class="icon">
-                            <?php Svg::render('icon-search-black', true, 'Search Icon Input') ?>
-                        </div>
-                        <label class="show-for-sr" for="search">Search</label>
-                        <input class="input-search title" type="search" name="search" id="search">
-                    </div>
+                    <?php
+                    View::render('molecules/forms/search-input', [
+                        'id' => 'search',
+                        'label' => 'Search',
+                        'additionalClass' => 'big-search'
+                    ]);
+                    ?>
                 </div>
             </div>
             <div class="grid-x grid-margin-x results-and-filters-container">
                 <div class="cell large-4 search-filters">
                     <?php
-                    View::render('partials/multi-select', [
+                    View::render('molecules/forms/multi-select', [
+                        'id' => 'language-select',
+                        'ariaLabel' => 'Language',
+                        'title' => 'Language',
+                        'dataType' => 'language',
+                        'actionListener' => 'data-language-filter'
+                    ]);
+                    ?>
+                    <?php
+                    View::render('molecules/forms/multi-select', [
                         'id' => 'content-type-select',
-                        'class' => 'content-type-select white',
-                        'ariaLabel' => 'Content Types',
-                        'title' => 'Content Types',
+                        'ariaLabel' => 'Content Type',
+                        'title' => 'Content Type',
                         'dataType' => 'content-type',
-                        'dataIdentifier' => 'data-content-type-filter'
+                        'actionListener' => 'data-content-type-filter'
+                    ]);
+                    ?>
+                    <?php
+                    View::render('molecules/forms/multi-select', [
+                        'id' => 'region-select',
+                        'ariaLabel' => 'Region',
+                        'title' => 'Region',
+                        'dataType' => 'region',
+                        'actionListener' => 'data-region-filter'
+                    ]);
+                    ?>
+                    <?php
+                    View::render('molecules/forms/multi-select', [
+                        'id' => 'topic-select',
+                        'ariaLabel' => 'Topic',
+                        'title' => 'Topic',
+                        'dataType' => 'topic',
+                        'actionListener' => 'data-topic-filter'
                     ]);
                     ?>
 

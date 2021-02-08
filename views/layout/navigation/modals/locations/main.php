@@ -31,37 +31,45 @@ use helpers\View;
             </div>
             <div class="cell large-auto cell-list-offices">
                 <div class="flex-container inputs">
-                    <div class="flex-container search-input-group">
+                    <?php
+                    View::render('molecules/forms/search-input', [
+                            'id' => 'search-offices',
+                            'label' => 'Search offices',
+                            'useLabelAsPlaceholder' => true,
+                            'actionListener' => 'data-location-search'
+                    ]);
+                    ?>
+                    <!--div class="flex-container search-input-group">
                         <label class="show-for-sr" for="search-offices">Search Offices</label>
                         <button type="button" class="flex-container align-middle btn-search"
                                 aria-label="Submit search">
-                            <?php Svg::render('icon-search-modal-locations', true, 'Search Offices') ?>
+                            <?php Svg::render('icon-search', true, 'Search Offices') ?>
                             <span class="show-for-sr">Submit search</span>
                         </button>
                         <input type="search" class="big-copy input-search" type="text" name="search-offices" id="search-offices"
                                placeholder="Search offices" data-input-search>
-                    </div>
+                    </div-->
                     <div class="search-select-group show-for-large">
                         <?php
-                        View::render('partials/multi-select', [
+                        View::render('molecules/forms/multi-select', [
                             'id' => 'regions-select',
                             'class' => 'regions-select',
                             'ariaLabel' => 'Regions',
                             'title' => 'Region',
                             'dataType' => 'region',
-                            'dataIdentifier' => 'data-location-filters'
+                            'actionListener' => 'data-location-filters'
                         ])
                         ?>
                     </div>
                     <div class="search-select-group show-for-large">
                         <?php
-                        View::render('partials/multi-select', [
+                        View::render('molecules/forms/multi-select', [
                             'id' => 'office-type-select',
                             'class' => 'office-type-select',
                             'ariaLabel' => 'Offices',
                             'title' => 'Office type',
                             'dataType' => 'office',
-                            'dataIdentifier' => 'data-location-filters'
+                            'actionListener' => 'data-location-filters'
                         ])
                         ?>
                     </div>

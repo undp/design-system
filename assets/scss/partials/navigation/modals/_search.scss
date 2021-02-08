@@ -37,45 +37,6 @@
             width: 100%;
             max-width: 1200px;
 
-            .input-group {
-
-                .icon {
-                    width: 35px;
-                    position: absolute;
-
-                    @include breakpoint(medium down) {
-                        margin-right: 0;
-
-                        svg {
-                            width: 22px;
-                        }
-                    }
-                }
-
-                @include breakpoint(medium down) {
-                    border-bottom: 1px solid $dark-blue-1;
-                }
-
-                .input-search {
-                    width: 100%;
-                    border: none;
-                    box-shadow: none;
-                    padding: 0 45px 0 30px;
-                    background-color: transparent;
-                    border-bottom: 1px solid $dark-blue-1;
-
-                    @include breakpoint(medium down) {
-                        border: none;
-                        padding: 10px 20px 10px 20px;
-                    }
-
-                    &:active,
-                    &:focus {
-                        outline: none;
-                    }
-                }
-            }
-
             .list-popular-search {
                 @include breakpoint(medium down) {
                     margin-bottom: 55px;
@@ -101,6 +62,14 @@
 
             .results-and-filters-container {
                 margin-top: 50px;
+
+                .search-filters {
+                    padding-right: 30px;
+
+                    .multi-select {
+                        margin-top: 16px;
+                    }
+                }
 
                 .list {
                     padding: 0;

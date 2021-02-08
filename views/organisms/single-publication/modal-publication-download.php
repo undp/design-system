@@ -18,7 +18,7 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
             <div class="download-controls">
                 <?php if (count($languageOptions) > 0) : ?>
                     <?php
-                        View::render('partials/select', [
+                        View::render('molecules/forms/select', [
                             'id' => 'language-select',
                             'options' => $languageOptions,
                             'name' => 'publication-languages',

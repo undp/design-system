@@ -1,7 +1,6 @@
 class MultiSelect {
     constructor(element) {
         this.classOpen = 'open';
-        this.dataSelectControl = '[data-select-control]';
 
         this.$window = $(window);
         this.$currentSelect = $(element);
@@ -13,7 +12,7 @@ class MultiSelect {
     }
 
     addListener() {
-        this.$currentSelect.find(this.dataSelectControl).click((event) => {
+        this.$currentSelect.find('.select-control').click(() => {
             this.toggleSelect();
         });
     }

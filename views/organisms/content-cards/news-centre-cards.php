@@ -8,13 +8,13 @@
         <div class="grid-x">
             <div class="cell medium-4 large-3 flex-container flex-dir-column">
                 <?php
-                    View::render('partials/multi-select', [
+                    View::render('molecules/forms/multi-select', [
                         'id' => 'content-type-select',
-                        'class' => 'content-type-select white',
+                        'class' => 'white',
                         'ariaLabel' => 'Content Types',
                         'title' => 'Content Types',
                         'dataType' => 'content-type',
-                        'dataIdentifier' => 'data-content-type-filter'
+                        'actionListener' => 'data-content-type-filter'
                     ]);
                 ?>
                 <div class="flex-container active-filters" data-active-filters></div>

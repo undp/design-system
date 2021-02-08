@@ -4,7 +4,7 @@ class LocationFilters {
     constructor() {
         this.classHide = 'hide';
         this.$multiSelectFilters = $('[data-location-filters]');
-        this.$searchInput = $('[data-input-search]');
+        this.$searchInput = $('[data-location-search]');
         this.$countryList = $('[data-city-filters]');
         this.$containerFilter = $('[data-container-filters]');
         this.filters = {
@@ -55,7 +55,7 @@ class LocationFilters {
 
                 const inputs = $currentMultiSelect.find("input:checked");
                 const total = inputs.length;
-                const counter = $currentMultiSelect.find('[data-select-control] span');
+                const counter = $currentMultiSelect.find('.select-control span');
 
                 counter.text('(' + total + ')');
 
@@ -96,7 +96,7 @@ class LocationFilters {
             input.prop('checked', false);
 
             const updateSelectCounter = () => {
-                const counter = input.closest('[data-options]').siblings('[data-select-control]').find('span');
+                const counter = input.closest('.options').siblings('.select-control').find('span');
                 const total = counter.text().match(/\d/g);
                 counter.text(total && total > 1 ? `(${total.join("") - 1})` : '');
             };
@@ -118,7 +118,7 @@ class LocationFilters {
             this.$multiSelectFilters.find("input:checked").prop('checked', false);
 
             this.$multiSelectFilters.each((i, select) => {
-                const counter = $(select).find('[data-select-control]' + ' span');
+                const counter = $(select).find('.select-control span');
                 counter.text('');
             });
             this.filters.region = [];

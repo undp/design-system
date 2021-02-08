@@ -1,12 +1,10 @@
-
-
 const init = function () {
 
     let $parentContainer = $(`#content-type-select .options`);
 
     $.ajax({
         type: 'GET',
-        url: `/assets/js/render-data/json/news-centre/content-types.json`,
+        url: `/assets/js/render-data/json-files/global/content-types.json`,
         dataType: 'json',
         success: function(response){
             response.forEach((item) => {
