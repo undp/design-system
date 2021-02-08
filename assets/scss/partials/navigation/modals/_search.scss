@@ -20,9 +20,10 @@
 
     .modal-content {
         padding: 0;
+        display: flex;
         min-height: 100%;
         position: relative;
-        box-shadow: 0 3px 6px rgba($black, 0.16);
+        align-items: center;
 
         .close-button {
             top: 52px;
@@ -33,16 +34,14 @@
         }
 
         .modal-body {
-            padding: 120px 170px 120px 120px;
-
-            @include breakpoint(medium down) {
-                padding: 70px 45px;
-            }
+            width: 100%;
+            max-width: 1200px;
 
             .input-group {
 
                 .icon {
-                    margin-right: 20px;
+                    width: 35px;
+                    position: absolute;
 
                     @include breakpoint(medium down) {
                         margin-right: 0;
@@ -78,10 +77,7 @@
             }
 
             .list-popular-search {
-                padding-left: 70px;
-
                 @include breakpoint(medium down) {
-                    padding-left: 0;
                     margin-bottom: 55px;
                 }
             }
@@ -101,15 +97,10 @@
                     font-weight: $regular;
                     font-size: 1.4rem;
                 }
-
             }
 
-            .lists {
-                margin-top: 115px;
-
-                @include breakpoint(medium down) {
-                    margin-top: 40px;
-                }
+            .results-and-filters-container {
+                margin-top: 50px;
 
                 .list {
                     padding: 0;
