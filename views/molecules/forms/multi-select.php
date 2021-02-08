@@ -8,7 +8,8 @@ $options = $options ?? [];
     </button>
     <div class="options" data-type="<?= $dataType ?>">
         <?php
-        // Options can either be added with an array here or via JS (see: render-data folder)
+        // Options can either be added with an array here or via JS
+        // (see: render-data/global/multi-selects file)
         foreach($options as $option):
         ?>
         <label class="checkbox-item">

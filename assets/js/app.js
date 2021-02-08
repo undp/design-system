@@ -36,7 +36,6 @@ import modalPublicationDownload from './components/modal-publication-download'
 // JS to render nav/search DOM elements from JSON data files
 import menusNav from './render-data/menu/all';
 import multiSelectData from './render-data/global/multi-selects'
-import contentTypeData  from './render-data/global/content-types'
 import countriesData  from './render-data/modals/locations/countries'
 import mobileFilterData from './render-data/modals/locations/mobile-filters'
 
@@ -53,7 +52,6 @@ function main() {
     lazyLoad()
     footerMenu()
     navigation()
-    contentTypeData()
     locationFilters()
     newsCentreFilter()
     multiSelect()
