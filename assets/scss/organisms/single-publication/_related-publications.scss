@@ -68,6 +68,12 @@
                     @include breakpoint(medium down) {
                         bottom: 7%;
                     }
+
+                    @include breakpoint(small only) {
+                        left: 8%;
+                        bottom: 5%;
+                        right: 90px;
+                    }
                 }
 
                 .image img {
