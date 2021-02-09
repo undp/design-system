@@ -38,6 +38,9 @@
             .hover-slide {
                 @include breakpoint(medium down) {
                     display: block;
+                }
+
+                @include breakpoint(small only) {
                     max-height: 385px;
                 }
             }
@@ -62,7 +65,11 @@
                     justify-content: center;
 
                     img {
-                        height: 100%;
+                        height: auto;
+
+                        @include breakpoint(small only) {
+                            height: 100%;
+                        }
                     }
                 }
 
@@ -72,6 +79,10 @@
 
                     .image {
                         display: block;
+
+                        @include breakpoint(small only) {
+                            display: flex;
+                        }
                     }
                 }
             }
