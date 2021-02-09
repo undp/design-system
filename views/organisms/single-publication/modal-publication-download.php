@@ -42,13 +42,6 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
             </div>
         </div>
         <div class="bottom-container">
-            <div class="social-icons">
-                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-facebook') ?></a>
-                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-twitter') ?></a>
-                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-instagram') ?></a>
-                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-linkedin') ?></a>
-                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-youtube') ?></a>
-            </div>
             <button class="btn" data-download-chapters disabled>Download</button>
         </div>
     </div>
