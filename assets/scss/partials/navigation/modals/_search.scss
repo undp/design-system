@@ -120,6 +120,12 @@
 
                     .grid-x {
                         margin: 0;
+
+                        @include breakpoint(small only) {
+                            .cell {
+                                margin: 0;
+                            }
+                        }
                     }
 
                     .search-results-metadata {

@@ -1,26 +1,37 @@
 class GlobalSearch {
     constructor() {
-        this.$parentContainer = $('[data-modal-search]');
+        this.$parentContainer = $('[data-modal-search]')
+        this.$searchInput = this.$parentContainer.find('search-input input[type=search]')
     }
 
     init() {
-        this.bindEvents();
-        //this.populateQuickLinks()
+        this.bindEvents()
+        this.populateQuickLinks()
     }
 
     bindEvents() {
+        this.$searchInput.on('change', () => {
+            this.performSearch()
+        })
+    }
 
+    performSearch() {
+        let searchValue = this.$searchInput.val();
+
+        if(searchValue.length < 3) {
+            return false
+        }
     }
 
     populateQuickLinks() {
         $.ajax({
             type: 'GET',
-            url: '/assets/js/render-data/json-files/modals/search/search.json',
+            url: '/assets/js/render-data/json-files/modals/search/quick-links.json',
             dataType: 'json',
             success: (response) => {
                 response.forEach((item) => {
                     this.$parentContainer.append(` 
-                    <div class="cell large-6">
+                    <div class="cell medium-6">
                         <div class="list-popular-search">
                             <h2 class="title">${ item.name }</h2>
                             <ul class="list uppercase">
