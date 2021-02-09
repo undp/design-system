@@ -3,7 +3,6 @@
     margin: $nav-desktop-height auto 0;
 
     @include breakpoint(medium down) {
-        overflow: hidden;
         padding: 26px 0 67px;
         margin-top: $nav-mobile-height;
     }
@@ -115,6 +114,14 @@
 
             @include breakpoint(1955px up) {
                 margin-right: 0;
+            }
+
+            @include breakpoint(medium down) {
+                margin-right: -48px;
+            }
+
+            @include breakpoint(small only) {
+                margin-right: -30px;
             }
         }
     }
