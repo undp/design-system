@@ -73,6 +73,9 @@
                 .image img {
                     @include breakpoint(medium down) {
                         min-height: 0;
+                    }
+
+                    @include breakpoint(small only) {
                         max-height: 400px;
                     }
                 }
