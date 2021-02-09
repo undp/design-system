@@ -257,14 +257,13 @@ $nav-desktop-height: 115px;
 
                 &:last-child {
                     margin: 0 0 0 10px;
+                    transition: all 200ms ease-in-out;
                 }
             }
 
             &.active {
-                svg {
-                    &:last-child {
-                        transform: rotate(-180deg);
-                    }
+                svg:last-child {
+                    transform: rotate(-180deg);
                 }
             }
         }
