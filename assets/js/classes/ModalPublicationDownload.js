@@ -37,7 +37,7 @@ class ModalPublicationDownload {
     open() {
         this.$body.addClass(this.classes.lockBody)
         this.$html.addClass(this.classes.lockBody)
-        this.$modal.removeClass(this.classes.hide).addClass(this.classes.modalOpen)
+        this.$modal.addClass(this.classes.modalOpen)
         this.$modalBtnClose.focus()
     }
 
@@ -48,7 +48,7 @@ class ModalPublicationDownload {
 
         this.$html.removeClass(this.classes.lockBody)
         this.$body.removeClass(this.classes.lockBody)
-        this.$modal.addClass(this.classes.hide).removeClass(this.classes.modalOpen)
+        this.$modal.removeClass(this.classes.modalOpen)
     }
 
     updateChaptersList() {
