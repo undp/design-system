@@ -263,7 +263,7 @@ $nav-desktop-height: 115px;
             &.active {
                 svg {
                     &:last-child {
-                        transform: rotate(180deg);
+                        transform: rotate(-180deg);
                     }
                 }
             }
