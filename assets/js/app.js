@@ -26,6 +26,7 @@ import genericSlider from './components/generic-slider'
 import viewMore from './components/view-more'
 import scrollUp from './components/scroll-up'
 import imageSizes from './components/image-sizes'
+import ieSticky from './components/ie-sticky'
 
 import modal from './components/modal'
 import modalNav from './components/modal-nav'
@@ -81,6 +82,7 @@ function main() {
     viewMore()
     modalPublicationDownload()
     scrollUp()
+    ieSticky()
 }
 
 document.addEventListener("DOMContentLoaded", function () {
