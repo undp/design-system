@@ -3,32 +3,38 @@
     margin: $nav-desktop-height auto 0;
 
     @include breakpoint(medium down) {
-        overflow: hidden;
         padding: 26px 0 67px;
         margin-top: $nav-mobile-height;
     }
 
     .side-nav-content {
         margin-top: 42px;
-    }
 
-    .side-content {
-        .content-wrapper {
-            @include breakpoint(large up) {
-                padding-right: 14%;
-            }
+        .side-navigation {
+            display: flex;
+            align-items: flex-end;
+        }
 
-            .h2 {
-                margin-bottom: 28px;
-                text-transform: capitalize;
-            }
+        .side-content {
+            .content-wrapper {
+                @include breakpoint(large up) {
+                    overflow: hidden;
+                    padding-right: 14%;
+                    margin-right: -24px;
+                }
 
-            .big-copy {
-                margin-top: 20px;
-            }
+                .h2 {
+                    margin-bottom: 28px;
+                    text-transform: capitalize;
+                }
 
-            a {
-                @extend .animated-underline;
+                .big-copy {
+                    margin-top: 20px;
+                }
+
+                a {
+                    @extend .animated-underline;
+                }
             }
         }
     }
@@ -108,6 +114,14 @@
 
             @include breakpoint(1955px up) {
                 margin-right: 0;
+            }
+
+            @include breakpoint(medium down) {
+                margin-right: -48px;
+            }
+
+            @include breakpoint(small only) {
+                margin-right: -30px;
             }
         }
     }

@@ -140,6 +140,7 @@
             right: 25px;
             height: 9px;
             position: absolute;
+            transition: all 200ms ease-in-out;
             background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
             background-size: contain;
         }

@@ -19,7 +19,6 @@ body {
         width: 100%;
         height: auto;//Needed for Safari
         position: static;
-        overflow-y: hidden;
     }
 }
 
@@ -105,4 +104,10 @@ ul {
 
 .bg-dark {
     background-color: $dark-blue-1;
+}
+
+.visibility-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }

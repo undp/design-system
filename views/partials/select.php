@@ -4,7 +4,7 @@ $options = isset($options) ? $options : []
 
 <div class="select-box <?= $additionalClasses ?? '' ?>" data-select>
     <button aria-haspopup="listbox"
-            aria-labelledby="exp_button"
+            aria-label="<?= $placeholder ?>"
             id="exp_button" class="selected" data-select-open>
         <?= $placeholder ?>
     </button>

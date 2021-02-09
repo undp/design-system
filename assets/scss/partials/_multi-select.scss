@@ -9,7 +9,7 @@
 
             &:after {
                 top: 42%;
-                transform: rotate(180deg);
+                transform: rotate(-180deg);
             }
         }
 
@@ -74,6 +74,7 @@
             height: 12px;
             position: absolute;
             transform: translateY(-50%);
+            transition: all 200ms ease-in-out;
             background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
             background-size: contain;
         }
@@ -114,11 +115,6 @@
 
             &:not(:first-child) {
                 border-top: 1px solid rgba($black, 0.10);
-            }
-
-            input {
-                width: auto;
-                height: auto;
             }
 
             &:hover {

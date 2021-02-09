@@ -22,6 +22,54 @@ $menuItems = [
             [
                 'name' => 'International frameworks and discussions',
                 'link' => '#'
+            ],
+            [
+                'name' => 'Adapting to changes in climate and extreme weather events',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Mitigation through reducing emissions and increasing carbon storage',
+                'link' => '#'
+            ],
+            [
+                'name' => 'International frameworks and discussions',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Adapting to changes in climate and extreme weather events',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Mitigation through reducing emissions and increasing carbon storage',
+                'link' => '#'
+            ],
+            [
+                'name' => 'International frameworks and discussions',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Adapting to changes in climate and extreme weather events',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Mitigation through reducing emissions and increasing carbon storage',
+                'link' => '#'
+            ],
+            [
+                'name' => 'International frameworks and discussions',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Adapting to changes in climate and extreme weather events',
+                'link' => '#'
+            ],
+            [
+                'name' => 'Mitigation through reducing emissions and increasing carbon storage',
+                'link' => '#'
+            ],
+            [
+                'name' => 'International frameworks and discussions',
+                'link' => '#'
             ]
         ]
     ],
@@ -50,8 +98,7 @@ $menuItems = [
 
 <div class="standard-page">
 
-    <section class="hero about-hero"
-             style="background: url('../../../assets/images/placeholder/hero/about-image.jpg') center 0 / cover no-repeat;">
+    <section class="hero about-hero" data-desktop-image="/assets/images/placeholder/hero/about-image.jpg" data-mobile-image="/assets/images/placeholder/hero/hero-about-small.jpg">
         <div class="overlay"></div>
         <div class="grid-container scroll-track left-right delay-1 hero-container">
             <div class="grid-x text-container">
@@ -84,7 +131,6 @@ $menuItems = [
             <?php
                 View::render('partials/standard-page/side-navigation', [
                     'menuItems' => $menuItems,
-                    'menuTitle' => 'About us menu',
                     'classes' => 'cell small-12 medium-4 large-3'
                 ]);
 

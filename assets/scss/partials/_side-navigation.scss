@@ -6,7 +6,7 @@
     .side-submenu {
         opacity: 1;
         padding: 17px 0;
-        max-height: 100vh;
+        max-height: none;
         visibility: visible;
 
         @include breakpoint(medium down) {
@@ -21,8 +21,9 @@
     &.menu-expanded {
         .side-menu {
             @include breakpoint(medium down) {
-                height: 100vh;
-                max-height: 100vh;
+                overflow: auto;
+                height: calc(100% - #{$height-nav-medium});
+                max-height: calc(100% - #{$height-nav-medium});
             }
         }
 
@@ -43,8 +44,8 @@
 
     .side-menu {
         padding: 0;
+        bottom: 30px;
         position: sticky;
-        top: calc(#{$height-nav} + 30px);
         border-top: 1px solid rgba($black, 0.1);
 
         @include breakpoint(medium down) {
@@ -65,6 +66,7 @@
         opacity: 0;
         padding: 0;
         max-height: 0;
+        overflow: hidden;
         visibility: hidden;
         transition: all 250ms ease-in-out;
     }
@@ -183,9 +185,11 @@
         }
 
         > a {
+            width: 100%;
             padding: 13px 36px 13px 47px;
 
             @include breakpoint(medium down) {
+                width: auto;
                 padding: 5px 28px;
             }
 

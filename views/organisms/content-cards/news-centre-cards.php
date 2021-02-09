@@ -18,24 +18,18 @@
                     ]);
                 ?>
                 <div class="flex-container active-filters" data-active-filters></div>
-
-                <div class="scroll-up hide show-for-large">
-                    <?php Svg::render('angle-right') ?>
-                </div>
             </div>
 
-            <div class="cell medium-8 large-9 search-results cards-container">
+            <div class="cell medium-8 large-9 search-results cards-container" data-scroll-up>
                 <?php View::render('partials/news-centre/cards-results') ?>
 
                 <div class="cta-button">
-                    <button class="btn blue load-more hide">
+                    <button class="btn blue load-more visibility-hidden">
                         View More
                     </button>
                 </div>
-            </div>
 
-            <div class="cell">
-                <div class="scroll-up hide hide-for-large">
+                <div class="scroll-up" data-scroll-btn>
                     <?php Svg::render('angle-right') ?>
                 </div>
             </div>

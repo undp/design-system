@@ -6,7 +6,7 @@ $chapters = isset($chapters) && is_array($chapters) ? $chapters : [];
 $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $languageOptions : [];
 ?>
 
-<div class="modal-publication-download hide">
+<div class="modal-publication-download">
     <div class="modal-content">
         <button class="btn-close">
             <?php Svg::render('icon-close') ?>
@@ -30,9 +30,9 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
                     <?php foreach ($chapters as $chapter) : ?>
                         <?php $singleChapter = count($chapters) === 1; ?>
                         <li class="chapter-item" data-lang="<?= $chapter['lang'] ?>">
-                            <p class="chapter-title"><?= $chapter['title'] ?></p>
-                            <p class="chapter-metadata"><?= $chapter['metadata'] ?></p>
                             <label class="checkbox-item <?= $singleChapter ? 'hide' : '' ?>">
+                                <span class="chapter-title"><?= $chapter['title'] ?></span>
+                                <span class="chapter-metadata"><?= $chapter['metadata'] ?></span>
                                 <input type="checkbox" value="" <?= $singleChapter ? 'checked' : '' ?>>
                                 <span class="checkmark"></span>
                             </label>
@@ -49,7 +49,7 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
                 <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-linkedin') ?></a>
                 <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-youtube') ?></a>
             </div>
-            <button class="btn" data-download-chapters>Download</button>
+            <button class="btn" data-download-chapters disabled>Download</button>
         </div>
     </div>
 </div>

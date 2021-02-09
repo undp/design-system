@@ -14,6 +14,7 @@ class Menu {
         this.bodyMenuOpenClass = 'menu-open modal-open'
 
         this.$body = $('body')
+        this.$html = $('html')
         this.$window = $(window)
         this.$container = container
         this.$header = $('[data-navigation]');
@@ -121,6 +122,8 @@ class Menu {
         this.$primaryNav.removeClass('open');
         this.$mainMenu.addClass(this.hiddenClass);
         this.$body.removeClass(this.bodyMenuOpenClass)
+        this.$html.removeClass(this.bodyMenuOpenClass)
+
         if (this.currentSubmenu) {
             this.currentSubmenu.addClass(this.hiddenClass);
         }

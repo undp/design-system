@@ -2,14 +2,17 @@
     left: 0;
     right: 0;
     bottom: 0;
+    opacity: 0;
+    z-index: -1;
     display: flex;
     position: fixed;
+    visibility: hidden;
     align-items: center;
     justify-content: center;
-    z-index: $z-index-modal;
     top: $nav-desktop-height;
     backdrop-filter: blur(21px);
     //alternative blur to firefox
+    transition: $transition-primary;
     background-color: rgba($dark-blue-6, 0.98);
 
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
@@ -18,6 +21,12 @@
 
     @include breakpoint(large down){
         top: $nav-mobile-height;
+    }
+
+    &.open {
+        opacity: 1;
+        visibility: visible;
+        z-index: $z-index-modal;
     }
 
     .modal-content {
@@ -168,11 +177,8 @@
                 }
 
                 .chapter-item {
-                    @extend .small-copy;
-
-                    line-height: 1.2;
                     position: relative;
-                    padding: 19px 45px 15px 8px;
+                    padding: 19px 26px 15px 8px;
                     border-top: 1px solid rgba($black, 0.10);
 
                     @include breakpoint(small only){
@@ -189,25 +195,23 @@
                     }
 
                     .checkbox-item {
-                        top: 19px;
-                        right: 26px;
-                        position: absolute;
+                        @extend .small-copy;
+                        line-height: 1.2;
+
+                        .chapter-title, .chapter-metadata {
+                            display: block;
+                        }
+
+                        @include breakpoint(medium){
+                            .checkmark, input[type=checkbox] {
+                                top: 0;
+                                transform: none;
+                            }
+                        }
 
                         @include breakpoint(large down){
                             padding: 0;
                             border: none;
-                        }
-
-                        @include breakpoint(small only){
-                            top: 50%;
-                            right: 8px;
-                            transform: translateY(-50%);
-                        }
-
-                        @include breakpoint(medium){
-                            .checkmark {
-                                transform: none;
-                            }
                         }
                     }
                 }

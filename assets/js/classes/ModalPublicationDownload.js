@@ -12,6 +12,7 @@ class ModalPublicationDownload {
         this.$modalBtnClose = this.$modal.find('.btn-close')
         this.$modalContent = this.$modal.find('.modal-content')
         this.$languageSelect = this.$modal.find('.select-box')
+        this.$downloadBtn = this.$modal.find('[data-download-chapters]')
 
         this.classes = {
             hide: 'hide',
@@ -29,13 +30,14 @@ class ModalPublicationDownload {
         this.setOpenModalListener()
         this.setCloseModalListener()
         this.setWindowClickListener()
+        this.setChapterSelectedListener()
         this.setLanguageChangedListener()
     }
 
     open() {
         this.$body.addClass(this.classes.lockBody)
         this.$html.addClass(this.classes.lockBody)
-        this.$modal.removeClass(this.classes.hide).addClass(this.classes.modalOpen)
+        this.$modal.addClass(this.classes.modalOpen)
         this.$modalBtnClose.focus()
     }
 
@@ -46,7 +48,7 @@ class ModalPublicationDownload {
 
         this.$html.removeClass(this.classes.lockBody)
         this.$body.removeClass(this.classes.lockBody)
-        this.$modal.addClass(this.classes.hide).removeClass(this.classes.modalOpen)
+        this.$modal.removeClass(this.classes.modalOpen)
     }
 
     updateChaptersList() {
@@ -103,6 +105,16 @@ class ModalPublicationDownload {
         this.$languageSelect.change(() => {
             this.currentLang = this.$languageSelect.data('selected-value');
             this.updateChaptersList()
+        })
+    }
+
+    setChapterSelectedListener() {
+        this.$chapters.click(() => {
+            const checked = this.$chapters.find(':checked')
+
+            checked.length
+                ? this.$downloadBtn.removeAttr('disabled')
+                : this.$downloadBtn.attr('disabled', true)
         })
     }
 }

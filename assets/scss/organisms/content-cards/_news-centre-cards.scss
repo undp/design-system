@@ -8,6 +8,7 @@
 
     .cards-container {
         min-height: 400px;
+        position: relative;
 
         @include breakpoint(medium up) {
             padding-left: 25px;
@@ -28,12 +29,17 @@
         }
     }
 
+    .cta-button {
+        @include breakpoint(small only) {
+            margin-right: 60px;
+        }
+    }
+
     .btn {
         margin-top: 55px;
 
         @include breakpoint(small only) {
             width: 100%;
-            justify-content: center;
         }
     }
 

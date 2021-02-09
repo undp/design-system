@@ -1,8 +1,16 @@
-<?php if (isset($links)) { ?>
+<?php if (isset($links)) : ?>
     <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="/" class="link"> Home</a></li>
-        <?php foreach ($links as $link) { ?>
-            <li class="breadcrumb-item"><a href="<?= $link['link'] ?>" class="link"><?= $link['name'] ?></a></li>
-        <?php } ?>
+
+        <?php foreach ($links as $idx => $link) : ?>
+            <li class="breadcrumb-item">
+                <?php if (($idx + 1) < count($links)) : ?>
+                    <a href="<?= $link['link'] ?>" class="link"><?= $link['name'] ?></a>
+                <?php else : ?>
+                    <span class="link"><?= $link['name'] ?></span>
+                <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+
     </ul>
-<?php } ?>
+<?php endif; ?>
