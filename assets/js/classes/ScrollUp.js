@@ -11,10 +11,6 @@ class ScrollUp {
             visible: 'visible'
         }
         this.initialized = false
-
-        console.log('ScrollUp@constructor')
-        console.log('ScrollUp@this.$container::', this.$container)
-        console.log('ScrollUp@this.$scrollBtn::', this.$scrollBtn)
     }
 
     init() {
@@ -22,7 +18,6 @@ class ScrollUp {
     }
 
     bindEvents() {
-        console.log('ScrollUp@bindEvents')
         this.initialized = true
 
         this.$scrollBtn.click(() => this.scrollTop())
@@ -33,7 +28,6 @@ class ScrollUp {
 
     unbindEvents() {
         this.initialized = false
-        console.log('ScrollUp@unbindEvents')
 
         this.$scrollBtn.off('click')
         this.$window.off('resize, scroll')
