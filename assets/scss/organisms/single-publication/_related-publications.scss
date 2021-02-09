@@ -74,6 +74,7 @@
                     @include breakpoint(medium down) {
                         height: auto;
                         min-height: 0;
+                        max-height: 400px;
                     }
                 }
             }
