@@ -38,6 +38,7 @@
             .hover-slide {
                 @include breakpoint(medium down) {
                     display: block;
+                    max-height: 450px;
                 }
             }
         }
