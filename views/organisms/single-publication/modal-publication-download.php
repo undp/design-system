@@ -6,7 +6,7 @@ $chapters = isset($chapters) && is_array($chapters) ? $chapters : [];
 $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $languageOptions : [];
 ?>
 
-<div class="modal-publication-download hide">
+<div class="modal-publication-download">
     <div class="modal-content">
         <button class="btn-close">
             <?php Svg::render('icon-close') ?>

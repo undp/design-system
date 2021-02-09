@@ -2,14 +2,17 @@
     left: 0;
     right: 0;
     bottom: 0;
+    opacity: 0;
+    z-index: -1;
     display: flex;
     position: fixed;
+    visibility: hidden;
     align-items: center;
     justify-content: center;
-    z-index: $z-index-modal;
     top: $nav-desktop-height;
     backdrop-filter: blur(21px);
     //alternative blur to firefox
+    transition: $transition-primary;
     background-color: rgba($dark-blue-6, 0.98);
 
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
@@ -18,6 +21,12 @@
 
     @include breakpoint(large down){
         top: $nav-mobile-height;
+    }
+
+    &.open {
+        opacity: 1;
+        visibility: visible;
+        z-index: $z-index-modal;
     }
 
     .modal-content {
