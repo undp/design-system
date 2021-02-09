@@ -41,6 +41,8 @@
                 }
 
                 @include breakpoint(small only) {
+                    margin: 0 auto;
+                    max-width: 425px;
                     max-height: 385px;
                 }
             }
