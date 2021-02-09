@@ -1,7 +1,8 @@
 class GlobalSearch {
     constructor() {
-        this.$parentContainer = $('[data-modal-search]')
-        this.$searchInput = this.$parentContainer.find('search-input input[type=search]')
+        this.$modal = $('[data-modal-search]')
+        this.$searchResultsContainer = this.$modal.find('[data-search-results]')
+        this.$searchInput = this.$modal.find('.search-input input[type=search]')
     }
 
     init() {
@@ -10,7 +11,8 @@ class GlobalSearch {
     }
 
     bindEvents() {
-        this.$searchInput.on('change', () => {
+        console.log(this.$searchInput)
+        this.$searchInput.on('keyup', () => {
             this.performSearch()
         })
     }
@@ -21,6 +23,10 @@ class GlobalSearch {
         if(searchValue.length < 3) {
             return false
         }
+
+        console.log(searchValue)
+
+        this.$modal.addClass('showing-results')
     }
 
     populateQuickLinks() {
@@ -30,7 +36,7 @@ class GlobalSearch {
             dataType: 'json',
             success: (response) => {
                 response.forEach((item) => {
-                    this.$parentContainer.append(` 
+                    this.$searchResultsContainer.append(` 
                     <div class="cell medium-6">
                         <div class="list-popular-search">
                             <h2 class="title">${ item.name }</h2>
