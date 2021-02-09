@@ -3,7 +3,7 @@
 use helpers\Svg;
 
 ?>
-<section class="hero homepage-hero"  data-desktop-hero="/hero.png" data-mobile-hero="/placeholder/hero/home-hero--mobile@2x.jpg">
+<section class="hero homepage-hero"  data-desktop-image="/assets/images/hero.png" data-mobile-image="/assets/images/placeholder/hero/home-hero--mobile@2x.jpg">
     <div class="hero-content">
         <div class="text-box scroll-track left-right delay-1">
             <div class="title">
