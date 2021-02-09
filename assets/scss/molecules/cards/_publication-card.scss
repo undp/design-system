@@ -1,7 +1,7 @@
 .publication-card {
     @extend .article-card;
 
-    @include breakpoint(medium down){
+    @include breakpoint(medium down) {
         flex-direction: column;
     }
 
@@ -59,8 +59,17 @@
                 height: 100%;
                 padding: 63px 30px;
 
+
                 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
                     text-align: center;
+
+                    .image {
+                        display: block !important; //this override the flex one
+
+                        img {
+                            height: 100% !important;
+                        }
+                    }
                 }
 
                 .image {
@@ -72,18 +81,6 @@
 
                     img {
                         height: auto;
-
-                        @include breakpoint(small only) {
-                            height: 100%;
-                        }
-
-                        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                            height: 100%;
-                        }
-                    }
-
-                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                        display: block;
                     }
                 }
 
