@@ -13,24 +13,26 @@
         }
     }
 
-    &.big-search {
-        .icon {
-            top: 0;
-            width: 35px;
-            margin-left: 0;
-            transform: none;
-        }
+    @include breakpoint(medium) {
+        &.big-search {
+            .icon {
+                top: 0;
+                width: 35px;
+                margin-left: 0;
+                transform: none;
+            }
 
-        .input-search {
-            line-height: 1;
-            font-size: 55px;
-            font-weight: $regular;
-            padding: 10px 20px 12px 75px;
+            .input-search {
+                line-height: 1;
+                font-size: 55px;
+                font-weight: $regular;
+                padding: 10px 20px 12px 75px;
 
-            &::-webkit-search-cancel-button{
-                width: 20px;
-                height: 20px;
-                right: -20px;
+                &::-webkit-search-cancel-button{
+                    width: 20px;
+                    height: 20px;
+                    right: -20px;
+                }
             }
         }
     }

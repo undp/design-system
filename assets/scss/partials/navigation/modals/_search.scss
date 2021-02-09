@@ -14,7 +14,7 @@
     }
 
     @include breakpoint(large down) {
-        top: calc(#{$nav-mobile-height} + 1px);
+        top: $nav-mobile-height;
         height: calc(100vh - #{$nav-mobile-height});
     }
 
@@ -32,6 +32,10 @@
             .modal-body .results-and-filters-container {
                 .search-results {
                     padding-left: 20px;
+
+                    @include breakpoint(small only) {
+                        padding-left: 0;
+                    }
                 }
             }
         }
@@ -49,13 +53,13 @@
             max-width: 1200px;
 
             .list-popular-search {
-                @include breakpoint(medium down) {
+                @include breakpoint(small only) {
                     margin-bottom: 55px;
                 }
             }
 
             .list-quick-links {
-                @include breakpoint(medium down) {
+                @include breakpoint(small only) {
                     margin-top: 35px;
                 }
             }
@@ -65,7 +69,7 @@
                 font-size: 4.5rem;
                 font-weight: $light;
 
-                @include breakpoint(medium down) {
+                @include breakpoint(small only) {
                     font-weight: $regular;
                     font-size: 1.4rem;
                 }
@@ -75,6 +79,10 @@
                 display: flex;
                 margin-top: 50px;
 
+                @include breakpoint(small only) {
+                    flex-direction: column;
+                }
+
                 .search-filters,
                 .search-results {
                     width: 100%;
@@ -82,6 +90,14 @@
 
                 .search-filters {
                     max-width: 355px;
+
+                    @include breakpoint(medium only) {
+                        max-width: 255px;
+                    }
+
+                    @include breakpoint(small only) {
+                        max-width: none;
+                    }
 
                     .multi-select {
                         &:not(:first-child) {
@@ -92,6 +108,15 @@
 
                 .search-results {
                     padding-left: 45px;
+
+                    @include breakpoint(medium only) {
+                        padding-left: 20px;
+                    }
+
+                    @include breakpoint(small only) {
+                        padding-left: 0;
+                        padding-top: 45px;
+                    }
 
                     .grid-x {
                         margin: 0;
@@ -128,6 +153,13 @@
                             margin-top: 25px;
                             padding-right: 235px;
                         }
+
+                        @include breakpoint(medium only) {
+                            .title-link,
+                            .medium-copy {
+                                padding-right: 0;
+                            }
+                        }
                     }
 
                     .list {
@@ -135,7 +167,7 @@
                         margin-top: 30px;
                         list-style-type: none;
 
-                        @include breakpoint(medium down) {
+                        @include breakpoint(small only) {
                             margin-top: 20px;
                             padding-left: 22px;
                         }
@@ -144,7 +176,7 @@
                             font-size: 1.4rem;
                             font-weight: $bold;
 
-                            @include breakpoint(medium down) {
+                            @include breakpoint(small only) {
                                 font-weight: $semi-bold;
                                 text-transform: lowercase;
                             }
