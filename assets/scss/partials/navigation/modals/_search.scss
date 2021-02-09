@@ -22,45 +22,8 @@
         padding: 0;
         height: 100%;
 
-        &.showing-results {
+        @include breakpoint(small only) {
             padding-top: 30px;
-
-            .modal-body {
-                top: 0;
-                height: 100%;
-                display: flex;
-                transform: none;
-                flex-direction: column;
-
-                .results-and-filters-container {
-                    max-height: calc(100% - 128px);
-
-                    .search-filters {
-                        display: block;
-                    }
-
-                    .search-results {
-                        overflow-y: auto;
-                        padding-left: 20px;
-
-                        @include breakpoint(small only) {
-                            padding-left: 0;
-                        }
-
-                        .grid-margin-x {
-                            margin: 0;
-                        }
-
-                        .cell {
-                            display: none; // Temporary for dummy functionality
-                        }
-                        .search-results-metadata,
-                        .search-result-card {
-                            display: block; // Temporary for dummy functionality
-                        }
-                    }
-                }
-            }
         }
 
         .close-button {
@@ -72,13 +35,16 @@
         }
 
         .modal-body {
-            top: 50%;
             width: 100%;
-            height: 50%;
             max-width: 1200px;
-            position: relative;
-            transition: all $easing-1;
-            transform: translateY(-50%);
+
+            @include breakpoint(medium) {
+                top: 50%;
+                height: 50%;
+                position: relative;
+                transition: all $easing-1;
+                transform: translateY(-50%);
+            }
 
             .list-popular-search {
                 @include breakpoint(small only) {
@@ -136,6 +102,10 @@
                 }
 
                 .search-results {
+                    @include breakpoint(small only) {
+                        margin-top: 30px;
+                    }
+
                     .search-results-metadata {
                         display: none; // Temporary for dummy functionality
                         font-size: 1.6rem;
@@ -150,6 +120,11 @@
                         display: none; // Temporary for dummy functionality
                         padding: 22px 0 48px 0;
                         border-top: 2px solid $black;
+
+
+                        @include breakpoint(small only) {
+                            padding: 22px 25px 75px;
+                        }
 
                         &:last-child {
                             border-bottom: 2px solid $black;
@@ -170,7 +145,7 @@
                             padding-right: 235px;
                         }
 
-                        @include breakpoint(medium only) {
+                        @include breakpoint(medium down) {
                             .title-link,
                             .medium-copy {
                                 padding-right: 0;
@@ -200,6 +175,52 @@
                             &:not(:first-child) {
                                 margin-top: 15px;
                             }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.showing-results {
+            padding-top: 30px;
+
+            .modal-body {
+                display: flex;
+                flex-direction: column;
+
+                @include breakpoint(medium) {
+                    top: 0;
+                    height: 100%;
+                    transform: none;
+
+                    .results-and-filters-container {
+                        max-height: calc(100% - 128px);
+                    }
+                }
+
+                .results-and-filters-container {
+                    .search-filters {
+                        display: block;
+                    }
+
+                    .search-results {
+                        overflow-y: auto;
+                        padding-left: 20px;
+
+                        @include breakpoint(small only) {
+                            padding-left: 0;
+                        }
+
+                        .grid-margin-x {
+                            margin: 0;
+                        }
+
+                        .cell {
+                            display: none; // Temporary for dummy functionality
+                        }
+                        .search-results-metadata,
+                        .search-result-card {
+                            display: block; // Temporary for dummy functionality
                         }
                     }
                 }
