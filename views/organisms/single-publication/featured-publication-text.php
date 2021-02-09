@@ -1,7 +1,7 @@
 <div class="featured-publication">
     <div class="publication-text-container">
 
-        <h2 class="heading h2">FeaturedPublication</h2>
+        <h2 class="heading h2">Featured Publication</h2>
         <div class="tag tag-text"><?= $publicationDate ?></div>
         <div class="large-copy publication-title"><?= $title ?></div>
         <div class="medium-copy publication-body"><?= $descriptionText ?></div>
