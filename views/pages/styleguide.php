@@ -781,7 +781,6 @@ use helpers\Svg;
                         <?php
                         View::render('molecules/forms/multi-select-radio', [
                             'class' => 'lorem-radios',
-                            'ariaLabel' => 'Category',
                             'title' => 'Category',
                             'dataType' => 'lorem-radios',
                             'radio' => true,

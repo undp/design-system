@@ -1,5 +1,5 @@
 <div class="select-radio <?= $class ?>" data-multi-select>
-    <button class="select-control" aria-label="<?= $ariaLabel ?>" data-opening-action>
+    <button class="select-control" aria-label="<?= $title ?>" data-opening-action>
         <?= $title ?> <span></span>
     </button>
     <div class="options" data-type="<?= $dataType ?>">

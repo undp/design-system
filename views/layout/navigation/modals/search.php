@@ -23,7 +23,6 @@ use helpers\View;
                     <?php
                     View::render('molecules/forms/multi-select', [
                         'id' => 'language-select',
-                        'ariaLabel' => 'Language',
                         'title' => 'Language',
                         'dataType' => 'language',
                         'actionListener' => 'data-language-filter'
@@ -32,7 +31,6 @@ use helpers\View;
                     <?php
                     View::render('molecules/forms/multi-select', [
                         'id' => 'content-type-select',
-                        'ariaLabel' => 'Content Type',
                         'title' => 'Content Type',
                         'dataType' => 'content-type',
                         'actionListener' => 'data-content-type-filter'
@@ -41,7 +39,6 @@ use helpers\View;
                     <?php
                     View::render('molecules/forms/multi-select', [
                         'id' => 'regions-select',
-                        'ariaLabel' => 'Region',
                         'title' => 'Region',
                         'dataType' => 'region',
                         'actionListener' => 'data-region-filter'
@@ -50,7 +47,6 @@ use helpers\View;
                     <?php
                     View::render('molecules/forms/multi-select', [
                         'id' => 'topic-select',
-                        'ariaLabel' => 'Topic',
                         'title' => 'Topic',
                         'dataType' => 'topic',
                         'actionListener' => 'data-topic-filter'

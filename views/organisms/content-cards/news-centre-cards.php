@@ -11,7 +11,6 @@
                     View::render('molecules/forms/multi-select', [
                         'id' => 'content-type-select',
                         'class' => 'white',
-                        'ariaLabel' => 'Content Types',
                         'title' => 'Content Types',
                         'dataType' => 'content-type',
                         'actionListener' => 'data-content-type-filter'

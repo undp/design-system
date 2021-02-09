@@ -44,7 +44,6 @@ use helpers\View;
                         View::render('molecules/forms/multi-select', [
                             'id' => 'regions-select',
                             'class' => 'regions-select',
-                            'ariaLabel' => 'Regions',
                             'title' => 'Region',
                             'dataType' => 'region',
                             'actionListener' => 'data-location-filters'
@@ -56,7 +55,6 @@ use helpers\View;
                         View::render('molecules/forms/multi-select', [
                             'id' => 'office-type-select',
                             'class' => 'office-type-select',
-                            'ariaLabel' => 'Offices',
                             'title' => 'Office type',
                             'dataType' => 'office',
                             'actionListener' => 'data-location-filters'

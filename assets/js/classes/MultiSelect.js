@@ -4,6 +4,7 @@ class MultiSelect {
 
         this.$window = $(window);
         this.$currentSelect = $(element);
+        this.$selectTrigger = this.$currentSelect.find('.select-control');
     }
 
     init() {
@@ -12,9 +13,18 @@ class MultiSelect {
     }
 
     addListener() {
-        this.$currentSelect.find('.select-control').click(() => {
+        this.$selectTrigger.click(() => {
             this.toggleSelect();
         });
+
+        this.$currentSelect.on('click', 'input[type=checkbox]', (ev) => {
+            let $selectedCheckbox = $(ev.target);
+            let $selectedOption = $selectedCheckbox.closest('li[role=option]');
+
+            console.log($selectedOption)
+
+            $selectedOption.attr('aria-selected', $selectedCheckbox.is(':checked'))
+        })
     }
 
     listenerWindowClick() {
@@ -22,12 +32,19 @@ class MultiSelect {
             if (this.$currentSelect && !this.$currentSelect.is(evt.target) &&
                 this.$currentSelect.has(evt.target).length === 0 && this.$currentSelect.hasClass(this.classOpen)) {
                 this.$currentSelect.removeClass(this.classOpen);
+                this.$selectTrigger.attr('aria-expanded', 'false')
             }
         });
     }
 
     toggleSelect() {
         this.$currentSelect.toggleClass(this.classOpen);
+
+        if(this.$selectTrigger.attr('aria-expanded') === 'true'){
+            this.$selectTrigger.attr('aria-expanded', 'false')
+        } else {
+            this.$selectTrigger.attr('aria-expanded', 'true')
+        }
     }
 }
 
