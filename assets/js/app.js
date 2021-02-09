@@ -25,6 +25,7 @@ import sideNavigation from './components/side-navigation'
 import genericSlider from './components/generic-slider'
 import viewMore from './components/view-more'
 import scrollUp from './components/scroll-up'
+import imageSizes from './components/image-sizes'
 
 import modal from './components/modal'
 import modalNav from './components/modal-nav'
@@ -43,6 +44,7 @@ import mobileFilterData from './render-data/modals/locations/mobile-filters'
 import trapFocus from './components/trap-focus'
 
 function main() {
+    imageSizes()
     prism();
     modal()
     inputs()
