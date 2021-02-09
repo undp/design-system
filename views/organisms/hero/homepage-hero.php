@@ -3,7 +3,7 @@
 use helpers\Svg;
 
 ?>
-<section class="hero homepage-hero" style="background: url('../../../assets/images/hero.png') center 0 / cover no-repeat;">
+<section class="hero homepage-hero"  data-desktop-hero="/hero.png" data-mobile-hero="/hero.png">
     <div class="hero-content">
         <div class="text-box scroll-track left-right delay-1">
             <div class="title">

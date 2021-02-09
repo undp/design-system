@@ -98,8 +98,7 @@ $menuItems = [
 
 <div class="standard-page">
 
-    <section class="hero about-hero"
-             style="background: url('../../../assets/images/placeholder/hero/about-image.jpg') center 0 / cover no-repeat;">
+    <section class="hero about-hero" data-desktop-hero="placeholder/hero/about-image.jpg" data-mobile-hero="placeholder/hero/hero-about-small.jpg">
         <div class="overlay"></div>
         <div class="grid-container scroll-track left-right delay-1 hero-container">
             <div class="grid-x text-container">
