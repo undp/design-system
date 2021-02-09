@@ -5,8 +5,7 @@ use helpers\View;
 
 ?>
 
-<section class="hero global-hero-3"
-         style="background-image: url('<?= $imageUrl ?? '' ?>')">
+<section class="hero global-hero-3" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell small-9 small-offset-1">
