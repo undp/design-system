@@ -49,7 +49,7 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
                 <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-linkedin') ?></a>
                 <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-youtube') ?></a>
             </div>
-            <button class="btn" data-download-chapters>Download</button>
+            <button class="btn" data-download-chapters disabled>Download</button>
         </div>
     </div>
 </div>

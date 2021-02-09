@@ -62,13 +62,22 @@
         transition: transform 0.2s ease;
     }
 
-    &:hover {
+    &:hover,
+    &.disabled,
+    &:disabled {
         background: $red-3;
+    }
 
+    &:hover {
         svg,
         img{
             transform: translateX(70%);
         }
+    }
+
+    &.disabled,
+    &:disabled {
+        pointer-events: none;
     }
 
     &.blue{
