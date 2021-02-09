@@ -1,7 +1,7 @@
 
 
 <div class="side-navigation <?= $classes ?? '' ?>">
-    <ul class="side-menu scroll-track left-right delay-1">
+    <ul class="side-menu scroll-track opacity-only delay-1" data-ie-sticky>
 
         <li class="side-menu-item has-children mobile-menu-heading flex-container flex-dir-column hide-for-large">
             Menu

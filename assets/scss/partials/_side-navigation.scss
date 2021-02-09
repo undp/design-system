@@ -44,6 +44,7 @@
 
     .side-menu {
         padding: 0;
+        width: 100%;
         bottom: 30px;
         position: sticky;
         border-top: 1px solid rgba($black, 0.1);
@@ -59,6 +60,11 @@
             z-index: $z-index-5;
             background-color: $dark-blue-5;
             top: calc(#{$height-nav-medium} - 1px);
+        }
+
+        // For IE 11 (media is a hack to check for IE 10+)
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            top: calc(#{$height-nav} + 30px);
         }
     }
 
