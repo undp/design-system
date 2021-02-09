@@ -23,6 +23,10 @@ $scroll-up-height: 44px;
         z-index: $z-index-5;
         transform: translateY(-100%);
         bottom: calc(#{$scroll-up-height} * -0.5);
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            top: calc(100% - (#{$scroll-up-height} * 1.5))
+        }
     }
 
     svg {
