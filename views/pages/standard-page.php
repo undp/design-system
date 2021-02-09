@@ -132,7 +132,6 @@ $menuItems = [
             <?php
                 View::render('partials/standard-page/side-navigation', [
                     'menuItems' => $menuItems,
-                    'menuTitle' => 'About us menu',
                     'classes' => 'cell small-12 medium-4 large-3'
                 ]);
 

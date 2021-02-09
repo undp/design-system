@@ -4,7 +4,7 @@
     <ul class="side-menu scroll-track left-right delay-1">
 
         <li class="side-menu-item has-children mobile-menu-heading flex-container flex-dir-column hide-for-large">
-            <?= $menuTitle ?? '' ?>
+            Menu
         </li>
 
         <?php foreach($menuItems as $index => $menuItem) : ?>
