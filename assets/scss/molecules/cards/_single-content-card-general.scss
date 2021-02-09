@@ -28,8 +28,13 @@
     }
 }
 
-.single-content-card-image,
-.single-content-card-body{
+.single-content-card-body,
+.single-content-card-image {
+
+    @include breakpoint(medium down) {
+        background-color: $dark-blue-7;
+    }
+
     &:hover{
         background-color: $dark-blue-7;
     }
