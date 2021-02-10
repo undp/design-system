@@ -4,15 +4,15 @@
         "links": [
             {
                 "name": "Jobs at UNDP",
-                "link": "https://www.undp.org/"
+                "url": "https://www.undp.org/"
             },
             {
                 "name": "Partnerships",
-                "link": "https://www.undp.org/"
+                "url": "https://www.undp.org/"
             },
             {
                 "name": "Donate",
-                "link": "https://www.undp.org/"
+                "url": "https://www.undp.org/"
             }
         ]
     },
@@ -21,15 +21,15 @@
         "links": [
             {
                 "name": "ODS",
-                "link": "https://www.undp.org/"
+                "url": "https://www.undp.org/"
             },
             {
                 "name": "Sustainable Development Goals",
-                "link": "https://www.undp.org/"
+                "url": "https://www.undp.org/"
             },
             {
                 "name": "COVID 19",
-                "link": "https://www.undp.org/"
+                "url": "https://www.undp.org/"
             }
         ]
     }

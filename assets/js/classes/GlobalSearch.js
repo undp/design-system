@@ -37,15 +37,13 @@ class GlobalSearch {
             success: (response) => {
                 response.forEach((item) => {
                     this.$searchResultsContainer.append(` 
-                    <div class="cell medium-6">
-                        <div class="list-popular-search">
-                            <h2 class="title">${ item.name }</h2>
-                            <ul class="list uppercase">
-                                ${item.links.map(link => {
-                            return `<li><a href="${ link.url }">${ link.name }</a></li>`
-                        }).join('')}
-                            </ul>
-                        </div>
+                    <div class="cell medium-6 list-quicklinks">
+                        <h2 class="title">${ item.name }</h2>
+                        <ul>
+                            ${item.links.map(link => {
+                        return `<li><a href="${ link.url }">${ link.name }</a></li>`
+                    }).join('')}
+                        </ul>
                     </div>`);
                 });
             }

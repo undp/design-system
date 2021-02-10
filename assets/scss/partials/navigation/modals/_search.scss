@@ -46,34 +46,12 @@
                 transform: translateY(-50%);
             }
 
-            .list-popular-search {
-                @include breakpoint(small only) {
-                    margin-bottom: 55px;
-                }
-            }
-
-            .list-quick-links {
-                @include breakpoint(small only) {
-                    margin-top: 35px;
-                }
-            }
-
-            .title {
-                line-height: 1.2;
-                font-size: 4.5rem;
-                font-weight: $light;
-
-                @include breakpoint(small only) {
-                    font-weight: $regular;
-                    font-size: 1.4rem;
-                }
-            }
-
             .results-and-filters-container {
                 display: flex;
                 margin-top: 50px;
 
                 @include breakpoint(small only) {
+                    margin-top: 0;
                     flex-direction: column;
                 }
 
@@ -153,27 +131,66 @@
                         }
                     }
 
-                    .list {
-                        padding: 0;
-                        margin-top: 30px;
-                        list-style-type: none;
-
+                    .list-quicklinks {
                         @include breakpoint(small only) {
-                            margin-top: 20px;
-                            padding-left: 22px;
+                            &:not(:first-child) {
+                                margin-top: 50px;
+                            }
                         }
 
-                        li {
-                            font-size: 1.4rem;
-                            font-weight: $bold;
+                        .title {
+                            line-height: 1.2;
+                            font-size: 4.5rem;
+                            font-weight: $light;
 
                             @include breakpoint(small only) {
-                                font-weight: $semi-bold;
-                                text-transform: lowercase;
+                                font-weight: $regular;
+                                font-size: 1.4rem;
+                            }
+                        }
+
+                        ul {
+                            padding: 0;
+                            margin-top: 30px;
+                            list-style-type: none;
+
+                            @include breakpoint(small only) {
+                                margin-top: 20px;
+                                padding-left: 22px;
                             }
 
-                            &:not(:first-child) {
-                                margin-top: 15px;
+                            li {
+                                line-height: 1.2;
+                                font-size: 1.4rem;
+                                font-weight: $bold;
+                                text-transform: uppercase;
+
+                                @include breakpoint(small only) {
+                                    text-transform: none;
+                                    font-weight: $semi-bold;
+
+                                    a {
+                                        position: relative;
+                                        display: inline-flex;
+
+                                        &:after {
+                                            top: 0px;
+                                            width: 9px;
+                                            content: '';
+                                            right: -18px;
+                                            height: 14px;
+                                            display: block;
+                                            position: absolute;
+                                            background-size: contain;
+                                            background-repeat: no-repeat;
+                                            background-image: url('#{$image-path}/arrows/btn-arrow-red.svg');
+                                        }
+                                    }
+                                }
+
+                                &:not(:first-child) {
+                                    margin-top: 18px;
+                                }
                             }
                         }
                     }
@@ -199,6 +216,10 @@
                 }
 
                 .results-and-filters-container {
+                    @include breakpoint(small only) {
+                        margin-top: 50px;
+                    }
+
                     .search-filters {
                         display: block;
                     }
