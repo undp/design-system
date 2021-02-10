@@ -1,4 +1,5 @@
 <?php
+
 use helpers\View;
 
 $imgPath = '../../../assets/images/placeholder/about-us';
@@ -14,7 +15,8 @@ $imgPath = '../../../assets/images/placeholder/about-us';
 
 <div class="project-page">
 
-    <section class="hero project-hero" data-desktop-image="/assets/images/placeholder/hero/about-image.jpg" data-mobile-image="/assets/images/placeholder/hero/hero-about-small.jpg">
+    <section class="hero project-hero" data-desktop-image="/assets/images/placeholder/hero/about-image.jpg"
+             data-mobile-image="/assets/images/placeholder/hero/hero-about-small.jpg">
         <div class="overlay"></div>
         <div class="grid-container scroll-track left-right delay-1 hero-container">
             <div class="grid-x text-container">
@@ -41,6 +43,32 @@ $imgPath = '../../../assets/images/placeholder/about-us';
             </div>
         </div>
     </section>
+
+    <div class="section headline-text">
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell large-offset-1 small-offset-1 small-10">
+                    <div class="heading h2 heading-text">
+                        United Nations Pacific</br>
+                        Regional Anti-Corruption Project
+                    </div>
+                </div>
+                <div class="cell large-offset-3 large-7 copy-text small-offset-1 small-10">
+                    <div class="big-copy">
+                        The United Nations Pacific Regional Anti-Corruption Project is a joint initiative of the United
+                        Nations
+                        Office on Drugs and Crime and the United Nations Development Programme, a unique partnership to
+                        prevent
+                        and fight corruption in 14 Pacific Island countries and the territory of Tokelau.</br></br>
+                        UN-PRAC aims to strengthen PICs’ national integrity systems. This is to promote ‘clean’
+                        governments and create an enabling environment to increase trade, business, investment and
+                        sustainable development in the Pacific. In turn, this will enhance the delivery of equitable and
+                        high-quality services to all Pacific Islanders.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Footer -->
