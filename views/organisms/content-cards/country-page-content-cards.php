@@ -9,8 +9,19 @@
                     View::render('molecules/cards/single-content-card-image', [
                         'tag' => 'Content tag',
                         'link' => $_SERVER['REQUEST_URI'],
-                        'title' => 'A vineyard with a storied past receives an injection of new life.',
+                        'title' => 'In Costa Rica, rural women grow their own businesses.',
                         'image' => '/assets/images/placeholder/cards/single-content-card-image-2.png',
+                        'cta' => 'Read More'
+                    ])
+                    ?>
+                </div>
+                <div class="cell medium-6 large-3">
+                    <?php
+                    View::render('molecules/cards/single-content-card-body', [
+                        'tag' => 'Content tag',
+                        'link' => $_SERVER['REQUEST_URI'],
+                        'title' => '“We are a forgotten population.”',
+                        'description' => 'Using social media to help marginalized groups get HIV services during COVID-19',
                         'cta' => 'Read More'
                     ])
                     ?>
@@ -21,7 +32,8 @@
                         'tag' => 'Publication',
                         'link' => $_SERVER['REQUEST_URI'],
                         'title' => 'UN calls for comprehensive debt standstill in all developing countries.',
-                        'cta' => 'Read More'
+                        'cta' => 'Read More',
+                        'color' => 'accent-green'
                     ])
                     ?>
                 </div>
@@ -30,19 +42,8 @@
                     View::render('molecules/cards/single-content-card-body', [
                         'tag' => 'Content tag',
                         'link' => $_SERVER['REQUEST_URI'],
-                        'title' => 'UNDP at the Paris Peace Forum 2020.',
-                        'description' => 'Three UNDP projects are among the one hundred “Solutions for Peace” selected, to be featured in the ‘Space for Solutions’.',
-                        'cta' => 'Read More'
-                    ])
-                    ?>
-                </div>
-                <div class="cell medium-6 large-3">
-                    <?php
-                    View::render('molecules/cards/single-content-card-image', [
-                        'tag' => 'Content tag',
-                        'link' => $_SERVER['REQUEST_URI'],
-                        'title' => 'A vineyard with a storied past receives an injection of new life.',
-                        'image' => '/assets/images/placeholder/cards/single-content-card-image.png',
+                        'title' => '“I cry for no apparent reason.”',
+                        'description' => 'More than nine years of war have left 11.7 million Syrians in need of assistance and 6.2 million are internally displaced, some many times over.',
                         'cta' => 'Read More'
                     ])
                     ?>
