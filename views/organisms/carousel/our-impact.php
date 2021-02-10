@@ -1,4 +1,10 @@
-<?php use helpers\View; ?>
+<?php
+
+use helpers\View;
+
+$cards = isset($cards) && is_array($cards) ? $cards : [];
+
+?>
 
 
 <section class="our-impact gs--parallax-container">
@@ -8,85 +14,24 @@
             <h2 class="heading h2">Our Expertise</h2>
         </div>
 
-        <div class="cell gs--parallax-row">
-            <div class="grid-x grid-padding-x">
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 41,
-                        'title' => 'Percent',
-                        'description' => 'Adult literacy rate'
-                    ])
-                    ?>
-                </div>
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 60,
-                        'title' => 'Percent',
-                        'description' => 'Of Sierra Leoneans live below the the national poverty line'
-                    ])
-                    ?>
-                </div>
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 60,
-                        'title' => 'Percent',
-                        'description' => 'Of Sierra Leoneans live below the the national poverty line'
-                    ])
-                    ?>
-                </div>
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 60,
-                        'title' => 'Percent',
-                        'description' => 'Of Sierra Leoneans live below the the national poverty line'
-                    ])
-                    ?>
+        <?php foreach(array_chunk($cards, 4) as $chunk) : ?>
+            <div class="cell gs--parallax-row show-for-medium">
+                <div class="grid-x grid-padding-x parallax-content-wrapper">
+
+                    <?php foreach($chunk as $card) : ?>
+                        <div class="cell medium-3">
+                            <?php
+                                View::render('molecules/stats/small-card', [
+                                    'title' => $card['title'],
+                                    'number' => $card['number'],
+                                    'description' => $card['description']
+                                ])
+                            ?>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
-        </div>
-        <div class="cell gs--parallax-row">
-            <div class="grid-x grid-padding-x">
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 13,
-                        'title' => 'Percent',
-                        'description' => 'Of parliamentary seats held by women'
-                    ])
-                    ?>
-                </div>
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 70,
-                        'title' => 'Percent',
-                        'description' => 'Of youth are unemployed or underemployed'
-                    ])
-                    ?>
-                </div>
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 48,
-                        'title' => 'Years old',
-                        'description' => 'Life expectancy at birth'
-                    ])
-                    ?>
-                </div>
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 60,
-                        'title' => 'Percent',
-                        'description' => 'Of Sierra Leoneans live below the the national poverty line'
-                    ])
-                    ?>
-                </div>
-            </div>
-        </div>
+        <?php endforeach; ?>
+        
     </div>
 </section>

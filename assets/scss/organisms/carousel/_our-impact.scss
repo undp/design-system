@@ -6,10 +6,15 @@ section.our-impact {
     }
 
     .gs--parallax-row {
-        justify-content: flex-end;
 
-        &:nth-child(even) {
-            justify-content: flex-start;
+        .parallax-content-wrapper {
+            justify-content: flex-end;
+        }
+
+        &:nth-child(odd) {
+            .parallax-content-wrapper {
+                justify-content: flex-start;
+            }
         }
 
         &:not(:first-of-type) {
