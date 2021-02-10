@@ -38,7 +38,10 @@ class ModalPublicationDownload {
         this.$body.addClass(this.classes.lockBody)
         this.$html.addClass(this.classes.lockBody)
         this.$modal.addClass(this.classes.modalOpen)
-        this.$modalBtnClose.focus()
+
+        setTimeout(() => {
+            this.$modalBtnClose.focus()
+        }, 450)
     }
 
     close() {
@@ -52,19 +55,28 @@ class ModalPublicationDownload {
     }
 
     updateChaptersList() {
-        const matchingChapters = []
+        let matchingChapters = []
 
-        this.$chapters.each((i, chapter) => {
-            const $chapter = $(chapter)
-            const chapterLang = $chapter.data('lang')
-            const match = chapterLang === this.currentLang
+        if(this.currentLang !== 'default') {
+            this.$chapters.each((i, chapter) => {
+                const $chapter = $(chapter)
+                const chapterLang = $chapter.data('lang')
+                const match = chapterLang === this.currentLang
 
-            if (match) {
-                matchingChapters.push(chapter)
-            }
-        })
+                if (match) {
+                    matchingChapters.push(chapter)
+                }
+            })
+        } else {
+            matchingChapters = this.$chapters
+        }
 
         this.$chapters.addClass(this.classes.hide)
+        this.$chapters.find('input[type=checkbox]:checked').prop('checked', false)
+
+        if(!this.$downloadBtn.attr('disabled')) {
+            this.$downloadBtn.attr('disabled', true)
+        }
         $(matchingChapters).removeClass(this.classes.hide)
     }
 

@@ -19,6 +19,7 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
                 <?php if (count($languageOptions) > 0) : ?>
                     <?php
                         View::render('partials/select', [
+                            'id' => 'language-select',
                             'options' => $languageOptions,
                             'name' => 'publication-languages',
                             'placeholder' => 'Select Language',

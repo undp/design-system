@@ -23,6 +23,7 @@ class Select {
 
         this.$selectOptions.on('focus', this.setupFocus.bind(this));
         this.$selectOptions.on('keydown', this.checkKeyPress.bind(this));
+        this.$selectOptions.on('blur', this.close.bind(this));
     }
 
     handleSelectClick(ev) {

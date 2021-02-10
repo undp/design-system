@@ -10,6 +10,9 @@ $options = isset($options) ? $options : []
     </button>
     <ul tabindex="-1" role="listbox" aria-labelledby="exp_button"
         class="options-container" data-select-options>
+        <li id="default-<?= $id ?>" class="option" role="option" data-value="default">
+            All
+        </li>
         <?php foreach ($options as $option) : ?>
             <li id="<?= $option['id'] ?>" class="option" role="option" data-value="<?= $option['value'] ?>">
                 <?= $option['label'] ?>
