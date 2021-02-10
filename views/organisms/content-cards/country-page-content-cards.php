@@ -2,7 +2,7 @@
 
 
 <div class="country-page-content-cards" data-view-more data-load-step="4">
-    <div class="grid-x">
+    <div class="grid-container grid-x">
         <div class="cell cards-container">
             <div class="grid-x grid-padding-x flex-container align-center">
                 <div class="cell medium-6 large-3 card-item hide">
