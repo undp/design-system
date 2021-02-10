@@ -9,7 +9,7 @@ class Select {
         this.activeClass = 'active'
         this.expandedClass = 'expanded'
         this.optionSelectedId = null
-        this.selectedOptionSelector = '[data-select-open]'
+        this.$buttonTrigger = this.$currentSelect.find('[data-select-open]')
     }
 
     init() {
@@ -33,7 +33,7 @@ class Select {
 
         // Event fired on keyboard
         if (ev.originalEvent.detail === 0) {
-            this.$selectOptions.focus();
+            this.$selectOptions[0].focus();
         }
     }
 
@@ -59,11 +59,8 @@ class Select {
     }
 
     changeSelectedOption() {
-        const label = this.$selectOptions.find('#'+this.optionSelectedId).text();
-        const $buttonTrigger = this.$currentSelect.find(this.selectedOptionSelector)
-
         // Using this instead of innerText or innerHTML so trapFocus mutationObserver doesn't trigger
-        $buttonTrigger[0].firstChild.nodeValue = label;
+        this.$buttonTrigger[0].firstChild.nodeValue = this.$selectOptions.find('#'+this.optionSelectedId).text();;
 
         this.$currentSelect.data('selected-value', this.value);
         this.$currentSelect.trigger('change');

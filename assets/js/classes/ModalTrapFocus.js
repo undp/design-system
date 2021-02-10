@@ -1,6 +1,7 @@
 class ModalTrapFocus {
     constructor(element) {
         this.modal = element;
+        this.body = document.querySelector('body')
         this.firstFocusableElement = null;
         this.lastFocusableElement = null;
         this.currentFocusableElement = null;
@@ -31,12 +32,22 @@ class ModalTrapFocus {
             }
         }
 
-        this.saveCurrentFocus = () => {
+        this.saveCurrentFocus = (e, onBlur = false) => {
+            let isTabPressed = e.key === 'Tab' || e.wich === window.UNDP.keyCode.TAB;
+
+            if ((!isTabPressed && !onBlur)
+                || this.currentFocusableElement === document.activeElement
+                || document.activeElement === this.body) {
+                return;
+            }
+
             if(this.currentFocusableElement !== null) {
                 this.currentFocusableElement.removeEventListener('blur', this.saveCurrentFocus)
             }
             this.currentFocusableElement = document.activeElement;
-            this.currentFocusableElement.addEventListener('blur', this.saveCurrentFocus)
+            this.currentFocusableElement.addEventListener('blur', e => {
+                this.saveCurrentFocus(e, true)
+            })
         }
     }
 
