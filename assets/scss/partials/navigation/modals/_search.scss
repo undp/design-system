@@ -1,28 +1,30 @@
 .modal-popular-search {
     width: 100%;
     position: fixed;
-    top: $height-nav;
     overflow-y: auto;
     z-index: $z-index-modal;
-    height: calc(100vh - #{$height-nav});
+    top: $nav-desktop-height;
     backdrop-filter: blur(21px);
     //alternative blur to firefox
     background-color: rgba($white, 0.98);
+    height: calc(100vh - #{$nav-desktop-height});
 
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
         background-color: rgba($white, 0.87);
     }
 
     @include breakpoint(large down) {
-        top: calc(#{$height-nav-medium} + 1px);
-        height: calc(100vh - #{$height-nav-medium});
+        top: $nav-mobile-height;
+        height: calc(100vh - #{$nav-mobile-height});
     }
 
     .modal-content {
         padding: 0;
-        min-height: 100%;
-        position: relative;
-        box-shadow: 0 3px 6px rgba($black, 0.16);
+        height: 100%;
+
+        @include breakpoint(small only) {
+            padding-top: 30px;
+        }
 
         .close-button {
             top: 52px;
@@ -33,105 +35,308 @@
         }
 
         .modal-body {
-            padding: 120px 170px 120px 120px;
+            width: 100%;
+            max-width: 1200px;
 
-            @include breakpoint(medium down) {
-                padding: 70px 45px;
+            @include breakpoint(medium) {
+                top: 50%;
+                height: 50%;
+                position: relative;
+                transition: all $easing-1;
+                transform: translateY(-50%);
             }
 
-            .input-group {
+            .results-and-filters-container {
+                display: flex;
+                margin-top: 50px;
 
-                .icon {
-                    margin-right: 20px;
+                @include breakpoint(small only) {
+                    margin-top: 0;
+                    flex-direction: column;
+                }
 
-                    @include breakpoint(medium down) {
-                        margin-right: 0;
+                .search-filters,
+                .search-results {
+                    width: 100%;
+                }
 
-                        svg {
-                            width: 22px;
+                .search-filters {
+                    display: none;
+                    max-width: 355px;
+
+                    .mobile-filters-open,
+                    .mobile-filters-close,{
+                        display: none;
+
+                        .btn {
+                            width: 100%;
+                        }
+                    }
+
+                    .mobile-filters-close,{
+                        padding-left: 25px;
+                        padding-right: 25px;
+                    }
+
+                    .multi-select {
+                        &:not(:last-child) {
+                            margin-bottom: 16px;
+                        }
+                    }
+
+                    .active-filters {
+                        display: flex;
+                        padding-left: 24px;
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .tag {
+                            margin-bottom: 15px;
+                        }
+
+                        .filter-clear {
+                            margin-top: 8px;
+
+                            &:hover {
+                                color: $gray-chateau;
+                            }
+                        }
+
+                        .filter {
+                            margin-bottom: 8px;
+                        }
+                    }
+
+                    @include breakpoint(medium only) {
+                        max-width: 255px;
+                    }
+
+                    @include breakpoint(small only) {
+                        max-width: none;
+
+                        .mobile-filters-open {
+                            display: block;
+                        }
+
+                        &.open-filters {
+                            .mobile-filters-open {
+                                display: none;
+                            }
+                            .mobile-filters-close {
+                                display: block;
+                            }
+                            .active-filters {
+                                display: block;
+                            }
+                        }
+
+                        &:not(.open-filters) {
+                            .multi-select {
+                                display: none;
+                            }
+                        }
+
+                        .active-filters {
+                            display: none;
+                            padding-left: 0;
+                            margin-top: 25px;
+                            position: relative;
+                            padding-bottom: 30px;
+
+                            .tag {
+                                color: $black;
+                                margin-left: 25px;
+                                margin-bottom: 20px;
+                            }
+
+                            .filter-clear {
+                                top: 0;
+                                margin: 0;
+                                right: 25px;
+                                font-size: 1.2rem;
+                                position: absolute;
+                                font-weight: $semi-bold;
+                            }
+
+                            .filter {
+                                margin-bottom: 6px;
+                                display: inline-block;
+                                width: calc(50% - 5px);
+
+                                &:nth-child(even) {
+                                    margin-right: 5px;
+                                }
+                                &:nth-child(odd) {
+                                    margin-left: 5px;
+                                }
+                            }
                         }
                     }
                 }
 
-                @include breakpoint(medium down) {
-                    border-bottom: 1px solid $dark-blue-1;
-                }
-
-                .input-search {
-                    width: 100%;
-                    border: none;
-                    box-shadow: none;
-                    padding: 0 45px 0 30px;
-                    background-color: transparent;
-                    border-bottom: 1px solid $dark-blue-1;
-
-                    @include breakpoint(medium down) {
-                        border: none;
-                        padding: 10px 20px 10px 20px;
+                .search-results {
+                    @include breakpoint(small only) {
+                        margin-top: 30px;
                     }
 
-                    &:active,
-                    &:focus {
-                        outline: none;
-                    }
-                }
-            }
+                    .search-results-metadata {
+                        display: none; // Temporary for dummy functionality
+                        font-size: 1.6rem;
+                        margin-bottom: 25px;
 
-            .list-popular-search {
-                padding-left: 70px;
-
-                @include breakpoint(medium down) {
-                    padding-left: 0;
-                    margin-bottom: 55px;
-                }
-            }
-
-            .list-quick-links {
-                @include breakpoint(medium down) {
-                    margin-top: 35px;
-                }
-            }
-
-            .title {
-                line-height: 1.4;
-                font-size: 4.5rem;
-                font-weight: $light;
-
-                @include breakpoint(medium down) {
-                    font-weight: $regular;
-                    font-size: 1.4rem;
-                }
-
-            }
-
-            .lists {
-                margin-top: 115px;
-
-                @include breakpoint(medium down) {
-                    margin-top: 40px;
-                }
-
-                .list {
-                    padding: 0;
-                    margin-top: 35px;
-                    list-style-type: none;
-
-                    @include breakpoint(medium down) {
-                        margin-top: 20px;
-                        padding-left: 22px;
+                        span {
+                            font-weight: $bold;
+                        }
                     }
 
-                    li {
-                        font-size: 1.4rem;
-                        font-weight: $bold;
+                    .search-result-card {
+                        display: none; // Temporary for dummy functionality
+                        padding: 22px 0 48px 0;
+                        border-top: 2px solid $black;
+
+
+                        @include breakpoint(small only) {
+                            padding: 22px 25px 75px;
+                        }
+
+                        &:last-child {
+                            border-bottom: 2px solid $black;
+                        }
+
+                        .title-link {
+                            margin-top: 10px;
+                            padding-right: 118px;
+                            display: inline-block;
+
+                            &:hover {
+                                color: $dark-blue-2;
+                            }
+                        }
+
+                        .medium-copy {
+                            margin-top: 25px;
+                            padding-right: 235px;
+                        }
 
                         @include breakpoint(medium down) {
-                            font-weight: $semi-bold;
-                            text-transform: lowercase;
+                            .title-link,
+                            .medium-copy {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+
+                    .list-quicklinks {
+                        @include breakpoint(small only) {
+                            &:not(:first-child) {
+                                margin-top: 50px;
+                            }
                         }
 
-                        &:not(:first-child) {
-                            margin-top: 15px;
+                        .title {
+                            line-height: 1.2;
+                            font-size: 4.5rem;
+                            font-weight: $light;
+
+                            @include breakpoint(small only) {
+                                font-weight: $regular;
+                                font-size: 1.4rem;
+                            }
+                        }
+
+                        ul {
+                            padding: 0;
+                            margin-top: 30px;
+                            list-style-type: none;
+
+                            @include breakpoint(small only) {
+                                margin-top: 20px;
+                                padding-left: 22px;
+                            }
+
+                            li {
+                                line-height: 1.2;
+                                font-size: 1.4rem;
+                                font-weight: $bold;
+                                text-transform: uppercase;
+
+                                @include breakpoint(small only) {
+                                    text-transform: none;
+                                    font-weight: $semi-bold;
+
+                                    a {
+                                        position: relative;
+                                        display: inline-flex;
+
+                                        &:after {
+                                            top: 0px;
+                                            width: 9px;
+                                            content: '';
+                                            right: -18px;
+                                            height: 14px;
+                                            display: block;
+                                            position: absolute;
+                                            background-size: contain;
+                                            background-repeat: no-repeat;
+                                            background-image: url('#{$image-path}/arrows/btn-arrow-red.svg');
+                                        }
+                                    }
+                                }
+
+                                &:not(:first-child) {
+                                    margin-top: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.showing-results {
+            padding-top: 30px;
+
+            .modal-body {
+                display: flex;
+                flex-direction: column;
+
+                @include breakpoint(medium) {
+                    top: 0;
+                    height: 100%;
+                    transform: none;
+
+                    .results-and-filters-container {
+                        max-height: calc(100% - 128px);
+                    }
+                }
+
+                .results-and-filters-container {
+                    @include breakpoint(small only) {
+                        margin-top: 30px;
+                    }
+
+                    .search-filters {
+                        display: block;
+                    }
+
+                    .search-results {
+                        overflow-y: auto;
+                        padding-left: 20px;
+
+                        @include breakpoint(small only) {
+                            padding-left: 0;
+                        }
+
+                        .grid-margin-x {
+                            margin: 0;
+                        }
+
+                        .cell {
+                            display: none; // Temporary for dummy functionality
+                        }
+                        .search-results-metadata,
+                        .search-result-card {
+                            display: block; // Temporary for dummy functionality
                         }
                     }
                 }

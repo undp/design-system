@@ -63,14 +63,14 @@
 .modal-nav-hover {
     width: 100%;
     position: fixed;
-    top: $height-nav;
+    top: $nav-desktop-height;
     overflow-y: auto;
     z-index: $z-index-modal-nav-hover;
-    height: calc(100vh - #{$height-nav});
+    height: calc(100vh - #{$nav-desktop-height});
 
     @include breakpoint(medium down) {
-        top: calc(#{$height-nav-medium} + 1px);
-        height: calc(100% - #{$height-nav-medium});
+        top: calc(#{$nav-mobile-height} + 1px);
+        height: calc(100% - #{$nav-mobile-height});
     }
 
     .modal-content {

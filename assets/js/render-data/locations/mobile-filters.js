@@ -4,7 +4,7 @@ const init = function () {
 
         $.ajax({
             type: 'GET',
-            url: `/assets/js/render-data/json/modals/locations/${type}s.json`,
+            url: `/assets/js/render-data/json-files/modals/locations/${type}s.json`,
             dataType: 'json',
             success: function(response){
                 response.forEach((item) => {

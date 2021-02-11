@@ -55,7 +55,6 @@ $dark-blue-14: #656E7B;
 $dark-blue-15: #EAEAEA;
 $dark-blue-16: #CEC7C7;
 $dark-blue-17: #4B5564;
-$dark-blue-18: #747474;
 $dark-blue-19: #CED0D3;
 
 // Publication image background
@@ -111,8 +110,8 @@ $primary-font: 'ProximaNova', sans-serif;
 $secondary-font: 'SohneBreitTest', sans-serif;
 
 // global margin and padding
-$height-nav: 105px;
-$height-nav-medium: 70px;
+$nav-mobile-height: 70px;
+$nav-desktop-height: 115px;
 $progress-bar-height: 17px;
 $progress-bar-mobile-height: 15px;
 

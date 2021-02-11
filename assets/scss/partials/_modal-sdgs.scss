@@ -10,12 +10,12 @@
     height: 1px;
     width: 100%;
     position: fixed;
-    top: $height-nav;
+    top: $nav-desktop-height;
     overflow-x: hidden;
     z-index: $z-index-modal;
     backdrop-filter: blur(30px);
     background-color: rgba(237,239,240, .95);
-    min-height: calc(100vh - #{$height-nav});
+    min-height: calc(100vh - #{$nav-desktop-height});
 
     .grid-container {
         transform: translateX(100%);
@@ -32,8 +32,8 @@
     }
 
     @include breakpoint(medium down){
-        top: $height-nav-medium;
-        min-height: calc(100vh - #{$height-nav-medium})
+        top: $nav-mobile-height;
+        min-height: calc(100vh - #{$nav-mobile-height})
     }
 
     @include breakpoint(small only) {

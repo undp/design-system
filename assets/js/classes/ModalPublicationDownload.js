@@ -85,6 +85,10 @@ class ModalPublicationDownload {
             e.preventDefault();
             this.close();
         })
+
+        this.$body.on('UNDP.closeOtherModals', () => {
+            this.close();
+        })
     }
 
     setKeyPressListener() {

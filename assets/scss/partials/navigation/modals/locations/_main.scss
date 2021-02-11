@@ -1,10 +1,10 @@
 .modal-search-offices {
     width: 100%;
     position: fixed;
-    top: $height-nav;
+    top: $nav-desktop-height;
     overflow-y: auto;
     z-index: $z-index-modal;
-    height: calc(100vh - #{$height-nav});
+    height: calc(100vh - #{$nav-desktop-height});
 
     @include breakpoint(large down){
         backdrop-filter: blur(21px);
@@ -16,8 +16,8 @@
     }
 
     @include breakpoint(large down) {
-        top: calc(#{$height-nav-medium} + 1px);
-        height: calc(100% - #{$height-nav-medium});
+        top: calc(#{$nav-mobile-height} + 1px);
+        height: calc(100% - #{$nav-mobile-height});
     }
 
     .modal-content {
@@ -28,7 +28,7 @@
             flex-wrap: wrap;
             min-height: 36px;
             margin-top: 20px;
-            color: $dark-blue-18;
+            color: $gray-chateau;
 
             .tag {
                 margin: 0 15px 0 0;
@@ -187,7 +187,7 @@
                 .inputs {
                     padding-right: 15px;
 
-                    .search-input-group {
+                    .search-input {
                         flex: 1 0 auto;
                         margin-right: 45px;
 
@@ -200,39 +200,6 @@
                             width: 100%;
                             max-width: unset;
                             margin-right: 0;
-                        }
-
-                        .input-search {
-                            border: 0;
-                            margin: 0;
-                            width: 100%;
-                            height: 58px;
-                            padding: 20px;
-                            border-radius: 0;
-                            border-bottom: 2px solid $black;
-                            background-color: transparent;
-
-                            &::placeholder {
-                                color: rgba($black, 0.35);
-                            }
-
-                            &:active,
-                            &:focus {
-                                outline: none;
-                            }
-                        }
-
-                        .btn-search {
-                            border: 0;
-                            width: 35px;
-                            height: 58px;
-                            color: $black;
-                            cursor: pointer;
-                            border-bottom: 2px solid $black;
-
-                            svg {
-                                margin-left: 5px;
-                            }
                         }
                     }
 

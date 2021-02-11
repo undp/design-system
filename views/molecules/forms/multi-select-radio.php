@@ -1,8 +1,8 @@
 <div class="select-radio <?= $class ?>" data-multi-select>
-    <button class="select-control" aria-label="<?= $ariaLabel ?>" data-opening-action data-select-control>
+    <button class="select-control" aria-label="<?= $title ?>" data-opening-action>
         <?= $title ?> <span></span>
     </button>
-    <div class="options" data-options data-type="<?= $dataType ?>">
+    <div class="options" data-type="<?= $dataType ?>">
         <?php for ($i = 0; $i < 4; $i++) { ?>
             <label class="checkbox-item radio">
                 <input type="radio" value="" name="input-radio">

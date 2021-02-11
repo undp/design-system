@@ -9,7 +9,7 @@
     background-size: cover;
     background-position: top;
 
-    margin: $height-nav auto 0;
+    margin: $nav-desktop-height auto 0;
     background-repeat: no-repeat;
     font-family: $secondary-font;
     transition: max-width 0.5s ease;
@@ -37,7 +37,7 @@
     }
 
     @include breakpoint(medium down) {
-        margin-top: $height-nav-medium;
+        margin-top: $nav-mobile-height;
     }
 
     @include breakpoint(small only) {
