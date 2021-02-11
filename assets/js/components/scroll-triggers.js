@@ -1,11 +1,16 @@
-import Appear from 'appear/dist/appear'
-import { gsap } from "gsap";
+import 'appear/dist/appear'
+import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+
 gsap.registerPlugin(ScrollTrigger);
 
+
 const init = function () {
+
     const trackClass = 'scroll-track'
     const visibleClass = 'in-viewport'
+    const parallaxContainer = gsap.utils.toArray('.gs--parallax-container')
+
 
     appear({
         elements: () => {
@@ -31,6 +36,41 @@ const init = function () {
             }
         }
     });
+
+
+    parallaxContainer.forEach(container => {
+
+        const parallaxRows = container.querySelectorAll('.gs--parallax-row')
+
+        const from = {
+            xPercent: 75,
+            ease: "none",
+            scrollTrigger: {
+                scrub: true,
+                trigger: container,
+                start: "bottom center",
+            },
+        }
+        const to = {
+            xPercent: 0,
+            ease: "none",
+            scrollTrigger: {
+                scrub: true,
+                end: "center center",
+                trigger: container
+            },
+        }
+
+        parallaxRows
+            .forEach((row, idx) => {
+                let odd = idx % 2 === 0
+                let rowOrigin = Object.assign({}, from)
+
+                rowOrigin.xPercent *= odd ? -1 : 1 // Odd elements should start from a negative position (left to right)
+
+                gsap.fromTo(row, rowOrigin, to)
+            })
+    })
 }
 
 export default init

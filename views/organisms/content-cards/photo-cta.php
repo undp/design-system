@@ -1,7 +1,7 @@
 <?php use helpers\View; ?>
 
 <div class="photo-cta-cards">
-    <div class="grid-x">
+    <div class="grid-container grid-x">
         <div class="cell flex-container align-center">
             <div class="heading h2 content-title">Take Action</div>
         </div>

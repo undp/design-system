@@ -1,4 +1,3 @@
-import ScrollUp from "./ScrollUp";
 
 
 class ViewMore {
