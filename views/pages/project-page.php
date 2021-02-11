@@ -1,8 +1,8 @@
 <?php
 
 use helpers\View;
+use helpers\Svg;
 
-$imgPath = '../../../assets/images/placeholder/about-us';
 ?>
 
 <!-- Page Headers -->
@@ -213,6 +213,26 @@ $imgPath = '../../../assets/images/placeholder/about-us';
             </div>
         </div>
     </section>
+
+    <div class="explore-more grid-container" data-view-more data-scroll-up data-load-step="16">
+        <div class="grid-x">
+            <div class="cell">
+                <h2 class="heading h2">Explore More</h2>
+
+                <?php View::render('partials/project-page/explore-more-cards') ?>
+
+                <div class="cta-button flex-container">
+                    <button class="btn blue view-more" data-view-more-btn>
+                        View More
+                    </button>
+                </div>
+
+                <div class="scroll-up" data-scroll-btn>
+                    <?php Svg::render('angle-right') ?>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Footer -->
