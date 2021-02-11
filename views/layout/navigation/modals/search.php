@@ -41,10 +41,10 @@ use helpers\View;
                     ?>
                     <?php
                     View::render('molecules/forms/multi-select', [
-                        'id' => 'regions-select',
+                        'id' => 'regions-countries-select',
                         'title' => 'Region',
                         'dataType' => 'region',
-                        'actionListener' => 'data-region-filter'
+                        'actionListener' => 'data-regions-countries-filter'
                     ]);
                     ?>
                     <?php
