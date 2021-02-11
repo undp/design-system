@@ -16,6 +16,10 @@ $options = $options ?? [];
         ?>
         <li role="option" id="<?= $optionId ?>-option"
             <?= $hasSubtree? 'aria-expanded="false" aria-controls="'.$optionId.'-subtree" class="has-submenu"' : '' ?>>
+            <?php if($hasSubtree): ?>
+                <button class="caret" aria-expanded="false">Open submenu for <?= $option['name'] ?></button>
+            <?php endif; ?>
+
             <label class="checkbox-item">
                 <input type="checkbox" value="<?= $option['value'] ?>">
                 <span class="checkmark"></span>

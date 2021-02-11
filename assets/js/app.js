@@ -27,6 +27,7 @@ import viewMore from './components/view-more'
 import scrollUp from './components/scroll-up'
 import imageSizes from './components/image-sizes'
 import ieSticky from './components/ie-sticky'
+import singlePublication from './components/single-publication'
 
 import modal from './components/modal'
 import modalNav from './components/modal-nav'
@@ -77,6 +78,7 @@ function main() {
     modalPublicationDownload()
     scrollUp()
     ieSticky()
+    singlePublication()
 
     const globalSearch = new GlobalSearch()
     globalSearch.init()
