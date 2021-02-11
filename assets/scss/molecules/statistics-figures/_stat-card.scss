@@ -46,23 +46,8 @@
     }
 
     &:hover{
+        @include accent-color-background();
         @include sgd-colors('background-color');
-
-        &.accent-yellow{
-            background-color: $yellow-2;
-        }
-
-        &.accent-green{
-            background-color: $green-2;
-        }
-
-        &.accent-red{
-            background-color: $red-2;
-        }
-
-        &.accent-blue{
-            background-color: $blue-accent-2;
-        }
 
         .card-content .number{
             text-shadow: none;

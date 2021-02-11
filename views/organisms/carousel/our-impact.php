@@ -25,12 +25,12 @@ $sliderOptions = [
     <div class="grid-container grid-x overflow-hidden">
 
         <div class="cell medium-10 medium-offset-1">
-            <h2 class="heading h2">Our Expertise</h2>
+            <h2 class="heading h2">Our Impact</h2>
         </div>
 
         <div class="gs--parallax-container cell show-for-medium">
-            <?php foreach(array_chunk($cards, 4) as $chunk) : ?>
-                <div class="grid-x grid-padding-x gs--parallax-row">
+            <?php foreach(array_chunk($cards, 4) as $i => $chunk) : ?>
+                <div class="grid-x grid-padding-x gs--parallax-row <?= $i === 0 ? 'left' : 'right' ?>">
 
                     <?php foreach($chunk as $card) : ?>
                         <div class="cell medium-3">
