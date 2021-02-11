@@ -1,24 +1,37 @@
-section.our-impact {
+.our-impact {
     margin-top: 90px;
 
-    .cards-container {
+    .gs--parallax-container {
         margin-top: 72px;
     }
 
     .gs--parallax-row {
-
-        .parallax-content-wrapper {
-            justify-content: flex-end;
-        }
+        justify-content: flex-end;
 
         &:nth-child(odd) {
-            .parallax-content-wrapper {
-                justify-content: flex-start;
-            }
+            justify-content: flex-start;
         }
 
         &:not(:first-of-type) {
             margin-top: 26px;
+        }
+    }
+
+    .dynamic-slider {
+        margin-top: 48px;
+
+        .glide__track {
+            @include breakpoint(small only) {
+                overflow: visible;
+            }
+        }
+
+        .glide__slides {
+            margin-top: 34px;
+        }
+
+        .stat-card {
+            max-width: 235px;
         }
     }
 }

@@ -32,11 +32,11 @@ class GenericSlider {
     }
 
     mountGlide() {
-        const $glideSlides = this.$container.find('.standard-page-slide')
+        const $glideSlides = this.$container.find('.generic-slide')
         const slideWidth = 100 / $glideSlides.length;
 
         this.$sliderControl.css('width', `${slideWidth}%`)
-        this.glide = new Glide('.standard-page-slider', this.options)
+        this.glide = new Glide('.generic-slider', this.options)
 
         this.glide.on(['mount.after', 'run'], () => {
             this.$sliderControl.css('left', (this.glide.index * slideWidth) + "%")
@@ -52,7 +52,7 @@ class GenericSlider {
     }
 
     setSliderBullets() {
-        const $slides = this.$container.find('.glide__slides')
+        const $slides = this.$container.find('.glide__slide')
         this.$bullets.find('glide__bullet').remove() // Remove previous bullets
 
         $slides.each(i => {
