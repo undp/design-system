@@ -1,6 +1,5 @@
 import Glide from '@glidejs/glide'
 
-
 class SDGModal {
 
     constructor(container = '#modal-sdgs', modalTrigger = '.sdg-card-list .sdg-card') {
@@ -69,6 +68,10 @@ class SDGModal {
     setCloseModalListener() {
         this.$modalBtnClose.click((e) => {
             e.preventDefault();
+            this.close();
+        })
+
+        this.$body.on('UNDP.closeOtherModals', () => {
             this.close();
         })
     }

@@ -62,9 +62,7 @@
         transition: transform 0.2s ease;
     }
 
-    &:hover,
-    &.disabled,
-    &:disabled {
+    &:hover {
         background: $red-3;
     }
 
@@ -77,7 +75,9 @@
 
     &.disabled,
     &:disabled {
+        color: $porcelain;
         pointer-events: none;
+        background: $dark-blue-19 !important;
     }
 
     &.blue{

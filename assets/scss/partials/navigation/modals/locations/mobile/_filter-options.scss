@@ -1,16 +1,16 @@
 .modal-search-offices-filters {
     width: 100%;
     position: fixed;
-    top: $height-nav;
+    top: $nav-desktop-height;
     overflow-y: auto;
     z-index: $z-index-4;
     backdrop-filter: blur(30px);
-    height: calc(100vh - #{$height-nav});
+    height: calc(100vh - #{$nav-desktop-height});
     background-color: rgba($white, 0.98);
 
     @include breakpoint(medium down) {
-        top: $height-nav-medium;
-        height: calc(100% - #{$height-nav-medium});
+        top: $nav-mobile-height;
+        height: calc(100% - #{$nav-mobile-height});
     }
 
     .modal-content {

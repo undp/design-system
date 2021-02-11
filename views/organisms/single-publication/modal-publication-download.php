@@ -4,6 +4,7 @@ use helpers\View;
 
 $chapters = isset($chapters) && is_array($chapters) ? $chapters : [];
 $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $languageOptions : [];
+$singleChapter = count($chapters) === 1;
 ?>
 
 <div class="modal-publication-download">
@@ -18,7 +19,8 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
             <div class="download-controls">
                 <?php if (count($languageOptions) > 0) : ?>
                     <?php
-                        View::render('partials/select', [
+                        View::render('molecules/forms/select', [
+                            'id' => 'language-select',
                             'options' => $languageOptions,
                             'name' => 'publication-languages',
                             'placeholder' => 'Select Language',
@@ -28,13 +30,12 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
 
                 <ul class="chapter-list">
                     <?php foreach ($chapters as $chapter) : ?>
-                        <?php $singleChapter = count($chapters) === 1; ?>
                         <li class="chapter-item" data-lang="<?= $chapter['lang'] ?>">
-                            <label class="checkbox-item <?= $singleChapter ? 'hide' : '' ?>">
+                            <label class="checkbox-item">
                                 <span class="chapter-title"><?= $chapter['title'] ?></span>
                                 <span class="chapter-metadata"><?= $chapter['metadata'] ?></span>
-                                <input type="checkbox" value="" <?= $singleChapter ? 'checked' : '' ?>>
-                                <span class="checkmark"></span>
+                                <input type="checkbox" value="" <?= $singleChapter ? 'class="hide" checked' : ''?>>
+                                <span class="checkmark <?= $singleChapter ? 'hide' : ''?>"></span>
                             </label>
                         </li>
                     <?php endforeach; ?>
@@ -42,14 +43,7 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
             </div>
         </div>
         <div class="bottom-container">
-            <div class="social-icons">
-                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-facebook') ?></a>
-                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-twitter') ?></a>
-                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-instagram') ?></a>
-                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-linkedin') ?></a>
-                <a href="#" target="_blank" class="icon-item"><?php Svg::render('icon-youtube') ?></a>
-            </div>
-            <button class="btn" data-download-chapters disabled>Download</button>
+            <button class="btn" data-download-chapters <?= count($chapters) > 1 ? 'disabled' : '' ?>>Download</button>
         </div>
     </div>
 </div>

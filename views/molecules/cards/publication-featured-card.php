@@ -5,7 +5,7 @@ use helpers\View;
 
 ?>
 
-<div class="publication-featured-card">
+<div class="publication-featured-card" data-ie-sticky>
     <h2 class="heading h2">Publications</h2>
     <?php View::render('molecules/images/publication-image', ['image' => $image]); ?>
     <div class="publication-social">

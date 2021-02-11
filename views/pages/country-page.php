@@ -30,6 +30,8 @@ use helpers\View;
 
     <?php View::render('organisms/content-cards/country-page-content-cards'); ?>
 
+    <?php View::render('organisms/carousel/our-impact'); ?>
+
     <?php View::render('organisms/content-cards/photo-cta'); ?>
 </div>
 <!-- Footer -->

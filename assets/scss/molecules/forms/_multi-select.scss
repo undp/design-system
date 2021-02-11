@@ -88,6 +88,7 @@
         max-width: 100%;
         min-width: 230px;
         overflow-y: auto;
+        list-style: none;
         min-height: 100px;
         max-height: 300px;
         position: absolute;
@@ -124,6 +125,11 @@
                     border-color: $red-2;
                 }
             }
+        }
+
+        .sub-menu {
+            list-style: none;
+            color: $dark-blue-2;
         }
 
         &::-webkit-scrollbar {

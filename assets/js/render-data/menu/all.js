@@ -7,7 +7,7 @@ const init = function () {
 
         $.ajax({
             type: 'GET',
-            url:`/assets/js/render-data/json/menu/${type}.json`,
+            url:`/assets/js/render-data/json-files/menu/${type}.json`,
             dataType: 'json',
             success: function (response) {
                 // Sub menu

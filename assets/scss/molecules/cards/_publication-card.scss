@@ -1,7 +1,7 @@
 .publication-card {
     @extend .article-card;
 
-    @include breakpoint(medium down){
+    @include breakpoint(medium down) {
         flex-direction: column;
     }
 
@@ -39,6 +39,12 @@
                 @include breakpoint(medium down) {
                     display: block;
                 }
+
+                @include breakpoint(small only) {
+                    margin: 0 auto;
+                    max-width: 425px;
+                    max-height: 385px;
+                }
             }
         }
 
@@ -53,6 +59,19 @@
                 height: 100%;
                 padding: 63px 30px;
 
+
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    text-align: center;
+
+                    .image {
+                        display: block !important; //this override the flex one
+
+                        img {
+                            height: 100% !important;
+                        }
+                    }
+                }
+
                 .image {
                     height: 100%;
                     display: flex;
@@ -61,7 +80,7 @@
                     justify-content: center;
 
                     img {
-                        height: 100%;
+                        height: auto;
                     }
                 }
 
@@ -71,6 +90,10 @@
 
                     .image {
                         display: block;
+
+                        @include breakpoint(small only) {
+                            display: flex;
+                        }
                     }
                 }
             }

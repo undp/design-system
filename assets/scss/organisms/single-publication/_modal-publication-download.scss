@@ -31,10 +31,16 @@
 
     .modal-content {
         width: 100%;
+        overflow: auto;
         max-width: 1029px;
         background: $white;
         position: relative;
         padding: 65px 80px 45px 75px;
+        max-height: calc(100vh - #{$nav-desktop-height});
+
+        @include breakpoint(large down){
+            max-height: calc(100vh - #{$nav-mobile-height});
+        }
 
         @include breakpoint(small only){
             height: 100%;
@@ -82,7 +88,7 @@
             margin-top: 25px;
             padding-right: 40px;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-end;
 
             .social-icons {
                 display: flex;

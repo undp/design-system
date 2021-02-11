@@ -68,12 +68,21 @@
                     @include breakpoint(medium down) {
                         bottom: 7%;
                     }
+
+                    @include breakpoint(small only) {
+                        left: 8%;
+                        bottom: 5%;
+                        right: 90px;
+                    }
                 }
 
                 .image img {
                     @include breakpoint(medium down) {
-                        height: auto;
                         min-height: 0;
+                    }
+
+                    @include breakpoint(small only) {
+                        max-height: 400px;
                     }
                 }
             }

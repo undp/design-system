@@ -1,0 +1,110 @@
+[
+  {
+    "name":  "Arabic",
+    "value": "arabic"
+  },
+  {
+    "name":  "Azerbaijani",
+    "value": "azerbaijani"
+  },
+  {
+    "name":  "Bosnian",
+    "value": "bosnian"
+  },
+  {
+    "name":  "Burmese",
+    "value": "burmese"
+  },
+  {
+    "name":  "Chinese",
+    "value": "chinese"
+  },
+  {
+    "name":  "Danish",
+    "value": "danish"
+  },
+  {
+    "name":  "English",
+    "value": "english"
+  },
+  {
+    "name":  "Finnish",
+    "value": "finnish"
+  },
+  {
+    "name":  "French",
+    "value": "french"
+  },
+  {
+    "name":  "Georgian",
+    "value": "georgian"
+  },
+  {
+    "name":  "Indonesian",
+    "value": "indonesian"
+  },
+  {
+    "name":  "Japanese",
+    "value": "japanese"
+  },
+  {
+    "name":  "Kazakh",
+    "value": "kazakh"
+  },
+  {
+    "name":  "Korean",
+    "value": "korean"
+  },
+  {
+    "name":  "Kurdish",
+    "value": "kurdish"
+  },
+  {
+    "name":  "Kyrgyz",
+    "value": "kyrgyz"
+  },
+  {
+    "name":  "Norwegian",
+    "value": "norwegian"
+  },
+  {
+    "name":  "Portuguese",
+    "value": "portuguese"
+  },
+  {
+    "name":  "Romanian",
+    "value": "romanian"
+  },
+  {
+    "name":  "Russian",
+    "value": "russian"
+  },
+  {
+    "name":  "Serbian",
+    "value": "serbian"
+  },
+  {
+    "name":  "Spanish",
+    "value": "spanish"
+  },
+  {
+    "name":  "Swedish",
+    "value": "swedish"
+  },
+  {
+    "name":  "Turkish",
+    "value": "turkish"
+  },
+  {
+    "name":  "Ukrainian",
+    "value": "ukrainian"
+  },
+  {
+    "name":  "Uzbek",
+    "value": "uzbek"
+  },
+  {
+    "name":  "Vietnamese",
+    "value": "vietnamese"
+  }
+]

@@ -7,12 +7,22 @@
         margin-top: $nav-mobile-height;
     }
 
+    // For IE 11 (media is a hack to check for IE 10+)
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        overflow: hidden;
+    }
+
     .side-nav-content {
         margin-top: 42px;
 
         .side-navigation {
             display: flex;
             align-items: flex-end;
+
+            // For IE 11 (media is a hack to check for IE 10+)
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                display: block;
+            }
         }
 
         .side-content {
