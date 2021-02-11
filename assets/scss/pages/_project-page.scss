@@ -47,6 +47,8 @@
 
     .related-table {
         margin-top: 90px;
+        padding-bottom: 115px;
+        background: $dark-blue-7;
 
         .link-list {
             margin-top: 45px;
@@ -67,6 +69,51 @@
                 a {
                     text-decoration: underline;
                     text-decoration-color: $red;
+                }
+            }
+        }
+    }
+
+    .listed-stats {
+        margin-top: 100px;
+
+        .heading-stats-text {
+            padding-bottom: 55px;
+            border-bottom: 2px solid $black;
+        }
+
+        .heading-stats-items {
+            margin-top: 60px;
+
+            @include breakpoint(medium down) {
+                margin-top: 15px;
+            }
+
+            .big-column {
+                padding-left: 30px;
+
+                @include breakpoint(medium down) {
+                    padding-left: 0;
+                }
+            }
+
+            .stat-item-container {
+                @include breakpoint(small only) {
+                    padding-bottom: 40px;
+                    border-bottom: 1px solid $dark-blue-19;
+                }
+            }
+
+            .stat-item {
+                margin-top: 35px;
+
+                .heading-item {
+                    font-weight: $bold;
+                    text-transform: uppercase;
+                }
+
+                .body-text-item {
+                    margin-top: 15px;
                 }
             }
         }
