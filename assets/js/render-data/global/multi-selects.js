@@ -17,12 +17,13 @@ const init = function () {
                 dataType: 'json',
                 success: function(response){
                     response.forEach((item) => {
-                        let subtreeAttrs = ''
+                        let subtreeAttributes = ''
                         let subtreeHTML = ''
                         let optionId = Math.random().toString(36).substr(2, 5);
 
                         if(item.sub !== undefined) {
-                            subtreeAttrs = `aria-expanded="false" aria-controls="${optionId}-subtree" class="has-submenu"`
+                            subtreeAttributes = `aria-expanded="false" aria-controls="${optionId}-subtree" class="has-submenu"`
+
                             subtreeHTML = `
                             <ul id="${optionId}-subtree" class="sub-menu" role="group" aria-labelledby="${optionId}-option">
                                 ${item.sub.map(subItem => {
@@ -38,7 +39,8 @@ const init = function () {
                         }
 
                         const optionHTML = `
-                        <li role="option" id="${ optionId }-option" ${subtreeAttrs}>
+                        <li role="option" id="${ optionId }-option" ${subtreeAttributes}>
+                            ${item.sub !== undefined ? `<button class="caret" aria-expanded="false">Open submenu for ${item.name}</button>` : '' }
                             <label class="checkbox-item">
                                 <input type="checkbox" value="${ item.value }">
                                 <span class="checkmark"></span>
