@@ -47,7 +47,6 @@
         width: 100%;
         bottom: 30px;
         position: sticky;
-        top: calc(#{$nav-desktop-height} + 30px);
         border-top: 1px solid rgba($black, 0.1);
 
         @include breakpoint(medium down) {
