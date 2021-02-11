@@ -779,9 +779,8 @@ use helpers\Svg;
                     <p class="big-copy">.select-radio</p>
                     <div class="search-select-group show-for-large">
                         <?php
-                        View::render('partials/multi-select-radio', [
+                        View::render('molecules/forms/multi-select-radio', [
                             'class' => 'lorem-radios',
-                            'ariaLabel' => 'Category',
                             'title' => 'Category',
                             'dataType' => 'lorem-radios',
                             'radio' => true,

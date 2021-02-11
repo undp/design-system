@@ -85,6 +85,10 @@ class ModalPublicationDownload {
             e.preventDefault();
             this.close();
         })
+
+        this.$body.on('UNDP.closeOtherModals', () => {
+            this.close();
+        })
     }
 
     setKeyPressListener() {
@@ -121,8 +125,15 @@ class ModalPublicationDownload {
     }
 
     setChapterSelectedListener() {
-        this.$chapters.click(() => {
+        this.$chapters.click(ev => {
             const checked = this.$chapters.find(':checked')
+
+            if (this.$chapters.length === 1) {
+                // Prevent the checkbox from getting unchecked
+                ev.preventDefault()
+                ev.stopImmediatePropagation()
+                return false
+            }
 
             checked.length
                 ? this.$downloadBtn.removeAttr('disabled')

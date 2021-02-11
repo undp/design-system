@@ -1,8 +1,8 @@
 import './helpers/findIndexPolyfill' // IE Polyfill
 import 'what-input'
-import prism from './prism.js'
 import './classes/UNDP'
 
+import GlobalSearch from './classes/GlobalSearch'
 import inputs from './components/inputs'
 import lazyLoad from './components/lazy-load'
 import navigation from './components/navigation'
@@ -35,11 +35,9 @@ import modalPublicationDownload from './components/modal-publication-download'
 
 // JS to render nav/search DOM elements from JSON data files
 import menusNav from './render-data/menu/all';
-import searchData  from './render-data/modals/search'
-import contentTypeData  from './render-data/news-centre/content-types'
-import countriesData  from './render-data/modals/locations/countries'
-import multiSelectData from './render-data/modals/locations/multi-selects'
-import mobileFilterData from './render-data/modals/locations/mobile-filters'
+import multiSelectData from './render-data/global/multi-selects'
+import countriesData  from './render-data/locations/countries'
+import mobileFilterData from './render-data/locations/mobile-filters'
 
 // Trap focus for modals
 import trapFocus from './components/trap-focus'
@@ -47,7 +45,6 @@ import DynamicSlider from "./classes/DynamicSlider";
 
 function main() {
     imageSizes()
-    prism();
     modal()
     inputs()
     ourExpertiseSectionAnimation()
@@ -56,7 +53,6 @@ function main() {
     lazyLoad()
     footerMenu()
     navigation()
-    contentTypeData()
     locationFilters()
     newsCentreFilter()
     multiSelect()
@@ -74,7 +70,6 @@ function main() {
     docs()
     multiSelectData()
     mobileFilterData()
-    searchData()
     countriesData()
     trapFocus()
     navigationProgress()
@@ -92,6 +87,9 @@ function main() {
             dynamicSlider.init()
         })
     }
+
+    const globalSearch = new GlobalSearch()
+    globalSearch.init()
 }
 
 document.addEventListener("DOMContentLoaded", function () {

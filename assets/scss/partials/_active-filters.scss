@@ -1,11 +1,15 @@
 .active-filters {
     position: relative;
 
+    .tag {
+        color: $gray-chateau;
+    }
+
     .filter {
         color: $black;
-        padding: 10px;
         font-size: 1.4rem;
-        border-radius: 17px;
+        padding: 10px 12px;
+        border-radius: 20px;
         background-color: rgba($dark-blue-19, 0.36);
 
         &:before {
@@ -19,19 +23,16 @@
     }
 
     .filter-clear {
+        color: $black;
+        line-height: 1.5;
+        margin-left: 12px;
+        font-size: 1.4rem;
+        font-weight: $regular;
+        text-transform: capitalize;
         border-bottom: 1px solid $red-1;
 
         &:active, &:focus, &:hover {
             color: $black;
-        }
-
-        &.caps {
-            color: $black;
-            line-height: 1.5;
-            margin-left: 15px;
-            font-size: 1.4rem;
-            font-weight: $regular;
-            text-transform: capitalize;
         }
     }
 

@@ -58,11 +58,8 @@
             padding: 27px 30px;
         }
 
-        .tag {
-            &.gray,
-            &.filter-clear:hover {
-                color: $gray-chateau;
-            }
+        .filter-clear:hover {
+            color: $gray-chateau;
         }
 
         .filter {

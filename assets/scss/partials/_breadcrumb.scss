@@ -24,6 +24,7 @@
         }
 
         &:last-of-type {
+            color: $black;
             pointer-events: none;
         }
     }

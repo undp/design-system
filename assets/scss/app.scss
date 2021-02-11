@@ -22,9 +22,6 @@
 @import 'partials/breadcrumb';
 @import 'partials/modal-sdgs';
 @import 'partials/explore-more';
-@import 'partials/select';
-@import 'partials/multi-select';
-@import 'partials/custom-checkbox';
 @import "partials/scroll-up";
 @import 'partials/active-filters';
 @import 'partials/side-navigation';
@@ -43,6 +40,10 @@
 @import "partials/navigation/modals/locations/mobile/filter-options";
 
 // Molecules
+@import 'molecules/forms/select';
+@import 'molecules/forms/multi-select';
+@import 'molecules/forms/search-input';
+@import 'molecules/forms/custom-checkbox';
 @import "molecules/cards/stat-global";
 @import "molecules/cards/image-card";
 @import "molecules/cards/article-card";
@@ -75,6 +76,7 @@
 @import "organisms/hero/sdg-deep-dive-hero";
 @import "organisms/hero/news-centre-hero";
 @import "organisms/hero/about-us-hero";
+@import "organisms/hero/project-hero";
 @import "organisms/text/author-bio";
 @import "organisms/text/bulleted-list";
 @import "organisms/article-cards/featured-stories";
@@ -105,3 +107,4 @@
 @import "pages/standard-page";
 @import "pages/styleguide";
 @import "pages/single-publication";
+@import "pages/project-page";
