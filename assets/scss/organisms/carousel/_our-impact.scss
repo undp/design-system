@@ -1,3 +1,11 @@
+@mixin stat-card-accent() {
+    .stat-card {
+        background-color: $yellow-2;
+        @include accent-color-background();
+    }
+}
+
+
 .our-impact {
     margin-top: 90px;
 
@@ -28,9 +36,25 @@
 
         .glide__slides {
             margin-top: 34px;
+        }
 
-            .glide__slide {
-                height: auto;
+        .glide__slide {
+            height: auto;
+        }
+
+        .glide__slide--active {
+            @include stat-card-accent();
+
+            @include breakpoint(475px up) {
+                + .glide__slide {
+                    @include stat-card-accent();
+                }
+            }
+
+            @include breakpoint(620px up) {
+                + .glide__slide + .glide__slide {
+                    @include stat-card-accent();
+                }
             }
         }
 

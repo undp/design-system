@@ -1,0 +1,53 @@
+@mixin accent-color-background() {
+    // Default color, kept class for clarity
+    // Two ways of adding accent color:
+    // 1. Globally on an upper container (all up to the body)
+    // 2. Directly on the card
+    // Directly on the card overrides global color
+    .accent-yellow &, &.accent-yellow {
+        background-color: $yellow-2;
+    }
+
+    .accent-green &, &.accent-green{
+        background-color: $green-2;
+    }
+
+    .accent-red &, &.accent-red{
+        background-color: $red-2;
+    }
+
+    .accent-blue &, &.accent-blue{
+        background-color: $blue-accent-2;
+    }
+
+    // Don't trigger hover on tap on iOS
+    @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:hover{
+            background-color: $yellow;
+        }
+
+        .accent-yellow &, &.accent-yellow {
+            &:hover{
+                background-color: $yellow;
+            }
+        }
+
+        .accent-green &, &.accent-green{
+            &:hover{
+                background-color: $green;
+            }
+        }
+
+        .accent-red &, &.accent-red{
+            &:hover{
+                background-color: $red;
+            }
+        }
+
+        .accent-blue &, &.accent-blue{
+            &:hover{
+                background-color: $blue-accent;
+            }
+        }
+    }
+}
