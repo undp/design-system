@@ -21,8 +21,6 @@ class MultiSelect {
             let $selectedCheckbox = $(ev.target);
             let $selectedOption = $selectedCheckbox.closest('li[role=option]');
 
-            console.log($selectedOption)
-
             $selectedOption.attr('aria-selected', $selectedCheckbox.is(':checked'))
         })
     }

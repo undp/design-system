@@ -64,17 +64,112 @@
                     display: none;
                     max-width: 355px;
 
+                    .mobile-filters-open,
+                    .mobile-filters-close,{
+                        display: none;
+
+                        .btn {
+                            width: 100%;
+                        }
+                    }
+
+                    .mobile-filters-close,{
+                        padding-left: 25px;
+                        padding-right: 25px;
+                    }
+
+                    .multi-select {
+                        &:not(:last-child) {
+                            margin-bottom: 16px;
+                        }
+                    }
+
+                    .active-filters {
+                        display: flex;
+                        padding-left: 24px;
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .tag {
+                            margin-bottom: 15px;
+                        }
+
+                        .filter-clear {
+                            margin-top: 8px;
+
+                            &:hover {
+                                color: $gray-chateau;
+                            }
+                        }
+
+                        .filter {
+                            margin-bottom: 8px;
+                        }
+                    }
+
                     @include breakpoint(medium only) {
                         max-width: 255px;
                     }
 
                     @include breakpoint(small only) {
                         max-width: none;
-                    }
 
-                    .multi-select {
-                        &:not(:first-child) {
-                            margin-top: 16px;
+                        .mobile-filters-open {
+                            display: block;
+                        }
+
+                        &.open-filters {
+                            .mobile-filters-open {
+                                display: none;
+                            }
+                            .mobile-filters-close {
+                                display: block;
+                            }
+                            .active-filters {
+                                display: block;
+                            }
+                        }
+
+                        &:not(.open-filters) {
+                            .multi-select {
+                                display: none;
+                            }
+                        }
+
+                        .active-filters {
+                            display: none;
+                            padding-left: 0;
+                            margin-top: 25px;
+                            position: relative;
+                            padding-bottom: 30px;
+
+                            .tag {
+                                color: $black;
+                                margin-left: 25px;
+                                margin-bottom: 20px;
+                            }
+
+                            .filter-clear {
+                                top: 0;
+                                margin: 0;
+                                right: 25px;
+                                font-size: 1.2rem;
+                                position: absolute;
+                                font-weight: $semi-bold;
+                            }
+
+                            .filter {
+                                margin-bottom: 6px;
+                                display: inline-block;
+                                width: calc(50% - 5px);
+
+                                &:nth-child(even) {
+                                    margin-right: 5px;
+                                }
+                                &:nth-child(odd) {
+                                    margin-left: 5px;
+                                }
+                            }
                         }
                     }
                 }
@@ -217,7 +312,7 @@
 
                 .results-and-filters-container {
                     @include breakpoint(small only) {
-                        margin-top: 50px;
+                        margin-top: 30px;
                     }
 
                     .search-filters {

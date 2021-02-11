@@ -20,6 +20,9 @@ use helpers\View;
             </div>
             <div class="results-and-filters-container">
                 <div class="search-filters">
+                    <div class="mobile-filters-open">
+                        <button class="btn blue">Filters &nbsp;<span class="counter"></span></button>
+                    </div>
                     <?php
                     View::render('molecules/forms/multi-select', [
                         'id' => 'language-select',
@@ -53,7 +56,11 @@ use helpers\View;
                     ]);
                     ?>
 
-                    <div class="flex-container active-filters" data-active-filters></div>
+                    <div class="active-filters" data-active-filters></div>
+
+                    <div class="mobile-filters-close">
+                        <button class="btn">Show Results</button>
+                    </div>
                 </div>
                 <div class="search-results">
                     <div class="grid-x grid-margin-x" data-search-results>

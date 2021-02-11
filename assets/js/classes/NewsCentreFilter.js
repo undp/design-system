@@ -36,6 +36,9 @@ class NewsCentreFilter {
         this.$loadMore.click(() => this.loadMore())
         this.$window.on('changed.zf.mediaquery', () => this.matchResults(true))
         this.$contentTypeFilter.on('change', 'input[type="checkbox"]', ev => this.handleMultiSelectChange(ev))
+
+        this.setRemoveFilterListener()
+        this.setClearAllFiltersListener()
     }
 
     calculateCardsToShow() {
@@ -103,7 +106,7 @@ class NewsCentreFilter {
         const $tagsContainer = $('<div class="tags-container">')
 
         if ($checkedOptions.length) {
-            this.$activeFilters.append('<p class="tag uppercase gray">Active filters:</p>')
+            this.$activeFilters.append('<p class="tag">Active filters:</p>')
 
             $checkedOptions.each((i, input) => {
                 const text = $(input).parent().text()
@@ -114,14 +117,12 @@ class NewsCentreFilter {
             })
 
             this.$activeFilters.append($tagsContainer)
-            this.$activeFilters.append('<a class="tag filter-clear caps" data-close-all-select href="#">Clear All</a>')
-            this.setRemoveFilterListener()
-            this.setClearAllFiltersListener()
+            this.$activeFilters.append('<a class="filter-clear" data-close-all-select href="#">Clear All</a>')
         }
     }
 
     setClearAllFiltersListener() {
-        $('[data-close-all-select]').on('click', (ev) => {
+        this.$activeFilters.on('click', '[data-close-all-select]', (ev) => {
             ev.preventDefault()
             this.$activeFilters.html('')
 
@@ -134,7 +135,7 @@ class NewsCentreFilter {
     }
 
     setRemoveFilterListener() {
-        $('[data-remove-filter]').on('click', (ev) => {
+        this.$activeFilters.on('click', '[data-remove-filter]', (ev) => {
             ev.preventDefault()
 
             const $this = $(ev.currentTarget)

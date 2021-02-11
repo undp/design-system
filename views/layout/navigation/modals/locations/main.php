@@ -14,12 +14,12 @@ use helpers\View;
                     Back
                 </a>
                 <div class="header-modal">
-                    <p class="tag uppercase show-for-large">current selection</p>
+                    <p class="tag show-for-large">current selection</p>
                     <h3 class="heading h3 location-undp show-for-large"><span class="uppercase">undp</span> global</h3>
 
                     <h2 class="heading h2 title show-for-large">Find Our Offices Around the World.</h2>
                     <p class="big-copy description show-for-large">Get in touch, share your ideas, and discover how we can work together for a sustainable, just, and equitable future.</p>
-                    <p class="tag uppercase hide-for-large tag-current-section">current selection</p>
+                    <p class="tag hide-for-large tag-current-section">current selection</p>
                     <h3 class="heading h3 title hide-for-large title-undp"><span class="uppercase">undp</span> Global</h3>
                     <a class="text-link arrow-3 show-for-large" href="#">
                         Go to GLOBAL SITE
