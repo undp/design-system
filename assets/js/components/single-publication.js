@@ -10,17 +10,18 @@ const init = function() {
 
     function setSuitableScale() {
         const pfcHeight = $pfc.height()
-        const availableHeight = $window.height() - $nav.height() - 20
+        const availableHeight = $window.height() - $nav.height() - 30
 
         let suitableScale = 1
 
         if (pfcHeight > availableHeight) {
             suitableScale = availableHeight / $pfc.height()
-            $pfc.css('transform', `scale(${suitableScale})`)
         }
+
+        $pfc.css('transform', `scale(${suitableScale})`)
     }
 
-    function shouldScale(minBreakpoint = 'medium') {
+    function shouldScale(minBreakpoint = 'large') {
         return Foundation.MediaQuery.atLeast(minBreakpoint)
     }
 
