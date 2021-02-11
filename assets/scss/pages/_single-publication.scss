@@ -27,6 +27,7 @@
     .publication-featured-card {
         position: sticky;
         margin-top: 20px;
+        transform-origin: top left;
         top: calc(#{$nav-desktop-height} + 20px);
 
         @include breakpoint(medium down) {
