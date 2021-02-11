@@ -41,7 +41,6 @@ import mobileFilterData from './render-data/locations/mobile-filters'
 
 // Trap focus for modals
 import trapFocus from './components/trap-focus'
-import DynamicSlider from "./classes/DynamicSlider";
 
 function main() {
     imageSizes()
@@ -64,7 +63,6 @@ function main() {
     menusNav()
     modalSdgs()
     heroAnimation()
-    scrollTriggers()
     sdgCard()
     select()
     docs()
@@ -79,14 +77,6 @@ function main() {
     modalPublicationDownload()
     scrollUp()
     ieSticky()
-
-    const $dynamicSliders = $('.dynamic-slider')
-    if ($dynamicSliders.length) {
-        $dynamicSliders.each((i, slider) => {
-            const dynamicSlider = new DynamicSlider(slider)
-            dynamicSlider.init()
-        })
-    }
 
     const globalSearch = new GlobalSearch()
     globalSearch.init()
