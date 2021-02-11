@@ -5,6 +5,7 @@ use helpers\View;
 $cards = isset($cards) && is_array($cards) ? $cards : [];
 $sliderOptions = [
     'type' => 'slider',
+    'bound' => true,
     'peek' => ['before' => 0, 'after' => 65],
     'gap' => 20,
     'perView' => 3,
@@ -47,13 +48,11 @@ $sliderOptions = [
             <?php endforeach; ?>
         </div>
 
-        <div class="dynamic-slider cell hide-for-medium" data-options=<?= json_encode($sliderOptions) ?>>
+        <div class="generic-slider cell hide-for-medium" data-options=<?= json_encode($sliderOptions) ?>>
 
             <div class="scroll-track left-right delay-1">
                 <div class="bullets-container">
-                    <div class="glide__bullets" data-glide-el="controls[nav]">
-
-                    </div>
+                    <div class="glide__bullets" data-glide-el="controls[nav]"></div>
                 </div>
 
                 <div class="glide__track" data-glide-el="track">

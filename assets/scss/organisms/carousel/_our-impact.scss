@@ -17,7 +17,7 @@
         }
     }
 
-    .dynamic-slider {
+    .generic-slider {
         margin-top: 48px;
 
         .glide__track {
@@ -28,6 +28,10 @@
 
         .glide__slides {
             margin-top: 34px;
+
+            .glide__slide {
+                height: auto;
+            }
         }
 
         .stat-card {
