@@ -4,6 +4,7 @@ use helpers\View;
 
 $chapters = isset($chapters) && is_array($chapters) ? $chapters : [];
 $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $languageOptions : [];
+$singleChapter = count($chapters) === 1;
 ?>
 
 <div class="modal-publication-download">
@@ -29,13 +30,12 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
 
                 <ul class="chapter-list">
                     <?php foreach ($chapters as $chapter) : ?>
-                        <?php $singleChapter = count($chapters) === 1; ?>
                         <li class="chapter-item" data-lang="<?= $chapter['lang'] ?>">
-                            <label class="checkbox-item <?= $singleChapter ? 'hide' : '' ?>">
+                            <label class="checkbox-item">
                                 <span class="chapter-title"><?= $chapter['title'] ?></span>
                                 <span class="chapter-metadata"><?= $chapter['metadata'] ?></span>
-                                <input type="checkbox" value="" <?= $singleChapter ? 'checked' : '' ?>>
-                                <span class="checkmark"></span>
+                                <input type="checkbox" value="" <?= $singleChapter ? 'class="hide" checked' : ''?>>
+                                <span class="checkmark <?= $singleChapter ? 'hide' : ''?>"></span>
                             </label>
                         </li>
                     <?php endforeach; ?>
@@ -43,7 +43,7 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
             </div>
         </div>
         <div class="bottom-container">
-            <button class="btn" data-download-chapters disabled>Download</button>
+            <button class="btn" data-download-chapters <?= count($chapters) > 1 ? 'disabled' : '' ?>>Download</button>
         </div>
     </div>
 </div>
