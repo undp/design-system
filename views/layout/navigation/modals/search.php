@@ -42,8 +42,8 @@ use helpers\View;
                     <?php
                     View::render('molecules/forms/multi-select', [
                         'id' => 'regions-countries-select',
-                        'title' => 'Region',
-                        'dataType' => 'region',
+                        'title' => 'Regions & Countries',
+                        'dataType' => 'region-countries',
                         'actionListener' => 'data-regions-countries-filter'
                     ]);
                     ?>

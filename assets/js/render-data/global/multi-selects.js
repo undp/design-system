@@ -33,7 +33,7 @@ const init = function () {
                                                     <span class="name">${ subItem.name }</span>
                                                 </label>
                                             </li>`
-                                })}
+                                }).join('')}
                             </ul>`
                         }
 

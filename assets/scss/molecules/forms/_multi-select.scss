@@ -127,6 +127,11 @@
             }
         }
 
+        .sub-menu {
+            list-style: none;
+            color: $dark-blue-2;
+        }
+
         &::-webkit-scrollbar {
             width: 4px;
             background-color: rgba($black, 0.30);
