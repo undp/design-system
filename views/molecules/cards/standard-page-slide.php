@@ -4,7 +4,7 @@ $imgPath = '../../../assets/images/placeholder'
 ?>
 
 
-<div class="standard-page-slide generic-slide flex-container flex-dir-column medium-flex-dir-row">
+<div class="standard-page-slide flex-container flex-dir-column medium-flex-dir-row">
     <img src="<?= "$imgPath/about-us--slider-image.jpg" ?>" alt="">
 
     <div class="slide-content">
