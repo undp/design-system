@@ -1,92 +1,78 @@
-<?php use helpers\View; ?>
+<?php
+
+use helpers\View;
+
+$cards = isset($cards) && is_array($cards) ? $cards : [];
+$sliderOptions = [
+    'type' => 'slider',
+    'bound' => true,
+    'peek' => ['before' => 0, 'after' => 65],
+    'gap' => 20,
+    'perView' => 3,
+    'breakpoints' => [
+        '620' => [
+            'perView' => 2,
+        ],
+        '475' => [
+            'perView' => 1,
+        ]
+    ]
+];
+?>
 
 
-<section class="our-impact gs--parallax-container">
+<section class="our-impact">
     <div class="grid-container grid-x overflow-hidden">
 
         <div class="cell medium-10 medium-offset-1">
             <h2 class="heading h2">Our Expertise</h2>
         </div>
 
-        <div class="cell gs--parallax-row">
-            <div class="grid-x grid-padding-x">
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 41,
-                        'title' => 'Percent',
-                        'description' => 'Adult literacy rate'
-                    ])
-                    ?>
+        <div class="gs--parallax-container cell show-for-medium">
+            <?php foreach(array_chunk($cards, 4) as $chunk) : ?>
+                <div class="grid-x grid-padding-x gs--parallax-row">
+
+                    <?php foreach($chunk as $card) : ?>
+                        <div class="cell medium-3">
+                            <?php
+                                View::render('molecules/stats/small-card', [
+                                    'title' => $card['title'],
+                                    'number' => $card['number'],
+                                    'description' => $card['description']
+                                ])
+                            ?>
+                        </div>
+                    <?php endforeach; ?>
+
                 </div>
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 60,
-                        'title' => 'Percent',
-                        'description' => 'Of Sierra Leoneans live below the the national poverty line'
-                    ])
-                    ?>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="generic-slider cell hide-for-medium" data-options=<?= json_encode($sliderOptions) ?>>
+
+            <div class="scroll-track left-right delay-1">
+                <div class="bullets-container">
+                    <div class="glide__bullets" data-glide-el="controls[nav]"></div>
                 </div>
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 60,
-                        'title' => 'Percent',
-                        'description' => 'Of Sierra Leoneans live below the the national poverty line'
-                    ])
-                    ?>
+
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <?php foreach($cards as $card) : ?>
+                            <div class="glide__slide">
+                                <?php
+                                    View::render('molecules/stats/small-card', [
+                                        'title' => $card['title'],
+                                        'number' => $card['number'],
+                                        'description' => $card['description']
+                                    ])
+                                ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </ul>
                 </div>
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 60,
-                        'title' => 'Percent',
-                        'description' => 'Of Sierra Leoneans live below the the national poverty line'
-                    ])
-                    ?>
-                </div>
+
             </div>
         </div>
-        <div class="cell gs--parallax-row">
-            <div class="grid-x grid-padding-x">
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 13,
-                        'title' => 'Percent',
-                        'description' => 'Of parliamentary seats held by women'
-                    ])
-                    ?>
-                </div>
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 70,
-                        'title' => 'Percent',
-                        'description' => 'Of youth are unemployed or underemployed'
-                    ])
-                    ?>
-                </div>
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 48,
-                        'title' => 'Years old',
-                        'description' => 'Life expectancy at birth'
-                    ])
-                    ?>
-                </div>
-                <div class="cell medium-3">
-                    <?php
-                    View::render('molecules/stats/small-card', [
-                        'number' => 60,
-                        'title' => 'Percent',
-                        'description' => 'Of Sierra Leoneans live below the the national poverty line'
-                    ])
-                    ?>
-                </div>
-            </div>
-        </div>
+
     </div>
 </section>

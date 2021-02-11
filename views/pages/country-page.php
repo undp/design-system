@@ -1,9 +1,4 @@
-<?php
-
-use helpers\Svg;
-use helpers\View;
-
-?>
+<?php use helpers\View; ?>
 
 <!-- Page Headers -->
 <?php View::render('layout/header', ['pageTitle' => 'UNDP - Country Page']) ?>
@@ -30,7 +25,53 @@ use helpers\View;
 
     <?php View::render('organisms/content-cards/country-page-content-cards'); ?>
 
-    <?php View::render('organisms/carousel/our-impact'); ?>
+    <?php
+        View::render('organisms/carousel/our-impact', [
+            'cards' => [
+                [
+                    'number' => 41,
+                    'title' => 'Percent',
+                    'description' => 'Adult literacy rate'
+                ],
+                [
+                    'number' => 60,
+                    'title' => 'Percent',
+                    'description' => 'Of Sierra Leoneans live below the the national poverty line'
+                ],
+                [
+                    'number' => 13,
+                    'title' => 'Percent',
+                    'description' => 'Of parliamentary seats held by women'
+                ],
+                [
+                    'number' => 70,
+                    'title' => 'Percent',
+                    'description' => 'Of youth are unemployed or underemployed'
+                ],
+                [
+                    'number' => 48,
+                    'title' => 'Years old',
+                    'description' => 'Life expectancy at birth'
+                ],
+                [
+                    'number' => 70,
+                    'title' => 'Percent',
+                    'description' => 'Of youth are unemployed or underemployed'
+                ],
+
+                [
+                    'number' => 13,
+                    'title' => 'Percent',
+                    'description' => 'Of parliamentary seats held by women'
+                ],
+                [
+                    'number' => 41,
+                    'title' => 'Percent',
+                    'description' => 'Adult literacy rate'
+                ]
+            ]
+        ]);
+    ?>
 
     <?php View::render('organisms/content-cards/photo-cta'); ?>
 </div>

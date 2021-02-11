@@ -44,30 +44,27 @@ const init = function () {
 
         const from = {
             xPercent: 75,
-            ease: "none",
             scrollTrigger: {
                 scrub: true,
                 trigger: container,
-                start: "bottom center",
+                start: "top+=15% center"
             },
         }
         const to = {
             xPercent: 0,
-            ease: "none",
             scrollTrigger: {
                 scrub: true,
-                end: "center center",
-                trigger: container
+                trigger: container,
+                end: "center center"
             },
         }
 
         parallaxRows
             .forEach((row, idx) => {
-                let odd = idx % 2 === 0
+                const odd = (idx + 1) % 2 !== 0
                 let rowOrigin = Object.assign({}, from)
 
                 rowOrigin.xPercent *= odd ? -1 : 1 // Odd elements should start from a negative position (left to right)
-
                 gsap.fromTo(row, rowOrigin, to)
             })
     })

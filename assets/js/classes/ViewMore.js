@@ -1,3 +1,4 @@
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 
 class ViewMore {
@@ -48,6 +49,8 @@ class ViewMore {
 
         $(showing).removeClass(this.classes.hide)
         if (matches === this.totalCards) this.$viewMore.addClass(this.classes.invisible)
+
+        ScrollTrigger.refresh() // Refresh scrollTrigger in case animated elements are pushed
     }
 
     viewMore() {

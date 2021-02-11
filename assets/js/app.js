@@ -64,7 +64,6 @@ function main() {
     menusNav()
     modalSdgs()
     heroAnimation()
-    scrollTriggers()
     sdgCard()
     select()
     docs()
