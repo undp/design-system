@@ -1,4 +1,5 @@
 const init = function () {
+    const $body = $('body');
     loadSelectItems('regions-select', 'regions')
     loadSelectItems('office-type-select', 'offices')
     loadSelectItems('content-type-select', 'content-types')
@@ -51,6 +52,8 @@ const init = function () {
 
                         $parentContainer.append(optionHTML);
                     });
+
+                    $body.trigger('UNDP.multiselectReady', {multiselect: select})
                 }
             });
         }

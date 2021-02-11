@@ -4,7 +4,13 @@ require "vendor/autoload.php";
 use helpers\View;
 
 $subpath = $_SERVER['REQUEST_URI'];
+$query = $_SERVER['QUERY_STRING'];
 
+if(!empty($query)) {
+    $subpath = str_replace('?' . $query, '', $subpath); // Get URI without query params
+} else {
+    $subpath = str_replace('?', '', $subpath); // Just in case
+}
 
 switch ($subpath) {
     case '/sdgs':

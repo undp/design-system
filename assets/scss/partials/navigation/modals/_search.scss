@@ -322,6 +322,19 @@
                     .search-results {
                         overflow-y: auto;
                         padding-left: 20px;
+                        padding-right: 10px;
+
+                        &::-webkit-scrollbar {
+                            width: 5px;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-color: black;
+                        }
 
                         @include breakpoint(small only) {
                             padding-left: 0;

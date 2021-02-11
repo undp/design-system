@@ -8,11 +8,11 @@ class MultiSelect {
     }
 
     init() {
-        this.addListener();
+        this.addListeners();
         this.listenerWindowClick();
     }
 
-    addListener() {
+    addListeners() {
         this.$selectTrigger.click(() => {
             this.toggleSelect();
         });

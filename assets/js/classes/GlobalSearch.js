@@ -1,5 +1,6 @@
 class GlobalSearch {
     constructor() {
+        this.$body = $('body');
         this.$modal = $('[data-modal-search]')
         this.$searchFiltersContainer = this.$modal.find('.search-filters')
         this.$searchResultsContainer = this.$modal.find('[data-search-results]')
@@ -8,13 +9,19 @@ class GlobalSearch {
         this.$mobileFilterClose = this.$searchFiltersContainer.find('.mobile-filters-close .btn')
         this.$activeFiltersContainer = this.$searchFiltersContainer.find('[data-active-filters]')
         this.$multiselectFilters = this.$searchFiltersContainer.find('.multi-select')
+        this.multiselectFiltersLoaded = false;
 
         this.filters = {}
+        this.validFilters = this.$multiselectFilters.map((index, multiselect) => {
+            let $multiselect = $(multiselect)
+            return $multiselect.find('[data-type]').data('type')
+        }).get()
     }
 
     init() {
         this.bindEvents()
         this.populateQuickLinks()
+        this.getSearchFromQueryParams()
     }
 
     bindEvents() {
@@ -23,11 +30,28 @@ class GlobalSearch {
         })
 
         this.$mobileFilterOpen.on('click', () => {
-            this.openFiltersMobile();
+            this.openFiltersMobile()
         })
 
         this.$mobileFilterClose.on('click', () => {
-            this.closeFiltersMobile();
+            this.closeFiltersMobile()
+        })
+
+        this.$body.on('UNDP.multiselectReady', (evt, data) => {
+            if(this.$multiselectFilters.filter(`#${data.multiselect}`).length) {
+                this.multiselectFiltersLoaded += this.$multiselectFilters.filter(`#${data.multiselect}`).length;
+            }
+
+            // Since Multiselect options are sideloaded via ajax, we need to check if
+            // their content is loaded, to refresh the jQuery object
+            if(this.multiselectFiltersLoaded === this.$multiselectFilters.length) {
+                this.multiselectFiltersLoaded = true;
+                this.$multiselectFilters = $(this.$multiselectFilters.get())
+
+                if(!$.isEmptyObject(this.filters)) {
+                    this.checkMultiselectOptionsFromFilters()
+                }
+            }
         })
 
         this.multiSelectFiltersListener()
@@ -102,19 +126,19 @@ class GlobalSearch {
     }
 
     showSelectedFilterPills() {
-        const checkedOptions = this.$multiselectFilters.find("input:checked");
-        this.$activeFiltersContainer.html('');
+        const checkedOptions = this.$multiselectFilters.find("input:checked")
+        this.$activeFiltersContainer.html('')
 
         if (checkedOptions.length) {
-            this.$activeFiltersContainer.append('<p class="tag">Active filters:</p>');
+            this.$activeFiltersContainer.append('<p class="tag">Active filters:</p>')
 
             checkedOptions.each((i, input) => {
-                const text = $(input).parent().text();
-                const inputValue = $(input).val();
+                const text = $(input).parent().text()
+                const inputValue = $(input).val()
                 this.$activeFiltersContainer.append('<a class="filter" href="#" data-remove-filter data-input-value="' + inputValue + '">' + text + '</a>')
             });
 
-            this.$activeFiltersContainer.append('<a class="filter-clear" data-close-all-select href="#">Clear All</a>');
+            this.$activeFiltersContainer.append('<a class="filter-clear" data-close-all-select href="#">Clear All</a>')
         }
 
         this.$mobileFilterOpen.find('.counter').text(checkedOptions.length > 0? `(${checkedOptions.length})` : '')
@@ -122,8 +146,8 @@ class GlobalSearch {
 
     updateFilters(input) {
         // Get input type(language, content type, region, topic) from parent node
-        const inputType = input.closest('[data-type]').data('type');
-        const inputValue = input.val();
+        const inputType = input.closest('[data-type]').data('type')
+        const inputValue = input.val()
 
         if(this.filters[inputType] === undefined) {
             this.filters[inputType] = []
@@ -132,25 +156,27 @@ class GlobalSearch {
         if (input.is(":checked")) {
             this.filters[inputType].push(inputValue)
         } else {
-            const index = this.filters[inputType].indexOf(inputValue);
+            const index = this.filters[inputType].indexOf(inputValue)
             if (index !== -1) {
-                this.filters[inputType].splice(index, 1);
+                this.filters[inputType].splice(index, 1)
             }
         }
 
-        //this.performSearch();
+        this.addFiltersToParams()
+        this.performSearch();
     }
 
     performSearch() {
         let searchValue = this.$searchInput.val();
 
-        if(searchValue.length < 3) {
+        if(searchValue.length < 3 && !this.$modal.hasClass('showing-results')) {
             return false
         }
 
         console.log(searchValue)
 
         this.$modal.addClass('showing-results')
+        this.addFiltersToParams();
     }
 
     populateQuickLinks() {
@@ -172,6 +198,67 @@ class GlobalSearch {
                 });
             }
         });
+    }
+
+    addFiltersToParams() {
+        const urlParams = new URLSearchParams('');
+
+        urlParams.set('s', this.$searchInput.val())
+
+        for (const filter in this.filters) {
+            urlParams.set(filter, this.filters[filter])
+        }
+
+        let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + urlParams.toString()
+        window.history.pushState({path: newurl}, '', newurl)
+    }
+
+    getSearchFromQueryParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        for(let dataPair of urlParams) {
+            switch(dataPair[0]) {
+                case 's':
+                    this.$searchInput.val(dataPair[1])
+                    this.$modal.addClass('showing-results')
+                    this.$body.trigger('UNDP.openSearchModal');
+                    break;
+                default:
+                    if(this.validFilters.includes(dataPair[0])) {
+                        this.filters[dataPair[0]] = dataPair[1].split(",");
+                    }
+                    break
+            }
+        }
+
+        if(!$.isEmptyObject(this.filters) && this.multiselectFiltersLoaded) {
+            this.checkMultiselectOptionsFromFilters()
+        }
+    }
+
+    checkMultiselectOptionsFromFilters() {
+        for (const filter in this.filters) {
+            let $optionsList = this.$multiselectFilters.find(`[data-type="${filter}"] input[type="checkbox"]`)
+
+            this.filters[filter].forEach(filterValue => {
+                $optionsList.each((index, checkbox) => {
+                    if(checkbox.value === filterValue) {
+                        checkbox.checked = true;
+
+                        const $currentMultiSelect = $(checkbox).closest('.multi-select');
+                        const inputs = $currentMultiSelect.find("input:checked");
+                        const counter = $currentMultiSelect.find('.select-control span');
+                        const total = inputs.length;
+
+                        counter.text('(' + total + ')');
+
+                        return false
+                    }
+                })
+            })
+        }
+
+        this.showSelectedFilterPills();
     }
 }
 
