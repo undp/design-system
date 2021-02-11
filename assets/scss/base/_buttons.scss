@@ -75,8 +75,9 @@
 
     &.disabled,
     &:disabled {
+        color: $porcelain;
         pointer-events: none;
-        background: $red-2 !important;
+        background: $dark-blue-19 !important;
     }
 
     &.blue{
