@@ -13,34 +13,26 @@ const init = function () {
 
 
     appear({
-        elements: () => {
-            return document.getElementsByClassName(trackClass)
-        },
-        appear: (el) => {
-            $(el).addClass(visibleClass)
-        },
         bounds: 100,
-        reappear: true
+        reappear: true,
+        appear: el => $(el).addClass(visibleClass),
+        elements: () => document.getElementsByClassName(trackClass)
     })
 
 
     //SDG Cards trigger
     gsap.timeline({
         scrollTrigger: {
-            trigger: '.sgd-animate',
-            start: 'bottom bottom',
             scrub: true,
+            start: 'bottom bottom',
+            trigger: '.sgd-animate',
             invalidateOnRefresh: false,
-            onEnter: ()=>{
-                $('.sgd-animate').find('.track').addClass('in-viewport');
-            }
+            onEnter: () => $('.sgd-animate').find('.track').addClass('in-viewport')
         }
     });
 
 
     parallaxContainer.forEach(container => {
-
-        const parallaxRows = container.querySelectorAll('.gs--parallax-row')
 
         const from = {
             xPercent: 75,
@@ -48,24 +40,24 @@ const init = function () {
                 scrub: true,
                 trigger: container,
                 start: "top+=15% center"
-            },
-        }
-        const to = {
-            xPercent: 0,
-            scrollTrigger: {
-                scrub: true,
-                trigger: container,
-                end: "center center"
-            },
+            }
         }
 
-        parallaxRows
+        container
+            .querySelectorAll('.gs--parallax-row')
             .forEach((row, idx) => {
                 const odd = (idx + 1) % 2 !== 0
-                let rowOrigin = Object.assign({}, from)
+                const rowFrom = Object.assign({}, from)
 
-                rowOrigin.xPercent *= odd ? -1 : 1 // Odd elements should start from a negative position (left to right)
-                gsap.fromTo(row, rowOrigin, to)
+                rowFrom.xPercent *= odd ? -1 : 1 // Odd elements should start from a negative position (left to right)
+                gsap.fromTo(row, rowFrom, {
+                    xPercent: 0,
+                    scrollTrigger: {
+                        scrub: true,
+                        trigger: container,
+                        end: "center center"
+                    }
+                })
             })
     })
 }
