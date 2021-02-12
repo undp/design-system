@@ -1,8 +1,8 @@
 <?php
 
 use helpers\View;
+use helpers\Svg;
 
-$imgPath = '../../../assets/images/placeholder/about-us';
 ?>
 
 <!-- Page Headers -->
@@ -44,72 +44,44 @@ $imgPath = '../../../assets/images/placeholder/about-us';
         </div>
     </section>
 
-    <div class="section headline-text">
+    <section class="headline-text">
         <div class="grid-container">
             <div class="grid-x">
-                <div class="cell large-offset-1 small-offset-1 small-10">
-                    <div class="heading h2 heading-text">
-                        United Nations Pacific</br>
-                        Regional Anti-Corruption Project
-                    </div>
-                </div>
-                <div class="cell large-offset-3 large-7 copy-text small-offset-1 small-10">
-                    <div class="big-copy">
-                        The United Nations Pacific Regional Anti-Corruption Project is a joint initiative of the United
-                        Nations
-                        Office on Drugs and Crime and the United Nations Development Programme, a unique partnership to
-                        prevent
-                        and fight corruption in 14 Pacific Island countries and the territory of Tokelau.</br></br>
-                        UN-PRAC aims to strengthen PICs’ national integrity systems. This is to promote ‘clean’
-                        governments and create an enabling environment to increase trade, business, investment and
-                        sustainable development in the Pacific. In turn, this will enhance the delivery of equitable and
-                        high-quality services to all Pacific Islanders.
-                    </div>
-                </div>
+                <?php
+                View::render('partials/project-page/headline-text', [
+                    'title' => 'United Nations Pacific</br>Regional Anti-Corruption Project',
+                    'copy' => 'The United Nations Pacific Regional Anti-Corruption Project is a joint initiative of the United
+                                Nations
+                                Office on Drugs and Crime and the United Nations Development Programme, a unique partnership to
+                                prevent
+                                and fight corruption in 14 Pacific Island countries and the territory of Tokelau.</br></br>
+                                UN-PRAC aims to strengthen PICs’ national integrity systems. This is to promote ‘clean’
+                                governments and create an enabling environment to increase trade, business, investment and
+                                sustainable development in the Pacific. In turn, this will enhance the delivery of equitable and
+                                high-quality services to all Pacific Islanders.'
+                ]);
+                ?>
             </div>
         </div>
-    </div>
+    </section>
 
     <section class="featured-callout">
         <div class="grid-container">
             <div class="grid-x">
                 <div class="cell large-offset-1 large-11 small-10 small-offset-1">
                     <div class="grid-x">
-                        <div class="cell large-2">
-                            <div class="heading h2"> What</br> We do</div>
-                        </div>
-                        <div class="cell large-offset-2 large-7 featured-copy">
-                            <div class="big-copy">
-                                The goal of the project is to promote and strengthen measures to prevent and fight
-                                corruption more efficiently and effectively in the Pacific. This aligns with the purpose
-                                of the United Nations Convention against Corruption (UNCAC) and contributes to the
-                                achievement of Sustainable Development Goal (SDG) 16 on Peace, Justice and Strong
-                                Institutions.
-                                </br></br>
-                                At the end of the project, we expect to achieve the following results:</br></br>
-                                <ul>
-                                    <li>
-                                        PICs more effectively implement UNCAC and work towards the achievement of SDG
-                                        16.
-                                    </li>
-                                    <li>
-                                        PICs strengthen broader governance frameworks in line with UNCAC and SDG 16.
-                                    </li>
-                                    <li>
-                                        PICs’ state and non-state actors more effectively engage and partner to prevent
-                                        and fight corruption.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <?php
+                        View::render('partials/project-page/featured-callout', [
+                        'title' => 'What</br> We do'
+                        ]);
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <div class="related-table">
+    <section class="related-table">
         <div class="grid-container">
             <div class="grid-x">
                 <div class="cell large-offset-1 large-11 small-10 small-offset-1">
@@ -117,27 +89,101 @@ $imgPath = '../../../assets/images/placeholder/about-us';
                 </div>
                 <div class="cell large-offset-3 large-7 small-10 small-offset-1 link-list big-copy">
                     <div class="link-item">
-                        <a href="#"> Country Profiles - outcomes of the Mechanism for the Review of Implementation of the United
-                        Nations Convention against Corruption</a>
+                        <a href="#" class="animated-underline"> Country Profiles - outcomes of the Mechanism for the Review of Implementation of
+                            the United
+                            Nations Convention against Corruption</a>
                     </div>
                     <div class="link-item">
-                        <a href="#"> Legislative Guide for the Implementation of UNCAC</a>
+                        <a href="#" class="animated-underline"> Legislative Guide for the Implementation of UNCAC</a>
                     </div>
                     <div class="link-item">
-                        <a href="#">Mechanism for the Review of Implementation of the United Nations Convention against Corruption</a>
+                        <a href="#" class="animated-underline">Mechanism for the Review of Implementation of the United Nations Convention against
+                            Corruption</a>
                     </div>
                     <div class="link-item">
-                        <a href="#">Pacific Youth Anti-Corruption Advocate’s Toolkit</a>
+                        <a href="#" class="animated-underline">Pacific Youth Anti-Corruption Advocate’s Toolkit</a>
                     </div>
                     <div class="link-item">
-                        <a href="#">Technical Guide to the United Nations Convention against Corruption</a>
+                        <a href="#" class="animated-underline">Technical Guide to the United Nations Convention against Corruption</a>
                     </div>
                     <div class="link-item">
-                        <a href="#">Travaux Préparatoires of the negotiations for the elaboration of the United Nations Convention against Corruption</a>
+                        <a href="#" class="animated-underline">Travaux Préparatoires of the negotiations for the elaboration of the United Nations
+                            Convention against Corruption</a>
                     </div>
                     <div class="link-item">
-                        <a href="#href">United Nations Convention against Corruption (UNCAC)</a>
+                        <a href="#" class="animated-underline">United Nations Convention against Corruption (UNCAC)</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="listed-stats">
+        <div class="grid-container">
+            <div class="grid-x">
+                <?php View::render('partials/project-page/listed-stats') ?>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="small-stats-slider">
+        <div class="grid-container grid-x overflow-hidden">
+            <div class="cell medium-10 medium-offset-1">
+                <h2 class="heading h2">Countries we support</h2>
+            </div>
+            <div class="cell">
+                <div class="dynamic-slider cell">
+
+                    <div class="scroll-track left-right delay-1">
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                                <li class="glide__slide">
+                                    <?php View::render('molecules/stats/small-card', ['title' => 'Cook Island']) ?>
+                                </li>
+                                <li class="glide__slide">
+                                    <?php View::render('molecules/stats/small-card', ['title' => 'Federated States of Micronesia']) ?>
+                                </li>
+                                <li class="glide__slide">
+                                    <?php View::render('molecules/stats/small-card', ['title' => 'Fiji']) ?>
+                                </li>
+                                <li class="glide__slide">
+                                    <?php View::render('molecules/stats/small-card', ['title' => 'Kingdom of Tonga']) ?>
+                                </li>
+                                <li class="glide__slide">
+                                    <?php View::render('molecules/stats/small-card', ['title' => 'Kiribati']) ?>
+                                </li>
+                                <li class="glide__slide">
+                                    <?php View::render('molecules/stats/small-card', ['title' => 'Nauro']) ?>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bullets-container">
+                            <div class="glide__bullets" data-glide-el="controls[nav]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="explore-more grid-container" data-view-more data-scroll-up data-load-step="16">
+        <div class="grid-x">
+            <div class="cell">
+                <h2 class="heading h2">Explore More</h2>
+
+                <?php View::render('partials/project-page/explore-more-cards') ?>
+
+                <div class="cta-button flex-container">
+                    <button class="btn blue view-more" data-view-more-btn>
+                        View More
+                    </button>
+                </div>
+
+                <div class="scroll-up" data-scroll-btn>
+                    <?php Svg::render('angle-right') ?>
                 </div>
             </div>
         </div>

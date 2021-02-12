@@ -39,6 +39,10 @@ class ModalLocationsSearch {
     }
 
     listeners() {
+        this.$body.on('UNDP.openSearchModal', () => {
+            $('[data-modal="modal-popular-search"]').trigger('click')
+        })
+
         this.$modalTriggers.each((i, modalTrigger) => {
             let $modalTrigger = $(modalTrigger);
 
@@ -135,6 +139,8 @@ class ModalLocationsSearch {
 
         this.$modalTriggerReference.addClass(this.classModalActive);
         this.showOptionClose();
+
+        this.$body.trigger('UNDP.modalOpened')
     }
 
     // Modal hides the (scroll y) so we add his width on navigation to keep the same size

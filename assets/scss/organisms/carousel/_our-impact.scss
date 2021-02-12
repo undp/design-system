@@ -1,19 +1,65 @@
-section.our-impact {
+@mixin stat-card-accent() {
+    .stat-card {
+        background-color: $yellow-2;
+        @include accent-color-background();
+    }
+}
+
+
+.our-impact {
     margin-top: 90px;
 
-    .cards-container {
+    .gs--parallax-container {
         margin-top: 72px;
     }
 
     .gs--parallax-row {
         justify-content: flex-end;
 
-        &:nth-child(even) {
+        &:nth-child(odd) {
             justify-content: flex-start;
         }
 
         &:not(:first-of-type) {
             margin-top: 26px;
+        }
+    }
+
+    .generic-slider {
+        margin-top: 48px;
+
+        .glide__track {
+            @include breakpoint(small only) {
+                overflow: visible;
+            }
+        }
+
+        .glide__slides {
+            margin-top: 34px;
+        }
+
+        .glide__slide {
+            height: auto;
+        }
+
+        .glide__slide--active {
+            @include stat-card-accent();
+
+            @include breakpoint(475px up) {
+                + .glide__slide {
+                    @include stat-card-accent();
+                }
+            }
+
+            @include breakpoint(620px up) {
+                + .glide__slide + .glide__slide {
+                    @include stat-card-accent();
+                }
+            }
+        }
+
+        .stat-card {
+            max-width: 235px;
         }
     }
 }

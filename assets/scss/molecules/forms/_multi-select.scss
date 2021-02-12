@@ -53,7 +53,7 @@
         max-height: 52px;
         font-weight: bold;
         font-size: 1.6rem;
-        padding: 15px 25px;
+        padding: 15px 45px 15px 25px;
         border: 2px solid $black;
         text-transform: uppercase;
         background-color: rgba($dark-blue-6, 0.98);
@@ -108,6 +108,49 @@
             background-color: rgba($dark-blue-6, 0.86);
         }
 
+        .has-submenu {
+            position: relative;
+
+            &.open-submenu {
+                .sub-menu {
+                    display: block;
+                }
+
+                .caret {
+                    transform: rotate(-180deg);
+                }
+            }
+
+            .caret {
+                top: 20px;
+                right: 25px;
+                font-size: 0;
+                position: absolute;
+                transition: all 200ms ease-in-out;
+
+                &:after {
+                    content: '';
+                    width: 18px;
+                    height: 12px;
+                    display: block;
+                    background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;
+                    background-size: contain;
+                }
+            }
+
+            > .checkbox-item {
+                &:hover {
+                    .checkmark {
+                        border-color: $red-5;
+                    }
+                }
+
+                .checkmark:hover {
+                    border-color: $red-2;
+                }
+            }
+        }
+
         .checkbox-item {
             margin: 0;
             font-size: 2rem;
@@ -128,6 +171,7 @@
         }
 
         .sub-menu {
+            display: none;
             list-style: none;
             color: $dark-blue-2;
         }
@@ -140,7 +184,5 @@
         &::-webkit-scrollbar-thumb {
             background-color: rgba($black, 0.60);
         }
-
     }
-
 }

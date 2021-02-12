@@ -27,6 +27,8 @@ import viewMore from './components/view-more'
 import scrollUp from './components/scroll-up'
 import imageSizes from './components/image-sizes'
 import ieSticky from './components/ie-sticky'
+import singlePublication from './components/single-publication'
+import dynamicSlider from './components/dynamic-slider'
 
 import modal from './components/modal'
 import modalNav from './components/modal-nav'
@@ -63,7 +65,6 @@ function main() {
     menusNav()
     modalSdgs()
     heroAnimation()
-    scrollTriggers()
     sdgCard()
     select()
     docs()
@@ -78,6 +79,8 @@ function main() {
     modalPublicationDownload()
     scrollUp()
     ieSticky()
+    singlePublication()
+    dynamicSlider()
 
     const globalSearch = new GlobalSearch()
     globalSearch.init()

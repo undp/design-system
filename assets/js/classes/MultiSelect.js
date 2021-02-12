@@ -8,20 +8,49 @@ class MultiSelect {
     }
 
     init() {
-        this.addListener();
+        this.addListeners();
         this.listenerWindowClick();
     }
 
-    addListener() {
+    addListeners() {
         this.$selectTrigger.click(() => {
             this.toggleSelect();
         });
 
         this.$currentSelect.on('click', 'input[type=checkbox]', (ev) => {
+            ev.stopImmediatePropagation()
+
             let $selectedCheckbox = $(ev.target);
             let $selectedOption = $selectedCheckbox.closest('li[role=option]');
 
             $selectedOption.attr('aria-selected', $selectedCheckbox.is(':checked'))
+        })
+
+        this.$currentSelect.on('click', '.has-submenu > .checkbox-item', (ev) => {
+            ev.stopImmediatePropagation()
+            const $clickedElement = $(ev.target)
+
+            if(!$clickedElement.hasClass('checkmark')) {
+                ev.preventDefault()
+
+                const $rowHasSubmenu = $(ev.currentTarget).closest('li.has-submenu')
+                const $caretButton = $rowHasSubmenu.find('button.caret')
+                $rowHasSubmenu.toggleClass('open-submenu')
+
+                if($rowHasSubmenu.attr('aria-expanded') === 'true'){
+                    $rowHasSubmenu.attr('aria-expanded', 'false')
+                    $caretButton.attr('aria-expanded', 'false')
+                } else {
+                    $rowHasSubmenu.attr('aria-expanded', 'true')
+                    $caretButton.attr('aria-expanded', 'true')
+                }
+            }
+        })
+
+        this.$currentSelect.on('click', '.has-submenu > button.caret', (ev) => {
+            let $caretButton = $(ev.currentTarget)
+
+            $caretButton.siblings('.checkbox-item').trigger('click')
         })
     }
 

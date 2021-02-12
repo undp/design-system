@@ -16,6 +16,7 @@
 @import 'base/sdg-colors';
 @import 'base/animations';
 @import 'base/language-html';
+@import 'base/mixins';
 
 // Partials
 @import "partials/footer";
@@ -85,6 +86,7 @@
 @import "organisms/content-cards/photo-cta-cards";
 @import "organisms/carousel/publications";
 @import "organisms/carousel/our-impact";
+@import "organisms/carousel/small-stats-slider";
 @import "organisms/homepage/our-mission";
 @import "organisms/homepage/our-expertise";
 @import "organisms/homepage/global-impact";
