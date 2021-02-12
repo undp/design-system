@@ -21,7 +21,7 @@ $sliderOptions = [
 ?>
 
 
-<section class="our-impact">
+<section class="parallax-cards">
     <div class="grid-container grid-x overflow-hidden">
 
         <div class="cell medium-10 medium-offset-1">
