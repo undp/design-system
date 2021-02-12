@@ -24,7 +24,9 @@
         <div class="cell medium-3 stat-item-container">
             <div class="stat-item">
                 <div class="heading-item medium-copy">Project Office</div>
-                <div class="body-text-item big-copy">UNDP Pacific Office in Fiji</div>
+                <div class="body-text-item big-copy">
+                    <a href="#" class="animated-underline"> UNDP Pacific Office in Fiji</a>
+                </div>
             </div>
             <div class="stat-item">
                 <div class="heading-item medium-copy">Implementing partner</div>
