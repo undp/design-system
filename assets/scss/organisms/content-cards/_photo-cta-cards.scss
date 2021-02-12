@@ -14,11 +14,11 @@
         }
     }
 
-    .content-title {
-        text-align: center;
+    .cards-title {
+        justify-content: center;
 
         @include breakpoint(small only) {
-            text-align: left;
+            justify-content: flex-start;
         }
     }
 }
