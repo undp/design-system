@@ -38,6 +38,7 @@ class GlobalSearch {
 
     bindEvents() {
         this.$searchInput.on('keyup', () => {
+            this.resetSearch()
             this.performSearch()
         })
 
@@ -81,7 +82,7 @@ class GlobalSearch {
         })
 
         this.$body.on('UNDP.modalClosed', (evt) => {
-            this.resetSearch()
+            this.resetAllModalData()
         })
 
         this.multiSelectFiltersListener()
@@ -90,12 +91,18 @@ class GlobalSearch {
     }
 
     resetSearch() {
+        this.totalResultsLoaded = 0
+        this.currentResultsPage = 1
+        this.allResultsLoaded = false
+        this.$searchResultsWrapper[0].scrollTop = 0
+    }
+
+    resetAllModalData() {
         this.$modal.removeClass('showing-results')
         this.filters = {}
         this.jsonResults = []
         this.$searchInput.val('')
-        this.currentResultsPage = 1
-        this.totalResultsLoaded = 0
+        this.resetSearch()
         this.loadMoreButton = null
         this.$searchResultsMetadata = null
         let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname
@@ -186,6 +193,8 @@ class GlobalSearch {
             this.$multiselectFilters.find('.select-control span').text('');
             this.$mobileFilterOpen.find('.counter').text('')
             this.addFiltersToParams()
+            this.resetSearch()
+            this.performSearch();
         });
     }
 
@@ -229,6 +238,7 @@ class GlobalSearch {
         }
 
         this.addFiltersToParams()
+        this.resetSearch()
         this.performSearch();
     }
 
