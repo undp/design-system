@@ -1,5 +1,5 @@
 <?php if (isset($links)) : ?>
-    <ul class="breadcrumb">
+    <ul class="breadcrumb <?= $classes ?? 'accent-red' ?>">
         <li class="breadcrumb-item"><a href="/" class="link"> Home</a></li>
 
         <?php foreach ($links as $idx => $link) : ?>

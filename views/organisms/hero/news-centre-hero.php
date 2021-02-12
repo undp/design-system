@@ -7,9 +7,13 @@ use helpers\View;
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell large-3 large-offset-1 news-hero-container">
-                <div class="breadcrumb"><?php View::render('partials/breadcrumb', [
-                        'links' => $breadcrumbLinks ?? ''
-                    ]) ?>
+                <div class="breadcrumb">
+                    <?php
+                        View::render('partials/breadcrumb', [
+                            'links' => $breadcrumbLinks ?? '',
+                            'classes' => 'accent-red'
+                        ])
+                    ?>
                 </div>
 
                 <div class="heading h2 title scroll-track left-right delay-1">

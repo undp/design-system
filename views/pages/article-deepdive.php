@@ -26,7 +26,8 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
                         ['link' => '/press-centre', 'name' => 'Press Centre'],
                         ['link' => '/press-centre/articles', 'name' => 'Articles'],
                         ['link' => '/press-centre/articles/2020', 'name' => '2020'],
-                    ]
+                    ],
+                    'classes' => 'accent-red'
                 ])
                 ?>
             </div>

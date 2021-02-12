@@ -24,8 +24,19 @@
         }
 
         &:last-of-type {
-            color: $black;
             pointer-events: none;
         }
+    }
+
+    &.accent-red {
+        color: $red-1;
+
+        .breadcrumb-item:last-of-type {
+            color: $black;
+        }
+    }
+
+    &.accent-white {
+        $color: $white;
     }
 }

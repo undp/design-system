@@ -27,6 +27,7 @@ use helpers\View;
                     View::render('partials/breadcrumb', [
                         'links' => [
                             ['link' => '/single-publication', 'name' => 'Publications'],
+                            'classes' => 'accent-red'
                         ]
                     ]);
 

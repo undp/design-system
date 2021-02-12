@@ -25,7 +25,8 @@ $imgPath = '/assets/images/placeholder/author-page'
                         'links' => [
                             ['link' => '/authors', 'name' => 'Authors'],
                             ['link' => '/dilara-umudova', 'name' => 'Dilara Umudova']
-                        ]
+                        ],
+                        'classes' => 'accent-red'
                     ])
                 ?>
             </div>

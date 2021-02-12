@@ -22,13 +22,14 @@ use helpers\Svg;
             <div class="grid-x text-container">
                 <div class="cell small-12 large-9 large-offset-1 hero-content">
                     <?php
-                    View::render('partials/breadcrumb', [
-                        'links' => [
-                            ['link' => '#', 'name' => '2030 Agenda For Sustainable Development'],
-                            ['link' => '#', 'name' => 'Planet'],
-                            ['link' => '#', 'name' => 'Climate Change'],
-                        ]
-                    ])
+                        View::render('partials/breadcrumb', [
+                            'links' => [
+                                ['link' => '#', 'name' => '2030 Agenda For Sustainable Development'],
+                                ['link' => '#', 'name' => 'Planet'],
+                                ['link' => '#', 'name' => 'Climate Change'],
+                            ],
+                            'classes' => 'accent-white'
+                        ])
                     ?>
 
                     <div class="text-box scroll-track left-right delay-1">
