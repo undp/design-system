@@ -19,6 +19,7 @@ class GlobalSearch {
         this.currentResultsPage = 1
         this.totalResultsLoaded = 0
         this.loadMoreButton = null
+        this.allResultsLoaded = false
         this.$searchResultsMetadata = null
 
         // Filter management
@@ -52,6 +53,16 @@ class GlobalSearch {
             this.setResultsWrapperHeight()
         }, 200))
 
+        this.$searchResultsWrapper.on('scroll', () => {
+            if(this.$searchResultsWrapper[0].scrollTop === (this.$searchResultsWrapper[0].scrollHeight - this.$searchResultsWrapper[0].offsetHeight)) {
+                this.loadMoreResults()
+            }
+        })
+
+        this.$searchResultsContainer.on('click', '.btn.blue', () => {
+            this.loadMoreResults()
+        })
+
         this.$body.on('UNDP.multiselectReady', (evt, data) => {
             if(this.$multiselectFilters.filter(`#${data.multiselect}`).length) {
                 this.multiselectFiltersLoaded += this.$multiselectFilters.filter(`#${data.multiselect}`).length;
@@ -69,26 +80,35 @@ class GlobalSearch {
             }
         })
 
+        this.$body.on('UNDP.modalClosed', (evt) => {
+            this.resetSearch()
+        })
+
         this.multiSelectFiltersListener()
         this.removeFilterListener()
         this.clearAllFiltersListener()
+    }
 
-        this.$searchResultsWrapper.on('scroll', () => {
-            if(this.$searchResultsWrapper[0].scrollTop === (this.$searchResultsWrapper[0].scrollHeight - this.$searchResultsWrapper[0].offsetHeight)) {
-                this.loadMoreResults()
-            }
-        })
-
-        this.$searchResultsContainer.on('click', '.btn.blue', () => {
-            this.loadMoreResults()
-        })
+    resetSearch() {
+        this.$modal.removeClass('showing-results')
+        this.filters = {}
+        this.jsonResults = []
+        this.$searchInput.val('')
+        this.currentResultsPage = 1
+        this.totalResultsLoaded = 0
+        this.loadMoreButton = null
+        this.$searchResultsMetadata = null
+        let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname
+        window.history.pushState({path: newurl}, '', newurl)
+        this.populateQuickLinks()
     }
 
     loadMoreResults() {
-        this.loadMoreButton.text('Loading more...')
-        this.currentResultsPage++
-
-        this.performSearch()
+        if(!this.allResultsLoaded) {
+            this.loadMoreButton.text('Loading more...')
+            this.currentResultsPage++
+            this.performSearch()
+        }
     }
 
     setResultsWrapperHeight() {
@@ -143,12 +163,12 @@ class GlobalSearch {
             input.prop('checked', false);
 
             const counter = input.closest('.options').siblings('.select-control').find('span');
-            const total = counter.text().match(/\d/g);
-            counter.text(total && total > 1 ? `(${total.join("") - 1})` : '');
+            const total = this.$multiselectFilters.find('input:checked').length;
+            counter.text('(' + total + ')');
 
             $clickedPill.remove();
 
-            if (!this.$multiselectFilters.find('input:checked').length) {
+            if (!total) {
                 this.$activeFiltersContainer.html('')
             }
 
@@ -159,11 +179,13 @@ class GlobalSearch {
     clearAllFiltersListener() {
         this.$activeFiltersContainer.on('click', '[data-close-all-select]', (evt) => {
             evt.preventDefault();
+            this.filters = {}
             this.$activeFiltersContainer.html('');
             this.$multiselectFilters.find("input:checked").prop('checked', false);
 
             this.$multiselectFilters.find('.select-control span').text('');
             this.$mobileFilterOpen.find('.counter').text('')
+            this.addFiltersToParams()
         });
     }
 
@@ -263,6 +285,8 @@ class GlobalSearch {
                 if(this.totalResultsLoaded < response.total) {
                     this.loadMoreButton = $('<button class="btn blue">Load more</button>');
                     this.$searchResultsContainer.append(this.loadMoreButton)
+                } else {
+                    this.allResultsLoaded = true
                 }
             }
         });
@@ -277,6 +301,8 @@ class GlobalSearch {
             url: '/assets/js/render-data/json-files/modals/search/quick-links.json',
             dataType: 'json',
             success: (response) => {
+                this.$searchResultsContainer.html('')
+
                 response.forEach((item) => {
                     this.$searchResultsContainer.append(` 
                     <div class="cell medium-6 list-quicklinks">

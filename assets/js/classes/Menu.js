@@ -1,5 +1,3 @@
-import SDGModal from "../classes/SDGModal";
-
 class Menu {
 
     constructor(container) {
@@ -24,12 +22,6 @@ class Menu {
         this.$hamburguer = this.$container.find('[data-hamburger]')
         this.$mainMenu = this.$container.find('[data-menu-main-options]')
         this.$menuItemDetails = this.$container.find('[data-item-details]')
-
-
-        //modals: references to close modals opened when the user open the main menu (this class)
-        this.classModalActive = 'active';
-        this.classModalOpen = 'modal-opened';
-        this.$modals = $('[data-modal-open]');
     }
 
     init() {
@@ -102,8 +94,7 @@ class Menu {
     }
 
     openMenu() {
-        this.closeModals();
-        this.closeModalSdg();
+        this.$body.trigger('UNDP.closeOtherModals', {'currentModal': this.$primaryNav});
         this.$primaryNav.addClass('open');
         this.$body.addClass(this.bodyMenuOpenClass)
         this.$mainMenu.removeClass(this.hiddenClass);
@@ -127,21 +118,6 @@ class Menu {
         if (this.currentSubmenu) {
             this.currentSubmenu.addClass(this.hiddenClass);
         }
-    }
-
-    closeModals() {
-        this.$modals.removeClass(this.classModalActive);
-        this.$modals.find('[data-icon]').removeClass(this.hiddenClass);
-        this.$modals.find('[data-icon-close]').addClass(this.hiddenClass);
-        this.$modals.each((i, modal) => {
-            $(modal).removeClass(this.classModalOpen);
-            $('#' + $(modal).data('modal')).addClass(this.hiddenClass);
-        });
-    }
-
-    closeModalSdg() {
-        const modalSdg = new SDGModal();
-        modalSdg.close();
     }
 
     //the modal hide the (scroll y) so we add his width on navigation to keep the same size

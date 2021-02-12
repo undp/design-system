@@ -71,8 +71,10 @@ class SDGModal {
             this.close();
         })
 
-        this.$body.on('UNDP.closeOtherModals', () => {
-            this.close();
+        this.$body.on('UNDP.closeOtherModals', (event, data) => {
+            if(data.currentModal !== this.$modal) {
+                this.close();
+            }
         })
     }
 
