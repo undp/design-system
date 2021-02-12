@@ -1,27 +1,33 @@
 <div class="cell large-offset-1 large-10 small-10 small-offset-1 heading-stats-text">
     <div class="heading h2">Impact</div>
 </div>
-<div class="cell large-offset-1 large-10 small-10 small-offset-1 heading-stats-items">
+<div class="cell large-offset-1 large-10 heading-stats-items">
     <div class="grid-x grid-margin-x">
-        <div class="cell medium-2 stat-item-container">
-            <div class="stat-item">
-                <div class="heading-item medium-copy">Status</div>
-                <div class="body-text-item big-copy">Ongoing</div>
-            </div>
-            <div class="stat-item">
-                <div class="heading-item medium-copy">Start date</div>
-                <div class="body-text-item big-copy">2012</div>
-            </div>
-            <div class="stat-item">
-                <div class="heading-item medium-copy">End date</div>
-                <div class="body-text-item big-copy">2022</div>
-            </div>
-            <div class="stat-item">
-                <div class="heading-item medium-copy">End date</div>
-                <div class="body-text-item big-copy">Effective</br>  Governance</div>
+        <div class="cell large-2 medium-6 stat-item-container">
+            <div class="grid-x">
+                <div class="cell large-12 small-6 first-item">
+                    <div class="stat-item">
+                        <div class="heading-item medium-copy">Status</div>
+                        <div class="body-text-item big-copy">Ongoing</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="heading-item medium-copy">Start date</div>
+                        <div class="body-text-item big-copy">2012</div>
+                    </div>
+                </div>
+                <div class="cell large-12 small-6">
+                    <div class="stat-item">
+                        <div class="heading-item medium-copy">End date</div>
+                        <div class="body-text-item big-copy">2022</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="heading-item medium-copy">End date</div>
+                        <div class="body-text-item big-copy">Effective</br>  Governance</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="cell medium-3 stat-item-container">
+        <div class="cell large-3 medium-6 stat-item-container">
             <div class="stat-item">
                 <div class="heading-item medium-copy">Project Office</div>
                 <div class="body-text-item big-copy">
@@ -36,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="cell medium-4 big-column stat-item-container">
+        <div class="cell large-4 medium-6 big-column stat-item-container">
             <div class="stat-item">
                 <div class="heading-item medium-copy">Donors</div>
                 <div class="body-text-item big-copy">
@@ -48,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="cell medium-3 stat-item-container">
+        <div class="cell large-3 medium-6 stat-item-container">
             <div class="stat-item">
                 <div class="heading-item medium-copy">Contribution Amount</div>
                 <div class="body-text-item big-copy">
@@ -63,11 +69,11 @@
                     </br>
                     <div class="heading-item medium-copy">Delivery in previous Fiscal year</div>
                     </br>
-                    <div> <span>2020:</span> <span class="blue-link"> USD 133,201</span> </div>
+                    <div><span>2020:</span> <span class="blue-link"> USD 133,201</span></div>
                     </br>
-                    <div> <span>2019:</span> <span class="blue-link">USD 577,950 </span></div>
+                    <div><span>2019:</span> <span class="blue-link">USD 577,950 </span></div>
                     </br>
-                    <div> <span>2018:</span> <span class="blue-link">USD 318,113 </span></div>
+                    <div><span>2018:</span> <span class="blue-link">USD 318,113 </span></div>
                 </div>
             </div>
         </div>

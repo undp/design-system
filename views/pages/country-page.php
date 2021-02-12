@@ -26,7 +26,7 @@
     <?php View::render('organisms/content-cards/country-page-content-cards'); ?>
 
     <?php
-        View::render('organisms/carousel/our-impact', [
+        View::render('organisms/carousel/parallax-cards', [
             'cards' => [
                 [
                     'number' => 41,
@@ -62,7 +62,7 @@
         ]);
     ?>
 
-    <?php View::render('organisms/content-cards/photo-cta'); ?>
+    <?php View::render('organisms/content-cards/photo-cta-cards'); ?>
 </div>
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>
