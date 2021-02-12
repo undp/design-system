@@ -4,7 +4,7 @@
     background-color: $dark-blue-1;
 
     @include breakpoint(small only) {
-        padding: 100px 0 240px;
+        padding: 100px 30px 240px;
 
         .h4 {
             margin-top: 55px;
