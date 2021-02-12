@@ -4,6 +4,10 @@
 
     .cta-container {
         margin-top: 62px;
+
+        @include breakpoint(small only) {
+            padding: 0;
+        }
     }
 
     .card-item {
