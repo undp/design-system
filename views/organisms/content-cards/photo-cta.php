@@ -2,7 +2,7 @@
 
 <div class="photo-cta-cards">
     <div class="grid-container grid-x">
-        <div class="cell flex-container align-center">
+        <div class="cell flex-container cards-title">
             <div class="heading h2 content-title">Take Action</div>
         </div>
         <div class="cell">

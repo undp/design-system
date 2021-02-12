@@ -13,4 +13,12 @@
             margin-top: 60px;
         }
     }
+
+    .cards-title {
+        justify-content: center;
+
+        @include breakpoint(small only) {
+            justify-content: flex-start;
+        }
+    }
 }
