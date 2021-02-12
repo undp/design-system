@@ -9,7 +9,6 @@
 
     @include breakpoint(small only) {
         min-height: auto;
-        margin-top: 35px;
     }
 
     .card-content {
@@ -33,7 +32,7 @@
                 object-fit: cover;
             }
 
-            .gradient{
+            .gradient {
                 top: 0;
                 left: 0;
                 opacity: 0;
@@ -43,6 +42,11 @@
                 position: absolute;
                 transition: opacity 0.5s ease;
                 background-image: linear-gradient(45deg, rgba($yellow, 0.3) 0%, transparent 100%);
+
+                @include breakpoint(small only) {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         }
 
@@ -67,15 +71,19 @@
                 opacity: 0;
                 transition: $transition-primary;
                 transition-delay: .3s;
+
+                @include breakpoint(small only) {
+                    opacity: 1;
+                }
             }
 
             @include breakpoint(medium down) {
-                opacity: 1;
                 padding-right: 20px;
             }
 
             @include breakpoint(small only) {
-                opacity: 0;
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -88,15 +96,15 @@
         }
     }
 
-    &:hover{
+    &:hover {
         .link-arrow-group {
             transform: translateX(0);
 
-            .arrow-line{
+            .arrow-line {
                 display: unset;
             }
 
-            .arrow-point{
+            .arrow-point {
                 transform: translateX(31px);
             }
         }
@@ -124,15 +132,15 @@
         @include background-gradient($yellow);
     }
 
-    .accent-green &, &.accent-green{
+    .accent-green &, &.accent-green {
         @include background-gradient($green);
     }
 
-    .accent-red &, &.accent-red{
+    .accent-red &, &.accent-red {
         @include background-gradient($red);
     }
 
-    .accent-blue &, &.accent-blue{
+    .accent-blue &, &.accent-blue {
         @include background-gradient($blue-accent);
     }
 }
