@@ -171,7 +171,7 @@ class GlobalSearch {
 
             const counter = input.closest('.options').siblings('.select-control').find('span');
             const total = this.$multiselectFilters.find('input:checked').length;
-            counter.text('(' + total + ')');
+            counter.text(total > 0? '(' + total + ')' : '');
 
             $clickedPill.remove();
 
@@ -273,7 +273,7 @@ class GlobalSearch {
 
                     this.$searchResultsContainer.append(`
                     <div class="search-results-metadata">
-                            Showing 1-<span class="shown-results">${this.jsonResults.length}</span> of ${response.total} results across UNDP.org for <span>${searchValue}</span>
+                            Showing ${this.jsonResults.length > 0? '1' : '0'}-<span class="shown-results">${this.jsonResults.length}</span> of ${response.total} results across UNDP.org for <span>${searchValue}</span>
                     </div>`)
 
                     this.$searchResultsMetadata = this.$searchResultsContainer.find('.search-results-metadata .shown-results')
