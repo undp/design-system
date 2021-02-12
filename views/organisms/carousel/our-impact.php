@@ -25,7 +25,7 @@ $sliderOptions = [
     <div class="grid-container grid-x overflow-hidden">
 
         <div class="cell medium-10 medium-offset-1">
-            <h2 class="heading h2">Our Impact</h2>
+            <h2 class="heading h2 scroll-track left-right delay-2">Our Impact</h2>
         </div>
 
         <div class="gs--parallax-container cell cell medium-10 medium-offset-1 show-for-medium">

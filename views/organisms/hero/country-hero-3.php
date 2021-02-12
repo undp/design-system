@@ -20,7 +20,7 @@ use helpers\Svg;
             <div class="cell large-11 large-offset-1 article-container">
                 <div class="grid-x">
                     <div class="cell large-3 article-description">
-                        <div class="heading h5 subtitle">
+                        <div class="heading h5 subtitle scroll-track left-right delay-1">
                             <?= $description ?? '' ?>
                         </div>
                         <button class="btn">

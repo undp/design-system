@@ -3,7 +3,7 @@
 <div class="photo-cta-cards">
     <div class="grid-container grid-x">
         <div class="cell flex-container cards-title">
-            <div class="heading h2 content-title">Take Action</div>
+            <div class="heading h2 content-title scroll-track left-right delay-2">Take Action</div>
         </div>
         <div class="cell">
             <div class="grid-x grid-padding-x flex-container align-center cards-content">
