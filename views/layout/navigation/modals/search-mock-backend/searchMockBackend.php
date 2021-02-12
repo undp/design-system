@@ -20,14 +20,18 @@ $indexesToRemove = [];
 
 if(count($filters)) {
     foreach($filteredResults as $index => $databaseRow) {
-        $staysInResults = false;
+        $staysInResults = true;
 
         foreach($filters as $filterCategory => $filterValues){
+            $matchesFilterValue = false;
+
             foreach($filterValues as $value) {
                 if(stripos($databaseRow[$filterCategory], $value) !== false){
-                    $staysInResults = true;
+                    $matchesFilterValue = true;
                 }
             }
+
+            $staysInResults = $matchesFilterValue;
         }
 
         if(!$staysInResults) {

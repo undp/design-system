@@ -170,7 +170,8 @@ class GlobalSearch {
             input.prop('checked', false);
 
             const counter = input.closest('.options').siblings('.select-control').find('span');
-            const total = this.$multiselectFilters.find('input:checked').length;
+            const total = input.closest('.options').find('input:checked').length;
+
             counter.text(total > 0? '(' + total + ')' : '');
 
             $clickedPill.remove();
