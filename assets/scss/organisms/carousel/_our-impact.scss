@@ -1,7 +1,27 @@
-@mixin stat-card-accent() {
+@mixin stat-card-mobile-accent() {
     .stat-card {
         background-color: $yellow-2;
-        @include accent-color-background();
+
+        .accent-yellow &, &.accent-yellow {
+            background-color: $yellow-2;
+        }
+
+        .accent-green &, &.accent-green {
+            background-color: $green-2;
+        }
+
+        .accent-red &, &.accent-red {
+            background-color: $red-2;
+        }
+
+        .accent-blue &, &.accent-blue {
+            background-color: $blue-accent-2;
+        }
+
+        .number {
+            text-shadow: none;
+            color: $dark-blue-1;
+        }
     }
 }
 
@@ -25,6 +45,38 @@
         }
     }
 
+    .stat-card {
+        @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            &:hover{
+                background-color: $yellow-2;
+            }
+
+            .accent-yellow &, &.accent-yellow {
+                &:hover{
+                    background-color: $yellow-2;
+                }
+            }
+
+            .accent-green &, &.accent-green{
+                &:hover{
+                    background-color: $green-2;
+                }
+            }
+
+            .accent-red &, &.accent-red{
+                &:hover{
+                    background-color: $red;
+                }
+            }
+
+            .accent-blue &, &.accent-blue{
+                &:hover{
+                    background-color: $blue-accent-2;
+                }
+            }
+        }
+    }
+
     .generic-slider {
         margin-top: 48px;
 
@@ -43,17 +95,17 @@
         }
 
         .glide__slide--active {
-            @include stat-card-accent();
+            @include stat-card-mobile-accent();
 
             @include breakpoint(475px up) {
                 + .glide__slide {
-                    @include stat-card-accent();
+                    @include stat-card-mobile-accent();
                 }
             }
 
             @include breakpoint(620px up) {
                 + .glide__slide + .glide__slide {
-                    @include stat-card-accent();
+                    @include stat-card-mobile-accent();
                 }
             }
         }
