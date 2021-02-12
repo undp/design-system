@@ -22,14 +22,14 @@ use helpers\Svg;
             <div class="grid-x text-container">
                 <div class="cell small-12 large-9 large-offset-1 hero-content">
                     <?php
-                        View::render('partials/breadcrumb', [
-                            'links' => [
-                                ['link' => '#', 'name' => '2030 Agenda For Sustainable Development'],
-                                ['link' => '#', 'name' => 'Planet'],
-                                ['link' => '#', 'name' => 'Climate Change'],
-                            ],
-                            'classes' => 'accent-white'
-                        ])
+                    View::render('partials/breadcrumb', [
+                        'links' => [
+                            ['link' => '#', 'name' => '2030 Agenda For Sustainable Development'],
+                            ['link' => '#', 'name' => 'Planet'],
+                            ['link' => '#', 'name' => 'Climate Change'],
+                        ],
+                        'classes' => 'accent-white'
+                    ])
                     ?>
 
                     <div class="text-box scroll-track left-right delay-1">
@@ -73,7 +73,7 @@ use helpers\Svg;
                     <div class="grid-x">
                         <?php
                         View::render('partials/project-page/featured-callout', [
-                        'title' => 'What</br> We do'
+                            'title' => 'What</br> We do'
                         ]);
                         ?>
                     </div>
@@ -90,7 +90,8 @@ use helpers\Svg;
                 </div>
                 <div class="cell large-offset-3 large-7 small-10 small-offset-1 link-list big-copy">
                     <div class="link-item">
-                        <a href="#" class="animated-underline"> Country Profiles - outcomes of the Mechanism for the Review of Implementation of
+                        <a href="#" class="animated-underline"> Country Profiles - outcomes of the Mechanism for the
+                            Review of Implementation of
                             the United
                             Nations Convention against Corruption</a>
                     </div>
@@ -98,17 +99,20 @@ use helpers\Svg;
                         <a href="#" class="animated-underline"> Legislative Guide for the Implementation of UNCAC</a>
                     </div>
                     <div class="link-item">
-                        <a href="#" class="animated-underline">Mechanism for the Review of Implementation of the United Nations Convention against
+                        <a href="#" class="animated-underline">Mechanism for the Review of Implementation of the United
+                            Nations Convention against
                             Corruption</a>
                     </div>
                     <div class="link-item">
                         <a href="#" class="animated-underline">Pacific Youth Anti-Corruption Advocate’s Toolkit</a>
                     </div>
                     <div class="link-item">
-                        <a href="#" class="animated-underline">Technical Guide to the United Nations Convention against Corruption</a>
+                        <a href="#" class="animated-underline">Technical Guide to the United Nations Convention against
+                            Corruption</a>
                     </div>
                     <div class="link-item">
-                        <a href="#" class="animated-underline">Travaux Préparatoires of the negotiations for the elaboration of the United Nations
+                        <a href="#" class="animated-underline">Travaux Préparatoires of the negotiations for the
+                            elaboration of the United Nations
                             Convention against Corruption</a>
                     </div>
                     <div class="link-item">
@@ -171,9 +175,10 @@ use helpers\Svg;
 
     <div class="explore-more grid-container" data-view-more data-scroll-up data-load-step="16">
         <div class="grid-x">
-            <div class="cell">
+            <div class="cell medium-offset-1 medium-11">
                 <h2 class="heading h2">Explore More</h2>
-
+            </div>
+            <div class="cell">
                 <?php View::render('partials/project-page/explore-more-cards') ?>
 
                 <div class="cta-button flex-container">
