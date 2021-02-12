@@ -126,7 +126,6 @@ use helpers\Svg;
         </div>
     </section>
 
-
     <div class="small-stats-slider">
         <div class="grid-container grid-x overflow-hidden">
             <div class="cell medium-10 medium-offset-1">
