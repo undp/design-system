@@ -2,7 +2,7 @@
 
 <div class="photo-cta-cards">
     <div class="grid-container grid-x">
-        <div class="cell small-10 small-offset-1 medium-offset-0 flex-container cards-title">
+        <div class="cell small-10 small-offset-1 medium-12 medium-offset-0 flex-container cards-title">
             <div class="heading h2 content-title scroll-track left-right delay-2">Take Action</div>
         </div>
         <div class="cell">
