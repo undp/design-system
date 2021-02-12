@@ -2,6 +2,10 @@
     padding-bottom: 89px;
     margin: $nav-desktop-height auto 0;
 
+    @include breakpoint(small only) {
+        margin: $nav-mobile-height auto 0;
+    }
+
     .headline-text {
         margin-top: 90px;
 
@@ -46,7 +50,7 @@
     }
 
     .related-table {
-        margin-top: 90px;
+        padding-top: 90px;
         padding-bottom: 115px;
         background: $dark-blue-7;
 
@@ -59,6 +63,7 @@
 
             .link-item {
                 margin-top: 50px;
+                font-size: 2.5rem;
                 padding-bottom: 35px;
                 border-bottom: 1px solid $black;
 

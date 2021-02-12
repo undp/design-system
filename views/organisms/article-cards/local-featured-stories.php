@@ -67,12 +67,24 @@
                 ])
                 ?>
             </div>
-            <div class="cell small-12 medium-4 large-3 overflow-hidden">
+            <div class="cell small-12 medium-4 large-3 overflow-hidden show-for-medium">
                 <?php
                 View::render('molecules/cards/article-card', [
                     'size' => 'tall',
                     'tag' => 'Content Tag',
-                    'image' => "../../../assets/images/placeholder/article-deepdive/article-deepdive-featured-image.png",
+                    'image' => "/assets/images/placeholder/article-deepdive/article-deepdive-featured-image.png",
+                    'title' => 'Sierra Leone National Human Development Report 2019',
+                    'description' => "“Even in the face of several human tragedies and financial resource constraints, Sierra Leone has demonstrated resilience that",
+                    'cta' => 'Read more'
+                ])
+                ?>
+            </div>
+            <div class="cell small-12 medium-4 large-3 overflow-hidden show-for-small-only">
+                <?php
+                View::render('molecules/cards/article-card', [
+                    'size' => 'wide',
+                    'tag' => 'Content Tag',
+                    'image' => "/assets/images/placeholder/article-deepdive/article-deepdive-featured-image.png",
                     'title' => 'Sierra Leone National Human Development Report 2019',
                     'description' => "“Even in the face of several human tragedies and financial resource constraints, Sierra Leone has demonstrated resilience that",
                     'cta' => 'Read more'

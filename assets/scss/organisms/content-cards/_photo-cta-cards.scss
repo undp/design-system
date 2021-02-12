@@ -11,6 +11,16 @@
 
         @include breakpoint(small only) {
             margin-top: 60px;
+
+            > *:not(:first-child) {
+                margin-top: 35px;
+            }
+        }
+
+        .card-item {
+            @include breakpoint(small only) {
+                padding: 0;
+            }
         }
     }
 
