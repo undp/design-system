@@ -28,6 +28,7 @@ import scrollUp from './components/scroll-up'
 import imageSizes from './components/image-sizes'
 import ieSticky from './components/ie-sticky'
 import singlePublication from './components/single-publication'
+import dynamicSlider from './components/dynamic-slider'
 
 import modal from './components/modal'
 import modalNav from './components/modal-nav'
@@ -79,6 +80,7 @@ function main() {
     scrollUp()
     ieSticky()
     singlePublication()
+    dynamicSlider()
 
     const globalSearch = new GlobalSearch()
     globalSearch.init()
