@@ -13,4 +13,12 @@
             margin-top: 60px;
         }
     }
+
+    .content-title {
+        text-align: center;
+
+        @include breakpoint(small only) {
+            text-align: left;
+        }
+    }
 }
