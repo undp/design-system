@@ -5,9 +5,9 @@
     <div class="big-copy">
         The goal of the project is to promote and strengthen measures to prevent and fight
         corruption more efficiently and effectively in the Pacific. This aligns with the purpose
-        of the United Nations Convention against Corruption (UNCAC) and contributes to the
-        achievement of Sustainable Development Goal (SDG) 16 on Peace, Justice and Strong
-        Institutions.
+        of the <a href="#" class="animated-underline">United Nations Convention against Corruption (UNCAC)</a>  and contributes to the
+        achievement of <a href="#" class="animated-underline">Sustainable Development Goal (SDG) 16 on Peace, Justice and Strong
+            Institutions.</a>
         </br></br>
         At the end of the project, we expect to achieve the following results:</br></br>
         <ul>
