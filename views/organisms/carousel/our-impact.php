@@ -29,8 +29,8 @@ $sliderOptions = [
         </div>
 
         <div class="gs--parallax-container cell cell medium-10 medium-offset-1 show-for-medium">
-            <?php foreach(array_chunk($cards, 3) as $i => $chunk) : ?>
-                <div class="grid-x grid-padding-x gs--parallax-row <?= $i === 0 ? 'left' : 'right' ?>">
+            <?php foreach(array_chunk($cards, 3) as $chunk) : ?>
+                <div class="grid-x grid-padding-x gs--parallax-row">
 
                     <?php foreach($chunk as $card) : ?>
                         <div class="cell medium-4">
