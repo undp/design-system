@@ -46,7 +46,7 @@
                     margin-bottom: 13px;
                 }
 
-                @include breakpoint(small down) {
+                @include breakpoint(small only) {
                     font-weight: normal;
                 }
             }
