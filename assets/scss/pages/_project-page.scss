@@ -65,11 +65,6 @@
                 @include breakpoint(medium down) {
                     padding-bottom: 22px;
                 }
-
-                a {
-                    text-decoration: underline;
-                    text-decoration-color: $red;
-                }
             }
         }
     }
@@ -112,10 +107,29 @@
                     text-transform: uppercase;
                 }
 
+                .highlighted {
+                    color: $blue-2;
+                    margin-bottom: 25px;
+                }
+
                 .body-text-item {
                     margin-top: 15px;
                 }
             }
+        }
+    }
+
+    .small-stats-slider {
+        margin-top: 140px;
+
+        .glide__track {
+            overflow: visible;
+            padding: 128px 0 111px;
+        }
+
+        .stat-card {
+            display: flex;
+            align-items: center;
         }
     }
 }

@@ -89,29 +89,29 @@ use helpers\Svg;
                 </div>
                 <div class="cell large-offset-3 large-7 small-10 small-offset-1 link-list big-copy">
                     <div class="link-item">
-                        <a href="#"> Country Profiles - outcomes of the Mechanism for the Review of Implementation of
+                        <a href="#" class="animated-underline"> Country Profiles - outcomes of the Mechanism for the Review of Implementation of
                             the United
                             Nations Convention against Corruption</a>
                     </div>
                     <div class="link-item">
-                        <a href="#"> Legislative Guide for the Implementation of UNCAC</a>
+                        <a href="#" class="animated-underline"> Legislative Guide for the Implementation of UNCAC</a>
                     </div>
                     <div class="link-item">
-                        <a href="#">Mechanism for the Review of Implementation of the United Nations Convention against
+                        <a href="#" class="animated-underline">Mechanism for the Review of Implementation of the United Nations Convention against
                             Corruption</a>
                     </div>
                     <div class="link-item">
-                        <a href="#">Pacific Youth Anti-Corruption Advocate’s Toolkit</a>
+                        <a href="#" class="animated-underline">Pacific Youth Anti-Corruption Advocate’s Toolkit</a>
                     </div>
                     <div class="link-item">
-                        <a href="#">Technical Guide to the United Nations Convention against Corruption</a>
+                        <a href="#" class="animated-underline">Technical Guide to the United Nations Convention against Corruption</a>
                     </div>
                     <div class="link-item">
-                        <a href="#">Travaux Préparatoires of the negotiations for the elaboration of the United Nations
+                        <a href="#" class="animated-underline">Travaux Préparatoires of the negotiations for the elaboration of the United Nations
                             Convention against Corruption</a>
                     </div>
                     <div class="link-item">
-                        <a href="#href">United Nations Convention against Corruption (UNCAC)</a>
+                        <a href="#" class="animated-underline">United Nations Convention against Corruption (UNCAC)</a>
                     </div>
                 </div>
             </div>
@@ -125,6 +125,49 @@ use helpers\Svg;
             </div>
         </div>
     </section>
+
+
+    <div class="small-stats-slider">
+        <div class="grid-container grid-x overflow-hidden">
+            <div class="cell medium-10 medium-offset-1">
+                <h2 class="heading h2">Countries we support</h2>
+            </div>
+            <div class="cell">
+                <div class="dynamic-slider cell">
+
+                    <div class="scroll-track left-right delay-1">
+                        <div class="glide__track" data-glide-el="track">
+                            <ul class="glide__slides">
+                                <li class="glide__slide">
+                                    <?php View::render('molecules/stats/small-card', ['title' => 'Cook Island']) ?>
+                                </li>
+                                <li class="glide__slide">
+                                    <?php View::render('molecules/stats/small-card', ['title' => 'Federated States of Micronesia']) ?>
+                                </li>
+                                <li class="glide__slide">
+                                    <?php View::render('molecules/stats/small-card', ['title' => 'Fiji']) ?>
+                                </li>
+                                <li class="glide__slide">
+                                    <?php View::render('molecules/stats/small-card', ['title' => 'Kingdom of Tonga']) ?>
+                                </li>
+                                <li class="glide__slide">
+                                    <?php View::render('molecules/stats/small-card', ['title' => 'Kiribati']) ?>
+                                </li>
+                                <li class="glide__slide">
+                                    <?php View::render('molecules/stats/small-card', ['title' => 'Nauro']) ?>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bullets-container">
+                            <div class="glide__bullets" data-glide-el="controls[nav]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="explore-more grid-container" data-view-more data-scroll-up data-load-step="16">
         <div class="grid-x">
