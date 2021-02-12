@@ -79,12 +79,16 @@
 
         .heading-stats-text {
             padding-bottom: 55px;
-            border-bottom: 2px solid $black;
+
+            @include breakpoint(small only) {
+                padding-bottom: 40px;
+            }
         }
 
         .heading-stats-items {
             margin-top: 60px;
             padding-bottom: 40px;
+            border-top: 2px solid $black;
             border-bottom: 1px solid $gray-chateau;
 
             .btn {
@@ -113,8 +117,18 @@
                 }
             }
 
+            .first-item {
+                @include breakpoint(small only) {
+                    padding: 0 6.3%;
+                }
+            }
+
             .stat-item {
                 margin-top: 35px;
+
+                @include breakpoint(small only) {
+                    padding: 0 8.3%;
+                }
 
                 .heading-item {
                     font-weight: $bold;
