@@ -1,0 +1,24 @@
+.related-table {
+    padding-top: 90px;
+    padding-bottom: 115px;
+    background: $dark-blue-7;
+
+    .link-list {
+        margin-top: 45px;
+
+        @include breakpoint(medium down) {
+            margin-top: 0;
+        }
+
+        .link-item {
+            margin-top: 50px;
+            font-size: 2.5rem;
+            padding-bottom: 35px;
+            border-bottom: 1px solid $black;
+
+            @include breakpoint(medium down) {
+                padding-bottom: 22px;
+            }
+        }
+    }
+}

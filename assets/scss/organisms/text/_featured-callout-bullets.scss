@@ -1,0 +1,26 @@
+.featured-callout-bullets {
+    color: $white;
+    margin-top: 70px;
+    padding-top: 150px;
+    padding-bottom: 130px;
+    background: $dark-blue-1;
+
+    @include breakpoint(medium down) {
+        padding-top: 100px;
+    }
+
+    .big-copy {
+        color: $white;
+    }
+
+    .featured-copy {
+
+        @include breakpoint(medium down) {
+            margin-top: 40px;
+        }
+
+        li {
+            margin-top: 40px;
+        }
+    }
+}

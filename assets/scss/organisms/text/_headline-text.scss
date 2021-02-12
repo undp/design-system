@@ -1,0 +1,15 @@
+.headline-text {
+    margin-top: 90px;
+
+    @include breakpoint(medium down) {
+        margin-top: 75px;
+    }
+
+    .copy-text {
+        margin-top: 70px;
+
+        @include breakpoint(medium down) {
+            margin-top: 50px;
+        }
+    }
+}

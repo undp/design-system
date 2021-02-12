@@ -19,7 +19,7 @@
 
     <?php View::render('organisms/article-cards/local-featured-stories'); ?>
 
-    <?php View::render('molecules/callouts/featured-callout'); ?>
+    <?php View::render('organisms/text/featured-callout-title-text'); ?>
 
     <?php View::render('molecules/cards/featured-content-card'); ?>
 

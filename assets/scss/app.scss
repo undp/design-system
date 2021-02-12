@@ -59,7 +59,6 @@
 @import "molecules/cards/single-content-card-accent-color";
 @import "molecules/cards/single-content-card-image";
 @import "molecules/cards/single-content-card-body";
-@import "molecules/callouts/featured-callout";
 @import "molecules/callouts/callout";
 @import "molecules/images/image-with-caption";
 @import "molecules/images/article-gallery";
@@ -80,6 +79,10 @@
 @import "organisms/hero/project-hero";
 @import "organisms/text/author-bio";
 @import "organisms/text/bulleted-list";
+@import "organisms/text/headline-text";
+@import "organisms/text/featured-callout-bullets";
+@import "organisms/text/featured-callout-title-text";
+@import "organisms/text/related-table";
 @import "organisms/article-cards/featured-stories";
 @import "organisms/content-cards/news-centre-cards";
 @import "organisms/content-cards/country-page-content-cards";
@@ -96,6 +99,7 @@
 @import "organisms/single-publication/featured-publication";
 @import "organisms/single-publication/related-publications";
 @import "organisms/single-publication/modal-publication-download";
+@import "organisms/stats/listed-stats";
 
 @import "organisms/homepage/trusted-partnerships";
 @import "organisms/article-deepdive/article-authors";
