@@ -1,9 +1,12 @@
+import debounce from 'lodash/debounce'
+
 class GlobalSearch {
     constructor() {
         this.$body = $('body');
         this.$modal = $('[data-modal-search]')
         this.$searchFiltersContainer = this.$modal.find('.search-filters')
-        this.$searchResultsContainer = this.$modal.find('[data-search-results]')
+        this.$searchResultsWrapper = this.$modal.find('.search-results')
+        this.$searchResultsContainer = this.$searchResultsWrapper.find('[data-search-results]')
         this.$searchInput = this.$modal.find('.search-input input[type=search]')
         this.$mobileFilterOpen = this.$searchFiltersContainer.find('.mobile-filters-open .btn')
         this.$mobileFilterClose = this.$searchFiltersContainer.find('.mobile-filters-close .btn')
@@ -44,6 +47,10 @@ class GlobalSearch {
             this.closeFiltersMobile()
         })
 
+        $(window).resize('resize',debounce(() => {
+            this.setResultsWrapperHeight()
+        }, 200))
+
         this.$body.on('UNDP.multiselectReady', (evt, data) => {
             if(this.$multiselectFilters.filter(`#${data.multiselect}`).length) {
                 this.multiselectFiltersLoaded += this.$multiselectFilters.filter(`#${data.multiselect}`).length;
@@ -64,6 +71,16 @@ class GlobalSearch {
         this.multiSelectFiltersListener()
         this.removeFilterListener()
         this.clearAllFiltersListener()
+    }
+
+    setResultsWrapperHeight() {
+        let baseLineHeight = this.$modal.height() - 128;
+
+        if(baseLineHeight < this.$searchFiltersContainer.height()) {
+            this.$searchResultsWrapper.css('max-height', this.$searchFiltersContainer.outerHeight())
+        } else {
+            this.$searchResultsWrapper.css('max-height', baseLineHeight)
+        }
     }
 
     openFiltersMobile() {
@@ -149,6 +166,8 @@ class GlobalSearch {
         }
 
         this.$mobileFilterOpen.find('.counter').text(checkedOptions.length > 0? `(${checkedOptions.length})` : '')
+
+        this.setResultsWrapperHeight()
     }
 
     updateFilters(input) {
@@ -179,6 +198,8 @@ class GlobalSearch {
         if(searchValue.length < 3 && !this.$modal.hasClass('showing-results')) {
             return false
         }
+
+        this.setResultsWrapperHeight()
 
         $.ajax({
             type: 'GET',
