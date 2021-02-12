@@ -39,11 +39,6 @@
                     'description' => 'Of Sierra Leoneans live below the the national poverty line'
                 ],
                 [
-                    'number' => 13,
-                    'title' => 'Percent',
-                    'description' => 'Of parliamentary seats held by women'
-                ],
-                [
                     'number' => 70,
                     'title' => 'Percent',
                     'description' => 'Of youth are unemployed or underemployed'
@@ -53,12 +48,6 @@
                     'title' => 'Years old',
                     'description' => 'Life expectancy at birth'
                 ],
-                [
-                    'number' => 70,
-                    'title' => 'Percent',
-                    'description' => 'Of youth are unemployed or underemployed'
-                ],
-
                 [
                     'number' => 13,
                     'title' => 'Percent',

@@ -39,7 +39,7 @@ const init = function () {
             scrollTrigger: {
                 scrub: true,
                 trigger: container,
-                start: "top+=15% center"
+                start: "center center"
             }
         }
 

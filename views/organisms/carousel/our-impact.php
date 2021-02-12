@@ -28,12 +28,12 @@ $sliderOptions = [
             <h2 class="heading h2">Our Impact</h2>
         </div>
 
-        <div class="gs--parallax-container cell show-for-medium">
-            <?php foreach(array_chunk($cards, 4) as $i => $chunk) : ?>
+        <div class="gs--parallax-container cell cell medium-10 medium-offset-1 show-for-medium">
+            <?php foreach(array_chunk($cards, 3) as $i => $chunk) : ?>
                 <div class="grid-x grid-padding-x gs--parallax-row <?= $i === 0 ? 'left' : 'right' ?>">
 
                     <?php foreach($chunk as $card) : ?>
-                        <div class="cell medium-3">
+                        <div class="cell medium-4">
                             <?php
                                 View::render('molecules/stats/small-card', [
                                     'title' => $card['title'],
@@ -58,7 +58,7 @@ $sliderOptions = [
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
                         <?php foreach($cards as $card) : ?>
-                            <div class="glide__slide">
+                            <li class="glide__slide">
                                 <?php
                                     View::render('molecules/stats/small-card', [
                                         'title' => $card['title'],
@@ -66,7 +66,7 @@ $sliderOptions = [
                                         'description' => $card['description']
                                     ])
                                 ?>
-                            </div>
+                            </li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
