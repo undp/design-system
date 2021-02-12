@@ -3,7 +3,7 @@
 <!-- Page Headers -->
 <?php View::render('layout/header', ['pageTitle' => 'UNDP - Country Page']) ?>
 
-<body>
+<body class="accent-green">
 <!-- Navigation -->
 <?php View::render('layout/navigation/main-justify') ?>
 
