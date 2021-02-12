@@ -27,7 +27,11 @@
 
 
 .our-impact {
-    margin-top: 90px;
+    margin-top: 133px;
+
+    @include breakpoint(small only) {
+        margin-top: 139px;
+    }
 
     .gs--parallax-container {
         margin-top: 72px;
@@ -81,9 +85,7 @@
         margin-top: 48px;
 
         .glide__track {
-            @include breakpoint(small only) {
-                overflow: visible;
-            }
+            overflow: visible;
         }
 
         .glide__slides {
