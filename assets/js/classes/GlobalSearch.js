@@ -9,8 +9,15 @@ class GlobalSearch {
         this.$mobileFilterClose = this.$searchFiltersContainer.find('.mobile-filters-close .btn')
         this.$activeFiltersContainer = this.$searchFiltersContainer.find('[data-active-filters]')
         this.$multiselectFilters = this.$searchFiltersContainer.find('.multi-select')
-        this.multiselectFiltersLoaded = false;
+        this.multiselectFiltersLoaded = false
 
+        // Results management
+        this.jsonResults = []
+        this.currentResultsPage = 1
+        this.resultsPerPage = 10
+        this.showingResults = 0
+
+        // Filter management
         this.filters = {}
         this.validFilters = this.$multiselectFilters.map((index, multiselect) => {
             let $multiselect = $(multiselect)
@@ -173,11 +180,40 @@ class GlobalSearch {
             return false
         }
 
-        console.log(searchValue)
+        $.ajax({
+            type: 'GET',
+            url: '/views/layout/navigation/modals/search-mock-backend/searchMockBackend.php',
+            dataType: 'json',
+            success: (response) => {
+                this.jsonResults = response;
+
+                const currentPageResults = this.paginateResults()
+
+                this.$searchResultsContainer.append(`
+                    <div class="search-results-metadata">
+                            Showing 1-${currentPageResults.length} of ${this.jsonResults.length} results across UNDP.org for <span>${searchValue}</span>
+                    </div>`)
+
+                currentPageResults.forEach((item) => {
+                    this.$searchResultsContainer.append(` 
+                    <div class="search-result-card">
+                        <div class="tag">${item.tag !== "" ? item.tag : item.date}</div>
+                        <a class="title-link" href="${item.url}">
+                            <h2 class="heading h5">${item.title}</h2>
+                        </a>
+                        <p class="medium-copy">${item.description}</p>
+                    </div>`);
+                });
+            }
+        });
 
         this.$modal.addClass('showing-results')
         this.addFiltersToParams();
     }
+
+    paginateResults () {
+        return this.jsonResults.slice((this.currentResultsPage - 1) * this.resultsPerPage, this.currentResultsPage * this.resultsPerPage)
+    };
 
     populateQuickLinks() {
         $.ajax({
@@ -234,6 +270,8 @@ class GlobalSearch {
         if(!$.isEmptyObject(this.filters) && this.multiselectFiltersLoaded) {
             this.checkMultiselectOptionsFromFilters()
         }
+
+        this.performSearch()
     }
 
     checkMultiselectOptionsFromFilters() {

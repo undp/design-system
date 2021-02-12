@@ -65,69 +65,6 @@ use helpers\View;
                 <div class="search-results">
                     <div class="grid-x grid-margin-x" data-search-results>
                         <?php //Quick Links and Popular Searches columns are added via JS ?>
-                        <div class="search-results-metadata">
-                            Showing 1-10 of 1234 results across UNDP.org for <span>search term</span>
-                        </div>
-                        <div class="search-result-card">
-                            <div class="tag">Date or Content tag or Page Label</div>
-                            <a class="title-link" href="#">
-                                <h2 class="heading h5">Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed
-                                    do eiusmod tempor incididunt</h2>
-                            </a>
-                            <p class="medium-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="search-result-card">
-                            <div class="tag">Date or Content tag or Page Label</div>
-                            <a class="title-link" href="#">
-                                <h2 class="heading h5">Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed
-                                    do eiusmod tempor incididunt</h2>
-                            </a>
-                            <p class="medium-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="search-result-card">
-                            <div class="tag">Date or Content tag or Page Label</div>
-                            <a class="title-link" href="#">
-                                <h2 class="heading h5">Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed
-                                    do eiusmod tempor incididunt</h2>
-                            </a>
-                            <p class="medium-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="search-result-card">
-                            <div class="tag">Date or Content tag or Page Label</div>
-                            <a class="title-link" href="#">
-                                <h2 class="heading h5">Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed
-                                    do eiusmod tempor incididunt</h2>
-                            </a>
-                            <p class="medium-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="search-result-card">
-                            <div class="tag">Date or Content tag or Page Label</div>
-                            <a class="title-link" href="#">
-                                <h2 class="heading h5">Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed
-                                    do eiusmod tempor incididunt</h2>
-                            </a>
-                            <p class="medium-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="search-result-card">
-                            <div class="tag">Date or Content tag or Page Label</div>
-                            <a class="title-link" href="#">
-                                <h2 class="heading h5">Lorem ipsum dolor sit amet, consectetur don adipiscing elit, sed
-                                    do eiusmod tempor incididunt</h2>
-                            </a>
-                            <p class="medium-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
                     </div>
                 </div>
             </div>
