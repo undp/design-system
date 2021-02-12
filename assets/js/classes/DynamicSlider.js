@@ -12,21 +12,25 @@ class DynamicSlider {
 
         this.options = {
             type: 'slider',
-            gap: 24,
+            gap: 27,
             bound: true,
-            peek: {before: 140, after: 70},
-            perView: 4,
+            peek: {before: 120, after: 70},
+            perView: 5,
             breakpoints: {
-                600: {
-                    peek: {before: 0, after: 100},
+                620: {
+                    peek: {before: 0, after: 85},
                     perView: 1,
                 },
-                834: {
-                    peek: 100,
-                    perView: 2
+                820: {
+                    peek: {before: 0, after: 100},
+                    perView: 2,
                 },
-                1439: {
+                1024: {
+                    peek: {before: 0, after: 100},
                     perView: 3
+                },
+                1440: {
+                    perView: 4
                 }
             }
         }

@@ -1,0 +1,8 @@
+.small-stats-slider {
+
+    .stat-card {
+        @include breakpoint(620px down) {
+            max-width: 212px;
+        }
+    }
+}
