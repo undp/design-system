@@ -185,9 +185,12 @@ class GlobalSearch {
             url: '/views/layout/navigation/modals/search-mock-backend/searchMockBackend.php',
             dataType: 'json',
             success: (response) => {
+                this.$searchResultsContainer.html('')
                 this.jsonResults = response;
 
                 const currentPageResults = this.paginateResults()
+
+                console.log(currentPageResults)
 
                 this.$searchResultsContainer.append(`
                     <div class="search-results-metadata">
