@@ -12,6 +12,12 @@
         @include breakpoint(small only) {
             margin-top: 60px;
         }
+
+        .card-item {
+            @include breakpoint(small only) {
+                padding: 0;
+            }
+        }
     }
 
     .cards-title {
