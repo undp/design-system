@@ -52,10 +52,28 @@
                 <div class="body-text-item big-copy">
                     Phase I, 2012-2016</br>
                     <p class="blue-link">USD 4,302,968 (DFAT)</p>
-                    </br></br>
+                    </br>
                     Phase II, 2016-2021:
                     <p class="blue-link">USD 5,359,088 (DFAT)</p>
+                    </br>
+                    2020-2022
+                    <p class="blue-link">NZD 4,000,000 (New Zeland Aid Programme</p>
+                    </br>
+                    <div class="heading-item medium-copy">Delivery in previous Fiscal year</div>
+                    </br>
+                    <div> <span>2020:</span> <span class="blue-link"> USD 133,201</span> </div>
+                    </br>
+                    <div> <span>2019:</span> <span class="blue-link">USD 577,950 </span></div>
+                    </br>
+                    <div> <span>2018:</span> <span class="blue-link">USD 318,113 </span></div>
                 </div>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="cta-button flex-container">
+                <button class="btn blue">
+                    Full project information
+                </button>
             </div>
         </div>
     </div>

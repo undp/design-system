@@ -79,6 +79,15 @@
 
         .heading-stats-items {
             margin-top: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid $gray-chateau;
+
+            .btn {
+                @include breakpoint(small only) {
+                    width: 100%;
+                }
+            }
+
 
             @include breakpoint(medium down) {
                 margin-top: 15px;
@@ -114,6 +123,10 @@
 
                 .body-text-item {
                     margin-top: 15px;
+
+                    .blue-link {
+                        color: $blue-2;
+                    }
                 }
             }
         }
