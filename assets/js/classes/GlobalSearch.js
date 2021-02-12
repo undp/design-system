@@ -17,8 +17,9 @@ class GlobalSearch {
         // Results management
         this.jsonResults = []
         this.currentResultsPage = 1
-        this.resultsPerPage = 10
-        this.showingResults = 0
+        this.totalResultsLoaded = 0
+        this.loadMoreButton = null
+        this.$searchResultsMetadata = null
 
         // Filter management
         this.filters = {}
@@ -71,6 +72,23 @@ class GlobalSearch {
         this.multiSelectFiltersListener()
         this.removeFilterListener()
         this.clearAllFiltersListener()
+
+        this.$searchResultsWrapper.on('scroll', () => {
+            if(this.$searchResultsWrapper[0].scrollTop === (this.$searchResultsWrapper[0].scrollHeight - this.$searchResultsWrapper[0].offsetHeight)) {
+                this.loadMoreResults()
+            }
+        })
+
+        this.$searchResultsContainer.on('click', '.btn.blue', () => {
+            this.loadMoreResults()
+        })
+    }
+
+    loadMoreResults() {
+        this.loadMoreButton.text('Loading more...')
+        this.currentResultsPage++
+
+        this.performSearch()
     }
 
     setResultsWrapperHeight() {
@@ -202,23 +220,36 @@ class GlobalSearch {
         this.setResultsWrapperHeight()
 
         $.ajax({
-            type: 'GET',
+            type: 'POST',
             url: '/views/layout/navigation/modals/search-mock-backend/searchMockBackend.php',
+            data: {
+                search: searchValue,
+                filters: this.filters,
+                page: this.currentResultsPage
+            },
             dataType: 'json',
             success: (response) => {
-                this.$searchResultsContainer.html('')
-                this.jsonResults = response;
+                if(this.loadMoreButton !== null) {
+                    this.loadMoreButton.remove()
+                }
 
-                const currentPageResults = this.paginateResults()
+                this.jsonResults = response.results;
+                this.totalResultsLoaded += this.jsonResults.length;
 
-                console.log(currentPageResults)
+                if(this.currentResultsPage === 1) {
+                    this.$searchResultsContainer.html('')
 
-                this.$searchResultsContainer.append(`
+                    this.$searchResultsContainer.append(`
                     <div class="search-results-metadata">
-                            Showing 1-${currentPageResults.length} of ${this.jsonResults.length} results across UNDP.org for <span>${searchValue}</span>
+                            Showing 1-<span class="shown-results">${this.jsonResults.length}</span> of ${response.total} results across UNDP.org for <span>${searchValue}</span>
                     </div>`)
 
-                currentPageResults.forEach((item) => {
+                    this.$searchResultsMetadata = this.$searchResultsContainer.find('.search-results-metadata .shown-results')
+                } else {
+                    this.$searchResultsMetadata.text(this.totalResultsLoaded)
+                }
+
+                this.jsonResults.forEach((item) => {
                     this.$searchResultsContainer.append(` 
                     <div class="search-result-card">
                         <div class="tag">${item.tag !== "" ? item.tag : item.date}</div>
@@ -228,16 +259,17 @@ class GlobalSearch {
                         <p class="medium-copy">${item.description}</p>
                     </div>`);
                 });
+
+                if(this.totalResultsLoaded < response.total) {
+                    this.loadMoreButton = $('<button class="btn blue">Load more</button>');
+                    this.$searchResultsContainer.append(this.loadMoreButton)
+                }
             }
         });
 
         this.$modal.addClass('showing-results')
         this.addFiltersToParams();
     }
-
-    paginateResults () {
-        return this.jsonResults.slice((this.currentResultsPage - 1) * this.resultsPerPage, this.currentResultsPage * this.resultsPerPage)
-    };
 
     populateQuickLinks() {
         $.ajax({
@@ -285,7 +317,9 @@ class GlobalSearch {
                     break;
                 default:
                     if(this.validFilters.includes(dataPair[0])) {
-                        this.filters[dataPair[0]] = dataPair[1].split(",");
+                        if(dataPair[1] !== "") {
+                            this.filters[dataPair[0]] = dataPair[1].split(",");
+                        }
                     }
                     break
             }
