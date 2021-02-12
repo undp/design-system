@@ -1,6 +1,15 @@
 .small-stats-slider {
+    margin-top: 140px;
+
+    .glide__track {
+        overflow: visible;
+        padding: 128px 0 111px;
+    }
 
     .stat-card {
+        display: flex;
+        align-items: center;
+
         @include breakpoint(620px down) {
             max-width: 212px;
         }
