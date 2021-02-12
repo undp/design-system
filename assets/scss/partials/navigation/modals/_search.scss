@@ -20,7 +20,8 @@
 
     .modal-content {
         padding: 0;
-        height: 100%;
+        min-height: 100%;
+        padding-top: 30px;
 
         @include breakpoint(small only) {
             padding-top: 30px;
@@ -40,15 +41,17 @@
 
             @include breakpoint(medium) {
                 top: 50%;
+                left: 50%;
                 height: 50%;
-                position: relative;
+                position: absolute;
                 transition: all $easing-1;
-                transform: translateY(-50%);
+                transform: translate(-50%, -50%);
             }
 
             .results-and-filters-container {
                 display: flex;
                 margin-top: 50px;
+                align-items: flex-start;
 
                 @include breakpoint(small only) {
                     margin-top: 0;
@@ -63,6 +66,7 @@
                 .search-filters {
                     display: none;
                     max-width: 355px;
+                    padding-bottom: 30px;
 
                     .mobile-filters-open,
                     .mobile-filters-close,{
@@ -175,6 +179,9 @@
                 }
 
                 .search-results {
+                    max-height: 200px;
+                    transition: max-height $easing-1;
+
                     @include breakpoint(small only) {
                         margin-top: 30px;
                     }
@@ -294,20 +301,14 @@
         }
 
         &.showing-results {
-            padding-top: 30px;
-
             .modal-body {
+                height: auto;
                 display: flex;
                 flex-direction: column;
 
                 @include breakpoint(medium) {
-                    top: 0;
-                    height: 100%;
-                    transform: none;
-
-                    .results-and-filters-container {
-                        max-height: calc(100% - 128px);
-                    }
+                    top: 30px;
+                    transform: translate(-50%, 0);
                 }
 
                 .results-and-filters-container {

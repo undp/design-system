@@ -139,6 +139,8 @@ class ModalLocationsSearch {
 
         this.$modalTriggerReference.addClass(this.classModalActive);
         this.showOptionClose();
+
+        this.$body.trigger('UNDP.modalOpened')
     }
 
     // Modal hides the (scroll y) so we add his width on navigation to keep the same size

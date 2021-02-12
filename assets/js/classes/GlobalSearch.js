@@ -1,16 +1,26 @@
+import debounce from 'lodash/debounce'
+
 class GlobalSearch {
     constructor() {
         this.$body = $('body');
         this.$modal = $('[data-modal-search]')
         this.$searchFiltersContainer = this.$modal.find('.search-filters')
-        this.$searchResultsContainer = this.$modal.find('[data-search-results]')
+        this.$searchResultsWrapper = this.$modal.find('.search-results')
+        this.$searchResultsContainer = this.$searchResultsWrapper.find('[data-search-results]')
         this.$searchInput = this.$modal.find('.search-input input[type=search]')
         this.$mobileFilterOpen = this.$searchFiltersContainer.find('.mobile-filters-open .btn')
         this.$mobileFilterClose = this.$searchFiltersContainer.find('.mobile-filters-close .btn')
         this.$activeFiltersContainer = this.$searchFiltersContainer.find('[data-active-filters]')
         this.$multiselectFilters = this.$searchFiltersContainer.find('.multi-select')
-        this.multiselectFiltersLoaded = false;
+        this.multiselectFiltersLoaded = false
 
+        // Results management
+        this.jsonResults = []
+        this.currentResultsPage = 1
+        this.resultsPerPage = 10
+        this.showingResults = 0
+
+        // Filter management
         this.filters = {}
         this.validFilters = this.$multiselectFilters.map((index, multiselect) => {
             let $multiselect = $(multiselect)
@@ -37,6 +47,10 @@ class GlobalSearch {
             this.closeFiltersMobile()
         })
 
+        $(window).resize('resize',debounce(() => {
+            this.setResultsWrapperHeight()
+        }, 200))
+
         this.$body.on('UNDP.multiselectReady', (evt, data) => {
             if(this.$multiselectFilters.filter(`#${data.multiselect}`).length) {
                 this.multiselectFiltersLoaded += this.$multiselectFilters.filter(`#${data.multiselect}`).length;
@@ -57,6 +71,16 @@ class GlobalSearch {
         this.multiSelectFiltersListener()
         this.removeFilterListener()
         this.clearAllFiltersListener()
+    }
+
+    setResultsWrapperHeight() {
+        let baseLineHeight = this.$modal.height() - 128;
+
+        if(baseLineHeight < this.$searchFiltersContainer.height()) {
+            this.$searchResultsWrapper.css('max-height', this.$searchFiltersContainer.outerHeight())
+        } else {
+            this.$searchResultsWrapper.css('max-height', baseLineHeight)
+        }
     }
 
     openFiltersMobile() {
@@ -142,6 +166,8 @@ class GlobalSearch {
         }
 
         this.$mobileFilterOpen.find('.counter').text(checkedOptions.length > 0? `(${checkedOptions.length})` : '')
+
+        this.setResultsWrapperHeight()
     }
 
     updateFilters(input) {
@@ -173,11 +199,45 @@ class GlobalSearch {
             return false
         }
 
-        console.log(searchValue)
+        this.setResultsWrapperHeight()
+
+        $.ajax({
+            type: 'GET',
+            url: '/views/layout/navigation/modals/search-mock-backend/searchMockBackend.php',
+            dataType: 'json',
+            success: (response) => {
+                this.$searchResultsContainer.html('')
+                this.jsonResults = response;
+
+                const currentPageResults = this.paginateResults()
+
+                console.log(currentPageResults)
+
+                this.$searchResultsContainer.append(`
+                    <div class="search-results-metadata">
+                            Showing 1-${currentPageResults.length} of ${this.jsonResults.length} results across UNDP.org for <span>${searchValue}</span>
+                    </div>`)
+
+                currentPageResults.forEach((item) => {
+                    this.$searchResultsContainer.append(` 
+                    <div class="search-result-card">
+                        <div class="tag">${item.tag !== "" ? item.tag : item.date}</div>
+                        <a class="title-link" href="${item.url}">
+                            <h2 class="heading h5">${item.title}</h2>
+                        </a>
+                        <p class="medium-copy">${item.description}</p>
+                    </div>`);
+                });
+            }
+        });
 
         this.$modal.addClass('showing-results')
         this.addFiltersToParams();
     }
+
+    paginateResults () {
+        return this.jsonResults.slice((this.currentResultsPage - 1) * this.resultsPerPage, this.currentResultsPage * this.resultsPerPage)
+    };
 
     populateQuickLinks() {
         $.ajax({
@@ -234,6 +294,8 @@ class GlobalSearch {
         if(!$.isEmptyObject(this.filters) && this.multiselectFiltersLoaded) {
             this.checkMultiselectOptionsFromFilters()
         }
+
+        this.performSearch()
     }
 
     checkMultiselectOptionsFromFilters() {
