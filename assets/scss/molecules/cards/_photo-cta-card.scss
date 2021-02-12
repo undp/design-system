@@ -8,6 +8,7 @@
 
     .card-content {
         display: flex;
+        overflow: hidden;
         position: relative;
         flex-direction: column;
 
@@ -40,15 +41,28 @@
         }
 
         .description {
+            left: -1px;
             opacity: 0;
             z-index: 90;
-            height: 120px;
+            width: 101%;
+            bottom: -1px;
+            overflow: hidden;
             padding-top: 25px;
             margin-top: -120px;
             background: $white;
-            position: relative;
-            padding-right: 100px;
-            transition: opacity .2s ease-in;
+            position: absolute;
+            padding-right: 80px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            transform: translateY(100%);
+            -webkit-box-orient: vertical;
+            transition: $transition-primary;
+
+            .card-description-text {
+                opacity: 0;
+                transition: $transition-primary;
+                transition-delay: .3s;
+            }
 
             @include breakpoint(medium down) {
                 opacity: 1;
@@ -84,6 +98,13 @@
 
         .description, .gradient {
             opacity: 1;
+            transform: translateY(0);
+        }
+
+        .description {
+            .card-description-text {
+                opacity: 1;
+            }
         }
 
         .image {
