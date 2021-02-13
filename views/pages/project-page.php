@@ -13,7 +13,7 @@ use helpers\Svg;
 <?php View::render('layout/navigation/main') ?>
 
 
-<div class="project-page">
+<div class="project-page overflow-hidden">
 
     <?php View::render('organisms/hero/project-hero'); ?>
 
