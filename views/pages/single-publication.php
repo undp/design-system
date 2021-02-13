@@ -42,7 +42,7 @@ use helpers\View;
                 <?php
                     View::render('partials/breadcrumb', [
                         'links' => [
-                            ['link' => '/single-publication', 'name' => 'Publications'],
+                            ['link' => '/single-publication', 'name' => 'Publications']
                         ],
                         'classes' => 'accent-red'
                     ]);
