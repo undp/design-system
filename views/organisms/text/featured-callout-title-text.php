@@ -1,4 +1,4 @@
-<section class="title-text">
+<section class="featured-callout-title-text">
     <div class="grid-container">
         <div class="grid-x grid-margin-x align-center overflow-hidden scroll-track left-right delay-1">
             <hgroup class="cell medium-4 title-container">

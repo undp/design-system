@@ -6,11 +6,11 @@
         margin: $nav-mobile-height auto 0;
     }
 
-    .headline-text {
-        margin-top: 90px;
+    .explore-more {
+        margin-top: 200px;
 
-        @include breakpoint(medium down) {
-            margin-top: 75px;
+        @include breakpoint(small only) {
+            margin-top: 150px;
         }
 
         .copy-text {
@@ -18,135 +18,6 @@
 
             @include breakpoint(medium down) {
                 margin-top: 50px;
-            }
-        }
-    }
-
-    .featured-callout {
-        color: $white;
-        margin-top: 70px;
-        padding-top: 150px;
-        padding-bottom: 130px;
-        background: $dark-blue-1;
-
-        @include breakpoint(medium down) {
-            padding-top: 100px;
-        }
-
-        .big-copy {
-            color: $white;
-        }
-
-        .featured-copy {
-
-            @include breakpoint(medium down) {
-                margin-top: 40px;
-            }
-
-            li {
-                margin-top: 40px;
-            }
-        }
-    }
-
-    .related-table {
-        padding-top: 90px;
-        padding-bottom: 115px;
-        background: $dark-blue-7;
-
-        .link-list {
-            margin-top: 45px;
-
-            @include breakpoint(medium down) {
-                margin-top: 0;
-            }
-
-            .link-item {
-                margin-top: 50px;
-                font-size: 2.5rem;
-                padding-bottom: 35px;
-                border-bottom: 1px solid $black;
-
-                @include breakpoint(medium down) {
-                    padding-bottom: 22px;
-                }
-            }
-        }
-    }
-
-    .listed-stats {
-        margin-top: 100px;
-
-        .heading-stats-text {
-            padding-bottom: 55px;
-
-            @include breakpoint(small only) {
-                padding-bottom: 40px;
-            }
-        }
-
-        .heading-stats-items {
-            margin-top: 60px;
-            padding-bottom: 40px;
-            border-top: 2px solid $black;
-            border-bottom: 1px solid $gray-chateau;
-
-            .btn {
-                @include breakpoint(small only) {
-                    width: 100%;
-                }
-            }
-
-
-            @include breakpoint(medium down) {
-                margin-top: 15px;
-            }
-
-            .big-column {
-                padding-left: 30px;
-
-                @include breakpoint(medium down) {
-                    padding-left: 0;
-                }
-            }
-
-            .stat-item-container {
-                @include breakpoint(small only) {
-                    padding-bottom: 40px;
-                    border-bottom: 1px solid $dark-blue-19;
-                }
-            }
-
-            .first-item {
-                @include breakpoint(small only) {
-                    padding: 0 6.3%;
-                }
-            }
-
-            .stat-item {
-                margin-top: 35px;
-
-                @include breakpoint(small only) {
-                    padding: 0 8.3%;
-                }
-
-                .heading-item {
-                    font-weight: $bold;
-                    text-transform: uppercase;
-                }
-
-                .highlighted {
-                    color: $blue-2;
-                    margin-bottom: 25px;
-                }
-
-                .body-text-item {
-                    margin-top: 15px;
-
-                    .blue-link {
-                        color: $blue-2;
-                    }
-                }
             }
         }
     }

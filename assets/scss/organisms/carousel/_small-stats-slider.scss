@@ -1,9 +1,33 @@
 .small-stats-slider {
     margin-top: 140px;
 
+    @include breakpoint(small only) {
+        margin-top: 116px;
+    }
+
+    .dynamic-slider {
+        margin-top: 128px;
+
+        @include breakpoint(small only) {
+            margin-top: 70px;
+        }
+    }
+
+    .bullets-container {
+        @include breakpoint(small only) {
+            order: 1;
+        }
+    }
+
     .glide__track {
         overflow: visible;
-        padding: 128px 0 111px;
+        padding-bottom: 111px;
+
+        @include breakpoint(small only) {
+            order: 2;
+            padding-bottom: 0;
+            padding-top: 33px;
+        }
     }
 
     .stat-card {
