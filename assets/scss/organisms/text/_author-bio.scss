@@ -74,16 +74,4 @@
             word-spacing: 100vw; // Forces each word to take all the width available
         }
     }
-
-    .separator {
-        height: 2px;
-        margin-top: 47px;
-        margin-bottom: 30px;
-        background-color: $black;
-
-        @include breakpoint(medium down) {
-            margin-top: 30px;
-            margin-bottom: 25px;
-        }
-    }
 }
