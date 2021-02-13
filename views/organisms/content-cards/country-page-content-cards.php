@@ -49,7 +49,7 @@
                     ?>
                 </div>
             </div>
-            <div class="grid-x grid-padding-x">
+            <div class="grid-x grid-margin-x">
                 <div class="cell cta-container">
                     <?php
                     View::render('molecules/buttons/cta-no-arrow', [
