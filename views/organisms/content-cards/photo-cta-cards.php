@@ -6,7 +6,7 @@
             <div class="heading h2 content-title scroll-track left-right delay-2">Take Action</div>
         </div>
         <div class="cell">
-            <div class="grid-x grid-padding-x flex-container align-center cards-content">
+            <div class="grid-x grid-margin-x flex-container align-center cards-content">
                 <div class="cell medium-4 large-4 card-item">
                     <?php
                     View::render('molecules/cards/photo-cta-card', [
