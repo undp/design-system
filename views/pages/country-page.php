@@ -27,6 +27,7 @@
 
     <?php
         View::render('organisms/carousel/parallax-cards', [
+            'heading' => 'Our Impact',
             'cards' => [
                 [
                     'number' => 41,
