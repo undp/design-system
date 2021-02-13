@@ -43,7 +43,7 @@ use helpers\View;
                     View::render('molecules/forms/multi-select', [
                         'id' => 'regions-countries-select',
                         'title' => 'Regions & Countries',
-                        'dataType' => 'region-countries',
+                        'dataType' => 'regions-countries',
                         'actionListener' => 'data-regions-countries-filter'
                     ]);
                     ?>

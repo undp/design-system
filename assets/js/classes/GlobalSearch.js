@@ -174,14 +174,18 @@ class GlobalSearch {
             const input = this.$multiselectFilters.find('input[value="' + inputValue + '"]')
             input.prop('checked', false);
 
-            const counter = input.closest('.options').siblings('.select-control').find('span');
-            const total = input.closest('.options').find('input:checked').length;
+            const $inputParent = input.closest('.options');
+
+            const counter = $inputParent.siblings('.select-control').find('span');
+            const total = $inputParent.find('input:checked').length;
 
             counter.text(total > 0? '(' + total + ')' : '');
 
             $clickedPill.remove();
 
-            if (!total) {
+            console.log(total)
+
+            if (!this.$multiselectFilters.find('input:checked').length) {
                 this.$activeFiltersContainer.html('')
             }
 
