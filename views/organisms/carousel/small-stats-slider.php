@@ -3,7 +3,7 @@
 
 <div class="small-stats-slider">
     <div class="grid-container grid-x overflow-hidden">
-        <div class="cell small-10 small-offset-1">
+        <div class="cell small-10 small-offset-1 scroll-track left-right delay-1">
             <h2 class="heading h2"><?= $heading ?></h2>
         </div>
         <div class="cell">

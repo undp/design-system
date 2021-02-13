@@ -1,7 +1,7 @@
 
 <section class="featured-callout-bullets">
     <div class="grid-container">
-        <div class="grid-x">
+        <div class="grid-x  scroll-track left-right delay-1">
             <div class="cell large-offset-1 large-11 small-10 small-offset-1">
                 <div class="grid-x">
                     <div class="cell large-2">

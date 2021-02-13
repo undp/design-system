@@ -1,7 +1,7 @@
 
 <section class="headline-text">
     <div class="grid-container">
-        <div class="grid-x">
+        <div class="grid-x scroll-track left-right delay-1">
 
             <div class="cell large-offset-1 small-offset-1 small-10">
                 <div class="heading h2 heading-text">
