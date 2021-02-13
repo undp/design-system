@@ -29,6 +29,7 @@ import imageSizes from './components/image-sizes'
 import ieSticky from './components/ie-sticky'
 import singlePublication from './components/single-publication'
 import dynamicSlider from './components/dynamic-slider'
+import focusPhotoCtaCards from './components/focus-photo-cta-cards'
 
 import modal from './components/modal'
 import modalNav from './components/modal-nav'
@@ -81,6 +82,7 @@ function main() {
     ieSticky()
     singlePublication()
     dynamicSlider()
+    focusPhotoCtaCards()
 
     const globalSearch = new GlobalSearch()
     globalSearch.init()
