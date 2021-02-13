@@ -102,9 +102,14 @@ class GlobalSearch {
         this.filters = {}
         this.jsonResults = []
         this.$searchInput.val('')
-        this.resetSearch()
         this.loadMoreButton = null
         this.$searchResultsMetadata = null
+        this.$activeFiltersContainer.html('');
+        this.$mobileFilterOpen.find('.counter').text('')
+        this.$multiselectFilters.find('.select-control span').text('');
+        this.$multiselectFilters.find("input:checked").prop('checked', false);
+
+        this.resetSearch()
         let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname
         window.history.pushState({path: newurl}, '', newurl)
         this.populateQuickLinks()
