@@ -17,6 +17,7 @@
             border-bottom: 1px solid $black;
 
             @include breakpoint(medium down) {
+                font-size: 2rem;
                 padding-bottom: 22px;
             }
         }
