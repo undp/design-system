@@ -102,9 +102,14 @@ class GlobalSearch {
         this.filters = {}
         this.jsonResults = []
         this.$searchInput.val('')
-        this.resetSearch()
         this.loadMoreButton = null
         this.$searchResultsMetadata = null
+        this.$activeFiltersContainer.html('');
+        this.$mobileFilterOpen.find('.counter').text('')
+        this.$multiselectFilters.find('.select-control span').text('');
+        this.$multiselectFilters.find("input:checked").prop('checked', false);
+
+        this.resetSearch()
         let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname
         window.history.pushState({path: newurl}, '', newurl)
         this.populateQuickLinks()
@@ -170,8 +175,9 @@ class GlobalSearch {
             input.prop('checked', false);
 
             const counter = input.closest('.options').siblings('.select-control').find('span');
-            const total = this.$multiselectFilters.find('input:checked').length;
-            counter.text('(' + total + ')');
+            const total = input.closest('.options').find('input:checked').length;
+
+            counter.text(total > 0? '(' + total + ')' : '');
 
             $clickedPill.remove();
 
@@ -273,7 +279,7 @@ class GlobalSearch {
 
                     this.$searchResultsContainer.append(`
                     <div class="search-results-metadata">
-                            Showing 1-<span class="shown-results">${this.jsonResults.length}</span> of ${response.total} results across UNDP.org for <span>${searchValue}</span>
+                            Showing ${this.jsonResults.length > 0? '1' : '0'}-<span class="shown-results">${this.jsonResults.length}</span> of ${response.total} results across UNDP.org for <span>${searchValue}</span>
                     </div>`)
 
                     this.$searchResultsMetadata = this.$searchResultsContainer.find('.search-results-metadata .shown-results')

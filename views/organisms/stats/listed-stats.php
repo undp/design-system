@@ -1,7 +1,7 @@
 <section class="listed-stats scroll-track left-right delay-1">
     <div class="grid-container">
         <div class="grid-x">
-            <div class="cell large-offset-1 large-10 small-10 small-offset-1 heading-stats-text">
+            <div class="cell small-10 small-offset-1 heading-stats-text">
                 <div class="heading h2">Impact</div>
             </div>
 
