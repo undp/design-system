@@ -1,6 +1,7 @@
 .country-hero-3 {
     margin-top: 115px;
     padding-top: 70px;
+    position: relative;
 
     @include breakpoint(medium down) {
         margin-top: 70px;
@@ -8,16 +9,27 @@
         padding-bottom: 30px;
     }
 
-    .left-bar {
-        top: 0;
+    .left-bar, .left-bar-mobile {
         left: 0;
+        top: 70px;
         width: 60px;
         position: absolute;
         background: $dark-blue-5;
+        height: calc(100% - 117px);
+
+        @include breakpoint(medium down) {
+            display: none;
+        }
+    }
+
+    .left-bar-mobile {
+        top: 0;
+        width: 12px;
+        display: none;
         height: calc(100% - 50px);
 
         @include breakpoint(medium down) {
-            width: 12px;
+            display: block;
         }
     }
 
