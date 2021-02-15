@@ -1,4 +1,5 @@
 .explore-more {
+    overflow: hidden;
     margin-top: 106px;
 
     @include breakpoint(medium down) {

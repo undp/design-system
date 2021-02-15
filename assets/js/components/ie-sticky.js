@@ -5,6 +5,7 @@ const init = function() {
     const $ieSticky = $('[data-ie-sticky], .scroll-up')
 
     if ($ieSticky.length) {
+        console.log('bla')
         Sticky.add($ieSticky)
     }
 }
