@@ -55,8 +55,8 @@ class GlobalSearch {
             this.setResultsWrapperHeight()
         }, 200))
 
-        this.$searchResultsWrapper.on('scroll', () => {
-            if(this.$searchResultsWrapper[0].scrollTop === (this.$searchResultsWrapper[0].scrollHeight - this.$searchResultsWrapper[0].offsetHeight)) {
+        this.$searchResultsContainer.on('scroll', () => {
+            if(this.$searchResultsContainer[0].scrollTop === (this.$searchResultsContainer[0].scrollHeight - this.$searchResultsContainer[0].offsetHeight)) {
                 this.loadMoreResults()
             }
         })
@@ -95,7 +95,7 @@ class GlobalSearch {
         this.totalResultsLoaded = 0
         this.currentResultsPage = 1
         this.allResultsLoaded = false
-        this.$searchResultsWrapper[0].scrollTop = 0
+        this.$searchResultsContainer[0].scrollTop = 0
     }
 
     resetAllModalData() {

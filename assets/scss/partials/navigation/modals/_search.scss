@@ -327,23 +327,23 @@
                     }
 
                     .search-results {
-                        padding-left: 20px;
-                        padding-right: 10px;
+                        padding-left: 25px;
 
                         [data-search-results] {
                             overflow-y: auto;
-                        }
+                            padding-right: 30px;
 
-                        &::-webkit-scrollbar {
-                            width: 5px;
-                        }
+                            &::-webkit-scrollbar {
+                                width: 5px;
+                            }
 
-                        &::-webkit-scrollbar-track {
-                            background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
-                        }
+                            &::-webkit-scrollbar-track {
+                                background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
+                            }
 
-                        &::-webkit-scrollbar-thumb {
-                            background-color: black;
+                            &::-webkit-scrollbar-thumb {
+                                background-color: black;
+                            }
                         }
 
                         @include breakpoint(small only) {
