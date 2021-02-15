@@ -1,0 +1,26 @@
+.featured-callout {
+    padding: 400px 0;
+    z-index: $z-index-1;
+
+    @include breakpoint(small only){
+        padding: 150px 0 175px;
+
+        .h4 {
+            margin-top: 55px;
+        }
+    }
+
+    &.color-background {
+        background-color: $dark-blue-1;
+    }
+
+    .featured-copy {
+        @include breakpoint(medium down) {
+            margin-top: 40px;
+        }
+
+        li {
+            margin-top: 40px;
+        }
+    }
+}

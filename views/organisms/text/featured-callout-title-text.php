@@ -1,6 +1,6 @@
-<section class="featured-callout-title-text">
+<section class="featured-callout">
     <div class="grid-container">
-        <div class="grid-x grid-margin-x align-center overflow-hidden scroll-track left-right delay-1">
+        <div class="grid-x grid-margin-x align-center overflow-hidden">
             <hgroup class="cell medium-4 title-container">
                 <h2 class="heading h2 light">What</h2>
                 <h2 class="heading h2 light">We do</h2>
