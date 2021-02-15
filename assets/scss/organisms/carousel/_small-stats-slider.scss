@@ -5,6 +5,12 @@
         margin-top: 116px;
     }
 
+    .bullets-container {
+        @include breakpoint(small only) {
+            order: 1;
+        }
+    }
+
     .dynamic-slider {
         margin-top: 128px;
 
@@ -13,10 +19,8 @@
         }
     }
 
-    .bullets-container {
-        @include breakpoint(small only) {
-            order: 1;
-        }
+    .heading.h2 {
+        text-transform: capitalize;
     }
 
     .glide__track {

@@ -13,7 +13,7 @@ use helpers\Svg;
 <?php View::render('layout/navigation/main') ?>
 
 
-<main class="project-page overflow-hidden">
+<main class="project-page">
 
     <?php View::render('organisms/hero/project-hero'); ?>
 
@@ -27,7 +27,7 @@ use helpers\Svg;
 
     <?php
         View::render('organisms/carousel/small-stats-slider', [
-            'heading' => 'Countries we support',
+            'heading' => 'Countries We Support',
             'cards' => [
                 ['title' => 'Cook Island'],
                 ['title' => 'Federated States of Micronesia'],
