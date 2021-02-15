@@ -14,11 +14,13 @@
                         <ul class="glide__slides">
                             <?php foreach($cards as $card) : ?>
                                 <li class="glide__slide">
-                                    <?php
-                                        View::render('molecules/stats/small-card', [
-                                            'title' => $card['title']
-                                        ])
-                                    ?>
+                                    <a href="<?= $card['link'] ?? '#' ?>">
+                                        <?php
+                                            View::render('molecules/stats/small-card', [
+                                                'title' => $card['title']
+                                            ])
+                                        ?>
+                                    </a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
