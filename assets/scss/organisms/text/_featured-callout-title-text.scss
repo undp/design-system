@@ -1,10 +1,10 @@
-.title-text {
+.featured-callout-title-text {
     z-index: $z-index-1;
     padding: 140px 0 115px;
     background-color: $dark-blue-1;
 
     @include breakpoint(small only) {
-        padding: 100px 0 240px;
+        padding: 100px 30px 240px;
 
         .h4 {
             margin-top: 55px;

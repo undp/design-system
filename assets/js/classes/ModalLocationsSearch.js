@@ -4,7 +4,7 @@ class ModalLocationsSearch {
     constructor() {
         this.classHide = 'hide';
         this.modalFilter = null;
-        this.currentModal = null;
+        this.$currentModal = null;
         this.classModalActive = 'active';
         this.dataOptionDefault = '[data-icon]';
         this.dataOptionClose = '[data-icon-close]';
@@ -40,7 +40,13 @@ class ModalLocationsSearch {
 
     listeners() {
         this.$body.on('UNDP.openSearchModal', () => {
-            $('[data-modal="modal-popular-search"]').trigger('click')
+            $('[data-modal="modal-popular-search"]')[0].click()
+        })
+
+        this.$body.on('UNDP.closeOtherModals', (event, data) => {
+            if(data.currentModal !== this.$currentModal) {
+                this.beforeCloseModal()
+            }
         })
 
         this.$modalTriggers.each((i, modalTrigger) => {
@@ -67,9 +73,9 @@ class ModalLocationsSearch {
                 this.closeAllModals();
 
                 if (modalIdToOpen) {
-                    this.currentModal = $('#' + modalIdToOpen);
+                    this.$currentModal = $('#' + modalIdToOpen);
 
-                    if (this.currentModal) {
+                    if (this.$currentModal) {
                         this.navPreviewWidth = this.$header.width();
                         this.$modalTriggerReference.addClass(this.classModalOpened)
                         this.$optionClose = this.$modalTriggerReference.find(this.dataOptionClose);
@@ -82,7 +88,7 @@ class ModalLocationsSearch {
                         this.navSetMargin();
 
                         const mobileModalLocationListenerClose = () => {
-                            const btnBack = this.currentModal.find(this.mobileLocationCloseBtnTrigger);
+                            const btnBack = this.$currentModal.find(this.mobileLocationCloseBtnTrigger);
 
                             if (typeof $modalTrigger.data(this.classModalOpenFromFooter) !== 'undefined') {
                                 this.closeMobileNavMenu();
@@ -93,6 +99,7 @@ class ModalLocationsSearch {
                             }
                         };
                         mobileModalLocationListenerClose();
+
                     }
                 }
             });
@@ -100,7 +107,7 @@ class ModalLocationsSearch {
     }
 
     mobileFiltersBindListener() {
-        const btnFilters = this.currentModal.find('[data-open-filters]')
+        const btnFilters = this.$currentModal.find('[data-open-filters]')
 
         if (btnFilters) {
             $(btnFilters).click((evt) => {
@@ -131,7 +138,7 @@ class ModalLocationsSearch {
 
         this.$body.addClass('modal-open');
         this.$html.addClass('modal-open');
-        this.currentModal.removeClass('hide');
+        this.$currentModal.removeClass('hide');
 
         if($(window).width() > Foundation.MediaQuery.get('medium')){
             this.inputSearchAutoFocus();
@@ -152,15 +159,16 @@ class ModalLocationsSearch {
     }
 
     inputSearchAutoFocus() {
-        this.currentModal.find('.input-search').focus();
+        this.$currentModal.find('.input-search').focus();
     }
 
     close() {
-        this.currentModal.addClass('hide');
+        this.$currentModal.addClass('hide');
         this.$body.removeClass('modal-open');
         this.$html.removeClass('modal-open');
         this.$modalTriggerReference.removeClass(this.classModalActive)
         this.$header.css('padding-right', 'unset')
+        this.$body.trigger('UNDP.modalClosed')
     }
 
     closeAllModals() {
@@ -171,12 +179,12 @@ class ModalLocationsSearch {
     }
 
     openFilters() {
-        this.currentModal.addClass('hide');
+        this.$currentModal.addClass('hide');
         this.modalFilter.removeClass('hide');
     }
 
     closeFilters() {
-        this.currentModal.removeClass('hide');
+        this.$currentModal.removeClass('hide');
         this.modalFilter.addClass('hide');
     }
 
@@ -198,12 +206,12 @@ class ModalLocationsSearch {
     }
 
     closeOtherModals() {
-        this.$body.trigger('UNDP.closeOtherModals');
+        this.$body.trigger('UNDP.closeOtherModals', {'currentModal': this.$currentModal});
     }
 
     //modal opened from footer
     listenerCloseModal() {
-        let btnBack = this.currentModal.find(this.mobileLocationCloseBtnTrigger);
+        let btnBack = this.$currentModal.find(this.mobileLocationCloseBtnTrigger);
         btnBack.click(() => {
             this.close();
         })

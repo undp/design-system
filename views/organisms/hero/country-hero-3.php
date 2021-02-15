@@ -6,7 +6,7 @@ use helpers\Svg;
         <div class="left-bar"></div>
         <div class="grid-x">
             <div class="cell large-3 large-offset-1">
-                <div class="heading h3 scroll-track left-right delay-1"><?= $subtitle ?? '' ?></div>
+                <div class="heading h3 header-title scroll-track left-right delay-1"><?= $subtitle ?? '' ?></div>
             </div>
         </div>
         <div class="grid-x">
@@ -20,7 +20,7 @@ use helpers\Svg;
             <div class="cell large-11 large-offset-1 article-container">
                 <div class="grid-x">
                     <div class="cell large-3 article-description">
-                        <div class="heading h5 subtitle">
+                        <div class="heading h5 subtitle scroll-track left-right delay-1">
                             <?= $description ?? '' ?>
                         </div>
                         <button class="btn">

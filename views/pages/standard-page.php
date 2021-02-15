@@ -109,7 +109,8 @@ $menuItems = [
                             ['link' => '#', 'name' => '2030 Agenda For Sustainable Development'],
                             ['link' => '#', 'name' => 'Planet'],
                             ['link' => '#', 'name' => 'Climate Change'],
-                        ]
+                        ],
+                        'classes' => 'accent-white'
                     ])
                     ?>
 

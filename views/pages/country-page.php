@@ -3,7 +3,7 @@
 <!-- Page Headers -->
 <?php View::render('layout/header', ['pageTitle' => 'UNDP - Country Page']) ?>
 
-<body>
+<body class="accent-green">
 <!-- Navigation -->
 <?php View::render('layout/navigation/main-justify') ?>
 
@@ -19,14 +19,15 @@
 
     <?php View::render('organisms/article-cards/local-featured-stories'); ?>
 
-    <?php View::render('molecules/callouts/featured-callout'); ?>
+    <?php View::render('organisms/text/featured-callout-title-text'); ?>
 
     <?php View::render('molecules/cards/featured-content-card'); ?>
 
     <?php View::render('organisms/content-cards/country-page-content-cards'); ?>
 
     <?php
-        View::render('organisms/carousel/our-impact', [
+        View::render('organisms/carousel/parallax-cards', [
+            'heading' => 'Our Impact',
             'cards' => [
                 [
                     'number' => 41,
@@ -62,7 +63,7 @@
         ]);
     ?>
 
-    <?php View::render('organisms/content-cards/photo-cta'); ?>
+    <?php View::render('organisms/content-cards/photo-cta-cards'); ?>
 </div>
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>

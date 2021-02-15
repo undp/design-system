@@ -14,10 +14,6 @@
 
         flex-direction: column;
 
-        .breadcrumb {
-            color: $red-1;
-        }
-
         .title {
             width: 100%;
             position: absolute;
@@ -50,7 +46,7 @@
                     margin-bottom: 13px;
                 }
 
-                @include breakpoint(small down) {
+                @include breakpoint(small only) {
                     font-weight: normal;
                 }
             }

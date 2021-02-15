@@ -19,6 +19,7 @@ class GlobalSearch {
         this.currentResultsPage = 1
         this.totalResultsLoaded = 0
         this.loadMoreButton = null
+        this.allResultsLoaded = false
         this.$searchResultsMetadata = null
 
         // Filter management
@@ -37,6 +38,7 @@ class GlobalSearch {
 
     bindEvents() {
         this.$searchInput.on('keyup', () => {
+            this.resetSearch()
             this.performSearch()
         })
 
@@ -51,6 +53,16 @@ class GlobalSearch {
         $(window).resize('resize',debounce(() => {
             this.setResultsWrapperHeight()
         }, 200))
+
+        this.$searchResultsWrapper.on('scroll', () => {
+            if(this.$searchResultsWrapper[0].scrollTop === (this.$searchResultsWrapper[0].scrollHeight - this.$searchResultsWrapper[0].offsetHeight)) {
+                this.loadMoreResults()
+            }
+        })
+
+        this.$searchResultsContainer.on('click', '.btn.blue', () => {
+            this.loadMoreResults()
+        })
 
         this.$body.on('UNDP.multiselectReady', (evt, data) => {
             if(this.$multiselectFilters.filter(`#${data.multiselect}`).length) {
@@ -69,26 +81,46 @@ class GlobalSearch {
             }
         })
 
+        this.$body.on('UNDP.modalClosed', (evt) => {
+            this.resetAllModalData()
+        })
+
         this.multiSelectFiltersListener()
         this.removeFilterListener()
         this.clearAllFiltersListener()
+    }
 
-        this.$searchResultsWrapper.on('scroll', () => {
-            if(this.$searchResultsWrapper[0].scrollTop === (this.$searchResultsWrapper[0].scrollHeight - this.$searchResultsWrapper[0].offsetHeight)) {
-                this.loadMoreResults()
-            }
-        })
+    resetSearch() {
+        this.totalResultsLoaded = 0
+        this.currentResultsPage = 1
+        this.allResultsLoaded = false
+        this.$searchResultsWrapper[0].scrollTop = 0
+    }
 
-        this.$searchResultsContainer.on('click', '.btn.blue', () => {
-            this.loadMoreResults()
-        })
+    resetAllModalData() {
+        this.$modal.removeClass('showing-results')
+        this.filters = {}
+        this.jsonResults = []
+        this.$searchInput.val('')
+        this.loadMoreButton = null
+        this.$searchResultsMetadata = null
+        this.$activeFiltersContainer.html('');
+        this.$mobileFilterOpen.find('.counter').text('')
+        this.$multiselectFilters.find('.select-control span').text('');
+        this.$multiselectFilters.find("input:checked").prop('checked', false);
+
+        this.resetSearch()
+        let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname
+        window.history.pushState({path: newurl}, '', newurl)
+        this.populateQuickLinks()
     }
 
     loadMoreResults() {
-        this.loadMoreButton.text('Loading more...')
-        this.currentResultsPage++
-
-        this.performSearch()
+        if(!this.allResultsLoaded) {
+            this.loadMoreButton.text('Loading more...')
+            this.currentResultsPage++
+            this.performSearch()
+        }
     }
 
     setResultsWrapperHeight() {
@@ -142,11 +174,16 @@ class GlobalSearch {
             const input = this.$multiselectFilters.find('input[value="' + inputValue + '"]')
             input.prop('checked', false);
 
-            const counter = input.closest('.options').siblings('.select-control').find('span');
-            const total = counter.text().match(/\d/g);
-            counter.text(total && total > 1 ? `(${total.join("") - 1})` : '');
+            const $inputParent = input.closest('.options');
+
+            const counter = $inputParent.siblings('.select-control').find('span');
+            const total = $inputParent.find('input:checked').length;
+
+            counter.text(total > 0? '(' + total + ')' : '');
 
             $clickedPill.remove();
+
+            console.log(total)
 
             if (!this.$multiselectFilters.find('input:checked').length) {
                 this.$activeFiltersContainer.html('')
@@ -159,11 +196,15 @@ class GlobalSearch {
     clearAllFiltersListener() {
         this.$activeFiltersContainer.on('click', '[data-close-all-select]', (evt) => {
             evt.preventDefault();
+            this.filters = {}
             this.$activeFiltersContainer.html('');
             this.$multiselectFilters.find("input:checked").prop('checked', false);
 
             this.$multiselectFilters.find('.select-control span').text('');
             this.$mobileFilterOpen.find('.counter').text('')
+            this.addFiltersToParams()
+            this.resetSearch()
+            this.performSearch();
         });
     }
 
@@ -207,6 +248,7 @@ class GlobalSearch {
         }
 
         this.addFiltersToParams()
+        this.resetSearch()
         this.performSearch();
     }
 
@@ -241,7 +283,7 @@ class GlobalSearch {
 
                     this.$searchResultsContainer.append(`
                     <div class="search-results-metadata">
-                            Showing 1-<span class="shown-results">${this.jsonResults.length}</span> of ${response.total} results across UNDP.org for <span>${searchValue}</span>
+                            Showing ${this.jsonResults.length > 0? '1' : '0'}-<span class="shown-results">${this.jsonResults.length}</span> of ${response.total} results across UNDP.org for <span>${searchValue}</span>
                     </div>`)
 
                     this.$searchResultsMetadata = this.$searchResultsContainer.find('.search-results-metadata .shown-results')
@@ -263,6 +305,8 @@ class GlobalSearch {
                 if(this.totalResultsLoaded < response.total) {
                     this.loadMoreButton = $('<button class="btn blue">Load more</button>');
                     this.$searchResultsContainer.append(this.loadMoreButton)
+                } else {
+                    this.allResultsLoaded = true
                 }
             }
         });
@@ -277,6 +321,8 @@ class GlobalSearch {
             url: '/assets/js/render-data/json-files/modals/search/quick-links.json',
             dataType: 'json',
             success: (response) => {
+                this.$searchResultsContainer.html('')
+
                 response.forEach((item) => {
                     this.$searchResultsContainer.append(` 
                     <div class="cell medium-6 list-quicklinks">

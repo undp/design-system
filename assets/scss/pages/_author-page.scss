@@ -7,10 +7,6 @@
         margin-top: $nav-mobile-height;
     }
 
-    .breadcrumb {
-        color: $red-1;
-    }
-
     .author-cards {
         margin-top: 133px;
 
@@ -36,7 +32,7 @@
     }
 
     .explore-more {
-        margin-top: 174px;
+        margin-top: 208px;
 
         @include breakpoint(medium down) {
             margin-top: 94px;

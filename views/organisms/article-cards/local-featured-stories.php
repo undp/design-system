@@ -1,17 +1,18 @@
 <?php use helpers\View; ?>
 
+
 <section class="featured-stories">
     <div class="grid-container">
         <div class="grid-x grid-padding-x overflow-hidden lazy-group">
-            <div class="cell small-11 small-offset-1 medium-3 medium-offset-1 scroll-track left-right delay-4">
+            <div class="cell small-11 small-offset-1 medium-3 medium-offset-1">
                 <div class="title-container">
-                    <hgroup class="section-title">
-                        <h2 class="heading h2">
+                    <div class="section-title">
+                        <h2 class="heading h2 scroll-track left-right delay-1">
                             Featured<br/>
                             Local<br/>
                             Stories
                         </h2>
-                    </hgroup>
+                    </div>
                 </div>
             </div>
             <div class="cell small-12 medium-4 overflow-hidden">
@@ -66,12 +67,24 @@
                 ])
                 ?>
             </div>
-            <div class="cell small-12 medium-4 large-3 overflow-hidden">
+            <div class="cell small-12 medium-4 large-3 overflow-hidden show-for-medium">
                 <?php
                 View::render('molecules/cards/article-card', [
                     'size' => 'tall',
                     'tag' => 'Content Tag',
-                    'image' => "../../../assets/images/placeholder/article-deepdive/article-deepdive-featured-image.png",
+                    'image' => "/assets/images/placeholder/article-deepdive/article-deepdive-featured-image.png",
+                    'title' => 'Sierra Leone National Human Development Report 2019',
+                    'description' => "“Even in the face of several human tragedies and financial resource constraints, Sierra Leone has demonstrated resilience that",
+                    'cta' => 'Read more'
+                ])
+                ?>
+            </div>
+            <div class="cell small-12 medium-4 large-3 overflow-hidden show-for-small-only">
+                <?php
+                View::render('molecules/cards/article-card', [
+                    'size' => 'wide',
+                    'tag' => 'Content Tag',
+                    'image' => "/assets/images/placeholder/article-deepdive/article-deepdive-featured-image.png",
                     'title' => 'Sierra Leone National Human Development Report 2019',
                     'description' => "“Even in the face of several human tragedies and financial resource constraints, Sierra Leone has demonstrated resilience that",
                     'cta' => 'Read more'
