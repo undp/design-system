@@ -33,9 +33,5 @@
     .stat-card {
         display: flex;
         align-items: center;
-
-        @include breakpoint(620px down) {
-            max-width: 212px;
-        }
     }
 }
