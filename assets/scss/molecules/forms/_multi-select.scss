@@ -18,7 +18,6 @@
             border-top: none;
 
             .checkbox-item {
-                max-height: unset;
                 border-top: 1px solid rgba($black, 0.10);
 
                 .checkmark {
@@ -154,7 +153,6 @@
         .checkbox-item {
             margin: 0;
             font-size: 2rem;
-            max-height: 52px;
             padding: 15px 52px 15px 0;
 
             &:not(:first-child) {

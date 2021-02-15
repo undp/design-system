@@ -9,6 +9,11 @@
     background-color: rgba($white, 0.98);
     height: calc(100vh - #{$nav-desktop-height});
 
+    // For IE 11 (media is a hack to check for IE 10+)
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        overflow: hidden;
+    }
+
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
         background-color: rgba($white, 0.87);
     }
