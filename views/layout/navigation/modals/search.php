@@ -63,6 +63,7 @@ use helpers\View;
                     </div>
                 </div>
                 <div class="search-results">
+                    <div data-search-metadata></div>
                     <div class="grid-x grid-margin-x" data-search-results>
                         <?php //Quick Links and Popular Searches columns are added via JS ?>
                     </div>

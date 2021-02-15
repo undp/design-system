@@ -185,6 +185,7 @@
 
                 .search-results {
                     max-height: 200px;
+                    position: relative;
                     transition: max-height $easing-1;
 
                     @include breakpoint(small only) {
@@ -192,9 +193,10 @@
                     }
 
                     .search-results-metadata {
-                        display: none; // Temporary for dummy functionality
+                        top: 0;
+                        position: sticky;
                         font-size: 1.6rem;
-                        margin-bottom: 25px;
+                        padding-bottom: 25px;
 
                         span {
                             font-weight: $bold;
@@ -202,7 +204,6 @@
                     }
 
                     .search-result-card {
-                        display: none; // Temporary for dummy functionality
                         padding: 22px 0 48px 0;
                         border-top: 2px solid $black;
 
@@ -326,9 +327,12 @@
                     }
 
                     .search-results {
-                        overflow-y: auto;
                         padding-left: 20px;
                         padding-right: 10px;
+
+                        [data-search-results] {
+                            overflow-y: auto;
+                        }
 
                         &::-webkit-scrollbar {
                             width: 5px;
@@ -348,14 +352,6 @@
 
                         .grid-margin-x {
                             margin: 0;
-                        }
-
-                        .cell {
-                            display: none; // Temporary for dummy functionality
-                        }
-                        .search-results-metadata,
-                        .search-result-card {
-                            display: block; // Temporary for dummy functionality
                         }
                     }
                 }
