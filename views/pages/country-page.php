@@ -7,7 +7,7 @@
 <!-- Navigation -->
 <?php View::render('layout/navigation/main-justify') ?>
 
-<div class="country-page">
+<main class="country-page">
     <!--Country hero 3-->
     <?php View::render('organisms/hero/country-hero-3', [
         'subtitle' => 'Sierra Leone',
@@ -64,7 +64,7 @@
     ?>
 
     <?php View::render('organisms/content-cards/photo-cta-cards'); ?>
-</div>
+</main>
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>

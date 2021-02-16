@@ -1,4 +1,5 @@
 import debounce from 'lodash/debounce'
+import Foundation from 'foundation-sites'
 
 class GlobalSearch {
     constructor() {
@@ -7,6 +8,7 @@ class GlobalSearch {
         this.$searchFiltersContainer = this.$modal.find('.search-filters')
         this.$searchResultsWrapper = this.$modal.find('.search-results')
         this.$searchResultsContainer = this.$searchResultsWrapper.find('[data-search-results]')
+        this.$searchMetadataContainer = this.$searchResultsWrapper.find('[data-search-metadata]')
         this.$searchInput = this.$modal.find('.search-input input[type=search]')
         this.$mobileFilterOpen = this.$searchFiltersContainer.find('.mobile-filters-open .btn')
         this.$mobileFilterClose = this.$searchFiltersContainer.find('.mobile-filters-close .btn')
@@ -54,8 +56,8 @@ class GlobalSearch {
             this.setResultsWrapperHeight()
         }, 200))
 
-        this.$searchResultsWrapper.on('scroll', () => {
-            if(this.$searchResultsWrapper[0].scrollTop === (this.$searchResultsWrapper[0].scrollHeight - this.$searchResultsWrapper[0].offsetHeight)) {
+        this.$searchResultsContainer.on('scroll', () => {
+            if(this.$searchResultsContainer[0].scrollTop === (this.$searchResultsContainer[0].scrollHeight - this.$searchResultsContainer[0].offsetHeight)) {
                 this.loadMoreResults()
             }
         })
@@ -94,7 +96,7 @@ class GlobalSearch {
         this.totalResultsLoaded = 0
         this.currentResultsPage = 1
         this.allResultsLoaded = false
-        this.$searchResultsWrapper[0].scrollTop = 0
+        this.$searchResultsContainer[0].scrollTop = 0
     }
 
     resetAllModalData() {
@@ -124,12 +126,18 @@ class GlobalSearch {
     }
 
     setResultsWrapperHeight() {
-        let baseLineHeight = this.$modal.height() - 128;
+        let baseLineHeight = this.$modal.height() - 172;
+
+        if (Foundation.MediaQuery.is('small only')) {
+            baseLineHeight = this.$modal.height() - 186;
+        }
 
         if(baseLineHeight < this.$searchFiltersContainer.height()) {
-            this.$searchResultsWrapper.css('max-height', this.$searchFiltersContainer.outerHeight())
+            //this.$searchResultsWrapper.css('max-height', this.$searchFiltersContainer.outerHeight())
+            this.$searchResultsContainer.css('max-height', this.$searchFiltersContainer.outerHeight())
         } else {
-            this.$searchResultsWrapper.css('max-height', baseLineHeight)
+            //this.$searchResultsWrapper.css('max-height', baseLineHeight)
+            this.$searchResultsContainer.css('max-height', baseLineHeight)
         }
     }
 
@@ -280,8 +288,9 @@ class GlobalSearch {
 
                 if(this.currentResultsPage === 1) {
                     this.$searchResultsContainer.html('')
+                    this.$searchMetadataContainer.html('')
 
-                    this.$searchResultsContainer.append(`
+                    this.$searchMetadataContainer.append(`
                     <div class="search-results-metadata">
                             Showing ${this.jsonResults.length > 0? '1' : '0'}-<span class="shown-results">${this.jsonResults.length}</span> of ${response.total} results across UNDP.org for <span>${searchValue}</span>
                     </div>`)
@@ -322,6 +331,7 @@ class GlobalSearch {
             dataType: 'json',
             success: (response) => {
                 this.$searchResultsContainer.html('')
+                this.$searchMetadataContainer.html('')
 
                 response.forEach((item) => {
                     this.$searchResultsContainer.append(` 

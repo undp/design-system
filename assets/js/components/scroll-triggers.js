@@ -34,30 +34,30 @@ const init = function () {
 
     parallaxContainer.forEach(container => {
 
-        const from = {
-            xPercent: 75,
-            scrollTrigger: {
-                scrub: true,
-                trigger: container,
-                start: "center center"
-            }
-        }
-
         container
             .querySelectorAll('.gs--parallax-row')
             .forEach((row, idx) => {
                 const odd = (idx + 1) % 2 !== 0
-                const rowFrom = Object.assign({}, from)
-
-                rowFrom.xPercent *= odd ? -1 : 1 // Odd elements should start from a negative position (left to right)
-                gsap.fromTo(row, rowFrom, {
-                    xPercent: 0,
+                const from = {
+                    xPercent: 70 * (odd ? -1 : 1), // Odd elements should start from a negative position (left to right),
                     scrollTrigger: {
                         scrub: true,
+                        ease: 'SlowMo',
                         trigger: container,
-                        end: "center center"
+                        start: "center center"
                     }
-                })
+                }
+                const to = {
+                    xPercent: 10 * (odd ? 1 : -1), // Odd elements should end further in the direction they were initialized,
+                    scrollTrigger: {
+                        scrub: true,
+                        ease: 'SlowMo',
+                        trigger: container,
+                        end: "bottom top"
+                    }
+                }
+
+                gsap.fromTo(row, from, to)
             })
     })
 }

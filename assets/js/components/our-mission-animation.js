@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 
 const init = function () {
-    let $section = $(".our-mission")
+    let $section = $(".our-mission, .featured-callout")
     let $startTrigger = $section.find('.title-container');
 
     if(!$section.length) {
