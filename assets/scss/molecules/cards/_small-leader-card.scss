@@ -1,12 +1,21 @@
 .small-leader-card {
     height: 100%;
-    display: flex;
     padding-bottom: 22px;
-    flex-direction: column;
-    @include hover-animate-arrow-2();
 
     @include breakpoint(small only) {
+        height: auto;
         padding-bottom: 14px;
+    }
+
+    .content-wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        @include hover-animate-arrow-2();
+
+        @include breakpoint(small only) {
+            height: auto;
+        }
     }
 
     .cta-container {
