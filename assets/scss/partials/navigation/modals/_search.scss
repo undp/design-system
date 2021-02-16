@@ -188,10 +188,6 @@
                     position: relative;
                     transition: max-height $easing-1;
 
-                    @include breakpoint(small only) {
-                        margin-top: 30px;
-                    }
-
                     .search-results-metadata {
                         top: 0;
                         position: sticky;
@@ -333,21 +329,27 @@
                             overflow-y: auto;
                             padding-right: 30px;
 
-                            &::-webkit-scrollbar {
-                                width: 5px;
-                            }
+                            @include breakpoint(medium) {
+                                &::-webkit-scrollbar {
+                                    width: 5px;
+                                }
 
-                            &::-webkit-scrollbar-track {
-                                background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
-                            }
+                                &::-webkit-scrollbar-track {
+                                    background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
+                                }
 
-                            &::-webkit-scrollbar-thumb {
-                                background-color: black;
+                                &::-webkit-scrollbar-thumb {
+                                    background-color: black;
+                                }
                             }
                         }
 
                         @include breakpoint(small only) {
                             padding-left: 0;
+
+                            [data-search-results] {
+                                padding-right: 0;
+                            }
                         }
 
                         .grid-margin-x {

@@ -1,4 +1,5 @@
 import debounce from 'lodash/debounce'
+import Foundation from 'foundation-sites'
 
 class GlobalSearch {
     constructor() {
@@ -126,6 +127,10 @@ class GlobalSearch {
 
     setResultsWrapperHeight() {
         let baseLineHeight = this.$modal.height() - 172;
+
+        if (Foundation.MediaQuery.is('small only')) {
+            baseLineHeight = this.$modal.height() - 186;
+        }
 
         if(baseLineHeight < this.$searchFiltersContainer.height()) {
             //this.$searchResultsWrapper.css('max-height', this.$searchFiltersContainer.outerHeight())
