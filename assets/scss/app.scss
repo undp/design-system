@@ -66,6 +66,8 @@
 @import "molecules/text/big-copy-h1";
 @import "molecules/cards/photo-cta-card";
 @import "molecules/cards/featured-content-card";
+@import "molecules/cards/leader-card";
+@import "molecules/cards/small-leader-card";
 
 
 // Organisms
@@ -113,3 +115,8 @@
 @import "pages/styleguide";
 @import "pages/single-publication";
 @import "pages/project-page";
+
+// Component templates
+@import "organisms/leadership/leader-bio";
+@import "organisms/leadership/leader-cards";
+@import "organisms/leadership/leadership-heading";
