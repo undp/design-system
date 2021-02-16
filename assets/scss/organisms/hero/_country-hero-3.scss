@@ -10,20 +10,25 @@
     }
 
     .left-bar, .left-bar-mobile {
+        top: 0;
         left: 0;
-        top: 70px;
         width: 60px;
         position: absolute;
         background: $dark-blue-5;
-        height: calc(100% - 117px);
+        height: calc(100% - 50px);
 
         @include breakpoint(medium down) {
             display: none;
         }
     }
 
+    .left-bar {
+        left: auto;
+        width: 100%;
+        right: calc(100% - 60px);
+    }
+
     .left-bar-mobile {
-        top: 0;
         width: 12px;
         display: none;
         height: calc(100% - 50px);
