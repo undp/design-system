@@ -64,6 +64,12 @@ switch ($subpath) {
     case '/styleguide':
         View::render('pages/styleguide');
         break;
+    case '/components':
+        View::render('pages/components-index');
+        break;
+    case '/components/leadership':
+        View::render('pages/components/leadership');
+        break;
     default:
         View::render('pages/home');
 }

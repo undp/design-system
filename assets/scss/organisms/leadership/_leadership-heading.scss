@@ -1,0 +1,12 @@
+
+.leadership-heading {
+    margin-top: 76px;
+
+    .heading.h3 {
+        margin-top: 42px;
+
+        @include breakpoint(small only) {
+            margin-top: 49px;
+        }
+    }
+}
