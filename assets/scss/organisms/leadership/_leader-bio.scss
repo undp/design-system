@@ -1,0 +1,52 @@
+
+.leader-bio {
+    margin-top: 121px;
+
+    .bio {
+        margin-top: 44px;
+
+        @include breakpoint(small only) {
+            margin-top: 12px;
+        }
+    }
+
+    .leader-photo {
+        @include breakpoint(small only) {
+            order: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .leader-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include breakpoint(small only) {
+            order: 1;
+            margin-top: 43px;
+        }
+
+        .btn {
+            color: $white;
+            margin-top: 120px;
+
+            @include breakpoint(small only) {
+                margin-top: 43px;
+            }
+        }
+    }
+
+    .leader-position {
+        margin-top: 20px;
+    }
+
+    .separator {
+        height: 2px;
+        background: $black;
+        margin-bottom: 43px;
+    }
+}
