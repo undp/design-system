@@ -1,28 +1,9 @@
 .leader-card {
     margin-bottom: 22px;
+    @include hover-animate-arrow-2();
 
     @include breakpoint(small only) {
         margin-bottom: 14px;
-    }
-
-    @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        &:hover {
-            .text-link {
-                color: $black;
-            }
-
-            .link-arrow-group {
-                transform: translateX(0);
-
-                .arrow-line {
-                    display: unset;
-                }
-
-                .arrow-point {
-                    transform: translateX(31px);
-                }
-            }
-        }
     }
 
     .cta-container {
