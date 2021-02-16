@@ -26,4 +26,18 @@
             }
         }
     }
+
+    .related-table {
+        background: none;
+    }
+
+    .listed-stats {
+        margin-top: 0;
+        padding-top: 100px;
+        background: $dark-blue-7;
+
+        .heading-stats-items {
+            border: none;
+        }
+    }
 }
