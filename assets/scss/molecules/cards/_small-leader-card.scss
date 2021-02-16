@@ -8,9 +8,23 @@
         padding-bottom: 14px;
     }
 
-    &:hover {
-        .text-link {
-            color: $dark-blue-2;
+    @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:hover {
+            .text-link {
+                color: $black;
+            }
+
+            .link-arrow-group {
+                transform: translateX(0);
+
+                .arrow-line {
+                    display: unset;
+                }
+
+                .arrow-point {
+                    transform: translateX(31px);
+                }
+            }
         }
     }
 
@@ -23,12 +37,14 @@
     }
 
     .leader-info {
+        flex: 1;
         width: 100%;
         height: auto;
         padding: 25px 25px 20px;
         background: $dark-blue-6;
 
         @include breakpoint(small only) {
+            flex: 0;
             padding: 30px 27px 29px;
         }
     }

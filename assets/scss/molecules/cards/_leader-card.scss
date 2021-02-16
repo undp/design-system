@@ -1,14 +1,27 @@
 .leader-card {
     margin-bottom: 22px;
-    align-items: initial;
 
     @include breakpoint(small only) {
         margin-bottom: 14px;
     }
 
-    &:hover {
-        .text-link {
-            color: $dark-blue-2;
+    @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:hover {
+            .text-link {
+                color: $black;
+            }
+
+            .link-arrow-group {
+                transform: translateX(0);
+
+                .arrow-line {
+                    display: unset;
+                }
+
+                .arrow-point {
+                    transform: translateX(31px);
+                }
+            }
         }
     }
 

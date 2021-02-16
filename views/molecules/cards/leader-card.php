@@ -1,6 +1,6 @@
 <?php use helpers\Svg; ?>
 
-<a href="#" class="leader-card grid-x text-link arrow-2">
+<a href="#" class="leader-card grid-x">
     <div class="cell medium-8 leader-info flex-container flex-dir-column">
         <h5 class="heading h5">
             <?= $name ?? '' ?>
@@ -14,7 +14,7 @@
         </div>
 
         <div class="cta-container">
-            <div class="text-link">
+            <div class="text-link arrow-2">
                 <span>Read more</span>
                 <?php Svg::render('arrows/btn-arrow-red-secondary') ?>
             </div>

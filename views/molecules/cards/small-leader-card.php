@@ -1,6 +1,6 @@
 <?php use helpers\Svg; ?>
 
-<a href="<?= $link ?? '' ?>" class="small-leader-card text-link arrow-2">
+<a href="<?= $link ?? '' ?>" class="small-leader-card">
     <img src="<?= $image ?? '' ?>" alt="Mourad Wahba Photo">
 
     <div class="leader-info flex-container flex-dir-column">
@@ -16,7 +16,7 @@
         </div>
 
         <div class="cta-container">
-            <div class="text-link">
+            <div class="text-link arrow-2">
                 <span>Read more</span>
                 <?php Svg::render('arrows/btn-arrow-red-secondary')?>
             </div>
