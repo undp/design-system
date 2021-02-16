@@ -2,9 +2,9 @@
 use helpers\Svg;
 ?>
 <section class="country-hero-3">
-    <div class="left-bar"></div>
+
     <div class="grid-container hero-container">
-        <div class="left-bar-mobile"></div>
+        <div class="left-bar"></div>
         <div class="grid-x">
             <div class="cell large-3 large-offset-1">
                 <div class="heading h3 header-title scroll-track left-right delay-1"><?= $subtitle ?? '' ?></div>
