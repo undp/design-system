@@ -12,7 +12,7 @@ $authorTitles = is_array($authorTitles) ? $authorTitles : [$authorTitles];
             </div>
 
             <div class="author-info">
-                <p class="large-copy break-words"><?= $authorName ?></p>
+                <h2 class="heading h2 break-words"><?= $authorName ?></h2>
 
                 <div class="author-titles">
                     <?php foreach($authorTitles as $title) : ?>
