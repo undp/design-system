@@ -4,9 +4,9 @@
             <div class="heading h2 component-heading">Section Header</div>
             <div class="heading h3 component-subheading">Location</div>
             <div class="selector-tabs">
-                <div class="tab-item big-copy">North America</div>
-                <div class="tab-item big-copy active">Europe</div>
-                <div class="tab-item big-copy">Africa</div>
+                <button class="tab-item big-copy">North America</button>
+                <button class="tab-item big-copy active">Europe</button>
+                <button class="tab-item big-copy">Africa</button>
             </div>
         </div>
         <div class="selector-panel active">

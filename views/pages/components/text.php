@@ -12,6 +12,7 @@ $imgPath = '/assets/images/placeholder/leadership';
     View::render('organisms/text/small-copy');
     View::render('organisms/text/selector');
     View::render('organisms/text/table');
+    View::render('organisms/text/faq');
     ?>
 </main>
 

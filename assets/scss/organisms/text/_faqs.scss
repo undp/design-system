@@ -1,0 +1,30 @@
+.faq {
+    margin-top: 110px;
+
+    .faq-item {
+        width: 100%;
+        margin-top: 40px;
+        align-items: center;
+        padding-bottom: 25px;
+        justify-content: space-between;
+        border-bottom: 1px solid $black;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    .question {
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+            font-size: 2.5rem;
+        }
+    }
+
+    .answer {
+        margin-top: 40px;
+    }
+}

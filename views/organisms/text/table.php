@@ -12,6 +12,9 @@
             <div class="cell large-3 column-table">
                 <div class="title medium-copy">Title</div>
                 <div class="table-item">UNDP Resident Representative</div>
+                <div class="table-item">Deputy Resident Representative</div>
+                <div class="table-item">Operations Specialist</div>
+                <div class="table-item">Programme Specialist- Democratic Governance</div>
             </div>
             <div class="cell large-4 column-table">
                 <div class="title medium-copy">Email</div>
