@@ -40,18 +40,14 @@ class Modal {
     }
 
     close() {
-        if (!this.$modal.length) {
-            return false;
-        }
-
         this.$html.removeClass(this.classes.lockBody)
         this.$body.removeClass(this.classes.lockBody)
         this.$modal.removeClass(this.classes.modalOpen)
     }
 
     setCloseModalListener() {
-        this.$modalBtnClose.click((e) => {
-            e.preventDefault();
+        this.$modalBtnClose.click(ev => {
+            ev.preventDefault();
             this.close();
         })
 
@@ -71,6 +67,7 @@ class Modal {
     setOpenModalListener() {
         this.$openTrigger.click(ev => {
             ev.preventDefault()
+            ev.stopImmediatePropagation()
             this.open();
         })
     }

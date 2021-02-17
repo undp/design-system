@@ -1,7 +1,11 @@
-<?php use helpers\Svg; ?>
+<?php
+use helpers\Svg;
+use helpers\View;
+$modalId = bin2hex($name ?? '');
+?>
 
 <div class="small-leader-card">
-    <a href="<?= $link ?? '' ?>" class="content-wrapper">
+    <div class="content-wrapper" data-modal-trigger="<?= $modalId ?>">
         <img src="<?= $image ?? '' ?>" alt="Photo of <?= $name ?? '' ?>">
 
         <div class="leader-info flex-container flex-dir-column">
@@ -23,5 +27,14 @@
                 </div>
             </div>
         </div>
-    </a>
+    </div>
+
+    <?php
+        View::render('organisms/modals/leader-modal', [
+            'name' => $name,
+            'image' => $image,
+            'titles' => $titles,
+            'modalId' => $modalId
+        ])
+    ?>
 </div>
