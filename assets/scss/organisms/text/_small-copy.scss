@@ -7,5 +7,19 @@
 
     .copy-item {
         margin-top: 50px;
+        padding-right: 30px;
+
+        .title-item {
+            font-weight: $bold;
+            text-transform: uppercase;
+        }
+
+        .big-copy {
+            margin-top: 20px;
+        }
+
+        .headline {
+            font-weight: $semi-bold;
+        }
     }
 }
