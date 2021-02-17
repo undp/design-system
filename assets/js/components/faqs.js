@@ -7,7 +7,7 @@ const init = function() {
             .click(function() {
                 let $q = $(this).closest('.question')
                 console.log('click')
-                $q.siblings('.answer').removeClass('expanded')
+                $q.siblings('.question').removeClass('expanded')
                 $q.toggleClass('expanded')
             })
     }

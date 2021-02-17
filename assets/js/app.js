@@ -43,6 +43,7 @@ import countriesData  from './render-data/locations/countries'
 import mobileFilterData from './render-data/locations/mobile-filters'
 
 import faqs from './components/faqs'
+import selectorTabs from './components/selector-tabs'
 
 // Trap focus for modals
 import trapFocus from './components/trap-focus'
@@ -50,6 +51,7 @@ import trapFocus from './components/trap-focus'
 function main() {
     imageSizes()
     faqs()
+    selectorTabs()
     modal()
     inputs()
     ourExpertiseSectionAnimation()

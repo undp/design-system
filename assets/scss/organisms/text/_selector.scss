@@ -1,7 +1,7 @@
-.selector {
+.selector-tabs {
     padding-top: 130px;
 
-    .selector-tabs {
+    .selector-tabs-container {
         display: flex;
         margin-top: 80px;
         padding-bottom: 10px;
@@ -34,6 +34,7 @@
     }
 
     .selector-panel {
+        display: none;
         margin-top: 65px;
 
         .country-item {
@@ -44,6 +45,10 @@
             .big-copy {
                 margin-top: 27px;
             }
+        }
+
+        &.active {
+            display: block;
         }
     }
 }
