@@ -17,12 +17,24 @@
 
     .question {
         width: 100%;
+        text-align: left;
         align-items: center;
         justify-content: space-between;
 
         .title {
+            width: 80%;
             font-size: 2.5rem;
         }
+    }
+
+    .questions-container {
+        @include breakpoint(medium down) {
+            margin-top: 50px;
+        }
+    }
+
+    .arrow-down {
+        transition: all .3s ease;
     }
 
 
@@ -37,14 +49,6 @@
             padding: 0 30px 0 30px;
         }
 
-        .read-more {
-            margin-top: 30px;
-            text-decoration: underline;
-
-            @include breakpoint(medium down) {
-                margin-top: 15px;
-            }
-        }
     }
 
     .expanded {
