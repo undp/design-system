@@ -1,0 +1,40 @@
+
+.parallax-gallery {
+    margin-top: 75px;
+
+    .gallery-images {
+        height: 130%;
+        margin-top: -15%;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            height: calc(50% - 10px);
+
+            &:nth-child(1) {
+                margin-bottom: 10px;
+            }
+
+            &:nth-child(2) {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .text-container {
+        padding: 46px 65px 63px;
+        background: $dark-blue-6;
+
+        .cta {
+            margin-top: 45px;
+        }
+
+        .heading {
+            font-size: 3rem;
+        }
+
+        .medium-copy {
+            margin-top: 58px;
+        }
+    }
+}
