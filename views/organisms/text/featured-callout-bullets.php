@@ -12,9 +12,8 @@
                     corruption more efficiently and effectively in the Pacific. This aligns with the purpose
                     of the <a href="#" class="animated-underline">United Nations Convention against Corruption (UNCAC)</a>
                     and contributes to the achievement of <a href="#" class="animated-underline">Sustainable Development Goal (SDG) 16 on Peace, Justice and Strong Institutions.</a>
-                </div>
-                <div class="big-copy light">
-                    At the end of the project, we expect to achieve the following results: <br><br>
+                    <br><br>
+                    At the end of the project, we expect to achieve the following results:
                     <ul>
                         <li>
                             PICs more effectively implement UNCAC and work towards the achievement of SDG
