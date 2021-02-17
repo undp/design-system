@@ -5,9 +5,9 @@ const init = function () {
 
     const $window = $(window)
     const focusClass = 'focused'
-    const $pcc = $('.photo-cta-card')
+    const $photoCta = $('.photo-cta')
 
-    if (!$pcc.length) return
+    if (!$photoCta.length) return
 
     function elementInViewPort($el) {
         const scrollTop = $window.scrollTop()
@@ -22,7 +22,7 @@ const init = function () {
         else $el.removeClass(focusClass)
     }
 
-    $pcc.each((i, card) => {
+    $photoCta.each((i, card) => {
         $window.on('scroll', throttle(() => elementInViewPort($(card)), 100))
     })
 }
