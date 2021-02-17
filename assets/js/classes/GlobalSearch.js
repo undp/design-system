@@ -15,6 +15,7 @@ class GlobalSearch {
         this.$activeFiltersContainer = this.$searchFiltersContainer.find('[data-active-filters]')
         this.$multiselectFilters = this.$searchFiltersContainer.find('.multi-select')
         this.multiselectFiltersLoaded = false
+        this.currentPagePathname = window.location.protocol + "//" + window.location.host + window.location.pathname
 
         // Results management
         this.jsonResults = []
@@ -112,8 +113,7 @@ class GlobalSearch {
         this.$multiselectFilters.find("input:checked").prop('checked', false);
 
         this.resetSearch()
-        let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname
-        window.history.pushState({path: newurl}, '', newurl)
+        window.history.pushState({path: this.currentPagePathname}, '', this.currentPagePathname)
         this.populateQuickLinks()
     }
 
@@ -357,7 +357,7 @@ class GlobalSearch {
             urlParams.set(filter, this.filters[filter])
         }
 
-        let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + urlParams.toString()
+        let newurl = window.location.protocol + "//" + window.location.host + '?' + urlParams.toString()
         window.history.pushState({path: newurl}, '', newurl)
     }
 
