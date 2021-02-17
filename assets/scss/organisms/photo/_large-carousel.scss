@@ -1,0 +1,21 @@
+
+.large-carousel {
+    margin-top: 100px;
+
+    .generic-slider {
+        margin-top: 56px;
+
+        @include breakpoint(small only) {
+            margin-top: 22px;
+        }
+    }
+
+    .glide__track {
+        padding-top: 75px;
+        margin-right: -100%;
+
+        @include breakpoint(small only) {
+            padding-top: 28px;
+        }
+    }
+}
