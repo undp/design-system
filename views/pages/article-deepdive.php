@@ -44,7 +44,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
     ]);
 
 
-    View::render('molecules/images/image-with-caption', [
+    View::render('molecules/photo/image-with-caption', [
         'image' => "$imgPath/article-deepdive-featured-image.png",
         'caption' => '
             Jitta Kanneh, Mammy Queen of Makpele Chiefdom, at one of the swamp-rice development 
@@ -174,7 +174,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         'quoteAuthor' => '- Jitta Kanneh, Mammy Queen of Makpele Chiefdom.'
     ]);
 
-    View::render('molecules/images/image-with-caption', [
+    View::render('molecules/photo/image-with-caption', [
         'image' => "$imgPath/image-full.jpg"
     ]);
 
@@ -267,7 +267,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         ],
     ]);
 
-    View::render('molecules/images/gallery', [
+    View::render('molecules/photo/gallery', [
         'images' => [
             "$imgPath/gallery_image01.jpg",
             "$imgPath/gallery_image02.jpg",
@@ -324,7 +324,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
     ]);
 
 
-    View::render('molecules/images/image-with-caption', [
+    View::render('molecules/photo/image-with-caption', [
         'imageSize' => 'medium',
         'image' => "$imgPath/article-deepdive-featured-image--medium.jpg",
         'caption' => '
@@ -336,7 +336,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
     ]);
 
 
-    View::render('molecules/images/image-with-caption', [
+    View::render('molecules/photo/image-with-caption', [
         'imageSize' => 'small',
         'image' => "$imgPath/article-deepdive-featured-image--small.jpg",
         'caption' => '
