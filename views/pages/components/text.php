@@ -10,6 +10,7 @@ $imgPath = '/assets/images/placeholder/leadership';
 <main class="components-index">
     <?php
     View::render('organisms/text/small-copy');
+    View::render('organisms/text/selector');
     ?>
 </main>
 

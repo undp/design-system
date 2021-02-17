@@ -1,0 +1,32 @@
+.selector {
+    padding-top: 130px;
+
+    .selector-tabs {
+        display: flex;
+        margin-top: 80px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $porcelain;
+
+        .tab-item {
+            margin-right: 60px;
+        }
+    }
+
+    .component-subheading {
+        margin-top: 30px;
+    }
+
+    .selector-panel {
+        margin-top: 65px;
+
+        .country-item {
+            .heading {
+                font-size: 2.5rem;
+            }
+
+            .big-copy {
+                margin-top: 27px;
+            }
+        }
+    }
+}
