@@ -31,6 +31,16 @@ const init = function () {
         }
     });
 
+    gsap.timeline({
+        scrollTrigger: {
+            scrub: false,
+            start: 'center center',
+            trigger: '.scroll-track-center',
+            invalidateOnRefresh: false,
+            onEnter: () => $('.scroll-track-center').find('.track').addClass('in-viewport')
+        }
+    });
+
 
     parallaxContainer.forEach(container => {
 
@@ -38,26 +48,38 @@ const init = function () {
             .querySelectorAll('.gs--parallax-row')
             .forEach((row, idx) => {
                 const odd = (idx + 1) % 2 !== 0
-                const from = {
-                    xPercent: 70 * (odd ? -1 : 1), // Odd elements should start from a negative position (left to right),
+                const tl = gsap.timeline({
                     scrollTrigger: {
                         scrub: true,
                         ease: 'SlowMo',
                         trigger: container,
-                        start: "center center"
-                    }
-                }
-                const to = {
-                    xPercent: 10 * (odd ? 1 : -1), // Odd elements should end further in the direction they were initialized,
-                    scrollTrigger: {
-                        scrub: true,
-                        ease: 'SlowMo',
-                        trigger: container,
+                        start: "top bottom",
                         end: "bottom top"
                     }
-                }
+                })
+                // Odd elements should start from a negative position (left to right),
+                tl.from(row, {xPercent: 70 * (odd ? -1 : 1)})
+                // Odd elements should end further in the direction they were initialized,
+                tl.to(row, {xPercent: 10 * (odd ? 1 : -1)})
+            })
 
-                gsap.fromTo(row, from, to)
+        container
+            .querySelectorAll('.gs--parallax-column')
+            .forEach((column, idx) => {
+                const odd = (idx + 1) % 2 !== 0
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        scrub: true,
+                        ease: 'SlowMo',
+                        trigger: container,
+                        start: "top center",
+                        end: "bottom+=10% center"
+                    }
+                })
+                // Even elements should start from a negative position (top to bottom)
+                tl.from(column, {yPercent: 10 * (odd ? -1 : 1)})
+                // Odd elements should end further in the direction they were initialized
+                tl.to(column, {yPercent: 10 * (odd ? 1 : -1)})
             })
     })
 }
