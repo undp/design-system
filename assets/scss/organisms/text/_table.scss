@@ -7,6 +7,10 @@
 
     .column-table {
 
+        @include breakpoint(medium down) {
+            margin-top: 40px;
+        }
+
         .title {
             font-weight: $bold;
             text-transform: uppercase;
@@ -18,6 +22,10 @@
             font-size: 2.5rem;
             padding-bottom: 18px;
             border-bottom: 1px solid $black;
+
+            @include breakpoint(medium down) {
+                height: auto;
+            }
         }
     }
 }

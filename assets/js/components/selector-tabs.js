@@ -3,7 +3,7 @@ const init = function () {
     const $tab = $('.tab-item')
 
     if ($tab.length) {
-        $tab.click(function (e) {
+        $tab.click(function() {
 
             let $tabContent = $('.ct-tab-content');
             let $tabItem = $('.selector-tabs-container .tab-item');

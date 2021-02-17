@@ -5,7 +5,6 @@
         display: flex;
         margin-top: 80px;
         padding-bottom: 10px;
-        border-bottom: 1px solid $porcelain;
 
         .tab-item {
             padding: 0;
@@ -33,11 +32,19 @@
         margin-top: 30px;
     }
 
+    .selector-panel-container {
+        border-top: 1px solid $porcelain;
+    }
+
     .selector-panel {
         display: none;
         margin-top: 65px;
 
         .country-item {
+            @include breakpoint(medium down) {
+                margin-top: 40px;
+            }
+
             .heading {
                 font-size: 2.5rem;
             }
