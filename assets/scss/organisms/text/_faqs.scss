@@ -1,5 +1,6 @@
 .faq {
     margin-top: 110px;
+    margin-bottom: 150px;
 
     .faq-item {
         width: 100%;
@@ -24,7 +25,41 @@
         }
     }
 
+
     .answer {
-        margin-top: 40px;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 40px 0 44px;
+        transition: max-height 250ms ease-in-out, padding 250ms ease-in-out;
+
+        @include breakpoint(medium down) {
+            padding: 0 30px 0 30px;
+        }
+
+        .read-more {
+            margin-top: 30px;
+            text-decoration: underline;
+
+            @include breakpoint(medium down) {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .expanded {
+
+        .answer {
+            max-height: 1024px;
+            padding: 41px 40px 23px 44px;
+
+            @include breakpoint(medium down) {
+                padding: 15px 30px;
+            }
+        }
+
+        .arrow-down {
+            transform: rotate(180deg);
+        }
     }
 }

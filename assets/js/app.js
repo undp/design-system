@@ -42,11 +42,14 @@ import multiSelectData from './render-data/global/multi-selects'
 import countriesData  from './render-data/locations/countries'
 import mobileFilterData from './render-data/locations/mobile-filters'
 
+import faqs from './components/faqs'
+
 // Trap focus for modals
 import trapFocus from './components/trap-focus'
 
 function main() {
     imageSizes()
+    faqs()
     modal()
     inputs()
     ourExpertiseSectionAnimation()
