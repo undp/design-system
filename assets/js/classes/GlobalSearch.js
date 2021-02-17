@@ -15,6 +15,9 @@ class GlobalSearch {
         this.$activeFiltersContainer = this.$searchFiltersContainer.find('[data-active-filters]')
         this.$multiselectFilters = this.$searchFiltersContainer.find('.multi-select')
         this.multiselectFiltersLoaded = false
+
+        // URL management
+        this.relativeToPathURIs = ["/country-page", "/project-page"];
         this.currentPagePathname = window.location.protocol + "//" + window.location.host + window.location.pathname
 
         // Results management
@@ -191,8 +194,6 @@ class GlobalSearch {
 
             $clickedPill.remove();
 
-            console.log(total)
-
             if (!this.$multiselectFilters.find('input:checked').length) {
                 this.$activeFiltersContainer.html('')
             }
@@ -357,7 +358,15 @@ class GlobalSearch {
             urlParams.set(filter, this.filters[filter])
         }
 
-        let newurl = window.location.protocol + "//" + window.location.host + '?' + urlParams.toString()
+        console.log(window.location.pathname)
+
+        let URIpath = '';
+
+        if(this.relativeToPathURIs.includes(window.location.pathname)) {
+            URIpath = window.location.pathname;
+        }
+
+        let newurl = window.location.protocol + "//" + window.location.host + URIpath + '?' + urlParams.toString()
         window.history.pushState({path: newurl}, '', newurl)
     }
 
