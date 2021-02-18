@@ -22,7 +22,7 @@ $country = isset($country) && $country ? $country : 'UNDP Global';
                     <h2 class="heading h2 title show-for-large">Find Our Offices Around the World.</h2>
                     <p class="big-copy description show-for-large">Get in touch, share your ideas, and discover how we can work together for a sustainable, just, and equitable future.</p>
                     <p class="tag hide-for-large tag-current-section">current selection</p>
-                    <h3 class="heading h3 title hide-for-large title-undp">UNDP Global</h3>
+                    <h3 class="heading h3 title hide-for-large title-undp"><?= $country ?></h3>
                     <a class="text-link arrow-3 show-for-large" href="#">
                         Go to GLOBAL SITE
                         <span>
