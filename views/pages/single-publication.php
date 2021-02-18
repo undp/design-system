@@ -14,7 +14,7 @@ use helpers\View;
 
 <div class="single-publication">
     <?php
-        View::render('organisms/single-publication/modal-publication-download', [
+        View::render('organisms/modals/modal-publication-download', [
             'image' => '/assets/images/placeholder/publication-1.png',
             'languageOptions' => [
                 ['id' => 'pasto-1', 'value' => 'pasto', 'label' => 'Pasto'],
