@@ -10,7 +10,7 @@ use helpers\Svg;
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main-justify') ?>
+<?php View::render('layout/navigation/main-justify', ['country' => 'Sierra Leone']) ?>
 
 
 <main class="project-page">
