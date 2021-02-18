@@ -10,7 +10,7 @@
                     <h3 class="heading h3">UNDP Hope</h3>
                 </div>
 
-                <div class="text-container cell medium-6">
+                <div class="gallery-text-content with-background cell medium-6">
                     <div class="track left-right delay-4">
                         <h3 class="heading h3 show-for-medium">UNDP Hope</h3>
 
