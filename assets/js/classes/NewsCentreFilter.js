@@ -1,6 +1,4 @@
 import Foundation from 'foundation-sites'
-import ScrollUp from "./ScrollUp";
-
 
 class NewsCentreFilter {
 

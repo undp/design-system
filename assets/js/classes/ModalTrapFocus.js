@@ -1,10 +1,14 @@
+import { MediaQuery } from 'foundation-sites'
+
 class ModalTrapFocus {
     constructor(element) {
         this.modal = element;
+        this.html = document.querySelector('html')
         this.body = document.querySelector('body')
         this.firstFocusableElement = null;
         this.lastFocusableElement = null;
         this.currentFocusableElement = null;
+        this.mutationObserverObject = null;
 
         // Add all the elements inside modal which you want to make focusable
         this.focusableElements =
@@ -52,13 +56,39 @@ class ModalTrapFocus {
     }
 
     init() {
-        this.addListener();
-        this.observer();
+        this.bindEvents()
+        this.keyboardInputObserver()
     }
 
-    observer() {
+    bindEvents() {
+        if(this.html.dataset.whatinput === 'keyboard') {
+            this.addListener();
+            this.modalElementsChangedObserver();
+        } else {
+            if(this.mutationObserverObject !== null) {
+                this.mutationObserverObject.disconnect()
+            }
+            this.modal.removeEventListener('keydown', this.handleTrapFocus);
+            this.modal.removeEventListener('keyup', this.saveCurrentFocus)
+        }
+    }
+
+    keyboardInputObserver() {
+        const keyboardIntentObserver = new MutationObserver((mutationsList) => {
+            for(const mutation of mutationsList) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-whatinput') {
+                    this.bindEvents()
+                    break;
+                }
+            }
+        });
+
+        keyboardIntentObserver.observe(this.html, { attributes: true });
+    }
+
+    modalElementsChangedObserver() {
         // Re run listener for new DOM elements added dynamically
-        const observer = new MutationObserver((mutationsList) => {
+        this.mutationObserverObject = new MutationObserver((mutationsList) => {
             let recreateFocusableElements = false;
             // Use traditional 'for loops' for IE 11
             for(const mutation of mutationsList) {
@@ -76,7 +106,7 @@ class ModalTrapFocus {
 
         const config = { childList: true, subtree: true, attributes: true };
 
-        observer.observe(this.modal, config);
+        this.mutationObserverObject.observe(this.modal, config);
     }
 
     addListener() {

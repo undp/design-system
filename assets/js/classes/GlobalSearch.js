@@ -26,7 +26,6 @@ class GlobalSearch {
         this.totalResultsLoaded = 0
         this.loadMoreButton = null
         this.allResultsLoaded = false
-        this.$searchResultsMetadata = null
 
         // Filter management
         this.filters = {}
@@ -109,7 +108,6 @@ class GlobalSearch {
         this.jsonResults = []
         this.$searchInput.val('')
         this.loadMoreButton = null
-        this.$searchResultsMetadata = null
         this.$activeFiltersContainer.html('');
         this.$mobileFilterOpen.find('.counter').text('')
         this.$multiselectFilters.find('.select-control span').text('');
@@ -295,10 +293,9 @@ class GlobalSearch {
                     <div class="search-results-metadata">
                             Showing ${this.jsonResults.length > 0? '1' : '0'}-<span class="shown-results">${this.jsonResults.length}</span> of ${response.total} results across UNDP.org for <span>${searchValue}</span>
                     </div>`)
-
-                    this.$searchResultsMetadata = this.$searchResultsContainer.find('.search-results-metadata .shown-results')
                 } else {
-                    this.$searchResultsMetadata.text(this.totalResultsLoaded)
+                    console.log(this.$searchResultsWrapper.find('.search-results-metadata .shown-results'))
+                    this.$searchResultsWrapper.find('.search-results-metadata .shown-results').text(this.totalResultsLoaded)
                 }
 
                 this.jsonResults.forEach((item) => {
@@ -357,8 +354,6 @@ class GlobalSearch {
         for (const filter in this.filters) {
             urlParams.set(filter, this.filters[filter])
         }
-
-        console.log(window.location.pathname)
 
         let URIpath = '';
 
