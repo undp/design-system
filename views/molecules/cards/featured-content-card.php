@@ -1,13 +1,13 @@
 <?php
 use helpers\Svg;
 ?>
-<section class="featured-content-card">
+<section class="featured-content-card scroll-track left-right delay-1">
     <div class="grid-container">
         <a href="#">
             <div class="grid-x main-container">
                 <div class="cell medium-6 featured-data">
                     <div class="tag show-for-medium">Video</div>
-                    <h2 class="heading h4 scroll-track left-right delay-2">UNDP’s Country Programme for Sierra Leone: 2020 to 2023</h2>
+                    <h2 class="heading h4">UNDP’s Country Programme for Sierra Leone: 2020 to 2023</h2>
                     <div class="excerpt">
                         <p class="big-copy">The UNDP Executive Board approved the Sierra Leone’s 4-year Country Programme Document (CPD) on the 4th September 2020. The CPD is a core strategic document that guides UNDP’s development assistance to the Government of Sierra Leone (GOSL).</p>
                         <p class="big-copy">The CPD will focus on enhancing the ability of state institutions to deliver services to citizens using a coordinated and sustainable</p>

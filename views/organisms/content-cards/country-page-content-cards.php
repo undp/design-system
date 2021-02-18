@@ -1,7 +1,7 @@
 <?php use helpers\View; ?>
 
 
-<div class="country-page-content-cards" data-view-more data-load-step="4">
+<div class="country-page-content-cards scroll-track left-right delay-1" data-view-more data-load-step="4">
     <div class="grid-container grid-x">
         <div class="cell cards-container">
             <div class="grid-x grid-margin-x flex-container align-center">
