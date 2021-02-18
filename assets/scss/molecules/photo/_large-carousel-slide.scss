@@ -1,0 +1,31 @@
+
+.large-carousel-slide {
+    .slide-content {
+        padding-left: 50px;
+
+        @include breakpoint(small only) {
+            padding: 19px 40px;
+        }
+
+        .big-copy {
+            margin-top: 19px;
+        }
+
+        .cta {
+            margin-top: 25px;
+
+            @include breakpoint(small only) {
+                margin-top: 33px;
+            }
+        }
+    }
+
+    img {
+        width: 70%;
+        flex-shrink: 0;
+
+        @include breakpoint(small only) {
+            width: auto;
+        }
+    }
+}

@@ -1,7 +1,4 @@
-<?php
-use helpers\View;
-$imgPath = '/assets/images/placeholder/leadership';
-?>
+<?php use helpers\View; ?>
 
 <!-- Page Headers -->
 <?php View::render('layout/header', ['pageTitle' => 'Project']) ?>
@@ -9,7 +6,12 @@ $imgPath = '/assets/images/placeholder/leadership';
 <body>
 <main class="components-index">
     <?php
-    View::render('organisms/photo/photo-cta-group');
+        View::render('organisms/photo/large-carousel');
+        View::render('organisms/photo/large-carousel', [
+            'imageOnly' => true,
+            'heading' => 'UNDP Image only carousel'
+        ]);
+        View::render('organisms/photo/photo-cta-group');
     ?>
 </main>
 
