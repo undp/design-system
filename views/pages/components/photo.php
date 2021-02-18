@@ -4,6 +4,9 @@
 <?php View::render('layout/header', ['pageTitle' => 'Components - Photo']) ?>
 
 <body>
+<!-- Navigation -->
+<?php View::render('layout/navigation/main') ?>
+
 <main class="components-index">
     <?php
 
@@ -14,7 +17,7 @@
         ]);
 
         View::render('organisms/photo/parallax-gallery');
-
+        View::render('organisms/photo/three-column-gallery');
         View::render('organisms/photo/photo-cta-group');
     ?>
 </main>
