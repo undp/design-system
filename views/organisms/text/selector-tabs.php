@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="selector-panel-container">
-            <div class="selector-panel ct-tab-content active" id="europe">
+            <div class="selector-panel tab-content active" id="europe">
                 <div class="grid-x grid-margin-x">
                     <div class="cell large-3 large-offset-0 small-offset-1 small-10 country-item">
                         <div class="heading">Italy1</div>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="selector-panel ct-tab-content" id="america">
+            <div class="selector-panel tab-content" id="america">
                 <div class="grid-x grid-margin-x">
                     <div class="cell large-3 large-offset-0 small-offset-1 small-10 country-item">
                         <div class="heading">america</div>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="selector-panel ct-tab-content" id="africa">
+            <div class="selector-panel tab-content" id="africa">
                 <div class="grid-x grid-margin-x">
                     <div class="cell large-3 large-offset-0 small-offset-1 small-10 country-item">
                         <div class="heading">Africa</div>

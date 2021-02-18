@@ -6,7 +6,6 @@ const init = function() {
         $question
             .click(function() {
                 let $q = $(this).closest('.question')
-                console.log('click')
                 $q.siblings('.question').removeClass('expanded')
                 $q.toggleClass('expanded')
             })

@@ -5,8 +5,8 @@ const init = function () {
     if ($tab.length) {
         $tab.click(function() {
 
-            let $tabContent = $('.ct-tab-content');
-            let $tabItem = $('.selector-tabs-container .tab-item');
+            let $tabContent = $('.tab-content');
+            let $tabItem = $($tab);
 
             let $target = $(this).attr('data-tab');
             console.log($target);
