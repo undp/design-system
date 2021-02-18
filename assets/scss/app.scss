@@ -20,6 +20,7 @@
 
 // Partials
 @import "partials/footer";
+@import "partials/modal";
 @import 'partials/breadcrumb';
 @import 'partials/modal-sdgs';
 @import 'partials/explore-more';
@@ -66,6 +67,8 @@
 @import "molecules/text/big-copy-h1";
 @import "molecules/cards/photo-cta-card";
 @import "molecules/cards/featured-content-card";
+@import "molecules/cards/leader-card";
+@import "molecules/cards/small-leader-card";
 
 
 // Organisms
@@ -97,7 +100,8 @@
 @import "organisms/article-deepdive/navigation-progress";
 @import "organisms/single-publication/featured-publication";
 @import "organisms/single-publication/related-publications";
-@import "organisms/single-publication/modal-publication-download";
+@import "organisms/modals/leader-modal";
+@import "organisms/modals/modal-publication-download";
 @import "organisms/stats/listed-stats";
 
 @import "organisms/homepage/trusted-partnerships";
@@ -113,3 +117,8 @@
 @import "pages/styleguide";
 @import "pages/single-publication";
 @import "pages/project-page";
+
+// Component templates
+@import "organisms/leadership/leader-bio";
+@import "organisms/leadership/leader-cards";
+@import "organisms/leadership/leadership-heading";

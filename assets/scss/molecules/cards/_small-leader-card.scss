@@ -1,0 +1,59 @@
+.small-leader-card {
+    height: 100%;
+    padding-bottom: 22px;
+
+    @include breakpoint(small only) {
+        height: auto;
+        padding-bottom: 14px;
+    }
+
+    > .content-wrapper {
+        height: 100%;
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        @include hover-animate-arrow-2();
+
+        @include breakpoint(small only) {
+            height: auto;
+        }
+
+        .cta-container {
+            margin: auto 0 0;
+
+            .text-link {
+                margin-top: 27px;
+            }
+        }
+
+        .leader-info {
+            flex: 1;
+            width: 100%;
+            height: auto;
+            padding: 25px 25px 20px;
+            background: $dark-blue-6;
+
+            @include breakpoint(small only) {
+                flex: 0;
+                padding: 30px 27px 29px;
+            }
+        }
+
+        .leader-titles {
+            margin-top: 12px;
+            text-transform: none;
+        }
+
+        img {
+            margin: 0;
+            width: 100%;
+            flex: 0 auto;
+            height: 396px;
+            object-fit: cover;
+
+            @include breakpoint(small only) {
+                height: 400px;
+            }
+        }
+    }
+}

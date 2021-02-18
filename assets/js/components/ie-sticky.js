@@ -2,10 +2,9 @@ import Sticky from 'stickyfilljs'
 
 
 const init = function() {
-    const $ieSticky = $('[data-ie-sticky], .scroll-up')
+    const $ieSticky = $('[data-ie-sticky]')
 
     if ($ieSticky.length) {
-        console.log('bla')
         Sticky.add($ieSticky)
     }
 }

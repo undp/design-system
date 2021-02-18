@@ -9,29 +9,18 @@
         padding-bottom: 30px;
     }
 
-    .left-bar, .left-bar-mobile {
-        left: 0;
-        top: 70px;
-        width: 60px;
+    .left-bar {
+        width: 100%;
         position: absolute;
+        right: calc(100% - 60px);
         background: $dark-blue-5;
-        height: calc(100% - 117px);
-
-        @include breakpoint(medium down) {
-            display: none;
-        }
-    }
-
-    .left-bar-mobile {
-        top: 0;
-        width: 12px;
-        display: none;
         height: calc(100% - 50px);
 
         @include breakpoint(medium down) {
-            display: block;
+            right: calc(100% - 13px);
         }
     }
+
 
     .hero-container {
         position: relative;

@@ -12,7 +12,7 @@ use helpers\View;
 
 <div class="single-publication">
     <?php
-        View::render('organisms/single-publication/modal-publication-download', [
+        View::render('organisms/modals/modal-publication-download', [
             'image' => '/assets/images/placeholder/publication-2.png',
             'chapters' => [
                 ['title' => 'Lorem Ipsum Title Goes Here', 'metadata' => 'PDF (1.9 MB)', 'lang' => ''],
