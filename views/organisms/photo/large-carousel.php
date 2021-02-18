@@ -17,13 +17,13 @@ $sliderOptions = [
 ?>
 
 <section class="large-carousel grid-container overflow-hidden">
-    <div class="grid-x">
+    <div class="grid-x scroll-track left-right delay-1">
         <div class="cell small-10 small-offset-1">
             <h2 class="heading h2"><?= $heading ?? 'UNDP Carousel' ?></h2>
         </div>
 
         <div class="cell medium-10 medium-offset-1">
-            <div class="generic-slider scroll-track left-right delay-1" data-options=<?= json_encode($sliderOptions) ?>>
+            <div class="generic-slider" data-options=<?= json_encode($sliderOptions) ?>>
                 <div class="bullets-container">
                     <div class="slider-control"></div>
                     <div class="glide__bullets" data-glide-el="controls[nav]"></div>

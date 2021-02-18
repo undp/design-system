@@ -86,8 +86,10 @@ function main() {
     dynamicSlider()
     focusPhotoCtas()
 
-    const globalSearch = new GlobalSearch()
-    globalSearch.init()
+    if ($('[data-navigation]').length) {
+        const globalSearch = new GlobalSearch()
+        globalSearch.init()
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
