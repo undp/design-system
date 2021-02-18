@@ -13,7 +13,7 @@
             'heading' => 'UNDP Image only carousel'
         ]);
 
-    View::render('organisms/photo/parallax-gallery');
+        View::render('organisms/photo/parallax-gallery');
 
         View::render('organisms/photo/photo-cta-group');
     ?>

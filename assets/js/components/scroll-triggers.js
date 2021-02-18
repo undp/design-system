@@ -73,7 +73,7 @@ const init = function () {
                         ease: 'SlowMo',
                         trigger: container,
                         start: "top center",
-                        end: "bottom+=10% center"
+                        end: "bottom+=15% center"
                     }
                 })
                 // Even elements should start from a negative position (top to bottom)
