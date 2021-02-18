@@ -12,7 +12,7 @@ use helpers\View;
         <div class="grid-x social-container">
             <div class="cell medium-6">
                 <button class="download-btn flex-container" data-publication-download>
-                    <span class="download">Download</span>
+                    <span class="download" data-modal-trigger="modal-publication-download">Download</span>
                     <span class="icon-download">
                         <span class="icon-item">
                             <?php Svg::render('icon-download') ?>
