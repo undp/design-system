@@ -21,6 +21,10 @@
         justify-content: flex-end;
         transition: all 200ms ease-in-out;
         background-color: rgba($black, 0.28);
+
+        @include breakpoint(small only) {
+            opacity: 1;
+        }
     }
 
     .medium-copy:not(:first-of-type) {

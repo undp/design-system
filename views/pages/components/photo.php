@@ -7,7 +7,7 @@
 <!-- Navigation -->
 <?php View::render('layout/navigation/main') ?>
 
-<main class="components-index">
+<main class="components-index overflow-hidden">
     <?php
 
         View::render('organisms/photo/large-carousel');

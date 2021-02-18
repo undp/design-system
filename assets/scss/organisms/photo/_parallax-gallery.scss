@@ -51,4 +51,10 @@
             }
         }
     }
+
+    .heading {
+        @include breakpoint(small only) {
+            margin-bottom: 36px;
+        }
+    }
 }
