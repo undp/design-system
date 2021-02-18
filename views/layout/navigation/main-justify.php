@@ -30,7 +30,7 @@ use helpers\View;
                             </a>
                         </li>
                         <li class="show-for-xlarge logo-text">
-                            <a href="#" class="nav-item dark" aria-expanded="false" aria-haspopup="true">Sierra Leone</a>
+                            <a href="#" class="nav-item dark" aria-expanded="false" aria-haspopup="true"><?= $country ?? '' ?></a>
                         </li>
                         <li class="show-for-xlarge">
                             <button class="nav-item dark" data-modal-nav="modal-nav-who-we-are"
@@ -111,5 +111,5 @@ use helpers\View;
 </section>
 <?php View::render('layout/navigation/menu/main') ?>
 <?php View::render('layout/navigation/modals/search') ?>
-<?php View::render('layout/navigation/modals/locations/main') ?>
+<?php View::render('layout/navigation/modals/locations/main', ['country' => $country ?? false]) ?>
 <?php View::render('layout/navigation/modals/locations/mobile/filters') ?>

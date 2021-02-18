@@ -29,11 +29,12 @@ import imageSizes from './components/image-sizes'
 import ieSticky from './components/ie-sticky'
 import singlePublication from './components/single-publication'
 import dynamicSlider from './components/dynamic-slider'
-import focusPhotoCtaCards from './components/focus-photo-cta-cards'
+import focusPhotoCtas from './components/focus-photo-ctas'
 
 import modal from './components/modal'
 import modalNav from './components/modal-nav'
 import modalSdgs from './components/modal-sdgs'
+import modalLocationSearch from './components/modal-location-search'
 import modalPublicationDownload from './components/modal-publication-download'
 
 // JS to render nav/search DOM elements from JSON data files
@@ -48,6 +49,7 @@ import trapFocus from './components/trap-focus'
 function main() {
     imageSizes()
     modal()
+    modalLocationSearch()
     inputs()
     ourExpertiseSectionAnimation()
     dropdown()
@@ -82,10 +84,12 @@ function main() {
     ieSticky()
     singlePublication()
     dynamicSlider()
-    focusPhotoCtaCards()
+    focusPhotoCtas()
 
-    const globalSearch = new GlobalSearch()
-    globalSearch.init()
+    if ($('[data-navigation]').length) {
+        const globalSearch = new GlobalSearch()
+        globalSearch.init()
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
