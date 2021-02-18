@@ -63,7 +63,7 @@
         ]);
     ?>
 
-    <?php View::render('organisms/content-cards/photo-cta-cards'); ?>
+    <?php View::render('organisms/photo/photo-cta-group'); ?>
 </main>
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>

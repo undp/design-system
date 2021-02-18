@@ -14,7 +14,7 @@ $singleChapter = count($chapters) === 1;
         </button>
         <div class="upper-container">
             <div class="image-container">
-                <?php View::render('molecules/images/publication-image', ['image' => $image]); ?>
+                <?php View::render('molecules/photo/publication-image', ['image' => $image]); ?>
             </div>
             <div class="download-controls">
                 <?php if (count($languageOptions) > 0) : ?>

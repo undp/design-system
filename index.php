@@ -70,6 +70,9 @@ switch ($subpath) {
     case '/components/leadership':
         View::render('pages/components/leadership');
         break;
+    case '/components/photo':
+        View::render('pages/components/photo');
+        break;
     default:
         View::render('pages/home');
 }
