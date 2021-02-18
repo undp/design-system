@@ -10,6 +10,14 @@
         }
     }
 
+    .callout-container {
+        justify-content: center;
+
+        @include breakpoint(small only) {
+            justify-content: flex-start;
+        }
+    }
+
     &.color-background {
         background-color: $dark-blue-1;
     }
