@@ -6,13 +6,12 @@ const init = function () {
         $tab.click(function() {
 
             let $tabContent = $('.tab-content');
-            let $tabItem = $($tab);
 
             let $target = $(this).attr('data-tab');
             console.log($target);
 
             if (!$(this).hasClass('active')) {
-                $tabItem.removeClass('active');
+                $tab.removeClass('active');
                 $tabContent.removeClass('active');
                 $(this).addClass('active');
                 $('#' + $target).addClass('active');
