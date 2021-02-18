@@ -6,9 +6,7 @@ const init = function () {
         $tab.click(function() {
 
             let $tabContent = $('.tab-content');
-
             let $target = $(this).attr('data-tab');
-            console.log($target);
 
             if (!$(this).hasClass('active')) {
                 $tab.removeClass('active');
