@@ -20,7 +20,7 @@
                                 <li class="glide__slide">
                                     <a href="<?= $card['link'] ?? '#' ?>">
                                         <?php
-                                            View::render('molecules/stats/small-card', [
+                                            View::render('molecules/statistics-figures/stat-card', [
                                                 'title' => $card['title']
                                             ])
                                         ?>
