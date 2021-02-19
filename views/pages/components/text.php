@@ -1,11 +1,12 @@
-<?php
-use helpers\View;
-?>
+<?php use helpers\View;?>
 
 <!-- Page Headers -->
 <?php View::render('layout/header', ['pageTitle' => 'Text Components']) ?>
 
 <body>
+<!-- Navigation -->
+<?php View::render('layout/navigation/main') ?>
+
 <main class="components-index">
     <?php
     View::render('organisms/text/small-copy');
