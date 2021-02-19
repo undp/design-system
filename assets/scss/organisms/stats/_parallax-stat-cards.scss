@@ -21,12 +21,13 @@
         .number {
             text-shadow: none;
             color: $dark-blue-1;
+            -webkit-text-stroke: unset;
         }
     }
 }
 
 
-.parallax-cards {
+.parallax-stat-cards {
     margin-top: 133px;
 
     @include breakpoint(small only) {

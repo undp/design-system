@@ -1,29 +1,15 @@
 <?php use helpers\View; ?>
 
 <!-- Page Headers -->
-<?php View::render('layout/header', ['pageTitle' => 'UNDP - Country Page']) ?>
+<?php View::render('layout/header', ['pageTitle' => 'Components - Stats']) ?>
 
-<body class="accent-green">
+<body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main-justify', ['country' => 'Sierra Leone']) ?>
+<?php View::render('layout/navigation/main') ?>
 
-<main class="country-page">
-    <!--Country hero 3-->
-    <?php View::render('organisms/hero/country-hero-3', [
-        'subtitle' => 'Sierra Leone',
-        'title' => 'Sierra Leone Youth Minister Launches 2020 Social Good Summit',
-        'description' => 'As we ‘come to our feet’ to respond to public health issues at the borders, key 
-                          messages on Covid-19 should be reinforced, border security enhanced…',
-        'imageUrl' => '../../../assets/images/placeholder/hero/country-hero-img.jpg'
-    ]) ?>
+<main class="components-index overflow-hidden">
 
-    <?php View::render('organisms/article-cards/local-featured-stories'); ?>
-
-    <?php View::render('organisms/text/featured-callout-title-text'); ?>
-
-    <?php View::render('molecules/cards/featured-content-card'); ?>
-
-    <?php View::render('organisms/content-cards/country-page-content-cards'); ?>
+    <?php View::render('organisms/stats/listed-stats'); ?>
 
     <?php
         View::render('organisms/stats/parallax-stat-cards', [
@@ -63,8 +49,15 @@
         ]);
     ?>
 
-    <?php View::render('organisms/photo/photo-cta-group'); ?>
+    <?php View::render('organisms/stats/medium-large-stats'); ?>
+
+    <?php
+        View::render('organisms/stats/medium-large-stats', [
+            'size' => 'large'
+        ]);
+    ?>
 </main>
+
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>
