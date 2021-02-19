@@ -1,0 +1,39 @@
+
+.photo-details-overlay {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    // Don't trigger hover on tap on iOS
+    @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:hover .details-overlay {
+            opacity: 1;
+        }
+    }
+
+    .details-overlay {
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        color: $white;
+        padding: 35px 25px;
+        position: absolute;
+        border: $dark-blue-12;
+        justify-content: flex-end;
+        transition: all 200ms ease-in-out;
+        background-color: rgba($black, 0.28);
+
+        // @todo: Need design reference to adjust font sizes or use ellipsis in order
+        // @todo: for this to fit without overflowing in small devices. Hiding for now.
+        //@include breakpoint(small only) {
+        //    opacity: 1;
+        //}
+    }
+
+    .medium-copy:not(:first-of-type) {
+        line-height: 1;
+        margin-top: 16px;
+    }
+}

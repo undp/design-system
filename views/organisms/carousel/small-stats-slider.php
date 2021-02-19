@@ -10,6 +10,10 @@
             <div class="dynamic-slider cell">
 
                 <div class="scroll-track left-right delay-1 flex-container flex-dir-column">
+                    <div class="bullets-container">
+                        <div class="glide__bullets" data-glide-el="controls[nav]"></div>
+                    </div>
+
                     <div class="glide__track" data-glide-el="track">
                         <ul class="glide__slides">
                             <?php foreach($cards as $card) : ?>
@@ -24,10 +28,6 @@
                                 </li>
                             <?php endforeach; ?>
                         </ul>
-                    </div>
-
-                    <div class="bullets-container">
-                        <div class="glide__bullets" data-glide-el="controls[nav]"></div>
                     </div>
                 </div>
             </div>

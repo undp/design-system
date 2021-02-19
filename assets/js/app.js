@@ -29,7 +29,7 @@ import imageSizes from './components/image-sizes'
 import ieSticky from './components/ie-sticky'
 import singlePublication from './components/single-publication'
 import dynamicSlider from './components/dynamic-slider'
-import focusPhotoCtaCards from './components/focus-photo-cta-cards'
+import focusPhotoCtas from './components/focus-photo-ctas'
 
 import modal from './components/modal'
 import modalNav from './components/modal-nav'
@@ -43,11 +43,16 @@ import multiSelectData from './render-data/global/multi-selects'
 import countriesData  from './render-data/locations/countries'
 import mobileFilterData from './render-data/locations/mobile-filters'
 
+import faqs from './components/faqs'
+import selectorTabs from './components/selector-tabs'
+
 // Trap focus for modals
 import trapFocus from './components/trap-focus'
 
 function main() {
     imageSizes()
+    faqs()
+    selectorTabs()
     modal()
     modalLocationSearch()
     inputs()
@@ -84,10 +89,12 @@ function main() {
     ieSticky()
     singlePublication()
     dynamicSlider()
-    focusPhotoCtaCards()
+    focusPhotoCtas()
 
-    const globalSearch = new GlobalSearch()
-    globalSearch.init()
+    if ($('[data-navigation]').length) {
+        const globalSearch = new GlobalSearch()
+        globalSearch.init()
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {

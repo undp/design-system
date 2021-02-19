@@ -5,7 +5,7 @@
 
 <body class="accent-green">
 <!-- Navigation -->
-<?php View::render('layout/navigation/main-justify') ?>
+<?php View::render('layout/navigation/main-justify', ['country' => 'Sierra Leone']) ?>
 
 <main class="country-page">
     <!--Country hero 3-->
@@ -63,7 +63,7 @@
         ]);
     ?>
 
-    <?php View::render('organisms/content-cards/photo-cta-cards'); ?>
+    <?php View::render('organisms/photo/photo-cta-group'); ?>
 </main>
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>

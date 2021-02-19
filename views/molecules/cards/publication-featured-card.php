@@ -7,12 +7,12 @@ use helpers\View;
 
 <div class="publication-featured-card" data-ie-sticky>
     <h2 class="heading h2">Publications</h2>
-    <?php View::render('molecules/images/publication-image', ['image' => $image]); ?>
+    <?php View::render('molecules/photo/publication-image', ['image' => $image]); ?>
     <div class="publication-social">
         <div class="grid-x social-container">
             <div class="cell medium-6">
-                <button class="download-btn flex-container" data-publication-download>
-                    <span class="download" data-modal-trigger="modal-publication-download">Download</span>
+                <button class="download-btn flex-container" data-publication-download data-modal-trigger="modal-publication-download">
+                    <span class="download">Download</span>
                     <span class="icon-download">
                         <span class="icon-item">
                             <?php Svg::render('icon-download') ?>
