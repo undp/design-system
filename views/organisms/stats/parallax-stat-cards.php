@@ -21,7 +21,7 @@ $sliderOptions = [
 ?>
 
 
-<section class="parallax-cards">
+<section class="parallax-stat-cards">
     <div class="grid-container grid-x overflow-hidden">
 
         <div class="cell small-10 small-offset-1">

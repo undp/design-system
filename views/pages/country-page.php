@@ -26,7 +26,7 @@
     <?php View::render('organisms/content-cards/country-page-content-cards'); ?>
 
     <?php
-        View::render('organisms/carousel/parallax-cards', [
+        View::render('organisms/stats/parallax-stat-cards', [
             'heading' => 'Our Impact',
             'cards' => [
                 [
