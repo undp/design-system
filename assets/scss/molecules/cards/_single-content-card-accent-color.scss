@@ -3,7 +3,7 @@
     border-top: 2px solid $black;
     transition: background-color 0.5s ease;
 
-    @include accent-color-background();
+    @include accent-color-background-2-with-hover();
 
     &.sdg{
         color: $white;

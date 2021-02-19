@@ -69,6 +69,58 @@
         }
     }
 
+    &.large {
+        min-height: 658px;
+
+        @include breakpoint(small only){
+            min-height: 356px;
+        }
+
+        .card-content{
+            padding: 90px 112px;
+
+            @include breakpoint(small only){
+                padding: 32px 30px;
+            }
+
+            .description {
+                margin-top: 35px;
+                @extend .heading, .h5;
+
+                @include breakpoint(small only){
+                    margin-top: 26px;
+                }
+            }
+
+            .heading.h3 {
+                @include breakpoint(small only){
+                    font-weight: $bold;
+                }
+            }
+
+            .number {
+                font-size: 5.5rem;
+                margin-top: 112px;
+
+                @include breakpoint(small only){
+                    font-size: 4.5rem;
+                    margin-top: 126px;
+                }
+            }
+
+            .title {
+                @extend .heading, .h3;
+
+                margin-top: 24px;
+                font-weight: $regular;
+
+                @include breakpoint(small only){
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
     .card-content{
 
         .number{
