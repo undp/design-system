@@ -1,18 +1,12 @@
 .small-stats-slider {
-    margin-top: 140px;
+    margin-top: 95px;
 
     @include breakpoint(small only) {
         margin-top: 116px;
     }
 
-    .bullets-container {
-        @include breakpoint(small only) {
-            order: 1;
-        }
-    }
-
     .dynamic-slider {
-        margin-top: 128px;
+        margin-top: 103px;
 
         @include breakpoint(small only) {
             margin-top: 70px;
@@ -25,11 +19,10 @@
 
     .glide__track {
         overflow: visible;
-        padding-bottom: 111px;
+        padding-top: 80px;
 
         @include breakpoint(small only) {
             order: 2;
-            padding-bottom: 0;
             padding-top: 33px;
         }
     }

@@ -7,14 +7,14 @@ $languageOptions = isset($languageOptions) && is_array($languageOptions) ? $lang
 $singleChapter = count($chapters) === 1;
 ?>
 
-<div class="modal-publication-download">
+<div id="modal-publication-download" class="modal modal-publication-download" data-modal>
     <div class="modal-content">
-        <button class="btn-close">
+        <button class="btn-close" data-modal-close>
             <?php Svg::render('icon-close') ?>
         </button>
         <div class="upper-container">
             <div class="image-container">
-                <?php View::render('molecules/images/publication-image', ['image' => $image]); ?>
+                <?php View::render('molecules/photo/publication-image', ['image' => $image]); ?>
             </div>
             <div class="download-controls">
                 <?php if (count($languageOptions) > 0) : ?>

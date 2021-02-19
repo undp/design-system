@@ -7,7 +7,7 @@ $imageExist = isset($image) && !empty($image);
    class="publication-card <?= $type ?? 'hover-publication' ?> <?= !$imageExist ? 'no-image' : '' ?> <?= $color ?? '' ?>">
     <div class="hover-slide">
         <?php if ($imageExist) : ?>
-            <?php View::render('molecules/images/publication-image', ['image' => $image]); ?>
+            <?php View::render('molecules/photo/publication-image', ['image' => $image]); ?>
         <?php endif; ?>
     </div>
     <article class="content">

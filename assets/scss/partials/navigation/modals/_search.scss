@@ -59,7 +59,6 @@
                 align-items: flex-start;
 
                 @include breakpoint(small only) {
-                    margin-top: 0;
                     flex-direction: column;
                 }
 

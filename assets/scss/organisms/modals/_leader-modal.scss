@@ -1,0 +1,51 @@
+
+.leader-modal {
+
+    .modal-content {
+        padding: 148px 118px;
+
+        @include breakpoint(small only) {
+            padding: 62px 12px;
+        }
+    }
+
+    .leader-info {
+        max-width: 450px;
+        margin-left: 25px;
+
+        @include breakpoint(small only) {
+            margin: 0 auto;
+            max-width: none;
+            padding: 33px 29px;
+        }
+
+        .leader-bio {
+            margin-top: 40px;
+
+            @include breakpoint(small only) {
+                margin-top: 26px;
+            }
+        }
+
+        .leader-titles {
+            margin-top: 12px;
+        }
+    }
+
+    .leader-photo {
+        flex-shrink: 0;
+
+        @include breakpoint(small only) {
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            max-width: 330px;
+
+            @include breakpoint(small only) {
+                max-width: 336px;
+            }
+        }
+    }
+}

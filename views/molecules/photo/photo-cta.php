@@ -1,5 +1,5 @@
 <a href="<?= $link ?? '#' ?>">
-    <div class="photo-cta-card">
+    <div class="photo-cta">
         <div class="card-content">
             <div class="image">
                 <div class="gradient"></div>

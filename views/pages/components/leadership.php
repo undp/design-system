@@ -4,9 +4,12 @@ $imgPath = '/assets/images/placeholder/leadership';
 ?>
 
 <!-- Page Headers -->
-<?php View::render('layout/header', ['pageTitle' => 'Project']) ?>
+<?php View::render('layout/header', ['pageTitle' => 'Components - Leadership']) ?>
 
 <body>
+<!-- Navigation -->
+<?php View::render('layout/navigation/main') ?>
+
 <main class="components-index">
     <?php
         View::render('organisms/leadership/heading');

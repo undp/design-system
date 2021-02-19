@@ -1,0 +1,60 @@
+
+.parallax-gallery {
+    margin-top: 75px;
+
+    .gs--parallax-container {
+        @include breakpoint(small only) {
+            padding: 17px 30px;
+            background: $dark-blue-6;
+        }
+    }
+
+    .gallery-images {
+        height: 130%;
+        margin-top: -15%;
+
+        @include breakpoint(small only) {
+            order: 0;
+        }
+
+        > .cell {
+            @include breakpoint(small only) {
+                margin-left: 5px;
+                margin-right: 5px;
+                width: calc(50% - 1rem);
+            }
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            height: calc(50% - 10px);
+
+            @include breakpoint(small only) {
+                height: calc(50% - 5px);
+            }
+
+            &:nth-child(1) {
+                margin-bottom: 10px;
+
+                @include breakpoint(small only) {
+                    margin-bottom: 5px;
+                }
+            }
+
+            &:nth-child(2) {
+                margin-top: 10px;
+
+                @include breakpoint(small only) {
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+
+    .heading {
+        @include breakpoint(small only) {
+            margin-bottom: 36px;
+        }
+    }
+}
