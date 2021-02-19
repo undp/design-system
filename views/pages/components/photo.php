@@ -37,6 +37,7 @@ $imagePath = '/assets/images/placeholder/galleries'
             ]
         ]);
 
+        View::render('organisms/photo/three-image-gallery');
         View::render('organisms/photo/photo-cta-group');
     ?>
 
