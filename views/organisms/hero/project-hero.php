@@ -22,7 +22,7 @@
                         UNDP Projects
                     </h3>
                     <h2 class="subtitle heading h2">
-                        United Nations pacific regional anti-corruption project - phase II
+                        United Nations pacific</br> regional anti-corruption</br> project - phase II
                     </h2>
                 </div>
             </div>
