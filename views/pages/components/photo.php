@@ -4,7 +4,10 @@
 <?php View::render('layout/header', ['pageTitle' => 'Components - Photo']) ?>
 
 <body>
-<main class="components-index">
+<!-- Navigation -->
+<?php View::render('layout/navigation/main') ?>
+
+<main class="components-index overflow-hidden">
     <?php
 
         View::render('organisms/photo/large-carousel');
@@ -14,7 +17,7 @@
         ]);
 
         View::render('organisms/photo/parallax-gallery');
-
+        View::render('organisms/photo/three-column-gallery');
         View::render('organisms/photo/photo-cta-group');
     ?>
 </main>

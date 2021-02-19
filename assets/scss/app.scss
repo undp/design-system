@@ -66,6 +66,8 @@
 @import "molecules/photo/publication-image";
 @import "molecules/text/big-copy-h1";
 @import "molecules/photo/photo-cta";
+@import "molecules/photo/gallery-text-content";
+@import "molecules/photo/photo-details-overlay";
 @import "molecules/photo/large-carousel-slide";
 @import "molecules/cards/featured-content-card";
 @import "molecules/cards/leader-card";
@@ -92,6 +94,7 @@
 @import "organisms/photo/large-carousel";
 @import "organisms/photo/photo-cta-group";
 @import "organisms/photo/parallax-gallery";
+@import "organisms/photo/three-column-gallery";
 @import "organisms/carousel/publications";
 @import "organisms/carousel/parallax-cards";
 @import "organisms/carousel/small-stats-slider";
@@ -120,6 +123,7 @@
 @import "pages/styleguide";
 @import "pages/single-publication";
 @import "pages/project-page";
+@import "pages/components-index";
 
 // Component templates
 @import "organisms/leadership/leader-bio";

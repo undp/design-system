@@ -57,35 +57,4 @@
             margin-bottom: 36px;
         }
     }
-
-    .text-container {
-        padding: 46px 65px 63px;
-        background: $dark-blue-6;
-
-        @include breakpoint(small only) {
-            order: 1;
-            padding: 0;
-            background: none;
-        }
-
-        .cta {
-            margin-top: 45px;
-
-            @include breakpoint(small only) {
-                margin-top: 58px;
-            }
-        }
-
-        .heading {
-            font-size: 3rem;
-        }
-
-        .medium-copy {
-            margin-top: 58px;
-
-            @include breakpoint(small only) {
-                margin-top: 50px;
-            }
-        }
-    }
 }
