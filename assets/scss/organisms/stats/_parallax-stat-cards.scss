@@ -21,6 +21,7 @@
         .number {
             text-shadow: none;
             color: $dark-blue-1;
+            -webkit-text-stroke: unset;
         }
     }
 }

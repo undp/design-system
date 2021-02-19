@@ -7,7 +7,7 @@
 <!-- Navigation -->
 <?php View::render('layout/navigation/main') ?>
 
-<main class="components-index">
+<main class="components-index overflow-hidden">
 
     <?php View::render('organisms/stats/listed-stats'); ?>
 
@@ -50,6 +50,12 @@
     ?>
 
     <?php View::render('organisms/stats/medium-large-stats'); ?>
+
+    <?php
+        View::render('organisms/stats/medium-large-stats', [
+            'size' => 'large'
+        ]);
+    ?>
 </main>
 
 <!-- Footer -->
