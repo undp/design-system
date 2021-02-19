@@ -53,7 +53,22 @@
         }
     }
 
-    &:hover {
+    .btn {
+        &:hover {
+            background: $red-3;
+
+            svg,
+            img {
+                transform: translateX(70%);
+            }
+
+            .image-container:before {
+                opacity: 0.75;
+            }
+        }
+    }
+
+/*    &:hover {
         .image-container:before {
             opacity: 0.75;
         }
@@ -68,7 +83,7 @@
 
         }
 
-    }
+    }*/
 
     .heading, .excerpt {
         margin-top: 27px;

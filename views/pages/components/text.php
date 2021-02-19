@@ -1,10 +1,9 @@
 <?php
 use helpers\View;
-$imgPath = '/assets/images/placeholder/leadership';
 ?>
 
 <!-- Page Headers -->
-<?php View::render('layout/header', ['pageTitle' => 'Project']) ?>
+<?php View::render('layout/header', ['pageTitle' => 'Text Components']) ?>
 
 <body>
 <main class="components-index">

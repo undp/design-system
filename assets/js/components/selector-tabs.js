@@ -13,10 +13,7 @@ const init = function () {
                 $tabContent.removeClass('active');
                 $(this).addClass('active');
                 $('#' + $target).addClass('active');
-            } else {
-                $(this).removeClass('active');
             }
-
         })
     }
 }
