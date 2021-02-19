@@ -1,7 +1,4 @@
-<?php
-use helpers\View;
-$imagePath = '/assets/images/placeholder/galleries'
-?>
+<?php use helpers\View; ?>
 
 <!-- Page Headers -->
 <?php View::render('layout/header', ['pageTitle' => 'Components - Stats']) ?>
@@ -51,6 +48,8 @@ $imagePath = '/assets/images/placeholder/galleries'
             ]
         ]);
     ?>
+
+    <?php View::render('organisms/stats/medium-large-stats'); ?>
 </main>
 
 <!-- Footer -->
