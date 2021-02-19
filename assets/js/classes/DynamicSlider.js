@@ -128,7 +128,7 @@ class DynamicSlider {
             $controlSlider.css('width', slideWidth + "%")
 
             // Create all bullets
-            for (let index = 0; index < this.numberOfSlides; index++) {
+            for (let index = 0; index < numberOfViewportSlides; index++) {
                 const button = document.createElement('button');
                 button.className = `glide__bullet bullet-index-${index}`;
                 button.setAttribute("data-glide-dir", '=' + index);
