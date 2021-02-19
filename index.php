@@ -76,6 +76,9 @@ switch ($subpath) {
     case '/components/text':
         View::render('pages/components/text');
         break;
+    case '/components/stats':
+        View::render('pages/components/stats');
+        break;
     default:
         View::render('pages/home');
 }
