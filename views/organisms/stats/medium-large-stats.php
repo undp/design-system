@@ -10,12 +10,12 @@ $cardSize = isset($size) && in_array($size, $sizes) ? $size : 'medium';
     <div class="grid-container grid-x">
 
         <div class="cell small-10 small-offset-1 <?= $cardSize === 'medium' ? 'medium-2' : '' ?>">
-            <h2 class="section-heading heading h2">Stats Header</h2>
+            <h2 class="section-heading heading h2 scroll-track left-right delay-2">Stats Header</h2>
         </div>
 
         <div class="cell <?= $cardSize === 'medium' ? 'medium-8 medium-offset-1' : '' ?>">
             <div class="grid-x <?= $cardSize === 'large' ? 'grid-margin-x' : '' ?>">
-                <div class="cell medium-6 card-container">
+                <div class="cell medium-6 card-container scroll-track left-right delay-2">
                     <?php
                         View::render('molecules/statistics-figures/stat-card', [
                             'number' => 41,
@@ -27,7 +27,7 @@ $cardSize = isset($size) && in_array($size, $sizes) ? $size : 'medium';
                     ?>
                 </div>
 
-                <div class="cell medium-6 card-container">
+                <div class="cell medium-6 card-container scroll-track left-right delay-3">
                     <?php
                         View::render('molecules/statistics-figures/stat-card', [
                             'number' => 13,
