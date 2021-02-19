@@ -12,15 +12,15 @@
     View::render('organisms/hero/global-hero-1', [
         'title' => 'The SDGs In ACTION.',
         'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
-        'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.jpg',
-        'imageMobileUrl' => '../../../assets/images/placeholder/hero/sdg-hero-mobile@2x.jpg'
+        'imageUrl' => '/assets/images/placeholder/hero/global-hero-3.jpg',
+        'imageMobileUrl' => '/assets/images/placeholder/hero/sdg-hero-mobile@2x.jpg'
     ]);
 
     View::render('organisms/hero/global-hero-3', [
         'title' => 'The SDGs In ACTION.',
         'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
-        'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.jpg',
-        'imageMobileUrl' => '../../../assets/images/placeholder/hero/sdg-hero-mobile@2x.jpg'
+        'imageUrl' => '/assets/images/placeholder/hero/about-image.jpg.jpg',
+        'imageMobileUrl' => '/assets/images/placeholder/hero/about-image.jpg.jpg'
     ]);
 
     ?>

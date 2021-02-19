@@ -1,5 +1,8 @@
 .global-hero-1 {
-    @extend .global-hero-3
+    @extend .about-hero;
 
 
+    &:before {
+        background: $white !important;
+    }
 }

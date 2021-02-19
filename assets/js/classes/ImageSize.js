@@ -4,8 +4,6 @@ let _ = require('lodash')
 class ImageSize {
     constructor() {
         this.$hero = $('.hero');
-        this.$imageDesktop = this.$hero.data('desktop-image');
-        this.$imageMobile = this.$hero.data('mobile-image');
         this.$window = $(window);
     }
 
@@ -15,23 +13,37 @@ class ImageSize {
 
     listenerWindow() {
 
-        this.$hero.css('background', `url("${this.$imageDesktop}") center 0 / cover no-repeat`)
-
-        if (Foundation.MediaQuery.is('small only')) {
-            this.$hero.css('background', `url("${this.$imageMobile}") center 0 / cover no-repeat`)
-        }
-
-
-        this.$window.on('changed.zf.mediaquery', () => {
-
-            const img = Foundation.MediaQuery.atLeast('medium')
-                ? this.$imageDesktop
-                : this.$imageMobile
+        this.$hero.each((i, hero) => {
+            const $hero = $(hero)
+            const $imageMobile = $hero.data('mobile-image')
+            const $imageDesktop = $hero.data('desktop-image')
 
 
-            this.$hero.css('background', `url("${img}") center 0 / cover no-repeat`)
+            console.log('$hero::', $hero)
+            console.log('$imageMobile::', $imageMobile)
+            console.log('$imageDesktop::', $imageDesktop)
+
+            if (!($imageMobile && $imageDesktop)) return
+
+
+            this.$window.on('changed.zf.mediaquery', () => {
+
+                const img = Foundation.MediaQuery.atLeast('medium')
+                    ? $imageDesktop
+                    : $imageMobile
+
+
+                $hero.css('background', `url("${img}") center 0 / cover no-repeat`)
+            })
+
+
+            if (Foundation.MediaQuery.is('small only')) {
+                $hero.css('background', `url("${$imageMobile}") center 0 / cover no-repeat`)
+                return
+            }
+
+            $hero.css('background', `url("${$imageDesktop}") center 0 / cover no-repeat`)
         })
-
     }
 }
 
