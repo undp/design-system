@@ -103,34 +103,6 @@
 }
 
 
-@mixin accent-color-background-2-with-hover() {
-    background-color: $yellow-2;
-
-    // Default color, kept class for clarity
-    // Two ways of adding accent color:
-    // 1. Globally on an upper container (all up to the body)
-    // 2. Directly on the card
-    // Directly on the card overrides global color
-    .accent-yellow &, &.accent-yellow {
-        background-color: $yellow-2;
-    }
-
-    .accent-green &, &.accent-green{
-        background-color: $green-2;
-    }
-
-    .accent-red &, &.accent-red{
-        background-color: $red-2;
-    }
-
-    .accent-blue &, &.accent-blue{
-        background-color: $blue-accent-2;
-    }
-
-    @include accent-color-background-hover();
-}
-
-
 @mixin hover-animate-arrow-2() {
     @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
         &:hover {
@@ -149,30 +121,6 @@
                     transform: translateX(31px);
                 }
             }
-        }
-    }
-}
-
-
-@mixin highlight-stat-card() {
-    @include sgd-colors('background-color');
-    @include accent-color-background-2-hover();
-
-    .card-content {
-        .number {
-            text-shadow: none;
-            color: $dark-blue-1;
-            -webkit-text-stroke: unset;
-        }
-    }
-
-    &.sdg {
-        color: $white;
-
-        .card-content .number{
-            color: $white;
-            text-shadow: none;
-            -webkit-text-stroke: unset;
         }
     }
 }

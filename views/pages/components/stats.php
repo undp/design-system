@@ -7,7 +7,7 @@
 <!-- Navigation -->
 <?php View::render('layout/navigation/main') ?>
 
-<main class="components-index">
+<main class="components-index overflow-hidden">
 
     <?php View::render('organisms/stats/listed-stats'); ?>
 
@@ -51,37 +51,11 @@
 
     <?php View::render('organisms/stats/medium-large-stats'); ?>
 
-    <section class="medium-large-stats">
-        <div class="grid-container grid-x grid-margin-x">
-
-            <div class="cell small-10 small-offset-1">
-                <h2 class="heading h2">Large Stats</h2>
-            </div>
-
-            <div class="cell medium-6 card-container">
-                <?php
-                    View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 41,
-                        'heading' => 'Lorem Title',
-                        'size' => 'medium',
-                        'title' => 'Percent',
-                        'description' => 'Adult literacy rate'
-                    ]);
-                ?>
-            </div>
-            <div class="cell medium-6 card-container">
-                <?php
-                    View::render('molecules/statistics-figures/stat-card', [
-                        'number' => 13,
-                        'heading' => 'Lorem Title',
-                        'size' => 'medium',
-                        'title' => 'Percent',
-                        'description' => 'Of parliamentary seats held by women'
-                    ]);
-                ?>
-            </div>
-        </div>
-    </section>
+    <?php
+        View::render('organisms/stats/medium-large-stats', [
+            'size' => 'large'
+        ]);
+    ?>
 </main>
 
 <!-- Footer -->

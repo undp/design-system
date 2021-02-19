@@ -7,12 +7,27 @@
             margin-top: 20px;
         }
 
-        .heading.h2 {
+        .section-heading {
             margin-bottom: 48px;
         }
 
         .stat-card {
-            @include highlight-stat-card();
+            @include accent-color-background-2();
+
+        }
+
+        .card-content {
+            .number {
+                text-shadow: none;
+                color: $dark-blue-1;
+                -webkit-text-stroke: unset;
+            }
+        }
+    }
+
+    &.large {
+        .section-heading {
+            margin-bottom: 80px;
         }
     }
 }

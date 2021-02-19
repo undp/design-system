@@ -37,11 +37,13 @@
 
                 @include breakpoint(small only){
                     margin-top: 26px;
+                    line-height: 2.6rem;
                 }
             }
 
             .heading.h3 {
                 @include breakpoint(small only){
+                    font-size: 4rem;
                     font-weight: $bold;
                 }
             }
@@ -80,42 +82,45 @@
             padding: 90px 112px;
 
             @include breakpoint(small only){
-                padding: 32px 30px;
+                padding: 32px 30px 42px;
             }
 
             .description {
-                margin-top: 35px;
+                margin-top: 24px;
                 @extend .heading, .h5;
 
                 @include breakpoint(small only){
-                    margin-top: 26px;
+                    margin-top: 20px;
+                    font-size: 1.6rem;
+                    line-height: 2.2rem;
                 }
             }
 
-            .heading.h3 {
+            .heading.h2 {
                 @include breakpoint(small only){
-                    font-weight: $bold;
+                    font-size: 3rem;
+                    font-weight: $semi-bold;
                 }
             }
 
             .number {
-                font-size: 5.5rem;
-                margin-top: 112px;
+                font-size: 6rem;
+                margin-top: 100px;
 
                 @include breakpoint(small only){
+                    margin-top: 21px;
                     font-size: 4.5rem;
-                    margin-top: 126px;
                 }
             }
 
             .title {
+                margin-top: 30px;
                 @extend .heading, .h3;
 
-                margin-top: 24px;
-                font-weight: $regular;
-
                 @include breakpoint(small only){
+                    font-size: 2rem;
                     margin-top: 15px;
+                    font-weight: $regular;
                 }
             }
         }
@@ -149,6 +154,25 @@
     }
 
     &:hover {
-        @include highlight-stat-card();
+        @include accent-color-background-2();
+        @include sgd-colors('background-color');
+
+        .card-content {
+            .number {
+                text-shadow: none;
+                color: $dark-blue-1;
+                -webkit-text-stroke: unset;
+            }
+        }
+
+        &.sdg {
+            color: $white;
+
+            .card-content .number{
+                color: $white;
+                text-shadow: none;
+                -webkit-text-stroke: unset;
+            }
+        }
     }
 }
