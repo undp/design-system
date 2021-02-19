@@ -1,5 +1,5 @@
 
-<div class="photo-details-overlay">
+<div class="photo-details-overlay <?= $classes ?? '' ?>">
     <img class="photo" src="<?= $image ?? '' ?>" alt="">
 
     <div class="details-overlay flex-container flex-dir-column">

@@ -9,6 +9,7 @@ const init = function () {
 
     const trackClass = 'scroll-track'
     const visibleClass = 'in-viewport'
+    const centerTrackers = gsap.utils.toArray('.scroll-track-center',)
     const parallaxContainer = gsap.utils.toArray('.gs--parallax-container')
 
 
@@ -31,15 +32,19 @@ const init = function () {
         }
     });
 
-    gsap.timeline({
-        scrollTrigger: {
-            scrub: false,
-            start: 'center center',
-            trigger: '.scroll-track-center',
-            invalidateOnRefresh: false,
-            onEnter: () => $('.scroll-track-center').find('.track').addClass('in-viewport')
-        }
-    });
+
+    // Animations that trigger only when the center of the viewport matches the center of the section
+    centerTrackers.forEach(tracker => {
+        gsap.timeline({
+            scrollTrigger: {
+                scrub: false,
+                trigger: tracker,
+                start: 'center center',
+                invalidateOnRefresh: false,
+                onEnter: () => $(tracker).find('.track').addClass('in-viewport')
+            }
+        });
+    })
 
 
     parallaxContainer.forEach(container => {

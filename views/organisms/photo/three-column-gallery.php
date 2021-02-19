@@ -7,15 +7,15 @@ $imagePath = '/assets/images/placeholder'
 <section class="three-column-gallery">
     <div class="grid-container grid-x grid-margin-x">
 
-        <div class="cell scroll-track-center">
+        <div class="cell">
             <div class="grid-x grid-margin-x">
 
-                <div class="cell scroll-track left-right delay-2 hide-for-medium">
+                <div class="cell scroll-track left-right delay-1 hide-for-medium">
                     <h3 class="heading h3">UNDP Hope</h3>
                 </div>
 
-                <div class="gallery-text-content cell medium-4">
-                    <div class="track left-right delay-4">
+                <div class="gallery-text-content cell medium-4 large-3">
+                    <div class="scroll-track left-right delay-1">
                         <h3 class="heading h3 show-for-medium">UNDP Hope</h3>
 
                         <p class="medium-copy">
@@ -34,37 +34,43 @@ $imagePath = '/assets/images/placeholder'
                     </div>
                 </div>
 
-                <div class="cell medium-8 overflow-hidden scroll-track opacity-only delay-2">
+                <div class="cell medium-8 large-9 overflow-hidden">
                     <div class="gallery-images grid-x grid-margin-x">
-                        <div class="cell small-4">
+                        <div class="cell small-4 overflow-hidden">
                             <?php
                                 View::render('molecules/photo/photo-details-overlay', [
+                                    'classes' => 'scroll-track left-right delay-1',
                                     'image' => "$imagePath/cards/photo-cta-image03.png"
                                 ]);
 
                                 View::render('molecules/photo/photo-details-overlay', [
+                                    'classes' => 'scroll-track left-right delay-4',
                                     'image' => "$imagePath/cards/photo-cta-image01.png"
                                 ]);
                             ?>
                         </div>
-                        <div class="cell small-4">
+                        <div class="cell small-4 overflow-hidden">
                             <?php
                                 View::render('molecules/photo/photo-details-overlay', [
+                                    'classes' => 'scroll-track left-right delay-2',
                                     'image' => "$imagePath/galleries/gallery-parallax01@2x.jpg"
                                 ]);
 
                                 View::render('molecules/photo/photo-details-overlay', [
+                                    'classes' => 'scroll-track left-right delay-5',
                                     'image' => "$imagePath/galleries/gallery-parallax02@2x.jpg"
                                 ]);
                             ?>
                         </div>
-                        <div class="cell small-4">
+                        <div class="cell small-4 overflow-hidden">
                             <?php
                                 View::render('molecules/photo/photo-details-overlay', [
+                                    'classes' => 'scroll-track left-right delay-3',
                                     'image' => "$imagePath/galleries/gallery-parallax03@2x.jpg"
                                 ]);
 
                                 View::render('molecules/photo/photo-details-overlay', [
+                                    'classes' => 'scroll-track left-right delay-6',
                                     'image' => "$imagePath/galleries/gallery-parallax04@2x.jpg"
                                 ]);
                             ?>
