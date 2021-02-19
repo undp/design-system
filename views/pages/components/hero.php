@@ -10,7 +10,7 @@
 <main class="components-index">
     <?php
     View::render('organisms/hero/global-hero-1', [
-        'title' => 'The SDGs In ACTION.',
+        'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
         'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
         'imageUrl' => '/assets/images/placeholder/hero/global-hero-3.jpg',
         'imageMobileUrl' => '/assets/images/placeholder/hero/sdg-hero-mobile@2x.jpg'

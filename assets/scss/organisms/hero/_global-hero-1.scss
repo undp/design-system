@@ -1,6 +1,37 @@
 .global-hero-1 {
     @extend .about-hero;
 
+    .hero-content-text {
+        color: $black;
+        margin-top: 60px;
+        padding-bottom: 140px;
+
+        .title-text {
+            position: relative;
+            padding-bottom: 60px;
+            font-family: $secondary-font;
+
+            &:after {
+                content: '';
+                bottom: 0;
+                width: 95px;
+                height: 3px;
+                left: 0;
+                background: $red;
+                position: absolute;
+            }
+        }
+
+        .subtitle-text {
+            font-size: 3rem;
+            margin-top: 40px;
+            font-weight: $bold;
+        }
+
+        .cta-button {
+            margin-top: 140px;
+        }
+    }
 
     &:before {
         background: $white !important;

@@ -18,11 +18,6 @@ class ImageSize {
             const $imageMobile = $hero.data('mobile-image')
             const $imageDesktop = $hero.data('desktop-image')
 
-
-            console.log('$hero::', $hero)
-            console.log('$imageMobile::', $imageMobile)
-            console.log('$imageDesktop::', $imageDesktop)
-
             if (!($imageMobile && $imageDesktop)) return
 
 
