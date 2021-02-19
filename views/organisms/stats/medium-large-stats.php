@@ -8,9 +8,9 @@
             <h2 class="heading h2">Stats Header</h2>
         </div>
 
-        <div class="cell small-10 medium-8 medium-offset-1">
+        <div class="cell medium-8 medium-offset-1">
             <div class="grid-x">
-                <div class="cell medium-6">
+                <div class="cell medium-6 card-container">
                     <?php
                         View::render('molecules/statistics-figures/stat-card', [
                             'number' => 41,
@@ -22,7 +22,7 @@
                     ?>
                 </div>
 
-                <div class="cell medium-6">
+                <div class="cell medium-6 card-container">
                     <?php
                         View::render('molecules/statistics-figures/stat-card', [
                             'number' => 13,
