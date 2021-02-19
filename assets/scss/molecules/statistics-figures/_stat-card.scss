@@ -1,4 +1,4 @@
-.stat-card{
+.stat-card {
     height: 100%;
     position: relative;
     color: $dark-blue-1;
@@ -13,6 +13,35 @@
 
             @include breakpoint(medium only){
                 padding: 20px 20px 15px;
+            }
+        }
+    }
+
+    &.medium {
+        min-height: 658px;
+
+        .card-content{
+            padding: 111px 68px 113px;
+
+            @include breakpoint(medium only){
+                padding: 20px 20px 15px;
+            }
+
+            .description {
+                margin-top: 35px;
+                @extend .heading, .h5;
+            }
+
+            .number {
+                font-size: 5.5rem;
+                margin-top: 112px;
+            }
+
+            .title {
+                @extend .heading, .h3;
+
+                margin-top: 24px;
+                font-weight: $regular;
             }
         }
     }
