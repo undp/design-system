@@ -21,7 +21,7 @@ $sliderOptions = [
 ?>
 
 
-<section class="parallax-cards">
+<section class="parallax-stat-cards">
     <div class="grid-container grid-x overflow-hidden">
 
         <div class="cell small-10 small-offset-1">
@@ -35,7 +35,7 @@ $sliderOptions = [
                     <?php foreach($chunk as $card) : ?>
                         <div class="cell medium-4">
                             <?php
-                                View::render('molecules/stats/small-card', [
+                                View::render('molecules/statistics-figures/stat-card', [
                                     'title' => $card['title'],
                                     'number' => $card['number'],
                                     'description' => $card['description']
@@ -60,7 +60,7 @@ $sliderOptions = [
                         <?php foreach($cards as $card) : ?>
                             <li class="glide__slide">
                                 <?php
-                                    View::render('molecules/stats/small-card', [
+                                    View::render('molecules/statistics-figures/stat-card', [
                                         'title' => $card['title'],
                                         'number' => $card['number'],
                                         'description' => $card['description']
