@@ -1,4 +1,4 @@
-<section class="small-copy grid-container">
+<section class="small-copy-component grid-container">
     <div class="grid-x">
         <div class="cell small-offset-1 small-7 large-11 large-offset-1">
             <div class="heading h2 component-heading">Copy Lockup</div>
