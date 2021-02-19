@@ -1,5 +1,7 @@
+<?php $hasBackground = isset($hasBackground) ?  $hasBackground : false; ?>
 
-<div class="gallery-text-content with-background cell medium-6">
+
+<div class="gallery-text-content <?= $hasBackground ? 'with-background' : '' ?> cell medium-6">
     <div class="scroll-track left-right delay-1">
         <h3 class="heading h3 show-for-medium">UNDP Hope</h3>
 

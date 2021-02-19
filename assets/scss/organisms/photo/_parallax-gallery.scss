@@ -4,7 +4,7 @@
 
     .gs--parallax-container {
         @include breakpoint(small only) {
-            padding: 17px 30px;
+            padding: 30px 17px;
             background: $dark-blue-6;
         }
     }
@@ -49,6 +49,12 @@
                     margin-top: 5px;
                 }
             }
+        }
+    }
+
+    .gallery-text-content {
+        @include breakpoint(small only) {
+            padding: 0 14px;
         }
     }
 

@@ -5,7 +5,7 @@
     .gallery-images {
         @include breakpoint(small only) {
             margin-top: 50px;
-            padding: 16px 17px;
+            padding: 19px 17px 16px;
             background: $dark-blue-6;
         }
 

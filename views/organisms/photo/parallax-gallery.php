@@ -38,7 +38,7 @@
                         </div>
                         <div class="cell small-6 gs--parallax-column">
                             <img src="<?= "$imagePath/gallery-parallax03@2x.jpg" ?>" alt="">
-                            <img src="<?= "$imagePath/gallery-parallax04@2x.jpg" ?>" alt="">
+                            <img src="<?= "$imagePath/gallery-image-tall@2x.jpg" ?>" alt="">
                         </div>
                     </div>
                 </div>

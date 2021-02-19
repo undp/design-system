@@ -71,7 +71,7 @@ $imagePath = '/assets/images/placeholder'
 
                                 View::render('molecules/photo/photo-details-overlay', [
                                     'classes' => 'scroll-track left-right delay-6',
-                                    'image' => "$imagePath/galleries/gallery-parallax04@2x.jpg"
+                                    'image' => "$imagePath/galleries/gallery-image-tall@2x.jpg"
                                 ]);
                             ?>
                         </div>

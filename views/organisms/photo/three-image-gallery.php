@@ -4,7 +4,7 @@ $imagePath = '/assets/images/placeholder/galleries';
 ?>
 
 
-<section class="image-per-row-gallery">
+<section class="three-image-gallery">
     <div class="grid-container grid-x grid-margin-x">
 
         <div class="cell">
@@ -14,7 +14,7 @@ $imagePath = '/assets/images/placeholder/galleries';
                     <h3 class="heading h3">UNDP Hope</h3>
                 </div>
 
-                <?php View::render('molecules/photo/gallery-text-content'); ?>
+                <?php View::render('molecules/photo/gallery-text-content', ['hasBackground' => true]); ?>
 
                 <div class="cell medium-6 overflow-hidden">
                     <div class="gallery-images grid-x grid-margin-x">
