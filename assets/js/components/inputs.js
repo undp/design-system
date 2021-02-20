@@ -20,7 +20,7 @@ class Input {
                 input.focus();
             });
             input.focus(() => {
-                input.addClass(this.classActive);
+                // input.addClass(this.classActive);
                 label.removeClass(this.classHide);
                 $(inputGroup).addClass(this.classActive);
             });

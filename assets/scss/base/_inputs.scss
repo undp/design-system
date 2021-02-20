@@ -1,4 +1,5 @@
 .custom-input {
+    outline: none;
     max-height: 52px;
     display: flex;
     font-size: 1.4rem;
@@ -26,8 +27,8 @@
         }
     }
 
-    &.active {
-        border-color: $dark-blue-14;
+    &:focus, &:active, &.active {
+        border-color: $dark-blue-13;
     }
 
     &.error {
@@ -49,6 +50,10 @@
             cursor: not-allowed;
             background-color: transparent;
         }
+    }
+
+    &.full-width {
+        width: 100%;
     }
 
     input {
