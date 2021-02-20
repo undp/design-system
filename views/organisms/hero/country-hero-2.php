@@ -12,7 +12,7 @@ use helpers\Svg;
                     <?= $title ?? '' ?>
                 </div>
             </div>
-            <div class="cell large-3 large-offset-1">
+            <div class="cell large-3 large-offset-1 subtitle-block">
                 <div class="heading h3 header-title scroll-track left-right delay-1"><?= $subtitle ?? '' ?></div>
             </div>
         </div>
@@ -21,15 +21,22 @@ use helpers\Svg;
             <div class="cell large-2 image-item">
                 <img src="/assets/images/placeholder/hero/image-block-hero-1.jpg" alt="">
             </div>
+            <div class="cell large-3">
+                <img src="/assets/images/placeholder/hero/image-block-hero-2.jpg" alt="">
+            </div>
             <div class="cell large-2">
+                <img src="/assets/images/placeholder/hero/image-block-hero-3.jpg" alt="">
+            </div>
+            <div class="cell large-3">
+                <img src="/assets/images/placeholder/hero/image-block-hero-4.jpg" alt="">
+            </div>
+            <div class="cell large-2 cta-button">
                 <button class="btn">
                     Read More
                     <?php Svg::render('btn-arrow-blue', true, 'Explore', '/assets/images/arrows/') ?>
                 </button>
             </div>
         </div>
-
-
     </div>
     <div class="grid-container hero-container-mobile">
         <div class="article-image">
