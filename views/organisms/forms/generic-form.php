@@ -15,11 +15,11 @@
 
             <form action="" class="scroll-track left-right delay-1">
                 <div class="input-group" data-custom-input>
-                    <input class="input custom-input" type="text" placeholder="Name" data-input required>
+                    <input class="input custom-input" type="text" placeholder="Name" aria-label="Name" data-input required>
                 </div>
 
                 <div class="input-group" data-custom-input>
-                    <input class="input custom-input" type="text" placeholder="Email" data-input required>
+                    <input class="input custom-input" type="text" placeholder="Email" aria-label="Email" data-input required>
                 </div>
 
                 <button type="submit" class="btn">
