@@ -5,7 +5,7 @@
     <div class="overlay"></div>
     <div class="grid-container scroll-track left-right delay-1 hero-container">
         <div class="grid-x text-container">
-            <div class="cell small-12 large-9 large-offset-1 hero-content">
+            <div class="cell small-12 large-11 large-offset-1 hero-content">
                 <?php
                 View::render('partials/breadcrumb', [
                     'links' => [

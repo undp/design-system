@@ -41,6 +41,9 @@
                 <li>
                     <a href="/components/photo" class="animated-underline">Photo</a>
                 </li>
+                <li>
+                    <a href="/components/forms" class="animated-underline">Forms</a>
+                </li>
             </ul>
         </div>
     </section>
