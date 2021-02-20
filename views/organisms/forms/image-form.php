@@ -14,12 +14,12 @@
                     Enter your email address to get inspiring stories straight to your inbox.
                 </p>
 
-                <div class="input-group" data-custom-input>
-                    <input class="input custom-input" type="text" placeholder="Name" aria-label="Name" data-input required>
+                <div class="input-group">
+                    <input class="input custom-input" type="text" placeholder="Name" aria-label="Name" required>
                 </div>
 
-                <div class="input-group" data-custom-input>
-                    <input class="input custom-input" type="text" placeholder="Email" aria-label="Email" data-input required>
+                <div class="input-group">
+                    <input class="input custom-input" type="text" placeholder="Email" aria-label="Email" required>
                 </div>
 
                 <button type="submit" class="btn">
