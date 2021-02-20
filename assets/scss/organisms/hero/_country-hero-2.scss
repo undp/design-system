@@ -16,6 +16,13 @@
             padding-top: 190px;
             padding-left: 35px;
         }
+
+        .image-item {
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
     }
 
     .subtitle-block {

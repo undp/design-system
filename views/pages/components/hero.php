@@ -25,6 +25,14 @@
         'imageMobileUrl' => '/assets/images/placeholder/hero/about-image.jpg'
     ]);
     ?>
+    <div class="heading h3">Country Hero Option 1</div>
+    <?php View::render('organisms/hero/country-hero-1', [
+        'subtitle' => 'Re-imagining Life in a Post-pandemic World',
+        'title' => 'COUNTRY LEVEL HERO HEADLINE',
+        'description' => 'As we ‘come to our feet’ to respond to public health issues at the borders, key 
+                          messages on Covid-19 should be reinforced, border security enhanced…',
+        'imageUrl' => '../../../assets/images/placeholder/hero/country-hero-img.jpg'
+    ]) ?>
     <div class="heading h3">Country Hero Option 2</div>
     <?php View::render('organisms/hero/country-hero-2', [
         'subtitle' => 'Re-imagining Life in a Post-pandemic World',
