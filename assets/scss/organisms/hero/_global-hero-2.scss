@@ -1,0 +1,8 @@
+.global-hero-2 {
+    @extend .global-hero-3;
+
+    .title {
+        font-size: 11rem;
+        font-family: $secondary-font;
+    }
+}

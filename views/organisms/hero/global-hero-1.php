@@ -20,7 +20,7 @@ use helpers\View;
                     </button>
                 </div>
             </div>
-            <div class="cell large-6 hero" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>" >
+            <div class="cell large-6 hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>" >
 
             </div>
         </div>

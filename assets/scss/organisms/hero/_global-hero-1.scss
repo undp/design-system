@@ -33,6 +33,12 @@
         }
     }
 
+    .image-block {
+        right: -24px;
+        position: relative;
+        background-size: cover;
+    }
+
     &:before {
         background: $white !important;
     }
