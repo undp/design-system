@@ -1,6 +1,7 @@
 .custom-input {
-    max-height: 52px;
+    outline: none;
     display: flex;
+    max-height: 52px;
     font-size: 1.4rem;
     padding: 15px 25px;
     align-items: center;
@@ -15,7 +16,7 @@
             border-color: $dark-blue-4;
         }
 
-        &.disabled {
+        &:disabled, .disabled {
             cursor: not-allowed;
             color: $dark-blue-15;
             border-color: $dark-blue-2;
@@ -26,29 +27,29 @@
         }
     }
 
-    &.active {
-        border-color: $dark-blue-14;
+    &:focus, &:focus-within {
+        border-color: $dark-blue-13;
     }
 
     &.error {
         color: $red-1;
+        caret-color: $red-1;
         border-color: $red-1;
 
-        input {
-            color: $red-1;
-            caret-color: $red-1;
+        &::placeholder {
+            color: inherit;
         }
     }
 
-    &.disabled {
-        cursor: not-allowed;
+    &:disabled, &.disabled {
         color: $dark-blue-4;
+        cursor: not-allowed;
         border-color: $dark-blue-4;
+        background-color: transparent;
+    }
 
-        input {
-            cursor: not-allowed;
-            background-color: transparent;
-        }
+    &.full-width {
+        width: 100%;
     }
 
     input {
