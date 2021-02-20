@@ -2,7 +2,15 @@
     @extend .global-hero-3;
 
     .title {
-        font-size: 11rem;
+        max-width: 100% !important;
+        font-weight: $bold;
+        padding-bottom: 0 !important;
         font-family: $secondary-font;
+    }
+
+    .subtitle {
+        font-size: 3rem;
+        margin-top: 45px;
+        font-weight: $bold;
     }
 }

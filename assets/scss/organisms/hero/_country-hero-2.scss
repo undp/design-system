@@ -1,0 +1,15 @@
+.country-hero-2 {
+    @extend .country-hero-3;
+
+    .text-block {
+        .title {
+            margin-top: 0 !important;
+        }
+    }
+
+    .images-block {
+        padding: 20px 0;
+        margin-top: 96px;
+        background: $dark-blue-6;
+    }
+}

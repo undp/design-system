@@ -14,9 +14,8 @@ use helpers\View;
                     'classes' => 'accent-white'
                 ]) ?>
                 <div class="title scroll-track left-right delay-1"><?= $title ?? '' ?></div>
-                <div class="cta-arrow show-for-medium">
-                    <?php Svg::render('hero-arrow-down', true, 'Scroll Down', 'assets/images/arrows/') ?>
-                </div>
+                <div class="subtitle scroll-track left-right delay-1">Re-imagining Life in a</br>
+                    Post-pandemic World</div>
             </div>
         </div>
     </div>
