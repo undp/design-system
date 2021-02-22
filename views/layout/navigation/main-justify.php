@@ -29,8 +29,9 @@ use helpers\View;
                                 <?php Svg::render('undp-logo', false, 'UNDP Logo') ?>
                             </a>
                         </li>
-                        <li class="logo-text">
+                        <li class="logo-text" data-tooltip>
                             <a href="#" class="nav-item dark" aria-expanded="false" aria-haspopup="true"><?= $country ?? '' ?></a>
+                            <span class="tooltip"><?= $country ?? '' ?></span>
                         </li>
                         <li class="show-for-xlarge">
                             <button class="nav-item dark" data-modal-nav="modal-nav-who-we-are"
