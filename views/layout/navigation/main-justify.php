@@ -3,6 +3,9 @@
 use helpers\Svg;
 use helpers\View;
 
+$logoTextSize = '';
+if (strlen($country) > 40) $logoTextSize = 'small';
+else if (strlen($country) > 20) $logoTextSize = 'medium';
 ?>
 
 <!--special tags to get extenal SVG from JS-->
@@ -29,7 +32,7 @@ use helpers\View;
                                 <?php Svg::render('undp-logo', false, 'UNDP Logo') ?>
                             </a>
                         </li>
-                        <li class="logo-text" data-tooltip>
+                        <li class="logo-text <?= $logoTextSize ?>" data-tooltip>
                             <a href="#" class="nav-item dark" aria-expanded="false" aria-haspopup="true"><?= $country ?? '' ?></a>
                             <span class="tooltip"><?= $country ?? '' ?></span>
                         </li>
