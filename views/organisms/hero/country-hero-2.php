@@ -21,13 +21,13 @@ use helpers\Svg;
             <div class="cell large-2 image-item">
                 <img src="/assets/images/placeholder/hero/image-block-hero-1.jpg" alt="">
             </div>
-            <div class="cell large-3">
+            <div class="cell large-3 image-item">
                 <img src="/assets/images/placeholder/hero/image-block-hero-2.jpg" alt="">
             </div>
-            <div class="cell large-2">
+            <div class="cell large-2 image-item">
                 <img src="/assets/images/placeholder/hero/image-block-hero-3.jpg" alt="">
             </div>
-            <div class="cell large-3">
+            <div class="cell large-3 image-item">
                 <img src="/assets/images/placeholder/hero/image-block-hero-4.jpg" alt="">
             </div>
             <div class="cell large-2 cta-button">

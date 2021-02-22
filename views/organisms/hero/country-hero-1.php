@@ -16,7 +16,6 @@ use helpers\Svg;
                 <div class="heading h3 header-title scroll-track left-right delay-1"><?= $subtitle ?? '' ?></div>
             </div>
         </div>
-
         <div class="grid-x grid-margin-x images-block">
             <div class="cell large-2 image-item">
                 <img src="/assets/images/placeholder/hero/image-block-hero-1.jpg" alt="">
@@ -33,7 +32,6 @@ use helpers\Svg;
             <div class="cell large-3 image-item">
                 <img src="/assets/images/placeholder/hero/image-block-hero-5.jpg" alt="">
             </div>
-
         </div>
     </div>
     <div class="grid-container hero-container-mobile">
