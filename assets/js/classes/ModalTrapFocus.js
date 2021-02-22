@@ -1,5 +1,3 @@
-import { MediaQuery } from 'foundation-sites'
-
 class ModalTrapFocus {
     constructor(element) {
         this.modal = element;
@@ -61,13 +59,17 @@ class ModalTrapFocus {
     }
 
     bindEvents() {
-        if(this.html.dataset.whatinput === 'keyboard') {
+        if(this.html.dataset.whatinput === 'keyboard'
+            && this.html.dataset.whatintent === 'keyboard') {
+
             this.addListener();
             this.modalElementsChangedObserver();
         } else {
+
             if(this.mutationObserverObject !== null) {
                 this.mutationObserverObject.disconnect()
             }
+
             this.modal.removeEventListener('keydown', this.handleTrapFocus);
             this.modal.removeEventListener('keyup', this.saveCurrentFocus)
         }
@@ -87,7 +89,7 @@ class ModalTrapFocus {
     }
 
     modalElementsChangedObserver() {
-        // Re run listener for new DOM elements added dynamically
+        // Re run listener for new DOM elements added/removed/disabled dynamically
         this.mutationObserverObject = new MutationObserver((mutationsList) => {
             let recreateFocusableElements = false;
             // Use traditional 'for loops' for IE 11
@@ -101,6 +103,14 @@ class ModalTrapFocus {
 
             if(recreateFocusableElements) {
                 this.addListener();
+            } else {
+                // Check if first and last focusable elements are still visible
+                let computedStyle = window.getComputedStyle(this.lastFocusableElement);
+                let isParentHidden = this.isParentHidden(this.lastFocusableElement)
+
+                if(computedStyle.display === 'none' || isParentHidden) {
+                    this.getFirstAndLastFocusables()
+                }
             }
         });
 
@@ -133,8 +143,10 @@ class ModalTrapFocus {
         for(let i = 0; i < focusablesArray.length; i++) {
             let element = focusablesArray[i];
             let computedStyle = window.getComputedStyle(element);
+            let isParentHidden = this.isParentHidden(element);
 
-            if(computedStyle.display === 'none' || element.disabled === true) {
+            if(computedStyle.display === 'none' || computedStyle.visibility === 'hidden'
+                || element.disabled === true || isParentHidden) {
                 continue;
             }
 
@@ -145,8 +157,10 @@ class ModalTrapFocus {
         for(let i = focusablesArray.length-1; i >= 0; i--) {
             let element = focusablesArray[i];
             let computedStyle = window.getComputedStyle(element);
+            let isParentHidden = this.isParentHidden(element);
 
-            if(computedStyle.display === 'none' || element.disabled === true) {
+            if(computedStyle.display === 'none' || computedStyle.visibility === 'hidden'
+                || element.disabled === true  || isParentHidden) {
                 continue;
             }
 
@@ -155,6 +169,23 @@ class ModalTrapFocus {
         }
 
         this.focusableContent = focusablesArray;
+    }
+
+    isParentHidden(element) {
+        let $parentsUntilModal = $(element).parentsUntil(this.modal)
+        let parentHidden = false;
+
+        $parentsUntilModal.each((i, parent) => {
+            if(!parentHidden) {
+                let parentComputedStyle = window.getComputedStyle(parent);
+
+                if(parentComputedStyle.display === 'none') {
+                    parentHidden = true
+                }
+            }
+        })
+
+        return parentHidden
     }
 
     findCloseButton() {
