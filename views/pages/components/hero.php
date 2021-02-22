@@ -57,6 +57,15 @@
         'imageUrl' => '/assets/images/placeholder/hero/country-hero-4-image.jpg',
         'imageMobileUrl' => '/assets/images/placeholder/hero/country-hero-4-image.jpg'
     ]);?>
+    <div class="heading h3">Country Hero Option 5</div>
+    <?php
+    View::render('organisms/hero/country-hero-5', [
+        'title' => 'We’re changing the world. Here’s how to help.',
+        'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
+        'imageUrl' => '/assets/images/placeholder/hero/country-hero-5-img.jpg',
+        'imageMobileUrl' => '/assets/images/placeholder/hero/country-hero-5-mobile.jpg'
+    ]);
+    ?>
 
 </main>
 
