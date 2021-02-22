@@ -54,8 +54,8 @@
     View::render('organisms/hero/country-hero-4', [
         'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
         'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
-        'imageUrl' => '/assets/images/placeholder/hero/global-hero-01-img.jpg',
-        'imageMobileUrl' => '/assets/images/placeholder/hero/global-hero-01-img.jpg'
+        'imageUrl' => '/assets/images/placeholder/hero/country-hero-4-image.jpg',
+        'imageMobileUrl' => '/assets/images/placeholder/hero/country-hero-4-image.jpg'
     ]);?>
 
 </main>

@@ -1,3 +1,25 @@
 .country-hero-4 {
     @extend .global-hero-1;
+
+    .image-block {
+        min-height: 680px;
+
+        .cta-button {
+            right: 70px;
+            bottom: 65px;
+            position: absolute;
+
+            @include breakpoint(small only) {
+                left: 0;
+                width: 100%;
+                padding: 0 30px;
+            }
+
+            .btn {
+                @include breakpoint(small only) {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
