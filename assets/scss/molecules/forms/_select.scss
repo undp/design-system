@@ -86,15 +86,18 @@
                 background: rgba($black, 0.10);
             }
 
-            &:hover {
-                background-color: $dark-blue-5;
+            // Don't trigger hover on tap on iOS
+            @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                &:hover {
+                    background-color: $dark-blue-5;
 
-                &::after {
-                    display: none;
-                }
+                    &::after {
+                        display: none;
+                    }
 
-                + .option:after {
-                    display: none;
+                    + .option:after {
+                        display: none;
+                    }
                 }
             }
 
