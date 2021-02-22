@@ -1,6 +1,8 @@
 .featured-callout {
+    opacity: 0;
     padding: 400px 0;
     z-index: $z-index-1;
+    transition: all 100ms ease;
 
     @include breakpoint(small only){
         padding: 150px 0 175px;
@@ -30,5 +32,9 @@
         li {
             margin-top: 40px;
         }
+    }
+
+    &.bg-color-transitioning, .bg-color-transitioning & {
+        opacity: 1;
     }
 }
