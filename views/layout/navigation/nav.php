@@ -19,7 +19,7 @@ use helpers\View;
 <section class="header" data-navigation>
     <div class="grid-container">
         <nav class="grid-x">
-            <div class="cell flex-container align-justify align-middle custom-cell">
+            <div class="cell nav-wrapper">
                 <div class="menu-mobile hide-for-xlarge">
                     <a class="menu-hamburger" data-hamburger>
                         <span class="hamburger-line line-top"></span>

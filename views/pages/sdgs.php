@@ -7,7 +7,7 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/nav') ?>
 
 <div class="the-sdgs">
     <!--Global hero 3-->

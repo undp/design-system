@@ -8,7 +8,7 @@ $imgPath = '/assets/images/placeholder/leadership';
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/nav') ?>
 
 <main class="components-index">
     <?php

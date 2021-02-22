@@ -17,7 +17,7 @@ use helpers\View;
 </span>
 
 <!-- Navigation -->
-<?php View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/nav') ?>
 
 <main>
     <?php View::render('organisms/hero/homepage-hero') ?>

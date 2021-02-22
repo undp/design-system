@@ -7,7 +7,7 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/nav') ?>
 
 <div class="news-centre">
     <!--Global hero 3-->

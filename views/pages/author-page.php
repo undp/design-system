@@ -12,7 +12,7 @@ $imgPath = '/assets/images/placeholder/author-page'
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/nav') ?>
 
 
 <div class="author-page">

@@ -1,5 +1,4 @@
 <?php
-
 use helpers\Svg;
 use helpers\View;
 
@@ -12,20 +11,19 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
 <span class="hide" data-arrow-external>
     <?php Svg::render('btn-arrow-external', false, 'External link', 'assets/images/arrows/') ?>
 </span>
-
 <span class="hide" data-arrow-right>
     <?php Svg::render('btn-arrow-red', false, 'Arrow right', 'assets/images/arrows/') ?>
 </span>
-
 <span class="hide" data-arrow-red-secondary>
     <?php Svg::render('btn-arrow-red-secondary', false, 'Arrow right', 'assets/images/arrows/') ?>
 </span>
 
-<section class="header menu-justify" data-navigation>
-    <div class="grid-container full">
+<section class="header nav-country-container" data-navigation>
+    <?php // Country Nav ?>
+    <div class="grid-container full nav-country">
         <nav class="grid-x">
-            <div class="cell flex-container align-justify align-middle custom-cell">
-                <div class="flex-container align-middle menu-cell-left" data-menu-desktop data-no-animation="true">
+            <div class="cell nav-wrapper">
+                <div class="flex-container align-middle menu-cell-left" data-menu-desktop data-no-modal-popup-animation="true">
                     <ul class="flex-container align-middle align-justify menu-items">
                         <li>
                             <a href="/" class="middle-logo" data-middle-logo aria-label="UNDP Logo">
@@ -93,7 +91,8 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
                             <span class="show-for-sr">Open/close Search</span>
                         </a>
                     </div>
-                    <?php // mobile ?>
+
+                    <?php // Mobile Hamburger ?>
                     <div class="menu-mobile hide-for-xlarge">
                         <a class="menu-hamburger" data-hamburger>
                             <span class="hamburger-line line-top"></span>
@@ -105,6 +104,8 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
             </div>
         </nav>
     </div>
+
+    <?php // Mobile Menu ?>
     <div class="primary-navigation" data-primary-navigation>
         <div class="hide hide-for-xlarge" data-menu-main-options>
             <?php View::render('layout/navigation/menu/mobile/main') ?>
@@ -112,6 +113,44 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
         <?php View::render('layout/navigation/menu/mobile/submenus/main') ?>
     </div>
 
+    <?php // Temp Global Nav for animation ?>
+    <div class="grid-container dummy-global-menu">
+        <nav class="grid-x">
+            <div class="cell nav-wrapper">
+                <div class="dropdown show-for-xlarge" data-dropdown-languajes>
+                    <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>
+                        <?php Svg::render('icon-languages') ?>
+                        English
+                        <?php Svg::render('icon-arrow-down') ?>
+                    </button>
+                    <ul class="dropdown-content hide" ></ul>
+                </div>
+                <div class="menu-desktop" data-menu-desktop>
+                    <ul class="flex-container align-middle middle-menu">
+                        <li class="show-for-xlarge"><button class="nav-item dark">Who we are</button></li>
+                        <li class="show-for-xlarge"><button class="nav-item dark">What we do</button></li>
+                        <li class="align-self-top">
+
+                        </li>
+                        <li class="show-for-xlarge"><button class="nav-item dark">Our impact</button></li>
+                        <li class="show-for-xlarge"><button class="nav-item dark">Get Involved</button></li>
+                    </ul>
+                </div>
+                <div class="flex-container align-middle logo right-menu">
+                    <a class="nav-item dark show-for-xlarge" href="#">
+                        <span data-icon>
+                            <?php Svg::render('icon-www')?>
+                        </span>
+                    </a>
+                    <a class="nav-item dark icon-search">
+                        <span data-icon>
+                            <?php Svg::render('icon-search')?>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
 </section>
 <?php View::render('layout/navigation/menu/main') ?>
 <?php View::render('layout/navigation/modals/search') ?>
