@@ -6,11 +6,33 @@
         font-weight: $bold;
         padding-bottom: 0 !important;
         font-family: $secondary-font;
+
+        @include breakpoint(small only) {
+            margin-top: 0 !important;
+        }
     }
 
     .subtitle {
         font-size: 3rem;
         margin-top: 45px;
         font-weight: $bold;
+    }
+
+    .cta-button {
+        right: 50px;
+        bottom: 50px;
+        position: absolute;
+
+        @include breakpoint(small only) {
+            right: 0;
+            width: 100%;
+            padding: 0 40px;
+        }
+
+        .btn {
+            @include breakpoint(small only) {
+                width: 100%;
+            }
+        }
     }
 }

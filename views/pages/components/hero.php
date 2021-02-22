@@ -13,8 +13,8 @@
     View::render('organisms/hero/global-hero-1', [
         'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
         'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
-        'imageUrl' => '/assets/images/placeholder/hero/global-hero-3.jpg',
-        'imageMobileUrl' => '/assets/images/placeholder/hero/sdg-hero-mobile@2x.jpg'
+        'imageUrl' => '/assets/images/placeholder/hero/global-hero-01-img.jpg',
+        'imageMobileUrl' => '/assets/images/placeholder/hero/global-hero-01-img.jpg'
     ]);?>
     <div class="heading h3">Hero Option 2</div>
     <?php
@@ -22,7 +22,7 @@
         'title' => 'Global Level Hero',
         'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
         'imageUrl' => '/assets/images/placeholder/hero/hero-2-image.png',
-        'imageMobileUrl' => '/assets/images/placeholder/hero/about-image.jpg'
+        'imageMobileUrl' => '/assets/images/placeholder/hero/global-hero-2-mobile.jpg'
     ]);
     ?>
     <div class="heading h3">Country Hero Option 1</div>
@@ -49,6 +49,14 @@
                           messages on Covid-19 should be reinforced, border security enhanced…',
         'imageUrl' => '../../../assets/images/placeholder/hero/country-hero-img.jpg'
     ]) ?>
+    <div class="heading h3">Country Hero Option 4</div>
+    <?php
+    View::render('organisms/hero/country-hero-4', [
+        'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
+        'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
+        'imageUrl' => '/assets/images/placeholder/hero/global-hero-01-img.jpg',
+        'imageMobileUrl' => '/assets/images/placeholder/hero/global-hero-01-img.jpg'
+    ]);?>
 
 </main>
 

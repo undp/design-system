@@ -17,19 +17,19 @@ use helpers\Svg;
             </div>
         </div>
         <div class="grid-x grid-margin-x images-block">
-            <div class="cell large-2 image-item">
+            <div class="cell large-2 small-3 image-item">
                 <img src="/assets/images/placeholder/hero/image-block-hero-1.jpg" alt="">
             </div>
-            <div class="cell large-3 image-item">
+            <div class="cell large-3 small-3 image-item">
                 <img src="/assets/images/placeholder/hero/image-block-hero-2.jpg" alt="">
             </div>
-            <div class="cell large-2 image-item">
+            <div class="cell large-2 small-3 image-item">
                 <img src="/assets/images/placeholder/hero/image-block-hero-3.jpg" alt="">
             </div>
-            <div class="cell large-2 image-item">
+            <div class="cell large-2 small-3 image-item">
                 <img src="/assets/images/placeholder/hero/image-block-hero-4.jpg" alt="">
             </div>
-            <div class="cell large-3 image-item">
+            <div class="cell large-3 small-3 image-item">
                 <img src="/assets/images/placeholder/hero/image-block-hero-5.jpg" alt="">
             </div>
         </div>

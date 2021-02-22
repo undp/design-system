@@ -1,11 +1,8 @@
 <?php
-
 use helpers\Svg;
-use helpers\View;
-
 ?>
 
-<section class="hero global-hero-1">
+<section class="hero country-hero-4">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell large-5 large-offset-1 hero-content-text">

@@ -1,10 +1,20 @@
 .global-hero-1 {
     @extend .about-hero;
 
+    @include breakpoint(medium down) {
+        height: 100% !important;
+        max-height: 100% !important; //override the about hero height on mobile
+    }
+
     .hero-content-text {
         color: $black;
         margin-top: 60px;
         padding-bottom: 140px;
+
+        @include breakpoint(medium down) {
+            padding-bottom: 40px;
+        }
+
 
         .title-text {
             position: relative;
@@ -30,6 +40,10 @@
 
         .cta-button {
             margin-top: 140px;
+
+            @include breakpoint(small only) {
+                display: none;
+            }
         }
     }
 
@@ -37,6 +51,34 @@
         right: -24px;
         position: relative;
         background-size: cover;
+
+        @include breakpoint(medium down) {
+            right: 0;
+            min-height: 800px;
+        }
+
+        @include breakpoint(small only) {
+            min-height: 500px;
+        }
+
+        .cta-button {
+            &.mobile {
+                display: none;
+
+                @include breakpoint(small only) {
+                    width: 100%;
+                    bottom: 25px;
+                    display: block;
+                    padding: 0 30px;
+                    position: absolute;
+                }
+
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+
     }
 
     &:before {
