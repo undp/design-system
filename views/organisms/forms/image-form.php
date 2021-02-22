@@ -1,6 +1,6 @@
 
-<section class="image-form">
-    <div class="grid-container grid-x grid-margin-x">
+<section class="image-form grid-container">
+    <div class="grid-x grid-margin-x">
 
         <div class="cell medium-5 overflow-hidden">
             <img src="/assets/images/placeholder/form-image.png" class="scroll-track left-right delay-1" alt="">
@@ -26,7 +26,7 @@
                     Submit
                 </button>
             </form>
-
         </div>
+
     </div>
 </section>
