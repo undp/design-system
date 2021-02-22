@@ -13,7 +13,7 @@
             <?php $delay = 1 ?>
             <?php foreach ($slides as $i => $slide) : ?>
                 <li class="glide__slide sdg-card-container right-left delay-<?= $delay ?>">
-                    <?php View::render('molecules/stats/small-card', [
+                    <?php View::render('molecules/statistics-figures/stat-card', [
                         'number' => $slide['number'],
                         'title' => $slide['title'],
                         'description' => $slide['description']

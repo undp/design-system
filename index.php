@@ -58,12 +58,6 @@ switch ($subpath) {
     case '/single-publication-3':
         View::render('pages/single-publication-3');
         break;
-    case '/documentation':
-        View::render('pages/docs');
-        break;
-    case '/styleguide':
-        View::render('pages/styleguide');
-        break;
     case '/components':
         View::render('pages/components-index');
         break;
@@ -75,6 +69,12 @@ switch ($subpath) {
         break;
     case '/components/text':
         View::render('pages/components/text');
+        break;
+    case '/components/stats':
+        View::render('pages/components/stats');
+        break;
+    case '/components/forms':
+        View::render('pages/components/forms');
         break;
     default:
         View::render('pages/home');

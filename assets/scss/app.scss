@@ -1,10 +1,6 @@
 // Vendor
 @import "vendor/foundation/foundation";
 @import "~@glidejs/glide/src/assets/sass/glide.core";
-@import "~tiny-slider/src/tiny-slider";
-@import "~prismjs/themes/prism-okaidia.css";
-@import "~prismjs/plugins/toolbar/prism-toolbar.css";
-@import "~prismjs/plugins/line-numbers/prism-line-numbers.css";
 
 // Common
 @import 'base/variables';
@@ -102,7 +98,8 @@
 @import "organisms/photo/image-per-row-gallery";
 @import "organisms/photo/three-image-gallery";
 @import "organisms/carousel/publications";
-@import "organisms/carousel/parallax-cards";
+@import "organisms/stats/parallax-stat-cards";
+@import "organisms/stats/medium-large-stats";
 @import "organisms/carousel/small-stats-slider";
 @import "organisms/homepage/our-mission";
 @import "organisms/homepage/our-expertise";
@@ -115,18 +112,19 @@
 @import "organisms/modals/leader-modal";
 @import "organisms/modals/modal-publication-download";
 @import "organisms/stats/listed-stats";
+@import "organisms/forms/generic-form";
+@import "organisms/forms/large-form";
+@import "organisms/forms/image-form";
 
 @import "organisms/homepage/trusted-partnerships";
 @import "organisms/article-deepdive/article-authors";
 @import "organisms/article-deepdive/article-headings";
 
 // Pages
-@import "pages/docs";
 @import "pages/the-sdgs";
 @import "pages/article-deepdive";
 @import "pages/author-page";
 @import "pages/standard-page";
-@import "pages/styleguide";
 @import "pages/single-publication";
 @import "pages/project-page";
 @import "pages/components-index";

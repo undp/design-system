@@ -1,4 +1,4 @@
-.stat-card{
+.stat-card {
     height: 100%;
     position: relative;
     color: $dark-blue-1;
@@ -13,6 +13,115 @@
 
             @include breakpoint(medium only){
                 padding: 20px 20px 15px;
+            }
+        }
+    }
+
+    &.medium {
+        min-height: 658px;
+
+        @include breakpoint(small only){
+            min-height: 609px;
+        }
+
+        .card-content{
+            padding: 111px 68px 113px;
+
+            @include breakpoint(small only){
+                padding: 60px 30px;
+            }
+
+            .description {
+                margin-top: 35px;
+                @extend .heading, .h5;
+
+                @include breakpoint(small only){
+                    margin-top: 26px;
+                    line-height: 2.6rem;
+                }
+            }
+
+            .heading.h3 {
+                @include breakpoint(small only){
+                    font-size: 4rem;
+                    font-weight: $bold;
+                }
+            }
+
+            .number {
+                font-size: 5.5rem;
+                margin-top: 112px;
+
+                @include breakpoint(small only){
+                    font-size: 4.5rem;
+                    margin-top: 126px;
+                }
+            }
+
+            .title {
+                @extend .heading, .h3;
+
+                margin-top: 24px;
+                font-weight: $regular;
+
+                @include breakpoint(small only){
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    &.large {
+        min-height: 658px;
+
+        @include breakpoint(small only){
+            min-height: 356px;
+        }
+
+        .card-content{
+            padding: 90px 112px;
+
+            @include breakpoint(small only){
+                padding: 32px 30px 42px;
+            }
+
+            .description {
+                margin-top: 24px;
+                @extend .heading, .h5;
+
+                @include breakpoint(small only){
+                    margin-top: 20px;
+                    font-size: 1.6rem;
+                    line-height: 2.2rem;
+                }
+            }
+
+            .heading.h2 {
+                @include breakpoint(small only){
+                    font-size: 3rem;
+                    font-weight: $semi-bold;
+                }
+            }
+
+            .number {
+                font-size: 6rem;
+                margin-top: 100px;
+
+                @include breakpoint(small only){
+                    margin-top: 21px;
+                    font-size: 4.5rem;
+                }
+            }
+
+            .title {
+                margin-top: 30px;
+                @extend .heading, .h3;
+
+                @include breakpoint(small only){
+                    font-size: 2rem;
+                    margin-top: 15px;
+                    font-weight: $regular;
+                }
             }
         }
     }
@@ -44,17 +153,19 @@
         }
     }
 
-    &:hover{
-        @include accent-color-background();
+    &:hover {
+        @include accent-color-background-2();
         @include sgd-colors('background-color');
 
-        .card-content .number{
-            text-shadow: none;
-            color: $dark-blue-1;
-            -webkit-text-stroke: unset;
+        .card-content {
+            .number {
+                text-shadow: none;
+                color: $dark-blue-1;
+                -webkit-text-stroke: unset;
+            }
         }
 
-        &.sdg{
+        &.sdg {
             color: $white;
 
             .card-content .number{
