@@ -22,7 +22,7 @@ use helpers\View;
             <div class="cta-button">
                 <button class="btn">
                     <span>Read More</span>
-                    <?php Svg::render('btn-arrow-blue', true, 'Explore', '/assets/images/arrows/') ?>
+                    <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
                 </button>
             </div>
         </div>

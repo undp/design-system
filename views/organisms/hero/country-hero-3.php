@@ -25,8 +25,8 @@ use helpers\Svg;
                             <?= $description ?? '' ?>
                         </div>
                         <button class="btn">
-                            Read
-                            <?php Svg::render('btn-arrow-blue', true, 'Explore', 'assets/images/arrows/')?>
+                            Read More
+                            <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
                         </button>
                     </div>
                     <div class="cell large-9 article-image">

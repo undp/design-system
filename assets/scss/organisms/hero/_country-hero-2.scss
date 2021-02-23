@@ -38,6 +38,14 @@
     .text-block {
         .title {
             margin-top: 0 !important;
+            @include breakpoint(medium only) {
+                font-size: 5.5rem !important;
+                padding-bottom: 50px;
+            }
+
+            @include breakpoint(small only) {
+                padding-bottom: 30px;
+            }
         }
     }
 
@@ -130,6 +138,17 @@
     .subtitle-block {
         position: relative;
 
+        .header-title {
+            @include breakpoint(medium down) {
+                font-size: 2.5rem;
+                padding-top: 50px;
+            }
+
+            @include breakpoint(small only) {
+                padding-top: 26px;
+            }
+        }
+
         &:before {
             content: '';
             width: 2px;
@@ -137,6 +156,13 @@
             height: 100%;
             background: $red;
             position: absolute;
+
+            @include breakpoint(medium down) {
+                top: 0;
+                left: 0;
+                width: 95px;
+                height: 2px;
+            }
         }
     }
 }

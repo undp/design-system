@@ -1,10 +1,3 @@
-<?php
-
-use helpers\Svg;
-use helpers\View;
-
-?>
-
 <section class="hero global-hero-1">
     <div class="grid-container">
         <div class="grid-x">
@@ -16,7 +9,7 @@ use helpers\View;
                 <div class="cta-button">
                     <button class="btn">
                         <span>Explore</span>
-                        <?php Svg::render('btn-arrow-blue', true, 'Explore', '/assets/images/arrows/')?>
+                        <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
                     </button>
                 </div>
             </div>
@@ -24,7 +17,7 @@ use helpers\View;
                 <div class="cta-button mobile">
                     <button class="btn">
                         <span>Explore</span>
-                        <?php Svg::render('btn-arrow-blue', true, 'Explore', '/assets/images/arrows/')?>
+                        <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
                     </button>
                 </div>
             </div>

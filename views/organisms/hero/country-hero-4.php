@@ -1,7 +1,3 @@
-<?php
-use helpers\Svg;
-?>
-
 <section class="hero country-hero-4">
     <div class="grid-container">
         <div class="grid-x">
@@ -11,10 +7,11 @@ use helpers\Svg;
                     Post-pandemic World</div>
             </div>
             <div class="cell large-6 hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>" >
+                <div class="gradient"></div>
                 <div class="cta-button">
                     <button class="btn">
                         <span>Read More</span>
-                        <?php Svg::render('btn-arrow-blue', true, 'Explore', '/assets/images/arrows/')?>
+                        <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
                     </button>
                 </div>
             </div>

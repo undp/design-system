@@ -1,0 +1,9 @@
+.country-hero-1 {
+    @extend .country-hero-2;
+
+    .hero-container {
+        .images-block {
+            background: $white;
+        }
+    }
+}

@@ -8,7 +8,9 @@
 <?php View::render('layout/navigation/main') ?>
 
 <main class="components-index">
-    <div class="heading h3">Hero Option 1</div>
+    <div class="grid-container">
+        <div class="heading h2 component-title">Global Hero Option 1</div>
+    </div>
     <?php
     View::render('organisms/hero/global-hero-1', [
         'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
@@ -16,7 +18,9 @@
         'imageUrl' => '/assets/images/placeholder/hero/global-hero-01-img.jpg',
         'imageMobileUrl' => '/assets/images/placeholder/hero/global-hero-01-img.jpg'
     ]);?>
-    <div class="heading h3">Hero Option 2</div>
+    <div class="grid-container">
+        <div class="heading h2 component-title">Global Hero Option 2</div>
+    </div>
     <?php
     View::render('organisms/hero/global-hero-2', [
         'title' => 'Global Level Hero',
@@ -25,7 +29,10 @@
         'imageMobileUrl' => '/assets/images/placeholder/hero/global-hero-2-mobile.jpg'
     ]);
     ?>
-    <div class="heading h3">Country Hero Option 1</div>
+    <div class="grid-container">
+        <div class="heading h2 component-title">Country Hero Option 1</div>
+    </div>
+
     <?php View::render('organisms/hero/country-hero-1', [
         'subtitle' => 'Re-imagining Life in a Post-pandemic World',
         'title' => 'COUNTRY LEVEL HERO HEADLINE',
@@ -33,7 +40,9 @@
                           messages on Covid-19 should be reinforced, border security enhanced…',
         'imageUrl' => '../../../assets/images/placeholder/hero/country-hero-img.jpg'
     ]) ?>
-    <div class="heading h3">Country Hero Option 2</div>
+    <div class="grid-container">
+        <div class="heading h2 component-title">Country Hero Option 2</div>
+    </div>
     <?php View::render('organisms/hero/country-hero-2', [
         'subtitle' => 'Re-imagining Life in a Post-pandemic World',
         'title' => 'COUNTRY LEVEL HERO HEADLINE',
@@ -41,7 +50,9 @@
                           messages on Covid-19 should be reinforced, border security enhanced…',
         'imageUrl' => '../../../assets/images/placeholder/hero/country-hero-img.jpg'
     ]) ?>
-    <div class="heading h3">Country Hero Option 3</div>
+    <div class="grid-container">
+        <div class="heading h2 component-title">Country Hero Option 3</div>
+    </div>
     <?php View::render('organisms/hero/country-hero-3', [
         'subtitle' => 'Sierra Leone',
         'title' => 'Sierra Leone Youth Minister Launches 2020 Social Good Summit',
@@ -49,7 +60,9 @@
                           messages on Covid-19 should be reinforced, border security enhanced…',
         'imageUrl' => '../../../assets/images/placeholder/hero/country-hero-img.jpg'
     ]) ?>
-    <div class="heading h3">Country Hero Option 4</div>
+    <div class="grid-container">
+        <div class="heading h2 component-title">Country Hero Option 4</div>
+    </div>
     <?php
     View::render('organisms/hero/country-hero-4', [
         'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
@@ -57,7 +70,9 @@
         'imageUrl' => '/assets/images/placeholder/hero/country-hero-4-image.jpg',
         'imageMobileUrl' => '/assets/images/placeholder/hero/country-hero-4-image.jpg'
     ]);?>
-    <div class="heading h3">Country Hero Option 5</div>
+    <div class="grid-container">
+        <div class="heading h2 component-title">Country Hero Option 5</div>
+    </div>
     <?php
     View::render('organisms/hero/country-hero-5', [
         'title' => 'We’re changing the world. Here’s how to help.',
