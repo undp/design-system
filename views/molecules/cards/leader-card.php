@@ -5,8 +5,8 @@ $modalId = bin2hex($name ?? '');
 ?>
 
 <div class="leader-card">
-    <div class="content-wrapper grid-x" data-modal-trigger="<?= $modalId ?>">
-        <div class="cell medium-8 leader-info flex-container flex-dir-column">
+    <div class="content-wrapper flex-container" data-modal-trigger="<?= $modalId ?>">
+        <div class="leader-info flex-container flex-dir-column">
             <h5 class="heading h5">
                 <?= $name ?? '' ?>
             </h5>
@@ -25,7 +25,7 @@ $modalId = bin2hex($name ?? '');
                 </div>
             </div>
         </div>
-        <div class="cell medium-4 leader-photo">
+        <div class="leader-photo">
             <img src="<?= $image ?? '' ?>" alt="Photo of <?= $name ?? '' ?>">
         </div>
     </div>

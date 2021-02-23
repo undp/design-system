@@ -9,14 +9,17 @@ class Svg
     {
         $fullPath = $path . $svgName . '.svg';
 
-        if (file_exists($fullPath)) {
-            if ($imgTag){
+        if (!file_exists($fullPath)) return;
+
+        if ($imgTag){
+            if (strpos($fullPath, '/') !== 0) {
                 $fullPath = '/' . $fullPath;
-                echo "<img src='$fullPath' alt='$alt'>";
             }
-            else{
-                echo file_get_contents($fullPath);
-            }
+
+            echo "<img src='$fullPath' alt='$alt'>";
+        }
+        else {
+            echo file_get_contents($fullPath);
         }
     }
 }
