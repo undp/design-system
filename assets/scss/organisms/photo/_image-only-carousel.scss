@@ -1,0 +1,41 @@
+
+.image-only-carousel {
+    margin-top: 75px;
+
+    img {
+        flex: 0;
+        padding: 0 12px;
+        object-fit: cover;
+
+        @include breakpoint(small only) {
+            padding: 0;
+        }
+
+        &:first-of-type {
+            padding-left: 0;
+        }
+
+        &:last-of-type {
+            padding-right: 0;
+        }
+    }
+
+    .bullets-container {
+        margin-top: 70px
+    }
+
+    .glide__track {
+        margin-top: 30px;
+        margin-right: -100%;
+
+        .glide__slides {
+            overflow: visible;
+        }
+
+        .glide__slide {
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

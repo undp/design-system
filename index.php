@@ -25,6 +25,15 @@ switch ($subpath) {
     case '/country-page':
         View::render('pages/country-page');
         break;
+    case '/country-page-2':
+        View::render('pages/country-page-2');
+        break;
+    case '/country-page-3':
+        View::render('pages/country-page-3');
+        break;
+    case '/country-page-4':
+        View::render('pages/country-page-4');
+        break;
     case '/about-us':
         View::render('pages/standard-page');
         break;

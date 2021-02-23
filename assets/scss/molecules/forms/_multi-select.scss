@@ -138,14 +138,17 @@
             }
 
             > .checkbox-item {
-                &:hover {
-                    .checkmark {
-                        border-color: $red-5;
+                // Don't trigger hover on tap on iOS
+                @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    &:hover {
+                        .checkmark {
+                            border-color: $red-5;
+                        }
                     }
-                }
 
-                .checkmark:hover {
-                    border-color: $red-2;
+                    .checkmark:hover {
+                        border-color: $red-2;
+                    }
                 }
             }
         }
@@ -159,11 +162,14 @@
                 border-top: 1px solid rgba($black, 0.10);
             }
 
-            &:hover {
-                color:  $dark-blue-17;
+            // Don't trigger hover on tap on iOS
+            @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                &:hover {
+                    color: $dark-blue-17;
 
-                .checkmark {
-                    border-color: $red-2;
+                    .checkmark {
+                        border-color: $red-2;
+                    }
                 }
             }
         }
