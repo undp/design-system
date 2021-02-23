@@ -44,6 +44,9 @@
                 <li>
                     <a href="/components/forms" class="animated-underline">Forms</a>
                 </li>
+                <li>
+                    <a href="/components/hero" class="animated-underline">Hero</a>
+                </li>
             </ul>
         </div>
     </section>
