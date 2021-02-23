@@ -25,5 +25,9 @@
 
     .item-text-content {
         padding: 15px 30px 20px;
+
+        .title-text {
+            min-height: 58px;
+        }
     }
 }
