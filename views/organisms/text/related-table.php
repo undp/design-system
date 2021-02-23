@@ -11,21 +11,24 @@
                     'title' => 'Country Profiles - outcomes of the Mechanism for the
                         Review of Implementation of
                         the United
-                        Nations Convention against Corruption'
+                        Nations Convention against Corruption',
+                    'image' => false
                 ]);
                 ?>
                 <div class="grid-x grid-margin-x">
                     <div class="cell large-6">
                         <?php
                         View::render('molecules/text/table-item', [
-                            'title' => 'Legislative Guide for the Implementation of UNCAC'
+                            'title' => 'Legislative Guide for the Implementation of UNCAC',
+                            'image' => false
                         ]);
                         ?>
                     </div>
                     <div class="cell large-6">
                         <?php
                         View::render('molecules/text/table-item', [
-                            'title' => 'Pacific Youth Anti-Corruption Advocate’s Toolkit'
+                            'title' => 'Pacific Youth Anti-Corruption Advocate’s Toolkit',
+                            'image' => false
                         ]);
                         ?>
                     </div>
@@ -34,26 +37,30 @@
                 View::render('molecules/text/table-item', [
                     'title' => 'Mechanism for the Review of Implementation of the United
                         Nations Convention against
-                        Corruption'
+                        Corruption',
+                    'image' => false
                 ]);
                 ?>
                 <?php
                 View::render('molecules/text/table-item', [
                     'title' => 'Travaux Préparatoires of the negotiations for the
                         elaboration of the United Nations
-                        Convention against Corruption'
+                        Convention against Corruption',
+                    'image' => false
                 ]);
                 ?>
                 <?php
                 View::render('molecules/text/table-item', [
-                    'title' => 'Technical Guide to the United Nations Convention against Corruption'
+                    'title' => 'Technical Guide to the United Nations Convention against Corruption',
+                    'image' => false
                 ]);
                 ?>
                 <div class="grid-x grid-margin-x">
                     <div class="cell large-6">
                         <?php
                         View::render('molecules/text/table-item', [
-                            'title' => 'United Nations Convention against Corruption (UNCAC)'
+                            'title' => 'United Nations Convention against Corruption (UNCAC)',
+                            'image' => false
                         ]);
                         ?>
                     </div>

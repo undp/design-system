@@ -13,6 +13,7 @@
     View::render('organisms/text/selector-tabs');
     View::render('organisms/text/table');
     View::render('organisms/text/faq');
+    View::render('organisms/text/downloadable-content');
     ?>
 </main>
 
