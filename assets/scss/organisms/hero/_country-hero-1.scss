@@ -29,27 +29,52 @@
 
    .gradient {
        top: -50px;
+
+       @include breakpoint(small only) {
+           top: 0;
+       }
    }
 
     img {
         margin-top: -50px !important;
+
+        @include breakpoint(small only) {
+            margin-top: 0 !important;
+        }
     }
 }
 
-.country-hero-1 {
 
-    .hero-container {
-        .images-block {
-            background: $white;
+.country-hero-1 {
+    padding-bottom: 80px;
+
+    .hero-wrapper .images-block {
+        background: $white;
+
+        @include breakpoint(medium down) {
+            padding-top: 0;
+            overflow: visible;
+        }
+
+        @include breakpoint(small only) {
+            margin-top: 37px;
         }
     }
 
     .image-item {
+        height: 100%;
         cursor: pointer;
         position: relative;
 
         @include breakpoint(medium down) {
             max-height: 350px;
+        }
+
+        // For IE 11 (media is a hack to check for IE 10+)
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            &:hover {
+                @include card-focused();
+            }
         }
 
         img {
@@ -71,11 +96,6 @@
             transition: $transition-primary;
             background-image: linear-gradient(45deg, rgba($yellow, 0.3) 0%, transparent 100%);
         }
-
-        &:hover {
-            @include card-focused();
-        }
-
 
         .description {
             left: -1px;
@@ -128,6 +148,47 @@
             @include background-gradient($blue-accent);
         }
 
+    }
+
+    .glide__track {
+        margin-top: 97px;
+        overflow: visible;
+        margin-right: -24px;
+
+        @include breakpoint(small only) {
+            margin-top: 35px;
+            overflow: hidden;
+        }
+
+        .glide__slides {
+            overflow: visible;
+        }
+
+        .glide__slide {
+            height: auto;
+        }
+
+        .glide__slide--active {
+            .image-item {
+                @include card-focused();
+            }
+
+            @include breakpoint(medium only) {
+                + .glide__slide + .glide__slide {
+                    .image-item {
+                        @include card-focused();
+                    }
+                }
+            }
+
+            @include breakpoint(475px up) {
+                + .glide__slide {
+                    .image-item {
+                        @include card-focused();
+                    }
+                }
+            }
+        }
     }
 
     @extend .country-hero-2;
