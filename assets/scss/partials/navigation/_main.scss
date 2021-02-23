@@ -44,7 +44,11 @@
 
                     &.logo-text {
                         width: 231px;
-                        margin: 0 24px 0 0;
+                        margin: 0 44px 0 0;
+
+                        @include breakpoint(1240px down) {
+                            margin: 0 20px 0 0;
+                        }
 
                         @include breakpoint(large down) {
                             width: auto;
