@@ -13,6 +13,8 @@ $imagePath = '/assets/images/placeholder/galleries'
 <main class="components-index overflow-hidden">
 
     <?php
+        View::render('organisms/photo/image-only-carousel');
+
         View::render('organisms/photo/large-carousel');
 
         View::render('organisms/photo/large-carousel', [
