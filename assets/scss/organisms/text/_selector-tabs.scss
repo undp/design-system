@@ -6,11 +6,22 @@
         margin-top: 80px;
         padding-bottom: 10px;
 
+        @include breakpoint(medium down) {
+            margin-top: 50px;
+        }
+
         .tab-item {
             padding: 0;
+            cursor: pointer;
+            font-size: 1.6rem;
             margin-right: 60px;
             font-weight: $bold;
             text-transform: uppercase;
+
+            @include breakpoint(small only) {
+                font-size: 1.2rem;
+                margin-right: 35px;
+            }
 
             &.active {
                 position: relative;
@@ -30,6 +41,10 @@
 
     .component-subheading {
         margin-top: 30px;
+
+        @include breakpoint(medium down) {
+            margin-top: 50px;
+        }
     }
 
     .selector-panel-container {
@@ -39,6 +54,10 @@
     .selector-panel {
         display: none;
         margin-top: 65px;
+
+        @include breakpoint(medium down) {
+            margin-top: 0;
+        }
 
         .country-item {
             @include breakpoint(medium down) {
