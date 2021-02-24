@@ -2,16 +2,16 @@
 use helpers\Svg;
 $image = '/assets/images/placeholder/cards/featured-content-card.jpg';
 ?>
-<section class="featured-content-card scroll-track left-right delay-1">
+<section class="featured-content-card">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell small-10 small-offset-1 section-heading">
-                <h2 class="heading h2">Stories</h2>
+                <h2 class="heading h2 scroll-track left-right delay-1">Stories</h2>
             </div>
         </div>
 
         <div class="grid-x main-container">
-            <div class="cell medium-6 featured-data">
+            <div class="cell medium-6 featured-data scroll-track left-right delay-3">
                 <div class="tag show-for-medium">Video</div>
 
                 <h2 class="heading h4">UNDP’s Country Programme for Sierra Leone: 2020 to 2023</h2>
