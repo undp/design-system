@@ -31,6 +31,10 @@
                 padding: 30px 27px 29px;
             }
 
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                flex: 1;
+            }
+
             .leader-titles {
                 margin-top: 12px;
                 text-transform: none;
