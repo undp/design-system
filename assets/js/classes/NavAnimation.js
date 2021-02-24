@@ -21,16 +21,25 @@ class NavAnimation {
 
     init() {
         this.setCurrentAndPreviousNav()
-        if (this.shouldAnimate()) this.animate()
+        if (this.shouldAnimate()) {
+            this.animate()
+        } else {
+            this.setCountryNav()
+        }
     }
 
     animate() {
+        this.$container.addClass('initial-state-animation')
         this.$container.addClass(this.animationTriggerClass)
 
         // Full transition needs around 1.5s, delete dummy global menu after it's done
-        setTimeout(() => {
+        /*setTimeout(() => {
             this.$container.find('.dummy-global-menu').remove()
-        }, 1500)
+        }, 1500)*/
+    }
+
+    setCountryNav() {
+        this.$container.addClass('initial-state-country')
     }
 
     getCurrentNav() {

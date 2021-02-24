@@ -134,8 +134,8 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
                     <ul class="flex-container align-middle middle-menu">
                         <li class="show-for-xlarge"><button class="nav-item dark">Who we are</button></li>
                         <li class="show-for-xlarge"><button class="nav-item dark">What we do</button></li>
-                        <li class="align-self-top">
-
+                        <li class="align-self-top logo-container">
+                            <?php Svg::render('undp-logo', false, 'UNDP Logo')?>
                         </li>
                         <li class="show-for-xlarge"><button class="nav-item dark">Our impact</button></li>
                         <li class="show-for-xlarge"><button class="nav-item dark">Get Involved</button></li>
