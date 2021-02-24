@@ -20,33 +20,4 @@
             margin-top: 40px;
         }
     }
-
-    .input-group {
-        display: flex;
-        margin: 26px -12px 0;
-
-        @include breakpoint(small only) {
-            margin-top: 15px;
-            flex-direction: column;
-        }
-
-        &:first-of-type {
-            margin-top: 14px;
-
-            @include breakpoint(small only) {
-                margin-top: 40px;
-            }
-        }
-
-        input {
-            flex: 1;
-            margin: 0 12px;
-
-            &:not(:first-of-type) {
-                @include breakpoint(small only) {
-                    margin-top: 15px;
-                }
-            }
-        }
-    }
 }
