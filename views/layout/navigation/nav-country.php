@@ -116,6 +116,13 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
     <div class="grid-container dummy-global-menu" dir="ltr">
         <nav class="grid-x">
             <div class="cell nav-wrapper">
+                <div class="menu-mobile hide-for-xlarge">
+                    <a class="menu-hamburger">
+                        <span class="hamburger-line line-top"></span>
+                        <span class="hamburger-line line-middle"></span>
+                        <span class="hamburger-line line-bottom"></span>
+                    </a>
+                </div>
                 <div class="dropdown show-for-xlarge">
                     <button class="flex-container align-middle nav-item dark dropdown-btn">
                         <?php Svg::render('icon-languages') ?>
