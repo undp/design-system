@@ -7,6 +7,7 @@ const init = function() {
             .click(function() {
                 let $q = $(this).closest('.question')
                 $q.siblings('.question').removeClass('expanded')
+                $('.question-button').removeClass('expanded')
                 $q.toggleClass('expanded')
             })
     }
