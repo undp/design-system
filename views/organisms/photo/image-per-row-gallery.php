@@ -7,7 +7,7 @@ $invertImageAlignment = isset($image['invertImageAlignment']) ? $image['invertIm
 
 
 <section class="image-per-row-gallery">
-    <div class="grid-container grid-x grid-margin-x">
+    <div class="grid-container grid-x">
 
         <div class="cell">
             <div class="grid-x grid-margin-x">

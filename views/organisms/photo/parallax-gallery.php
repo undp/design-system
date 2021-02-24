@@ -1,7 +1,7 @@
 <?php $imagePath = '/assets/images/placeholder/galleries' ?>
 
 <section class="parallax-gallery">
-    <div class="grid-container grid-x grid-margin-x">
+    <div class="grid-container grid-x">
 
         <div class="cell gs--parallax-container scroll-track-center">
             <div class="grid-x grid-margin-x">
