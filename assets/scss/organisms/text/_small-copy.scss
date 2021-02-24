@@ -1,12 +1,34 @@
 .small-copy-component {
     padding-top: 130px;
 
+    @include breakpoint(medium down) {
+        padding-top: 115px;
+    }
+
     .component-subheading {
         margin-top: 90px;
+
+        @include breakpoint(small only) {
+            margin-top: 50px;
+        }
+    }
+
+    .second-line {
+        margin-top: 20px;
+
+        @include breakpoint(medium down) {
+            margin-top: 0;
+        }
     }
 
     .copy-item {
+        width: 16%;
         margin-top: 50px;
+        margin-right: 24px;
+
+        @include breakpoint(medium down) {
+            width: 100%;
+        }
 
         .title-item {
             font-weight: $bold;
