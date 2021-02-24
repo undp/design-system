@@ -12,22 +12,3 @@
 
     }
 }
-
-.link-item {
-    margin-top: 23px;
-    font-size: 2.5rem;
-    background: $dark-blue-6;
-
-    @include breakpoint(medium down) {
-        font-size: 2rem;
-        padding-bottom: 22px;
-    }
-
-    .item-text-content {
-        padding: 15px 30px 20px;
-
-        .title-text {
-            min-height: 58px;
-        }
-    }
-}

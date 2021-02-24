@@ -4,7 +4,7 @@
         <div class="grid-x grid-margin-x">
             <div class="cell large-3">
                 <?php
-                View::render('molecules/text/table-item', [
+                View::render('molecules/text/download-item', [
                     'title' => 'Fact Sheet',
                     'image' => '/assets/images/placeholder/publication-1.png',
                     'btnText' => 'Download',
@@ -15,7 +15,7 @@
             </div>
             <div class="cell large-3">
                 <?php
-                View::render('molecules/text/table-item', [
+                View::render('molecules/text/download-item', [
                     'title' => 'Brochure',
                     'image' => '/assets/images/placeholder/publication-1.png',
                     'btnText' => 'Download',
@@ -26,7 +26,7 @@
             <div class="grid-x">
                 <div class="cell large-10">
                     <?php
-                    View::render('molecules/text/table-item', [
+                    View::render('molecules/text/download-item', [
                         'title' => 'Legislative Guide for the Implementation of UNCAC',
                         'image' => false,
                         'btnText' => 'Download',
@@ -34,7 +34,7 @@
                     ]);
                     ?>
                     <?php
-                    View::render('molecules/text/table-item', [
+                    View::render('molecules/text/download-item', [
                         'title' => 'Legislative Guide for the Implementation of UNCAC',
                         'image' => false,
                         'btnText' => 'Download',
@@ -42,7 +42,7 @@
                     ]);
                     ?>
                     <?php
-                    View::render('molecules/text/table-item', [
+                    View::render('molecules/text/download-item', [
                         'title' => 'Legislative Guide for the Implementation of UNCAC',
                         'image' => false,
                         'btnText' => 'Download',
@@ -50,7 +50,7 @@
                     ]);
                     ?>
                     <?php
-                    View::render('molecules/text/table-item', [
+                    View::render('molecules/text/download-item', [
                         'title' => 'Legislative Guide for the Implementation of UNCAC',
                         'image' => false,
                         'btnText' => 'Download',

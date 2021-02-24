@@ -1,5 +1,5 @@
 <?php use helpers\View;?>
-<div class="link-item">
+<div class="download-item">
     <?php if ($image) : ?>
         <?php View::render('molecules/photo/publication-image', ['image' => $image]); ?>
     <?php endif; ?>
