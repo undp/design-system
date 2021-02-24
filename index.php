@@ -85,6 +85,9 @@ switch ($subpath) {
     case '/components/forms':
         View::render('pages/components/forms');
         break;
+    case '/components/hero':
+        View::render('pages/components/hero');
+        break;
     default:
         View::render('pages/home');
 }

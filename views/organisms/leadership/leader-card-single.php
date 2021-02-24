@@ -5,7 +5,7 @@ $imgPath = '/assets/images/placeholder/leadership';
 
 <section class="leader-cards grid-container">
     <div class="grid-x">
-        <div class="cell medium-6 medium-offset-3">
+        <div class="cell medium-8 medium-offset-2 large-7">
             <?php
             View::render('molecules/cards/leader-card', [
                 'name' => 'Barbara Pesce-Monteiro',

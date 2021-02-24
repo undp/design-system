@@ -9,6 +9,10 @@
         cursor: pointer;
         @include hover-animate-arrow-2();
 
+        @include breakpoint(small only) {
+            flex-direction: column;
+        }
+
         .cta-container {
             margin: auto 0 0;
 
@@ -34,8 +38,12 @@
         }
 
         .leader-photo {
+            width: 330px;
+            flex-shrink: 0;
+
             @include breakpoint(small only) {
                 order: 0;
+                width: 100%;
             }
 
             img {

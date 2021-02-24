@@ -1,0 +1,90 @@
+[dir=rtl] {
+    .header {
+        &.nav-country-container {
+            .nav-country {
+                .nav-wrapper {
+                    .menu-items {
+                        margin-left: 0;
+                        margin-right: 84px;
+
+                        @include breakpoint(large down) {
+                            margin-left: 0;
+                            margin-right: 55px;
+                        }
+
+                        &.dropdown-content {
+                            padding: 30px 30px 35px 12px;
+                        }
+
+                        li {
+                            margin-right: 0;
+                            margin-left: 60px;
+
+                            &:first-child,
+                            &:last-child {
+                                margin-left: 0;
+                            }
+
+                            &.logo-text {
+                                margin: 0 0 0 44px;
+
+                                @include breakpoint(1240px down) {
+                                    margin: 0 0 0 20px;
+                                }
+
+                                @include breakpoint(large down) {
+                                    margin: 0 0 0 30px;
+                                }
+                            }
+                        }
+
+                        .middle-logo {
+                            right: 50%;
+                            left: auto;
+                            transform: translateX(50%);
+                        }
+                    }
+
+                    .menu-cell-right {
+                        margin-right: 0;
+                        margin-left: 90px;
+
+                        @include breakpoint(large down) {
+                            margin-right: 0;
+                            margin-left: 25px;
+                        }
+
+                        .dropdown {
+                            margin-right: 0;
+                            margin-left: 25px;
+                        }
+
+                        .right-menu {
+                            .nav-item {
+                                &.modal-ref {
+                                    margin-right: 0;
+                                    margin-left: 25px;
+
+                                    @include breakpoint(medium down) {
+                                        margin-right: 0;
+                                        margin-left: 34px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        &.animate-transition {
+            .nav-country {
+                .nav-wrapper .menu-items .middle-logo {
+                    right: 0;
+                    transform: none;
+                }
+            }
+        }
+    }
+}

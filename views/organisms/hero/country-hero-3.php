@@ -12,7 +12,7 @@ use helpers\Svg;
         </div>
         <div class="grid-x">
             <div class="cell large-8 large-offset-1">
-                <div class="heading h2 scroll-track left-right delay-1 title">
+                <div class="heading h2 scroll-track left-right delay-3 title">
                     <?= $title ?? '' ?>
                 </div>
             </div>
@@ -21,12 +21,12 @@ use helpers\Svg;
             <div class="cell large-11 large-offset-1 article-container">
                 <div class="grid-x">
                     <div class="cell large-3 article-description">
-                        <div class="heading h5 subtitle scroll-track left-right delay-1">
+                        <div class="heading h5 subtitle scroll-track left-right delay-5">
                             <?= $description ?? '' ?>
                         </div>
                         <button class="btn">
-                            Read
-                            <?php Svg::render('btn-arrow-blue', true, 'Explore', 'assets/images/arrows/')?>
+                            Read More
+                            <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
                         </button>
                     </div>
                     <div class="cell large-9 article-image">

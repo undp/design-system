@@ -5,7 +5,7 @@
 
 <body class="accent-green">
 <!-- Navigation -->
-<?php View::render('layout/navigation/main-justify', ['country' => 'Global Centre for Technology, Innovation and Sustainable Development in Singapore and Lorem ipsum dolor sit amet']) ?>
+<?php View::render('layout/navigation/nav-country', ['country' => 'Global Centre for Technology, Innovation and Sustainable Development in Singapore and Lorem ipsum dolor sit amet']) ?>
 
 <main class="country-page">
     <!--Country hero 3-->

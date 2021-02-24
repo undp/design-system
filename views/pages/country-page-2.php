@@ -5,7 +5,7 @@
 
 <body class="accent-green">
 <!-- Navigation -->
-<?php View::render('layout/navigation/main-justify', ['country' => 'Cook Islands, Niue, Samoa and Tokelau']) ?>
+<?php View::render('layout/navigation/nav-country', ['country' => 'Cook Islands, Niue, Samoa and Tokelau']) ?>
 
 <main class="country-page">
     <!--Country hero 3-->

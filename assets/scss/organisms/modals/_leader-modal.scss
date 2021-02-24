@@ -2,10 +2,17 @@
 .leader-modal {
 
     .modal-content {
+        max-width: 1156px;
         padding: 148px 118px;
 
         @include breakpoint(small only) {
             padding: 62px 12px;
+        }
+
+        .btn-close {
+            @include breakpoint(small only) {
+                top: 9px;
+            }
         }
     }
 
