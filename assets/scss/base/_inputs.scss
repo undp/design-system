@@ -20,6 +20,11 @@
             cursor: not-allowed;
             color: $dark-blue-15;
             border-color: $dark-blue-2;
+
+            ~ label,
+            &::placeholder {
+                color: $dark-blue-15;
+            }
         }
 
         input {
@@ -36,6 +41,7 @@
         caret-color: $red-1;
         border-color: $red-1;
 
+        ~ label,
         &::placeholder {
             color: inherit;
         }
@@ -46,6 +52,10 @@
         cursor: not-allowed;
         border-color: $dark-blue-4;
         background-color: transparent;
+
+        &::placeholder {
+            color: $dark-blue-4;
+        }
     }
 
     &.full-width {
@@ -57,5 +67,74 @@
         margin-left: 6px;
         caret-color: $dark-blue-12;
         background-color: transparent;
+    }
+}
+
+
+ul.input-errors {
+    padding: 0;
+    color: $red-1;
+    margin-top: 10px;
+    list-style: none;
+    font-size: 1.4rem;
+    position: relative;
+    line-height: 1.7rem;
+
+    li:before {
+        content: '*';
+        margin-right: 5px;
+    }
+}
+
+
+.input-wrapper {
+    flex: 1 auto;
+    margin: 0 12px;
+    position: relative;
+
+    &:not(:first-of-type) {
+        @include breakpoint(small only) {
+            margin-top: 15px;
+        }
+    }
+
+    .custom-input {
+        width: 100%;
+    }
+
+    label {
+        font-size: 1.4rem;
+        position: absolute;
+        line-height: 1.7rem;
+        bottom: calc(100% + 10px);
+
+        &:after {
+            content: '*';
+            color: $red-1;
+            margin-left: 5px;
+        }
+    }
+}
+
+
+.input-group {
+    display: flex;
+    margin: 26px -12px 0;
+
+    @include breakpoint(small only) {
+        margin-top: 15px;
+        flex-direction: column;
+    }
+
+    &:first-of-type {
+        margin-top: 14px;
+
+        @include breakpoint(small only) {
+            margin-top: 40px;
+        }
+    }
+
+    > .custom-input {
+        @extend .input-wrapper;
     }
 }

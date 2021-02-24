@@ -7,8 +7,19 @@
                 <h2 class="heading h2">Stay connected to our work.</h2>
 
                 <div class="input-group">
-                    <input class="input custom-input" type="text" placeholder="First Name" aria-label="First Name" disabled>
-                    <input class="input custom-input error" type="text" placeholder="Last Name" aria-label="Last Name" required>
+                    <div class="input-wrapper">
+                        <label for="first-name"></label>
+                        <input id="first-name" class="input custom-input" type="text" placeholder="First Name" aria-label="First Name" disabled>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <input class="input custom-input error" type="text" placeholder="Last Name" aria-label="Last Name" required>
+                        <label for="first-name">First Name</label>
+
+                        <ul class="input-errors">
+                            <li>Error</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="input-group">
