@@ -100,7 +100,7 @@
                         left: 50%;
                         position: absolute;
                         transform: translateX(-50%);
-                        transition: all $easing-1;
+                        transition: all $easing-1 0.5s;
                     }
                 }
 
@@ -134,9 +134,10 @@
             top: 0;
             width: 100%;
             position: absolute;
+            pointer-events: none;
 
             .dropdown, .nav-item {
-                transition: opacity $easing-1;
+                transition: opacity $easing-1 1s;
             }
 
             .middle-menu {
@@ -150,7 +151,6 @@
             .nav-wrapper .menu-items .middle-logo {
                 left: 0;
                 transform: none;
-                transition-delay: 0.5s;
             }
             .menu-cell-right,
             .menu-items .logo-text,
@@ -162,6 +162,7 @@
         .dummy-global-menu {
             .dropdown, .nav-item {
                 opacity: 0;
+                transition-delay: 0s;
             }
         }
     }

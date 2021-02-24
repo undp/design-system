@@ -14,7 +14,6 @@ require('laravel-mix-polyfill');
 
 mix.js('assets/js/app.js', 'dist')
     .sass('assets/scss/app.scss', 'dist')
-    .sass('assets/scss/rtl.scss', 'dist')
     .setPublicPath('dist')
     .browserSync('undp.test')
     .polyfill({

@@ -1,9 +1,16 @@
-import Menu from '../classes/Menu'
+import NavMenu from '../classes/NavMenu'
+import NavAnimation from "../classes/NavAnimation";
 
 const init = function () {
-    const $navigationContainer = $('[data-navigation]')
-    const menu = new Menu($navigationContainer)
+    const $navigationWrapper = $('[data-navigation]')
+
+    const menu = new NavMenu($navigationWrapper)
     menu.init()
+
+    if($navigationWrapper.hasClass('nav-country-container')) {
+        const animation = new NavAnimation($navigationWrapper)
+        animation.init()
+    }
 }
 
 export default init

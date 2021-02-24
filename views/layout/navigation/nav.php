@@ -16,7 +16,7 @@ use helpers\View;
     <?php Svg::render('btn-arrow-red-secondary', false, 'Arrow right', 'assets/images/arrows/')?>
 </span>
 
-<section class="header" data-navigation>
+<section class="header" data-navigation dir="ltr">
     <div class="grid-container">
         <nav class="grid-x">
             <div class="cell nav-wrapper">

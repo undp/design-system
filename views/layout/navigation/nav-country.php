@@ -57,9 +57,8 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
                     </ul>
                 </div>
                 <div class="flex-container align-middle menu-cell-right">
-                    <div class="dropdown show-for-xlarge" data-dropdown-languajes>
-                        <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages"
-                                data-opening-action>
+                    <div class="dropdown show-for-xlarge" data-dropdown-languajes dir="ltr">
+                        <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>
                             <?php Svg::render('icon-languages') ?>
                             English
                             <?php Svg::render('icon-arrow-down') ?>
@@ -114,16 +113,15 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
     </div>
 
     <?php // Temp Global Nav for animation ?>
-    <div class="grid-container dummy-global-menu">
+    <div class="grid-container dummy-global-menu" dir="ltr">
         <nav class="grid-x">
             <div class="cell nav-wrapper">
-                <div class="dropdown show-for-xlarge" data-dropdown-languajes>
-                    <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>
+                <div class="dropdown show-for-xlarge">
+                    <button class="flex-container align-middle nav-item dark dropdown-btn">
                         <?php Svg::render('icon-languages') ?>
                         English
                         <?php Svg::render('icon-arrow-down') ?>
                     </button>
-                    <ul class="dropdown-content hide" ></ul>
                 </div>
                 <div class="menu-desktop" data-menu-desktop>
                     <ul class="flex-container align-middle middle-menu">
