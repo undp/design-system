@@ -101,7 +101,7 @@
                         left: 50%;
                         position: absolute;
                         transform: translateX(-50%);
-                        transition: all $easing-1 0.5s;
+                        transition: all $nav-easing 0.5s;
                     }
                 }
 
@@ -182,7 +182,7 @@
             .menu-items .logo-text,
             .menu-items .nav-item {
                 opacity: 1;
-                transition-delay: 1s;
+                transition-delay: 1.6s;
             }
         }
         .dummy-global-menu {

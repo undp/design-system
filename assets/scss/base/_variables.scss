@@ -134,6 +134,7 @@ $easing-1: .4s cubic-bezier(0.64, 0.05, 0.35, 1.05);
 $easing-2: .2s cubic-bezier(0.4, 0.22, 0.28, 1);
 $easing-3: 1.2s cubic-bezier(.34,.41,.03,1);
 $easing-4: .2s cubic-bezier(.25,.27,.11,.99);
+$nav-easing: 1s cubic-bezier(.25,.27,.11,.99);
 
 $transition-primary: all $easing-1;
 $transition-expertise-image: all 0.5s ease-in-out;
