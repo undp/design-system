@@ -30,6 +30,10 @@
             margin-top: 43px;
         }
 
+        > * { // IE11 Fix
+            max-width: 100%;
+        }
+
         .btn {
             color: $white;
             margin-top: 120px;
