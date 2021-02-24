@@ -20,9 +20,25 @@
         margin-top: 96px;
         background: $dark-blue-6;
 
+        @include breakpoint(small only) {
+            margin-top: 36px;
+            padding: 38px 0 24px;
+        }
+
         .cta-button {
             padding-top: 190px;
             padding-left: 35px;
+
+            @include breakpoint(medium down) {
+                padding-left: 0;
+                padding-top: 25px;
+            }
+
+            .btn {
+                @include breakpoint(small only) {
+                    width: 100%;
+                }
+            }
         }
 
         .image-item {
@@ -76,6 +92,25 @@
                 width: 95px;
                 height: 2px;
             }
+        }
+    }
+
+    .glide__track {
+        margin-top: 97px;
+        overflow: visible;
+        margin-right: -24px;
+
+        @include breakpoint(small only) {
+            margin-top: 35px;
+            overflow: hidden;
+        }
+
+        .glide__slides {
+            overflow: visible;
+        }
+
+        .glide__slide {
+            height: auto;
         }
     }
 }
