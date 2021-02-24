@@ -4,11 +4,11 @@ import NavAnimation from "../classes/NavAnimation";
 const init = function () {
     const $navigationWrapper = $('[data-navigation]')
 
-    const menu = new NavMenu($navigationWrapper)
-    menu.init()
-
-    if($navigationWrapper.hasClass('nav-country-container')) {
+    if ($navigationWrapper.length) {
+        const menu = new NavMenu($navigationWrapper)
         const animation = new NavAnimation($navigationWrapper)
+
+        menu.init()
         animation.init()
     }
 }
