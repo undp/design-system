@@ -26,6 +26,10 @@
             @include breakpoint(medium down) {
                 height: auto;
             }
+
+            .link-item {
+                padding-bottom: 12px;
+            }
         }
     }
 }

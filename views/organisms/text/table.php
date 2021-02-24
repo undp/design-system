@@ -1,6 +1,10 @@
 <section class="table">
     <div class="grid-container">
-        <div class="heading h2 component-heading">Table</div>
+        <div class="grid-x">
+            <div class="cell large-11 large-offset-1 small-offset-1 small-10">
+                <div class="heading h2 component-heading">Table</div>
+            </div>
+        </div>
         <div class="grid-x grid-margin-x columns-content">
             <div class="cell large-3 large-offset-0 small-offset-1 small-9 column-table">
                 <div class="title medium-copy">Name</div>
@@ -18,10 +22,18 @@
             </div>
             <div class="cell large-4 large-offset-0 small-offset-1 small-9 column-table">
                 <div class="title medium-copy">Email</div>
-                <div class="table-item">limya.eltayeb@undp.org</div>
-                <div class="table-item">Nuno.Queiros@undp.org</div>
-                <div class="table-item">Alma.Mustafaraj@undp.org</div>
-                <div class="table-item">Nuno.Queiros@undp.org</div>
+                <div class="table-item">
+                    <a href="" class="animated-underline link-item">limya.eltayeb@undp.org</a>
+                </div>
+                <div class="table-item">
+                    <a href="" class="animated-underline link-item">Nuno.Queiros@undp.org</a>
+                </div>
+                <div class="table-item">
+                    <a href="" class="animated-underline link-item">Alma.Mustafaraj@undp.org</a>
+                </div>
+                <div class="table-item">
+                    <a href="" class="animated-underline link-item">Nuno.Queiros@undp.org</a>
+                </div>
             </div>
         </div>
     </div>
