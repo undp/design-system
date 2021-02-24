@@ -90,7 +90,6 @@ ul.input-errors {
 .input-wrapper {
     flex: 1 auto;
     margin: 0 12px;
-    position: relative;
 
     &:not(:first-of-type) {
         @include breakpoint(small only) {
@@ -103,12 +102,12 @@ ul.input-errors {
     }
 
     label {
+        bottom: 11px;
         font-size: 1.4rem;
-        position: absolute;
+        position: relative;
         line-height: 1.7rem;
-        bottom: calc(100% + 10px);
 
-        &:after {
+        &.required:after {
             content: '*';
             color: $red-1;
             margin-left: 5px;
