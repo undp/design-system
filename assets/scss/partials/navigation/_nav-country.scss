@@ -115,15 +115,11 @@
                         margin-right: 25px;
                     }
 
-                    .right-menu {
-                        .nav-item {
-                            &.modal-ref {
-                                margin-right: 25px;
+                    .right-menu .nav-item.modal-ref {
+                        margin-right: 25px;
 
-                                @include breakpoint(medium down) {
-                                    margin-right: 34px;
-                                }
-                            }
+                        @include breakpoint(medium down) {
+                            margin-right: 34px;
                         }
                     }
                 }
