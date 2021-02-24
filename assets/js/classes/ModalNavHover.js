@@ -35,7 +35,7 @@ class ModalNavHover {
     }
 
     listenersHoverOpenModal() {
-        const removeAnimation = this.$menuDesktop.data('no-animation') === true;
+        const removeAnimation = this.$menuDesktop.data('no-modal-popup-animation') === true;
 
         this.$navMenuItems.each((i, navItem) => {
             const $navItem = $(navItem)

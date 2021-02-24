@@ -5,7 +5,7 @@
 
 <body class="accent-green">
 <!-- Navigation -->
-<?php View::render('layout/navigation/main-justify', ['country' => 'Sierra Leone']) ?>
+<?php View::render('layout/navigation/nav-country', ['country' => 'Sierra Leone']) ?>
 
 <main class="country-page">
     <!--Country hero 3-->

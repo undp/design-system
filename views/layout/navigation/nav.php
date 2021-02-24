@@ -16,10 +16,10 @@ use helpers\View;
     <?php Svg::render('btn-arrow-red-secondary', false, 'Arrow right', 'assets/images/arrows/')?>
 </span>
 
-<section class="header" data-navigation>
+<section class="header" data-navigation dir="ltr">
     <div class="grid-container">
         <nav class="grid-x">
-            <div class="cell flex-container align-justify align-middle custom-cell">
+            <div class="cell nav-wrapper">
                 <div class="menu-mobile hide-for-xlarge">
                     <a class="menu-hamburger" data-hamburger>
                         <span class="hamburger-line line-top"></span>

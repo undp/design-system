@@ -1,6 +1,5 @@
 class DropDown {
     constructor() {
-        this.dropdown = null;
         this.dropdownOptions = [];
         this.dropdownAcitionOpen = null;
 
@@ -16,12 +15,12 @@ class DropDown {
 
     dropDownListeners() {
         this.$dropdowns.each((i, dropdown) => {
-            this.dropdown = $(dropdown);
-            this.dropdownAcitionOpen = this.dropdown.find('[data-opening-action]');
+            let $dropdown = $(dropdown);
+            this.dropdownAcitionOpen = $dropdown.find('[data-opening-action]');
 
             this.dropdownAcitionOpen.click(evt => {
                 evt.preventDefault();
-                this.dropdownOptions = this.dropdown.find('[data-options]');
+                this.dropdownOptions = $dropdown.find('[data-options]');
                 if (this.dropdownOptions) {
                     this.dropdownToggle();
                 }

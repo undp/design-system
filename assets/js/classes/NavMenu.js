@@ -1,4 +1,4 @@
-class Menu {
+class NavMenu {
 
     constructor(container) {
         this.expanded = false
@@ -127,4 +127,4 @@ class Menu {
     }
 }
 
-export default Menu
+export default NavMenu

@@ -26,7 +26,8 @@
 @import 'partials/slider-bullets';
 @import 'partials/sdg-stat-cards-slider-mobile';
 
-@import 'partials/navigation/main';
+@import 'partials/navigation/nav';
+@import 'partials/navigation/nav-country';
 @import 'partials/navigation/menu/main';
 @import 'partials/navigation/menu/mobile/main';
 @import 'partials/navigation/menu/item-options';
@@ -141,3 +142,6 @@
 @import "organisms/leadership/leader-bio";
 @import "organisms/leadership/leader-cards";
 @import "organisms/leadership/leadership-heading";
+
+// RTL
+@import "rtl";
