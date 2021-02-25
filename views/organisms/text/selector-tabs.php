@@ -1,11 +1,11 @@
 <section class="selector-tabs grid-container">
     <div class="grid-x">
-        <div class="cell large-11 large-offset-1 small-offset-1 small-10">
+        <div class="cell large-11 large-offset-1 small-offset-1 small-10 scroll-track left-right delay-1">
             <div class="heading h2 component-heading">Section Header</div>
             <div class="heading h3 component-subheading">Location</div>
         </div>
         <div class="cell large-11 large-offset-1">
-            <div class="selector-tabs-container">
+            <div class="selector-tabs-container scroll-track left-right delay-1">
                 <button class="tab-item big-copy" data-tab="america">North America</button>
                 <button class="tab-item big-copy active" data-tab="europe">Europe</button>
                 <button class="tab-item big-copy" data-tab="africa">Africa</button>
@@ -13,7 +13,7 @@
         </div>
     </div>
 
-        <div class="selector-panel-container">
+        <div class="selector-panel-container scroll-track left-right delay-1">
             <div class="selector-panel tab-content active" id="europe">
                 <div class="grid-x grid-margin-x">
                     <div class="cell large-3 large-offset-0 small-offset-1 small-10 country-item">
