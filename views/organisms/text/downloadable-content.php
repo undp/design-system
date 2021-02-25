@@ -4,7 +4,7 @@
 <section class="downloadable-content">
     <div class="grid-container">
         <div class="grid-x grid-margin-x">
-            <div class="cell large-3 medium-6">
+            <div class="cell medium-6 large-3 large-offset-1">
                 <?php
                 View::render('molecules/text/download-item', [
                     'title' => 'Fact Sheet',
@@ -15,7 +15,7 @@
                 ]);
                 ?>
             </div>
-            <div class="cell large-3 medium-6">
+            <div class="cell medium-6 large-3">
                 <?php
                 View::render('molecules/text/download-item', [
                     'title' => 'Brochure',
@@ -25,41 +25,50 @@
                 ]);
                 ?>
             </div>
-            <div class="grid-x">
-                <div class="cell large-10">
-                    <?php
-                    View::render('molecules/text/download-item', [
-                        'title' => 'Legislative Guide for the Implementation of UNCAC',
-                        'image' => false,
-                        'btnText' => 'Download',
-                        'btnIcon' => 'assets/images/icon-download.svg',
-                        'attributes' => 'data-modal-trigger="modal-publication-download-no-image"'
-                    ]);
-                    ?>
-                    <?php
-                    View::render('molecules/text/download-item', [
-                        'title' => 'Legislative Guide for the Implementation of UNCAC',
-                        'image' => false,
-                        'btnText' => 'Download',
-                        'btnIcon' => 'assets/images/icon-download.svg',
-                    ]);
-                    ?>
-                    <?php
-                    View::render('molecules/text/download-item', [
-                        'title' => 'Legislative Guide for the Implementation of UNCAC',
-                        'image' => false,
-                        'btnText' => 'Download',
-                        'btnIcon' => 'assets/images/icon-download.svg',
-                    ]);
-                    ?>
-                    <?php
-                    View::render('molecules/text/download-item', [
-                        'title' => 'Legislative Guide for the Implementation of UNCAC',
-                        'image' => false,
-                        'btnText' => 'Download',
-                        'btnIcon' => 'assets/images/icon-download.svg',
-                    ]);
-                    ?>
+            <div class="cell large-4">
+                <div class="grid-x grid-margin-x">
+                    <div class="cell medium-6 large-12">
+                        <?php
+                        View::render('molecules/text/download-item', [
+                            'title' => 'Legislative Guide for the Implementation of UNCAC',
+                            'image' => false,
+                            'btnText' => 'Download',
+                            'btnIcon' => 'assets/images/icon-download.svg',
+                            'attributes' => 'data-modal-trigger="modal-publication-download-no-image"'
+                        ]);
+                        ?>
+                    </div>
+                    <div class="cell medium-6 large-12">
+                        <?php
+                        View::render('molecules/text/download-item', [
+                            'title' => 'Legislative Guide for the Implementation of UNCAC',
+                            'image' => false,
+                            'btnText' => 'Download',
+                            'btnIcon' => 'assets/images/icon-download.svg',
+                        ]);
+                        ?>
+                    </div>
+                    <div class="cell medium-6 large-12">
+                        <?php
+                        View::render('molecules/text/download-item', [
+                            'title' => 'Legislative Guide for the Implementation of UNCAC',
+                            'image' => false,
+                            'btnText' => 'Download',
+                            'btnIcon' => 'assets/images/icon-download.svg',
+                        ]);
+                        ?>
+                    </div>
+                    <div class="cell medium-6 large-12">
+                        <?php
+                        View::render('molecules/text/download-item', [
+                            'title' => 'Legislative Guide for the Implementation of UNCAC',
+                            'image' => false,
+                            'btnText' => 'Download',
+                            'btnIcon' => 'assets/images/icon-download.svg',
+                        ]);
+                        ?>
+                    </div>
+
                 </div>
             </div>
         </div>

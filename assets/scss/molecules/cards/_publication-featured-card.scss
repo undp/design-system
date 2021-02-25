@@ -64,6 +64,12 @@
                 text-transform: uppercase;
             }
 
+            .download-btn {
+                @include breakpoint(small only) {
+                    border-bottom: 1px solid $dark-blue-19;
+                }
+            }
+
             .icon-download {
                 margin-left: 15px;
             }
