@@ -17,4 +17,11 @@
             </div>
         </div>
     </div>
+    <div class="hero image-block mobile"data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>">
+        <div class="cta-button mobile">
+            <button class="btn">
+                <span>Explore</span>
+                <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+            </button>
+        </div>
 </section>
