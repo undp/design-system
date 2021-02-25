@@ -3,11 +3,10 @@ const init = function() {
     const $question = $('.question')
 
     if ($question.length) {
-        $question
+        $question.find('.question-button')
             .click(function() {
                 let $q = $(this).closest('.question')
                 $q.siblings('.question').removeClass('expanded')
-                $('.question-button').removeClass('expanded')
                 $q.toggleClass('expanded')
             })
     }
