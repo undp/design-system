@@ -26,13 +26,13 @@ $sliderOptions = [
 
     <div class="grid-container">
         <div class="grid-x text-block">
-            <div class="cell large-4 large-offset-1">
-                <div class="heading h2 scroll-track left-right delay-1 title">
+            <div class="cell large-5 large-offset-1">
+                <h2 class="heading h2 scroll-track left-right delay-1 title">
                     <?= $title ?? '' ?>
-                </div>
+                </h2>
             </div>
             <div class="cell large-3 large-offset-1 subtitle-block">
-                <div class="heading h3 header-title scroll-track left-right delay-1"><?= $subtitle ?? '' ?></div>
+                <div class="header-title scroll-track left-right delay-1"><?= $subtitle ?? '' ?></div>
             </div>
         </div>
 

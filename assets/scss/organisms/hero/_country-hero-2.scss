@@ -4,8 +4,11 @@
     .text-block {
         .title {
             margin-top: 0 !important;
+            font-weight: $extra-bold;
+            font-family: $secondary-font;
+
             @include breakpoint(medium only) {
-                font-size: 5.5rem !important;
+                font-size: 5.5rem;
                 padding-bottom: 50px;
             }
 
@@ -68,13 +71,18 @@
         position: relative;
 
         .header-title {
+            font-size: 3rem;
+            font-weight: $bold;
+            line-height: 3.6rem;
+
             @include breakpoint(medium down) {
-                font-size: 2.5rem;
                 padding-top: 50px;
             }
 
             @include breakpoint(small only) {
+                font-size: 2.5rem;
                 padding-top: 26px;
+                line-height: 3rem;
             }
         }
 
@@ -90,7 +98,7 @@
                 top: 0;
                 left: 0;
                 width: 95px;
-                height: 2px;
+                height: 4px;
             }
         }
     }
