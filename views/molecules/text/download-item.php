@@ -1,4 +1,7 @@
-<?php use helpers\View;?>
+<?php
+use helpers\View;
+use helpers\Svg;
+?>
 <div class="download-item">
     <?php if ($image) : ?>
         <?php View::render('molecules/photo/publication-image', ['image' => $image]); ?>
@@ -8,7 +11,11 @@
 
         <a href="#" class="text-link arrow-3" <?= $attributes ?? '' ?>>
             <?= $btnText ?? '' ?>
-            <?=  file_get_contents($btnIcon ?? 'assets/images/arrows/btn-arrow-external.svg');  ?>
+            <span class="icon-download">
+               <span class="icon-item">
+               <?php Svg::render('icon-download') ?>
+                        </span>
+                    </span>
         </a>
     </div>
 </div>
