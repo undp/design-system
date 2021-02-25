@@ -23,6 +23,9 @@ $imagePath = '/assets/images/placeholder/galleries'
         ]);
 
         View::render('organisms/photo/parallax-gallery');
+
+        View::render('organisms/photo/parallax-gallery', ['invertBackgrounds' => true]);
+
         View::render('organisms/photo/three-column-gallery');
 
         View::render('organisms/photo/image-per-row-gallery', [

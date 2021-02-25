@@ -3,10 +3,22 @@
     margin-top: 75px;
 
     .gs--parallax-container {
+        z-index: $z-index-1;
+
         @include breakpoint(small only) {
             padding: 30px 17px;
             background: $dark-blue-6;
         }
+    }
+
+    .background-container {
+        right: 0;
+        top: -24px;
+        position: absolute;
+        z-index: $z-index-0;
+        width: calc(50% + 12px);
+        background: $dark-blue-6;
+        height: calc(100% + 48px);
     }
 
     .gallery-images {
@@ -55,6 +67,12 @@
     .gallery-text-content {
         @include breakpoint(small only) {
             padding: 0 14px;
+        }
+
+        .copy {
+            @include breakpoint(small only) {
+                margin-top: 50px
+            }
         }
     }
 
