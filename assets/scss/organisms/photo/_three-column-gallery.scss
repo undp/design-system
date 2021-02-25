@@ -63,6 +63,14 @@
         @include breakpoint(small only) {
             padding: 0;
         }
+
+        .cta {
+            margin-top: 73px;
+
+            @include breakpoint(small only) {
+                margin-top: 58px;
+            }
+        }
     }
 
     .photo-details-overlay:first-of-type {
