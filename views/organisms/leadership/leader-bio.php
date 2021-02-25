@@ -7,9 +7,9 @@ $imgPath = '/assets/images/placeholder/leadership';
     <div class="grid-x">
 
         <div class="cell small-10 small-offset-1 medium-4 medium-offset-2 leader-info">
-            <h3 class="heading h3 leader-name">
+            <h2 class="heading h2 leader-name">
                 Achim Steiner
-            </h3>
+            </h2>
             <h5 class="heading h5 leader-position">Administrator</h5>
 
             <p class="medium-copy bio">
