@@ -9,8 +9,9 @@ use helpers\Svg;
     <div class="item-text-content">
         <div class="big-copy title-text"><?= $title ?? '' ?></div>
 
-        <a href="#" class="text-link arrow-3" <?= $attributes ?? '' ?>>
+        <a href="#" class="text-link arrow-3 download-btn" <?= $attributes ?? '' ?>>
             <?= $btnText ?? '' ?>
+
             <span class="icon-download">
                <span class="icon-item">
                <?php Svg::render('icon-download') ?>

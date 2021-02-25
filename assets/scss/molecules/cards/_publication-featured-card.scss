@@ -57,45 +57,6 @@
         .social-container {
             align-items: center;
 
-            .download-btn {
-                cursor: pointer;
-                align-items: center;
-
-
-                @include breakpoint(small only) {
-                    width: 100%;
-                    padding-bottom: 25px;
-                    border-bottom: 1px solid $dark-blue-19;
-                }
-
-                .path2, .path4 {
-                    transform: translate(0);
-                    transition: all $easing-2;
-                }
-
-                // Don't trigger hover on tap on iOS
-                @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                    &:hover {
-
-                        .download {
-                            color: $dark-blue-17;
-                        }
-
-                        .path1 {
-                            stroke: $red-2;
-                        }
-
-                        .path2 {
-                            stroke: $red-2;
-                            transform: translate(0px, -3px);
-                        }
-                        .path4 {
-                            stroke: $red-2;
-                            transform: translate(0px, -2px);
-                        }
-                    }
-                }
-            }
 
             .download {
                 font-size: 1.5rem;
