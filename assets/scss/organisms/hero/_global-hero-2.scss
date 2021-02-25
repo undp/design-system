@@ -9,6 +9,16 @@
 
         @include breakpoint(small only) {
             margin-top: 0 !important;
+
+            &:after {
+                content: '';
+                left: 0;
+                height: 3px;
+                width: 95px;
+                bottom: -30px;
+                background: $red;
+                position: absolute;
+            }
         }
     }
 
@@ -16,6 +26,13 @@
         font-size: 3rem;
         margin-top: 45px;
         font-weight: $bold;
+        font-family: $primary-font;
+
+        @include breakpoint(small only) {
+            margin-top: 65px;
+            font-size: 2.5rem;
+            font-weight: $regular;
+        }
     }
 
     .cta-button {
