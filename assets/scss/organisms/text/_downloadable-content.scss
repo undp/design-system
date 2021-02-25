@@ -2,7 +2,7 @@
     .publication-image {
         z-index: 1;
 
-        @include breakpoint(mediumd down) {
+        @include breakpoint(medium down) {
             display: flex;
             max-width: 100%;
             justify-content: center;
