@@ -13,6 +13,7 @@
             }
 
             @include breakpoint(small only) {
+                font-size: 2.5rem;
                 padding-bottom: 30px;
             }
         }
