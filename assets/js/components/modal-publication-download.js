@@ -6,8 +6,10 @@ const init = function () {
     const $modal = $('.modal-publication-download')
 
     if ($modal.length) {
-        const modalPublications = new ModalPublicationDownload();
-        modalPublications.init();
+        $modal.each(function () {
+            const modalPublications = new ModalPublicationDownload(this);
+            modalPublications.init();
+        })
     }
 }
 
