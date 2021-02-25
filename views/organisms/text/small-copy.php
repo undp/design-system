@@ -1,6 +1,6 @@
 <section class="small-copy-component grid-container">
     <div class="grid-x">
-        <div class="cell small-offset-1 small-7 large-11 large-offset-1">
+        <div class="cell small-offset-1 small-10 large-11">
             <div class="heading h2 component-heading">Copy Lockup</div>
             <div class="heading h3 component-subheading">Location</div>
                 <div class="grid-x">
