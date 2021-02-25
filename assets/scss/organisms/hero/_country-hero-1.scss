@@ -148,6 +148,10 @@
 
     .glide__track {
         .glide__slide--active {
+            + .glide__slide .image-item {
+                pointer-events: none;
+            }
+
             .image-item {
                 @include image-focused();
             }
@@ -156,6 +160,11 @@
                 + .glide__slide + .glide__slide {
                     .image-item {
                         @include image-focused();
+                        pointer-events: auto !important;
+                    }
+
+                    + .glide__slide .image-item {
+                        pointer-events: none;
                     }
                 }
             }
@@ -164,6 +173,11 @@
                 + .glide__slide {
                     .image-item {
                         @include image-focused();
+                        pointer-events: auto !important;
+                    }
+
+                    + .glide__slide .image-item {
+                        pointer-events: none;
                     }
                 }
             }
