@@ -68,7 +68,7 @@
         'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
         'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
         'imageUrl' => '/assets/images/placeholder/hero/country-hero-4-image.jpg',
-        'imageMobileUrl' => '/assets/images/placeholder/hero/country-hero-4-image.jpg'
+        'imageMobileUrl' => '/assets/images/placeholder/hero/country-hero-img-mobile.jpg'
     ]);?>
     <div class="grid-container">
         <div class="heading h2 component-title">Country Hero Option 5</div>
