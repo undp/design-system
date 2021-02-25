@@ -11,6 +11,7 @@
                 <button class="tab-item big-copy" data-tab="africa">Africa</button>
             </div>
         </div>
+    </div>
 
         <div class="selector-panel-container">
             <div class="selector-panel tab-content active" id="europe">
@@ -98,5 +99,5 @@
                 </div>
             </div>
         </div>
-    </div>
+
 </section>
