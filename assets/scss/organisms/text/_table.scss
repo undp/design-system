@@ -34,7 +34,7 @@
             padding-bottom: 18px;
             border-bottom: 1px solid $black;
 
-            @include breakpoint(medium down) {
+            @include breakpoint(small only) {
                 height: auto;
             }
 

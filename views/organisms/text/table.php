@@ -6,21 +6,21 @@
             </div>
         </div>
         <div class="grid-x grid-margin-x columns-content table-desktop">
-            <div class="cell large-3 large-offset-0 small-offset-1 small-9 column-table">
+            <div class="cell large-3 medium-4 medium-offset-0 small-offset-1 small-9 column-table">
                 <div class="title medium-copy">Name</div>
                 <div class="table-item">Limya ELTAYEB</div>
                 <div class="table-item">Limya ELTAYEB</div>
                 <div class="table-item">Limya ELTAYEB</div>
                 <div class="table-item">Limya ELTAYEB</div>
             </div>
-            <div class="cell large-3 large-offset-0 small-offset-1 small-9 column-table">
+            <div class="cell large-3 medium-4 medium-offset-0 small-offset-1 small-9 column-table">
                 <div class="title medium-copy">Title</div>
                 <div class="table-item">UNDP Resident Representative</div>
                 <div class="table-item">Deputy Resident Representative</div>
                 <div class="table-item">Operations Specialist</div>
                 <div class="table-item">Programme Specialist- Democratic Governance</div>
             </div>
-            <div class="cell large-4 large-offset-0 small-offset-1 small-9 column-table">
+            <div class="cell large-4 medium-4 medium-offset-0 small-offset-1 small-9 column-table">
                 <div class="title medium-copy">Email</div>
                 <div class="table-item">
                     <a href="" class="animated-underline link-item">limya.eltayeb@undp.org</a>
