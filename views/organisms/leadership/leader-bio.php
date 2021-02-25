@@ -5,7 +5,6 @@ $imgPath = '/assets/images/placeholder/leadership';
 
 <section class="leader-bio grid-container">
     <div class="grid-x">
-        <div class="cell medium-9 medium-offset-2 separator"></div>
 
         <div class="cell small-10 small-offset-1 medium-4 medium-offset-2 leader-info">
             <h3 class="heading h3 leader-name">
