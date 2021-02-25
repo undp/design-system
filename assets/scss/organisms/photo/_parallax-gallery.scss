@@ -56,6 +56,12 @@
         @include breakpoint(small only) {
             padding: 0 14px;
         }
+
+        .copy {
+            @include breakpoint(small only) {
+                margin-top: 50px
+            }
+        }
     }
 
     .heading {

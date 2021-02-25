@@ -33,7 +33,7 @@
     .gallery-text-content {
         @include breakpoint(small only) {
             background: none;
-            padding: 31px 29px;
+            padding: 0 29px 31px;
 
             .cta {
                 margin-top: 44px;

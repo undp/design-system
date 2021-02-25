@@ -30,7 +30,7 @@
                     </div>
                 </div>
 
-                <div class="cell medium-6 overflow-hidden scroll-track opacity-only delay-2">
+                <div class="gallery-container cell medium-6 overflow-hidden scroll-track opacity-only delay-2">
                     <div class="gallery-images grid-x grid-margin-x">
                         <div class="cell small-6 gs--parallax-column">
                             <img src="<?= "$imagePath/gallery-parallax01@2x.jpg" ?>" alt="">
