@@ -1,7 +1,10 @@
-<?php $imagePath = '/assets/images/placeholder/galleries' ?>
+<?php
+$imagePath = '/assets/images/placeholder/galleries';
+$invertBackgrounds = isset($invertBackgrounds) && $invertBackgrounds;
+?>
 
 <section class="parallax-gallery">
-    <div class="grid-container grid-x grid-margin-x">
+    <div class="grid-container grid-x position-relative">
 
         <div class="cell gs--parallax-container scroll-track-center">
             <div class="grid-x grid-margin-x">
@@ -10,11 +13,11 @@
                     <h3 class="heading h3">UNDP Hope</h3>
                 </div>
 
-                <div class="gallery-text-content with-background cell medium-6">
+                <div class="gallery-text-content cell medium-6 <?= $invertBackgrounds ? '' : 'with-background' ?>">
                     <div class="track left-right delay-4">
                         <h3 class="heading h3 show-for-medium">UNDP Hope</h3>
 
-                        <p class="medium-copy">
+                        <p class="copy">
                             UNDP works in about 170 countries and territories, helping to achieve the eradication of poverty,
                             and the reduction of inequalities and exclusion. We help countries to develop policies, leadership
                             skills, partnering abilities, institutional capabilities and build resilience in order to sustain
@@ -44,5 +47,9 @@
                 </div>
             </div>
         </div>
+
+        <?php if ($invertBackgrounds) : ?>
+            <div class="cell show-for-medium background-container"></div>
+        <?php endif; ?>
     </div>
 </section>

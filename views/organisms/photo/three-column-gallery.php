@@ -5,7 +5,7 @@ $imagePath = '/assets/images/placeholder'
 
 
 <section class="three-column-gallery">
-    <div class="grid-container grid-x grid-margin-x">
+    <div class="grid-container grid-x">
 
         <div class="cell">
             <div class="grid-x grid-margin-x">
@@ -18,7 +18,7 @@ $imagePath = '/assets/images/placeholder'
                     <div class="scroll-track left-right delay-1">
                         <h3 class="heading h3 show-for-medium">UNDP Hope</h3>
 
-                        <p class="medium-copy">
+                        <p class="copy">
                             UNDP works in about 170 countries and territories, helping to achieve the eradication of poverty,
                             and the reduction of inequalities and exclusion. We help countries to develop policies, leadership
                             skills, partnering abilities, institutional capabilities and build resilience in order to sustain

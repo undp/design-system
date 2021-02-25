@@ -4,7 +4,7 @@
     }
 }
 
-@mixin card-focused() {
+@mixin image-focused() {
     .link-arrow-group {
         transform: translateX(0);
 
@@ -29,27 +29,48 @@
 
    .gradient {
        top: -50px;
+
+       @include breakpoint(small only) {
+           top: 0;
+       }
    }
 
     img {
         margin-top: -50px !important;
+
+        @include breakpoint(small only) {
+            margin-top: 0 !important;
+        }
     }
 }
 
-.country-hero-1 {
 
-    .hero-container {
-        .images-block {
-            background: $white;
+.country-hero-1 {
+    padding-bottom: 80px;
+
+    .hero-wrapper .images-block {
+        background: $white;
+
+        @include breakpoint(medium down) {
+            padding: 0;
+            overflow: visible;
         }
     }
 
     .image-item {
+        height: 100%;
         cursor: pointer;
         position: relative;
 
         @include breakpoint(medium down) {
             max-height: 350px;
+        }
+
+        // Don't trigger hover on tap on iOS
+        @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            &:hover {
+                @include image-focused();
+            }
         }
 
         img {
@@ -71,11 +92,6 @@
             transition: $transition-primary;
             background-image: linear-gradient(45deg, rgba($yellow, 0.3) 0%, transparent 100%);
         }
-
-        &:hover {
-            @include card-focused();
-        }
-
 
         .description {
             left: -1px;
@@ -128,6 +144,44 @@
             @include background-gradient($blue-accent);
         }
 
+    }
+
+    .glide__track {
+        .glide__slide--active {
+            + .glide__slide .image-item {
+                pointer-events: none;
+            }
+
+            .image-item {
+                @include image-focused();
+            }
+
+            @include breakpoint(medium only) {
+                + .glide__slide + .glide__slide {
+                    .image-item {
+                        @include image-focused();
+                        pointer-events: auto !important;
+                    }
+
+                    + .glide__slide .image-item {
+                        pointer-events: none;
+                    }
+                }
+            }
+
+            @include breakpoint(475px up) {
+                + .glide__slide {
+                    .image-item {
+                        @include image-focused();
+                        pointer-events: auto !important;
+                    }
+
+                    + .glide__slide .image-item {
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
     }
 
     @extend .country-hero-2;

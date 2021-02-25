@@ -49,11 +49,11 @@
             }
 
             .number {
-                font-size: 5.5rem;
+                font-size: 11rem;
                 margin-top: 112px;
 
                 @include breakpoint(small only){
-                    font-size: 4.5rem;
+                    font-size: 9.1rem;
                     margin-top: 126px;
                 }
             }
@@ -104,12 +104,12 @@
             }
 
             .number {
-                font-size: 6rem;
+                font-size: 12rem;
                 margin-top: 100px;
 
                 @include breakpoint(small only){
                     margin-top: 21px;
-                    font-size: 4.5rem;
+                    font-size: 9.1rem;
                 }
             }
 

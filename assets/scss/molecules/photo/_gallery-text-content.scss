@@ -11,6 +11,18 @@
         background: $dark-blue-6;
     }
 
+    .copy {
+        font-size: 2rem;
+        margin-top: 58px;
+        line-height: 2.6rem;
+
+        @include breakpoint(small only) {
+            margin-top: 31px;
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+        }
+    }
+
     .cta {
         margin-top: 45px;
 
@@ -24,14 +36,6 @@
 
         @include breakpoint(small only) {
             margin-bottom: 36px;
-        }
-    }
-
-    .medium-copy {
-        margin-top: 58px;
-
-        @include breakpoint(small only) {
-            margin-top: 50px;
         }
     }
 }

@@ -8,6 +8,24 @@
         @include breakpoint(small only) {
             margin-top: 22px;
         }
+
+        .big-copy {
+            line-height: 2.6rem;
+
+            @include breakpoint(medium down) {
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+        }
+
+        .heading.h4 {
+            line-height: 4rem;
+
+            @include breakpoint(medium down) {
+                font-size: 3rem;
+                line-height: 3.5rem;
+            }
+        }
     }
 
     .glide__track {

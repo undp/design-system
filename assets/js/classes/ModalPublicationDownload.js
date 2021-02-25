@@ -2,10 +2,10 @@
 
 class ModalPublicationDownload {
 
-    constructor() {
+    constructor(modal) {
         this.$body = $('body')
+        this.$modal = $(modal)
         this.$window = $(window)
-        this.$modal = $('.modal-publication-download')
         this.$chapters = this.$modal.find('.chapter-item')
         this.$languageSelect = this.$modal.find('.select-box')
         this.$downloadBtn = this.$modal.find('[data-download-chapters]')

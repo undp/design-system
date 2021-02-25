@@ -1,0 +1,15 @@
+.downloadable-content {
+    .publication-image {
+        z-index: 1;
+
+        @include breakpoint(medium down) {
+            display: flex;
+            max-width: 100%;
+            justify-content: center;
+        }
+
+        .image {
+            min-height: 100%;
+        }
+    }
+}
