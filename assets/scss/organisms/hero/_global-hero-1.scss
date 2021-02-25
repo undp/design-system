@@ -100,7 +100,11 @@
         }
 
         &.mobile {
-            display: block;
+            display: none;
+
+            @include breakpoint(small only) {
+                display: block;
+            }
         }
     }
 
