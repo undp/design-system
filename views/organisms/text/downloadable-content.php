@@ -4,7 +4,7 @@
 <section class="downloadable-content">
     <div class="grid-container">
         <div class="grid-x grid-margin-x">
-            <div class="cell large-3">
+            <div class="cell large-3 medium-6">
                 <?php
                 View::render('molecules/text/download-item', [
                     'title' => 'Fact Sheet',
@@ -15,7 +15,7 @@
                 ]);
                 ?>
             </div>
-            <div class="cell large-3">
+            <div class="cell large-3 medium-6">
                 <?php
                 View::render('molecules/text/download-item', [
                     'title' => 'Brochure',
