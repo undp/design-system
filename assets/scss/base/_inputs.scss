@@ -34,6 +34,10 @@
 
     &:focus, &:focus-within {
         border-color: $dark-blue-13;
+
+        &::placeholder {
+            color: transparent;
+        }
     }
 
     &.error {
