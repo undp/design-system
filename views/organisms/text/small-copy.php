@@ -1,9 +1,9 @@
 <section class="small-copy-component grid-container">
     <div class="grid-x">
         <div class="cell small-offset-1 small-7 large-11 large-offset-1">
-            <div class="heading h2 component-heading">Copy Lockup</div>
-            <div class="heading h3 component-subheading">Location</div>
-                <div class="grid-x">
+            <div class="heading h2 component-heading scroll-track left-right delay-1">Copy Lockup</div>
+            <div class="heading h3 component-subheading scroll-track left-right delay-1g">Location</div>
+                <div class="grid-x scroll-track left-right delay-1">
                     <div class="cell large-2 medium-6 copy-item">
                         <div class="medium-copy title-item">USA</div>
                         <div class="big-copy">One United Nations Plaza · New York, NY 10017</div>
