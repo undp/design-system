@@ -3,7 +3,7 @@
 
 <section class="downloadable-content">
     <div class="grid-container">
-        <div class="grid-x grid-margin-x">
+        <div class="grid-x grid-margin-x scroll-track left-right delay-1">
             <div class="cell medium-6 large-3 large-offset-1">
                 <?php
                 View::render('molecules/text/download-item', [
