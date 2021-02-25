@@ -2,11 +2,15 @@
     outline: none;
     display: flex;
     max-height: 52px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 15px 25px;
     align-items: center;
     color: $dark-blue-13;
     border: 2px solid $black;
+
+    &::placeholder {
+        font-size: 1.4rem !important;
+    }
 
     &.dark {
         color: $dark-blue-15;
