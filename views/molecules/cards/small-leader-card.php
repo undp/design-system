@@ -1,8 +1,10 @@
 <?php
 use helpers\Svg;
 use helpers\View;
-$modalId = bin2hex($name ?? '');
+
+$modalId = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name ?? '')));
 ?>
+
 
 <div class="small-leader-card">
     <div class="content-wrapper" data-modal-trigger="<?= $modalId ?>">
