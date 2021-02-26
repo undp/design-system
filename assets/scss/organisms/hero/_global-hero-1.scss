@@ -21,6 +21,11 @@
             padding-bottom: 60px;
             font-family: $secondary-font;
 
+            @include breakpoint(small only) {
+                font-size: 2.5rem;
+                padding-bottom: 30px;
+            }
+
             &:after {
                 content: '';
                 bottom: 0;
@@ -36,6 +41,12 @@
             font-size: 3rem;
             margin-top: 40px;
             font-weight: $bold;
+
+            @include breakpoint(small only) {
+                margin-top: 26px;
+                font-size: 2.5rem;
+                font-weight: $regular;
+            }
         }
 
         .cta-button {
@@ -83,6 +94,18 @@
             max-width: 100%;
         }
 
+
+        @include breakpoint(small only) {
+            display: none;
+        }
+
+        &.mobile {
+            display: none;
+
+            @include breakpoint(small only) {
+                display: block;
+            }
+        }
     }
 
     &:before {

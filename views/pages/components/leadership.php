@@ -12,7 +12,7 @@ $imgPath = '/assets/images/placeholder/leadership';
 
 <main class="components-index">
     <?php
-        View::render('organisms/leadership/heading');
+        //View::render('organisms/leadership/heading');
         View::render('organisms/leadership/leader-bio');
         View::render('organisms/leadership/leaders-cards');
         View::render('organisms/leadership/leader-card-single');
