@@ -10,7 +10,7 @@
                     'title' => 'Fact Sheet',
                     'image' => '/assets/images/placeholder/publication-1.png',
                     'btnText' => 'Download',
-                    'btnIcon' => 'assets/images/icon-download.svg',
+                    'btnIcon' => 'icon-download',
                     'attributes' => 'data-modal-trigger="modal-publication-download"'
                 ]);
                 ?>
@@ -18,10 +18,12 @@
             <div class="cell medium-6 large-3">
                 <?php
                 View::render('molecules/text/download-item', [
-                    'title' => 'Brochure',
-                    'image' => '/assets/images/placeholder/publication-1.png',
-                    'btnText' => 'Download',
-                    'btnIcon' => 'assets/images/icon-download.svg',
+                    'title' => 'UNDP Annual Report 2019',
+                    'image' => '/assets/images/placeholder/publication-2.png',
+                    'btnText' => 'Read More',
+                    'btnIcon' => 'arrows/btn-arrow-external',
+                    'target' => '_blank',
+                    'link' => 'https://www.undp.org/content/undp/en/home/librarypage/corporate/annual-report-2019.html'
                 ]);
                 ?>
             </div>
@@ -33,7 +35,7 @@
                             'title' => 'Legislative Guide for the Implementation of UNCAC',
                             'image' => false,
                             'btnText' => 'Download',
-                            'btnIcon' => 'assets/images/icon-download.svg',
+                            'btnIcon' => 'icon-download',
                             'attributes' => 'data-modal-trigger="modal-publication-download-no-image"'
                         ]);
                         ?>
@@ -41,10 +43,12 @@
                     <div class="cell medium-6 large-12">
                         <?php
                         View::render('molecules/text/download-item', [
-                            'title' => 'Legislative Guide for the Implementation of UNCAC',
+                            'title' => 'UNDP Annual Report 2019 PDF',
                             'image' => false,
                             'btnText' => 'Download',
-                            'btnIcon' => 'assets/images/icon-download.svg',
+                            'btnIcon' => 'icon-download',
+                            'attributes' => 'download',
+                            'link' => '/assets/UNDP-Annual-Report-2019-fr.pdf'
                         ]);
                         ?>
                     </div>
@@ -54,7 +58,7 @@
                             'title' => 'Legislative Guide for the Implementation of UNCAC',
                             'image' => false,
                             'btnText' => 'Download',
-                            'btnIcon' => 'assets/images/icon-download.svg',
+                            'btnIcon' => 'icon-download',
                         ]);
                         ?>
                     </div>
@@ -64,7 +68,7 @@
                             'title' => 'Legislative Guide for the Implementation of UNCAC',
                             'image' => false,
                             'btnText' => 'Download',
-                            'btnIcon' => 'assets/images/icon-download.svg',
+                            'btnIcon' => 'icon-download',
                         ]);
                         ?>
                     </div>
