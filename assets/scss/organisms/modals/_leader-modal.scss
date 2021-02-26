@@ -3,15 +3,35 @@
 
     .modal-content {
         max-width: 1156px;
-        padding: 148px 118px;
+        padding: 17px 19px;
 
         @include breakpoint(small only) {
-            padding: 62px 12px;
+            padding: 0 12px;
         }
 
         .btn-close {
+            top: auto;
+            right: auto;
+            outline: none;
+            margin-left: auto;
+            position: relative;
+        }
+
+        .content-wrapper {
+            overflow: auto;
+            padding: 86px 99px 131px;
+
             @include breakpoint(small only) {
-                top: 9px;
+                padding: 0 0  62px;
+            }
+        }
+
+        .modal-heading {
+            background: $white;
+            position: relative;
+
+            @include breakpoint(small only) {
+                padding: 9px 7px 8px;
             }
         }
     }
