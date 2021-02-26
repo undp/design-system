@@ -44,12 +44,14 @@
             text-transform: none;
         }
 
-        img {
+        .leader-photo {
             margin: 0;
             width: 100%;
             flex: 0 auto;
             height: 396px;
-            object-fit: cover;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
 
             @include breakpoint(small only) {
                 height: 400px;
