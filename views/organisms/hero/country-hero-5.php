@@ -1,10 +1,22 @@
-<?php use helpers\View;?>
+<?php
+use helpers\View;
+$hasVideoBackground = isset($videoUrl) && !empty($videoUrl);
+?>
 
-<section class="hero country-hero-5" data-desktop-image="<?= $imageUrl ?? '' ?>"
-         data-mobile-image="<?= $imageMobileUrl ?? '' ?>">
-    <div class="grid-container">
+<section
+    data-desktop-image="<?= $imageUrl ?? '' ?>"
+    data-mobile-image="<?= $imageMobileUrl ?? '' ?>"
+    class="hero country-hero-5 <?= $hasVideoBackground ? 'video-background' : '' ?>">
+
+    <?php if ($hasVideoBackground) : ?>
+        <video autoplay loop>
+            <source src="<?= $videoUrl ?>" type="video/mp4">
+        </video>
+    <?php endif; ?>
+
+    <div class="content-wrapper grid-container">
         <div class="grid-x">
-            <div class="cell small-9 small-offset-1">
+            <div class="cell small-9 small-offset-1 large-8">
                 <?php View::render('partials/breadcrumb', [
                     'links' => $breadcrumbLinks ?? '',
                     'classes' => 'accent-white'
