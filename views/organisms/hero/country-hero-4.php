@@ -1,4 +1,7 @@
-<section class="hero country-hero-4">
+<?php $hasVideo = isset($videoUrl) && !empty($videoUrl); ?>
+
+
+<section class="hero country-hero-4 <?= $hasVideo ? 'has-video' : '' ?>">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell large-5 large-offset-1 hero-content-text">
@@ -7,6 +10,13 @@
                     Post-pandemic World</div>
             </div>
             <div class="cell large-6 hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>" >
+
+                <?php if ($hasVideo) : ?>
+                    <video autoplay loop>
+                        <source src="<?= $videoUrl ?>" type="video/mp4">
+                    </video>
+                <?php endif; ?>
+
                 <div class="gradient"></div>
                 <div class="cta-button">
                     <button class="btn">
@@ -18,6 +28,13 @@
         </div>
     </div>
     <div class="hero image-block mobile"data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>">
+
+        <?php if ($hasVideo) : ?>
+            <video autoplay loop>
+                <source src="<?= $videoUrl ?>" type="video/mp4">
+            </video>
+        <?php endif; ?>
+
         <div class="cta-button mobile">
             <button class="btn">
                 <span>Explore</span>
