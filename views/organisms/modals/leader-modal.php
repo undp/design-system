@@ -1,12 +1,13 @@
-<?php
-use helpers\Svg;
-?>
+<?php use helpers\Svg; ?>
+
 
 <div id="<?= $modalId ?>" class="modal leader-modal" data-modal>
     <div class="modal-content">
-        <button class="btn-close" data-modal-close>
-            <?php Svg::render('icon-close') ?>
-        </button>
+        <div class="modal-heading">
+            <button class="btn-close" data-modal-close>
+                <?php Svg::render('icon-close') ?>
+            </button>
+        </div>
         <div class="content-wrapper flex-container flex-dir-column medium-flex-dir-row">
             <div class="leader-photo">
                 <img src="<?= $image ?? '' ?>" alt="Mourad Wahba Photo">

@@ -11,6 +11,8 @@ class Modal {
         this.$modalBtnClose = this.$modal.find('[data-modal-close]')
         this.$openTrigger = $(`[data-modal-trigger=${this.$modal.attr('id')}]`)
 
+        this.slug = this.$modal.attr('id')
+
         this.classes = {
             hide: 'hide',
             modalOpen: 'open',
@@ -20,6 +22,7 @@ class Modal {
 
     init() {
         this.bindEvents()
+        this.checkUrlHash()
     }
 
     bindEvents() {
@@ -30,6 +33,7 @@ class Modal {
     }
 
     open() {
+        location.hash = this.slug
         this.$body.addClass(this.classes.lockBody)
         this.$html.addClass(this.classes.lockBody)
         this.$modal.addClass(this.classes.modalOpen)
@@ -40,9 +44,22 @@ class Modal {
     }
 
     close() {
+        this.removeHash()
+
         this.$html.removeClass(this.classes.lockBody)
         this.$body.removeClass(this.classes.lockBody)
         this.$modal.removeClass(this.classes.modalOpen)
+    }
+
+    checkUrlHash() {
+        if (location.hash) {
+            const slug = location.hash.replace('#', '')
+            if (this.slug === slug) this.open()
+        }
+    }
+
+    removeHash() {
+        history.pushState("", document.title, location.pathname + location.search);
     }
 
     setCloseModalListener() {
