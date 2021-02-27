@@ -1,6 +1,25 @@
 .global-hero-2 {
     @extend .global-hero-3;
 
+    &.video-background {
+        position: relative;
+
+        video {
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            object-position: center;
+
+            @include breakpoint(small only) {
+                object-position: left center;
+            }
+        }
+    }
+
     .title {
         max-width: 100% !important;
         font-weight: $bold;

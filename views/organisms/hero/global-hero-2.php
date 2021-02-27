@@ -1,13 +1,18 @@
 <?php
-
-use helpers\Svg;
 use helpers\View;
+$hasVideoBackground = isset($videoUrl) && !empty($videoUrl);
 
 ?>
 
-<section class="hero global-hero-2" data-desktop-image="<?= $imageUrl ?? '' ?>"
-         data-mobile-image="<?= $imageMobileUrl ?? '' ?>">
-    <div class="grid-container">
+<section class="hero global-hero-2 <?= $hasVideoBackground ? 'video-background' : '' ?>" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>">
+
+    <?php if ($hasVideoBackground) : ?>
+        <video autoplay loop>
+            <source src="<?= $videoUrl ?>" type="video/mp4">
+        </video>
+    <?php endif; ?>
+
+    <div class="content-wrapper grid-container">
         <div class="grid-x">
             <div class="cell small-9 small-offset-1">
                 <?php View::render('partials/breadcrumb', [
