@@ -5,7 +5,6 @@
     max-height: 805px;
     position: relative;
     transition: max-width 0.5s ease;
-    @include background-gradient($blue);
 
     .overlay {
         width: 100%;
@@ -13,6 +12,10 @@
         height: 100%;
         background: $black;
         position: absolute;
+    }
+
+    &.no-image {
+        background: linear-gradient(45deg, $blue-1 0%, $blue-6 60%);
     }
 
     @include breakpoint(medium down) {
