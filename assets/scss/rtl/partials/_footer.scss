@@ -1,0 +1,60 @@
+[dir=rtl] {
+    .footer {
+        .footer-head {
+            .undp-logo {
+                margin-right: 0;
+                margin-left: 25px;
+            }
+        }
+
+        .footer-body {
+            .column {
+                .icons-search .icon:first-child {
+                    margin-right: 0;
+                    margin-left: 22px;
+
+                    @include breakpoint(small only){
+                        margin-right: 0;
+                        margin-left: 27px;
+                    }
+                }
+            }
+
+            .terms-conditions {
+                @include breakpoint(small only){
+                    text-align: right;
+                }
+            }
+        }
+
+        .legal {
+            .social-links {
+                .social-link:not(:last-child) {
+                    margin-right: 0;
+                    margin-left: 35px;
+
+                    @include breakpoint(360px down){
+                        margin-right: 0;
+                        margin-left: 25px;
+                    }
+                }
+
+                .icon {
+                    &:not(:last-child) {
+                        margin-right: 0;
+                        margin-left: 15px;
+                    }
+                }
+            }
+        }
+
+        .footer-subtitle {
+            .footer-subtitle-arrow{
+                @include breakpoint(small only){
+                    margin-left: 0;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
