@@ -430,7 +430,6 @@
     // Don't trigger hover on tap on iOS
     @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
         &:hover {
-
             .download {
                 color: $dark-blue-17;
             }
@@ -443,6 +442,7 @@
                 stroke: $red-2;
                 transform: translate(0px, -3px);
             }
+
             .path4 {
                 stroke: $red-2;
                 transform: translate(0px, -2px);
