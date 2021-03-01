@@ -25,11 +25,21 @@
         transition: all 200ms ease-in-out;
         background-color: rgba($black, 0.28);
 
-        // @todo: Need design reference to adjust font sizes or use ellipsis in order
-        // @todo: for this to fit without overflowing in small devices. Hiding for now.
-        //@include breakpoint(small only) {
-        //    opacity: 1;
-        //}
+        @include breakpoint(medium only) {
+            padding: 20px;
+        }
+
+        .medium-copy:first-of-type {
+            overflow: hidden;
+            position: relative;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+
+            @include breakpoint(medium only) {
+                -webkit-line-clamp: 5;
+            }
+        }
     }
 
     .medium-copy:not(:first-of-type) {
