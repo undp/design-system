@@ -1,0 +1,28 @@
+[dir=rtl] {
+    .news-centre-hero {
+        .news-hero-container {
+            .title {
+                @include breakpoint(medium down) {
+                    padding-left: 0;
+                    padding-right: 25px;
+                }
+            }
+        }
+
+        .news-hero-container-mobile {
+            .text-link {
+                margin-left: 0;
+                margin-right: 10px;
+            }
+        }
+
+        .image-container {
+            padding-left: 0;
+            padding-right: 25px;
+
+            @include breakpoint(medium down) {
+                padding-right: 0;
+            }
+        }
+    }
+}
