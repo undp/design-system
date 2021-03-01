@@ -11,10 +11,8 @@
 
     .heading.h2 {
         display: none;
-    }
 
-    @include breakpoint(small only) {
-        .heading.h2 {
+        @include breakpoint(small only) {
             display: block;
             margin-top: 40px;
             padding-left: 25px;
@@ -45,7 +43,7 @@
         }
     }
 
-    .publication-social {
+    .publication-links {
         padding: 25px 30px;
         background: $dark-blue-6;
 
@@ -53,46 +51,45 @@
             margin: 0 auto;
             max-width: 425px;
         }
+    }
 
-        .social-container {
-            align-items: center;
+    .links-container {
+        align-items: center;
 
+        .download {
+            font-size: 1.5rem;
+            font-weight: $bold;
+            text-transform: uppercase;
+        }
 
-            .download {
-                font-size: 1.5rem;
-                font-weight: $bold;
-                text-transform: uppercase;
+        .download-btn {
+            @include breakpoint(small only) {
+                border-bottom: 1px solid $dark-blue-19;
+            }
+        }
+
+        .icon-download {
+            margin-left: 15px;
+        }
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: space-between;
+
+        @include breakpoint(small only) {
+            padding-top: 25px;
+        }
+
+        .icon-item {
+            width: 22px;
+
+            &:hover svg {
+                fill: $dark-blue-17;
             }
 
-            .download-btn {
-                @include breakpoint(small only) {
-                    border-bottom: 1px solid $dark-blue-19;
-                }
-            }
-
-            .icon-download {
-                margin-left: 15px;
-            }
-
-            .social-icons {
-                display: flex;
-                justify-content: space-between;
-
-                @include breakpoint(small only) {
-                    padding-top: 25px;
-                }
-
-                .icon-item {
-                    width: 22px;
-
-                    svg {
-                        fill: $black;
-
-                        &:hover {
-                            fill: $dark-blue-17;
-                        }
-                    }
-                }
+            svg {
+                fill: $black;
             }
         }
     }
