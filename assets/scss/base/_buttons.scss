@@ -178,6 +178,8 @@
 
         &.arrow-3 {
             svg {
+                color: $red-2;
+
                 .transition-arrow{
                     transform: translate(3px, -3px);
                 }
