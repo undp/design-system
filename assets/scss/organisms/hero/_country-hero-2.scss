@@ -29,19 +29,15 @@
             padding: 38px 0 24px;
         }
 
-        .cta-button {
-            padding-top: 190px;
-            padding-left: 35px;
+        .cta-button .btn {
+            margin: 190px 0 0 auto;
 
             @include breakpoint(medium down) {
-                padding-left: 0;
-                padding-top: 25px;
+                margin: 25px auto 0 0;
             }
 
-            .btn {
-                @include breakpoint(small only) {
-                    width: 100%;
-                }
+            @include breakpoint(small only) {
+                width: 100%;
             }
         }
 

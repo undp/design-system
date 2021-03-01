@@ -4,7 +4,7 @@
 
     <div class="details-overlay flex-container flex-dir-column">
         <p class="medium-copy">
-            On average, UNDP supports an election somewhere in the world every two weeks.
+            Lorem ipsum, dolor sit amet.
         </p>
         <p class="medium-copy flex-container flex-dir-column">
             UNDP Taiwan
