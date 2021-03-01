@@ -100,10 +100,6 @@ $global-color-pick-contrast-tolerance: 0;
 $print-transparent-backgrounds: true;
 $print-hrefs: true;
 
-[dir=rtl] {
-  $global-text-direction: rtl !global;
-}
-
 @include add-foundation-colors;
 
 // 2. Breakpoints
