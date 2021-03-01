@@ -113,7 +113,7 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
     </div>
 
     <?php // Temp Global Nav for animation ?>
-    <div class="grid-container dummy-global-menu" dir="ltr">
+    <div class="grid-container full dummy-global-menu" dir="ltr">
         <nav class="grid-x">
             <div class="cell nav-wrapper">
                 <div class="menu-mobile hide-for-xlarge">

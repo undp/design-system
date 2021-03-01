@@ -14,9 +14,9 @@
     <?php
     View::render('organisms/hero/global-hero-1', [
         'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
-        'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
+        'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
         'imageUrl' => '/assets/images/placeholder/hero/global-hero-01-img.jpg',
-        'imageMobileUrl' => '/assets/images/placeholder/hero/global-hero-01-img.jpg'
+        'imageMobileUrl' => '/assets/images/placeholder/hero/global-hero-1-mobile.jpg'
     ]);?>
     <div class="grid-container">
         <div class="heading h2 component-title">Global Hero Option 2</div>
@@ -24,7 +24,7 @@
     <?php
     View::render('organisms/hero/global-hero-2', [
         'title' => 'Global Level Hero',
-        'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
+        'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
         'imageUrl' => '/assets/images/placeholder/hero/hero-2-image.png',
         'imageMobileUrl' => '/assets/images/placeholder/hero/global-hero-2-mobile.jpg'
     ]);
@@ -66,9 +66,9 @@
     <?php
     View::render('organisms/hero/country-hero-4', [
         'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
-        'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
+        'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
         'imageUrl' => '/assets/images/placeholder/hero/country-hero-4-image.jpg',
-        'imageMobileUrl' => '/assets/images/placeholder/hero/country-hero-4-image.jpg'
+        'imageMobileUrl' => '/assets/images/placeholder/hero/country-hero-img-mobile.jpg'
     ]);?>
     <div class="grid-container">
         <div class="heading h2 component-title">Country Hero Option 5</div>
@@ -76,7 +76,7 @@
     <?php
     View::render('organisms/hero/country-hero-5', [
         'title' => 'We’re changing the world. Here’s how to help.',
-        'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
+        'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
         'imageUrl' => '/assets/images/placeholder/hero/country-hero-5-img.jpg',
         'imageMobileUrl' => '/assets/images/placeholder/hero/country-hero-5-mobile.jpg'
     ]);

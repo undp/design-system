@@ -4,9 +4,7 @@
 
     .faq-item {
         width: 100%;
-        margin-top: 40px;
         align-items: center;
-        padding-bottom: 25px;
         justify-content: space-between;
         border-bottom: 1px solid $black;
 
@@ -17,6 +15,8 @@
 
     .question-button {
         width: 100%;
+        cursor: pointer;
+        padding: 40px 0 25px;
         text-align: left;
         align-items: center;
         justify-content: space-between;
@@ -56,7 +56,7 @@
 
         .answer {
             max-height: 1024px;
-            padding: 41px 40px 23px 44px;
+            padding: 16px 40px 23px 44px;
 
             @include breakpoint(medium down) {
                 padding: 15px 30px;

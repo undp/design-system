@@ -1,12 +1,15 @@
 <?php
 use helpers\Svg;
 use helpers\View;
-$modalId = bin2hex($name ?? '');
+
+$modalId = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name ?? '')));
 ?>
+
 
 <div class="small-leader-card">
     <div class="content-wrapper" data-modal-trigger="<?= $modalId ?>">
-        <img src="<?= $image ?? '' ?>" alt="Photo of <?= $name ?? '' ?>">
+
+        <div class="leader-photo" style="background-image: url('<?= $image ?? '' ?>')"></div>
 
         <div class="leader-info flex-container flex-dir-column">
             <h5 class="heading h5">

@@ -6,7 +6,7 @@ $invertBackgrounds = isset($invertBackgrounds) && $invertBackgrounds;
 <section class="parallax-gallery">
     <div class="grid-container grid-x position-relative">
 
-        <div class="cell gs--parallax-container scroll-track-center">
+        <div class="cell gs--parallax-container">
             <div class="grid-x grid-margin-x">
 
                 <div class="cell scroll-track left-right delay-2 hide-for-medium">
@@ -14,7 +14,7 @@ $invertBackgrounds = isset($invertBackgrounds) && $invertBackgrounds;
                 </div>
 
                 <div class="gallery-text-content cell medium-6 <?= $invertBackgrounds ? '' : 'with-background' ?>">
-                    <div class="track left-right delay-4">
+                    <div class="scroll-track left-right delay-3">
                         <h3 class="heading h3 show-for-medium">UNDP Hope</h3>
 
                         <p class="copy">
