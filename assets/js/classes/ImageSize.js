@@ -18,8 +18,10 @@ class ImageSize {
             const $imageMobile = $hero.data('mobile-image')
             const $imageDesktop = $hero.data('desktop-image')
 
-            if (!($imageMobile && $imageDesktop)) return
-
+            if ($imageMobile ==  '' & $imageDesktop == ''){
+                $hero.addClass('no-image')
+                return
+            }
 
             this.$window.on('changed.zf.mediaquery', () => {
 

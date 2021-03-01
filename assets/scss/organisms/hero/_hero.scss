@@ -10,4 +10,10 @@
             max-width: calc(1920px - 4.8rem);
         }
     }
+
+    &.no-image {
+        .overlay {
+            opacity: 0;
+        }
+    }
 }

@@ -98,7 +98,7 @@ $menuItems = [
 
 <div class="standard-page">
 
-    <section class="hero about-hero small-height" data-desktop-image="/assets/images/placeholder/hero/about-image.jpg" data-mobile-image="/assets/images/placeholder/hero/hero-about-small.jpg">
+    <section class="hero about-hero small-height" data-desktop-image="" data-mobile-image="">
         <div class="overlay"></div>
         <div class="grid-container scroll-track left-right delay-1 hero-container">
             <div class="grid-x text-container">
@@ -130,13 +130,13 @@ $menuItems = [
     <section class="side-nav-content grid-container">
         <div class="grid-x">
             <?php
-                View::render('partials/standard-page/side-navigation', [
-                    'menuItems' => $menuItems,
-                    'classes' => 'cell small-12 medium-4 large-3'
-                ]);
+            View::render('partials/standard-page/side-navigation', [
+                'menuItems' => $menuItems,
+                'classes' => 'cell small-12 medium-4 large-3'
+            ]);
 
 
-                View::render('partials/standard-page/side-content');
+            View::render('partials/standard-page/side-content');
             ?>
         </div>
     </section>
