@@ -48,7 +48,7 @@
                             'btnText' => 'Download',
                             'btnIcon' => 'icon-download',
                             'attributes' => 'download',
-                            'link' => '/assets/UNDP-Annual-Report-2019-fr.pdf'
+                            'link' => '/assets/others/UNDP-Annual-Report-2019-fr.pdf'
                         ]);
                         ?>
                     </div>

@@ -1,6 +1,8 @@
 import './helpers/findIndexPolyfill' // IE Polyfill
 import 'what-input'
 import './classes/UNDP'
+import 'objectFitPolyfill';
+
 
 import GlobalSearch from './classes/GlobalSearch'
 import inputs from './components/inputs'

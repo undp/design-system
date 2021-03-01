@@ -6,6 +6,10 @@
         max-height: 100% !important; //override the about hero height on mobile
     }
 
+    &:before {
+        background: $white !important;
+    }
+
     .hero-content-text {
         color: $black;
         margin-top: 60px;
@@ -108,7 +112,18 @@
         }
     }
 
-    &:before {
-        background: $white !important;
+    &.has-video {
+        .image-block {
+            @include breakpoint(small only) {
+                min-height: 0;
+            }
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left top;
+        }
     }
 }
