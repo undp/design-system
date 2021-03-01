@@ -1,0 +1,27 @@
+.multi-select,
+.select-radio {
+    .select-control {
+        text-align: right;
+        padding: 15px 25px 15px 45px;
+
+        &:after {
+            left: 28px;
+            right: auto;
+        }
+    }
+
+    .options {
+        padding: 0 25px 0 23px;
+
+        .has-submenu {
+            .caret {
+                left: 25px;
+                right: auto;
+            }
+        }
+
+        .checkbox-item {
+            padding: 15px 0 15px 52px;
+        }
+    }
+}

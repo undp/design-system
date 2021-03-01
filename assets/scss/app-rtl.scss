@@ -6,18 +6,22 @@ $global-text-direction: 'rtl';
 // RTL modifications
 
 // Common
-
+@import 'rtl/base/buttons';
 
 // Partials
 @import 'rtl/partials/nav';
 @import 'rtl/partials/nav-country';
 @import 'rtl/partials/footer';
+@import 'rtl/partials/scroll-up';
 
 // Molecules
-
+@import 'rtl/molecules/forms/multi-select';
+@import 'rtl/molecules/forms/custom-checkbox';
+@import 'rtl/molecules/cards/single-content-card-general';
 
 // Organisms
 @import 'rtl/organisms/hero/news-centre-hero';
+@import 'rtl/organisms/content-cards/news-centre-cards';
 @import 'rtl/organisms/hero/country-hero-3';
 
 // Pages
