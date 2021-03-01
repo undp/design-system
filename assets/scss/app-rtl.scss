@@ -1,3 +1,10 @@
+$global-text-direction: 'rtl';
+
+// Normal app styles
+@import 'app';
+
+// RTL modifications
+
 // Common
 
 
@@ -10,7 +17,7 @@
 
 
 // Organisms
-
+@import 'rtl/organisms/hero/news-centre-hero';
 
 // Pages
 

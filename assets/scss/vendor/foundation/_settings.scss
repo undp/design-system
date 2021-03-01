@@ -92,7 +92,7 @@ $global-weight-bold: bold;
 $global-radius: 0;
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1rem;
-$global-text-direction: ltr;
+$global-text-direction: ltr !default;
 $global-flexbox: true;
 $global-prototype-breakpoints: false;
 $global-button-cursor: auto;

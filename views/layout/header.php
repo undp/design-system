@@ -1,10 +1,11 @@
 <?php
 $pageTitle = $pageTitle ?? 'UNDP';
 $pageDescription = $pageDescription ?? 'UNDP';
+$langDir = $_GET["dir"] ?? "ltr"
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="en" <?= $langDir !== "ltr" ? "dir='".$langDir."'" : "" ?>>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,5 +14,9 @@ $pageDescription = $pageDescription ?? 'UNDP';
 
     <title><?= $pageTitle ?></title>
 
-    <link href="/dist/app.css" rel="stylesheet">
+    <?php if($langDir === "rtl"): ?>
+        <link href="/dist/app-rtl.css" rel="stylesheet">
+    <?php else: ?>
+        <link href="/dist/app.css" rel="stylesheet">
+    <?php endif; ?>
 </head>
