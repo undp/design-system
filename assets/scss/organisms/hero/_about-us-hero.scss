@@ -15,7 +15,7 @@
     }
 
     &.no-image {
-        background: linear-gradient(45deg, $blue-1 0%, $blue-6 60%);
+        background: linear-gradient(45deg, $blue-1 0%, $blue-accent 60%);
     }
 
     @include breakpoint(medium down) {
