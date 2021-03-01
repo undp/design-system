@@ -98,7 +98,7 @@ $menuItems = [
 
 <div class="standard-page">
 
-    <section class="hero about-hero" data-desktop-image="" data-mobile-image="">
+    <section class="hero about-hero small-height" data-desktop-image="" data-mobile-image="">
         <div class="overlay"></div>
         <div class="grid-container scroll-track left-right delay-1 hero-container">
             <div class="grid-x text-container">
