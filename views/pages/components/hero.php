@@ -27,7 +27,7 @@
         View::render('organisms/hero/global-hero-1', [
             'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
             'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
-            'videoUrl' => 'https://vod-progressive.akamaized.net/exp=1614385975~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1140%2F20%2F505700887%2F2317719330.mp4~hmac=9092ca8a844e3a270ae50e019816a9e2ebbbec9f0d8952ead471e5b9768c1f5b/vimeo-prod-skyfire-std-us/01/1140/20/505700887/2317719330.mp4?filename=hero-partnerships-desktop.mp4',
+            'videoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
     ?>
 
@@ -51,7 +51,7 @@
     View::render('organisms/hero/global-hero-2', [
         'title' => 'Global Level Hero',
         'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
-        'videoUrl' => 'https://vod-progressive.akamaized.net/exp=1614385975~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1140%2F20%2F505700887%2F2317719330.mp4~hmac=9092ca8a844e3a270ae50e019816a9e2ebbbec9f0d8952ead471e5b9768c1f5b/vimeo-prod-skyfire-std-us/01/1140/20/505700887/2317719330.mp4?filename=hero-partnerships-desktop.mp4',
+        'videoUrl' => '/assets/others/hero-video-sample.mp4',
     ]);
     ?>
 
@@ -117,7 +117,7 @@
         View::render('organisms/hero/country-hero-4', [
             'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
             'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
-            'videoUrl' => 'https://vod-progressive.akamaized.net/exp=1614385975~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1140%2F20%2F505700887%2F2317719330.mp4~hmac=9092ca8a844e3a270ae50e019816a9e2ebbbec9f0d8952ead471e5b9768c1f5b/vimeo-prod-skyfire-std-us/01/1140/20/505700887/2317719330.mp4?filename=hero-partnerships-desktop.mp4',
+            'videoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
     ?>
 
@@ -141,7 +141,7 @@
         View::render('organisms/hero/country-hero-5', [
             'title' => 'We’re changing the world. Here’s how to help.',
             'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
-            'videoUrl' => 'https://vod-progressive.akamaized.net/exp=1614385975~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1140%2F20%2F505700887%2F2317719330.mp4~hmac=9092ca8a844e3a270ae50e019816a9e2ebbbec9f0d8952ead471e5b9768c1f5b/vimeo-prod-skyfire-std-us/01/1140/20/505700887/2317719330.mp4?filename=hero-partnerships-desktop.mp4',
+            'videoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
     ?>
 
