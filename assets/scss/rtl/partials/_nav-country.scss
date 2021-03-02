@@ -76,6 +76,17 @@
         }
     }
 
+    &.initial-state-country {
+        .nav-country {
+            .nav-wrapper .menu-items .middle-logo {
+                right: 0;
+                left: auto;
+                transform: none;
+                transition: none;
+            }
+        }
+    }
+
 
     &.animate-transition {
         .nav-country {
