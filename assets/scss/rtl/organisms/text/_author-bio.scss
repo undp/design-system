@@ -1,0 +1,11 @@
+.author-bio {
+
+    .author-info {
+        margin-left: 0;
+        margin-right: 56px;
+
+        @include breakpoint(medium down) {
+            margin-right: 0;
+        }
+    }
+}
