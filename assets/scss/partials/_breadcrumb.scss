@@ -1,21 +1,20 @@
 .breadcrumb {
     padding: 0;
+    display: flex;
     list-style: none;
     font-size: 1.2rem;
     line-height: 1.23;
     font-weight: $bold;
-    font-family: $primary-font;
     text-transform: uppercase;
+    font-family: $primary-font;
 
     .breadcrumb-item {
-        display: inline;
         transition: opacity .2s ease;
 
         &:not(:last-of-type) {
             &:after {
                 content: "/";
-                display: inline;
-                margin: 0 5px 0 8px;
+                margin: 0 8px;
             }
 
             &:hover {

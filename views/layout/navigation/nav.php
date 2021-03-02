@@ -16,7 +16,7 @@ use helpers\View;
     <?php Svg::render('btn-arrow-red-secondary', false, 'Arrow right', 'assets/images/arrows/')?>
 </span>
 
-<section class="header" data-navigation dir="ltr">
+<section class="header" data-navigation>
     <div class="grid-container">
         <nav class="grid-x">
             <div class="cell nav-wrapper">
@@ -27,7 +27,7 @@ use helpers\View;
                         <span class="hamburger-line line-bottom"></span>
                     </a>
                 </div>
-                <div class="dropdown show-for-xlarge" data-dropdown-languajes>
+                <div class="dropdown show-for-xlarge" data-dropdown-languajes dir="ltr">
                     <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>
                         <?php Svg::render('icon-languages') ?>
                         English

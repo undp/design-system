@@ -3,7 +3,7 @@
 
 <div id="<?= $modalId ?>" class="modal leader-modal" data-modal>
     <div class="modal-content">
-        <div class="modal-heading">
+        <div class="modal-heading" data-ie-sticky>
             <button class="btn-close" data-modal-close>
                 <?php Svg::render('icon-close') ?>
             </button>

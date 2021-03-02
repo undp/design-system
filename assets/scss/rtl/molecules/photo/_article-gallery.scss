@@ -1,0 +1,16 @@
+.article-gallery {
+
+    .gallery-container .image-item {
+        margin-left: 0;
+        margin-right: 25px;
+
+        @include breakpoint(small only) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &:first-child {
+            margin-right: 0;
+        }
+    }
+}

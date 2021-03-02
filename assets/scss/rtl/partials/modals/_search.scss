@@ -1,0 +1,113 @@
+.modal-popular-search {
+    .modal-content {
+
+        .close-button {
+            left: 44px;
+            right: auto;
+        }
+
+        .modal-body {
+            .results-and-filters-container {
+                .search-filters {
+                    .active-filters {
+                        padding-left: 0;
+                        padding-right: 24px;
+                    }
+
+                    @include breakpoint(small only) {
+                        .active-filters {
+                            padding-right: 0;
+
+                            .tag {
+                                margin-left: 0;
+                                margin-right: 25px;
+                            }
+
+                            .filter-clear {
+                                left: 25px;
+                                right: auto;
+                            }
+
+                            .filter {
+                                &:nth-child(even) {
+                                    margin-right: 0;
+                                    margin-left: 5px;
+                                }
+                                &:nth-child(odd) {
+                                    margin-left: 0;
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .search-results {
+                    .search-result-card {
+                        .title-link {
+                            padding-right: 0;
+                            padding-left: 118px;
+                        }
+
+                        .medium-copy {
+                            padding-right: 0;
+                            padding-left: 235px;
+                        }
+
+                        @include breakpoint(medium down) {
+                            .title-link,
+                            .medium-copy {
+                                padding-left: 0;
+                            }
+                        }
+                    }
+
+                    .list-quicklinks {
+                        ul {
+                            @include breakpoint(small only) {
+                                padding-left: 0;
+                                padding-right: 22px;
+                            }
+
+                            li {
+                                @include breakpoint(small only) {
+                                    a {
+                                        &:after {
+                                            right: auto;
+                                            left: -18px;
+                                            transform: rotate(180deg);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.showing-results {
+        .modal-body {
+            .results-and-filters-container {
+                .search-results {
+                    padding-left: 0;
+                    padding-right: 25px;
+
+                    [data-search-results] {
+                        padding-right: 0;
+                        padding-left: 30px;
+                    }
+
+                    @include breakpoint(small only) {
+                        padding-right: 0;
+
+                        [data-search-results] {
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

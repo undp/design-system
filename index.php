@@ -37,6 +37,9 @@ switch ($subpath) {
     case '/about-us':
         View::render('pages/standard-page');
         break;
+    case '/about-us-2':
+        View::render('pages/standard-page-2');
+        break;
     case '/project-page':
         View::render('pages/project-page');
         break;

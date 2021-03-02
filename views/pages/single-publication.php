@@ -47,7 +47,7 @@ use helpers\View;
                         'classes' => 'accent-red'
                     ]);
 
-                    View::render('molecules/cards/publication-featured-card', [
+                    View::render('molecules/cards/multi-cta-featured-publication', [
                         'image' => '/assets/images/placeholder/publication-1.png'
                     ]);
                 ?>

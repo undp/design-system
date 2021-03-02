@@ -129,10 +129,12 @@
 
         .dummy-global-menu {
             top: 0;
+            left: 50%;
             opacity: 0;
             width: 100%;
             position: absolute;
             pointer-events: none;
+            transform: translateX(-50%);
 
             .logo-container {
                 visibility: hidden;
