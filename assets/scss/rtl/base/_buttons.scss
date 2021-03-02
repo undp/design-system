@@ -40,6 +40,12 @@
 
         }
     }
+
+    &.arrow-3 {
+        svg {
+            transform: scale(-1, 1);
+        }
+    }
 }
 
 .btn {

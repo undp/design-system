@@ -1,4 +1,6 @@
 .news-centre-hero {
+    overflow: hidden;
+
     .news-hero-container {
         .title {
             @include breakpoint(medium down) {
