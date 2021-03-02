@@ -1,6 +1,6 @@
 .text-link {
     svg,
-    img{
+    img {
         margin-left: 0;
         margin-right: 12px;
     }
@@ -10,13 +10,13 @@
         padding-left: 17px;
 
         svg,
-        img{
+        img {
             transform: rotate(180deg);
         }
 
         &:hover {
             svg,
-            img{
+            img {
                 transform: rotate(180deg) translateX(70%);
             }
         }
@@ -33,11 +33,24 @@
             transform: rotate(180deg) translateX(-31px);
         }
 
-        &:hover{
+        &:hover {
             .link-arrow-group {
                 transform: rotate(180deg) translateX(0);
             }
 
+        }
+    }
+}
+
+.btn {
+    svg {
+        transform-origin: left;
+        transform: rotate(180deg) translateX(0px);
+    }
+
+    &:hover {
+        svg {
+            transform: rotate(180deg) translateX(5px);
         }
     }
 }
