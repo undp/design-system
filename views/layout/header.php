@@ -1,7 +1,7 @@
 <?php
 $pageTitle = $pageTitle ?? 'UNDP';
 $pageDescription = $pageDescription ?? 'UNDP';
-$langDir = $_GET["dir"] ?? "ltr"
+$langDir = $_GET["dir"] ?? "rtl"
 ?>
 
 <!doctype html>
