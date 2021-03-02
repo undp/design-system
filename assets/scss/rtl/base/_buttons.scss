@@ -43,13 +43,13 @@
 }
 
 .btn {
-    svg {
+    svg, img {
         transform-origin: left;
         transform: rotate(180deg) translateX(0px);
     }
 
     &:hover {
-        svg {
+        svg, img {
             transform: rotate(180deg) translateX(5px);
         }
     }
