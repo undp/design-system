@@ -11,11 +11,17 @@ $global-text-direction: 'rtl';
 // Partials
 @import 'rtl/partials/nav';
 @import 'rtl/partials/nav-country';
+@import 'rtl/partials/menu/main';
+@import 'rtl/partials/menu/mobile/main';
+@import 'rtl/partials/menu/item-content';
+@import 'rtl/partials/menu/item-options';
 @import 'rtl/partials/footer';
 @import 'rtl/partials/scroll-up';
+@import 'rtl/partials/modals/search';
 
 // Molecules
 @import 'rtl/molecules/forms/multi-select';
+@import 'rtl/molecules/forms/search-input';
 @import 'rtl/molecules/forms/custom-checkbox';
 @import 'rtl/molecules/cards/single-content-card-general';
 

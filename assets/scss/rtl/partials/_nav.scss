@@ -1,1 +1,42 @@
-.header {}
+.header {
+    .nav-wrapper {
+        .middle-menu {
+            li:not(:last-child) {
+                margin-right: 0;
+                margin-left: 75px;
+
+                @include breakpoint(medium down) {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .right-menu {
+            .nav-item {
+                margin-right: 0;
+                margin-left: 22px;
+
+                @include breakpoint(large down) {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                    margin-left: 38px;
+
+                    @include breakpoint(large down) {
+                        &:last-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .dropdown {
+        .dropdown-content {
+            padding: 30px 12px 35px 30px;
+        }
+    }
+}

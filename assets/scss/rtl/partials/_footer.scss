@@ -24,24 +24,24 @@
                 text-align: right;
             }
         }
-    }
 
-    .legal {
-        .social-links {
-            .social-link:not(:last-child) {
-                margin-right: 0;
-                margin-left: 35px;
-
-                @include breakpoint(360px down){
+        .legal {
+            .social-links {
+                .social-link:not(:last-child) {
                     margin-right: 0;
-                    margin-left: 25px;
+                    margin-left: 35px;
+
+                    @include breakpoint(360px down){
+                        margin-right: 0;
+                        margin-left: 25px;
+                    }
                 }
-            }
 
-            .icon {
-                &:not(:last-child) {
-                    margin-right: 0;
-                    margin-left: 15px;
+                .icon {
+                    &:not(:last-child) {
+                        margin-right: 0;
+                        margin-left: 15px;
+                    }
                 }
             }
         }
