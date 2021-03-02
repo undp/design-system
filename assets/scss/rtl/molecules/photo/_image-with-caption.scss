@@ -1,0 +1,32 @@
+.image-with-caption {
+
+    &.small {
+        .image-caption {
+            @include breakpoint(medium up) {
+                margin-left: 0;
+                margin-right: 27px;
+            }
+
+            .image-author {
+                padding-right: 0;
+            }
+        }
+    }
+
+    .image-alt {
+        padding-right: 0;
+        padding-left: 15px;
+    }
+
+    .image-author {
+        @include breakpoint(medium up) {
+            padding-left: 0;
+            padding-right: 41px;
+
+            &:before {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}

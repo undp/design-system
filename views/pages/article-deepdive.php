@@ -14,7 +14,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
 <?php View::render('layout/navigation/nav') ?>
 <?php View::render('organisms/article-deepdive/navigation-progress') ?>
 
-<div class="article-deepdive">
+<main class="article-deepdive overflow-hidden">
 
     <section class="grid-container scroll-track left-right delay-1">
         <div class="grid-x overflow-hidden">
@@ -351,7 +351,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
     <div data-progress-end></div>
 
     <?php View::render('organisms/article-cards/related-articles'); ?>
-</div>
+</main>
 
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>
