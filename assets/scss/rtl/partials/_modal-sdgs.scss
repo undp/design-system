@@ -1,8 +1,18 @@
 .modal-sdgs {
+
+    @include breakpoint(small only) {
+        padding-left: 0;
+        padding-right: 12px;
+    }
+
     .modal-header {
         .btn-close {
             left: 1548px;
             right: auto;
+
+            @include breakpoint(small only) {
+                right: 0;
+            }
         }
     }
 
@@ -12,6 +22,10 @@
 
         .bulleted-list {
             margin: 125px 105px 0 0;
+
+            @include breakpoint(small only) {
+                margin-right: 8px;
+            }
 
             .list {
                 li {
