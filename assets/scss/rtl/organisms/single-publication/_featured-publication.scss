@@ -1,0 +1,33 @@
+.featured-publication {
+
+    .publication-text-container {
+        padding-right: 0;
+        padding-left: 120px;
+
+        @include breakpoint(medium only) {
+            padding-right: 0;
+            padding-left: 50px;
+        }
+
+        @include breakpoint(small only) {
+            padding: 0 26px;
+        }
+
+        .tags-container {
+            .flex-container {
+                margin-left: 0;
+                margin-right: -5px;
+            }
+
+            .tag-item {
+                margin-left: 0;
+                margin-right: 5px;
+            }
+
+            .tags-label {
+                margin-right: 0;
+                margin-left: 13px;
+            }
+        }
+    }
+}

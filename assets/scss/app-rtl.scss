@@ -19,8 +19,10 @@ $global-text-direction: 'rtl';
 @import 'rtl/partials/scroll-up';
 @import 'rtl/partials/modals/search';
 @import 'rtl/partials/explore-more';
+@import 'rtl/partials/modal';
 
 // Molecules
+@import 'rtl/molecules/forms/select';
 @import 'rtl/molecules/forms/multi-select';
 @import 'rtl/molecules/forms/search-input';
 @import 'rtl/molecules/forms/custom-checkbox';
@@ -30,6 +32,8 @@ $global-text-direction: 'rtl';
 @import 'rtl/molecules/photo/article-gallery';
 @import 'rtl/molecules/photo/image-with-caption';
 @import 'rtl/molecules/photo/photo-cta';
+@import 'rtl/molecules/cards/multi-cta-featured-publication';
+@import 'rtl/molecules/cards/publication-featured-card';
 
 // Organisms
 @import 'rtl/organisms/hero/news-centre-hero';
@@ -39,6 +43,8 @@ $global-text-direction: 'rtl';
 @import 'rtl/organisms/article-deepdive/text';
 @import 'rtl/organisms/article-deepdive/article-authors';
 @import 'rtl/organisms/text/author-bio';
+@import 'rtl/organisms/single-publication/featured-publication';
+@import 'rtl/organisms/modals/modal-publication-download';
 
 // Pages
 
