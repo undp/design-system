@@ -1,9 +1,9 @@
 <?php use helpers\View; ?>
 
 
-<div class="country-page-content-cards scroll-track left-right delay-1" data-view-more data-load-step="4">
-    <div class="grid-container grid-x">
-        <div class="cell cards-container">
+<section class="country-page-content-cards" data-view-more data-load-step="4">
+    <div class="grid-container grid-x overflow-hidden">
+        <div class="cell cards-container scroll-track left-right delay-1">
             <div class="grid-x grid-margin-x flex-container align-center">
                 <div class="cell medium-6 large-3 card-item">
                     <?php
@@ -60,4 +60,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

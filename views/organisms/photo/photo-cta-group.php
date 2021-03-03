@@ -1,7 +1,7 @@
 <?php use helpers\View; ?>
 
-<div class="photo-cta-group">
-    <div class="grid-container grid-x">
+<section class="photo-cta-group">
+    <div class="grid-container grid-x overflow-hidden">
         <div class="cell small-10 small-offset-1 medium-12 medium-offset-0 flex-container cards-title">
             <div class="heading h2 content-title scroll-track left-right delay-1">Take Action</div>
         </div>
@@ -40,4 +40,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>
