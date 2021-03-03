@@ -1,0 +1,47 @@
+.modal-publication-download {
+
+    &.no-image .modal-content {
+        .chapter-title {
+            padding-right: 0 !important;
+            padding-left: 25px !important;
+        }
+
+        .download-controls {
+            padding-right: 0;
+        }
+    }
+
+    .bottom-container {
+        padding-right: 0;
+        padding-left: 40px;
+
+        @include breakpoint(small only) {
+            padding-left: 0;
+        }
+    }
+
+    .download-controls {
+        padding-right: 40px;
+
+        .chapter-list {
+            padding: 0 0 0 35px;
+
+            @include breakpoint(small only) {
+                padding: 0 0 0 17px;
+            }
+
+            .chapter-item {
+                padding: 19px 8px 15px 26px;
+
+                @include breakpoint(small only) {
+                    padding: 19px 14px 15px 7px;
+                }
+            }
+        }
+
+        .select-box {
+            margin-right: 0;
+            margin-left: 40px;
+        }
+    }
+}
