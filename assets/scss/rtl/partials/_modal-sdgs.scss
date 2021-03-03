@@ -36,5 +36,17 @@
                 }
             }
         }
+
+        .cards-slider-container {
+            .cards-slider {
+                direction: ltr;
+                margin-right: -200px;
+            }
+
+            .glide__track .glide__slide {
+                direction: rtl;
+            }
+
+        }
     }
 }
