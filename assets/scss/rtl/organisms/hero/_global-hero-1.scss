@@ -6,4 +6,12 @@
             }
         }
     }
+
+    .image-block {
+        .cta-button {
+            @include breakpoint(medium down) {
+                right: 0;
+            }
+        }
+    }
 }
