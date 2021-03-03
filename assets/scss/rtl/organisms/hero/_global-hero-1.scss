@@ -1,0 +1,9 @@
+.global-hero-1 {
+    .hero-content-text {
+        .title-text {
+            &:after {
+                right: 0;
+            }
+        }
+    }
+}
