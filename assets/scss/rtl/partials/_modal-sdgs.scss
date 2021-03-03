@@ -9,5 +9,18 @@
     .modal-content {
         margin-right: auto;
         margin-left: unset;
+
+        .bulleted-list {
+            margin: 125px 105px 0 0;
+
+            .list {
+                li {
+                    &:before {
+                        margin-right: 0;
+                        margin-left: 25px;
+                    }
+                }
+            }
+        }
     }
 }
