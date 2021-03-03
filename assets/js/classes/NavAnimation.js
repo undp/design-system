@@ -1,6 +1,5 @@
 import Cookies from 'js-cookie'
 
-
 class NavAnimation {
 
     constructor(container) {
@@ -17,33 +16,53 @@ class NavAnimation {
             global: 'global-nav',
             country: 'country-nav'
         }
+
+        this.regionalUrls = ['/country-page', '/project-page']
     }
 
     init() {
         this.setCurrentAndPreviousNav()
+
         if (this.shouldAnimate()) {
             this.animate()
         } else {
             this.setCountryNav()
+        }
+
+        if(this.currentNav === 'country-nav') {
+            this.unloadListener()
         }
     }
 
     animate() {
         this.$container.addClass('initial-state-animation')
         this.$container.addClass(this.animationTriggerClass)
+    }
 
-        // Full transition needs around 1.5s, delete dummy global menu after it's done
-        /*setTimeout(() => {
-            this.$container.find('.dummy-global-menu').remove()
-        }, 1500)*/
+    unloadListener() {
+        this.$body.on('click', 'a', e => {
+            let url = e.currentTarget.getAttribute("href");
+
+            if(!url.includes('#') && url !== '' && this.regionalUrls.findIndex(path => { return url.includes(path) }) === -1) {
+                e.preventDefault()
+
+                if(!this.$container.hasClass('initial-state-animation')) {
+                    this.$container.removeClass('initial-state-country')
+                    this.$container.addClass('initial-state-animation')
+                }
+
+                this.$container.removeClass(this.animationTriggerClass)
+
+                setTimeout(() => {
+                    window.location.href = url
+                }, 1500)
+            }
+        })
     }
 
     setCountryNav() {
         this.$container.addClass('initial-state-country')
-    }
-
-    getCurrentNav() {
-        return this.currentNav
+        this.$container.addClass(this.animationTriggerClass)
     }
 
     isCountryNav() {
