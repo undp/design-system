@@ -3,7 +3,7 @@ use helpers\Svg;
 $image = '/assets/images/placeholder/cards/featured-content-card.jpg';
 ?>
 <section class="featured-content-card">
-    <div class="grid-container">
+    <div class="grid-container overflow-hidden">
         <div class="grid-x">
             <div class="cell small-10 small-offset-1 section-heading">
                 <h2 class="heading h2 scroll-track left-right delay-1">Stories</h2>

@@ -113,6 +113,10 @@
             .link-arrow-group {
                 transform: translateX(0);
 
+                [dir=rtl] & {
+                    transform: rotate(180deg) translateX(0);
+                }
+
                 .arrow-line {
                     display: unset;
                 }
