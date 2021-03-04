@@ -18,8 +18,11 @@ $global-text-direction: 'rtl';
 @import 'rtl/partials/footer';
 @import 'rtl/partials/scroll-up';
 @import 'rtl/partials/modals/search';
+@import 'rtl/partials/modal-sdgs';
 @import 'rtl/partials/explore-more';
 @import 'rtl/partials/modal';
+@import 'rtl/partials/breadcrumb';
+@import 'rtl/partials/side-navigation';
 
 // Molecules
 @import 'rtl/molecules/forms/select';
@@ -34,6 +37,10 @@ $global-text-direction: 'rtl';
 @import 'rtl/molecules/photo/photo-cta';
 @import 'rtl/molecules/cards/multi-cta-featured-publication';
 @import 'rtl/molecules/cards/publication-featured-card';
+@import 'rtl/molecules/cards/article-card';
+@import 'rtl/molecules/photo/large-carousel-slide';
+
+@import 'rtl/molecules/statistics-figures/sdg-card';
 
 // Organisms
 @import 'rtl/organisms/hero/news-centre-hero';
@@ -42,6 +49,7 @@ $global-text-direction: 'rtl';
 @import 'rtl/organisms/hero/country-hero-3';
 @import 'rtl/organisms/hero/country-hero-4';
 @import 'rtl/organisms/hero/global-hero-1';
+@import 'rtl/organisms/hero/sdg-deep-dive-hero';
 
 @import 'rtl/organisms/article-deepdive/text';
 @import 'rtl/organisms/article-deepdive/article-authors';
@@ -49,9 +57,13 @@ $global-text-direction: 'rtl';
 @import 'rtl/organisms/single-publication/featured-publication';
 @import 'rtl/organisms/modals/modal-publication-download';
 @import 'rtl/organisms/modals/leader-modal';
+@import 'rtl/organisms/photo/large-carousel';
+@import 'rtl/organisms/photo/image-per-row-gallery';
+@import 'rtl/organisms/photo/image-only-carousel';
+@import 'rtl/organisms/text/small-copy';
 
 // Pages
-
+@import 'rtl/pages/standard-page';
 
 // Component templates
 

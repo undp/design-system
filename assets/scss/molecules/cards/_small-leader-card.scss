@@ -4,6 +4,8 @@
 
     @include breakpoint(small only) {
         height: auto;
+        margin: 0 auto;
+        max-width: 545px;
         padding-bottom: 14px;
     }
 

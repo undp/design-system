@@ -2,7 +2,8 @@
     margin-bottom: 22px;
 
     @include breakpoint(small only) {
-        margin-bottom: 14px;
+        max-width: 545px;
+        margin: 0 auto 14px;
     }
 
     > .content-wrapper {
@@ -57,7 +58,7 @@
                 object-fit: cover;
 
                 @include breakpoint(small only) {
-                    height: 400px;
+                    height: auto;
                 }
             }
         }
