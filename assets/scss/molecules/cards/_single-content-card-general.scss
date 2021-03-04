@@ -4,27 +4,11 @@
     min-height: 405px;
     position: relative;
     border-top: 2px solid $black;
+    @include hover-animate-arrow-2();
 
     @include breakpoint(medium down){
         margin: 25px auto 0;
         max-width: 545px;
-    }
-
-    // Don't trigger hover on tap on iOS
-    @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        &:hover{
-            .link-arrow-group {
-                transform: translateX(0);
-
-                .arrow-line{
-                    display: unset;
-                }
-
-                .arrow-point{
-                    transform: translateX(31px);
-                }
-            }
-        }
     }
 }
 
