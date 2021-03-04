@@ -94,8 +94,7 @@ class GenericSlider {
 
     setCustomControls() {
         this.$slidesContainer.click((e) => {
-            let thresholdArea = this.$container.offset().left + (this.$container.width() / 2)
-            let threshold = this.$window.width() - thresholdArea
+            let threshold = this.$container.offset().left + (this.$container.width() / 2)
             const slideDir = e.pageX < threshold ? '<' : '>'
 
             if(!$(e.target).is(':button')){
