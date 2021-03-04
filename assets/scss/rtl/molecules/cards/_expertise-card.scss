@@ -1,0 +1,13 @@
+.expertise-card {
+    a {
+        &:hover {
+            .text-link {
+                svg,
+                img {
+                    transform: translateX(-10px) rotate(180deg);
+                }
+            }
+        }
+    }
+}
+
