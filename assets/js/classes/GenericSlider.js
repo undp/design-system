@@ -46,13 +46,13 @@ class GenericSlider {
 
     mountGlide() {
         this.glide = new Glide(this.$container.get(0), this.options)
-        this.glide.mount()
 
         this.glide.on(['resize', 'update'], () => this.setSliderControl())
         this.glide.on(['mount.after', 'run'], () => {
             this.$sliderControl.css('left', (this.glide.index * this.getSliderControlWidth()) + "%")
         })
 
+        this.glide.mount()
         this.setSliderControl()
         $(this.glide).trigger('update')
     }
