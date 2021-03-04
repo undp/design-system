@@ -7,7 +7,7 @@
 
             <div class="cell large-5 large-offset-1 hero-content-text">
                 <div class="heading h2 title-text scroll-track left-right delay-1"><?= $title ?? '' ?></div>
-                <div class="heading h3 subtitle-text">Re-imagining Life in a </br>
+                <div class="heading h3 subtitle-text scroll-track left-right delay-1">Re-imagining Life in a </br>
                     Post-pandemic World</div>
 
                 <div class="cta-button">
