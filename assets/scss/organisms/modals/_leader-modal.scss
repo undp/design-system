@@ -21,7 +21,7 @@
         @include stylize-scrollbar();
 
         @include breakpoint(small only) {
-            padding: 0 12px;
+            padding: 0 10px 0 15px;
         }
 
         .btn-close {
@@ -91,7 +91,7 @@
             max-width: 330px;
 
             @include breakpoint(small only) {
-                max-width: 336px;
+                max-width: 545px;
             }
         }
     }
