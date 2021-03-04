@@ -13,7 +13,7 @@ $country = isset($country) && $country ? $country : 'UNDP Global';
                     <div class="arrow-back">
                         <?php Svg::render('arrow-back-bigger', true, 'back', 'assets/images/arrows/')?>
                     </div>
-                    Back
+                    <span>Back</span>
                 </a>
                 <div class="header-modal">
                     <p class="tag show-for-large">current selection</p>

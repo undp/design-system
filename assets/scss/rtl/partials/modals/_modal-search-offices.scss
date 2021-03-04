@@ -1,0 +1,35 @@
+.modal-search-offices {
+    .modal-content {
+        .modal-body {
+            .cell-list-offices {
+                padding: 0 15px 0 0;
+
+                .countries {
+                    .country-item {
+                        .languages {
+                            text-align: left;
+                        }
+                    }
+                }
+
+                .inputs {
+                    .search-select-group {
+                        &:not(:last-child) {
+                            margin-left: 30px;
+                        }
+                    }
+
+                    .search-input {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .btn-back {
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}
