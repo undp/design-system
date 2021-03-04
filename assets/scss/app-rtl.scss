@@ -21,6 +21,8 @@ $global-text-direction: 'rtl';
 @import 'rtl/partials/modal-sdgs';
 @import 'rtl/partials/explore-more';
 @import 'rtl/partials/modal';
+@import 'rtl/partials/breadcrumb';
+@import 'rtl/partials/side-navigation';
 
 // Molecules
 @import 'rtl/molecules/forms/select';
@@ -58,7 +60,7 @@ $global-text-direction: 'rtl';
 @import 'rtl/organisms/text/small-copy';
 
 // Pages
-
+@import 'rtl/pages/standard-page';
 
 // Component templates
 

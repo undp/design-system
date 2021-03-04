@@ -46,13 +46,13 @@ class GenericSlider {
 
     mountGlide() {
         this.glide = new Glide(this.$container.get(0), this.options)
-        this.glide.mount()
 
         this.glide.on(['resize', 'update'], () => this.setSliderControl())
         this.glide.on(['mount.after', 'run'], () => {
             this.$sliderControl.css('left', (this.glide.index * this.getSliderControlWidth()) + "%")
         })
 
+        this.glide.mount()
         this.setSliderControl()
         $(this.glide).trigger('update')
     }
@@ -94,8 +94,7 @@ class GenericSlider {
 
     setCustomControls() {
         this.$slidesContainer.click((e) => {
-            let thresholdArea = this.$container.offset().left + (this.$container.width() / 2)
-            let threshold = this.$window.width() - thresholdArea
+            let threshold = this.$container.offset().left + (this.$container.width() / 2)
             const slideDir = e.pageX < threshold ? '<' : '>'
 
             if(!$(e.target).is(':button')){

@@ -1,0 +1,35 @@
+.standard-page {
+
+    .side-nav-content .side-content {
+        > .content-wrapper {
+            @include breakpoint(large up) {
+                padding-left: 14%;
+                margin-right: auto;
+                margin-left: -24px;
+                padding-right: 24px;
+            }
+        }
+    }
+
+    .standard-page-slider {
+        direction: ltr;
+
+        .standard-page-slide {
+            direction: rtl;
+
+            .slide-content {
+                padding-left: 0;
+                text-align: right;
+                padding-right: 49px;
+
+                @include breakpoint(small only) {
+                    padding-right: 0;
+                }
+            }
+        }
+
+        .glide__track {
+            margin-right: 0;
+        }
+    }
+}
