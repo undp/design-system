@@ -23,6 +23,7 @@
         .title-text {
             position: relative;
             padding-bottom: 60px;
+            text-transform: uppercase;
             font-family: $secondary-font;
 
             @include breakpoint(small only) {
@@ -36,7 +37,7 @@
                 width: 95px;
                 height: 3px;
                 left: 0;
-                background: $red;
+                background: $dark-blue-4;
                 position: absolute;
             }
         }
@@ -76,24 +77,6 @@
             min-height: 500px;
         }
 
-        .cta-button {
-            &.mobile {
-                display: none;
-
-                @include breakpoint(small only) {
-                    width: 100%;
-                    bottom: 25px;
-                    display: block;
-                    padding: 0 30px;
-                    position: absolute;
-                }
-
-                .btn {
-                    width: 100%;
-                }
-            }
-        }
-
         &.contract {
             max-width: 100%;
         }
@@ -109,6 +92,32 @@
             @include breakpoint(small only) {
                 display: block;
             }
+
+            .cta-button {
+                width: 100%;
+                bottom: 25px;
+                display: block;
+                padding: 0 30px;
+                position: absolute;
+
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .cta-button.mobile {
+        display: none;
+
+        @include breakpoint(small only) {
+            width: 100%;
+            display: block;
+            margin-top: 15px;
+        }
+
+        .btn {
+            width: 100%;
         }
     }
 

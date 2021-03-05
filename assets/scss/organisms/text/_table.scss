@@ -1,12 +1,6 @@
 .table {
     margin-top: 130px;
 
-    .table-desktop {
-        @include breakpoint(small only) {
-            display: none;
-        }
-    }
-
     .columns-content {
         margin-top: 70px;
 
@@ -15,10 +9,37 @@
         }
     }
 
-    .column-table {
+    .row-element {
 
         @include breakpoint(medium down) {
             margin-top: 40px;
+        }
+
+        @include breakpoint(small only) {
+            border-bottom: 2px solid $black;
+            padding-bottom: 35px;
+        }
+
+        .row-item {
+            height: 70px;
+            margin-top: 50px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid $black;
+
+            @include breakpoint(small only) {
+                height: auto;
+                margin-top: 17px;
+            }
+
+            &:last-child {
+                @include breakpoint(small only) {
+                    border: none;
+                }
+            }
+
+            @include breakpoint(small only) {
+                margin-top: 35px;
+            }
         }
 
         .title {
@@ -27,50 +48,12 @@
             text-transform: uppercase;
         }
 
-        .table-item {
-            height: 70px;
+        .text-content {
             font-size: 2rem;
-            margin-top: 50px;
-            padding-bottom: 18px;
-            border-bottom: 1px solid $black;
-
-            @include breakpoint(small only) {
-                height: auto;
-            }
-
-            @include breakpoint(small only) {
-                margin-top: 17px;
-            }
 
             .link-item {
                 padding-bottom: 12px;
             }
-        }
-    }
-
-    .mobile-table {
-        display: none;
-
-        @include breakpoint(small only) {
-            display: block;
-        }
-
-        .table-item {
-            margin-top: 35px;
-            border-bottom: 1px solid $porcelain;
-
-            &:last-child {
-                border: none;
-            }
-        }
-
-        .name-item {
-            margin-top: 17px;
-        }
-
-        .column-table {
-            padding-bottom: 33px;
-            border-bottom: 1px solid $black;
         }
     }
 }

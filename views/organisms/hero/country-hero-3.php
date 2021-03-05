@@ -1,9 +1,8 @@
-<?php
-use helpers\Svg;
-?>
-<section class="country-hero-3">
 
-    <div class="grid-container hero-container">
+
+<section class="country-hero-3 grid-container">
+
+    <div class="hero-container">
         <div class="left-bar"></div>
         <div class="grid-x">
             <div class="cell large-3 large-offset-1">
