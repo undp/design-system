@@ -1,8 +1,6 @@
-<?php
-use helpers\View;
-$hasVideoBackground = isset($videoUrl) && !empty($videoUrl);
-?>
-h
+<?php $hasVideoBackground = isset($videoUrl) && !empty($videoUrl); ?>
+
+
 <section
     data-desktop-image="<?= $imageUrl ?? '' ?>"
     data-mobile-image="<?= $imageMobileUrl ?? '' ?>"
@@ -20,10 +18,6 @@ h
     <div class="content-wrapper grid-container">
         <div class="grid-x">
             <div class="cell small-9 small-offset-1 large-8">
-                <?php View::render('partials/breadcrumb', [
-                    'links' => $breadcrumbLinks ?? '',
-                    'classes' => 'accent-white'
-                ]) ?>
                 <div class="heading h2 title-text scroll-track left-right delay-1"><?= $title ?? '' ?></div>
             </div>
             <div class="cta-button">
