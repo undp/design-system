@@ -25,7 +25,7 @@ class NavAnimation {
 
         if (this.shouldAnimate()) {
             this.animate()
-        } else {
+        } else if(this.isCountryNav()) {
             this.setCountryNav()
         }
 

@@ -96,7 +96,7 @@ $menuItems = [
 <?php View::render('layout/navigation/nav') ?>
 
 
-<div class="standard-page">
+<main class="standard-page">
 
     <section class="hero about-hero small-height" data-desktop-image="/assets/images/placeholder/hero/about-image.jpg" data-mobile-image="/assets/images/placeholder/hero/hero-about-small.jpg">
         <div class="overlay"></div>
@@ -140,7 +140,7 @@ $menuItems = [
             ?>
         </div>
     </section>
-</div>
+</main>
 
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>
