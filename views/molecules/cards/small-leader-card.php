@@ -9,7 +9,8 @@ $modalId = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name ?? '')));
 <div class="small-leader-card">
     <div class="content-wrapper" data-modal-trigger="<?= $modalId ?>">
 
-        <div class="leader-photo" style="background-image: url('<?= $image ?? '' ?>')"></div>
+        <div class="leader-photo hide-for-small-only" style="background-image: url('<?= $image ?? '' ?>')"></div>
+        <img class="show-for-small-only" src="<?= $image ?? '' ?>" alt="<?= $name ?? '' ?> Photo">
 
         <div class="leader-info flex-container flex-dir-column">
             <h5 class="heading h5">
