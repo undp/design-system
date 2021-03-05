@@ -31,7 +31,7 @@
 
         <?php if ($hasVideo) : ?>
             <video autoplay loop muted playsinline>
-                <source src="<?= $videoUrl ?>" type="video/mp4">
+                <source src="<?= $mobileVideoUrl ?? $videoUrl ?>" type="video/mp4">
             </video>
         <?php endif; ?>
 

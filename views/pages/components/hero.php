@@ -28,6 +28,7 @@
             'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
             'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
             'videoUrl' => '/assets/others/hero-video-sample.mp4',
+            'mobileVideoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
     ?>
 
@@ -52,6 +53,7 @@
             'title' => 'Global Level Hero',
             'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
             'videoUrl' => '/assets/others/hero-video-sample.mp4',
+            'mobileVideoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
     ?>
 
@@ -118,6 +120,7 @@
             'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
             'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
             'videoUrl' => '/assets/others/hero-video-sample.mp4',
+            'mobileVideoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
     ?>
 
@@ -142,6 +145,7 @@
             'title' => 'We’re changing the world. Here’s how to help.',
             'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
             'videoUrl' => '/assets/others/hero-video-sample.mp4',
+            'mobileVideoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
     ?>
 

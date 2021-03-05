@@ -7,8 +7,11 @@ $hasVideoBackground = isset($videoUrl) && !empty($videoUrl);
 <section class="hero global-hero-2 <?= $hasVideoBackground ? 'video-background' : '' ?>" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>">
 
     <?php if ($hasVideoBackground) : ?>
-        <video autoplay loop muted playsinline data-object-fit="cover" data-object-position="top left">
+        <video class="show-for-small-only" autoplay loop muted playsinline data-object-fit="cover" data-object-position="top left">
             <source src="<?= $videoUrl ?>" type="video/mp4">
+        </video>
+        <video class="hide-for-small-only" autoplay loop muted playsinline data-object-fit="cover" data-object-position="top left">
+            <source src="<?= $mobileVideoUrl ?? $videoUrl ?>" type="video/mp4">
         </video>
     <?php endif; ?>
 
