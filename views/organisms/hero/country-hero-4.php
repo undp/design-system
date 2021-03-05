@@ -16,8 +16,7 @@
                         <source src="<?= $videoUrl ?>" type="video/mp4">
                     </video>
                 <?php endif; ?>
-
-                <div class="gradient"></div>
+                
                 <div class="cta-button">
                     <button class="btn">
                         <span>Read More</span>
