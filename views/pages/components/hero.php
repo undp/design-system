@@ -50,6 +50,7 @@
     <?php
         View::render('organisms/hero/global-hero-2', [
             'title' => 'Global Level Hero',
+            'classes' => 'no-overlay',
             'videoUrl' => '/assets/others/hero-video-sample.mp4',
             'mobileVideoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
@@ -140,6 +141,7 @@
     <?php
         View::render('organisms/hero/country-hero-5', [
             'title' => 'We’re changing the world. Here’s how to help.',
+            'classes' => 'no-overlay',
             'videoUrl' => '/assets/others/hero-video-sample.mp4',
             'mobileVideoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
