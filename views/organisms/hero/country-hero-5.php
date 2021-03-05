@@ -4,7 +4,7 @@
 <section
     data-desktop-image="<?= $imageUrl ?? '' ?>"
     data-mobile-image="<?= $imageMobileUrl ?? '' ?>"
-    class="hero country-hero-5 <?= $hasVideoBackground ? 'video-background' : '' ?>">
+    class="hero country-hero-5 <?= $classes ?? '' ?> <?= $hasVideoBackground ? 'video-background' : '' ?>">
 
     <?php if ($hasVideoBackground) : ?>
         <video class="hide-for-small-only" autoplay loop muted playsinline data-object-fit="cover" data-object-position="left center">
