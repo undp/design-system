@@ -1,13 +1,10 @@
 .country-hero-1 {
+    overflow: hidden;
 
-    .image-item {
-        // Don't trigger hover on tap on iOS
-        @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
-            &:hover{
-                .link-arrow-group {
-                    transform: rotate(180deg) translateX(0);
-                }
-            }
+    .image-item .description {
+        @include breakpoint(medium down) {
+            padding-right: 0;
+            padding-left: 20px;
         }
     }
 }
