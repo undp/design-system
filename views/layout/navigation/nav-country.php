@@ -1,3 +1,47 @@
+<style>
+    /* Critical CSS for nav animations (fixes bug where transition breaks)*/
+
+    .header.nav-country-container .nav-country .menu-cell-right,
+    .header.nav-country-container .nav-country .menu-items .logo-text,
+    .header.nav-country-container .nav-country .menu-items .nav-item {
+        opacity: 0;
+        transition: opacity 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05);
+    }
+
+    .header.nav-country-container .nav-country .nav-wrapper .menu-items .middle-logo {
+        top: 0;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        transition: all 1s cubic-bezier(0.25, 0.27, 0.11, 0.99) 0.5s;
+    }
+
+
+    .header.initial-state-animation .nav-country,
+    .header.initial-state-animation .dummy-global-menu {
+        opacity: 1;
+    }
+
+    .header.animate-transition .nav-country .nav-wrapper .menu-items .middle-logo {
+        left: 0;
+        transform: none;
+    }
+
+    .header.animate-transition .nav-country .menu-cell-right,
+    .header.animate-transition .nav-country .menu-items .logo-text,
+    .header.animate-transition .nav-country .menu-items .nav-item {
+        opacity: 1;
+        transition-delay: 1.6s;
+    }
+
+    .header.animate-transition .dummy-global-menu .dropdown,
+    .header.animate-transition .dummy-global-menu .nav-item,
+    .header.animate-transition .dummy-global-menu .menu-mobile {
+        opacity: 0;
+        transition-delay: 0s;
+    }
+</style>
+
 <?php
 use helpers\Svg;
 use helpers\View;
@@ -113,7 +157,7 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
     </div>
 
     <?php // Temp Global Nav for animation ?>
-    <div class="grid-container full dummy-global-menu" dir="ltr">
+    <div class="grid-container dummy-global-menu" dir="ltr">
         <nav class="grid-x">
             <div class="cell nav-wrapper">
                 <div class="menu-mobile hide-for-xlarge">
