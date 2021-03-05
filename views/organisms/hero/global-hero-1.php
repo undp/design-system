@@ -21,7 +21,7 @@
             <div class="cell large-6 hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>" >
 
                 <?php if ($hasVideo) : ?>
-                    <video autoplay loop muted data-object-fit="cover" data-object-position="left center">
+                    <video autoplay loop muted playsinline data-object-fit="cover" data-object-position="left center">
                         <source src="<?= $videoUrl ?>" type="video/mp4">
                     </video>
                 <?php endif; ?>
@@ -40,8 +40,8 @@
     <div class="hero image-block mobile"data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>">
 
         <?php if ($hasVideo) : ?>
-            <video autoplay loop muted>
-                <source src="<?= $videoUrl ?>" type="video/mp4">
+            <video autoplay loop muted playsinline>
+                <source src="<?= $mobileVideoUrl ?? $videoUrl ?>" type="video/mp4">
             </video>
         <?php endif; ?>
 
