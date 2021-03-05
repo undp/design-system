@@ -1,39 +1,108 @@
 .modal-search-offices {
+
     .modal-content {
+        .active-filters {
+            .tag {
+                margin: 0 0 0 15px;
+            }
+
+            .filter {
+                margin: 0 0 0 10px;
+            }
+        }
+
         .modal-body {
             .cell-list-offices {
-                padding: 0 15px 0 0;
-
-                .countries {
-                    .country-item {
-                        .languages {
-                            text-align: left;
-                        }
-                    }
+                @include breakpoint(medium down) {
+                    padding: 0 15px 0 0;
                 }
 
                 .inputs {
+                    padding-right: 0;
                     padding-left: 15px;
-
-
-                    .search-select-group {
-                        &:not(:last-child) {
-                            margin-left: 30px;
-                        }
-                    }
 
                     .search-input {
                         margin-right: 0;
+                        margin-left: 45px;
+
+                        @include breakpoint(xlarge down){
+                            margin-right: 0;
+                            margin-left: 30px;
+                        }
+
+                        @include breakpoint(medium down){
+                            margin-left: 0;
+                        }
+                    }
+
+                    .search-select-group {
+                        &:not(:last-child) {
+                            margin-right: 0;
+                            margin-left: 30px;
+                        }
+
+                        .multi-select .select-control {
+                            text-align: right;
+                        }
                     }
                 }
-            }
 
-            .btn-back {
-                display: flex;
-                padding-right: 15px;
-                justify-content: flex-end;
-                flex-direction: row-reverse;
+                .countries {
+                    right: 0;
+                    left: 50px;
+
+                    @include breakpoint(medium down) {
+                        left: 0;
+                        padding: 0 0 0 10px;
+                    }
+
+                    .country-item {
+                        padding: 20px 5px 20px 25px;
+
+                        .country {
+                            padding-right: 0;
+                            padding-left: 10px;
+                        }
+
+                        .language-link:after {
+                            margin: 0 12px 0 20px;
+
+                            &:last-child {
+                                margin-left: 0;
+                            }
+                        }
+
+                        .languages {
+                            text-align: left;
+                        }
+
+                        .text-link {
+                            @include breakpoint(medium down) {
+                                svg {
+                                    margin-left: 0;
+                                    margin-right: 9px;
+                                }
+                            }
+
+                            &:not(:first-child) {
+                                margin-left: 0;
+                                margin-right: 20px;
+
+                                @include breakpoint(medium down) {
+                                    margin-left: 0;
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .filter-options .btn-filters .current-filters {
+                    margin-left: 0;
+                    margin-right: 15px;
+                }
             }
         }
+
     }
 }
