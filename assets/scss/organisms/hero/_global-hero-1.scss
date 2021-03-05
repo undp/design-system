@@ -23,6 +23,7 @@
         .title-text {
             position: relative;
             padding-bottom: 60px;
+            text-transform: uppercase;
             font-family: $secondary-font;
 
             @include breakpoint(small only) {

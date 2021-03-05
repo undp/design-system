@@ -5,6 +5,7 @@
         .title {
             margin-top: 0 !important;
             font-weight: $extra-bold;
+            text-transform: uppercase;
             font-family: $secondary-font;
 
             @include breakpoint(medium only) {
