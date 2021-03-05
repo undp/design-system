@@ -18,38 +18,37 @@
                 </div>
             </div>
 
-            <div class="cell large-6 hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>" >
-
+            <div class="cell large-6 hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" >
                 <?php if ($hasVideo) : ?>
                     <video autoplay loop muted playsinline data-object-fit="cover" data-object-position="left center">
                         <source src="<?= $videoUrl ?>" type="video/mp4">
                     </video>
                 <?php endif; ?>
-
-                <div class="cta-button mobile">
-                    <button class="btn">
-                        <span>Explore</span>
-                        <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
-                    </button>
-                </div>
             </div>
-
         </div>
     </div>
 
-    <div class="hero image-block mobile"data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>">
-
+    <div class="hero image-block mobile" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>">
         <?php if ($hasVideo) : ?>
             <video autoplay loop muted playsinline>
                 <source src="<?= $mobileVideoUrl ?? $videoUrl ?>" type="video/mp4">
             </video>
+        <?php else: ?>
+            <div class="cta-button">
+                <button class="btn">
+                    <span>Explore</span>
+                    <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                </button>
+            </div>
         <?php endif; ?>
+    </div>
 
+    <?php if ($hasVideo) : ?>
         <div class="cta-button mobile">
             <button class="btn">
                 <span>Explore</span>
                 <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
             </button>
         </div>
-    </div>
+    <?php endif; ?>
 </section>
