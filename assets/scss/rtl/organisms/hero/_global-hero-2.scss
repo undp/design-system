@@ -1,6 +1,10 @@
 .global-hero-2 {
-    .cta-button {
-        left: 50px;
-        right: auto;
+    overflow: hidden;
+
+    .title:after {
+        @include breakpoint(small only) {
+            right: 0;
+            left: auto;
+        }
     }
 }
