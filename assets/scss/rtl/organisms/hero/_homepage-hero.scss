@@ -1,0 +1,25 @@
+.homepage-hero {
+    overflow: hidden;
+
+    .text-box {
+        left: auto;
+        right: 125px;
+
+        @include breakpoint(medium down) {
+            left: unset;
+            right: unset;
+            margin-right: 45px;
+            padding:85px 25px 105px 0;
+        }
+    }
+
+    .cta-button {
+        left: 60px;
+        right: auto;
+
+        @include breakpoint(medium down) {
+            left: auto;
+            right: 45px;
+        }
+    }
+}
