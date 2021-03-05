@@ -1,10 +1,10 @@
-<?php
-use helpers\View;
-$hasVideoBackground = isset($videoUrl) && !empty($videoUrl);
+<?php $hasVideoBackground = isset($videoUrl) && !empty($videoUrl); ?>
 
-?>
 
-<section class="hero global-hero-2 <?= $hasVideoBackground ? 'video-background' : '' ?>" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>">
+<section
+    data-desktop-image="<?= $imageUrl ?? '' ?>"
+    data-mobile-image="<?= $imageMobileUrl ?? '' ?>"
+    class="hero global-hero-2 <?= $hasVideoBackground ? 'video-background' : '' ?>">
 
     <?php if ($hasVideoBackground) : ?>
         <video class="show-for-small-only" autoplay loop muted playsinline data-object-fit="cover" data-object-position="top left">
@@ -18,10 +18,6 @@ $hasVideoBackground = isset($videoUrl) && !empty($videoUrl);
     <div class="content-wrapper grid-container">
         <div class="grid-x">
             <div class="cell small-9 small-offset-1">
-                <?php View::render('partials/breadcrumb', [
-                    'links' => $breadcrumbLinks ?? '',
-                    'classes' => 'accent-white'
-                ]) ?>
                 <div class="title scroll-track left-right delay-1"><?= $title ?? '' ?></div>
                 <div class="subtitle scroll-track left-right delay-1">Re-imagining Life in a</br>
                     Post-pandemic World
