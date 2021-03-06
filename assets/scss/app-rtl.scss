@@ -18,6 +18,7 @@ $global-text-direction: 'rtl';
 @import 'rtl/partials/footer';
 @import 'rtl/partials/scroll-up';
 @import 'rtl/partials/modals/search';
+@import 'rtl/partials/modals/modal-search-offices';
 @import 'rtl/partials/modal-sdgs';
 @import 'rtl/partials/explore-more';
 @import 'rtl/partials/modal';
@@ -30,7 +31,6 @@ $global-text-direction: 'rtl';
 @import 'rtl/molecules/forms/search-input';
 @import 'rtl/molecules/forms/custom-checkbox';
 @import 'rtl/molecules/cards/single-content-card-general';
-
 @import 'rtl/molecules/callouts/callout';
 @import 'rtl/molecules/photo/article-gallery';
 @import 'rtl/molecules/photo/image-with-caption';
@@ -38,16 +38,24 @@ $global-text-direction: 'rtl';
 @import 'rtl/molecules/cards/multi-cta-featured-publication';
 @import 'rtl/molecules/cards/publication-featured-card';
 @import 'rtl/molecules/cards/article-card';
+@import 'rtl/molecules/cards/stat-global';
+@import 'rtl/molecules/cards/expertise-card';
+@import 'rtl/molecules/cards/tweet';
 @import 'rtl/molecules/photo/large-carousel-slide';
-
 @import 'rtl/molecules/statistics-figures/sdg-card';
 
 // Organisms
 @import 'rtl/organisms/hero/news-centre-hero';
 @import 'rtl/organisms/content-cards/news-centre-cards';
+@import 'rtl/organisms/hero/country-hero-1';
+@import 'rtl/organisms/hero/country-hero-2';
 @import 'rtl/organisms/hero/country-hero-3';
+@import 'rtl/organisms/hero/country-hero-4';
+@import 'rtl/organisms/hero/global-hero-1';
+@import 'rtl/organisms/hero/global-hero-2';
 @import 'rtl/organisms/hero/sdg-deep-dive-hero';
-
+@import 'rtl/organisms/hero/homepage-hero';
+@import 'rtl/organisms/carousel/publications';
 @import 'rtl/organisms/article-deepdive/text';
 @import 'rtl/organisms/article-deepdive/article-authors';
 @import 'rtl/organisms/text/author-bio';

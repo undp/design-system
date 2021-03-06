@@ -1,6 +1,14 @@
 .global-hero-2 {
     @extend .global-hero-3;
 
+    &.no-overlay {
+        color: $black;
+
+        &:before {
+            display: none;
+        }
+    }
+
     &.video-background {
         position: relative;
 
@@ -35,7 +43,7 @@
                 height: 3px;
                 width: 95px;
                 bottom: -30px;
-                background: $red;
+                background: $black;
                 position: absolute;
             }
         }

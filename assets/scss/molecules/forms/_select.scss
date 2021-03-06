@@ -139,9 +139,9 @@
         &:after {
             top: 20px;
             content: '';
-            width: 14px;
             right: 25px;
-            height: 9px;
+            width: 18px;
+            height: 12px;
             position: absolute;
             transition: all 200ms ease-in-out;
             background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;

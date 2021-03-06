@@ -1,0 +1,21 @@
+.country-hero-2 {
+    overflow: hidden;
+
+    .subtitle-block:before {
+        left: auto;
+        right: -70px;
+
+        @include breakpoint(medium down) {
+            right: 0;
+        }
+    }
+
+    .generic-slider {
+        direction: ltr;
+
+        .glide__track .glide__slide {
+            direction: rtl;
+            text-align: right;
+        }
+    }
+}

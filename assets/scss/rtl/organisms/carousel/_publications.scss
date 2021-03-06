@@ -1,0 +1,11 @@
+.publications {
+
+    .publications-slider {
+        direction: ltr;
+
+        .glide__slide {
+            direction: rtl;
+            text-align: right;
+        }
+    }
+}

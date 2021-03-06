@@ -60,3 +60,11 @@
         }
     }
 }
+
+.btn-back {
+    .arrow-back {
+        margin-right: 0;
+        margin-left: 12px;
+        transform: rotate(180deg);
+    }
+}

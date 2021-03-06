@@ -28,6 +28,7 @@
             'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
             'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
             'videoUrl' => '/assets/others/hero-video-sample.mp4',
+            'mobileVideoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
     ?>
 
@@ -38,7 +39,6 @@
     <?php
         View::render('organisms/hero/global-hero-2', [
             'title' => 'Global Level Hero',
-            'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
             'imageUrl' => '/assets/images/placeholder/hero/hero-2-image.png',
             'imageMobileUrl' => '/assets/images/placeholder/hero/global-hero-2-mobile.jpg'
         ]);
@@ -50,8 +50,9 @@
     <?php
         View::render('organisms/hero/global-hero-2', [
             'title' => 'Global Level Hero',
-            'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
+            'classes' => 'no-overlay',
             'videoUrl' => '/assets/others/hero-video-sample.mp4',
+            'mobileVideoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
     ?>
 
@@ -118,6 +119,7 @@
             'title' => 'GLOBAL</br> LEVEL HERO </br>HEADLINE',
             'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
             'videoUrl' => '/assets/others/hero-video-sample.mp4',
+            'mobileVideoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
     ?>
 
@@ -128,7 +130,6 @@
     <?php
         View::render('organisms/hero/country-hero-5', [
             'title' => 'We’re changing the world. Here’s how to help.',
-            'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
             'imageUrl' => '/assets/images/placeholder/hero/country-hero-5-img.jpg',
             'imageMobileUrl' => '/assets/images/placeholder/hero/country-hero-5-mobile.jpg'
         ]);
@@ -140,8 +141,9 @@
     <?php
         View::render('organisms/hero/country-hero-5', [
             'title' => 'We’re changing the world. Here’s how to help.',
-            'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
+            'classes' => 'no-overlay',
             'videoUrl' => '/assets/others/hero-video-sample.mp4',
+            'mobileVideoUrl' => '/assets/others/hero-video-sample.mp4',
         ]);
     ?>
 

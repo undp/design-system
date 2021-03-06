@@ -51,8 +51,10 @@
         }
 
         .nav-item{
+            display: flex;
             font-weight: $bold;
             color: $dark-blue-3;
+            justify-content: flex-start;
         }
     }
 }
