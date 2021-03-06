@@ -36,7 +36,7 @@
 
         &.open {
             .select-control {
-                border-bottom: none;
+                border-bottom: 1px solid transparent;
             }
         }
     }
