@@ -14,6 +14,7 @@ class GenericSlider {
             type: 'slider',
             peek: {before: 0, after: 24},
             gap: 156,
+            rewind: false,
             perView: 1,
             breakpoints: {
                 1194: {
@@ -106,7 +107,15 @@ class GenericSlider {
     setCursorImage() {
         this.$slidesContainer.on('mousemove', e => {
             let threshold = this.$container.offset().left + (this.$container.width() / 2)
-            const arrowDir = e.pageX < threshold ? 'left' : 'right'
+            let arrowDir = e.pageX < threshold ? 'left' : 'right'
+
+            if(this.glide.index === 0) {
+                arrowDir = 'right';
+            }
+
+            if(this.glide.index === this.$slidesContainer.find('.glide__slide').length-1) {
+                arrowDir = 'left';
+            }
 
             this.$slidesContainer.css('cursor',
                 `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), 
