@@ -18,7 +18,7 @@
     <section class="other-inputs grid-container">
         <div class="grid-x grid-margin-x">
             <div class="cell medium-4 large-3 large-offset-2">
-                <h4 class="heading h4">Select</h4>
+                <h4 class="heading h5">Select</h4>
                 <?php
                     View::render('molecules/forms/select', [
                         'id' => 'language-select',
@@ -36,7 +36,7 @@
                 ?>
             </div>
             <div class="cell medium-4 large-3">
-                <h4 class="heading h4">Multi Select</h4>
+                <h4 class="heading h5">Multi Select</h4>
                 <?php
                 View::render('molecules/forms/multi-select', [
                     'id' => 'content-type-select',
@@ -48,7 +48,7 @@
                 ?>
             </div>
             <div class="cell medium-4 large-3">
-                <h4 class="heading h4">Radio Select</h4>
+                <h4 class="heading h5">Radio Select</h4>
                 <?php
                 View::render('molecules/forms/multi-select-radio', [
                     'id' => 'language-select',
