@@ -16,8 +16,7 @@
         }
 
         @include breakpoint(small only) {
-            border-bottom: 2px solid $black;
-            padding-bottom: 35px;
+            padding-bottom: 0;
         }
 
         .row-item {
@@ -29,12 +28,6 @@
             @include breakpoint(small only) {
                 height: auto;
                 margin-top: 17px;
-            }
-
-            &:last-child {
-                @include breakpoint(small only) {
-                    border: none;
-                }
             }
 
             @include breakpoint(small only) {
@@ -52,7 +45,8 @@
             font-size: 2rem;
 
             .link-item {
-                padding-bottom: 12px;
+                padding-bottom: 2px;
+                display: inline-block;
             }
         }
     }
