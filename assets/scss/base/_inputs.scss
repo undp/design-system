@@ -100,13 +100,9 @@ ul.input-errors {
     }
 
     label {
-        font-size: 2.5rem;
+        font-size: 2rem;
         position: relative;
         line-height: 3.9rem;
-
-        @include breakpoint(small only) {
-            font-size: 2rem;
-        }
 
         &.required:after {
             content: '*';
