@@ -108,6 +108,10 @@
         }
 
         .caption {
+            &::marker {
+                @extend .medium-copy;
+            }
+
             &:not(:first-of-type) {
                 opacity: 0;
                 max-height: 0;
