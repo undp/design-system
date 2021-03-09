@@ -100,8 +100,8 @@ $menuItems = [
 
     <section class="hero about-hero small-height" data-desktop-image="/assets/images/placeholder/hero/about-image.jpg" data-mobile-image="/assets/images/placeholder/hero/hero-about-small.jpg">
         <div class="overlay"></div>
-        <div class="grid-container scroll-track left-right delay-1 hero-container">
-            <div class="grid-x text-container">
+        <div class="grid-container overflow-hidden hero-container">
+            <div class="grid-x scroll-track left-right delay-1 text-container">
                 <div class="cell small-12 large-9 large-offset-1 hero-content">
                     <?php
                     View::render('partials/breadcrumb', [

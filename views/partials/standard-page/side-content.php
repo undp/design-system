@@ -42,8 +42,9 @@ use helpers\View;
         </div>
     </div>
 
-    <div class="explore-more grid-container scroll-track left-right delay-2" data-view-more data-scroll-up>
-        <div class="grid-x">
+    <div class="explore-more" data-view-more data-scroll-up>
+        <div class="grid-container overflow-hidden">
+            <div class="grid-x scroll-track left-right delay-2">
             <div class="cell">
                 <h2 class="heading h2">Explore More</h2>
 
@@ -59,6 +60,7 @@ use helpers\View;
                     <?php Svg::render('angle-right') ?>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </div>
