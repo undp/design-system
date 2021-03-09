@@ -12,8 +12,8 @@ use helpers\Svg;
                         <div class="heading h2">FAQ</div>
                     </div>
                     <div class="cell large-6 questions-container">
-                        <div class="faq-item question">
-                            <button class="question-button grid-x">
+                        <div class="faq-item question accordion">
+                            <button class="question-button accordion-trigger grid-x">
                                 <span class="title">What is UNDP?</span>
                                 <span class="arrow-down"><?php Svg::render('icon-arrow-down-red') ?></span>
                             </button>
@@ -25,8 +25,8 @@ use helpers\Svg;
                                 </p>
                             </div>
                         </div>
-                        <div class="faq-item question">
-                            <button class="question-button grid-x">
+                        <div class="faq-item question accordion">
+                            <button class="question-button accordion-trigger grid-x">
                                 <span class="title">How is UNDP related to the UN?</span>
                                 <span class="arrow-down"><?php Svg::render('icon-arrow-down-red') ?></span>
                             </button>
@@ -38,8 +38,8 @@ use helpers\Svg;
                                 </p>
                             </div>
                         </div>
-                        <div class="faq-item question">
-                            <button class="question-button grid-x">
+                        <div class="faq-item question accordion">
+                            <button class="question-button accordion-trigger grid-x">
                                 <span class="title">Where is UNDP located?</span>
                                 <span class="arrow-down"><?php Svg::render('icon-arrow-down-red') ?></span>
                             </button>
