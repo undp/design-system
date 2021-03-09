@@ -6,6 +6,10 @@
     }
 
     .modal-header {
+        @include breakpoint(small only) {
+            padding: 20px 0 0 20px;
+        }
+
         .btn-close {
             left: 1548px;
             right: auto;
@@ -38,13 +42,11 @@
         }
 
         .cards-slider-container {
-            .cards-slider {
-                direction: ltr;
-                margin-right: -200px;
-            }
+            direction: ltr;
 
             .glide__track .glide__slide {
                 direction: rtl;
+                text-align: right;
             }
 
         }
