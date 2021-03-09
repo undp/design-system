@@ -1,0 +1,13 @@
+.listed-stats {
+
+    .heading-stats-items {
+        .big-column {
+            padding-left: 0;
+            padding-right: 30px;
+
+            @include breakpoint(medium down) {
+                padding-right: 0;
+            }
+        }
+    }
+}

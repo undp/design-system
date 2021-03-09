@@ -1,0 +1,12 @@
+
+.parallax-stat-cards {
+
+    .generic-slider {
+        direction: ltr;
+
+        .glide__track .glide__slide {
+            direction: rtl;
+            text-align: right;
+        }
+    }
+}
