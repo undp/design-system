@@ -2,15 +2,12 @@
     outline: none;
     display: flex;
     max-height: 52px;
-    font-size: 1.6rem;
-    padding: 15px 25px;
+    padding: 17px 23px;
     align-items: center;
     color: $dark-blue-13;
     border: 2px solid $black;
 
-    &::placeholder {
-        font-size: 1.4rem !important;
-    }
+    @extend .medium-copy;
 
     &.dark {
         color: $dark-blue-15;
@@ -80,13 +77,12 @@
 
 
 ul.input-errors {
-    padding: 0;
     color: $red-1;
-    margin-top: 10px;
+    padding: 7px 0;
     list-style: none;
-    font-size: 1.4rem;
     position: relative;
-    line-height: 1.7rem;
+
+    @extend .medium-copy;
 
     li:before {
         content: '*';
@@ -97,23 +93,20 @@ ul.input-errors {
 
 .input-wrapper {
     flex: 1 auto;
-    margin: 0 12px;
-
-    &:not(:first-of-type) {
-        @include breakpoint(small only) {
-            margin-top: 15px;
-        }
-    }
+    margin: 15px 12px 0;
 
     .custom-input {
         width: 100%;
     }
 
     label {
-        bottom: 11px;
-        font-size: 1.4rem;
+        font-size: 2.5rem;
         position: relative;
-        line-height: 1.7rem;
+        line-height: 3.9rem;
+
+        @include breakpoint(small only) {
+            font-size: 2rem;
+        }
 
         &.required:after {
             content: '*';
@@ -126,19 +119,10 @@ ul.input-errors {
 
 .input-group {
     display: flex;
-    margin: 26px -12px 0;
+    margin: 0 -12px;
 
     @include breakpoint(small only) {
-        margin-top: 15px;
         flex-direction: column;
-    }
-
-    &:first-of-type {
-        margin-top: 14px;
-
-        @include breakpoint(small only) {
-            margin-top: 40px;
-        }
     }
 
     > .custom-input {

@@ -8,11 +8,13 @@
 
                 <div class="input-group">
                     <div class="input-wrapper">
+                        <label for="first-name">First Name</label>
                         <input id="first-name" class="input custom-input" type="text" placeholder="First Name" aria-label="First Name">
                     </div>
 
                     <div class="input-wrapper">
-                        <input id="last-name" class="input custom-input error" type="text" placeholder="Last Name" aria-label="Last Name *" required>
+                        <label for="last-name">Last Name</label>
+                        <input id="last-name" class="input custom-input error" type="text" placeholder="Last Name" aria-label="Last Name" required>
                         <ul class="input-errors">
                             <li>Error</li>
                         </ul>
@@ -20,7 +22,10 @@
                 </div>
 
                 <div class="input-group">
-                    <input class="input custom-input" type="text" placeholder="Email" aria-label="Email" disabled>
+                    <div class="input-wrapper">
+                        <label for="email">Email</label>
+                        <input id="email" class="input custom-input" type="text" placeholder="Email" aria-label="Email" disabled>
+                    </div>
                 </div>
 
                 <button type="submit" class="btn">
