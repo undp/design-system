@@ -90,47 +90,59 @@ $imagePath = '/assets/images/placeholder'
 
                             <div class="cell small-9">
                                 <ul class="caption-list">
-                                    <li class="medium-copy caption">
-                                        On average, UNDP supports an election somewhere in the world every two weeks.
-                                        <br><br>
-                                        <span>
-                                            UNDP Taiwan: <strong>Jason Smith</strong>
-                                        </span>
+                                    <li class="caption">
+                                        <p class="medium-copy">
+                                            On average, UNDP supports an election somewhere in the world every two weeks.
+                                            <br><br>
+                                            <span>
+                                                UNDP Taiwan: <strong>Jason Smith</strong>
+                                            </span>
+                                        </p>
                                     </li>
-                                    <li class="medium-copy caption">
-                                        On average, UNDP supports an election somewhere in the world every two weeks.
-                                        <br><br>
-                                        <span>
-                                            UNDP Taiwan: <strong>Jason Smith</strong>
-                                        </span>
+                                    <li class="caption">
+                                        <p class="medium-copy">
+                                            On average, UNDP supports an election somewhere in the world every two weeks.
+                                            <br><br>
+                                            <span>
+                                                UNDP Taiwan: <strong>Jason Smith</strong>
+                                            </span>
+                                        </p>
                                     </li>
-                                    <li class="medium-copy caption">
-                                        On average, UNDP supports an election somewhere in the world every two weeks.
-                                        <br><br>
-                                        <span>
-                                            UNDP Taiwan: <strong>Jason Smith</strong>
-                                        </span>
+                                    <li class="caption">
+                                        <p class="medium-copy">
+                                            On average, UNDP supports an election somewhere in the world every two weeks.
+                                            <br><br>
+                                            <span>
+                                                UNDP Taiwan: <strong>Jason Smith</strong>
+                                            </span>
+                                        </p>
                                     </li>
-                                    <li class="medium-copy caption">
-                                        On average, UNDP supports an election somewhere in the world every two weeks.
-                                        <br><br>
-                                        <span>
-                                            UNDP Taiwan: <strong>Jason Smith</strong>
-                                        </span>
+                                    <li class="caption">
+                                        <p class="medium-copy">
+                                            On average, UNDP supports an election somewhere in the world every two weeks.
+                                            <br><br>
+                                            <span>
+                                                UNDP Taiwan: <strong>Jason Smith</strong>
+                                            </span>
+                                        </p>
                                     </li>
-                                    <li class="medium-copy caption">
-                                        On average, UNDP supports an election somewhere in the world every two weeks.
-                                        <br><br>
-                                        <span>
-                                            UNDP Taiwan: <strong>Jason Smith</strong>
-                                        </span>
+                                    <li class="caption">
+                                        <p class="medium-copy">
+                                            On average, UNDP supports an election somewhere in the world every two weeks.
+                                            <br><br>
+                                            <span>
+                                                UNDP Taiwan: <strong>Jason Smith</strong>
+                                            </span>
+                                        </p>
                                     </li>
-                                    <li class="medium-copy caption">
-                                        On average, UNDP supports an election somewhere in the world every two weeks.
-                                        <br><br>
-                                        <span>
-                                            UNDP Taiwan: <strong>Jason Smith</strong>
-                                        </span>
+                                    <li class="caption">
+                                        <p class="medium-copy">
+                                            On average, UNDP supports an election somewhere in the world every two weeks.
+                                            <br><br>
+                                            <span>
+                                                UNDP Taiwan: <strong>Jason Smith</strong>
+                                            </span>
+                                        </p>
                                     </li>
                                 </ul>
                             </div>

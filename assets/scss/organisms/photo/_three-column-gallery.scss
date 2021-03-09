@@ -107,27 +107,29 @@
             transition: transform 300ms $easing-2;
         }
 
+        .caption {
+            &:not(:first-of-type) {
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: all 250ms $easing-2;
+            }
+
+            p {
+                display: inline;
+            }
+
+            span {
+                color: $black;
+            }
+        }
+
         .caption-list {
             padding: 0 0 16px;
             color: $dark-blue-12;
             list-style-type: decimal;
             list-style-position: inside;
             border-bottom: 3px solid $black;
-
-            .caption > * {
-                display: inline;
-            }
-
-            .caption span {
-                color: $black;
-            }
-
-            .caption:not(:first-of-type) {
-                opacity: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: all 250ms $easing-2;
-            }
         }
     }
 }
