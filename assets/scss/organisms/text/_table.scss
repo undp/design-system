@@ -2,11 +2,28 @@
     margin-top: 130px;
 
     &.bordered .table-row:not(.table-headings) {
+
+        &:not(:last-of-type) .table-column {
+            @include breakpoint(medium up) {
+                border-bottom: 0;
+            }
+        }
+
         .table-column {
             border: 1px solid $black;
 
             @include breakpoint(small only) {
                 padding: 35px 20px;
+            }
+
+            &:not(:last-of-type) {
+                @include breakpoint(medium up) {
+                    border-right: 0;
+                }
+
+                @include breakpoint(small only) {
+                    border-bottom: 0;
+                }
             }
 
             &:before {
@@ -47,7 +64,7 @@
     }
 
     .table-row {
-        @include breakpoint(medium down) {
+        @include breakpoint(small only) {
             margin-top: 40px;
         }
 
@@ -63,7 +80,7 @@
 
             &:before {
                 content: '';
-                bottom: 0;
+                top: 1px;
                 left: -2px;
                 width: 2px;
                 height: 100%;
@@ -86,8 +103,11 @@
             font-size: 2rem;
 
             .link-item {
+                max-width: 100%;
+                overflow: hidden;
                 padding-bottom: 2px;
                 display: inline-block;
+                text-overflow: ellipsis;
             }
         }
     }
