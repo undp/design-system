@@ -2,6 +2,11 @@
 .three-column-gallery {
     margin-top: 75px;
 
+    .accordion-trigger {
+        width: 100%;
+        text-align: left;
+    }
+
     .heading {
         @include breakpoint(small only) {
             margin-bottom: 36px;
@@ -78,6 +83,51 @@
 
         @include breakpoint(small only) {
             margin-bottom: 10px;
+        }
+    }
+
+    .image-caption {
+        margin-top: 35px;
+
+        &.expanded {
+            .arrow-down {
+                transform: rotate(-180deg);
+            }
+
+            .caption-list .caption:not(:first-of-type) {
+                opacity: 1;
+                margin-top: 24px;
+                max-height: 500px;
+            }
+        }
+
+        .arrow-down {
+            display: flex;
+            margin: 0 auto auto;
+            transition: transform 300ms $easing-2;
+        }
+
+        .caption-list {
+            padding: 0 0 16px;
+            color: $dark-blue-12;
+            list-style-type: decimal;
+            list-style-position: inside;
+            border-bottom: 3px solid $black;
+
+            .caption > * {
+                display: inline;
+            }
+
+            .caption span {
+                color: $black;
+            }
+
+            .caption:not(:first-of-type) {
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: all 250ms $easing-2;
+            }
         }
     }
 }
