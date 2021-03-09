@@ -42,7 +42,7 @@ use helpers\Svg;
 
     <div class="explore-more grid-container" data-view-more data-scroll-up data-load-step="16">
         <div class="grid-x">
-            <div class="cell small-11 small-offset-1">
+            <div class="cell small-11 small-offset-1 overflow-hidden">
                 <h2 class="heading h2 scroll-track left-right delay-1">Explore More</h2>
             </div>
             <div class="cell">
