@@ -8,7 +8,7 @@ $tableStyle = isset($tableStyle) && in_array($tableStyle, $tableStyles) ? $table
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell large-10 large-offset-1 small-offset-1 small-10">
-                <div class="heading h2 component-heading">Table</div>
+                <div class="heading h2 component-heading"><?= $heading ?? '' ?></div>
             </div>
         </div>
 

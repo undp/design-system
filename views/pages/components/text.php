@@ -11,7 +11,17 @@
     <?php
     View::render('organisms/text/small-copy');
     View::render('organisms/text/selector-tabs');
-    View::render('organisms/text/table');
+    View::render('organisms/text/table', [
+        'heading' => 'Table - Default'
+    ]);
+    View::render('organisms/text/table', [
+        'tableStyle' => 'striped',
+        'heading' => 'Table - Striped'
+    ]);
+    View::render('organisms/text/table', [
+        'tableStyle' => 'bordered',
+        'heading' => 'Table - Bordered'
+    ]);
     View::render('organisms/text/faq');
     View::render('organisms/text/downloadable-content');
     ?>
