@@ -28,7 +28,7 @@
             padding: 111px 68px 113px;
 
             @include breakpoint(small only){
-                padding: 60px 30px;
+                padding: 60px 8.3333333333%;
             }
 
             .description {
@@ -82,7 +82,7 @@
             padding: 90px 112px;
 
             @include breakpoint(small only){
-                padding: 32px 30px 42px;
+                padding: 32px 8.3333333333% 42px;
             }
 
             .description {

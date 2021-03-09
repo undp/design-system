@@ -12,7 +12,7 @@
     top: $nav-desktop-height;
     backdrop-filter: blur(21px);
     //alternative blur to firefox
-    transition: $transition-primary;
+    transition: opacity $easing-1, z-index $easing-1, visibility $easing-1;
     background-color: rgba($dark-blue-6, 0.98);
 
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {

@@ -3,6 +3,12 @@
     .slide-content {
         padding-left: 50px;
 
+        > a {
+            cursor: pointer;
+            @include hover-animate-arrow-2();
+        }
+
+
         @include breakpoint(small only) {
             padding: 19px 40px;
         }

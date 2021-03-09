@@ -7,8 +7,17 @@
         padding: 0 12px;
         object-fit: cover;
 
+        @include breakpoint(medium down) {
+            min-width: 100%;
+            max-height: 356px;
+        }
+
         @include breakpoint(small only) {
             padding: 0;
+        }
+
+        @include breakpoint(475px down) {
+            min-width: auto;
         }
 
         &:first-of-type {
