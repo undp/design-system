@@ -6,12 +6,12 @@ use helpers\Svg;
 <section class="faq">
     <div class="grid-container">
         <div class="grid-x">
-            <div class="cell large-11 large-offset-1 small-offset-1 small-10 scroll-track left-right delay-1">
+            <div class="cell large-10 large-offset-1 small-offset-1 small-10 scroll-track left-right delay-1">
                 <div class="grid-x">
                     <div class="cell large-4">
                         <div class="heading h2">FAQ</div>
                     </div>
-                    <div class="cell large-6 questions-container">
+                    <div class="cell large-8 questions-container">
                         <div class="faq-item question">
                             <button class="question-button grid-x">
                                 <span class="title">What is UNDP?</span>
