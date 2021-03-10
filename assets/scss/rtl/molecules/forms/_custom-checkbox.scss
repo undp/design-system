@@ -19,4 +19,12 @@
             left: 0;
         }
     }
+
+    &.radio {
+        .checkmark {
+            &:after {
+                left: 3px;
+            }
+        }
+    }
 }

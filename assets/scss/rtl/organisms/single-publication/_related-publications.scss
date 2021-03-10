@@ -1,0 +1,29 @@
+.related-publications {
+    .related-title {
+        @include breakpoint(small only) {
+            padding-left: 0;
+            padding-right: 25px;
+        }
+    }
+
+    .cta-button {
+        @include breakpoint(small only) {
+            margin-right: 0;
+            margin-left: 60px;
+        }
+    }
+
+    .publication-card {
+        .hover-slide {
+            .publication-image {
+                &:before {
+                    @include breakpoint(small only) {
+                        left: 8%;
+                        bottom: 5%;
+                        right: 90px;
+                    }
+                }
+            }
+        }
+    }
+}
