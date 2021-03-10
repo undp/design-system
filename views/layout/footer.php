@@ -13,7 +13,7 @@ use helpers\Svg;
                         </div>
                         <hgroup>
                             <h3 class="footer-title light">United nations</h3>
-                            <h3 class="footer-title light">Development program</h3>
+                            <h3 class="footer-title light">Development programme</h3>
                         </hgroup>
                     </div>
                     <div class="sign-up">
