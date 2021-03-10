@@ -8,18 +8,18 @@ const init = function () {
         const numberOfSlides = $glideExpertiseSection.find('.glide__slide').length
         const slideWidth = 100/numberOfSlides
 
-        const startAt = window.pageDirection === 'ltr' ? 0 : numberOfSlides - 1
-
         $controlSlider.css('width', slideWidth + "%")
 
         const glideExpertise = new Glide('.glide-expertise', {
-            startAt: startAt,
             peek: { before: 0, after: 40 },
             direction: window.pageDirection
         });
 
         glideExpertise.on(['mount.after', 'run'], () => {
-            $controlSlider.css('left', (glideExpertise.index*slideWidth) + "%")
+            $controlSlider.css(
+                window.pageDirection === 'ltr' ? 'left' : 'right',
+                (glideExpertise.index * slideWidth) + "%"
+            )
         })
 
         glideExpertise.mount();
