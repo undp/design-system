@@ -152,6 +152,7 @@ class SDGModal {
                 peek: 115,
                 bound: true,
                 perView: 4,
+                direction: window.pageDirection,
                 breakpoints: {
                     600: {
                         peek: { before: 0, after: 100 },
@@ -178,15 +179,19 @@ class SDGModal {
                     navTarget = viewportSlides[currentPosition+1];
                 }
 
-                navTarget = navTarget === undefined ? false : navTarget;
+                if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
+                    navTarget = navTarget === viewportSlides[currentPosition - 1]
+                        ? viewportSlides[currentPosition + 1]
+                        : viewportSlides[currentPosition - 1]
+                }
 
-                return navTarget
+                return  navTarget === undefined ? false : navTarget;
             }
 
             // Change pointer to arrow image
             $statCard.on('mousemove', e => {
-                let currentPosition = viewportSlides.indexOf(this.glide.index);
                 let thresholdArea = this.$modalContent.outerWidth() / 2;
+                let currentPosition = viewportSlides.indexOf(this.glide.index);
 
                 // We're at the beginning of the slides
                 if(currentPosition === 0) {
@@ -198,9 +203,12 @@ class SDGModal {
                     thresholdArea = 0
                 }
 
-                let threshold = this.$window.outerWidth()
-                threshold -= thresholdArea
-                const arrowDir = e.pageX < threshold ? 'left' : 'right'
+                let threshold = this.$window.outerWidth() - thresholdArea
+                let arrowDir = e.pageX < threshold ? 'left' : 'right'
+
+                if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
+                    arrowDir = arrowDir === 'left' ? 'right' : 'left'
+                }
 
                 $statCard.css('cursor',
                     `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), 
@@ -210,8 +218,8 @@ class SDGModal {
 
             // Navigate through slides on slide click
             $statCard.click(e => {
-                let currentPosition = viewportSlides.indexOf(this.glide.index);
                 let thresholdArea = this.$modalContent.outerWidth() / 2;
+                let currentPosition = viewportSlides.indexOf(this.glide.index);
 
                 // We're at the beginning of the slides
                 if(currentPosition === 0) {
@@ -223,9 +231,12 @@ class SDGModal {
                     thresholdArea = 0
                 }
 
-                let threshold = this.$window.outerWidth()
-                threshold -= thresholdArea
-                const arrowDir = e.pageX < threshold ? 'left' : 'right'
+                let threshold = this.$window.outerWidth() - thresholdArea
+                let arrowDir = e.pageX < threshold ? 'left' : 'right'
+
+                if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
+                    arrowDir = arrowDir === 'left' ? 'right' : 'left'
+                }
 
                 let target = getNavTarget(currentPosition, arrowDir);
                 if(target !== false) {
@@ -248,7 +259,10 @@ class SDGModal {
                     bulletIndex++;
                 }
 
-                $controlSlider.css('left', (bulletIndex * slideWidth) + "%")
+                $controlSlider.css(
+                    window.pageDirection === 'ltr' ? 'left' : 'right',
+                    (bulletIndex * slideWidth) + "%"
+                )
             })
 
             this.glide.on(['mount.before'], () => {
