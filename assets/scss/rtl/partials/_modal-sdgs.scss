@@ -40,15 +40,5 @@
                 }
             }
         }
-
-        .cards-slider-container {
-            direction: ltr;
-
-            .glide__track .glide__slide {
-                direction: rtl;
-                text-align: right;
-            }
-
-        }
     }
 }

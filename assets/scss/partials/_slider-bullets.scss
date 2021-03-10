@@ -6,6 +6,11 @@
     background: $black;
     transform: translateY(-50%);
     transition: $transition-primary;
+
+    [dir=rtl] & {
+        right: 0;
+        left: auto;
+    }
 }
 
 .glide--slider {

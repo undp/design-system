@@ -4,7 +4,7 @@
 
     img {
         flex: 0;
-        padding: 0 12px;
+        margin: 0 12px;
         object-fit: cover;
 
         @include breakpoint(medium down) {
