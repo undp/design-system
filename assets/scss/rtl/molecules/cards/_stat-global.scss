@@ -1,5 +1,11 @@
 .stat-global {
     .card-content {
+        padding-left: 0;
         padding-right: 70px;
+
+        @media screen and #{breakpoint(medium)} and #{breakpoint(xlarge down)} {
+            padding-left: 0;
+            padding-right: 10%;
+        }
     }
 }

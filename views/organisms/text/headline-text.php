@@ -1,6 +1,6 @@
 
 <section class="headline-text">
-    <div class="grid-container">
+    <div class="grid-container overflow-hidden">
         <div class="grid-x scroll-track left-right delay-1">
 
             <div class="cell large-offset-1 small-offset-1 small-10">

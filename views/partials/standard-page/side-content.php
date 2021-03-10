@@ -5,8 +5,8 @@ use helpers\View;
 
 <div class="side-content cell small-12 large-9">
 
-    <div class="content-wrapper grid-container scroll-track left-right delay-2">
-        <div class="grid-x">
+    <div class="content-wrapper grid-container">
+        <div class="grid-x scroll-track left-right delay-2">
             <div class="cell">
                 <h2 class="heading h2">Climate Change</h2>
                 <p class="big-copy">
@@ -42,11 +42,12 @@ use helpers\View;
         </div>
     </div>
 
-    <div class="explore-more grid-container scroll-track left-right delay-2" data-view-more data-scroll-up>
+    <div class="explore-more grid-container" data-view-more data-scroll-up>
         <div class="grid-x">
+            <div class="cell overflow-hidden">
+                <h2 class="heading h2 scroll-track left-right delay-2">Explore More</h2>
+            </div>
             <div class="cell">
-                <h2 class="heading h2">Explore More</h2>
-
                 <?php View::render('partials/standard-page/explore-more-cards') ?>
 
                 <div class="cta-button flex-container">

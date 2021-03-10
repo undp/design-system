@@ -1,4 +1,5 @@
 <?php
+use helpers\Svg;
 use helpers\View;
 $imagePath = '/assets/images/placeholder'
 ?>
@@ -28,7 +29,7 @@ $imagePath = '/assets/images/placeholder'
                         <div class="cta">
                             <a href="#" class="text-link arrow-2">
                                 <span>Read More</span>
-                                <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
+                                <?= file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg"); ?>
                             </a>
                         </div>
                     </div>
@@ -77,6 +78,78 @@ $imagePath = '/assets/images/placeholder'
                         </div>
                     </div>
                 </div>
+
+                <div class="cell show-for-small-only overflow-hidden image-caption accordion">
+                    <button type="button" class="accordion-trigger">
+                        <div class="grid-x scroll-track left-right delay-2">
+                            <div class="cell small-3 flex-container">
+                                <span class="arrow-down">
+                                    <?php Svg::render('icon-arrow-down-red') ?>
+                                </span>
+                            </div>
+
+                            <div class="cell small-9">
+                                <ul class="caption-list">
+                                    <li class="caption">
+                                        <p class="medium-copy">
+                                            On average, UNDP supports an election somewhere in the world every two weeks.
+                                            <br><br>
+                                            <span>
+                                                UNDP Taiwan: <strong>Jason Smith</strong>
+                                            </span>
+                                        </p>
+                                    </li>
+                                    <li class="caption">
+                                        <p class="medium-copy">
+                                            On average, UNDP supports an election somewhere in the world every two weeks.
+                                            <br><br>
+                                            <span>
+                                                UNDP Taiwan: <strong>Jason Smith</strong>
+                                            </span>
+                                        </p>
+                                    </li>
+                                    <li class="caption">
+                                        <p class="medium-copy">
+                                            On average, UNDP supports an election somewhere in the world every two weeks.
+                                            <br><br>
+                                            <span>
+                                                UNDP Taiwan: <strong>Jason Smith</strong>
+                                            </span>
+                                        </p>
+                                    </li>
+                                    <li class="caption">
+                                        <p class="medium-copy">
+                                            On average, UNDP supports an election somewhere in the world every two weeks.
+                                            <br><br>
+                                            <span>
+                                                UNDP Taiwan: <strong>Jason Smith</strong>
+                                            </span>
+                                        </p>
+                                    </li>
+                                    <li class="caption">
+                                        <p class="medium-copy">
+                                            On average, UNDP supports an election somewhere in the world every two weeks.
+                                            <br><br>
+                                            <span>
+                                                UNDP Taiwan: <strong>Jason Smith</strong>
+                                            </span>
+                                        </p>
+                                    </li>
+                                    <li class="caption">
+                                        <p class="medium-copy">
+                                            On average, UNDP supports an election somewhere in the world every two weeks.
+                                            <br><br>
+                                            <span>
+                                                UNDP Taiwan: <strong>Jason Smith</strong>
+                                            </span>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
             </div>
         </div>
     </div>

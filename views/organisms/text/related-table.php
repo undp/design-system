@@ -1,7 +1,7 @@
 <?php use helpers\View;?>
-<section class="related-table scroll-track left-right delay-1">
-    <div class="grid-container">
-        <div class="grid-x">
+<section class="related-table">
+    <div class="grid-container overflow-hidden">
+        <div class="grid-x scroll-track left-right delay-1">
             <div class="cell large-offset-1 large-11 small-10 small-offset-1">
                 <div class="heading h2">Related Materials</div>
             </div>

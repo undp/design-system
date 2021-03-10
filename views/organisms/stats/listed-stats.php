@@ -1,5 +1,6 @@
 <section class="listed-stats">
-    <div class="grid-x grid-container scroll-track left-right delay-1">
+    <div class="grid-container overflow-hidden">
+        <div class="grid-x scroll-track left-right delay-1">
         <div class="cell small-10 small-offset-1 heading-stats-text">
             <div class="heading h2">Impact</div>
         </div>
@@ -100,5 +101,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>

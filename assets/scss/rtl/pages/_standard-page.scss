@@ -1,7 +1,10 @@
 .standard-page {
 
     .side-nav-content .side-content {
+
         > .content-wrapper {
+            overflow: hidden;
+
             @include breakpoint(large up) {
                 padding-left: 14%;
                 margin-right: auto;

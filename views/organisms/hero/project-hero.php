@@ -3,8 +3,8 @@
 <section class="hero project-hero" data-desktop-image="/assets/images/placeholder/hero/about-image.jpg"
          data-mobile-image="/assets/images/placeholder/hero/hero-about-small.jpg">
     <div class="overlay"></div>
-    <div class="grid-container scroll-track left-right delay-1 hero-container">
-        <div class="grid-x text-container">
+    <div class="grid-container hero-container overflow-hidden">
+        <div class="grid-x text-container scroll-track left-right delay-1">
             <div class="cell small-12 large-11 large-offset-1 hero-content">
                 <?php
                 View::render('partials/breadcrumb', [

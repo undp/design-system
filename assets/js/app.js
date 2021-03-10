@@ -44,7 +44,7 @@ import multiSelectData from './render-data/global/multi-selects'
 import countriesData  from './render-data/locations/countries'
 import mobileFilterData from './render-data/locations/mobile-filters'
 
-import faqs from './components/faqs'
+import faqs from './components/accordion'
 import selectorTabs from './components/selector-tabs'
 
 // Trap focus for modals
