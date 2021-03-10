@@ -6,16 +6,20 @@ const init = function () {
     if($glideExpertiseSection.length){
         const $controlSlider = $glideExpertiseSection.find('.control-slider')
         const numberOfSlides = $glideExpertiseSection.find('.glide__slide').length
-        const slideWidth = 100/numberOfSlides;
+        const slideWidth = 100 / numberOfSlides
 
-        $controlSlider.css('width', slideWidth + "%")
+        $controlSlider.css('width', `calc(${slideWidth}% - 15px)`)
 
         const glideExpertise = new Glide('.glide-expertise', {
-            peek: { before: 0, after: 40 }
+            peek: { before: 0, after: 40 },
+            direction: window.pageDirection
         });
 
         glideExpertise.on(['mount.after', 'run'], () => {
-            $controlSlider.css('left', (glideExpertise.index*slideWidth) + "%")
+            $controlSlider.css(
+                window.pageDirection === 'ltr' ? 'left' : 'right',
+                (glideExpertise.index * slideWidth) + "%"
+            )
         })
 
         glideExpertise.mount();
