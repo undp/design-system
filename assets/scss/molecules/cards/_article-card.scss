@@ -42,7 +42,7 @@
     @include breakpoint(large down){
         width: 100%;
 
-        &:not(.large):not(.wide) {
+        &.no-image {
             .hover-slide{
                 display: none;
             }
@@ -254,6 +254,10 @@
             background: transparent linear-gradient(207deg, rgba($white, 0.2) 30%,
                     rgba($yellow, 0.5) 80%,
                     rgba($yellow, 0.8) 100%) 0 0 no-repeat padding-box;
+
+            @include breakpoint(large down) {
+                display: none;
+            }
         }
     }
 
