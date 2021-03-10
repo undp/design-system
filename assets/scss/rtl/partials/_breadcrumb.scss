@@ -1,14 +1,8 @@
 .breadcrumb {
-    .breadcrumb-item:not(:first-of-type) {
-        &:before {
-            content: "/";
-            margin: 0 8px;
-        }
-    }
 
     .breadcrumb-item:not(:last-of-type) {
         &:after {
-            content: none;
+            content: '\\';
         }
     }
 }
