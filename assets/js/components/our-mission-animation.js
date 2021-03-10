@@ -7,7 +7,10 @@ gsap.registerPlugin(ScrollTrigger)
 
 
 const init = function () {
-    let $section = $(".our-mission")
+    const transitionClass = 'bg-color-transitioning'
+
+    let $main = $('main')
+    let $section = $(".our-mission, .featured-callout")
     let $startTrigger = $section.find('.title-container');
 
     if(!$section.length) {
@@ -44,7 +47,9 @@ const init = function () {
             end: endWhiteToBlue,
             scrub: true,
             animation: whiteToBlue,
-            invalidateOnRefresh: false
+            invalidateOnRefresh: false,
+            onEnter: () => $main.addClass(transitionClass),
+            onLeaveBack: () => $main.removeClass(transitionClass)
         });
     }
 
@@ -65,7 +70,9 @@ const init = function () {
             start: startBlueToWhite,
             end: "+=200px",
             scrub: true,
-            animation: blueToWhite
+            animation: blueToWhite,
+            onEnter: () => $main.removeClass(transitionClass),
+            onLeaveBack: () => $main.addClass(transitionClass)
         });
     }
 

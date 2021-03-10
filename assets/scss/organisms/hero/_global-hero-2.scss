@@ -1,0 +1,82 @@
+.global-hero-2 {
+    @extend .global-hero-3;
+
+    &.no-overlay {
+        color: $black;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    &.video-background {
+        position: relative;
+
+        video {
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            object-position: center;
+
+            @include breakpoint(small only) {
+                object-position: left center;
+            }
+        }
+    }
+
+    .title {
+        max-width: 100% !important;
+        font-weight: $bold;
+        padding-bottom: 0 !important;
+        font-family: $secondary-font;
+
+        @include breakpoint(small only) {
+            margin-top: 0 !important;
+
+            &:after {
+                content: '';
+                left: 0;
+                height: 3px;
+                width: 95px;
+                bottom: -30px;
+                background: $black;
+                position: absolute;
+            }
+        }
+    }
+
+    .subtitle {
+        font-size: 3rem;
+        margin-top: 45px;
+        font-weight: $bold;
+        font-family: $primary-font;
+
+        @include breakpoint(small only) {
+            margin-top: 65px;
+            font-size: 2.5rem;
+            font-weight: $regular;
+        }
+    }
+
+    .cta-button {
+        right: 50px;
+        bottom: 50px;
+        position: absolute;
+
+        @include breakpoint(small only) {
+            right: 0;
+            width: 100%;
+            padding: 0 40px;
+        }
+
+        .btn {
+            @include breakpoint(small only) {
+                width: 100%;
+            }
+        }
+    }
+}

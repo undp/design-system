@@ -5,7 +5,7 @@
   },
   {
     "name": "Arab States",
-    "value": "arab-states",
+    "value": "arab states",
     "sub": [
       {
         "name": "Algeria",
@@ -91,14 +91,14 @@
   },
   {
     "name": "Asia and the Pacific",
-    "value": "asia"
+    "value": "asia and the pacific"
   },
   {
     "name": "Europe and Central Asia",
-    "value": "europe"
+    "value": "europe and central asia"
   },
   {
     "name": "Latin America and the Caribbean",
-    "value": "latin-america"
+    "value": "latin america and the caribbean"
   }
 ]

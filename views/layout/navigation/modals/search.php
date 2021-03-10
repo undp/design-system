@@ -43,7 +43,7 @@ use helpers\View;
                     View::render('molecules/forms/multi-select', [
                         'id' => 'regions-countries-select',
                         'title' => 'Regions & Countries',
-                        'dataType' => 'region-countries',
+                        'dataType' => 'regions-countries',
                         'actionListener' => 'data-regions-countries-filter'
                     ]);
                     ?>
@@ -63,6 +63,7 @@ use helpers\View;
                     </div>
                 </div>
                 <div class="search-results">
+                    <div data-search-metadata></div>
                     <div class="grid-x grid-margin-x" data-search-results>
                         <?php //Quick Links and Popular Searches columns are added via JS ?>
                     </div>

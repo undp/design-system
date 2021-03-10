@@ -1,9 +1,9 @@
 .modal-search-offices {
     width: 100%;
     position: fixed;
-    top: $nav-desktop-height;
     overflow-y: auto;
     z-index: $z-index-modal;
+    top: $nav-desktop-height;
     height: calc(100vh - #{$nav-desktop-height});
 
     @include breakpoint(large down){
@@ -16,7 +16,7 @@
     }
 
     @include breakpoint(large down) {
-        top: calc(#{$nav-mobile-height} + 1px);
+        top: calc(#{$nav-mobile-height} - 1px);
         height: calc(100% - #{$nav-mobile-height});
     }
 

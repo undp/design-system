@@ -1,0 +1,16 @@
+
+.image-only-carousel {
+
+    .cell.show-for-large {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .generic-slider {
+        direction: ltr;
+    }
+
+    .glide__track .glide__slide {
+        direction: rtl;
+    }
+}

@@ -1,0 +1,10 @@
+.global-hero-2 {
+    overflow: hidden;
+
+    .title:after {
+        @include breakpoint(small only) {
+            right: 0;
+            left: auto;
+        }
+    }
+}

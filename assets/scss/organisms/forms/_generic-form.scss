@@ -1,0 +1,23 @@
+
+.generic-form {
+    padding-top: 176px;
+    padding-bottom: 176px;
+
+    .big-copy {
+        margin-top: 45px;
+
+        @include breakpoint(small only) {
+            margin-top: 55px;
+        }
+    }
+
+    .btn {
+        margin-top: 53px;
+        text-transform: uppercase;
+
+        @include breakpoint(small only) {
+            width: 100%;
+            margin-top: 40px;
+        }
+    }
+}

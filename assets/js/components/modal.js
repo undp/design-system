@@ -1,8 +1,17 @@
-import ModalLocationsSearch from "../classes/ModalLocationsSearch";
+import Modal from "../classes/Modal";
+
 
 const init = function () {
-    const modals = new ModalLocationsSearch();
-    modals.init();
-};
 
-export default init;
+    const $modals = $('[data-modal]')
+
+    if ($modals.length) {
+
+        $modals.each(function () {
+            const modal = new Modal(this)
+            modal.init()
+        })
+    }
+}
+
+export default init

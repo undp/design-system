@@ -1,0 +1,17 @@
+.modal-nav-content {
+    .content-text {
+        .multiple-column {
+            .links {
+                &:first-child {
+                    padding-right: 0;
+                    padding-left: 10px;
+                }
+
+                &:last-child {
+                    padding-left: 0;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}

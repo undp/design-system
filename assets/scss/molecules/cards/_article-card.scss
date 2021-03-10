@@ -5,6 +5,8 @@
     position: relative;
     background: $dark-blue-7;
 
+    @include hover-animate-arrow-2();
+
     // Aspect ratios
     @include breakpoint(xlarge){
         // Default aspect (4 column)
@@ -115,17 +117,6 @@
                 @include breakpoint(large down){
                     margin-top: 20px;
                 }
-            }
-        }
-    }
-
-    .arrow-2 {
-        .link-arrow-group {
-            transform: translateX(-31px);
-            transition: transform $easing-2;
-
-            .arrow-line{
-                display: none;
             }
         }
     }
@@ -276,18 +267,18 @@
             .hover-slide{
                 transform: translateX(0);
             }
-
-            .link-arrow-group {
-                transform: translateX(0);
-
-                .arrow-line{
-                    display: unset;
-                }
-
-                .arrow-point{
-                    transform: translateX(31px);
-                }
-            }
+            //
+            //.link-arrow-group {
+            //    transform: translateX(0);
+            //
+            //    .arrow-line{
+            //        display: unset;
+            //    }
+            //
+            //    .arrow-point{
+            //        transform: translateX(31px);
+            //    }
+            //}
         }
     }
 

@@ -1,0 +1,41 @@
+.gallery-text-content {
+    padding: 46px 65px 63px;
+
+    @include breakpoint(small only) {
+        order: 1;
+        padding: 0;
+        background: none;
+    }
+
+    &.with-background {
+        background: $dark-blue-6;
+    }
+
+    .copy {
+        font-size: 2rem;
+        margin-top: 58px;
+        line-height: 2.6rem;
+
+        @include breakpoint(small only) {
+            margin-top: 31px;
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+        }
+    }
+
+    .cta {
+        margin-top: 45px;
+
+        @include breakpoint(small only) {
+            margin-top: 58px;
+        }
+    }
+
+    .heading {
+        font-size: 3rem;
+
+        @include breakpoint(small only) {
+            margin-bottom: 36px;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.global-hero-1 {
+    overflow: hidden;
+
+    .hero-content-text {
+        .title-text {
+            &:after {
+                right: 0;
+            }
+        }
+    }
+
+    .image-block {
+        .cta-button {
+            @include breakpoint(medium down) {
+                right: 0;
+            }
+        }
+    }
+}

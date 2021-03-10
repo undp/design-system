@@ -1,0 +1,13 @@
+.small-stats-slider {
+
+    .dynamic-slider {
+        direction: ltr;
+    }
+
+    .glide__track {
+        .glide__slide {
+            direction: rtl;
+            text-align: right;
+        }
+    }
+}

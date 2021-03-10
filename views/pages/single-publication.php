@@ -10,11 +10,11 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/nav') ?>
 
 <div class="single-publication">
     <?php
-        View::render('organisms/single-publication/modal-publication-download', [
+        View::render('organisms/modals/modal-publication-download', [
             'image' => '/assets/images/placeholder/publication-1.png',
             'languageOptions' => [
                 ['id' => 'pasto-1', 'value' => 'pasto', 'label' => 'Pasto'],
@@ -42,12 +42,12 @@ use helpers\View;
                 <?php
                     View::render('partials/breadcrumb', [
                         'links' => [
-                            ['link' => '/single-publication', 'name' => 'Publications'],
+                            ['link' => '/single-publication', 'name' => 'Publications']
                         ],
                         'classes' => 'accent-red'
                     ]);
 
-                    View::render('molecules/cards/publication-featured-card', [
+                    View::render('molecules/cards/multi-cta-featured-publication', [
                         'image' => '/assets/images/placeholder/publication-1.png'
                     ]);
                 ?>

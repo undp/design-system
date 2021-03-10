@@ -1,4 +1,5 @@
 import debounce from 'lodash/debounce'
+import Foundation from 'foundation-sites'
 
 class GlobalSearch {
     constructor() {
@@ -7,6 +8,7 @@ class GlobalSearch {
         this.$searchFiltersContainer = this.$modal.find('.search-filters')
         this.$searchResultsWrapper = this.$modal.find('.search-results')
         this.$searchResultsContainer = this.$searchResultsWrapper.find('[data-search-results]')
+        this.$searchMetadataContainer = this.$searchResultsWrapper.find('[data-search-metadata]')
         this.$searchInput = this.$modal.find('.search-input input[type=search]')
         this.$mobileFilterOpen = this.$searchFiltersContainer.find('.mobile-filters-open .btn')
         this.$mobileFilterClose = this.$searchFiltersContainer.find('.mobile-filters-close .btn')
@@ -14,13 +16,16 @@ class GlobalSearch {
         this.$multiselectFilters = this.$searchFiltersContainer.find('.multi-select')
         this.multiselectFiltersLoaded = false
 
+        // URL management
+        this.relativeToPathURIs = ["/country-page", "/project-page"];
+        this.currentPagePathname = window.location.protocol + "//" + window.location.host + window.location.pathname
+
         // Results management
         this.jsonResults = []
         this.currentResultsPage = 1
         this.totalResultsLoaded = 0
         this.loadMoreButton = null
         this.allResultsLoaded = false
-        this.$searchResultsMetadata = null
 
         // Filter management
         this.filters = {}
@@ -54,8 +59,8 @@ class GlobalSearch {
             this.setResultsWrapperHeight()
         }, 200))
 
-        this.$searchResultsWrapper.on('scroll', () => {
-            if(this.$searchResultsWrapper[0].scrollTop === (this.$searchResultsWrapper[0].scrollHeight - this.$searchResultsWrapper[0].offsetHeight)) {
+        this.$searchResultsContainer.on('scroll', () => {
+            if(this.$searchResultsContainer[0].scrollTop === (this.$searchResultsContainer[0].scrollHeight - this.$searchResultsContainer[0].offsetHeight)) {
                 this.loadMoreResults()
             }
         })
@@ -94,7 +99,7 @@ class GlobalSearch {
         this.totalResultsLoaded = 0
         this.currentResultsPage = 1
         this.allResultsLoaded = false
-        this.$searchResultsWrapper[0].scrollTop = 0
+        this.$searchResultsContainer[0].scrollTop = 0
     }
 
     resetAllModalData() {
@@ -103,15 +108,13 @@ class GlobalSearch {
         this.jsonResults = []
         this.$searchInput.val('')
         this.loadMoreButton = null
-        this.$searchResultsMetadata = null
         this.$activeFiltersContainer.html('');
         this.$mobileFilterOpen.find('.counter').text('')
         this.$multiselectFilters.find('.select-control span').text('');
         this.$multiselectFilters.find("input:checked").prop('checked', false);
 
         this.resetSearch()
-        let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname
-        window.history.pushState({path: newurl}, '', newurl)
+        window.history.pushState({path: this.currentPagePathname}, '', this.currentPagePathname)
         this.populateQuickLinks()
     }
 
@@ -124,12 +127,18 @@ class GlobalSearch {
     }
 
     setResultsWrapperHeight() {
-        let baseLineHeight = this.$modal.height() - 128;
+        let baseLineHeight = this.$modal.height() - 172;
+
+        if (Foundation.MediaQuery.is('small only')) {
+            baseLineHeight = this.$modal.height() - 186;
+        }
 
         if(baseLineHeight < this.$searchFiltersContainer.height()) {
-            this.$searchResultsWrapper.css('max-height', this.$searchFiltersContainer.outerHeight())
+            //this.$searchResultsWrapper.css('max-height', this.$searchFiltersContainer.outerHeight())
+            this.$searchResultsContainer.css('max-height', this.$searchFiltersContainer.outerHeight())
         } else {
-            this.$searchResultsWrapper.css('max-height', baseLineHeight)
+            //this.$searchResultsWrapper.css('max-height', baseLineHeight)
+            this.$searchResultsContainer.css('max-height', baseLineHeight)
         }
     }
 
@@ -174,14 +183,16 @@ class GlobalSearch {
             const input = this.$multiselectFilters.find('input[value="' + inputValue + '"]')
             input.prop('checked', false);
 
-            const counter = input.closest('.options').siblings('.select-control').find('span');
-            const total = input.closest('.options').find('input:checked').length;
+            const $inputParent = input.closest('.options');
+
+            const counter = $inputParent.siblings('.select-control').find('span');
+            const total = $inputParent.find('input:checked').length;
 
             counter.text(total > 0? '(' + total + ')' : '');
 
             $clickedPill.remove();
 
-            if (!total) {
+            if (!this.$multiselectFilters.find('input:checked').length) {
                 this.$activeFiltersContainer.html('')
             }
 
@@ -276,15 +287,15 @@ class GlobalSearch {
 
                 if(this.currentResultsPage === 1) {
                     this.$searchResultsContainer.html('')
+                    this.$searchMetadataContainer.html('')
 
-                    this.$searchResultsContainer.append(`
+                    this.$searchMetadataContainer.append(`
                     <div class="search-results-metadata">
                             Showing ${this.jsonResults.length > 0? '1' : '0'}-<span class="shown-results">${this.jsonResults.length}</span> of ${response.total} results across UNDP.org for <span>${searchValue}</span>
                     </div>`)
-
-                    this.$searchResultsMetadata = this.$searchResultsContainer.find('.search-results-metadata .shown-results')
                 } else {
-                    this.$searchResultsMetadata.text(this.totalResultsLoaded)
+                    console.log(this.$searchResultsWrapper.find('.search-results-metadata .shown-results'))
+                    this.$searchResultsWrapper.find('.search-results-metadata .shown-results').text(this.totalResultsLoaded)
                 }
 
                 this.jsonResults.forEach((item) => {
@@ -318,6 +329,7 @@ class GlobalSearch {
             dataType: 'json',
             success: (response) => {
                 this.$searchResultsContainer.html('')
+                this.$searchMetadataContainer.html('')
 
                 response.forEach((item) => {
                     this.$searchResultsContainer.append(` 
@@ -343,7 +355,13 @@ class GlobalSearch {
             urlParams.set(filter, this.filters[filter])
         }
 
-        let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + urlParams.toString()
+        let URIpath = '';
+
+        if(this.relativeToPathURIs.includes(window.location.pathname)) {
+            URIpath = window.location.pathname;
+        }
+
+        let newurl = window.location.protocol + "//" + window.location.host + URIpath + '?' + urlParams.toString()
         window.history.pushState({path: newurl}, '', newurl)
     }
 

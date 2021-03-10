@@ -7,15 +7,15 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/nav') ?>
 
 <div class="the-sdgs">
     <!--Global hero 3-->
     <?php View::render('organisms/hero/global-hero-3', [
         'title' => 'The SDGs In ACTION.',
         'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
-        'imageUrl' => '../../../assets/images/placeholder/hero/global-hero-3.jpg',
-        'imageMobileUrl' => '../../../assets/images/placeholder/hero/sdg-hero-mobile@2x.jpg'
+        'imageUrl' => '/assets/images/placeholder/hero/global-hero-3.jpg',
+        'imageMobileUrl' => '/assets/images/placeholder/hero/sdg-hero-mobile@2x.jpg'
     ]) ?>
 
     <!--  Development Goals   -->

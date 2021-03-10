@@ -1,0 +1,70 @@
+.text-link {
+    svg,
+    img {
+        margin-left: 0;
+        margin-right: 12px;
+    }
+
+    &.arrow-1 {
+        padding-right: 0;
+        padding-left: 17px;
+
+        svg,
+        img {
+            transform: rotate(180deg);
+        }
+
+        &:hover {
+            svg,
+            img {
+                transform: rotate(180deg) translateX(70%);
+            }
+        }
+    }
+
+    &.arrow-2 {
+        .link-arrow {
+            margin-left: 0;
+            margin-right: 4px;
+        }
+
+        .link-arrow-group {
+            transform-origin: center;
+            transform: rotate(180deg) translateX(-31px);
+        }
+
+        &:hover {
+            .link-arrow-group {
+                transform: rotate(180deg) translateX(0);
+            }
+
+        }
+    }
+
+    &.arrow-3 {
+        svg {
+            transform: scale(-1, 1);
+        }
+    }
+}
+
+.btn {
+    svg, img {
+        transform-origin: left;
+        transform: rotate(180deg) translateX(0px);
+    }
+
+    &:hover {
+        svg, img {
+            transform: rotate(180deg) translateX(5px);
+        }
+    }
+}
+
+.btn-back {
+    .arrow-back {
+        margin-right: 0;
+        margin-left: 12px;
+        transform: rotate(180deg);
+    }
+}

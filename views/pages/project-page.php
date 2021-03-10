@@ -10,10 +10,10 @@ use helpers\Svg;
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/nav-country', ['country' => 'Sierra Leone']) ?>
 
 
-<div class="project-page overflow-hidden">
+<main class="project-page">
 
     <?php View::render('organisms/hero/project-hero'); ?>
 
@@ -27,7 +27,7 @@ use helpers\Svg;
 
     <?php
         View::render('organisms/carousel/small-stats-slider', [
-            'heading' => 'Countries we support',
+            'heading' => 'Countries We Support',
             'cards' => [
                 ['title' => 'Cook Island'],
                 ['title' => 'Federated States of Micronesia'],
@@ -42,7 +42,7 @@ use helpers\Svg;
 
     <div class="explore-more grid-container" data-view-more data-scroll-up data-load-step="16">
         <div class="grid-x">
-            <div class="cell small-11 small-offset-1">
+            <div class="cell small-11 small-offset-1 overflow-hidden">
                 <h2 class="heading h2 scroll-track left-right delay-1">Explore More</h2>
             </div>
             <div class="cell">
@@ -60,7 +60,7 @@ use helpers\Svg;
             </div>
         </div>
     </div>
-</div>
+</main>
 
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>

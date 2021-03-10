@@ -1,0 +1,17 @@
+
+.image-per-row-gallery {
+
+    .gallery-images {
+        &.invert-alignment > * {
+            text-align: right;
+
+            &:nth-child(even) {
+                text-align: left;
+            }
+        }
+    }
+
+    .gallery-images:not(.invert-alignment) > *:nth-child(odd) {
+        text-align: left;
+    }
+}

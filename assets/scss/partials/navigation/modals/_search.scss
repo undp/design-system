@@ -9,6 +9,11 @@
     background-color: rgba($white, 0.98);
     height: calc(100vh - #{$nav-desktop-height});
 
+    // For IE 11 (media is a hack to check for IE 10+)
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        overflow: hidden;
+    }
+
     @supports ((-webkit-backdrop-filter: blur(15px)) or (backdrop-filter: blur(15px))) {
         background-color: rgba($white, 0.87);
     }
@@ -54,7 +59,6 @@
                 align-items: flex-start;
 
                 @include breakpoint(small only) {
-                    margin-top: 0;
                     flex-direction: column;
                 }
 
@@ -180,16 +184,14 @@
 
                 .search-results {
                     max-height: 200px;
+                    position: relative;
                     transition: max-height $easing-1;
 
-                    @include breakpoint(small only) {
-                        margin-top: 30px;
-                    }
-
                     .search-results-metadata {
-                        display: none; // Temporary for dummy functionality
+                        top: 0;
+                        position: sticky;
                         font-size: 1.6rem;
-                        margin-bottom: 25px;
+                        padding-bottom: 25px;
 
                         span {
                             font-weight: $bold;
@@ -197,7 +199,6 @@
                     }
 
                     .search-result-card {
-                        display: none; // Temporary for dummy functionality
                         padding: 22px 0 48px 0;
                         border-top: 2px solid $black;
 
@@ -321,36 +322,37 @@
                     }
 
                     .search-results {
-                        overflow-y: auto;
-                        padding-left: 20px;
-                        padding-right: 10px;
+                        padding-left: 25px;
 
-                        &::-webkit-scrollbar {
-                            width: 5px;
-                        }
+                        [data-search-results] {
+                            overflow-y: auto;
+                            padding-right: 30px;
 
-                        &::-webkit-scrollbar-track {
-                            background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
-                        }
+                            @include breakpoint(medium) {
+                                &::-webkit-scrollbar {
+                                    width: 5px;
+                                }
 
-                        &::-webkit-scrollbar-thumb {
-                            background-color: black;
+                                &::-webkit-scrollbar-track {
+                                    background: linear-gradient(90deg, transparent 10%, $black 33%, transparent 0%);
+                                }
+
+                                &::-webkit-scrollbar-thumb {
+                                    background-color: black;
+                                }
+                            }
                         }
 
                         @include breakpoint(small only) {
                             padding-left: 0;
+
+                            [data-search-results] {
+                                padding-right: 0;
+                            }
                         }
 
                         .grid-margin-x {
                             margin: 0;
-                        }
-
-                        .cell {
-                            display: none; // Temporary for dummy functionality
-                        }
-                        .search-results-metadata,
-                        .search-result-card {
-                            display: block; // Temporary for dummy functionality
                         }
                     }
                 }

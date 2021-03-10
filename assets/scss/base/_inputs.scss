@@ -1,11 +1,13 @@
 .custom-input {
-    max-height: 52px;
+    outline: none;
     display: flex;
-    font-size: 1.4rem;
-    padding: 15px 25px;
+    max-height: 52px;
+    padding: 17px 23px;
     align-items: center;
     color: $dark-blue-13;
     border: 2px solid $black;
+
+    @extend .medium-copy;
 
     &.dark {
         color: $dark-blue-15;
@@ -15,10 +17,15 @@
             border-color: $dark-blue-4;
         }
 
-        &.disabled {
+        &:disabled, .disabled {
             cursor: not-allowed;
             color: $dark-blue-15;
             border-color: $dark-blue-2;
+
+            ~ label,
+            &::placeholder {
+                color: $dark-blue-15;
+            }
         }
 
         input {
@@ -26,29 +33,38 @@
         }
     }
 
-    &.active {
-        border-color: $dark-blue-14;
+    &:focus, &:focus-within {
+        border-color: $dark-blue-13;
+
+        &::placeholder {
+            color: transparent;
+        }
     }
 
     &.error {
         color: $red-1;
+        caret-color: $red-1;
         border-color: $red-1;
 
-        input {
-            color: $red-1;
-            caret-color: $red-1;
+        ~ label,
+        &::placeholder {
+            color: inherit;
         }
     }
 
-    &.disabled {
-        cursor: not-allowed;
+    &:disabled, &.disabled {
         color: $dark-blue-4;
+        cursor: not-allowed;
         border-color: $dark-blue-4;
+        background-color: transparent;
 
-        input {
-            cursor: not-allowed;
-            background-color: transparent;
+        &::placeholder {
+            color: $dark-blue-4;
         }
+    }
+
+    &.full-width {
+        width: 100%;
     }
 
     input {
@@ -56,5 +72,56 @@
         margin-left: 6px;
         caret-color: $dark-blue-12;
         background-color: transparent;
+    }
+}
+
+
+ul.input-errors {
+    color: $red-1;
+    padding: 7px 0;
+    list-style: none;
+    position: relative;
+
+    @extend .medium-copy;
+
+    li:before {
+        content: '*';
+        margin-right: 5px;
+    }
+}
+
+
+.input-wrapper {
+    flex: 1 auto;
+    margin: 15px 12px 0;
+
+    .custom-input {
+        width: 100%;
+    }
+
+    label {
+        font-size: 2rem;
+        position: relative;
+        line-height: 3.9rem;
+
+        &.required:after {
+            content: '*';
+            color: $red-1;
+            margin-left: 5px;
+        }
+    }
+}
+
+
+.input-group {
+    display: flex;
+    margin: 0 -12px;
+
+    @include breakpoint(small only) {
+        flex-direction: column;
+    }
+
+    > .custom-input {
+        @extend .input-wrapper;
     }
 }

@@ -86,15 +86,18 @@
                 background: rgba($black, 0.10);
             }
 
-            &:hover {
-                background-color: $dark-blue-5;
+            // Don't trigger hover on tap on iOS
+            @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                &:hover {
+                    background-color: $dark-blue-5;
 
-                &::after {
-                    display: none;
-                }
+                    &::after {
+                        display: none;
+                    }
 
-                + .option:after {
-                    display: none;
+                    + .option:after {
+                        display: none;
+                    }
                 }
             }
 
@@ -136,9 +139,9 @@
         &:after {
             top: 20px;
             content: '';
-            width: 14px;
             right: 25px;
-            height: 9px;
+            width: 18px;
+            height: 12px;
             position: absolute;
             transition: all 200ms ease-in-out;
             background: url('#{$image-path}/icon-arrow-down-red.svg') no-repeat;

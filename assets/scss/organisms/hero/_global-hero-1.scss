@@ -1,0 +1,138 @@
+.global-hero-1 {
+    @extend .about-hero;
+
+    @include breakpoint(medium down) {
+        height: 100% !important;
+        max-height: 100% !important; //override the about hero height on mobile
+    }
+
+    &:before {
+        background: $white !important;
+    }
+
+    .hero-content-text {
+        color: $black;
+        margin-top: 60px;
+        padding-bottom: 140px;
+
+        @include breakpoint(medium down) {
+            padding-bottom: 40px;
+        }
+
+
+        .title-text {
+            position: relative;
+            padding-bottom: 60px;
+            text-transform: uppercase;
+            font-family: $secondary-font;
+
+            @include breakpoint(small only) {
+                font-size: 2.5rem;
+                padding-bottom: 30px;
+            }
+
+            &:after {
+                content: '';
+                bottom: 0;
+                width: 95px;
+                height: 3px;
+                left: 0;
+                background: $dark-blue-4;
+                position: absolute;
+            }
+        }
+
+        .subtitle-text {
+            font-size: 3rem;
+            margin-top: 40px;
+            font-weight: $bold;
+
+            @include breakpoint(small only) {
+                margin-top: 26px;
+                font-size: 2.5rem;
+                font-weight: $regular;
+            }
+        }
+
+        .cta-button {
+            margin-top: 140px;
+
+            @include breakpoint(small only) {
+                display: none;
+            }
+        }
+    }
+
+    .image-block {
+        right: -24px;
+        position: relative;
+        background-size: cover;
+
+        @include breakpoint(medium down) {
+            right: 0;
+            min-height: 800px;
+        }
+
+        @include breakpoint(small only) {
+            min-height: 500px;
+        }
+
+        &.contract {
+            max-width: 100%;
+        }
+
+
+        @include breakpoint(small only) {
+            display: none;
+        }
+
+        &.mobile {
+            display: none;
+
+            @include breakpoint(small only) {
+                display: block;
+            }
+
+            .cta-button {
+                width: 100%;
+                bottom: 25px;
+                display: block;
+                padding: 0 30px;
+                position: absolute;
+
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .cta-button.mobile {
+        display: none;
+
+        @include breakpoint(small only) {
+            width: 100%;
+            display: block;
+            margin-top: 15px;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    &.has-video {
+        .image-block {
+            @include breakpoint(small only) {
+                min-height: 0;
+            }
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left top;
+        }
+    }
+}

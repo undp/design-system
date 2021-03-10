@@ -11,10 +11,8 @@
 
     .heading.h2 {
         display: none;
-    }
 
-    @include breakpoint(small only) {
-        .heading.h2 {
+        @include breakpoint(small only) {
             display: block;
             margin-top: 40px;
             padding-left: 25px;
@@ -45,7 +43,7 @@
         }
     }
 
-    .publication-social {
+    .publication-links {
         padding: 25px 30px;
         background: $dark-blue-6;
 
@@ -53,79 +51,45 @@
             margin: 0 auto;
             max-width: 425px;
         }
+    }
 
-        .social-container {
-            align-items: center;
+    .links-container {
+        align-items: center;
 
-            .download-btn {
-                cursor: pointer;
-                align-items: center;
+        .download {
+            font-size: 1.5rem;
+            font-weight: $bold;
+            text-transform: uppercase;
+        }
 
+        .download-btn {
+            @include breakpoint(small only) {
+                border-bottom: 1px solid $dark-blue-19;
+            }
+        }
 
-                @include breakpoint(small only) {
-                    width: 100%;
-                    padding-bottom: 25px;
-                    border-bottom: 1px solid $dark-blue-19;
-                }
+        .icon-download {
+            margin-left: 15px;
+        }
+    }
 
-                .path2, .path4 {
-                    transform: translate(0);
-                    transition: all $easing-2;
-                }
+    .social-icons {
+        display: flex;
+        justify-content: space-between;
 
-                // Don't trigger hover on tap on iOS
-                @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                    &:hover {
+        @include breakpoint(small only) {
+            padding-top: 25px;
+        }
 
-                        .download {
-                            color: $dark-blue-17;
-                        }
+        .icon-item {
+            width: 22px;
 
-                        .path1 {
-                            stroke: $red-2;
-                        }
-
-                        .path2 {
-                            stroke: $red-2;
-                            transform: translate(0px, -3px);
-                        }
-                        .path4 {
-                            stroke: $red-2;
-                            transform: translate(0px, -2px);
-                        }
-                    }
-                }
+            &:hover svg {
+                fill: $dark-blue-17;
             }
 
-            .download {
-                font-size: 1.5rem;
-                font-weight: $bold;
-                text-transform: uppercase;
-            }
-
-            .icon-download {
-                margin-left: 15px;
-            }
-
-            .social-icons {
-                display: flex;
-                justify-content: space-between;
-
-                @include breakpoint(small only) {
-                    padding-top: 25px;
-                }
-
-                .icon-item {
-                    width: 22px;
-
-                    svg {
-                        fill: $black;
-
-                        &:hover {
-                            fill: $dark-blue-17;
-                        }
-                    }
-                }
+            svg {
+                fill: $black;
             }
         }
     }

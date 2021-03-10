@@ -1,0 +1,16 @@
+.publication-featured-card {
+
+    .heading.h2 {
+        @include breakpoint(small only) {
+            padding-left: 0;
+            padding-right: 25px;
+        }
+    }
+
+    .links-container {
+        .icon-download {
+            margin-left: 0;
+            margin-right: 15px;
+        }
+    }
+}

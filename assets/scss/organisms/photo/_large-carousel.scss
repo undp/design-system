@@ -1,0 +1,39 @@
+
+.large-carousel {
+    margin-top: 100px;
+
+    .generic-slider {
+        margin-top: 56px;
+
+        @include breakpoint(small only) {
+            margin-top: 22px;
+        }
+
+        .big-copy {
+            line-height: 2.6rem;
+
+            @include breakpoint(medium down) {
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+        }
+
+        .heading.h4 {
+            line-height: 4rem;
+
+            @include breakpoint(medium down) {
+                font-size: 3rem;
+                line-height: 3.5rem;
+            }
+        }
+    }
+
+    .glide__track {
+        padding-top: 75px;
+        margin-right: -100%;
+
+        @include breakpoint(small only) {
+            padding-top: 28px;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+
+.multi-cta-featured-publication {
+    @extend .publication-featured-card;
+
+    .card-container {
+        margin: 0 auto;
+        max-width: 425px;
+        position: relative;
+
+        .links-container {
+            > *:not(:first-of-type) {
+                border-left: 1px solid $dark-blue-19;
+            }
+
+            .download-btn {
+                @include breakpoint(small only) {
+                    padding-bottom: 0;
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    .social-icons {
+        top: 20px;
+        left: 20px;
+        position: absolute;
+
+        @include breakpoint(medium down) {
+            top: 10px;
+        }
+
+        @include breakpoint(small only) {
+            padding-top: 0;
+        }
+
+        .icon-item:not(:first-of-type) {
+            margin-left: 20px;
+        }
+    }
+}

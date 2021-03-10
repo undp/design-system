@@ -8,11 +8,11 @@ use helpers\View;
 
 <body>
 <!-- Navigation -->
-<?php View::render('layout/navigation/main') ?>
+<?php View::render('layout/navigation/nav') ?>
 
 <div class="single-publication">
     <?php
-        View::render('organisms/single-publication/modal-publication-download', [
+        View::render('organisms/modals/modal-publication-download', [
             'image' => '/assets/images/placeholder/publication-2.png',
             'chapters' => [
                 ['title' => 'Lorem Ipsum Title Goes Here', 'metadata' => 'PDF (1.9 MB)', 'lang' => ''],
@@ -32,9 +32,9 @@ use helpers\View;
                 <?php
                     View::render('partials/breadcrumb', [
                         'links' => [
-                            ['link' => '/single-publication', 'name' => 'Publications'],
-                            'classes' => 'accent-red'
-                        ]
+                            ['link' => '/single-publication', 'name' => 'Publications']
+                        ],
+                        'classes' => 'accent-red'
                     ]);
 
                     View::render('molecules/cards/publication-featured-card', [

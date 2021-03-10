@@ -1,0 +1,7 @@
+.article-card {
+    .hover-slide{
+        @include breakpoint(large up){
+            transform: translateX(105%);
+        }
+    }
+}

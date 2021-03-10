@@ -1,0 +1,122 @@
+.country-hero-2 {
+    @extend .country-hero-3;
+
+    .text-block {
+        .title {
+            margin-top: 0 !important;
+            font-weight: $extra-bold;
+            text-transform: uppercase;
+            font-family: $secondary-font;
+
+            @include breakpoint(medium only) {
+                font-size: 5.5rem;
+                padding-bottom: 50px;
+            }
+
+            @include breakpoint(small only) {
+                font-size: 2.5rem;
+                padding-bottom: 30px;
+            }
+        }
+    }
+
+    .images-block {
+        padding: 20px 0;
+        margin-top: 96px;
+        background: $dark-blue-6;
+
+        @include breakpoint(small only) {
+            margin-top: 36px;
+            padding: 38px 0 24px;
+        }
+
+        .cta-button .btn {
+            margin: 190px 0 0 auto;
+
+            @include breakpoint(medium down) {
+                margin: 25px auto 0 0;
+            }
+
+            @include breakpoint(small only) {
+                width: 100%;
+            }
+        }
+
+        .image-item {
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                margin-top: 0;
+                object-fit: cover;
+                transition: $transition-primary;
+            }
+
+            @include breakpoint(medium down) {
+                max-height: 350px;
+            }
+
+        }
+
+        @include breakpoint(medium down) {
+            display: flex;
+            overflow: hidden;
+        }
+    }
+
+    .subtitle-block {
+        position: relative;
+
+        .header-title {
+            font-size: 3rem;
+            font-weight: $bold;
+            line-height: 3.6rem;
+
+            @include breakpoint(medium down) {
+                padding-top: 50px;
+            }
+
+            @include breakpoint(small only) {
+                font-size: 2.5rem;
+                padding-top: 26px;
+                line-height: 3rem;
+            }
+        }
+
+        &:before {
+            content: '';
+            width: 2px;
+            left: -70px;
+            height: 100%;
+            background: $dark-blue-4;
+            position: absolute;
+
+            @include breakpoint(medium down) {
+                top: 0;
+                left: 0;
+                width: 95px;
+                height: 4px;
+            }
+        }
+    }
+
+    .glide__track {
+        margin-top: 97px;
+        overflow: visible;
+        margin-right: -24px;
+
+        @include breakpoint(small only) {
+            margin-top: 35px;
+            overflow: hidden;
+        }
+
+        .glide__slides {
+            overflow: visible;
+        }
+
+        .glide__slide {
+            height: auto;
+        }
+    }
+}

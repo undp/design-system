@@ -14,6 +14,7 @@ class GenericSlider {
             type: 'slider',
             peek: {before: 0, after: 24},
             gap: 156,
+            rewind: false,
             perView: 1,
             breakpoints: {
                 1194: {
@@ -46,13 +47,13 @@ class GenericSlider {
 
     mountGlide() {
         this.glide = new Glide(this.$container.get(0), this.options)
-        this.glide.mount()
 
         this.glide.on(['resize', 'update'], () => this.setSliderControl())
         this.glide.on(['mount.after', 'run'], () => {
             this.$sliderControl.css('left', (this.glide.index * this.getSliderControlWidth()) + "%")
         })
 
+        this.glide.mount()
         this.setSliderControl()
         $(this.glide).trigger('update')
     }
@@ -94,8 +95,7 @@ class GenericSlider {
 
     setCustomControls() {
         this.$slidesContainer.click((e) => {
-            let thresholdArea = this.$container.offset().left + (this.$container.width() / 2)
-            let threshold = this.$window.width() - thresholdArea
+            let threshold = this.$container.offset().left + (this.$container.width() / 2)
             const slideDir = e.pageX < threshold ? '<' : '>'
 
             if(!$(e.target).is(':button')){
@@ -107,7 +107,15 @@ class GenericSlider {
     setCursorImage() {
         this.$slidesContainer.on('mousemove', e => {
             let threshold = this.$container.offset().left + (this.$container.width() / 2)
-            const arrowDir = e.pageX < threshold ? 'left' : 'right'
+            let arrowDir = e.pageX < threshold ? 'left' : 'right'
+
+            if(this.glide.index === 0) {
+                arrowDir = 'right';
+            }
+
+            if(this.glide.index === this.$slidesContainer.find('.glide__slide').length-1) {
+                arrowDir = 'left';
+            }
 
             this.$slidesContainer.css('cursor',
                 `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), 

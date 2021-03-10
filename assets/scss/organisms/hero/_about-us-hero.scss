@@ -14,6 +14,14 @@
         position: absolute;
     }
 
+    &.no-image {
+        background: linear-gradient(45deg, $blue-1 0%, $blue-accent 60%);
+    }
+
+    &.small-height {
+        max-height: 460px;
+    }
+
     @include breakpoint(medium down) {
         margin-top: 28px;
     }

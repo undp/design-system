@@ -1,0 +1,14 @@
+.country-hero-5 {
+    @extend .global-hero-2;
+
+    .title-text {
+        padding-top: 280px;
+        text-transform: uppercase;
+        font-family: $secondary-font;
+
+        @include breakpoint(small only) {
+            font-size: 2.5rem;
+            line-height: 3rem;
+        }
+    }
+}

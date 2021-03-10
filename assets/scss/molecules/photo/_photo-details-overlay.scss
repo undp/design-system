@@ -1,0 +1,49 @@
+
+.photo-details-overlay {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    // Don't trigger hover on tap on iOS
+    @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:hover .details-overlay {
+            opacity: 1;
+        }
+    }
+
+    .details-overlay {
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        color: $white;
+        padding: 35px 25px;
+        position: absolute;
+        border: $dark-blue-12;
+        justify-content: flex-end;
+        transition: all 200ms ease-in-out;
+        background-color: rgba($black, 0.28);
+
+        @include breakpoint(medium only) {
+            padding: 20px;
+        }
+
+        .medium-copy:first-of-type {
+            overflow: hidden;
+            position: relative;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+
+            @include breakpoint(medium only) {
+                -webkit-line-clamp: 5;
+            }
+        }
+    }
+
+    .medium-copy:not(:first-of-type) {
+        line-height: 1;
+        margin-top: 16px;
+    }
+}

@@ -2,18 +2,36 @@
     margin-top: 89px;
     margin-bottom: 40px;
 
-    @include breakpoint(small only){
+    @include breakpoint(small only) {
         margin-top: 13px;
         margin-bottom: 58px;
     }
 
     .main-container {
+        margin-top: 59px;
         padding-top: 20px;
         border-top: 2px solid $black;
 
-        @include breakpoint(small only){
+        @include breakpoint(small only) {
             border: none;
+            margin-top: 36px;
             flex-direction: column-reverse;
+        }
+
+        &:hover {
+            .image-container:before {
+                opacity: 0.75;
+            }
+        }
+
+        .heading, .excerpt {
+            margin-top: 27px;
+        }
+
+        .heading {
+            @include breakpoint(small only) {
+                margin: 0;
+            }
         }
     }
 
@@ -21,7 +39,7 @@
         padding-left: 24px;
         padding-right: 85px;
 
-        @include breakpoint(small only){
+        @include breakpoint(small only) {
             margin-top: 44px;
             padding-left: 30px;
             padding-right: 30px;
@@ -34,12 +52,12 @@
         background-position: center;
         background-repeat: no-repeat;
 
-        @include breakpoint(small only){
+        @include breakpoint(small only) {
             margin-top: 21px;
             min-height: 240px;
         }
 
-        &:before{
+        &:before {
             top: 0;
             left: 0;
             opacity: 0;
@@ -53,22 +71,6 @@
         }
     }
 
-    &:hover {
-        .image-container:before {
-            opacity: 0.75;
-        }
-    }
-
-    .heading, .excerpt {
-        margin-top: 27px;
-    }
-
-    .heading {
-        @include breakpoint(small only){
-            margin: 0;
-        }
-    }
-
     .big-copy {
         margin-bottom: 26px;
     }
@@ -76,7 +78,7 @@
     .btn {
         margin-top: 65px;
 
-        @include breakpoint(small only){
+        @include breakpoint(small only) {
             width: 100%;
             margin-top: 60px;
 

@@ -17,7 +17,8 @@ use helpers\Svg;
     <article class="text">
         <div class="date">
              <span class="nav-item">
-                <?= $time . ' · ' ?? '' ?> <?= $date ?? '' ?>
+                <span class="time"> <?= $time . ' · ' ?? '' ?></span>
+                <span class="date"> <?= $date ?? '' ?></span>
              </span>
         </div>
         <p class="small-copy light description">

@@ -10,16 +10,5 @@
             margin-top: 0;
         }
 
-        .link-item {
-            margin-top: 50px;
-            font-size: 2.5rem;
-            padding-bottom: 35px;
-            border-bottom: 1px solid $black;
-
-            @include breakpoint(medium down) {
-                font-size: 2rem;
-                padding-bottom: 22px;
-            }
-        }
     }
 }

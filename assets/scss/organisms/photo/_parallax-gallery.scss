@@ -1,0 +1,104 @@
+
+.parallax-gallery {
+    margin-top: 75px;
+
+    &.inverted-background {
+        .gallery-container {
+            position: relative;
+
+            &:before {
+                content: '';
+                top: -24px;
+                z-index: 0;
+                left: -24px;
+                position: absolute;
+                background: #F7F7F7;
+                width: calc(100% + 48px);
+                height: calc(100% + 48px);
+
+                @include breakpoint(small only) {
+                    top: -15px;
+                    left: -15px;
+                    width: calc(100% + 30px);
+                    height: calc(100% + 30px);
+                }
+            }
+        }
+
+        .gs--parallax-container {
+            @include breakpoint(small only) {
+                background: none;
+            }
+        }
+    }
+
+    .gs--parallax-container {
+        z-index: $z-index-1;
+
+        @include breakpoint(small only) {
+            padding: 30px 17px;
+            background: $dark-blue-6;
+        }
+    }
+
+    .gallery-images {
+        height: 130%;
+        margin-top: -15%;
+
+        @include breakpoint(small only) {
+            order: 0;
+        }
+
+        > .cell {
+            @include breakpoint(small only) {
+                margin-left: 5px;
+                margin-right: 5px;
+                width: calc(50% - 1rem);
+            }
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            height: calc(55% - 10px);
+
+            @include breakpoint(small only) {
+                height: calc(55% - 5px);
+            }
+
+            &:nth-child(1) {
+                margin-bottom: 10px;
+
+                @include breakpoint(small only) {
+                    margin-bottom: 5px;
+                }
+            }
+
+            &:nth-child(2) {
+                margin-top: 10px;
+
+                @include breakpoint(small only) {
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+
+    .gallery-text-content {
+        @include breakpoint(small only) {
+            padding: 0 14px;
+        }
+
+        .copy {
+            @include breakpoint(small only) {
+                margin-top: 50px
+            }
+        }
+    }
+
+    .heading {
+        @include breakpoint(small only) {
+            margin-bottom: 36px;
+        }
+    }
+}

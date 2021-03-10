@@ -4,7 +4,7 @@ const init = function() {
 
     const $window = $(window)
     const $nav = $('[data-navigation]')
-    const $pfc = $('.publication-featured-card')
+    const $pfc = $('.publication-featured-card, .multi-cta-featured-publication')
 
     if (!$pfc.length) return
 

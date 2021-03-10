@@ -25,8 +25,20 @@ switch ($subpath) {
     case '/country-page':
         View::render('pages/country-page');
         break;
+    case '/country-page-2':
+        View::render('pages/country-page-2');
+        break;
+    case '/country-page-3':
+        View::render('pages/country-page-3');
+        break;
+    case '/country-page-4':
+        View::render('pages/country-page-4');
+        break;
     case '/about-us':
         View::render('pages/standard-page');
+        break;
+    case '/about-us-2':
+        View::render('pages/standard-page-2');
         break;
     case '/project-page':
         View::render('pages/project-page');
@@ -58,11 +70,26 @@ switch ($subpath) {
     case '/single-publication-3':
         View::render('pages/single-publication-3');
         break;
-    case '/documentation':
-        View::render('pages/docs');
+    case '/components':
+        View::render('pages/components-index');
         break;
-    case '/styleguide':
-        View::render('pages/styleguide');
+    case '/components/leadership':
+        View::render('pages/components/leadership');
+        break;
+    case '/components/photo':
+        View::render('pages/components/photo');
+        break;
+    case '/components/text':
+        View::render('pages/components/text');
+        break;
+    case '/components/stats':
+        View::render('pages/components/stats');
+        break;
+    case '/components/forms':
+        View::render('pages/components/forms');
+        break;
+    case '/components/hero':
+        View::render('pages/components/hero');
         break;
     default:
         View::render('pages/home');

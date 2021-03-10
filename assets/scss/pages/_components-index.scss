@@ -1,0 +1,40 @@
+.components-index {
+    padding: 30px 0 89px;
+    margin-top: $nav-desktop-height;
+
+    @include breakpoint(small only) {
+        margin-top: $nav-mobile-height;
+    }
+
+    // For IE 11 (media is a hack to check for IE 10+)
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        overflow: hidden;
+    }
+
+    .component-categories {
+        margin-top: 40px;
+
+        .categories {
+            padding-left: 0;
+            list-style: none;
+            margin-top: 40px;
+
+            li:not(:first-of-type) {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    .component-title {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    section.other-inputs {
+        min-height: 400px;
+
+        .heading.h5 {
+            margin: 20px 0;
+        }
+    }
+}

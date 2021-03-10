@@ -26,8 +26,16 @@ if(count($filters)) {
             $matchesFilterValue = false;
 
             foreach($filterValues as $value) {
-                if(stripos($databaseRow[$filterCategory], $value) !== false){
-                    $matchesFilterValue = true;
+
+                if($filterCategory === "regions-countries"){
+                    if(stripos($databaseRow['region'], $value) !== false
+                        || stripos($databaseRow['country'], $value) !== false){
+                        $matchesFilterValue = true;
+                    }
+                } else {
+                    if(stripos($databaseRow[$filterCategory], $value) !== false){
+                        $matchesFilterValue = true;
+                    }
                 }
             }
 

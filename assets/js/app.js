@@ -1,6 +1,8 @@
 import './helpers/findIndexPolyfill' // IE Polyfill
 import 'what-input'
 import './classes/UNDP'
+import 'objectFitPolyfill';
+
 
 import GlobalSearch from './classes/GlobalSearch'
 import inputs from './components/inputs'
@@ -19,7 +21,6 @@ import ourExpertiseSectionAnimation from './components/our-expertise-animation'
 import sdgCard from './components/sdg-card'
 import heroAnimation from './components/hero-animation'
 import select from './components/select'
-import docs from './components/docs'
 import navigationProgress from './components/navigation-progress'
 import sideNavigation from './components/side-navigation'
 import genericSlider from './components/generic-slider'
@@ -29,11 +30,12 @@ import imageSizes from './components/image-sizes'
 import ieSticky from './components/ie-sticky'
 import singlePublication from './components/single-publication'
 import dynamicSlider from './components/dynamic-slider'
-import focusPhotoCtaCards from './components/focus-photo-cta-cards'
+import focusPhotoCtas from './components/focus-photo-ctas'
 
 import modal from './components/modal'
 import modalNav from './components/modal-nav'
 import modalSdgs from './components/modal-sdgs'
+import modalLocationSearch from './components/modal-location-search'
 import modalPublicationDownload from './components/modal-publication-download'
 
 // JS to render nav/search DOM elements from JSON data files
@@ -42,12 +44,18 @@ import multiSelectData from './render-data/global/multi-selects'
 import countriesData  from './render-data/locations/countries'
 import mobileFilterData from './render-data/locations/mobile-filters'
 
+import faqs from './components/accordion'
+import selectorTabs from './components/selector-tabs'
+
 // Trap focus for modals
 import trapFocus from './components/trap-focus'
 
 function main() {
     imageSizes()
+    faqs()
+    selectorTabs()
     modal()
+    modalLocationSearch()
     inputs()
     ourExpertiseSectionAnimation()
     dropdown()
@@ -68,7 +76,6 @@ function main() {
     heroAnimation()
     sdgCard()
     select()
-    docs()
     multiSelectData()
     mobileFilterData()
     countriesData()
@@ -82,10 +89,12 @@ function main() {
     ieSticky()
     singlePublication()
     dynamicSlider()
-    focusPhotoCtaCards()
+    focusPhotoCtas()
 
-    const globalSearch = new GlobalSearch()
-    globalSearch.init()
+    if ($('[data-navigation]').length) {
+        const globalSearch = new GlobalSearch()
+        globalSearch.init()
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {

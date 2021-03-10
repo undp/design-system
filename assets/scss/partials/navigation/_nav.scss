@@ -1,0 +1,208 @@
+.header {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: $z-index-nav;
+    transform: translateY(0);
+    height: $nav-desktop-height;
+    background-color: $dark-blue-6;
+    border-bottom: 1px solid rgba($black, 0.10);
+    box-shadow: 0 3px 6px rgba($black, 0.09);
+
+    @include breakpoint(large down) {
+        height: $nav-mobile-height;
+    }
+
+    .nav-item {
+        cursor: pointer;
+        color: $dark-blue-1;
+        outline-offset: 4px;
+        text-transform: uppercase;
+
+        &:hover {
+            color: rgba($dark-blue-1, 0.7)
+        }
+
+        &.active {
+            padding-bottom: 2px;
+            border-bottom: 2px solid $red-1;
+        }
+    }
+
+    .nav-wrapper {
+        display: flex;
+        align-items: center;
+        padding: 0 70px 0 70px;
+        justify-content: space-between;
+
+        @include breakpoint(large down) {
+            padding: 0 10px 0 10px;
+            max-height: $nav-mobile-height;
+        }
+
+        .middle-logo {
+            display: block;
+
+            svg, img {
+                width: 62px;
+                height: 125px;
+                transition: $transition-primary;
+
+                @include breakpoint(large down) {
+                    width: 39px;
+                    height: $nav-mobile-height+8;
+                }
+            }
+
+            &.scrolled {
+                svg, img {
+                    width: 57px;
+                    height: $nav-desktop-height;
+
+                    @include breakpoint(medium down) {
+                        width: 35px;
+                        height: $nav-mobile-height;
+                    }
+                }
+            }
+        }
+
+        .middle-menu {
+            padding: 0;
+            list-style: none;
+            max-height: $nav-desktop-height;
+
+            @include breakpoint(large down) {
+                max-height: $nav-mobile-height;
+            }
+
+            li:not(:last-child) {
+                margin-right: 75px;
+
+                @include breakpoint(medium down) {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .right-menu {
+            .nav-item {
+                width: 24px;
+                height: 24px;
+                border: none;
+                color: $blue-2;
+                line-height: 0;
+                max-height: 24px;
+                position: relative;
+                margin-right: 22px;
+
+                svg {
+                    height: 24px;
+                }
+
+                &:hover,
+                &.active:hover {
+                    color: $blue-8;
+                }
+
+                .icon-close {
+                    color: $black;
+                }
+
+                @include breakpoint(medium down) {
+                    &:hover,
+                    &:active,
+                    &.active,
+                    &.active:hover {
+                        color: $blue-2;
+                    }
+                }
+
+                @include breakpoint(large down) {
+                    margin-right: 0;
+                    min-width: 23px;
+                }
+
+                &:last-child {
+                    margin-right: 38px;
+
+                    @include breakpoint(large down) {
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .primary-navigation {
+        width: 100%;
+        overflow: auto;
+        position: fixed;
+        transform: translateY(0px);
+        top: calc(#{$nav-desktop-height} + 1px);
+
+        @include breakpoint(large down) {
+            top: calc(#{$nav-mobile-height} + 1px);
+        }
+
+        &.open {
+            height: 100vh;
+        }
+    }
+
+    .dropdown {
+        position: relative;
+
+        .dropdown-btn {
+            border: none;
+            color: $blue-2;
+            cursor: pointer;
+
+            &:hover,
+            &.active:hover {
+                color: $blue-8
+            }
+
+            &:active,
+            &.active {
+                color: $blue-2;
+                padding-bottom: 0;
+            }
+
+            svg {
+                margin: 0 10px 0 0;
+
+                &:last-child {
+                    margin: 0 0 0 10px;
+                    transition: all 200ms ease-in-out;
+                }
+            }
+
+            &.active {
+                svg:last-child {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+
+        .dropdown-content {
+            min-width: 100px;
+            list-style: none;
+            margin-top: 20px;
+            position: absolute;
+            padding: 30px 30px 35px 12px;
+            background-color: $dark-blue-6;
+            box-shadow: 0 3px 6px rgba($black, 0.09);
+
+            &:hover {
+                display: block;
+            }
+
+            li:not(:first-child) {
+                margin-top: 22px;
+            }
+        }
+    }
+}

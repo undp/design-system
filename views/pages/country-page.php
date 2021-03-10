@@ -5,9 +5,9 @@
 
 <body class="accent-green">
 <!-- Navigation -->
-<?php View::render('layout/navigation/main-justify') ?>
+<?php View::render('layout/navigation/nav-country', ['country' => 'Sierra Leone']) ?>
 
-<div class="country-page">
+<main class="country-page">
     <!--Country hero 3-->
     <?php View::render('organisms/hero/country-hero-3', [
         'subtitle' => 'Sierra Leone',
@@ -26,7 +26,8 @@
     <?php View::render('organisms/content-cards/country-page-content-cards'); ?>
 
     <?php
-        View::render('organisms/carousel/parallax-cards', [
+        View::render('organisms/stats/parallax-stat-cards', [
+            'heading' => 'Our Impact',
             'cards' => [
                 [
                     'number' => 41,
@@ -62,8 +63,8 @@
         ]);
     ?>
 
-    <?php View::render('organisms/content-cards/photo-cta-cards'); ?>
-</div>
+    <?php View::render('organisms/photo/photo-cta-group'); ?>
+</main>
 <!-- Footer -->
 <?php View::render('layout/footer'); ?>
 <script type="text/javascript" src="/dist/app.js"></script>

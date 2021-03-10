@@ -18,7 +18,6 @@
             border-top: none;
 
             .checkbox-item {
-                max-height: unset;
                 border-top: 1px solid rgba($black, 0.10);
 
                 .checkmark {
@@ -37,7 +36,7 @@
 
         &.open {
             .select-control {
-                border-bottom: none;
+                border-bottom: 1px solid transparent;
             }
         }
     }
@@ -139,14 +138,17 @@
             }
 
             > .checkbox-item {
-                &:hover {
-                    .checkmark {
-                        border-color: $red-5;
+                // Don't trigger hover on tap on iOS
+                @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    &:hover {
+                        .checkmark {
+                            border-color: $red-5;
+                        }
                     }
-                }
 
-                .checkmark:hover {
-                    border-color: $red-2;
+                    .checkmark:hover {
+                        border-color: $red-2;
+                    }
                 }
             }
         }
@@ -154,18 +156,20 @@
         .checkbox-item {
             margin: 0;
             font-size: 2rem;
-            max-height: 52px;
             padding: 15px 52px 15px 0;
 
             &:not(:first-child) {
                 border-top: 1px solid rgba($black, 0.10);
             }
 
-            &:hover {
-                color:  $dark-blue-17;
+            // Don't trigger hover on tap on iOS
+            @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                &:hover {
+                    color: $dark-blue-17;
 
-                .checkmark {
-                    border-color: $red-2;
+                    .checkmark {
+                        border-color: $red-2;
+                    }
                 }
             }
         }

@@ -1,0 +1,43 @@
+
+[data-tooltip] {
+    position: relative;
+
+    &:hover {
+        .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .tooltip {
+        opacity: 0;
+        z-index: 1;
+        width: 218px;
+        color: $white;
+        padding: 16px;
+        font-size: 1.4rem;
+        visibility: hidden;
+        line-height: 1.8rem;
+        background: $ebony-clay;
+        transition: all 200ms ease;
+
+        left: 20%;
+        position: absolute;
+        top: calc(100% + 16px);
+
+        @include breakpoint(large down) {
+            top: calc(100% + 11px);
+        }
+
+        &:after {
+            content: '';
+            left: 25px;
+            bottom: 100%;
+            margin-left: -5px;
+            border-width: 5px;
+            position: absolute;
+            border-style: solid;
+            border-color: transparent transparent $ebony-clay transparent;
+        }
+    }
+}

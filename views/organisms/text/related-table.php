@@ -1,39 +1,76 @@
-
-<section class="related-table scroll-track left-right delay-1">
-    <div class="grid-container">
-        <div class="grid-x">
+<?php use helpers\View;?>
+<section class="related-table">
+    <div class="grid-container overflow-hidden">
+        <div class="grid-x scroll-track left-right delay-1">
             <div class="cell large-offset-1 large-11 small-10 small-offset-1">
                 <div class="heading h2">Related Materials</div>
             </div>
-            <div class="cell large-offset-3 large-7 small-10 small-offset-1 link-list big-copy">
-                <div class="link-item">
-                    <a href="#" class="animated-underline"> Country Profiles - outcomes of the Mechanism for the
+            <div class="cell large-offset-3 large-6 small-10 small-offset-1 link-list big-copy">
+                <?php
+                View::render('molecules/text/download-item', [
+                    'title' => 'Country Profiles - outcomes of the Mechanism for the
                         Review of Implementation of
                         the United
-                        Nations Convention against Corruption</a>
+                        Nations Convention against Corruption',
+                    'image' => false,
+                    'btnText' => 'Read More'
+                ]);
+                ?>
+                <div class="grid-x grid-margin-x">
+                    <div class="cell large-6">
+                        <?php
+                        View::render('molecules/text/download-item', [
+                            'title' => 'Legislative Guide for the Implementation of UNCAC',
+                            'image' => false,
+                            'btnText' => 'Read More'
+                        ]);
+                        ?>
+                    </div>
+                    <div class="cell large-6">
+                        <?php
+                        View::render('molecules/text/download-item', [
+                            'title' => 'Pacific Youth Anti-Corruption Advocate’s Toolkit',
+                            'image' => false,
+                            'btnText' => 'Read More'
+                        ]);
+                        ?>
+                    </div>
                 </div>
-                <div class="link-item">
-                    <a href="#" class="animated-underline"> Legislative Guide for the Implementation of UNCAC</a>
-                </div>
-                <div class="link-item">
-                    <a href="#" class="animated-underline">Mechanism for the Review of Implementation of the United
+                <?php
+                View::render('molecules/text/download-item', [
+                    'title' => 'Mechanism for the Review of Implementation of the United
                         Nations Convention against
-                        Corruption</a>
-                </div>
-                <div class="link-item">
-                    <a href="#" class="animated-underline">Pacific Youth Anti-Corruption Advocate’s Toolkit</a>
-                </div>
-                <div class="link-item">
-                    <a href="#" class="animated-underline">Technical Guide to the United Nations Convention against
-                        Corruption</a>
-                </div>
-                <div class="link-item">
-                    <a href="#" class="animated-underline">Travaux Préparatoires of the negotiations for the
+                        Corruption',
+                    'image' => false,
+                    'btnText' => 'Read More'
+                ]);
+                ?>
+                <?php
+                View::render('molecules/text/download-item', [
+                    'title' => 'Travaux Préparatoires of the negotiations for the
                         elaboration of the United Nations
-                        Convention against Corruption</a>
-                </div>
-                <div class="link-item">
-                    <a href="#" class="animated-underline">United Nations Convention against Corruption (UNCAC)</a>
+                        Convention against Corruption',
+                    'image' => false,
+                    'btnText' => 'Read More'
+                ]);
+                ?>
+                <?php
+                View::render('molecules/text/download-item', [
+                    'title' => 'Technical Guide to the United Nations Convention against Corruption',
+                    'image' => false,
+                    'btnText' => 'Read More'
+                ]);
+                ?>
+                <div class="grid-x grid-margin-x">
+                    <div class="cell large-6">
+                        <?php
+                        View::render('molecules/text/download-item', [
+                            'title' => 'United Nations Convention against Corruption (UNCAC)',
+                            'image' => false,
+                            'btnText' => 'Read More'
+                        ]);
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>

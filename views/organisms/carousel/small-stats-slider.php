@@ -10,22 +10,24 @@
             <div class="dynamic-slider cell">
 
                 <div class="scroll-track left-right delay-1 flex-container flex-dir-column">
+                    <div class="bullets-container">
+                        <div class="glide__bullets" data-glide-el="controls[nav]"></div>
+                    </div>
+
                     <div class="glide__track" data-glide-el="track">
                         <ul class="glide__slides">
                             <?php foreach($cards as $card) : ?>
                                 <li class="glide__slide">
-                                    <?php
-                                        View::render('molecules/stats/small-card', [
-                                            'title' => $card['title']
-                                        ])
-                                    ?>
+                                    <a href="<?= $card['link'] ?? '#' ?>">
+                                        <?php
+                                            View::render('molecules/statistics-figures/stat-card', [
+                                                'title' => $card['title']
+                                            ])
+                                        ?>
+                                    </a>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
-                    </div>
-
-                    <div class="bullets-container">
-                        <div class="glide__bullets" data-glide-el="controls[nav]"></div>
                     </div>
                 </div>
             </div>

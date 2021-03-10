@@ -1,0 +1,54 @@
+.modal-sdgs {
+
+    @include breakpoint(small only) {
+        padding-left: 0;
+        padding-right: 12px;
+    }
+
+    .modal-header {
+        @include breakpoint(small only) {
+            padding: 20px 0 0 20px;
+        }
+
+        .btn-close {
+            left: 1548px;
+            right: auto;
+
+            @include breakpoint(small only) {
+                right: 0;
+            }
+        }
+    }
+
+    .modal-content {
+        margin-right: auto;
+        margin-left: unset;
+
+        .bulleted-list {
+            margin: 125px 105px 0 0;
+
+            @include breakpoint(small only) {
+                margin-right: 8px;
+            }
+
+            .list {
+                li {
+                    &:before {
+                        margin-right: 0;
+                        margin-left: 25px;
+                    }
+                }
+            }
+        }
+
+        .cards-slider-container {
+            direction: ltr;
+
+            .glide__track .glide__slide {
+                direction: rtl;
+                text-align: right;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.sdg-card,
+.sdg-card-link{
+
+    .hover-image{
+        margin-right: auto;
+        margin-left: unset;
+        transform: scaleX(-1);
+    }
+
+    &.link {
+        .image-container{
+            padding-left: 0;
+            padding-right: 160px;
+
+            @include breakpoint(medium down) {
+                padding-right: 85px;
+            }
+
+            @include breakpoint(small only) {
+                padding: 0;
+            }
+        }
+    }
+
+    .title {
+        left: auto;
+        margin-left: 0;
+        text-align: right;
+        margin-right: 355px;
+
+        @include breakpoint(small only) {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.sdg-deep-dive-hero{
+    .title {
+        margin: 120px 105px 0 0;
+
+        @include breakpoint(medium down){
+            margin-right: 72px;
+        }
+
+        @include breakpoint(small only){
+            margin: 0 30px 0 0;
+        }
+    }
+}
