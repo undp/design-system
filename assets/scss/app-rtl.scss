@@ -56,7 +56,6 @@ $global-text-direction: 'rtl';
 @import 'rtl/organisms/hero/sdg-deep-dive-hero';
 @import 'rtl/organisms/hero/homepage-hero';
 @import 'rtl/organisms/homepage/our-expertise';
-@import 'rtl/organisms/carousel/publications';
 @import 'rtl/organisms/article-deepdive/text';
 @import 'rtl/organisms/article-deepdive/article-authors';
 @import 'rtl/organisms/text/author-bio';
@@ -67,9 +66,7 @@ $global-text-direction: 'rtl';
 @import 'rtl/organisms/photo/image-per-row-gallery';
 @import 'rtl/organisms/photo/image-only-carousel';
 @import 'rtl/organisms/text/small-copy';
-@import 'rtl/organisms/carousel/small-stats-slider';
 @import 'rtl/organisms/stats/listed-stats';
-@import 'rtl/organisms/stats/parallax-stat-cards';
 
 // Pages
 @import 'rtl/pages/standard-page';
