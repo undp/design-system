@@ -1,0 +1,26 @@
+.table {
+
+    &.bordered .table-row:not(.table-headings) {
+
+        .table-column:not(:last-of-type) {
+            @include breakpoint(medium up) {
+                border-left: 0;
+                border-right: 1px solid;
+            }
+        }
+    }
+
+    &.striped .table-row:not(.table-headings) {
+
+        .table-column:before {
+            width: 1px;
+            right: -1px;
+        }
+    }
+
+    .table-row {
+        .table-column:before {
+            right: -2px;
+        }
+    }
+}
