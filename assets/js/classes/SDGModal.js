@@ -171,12 +171,12 @@ class SDGModal {
             const getNavTarget = (currentPosition, direction) => {
                 let navTarget = false;
 
-                if(direction === "left" && currentPosition > 0) {
-                    navTarget = viewportSlides[currentPosition-1];
+                if(direction === "left") {
+                    navTarget = viewportSlides[currentPosition - 1];
                 }
 
-                if(direction === "right" && currentPosition < viewportSlides.length) {
-                    navTarget = viewportSlides[currentPosition+1];
+                if(direction === "right") {
+                    navTarget = viewportSlides[currentPosition + 1];
                 }
 
                 if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
@@ -190,24 +190,16 @@ class SDGModal {
 
             // Change pointer to arrow image
             $statCard.on('mousemove', e => {
-                let thresholdArea = this.$modalContent.outerWidth() / 2;
-                let currentPosition = viewportSlides.indexOf(this.glide.index);
-
-                // We're at the beginning of the slides
-                if(currentPosition === 0) {
-                    thresholdArea = this.$modalContent.outerWidth()
-                }
-
-                // We're at the end of the slides
-                if(currentPosition === viewportSlides.length-1) {
-                    thresholdArea = 0
-                }
-
-                let threshold = this.$window.outerWidth() - thresholdArea
+                let currentPosition = viewportSlides.indexOf(this.glide.index)
+                let threshold = this.$modalContent.offset().left + (this.$modalContent.width() / 2)
                 let arrowDir = e.pageX < threshold ? 'left' : 'right'
 
-                if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
-                    arrowDir = arrowDir === 'left' ? 'right' : 'left'
+                if (currentPosition === 0) {
+                    arrowDir = window.pageDirection === 'ltr' ? 'right' : 'left'
+                }
+
+                else if (currentPosition === viewportSlides.length - 1) {
+                    arrowDir = window.pageDirection === 'ltr' ? 'left' : 'right'
                 }
 
                 $statCard.css('cursor',
@@ -218,24 +210,16 @@ class SDGModal {
 
             // Navigate through slides on slide click
             $statCard.click(e => {
-                let thresholdArea = this.$modalContent.outerWidth() / 2;
-                let currentPosition = viewportSlides.indexOf(this.glide.index);
-
-                // We're at the beginning of the slides
-                if(currentPosition === 0) {
-                    thresholdArea = this.$modalContent.outerWidth()
-                }
-
-                // We're at the end of the slides
-                if(currentPosition === viewportSlides.length-1) {
-                    thresholdArea = 0
-                }
-
-                let threshold = this.$window.outerWidth() - thresholdArea
+                let currentPosition = viewportSlides.indexOf(this.glide.index)
+                let threshold = this.$modalContent.offset().left + (this.$modalContent.width() / 2)
                 let arrowDir = e.pageX < threshold ? 'left' : 'right'
 
-                if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
-                    arrowDir = arrowDir === 'left' ? 'right' : 'left'
+                if (currentPosition === 0) {
+                    arrowDir = window.pageDirection === 'ltr' ? 'right' : 'left'
+                }
+
+                else if (currentPosition === viewportSlides.length - 1) {
+                    arrowDir = window.pageDirection === 'ltr' ? 'left' : 'right'
                 }
 
                 let target = getNavTarget(currentPosition, arrowDir);

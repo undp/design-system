@@ -53,21 +53,7 @@ class DynamicSlider {
 
         // Change pointer to arrow image
         this.$slides.on('mousemove', e => {
-            let thresholdArea = this.$container.outerWidth() / 2;
-            let currentPosition = this.viewportSlides.indexOf(this.glide.index);
-
-            // We're at the beginning of the slides
-            if (currentPosition === 0) {
-                thresholdArea = this.$container.outerWidth()
-            }
-
-            // We're at the end of the slides
-            if (currentPosition === this.viewportSlides.length - 1) {
-                thresholdArea = 0
-            }
-
-            let threshold = this.$window.outerWidth() - thresholdArea
-            const arrowDir = e.pageX < threshold ? 'left' : 'right'
+            const arrowDir = this.getArrowDirection(e.pageX)
 
             this.$slides.css('cursor',
                 `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), 
@@ -77,25 +63,11 @@ class DynamicSlider {
 
         // Navigate through slides on slide click
         this.$slides.click(e => {
-            let currentPosition = this.viewportSlides.indexOf(this.glide.index);
-            let thresholdArea = this.$container.outerWidth() / 2;
+            const $slide = $(e.target)
+            const arrowDir = this.getArrowDirection(e.pageX)
 
-            // We're at the beginning of the slides
-            if (currentPosition === 0) {
-                thresholdArea = this.$container.outerWidth()
-            }
-
-            // We're at the end of the slides
-            if (currentPosition === this.viewportSlides.length - 1) {
-                thresholdArea = 0
-            }
-
-            let threshold = this.$window.outerWidth()
-            threshold -= thresholdArea
-            const arrowDir = e.pageX < threshold ? 'left' : 'right'
-
-            let target = this.getNavTarget(currentPosition, arrowDir);
-            if (target !== false) {
+            let target = this.getNavTarget(arrowDir)
+            if (target !== false && !$slide.is('a')) {
                 this.glide.go(`=${target}`)
             }
         })
@@ -191,14 +163,31 @@ class DynamicSlider {
         this.glide.mount();
     }
 
-    getNavTarget(currentPosition, direction) {
-        let navTarget = false;
+    getArrowDirection(pageX) {
+        let currentPosition = this.viewportSlides.indexOf(this.glide.index);
+        let threshold = this.$container.offset().left + (this.$container.width() / 2)
+        let arrowDir = pageX < threshold ? 'left' : 'right'
 
-        if (direction === "left" && currentPosition > 0) {
+        if (currentPosition === 0) {
+            arrowDir = window.pageDirection === 'ltr' ? 'right' : 'left'
+        }
+
+        else if (currentPosition === this.viewportSlides.length - 1) {
+            arrowDir = window.pageDirection === 'ltr' ? 'left' : 'right'
+        }
+
+        return arrowDir
+    }
+
+    getNavTarget(direction) {
+        let navTarget = false;
+        const currentPosition = this.viewportSlides.indexOf(this.glide.index);
+
+        if(direction === "left") {
             navTarget = this.viewportSlides[currentPosition - 1];
         }
 
-        if (direction === "right" && currentPosition < this.viewportSlides.length) {
+        if(direction === "right") {
             navTarget = this.viewportSlides[currentPosition + 1];
         }
 
