@@ -100,6 +100,7 @@ class GenericSlider {
 
     setCustomControls() {
         this.$slidesContainer.click((e) => {
+            const $target = $(e.target)
             const $slides = this.$slidesContainer.find('.glide__slide')
             let threshold = this.$container.offset().left + (this.$container.width() / 2)
             let slideDir = e.pageX < threshold ? '<' : '>'
@@ -112,7 +113,11 @@ class GenericSlider {
                 slideDir = '<'
             }
 
-            if(!$(e.target).is(':button')){
+            else if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
+                slideDir = slideDir === '>' ? '<' : '>'
+            }
+
+            if(!($target.is('a') || $target.is('button'))){
                 this.glide.go(slideDir)
             }
         })
@@ -125,15 +130,11 @@ class GenericSlider {
             let arrowDir = e.pageX < threshold ? 'left' : 'right'
 
             if (this.glide.index === 0) {
-                arrowDir = 'right'
+                arrowDir = window.pageDirection === 'ltr' ? 'right' : 'left'
             }
 
             else if (this.glide.index === $slides.length - 1) {
-                arrowDir = 'left'
-            }
-
-            if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
-                arrowDir = arrowDir === 'left' ? 'right' : 'left'
+                arrowDir = window.pageDirection === 'ltr' ? 'left' : 'right'
             }
 
             this.$slidesContainer.css('cursor',

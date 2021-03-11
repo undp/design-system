@@ -37,22 +37,20 @@ const init = function () {
        $publicationSlide.on('mousemove', function(e){
            let arrowDir = e.pageX < $(this).width() / 2 ? 'left' : 'right'
 
-           if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
-               arrowDir = arrowDir === 'left' ? 'right' : 'left'
-           }
-
            $publicationSlide.css('cursor',
                `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), 
                 url("/assets/images/arrows/slider-arrow-${arrowDir}.cur"), auto`)
         });
 
        $publicationSlide.click(function(e) {
+           let slideDir = e.pageX < ($(this).width() / 2) ? '<' : '>'
+
+           if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
+               slideDir = slideDir === '>' ? '<' : '>'
+           }
+
             if(!$(e.target).is(':button')){
-                if (e.pageX < $(this).width() / 2) {
-                    glide.go('<')
-                } else {
-                    glide.go('>')
-                }
+                glide.go(slideDir)
             }
         });
 
