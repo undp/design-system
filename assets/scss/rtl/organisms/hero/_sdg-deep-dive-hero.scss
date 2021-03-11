@@ -13,5 +13,13 @@
 
     .description-container{
         padding: 70px 95px 90px 60px;
+
+        @include breakpoint(medium down){
+            padding: 70px 60px 90px 60px;
+        }
+
+        @include breakpoint(small only){
+            padding: 16px 0 75px;
+        }
     }
 }
