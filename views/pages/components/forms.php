@@ -7,7 +7,7 @@
 <!-- Navigation -->
 <?php View::render('layout/navigation/nav') ?>
 
-<main class="components-index overflow-hidden">
+<main class="components-index">
 
     <?php View::render('organisms/forms/generic-form') ?>
 
