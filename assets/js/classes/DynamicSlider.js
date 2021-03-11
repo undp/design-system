@@ -47,13 +47,14 @@ class DynamicSlider {
 
     init() {
         this.destroy()
+        this.options.direction = window.pageDirection
 
         this.glide = new Glide(this.$container.get(0), this.options);
 
         // Change pointer to arrow image
         this.$slides.on('mousemove', e => {
-            let currentPosition = this.viewportSlides.indexOf(this.glide.index);
             let thresholdArea = this.$container.outerWidth() / 2;
+            let currentPosition = this.viewportSlides.indexOf(this.glide.index);
 
             // We're at the beginning of the slides
             if (currentPosition === 0) {
@@ -65,8 +66,7 @@ class DynamicSlider {
                 thresholdArea = 0
             }
 
-            let threshold = this.$window.outerWidth()
-            threshold -= thresholdArea
+            let threshold = this.$window.outerWidth() - thresholdArea
             const arrowDir = e.pageX < threshold ? 'left' : 'right'
 
             this.$slides.css('cursor',
@@ -115,7 +115,10 @@ class DynamicSlider {
                 bulletIndex++;
             }
 
-            $controlSlider.css('left', (bulletIndex * slideWidth) + "%")
+            $controlSlider.css(
+                window.pageDirection === 'ltr' ? 'left' : 'right',
+                (bulletIndex * slideWidth) + "%"
+            )
         })
 
         this.glide.on(['mount.before'], () => {
@@ -197,6 +200,12 @@ class DynamicSlider {
 
         if (direction === "right" && currentPosition < this.viewportSlides.length) {
             navTarget = this.viewportSlides[currentPosition + 1];
+        }
+
+        if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
+            navTarget = navTarget === this.viewportSlides[currentPosition - 1]
+                ? this.viewportSlides[currentPosition + 1]
+                : this.viewportSlides[currentPosition - 1]
         }
 
         return navTarget === undefined ? false : navTarget;

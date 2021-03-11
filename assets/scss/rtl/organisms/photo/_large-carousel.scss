@@ -1,11 +1,8 @@
 
 .large-carousel {
 
-    .generic-slider {
-        direction: ltr;
-    }
-
-    .glide__track .glide__slide {
-        direction: rtl;
+    .glide__track {
+        margin-right: 0;
+        margin-left: -100%;
     }
 }

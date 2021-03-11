@@ -10,10 +10,11 @@
     }
 
     .image-block {
-        .cta-button {
-            @include breakpoint(medium down) {
-                right: 0;
-            }
+        left: -24px;
+        right: auto;
+
+        @include breakpoint(medium down) {
+            left: 0;
         }
     }
 }

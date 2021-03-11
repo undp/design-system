@@ -46,11 +46,16 @@ class GenericSlider {
     }
 
     mountGlide() {
+        this.options.direction = window.pageDirection
         this.glide = new Glide(this.$container.get(0), this.options)
 
         this.glide.on(['resize', 'update'], () => this.setSliderControl())
         this.glide.on(['mount.after', 'run'], () => {
-            this.$sliderControl.css('left', (this.glide.index * this.getSliderControlWidth()) + "%")
+
+            this.$sliderControl.css(
+                window.pageDirection === 'ltr' ? 'left' : 'right',
+                (this.glide.index * this.getSliderControlWidth()) + "%"
+            )
         })
 
         this.glide.mount()
@@ -95,8 +100,17 @@ class GenericSlider {
 
     setCustomControls() {
         this.$slidesContainer.click((e) => {
+            const $slides = this.$slidesContainer.find('.glide__slide')
             let threshold = this.$container.offset().left + (this.$container.width() / 2)
-            const slideDir = e.pageX < threshold ? '<' : '>'
+            let slideDir = e.pageX < threshold ? '<' : '>'
+
+            if (this.glide.index === 0) {
+                slideDir = '>'
+            }
+
+            else if (this.glide.index === $slides.length - 1) {
+                slideDir = '<'
+            }
 
             if(!$(e.target).is(':button')){
                 this.glide.go(slideDir)
@@ -106,20 +120,25 @@ class GenericSlider {
 
     setCursorImage() {
         this.$slidesContainer.on('mousemove', e => {
+            const $slides = this.$slidesContainer.find('.glide__slide')
             let threshold = this.$container.offset().left + (this.$container.width() / 2)
             let arrowDir = e.pageX < threshold ? 'left' : 'right'
 
-            if(this.glide.index === 0) {
-                arrowDir = 'right';
+            if (this.glide.index === 0) {
+                arrowDir = 'right'
             }
 
-            if(this.glide.index === this.$slidesContainer.find('.glide__slide').length-1) {
-                arrowDir = 'left';
+            else if (this.glide.index === $slides.length - 1) {
+                arrowDir = 'left'
+            }
+
+            if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
+                arrowDir = arrowDir === 'left' ? 'right' : 'left'
             }
 
             this.$slidesContainer.css('cursor',
                 `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), 
-                    url("/assets/images/arrows/slider-arrow-${arrowDir}.cur"), auto`
+                 url("/assets/images/arrows/slider-arrow-${arrowDir}.cur"), auto`
             )
         })
     }

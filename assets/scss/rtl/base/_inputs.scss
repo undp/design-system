@@ -1,0 +1,15 @@
+ul.input-errors {
+    li:before {
+        margin-right: 0;
+        margin-left: 5px;
+    }
+}
+
+.input-wrapper {
+    label {
+        &.required:after {
+            margin-left: 0;
+            margin-right: 5px;
+        }
+    }
+}

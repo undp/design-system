@@ -7,6 +7,7 @@ $global-text-direction: 'rtl';
 
 // Common
 @import 'rtl/base/buttons';
+@import 'rtl/base/inputs';
 
 // Partials
 @import 'rtl/partials/nav';
@@ -55,20 +56,19 @@ $global-text-direction: 'rtl';
 @import 'rtl/organisms/hero/global-hero-2';
 @import 'rtl/organisms/hero/sdg-deep-dive-hero';
 @import 'rtl/organisms/hero/homepage-hero';
-@import 'rtl/organisms/carousel/publications';
+@import 'rtl/organisms/homepage/our-expertise';
 @import 'rtl/organisms/article-deepdive/text';
 @import 'rtl/organisms/article-deepdive/article-authors';
 @import 'rtl/organisms/text/author-bio';
 @import 'rtl/organisms/single-publication/featured-publication';
+@import 'rtl/organisms/single-publication/related-publications';
 @import 'rtl/organisms/modals/modal-publication-download';
 @import 'rtl/organisms/modals/leader-modal';
 @import 'rtl/organisms/photo/large-carousel';
 @import 'rtl/organisms/photo/image-per-row-gallery';
 @import 'rtl/organisms/photo/image-only-carousel';
 @import 'rtl/organisms/text/small-copy';
-@import 'rtl/organisms/carousel/small-stats-slider';
 @import 'rtl/organisms/stats/listed-stats';
-@import 'rtl/organisms/stats/parallax-stat-cards';
 
 // Pages
 @import 'rtl/pages/standard-page';

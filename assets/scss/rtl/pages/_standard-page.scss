@@ -1,10 +1,7 @@
 .standard-page {
 
     .side-nav-content .side-content {
-
         > .content-wrapper {
-            overflow: hidden;
-
             @include breakpoint(large up) {
                 padding-left: 14%;
                 margin-right: auto;
@@ -15,24 +12,30 @@
     }
 
     .standard-page-slider {
-        direction: ltr;
+        .standard-page-slide .slide-content {
+            padding-left: 0;
+            padding-right: 49px;
 
-        .standard-page-slide {
-            direction: rtl;
-
-            .slide-content {
-                padding-left: 0;
-                text-align: right;
-                padding-right: 49px;
-
-                @include breakpoint(small only) {
-                    padding-right: 0;
-                }
+            @include breakpoint(small only) {
+                padding-right: 0;
             }
         }
 
         .glide__track {
-            margin-right: 0;
+            margin-right: 0 !important;
+            margin-left: -19.5%;
+
+            @include breakpoint(1955px up) {
+                margin-left: 0;
+            }
+
+            @include breakpoint(medium down) {
+                margin-left: -48px;
+            }
+
+            @include breakpoint(small only) {
+                margin-left: -30px;
+            }
         }
     }
 }

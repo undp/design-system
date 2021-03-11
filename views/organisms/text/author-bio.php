@@ -4,8 +4,8 @@ $authorTitles = is_array($authorTitles) ? $authorTitles : [$authorTitles];
 ?>
 
 
-<section class="author-bio grid-container scroll-track left-right delay-1">
-    <div class="grid-x">
+<section class="author-bio grid-container overflow-hidden">
+    <div class="grid-x scroll-track left-right delay-1">
         <div class="cell small-10 small-offset-1 large-5 flex-container flex-dir-column large-flex-dir-row">
             <div class="author-image">
                 <img src="<?= $authorImage ?>" alt="<?= $authorName ?>">

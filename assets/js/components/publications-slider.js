@@ -16,6 +16,7 @@ const init = function () {
             type: 'slider',
             peek: 118,
             gap: 92,
+            direction: window.pageDirection,
             breakpoints: {
                 1194: {
                     peek: 15,
@@ -25,17 +26,24 @@ const init = function () {
         });
 
         glide.on(['mount.after', 'run'], () => {
-            $controlSlider.css('left', (glide.index*slideWidth) + "%")
+            $controlSlider.css(
+                window.pageDirection === 'ltr' ? 'left' : 'right',
+                (glide.index * slideWidth) + "%"
+            )
         })
 
         glide.mount()
 
        $publicationSlide.on('mousemove', function(e){
-            if (e.pageX < $(this).width() / 2) {
-               $publicationSlide.css('cursor', 'url("/assets/images/arrows/slider-arrow-left.svg"), url("/assets/images/arrows/slider-arrow-left.cur"), auto')
-            } else {
-               $publicationSlide.css('cursor', 'url("/assets/images/arrows/slider-arrow-right.svg"), url("/assets/images/arrows/slider-arrow-right.cur"), auto')
-            }
+           let arrowDir = e.pageX < $(this).width() / 2 ? 'left' : 'right'
+
+           if (window.pageDirection === 'rtl') { // Invert goto dir when in RTL
+               arrowDir = arrowDir === 'left' ? 'right' : 'left'
+           }
+
+           $publicationSlide.css('cursor',
+               `url("/assets/images/arrows/slider-arrow-${arrowDir}.svg"), 
+                url("/assets/images/arrows/slider-arrow-${arrowDir}.cur"), auto`)
         });
 
        $publicationSlide.click(function(e) {

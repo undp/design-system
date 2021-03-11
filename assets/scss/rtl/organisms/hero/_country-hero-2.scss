@@ -10,12 +10,18 @@
         }
     }
 
-    .generic-slider {
-        direction: ltr;
+    .images-block {
+        .cta-button .btn {
+            margin: 190px auto 0 0;
 
-        .glide__track .glide__slide {
-            direction: rtl;
-            text-align: right;
+            @include breakpoint(medium down) {
+                margin: 25px 0 0 auto;
+            }
         }
+    }
+
+    .glide__track {
+        margin-right: 0;
+        margin-left: -24px;
     }
 }

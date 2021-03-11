@@ -51,6 +51,9 @@ import selectorTabs from './components/selector-tabs'
 import trapFocus from './components/trap-focus'
 
 function main() {
+    window.pageDirection = $('html').attr('dir')
+    window.pageDirection = window.pageDirection ? window.pageDirection : 'ltr'
+
     imageSizes()
     faqs()
     selectorTabs()
