@@ -6,6 +6,10 @@
         margin: 0 auto;
         position: relative;
 
+        @include breakpoint(medium down) {
+            max-width: 425px;
+        }
+
         .links-container {
             > *:not(:first-of-type) {
                 border-left: 1px solid $dark-blue-19;
