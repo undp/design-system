@@ -101,7 +101,7 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
                     </ul>
                 </div>
                 <div class="flex-container align-middle menu-cell-right">
-                    <div class="dropdown show-for-xlarge" data-dropdown-languajes dir="ltr">
+                    <div class="dropdown show-for-xlarge" data-dropdown-languajes>
                         <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>
                             <?php Svg::render('icon-languages') ?>
                             English

@@ -35,6 +35,16 @@
     }
 
     .dropdown {
+        .dropdown-btn {
+            svg {
+                margin: 0 0 0 10px;
+
+                &:last-child {
+                    margin: 0 10px 0 0;
+                }
+            }
+        }
+
         .dropdown-content {
             text-align: right;
             padding: 30px 12px 35px 30px;
