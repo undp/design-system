@@ -15,7 +15,7 @@ use helpers\View;
         'title' => 'The SDGs In ACTION.',
         'breadcrumbLinks' => [['name' => 'Sdgs', 'link' => '#']],
         'imageUrl' => '/assets/images/placeholder/hero/global-hero-3.jpg',
-        'imageMobileUrl' => '/assets/images/placeholder/hero/sdg-hero-mobile@2x.jpg'
+        'imageMobileUrl' => '/assets/images/placeholder/hero/global-hero-3--mobile.jpg'
     ]) ?>
 
     <!--  Development Goals   -->
