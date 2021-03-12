@@ -21,7 +21,7 @@
 
             <div class="cell medium-6 hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" >
                 <?php if ($hasVideo) : ?>
-                    <video autoplay loop muted playsinline data-object-fit="cover" data-object-position="center">
+                    <video class="absolute-positioned" autoplay loop muted playsinline data-object-fit="cover" data-object-position="center">
                         <source src="<?= $videoUrl ?>" type="video/mp4">
                     </video>
                 <?php endif; ?>
