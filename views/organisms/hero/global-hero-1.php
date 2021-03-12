@@ -1,7 +1,7 @@
 <?php $hasVideo = isset($videoUrl) && !empty($videoUrl); ?>
 
 
-<section class="hero global-hero-1 <?= $hasVideo ? 'has-video' : '' ?>">
+<section class="hero global-hero-1 height-auto <?= $hasVideo ? 'has-video' : '' ?>">
     <div class="grid-container">
         <div class="grid-x grid-margin-x">
 
