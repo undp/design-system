@@ -8,6 +8,7 @@ $global-text-direction: 'rtl';
 // Common
 @import 'rtl/base/buttons';
 @import 'rtl/base/inputs';
+@import 'rtl/base/animations';
 
 // Partials
 @import 'rtl/partials/nav';
@@ -67,7 +68,10 @@ $global-text-direction: 'rtl';
 @import 'rtl/organisms/photo/large-carousel';
 @import 'rtl/organisms/photo/image-per-row-gallery';
 @import 'rtl/organisms/photo/image-only-carousel';
+@import 'rtl/organisms/photo/three-column-gallery';
 @import 'rtl/organisms/text/small-copy';
+@import 'rtl/organisms/text/table';
+@import 'rtl/organisms/text/faqs';
 @import 'rtl/organisms/stats/listed-stats';
 
 // Pages

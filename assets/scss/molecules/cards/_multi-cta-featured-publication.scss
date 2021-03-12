@@ -4,8 +4,11 @@
 
     .card-container {
         margin: 0 auto;
-        max-width: 425px;
         position: relative;
+
+        @include breakpoint(medium down) {
+            max-width: 425px;
+        }
 
         .links-container {
             > *:not(:first-of-type) {
