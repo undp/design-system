@@ -1,0 +1,7 @@
+.homepage {
+  margin: $nav-desktop-height auto 0;
+
+  @include breakpoint(small only) {
+    margin: $nav-mobile-height auto 0;
+  }
+}
