@@ -19,8 +19,16 @@ use helpers\View;
 <!-- Navigation -->
 <?php View::render('layout/navigation/nav') ?>
 
-<main>
-    <?php View::render('organisms/hero/homepage-hero') ?>
+<main class="homepage">
+    <?php
+        View::render('organisms/hero/global-hero-1', [
+            'title' => 'Emerging</br>stronger</br>and better',
+            'subtitle' => 'Twelve months, twelve lessons from the pandemic',
+            'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
+            'videoUrl' => '/assets/others/emerging-hero-animation.mp4',
+            'mobileVideoUrl' => '/assets/others/emerging-hero-animation.mp4',
+        ]);
+    ?>
     <?php View::render('organisms/article-cards/featured-stories') ?>
     <?php View::render('organisms/homepage/our-mission') ?>
     <?php View::render('organisms/homepage/our-expertise') ?>
