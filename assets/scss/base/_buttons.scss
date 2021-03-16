@@ -1,33 +1,3 @@
-@mixin fontWhitespaceCrop($line-height: 1.3, $top-adjustment: 0px, $bottom-adjustment: 0px) {
-    $top-crop: 4;
-    $bottom-crop: 9;
-    $crop-font-size: 41;
-    $crop-line-height: 1;
-
-    // Apply values to calculate em-based margins that work with any font size
-    $dynamic-top-crop: max(($top-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
-    $dynamic-bottom-crop: max(($bottom-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
-
-    // Mixin output
-    line-height: $line-height;
-
-    &::before,
-    &::after {
-        content: '';
-        display: block;
-        height: 0;
-        width: 0;
-    }
-
-    &::before {
-        margin-bottom: calc(-#{$dynamic-top-crop}em + #{$top-adjustment});
-    }
-
-    &::after {
-        margin-top: calc(-#{$dynamic-bottom-crop}em + #{$bottom-adjustment});
-    }
-}
-
 .btn {
     border: none;
     color: $white;
@@ -44,7 +14,6 @@
 
     > span:not([class]) {
         flex: 1 0 auto;
-        @include fontWhitespaceCrop($line-height: 1);
     }
 
     &.full {
