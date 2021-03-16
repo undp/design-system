@@ -219,9 +219,16 @@ class ModalNavHover {
 
                 $menuOption.hover(openSubmenuData)
 
-                $menuOption.find('a').focus(() => {
-                    openSubmenuData();
-                });
+                $menuOption.find('a')
+                    .focus(() => openSubmenuData())
+                    .keypress(e => {
+                        e.preventDefault()
+                        const menuOptionId = $menuOption.data(this.dataMenuOptionId)
+
+                        if (e.which === 32) {
+                            $('#' + menuOptionId).find('a').eq(0).focus()
+                        }
+                    })
             })
         }
     }
