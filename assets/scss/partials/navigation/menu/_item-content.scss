@@ -55,8 +55,9 @@
                 position: relative;
 
                 svg {
+                    top: -50%;
                     position: absolute;
-                    top: 0;
+                    transform: translateY(50%);
                 }
             }
         }
