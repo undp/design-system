@@ -55,8 +55,13 @@
                 position: relative;
 
                 svg {
-                    top: 0;
                     position: absolute;
+                }
+            }
+
+            .text-link-inline {
+                svg {
+                    top: 0;
                 }
             }
         }
