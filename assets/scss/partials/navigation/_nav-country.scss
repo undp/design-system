@@ -99,6 +99,7 @@
                     .middle-logo {
                         top: 0;
                         left: 50%;
+                        text-align: left;
                         position: absolute;
                         transform: translateX(-50%);
                         transition: all $nav-easing 0.5s;

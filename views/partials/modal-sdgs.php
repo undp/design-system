@@ -1,9 +1,8 @@
 <?php
-
 use helpers\Svg;
 use helpers\View;
-
 ?>
+
 
 <div id="modal-sdgs" class="modal-sdgs hide">
     <div class="grid-container full height-full">
@@ -14,7 +13,7 @@ use helpers\View;
                 </button>
             </div>
             <div class="cell medium-10 height-full modal-content">
-                <div class="cell medium-2 flex-container align-center modal-header hide-for-medium">
+                <div class="flex-container align-center modal-header hide-for-medium">
                     <button class="flex-container align-middle align-center btn-close">
                         <?php Svg::render('icon-close') ?>
                     </button>

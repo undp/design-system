@@ -93,7 +93,7 @@ class LocationFilters {
             const $clickedPill = $(evt.currentTarget);
 
             const inputValue = $clickedPill.data('input-value');
-            const input = this.$multiselectFilters.find('input[value="' + inputValue + '"]')
+            const input = this.$multiSelectFilters.find('input[value="' + inputValue + '"]')
             input.prop('checked', false);
 
             const counter = input.closest('.options').siblings('.select-control').find('span');
@@ -115,7 +115,7 @@ class LocationFilters {
             this.$activeFiltersContainer.html('');
             this.$multiSelectFilters.find("input:checked").prop('checked', false);
 
-            this.$multiselectFilters.find('.select-control span').text('');
+            this.$multiSelectFilters.find('.select-control span').text('');
             this.filters.region = [];
             this.filters.office = [];
             this.search();
