@@ -4,7 +4,7 @@ $pageDescription = $pageDescription ?? 'UNDP';
 
 $lang = $_GET["lang"] ?? "en";
 $langDir = $_GET["dir"] ?? "ltr";
-$langSupportPath = "dist/lang-support/lang-$lang.css";
+$langSupportPath = "dist/lang-support/app-lang-$lang.css";
 ?>
 
 <!doctype html>
@@ -17,13 +17,12 @@ $langSupportPath = "dist/lang-support/lang-$lang.css";
 
     <title><?= $pageTitle ?></title>
 
-    <?php if($langDir === "rtl"): ?>
+    <?php if (file_exists($langSupportPath)) : ?>
+        <link href="<?= "/$langSupportPath" ?>" rel="stylesheet">
+    <?php elseif($langDir === "rtl"): ?>
         <link href="/dist/app-rtl.css" rel="stylesheet">
     <?php else: ?>
         <link href="/dist/app.css" rel="stylesheet">
     <?php endif; ?>
 
-    <?php if (file_exists($langSupportPath)) : ?>
-        <link href="<?= "/$langSupportPath" ?>" rel="stylesheet">
-    <?php endif; ?>
 </head>

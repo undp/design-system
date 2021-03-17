@@ -1,6 +1,8 @@
-// Common
 @import 'bur/base/variables';
-@import 'bur/base/fonts';
 
 // Normal app styles
 @import 'assets/scss/app-rtl';
+
+// Common
+@import 'bur/base/fonts';
+@import 'bur/base/typography';
