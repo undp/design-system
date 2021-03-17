@@ -1,13 +1,13 @@
 .btn {
     border: none;
     color: $white;
-    display: flex;
     cursor: pointer;
     background: $red-1;
     font-size: 1.4rem;
     font-weight: $bold;
     text-align: center;
     align-items: center;
+    display: inline-flex;
     justify-content: center;
     text-transform: uppercase;
     font-family: $primary-font;
