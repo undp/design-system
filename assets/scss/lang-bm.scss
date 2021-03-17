@@ -1,0 +1,29 @@
+// Language specific styles
+
+// Common
+@import 'lang-bm/base/variables';
+@import 'lang-bm/base/fonts';
+@import 'lang-bm/base/buttons';
+@import 'lang-bm/base/typography';
+
+// Partials
+@import "lang-bm/partials/footer";
+@import "lang-bm/partials/breadcrumb";
+
+// Molecules
+@import "lang-bm/molecules/statistics-figures/sdg-card";
+
+// Organisms
+@import "lang-bm/organisms/about-us-hero";
+@import "lang-bm/organisms/global-hero-1";
+@import "lang-bm/organisms/global-hero-2";
+@import "lang-bm/organisms/country-hero-2";
+@import "lang-bm/organisms/country-hero-3";
+@import "lang-bm/organisms/country-hero-5";
+@import "lang-bm/organisms/news-centre-hero";
+@import "lang-bm/organisms/sdg-deep-dive-hero";
+
+// Pages
+
+// Component templates
+

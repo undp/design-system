@@ -1,0 +1,11 @@
+.heading {
+  font-family: $primary-font;
+
+  &.h1 {
+    font-family: $secondary-font;
+  }
+}
+
+.numerals {
+  font-family: $secondary-font;
+}
