@@ -31,7 +31,9 @@
 
     .nav-wrapper {
         display: flex;
+        position: relative;
         align-items: center;
+        z-index: $z-index-nav;
         padding: 0 70px 0 70px;
         justify-content: space-between;
 
