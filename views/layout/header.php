@@ -4,6 +4,7 @@ $pageDescription = $pageDescription ?? 'UNDP';
 
 $lang = $_GET["lang"] ?? "en";
 $langDir = $_GET["dir"] ?? "ltr";
+$langSupportPath = "dist/lang-support/lang-$lang.css";
 ?>
 
 <!doctype html>
@@ -22,7 +23,7 @@ $langDir = $_GET["dir"] ?? "ltr";
         <link href="/dist/app.css" rel="stylesheet">
     <?php endif; ?>
 
-    <?php if (file_exists("dist/lang-$lang.css")) : ?>
-        <link href="/dist/lang-<?= $lang ?>.css" rel="stylesheet">
+    <?php if (file_exists($langSupportPath)) : ?>
+        <link href="<?= "/$langSupportPath" ?>" rel="stylesheet">
     <?php endif; ?>
 </head>

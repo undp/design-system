@@ -15,7 +15,9 @@ require('laravel-mix-polyfill');
 mix.js('assets/js/app.js', 'dist')
     .sass('assets/scss/app.scss', 'dist')
     .sass('assets/scss/app-rtl.scss', 'dist')
-    .sass('assets/scss/lang-bm.scss', 'dist')
+    /* Language specific stylesheets */
+    .sass('assets/scss/lang-support/lang-bur.scss', 'dist/lang-support')
+    /* */
     .setPublicPath('dist')
     .browserSync('undp.test')
     .polyfill({
