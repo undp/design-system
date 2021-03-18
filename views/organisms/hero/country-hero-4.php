@@ -9,19 +9,23 @@
                 <div class="heading h3 subtitle-text scroll-track left-right delay-1">Re-imagining Life in a </br>
                     Post-pandemic World</div>
             </div>
-            <div class="cell large-6 hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>" >
+            <div class="cell video-background" data-contract-target>
+                <div class="grid-x hero-content">
+                    <div class="cell large-6 hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>" >
 
-                <?php if ($hasVideo) : ?>
-                    <video autoplay loop muted playsinline data-object-fit="cover" data-object-position="top left">
-                        <source src="<?= $videoUrl ?>" type="video/mp4">
-                    </video>
-                <?php endif; ?>
-                
-                <div class="cta-button">
-                    <button class="btn">
-                        <span>Read More</span>
-                        <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
-                    </button>
+                        <?php if ($hasVideo) : ?>
+                            <video autoplay loop muted playsinline data-object-fit="cover" data-object-position="top left">
+                                <source src="<?= $videoUrl ?>" type="video/mp4">
+                            </video>
+                        <?php endif; ?>
+
+                        <div class="cta-button">
+                            <button class="btn">
+                                <span>Read More</span>
+                                <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
