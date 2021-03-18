@@ -1,7 +1,7 @@
 <?php $hasVideo = isset($videoUrl) && !empty($videoUrl); ?>
 
 
-<section class="hero country-hero-4 <?= $hasVideo ? 'has-video' : '' ?>">
+<section class="hero country-hero-4 height-auto <?= $hasVideo ? 'has-video' : '' ?>">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell large-5 large-offset-1 hero-content-text">
@@ -9,14 +9,18 @@
                 <div class="heading h3 subtitle-text scroll-track left-right delay-1">Re-imagining Life in a </br>
                     Post-pandemic World</div>
             </div>
-            <div class="cell large-6 hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>" >
+        </div>
+    </div>
 
+    <div class="video-background" data-contract-target>
+        <div class="hero-content">
+            <div class="hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>" >
                 <?php if ($hasVideo) : ?>
                     <video autoplay loop muted playsinline data-object-fit="cover" data-object-position="top left">
                         <source src="<?= $videoUrl ?>" type="video/mp4">
                     </video>
                 <?php endif; ?>
-                
+
                 <div class="cta-button">
                     <a href="" class="btn">
                         <span>Read More</span>
