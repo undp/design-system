@@ -10,11 +10,11 @@
     }
 
     .image-block {
-        left: -24px;
-        right: auto;
+        margin-left: 0;
+        margin-right: auto;
 
         @include breakpoint(medium down) {
-            left: 0;
+            margin-right: auto;
         }
     }
 }
