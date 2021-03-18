@@ -1,11 +1,14 @@
 const init = function () {
     $(window).scroll(()=>{
         let $hero = $('.hero');
+        let $contractTarget = $hero.find('[data-contract-target]')
+
+        $contractTarget = $contractTarget.length ? $contractTarget : $hero
 
         if($(window).scrollTop() > 0){
-            $hero.addClass('contract');
+            $contractTarget.addClass('contract');
         }else{
-            $hero.removeClass('contract');
+            $contractTarget.removeClass('contract');
         }
     })
 }

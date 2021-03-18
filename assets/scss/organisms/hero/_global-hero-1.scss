@@ -17,12 +17,13 @@
     .hero-content-text {
         color: $black;
         margin-top: 60px;
+        position: relative;
+        z-index: $z-index-5;
         padding-bottom: 140px;
 
         @include breakpoint(medium down) {
             padding-bottom: 40px;
         }
-
 
         .title-text {
             position: relative;
@@ -67,24 +68,39 @@
         }
     }
 
-    .image-block {
-        margin: 0;
-        position: relative;
-        background-size: cover;
-
-        @include breakpoint(medium down) {
-            right: 0;
-            min-height: 800px;
-        }
+    .video-background {
+        left: 0;
+        width: 97%;
+        height: 100%;
+        position: absolute;
+        z-index: $z-index-1;
+        background: $dark-blue-7;
 
         @include breakpoint(small only) {
-            min-height: 500px;
+            display: none;
+        }
+
+        .hero-content {
+            height: 100%;
+        }
+    }
+
+    .image-block {
+        height: 100%;
+        right: -10px;
+        margin-left: auto;
+        position: absolute;
+        background-size: cover;
+
+        @include breakpoint(small only) {
+            right: 0;
+            margin: 0 auto;
+            position: relative;
         }
 
         &.contract {
             max-width: 100%;
         }
-
 
         @include breakpoint(small only) {
             display: none;
@@ -118,6 +134,7 @@
             width: 100%;
             display: block;
             margin-top: 15px;
+            padding: 0 1.2rem;
         }
 
         .btn {
@@ -142,8 +159,7 @@
         video.absolute-positioned {
             top: 0;
             left: 0;
-            width: 105%;
-            right: -35px;
+            width: 103%;
             height: 100%;
             position: absolute;
         }

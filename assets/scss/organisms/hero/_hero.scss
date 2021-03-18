@@ -1,6 +1,5 @@
 .hero {
-    &.contract{
-
+    &.contract {
         max-width: calc(100% - 2.4rem);
 
         @include breakpoint(small only){
@@ -12,10 +11,14 @@
         }
     }
 
-    &.image-block {
+    [data-contract-target] {
+        transition: $easing-1;
+
         &.contract {
-            video.absolute-positioned {
-                //left: 12px;
+            width: calc(100% - 5.4rem);
+
+            @include breakpoint(small only){
+                width: calc(100% - 2.4rem);
             }
         }
     }
