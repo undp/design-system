@@ -21,10 +21,10 @@
                 <div class="heading h2 title-text scroll-track left-right delay-1"><?= $title ?? '' ?></div>
             </div>
             <div class="cta-button">
-                <button class="btn">
+                <a href="" class="btn">
                     <span>Read More</span>
                     <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
-                </button>
+                </a>
             </div>
         </div>
     </div>

@@ -18,10 +18,10 @@
                 <?php endif; ?>
                 
                 <div class="cta-button">
-                    <button class="btn">
+                    <a href="" class="btn">
                         <span>Read More</span>
                         <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -35,9 +35,9 @@
         <?php endif; ?>
 
         <div class="cta-button mobile">
-            <button class="btn">
+            <a href="" class="btn">
                 <span>Explore</span>
                 <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
-            </button>
+            </a>
         </div>
 </section>
