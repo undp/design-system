@@ -94,9 +94,9 @@
 
                 <div class="cell">
                     <div class="cta-button flex-container">
-                        <button class="btn blue">
+                        <a href="" class="btn blue">
                             Full project information
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

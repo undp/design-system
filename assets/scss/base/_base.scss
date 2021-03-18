@@ -37,13 +37,6 @@ main {
 a {
     color: inherit;
     text-decoration: none;
-
-    &:hover,
-    &:active,
-    &:focus,
-    &:visited {
-        color: inherit;
-    }
 }
 
 h1,

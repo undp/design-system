@@ -22,11 +22,11 @@ use helpers\Svg;
                 </p>
                 <div class="controls">
                     <div class="cta">
-                        <button class="btn hide-for-small-only">
+                        <a href="" class="btn hide-for-small-only">
                            <span><?= $cta ?? 'Read More' ?></span>
                            <?php Svg::render('btn-arrow-blue', true, $cta ?? 'Read More', 'assets/images/arrows/')?>
-                        </button>
-                        <a class="text-link arrow-1 show-for-small-only" href="#">
+                        </a>
+                        <a href="" class="text-link arrow-1 show-for-small-only">
                             <span>Read More</span>
                             <?php Svg::render('btn-arrow-red', true, 'Read More', 'assets/images/arrows/')?>
                         </a>

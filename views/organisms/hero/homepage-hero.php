@@ -19,10 +19,10 @@ use helpers\Svg;
             </div>
         </div>
         <div class="cta-button">
-            <button class="btn">
+            <a href="" class="btn">
                 <span>Explore</span>
                 <?php Svg::render('btn-arrow-blue', true, 'Explore', 'assets/images/arrows/')?>
-            </button>
+            </a>
         </div>
         <div class="cta-arrow show-for-large">
             <?php Svg::render('hero-arrow-down', true, 'Scroll Down', 'assets/images/arrows/')?>

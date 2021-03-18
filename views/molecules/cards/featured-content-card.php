@@ -28,10 +28,10 @@ $image = '/assets/images/placeholder/cards/featured-content-card.jpg';
                     </p>
                 </div>
 
-                <button class="btn">
+                <a href="" class="btn">
                     <span>Watch video</span>
                     <?php Svg::render('btn-arrow-blue', true, 'Explore', 'assets/images/arrows/') ?>
-                </button>
+                </a>
             </div>
 
             <div class="cell medium-6 image-container" style="background-image: url(<?= $image ?>)"></div>

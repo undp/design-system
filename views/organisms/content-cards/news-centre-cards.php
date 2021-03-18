@@ -23,9 +23,9 @@
                 <?php View::render('partials/news-centre/cards-results') ?>
 
                 <div class="cta-button">
-                    <button class="btn blue load-more visibility-hidden">
+                    <a href="" class="btn blue load-more visibility-hidden">
                         View More
-                    </button>
+                    </a>
                 </div>
 
                 <div class="scroll-up" data-scroll-btn>
