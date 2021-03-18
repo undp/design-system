@@ -40,5 +40,24 @@
                 }
             }
         }
+
+        .next-sdg-container {
+            padding-left: 0;
+            padding-right: 47px;
+
+            @include breakpoint(small only) {
+                padding-left: 0;
+                padding-right: 12px;
+            }
+        }
+
+        .side-spacing {
+            overflow-x: hidden;
+            padding: 0 35px 0 25px;
+
+            @include breakpoint(small only){
+                padding: 70px 12px 0;
+            }
+        }
     }
 }

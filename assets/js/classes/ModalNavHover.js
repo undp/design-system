@@ -75,7 +75,7 @@ class ModalNavHover {
             $navItem.keypress(e => {
                 e.preventDefault();
 
-                if (e.which === 32) {
+                if (e.which === 32 || e.which === 13) {
                     prepareModalForOpening();
                     this.$currentModal.find('a').eq(0).focus();
                 }

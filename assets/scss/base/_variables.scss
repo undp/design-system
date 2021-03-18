@@ -108,8 +108,8 @@ $medium: 500;
 $regular: 400;
 $semi-bold: 600;
 $extra-bold: 800;
-$primary-font: 'ProximaNova', sans-serif;
-$secondary-font: 'SohneBreit', sans-serif;
+$primary-font: 'ProximaNova', sans-serif !default;
+$secondary-font: 'SohneBreit', sans-serif !default;
 
 // global margin and padding
 $nav-mobile-height: 70px;

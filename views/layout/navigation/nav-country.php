@@ -1,6 +1,5 @@
 <style>
     /* Critical CSS for nav animations (fixes bug where transition breaks)*/
-
     .header.nav-country-container .nav-country .menu-cell-right,
     .header.nav-country-container .nav-country .menu-items .logo-text,
     .header.nav-country-container .nav-country .menu-items .nav-item {
@@ -16,13 +15,18 @@
         transition: all 1s cubic-bezier(0.25, 0.27, 0.11, 0.99) 0.5s;
     }
 
+    [dir=rtl] .header.nav-country-container .nav-country .nav-wrapper .menu-items .middle-logo {
+        transform: translateX(50%);
+    }
+
 
     .header.initial-state-animation .nav-country,
     .header.initial-state-animation .dummy-global-menu {
         opacity: 1;
     }
 
-    .header.animate-transition .nav-country .nav-wrapper .menu-items .middle-logo {
+    .header.animate-transition .nav-country .nav-wrapper .menu-items .middle-logo,
+    [dir=rtl] .header.animate-transition .nav-country .nav-wrapper .menu-items .middle-logo {
         left: 0;
         transform: none;
     }
@@ -39,6 +43,23 @@
     .header.animate-transition .dummy-global-menu .menu-mobile {
         opacity: 0;
         transition-delay: 0s;
+    }
+
+    .header.initial-state-country .nav-country {
+        opacity: 1;
+    }
+
+    .header.initial-state-country .nav-country .nav-wrapper .menu-items .middle-logo {
+        left: 0;
+        transform: none;
+        transition: none;
+    }
+
+    .header.initial-state-country .nav-country .menu-cell-right,
+    .header.initial-state-country .nav-country .menu-items .logo-text,
+    .header.initial-state-country .nav-country .menu-items .nav-item {
+        opacity: 1;
+        transition: none;
     }
 </style>
 
@@ -157,7 +178,7 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
     </div>
 
     <?php // Temp Global Nav for animation ?>
-    <div class="grid-container dummy-global-menu" dir="ltr">
+    <div class="grid-container dummy-global-menu">
         <nav class="grid-x">
             <div class="cell nav-wrapper">
                 <div class="menu-mobile hide-for-xlarge">
