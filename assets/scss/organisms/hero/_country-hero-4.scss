@@ -1,13 +1,15 @@
 .country-hero-4 {
     @extend .global-hero-1;
 
-    .image-block {
+    &.height-auto {
         min-height: 680px;
 
         @include breakpoint(small only) {
             min-height: 590px;
         }
+    }
 
+    .image-block {
         .cta-button {
             right: 70px;
             bottom: 65px;
