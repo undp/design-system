@@ -1,10 +1,5 @@
 .global-hero-1 {
-    @extend .about-hero;
-
-    @include breakpoint(medium down) {
-        height: 100% !important;
-        max-height: 100% !important; //override the about hero height on mobile
-    }
+    position: relative;
 
     &:before {
         background: $white !important;
@@ -12,6 +7,29 @@
 
     &.height-auto {
         height: auto;
+    }
+
+    &.has-video {
+        .image-block {
+            @include breakpoint(small only) {
+                min-height: 0;
+            }
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        video.absolute-positioned {
+            top: 0;
+            left: 0;
+            width: 103%;
+            height: 100%;
+            position: absolute;
+        }
     }
 
     .hero-content-text {
@@ -68,7 +86,7 @@
         }
     }
 
-    .video-background {
+    .hero-background {
         top: 0;
         left: 50%;
         width: 100%;
@@ -79,7 +97,7 @@
         transform: translateX(-50%);
 
         @include breakpoint(small only) {
-            display: none;
+            position: relative;
         }
 
         .hero-content {
@@ -88,34 +106,15 @@
     }
 
     .image-block {
-        right: 0;
         width: 50%;
         height: 100%;
-        position: absolute;
+        margin-left: auto;
         background-size: cover;
 
         @include breakpoint(small only) {
-            right: 0;
             width: 100%;
             margin: 0 auto;
-            position: relative;
-        }
-
-        &.contract {
-            max-width: 100%;
-        }
-
-        @include breakpoint(small only) {
-            display: none;
-        }
-
-        &.mobile {
-            display: none;
             min-height: 500px;
-
-            @include breakpoint(small only) {
-                display: block;
-            }
 
             .cta-button {
                 width: 100%;
@@ -131,41 +130,15 @@
         }
     }
 
-    .cta-button.mobile {
-        display: none;
-
+    .cta-button {
         @include breakpoint(small only) {
             width: 100%;
-            display: block;
             margin-top: 15px;
             padding: 0 1.2rem;
-        }
 
-        .btn {
-            width: 100%;
-        }
-    }
-
-    &.has-video {
-        .image-block {
-            @include breakpoint(small only) {
-                min-height: 0;
+            .btn {
+                width: 100%;
             }
-        }
-
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        video.absolute-positioned {
-            top: 0;
-            left: 0;
-            width: 103%;
-            height: 100%;
-            position: absolute;
         }
     }
 }

@@ -3,7 +3,7 @@ let _ = require('lodash')
 
 class ImageSize {
     constructor() {
-        this.$hero = $('.hero');
+        this.$hero = $('.hero, [data-multi-image-background]');
         this.$window = $(window);
     }
 
