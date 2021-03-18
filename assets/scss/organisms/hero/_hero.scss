@@ -15,7 +15,7 @@
         transition: $easing-1;
 
         &.contract {
-            width: calc(100% - 5.4rem);
+            width: calc(100% - 4.8rem);
 
             @include breakpoint(small only){
                 width: calc(100% - 2.4rem);

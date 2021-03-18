@@ -18,20 +18,22 @@
                     </button>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="cell video-background" data-contract-target>
-                <div class="grid-x hero-content">
-                    <div class="cell medium-6 hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" >
-                        <?php if ($hasVideo) : ?>
-                            <video class="absolute-positioned" autoplay loop muted playsinline data-object-fit="cover" data-object-position="center">
-                                <source src="<?= $videoUrl ?>" type="video/mp4">
-                            </video>
-                        <?php endif; ?>
-                    </div>
-                </div>
+
+    <div class="video-background" data-contract-target>
+        <div class="hero-content">
+            <div class="hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" >
+                <?php if ($hasVideo) : ?>
+                    <video autoplay loop muted playsinline data-object-fit="cover" data-object-position="center">
+                        <source src="<?= $videoUrl ?>" type="video/mp4">
+                    </video>
+                <?php endif; ?>
             </div>
         </div>
     </div>
+
 
     <div class="hero image-block mobile" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>" data-contract-target>
         <?php if ($hasVideo) : ?>
