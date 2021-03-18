@@ -97,6 +97,9 @@
         transform: translateX(-50%);
 
         @include breakpoint(small only) {
+            left: auto;
+            margin: 0 auto;
+            transform: none;
             position: relative;
         }
 
