@@ -87,7 +87,7 @@
             li:not(:last-child) {
                 margin-right: 75px;
 
-                @include breakpoint(medium down) {
+                @include breakpoint(large down) {
                     margin-right: 0;
                 }
             }
