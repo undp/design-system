@@ -4,7 +4,7 @@ use helpers\View;
 ?>
 
 
-<div id="modal-sdgs" class="modal-sdgs hide">
+<div id="modal-sdgs" class="modal-sdgs">
     <div class="grid-container full height-full">
         <div class="grid-x height-full">
             <div class="cell medium-2 flex-container align-center modal-header show-for-medium">
