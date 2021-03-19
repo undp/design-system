@@ -12,44 +12,41 @@
                 </div>
 
                 <div class="cta-button">
-                    <button class="btn">
+                    <a href="" class="btn">
                         <span>Explore</span>
                         <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
-                    </button>
+                    </a>
                 </div>
-            </div>
-
-            <div class="cell medium-6 hero image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" >
-                <?php if ($hasVideo) : ?>
-                    <video class="absolute-positioned" autoplay loop muted playsinline data-object-fit="cover" data-object-position="center">
-                        <source src="<?= $videoUrl ?>" type="video/mp4">
-                    </video>
-                <?php endif; ?>
             </div>
         </div>
     </div>
 
-    <div class="hero image-block mobile" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>">
-        <?php if ($hasVideo) : ?>
-            <video autoplay loop muted playsinline>
-                <source src="<?= $mobileVideoUrl ?? $videoUrl ?>" type="video/mp4">
-            </video>
-        <?php else: ?>
-            <div class="cta-button">
-                <button class="btn">
-                    <span>Explore</span>
-                    <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
-                </button>
-            </div>
-        <?php endif; ?>
+    <div class="hero-background" data-contract-target>
+        <div class="image-block" data-desktop-image="<?= $imageUrl ?? '' ?>" data-mobile-image="<?= $imageMobileUrl ?? '' ?>" data-multi-image-background>
+            <?php if ($hasVideo) : ?>
+                <video class="hide-for-small-only" autoplay loop muted playsinline data-object-fit="cover" data-object-position="center">
+                    <source src="<?= $videoUrl ?>" type="video/mp4">
+                </video>
+                <video class="show-for-small-only" autoplay loop muted playsinline>
+                    <source src="<?= $mobileVideoUrl ?? $videoUrl ?>" type="video/mp4">
+                </video>
+            <?php else : ?>
+                <div class="cta-button show-for-small-only">
+                    <a href="" class="btn">
+                        <span>Explore</span>
+                        <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+        </div>
     </div>
 
     <?php if ($hasVideo) : ?>
-        <div class="cta-button mobile">
-            <button class="btn">
+        <div class="cta-button show-for-small-only">
+            <a href="" class="btn">
                 <span>Explore</span>
                 <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
-            </button>
+            </a>
         </div>
     <?php endif; ?>
 </section>

@@ -51,10 +51,10 @@ $sliderOptions = [
                 <img src="/assets/images/placeholder/hero/image-block-hero-4.jpg" alt="">
             </div>
             <div class="cell large-2 cta-button">
-                <button class="btn">
+                <a href="" class="btn">
                     Read More
                     <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
-                </button>
+                </a>
             </div>
         </div>
 
@@ -86,10 +86,10 @@ $sliderOptions = [
             </div>
 
             <div class="cell large-2 cta-button">
-                <button class="btn">
+                <a href="" class="btn">
                     Read More
                     <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
-                </button>
+                </a>
             </div>
         </div>
     </div>

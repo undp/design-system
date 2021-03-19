@@ -23,10 +23,10 @@
                         <div class="heading h5 subtitle scroll-track left-right delay-5">
                             <?= $description ?? '' ?>
                         </div>
-                        <button class="btn">
+                        <a href="" class="btn">
                             Read More
                             <?=  file_get_contents("assets/images/arrows/btn-arrow-blue.svg");  ?>
-                        </button>
+                        </a>
                     </div>
                     <div class="cell large-9 article-image">
                         <img src="<?= $imageUrl ?? '' ?>" alt="">

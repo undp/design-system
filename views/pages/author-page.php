@@ -57,9 +57,9 @@ $imgPath = '/assets/images/placeholder/author-page'
                 <?php View::render('partials/author-page/author-cards') ?>
 
                 <div class="cta-button flex-container">
-                    <button class="btn blue view-more" data-view-more-btn>
+                    <a class="btn blue view-more" href="" data-view-more-btn>
                         View More
-                    </button>
+                    </a>
                 </div>
 
                 <div class="scroll-up" data-scroll-btn>

@@ -23,7 +23,7 @@ use helpers\View;
     <?php
         View::render('organisms/hero/global-hero-1', [
             'title' => 'Emerging</br>stronger</br>and better',
-            'subtitle' => 'Twelve months, twelve lessons from the pandemic',
+            'subtitle' => 'Twelve months, twelve</br> lessons from the pandemic',
             'breadcrumbLinks' => [['name' => 'Lorem Ipsum', 'link' => '#']],
             'videoUrl' => '/assets/others/emerging-hero-animation.mp4',
             'mobileVideoUrl' => '/assets/others/emerging-hero-animation.mp4',
