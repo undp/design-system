@@ -9,4 +9,10 @@
             width: calc(100% - 15px);
         }
     }
+
+    .our-expertise-row .expertise-image:hover {
+        .image-card{
+            transform: translateX(-100%);
+        }
+    }
 }
