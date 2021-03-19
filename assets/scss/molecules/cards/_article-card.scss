@@ -39,14 +39,14 @@
         }
     }
 
-    @include breakpoint(medium down) {
+    @include breakpoint(large down) {
         width: 100%;
         flex-direction: column;
     }
 
     &.no-image {
         .hover-slide {
-            @include breakpoint(medium down) {
+            @include breakpoint(large down) {
                 display: none;
             }
         }
@@ -58,7 +58,7 @@
         }
 
         &.large, &.wide {
-            @include breakpoint(medium down) {
+            @include breakpoint(large down) {
                 .hover-slide {
                     display: none;
                 }
@@ -78,7 +78,7 @@
         }
 
         .content {
-            @include breakpoint(medium down) {
+            @include breakpoint(large down) {
                 width: 48%;
             }
 
@@ -103,7 +103,7 @@
                     margin-top: 15px;
                 }
 
-                @include breakpoint(medium down) {
+                @include breakpoint(large down) {
                     margin-top: 35px;
                 }
             }
@@ -115,7 +115,7 @@
                     margin-top: 15px;
                 }
 
-                @include breakpoint(medium down) {
+                @include breakpoint(large down) {
                     margin-top: 20px;
                 }
             }
@@ -142,11 +142,11 @@
         position: absolute;
         flex-direction: column;
 
-        @include breakpoint(medium down) {
+        @include breakpoint(large down) {
             position: static;
         }
 
-        @include breakpoint(medium down) {
+        @include breakpoint(large down) {
             padding: 30px 15px;
         }
 
@@ -180,7 +180,7 @@
                 font-size: 3.3rem;
             }
 
-            @include breakpoint(medium down) {
+            @include breakpoint(large down) {
                 margin-top: 30px;
             }
         }
@@ -200,7 +200,7 @@
                 font-size: 1.8rem;
             }
 
-            @include breakpoint(medium down) {
+            @include breakpoint(large down) {
                 margin-top: 20px;
             }
 
@@ -212,6 +212,7 @@
         .cta {
             margin-bottom: 0;
             margin-top: auto;
+            z-index: $z-index-2;
 
             .text-link:hover {
                 color: inherit;
@@ -231,7 +232,7 @@
         transform: translateX(-105%);
         transition: transform $easing-1;
 
-        @include breakpoint(medium down) {
+        @include breakpoint(large down) {
             transform: none;
             position: relative;
         }
@@ -247,7 +248,7 @@
             background-repeat: no-repeat;
             background-position: top center;
 
-            @include breakpoint(medium down) {
+            @include breakpoint(large down) {
                 padding-top: 100%;
             }
         }
@@ -264,7 +265,7 @@
                     rgba($yellow, 0.5) 80%,
                     rgba($yellow, 0.8) 100%) 0 0 no-repeat padding-box;
 
-            @include breakpoint(medium down) {
+            @include breakpoint(large down) {
                 display: none;
             }
         }
