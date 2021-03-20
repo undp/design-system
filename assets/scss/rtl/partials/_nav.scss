@@ -5,7 +5,7 @@
                 margin-right: 0;
                 margin-left: 75px;
 
-                @include breakpoint(medium down) {
+                @include breakpoint(large down) {
                     margin-left: 0;
                 }
             }

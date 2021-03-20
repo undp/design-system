@@ -1,11 +1,4 @@
-@keyframes animate {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
+
 .modal-sdgs {
     height: 1px;
     width: 100%;
@@ -17,13 +10,22 @@
     background-color: rgba(237,239,240, .95);
     min-height: calc(100vh - #{$nav-desktop-height});
 
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms ease;
+
     .grid-container {
         transform: translateX(100%);
+        transition: all 400ms ease;
     }
 
     &.open {
+        opacity: 1;
+        visibility: visible;
+        transition-duration: 200ms;
+
         .grid-container {
-            animation: animate .4s forwards;
+            transform: translateX(0);
         }
     }
 
