@@ -1,5 +1,6 @@
 .sdg-card,
-.sdg-card-link{
+.sdg-card-link {
+    cursor: url("#{$image-path}arrows/sdg-hover-arrow-left.svg"), url("#{$image-path}arrows/sdg-hover-arrow-left.cur"), auto;
 
     .hover-image{
         margin-right: auto;
@@ -8,6 +9,8 @@
     }
 
     &.link {
+        cursor: url("#{$image-path}arrows/sdg-hover-arrow-black-left.svg"), url("#{$image-path}arrows/sdg-hover-arrow-black-left.cur"), auto;
+
         .image-container{
             padding-left: 0;
             padding-right: 160px;
