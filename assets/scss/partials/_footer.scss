@@ -259,7 +259,6 @@
 
     .footer-subtitle {
         line-height: 1.7;
-        min-height: 100%;
         font-size: 1.3rem;
         font-weight: $semi-bold;
 
@@ -267,6 +266,10 @@
             display: flex;
             line-height: 1.1;
             font-size: 1.4rem;
+        }
+
+        &.btn-submit {
+            min-height: 100%;
         }
 
         .footer-subtitle-arrow{
