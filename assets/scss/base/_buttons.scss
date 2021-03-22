@@ -132,7 +132,9 @@
 
     // For IE 11
     & > * {
-        flex: 1 0 auto;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            flex: 1 0 auto;
+    }
     }
 
     &:hover {

@@ -91,6 +91,14 @@
                     margin-right: 0;
                 }
             }
+
+            .nav-item {
+                width: 105px;
+
+                @include breakpoint(large down) {
+                    width: auto;
+                }
+            }
         }
 
         .right-menu {
