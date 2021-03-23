@@ -22,6 +22,8 @@ class NavMenu {
         this.$hamburguer = this.$container.find('[data-hamburger]')
         this.$mainMenu = this.$container.find('[data-menu-main-options]')
         this.$menuItemDetails = this.$container.find('[data-item-details]')
+
+        this.$officesFilterModal = $('#modal-search-offices-filters')
     }
 
     init() {
@@ -117,6 +119,12 @@ class NavMenu {
 
         if (this.currentSubmenu) {
             this.currentSubmenu.addClass(this.hiddenClass);
+        }
+        // Hides offices filter
+        if (this.$officesFilterModal.length > 0
+            && !this.$officesFilterModal.hasClass(this.hiddenClass)) {
+
+            this.$officesFilterModal.addClass(this.hiddenClass)
         }
     }
 

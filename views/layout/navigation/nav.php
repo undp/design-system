@@ -17,8 +17,8 @@ use helpers\View;
 </span>
 
 <section class="header" data-navigation>
-    <div class="grid-container">
-        <nav class="grid-x">
+    <div class="grid-container height-full">
+        <nav class="grid-x height-full">
             <div class="cell nav-wrapper">
                 <div class="menu-mobile hide-for-xlarge">
                     <a class="menu-hamburger" data-hamburger>
@@ -38,11 +38,11 @@ use helpers\View;
                         <li><a class="nav-item dark" href="#">Español</a></li>
                     </ul>
                 </div>
-                <div class="menu-desktop" data-menu-desktop>
-                    <ul class="flex-container align-middle middle-menu">
+                <div class="menu-desktop height-full" data-menu-desktop>
+                    <ul class="flex-container align-middle middle-menu height-full">
                         <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-who-we-are" aria-expanded="false" aria-haspopup="true">Who we are</button></li>
                         <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-what-we-do" aria-expanded="false" aria-haspopup="true">What we do</button></li>
-                        <li class="align-self-top">
+                        <li class="align-self-top logo-wrapper">
                             <a href="/" class="middle-logo" data-middle-logo aria-label="UNDP Logo">
                                 <?php Svg::render('undp-logo', false, 'UNDP Logo')?>
                             </a>
