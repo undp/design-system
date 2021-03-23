@@ -42,14 +42,20 @@
             max-height: $nav-mobile-height;
         }
 
-        .middle-logo {
+        .logo-wrapper {
             width: 62px;
-            display: block;
             text-align: center;
 
             @include breakpoint(large down) {
                 width: 39px;
             }
+        }
+
+        .middle-logo {
+            left: 50%;
+            display: block;
+            position: absolute;
+            transform: translateX(-50%);
 
             svg, img {
                 width: 62px;
