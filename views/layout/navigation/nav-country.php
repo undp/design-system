@@ -16,17 +16,23 @@
     }
 
     [dir=rtl] .header.nav-country-container .nav-country .nav-wrapper .menu-items .middle-logo {
+        right: 50%;
+        left: auto;
         transform: translateX(50%);
     }
 
+    [dir=rtl] .header.animate-transition .nav-country .nav-wrapper .menu-items .middle-logo {
+        right: 0;
+        left: auto;
+        transform: none;
+    }
 
     .header.initial-state-animation .nav-country,
     .header.initial-state-animation .dummy-global-menu {
         opacity: 1;
     }
 
-    .header.animate-transition .nav-country .nav-wrapper .menu-items .middle-logo,
-    [dir=rtl] .header.animate-transition .nav-country .nav-wrapper .menu-items .middle-logo {
+    .header.animate-transition .nav-country .nav-wrapper .menu-items .middle-logo {
         left: 0;
         transform: none;
     }
