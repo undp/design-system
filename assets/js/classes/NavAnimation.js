@@ -5,18 +5,26 @@ class NavAnimation {
     constructor(container) {
         this.$body = $('body')
         this.$window = $(window)
-        this.$container = container
-        this.coNavClass = 'nav-country-container'
-        this.animationTriggerClass = 'animate-transition'
+        this.$container = $(container)
+        this.$dummyNav = this.$container.find('.dummy-global-menu')
 
         this.lastNav = null
         this.currentNav = null
         this.cookieName = 'current_nav'
+        this.classes = {
+            dirLtr: 'dir-ltr',
+            dirRtl: 'dir-rtl',
+            coNavClass: 'nav-country-container',
+            coInitialState: 'initial-state-country',
+            animationTriggerClass: 'animate-transition',
+            animationInitialState: 'initial-state-animation'
+        }
         this.navTypes = {
             global: 'global-nav',
             country: 'country-nav'
         }
 
+        this.rtlLangs = ['ar', 'ku']
         this.regionalUrls = ['/country-page', '/project-page']
     }
 
@@ -35,23 +43,48 @@ class NavAnimation {
     }
 
     animate() {
-        this.$container.addClass('initial-state-animation')
-        this.$container.addClass(this.animationTriggerClass)
+        let prevPageDirection =
+            this.rtlLangs.findIndex(lang => {
+                    return document.referrer.split('/').includes(lang)
+                }) !== -1
+                ? this.classes.dirRtl
+                : this.classes.dirLtr
+
+        this.setDummyNavDirection(prevPageDirection)
+        this.$container.addClass(this.classes.animationInitialState)
+        this.$container.addClass(this.classes.animationTriggerClass)
+    }
+
+    setDummyNavDirection(direction) {
+        this.$dummyNav
+            .removeClass(this.classes.dirLtr)
+            .removeClass(this.classes.dirRtl)
+            .addClass(direction) // Set dummy nav direction to match next page
     }
 
     unloadListener() {
         this.$body.on('click', 'a', e => {
             let url = e.currentTarget.getAttribute("href");
+            let isRegionalUrl = this.regionalUrls.findIndex(path => { return url.includes(path) }) === -1
 
-            if(!url.includes('#') && url !== '' && this.regionalUrls.findIndex(path => { return url.includes(path) }) === -1) {
+            let nextPageDirection =
+                this.rtlLangs.findIndex(lang => {
+                    return url.split('/').includes(lang)
+                }) !== -1
+                ? this.classes.dirRtl
+                : this.classes.dirLtr
+
+            if(url && !url.includes('#') && isRegionalUrl) {
                 e.preventDefault()
+                this.setDummyNavDirection(nextPageDirection)
 
-                if(!this.$container.hasClass('initial-state-animation')) {
-                    this.$container.removeClass('initial-state-country')
-                    this.$container.addClass('initial-state-animation')
+                if(!this.$container.hasClass(this.classes.animationInitialState)) {
+                    this.$container
+                        .removeClass(this.classes.coInitialState)
+                        .addClass(this.classes.animationInitialState)
                 }
 
-                this.$container.removeClass(this.animationTriggerClass)
+                this.$container.removeClass(this.classes.animationTriggerClass)
 
                 setTimeout(() => {
                     window.location.href = url
@@ -61,12 +94,12 @@ class NavAnimation {
     }
 
     setCountryNav() {
-        this.$container.addClass('initial-state-country')
-        this.$container.addClass(this.animationTriggerClass)
+        this.$container.addClass(this.classes.coInitialState)
+        this.$container.addClass(this.classes.animationTriggerClass)
     }
 
     isCountryNav() {
-        return this.$container.hasClass(this.coNavClass)
+        return this.$container.hasClass(this.classes.coNavClass)
     }
 
     shouldAnimate() {
