@@ -4,7 +4,7 @@ class DropDown {
         this.dropdownAcitionOpen = null;
 
         this.$window = $(window);
-        this.$dropdowns = $('[data-dropdown-languajes]');
+        this.$dropdowns = $('[data-dropdown-languages]');
     }
 
     init() {

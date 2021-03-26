@@ -2,7 +2,6 @@
     &.nav-country-container {
         .nav-country {
             opacity: 0;
-            background-color: $dark-blue-6;
 
             .menu-cell-right,
             .menu-items .logo-text,
@@ -143,6 +142,10 @@
 
             .dropdown, .nav-item, .menu-mobile {
                 transition: opacity $easing-1 1s;
+            }
+
+            .dropdown, .right-menu {
+                margin-top: -1px; // Fixes 1px offset between nav transitions
             }
 
             .middle-menu {

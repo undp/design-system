@@ -27,7 +27,7 @@ use helpers\View;
                         <span class="hamburger-line line-bottom"></span>
                     </a>
                 </div>
-                <div class="dropdown show-for-xlarge" data-dropdown-languajes>
+                <div class="dropdown show-for-xlarge" data-dropdown-languages>
                     <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>
                         <?php Svg::render('icon-languages') ?>
                         English
