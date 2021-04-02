@@ -6,5 +6,8 @@
     },
     "require": {
         "ext-json": "*"
+    },
+    "require-dev": {
+        "laravel/sail": "^1.4"
     }
 }
