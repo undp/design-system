@@ -30,16 +30,16 @@ class ImageSize {
                     : $imageMobile
 
 
-                $hero.css('background', `url("${img}") center 0 / cover no-repeat`)
+                $hero.css('background-image', `url("${img}")`)
             })
 
 
             if (Foundation.MediaQuery.is('small only')) {
-                $hero.css('background', `url("${$imageMobile}") center 0 / cover no-repeat`)
+                $hero.css('background-image', `url("${$imageMobile}")`)
                 return
             }
 
-            $hero.css('background', `url("${$imageDesktop}") center 0 / cover no-repeat`)
+            $hero.css('background-image', `url("${$imageDesktop}")`)
         })
     }
 }
