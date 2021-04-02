@@ -22,6 +22,9 @@ switch ($subpath) {
     case '/sierra-leone-article':
         View::render('pages/sierra-leone-article');
         break;
+    case '/ar/country-page':
+        View::render('pages/country-page');
+        break;
     case '/country-page':
         View::render('pages/country-page');
         break;

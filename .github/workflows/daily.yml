@@ -1,0 +1,19 @@
+name: Sync Fork
+
+on:
+  #schedule:
+  #  - cron: '0 7 * * *' # runs every day at 7am
+  workflow_dispatch: # on button click
+
+jobs:
+  sync:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: tgymnich/fork-sync@v1.3
+        with:
+          github_token: ${{ secrets.FORK_SYNC_ACCESS_KEY }}
+          owner: themaniaks
+          base: develop
+          head: develop

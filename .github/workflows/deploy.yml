@@ -1,0 +1,43 @@
+name: CI
+
+on: [workflow_dispatch] #push, pull_request,
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Determine Composer cache directory
+      shell: bash
+      run: "echo \"COMPOSER_CACHE_DIR=$(composer config cache-dir)\" >> $GITHUB_ENV"
+    - name: Cache dependencies installed with Composer
+      uses: actions/cache@v2
+      with:
+        path: "${{ env.COMPOSER_CACHE_DIR }}"
+        key: os-${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
+        restore-keys: |
+          os-${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
+    - uses: php-actions/composer@v4
+    - name: Use Node.js
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12.x'
+    - run: npm install
+    - run: npm run prod
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1
+      with:
+        envkey_APP_NAME: "UNDP"
+        envkey_DB_HOST: ${{ secrets.DB_HOST }}
+        envkey_DB_PORT: 3306
+        envkey_DB_DATABASE: ${{ secrets.DB_DATABASE }}
+        envkey_DB_USERNAME: ${{ secrets.DB_USERNAME }}
+        envkey_DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ftpupload.net
+        server-dir: htdocs/
+        username: epiz_27417802
+        password: ${{ secrets.FTP_PASSWORD }}

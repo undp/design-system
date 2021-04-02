@@ -219,4 +219,8 @@
             }
         }
     }
+
+    .dir-rtl {
+        @include rtl-navigation();
+    }
 }

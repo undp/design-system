@@ -3,7 +3,7 @@
     "name": "Afghanistan",
     "languages": [
       {
-        "url": "/country-page",
+        "url": "/",
         "name": "English"
       },
       {
@@ -11,11 +11,11 @@
         "name": "Spanish"
       },
       {
-        "url": "/country-page",
+        "url": "/ar/?dir=rtl",
         "name": "Something Else"
       },
       {
-        "url": "/country-page",
+        "url": "/ar/country-page?dir=rtl",
         "name": "Other"
       }
     ],
@@ -2951,7 +2951,7 @@
     "name": "Saudi Arabia",
     "languages": [
       {
-        "url": "/country-page",
+        "url": "/ar/country-page?dir=rtl",
         "name": "English"
       },
       {
