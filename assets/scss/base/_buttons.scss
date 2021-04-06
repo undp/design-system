@@ -49,6 +49,10 @@
         color: $porcelain;
         pointer-events: none;
         background: $dark-blue-19 !important;
+
+        svg path {
+            stroke: $porcelain;
+        }
     }
 
     &.blue{

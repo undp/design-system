@@ -21,6 +21,13 @@
                         'url' => '/components'
                     ])
                 ?>
+                <?php
+                    View::render('molecules/buttons/cta', [
+                        'text' => 'View More',
+                        'url' => '/components',
+                        'classes' => 'disabled'
+                    ])
+                ?>
             </div>
 
             <div class="cell medium-10 medium-offset-1 large-8 large-offset-2 component-categories">
@@ -38,6 +45,13 @@
                         'text' => 'Submit',
                         'url' => '/components'
                     ])
+                ?>
+                <?php
+                View::render('molecules/buttons/cta-no-arrow', [
+                    'text' => 'Submit',
+                    'url' => '/components',
+                    'classes' => 'disabled'
+                ])
                 ?>
             </div>
 
