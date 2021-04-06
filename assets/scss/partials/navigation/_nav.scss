@@ -13,7 +13,7 @@
         height: $nav-mobile-height;
     }
 
-    .nav-item {
+    .nav-item:not(.global-icon):not(.search-icon):not(.dropdown-btn) {
         cursor: pointer;
         color: $dark-blue-1;
         outline-offset: 4px;
@@ -99,51 +99,20 @@
             }
         }
 
-        .right-menu {
-            .nav-item {
-                width: 24px;
-                height: 24px;
-                border: none;
-                color: $blue-2;
-                line-height: 0;
-                max-height: 24px;
-                position: relative;
-                margin-right: 22px;
+        .right-menu .nav-item {
+            margin-right: 22px;
 
-                svg {
-                    height: 24px;
-                }
+            @include breakpoint(large down) {
+                margin-right: 0;
+                min-width: 23px;
+            }
 
-                &:hover,
-                &.active:hover {
-                    color: $blue-8;
-                }
-
-                .icon-close {
-                    color: $black;
-                }
-
-                @include breakpoint(medium down) {
-                    &:hover,
-                    &:active,
-                    &.active,
-                    &.active:hover {
-                        color: $blue-2;
-                    }
-                }
+            &:last-child {
+                margin-right: 38px;
 
                 @include breakpoint(large down) {
-                    margin-right: 0;
-                    min-width: 23px;
-                }
-
-                &:last-child {
-                    margin-right: 38px;
-
-                    @include breakpoint(large down) {
-                        &:last-child {
-                            margin-right: 0;
-                        }
+                    &:last-child {
+                        margin-right: 0;
                     }
                 }
             }

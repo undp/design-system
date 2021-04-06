@@ -1,4 +1,7 @@
-<?php use helpers\View; ?>
+<?php
+use helpers\Svg;
+use helpers\View;
+?>
 
 <!-- Page Headers -->
 <?php View::render('layout/header', ['pageTitle' => 'Components - Stats']) ?>
@@ -118,7 +121,7 @@
 
                 <?php
                     View::render('molecules/buttons/radio-button', [
-                        'value' => 'example-checkbox'
+                        'value' => 'example-rb'
                     ]);
                 ?>
             </div>
@@ -127,6 +130,18 @@
                 <h5 class="heading h5">Download Button</h5>
 
                 <?php View::render('molecules/buttons/download-btn'); ?>
+            </div>
+
+            <div class="cell medium-4 medium-offset-1 large-3 large-offset-2 component-categories">
+                <h5 class="heading h5">Global</h5>
+
+                <?php View::render('molecules/buttons/global-icon'); ?>
+            </div>
+
+            <div class="cell medium-4 large-3 component-categories">
+                <h5 class="heading h5">Search</h5>
+
+                <?php View::render('molecules/buttons/search-icon'); ?>
             </div>
         </div>
     </section>

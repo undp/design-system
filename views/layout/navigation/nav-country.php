@@ -135,26 +135,19 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
                     ?>
 
                     <div class="flex-container align-middle logo right-menu">
-                        <a class="nav-item modal-ref dark show-for-xlarge" href="#" data-modal-open
-                           data-modal="modal-search-offices">
-                        <span data-icon>
-                            <?php Svg::render('icon-www') ?>
-                        </span>
-                            <span class="hide icon-close" data-icon-close>
-                            <?php Svg::render('icon-close') ?>
-                        </span>
-                            <span class="show-for-sr">Open/close Locations</span>
-                        </a>
-                        <a class="nav-item modal-ref dark icon-search" href="#" data-modal-open
-                           data-modal="modal-popular-search">
-                        <span data-icon>
-                            <?php Svg::render('icon-search') ?>
-                        </span>
-                            <span class="hide icon-close" data-icon-close>
-                            <?php Svg::render('icon-close') ?>
-                        </span>
-                            <span class="show-for-sr">Open/close Search</span>
-                        </a>
+                        <?php
+                            View::render('molecules/buttons/global-icon', [
+                                'classes' => 'modal-ref show-for-xlarge',
+                                'attrs' => 'data-modal-open data-modal="modal-search-offices"'
+                            ]);
+                        ?>
+
+                        <?php
+                            View::render('molecules/buttons/search-icon', [
+                                'classes' => 'modal-ref',
+                                'attrs' => 'data-modal-open data-modal="modal-popular-search"'
+                            ]);
+                        ?>
                     </div>
 
                     <?php
