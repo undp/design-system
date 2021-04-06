@@ -1,4 +1,6 @@
 <?php
+use helpers\View;
+
 $imagePath = '/assets/images/placeholder/galleries';
 $invertBackgrounds = isset($invertBackgrounds) && $invertBackgrounds;
 ?>
@@ -25,10 +27,12 @@ $invertBackgrounds = isset($invertBackgrounds) && $invertBackgrounds;
                         </p>
 
                         <div class="cta">
-                            <a href="#" class="text-link arrow-2">
-                                <span>Read More</span>
-                                <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
-                            </a>
+                            <?php
+                                View::render('molecules/text-links/cta-text-link', [
+                                    'text' => 'Read More',
+                                    'arrowClass' => 'arrow-2'
+                                ]);
+                            ?>
                         </div>
                     </div>
                 </div>

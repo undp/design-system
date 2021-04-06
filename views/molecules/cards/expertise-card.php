@@ -17,7 +17,8 @@ use helpers\View;
             <?php
                 View::render('molecules/text-links/cta-text-link', [
                     'textClass' => '',
-                    'text' => 'Read More'
+                    'tagName' => 'span',
+                    'text' => $cta ?? 'Read More'
                 ]);
             ?>
         </div>

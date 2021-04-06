@@ -1,4 +1,7 @@
-<?php $hasBackground = isset($hasBackground) ?  $hasBackground : false; ?>
+<?php
+use helpers\View;
+$hasBackground = isset($hasBackground) ?  $hasBackground : false;
+?>
 
 
 <div class="gallery-text-content <?= $hasBackground ? 'with-background' : '' ?> cell medium-6">
@@ -13,10 +16,12 @@
         </p>
 
         <div class="cta">
-            <a href="#" class="text-link arrow-2">
-                <span>Read More</span>
-                <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
-            </a>
+            <?php
+                View::render('molecules/text-links/cta-text-link', [
+                    'text' => 'Read More',
+                    'arrowClass' => 'arrow-2'
+                ]);
+            ?>
         </div>
     </div>
 </div>

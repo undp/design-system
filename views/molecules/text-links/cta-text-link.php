@@ -1,10 +1,12 @@
 <?php
 use helpers\Svg;
+
+$tagName = $tagName ?? 'a';
 $arrowClass = $arrowClass ?? 'arrow-1';
 ?>
 
 
-<a
+<<?= $tagName ?>
     <?= $attrs ?? '' ?>
     href="<?= $link ?? '#' ?>"
     target="<?= $target ?? '_self' ?>"
@@ -26,4 +28,4 @@ $arrowClass = $arrowClass ?? 'arrow-1';
 
         Svg::render($svgName, $useImgTag, $alt, $arrowPath);
     ?>
-</a>
+</<?= $tagName ?>>

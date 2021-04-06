@@ -21,10 +21,13 @@ $imageExist = isset($image) && !empty($image);
             </div>
         </div>
         <div class="cta">
-            <div class="text-link arrow-2">
-                <span><?= $cta ?? 'Read more' ?></span>
-                <?= file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg"); ?>
-            </div>
+            <?php
+                View::render('molecules/text-links/cta-text-link', [
+                    'tagName' => 'div',
+                    'arrowClass' => 'arrow-2',
+                    'text' => $cta ?? 'Read More'
+                ]);
+            ?>
         </div>
     </article>
 </a>
