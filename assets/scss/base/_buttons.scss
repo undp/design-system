@@ -303,6 +303,13 @@
         margin-left: 12px;
         transition: transform 0.2s ease;
     }
+
+    &.icon-only {
+        svg, img {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
 }
 
 .filter-tag{

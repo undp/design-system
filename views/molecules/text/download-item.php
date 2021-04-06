@@ -1,7 +1,4 @@
-<?php
-use helpers\Svg;
-use helpers\View;
-?>
+<?php use helpers\View; ?>
 
 
 <div class="download-item">
@@ -11,14 +8,14 @@ use helpers\View;
     <div class="item-text-content">
         <div class="big-copy title-text"><?= $title ?? '' ?></div>
 
-        <a href="<?= $link ?? '' ?>" target="<?= $target ?? '_self' ?>" class="text-link arrow-3 download-btn" <?= $attributes ?? '' ?>>
-            <?= $btnText ?? '' ?>
-
-            <span class="icon-wrapper">
-               <span class="icon">
-                    <?php Svg::render($btnIcon ?? 'icon-download') ?>
-                </span>
-            </span>
-        </a>
+        <?php
+            View::render('molecules/buttons/download-btn', [
+                'link' => $link ?? '',
+                'target' => $target ?? '_self',
+                'attributes' => $attributes ?? '',
+                'btnText' => $btnText ?? '',
+                'btnIcon' => $btnIcon ?? 'icon-download'
+            ]);
+        ?>
     </div>
 </div>
