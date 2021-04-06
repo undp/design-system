@@ -97,6 +97,9 @@ switch ($subpath) {
     case '/molecules/buttons':
         View::render('pages/molecules/buttons');
         break;
+    case '/molecules/text-links':
+        View::render('pages/molecules/text-links');
+        break;
     default:
         View::render('pages/home');
 }
