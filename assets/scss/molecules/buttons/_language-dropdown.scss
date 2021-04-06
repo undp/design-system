@@ -38,6 +38,7 @@
         list-style: none;
         margin-top: 20px;
         position: absolute;
+        z-index: $z-index-1;
         padding: 30px 30px 35px 12px;
         background-color: $dark-blue-6;
         box-shadow: 0 3px 6px rgba($black, 0.09);
