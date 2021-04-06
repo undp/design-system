@@ -1,8 +1,9 @@
 <?php
-
 use helpers\Svg;
-
+use helpers\View;
 ?>
+
+
 <section class="tweet">
     <header href="#" class="flex-container align-top">
         <a href="#" class="flex-container align-top" target="_blank">
@@ -25,10 +26,13 @@ use helpers\Svg;
             <?= $description ?? '' ?>
         </p>
         <div class="cta">
-            <a class="text-link arrow-1 light-red" href="#" target="_blank">
-                <span>Read More</span>
-                <?php Svg::render('btn-arrow-red', true, 'Read More', 'assets/images/arrows/')?>
-            </a>
+            <?php
+                View::render('molecules/text-links/cta-text-link', [
+                    'text' => 'Read More',
+                    'target' => '_blank',
+                    'classes' => 'light-red'
+                ]);
+            ?>
         </div>
     </article>
 </section>

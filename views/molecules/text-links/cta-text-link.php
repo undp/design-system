@@ -5,11 +5,14 @@ $arrowClass = $arrowClass ?? 'arrow-1';
 
 
 <a
+    <?= $attrs ?? '' ?>
     href="<?= $link ?? '#' ?>"
     target="<?= $target ?? '_self' ?>"
     class="text-link <?= $arrowClass ?> <?= $classes ?? '' ?>">
 
-    <span><?= $text ?? '' ?></span>
+    <span class="<?= isset($textClass) ? $textClass : 'text' ?>">
+        <?= $text ?? '' ?>
+    </span>
 
     <?php
         $alt = $text ?? '';
