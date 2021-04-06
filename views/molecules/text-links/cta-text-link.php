@@ -1,22 +1,26 @@
-<?php use helpers\Svg; ?>
+<?php
+use helpers\Svg;
+$arrowClass = $arrowClass ?? 'arrow-1';
+?>
 
 
-<a href="<?= $link ?? '#' ?>" class="cta">
-    <div class="text-link <?= $arrowClass ?? 'arrow-1' ?>">
-        <span><?= $text ?? '' ?></span>
+<a
+    href="<?= $link ?? '#' ?>"
+    target="<?= $target ?? '_self' ?>"
+    class="text-link <?= $arrowClass ?> <?= $classes ?? '' ?>">
 
+    <span><?= $text ?? '' ?></span>
 
-        <?php
-            $alt = $text ?? '';
-            $svgName = 'btn-arrow-red';
-            $arrowPath = 'assets/images/arrows/';
-            $useImgTag = isset($arrowClass) && $arrowClass === 'arrow-1';
+    <?php
+        $alt = $text ?? '';
+        $svgName = 'btn-arrow-red';
+        $arrowPath = 'assets/images/arrows/';
+        $useImgTag = isset($arrowClass) && $arrowClass === 'arrow-1';
 
-            if (!$useImgTag) {
-                $svgName .= '-secondary';
-            }
+        if (!$useImgTag) {
+            $svgName .= '-secondary';
+        }
 
-            Svg::render($svgName, $useImgTag, $alt, $arrowPath);
-        ?>
-    </div>
+        Svg::render($svgName, $useImgTag, $alt, $arrowPath);
+    ?>
 </a>
