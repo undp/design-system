@@ -53,7 +53,8 @@
                 <div class="cell cta-container">
                     <?php
                     View::render('molecules/buttons/cta-no-arrow', [
-                        'cta' => 'See All Stories'
+                        'classes' => 'red',
+                        'text' => 'See All Stories'
                     ])
                     ?>
                 </div>

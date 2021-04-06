@@ -76,7 +76,8 @@
                 <div class="cell">
                     <div class="cta-container">
                         <?php View::render('molecules/buttons/cta-no-arrow', [
-                            'cta' => 'View More',
+                            'classes' => 'red',
+                            'text' => 'View More',
                             'data' => 'data-sdg-load'
                         ]); ?>
                     </div>
