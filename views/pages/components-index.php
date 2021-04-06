@@ -50,6 +50,23 @@
             </ul>
         </div>
     </section>
+
+    <section class="grid-container grid-x component-categories">
+        <div class="cell medium-10 medium-offset-1">
+            <hr><br>
+
+            <h3 class="heading h3">Molecules</h3>
+
+            <ul class="categories big-copy">
+                <li>
+                    <a href="/molecules/buttons" class="animated-underline">Buttons</a>
+                </li>
+                <li>
+                    <a href="/molecules/text-links" class="animated-underline">Text Links</a>
+                </li>
+            </ul>
+        </div>
+    </section>
 </main>
 
 <!-- Footer -->
