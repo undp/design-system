@@ -128,17 +128,12 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
                     </ul>
                 </div>
                 <div class="flex-container align-middle menu-cell-right">
-                    <div class="dropdown show-for-xlarge" data-dropdown-languages>
-                        <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>
-                            <?php Svg::render('icon-languages') ?>
-                            English
-                            <?php Svg::render('icon-arrow-down') ?>
-                        </button>
-                        <ul class="dropdown-content hide" data-options>
-                            <li><a class="nav-item dark" href="#">Français</a></li>
-                            <li><a class="nav-item dark" href="#">Español</a></li>
-                        </ul>
-                    </div>
+                    <?php
+                        View::render('molecules/buttons/language-dropdown', [
+                            'classes' => 'show-for-xlarge'
+                        ]);
+                    ?>
+
                     <div class="flex-container align-middle logo right-menu">
                         <a class="nav-item modal-ref dark show-for-xlarge" href="#" data-modal-open
                            data-modal="modal-search-offices">

@@ -70,6 +70,12 @@
                 <hr class="separator-line large"><br>
                 <hr class="separator-line medium red"><br>
             </div>
+
+            <div class="cell medium-10 medium-offset-1 large-8 large-offset-2 component-categories">
+                <h5 class="heading h5">Language Select</h5>
+
+                <?php View::render('molecules/buttons/language-dropdown'); ?>
+            </div>
         </div>
     </section>
 

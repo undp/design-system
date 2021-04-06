@@ -27,17 +27,13 @@ use helpers\View;
                         <span class="hamburger-line line-bottom"></span>
                     </a>
                 </div>
-                <div class="dropdown show-for-xlarge" data-dropdown-languages>
-                    <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>
-                        <?php Svg::render('icon-languages') ?>
-                        English
-                        <?php Svg::render('icon-arrow-down') ?>
-                    </button>
-                    <ul class="dropdown-content hide" data-options>
-                        <li><a class="nav-item dark" href="#">Français</a></li>
-                        <li><a class="nav-item dark" href="#">Español</a></li>
-                    </ul>
-                </div>
+
+                <?php
+                    View::render('molecules/buttons/language-dropdown', [
+                        'classes' => 'show-for-xlarge'
+                    ]);
+                ?>
+
                 <div class="menu-desktop height-full" data-menu-desktop>
                     <ul class="flex-container align-middle middle-menu height-full">
                         <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-who-we-are" aria-expanded="false" aria-haspopup="true">Who we are</button></li>
