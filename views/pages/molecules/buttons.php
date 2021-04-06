@@ -96,6 +96,12 @@
 
                 <?php View::render('molecules/buttons/hamburger-menu'); ?>
             </div>
+
+            <div class="cell medium-4 large-3 component-categories">
+                <h5 class="heading h5">Close Out</h5>
+
+                <?php View::render('molecules/buttons/close-out'); ?>
+            </div>
         </div>
     </section>
 
