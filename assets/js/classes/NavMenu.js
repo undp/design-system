@@ -39,9 +39,9 @@ class NavMenu {
             this.navPreviewWidth = this.$header.width();
 
             this.expanded = this.$hamburguer.hasClass(this.menuOpenClass);
+
             if (this.expanded) this.closeMenu()
             else this.openMenu()
-            this.$hamburguer.toggleClass(this.menuOpenClass);
             this.closeSubmenu()
 
             //get the new current size after open/close menu (window size +/- scroll size

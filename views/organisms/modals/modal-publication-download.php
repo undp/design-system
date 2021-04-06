@@ -9,9 +9,12 @@ $singleChapter = count($chapters) === 1;
 
 <div id="<?= $modalId ?? 'modal-publication-download'?>" class="modal modal-publication-download <?= $image ? '' : 'no-image' ?>" data-modal>
     <div class="modal-content">
-        <button class="btn-close" data-modal-close>
-            <?php Svg::render('icon-close') ?>
-        </button>
+        <?php
+            View::render('molecules/buttons/close-out', [
+                'classes' => 'btn-close',
+                'attrs' => 'data-modal-close'
+            ]);
+        ?>
         <div class="upper-container">
             <?php if ($image) : ?>
                 <div class="image-container">

@@ -49,6 +49,10 @@
         color: $porcelain;
         pointer-events: none;
         background: $dark-blue-19 !important;
+
+        svg path {
+            stroke: $porcelain;
+        }
     }
 
     &.blue{
@@ -298,6 +302,13 @@
     img{
         margin-left: 12px;
         transition: transform 0.2s ease;
+    }
+
+    &.icon-only {
+        svg, img {
+            margin-left: 0;
+            margin-right: 0;
+        }
     }
 }
 
