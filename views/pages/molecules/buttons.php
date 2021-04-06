@@ -85,10 +85,16 @@
                 <hr class="separator-line medium red"><br>
             </div>
 
-            <div class="cell medium-10 medium-offset-1 large-8 large-offset-2 component-categories">
+            <div class="cell medium-4 medium-offset-1 large-3 large-offset-2 component-categories">
                 <h5 class="heading h5">Language Select</h5>
 
                 <?php View::render('molecules/buttons/language-dropdown'); ?>
+            </div>
+
+            <div class="cell medium-4 large-3 component-categories">
+                <h5 class="heading h5">Hamburger Menu</h5>
+
+                <?php View::render('molecules/buttons/hamburger-menu'); ?>
             </div>
         </div>
     </section>

@@ -157,14 +157,12 @@ else if (strlen($country) > 20) $logoTextSize = 'medium';
                         </a>
                     </div>
 
-                    <?php // Mobile Hamburger ?>
-                    <div class="menu-mobile hide-for-xlarge">
-                        <a class="menu-hamburger" data-hamburger>
-                            <span class="hamburger-line line-top"></span>
-                            <span class="hamburger-line line-middle"></span>
-                            <span class="hamburger-line line-bottom"></span>
-                        </a>
-                    </div>
+                    <?php
+                        // Mobile Hamburger
+                        View::render('molecules/buttons/hamburger-menu', [
+                            'classes' => 'hide-for-xlarge'
+                        ]);
+                    ?>
                 </div>
             </div>
         </nav>

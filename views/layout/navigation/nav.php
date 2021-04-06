@@ -20,13 +20,13 @@ use helpers\View;
     <div class="grid-container height-full">
         <nav class="grid-x height-full">
             <div class="cell nav-wrapper">
-                <div class="menu-mobile hide-for-xlarge">
-                    <a class="menu-hamburger" data-hamburger>
-                        <span class="hamburger-line line-top"></span>
-                        <span class="hamburger-line line-middle"></span>
-                        <span class="hamburger-line line-bottom"></span>
-                    </a>
-                </div>
+
+                <?php
+                    // Mobile Hamburger
+                    View::render('molecules/buttons/hamburger-menu', [
+                        'classes' => 'hide-for-xlarge'
+                    ]);
+                ?>
 
                 <?php
                     View::render('molecules/buttons/language-dropdown', [

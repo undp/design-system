@@ -32,6 +32,7 @@ import singlePublication from './components/single-publication'
 import dynamicSlider from './components/dynamic-slider'
 import focusPhotoCtas from './components/focus-photo-ctas'
 
+import hamburgerMenu from './components/haburger-menu'
 import modal from './components/modal'
 import modalNav from './components/modal-nav'
 import modalSdgs from './components/modal-sdgs'
@@ -93,6 +94,7 @@ function main() {
     singlePublication()
     dynamicSlider()
     focusPhotoCtas()
+    hamburgerMenu()
 
     if ($('[data-navigation]').length) {
         const globalSearch = new GlobalSearch()
