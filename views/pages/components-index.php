@@ -83,6 +83,9 @@
                 <li>
                     <a href="/showcase/modals" class="animated-underline">Modals</a>
                 </li>
+                <li>
+                    <a href="/showcase/tables-and-accordions" class="animated-underline">Tables And Accordions</a>
+                </li>
             </ul>
         </div>
     </section>
