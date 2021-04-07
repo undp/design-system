@@ -106,6 +106,9 @@ switch ($subpath) {
     case '/showcase/modals':
         View::render('pages/showcase/modals');
         break;
+    case '/showcase/tables-and-accordions':
+        View::render('pages/showcase/tables-and-accordions');
+        break;
     default:
         View::render('pages/home');
 }
