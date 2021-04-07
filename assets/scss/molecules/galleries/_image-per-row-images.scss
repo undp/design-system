@@ -1,13 +1,13 @@
 
 .image-per-row-images {
 
-    .gallery-images {
-        @include breakpoint(small only) {
-            margin-top: 50px;
-            padding: 19px 17px 16px;
-            background: $dark-blue-6;
-        }
+    @include breakpoint(small only) {
+        margin-top: 50px;
+        padding: 19px 17px 16px;
+        background: $dark-blue-6;
+    }
 
+    .gallery-images {
         &.invert-alignment > * {
             text-align: left;
 

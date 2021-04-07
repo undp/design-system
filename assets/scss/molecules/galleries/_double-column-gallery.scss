@@ -8,6 +8,12 @@
 
         .single-column-gallery {
             overflow: visible;
+
+            @include breakpoint(small only) {
+                margin-left: 5px;
+                margin-right: 5px;
+                width: calc(50% - 1rem);
+            }
         }
     }
 }
