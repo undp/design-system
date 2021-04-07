@@ -1,0 +1,13 @@
+
+.double-column-gallery {
+    overflow: hidden;
+
+    .gallery-images {
+        height: 130%;
+        margin-top: -15%;
+
+        .single-column-gallery {
+            overflow: visible;
+        }
+    }
+}
