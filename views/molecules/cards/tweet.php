@@ -5,7 +5,7 @@ use helpers\View;
 
 
 <section class="tweet">
-    <header href="#" class="flex-container align-top">
+    <header class="flex-container align-top">
         <a href="#" class="flex-container align-top" target="_blank">
             <img class="avatar lazy" data-src="<?= $urlImage ?? '../../assets/images/undp-twitter.jpg' ?>"
                  alt="<?= $alt ?? 'undp logo twitter' ?>">
@@ -28,8 +28,9 @@ use helpers\View;
         <div class="cta">
             <?php
                 View::render('molecules/text-links/cta-text-link', [
-                    'text' => 'Read More',
+                    'textClass' => '',
                     'target' => '_blank',
+                    'text' => 'Read More',
                     'classes' => 'light-red'
                 ]);
             ?>
