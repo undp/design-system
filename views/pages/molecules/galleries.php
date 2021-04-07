@@ -43,6 +43,49 @@ $imagePath = '/assets/images/placeholder/galleries';
                 <?php View::render('molecules/galleries/triple-column-gallery'); ?>
             </div>
 
+
+            <div class="cell medium-6 medium-offset-1 component-categories">
+                <h5 class="heading h5">Image Gallery - Image Per Row</h5>
+
+                <?php
+                    View::render('molecules/galleries/image-per-row-images', [
+                        'invertImageAlignment' => false,
+                        'images' => [
+                            ['path' => "$imagePath/gallery-image-wide@2x.jpg", 'imgClass' => 'wide'],
+                            ['path' => "$imagePath/gallery-image-tall@2x.jpg"]
+                        ]
+                    ]);
+                ?>
+            </div>
+
+            <div class="cell medium-6 medium-offset-1 component-categories">
+                <h5 class="heading h5">Image Gallery - Image Per Row 2</h5>
+
+                <?php
+                    View::render('molecules/galleries/image-per-row-images', [
+                        'invertImageAlignment' => false,
+                        'images' => [
+                            ['path' => "$imagePath/gallery-parallax03@2x.jpg"],
+                            ['path' => "$imagePath/gallery-image-tall@2x.jpg"]
+                        ]
+                    ]);
+                ?>
+            </div>
+
+            <div class="cell medium-6 medium-offset-1 component-categories">
+                <h5 class="heading h5">Image Gallery - Image Per Row 2 (Inverted Alignment)</h5>
+
+                <?php
+                    View::render('molecules/galleries/image-per-row-images', [
+                        'invertImageAlignment' => true,
+                        'images' => [
+                            ['path' => "$imagePath/gallery-parallax03@2x.jpg"],
+                            ['path' => "$imagePath/gallery-image-tall@2x.jpg"]
+                        ]
+                    ]);
+                ?>
+            </div>
+
         </div>
     </section>
 

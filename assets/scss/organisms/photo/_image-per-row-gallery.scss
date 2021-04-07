@@ -2,34 +2,6 @@
 .image-per-row-gallery {
     margin-top: 75px;
 
-    .gallery-images {
-        @include breakpoint(small only) {
-            margin-top: 50px;
-            padding: 19px 17px 16px;
-            background: $dark-blue-6;
-        }
-
-        &.invert-alignment > * {
-            text-align: left;
-
-            &:nth-child(even) {
-                text-align: right;
-            }
-        }
-    }
-
-    .gallery-images > *:not(:last-of-type) {
-        margin-bottom: 20px;
-
-        @include breakpoint(small only) {
-            margin-bottom: 10px;
-        }
-    }
-
-    .gallery-images:not(.invert-alignment) > *:nth-child(odd) {
-        text-align: right;
-    }
-
     .gallery-text-content {
         @include breakpoint(small only) {
             background: none;
@@ -45,12 +17,5 @@
         }
     }
 
-    img {
-        width: 50%;
-        object-fit: cover;
 
-        &.wide {
-            width: 100%;
-        }
-    }
 }
