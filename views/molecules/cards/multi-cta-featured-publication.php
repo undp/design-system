@@ -34,11 +34,8 @@ use helpers\View;
 
                 <div class="cell small-6 text-right">
                     <?php
-                        View::render('molecules/buttons/download-btn', [
-                            'target' => '_blank',
-                            'btnText' => 'Read More',
-                            'classes' => 'flex-container',
-                            'btnIcon' => 'arrows/btn-arrow-external',
+                        View::render('molecules/text-links/external-link', [
+                            'text' => 'Read More'
                         ]);
                     ?>
                 </div>

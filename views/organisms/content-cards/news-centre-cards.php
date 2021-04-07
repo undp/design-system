@@ -23,9 +23,12 @@
                 <?php View::render('partials/news-centre/cards-results') ?>
 
                 <div class="cta-button">
-                    <a href="" class="btn blue load-more visibility-hidden">
-                        View More
-                    </a>
+                    <?php
+                        View::render('molecules/buttons/cta-no-arrow', [
+                            'text' => 'View More',
+                            'classes' => 'blue load-more visibility-hidden'
+                        ])
+                    ?>
                 </div>
 
                 <div class="scroll-up" data-scroll-btn>

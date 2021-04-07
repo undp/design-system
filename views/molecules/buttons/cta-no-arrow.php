@@ -1,4 +1,3 @@
-<?php $buttonType = $url ? 'a' : 'button' ?>
 
 
 <?php if (isset($url) && !empty($url)) : ?>

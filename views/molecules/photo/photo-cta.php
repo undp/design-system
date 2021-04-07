@@ -1,3 +1,6 @@
+<?php use helpers\View; ?>
+
+
 <a href="<?= $link ?? '#' ?>">
     <div class="photo-cta">
         <div class="card-content">
@@ -9,10 +12,12 @@
                 </div>
             </div>
             <div class="cta">
-                <div class="text-link arrow-2">
-                    <span><?= $cta ?></span>
-                    <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
-                </div>
+                <?php
+                    View::render('molecules/text-links/cta-text-link', [
+                        'text' => $cta ?? '',
+                        'arrowClass' => 'arrow-2'
+                    ]);
+                ?>
             </div>
         </div>
     </div>
