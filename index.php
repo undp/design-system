@@ -100,6 +100,9 @@ switch ($subpath) {
     case '/molecules/text-links':
         View::render('pages/molecules/text-links');
         break;
+    case '/molecules/galleries':
+        View::render('pages/molecules/galleries');
+        break;
     default:
         View::render('pages/home');
 }
