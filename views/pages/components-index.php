@@ -80,6 +80,9 @@
                 <li>
                     <a href="/showcase/galleries" class="animated-underline">Galleries</a>
                 </li>
+                <li>
+                    <a href="/showcase/modals" class="animated-underline">Modals</a>
+                </li>
             </ul>
         </div>
     </section>
