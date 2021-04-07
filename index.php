@@ -94,11 +94,14 @@ switch ($subpath) {
     case '/components/hero':
         View::render('pages/components/hero');
         break;
-    case '/molecules/buttons':
-        View::render('pages/molecules/buttons');
+    case '/showcase/buttons':
+        View::render('pages/showcase/buttons');
         break;
-    case '/molecules/text-links':
-        View::render('pages/molecules/text-links');
+    case '/showcase/text-links':
+        View::render('pages/showcase/text-links');
+        break;
+    case '/showcase/galleries':
+        View::render('pages/showcase/galleries');
         break;
     default:
         View::render('pages/home');

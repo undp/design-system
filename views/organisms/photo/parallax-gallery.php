@@ -6,11 +6,10 @@ $invertBackgrounds = isset($invertBackgrounds) && $invertBackgrounds;
 ?>
 
 <section class="parallax-gallery <?= $invertBackgrounds ? 'inverted-background' : '' ?>">
-    <div class="grid-container grid-x position-relative">
+    <div class="grid-container position-relative">
 
-        <div class="cell gs--parallax-container">
+        <div class="content-wrapper">
             <div class="grid-x grid-margin-x">
-
                 <div class="cell scroll-track left-right delay-2 hide-for-medium">
                     <h3 class="heading h3">UNDP Hope</h3>
                 </div>
@@ -39,18 +38,7 @@ $invertBackgrounds = isset($invertBackgrounds) && $invertBackgrounds;
 
                 <div class="cell medium-6 scroll-track opacity-only delay-2 <?= $invertBackgrounds ? 'gallery-container' : '' ?>">
 
-                    <div class="overflow-hidden">
-                        <div class="gallery-images grid-x grid-margin-x">
-                            <div class="cell small-6 gs--parallax-column">
-                                <img src="<?= "$imagePath/gallery-parallax01@2x.jpg" ?>" alt="">
-                                <img src="<?= "$imagePath/gallery-parallax02@2x.jpg" ?>" alt="">
-                            </div>
-                            <div class="cell small-6 gs--parallax-column">
-                                <img src="<?= "$imagePath/gallery-parallax03@2x.jpg" ?>" alt="">
-                                <img src="<?= "$imagePath/gallery-image-tall@2x.jpg" ?>" alt="">
-                            </div>
-                        </div>
-                    </div>
+                    <?php View::render('molecules/galleries/double-column-gallery'); ?>
                 </div>
             </div>
         </div>

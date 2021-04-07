@@ -4,7 +4,7 @@ use helpers\View;
 ?>
 
 <!-- Page Headers -->
-<?php View::render('layout/header', ['pageTitle' => 'Components - Stats']) ?>
+<?php View::render('layout/header', ['pageTitle' => 'Atoms - Text Links']) ?>
 
 <body>
 <!-- Navigation -->

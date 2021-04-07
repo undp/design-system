@@ -267,7 +267,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         ],
     ]);
 
-    View::render('molecules/photo/gallery', [
+    View::render('molecules/photo/article-gallery', [
         'images' => [
             "$imgPath/gallery_image01.jpg",
             "$imgPath/gallery_image02.jpg",
