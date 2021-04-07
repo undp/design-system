@@ -4,7 +4,7 @@ $imagePath = '/assets/images/placeholder/galleries';
 ?>
 
 <!-- Page Headers -->
-<?php View::render('layout/header', ['pageTitle' => 'Atoms - Text Links']) ?>
+<?php View::render('layout/header', ['pageTitle' => 'Molecules - Galleries']) ?>
 
 <body>
 <!-- Navigation -->

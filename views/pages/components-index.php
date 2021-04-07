@@ -60,10 +60,10 @@
 
             <ul class="categories big-copy">
                 <li>
-                    <a href="/molecules/buttons" class="animated-underline">Buttons</a>
+                    <a href="/showcase/buttons" class="animated-underline">Buttons</a>
                 </li>
                 <li>
-                    <a href="/molecules/text-links" class="animated-underline">Text Links</a>
+                    <a href="/showcase/text-links" class="animated-underline">Text Links</a>
                 </li>
             </ul>
         </div>
@@ -78,7 +78,7 @@
 
             <ul class="categories big-copy">
                 <li>
-                    <a href="/molecules/galleries" class="animated-underline">Galleries</a>
+                    <a href="/showcase/galleries" class="animated-underline">Galleries</a>
                 </li>
             </ul>
         </div>
