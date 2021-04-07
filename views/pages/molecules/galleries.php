@@ -86,6 +86,13 @@ $imagePath = '/assets/images/placeholder/galleries';
                 ?>
             </div>
 
+
+            <div class="cell medium-6 medium-offset-1 component-categories">
+                <h5 class="heading h5">Image Gallery - Three Images</h5>
+
+                <?php View::render('molecules/galleries/three-image-gallery-images'); ?>
+            </div>
+
         </div>
     </section>
 
