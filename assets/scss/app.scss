@@ -38,6 +38,7 @@
 @import "partials/navigation/modals/locations/mobile/filter-options";
 
 // Molecules
+@import 'molecules/text/table';
 @import 'molecules/text/separator-line';
 @import 'molecules/buttons/close-out';
 @import 'molecules/buttons/language-dropdown';
@@ -103,7 +104,7 @@
 @import "organisms/text/related-table";
 @import "organisms/text/small-copy";
 @import "organisms/text/selector-tabs";
-@import "organisms/text/table";
+@import "organisms/text/table-section";
 @import "organisms/text/faqs";
 @import "organisms/text/downloadable-content";
 @import "organisms/article-cards/featured-stories";
