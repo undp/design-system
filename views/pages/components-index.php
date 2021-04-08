@@ -92,6 +92,9 @@
                 <li>
                     <a href="/showcase/stats" class="animated-underline">Stats</a>
                 </li>
+                <li>
+                    <a href="/showcase/sliders" class="animated-underline">Sliders</a>
+                </li>
             </ul>
         </div>
     </section>
