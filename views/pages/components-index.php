@@ -86,6 +86,9 @@
                 <li>
                     <a href="/showcase/tables-and-accordions" class="animated-underline">Tables And Accordions</a>
                 </li>
+                <li>
+                    <a href="/showcase/cards" class="animated-underline">Cards</a>
+                </li>
             </ul>
         </div>
     </section>
