@@ -18,44 +18,59 @@ use helpers\View;
             <div class="cell medium-10 medium-offset-1 large-8 large-offset-2 component-categories">
                 <h5 class="heading h5">CTA</h5>
 
-                <?php
-                    View::render('molecules/buttons/cta', [
-                        'text' => 'View More',
-                        'url' => '/components'
-                    ])
-                ?>
-                <?php
-                    View::render('molecules/buttons/cta', [
-                        'text' => 'View More',
-                        'url' => '/components',
-                        'classes' => 'disabled'
-                    ])
-                ?>
+                <div class="displays-inline" data-tooltip>
+                    <?php
+                        View::render('molecules/buttons/cta', [
+                            'text' => 'View More',
+                            'url' => '/components'
+                        ])
+                    ?>
+                    <span class="tooltip">Default</span>
+                </div>
+                <div class="displays-inline" data-tooltip>
+                    <?php
+                        View::render('molecules/buttons/cta', [
+                            'text' => 'View More',
+                            'url' => '/components',
+                            'classes' => 'disabled'
+                        ])
+                    ?>
+                    <span class="tooltip">Disabled State</span>
+                </div>
             </div>
 
             <div class="cell medium-10 medium-offset-1 large-8 large-offset-2 component-categories">
                 <h5 class="heading h5">CTA - No Arrow</h5>
 
-                <?php
-                    View::render('molecules/buttons/cta-no-arrow', [
-                        'text' => 'View More',
-                        'url' => '/components'
-                    ])
-                ?>
-                <?php
-                    View::render('molecules/buttons/cta-no-arrow', [
-                        'classes' => 'blue',
-                        'text' => 'Submit',
-                        'url' => '/components'
-                    ])
-                ?>
-                <?php
-                View::render('molecules/buttons/cta-no-arrow', [
-                    'text' => 'Submit',
-                    'url' => '/components',
-                    'classes' => 'disabled'
-                ])
-                ?>
+                <div class="displays-inline" data-tooltip>
+                    <?php
+                        View::render('molecules/buttons/cta-no-arrow', [
+                            'text' => 'View More',
+                            'url' => '/components'
+                        ])
+                    ?>
+                    <span class="tooltip">Default</span>
+                </div>
+                <div class="displays-inline" data-tooltip>
+                    <?php
+                        View::render('molecules/buttons/cta-no-arrow', [
+                            'classes' => 'blue',
+                            'text' => 'Submit',
+                            'url' => '/components'
+                        ])
+                    ?>
+                    <span class="tooltip">Blue Background</span>
+                </div>
+                <div class="displays-inline" data-tooltip>
+                    <?php
+                        View::render('molecules/buttons/cta-no-arrow', [
+                            'text' => 'Submit',
+                            'url' => '/components',
+                            'classes' => 'disabled'
+                        ])
+                    ?>
+                    <span class="tooltip">Disabled State</span>
+                </div>
             </div>
 
             <div class="cell medium-10 medium-offset-1 large-8 large-offset-2 component-categories">
