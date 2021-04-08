@@ -13,13 +13,22 @@
                 </h4>
             </div>
             <div class="cta">
-                <?php
-                    View::render('molecules/text-links/cta-text-link', [
-                        'text' => $cta,
-                        'tagName' => 'div',
-                        'arrowClass' => 'arrow-2'
-                    ]);
-                ?>
+                <?php if (isset($isExternalLink) && $isExternalLink) : ?>
+                    <?php
+                        View::render('molecules/text-links/external-link', [
+                            'text' => $cta,
+                            'tagName' => 'div'
+                        ]);
+                    ?>
+                <?php else : ?>
+                    <?php
+                        View::render('molecules/text-links/cta-text-link', [
+                            'text' => $cta,
+                            'tagName' => 'div',
+                            'arrowClass' => 'arrow-2'
+                        ]);
+                    ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
