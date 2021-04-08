@@ -1,7 +1,10 @@
-<?php use helpers\Svg; ?>
+<?php
+use helpers\Svg;
+$tagName = $tagName ?? 'a'
+?>
 
 
-<a
+<<?= $tagName ?>
     <?= $attributes ?? '' ?>
     href="<?= $link ?? '' ?>"
     target="<?= $target ?? '_self' ?>"
@@ -14,4 +17,4 @@
             <?php Svg::render($btnIcon ?? 'icon-download') ?>
         </span>
     </span>
-</a>
+</<?= $tagName ?>>

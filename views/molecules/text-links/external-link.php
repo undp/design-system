@@ -7,5 +7,6 @@
         'link' => $link ?? '#',
         'btnText' => $text ?? '',
         'btnIcon' => 'arrows/btn-arrow-external',
-        'classes' => 'external-link ' . $classes
+        'classes' => 'external-link ' . $classes,
+        'tagName' => $tagName ?? 'a'
     ]);

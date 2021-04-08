@@ -128,6 +128,7 @@
 
 .text-link {
     color: $black;
+    cursor: pointer;
     font-size: 1.5rem;
     font-weight: bold;
     align-items: center;
@@ -138,7 +139,7 @@
     & > * {
         @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
             flex: 1 0 auto;
-    }
+        }
     }
 
     &:hover {
