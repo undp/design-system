@@ -36,6 +36,23 @@
         }
     }
 
+    &.sticky .side-menu {
+        bottom: 30px;
+        position: sticky;
+
+        @include breakpoint(medium down) {
+            left: 0;
+            position: fixed;
+            z-index: $z-index-5;
+            top: calc(#{$nav-mobile-height} - 1px);
+        }
+
+        // For IE 11 (media is a hack to check for IE 10+)
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            top: calc(#{$nav-desktop-height} + 30px);
+        }
+    }
+
     .side-menu,
     .side-submenu {
         list-style: none;
@@ -45,26 +62,16 @@
     .side-menu {
         padding: 0;
         width: 100%;
-        bottom: 30px;
-        position: sticky;
         border-top: 1px solid rgba($black, 0.1);
 
         @include breakpoint(medium down) {
-            left: 0;
             width: 100%;
             padding: 0 12px;
-            position: fixed;
             border-top: none;
             max-height: 54px;
             overflow: hidden;
-            z-index: $z-index-5;
             background-color: $dark-blue-5;
-            top: calc(#{$nav-mobile-height} - 1px);
-        }
 
-        // For IE 11 (media is a hack to check for IE 10+)
-        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-            top: calc(#{$nav-desktop-height} + 30px);
         }
     }
 
