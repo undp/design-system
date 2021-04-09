@@ -63,6 +63,19 @@ p {
 
 ul {
     margin: 0;
+
+    &.lookup-list {
+        @extend .big-copy;
+        line-height: 1.4;
+
+        li:not(:first-of-type) {
+            margin-top: 20px;
+        }
+
+        &.margin-top {
+            margin-top: 30px;
+        }
+    }
 }
 
 .uppercase {
