@@ -155,7 +155,7 @@
     <?php
         View::render('organisms/hero/about-us-hero', [
             'desktopImage' => '/assets/images/placeholder/hero/about-image.jpg',
-            'mobileImage' => '/assets/images/placeholder/hero/heroabout-small.jpg'
+            'mobileImage' => '/assets/images/placeholder/hero/hero-about-small.jpg'
         ])
     ?>
 
