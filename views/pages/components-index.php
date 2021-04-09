@@ -95,6 +95,9 @@
                 <li>
                     <a href="/showcase/sliders" class="animated-underline">Sliders</a>
                 </li>
+                <li>
+                    <a href="/showcase/lookups" class="animated-underline">Lookups</a>
+                </li>
             </ul>
         </div>
     </section>

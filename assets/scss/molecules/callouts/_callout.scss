@@ -55,15 +55,15 @@
             padding-bottom: 28px;
             background: $dark-blue-6;
         }
+    }
 
-        .quote-text {
-            .heading {
-                font-size: 2.5rem;
-                font-weight: $regular;
+    &.smaller-heading .quote-text {
+        .heading {
+            font-size: 2.5rem;
+            font-weight: $regular;
 
-                @include breakpoint(small down) {
-                    font-size: 2rem;
-                }
+            @include breakpoint(small down) {
+                font-size: 2rem;
             }
         }
     }
