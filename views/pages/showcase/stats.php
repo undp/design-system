@@ -76,7 +76,52 @@ use helpers\View;
                 </div>
             </div>
 
+            <div class="cell medium-3 component-categories">
+                <h4 class="heading h4">Stats Cards<br>Parallax / Slider</h4>
+            </div>
+        </div>
+    </section>
 
+    <?php
+        View::render('organisms/stats/parallax-stat-cards', [
+            'heading' => 'Our Impact',
+            'cards' => [
+                [
+                    'number' => 41,
+                    'title' => 'Percent',
+                    'description' => 'Adult literacy rate'
+                ],
+                [
+                    'number' => 60,
+                    'title' => 'Percent',
+                    'description' => 'Of Sierra Leoneans live below the the national poverty line'
+                ],
+                [
+                    'number' => 70,
+                    'title' => 'Percent',
+                    'description' => 'Of youth are unemployed or underemployed'
+                ],
+                [
+                    'number' => 48,
+                    'title' => 'Years old',
+                    'description' => 'Life expectancy at birth'
+                ],
+                [
+                    'number' => 13,
+                    'title' => 'Percent',
+                    'description' => 'Of parliamentary seats held by women'
+                ],
+                [
+                    'number' => 41,
+                    'title' => 'Percent',
+                    'description' => 'Adult literacy rate'
+                ]
+            ]
+        ]);
+    ?>
+
+    <section class="other-inputs component-categories grid-container">
+        <div class="grid-x grid-margin-x">
             <div class="cell medium-3 component-categories">
                 <h4 class="heading h4">Stats Cards<br>Accent Colors</h4>
             </div>
