@@ -15,33 +15,33 @@ use helpers\View;
         <div class="grid-x grid-margin-x">
 
             <div class="cell component-categories">
-                <h3 class="heading h3">Text & CTA Lookups</h3>
+                <h3 class="heading h3 scroll-track left-right delay-1">Text & CTA Lookups</h3>
             </div>
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Section Header</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Section Header</h6>
             </div>
             <div class="cell medium-8 medium-offset-1 component-categories">
-                <h2 class="heading h2">Section Header</h2>
+                <h2 class="heading h2 scroll-track left-right delay-2">Section Header</h2>
             </div>
             <div class="cell medium-2 hide-for-small-only"></div>
 
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Section Header + Sub Head</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Section Header + Sub Head</h6>
             </div>
             <div class="cell medium-8 medium-offset-1 component-categories">
-                <h2 class="heading h2">Section Header</h2>
-                <h3 class="heading h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                <h2 class="heading h2 scroll-track left-right delay-2">Section Header</h2>
+                <h3 class="heading h3 scroll-track left-right delay-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             </div>
             <div class="cell medium-2 hide-for-small-only"></div>
 
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Body Copy</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Body Copy</h6>
             </div>
             <div class="cell medium-8 medium-offset-1 component-categories">
-                <p class="big-copy">
+                <p class="big-copy scroll-track left-right delay-2">
                     Sagittis vitae et leo duis ut diam quam nulla porttitor. Sed egestas egestas fringilla phasellus
                     faucibus scelerisque eleifend. Amet consectetur adipiscing elit duis tristique sollicitudin nibh sit.
                     Lacus viverra vitae congue eu consequat ac felis donec. Ut consequat semper viverra nam libero justo
@@ -56,12 +56,12 @@ use helpers\View;
 
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Sub Head + <br>Tertiary Head + <br>Body Copy</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Sub Head + <br>Tertiary Head + <br>Body Copy</h6>
             </div>
             <div class="cell medium-8 medium-offset-1 component-categories">
-                <h3 class="heading h3">Location</h3>
-                <h5 class="heading h5">Algeria</h5>
-                <p class="big-copy">
+                <h3 class="heading h3 scroll-track left-right delay-2">Location</h3>
+                <h5 class="heading h5 scroll-track left-right delay-2">Algeria</h5>
+                <p class="big-copy scroll-track left-right delay-2">
                     Sagittis vitae et leo duis ut diam quam nulla porttitor. Sed egestas egestas fringilla phasellus
                     faucibus scelerisque eleifend. Amet consectetur adipiscing elit duis tristique sollicitudin nibh sit.
                     Lacus viverra vitae congue eu consequat ac felis donec. Ut consequat semper viverra nam libero justo
@@ -76,10 +76,10 @@ use helpers\View;
 
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">List</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">List</h6>
             </div>
             <div class="cell medium-8 medium-offset-1 component-categories">
-                <ul class="lookup-list">
+                <ul class="lookup-list scroll-track left-right delay-2">
                     <li>End all forms of discrimination against all women and girls everywhere.</li>
                     <li>
                         Eliminate all forms of violence against all women and girls in the public and
@@ -100,15 +100,15 @@ use helpers\View;
 
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Body Copy +<br>List</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Body Copy +<br>List</h6>
             </div>
             <div class="cell medium-8 medium-offset-1 component-categories">
-                <p class="big-copy">
+                <p class="big-copy scroll-track left-right delay-2">
                     Sagittis vitae et leo duis ut diam quam nulla porttitor. Sed egestas egestas fringilla phasellus
                     faucibus scelerisque eleifend. Amet consectetur adipiscing elit duis tristique sollicitudin nibh sit.
                     Lacus viverra vitae congue eu consequat ac felis donec.
                 </p>
-                <ul class="lookup-list margin-top">
+                <ul class="lookup-list margin-top scroll-track left-right delay-2">
                     <li>End all forms of discrimination against all women and girls everywhere.</li>
                     <li>
                         Eliminate all forms of violence against all women and girls in the public and
@@ -128,10 +128,10 @@ use helpers\View;
             <div class="cell medium-2 hide-for-small-only"></div>
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Two-up<br>Body Copy</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Two-up<br>Body Copy</h6>
             </div>
             <div class="cell medium-9 medium-offset-1 component-categories">
-                <div class="grid-x grid-margin-x">
+                <div class="grid-x grid-margin-x scroll-track left-right delay-2">
                     <div class="cell medium-6">
                         <p class="big-copy">
                             Sagittis vitae et leo duis ut diam quam nulla porttitor. Sed egestas egestas fringilla phasellus
@@ -151,10 +151,10 @@ use helpers\View;
             <div class="cell medium-1 hide-for-small-only"></div>
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Tertiary Head +<br>Two-up<br>Body Copy</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Tertiary Head +<br>Two-up<br>Body Copy</h6>
             </div>
             <div class="cell medium-9 medium-offset-1 component-categories">
-                <div class="grid-x grid-margin-x">
+                <div class="grid-x grid-margin-x scroll-track left-right delay-2">
                     <div class="cell medium-6">
                         <h5 class="heading h5">Algeria</h5>
                         <p class="big-copy">
@@ -176,11 +176,11 @@ use helpers\View;
             <div class="cell medium-1 hide-for-small-only"></div>
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Sub Head +<br>Tertiary Head +<br>Two-up<br>Body Copy</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Sub Head +<br>Tertiary Head +<br>Two-up<br>Body Copy</h6>
             </div>
             <div class="cell medium-9 medium-offset-1 component-categories">
-                <h3 class="heading h3">Location</h3>
-                <div class="grid-x grid-margin-x">
+                <h3 class="heading h3 scroll-track left-right delay-2">Location</h3>
+                <div class="grid-x grid-margin-x scroll-track left-right delay-2">
                     <div class="cell medium-6">
                         <h5 class="heading h5">Algeria</h5>
                         <p class="big-copy">
@@ -203,10 +203,10 @@ use helpers\View;
 
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Tertiary Head +<br>Four-up<br>Body Copy</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Tertiary Head +<br>Four-up<br>Body Copy</h6>
             </div>
             <div class="cell medium-10 medium-offset-1 component-categories">
-                <div class="grid-x grid-margin-x">
+                <div class="grid-x grid-margin-x scroll-track left-right delay-2">
                     <div class="cell medium-3">
                         <h5 class="heading h5">Italy</h5>
                         <p class="big-copy">
@@ -243,10 +243,10 @@ use helpers\View;
             </div>
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Four-up<br>Body Copy</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Four-up<br>Body Copy</h6>
             </div>
             <div class="cell medium-10 medium-offset-1 component-categories">
-                <div class="grid-x grid-margin-x">
+                <div class="grid-x grid-margin-x scroll-track left-right delay-2">
                     <div class="cell medium-3">
                         <p class="big-copy">
                             Sagittis vitae et leo duis ut diam quam nulla porttitor. Sed egestas egestas fringilla phasellus
@@ -279,14 +279,14 @@ use helpers\View;
             </div>
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Four-up<br>Body Copy</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Four-up<br>Body Copy</h6>
             </div>
             <div class="cell medium-10 medium-offset-1 component-categories">
                 <?php View::render('organisms/text/selector-tabs'); ?>
             </div>
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Large Copy</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Large Copy</h6>
             </div>
             <div class="cell medium-11 component-categories">
                 <?php
@@ -301,7 +301,7 @@ use helpers\View;
             </div>
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Large Copy +<br>Body Copy</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Large Copy +<br>Body Copy</h6>
             </div>
             <div class="cell medium-10 component-categories">
                 <?php
@@ -343,7 +343,7 @@ use helpers\View;
             <div class="cell medium-1 hide-for-small-only"></div>
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Large Callout</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Large Callout</h6>
             </div>
             <div class="cell medium-11 component-categories">
                 <?php
@@ -358,7 +358,7 @@ use helpers\View;
             </div>
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Small Copy Lockup<br>Body Copy</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Small Copy Lockup<br>Body Copy</h6>
             </div>
             <div class="cell medium-11 component-categories">
                 <?php View::render('organisms/text/small-copy'); ?>
@@ -366,11 +366,11 @@ use helpers\View;
 
 
             <div class="cell component-categories">
-                <h3 class="heading h3">Article Lookups</h3>
+                <h3 class="heading h3 scroll-track left-right delay-1">Article Lookups</h3>
             </div>
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Photo Endpoint<br>Page Wide</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Photo Endpoint<br>Page Wide</h6>
             </div>
             <div class="cell medium-11 component-categories">
                 <?php
@@ -388,7 +388,7 @@ use helpers\View;
 
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Photo Endpoint<br>Square</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Photo Endpoint<br>Square</h6>
             </div>
             <div class="cell medium-11 component-categories">
                 <?php
@@ -406,7 +406,7 @@ use helpers\View;
             </div>
 
             <div class="cell medium-1 component-categories">
-                <h6 class="heading h6">Photo Endpoint<br>Vertical</h6>
+                <h6 class="heading h6 scroll-track left-right delay-1">Photo Endpoint<br>Vertical</h6>
             </div>
             <div class="cell medium-11 component-categories">
                 <?php
@@ -425,7 +425,7 @@ use helpers\View;
 
 
             <div class="cell component-categories">
-                <h3 class="heading h3">Author Lookups</h3>
+                <h3 class="heading h3 scroll-track left-right delay-1">Author Lookups</h3>
             </div>
 
             <div class="cell component-categories">
