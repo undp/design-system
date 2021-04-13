@@ -1,7 +1,7 @@
 <?php use helpers\View; ?>
 
 
-<section class="country-page-content-cards" data-view-more data-load-step="4">
+<section class="country-page-content-cards">
     <div class="grid-container grid-x overflow-hidden">
         <div class="cell cards-container scroll-track left-right delay-1">
             <div class="grid-x grid-margin-x flex-container align-center">
@@ -53,7 +53,8 @@
                 <div class="cell cta-container">
                     <?php
                     View::render('molecules/buttons/cta-no-arrow', [
-                        'cta' => 'See All Stories'
+                        'classes' => 'red',
+                        'text' => 'See All Stories'
                     ])
                     ?>
                 </div>

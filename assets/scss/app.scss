@@ -38,6 +38,10 @@
 @import "partials/navigation/modals/locations/mobile/filter-options";
 
 // Molecules
+@import 'molecules/text/table';
+@import 'molecules/text/separator-line';
+@import 'molecules/buttons/close-out';
+@import 'molecules/buttons/language-dropdown';
 @import 'molecules/text/tooltip';
 @import 'molecules/text/download-item';
 @import 'molecules/forms/select';
@@ -71,6 +75,11 @@
 @import "molecules/cards/featured-content-card";
 @import "molecules/cards/leader-card";
 @import "molecules/cards/small-leader-card";
+@import "molecules/galleries/single-column-gallery";
+@import "molecules/galleries/double-column-gallery";
+@import "molecules/galleries/triple-column-gallery";
+@import "molecules/galleries/image-per-row-images";
+@import "molecules/galleries/three-image-gallery-images";
 
 
 // Organisms
@@ -95,7 +104,7 @@
 @import "organisms/text/related-table";
 @import "organisms/text/small-copy";
 @import "organisms/text/selector-tabs";
-@import "organisms/text/table";
+@import "organisms/text/table-section";
 @import "organisms/text/faqs";
 @import "organisms/text/downloadable-content";
 @import "organisms/article-cards/featured-stories";

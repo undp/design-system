@@ -44,7 +44,7 @@ use helpers\Svg;
                             <li><a class="footer-menu-item light" href="#">Transparency and accountability</a></li>
                         </ul>
                     </div>
-                    <div class="column who-we-do">
+                    <div class="column what-we-do">
                         <h4 class="footer-subtitle light uppercase">
                             Who we do
                             <span class="footer-subtitle-arrow">

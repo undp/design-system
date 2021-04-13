@@ -1,31 +1,42 @@
 <?php
 use helpers\Svg;
+use helpers\View;
 ?>
+
+
 <div class="menu-mobile-main-options">
     <ul class="menu-items">
         <li>
-            <a class="text-link arrow-1" href="#" data-item-details data-submenu="who-we-are">
-                Who we are
-                <?php Svg::render('btn-arrow-red', true, 'Back', 'assets/images/arrows/')?>
-            </a>
+            <?php
+                View::render('molecules/text-links/cta-text-link', [
+                    'text' => 'Who we are',
+                    'attrs' => 'data-item-details data-submenu="who-we-are"'
+                ]);
+            ?>
         </li>
         <li>
-            <a class="text-link arrow-1" href="#" data-item-details data-submenu="who-we-do">
-                What we do
-                <?php Svg::render('btn-arrow-red', true, 'Back', 'assets/images/arrows/')?>
-            </a>
+            <?php
+                View::render('molecules/text-links/cta-text-link', [
+                    'text' => 'What we do',
+                    'attrs' => 'data-item-details data-submenu="what-we-do"'
+                ]);
+            ?>
         </li>
         <li>
-            <a class="text-link arrow-1" href="#" data-item-details data-submenu="our-impact">
-                Our impact
-                <?php Svg::render('btn-arrow-red', true, 'Back', 'assets/images/arrows/')?>
-            </a>
+            <?php
+                View::render('molecules/text-links/cta-text-link', [
+                    'text' => 'Our Impact',
+                    'attrs' => 'data-item-details data-submenu="our-impact"'
+                ]);
+            ?>
         </li>
         <li>
-            <a class="text-link arrow-1" data-item-details data-submenu="get-involved" href="#">
-                Get involved
-                <?php Svg::render('btn-arrow-red', true, 'Back', 'assets/images/arrows/')?>
-            </a>
+            <?php
+                View::render('molecules/text-links/cta-text-link', [
+                    'text' => 'Get Involved',
+                    'attrs' => 'data-item-details data-submenu="get-involved"'
+                ]);
+            ?>
         </li>
     </ul>
     <ul class="menu-items-languages uppercase">

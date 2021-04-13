@@ -1,12 +1,17 @@
-<?php use helpers\Svg; ?>
+<?php
+use helpers\View;
+?>
 
 
 <div id="<?= $modalId ?>" class="modal leader-modal" data-modal>
     <div class="modal-content">
         <div class="modal-heading" data-ie-sticky>
-            <button class="btn-close" data-modal-close>
-                <?php Svg::render('icon-close') ?>
-            </button>
+            <?php
+                View::render('molecules/buttons/close-out', [
+                    'classes' => 'btn-close',
+                    'attrs' => 'data-modal-close'
+                ]);
+            ?>
         </div>
         <div class="content-wrapper flex-container flex-dir-column medium-flex-dir-row">
             <div class="leader-photo">

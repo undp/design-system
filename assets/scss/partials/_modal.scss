@@ -52,26 +52,7 @@
         .btn-close {
             top: 17px;
             right: 19px;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            cursor: pointer;
             position: absolute;
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            background-color: $dark-blue-7;
-
-            &:hover {
-                svg path {
-                    stroke: $dark-blue-17
-                }
-            }
-
-            svg {
-                width: 19px;
-                height: 19px;
-            }
         }
     }
 }

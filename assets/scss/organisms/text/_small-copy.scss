@@ -5,6 +5,14 @@
         padding-top: 115px;
     }
 
+    &.no-headings {
+        padding-top: 0;
+
+        @include breakpoint(medium down) {
+            padding-top: 0;
+        }
+    }
+
     .component-subheading {
         margin-top: 90px;
 

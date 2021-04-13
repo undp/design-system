@@ -1,4 +1,6 @@
 <?php
+use helpers\View;
+
 $sliderOptions = [
     'type' => 'slider',
     'bound' => true,
@@ -47,10 +49,13 @@ $sliderOptions = [
                             for the same work
                         </div>
                         <div class="cta">
-                            <div class="text-link arrow-2">
-                                <span>Explore</span>
-                                <?= file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg"); ?>
-                            </div>
+                            <?php
+                                View::render('molecules/text-links/cta-text-link', [
+                                    'tagName' => 'div',
+                                    'text' => 'Explore',
+                                    'arrowClass' => 'arrow-2'
+                                ]);
+                            ?>
                         </div>
                     </div>
                 </a>
@@ -64,10 +69,13 @@ $sliderOptions = [
                             the same work
                         </div>
                         <div class="cta">
-                            <div class="text-link arrow-2">
-                                <span>Explore</span>
-                                <?= file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg"); ?>
-                            </div>
+                            <?php
+                                View::render('molecules/text-links/cta-text-link', [
+                                    'tagName' => 'div',
+                                    'text' => 'Explore',
+                                    'arrowClass' => 'arrow-2'
+                                ]);
+                            ?>
                         </div>
                     </div>
                 </a>
@@ -81,10 +89,13 @@ $sliderOptions = [
                             the same work
                         </div>
                         <div class="cta">
-                            <div class="text-link arrow-2">
-                                <span>Explore</span>
-                                <?= file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg"); ?>
-                            </div>
+                            <?php
+                                View::render('molecules/text-links/cta-text-link', [
+                                    'tagName' => 'div',
+                                    'text' => 'Explore',
+                                    'arrowClass' => 'arrow-2'
+                                ]);
+                            ?>
                         </div>
                     </div>
                 </a>
@@ -98,10 +109,13 @@ $sliderOptions = [
                             the same work
                         </div>
                         <div class="cta">
-                            <div class="text-link arrow-2">
-                                <span>Explore</span>
-                                <?= file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg"); ?>
-                            </div>
+                            <?php
+                                View::render('molecules/text-links/cta-text-link', [
+                                    'tagName' => 'div',
+                                    'text' => 'Explore',
+                                    'arrowClass' => 'arrow-2'
+                                ]);
+                            ?>
                         </div>
                     </div>
                 </a>
@@ -115,10 +129,13 @@ $sliderOptions = [
                             the same work
                         </div>
                         <div class="cta">
-                            <div class="text-link arrow-2">
-                                <span>Explore</span>
-                                <?= file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg"); ?>
-                            </div>
+                            <?php
+                                View::render('molecules/text-links/cta-text-link', [
+                                    'tagName' => 'div',
+                                    'text' => 'Explore',
+                                    'arrowClass' => 'arrow-2'
+                                ]);
+                            ?>
                         </div>
                     </div>
                 </a>
@@ -145,10 +162,13 @@ $sliderOptions = [
                                             for the same work
                                         </div>
                                         <div class="cta">
-                                            <div class="text-link arrow-2">
-                                                <span>Explore</span>
-                                                <?= file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg"); ?>
-                                            </div>
+                                            <?php
+                                                View::render('molecules/text-links/cta-text-link', [
+                                                    'tagName' => 'div',
+                                                    'text' => 'Explore',
+                                                    'arrowClass' => 'arrow-2'
+                                                ]);
+                                            ?>
                                         </div>
                                     </div>
                                 </a>
@@ -163,10 +183,13 @@ $sliderOptions = [
                                             for the same work
                                         </div>
                                         <div class="cta">
-                                            <div class="text-link arrow-2">
-                                                <span>Explore</span>
-                                                <?= file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg"); ?>
-                                            </div>
+                                            <?php
+                                                View::render('molecules/text-links/cta-text-link', [
+                                                    'tagName' => 'div',
+                                                    'text' => 'Explore',
+                                                    'arrowClass' => 'arrow-2'
+                                                ]);
+                                            ?>
                                         </div>
                                     </div>
                                 </a>
@@ -181,10 +204,13 @@ $sliderOptions = [
                                             for the same work
                                         </div>
                                         <div class="cta">
-                                            <div class="text-link arrow-2">
-                                                <span>Explore</span>
-                                                <?= file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg"); ?>
-                                            </div>
+                                            <?php
+                                                View::render('molecules/text-links/cta-text-link', [
+                                                    'tagName' => 'div',
+                                                    'text' => 'Explore',
+                                                    'arrowClass' => 'arrow-2'
+                                                ]);
+                                            ?>
                                         </div>
                                     </div>
                                 </a>
@@ -199,10 +225,13 @@ $sliderOptions = [
                                             for the same work
                                         </div>
                                         <div class="cta">
-                                            <div class="text-link arrow-2">
-                                                <span>Explore</span>
-                                                <?= file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg"); ?>
-                                            </div>
+                                            <?php
+                                                View::render('molecules/text-links/cta-text-link', [
+                                                    'tagName' => 'div',
+                                                    'text' => 'Explore',
+                                                    'arrowClass' => 'arrow-2'
+                                                ]);
+                                            ?>
                                         </div>
                                     </div>
                                 </a>
@@ -217,10 +246,13 @@ $sliderOptions = [
                                             for the same work
                                         </div>
                                         <div class="cta">
-                                            <div class="text-link arrow-2">
-                                                <span>Explore</span>
-                                                <?= file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg"); ?>
-                                            </div>
+                                            <?php
+                                                View::render('molecules/text-links/cta-text-link', [
+                                                    'tagName' => 'div',
+                                                    'text' => 'Explore',
+                                                    'arrowClass' => 'arrow-2'
+                                                ]);
+                                            ?>
                                         </div>
                                     </div>
                                 </a>

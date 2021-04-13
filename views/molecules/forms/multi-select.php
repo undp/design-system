@@ -1,4 +1,5 @@
 <?php
+use helpers\View;
 $options = $options ?? [];
 ?>
 
@@ -20,21 +21,25 @@ $options = $options ?? [];
                 <button class="caret" aria-expanded="false">Open submenu for <?= $option['name'] ?></button>
             <?php endif; ?>
 
-            <label class="checkbox-item">
-                <input type="checkbox" value="<?= $option['value'] ?>">
-                <span class="checkmark"></span>
-                <span class="name"><?= $option['name'] ?></span>
-            </label>
+            <?php
+                View::render('molecules/buttons/radio-button', [
+                    'value' => $option['value'],
+                    'name' => $option['value'],
+                    'label' => $option['name'],
+                ]);
+            ?>
 
             <?php if($hasSubtree): ?>
                 <ul id="<?= $optionId ?>-subtree" class="sub-menu" role="group" aria-labelledby="<?= $optionId ?>-option">
                     <?php foreach($option['sub'] as $subOption): ?>
                     <li role="option">
-                        <label class="checkbox-item">
-                            <input type="checkbox" value="<?= $subOption['value'] ?>">
-                            <span class="checkmark"></span>
-                            <span class="name"><?= $subOption['name'] ?></span>
-                        </label>
+                        <?php
+                            View::render('molecules/buttons/radio-button', [
+                                'value' => $subOption['value'],
+                                'name' => $subOption['value'],
+                                'label' => $subOption['name'],
+                            ]);
+                        ?>
                     </li>
                     <?php endforeach; ?>
                 </ul>
