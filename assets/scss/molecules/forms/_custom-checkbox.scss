@@ -1,15 +1,18 @@
 .checkbox-item {
-    display: block;
     cursor: pointer;
     font-size: 1.6rem;
     user-select: none;
     position: relative;
-    padding-right: 30px;
+    padding-right: 16px;
     font-weight: $regular;
 
     @include breakpoint(large down) {
         padding: 15px 20px 15px 0;
-        border-bottom: 1px solid rgba($black, 0.10);
+    }
+
+    &:not(.displays-inline) {
+        display: block;
+        padding-right: 30px;
     }
 
     input {

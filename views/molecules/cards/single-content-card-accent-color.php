@@ -1,3 +1,6 @@
+<?php use helpers\View; ?>
+
+
 <a href="<?= $link ?? '#' ?>">
     <div class="single-content-card-accent-color <?= $color ?? '' ?>">
         <div class="card-content">
@@ -10,10 +13,22 @@
                 </h4>
             </div>
             <div class="cta">
-                <div class="text-link arrow-2">
-                    <span><?= $cta ?></span>
-                    <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
-                </div>
+                <?php if (isset($isExternalLink) && $isExternalLink) : ?>
+                    <?php
+                        View::render('molecules/text-links/external-link', [
+                            'text' => $cta,
+                            'tagName' => 'div'
+                        ]);
+                    ?>
+                <?php else : ?>
+                    <?php
+                        View::render('molecules/text-links/cta-text-link', [
+                            'text' => $cta,
+                            'tagName' => 'div',
+                            'arrowClass' => 'arrow-2'
+                        ]);
+                    ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>

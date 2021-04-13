@@ -24,18 +24,21 @@ use helpers\View;
                 <div class="hero-link scroll-track left-right delay-1">
                     <div class="link-title heading h3">Media Enquiries</div>
 
-                    <a class="text-link arrow-1" href="#">
-                        <span class="text">helen.mayelle@undp.org</span>
-                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
-                    </a>
-                    <a class="text-link arrow-1" href="#">
-                        <span class="text">jane.peterson@undp.org</span>
-                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
-                    </a>
-                    <a class="text-link arrow-1" href="#">
-                        <span class="text">allen.Fitzgerald@undp.org</span>
-                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
-                    </a>
+                    <?php
+                        View::render('molecules/text-links/cta-text-link', [
+                            'text' => 'helen.mayelle@undp.org'
+                        ]);
+                    ?>
+                    <?php
+                        View::render('molecules/text-links/cta-text-link', [
+                            'text' => 'jane.peterson@undp.org'
+                        ]);
+                    ?>
+                    <?php
+                        View::render('molecules/text-links/cta-text-link', [
+                            'text' => 'allen.Fitzgerald@undp.org'
+                        ]);
+                    ?>
                 </div>
             </div>
 
@@ -47,18 +50,21 @@ use helpers\View;
                 <div class="hero-link mobile scroll-track left-right delay-1">
                     <div class="link-title heading h3">Media Enquiries</div>
 
-                    <a class="text-link arrow-1" href="#">
-                        <span class="text">helen.mayelle@undp.org</span>
-                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
-                    </a>
-                    <a class="text-link arrow-1" href="#">
-                        <span class="text">jane.peterson@undp.org</span>
-                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
-                    </a>
-                    <a class="text-link arrow-1" href="#">
-                        <span class="text">allen.Fitzgerald@undp.org</span>
-                        <?php Svg::render('btn-arrow-red', true, 'Explore', 'assets/images/arrows/')?>
-                    </a>
+                    <?php
+                        View::render('molecules/text-links/cta-text-link', [
+                            'text' => 'helen.mayelle@undp.org'
+                        ]);
+                    ?>
+                    <?php
+                        View::render('molecules/text-links/cta-text-link', [
+                            'text' => 'jane.peterson@undp.org'
+                        ]);
+                    ?>
+                    <?php
+                        View::render('molecules/text-links/cta-text-link', [
+                            'text' => 'allen.Fitzgerald@undp.org'
+                        ]);
+                    ?>
                 </div>
             </div>
         </div>

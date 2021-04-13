@@ -25,10 +25,13 @@ $modalId = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name ?? '')));
             </div>
 
             <div class="cta-container">
-                <div class="text-link arrow-2">
-                    <span>Read more</span>
-                    <?php Svg::render('arrows/btn-arrow-red-secondary')?>
-                </div>
+                <?php
+                    View::render('molecules/text-links/cta-text-link', [
+                        'text' => 'Read More',
+                        'tagName' => 'div',
+                        'arrowClass' => 'arrow-2'
+                    ]);
+                ?>
             </div>
         </div>
     </div>

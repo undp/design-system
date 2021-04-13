@@ -1,10 +1,11 @@
 <?php
-
 use helpers\Svg;
-
+use helpers\View;
 ?>
+
+
 <section class="tweet">
-    <header href="#" class="flex-container align-top">
+    <header class="flex-container align-top">
         <a href="#" class="flex-container align-top" target="_blank">
             <img class="avatar lazy" data-src="<?= $urlImage ?? '../../assets/images/undp-twitter.jpg' ?>"
                  alt="<?= $alt ?? 'undp logo twitter' ?>">
@@ -25,10 +26,14 @@ use helpers\Svg;
             <?= $description ?? '' ?>
         </p>
         <div class="cta">
-            <a class="text-link arrow-1 light-red" href="#" target="_blank">
-                <span>Read More</span>
-                <?php Svg::render('btn-arrow-red', true, 'Read More', 'assets/images/arrows/')?>
-            </a>
+            <?php
+                View::render('molecules/text-links/cta-text-link', [
+                    'textClass' => '',
+                    'target' => '_blank',
+                    'text' => 'Read More',
+                    'classes' => 'light-red'
+                ]);
+            ?>
         </div>
     </article>
 </section>

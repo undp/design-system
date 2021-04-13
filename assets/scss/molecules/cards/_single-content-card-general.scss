@@ -10,6 +10,18 @@
         margin: 25px auto 0;
         max-width: 545px;
     }
+
+    @media (hover: hover) and (pointer: fine), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:hover .arrow-3 {
+            svg {
+                color: $red-2;
+
+                .transition-arrow{
+                    transform: translate(3px, -3px);
+                }
+            }
+        }
+    }
 }
 
 .single-content-card-body,

@@ -1,6 +1,10 @@
 .selector-tabs {
     padding-top: 130px;
 
+    &.no-headings {
+        padding-top: 0;
+    }
+
     .selector-tabs-container {
         display: flex;
         margin-top: 80px;

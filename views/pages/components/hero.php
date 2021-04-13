@@ -147,6 +147,39 @@
         ]);
     ?>
 
+
+
+    <div class="grid-container">
+        <div class="heading h2 component-title">About Us Hero</div>
+    </div>
+    <?php
+        View::render('organisms/hero/about-us-hero', [
+            'desktopImage' => '/assets/images/placeholder/hero/about-image.jpg',
+            'mobileImage' => '/assets/images/placeholder/hero/hero-about-small.jpg'
+        ])
+    ?>
+
+    <div class="grid-container">
+        <div class="heading h2 component-title">About Us Hero - No Image</div>
+    </div>
+    <?php View::render('organisms/hero/about-us-hero') ?>
+
+
+    <div class="grid-container">
+        <div class="heading h2 component-title">Homepage Hero</div>
+    </div>
+    <?php View::render('organisms/hero/homepage-hero') ?>
+
+
+    <div class="grid-container">
+        <div class="heading h2 component-title">News Centre Hero</div>
+    </div>
+    <?php View::render('organisms/hero/news-centre-hero', [
+        'subtitle' => 'Sierra Leone',
+        'title' => 'News Centre',
+        'breadcrumbLinks' => [['name' => 'Press Centre', 'link' => '#']],
+        'imageUrl' => '../../../assets/images/placeholder/hero/hero-news-image.jpg'
+    ]) ?>
 </main>
 
 <!-- Footer -->

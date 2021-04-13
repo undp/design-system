@@ -23,25 +23,21 @@ use helpers\View;
         <div class="publication-links">
             <div class="grid-x links-container">
                 <div class="cell small-6">
-                    <a href="#" class="text-link arrow-3 download-btn flex-container" data-publication-download data-modal-trigger="modal-publication-download">
-                        Download
-                        <span class="icon-wrapper">
-                            <span class="icon">
-                                <?php Svg::render('icon-download') ?>
-                            </span>
-                        </span>
-                    </a>
+                    <?php
+                        View::render('molecules/buttons/download-btn', [
+                            'btnText' => 'Download',
+                            'classes' => 'flex-container',
+                            'attributes' => 'data-publication-download data-modal-trigger="modal-publication-download"'
+                        ]);
+                    ?>
                 </div>
 
                 <div class="cell small-6 text-right">
-                    <a href="#" target="_blank" class="text-link arrow-3 flex-container">
-                        Read More
-                        <span class="icon-wrapper">
-                           <span class="icon">
-                                <?php Svg::render('arrows/btn-arrow-external') ?>
-                            </span>
-                        </span>
-                    </a>
+                    <?php
+                        View::render('molecules/text-links/external-link', [
+                            'text' => 'Read More'
+                        ]);
+                    ?>
                 </div>
             </div>
         </div>

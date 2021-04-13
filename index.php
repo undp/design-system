@@ -94,6 +94,33 @@ switch ($subpath) {
     case '/components/hero':
         View::render('pages/components/hero');
         break;
+    case '/showcase/buttons':
+        View::render('pages/showcase/buttons');
+        break;
+    case '/showcase/text-links':
+        View::render('pages/showcase/text-links');
+        break;
+    case '/showcase/galleries':
+        View::render('pages/showcase/galleries');
+        break;
+    case '/showcase/modals':
+        View::render('pages/showcase/modals');
+        break;
+    case '/showcase/tables-and-accordions':
+        View::render('pages/showcase/tables-and-accordions');
+        break;
+    case '/showcase/cards':
+        View::render('pages/showcase/cards');
+        break;
+    case '/showcase/stats':
+        View::render('pages/showcase/stats');
+        break;
+    case '/showcase/sliders':
+        View::render('pages/showcase/sliders');
+        break;
+    case '/showcase/lookups':
+        View::render('pages/showcase/lookup');
+        break;
     default:
         View::render('pages/home');
 }

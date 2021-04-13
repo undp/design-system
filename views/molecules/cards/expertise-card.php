@@ -1,6 +1,6 @@
 <?php
 
-use helpers\Svg;
+use helpers\View;
 
 ?>
 <article class="expertise-card">
@@ -14,10 +14,13 @@ use helpers\Svg;
             </p>
         </div>
         <div class="cta-container">
-            <span class="text-link arrow-1">
-                <span><?= $cta ?? 'Read more' ?></span>
-                <?php Svg::render('btn-arrow-red', true, $cta ?? 'Read more', 'assets/images/arrows/')?>
-            </span>
+            <?php
+                View::render('molecules/text-links/cta-text-link', [
+                    'textClass' => '',
+                    'tagName' => 'span',
+                    'text' => $cta ?? 'Read More'
+                ]);
+            ?>
         </div>
     </a>
 </article>

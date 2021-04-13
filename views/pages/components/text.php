@@ -9,16 +9,21 @@
 
 <main class="components-index">
     <?php
-    View::render('organisms/text/small-copy');
-    View::render('organisms/text/selector-tabs');
-    View::render('organisms/text/table', [
+    View::render('organisms/text/small-copy', [
+        'showHeadings' => true
+    ]);
+
+    View::render('organisms/text/selector-tabs', [
+        'showHeadings' => true
+    ]);
+    View::render('organisms/text/table-section', [
         'heading' => 'Table - Default'
     ]);
-    View::render('organisms/text/table', [
+    View::render('organisms/text/table-section', [
         'tableStyle' => 'striped',
         'heading' => 'Table - Striped'
     ]);
-    View::render('organisms/text/table', [
+    View::render('organisms/text/table-section', [
         'tableStyle' => 'bordered',
         'heading' => 'Table - Bordered'
     ]);

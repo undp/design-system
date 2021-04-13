@@ -1,4 +1,6 @@
 <?php
+use helpers\View;
+
 $imgPath = '/assets/images/placeholder';
 $imageOnly = isset($imageOnly) ? $imageOnly : false;
 ?>
@@ -19,10 +21,13 @@ $imageOnly = isset($imageOnly) ? $imageOnly : false;
                 </p>
 
                 <div class="cta">
-                    <div class="text-link arrow-2">
-                        <span>Read More</span>
-                        <?=  file_get_contents("assets/images/arrows/btn-arrow-red-secondary.svg");  ?>
-                    </div>
+                    <?php
+                        View::render('molecules/text-links/cta-text-link', [
+                            'tagName' => 'div',
+                            'text' => 'Read More',
+                            'arrowClass' => 'arrow-2'
+                        ]);
+                    ?>
                 </div>
             </a>
         </div>

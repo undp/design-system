@@ -168,7 +168,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
 
 
     View::render('molecules/callouts/callout', [
-        'background' => 'green',
+        'background' => 'accent-green',
         'quoteText' => 'It’s almost one year now, we have not witnessed road blockades or any act of violence in the Pujehun District
             emanating from land related disputes or dissatisfied youth groups or a community member. We are grateful to
             UNDP and WFP and the Government of Sierra Leone.',
@@ -268,7 +268,7 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
         ],
     ]);
 
-    View::render('molecules/photo/gallery', [
+    View::render('molecules/photo/article-gallery', [
         'images' => [
             "$imgPath/gallery_image01.jpg",
             "$imgPath/gallery_image02.jpg",
@@ -293,8 +293,9 @@ $imgPath = '../../../assets/images/placeholder/article-deepdive'
 
     View::render('molecules/callouts/callout', [
         'background' => 'transparent',
-        'quoteText' => 'Our recent field engagements with chiefdom stakeholders and grassroot members have showed that whatever
-        tool our implementing partner-Fambul Tok International is using to engage the MSP districts of Pujehun and Moyamba
+        'classes' => 'smaller-heading',
+        'quoteText' => 'Our recent field engagements with chiefdom stakeholders and grassroot members have showed that whatever 
+        tool our implementing partner-Fambul Tok International is using to engage the MSP districts of Pujehun and Moyamba 
         seems to be working. We implore our donors and we hope they (donor) can also come to these communities and boost what
          has already been started.',
     ]);

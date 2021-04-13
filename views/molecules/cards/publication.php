@@ -1,5 +1,6 @@
 <?php
 use helpers\Svg;
+use helpers\View;
 ?>
 
 <section class="publication">
@@ -22,14 +23,19 @@ use helpers\Svg;
                 </p>
                 <div class="controls">
                     <div class="cta">
-                        <a href="" class="btn hide-for-small-only">
-                           <span><?= $cta ?? 'Read More' ?></span>
-                           <?php Svg::render('btn-arrow-blue', true, $cta ?? 'Read More', 'assets/images/arrows/')?>
-                        </a>
-                        <a href="" class="text-link arrow-1 show-for-small-only">
-                            <span>Read More</span>
-                            <?php Svg::render('btn-arrow-red', true, 'Read More', 'assets/images/arrows/')?>
-                        </a>
+                        <?php
+                            View::render('molecules/buttons/cta', [
+                                'text' => $cta ?? 'Read More',
+                                'classes' => 'hide-for-small-only'
+                            ])
+                        ?>
+
+                        <?php
+                            View::render('molecules/text-links/cta-text-link', [
+                                'text' => $cta ?? 'Read More',
+                                'classes' => 'show-for-small-only'
+                            ])
+                        ?>
                     </div>
                 </div>
             </article>

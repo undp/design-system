@@ -1,0 +1,18 @@
+
+.three-image-gallery-images {
+    @extend .image-per-row-images;
+
+    .gallery-images > .small-6 {
+        @include breakpoint(small only) {
+            &:nth-child(odd) {
+                margin-right: 5px;
+                width: calc(50% - 20px);
+            }
+
+            &:nth-child(even) {
+                margin-left: 5px;
+                width: calc(50% - 20px);
+            }
+        }
+    }
+}

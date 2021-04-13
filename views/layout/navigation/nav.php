@@ -20,24 +20,20 @@ use helpers\View;
     <div class="grid-container height-full">
         <nav class="grid-x height-full">
             <div class="cell nav-wrapper">
-                <div class="menu-mobile hide-for-xlarge">
-                    <a class="menu-hamburger" data-hamburger>
-                        <span class="hamburger-line line-top"></span>
-                        <span class="hamburger-line line-middle"></span>
-                        <span class="hamburger-line line-bottom"></span>
-                    </a>
-                </div>
-                <div class="dropdown show-for-xlarge" data-dropdown-languages>
-                    <button class="flex-container align-middle nav-item dark dropdown-btn" aria-label="Languages" data-opening-action>
-                        <?php Svg::render('icon-languages') ?>
-                        English
-                        <?php Svg::render('icon-arrow-down') ?>
-                    </button>
-                    <ul class="dropdown-content hide" data-options>
-                        <li><a class="nav-item dark" href="#">Français</a></li>
-                        <li><a class="nav-item dark" href="#">Español</a></li>
-                    </ul>
-                </div>
+
+                <?php
+                    // Mobile Hamburger
+                    View::render('molecules/buttons/hamburger-menu', [
+                        'classes' => 'hide-for-xlarge'
+                    ]);
+                ?>
+
+                <?php
+                    View::render('molecules/buttons/language-dropdown', [
+                        'classes' => 'show-for-xlarge'
+                    ]);
+                ?>
+
                 <div class="menu-desktop height-full" data-menu-desktop>
                     <ul class="flex-container align-middle middle-menu height-full">
                         <li class="show-for-xlarge"><button class="nav-item dark" data-modal-nav="modal-nav-who-we-are" aria-expanded="false" aria-haspopup="true">Who we are</button></li>
@@ -52,24 +48,18 @@ use helpers\View;
                     </ul>
                 </div>
                 <div class="flex-container align-middle logo right-menu">
-                    <a class="nav-item dark show-for-xlarge" href="#" data-modal-open data-modal="modal-search-offices">
-                        <span data-icon>
-                            <?php Svg::render('icon-www')?>
-                        </span>
-                        <span class="hide icon-close" data-icon-close>
-                            <?php Svg::render('icon-close') ?>
-                        </span>
-                        <span class="show-for-sr">Open/close Locations</span>
-                    </a>
-                    <a class="nav-item dark icon-search" href="#" data-modal-open data-modal="modal-popular-search">
-                        <span data-icon>
-                            <?php Svg::render('icon-search')?>
-                        </span>
-                        <span class="hide icon-close" data-icon-close>
-                            <?php Svg::render('icon-close') ?>
-                        </span>
-                        <span class="show-for-sr">Open/close Search</span>
-                    </a>
+                    <?php
+                        View::render('molecules/buttons/global-icon', [
+                            'classes' => 'show-for-xlarge',
+                            'attrs' => 'data-modal-open data-modal="modal-search-offices"'
+                        ]);
+                    ?>
+
+                    <?php
+                        View::render('molecules/buttons/search-icon', [
+                            'attrs' => 'data-modal-open data-modal="modal-popular-search"'
+                        ]);
+                    ?>
                 </div>
             </div>
         </nav>
