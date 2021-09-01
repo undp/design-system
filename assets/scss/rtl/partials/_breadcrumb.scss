@@ -1,8 +1,0 @@
-.breadcrumb {
-
-    .breadcrumb-item:not(:last-of-type) {
-        &:after {
-            content: '\\';
-        }
-    }
-}

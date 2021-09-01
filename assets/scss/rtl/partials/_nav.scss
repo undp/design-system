@@ -1,9 +1,0 @@
-.header {
-    .dir-ltr {
-        direction: ltr !important;
-    }
-
-    > *:not(.dir-ltr) {
-        @include rtl-navigation();
-    }
-}

@@ -1,7 +1,0 @@
-.project-hero {
-    @extend .about-hero;
-
-    @include breakpoint(medium down) {
-        margin-top: 0;
-    }
-}
