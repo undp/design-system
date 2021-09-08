@@ -1,0 +1,14 @@
+@import "../../../assets/css/breakpoints";
+@import "../../../assets/css/reset";
+@import "../../../assets/css/variables";
+@import "../../../assets/css/typography";
+@import "../../../assets/css/variables";
+
+.post-wrapper {
+  h2 {
+    margin-bottom: 20px;
+  }
+  h5 {
+    color: $p-gray-600;
+  }
+}

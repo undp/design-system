@@ -1,0 +1,114 @@
+@import "../../../assets/css/breakpoints";
+@import "../../../assets/css/reset";
+@import "../../../assets/css/variables";
+@import "../../../assets/css/typography";
+// @import "../../../assets/css/font-family";
+
+
+/* progress */
+progress {
+  border-radius: 7px;
+  width: 50%;
+  height: 14px;
+  border: 2px solid $black;
+}
+progress::-webkit-progress-bar {
+  background-color: $white;
+  border-radius: 7px;
+}
+progress::-webkit-progress-value {
+  background-color: $black;
+}
+progress::-moz-progress-bar {
+  background-color: $white;
+}
+
+/* details */
+details > summary {
+  list-style-type: none;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: $ProximaSemiBold;
+   @include devicebreak(large) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+details p {
+  font-size: 14px;
+  line-height: 19px;
+  @include devicebreak(large) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background: url(../../../assets/images/icon/Chevron-small-right.svg) no-repeat left
+    center;
+}
+
+details[open] > summary::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background: url(../../../assets/images/icon/Chevron-small-down.svg) no-repeat left
+    center;
+}
+
+details[open] > summary {
+  margin-bottom: 0.5rem;
+}
+
+/* figure */
+figure {
+  margin: 0;
+  img {
+    padding-bottom: 14px;
+  }
+}
+
+// table
+table {
+    border-spacing: 0px;
+  tr {
+    th {
+      vertical-align: top;
+      font-family: $ProximaRegular;
+      font-size: 16px;
+      padding: 12px;
+      line-height: 22px;
+      color: $black;
+      background-color: #edeff0;
+      text-align: left;
+      font-weight: 700;
+      @include devicebreak(large) {
+        font-size: 20px;
+        padding: 16px;
+        line-height: 26px;
+      }
+    }
+    td {
+      vertical-align: top;
+      font-size: 16px;
+      padding: 12px;
+      line-height: 22px;
+      border-bottom: 1px solid $p-gray-400;
+      font-weight: 300;
+       @include devicebreak(large) {
+        font-size: 20px;
+        padding: 16px;
+        line-height: 26px;
+      }
+    }
+  }
+}

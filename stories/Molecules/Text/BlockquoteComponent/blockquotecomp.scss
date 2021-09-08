@@ -1,0 +1,25 @@
+@import "../../../assets/css/breakpoints";
+@import "../../../assets/css/reset";
+@import "../../../assets/css/variables";
+@import "../../../assets/css/typography";
+@import "../../../assets/css/variables";
+
+.blockquote-wrapper {
+  padding: 30px;
+  font-family: $ProximaRegular;
+  @include devicebreak(large) {
+      padding: 85px;
+  }
+
+  &--Gray {
+    background-color: $p-gray-200;
+  }
+  &--Yellow {
+    background-color: $yellow;
+  }
+  &--Transparent {
+    background-color: none;
+    padding: 0;
+  }
+}
+  

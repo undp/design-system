@@ -1,0 +1,51 @@
+@import "../../../assets/css/breakpoints";
+@import "../../../assets/css/reset";
+@import "../../../assets/css/variables";
+@import "../../../assets/css/typography";
+@import "../../../assets/css/variables";
+
+/*Accordian*/
+ .accordion {
+    width: 100%;
+    background-color: #EDEDED;
+}
+.accordion .accordion-head {
+    color: #fff;
+    background-color: #3A84DE;
+    border-bottom: 1px solid #fff;
+    position: relative;
+    padding: 13px;
+    font-size: 0.87em;
+    cursor: pointer;
+    overflow: hidden;
+}
+.accordion .accordion-head * {
+    cursor: pointer;
+}
+.accordion .accordion-head h4 {
+    float: left;
+}
+.accordion .accordion-head:hover {
+    filter: alpha(opacity=80);
+    opacity: 0.80;
+}
+.accordion .accordion-body {
+    border-bottom: 1px solid #fff;
+    padding: 20px;
+    height: auto;
+    display: none;
+}
+.arrow {
+    float: right;
+    width: 0px;
+    height: 0px;
+    margin-top: 23px;
+    border: 10px solid transparent;
+    margin-top: 21px;
+    border-top-color: #F3F3F3;
+}
+.accordion-head.open .arrow {
+    margin-top: 11px;
+    border-bottom-color: #F3F3F3;
+    border-top-color: transparent;
+}

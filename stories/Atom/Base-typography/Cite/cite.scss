@@ -1,0 +1,17 @@
+@import "../../../assets/css/breakpoints";
+@import "../../../assets/css/reset";
+@import "../../../assets/css/variables";
+@import "../../../assets/css/typography";
+@import "../../../assets/css/variables";
+
+
+cite {
+  font-family: $ProximaRegular;
+  font-size: 20px;
+  line-height: 22px;
+  color: $black;
+  @include devicebreak(large) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}

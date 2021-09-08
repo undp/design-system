@@ -1,0 +1,85 @@
+@import "../variable.css";
+
+// icon
+.icon--bar {
+    cursor: pointer;
+}
+
+// arrow expand
+.arrow-expand {
+    height: 16px;
+    stroke: #d12800;
+    margin-top: -1px;
+    margin-left: 4px;
+    overflow: hidden;
+    fill: transparent;
+    vertical-align: middle;
+    cursor: pointer;
+    .arrow-expand-group {
+        transform: translateX(-31px);
+        transition: transform .2s cubic-bezier(.4, .22, .28, 1);
+        .arrow-line {
+            display: none;
+        }
+    }
+    &:hover {
+    .arrow-expand-group {
+       transform: translateX(0);
+          .arrow-line {
+                display: unset;
+            }
+       }
+    .arrow-point {
+            transform: translateX(31px);
+        }
+     }
+}
+
+// external link
+.external-link {
+    svg {
+        color: #d12800;
+        cursor: pointer;
+        .transition-arrow {
+            transition: transform .4s ease;
+        }
+    }
+    &:hover {
+        svg {
+            color: #EE402D;
+            .transition-arrow {
+                transition: transform .4s ease;
+                transform: translate(3px, -3px);
+            }
+        }
+    }
+}
+
+// download
+.download-icon {
+    svg {
+      color: #d12800;
+      cursor: pointer;
+    }
+    .path2, .path4 {
+      transform: translate(0);
+      transition: all .2s cubic-bezier(.4, .22, .28, 1);
+  }
+  &:hover {
+    svg {
+      color: #EE402D;
+    }
+    .path1 {
+      stroke: #EE402D;
+    }
+    .path2 {
+      stroke: #EE402D;
+      transform: translateY(-3px);
+    }
+    .path4 {
+      stroke: #EE402D;
+      transition: all .2s cubic-bezier(.4, .22, .28, 1);
+      transform: translateY(-2px);
+    }
+  }
+}
