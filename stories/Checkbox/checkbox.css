@@ -1,0 +1,26 @@
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkbox-custom {
+    top: 17px;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    border: 2px solid #eb3828;
+    transform: unset;
+}
+.checkbox-custom::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: none;
+    position: absolute;
+    background: url('https://www.undp.org/themes/custom/undpglobal/assets/images/icon-check.svg');
+    background-repeat: no-repeat;
+}
+.checkbox-label input:checked ~ .checkbox-custom::after {
+    display: block;
+}
