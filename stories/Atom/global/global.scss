@@ -1,0 +1,257 @@
+@import "../../assets/css/breakpoints";
+@import "../../assets/css/reset";
+@import "../../assets/css/variables";
+@import "../../assets/css/typography";
+//@import "../../assets/css/font-family";
+
+/* logo */
+.logo {
+  width: 60px;
+}
+.logo-white,
+.pnud-logo-white {
+  width: 60px;
+  background: #a9b1b7;
+}
+/* logo end */
+
+/* color  */
+.color-wrapper {
+  display: block;
+  @include devicebreak(large) {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .color__row {
+    width: calc(100%);
+    @include devicebreak(x-large) {
+      width: calc(100% / 2 - 10px);
+    }
+    &.full {
+      width: calc(100%);
+    }
+    .color__title {
+      font-family: $ProximaRegular;
+      font-weight: normal;
+      font-size: 13px;
+      color: #000000;
+      @include devicebreak(large) {
+        font-size: 16px;
+      }
+    }
+    .color__define_wrapper {
+      display: block;
+    }
+    .color__define {
+      display: flex;
+      margin-bottom: 20px;
+      place-items: flex-end;
+      .color__name {
+        margin: 8px 0;
+        text-align: center;
+        flex-grow: 1;
+        flex-basis: 0;
+
+        @include devicebreak(large) {
+          flex-grow: 1;
+          flex-basis: 0;
+        }
+        .Primary-text {
+          text-align: center;
+          margin-top: -22px;
+          font-family: $ProximaRegular;
+          font-weight: normal;
+          font-size: 12px;
+          color: #000000;
+          .polygon {
+            img {
+              margin: 0 auto;
+              width: 10px;
+              display: block;
+            }
+          }
+        }
+
+        .color__box {
+          width: 100%;
+          height: 48px;
+          margin-bottom: 10px;
+
+          @include devicebreak(medium) {
+            height: 70px;
+          }
+          @include devicebreak(large) {
+            width: 100%;
+            height: 85px;
+          }
+
+          &.p-blue-100 {
+            background-color: $p-blue-100;
+          }
+          &.p-blue-200 {
+            background-color: $p-blue-200;
+          }
+          &.p-blue-300 {
+            background-color: $p-blue-300;
+          }
+          &.p-blue-400 {
+            background-color: $p-blue-400;
+          }
+          &.p-blue-500 {
+            background-color: $p-blue-500;
+          }
+          &.p-blue-600 {
+            background-color: $p-blue-600;
+          }
+          &.p-blue-700 {
+            background-color: $p-blue-700;
+          }
+
+          &.p-gray-100 {
+            background-color: $p-gray-100;
+          }
+          &.p-gray-200 {
+            background-color: $p-gray-200;
+          }
+          &.p-gray-300 {
+            background-color: $p-gray-300;
+          }
+          &.p-gray-400 {
+            background-color: $p-gray-400;
+          }
+          &.p-gray-500 {
+            background-color: $p-gray-500;
+          }
+          &.p-gray-600 {
+            background-color: $p-gray-600;
+          }
+          &.p-gray-700 {
+            background-color: $p-gray-700;
+          }
+
+          &.light-yellow {
+            background-color: $light-yellow;
+          }
+          &.yellow {
+            background-color: $yellow;
+          }
+          &.dark-yellow {
+            background-color: $dark-yellow;
+          }
+
+          &.light-red {
+            background-color: $light-red;
+          }
+          &.red {
+            background-color: $red;
+          }
+          &.dark-red {
+            background-color: $dark-red;
+          }
+
+          &.light-green {
+            background-color: $light-green;
+          }
+          &.green {
+            background-color: $green;
+          }
+          &.dark-green {
+            background-color: $dark-green;
+          }
+
+          &.light-azure {
+            background-color: $light-azure;
+          }
+          &.azure {
+            background-color: $azure;
+          }
+          &.dark-azure {
+            background-color: $dark-azure;
+          }
+        }
+        .color__code {
+          font-family: $ProximaRegular;
+          font-weight: normal;
+          font-size: 9px;
+          line-height: normal;
+          @include devicebreak(large) {
+            display: flex;
+            line-height: 22px;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+    .color__define_balance {
+      width: 100%;
+      display: flex;
+      .color__name {
+        margin: 8px 0;
+        text-align: center;
+        .color__box {
+          height: 100%;
+          height: 48px;
+          margin-bottom: 10px;
+
+          @include devicebreak(medium) {
+            height: 70px;
+          }
+          @include devicebreak(large) {
+            width: 100%;
+            height: 85px;
+          }
+          &.p-gray-100 {
+            background-color: $p-gray-100;
+          }
+          &.p-gray-200 {
+            background-color: $p-gray-200;
+          }
+          &.p-gray-400 {
+            background-color: $p-gray-400;
+          }
+          &.p-gray-700 {
+            background-color: $p-gray-700;
+          }
+          &.p-blue-600 {
+            background-color: $p-blue-600;
+          }
+          &.dark-red {
+            background-color: $dark-red;
+          }
+        }
+        .color__code {
+          font-family: $ProximaRegular;
+          font-weight: normal;
+          font-size: 10px;
+          line-height: 22px;
+        }
+
+        &.bl-1 {
+          width: 45%;
+          height: 75px;
+        }
+        &.bl-2 {
+          width: 12%;
+          height: 75px;
+        }
+        &.bl-3 {
+          width: 15%;
+          height: 75px;
+        }
+        &.bl-4 {
+          width: 18%;
+          height: 75px;
+        }
+        &.bl-5 {
+          width: 8%;
+          height: 75px;
+        }
+        &.bl-6 {
+          width: 5%;
+          height: 75px;
+        }
+      }
+    }
+  }
+}

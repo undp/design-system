@@ -1,0 +1,16 @@
+@import "../../../assets/css/breakpoints";
+@import "../../../assets/css/reset";
+@import "../../../assets/css/variables";
+@import "../../../assets/css/typography";
+@import "../../../assets/css/variables";
+
+.Page-title {
+  h2 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: $SohneBold;
+  }
+  h4 {
+    font-family: $ProximaLight;
+  }
+}
