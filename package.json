@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "scss": "sass --watch ./stories/assets/scss/style.scss ./stories/assets/css/style.css"
   },
   "keywords": [],
   "author": "",
@@ -16,19 +17,17 @@
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
-    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.3.7",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
     "sass": "^1.39.0",
     "sass-loader": "^10.1.1",
-    "storybook-addon-locale": "^0.3.6",
     "storybook-addon-rtl": "^0.3.0",
-    "storybook-rtl-addon": "^0.3.3",
     "style-loader": "^2.0.0"
   },
   "dependencies": {
+    "path": "^0.12.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

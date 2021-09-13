@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Blockquote } from '../../Base-typography/Blockquote/Blockquote';
 import { Cite } from '../../Base-typography/Cite/Cite';
 import './blockquotecomp.scss';
@@ -6,11 +7,20 @@ import './blockquotecomp.scss';
 /**
  * Primary UI component for user interaction
  */
-export const BlockquoteComponent = () => {
+export const BlockquoteComponent = ({blockquoteText, citeText}) => {
   return (
-    <div className="bbb">
-        <Blockquote text='UNDP works in about 170 countries and territories, helping to achieve the eradication of poverty, and the reduction of inequalities and exclusion.' />
-        <Cite text='—Firstname Lastname' />
+    <div className="blockquote--component">
+        <Blockquote text={blockquoteText} />
+        <Cite text={citeText} />
     </div>
   );
 };
+
+BlockquoteComponent.propTypes = {
+  /**
+   * BlockquoteComponent contents
+   */
+   blockquoteText: PropTypes.string.isRequired,
+   citeText: PropTypes.string.isRequired,
+};
+

@@ -1,5 +1,5 @@
-@import './variables';
-@import './mixins';
+@import './assets/scss/variables';
+@import './assets/scss/mixins';
 
 .storybook-button {
   @include body-copy;
