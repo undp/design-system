@@ -19,6 +19,7 @@
     "@storybook/addon-links": "^6.3.7",
     "@storybook/react": "^6.3.7",
     "@whitespace/storybook-addon-html": "^5.0.0",
+    "@storybook/addon-a11y": "^6.3.8",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
     "sass": "^1.39.0",
