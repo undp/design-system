@@ -1,5 +1,10 @@
-@import '../../variables';
+@import '../../assets/scss/variables';
 
-.bbb {
-    background-color: $test;
+/** blockquote component **/
+.blockquote--component {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 45px;
+    background: #F7F7F7;
 }

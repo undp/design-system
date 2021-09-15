@@ -14,3 +14,8 @@ npm install
 npm run storybook
 ```
 
+## Compile SCSS to CSS
+
+```
+npm run scss
+```

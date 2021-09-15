@@ -1,5 +1,5 @@
-@import './variables';
-@import './mixins';
+@import './assets/scss/variables';
+@import './assets/scss/mixins';
 
 .storybook-button {
   @include body-copy;
@@ -11,12 +11,19 @@
   line-height: 1;
   &--primary {
     color: white;
-    background-color: #1ea7fd;
+    background-color: #5db7f0;
+    &:hover{
+      background-color: #009dff;
+    }
   }
   &--secondary {
     color: $test;
     background-color: transparent;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+    &:hover {
+      background-color: $test;
+      color: white;
+    }
   }
 }
 .storybook-button--small {
