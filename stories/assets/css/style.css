@@ -341,21 +341,13 @@ blockquote {
   margin: 0;
 }
 
-.test {
-  color: black;
+/* logo */
+.logo,
+.logo-white,
+.pnud-logo-white {
+  width: 60px;
 }
 
-.test {
-  color: black;
-}
-
-/** blockquote component **/
-.blockquote--component {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 50px 45px;
-  background: #F7F7F7;
-}
+/* logo end */
 
 /*# sourceMappingURL=style.css.map */
