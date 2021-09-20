@@ -1,0 +1,78 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Logo } from './logo';
+import { Logowhite } from './logo-white';
+import { PnudLogo } from './pnud-logo';
+import { PnudLogowhite } from './pnud-logo-white';
+
+<Meta title="Atoms/Logos"  parameters={{
+    backgrounds: {
+      default: 'white',
+      values: [
+        { name: 'white', value: '#fff' },
+        { name: 'gray', value: '#CCC' },
+      ],
+    },
+  }}/>
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  div[id^="story--atoms-logos"] {
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 10px;
+    align-items: center;
+    margin: 25px 25px;
+  }
+  .css-zgt7u1 {
+    background: #d8d8d8;
+  }
+`}</style>  
+
+# UNDP Logos
+UNDP logo is available in two versions: blue, and white. Each has its own purpose and should be used appropriately, as per official branding guidelines, depending on available screen space and target audience.
+
+<ul>
+<li>logos are used in Header and footer section component.</li>
+<li>For large devices dimensions <code>(width:60px, Height:122px)</code> and for small devices dimensions will be convert into <code>(width:60px, Height:70px)</code> </li>
+</ul>
+
+<Story name="UNDP Logo" parameters={{ backgrounds: { default: 'white'}}}>
+  return <Logo></Logo> ;
+</Story>
+
+<Story name="UNDP Logo white" parameters={{ backgrounds: { default: 'gray'}}}>
+  return <Logowhite></Logowhite> ;
+</Story>
+
+# UNDP Inverted Logos
+PNUD logo is available in two versions: blue, and white. Each has its own purpose and should be used appropriately, as per official branding guidelines, depending on available screen space and target audience.
+
+<ul>
+<li>These logos are only used for specific countries where these languages (French, Spanish, and Portuguese) are spoken.</li>
+<li>logos are used in Header and footer section component.</li>
+<li>For large devices dimensions <code>(width:60px, Height:122px)</code> and for small devices dimensions will be convert into <code>(width:60px, Height:70px)</code> </li>
+</ul>
+
+
+<Story name="UNDP Inverted Logo" parameters={{ backgrounds: { default: 'white'}}}>
+  return <PnudLogo></PnudLogo> ;
+</Story>
+
+<Story name="UNDP Inverted Logo white" parameters={{ backgrounds: { default: 'gray'}}}>
+  return <PnudLogowhite></PnudLogowhite>;  
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>We can take HTML from the HTML tab in the canvas tab</li>
+<li>Component wise SCSS file residing in each component <code>logo.scss</code></li>
+<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+</ul>
