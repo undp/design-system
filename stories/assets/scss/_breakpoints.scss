@@ -1,0 +1,20 @@
+@mixin devicebreak($point) {
+    @if $point==small {
+        /* small design */
+        @media (min-width: 48em) {
+            @content;
+        }
+    }
+    @else if $point==medium {
+        /* medium design */
+        @media (min-width: 64em) {
+            @content;
+        }
+    }
+    @else if $point==large {
+        /* large design */
+        @media (min-width: 90em) {
+            @content;
+        }
+    }
+}

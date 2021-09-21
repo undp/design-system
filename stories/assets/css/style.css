@@ -1,3 +1,21 @@
+/* variables start */
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+/* variables end */
+/* mixing  start */
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -349,6 +367,8 @@ blockquote {
 }
 
 /* logo end */
+/* variables start */
+/* variables end */
 /* icon start */
 .icon--bar {
   cursor: pointer;
@@ -390,5 +410,287 @@ blockquote {
 }
 
 /* icon end */
+/* mixing  start */
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* variables start */
+/* variables end */
+/* details tag start */
+details summary {
+  list-style-type: none;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+}
+@media (min-width: 47.9375em) {
+  details summary {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details summary::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background: url(../../../assets/images/Icon//Chevron-small-right.svg) no-repeat left center;
+}
+details p {
+  font-size: 14px;
+  line-height: 19px;
+  /* small design */
+}
+@media (min-width: 47.9375em) {
+  details p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+details[open] summary {
+  margin-bottom: 0.5rem;
+}
+details[open] summary::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background: url(../../../assets/images/Icon//Chevron-small-down.svg) no-repeat left center;
+}
+
+/* details tag end */
+/* figure tag start */
+figure {
+  margin: 0;
+}
+figure img {
+  padding-bottom: 14px;
+  max-width: 100%;
+}
+
+/* figure tag end */
+/* typograpgy start */
+/* variables start */
+/* variables end */
+body {
+  color: #000;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 12px;
+  font-family: "Nunito Sans", sans-serif;
+  /* large design */
+}
+@media (min-width: 90em) {
+  h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption {
+    margin-bottom: 16px;
+  }
+}
+
+h1 {
+  font-size: 47px;
+  line-height: 50px;
+  font-family: "Nunito Sans", sans-serif;
+  /* large design */
+}
+@media (min-width: 90em) {
+  h1 {
+    font-size: 82px;
+    line-height: 88px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 44px;
+  font-family: "Nunito Sans", sans-serif;
+  /* large design */
+}
+@media (min-width: 90em) {
+  h2 {
+    font-size: 45px;
+    line-height: 50px;
+  }
+}
+
+h3 {
+  font-size: 35px;
+}
+
+h4 {
+  font-size: 25px;
+  line-height: 28px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 22px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Nunito Sans", sans-serif;
+  /* large design */
+}
+@media (min-width: 90em) {
+  p {
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
+
+ul,
+ol {
+  margin: 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+}
+@media (min-width: 47.9375em) {
+  ul,
+ol {
+    font-size: 20px;
+    line-height: 27.5px;
+  }
+}
+
+dl {
+  margin: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.25px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+}
+@media (min-width: 47.9375em) {
+  dl {
+    font-size: 20px;
+    line-height: 27.5px;
+  }
+}
+
+/* typograpgy end */
+/* variables start */
+/* variables end */
+/* progress start */
+progress {
+  border-radius: 7px;
+  width: 50%;
+  height: 14px;
+  border: 2px solid #000;
+}
+progress::-webkit-progress-bar {
+  background-color: #fff;
+  border-radius: 7px;
+}
+progress::-webkit-progress-value {
+  background-color: #000;
+}
+progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+/* progress end */
+/* mixing  start */
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* variables start */
+/* variables end */
+/* table tag start */
+table {
+  border-spacing: 0px;
+}
+table tr th {
+  vertical-align: top;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  padding: 12px;
+  line-height: 22px;
+  color: #000;
+  background-color: #edeff0;
+  text-align: left;
+  font-weight: 700;
+  /* small design */
+}
+@media (min-width: 47.9375em) {
+  table tr th {
+    font-size: 20px;
+    padding: 16px;
+    line-height: 26px;
+  }
+}
+table tr td {
+  vertical-align: top;
+  font-size: 16px;
+  padding: 12px;
+  line-height: 22px;
+  border-bottom: 1px solid #D4D6D8;
+  font-weight: 300;
+  /* small design */
+}
+@media (min-width: 47.9375em) {
+  table tr td {
+    font-size: 20px;
+    padding: 16px;
+    line-height: 26px;
+  }
+}
+
+/* table tag end */
 
 /*# sourceMappingURL=style.css.map */

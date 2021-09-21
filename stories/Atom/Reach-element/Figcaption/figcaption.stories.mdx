@@ -1,0 +1,48 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Figcaption } from './figcaption'
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {details: 'Dummy text refers to the bits of content that are used to fill a website mock-up. This text helps web designers better envision how the website will look as a finished product. '}; return engText;
+    case 'arabic': const arabicText = {details: 'يشير النص الوهمي إلى أجزاء المحتوى المستخدمة لملء نموذج موقع الويب. يساعد هذا النص مصممي الويب على تصور أفضل لكيفية ظهور موقع الويب كمنتج نهائي.'}; return arabicText;
+    case 'burmese': const burmeseText = {details: 'Dummy စာသားသည် ၀ က်ဘ်ဆိုက်၏လှောင်ပြောင်မှုကိုဖြည့်ရန်အသုံးပြုသောအကြောင်းအရာအနည်းငယ်ကိုရည်ညွှန်းသည်။ ဤစာသားသည် ၀ က်ဘ်ဒီဇိုင်နာများအနေဖြင့် ၀ က်ဘ်ဆိုက်သည်အချောထည်ထုတ်ကုန်တစ်ခုအဖြစ်မည်သို့ပုံဖော်ရန်စိတ်ကူးကောင်းမြင်နိုင်စေသည်။'}; return burmeseText;
+    case 'japanese': const japaneseText = {details: 'ダミーテキストとは、Webサイトのモックアップを埋めるために使用されるコンテンツの一部を指します。このテキストは、WebデザイナーがWebサイトが完成品としてどのように見えるかをよりよく想像するのに役立ちます。'}; return japaneseText;
+    default:
+      return {details: 'Dummy text refers to the bits of content that are used to fill a website mock-up. This text helps web designers better envision how the website will look as a finished product. '};
+  }
+};
+
+<Meta title="Atoms/Reach Elements/Figcaption" component={Figcaption} />
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }  
+`}</style>
+
+# Figcaption Tag Component
+Figcaption Use a figure element to mark up a photo in a document, and a figcaption element to define a caption for the photo
+
+<Story name="Figcaption">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Figcaption details={caption.details}></Figcaption>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+
+<ul>
+<li>We can take HTML from the HTML tab in the canvas tab</li>
+<li>Include the common SCSS file like normalize, variables, mixins, breakpoints from the folder <code>assets/scss</code></li>
+<li>Component wise SCSS file residing in each component <code>figcaption.scss</code></li>
+<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+</ul>
+
+

@@ -1,2 +1,50 @@
+// image variables
 $img-path: '../../../assets/images/';
-$img-path-Icon: '../../../assets/images/Icon/'
+$img-path-Icon: '../../../assets/images/Icon/';
+
+/* variables start */
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap');
+
+// COLORS
+$color-black: #000;
+$color-white: #fff;
+$color-blue-100 : #B5D5F5;
+$color-blue-200 : #94C4F5;
+$color-blue-300 : #6BABEB;
+$color-blue-400 : #4F95DD;
+$color-blue-500 : #3288CE;
+$color-blue-600 : #006EB5;
+$color-blue-700 : #1F5A95;
+$color-gray-100 : #FAFAFA;
+$color-gray-200 : #F7F7F7;
+$color-gray-300 : #EDEFF0;
+$color-gray-400 : #D4D6D8;
+$color-gray-500 : #A9B1B7;
+$color-gray-600 : #55606E;
+$color-gray-700 : #232E3D;
+$color-light-yellow: #FFE17E;
+$color-yellow : #FFEB00;
+$color-dark-yellow : #FBC412;
+$color-light-red: #FFBCB7;
+$color-red : #EE402D;
+$color-dark-red : #D12800;
+$color-light-green: #B8ECB6;
+$color-green : #6DE354;
+$color-dark-green : #59BA47;
+$color-light-azure: #A2DAF3;
+$color-azure : #60D4F2;
+$color-dark-azure : #00C1FF;
+
+
+// FONT SIZE
+$font-size-20: 16px;
+$font-size-14: 14px;
+
+// FONTS FAMLIY
+$Font-Family-ProximaLight:  'Nunito Sans', sans-serif;
+$Font-Family-ProximaRegular: 'Nunito Sans', sans-serif;
+$Font-Family-ProximaSemiBold:  'Nunito Sans', sans-serif;
+$Font-Family-ProximaBold:   'Nunito Sans', sans-serif;
+$Font-Family-SohneBold: 'Nunito Sans', sans-serif;
+$Font-Family-SohneExBold: 'Nunito Sans', sans-serif;
+/* variables end */
