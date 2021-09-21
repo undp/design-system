@@ -1,0 +1,6 @@
+<svg class="link-arrow" viewBox="0 0 80 16" xmlns="http://www.w3.org/2000/svg">
+    <g class="link-arrow-group" stroke-width="2">
+        <line class="arrow-line" x1="0" y1="8" x2="80" y2="8"></line>
+        <polyline class="arrow-point" points="39.5 0.5, 48 8, 39.5 16"></polyline>
+    </g>
+</svg>

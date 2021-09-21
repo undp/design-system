@@ -1,0 +1,23 @@
+@import "../../../assets/css/breakpoints";
+@import "../../../assets/css/reset";
+@import "../../../assets/css/variables";
+@import "../../../assets/css/typography";
+@import "../../../assets/css/variables";
+
+
+.block-cta-wrapper{
+  h4 {
+    margin-bottom: 24px;
+    font-family: $ProximaSemiBold;
+    @include devicebreak(large) {
+       margin-bottom: 48px;
+    }
+  }
+  h5 {
+    margin-bottom: 12px;
+    @include devicebreak(large) {
+       margin-bottom: 24px;
+    }
+  }
+}
+  

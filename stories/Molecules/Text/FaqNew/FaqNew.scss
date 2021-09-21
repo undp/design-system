@@ -1,0 +1,54 @@
+@import "../../../assets/css/breakpoints";
+@import "../../../assets/css/reset";
+@import "../../../assets/css/variables";
+@import "../../../assets/css/typography";
+@import "../../../assets/css/variables";
+
+/*Accordian*/
+ .accordion {
+    width: 100%;
+    .accordion-head {
+        border-bottom: 1px solid $p-gray-500 ;
+        position: relative;
+        padding: 24px 0;
+        font-size: 0.87em;
+        cursor: pointer;
+        overflow: hidden;  
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        h5{
+            float: left;
+            margin-bottom: 0;
+        }
+        &:hover {
+            filter: alpha(opacity=80);
+            opacity: 0.80;
+        }
+        &.open {
+            .arrow {
+                transform: rotateZ(180deg);
+                transition: all 0.1s ease;
+            }
+        }
+    }
+    .accordion-body {
+        border-bottom: 1px solid $p-gray-500 ;
+        padding: 32px;
+        height: auto;
+        display: none;
+        @include devicebreak(large) {
+         padding: 40px;
+        }
+    }
+    .arrow {
+        background: url(../../../assets/images/icon/Chevron-down.svg) no-repeat center center  ;
+        float: right;
+        width: 20px;
+        height: 20px;
+        border-top-color: #F3F3F3;
+        transition: all 0.1s ease;
+				margin-left: 24px;
+    }
+}
