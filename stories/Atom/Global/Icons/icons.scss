@@ -1,0 +1,41 @@
+@import "../../../assets/scss/variables";
+
+/* icon start */ 
+.icon--bar {
+  cursor: pointer;
+}
+.arrow-expand {
+  height: 16px;
+  cursor: pointer;
+  background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat center center  ;
+  transform: translateX(0);
+  width: 20px;
+  &:hover {
+    background: url(#{$img-path-Icon}/arrow-left-expand-hover.svg) no-repeat center center;
+    transform: translateX(10px);
+    transition: transform 0.4s cubic-bezier(0.4, 0.22, 0.28, 1); 
+    width: 100px;
+  } 
+}
+
+.external-link{
+  height: 20px;
+  width: 21px;
+  cursor: pointer;
+  background: url(#{$img-path-Icon}/external-default.svg) no-repeat 0 bottom ;
+  &:hover {
+    background: url(#{$img-path-Icon}/external-hover.svg) no-repeat 0 bottom;
+  } 
+}
+
+.download-icon{
+  height: 24px;
+  width: 19px;
+  cursor: pointer;
+  background: url(#{$img-path-Icon}/download-default.svg) no-repeat 0 bottom ;
+  &:hover {
+    height: 24px;
+    background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
+  } 
+}
+/* icon end */ 
