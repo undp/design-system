@@ -1,0 +1,21 @@
+@import "../../../assets/scss/typography";
+@import "../../../assets/scss/variables";
+
+/* progress start */
+progress {
+  border-radius: 7px;
+  width: 50%;
+  height: 14px;
+  border: 2px solid $color-black;
+  &::-webkit-progress-bar {
+    background-color: $color-white;
+    border-radius: 7px;
+  }
+  &::-webkit-progress-value {
+    background-color: $color-black;
+  }
+  &::-moz-progress-bar {
+    background-color: $color-white;
+  }
+}
+/* progress end */
