@@ -1,6 +1,8 @@
+@import './normalize';
 @import './_variables';
 @import './_mixins';
-@import './normalize';
+@import './_fonts';
+@import './_grid';
 
 // Atoms
 @import '../../Atom/Global/Logo/logo.scss';
