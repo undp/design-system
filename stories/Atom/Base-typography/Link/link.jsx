@@ -3,7 +3,7 @@ import './link.scss';
 
 export const Link = ({ label }) => {
   return (
-    <a href="">
+    <a href="#">
       { label }
     </a>
   );
