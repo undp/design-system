@@ -1,5 +1,54 @@
+@import "./variables";
+@import "./breakpoints";
+
 @mixin body-copy {
     font-family: 'Arial';
     font-size: 1rem;
     line-height: 1.6;
   }
+
+// basic font 
+%paragragh-font-16 {
+  font-family: $Font-Family-ProximaRegular;
+  font-size: 14px;
+  line-height: 20px;
+    @include devicebreak(small) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+%paragragh-font-20 {
+  font-size: 16px;
+  line-height: 22px;
+  @include devicebreak(small) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+%paragragh-font-14 {
+  font-family: $Font-Family-ProximaRegular;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+%border-bottom{
+  border-bottom: 1px solid $color-gray-400;
+}
+
+//loader animation
+@mixin loader {
+  animation: loader-animation 2s linear infinite;
+  -webkit-animation: loader-animation 2s linear infinite;
+  -moz-animation: loader-animation 2s linear infinite;
+  -ms-animation: loader-animation 2s linear infinite;
+  -o-animation: loader-animation 2s linear infinite;
+}
+
+@keyframes loader-animation {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+//loader animation end
+/* mixing  end */

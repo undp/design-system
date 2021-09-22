@@ -1,0 +1,53 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { TableTag } from './table'
+
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {headertext: 'Table header', tdtext: 'Content Goes Here', details: 'This is longer content Donec id elit non mi porta gravida at eget metus.'}; return engText;
+    case 'arabic': const arabicText = {headertext: 'رأس الجدول', tdtext: 'المحتوى يذهب هنا', details: 'هذا هو المحتوى الأطول Donec id elit non mi porta gravida في eget metus.'}; return arabicText;
+    case 'burmese': const burmeseText = {headertext: 'ဇယားခေါင်းစီး', tdtext: 'အကြောင်းအရာကဒီမှာ', details: 'ဒါကပိုရှည်တဲ့အကြောင်းအရာ Donec id elit non mi porta gravida at eget metus ။'}; return burmeseText;
+    case 'japanese': const japaneseText = {headertext: 'テーブルヘッダー', tdtext: 'コンテンツはここにあります', details: 'これはより長い内容ですDonecid elit non mi porta gravida at egetmetus。'}; return japaneseText;
+    default:
+      return {headertext: 'Table header', tdtext: 'Content Goes Here', details: 'This is longer content Donec id elit non mi porta gravida at eget metus.' };
+  }
+};
+
+
+<Meta title="Atoms/Reach Elements/Table" component={TableTag} />
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }  
+`}</style>
+
+# Table Tag component
+
+The <code>table</code> HTML element represents tabular data — that is, the information presented in a two-dimensional table comprised of rows and columns of cells containing data. it's used to make large volumes of data easy to understand and access.
+
+<ul>
+<li>Table component created by <code>table</code> <code>tr</code> <code>th</code> and <code>td</code> tag.</li>
+</ul>
+
+<Story name="Table">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <TableTag text={caption.headertext} tdtext={caption.tdtext} details={caption.details}></TableTag>;
+  }}
+</Story>
+
+
+<div className="subheading">Usage</div>
+<ul>
+<li>We can take HTML from the HTML tab in the canvas tab</li>
+<li>Include the common SCSS file like normalize, variables, mixins, breakpoints from the folder <code>assets/scss</code></li>
+<li>Component wise SCSS file residing in each component <code>table.scss</code></li>
+<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+</ul>

@@ -4,6 +4,10 @@ import { Spacing } from './spacing';
 <Meta title="Atoms/Spacing" component={Spacing} />
 
 <style>{`
+  div#story--atoms-spacing--spacing {
+    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
+    box-sizing: inherit;
+  }
   .subheading {
     font-weight: 700;
     font-size: 18px;
@@ -16,16 +20,19 @@ import { Spacing } from './spacing';
 `}</style>
 
 # Spacing Component
-Padding is a css property for spacing inside of a component.
+Space units create visual rhythm and balance.
+
+<ul>
+  <li>Margin is a css property for spacing outside of a component.</li>
+  <li>Padding is a css property for spacing inside of a component.</li>
+  <li>We can use <code>spacing</code> in any component to sets the margin and padding area on all four sides of an element at once.</li>
+</ul>
+
+The following units can be applied to margin or padding properties, vertically or horizontally.
 
 <Story name="Spacing">
   return <Spacing></Spacing>;
 </Story>
-
-<div className="subheading">How to Use</div>
-<ul>
-    <li>We can use <code>spacing</code> in any component to sets the padding area on all four sides of an element at once.</li>
-</ul>
 
 <div className="subheading">Usage</div>
 <ul>
