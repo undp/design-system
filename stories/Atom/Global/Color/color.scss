@@ -1,0 +1,243 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+
+/* color  */
+.color-wrapper {
+  display: block;
+  @include devicebreak(small) {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .color__row {
+    width: calc(100%);
+    @include devicebreak(small) {
+      width: calc(100% / 2 - 10px);
+    }
+    &.full {
+      width: calc(100%);
+    }
+    .color__title {
+      font-family: $Font-Family-ProximaRegular;
+      font-weight: normal;
+      font-size: 13px;
+      color: $color-black;
+      min-height: 28px;
+      @include devicebreak(small) {
+        font-size: 16px;
+      }
+    }
+    .color__define_wrapper {
+      display: block;
+    }
+    .color__define {
+      display: flex;
+      margin-bottom: 20px;
+      .color__name {
+        margin: 8px 0;
+        text-align: center;
+        flex-grow: 1;
+        flex-basis: 0;
+
+        @include devicebreak(small) {
+          flex-grow: 1;
+          flex-basis: 0;
+        }
+        .Primary-text {
+          text-align: center;
+          margin-top: -31px;
+          font-family: $Font-Family-ProximaRegular;
+          font-weight: normal;
+          font-size: 12px;
+          color: $color-black;
+          .polygon {
+            img {
+              margin: 0 auto;
+              width: 10px;
+              display: block;
+            }
+          }
+        }
+        .color__box {
+          width: 100%;
+          height: 48px;
+          margin-bottom: 10px;
+
+          @include devicebreak(medium) {
+            height: 70px;
+          }
+          @include devicebreak(small) {
+            width: 100%;
+            height: 85px;
+          }
+
+          &.p-blue-100 {
+            background-color: $color-blue-100;
+          }
+          &.p-blue-200 {
+            background-color: $color-blue-200;
+          }
+          &.p-blue-300 {
+            background-color: $color-blue-300;
+          }
+          &.p-blue-400 {
+            background-color: $color-blue-400;
+          }
+          &.p-blue-500 {
+            background-color: $color-blue-500;
+          }
+          &.p-blue-600 {
+            background-color: $color-blue-600;
+          }
+          &.p-blue-700 {
+            background-color: $color-blue-700;
+          }
+
+          &.p-gray-100 {
+            background-color: $color-gray-100;
+          }
+          &.p-gray-200 {
+            background-color: $color-gray-200;
+          }
+          &.p-gray-300 {
+            background-color: $color-gray-300;
+          }
+          &.p-gray-400 {
+            background-color: $color-gray-400;
+          }
+          &.p-gray-500 {
+            background-color: $color-gray-500;
+          }
+          &.p-gray-600 {
+            background-color: $color-gray-600;
+          }
+          &.p-gray-700 {
+            background-color: $color-gray-700;
+          }
+
+          &.light-yellow {
+            background-color: $color-light-yellow;
+          }
+          &.yellow {
+            background-color: $color-yellow;
+          }
+          &.dark-yellow {
+            background-color: $color-dark-yellow;
+          }
+
+          &.light-red {
+            background-color: $color-light-red;
+          }
+          &.red {
+            background-color: $color-red;
+          }
+          &.dark-red {
+            background-color: $color-dark-red;
+          }
+
+          &.light-green {
+            background-color: $color-light-green;
+          }
+          &.green {
+            background-color: $color-green;
+          }
+          &.dark-green {
+            background-color: $color-dark-green;
+          }
+
+          &.light-azure {
+            background-color: $color-light-azure;
+          }
+          &.azure {
+            background-color: $color-azure;
+          }
+          &.dark-azure {
+            background-color: $color-dark-azure;
+          }
+        }
+        .color__code {
+          font-family: $Font-Family-ProximaRegular;
+          font-weight: normal;
+          font-size: 9px;
+          line-height: normal;
+          @include devicebreak(small) {
+            display: flex;
+            line-height: 22px;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+    .color__define_balance {
+      width: 100%;
+      display: flex;
+      .color__name {
+        margin: 8px 0;
+        text-align: center;
+        .color__box {
+          height: 100%;
+          height: 48px;
+          margin-bottom: 10px;
+
+          @include devicebreak(medium) {
+            height: 70px;
+          }
+          @include devicebreak(small) {
+            width: 100%;
+            height: 85px;
+          }
+          &.p-gray-100 {
+            background-color: $color-gray-100;
+          }
+          &.p-gray-200 {
+            background-color: $color-gray-200;
+          }
+          &.p-gray-400 {
+            background-color: $color-gray-400;
+          }
+          &.p-gray-700 {
+            background-color: $color-gray-700;
+          }
+          &.p-blue-600 {
+            background-color: $color-blue-600;
+          }
+          &.dark-red {
+            background-color: $color-dark-red;
+          }
+        }
+        .color__code {
+          font-family: $Font-Family-ProximaRegular;
+          font-weight: normal;
+          font-size: 10px;
+          line-height: 22px;
+        }
+
+        &.bl-1 {
+          width: 45%;
+          height: 75px;
+        }
+        &.bl-2 {
+          width: 12%;
+          height: 75px;
+        }
+        &.bl-3 {
+          width: 15%;
+          height: 75px;
+        }
+        &.bl-4 {
+          width: 18%;
+          height: 75px;
+        }
+        &.bl-5 {
+          width: 8%;
+          height: 75px;
+        }
+        &.bl-6 {
+          width: 5%;
+          height: 75px;
+        }
+      }
+    }
+  }
+}
