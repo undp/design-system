@@ -1,0 +1,33 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/breakpoints";
+
+.radio-wrapper {
+    position: relative;
+    padding-left: 20px;
+    display: inline-block;
+    input[type=radio] {
+        top: 2px;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        & + label {
+            cursor: pointer;
+            &:hover::before {
+                border-color: $color-light-pink;
+            }
+            &::before {
+                @extend %checbox-radio-before;
+                border-radius: 50%;
+            }
+        }
+        &:checked + label::after {
+            top: -3px;
+            left: 3px;
+            content: "•";
+            color: $color-dark-red;
+            font-size: 19px;
+            position: absolute;
+        }
+    }
+}

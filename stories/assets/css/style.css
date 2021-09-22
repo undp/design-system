@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -5,6 +6,10 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
@@ -383,6 +388,16 @@ table tr td, table tr th, details summary {
 
 table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.radio-wrapper input[type=radio] + label::before, .checkbox-wrapper input[type=checkbox] + label::before {
+  left: 0;
+  top: 2px;
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border: 2px solid #D12800;
 }
 
 @keyframes loader-animation {
@@ -3127,6 +3142,16 @@ table tr td {
   border-bottom: 1px solid #D4D6D8;
 }
 
+.radio-wrapper input[type=radio] + label::before, .checkbox-wrapper input[type=checkbox] + label::before {
+  left: 0;
+  top: 2px;
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border: 2px solid #D12800;
+}
+
 @keyframes loader-animation {
   0% {
     -webkit-transform: rotate(0deg);
@@ -3166,7 +3191,7 @@ table tr td {
   font-family: "Nunito Sans", sans-serif;
   font-weight: normal;
   font-size: 13px;
-  color: #000000;
+  color: #000;
   min-height: 28px;
   /* small design */
 }
@@ -3201,7 +3226,7 @@ table tr td {
   font-family: "Nunito Sans", sans-serif;
   font-weight: normal;
   font-size: 12px;
-  color: #000000;
+  color: #000;
 }
 .color-wrapper .color__row .color__define .color__name .Primary-text .polygon img {
   margin: 0 auto;
@@ -3422,6 +3447,178 @@ table tr td, table tr th, details summary {
 
 table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.radio-wrapper input[type=radio] + label::before, .checkbox-wrapper input[type=checkbox] + label::before {
+  left: 0;
+  top: 2px;
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border: 2px solid #D12800;
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* variables start */
+/* variables end */
+/* checkbox */
+.checkbox-wrapper {
+  position: relative;
+  padding-left: 20px;
+  display: inline-block;
+}
+.checkbox-wrapper input[type=checkbox] {
+  top: 2px;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  position: absolute;
+}
+.checkbox-wrapper input[type=checkbox]:hover + label::before {
+  border-color: #FFB4AE;
+}
+.checkbox-wrapper input[type=checkbox] + label {
+  cursor: pointer;
+}
+.checkbox-wrapper input[type=checkbox] + label:hover::before {
+  border-color: #FFB4AE;
+}
+.checkbox-wrapper input[type=checkbox]:checked + label::before {
+  background: url(../../../assets/images/Icon//icon-check.svg) no-repeat;
+}
+
+/* variables start */
+/* variables end */
+details p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  details p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+table tr td, table tr th, details summary {
+  font-size: 16px;
+  line-height: 22px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  table tr td, table tr th, details summary {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+table tr td {
+  border-bottom: 1px solid #D4D6D8;
+}
+
+.radio-wrapper input[type=radio] + label::before, .checkbox-wrapper input[type=checkbox] + label::before {
+  left: 0;
+  top: 2px;
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border: 2px solid #D12800;
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* variables start */
+/* variables end */
+.radio-wrapper {
+  position: relative;
+  padding-left: 20px;
+  display: inline-block;
+}
+.radio-wrapper input[type=radio] {
+  top: 2px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+}
+.radio-wrapper input[type=radio] + label {
+  cursor: pointer;
+}
+.radio-wrapper input[type=radio] + label:hover::before {
+  border-color: #FFB4AE;
+}
+.radio-wrapper input[type=radio] + label::before {
+  border-radius: 50%;
+}
+.radio-wrapper input[type=radio]:checked + label::after {
+  top: -3px;
+  left: 3px;
+  content: "•";
+  color: #D12800;
+  font-size: 19px;
+  position: absolute;
+}
+
+/* variables start */
+/* variables end */
+details p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  details p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+table tr td, table tr th, details summary {
+  font-size: 16px;
+  line-height: 22px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  table tr td, table tr th, details summary {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+table tr td {
+  border-bottom: 1px solid #D4D6D8;
+}
+
+.checkbox-wrapper input[type=checkbox] + label::before, .radio-wrapper input[type=radio] + label::before {
+  left: 0;
+  top: 2px;
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border: 2px solid #D12800;
 }
 
 @keyframes loader-animation {
@@ -3660,6 +3857,16 @@ table tr td, table tr th, details summary {
 
 table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.checkbox-wrapper input[type=checkbox] + label::before, .radio-wrapper input[type=radio] + label::before {
+  left: 0;
+  top: 2px;
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border: 2px solid #D12800;
 }
 
 @keyframes loader-animation {
