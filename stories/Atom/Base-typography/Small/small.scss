@@ -1,0 +1,7 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+
+small {
+    @extend %paragragh-font-14;
+}

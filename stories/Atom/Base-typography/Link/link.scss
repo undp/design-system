@@ -1,0 +1,10 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+
+a {
+    @extend %paragragh-font-20;
+    text-decoration: none;
+    color: $color-black;
+    border-bottom: 2px solid $color-dark-red;
+}

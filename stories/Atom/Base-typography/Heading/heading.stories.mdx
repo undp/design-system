@@ -1,0 +1,130 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { H1 } from './h1';
+import { H2 } from './h2';
+import { H3 } from './h3';
+import { H4 } from './h4';
+import { H5 } from './h5';
+import { H6 } from './h6';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail1: 'Headline 1', detail2: 'Headline 2', detail3: 'Headline 3', detail4: 'Headline 4', detail5: 'Headline 5', detail6: 'Headline 6'}; return engText;
+    case 'arabic': const arabicText = {detail1: 'العنوان 1.', detail2: 'العنوان 2', detail3: 'العنوان 3', detail4: 'العنوان 4', detail5: 'العنوان 5', detail6: 'العنوان 6'}; return arabicText;
+    case 'burmese': const burmeseText = {detail1: 'ခေါင်းစဉ် ၁', detail2: 'ခေါင်းစဉ် ၂', detail3: 'ခေါင်းစဉ် ၃', detail4: 'ခေါင်းစဉ် ၄', detail5: 'ခေါင်းစဉ် ၅', detail6: 'ခေါင်းစဉ် ၆'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail1: '見出し1', detail2: '見出し2', detail3: '見出し3', detail4: '見出し4', detail5: '見出し5', detail6: '見出し6'}; return japaneseText;
+    default:
+      return {detail1: 'Headline 1', detail2: 'Headline 2', detail3: 'Headline 3', detail4: 'Headline 4', detail5: 'Headline 5', detail6: 'Headline 6'};
+  }
+};
+
+<Meta title="Atoms/Base Typography/Heading"  />
+
+<style>{`
+  div#story--atoms-base-typography-heading--h-1, div#story--atoms-base-typography-heading--h-2, div#story--atoms-base-typography-heading--h-3, div#story--atoms-base-typography-heading--h-4, div#story--atoms-base-typography-heading--h-5, div#story--atoms-base-typography-heading--h-6 {
+    display: none;
+  }
+  .atoms__heading--wrapper {
+    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
+    box-sizing: inherit;
+    width: 100%;
+    padding: 10px;
+  }
+  .heading__label {
+    color: rgb(169, 169, 169);
+  }
+  .heading__item {
+    padding: 20px;
+  }
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }  
+
+`}</style>
+# Heading Component
+The Heading component are used to define HTML headings.
+<ul>
+  <li>We can use the <code>h1/h2/h3/h4/h5/h6 tag</code> in any component to display the headings. h1 for most important heading to h6 for least important heading.</li>
+</ul>
+
+Typographic scale when using headings in text component:
+<div class="atoms__heading--wrapper">
+  <div class="heading__item">
+    <H1 label="Headline 1"></H1>
+    <div class="heading__label">100px, SohneBold</div>
+  </div>
+  <div class="heading__item">
+    <H2 label="Headline 2"></H2>
+    <div class="heading__label">55px, ProximaSemiBold</div>
+  </div>
+    <div class="heading__item">
+    <H3 label="Headline 3"></H3>
+    <div class="heading__label">35px, ProximaBold</div>
+  </div>
+    <div class="heading__item">
+    <H4 label="Headline 4"></H4>
+    <div class="heading__label">35px, ProximaLight</div>
+  </div>
+    <div class="heading__item">
+    <H5 label="Headline 5"></H5>
+    <div class="heading__label">25px, ProximaLight</div>
+  </div>
+    <div class="heading__item">
+    <H6 label="Headline 6"></H6>
+    <div class="heading__label">16px, SohneBold</div>
+  </div>
+</div>
+
+<Story name="H1">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <H1 label={caption.detail1} ></H1>;
+  }}
+</Story>
+
+<Story name="H2">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <H2 label={caption.detail2} ></H2>;
+  }}
+</Story>
+
+<Story name="H3">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <H3 label={caption.detail3} ></H3>;
+  }}
+</Story>
+
+<Story name="H4">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <H4 label={caption.detail4} ></H4>;
+  }}
+</Story>
+
+<Story name="H5">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <H5 label={caption.detail5} ></H5>;
+  }}
+</Story>
+
+<Story name="H6">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <H6 label={caption.detail6} ></H6>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Include the common SCSS file like normalize, variables, mixins from the folder <code>assets/scss</code></li>
+  <li>Component wise SCSS file residing in each component<code>assets/scss/typography.scss</code></li>
+  <li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+</ul>

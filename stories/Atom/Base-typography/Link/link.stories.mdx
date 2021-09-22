@@ -1,0 +1,55 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Link } from './link';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: 'Default link'}; return engText;
+    case 'arabic': const arabicText = {detail: 'الارتباط الافتراضي'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'မူရင်းလင့်ခ်'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: 'デフォルトのリンク'}; return japaneseText;
+    default:
+      return {detail: 'Default link'};
+  }
+};
+
+<Meta title="Atoms/Base Typography/Link" component={Link} />
+
+<style>{`
+  div#story--atoms-base-typography-link--link {
+    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
+    box-sizing: inherit;
+    width: 100%;
+    padding: 10px;
+  }
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }  
+`}</style>
+
+# Link Component
+The Link component defines a hyperlink, which is used to link from one page to another.
+<ul>
+  <li>We can use the <code>a tag</code> in any component to link a stylesheet or css file to the HTML document.</li>
+</ul>
+
+Typographic scale when using link in text component:
+
+<Story name="Link">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Link label={caption.detail} ></Link>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+    <li>Include the common SCSS file like normalize, variables, mixins from the folder <code>assets/scss</code></li>
+    <li>Component wise SCSS file residing in each component<code>link.scss</code></li>
+    <li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+</ul>

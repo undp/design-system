@@ -2,12 +2,22 @@
 @import "./breakpoints";
 
 @mixin body-copy {
-    font-family: 'Arial';
-    font-size: 1rem;
-    line-height: 1.6;
-  }
+  font-family: 'Arial';
+  font-size: 1rem;
+  line-height: 1.6;
+}
 
-// basic font 
+// basic font
+%paragragh-font-14 {
+  font-family: $Font-Family-ProximaRegular;
+  font-size: 12px;
+  line-height: 16px;
+  @include devicebreak(small) {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
 %paragragh-font-16 {
   font-family: $Font-Family-ProximaRegular;
   font-size: 14px;
@@ -27,10 +37,14 @@
   }
 }
 
-%paragragh-font-14 {
+%paragragh-font-24 {
   font-family: $Font-Family-ProximaRegular;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 20px;
+  line-height: 23px;
+  @include devicebreak(small) {
+    font-size: 24px;
+    line-height: 27px;
+  }
 }
 
 %border-bottom{
