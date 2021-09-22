@@ -1,0 +1,51 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Large } from './Large';
+import { Small } from './Small';
+
+<Meta title="Atoms/Image/Author Image"/>
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  div[id^="story--atoms-image-author-image"] {
+    display: inline-block;
+  }
+`}</style>  
+
+# Author Image Component
+The Author Image Component is used to embed an image in a web page.
+
+<ul>
+<li>Author Images are saved in <code>assets/images/</code> folder in SVG, PNG, JPG, JPEG format. </li>
+<li>The <code>img</code> tag has two required attributes:</li>
+  <ul>
+    <li>src - Specifies the path to the image</li>
+    <li>alt - Specifies an alternate text for the image</li>
+  </ul>
+</ul>
+
+<Story name="Large">
+    return <Large></Large> ;
+</Story>
+
+<Story name="Small">
+    return <Small></Small> ;
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Component wise SCSS file residing in each component <code>authorimage.scss</code>.</li>
+<li>Include the Compiled CSS file from the <code>assets/css/style.css</code>.</li>
+<li>We can use the <code>Author Image</code> in the any component by import the <code>Author Image atom</code> in the required code.</li>
+</ul>

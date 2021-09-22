@@ -1,0 +1,36 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Checkbox } from './Checkbox';
+
+<Meta title="Atoms/Checkbox" />
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+`}</style>
+
+# Checkbox Component
+Checkboxes are used when there are multiple items to select in a list. Checkboxes allow the user to select one option, several options or no option. There is no interdependence between the checkboxes in a group, therefore checking an additional box does not affect any other selections.
+
+<Story name="Checkbox">
+    return <Checkbox></Checkbox>;
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Component wise SCSS file residing in each component <code>checkbox.scss</code>.</li>
+<li>Component wise SCSS file residing in each component.</li>
+<li>Include the Compiled CSS file from the <code>assets/css/style.css</code>.</li>
+<li>We can use the <code>Checkbox</code> in the any component by import the <code>Checkbox atom</code> in the required code.</li>
+<li>Do not use a checkbox when users can select just one option from a list of possible options. Instead, use the <b>Radio</b> component.</li>
+</ul>

@@ -1,0 +1,129 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Unorderlist } from './Unorderlist';
+import { Orderlist } from './Orderlist';
+import { Descriptionlist } from './Descriptionlist';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {data: [{
+  label : 'United Nations Development Programme',
+  text : 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.'
+},
+{
+  label : 'United Nations Development Programme',
+  text : 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.'
+},
+{
+  label : 'United Nations Development Programme',
+  text : 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.'
+}]}; return engText.data;
+    case 'arabic': const arabicText = {data: [{
+  label : 'برنامج الأمم المتحدة الإنمائي',
+  text : 'برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.'
+},
+{
+  label : 'برنامج الأمم المتحدة الإنمائي',
+  text : 'برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.'
+},
+{
+  label : 'برنامج الأمم المتحدة الإنمائي',
+  text : 'برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.'
+}]}; return arabicText.data;
+    case 'burmese': const burmeseText = {data: [{
+  label : 'ကုလသမဂ္ဂဖွံ့ဖြိုးရေးအစီအစဉ်',
+  text : 'ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးအားမြှောက် ပြု၍ ပြောင်းလဲမှုအတွက်ထောက်ခံသူများနှင့်နိုင်ငံများအားလူတို့အတွက်ပိုမိုကောင်းမွန်သောဘ ၀ ကိုတည်ဆောက်ရန်အကူအညီများ၊ အတွေ့အကြုံများနှင့်အရင်းအမြစ်များသို့ချိတ်ဆက်ပေးသည်။'
+},
+{
+  label : 'ကုလသမဂ္ဂဖွံ့ဖြိုးရေးအစီအစဉ်',
+  text : 'ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးအားမြှောက် ပြု၍ ပြောင်းလဲမှုအတွက်ထောက်ခံသူများနှင့်နိုင်ငံများအားလူတို့အတွက်ပိုမိုကောင်းမွန်သောဘ ၀ ကိုတည်ဆောက်ရန်အကူအညီများ၊ အတွေ့အကြုံများနှင့်အရင်းအမြစ်များသို့ချိတ်ဆက်ပေးသည်။'
+},
+{
+  label : 'ကုလသမဂ္ဂဖွံ့ဖြိုးရေးအစီအစဉ်',
+  text : 'ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးအားမြှောက် ပြု၍ ပြောင်းလဲမှုအတွက်ထောက်ခံသူများနှင့်နိုင်ငံများအားလူတို့အတွက်ပိုမိုကောင်းမွန်သောဘ ၀ ကိုတည်ဆောက်ရန်အကူအညီများ၊ အတွေ့အကြုံများနှင့်အရင်းအမြစ်များသို့ချိတ်ဆက်ပေးသည်။'
+}]}; return burmeseText.data;
+    case 'japanese': const japaneseText = {data: [{
+  label : '国連開発計画',
+  text : '国連開発計画は、国連のグローバルな開発ネットワークです。 それは、国家間の技術的および投資協力を促進し、変化を提唱し、人々がより良い生活を築くのを助けるために、国家を知識、経験および資源に結び付けます。'
+},
+{
+  label : '国連開発計画',
+  text : '国連開発計画は、国連のグローバルな開発ネットワークです。 それは、国家間の技術的および投資協力を促進し、変化を提唱し、人々がより良い生活を築くのを助けるために、国家を知識、経験および資源に結び付けます。'
+},
+{
+  label : '国連開発計画',
+  text : '国連開発計画は、国連のグローバルな開発ネットワークです。 それは、国家間の技術的および投資協力を促進し、変化を提唱し、人々がより良い生活を築くのを助けるために、国家を知識、経験および資源に結び付けます。'
+}]}; return japaneseText.data;
+    default:
+      const dummy =  {data: [{
+  label : 'United Nations Development Programme 1',
+  text : 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.'
+},
+{
+  label : 'United Nations Development Programme 2',
+  text : 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.'
+},
+{
+  label : 'United Nations Development Programme 3',
+  text : 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.'
+}]};
+return dummy.data
+  }
+};
+
+<Meta title="Atoms/List"/>
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+`}</style>
+
+# List component
+List component show a number of connected items written consecutively, typically one below the other
+.
+
+<div className="subheading">Unordered List</div>
+<p>An unordered list starts with the <code>ul</code>tag. Each list item starts with the <code>li</code> tag. The list items will be marked with bullets (small black circles) by default.</p>
+
+<Story name="Unordertag">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Unorderlist data={caption}></Unorderlist>;
+  }}
+</Story>
+
+<div className="subheading">Ordered List</div>
+<p>An ordered list starts with the <code>ol</code> tag. Each list item starts with the <code>li</code> tag. The list items will be marked with numbers by default.</p>
+
+<Story name="Ordertag">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Orderlist data={caption}></Orderlist>;
+  }}
+</Story>
+
+<div className="subheading">Description List</div>
+<p>A Description list is a list of terms and corresponding Descriptions. Description lists are typically formatted with the term on the left with the description following on the right or on the next line.</p>
+
+<Story name="Descriptiontag">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Descriptionlist data={caption}></Descriptionlist>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Component wise SCSS file residing in each component <code>lists.scss</code>.</li>
+<li>Include the Compiled CSS file from the <code>assets/css/style.css</code>.</li>
+</ul>

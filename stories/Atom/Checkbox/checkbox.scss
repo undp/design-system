@@ -1,0 +1,45 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/breakpoints";
+
+/* checkbox */
+.checkbox-label {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    input {
+        top: 0;
+        right: 0;
+        opacity: 0;
+        width: 16px;
+        z-index: 1;
+        height: 16px;
+        cursor: pointer;
+        position: absolute;
+        &:checked ~ .checkbox-custom::after {
+            display: block;
+        }
+        &:hover + .checkbox-custom {
+            border-color: #FFB4AE;
+        }
+    }
+    .checkbox-custom {
+        top: 0px;
+        right: 0;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        border: 2px solid #D12800;
+        &::after {
+            top: 0;
+            left: 0.2px;
+            content: "";
+            width: 12px;
+            height: 12px;
+            display: none;
+            position: absolute;
+            background: url('../../assets/images/Icon/icon-check.svg');
+            background-repeat: no-repeat;
+        }
+    }
+}

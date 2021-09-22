@@ -1,0 +1,46 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/breakpoints";
+
+.radio-label {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    input {
+        top: 0;
+        right: 0;
+        opacity: 0;
+        width: 16px;
+        height: 16px;
+        z-index: 1;
+        cursor: pointer;
+        position: absolute;
+        &:checked ~ .radio-custom::after {
+            display: block;
+        }
+        &:hover + .radio-custom {
+            border-color: #FFB4AE;
+        }
+    }
+    .radio-custom {
+        top: 0px;
+        right: 0;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        border-radius: 50%;
+        border: 2px solid #D12800;
+        &::after {
+            top: 50%;
+            left: 50%;
+            content: "";
+            width: 6px;
+            height: 6px;
+            display: none;
+            position: absolute;
+            border-radius: 50%;
+            background-color: #D12800;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

@@ -1,0 +1,38 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Radio } from './Radio';
+
+<Meta title="Atoms/Radio" />
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+`}</style>
+
+# Radio Component
+Radio buttons enable the selection of one out of at least two options provided in a list. Activation of a radio button therefore rules out the activation of other radio buttons of the same group.
+
+<Story name="Radio">
+    return <Radio></Radio>;
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Component wise SCSS file residing in each component <code>radio.scss</code>.</li>
+<li>Component wise SCSS file residing in each component.</li>
+<li>Include the Compiled CSS file from the <code>assets/css/style.css</code>.</li>
+<li>We can use the <code>Radio</code> in the any component by import the <code>Radio atom</code> in the required code.</li>
+<li>Use a radio button when users can only make a single selection from the list of possible options.</li>
+<li>Use a radio button when there are at least two options available to the user.</li>
+<li>Do not use a radio button when users can select more than one option. Instead, use the <b>Checkbox</b> component.</li>
+</ul>
