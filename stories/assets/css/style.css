@@ -33,6 +33,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -373,27 +391,27 @@ blockquote {
 /* variables end */
 /* variables start */
 /* variables end */
-small {
+.menu_item, small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
   line-height: 16px;
   /* small design */
 }
 @media (min-width: 48em) {
-  small {
+  .menu_item, small {
     font-size: 14px;
     line-height: 19px;
   }
 }
 
-details p {
+.sidebar_item__sub, .language_item, details p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* small design */
 }
 @media (min-width: 48em) {
-  details p {
+  .sidebar_item__sub, .language_item, details p {
     font-size: 16px;
     line-height: 22px;
   }
@@ -424,8 +442,12 @@ cite {
   }
 }
 
-table tr td {
+.Sidebar_item, .language_item, table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
 }
 
 @keyframes loader-animation {
@@ -3323,27 +3345,27 @@ dl {
 /* icon end */
 /* variables start */
 /* variables end */
-small {
+.menu_item, small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
   line-height: 16px;
   /* small design */
 }
 @media (min-width: 48em) {
-  small {
+  .menu_item, small {
     font-size: 14px;
     line-height: 19px;
   }
 }
 
-details p {
+.sidebar_item__sub, .language_item, details p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* small design */
 }
 @media (min-width: 48em) {
-  details p {
+  .sidebar_item__sub, .language_item, details p {
     font-size: 16px;
     line-height: 22px;
   }
@@ -3374,8 +3396,12 @@ cite {
   }
 }
 
-table tr td {
+.Sidebar_item, .language_item, table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
 }
 
 @keyframes loader-animation {
@@ -3396,27 +3422,27 @@ abbr[title] {
 
 /* variables start */
 /* variables end */
-small {
+.menu_item, small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
   line-height: 16px;
   /* small design */
 }
 @media (min-width: 48em) {
-  small {
+  .menu_item, small {
     font-size: 14px;
     line-height: 19px;
   }
 }
 
-details p {
+.sidebar_item__sub, .language_item, details p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* small design */
 }
 @media (min-width: 48em) {
-  details p {
+  .sidebar_item__sub, .language_item, details p {
     font-size: 16px;
     line-height: 22px;
   }
@@ -3447,8 +3473,12 @@ cite {
   }
 }
 
-table tr td {
+.Sidebar_item, .language_item, table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
 }
 
 @keyframes loader-animation {
@@ -3478,27 +3508,27 @@ blockquote {
 
 /* variables start */
 /* variables end */
-small {
+.menu_item, small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
   line-height: 16px;
   /* small design */
 }
 @media (min-width: 48em) {
-  small {
+  .menu_item, small {
     font-size: 14px;
     line-height: 19px;
   }
 }
 
-details p {
+.sidebar_item__sub, .language_item, details p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* small design */
 }
 @media (min-width: 48em) {
-  details p {
+  .sidebar_item__sub, .language_item, details p {
     font-size: 16px;
     line-height: 22px;
   }
@@ -3529,8 +3559,12 @@ cite {
   }
 }
 
-table tr td {
+.Sidebar_item, .language_item, table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
 }
 
 @keyframes loader-animation {
@@ -3550,27 +3584,27 @@ cite {
 
 /* variables start */
 /* variables end */
-small {
+.menu_item, small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
   line-height: 16px;
   /* small design */
 }
 @media (min-width: 48em) {
-  small {
+  .menu_item, small {
     font-size: 14px;
     line-height: 19px;
   }
 }
 
-details p {
+.sidebar_item__sub, .language_item, details p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* small design */
 }
 @media (min-width: 48em) {
-  details p {
+  .sidebar_item__sub, .language_item, details p {
     font-size: 16px;
     line-height: 22px;
   }
@@ -3601,8 +3635,12 @@ cite {
   }
 }
 
-table tr td {
+.Sidebar_item, .language_item, table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
 }
 
 @keyframes loader-animation {
@@ -3623,27 +3661,27 @@ code {
 
 /* variables start */
 /* variables end */
-small {
+.menu_item, small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
   line-height: 16px;
   /* small design */
 }
 @media (min-width: 48em) {
-  small {
+  .menu_item, small {
     font-size: 14px;
     line-height: 19px;
   }
 }
 
-details p {
+.sidebar_item__sub, .language_item, details p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* small design */
 }
 @media (min-width: 48em) {
-  details p {
+  .sidebar_item__sub, .language_item, details p {
     font-size: 16px;
     line-height: 22px;
   }
@@ -3674,8 +3712,12 @@ cite {
   }
 }
 
-table tr td {
+.Sidebar_item, .language_item, table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
 }
 
 @keyframes loader-animation {
@@ -3697,27 +3739,27 @@ a {
 
 /* variables start */
 /* variables end */
-small {
+.menu_item, small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
   line-height: 16px;
   /* small design */
 }
 @media (min-width: 48em) {
-  small {
+  .menu_item, small {
     font-size: 14px;
     line-height: 19px;
   }
 }
 
-details p {
+.sidebar_item__sub, .language_item, details p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* small design */
 }
 @media (min-width: 48em) {
-  details p {
+  .sidebar_item__sub, .language_item, details p {
     font-size: 16px;
     line-height: 22px;
   }
@@ -3748,8 +3790,12 @@ cite {
   }
 }
 
-table tr td {
+.Sidebar_item, .language_item, table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
 }
 
 @keyframes loader-animation {
@@ -3770,27 +3816,27 @@ mark {
 
 /* variables start */
 /* variables end */
-small {
+.menu_item, small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
   line-height: 16px;
   /* small design */
 }
 @media (min-width: 48em) {
-  small {
+  .menu_item, small {
     font-size: 14px;
     line-height: 19px;
   }
 }
 
-details p {
+.sidebar_item__sub, .language_item, details p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* small design */
 }
 @media (min-width: 48em) {
-  details p {
+  .sidebar_item__sub, .language_item, details p {
     font-size: 16px;
     line-height: 22px;
   }
@@ -3821,8 +3867,12 @@ cite {
   }
 }
 
-table tr td {
+.Sidebar_item, .language_item, table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
 }
 
 @keyframes loader-animation {
@@ -3842,27 +3892,27 @@ q {
 
 /* variables start */
 /* variables end */
-small {
+.menu_item, small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
   line-height: 16px;
   /* small design */
 }
 @media (min-width: 48em) {
-  small {
+  .menu_item, small {
     font-size: 14px;
     line-height: 19px;
   }
 }
 
-details p {
+.sidebar_item__sub, .language_item, details p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* small design */
 }
 @media (min-width: 48em) {
-  details p {
+  .sidebar_item__sub, .language_item, details p {
     font-size: 16px;
     line-height: 22px;
   }
@@ -3893,8 +3943,12 @@ cite {
   }
 }
 
-table tr td {
+.Sidebar_item, .language_item, table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
 }
 
 @keyframes loader-animation {
@@ -3910,27 +3964,27 @@ table tr td {
 /* variables end */
 /* variables start */
 /* variables end */
-small {
+.menu_item, small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
   line-height: 16px;
   /* small design */
 }
 @media (min-width: 48em) {
-  small {
+  .menu_item, small {
     font-size: 14px;
     line-height: 19px;
   }
 }
 
-details p {
+.sidebar_item__sub, .language_item, details p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* small design */
 }
 @media (min-width: 48em) {
-  details p {
+  .sidebar_item__sub, .language_item, details p {
     font-size: 16px;
     line-height: 22px;
   }
@@ -3961,8 +4015,12 @@ cite {
   }
 }
 
-table tr td {
+.Sidebar_item, .language_item, table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
 }
 
 @keyframes loader-animation {
@@ -4004,7 +4062,7 @@ table tr td {
   font-family: "Nunito Sans", sans-serif;
   font-weight: normal;
   font-size: 13px;
-  color: #000;
+  color: #000000;
   min-height: 28px;
   /* small design */
 }
@@ -4039,7 +4097,7 @@ table tr td {
   font-family: "Nunito Sans", sans-serif;
   font-weight: normal;
   font-size: 12px;
-  color: #000;
+  color: #000000;
 }
 .color-wrapper .color__row .color__define .color__name .Primary-text .polygon img {
   margin: 0 auto;
@@ -4233,27 +4291,27 @@ table tr td {
 
 /* variables start */
 /* variables end */
-small {
+.menu_item, small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
   line-height: 16px;
   /* small design */
 }
 @media (min-width: 48em) {
-  small {
+  .menu_item, small {
     font-size: 14px;
     line-height: 19px;
   }
 }
 
-details p {
+.sidebar_item__sub, .language_item, details p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* small design */
 }
 @media (min-width: 48em) {
-  details p {
+  .sidebar_item__sub, .language_item, details p {
     font-size: 16px;
     line-height: 22px;
   }
@@ -4284,8 +4342,12 @@ cite {
   }
 }
 
-table tr td {
+.Sidebar_item, .language_item, table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
 }
 
 @keyframes loader-animation {
@@ -4540,27 +4602,27 @@ progress::-moz-progress-bar {
 /* progress end */
 /* variables start */
 /* variables end */
-small {
+.menu_item, small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
   line-height: 16px;
   /* small design */
 }
 @media (min-width: 48em) {
-  small {
+  .menu_item, small {
     font-size: 14px;
     line-height: 19px;
   }
 }
 
-details p {
+.sidebar_item__sub, .language_item, details p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   line-height: 20px;
   /* small design */
 }
 @media (min-width: 48em) {
-  details p {
+  .sidebar_item__sub, .language_item, details p {
     font-size: 16px;
     line-height: 22px;
   }
@@ -4591,8 +4653,12 @@ cite {
   }
 }
 
-table tr td {
+.Sidebar_item, .language_item, table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
 }
 
 @keyframes loader-animation {
@@ -4638,5 +4704,1159 @@ table tr td {
 }
 
 /* table tag end */
+/* variables start */
+/* variables end */
+.menu_item, small {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .menu_item, small {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.sidebar_item__sub, .language_item, details p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .sidebar_item__sub, .language_item, details p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+  font-size: 16px;
+  line-height: 22px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+cite {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  cite {
+    font-size: 24px;
+    line-height: 27px;
+  }
+}
+
+.Sidebar_item, .language_item, table tr td {
+  border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb--middle li a, .breadcrumb li a {
+  border-bottom: none;
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* variables start */
+/* variables end */
+.breadcrumb {
+  padding: 0;
+  margin: 0;
+}
+.breadcrumb li {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #000;
+  list-style: none;
+  display: inline-block;
+  padding-bottom: 0;
+}
+.breadcrumb li a {
+  color: #D12800;
+  text-decoration: none;
+  margin-right: 12px;
+}
+.breadcrumb li a:hover {
+  color: #EE402D;
+}
+.breadcrumb--middle li a {
+  font-size: 12px;
+  margin-left: 12px;
+  margin-right: 0;
+}
+.breadcrumb--middle li a:hover {
+  color: #EE402D;
+}
+.breadcrumb--middle li::after {
+  content: "/";
+  margin: 0 12px;
+  color: #D12800;
+}
+.breadcrumb--last li {
+  color: #000;
+  margin-left: 12px;
+}
+
+/* variables start */
+/* variables end */
+.menu_item, small {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .menu_item, small {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.sidebar_item__sub, .language_item, details p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .sidebar_item__sub, .language_item, details p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+  font-size: 16px;
+  line-height: 22px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+cite {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  cite {
+    font-size: 24px;
+    line-height: 27px;
+  }
+}
+
+.Sidebar_item, .language_item, table tr td {
+  border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb li a, .breadcrumb--middle li a {
+  border-bottom: none;
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* variables start */
+/* variables end */
+.language_item {
+  padding: 12px 16px;
+  max-width: 100px;
+  line-height: 15px;
+}
+
+/* variables start */
+/* variables end */
+.menu_item, small {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .menu_item, small {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.sidebar_item__sub, details p, .language_item {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .sidebar_item__sub, details p, .language_item {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+  font-size: 16px;
+  line-height: 22px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+cite {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  cite {
+    font-size: 24px;
+    line-height: 27px;
+  }
+}
+
+.Sidebar_item, table tr td, .language_item {
+  border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb li a, .breadcrumb--middle li a {
+  border-bottom: none;
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* variables start */
+/* variables end */
+.loader {
+  border-radius: 50%;
+  border: 8px solid #006EB5;
+  border-top: 8px solid #f3f3f3;
+  width: 40px;
+  height: 40px;
+  animation: loader-animation 2s linear infinite;
+  -webkit-animation: loader-animation 2s linear infinite;
+  -moz-animation: loader-animation 2s linear infinite;
+  -ms-animation: loader-animation 2s linear infinite;
+  -o-animation: loader-animation 2s linear infinite;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .loader {
+    width: 96px;
+    height: 96px;
+    border: 14px solid #006EB5;
+    border-top: 14px solid #f3f3f3;
+  }
+}
+
+/* variables start */
+/* variables end */
+.menu_item, small {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .menu_item, small {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.sidebar_item__sub, details p, .language_item {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .sidebar_item__sub, details p, .language_item {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+  font-size: 16px;
+  line-height: 22px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+cite {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  cite {
+    font-size: 24px;
+    line-height: 27px;
+  }
+}
+
+.Sidebar_item, table tr td, .language_item {
+  border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb li a, .breadcrumb--middle li a {
+  border-bottom: none;
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* variables start */
+/* variables end */
+.menu_item {
+  text-transform: uppercase;
+  display: inline;
+}
+.menu_item:hover {
+  color: #55606E;
+  cursor: pointer;
+}
+.menu_item.selected {
+  padding-bottom: 4px;
+  border-bottom: 2px solid #D12800;
+}
+
+/* variables start */
+/* variables end */
+small, .menu_item {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  small, .menu_item {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.sidebar_item__sub, details p, .language_item {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .sidebar_item__sub, details p, .language_item {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+  font-size: 16px;
+  line-height: 22px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+cite {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  cite {
+    font-size: 24px;
+    line-height: 27px;
+  }
+}
+
+.Sidebar_item, table tr td, .language_item {
+  border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb li a, .breadcrumb--middle li a {
+  border-bottom: none;
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* variables start */
+/* variables end */
+.progress-container {
+  width: 100%;
+  height: 12px;
+  background: #EDEFF0;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .progress-container {
+    height: 16px;
+  }
+}
+.progress-container .progress-bar {
+  height: 12px;
+  background: #FFEB00;
+  width: 50%;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .progress-container .progress-bar {
+    height: 16px;
+  }
+}
+
+/* variables start */
+/* variables end */
+small, .menu_item {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  small, .menu_item {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.sidebar_item__sub, details p, .language_item {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .sidebar_item__sub, details p, .language_item {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+  font-size: 16px;
+  line-height: 22px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+cite {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  cite {
+    font-size: 24px;
+    line-height: 27px;
+  }
+}
+
+.Sidebar_item, table tr td, .language_item {
+  border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb li a, .breadcrumb--middle li a {
+  border-bottom: none;
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* variables start */
+/* variables end */
+.sidebar_item__sub {
+  padding: 16px 24px 16px 32px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .sidebar_item__sub {
+    padding: 16px 24px 16px 48px;
+  }
+}
+.sidebar_item__sub:hover {
+  background-color: #F7F7F7;
+}
+
+/* variables start */
+/* variables end */
+small, .menu_item {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  small, .menu_item {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+details p, .language_item, .sidebar_item__sub {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  details p, .language_item, .sidebar_item__sub {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+  font-size: 16px;
+  line-height: 22px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+cite {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  cite {
+    font-size: 24px;
+    line-height: 27px;
+  }
+}
+
+.Sidebar_item, table tr td, .language_item {
+  border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb li a, .breadcrumb--middle li a {
+  border-bottom: none;
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* variables start */
+/* variables end */
+/* typograpgy start */
+/* variables start */
+/* variables end */
+body {
+  color: #000;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  /* large design */
+}
+@media (min-width: 90em) {
+  body {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 12px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+}
+@media (min-width: 48em) {
+  h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption {
+    margin-bottom: 16px;
+  }
+}
+
+h1 {
+  font-size: 47px;
+  line-height: 50px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+  /* large design */
+}
+@media (min-width: 48em) {
+  h1 {
+    font-size: 82px;
+    line-height: 88px;
+  }
+}
+@media (min-width: 90em) {
+  h1 {
+    font-size: 100px;
+    line-height: 88px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 44px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+  /* large design */
+}
+@media (min-width: 48em) {
+  h2 {
+    font-size: 45px;
+    line-height: 50px;
+  }
+}
+@media (min-width: 90em) {
+  h2 {
+    font-size: 55px;
+    line-height: 60px;
+  }
+}
+
+h3 {
+  font-size: 35px;
+  line-height: 34px;
+  font-weight: 600;
+  /* small design */
+}
+@media (min-width: 48em) {
+  h3 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+h4 {
+  font-size: 25px;
+  line-height: 28px;
+  font-family: "Nunito Sans", sans-serif;
+  /* large design */
+}
+@media (min-width: 90em) {
+  h4 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 22px;
+  font-family: "Nunito Sans", sans-serif;
+  /* large design */
+}
+@media (min-width: 90em) {
+  h5 {
+    font-size: 25px;
+    line-height: 28px;
+  }
+}
+
+h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+p {
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+}
+@media (min-width: 48em) {
+  p {
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
+
+ul,
+ol {
+  margin: 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+}
+@media (min-width: 48em) {
+  ul,
+ol {
+    font-size: 20px;
+    line-height: 27.5px;
+  }
+}
+
+dl {
+  margin: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.25px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+}
+@media (min-width: 48em) {
+  dl {
+    font-size: 20px;
+    line-height: 27.5px;
+  }
+}
+
+/* typograpgy end */
+.Sidebar_item {
+  position: relative;
+  padding: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .Sidebar_item {
+    padding: 24px;
+  }
+}
+.Sidebar_item:hover {
+  background-color: #F7F7F7;
+}
+.Sidebar_item.open .arrow {
+  transform: rotateZ(180deg);
+  transition: all 0.1s ease;
+}
+.Sidebar_item h6 {
+  margin-bottom: 0;
+}
+.Sidebar_item .arrow {
+  background: url(../../../assets/images/Icon///Chevron-down.svg) no-repeat center center;
+  float: right;
+  width: 20px;
+  height: 20px;
+  border-top-color: #f3f3f3;
+  transition: all 0.1s ease;
+  margin-left: 24px;
+}
+.Sidebar_item--Default-up .arrow {
+  background: url(../../../assets/images/Icon///Chevron-down.svg) no-repeat center center;
+  transform: rotateZ(180deg);
+}
+.Sidebar_item--Selected {
+  background-color: #006EB5;
+}
+.Sidebar_item--Selected h6 {
+  color: #fff;
+}
+.Sidebar_item--Selected:hover {
+  background-color: #006EB5;
+}
+.Sidebar_item--Selected .arrow {
+  background: url(../../../assets/images/Icon///Chevron-down-white.svg) no-repeat center center;
+}
+.Sidebar_item--Selected-up {
+  background-color: #006EB5;
+}
+.Sidebar_item--Selected-up h6 {
+  color: #fff;
+}
+.Sidebar_item--Selected-up:hover {
+  background-color: #006EB5 !important;
+}
+.Sidebar_item--Selected-up .arrow {
+  background: url(../../../assets/images/Icon///Chevron-down-white.svg) no-repeat center center;
+  transform: rotateZ(180deg);
+}
+
+/* variables start */
+/* variables end */
+small, .menu_item {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  small, .menu_item {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+details p, .language_item, .sidebar_item__sub {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  details p, .language_item, .sidebar_item__sub {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+  font-size: 16px;
+  line-height: 22px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  abbr[title], code, a, mark, q, details summary, table tr th, table tr td {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+cite {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  cite {
+    font-size: 24px;
+    line-height: 27px;
+  }
+}
+
+table tr td, .language_item, .Sidebar_item {
+  border-bottom: 1px solid #D4D6D8;
+}
+
+.breadcrumb li a, .breadcrumb--middle li a {
+  border-bottom: none;
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* variables start */
+/* variables end */
+/* typograpgy start */
+/* variables start */
+/* variables end */
+body {
+  color: #000;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  /* large design */
+}
+@media (min-width: 90em) {
+  body {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 12px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+}
+@media (min-width: 48em) {
+  h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption {
+    margin-bottom: 16px;
+  }
+}
+
+h1 {
+  font-size: 47px;
+  line-height: 50px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+  /* large design */
+}
+@media (min-width: 48em) {
+  h1 {
+    font-size: 82px;
+    line-height: 88px;
+  }
+}
+@media (min-width: 90em) {
+  h1 {
+    font-size: 100px;
+    line-height: 88px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 44px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+  /* large design */
+}
+@media (min-width: 48em) {
+  h2 {
+    font-size: 45px;
+    line-height: 50px;
+  }
+}
+@media (min-width: 90em) {
+  h2 {
+    font-size: 55px;
+    line-height: 60px;
+  }
+}
+
+h3 {
+  font-size: 35px;
+  line-height: 34px;
+  font-weight: 600;
+  /* small design */
+}
+@media (min-width: 48em) {
+  h3 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+h4 {
+  font-size: 25px;
+  line-height: 28px;
+  font-family: "Nunito Sans", sans-serif;
+  /* large design */
+}
+@media (min-width: 90em) {
+  h4 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 22px;
+  font-family: "Nunito Sans", sans-serif;
+  /* large design */
+}
+@media (min-width: 90em) {
+  h5 {
+    font-size: 25px;
+    line-height: 28px;
+  }
+}
+
+h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+p {
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+}
+@media (min-width: 48em) {
+  p {
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
+
+ul,
+ol {
+  margin: 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+}
+@media (min-width: 48em) {
+  ul,
+ol {
+    font-size: 20px;
+    line-height: 27.5px;
+  }
+}
+
+dl {
+  margin: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.25px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+}
+@media (min-width: 48em) {
+  dl {
+    font-size: 20px;
+    line-height: 27.5px;
+  }
+}
+
+/* typograpgy end */
+.Sidebar_item {
+  position: relative;
+  padding: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .Sidebar_item {
+    padding: 24px;
+  }
+}
+.Sidebar_item:hover {
+  background-color: #F7F7F7;
+}
+.Sidebar_item.open .arrow {
+  transform: rotateZ(180deg);
+  transition: all 0.1s ease;
+}
+.Sidebar_item h6 {
+  margin-bottom: 0;
+}
+.Sidebar_item--Selected {
+  background-color: #006EB5;
+}
+.Sidebar_item--Selected h6 {
+  color: #fff;
+}
+.Sidebar_item--Selected:hover {
+  background-color: #006EB5;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,20 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+
+// * loader start *//
+.loader {
+  border-radius: 50%;
+  border: 8px solid $color-blue-600;
+  border-top: 8px solid #f3f3f3;
+  width: 40px;
+  height: 40px;
+  @include loader;
+  @include devicebreak(small) {
+    width: 96px;
+    height: 96px;
+    border: 14px solid $color-blue-600;
+    border-top: 14px solid #f3f3f3;
+  }
+}
+// * loader end *//

@@ -1,0 +1,51 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+
+// * breadcrumb start *//
+.breadcrumb {
+  padding: 0;
+  margin: 0;
+  li {
+    font-family: $Font-Family-ProximaSemiBold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $color-black;
+    list-style: none;
+    display: inline-block;
+    padding-bottom: 0;
+    a {
+      font-size: 12px;
+      color: $color-dark-red;
+      text-decoration: none;
+      margin-right: 12px;
+      @extend %border-none;
+      &:hover {
+        color: $color-red;
+      }
+    }
+  }
+  &--middle {
+    li {
+      a {
+        margin-left: 12px;
+        margin-right: 0;
+        &:hover {
+          color: $color-red;
+        }
+      }
+      &::after {
+        content: "/";
+        margin: 0 12px;
+        color: $color-dark-red;
+      }
+    }
+  }
+  &--last {
+    li {
+      color: $color-black;
+      margin-left: 12px;
+    }
+  }
+}
+// * breadcrumb end *//
