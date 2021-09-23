@@ -1,0 +1,37 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { ProgressBarNavigation } from './ProgressBarNavigation';
+
+
+<Meta title="Atoms/Navigation/Progress Bar Navigation" component={ProgressBarNavigation} />
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }  
+`}</style>
+
+# Progress Bar Component
+The Progress Bar component is used to displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+
+<ul>
+<li>Progress Bar will be work on page scroll.</li>
+</ul>
+
+<Story name="Progress Bar Navigation">
+  return <ProgressBarNavigation ></ProgressBarNavigation>;
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>We can take HTML from the HTML tab in the canvas tab</li>
+<li>Include the common SCSS file like normalize, variables, mixins, breakpoints from the folder <code>assets/scss</code></li>
+<li>Component wise SCSS file residing in each component <code>ProgressBarNavigation.css</code></li>
+<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+</ul>
+
