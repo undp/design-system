@@ -1,0 +1,49 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Imagecredit } from './Imagecredit';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: 'UNDP/Angola', name: 'Jerome Bell'}; return engText;
+    case 'arabic': const arabicText = {detail: 'برنامج الأمم المتحدة الإنمائي / أنغولا', name: 'جيروم بيل'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'UNDP/အန်ဂိုလာ', name: 'ဂျရုမ်း ဘဲလ်'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: 'UNDP /アンゴラ', name: 'ジェロームベル'}; return japaneseText;
+    default:
+      return {detail: 'UNDP/Angola', name: 'Jerome Bell'};
+  }
+};
+
+<Meta title="Atoms/Image/Image Credit" />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+`}</style>
+
+# Image Credit Component
+Image Credit component used to show the image caption and who posted the image in a related image.
+
+<Story name="Imagecredit">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Imagecredit label={caption.detail} name={caption.name}></Imagecredit>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>We can take HTML from the HTML tab in the canvas tab</li>
+<li>Include the common SCSS file like normalize, variables from the folder <code>assets/scss</code></li>
+<li>Component wise SCSS file residing in each component <code>imagecredit.scss</code></li>
+<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+</ul>
