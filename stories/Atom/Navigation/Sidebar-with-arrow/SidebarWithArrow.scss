@@ -1,0 +1,73 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/typography";
+
+// * Slidebar start *//
+.Sidebar_item {
+	@extend %border-bottom;
+	position: relative;
+	padding: 16px;
+	cursor: pointer;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@include devicebreak(small) {
+		padding: 24px;
+	}
+	&:hover {
+		background-color: $color-gray-200;
+	}
+	&.open {
+		.arrow {
+			transform: rotateZ(180deg);
+			transition: all 0.1s ease;
+		}
+	}
+	h6 {
+		margin-bottom: 0;
+	}
+	.arrow {
+		background: url(#{$img-path-Icon}//Chevron-down.svg) no-repeat center center;
+		float: right;
+		width: 20px;
+		height: 20px;
+		border-top-color: #f3f3f3;
+		transition: all 0.1s ease;
+		margin-left: 24px;
+	}
+	&--Default-up {
+		.arrow {
+			background: url(#{$img-path-Icon}//Chevron-down.svg) no-repeat center center;
+			transform: rotateZ(180deg);
+		}
+	}
+	&--Selected {
+		background-color: $color-blue-600;
+		h6 {
+			color: $color-white;
+		}
+		&:hover {
+			background-color: $color-blue-600;
+		}
+		.arrow {
+			background: url(#{$img-path-Icon}//Chevron-down-white.svg) no-repeat center center;
+		}
+	}
+	&--Selected-up {
+		background-color: $color-blue-600;
+		h6 {
+			color: $color-white;
+		}
+		&:hover {
+			background-color: $color-blue-600!important;
+		}
+		.arrow {
+			background: url(#{$img-path-Icon}//Chevron-down-white.svg) no-repeat center center;
+			transform: rotateZ(180deg);
+		}
+	}
+
+}
+// * Slidebar end *//
