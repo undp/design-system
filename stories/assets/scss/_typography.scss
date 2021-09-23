@@ -1,12 +1,13 @@
 /* typograpgy start */
 @import "./variables";
 @import "./breakpoints";
+
 body {
   color: $color-black;
   font-family: $Font-Family-ProximaRegular;
   font-size: 16px;
   line-height: 22px;
-   @include devicebreak(x-large) {
+   @include devicebreak(large) {
     font-size: 20px;  
     line-height: 28px;
   }
@@ -23,7 +24,7 @@ caption {
   padding: 0;
   margin-bottom: 12px;
   font-family: $Font-Family-ProximaRegular;
-   @include devicebreak(large) {
+   @include devicebreak(small) {
      margin-bottom: 16px;
     }
 }
@@ -32,11 +33,11 @@ h1 {
   font-size: 47px;  
   line-height: 50px;
   font-family: $Font-Family-SohneBold;
-  @include devicebreak(large) {
+  @include devicebreak(small) {
     font-size: 82px;  
     line-height: 88px;
     }
-  @include devicebreak(x-large) {
+  @include devicebreak(large) {
     font-size: 100px;  
     line-height: 88px;
   }
@@ -46,11 +47,11 @@ h2 {
   font-size: 40px;  
   line-height: 44px;
   font-family: $Font-Family-ProximaBold;
-  @include devicebreak(large) {
+  @include devicebreak(small) {
     font-size: 45px;  
     line-height: 50px;
     }
-  @include devicebreak(x-large) {
+  @include devicebreak(large) {
     font-size: 55px;  
     line-height: 60px;
   }
@@ -58,13 +59,19 @@ h2 {
 
 h3 {
   font-size: 35px;
+  line-height: 34px;
+  font-weight: 600;
+  @include devicebreak(small) {
+    font-size: 35px;  
+    line-height: 40px;
+    }
 }
 
 h4 {
   font-size: 25px;  
   line-height: 28px;
   font-family: $Font-Family-ProximaLight;
-  @include devicebreak(x-large) {
+  @include devicebreak(large) {
     font-size: 35px;  
     line-height: 40px;
   }
@@ -74,7 +81,7 @@ h5 {
   font-size: 20px;  
   line-height: 22px;  
   font-family: $Font-Family-ProximaLight;
-   @include devicebreak(x-large) {
+   @include devicebreak(large) {
     font-size: 25px;  
     line-height: 28px;
   }
@@ -93,12 +100,11 @@ h6 {
 }
 
 p {
-  margin-bottom: 1rem;
   margin-top: 0;
   font-size: 16px;
   line-height: 22px;
   font-family: $Font-Family-ProximaRegular;
-  @include devicebreak(large) {
+  @include devicebreak(small) {
     font-size: 20px;
     line-height: 27px;
   }

@@ -3,10 +3,19 @@
 @import './_mixins';
 @import './_fonts';
 @import './_grid';
+@import "./typography";
 
 // Atoms
 @import '../../Atom/Global/Logo/logo.scss';
 @import '../../Atom/Global/Icons/icons.scss';
+@import '../../Atom/Base-typography/Abbr/abbr.scss';
+@import '../../Atom/Base-typography/Blockquote/blockquote.scss';
+@import '../../Atom/Base-typography/Cite/cite.scss';
+@import '../../Atom/Base-typography/Code/code.scss';
+@import '../../Atom/Base-typography/Link/link.scss';
+@import '../../Atom/Base-typography/Mark/mark.scss';
+@import '../../Atom/Base-typography/Quotation/quotation.scss';
+@import '../../Atom/Base-typography/Small/small.scss';
 @import '../../Atom/Global/Color/color.scss';
 
 // Reach Elemets Atoms

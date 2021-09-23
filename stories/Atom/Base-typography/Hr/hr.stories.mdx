@@ -1,0 +1,42 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Hr } from './hr';
+
+<Meta title="Atoms/Base Typography/Hr" component={Hr} />
+
+<style>{`
+  div#story--atoms-base-typography-hr--hr {
+    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
+    box-sizing: inherit;
+    width: 100%;
+    padding: 10px;
+  }
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }  
+`}</style>
+
+# Hr Component
+The Hr component defines a thematic break in an HTML page (e.g. a shift of topic).
+<ul>
+  <li>We can use the <code>hr tag</code> in any component to display the horizontal break.</li>
+</ul>
+
+Typographic scale when using hr in text component:
+
+<Story name="Hr">
+  {(args, { globals: { locale } }) => {
+    return <Hr></Hr>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+  <ul>
+  <li>Include the common SCSS file like normalize, variables, mixins from the folder <code>assets/scss</code></li>
+  <li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+</ul>

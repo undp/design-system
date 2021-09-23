@@ -1,0 +1,55 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Blockquote } from './blockquote';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: '“Blockquote lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices.”'}; return engText;
+    case 'arabic': const arabicText = {detail: '"Blockquote "و ألم الإنترنت نفسه الأريكة الانتقامية'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: '“ Blockquote သည်အင်တာနက်ကိုယ်တိုင်၏နာကျင်မှုဖြစ်သည် လက်စားချေရသေးတယ်"'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: '"「Blockquoteはインターネット自体の苦痛です復讐に燃えるソファ"'}; return japaneseText;
+    default:
+      return {detail: '“Blockquote lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices.”'};
+  }
+};
+
+<Meta title="Atoms/Base Typography/Blockquote" component={Blockquote} />
+
+<style>{`
+  div#story--atoms-base-typography-blockquote--blockquote {
+    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
+    box-sizing: inherit;
+    width: 100%;
+    padding: 10px;
+  }
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+`}</style>
+
+# Blockquote Component
+The Blockquote component specifies a section that is quoted from another source.
+<ul>
+  <li>We can use <code>blockquote</code> in any component to render the text found within the <code>blockquote tag</code> as indented text</li>
+</ul>
+
+Typographic scale when using blockquote in text component:
+
+<Story name="Blockquote">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Blockquote text={caption.detail} ></Blockquote>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Include the common SCSS file like normalize, variables, mixins from the folder <code>assets/scss</code></li>
+  <li>Component wise SCSS file residing in each component<code>blockquote.scss</code></li>
+  <li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+</ul>

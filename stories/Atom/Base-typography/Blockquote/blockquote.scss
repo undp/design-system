@@ -1,0 +1,14 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+
+blockquote {
+  font-family: $Font-Family-ProximaRegular;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 30px;
+  @include devicebreak(small) {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}

@@ -1,0 +1,9 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+
+mark {
+    @extend %paragragh-font-20;
+    background: $color-light-yellow;
+    padding: 2px;
+}
