@@ -33,6 +33,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -426,6 +429,13 @@ cite {
 
 table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes loader-animation {
@@ -3378,6 +3388,13 @@ table tr td {
   border-bottom: 1px solid #D4D6D8;
 }
 
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @keyframes loader-animation {
   0% {
     -webkit-transform: rotate(0deg);
@@ -3449,6 +3466,13 @@ cite {
 
 table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes loader-animation {
@@ -3533,6 +3557,13 @@ table tr td {
   border-bottom: 1px solid #D4D6D8;
 }
 
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @keyframes loader-animation {
   0% {
     -webkit-transform: rotate(0deg);
@@ -3603,6 +3634,13 @@ cite {
 
 table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes loader-animation {
@@ -3676,6 +3714,13 @@ cite {
 
 table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes loader-animation {
@@ -3752,6 +3797,13 @@ table tr td {
   border-bottom: 1px solid #D4D6D8;
 }
 
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @keyframes loader-animation {
   0% {
     -webkit-transform: rotate(0deg);
@@ -3823,6 +3875,13 @@ cite {
 
 table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes loader-animation {
@@ -3897,6 +3956,13 @@ table tr td {
   border-bottom: 1px solid #D4D6D8;
 }
 
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @keyframes loader-animation {
   0% {
     -webkit-transform: rotate(0deg);
@@ -3963,6 +4029,13 @@ cite {
 
 table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes loader-animation {
@@ -4233,6 +4306,8 @@ table tr td {
 
 /* variables start */
 /* variables end */
+/* variables start */
+/* variables end */
 small {
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
@@ -4286,6 +4361,137 @@ cite {
 
 table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* mixing  end */
+/* author big image */
+.author__img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+/* author small image */
+.author__img--small {
+  width: 80px;
+  height: 80px;
+}
+
+/* author large image */
+.author__img--large {
+  width: 180px;
+  height: 180px;
+}
+
+/* img */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* variables start */
+/* variables end */
+/* credit image*/
+.image--author {
+  margin-bottom: 10px;
+}
+
+.author__caption {
+  display: block;
+  letter-spacing: 0;
+  color: #000;
+  line-height: 19.25px;
+  font-size: 14px;
+  font-family: "Nunito Sans", sans-serif;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .author__caption {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.author--name {
+  font-weight: 700;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* variables start */
+/* variables end */
+small {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  small {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+details p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  details p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+table tr td, table tr th, details summary, abbr[title], code, a, mark, q {
+  font-size: 16px;
+  line-height: 22px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  table tr td, table tr th, details summary, abbr[title], code, a, mark, q {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+cite {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  cite {
+    font-size: 24px;
+    line-height: 27px;
+  }
+}
+
+table tr td {
+  border-bottom: 1px solid #D4D6D8;
+}
+
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes loader-animation {
@@ -4593,6 +4799,13 @@ cite {
 
 table tr td {
   border-bottom: 1px solid #D4D6D8;
+}
+
+.author__img img {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes loader-animation {

@@ -1,0 +1,25 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/breakpoints";
+
+/* credit image*/
+.image--author {
+    margin-bottom: 10px;
+}
+
+.author__caption {
+    display: block;
+    letter-spacing: 0;
+    color: $color-black;
+    line-height: 19.25px;
+    font-size: $font-size-14;
+    font-family: $Font-Family-ProximaRegular;
+    @include devicebreak(small) {
+        font-size: $font-size-16;
+        line-height: 22px;
+    }
+}
+
+.author--name {
+    font-weight: 700;
+    font-family: $Font-Family-ProximaRegular;
+}
