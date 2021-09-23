@@ -1,0 +1,71 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/breakpoints";
+
+/* image caption */
+.image-caption {
+    display: block;
+    border-bottom: 2px solid $color-black;
+    @include devicebreak(small) {
+        display: flex;
+        padding-bottom: 25px;
+    }
+    .image__caption__para {
+        padding-right: 0px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid $color-gray-500;
+        @include devicebreak(small) {
+            margin: 0;
+            border: 0;
+            padding-bottom: 0;
+            padding-right: 20px;
+        }
+        p {
+            font-weight: 400;
+            margin-bottom: 0;
+            letter-spacing: 0em;
+            line-height: 19.25px;
+            color: $color-gray-600;
+            font-size: $font-size-14;
+            @include devicebreak(small) {
+                font-size: $font-size-16;
+                line-height: 22px;
+            }
+        }
+    }
+    .image--author {
+        flex-shrink: 0;
+        position: relative;
+        margin-bottom: 15px;
+        @include devicebreak(small) {
+            padding-left: 40px;
+        }
+        &:before {
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0px;
+            height: 45px;
+            position: absolute;
+            background-color: $color-gray-500;
+            @include devicebreak(small) {
+                width: 1px;
+            }
+        }
+        @include devicebreak(small) {
+            margin-bottom: 0;
+        }
+    }
+    .author__caption {
+        display: inline-block;
+        @include devicebreak(small) {
+            display: block;
+        }
+    }
+    .author--label {
+        margin-right: 5px;
+        @include devicebreak(small) {
+            margin-right: 0;
+        }
+    }
+}

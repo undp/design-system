@@ -36,6 +36,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -4851,5 +4852,99 @@ table tr td {
 }
 
 /* table tag end */
+/* variables start */
+/* variables end */
+/* image caption */
+.image-caption {
+  display: block;
+  border-bottom: 2px solid #000;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .image-caption {
+    display: flex;
+    padding-bottom: 25px;
+  }
+}
+.image-caption .image__caption__para {
+  padding-right: 0px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #A9B1B7;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .image-caption .image__caption__para {
+    margin: 0;
+    border: 0;
+    padding-bottom: 0;
+    padding-right: 20px;
+  }
+}
+.image-caption .image__caption__para p {
+  font-weight: 400;
+  margin-bottom: 0;
+  letter-spacing: 0em;
+  line-height: 19.25px;
+  color: #55606E;
+  font-size: 14px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .image-caption .image__caption__para p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+.image-caption .image--author {
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: 15px;
+  /* small design */
+  /* small design */
+}
+@media (min-width: 48em) {
+  .image-caption .image--author {
+    padding-left: 40px;
+  }
+}
+.image-caption .image--author:before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 45px;
+  position: absolute;
+  background-color: #A9B1B7;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .image-caption .image--author:before {
+    width: 1px;
+  }
+}
+@media (min-width: 48em) {
+  .image-caption .image--author {
+    margin-bottom: 0;
+  }
+}
+.image-caption .author__caption {
+  display: inline-block;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .image-caption .author__caption {
+    display: block;
+  }
+}
+.image-caption .author--label {
+  margin-right: 5px;
+  /* small design */
+}
+@media (min-width: 48em) {
+  .image-caption .author--label {
+    margin-right: 0;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
