@@ -1,0 +1,36 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Spacing } from './spacing';
+
+<Meta title="Atoms/Spacing" component={Spacing} />
+
+<style>{`
+  div#story--atoms-spacing--spacing {
+    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
+    box-sizing: inherit;
+  }
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }  
+`}</style>
+
+# Spacing Component
+Space units create visual rhythm and balance.
+
+The following units can be applied to margin or padding properties, vertically or horizontally.
+
+<Story name="Spacing">
+  return <Spacing></Spacing>;
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Include the common SCSS file like normalize, variables, mixins from the folder <code>assets/scss</code></li>
+  <li>Component wise SCSS file residing in each component<code>spacing.scss</code></li>
+  <li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+</ul>
