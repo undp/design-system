@@ -1,0 +1,66 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/breakpoints";
+
+/* image caption */
+.image-caption {
+    display: block;
+    border-bottom: 2px solid #000000;
+    @include devicebreak(large) {
+        display: flex;
+        padding-bottom: 25px;
+    }
+    .image-caption-para {
+        padding-right: 0px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #A9B1B7;
+        @include devicebreak(large) {
+            padding-right: 20px;
+            border: 0;
+            margin: 0;
+            padding-bottom: 0;
+        }
+        div p {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 19.25px;
+            letter-spacing: 0em;
+            color: #55606E;
+            margin-bottom: 0;
+            @include devicebreak(large) {
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+    }
+    .author__caption {
+        position: relative;
+        flex-shrink: 0;
+        @include devicebreak(large) {
+            padding-left: 40px;
+        }
+        &:before {
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0px;
+            height: 45px;
+            position: absolute;
+            background-color: #A9B1B7;
+            @include devicebreak(large) {
+                width: 1px;
+            }
+        }
+        .credit--image-author {
+            display: flex;
+            margin-bottom: 15px;
+            @include devicebreak(large) {
+                display: block;
+                margin-bottom: 0;
+            }
+            span {
+                margin-right: 2px;
+            }
+        }
+    }
+}

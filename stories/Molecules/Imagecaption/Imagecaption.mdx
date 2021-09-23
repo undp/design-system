@@ -1,0 +1,48 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Imagecaption } from './Imagecaption';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {label: 'UNDP/Angola', name: 'Jerome Bell', paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.'}; return engText;
+    case 'arabic': const arabicText = {label: 'برنامج الأمم المتحدة الإنمائي / أنغولا', name: 'جيروم بيل' paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.}; return arabicText;
+    case 'burmese': const burmeseText = {label: 'UNDP/အန်ဂိုလာ', name: 'ဂျရုမ်း ဘဲလ်' paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.}; return burmeseText;
+    case 'japanese': const japaneseText = {label: 'UNDP /アンゴラ', name: 'ジェロームベル' paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.}; return japaneseText;
+    default:
+      return {label: 'UNDP/Angola', name: 'Jerome Bell', paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus. '};
+  }
+};
+
+<Meta title="Molecules/Imagecaption" />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+`}</style>
+
+# Image Caption + Credit Component
+Image Caption + Credit component used for the image caption include: paragraph and image author name.
+
+<Story name="Imagecaption">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Imagecaption label={caption.detail} name={caption.name} paragraph={caption.paragraph}></Imagecaption>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Component wise SCSS file residing in each component <code>imagecaption.scss</code>.</li>
+<li>Include the Compiled CSS file from the <code>assets/css/style.css</code>.</li>
+<li>We can use the <code>Image Caption + Credit</code> in the any component by import the <code>Image Caption atom</code> in the required code.</li>
+</ul>
