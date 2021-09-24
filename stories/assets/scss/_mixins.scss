@@ -85,6 +85,16 @@
   }
 }
 
+%checbox-radio-before{
+  left: 0;
+  top: 2px;
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border: 2px solid $color-dark-red;
+}
+
 //loader animation
 @mixin loader {
   animation: loader-animation 2s linear infinite;
