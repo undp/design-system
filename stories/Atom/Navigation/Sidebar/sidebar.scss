@@ -1,0 +1,27 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/typography";
+
+// * Slidebar start *//
+.Sidebar_item {
+  @extend %border-bottom;
+  @extend %sidebar;
+  &:hover {
+    background-color: $color-gray-200;
+  }
+  &.open {
+    .arrow {
+      transform: rotateZ(180deg);
+      transition: all 0.1s ease;
+    }
+  }
+  h6 {
+    margin-bottom: 0;
+  }
+  &--Selected {
+   @extend %sidebar-selected;
+  }
+}
+
+// * Slidebar end *//
