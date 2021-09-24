@@ -58,6 +58,33 @@
   object-fit: cover;
 }
 
+%border-none {
+  border: none;
+}
+
+%sidebar {
+  position: relative;
+  padding: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include devicebreak(small) {
+    padding: 24px;
+  }
+}
+
+%sidebar-selected {
+  background-color: $color-blue-600;
+  h6 {
+    color: $color-white;
+  }
+  &:hover {
+    background-color: $color-blue-600;
+  }
+}
+
 //loader animation
 @mixin loader {
   animation: loader-animation 2s linear infinite;
