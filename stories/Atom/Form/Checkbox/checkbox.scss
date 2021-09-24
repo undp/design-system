@@ -1,0 +1,35 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/breakpoints";
+
+/* checkbox */
+.checkbox-wrapper {
+    position: relative;
+    padding-left: 20px;
+    display: inline-block;
+    input[type=checkbox] {
+        top: 2px;
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        position: absolute;
+        &:hover + label::before {
+            border-color: $color-light-pink;
+        }
+        & + label {
+            cursor: pointer;
+            &:hover::before {
+                border-color: $color-light-pink;
+            }
+            &::before {
+                @extend %checbox-radio-before;
+            }
+        }
+        &:checked + label::before {
+            background-image: url(#{$img-path-Icon}icon-check.svg);
+        }
+    }
+}
