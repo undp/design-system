@@ -6,3 +6,5 @@ yarn-error.log
 /vendor
 /.github
 /storybook-static
+/stories/assets/css/style.css
+/stories/assets/css/style.css.map
