@@ -1,0 +1,22 @@
+@import "../../../assets/scss/mixins";
+
+/* card_thumbnail__image start */
+.card_thumbnail__image {
+  position: relative;
+  display: inline-flex;
+  &::before {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    position: absolute;
+    @extend %img-hover-effect;
+  }
+  &:hover {
+    &::before {
+      opacity: 0.75;
+    }
+  }
+}
+/* card_thumbnail__image end */
