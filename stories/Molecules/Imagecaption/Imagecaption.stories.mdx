@@ -1,0 +1,51 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Imagecaption } from './Imagecaption';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {label: 'UNDP/Angola', name: 'Jerome Bell', paragraph: 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations.'}; return engText;
+    case 'arabic': const arabicText = {label: 'برنامج الأمم المتحدة الإنمائي / أنغولا', name: 'جيروم بيل', paragraph: 'برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. يعزز التعاون الفني والاستثماري بين الدول.'}; return arabicText;
+    case 'burmese': const burmeseText = {label: 'UNDP/အန်ဂိုလာ', name: 'ဂျရုမ်း ဘဲလ်', paragraph: 'ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးသည်'}; return burmeseText;
+    case 'japanese': const japaneseText = {label: 'UNDP /アンゴラ', name: 'ジェロームベル', paragraph: '国連開発計画は、国連のグローバルな開発ネットワークです。 国家間の技術協力と投資協力を促進します'}; return japaneseText;
+    default:
+      return {label: 'UNDP/Angola', name: 'Jerome Bell', paragraph: 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations.'};
+  }
+};
+
+<Meta title="Molecules/Imagecaption" />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+`}</style>
+
+# Image Caption + Credit Component
+Image Caption + Credit component used to show the image caption and who posted content in a related page.
+
+<Story name="Imagecaption">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Imagecaption label={caption.label} name={caption.name} paragraph={caption.paragraph}></Imagecaption>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>imagecaption.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
