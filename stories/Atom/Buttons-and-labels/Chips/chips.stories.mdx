@@ -1,0 +1,58 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Chips } from './chips';
+import { Chipscross } from './chips_cross';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: 'Label'}; return engText;
+    case 'arabic': const arabicText = {detail: 'ملصق'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'တံဆိပ်'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: 'ラベル'}; return japaneseText;
+    default:
+      return {detail: 'Label'};
+  }
+};
+
+<Meta title="Atoms/Buttons/Chips" component={Chips} />
+
+<style>{`
+  div#story--atoms-buttons-chips--chip {
+    margin-bottom: 30px;
+  }
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+`}</style>
+
+# Chips Component
+Chips are compact elements that allow users to enter information, select a choice, filter content, or trigger an action.
+
+<Story name="Chip">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Chips label={caption.detail} ></Chips>;
+  }}
+</Story>
+
+<Story name="Chip-cross">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Chipscross label={caption.detail} ></Chipscross>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
+  <li>Component SCSS file:<code>chips.scss</code></li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
