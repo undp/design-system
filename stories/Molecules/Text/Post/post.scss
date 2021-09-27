@@ -1,0 +1,11 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/typography";
+
+.post-wrapper {
+  h2 {
+    margin-bottom: 20px;
+  }
+  h5 {
+    color: $color-gray-600;
+  }
+}

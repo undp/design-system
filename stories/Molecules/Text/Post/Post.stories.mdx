@@ -1,0 +1,73 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Post } from './Post'
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {header: 'Moyamba and Pujehun Districts score joint UNDP, WFP-supported project 80% for Peacebuilding Project’s Success amidst COVID-19', country: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquet consequat vulputate.', description: 'Posted 27 January, 2021'}; return engText;
+    case 'arabic': const arabicText = {header: 'مقاطعتا مويامبا وبوجيهون تحصلان على 80٪ من مشروع مشترك بين برنامج الأمم المتحدة الإنمائي وبرنامج الأغذية العالمي لنجاح مشروع بناء السلام وسط COVID-19', country: 'يشير النص الوهمي إلى أجزاء المحتوى المستخدمة لملء نموذج موقع الويب.', description: 'تم النشر في 27 كانون الثاني (يناير) 2021'}; return arabicText;
+    case 'burmese': const burmeseText = {header: 'Moyamba နှင့် Pujehun ခရိုင်များသည် COVID-19 ကာလအတွင်းငြိမ်းချမ်းရေးတည်ဆောက်မှုစီမံကိန်းအောင်မြင်ရေးအတွက် UNDP နှင့် WFP ထောက်ပံ့ပေးသောစီမံကိန်း ၈၀% ပူးတွဲရမှတ်', country: 'Dummy စာသားသည် ၀ က်ဘ်ဆိုက်၏လှောင်ပြောင်မှုကိုဖြည့်ရန်အသုံးပြုသောအကြောင်းအရာအနည်းငယ်ကိုရည်ညွှန်းသည်။', description: 'ဇန်နဝါရီ ၂၇၊ ၂၀၂၁ တွင်တင်ခဲ့သည်'}; return burmeseText;
+    case 'japanese': const japaneseText = {header: 'モヤンバ地区とプジェフン地区は、COVID-19の中で平和構築プロジェクトが成功したことで、UNDPとWFPが支援する共同プロジェクトの80％を獲得しました。', country: 'ダミーテキストとは、Webサイトのモックアップを埋めるために使用されるコンテンツの一部を指します。', description: '2021年1月27日投稿'}; return japaneseText;
+    default:
+      return {header: 'Moyamba and Pujehun Districts score joint UNDP, WFP-supported project 80% for Peacebuilding Project’s Success amidst COVID-19', country: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquet consequat vulputate.', description: 'Posted 27 January, 2021'};
+  }
+};
+
+<Meta title="Molecules/Text/Post Block" component={Post} />
+
+<style>{`
+  .sbdocs-h1 {
+    font-weight: 700;
+  }
+  .subheading {
+    font-weight: 500;
+    font-size: 22px;
+    color: #161616;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .high {
+    font-weight: 500;
+    font-size: 14px;
+    color: #161616;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .docblock-code-toggle {
+    display: none;
+  }
+`}</style>
+
+# Post Title Block 
+
+The post Block Component defines a section of information data with some items - Header title, Date,  Description. <code>H2</code> <code>H5</code> <code>H6</code>  Atoms tags are used for creating this section.
+
+<ul>
+<li>It,s divided into two variations - First with Description option and Second is without description option.</li>
+</ul>
+
+<Story name="Post Block with Description">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Post headerText={caption.header} countryText={caption.country} descriptionText={caption.description}></Post>;
+  }}
+</Story>
+
+<Story name="Post Block without Description">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Post headerText={caption.header} descriptionText={caption.description}></Post>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>post.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
