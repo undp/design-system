@@ -89,11 +89,13 @@ return dummy.data
 `}</style>
 
 # List component
-List component allow to group a set of related items in lists.
-.
+Lists consist of related items grouped together.
 
 <div className="subheading">Unordered List</div>
-<p>An unordered list starts with the <code>ul</code>tag. Each list item starts with the <code>li</code> tag. The list items will be marked with bullets (small black circles) by default.</p>
+<p>An unordered list is used if there is no hierarchy required. Unordered lists start with a bullet.</p>
+<p>Start an unordered list with the <code>u1</code> tag.</p>
+<p>Add a <code>li</code> tag for each list item</p>
+<p>E.g</p>
 
 <Story name="Unordertag">
   {(args, { globals: { locale } }) => {
@@ -103,7 +105,9 @@ List component allow to group a set of related items in lists.
 </Story>
 
 <div className="subheading">Ordered List</div>
-<p>An ordered list starts with the <code>ol</code> tag. Each list item starts with the <code>li</code> tag. The list items will be marked with numbers by default.</p>
+<p>An ordered list is used if there is a relation/hierarchy between list items. Ordered list items begin with a number generally.</p>
+<p>Start an ordered list with the <code>o1</code> tag.</p>
+<p>Add a <code>li</code> tag for each list item</p>
 
 <Story name="Ordertag">
   {(args, { globals: { locale } }) => {
@@ -113,7 +117,8 @@ List component allow to group a set of related items in lists.
 </Story>
 
 <div className="subheading">Description List</div>
-<p>A description list is a list of terms, with a description of each term. The <code>dl</code> tag defines the description list, the <code>dt</code> tag defines the term (name), and the <code>dd</code> tag describes each term.</p>
+<p>A description list is a list of terms, with a description of each term.</p>
+<p>The <code>dl</code> tag defines the description list, the <code>dt</code> tag defines the term (name), and the <code>dd</code> tag describes each term.</p>
 
 <Story name="Descriptiontag">
   {(args, { globals: { locale } }) => {
@@ -124,8 +129,10 @@ List component allow to group a set of related items in lists.
 
 <div className="subheading">Usage</div>
 <ul>
-<li>We can take HTML from the HTML tab in the canvas tab</li>
-<li>Include the common SCSS file like normalize, variables from the folder <code>assets/scss</code></li>
-<li>Component wise SCSS file residing in each component <code>lists.scss</code></li>
-<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+<li>Take HTML from the HTML tab in canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>lists.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
 </ul>

@@ -24,6 +24,8 @@ import { Iconarrowleft} from './arrow_left'
 import { Iconarrowleftexpand} from './arrow_left_expand'
 import { Iconexternallink} from './external_link'
 import { Icondownload} from './download'
+import { Iconschevronrightblack } from './chevron_right_black'
+import { Iconschevronrightwhite } from './chevron_right_white'
 
 <Meta title="Atoms/Icons"  />
 
@@ -171,12 +173,21 @@ Use Icons that are recognizable and accompany corresponding text labels where po
 
 <Story name="Icondownload">
   return <Icondownload></Icondownload> ;
-</Story>  
+</Story>
 
+<Story name="Iconschevronrightblack">
+  return <Iconschevronrightblack></Iconschevronrightblack> ;
+</Story>
+
+<Story name="Iconschevronrightwhite">
+  return <Iconschevronrightwhite></Iconschevronrightwhite> ;
+</Story>
 <div className="subheading">Usage</div>
 <ul>
-<li>We can take HTML from the HTML tab in the canvas tab</li>
-<li>Include the common SCSS file like normalize, variables from the folder <code>assets/scss</code></li>
-<li>Component wise SCSS file residing in each component <code>icon.scss</code></li>
-<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+<li>Take HTML from the HTML tab in canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>icons.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
 </ul>

@@ -1,0 +1,32 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/breakpoints";
+
+.chips {
+  background: $color-gray-200;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: $spacing-04 $spacing-16;
+  display: inline-block;
+  a {
+    border-bottom: none;
+  }
+  &:hover {
+    background-color: $color-gray-300;
+  }
+  .chips__cross {
+    &::before {
+      position: relative;
+      top: 5px;
+      content: "";
+      width: 13px;
+      height: 20px;
+      background: url(#{$img-path-Icon}/Timesred.svg) no-repeat left;
+      margin-right: 10px;
+      display: inline-flex;
+      @include devicebreak(small) {
+        top: 3px;
+      }
+    }
+  }
+}

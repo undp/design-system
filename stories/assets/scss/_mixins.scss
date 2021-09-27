@@ -101,6 +101,48 @@
   background-image: linear-gradient( 42deg, $color-yellow, transparent 80%);
 }
 
+%button {
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: $color-white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: $Font-Family-ProximaRegular;
+  padding: $spacing-16 $spacing-24;
+  @include devicebreak(small) {
+    min-width: 168px;
+    display: inline-flex
+  }
+}
+
+%cta {
+  display: flex;
+  border: none;
+  color: black;
+  font-family: $Font-Family-ProximaRegular;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  align-items: center;
+  @include devicebreak(small) {
+    min-width: 168px;
+    display: inline-flex;
+  }
+}
+
+%ctaimg {
+  content: "";
+  width: 13px;
+  height: 20px;
+  margin-left: 14px;
+}
+
 //loader animation
 @mixin loader {
   animation: loader-animation 2s linear infinite;
