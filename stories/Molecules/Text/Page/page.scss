@@ -1,0 +1,14 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+
+.Page-title {
+  h2 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: $Font-Family-SohneBold;
+  }
+  h4 {
+    font-family: $Font-Family-ProximaLight;
+  }
+}

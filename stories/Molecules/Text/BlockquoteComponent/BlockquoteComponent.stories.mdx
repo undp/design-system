@@ -1,0 +1,85 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { BlockquoteComponent } from './BlockquoteComponent';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {blockquote: 'UNDP works in about 170 countries and territories, helping to achieve the eradication of poverty, and the reduction of inequalities and exclusion.', cite: '—Firstname Lastname'}; return engText;
+    case 'arabic': const arabicText = {blockquote: 'يعمل برنامج الأمم المتحدة الإنمائي في حوالي 170 دولة وإقليم ، للمساعدة في تحقيق القضاء على الفقر ، والحد من عدم المساواة والإقصاء.', cite: '-الاسم الاول الاسم الاخير'}; return arabicText;
+    case 'burmese': const burmeseText = {blockquote: 'UNDP သည်နိုင်ငံနှင့်နယ်မြေ ၁၇၀ ခန့်တွင်အလုပ်လုပ်ပြီးဆင်းရဲမွဲတေမှုပပျောက်ရေး၊ မညီမျှမှုများနှင့်ဖယ်ထုတ်မှုလျော့ချရန်ကူညီသည်။', cite: '—ပထမနာမည် Lastname'}; return burmeseText;
+    case 'japanese': const japaneseText = {blockquote: 'UNDPは約170の国と地域で活動しており、貧困の撲滅と不平等と排除の削減を支援しています。', cite: '—名前苗字'}; return japaneseText;
+    default:
+      return {blockquote: 'UNDP works in about 170 countries and territories, helping to achieve the eradication of poverty, and the reduction of inequalities and exclusion.', cite: '—Firstname Lastname'};
+  }
+};
+
+<Meta title="Molecules/Text/Blockquote" component={BlockquoteComponent} />
+
+<style>{`
+  .sbdocs-h1 {
+    font-weight: 700;
+  }
+  .subheading {
+    font-weight: 500;
+    font-size: 18px;
+    color: #161616;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .f14 {
+    font-weight: 500;
+    font-size: 14px;
+    color: #161616;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  .docblock-code-toggle {
+    display: none;
+  }
+`}</style>
+
+
+# Blockquote Component
+The Blockquote component indicates that the enclosed text is an extended quotation or information. It is rendered visually by a surrounding box.<code>Blockquote</code> and <code>Cite</code> atoms tags are used for creating this section.
+
+
+<Story name="Blockquote Gray">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <BlockquoteComponent blockquoteText={caption.blockquote} citeText={caption.cite} style={'Gray'}></BlockquoteComponent>;
+  }}
+</Story>
+
+<div className="subheading">Blockquote Component Yellow</div>
+<div className="f14"> It,s the same as the Blockquote Component Gary, only the background color is different. </div>
+
+<Story name="Blockquote Yellow">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <BlockquoteComponent blockquoteText={caption.blockquote} citeText={caption.cite} style={'Yellow'} ></BlockquoteComponent>;
+  }}
+</Story>
+
+<div className="subheading">Blockquote Component Default</div>
+<div className="f14">The blockquote component default styling is a little bit different, it's not showing in the box design so box padding and background color are not required in this.
+ </div>
+
+<Story name="Blockquote Default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <BlockquoteComponent blockquoteText={caption.blockquote} citeText={caption.cite} style={'Transparent'} ></BlockquoteComponent>;
+  }}
+</Story>
+
+<ArgsTable of={BlockquoteComponent} />
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>blockquotecomp.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

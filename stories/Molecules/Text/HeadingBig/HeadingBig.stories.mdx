@@ -1,0 +1,63 @@
+import { Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { HeadingBig } from './HeadingBig'
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {header: 'Our Mission', description: 'UNDP works in 170 countries and territories to eradicate poverty while protecting the planet. We help countries develop strong policies, skills, partnerships and institutions so they can sustain their progress.'}; return engText;
+    case 'arabic': const arabicText = {header: 'مهمتنا', description: 'يعمل برنامج الأمم المتحدة الإنمائي في 170 دولة وإقليم للقضاء على الفقر مع حماية كوكب الأرض. نحن نساعد البلدان على تطوير سياسات ومهارات وشراكات ومؤسسات قوية حتى تتمكن من الحفاظ على تقدمها.'}; return arabicText;
+    case 'burmese': const burmeseText = {header: 'ကျွန်ုပ်တို့၏မစ်ရှင်', description: 'UNDP သည်ကမ္ဘာနှင့်နယ်မြေ ၁၇၀ တွင်ဆင်းရဲနွမ်းပါးမှုပပျောက်ရန်ကမ္ဘာကိုကာကွယ်နေသည်။ သူတို့ရဲ့တိုးတက်မှုတွေကိုဆက်ထိန်းထားနိုင်အောင်ခိုင်မာတဲ့မူဝါဒတွေ၊ ကျွမ်းကျင်မှုတွေ၊ မိတ်ဖက်တွေ၊ အဖွဲ့အစည်းတွေတည်ဆောက်ဖို့ငါတို့ကကူညီပေးတယ်။'}; return burmeseText;
+    case 'japanese': const japaneseText = {header: '私たちの使命', description: 'UNDPは、地球を保護しながら貧困を根絶するために170の国と地域で活動しています。私たちは、各国が進歩を維持できるように、強力な政策、スキル、パートナーシップ、制度を開発するのを支援します。'}; return japaneseText;
+    default:
+      return {header: 'Our Mission', description: 'UNDP works in 170 countries and territories to eradicate poverty while protecting the planet. We help countries develop strong policies, skills, partnerships and institutions so they can sustain their progress.'};
+  }
+};
+
+<Meta title="Molecules/Text/Heading Big Block" component={HeadingBig} />
+
+<style>{`
+  .sbdocs-h1 {
+    font-weight: 700;
+  }
+  .subheading {
+    font-weight: 500;
+    font-size: 22px;
+    color: #161616;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .high {
+    font-weight: 500;
+    font-size: 14px;
+    color: #161616;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .docblock-code-toggle {
+    display: none;
+  }
+`}</style>
+
+# Heading Big Block 
+
+The Heading Block defines a section of information data with some items - Header title, Description. <code>H2</code> <code>H4</code> Atoms tags are used for creating this section.
+
+
+<Story name="Heading Big Block">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <HeadingBig headerText={caption.header} descriptionText={caption.description}></HeadingBig>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>headingbig.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

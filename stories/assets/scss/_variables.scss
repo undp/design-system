@@ -2,9 +2,6 @@
 $img-path: '../../../assets/images/';
 $img-path-Icon: '../../../assets/images/Icon/';
 
-/* variables start */
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap');
-
 // COLORS
 $color-black: #000;
 $color-white: #fff;
@@ -43,12 +40,12 @@ $font-size-16: 16px;
 $font-size-20: 20px;
 
 // FONTS FAMLIY
-$Font-Family-ProximaLight:  'Nunito Sans', sans-serif;
-$Font-Family-ProximaRegular: 'Nunito Sans', sans-serif;
-$Font-Family-ProximaSemiBold:  'Nunito Sans', sans-serif;
-$Font-Family-ProximaBold:   'Nunito Sans', sans-serif;
-$Font-Family-SohneBold: 'Nunito Sans', sans-serif;
-$Font-Family-SohneExBold: 'Nunito Sans', sans-serif;
+$Font-Family-ProximaLight:  'ProximaNova LT';
+$Font-Family-ProximaRegular: 'ProximaNova Regular';
+$Font-Family-ProximaSemiBold:  'ProximaNova SemiBold';
+$Font-Family-ProximaBold:   'ProximaNova Bold';
+$Font-Family-SohneBold: 'SohneBreit Bold';
+$Font-Family-SohneExBold: 'SohneBreit Extra Bold';
 
 // SPACING variables
 $spacing-02 : 2px;

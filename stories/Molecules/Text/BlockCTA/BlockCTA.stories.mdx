@@ -1,0 +1,63 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { BlockCTA } from './BlockCTA'
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {header: 'UNDP Hope', description: 'UNDP works in about 170 countries and territories, helping to achieve the eradication of poverty, and the reduction of inequalities and exclusion. We help countries to develop policies, leadership skills, partnering abilities, institutional capabilities and build resilience in order to sustain development results.', cta:'Read More'}; return engText;
+    case 'arabic': const arabicText = {header: 'برنامج الأمم المتحدة الإنمائي الأمل', description: 'يعمل برنامج الأمم المتحدة الإنمائي في حوالي 170 دولة وإقليم ، للمساعدة في تحقيق القضاء على الفقر ، والحد من عدم المساواة والإقصاء. نحن نساعد البلدان على تطوير السياسات ومهارات القيادة وقدرات الشراكة والقدرات المؤسسية وبناء المرونة من أجل الحفاظ على نتائج التنمية.', cta:'اقرأ أكثر'}; return arabicText;
+    case 'burmese': const burmeseText = {header: 'UNDP မျှော်လင့်ချက်', description: 'UNDP သည်နိုင်ငံနှင့်နယ်မြေ ၁၇၀ ခန့်တွင်အလုပ်လုပ်ပြီးဆင်းရဲမွဲတေမှုပပျောက်ရေး၊ မညီမျှမှုများနှင့်ဖယ်ထုတ်မှုလျော့ချရန်ကူညီသည်။ မူဝါဒများ၊ ခေါင်းဆောင်မှုအရည်အချင်းများ၊ ပူးပေါင်းလုပ်ဆောင်နိုင်မှုများ၊ အဖွဲ့အစည်းဆိုင်ရာစွမ်းရည်များနှင့်ဖွံ့ဖြိုးတိုးတက်မှုရလဒ်များကိုရေရှည်တည်တံ့စေရန်ကြံ့ကြံ့ခံတည်ဆောက်ရန်ကျွန်ုပ်တို့ကူညီသည်။', cta:'ပိုပြီးဖတ်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {header: 'UNDPの希望', description: 'UNDPは約170の国と地域で活動しており、貧困の撲滅と不平等と排除の削減を支援しています。私たちは、開発成果を維持するために、各国が政策、リーダーシップスキル、パートナー能力、制度的能力を開発し、レジリエンスを構築するのを支援します。', cta:'続きを読む'}; return japaneseText;
+    default:
+      return {header: 'UNDP Hope', description: 'UNDP works in about 170 countries and territories, helping to achieve the eradication of poverty, and the reduction of inequalities and exclusion. We help countries to develop policies, leadership skills, partnering abilities, institutional capabilities and build resilience in order to sustain development results.', cta:'Read More'};
+  }
+};
+
+<Meta title="Molecules/Text/CTA Block" component={BlockCTA} />
+
+<style>{`
+  .sbdocs-h1 {
+    font-weight: 700;
+  }
+  .subheading {
+    font-weight: 500;
+    font-size: 22px;
+    color: #161616;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .subheading-2 {
+    font-weight: 500;
+    font-size: 14px;
+    color: #161616;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .docblock-code-toggle {
+    display: none;
+  }
+`}</style>
+
+# CTA Block Component
+
+CTA Block Component defines a section of information data with some items - Header title, Description. <code>H4</code> <code>P</code> Atoms tags are used for creating this section.
+
+<Story name="CTA Block">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <BlockCTA headerText={caption.header} descriptionText={caption.description} ctaText={caption.cta}></BlockCTA>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>blockCTA.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
