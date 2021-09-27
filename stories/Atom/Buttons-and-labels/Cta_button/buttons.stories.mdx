@@ -1,0 +1,200 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Primarybuttonarrow } from './primary_button_arrow';
+import { Primarybuttonnoarrow } from './primary_button_noarrow';
+import { Primarybtnarrowdisbled } from './primary_button_arrow_disbled';
+import { Primarybtnnoarrowdisbled } from './primary_button_noarrow_disbled';
+import { Secondarybutton } from './secondary_button';
+import { Secondarybuttondisbled } from './secondary_button_disabled';
+import { Ctaarrow } from './cta_link_arrow';
+import  { Ctaspace } from './cta_link_space';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail1: 'READ MORE', detail2: 'VIEW MORE'}; return engText;
+    case 'arabic': const arabicText = {detail1: 'اقرأ أكثر', detail2: 'عرض المزيد'}; return arabicText;
+    case 'burmese': const burmeseText = {detail1: 'ပိုပြီးဖတ်ပါ', detail2: 'နောက်ထပ်ကြည့်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail1: '続きを読む', detail2: 'vもっと見る'}; return japaneseText;
+    default:
+      return {detail1: 'READ MORE', detail2: 'VIEW MORE'};
+  }
+};
+
+<Meta title="Atoms/Buttons" component={Primarybuttonarrow} />
+
+<style>{`
+  div#story--atoms-buttons--primary-arrow, div#story--atoms-buttons--primary-arrow-disabled, div#story--atoms-buttons--primary-no-arrow, div#story--atoms-buttons--primary-no-arrow-disabled, div#story--atoms-buttons--secondary, div#story--atoms-buttons--secondary-disabled, div#story--atoms-buttons--cta-link-arrow, div#story--atoms-buttons--cta-link-space {
+    display: none;
+  }
+  .cta_wrapper {
+    display: flex;
+  }
+  .cta__label {
+    padding-right: 20px;
+  }
+  .cta__code {
+    padding-right: 16px;
+  }
+  .cta_item {
+    padding: 10px;
+  }
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+`}</style>
+
+# Buttons and CTA Component
+<ul>
+  <li>Buttons are clickable elements that are used to trigger actions. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. Button labels express what action will occur when the user interacts with it.</li>
+  <li>CTA-Button are divided into two options - Primary and Secondary cta.</li>
+</ul>
+
+we are using these modifier classes:
+<code>.button</code>, <code>.button--primary</code>, <code>.button--secondary</code>, <code>.button--arrow</code>, <code>.disabled</code>, <code>.cta__link</code>, <code>.cta--arrow</code>
+
+When using button classes on elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a role="button" to appropriately convey their purpose to assistive technologies such as screen readers.
+
+<div className="subheading"> Primary CTA </div>
+<ul>
+<li>The primary action associated have a stronger visual weight.</li>
+</ul>
+
+<div className="cta_wrapper">
+  <div className="cta_item">
+    <div className="cta__box cta-primary-exapnd-arrow"></div>
+    <div className="cta__label"> Primary cta with exapand state </div>
+    <div className="cta__code"> <Primarybuttonarrow label="READ MORE"></Primarybuttonarrow></div>
+  </div>
+  <div className="cta_item">
+    <div className="cta__box cta-primary-exapnd-arrow_disabled"></div>
+    <div className="cta__label"> Primary arrow cta exapand with disabled state </div>
+    <div className="cta__code"> <Primarybtnarrowdisbled label="READ MORE"></Primarybtnarrowdisbled></div>
+  </div>
+  <div className="cta_item">
+    <div className="cta__box cta-primary"></div>
+    <div className="cta__label"> Primary cta with default state </div>
+    <div className="cta__code"> <Primarybuttonnoarrow label="READ MORE"></Primarybuttonnoarrow></div>
+  </div>
+  <div className="cta_item">
+    <div className="cta__box cta-primary_disabled"></div>
+    <div className="cta__label"> Primary cta with disabled state </div>
+    <div className="cta__code"> <Primarybtnnoarrowdisbled label="READ MORE"></Primarybtnnoarrowdisbled></div>
+  </div>
+</div> 
+
+<div className="subheading">Secondary CTA </div>
+<ul>
+  <li>Secondary buttons are the alternative we give users to the primary action.</li>
+</ul>
+
+<div className="cta_wrapper">
+  <div className="cta_item">
+    <div className="cta__box cta-secondary"></div>
+    <div className="cta__label"> Secondary cta</div>
+    <div className="cta__code"> <Secondarybutton label="VIEW MORE"></Secondarybutton></div>
+  </div>
+  <div className="cta_item">
+    <div className="cta__box cta-primary_disabled"></div>
+    <div className="cta__label"> Secondary cta with disabled state </div>
+    <div className="cta__code"> <Secondarybuttondisbled label="VIEW MORE"></Secondarybuttondisbled></div>
+  </div>
+</div>
+
+<div className="subheading">CTA links </div>
+<ul>
+  <li>A cta link is a prompt on a website that tells the user to take some specified action.</li>
+</ul>
+
+<div className="cta_wrapper">
+  <div className="cta_item">
+    <div className="cta__box cta-link-arrow"></div>
+    <div className="cta__label">Cta link arrow expand</div>
+    <div className="cta__code"> <Ctaarrow label="READ MORE"></Ctaarrow></div>
+  </div>
+</div>
+<div className="cta_wrapper">
+  <div className="cta_item">
+    <div className="cta__box cta-link-space"></div>
+    <div className="cta__label">Cta link with space expand </div>
+    <div className="cta__code"> <Ctaspace label="READ MORE"></Ctaspace></div>
+  </div>
+</div>
+
+<Story name="Primary-arrow">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Primarybuttonarrow label={caption.detail1} ></Primarybuttonarrow>;
+  }}
+</Story>
+
+<Story name="Primary arrow-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Primarybtnarrowdisbled label={caption.detail1} ></Primarybtnarrowdisbled>;
+  }}
+</Story>
+
+<Story name="Primary-no arrow">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Primarybuttonnoarrow label={caption.detail1} ></Primarybuttonnoarrow>;
+  }}
+</Story>
+
+<Story name="Primary no arrow-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Primarybtnnoarrowdisbled label={caption.detail1} ></Primarybtnnoarrowdisbled>;
+  }}
+</Story>
+
+<Story name="Secondary">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Secondarybutton label={caption.detail2} ></Secondarybutton>;
+  }}
+</Story>
+
+<Story name="Secondary-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Secondarybuttondisbled label={caption.detail2} ></Secondarybuttondisbled>;
+  }}
+</Story>
+
+<Story name="Cta-link-arrow">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Ctaarrow label={caption.detail1} ></Ctaarrow>;
+  }}
+</Story>
+
+<Story name="Cta-link-space">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Ctaspace label={caption.detail1} ></Ctaspace>;
+  }}
+</Story>
+
+<div className="subheading">Actions</div>
+<ul>
+  <li>When an action required by the user has more than one option, always use a a negative action button (secondary) paired with a positive action button (primary) in that order.</li>
+  <li>Negative action buttons will be on the left.</li>
+  <li>Positive action buttons should be on the right.</li>
+  <li>When these two types buttons are paired in the correct order, they will automatically space themselves apart.</li>
+</ul>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
+  <li>Component SCSS file:<code>buttons.scss</code></li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
