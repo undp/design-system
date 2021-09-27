@@ -81,16 +81,15 @@ export const getCaptionForLocale = (locale) => {
 `}</style>
 
 # Color Component
-This component represents various colors that can be used in the website as per Brand guidelines. All these colors are defined as SCSS variables globally and accordingly used in all the components. 
-
+This component represents the various colors that can be used on the website as per brand guidelines. All these colors are defined as SCSS variables globally and used accordingly in all the components.
 
 <ul>
-<li>Colors are divided into two options - Primary and Accents colors.</li>
+<li>Colors are divided into <code>Primary</code> and <code>Accents</code> colors.</li>
 </ul>
 
 <div className="subheading">Primary Colors</div>
 
-Primary Colors are the base Colors of the UI, the ones that are used most frequently in the interface. it is used for brand elements and non-interactive elements. Interactive Colors are used for primary links and action items that can be clicked or touched, to emphasize important actions and highlight information in your application.
+Primary colors are the base colors of the UI, the ones that are used most frequently in the interface. They are used for brand elements and non-interactive elements. Interactive colors are used for primary links and action items that can be clicked or touched, to emphasize important actions and highlight information in your application.
 
 
 <div className="color_wrapper">
@@ -270,9 +269,11 @@ Accent colors are colors that are used for emphasis in a color scheme. These col
 
 <div className="subheading">Usage</div>
 <ul>
-<li>We can use the color by taking the color code from the Documentation, like <code>#B5D5F5</code>, below colors are defined with color code name. </li>
-<li>We can use by through variables that are is define in <code>assests/scss/variables.scss</code></li>
-<li>Include the common SCSS file like normalize, variables, mixins, breakpoints from the folder <code>assets/scss</code></li>
-<li>Component wise SCSS file residing in each component <code>color.scss</code></li>
-<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+<li>We can use any color by taking the color code from the documentation.
+e.g., <code>#B5D5F5</code>. The color code names are defined by their hex code below the color.</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>color.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
 </ul>

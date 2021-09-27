@@ -37,11 +37,11 @@ import { PnudLogowhite } from './pnud-logo-white';
 `}</style>  
 
 # UNDP Logos
-UNDP logo is available in two versions: blue, and white. Each has its own purpose and should be used appropriately, as per official branding guidelines, depending on available screen space and target audience.
+The UNDP logo is available in two versions: blue, and white. Each has its own purpose and should be used appropriately, as per official branding guidelines, depending on available screen space and target audience.
 
 <ul>
-<li>logos are used in Header and footer section component.</li>
-<li>For large devices dimensions <code>(width:60px, Height:122px)</code> and for small devices dimensions will be convert into <code>(width:60px, Height:70px)</code> </li>
+<li>Logos are generally used in the header or footer components</li>
+<li>For large devices, the dimensions are (width:60px, Height:122px) and for small devices the dimensions will be converted to (width:60px, Height:70px)</li>
 </ul>
 
 <Story name="UNDP Logo" parameters={{ backgrounds: { default: 'white'}}}>
@@ -56,9 +56,14 @@ UNDP logo is available in two versions: blue, and white. Each has its own purpos
 PNUD logo is available in two versions: blue, and white. Each has its own purpose and should be used appropriately, as per official branding guidelines, depending on available screen space and target audience.
 
 <ul>
-<li>These logos are only used for specific countries where these languages (French, Spanish, and Portuguese) are spoken.</li>
-<li>logos are used in Header and footer section component.</li>
-<li>For large devices dimensions <code>(width:60px, Height:122px)</code> and for small devices dimensions will be convert into <code>(width:60px, Height:70px)</code> </li>
+<li>These logos are only used for specific countries where the following languages are used</li>
+  <ul>
+    <li>French</li>
+    <li>Spanish</li>
+    <li>Portuguese</li>
+  </ul>
+<li>Logos are generally used in the header or footer components</li>
+<li>For large devices, the dimensions are (width:60px, Height:122px) and for small devices the dimensions will be converted to (width:60px, Height:70px)</li>
 </ul>
 
 
@@ -72,7 +77,10 @@ PNUD logo is available in two versions: blue, and white. Each has its own purpos
 
 <div className="subheading">Usage</div>
 <ul>
-<li>We can take HTML from the HTML tab in the canvas tab</li>
-<li>Component wise SCSS file residing in each component <code>logo.scss</code></li>
-<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+<li>Take HTML from the HTML tab in canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>logo.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
 </ul>
