@@ -4,8 +4,8 @@ import { Mark } from './mark';
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = {detail: 'Eos nulla molestiae'}; return engText;
-    case 'arabic': const arabicText = {detail: 'Eos nulla molestiae'}; return arabicText;
-    case 'burmese': const burmeseText = {detail: 'Eos nulla molestiae ဖြစ်သည်'}; return burmeseText;
+    case 'arabic': const arabicText = {detail: 'لا إزعاج'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'အဆင်မပြေတာမရှိဘူး'}; return burmeseText;
     case 'japanese': const japaneseText = {detail: '不快感なし'}; return japaneseText;
     default:
       return {detail: 'Eos nulla molestiae'};
@@ -47,10 +47,12 @@ Typographic scale when using mark in text component:
   }}
 </Story>
 
-<div className="subheading">Usage</div>
+T<div className="subheading">Usage</div>
 <ul>
-  <li>Include the common SCSS file like normalize, variables, mixins from the folder <code>assets/scss</code></li>
-  <li>Component wise SCSS file residing in each component<code>mark.scss</code></li>
-  <li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
-  <li>For attaching the JS library, call the function on id 'test' given in the HTML</li>
+  <li>Take HTML from the HTML tab in canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
+  <li>Component SCSS file:<code>mark.scss</code></li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
 </ul>
