@@ -3,12 +3,12 @@ import { DetailsTag } from './details'
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = {summary: 'Epcot Center', details: 'pcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.'}; return engText;
+    case 'english': const engText = {summary: 'Epcot Center', details: 'Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.'}; return engText;
     case 'arabic': const arabicText = {summary: 'مركز Epcot', details: 'pcot هي حديقة ترفيهية في Walt Disney World Resort تضم معالم جذب مثيرة وأجنحة دولية وألعاب نارية حائزة على جوائز ومناسبات موسمية خاصة.'}; return arabicText;
     case 'burmese': const burmeseText = {summary: 'Epcot စင်တာ', details: 'pcot သည်စိတ်လှုပ်ရှားဖွယ်ဆွဲဆောင်မှုများ၊ နိုင်ငံတကာမဏ္ionsပ်များ၊ ဆုရမီးရှူးမီးပန်းများနှင့်ရာသီအလိုက်အထူးအစီအစဉ်များပါ ၀ င်သော Walt Disney World Resort တွင်အဓိကပန်းခြံဖြစ်သည်။'}; return burmeseText;
     case 'japanese': const japaneseText = {summary: 'エプコットセンター', details: 'pcotは、エキサイティングなアトラクション、国際的なパビリオン、受賞歴のある花火、季節の特別イベントを備えたウォルトディズニーワールドリゾートのテーマパークです。'}; return japaneseText;
     default:
-      return {summary: 'Epcot Center', details: 'pcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.'};
+      return {summary: 'Epcot Center', details: 'Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.'};
   }
 };
 
@@ -26,7 +26,7 @@ export const getCaptionForLocale = (locale) => {
   }  
 `}</style>
 
-# Details Tag Component
+# Details Component
 
 The details tag creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.
 
@@ -39,8 +39,10 @@ The details tag creates a disclosure widget in which information is visible only
 
 <div className="subheading">Usage</div>
 <ul>
-<li>We can take HTML from the HTML tab in the canvas tab</li>
-<li>Include the common SCSS file like normalize, variables, mixins, breakpoints from the folder <code>assets/scss</code></li>
-<li>Component wise SCSS file residing in each component <code>details.scss</code></li>
-<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
+<li>Take HTML from the HTML tab in canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>details.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
 </ul>
