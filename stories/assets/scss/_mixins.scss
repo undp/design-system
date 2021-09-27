@@ -95,6 +95,12 @@
   border: 2px solid $color-dark-red;
 }
 
+%img-hover-effect {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background-image: linear-gradient( 42deg, $color-yellow, transparent 80%);
+}
+
 //loader animation
 @mixin loader {
   animation: loader-animation 2s linear infinite;

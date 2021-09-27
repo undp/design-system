@@ -1,0 +1,40 @@
+@import "../../../assets/scss/mixins";
+
+/* publication_thumbnail */
+.publication_thumbnail__image {
+  padding: 35px 47px;
+  display: inline-flex;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient( 180deg,#c9d0d6 70%, #c9d0d6 0, #414648 70.5%, #9ea5ac 0, #9ea5ac);
+  &::before {
+    content: "";
+    left: 32px;
+    z-index: -2;
+    right: 20px;
+    height: 27px;
+    bottom: 37px;
+    filter: blur(4px);
+    border-radius: 21%;
+    position: absolute;
+    transform: skewX(64deg);
+    background: #7b8085;
+    width: calc(100% - 100px);
+  }
+  &::after {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    position: absolute;
+    z-index: 99;
+    @extend %img-hover-effect;
+  }
+  &:hover {
+    &::after {
+      opacity: 0.75;
+    }
+  }
+}
+/* publication thumbnail end*/
