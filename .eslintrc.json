@@ -1,0 +1,33 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": [
+		"plugin:react/recommended",
+		"airbnb",
+		"plugin:mdx/recommended"	
+	],
+	"parserOptions": {
+		"ecmaFeatures": {
+				"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
+	"plugins": [
+		"react",
+		"spellcheck"
+	],
+	"rules": {
+		"spellcheck/spell-checker": ["warn"]
+	},
+	"settings": {
+		"mdx/code-blocks": true
+	},
+	"overrides": [
+		{
+			"files": ["stories/**/*.jsx", "stories/**/*.mdx"]
+		}
+	]
+}
