@@ -1,0 +1,145 @@
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/breakpoints";
+@import "../../assets/scss/variables";
+
+.label__caption,
+.help__caption,
+.error__caption {
+  @extend %paragragh-font-20;
+}
+.help__caption {
+  font-size: 14px;
+}
+.error__caption {
+  font-size: 16px;
+  color: $color-red;
+}
+
+.input-group {
+  .field__image {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    &.search {
+      &:before {
+        @extend %field__image;
+        content: "";
+        background-image: url(#{$img-path-Iconback}/Search_black.svg);
+      }
+      &.disabledstate {
+        &:before {
+          content: "";
+          background-image: url(#{$img-path-Iconback}/Searchgray.svg);
+        }
+      }
+    }
+  }
+  .field__setdate {
+    position: relative;
+  }
+  .input-type {
+    margin: $spacing-08 0;
+    border: 2px solid $color-black;
+    font-size: 16px;
+    width: 100%;
+    height: 46px;
+    padding-left:10px;
+    box-sizing: border-box;
+    &::placeholder {
+      color: $color-gray-500;
+    }
+    &.textarea-field {
+      @include devicebreak(small) {
+        padding-top: 15px;
+      }
+    }
+    &.search-field {
+      padding-left: 35px;
+      position: relative;
+    }
+    &.focusstate {
+      &:focus {
+        box-shadow: 0px 0px 4px #0468b1;
+      }
+    }
+    &.errorstate {
+      border: 2px solid $color-red;
+    }
+    &.disabledstate {
+      border: 2px solid $color-gray-400;
+      &::placeholder {
+        color: $color-gray-400;
+      }
+    }
+    &.date-field {
+      background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat left 15px bottom 12px;
+      padding-left: 40px;
+      &.disabledstate {
+        background: url(#{$img-path-Iconback}/datedisabled.svg) no-repeat left 15px bottom 12px;
+        padding-left: 40px;
+      }
+    }
+  }
+  .help__message {
+    &.disabledstate {
+      .help__caption {
+        color: $color-gray-400;
+      }
+    }
+  }
+  .label__message {
+    &.disabledstate {
+      .label__caption {
+        color: $color-gray-400;
+      }
+    }
+  }
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: -12px;
+  opacity: 0;
+  -webkit-appearance: none;
+}
+input::-webkit-datetime-edit {
+  position: relative;
+  left: 0;
+}
+input::-webkit-datetime-edit-fields-wrapper {
+  position: relative;
+  left: 0;
+}
+input[type="date"]:invalid::-webkit-datetime-edit {
+  color: $color-gray-500;
+}
+
+[dir="rtl"] {
+  .input-group {
+    .input-type {
+      &.search-field {
+        padding-right: 35px;
+      }
+      &.date-field {
+        background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat;
+        background-position: right 4px bottom 16px;
+        &.disabledstate {
+          background: url(#{$img-path-Iconback}/datedisabled.svg) no-repeat;
+          background-position: right 4px bottom 16px;
+        }
+      }
+    }
+  }
+  .search {
+    &:before {
+      @extend %field__image;
+      left: 0;
+      right: 10px;
+      content: "";
+      background-image: url(#{$img-path-Iconback}/Search_black.svg);
+    }
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 3px;
+  }
+}
