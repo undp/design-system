@@ -1,0 +1,501 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Textcomponent } from './text_input';
+import { Searchcomponent } from './search_input';
+import { Numbercomponent } from './number_input';
+import { Passwordcomponent } from './password_input';
+import { Telcomponent } from './tel_input';
+import { Textareacomponent } from './textarea_input';
+import { Datecomponent } from './date_input'
+import { Label_caption } from './label';
+import { Help_caption } from './help';
+import { Error_caption } from './error';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail1: 'Form Label:', detail2: '*Error: this field is required', detail3: 'Search', detail4:'Enter search term', detail5: 'Number of projects', detail6: 'Create password', detail7: 'Password', detail8: '8 characters minimum', detail9: 'Phone number', detail10: 'Brief description', text: 'Date label', text2: 'Enter text', text3: 'Placeholder'}; return engText;
+    case 'arabic': const arabicText = {detail1: 'تسمية النموذج:', detail2: '* خطأ: هذا الحقل مطلوب', detail3: 'بحث', detail4: 'أدخل مصطلح البحث', detail5:'عدد المشاريع', detail6: 'أنشئ كلمة مرور', detail7: 'كلمه السر', detail8: '8 أحرف كحد أدنى', detail9: 'رقم الهاتف', detail10: 'وصف مختصر', text: 'تسمية التاريخ', text2: 'أدخل النص', text3: 'نائب'}; return arabicText;
+    case 'burmese': const burmeseText = {detail1: 'ပုံစံတံဆိပ်:',detail2: '*အမှား - ဤအကွက်လိုအပ်သည်', detail3: 'ရှာဖွေပါ', detail4: 'ရှာဖွေရေးစာလုံးရိုက်ထည့်ပါ', detail5:'စီမံကိန်းအရေအတွက်', detail6: 'စကားဝှက်ဖန်တီးပါ', detail7: 'စကားဝှက်', detail8: 'အနည်းဆုံးစာလုံး ၈ လုံး', detail9: 'ဖုန်းနံပါတ်', detail10: 'အကျဉ်းချုပ်ဖော်ပြချက်', text: 'ရက်စွဲတံဆိပ်', text2: 'စာသားရိုက်ထည့်ပါ', text3: 'နေရာယူသည်'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail1: 'フォームラベル：', detail2: '*エラー：このフィールドは必須です', detail3: '検索', detail4: '検索語を入力してください', detail5:'プロジェクト数', detail6: 'パスワードを作成する', detail7: 'パスワード', detail8: '最小8文字', detail9: '電話番号', detail10: '簡単な説明', text: '日付ラベル', text2: 'テキストを入力してください', text3: 'プレースホルダー'}; return japaneseText;
+    default:
+      return {detail1: 'Form Label:',detail2: '*Error: this field is required', detail3: 'Search', detail4: 'Enter search term', detail5: 'Number of projects', detail6: 'Create password', detail7: 'Password', detail8: '8 characters minimum', detail9: 'Phone number', detail10: 'Brief description', text: 'Date label', text2: 'Enter text', text3: 'Placeholder'};
+  }
+};
+
+<Meta title="Atoms/Input group" component={Textcomponent} />
+
+<style>{`
+  #story--atoms-input-group--textcomponent-default, #story--atoms-input-group--textcomponent-focus, #story--atoms-input-group--textcomponent-error, #story--atoms-input-group--textcomponent-disabled, #story--atoms-input-group--searchcomponent-default, #story--atoms-input-group--searchcomponent-focus, #story--atoms-input-group--searchcomponent-error, #story--atoms-input-group--searchcomponent-disabled, #story--atoms-input-group--numbercomponent-default, #story--atoms-input-group--numbercomponent-error, #story--atoms-input-group--numbercomponent-focus, #story--atoms-input-group--numbercomponent-error, #story--atoms-input-group--numbercomponent-disabled, #story--atoms-input-group--passwordcomponent-default, #story--atoms-input-group--passwordcomponent-focus, #story--atoms-input-group--passwordcomponent-error, #story--atoms-input-group--passwordcomponent-disabled, #story--atoms-input-group--telcomponent-default, #story--atoms-input-group--telcomponent-focus, #story--atoms-input-group--telcomponent-error, #story--atoms-input-group--telcomponent-disabled, #story--atoms-input-group--datecomponent-default, #story--atoms-input-group--datecomponent-focus, #story--atoms-input-group--datecomponent-error, #story--atoms-input-group--datecomponent-disabled, #story--atoms-input-group--textareacomponent-default, #story--atoms-input-group--textareacomponent-focus, #story--atoms-input-group--textareacomponent-error, #story--atoms-input-group--textareacomponent-disabled, #story--atoms-input-group--label, #story--atoms-input-group--help-message, #story--atoms-input-group--error-message {
+    display: none;
+  }
+  .sbdocs.sbdocs-div.input_group_wrapper.css-14m39zm {
+    display: flex;
+    flex-wrap: 1;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
+  }
+  .sbdocs.sbdocs-div.input__label.css-14m39zm {
+    text-align: center;
+    text-decoration: underline;
+  }
+  .sbdocs.sbdocs-div.input_base-wrapper.css-14m39zm {
+    display: inline-flex;
+    align-items: baseline;
+    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
+  }
+  .sbdocs.sbdocs-div.base_item.css-14m39zm {
+    margin-left: 20px;
+  }
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }  
+`}</style>
+
+# Input group Component
+The <code>input</code> HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <code>input</code> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
+
+<div className="subheading"> Base Input </div>
+<div className="input_base-wrapper">
+  <div className= "base_item">
+    <div className="input__text label"></div>
+    <div className="input__code"> <Label_caption label='Form Label:' ></Label_caption></div>
+  </div>
+    <div className= "base_item">
+      <div className="input__text helptext"></div>
+    <div className="input__code"> <Help_caption label='8 characters minimum' ></Help_caption></div>
+  </div>
+    <div className= "base_item">
+      <div className="input__text errortext"></div>
+    <div className="input__code"> <Error_caption label='*Error: this field is required' ></Error_caption></div>
+  </div>
+</div>
+
+<div className="subheading"> Text </div>
+<ul>
+  <li>input elements of type <code>text</code> create basic single-line text fields.</li>
+</ul>
+
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-text-default"></div>
+    <div className="input__label"> Input text-Default </div>
+    <div className="input__code"> <Textcomponent labelText='Form Label:'  type='text' id= 'name' mode='defaultstate' required='required' placeholder= 'Placeholder'></Textcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-text-focus"></div>
+    <div className="input__label"> Input text-Focus </div>
+    <div className="input__code"> <Textcomponent labelText='Form Label:'  type='text' id= 'name' mode='focusstate' required='required' placeholder= 'Placeholder'></Textcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-text-error"></div>
+    <div className="input__label"> Input text-Error </div>
+    <div className="input__code"> <Textcomponent labelText='Form Label:' errorText='*Error: this field is required' type='text' id= 'name' mode='errorstate' required='required' placeholder= 'Placeholder'></Textcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-text-disabled"></div>
+    <div className="input__label"> Input text-Disabled </div>
+    <div className="input__code"> <Textcomponent labelText='Form Label:'  type='text' id= 'name' mode='disabledstate' placeholder= 'Placeholder' disabled= 'disabled'></Textcomponent></div>
+  </div>
+</div>
+
+<div className="subheading"> Search </div>
+<ul>
+  <li>input elements of type <code>search</code> are text fields designed for the user to enter search queries into.</li>
+</ul>
+
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-search-default"></div>
+    <div className="input__label"> Input search-Default </div>
+    <div className="input__code"> <Searchcomponent labelText='Search'  type='search' id= 'search' mode='defaultstate' required='required' placeholder= 'Placeholder'></Searchcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-search-focus"></div>
+    <div className="input__label"> Input search-Focus </div>
+    <div className="input__code"> <Searchcomponent labelText='Search'  type='search' id= 'search' mode='focusstate' required='required' placeholder= 'Placeholder'></Searchcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-search-error"></div>
+    <div className="input__label"> Input search-Error </div>
+    <div className="input__code"> <Searchcomponent labelText='Search' errorText='*Error: this field is required' type='search' id= 'search' mode='errorstate' required='required' placeholder= 'Placeholder'></Searchcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-search-disabled"></div>
+    <div className="input__label"> Input search-Disabled </div>
+    <div className="input__code"> <Searchcomponent labelText='Search'  type='search' id= 'search' mode='disabledstate' placeholder= 'Placeholder' disabled= 'disabled'></Searchcomponent></div>
+  </div>
+</div>
+
+<div className="subheading"> Number </div>
+<ul>
+  <li>input elements of type <code>number</code> are used to let the user enter a number. They include built-in validation to reject non-numerical entries.</li>
+</ul>
+
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-number-default"></div>
+    <div className="input__label"> Input number-Default </div>
+    <div className="input__code"> <Numbercomponent labelText='Number of projects'  type='number' id= 'number' pattern= '[0-9]*' mode='defaultstate' required='required' placeholder= 'Placeholder'></Numbercomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-search-focus"></div>
+    <div className="input__label"> Input number-Focus </div>
+    <div className="input__code"> <Numbercomponent labelText='Number of projects'  type='number' id= 'number' mode='focusstate' required='required' placeholder= 'Placeholder'></Numbercomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-search-error"></div>
+    <div className="input__label"> Input number-Error </div>
+    <div className="input__code"> <Numbercomponent labelText='Number of projects' errorText='*Error: this field is required' type='number' id= 'number' mode='errorstate' required='required' placeholder= 'Placeholder'></Numbercomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-search-disabled"></div>
+    <div className="input__label"> Input number-Disabled </div>
+    <div className="input__code"> <Numbercomponent labelText='Number of projects'  type='number' id= 'number' mode='disabledstate' placeholder= 'Placeholder' disabled= 'disabled'></Numbercomponent></div>
+  </div>
+</div>
+
+<div className="subheading"> Date </div>
+<ul>
+  <li>input elements of type <code>date</code> create input fields that let the user enter a date, either with a textbox that validates the input or a special date picker interface.</li>
+</ul>
+
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-date-default"></div>
+    <div className="input__label"> Input date-Default </div>
+    <div className="input__code"> <Datecomponent labelText='Date label'  type='date' id= 'datepicker' mode='defaultstate' required='required' placeholder= 'dd/mm/yyyy'></Datecomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-date-focus"></div>
+    <div className="input__label"> Input date-Focus </div>
+    <div className="input__code"> <Datecomponent labelText='Date label'  type='date' id= 'datepicker' mode='focusstate' required='required' placeholder= 'dd/mm/yyyy' hasDatepicker></Datecomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-date-error"></div>
+    <div className="input__label"> Input date-Error </div>
+    <div className="input__code"> <Datecomponent labelText='Date label'  type='date' id= 'datepicker' errorText='*Error: this field is required' mode='errorstate' required='required' placeholder= 'dd/mm/yyyy'></Datecomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-date-disabled"></div>
+    <div className="input__label"> Input date-Disabled </div>
+    <div className="input__code"> <Datecomponent labelText='Date label'  type='date' id= 'datepicker' mode='disabledstate' required='required' placeholder= 'dd/mm/yyyy' disabled= 'disabled'></Datecomponent></div>
+  </div>
+</div>
+
+<div className="subheading"> Phone </div>
+<ul>
+  <li>input elements of type <code>tel</code> are used to let the user enter and edit a telephone number.</li>
+</ul>
+
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-phone-default"></div>
+    <div className="input__label"> Input phone-Default </div>
+    <div className="input__code"> <Telcomponent labelText='Phone number'  type='number' id= 'phnumber' mode='defaultstate' required='required' placeholder= '+234 000 000 0000'></Telcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-phone-focus"></div>
+    <div className="input__label"> Input phone-Focus </div>
+    <div className="input__code"> <Telcomponent labelText='Phone number'  type='number' id= 'phnumber' mode='focusstate' required='required' placeholder= '+234 000 000 0000'></Telcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-phone-error"></div>
+    <div className="input__label"> Input phone-Error </div>
+    <div className="input__code"> <Telcomponent labelText='Phone number'  type='number' id= 'phnumber' mode='errorstate' required='required' errorText='*Error: this field is required' placeholder= '+234 000 000 0000'></Telcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-phone-disabled"></div>
+    <div className="input__label"> Input phone-Disabled </div>
+    <div className="input__code"> <Telcomponent labelText='Phone number'  type='number' id= 'phnumber' mode='disabledstate'  disabled= 'disabled' placeholder= '+234 000 000 0000'></Telcomponent></div>
+  </div>
+</div>
+
+<div className="subheading"> Password </div>
+<ul>
+  <li>input elements of type <code>password</code> provide a way for the user to securely enter a password.</li>
+</ul>
+
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-password-default"></div>
+    <div className="input__label"> Input password-Default </div>
+    <div className="input__code"> <Passwordcomponent labelText='Create password' helpText='8 characters minimum' type='password' id= 'password' mode='defaultstate' required='required'  minlength="8" placeholder='Password'></Passwordcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-password-focus"></div>
+    <div className="input__label"> Input password-Focus </div>
+    <div className="input__code"> <Passwordcomponent labelText='Create password' helpText='8 characters minimum' type='password' id= 'password' mode='focusstate' required='required'  minlength="8" placeholder='Password'></Passwordcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-password-error"></div>
+    <div className="input__label"> Input password-Error </div>
+    <div className="input__code"> <Passwordcomponent labelText='Create password' helpText='8 characters minimum' errorText='*Error: this field is required' type='password' id= 'password' mode='errorstate' required='required'  minlength="8" placeholder='Password'></Passwordcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-password-disabled"></div>
+    <div className="input__label"> Input password-Disabled </div>
+    <div className="input__code"> <Passwordcomponent labelText='Create password' helpText='8 characters minimum' type='password' id= 'password' mode='disabledstate' minlength="8" placeholder='Password'  disabled= 'disabled'></Passwordcomponent></div>
+  </div>
+</div>
+
+<div className="subheading"> Textarea </div>
+<ul>
+  <li>The <code>textarea</code> HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.</li>
+</ul>
+
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-textarea-default"></div>
+    <div className="input__label"> Input textarea-Default </div>
+    <div className="input__code"> <Textareacomponent labelText='Brief description' id= 'textarea' inputfor='textarea' mode='defaultstate' required='required' placeholder= 'Enter text'></Textareacomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-textarea-focus"></div>
+    <div className="input__label"> Input textarea-Focus </div>
+    <div className="input__code"> <Textareacomponent labelText='Brief description' id= 'textarea'inputfor='textarea' mode='focusstate' required='required' placeholder= 'Enter text'></Textareacomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-textarea-error"></div>
+    <div className="input__label"> Input textarea-Error </div>
+    <div className="input__code"> <Textareacomponent labelText='Brief description' errorText='*Error: this field is required' id= 'textarea' inputfor='textarea' mode='errorstate' required='required' placeholder= 'Enter text'></Textareacomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-textarea-disabled"></div>
+    <div className="input__label"> Input textarea-Disabled </div>
+    <div className="input__code"> <Textareacomponent labelText='Brief description' id= 'textarea' inputfor='textarea' mode='disabledstate' disabled= 'disabled' placeholder= 'Enter text'></Textareacomponent></div>
+  </div>
+</div>
+
+<Story name="Label">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Label_caption label='Form Label:' ></Label_caption>;
+  }}
+</Story>
+
+<Story name="Help-message">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Help_caption label='8 characters minimum' ></Help_caption>;
+  }}
+</Story>
+
+<Story name="Error-message">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Error_caption label='*Error: this field is required' ></Error_caption>;
+  }}
+</Story>
+
+<Story name="Textcomponent-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Textcomponent labelText={caption.detail1}  type='text' id= 'name' mode='defaultstate' required='required' placeholder= {caption.text3}></Textcomponent>;
+  }}
+</Story>
+
+<Story name="Textcomponent-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Textcomponent labelText={caption.detail1}  type='text' id= 'name' mode='focusstate' required='required' placeholder= {caption.detail1}></Textcomponent>;
+  }}
+</Story>
+
+<Story name="Textcomponent-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Textcomponent labelText={caption.detail1} errorText={caption.detail2} type='text' id= 'name' mode='errorstate' required='required' placeholder= {caption.detail1}></Textcomponent>;
+  }}
+</Story>
+
+<Story name="Textcomponent-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Textcomponent labelText={caption.detail1}  type='text' id= 'name' mode='disabledstate' placeholder= {caption.detail1} disabled= 'disabled'></Textcomponent>;
+  }}
+</Story>
+
+<Story name="Searchcomponent-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Searchcomponent labelText={caption.detail3}  type='search' id= 'search' mode='defaultstate' required='required' placeholder= {caption.detail4}></Searchcomponent>;
+  }}
+</Story>
+
+<Story name="Searchcomponent-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Searchcomponent labelText={caption.detail3}  type='search' id= 'search' mode='focusstate' required='required' placeholder= {caption.detail4}></Searchcomponent>;
+  }}
+</Story>
+
+<Story name="Searchcomponent-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Searchcomponent labelText={caption.detail3} errorText={caption.detail2}  type='search' id= 'search' mode='errorstate' required='required' placeholder= {caption.detail4}></Searchcomponent>;
+  }}
+</Story>
+
+<Story name="Searchcomponent-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Searchcomponent labelText={caption.detail3} type='search' id= 'search' mode='disabledstate' placeholder= {caption.detail4} disabled= 'disabled'> </Searchcomponent>;
+  }}
+</Story>
+
+<Story name="Numbercomponent-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Numbercomponent labelText={caption.detail5}  type='number' id= 'number' pattern= '[0-9]*' mode='defaultstate' required='required' placeholder= {caption.text3}></Numbercomponent>;
+  }}
+</Story>
+
+<Story name="Numbercomponent-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Numbercomponent labelText={caption.detail5}  type='number' id= 'number' mode='focusstate' required='required' placeholder= {caption.text3}></Numbercomponent>;
+  }}
+</Story>
+
+<Story name="Numbercomponent-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Numbercomponent labelText={caption.detail5} errorText={caption.detail2} type='number' id= 'number' mode='errorstate' required='required' placeholder= {caption.text3}></Numbercomponent>;
+  }}
+</Story>
+
+<Story name="Numbercomponent-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Numbercomponent labelText={caption.detail5}  type='number' id= 'number' mode='disabledstate' placeholder= {caption.text3} disabled= 'disabled'></Numbercomponent>;
+  }}
+</Story>
+
+<Story name="Passwordcomponent-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Passwordcomponent labelText={caption.detail6} helpText={caption.detail8} type='password' id= 'password' mode='defaultstate' required='required'  minlength="8" placeholder={caption.detail7}></Passwordcomponent>;
+  }}
+</Story>
+
+<Story name="Passwordcomponent-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Passwordcomponent labelText={caption.detail6} helpText={caption.detail8} type='password' id= 'password' mode='focusstate' required='required'  minlength="8" placeholder={caption.detail7}></Passwordcomponent>;
+  }}
+</Story>
+
+<Story name="Passwordcomponent-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Passwordcomponent labelText={caption.detail6} helpText={caption.detail8} errorText={caption.detail2} type='password' id= 'password' mode='errorstate' required='required'  minlength="8" placeholder={caption.detail7}></Passwordcomponent>;
+  }}
+</Story>
+
+<Story name="Passwordcomponent-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Passwordcomponent labelText={caption.detail6} helpText={caption.detail8} type='password' id= 'password' mode='disabledstate' minlength="8" placeholder={caption.detail7}  disabled= 'disabled'></Passwordcomponent>;
+  }}
+</Story>
+
+<Story name="Telcomponent-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Telcomponent labelText={caption.detail9}  type='number' id= 'phnumber' mode='defaultstate' required='required' placeholder= '+234 000 000 0000'></Telcomponent>;
+  }}
+</Story>
+
+<Story name="Telcomponent-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Telcomponent labelText={caption.detail9}  type='number' id= 'phnumber' mode='focusstate' required='required' placeholder= '+234 000 000 0000'></Telcomponent>;
+  }}
+</Story>
+
+<Story name="Telcomponent-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Telcomponent labelText={caption.detail9}  type='number' id= 'phnumber' mode='errorstate' required='required' errorText={caption.detail2} placeholder= '+234 000 000 0000'></Telcomponent>;
+  }}
+</Story>
+
+<Story name="Telcomponent-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Telcomponent labelText={caption.detail9}  type='number' id= 'phnumber' mode='disabledstate'  disabled= 'disabled' placeholder= '+234 000 000 0000'></Telcomponent>;
+  }}
+</Story>
+
+<Story name="Datecomponent-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Datecomponent labelText={caption.text}  type='date' id= 'datepicker' mode='defaultstate' required='required' placeholder= 'dd/mm/yyyy'></Datecomponent>;
+  }}
+</Story>
+
+<Story name="Datecomponent-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Datecomponent labelText={caption.text}  type='date' id= 'datepicker' mode='focusstate' required='required' placeholder= 'dd/mm/yyyy'></Datecomponent>;
+  }}
+</Story>
+
+<Story name="Datecomponent-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Datecomponent labelText={caption.text}  type='date' errorText={caption.detail2} id= 'datepicker' mode='errorstate' required='required' placeholder= 'dd/mm/'></Datecomponent>;
+  }}
+</Story>
+
+<Story name="Datecomponent-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Datecomponent labelText={caption.text}  type='date' id= 'datepicker' mode='disabledstate' disabled= 'disabled' placeholder= 'dd/mm/yyyy'></Datecomponent>;
+  }}
+</Story>
+
+<Story name="Textareacomponent-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Textareacomponent labelText={caption.detail10} id= 'textarea' inputfor='textarea' mode='defaultstate' required='required' placeholder= {caption.text2}></Textareacomponent>;
+  }}
+</Story>
+
+<Story name="Textareacomponent-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Textareacomponent labelText={caption.detail10} id= 'textarea' inputfor='textarea' mode='focusstate' required='required' placeholder= {caption.text2}></Textareacomponent>;
+  }}
+</Story>
+
+<Story name="Textareacomponent-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Textareacomponent labelText={caption.detail10} errorText={caption.detail2} id= 'textarea' inputfor='textarea' mode='errorstate' required='required' placeholder= {caption.text2}></Textareacomponent>;
+  }}
+</Story>
+
+<Story name="Textareacomponent-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Textareacomponent labelText={caption.detail10} id= 'textarea' inputfor='textarea' mode='disabledstate' disabled= 'disabled' placeholder= {caption.text2}></Textareacomponent>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>Include the common SCSS files like mixin <code>assets/scss</code></li>
+  <li>Component SCSS file <code>input_group.scss</code></li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
