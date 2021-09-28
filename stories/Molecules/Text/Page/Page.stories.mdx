@@ -12,7 +12,15 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Molecules/Text/Page Block" component={Page} />
+<Meta title="Molecules/Text/Page Block" component={Page} parameters={{
+    backgrounds: {
+      default: 'white',
+      values: [
+        { name: 'white', value: '#fff' },
+        { name: 'gray', value: '#CCC' },
+      ],
+    },
+  }} />
 
 <style>{`
   .sbdocs-h1 {
@@ -44,10 +52,17 @@ export const getCaptionForLocale = (locale) => {
 
 The page Block Component defines a section of information data with some items - Header title, Description. <code>H2</code> <code>H4</code> Atoms tags are used for creating this section.
 
-<Story name="Page Block">
+<Story name="Page Block Black">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <Page headerText={caption.header} countryText={caption.country}></Page>;
+  }}
+</Story>
+
+<Story name="Page Block white" parameters={{ backgrounds: { default: 'gray'}}}>
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Page headerText={caption.header} countryText={caption.country} style={'white'} ></Page>;
   }}
 </Story>
 

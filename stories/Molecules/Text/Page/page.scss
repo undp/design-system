@@ -11,4 +11,9 @@
   h4 {
     font-family: $Font-Family-ProximaLight;
   }
+  &--white {
+    h2, h4 {
+      color: $color-white;
+    }
+  }
 }
