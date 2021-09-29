@@ -17,15 +17,20 @@
         background: url(#{$img-path-Icon}/chevron-right-black.svg) no-repeat
           left center;
         margin-left: 14px;
-        transition: transform 0.2s ease;
+        @include arrow-transition;
       }
       &:hover::after {
         transform: translateX(70%);
+        -moz-transform: translateX(70%);
+        -webkit-transform: translateX(70%);
+        -o-transform: translateX(70%);
+        -ms-transform: translateX(70%);
       }
       &.disabled {
         &::after {
           content: "";
-          background: url(#{$img-path-Icon}/chevron-right-white.svg) no-repeat left center;
+          background: url(#{$img-path-Icon}/chevron-right-white.svg) no-repeat
+            left center;
         }
       }
     }
@@ -48,14 +53,20 @@
   &.cta--arrow {
     &::after {
       @extend %ctaimg;
-      background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat left center;
+      background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat
+        left center;
     }
     &:hover {
       &::after {
-        background: url(#{$img-path-Icon}/arrow-left-expand-hover.svg) no-repeat left center;
+        background: url(#{$img-path-Icon}/arrow-left-expand-hover.svg) no-repeat
+          left center;
         margin-left: $spacing-24;
         transform: translateX(10px);
-        transition: transform 0.2s ease;
+        -moz-transform: translateX(10px);
+        -webkit-transform: translateX(10px);
+        -o-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+        @include arrow-transition;
         width: 100px;
       }
     }
@@ -63,12 +74,56 @@
   &.cta--space {
     &::after {
       @extend %ctaimg;
-      background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat left center;
-      transition: transform 0.2s ease;
+      background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat
+        left center;
+      @include arrow-transition;
     }
     &:hover {
       &::after {
         transform: translateX(70%);
+        -moz-transform: translateX(70%);
+        -webkit-transform: translateX(70%);
+        -o-transform: translateX(70%);
+        -ms-transform: translateX(70%);
+      }
+    }
+  }
+}
+[dir="rtl"] {
+  .button {
+    &.button--primary {
+      &.button--arrow {
+        &::after {
+          @include transform-rotate;
+          margin-right: 14px;
+          margin-left: 0px;
+        }
+        &:hover::after {
+          @include transform-rotate-50;
+        }
+      }
+    }
+  }
+  .cta__link {
+    &.cta--space,
+    &.cta--arrow {
+      &::after {
+        @include transform-rotate;
+        margin-right: 14px;
+        margin-left: 0px;
+      }
+      &:hover::after {
+        @include transform-rotate-50;
+      }
+    }
+    &.cta--arrow {
+      &:hover::after {
+        transform: translateX(-10%) rotate(180deg);
+        -moz-transform: translateX(-10%) rotate(180deg);
+        -webkit-transform: translateX(-10%) rotate(180deg);
+        -o-transform: translateX(-10%) rotate(180deg);
+        -ms-transform: translateX(-10%) rotate(180deg);
+        @include arrow-transition;
       }
     }
   }

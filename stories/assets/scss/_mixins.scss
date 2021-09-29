@@ -161,6 +161,27 @@
   -ms-animation: loader-animation 2s linear infinite;
   -o-animation: loader-animation 2s linear infinite;
 }
+@mixin arrow-transition {
+  transition: transform 0.2s ease;
+  -webkit-transition: transform 0.2s ease;
+  -moz-transition: transform 0.2s ease;
+  -o-transition: transform 0.2s ease;
+}
+@mixin  transform-rotate {
+  transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+}
+
+@mixin transform-rotate-50 {
+  transform: translateX(-50%) rotate(180deg);
+  -moz-transform:translateX(-50%) rotate(180deg);
+  -webkit-transform:translateX(-50%) rotate(180deg);
+  -o-transform:translateX(-50%) rotate(180deg);
+  -ms-transform:translateX(-50%) rotate(180deg);
+}
 
 @keyframes loader-animation {
   0% { -webkit-transform: rotate(0deg); }
