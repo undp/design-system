@@ -1,0 +1,51 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Smallcopy } from './SmallCopy';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {locationlabel:'USA', location: 'UNDP/Angola', phonelabel:'Phone', phone: '+1 212-906-5000', emaillabel:'Email', email: 'hq@undp.org'}; return engText;
+    case 'arabic': const arabicText = {locationlabel:'الولايات المتحدة الأمريكية', location: 'برنامج الأمم المتحدة الإنمائي / أنغولا', phonelabel:'هاتف', phone: '+1 212-906-5000', emaillabel:'البريد الإلكتروني', email: 'hq@undp.org'}; return arabicText;
+    case 'burmese': const burmeseText = {locationlabel:'ယူအက်စ်အေ', location: 'UNDP/အန်ဂိုလာ', phonelabel:'ဖုန်း', phone: '+1 212-906-5000', emaillabel:'အီးမေးလ်', email: 'hq@undp.org'}; return burmeseText;
+    case 'japanese': const japaneseText = {locationlabel:'宇佐', location: 'UNDP /アンゴラ', phonelabel:'電話', phone: '+1 212-906-5000', emaillabel:'Eメール', email: 'hq@undp.org'}; return japaneseText;
+    default:
+      return {locationlabel:'USA', location: 'UNDP/Angola', phonelabel:'Phone', phone: '+1 212-906-5000', emaillabel:'Email', email: 'hq@undp.org'};
+  }
+};
+
+<Meta title="Molecules/Text/Small Copy Lockup" />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+`}</style>
+
+# Small Copy Lockup Component
+Small Copy Lockup component defines a section of information data with some items - Location, Phone Number and Email ID.
+
+<Story name="Small Copy Lockup">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Smallcopy locationName={caption.locationlabel} locationText={caption.location} phoneName={caption.phonelabel} phonenumber={caption.phone} emailName={caption.emaillabel} emailid={caption.email}></Smallcopy>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>smallcopy.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

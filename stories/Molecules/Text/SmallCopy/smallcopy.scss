@@ -1,0 +1,27 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/typography';
+
+/* small copy */
+.smallcopy {
+  &__box {
+    margin-bottom: $spacing-08;
+
+    &--locale {
+      margin-bottom: $spacing-24;
+
+      .smallcopy__label {
+        display: block;
+        font-size: $font-size-16;
+        letter-spacing: 0.03em;
+        line-height: 18px;
+        margin-bottom: $spacing-12;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__label {
+    font-family: $Font-Family-ProximaBold;
+    margin-right: $spacing-04;
+  }
+}
