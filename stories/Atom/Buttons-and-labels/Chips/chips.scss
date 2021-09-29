@@ -28,3 +28,13 @@
     }
   }
 }
+[dir="rtl"] {
+  .chips {
+    &.chips__cross {
+      &::before {
+        margin-left: 10px;
+        margin-right: 0;
+      }
+    }
+  }
+}

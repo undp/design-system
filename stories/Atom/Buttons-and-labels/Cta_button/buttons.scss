@@ -1,74 +1,132 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/breakpoints";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/breakpoints';
 
 .button {
   @extend %button;
+
   &.button--primary {
     background-color: $color-dark-red;
+
     &:hover {
       background-color: $color-red;
     }
+
     &.button--arrow {
       &::after {
-        content: "";
-        width: 13px;
+        @include transition(0.2s ease);
+
+        background: url(#{$img-path-Icon}/chevron-right-black.svg) no-repeat left center;
+        content: '';
         height: 20px;
-        background: url(#{$img-path-Icon}/chevron-right-black.svg) no-repeat
-          left center;
         margin-left: 14px;
-        transition: transform 0.2s ease;
+        width: 13px;
       }
+
       &:hover::after {
-        transform: translateX(70%);
+        @include translate(70%,0);
       }
+
       &.disabled {
         &::after {
-          content: "";
           background: url(#{$img-path-Icon}/chevron-right-white.svg) no-repeat left center;
+          content: '';
         }
       }
     }
   }
+
   &.button--secondary {
-    padding: 18px $spacing-24;
     background-color: $color-blue-600;
+    padding: 18px $spacing-24;
+
     &:hover {
       background-color: $color-blue-400;
     }
   }
+
   &.disabled {
     background-color: $color-gray-400;
     color: $color-gray-300;
     pointer-events: none;
   }
 }
+
 .cta__link {
   @extend %cta;
+
   &.cta--arrow {
     &::after {
       @extend %ctaimg;
+
       background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat left center;
     }
+
     &:hover {
       &::after {
-        background: url(#{$img-path-Icon}/arrow-left-expand-hover.svg) no-repeat left center;
-        margin-left: $spacing-24;
-        transform: translateX(10px);
-        transition: transform 0.2s ease;
+        @include translate(10px,0);
+        @include transition(0.2s ease);
+
+        background-image: url(#{$img-path-Icon}/arrow-left-expand-hover.svg);
         width: 100px;
       }
     }
   }
+
   &.cta--space {
     &::after {
       @extend %ctaimg;
+
+      @include transition(0.2s ease);
+
       background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat left center;
-      transition: transform 0.2s ease;
     }
+
     &:hover {
       &::after {
-        transform: translateX(70%);
+        @include translate(70%,0);
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .button {
+    &.button--primary {
+      &.button--arrow {
+        &::after {
+          @include transform(rotate(180deg));
+
+          margin-left: 0;
+          margin-right: 14px;
+        }
+
+        &:hover::after {
+          @include transform(translate(-50%,0) rotate(180deg));
+        }
+      }
+    }
+  }
+
+  .cta__link {
+    &.cta--space,
+    &.cta--arrow {
+      &::after {
+        @include transform(rotate(180deg));
+
+        margin-left: 0;
+        margin-right: 14px;
+      }
+
+      &:hover::after {
+        @include transform(translate(-50%,0) rotate(180deg));
+      }
+    }
+
+    &.cta--arrow {
+      &:hover::after {
+        @include transform(translate(-10%,0) rotate(180deg));
+        @include transition(0.2s ease);
       }
     }
   }

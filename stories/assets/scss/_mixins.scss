@@ -1,5 +1,5 @@
-@import "./variables";
-@import "./breakpoints";
+@import './variables';
+@import './breakpoints';
 
 @mixin body-copy {
   font-family: 'Arial';
@@ -12,6 +12,7 @@
   font-family: $Font-Family-ProximaRegular;
   font-size: 12px;
   line-height: 16px;
+
   @include devicebreak(small) {
     font-size: 14px;
     line-height: 19px;
@@ -22,7 +23,8 @@
   font-family: $Font-Family-ProximaRegular;
   font-size: 14px;
   line-height: 20px;
-    @include devicebreak(small) {
+
+  @include devicebreak(small) {
     font-size: 16px;
     line-height: 22px;
   }
@@ -31,6 +33,7 @@
 %paragragh-font-20 {
   font-size: 16px;
   line-height: 22px;
+
   @include devicebreak(small) {
     font-size: 20px;
     line-height: 26px;
@@ -41,21 +44,22 @@
   font-family: $Font-Family-ProximaRegular;
   font-size: 20px;
   line-height: 23px;
+
   @include devicebreak(small) {
     font-size: 24px;
     line-height: 27px;
   }
 }
 
-%border-bottom{
+%border-bottom {
   border-bottom: 1px solid $color-gray-400;
 }
 
-%img-cover{
-  padding: 0;
-  width: 100%;
+%img-cover {
   height: 100%;
   object-fit: cover;
+  padding: 0;
+  width: 100%;
 }
 
 %border-none {
@@ -63,13 +67,14 @@
 }
 
 %sidebar {
-  position: relative;
-  padding: 16px;
+  align-items: center;
   cursor: pointer;
-  overflow: hidden;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  overflow: hidden;
+  padding: 16px;
+  position: relative;
+
   @include devicebreak(small) {
     padding: 24px;
   }
@@ -77,94 +82,136 @@
 
 %sidebar-selected {
   background-color: $color-blue-600;
+
   h6 {
     color: $color-white;
   }
+
   &:hover {
     background-color: $color-blue-600;
   }
 }
 
 %checbox-radio-before {
-  left: 0;
-  top: 5px;
-  content: "";
-  width: 12px;
-  height: 12px;
-  position: absolute;
   border: 2px solid $color-dark-red;
+  content: '';
+  height: 12px;
+  left: 0;
+  position: absolute;
+  top: 5px;
+  width: 12px;
 }
 
 %img-hover-effect {
+  background-image: linear-gradient(42deg, $color-yellow, transparent 80%);
   opacity: 0;
   transition: opacity 0.5s ease;
-  background-image: linear-gradient( 42deg, $color-yellow, transparent 80%);
 }
 
 %button {
-  border: none;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 1;
-  letter-spacing: 0.03em;
-  color: $color-white;
   align-items: center;
+  border: none;
+  color: $color-white;
   display: flex;
-  justify-content: center;
   font-family: $Font-Family-ProximaRegular;
+  font-size: 16px;
+  font-weight: bold;
+  justify-content: center;
+  letter-spacing: 0.03em;
+  line-height: 1;
   padding: $spacing-16 $spacing-24;
+
   @include devicebreak(small) {
+    display: inline-flex;
     min-width: 168px;
-    display: inline-flex
   }
 }
 
 %cta {
-  display: flex;
+  align-items: center;
   border: none;
   color: black;
+  display: flex;
   font-family: $Font-Family-ProximaRegular;
+  font-size: 16px;
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 1;
   letter-spacing: 0.03em;
-  align-items: center;
+  line-height: 1;
+
   @include devicebreak(small) {
-    min-width: 168px;
     display: inline-flex;
+    min-width: 168px;
   }
 }
 
 %ctaimg {
-  content: "";
-  width: 13px;
+  content: '';
   height: 20px;
   margin-left: 14px;
+  width: 13px;
 }
 
 %field__image {
+  background-repeat: no-repeat;
+  height: 20px;
+  left: 10px;
   position: absolute;
   top: 22px;
   width: 20px;
-  height: 20px;
-  left: 10px;
   z-index: 1;
-  background-repeat: no-repeat;
 }
 
 //loader animation
 @mixin loader {
   animation: loader-animation 2s linear infinite;
-  -webkit-animation: loader-animation 2s linear infinite;
-  -moz-animation: loader-animation 2s linear infinite;
-  -ms-animation: loader-animation 2s linear infinite;
-  -o-animation: loader-animation 2s linear infinite;
+  animation: loader-animation 2s linear infinite;
+  animation: loader-animation 2s linear infinite;
+  animation: loader-animation 2s linear infinite;
+  animation: loader-animation 2s linear infinite;
 }
 
 @keyframes loader-animation {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 //loader animation end
+
+//transition
+@mixin transition($transitions...) {
+  transition: $transitions;
+  transition: $transitions;
+  transition: $transitions;
+  transition: $transitions;
+  transition: $transitions;
+}
+
+//transform
+@mixin transform($transforms) {
+  transform: $transforms;
+  transform: $transforms;
+  transform: $transforms;
+  transform: $transforms;
+}
+
+// Rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// Translate
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+// Scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+// Skew
+@mixin skew ($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
 /* mixing  end */
