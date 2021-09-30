@@ -1,6 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs';
-import { Large } from './Large';
-import { Small } from './Small';
+import { Authorimg } from './Authorimages';
 
 <Meta title="Atoms/Image/Author Image"/>
 
@@ -21,17 +20,17 @@ import { Small } from './Small';
   div[id^="story--atoms-image-author-image"] {
     display: inline-block;
   }
-`}</style>  
+`}</style>
 
 # Author Image Component
-The <code>Author Image</code> component displays the author image
+The <code>Author Image</code> component displays the author image.
 
-<Story name="Large">
-    return <Large></Large> ;
+<Story name="Large Size">
+    return <Authorimg size="large"></Authorimg>;
 </Story>
 
-<Story name="Small">
-    return <Small></Small> ;
+<Story name="Small Size">
+    return <Authorimg size="small"></Authorimg>;
 </Story>
 
 <div className="subheading">Usage</div>

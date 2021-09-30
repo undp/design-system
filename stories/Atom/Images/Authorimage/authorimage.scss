@@ -1,24 +1,23 @@
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
 
-/* author big image */
+/* author image */
 .author__img {
-    border-radius: 50%;
-    overflow: hidden;
-    img {
-       @extend %img-cover;
-    }
-}
+  border-radius: 50%;
+  overflow: hidden;
 
-/* author small image */
-.author__img--small {
-    width: 80px;
+  img {
+    @extend %img-cover;
+  }
+
+  &--small {
     height: 80px;
-}
+    width: 80px;
+  }
 
-/* author large image */
-.author__img--large {
-    width: 180px;
+  &--large {
     height: 180px;
+    width: 180px;
+  }
 }
