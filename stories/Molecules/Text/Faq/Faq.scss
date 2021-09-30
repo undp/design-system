@@ -4,52 +4,50 @@
 
 /* Accordian start */
 .accordion {
-  width: 100%;
+  padding: 0;
   position: relative;
 }
 
-.accordion-head {
-  border-bottom: 1px solid $color-gray-500;
-  position: relative;
-  padding: $spacing-24 0;
-  font-size: 0.87em;
-  cursor: pointer;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  &::after {
-    content: "";
-    background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
-    float: right;
-    width: 20px;
-    height: 20px;
-    border-top-color: #f3f3f3;
-    transition: all 0.1s ease;
-    margin-left: $spacing-24;
-  }
-  h5 {
-    float: left;
-    margin-bottom: 0;
-  }
-  &:hover {
-    filter: alpha(opacity=80);
-    opacity: 0.8;
-  }
-  &.open {
-    &::after {
-      transform: rotateZ(180deg);
+.accordion__item {
+    border-bottom: 1px solid $color-gray-500;
+    position: relative;
+    padding: $spacing-16 0 $spacing-24;
+    cursor: pointer;
+    overflow: hidden;
+    &::before {
+      content: "";
+      background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
+      float: right;
+      width: 20px;
+      height: 20px;
+      border-top-color: #f3f3f3;
       transition: all 0.1s ease;
+      margin-left: $spacing-24;
+    }
+    .accordion__heading {
+      margin-bottom: 0;
+    }
+    &.accordion--active {
+      .accordion__heading {
+        margin-bottom: 10px;
+        padding-right: $spacing-24;
+        @include devicebreak(small) {
+          margin-bottom: 0;
+          padding-bottom: $spacing-16;
+        }
+      }
+      &::before {
+        transform: rotateZ(180deg);
+        transition: all 0.1s ease;
+      }
     }
   }
-}
 
-.accordion-body {
-  border-bottom: 1px solid $color-gray-500;
+.accordion__panel {
   padding: $spacing-32;
   height: auto;
   display: none;
-  @include devicebreak(large) {
+  @include devicebreak(small) {
     padding: $spacing-40;
   }
 }
