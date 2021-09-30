@@ -198,22 +198,22 @@ The <code>input</code> HTML element is used to create interactive controls for w
   <div className= "input_item">
     <div className="input__box input-phone-default"></div>
     <div className="input__label"> Input phone-Default </div>
-    <div className="input__code"> <Telcomponent labelText='Phone number'  type='number' id= 'phnumber' mode='defaultstate' required='required' placeholder= '+234 000 000 0000'></Telcomponent></div>
+    <div className="input__code"> <Telcomponent labelText='Phone number'  type='tel' id= 'phnumber' mode='defaultstate' required='required' placeholder= '+234 000 000 0000'></Telcomponent></div>
   </div>
   <div className="input_item">
     <div className="input__box input-phone-focus"></div>
     <div className="input__label"> Input phone-Focus </div>
-    <div className="input__code"> <Telcomponent labelText='Phone number'  type='number' id= 'phnumber' mode='focusstate' required='required' placeholder= '+234 000 000 0000'></Telcomponent></div>
+    <div className="input__code"> <Telcomponent labelText='Phone number'  type='tel' id= 'phnumber' mode='focusstate' required='required' placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'></Telcomponent></div>
   </div>
   <div className="input_item">
     <div className="input__box input-phone-error"></div>
     <div className="input__label"> Input phone-Error </div>
-    <div className="input__code"> <Telcomponent labelText='Phone number'  type='number' id= 'phnumber' mode='errorstate' required='required' errorText='*Error: this field is required' placeholder= '+234 000 000 0000'></Telcomponent></div>
+    <div className="input__code"> <Telcomponent labelText='Phone number'  type='tel' id= 'phnumber' mode='errorstate' required='required' errorText='*Error: this field is required' placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'></Telcomponent></div>
   </div>
   <div className="input_item">
     <div className="input__box input-phone-disabled"></div>
     <div className="input__label"> Input phone-Disabled </div>
-    <div className="input__code"> <Telcomponent labelText='Phone number'  type='number' id= 'phnumber' mode='disabledstate'  disabled= 'disabled' placeholder= '+234 000 000 0000'></Telcomponent></div>
+    <div className="input__code"> <Telcomponent labelText='Phone number'  type='number' id= 'phnumber' mode='disabledstate'  disabled= 'disabled' placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'></Telcomponent></div>
   </div>
 </div>
 
@@ -276,21 +276,21 @@ The <code>input</code> HTML element is used to create interactive controls for w
 <Story name="Label">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Label_caption label='Form Label:' ></Label_caption>;
+    return <Label_caption label={caption.detail1}></Label_caption>;
   }}
 </Story>
 
 <Story name="Help-message">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Help_caption label='8 characters minimum' ></Help_caption>;
+    return <Help_caption label={caption.detail8} ></Help_caption>;
   }}
 </Story>
 
 <Story name="Error-message">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Error_caption label='*Error: this field is required' ></Error_caption>;
+    return <Error_caption label={caption.detail2} ></Error_caption>;
   }}
 </Story>
 
@@ -409,28 +409,28 @@ The <code>input</code> HTML element is used to create interactive controls for w
 <Story name="Telcomponent-default">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Telcomponent labelText={caption.detail9}  type='number' id= 'phnumber' mode='defaultstate' required='required' placeholder= '+234 000 000 0000'></Telcomponent>;
+    return <Telcomponent labelText={caption.detail9}  type='tel' id= 'phnumber' mode='defaultstate' required='required' placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}' ></Telcomponent>;
   }}
 </Story>
 
 <Story name="Telcomponent-focus">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Telcomponent labelText={caption.detail9}  type='number' id= 'phnumber' mode='focusstate' required='required' placeholder= '+234 000 000 0000'></Telcomponent>;
+    return <Telcomponent labelText={caption.detail9}  type='tel' id= 'phnumber' mode='focusstate' required='required' placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'></Telcomponent>;
   }}
 </Story>
 
 <Story name="Telcomponent-error">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Telcomponent labelText={caption.detail9}  type='number' id= 'phnumber' mode='errorstate' required='required' errorText={caption.detail2} placeholder= '+234 000 000 0000'></Telcomponent>;
+    return <Telcomponent labelText={caption.detail9}  type='tel' id= 'phnumber' mode='errorstate' required='required' errorText={caption.detail2} placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'></Telcomponent>;
   }}
 </Story>
 
 <Story name="Telcomponent-disabled">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Telcomponent labelText={caption.detail9}  type='number' id= 'phnumber' mode='disabledstate'  disabled= 'disabled' placeholder= '+234 000 000 0000'></Telcomponent>;
+    return <Telcomponent labelText={caption.detail9}  type='tel' id= 'phnumber' mode='disabledstate'  disabled= 'disabled' placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'></Telcomponent>;
   }}
 </Story>
 
@@ -465,28 +465,28 @@ The <code>input</code> HTML element is used to create interactive controls for w
 <Story name="Textareacomponent-default">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Textareacomponent labelText={caption.detail10} id= 'textarea' inputfor='textarea' mode='defaultstate' required='required' placeholder= {caption.text2}></Textareacomponent>;
+    return <Textareacomponent labelText={caption.detail10} id= 'textarea' inputfor='textarea' cols='40' rows='10' mode='defaultstate' required='required' placeholder= {caption.text2}></Textareacomponent>;
   }}
 </Story>
 
 <Story name="Textareacomponent-focus">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Textareacomponent labelText={caption.detail10} id= 'textarea' inputfor='textarea' mode='focusstate' required='required' placeholder= {caption.text2}></Textareacomponent>;
+    return <Textareacomponent labelText={caption.detail10} id= 'textarea' inputfor='textarea' cols='40' rows='10' mode='focusstate' required='required' placeholder= {caption.text2}></Textareacomponent>;
   }}
 </Story>
 
 <Story name="Textareacomponent-error">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Textareacomponent labelText={caption.detail10} errorText={caption.detail2} id= 'textarea' inputfor='textarea' mode='errorstate' required='required' placeholder= {caption.text2}></Textareacomponent>;
+    return <Textareacomponent labelText={caption.detail10} errorText={caption.detail2} id= 'textarea' inputfor='textarea' cols='40' rows='10' mode='errorstate' required='required' placeholder= {caption.text2}></Textareacomponent>;
   }}
 </Story>
 
 <Story name="Textareacomponent-disabled">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Textareacomponent labelText={caption.detail10} id= 'textarea' inputfor='textarea' mode='disabledstate' disabled= 'disabled' placeholder= {caption.text2}></Textareacomponent>;
+    return <Textareacomponent labelText={caption.detail10} id= 'textarea' inputfor='textarea' cols='40' rows='10' mode='disabledstate' disabled= 'disabled' placeholder= {caption.text2}></Textareacomponent>;
   }}
 </Story>
 

@@ -3,7 +3,7 @@ import './input_group.scss';
 import { Error_caption } from './error';
 import { Label_caption } from './label';
 
-export const Textareacomponent = ({ id, inputfor, placeholder, required, mode, labelText, errorText, disabled }) => {
+export const Textareacomponent = ({ id, inputfor, cols, rows, placeholder, required, mode, labelText, errorText, disabled }) => {
   return (
     <form className= 'input-group'>
       <div className={[`label__message ${mode}`]}>
@@ -14,8 +14,8 @@ export const Textareacomponent = ({ id, inputfor, placeholder, required, mode, l
         inputfor="textarea"
         name="first-name"
         placeholder={placeholder}
-        cols="40"
-        rows="10"
+        cols={cols}
+        rows={rows}
         wrap="soft"
         labelText={labelText}
         disabled={disabled}
