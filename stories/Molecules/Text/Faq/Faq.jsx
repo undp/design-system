@@ -7,26 +7,31 @@ import { P } from '../../../Atom/Base-typography/Paragraph/p';
 export const Faq = ({headerText, descriptionText}) => {
   useEffect(() => {
     FaqFun();
-  })
+  },[])
 
   return (
-   <div className="accordion" id="accordion">
-      <div className="accordion-head">
-         <H5 label={headerText} />
-      </div>
-      <div className="accordion-body">
-         <P label={descriptionText} />
-         <P label={descriptionText} />
-         <P label={descriptionText} />
-      </div>
-      <div className="accordion-head">
-         <H5 label={headerText} />
-      </div>
-      <div className="accordion-body">
-         <P label={descriptionText} />
-         <P label={descriptionText} />
-         <P label={descriptionText} />
-      </div>
-   </div>
+   <ul class="accordion" id="accordion">
+      <li className="accordion__item">
+         <H5 label={headerText} className="accordion__heading"  />
+         <div class="accordion__panel">
+            <P label={descriptionText} />
+            <P label={descriptionText}  />
+         </div>
+      </li>
+      <li className="accordion__item">
+         <H5 label={headerText} className="accordion__heading" />
+         <div class="accordion__panel">
+            <P label={descriptionText} />
+            <P label={descriptionText} />
+         </div>
+      </li>
+      <li className="accordion__item">
+         <H5 label={headerText} className="accordion__heading" />
+         <div class="accordion__panel">
+            <P label={descriptionText} />
+            <P label={descriptionText} />
+         </div>
+      </li>
+   </ul>
   );
 };
