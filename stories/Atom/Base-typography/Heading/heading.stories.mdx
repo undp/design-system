@@ -1,19 +1,14 @@
 import { Meta, Story } from '@storybook/addon-docs';
-import { H1 } from './h1';
-import { H2 } from './h2';
-import { H3 } from './h3';
-import { H4 } from './h4';
-import { H5 } from './h5';
-import { H6 } from './h6';
+import { Heading } from './Heading';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = {detail1: 'Headline 1', detail2: 'Headline 2', detail3: 'Headline 3', detail4: 'Headline 4', detail5: 'Headline 5', detail6: 'Headline 6'}; return engText;
+    case 'english': const engText = {detail1: 'HEADLINE 1', detail2: 'Headline 2', detail3: 'Headline 3', detail4: 'Headline 4', detail5: 'Headline 5', detail6: 'HEADLINE 6'}; return engText;
     case 'arabic': const arabicText = {detail1: 'العنوان 1.', detail2: 'العنوان 2', detail3: 'العنوان 3', detail4: 'العنوان 4', detail5: 'العنوان 5', detail6: 'العنوان 6'}; return arabicText;
-    case 'burmese': const burmeseText = {detail1: 'ခေါင်းစဉ် ၁', detail2: 'ခေါင်းစဉ် ၂', detail3: 'ခေါင်းစဉ် ၃', detail4: 'ခေါင်းစဉ် ၄', detail5: 'ခေါင်းစဉ် ၅', detail6: 'ခေါင်းစဉ် ၆'}; return burmeseText;
+    case 'burmese': const burmeseText = {detail1: 'ခခေါင်းစီး ၁', detail2: 'ခေါင်းစဉ် ၂', detail3: 'ခေါင်းစဉ် ၃', detail4: 'ခေါင်းစဉ် ၄', detail5: 'ခေါင်းစဉ် ၅', detail6: 'ခေါင်းစီး ၆'}; return burmeseText;
     case 'japanese': const japaneseText = {detail1: '見出し1', detail2: '見出し2', detail3: '見出し3', detail4: '見出し4', detail5: '見出し5', detail6: '見出し6'}; return japaneseText;
     default:
-      return {detail1: 'Headline 1', detail2: 'Headline 2', detail3: 'Headline 3', detail4: 'Headline 4', detail5: 'Headline 5', detail6: 'Headline 6'};
+      return {detail1: 'HEADLINE 1', detail2: 'Headline 2', detail3: 'Headline 3', detail4: 'Headline 4', detail5: 'Headline 5', detail6: 'HEADLINE 6'};
   }
 };
 
@@ -55,70 +50,70 @@ The Heading component are used to define HTML headings.
 Typographic scale when using headings in text component:
 <div class="atoms__heading--wrapper">
   <div class="heading__item">
-    <H1 label="Headline 1"></H1>
-    <div class="heading__label">100px, SohneBold</div>
+    <Heading type='1' label="HEADLINE 1"></Heading>
+    <div class="heading__label">100px, SohneBreit Bold</div>
   </div>
   <div class="heading__item">
-    <H2 label="Headline 2"></H2>
-    <div class="heading__label">55px, ProximaSemiBold</div>
+    <Heading type='2' label="Headline 2"></Heading>
+    <div class="heading__label">55px, ProximaNova Regular</div>
   </div>
     <div class="heading__item">
-    <H3 label="Headline 3"></H3>
-    <div class="heading__label">35px, ProximaBold</div>
+    <Heading type='3' label="Headline 3"></Heading>
+    <div class="heading__label">35px, ProximaNova Regular</div>
   </div>
     <div class="heading__item">
-    <H4 label="Headline 4"></H4>
-    <div class="heading__label">35px, ProximaLight</div>
+    <Heading type='4' label="Headline 4"></Heading>
+    <div class="heading__label">35px, ProximaNova Regular</div>
   </div>
     <div class="heading__item">
-    <H5 label="Headline 5"></H5>
-    <div class="heading__label">25px, ProximaLight</div>
+    <Heading type='5' label="Headline 5"></Heading>
+    <div class="heading__label">25px, ProximaNova Regular</div>
   </div>
     <div class="heading__item">
-    <H6 label="Headline 6"></H6>
-    <div class="heading__label">16px, SohneBold</div>
+    <Heading type='6' label="HEADLINE 6"></Heading>
+    <div class="heading__label">16px, ProximaNova Bold</div>
   </div>
 </div>
 
 <Story name="H1">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <H1 label={caption.detail1} ></H1>;
+    return <Heading type='1' label={caption.detail1} ></Heading>;
   }}
 </Story>
 
 <Story name="H2">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <H2 label={caption.detail2} ></H2>;
+    return <Heading type='2' label={caption.detail2} ></Heading>;
   }}
 </Story>
 
 <Story name="H3">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <H3 label={caption.detail3} ></H3>;
+    return <Heading type='3' label={caption.detail3} ></Heading>;
   }}
 </Story>
 
 <Story name="H4">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <H4 label={caption.detail4} ></H4>;
+    return <Heading type='4' label={caption.detail4} ></Heading>;
   }}
 </Story>
 
 <Story name="H5">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <H5 label={caption.detail5} ></H5>;
+    return <Heading type='5' label={caption.detail5} ></Heading>;
   }}
 </Story>
 
 <Story name="H6">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <H6 label={caption.detail6} ></H6>;
+    return <Heading type='6' label={caption.detail6} ></Heading>;
   }}
 </Story>
 
