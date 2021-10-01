@@ -12,7 +12,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Molecules/Imagecaption" />
+<Meta title="Molecules/Image Caption" />
 
 <style>{`
  .subheading {
@@ -33,7 +33,7 @@ export const getCaptionForLocale = (locale) => {
 # Image Caption + Credit Component
 Image Caption + Credit component used to show the image caption and who posted content in a related page.
 
-<Story name="Imagecaption">
+<Story name="Image Caption">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <Imagecaption label={caption.label} name={caption.name} paragraph={caption.paragraph}></Imagecaption>;
