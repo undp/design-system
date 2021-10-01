@@ -6,7 +6,7 @@ import { Label_caption } from './label';
 export const Datecomponent = ({ type, id, disabled, required, mode, placeholder, errorText, labelText}) => {
   return (
     <form className= 'input-group'>
-      <div className={[`label__${mode}`]}>
+      <div className={[`label__message ${mode}`]}>
         <Label_caption label= { labelText } />
       </div>
       <div className={[`field__setdate ${type} ${mode}`]}>
