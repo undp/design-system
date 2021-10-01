@@ -4,18 +4,19 @@
 /* small copy */
 .smallcopy {
   &__box {
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: $spacing-08;
 
     &--locale {
+      display: block;
       margin-bottom: $spacing-24;
 
       .smallcopy__label {
         display: block;
         font-size: $font-size-16;
         letter-spacing: 0.03em;
-        line-height: 18px;
-        margin-bottom: $spacing-12;
-        margin-right: 0;
+        margin: 0 0 $spacing-12 0;
       }
     }
   }
@@ -23,5 +24,14 @@
   &__label {
     font-family: $Font-Family-ProximaBold;
     margin-right: $spacing-04;
+  }
+}
+
+[dir='rtl'] {
+  .smallcopy {
+    &__label {
+      margin-left: $spacing-04;
+      margin-right: 0;
+    }
   }
 }
