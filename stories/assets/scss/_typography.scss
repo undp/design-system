@@ -45,7 +45,8 @@ h1 {
 }
 
 h2 {
-  font-size: 40px;  
+  font-size: 40px; 
+  font-style: normal;
   line-height: 44px;
   font-family: $Font-Family-ProximaBold;
   @include devicebreak(small) {
@@ -61,7 +62,7 @@ h2 {
 h3 {
   font-size: 30px;
   line-height: 34px;
-  font-weight: 600;
+  font-family: $Font-Family-ProximaRegular;
   @include devicebreak(small) {
     font-size: 35px;  
     line-height: 40px;
@@ -69,9 +70,11 @@ h3 {
 }
 
 h4 {
-  font-size: 25px;  
+  font-size: 25px; 
+  font-style: normal;
+  font-weight: normal;
   line-height: 28px;
-  font-family: $Font-Family-ProximaLight;
+  font-family: $Font-Family-ProximaRegular;
   @include devicebreak(small) {
     font-size: 35px;  
     line-height: 40px;
@@ -80,8 +83,10 @@ h4 {
 
 h5 {
   font-size: 20px;  
+  font-style: normal;
+  font-weight: normal;
   line-height: 22px;  
-  font-family: $Font-Family-ProximaLight;
+  font-family: $Font-Family-ProximaRegular;
    @include devicebreak(small) {
     font-size: 25px;  
     line-height: 28px;
@@ -89,10 +94,10 @@ h5 {
 }
 
 h6 {
-  font-family: $Font-Family-SohneBold;
+  font-family: $Font-Family-ProximaBold;
   font-size: 16px;
+  font-style: normal;
   line-height: 18px;
-  text-transform: uppercase;;
 }
 
 .no-padding {
@@ -101,6 +106,7 @@ h6 {
 }
 
 p {
+  font-family: $Font-Family-ProximaRegular;
   margin-top: 0;
   font-size: 16px;
   line-height: 22px;

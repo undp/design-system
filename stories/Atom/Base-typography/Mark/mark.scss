@@ -6,4 +6,8 @@ mark {
     @extend %paragragh-font-20;
     background: $color-light-yellow;
     padding: 2px;
+    font-size: 14px;
+    @include devicebreak(small) {
+      font-size: 20px;
+    }
 }

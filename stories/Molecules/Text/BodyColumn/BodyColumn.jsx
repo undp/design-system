@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../assets/scss/_grid.scss';
-import { P } from '../../../Atom/Base-typography/Paragraph/p';
+import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 
 export const BodyColumnTwo = ({ descriptionText}) => {
   return (
