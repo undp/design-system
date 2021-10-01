@@ -1,8 +1,10 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { Logo } from './logo';
-import { Logowhite } from './logo-white';
-import { PnudLogo } from './pnud-logo';
-import { PnudLogowhite } from './pnud-logo-white';
+
+import logo from '../../../assets/images/logo.svg';
+import logowhite from '../../../assets/images/logo-white.svg';
+import pnud from '../../../assets/images/pnud.svg';
+import pnudwhite from '../../../assets/images/pnud-white.svg'
 
 <Meta title="Atoms/Logos"  parameters={{
     backgrounds: {
@@ -45,11 +47,11 @@ The UNDP logo is available in two versions: blue, and white. Each has its own pu
 </ul>
 
 <Story name="UNDP Logo" parameters={{ backgrounds: { default: 'white'}}}>
-  return <Logo></Logo> ;
+  return <Logo src={logo} alt={'UNDP Logo'}></Logo> ;
 </Story>
 
 <Story name="UNDP Logo white" parameters={{ backgrounds: { default: 'gray'}}}>
-  return <Logowhite></Logowhite> ;
+  return <Logo src={logowhite} alt={'UNDP Logo'}></Logo> ;
 </Story>
 
 # UNDP Inverted Logos
@@ -68,14 +70,14 @@ PNUD logo is available in two versions: blue, and white. Each has its own purpos
 
 
 <Story name="UNDP Inverted Logo" parameters={{ backgrounds: { default: 'white'}}}>
-  return <PnudLogo></PnudLogo> ;
+  return <Logo src={pnud} alt={'UNDP Logo'}></Logo> ;
 </Story>
 
 <Story name="UNDP Inverted Logo white" parameters={{ backgrounds: { default: 'gray'}}}>
-  return <PnudLogowhite></PnudLogowhite>;  
+  return <Logo src={pnudwhite} alt={'UNDP Logo'}></Logo>;  
 </Story>
 
-<div className="subheading">Usage</div>
+<div className="subheading" >Usage</div>
 <ul>
 <li>Take HTML from the HTML tab in canvas</li>
 <u>To use SCSS include the following files in your implementation</u>
