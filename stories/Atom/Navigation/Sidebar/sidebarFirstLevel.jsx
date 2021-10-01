@@ -5,7 +5,7 @@ import './sidebar.scss';
 
 export const SidebarFirstLevel = ({ mode, active, text,  ...props }) => {
   return (
-      <div className={['Sidebar_item',`Sidebar_item--${active}`].join(' ')}  {...props}>
+      <div className={['Sidebar__item',`Sidebar__item--${active}`].join(' ')}  {...props}>
         <H6 label={text} />
       </div>
   );

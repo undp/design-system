@@ -4,7 +4,7 @@
 @import "../../../assets/scss/typography";
 
 // * Slidebar start *//
-.Sidebar_item {
+.Sidebar__item {
   @extend %border-bottom;
   @extend %sidebar;
   &:hover {
