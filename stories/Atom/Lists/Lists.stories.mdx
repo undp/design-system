@@ -1,6 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs';
-import { Unorderlist } from './Unorderlist';
-import { Orderlist } from './Orderlist';
+import { List } from './Lists';
 import { Descriptionlist } from './Descriptionlist';
 
 export const getCaptionForLocale = (locale) => {
@@ -97,10 +96,10 @@ Lists consist of related items grouped together.
 <p>Add a <code>li</code> tag for each list item</p>
 <p>E.g</p>
 
-<Story name="Unordertag">
+<Story name="Unordered List">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Unorderlist data={caption}></Unorderlist>;
+    return <List data={caption} type="ul"></List>;
   }}
 </Story>
 
@@ -109,10 +108,10 @@ Lists consist of related items grouped together.
 <p>Start an ordered list with the <code>o1</code> tag.</p>
 <p>Add a <code>li</code> tag for each list item</p>
 
-<Story name="Ordertag">
+<Story name="Ordered List">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Orderlist data={caption}></Orderlist>;
+    return <List data={caption} type="ol"></List>;
   }}
 </Story>
 
@@ -120,7 +119,7 @@ Lists consist of related items grouped together.
 <p>A description list is a list of terms, with a description of each term.</p>
 <p>The <code>dl</code> tag defines the description list, the <code>dt</code> tag defines the term (name), and the <code>dd</code> tag describes each term.</p>
 
-<Story name="Descriptiontag">
+<Story name="Description List">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <Descriptionlist data={caption}></Descriptionlist>;
