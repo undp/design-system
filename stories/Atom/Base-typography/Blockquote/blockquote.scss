@@ -1,6 +1,6 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 blockquote {
   font-family: $Font-Family-ProximaRegular;
@@ -8,6 +8,7 @@ blockquote {
   font-weight: 600;
   line-height: 30px;
   margin-bottom: 18px;
+
   @include devicebreak(small) {
     font-size: 35px;
     line-height: 40px;

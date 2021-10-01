@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { H5 } from '../../Base-typography/Heading/h5';
+import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
 import './sidebarsecondlevel.scss';
 
 export const Sidebarsecondlevel = ({ text,  ...props }) => {

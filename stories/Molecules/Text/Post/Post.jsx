@@ -1,16 +1,13 @@
-//import React from 'react';
-import React, { useState } from 'react';
+import React from 'react';
 import './post.scss';
-import { H2 } from '../../../Atom/Base-typography/Heading/h2';
-import { H5 } from '../../../Atom/Base-typography/Heading/h5';
-import { H6 } from '../../../Atom/Base-typography/Heading/h6';
+import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
 
 export const Post = ({ headerText, countryText, descriptionText }) => {
   return (
     <div className='post-wrapper' >  
-     <H2 label={headerText} />
-     <H6 label={descriptionText} />   
-     {countryText && <H5 label={countryText} />}
+     <Heading type='2' label={headerText} />
+     <Heading type='6' label={descriptionText} />   
+     {countryText && <Heading type='5' label={countryText} />}
     </div>
   );
 };

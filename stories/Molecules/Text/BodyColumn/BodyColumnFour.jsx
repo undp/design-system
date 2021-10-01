@@ -1,5 +1,5 @@
 import React from 'react';
-import { P } from '../../../Atom/Base-typography/Paragraph/p';
+import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 
 export const BodyColumnFour = ({ descriptionText}) => {
   return (

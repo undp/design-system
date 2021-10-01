@@ -1,9 +1,13 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 mark {
-    @extend %paragragh-font-20;
-    background: $color-light-yellow;
-    padding: 2px;
+  @extend %paragragh-font-20;
+
+  font-size: 14px;
+
+  @include devicebreak(small) {
+    font-size: 20px;
+  }
 }

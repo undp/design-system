@@ -1,15 +1,16 @@
 /* typograpgy start */
-@import "./variables";
-@import "./breakpoints";
+@import './variables';
+@import './breakpoints';
 
 body {
   color: $color-black;
   font-family: $Font-Family-ProximaRegular;
   font-size: 16px;
-  line-height: 22px;
   font-weight: 400;
-   @include devicebreak(small) {
-    font-size: 20px;  
+  line-height: 22px;
+
+  @include devicebreak(small) {
+    font-size: 20px;
     line-height: 28px;
   }
 }
@@ -21,78 +22,91 @@ h4,
 h5,
 h6,
 caption {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 12px;
   font-family: $Font-Family-ProximaRegular;
-   @include devicebreak(small) {
-     margin-bottom: 16px;
-    }
+  margin: 0;
+  margin-bottom: 12px;
+  padding: 0;
+
+  @include devicebreak(small) {
+    margin-bottom: 16px;
+  }
 }
 
 h1 {
-  font-size: 47px;  
-  line-height: 50px;
   font-family: $Font-Family-SohneBold;
+  font-size: 47px;
+  line-height: 50px;
+
   @include devicebreak(small) {
-    font-size: 82px;  
+    font-size: 82px;
     line-height: 88px;
-    }
+  }
+
   @include devicebreak(large) {
-    font-size: 100px;  
+    font-size: 100px;
     line-height: 88px;
   }
 }
 
 h2 {
-  font-size: 40px;  
-  line-height: 44px;
   font-family: $Font-Family-ProximaBold;
+  font-size: 40px;
+  font-style: normal;
+  line-height: 44px;
+
   @include devicebreak(small) {
-    font-size: 45px;  
+    font-size: 45px;
     line-height: 50px;
-    }
+  }
+
   @include devicebreak(large) {
-    font-size: 55px;  
+    font-size: 55px;
     line-height: 60px;
   }
 }
 
 h3 {
+  font-family: $Font-Family-ProximaRegular;
   font-size: 30px;
   line-height: 34px;
-  font-weight: 600;
+
   @include devicebreak(small) {
-    font-size: 35px;  
+    font-size: 35px;
     line-height: 40px;
-    }
+  }
 }
 
 h4 {
-  font-size: 25px;  
+  font-family: $Font-Family-ProximaRegular;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: normal;
   line-height: 28px;
-  font-family: $Font-Family-ProximaLight;
+
   @include devicebreak(small) {
-    font-size: 35px;  
+    font-size: 35px;
     line-height: 40px;
   }
 }
 
 h5 {
-  font-size: 20px;  
-  line-height: 22px;  
-  font-family: $Font-Family-ProximaLight;
-   @include devicebreak(small) {
-    font-size: 25px;  
+  font-family: $Font-Family-ProximaRegular;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 22px;
+
+  @include devicebreak(small) {
+    font-size: 25px;
     line-height: 28px;
   }
 }
 
 h6 {
-  font-family: $Font-Family-SohneBold;
+  font-family: $Font-Family-ProximaBold;
   font-size: 16px;
+  font-style: normal;
   line-height: 18px;
-  text-transform: uppercase;;
 }
 
 .no-padding {
@@ -101,9 +115,11 @@ h6 {
 }
 
 p {
-  margin-top: 0;
+  font-family: $Font-Family-ProximaRegular;
   font-size: 16px;
   line-height: 22px;
+  margin-top: 0;
+
   @include devicebreak(small) {
     font-size: 20px;
     line-height: 27px;
@@ -112,27 +128,31 @@ p {
 
 ul,
 ol {
-  margin: 0;
+  font-family: $Font-Family-ProximaRegular;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
-  font-family: $Font-Family-ProximaRegular;
+  margin: 0;
+
   @include devicebreak(small) {
     font-size: 20px;
     line-height: 27.5px;
   }
 }
+
 dl {
-  margin: 0;
+  font-family: $Font-Family-ProximaRegular;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 19.25px;
-  font-family: $Font-Family-ProximaRegular;
+  margin: 0;
+
   @include devicebreak(small) {
     font-size: 20px;
     line-height: 27.5px;
   }
 }
+
 /* typograpgy end */

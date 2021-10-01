@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { H6 } from '../../Base-typography/Heading/h6';
+import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
 import './sidebar.scss';
 
 export const SidebarFirstLevel = ({ mode, active, text,  ...props }) => {
   return (
       <div className={['Sidebar_item',`Sidebar_item--${active}`].join(' ')}  {...props}>
-        <H6 label={text} />
+        <Heading type='6'  label={text} />
       </div>
   );
 };

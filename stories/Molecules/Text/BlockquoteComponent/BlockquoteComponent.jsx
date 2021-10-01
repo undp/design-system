@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Blockquote } from '../../../Atom/Base-typography/Blockquote/blockquote';
-import { Cite } from '../../../Atom/Base-typography/Cite/cite';
+import { Blockquote } from '../../../Atom/Base-typography/Blockquote/Blockquote';
+import { Cite } from '../../../Atom/Base-typography/Cite/Cite';
 import './blockquotecomp.scss';
 
 export const BlockquoteComponent = ({blockquoteText, citeText, style, props}) => {

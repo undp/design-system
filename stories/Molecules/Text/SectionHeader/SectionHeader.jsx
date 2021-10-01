@@ -1,12 +1,11 @@
 import React from 'react';
-import { H2 } from '../../../Atom/Base-typography/Heading/h2';
-import { H4 } from '../../../Atom/Base-typography/Heading/h4';
+import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
 
 export const SectionHeader = ({ headerText, descriptionText}) => {
   return (
     <div className='header-wrapper' >  
-        <H2 label={headerText} />
-        <H4 label={descriptionText} />
+        <Heading type='2' label={headerText} />
+        <Heading type='4' label={descriptionText} />
     </div>
   );
 };
