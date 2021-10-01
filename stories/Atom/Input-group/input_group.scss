@@ -60,6 +60,9 @@
     &.textarea-field {
       height: auto;
       max-width: 100%;
+      &.errorstate {
+        border: 2px solid $color-black;
+      }
     }
 
     &.search-field {
