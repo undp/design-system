@@ -1,6 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { Breadcrumb } from './Breadcrumb';
-import { BreadcrumbLast } from './BreadcrumbLast';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -42,26 +41,13 @@ The breadcrumb is a secondary navigation pattern that helps a user understand th
 Breadcrumbs show users their current location relative to the information architecture and enable them to quickly move up to a parent level or previous step.
 
 
-<Story name="Breadcrumb First Item">
+<Story name="Breadcrumb">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <Breadcrumb text={caption.detail} style={'first'}></Breadcrumb>;
   }}
 </Story>
 
-<Story name="Breadcrumb Middle Item">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Breadcrumb text={caption.detail} style={'middle'}></Breadcrumb>;
-  }}
-</Story>
-
-<Story name="Breadcrumb Last Item">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <BreadcrumbLast text={caption.detail} style={'last'}></BreadcrumbLast>;
-  }}
-</Story>
 
 <div className="subheading">Usage</div>
 <ul>
