@@ -1,67 +1,79 @@
-@import "../../assets/scss/variables";
-@import "../../assets/scss/breakpoints";
+@import '../../assets/scss/variables';
+@import '../../assets/scss/breakpoints';
 
 /* image caption */
 .image__caption {
-  display: block;
   border-bottom: 2px solid $color-black;
+  display: block;
+
   @include devicebreak(small) {
     display: flex;
     padding-bottom: $spacing-24;
   }
+
   &_para {
-    line-height: 19.25px;
+    border-bottom: 1px solid $color-gray-500;
     color: $color-gray-600;
     font-size: $font-size-14;
+    line-height: 19.25px;
     margin-bottom: $spacing-16;
     padding-bottom: $spacing-16;
-    border-bottom: 1px solid $color-gray-500;
+
     @include devicebreak(small) {
-      margin: 0;
       border: 0;
-      padding-bottom: 0;
-      line-height: 22px;
-      padding-right: $spacing-40;
       font-size: $font-size-16;
+      line-height: 22px;
+      margin: 0;
+      padding-bottom: 0;
+      padding-right: $spacing-40;
+    }
+
+    & + .image--author {
+      display: flex;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+      margin-bottom: $spacing-16;
+
+      @include devicebreak(small) {
+        border-left: 1px solid $color-gray-500;
+        display: block;
+        margin-bottom: 0;
+        min-width: 180px;
+        padding-left: $spacing-40;
+      }
+
+      .author--label {
+        margin-right: $spacing-04;
+
+        @include devicebreak(small) {
+          margin-right: 0;
+        }
+      }
     }
   }
 }
 
-.image--author {
-  display: flex;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-  margin-bottom: $spacing-16;
-  @include devicebreak(small) {
-    display: block;
-    margin-bottom: 0;
-    padding-left: $spacing-40;
-    border-left: 1px solid $color-gray-500;
-    min-width: 180px;
-  }
-}
-
-[dir="rtl"] {
+[dir='rtl'] {
   .image__caption {
     &_para {
       @include devicebreak(small) {
         padding-left: $spacing-40;
         padding-right: 0;
       }
-    }
-  }
-  .image--author {
-    @include devicebreak(small) {
-      padding-right: $spacing-40;
-      border-left: none;
-      border-right: 1px solid $color-gray-500;
-    }
-  }
-}
 
-.author--label {
-  margin-right: $spacing-04;
-  @include devicebreak(small) {
-    margin-right: 0;
+      & + .image--author {
+        @include devicebreak(small) {
+          border-left: none;
+          border-right: 1px solid $color-gray-500;
+          padding-left: 0;
+          padding-right: $spacing-40;
+        }
+
+        .author--label {
+          margin-left: $spacing-04;
+          margin-right: 0;
+        }
+      }
+    }
   }
 }
