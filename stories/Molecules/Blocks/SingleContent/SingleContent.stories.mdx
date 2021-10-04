@@ -1,0 +1,75 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { SingleContent } from './SingleContent';
+import img from '../../../assets/images/card-thumbnail.jpg';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {title: 'CONTENT TAG', name: 'Title of the post goes here and it’s two lines', nametwo: 'Title of the post goes here and it’s two lines', paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.', btnlabel: 'READ MORE'}; return engText;
+    case 'arabic': const arabicText = {title: 'علامة المحتوى', name: 'يظهر عنوان المنشور هنا وهو عبارة عن سطرين "، قم بتسمية:" عنوان المشاركة يظهر هنا ويتكون من سطرين', nametwo: 'يظهر عنوان المشاركة هنا ويتكون من سطرين', paragraph: 'الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي', btnlabel: 'اقرأ أكثر'}; return arabicText;
+    case 'burmese': const burmeseText = {title: 'အကြောင်းအရာ TAG', name: 'يظهر عنوان المشاركة هنا ويتكون من سطرين', nametwo: 'ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ စာကြောင်းနှစ်ကြောင်းပါ', paragraph: 'နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်', btnlabel: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {title: 'コンテンツタグ', name: '投稿のタイトルはここにあり、2行です', nametwo: 'ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ စာကြောင်းနှစ်ကြောင်းပါ', paragraph: '痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉', btnlabel: '続きを読む'}; return japaneseText;
+    default:
+      return {title: 'CONTENT TAG', name: 'Title of the post goes here and it’s two lines', nametwo: 'Title of the post goes here and it’s two lines', paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.', btnlabel: 'READ MORE'};
+  }
+};
+
+<Meta title="Molecules/Blocks/Single Content Card" />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+`}</style>
+
+# Single Content Card Component
+The Single Content Card component defines a card of information data with some items - Title, Image, Paragraph, and CTA Link. We are using the grid system here <code>assets/scss/grid.scss</code>. Atoms tags are used for creating this card.
+
+<div className="subheading">Single Content Card With Image</div>
+<p>Single content card with image are show the Title, Image, and CTA Link. The background color is different on hover.</p>
+
+<Story name="Single Card With Image">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <SingleContent contenttile={caption.title} contentname={caption.name} image={img} button={caption.btnlabel} link='#' type='grey'></SingleContent>;
+  }}
+</Story>
+
+<div className="subheading">Single Content Card Yellow</div>
+<p>Single content card yellow are show the Title, and CTA Link. The background color is different on hover.</p>
+
+<Story name="Single Card Yellow">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <SingleContent contenttile={caption.title} contentnametwo={caption.nametwo} button={caption.btnlabel} link='#' type='yellow singlecard-space'></SingleContent>;
+  }}
+</Story>
+
+<div className="subheading">Single Content Card With Paragraph</div>
+<p>Single content card with paragraph are show the Title, Caption, Paragraph, and CTA Link. The background color is different on hover.</p>
+
+<Story name="Single Card With Paragraph">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <SingleContent contenttile={caption.title} contentname={caption.name} paragraph={caption.paragraph} button={caption.btnlabel} link='#' type='grey singlecard-space'></SingleContent>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>singlecontent.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

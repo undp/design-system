@@ -3,7 +3,7 @@
 @import './_mixins';
 @import './_fonts';
 @import './_grid';
-@import "./typography";
+@import './typography';
 
 // Atoms
 @import '../../Atom/Global/Logo/logo.scss';
@@ -27,7 +27,6 @@
 @import '../../Atom/Cards/Publication-thumbnail/publication-thumbnail.scss';
 @import '../../Atom/Buttons-and-labels/Chips/chips.scss';
 @import '../../Atom/Buttons-and-labels/Cta_button/buttons.scss';
-
 
 // Reach Elemets Atoms
 @import '../../Atom/Reach-element/Details/details.scss';
@@ -56,3 +55,4 @@
 @import '../../Molecules/Text/Tertiary/tertiary.scss';
 @import '../../Molecules/Text/SmallCopy/smallcopy.scss';
 @import '../../Molecules/Text/ProjectDetails/projectdetails.scss';
+@import '../../Molecules/Blocks/SingleContent/singlecontent.scss';
