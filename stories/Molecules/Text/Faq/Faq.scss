@@ -14,6 +14,7 @@
     padding: $spacing-16 0 $spacing-24;
     cursor: pointer;
     overflow: hidden;
+    list-style: none;
     &::before {
       content: "";
       background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
