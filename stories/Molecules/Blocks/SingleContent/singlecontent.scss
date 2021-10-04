@@ -1,0 +1,69 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.singlecard {
+  border: 0;
+  border-top: 2px solid $color-black;
+  display: block;
+  margin-bottom: $spacing-24;
+
+  & .singlecard__head {
+    font-family: $Font-Family-ProximaBold;
+    font-size: 12px;
+    letter-spacing: 0.48px;
+    line-height: 13.5px;
+    padding: $spacing-16 $spacing-24;
+    text-transform: uppercase;
+  }
+
+  &__caption {
+    padding: $spacing-16 $spacing-24 $spacing-24;
+
+    & .cta__link {
+      margin-top: $spacing-08;
+    }
+  }
+
+  &__para {
+    display: block;
+    font-size: $font-size-16;
+    letter-spacing: 0;
+    line-height: 22px;
+  }
+
+  &-space {
+    .cta__link {
+      margin-top: $spacing-96;
+    }
+  }
+
+  &--grey:hover {
+    background-color: $color-gray-100;
+  }
+
+  &--yellow {
+    background-color: $color-light-yellow;
+
+    &:hover {
+      background-color: $color-yellow;
+    }
+  }
+
+  &:hover {
+    .card_thumbnail__image::before {
+      opacity: 0.75;
+    }
+
+    .cta__link::after {
+      @include translate(70%,0);
+    }
+  }
+}
+
+[dir='rtl'] {
+  .singlecard:hover {
+    .cta__link::after {
+      @include transform(translate(-50%,0) rotate(180deg));
+    }
+  }
+}
