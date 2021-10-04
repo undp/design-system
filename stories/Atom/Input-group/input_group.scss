@@ -2,28 +2,36 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
 
-.label__caption,
-.help__caption,
-.error__caption {
-  @extend %paragragh-font-20;
-}
-
-.help__caption {
-  font-size: 14px;
-}
-
-.error__caption {
-  color: $color-red;
-  font-size: 16px;
-}
-
 .input-group {
-  .field__image {
+  &__label {
+    &--default-state, &--focus-state, &--error-state, &--disabled-state {
+      @extend %paragragh-font-20;
+      &-error {
+        font-size: $font-size-16;
+        color: $color-red;
+      }
+      &-help {
+        display: block;
+        font-size: $font-size-14;
+      }
+    }
+    &--disabled-state {
+      color: $color-gray-400;
+      &-help {
+        color: $color-gray-400;
+      }
+    }
+  }
+  &__icon {
     display: inline-block;
     position: relative;
     width: 100%;
 
-    &.search {
+    &.undefined-field {
+      display: none;
+    }
+
+    &.search-field {
       &::before {
         @extend %field__image;
 
@@ -31,7 +39,7 @@
         content: '';
       }
 
-      &.disabledstate {
+      &.disabled-state {
         &::before {
           background-image: url(#{$img-path-Iconback}/Searchgray.svg);
           content: '';
@@ -39,13 +47,9 @@
       }
     }
   }
-
-  .field__setdate {
-    position: relative;
-  }
-
-  .input-type {
+  .input__controls {
     border: 2px solid $color-black;
+    font-family: $Font-Family-ProximaRegular;
     box-sizing: border-box;
     font-size: $font-size-16;
     height: 46px;
@@ -56,68 +60,44 @@
     &::placeholder {
       color: $color-gray-500;
     }
-
-    &.textarea-field {
-      height: auto;
-      max-width: 100%;
-      &.errorstate {
-        border: 2px solid $color-black;
-      }
-    }
-
-    &.search-field {
-      padding-left: 35px;
-      position: relative;
-    }
-
-    &.focusstate {
+    &.focus-state {
       &:focus {
         box-shadow: 0 0 4px #0468b1;
       }
     }
-
-    &.errorstate {
+    &.error-state {
       border: 2px solid $color-red;
     }
-
-    &.disabledstate {
+    &.disabled-state {
       border: 2px solid $color-gray-400;
-
+      background-color: $color-white;
       &::placeholder {
         color: $color-gray-400;
       }
     }
-
-    &.date-field {
-      background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat left 15px bottom 12px;
+    &--search {
+      padding-left: 40px;
+      position: relative;
+    }
+    &--date {
+      background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat left 14px bottom 12px;
       color: $color-gray-500;
       padding-left: 40px;
 
-      &.disabledstate {
+      &.disabled-state {
         background-image: url(#{$img-path-Iconback}/datedisabled.svg);
         color: $color-gray-400;
-        padding-left: 40px;
       }
     }
-  }
-
-  .help__message {
-    &.disabledstate {
-      .help__caption {
-        color: $color-gray-400;
-      }
-    }
-  }
-
-  .label__message {
-    &.disabledstate {
-      .label__caption {
-        color: $color-gray-400;
+    &--textarea {
+      height: auto;
+      max-width: 100%;
+      &.error-state {
+        border: 2px solid $color-black;
       }
     }
   }
 }
-
 input[type='date']::-webkit-calendar-picker-indicator {
   appearance: none;
   left: -12px;
@@ -125,53 +105,27 @@ input[type='date']::-webkit-calendar-picker-indicator {
   position: absolute;
 }
 
-input::-webkit-datetime-edit {
-  left: 0;
-  position: relative;
-}
-
-input::-webkit-datetime-edit-fields-wrapper {
-  left: 0;
-  position: relative;
-}
-
-input[type='date']:invalid::-webkit-datetime-edit {
-  color: $color-gray-500;
-}
-
 [dir='rtl'] {
   .input-group {
-    .input-type {
-      &.search-field {
-        padding-right: 35px;
+    &__icon.search-field::before {
+      right: 14px;
+    }
+    .input__controls {
+      &--search {
+        padding-right: 40px;
       }
-
-      &.date-field {
-        background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat right 15px bottom 12px;
-        padding-left: 15px;
+      &--date {
+        background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat right 14px bottom 12px;
         padding-right: 40px;
         text-align: right;
 
-        &.disabledstate {
+        &.disabled-state {
           background-image: url(#{$img-path-Iconback}/datedisabled.svg);
         }
       }
     }
   }
-
-  .search {
-    &::before {
-      @extend %field__image;
-
-      background-image: url(#{$img-path-Iconback}/Search_black.svg);
-      content: '';
-      left: 0;
-      right: 10px;
-    }
-  }
-
   input[type='date']::-webkit-calendar-picker-indicator {
-    position: absolute;
     right: 3px;
   }
 }
