@@ -9,40 +9,52 @@
 }
 
 .accordion__item {
-    border-bottom: 1px solid $color-gray-500;
-    position: relative;
-    padding: $spacing-16 0 $spacing-24;
-    cursor: pointer;
-    overflow: hidden;
-    list-style: none;
-    &::before {
-      content: "";
-      background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
-      float: right;
-      width: 20px;
-      height: 20px;
-      border-top-color: #f3f3f3;
-      transition: all 0.1s ease;
-      margin-left: $spacing-24;
-    }
+  border-bottom: 1px solid $color-gray-500;
+  position: relative;
+  padding: $spacing-16 0 $spacing-24;
+  cursor: pointer;
+  overflow: hidden;
+  list-style: none;
+  &::before {
+    content: "";
+    background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
+    float: right;
+    width: 20px;
+    height: 20px;
+    border-top-color: #f3f3f3;
+    @include transition(0.1s ease);
+    margin-left: $spacing-24;
+  }
+  .accordion__heading {
+    margin-bottom: 0;
+  }
+  &.accordion--active {
     .accordion__heading {
-      margin-bottom: 0;
+      margin-bottom: 10px;
+      padding-right: $spacing-24;
+      @include devicebreak(small) {
+        margin-bottom: 0;
+        padding-bottom: $spacing-16;
+      }
     }
-    &.accordion--active {
-      .accordion__heading {
-        margin-bottom: 10px;
-        padding-right: $spacing-24;
-        @include devicebreak(small) {
-          margin-bottom: 0;
-          padding-bottom: $spacing-16;
-        }
-      }
-      &::before {
-        transform: rotateZ(180deg);
-        transition: all 0.1s ease;
-      }
+    &::before {
+        @include transform(rotateZ(180deg));
     }
   }
+}
+
+[dir='rtl'] {
+  .accordion__item {
+    &::before { 
+      float: left;
+    }
+  }
+  .accordion--active {
+    .accordion__heading {
+      padding-right: 0;
+    }
+  }
+}
 
 .accordion__panel {
   padding: $spacing-32;
