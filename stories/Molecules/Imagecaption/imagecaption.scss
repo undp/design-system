@@ -6,7 +6,7 @@
   border-bottom: 2px solid $color-black;
   display: block;
 
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     display: flex;
     padding-bottom: $spacing-24;
   }
@@ -19,7 +19,7 @@
     margin-bottom: $spacing-16;
     padding-bottom: $spacing-16;
 
-    @include devicebreak(small) {
+    @include devicebreak(medium) {
       border: 0;
       font-size: $font-size-16;
       line-height: 22px;
@@ -34,7 +34,7 @@
       flex-wrap: wrap;
       margin-bottom: $spacing-16;
 
-      @include devicebreak(small) {
+      @include devicebreak(medium) {
         border-left: 1px solid $color-gray-500;
         display: block;
         margin-bottom: 0;
@@ -45,7 +45,7 @@
       .author--label {
         margin-right: $spacing-04;
 
-        @include devicebreak(small) {
+        @include devicebreak(medium) {
           margin-right: 0;
         }
       }
@@ -56,13 +56,13 @@
 [dir='rtl'] {
   .image__caption {
     &_para {
-      @include devicebreak(small) {
+      @include devicebreak(medium) {
         padding-left: $spacing-40;
         padding-right: 0;
       }
 
       & + .image--author {
-        @include devicebreak(small) {
+        @include devicebreak(medium) {
           border-left: none;
           border-right: 1px solid $color-gray-500;
           padding-left: 0;

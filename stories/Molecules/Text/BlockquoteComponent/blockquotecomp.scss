@@ -5,7 +5,7 @@
 .blockquote-wrapper {
   padding: 30px;
   font-family: $Font-Family-ProximaRegular;
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     padding: 85px;
   }
   &--Gray {

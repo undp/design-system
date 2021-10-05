@@ -10,7 +10,7 @@
   width: 40px;
   height: 40px;
   @include loader;
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     width: 96px;
     height: 96px;
     border: 14px solid $color-blue-600;

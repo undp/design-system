@@ -22,7 +22,7 @@
       background: url(#{$img-path-Icon}/Timesred.svg) no-repeat left;
       margin-right: 10px;
       display: inline-flex;
-      @include devicebreak(small) {
+      @include devicebreak(medium) {
         top: 3px;
       }
     }

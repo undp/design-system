@@ -5,7 +5,7 @@
 .heading-big-wrapper{
   h2 {
     margin-bottom: $spacing-48;
-    @include devicebreak(small) {
+    @include devicebreak(medium) {
        margin-bottom: 0;
     }
   }
