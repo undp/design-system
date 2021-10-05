@@ -32,7 +32,7 @@
     .accordion__heading {
       margin-bottom: 10px;
       padding-right: $spacing-24;
-      @include devicebreak(small) {
+      @include devicebreak(medium) {
         margin-bottom: 0;
         padding-bottom: $spacing-16;
       }
@@ -60,7 +60,7 @@
   padding: $spacing-32;
   height: auto;
   display: none;
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     padding: $spacing-40;
   }
 }

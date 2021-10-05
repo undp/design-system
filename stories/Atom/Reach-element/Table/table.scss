@@ -15,7 +15,7 @@ table {
       text-align: left;
       font-weight: 700;
       @extend %paragragh-font-20;
-      @include devicebreak(small) {
+      @include devicebreak(medium) {
         padding: 16px;
       }
     }
@@ -25,7 +25,7 @@ table {
       @extend %border-bottom;
       font-weight: 300;
       @extend %paragragh-font-20;
-       @include devicebreak(small) {
+       @include devicebreak(medium) {
         padding: 16px;
       }
     }

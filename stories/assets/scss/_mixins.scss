@@ -13,7 +13,7 @@
   font-size: 12px;
   line-height: 16px;
 
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     font-size: $font-size-14;
     line-height: 19px;
   }
@@ -24,7 +24,7 @@
   font-size: $font-size-14;
   line-height: 20px;
 
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     font-size: $font-size-16;
     line-height: 22px;
   }
@@ -34,7 +34,7 @@
   font-size: $font-size-16;
   line-height: 22px;
 
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     font-size: $font-size-20;
     line-height: 26px;
   }
@@ -45,7 +45,7 @@
   font-size: $font-size-20;
   line-height: 23px;
 
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     font-size: 24px;
     line-height: 27px;
   }
@@ -75,7 +75,7 @@
   padding: 16px;
   position: relative;
 
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     padding: 24px;
   }
 }
@@ -121,7 +121,7 @@
   line-height: inherit;
   padding: $spacing-16 $spacing-24;
 
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     display: inline-flex;
     min-width: 168px;
   }
@@ -139,7 +139,7 @@
   letter-spacing: 0.03em;
   line-height: 1;
 
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     display: inline-flex;
     min-width: 168px;
   }

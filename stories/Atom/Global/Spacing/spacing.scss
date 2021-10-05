@@ -23,7 +23,7 @@
         .spacing__size {
             width: 100px;
             height: 100px;
-            @include devicebreak(small) {
+            @include devicebreak(medium) {
                 margin: 0 100px;
             }
         }

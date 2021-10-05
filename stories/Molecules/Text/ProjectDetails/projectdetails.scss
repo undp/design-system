@@ -6,7 +6,7 @@
 .projectdata {
   border-bottom: 1px solid $color-gray-400;
 
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     border: 0;
   }
 
@@ -15,7 +15,7 @@
     margin-bottom: $spacing-32;
     width: 50%;
 
-    @include devicebreak(small) {
+    @include devicebreak(medium) {
       width: 100%;
     }
   }

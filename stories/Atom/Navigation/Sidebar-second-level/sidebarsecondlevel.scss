@@ -6,7 +6,7 @@
 .sidebar_item__sub {
   padding: 16px 24px 16px 32px;
   @extend %paragragh-font-16;
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
     padding-left: 48px;
   }
   &:hover {
