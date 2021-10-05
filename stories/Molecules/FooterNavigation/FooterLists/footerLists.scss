@@ -1,0 +1,103 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+
+/* footer items start */
+.footer__items {
+  padding: 0;
+  position: relative;
+  &--white {
+    .footer__heading {
+      color: $color-white;
+    }
+    .footer__panel {
+      a {
+        color: $color-white;
+      }
+    }
+    .footer__item {
+      border-color: $color-white;
+
+      &::before {
+        background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
+      }
+    }
+  }
+}
+
+.footer__item {
+  border-bottom: 1px solid $color-gray-500;
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+  list-style: none;
+  @include devicebreak(medium) {
+    border-bottom: 0;
+    padding: $spacing-16 0 $spacing-24;
+  }
+  &::before {
+    content: "";
+    background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
+    float: right;
+    width: 20px;
+    height: 20px;
+    @include transition(0.1s ease);
+    margin-left: $spacing-24;
+    display: block;
+    @include devicebreak(medium) {
+      display: none;
+    }
+  }
+  .footer__heading {
+    margin-bottom: 0;
+    text-transform: uppercase;
+
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-12;
+    }
+  }
+  &.footer--active {
+    .footer__heading {
+      margin-bottom: 10px;
+      padding-right: $spacing-24;
+      @include devicebreak(medium) {
+        margin-bottom: 0;
+        padding-bottom: $spacing-16;
+      }
+    }
+    &::before {
+      @include transform(rotateZ(180deg));
+    }
+  }
+}
+
+[dir="rtl"] {
+  .footer__item {
+    &::before {
+      float: left;
+      margin-left: 0;
+    }
+  }
+  .footer--active {
+    .footer__heading {
+      padding-right: 0;
+    }
+  }
+}
+
+.footer__panel {
+  padding: $spacing-16 0;
+  height: auto;
+  display: block;
+  @include devicebreak(medium) {
+    padding: 0;
+  }
+  a {
+    font-size: $font-size-16;
+    line-height: 22px;
+    margin-bottom: $spacing-08;
+    display: block;
+    border: none;
+  }
+}
+/* footer items end */

@@ -1,0 +1,153 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { FooterLists } from './FooterLists';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {authordata: [{
+      text: 'Page title',
+    }, 
+    {
+      text: 'Page title',
+    },
+    {
+      text: 'Page title',
+    }, 
+    {
+      text: 'Page title',
+    },
+    {
+      text: 'Page title',
+    }],
+    headerText: 'Page title'
+    }; return engText;
+    case 'arabic': const arabicText = {authordata: [{
+     text: 'عنوان الصفحة',
+    }, 
+    {
+      text: 'عنوان الصفحة',
+    },
+    {
+      text: 'عنوان الصفحة',
+    }, 
+    {
+      text: 'عنوان الصفحة',
+    },
+    {
+      text: 'عنوان الصفحة',
+    }],
+    headerText: 'عنوان الصفحة'
+    };
+     return arabicText;
+    case 'burmese': const burmeseText = {authordata: [{
+      text: 'စာမျက်နှာခေါင်းစဉ်',
+    }, 
+    {
+      text: 'စာမျက်နှာခေါင်းစဉ်',
+    },
+    {
+      text: 'စာမျက်နှာခေါင်းစဉ်',
+    }, 
+    {
+      text: 'စာမျက်နှာခေါင်းစဉ်',
+    },
+    {
+      text: 'စာမျက်နှာခေါင်းစဉ်',
+    }],
+    headerText: 'စာမျက်နှာခေါင်းစဉ်'
+    }; return burmeseText;
+    case 'japanese': const japaneseText = {authordata: [{
+      text: 'ページタイトル',
+    }, 
+    {
+      text: 'ページタイトル',
+    },
+    {
+      text: 'ページタイトル',
+    }, 
+    {
+      text: 'ページタイトル',
+    },
+    {
+      text: 'ページタイトル',
+    }],
+    headerText: 'ページタイトル'
+    }; return japaneseText;
+    default:
+      const dummy =  {authordata: [{
+     text: 'Page title',
+    }, 
+    {
+      text: 'Page title',
+    },
+    {
+      text: 'Page title',
+    }, 
+    {
+      text: 'Page title',
+    },
+    {
+      text: 'Page title',
+    }],
+    headerText: 'Page title'
+    };
+    return dummy
+  }
+};
+
+<Meta title="Molecules/Footer Navigation/Footer List " 
+  argTypes={{
+      variant: {
+          options: ['black', 'white'],
+          control: { type: 'radio' }
+      }
+  }}
+  parameters={{
+    backgrounds: {
+      default: 'white',
+      values: [
+        { name: 'gray', value: '#D4D6D8' },
+      ],
+    },
+  }} 
+  />
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+   .css-zgt7u1 {
+    background: #D4D6D8;
+  }
+`}</style>
+
+# Footer List items component
+Footer List items components are used to present the site-related information links on the footer section.
+
+<ul>
+<li>Two colors variation are created  Black and white colors.</li>
+</ul>
+
+<Story name="Footer List" parameters={{ backgrounds: { default: 'gray'}}}>
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <FooterLists  data={caption.authordata} headerText={caption.headerText} {...args} ></FooterLists>;
+  }}
+</Story>
+
+
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>footerlists.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
