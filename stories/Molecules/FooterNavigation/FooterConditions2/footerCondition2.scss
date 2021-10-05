@@ -1,0 +1,45 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+
+// * footer condition start *//
+.footer__condition_text {
+  padding-left: 0;
+  @include devicebreak(medium) {
+    text-align: right;
+    float: right;
+    max-width: 690px;
+  }
+  li {
+    list-style: none;
+    @extend %paragragh-font-16;
+    margin-bottom: 18px;
+    @include devicebreak(medium) {
+      display: inline-flex;
+      text-align: right;
+      margin-left: 36px;
+    }
+    a {
+      @extend %paragragh-font-16;
+      border-bottom: 0;
+    }
+  }
+  &--white {
+    a {
+      color: $color-white;
+    }
+  }
+}
+[dir="rtl"] {
+  .footer__condition_text {
+    padding-right: 0;
+    text-align: right;
+    li {
+      a {
+        margin-left: 0;
+      }
+    }
+  }
+  
+}
+// * footer condition end *//
