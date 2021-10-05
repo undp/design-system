@@ -1,0 +1,188 @@
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+/* statscard start */
+.statscard {
+  background-color: $color-gray-200;
+
+  &__title {
+    font-family: $Font-Family-ProximaBold;
+    margin-bottom: $spacing-40;
+
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-80;
+    }
+  }
+
+  &__number {
+    color: $color-gray-200;
+    display: block;
+    font-family: $Font-Family-SohneBold;
+    font-size: 5rem;
+    letter-spacing: 0.05rem;
+    line-height: 87.2px;
+    margin-bottom: $spacing-24;
+    text-shadow: -1px -1px 0 $color-black, 1px -1px 0 $color-black, -1px 1px 0 $color-black, 1px 1px 0 $color-black;
+    -webkit-text-stroke: 2px $color-black;
+
+    @include devicebreak(medium) {
+      font-size: 6.875rem;
+      line-height: 119.9px;
+      margin-bottom: $spacing-32;
+    }
+  }
+
+  &__per {
+    display: block;
+    font-family: $Font-Family-ProximaSemiBold;
+    font-size: 1.875rem;
+    letter-spacing: 0;
+    line-height: 34.26px;
+    margin-bottom: $spacing-08;
+
+    @include devicebreak(medium) {
+      font-size: 2.188rem;
+      line-height: 40px;
+      margin-bottom: $spacing-16;
+    }
+  }
+
+  p {
+    margin: 0;
+
+    @include devicebreak(medium) {
+      font-size: 1.563rem;
+      line-height: 28.55px;
+    }
+  }
+
+  &--xl {
+    max-width: 351px;
+    
+    .statscard__box {
+      padding: $spacing-40;
+    }
+
+    .statscard__number {
+      font-size: 5.625rem;
+      line-height: 98.1px;
+    }
+
+    @include devicebreak(medium) {
+      max-width: 668px;
+
+      .statscard__box {
+        padding: $spacing-96;
+      }
+    }
+  }
+
+  &--lg {
+    max-width: 351px;
+
+    .statscard__box {
+      padding: $spacing-40;
+    }
+
+    .statscard__per {
+      font-size: $font-size-25;
+      line-height: 28.55px;
+    }
+
+    @include devicebreak(medium) {
+      max-width: 448px;
+
+      .statscard__box {
+        padding: $spacing-96  $spacing-64;
+      }
+
+      .statscard__per {
+        font-size: 1.875rem;
+        line-height: 34.26px;
+      }
+    }
+  }
+
+  &--md {
+    max-width: 351px;
+
+    .statscard__per {
+      font-size: $font-size-25;
+      line-height: 28.55px;
+    }
+
+    .statscard__box {
+      padding: $spacing-48;
+    }
+
+    p {
+      font-size: $font-size-20;
+      line-height: 27.5px;
+    }
+
+    @include devicebreak(medium) {
+      max-width: 330px;
+
+      .statscard__per {
+        font-size: 2.188rem;
+        line-height: 39.97px;
+      }
+    }
+  }
+
+  &--sm {
+    max-width: 170px;
+
+    .statscard__box {
+      padding: $spacing-24;
+    }
+
+    .statscard__number {
+      font-size: 3.125rem;
+      line-height: 54.5px;
+    }
+
+    .statscard__per {
+      font-size: $font-size-20;
+      line-height: 22.84px;
+    }
+
+    p {
+      font-size: $font-size-14;
+      line-height: 19.25px;
+    }
+
+    @include devicebreak(medium) {
+      max-width: 212px;
+
+      .statscard__box {
+        padding: $spacing-32;
+      }
+
+      .statscard__number {
+        font-size: 4.375rem;
+        line-height: 76.3px;
+      }
+
+      .statscard__per {
+        font-size: $font-size-25;
+        line-height: 28.55px;
+      }
+
+      p {
+        font-size: $font-size-16;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: $color-yellow;
+
+    & .statscard__number {
+      color: $color-black;
+    }
+  }
+}
+
+/* statscard end */

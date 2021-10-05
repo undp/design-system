@@ -1,0 +1,102 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { StatsCards } from './StatsCards';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {titlename: 'Lorem Title', percentname: 'Percent', numbername: '35', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}; return engText;
+    case 'arabic': const arabicText = {titlename: 'عنوان مستقل', percentname: 'نسبه مئويه', numbername: '35', text: 'الألم بحد ذاته هو الحب ، الزبون الرئيسي'}; return arabicText;
+    case 'burmese': const burmeseText = {titlename: 'လွတ်လပ်သောခေါင်းစဉ်', percentname: 'ရာခိုင်နှုန်း', numbername: '35', text: 'နာကျင်မှုကိုယ်တိုင်ကအချစ်ကိုအဓိကဖောက်သည်ချသည်'}; return burmeseText;
+    case 'japanese': const japaneseText = {titlename: '独立したタイトル', percentname: 'パーセント', numbername: '35', text: '痛み自体は愛、主な顧客です'}; return japaneseText;
+    default:
+      return {titlename: 'Lorem Title', percentname: 'Percent', numbername: '35', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'};
+  }
+};
+
+<Meta title="Molecules/Blocks/Stats Cards" />
+
+<style>{`
+ .subheading {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  .sbdocs .sbdocs-h2 {
+    border-bottom: none;
+  }
+  div[id^="story--molecules-blocks-stats-cards"] {
+    padding: 20px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 25px 0px 40px;
+    border-radius: 4px;
+  }
+`}</style>
+
+# Stats Cards Component
+
+## Overview
+
+Stats Cards component are means of displaying content composed of different types of sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+
+we are using these modifier classes:
+<code>.statscard--xl</code>, <code>.statscard--lg</code>, <code>.statscard--md</code>, <code>.statscard--sm</code>
+
+
+## Default Representation & various possible states
+
+<div className="subheading">Stats Card Extra Large</div>
+
+<Story name="Extra Large">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <StatsCards title={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} size='xl'></StatsCards>;
+  }}
+</Story>
+
+<div className="subheading">Stats Card Large</div>
+
+<Story name="Large">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <StatsCards titlesec={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} size='lg'></StatsCards>;
+  }}
+</Story>
+
+<div className="subheading">Stats Card Medium</div>
+
+<Story name="Medium">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <StatsCards percent={caption.percentname} content={caption.text} number={caption.numbername} size='md'></StatsCards>;
+  }}
+</Story>
+
+<div className="subheading">Stats Card Small</div>
+
+<Story name="Small">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <StatsCards percent={caption.percentname} content={caption.text} number={caption.numbername} size='sm'></StatsCards>;
+  }}
+</Story>
+
+## Dependencies
+
+Not Applicable
+
+## Usage
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like breakpoints, variables from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>statscards.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
