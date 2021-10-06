@@ -4,7 +4,7 @@ import './Menu-Items.scss';
 
 export const MenuItems = ({ select, text, ...props }) => {
   return (
-     <div className={['menu_item',`${select}`].join(' ')}  {...props}>{text}</div>
+     <a href="#" className={['menu_item',`${select}`].join(' ')}  {...props}>{text}</a>
   );
 };
 

@@ -1,0 +1,76 @@
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.breadcrumb__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  font-size: 12px;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+
+    &::after {
+      content: '/';
+      font-weight: bold;
+      color: $color-dark-red;
+      position: absolute;
+      right: -11px;
+      top: 0;
+    }
+    .last-item {
+      color: $color-black;
+      display: block;
+      font-family: $Font-Family-ProximaSemiBold;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      white-space: nowrap;
+      width: 60px;
+      @include devicebreak(medium) {
+        overflow: inherit;
+      }
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &--white {
+    background-color: $color-gray-400;
+
+    li {
+      &::after {
+        color: $color-white;
+      }
+
+      .last-item {
+        color: $color-white;
+      }
+
+      a {
+        color: $color-white;
+
+        &:hover {
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .breadcrumb__wrapper li::after,
+  .breadcrumb__wrapper--white li::after {
+    @include transform(translate(0,-63%) rotate(120deg));
+
+    left: -11px;
+    right: unset;
+    top: 63%;
+  }
+}
