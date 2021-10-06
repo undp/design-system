@@ -69,7 +69,7 @@
     }
 
     @include devicebreak(medium) {
-      max-width: 668px;
+      max-width: 684px;
 
       .statscard__box {
         padding: $spacing-96;
