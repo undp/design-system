@@ -113,6 +113,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
     .input__controls {
       &--search {
         padding-right: 40px;
+        padding-left: 10px;
       }
       &--date {
         background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat right 14px bottom 12px;
