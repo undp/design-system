@@ -1,0 +1,126 @@
+import { Meta, Story,  Canvas, Source } from '@storybook/addon-docs';
+import { FeaturedContentCard } from './FeaturedContentCard';
+//import img from '../../../assets/images/card2.jpg';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {title: 'CONTENT TAG', name: 'Mongolia receives new $23.1 million GCF grant to strengthen climate resilience', descriptionText: 'With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population..',  btnlabel: 'READ MORE'}; return engText;
+    case 'arabic': const arabicText = {title: 'علامة المحتوى', name: 'منغوليا تتلقى منحة جديدة بقيمة 23.1 مليون دولار من الصندوق الأخضر للمناخ لتعزيز المرونة في مواجهة تغير المناخ', descriptionText: 'مع منحة صندوق المناخ الأخضر الجديدة ، سيستفيد المشروع الذي يدعمه برنامج الأمم المتحدة الإنمائي ما يقرب من مليون من السكان المعرضين للخطر ..',  btnlabel: 'اقرأ أكثر'}; return arabicText;
+    case 'burmese': const burmeseText = {title: 'အကြောင်းအရာ', name: 'မွန်ဂိုလီးယားသည်ရာသီဥတုကြံ့ခိုင်မှုအားကောင်းရန်ဒေါ်လာ ၂၃.၁ သန်း GCF ထောက်ပံ့ငွေသစ်ကိုလက်ခံရရှိသည်', descriptionText: 'Green Climate Fund ထောက်ပံ့ငွေအသစ်ဖြင့် UNDP မှပံ့ပိုးသောစီမံကိန်းသည်ထိခိုက်လွယ်သောလူ ဦး ရေတစ်သန်းကိုအကျိုးပြုလိမ့်မည်။',  btnlabel: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {title: 'コンテンツタグ', name: 'モンゴルは気候回復力を強化するために新たに2,310万ドルのGCF助成金を受け取ります', descriptionText: '新しい緑の気候基金の助成金により、UNDPが支援するプロジェクトは100万人近くの脆弱な人々に利益をもたらします。',  btnlabel: '続きを読む'}; return japaneseText;
+    default:
+      return {title: 'CONTENT TAG', name: 'Mongolia receives new $23.1 million GCF grant to strengthen climate resilience', descriptionText: 'With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population..',  btnlabel: 'READ MORE'};
+  }
+};
+
+<Meta title="Molecules/Blocks/Featured Content Card" argTypes={{
+      variant: {
+        options: ['Image', 'Color'],
+        control: { type: 'radio' }
+      },
+      column: {
+        options: ['large', 'medium', 'small'],
+        control: { type: 'radio' }
+      }
+    }}/>
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 20px;
+    color: #031c2d;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 15px;
+  }
+  .subheading2 {
+    font-weight: 700;
+    font-size: 16px;
+    color: #031c2d;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 10px;
+  }
+  .css-1h4ytzj code {
+    padding-right: 10px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+      background: black;
+  }
+`}</style>
+
+# Feature Content Card Component
+
+The Feature Content Card component defines a card of information data with some items - Tag, Title, Image, Paragraph, and CTA Link. We are using a grid system to manage the different types of sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+
+<div className="subheading">Feature Card With Image</div>
+
+By default Feature content cards are show the information about the card with related fields like Tag, Title, Image, Description, and CTA Link. When we mouse over the card (On hover) it shows the image.
+
+<div className="subheading">Feature Card Without Image</div>
+
+When We mouse over the card (On hover) it shows the yellow color except the image.
+
+<div className="subheading">Story Controls</div>
+
+We can check all types of feature card variants by storybook <code> controls </code> .
+
+<ul>
+<li>the variant we check the option of card like <code>with image</code> and <code>without image</code></li>
+<li>n the column, we check the option of card sizes like <code>large</code> , <code>medium</code> , <code>small</code> that's belong to the grid.</li>
+</ul>
+
+<div className="subheading2">Modifier class</div>
+
+<code>with-image</code> <code>without-image</code> <code>feature__card--large</code> <code>feature__card--medium</code> 
+<code>feature__card--small</code> <code>large</code> <code>medium</code> <code>small</code>
+
+
+<Canvas>
+  <Story name="Featured Content Card" parameters={{ docs: { source: { code: `<div class="grid-x grid-margin-x">
+  <div class="cell large-8 feature__card--large">
+    <a href="#" class="feature__card feature__card--with-image">
+      <div class="feature__card_slide">
+        <div
+          class="feature__card_image"
+          style='background-image: url("static/media/stories/assets/images/card2.jpg");'
+        ></div>
+      </div>
+      <article class="feature__card_content">
+        <div class="feature__card_tag">CONTENT TAG</div>
+        <div class="feature__card_description">
+          <h4>
+            Mongolia receives new $23.1 million GCF grant to strengthen climate
+            resilience
+          </h4>
+          <p>
+            With the new Green Climate Fund grant, UNDP-supported project will
+            benefit close to one million vulnerable population..
+          </p>
+        </div>
+        <div class="feature__cta">
+          <a class="cta__link cta--arrow" href="javascript:void(0)">
+            READ MORE
+          </a>
+        </div>
+      </article>
+    </a>
+  </div>
+</div>` } } }}>
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <FeaturedContentCard contenttile={caption.title} contentname={caption.name}  descriptionText={caption.descriptionText}  button={caption.btnlabel}  alt={'feature card'} {...args} ></FeaturedContentCard>;
+    }}
+  </Story>
+</Canvas>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>featuredContentCard.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
