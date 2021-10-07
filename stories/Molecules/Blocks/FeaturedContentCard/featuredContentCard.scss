@@ -1,0 +1,205 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
+/* feature card start */
+.feature__card {
+  background: $color-gray-100;
+  border-bottom: 0;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  @include devicebreak(medium) {
+    display: flex;
+  }
+  &::before {
+    content: "";
+  }
+  &:hover {
+    .feature__card_slide {
+      transform: translateX(0);
+    }
+    .cta--arrow::after {
+      @include translate(10px, 0);
+      @include transition(0.2s ease);
+      background-image: url(#{$img-path-Icon}/arrow-left-expand-hover.svg);
+      width: 100px;
+    }
+  }
+
+  &_slide {
+    position: relative;
+    display: inherit;
+    @extend %feature__card;
+    @include devicebreak(medium) {
+      display: block;
+      background-color: $color-yellow;
+      height: 100%;
+      position: absolute;
+      @include transform(translateX(-105%));
+      transition: transform 0.3s cubic-bezier(0.64, 0.05, 0.35, 1.05);
+      z-index: 5;
+    }
+
+    &::before {
+      bottom: 0;
+      @extend %feature__card;
+      position: relative;
+      content: "";
+      @include devicebreak(medium) {
+        @include feature__card_bg;
+        height: 100%;
+        position: absolute;
+      }
+    }
+
+    .feature__card_image {
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top;
+    }
+  }
+
+  &_content {
+    @extend %feature__card;
+    padding: $spacing-32 $spacing-24;
+    position: relative;
+    background: $color-gray-100;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    @include devicebreak(medium) {
+      background: none;
+      display: flex;
+      height: 80%;
+    }
+
+    .feature__card_tag {
+      font-family: $Font-Family-ProximaBold;
+      font-size: $font-size-12;
+      line-height: 14px;
+      margin-bottom: $spacing-24;
+      text-transform: uppercase;
+      @include devicebreak(medium) {
+        margin-bottom: $spacing-48;
+      }
+    }
+    .feature__card_description {
+      margin-bottom: 90px;
+    }
+    h4 {
+      font-size: $font-size-20;
+      margin-bottom: $spacing-24;
+      @include devicebreak(medium) {
+        font-size: 35px;
+        margin-bottom: $spacing-32;
+      }
+    }
+
+    p {
+      font-size: $font-size-14;
+      @include devicebreak(medium) {
+        font-size: $font-size-20;
+      }
+    }
+
+    .feature__cta {
+      margin-bottom: 0;
+      margin-top: $spacing-40;
+      z-index: 10;
+      @include devicebreak(medium) {
+        margin-top: auto;
+      }
+    }
+  }
+
+  &--large {
+    &::before {
+      @include devicebreak(medium) {
+        padding-top: 43%;
+      }
+    }
+  }
+  &--small,
+  &--medium {
+    &::before {
+      @include devicebreak(medium) {
+        padding-top: 100%;
+      }
+    }
+    .feature__card_content {
+      p {
+        @include devicebreak(medium) {
+          font-size: $font-size-16;
+        }
+      }
+    }
+  }
+  &--without-image {
+    .feature__card_slide {
+      z-index: 0;
+      &::before {
+        background: linear-gradient(0deg, $color-yellow, $color-yellow),
+          $color-gray-200;
+      }
+      .feature__card_image {
+        display: none;
+      }
+    }
+  }
+}
+
+.feature__card--large {
+  .feature__card {
+    &::before {
+      @include devicebreak(medium) {
+        padding-top: 43%;
+      }
+    }
+  }
+}
+.feature__card--small,
+.feature__card--medium {
+  .feature__card {
+    &::before {
+      @include devicebreak(medium) {
+        padding-top: 100%;
+      }
+    }
+  }
+  .feature__card_content {
+    h4 {
+      font-size: 1.25rem;
+      line-height: 22px;
+      margin-bottom: $spacing-24;
+      @include devicebreak(medium) {
+        font-size: 1.563rem;
+        line-height: 28px;
+        margin-bottom: $spacing-32;
+      }
+    }
+    p {
+      @include devicebreak(medium) {
+        font-size: $font-size-16;
+      }
+    }
+  }
+}
+
+[dir="rtl"] {
+  .feature__card:hover {
+    .cta--arrow::after {
+      @include transform(translate(0, 0) rotate(180deg));
+    }
+  }
+
+  .feature__card_slide {
+    @include devicebreak(medium) {
+      @include transform(translateX(105%));
+      &:hover {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+/* feature card end */

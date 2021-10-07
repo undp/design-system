@@ -162,6 +162,16 @@
   z-index: 1;
 }
 
+%feature__card {
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+@mixin feature__card_bg {
+  background: transparent linear-gradient( 207deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.5) 80%, rgba(255, 235, 0, 0.8) ) 0 0 no-repeat padding-box;
+}
+
 //loader animation
 @mixin loader {
   animation: loader-animation 2s linear infinite;
