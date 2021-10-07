@@ -6,11 +6,11 @@
   &__box {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: $spacing-08;
+    margin-bottom: $spacing-04;
 
     &--locale {
       display: block;
-      margin-bottom: $spacing-24;
+      margin-bottom: $spacing-32;
 
       .smallcopy__label {
         display: block;
