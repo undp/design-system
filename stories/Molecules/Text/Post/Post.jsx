@@ -6,8 +6,8 @@ export const Post = ({ headerText, countryText, descriptionText }) => {
   return (
     <div className='post-wrapper' >  
      <Heading type='2' label={headerText} />
-     <Heading type='6' label={descriptionText} />   
      {countryText && <Heading type='5' label={countryText} />}
+     <Heading type='6' label={descriptionText} />   
     </div>
   );
 };
