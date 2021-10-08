@@ -19,7 +19,7 @@
       font-weight: bold;
       color: $color-dark-red;
       position: absolute;
-      right: -11px;
+      right: -12px;
       top: 0;
     }
     .last-item {
@@ -71,12 +71,26 @@
 }
 
 [dir='rtl'] {
-  .breadcrumb__wrapper li::after,
-  .breadcrumb__wrapper--white li::after {
-    @include transform(translate(0,-63%) rotate(120deg));
+  .breadcrumb__wrapper {
+    li {
+      a {
+        margin: 0;
+      }
+      &:first-child {
+        margin-right: 0;
+        margin-left: 12px;
+      }
+      &:last-child {
+        margin-left: 0;
+        margin-right: 12px;
+      }
+      &::after {
+        @include transform(translate(0,-63%) rotate(120deg));
 
-    left: -11px;
-    right: unset;
-    top: 63%;
+        left: -12px;
+        right: unset;
+        top: 63%;
+      }
+    }
   }
 }
