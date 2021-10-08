@@ -15,3 +15,21 @@
     }
   }
 }
+
+[dir='rtl'] {
+  .menu__wrapper {
+    li {
+      a {
+        margin: 0;
+      }
+      &:first-child {
+        margin-right: 0;
+        margin-left: 12px;
+      }
+      &:last-child {
+        margin-left: 0;
+        margin-right: 12px;
+      }
+    }
+  }
+}
