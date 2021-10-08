@@ -3,9 +3,10 @@
 
 .post-wrapper {
   h2 {
-    margin-bottom: 20px;
+    margin-bottom: $spacing-16;
   }
   h5 {
+    margin-bottom: $spacing-48;
     color: $color-gray-600;
   }
 }
