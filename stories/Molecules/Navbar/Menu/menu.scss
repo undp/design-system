@@ -6,6 +6,12 @@
 
   li {
     display: inline-block;
-    margin: 10px;
+    margin: 12px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
