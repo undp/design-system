@@ -11,7 +11,7 @@
 
   li {
     display: inline-block;
-    margin: 10px;
+    margin: 12px;
     position: relative;
 
     &::after {
@@ -33,11 +33,17 @@
       width: 60px;
       @include devicebreak(medium) {
         overflow: inherit;
+        width: inherit;
       }
     }
-
-    &:last-child::after {
-      display: none;
+    &:first-child{
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+      &::after {
+        display: none;
+      }
     }
   }
 
