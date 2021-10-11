@@ -139,7 +139,93 @@ export const threeArray = (locale) => {
     return dummy.data
   }
 };
-export const getCaptionForLocale = (locale) => {
+export const fourArray = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {data: [{
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    },
+    {
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    },
+    {
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    },
+    {
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    }]}; return engText.data;
+    case 'arabic': const arabicText = {data: [{
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    },
+    {
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    },
+    {
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    },
+    {
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    }]}; return arabicText.data;
+    case 'burmese': const burmeseText = {data: [{
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    },
+    {
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    },
+    {
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    },
+    {
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    }]}; return burmeseText.data;
+    case 'japanese': const japaneseText = {data: [{
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    },
+    {
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    },
+    {
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    },
+    {
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    }]}; return japaneseText.data;
+    default:
+      const dummy =  {data: [{
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      },
+      {
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      },
+      {
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      },
+      {
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      }]};
+    return dummy.data
+  }
+};
+export const fiveArray = (locale) => {
   switch(locale) {
     case 'english': const engText = {data: [{
       Authorlabel: 'Theresa Webb',
@@ -309,11 +395,20 @@ The Authors Component is created for showing the authors name, designation, and 
   }}
 </Story>
 
+<div className="subheading">Author four Column</div>
+
+<Story name="Authors Four">
+  {(args, { globals: { locale } }) => {
+    const caption = fourArray(locale);
+    return <Author data={caption} width="3"></Author>;
+  }}
+</Story>
+
 <div className="subheading">Author Without Image</div>
 
-<Story name="Authors Without Image">
+<Story name="Authors Five">
   {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
+    const caption = fiveArray(locale);
     return <Author data={caption} width="3"></Author>;
   }}
 </Story>
