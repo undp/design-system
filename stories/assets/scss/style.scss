@@ -28,6 +28,7 @@
 @import '../../Atom/Buttons-and-labels/Chips/chips.scss';
 @import '../../Atom/Buttons-and-labels/Cta_button/buttons.scss';
 @import '../../Atom/Input-group/input_group.scss';
+@import '../../Atom/Global/Layout/layout.scss';
 
 // Reach Elemets Atoms
 @import '../../Atom/Reach-element/Details/details.scss';
@@ -60,3 +61,9 @@
 @import '../../Molecules/Blocks/StatsCards/statscards.scss';
 @import '../../Molecules/Navbar/Breadcrumb/breadcrumb-link.scss';
 @import '../../Molecules/Navbar/Menu/menu.scss';
+
+@import '../../Molecules/FooterNavigation/FooterConditions/footerCondition.scss';
+@import '../../Molecules/FooterNavigation/FooterConditions2/footerCondition2.scss';
+@import '../../Molecules/FooterNavigation/FooterIcons/footerIcons.scss';
+@import '../../Molecules/FooterNavigation/FooterLists/footerLists.scss';
+@import '../../Molecules/FooterNavigation/FooterLogo/footerLogo.scss';

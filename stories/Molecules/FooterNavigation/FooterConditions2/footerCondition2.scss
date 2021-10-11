@@ -13,11 +13,12 @@
   li {
     list-style: none;
     @extend %paragragh-font-16;
-    margin-bottom: 18px;
+    margin-bottom: $spacing-12;
     @include devicebreak(medium) {
       display: inline-flex;
       text-align: right;
       margin-left: 36px;
+      margin-bottom: 18px;
     }
     a {
       @extend %paragragh-font-16;
@@ -40,6 +41,5 @@
       }
     }
   }
-  
 }
 // * footer condition end *//

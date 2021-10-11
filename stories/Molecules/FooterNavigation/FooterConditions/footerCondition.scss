@@ -28,6 +28,9 @@
 [dir="rtl"] {
   .footer__condition {
     padding-right: 0;
+    li {
+      text-align: right;
+    }
   }
 }
 // * footer condition end *//
