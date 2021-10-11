@@ -1,0 +1,191 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+
+.multi-select {
+  max-width: 300px;
+  position: relative;
+
+  &.open {
+    .select-control {
+      border-bottom: 0;
+
+      &::after {
+        @include transform(translateY(-50%) rotate(-180deg));
+
+        top: 50%;
+      }
+    }
+
+    .options {
+      border-top: 0;
+      display: block;
+    }
+  }
+
+  .select-control {
+    background: $color-white;
+    border: 2px solid $color-black;
+    cursor: pointer;
+    display: block;
+    font-family: $Font-Family-ProximaSemiBold;
+    font-size: $font-size-16;
+    max-width: 100%;
+    min-width: 300px;
+    padding: 16px 50px 16px 16px;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+
+    &::after {
+      @extend %arrow;
+    }
+  }
+
+  .options {
+    border: 2px solid $color-black;
+    box-sizing: border-box;
+    display: none;
+    max-height: 300px;
+    min-height: 100px;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-y: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+
+    > li {
+      border-top: 1px solid $color-gray-400;
+      cursor: pointer;
+
+      > .checkbox-wrapper {
+        &:hover {
+          background-color: $color-gray-100;
+        }
+      }
+    }
+
+    .has-submenu {
+      position: relative;
+
+      &.open-submenu {
+        .sub-menu {
+          border-top: solid 1px $color-gray-400;
+          display: block;
+        }
+
+        .has-submenu__button::after {
+          @include transform(translateY(-50%) rotate(-180deg));
+
+          top: 50%;
+        }
+      }
+
+      &__button {
+        background: white;
+        border: 0;
+        cursor: pointer;
+        display: block;
+        font-size: $font-size-16;
+        margin: 0 -16px;
+        padding: 16px;
+        position: relative;
+        text-align: left;
+        width: 100%;
+        width: calc(100% + 32px);
+
+        &:hover {
+          background-color: $color-gray-100;
+        }
+
+        &::after {
+          @extend %arrow;
+
+          right: 16px;
+        }
+      }
+    }
+
+    .sub-menu {
+      display: none;
+      list-style: none;
+
+      > li {
+        border-top: 1px solid $color-gray-400;
+
+        &:first-of-type {
+          border-top: 0;
+        }
+
+        > .checkbox-wrapper:hover {
+          background-color: $color-gray-100;
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+      background-color: rgba(0, 0, 0, 0.3);
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .checkbox-wrapper {
+    display: block;
+    margin: 0 -16px;
+    padding: 0 16px;
+
+    input[type=checkbox],
+    input[type=checkbox] + label::before {
+      @include transform(translateY(-50%));
+
+      left: auto;
+      right: 16px;
+      top: 50%;
+    }
+
+    input[type=checkbox] + label {
+      display: block;
+      padding: 16px 0;
+    }
+
+    input:focus + label::before {
+      box-shadow: 0 0 0 2px $color-blue-600;
+      outline: 3px solid transparent; /* For Windows high contrast mode. */
+    }
+  }
+}
+
+[dir='rtl'] {
+  .multi-select {
+    .select-control,
+    .has-submenu__button {
+      padding-left: 50px;
+      padding-right: 16px;
+      text-align: right;
+
+      &::after {
+        left: 22px;
+        margin: 0;
+        right: auto;
+      }
+    }
+
+    .has-submenu__button {
+      &::after {
+        left: 16px;
+      }
+    }
+
+    .checkbox-wrapper {
+      input[type=checkbox],
+      input[type=checkbox] + label::before {
+        left: 16px;
+        right: auto;
+      }
+    }
+  }
+}
