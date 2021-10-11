@@ -1,0 +1,36 @@
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+
+.authorcard {
+  border: 0;
+  display: block;
+
+  .author-wrapper {
+    padding-top: 24px;
+
+    &__box {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  p {
+    font-size: $font-size-16;
+    line-height: 22px;
+    margin-bottom: 24px;
+  }
+
+  &:hover {
+    .cta__link::after {
+      @include translate(70%,0);
+    }
+  }
+}
+
+[dir='rtl'] {
+  .authorcard:hover {
+    .cta__link::after {
+      @include transform(translate(-50%,0) rotate(180deg));
+    }
+  }
+}

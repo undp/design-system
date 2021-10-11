@@ -1,0 +1,76 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/breakpoints';
+
+.author-wrapper {
+  border-top: 2px solid $color-black;
+  padding-top: $spacing-32;
+
+  &__box {
+    display: inline-flex;
+    margin-bottom: $spacing-24;
+    width: 100%;
+    
+    &.author-3-col {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      width: calc(50% - 1rem);
+  
+      .author__label {
+        padding: 0;
+        width: 100%;
+      }
+  
+      .author__img {
+        display: none;
+      }
+    }
+  
+    @include devicebreak(medium) {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+  
+      &.author-12-col {
+        width: calc(100% - 1rem);
+      }
+  
+      &.author-6-col {
+        width: calc(50% - 1rem);
+      }
+  
+      &.author-4-col {
+        width: calc(33% - 1rem);
+      }
+  
+      &.author-3-col {
+        width: calc(25% - 1rem);
+      }
+    }
+  }  
+}
+
+.author__label {
+  padding-left: $spacing-24;
+  padding-top: $spacing-04;
+  width: calc(100% - 105px);
+
+  .name {
+    margin-bottom: $spacing-04;
+  }
+
+  .designation {
+    font-size: $font-size-14;
+    line-height: 19.25px;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-16;
+      line-height: 22px;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .author__label {
+    padding-left: 0;
+    padding-right: 24px;
+  }
+}

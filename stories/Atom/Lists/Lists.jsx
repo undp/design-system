@@ -5,9 +5,9 @@ export const List = ({ data, type }) => {
   const ListTag = `${type}`;
   return (
     <ListTag>
-      {data.map(function(item) {
+      {data.map(function(item, index) {
         return (
-        <li>{item.text}</li>
+        <li key={index}>{item.text}</li>
         )})}
     </ListTag>
   );
