@@ -1,0 +1,98 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Authorcard } from './Authorcard';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {authordata: [{
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    }],
+    paragraph: 'Inventore magni accusantium labore qui. Dolorum numquam nihil labore quis harum dolorum. Sed eligendi ex quis delectus et tempore et eos. Molestias enim necessitatibus incidunt sit ab officiis aut. Qui aspernatur impedit nesciunt inventore quo. Reprehenderit voluptatum nihil voluptates et.',
+    button: 'VIEW 234 POSTS'}; return engText;
+    case 'arabic': const arabicText = {authordata: [{
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    }],
+    paragraph: 'مخترع يتهمه بعمل شاق كبير. لم أشعر أبدًا بأي ألم أو تعب أو أي من هذه الآلام. ولكن أن تختار من المختار والوقت وهم. تحدث المشاكل من الاحتياجات أو من الخدمات. أولئك الذين يرفضون الباحث لا يعرفون كيف يمنعونه. لا يلوم الملذات ولا الملذات.',
+    button: '234件の投稿を表示'}; return arabicText;
+    case 'burmese': const burmeseText = {authordata: [{
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    }],
+    paragraph: 'ကြီးကျယ်သောကြိုးစားအားထုတ်မှုကိုစွပ်စွဲသူတီထွင်သူတစ် ဦး ငါနာကျင်တာ၊ ပင်ပန်းတာမရှိဘူး၊ ဒီနာကျင်မှုတစ်ခုမှမရှိခဲ့ဘူး။ ဒါပေမယ့်ရွေးချယ်တဲ့သူတစ်ယောက်ကနေရွေးချယ်ဖို့နဲ့အချိန်နဲ့သူတို့အတွက်ပဲ။ ဒုက္ခများသည်လိုအပ်ချက်များသို့မဟုတ် ၀ န်ဆောင်မှုများမှဖြစ်သည်။ ရှာဖွေသူကိုငြင်းပယ်သူများသည်၎င်းကိုမည်သို့ကာကွယ်ရမည်ကိုမသိပါ။ သူသည်အပျော်အပါးနှင့်အပျော်အပါးကိုအပြစ်မတင်။',
+    button: 'ပိုစ် ၂၃၄ ကိုကြည့်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {authordata: [{
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    }],
+    paragraph: '大変な努力を非難している発明家。 痛みも、倦怠感も、これらの痛みもありませんでした。 しかし、選択されたものと時間とそれらから選択すること。 トラブルはニーズやサービスから発生します。 ファインダーを拒否する人はそれを防ぐ方法を知りません。 彼は喜びも喜びも非難しません。',
+    button: '234件の投稿を表示'}; return japaneseText;
+    default:
+      const dummy =  {authordata: [{
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    }],
+    paragraph: 'Inventore magni accusantium labore qui. Dolorum numquam nihil labore quis harum dolorum. Sed eligendi ex quis delectus et tempore et eos. Molestias enim necessitatibus incidunt sit ab officiis aut. Qui aspernatur impedit nesciunt inventore quo. Reprehenderit voluptatum nihil voluptates et.',
+    button: 'VIEW 234 POSTS'};
+    return dummy
+  }
+};
+
+<Meta title="Molecules/Text/Authors/Author Card" component={Authorcard} />
+
+<style>{`
+  .subheading {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  .sbdocs .sbdocs-h2 {
+    border-bottom: none;
+  }
+  div[id^="story--molecules-text-authors-author-card"] {
+    padding: 20px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 25px 0px 40px;
+    border-radius: 4px;
+  }
+`}</style>
+
+# Author Card component
+
+## Overview
+
+The Author Card Component is created for showing the author name, designation, image, and content in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+
+## Default Representation & various possible states
+
+<div className="subheading">Author Card</div>
+
+<Story name="Author Card">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Authorcard data={caption.authordata} para={caption.paragraph} button={caption.button} link='#' width="12"></Authorcard>;
+  }}
+</Story>
+
+## Dependencies
+
+Not Applicable
+
+## Usage
+
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>authorcard.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
