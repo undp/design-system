@@ -58,10 +58,12 @@
 [dir="rtl"] {
   .footer__icons {
     padding-right: 0;
-  }
-  a {
-    margin-left: $spacing-24;
-    margin-right: 0;
+    li {
+      a {
+        margin-left: $spacing-24;
+        margin-right: 0;
+      }
+    }
   }
 }
 // * footer icons end *//
