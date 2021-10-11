@@ -92,9 +92,6 @@
     &--textarea {
       height: auto;
       max-width: 100%;
-      &.error-state {
-        border: 2px solid $color-black;
-      }
     }
   }
 }
