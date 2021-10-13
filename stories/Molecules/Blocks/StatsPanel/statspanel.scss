@@ -1,0 +1,98 @@
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.statspanel {
+  align-items: center;
+  background-color: $color-gray-700;
+  display: flex;
+  justify-content: center;
+  min-height: 378px;
+  position: relative;
+
+  @include devicebreak(medium) {
+    min-height: 787px;
+  }
+
+  &__image {
+    @extend %absolute__content;
+
+    background-size: cover;
+    opacity: 0;
+    transition: all 0.4s;
+  }
+
+  &::after {
+    @extend %absolute__content;
+
+    background:
+      linear-gradient(0deg,
+      $color-yellow 1.21%,
+      $color-yellow 56.78%,
+      rgba(255, 235, 0, 0.7) 100%);
+    opacity: 0;
+    transition: all 0.4s;
+  }
+
+  &__box {
+    color: $color-white;
+    padding: 0 $spacing-24;
+    z-index: 1;
+
+    @include devicebreak(medium) {
+      padding: 0 $spacing-48;
+    }
+  }
+
+  &__number {
+    color: $color-gray-700;
+    display: block;
+    font-family: $Font-Family-SohneBold;
+    font-size: 6.875rem;
+    letter-spacing: 0.05rem;
+    line-height: 119.9px;
+    margin-bottom: $spacing-16;
+    -webkit-text-stroke: 1px $color-white;
+    text-shadow: -1px -1px 0 $color-white, 1px -1px 0 $color-white, -1px 1px 0 $color-white, 1px 1px 0 $color-white;
+
+    @include devicebreak(medium) {
+      font-size: 6.6rem;
+    }
+
+    @include devicebreak(large) {
+      font-size: 6.875rem;
+    }
+  }
+
+  &__per {
+    display: block;
+    font-family: $Font-Family-ProximaSemiBold;
+    font-size: 2.188rem;
+    line-height: 39.97px;
+    margin-bottom: $spacing-12;
+
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-16;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &:hover {
+    &::after,
+    .statspanel__image {
+      opacity: 1;
+    }
+
+    .statspanel__number {
+      -webkit-text-stroke: 1px $color-gray-700;
+      text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
+    }
+
+    .statspanel__box {
+      color: $color-gray-700;
+    }
+  }
+}
