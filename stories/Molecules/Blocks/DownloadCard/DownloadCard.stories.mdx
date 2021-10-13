@@ -1,0 +1,94 @@
+import { Meta, Story,  Canvas, Source } from '@storybook/addon-docs';
+import { DownloadCard } from './DownloadCard';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {title: 'Document Title', format: 'PDF (800kb)', download: 'Download'}; return engText;
+    case 'arabic': const arabicText = {title: 'عنوان الوثيقة', format: 'PDF (800 كيلوبايت)', download: 'تحميل'}; return arabicText;
+    case 'burmese': const burmeseText = {title: 'စာတမ်းခေါင်းစဉ်', format: 'PDF (800kb)', download: 'ဒေါင်းလုပ်'}; return burmeseText;
+    case 'japanese': const japaneseText = {title: 'ドキュメントのタイトル', format: 'PDF (800kb)', download: 'ダウンロード'}; return japaneseText;
+    default:
+      return {title: 'Document Title', format: 'PDF (800kb)', download: 'Download'};
+  }
+};
+
+<Meta title="Molecules/Blocks/Download Card" />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 20px;
+    color: #031c2d;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 15px;
+  }
+  .subheading2 {
+    font-weight: 700;
+    font-size: 16px;
+    color: #031c2d;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 10px;
+    text-decoration: underline;
+  }
+  .css-1h4ytzj code {
+    padding-right: 10px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    background: black;
+  }
+  div[id^="story--molecules-blocks-download-card"] {
+    align-items: center;
+    margin: 30px 0;
+  }
+
+`}</style>
+
+# Download Card Component
+
+The Download Card component defines a card of information data with some items -  Title, Image, format and Downlaod files. 
+
+<div className="subheading2">Publication card Component </div>
+
+<p>Publication cards show the publication category images, title, format, and download option to related the content in the design with short information</p>
+
+<Story name="Publication module" >
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <DownloadCard title={caption.title} format={caption.format}  download={caption.download}  image {...args} ></DownloadCard>;
+  }}
+</Story>
+
+<div className="subheading2">Card Component</div>
+
+<p>Cards show the card category images, title, format, and download option to related the content in the design with short information</p>
+
+<Story name="Card module" >
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <DownloadCard title={caption.title} format={caption.format}  download={caption.download}  image2 {...args} ></DownloadCard>;
+  }}
+</Story>
+
+<div className="subheading2">Download Component</div>
+
+<p>Download show the card category title, format, and download option to related the content. </p>
+
+<Story name="Download module" >
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <DownloadCard title={caption.title} format={caption.format}  download={caption.download}  alt={'feature card'} {...args} ></DownloadCard>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>DownloadCard.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
