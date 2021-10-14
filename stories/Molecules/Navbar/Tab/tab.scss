@@ -1,0 +1,48 @@
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+
+/* Tab start */
+.tab__items {
+  border-bottom: 2px solid $color-gray-300;
+  list-style: none;
+  padding-left: $spacing-48;
+
+  .tab__item {
+    cursor: pointer;
+    display: inline-block;
+    font-family: $Font-Family-ProximaBold;
+    font-size: $font-size-16;
+    letter-spacing: 0.03em;
+    line-height: 18px;
+    margin-bottom: -2px;
+    margin-right: $spacing-24;
+    padding-bottom: $spacing-08;
+    text-transform: uppercase;
+
+    &.active {
+      border-bottom: 2px solid $color-dark-red;
+    }
+  }
+}
+
+.tab__content {
+  display: none;
+  padding: $spacing-16;
+
+  &.active {
+    display: inherit;
+  }
+}
+
+[dir="rtl"] {
+  .tab__items {
+    padding-left: 0;
+    padding-right: $spacing-48;
+
+    li {
+      margin-left: $spacing-24;
+      margin-right: 0;
+    }
+  }
+}
+/* Tab end */
