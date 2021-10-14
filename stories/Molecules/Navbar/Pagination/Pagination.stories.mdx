@@ -1,0 +1,50 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Pagination } from './Pagination';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {text: 'Page', text2: 'of'}; return engText;
+    case 'arabic': const arabicText = {text: 'صفحة', text2: 'من'}; return arabicText;
+    case 'burmese': const burmeseText = {text: 'စာမျက်နှာ', text2: '၏'}; return burmeseText;
+    case 'japanese': const japaneseText = {text: 'ページ', text2: 'の'}; return japaneseText;
+    default:
+      return {text: 'Page', text2: 'of'};
+  }
+};
+
+<Meta title="Molecules/Navbar/Pagination"  />
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  } 
+`}</style>
+
+
+# Pagination Component
+
+Pagination allows you to make large amounts of content easy to find and breaks up several entries or web content into multiple pages.
+
+
+<Story name="Pagination">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Pagination text={caption.text} text2={caption.text2} ></Pagination>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in canvas</li>  
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
+  <li>Component SCSS file:<code>pagination.scss</code></li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
