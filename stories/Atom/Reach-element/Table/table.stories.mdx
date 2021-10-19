@@ -13,39 +13,51 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-
-<Meta title="Atoms/Reach Elements/Table" component={TableTag} />
+<Meta title="Atoms/Reach Elements/Table" component={TableTag}  
+  argTypes={{
+    size: {
+        options: ['large', 'small'],
+        control: { type: 'radio' }
+    },
+    variant: {
+        options: ['default', 'striped', 'border'],
+        control: { type: 'radio' }
+    },
+    responsive: {
+        options: ['stacked', 'default', 'scroll'],
+        control: { type: 'radio' }
+    }
+  }}/>
 
 <style>{`
   .subheading {
     font-weight: 700;
     font-size: 18px;
     color: #666;
-    letter-spacing: 1.5px;
     line-height: 24px;
     margin-bottom: 12px;
     margin-top: 40px;
-  }  
+  }
+  .css-1sy7267 {
+    margin: 10px 0;
+  }
 `}</style>
 
 # Table Component
 
 Tables are used to make large volumes of data easy to understand and access, Table components are created using the following elements
 
-<ol>
-  <li>table</li>
-  <li>th</li>
-  <li>tr</li>
-  <li>td</li>
-</ol>
+<div classname="subheading">Modifier</div>
+
+<code>Default</code> <code>striped</code> <code>border</code> <code>small</code> <code>stacked</code> <code>scroll</code> 
+
 
 <Story name="Table">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <TableTag text={caption.headertext} tdtext={caption.tdtext} details={caption.details}></TableTag>;
+    return <TableTag text={caption.headertext} tdtext={caption.tdtext} details={caption.details} {...args} ></TableTag>;
   }}
 </Story>
-
 
 <div className="subheading">Usage</div>
 <ul>

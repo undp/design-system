@@ -1,35 +1,53 @@
 import React from 'react';
 import './table.scss';
 
-export const TableTag = ({ text , tdtext, details}) => {
-  return (
-   <table>
-      <tr>
-         <th>{text}</th>
-         <th>{text}</th>
-         <th>{text}</th>
-      </tr>
-      <tr>
-         <td>{tdtext}	</td>
-         <td>{tdtext}</td>
-         <td>{details}</td>
-      </tr>
-       <tr>
-         <td>{tdtext}	</td>
-         <td>{tdtext}</td>
-         <td>{details}</td>
-      </tr>
-       <tr>
-         <td>{tdtext}	</td>
-         <td>{tdtext}</td>
-         <td>{details}</td>
-      </tr>
-       <tr>
-         <td>{tdtext}	</td>
-         <td>{tdtext}</td>
-         <td>{details}</td>
-      </tr>
+const TableScroll = ({ tableType, children }) => (tableType == 'scroll' ?
+	<div className="scroll">
+		{children}
+	</div>
+	: children
+);
 
-   </table>
-  );
+export const TableTag = ({ text, tdtext, details, variant, size, responsive, ...args }) => {
+	return (
+		<TableScroll tableType={responsive}>
+			<table className={[`${variant}`, `${size}`, `${responsive}`].join(' ')}>
+				<thead>
+					<tr>
+						<th>{text}</th>
+						<th>{text}</th>
+						<th>{text}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{tdtext}</td>
+						<td>{tdtext}</td>
+						<td>{details}</td>
+					</tr>
+					<tr>
+						<td>{tdtext}</td>
+						<td>{tdtext}</td>
+						<td>{details}</td>
+					</tr>
+					<tr>
+						<td>{tdtext}</td>
+						<td>{tdtext}</td>
+						<td>{details}</td>
+					</tr>
+					<tr>
+						<td>{tdtext}</td>
+						<td>{tdtext}</td>
+						<td>{details}</td>
+					</tr>
+				</tbody>
+			</table>
+		</TableScroll>
+	);
+};
+
+TableTag.defaultProps = {
+	variant: 'default',
+	size: 'large',
+	responsive: 'default',
 };
