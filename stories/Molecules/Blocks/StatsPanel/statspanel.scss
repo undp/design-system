@@ -38,6 +38,7 @@
     color: $color-white;
     padding: 0 $spacing-24;
     z-index: 1;
+    width: 100%;
 
     @include devicebreak(medium) {
       padding: 0 $spacing-48;
@@ -57,6 +58,7 @@
 
     @include devicebreak(medium) {
       font-size: 6.6rem;
+      margin-bottom: $spacing-32;
     }
 
     @include devicebreak(large) {
@@ -78,6 +80,8 @@
 
   p {
     margin: 0;
+    font-size: 1.25rem;
+    line-height: 27px;
   }
 
   &:hover {
