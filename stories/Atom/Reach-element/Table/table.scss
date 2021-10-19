@@ -4,31 +4,105 @@
 
 /* table tag start */
 table {
-    border-spacing: 0px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  @include devicebreak(medium) {
+    width: auto;
+  }
+
+  &.small {
+    th,
+    td {
+      font-size: $font-size-16;
+      line-height: 22px;
+    }
+  }
+
+  &.striped {
+    tr {
+      &:nth-child(even) {
+        background-color: $color-gray-200;
+      }
+      @extend %border-none;
+    }
+  }
+
+  &.border {
+    border-collapse: collapse;
+    th,
+    td {
+      border: 1px solid $color-gray-400;
+    }
+  }
+
+  &.stacked {
+    th,
+    td {
+      display: block;
+      @include devicebreak(medium) {
+        display: table-cell;
+      }
+    }
+    thead {
+      tr {
+        display: none;
+        @include devicebreak(medium) {
+          display: table-row;
+        }
+      }
+    }
+    &.border {
+      tr {
+        border: 1px solid $color-gray-400;
+        th,
+        td {
+          @extend %border-none;
+          @include devicebreak(medium) {
+            border: 1px solid $color-gray-400;
+          }
+        }
+      }
+    }
+  }
+}
+
+th,
+td {
+  vertical-align: top;
+  padding: $spacing-12 $spacing-40 $spacing-12 $spacing-12;
+  font-size: $font-size-20;
+  line-height: 28px;
+}
+
+thead {
   tr {
     th {
-      vertical-align: top;
-      font-family: $Font-Family-ProximaRegular;
-      padding: 12px;
-      color: $color-black;
-      background-color: #edeff0;
+      font-family: $Font-Family-ProximaSemiBold;
+      background-color: $color-gray-300;
       text-align: left;
-      font-weight: 700;
-      @extend %paragragh-font-20;
-      @include devicebreak(medium) {
-        padding: 16px;
-      }
     }
-    td {
-      vertical-align: top;
-      padding: 12px;
-      @extend %border-bottom;
-      font-weight: 300;
-      @extend %paragragh-font-20;
-       @include devicebreak(medium) {
-        padding: 16px;
-      }
-    }
+  }
+}
+
+tbody {
+  tr {
+    @extend %border-bottom;
+  }
+}
+
+.scroll {
+  overflow-x: scroll;
+  @include devicebreak(medium) {
+    overflow-x: inherit;
+  }
+}
+
+[dir="rtl"] {
+  th,
+  td {
+    text-align: right;
+    padding: $spacing-12 $spacing-12 $spacing-12 $spacing-40;
   }
 }
 /* table tag end */
