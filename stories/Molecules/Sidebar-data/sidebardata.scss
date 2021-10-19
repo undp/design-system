@@ -1,0 +1,48 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+.accordion-navbar__item--headertext {
+  border: none;
+  font-family: $Font-Family-ProximaBold;
+  font-size: $font-size-16;
+  margin-bottom: 0;
+  padding: $spacing-24;
+
+  @include devicebreak(medium) {
+    display: block;
+  }
+}
+
+.accordion__panel {
+  display: none;
+  height: auto;
+  padding: 0;
+
+  &--description > a {
+    border: none;
+    display: block;
+    font-family: $Font-Family-ProximaRegular;
+    font-size: $font-size-14;
+    margin: $spacing-16 $spacing-24 0 $spacing-32;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-16;
+      margin-bottom: $spacing-16;
+      margin-left: $spacing-48;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .accordion__panel {
+    &--description > a {
+      margin-left: $spacing-24;
+      margin-right: $spacing-32;
+
+      @include devicebreak(medium) {
+        margin-right: $spacing-48;
+      }
+    }
+  }
+}

@@ -250,3 +250,19 @@
   top: 0;
   width: 100%;
 }
+
+%sidebar-chevron {
+  @include transition(0.1s ease);
+
+  background: url(#{$img-path-Iconback}/Chevron-down.svg) no-repeat center center;
+  content: '';
+  height: 20px;
+  position: absolute;
+  right: $spacing-24;
+  top: 17px;
+  width: 20px;
+
+  @include devicebreak(medium) {
+    top: 27px;
+  }
+}
