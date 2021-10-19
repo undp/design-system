@@ -4,24 +4,27 @@
 
 .input-group {
   &__label {
-    &--default-state, &--focus-state, &--error-state, &--disabled-state {
+    &--default-state,
+    &--focus-state,
+    &--error-state,
+    &--disabled-state {
       @extend %paragragh-font-20;
-      &-error {
-        font-size: $font-size-16;
-        color: $color-red;
-      }
+
       &-help {
         display: block;
         font-size: $font-size-14;
       }
     }
+
     &--disabled-state {
       color: $color-gray-400;
+
       &-help {
         color: $color-gray-400;
       }
     }
   }
+
   &__icon {
     display: inline-block;
     position: relative;
@@ -47,10 +50,11 @@
       }
     }
   }
+
   .input__controls {
     border: 2px solid $color-black;
-    font-family: $Font-Family-ProximaRegular;
     box-sizing: border-box;
+    font-family: $Font-Family-ProximaRegular;
     font-size: $font-size-16;
     height: 46px;
     margin: $spacing-08 0;
@@ -60,25 +64,31 @@
     &::placeholder {
       color: $color-gray-500;
     }
+
     &.focus-state {
       &:focus {
         box-shadow: 0 0 4px #0468b1;
       }
     }
+
     &.error-state {
       border: 2px solid $color-red;
     }
+
     &.disabled-state {
-      border: 2px solid $color-gray-400;
       background-color: $color-white;
+      border: 2px solid $color-gray-400;
+
       &::placeholder {
         color: $color-gray-400;
       }
     }
+
     &--search {
       padding-left: 40px;
       position: relative;
     }
+
     &--date {
       background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat left 14px bottom 12px;
       color: $color-gray-500;
@@ -89,12 +99,19 @@
         color: $color-gray-400;
       }
     }
+
     &--textarea {
       height: auto;
       max-width: 100%;
     }
   }
+
+  .input-error {
+    color: $color-red;
+    font-size: $font-size-16;
+  }
 }
+
 input[type='date']::-webkit-calendar-picker-indicator {
   appearance: none;
   left: -12px;
@@ -107,11 +124,13 @@ input[type='date']::-webkit-calendar-picker-indicator {
     &__icon.search-field::before {
       right: 14px;
     }
+
     .input__controls {
       &--search {
-        padding-right: 40px;
         padding-left: 10px;
+        padding-right: 40px;
       }
+
       &--date {
         background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat right 14px bottom 12px;
         padding-right: 40px;
@@ -123,6 +142,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
       }
     }
   }
+
   input[type='date']::-webkit-calendar-picker-indicator {
     right: 3px;
   }

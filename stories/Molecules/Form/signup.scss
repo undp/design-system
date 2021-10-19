@@ -1,0 +1,74 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+/* signup newsletter */
+.footer-subtitle {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.375em;
+  margin-bottom: $spacing-12;
+  text-align: right;
+}
+
+.sign-up {
+  &--field {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+    .input-group {
+      width: calc(100% - 107px);
+    }
+
+    & .input-error {
+      position: absolute;
+      top: 107%;
+      width: 100%;
+    }
+  }
+
+  .input__controls.form-email {
+    height: 54px;
+    margin: 0;
+    outline: none;
+  }
+
+  .form-submit {
+    cursor: pointer;
+    font-family: $Font-Family-ProximaBold;
+    min-width: 107px;
+    padding: 0;
+  }
+
+  &--white {
+    .footer-subtitle {
+      color: $color-white;
+    }
+
+    .input__controls.form-email {
+      background-color: $color-gray-400;
+      border: 2px solid $color-white;
+      color: $color-white;
+
+      &::placeholder {
+        color: $color-white;
+      }
+    }
+
+    .form-submit {
+      background-color: $color-white;
+      color: $color-blue-600;
+
+      &:hover {
+        background-color: $color-blue-600;
+        color: $color-white;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .sign-up--field {
+    justify-content: flex-start;
+  }
+}

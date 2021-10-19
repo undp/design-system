@@ -6,7 +6,7 @@ export const Inputcomponent = ({ id, type, element,rows, cols, placeholder, requ
   return (
     <>
       <div className="input-group">
-        <label for= {[`${type}`]} className= {[`input-group__label--${mode}`].join(' ')}>{ labelText }</label>
+        {labelText && <label for= {[`${type}`]} className= {[`input-group__label--${mode}`].join(' ')}>{ labelText }</label>}
         <div className={[`input-group__icon ${type}-field ${mode}`].join(' ')}>
           <InputTag
             type={ type }
@@ -20,8 +20,8 @@ export const Inputcomponent = ({ id, type, element,rows, cols, placeholder, requ
             className= {['input__controls', `input__controls--${type} ${mode}`].join(' ')}
           />
         </div>
-        <label for= {[`${type}`]} className= {[`input-group__label--${mode}-help`].join(' ')}>{ helpText }</label>
-        <label for= {[`${type}`]} className= {[`input-group__label--${mode}-error`].join(' ')}>{ errorText }</label>
+        {helpText && <div for= {[`${type}`]} className= {[`input-group__label--${mode}-help`].join(' ')}>{ helpText }</div>}
+        {errorText && <div for= {[`${type}`]} className= {[`input-error`,`input-group__label--${mode}-error`].join(' ')}>{ errorText }</div>}
       </div>
     </>
   );
