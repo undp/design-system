@@ -1,14 +1,13 @@
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
 
-/* Tab start */
-
+/* pagination start */
 .pagination-wrapper {
   align-items: center;
   display: flex;
   list-style: none;
   padding-left: 0;
-
 }
 
 .page__item {
@@ -16,7 +15,7 @@
   position: relative;
   font-size: $font-size-16;
   line-height: 22px;
-  
+
   a {
     border-bottom: 0;
     font-size: $font-size-16;
@@ -28,7 +27,7 @@
     cursor: pointer;
     &::before {
       background: url(#{$img-path-Icon}/circle-left.svg) no-repeat center center;
-      content: ' ';
+      content: " ";
       display: block;
       height: 45px;
       width: 45px;
@@ -43,8 +42,30 @@
 
   &:last-child {
     &::before {
-      background: url(#{$img-path-Icon}/circle-right.svg) no-repeat center center;
+      background: url(#{$img-path-Icon}/circle-right.svg) no-repeat center
+        center;
     }
   }
 }
-/* Tab end */
+
+[dir="rtl"] {
+  .pagination-wrapper {
+    padding-right: 0;
+  }
+
+  .page__item {
+    margin-left: $spacing-24;
+    margin-right: 0;
+    &:first-child {
+      &::before {
+        @include transform(rotateZ(180deg));
+      }
+    }
+    &:last-child {
+      &::before {
+        @include transform(rotateZ(180deg));
+      }
+    }
+  }
+}
+/* pagination end */
