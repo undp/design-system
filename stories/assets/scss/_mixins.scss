@@ -224,10 +224,11 @@
   position: absolute;
   @include transform(translateY(-50%));
   @include transition(all 200ms ease-in-out);
-  background: url('../../assets/images/Icon/Chevron-down.svg') no-repeat center center;
+  background: url('../../assets/images/Icon/icons.png') no-repeat center center;
+  background-position: -136px -66px;
   float: right;
-  width: 20px;
-  height: 13px;
+  width: 21px;
+  height: 14px;
   margin-left: $spacing-24;
 }
 
@@ -242,8 +243,6 @@
 
 %sidebar-chevron {
   @include transition(0.1s ease);
-
-  background: url(#{$img-path-Iconback}/Chevron-down.svg) no-repeat center center;
   content: '';
   height: 20px;
   position: absolute;
@@ -306,4 +305,9 @@
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
+}
+
+%icon_img {
+  display: block;
+  background: url(#{$img-path-Icon}icons.png) no-repeat center center;
 }

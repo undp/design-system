@@ -13,10 +13,11 @@ details {
     &::before {
       content: "";
       width: 14px;
-      height: 14px;
+      height: 17px;
       display: inline-block;
-      background: url(#{$img-path-Icon}/Chevron-small-right.svg)
-        no-repeat left center;
+      @extend %icon_img;
+      margin-right: $spacing-08;
+      background-position: -256px -63px;
     }
   }
   p {
@@ -27,11 +28,8 @@ details {
       margin-bottom: 0.5rem;
       &::before {
         content: "";
-        width: 14px;
-        height: 14px;
         display: inline-block;
-        background: url(#{$img-path-Icon}/Chevron-small-down.svg)
-          no-repeat left center;
+        background-position: -194px -63px;
       }
     }
   }

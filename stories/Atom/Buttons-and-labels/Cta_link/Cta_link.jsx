@@ -6,11 +6,22 @@ export const variant_options = {
   Space: 'space',
 };
 
-export const Ctalink = ({ label, ...args }) => (
-  <a className={['cta__link', `cta--${variant_options[`${args.variant}`]}`].join(' ')} href="#">
-    {label}
-  </a>
-);
+export const Ctalink = ({ label, ...args }) => {
+  return (
+    <a className={["cta__link", `cta--${variant_options[`${args.variant}`]}`].join(' ')} href="#">
+      {label}
+         {args.variant === 'Arrow' ?
+          <>
+            <div className='arrow-expand'></div>
+          </>
+          :
+          <>
+            <div className='icon-chevron-right'></div>
+          </>
+        }
+    </a>
+  );
+};
 
 Ctalink.defaultProps = {
   variant: 'Arrow',

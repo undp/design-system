@@ -8,9 +8,10 @@
     min-width: 330px;
   }
   &:hover {
-    .download-icon {
-      height: 24px;
-      background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
+    .download-card__download {
+      .download-icon {
+        background-position: -127px -147px;
+      }
     }
     .publication_thumbnail__image {
       &::after {
@@ -46,14 +47,13 @@
     letter-spacing: 0.03em;
     display: flex;
     align-items: center;
+
+    .download-icon {
+      margin-left: $spacing-12;
+    }
   }
 }
 
-.download-card__download {
-  .download-icon {
-    margin-left: $spacing-12;
-  }
-}
 
 [dir='rtl'] {
   .download-card__download {

@@ -11,6 +11,6 @@ export const SidebarFirstLevel = ({
   </div>
 );
 
-SidebarFirstLevel.propTypes = {
-  active: PropTypes.oneOf(['Default', 'Selected']),
+SidebarFirstLevel.defaultProps = {
+  active: "Default",
 };

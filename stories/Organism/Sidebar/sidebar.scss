@@ -27,16 +27,14 @@
         padding: 0;
       }
 
-      &--chevron {
-        &::after {
-          @extend %sidebar-chevron;
-        }
+      .icon-chevron-down {
+         @extend %sidebar-chevron;
       }
 
       &.accordion--active {
         border-bottom: none;
 
-        .accordion-navbar__item--chevron::after {
+        .icon-chevron-down {
           @include transform(rotateZ(180deg));
         }
       }
@@ -45,10 +43,8 @@
     &__item:nth-child(1),
     &__item.accordion--active:nth-child(1) {
       @include devicebreak(medium) {
-        .accordion-navbar__item--chevron::after {
-          background:
-            url(#{$img-path-Iconback}/Chevron-down-white.svg)
-            no-repeat center center;
+        .icon-chevron-down {
+          background-position: -250px -117px;
         }
       }
 
@@ -82,8 +78,10 @@
       display: block;
       padding: 0;
 
-      &__menu::after {
-        @include transform(rotateZ(180deg));
+      &__menu {
+        .icon-chevron-down {
+          @include transform(rotateZ(180deg));
+        }
       }
     }
   }
@@ -91,9 +89,12 @@
 
 [dir='rtl'] {
   .accordion-navbar {
-    &__item--chevron,
+    .icon-chevron-down {
+      left: 24px;
+      right: unset;
+    }
     &__menu {
-      &::after {
+      .icon-chevron-down {
         left: 24px;
         right: unset;
       }

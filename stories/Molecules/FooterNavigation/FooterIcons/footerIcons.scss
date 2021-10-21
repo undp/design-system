@@ -10,26 +10,29 @@
     list-style: none;
     a {
       display: block;
-      background: url(#{$img-path-Icon}/social_icon.png) no-repeat;
+      @extend %icon_img;
       width: 30px;
       height: 25px;
       border: none;
       margin-right: $spacing-24;
 
       &.facebook {
-        background-position: 5px -2px;
+        background-position: -481px -64px;
       }
       &.instragram {
-        background-position: -90px -3px;
+        background-position: -517px -64px;
       }
       &.linkedIn {
-        background-position: -139px -2px;
+        background-position: -557px -64px;
       }
       &.twitter {
-        background-position: -43px -2px;
+        background-position: -596px -64px;
       }
       &.youtube {
-        background-position: -187px -2px;
+        background-position: -638px -64px;
+      }
+      &:hover {
+        animation: inherit;
       }
     }
   }
@@ -37,19 +40,19 @@
     li {
       a {
       &.facebook {
-        background-position: 5px -27px;
+        background-position: -481px -94px;
       }
       &.instragram {
-        background-position: -90px -27px;
+        background-position: -517px -94px;
       }
       &.linkedIn {
-        background-position: -139px -28px;
+        background-position: -557px -94px;
       }
       &.twitter {
-        background-position: -43px -27px;
+        background-position: -596px -94px;
       }
       &.youtube {
-        background-position: -187px -27px;
+        background-position: -638px -94px;
       }
     }
     }

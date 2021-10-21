@@ -4,41 +4,32 @@
 
 .cta__link {
   @extend %button;
-
   @extend %img_none;
-
   color: $color-black;
 
   &.cta--arrow {
-    &::after {
-      @extend %ctaimg;
-
-      @include transition(0.2s ease);
-      
-      background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat left center;
+    .arrow-expand {
+      margin-left: 12px;
     }
 
     &:hover {
-      &::after {
+      .arrow-expand {
         @include translate(10px,0);
-
-        background-image: url(#{$img-path-Icon}/arrow-left-expand-hover.svg);
+        background-position: 1px -151px;
         width: 100px;
+        @include transition (transform 0.4s);
       }
     }
   }
 
   &.cta--space {
-    &::after {
-      @extend %ctaimg;
-
+    .icon-chevron-right {
+      margin-left: 12px;
       @include transition(0.2s ease);
-
-      background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat left center;
     }
 
     &:hover {
-      &::after {
+      .icon-chevron-right {
         @include translate(70%,0);
       }
     }
@@ -47,23 +38,30 @@
 
 [dir='rtl'] {
   .cta__link {
-    &.cta--space,
     &.cta--arrow {
-      &::after {
-        @include transform(rotate(180deg));
-
+      .arrow-expand {
         margin-left: 0;
         margin-right: $spacing-12;
+        @include transform(rotate(180deg));
       }
-
-      &:hover::after {
-        @include transform(translate(-50%,0) rotate(180deg));
+      &:hover {
+        .arrow-expand {
+          @include transform(translate(-10%,0) rotate(180deg));
+        }
       }
     }
 
-    &.cta--arrow:hover::after {
-      @include transform(translate(-10%,0) rotate(180deg));
-      @include transition(0.2s ease);
+    &.cta--space {
+      .icon-chevron-right{
+        margin-left: 0;
+        margin-right: 12px;
+        @include transform(rotate(180deg));
+      }
+      &:hover {
+         .icon-chevron-right{
+          @include transform(translate(-50%,0) rotate(180deg));
+        }
+      }
     }
   }
 }

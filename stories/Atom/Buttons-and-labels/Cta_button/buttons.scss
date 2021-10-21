@@ -18,24 +18,20 @@
     }
 
     &.button--arrow {
-      &::after {
+      .icon-chevron-right-black {
         @include transition(0.2s ease);
-
-        background: url(#{$img-path-Icon}/chevron-right-black.svg) no-repeat left center;
-        content: '';
-        height: 20px;
         margin-left: 12px;
-        width: 13px;
       }
 
-      &:hover::after {
-        @include translate(70%,0);
+      &:hover {
+        .icon-chevron-right-black {
+          @include translate(70%,0);
+        }
       }
 
       &.disabled {
-        &::after {
-          background: url(#{$img-path-Icon}/chevron-right-white.svg) no-repeat left center;
-          content: '';
+        .icon-chevron-right-white {
+          margin-left: 12px;
         }
       }
     }
@@ -60,15 +56,15 @@
   .button {
     &.button--primary {
       &.button--arrow {
-        &::after {
-          @include transform(rotate(180deg));
-
+      .icon-chevron-right-black, .icon-chevron-right-white {
+         @include transform(rotate(180deg));
           margin-left: 0;
           margin-right: 12px;
-        }
-
-        &:hover::after {
-          @include transform(translate(-50%,0) rotate(180deg));
+      }
+        &:hover {
+          .icon-chevron-right-black { 
+            @include transform(translate(-50%,0) rotate(180deg));
+          }
         }
       }
     }

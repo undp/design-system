@@ -1,6 +1,7 @@
 @import '../../../assets/scss/breakpoints';
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
+@import '../../../Atom/Global/Icons/icons.scss';
 
 .dropdown-language {
   display: inline-block;
@@ -40,31 +41,26 @@
   padding: 0;
 
   &::before {
-    background: url(#{$img-path-Icon}/Language.svg) no-repeat left center;
     margin-right: $spacing-08;
+    @extend .icon-language;
     content: '';
-    height: 26px;
-    width: 25px;
   }
 
   &::after {
     @include transition(0.2s ease-in-out);
-
-    background: url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
     margin-left: $spacing-08;
+    @extend .icon-arrow-blue;
     content: '';
-    height: 10px;
-    width: 15px;
   }
 
   &__white {
     color: $color-white;
 
     &::before {
-      background: url(#{$img-path-Icon}/Language-white.svg) no-repeat left center;       
+      @extend .icon-language-white;
     }
     &::after {
-      background: url(#{$img-path-Icon}/arrowwhitedown.svg) no-repeat left center;
+      @extend .icon-arrow-white;
     }
   }
 }

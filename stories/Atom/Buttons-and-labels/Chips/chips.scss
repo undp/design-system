@@ -15,26 +15,18 @@
   }
 
   &.chips__cross {
-    &::before {
-      background: url(#{$img-path-Icon}/Timesred.svg) no-repeat left;
-      content: '';
+    .icon-close-sm-red {
       display: inline-flex;
-      height: 20px;
       margin-right: 10px;
-      position: relative;
-      top: 5px;
-      width: 13px;
-
-      @include devicebreak(medium) {
-        top: 3px;
-      }
     }
   }
 }
 
 [dir='rtl'] {
-  .chips__cross::before {
-    margin-left: 10px;
-    margin-right: 0;
+  .chips__cross {
+    .icon-close-sm-red {
+      margin-left: 10px;
+      margin-right: 0;
+    }
   }
 }

@@ -15,53 +15,40 @@
   cursor: pointer;
   overflow: hidden;
   list-style: none;
-  &::before {
-    content: "";
-    background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
-    float: right;
-    width: 20px;
-    height: 20px;
-    border-top-color: #f3f3f3;
-    @include transition(0.1s ease);
-    margin-left: $spacing-24;
-  }
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
   .accordion__heading {
     margin-bottom: 0;
   }
   &.accordion--active {
     .accordion__heading {
-      margin-bottom: 10px;
       padding-right: $spacing-24;
       @include devicebreak(medium) {
         margin-bottom: 0;
-        padding-bottom: $spacing-16;
       }
     }
-    &::before {
-        @include transform(rotateZ(180deg));
+    .icon-chevron-down {
+      @include transition(0.1s ease);
+      @include transform(rotateZ(180deg));
+    }
+  }
+  .accordion__panel {
+    padding: 42px $spacing-32 $spacing-32;
+    height: auto;
+    display: none;
+    @include devicebreak(medium) {
+      padding: 56px $spacing-40 $spacing-40;
     }
   }
 }
 
-[dir='rtl'] {
-  .accordion__item {
-    &::before { 
-      float: left;
-    }
-  }
+[dir="rtl"] {
   .accordion--active {
     .accordion__heading {
       padding-right: 0;
     }
-  }
-}
-
-.accordion__panel {
-  padding: $spacing-32;
-  height: auto;
-  display: none;
-  @include devicebreak(medium) {
-    padding: $spacing-40;
   }
 }
 /* Accordian end */

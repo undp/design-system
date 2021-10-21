@@ -1,6 +1,7 @@
 @import '../../../assets/scss/mixins';
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/breakpoints';
+@import '../../../Atom/Global/Icons/icons.scss';
 
 /* checkbox */
 .checkbox-wrapper {
@@ -37,7 +38,7 @@
     }
 
     &:checked + label::before {
-      background-image: url(#{$img-path-Icon}icon-check.svg);
+      @extend .icon-check;
     }
   }
 }

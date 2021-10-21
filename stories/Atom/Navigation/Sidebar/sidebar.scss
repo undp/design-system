@@ -4,17 +4,11 @@
 @import "../../../assets/scss/typography";
 
 // * Slidebar start *//
-.Sidebar__item {
+.Sidebar_item {
   @extend %border-bottom;
   @extend %sidebar;
   &:hover {
     background-color: $color-gray-200;
-  }
-  &.open {
-    .arrow {
-      transform: rotateZ(180deg);
-      transition: all 0.1s ease;
-    }
   }
   h6 {
     margin-bottom: 0;

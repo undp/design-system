@@ -19,7 +19,8 @@
       border-color: $color-white;
 
       &::before {
-        background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
+        @extend %icon_img;
+        background-position: -250px -115px;
       }
     }
   }
@@ -37,7 +38,8 @@
   }
   &::before {
     content: "";
-    background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
+    @extend %icon_img;
+    background-position: -138px -66px;
     float: right;
     width: 20px;
     height: 20px;

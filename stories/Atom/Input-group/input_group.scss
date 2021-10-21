@@ -1,6 +1,6 @@
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/breakpoints";
+@import "../../assets/scss/variables";
 
 .input-group {
   &__label {
@@ -37,15 +37,16 @@
     &.search-field {
       &::before {
         @extend %field__image;
-
-        background-image: url(#{$img-path-Iconback}/Search_black.svg);
-        content: '';
+        background-image: url(#{$img-path-Iconback}/icons.png);
+        background-position: -360px -12px;
+        content: "";
       }
 
       &.disabled-state {
         &::before {
-          background-image: url(#{$img-path-Iconback}/Searchgray.svg);
-          content: '';
+          background-image: url(#{$img-path-Iconback}/icons.png);
+          background-position: -415px -12px;
+          content: "";
         }
       }
     }
@@ -90,13 +91,27 @@
     }
 
     &--date {
-      background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat left 14px bottom 12px;
       color: $color-gray-500;
       padding-left: 40px;
 
+      &::before {
+        @extend %field__image;
+        background-image: url(#{$img-path-Iconback}/icons.png);
+        background-position: -521px -12px;
+        content: "";
+        z-index: 0;
+      }
+
       &.disabled-state {
-        background-image: url(#{$img-path-Iconback}/datedisabled.svg);
         color: $color-gray-400;
+
+        &::before {
+          @extend %field__image;
+          background-image: url(#{$img-path-Iconback}/icons.png);
+          background-position: -400px -67px;
+          content: "";
+          z-index: 0;
+        }
       }
     }
 
@@ -113,14 +128,14 @@
   }
 }
 
-input[type='date']::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-calendar-picker-indicator {
   appearance: none;
   left: -12px;
   opacity: 0;
   position: absolute;
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .input-group {
     &__icon.search-field::before {
       right: 14px;
@@ -133,18 +148,23 @@ input[type='date']::-webkit-calendar-picker-indicator {
       }
 
       &--date {
-        background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat right 14px bottom 12px;
         padding-right: 40px;
         text-align: right;
-
+        &::before {
+          left: inherit;
+          right: 14px;
+        }
         &.disabled-state {
-          background-image: url(#{$img-path-Iconback}/datedisabled.svg);
+          &::before {
+            left: inherit;
+            right: 14px;
+          }
         }
       }
     }
   }
 
-  input[type='date']::-webkit-calendar-picker-indicator {
+  input[type="date"]::-webkit-calendar-picker-indicator {
     right: 3px;
   }
 }

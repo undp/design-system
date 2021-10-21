@@ -1,41 +1,337 @@
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
-/* icon start */ 
-.icon--bar {
+/* icon start */
+
+.icon {
+  align-items: center;
+  background-color: $color-gray-400;
+  display: inline-flex;
+  height: 60px;
+  justify-content: center;
+  margin: 10px;
+  vertical-align: top;
+  width: 140px;
   cursor: pointer;
 }
-.arrow-expand {
-  height: 16px;
-  cursor: pointer;
-  background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat center center  ;
-  transform: translateX(0);
-  width: 20px;
-  &:hover {
-    background: url(#{$img-path-Icon}/arrow-left-expand-hover.svg) no-repeat center center;
-    transform: translateX(10px);
-    transition: transform 0.4s cubic-bezier(0.4, 0.22, 0.28, 1); 
-    width: 100px;
-  } 
+
+.icon-globe {
+  @extend %icon_img;
+  background-position: -163px -7px;
+  height: 30px;
+  width: 30px;
 }
 
-.external-link{
+.icon-bar {
+  @extend %icon_img;
+  background-position: 2px -7px;
+  height: 29px;
+  width: 29px;
+}
+
+.icon-close-circle {
+  @extend %icon_img;
+  background-position: -280px 0;
+  height: 45px;
+  width: 47px;
+}
+
+.icon-close {
+  @extend %icon_img;
+  background-position: -42px 0;
+  height: 45px;
+  width: 29px;
+}
+
+.icon-language {
+  @extend %icon_img;
+  background-position: -101px -8px;
+  height: 26px;
+  width: 25px;
+}
+
+.icon-search {
+  @extend %icon_img;
+  background-position: -221px -8px;
+  height: 29px;
+  width: 29px;
+}
+
+.icon-arrow-left {
+  @extend %icon_img;
+  background-position: -491px -209px;
+  height: 26px;
+  width: 74px;
+}
+
+.icon-arrow-right {
+  @extend %icon_img;
+  background-position: -391px -209px;
+  height: 26px;
+  width: 81px;
+}
+
+.icon-calendar {
+  @extend %icon_img;
+  background-position: -465px -9px;
+  height: 26px;
+  width: 27px;
+}
+
+.icon-calendar {
+  @extend %icon_img;
+  background-position: -465px -9px;
+  height: 26px;
+  width: 27px;
+}
+
+.icon-chevron-sm-left {
+  @extend %icon_img;
+  background-position: -230px -66px;
+  height: 15px;
+  width: 15px;
+}
+
+.icon-chevron-sm-right {
+  @extend %icon_img;
+  background-position: -257px -66px;
+  height: 15px;
+  width: 15px;
+}
+
+.icon-chevron-sm-up {
+  @extend %icon_img;
+  background-position: -294px -66px;
+  height: 15px;
+  width: 15px;
+}
+
+.icon-chevron-sm-down {
+  @extend %icon_img;
+  background-position: -194px -66px;
+  height: 15px;
+  width: 15px;
+}
+
+.icon-chevron-down {
+  @extend %icon_img;
+  background-position: -137px -66px;
+  height: 15px;
+  width: 22px;
+}
+
+.icon-chevron-up {
+  @extend %icon_img;
+  background-position: -80px -66px;
+  height: 15px;
+  width: 22px;
+}
+
+.icon-chevron-left {
+  @extend %icon_img;
+  background-position: 2px -63px;
   height: 20px;
-  width: 21px;
-  cursor: pointer;
-  background: url(#{$img-path-Icon}/external-default.svg) no-repeat 0 bottom ;
-  &:hover {
-    background: url(#{$img-path-Icon}/external-hover.svg) no-repeat 0 bottom;
-  } 
+  width: 19px;
 }
 
-.download-icon{
-  height: 24px;
-  width: 24px;
-  cursor: pointer;
-  background: url(#{$img-path-Icon}/download-default.svg) no-repeat 0 bottom ;
-  &:hover {
-    height: 24px;
-    background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
-  } 
+.icon-chevron-right {
+  @extend %icon_img;
+  background-position: -37px -63px;
+  height: 20px;
+  width: 19px;
 }
-/* icon end */ 
+
+.icon-circle-left {
+  @extend %icon_img;
+  background-position: -160px -205px;
+  height: 45px;
+  width: 46px;
+}
+
+.icon-circle-right {
+  @extend %icon_img;
+  background-position: -233px -205px;
+  height: 45px;
+  width: 47px;
+}
+
+.icon-circle-up {
+  @extend %icon_img;
+  background-position: -233px -205px;
+  height: 45px;
+  width: 47px;
+}
+
+.icon-circle-down {
+  @extend %icon_img;
+  background-position: -79px -205px;
+  height: 45px;
+  width: 47px;
+}
+
+.icon-circle-play {
+  @extend %icon_img;
+  background-position: 0 -205px;
+  height: 45px;
+  width: 47px;
+}
+
+.icon-circle-play {
+  @extend %icon_img;
+  background-position: 0 -205px;
+  height: 45px;
+  width: 47px;
+}
+
+.icon-chevron-right-black{
+  @extend %icon_img;
+  background-position: -558px -11px;
+  height: 21px;
+  width: 15px;
+}
+
+.icon-chevron-right-white {
+  @extend %icon_img;
+  background-position: -589px -11px;
+  height: 23px;
+  width: 18px;
+}
+
+.icon-search-gray {
+  @extend %icon_img;
+  background-position: -414px -11px;
+  height: 22px;
+  width: 23px;
+}
+
+.icon-search-black {
+  @extend %icon_img;
+  background-position: -359px -11px;
+  height: 22px;
+  width: 23px;
+}
+
+.icon-calendar-black {
+  @extend %icon_img;
+  background-position: -521px -10px;
+  height: 21px;
+  width: 18px;
+}
+
+.icon-calendar-white { 
+  @extend %icon_img;
+  background-position: -401px -65px;
+  height: 21px;
+  width: 18px;
+}
+
+.icon-check { 
+  @extend %icon_img;
+  background-position:  -445px -69px;
+  height: 14px;
+  width: 14px;
+}
+
+.icon-close-sm-red { 
+  @extend %icon_img;
+  background-position: -348px -66px;
+  height: 14px;
+  width: 14px;
+}
+
+.icon-close-sm-red{  
+  @extend %icon_img;
+  background-position: -348px -66px;
+  height: 14px;
+  width: 14px;
+}
+
+.icon-chevron-down-white {
+  @extend %icon_img;
+  background-position: -250px -117px;
+  height: 14px;
+  width: 21px;
+}
+
+.icon-arrow-blue {
+  @extend %icon_img;
+  background-position: -657px -18px;
+  height: 10px;
+  width: 14px;
+}
+
+.icon-arrow-white {
+  @extend %icon_img;
+  background-position: -657px -40px;
+  height: 10px;
+  width: 14px;
+}
+
+.icon-language-white {
+  @extend %icon_img;
+  background-position: -639px -130px;
+  height: 26px;
+  width: 25px;
+}
+
+
+.arrow-expand {
+  @extend %icon_img;
+  background-position: 1px -111px;
+  cursor: pointer;
+  height: 20px;
+  transform: translateX(0);
+  width: 16px;
+
+  &:hover {
+    @extend %icon_img;
+    background-position: 1px -151px;
+    @include transform (translateX(10px));
+    @include transition (transform 0.4s);
+    width: 100px;
+  }
+}
+
+.external-link {
+  @extend %icon_img;
+  background-position: -191px -108px;
+  cursor: pointer;
+  height: 26px;
+  width: 21px;
+
+  &:hover {
+    @extend %icon_img;
+    background-position: -190px -148px;
+  }
+}
+
+.download-icon {
+  @extend %icon_img;
+  background-position: -127px -107px;
+  cursor: pointer;
+  height: 27px;
+  width: 24px;
+
+  &:hover {
+    @extend %icon_img;
+    background-position: -127px -145px;
+  }
+}
+
+
+[dir="rtl"] {
+  .arrow-expand {
+    @include transform(translate(0) rotate(180deg));
+    &:hover {
+      @include transform(translate(-10px) rotate(180deg));
+    }
+  }
+   .external-link {
+    @include transform(rotate(270deg));
+    &:hover {
+      @include transform(rotate(270deg));
+    }
+  }
+}
+
+/* icon end */

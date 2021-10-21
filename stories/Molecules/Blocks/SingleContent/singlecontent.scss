@@ -61,7 +61,7 @@
       opacity: 0.75;
     }
 
-    .cta__link::after {
+    .icon-chevron-right {
       @include translate(70%,0);
     }
   }
@@ -69,7 +69,7 @@
 
 [dir='rtl'] {
   .singlecard:hover {
-    .cta__link::after {
+    .icon-chevron-right {
       @include transform(translate(-50%,0) rotate(180deg));
     }
   }

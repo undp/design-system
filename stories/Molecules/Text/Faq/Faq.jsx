@@ -12,25 +12,28 @@ export const Faq = ({ headerText, descriptionText }) => {
   return (
     <ul className="accordion" id="accordion">
       <li className="accordion__item">
-        <Heading type="5" label={headerText} className="accordion__heading" />
-        <div className="accordion__panel">
-          <P label={descriptionText} />
-          <P label={descriptionText} />
-        </div>
+         <Heading type='5' label={headerText} className="accordion__heading"  />
+         <span className='icon-chevron-down'></span>
+         <div class="accordion__panel">
+            <P label={descriptionText} />
+            <P label={descriptionText}  />
+         </div>
       </li>
       <li className="accordion__item">
-        <Heading type="5" label={headerText} className="accordion__heading" />
-        <div className="accordion__panel">
-          <P label={descriptionText} />
-          <P label={descriptionText} />
-        </div>
+         <Heading type='5' label={headerText} className="accordion__heading" />
+         <span className='icon-chevron-down'></span>
+         <div class="accordion__panel">
+            <P label={descriptionText} />
+            <P label={descriptionText} />
+         </div>
       </li>
       <li className="accordion__item">
-        <Heading type="5" label={headerText} className="accordion__heading" />
-        <div className="accordion__panel">
-          <P label={descriptionText} />
-          <P label={descriptionText} />
-        </div>
+         <Heading type='5' label={headerText} className="accordion__heading" />
+         <span className='icon-chevron-down'></span>
+         <div class="accordion__panel">
+            <P label={descriptionText} />
+            <P label={descriptionText} />
+         </div>
       </li>
     </ul>
   );

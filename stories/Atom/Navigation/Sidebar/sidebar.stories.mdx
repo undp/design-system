@@ -12,7 +12,14 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Atoms/Navigation/Sidebar" />
+<Meta title="Atoms/Navigation/Sidebar" 
+  argTypes={{
+    active: {
+      options: ["Default", "Selected"],
+      control: { type: "radio" }
+    }
+  }}
+/>
 
 <style>{`
   .subheading {
@@ -29,19 +36,13 @@ export const getCaptionForLocale = (locale) => {
 # Sidebar Component
 The sidebar component is used for showing the nested mapping of the related pages. it shows the first level of the sidebar.
 
-<Story name="Sidebar First">
+<Story name="Sidebar">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <SidebarFirstLevel text={caption.blockquote} active={'Default'}></SidebarFirstLevel>;
+    return <SidebarFirstLevel text={caption.blockquote} {...args}></SidebarFirstLevel>;
   }}
 </Story>
 
-<Story name="Sidebar First Selected">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <SidebarFirstLevel text={caption.blockquote} active={'Selected'}></SidebarFirstLevel>;
-  }}
-</Story>
 
 
 <div className="subheading">Usage</div>
