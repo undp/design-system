@@ -1,0 +1,81 @@
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.dropdown-language {
+  display: inline-block;
+  position: relative;
+
+  &.active {
+    .dropdown-btn::after {
+      @include transform(rotateZ(180deg));
+    }
+  }
+
+  &__content {
+    display: none;
+    left: 22px;
+    padding: 0;
+    position: absolute;
+
+    &--item {
+      @extend %language_switcher;
+
+      background: $color-gray-200;
+      border-bottom: 1px solid $color-gray-400;
+      box-shadow: 0 3px 4px rgb(0 0 0 / 10%);
+      display: block;
+      padding: $spacing-12 $spacing-16;
+    }
+  }
+}
+
+.dropdown-btn {
+  @extend %language_switcher;
+
+  align-items: center;
+  background-color: transparent;
+  color: $color-blue-600;
+  column-gap: 8px;
+  display: flex;
+
+  &::before {
+    background: url(#{$img-path-Icon}/Language.svg) no-repeat left center;
+    content: '';
+    height: 26px;
+    width: 25px;
+  }
+
+  &::after {
+    @include transition(0.2s ease-in-out);
+
+    background: url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
+    content: '';
+    height: 10px;
+    width: 15px;
+  }
+
+  &__white {
+    color: $color-white;
+
+    &::before {
+      background: url(#{$img-path-Icon}/Language-white.svg) no-repeat left center;       
+    }
+    &::after {
+      background: url(#{$img-path-Icon}/arrowwhite.svg) no-repeat left center;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .dropdown-language {
+    &__content {
+      left: unset;
+      right: 22px;
+    }
+  }
+  
+  .dropdown-btn::before {
+    transform: scaleX(-1);
+  }
+}
