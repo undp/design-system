@@ -8,9 +8,9 @@ import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctaarrow } from '../../../Atom/Buttons-and-labels/Cta_button/cta_link_arrow';
 
 export const column_options = {
-  large: 'large-8 feature-card--large',
-  medium: 'medium-6 large-4 feature-card--medium',
-  small: 'medium-5 large-3 feature-card--small test1'
+  large: 'large-8 feature__card--large',
+  medium: 'medium-6 large-4 feature__card--medium',
+  small: 'medium-5 large-3 feature__card--small test1'
 }
 
 export const variant_options = {
@@ -18,32 +18,47 @@ export const variant_options = {
   Color: 'without-image',
 }
 
-export const FeaturedContentCard = ({ contenttile, contentname, descriptionText, type, varient,  button, cell, ...args }) => {
-    return (
+export const FeaturedContentCard = ({ contenttile, contentname, descriptionText, type, button, cell, ...args }) => {
+  return (
     <div className="grid-x grid-margin-x">
-      <div  className={['cell', `${column_options[`${args.column}`]}`].join(' ')}>
-          <a href="#" className={['feature-card',`feature-card--${variant_options[`${args.variant}`]}`].join(' ')}>
-          <div class="feature-card__slide">
-           <div class="feature-card__image" style={{ backgroundImage: `url(${BackgroundImg})`}} ></div> 
+      <div className={['cell', `${column_options[`${args.column}`]}`].join(' ')}>
+        <a href="#" className={['feature__card', `feature__card--${variant_options[`${args.variant}`]}`].join(' ')}>
+          <div class="feature__card_slide">
+            {args.variant === 'Image' ?
+              <>
+                <div class="feature__card_image" style={{ backgroundImage: `url(${BackgroundImg})` }} ></div>
+              </>
+              :
+              <>
+              </>
+            }
+
           </div>
-          <article class="feature-card__content">
-            <div className="feature-card__tag">{contenttile}</div>
-            <div class="feature-card__description">
-              {contentname && <Heading type='4' label={contentname}/>}
+          <article class="feature__card_content">
+            <div className="feature__card_tag">{contenttile}</div>
+            <div class="feature__card_description">
+              {args.column === 'medium' || args.column === 'small' ?
+                <>
+                  {contentname && <Heading type='5' label={contentname} />}
+                </>
+                :
+                <>
+                  {contentname && <Heading type='4' label={contentname} />}
+                </>}
               {descriptionText && <P label={descriptionText} />}
             </div>
             <div className="feature__cta">
-              <Ctaarrow label={button}/>
+              <Ctaarrow label={button} />
             </div>
           </article>
-          </a>
+        </a>
       </div>
     </div>
-    );
+  );
 };
 
 FeaturedContentCard.defaultProps = {
   column: 'large',
-  varient: 'Image',
+  variant: 'Image',
 };
 

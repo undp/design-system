@@ -274,3 +274,27 @@
   border: none;
   text-transform: uppercase;
 }
+
+// link animation
+@mixin lineLoop {
+  animation: lineLoop-animation 2s linear infinite;
+  -webkit-animation: lineLoop-animation 2s linear infinite;
+  -moz-animation: lineLoop-animation 2s linear infinite;
+  -ms-animation: lineLoop-animation 2s linear infinite;
+  -o-animation: lineLoop-animation 2s linear infinite;
+}
+
+@keyframes lineLoop-animation {
+  0% {
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, -30px 100%;
+  }
+  to {
+    background-size: 0 2px, 100% 2px;
+    background-position: calc(100% + 30px) 100%, 0 100%;
+  }
+}
+
+%img_none {
+  background-image: none;
+}

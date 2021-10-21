@@ -16,6 +16,7 @@
     a {
       @extend %paragragh-font-16;
       border-bottom: 0;
+      @extend %img_none;
     }
   }
   &--white {

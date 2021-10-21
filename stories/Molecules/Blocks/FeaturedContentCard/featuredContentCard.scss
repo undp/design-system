@@ -2,7 +2,7 @@
 @import "../../../assets/scss/mixins";
 
 /* feature card start */
-.feature-card {
+.feature__card {
   background: $color-gray-100;
   border-bottom: 0;
   height: 100%;
@@ -15,7 +15,7 @@
     content: "";
   }
   &:hover {
-    .feature-card__slide {
+    .feature__card_slide {
       transform: translateX(0);
     }
     .cta--arrow::after {
@@ -26,7 +26,7 @@
     }
   }
 
-  &__slide {
+  &_slide {
     position: relative;
     display: inherit;
     @extend %feature__card;
@@ -36,7 +36,7 @@
       height: 100%;
       position: absolute;
       @include transform(translateX(-105%));
-      transition: transform 0.3s cubic-bezier(0.64, 0.05, 0.35, 1.05);
+      transition: transform 0.3s ;
       z-index: 5;
     }
 
@@ -52,7 +52,7 @@
       }
     }
 
-    .feature-card__image {
+    .feature__card_image {
       height: 100%;
       background-size: cover;
       background-repeat: no-repeat;
@@ -60,7 +60,7 @@
     }
   }
 
-  &__content {
+  &_content {
     @extend %feature__card;
     padding: $spacing-32 $spacing-24;
     position: relative;
@@ -74,7 +74,7 @@
       height: 80%;
     }
 
-    .feature-card__tag {
+    .feature__card_tag {
       font-family: $Font-Family-ProximaBold;
       font-size: $font-size-12;
       line-height: 14px;
@@ -84,16 +84,8 @@
         margin-bottom: $spacing-48;
       }
     }
-    .feature-card__description {
+    .feature__card_description {
       margin-bottom: 90px;
-    }
-    h4 {
-      font-size: $font-size-20;
-      margin-bottom: $spacing-24;
-      @include devicebreak(medium) {
-        font-size: 35px;
-        margin-bottom: $spacing-32;
-      }
     }
 
     p {
@@ -127,7 +119,7 @@
         padding-top: 100%;
       }
     }
-    .feature-card__content {
+    .feature__card_content {
       p {
         @include devicebreak(medium) {
           font-size: $font-size-16;
@@ -136,21 +128,18 @@
     }
   }
   &--without-image {
-    .feature-card__slide {
+    .feature__card_slide {
       z-index: 0;
       &::before {
         background: linear-gradient(0deg, $color-yellow, $color-yellow),
           $color-gray-200;
       }
-      .feature-card__image {
-        display: none;
-      }
     }
   }
 }
 
-.feature-card--large {
-  .feature-card {
+.feature__card--large {
+  .feature__card {
     &::before {
       @include devicebreak(medium) {
         padding-top: 43%;
@@ -158,26 +147,16 @@
     }
   }
 }
-.feature-card--small,
-.feature-card--medium {
-  .feature-card {
+.feature__card--small,
+.feature__card--medium {
+  .feature__card {
     &::before {
       @include devicebreak(medium) {
         padding-top: 100%;
       }
     }
   }
-  .feature-card__content {
-    h4 {
-      font-size: 1.25rem;
-      line-height: 22px;
-      margin-bottom: $spacing-24;
-      @include devicebreak(medium) {
-        font-size: 1.563rem;
-        line-height: 28px;
-        margin-bottom: $spacing-32;
-      }
-    }
+  .feature__card_content {
     p {
       @include devicebreak(medium) {
         font-size: $font-size-16;
@@ -187,13 +166,13 @@
 }
 
 [dir="rtl"] {
-  .feature-card:hover {
+  .feature__card:hover {
     .cta--arrow::after {
       @include transform(translate(0, 0) rotate(180deg));
     }
   }
 
-  .feature-card__slide {
+  .feature__card_slide {
     @include devicebreak(medium) {
       @include transform(translateX(105%));
       &:hover {

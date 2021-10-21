@@ -3,8 +3,10 @@ import './small.scss';
 
 export const Small = ({ label }) => {
   return (
-    <small>
-      { label }
-    </small>
+    <p>
+      <small>
+        {label}
+      </small>
+    </p>
   );
 };

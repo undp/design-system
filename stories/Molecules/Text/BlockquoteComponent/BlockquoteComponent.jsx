@@ -7,8 +7,7 @@ import './blockquotecomp.scss';
 export const BlockquoteComponent = ({blockquoteText, citeText, style, props}) => {
   return (
     <div className={['blockquote-wrapper',`blockquote-wrapper--${style}`].join(' ')} {...props}>
-      <Blockquote text={blockquoteText} />
-      <Cite label={citeText} />
+      <Blockquote text={blockquoteText} citeText={citeText}> </Blockquote>
     </div>
   );
 };

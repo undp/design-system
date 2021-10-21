@@ -9,6 +9,7 @@
   text-transform: uppercase;
   color: $color-dark-red;
   @extend %border-none;
+  @extend %img_none;
   &:hover {
     color: $color-red;
   }

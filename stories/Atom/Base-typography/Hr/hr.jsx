@@ -1,8 +1,13 @@
 import React from 'react';
+import { P } from '../Paragraph/Paragraph';
 
-export const Hr = ({  }) => {
+export const Hr = ({ detailsText}) => {
   return (
-    <hr>
-    </hr>
+      <>
+      <P label={detailsText} />
+      <hr></hr>
+      <P label={detailsText}/>  
+      <hr></hr>
+      </>
   );
 };

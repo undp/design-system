@@ -3,8 +3,15 @@
 @import "../../../assets/scss/variables";
 
 a {
-    @extend %paragragh-font-20;
-    text-decoration: none;
-    color: $color-black;
-    border-bottom: 2px solid $color-dark-red;
+  @extend %paragragh-font-20;
+  text-decoration: none;
+  color: $color-black;
+  background-repeat: no-repeat;
+  background-size: 100% 2px, 0 1px;
+  background-position: 100% 100%, -30px 100%;
+  background-image: linear-gradient($color-dark-red, $color-dark-red),
+    linear-gradient($color-dark-red, $color-dark-red);
+  &:hover {
+    @include lineLoop;
+  }
 }
