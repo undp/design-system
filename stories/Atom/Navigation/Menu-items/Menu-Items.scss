@@ -8,6 +8,7 @@
   text-transform: uppercase;
   display: inline;
   border: none;
+  @extend %img_none;
   &:hover {
     color: $color-gray-600;
     cursor: pointer;

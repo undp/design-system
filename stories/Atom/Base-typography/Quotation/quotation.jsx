@@ -3,8 +3,10 @@ import './quotation.scss';
 
 export const Quotation = ({ label }) => {
   return (
-    <q>
-      { label }
-    </q>
+    <p>
+      <q>
+        {label}
+      </q>
+    </p>
   );
 };

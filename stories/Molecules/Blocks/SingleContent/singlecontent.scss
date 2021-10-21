@@ -6,7 +6,7 @@
   border-top: 2px solid $color-black;
   display: block;
   margin-bottom: $spacing-24;
-
+  @extend %img_none;
   & .singlecard__head {
     font-family: $Font-Family-ProximaBold;
     font-size: 12px;

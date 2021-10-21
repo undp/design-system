@@ -4,7 +4,7 @@
 .authorcard {
   border: 0;
   display: block;
-
+  @extend %img_none;
   .author-wrapper {
     padding-top: 24px;
 

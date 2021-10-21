@@ -98,6 +98,7 @@
     margin-bottom: $spacing-08;
     display: block;
     border: none;
+    @extend %img_none;
   }
 }
 /* footer items end */

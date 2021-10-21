@@ -4,6 +4,7 @@
 
 .button {
   @extend %button;
+  @extend %img_none;
 
   &.button--primary {
     background-color: $color-dark-red;
@@ -53,7 +54,7 @@
 
 .cta__link {
   @extend %cta;
-
+  @extend %img_none;
   &.cta--arrow {
     &::after {
       @extend %ctaimg;

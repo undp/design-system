@@ -3,8 +3,10 @@ import './mark.scss';
 
 export const Mark = ({ label }) => {
   return (
-    <mark>
-      { label }
-    </mark>
+    <p>
+      <mark>
+        {label}
+      </mark>
+    </p>
   );
 };
