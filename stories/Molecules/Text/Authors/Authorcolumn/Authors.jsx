@@ -11,8 +11,8 @@ export const Author = ({ data, width }) => {
                     <div className={['author-wrapper__box', `author-${width}-col`].join(' ')} key={index}>
                         <Authorimg size='small'/>
                         <div className="author__label">
-                            <Heading type='6' label={item.Authorlabel} className='name'/>
-                            <span className='designation'>{item.Authortext}</span>
+                            <Heading type='6' label={item.Authorlabel} className='author__name'/>
+                            <span className='author__designation'>{item.Authortext}</span>
                         </div>
                     </div>
                 )})}

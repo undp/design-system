@@ -15,7 +15,6 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: space-between;
         .spacing__label {
             width: 100px;
             height: 100px;
@@ -29,7 +28,6 @@
         }
         .spacing__box1, .spacing__box2, .spacing__box3, .spacing__box4, .spacing__box5, .spacing__box6, .spacing__box7, .spacing__box8, .spacing__box9, .spacing__box10, .spacing__box11, .spacing__box12, .spacing__box13 {
             background-color: $color-blue-600;
-            margin: 0 auto;
         }
         .spacing__box1 {
             height: 2px;

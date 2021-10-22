@@ -3,6 +3,7 @@ import './singlecontent.scss';
 import '../../../assets/scss/_grid.scss';
 import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
 import { Ctaspace } from '../../../Atom/Buttons-and-labels/Cta_button/cta_link_space';
+import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 
 export const SingleContent = ({ contenttile, contentname, contentnametwo, image, type, paragraph,link,button }) => {
     return (
@@ -16,7 +17,7 @@ export const SingleContent = ({ contenttile, contentname, contentnametwo, image,
                     <div className='singlecard__caption'>
                         {contentname && <Heading type='5' label={contentname}/>}
                         {contentnametwo && <Heading type='4' label={contentnametwo}/>}
-                        {paragraph && <span className='singlecard__para'>{paragraph}</span>}
+                        {paragraph && <P label={paragraph}/>}
                         <Ctaspace label={button}/>
                     </div>
                 </a>

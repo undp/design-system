@@ -10,11 +10,11 @@ export const Smallcopy = ({ locationName, locationText, phoneName, phonenumber, 
             </div>
             <div className='smallcopy__box'>
                 <span className="smallcopy__label">{phoneName}:</span>
-                <span>{phonenumber}</span>
+                <a href="tel:+1 212-906-5000" type="tel">{phonenumber}</a>
             </div>
             <div className='smallcopy__box'>
                 <span className="smallcopy__label">{emailName}:</span>
-                <span>{emailid}</span>
+                <a href="mailto:hq@undp.org">{emailid}</a>
             </div>
         </div>
     );
