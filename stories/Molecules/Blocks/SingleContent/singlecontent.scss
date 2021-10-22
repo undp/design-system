@@ -16,6 +16,13 @@
     text-transform: uppercase;
   }
 
+  & .card_thumbnail__image {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
   &__caption {
     padding: $spacing-16 $spacing-24 $spacing-24;
 
@@ -24,7 +31,7 @@
     }
   }
 
-  &__para {
+  p {
     display: block;
     font-size: $font-size-16;
     letter-spacing: 0;

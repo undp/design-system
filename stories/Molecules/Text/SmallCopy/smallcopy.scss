@@ -1,5 +1,6 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/typography';
+@import '../../../assets/scss/mixins';
 
 /* small copy */
 .smallcopy {
@@ -7,6 +8,10 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: $spacing-04;
+
+    a {
+      @extend %border-none;
+    }
 
     &--locale {
       display: block;
