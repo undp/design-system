@@ -5,7 +5,7 @@ import '../../assets/scss/_grid.scss';
 import Img from '../../assets/images/parallax-card.jpg';
 import { Heading } from '../../Atom/Base-typography/Heading/Heading';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
-import { Ctaspace } from '../../Atom/Buttons-and-labels/Cta_button/cta_link_space';
+import { Ctalink } from '../../Atom/Buttons-and-labels/Cta_link/Cta_link';
 
 const parallaxCard = ({
   contentname, descriptionText, button, alt
@@ -20,7 +20,7 @@ const parallaxCard = ({
         <a href="#" className="parallax-card--link">
           {contentname && <Heading type='3' label={contentname} />}
           {descriptionText && <P label={descriptionText} />}
-          <Ctaspace label={button}/>
+          <Ctalink label={button} variant= 'Space'/>
         </a>
       </div>
     </article>
@@ -32,7 +32,7 @@ const parallaxCard = ({
       <a href="#" className="parallax-card--link">
         {contentname && <Heading type='3' label={contentname} />}
         {descriptionText && <P label={descriptionText} />}
-        <Ctaspace label={button}/>
+        <Ctalink label={button} variant= 'Space'/>
       </a>
     </div>
   </article>

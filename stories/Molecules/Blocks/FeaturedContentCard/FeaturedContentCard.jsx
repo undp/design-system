@@ -5,7 +5,7 @@ import '../../../assets/scss/_grid.scss';
 import BackgroundImg from '../../../assets/images/card2.jpg';
 import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
-import { Ctaarrow } from '../../../Atom/Buttons-and-labels/Cta_button/cta_link_arrow';
+import { Ctalink } from '../../../Atom/Buttons-and-labels/Cta_link/Cta_link';
 
 export const column_options = {
   large: 'large-8 feature__card--large',
@@ -48,7 +48,7 @@ export const FeaturedContentCard = ({ contenttile, contentname, descriptionText,
               {descriptionText && <P label={descriptionText} />}
             </div>
             <div className="feature__cta">
-              <Ctaarrow label={button} />
+              <Ctalink label={button} variant= 'Arrow'/>
             </div>
           </article>
         </a>

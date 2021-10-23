@@ -1,10 +1,20 @@
 import React from 'react';
 import './chips.scss';
 
-export const Chips = ({ label }) => {
+export const variant_options = {
+  Without_Cross: "no-cross",
+  Cross: "cross",
+};
+
+export const Chips = ({ label, ...args }) => {
   return (
-    <a className="chips chips__no-cross" href="#">
-      { label }
+    <a className={["chips", `chips__${variant_options[`${args.variant}`]}`].join(' ')} href="#">
+      {label}
     </a>
   );
+};
+
+
+Chips.defaultProps = {
+  variant: "Without_Cross",
 };
