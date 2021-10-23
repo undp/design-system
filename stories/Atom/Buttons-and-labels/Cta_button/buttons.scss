@@ -6,6 +6,10 @@
   @extend %button;
   @extend %img_none;
 
+  color: $color-white;
+  justify-content: center;
+  padding: $spacing-16 $spacing-24;
+
   &.button--primary {
     background-color: $color-dark-red;
 
@@ -20,7 +24,7 @@
         background: url(#{$img-path-Icon}/chevron-right-black.svg) no-repeat left center;
         content: '';
         height: 20px;
-        margin-left: 14px;
+        margin-left: 12px;
         width: 13px;
       }
 
@@ -52,44 +56,6 @@
   }
 }
 
-.cta__link {
-  @extend %cta;
-  @extend %img_none;
-  &.cta--arrow {
-    &::after {
-      @extend %ctaimg;
-
-      background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat left center;
-    }
-
-    &:hover {
-      &::after {
-        @include translate(10px,0);
-        @include transition(0.2s ease);
-
-        background-image: url(#{$img-path-Icon}/arrow-left-expand-hover.svg);
-        width: 100px;
-      }
-    }
-  }
-
-  &.cta--space {
-    &::after {
-      @extend %ctaimg;
-
-      @include transition(0.2s ease);
-
-      background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat left center;
-    }
-
-    &:hover {
-      &::after {
-        @include translate(70%,0);
-      }
-    }
-  }
-}
-
 [dir='rtl'] {
   .button {
     &.button--primary {
@@ -98,34 +64,13 @@
           @include transform(rotate(180deg));
 
           margin-left: 0;
-          margin-right: 14px;
+          margin-right: 12px;
         }
 
         &:hover::after {
           @include transform(translate(-50%,0) rotate(180deg));
         }
       }
-    }
-  }
-
-  .cta__link {
-    &.cta--space,
-    &.cta--arrow {
-      &::after {
-        @include transform(rotate(180deg));
-
-        margin-left: 0;
-        margin-right: 14px;
-      }
-
-      &:hover::after {
-        @include transform(translate(-50%,0) rotate(180deg));
-      }
-    }
-
-    &.cta--arrow:hover::after {
-      @include transform(translate(-10%,0) rotate(180deg));
-      @include transition(0.2s ease);
     }
   }
 }

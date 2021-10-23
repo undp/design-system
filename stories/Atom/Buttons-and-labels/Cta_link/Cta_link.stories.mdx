@@ -1,33 +1,28 @@
 import { Meta, Story } from '@storybook/addon-docs';
-import { Chips } from './chips';
-
+import { Ctalink } from './Cta_link';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = {detail: 'Label'}; return engText;
-    case 'arabic': const arabicText = {detail: 'ملصق'}; return arabicText;
-    case 'burmese': const burmeseText = {detail: 'တံဆိပ်'}; return burmeseText;
-    case 'japanese': const japaneseText = {detail: 'ラベル'}; return japaneseText;
+    case 'english': const engText = {detail1: 'READ MORE'}; return engText;
+    case 'arabic': const arabicText = {detail1: 'اقرأ أكثر'}; return arabicText;
+    case 'burmese': const burmeseText = {detail1: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail1: '続きを読む'}; return japaneseText;
     default:
-      return {detail: 'Label'};
+    return {detail1: 'READ MORE'};
   }
 };
 
-<Meta
-  title="Atoms/Buttons/Chips"
+<Meta title="Atoms/Buttons/Link" 
   argTypes={{
     variant: {
-      options: ["Without_Cross", "Cross"],
+      options: ["Arrow", "Space"],
       control: { type: "radio" },
     },
   }}
 />
 
 <style>{`
-  div#story--atoms-buttons-chips--chip {
-    margin-bottom: 30px;
-  }
-  div#story--atoms-buttons-chips--chip {
+div#story--atoms-buttons--cta-link-arrow, div#story--atoms-buttons--cta-link-space, div#story--atoms-buttons-link--cta-link {
     display: none;
   }
   .cta_wrapper {
@@ -50,44 +45,45 @@ export const getCaptionForLocale = (locale) => {
   }
 `}</style>
 
-# Chips Component
-Chips are compact elements that allow users to enter information, select a choice, filter content, or trigger an action.
+# CTA Link component
+A cta link is a prompt on a website that tells the user to take some specified action.
 
 <div className="cta_wrapper">
   <div className="cta_item">
     <div className="cta__box cta-link-arrow"></div>
-    <div className="cta__label">Chip cross</div>
-    <div className="cta__code"> <Chips label="Label" variant='Cross'></Chips></div>
+    <div className="cta__label">Cta link arrow expand</div>
+    <div className="cta__code"> <Ctalink label="READ MORE" variant='Arrow'></Ctalink></div>
   </div>
 </div>
 <div className="cta_wrapper">
   <div className="cta_item">
     <div className="cta__box cta-link-space"></div>
-    <div className="cta__label">Chip without cross </div>
-    <div className="cta__code"> <Chips label="Label" variant='Without_Cross'></Chips></div>
+    <div className="cta__label">Cta link with space expand </div>
+    <div className="cta__code"> <Ctalink label="READ MORE" variant='Space'></Ctalink></div>
   </div>
 </div>
 
 <Story
-  name="Chip"
+  name="Cta-link"
 >
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
-      <Chips
-        label={caption.detail}
+      <Ctalink
+        label={caption.detail1}
         {...args}
-      ></Chips>
+      ></Ctalink>
     );
   }}
 </Story>
+
 
 <div className="subheading">Usage</div>
 <ul>
   <li>Take HTML from the HTML tab in canvas</li>
   <u>To use SCSS include the following files in your implementation</u>
   <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
-  <li>Component SCSS file:<code>chips.scss</code></li>
+  <li>Component SCSS file:<code>cta_link.scss</code></li>
   <u>To use CSS include the following files in your implementation</u>
   <li>The compiled CSS file from <code>assets/css/style.css</code></li>
 </ul>

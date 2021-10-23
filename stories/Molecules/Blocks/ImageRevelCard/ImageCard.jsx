@@ -2,7 +2,7 @@ import React from 'react';
 import './imagecard.scss';
 import '../../../assets/scss/_grid.scss';
 import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
-import { Ctaarrow } from '../../../Atom/Buttons-and-labels/Cta_button/cta_link_arrow';
+import { Ctalink } from '../../../Atom/Buttons-and-labels/Cta_link/Cta_link';
 
 export const ImageRevelCard = ({ contentname, image, size, link, button }) => {
   return (
@@ -17,7 +17,7 @@ export const ImageRevelCard = ({ contentname, image, size, link, button }) => {
               {contentname && <Heading type='5' label={contentname} />}
             </div>
           </div>
-          <Ctaarrow label={button} />
+          <Ctalink label={button} variant= 'Arrow'/>
         </a>
       </div>
     </div>

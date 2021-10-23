@@ -168,46 +168,23 @@
 }
 
 %button {
+  display: flex;
   align-items: center;
   border: none;
-  color: $color-white;
-  display: flex;
-  font-family: $Font-Family-ProximaRegular;
+  font-family: $Font-Family-ProximaBold;
   font-size: $font-size-16;
-  font-weight: bold;
-  justify-content: center;
-  letter-spacing: 1px;
-  line-height: inherit;
-  padding: $spacing-16 $spacing-24;
-
-  @include devicebreak(medium) {
-    display: inline-flex;
-    min-width: 168px;
-  }
-}
-
-%cta {
-  align-items: center;
-  border: none;
-  color: $color-black;
-  display: flex;
-  font-family: $Font-Family-ProximaRegular;
-  font-size: $font-size-16;
-  font-style: normal;
-  font-weight: bold;
+  line-height: 18px;
   letter-spacing: 0.03em;
-  line-height: 1;
 
   @include devicebreak(medium) {
     display: inline-flex;
-    min-width: 168px;
   }
 }
 
 %ctaimg {
   content: '';
   height: 20px;
-  margin-left: 14px;
+  margin-left: $spacing-12;
   width: 13px;
 }
 
