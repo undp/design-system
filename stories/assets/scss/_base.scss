@@ -1,0 +1,46 @@
+@import './variables';
+@import './mixins';
+@import './breakpoints';
+
+/* start */
+.color-white {
+  color: $color-white;
+}
+
+.color-black {
+  color: $color-black;
+}
+
+.show-for-large {
+  display: none;
+
+  @include devicebreak(medium) {
+    display: block;
+  }
+}
+
+.show-for-small {
+  display: block;
+
+  @include devicebreak(medium) {
+    display: none;
+  }
+}
+
+.overlay-grey {
+  &::before {
+    @extend %absolute__content;
+
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.left-right {
+  @extend %left-to-right;
+}
+
+.inviewport {
+  @extend %in__viewport;
+}
+
+/* end */

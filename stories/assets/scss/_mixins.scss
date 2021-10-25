@@ -35,6 +35,15 @@
   transition: $transitions;
 }
 
+//transition-delay
+@mixin transitiondelay($transitiondelay...) {
+  -webkit-transition-delay: $transitiondelay;
+  -moz-transition-delay: $transitiondelay;
+  -ms-transition-delay: $transitiondelay;
+  -o-transition-delay: $transitiondelay;
+  transition-delay: $transitiondelay;
+}
+
 //transform
 @mixin transform($transforms) {
   -webkit-transform: $transforms;
@@ -277,4 +286,24 @@
 
 %img_none {
   background-image: none;
+}
+
+%absolute__overflow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+%left-to-right {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100px);
+  transition: transform 1.2s cubic-bezier(.34,.41,.03,1),opacity 1.2s cubic-bezier(.34,.41,.03,1);
+}
+
+%in__viewport {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
 }

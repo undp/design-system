@@ -1,0 +1,164 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import { PageHero } from "./PageHero";
+import { PageHeroOption } from "./PageHeroOption";
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {herodata: [{
+      text: 'Home'
+    },
+    {
+      text: 'Second-level'
+    },
+    {
+      text: 'Third-level'
+    },
+    {
+      text: 'Page Title'
+    }],
+    title: 'The sdgs in action',
+    content: 'Our Focus'}; return engText;
+    case 'arabic': const arabicText = {herodata: [{
+     text: 'الصفحة الرئيسية'
+    },
+    {
+      text: 'المستوى الثاني'
+    },
+    {
+      text: 'المستوى الثالث'
+    },
+    {
+      text: 'عنوان الصفحة'
+    }],
+    title: 'أهداف التنمية المستدامة في العمل',
+    content: 'تركيزنا'}; return arabicText;
+    case 'burmese': const burmeseText = {herodata: [{
+      text: 'အိမ်ပြန်'
+    },
+    {
+      text: 'ဒုတိယအဆင့်'
+    },
+    {
+      text: 'တတိယအဆင့်'
+    },
+    {
+      text: 'စာမျက်နှာခေါင်းစဉ်'
+    }],
+    title: 'sdgs သည်လုပ်ဆောင်သည်',
+    content: 'ကျွန်ုပ်တို့၏အာရုံ'}; return burmeseText;
+    case 'japanese': const japaneseText = {herodata: [{
+      text: 'الصفحة الرئيسية'
+    },
+    {
+      text: 'セカンドレベル'
+    },
+    {
+      text: '第3レベル'
+    },
+    {
+      text: 'ページタイトル'
+    }],
+    title: '動作中のsdgs',
+    content: '私たちの焦点'}; return japaneseText;
+    default:
+      const dummy =  {herodata: [{
+      text: 'Home'
+    },
+    {
+      text: 'Second-level'
+    },
+    {
+      text: 'Third-level'
+    },
+    {
+      text: 'Page Title'
+    }],
+    title: 'The sdgs in action',
+    content: 'Our Focus'};
+    return dummy
+  }
+};
+
+<Meta title="Organism/Blocks/Heros/Internal Page Heros"
+  argTypes={{
+    variant: {
+      options: ["video", "image"],
+      control: { type: "radio" },
+    },
+  }}/>
+
+<style>{`
+ .subheading {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  .sbdocs .sbdocs-h2 {
+    border-bottom: none;
+  }
+`}</style>
+
+# Page Hero Component
+
+## Overview
+
+The Page hero component multiusage component which creates boxes that are usually teasing some kind of content like - Image, Text, Subtitle, and Breadcrumb. We are using the animation here assets/js/viewport.js. Atoms tags are used for creating this card.
+
+## Default Representation & various possible states
+
+<div className="subheading">Page Hero</div>
+
+<Story name="Pages Hero">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <PageHero data={caption.herodata} title={caption.title} content={caption.content} active={'white'} {...args}
+      ></PageHero>
+    );
+  }}
+</Story>
+
+<div className="subheading">Page Hero Option</div>
+
+<Story name="Pages Hero Option">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <PageHeroOption data={caption.herodata} title={caption.title} content={caption.content} active={'default'} {...args}
+      ></PageHeroOption>
+    );
+  }}
+</Story>
+
+## Dependencies
+
+Libraries or another dependency which are used in the component.
+
+<ul>
+  <li>For animation functionality its depend on the jQuery plugin library.</li>
+  <li>Custom JS file (viewport.js) is located in the same js folder.</li>
+</ul>
+
+## Usage
+
+<ul>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>pagehero.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
+</ul>

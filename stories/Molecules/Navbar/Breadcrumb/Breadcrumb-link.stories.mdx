@@ -68,7 +68,12 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Molecules/Navbar" />
+<Meta title="Molecules/Navbar" parameters={{
+    backgrounds: {
+      default: "white",
+      values: [{ name: "gray", value: "#D4D6D8" }],
+    }
+  }}/>
 
 <style>{`
   .subheading {
@@ -88,10 +93,14 @@ export const getCaptionForLocale = (locale) => {
     line-height: 24px;
     margin-bottom: 12px;
   }
-  div#story--molecules-navbar--breadcrumb-link, div#story--molecules-navbar--breadcrumb-link-white {
+  div#story--molecules-navbar--breadcrumb-link, 
+  div#story--molecules-navbar--breadcrumb-link-white {
     box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
     box-sizing: inherit;
-  }  
+  }
+  div#story--molecules-navbar--breadcrumb-link-white {
+    background-color: #D4D6D8;
+  }
 `}</style>
 
 
@@ -112,7 +121,7 @@ we are using these modifier classes:
 
 <div className="subheading">Breadcrumb white</div>
 
-<Story name="Breadcrumb-link white">
+<Story name="Breadcrumb-link white" parameters={{ backgrounds: { default: "gray" } }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <Breadcrumbcomponent data={caption} active={'white'} ></Breadcrumbcomponent>;
