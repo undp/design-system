@@ -19,7 +19,7 @@
     &__menu {
       background-color: $color-gray-200;
       border-bottom: 1px solid $color-gray-500;
-      padding: $spacing-16 0 $spacing-24;
+      padding: $spacing-16 0;
       position: relative;
 
       @include devicebreak(medium) {
@@ -34,6 +34,8 @@
       }
 
       &.accordion--active {
+        border-bottom: none;
+
         .accordion-navbar__item--chevron::after {
           @include transform(rotateZ(180deg));
         }
@@ -43,8 +45,6 @@
     &__item:nth-child(1),
     &__item.accordion--active:nth-child(1) {
       @include devicebreak(medium) {
-        border-bottom: none;
-
         .accordion-navbar__item--chevron::after {
           background:
             url(#{$img-path-Iconback}/Chevron-down-white.svg)
@@ -64,7 +64,7 @@
       border-bottom: none;
       display: block;
       font-family: $Font-Family-ProximaBold;
-      padding: $spacing-24;
+      padding: $spacing-16;
       text-transform: uppercase;
 
       @include devicebreak(medium) {
@@ -73,8 +73,6 @@
 
       &::after {
         @extend %sidebar-chevron;
-
-        top: 24px;
       }
     }
   }
