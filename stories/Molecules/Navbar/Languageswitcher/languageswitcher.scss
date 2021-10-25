@@ -14,7 +14,7 @@
 
   &__content {
     display: none;
-    left: 22px;
+    left: 16px;
     padding: 0;
     position: absolute;
 
@@ -37,6 +37,7 @@
   background-color: transparent;
   color: $color-blue-600;
   display: flex;
+  padding: 0;
 
   &::before {
     background: url(#{$img-path-Icon}/Language.svg) no-repeat left center;
@@ -72,13 +73,14 @@
   .dropdown-language {
     &__content {
       left: unset;
-      right: 30px;
+      right: 16px;
     }
   }
   
   .dropdown-btn::before {
     transform: scaleX(-1);
     margin-left: $spacing-08;
+    margin-right: 0;
   }
 
   .dropdown-btn::after{

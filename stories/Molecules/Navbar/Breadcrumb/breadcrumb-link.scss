@@ -48,8 +48,6 @@
   }
 
   &--white {
-    background-color: $color-gray-400;
-
     li {
       &::after {
         color: $color-white;
