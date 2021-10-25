@@ -7,10 +7,11 @@
   font-family: $Font-Family-ProximaBold;
   font-size: $font-size-16;
   margin-bottom: 0;
-  padding: $spacing-24;
+  padding: $spacing-16;
 
   @include devicebreak(medium) {
     display: block;
+    padding: $spacing-24;
   }
 }
 
@@ -19,17 +20,26 @@
   height: auto;
   padding: 0;
 
-  &--description > a {
-    border: none;
-    display: block;
-    font-family: $Font-Family-ProximaRegular;
-    font-size: $font-size-14;
-    margin: $spacing-16 $spacing-24 0 $spacing-32;
+  &--description {
+    a {
+      border: none;
+      display: block;
+      font-family: $Font-Family-ProximaRegular;
+      font-size: $font-size-14;
+      margin: $spacing-16 $spacing-24 $spacing-32 $spacing-32;
 
-    @include devicebreak(medium) {
-      font-size: $font-size-16;
-      margin-bottom: $spacing-16;
-      margin-left: $spacing-48;
+      @include devicebreak(medium) {
+        font-size: $font-size-16;
+        margin-left: $spacing-48;
+      }
+    }
+
+    &:last-child a {
+      margin-bottom: 0;
+
+      @include devicebreak(medium) {
+        margin-bottom: $spacing-16;
+      }
     }
   }
 }
