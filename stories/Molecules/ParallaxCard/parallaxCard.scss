@@ -32,3 +32,21 @@
     }
   }
 }
+
+[dir='rtl'] {
+  .parallax-card {
+    p {
+      padding-left: 12px;
+      padding-right: 1.875rem;
+      margin-right: -1.875rem;
+    }
+    &--right {
+      p {
+        padding-right: 12px;
+        padding-left: 1.875rem;
+        margin-left: -1.875rem;
+        margin-right: -12px;
+      }
+    }
+  }
+}
