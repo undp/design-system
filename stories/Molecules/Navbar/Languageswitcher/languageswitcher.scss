@@ -36,11 +36,11 @@
   align-items: center;
   background-color: transparent;
   color: $color-blue-600;
-  column-gap: 8px;
   display: flex;
 
   &::before {
     background: url(#{$img-path-Icon}/Language.svg) no-repeat left center;
+    margin-right: $spacing-08;
     content: '';
     height: 26px;
     width: 25px;
@@ -50,6 +50,7 @@
     @include transition(0.2s ease-in-out);
 
     background: url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
+    margin-left: $spacing-08;
     content: '';
     height: 10px;
     width: 15px;
@@ -71,11 +72,16 @@
   .dropdown-language {
     &__content {
       left: unset;
-      right: 22px;
+      right: 30px;
     }
   }
   
   .dropdown-btn::before {
     transform: scaleX(-1);
+    margin-left: $spacing-08;
+  }
+
+  .dropdown-btn::after{
+    margin-right: $spacing-08;
   }
 }
