@@ -123,6 +123,9 @@
 
 %border-none {
   border: none;
+  
+  @extend %img_none;
+
 }
 
 %sidebar {

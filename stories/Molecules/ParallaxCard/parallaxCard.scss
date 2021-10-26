@@ -1,4 +1,5 @@
 @import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
 .parallax-card {
   display: flex;
   flex-flow: row wrap;
@@ -7,6 +8,9 @@
   &--link {
     border-bottom: none;
     display: block;
+
+    @extend %img_none;
+    
   }
   h3 {
     margin-bottom: 24px;
