@@ -8,4 +8,4 @@ export const Heading = ({ type, label, className }) => {
       { label }
     </HeadingTag>
   );
-}
+};

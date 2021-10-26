@@ -1,5 +1,5 @@
 import React from 'react';
-import icon from '../../../assets/images/Icon/arrow-left.svg'
+import icon from '../../../assets/images/Icon/arrow-left.svg';
 import './icons.scss';
 
 export const Iconarrowleft = ({ varient, ...props }) => {
@@ -7,7 +7,7 @@ export const Iconarrowleft = ({ varient, ...props }) => {
     src: icon,
     alt: 'icon',
   };
-  return( 
-    <img src={image.src} alt={image.alt} className={'icon-arrow-left'} />
+  return (
+    <img src={image.src} alt={image.alt} className="icon-arrow-left" />
   );
 };

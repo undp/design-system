@@ -8,36 +8,34 @@ import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Atom/Buttons-and-labels/Cta_link/Cta_link';
 
 const parallaxCard = ({
-  contentname, descriptionText, button, alt
-}) => {
-  return (
-    <>
+  contentname, descriptionText, button, alt,
+}) => (
+  <>
     <article className="grid-x grid-margin-x parallax-card">
       <div className="parallax-card--image cell medium-3">
         <img src={Img} alt={alt} data-speed="-1" className="img-parallax" />
       </div>
       <div className="parallax-card--content cell medium-3">
         <a href="#" className="parallax-card--link">
-          {contentname && <Heading type='3' label={contentname} />}
+          {contentname && <Heading type="3" label={contentname} />}
           {descriptionText && <P label={descriptionText} />}
-          <Ctalink label={button} variant= 'Space'/>
+          <Ctalink label={button} variant="Space" />
         </a>
       </div>
     </article>
     <article className="grid-x grid-margin-x parallax-card parallax-card--right">
-    <div className="parallax-card--image cell medium-3">
-      <img src={Img} alt={alt} data-speed="-1" className="img-parallax" />
-    </div>
-    <div className="parallax-card--content cell medium-3">
-      <a href="#" className="parallax-card--link">
-        {contentname && <Heading type='3' label={contentname} />}
-        {descriptionText && <P label={descriptionText} />}
-        <Ctalink label={button} variant= 'Space'/>
-      </a>
-    </div>
-  </article>
+      <div className="parallax-card--image cell medium-3">
+        <img src={Img} alt={alt} data-speed="-1" className="img-parallax" />
+      </div>
+      <div className="parallax-card--content cell medium-3">
+        <a href="#" className="parallax-card--link">
+          {contentname && <Heading type="3" label={contentname} />}
+          {descriptionText && <P label={descriptionText} />}
+          <Ctalink label={button} variant="Space" />
+        </a>
+      </div>
+    </article>
   </>
-  )
-}
+);
 
 export default parallaxCard;

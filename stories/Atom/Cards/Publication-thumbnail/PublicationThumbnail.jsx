@@ -6,8 +6,8 @@ export const Publicationthumb = ({ }) => {
   const image = {
     src: user,
     alt: 'Image',
-  }
+  };
   return (
-  <div className="publication_thumbnail__image"><img src={image.src} alt={image.alt} /></div>
+    <div className="publication_thumbnail__image"><img src={image.src} alt={image.alt} /></div>
   );
 };

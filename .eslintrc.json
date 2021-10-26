@@ -1,16 +1,19 @@
 {
 	"env": {
 		"browser": true,
-		"es2021": true
+		"es2021": true,
+		"es6": true,
+		"jquery": true
 	},
 	"extends": [
 		"plugin:react/recommended",
 		"airbnb",
-		"plugin:mdx/recommended"	
+		"plugin:mdx/recommended"
 	],
 	"parserOptions": {
 		"ecmaFeatures": {
-				"jsx": true
+				"jsx": true,
+				"mdx": true
 		},
 		"ecmaVersion": 12,
 		"sourceType": "module"
@@ -30,4 +33,6 @@
 			"files": ["stories/**/*.jsx", "stories/**/*.mdx"]
 		}
 	]
+	
 }
+

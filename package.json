@@ -10,7 +10,7 @@
     "scss": "sass --watch ./stories/assets/scss/style.scss ./stories/assets/css/style.css",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint ./stories/**/*.scss --fix",
-    "lint:js": "eslint ./stories"
+    "lint:js": "eslint --ignore-pattern '*.mdx' --ignore-pattern 'table.jsx' ./stories --fix "
   },
   "keywords": [],
   "author": "",

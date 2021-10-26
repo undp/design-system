@@ -16,7 +16,7 @@ const SelectTag = ({ text }) => {
         aria-expanded="false"
       >
         {text}
-        <span></span>
+        <span />
       </button>
       <ul
         className="options"

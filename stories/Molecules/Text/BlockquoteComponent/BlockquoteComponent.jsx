@@ -4,15 +4,15 @@ import { Blockquote } from '../../../Atom/Base-typography/Blockquote/blockquote'
 import { Cite } from '../../../Atom/Base-typography/Cite/cite';
 import './blockquotecomp.scss';
 
-export const BlockquoteComponent = ({blockquoteText, citeText, style, props}) => {
-  return (
-    <div className={['blockquote-wrapper',`blockquote-wrapper--${style}`].join(' ')} {...props}>
-      <Blockquote text={blockquoteText} citeText={citeText}> </Blockquote>
-    </div>
-  );
-};
+export const BlockquoteComponent = ({
+  blockquoteText, citeText, style, props,
+}) => (
+  <div className={['blockquote-wrapper', `blockquote-wrapper--${style}`].join(' ')} {...props}>
+    <Blockquote text={blockquoteText} citeText={citeText}> </Blockquote>
+  </div>
+);
 
 BlockquoteComponent.propTypes = {
-   blockquoteText: PropTypes.string.isRequired,
-   citeText: PropTypes.string.isRequired,
+  blockquoteText: PropTypes.string.isRequired,
+  citeText: PropTypes.string.isRequired,
 };
