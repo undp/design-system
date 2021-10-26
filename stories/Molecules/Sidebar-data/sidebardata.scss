@@ -8,6 +8,8 @@
   font-size: $font-size-16;
   margin-bottom: 0;
   padding: $spacing-16;
+  
+  @extend %img_none;
 
   @include devicebreak(medium) {
     display: block;
@@ -27,6 +29,8 @@
       font-family: $Font-Family-ProximaRegular;
       font-size: $font-size-14;
       margin: $spacing-16 $spacing-24 $spacing-32 $spacing-32;
+
+      @extend %img_none;
 
       @include devicebreak(medium) {
         font-size: $font-size-16;

@@ -8,6 +8,9 @@
   &--link {
     border-bottom: none;
     display: block;
+
+    @extend %img_none;
+    
   }
   &--link,
   .cta__link {
