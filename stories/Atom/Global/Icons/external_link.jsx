@@ -1,7 +1,6 @@
 import React from 'react';
 import './icons.scss';
-export const Iconexternallink = ({}) => {
-  return (
-    <div className={'external-link'} />
-  );
-};
+
+export const Iconexternallink = ({}) => (
+  <div className="external-link" />
+);

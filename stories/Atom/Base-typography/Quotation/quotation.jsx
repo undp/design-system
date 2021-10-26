@@ -1,12 +1,10 @@
 import React from 'react';
 import './quotation.scss';
 
-export const Quotation = ({ label }) => {
-  return (
-    <p>
-      <q>
-        {label}
-      </q>
-    </p>
-  );
-};
+export const Quotation = ({ label }) => (
+  <p>
+    <q>
+      {label}
+    </q>
+  </p>
+);

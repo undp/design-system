@@ -1,10 +1,8 @@
 import React from 'react';
 import './ProgressBarNavigation.scss';
 
-export const ProgressBarNavigation = ({ }) => {
-  return (
-    <div class="progress-container">
-      <div class="progress-bar" ></div>
-    </div>
-  );
-};
+export const ProgressBarNavigation = ({ }) => (
+  <div className="progress-container">
+    <div className="progress-bar" />
+  </div>
+);

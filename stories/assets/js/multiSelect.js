@@ -48,15 +48,15 @@ class MultiSelect {
     });
 
     this.$currentSelect.on('click', '.has-submenu > button.caret', (ev) => {
-      let $caretButton = $(ev.currentTarget);
+      const $caretButton = $(ev.currentTarget);
       $caretButton.siblings('.checkbox-item').trigger('click');
     });
   }
 
   listenerWindowClick() {
-    this.$window.click(evt => {
-      if (this.$currentSelect && !this.$currentSelect.is(evt.target) &&
-        this.$currentSelect.has(evt.target).length === 0 && this.$currentSelect.hasClass(this.classOpen)) {
+    this.$window.click((evt) => {
+      if (this.$currentSelect && !this.$currentSelect.is(evt.target)
+        && this.$currentSelect.has(evt.target).length === 0 && this.$currentSelect.hasClass(this.classOpen)) {
         this.$currentSelect.removeClass(this.classOpen);
         this.$selectTrigger.attr('aria-expanded', 'false');
       }
