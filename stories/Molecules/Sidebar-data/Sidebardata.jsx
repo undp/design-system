@@ -9,9 +9,7 @@ export const Sidebardata = ({ data, headerText }) => (
       {data.map((item, index) => (
         <li className="accordion__panel--description">
           <a href="#" key={index}>
-            {' '}
             {item.descriptionText}
-            {' '}
           </a>
         </li>
       ))}
