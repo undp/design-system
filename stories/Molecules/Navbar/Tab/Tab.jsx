@@ -11,7 +11,6 @@ export const Tab = ({ tabdata }) => {
       <ul className="tab__items" id="tab">
         {tabdata.map((item, index) => (
           <li key={index} className="tab__item " data-tab={item.text_id}>
-            {' '}
             {item.text}
           </li>
         ))}

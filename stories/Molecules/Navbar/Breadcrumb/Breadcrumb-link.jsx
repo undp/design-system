@@ -15,7 +15,6 @@ export const Breadcrumbcomponent = ({ data, active }) => {
 
         return (
           <li key={i}>
-            {' '}
             <Breadcrumb text={item.text} />
           </li>
         );

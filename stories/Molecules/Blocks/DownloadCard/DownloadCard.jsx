@@ -16,7 +16,6 @@ export const DownloadCard = ({
       <div className="download-card__format">{format}</div>
       <div className="download-card__download">
         {download}
-        {' '}
         <Icondownload />
       </div>
     </div>
