@@ -1,17 +1,17 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
-@import "../../../../assets/scss/base";
+@import '../../../../assets/scss/base';
 
 /* country card hero start */
 .countrycard {
   &__header {
-    padding: 0 8.3%;
+    justify-content: center;
+    padding-right: $spacing-48;
   }
 
   &__title {
     font-size: 3.5rem;
     line-height: 1.09;
-    padding-right: $spacing-64;
     text-transform: uppercase;
   }
 
@@ -22,6 +22,7 @@
   }
 
   &-border {
+    margin-left: $spacing-64;
     position: relative;
 
     &::before {
@@ -36,17 +37,25 @@
 
 [dir='rtl'] {
   .countrycard {
-    &-border::before {
-      right: 0;
-    }
-    &__title {
-      padding-left: 64px;
+    &__header {
+      padding-left: $spacing-48;
       padding-right: 0;
     }
+
+    &-border {
+      margin-left: 0;
+      margin-right: $spacing-64;
+
+      &::before {
+        right: 0;
+      }
+    }
+
     &__subtitle {
       padding-left: 0;
       padding-right: 64px;
     }
   }
 }
+
 /* country card hero end */

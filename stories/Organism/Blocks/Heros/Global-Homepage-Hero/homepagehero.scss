@@ -4,7 +4,7 @@
 
 /* global homepage hero */
 .hero {
-  &__wrapper {
+  &-wrapper {
     align-items: flex-end;
     display: flex;
     position: relative;
@@ -12,54 +12,54 @@
     @include devicebreak(medium) {
       display: block;
     }
-  }
 
-  &__content {
-    margin-left: 0;
-    padding-top: 10.438rem;
-    position: relative;
-
-    @include devicebreak(medium) {
-      margin-left: $spacing-64;
-      padding-top: 13.125rem;
-    }
-
-    .button {
-      margin-bottom: $spacing-24;
-      margin-top: $spacing-64;
+    &__content {
+      margin-left: 0;
+      padding-top: 10.438rem;
+      position: relative;
 
       @include devicebreak(medium) {
-        margin-bottom: 160px;
-        margin-top: 0;
+        margin-left: $spacing-64;
+        padding-top: 13.125rem;
+      }
+
+      .button {
+        margin-bottom: $spacing-24;
+        margin-top: $spacing-64;
+
+        @include devicebreak(medium) {
+          margin-bottom: 160px;
+          margin-top: 0;
+        }
       }
     }
-  }
 
-  &__background {
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-
-    img {
+    &__background {
       height: 100%;
-      max-width: none;
-      width: auto;
+      overflow: hidden;
+      position: absolute;
+      width: 100%;
+
+      img {
+        height: 100%;
+        max-width: none;
+        width: auto;
+      }
     }
-  }
 
-  &__container {
-    padding: 0 $spacing-24;
-  }
+    &__container {
+      padding: 0 $spacing-24;
+    }
 
-  &__title {
-    margin-bottom: $spacing-40;
-    text-transform: uppercase;
-  }
+    &__title {
+      margin-bottom: $spacing-40;
+      text-transform: uppercase;
+    }
 
-  &__subtitle {
-    margin: 0;
-    padding-bottom: $spacing-64;
+    &__subtitle {
+      margin: 0;
+      padding-bottom: $spacing-64;
+    }
   }
 
   &_right {
@@ -99,8 +99,8 @@
     }
   }
 
-  &__split {
-    &_content {
+  &-split {
+    &__content {
       padding: 0;
       word-break: break-word;
 
@@ -109,7 +109,7 @@
       }
     }
 
-    &_title {
+    &__title {
       margin-bottom: $spacing-16;
       text-transform: uppercase;
 
@@ -118,7 +118,7 @@
       }
     }
 
-    &_subtitle {
+    &__subtitle {
       margin: 0;
       padding-bottom: $spacing-32;
 
@@ -128,16 +128,16 @@
     }
   }
 
-  &__option {
-    &_content {
+  &-option {
+    &__content {
       padding: 0;
 
       @include devicebreak(medium) {
-        padding: 0 $spacing-16 0 $spacing-64;
+        padding: 0 26px 0 $spacing-64;
       }
     }
 
-    &_title {
+    &__title {
       margin-bottom: $spacing-16;
       padding-left: 0;
       text-transform: uppercase;
@@ -148,34 +148,32 @@
       }
     }
 
-    &_subtitle {
+    &__subtitle {
       margin: 0;
       padding-bottom: $spacing-32;
 
       @include devicebreak(medium) {
-        padding-bottom: 125px;
+        padding-bottom: 124px;
       }
     }
   }
 }
 
-.hero__wrapper--image {
-  margin-bottom: $spacing-32;
-}
-
 [dir='rtl'] {
   .hero {
-    &__content {
-      margin-left: 0;
-      margin-right: 0;
+    &-wrapper {
+      &__content {
+        margin-left: 0;
+        margin-right: 0;
 
-      @include devicebreak(medium) {
-        margin-right: $spacing-64;
+        @include devicebreak(medium) {
+          margin-right: $spacing-64;
+        }
       }
     }
 
-    &__split {
-      &_content {
+    &-split {
+      &__content {
         padding-left: 0;
         padding-right: 0;
 
@@ -185,22 +183,22 @@
       }
     }
 
-    &__option {
-      &_content {
+    &-option {
+      &__content {
         padding: 0;
 
         @include devicebreak(medium) {
-          padding-left: 20px;
-          padding-right: 42px;
+          padding-left: 26px;
+          padding-right: $spacing-64;
         }
       }
 
-      &_title {
+      &__title {
         padding-left: 0;
         padding-right: 0;
 
         @include devicebreak(medium) {
-          padding-right: 42px;
+          padding-right: $spacing-64;
         }
       }
     }

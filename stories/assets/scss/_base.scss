@@ -43,4 +43,10 @@
   @extend %in__viewport;
 }
 
+[dir='rtl'] {
+  .left-right {
+    @include transform(translateX(100px));
+  }
+}
+
 /* end */
