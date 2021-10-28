@@ -307,3 +307,7 @@
   visibility: visible;
   transform: translateX(0);
 }
+
+@mixin background-image($deg, $colorname, $opacity) {
+  background: linear-gradient($deg, $colorname, $opacity);  
+}

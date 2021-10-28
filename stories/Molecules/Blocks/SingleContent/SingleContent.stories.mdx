@@ -13,7 +13,19 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Molecules/Blocks/Single Content Card" />
+<Meta title="Molecules/Blocks/Single Content Card" argTypes={{
+  type: {
+    options: ['Image', 'Card', 'Card-yellow'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'Image'
+  },
+  colors: {
+    options: ['Yellow', 'Red', 'Green', 'Blue', 'Gray'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'Yellow'
+  }
+}}/>
+
 
 <style>{`
  .subheading {
@@ -34,35 +46,16 @@ export const getCaptionForLocale = (locale) => {
 # Single Content Card Component
 The Single Content Card component defines a card of information data with some items - Title, Image, Paragraph, and CTA Link. We are using the grid system here <code>assets/scss/grid.scss</code>. Atoms tags are used for creating this card.
 
-<div className="subheading">Single Content Card With Image</div>
+<div className="subheading">Single Content Card</div>
 <p>Single content card with image are show the Title, Image, and CTA Link. The background color is different on hover.</p>
 
-<Story name="Single Card With Image">
+<Story name="Single Content Card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <SingleContent contenttile={caption.title} contentname={caption.name} image={img} button={caption.btnlabel} link='#' type='grey'></SingleContent>;
+    return <SingleContent contenttile={caption.title} contentname={caption.name} contentnametwo={caption.nametwo}  paragraph={caption.paragraph} image={img} button={caption.btnlabel} link='#' {...args} ></SingleContent>;
   }}
 </Story>
 
-<div className="subheading">Single Content Card Yellow</div>
-<p>Single content card yellow are show the Title, and CTA Link. The background color is different on hover.</p>
-
-<Story name="Single Card Yellow">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <SingleContent contenttile={caption.title} contentnametwo={caption.nametwo} button={caption.btnlabel} link='#' type='yellow singlecard-space'></SingleContent>;
-  }}
-</Story>
-
-<div className="subheading">Single Content Card With Paragraph</div>
-<p>Single content card with paragraph are show the Title, Caption, Paragraph, and CTA Link. The background color is different on hover.</p>
-
-<Story name="Single Card With Paragraph">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <SingleContent contenttile={caption.title} contentname={caption.name} paragraph={caption.paragraph} button={caption.btnlabel} link='#' type='grey singlecard-space'></SingleContent>;
-  }}
-</Story>
 
 <div className="subheading">Usage</div>
 <ul>
