@@ -38,17 +38,54 @@
     line-height: 22px;
   }
 
-  &-space {
+  &--Card, &--Card-yellow  {
     .cta__link {
       margin-top: $spacing-96;
     }
   }
 
-  &--grey:hover {
-    background-color: $color-gray-100;
+  &--Image, &--Card  {
+    &.singlecard--Yellow {
+      background-color: $color-white;
+    }
   }
 
-  &--yellow {
+  &--Image {
+    &.singlecard--Yellow,
+    &.singlecard--Red,
+    &.singlecard--Green,
+    &.singlecard--Blue {
+      &:hover {
+        background-color: $color-white;
+      }
+    }
+    
+    &.singlecard--Red {
+      .card_thumbnail__image {
+         &::before {
+          @include background-image(42deg, $color-red, transparent 80%);
+        } 
+      }
+    }
+
+    &.singlecard--Green {
+      .card_thumbnail__image {
+         &::before {
+          @include background-image(42deg, $color-green, transparent 80%);
+        } 
+      }
+    }
+
+    &.singlecard--Blue {
+      .card_thumbnail__image {
+         &::before {
+           @include background-image(42deg, $color-azure, transparent 80%);
+        } 
+      }
+    }
+  }
+
+  &--Yellow {
     background-color: $color-light-yellow;
 
     &:hover {
@@ -56,7 +93,28 @@
     }
   }
 
+  &--Red, &--Green, &--Blue, &--Gray {
+    background-color: $color-white;
+  }
+  
+  &--Red:hover{
+    background-color: $color-red;
+  }
+
+  &--Green:hover{
+    background-color: $color-green;
+  }
+
+  &--Blue:hover{
+    background-color: $color-azure;
+  }
+
+  &--Gray:hover{
+    background-color: $color-gray-100;
+  }
+
   &:hover {
+    @include transition(0.2s ease);
     .card_thumbnail__image::before {
       opacity: 0.75;
     }
