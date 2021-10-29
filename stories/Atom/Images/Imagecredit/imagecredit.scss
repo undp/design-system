@@ -2,10 +2,6 @@
 @import "../../../assets/scss/breakpoints";
 
 /* credit image*/
-.image--author {
-    margin-bottom: 10px;
-}
-
 .author__caption {
     display: block;
     letter-spacing: 0;
@@ -20,6 +16,5 @@
 }
 
 .author--name {
-    font-weight: 700;
-    font-family: $Font-Family-ProximaRegular;
+    font-family: $Font-Family-ProximaBold;
 }

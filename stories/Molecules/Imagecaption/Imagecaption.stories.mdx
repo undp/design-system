@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, Source } from '@storybook/addon-docs';
 import { Imagecaption } from './Imagecaption';
 
 export const getCaptionForLocale = (locale) => {
@@ -12,35 +12,82 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Molecules/Image Caption" />
+<Meta title="Molecules/Image Caption" 
+argTypes={{
+    caption: {
+      options: ["True", "False"],
+      control: { type: "radio" },
+      defaultValue: "True"
+    },
+    credit: {
+      options: ["True", "False"],
+      control: { type: "radio" },
+      defaultValue: "True"
+    },
+  }}/>
 
 <style>{`
  .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
     line-height: 24px;
     margin-bottom: 12px;
-    margin-top: 40px;
+    margin-top: 12px;
   }
   .sbdocs .sbdocs-p,
   .sbdocs .sbdocs-li{
     font-size: 1rem;
   }
+  .sbdocs .sbdocs-h2 {
+    border-bottom: none;
+  }
+  .css-1h4ytzj code {
+    padding-right: 10px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+      background: black;
+  }
 `}</style>
 
 # Image Caption + Credit Component
+
+## Overview
+
 Image Caption + Credit component used to show the image caption and who posted content in a related page.
 
-<Story name="Image Caption">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Imagecaption label={caption.label} name={caption.name} paragraph={caption.paragraph}></Imagecaption>;
-  }}
-</Story>
+<div className="subheading">Modifier class</div>
 
-<div className="subheading">Usage</div>
+<code>image__caption--unstag</code> <code>image__caption--stag</code>
+
+<Canvas>
+  <Story name="Image Caption" parameters={{ docs: { source: { code: `<figcaption class="image__caption">
+    <div class="image__caption_para">
+      The United Nations Development Programme is the global development network
+      of the United Nations. It promotes technical and investment cooperation
+      among nations.
+    </div>
+    <div class="image--author">
+      <span class="author__caption author--label">UNDP/Angola</span>
+      <span class="author__caption author--name">Jerome Bell</span>
+    </div>
+  </figcaption>
+  `} } }}>
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Imagecaption label={caption.label} name={caption.name} paragraph={caption.paragraph} {...args}></Imagecaption>;
+    }}
+  </Story>
+</Canvas>
+
+
+## Dependencies
+
+No dependency
+
+## Usage
+
 <ul>
 <li>Take HTML from the HTML tab in the canvas</li>
 <u>To use SCSS include the following files in your implementation</u>
