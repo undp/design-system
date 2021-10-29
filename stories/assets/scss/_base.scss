@@ -35,6 +35,33 @@
   }
 }
 
+.Scrollbar-horizontal {
+  &::-webkit-scrollbar-track {
+     background: linear-gradient(0deg, transparent 10%, $color-black 33%, transparent 0);
+  }
+  &::-webkit-scrollbar {
+    height: 4px;
+    margin-right: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-black;
+  }
+}
+
+.Scrollbar-vertical {
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, transparent 10%, $color-black 33%, transparent 0);
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+    margin-right: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-black;
+  }
+}
+
+//animation start
 .left-right {
   @extend %left-to-right;
 }
