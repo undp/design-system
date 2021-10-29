@@ -25,31 +25,42 @@
       padding-right: $spacing-32;
     }
 
-    & + .image--author {
-      display: flex;
-      flex-shrink: 0;
-      flex-wrap: wrap;
-      margin-bottom: $spacing-16;
-      padding-top: $spacing-16;
-      border-top: 1px solid $color-gray-500;
+  }
+  .image--author {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-16;
+    padding-top: $spacing-16;
+    border-top: 1px solid $color-gray-500;
+
+    @include devicebreak(medium) {
+      border-left: 1px solid $color-gray-500;
+      display: block;
+      margin-bottom: 0;
+      padding-top: 0;
+      min-width: 180px;
+      border-top: 0;
+      padding-left: $spacing-32;
+    }
+
+    .author--label {
+      margin-right: $spacing-04;
 
       @include devicebreak(medium) {
-        border-left: 1px solid $color-gray-500;
-        display: block;
-        margin-bottom: 0;
-        padding-top: 0;
-        min-width: 180px;
-        border-top: 0;
-        padding-left: $spacing-32;
+        margin-right: 0;
       }
-
-      .author--label {
-        margin-right: $spacing-04;
-
-        @include devicebreak(medium) {
-          margin-right: 0;
-        }
-      }
+    }
+  }
+  &--stag {
+    .image__caption_para {
+      padding-right: 0;
+    }
+  }
+  &--unstag {
+    .image--author {
+      padding: 0;
+      border: 0;
     }
   }
 }
@@ -61,19 +72,30 @@
         padding-left: $spacing-40;
         padding-right: 0;
       }
+    }
+    .image--author {
+      @include devicebreak(medium) {
+        border-left: none;
+        border-right: 1px solid $color-gray-500;
+        padding-left: 0;
+        padding-right: $spacing-40;
+      }
 
-      & + .image--author {
-        @include devicebreak(medium) {
-          border-left: none;
-          border-right: 1px solid $color-gray-500;
-          padding-left: 0;
-          padding-right: $spacing-40;
-        }
+      .author--label {
+        margin-left: $spacing-04;
+        margin-right: 0;
+      }
+    }
 
-        .author--label {
-          margin-left: $spacing-04;
-          margin-right: 0;
-        }
+    &--stag {
+      .image__caption_para {
+        padding-left: 0;
+      }
+    }
+    &--unstag {
+      .image--author {
+        padding: 0;
+        border: 0;
       }
     }
   }

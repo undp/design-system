@@ -61,18 +61,38 @@
   }
 }
 
-//animation start
+/* animation start */
 .left-right {
   @extend %left-to-right;
+
+  &.inviewport {
+    @extend %inviewport_left_right;
+  }
 }
 
-.inviewport {
-  @extend %in__viewport;
+.scale-up {
+  @extend %scale-up;
+
+  &.inviewport {
+    @include transform(scale(1));
+  }
+}
+
+.opacity-only {
+  @extend %opacity-only;
+
+  &.inviewport {
+    @extend %inviewport_opacity_only;
+  }
 }
 
 [dir='rtl'] {
   .left-right {
     @include transform(translateX(100px));
+
+    &.inviewport {
+      @extend %inviewport_left_right;
+    }
   }
 }
 

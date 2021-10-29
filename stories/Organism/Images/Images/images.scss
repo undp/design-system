@@ -1,0 +1,81 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/base';
+
+/* images start */
+.image {
+  &-section {
+    justify-content: center;
+
+    &__cart {
+      img {
+        @extend %img-cover;
+
+        display: block;
+      }
+    }
+
+    &__description {
+      .image__caption {
+        margin: $spacing-16 $spacing-24 0;
+
+        @include devicebreak(medium) {
+          margin: $spacing-32 0 0;
+        }
+      }
+    }
+
+    &--portrait {
+      align-items: flex-end;
+
+      @include devicebreak(medium) {
+        .image__caption {
+          display: block;
+          margin: 0 0 0 $spacing-24;
+          padding-bottom: 0;
+
+          &_para {
+            font-size: $font-size-14;
+            line-height: 1.5;
+            margin-bottom: $spacing-16;
+            padding: 0;
+          }
+        }
+
+        .image--author {
+          border-left: 0;
+          border-right: 0;
+          border-top: 1px solid $color-gray-500;
+          margin-bottom: $spacing-16;
+          padding: $spacing-16 0 0 0;
+        }
+
+        .image__caption--unstag {
+          .image--author {
+            border: 0;
+            padding: 0;
+          }
+        }
+
+        .author__caption {
+          font-size: $font-size-14;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
+
+@include devicebreak(medium) {
+  [dir='rtl'] {
+    .image {
+      &-section--portrait {
+        .image__caption {
+          margin: 0 $spacing-24 0 0;
+        }
+      }
+    }
+  }
+}
+
+/* images end */

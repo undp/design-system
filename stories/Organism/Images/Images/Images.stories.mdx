@@ -1,0 +1,168 @@
+import { Meta, Story, Canvas, Source } from "@storybook/addon-docs";
+import { Images } from "./Images";
+import farmlandlg from "../../../assets/images/farmland-lg.jpg";
+import farmlandmd from "../../../assets/images/farmland-md.jpg";
+import farmlandsm from "../../../assets/images/farmland-sm.jpg";
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        label: "UNDP/Angola",
+        name: "Firstname Lastname",
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        label: "برنامج الأمم المتحدة الإنمائي / أنغولا",
+        name: "الاسم الاول الاسم الاخير",
+        paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Morbi lorem tortor، fermentum eu lorem at، venenatis malesuada laughter.",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        label: "UNDP/အန်ဂိုလာ",
+        name: "နံမည် နောက်ဆုံးအမည်",
+        paragraph: "နာကျင်မှုကိုယ်တိုင်က နာကျင်ပေမယ့် အဓိက အာရုံစိုက်တာက ဖောက်သည်အပေါ်ပါ။ Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada ရယ်မောခြင်း။",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        label: "UNDP /アンゴラ",
+        name: "名前苗字",
+        paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 Morbi lorem tortor、fermentum eu lorem at、venenatismalesuadaの笑い声。",
+      };
+      return japaneseText;
+    default:
+      return {
+        label: "UNDP/Angola",
+        name: "Firstname Lastname",
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+      };
+  }
+};
+
+<Meta
+  title="Organism/Images/Images"
+  argTypes={{
+    size: {
+      options: ["Wide", "Medium", "Portrait"],
+      control: { type: "radio" },
+      defaultValue: "Wide"
+    },
+    caption: {
+      options: ["True", "False"],
+      control: { type: "radio" },
+      defaultValue: "True"
+    },
+    credit: {
+      options: ["True", "False"],
+      control: { type: "radio" },
+      defaultValue: "True"
+    },
+  }}
+/>
+
+<style>{`
+ .subheading {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  .sbdocs .sbdocs-h2 {
+    border-bottom: none;
+  }
+  .css-1h4ytzj code {
+    padding-right: 10px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+      background: black;
+  }
+`}</style>
+
+# Image with caption and credit component
+
+## Overview
+
+The Image with caption and credit component multiusage component which creates boxes that are usually teasing some kind of content like - Image, Text, and Image author name. We are using a grid system to manage the different types of sizes and for the animation here assets/js/viewport.js. Image Caption Molecule are used for creating this card.
+
+## Default Representation & various possible states
+
+<div className="subheading">Story Controls</div>
+
+We can check all types of Image with caption and credit variants by storybook <code> controls </code> .
+
+<ul>
+<li>In the column, we check the option of card sizes like <code>Wide</code> , <code>Medium</code> , <code>Portrait</code> that's belong to the grid.</li>
+</ul>
+
+<div className="subheading">Modifier class</div>
+
+<code>image-section--portrait</code> <code>image__caption--unstag</code> <code>image__caption--stag</code>
+
+<Canvas>
+  <Story name="Images" parameters={{ docs: { source: { code: `<div class="grid-x image-section">
+    <div class="cell image__cart medium-12">
+      <img
+        src="static/media/stories/assets/images/farmland-lg.jpg"
+        alt="farmland"
+      />
+    </div>
+    <div class="cell image__description medium-7">
+      <figcaption class="image__caption">
+        <div class="image__caption_para">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem
+          tortor, fermentum eu lorem at, venenatis malesuada risus.
+        </div>
+        <div class="image--author">
+          <span class="author__caption author--label">UNDP/Angola</span>
+          <span class="author__caption author--name">Firstname Lastname</span>
+        </div>
+      </figcaption>
+    </div>
+    </div>`} } }}>
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <Images
+          imagelg={farmlandlg} imagemd={farmlandmd} imagesm={farmlandsm} alt="farmland" label={caption.label} name={caption.name} paragraph={caption.paragraph} {...args}
+        ></Images>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Dependencies
+
+Libraries or another dependency which are used in the component.
+
+<ul>
+  <li>For animation functionality its depend on the jQuery plugin library.</li>
+  <li>Custom JS file (viewport.js) is located in the same js folder.</li>
+</ul>
+
+## Usage
+
+<ul>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>images.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
+</ul>
