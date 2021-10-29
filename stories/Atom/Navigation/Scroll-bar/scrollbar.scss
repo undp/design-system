@@ -1,0 +1,23 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
+.Scrollbar-horizontal-wrapper {
+  float: left;
+  width: 600px;
+  height: 4px;
+  overflow-x: scroll;
+}
+
+.Scrollbar-data {
+  width: 1000px;
+}
+
+.Scrollbar-vertical-wrapper {
+  height: 70vh;
+  width: 65px;
+  overflow-y: scroll;
+}
+
+.Scrollbar-data__vertical {
+  min-height: 100vh;
+}
