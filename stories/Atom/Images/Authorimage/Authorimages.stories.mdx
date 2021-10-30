@@ -1,7 +1,27 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { Authorimg } from './Authorimages';
+import user from '../../../assets/images/user.svg';
 
-<Meta title="Atoms/Image/Author Image"/>
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {}; return engText;
+    case 'arabic': const arabicText = {}; return arabicText;
+    case 'burmese': const burmeseText = {}; return burmeseText;
+    case 'japanese': const japaneseText = {}; return japaneseText;
+    default:
+      return {};
+  }
+};
+
+<Meta title="Atoms/Image/Author Image"
+argTypes={{
+    variant: {
+      options: ["Large", "Small"],
+      control: { type: "radio" },
+      defaultValue: "Large"
+    }
+  }}
+/>
 
 <style>{`
   .subheading {
@@ -25,12 +45,11 @@ import { Authorimg } from './Authorimages';
 # Author Image Component
 The <code>Author Image</code> component displays the author image.
 
-<Story name="Large Size">
-    return <Authorimg size="large"></Authorimg>;
-</Story>
-
-<Story name="Small Size">
-    return <Authorimg size="small"></Authorimg>;
+<Story name="Author Image">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Authorimg image= {user} {...args}></Authorimg>;
+  }}
 </Story>
 
 <div className="subheading">Usage</div>

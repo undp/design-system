@@ -1,0 +1,41 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+.author-card {
+  border-top: 2px solid $color-black;
+  padding-top: $spacing-32;
+
+  @include devicebreak(medium) {
+    display: flex;
+  }
+
+  h4 {
+    margin-bottom: 39px;
+  }
+
+  &__summary {
+    @include devicebreak(medium) {
+      display: flex;
+    }
+
+    &--text {
+      margin-top: $spacing-40;
+
+      @include devicebreak(medium) {
+        margin-left: $spacing-40;
+        margin-top: 0;
+      }
+
+      h2 {
+        margin-bottom: $spacing-08;
+      }
+    }
+  }
+
+  p {
+    @include devicebreak(medium) {
+      width: 40%;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { Authorcard } from './Authorcard';
+import user from '../../../../assets/images/user.svg';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -78,7 +79,7 @@ The Author Card Component is created for showing the author name, designation, i
 <Story name="Author Card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Authorcard data={caption.authordata} para={caption.paragraph} button={caption.button} link='#' width="12"></Authorcard>;
+    return <Authorcard image= {user} data={caption.authordata} para={caption.paragraph} button={caption.button} link='#' width="12"></Authorcard>;
   }}
 </Story>
 
