@@ -1,0 +1,106 @@
+import { Meta, Story, Canvas, Source } from "@storybook/addon-docs";
+import { PageWideCard } from "./PageWideCard";
+// import user from '../../../../assets/images/Pagewide.jpg';
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        tag: "CONTENT TAG",
+        label1: "Socio-economic impact of COVID-19",
+        label2:
+          "Across the globe, the UN is supporting countries in preparing assessments of the socio-economic impacts of Covid-19. What are these assessments saying and what are the key socio-economic issues caused by the pandemic that the UN and its partners are seeing on the ground?",
+        btnlabel: "READ MORE",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        tag: "علامة المحتوى",
+        label1: "التأثير الاجتماعي والاقتصادي لـ COVID-19",
+        label2:
+          "في جميع أنحاء العالم ، تدعم الأمم المتحدة البلدان في إعداد تقييمات للآثار الاجتماعية والاقتصادية لـ Covid-19. ماذا تقول هذه التقييمات وما هي القضايا الاجتماعية والاقتصادية الرئيسية التي يسببها الوباء الذي تراه الأمم المتحدة وشركاؤها على الأرض؟",
+        btnlabel: "اقرأ أكثر",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        tag: "အကြောင်းအရာ",
+        label1: "COVID-19 ၏ လူမှုစီးပွား သက်ရောက်မှု",
+        label2:
+          "ကမ္ဘာတစ်ဝှမ်းတွင် Covid-19 ၏ လူမှုစီးပွားဆိုင်ရာ သက်ရောက်မှုများကို အကဲဖြတ်ရန် ပြင်ဆင်နေသည့် နိုင်ငံများအား ကုလသမဂ္ဂက ပံ့ပိုးပေးလျက်ရှိသည်။ ဒီအကဲဖြတ်ချက်တွေက ဘာပြောသလဲ၊ ကမ္ဘာ့ကုလသမဂ္ဂနဲ့ သူ့ရဲ့လုပ်ဖော်ကိုင်ဖက်တွေက မြေပြင်မှာ မြင်နေရတဲ့ ကပ်ရောဂါကြောင့် ဖြစ်ရတဲ့ အဓိက လူမှုစီးပွားပြဿနာတွေက ဘာတွေလဲ။",
+        btnlabel: "ပိုပြီးဖတ်ပါ",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        tag: "コンテンツタグ",
+        label1: "COVID-19の社会経済的影響",
+        label2:
+          "国連は世界中で、Covid-19の社会経済的影響の評価を準備する際に各国を支援しています。これらの評価は何を言っているのか、そして国連とそのパートナーが現場で見ているパンデミックによって引き起こされた主要な社会経済的問題は何ですか？",
+        btnlabel: "続きを読む",
+      };
+      return japaneseText;
+    default:
+      return {
+        tag: "CONTENT TAG",
+        label1: "Socio-economic impact of COVID-19",
+        label2:
+          "Across the globe, the UN is supporting countries in preparing assessments of the socio-economic impacts of Covid-19. What are these assessments saying and what are the key socio-economic issues caused by the pandemic that the UN and its partners are seeing on the ground?",
+        btnlabel: "READ MORE",
+      };
+  }
+};
+
+<Meta title="Testing/Pagewide Featured Content Card" component={PageWideCard} />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 20px;
+    color: #031c2d;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 15px;
+  }
+  .subheading2 {
+    font-weight: 700;
+    font-size: 16px;
+    color: #031c2d;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 10px;
+  }
+`}</style>
+
+# Pagewide Card Component
+
+<Story name="Country Card Hero">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <PageWideCard
+        label={caption.tag}
+        title={caption.label1}
+        paragraph={caption.label2}
+        button={caption.btnlabel}
+      ></PageWideCard>
+    );
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like variables, mixin from{" "}
+    <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>pagewidecard.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
+</ul>
