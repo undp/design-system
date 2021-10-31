@@ -5,6 +5,7 @@
 .button {
   @extend %button;
   @extend %img_none;
+  cursor: pointer;
 
   color: $color-white;
   justify-content: center;
