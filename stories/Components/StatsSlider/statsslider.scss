@@ -1,0 +1,17 @@
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+.stats-card-row{
+    .statscard{
+        &--sm{
+            margin-bottom: 2.5rem;
+            @include devicebreak(medium){
+                //max-width: 330px;
+            }
+            @include devicebreak(small){
+                //max-width: 330px;
+            }
+        }
+    }
+    
+}
