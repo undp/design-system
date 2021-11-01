@@ -1,49 +1,55 @@
 @import "../../../assets/scss/variables";
 @import "../../../assets/scss/mixins";
+@import "../../../assets/scss/base";
 
 /* Modal lightbox card start */
 .modal {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 0;
+  z-index: 99;
   display: flex;
   position: fixed;
   align-items: center;
   justify-content: center;
   top: 0;
-  background: rgba(247, 247, 247, 0.8);
+  background: $color-white;
+  visibility: visible;
+   @include devicebreak(medium) {
+    background: rgba(247, 247, 247, 0.8);
+  }
 }
 
 .modal-content {
   width: 100%;
   max-width: 837px;
-  height: 62vh;
   background: $color-white;
   position: relative;
   padding: 0;
   max-height: calc(100vh - 115px);
   margin: auto $spacing-12;
   @include devicebreak(medium) {
+    height: 62vh;
     margin: 0;
     padding: $spacing-80;
   }
-  &::before {
-    content: "";
+  .modal-close-button {
+   content: "";
     width: 46px;
     height: 44px;
     float: right;
-    margin: -48px 0;
+    margin: -3rem 0;
+    cursor: pointer;
     background: url(#{$img-path-Icon}/Times_circle.svg) no-repeat left center;
     @include devicebreak(medium) {
-       margin: -48px -48px;
+       margin: -3rem ;
     }
   }
 }
 
 [dir="rtl"] {
   .modal-content {
-    &::before {
+    .modal-close-button  {
       float: left;
     }
   }
