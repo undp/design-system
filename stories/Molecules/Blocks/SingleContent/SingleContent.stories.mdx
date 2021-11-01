@@ -14,15 +14,20 @@ export const getCaptionForLocale = (locale) => {
 };
 
 <Meta title="Molecules/Blocks/Single Content Card" argTypes={{
-  type: {
-    options: ['Image', 'Card', 'Card-yellow'],
+  Image: {
+    options: ['true', 'false'],
     control: { type: 'inline-radio' },
-    defaultValue: 'Image'
+    defaultValue: 'true'
+  },
+  Emphasize: {
+    options: ['true', 'false'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'false'
   },
   colors: {
-    options: ['Yellow', 'Red', 'Green', 'Blue', 'Gray'],
+    options: ['yellow', 'red', 'green', 'blue', 'gray'],
     control: { type: 'inline-radio' },
-    defaultValue: 'Yellow'
+    defaultValue: 'yellow'
   }
 }}/>
 
@@ -52,7 +57,7 @@ The Single Content Card component defines a card of information data with some i
 <Story name="Single Content Card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <SingleContent contenttile={caption.title} contentname={caption.name} contentnametwo={caption.nametwo}  paragraph={caption.paragraph} image={img} button={caption.btnlabel} link='#' {...args} ></SingleContent>;
+    return <SingleContent contenttile={caption.title} contentname={caption.name} contentnametwo={caption.nametwo}  paragraph={caption.paragraph} img={img} button={caption.btnlabel} link='#' {...args} ></SingleContent>;
   }}
 </Story>
 

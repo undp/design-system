@@ -5,55 +5,51 @@ import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
 import { Ctalink } from '../../../Atom/Buttons-and-labels/Cta_link/Cta_link';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 
+export const image_options = {
+  true: ' ',
+  false: 'card',
+};
+
+export const emphasize_options = {
+  true: 'card-yellow',
+  false: '',
+};
+
 export const SingleContent = ({
-  contenttile, contentname, contentnametwo, image, type, paragraph, link, button, colors, ...args
+  contenttile, contentname, contentnametwo, img, Image, paragraph, link, Emphasize, button, colors, ...args
 }) => (
   <div className="grid-x grid-margin-x">
     <div className="cell medium-4">
-      <a href={link} className={['singlecard', `singlecard--${type}`, `singlecard--${colors}`].join(' ')}>
+      <a href={link} className={['singlecard', `${image_options[`${Image}`]}`, `${emphasize_options[`${Emphasize}`]}`,  `${[`${colors}`]}`,].join(' ')}>
         <div className="singlecard__head">{contenttile}</div>
-        {type === 'Image'
+        {Image === 'true'
           ? (
-            <>
               <div className="card_thumbnail__image">
-                <img src={image} alt={image} />
+                <img src={img} alt={img} />
               </div>
-            </>
           )
           : (
-            <>
-            </>
+            <></>
           )}
         <div className="singlecard__caption">
-          {type === 'Card-yellow'
+          {Emphasize === 'true'
             ? (
-              <>
-                <Heading type="4" label={contentnametwo} />
-              </>
+              <Heading type="4" label={contentnametwo} />
             )
             : (
-              <>
-              </>
+              <></>
             )}
-          {type === 'Image' || type === 'Card'
+       
+          
+          { Emphasize === 'false'
             ? (
               <>
                 <Heading type="5" label={contentname} />
-              </>
-            )
-            : (
-              <>
-              </>
-            )}
-          {type === 'Card'
-            ? (
-              <>
                 <P label={paragraph} />
               </>
             )
             : (
-              <>
-              </>
+              <></>
             )}
           <Ctalink label={button} variant="Space" />
         </div>
@@ -63,6 +59,7 @@ export const SingleContent = ({
 );
 
 SingleContent.defaultProps = {
-  type: 'Image',
-  colors: 'Yellow'
+  Image: 'true',
+  Emphasize : 'false',
+  colors: 'yellow'
 };

@@ -1,5 +1,5 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
 
 .singlecard {
   border: 0;
@@ -38,79 +38,94 @@
     line-height: 22px;
   }
 
-  &--Card, &--Card-yellow  {
+  &.card,
+  &.card-yellow {
     .cta__link {
       margin-top: $spacing-96;
     }
   }
 
-  &--Image, &--Card  {
+  &--Image,
+  &--Card {
     &.singlecard--Yellow {
       background-color: $color-white;
     }
   }
 
-  &--Image {
-    &.singlecard--Yellow,
-    &.singlecard--Red,
-    &.singlecard--Green,
-    &.singlecard--Blue {
-      &:hover {
-        background-color: $color-white;
-      }
+  &.yellow,
+  &.red,
+  &.green,
+  &.blue {
+    &:hover {
+      background-color: $color-white;
     }
-    
-    &.singlecard--Red {
-      .card_thumbnail__image {
-         &::before {
-          @include background-image(42deg, $color-red, transparent 80%);
-        } 
-      }
-    }
+  }
 
-    &.singlecard--Green {
-      .card_thumbnail__image {
-         &::before {
-          @include background-image(42deg, $color-green, transparent 80%);
-        } 
-      }
-    }
-
-    &.singlecard--Blue {
-      .card_thumbnail__image {
-         &::before {
-           @include background-image(42deg, $color-azure, transparent 80%);
-        } 
+  &.red {
+    .card_thumbnail__image {
+      &::before {
+        @include background-image(42deg, $color-red, transparent 80%);
       }
     }
   }
 
-  &--Yellow {
-    background-color: $color-light-yellow;
+  &.green {
+    .card_thumbnail__image {
+      &::before {
+        @include background-image(42deg, $color-green, transparent 80%);
+      }
+    }
+  }
 
-    &:hover {
+  &.blue {
+    .card_thumbnail__image {
+      &::before {
+        @include background-image(42deg, $color-azure, transparent 80%);
+      }
+    }
+  }
+
+  &.card, &.card-yellow {
+    &.yellow,
+    &.red,
+    &.green,
+    &.blue,
+    &.gray {
+      background-color: $color-white;
+    }
+
+    &.yellow:hover {
       background-color: $color-yellow;
     }
+
+    &.red:hover {
+      background-color: $color-red;
+    }
+
+    &.green:hover {
+      background-color: $color-green;
+    }
+
+    &.blue:hover {
+      background-color: $color-azure;
+    }
+
+    &.gray:hover {
+      background-color: $color-gray-100;
+    }
   }
 
-  &--Red, &--Green, &--Blue, &--Gray {
-    background-color: $color-white;
-  }
-  
-  &--Red:hover{
-    background-color: $color-red;
-  }
-
-  &--Green:hover{
-    background-color: $color-green;
-  }
-
-  &--Blue:hover{
-    background-color: $color-azure;
-  }
-
-  &--Gray:hover{
-    background-color: $color-gray-100;
+  &.card-yellow { 
+    &.yellow,
+    &.red,
+    &.green,
+    &.blue,
+    &.gray {
+      background-color: $color-light-yellow;
+    }
+    .card_thumbnail__image {
+      display: none;
+    }
   }
 
   &:hover {
@@ -120,15 +135,15 @@
     }
 
     .cta__link::after {
-      @include translate(70%,0);
+      @include translate(70%, 0);
     }
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .singlecard:hover {
     .cta__link::after {
-      @include transform(translate(-50%,0) rotate(180deg));
+      @include transform(translate(-50%, 0) rotate(180deg));
     }
   }
 }
