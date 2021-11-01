@@ -1,25 +1,26 @@
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/breakpoints";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/breakpoints';
 
-/* credit image*/
+/* credit image */
 .image--author {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .author__caption {
-    display: block;
-    letter-spacing: 0;
-    color: $color-black;
-    line-height: 19.25px;
-    font-size: $font-size-14;
-    font-family: $Font-Family-ProximaRegular;
-    @include devicebreak(medium) {
-        font-size: $font-size-16;
-        line-height: 22px;
-    }
+  color: $color-black;
+  display: block;
+  font-family: $Font-Family-ProximaRegular;
+  font-size: $font-size-14;
+  letter-spacing: 0;
+  line-height: 19.25px;
+
+  @include devicebreak(medium) {
+    font-size: $font-size-16;
+    line-height: 22px;
+  }
 }
 
 .author--name {
-    font-weight: 700;
-    font-family: $Font-Family-ProximaRegular;
+  font-family: $Font-Family-ProximaRegular;
+  font-weight: 700;
 }

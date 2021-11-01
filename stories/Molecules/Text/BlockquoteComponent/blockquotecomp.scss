@@ -1,19 +1,23 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 .blockquote-wrapper {
-  padding: 30px;
   font-family: $Font-Family-ProximaRegular;
+  padding: 30px;
+
   @include devicebreak(medium) {
     padding: 85px;
   }
+
   &--Gray {
     background-color: $color-gray-200;
   }
+
   &--Yellow {
     background-color: $color-yellow;
   }
+
   &--Transparent {
     background-color: none;
     padding: 0;

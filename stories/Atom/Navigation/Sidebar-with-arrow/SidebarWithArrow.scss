@@ -1,45 +1,54 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/typography";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/typography';
 
 // * Slidebar start *//
 .Sidebar_item_arrow {
   @extend %border-bottom;
   @extend %sidebar;
+
   &:hover {
     background-color: $color-gray-200;
   }
+
   &.open {
     .arrow {
       transform: rotateZ(180deg);
       transition: all 0.1s ease;
     }
   }
+
   h6 {
     margin-bottom: 0;
   }
+
   .arrow {
     background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
-    float: right;
-    width: 20px;
-    height: 20px;
     border-top-color: $color-gray-500;
-    transition: all 0.1s ease;
+    float: right;
+    height: 20px;
     margin-left: 24px;
+    transition: all 0.1s ease;
+    width: 20px;
   }
+
   &--Default-up {
     .arrow {
       background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
       transform: rotateZ(180deg);
     }
   }
-  &--Selected, &--Selected-up  {
+
+  &--Selected,
+  &--Selected-up {
     @extend %sidebar-selected;
+
     .arrow {
-      background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center ;
+      background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
     }
   }
+
   &--Selected-up {
     .arrow {
       transform: rotateZ(180deg);

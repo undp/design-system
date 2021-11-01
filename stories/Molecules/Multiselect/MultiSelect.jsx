@@ -11,7 +11,7 @@ const SelectTag = ({ text }) => {
     <div className="multi-select regions-select" data-multi-select="">
       <button
         className="select-control"
-        id="select_button"
+//         id="select_button"
         aria-label="Region"
         aria-expanded="false"
       >

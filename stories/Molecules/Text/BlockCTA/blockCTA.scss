@@ -1,20 +1,23 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 .block-cta-wrapper {
   h4 {
-    margin-bottom: $spacing-24;
     font-family: $Font-Family-ProximaSemiBold;
+    margin-bottom: $spacing-24;
+
     @include devicebreak(large) {
       margin-bottom: $spacing-48;
     }
   }
+
   .cta__link {
     font-family: $Font-Family-ProximaBold;
     font-size: 16px;
     text-transform: uppercase;
   }
+
   p {
     margin-bottom: $spacing-40;
   }

@@ -56,7 +56,8 @@ class MultiSelect {
   listenerWindowClick() {
     this.$window.click((evt) => {
       if (this.$currentSelect && !this.$currentSelect.is(evt.target)
-        && this.$currentSelect.has(evt.target).length === 0 && this.$currentSelect.hasClass(this.classOpen)) {
+        && this.$currentSelect.has(evt.target).length === 0 &&
+        this.$currentSelect.hasClass(this.classOpen)) {
         this.$currentSelect.removeClass(this.classOpen);
         this.$selectTrigger.attr('aria-expanded', 'false');
       }

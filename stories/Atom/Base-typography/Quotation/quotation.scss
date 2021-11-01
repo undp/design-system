@@ -1,8 +1,9 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 q {
-    @extend %paragragh-font-20;
-    font-style: italic;
+  @extend %paragragh-font-20;
+
+  font-style: italic;
 }

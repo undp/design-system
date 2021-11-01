@@ -1,5 +1,5 @@
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
 /* feature card start */
 .feature__card {
@@ -8,66 +8,79 @@
   height: 100%;
   overflow: hidden;
   position: relative;
+
   @include devicebreak(medium) {
     display: flex;
   }
+
   &::before {
-    content: "";
+    content: '';
   }
+
   &:hover {
     .feature__card_slide {
       transform: translateX(0);
     }
+
     .cta--arrow::after {
       @include translate(10px, 0);
       @include transition(0.2s ease);
+
       background-image: url(#{$img-path-Icon}/arrow-left-expand-hover.svg);
       width: 100px;
     }
   }
 
   &_slide {
-    position: relative;
-    display: inherit;
     @extend %feature__card;
+
+    display: inherit;
+    position: relative;
+
     @include devicebreak(medium) {
-      display: block;
+      @include transform(translateX(-105%));
+
       background-color: $color-yellow;
+      display: block;
       height: 100%;
       position: absolute;
-      @include transform(translateX(-105%));
-      transition: transform 0.3s ;
+      transition: transform 0.3s;
       z-index: 5;
     }
 
     &::before {
-      bottom: 0;
       @extend %feature__card;
+
+      bottom: 0;
+      content: '';
       position: relative;
-      content: "";
+
       @include devicebreak(medium) {
         @include feature__card_bg;
+
         height: 100%;
         position: absolute;
       }
     }
 
     .feature__card_image {
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
       background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
     }
   }
 
   &_content {
     @extend %feature__card;
-    padding: $spacing-32 $spacing-24;
-    position: relative;
+
     background: $color-gray-100;
     flex-direction: column;
     height: auto;
+    padding: $spacing-32 $spacing-24;
+    position: relative;
     width: auto;
+
     @include devicebreak(medium) {
       background: none;
       display: flex;
@@ -80,16 +93,19 @@
       line-height: 14px;
       margin-bottom: $spacing-24;
       text-transform: uppercase;
+
       @include devicebreak(medium) {
         margin-bottom: $spacing-48;
       }
     }
+
     .feature__card_description {
       margin-bottom: 90px;
     }
 
     p {
       font-size: $font-size-14;
+
       @include devicebreak(medium) {
         font-size: $font-size-20;
       }
@@ -99,6 +115,7 @@
       margin-bottom: 0;
       margin-top: $spacing-40;
       z-index: 10;
+
       @include devicebreak(medium) {
         margin-top: auto;
       }
@@ -112,6 +129,7 @@
       }
     }
   }
+
   &--small,
   &--medium {
     &::before {
@@ -119,6 +137,7 @@
         padding-top: 100%;
       }
     }
+
     .feature__card_content {
       p {
         @include devicebreak(medium) {
@@ -127,11 +146,14 @@
       }
     }
   }
+
   &--without-image {
     .feature__card_slide {
       z-index: 0;
+
       &::before {
-        background: linear-gradient(0deg, $color-yellow, $color-yellow),
+        background:
+          linear-gradient(0deg, $color-yellow, $color-yellow),
           $color-gray-200;
       }
     }
@@ -147,6 +169,7 @@
     }
   }
 }
+
 .feature__card--small,
 .feature__card--medium {
   .feature__card {
@@ -156,6 +179,7 @@
       }
     }
   }
+
   .feature__card_content {
     p {
       @include devicebreak(medium) {
@@ -165,7 +189,7 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .feature__card:hover {
     .cta--arrow::after {
       @include transform(translate(0, 0) rotate(180deg));
@@ -175,10 +199,12 @@
   .feature__card_slide {
     @include devicebreak(medium) {
       @include transform(translateX(105%));
+
       &:hover {
         transform: translateX(0);
       }
     }
   }
 }
+
 /* feature card end */

@@ -37,8 +37,8 @@
   &__box {
     color: $color-white;
     padding: 0 $spacing-24;
-    z-index: 1;
     width: 100%;
+    z-index: 1;
 
     @include devicebreak(medium) {
       padding: 0 $spacing-48;
@@ -53,8 +53,8 @@
     letter-spacing: 0.05rem;
     line-height: 119.9px;
     margin-bottom: $spacing-16;
-    -webkit-text-stroke: 1px $color-white;
     text-shadow: -1px -1px 0 $color-white, 1px -1px 0 $color-white, -1px 1px 0 $color-white, 1px 1px 0 $color-white;
+    -webkit-text-stroke: 1px $color-white;
 
     @include devicebreak(medium) {
       font-size: 6.6rem;
@@ -79,9 +79,9 @@
   }
 
   p {
-    margin: 0;
     font-size: 1.25rem;
     line-height: 27px;
+    margin: 0;
   }
 
   &:hover {
@@ -91,8 +91,8 @@
     }
 
     .statspanel__number {
-      -webkit-text-stroke: 1px $color-gray-700;
       text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
+      -webkit-text-stroke: 1px $color-gray-700;
     }
 
     .statspanel__box {

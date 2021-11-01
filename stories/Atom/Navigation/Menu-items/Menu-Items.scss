@@ -1,21 +1,24 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 // * menu item row start *//
 .menu_item {
   @extend %paragragh-font-14;
-  text-transform: uppercase;
-  display: inline;
-  border: none;
   @extend %img_none;
+
+  border: none;
+  display: inline;
+  text-transform: uppercase;
+
   &:hover {
     color: $color-gray-600;
     cursor: pointer;
   }
+
   &.selected {
-    padding-bottom: 4px;
     border-bottom: 2px solid $color-dark-red;
+    padding-bottom: 4px;
   }
 }
 // * menu item row end *//

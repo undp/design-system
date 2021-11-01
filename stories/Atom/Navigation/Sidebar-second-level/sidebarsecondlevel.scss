@@ -1,14 +1,17 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 // * Slidebar Second level start *//
 .sidebar_item__sub {
-  padding: 16px 24px 16px 32px;
   @extend %paragragh-font-16;
+
+  padding: 16px 24px 16px 32px;
+
   @include devicebreak(medium) {
     padding-left: 48px;
   }
+
   &:hover {
     background-color: $color-gray-200;
   }

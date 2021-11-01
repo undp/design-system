@@ -11,30 +11,38 @@
   margin-bottom: $spacing-16;
   margin-top: $spacing-16;
   min-height: 28px;
+
   @include devicebreak(small) {
     font-size: 1.625rem;
   }
+
   span {
     font-size: $font-size-14;
   }
 }
+
 .grid_description {
   @extend %paragragh-font-14;
+
   color: $color-black;
   font-family: $Font-Family-ProximaRegular;
   font-weight: normal;
   margin-bottom: 20px;
 }
+
 .grid--layout {
   background-color: $color-gray-300;
   height: $spacing-48;
   margin-bottom: $spacing-08;
+
   &:nth-child(odd) {
     background-color: $color-gray-200;
   }
+
   .column {
     font-size: 0.813rem;
     padding: 10px;
   }
 }
+
 /* layout end */

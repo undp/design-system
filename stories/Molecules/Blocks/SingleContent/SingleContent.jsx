@@ -64,5 +64,5 @@ export const SingleContent = ({
 
 SingleContent.defaultProps = {
   type: 'Image',
-  colors: 'Yellow'
+  colors: 'Yellow',
 };

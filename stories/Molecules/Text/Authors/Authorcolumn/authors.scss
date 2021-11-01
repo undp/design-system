@@ -9,43 +9,43 @@
     display: inline-flex;
     margin-bottom: $spacing-24;
     width: 100%;
-    
-    &.author-3-col {
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
-      width: calc(50% - 1rem);
-  
-      .author__label {
-        padding: 0;
-        width: 100%;
-      }
-  
-      .author__img {
-        display: none;
-      }
-    }
-  
+
     @include devicebreak(medium) {
       margin-left: 0.5rem;
       margin-right: 0.5rem;
-  
+
       &.author-12-col {
         width: calc(100% - 1rem);
       }
-  
+
       &.author-6-col {
         width: calc(50% - 1rem);
       }
-  
+
       &.author-4-col {
         width: calc(33% - 1rem);
       }
-  
+
       &.author-3-col {
         width: calc(25% - 1rem);
       }
     }
-  }  
+
+    &.author-3-col {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      width: calc(50% - 1rem);
+
+      .author__label {
+        padding: 0;
+        width: 100%;
+      }
+
+      .author__img {
+        display: none;
+      }
+    }
+  }
 }
 
 .author__label {
