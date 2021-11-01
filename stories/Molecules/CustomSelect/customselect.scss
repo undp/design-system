@@ -1,0 +1,111 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+
+.select-box {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  font-weight: 400;
+  height: 52px;
+  max-width: 100%;
+  max-width: 300px;
+  position: relative;
+
+  &.expanded {
+    .selected {
+      &::after {
+        @include transform(translateY(-50%) rotate(-180deg));
+      }
+    }
+
+    .options {
+      border-top: 0;
+      display: block;
+    }
+  }
+
+  .selected {
+    background: $color-white;
+    border: 2px solid $color-black;
+    cursor: pointer;
+    display: block;
+    font-family: $Font-Family-ProximaSemiBold;
+    font-size: $font-size-16;
+    max-width: 100%;
+    min-width: 300px;
+    padding: 16px 50px 16px 16px;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+
+    &::after {
+      @extend %arrow;
+    }
+  }
+}
+
+.options-container {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-top: 0;
+  border-top-color: rgb(0, 0, 0);
+  border-top-style: solid;
+  border-top-width: 2px;
+  box-sizing: border-box;
+  display: none;
+  max-height: 300px;
+  order: 1;
+  padding: 0 16px;
+  position: absolute;
+  top: 51px;
+  transition: all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05);
+  width: 100%;
+  z-index: 20;
+
+  &.active {
+    display: block;
+    overflow-y: auto;
+  }
+
+  &::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.option {
+  border-top: 1px solid #d4d6d8;
+  cursor: pointer;
+  display: block;
+  padding: 0;
+  position: relative;
+
+  span {
+    display: block;
+    margin: 0 -16px;
+    padding: 15px 16px;
+    &:hover { background-color: #fafafa; }
+  }
+}
+
+[dir='rtl'] {
+  .select-box {
+    .selected {
+      padding-left: 50px;
+      padding-right: 16px;
+      text-align: right;
+
+      &::after {
+        left: 22px;
+        margin: 0;
+        right: auto;
+      }
+    }
+  }
+}
