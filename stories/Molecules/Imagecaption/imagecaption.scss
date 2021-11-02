@@ -26,21 +26,21 @@
     }
 
     & + .image--author {
+      border-top: 1px solid $color-gray-500;
       display: flex;
       flex-shrink: 0;
       flex-wrap: wrap;
       margin-bottom: $spacing-16;
       padding-top: $spacing-16;
-      border-top: 1px solid $color-gray-500;
 
       @include devicebreak(medium) {
         border-left: 1px solid $color-gray-500;
+        border-top: 0;
         display: block;
         margin-bottom: 0;
-        padding-top: 0;
         min-width: 180px;
-        border-top: 0;
         padding-left: $spacing-32;
+        padding-top: 0;
       }
 
       .author--label {

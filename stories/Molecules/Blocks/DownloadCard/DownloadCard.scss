@@ -1,51 +1,61 @@
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
 /* download card start */
 .download-card {
   display: inline-block;
+
   @include devicebreak(medium) {
     min-width: 330px;
   }
+
   &:hover {
     .download-icon {
-      height: 24px;
       background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
+      height: 24px;
     }
+
     .publication_thumbnail__image {
       &::after {
         opacity: 0.75;
       }
     }
+
     .card_thumbnail__image {
       &::before {
         opacity: 0.75;
       }
     }
   }
+
   &__description {
     background: $color-gray-100;
     padding: $spacing-24;
   }
 }
 
-.download-card  {
+.download-card {
   &__title {
     @extend %paragragh-font-20;
+
     margin-bottom: $spacing-04;
   }
+
   &__format {
     @extend %paragragh-font-16;
-    margin-bottom: $spacing-16;
+
     color: $color-gray-600;
+    margin-bottom: $spacing-16;
   }
+
   &__download {
     @extend %paragragh-font-16;
-    font-family: $Font-Family-ProximaBold;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    display: flex;
+
     align-items: center;
+    display: flex;
+    font-family: $Font-Family-ProximaBold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
   }
 }
 
@@ -63,4 +73,5 @@
     }
   }
 }
+
 /* download card end */

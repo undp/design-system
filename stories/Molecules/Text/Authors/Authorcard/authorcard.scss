@@ -2,9 +2,11 @@
 @import '../../../../assets/scss/variables';
 
 .authorcard {
+  @extend %img_none;
+
   border: 0;
   display: block;
-  @extend %img_none;
+
   .author-wrapper {
     padding-top: 24px;
 

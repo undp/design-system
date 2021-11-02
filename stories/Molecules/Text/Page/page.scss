@@ -1,19 +1,22 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 .Page-title {
   h2 {
+    font-family: $Font-Family-SohneBold;
     margin-bottom: 20px;
     text-transform: uppercase;
-    font-family: $Font-Family-SohneBold;
   }
+
   h4 {
     font-family: $Font-Family-ProximaLight;
     margin-bottom: $spacing-08;
   }
+
   &--white {
-    h2, h4 {
+    h2,
+    h4 {
       color: $color-white;
     }
   }

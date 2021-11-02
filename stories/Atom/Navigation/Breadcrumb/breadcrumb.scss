@@ -1,15 +1,17 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 // * breadcrumb start *//
 .breadcrumb__item {
+  @extend %border-none;
+  @extend %img_none;
+
+  color: $color-dark-red;
   font-family: $Font-Family-ProximaSemiBold;
   font-size: 12px;
   text-transform: uppercase;
-  color: $color-dark-red;
-  @extend %border-none;
-  @extend %img_none;
+
   &:hover {
     color: $color-red;
   }

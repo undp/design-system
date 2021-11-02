@@ -1,5 +1,5 @@
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 /* Tab start */
 .tab__items {
@@ -34,7 +34,7 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .tab__items {
     padding-left: 0;
     padding-right: $spacing-48;
@@ -45,4 +45,5 @@
     }
   }
 }
+
 /* Tab end */

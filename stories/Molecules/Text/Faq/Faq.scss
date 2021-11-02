@@ -1,6 +1,6 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 /* Accordian start */
 .accordion {
@@ -10,45 +10,52 @@
 
 .accordion__item {
   border-bottom: 1px solid $color-gray-500;
-  position: relative;
-  padding: $spacing-16 0 $spacing-24;
   cursor: pointer;
-  overflow: hidden;
   list-style: none;
+  overflow: hidden;
+  padding: $spacing-16 0 $spacing-24;
+  position: relative;
+
   &::before {
-    content: "";
-    background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
-    float: right;
-    width: 20px;
-    height: 20px;
-    border-top-color: #f3f3f3;
     @include transition(0.1s ease);
+
+    background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
+    border-top-color: #f3f3f3;
+    content: '';
+    float: right;
+    height: 20px;
     margin-left: $spacing-24;
+    width: 20px;
   }
+
   .accordion__heading {
     margin-bottom: 0;
   }
+
   &.accordion--active {
     .accordion__heading {
       margin-bottom: 10px;
       padding-right: $spacing-24;
+
       @include devicebreak(medium) {
         margin-bottom: 0;
         padding-bottom: $spacing-16;
       }
     }
+
     &::before {
-        @include transform(rotateZ(180deg));
+      @include transform(rotateZ(180deg));
     }
   }
 }
 
 [dir='rtl'] {
   .accordion__item {
-    &::before { 
+    &::before {
       float: left;
     }
   }
+
   .accordion--active {
     .accordion__heading {
       padding-right: 0;
@@ -57,11 +64,13 @@
 }
 
 .accordion__panel {
-  padding: $spacing-32;
-  height: auto;
   display: none;
+  height: auto;
+  padding: $spacing-32;
+
   @include devicebreak(medium) {
     padding: $spacing-40;
   }
 }
+
 /* Accordian end */

@@ -58,15 +58,6 @@
 
   &--xl {
     max-width: 351px;
-    
-    .statscard__box {
-      padding: $spacing-40;
-    }
-
-    .statscard__number {
-      font-size: 5.625rem;
-      line-height: 98.1px;
-    }
 
     @include devicebreak(medium) {
       max-width: 684px;
@@ -75,19 +66,19 @@
         padding: $spacing-96;
       }
     }
-  }
-
-  &--lg {
-    max-width: 351px;
 
     .statscard__box {
       padding: $spacing-40;
     }
 
-    .statscard__per {
-      font-size: $font-size-25;
-      line-height: 28.55px;
+    .statscard__number {
+      font-size: 5.625rem;
+      line-height: 98.1px;
     }
+  }
+
+  &--lg {
+    max-width: 351px;
 
     @include devicebreak(medium) {
       max-width: 448px;
@@ -101,10 +92,28 @@
         line-height: 34.26px;
       }
     }
+
+    .statscard__box {
+      padding: $spacing-40;
+    }
+
+    .statscard__per {
+      font-size: $font-size-25;
+      line-height: 28.55px;
+    }
   }
 
   &--md {
     max-width: 351px;
+
+    @include devicebreak(medium) {
+      max-width: 330px;
+
+      .statscard__per {
+        font-size: 2.188rem;
+        line-height: 39.97px;
+      }
+    }
 
     .statscard__per {
       font-size: $font-size-25;
@@ -119,39 +128,10 @@
       font-size: $font-size-20;
       line-height: 27.5px;
     }
-
-    @include devicebreak(medium) {
-      max-width: 330px;
-
-      .statscard__per {
-        font-size: 2.188rem;
-        line-height: 39.97px;
-      }
-    }
   }
 
   &--sm {
     max-width: 170px;
-
-    .statscard__box {
-      padding: $spacing-24;
-    }
-
-    .statscard__number {
-      font-size: 3.125rem;
-      line-height: 54.5px;
-      margin-bottom: $spacing-16;
-    }
-
-    .statscard__per {
-      font-size: $font-size-20;
-      line-height: 22.84px;
-    }
-
-    p {
-      font-size: $font-size-14;
-      line-height: 19.25px;
-    }
 
     @include devicebreak(medium) {
       max-width: 212px;
@@ -176,6 +156,26 @@
         font-size: $font-size-16;
         line-height: 22px;
       }
+    }
+
+    .statscard__box {
+      padding: $spacing-24;
+    }
+
+    .statscard__number {
+      font-size: 3.125rem;
+      line-height: 54.5px;
+      margin-bottom: $spacing-16;
+    }
+
+    .statscard__per {
+      font-size: $font-size-20;
+      line-height: 22.84px;
+    }
+
+    p {
+      font-size: $font-size-14;
+      line-height: 19.25px;
     }
   }
 

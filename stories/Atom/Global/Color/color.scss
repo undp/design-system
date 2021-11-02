@@ -1,98 +1,118 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 /* color  */
 .color-wrapper {
   display: block;
+
   @include devicebreak(medium) {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
+
   .color__row {
     width: calc(100%);
+
     @include devicebreak(medium) {
       width: calc(100% / 2 - 10px);
     }
+
     &.full {
       width: calc(100%);
     }
+
     .color__title {
-      font-family: $Font-Family-ProximaRegular;
-      font-weight: normal;
-      font-size: 13px;
       color: $color-black;
+      font-family: $Font-Family-ProximaRegular;
+      font-size: 13px;
+      font-weight: normal;
       min-height: 28px;
+
       @include devicebreak(medium) {
         font-size: 16px;
       }
     }
+
     .color__define_wrapper {
       display: block;
     }
+
     .color__define {
       display: flex;
       margin-bottom: 20px;
+
       .color__name {
+        flex-basis: 0;
+        flex-grow: 1;
         margin: 8px 0;
         text-align: center;
-        flex-grow: 1;
-        flex-basis: 0;
 
         @include devicebreak(medium) {
-          flex-grow: 1;
           flex-basis: 0;
+          flex-grow: 1;
         }
+
         .Primary-text {
-          text-align: center;
-          margin-top: -31px;
-          font-family: $Font-Family-ProximaRegular;
-          font-weight: normal;
-          font-size: 12px;
           color: $color-black;
-          @include devicebreak(medium) { 
-             margin-top: -37px;
+          font-family: $Font-Family-ProximaRegular;
+          font-size: 12px;
+          font-weight: normal;
+          margin-top: -31px;
+          text-align: center;
+
+          @include devicebreak(medium) {
+            margin-top: -37px;
           }
+
           .polygon {
             img {
+              display: block;
               margin: 0 auto;
               width: 10px;
-              display: block;
             }
           }
         }
+
         .color__box {
-          width: 100%;
           height: 48px;
           margin-bottom: 10px;
+          width: 100%;
 
           @include devicebreak(medium) {
             height: 70px;
           }
+
           @include devicebreak(medium) {
-            width: 100%;
             height: 85px;
+            width: 100%;
           }
 
           &.p-blue-100 {
             background-color: $color-blue-100;
           }
+
           &.p-blue-200 {
             background-color: $color-blue-200;
           }
+
           &.p-blue-300 {
             background-color: $color-blue-300;
           }
+
           &.p-blue-400 {
             background-color: $color-blue-400;
           }
+
           &.p-blue-500 {
             background-color: $color-blue-500;
           }
+
           &.p-blue-600 {
             background-color: $color-blue-600;
           }
+
           &.p-blue-700 {
             background-color: $color-blue-700;
           }
@@ -100,21 +120,27 @@
           &.p-gray-100 {
             background-color: $color-gray-100;
           }
+
           &.p-gray-200 {
             background-color: $color-gray-200;
           }
+
           &.p-gray-300 {
             background-color: $color-gray-300;
           }
+
           &.p-gray-400 {
             background-color: $color-gray-400;
           }
+
           &.p-gray-500 {
             background-color: $color-gray-500;
           }
+
           &.p-gray-600 {
             background-color: $color-gray-600;
           }
+
           &.p-gray-700 {
             background-color: $color-gray-700;
           }
@@ -122,9 +148,11 @@
           &.light-yellow {
             background-color: $color-light-yellow;
           }
+
           &.yellow {
             background-color: $color-yellow;
           }
+
           &.dark-yellow {
             background-color: $color-dark-yellow;
           }
@@ -132,9 +160,11 @@
           &.light-red {
             background-color: $color-light-red;
           }
+
           &.red {
             background-color: $color-red;
           }
+
           &.dark-red {
             background-color: $color-dark-red;
           }
@@ -142,9 +172,11 @@
           &.light-green {
             background-color: $color-light-green;
           }
+
           &.green {
             background-color: $color-green;
           }
+
           &.dark-green {
             background-color: $color-dark-green;
           }
@@ -152,32 +184,39 @@
           &.light-azure {
             background-color: $color-light-azure;
           }
+
           &.azure {
             background-color: $color-azure;
           }
+
           &.dark-azure {
             background-color: $color-dark-azure;
           }
         }
+
         .color__code {
           font-family: $Font-Family-ProximaRegular;
-          font-weight: normal;
           font-size: 9px;
+          font-weight: normal;
           line-height: normal;
+
           @include devicebreak(medium) {
             display: flex;
-            line-height: 22px;
             font-size: 10px;
+            line-height: 22px;
           }
         }
       }
     }
+
     .color__define_balance {
-      width: 100%;
       display: flex;
+      width: 100%;
+
       .color__name {
         margin: 8px 0;
         text-align: center;
+
         .color__box {
           height: 100%;
           height: 48px;
@@ -186,59 +225,72 @@
           @include devicebreak(large) {
             height: 70px;
           }
+
           @include devicebreak(medium) {
-            width: 100%;
             height: 85px;
+            width: 100%;
           }
+
           &.p-gray-100 {
             background-color: $color-gray-100;
           }
+
           &.p-gray-200 {
             background-color: $color-gray-200;
           }
+
           &.p-gray-400 {
             background-color: $color-gray-400;
           }
+
           &.p-gray-700 {
             background-color: $color-gray-700;
           }
+
           &.p-blue-600 {
             background-color: $color-blue-600;
           }
+
           &.dark-red {
             background-color: $color-dark-red;
           }
         }
+
         .color__code {
           font-family: $Font-Family-ProximaRegular;
-          font-weight: normal;
           font-size: 10px;
+          font-weight: normal;
           line-height: 22px;
         }
 
         &.bl-1 {
+          height: 75px;
           width: 45%;
-          height: 75px;
         }
+
         &.bl-2 {
+          height: 75px;
           width: 12%;
-          height: 75px;
         }
+
         &.bl-3 {
+          height: 75px;
           width: 15%;
-          height: 75px;
         }
+
         &.bl-4 {
+          height: 75px;
           width: 18%;
-          height: 75px;
         }
+
         &.bl-5 {
+          height: 75px;
           width: 8%;
-          height: 75px;
         }
+
         &.bl-6 {
-          width: 5%;
           height: 75px;
+          width: 5%;
         }
       }
     }

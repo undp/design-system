@@ -1,63 +1,76 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 // * footer icons start *//
 .footer__icons {
   display: flex;
   padding-left: 0;
+
   li {
     list-style: none;
+
     a {
-      display: block;
       background: url(#{$img-path-Icon}/social_icon.png) no-repeat;
-      width: 30px;
-      height: 25px;
       border: none;
+      display: block;
+      height: 25px;
       margin-right: $spacing-24;
+      width: 30px;
 
       &.facebook {
         background-position: 5px -2px;
       }
+
       &.instragram {
         background-position: -90px -3px;
       }
+
       &.linkedIn {
         background-position: -139px -2px;
       }
+
       &.twitter {
         background-position: -43px -2px;
       }
+
       &.youtube {
         background-position: -187px -2px;
       }
     }
   }
+
   &--white {
     li {
       a {
-      &.facebook {
-        background-position: 5px -27px;
+        &.facebook {
+          background-position: 5px -27px;
+        }
+
+        &.instragram {
+          background-position: -90px -27px;
+        }
+
+        &.linkedIn {
+          background-position: -139px -28px;
+        }
+
+        &.twitter {
+          background-position: -43px -27px;
+        }
+
+        &.youtube {
+          background-position: -187px -27px;
+        }
       }
-      &.instragram {
-        background-position: -90px -27px;
-      }
-      &.linkedIn {
-        background-position: -139px -28px;
-      }
-      &.twitter {
-        background-position: -43px -27px;
-      }
-      &.youtube {
-        background-position: -187px -27px;
-      }
-    }
     }
   }
 }
-[dir="rtl"] {
+
+[dir='rtl'] {
   .footer__icons {
     padding-right: 0;
+
     li {
       a {
         margin-left: $spacing-24;

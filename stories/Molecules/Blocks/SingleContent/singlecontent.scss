@@ -2,11 +2,13 @@
 @import '../../../assets/scss/mixins';
 
 .singlecard {
+  @extend %img_none;
+
   border: 0;
   border-top: 2px solid $color-black;
   display: block;
   margin-bottom: $spacing-24;
-  @extend %img_none;
+
   & .singlecard__head {
     font-family: $Font-Family-ProximaBold;
     font-size: 12px;
@@ -18,6 +20,7 @@
 
   & .card_thumbnail__image {
     width: 100%;
+
     img {
       width: 100%;
     }
@@ -38,13 +41,15 @@
     line-height: 22px;
   }
 
-  &--Card, &--Card-yellow  {
+  &--Card,
+  &--Card-yellow {
     .cta__link {
       margin-top: $spacing-96;
     }
   }
 
-  &--Image, &--Card  {
+  &--Image,
+  &--Card {
     &.singlecard--Yellow {
       background-color: $color-white;
     }
@@ -59,28 +64,28 @@
         background-color: $color-white;
       }
     }
-    
+
     &.singlecard--Red {
       .card_thumbnail__image {
-         &::before {
+        &::before {
           @include background-image(42deg, $color-red, transparent 80%);
-        } 
+        }
       }
     }
 
     &.singlecard--Green {
       .card_thumbnail__image {
-         &::before {
+        &::before {
           @include background-image(42deg, $color-green, transparent 80%);
-        } 
+        }
       }
     }
 
     &.singlecard--Blue {
       .card_thumbnail__image {
-         &::before {
-           @include background-image(42deg, $color-azure, transparent 80%);
-        } 
+        &::before {
+          @include background-image(42deg, $color-azure, transparent 80%);
+        }
       }
     }
   }
@@ -93,28 +98,32 @@
     }
   }
 
-  &--Red, &--Green, &--Blue, &--Gray {
+  &--Red,
+  &--Green,
+  &--Blue,
+  &--Gray {
     background-color: $color-white;
   }
-  
-  &--Red:hover{
+
+  &--Red:hover {
     background-color: $color-red;
   }
 
-  &--Green:hover{
+  &--Green:hover {
     background-color: $color-green;
   }
 
-  &--Blue:hover{
+  &--Blue:hover {
     background-color: $color-azure;
   }
 
-  &--Gray:hover{
+  &--Gray:hover {
     background-color: $color-gray-100;
   }
 
   &:hover {
     @include transition(0.2s ease);
+
     .card_thumbnail__image::before {
       opacity: 0.75;
     }
