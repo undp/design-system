@@ -9,8 +9,8 @@ export const StatsPanel = ({ number, percent, content }) => (
       style={{ backgroundImage: `url(${BackgroundImg})` }}
     />
     <div className="statspanel__box">
-      <span className="statspanel__number">{number}</span>
-      <span className="statspanel__per">{percent}</span>
+      <div className="statspanel__number">{number}</div>
+      <div className="statspanel__per">{percent}</div>
       <p>{content}</p>
     </div>
   </div>
