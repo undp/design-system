@@ -1,17 +1,26 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
 
-.stats-card-row{
-    .statscard{
-        &--sm{
+.stats-card-conatiner{
+    .stats-card-row{
+        &:first-child{
             margin-bottom: 2.5rem;
-            @include devicebreak(medium){
-                //max-width: 330px;
-            }
-            @include devicebreak(small){
-                //max-width: 330px;
+        }
+        .statscard{
+            &--sm{
+                
+                @include devicebreak(medium){
+                    max-width: 330px;
+                }
+                @include devicebreak(small){
+                    max-width: 330px;
+                }
             }
         }
     }
-    
+    .stats-parallax-container{
+        @include devicebreak(small){
+            display: none !important;
+        }
+    }
 }
