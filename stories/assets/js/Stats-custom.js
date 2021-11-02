@@ -1,17 +1,14 @@
 /* Stats JS start custom */
-export function StatsFun() {
-  var winHieght = $(window).height() - 378;
-  var newWinHeight = winHieght / 2;
-  //console.log(winHieght);
-  //console.log(newWinHeight);
-  $(window).scroll(function() {
-    //var topScroll = $(window).scrollTop();
-    $('.stats-grid .statspanel').each(function() {
-      var topSpace = $(this).offset().top >= newWinHeight;
-      var bottomSpace = $(this).offset().top <= newWinHeight + 378;
-      if (topSpace && bottomSpace){
+export function StatsFun(ele) {
+  const eleHieght = $(ele).height();
+  const eleTop = $(window).height() - eleHieght;
+  const eleBottom = $(window).height() + eleHieght;
+  $(window).scroll(() => {
+    $(ele).each(function () {
+      const eleTopOffset = ($(this).offset().top - $(window).scrollTop()) * 3;
+      if (eleTopOffset > eleTop && (eleTopOffset + $(this).height()) < eleBottom) {
         $(this).addClass('active');
-        } else {
+      } else {
         $(this).removeClass('active');
       }
     });
