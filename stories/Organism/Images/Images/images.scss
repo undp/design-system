@@ -70,8 +70,15 @@
   [dir='rtl'] {
     .image {
       &-section--portrait {
-        .image__caption {
-          margin: 0 $spacing-24 0 0;
+        .image {
+          &__caption {
+            margin: 0 $spacing-24 0 0;
+          }
+
+          &--author {
+            border-right: 0;
+            padding-right: 0;
+          }
         }
       }
     }
