@@ -1,3 +1,5 @@
+import './UNDP';
+
 class Select {
   constructor(element) {
     this.$window = $(window);
