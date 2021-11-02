@@ -1,0 +1,39 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+.toggleSearch{
+  text-decoration: underline;
+  background: none;
+  border:0;
+  border-bottom: 1px solid $color-black;
+  padding:0 0 10px;
+  cursor: pointer;
+
+}
+.select-wrapper{
+  display:none;
+  &.show_filter{
+    display: block;
+  }
+  .multi-select{padding-top: $spacing-24;}
+}
+.Selected_chips{
+  padding-top: $spacing-24;
+  .chips{margin: 0 $spacing-12 $spacing-12 0;
+  }
+}
+.clear_chips{
+font-size:$font-size-16;
+border-bottom:1px solid $color-red;
+cursor:pointer;
+padding-bottom:$spacing-04;
+}
+
+[dir='rtl'] {
+.Selected_chips {
+    .chips {
+      margin: 0 0 $spacing-12 $spacing-12;
+    }
+  }
+}

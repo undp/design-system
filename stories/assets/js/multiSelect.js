@@ -1,7 +1,6 @@
 class MultiSelect {
   constructor(element) {
     this.classOpen = 'open';
-
     this.$window = $(window);
     this.$currentSelect = $(element);
     this.$selectTrigger = this.$currentSelect.find('.select-control');
