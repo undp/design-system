@@ -9,26 +9,21 @@
   background: $color-white url('../../assets/images/Icon/Chevron-down.svg') no-repeat right 22px center;
   border: 2px solid $color-black;
   border-radius: 0;
-  color: #000;
+  color: $color-black;
   cursor: pointer;
-  display: flex;
   display: block;
-  flex-direction: column;
   font-family: $Font-Family-ProximaSemiBold;
   font-size: $font-size-16;
-  font-weight: 400;
-  max-width: 100%;
   min-width: 300px;
-  padding: 16px 50px 16px 16px;
+  padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
   position: relative;
-  text-align: left;
   text-transform: uppercase;
 }
 
 [dir='rtl'] {
   .select-default {
     background-position: left 22px center;
-    padding: 16px 16px 16px 50px;
+    padding: $spacing-16 $spacing-16 $spacing-16 $spacing-50;
     text-align: right;
   }
 }

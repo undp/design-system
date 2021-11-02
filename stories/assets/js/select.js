@@ -153,11 +153,6 @@ class Select {
     }
   }
 }
-// const customSelect = () => {
-//  const selects = $('[data-multi-select]');
-//  select.map((items, i) => {
-//
-//  });
-// };
+
 
 export default Select;
