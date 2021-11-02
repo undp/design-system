@@ -85,6 +85,12 @@
     @extend %inviewport_opacity_only;
   }
 }
+.expand-to-size {
+  max-width: calc(100% - 1rem);
+  @include devicebreak(medium) {
+    max-width: calc(100% - 3rem);
+  }
+}
 
 [dir='rtl'] {
   .left-right {

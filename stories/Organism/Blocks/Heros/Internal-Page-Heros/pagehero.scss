@@ -7,6 +7,7 @@
   &-wrapper {
     min-height: 642px;
     position: relative;
+    @extend %expand_to_size;
 
     @include devicebreak(medium) {
       min-height: 746px;
