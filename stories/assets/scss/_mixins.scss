@@ -327,6 +327,12 @@
   @include transform(translateX(0));
 }
 
+%expand_to_size {
+  margin: 0 auto;
+  max-width: 100%;
+  @include transition(max-width .5s ease); 
+}
+
 /* animation end */
 
 @mixin background-image($deg, $colorname, $opacity) {
