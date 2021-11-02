@@ -1,0 +1,18 @@
+.frosted-overlay {
+  position: relative;
+  
+  &::before {
+    background: rgba(247, 247, 247, 0.8);
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 62%;
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
+  }
+
+  img {
+    display: block;
+    object-fit: cover;
+  }
+}

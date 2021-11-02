@@ -35,17 +35,64 @@
   }
 }
 
-.left-right {
-  @extend %left-to-right;
+.Scrollbar-horizontal {
+  &::-webkit-scrollbar-track {
+     background: linear-gradient(0deg, transparent 10%, $color-black 33%, transparent 0);
+  }
+  &::-webkit-scrollbar {
+    height: 4px;
+    margin-right: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-black;
+  }
 }
 
-.inviewport {
-  @extend %in__viewport;
+.Scrollbar-vertical {
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, transparent 10%, $color-black 33%, transparent 0);
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+    margin-right: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-black;
+  }
+}
+
+/* animation start */
+.left-right {
+  @extend %left-to-right;
+
+  &.inviewport {
+    @extend %inviewport_left_right;
+  }
+}
+
+.scale-up {
+  @extend %scale-up;
+
+  &.inviewport {
+    @include transform(scale(1));
+  }
+}
+
+.opacity-only {
+  @extend %opacity-only;
+
+  &.inviewport {
+    @extend %inviewport_opacity_only;
+  }
 }
 
 [dir='rtl'] {
   .left-right {
     @include transform(translateX(100px));
+
+    &.inviewport {
+      @extend %inviewport_left_right;
+    }
   }
 }
 
