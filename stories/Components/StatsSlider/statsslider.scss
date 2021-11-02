@@ -2,25 +2,24 @@
 @import '../../assets/scss/variables';
 
 .stats-card-conatiner{
-    .stats-card-row{
-        &:first-child{
-            margin-bottom: 2.5rem;
-        }
-        .statscard{
-            &--sm{
-                
-                @include devicebreak(medium){
-                    max-width: 330px;
-                }
-                @include devicebreak(small){
-                    max-width: 330px;
-                }
-            }
-        }
+  .stats-card-row{
+    &:first-child{
+      margin-bottom: 2.5rem;
     }
-    .stats-parallax-container{
+    .statscard{
+      &--sm{
+        @include devicebreak(medium){
+          max-width: 330px;
+        }
         @include devicebreak(small){
-            display: none !important;
+          max-width: 330px;
         }
+      }
     }
+  }
+  .stats-parallax-container{
+    @include devicebreak(small){
+      display: none !important;
+    }
+  }
 }
