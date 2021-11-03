@@ -13,19 +13,22 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Atoms/Reach Elements/Table" component={TableTag}  
+<Meta title="Atoms/Reach Elements/Table" component={TableTag}
   argTypes={{
     size: {
         options: ['large', 'small'],
-        control: { type: 'radio' }
+        control: { type: 'radio' },
+        defaultValue: 'large'
     },
     variant: {
-        options: ['default', 'striped', 'border'],
-        control: { type: 'radio' }
+        options: ['default-style', 'striped', 'border'],
+        control: { type: 'radio' },
+        defaultValue: 'default-style'
     },
     responsive: {
-        options: ['stacked', 'default', 'scroll'],
-        control: { type: 'radio' }
+        options: ['stacked', 'auto', 'scroll'],
+        control: { type: 'radio' },
+        defaultValue: 'auto'
     }
   }}/>
 
@@ -49,7 +52,7 @@ Tables are used to make large volumes of data easy to understand and access, Tab
 
 <div classname="subheading">Modifier</div>
 
-<code>Default</code> <code>striped</code> <code>border</code> <code>small</code> <code>stacked</code> <code>scroll</code> 
+<code>Default</code> <code>striped</code> <code>border</code> <code>small</code> <code>stacked</code> <code>scroll</code>
 
 
 <Story name="Table">

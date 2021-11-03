@@ -4,14 +4,13 @@
 
 body {
   color: $color-black;
-  font-family: $Font-Family-ProximaRegular;
+  font-family: $Font-Family-ProximaNova;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 1.4;
 
   @include devicebreak(medium) {
     font-size: 1.25rem;
-    line-height: 28px;
   }
 }
 
@@ -22,7 +21,6 @@ h4,
 h5,
 h6,
 caption {
-  font-family: $Font-Family-ProximaRegular;
   margin: 0;
   margin-bottom: 12px;
   padding: 0;
@@ -115,14 +113,12 @@ h6 {
 }
 
 p {
-  font-family: $Font-Family-ProximaRegular;
   font-size: 1rem;
-  line-height: 22px;
+  line-height: 1.4;
   margin-top: 0;
 
   @include devicebreak(medium) {
     font-size: 1.25rem;
-    line-height: 27px;
   }
 }
 

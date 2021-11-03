@@ -77,7 +77,6 @@
 
 // basic font
 %paragragh-font-14 {
-  font-family: $Font-Family-ProximaRegular;
   font-size: 12px;
   line-height: 16px;
 
@@ -88,7 +87,6 @@
 }
 
 %paragragh-font-16 {
-  font-family: $Font-Family-ProximaRegular;
   font-size: $font-size-14;
   line-height: 20px;
 
@@ -109,7 +107,6 @@
 }
 
 %paragragh-font-24 {
-  font-family: $Font-Family-ProximaRegular;
   font-size: $font-size-20;
   line-height: 23px;
 
@@ -132,7 +129,7 @@
 
 %border-none {
   border: none;
-  
+
   @extend %img_none;
 
 }
@@ -257,7 +254,7 @@
 }
 
 %language_switcher {
-  font-family: $Font-Family-ProximaRegular;
+  font-family: $Font-Family-ProximaNova;
   font-size: $font-size-14;
   font-weight: 600;
   border: none;
@@ -330,11 +327,11 @@
 %expand_to_size {
   margin: 0 auto;
   max-width: 100%;
-  @include transition(max-width .5s ease); 
+  @include transition(max-width .5s ease);
 }
 
 /* animation end */
 
 @mixin background-image($deg, $colorname, $opacity) {
-  background: linear-gradient($deg, $colorname, $opacity);  
+  background: linear-gradient($deg, $colorname, $opacity);
 }

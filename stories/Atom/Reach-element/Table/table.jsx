@@ -47,7 +47,7 @@ export const TableTag = ({ text, tdtext, details, variant, size, responsive, ...
 };
 
 TableTag.defaultProps = {
-	variant: 'default',
+	variant: 'default-style',
 	size: 'large',
-	responsive: 'default',
+	responsive: 'auto',
 };
