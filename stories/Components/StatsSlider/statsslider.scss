@@ -1,7 +1,18 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
+@import '../../assets/scss/glideslider';
 
 .stats-card-conatiner{
+  .stats-parallax-container{
+    @include devicebreak(small){
+      display: none !important;
+    }
+  }
+  .stats-card-slider{
+    @include devicebreak(medium){
+      display: none !important;
+    }
+  }
   .stats-card-row{
     &:first-child{
       margin-bottom: 2.5rem;
@@ -11,15 +22,43 @@
         @include devicebreak(medium){
           max-width: 330px;
         }
-        @include devicebreak(small){
-          max-width: 330px;
-        }
       }
     }
   }
-  .stats-parallax-container{
-    @include devicebreak(small){
-      display: none !important;
+}
+.stats-card-slider{
+  .glide{
+    &__slides{
+      margin-top: 34px;
+    }
+    &__bullets{
+      display: flex;
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        top: 0.5px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        border-bottom: 1px solid #000;
+        z-index: 1;
+      }
+    }
+    &__bullet{
+      flex-grow: 1;
+      border-radius: 0;
+      height: 4px;
+      border: none;
+      background: transparent;
+      position: relative;
+      z-index: 2;
+      -webkit-transition: all .8s ease-in-out;
+      transition: all .8s ease-in-out;
+      cursor: pointer;
+      &--active{
+        background: #000;
+      }
     }
   }
 }

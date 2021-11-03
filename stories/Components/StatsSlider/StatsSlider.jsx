@@ -1,21 +1,22 @@
-import React, { } from 'react';
+import React, { Component, useEffect } from 'react';
 import { StatsCards } from '../../Molecules/Blocks/StatsCards/StatsCards';
-import '..//..//assets/js/glideslider.js';
-import '..//..//assets/js/SliderCustom.js';
+import { StatsSliderFun } from '../../assets/js/SliderCustom';
 import './statsslider.scss';
 
 export const StatsSlider = ({data}) => {
-
+  useEffect(() => {
+    StatsSliderFun();
+  },[])
   return (
     <div className="stats-card-conatiner">
       <div className="stats-parallax-container">
         <div className="grid-x grid-margin-x stats-card-row">
-          {data.map((item, index) => {
+          {data.slice(0, 3).map((item, index) => {
             return <StatsCards number ={item.numbername} percent={item.percentname} content={item.text} size='sm'/>
           })}
         </div>
         <div className="grid-x grid-margin-x stats-card-row">
-          {data.map((item, index) => {
+          {data.slice(3, 6).map((item, index) => {
             return <StatsCards number ={item.numbername} percent={item.percentname} content={item.text} size='sm'/>
           })}
         </div>
@@ -25,6 +26,9 @@ export const StatsSlider = ({data}) => {
           <button className="glide__bullet" data-glide-dir="=0"></button>
           <button className="glide__bullet" data-glide-dir="=1"></button>
           <button className="glide__bullet" data-glide-dir="=2"></button>
+          <button className="glide__bullet" data-glide-dir="=3"></button>
+          <button className="glide__bullet" data-glide-dir="=4"></button>
+          <button className="glide__bullet" data-glide-dir="=5"></button>
         </div>
         <div className="glide__track" data-glide-el="track">
           <ul className="glide__slides">
@@ -33,7 +37,6 @@ export const StatsSlider = ({data}) => {
             })}
           </ul>
         </div>
-        <div className="glide__track" data-glide-el="track">...</div>
       </div>
     </div>
   );
