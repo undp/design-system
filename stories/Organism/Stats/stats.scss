@@ -1,0 +1,20 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+.statspanel {
+  @include devicebreak(small) {
+    &.active {
+      &::after,.statspanel__image {
+        opacity: 1;
+      }
+      .statspanel__number {
+        text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
+        -webkit-text-stroke: 1px $color-gray-700;
+      }
+      .statspanel__box {
+        color: $color-gray-700;
+      }
+    }
+  }
+}
