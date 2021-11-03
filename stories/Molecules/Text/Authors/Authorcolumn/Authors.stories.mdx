@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { Author } from './Authors';
+import user from '../../../../assets/images/user.svg';
 
 export const oneArray = (locale) => {
   switch(locale) {
@@ -373,7 +374,7 @@ The Authors Component is created for showing the authors name, designation, and 
 <Story name="Author One">
   {(args, { globals: { locale } }) => {
     const caption = oneArray(locale);
-    return <Author data={caption} width="12"></Author>;
+    return <Author image={user} data={caption} width="1" size="medium-12"></Author>;
   }}
 </Story>
 
@@ -382,7 +383,7 @@ The Authors Component is created for showing the authors name, designation, and 
 <Story name="Authors Two">
   {(args, { globals: { locale } }) => {
     const caption = twoArray(locale);
-    return <Author data={caption} width="6"></Author>;
+    return <Author image={user} data={caption} width="2" size="medium-6"></Author>;
   }}
 </Story>
 
@@ -391,7 +392,7 @@ The Authors Component is created for showing the authors name, designation, and 
 <Story name="Authors Three">
   {(args, { globals: { locale } }) => {
     const caption = threeArray(locale);
-    return <Author data={caption} width="4"></Author>;
+    return <Author image={user} data={caption} width="3" size="medium-4"></Author>;
   }}
 </Story>
 
@@ -400,7 +401,7 @@ The Authors Component is created for showing the authors name, designation, and 
 <Story name="Authors Four">
   {(args, { globals: { locale } }) => {
     const caption = fourArray(locale);
-    return <Author data={caption} width="3"></Author>;
+    return <Author data={caption} width="4" size="large-3 small-6"></Author>;
   }}
 </Story>
 
@@ -409,7 +410,7 @@ The Authors Component is created for showing the authors name, designation, and 
 <Story name="Authors Five">
   {(args, { globals: { locale } }) => {
     const caption = fiveArray(locale);
-    return <Author data={caption} width="3"></Author>;
+    return <Author data={caption} width="4" size="large-3 small-6"></Author>;
   }}
 </Story>
 

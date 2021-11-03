@@ -1,0 +1,43 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
+/* Modal lightbox card start */
+.modal {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  background: rgba(247, 247, 247, 0.8);
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 837px;
+  height: 62vh;
+  background: $color-white;
+  position: relative;
+  padding: $spacing-80;
+  max-height: calc(100vh - 115px);
+  &::before {
+    content: "";
+    width: 44px;
+    height: 44px;
+    float: right;
+    margin: -48px -48px;
+    background: url(#{$img-path-Icon}/Times_circle.svg) no-repeat left center;
+  }
+}
+
+[dir="rtl"] {
+  .modal-content {
+    &::before {
+      float: left;
+    }
+  }
+}
+/* Modal lightbox card end */

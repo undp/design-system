@@ -1,15 +1,19 @@
 import React from 'react';
 import './authorimage.scss';
-import user from '../../../assets/images/user.svg';
 
-export const Authorimg = ({ src, alt, size }) => {
-  const image = {
-    src: user,
-    alt: 'user',
-  };
+export const size_options = {
+  Large: "large",
+  Small: "small",
+};
+
+export const Authorimg = ({ image, alt, ...args }) => {
   return (
-    <div className={['author__img', `author__img--${size}`].join(' ')}>
-      <img src={image.src} alt={image.alt} />
+    <div className={["author__img", `author__img--${size_options[`${args.variant}`]}`].join(" ")}>    
+      <img src={image} alt={image} />
     </div>
   );
+};
+
+Authorimg.defaultProps = {
+  size: "Large",
 };

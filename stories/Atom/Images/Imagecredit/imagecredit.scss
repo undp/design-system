@@ -1,11 +1,7 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/breakpoints';
 
-/* credit image */
-.image--author {
-  margin-bottom: 10px;
-}
-
+/* credit image*/
 .author__caption {
   color: $color-black;
   display: block;
@@ -21,6 +17,5 @@
 }
 
 .author--name {
-  font-family: $Font-Family-ProximaRegular;
-  font-weight: 700;
+    font-family: $Font-Family-ProximaBold;
 }

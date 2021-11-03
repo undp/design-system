@@ -296,21 +296,45 @@
   width: 100%;
 }
 
+/* animation start */
 %left-to-right {
   @include transform(translateX(-100px));
 
+  @include transition(transform 1.2s cubic-bezier(0.34, 0.41, 0.03, 1), opacity 1.2s cubic-bezier(0.34, 0.41, 0.03, 1));
   opacity: 0;
-  transition: transform 1.2s cubic-bezier(0.34, 0.41, 0.03, 1), opacity 1.2s cubic-bezier(0.34, 0.41, 0.03, 1);
   visibility: hidden;
 }
 
-%in__viewport {
+%inviewport_left_right {
   @include transform(translateX(0));
 
   opacity: 1;
-  transform: translateX(0);
   visibility: visible;
 }
+
+%scale-up {
+  @include transform(scale(.9));
+
+  @include transition(transform 1.2s cubic-bezier(.34,.41,.03,1));
+}
+
+%opacity-only {
+  opacity: 0;
+  @include transition(opacity 1.2s cubic-bezier(.34,.41,.03,1));
+}
+
+%inviewport_opacity_only {
+  opacity: 1;
+  @include transform(translateX(0));
+}
+
+%expand_to_size {
+  margin: 0 auto;
+  max-width: 100%;
+  @include transition(max-width .5s ease); 
+}
+
+/* animation end */
 
 @mixin background-image($deg, $colorname, $opacity) {
   background: linear-gradient($deg, $colorname, $opacity);

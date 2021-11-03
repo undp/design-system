@@ -8,6 +8,7 @@
     align-items: flex-end;
     display: flex;
     position: relative;
+    @extend %expand_to_size;
 
     @include devicebreak(medium) {
       display: block;
