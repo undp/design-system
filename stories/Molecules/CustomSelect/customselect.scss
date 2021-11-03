@@ -26,15 +26,8 @@
 
   .selected {
     background: $color-white;
-    border: 2px solid $color-black;
-    cursor: pointer;
     display: flex;
-    font-family: $Font-Family-ProximaSemiBold;
-    font-size: $font-size-16;
-    min-width: 300px;
-    padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
-    position: relative;
-    text-transform: uppercase;
+    @extend %select_default;
 
     &::after {
       @extend %arrow;
@@ -44,20 +37,11 @@
 
 .options-container {
   background-color: $color-white;
-  border: 2px solid $color-black;
-  border-top: 0;
-  border-top-color: $color-black;
-  border-top-style: solid;
-  border-top-width: 2px;
-  box-sizing: border-box;
-  display: none;
-  max-height: 300px;
   order: 1;
-  padding: 0 $spacing-16;
+  @extend %select_option;
   position: absolute;
   top: 51px;
   @include transition( all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
-  width: 100%;
   z-index: 20;
 
   &.active {
@@ -93,14 +77,10 @@
 [dir='rtl'] {
   .select-box {
     .selected {
-      padding-left: $spacing-50;
-      padding-right: $spacing-16;
-      text-align: right;
+      @extend %select_rtl;
 
       &::after {
-        left: 22px;
-        margin: 0;
-        right: auto;
+        @extend %select_rtl_after;
       }
     }
   }

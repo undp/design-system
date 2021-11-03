@@ -7,17 +7,10 @@
   -moz-appearance: none;
   appearance: none;
   background: $color-white url('../../assets/images/Icon/Chevron-down.svg') no-repeat right 22px center;
-  border: 2px solid $color-black;
   border-radius: 0;
   color: $color-black;
-  cursor: pointer;
   display: block;
-  font-family: $Font-Family-ProximaSemiBold;
-  font-size: $font-size-16;
-  min-width: 300px;
-  padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
-  position: relative;
-  text-transform: uppercase;
+  @extend %select_default;
 }
 
 [dir='rtl'] {
