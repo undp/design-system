@@ -100,3 +100,12 @@
     margin-left: $spacing-24;
   }
 }
+
+[dir='rtl'] {
+  .button--primary {
+    @include devicebreak(medium) {
+      margin-right: $spacing-24;
+      margin-left: 0;
+    }
+  }
+}
