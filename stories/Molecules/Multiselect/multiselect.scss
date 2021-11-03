@@ -12,7 +12,6 @@
 
       &::after {
         @include transform(translateY(-50%) rotate(-180deg));
-
         top: 50%;
       }
     }
@@ -26,35 +25,19 @@
 
   .select-control {
     background: $color-white;
-    border: 2px solid $color-black;
-    cursor: pointer;
     display: block;
-    font-family: $Font-Family-ProximaSemiBold;
-    font-size: $font-size-16;
     max-width: 100%;
-    min-width: 300px;
-    padding: 16px 50px 16px 16px;
-    position: relative;
-    text-align: left;
-    text-transform: uppercase;
-
+    text-align:left;
+    @extend %select_default;
     &::after {
       @extend %arrow;
     }
   }
 
   .options {
-    border: 2px solid $color-black;
-    box-sizing: border-box;
-    display: none;
-    max-height: 300px;
-    min-height: 100px;
+    @extend %select_option;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     overflow-y: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-    width: 100%;
-
     > li {
       border-top: 1px solid $color-gray-400;
       cursor: pointer;
@@ -164,14 +147,10 @@
   .multi-select {
     .select-control,
     .has-submenu__button {
-      padding-left: 50px;
-      padding-right: 16px;
-      text-align: right;
+       @extend %select_rtl;
 
       &::after {
-        left: 22px;
-        margin: 0;
-        right: auto;
+       @extend %select_rtl_after;
       }
     }
 

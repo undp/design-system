@@ -132,7 +132,7 @@
 
 %border-none {
   border: none;
-  
+
   @extend %img_none;
 
 }
@@ -295,6 +295,40 @@
   overflow: hidden;
 }
 
+%select_default {
+ padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
+ position: relative;
+ text-transform: uppercase;
+ min-width: 300px;
+ border: 2px solid $color-black;
+ cursor: pointer;
+ font-size: $font-size-16;
+ font-family: $Font-Family-ProximaSemiBold;
+}
+
+%select_option {
+display: none;
+border: 2px solid $color-black;
+max-height: 300px;
+min-height: 100px;
+box-sizing: border-box;
+width: 100%;
+padding: 0 $spacing-16;
+}
+
+%select_rtl{
+  padding-left: 50px;
+  padding-right: 16px;
+  text-align: right;
+}
+
+%select_rtl_after{
+  left: 22px;
+  margin: 0;
+  right: auto;
+}
+
+
 /* animation start */
 %left-to-right {
   @include transform(translateX(-100px));
@@ -330,5 +364,5 @@
 /* animation end */
 
 @mixin background-image($deg, $colorname, $opacity) {
-  background: linear-gradient($deg, $colorname, $opacity);  
+  background: linear-gradient($deg, $colorname, $opacity);
 }
