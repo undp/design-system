@@ -139,6 +139,11 @@
   }
   .bio-card-content {
      padding: $spacing-32 $spacing-24;
+
+     p {
+       margin-bottom: 32px;
+     }
+     
      @include devicebreak(medium) {
         padding: 0 $spacing-24 $spacing-32 ;
       }
