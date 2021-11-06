@@ -60,6 +60,11 @@
           }
         }
       }
+      .button--primary {
+        @include devicebreak(medium) {
+          margin-left: $spacing-24;
+        }
+      }     
     }
   }
 
@@ -95,17 +100,13 @@
   }
 }
 
-.button--primary {
-  @include devicebreak(medium) {
-    margin-left: $spacing-24;
-  }
-}
-
 [dir='rtl'] {
-  .button--primary {
-    @include devicebreak(medium) {
-      margin-right: $spacing-24;
-      margin-left: 0;
+  .wide-card__wrapper--summary {
+    .button--primary {
+      @include devicebreak(medium) {
+        margin-right: $spacing-24;
+        margin-left: 0;
+      }
     }
   }
 }

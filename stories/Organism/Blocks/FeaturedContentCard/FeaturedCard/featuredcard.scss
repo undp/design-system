@@ -1,0 +1,19 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
+
+.featured-card-container {
+  .feature__card {
+    &--headertext {
+      display: block;
+      @include devicebreak(medium) {
+        width: 300px;
+        margin-left: 84px;
+        margin-top: 32px;
+      }
+    }
+    &--large, &--medium {
+      margin-bottom: 30px;
+    }
+  }
+}

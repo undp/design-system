@@ -3,13 +3,82 @@ import { SingleContent } from './SingleContent';
 import img from '../../../assets/images/card-thumbnail.jpg';
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {title: 'CONTENT TAG', name: 'Title of the post goes here and it’s two lines', nametwo: 'Title of the post goes here and it’s two lines', paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.', btnlabel: 'READ MORE'}; return engText;
-    case 'arabic': const arabicText = {title: 'علامة المحتوى', name: 'يظهر عنوان المنشور هنا وهو عبارة عن سطرين "، قم بتسمية:" عنوان المشاركة يظهر هنا ويتكون من سطرين', nametwo: 'يظهر عنوان المشاركة هنا ويتكون من سطرين', paragraph: 'الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي', btnlabel: 'اقرأ أكثر'}; return arabicText;
-    case 'burmese': const burmeseText = {title: 'အကြောင်းအရာ TAG', name: 'ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ', nametwo: 'ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ စာကြောင်းနှစ်ကြောင်းပါ', paragraph: 'နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်', btnlabel: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
-    case 'japanese': const japaneseText = {title: 'コンテンツタグ', name: '投稿のタイトルはここにあり、2行です', nametwo: '投稿のタイトルはここにあり、2行です', paragraph: '痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉', btnlabel: '続きを読む'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = {
+        contentdata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link:"#",
+            imgback: img
+          }
+        ]
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        contentdata: [
+          {
+            contenttile: "علامة المحتوى",
+            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+            button: "اقرأ أكث",
+            link:"#",
+            imgback: img
+          }
+        ]
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        contentdata: [
+          {
+            contenttile: "အကြောင်းအရာ TAG",
+            contentname: "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            contentnametwo: "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            paragraph: "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+            button: "ပိုပြီးဖတ်ပါ",
+            link:"#",
+            imgback: img
+          }
+        ]
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        contentdata: [
+          {
+            contenttile: "コンテンツタグ",
+            contentname: "投稿のタイトルはここにあり、2行です",
+            contentnametwo: "投稿のタイトルはここにあり、2行です",
+            paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+            button: "続きを読む",
+            link:"#",
+            imgback: img
+          }
+        ]
+      };
+      return japaneseText;
     default:
-      return {title: 'CONTENT TAG', name: 'Title of the post goes here and it’s two lines', nametwo: 'Title of the post goes here and it’s two lines', paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.', btnlabel: 'READ MORE'};
+      const dummy = {
+        contentdata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link:"#",
+            imgback: img,
+          }
+        ]
+      };
+      return dummy;
   }
 };
 
@@ -54,13 +123,23 @@ The Single Content Card component defines a card of information data with some i
 <div className="subheading">Single Content Card</div>
 <p>Single content card with image are show the Title, Image, and CTA Link. The background color is different on hover.</p>
 
-<Story name="Single Content Card">
+<!-- {/* <Story name="Single Content Card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <SingleContent contenttile={caption.title} contentname={caption.name} contentnametwo={caption.nametwo}  paragraph={caption.paragraph} img={img} button={caption.btnlabel} link='#' {...args} ></SingleContent>;
   }}
-</Story>
+</Story> */} -->
 
+<Story name="Single Content Card">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <SingleContent
+        data={caption.contentdata} {...args}
+      ></SingleContent>
+    );
+  }}
+</Story>
 
 <div className="subheading">Usage</div>
 <ul>
