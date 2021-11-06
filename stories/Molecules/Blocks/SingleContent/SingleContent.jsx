@@ -16,16 +16,17 @@ export const emphasize_options = {
 };
 
 export const SingleContent = ({
-  contenttile, contentname, contentnametwo, img, Image, paragraph, link, Emphasize, button, colors, ...args
+  data, Image, Emphasize, colors
 }) => (
   <div className="grid-x grid-margin-x">
-    <div className="cell medium-4">
-      <a href={link} className={['singlecard', `${image_options[`${Image}`]}`, `${emphasize_options[`${Emphasize}`]}`,  `${[`${colors}`]}`,].join(' ')}>
-        <div className="singlecard__head">{contenttile}</div>
+        {data.map((item, index) => (
+    <div key={index} className="cell medium-4">
+      <a href={item.link} className={['singlecard', `${image_options[`${Image}`]}`, `${emphasize_options[`${Emphasize}`]}`,  `${[`${colors}`]}`,].join(' ')}>
+        <div className="singlecard__head">{item.contenttile}</div> 
         {Image === 'true'
           ? (
               <div className="card_thumbnail__image">
-                <img src={img} alt={img} />
+                <img src={item.imgback} alt={item.imgback} />
               </div>
           )
           : (
@@ -34,7 +35,7 @@ export const SingleContent = ({
         <div className="singlecard__caption">
           {Emphasize === 'true'
             ? (
-              <Heading type="4" label={contentnametwo} />
+              <Heading type="4" label={item.contentnametwo} />
             )
             : (
               <></>
@@ -44,17 +45,18 @@ export const SingleContent = ({
           { Emphasize === 'false'
             ? (
               <>
-                <Heading type="5" label={contentname} />
-                <P label={paragraph} />
+                <Heading type="5" label={item.contentname} />
+                <P label={item.paragraph} />
               </>
             )
             : (
               <></>
             )}
-          <Ctalink label={button} variant="Space" />
+          <Ctalink label={item.button} variant="Space" />
         </div>
       </a>
     </div>
+    ))}
   </div>
 );
 
