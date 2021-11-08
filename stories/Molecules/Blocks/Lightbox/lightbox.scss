@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: 0;
   display: flex;
   position: fixed;
   align-items: center;
@@ -21,15 +21,23 @@
   height: 62vh;
   background: $color-white;
   position: relative;
-  padding: $spacing-80;
+  padding: 0;
   max-height: calc(100vh - 115px);
+  margin: auto $spacing-12;
+  @include devicebreak(medium) {
+    margin: 0;
+    padding: $spacing-80;
+  }
   &::before {
     content: "";
-    width: 44px;
+    width: 46px;
     height: 44px;
     float: right;
-    margin: -48px -48px;
+    margin: -48px 0;
     background: url(#{$img-path-Icon}/Times_circle.svg) no-repeat left center;
+    @include devicebreak(medium) {
+       margin: -48px -48px;
+    }
   }
 }
 

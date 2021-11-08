@@ -4,12 +4,12 @@
 .Scrollbar-horizontal-wrapper {
   float: left;
   width: 600px;
-  height: 4px;
   overflow-x: scroll;
 }
 
 .Scrollbar-data {
   width: 1000px;
+  visibility: hidden;
 }
 
 .Scrollbar-vertical-wrapper {

@@ -61,6 +61,7 @@
         margin-top: $spacing-32;
 
         &::after {
+          margin-left: $spacing-04;
           @include transition(0.2s ease);
         }
       }
@@ -104,6 +105,7 @@
   .country-card {
     &:hover {
       .cta--arrow::after {
+        margin-right: $spacing-04;
         @include transform(translate(0, 0) rotate(180deg));
       }
     }
