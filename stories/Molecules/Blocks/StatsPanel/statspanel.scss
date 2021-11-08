@@ -84,7 +84,7 @@
     line-height: 27px;
   }
 
-  &:hover {
+  &:hover ,&.active{
     &::after,
     .statspanel__image {
       opacity: 1;
