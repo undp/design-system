@@ -2,25 +2,25 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
 
-.toggleSearch {
+#toggleSearch {
   background: none;
   border: 0;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid $color-black;
   cursor: pointer;
   padding-bottom: 10px;
   text-decoration: underline;
 }
 
-.select-wrapper {
+#select-wrapper {
   display: none;
 
-  &.show_filter {
+  &.show-filter {
     display: block;
   }
   .multi-select { padding-top: 24px; }
 }
 
-.Selected_chips {
+#selectedchips {
   padding-top: 24px;
 
   a {
@@ -43,7 +43,7 @@
 }
 
 [dir='rtl'] {
-  .Selected_chips {
+  #selectedchips {
     .chips {
       margin: 0 0 $spacing-12 $spacing-12;
     }
