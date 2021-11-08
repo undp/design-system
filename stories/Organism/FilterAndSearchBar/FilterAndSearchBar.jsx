@@ -5,29 +5,26 @@ import { IconsSearch } from '../../Atom/Global/Icons/search';
 import SelectTag from '../../Molecules/Multiselect/MultiSelect';
 import './FilterAndSearchBar.scss';
 
-export const FilterAndSearchBar = () => {
+const FilterAndSearchBar = () => {
   useEffect(() => {
     toggleFilter();
   }, []);
 
   return (
-    <div className="search_filter">
-      <button className="toggleSearch">
-        {' '}
-        <IconsSearch />
-      </button>
+    <div id="search-filter">
+      <button type="button" id="toggleSearch"><IconsSearch /></button>
       <br />
-
-      <div className="select-wrapper">
+      <div id="select-wrapper">
         <SelectTag text="Category" eleId="select-1" />
         <SelectTag text="Category" eleId="select-2" />
         <SelectTag text="Category" eleId="select-3" />
         <SelectTag text="Category" eleId="select-4" />
-        <div className="Selected_chips">
+        <div id="selectedchips">
           <Chips label="demo" variant="Cross" />
         </div>
       </div>
-
     </div>
   );
 };
+
+export default FilterAndSearchBar;
