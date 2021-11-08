@@ -2,27 +2,22 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/glideslider';
 
-.stats-card-conatiner{
-  .stats-parallax-container{
-    @include devicebreak(small){
-      display: none !important;
+.stats-card-grid{
+  .grid-x{
+    margin-bottom: 2rem;
+    &:last-child{
+      margin-bottom: 0;
     }
   }
-  .stats-card-slider{
+  .glide__slide{
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+  }
+  .statscard{
     @include devicebreak(medium){
-      display: none !important;
-    }
-  }
-  .stats-card-row{
-    &:first-child{
-      margin-bottom: 2.5rem;
-    }
-    .statscard{
       &--sm{
-        @include devicebreak(medium){
-          max-width: 330px;
-        }
-      }
+        max-width: 330px;
+      } 
     }
   }
 }
@@ -31,9 +26,22 @@
     &__slides{
       margin-top: 34px;
     }
+    &__slide{
+      &--active {
+        .statscard{
+          background-color: $color-yellow;
+          &__number {
+            color: $color-black;
+          }
+        }
+      }
+    }
     &__bullets{
       display: flex;
       position: relative;
+      @include devicebreak(medium){
+        display: none;
+      }
       &::after{
         content: '';
         position: absolute;

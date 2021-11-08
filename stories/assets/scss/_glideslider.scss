@@ -1,4 +1,5 @@
-.glide {
+@include devicebreak(small){
+  .glide {
     position: relative;
     width: 100%;
     box-sizing: border-box; }
@@ -42,3 +43,4 @@
       user-select: none; }
     .glide--rtl {
       direction: rtl; }
+}
