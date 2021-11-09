@@ -12,14 +12,14 @@ const FilterAndSearchBar = () => {
 
   return (
     <div id="search-filter">
-      <button type="button" id="toggleSearch"><IconsSearch /></button>
+      <button type="button" id="toggle-search" className="toggle-search"><IconsSearch /></button>
       <br />
       <div id="select-wrapper">
         <SelectTag text="Category" eleId="select-1" />
         <SelectTag text="Category" eleId="select-2" />
         <SelectTag text="Category" eleId="select-3" />
         <SelectTag text="Category" eleId="select-4" />
-        <div id="selectedchips">
+        <div id="selected-chips" className="selected-chips">
           <Chips label="demo" variant="Cross" />
         </div>
       </div>
