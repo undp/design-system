@@ -5,7 +5,7 @@ import './statsslider.scss';
 
 export const StatsSlider = ({data}) => {
   useEffect(() => {
-    StatsSliderFun('.stats-card-slider');
+    StatsSliderFun('.stats-card-slider', '20');
     CardParallaxFun();
   },[])
   return (

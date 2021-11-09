@@ -1,9 +1,15 @@
-export function StatsSliderFun(ele){
+export function StatsSliderFun(ele, gapele){
   $(window).bind('load resize orientationChange', function () {
     if ($(window).width() <= 767) {
+      if( $('html').attr('dir') == 'rtl' ) {
+        var direc = 'rtl'
+      } else {
+        var direc = 'ltr'
+      }
       new Glide(ele, {
         autoplay: false,
-        gap:20,
+        gap:gapele,
+        direction: direc,
         peek: {
           before: 0,
           after: 70
@@ -23,23 +29,19 @@ export function CardParallaxFun(){
         }
       }
       gsap.registerPlugin(ScrollTrigger);
-      const showDemo = () => {
       gsap.utils.toArray('.stats-card-parallax').forEach((n, index) => {
         const w = n.querySelector('.grid-x');
-        const [x, xEnd] = (index % 2) ? ['100%', (w.scrollWidth - n.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
+        const [x, xEnd] = (index % 2) ? ['100%', ((w.scrollWidth * 1.5) - n.offsetWidth) * -1] : [(w.scrollWidth) * -1, "16%"];
         gsap.fromTo(w, {  x  }, {
         x: xEnd,
         scrollTrigger: {
           scrub: !0,
           ease: 'SlowMo',
           trigger: n,
-          start: 'top bottom',
-          end: 'bottom top'
+          duration: 5,
         }
         });
       });
-      }
-      showDemo();
     } 
   }); 
 }

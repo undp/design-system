@@ -5,7 +5,7 @@
 .stats-card-grid{
   overflow-x: hidden;
   .stats-card-parallax{
-    margin-bottom: 2rem;
+    margin-bottom: 2.625rem;
     &:last-child{
       margin-bottom: 0;
     }
@@ -26,8 +26,11 @@
       }
     }
   }
-  @include devicebreak(large){
-    .statscard{
+  .statscard{
+    &:hover{
+      background-color: $color-light-yellow;
+    }
+    @include devicebreak(large){
       &--sm{
         max-width: 330px;
         width:100%;
@@ -38,6 +41,11 @@
 }
 
 .stats-card-slider{
+  @include devicebreak(small){
+    .statscard{
+      max-width: 100%;
+    }
+  }
   .glide{
     &__slides{
       margin-top: 34px;
@@ -46,7 +54,7 @@
       &--active {
         @include devicebreak(small){
           .statscard{
-            background-color: $color-yellow;
+            background-color: $color-light-yellow;
             &__number {
               color: $color-black;
             }
