@@ -2,7 +2,7 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
 
-#toggleSearch {
+.toggle-search {
   background: none;
   border: 0;
   border-bottom: 1px solid $color-black;
@@ -20,7 +20,7 @@
   .multi-select { padding-top: 24px; }
 }
 
-#selectedchips {
+.selected-chips {
   padding-top: 24px;
 
   a {
@@ -43,7 +43,7 @@
 }
 
 [dir='rtl'] {
-  #selectedchips {
+  .selected-chips {
     .chips {
       margin: 0 0 $spacing-12 $spacing-12;
     }

@@ -1,10 +1,10 @@
 const toggleFilter = function () {
-  $(document).on('click', '#toggleSearch', () => {
+  $(document).on('click', '#toggle-search', () => {
     $('#select-wrapper').toggleClass('show-filter');
   });
   const searchOption = $('.options li input');
 
-  const chipsWrapper = $('#search-filter #selectedchips');
+  const chipsWrapper = $('#search-filter #selected-chips');
   $('.select-control').on('click', function () {
     $(this).parent('.regions-select').toggleClass('open');
   });
