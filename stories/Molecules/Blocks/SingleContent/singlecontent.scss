@@ -6,6 +6,7 @@
   border-top: 2px solid $color-black;
   display: block;
   margin-bottom: $spacing-24;
+  background-color: $color-white;
   @extend %img_none;
   & .singlecard__head {
     font-family: $Font-Family-ProximaBold;
@@ -16,7 +17,7 @@
     text-transform: uppercase;
   }
 
-  & .card_thumbnail__image {
+  & .card-thumbnail__image {
     width: 100%;
     img {
       width: 100%;
@@ -61,31 +62,42 @@
     }
   }
 
-  &.red {
-    .card_thumbnail__image {
-      &::before {
-        @include background-image(42deg, $color-red, transparent 80%);
+  &:hover {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-yellow, transparent 80%);
+      opacity: 0.75;
+    }
+
+    &.red {
+      .card-thumbnail__image {
+        &::before {
+          @include background-image(42deg, $color-red, transparent 80%);
+          opacity: 0.75;
+        }
+      }
+    }
+
+    &.green {
+      .card-thumbnail__image {
+        &::before {
+          @include background-image(42deg, $color-green, transparent 80%);
+          opacity: 0.75;
+        }
+      }
+    }
+
+    &.blue {
+      .card-thumbnail__image {
+        &::before {
+          @include background-image(42deg, $color-azure, transparent 80%);
+          opacity: 0.75;
+        }
       }
     }
   }
 
-  &.green {
-    .card_thumbnail__image {
-      &::before {
-        @include background-image(42deg, $color-green, transparent 80%);
-      }
-    }
-  }
-
-  &.blue {
-    .card_thumbnail__image {
-      &::before {
-        @include background-image(42deg, $color-azure, transparent 80%);
-      }
-    }
-  }
-
-  &.card, &.card-yellow {
+  &.card,
+  &.card-yellow {
     &.yellow,
     &.red,
     &.green,
@@ -115,7 +127,7 @@
     }
   }
 
-  &.card-yellow { 
+  &.card-yellow {
     &.yellow,
     &.red,
     &.green,
@@ -123,7 +135,7 @@
     &.gray {
       background-color: $color-light-yellow;
     }
-    .card_thumbnail__image {
+    .card-thumbnail__image {
       display: none;
     }
   }
