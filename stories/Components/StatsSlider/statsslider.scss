@@ -3,6 +3,7 @@
 @import '../../assets/scss/glideslider';
 
 .stats-card-grid{
+  overflow-x: hidden;
   .stats-card-parallax{
     margin-bottom: 2rem;
     &:last-child{
@@ -11,17 +12,26 @@
   } 
   @include devicebreak(medium){
     .glide{
+      &__slides{
+        transform: none !important;
+        width: initial !important;
+        transition: none !important;
+      }
       &__slide{
+        width: initial !important;
+        margin-left: initial !important;
+        margin-right: initial !important;
         padding-right: 0.625rem;
         padding-left: 0.625rem;
       }
     }
   }
-  .statscard{
-    &--sm{
-      @include devicebreak(large){
+  @include devicebreak(large){
+    .statscard{
+      &--sm{
         max-width: 330px;
-        width: 100%;
+        width:100%;
+        box-sizing: border-box;
       } 
     }
   }
@@ -34,8 +44,8 @@
     }
     &__slide{
       &--active {
-        .statscard{
-          @include devicebreak(small){
+        @include devicebreak(small){
+          .statscard{
             background-color: $color-yellow;
             &__number {
               color: $color-black;
