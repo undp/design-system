@@ -3,24 +3,38 @@
 @import '../../assets/scss/glideslider';
 
 .stats-card-grid{
-  .grid-x{
+  .stats-card-parallax{
     margin-bottom: 2rem;
     &:last-child{
       margin-bottom: 0;
     }
-  }
-  .glide__slide{
-    padding-right: 0.625rem;
-    padding-left: 0.625rem;
+  } 
+  @include devicebreak(medium){
+    .glide{
+      &__slides{
+        transform: none !important;
+        width: initial !important;
+        transition: none !important;
+      }
+      &__slide{
+        width: initial !important;
+        margin-left: initial !important;
+        margin-right: initial !important;
+        padding-right: 0.625rem;
+        padding-left: 0.625rem;
+      }
+    }
   }
   .statscard{
-    @include devicebreak(medium){
-      &--sm{
+    &--sm{
+      @include devicebreak(large){
         max-width: 330px;
+        width: 100%;
       } 
     }
   }
 }
+
 .stats-card-slider{
   .glide{
     &__slides{
@@ -29,9 +43,11 @@
     &__slide{
       &--active {
         .statscard{
-          background-color: $color-yellow;
-          &__number {
-            color: $color-black;
+          @include devicebreak(small){
+            background-color: $color-yellow;
+            &__number {
+              color: $color-black;
+            }
           }
         }
       }
@@ -49,7 +65,7 @@
         left: 0;
         height: 1px;
         width: 100%;
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid $color-black;
         z-index: 1;
       }
     }
@@ -65,7 +81,7 @@
       transition: all .8s ease-in-out;
       cursor: pointer;
       &--active{
-        background: #000;
+        background: $color-black;
       }
     }
   }

@@ -19,18 +19,18 @@ export const statsArray = (locale) => {
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
-      percentname: 'Percent',
-      numbername: '35',
+      percentname: 'Programs',
+      numbername: '100+',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
-        percentname: 'Countries',
-        numbername: '17',
+        percentname: 'Years',
+        numbername: '23',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
-        percentname: 'Percent',
-        numbername: '35',
+        percentname: 'Offices',
+        numbername: '9',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'    
     }]}; return engText.data;
     case 'arabic': const arabicText = {data: [{
@@ -49,18 +49,18 @@ export const statsArray = (locale) => {
       text: "الألم بحد ذاته هو الحب ، الزبون الرئيسي"
     },
     {
-      percentname: 'نسبه مئويه',
-      numbername: '35',
+      percentname: 'البرامج',
+      numbername: '100+',
       text: "الألم بحد ذاته هو الحب ، الزبون الرئيسي"
     },
     {
-      percentname: 'بلدان',
-      numbername: '17',
+      percentname: 'سنوات',
+      numbername: '23',
       text: "الألم بحد ذاته هو الحب ، الزبون الرئيسي"
     },
     {
-      percentname: 'نسبه مئويه',
-      numbername: '35',
+      percentname: 'مكاتب',
+      numbername: '9',
       text: "الألم بحد ذاته هو الحب ، الزبون الرئيسي"  
     }]}; return arabicText.data;
     case 'burmese': const burmeseText = {data: [{
@@ -79,18 +79,18 @@ export const statsArray = (locale) => {
       text: "နာကျင်မှုကိုယ်တိုင်ကအချစ်ကိုအဓိကဖောက်သည်ချသည်"
     },
     {
-      percentname: "ရာခိုင်နှုန်း",
-      numbername: '35',
+      percentname: "အစီအစဉ်မျာ",
+      numbername: '100+',
       text: "နာကျင်မှုကိုယ်တိုင်ကအချစ်ကိုအဓိကဖောက်သည်ချသည်"
     },
     {
-      percentname: "နိုင်ငံတွေ",
-      numbername: '17',
+      percentname: "နှစ်တွေ",
+      numbername: '23',
       text: "နာကျင်မှုကိုယ်တိုင်ကအချစ်ကိုအဓိကဖောက်သည်ချသည်"
     },
     {
-      percentname: "ရာခိုင်နှုန်း",
-      numbername: '35',
+      percentname: "ရုံးများ",
+      numbername: '9',
       text: "နာကျင်မှုကိုယ်တိုင်ကအချစ်ကိုအဓိကဖောက်သည်ချသည်"
     }]}; return burmeseText.data;
     case 'japanese': const japaneseText = {data: [{
@@ -109,18 +109,18 @@ export const statsArray = (locale) => {
       text: "痛み自体は愛、主な顧客です"
     },
     {
-      percentname: "パーセント",
-      numbername: '35',
+      percentname: "プログラム",
+      numbername: '100+',
       text: "痛み自体は愛、主な顧客です"
     },
     {
-      percentname: "国",
-      numbername: '17',
+      percentname: "年",
+      numbername: '23',
       text: "痛み自体は愛、主な顧客です"
     },
     {
-      percentname: "パーセント",
-      numbername: '35',
+      percentname: "オフィス",
+      numbername: '9',
       text: "痛み自体は愛、主な顧客です"
     }]}; return japaneseText.data;
     default:
@@ -140,18 +140,18 @@ export const statsArray = (locale) => {
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
-      percentname: 'Percent',
-      numbername: '35',
+      percentname: 'Programs',
+      numbername: '100+',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
-        percentname: 'Countries',
-        numbername: '17',
+        percentname: 'Years',
+        numbername: '23',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
-        percentname: 'Percent',
-        numbername: '35',
+        percentname: 'Offices',
+        numbername: '9',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' 
     }]};
     return dummy.data
@@ -189,7 +189,7 @@ export const statsArray = (locale) => {
 
 ## Overview
 
-The Stats Component is created for showing the Statspanel grid, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+The StatsSlider Component is created for showing the card grid in desktop with parallax effects and slider in mobile view, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
 
 ## Default Representation & various possible states
 
@@ -207,10 +207,30 @@ Not Applicable
 ## Usage
 
 <ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>statsslider.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like variables, mixin from{" "}
+    <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>statsslider.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
+  <u>To use JS include the following files in your implementation</u>
+  <li>
+    Include JS Slider library file  from <code>assets/js/glideslider.js</code>
+  </li>
+  <li>
+    Include JS Parallax library file from <code>assets/js/gsap.min.js</code>
+  </li>
+  <li>
+    Include JS Parallax library file from <code>assets/js/ScrollTrigger.min.js</code>
+  </li>
+  <li>
+    The compiled JS file from <code>assets/js/SliderCustom.js</code>
+  </li>
 </ul>

@@ -5,11 +5,11 @@ import './statsslider.scss';
 
 export const StatsSlider = ({data}) => {
   useEffect(() => {
-    StatsSliderFun();
+    StatsSliderFun('.stats-card-slider');
     CardParallaxFun();
   },[])
   return (
-    <div className="stats-card-slider stats-card-grid stats-card-parallax">
+    <div className="stats-card-slider stats-card-grid">
       <div className="glide__bullets" data-glide-el="controls[nav]">
         <button className="glide__bullet" data-glide-dir="=0"></button>
         <button className="glide__bullet" data-glide-dir="=1"></button>
