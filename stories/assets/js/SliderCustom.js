@@ -1,5 +1,5 @@
 export function StatsSliderFun(ele){
-  $(window).bind('load resize', function () {
+  $(window).bind('load resize orientationChange', function () {
     if ($(window).width() <= 767) {
       new Glide(ele, {
         autoplay: false,
@@ -14,7 +14,7 @@ export function StatsSliderFun(ele){
   });
 }
 export function CardParallaxFun(){
-  $(window).bind("load resize", function () { 
+  $(window).bind("load resize orientationChange", function () { 
     if ($(window).width() >= 768) {
       var cardWrap = $('.stats-card-grid .glide__slide');
       if(cardWrap.parent('.glide__slides').length){
@@ -22,6 +22,8 @@ export function CardParallaxFun(){
           cardWrap.slice(i, i+3).wrapAll("<div class='stats-card-parallax'><div class='grid-x'></div></div>");
         }
       }
+      cardWrap.removeAttr('style');
+      console.log(cardWrap);
       gsap.registerPlugin(ScrollTrigger);
       const showDemo = () => {
       gsap.utils.toArray('.stats-card-parallax').forEach((n, index) => {

@@ -11,15 +11,7 @@
   } 
   @include devicebreak(medium){
     .glide{
-      &__slides{
-        transform: none !important;
-        width: initial !important;
-        transition: none !important;
-      }
       &__slide{
-        width: initial !important;
-        margin-left: initial !important;
-        margin-right: initial !important;
         padding-right: 0.625rem;
         padding-left: 0.625rem;
       }
