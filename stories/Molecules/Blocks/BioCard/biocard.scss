@@ -8,12 +8,6 @@
   border-bottom: 0;
   height: 100%;
   position: relative;
-  display: flex;
-  flex-direction: column-reverse;
-  @include devicebreak(medium) {
-    flex-direction: inherit
-  }
-
   &:hover {
     .cta--arrow::after {
       @include translate(10px, 0);
@@ -53,17 +47,24 @@
     position: relative;
     background: $color-gray-100;
     flex-direction: column;
+    order: 2;
     @include devicebreak(medium) {
+      order: inherit;
       background: none;
       display: flex;
     }
     .card-thumbnail__image {
+      order: 1;
+      @include devicebreak(medium) {
+        order: inherit;
+      }
       &::before {
         opacity: 0;
       }
     }
     h5 {
       font-size: $font-size-25;
+      margin-bottom: 0.75rem;
     }
     p {
       font-size: $font-size-16;
@@ -79,32 +80,30 @@
       }
     }
   }
-}
 
-.bio-card--medium {
-  .bio-card {
-    @include devicebreak(medium) {
-      flex-direction: column-reverse;
+  &.medium {
+    &.bio-card {
+      display: block;
     }
-  }
-  .card-thumbnail__image {
-    img {
-      width: 100%;
-    }
-  }
-  .bio-card__content {
-    h5 {
-      font-size: $font-size-20;
-      margin-bottom: 1.125rem;
-    }
-    p {
-      font-size: $font-size-14;
-      @include devicebreak(medium) {
-        margin-bottom: 1.5rem;
+    .card-thumbnail__image {
+      img {
+        width: 100%;
       }
     }
-    .bio-card__description {
-      margin-bottom: 0;
+    .bio-card__content {
+      h5 {
+        font-size: $font-size-20;
+        margin-bottom: 1.125rem;
+      }
+      p {
+        font-size: $font-size-14;
+        @include devicebreak(medium) {
+          margin-bottom: 1.5rem;
+        }
+      }
+      .bio-card__description {
+        margin-bottom: 0;
+      }
     }
   }
 }
