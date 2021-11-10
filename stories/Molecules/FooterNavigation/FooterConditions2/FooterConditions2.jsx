@@ -6,7 +6,7 @@ export const FooterConditions2 = ({
 }) => (
   <ul className={['footer__condition_text', `footer__condition_text--${args.variant}`].join(' ')}>
     {footerdata2.map((item, index) => (
-      <li key={index}><a href="#">{item.text}</a></li>
+      <li key={index}><a href="#">{item.menu}</a></li>
     ))}
   </ul>
 );

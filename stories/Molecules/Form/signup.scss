@@ -5,9 +5,13 @@
 .footer-subtitle {
   display: block;
   font-size: 1rem;
-  line-height: 1.375em;
+  line-height: 1.4;
   margin-bottom: $spacing-12;
-  text-align: right;
+  text-align: left;
+
+  @include devicebreak(medium) {
+    text-align: right;
+  }
 }
 
 .sign-up {
@@ -42,12 +46,13 @@
   }
 
   &--white {
-    .footer-subtitle {
+    .footer-subtitle,
+    .sign-up--field .input-error {
       color: $color-white;
     }
 
     .input__controls.form-email {
-      background-color: $color-gray-400;
+      background-color: transparent;
       border: 2px solid $color-white;
       color: $color-white;
 
@@ -69,6 +74,12 @@
 }
 
 [dir='rtl'] {
+  .footer {
+    &-subtitle {
+      text-align: right;
+    }
+  }
+
   .sign-up--field {
     justify-content: flex-start;
   }
