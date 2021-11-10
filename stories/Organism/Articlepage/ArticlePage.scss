@@ -1,0 +1,34 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+
+.author-section {
+  border-bottom: 1px solid $color-gray-400;
+  margin-bottom: 5.56rem;
+  padding-bottom: $spacing-24;
+  padding-top: $spacing-32;
+}
+
+.blockq-container {
+  margin-bottom: 0.625rem;
+  margin-top: 2.82rem;
+  width: calc(50% + 401px);
+}
+
+.left-802-container {
+  width: calc(50% + 401px);
+}
+
+.section-head {
+  padding-left: 8.875rem;
+}
+.image-caption { padding-top: 24px; }
+.middle-image { margin-bottom: $spacing-24; }
+.middle-caption { margin-bottom: 6.375rem; }
+
+[dir='rtl'] {
+  .section-head {
+    padding-right: 8.875rem;
+    text-align: right;
+  }
+}
