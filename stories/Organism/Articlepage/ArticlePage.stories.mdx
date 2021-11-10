@@ -8,6 +8,7 @@ import {getCaptionForLocale as paraLabel} from "../../Atom/Base-typography/Parag
 import {getCaptionForLocale as headingData} from "../../Atom/Base-typography/Heading/heading.stories.mdx";
 import {getCaptionForLocale as listData} from "../../Atom/Lists/Lists.stories.mdx";
 import {getCaptionForLocale as footerData} from "../Footer/Footer.stories.mdx";
+import {getCaptionForLocale as featuredCardContent} from "../Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard.stories.mdx";
 
 
 export const getAuthorCaptionForLocale = (locale) => {
@@ -53,7 +54,14 @@ export const getHeadingCaptionForLocale = (locale) => {
   {(args, { globals: { locale } }) => {
     const caption = PostHeadData(locale);
     const headingLabel=getHeadingCaptionForLocale(locale);
-    return <ArticlePage headingLabel={headingLabel} footerData={footerData(locale)} listData={listData(locale)} headingData={getAuthorCaptionForLocale(locale)} paraLabel={paraLabel(locale)} blockquoteData={blockquoteData(locale)} authorCardData={AuthorCardData(locale)} imageCaptionData={imageCaptionData(locale)} data={caption.postheaderdata} header={caption.header} country={caption.country} description={caption.description} active={'default'}></ArticlePage>;
+    return <ArticlePage 
+    featuredCardContent={featuredCardContent(locale)}
+    headingLabel={headingLabel} footerData={footerData(locale)} 
+    listData={listData(locale)} headingData={getAuthorCaptionForLocale(locale)} 
+    paraLabel={paraLabel(locale)} blockquoteData={blockquoteData(locale)}
+     authorCardData={AuthorCardData(locale)} imageCaptionData={imageCaptionData(locale)}
+      data={caption.postheaderdata} header={caption.header} country={caption.country} 
+      description={caption.description} active={'default'}></ArticlePage>;
   }}
 </Story>
 

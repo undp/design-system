@@ -2,10 +2,12 @@ import React from 'react';
 import './ArticlePage.scss';
 import { PostHeader } from '../Text/PostHeader/PostHeader';
 import { Images } from '../Images/Images/Images';
+import { Imagecaption } from '../../Molecules/Imagecaption/Imagecaption';
 import { Author } from '../../Molecules/Text/Authors/Authorcolumn/Authors';
 import { BlockquoteComponent } from '../../Molecules/Text/BlockquoteComponent/BlockquoteComponent';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 import { List } from '../../Atom/Lists/Lists';
+import { FeaturedCard } from "../Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard";
 import { Heading } from '../../Atom/Base-typography/Heading/Heading';
 import farmlandlg from '../../assets/images/farmland-lg.jpg';
 import farmlandmd from '../../assets/images/farmland-md.jpg';
@@ -18,7 +20,7 @@ import logowhite from '../../assets/images/logo-white.svg';
 const ArticlePage = ({
   data, header, country, description,
   imageCaptionData, authorCardData, blockquoteData, paraLabel,
-  headingData, listData, footerData, headingLabel,
+  headingData, listData, footerData, headingLabel, featuredCardContent,
 }) => {
   return (
     <div>
@@ -40,13 +42,16 @@ const ArticlePage = ({
               label={imageCaptionData.label}
               name={imageCaptionData.name}
               paragraph={imageCaptionData.paragraph}
-              {...{ size: 'Wide', caption: 'True', credit: 'True' }}
+              {...{ size: 'Wide', caption: 'False', credit: 'False' }}
             />
           </div>
         </div>
       </div>
       <div className="grid-container container-802">
         <div className="grid-x">
+          <div className="cell large-12 image-caption">
+            <Imagecaption label={imageCaptionData.label} name={imageCaptionData.name} paragraph={imageCaptionData.paragraph} />
+          </div>
           <div className="cell large-12 author-section">
             <Heading type="5" label={headingData.detail5} />
             <Author image={user} data={authorCardData} width="3" size="medium-4" />
@@ -79,8 +84,11 @@ const ArticlePage = ({
               label={imageCaptionData.label}
               name={imageCaptionData.name}
               paragraph={imageCaptionData.paragraph}
-              {...{ size: 'Wide', caption: 'True', credit: 'True' }}
+              {...{ size: 'Wide', caption: 'False', credit: 'False' }}
             />
+          </div>
+          <div className="cell large-12 middle-caption">
+            <Imagecaption label={imageCaptionData.label} name={imageCaptionData.name} paragraph={imageCaptionData.paragraph} />
           </div>
           <div className="cell large-12">
             <P label={paraLabel.detail} />
@@ -102,6 +110,15 @@ const ArticlePage = ({
           </div>
         </div>
       </div>
+      <div className="grid-container fluid">
+        <div className="grid-x">
+          <div className="cell large-12">
+            <FeaturedCard data={featuredCardContent.featureddata}
+              headertext={featuredCardContent.headertext} />
+          </div>
+        </div>
+      </div>
+
       <Footer
         src={logo}
         srctwo={logowhite}
@@ -123,6 +140,7 @@ const ArticlePage = ({
         menudata={footerData.menudata}
         {...{ color: 'blue' }}
       />
+
     </div>
   );
 };
