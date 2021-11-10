@@ -1,24 +1,30 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 // * footer condition start *//
 .footer__condition {
   padding-left: 0;
+
   li {
     list-style: none;
-    @extend %paragragh-font-16;
     margin-bottom: $spacing-12;
     text-align: left;
+
     @include devicebreak(medium) {
       text-align: right;
     }
+
     a {
-      @extend %paragragh-font-16;
-      border-bottom: 0;
       @extend %img_none;
+
+      border-bottom: 0;
+      display: block;
+      font-size: $font-size-16;
+      line-height: 1.4;
     }
   }
+
   &--white {
     a {
       color: $color-white;
@@ -26,9 +32,10 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .footer__condition {
     padding-right: 0;
+
     li {
       text-align: right;
     }
