@@ -1,10 +1,9 @@
 export function StatsSliderFun(ele, gapele){
   $(window).bind('load resize orientationChange', function () {
     if ($(window).width() <= 767) {
+      var direc = 'ltr';
       if( $('html').attr('dir') == 'rtl' ) {
-        var direc = 'rtl'
-      } else {
-        var direc = 'ltr'
+        direc = 'rtl'
       }
       new Glide(ele, {
         autoplay: false,
