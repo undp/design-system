@@ -5,15 +5,15 @@ import { IconsSearchBlack } from '../../Atom/Global/Icons/search_black';
 import SelectTag from '../../Molecules/Multiselect/MultiSelect';
 import './FilterAndSearchBar.scss';
 
-const FilterAndSearchBar = ({data}) => {
+const FilterAndSearchBar = ({ data }) => {
   useEffect(() => {
     toggleFilter();
   }, []);
 
   return (
-    <div id="search-filter">
+    <div id="search-filter" >
       <button type="button" id="toggle-search" className="toggle-search">
-      <IconsSearchBlack />
+        <IconsSearchBlack />
       </button>
       <br />
       <div id="select-wrapper">

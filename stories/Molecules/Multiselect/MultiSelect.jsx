@@ -24,6 +24,8 @@ const SelectTag = ({ text, eleId }) => {
         aria-labelledby={`select_button-${eleId}`}
         role="listbox"
         aria-multiselectable="true"
+        aria-hidden='true'
+        aria-modal='true'
       >
         <li role="option" id={`label-category1-${eleId}`}>
           <Checkbox label={`${text}`} value="category1" id={`category1-${eleId}`} />
