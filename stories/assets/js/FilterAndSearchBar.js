@@ -23,7 +23,10 @@ const toggleFilter = function () {
       chips.attr('option-name', eleId);
       $(chipsWrapper).append(chips);
       if ($('#search-filter').find('.clear_section').length === 0) {
-        $(chipsWrapper).after("<div class='clear_section'><span class='clear_chips'>Clear all</span></div>");
+        $(chipsWrapper).after("<div class='clear_section'><span class='clear_chips'>Clear All</span></div>");
+      }
+      if ($('#search-filter').find('.active-filter').length === 0) {
+        $(chipsWrapper).before("<div class='active-filter'><span class=''>Active Filters</span></div>");
       }
     } else {
       $(chipsWrapper).find(`[option-name='${eleId}']`).remove();
@@ -33,10 +36,12 @@ const toggleFilter = function () {
   $(chipsWrapper).on('click', '.chips__cross', function () {
     if ($(chipsWrapper).find('.chips__cross').length < 3) {
       $(document).find('.clear_section').remove();
+      $(document).find('.active-filter').remove();
     }
     const id = $(this).attr('option-name');
     $(this).remove();
     $('.multi-select').find(`#${id}`).prop('checked', false);
+
   });
 
   $(document).on('click', '.clear_chips', () => {

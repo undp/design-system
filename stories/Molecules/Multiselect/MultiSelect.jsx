@@ -13,6 +13,7 @@ const SelectTag = ({ text, eleId }) => {
         className="select-control"
         aria-label="Region"
         aria-expanded="false"
+        id={`select_button-${eleId}`}
       >
         {text}
         <span />
@@ -20,14 +21,14 @@ const SelectTag = ({ text, eleId }) => {
       <ul
         className="options"
         data-type="region"
-        aria-labelledby="select_button"
+        aria-labelledby={`select_button-${eleId}`}
         role="listbox"
         aria-multiselectable="true"
       >
         <li role="option" id={`label-category1-${eleId}`}>
           <Checkbox label={`${text}`} value="category1" id={`category1-${eleId}`} />
         </li>
-        <li className="has-submenu">
+        <li role="option" className="has-submenu">
           <button className="has-submenu__button checkbox-item">
             {text}
           </button>
