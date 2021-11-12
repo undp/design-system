@@ -6,7 +6,6 @@ export const Menu = ({ data }) => (
   <ul className="menu__wrapper">
     {data.map((item, index) => (
       <li key={index}><MenuItems text={item.text} /></li>
-
     ))}
   </ul>
 );

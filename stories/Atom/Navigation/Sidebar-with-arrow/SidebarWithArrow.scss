@@ -1,49 +1,59 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/typography";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/typography';
 
 // * Slidebar start *//
-.Sidebar_item_arrow {
+.sidebar_item_arrow {
   @extend %border-bottom;
   @extend %sidebar;
+
   &:hover {
     background-color: $color-gray-200;
   }
-  &.open {
-    .arrow {
-      transform: rotateZ(180deg);
-      transition: all 0.1s ease;
-    }
-  }
+
   h6 {
     margin-bottom: 0;
   }
-  .arrow {
+
+  .icon-chevron-down,
+  .icon-chevron-down-white {
     background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
-    float: right;
-    width: 20px;
-    height: 20px;
     border-top-color: $color-gray-500;
+    float: right;
+    height: 20px;
+    margin-left: $spacing-24;
     transition: all 0.1s ease;
-    margin-left: 24px;
+    width: 20px;
   }
-  &--Default-up {
-    .arrow {
-      background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
-      transform: rotateZ(180deg);
+
+  &.default-up {
+    .icon-chevron-down {
+      @include transform (rotateZ(180deg));
     }
   }
-  &--Selected, &--Selected-up  {
+
+  &.selected,
+  &.selected-up {
     @extend %sidebar-selected;
-    .arrow {
-      background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center ;
+
+    .icon-chevron-down-white {
+      background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
     }
   }
-  &--Selected-up {
-    .arrow {
-      transform: rotateZ(180deg);
+
+  &.selected-up {
+    .icon-chevron-down-white {
+      @include transform (rotateZ(180deg));
     }
+  }
+}
+
+[dir='rtl'] {
+  .icon-chevron-down,
+  .icon-chevron-down-white {
+    margin-left: 0;
+    margin-right: $spacing-24;
   }
 }
 // * Slidebar end *//

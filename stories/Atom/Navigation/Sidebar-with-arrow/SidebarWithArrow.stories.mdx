@@ -13,7 +13,14 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Atoms/Navigation/Sidebar With Arrow" />
+<Meta title="Atoms/Navigation/Sidebar With Arrow" 
+ argTypes={{
+    Mode: {
+      options: ["default", "default-up", "selected", "selected-up"],
+      control: { type: "radio" }
+    }
+  }}
+/>
 
 <style>{`
   .subheading {
@@ -30,33 +37,13 @@ export const getCaptionForLocale = (locale) => {
 # Sidebar Component with Arrow
 The sidebar component is used for showing the nested mapping of the related pages. it shows the first-level of the sidebar with the arrow.
 
-<Story name="Sidebar Arrow Down Default">
+<Story name="Sidebar With Arrow">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <SidebarWithArrow text={caption.blockquote} active={'Default'} ></SidebarWithArrow>;
+    return <SidebarWithArrow text={caption.blockquote} {...args} ></SidebarWithArrow>;
   }}
 </Story>
 
-<Story name="Sidebar Arrow Up Default">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <SidebarWithArrow text={caption.blockquote} active={'Default-up'} ></SidebarWithArrow>;
-  }}
-</Story>
-
-<Story name="Sidebar Arrow Down Selected">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <SidebarWithArrow text={caption.blockquote} active={'Selected'}></SidebarWithArrow>;
-  }}
-</Story>
-
-<Story name="Sidebar Arrow Up Selected">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <SidebarWithArrow text={caption.blockquote} active={'Selected-up'}></SidebarWithArrow>;
-  }}
-</Story>
 
 <div className="subheading">Usage</div>
 <ul>

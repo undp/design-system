@@ -10,11 +10,10 @@
   .tab__item {
     cursor: pointer;
     display: inline-block;
-    font-family: $Font-Family-ProximaBold;
     font-size: $font-size-16;
+    font-weight: 700;
     letter-spacing: 0.03em;
-    line-height: 18px;
-    margin-bottom: -2px;
+    margin-bottom: -0.125rem;
     margin-right: $spacing-24;
     padding-bottom: $spacing-08;
     text-transform: uppercase;

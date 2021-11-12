@@ -2,7 +2,7 @@ import React from 'react';
 import './image.scss';
 import user from '../../../assets/images/bees.svg';
 
-export const Image = ({ src, alt }) => {
+export const Image = ({ }) => {
   const image = {
     src: user,
     alt: 'Author Image',

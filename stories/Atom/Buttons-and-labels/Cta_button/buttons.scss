@@ -5,9 +5,9 @@
 .button {
   @extend %button;
   @extend %img_none;
-  cursor: pointer;
 
   color: $color-white;
+  cursor: pointer;
   justify-content: center;
   padding: $spacing-16 $spacing-24;
 
@@ -25,7 +25,7 @@
         background: url(#{$img-path-Icon}/chevron-right-black.svg) no-repeat left center;
         content: '';
         height: 20px;
-        margin-left: 12px;
+        margin-left: $spacing-12;
         width: 13px;
       }
 
@@ -65,7 +65,7 @@
           @include transform(rotate(180deg));
 
           margin-left: 0;
-          margin-right: 12px;
+          margin-right: $spacing-12;
         }
 
         &:hover::after {

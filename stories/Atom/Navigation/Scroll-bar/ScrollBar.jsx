@@ -1,13 +1,13 @@
-import React from "react";
-import "./scrollbar.scss";
+import React from 'react';
+import './scrollbar.scss';
 
 export const ScrollBar = ({}) => (
   <>
-    <div className="Scrollbar-horizontal-wrapper Scrollbar-horizontal">
-      <div class="Scrollbar-data">.</div>
+    <div className="scrollbar-horizontal-wrapper scrollbar-horizontal">
+      <div className="scrollbar-data">.</div>
     </div>
-    <div className="Scrollbar-vertical-wrapper Scrollbar-vertical">
-      <div class="Scrollbar-data__vertical"></div>
+    <div className="scrollbar-vertical-wrapper scrollbar-vertical">
+      <div className="scrollbar-data__vertical" />
     </div>
   </>
 );

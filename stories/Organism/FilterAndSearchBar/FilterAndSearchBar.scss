@@ -7,7 +7,7 @@
   border: 0;
   border-bottom: 1px solid $color-black;
   cursor: pointer;
-  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
   text-decoration: underline;
 }
 
@@ -17,18 +17,18 @@
   &.show-filter {
     display: block;
   }
-  .multi-select { padding-top: 24px; }
+  .multi-select { padding-top: $spacing-24; }
 }
 
 .selected-chips {
-  padding-top: 24px;
+  padding-top: $spacing-24;
 
   a {
     &:first-child { display: none; }
   }
 
   .chips {
-    margin: 0 12px 12px 0;
+    margin: 0 $spacing-12 $spacing-12 0;
   }
 }
 

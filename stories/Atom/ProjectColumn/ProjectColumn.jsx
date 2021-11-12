@@ -7,6 +7,6 @@ export const Projectcolumn = ({
 }) => (
   <>
     <Heading type="6" label={headertext} />
-    <P label= {subtext} />
+    <P label={subtext} />
   </>
 );

@@ -68,7 +68,15 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Molecules/Navbar" parameters={{
+<Meta title="Molecules/Navbar" 
+  argTypes={{
+      active: {
+          options: ['black', 'white'],
+          control: { type: 'radio' },
+          defaultValue: 'black'
+      }
+  }}
+  parameters={{
     backgrounds: {
       default: "white",
       values: [{ name: "gray", value: "#D4D6D8" }],
@@ -112,21 +120,13 @@ we are using these modifier classes:
 
 <div className="subheading">Breadcrumb default</div>
 
-<Story name="Breadcrumb-link">
+<Story name="Breadcrumb-link" parameters={{ backgrounds: { default: "gray" } }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Breadcrumbcomponent data={caption} active={'Default'} ></Breadcrumbcomponent>;
+    return <Breadcrumbcomponent data={caption} {...args} ></Breadcrumbcomponent>;
   }}
 </Story>
 
-<div className="subheading">Breadcrumb white</div>
-
-<Story name="Breadcrumb-link white" parameters={{ backgrounds: { default: "gray" } }}>
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Breadcrumbcomponent data={caption} active={'white'} ></Breadcrumbcomponent>;
-  }}
-</Story>
 
 <div className="subheading">Usage</div>
 <ul>

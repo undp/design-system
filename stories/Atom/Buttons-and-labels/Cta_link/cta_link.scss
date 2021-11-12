@@ -4,7 +4,6 @@
 
 .cta__link {
   @extend %button;
-
   @extend %img_none;
 
   color: $color-black;
@@ -14,7 +13,7 @@
       @extend %ctaimg;
 
       @include transition(0.2s ease);
-      
+
       background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat left center;
     }
 

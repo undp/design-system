@@ -25,9 +25,10 @@
   }
 
   .selected {
+    @extend %select_default;
+
     background: $color-white;
     display: flex;
-    @extend %select_default;
 
     &::after {
       @extend %arrow;
@@ -36,12 +37,14 @@
 }
 
 .options-container {
+  @extend %select_option;
+
+  @include transition( all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
+
   background-color: $color-white;
   order: 1;
-  @extend %select_option;
   position: absolute;
   top: 51px;
-  @include transition( all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
   z-index: 20;
 
   &.active {
@@ -68,8 +71,8 @@
 
   span {
     display: block;
-    margin: 0 -16px;
-    padding: 15px $spacing-16;
+    margin: 0 -1rem;
+    padding: 0.938rem $spacing-16;
     &:hover { background-color: $color-gray-100; }
   }
 }

@@ -2,7 +2,7 @@
 @import './mixins';
 @import './breakpoints';
 
-/* start */
+/* base start */
 .color-white {
   color: $color-white;
 }
@@ -11,7 +11,7 @@
   color: $color-black;
 }
 
-.show-for-large {
+.show-large {
   display: none;
 
   @include devicebreak(medium) {
@@ -19,7 +19,7 @@
   }
 }
 
-.show-for-small {
+.show-small {
   display: block;
 
   @include devicebreak(medium) {
@@ -35,7 +35,7 @@
   }
 }
 
-.Scrollbar-horizontal {
+.scrollbar-horizontal {
   &::-webkit-scrollbar-track {
     background: linear-gradient(0deg, transparent 10%, $color-black 33%, transparent 0);
   }
@@ -50,7 +50,7 @@
   }
 }
 
-.Scrollbar-vertical {
+.scrollbar-vertical {
   &::-webkit-scrollbar-track {
     background: linear-gradient(90deg, transparent 10%, $color-black 33%, transparent 0);
   }
@@ -167,4 +167,4 @@
   }
 }
 
-/* end */
+/* base end */

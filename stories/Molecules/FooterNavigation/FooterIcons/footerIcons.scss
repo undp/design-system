@@ -13,10 +13,11 @@
     a {
       @extend %border-none;
       @extend %no-animation;
+
       background: url(#{$img-path-Icon}/social_icon.png) no-repeat;
       display: block;
       height: 25px;
-      margin-right: 20px;
+      margin-right: 1.25rem;
       width: 30px;
 
       &.facebook {
@@ -47,7 +48,7 @@
     }
   }
 
-  &--white {
+  &.white {
     li {
       a {
         &.facebook {

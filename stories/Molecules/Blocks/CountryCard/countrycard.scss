@@ -50,9 +50,9 @@
     }
 
     @include devicebreak(small) {
-      height: auto;
 
       &.glide__slide {
+        height: auto;
         &--active {
           .country {
             &-card {
@@ -132,7 +132,7 @@
         @include transitiondelay(0.6s);
 
         border: 0;
-        font-family: $Font-Family-ProximaBold;
+        font-weight: 700;
         margin-top: $spacing-32;
 
         &::after {
@@ -157,5 +157,4 @@
     }
   }
 }
-
 /* country card end */

@@ -278,7 +278,7 @@ export const Layout = ({ }) => (
     </div>
     <div className="grid_name">
       Collapse Cells
-      <span>X Grid only</span>
+      <div>X Grid only</div>
     </div>
     <div className="grid_description">
       The .[size]-[gutter-type]-collapse class lets you remove cell gutters.
@@ -309,7 +309,7 @@ export const Layout = ({ }) => (
     </div>
     <div className="grid_name">
       Block Grids
-      <span>X Grid only</span>
+      <div>X Grid only</div>
     </div>
     <div className="grid_description">
       To define cell widths within a direction-level, instead of the

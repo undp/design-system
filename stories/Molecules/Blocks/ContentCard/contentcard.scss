@@ -1,24 +1,25 @@
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
 .contentcard {
   border: 0;
+  @extend %img_none;
   border-top: 2px solid $color-black;
   display: block;
   margin-bottom: $spacing-24;
-  background-color: $color-white;
-  @extend %img_none;
-  
+
   h6 {
     font-size: 12px;
+    font-weight: 700;
     letter-spacing: 0.48px;
     line-height: 1.4;
-    padding: $spacing-16 $spacing-24;
     margin-bottom: 0;
+    padding: $spacing-16 $spacing-24;
   }
 
   & .card-thumbnail__image {
     width: 100%;
+
     img {
       width: 100%;
     }
@@ -38,6 +39,7 @@
     .cta__link {
       margin-top: $spacing-08;
     }
+
     &--cart {
       height: 100%;
     }
@@ -68,6 +70,7 @@
   &:hover {
     .card-thumbnail__image::before {
       @include background-image(42deg, $color-yellow, transparent 80%);
+
       opacity: 0.75;
     }
 
@@ -75,6 +78,7 @@
       .card-thumbnail__image {
         &::before {
           @include background-image(42deg, $color-red, transparent 80%);
+
           opacity: 0.75;
         }
       }
@@ -84,6 +88,7 @@
       .card-thumbnail__image {
         &::before {
           @include background-image(42deg, $color-green, transparent 80%);
+
           opacity: 0.75;
         }
       }
@@ -93,6 +98,7 @@
       .card-thumbnail__image {
         &::before {
           @include background-image(42deg, $color-azure, transparent 80%);
+
           opacity: 0.75;
         }
       }
@@ -107,9 +113,9 @@
     &.blue,
     &.gray {
       background-color: $color-white;
-      height: 100%;
       display: flex;
       flex-wrap: wrap;
+      height: 100%;
     }
 
     &.yellow:hover {
@@ -141,6 +147,7 @@
     &.gray {
       background-color: $color-light-yellow;
     }
+
     .card-thumbnail__image {
       display: none;
     }
@@ -148,6 +155,7 @@
 
   &:hover {
     @include transition(0.2s ease);
+
     .card_thumbnail__image::before {
       opacity: 0.75;
     }
