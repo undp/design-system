@@ -1,64 +1,145 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
 
 .parallax-card {
   align-items: center;
-  display: flex;
-  flex-flow: row wrap;
 
-  &--link {
-    @extend %img_none;
+  @include devicebreak(medium) {
+    flex-direction: row-reverse;
 
-    border-bottom: none;
-    display: block;
+    &:nth-child(odd) {
+      .parallax-card__link {
+        padding-left: $spacing-12;
+      }
+    }
   }
 
-  &--link,
+  &__link {
+    @extend %img_none;
+    @extend %img_none;
+
+    display: block;
+
+    @include devicebreak(small) {
+      padding: $spacing-24 0 0 $spacing-24;
+    }
+
+    &:hover {
+      .cta__link::after {
+        @include translate(70%,0);
+      }
+    }
+  }
+
+  &__image {
+    img {
+      @extend %img-cover;
+
+      display: block;
+    }
+  }
+
   .cta__link {
     @extend %img_none;
   }
 
   h3 {
     margin-bottom: $spacing-24;
+
+    @include devicebreak(medium) {
+      padding-right: $spacing-24;
+    }
   }
 
   p {
-    border-bottom: solid 2px $color-black;
     font-size: $font-size-16;
-    line-height: 1.3;
-    margin-bottom: 1.625rem;
-    margin-left: -1.875rem;
-    padding-bottom: 1.563rem;
-    padding-left: 1.875rem;
-    padding-right: $spacing-12;
+    line-height: 1.4;
+    margin-bottom: $spacing-24;
+    padding-bottom: $spacing-24;
+
+    @include devicebreak(medium) {
+      border-bottom: solid 2px $color-black;
+      padding: 0 $spacing-24 $spacing-24 0;
+    }
   }
 
-  &--right {
-    flex-direction: row-reverse;
+  &:nth-child(even) {
+    flex-direction: unset;
 
-    p {
-      margin-left: -0.75rem;
-      margin-right: -1.875rem;
-      padding-left: $spacing-12;
-      padding-right: 1.875rem;
+    @include devicebreak(medium) {
+      .parallax-card__link {
+        padding-right: $spacing-12;
+      }
+
+      h3 {
+        padding-left: $spacing-24;
+        padding-right: 0;
+      }
+
+      p {
+        padding: 0 0 $spacing-24 $spacing-24;
+      }
+
+      .cta__link {
+        padding-left: $spacing-24;
+      }
     }
   }
 }
 
 [dir='rtl'] {
   .parallax-card {
-    p {
-      margin-right: -1.875rem;
-      padding-left: $spacing-12;
-      padding-right: 1.875rem;
+    @include devicebreak(medium) {
+      h3 {
+        padding-left: $spacing-24;
+        padding-right: 0;
+      }
+
+      p {
+        padding: 0 0 $spacing-24 $spacing-24;
+      }
+
+      &:nth-child(odd) {
+        .parallax-card__link {
+          padding-left: 0;
+          padding-right: $spacing-12;
+        }
+      }
     }
 
-    &--right {
-      p {
-        margin-left: -1.875rem;
-        margin-right: -0.75rem;
-        padding-left: 1.875rem;
-        padding-right: $spacing-12;
+    &:nth-child(even) {
+      @include devicebreak(medium) {
+        h3 {
+          padding-left: 0;
+          padding-right: $spacing-24;
+        }
+
+        p {
+          padding: 0 $spacing-24 $spacing-24 0;
+        }
+
+        .parallax-card__link {
+          padding-left: $spacing-12;
+          padding-right: 0;
+        }
+      }
+
+      .cta__link {
+        padding-left: 0;
+        padding-right: $spacing-24;
+      }
+    }
+
+    &__link {
+      @include devicebreak(small) {
+        padding: $spacing-24 $spacing-24 0 0;
+      }
+
+      &:hover {
+        .cta__link::after {
+          @include transform(translate(-50%,0) rotate(180deg));
+        }
       }
     }
   }

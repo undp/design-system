@@ -1,0 +1,257 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import ParallaxCards from "./ParallaxCards";
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        data: [
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+        ],
+        title: ["Our",<br/>,"Expertise"],
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        data: [
+          {
+            name: "عنوان",
+            descriptionText:
+              "قد يكون الألم بحد ذاته شديدًا ، لكن السبب الرئيسي هو الألم ، لكنني أعطي الوقت للوقوع فيه مثل بعض الألم والألم الشديد. ولكي يأتي الأقل ، فماذا لنا أن نمارس أي مدرسة عمل إلا للاستفادة من أهدافها لتحقيقها.",
+            btnlabel: "اقرأ أكثر",
+          },
+          {
+            name: "عنوان",
+            descriptionText:
+              "قد يكون الألم بحد ذاته شديدًا ، لكن السبب الرئيسي هو الألم ، لكنني أعطي الوقت للوقوع فيه مثل بعض الألم والألم الشديد. ولكي يأتي الأقل ، فماذا لنا أن نمارس أي مدرسة عمل إلا للاستفادة من أهدافها لتحقيقها.",
+            btnlabel: "اقرأ أكثر",
+          },
+          {
+            name: "عنوان",
+            descriptionText:
+              "قد يكون الألم بحد ذاته شديدًا ، لكن السبب الرئيسي هو الألم ، لكنني أعطي الوقت للوقوع فيه مثل بعض الألم والألم الشديد. ولكي يأتي الأقل ، فماذا لنا أن نمارس أي مدرسة عمل إلا للاستفادة من أهدافها لتحقيقها.",
+            btnlabel: "اقرأ أكثر",
+          },
+          {
+            name: "عنوان",
+            descriptionText:
+              "قد يكون الألم بحد ذاته شديدًا ، لكن السبب الرئيسي هو الألم ، لكنني أعطي الوقت للوقوع فيه مثل بعض الألم والألم الشديد. ولكي يأتي الأقل ، فماذا لنا أن نمارس أي مدرسة عمل إلا للاستفادة من أهدافها لتحقيقها.",
+            btnlabel: "اقرأ أكثر",
+          },
+          {
+            name: "عنوان",
+            descriptionText:
+              "قد يكون الألم بحد ذاته شديدًا ، لكن السبب الرئيسي هو الألم ، لكنني أعطي الوقت للوقوع فيه مثل بعض الألم والألم الشديد. ولكي يأتي الأقل ، فماذا لنا أن نمارس أي مدرسة عمل إلا للاستفادة من أهدافها لتحقيقها.",
+            btnlabel: "اقرأ أكثر",
+          },
+        ],
+        title: ["لنا",<br/>,"خبرة"],
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        data: [
+          {
+            name: "ခေါင်းစီး",
+            descriptionText:
+              "နာကျင်မှုကိုယ်တိုင်က ဝေဒနာအများကြီးဖြစ်နိုင်ပေမယ့် အဓိကအကြောင်းအရင်းကတော့ နာကျင်မှုပဲ၊ ဒါပေမယ့် ကြီးကြီးမားမား နာကျင်ကိုက်ခဲမှုလိုမျိုး ဝေဒနာတစ်ခုလို ကျရောက်ဖို့ အချိန်ပေးပါ။ ယုတ်စွအဆုံး အတတ်နိုင်ဆုံး ပန်းတိုင်ရောက်ဖို့ ရည်ရွယ်ချက်တွေကို အခွင့်ကောင်းယူဖို့ကလွဲလို့ ငါတို့ဟာ ဘယ်ကျောင်းကိုမဆို ကြိုးစားအားထုတ်ရမယ်။",
+            btnlabel: "ပိုပြီးဖတ်ပါ",
+          },
+          {
+            name: "ခေါင်းစီး",
+            descriptionText:
+              "နာကျင်မှုကိုယ်တိုင်က ဝေဒနာအများကြီးဖြစ်နိုင်ပေမယ့် အဓိကအကြောင်းအရင်းကတော့ နာကျင်မှုပဲ၊ ဒါပေမယ့် ကြီးကြီးမားမား နာကျင်ကိုက်ခဲမှုလိုမျိုး ဝေဒနာတစ်ခုလို ကျရောက်ဖို့ အချိန်ပေးပါ။ ယုတ်စွအဆုံး အတတ်နိုင်ဆုံး ပန်းတိုင်ရောက်ဖို့ ရည်ရွယ်ချက်တွေကို အခွင့်ကောင်းယူဖို့ကလွဲလို့ ငါတို့ဟာ ဘယ်ကျောင်းကိုမဆို ကြိုးစားအားထုတ်ရမယ်။",
+            btnlabel: "ပိုပြီးဖတ်ပါ",
+          },
+          {
+            name: "ခေါင်းစီး",
+            descriptionText:
+              "နာကျင်မှုကိုယ်တိုင်က ဝေဒနာအများကြီးဖြစ်နိုင်ပေမယ့် အဓိကအကြောင်းအရင်းကတော့ နာကျင်မှုပဲ၊ ဒါပေမယ့် ကြီးကြီးမားမား နာကျင်ကိုက်ခဲမှုလိုမျိုး ဝေဒနာတစ်ခုလို ကျရောက်ဖို့ အချိန်ပေးပါ။ ယုတ်စွအဆုံး အတတ်နိုင်ဆုံး ပန်းတိုင်ရောက်ဖို့ ရည်ရွယ်ချက်တွေကို အခွင့်ကောင်းယူဖို့ကလွဲလို့ ငါတို့ဟာ ဘယ်ကျောင်းကိုမဆို ကြိုးစားအားထုတ်ရမယ်။",
+            btnlabel: "ပိုပြီးဖတ်ပါ",
+          },
+          {
+            name: "ခေါင်းစီး",
+            descriptionText:
+              "နာကျင်မှုကိုယ်တိုင်က ဝေဒနာအများကြီးဖြစ်နိုင်ပေမယ့် အဓိကအကြောင်းအရင်းကတော့ နာကျင်မှုပဲ၊ ဒါပေမယ့် ကြီးကြီးမားမား နာကျင်ကိုက်ခဲမှုလိုမျိုး ဝေဒနာတစ်ခုလို ကျရောက်ဖို့ အချိန်ပေးပါ။ ယုတ်စွအဆုံး အတတ်နိုင်ဆုံး ပန်းတိုင်ရောက်ဖို့ ရည်ရွယ်ချက်တွေကို အခွင့်ကောင်းယူဖို့ကလွဲလို့ ငါတို့ဟာ ဘယ်ကျောင်းကိုမဆို ကြိုးစားအားထုတ်ရမယ်။",
+            btnlabel: "ပိုပြီးဖတ်ပါ",
+          },
+          {
+            name: "ခေါင်းစီး",
+            descriptionText:
+              "နာကျင်မှုကိုယ်တိုင်က ဝေဒနာအများကြီးဖြစ်နိုင်ပေမယ့် အဓိကအကြောင်းအရင်းကတော့ နာကျင်မှုပဲ၊ ဒါပေမယ့် ကြီးကြီးမားမား နာကျင်ကိုက်ခဲမှုလိုမျိုး ဝေဒနာတစ်ခုလို ကျရောက်ဖို့ အချိန်ပေးပါ။ ယုတ်စွအဆုံး အတတ်နိုင်ဆုံး ပန်းတိုင်ရောက်ဖို့ ရည်ရွယ်ချက်တွေကို အခွင့်ကောင်းယူဖို့ကလွဲလို့ ငါတို့ဟာ ဘယ်ကျောင်းကိုမဆို ကြိုးစားအားထုတ်ရမယ်။",
+            btnlabel: "ပိုပြီးဖတ်ပါ",
+          },
+        ],
+        title: ["ကျွန်တော်တို့ရဲ့",<br/>,"ကျွမ်းကျင်မှု"],
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        data: [
+          {
+            name: "見出し",
+            descriptionText:
+              "痛み自体はたくさんの痛みかもしれませんが、主な理由は痛みですが、私はいくつかの大きな痛みや痛みのようにそれに陥る時間を与えます。 最小限のことをするために、達成するためにそれからの目的を利用することを除いて、私たちの何が労働の学校を行使するか。",
+            btnlabel: "続きを読む",
+          },
+          {
+            name: "見出し",
+            descriptionText:
+              "痛み自体はたくさんの痛みかもしれませんが、主な理由は痛みですが、私はいくつかの大きな痛みや痛みのようにそれに陥る時間を与えます。 最小限のことをするために、達成するためにそれからの目的を利用することを除いて、私たちの何が労働の学校を行使するか。",
+            btnlabel: "続きを読む",
+          },
+          {
+            name: "見出し",
+            descriptionText:
+              "痛み自体はたくさんの痛みかもしれませんが、主な理由は痛みですが、私はいくつかの大きな痛みや痛みのようにそれに陥る時間を与えます。 最小限のことをするために、達成するためにそれからの目的を利用することを除いて、私たちの何が労働の学校を行使するか。",
+            btnlabel: "続きを読む",
+          },
+          {
+            name: "見出し",
+            descriptionText:
+              "痛み自体はたくさんの痛みかもしれませんが、主な理由は痛みですが、私はいくつかの大きな痛みや痛みのようにそれに陥る時間を与えます。 最小限のことをするために、達成するためにそれからの目的を利用することを除いて、私たちの何が労働の学校を行使するか。",
+            btnlabel: "続きを読む",
+          },
+          {
+            name: "見出し",
+            descriptionText:
+              "痛み自体はたくさんの痛みかもしれませんが、主な理由は痛みですが、私はいくつかの大きな痛みや痛みのようにそれに陥る時間を与えます。 最小限のことをするために、達成するためにそれからの目的を利用することを除いて、私たちの何が労働の学校を行使するか。",
+            btnlabel: "続きを読む",
+          },
+        ],
+        title: ["私たちの",<br/>,"専門知識"],
+      };
+      return japaneseText;
+    default:
+      const dummy = {
+        data: [
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+        ],
+        title: ["Our",<br/>,"Expertise"],
+      };
+      return dummy;
+  }
+};
+
+<Meta title="Components/UI components/Cards/Parallax Cards" />
+
+<style>{`
+ .subheading {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  .sbdocs .sbdocs-h2 {
+    border-bottom: none;
+  }
+  .css-1h4ytzj code {
+    padding-right: 10px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+      background: black;
+  }
+`}</style>
+
+# Parallax Cards Component
+
+## Overview
+
+The Parallax Cards component defines a card of information data with some items - Title, Paragraph, and CTA Link. We are using a grid system to manage the different types of sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+
+## Default Representation & various possible states
+
+<Canvas>
+  <Story name="Parallax Cards">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <ParallaxCards alt={"feature card"} carddata={caption.data} title={caption.title}></ParallaxCards>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Dependencies
+
+Libraries or another dependency which are used in the component.
+
+- For animation functionality its depend on the jQuery plugin library.
+- Custom JS file (SliderCustom.js) is located in the same js folder.
+- Include JS Slider library file from <code>assets/js/glideslider.js</code>
+- Include JS Parallax library file from <code>assets/js/gsap.min.js</code>
+- Include JS Parallax library file from <code>assets/js/ScrollTrigger.min.js</code>
+
+## Usage
+
+- Take HTML from the HTML tab in the canvas.
+- <u>To use SCSS include the following files in your implementation</u>
+- Include the common SCSS files like variables, mixin from <code>assets/scss</code>
+- Component SCSS file: <code>parallaxcards.scss</code>
+-  <u>To use CSS include the following files in your implementation</u>
+- The compiled CSS file from <code>assets/css/style.css</code>
