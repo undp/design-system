@@ -36,13 +36,13 @@
 
           &_para {
             font-size: $font-size-14;
-            line-height: 1.5;
+            line-height: 1.4;
             margin-bottom: $spacing-16;
             padding: 0;
           }
         }
 
-        .image--author {
+        .image_credits {
           border-left: 0;
           border-right: 0;
           border-top: 1px solid $color-gray-500;
@@ -51,7 +51,7 @@
         }
 
         .image__caption--unstag {
-          .image--author {
+          .image_credits {
             border: 0;
             padding: 0;
           }
@@ -75,7 +75,7 @@
             margin: 0 $spacing-24 0 0;
           }
 
-          &--author {
+          &_credits {
             border-right: 0;
             padding-right: 0;
           }
