@@ -47,6 +47,10 @@
 
       @include devicebreak(medium) {
         padding-bottom: $spacing-48;
+
+        .footer__icons {
+          justify-content: end;
+        }
       }
     }
   }
@@ -154,6 +158,23 @@
     label,
     .input-error {
       color: $color-white;
+    }
+  }
+}
+
+@include devicebreak(medium) {
+  [dir='rtl'] {
+    .footer {
+      &__bottom--two {
+        .footer__condition_text {
+          text-align: left;
+
+          li {
+            margin-left: 0;
+            margin-right: 2.25rem;
+          }
+        }
+      }
     }
   }
 }

@@ -1,65 +1,67 @@
+@import './variables';
+@import './breakpoints';
+@import './mixins';
+
 @include devicebreak(small) {
   .glide {
     box-sizing: border-box;
     position: relative;
     width: 100%;
-  }
 
-  .glide * {
-    box-sizing: inherit;
-  }
+    & * {
+      box-sizing: inherit;
+    }
 
-  .glide__track {
-    overflow: hidden;
-  }
+    &__track {
+      overflow: hidden;
+    }
 
-  .glide__slides {
-    backface-visibility: hidden;
-    display: flex;
-    flex-wrap: nowrap;
-    list-style: none;
-    overflow: hidden;
-    padding: 0;
-    position: relative;
-    touch-action: pan-y;
-    transform-style: preserve-3d;
-    white-space: nowrap;
-    width: 100%;
-    will-change: transform;
-  }
+    &__slides {
+      backface-visibility: hidden;
+      display: flex;
+      flex-wrap: nowrap;
+      list-style: none;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      touch-action: pan-y;
+      transform-style: preserve-3d;
+      white-space: nowrap;
+      width: 100%;
+      will-change: transform;
 
-  .glide__slides--dragging {
-    user-select: none;
-  }
+      &--dragging {
+        user-select: none;
+      }
+    }
 
-  .glide__slide {
-    flex-shrink: 0;
-    height: 100%;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    user-select: none;
-    white-space: normal;
-    width: 100%;
-  }
+    &__slide {
+      flex-shrink: 0;
+      height: 100%;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      user-select: none;
+      white-space: normal;
+      width: 100%;
 
-  .glide__slide a {
-    -webkit-user-drag: none;
-    user-select: none;
-    user-select: none;
-    user-select: none;
-  }
+      a {
+        -webkit-user-drag: none;
+        user-select: none;
+      }
+    }
 
-  .glide__arrows {
-    -webkit-touch-callout: none;
-    user-select: none;
-  }
+    &__arrows {
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
 
-  .glide__bullets {
-    -webkit-touch-callout: none;
-    user-select: none;
-  }
+    &__bullets {
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
 
-  .glide--rtl {
-    direction: rtl;
+    &--rtl {
+      direction: rtl;
+    }
   }
 }

@@ -196,7 +196,12 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Hero"/>
+<Meta title="Components/UI components/Hero" component={CountryCardHero}
+  argTypes={{
+    variant: {
+      control: false,
+    },
+  }}/>
 
 <style>{`
  .subheading {

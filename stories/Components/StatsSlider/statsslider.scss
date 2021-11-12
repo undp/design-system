@@ -9,17 +9,30 @@
   @include devicebreak(medium) {
     .glide {
       &__slides {
-        transform: none !important;
-        transition: none !important;
-        width: initial !important;
+        display: block;
       }
-
       &__slide {
-        margin-left: initial !important;
-        margin-right: initial !important;
         padding-left: 0.625rem;
         padding-right: 0.625rem;
-        width: initial !important;
+      }
+    }
+  }
+
+  @include devicebreak(small) {
+    .statscard {
+      max-width: 100%;
+      pointer-events: none;
+    }
+
+    .glide {
+      &__slide--active {
+        .statscard {
+          background-color: $color-light-yellow;
+
+          &__number {
+            color: $color-black;
+          }
+        }
       }
     }
   }
@@ -46,76 +59,12 @@
     }
   }
 }
-[dir='rtl']{
-  .stats-card-grid{
-    @include devicebreak(medium){
-      .grid-x{
+
+[dir='rtl'] {
+  .stats-card-grid {
+    @include devicebreak(medium) {
+      .grid-x {
         flex-direction: row-reverse;
-      }
-    }
-  }
-}
-
-.stats-card-slider {
-  @include devicebreak(small) {
-    .statscard {
-      max-width: 100%;
-      pointer-events: none;
-    }
-  }
-
-  .glide {
-    &__slides {
-      margin-top: 34px;
-    }
-
-    &__slide {
-      &--active {
-        @include devicebreak(small) {
-          .statscard {
-            background-color: $color-light-yellow;
-
-            &__number {
-              color: $color-black;
-            }
-          }
-        }
-      }
-    }
-
-    &__bullets {
-      display: flex;
-      position: relative;
-
-      @include devicebreak(medium) {
-        display: none;
-      }
-
-      &::after {
-        border-bottom: 1px solid $color-black;
-        content: '';
-        height: 1px;
-        left: 0;
-        position: absolute;
-        top: 0.5px;
-        width: 100%;
-        z-index: 1;
-      }
-    }
-
-    &__bullet {
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      cursor: pointer;
-      flex-grow: 1;
-      height: 4px;
-      position: relative;
-      @include transition(all 0.8s ease-in-out);
-      z-index: 2;
-
-      &--active {
-        background: $color-black;
       }
     }
   }
