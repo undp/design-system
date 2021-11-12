@@ -6,7 +6,7 @@ import { Cardthumb } from '../../../Atom/Cards/Card-thumbnail/CardThumbnail';
 import { Icondownload } from '../../../Atom/Global/Icons/download';
 
 export const DownloadCard = ({
-  image, image2, title, format, download, ...args
+  image, image2, title, format, download,
 }) => (
   <div className="download-card">
     {image && <Publicationthumb />}

@@ -11,12 +11,12 @@
     @extend %img-cover;
   }
 
-  &--small {
+  &.small {
     height: 80px;
     width: 80px;
   }
 
-  &--large {
+  &.large {
     height: 180px;
     width: 180px;
   }

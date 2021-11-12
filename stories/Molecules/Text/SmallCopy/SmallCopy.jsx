@@ -5,7 +5,7 @@ export const Smallcopy = ({
   locationName, phoneName, phonenumber, emailName, emailid,
 }) => (
   <>
-    <div className="smallcopy__box--locale">
+    <div className="smallcopy__box-locale">
       {locationName}
     </div>
     <div className="smallcopy__box">

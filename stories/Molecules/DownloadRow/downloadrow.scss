@@ -4,18 +4,17 @@
 
 .selectbox-container {
   align-items: center;
+  align-items: center;
   background-color: $color-white;
   border-bottom: 1px solid $color-gray-400;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   &:hover {
     background-color: $color-gray-100;
   }
 
   &__data {
-    font-family: $Font-Family-ProximaRegular;
     font-size: $font-size-16;
     margin: $spacing-16;
 
@@ -31,7 +30,7 @@
 
   .checkbox-wrapper {
     margin: $spacing-16 8px $spacing-16 $spacing-16;
-    padding-bottom: 26px;
+    padding-bottom: 1.25rem;
 
     @include devicebreak(medium) {
       margin-right: $spacing-12;

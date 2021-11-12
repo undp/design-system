@@ -3,12 +3,12 @@ import { LangSwitch } from '../../../assets/js/Lang_switcher';
 import './languageswitcher.scss';
 
 export const variant_options = {
-  Blue: 'blue',
-  White: 'white',
+  blue: 'blue',
+  white: 'white',
 };
 
 export const Languageswitcher = ({
-  headerText, data, active, ...args
+  headerText, data, ...args
 }) => {
   useEffect(() => {
     LangSwitch();
@@ -16,7 +16,7 @@ export const Languageswitcher = ({
 
   return (
     <div className="dropdown-language" id="switcher">
-      <button className={['dropdown-btn', `dropdown-btn__${variant_options[`${args.variant}`]}`].join(' ')}>{headerText}</button>
+      <button className={['dropdown-btn', `${variant_options[`${args.variant}`]}`].join(' ')}>{headerText}</button>
       <ul className="dropdown-language__content">
         {data.map((item, index) => (
           <li>
@@ -31,5 +31,5 @@ export const Languageswitcher = ({
 };
 
 Languageswitcher.defaultProps = {
-  variant: 'Blue',
+  variant: 'blue',
 };

@@ -95,6 +95,11 @@
         right: 0;
       }
     }
+
+    &__subtitle {
+      padding-left: 0;
+      padding-right: $spacing-64;
+    }
   }
 }
 

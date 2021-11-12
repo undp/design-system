@@ -12,7 +12,6 @@ export const Color = ({
 
   return (
     <div className="color-wrapper">
-
       <div className="color__row">
         <div className="color__title Primary">{PrimaryColor}</div>
         <div className="color__define">
@@ -39,7 +38,7 @@ export const Color = ({
           <div className="color__name">
             <div className="Primary-text">
               {Primarytext}
-              <span className="polygon"><img src={image.src} alt={image.alt} /></span>
+              <div className="polygon"><img src={image.src} alt={image.alt} /></div>
             </div>
             <div className="color__box p-blue-600" />
             <div className="color__code">blue-600</div>
@@ -50,7 +49,6 @@ export const Color = ({
           </div>
         </div>
       </div>
-
       <div className="color__row">
         <div className="color__title Gary" />
         <div className="color__define">
@@ -69,7 +67,7 @@ export const Color = ({
           <div className="color__name">
             <div className="Primary-text">
               {Primarytext}
-              <span className="polygon"><img src={image.src} alt={image.alt} /></span>
+              <div className="polygon"><img src={image.src} alt={image.alt} /></div>
             </div>
             <div className="color__box p-gray-400" />
             <div className="color__code">gray-400</div>
@@ -88,7 +86,6 @@ export const Color = ({
           </div>
         </div>
       </div>
-
       <div className="color__row">
         <div className="color__title Gary">{AccentColor}</div>
         <div className="color__define_wrapper">
@@ -105,7 +102,6 @@ export const Color = ({
               <div className="color__box dark-yellow" />
               <div className="color__code">dark-yellow</div>
             </div>
-
             <div className="color__name">
               <div className="color__box " />
             </div>
@@ -124,7 +120,6 @@ export const Color = ({
           </div>
         </div>
       </div>
-
       <div className="color__row">
         <div className="color__title Gary" />
         <div className="color__define_wrapper">
@@ -141,11 +136,9 @@ export const Color = ({
               <div className="color__box dark-green" />
               <div className="color__code">dark-green</div>
             </div>
-
             <div className="color__name">
               <div className="color__box " />
             </div>
-
             <div className="color__name">
               <div className="color__box light-azure" />
               <div className="color__code">light-azure</div>
@@ -161,7 +154,6 @@ export const Color = ({
           </div>
         </div>
       </div>
-
       <div className="color__row full">
         <div className="color__title Gary ">{Balancepalette}</div>
         <div className="color__define_balance">

@@ -1,41 +1,48 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
 @import '../../assets/scss/glideslider';
+@import '../../assets/scss/mixins';
 
-.stats-card-grid{
+.stats-card-grid {
   overflow-x: hidden;
-  .stats-card-parallax{
-    margin-bottom: 2.625rem;
-    &:last-child{
-      margin-bottom: 0;
-    }
-  } 
-  @include devicebreak(medium){
-    .glide{
-      &__slides{
+
+  @include devicebreak(medium) {
+    .glide {
+      &__slides {
         transform: none !important;
-        width: initial !important;
         transition: none !important;
-      }
-      &__slide{
         width: initial !important;
+      }
+
+      &__slide {
         margin-left: initial !important;
         margin-right: initial !important;
-        padding-right: 0.625rem;
         padding-left: 0.625rem;
+        padding-right: 0.625rem;
+        width: initial !important;
       }
     }
   }
-  .statscard{
-    &:hover{
-      background-color: $color-light-yellow;
+
+  .stats-card-parallax {
+    margin-bottom: 2.625rem;
+
+    &:last-child {
+      margin-bottom: 0;
     }
-    @include devicebreak(large){
-      &--sm{
-        max-width: 330px;
-        width:100%;
+  }
+
+  .statscard {
+    @include devicebreak(large) {
+      &--sm {
         box-sizing: border-box;
-      } 
+        max-width: 330px;
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      background-color: $color-light-yellow;
     }
   }
 }
@@ -49,22 +56,25 @@
   }
 }
 
-.stats-card-slider{
-  @include devicebreak(small){
-    .statscard{
+.stats-card-slider {
+  @include devicebreak(small) {
+    .statscard {
       max-width: 100%;
       pointer-events: none;
     }
   }
-  .glide{
-    &__slides{
+
+  .glide {
+    &__slides {
       margin-top: 34px;
     }
-    &__slide{
+
+    &__slide {
       &--active {
-        @include devicebreak(small){
-          .statscard{
+        @include devicebreak(small) {
+          .statscard {
             background-color: $color-light-yellow;
+
             &__number {
               color: $color-black;
             }
@@ -72,35 +82,39 @@
         }
       }
     }
-    &__bullets{
+
+    &__bullets {
       display: flex;
       position: relative;
-      @include devicebreak(medium){
+
+      @include devicebreak(medium) {
         display: none;
       }
-      &::after{
+
+      &::after {
+        border-bottom: 1px solid $color-black;
         content: '';
+        height: 1px;
+        left: 0;
         position: absolute;
         top: 0.5px;
-        left: 0;
-        height: 1px;
         width: 100%;
-        border-bottom: 1px solid $color-black;
         z-index: 1;
       }
     }
-    &__bullet{
-      flex-grow: 1;
-      border-radius: 0;
-      height: 4px;
-      border: none;
+
+    &__bullet {
       background: transparent;
-      position: relative;
-      z-index: 2;
-      -webkit-transition: all .8s ease-in-out;
-      transition: all .8s ease-in-out;
+      border: none;
+      border-radius: 0;
       cursor: pointer;
-      &--active{
+      flex-grow: 1;
+      height: 4px;
+      position: relative;
+      @include transition(all 0.8s ease-in-out);
+      z-index: 2;
+
+      &--active {
         background: $color-black;
       }
     }

@@ -1,20 +1,23 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 // * progress navigation start *//
 .progress-container {
-  width: 100%;
-  height: 12px;
   background: $color-gray-300;
+  height: 12px;
+  width: 100%;
+
   @include devicebreak(medium) {
-   height: 16px;
+    height: 16px;
   }
 }
+
 .progress-bar {
+  background: $color-yellow;
   height: 12px;
-  background: $color-yellow ;
   width: 50%;
+
   @include devicebreak(medium) {
     height: 16px;
   }

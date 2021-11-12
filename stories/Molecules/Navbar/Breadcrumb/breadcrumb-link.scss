@@ -3,37 +3,56 @@
 @import '../../../assets/scss/mixins';
 
 .breadcrumb__wrapper {
+  align-items: baseline;
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  font-size: 12px;
+  font-size: $font-size-12;
   padding: 0;
 
   li {
     display: inline-block;
-    margin: 12px;
+    margin: $spacing-12;
     position: relative;
 
     &::after {
+      color: $color-dark-red;
       content: '/';
       font-weight: bold;
-      color: $color-dark-red;
       position: absolute;
       right: -12px;
       top: 0;
     }
-    &:first-child{
+
+    .last-item {
+      color: $color-black;
+      display: block;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      white-space: nowrap;
+      width: 60px;
+
+      @include devicebreak(medium) {
+        overflow: inherit;
+        width: inherit;
+      }
+    }
+
+    &:first-child {
       margin-left: 0;
     }
+
     &:last-child {
       margin-right: 0;
+
       &::after {
         display: none;
       }
     }
     a {
-      font-family: $Font-Family-ProximaSemiBold;
-      font-size: 12px;
+     font-weight: 600;
+      font-size: $font-size-12;
       text-transform: uppercase;
       color: $color-dark-red;
       @extend %border-none;
@@ -44,7 +63,7 @@
     }
   }
 
-  &--white {
+  &.white {
     li {
       &::after {
         color: $color-white;
@@ -63,7 +82,7 @@
   }
   &:last-child li:last-child {
     display: block;
-    font-family: $Font-Family-ProximaSemiBold;
+    font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
     text-transform: uppercase;
@@ -87,14 +106,17 @@
       a {
         margin: 0;
       }
+
       &:first-child {
+        margin-left: $spacing-12;
         margin-right: 0;
-        margin-left: 12px;
       }
+
       &:last-child {
         margin-left: 0;
-        margin-right: 12px;
+        margin-right: $spacing-12;
       }
+
       &::after {
         @include transform(translate(0,-63%) rotate(120deg));
 

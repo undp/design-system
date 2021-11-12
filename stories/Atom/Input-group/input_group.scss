@@ -54,11 +54,10 @@
   .input__controls {
     border: 2px solid $color-black;
     box-sizing: border-box;
-    font-family: $Font-Family-ProximaRegular;
     font-size: $font-size-16;
     height: 46px;
     margin: $spacing-08 0;
-    padding: 10px;
+    padding: 0.625rem;
     width: 100%;
 
     &::placeholder {
@@ -85,14 +84,16 @@
     }
 
     &--search {
-      padding-left: 40px;
+      padding-left: $spacing-40;
       position: relative;
     }
 
     &--date {
-      background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat left 14px bottom 12px;
+      background:
+        url(#{$img-path-Iconback}/calender_black.svg) no-repeat left
+        14px bottom 12px;
       color: $color-gray-500;
-      padding-left: 40px;
+      padding-left: $spacing-40;
 
       &.disabled-state {
         background-image: url(#{$img-path-Iconback}/datedisabled.svg);
@@ -128,13 +129,15 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
     .input__controls {
       &--search {
-        padding-left: 10px;
-        padding-right: 40px;
+        padding-left: 0.625rem;
+        padding-right: $spacing-40;
       }
 
       &--date {
-        background: url(#{$img-path-Iconback}/calender_black.svg) no-repeat right 14px bottom 12px;
-        padding-right: 40px;
+        background:
+          url(#{$img-path-Iconback}/calender_black.svg) no-repeat
+          right 14px bottom 12px;
+        padding-right: $spacing-40;
         text-align: right;
 
         &.disabled-state {

@@ -1,18 +1,21 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 // * footer Logo start *//
 .footer__logo {
-  display: flex;
   align-items: center;
+  display: flex;
+
   .footer__logo_name {
     margin: 0 $spacing-16;
+
     h5 {
       margin-bottom: 0;
     }
   }
-  &--white {
+
+  &.white {
     h5 {
       color: $color-white;
     }
