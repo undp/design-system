@@ -26,7 +26,7 @@ export const Footer = ({
                 <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} style={args.color} />
               )}
             </div>
-            <div className="cell medium-5 footer__newsletter">
+            <div className="cell medium-4 footer__newsletter">
               <SignUp
                 element={element}
                 type={type}
