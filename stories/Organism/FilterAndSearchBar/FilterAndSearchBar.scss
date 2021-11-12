@@ -11,13 +11,16 @@
   text-decoration: underline;
 }
 
-#select-wrapper {
+.select-wrapper {
   display: none;
 
   &.show-filter {
     display: block;
   }
-  .multi-select { padding-top: 24px; }
+
+  .multi-select {
+    padding-top: 24px;
+  }
 }
 
 .selected-chips {
@@ -25,7 +28,9 @@
   padding-top: $spacing-24;
 
   a {
-    &:first-child { display: none; }
+    &:first-child {
+      display: none;
+    }
   }
 
   .chips {
@@ -37,6 +42,14 @@
   font-size: $font-size-16;
 }
 
+.clear_section {
+  display: none;
+
+  &.show-clear {
+    display: block;
+  }
+}
+
 .clear_chips {
   border-bottom: 1px solid $color-red;
   cursor: pointer;
@@ -44,12 +57,18 @@
 }
 
 .active-filter {
-padding-top:$spacing-16;
-  span{
-  color:$color-gray-500;
-  font-size: $font-size-16;
-  font-family:$Font-Family-ProximaSemiBold;
-  text-transform: uppercase;
+  display: none;
+  padding-top: $spacing-16;
+ 
+  &.show-activefilter {
+    display: block;
+  }
+
+  span {
+    color: $color-gray-600;
+    font-family: $Font-Family-ProximaSemiBold;
+    font-size: $font-size-16;
+    text-transform: uppercase;
   }
 }
 

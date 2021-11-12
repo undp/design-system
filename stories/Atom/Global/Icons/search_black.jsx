@@ -2,7 +2,7 @@ import React from 'react';
 import icon from '../../../assets/images/Icon/Search_black.svg';
 import './icons.scss';
 
-export const IconsSearchBlack = ({ varient, ...props }) => {
+export const IconsSearchBlack = () => {
   const image = {
     src: icon,
     alt: 'icon',

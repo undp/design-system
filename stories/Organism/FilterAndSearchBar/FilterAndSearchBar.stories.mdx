@@ -10,6 +10,24 @@ export const getCaptionForLocale = (locale) => {
     default: return 'Category';
   }
 };
+export const getCaptionForClearLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'Clear All'; return engText;
+    case 'arabic': const arabicText = 'امسح الكل'; return arabicText;
+    case 'burmese': const burmeseText = 'အားလုံးကိုရှင်း'; return burmeseText;
+    case 'japanese': const japaneseText = 'すべてクリア'; return japaneseText;
+    default: return 'Clear All';
+  }
+};
+export const getCaptionForActiveLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'Active Filters'; return engText;
+    case 'arabic': const arabicText = 'عوامل التصفية النشطة'; return arabicText;
+    case 'burmese': const burmeseText = 'အသက်ဝင်သော စစ်ထုတ်မှုများ'; return burmeseText;
+    case 'japanese': const japaneseText = 'すべてクリア'; return japaneseText;
+    default: return 'Active Filters';
+  }
+};
 
 
 <Meta title="Patterns/FilterAndSearchBar" />
@@ -38,10 +56,12 @@ export const getCaptionForLocale = (locale) => {
 The Sidebar Component is a shorter piece of text that appears next to and accompanies a longer article.
 
 <Story name="FilterAndSearchBar">
-  {(args, { globals: { locale } }) => {
+  {(args, { globals: { locale } }) => { 
     const caption = getCaptionForLocale(locale);
+    const clearText = getCaptionForClearLocale(locale);
+    const activeFilterText = getCaptionForActiveLocale(locale);
     return (
-      <FilterAndSearchBar data={caption}></FilterAndSearchBar>
+      <FilterAndSearchBar clearText={clearText} activeFilterText={activeFilterText}  data={caption}></FilterAndSearchBar>
     );
   }}
 </Story>
