@@ -3,40 +3,23 @@
 @import '../../../assets/scss/mixins';
 
 /* small copy */
-.smallcopy {
-  &__box {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: $spacing-04;
+.smallcopy__box {
+  margin-bottom: $spacing-04;
 
-    a {
-      @extend %border-none;
-    }
+  a {
+    @extend %border-none;
+  }
 
-    &--locale {
-      display: block;
-      margin-bottom: $spacing-32;
+  &--locale {
+    margin-bottom: $spacing-32;
 
-      .smallcopy__label {
-        display: block;
-        font-size: $font-size-16;
-        letter-spacing: 0.03em;
-        margin: 0 0 $spacing-12 0;
-      }
+    strong {
+      font-size: $font-size-16;
+      letter-spacing: 0.03em;
     }
   }
 
-  &__label {
-    font-family: $Font-Family-ProximaBold;
+  strong {
     margin-right: $spacing-04;
-  }
-}
-
-[dir='rtl'] {
-  .smallcopy {
-    &__label {
-      margin-left: $spacing-04;
-      margin-right: 0;
-    }
   }
 }
