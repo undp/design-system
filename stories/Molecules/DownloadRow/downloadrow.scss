@@ -8,6 +8,7 @@
   border-bottom: 1px solid $color-gray-400;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   &:hover {
     background-color: $color-gray-100;
@@ -24,13 +25,13 @@
   }
 
   &__chevron {
-    margin: $spacing-16 0 $spacing-16 $spacing-16;
+    margin: $spacing-16 0 19px $spacing-16;
     padding-right: $spacing-16;
   }
 
   .checkbox-wrapper {
     margin: $spacing-16 8px $spacing-16 $spacing-16;
-    padding-bottom: 20px;
+    padding-bottom: 26px;
 
     @include devicebreak(medium) {
       margin-right: $spacing-12;

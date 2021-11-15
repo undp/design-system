@@ -8,8 +8,6 @@
       display: block;
       margin-bottom: 36px;
       @include devicebreak(medium) {
-        width: 300px;
-        margin-left: 84px;
         margin-top: 32px;
         margin-bottom: 0;
       }

@@ -26,6 +26,10 @@
 
   &__caption {
     padding: $spacing-16 $spacing-24 $spacing-24;
+    
+    h5 {
+      margin-bottom: 24px;
+    }
 
     & .cta__link {
       margin-top: $spacing-08;
