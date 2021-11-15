@@ -3,12 +3,12 @@ import { Imagecaption } from './Imagecaption';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = {label: 'UNDP/Angola', name: 'Jerome Bell', paragraph: 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations.'}; return engText;
-    case 'arabic': const arabicText = {label: 'برنامج الأمم المتحدة الإنمائي / أنغولا', name: 'جيروم بيل', paragraph: 'برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. يعزز التعاون الفني والاستثماري بين الدول.'}; return arabicText;
-    case 'burmese': const burmeseText = {label: 'UNDP/အန်ဂိုလာ', name: 'ဂျရုမ်း ဘဲလ်', paragraph: 'ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးသည်'}; return burmeseText;
-    case 'japanese': const japaneseText = {label: 'UNDP /アンゴラ', name: 'ジェロームベル', paragraph: '国連開発計画は、国連のグローバルな開発ネットワークです。 国家間の技術協力と投資協力を促進します'}; return japaneseText;
+    case 'english': const engText = {label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>], paragraph: 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations.'}; return engText;
+    case 'arabic': const arabicText = {label: ['برنامج الأمم المتحدة الإنمائي / أنغولا',<br/>,<strong>جيروم بيل</strong>], paragraph: 'برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. يعزز التعاون الفني والاستثماري بين الدول.'}; return arabicText;
+    case 'burmese': const burmeseText = {label: ['UNDP/အန်ဂိုလာ',<br/>,<strong>ဂျရုမ်း ဘဲလ်</strong>], paragraph: 'ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးသည်'}; return burmeseText;
+    case 'japanese': const japaneseText = {label: ['UNDP /アンゴラ',<br/>,<strong>ジェロームベル</strong>], paragraph: '国連開発計画は、国連のグローバルな開発ネットワークです。 国家間の技術協力と投資協力を促進します'}; return japaneseText;
     default:
-      return {label: 'UNDP/Angola', name: 'Jerome Bell', paragraph: 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations.'};
+      return {label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>], paragraph: 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations.'};
   }
 };
 
@@ -76,7 +76,7 @@ Image Caption + Credit component used to show the image caption and who posted c
   `} } }}>
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <Imagecaption label={caption.label} name={caption.name} paragraph={caption.paragraph} {...args}></Imagecaption>;
+      return <Imagecaption label={caption.label} paragraph={caption.paragraph} {...args}></Imagecaption>;
     }}
   </Story>
 </Canvas>

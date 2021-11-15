@@ -12,7 +12,7 @@ export const credit_options = {
   False: "image__caption--stag",
 };
 
-export const Imagecaption = ({ name, label, paragraph, ...args }) => (
+export const Imagecaption = ({ label, paragraph, ...args }) => (
   <>
     {args.caption === "False" && args.credit === "False" ? (
       <></>
@@ -21,7 +21,7 @@ export const Imagecaption = ({ name, label, paragraph, ...args }) => (
         {args.caption === "True" && (
           <div className="image__caption_para">{paragraph}</div>
         )}
-        {args.credit === "True" && <Imagecredit label={label} name={name} />}
+        {args.credit === "True" && <Imagecredit label={label} />}
       </figcaption>
     )}
   </>

@@ -1,38 +1,29 @@
 import { Meta, Story } from "@storybook/addon-docs";
-import { Imagecredit } from "./Imagecredit";
+import { Projectcolumn } from "./ProjectColumn";
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
-      const engText = {
-        detail: ["UNDP/Angola", <br />, <strong>Jerome Bell</strong>],
-      };
+      const engText = { headertext: "START DATE", subtext: "June 2019" };
       return engText;
     case "arabic":
-      const arabicText = {
-        detail: [
-          "برنامج الأمم المتحدة الإنمائي / أنغولا",
-          <br />,
-          <strong>جيروم بيل</strong>,
-        ],
-      };
+      const arabicText = { headertext: "تاريخ البدء", subtext: "يونيو 2019" };
       return arabicText;
     case "burmese":
       const burmeseText = {
-        detail: ["UNDP/အန်ဂိုလာ", <br />, <strong>ဂျရုမ်း ဘဲလ်</strong>],
+        headertext: "စတင်သည့်ရက်စွဲ",
+        subtext: "ဇွန်လ 2019",
       };
       return burmeseText;
     case "japanese":
-      const japaneseText = {
-        detail: ["UNDP /アンゴラ", <br />, <strong>ジェロームベル</strong>],
-      };
+      const japaneseText = { headertext: "開始日", subtext: "六月 2019" };
       return japaneseText;
     default:
-      return { detail: "UNDP/Angola", name: "Jerome Bell" };
+      return { headertext: "START DATE", subtext: "June 2019" };
   }
 };
 
-<Meta title="Atoms/Image/Image Credit" />
+<Meta title="Atoms/Project Details Column" />
 
 <style>{`
  .subheading {
@@ -50,14 +41,19 @@ export const getCaptionForLocale = (locale) => {
   }
 `}</style>
 
-# Image Credit Component
+# Project Details Column Component
 
-Image Credit component used to show the image caption and who posted the image in a related image.
+Project Details Column component defines a section of information data with some items.
 
-<Story name="Image Credit">
+<Story name="Project Details Column">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Imagecredit label={caption.detail}></Imagecredit>;
+    return (
+      <Projectcolumn
+        headertext={caption.headertext}
+        subtext={caption.subtext}
+      ></Projectcolumn>
+    );
   }}
 </Story>
 
@@ -70,7 +66,7 @@ Image Credit component used to show the image caption and who posted the image i
     <code>assets/scss</code>
   </li>
   <li>
-    Component SCSS file: <code>imagecredit.scss</code>
+    Component SCSS file: <code>projectcolumn.scss</code>
   </li>
   <u>To use CSS include the following files in your implementation</u>
   <li>

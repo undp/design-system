@@ -41,8 +41,12 @@
 
   &_slide {
     position: relative;
-    display: inherit;
+
+    @include devicebreak(medium) {
+      display: inherit;
+    }
     @extend %feature__card;
+
     @include devicebreak(medium) {
       display: block;
       background-color: $color-yellow;
@@ -67,7 +71,6 @@
 
     .feature__card_image {
       height: 100%;
-      // width: 100%;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: top;
@@ -75,6 +78,7 @@
         max-width: 100%;
         object-fit: cover;
         height: 100%;
+        display: block;
       }
     }
   }

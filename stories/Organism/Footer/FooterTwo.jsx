@@ -23,7 +23,7 @@ export const Footertwo = ({
             <FooterIcons variant={args.color} />
           </div>
         </div>
-        <div className=" grid-x grid-margin-x footer__bottom footer__bottom--two">
+        <div className="grid-x footer__bottom footer__bottom--two">
           <div className="cell medium-5">
             <P label={copyright} />
           </div>

@@ -5,16 +5,20 @@
 .footer {
   background-color: $color-gray-100;
   padding: $spacing-48 $spacing-12 $spacing-40;
+
   @include devicebreak(medium) {
-    padding: 52px 0 $spacing-48;  
+    padding: 52px 0 $spacing-48;
   }
+
   &__wrapper {
     margin: 0 auto;
   }
+
   p {
-    margin: 0;
     font-size: $font-size-14;
     line-height: 1.4;
+    margin: 0;
+
     @include devicebreak(medium) {
       font-size: $font-size-16;
     }
@@ -22,75 +26,95 @@
 
   &__newsletter {
     margin-top: $spacing-24;
+
     @include devicebreak(medium) {
-    margin-top: 0;
+      margin-top: 0;
     }
   }
+
   &__head {
-    justify-content: space-between;
     align-items: center;
-    padding-bottom: $spacing-48;
-    margin-bottom: $spacing-32;
     border-bottom: 1px solid $color-gray-700;
+    justify-content: space-between;
+    margin-bottom: $spacing-32;
+    padding-bottom: $spacing-48;
+
     @include devicebreak(medium) {
       margin-bottom: $spacing-48;
     }
+
     &--two {
       padding-bottom: $spacing-32;
+
       @include devicebreak(medium) {
         padding-bottom: $spacing-48;
       }
     }
   }
+
   &__bottom {
     &--two {
       @include devicebreak(small) {
         flex-direction: column-reverse;
-      }
-      p {
-        margin: 0 $spacing-16 0;
+
+        p {
+          margin: 0 $spacing-16 0;
+        }
       }
     }
   }
+
   &__foot {
     margin: 0 $spacing-16;
+
     @include devicebreak(medium) {
       margin: $spacing-80 0 0;
     }
   }
+
   &__condition {
     margin: $spacing-32 $spacing-16;
+
     @include devicebreak(medium) {
       margin: 0 0 $spacing-32 0;
     }
+
     &_text {
       margin: 0 $spacing-16 $spacing-32;
+
       @include devicebreak(medium) {
         margin: 0 0 $spacing-32 0;
       }
     }
   }
+
   &__icons {
     justify-content: start;
     margin: 0 $spacing-16 $spacing-32;
+
     @include devicebreak(medium) {
       justify-content: end;
       margin: 0;
     }
+
     &--blue {
       li a {
         &.facebook {
           background-position: 5px -27px;
         }
+
         &.linkedIn {
           background-position: -139px -28px;
         }
+
         &.instragram {
           background-position: -90px -27px;
         }
+
         &.twitter {
           background-position: -43px -27px;
         }
+
         &.youtube {
           background-position: -187px -27px;
         }
@@ -98,30 +122,39 @@
     }
   }
 
-  .sign-up{
+  .sign-up {
     &--blue {
       .input__controls {
         background-color: transparent;
-        border-color:$color-white;
+        border-color: $color-white;
         color: $color-white;
+
         &::placeholder {
           color: $color-white;
         }
       }
+
       .form-submit {
         background-color: $color-white;
         color: $color-blue-600;
       }
     }
   }
+
   &--blue {
     background-color: $color-blue-600;
+
     .footer__head {
       border-color: $color-white;
     }
-    h5, h6, a, p, label, .input-error {
+
+    h5,
+    h6,
+    a,
+    p,
+    label,
+    .input-error {
       color: $color-white;
     }
   }
 }
-

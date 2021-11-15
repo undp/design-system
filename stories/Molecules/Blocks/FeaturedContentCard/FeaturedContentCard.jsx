@@ -23,12 +23,12 @@ export const FeaturedContentCard = ({
   }, []);
   return (
     <div className="grid-x grid-margin-x">
-      <div className="cell medium-4 feature__card--headertext left-right"><Heading type="2" label={headertext} /></div>
+      <div className="cell medium-3 feature__card--headertext medium-offset-1 left-right"><Heading type="2" label={headertext} /></div>
       {data.map((item, index) => (
         <div key={index} className={['cell', `${item.size ? column_options[`${item.size}`] : column_options[`${args.column}`]}`].join(' ')}>
           <a href="#" className={['feature__card', `${item.type ? `feature__card--${image_options[`${item.type}`]}` : `feature__card--${image_options[`${Image}`]}`}`].join(' ')}>
             <div className="feature__card_slide">
-              {Image === 'Image' || item.type === 'Image'
+              {Image === 'Image' || item.type === 'Image' && Image === 'Image'
                 ? (
                   <div className="feature__card_image">
                     <img src={item.imgback} alt={item.imgback} />
