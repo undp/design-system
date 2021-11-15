@@ -1,9 +1,8 @@
-import React from 'react';
-import './imagecredit.scss';
+import React from "react";
+import "./imagecredit.scss";
 
-export const Imagecredit = ({ label, name, ...props }) => (
-  <div className="image--author">
-    <span className="author__caption author--label">{label}</span>
-    <span className="author__caption author--name">{name}</span>
+export const Imagecredit = ({ label }) => (
+  <div className="image_credits">
+    {label}
   </div>
 );
