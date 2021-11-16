@@ -39,11 +39,21 @@
     }
   }
 }
+[dir='rtl']{
+  .stats-card-grid{
+    @include devicebreak(medium){
+      .grid-x{
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
 
 .stats-card-slider{
   @include devicebreak(small){
     .statscard{
       max-width: 100%;
+      pointer-events: none;
     }
   }
   .glide{
