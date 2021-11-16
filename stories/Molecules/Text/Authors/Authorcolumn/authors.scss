@@ -91,16 +91,16 @@
 
     h6 {
       margin-bottom: $spacing-08;
+      text-transform: uppercase;
     }
   }
 
   &__designation {
     font-size: $font-size-14;
-    line-height: 19.25px;
+    line-height: 1.4;
 
     @include devicebreak(medium) {
       font-size: $font-size-16;
-      line-height: 22px;
     }
   }
 }
@@ -108,7 +108,7 @@
 [dir='rtl'] {
   .author__label {
     padding-left: 0;
-    padding-right: 24px;
+    padding-right: $spacing-24;
   }
   .author {
     &-wrapper {
