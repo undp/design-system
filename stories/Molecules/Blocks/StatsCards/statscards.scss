@@ -4,7 +4,10 @@
 
 /* statscard start */
 .statscard {
+  @include transition(300ms all);
+
   background-color: $color-gray-200;
+  word-break: break-all;
 
   &__title {
     font-family: $Font-Family-ProximaBold;
@@ -20,14 +23,14 @@
     font-family: $Font-Family-SohneBold;
     font-size: 5rem;
     letter-spacing: 0.05rem;
-    line-height: 87.2px;
+    line-height: 5.45rem;
     margin-bottom: $spacing-24;
     text-shadow: -1px -1px 0 $color-black, 1px -1px 0 $color-black, -1px 1px 0 $color-black, 1px 1px 0 $color-black;
     -webkit-text-stroke: 2px $color-black;
 
     @include devicebreak(medium) {
       font-size: 6.875rem;
-      line-height: 119.9px;
+      line-height: 7.5rem;
       margin-bottom: $spacing-32;
     }
   }
@@ -36,7 +39,7 @@
     font-family: $Font-Family-ProximaSemiBold;
     font-size: 1.875rem;
     letter-spacing: 0;
-    line-height: 34.26px;
+    line-height: 2.141rem;
     margin-bottom: $spacing-08;
 
     @include devicebreak(medium) {
@@ -51,21 +54,12 @@
 
     @include devicebreak(medium) {
       font-size: 1.563rem;
-      line-height: 28.55px;
+      line-height: 1.784rem;
     }
   }
 
   &--xl {
     max-width: 351px;
-    
-    .statscard__box {
-      padding: $spacing-40;
-    }
-
-    .statscard__number {
-      font-size: 7.5rem;
-      line-height: 98.1px;
-    }
 
     @include devicebreak(medium) {
       max-width: 684px;
@@ -74,19 +68,19 @@
         padding: $spacing-96;
       }
     }
-  }
-
-  &--lg {
-    max-width: 351px;
 
     .statscard__box {
       padding: $spacing-40;
     }
 
-    .statscard__per {
-      font-size: $font-size-25;
-      line-height: 28.55px;
+    .statscard__number {
+      font-size: 7.5rem;
+      line-height: 8.188rem;
     }
+  }
+
+  &--lg {
+    max-width: 351px;
 
     @include devicebreak(medium) {
       max-width: 448px;
@@ -97,17 +91,35 @@
 
       .statscard__per {
         font-size: 1.875rem;
-        line-height: 34.26px;
+        line-height: 2.141rem;
       }
+    }
+
+    .statscard__box {
+      padding: $spacing-40;
+    }
+
+    .statscard__per {
+      font-size: $font-size-25;
+      line-height: 1.784rem;
     }
   }
 
   &--md {
     max-width: 351px;
 
+    @include devicebreak(medium) {
+      max-width: 330px;
+
+      .statscard__per {
+        font-size: 2.188rem;
+        line-height: 2.498rem;
+      }
+    }
+
     .statscard__per {
       font-size: $font-size-25;
-      line-height: 28.55px;
+      line-height: 1.784rem;
     }
 
     .statscard__box {
@@ -116,42 +128,12 @@
 
     p {
       font-size: $font-size-20;
-      line-height: 27.5px;
-    }
-
-    @include devicebreak(medium) {
-      max-width: 330px;
-
-      .statscard__per {
-        font-size: 2.188rem;
-        line-height: 39.97px;
-      }
+      line-height: 1.719rem;
     }
   }
 
   &--sm {
     max-width: 170px;
-
-    .statscard__box {
-      padding: $spacing-24;
-    }
-
-    .statscard__number {
-      font-size: 3.125rem;
-      line-height: 54.5px;
-      margin-bottom: $spacing-16;
-      @include transition(300ms all);
-    }
-
-    .statscard__per {
-      font-size: $font-size-20;
-      line-height: 22.84px;
-    }
-
-    p {
-      font-size: $font-size-14;
-      line-height: 19.25px;
-    }
 
     @include devicebreak(medium) {
       max-width: 212px;
@@ -162,20 +144,42 @@
 
       .statscard__number {
         font-size: 4.375rem;
-        line-height: 76.3px;
-        margin-bottom: $spacing-32;
+        line-height: 4.75rem;
+        margin-bottom: 2rem;
       }
 
       .statscard__per {
         font-size: $font-size-25;
-        line-height: 28.55px;
+        line-height: 1.784rem;
         margin-bottom: $spacing-08;
       }
 
       p {
         font-size: $font-size-16;
-        line-height: 22px;
+        line-height: 1.375rem;
       }
+    }
+
+    .statscard__box {
+      padding: $spacing-24;
+    }
+
+    .statscard__number {
+      @include transition(300ms all);
+
+      font-size: 3.125rem;
+      line-height: 3.406rem;
+      margin-bottom: $spacing-16;
+    }
+
+    .statscard__per {
+      font-size: $font-size-20;
+      line-height: 1.428rem;
+    }
+
+    p {
+      font-size: $font-size-14;
+      line-height: 1.203rem;
     }
   }
 
@@ -186,8 +190,6 @@
       color: $color-black;
     }
   }
-  @include transition(300ms all);
-  word-break: break-all;
 }
 
 /* statscard end */
