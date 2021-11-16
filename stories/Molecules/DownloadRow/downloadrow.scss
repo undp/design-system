@@ -1,0 +1,40 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+@import '../../assets/scss/breakpoints';
+
+.selectbox-container {
+  align-items: center;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-gray-400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    background-color: $color-gray-100;
+  }
+
+  &__data {
+    font-family: $Font-Family-ProximaRegular;
+    font-size: $font-size-16;
+    margin: $spacing-16;
+
+    &--subtext {
+      color: $color-gray-500;
+    }
+  }
+
+  &__chevron {
+    margin: $spacing-16 0 19px $spacing-16;
+    padding-right: $spacing-16;
+  }
+
+  .checkbox-wrapper {
+    margin: $spacing-16 8px $spacing-16 $spacing-16;
+    padding-bottom: 26px;
+
+    @include devicebreak(medium) {
+      margin-right: $spacing-12;
+    }
+  }
+}

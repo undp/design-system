@@ -1,0 +1,417 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import { Footer } from "./Footer";
+import { Footertwo } from "./FooterTwo";
+import logo from "../../assets/images/logo.svg";
+import logowhite from '../../assets/images/logo-white.svg';
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        footerdata: [
+          {
+            text: "Page title",
+          },
+          {
+            text: "Page title",
+          },
+          {
+            text: "Page title",
+          },
+          {
+            text: "Page title",
+          },
+          {
+            text: "Page title",
+          },
+        ],
+        menudata: [
+          {
+            menu: "Report Fraud, Abuse, Misconduct",
+          },
+          {
+            menu: "Submit Social Or Environmental Complaint",
+          },
+          {
+            menu: "Scam Alert",
+          },
+          {
+            menu: "Terms Of Use",
+          },
+        ],
+        menudata2: [
+          {
+            menu: "Report Fraud, Abuse, Misconduct",
+          },
+          {
+            menu: "Scam Alert",
+          },
+          {
+            menu: "Terms Of Use",
+          },
+          {
+            menu: "Submit Social Or Environmental Complaint",
+          },
+        ],
+        headerText: "United Nations",
+        headerText2: "Development Programme",
+        labelname: "Sign up for our newsletter",
+        buttonname: "SUBMIT",
+        placeholdername: "Email",
+        errorLabel: "*Error: this field is required",
+        pageTitle: "Page Title",
+        copyright: "© 2021 United Nations Development Programme",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        footerdata: [
+          {
+            text: "عنوان الصفحة",
+          },
+          {
+            text: "عنوان الصفحة",
+          },
+          {
+            text: "عنوان الصفحة",
+          },
+          {
+            text: "عنوان الصفحة",
+          },
+          {
+            text: "عنوان الصفحة",
+          },
+        ],
+        menudata: [
+          {
+            menu: "الإبلاغ عن الاحتيال والإساءة وسوء السلوك",
+          },
+          {
+            menu: "إرسال شكوى اجتماعية أو بيئية",
+          },
+          {
+            menu: "تنبيه احتيال",
+          },
+          {
+            menu: "تعليمات الاستخدام",
+          },
+        ],
+        menudata2: [
+          {
+            menu: "الإبلاغ عن الاحتيال والإساءة وسوء السلوك",
+          },
+          {
+            menu: "تنبيه احتيال",
+          },
+          {
+            menu: "تعليمات الاستخدام",
+          },
+          {
+            menu: "إرسال شكوى اجتماعية أو بيئية",
+          },
+        ],
+        headerText: "الأمم المتحدة",
+        headerText2: "برنامج التطوير",
+        labelname: "سجل للحصول على اخر اخبارنا",
+        buttonname: "يقدم",
+        placeholdername: "بريد الالكتروني",
+        errorLabel: "* خطأ: هذا الحقل مطلوب",
+        pageTitle: "عنوان الصفحة",
+        copyright: "© برنامج الأمم المتحدة الإنمائي 2021",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        footerdata: [
+          {
+            text: "စာမျက်နှာခေါင်းစဉ်",
+          },
+          {
+            text: "စာမျက်နှာခေါင်းစဉ်",
+          },
+          {
+            text: "စာမျက်နှာခေါင်းစဉ်",
+          },
+          {
+            text: "စာမျက်နှာခေါင်းစဉ်",
+          },
+          {
+            text: "စာမျက်နှာခေါင်းစဉ်",
+          },
+        ],
+        menudata: [
+          {
+            menu: "လိမ်လည်မှု၊ အလွဲသုံးစားမှု၊ အကျင့်ပျက်ခြစားမှုကိုအစီရင်ခံပါ",
+          },
+          {
+            menu: "လူမှုရေးသို့မဟုတ်ပတ်ဝန်းကျင်ဆိုင်ရာတိုင်ကြားစာကိုတင်ပါ",
+          },
+          {
+            menu: "Scam သတိပေးချက်",
+          },
+          {
+            menu: "သတ်မှတ်ချက်များ",
+          },
+        ],
+        menudata2: [
+          {
+            menu: "လိမ်လည်မှု၊ အလွဲသုံးစားမှု၊ အကျင့်ပျက်ခြစားမှုကိုအစီရင်ခံပါ",
+          },
+          {
+            menu: "Scam သတိပေးချက်",
+          },
+          {
+            menu: "သတ်မှတ်ချက်များ",
+          },
+          {
+            menu: "လူမှုရေးသို့မဟုတ်ပတ်ဝန်းကျင်ဆိုင်ရာတိုင်ကြားစာကိုတင်ပါ",
+          },
+        ],
+        headerText: "ကုလသမဂ္ဂ",
+        headerText2: "ဖွံ့ဖြိုးရေးအစီအစဉ်",
+        labelname: "ကျွန်ုပ်တို့၏သတင်းလွှာအတွက်စာရင်းပေးသွင်းပါ",
+        buttonname: "တင်ပေးပါ",
+        placeholdername: "အီးမေးလ်",
+        errorLabel: "*အမှား - ဤအကွက်လိုအပ်သည်",
+        pageTitle: "စာမျက်နှာခေါင်းစဉ်",
+        copyright: "© 2021 ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        footerdata: [
+          {
+            text: "ページタイトル",
+          },
+          {
+            text: "ページタイトル",
+          },
+          {
+            text: "ページタイトル",
+          },
+          {
+            text: "ページタイトル",
+          },
+          {
+            text: "ページタイトル",
+          },
+        ],
+        menudata: [
+          {
+            menu: "詐欺、虐待、不正行為を報告する",
+          },
+          {
+            menu: "社会的または環境的苦情を提出する",
+          },
+          {
+            menu: "詐欺警告",
+          },
+          {
+            menu: "利用規約",
+          },
+        ],
+        menudata2: [
+          {
+            menu: "詐欺、虐待、不正行為を報告する",
+          },
+          {
+            menu: "詐欺警告",
+          },
+          {
+            menu: "利用規約",
+          },
+          {
+            menu: "社会的または環境的苦情を提出する",
+          },
+        ],
+        headerText: "国連",
+        headerText2: "開発プログラム",
+        labelname: "ニュースレターに登録する",
+        buttonname: "送信",
+        placeholdername: "Eメール",
+        errorLabel: "*エラー：このフィールドは必須です",
+        pageTitle: "ページタイトル",
+        copyright: "©2021国連開発計画",
+      };
+      return japaneseText;
+    default:
+      const dummy = {
+        footerdata: [
+          {
+            text: "Page title",
+          },
+          {
+            text: "Page title",
+          },
+          {
+            text: "Page title",
+          },
+          {
+            text: "Page title",
+          },
+          {
+            text: "Page title",
+          },
+        ],
+        menudata: [
+          {
+            menu: "Report Fraud, Abuse, Misconduct",
+          },
+          {
+            menu: "Submit Social Or Environmental Complaint",
+          },
+          {
+            menu: "Scam Alert",
+          },
+          {
+            menu: "Terms Of Use",
+          },
+        ],
+        menudata2: [
+          {
+            menu: "Report Fraud, Abuse, Misconduct",
+          },
+          {
+            menu: "Scam Alert",
+          },
+          {
+            menu: "Terms Of Use",
+          },
+          {
+            menu: "Submit Social Or Environmental Complaint",
+          },
+        ],
+        headerText: "United Nations",
+        headerText2: "Development Programme",
+        labelname: "Sign up for our newsletter",
+        buttonname: "SUBMIT",
+        placeholdername: "Email",
+        errorLabel: "*Error: this field is required",
+        pageTitle: "Page Title",
+        copyright: "© 2021 United Nations Development Programme",
+      };
+      return dummy;
+  }
+};
+
+<Meta
+  title="Testing/Footer"
+  argTypes={{
+    color: {
+      options: ["default", "blue"],
+      control: { type: "radio" },
+      defaultValue: "default",
+    },
+  }}
+/>
+
+<style>{`
+ .subheading {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  .sbdocs .sbdocs-h2 {
+    border-bottom: none;
+  }
+`}</style>
+
+# Footer Component
+
+## Overview
+
+The Footer component multiusage component.
+
+## Default Representation & various possible states
+
+<div className="subheading">Footer</div>
+
+<Story name="Footer">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <Footer
+        src={logo}
+        srctwo={logowhite}
+        headerText={caption.headerText}
+        headerText2={caption.headerText2}
+        alt={"UNDP Logo"}
+        element="input"
+        type="email"
+        required="required"
+        mode="form-email"
+        errorText={caption.errorLabel}
+        label={caption.labelname}
+        button={caption.buttonname}
+        placeholder={caption.placeholdername}
+        menutitle={caption.pageTitle}
+        data={caption.footerdata}
+        copyright={caption.copyright}
+        menudata={caption.menudata}
+        {...args}
+      ></Footer>
+    );
+  }}
+</Story>
+
+<div className="subheading">Footer Two</div>
+
+<Story name="Footer Two">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <Footertwo
+        src={logo}
+        srctwo={logowhite}
+        headerText={caption.headerText}
+        headerText2={caption.headerText2}
+        style={"default"}
+        alt={"UNDP Logo"}
+        element="input"
+        type="email"
+        required="required"
+        mode="form-email"
+        errorText={caption.errorLabel}
+        label={caption.labelname}
+        button={caption.buttonname}
+        placeholder={caption.placeholdername}
+        menutitle={caption.pageTitle}
+        data={caption.footerdata}
+        copyright={caption.copyright}
+        menudata={caption.menudata2}
+        {...args}
+      ></Footertwo>
+    );
+  }}
+</Story>
+
+## Dependencies
+
+Libraries or another dependency which are used in the component.
+
+<ul>
+  <li>For animation functionality its depend on the jQuery plugin library.</li>
+  <li>Custom JS file (footer_custom.js) is located in the same js folder.</li>
+</ul>
+
+<ul>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>footer.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
+</ul>

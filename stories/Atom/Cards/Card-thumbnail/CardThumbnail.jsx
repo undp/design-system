@@ -8,7 +8,7 @@ export const Cardthumb = ({ }) => {
     alt: 'Image',
   };
   return (
-    <div className="card_thumbnail__image">
+    <div className="card-thumbnail__image">
       <img src={image.src} alt={image.alt} />      
     </div>
   );

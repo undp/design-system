@@ -8,43 +8,38 @@ export const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
-        label: "UNDP/Angola",
-        name: "Firstname Lastname",
+        label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
         paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
       };
       return engText;
     case "arabic":
       const arabicText = {
-        label: "برنامج الأمم المتحدة الإنمائي / أنغولا",
-        name: "الاسم الاول الاسم الاخير",
+        label: ['برنامج الأمم المتحدة الإنمائي / أنغولا',<br/>,<strong>جيروم بيل</strong>],
         paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Morbi lorem tortor، fermentum eu lorem at، venenatis malesuada laughter.",
       };
       return arabicText;
     case "burmese":
       const burmeseText = {
-        label: "UNDP/အန်ဂိုလာ",
-        name: "နံမည် နောက်ဆုံးအမည်",
+        label: ['UNDP/အန်ဂိုလာ',<br/>,<strong>ဂျရုမ်း ဘဲလ်</strong>],
         paragraph: "နာကျင်မှုကိုယ်တိုင်က နာကျင်ပေမယ့် အဓိက အာရုံစိုက်တာက ဖောက်သည်အပေါ်ပါ။ Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada ရယ်မောခြင်း။",
       };
       return burmeseText;
     case "japanese":
       const japaneseText = {
-        label: "UNDP /アンゴラ",
-        name: "名前苗字",
+        label: ['UNDP /アンゴラ',<br/>,<strong>ジェロームベル</strong>],
         paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 Morbi lorem tortor、fermentum eu lorem at、venenatismalesuadaの笑い声。",
       };
       return japaneseText;
     default:
       return {
-        label: "UNDP/Angola",
-        name: "Firstname Lastname",
+        label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
         paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
       };
   }
 };
 
 <Meta
-  title="Organism/Images"
+  title="Foundation/Images/Image with credit + caption"
   argTypes={{
     size: {
       options: ["Wide", "Medium", "Portrait"],
@@ -110,7 +105,7 @@ We can check all types of Image with caption and credit variants by storybook <c
 <code>image-section--portrait</code> <code>image__caption--unstag</code> <code>image__caption--stag</code>
 
 <Canvas>
-  <Story name="Images" parameters={{ docs: { source: { code: `<div class="grid-x image-section">
+  <Story name="Image with credit + caption" parameters={{ docs: { source: { code: `<div class="grid-x image-section">
     <div class="cell image__cart medium-12">
       <img
         src="static/media/stories/assets/images/farmland-lg.jpg"
@@ -134,7 +129,7 @@ We can check all types of Image with caption and credit variants by storybook <c
       const caption = getCaptionForLocale(locale);
       return (
         <Images
-          imagelg={farmlandlg} imagemd={farmlandmd} imagesm={farmlandsm} alt="farmland" label={caption.label} name={caption.name} paragraph={caption.paragraph} {...args}
+          imagelg={farmlandlg} imagemd={farmlandmd} imagesm={farmlandsm} alt="farmland" label={caption.label}  paragraph={caption.paragraph} {...args}
         ></Images>
       );
     }}

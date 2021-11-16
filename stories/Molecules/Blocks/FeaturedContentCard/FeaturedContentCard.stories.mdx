@@ -1,22 +1,83 @@
 import { Meta, Story,  Canvas, Source } from '@storybook/addon-docs';
 import { FeaturedContentCard } from './FeaturedContentCard';
-//import img from '../../../assets/images/card2.jpg';
+import img from '../../../assets/images/card2.jpg';
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {title: 'CONTENT TAG', name: 'Mongolia receives new $23.1 million GCF grant to strengthen climate resilience', descriptionText: 'With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population..',  btnlabel: 'READ MORE'}; return engText;
-    case 'arabic': const arabicText = {title: 'علامة المحتوى', name: 'منغوليا تتلقى منحة جديدة بقيمة 23.1 مليون دولار من الصندوق الأخضر للمناخ لتعزيز المرونة في مواجهة تغير المناخ', descriptionText: 'مع منحة صندوق المناخ الأخضر الجديدة ، سيستفيد المشروع الذي يدعمه برنامج الأمم المتحدة الإنمائي ما يقرب من مليون من السكان المعرضين للخطر ..',  btnlabel: 'اقرأ أكثر'}; return arabicText;
-    case 'burmese': const burmeseText = {title: 'အကြောင်းအရာ', name: 'မွန်ဂိုလီးယားသည်ရာသီဥတုကြံ့ခိုင်မှုအားကောင်းရန်ဒေါ်လာ ၂၃.၁ သန်း GCF ထောက်ပံ့ငွေသစ်ကိုလက်ခံရရှိသည်', descriptionText: 'Green Climate Fund ထောက်ပံ့ငွေအသစ်ဖြင့် UNDP မှပံ့ပိုးသောစီမံကိန်းသည်ထိခိုက်လွယ်သောလူ ဦး ရေတစ်သန်းကိုအကျိုးပြုလိမ့်မည်။',  btnlabel: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
-    case 'japanese': const japaneseText = {title: 'コンテンツタグ', name: 'モンゴルは気候回復力を強化するために新たに2,310万ドルのGCF助成金を受け取ります', descriptionText: '新しい緑の気候基金の助成金により、UNDPが支援するプロジェクトは100万人近くの脆弱な人々に利益をもたらします。',  btnlabel: '続きを読む'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = {
+        featuredcontentdata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText: "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            imgback: img,
+          }
+        ]
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        featuredcontentdata: [
+          {
+            contenttile: "علامة المحتوى",
+            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            descriptionText: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            button: "اقرأ أكث",
+            imgback: img,
+          }
+        ]
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        featuredcontentdata: [
+          {
+            contenttile: "အကြောင်းအရာ TAG",
+            contentname: "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            descriptionText: "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            button: "ပိုပြီးဖတ်ပါ",
+            imgback: img,
+          }
+        ]
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        featuredcontentdata: [
+          {
+            contenttile: "コンテンツタグ",
+            contentname: "投稿のタイトルはここにあり、2行です",
+            descriptionText: "投稿のタイトルはここにあり、2行です",
+            button: "続きを読む",
+            imgback: img,
+          }
+        ]
+      };
+      return japaneseText;
     default:
-      return {title: 'CONTENT TAG', name: 'Mongolia receives new $23.1 million GCF grant to strengthen climate resilience', descriptionText: 'With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population..',  btnlabel: 'READ MORE'};
+      const dummy = {
+        featuredcontentdata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText: "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            imgback: img,
+          }
+        ],
+        headertext:"demo",
+      };
+      return dummy;
   }
 };
 
 <Meta title="Molecules/Blocks/Featured Content Card" argTypes={{
-      variant: {
+      Image: {
         options: ['Image', 'Color'],
-        control: { type: 'radio' }
+        control: { type: 'radio' },
+        defaultValue: 'Image'
       },
       column: {
         options: ['large', 'medium', 'small'],
@@ -110,7 +171,7 @@ We can check all types of feature card variants by storybook <code> controls </c
 </div>` } } }}>
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <FeaturedContentCard contenttile={caption.title} contentname={caption.name}  descriptionText={caption.descriptionText}  button={caption.btnlabel}  alt={'feature card'} {...args} ></FeaturedContentCard>;
+      return <FeaturedContentCard data={caption.featuredcontentdata} headertext={caption.headertext} {...args} ></FeaturedContentCard>;
     }}
   </Story>
 </Canvas>

@@ -3,6 +3,19 @@
 
 /* feature card start */
 .feature__card {
+  &-wrapper {
+    @include devicebreak(small) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    }
+  }
   background: $color-gray-100;
   border-bottom: 0;
   height: 100%;
@@ -28,8 +41,12 @@
 
   &_slide {
     position: relative;
-    display: inherit;
+
+    @include devicebreak(medium) {
+      display: inherit;
+    }
     @extend %feature__card;
+
     @include devicebreak(medium) {
       display: block;
       background-color: $color-yellow;
@@ -57,6 +74,12 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: top;
+      img {
+        max-width: 100%;
+        object-fit: cover;
+        height: 100%;
+        display: block;
+      }
     }
   }
 
@@ -136,9 +159,12 @@
       }
     }
   }
+  &--headertext {
+    display: none;
+  }
 }
 
-.feature__card--large {
+.feature__card--large { 
   .feature__card {
     &::before {
       @include devicebreak(medium) {

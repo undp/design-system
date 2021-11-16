@@ -5,6 +5,7 @@
 @import './_grid';
 @import './typography';
 @import './base';
+@import './glideslider';
 
 // Atoms
 @import '../../Atom/Global/Logo/logo';
@@ -77,6 +78,7 @@
 @import '../../Molecules/Form/signup';
 @import '../../Molecules/Navbar/Languageswitcher/languageswitcher';
 @import '../../Molecules/Blocks/CountryCard/countrycard';
+@import '../../Molecules/DownloadRow/downloadrow';
 
 //Organism
 @import '../../Organism/Sidebar/sidebar';
@@ -86,3 +88,4 @@
 @import '../../Organism/Text/PostHeader/postheader';
 @import '../../Organism/Images/Images/images';
 @import '../../Organism/Blocks/FeaturedContentCard/PagewideContentCard/pagewidecard';
+@import '../../Organism/Blocks/FeaturedContentCard/FeaturedCard/featuredcard';

@@ -21,7 +21,7 @@ export const size_options3 = {
   Portrait: "image-section--portrait",
 };
 
-export const Images = ({ imagelg, imagemd, imagesm, alt, name, label, paragraph, ...args }) => {
+export const Images = ({ imagelg, imagemd, imagesm, alt, label, paragraph, ...args }) => {
   useEffect(() => {
     viewport('.image-section__cart');
     viewport('.image-section__description');
@@ -38,7 +38,7 @@ export const Images = ({ imagelg, imagemd, imagesm, alt, name, label, paragraph,
           <></>
         ) : (
           <div className={[ "cell", "image-section__description", "opacity-only", `${size_options2[`${args.size}`]}`].join(" ")}>
-            <Imagecaption name={name} label={label} paragraph={paragraph} caption={args.caption} credit={args.credit}/>
+            <Imagecaption label={label} paragraph={paragraph} caption={args.caption} credit={args.credit}/>
           </div>
         )}
       
