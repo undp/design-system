@@ -13,7 +13,7 @@ export const Breadcrumbcomponent = ({ data, active }) => {
       {data.map((item, i) => {
         if (i === lastIndex) {
           return (
-            <li key={i}><span className="last-item">{item.text}</span></li>
+            <li key={i}>{item.text}</li>
           );
         }
 

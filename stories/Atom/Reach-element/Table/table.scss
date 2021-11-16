@@ -15,6 +15,7 @@ table {
     th,
     td {
       font-size: $font-size-16;
+      white-space: nowrap;
     }
   }
 
@@ -80,6 +81,7 @@ thead {
       font-family: $Font-Family-ProximaSemiBold;
       background-color: $color-gray-300;
       text-align: left;
+      white-space: nowrap;
     }
   }
 }
