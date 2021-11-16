@@ -54,7 +54,7 @@ export const getCaptionForLocale = (locale) => {
 };
 
 <Meta
-  title="Organism/Blocks/Heros/Global Homepage Hero"
+  title="Components/UI components/Hero"
   argTypes={{
     variant: {
       options: ["video", "image"],
@@ -89,9 +89,9 @@ The Homepage hero component multiusage component which creates boxes that are us
 
 ## Default Representation & various possible states
 
-<div className="subheading">Homepage Hero</div>
+### Homepage hero - Full-width
 
-<Story name="Homepage Hero">
+<Story name="Homepage hero - Full-width">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
@@ -105,9 +105,9 @@ The Homepage hero component multiusage component which creates boxes that are us
   }}
 </Story>
 
-<div className="subheading">Homepage Hero Split</div>
+### Homepage hero - Tall image
 
-<Story name="Homepage Hero Split">
+<Story name="Homepage hero - Tall image">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
@@ -121,9 +121,9 @@ The Homepage hero component multiusage component which creates boxes that are us
   }}
 </Story>
 
-<div className="subheading">Homepage Hero Option Three</div>
+### Homepage hero - Wide image
 
-<Story name="Homepage Hero Option Three">
+<Story name="Homepage hero - Wide image">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
@@ -142,24 +142,14 @@ The Homepage hero component multiusage component which creates boxes that are us
 
 Libraries or another dependency which are used in the component.
 
-<ul>
-  <li>For animation functionality its depend on the jQuery plugin library.</li>
-  <li>Custom JS file (viewport.js) and (animation.js) is located in the same js folder.</li>
-</ul>
+- For animation functionality its depend on the jQuery plugin library.
+- Custom JS file (viewport.js) and (animation.js) is located in the same js folder.
 
 ## Usage
 
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>homepagehero.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+- Take HTML from the HTML tab in the canvas.
+- <u>To use SCSS include the following files in your implementation</u>
+- Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
+-  Component SCSS file: <code>homepagehero.scss</code>
+- <u>To use CSS include the following files in your implementation</u>
+- The compiled CSS file from <code>assets/css/style.css</code>

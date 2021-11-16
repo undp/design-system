@@ -4,11 +4,87 @@
 
 /* country card start */
 .country {
+  @include devicebreak(small) {
+    &card__items {
+      .glide__slides {
+        flex-flow: unset;
+      }
+    }
+  }
+
   &-card {
-    margin-top: $spacing-96;
+    @include devicebreak(medium) {
+      margin-top: $spacing-96;
+
+      &:hover {
+        .country {
+          &-card {
+            &__img {
+              @include transform(translateY(-50px));
+            }
+
+            &__overlay {
+              opacity: 1;
+              top: -50px;
+            }
+
+            &__caption {
+              opacity: 1;
+
+              p {
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        .cta__link {
+          &::after {
+            @include translate(10px, 0);
+
+            background-image: url(#{$img-path-Icon}/arrow-left-expand-hover.svg);
+            width: 100px;
+          }
+        }
+      }
+    }
+
+    @include devicebreak(small) {
+      height: auto;
+
+      &.glide__slide {
+        &--active {
+          .country {
+            &-card {
+              &__caption {
+                opacity: 1;
+
+                p {
+                  opacity: 1;
+                }
+              }
+
+              &__overlay {
+                opacity: 1;
+              }
+            }
+          }
+
+          .cta__link {
+            &::after {
+              @include translate(10px, 0);
+
+              background-image: url(#{$img-path-Icon}/arrow-left-expand-hover.svg);
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
 
     &__link {
-      background-image: none;
+      @extend %img_none;
+
       border: 0;
       display: block;
       height: 100%;
@@ -16,12 +92,11 @@
     }
 
     &__img {
+      @extend %img-cover;
+
       @include transition(all 0.4s);
 
-      height: 100%;
-      object-fit: cover;
       position: relative;
-      width: 100%;
     }
 
     &__overlay {
@@ -61,40 +136,9 @@
         margin-top: $spacing-32;
 
         &::after {
-          margin-left: $spacing-04;
           @include transition(0.2s ease);
-        }
-      }
-    }
 
-    &:hover {
-      .country {
-        &-card {
-          &__img {
-            transform: translateY(-50px);
-          }
-
-          &__overlay {
-            opacity: 1;
-            top: -50px;
-          }
-
-          &__caption {
-            opacity: 1;
-
-            p {
-              opacity: 1;
-            }
-          }
-        }
-      }
-
-      .cta__link {
-        &::after {
-          @include translate(10px, 0);
-
-          background-image: url(#{$img-path-Icon}/arrow-left-expand-hover.svg);
-          width: 100px;
+          margin-left: -$spacing-04;
         }
       }
     }
@@ -103,10 +147,12 @@
 
 [dir='rtl'] {
   .country-card {
-    &:hover {
+    &:hover,
+    &.glide__slide--active {
       .cta--arrow::after {
-        margin-right: $spacing-04;
         @include transform(translate(0, 0) rotate(180deg));
+
+        margin-right: $spacing-04;
       }
     }
   }
