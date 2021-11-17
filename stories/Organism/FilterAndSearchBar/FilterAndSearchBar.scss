@@ -1,6 +1,6 @@
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/breakpoints";
+@import "../../assets/scss/variables";
 
 .toggle-search {
   background: none;
@@ -59,7 +59,7 @@
 .active-filter {
   display: none;
   padding-top: $spacing-16;
- 
+
   &.show-activefilter {
     display: block;
   }
@@ -72,7 +72,7 @@
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .selected-chips {
     .chips {
       margin: 0 0 $spacing-12 $spacing-12;

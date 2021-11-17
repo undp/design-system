@@ -56,7 +56,7 @@ export const getCaptionForActiveLocale = (locale) => {
 The Sidebar Component is a shorter piece of text that appears next to and accompanies a longer article.
 
 <Story name="FilterAndSearchBar">
-  {(args, { globals: { locale } }) => { 
+  {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     const clearText = getCaptionForClearLocale(locale);
     const activeFilterText = getCaptionForActiveLocale(locale);

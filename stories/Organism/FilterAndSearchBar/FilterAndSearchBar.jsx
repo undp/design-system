@@ -11,8 +11,8 @@ const FilterAndSearchBar = ({ data, clearText, activeFilterText }) => {
   }, []);
 
   return (
-    <div id="search-filter">
-      <button type="button" id="toggle-search" className="toggle-search">
+    <div className="search-filter">
+      <button type="button" className="toggle-search">
         <IconsSearchBlack />
       </button>
       <div className="select-wrapper">

@@ -1,6 +1,6 @@
-@import "../../assets/scss/variables";
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/breakpoints";
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
 
 .multi-select {
   max-width: 300px;
@@ -12,6 +12,7 @@
 
       &::after {
         @include transform(translateY(-50%) rotate(-180deg));
+
         top: 50%;
       }
     }
@@ -138,8 +139,8 @@
     margin: 0 -16px;
     padding: 0 16px;
 
-    input[type="checkbox"],
-    input[type="checkbox"] + label::before {
+    input[type='checkbox'],
+    input[type='checkbox'] + label::before {
       @include transform(translateY(-50%));
 
       left: auto;
@@ -147,7 +148,7 @@
       top: 50%;
     }
 
-    input[type="checkbox"] + label {
+    input[type='checkbox'] + label {
       display: block;
       padding: 16px 0;
     }
@@ -159,7 +160,7 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .multi-select {
     .select-control,
     .has-submenu__button {
@@ -181,8 +182,8 @@
     }
 
     .checkbox-wrapper {
-      input[type="checkbox"],
-      input[type="checkbox"] + label::before {
+      input[type='checkbox'],
+      input[type='checkbox'] + label::before {
         left: 16px;
         right: auto;
       }

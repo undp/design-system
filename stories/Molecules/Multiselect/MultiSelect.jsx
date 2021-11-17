@@ -13,7 +13,8 @@ const SelectTag = ({ text, eleId }) => {
         className="select-control"
         aria-label="Region"
         aria-expanded="false"
-        id={`select_button-${eleId}`}>
+        id={`select_button-${eleId}`}
+      >
         {text}
         <span />
       </button>
