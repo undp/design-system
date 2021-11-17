@@ -23,7 +23,7 @@ export const CountryCardHero = ({ data, title, subtitle }) => {
         </div>
       </div>
       <div className="glide countrycard__items">
-        <div className="glide__bullets" data-glide-el="controls[nav]">
+        <div className="glide__bullets show-for-small" data-glide-el="controls[nav]">
           {data.map((item, index) => <button className="glide__bullet" data-glide-dir={[`=${index}`]} aria-label={index} key={index} />)}
         </div>
         <div className="glide__track" data-glide-el="track">
