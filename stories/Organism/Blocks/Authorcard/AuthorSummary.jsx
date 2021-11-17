@@ -12,7 +12,7 @@ export const AuthorSummary = ({
     viewport('.author-card');
   }, []);
   return (
-    <>
+    <div className="author-card-wrapper">
       <Heading type="4" label={text} />
       <div className="author-card left-right">
         <div className="author-card__summary">
@@ -28,6 +28,6 @@ export const AuthorSummary = ({
         </div>
         <P label={para} className="author-card__paragraph" />
       </div>
-    </>
+    </div>
   );
 };

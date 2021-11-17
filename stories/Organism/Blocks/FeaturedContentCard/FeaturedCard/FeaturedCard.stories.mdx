@@ -1,0 +1,317 @@
+import { Meta, Story, Canvas, Source } from "@storybook/addon-docs";
+import { FeaturedCard } from "./FeaturedCard";
+import img from "../../../../assets/images/card2.jpg";
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+       featureddata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            type: "Color",
+            size: "medium"
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            type: "Color",
+            size: "medium",
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            imgback: img,
+            type: "Image",
+            size: "large"
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            type: "Color",
+            size: "medium"
+          },
+        ],
+        headertext: "Related Posts"
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        featureddata: [
+          {
+            contenttile: "علامة المحتوى",
+            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            descriptionText: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            button: "اقرأ أكث",
+            type: "Color",
+            size: "medium",
+          },
+          {
+            contenttile: "علامة المحتوى",
+            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            descriptionText: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            button: "اقرأ أكث",
+            type: "Color",
+            size: "medium",
+          },
+          {
+            contenttile: "علامة المحتوى",
+            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            descriptionText: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            button: "اقرأ أكث",
+            imgback: img,
+            type: "Image",
+            size: "large",
+          },
+          {
+            contenttile: "علامة المحتوى",
+            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            descriptionText: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            button: "اقرأ أكث",
+            type: "Color",
+            size: "medium",
+          },
+        ],
+        headertext: "علامة المحتو"
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        featureddata: [
+          {
+            contenttile: "အကြောင်းအရာ TAG",
+            contentname:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            descriptionText:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            button: "ပိုပြီးဖတ်ပါ",
+            type: "Color",
+            size: "medium"
+          },
+          {
+            contenttile: "အကြောင်းအရာ TAG",
+            contentname:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            descriptionText:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            button: "ပိုပြီးဖတ်ပါ",
+            type: "Color",
+            size: "medium"
+          },
+          {
+            contenttile: "အကြောင်းအရာ TAG",
+            contentname:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            descriptionText:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            button: "ပိုပြီးဖတ်ပါ",
+            imgback: img,
+            type: "Image",
+            size: "large"
+          },
+          {
+            contenttile: "အကြောင်းအရာ TAG",
+            contentname:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            descriptionText:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            button: "ပိုပြီးဖတ်ပါ",
+            type: "Color",
+            size: "medium"
+          },
+        ],
+        headertext:"အကြောင်"
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        featureddata: [
+          {
+            contenttile: "コンテンツタグ",
+            contentname: "投稿のタイトルはここにあり、2行です",
+            descriptionText: "投稿のタイトルはここにあり、2行です",
+            button: "続きを読む",
+            type: "Color",
+            size: "medium"
+          },
+          {
+            contenttile: "コンテンツタグ",
+            contentname: "投稿のタイトルはここにあり、2行です",
+            descriptionText: "投稿のタイトルはここにあり、2行です",
+            button: "続きを読む",
+            type: "Color",
+            size: "medium"
+          },
+          {
+            contenttile: "コンテンツタグ",
+            contentname: "投稿のタイトルはここにあり、2行です",
+            descriptionText: "投稿のタイトルはここにあり、2行です",
+            button: "続きを読む",
+            imgback: img,
+            type: "Image",
+            size: "large"
+          },
+          {
+            contenttile: "コンテンツタグ",
+            contentname: "投稿のタイトルはここにあり、2行です",
+            descriptionText: "投稿のタイトルはここにあり、2行です",
+            button: "続きを読む",
+            type: "Color",
+            size: "medium"
+          },
+        ],
+        headertext: "コンテンツタグ"
+      };
+      return japaneseText;
+    default:
+      const dummy = {
+        featureddata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            type: "Color",
+            size: "medium"
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            type: "Color",
+            size: "medium"
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            imgback: img,
+            type: "Image",
+            size: "large"
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            type: "Color",
+            size: "medium"
+          },
+        ],
+        headertext: "Related Posts",
+      };
+      return dummy;
+  }
+};
+
+<Meta title="Testing/Featured Cards" />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 20px;
+    color: #031c2d;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 15px;
+  }
+  .subheading2 {
+    font-weight: 700;
+    font-size: 16px;
+    color: #031c2d;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 10px;
+  }
+  .css-1h4ytzj code {
+    padding-right: 10px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+      background: black;
+  }
+`}</style>
+
+# Feature Content Card Component
+
+The Feature Content Card component defines a card of information data with some items - Tag, Title, Image, Paragraph, and CTA Link. We are using a grid system to manage the different types of sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+
+<div className="subheading">Feature Card With Image</div>
+
+By default Feature content cards are show the information about the card with related fields like Tag, Title, Image, Description, and CTA Link. When we mouse over the card (On hover) it shows the image.
+
+<div className="subheading">Feature Card Without Image</div>
+
+When We mouse over the card (On hover) it shows the yellow color except the image.
+
+<div className="subheading">Story Controls</div>
+
+We can check all types of feature card variants by storybook <code> controls </code> .
+
+<ul>
+  <li>
+    the variant we check the option of card like <code>with image</code> and{" "}
+    <code>without image</code>
+  </li>
+  <li>
+    n the column, we check the option of card sizes like <code>large</code> ,{" "}
+    <code>medium</code> , <code>small</code> that's belong to the grid.
+  </li>
+</ul>
+
+<Story name="Featured Cards">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <FeaturedCard
+        data={caption.featureddata}
+        headertext={caption.headertext}
+        {...args}
+      ></FeaturedCard>
+    );
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like variables, mixin from{" "}
+    <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>featuredcard.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
+</ul>

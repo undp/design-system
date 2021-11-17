@@ -1,5 +1,6 @@
 @import '../../../assets/scss/breakpoints';
 @import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
 /* statscard start */
 .statscard {
@@ -16,7 +17,6 @@
 
   &__number {
     color: $color-gray-200;
-    display: block;
     font-family: $Font-Family-SohneBold;
     font-size: 5rem;
     letter-spacing: 0.05rem;
@@ -33,7 +33,6 @@
   }
 
   &__per {
-    display: block;
     font-family: $Font-Family-ProximaSemiBold;
     font-size: 1.875rem;
     letter-spacing: 0;
@@ -64,7 +63,7 @@
     }
 
     .statscard__number {
-      font-size: 5.625rem;
+      font-size: 7.5rem;
       line-height: 98.1px;
     }
 
@@ -141,6 +140,7 @@
       font-size: 3.125rem;
       line-height: 54.5px;
       margin-bottom: $spacing-16;
+      @include transition(300ms all);
     }
 
     .statscard__per {
@@ -186,6 +186,8 @@
       color: $color-black;
     }
   }
+  @include transition(300ms all);
+  word-break: break-all;
 }
 
 /* statscard end */

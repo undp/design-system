@@ -16,50 +16,63 @@ export const emphasize_options = {
 };
 
 export const SingleContent = ({
-  contenttile, contentname, contentnametwo, img, Image, paragraph, link, Emphasize, button, colors, ...args
+  data, Image, Emphasize, Hovercolors
 }) => (
   <div className="grid-x grid-margin-x">
-    <div className="cell medium-4">
-      <a href={link} className={['singlecard', `${image_options[`${Image}`]}`, `${emphasize_options[`${Emphasize}`]}`,  `${[`${colors}`]}`,].join(' ')}>
-        <div className="singlecard__head">{contenttile}</div>
-        {Image === 'true'
-          ? (
-              <div className="card_thumbnail__image">
-                <img src={img} alt={img} />
+    {data.map((item, index) => (
+      <div key={index} className="cell medium-4">
+        <a href={item.link} className={['singlecard', `${image_options[`${Image}`]}`, `${emphasize_options[`${Emphasize}`]}`, `${[`${Hovercolors}`]}`,].join(' ')}>
+          <Heading  type="6" label={item.contenttile} />
+          {Image === 'true'
+            ? (
+              <div className="card-thumbnail__image">
+                <img src={item.imgback} alt={item.imgback} />
               </div>
-          )
-          : (
-            <></>
-          )}
-        <div className="singlecard__caption">
-          {Emphasize === 'true'
-            ? (
-              <Heading type="4" label={contentnametwo} />
             )
             : (
               <></>
             )}
-       
-          
-          { Emphasize === 'false'
-            ? (
-              <>
-                <Heading type="5" label={contentname} />
-                <P label={paragraph} />
-              </>
-            )
-            : (
-              <></>
-            )}
-          <Ctalink label={button} variant="Space" />
-        </div>
-      </a>
-    </div>
+          <div className="singlecard__caption">
+            {Emphasize === 'true'
+              ? (
+                <Heading type="4" label={item.contentnametwo} />
+              )
+              : (
+                <></>
+              )}
+
+
+            {Emphasize === 'false' && Image === 'false'
+              ? (
+                <div className="singlecard__caption--cart">
+                  <Heading type="5" label={item.contentname} />
+                  <P label={item.paragraph} />
+                </div>
+              )
+              : (
+                <></>
+              )}
+
+            {Emphasize === 'false' && Image === 'true'
+              ? (
+                <>
+                  <Heading type="5" label={item.contentname} />
+                </>
+              )
+              : (
+                <></>
+              )}
+
+            <Ctalink label={item.button} variant="Space" />
+          </div>
+        </a>
+      </div>
+    ))}
   </div>
 );
 
 SingleContent.defaultProps = {
   Image: 'true',
-  Emphasize : 'false',
-  colors: 'yellow'
+  Emphasize: 'false',
+  Hovercolors: 'yellow'
 };

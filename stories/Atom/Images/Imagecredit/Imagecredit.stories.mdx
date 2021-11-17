@@ -1,14 +1,34 @@
-import { Meta, Story } from '@storybook/addon-docs';
-import { Imagecredit } from './Imagecredit';
+import { Meta, Story } from "@storybook/addon-docs";
+import { Imagecredit } from "./Imagecredit";
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {detail: 'UNDP/Angola', name: 'Jerome Bell'}; return engText;
-    case 'arabic': const arabicText = {detail: 'برنامج الأمم المتحدة الإنمائي / أنغولا', name: 'جيروم بيل'}; return arabicText;
-    case 'burmese': const burmeseText = {detail: 'UNDP/အန်ဂိုလာ', name: 'ဂျရုမ်း ဘဲလ်'}; return burmeseText;
-    case 'japanese': const japaneseText = {detail: 'UNDP /アンゴラ', name: 'ジェロームベル'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = {
+        detail: ["UNDP/Angola", <br />, <strong>Jerome Bell</strong>],
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        detail: [
+          "برنامج الأمم المتحدة الإنمائي / أنغولا",
+          <br />,
+          <strong>جيروم بيل</strong>,
+        ],
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        detail: ["UNDP/အန်ဂိုလာ", <br />, <strong>ဂျရုမ်း ဘဲလ်</strong>],
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        detail: ["UNDP /アンゴラ", <br />, <strong>ジェロームベル</strong>],
+      };
+      return japaneseText;
     default:
-      return {detail: 'UNDP/Angola', name: 'Jerome Bell'};
+      return { detail: "UNDP/Angola", name: "Jerome Bell" };
   }
 };
 
@@ -31,21 +51,29 @@ export const getCaptionForLocale = (locale) => {
 `}</style>
 
 # Image Credit Component
+
 Image Credit component used to show the image caption and who posted the image in a related image.
 
-<Story name="Imagecredit">
+<Story name="Image Credit">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Imagecredit label={caption.detail} name={caption.name}></Imagecredit>;
+    return <Imagecredit label={caption.detail}></Imagecredit>;
   }}
 </Story>
 
 <div className="subheading">Usage</div>
 <ul>
-<li>Take HTML from the HTML tab in canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>imagecredit.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+  <li>Take HTML from the HTML tab in canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like normalize, variables from{" "}
+    <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>imagecredit.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
 </ul>

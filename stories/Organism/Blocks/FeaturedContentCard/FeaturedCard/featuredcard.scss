@@ -1,0 +1,32 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
+
+.featured-card-container {
+  .feature__card {
+    &--headertext {
+      display: block;
+      margin-bottom: 36px;
+      @include devicebreak(medium) {
+        margin-top: 32px;
+        margin-bottom: 0;
+      }
+    }
+    &--large, &--medium {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .featured-card-container {
+    .feature__card {
+      &--headertext {
+        @include devicebreak(medium) {
+          margin-left: unset;
+          margin-right: 84px;
+        }
+      }
+    }
+  }
+}

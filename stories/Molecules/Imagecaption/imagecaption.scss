@@ -4,7 +4,6 @@
 /* image caption */
 .image__caption {
   border-bottom: 2px solid $color-black;
-  display: block;
 
   @include devicebreak(medium) {
     display: flex;
@@ -26,7 +25,8 @@
     }
 
   }
-  .image--author {
+
+  .image_credits {
     display: flex;
     flex-shrink: 0;
     flex-wrap: wrap;
@@ -39,26 +39,27 @@
       display: block;
       margin-bottom: 0;
       padding-top: 0;
-      min-width: 180px;
+      min-width: 146px;
       border-top: 0;
       padding-left: $spacing-32;
     }
 
-    .author--label {
-      margin-right: $spacing-04;
+    strong {
+      margin-left: $spacing-04;
 
       @include devicebreak(medium) {
-        margin-right: 0;
+        margin-left: 0;
       }
     }
   }
+
   &--stag {
     .image__caption_para {
       padding-right: 0;
     }
   }
   &--unstag {
-    .image--author {
+    .image_credits {
       padding: 0;
       border: 0;
     }
@@ -73,7 +74,7 @@
         padding-right: 0;
       }
     }
-    .image--author {
+    .image_credits {
       @include devicebreak(medium) {
         border-left: none;
         border-right: 1px solid $color-gray-500;
@@ -81,9 +82,9 @@
         padding-right: $spacing-40;
       }
 
-      .author--label {
-        margin-left: $spacing-04;
-        margin-right: 0;
+      strong {
+        margin-right: $spacing-04;
+        margin-left: 0;
       }
     }
 
@@ -93,7 +94,7 @@
       }
     }
     &--unstag {
-      .image--author {
+      .image_credits {
         padding: 0;
         border: 0;
       }
