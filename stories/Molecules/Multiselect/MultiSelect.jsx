@@ -8,14 +8,13 @@ const SelectTag = ({ text, eleId }) => {
     init();
   }, []);
   return (
-    <div className="multi-select regions-select" data-multi-select="">
+    <div className="multi-select" data-multi-select="">
       <button
         className="select-control"
         aria-label="Region"
         aria-expanded="false"
       >
-        {text}
-        <span />
+        {text}       
       </button>
       <ul
         className="options"

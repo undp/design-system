@@ -6,7 +6,7 @@ const toggleFilter = function () {
 
   const chipsWrapper = $('#search-filter #selected-chips');
   $('.select-control').on('click', function () {
-    $(this).parent('.regions-select').toggleClass('open');
+    $(this).parent('.multi-select').toggleClass('open');
   });
 
   $(searchOption).on('click', function () {
