@@ -72,7 +72,7 @@ export const getCaptionForLocale = (locale) => {
 
 `}</style>
 
-# XY grid system
+# Grid system
 The XY grid is the default Foundation grid, works very similarly to the standard float grid, but includes several useful features only possible with Flexbox, like horizontal and vertical alignment, automatic sizing and a full vertical grid.
 
 <div className="subheading">Breakpoints</div>
@@ -94,25 +94,25 @@ The grid system is working on the breakpoints, three breakpoint <code> small </c
          <td>small - max-width:767px</td>
          <td><code>small-</code></td>
          <td>4</td>
-         <td>10px</td>
+         <td>6px+6px=12px</td>
       </tr>
       <tr>
          <td>medium - min-width: 768px</td>
          <td><code>medium-</code></td>
          <td>8</td>
-         <td>15px</td>
+         <td>12px+12px=24px</td>
       </tr>
       <tr>
          <td>large - min-width: 1024px </td>
          <td><code>large-</code></td>
          <td>10</td>
-         <td>15px</td>
+         <td>12px+12px=24px</td>
       </tr>
       <tr>
          <td>xlarge - min-width: 1440px</td>
          <td><code>x-large-</code></td>
          <td>12</td>
-         <td>15px</td>
+         <td>12px+12px=24px</td>
       </tr>
    </tbody>
 </table>
@@ -185,7 +185,7 @@ The defining feature of the XY grid is the ability to use margin AND padding gri
 
 <div className="subheading">Grid Container</div>
 
-The grid defaults to the full width of the available space. To contain it horizontally use the <code>.grid-container</code> class. The container will be centered and have a max-width equal to your <code>$grid-container</code> setting (1200px by default), along with padding on the left/right equal to half your <code>$grid-container-padding</code> setting.
+The grid defaults to the full width of the available space. To contain it horizontally use the <code>.grid-container</code> class. The container will be centered and have a max-width equal to your <code>$grid-container</code> setting (1440px by default), along with padding on the left/right equal to half your <code>$grid-container-padding</code> setting.
 
 <div className="subheading_2">Example</div>
 
@@ -247,7 +247,7 @@ A cell can also be made to shrink, by adding the .<code>shrink</code> or .<code>
     </div>
 
   <div class="grid-x grid-margin-x">
-      <div class="cell shrink grid--layout"></div>
+      <div class="cell shrink grid--layout">shrink</div>
       <div class="cell auto grid--layout"></div>
     </div>
   </div>
