@@ -2,66 +2,65 @@
 @import './breakpoints';
 @import './mixins';
 
-@include devicebreak(small) {
-  .glide {
-    box-sizing: border-box;
+.glide {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+
+  & * {
+    box-sizing: inherit;
+  }
+
+  &__track {
+    overflow: hidden;
+  }
+
+  &__slides {
+    backface-visibility: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
     position: relative;
+    touch-action: pan-y;
+    transform-style: preserve-3d;
+    white-space: nowrap;
     width: 100%;
+    will-change: transform;
 
-    & * {
-      box-sizing: inherit;
-    }
-
-    &__track {
-      overflow: hidden;
-    }
-
-    &__slides {
-      backface-visibility: hidden;
-      display: flex;
-      flex-wrap: nowrap;
-      list-style: none;
-      overflow: hidden;
-      padding: 0;
-      position: relative;
-      touch-action: pan-y;
-      transform-style: preserve-3d;
-      white-space: nowrap;
-      width: 100%;
-      will-change: transform;
-
-      &--dragging {
-        user-select: none;
-      }
-    }
-
-    &__slide {
-      flex-shrink: 0;
-      height: 100%;
-      -webkit-tap-highlight-color: transparent;
-      -webkit-touch-callout: none;
+    &--dragging {
       user-select: none;
-      white-space: normal;
-      width: 100%;
-
-      a {
-        -webkit-user-drag: none;
-        user-select: none;
-      }
-    }
-
-    &__arrows {
-      -webkit-touch-callout: none;
-      user-select: none;
-    }
-
-    &__bullets {
-      -webkit-touch-callout: none;
-      user-select: none;
-    }
-
-    &--rtl {
-      direction: rtl;
     }
   }
+
+  &__slide {
+    flex-shrink: 0;
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+    white-space: normal;
+    width: 100%;
+
+    a {
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+  }
+
+  &__arrows {
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+
+  &__bullets {
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+
+  &--rtl {
+    direction: rtl;
+  }
 }
+

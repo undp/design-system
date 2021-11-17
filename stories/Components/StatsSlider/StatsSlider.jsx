@@ -10,12 +10,12 @@ export const StatsSlider = ({ data }) => {
   }, []);
   return (
     <div className="stats-card-slider stats-card-grid">
-      <div className="glide__bullets" data-glide-el="controls[nav]">
+      <div className="glide__bullets show-for-small" data-glide-el="controls[nav]">
         {data.map((item, index) => <button className="glide__bullet" data-glide-dir={[`=${index}`]} aria-label={index} key={index} />)}
       </div>
       <div className="glide__track" data-glide-el="track">
         <div className="glide__slides">
-          {data.map((item, index) => <div className="glide__slide" key={index}><StatsCards number={item.numbername} percent={item.percentname} content={item.text} size="sm" /></div>)}
+          {data.map((item, index) => <div className="glide__slide" key={index}><StatsCards number={item.numbername} percent={item.percentname} content={item.text} size="small" /></div>)}
         </div>
       </div>
     </div>

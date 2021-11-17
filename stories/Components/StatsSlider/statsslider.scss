@@ -14,6 +14,7 @@
       &__slide {
         padding-left: 0.625rem;
         padding-right: 0.625rem;
+        width: initial;
       }
     }
   }
@@ -47,7 +48,7 @@
 
   .statscard {
     @include devicebreak(large) {
-      &--sm {
+      &.small {
         box-sizing: border-box;
         max-width: 330px;
         width: 100%;

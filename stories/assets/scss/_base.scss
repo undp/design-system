@@ -74,11 +74,11 @@
   &__bullets {
     display: flex;
     position: relative;
-
-    @include devicebreak(medium) {
-      display: none;
+    @include devicebreak(medium){
+      &.show-for-small{
+        display: none;
+      }
     }
-
     &::after {
       border-bottom: 1px solid $color-black;
       content: '';
