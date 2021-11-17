@@ -37,12 +37,14 @@
 
 .Scrollbar-horizontal {
   &::-webkit-scrollbar-track {
-     background: linear-gradient(0deg, transparent 10%, $color-black 33%, transparent 0);
+    background: linear-gradient(0deg, transparent 10%, $color-black 33%, transparent 0);
   }
+
   &::-webkit-scrollbar {
     height: 4px;
     margin-right: 2px;
   }
+
   &::-webkit-scrollbar-thumb {
     background-color: $color-black;
   }
@@ -52,12 +54,58 @@
   &::-webkit-scrollbar-track {
     background: linear-gradient(90deg, transparent 10%, $color-black 33%, transparent 0);
   }
+
   &::-webkit-scrollbar {
-    width: 4px;
     margin-right: 2px;
+    width: 4px;
   }
+
   &::-webkit-scrollbar-thumb {
     background-color: $color-black;
+  }
+}
+
+/* glide slider start */
+.glide {
+  &__slides {
+    margin-top: $spacing-32;
+  }
+
+  &__bullets {
+    display: flex;
+    position: relative;
+
+    @include devicebreak(medium) {
+      display: none;
+    }
+
+    &::after {
+      border-bottom: 1px solid $color-black;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: 0.5px;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  &__bullet {
+    @include transition(all 0.1s);
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    flex-grow: 1;
+    height: 4px;
+    position: relative;
+    z-index: 2;
+
+    &--active {
+      background: $color-black;
+    }
   }
 }
 
@@ -100,8 +148,10 @@
     @extend %inviewport_opacity_only;
   }
 }
+
 .expand-to-size {
   max-width: calc(100% - 1rem);
+
   @include devicebreak(medium) {
     max-width: calc(100% - 3rem);
   }
