@@ -1,15 +1,15 @@
-import React , { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import viewport from '../../../assets/js/viewport';
-import { SingleContent } from '../../../Molecules/Blocks/SingleContent/SingleContent';
+import { ContentCardImage } from '../../../Molecules/Blocks/ContentCard/ContentCardImage';
 import { CtaButton } from '../../../Atom/Buttons-and-labels/Cta_button/CtaButton';
 
-export const ContentCard = ({ data, buttontype, type}) => {
+export const ContentCard = ({ data, buttontype }) => {
   useEffect(() => {
     viewport('.content-card-container');
   }, []);
   return (
     <div className="content-card-container left-right">
-      <SingleContent data={data} />
+      <ContentCardImage data={data} />
       <CtaButton label2={buttontype} variant='Secondary' />
     </div>
   );

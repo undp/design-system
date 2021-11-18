@@ -4,13 +4,14 @@
 
 /* small copy */
 .smallcopy__box {
+  display: flex;
   margin-bottom: $spacing-04;
 
   a {
     @extend %border-none;
   }
 
-  &--locale {
+  &-locale {
     margin-bottom: $spacing-32;
 
     strong {

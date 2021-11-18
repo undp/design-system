@@ -1,6 +1,6 @@
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
 /* pagination start */
 .pagination-wrapper {
@@ -11,31 +11,33 @@
 }
 
 .page__item {
+  font-size: $font-size-16;
+  line-height: 1.2;
   margin-right: $spacing-24;
   position: relative;
-  font-size: $font-size-16;
-  line-height: 22px;
 
   a {
+    @extend %img_none;
+
     border-bottom: 0;
     font-size: $font-size-16;
-    line-height: 22px;
-    @extend %img_none;
+    line-height: 1.2;
   }
 
   &:first-child,
   &:last-child {
     cursor: pointer;
+
     &::before {
       background: url(#{$img-path-Icon}/circle-left.svg) no-repeat center center;
-      content: " ";
+      content: ' ';
       display: block;
       height: 45px;
       width: 45px;
     }
   }
 
-  &.page__item--disabled {
+  &.disabled {
     &::before {
       opacity: 0.3;
     }
@@ -43,13 +45,14 @@
 
   &:last-child {
     &::before {
-      background: url(#{$img-path-Icon}/circle-right.svg) no-repeat center
+      background:
+        url(#{$img-path-Icon}/circle-right.svg) no-repeat center
         center;
     }
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .pagination-wrapper {
     padding-right: 0;
   }
@@ -57,11 +60,13 @@
   .page__item {
     margin-left: $spacing-24;
     margin-right: 0;
+
     &:first-child {
       &::before {
         @include transform(rotateZ(180deg));
       }
     }
+
     &:last-child {
       &::before {
         @include transform(rotateZ(180deg));
@@ -69,4 +74,5 @@
     }
   }
 }
+
 /* pagination end */

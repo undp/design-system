@@ -4,16 +4,19 @@
 
 .featured-card-container {
   .feature__card {
-    &--headertext {
+    &-title {
       display: block;
-      margin-bottom: 36px;
+      margin-bottom: 2.25rem;
+
       @include devicebreak(medium) {
-        margin-top: 32px;
         margin-bottom: 0;
+        margin-top: $spacing-32;
       }
     }
-    &--large, &--medium {
-      margin-bottom: 30px;
+
+    &--large,
+    &--medium {
+      margin-bottom: 1.875rem;
     }
   }
 }
@@ -21,10 +24,10 @@
 [dir='rtl'] {
   .featured-card-container {
     .feature__card {
-      &--headertext {
+      &-title {
         @include devicebreak(medium) {
           margin-left: unset;
-          margin-right: 84px;
+          margin-right: 5.25rem;
         }
       }
     }

@@ -1,5 +1,4 @@
 import React from 'react';
-import './lists.scss';
 
 export const List = ({ data, type }) => {
   const ListTag = `${type}`;

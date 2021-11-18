@@ -1,17 +1,20 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 a {
   @extend %paragragh-font-20;
-  text-decoration: none;
-  color: $color-black;
+
+  background-image:
+    linear-gradient($color-dark-red, $color-dark-red),
+    linear-gradient($color-dark-red, $color-dark-red);
+  background-position: 100% 100%, -30px 100%;
   background-repeat: no-repeat;
   background-size: 100% 2px, 0 1px;
-  background-position: 100% 100%, -30px 100%;
-  background-image: linear-gradient($color-dark-red, $color-dark-red),
-    linear-gradient($color-dark-red, $color-dark-red);
+  color: $color-black;
+  text-decoration: none;
+
   &:hover {
-    @include lineLoop;
+    @include animation(lineLoop-animation 2s linear infinite);
   }
 }

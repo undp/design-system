@@ -3,17 +3,17 @@ import './breadcrumb-link.scss';
 import viewport from '../../../assets/js/viewport';
 import { Breadcrumb } from '../../../Atom/Navigation/Breadcrumb/Breadcrumb';
 
-export const Breadcrumbcomponent = ({ data, active }) => {
+export const Breadcrumbcomponent = ({ data, active, ...args }) => {
   useEffect(() => {
     viewport('.breadcrumb__wrapper');
   }, []);
   const lastIndex = data.length - 1;
   return (
-    <ul className={['breadcrumb__wrapper left-right', `breadcrumb__wrapper--${active}` ].join(' ')}>
+    <ul className={['breadcrumb__wrapper left-right', `${active}`].join(' ')}>
       {data.map((item, i) => {
         if (i === lastIndex) {
           return (
-            <li key={i}><span className="last-item">{item.text}</span></li>
+            <li key={i}>{item.text}</li>
           );
         }
 
@@ -25,4 +25,8 @@ export const Breadcrumbcomponent = ({ data, active }) => {
       })}
     </ul>
   );
+};
+
+Breadcrumbcomponent.defaultProps = {
+  active: 'black',
 };

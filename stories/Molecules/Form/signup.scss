@@ -40,12 +40,12 @@
 
   .form-submit {
     cursor: pointer;
-    font-family: $Font-Family-ProximaBold;
+    font-weight: 700;
     min-width: 107px;
     padding: 0;
   }
 
-  &--white {
+  &.white {
     .footer-subtitle,
     .sign-up--field .input-error {
       color: $color-white;

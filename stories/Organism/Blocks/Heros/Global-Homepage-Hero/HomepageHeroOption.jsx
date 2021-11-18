@@ -21,7 +21,7 @@ export const Homepageherooption = ({
         <div className="cell large-4 medium-4">
           <div className="hero-option__content">
             <Heading type="5" className="hero-option__subtitle left-right" label={subtitle} />
-            <div className="show-for-large">
+            <div className="show-large">
               <CtaButton label1={button} />
             </div>
           </div>
@@ -38,7 +38,7 @@ export const Homepageherooption = ({
                 <img src={BackgroundImg} alt={BackgroundImg} />
               </div>
             )}
-          <div className="show-for-small">
+          <div className="show-small">
             <CtaButton label1={button} />
           </div>
         </div>

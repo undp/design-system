@@ -2,7 +2,6 @@
 @import '../../../assets/scss/mixins';
 @import '../../../assets/scss/base';
 
-/* images start */
 .image {
   &-section {
     justify-content: center;
@@ -24,8 +23,7 @@
         }
       }
     }
-
-    &--portrait {
+    &.portrait {
       align-items: flex-end;
 
       @include devicebreak(medium) {
@@ -49,8 +47,7 @@
           margin-bottom: $spacing-16;
           padding: $spacing-16 0 0 0;
         }
-
-        .image__caption--unstag {
+        .unstag {
           .image_credits {
             border: 0;
             padding: 0;
@@ -69,7 +66,7 @@
 @include devicebreak(medium) {
   [dir='rtl'] {
     .image {
-      &-section--portrait {
+      &.portrait {
         .image {
           &__caption {
             margin: 0 $spacing-24 0 0;
@@ -84,5 +81,3 @@
     }
   }
 }
-
-/* images end */

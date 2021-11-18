@@ -5,9 +5,10 @@
 /* page hero start */
 .pagehero {
   &-wrapper {
+    @extend %expand_to_size;
+
     min-height: 642px;
     position: relative;
-    @extend %expand_to_size;
 
     @include devicebreak(medium) {
       min-height: 746px;
@@ -28,7 +29,8 @@
     }
 
     &__title {
-      font-family: $Font-Family-SohneBold;
+      font-family: $Font-Family-SohneBreit;
+      font-weight: 700;
       padding: 0 $spacing-12;
       text-transform: uppercase;
     }
@@ -51,7 +53,7 @@
 
     @include devicebreak(medium) {
       margin-left: $spacing-64;
-      padding-right: 23.5px;
+      padding-right: 1.469rem;
     }
   }
 
@@ -96,7 +98,8 @@
     }
 
     &__subtitle {
-      font-family: $Font-Family-SohneBold;
+      font-family: $Font-Family-SohneBreit;
+      font-weight: 700;
       margin-bottom: $spacing-40;
       text-transform: uppercase;
 
@@ -114,7 +117,7 @@
 
       @include devicebreak(medium) {
         margin-right: $spacing-64;
-        padding-left: 23.5px;
+        padding-left: 1.469rem;
         padding-right: 0;
       }
     }

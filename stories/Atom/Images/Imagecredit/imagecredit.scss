@@ -1,9 +1,9 @@
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/breakpoints";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/breakpoints';
 
 .image_credits {
-  line-height: 1.4;
   font-size: $font-size-14;
+  line-height: 1.4;
 
   @include devicebreak(medium) {
     font-size: $font-size-16;

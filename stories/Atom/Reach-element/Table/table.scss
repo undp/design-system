@@ -1,12 +1,13 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 /* table tag start */
 table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
+
   @include devicebreak(medium) {
     width: auto;
   }
@@ -15,20 +16,23 @@ table {
     th,
     td {
       font-size: $font-size-16;
+      white-space: nowrap;
     }
   }
 
   &.striped {
     tr {
+      @extend %border-none;
+
       &:nth-child(even) {
         background-color: $color-gray-200;
       }
-      @extend %border-none;
     }
   }
 
   &.border {
     border-collapse: collapse;
+
     th,
     td {
       border: 1px solid $color-gray-400;
@@ -39,24 +43,30 @@ table {
     th,
     td {
       display: block;
+
       @include devicebreak(medium) {
         display: table-cell;
       }
     }
+
     thead {
       tr {
         display: none;
+
         @include devicebreak(medium) {
           display: table-row;
         }
       }
     }
+
     &.border {
       tr {
         border: 1px solid $color-gray-400;
+
         th,
         td {
           @extend %border-none;
+
           @include devicebreak(medium) {
             border: 1px solid $color-gray-400;
           }
@@ -68,18 +78,19 @@ table {
 
 th,
 td {
-  vertical-align: top;
-  padding: $spacing-12 $spacing-40 $spacing-12 $spacing-12;
   font-size: $font-size-20;
   line-height: 1.4;
+  padding: $spacing-12 $spacing-40 $spacing-12 $spacing-12;
+  vertical-align: top;
 }
 
 thead {
   tr {
     th {
-      font-family: $Font-Family-ProximaSemiBold;
       background-color: $color-gray-300;
+      font-weight: 600;
       text-align: left;
+      white-space: nowrap;
     }
   }
 }
@@ -92,16 +103,18 @@ tbody {
 
 .scroll {
   overflow-x: scroll;
+
   @include devicebreak(medium) {
     overflow-x: inherit;
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   th,
   td {
-    text-align: right;
     padding: $spacing-12 $spacing-12 $spacing-12 $spacing-40;
+    text-align: right;
   }
 }
+
 /* table tag end */

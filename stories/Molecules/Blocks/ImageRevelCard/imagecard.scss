@@ -3,19 +3,11 @@
 @import '../../../assets/scss/breakpoints';
 
 .imagecard {
+  @extend %img_none;
+
   border: 0;
   display: block;
-  @extend %img_none;
-  &:hover {
-    .cta__link::after {
-      @include translate(10px,0);
-      @include transition(0.2s ease);
 
-      background-image: url(#{$img-path-Icon}/arrow-left-expand-hover.svg);
-      width: 100px;
-    }
-  }
-  
   @include devicebreak(large) {
     &:hover,
     &__content--thumbnail-image {
@@ -26,6 +18,16 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+  }
+
+  &:hover {
+    .cta__link::after {
+      @include translate(10px,0);
+      @include transition(0.2s ease);
+
+      background-image: url(#{$img-path-Icon}/arrow-left-expand-hover.svg);
+      width: 100px;
     }
   }
 
@@ -59,17 +61,19 @@
       }
 
       h5 {
-        padding: 0 $spacing-24;
         margin-bottom: 0;
+        padding: 0 $spacing-24;
       }
     }
   }
 
   .cta__link {
     margin: $spacing-32 0 0 $spacing-24;
+
     @include devicebreak(medium) {
-      margin-left: 18px;
+      margin-left: 1.125rem;
     }
+
     @include devicebreak(large) {
       margin-left: $spacing-24;
     }
@@ -78,11 +82,12 @@
   &.small {
     @include devicebreak(medium) {
       max-width: 212px;
-      .cta__link { 
+
+      .cta__link {
         margin-left: 0;
       }
     }
-    
+
     .imagecard__content--caption {
       h5 {
         font-size: $font-size-16;
@@ -100,9 +105,11 @@
     .cta__link {
       margin-right: $spacing-24;
       margin-top: $spacing-32;
+
       @include devicebreak(medium) {
-        margin-right: 18px;
+        margin-right: 1.125rem;
       }
+
       @include devicebreak(large) {
         margin-right: $spacing-24;
       }

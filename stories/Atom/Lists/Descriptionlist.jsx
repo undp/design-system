@@ -1,5 +1,4 @@
 import React from 'react';
-import './lists.scss';
 
 export const Descriptionlist = ({ data }) => (
   <dl>

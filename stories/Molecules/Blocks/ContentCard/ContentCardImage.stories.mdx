@@ -1,0 +1,125 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { ContentCardImage } from './ContentCardImage';
+import img from '../../../assets/images/card-thumbnail.jpg';
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        contentdata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            button: "READ MORE",
+            link:"#",
+            imgback: img
+          }
+        ]
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        contentdata: [
+          {
+            contenttile: "علامة المحتوى",
+            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            button: "اقرأ أكث",
+            link:"#",
+            imgback: img
+          }
+        ]
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        contentdata: [
+          {
+            contenttile: "အကြောင်းအရာ TAG",
+            contentname: "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            button: "ပိုပြီးဖတ်ပါ",
+            link:"#",
+            imgback: img
+          }
+        ]
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        contentdata: [
+          {
+            contenttile: "コンテンツタグ",
+            contentname: "投稿のタイトルはここにあり、2行です",
+            button: "続きを読む",
+            link:"#",
+            imgback: img
+          }
+        ]
+      };
+      return japaneseText;
+    default:
+      const dummy = {
+        contentdata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            button: "READ MORE",
+            link:"#",
+            imgback: img,
+          }
+        ]
+      };
+      return dummy;
+  }
+};
+
+<Meta title="Components/UI components/Cards/Content Card" argTypes={{
+  Hovercolors: {
+    options: ['yellow', 'red', 'green', 'blue', 'gray'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'yellow'
+  }
+}}/>
+
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+`}</style>
+
+# Single Content Card Component
+The Single Content Card component defines a card of information data with some items - Title, Image, Paragraph, and CTA Link. We are using the grid system here <code>assets/scss/grid.scss</code>. Atoms tags are used for creating this card.
+
+<div className="subheading">Single Content Card</div>
+<p>Single content card with image are show the Title, Image, and CTA Link. The background color is different on hover.</p>
+
+<Story name="With Image">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <ContentCardImage
+        data={caption.contentdata} {...args}
+      ></ContentCardImage>
+    );
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>singlecontent.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>
