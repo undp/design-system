@@ -4,7 +4,6 @@
 
 /* Modal lightbox card start */
 .modal {
-  align-items: center;
   background: $color-white;
   bottom: 0;
   display: flex;
@@ -17,46 +16,39 @@
   z-index: 99;
 
   @include devicebreak(medium) {
+    align-items: center;
     background: rgba(247, 247, 247, 0.8);
   }
-}
 
-.modal-content {
-  background: $color-white;
-  margin: auto $spacing-12;
-  max-height: calc(100vh - 115px);
-  max-width: 837px;
-  padding: 0;
-  position: relative;
-  width: 100%;
-
-  @include devicebreak(medium) {
-    height: 62vh;
-    margin: 0;
-    padding: $spacing-80;
-  }
-
-  .modal-close-button {
-    background: url(#{$img-path-Icon}/Times_circle.svg) no-repeat left center;
-    content: '';
-    cursor: pointer;
-    float: right;
-    height: 44px;
-    margin: -3rem 0;
-    width: 46px;
+  &-content {
+    background: $color-white;
+    max-width: 837px;
+    overflow-y: auto;
+    padding: $spacing-64 $spacing-12 $spacing-12;
+    position: relative;
+    width: 100%;
 
     @include devicebreak(medium) {
-      margin: -3rem;
+      max-height: calc(100vh - 158px);
+      padding: $spacing-64 $spacing-64 $spacing-32;
     }
+  }
+
+  &-close-button {
+    background: url(#{$img-path-Icon}/Times_circle.svg) no-repeat left center;
+    cursor: pointer;
+    height: 45px;
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    width: 45px;
   }
 }
 
 [dir='rtl'] {
-  .modal-content {
-    .modal-close-button {
-      float: left;
-    }
+  .modal-close-button {
+    left: 16px;
+    right: unset;
   }
 }
-
 /* Modal lightbox card end */

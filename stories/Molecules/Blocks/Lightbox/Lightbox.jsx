@@ -4,12 +4,11 @@ import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 
 export const Lightbox = ({
-  image, contentname, descriptionText, descriptionText2,
+  image, contentname, descriptionText, descriptionText2, visiblty,
 }) => (
   <div id="myModal" className="modal">
     <div className="modal-content">
-      <span className="modal-close-button" />
-
+      <div className="modal-close-button" />
       <div className="bio-card-wrapper">
         <div className="bio-card-image">
           <img src={image} alt={image} />
@@ -20,7 +19,6 @@ export const Lightbox = ({
           <P label={descriptionText2} className="small" />
         </article>
       </div>
-
     </div>
   </div>
 );
