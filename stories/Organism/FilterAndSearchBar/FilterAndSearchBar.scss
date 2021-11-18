@@ -1,6 +1,6 @@
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/breakpoints";
-@import "../../assets/scss/variables";
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
 
 .toggle-search {
   background: none;
@@ -24,7 +24,7 @@
 }
 
 .selected-chips {
-  max-width: 300px;
+  max-width: 296px;
   padding-top: $spacing-24;
 
   a {
@@ -68,11 +68,12 @@
     color: $color-gray-600;
     font-family: $Font-Family-ProximaNova;
     font-size: $font-size-16;
+    font-weight: 600;
     text-transform: uppercase;
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .selected-chips {
     .chips {
       margin: 0 0 $spacing-12 $spacing-12;
