@@ -1,6 +1,8 @@
 import { Meta, Story } from "@storybook/addon-docs";
 import { PageHero } from "./PageHero";
 import { PageHeroOption } from "./PageHeroOption";
+import BackgroundImg from '../../../../assets/images/garden.jpg';
+import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -17,7 +19,10 @@ export const getCaptionForLocale = (locale) => {
       text: 'Page Title'
     }],
     title: 'The sdgs in action',
-    content: 'Our Focus'}; return engText;
+    content: 'Our Focus',
+    imgsrc: BackgroundImg,
+    imgalt:BackgroundImg,
+    videosrc: BackgroundVideo}; return engText;
     case 'arabic': const arabicText = {herodata: [{
      text: 'الصفحة الرئيسية'
     },
@@ -31,7 +36,10 @@ export const getCaptionForLocale = (locale) => {
       text: 'عنوان الصفحة'
     }],
     title: 'أهداف التنمية المستدامة في العمل',
-    content: 'تركيزنا'}; return arabicText;
+    content: 'تركيزنا',
+    imgsrc: BackgroundImg,
+    imgalt:BackgroundImg,
+    videosrc: BackgroundVideo}; return arabicText;
     case 'burmese': const burmeseText = {herodata: [{
       text: 'အိမ်ပြန်'
     },
@@ -45,7 +53,10 @@ export const getCaptionForLocale = (locale) => {
       text: 'စာမျက်နှာခေါင်းစဉ်'
     }],
     title: 'sdgs သည်လုပ်ဆောင်သည်',
-    content: 'ကျွန်ုပ်တို့၏အာရုံ'}; return burmeseText;
+    content: 'ကျွန်ုပ်တို့၏အာရုံ',
+    imgsrc: BackgroundImg,
+    imgalt:BackgroundImg,
+    videosrc: BackgroundVideo}; return burmeseText;
     case 'japanese': const japaneseText = {herodata: [{
       text: 'الصفحة الرئيسية'
     },
@@ -59,7 +70,10 @@ export const getCaptionForLocale = (locale) => {
       text: 'ページタイトル'
     }],
     title: '動作中のsdgs',
-    content: '私たちの焦点'}; return japaneseText;
+    content: '私たちの焦点',
+    imgsrc: BackgroundImg,
+    imgalt:BackgroundImg,
+    videosrc: BackgroundVideo}; return japaneseText;
     default:
       const dummy =  {herodata: [{
       text: 'Home'
@@ -74,7 +88,10 @@ export const getCaptionForLocale = (locale) => {
       text: 'Page Title'
     }],
     title: 'The sdgs in action',
-    content: 'Our Focus'};
+    content: 'Our Focus',
+    imgsrc: BackgroundImg,
+    imgalt:BackgroundImg,
+    videosrc: BackgroundVideo};
     return dummy
   }
 };
@@ -119,7 +136,7 @@ The Page hero component multiusage component which creates boxes that are usuall
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
-      <PageHero data={caption.herodata} title={caption.title} content={caption.content} active={'white'} {...args}
+      <PageHero data={caption.herodata} title={caption.title} content={caption.content} active={'white'}  {...args}
       ></PageHero>
     );
   }}
@@ -131,7 +148,7 @@ The Page hero component multiusage component which creates boxes that are usuall
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
-      <PageHeroOption data={caption.herodata} title={caption.title} content={caption.content} active={'default'} {...args}
+      <PageHeroOption data={caption.herodata} title={caption.title} content={caption.content} active={'default'} imgsrc={caption.imgsrc} imgalt={caption.imgalt} videosrc={caption.videosrc} {...args}
       ></PageHeroOption>
     );
   }}
