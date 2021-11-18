@@ -1,6 +1,6 @@
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/breakpoints";
+@import "../../assets/scss/variables";
 
 .toggle-search {
   background: none;
@@ -11,29 +11,43 @@
   text-decoration: underline;
 }
 
-#select-wrapper {
+.select-wrapper {
   display: none;
 
   &.show-filter {
     display: block;
   }
-  .multi-select { padding-top: $spacing-24; }
+
+  .multi-select {
+    padding-top: $spacing-24;
+  }
 }
 
 .selected-chips {
+  max-width: 300px;
   padding-top: $spacing-24;
 
   a {
-    &:first-child { display: none; }
+    &:first-child {
+      display: none;
+    }
   }
 
   .chips {
-    margin: 0 $spacing-12 $spacing-12 0;
+    margin: 0 0.75rem 0.75rem 0;
   }
 }
 
 .chips {
   font-size: $font-size-16;
+}
+
+.clear_section {
+  display: none;
+
+  &.show-clear {
+    display: block;
+  }
 }
 
 .clear_chips {
@@ -42,7 +56,23 @@
   font-size: $font-size-16;
 }
 
-[dir='rtl'] {
+.active-filter {
+  display: none;
+  padding-top: $spacing-16;
+
+  &.show-activefilter {
+    display: block;
+  }
+
+  span {
+    color: $color-gray-600;
+    font-family: $Font-Family-ProximaNova;
+    font-size: $font-size-16;
+    text-transform: uppercase;
+  }
+}
+
+[dir="rtl"] {
   .selected-chips {
     .chips {
       margin: 0 0 $spacing-12 $spacing-12;
