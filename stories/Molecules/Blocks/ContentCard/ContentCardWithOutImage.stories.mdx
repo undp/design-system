@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs';
-import { SingleContent } from './SingleContent';
+import { ContentCardWithOutImage } from './ContentCardWithOutImage';
 import img from '../../../assets/images/card-thumbnail.jpg';
 
 export const getCaptionForLocale = (locale) => {
@@ -82,12 +82,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Molecules/Blocks/Single Content Card" argTypes={{
-  Image: {
-    options: ['true', 'false'],
-    control: { type: 'inline-radio' },
-    defaultValue: 'true'
-  },
+<Meta title="Components/UI components/Cards/Content Card" argTypes={{
   Emphasize: {
     options: ['true', 'false'],
     control: { type: 'inline-radio' },
@@ -123,13 +118,13 @@ The Single Content Card component defines a card of information data with some i
 <div className="subheading">Single Content Card</div>
 <p>Single content card with image are show the Title, Image, and CTA Link. The background color is different on hover.</p>
 
-<Story name="Single Content Card">
+<Story name="Without Image">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
-      <SingleContent
+      <ContentCardWithOutImage
         data={caption.contentdata} {...args}
-      ></SingleContent>
+      ></ContentCardWithOutImage>
     );
   }}
 </Story>
