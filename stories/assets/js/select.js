@@ -19,7 +19,6 @@ class Select {
   }
 
   bindEvents() {
-    console.log('ttt');
     this.$window.click((ev) => this.handleWindowClick(ev));
     this.$currentSelect.click((ev) => this.handleSelectClick(ev));
 
@@ -29,7 +28,6 @@ class Select {
   }
 
   handleSelectClick(ev) {
-    console.log('ssss');
     ev.stopImmediatePropagation(); // Only trigger once at a time
     this.$selectOptions.toggleClass(this.activeClass);
     this.$currentSelect.toggleClass(this.expandedClass);

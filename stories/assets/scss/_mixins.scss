@@ -287,14 +287,14 @@
 }
 
 %select_default {
-  border: 2px solid $color-black;
-  cursor: pointer;
-  font-size: $font-size-16;
-  font-weight: 600;
-  min-width: 300px;
-  padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
-  position: relative;
-  text-transform: uppercase;
+ padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
+ position: relative;
+ text-transform: uppercase;
+ min-width: 296px;
+ border: 2px solid $color-black;
+ cursor: pointer;
+ font-size: $font-size-16;
+ font-weight: 600;
 }
 
 %select_option {
