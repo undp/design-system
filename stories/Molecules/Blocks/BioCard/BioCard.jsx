@@ -1,24 +1,24 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import "./biocard.scss";
-import "../../../assets/scss/_grid.scss";
-import viewport from "../../../assets/js/viewport";
-import { ModalFun } from "../../../assets/js/modal_custom";
-import { Heading } from "../../../Atom/Base-typography/Heading/Heading";
-import { P } from "../../../Atom/Base-typography/Paragraph/Paragraph";
-import { Ctalink } from "../../../Atom/Buttons-and-labels/Cta_link/Cta_link";
-import { Lightbox } from "../../../Molecules/Blocks/Lightbox/Lightbox";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import './biocard.scss';
+import '../../../assets/scss/_grid.scss';
+import viewport from '../../../assets/js/viewport';
+import { ModalFun } from '../../../assets/js/modal_custom';
+import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
+import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
+import { Ctalink } from '../../../Atom/Buttons-and-labels/Cta_link/Cta_link';
+import { Lightbox } from '../Lightbox/Lightbox';
 
 export const size_options = {
-  large: "large-12",
-  medium: "large-3",
+  large: 'large-12',
+  medium: 'large-3',
 };
 
 export const hover_color_options = {
-  yellow: "",
-  green: "green",
-  red: "red",
-  azure: "azure",
+  yellow: '',
+  green: 'green',
+  red: 'red',
+  azure: 'azure',
 };
 
 export const BioCard = ({
@@ -36,16 +36,18 @@ export const BioCard = ({
   ...args
 }) => {
   useEffect(() => {
-    viewport(".bio-card__description");
+    viewport('.bio-card__description');
     ModalFun();
   }, []);
   return (
     <>
       <div className="grid-x grid-margin-x">
-        <div className={["cell", `${size_options[`${args.size}`]}`].join(" ")}>
-          {args.size === "large" && (
-            <a id="bio-card"
-              className={[ "grid-x grid-margin-x bio-card",`${hover_color_options[`${args.hovercolor}`]}`,].join(" ")}>
+        <div className={['cell', `${size_options[`${args.size}`]}`].join(' ')}>
+          {args.size === 'large' && (
+            <a
+              id="bio-card"
+              className={['grid-x grid-margin-x bio-card', `${hover_color_options[`${args.hovercolor}`]}`].join(' ')}
+            >
               <article className="bio-card__content large-7">
                 <div className="bio-card__description left-right ">
                   <Heading type="5" label={contentname} />
@@ -61,9 +63,11 @@ export const BioCard = ({
             </a>
           )}
 
-          {args.size === "medium" && (
-            <a id="bio-card"
-              className={[  "bio-card medium", `${hover_color_options[`${args.hovercolor}`]}`, ].join(" ")} >
+          {args.size === 'medium' && (
+            <a
+              id="bio-card"
+              className={['bio-card medium', `${hover_color_options[`${args.hovercolor}`]}`].join(' ')}
+            >
               <div className="card-thumbnail__image ">
                 <img src={image} alt={image} />
               </div>
@@ -91,6 +95,6 @@ export const BioCard = ({
 };
 
 BioCard.defaultProps = {
-  size: "medium",
-  hovercolor: "yellow",
+  size: 'medium',
+  hovercolor: 'yellow',
 };

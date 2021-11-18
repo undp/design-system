@@ -1,20 +1,22 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 // * loader start *//
 .loader {
-  border-radius: 50%;
+  @include animation(loader-animation 2s linear infinite);
+
   border: 8px solid $color-blue-600;
+  border-radius: 50%;
   border-top: 8px solid $color-gray-300;
-  width: 40px;
   height: 40px;
-  @include loader;
+  width: 40px;
+
   @include devicebreak(medium) {
-    width: 96px;
-    height: 96px;
     border: 14px solid $color-blue-600;
     border-top: 14px solid $color-gray-300;
+    height: 96px;
+    width: 96px;
   }
 }
 // * loader end *//

@@ -1,22 +1,26 @@
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/mixins';
 
 /* card_thumbnail__image start */
 .card-thumbnail__image {
-  position: relative;
   display: inline-flex;
+  position: relative;
+
   &::before {
-    top: 0;
-    left: 0;
-    bottom: 0;
-    content: "";
-    width: 100%;
-    position: absolute;
     @extend %img-hover-effect;
+
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
+
   &:hover {
     &::before {
       opacity: 0.75;
     }
   }
 }
+
 /* card_thumbnail__image end */

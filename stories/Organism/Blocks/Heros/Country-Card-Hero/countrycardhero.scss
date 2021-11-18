@@ -4,47 +4,92 @@
 
 /* country card hero start */
 .countrycard {
+  @include devicebreak(large) {
+    &__wrapper {
+      padding-top: $spacing-96;
+    }
+  }
+
+  @include devicebreak(small) {
+    &__items {
+      margin-top: $spacing-32;
+    }
+  }
+
   &__header {
     justify-content: center;
-    padding-right: $spacing-48;
-  }
 
-  &__title {
-    font-size: 3.5rem;
-    line-height: 1.09;
-    text-transform: uppercase;
-  }
+    @include devicebreak(large) {
+      padding-right: $spacing-48;
+    }
 
-  &__subtitle {
-    font-size: 2rem;
-    line-height: 2.6rem;
-    padding-left: $spacing-64;
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.11;
+      padding-bottom: 1.25rem;
+      text-transform: uppercase;
+
+      @include devicebreak(large) {
+        font-size: 3.5rem;
+        line-height: 1.09;
+        padding-bottom: 0;
+      }
+    }
+
+    h6 {
+      font-size: 1.5rem;
+      line-height: 1.4;
+      padding-top: $spacing-24;
+
+      @include devicebreak(large) {
+        font-size: 2rem;
+        padding-left: $spacing-64;
+        padding-top: 0;
+      }
+    }
   }
 
   &-border {
-    margin-left: $spacing-64;
     position: relative;
+
+    @include devicebreak(large) {
+      margin-left: $spacing-64;
+    }
 
     &::before {
       @extend %absolute__content;
 
       background: $color-dark-red;
-      height: 80%;
-      width: 3px;
+      height: 4px;
+      width: 95px;
+
+      @include devicebreak(large) {
+        height: 80%;
+        width: 3px;
+      }
     }
   }
 }
 
 [dir='rtl'] {
   .countrycard {
-    &__header {
-      padding-left: $spacing-48;
-      padding-right: 0;
+    @include devicebreak(large) {
+      &__header {
+        padding-left: $spacing-48;
+        padding-right: 0;
+      }
     }
 
     &-border {
-      margin-left: 0;
-      margin-right: $spacing-64;
+      @include devicebreak(large) {
+        margin-left: 0;
+        margin-right: $spacing-64;
+
+        h6 {
+          padding-left: 0;
+          padding-right: $spacing-64;
+        }
+      }
 
       &::before {
         right: 0;
@@ -53,7 +98,7 @@
 
     &__subtitle {
       padding-left: 0;
-      padding-right: 64px;
+      padding-right: $spacing-64;
     }
   }
 }

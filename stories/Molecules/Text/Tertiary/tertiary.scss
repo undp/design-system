@@ -1,17 +1,20 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 .tertiary-wrapper {
   h4 {
+    font-weight: 600;
     margin-bottom: $spacing-24;
-    font-family: $Font-Family-ProximaSemiBold;
+
     @include devicebreak(medium) {
       margin-bottom: $spacing-48;
     }
   }
+
   h5 {
     margin-bottom: $spacing-12;
+
     @include devicebreak(medium) {
       margin-bottom: $spacing-24;
     }

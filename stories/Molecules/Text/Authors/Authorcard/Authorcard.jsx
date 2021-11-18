@@ -10,7 +10,7 @@ export const Authorcard = ({
   <div className="grid-x grid-margin-x">
     <div className="cell medium-4">
       <a href={link} className="authorcard">
-        <Author data={data} size={width} image={image} variant="Small" />
+        <Author data={data} size={width} image={image} variant="small" />
         <P label={para} />
         <Ctalink label={button} variant="Space" />
       </a>

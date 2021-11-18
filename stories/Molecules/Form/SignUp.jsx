@@ -5,7 +5,7 @@ import { Inputcomponent } from '../../Atom/Input-group/Input_group';
 export const SignUp = ({
   element, type, required, mode, label, button, errorText, placeholder, ...args
 }) => (
-  <form className={['sign-up', `sign-up--${args.variant}`].join(' ')} action="/" id="undp-signup-subscribe">
+  <form className={['sign-up', `${args.variant}`].join(' ')} action="/" id="undp-signup-subscribe">
     <label className="footer-subtitle">{label}</label>
     <div className="sign-up--field">
       <Inputcomponent element={element} type={type} placeholder={placeholder} required={required} mode={mode} errorText={errorText} />

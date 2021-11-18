@@ -6,11 +6,11 @@ import './sidebar.scss';
 export const SidebarFirstLevel = ({
   mode, active, text, ...props
 }) => (
-  <div className={['Sidebar_item', `Sidebar_item--${active}`].join(' ')} {...props}>
+  <div className={['sidebar_item', `${active}`].join(' ')} {...props}>
     <Heading type="6" label={text} />
   </div>
 );
 
-SidebarFirstLevel.propTypes = {
-  active: PropTypes.oneOf(['Default', 'Selected']),
+SidebarFirstLevel.defaultProps = {
+  active: 'default',
 };

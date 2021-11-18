@@ -7,30 +7,30 @@ import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../../Atom/Buttons-and-labels/Cta_link/Cta_link';
 
 export const column_options = {
-  large: 'large-8 feature__card--large',
-  medium: 'medium-6 large-4 feature__card--medium',
-  small: 'medium-5 large-3 feature__card--small',
+  large: 'large-8 large',
+  medium: 'medium-6 large-4 medium',
+  small: 'medium-5 large-3 small',
 };
 export const image_options = {
-  Image: 'with-image',
+  Image: 'image',
   Color: 'without-image',
 };
 export const FeaturedContentCard = ({
   type, cell, data, Image, headertext, ...args
 }) => {
   useEffect(() => {
-    viewport('.feature__card--headertext');
+    viewport('.feature__card-title');
   }, []);
   return (
     <div className="grid-x grid-margin-x">
-      <div className="cell medium-3 feature__card--headertext medium-offset-1 left-right"><Heading type="2" label={headertext} /></div>
+      <div className="cell medium-3 feature__card-title medium-offset-1 left-right"><Heading type="2" label={headertext} /></div>
       {data.map((item, index) => (
         <div key={index} className={['cell', `${item.size ? column_options[`${item.size}`] : column_options[`${args.column}`]}`].join(' ')}>
-          <a href="#" className={['feature__card', `${item.type ? `feature__card--${image_options[`${item.type}`]}` : `feature__card--${image_options[`${Image}`]}`}`].join(' ')}>
-            <div className="feature__card_slide">
+          <a href="#" className={['feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_options[`${Image}`]}`}`].join(' ')}>
+            <div className="feature__card-slide">
               {Image === 'Image' || item.type === 'Image' && Image === 'Image'
                 ? (
-                  <div className="feature__card_image">
+                  <div className="feature__card-image">
                     <img src={item.imgback} alt={item.imgback} />
                   </div>
                 )
@@ -39,9 +39,9 @@ export const FeaturedContentCard = ({
                   </>
                 )}
             </div>
-            <article className="feature__card_content">
-              <div className="feature__card_tag">{item.contenttile}</div>
-              <div className="feature__card_description">
+            <article className="feature__card-content">
+              <div className="feature__card-tag">{item.contenttile}</div>
+              <div className="feature__card-description">
                 {(item.size ? item.size === 'large' : args.column === 'large') && item.contentname && <Heading type="4" label={item.contentname} />}
                 {(item.size ? item.size === 'medium' : args.column === 'medium') && item.contentname && <Heading type="5" label={item.contentname} />}
                 {(item.size ? item.size === 'small' : args.column === 'small') && item.contentname && <Heading type="5" label={item.contentname} />}

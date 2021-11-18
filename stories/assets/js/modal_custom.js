@@ -1,31 +1,30 @@
 /* Modal JS start custom */
 export function ModalFun() {
-  var $modalOverlay = $('#myModal');
-  var $modal = $('.modal-content');
-  var $modalClose = $('.modal-close-button');
-  var $modalOpen = $('#bio-card');
-  var modal = '#myModal';
+  const $modalOverlay = $('#myModal');
+  const $modal = $('.modal-content');
+  const $modalClose = $('.modal-close-button');
+  const $modalOpen = $('#bio-card');
+  const modal = '#myModal';
 
-  $(modal).css("visibility", "hidden");
+  $(modal).css('visibility', 'hidden');
 
   function modalOpen(modal) {
-    $modalOpen.click(function() {
-      $(modal).css("visibility", "visible").addClass('open');
+    $modalOpen.click(() => {
+      $(modal).css('visibility', 'visible').addClass('open');
     });
-    $modalOverlay.click(function() {
-      $(modal).css("visibility", "hidden").removeClass('open');
+    $modalOverlay.click(() => {
+      $(modal).css('visibility', 'hidden').removeClass('open');
     });
   }
-  
-  $modal.click(function(e) {
+
+  $modal.click((e) => {
     e.stopPropagation();
   });
 
-  $modalClose.click(function() {
+  $modalClose.click(() => {
     $modalOverlay.click();
   });
 
   modalOpen(modal);
-
 }
 /* Modal JS end custom */

@@ -10,12 +10,13 @@
     display: flex;
     justify-content: space-between;
   }
+
   &-wrapper {
     h4 {
       margin-bottom: 39px;
     }
-
   }
+
   &__summary {
     @include devicebreak(medium) {
       display: flex;
@@ -45,12 +46,12 @@
 }
 
 [dir='rtl'] {
-  .author-card { 
-    &__summary { 
-      &--text {  
+  .author-card {
+    &__summary {
+      &--text {
         @include devicebreak(medium) {
-          margin-right: $spacing-40;
           margin-left: 0;
+          margin-right: $spacing-40;
         }
       }
     }

@@ -4,70 +4,74 @@
 .author {
   &-wrapper {
     &--2 {
-      .author-wrapper__box {
-        margin-left: 0;
-        margin-right: 0;
-      }
       @include devicebreak(medium) {
         .author-wrapper__box {
-
           &:first-child {
             margin-right: 0.9375rem;
           }
+
           &:last-child {
             margin-left: 0.9375rem;
           }
         }
       }
-    }
 
-    &--3 {
       .author-wrapper__box {
         margin-left: 0;
         margin-right: 0;
       }
+    }
+
+    &--3 {
       @include devicebreak(medium) {
         .author-wrapper__box {
           margin-left: 0.9375rem;
           margin-right: 0.9375rem;
-          
+
           &:first-child {
             margin-left: 0;
           }
 
-          &:last-child{
+          &:last-child {
             margin-right: 0;
           }
         }
+      }
+
+      .author-wrapper__box {
+        margin-left: 0;
+        margin-right: 0;
       }
     }
 
     &--4 {
-      .author-wrapper__box {
-
-        &:nth-child(even) {
-          margin-right: 0;
-        }
-        &:nth-child(odd) {
-          margin-left: 0;
-        }
-
-      }
       @include devicebreak(medium) {
         .author-wrapper__box {
-
           &:nth-child(even) {
             margin-right: 0.9375rem;
           }
+
           &:nth-child(odd) {
             margin-left: 0.9375rem;
           }
+
           &:nth-child(4n) {
             margin-right: 0;
           }
+
           &:nth-child(4n+1) {
             margin-left: 0;
           }
+        }
+      }
+
+      .author-wrapper__box {
+        &:nth-child(even) {
+          margin-right: 0;
+        }
+
+        &:nth-child(odd) {
+          margin-left: 0;
         }
       }
 
@@ -91,16 +95,17 @@
 
     h6 {
       margin-bottom: $spacing-08;
+      text-transform: uppercase;
     }
   }
 
   &__designation {
     font-size: $font-size-14;
-    line-height: 19.25px;
+    line-height: 1.2;
 
     @include devicebreak(medium) {
       font-size: $font-size-16;
-      line-height: 22px;
+      line-height: 1.4;
     }
   }
 }
@@ -108,19 +113,19 @@
 [dir='rtl'] {
   .author__label {
     padding-left: 0;
-    padding-right: 24px;
+    padding-right: $spacing-24;
   }
+
   .author {
     &-wrapper {
       &--2 {
         @include devicebreak(medium) {
           .author-wrapper__box {
-    
             &:nth-child(odd) {
               margin-left: 0.9375rem;
               margin-right: unset;
             }
-    
+
             &:nth-child(even) {
               margin-left: unset;
               margin-right: 0.9375rem;
@@ -128,52 +133,58 @@
           }
         }
       }
+
       &--3 {
         @include devicebreak(medium) {
           .author-wrapper__box {
-
             &:first-child {
               margin-left: 0.9375rem;
               margin-right: unset;
             }
 
             &:last-child {
-              margin-right: 0.9375rem;
               margin-left: unset;
+              margin-right: 0.9375rem;
             }
           }
         }
       }
-      &--4 {
-        .author-wrapper__box {
 
-          &:nth-child(even) {
-            margin-left: 0;
-            margin-right: 0.9375rem;
-          }
-          &:nth-child(odd) {
-            margin-right: 0;
-            margin-left: 0.9375rem;
-          }
-        }
-        .author__label {
-          padding-right: 0;
-        }
+      &--4 {
         @include devicebreak(medium) {
           .author-wrapper__box {
             &:nth-child(even) {
               margin-left: 0.9375rem;
             }
+
             &:nth-child(odd) {
               margin-right: 0.9375rem;
             }
+
             &:nth-child(4n) {
               margin-left: 0;
             }
+
             &:nth-child(4n+1) {
               margin-right: 0;
             }
           }
+        }
+
+        .author-wrapper__box {
+          &:nth-child(even) {
+            margin-left: 0;
+            margin-right: 0.9375rem;
+          }
+
+          &:nth-child(odd) {
+            margin-left: 0.9375rem;
+            margin-right: 0;
+          }
+        }
+
+        .author__label {
+          padding-right: 0;
         }
       }
     }

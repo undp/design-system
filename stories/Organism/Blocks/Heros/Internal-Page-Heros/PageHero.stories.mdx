@@ -79,7 +79,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Organism/Blocks/Heros/Internal Page Heros"
+<Meta title="Components/UI components/Hero"
   argTypes={{
     variant: {
       options: ["video", "image"],
@@ -113,9 +113,9 @@ The Page hero component multiusage component which creates boxes that are usuall
 
 ## Default Representation & various possible states
 
-<div className="subheading">Page Hero</div>
+#### Page hero - Full-width
 
-<Story name="Pages Hero">
+<Story name="Page hero - Full-width">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
@@ -125,9 +125,9 @@ The Page hero component multiusage component which creates boxes that are usuall
   }}
 </Story>
 
-<div className="subheading">Page Hero Option</div>
+### Page hero - Tall image
 
-<Story name="Pages Hero Option">
+<Story name="Page hero - Tall image">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
@@ -141,24 +141,15 @@ The Page hero component multiusage component which creates boxes that are usuall
 
 Libraries or another dependency which are used in the component.
 
-<ul>
-  <li>For animation functionality its depend on the jQuery plugin library.</li>
-  <li>Custom JS file (viewport.js) and (animation.js) is located in the same js folder.</li>
-</ul>
+- For animation functionality its depend on the jQuery plugin library.
+- Custom JS file (viewport.js) and (animation.js) is located in the same js folder.
+
 
 ## Usage
 
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>pagehero.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+- Take HTML from the HTML tab in the canvas.
+- <u>To use SCSS include the following files in your implementation</u>
+- Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
+-  Component SCSS file: <code>pagehero.scss</code>
+- <u>To use CSS include the following files in your implementation</u>
+- The compiled CSS file from <code>assets/css/style.css</code>

@@ -31,7 +31,7 @@
       }
     }
 
-    &--white {
+    &.white {
       .footer__heading {
         color: $color-white;
       }
@@ -43,7 +43,7 @@
       }
     }
 
-    &--blue {
+    &.blue {
       border-color: $color-white;
 
       &::before {

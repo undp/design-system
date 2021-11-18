@@ -1,13 +1,13 @@
-@import "../../assets/scss/variables";
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/base";
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/base';
 
 .footer {
   background-color: $color-gray-100;
   padding: $spacing-48 $spacing-12 $spacing-40;
 
   @include devicebreak(medium) {
-    padding: 52px 0 $spacing-48;
+    padding: 3.25rem 0 $spacing-48;
   }
 
   &__wrapper {
@@ -16,7 +16,6 @@
 
   p {
     font-size: $font-size-14;
-    line-height: 1.4;
     margin: 0;
 
     @include devicebreak(medium) {
@@ -48,6 +47,10 @@
 
       @include devicebreak(medium) {
         padding-bottom: $spacing-48;
+
+        .footer__icons {
+          justify-content: end;
+        }
       }
     }
   }
@@ -155,6 +158,23 @@
     label,
     .input-error {
       color: $color-white;
+    }
+  }
+}
+
+@include devicebreak(medium) {
+  [dir='rtl'] {
+    .footer {
+      &__bottom--two {
+        .footer__condition_text {
+          text-align: left;
+
+          li {
+            margin-left: 0;
+            margin-right: 2.25rem;
+          }
+        }
+      }
     }
   }
 }

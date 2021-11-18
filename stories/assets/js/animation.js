@@ -2,9 +2,9 @@
 export default function expandtosize(ele) {
   $(window).scroll(function () {
     if ($(this).scrollTop() > 50) {
-      $(ele).addClass("expand-to-size");
+      $(ele).addClass('expand-to-size');
     } else {
-      $(ele).removeClass("expand-to-size");
+      $(ele).removeClass('expand-to-size');
     }
   });
 }

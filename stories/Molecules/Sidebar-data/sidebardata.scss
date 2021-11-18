@@ -3,13 +3,13 @@
 @import '../../assets/scss/variables';
 
 .accordion-navbar__item--headertext {
+  @extend %img_none;
+
   border: none;
-  font-family: $Font-Family-ProximaBold;
   font-size: $font-size-16;
+  font-weight: 700;
   margin-bottom: 0;
   padding: $spacing-16;
-  
-  @extend %img_none;
 
   @include devicebreak(medium) {
     display: block;
@@ -24,13 +24,13 @@
 
   &--description {
     a {
+      @extend %img_none;
+
       border: none;
       display: block;
-      font-family: $Font-Family-ProximaRegular;
       font-size: $font-size-14;
+      font-weight: 400;
       margin: $spacing-16 $spacing-24 $spacing-32 $spacing-32;
-
-      @extend %img_none;
 
       @include devicebreak(medium) {
         font-size: $font-size-16;

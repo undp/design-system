@@ -12,7 +12,16 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Atoms/Navigation/Menu Items" component={MenuItems} />
+
+<Meta title="Atoms/Navigation/Menu Items"
+  argTypes={{
+    active: {
+      options: ["default", "selected"],
+      control: { type: "radio" }
+    }
+  }}
+/>
+
 
 <style>{`
   .subheading {
@@ -34,16 +43,11 @@ Menu items Component used to show the first-level menu item in the header menu.
 <Story name="Menu Items">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <MenuItems text={caption.detail} ></MenuItems>;
+    return <MenuItems text={caption.detail} {...args} ></MenuItems>;
   }}
 </Story>
 
-<Story name="Menu Items Select">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <MenuItems text={caption.detail} select={'selected'}></MenuItems>;
-  }}
-</Story>
+
 
 <div className="subheading">Usage</div>
 <ul>

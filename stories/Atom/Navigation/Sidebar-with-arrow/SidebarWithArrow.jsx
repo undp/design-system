@@ -1,17 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Heading } from '../../Base-typography/Heading/Heading';
 import './SidebarWithArrow.scss';
 
-export const SidebarWithArrow = ({
-  mode, active, text, ...props
-}) => (
-  <div className={['Sidebar_item_arrow', `Sidebar_item_arrow--${active}`].join(' ')} {...props}>
+export const SidebarWithArrow = ({ Mode, text }) => (
+  <div className={['sidebar_item_arrow', `${Mode}`].join(' ')}>
     <Heading type="6" label={text} />
-    <span className="arrow" />
+    {Mode === 'default' || Mode === 'default-up'
+      ? (
+        <>
+          <div className="icon-chevron-down" />
+        </>
+      )
+      : (
+        <>
+          <div className="icon-chevron-down-white" />
+        </>
+      )}
   </div>
 );
 
-SidebarWithArrow.propTypes = {
-  active: PropTypes.oneOf(['Default', 'Selected']),
+SidebarWithArrow.defaultProps = {
+  Mode: 'default',
 };

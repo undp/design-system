@@ -6,7 +6,7 @@ import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
 export const FooterLogo = ({
   src, headerText, headerText2, style, alt,
 }) => (
-  <div className={['footer__logo', `footer__logo--${style}`].join(' ')}>
+  <div className={['footer__logo', `${style}`].join(' ')}>
     <Logo src={src} alt={alt} />
     <div className="footer__logo_name">
       <Heading type="5" label={headerText} />
