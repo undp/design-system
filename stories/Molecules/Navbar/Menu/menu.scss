@@ -6,7 +6,7 @@
 
   li {
     display: inline-block;
-    margin: $spacing-12;
+    margin: 12px;
 
     &:first-child {
       margin-left: 0;
@@ -26,13 +26,13 @@
       }
 
       &:first-child {
-        margin-left: $spacing-12;
+        margin-left: 12px;
         margin-right: 0;
       }
 
       &:last-child {
         margin-left: 0;
-        margin-right: $spacing-12;
+        margin-right: 12px;
       }
     }
   }
