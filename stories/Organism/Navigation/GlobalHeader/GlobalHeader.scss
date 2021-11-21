@@ -8,7 +8,7 @@
   height: 7.1875rem;
 
   @include devicebreak(mediumt) {
-    height: 4.6875;
+    height: 4.6875rem;
   }
 
   .top-left {
@@ -34,10 +34,6 @@
   .mid-nav {
     display: flex;
     justify-content: center;
-
-    @include devicebreak(mediumt) {
-      display: none;
-    }
 
     .menu__wrapper {
       align-items: center;
@@ -73,13 +69,13 @@
       margin: 0 $spacing-80;
 
       @include devicebreak(mediumt) {
-        height: 4.6875;
+        height: 4.6875rem;
         margin: 0;
       }
 
       .logo {
         @include devicebreak(mediumt) {
-          height: 4.6875;
+          height: 4.6875rem;
         }
       }
     }
