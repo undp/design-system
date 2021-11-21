@@ -5,7 +5,12 @@
       @content;
     }
   }
-
+  @else if $point==mediumt {
+    /* medium design tab */
+    @media (max-width: 64em) {
+      @content;
+    }
+  }
   @else if $point==medium {
     /* medium design */
     @media (min-width: 48em) {
