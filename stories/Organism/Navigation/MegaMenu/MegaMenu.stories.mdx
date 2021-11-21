@@ -1,0 +1,24 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import MegaMenu from './MegaMenu';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'Select Language'; return engText;
+    case 'arabic': const arabicText = 'اختار اللغة'; return arabicText;
+    case 'burmese': const burmeseText = 'ဘာသာစကားကို ရွေးပါ။'; return burmeseText;
+    case 'japanese': const japaneseText = '言語を選択する'; return japaneseText;
+    default: return 'Category';
+  }
+};
+
+<Meta title="Organism/Navigation/Mega Menu" />
+
+<Story name="MegaMenu">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <MegaMenu text={caption}></MegaMenu>;
+  }}
+</Story>
+
+
+
