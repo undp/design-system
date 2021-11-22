@@ -7,12 +7,12 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   height: 7.1875rem;
 
-  @include devicebreak(mediumfromtab) {
+  @include devicebreak(mediumonlytab) {
     height: 4.6875rem;
   }
 
   .top-left {
-    @include devicebreak(mediumfromtab) {
+    @include devicebreak(mediumonlytab) {
       .dropdown-language {
         display: none;
       }
@@ -21,7 +21,7 @@
     .icon-bar {
       display: none;
 
-      @include devicebreak(mediumfromtab) {
+      @include devicebreak(mediumonlytab) {
         display: block;
       }
     }
@@ -40,7 +40,7 @@
       display: flex;
       height: 7.1875rem;
 
-      @include devicebreak(mediumfromtab) {
+      @include devicebreak(mediumonlytab) {
         display: none;
       }
 
@@ -68,13 +68,13 @@
 
       margin: 0 $spacing-80;
 
-      @include devicebreak(mediumfromtab) {
+      @include devicebreak(mediumonlytab) {
         height: 4.6875rem;
         margin: 0;
       }
 
       .logo {
-        @include devicebreak(mediumfromtab) {
+        @include devicebreak(mediumonlytab) {
           height: 4.6875rem;
         }
       }
@@ -90,7 +90,7 @@
     display: flex;
     justify-content: flex-end;
 
-    @include devicebreak(mediumfromtab) {
+    @include devicebreak(mediumonlytab) {
       .icon-globe {
         display: none;
       }
