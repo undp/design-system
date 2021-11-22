@@ -6,6 +6,10 @@
 .download {
   &-body {
     display: flex;
+
+    @include devicebreak(small) {
+      height: calc(100% - 80px);
+    }
   }
 
   &-content {
@@ -33,12 +37,12 @@
   &-list {
     @extend .scrollbar-vertical;
 
-    max-height: 312px;
+    max-height: calc(100% - 82px);
     overflow-y: auto;
-    padding-right: $spacing-16;
+    padding: 0 $spacing-16;
 
     @include devicebreak(medium) {
-      padding: 0 $spacing-16;
+      max-height: 323px;
     }
 
     .selectbox-container {
@@ -63,7 +67,7 @@
 }
 
 .list-language {
-  max-height: 392px;
+  max-height: 100%;
 }
 
 .modal-download {

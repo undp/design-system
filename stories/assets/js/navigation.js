@@ -10,12 +10,10 @@ export const init = (locale) => {
   const getSubMenuData = (id) => {
     const data = subMenus.find((sub) => sub.link.id === id);
     if (!data.image) {
-      $('.mega-nav-option .mega-sub-description').removeClass('large-6');
-      $('.mega-nav-option .mega-sub-description').addClass('large-10');
+      $('.mega-nav-option .mega-sub-description').removeClass('large-6').addClass('large-10');
       $('.mega-nav-option .mega-image').hide();
     } else {
-      $('.mega-nav-option .mega-sub-description').removeClass('large-10');
-      $('.mega-nav-option .mega-sub-description').addClass('large-6');
+      $('.mega-nav-option .mega-sub-description').removeClass('large-10').addClass('large-6');
       $('.mega-nav-option .mega-image').show();
     }
     $('.mega-nav-option').find('.list-col-first').empty();

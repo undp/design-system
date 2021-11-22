@@ -13,6 +13,8 @@
 
   &.expanded {
     .selected {
+      border-bottom: 0;
+
       &::after {
         @include transform(translateY(-50%) rotate(-180deg));
       }

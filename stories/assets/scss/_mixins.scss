@@ -287,14 +287,14 @@
 }
 
 %select_default {
- padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
- position: relative;
- text-transform: uppercase;
- min-width: 296px;
- border: 2px solid $color-black;
- cursor: pointer;
- font-size: $font-size-16;
- font-weight: 600;
+  border: 2px solid $color-black;
+  cursor: pointer;
+  font-size: $font-size-16;
+  font-weight: 600;
+  min-width: 296px;
+  padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
+  position: relative;
+  text-transform: uppercase;
 }
 
 %select_option {
@@ -367,6 +367,35 @@
 
   margin: 0 auto;
   max-width: 100%;
+}
+
+%carousel_arrow {
+  background: $color-gray-700;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 2.784rem;
+  margin: 0 0.4rem;
+  width: 2.784rem;
+}
+
+%carousel_tag {
+  color: $color-black;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 0.84;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+%carousel_title {
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+%carousel_desc {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 /* placehoder start */
