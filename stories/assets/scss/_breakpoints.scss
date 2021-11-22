@@ -5,7 +5,7 @@
       @content;
     }
   }
-  @else if $point==mediumt {
+  @else if $point==mediumfromtab {
     /* medium design tab */
     @media (max-width: 64em) {
       @content;
