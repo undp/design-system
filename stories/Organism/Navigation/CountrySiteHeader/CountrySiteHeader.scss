@@ -7,7 +7,7 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   height: 7.1875rem;
 
-  @include devicebreak(mediumt) {
+  @include devicebreak(mediumonlytab) {
     height: 4.6875rem;
   }
 
@@ -38,7 +38,7 @@
       display: flex;
       height: 7.1875rem;
 
-      @include devicebreak(mediumt) {
+      @include devicebreak(mediumonlytab) {
         height: 4.6875rem;
         margin: 0;
       }
@@ -46,7 +46,7 @@
       .logo {
         margin-right: $spacing-24;
 
-        @include devicebreak(mediumt) {
+        @include devicebreak(mediumonlytab) {
           height: 4.6875rem;
           width: auto;
         }
@@ -57,7 +57,7 @@
   .mid-nav {
     display: flex;
     justify-content: center;
-    @include devicebreak(mediumt) {
+    @include devicebreak(mediumonlytab) {
           display: none;
         }
   }
@@ -72,7 +72,7 @@
     display: flex;
     height: 7.1875rem;
 
-    @include devicebreak(mediumt) {
+    @include devicebreak(mediumonlytab) {
       display: none;
     }
 
@@ -86,13 +86,13 @@
     display: flex;
     justify-content: flex-end;
 
-    @include devicebreak(mediumt) {
+    @include devicebreak(mediumonlytab) {
       .dropdown-language {
         display: none;
       }
     }
 
-    @include devicebreak(mediumt) {
+    @include devicebreak(mediumonlytab) {
       .icon-globe {
         display: none;
       }
@@ -101,7 +101,7 @@
     .icon-bar {
       display: none;
 
-      @include devicebreak(mediumt) {
+      @include devicebreak(mediumonlytab) {
         display: block;
       }
     }
@@ -120,6 +120,15 @@
   }
 }
 
-// [dir='rtl'] {
-
-// }
+[dir='rtl'] {
+.country-header .top-left .left-logo .logo {
+    margin-right:0;
+    margin-left:1.5rem
+    }
+    .country-header .top-right .icon-search {
+       margin-left:0; margin-right: 1rem;
+    }
+    .country-header .top-right .icon-globe {
+       margin-left:0; margin-right: 1.75rem;
+    }
+}
