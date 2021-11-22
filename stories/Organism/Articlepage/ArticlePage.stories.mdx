@@ -54,13 +54,13 @@ export const getHeadingCaptionForLocale = (locale) => {
   {(args, { globals: { locale } }) => {
     const caption = PostHeadData(locale);
     const headingLabel=getHeadingCaptionForLocale(locale);
-    return <ArticlePage 
+    return <ArticlePage
     featuredCardContent={featuredCardContent(locale)}
-    headingLabel={headingLabel} footerData={footerData(locale)} 
-    listData={listData(locale)} headingData={getAuthorCaptionForLocale(locale)} 
+    headingLabel={headingLabel} footerData={footerData(locale)}
+    listData={listData(locale)} headingData={getAuthorCaptionForLocale(locale)}
     paraLabel={paraLabel(locale)} blockquoteData={blockquoteData(locale)}
      authorCardData={AuthorCardData(locale)} imageCaptionData={imageCaptionData(locale)}
-      data={caption.postheaderdata} header={caption.header} country={caption.country} 
+      data={caption.postheaderdata} header={caption.header} country={caption.country}
       description={caption.description} active={'default'}></ArticlePage>;
   }}
 </Story>

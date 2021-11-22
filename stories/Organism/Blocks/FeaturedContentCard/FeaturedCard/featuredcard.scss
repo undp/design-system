@@ -23,8 +23,8 @@
     .feature__card {
       &--headertext {
         @include devicebreak(medium) {
-          margin-left: unset;
-          margin-right: 84px;
+          margin-left: 0.9375rem;
+          margin-right: calc(8.33333% + 1.875rem / 2);
         }
       }
     }

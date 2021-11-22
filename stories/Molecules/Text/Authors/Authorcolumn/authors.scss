@@ -83,7 +83,7 @@
 
     &__box {
       display: inline-flex;
-      margin-bottom: $spacing-24;
+      margin-bottom: $spacing-48;
       width: 100%;
     }
   }
@@ -136,15 +136,15 @@
       &--3 {
         @include devicebreak(medium) {
           .author-wrapper__box {
-            &:first-child {
-              margin-left: 0.9375rem;
-              margin-right: unset;
-            }
+            // &:first-child {
+            //   margin-left: 0.9375rem;
+            //   margin-right: unset;
+            // }
 
-            &:last-child {
-              margin-left: unset;
-              margin-right: 0.9375rem;
-            }
+            // &:last-child {
+            //   margin-left: unset;
+            //   margin-right: 0.9375rem;
+            // }
           }
         }
       }

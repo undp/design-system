@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './ArticlePage.scss';
 import { PostHeader } from '../Text/PostHeader/PostHeader';
 import { Images } from '../Images/Images/Images';
@@ -16,24 +16,26 @@ import user from '../../assets/images/user.svg';
 import { Footer } from '../Footer/Footer';
 import logo from '../../assets/images/logo.svg';
 import logowhite from '../../assets/images/logo-white.svg';
+import viewport from '../../assets/js/viewport';
 
 const ArticlePage = ({
   data, header, country, description,
   imageCaptionData, authorCardData, blockquoteData, paraLabel,
   headingData, listData, footerData, headingLabel, featuredCardContent,
 }) => {
+  useEffect(() => {
+    viewport('.feature__card--headertext');
+  }, []);
   return (
     <div>
-      <div className="grid-container container-1038">
-        <div className="grid-x grid-margin-x">
-          <div className="cell large-12">
+      <div className="grid-container fluid">
+        <div className="grid-x">
+          <div className="cell large-9 medium-offset-1 medium-10">
             <PostHeader data={data} header={header} country={country} description={description} active="default" />
           </div>
         </div>
-      </div>
-      <div className="grid-container fluid">
         <div className="grid-x">
-          <div className="cell large-12">
+          <div className="cell large-12 large-article-image">
             <Images
               imagelg={farmlandlg}
               imagemd={farmlandmd}
@@ -46,36 +48,34 @@ const ArticlePage = ({
             />
           </div>
         </div>
-      </div>
-      <div className="grid-container container-802">
         <div className="grid-x">
-          <div className="cell large-12 image-caption">
+          <div className="cell medium-7 medium-offset-2 image-caption">
             <Imagecaption label={imageCaptionData.label} name={imageCaptionData.name} paragraph={imageCaptionData.paragraph} />
           </div>
-          <div className="cell large-12 author-section">
+        </div>
+        <div className="grid-x">
+          <div className="cell large-7 medium-10 medium-offset-2 author-section">
             <Heading type="5" label={headingData.detail5} />
             <Author image={user} data={authorCardData} width="3" size="medium-4" />
           </div>
-          <div className="cell large-12">
+        </div>
+        <div className="grid-x">
+          <div className="cell medium-7 medium-offset-2">
             <P label={paraLabel.detail} />
             <P label={paraLabel.detail} />
           </div>
         </div>
-      </div>
-      <div className="blockq-container">
-        <div className="grid-x">
-          <div className="cell large-12">
+        <div className="grid-x blockq">
+          <div className="cell medium-9">
             <BlockquoteComponent blockquoteText={blockquoteData.blockquote} citeText={blockquoteData.cite} style="Yellow" />
           </div>
         </div>
-      </div>
-      <div className="grid-container container-802">
         <div className="grid-x">
-          <div className="cell large-12">
+          <div className="cell medium-7 medium-offset-2">
             <P label={paraLabel.detail} />
             <P label={paraLabel.detail} />
           </div>
-          <div className="cell large-12 middle-image">
+          <div className="cell medium-7 medium-offset-2 middle-image">
             <Images
               imagelg={farmlandlg}
               imagemd={farmlandmd}
@@ -87,30 +87,24 @@ const ArticlePage = ({
               {...{ size: 'Wide', caption: 'False', credit: 'False' }}
             />
           </div>
-          <div className="cell large-12 middle-caption">
+          <div className="cell medium-7 medium-offset-2 middle-caption">
             <Imagecaption label={imageCaptionData.label} name={imageCaptionData.name} paragraph={imageCaptionData.paragraph} />
           </div>
-          <div className="cell large-12">
+          <div className="cell medium-7 medium-offset-2">
             <P label={paraLabel.detail} />
             <P label={paraLabel.detail} />
           </div>
         </div>
-      </div>
-      <div className="left-802-container section-head">
-        <div className="grid-x">
-          <div className="cell large-12">
+        <div className="grid-x section-head">
+          <div className="cell medium-8 medium-offset-1">
             <Heading type="2" label={headingLabel} />
           </div>
         </div>
-      </div>
-      <div className="grid-container container-802">
         <div className="grid-x">
-          <div className="cell large-12">
+          <div className="cell medium-7 medium-offset-2 list-section">
             <List data={listData} type="ul" />
           </div>
         </div>
-      </div>
-      <div className="grid-container fluid">
         <div className="grid-x">
           <div className="cell large-12">
             <FeaturedCard data={featuredCardContent.featureddata}
