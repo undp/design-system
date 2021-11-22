@@ -27,7 +27,7 @@ const ArticlePage = ({
     viewport('.feature__card--headertext');
   }, []);
   return (
-    <div>
+
       <div className="grid-container fluid">
         <div className="grid-x">
           <div className="cell large-9 medium-offset-1 medium-10">
@@ -135,7 +135,6 @@ const ArticlePage = ({
         {...{ color: 'blue' }}
       />
 
-    </div>
   );
 };
 
