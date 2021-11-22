@@ -27,14 +27,6 @@
         .author-wrapper__box {
           margin-left: 0.9375rem;
           margin-right: 0.9375rem;
-
-          //           &:first-child {
-          //             margin-left: 0;
-          //           }
-          //
-          //           &:last-child{
-          //             margin-right: 0;
-          //           }
         }
       }
 
@@ -136,15 +128,6 @@
       &--3 {
         @include devicebreak(medium) {
           .author-wrapper__box {
-            // &:first-child {
-            //   margin-left: 0.9375rem;
-            //   margin-right: unset;
-            // }
-
-            // &:last-child {
-            //   margin-left: unset;
-            //   margin-right: 0.9375rem;
-            // }
           }
         }
       }
