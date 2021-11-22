@@ -6,7 +6,8 @@ import { CtaButton } from '../../../Atom/Buttons-and-labels/Cta_button/CtaButton
 import { CarouselFun } from '../../../assets/js/Carousel';
 import viewport from '../../../assets/js/viewport';
 import './fixedimagesizecarousel.scss';
-import chevronRightWhite from '../../../assets/images/Icon/chevron-right-white.svg';
+import chevronRightWhite from '../../../assets/images/Icon/circle-right.svg';
+import chevronLeftWhite from '../../../assets/images/Icon/circle-left.svg';
 
 export const FixedImageSizeCarousel = ({ data }) => {
   useEffect(() => {
@@ -44,7 +45,7 @@ export const FixedImageSizeCarousel = ({ data }) => {
         </div>
       </div>
       <div className="glide__arrows" data-glide-el="controls">
-        <button className="glide__arrow glide__arrow--left" data-glide-dir="<"><img src={chevronRightWhite} alt="" /></button>
+        <button className="glide__arrow glide__arrow--left" data-glide-dir="<"><img src={chevronLeftWhite} alt="" /></button>
         <button className="glide__arrow glide__arrow--right" data-glide-dir=">"><img src={chevronRightWhite} alt="" /></button>
       </div>
     </div>
