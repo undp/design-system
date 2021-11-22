@@ -14,7 +14,6 @@ const GlobalHeader = ({
   text, languageswitcherData, navigationData, rightNavigationData, leftNavigationData, locale,
 }) => {
   useEffect(() => {
-    console.log(navigationData);
     init(locale);
   }, [locale]);
 
