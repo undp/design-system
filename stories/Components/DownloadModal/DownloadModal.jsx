@@ -29,7 +29,7 @@ export const DownloadModal = ({
         <div className="modal-close-button" />
         <div className="download-body">
           {args.Image === 'True' && (
-          <div className="show-for-large">
+          <div className="show-large">
             <Publicationthumb />
           </div>
           )}
