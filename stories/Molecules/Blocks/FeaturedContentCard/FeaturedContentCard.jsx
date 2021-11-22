@@ -23,7 +23,7 @@ export const FeaturedContentCard = ({
   }, []);
   return (
     <div className="grid-x grid-margin-x">
-      <div className="cell medium-3 feature__card-title medium-offset-1 left-right"><Heading type="2" label={headertext} /></div>
+      {headertext && <div className="cell medium-3 feature__card-title medium-offset-1 left-right"><Heading type="2" label={headertext} /></div>}
       {data.map((item, index) => (
         <div key={index} className={['cell', `${item.size ? column_options[`${item.size}`] : column_options[`${args.column}`]}`].join(' ')}>
           <a href="#" className={['feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_options[`${Image}`]}`}`].join(' ')}>
