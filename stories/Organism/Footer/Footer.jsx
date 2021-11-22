@@ -15,10 +15,10 @@ export const Footer = ({
     accordion('.footer__heading', '.footer__panel', 'active');
   }, []);
   return (
-    <footer className={['footer', `footer--${args.color}`].join(' ')}>
+    <footer className={['footer', `${args.color}`].join(' ')}>
       <div className="grid-x">
         <div className="cell medium-10 footer__wrapper">
-          <div className="grid-x footer__head">
+          <div className="grid-x footer-head">
             <div className="cell medium-5">
               {args.color === 'default' ? (
                 <FooterLogo src={src} headerText={headerText} headerText2={headerText2} alt={alt} style={args.color} />
@@ -40,7 +40,7 @@ export const Footer = ({
               />
             </div>
           </div>
-          <div className=" grid-x grid-margin-x footer__bottom">
+          <div className=" grid-x grid-margin-x footer-bottom">
             <FooterLists data={data} headerText={menutitle} variant={args.color} />
             <FooterLists data={data} headerText={menutitle} variant={args.color} />
             <FooterLists data={data} headerText={menutitle} variant={args.color} />

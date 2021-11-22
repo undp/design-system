@@ -10,11 +10,24 @@
     }
   }
 
-  @include devicebreak(small) {
-    &__items {
+  &__items {
+    @include devicebreak(small) {
       margin-top: $spacing-32;
     }
+
+    @include devicebreak(medium) {
+      .glide {
+        &__slides {
+          flex-wrap: wrap;
+        }
+
+        &__slide {
+          height: auto;
+        }
+      }
+    }
   }
+
 
   &__header {
     justify-content: center;
@@ -40,6 +53,7 @@
       font-size: 1.5rem;
       line-height: 1.4;
       padding-top: $spacing-24;
+      text-transform: unset;
 
       @include devicebreak(large) {
         font-size: 2rem;

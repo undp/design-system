@@ -16,7 +16,6 @@ table {
     th,
     td {
       font-size: $font-size-16;
-      white-space: nowrap;
     }
   }
 
@@ -90,7 +89,6 @@ thead {
       background-color: $color-gray-300;
       font-weight: 600;
       text-align: left;
-      white-space: nowrap;
     }
   }
 }
@@ -103,7 +101,11 @@ tbody {
 
 .scroll {
   overflow-x: scroll;
-
+  th, 
+  td {
+    white-space: nowrap;
+    -webkit-text-size-adjust:100%;
+  }
   @include devicebreak(medium) {
     overflow-x: inherit;
   }

@@ -1,0 +1,502 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { GenericLandingPage } from './GenericLandingPage';
+import {getCaptionForLocale as footerData} from "../../Organism/Footer/Footer.stories.mdx";
+import img from "../../assets/images/card-thumbnail.jpg";
+import img2 from "../../assets/images/CardImage2.jpg";
+import img3 from "../../assets/images/CardImage3.jpg";
+import img4 from "../../assets/images/CardImage4.jpg";
+import img5 from "../../assets/images/CardImage5.jpg";
+import img6 from "../../assets/images/CardImage6.jpg";
+import BackgroundImg from '../../assets/images/lady.jpg';
+import BackgroundVideo from '../../assets/video/video_sample.mp4';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {herodata: [{
+      text: 'Home'
+    },
+    {
+      text: 'Second-level'
+    },
+    {
+      text: 'Third-level'
+    },
+    {
+      text: 'Page Title'
+    }],
+    title: 'NEWS CENTER',
+    imgsrc: BackgroundImg,
+    videosrc: BackgroundVideo,
+    groupcontentdata: [
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img2,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img3,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img4,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img5,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img6,
+      },
+    ],
+    buttonname: "VIEW MORE",
+    titlename: "Title of the hero story",
+    text: "Subtitle or excerpt of the story goes below and it is two lines",
+    btnlabel: "READ MORE",
+    searchData:'Select Language',
+    }; return engText;    
+    case 'arabic': const arabicText = {herodata: [{
+     text: 'الصفحة الرئيسية'
+    },
+    {
+      text: 'المستوى الثاني'
+    },
+    {
+      text: 'المستوى الثالث'
+    },
+    {
+      text: 'عنوان الصفحة'
+    }],
+    title: 'مركز الأخبار',
+    imgsrc: BackgroundImg,
+    videosrc: BackgroundVideo,
+    groupcontentdata: [
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img2,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img3,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img4,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img5,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img6,
+      },
+    ], buttonname: "إنجليزي",}; return arabicText;
+    case 'burmese': const burmeseText = {herodata: [{
+      text: 'အိမ်ပြန်'
+    },
+    {
+      text: 'ဒုတိယအဆင့်'
+    },
+    {
+      text: 'တတိယအဆင့်'
+    },
+    {
+      text: 'စာမျက်နှာခေါင်းစဉ်'
+    }],
+    title: 'သတင်းစင်တာ',
+    imgsrc: BackgroundImg,
+    videosrc: BackgroundVideo,
+    groupcontentdata: [
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img2,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img3,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img4,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img5,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img6,
+      },
+    ],
+    buttonname: "ပိုမိုကြည့်ရှုပါ။",}; return burmeseText;
+    case 'japanese': const japaneseText = {herodata: [{
+      text: 'الصفحة الرئيسية'
+    },
+    {
+      text: 'セカンドレベル'
+    },
+    {
+      text: '第3レベル'
+    },
+    {
+      text: 'ページタイトル'
+    }],
+    title: 'ニュースセンター',
+    imgsrc: BackgroundImg,
+    videosrc: BackgroundVideo,
+    groupcontentdata: [
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img2,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img3,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img4,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img5,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img6,
+      },
+    ],
+    buttonname: "もっと見る",}; return japaneseText;
+    default:
+      const dummy =  {herodata: [{
+        text: 'Home'
+      },
+      {
+        text: 'Second-level'
+      },
+      {
+        text: 'Third-level'
+      },
+      {
+        text: 'Page Title'
+      }],
+      title: 'NEWS CENTER',
+      imgsrc: BackgroundImg,
+      videosrc: BackgroundVideo,
+      groupcontentdata: [
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img2,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img3,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img4,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img5,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img6,
+        },
+      ],
+      buttonname: "VIEW MORE",};
+      return dummy
+  }
+};
+
+export const getCaptionForCategoryLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'Category'; return engText;
+    case 'arabic': const arabicText = 'فئة'; return arabicText;
+    case 'burmese': const burmeseText = 'အမျိုးအစား'; return burmeseText;
+    case 'japanese': const japaneseText = 'カテゴリー'; return japaneseText;
+    default: return 'Category';
+  }
+};
+export const getCaptionForClearLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'Clear All'; return engText;
+    case 'arabic': const arabicText = 'امسح الكل'; return arabicText;
+    case 'burmese': const burmeseText = 'အားလုံးကိုရှင်း'; return burmeseText;
+    case 'japanese': const japaneseText = 'すべてクリア'; return japaneseText;
+    default: return 'Clear All';
+  }
+};
+export const getCaptionForActiveLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'Active Filters'; return engText;
+    case 'arabic': const arabicText = 'عوامل التصفية النشطة'; return arabicText;
+    case 'burmese': const burmeseText = 'အသက်ဝင်သော စစ်ထုတ်မှုများ'; return burmeseText;
+    case 'japanese': const japaneseText = 'すべてクリア'; return japaneseText;
+    default: return 'Active Filters';
+  }
+};
+
+<Meta title="Templates/Generic Landing Page"/>
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+`}</style>
+
+# Landing Page Templates
+Template for Generic Landing Page
+
+<Story name="Generic Landing Page">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    const categoryText = getCaptionForCategoryLocale(locale);
+    const clearText = getCaptionForClearLocale(locale);
+    const activeFilterText = getCaptionForActiveLocale(locale);
+    return <GenericLandingPage 
+      clearText={clearText} 
+      activeFilterText={activeFilterText}  
+      data={categoryText}
+      herodata={caption.herodata} 
+      title={caption.title} 
+      imgsrc={caption.imgsrc} 
+      videosrc={caption.videosrc}
+      active={'default'}
+      groupcontentdata={caption.groupcontentdata}
+      buttonname={caption.buttonname}
+      footerData={footerData(locale)}
+      ></GenericLandingPage>;
+  }}
+</Story>
+
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
+  <li>Component SCSS file:<code>chips.scss</code></li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

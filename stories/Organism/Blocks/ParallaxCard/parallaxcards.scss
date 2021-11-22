@@ -26,6 +26,14 @@
       margin: 0;
     }
   }
+
+  .glide__slides {
+    display: flex;
+
+    @include devicebreak(medium) {
+      display: block;
+    }
+  }
 }
 
 [dir='rtl'] {

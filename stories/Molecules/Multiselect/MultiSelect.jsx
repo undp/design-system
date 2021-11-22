@@ -8,25 +8,29 @@ const SelectTag = ({ text, eleId }) => {
     init();
   }, []);
   return (
-    <div className="multi-select" data-multi-select="">
+    <div className="multi-select regions-select" data-multi-select="">
       <button
         className="select-control"
         aria-label="Region"
         aria-expanded="false"
+        id={`select_button-${eleId}`}
       >
-        {text}       
+        {text}
+        <span />
       </button>
       <ul
         className="options"
         data-type="region"
-        aria-labelledby="select_button"
+        aria-labelledby={`select_button-${eleId}`}
         role="listbox"
         aria-multiselectable="true"
+        aria-hidden="true"
+        aria-modal="true"
       >
         <li role="option" id={`label-category1-${eleId}`}>
           <Checkbox label={`${text}`} value="category1" id={`category1-${eleId}`} />
         </li>
-        <li className="has-submenu">
+        <li role="option" className="has-submenu">
           <button className="has-submenu__button checkbox-item">
             {text}
           </button>
