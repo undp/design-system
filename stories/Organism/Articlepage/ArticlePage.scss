@@ -7,7 +7,7 @@
   margin-bottom: 5.56rem;
   padding-top: $spacing-32;
 
-  @include devicebreak(mediumfromtab) {
+  @include devicebreak(mediumonlytab) {
     border-top: 2px solid $color-black;
   }
 }
@@ -23,7 +23,7 @@
 .image-caption {
   padding-top: $spacing-32;
 
-  @include devicebreak(mediumfromtab) {
+  @include devicebreak(mediumonlytab) {
     .image__caption {
       border-bottom: 0;
     }
