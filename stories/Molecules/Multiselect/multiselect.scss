@@ -148,6 +148,9 @@
 }
 
 [dir='rtl'] {
+.multi-select .select-control::after, .multi-select .has-submenu__button::after {
+       //transition:none;
+    }
   .multi-select {
     .select-control,
     .has-submenu__button {
@@ -159,10 +162,14 @@
     }
 
     .has-submenu__button {
+    text-align:right;
       &::after {
         left: $spacing-16;
+        right:inherit;
+
       }
     }
+
 
     .checkbox-wrapper {
       input[type='checkbox'],

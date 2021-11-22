@@ -21,11 +21,11 @@ export const getCaptionForClearLocale = (locale) => {
 };
 export const getCaptionForActiveLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = 'Active Filters'; return engText;
-    case 'arabic': const arabicText = 'عوامل التصفية النشطة'; return arabicText;
-    case 'burmese': const burmeseText = 'အသက်ဝင်သော စစ်ထုတ်မှုများ'; return burmeseText;
-    case 'japanese': const japaneseText = 'すべてクリア'; return japaneseText;
-    default: return 'Active Filters';
+    case 'english': const engText = 'Active Filters:'; return engText;
+    case 'arabic': const arabicText = 'عوامل التصفية النشطة:'; return arabicText;
+    case 'burmese': const burmeseText = 'အသက်ဝင်သော စစ်ထုတ်မှုများ:'; return burmeseText;
+    case 'japanese': const japaneseText = 'すべてクリア:'; return japaneseText;
+    default: return 'Active Filters:';
   }
 };
 
