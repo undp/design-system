@@ -10,15 +10,15 @@ export const PageWideCard = ({
   label, title, paragraph, button,
 }) => {
   useEffect(() => {
-    viewport('.wide-card-container__tag');
-    viewport('.wide-card__wrapper');
+    viewport('.wide-card__tag');
+    viewport('.wide-card__description');
   }, []);
   return (
-    <div className="wide-card-container">
-      <div className="wide-card-container__tag left-right">{label}</div>
-      <div className="grid-x wide-card-container__small-size">
-        <div className="cell medium-6 wide-card__wrapper left-right">
-          <div className="wide-card__wrapper--summary">
+    <div className="wide-card">
+      <div className="wide-card__tag left-right">{label}</div>
+      <div className="grid-x wide-card__wrapper">
+        <div className="cell medium-6 wide-card__description left-right">
+          <div className="wide-card__summary">
             <a href="#">
               <Heading type="4" label={title} />
               <P label={paragraph} />
@@ -26,7 +26,7 @@ export const PageWideCard = ({
             <CtaButton label1={button} />
           </div>
         </div>
-        <a className="cell medium-6 wide-card__imgwrapper" href="#">
+        <a className="cell medium-6 wide-card__image" href="#">
           <img src={BackgroundImg} alt={BackgroundImg} />
         </a>
       </div>

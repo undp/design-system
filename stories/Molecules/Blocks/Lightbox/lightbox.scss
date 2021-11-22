@@ -1,57 +1,54 @@
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/base";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/base';
 
 /* Modal lightbox card start */
 .modal {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-  display: flex;
-  position: fixed;
-  align-items: center;
-  justify-content: center;
-  top: 0;
   background: $color-white;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
   visibility: visible;
-   @include devicebreak(medium) {
+  z-index: 99;
+
+  @include devicebreak(medium) {
+    align-items: center;
     background: rgba(247, 247, 247, 0.8);
   }
-}
 
-.modal-content {
-  width: 100%;
-  max-width: 837px;
-  background: $color-white;
-  position: relative;
-  padding: 0;
-  max-height: calc(100vh - 115px);
-  margin: auto $spacing-12;
-  @include devicebreak(medium) {
-    height: 62vh;
-    margin: 0;
-    padding: $spacing-80;
-  }
-  .modal-close-button {
-   content: "";
-    width: 46px;
-    height: 44px;
-    float: right;
-    margin: -3rem 0;
-    cursor: pointer;
-    background: url(#{$img-path-Icon}/Times_circle.svg) no-repeat left center;
+  &-content {
+    background: $color-white;
+    max-width: 837px;
+    overflow-y: auto;
+    padding: $spacing-64 $spacing-12 $spacing-12;
+    position: relative;
+    width: 100%;
+
     @include devicebreak(medium) {
-       margin: -3rem ;
+      max-height: calc(100vh - 158px);
+      padding: $spacing-64 $spacing-64 $spacing-32;
     }
+  }
+
+  &-close-button {
+    background: url(#{$img-path-Icon}/Times_circle.svg) no-repeat left center;
+    cursor: pointer;
+    height: 45px;
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    width: 45px;
   }
 }
 
-[dir="rtl"] {
-  .modal-content {
-    .modal-close-button  {
-      float: left;
-    }
+[dir='rtl'] {
+  .modal-close-button {
+    left: 16px;
+    right: unset;
   }
 }
 /* Modal lightbox card end */

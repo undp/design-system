@@ -1,14 +1,15 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 // * language row start *//
-.language_item {
+.language__item {
   @extend %paragragh-font-16;
   @extend %border-bottom;
-  padding: 12px 16px;
-  min-width: 100px;
-  line-height: 15px;
+
   display: inline-block;
+  line-height: 0.9;
+  min-width: 100px;
+  padding: $spacing-12 $spacing-16;
 }
 // * language row end *//

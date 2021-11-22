@@ -1,65 +1,61 @@
 @import './variables';
 @import './breakpoints';
 
-@mixin body-copy {
-  font-family: 'Arial';
-  font-size: 1rem;
-  line-height: 1.6;
+//background image gradient
+@mixin background-image($deg, $colorname, $opacity) {
+  background: linear-gradient($deg, $colorname, $opacity);
 }
 
-@mixin feature__card_bg {
-  background: transparent linear-gradient( 207deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.5) 80%, rgba(255, 235, 0, 0.8) ) 0 0 no-repeat padding-box;
+// select box appearance
+@mixin x-appearance($value) {
+  appearance: $value;
+  appearance: $value;
+  appearance: $value;
 }
 
-//loader animation
-@mixin loader {
-  animation: loader-animation 2s linear infinite;
-  -webkit-animation: loader-animation 2s linear infinite;
-  -moz-animation: loader-animation 2s linear infinite;
-  -ms-animation: loader-animation 2s linear infinite;
-  -o-animation: loader-animation 2s linear infinite;
+//animation
+@mixin animation($animation) {
+  animation: $animation;
+  animation: $animation;
+  animation: $animation;
+  animation: $animation;
+  animation: $animation;
 }
-
-@keyframes loader-animation {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-//loader animation end
 
 //transition
 @mixin transition($transitions...) {
-  -webkit-transition: $transitions;
-  -moz-transition: $transitions;
-  -ms-transition: $transitions;
-  -o-transition: $transitions;
+  transition: $transitions;
+  transition: $transitions;
+  transition: $transitions;
+  transition: $transitions;
   transition: $transitions;
 }
 
 //transition-delay
 @mixin transitiondelay($transitiondelay...) {
-  -webkit-transition-delay: $transitiondelay;
-  -moz-transition-delay: $transitiondelay;
-  -ms-transition-delay: $transitiondelay;
-  -o-transition-delay: $transitiondelay;
+  transition-delay: $transitiondelay;
+  transition-delay: $transitiondelay;
+  transition-delay: $transitiondelay;
+  transition-delay: $transitiondelay;
   transition-delay: $transitiondelay;
 }
 
 //transform
 @mixin transform($transforms) {
-  -webkit-transform: $transforms;
-	-moz-transform: $transforms;
-	-ms-transform: $transforms;
-  -o-transition: $transforms;
-	transform: $transforms;
+  transform: $transforms;
+  transform: $transforms;
+  transform: $transforms;
+  transform: $transforms;
+  transition: $transforms;
 }
 
 // Rotate
-@mixin rotate ($deg) {
+@mixin rotate($deg) {
   @include transform(rotate(#{$deg}deg));
 }
 
 // Translate
-@mixin translate ($x, $y) {
+@mixin translate($x, $y) {
   @include transform(translate($x, $y));
 }
 
@@ -69,50 +65,68 @@
 }
 
 // Skew
-@mixin skew ($x, $y) {
+@mixin skew($x, $y) {
   @include transform(skew(#{$x}deg, #{$y}deg));
 }
 
 /* mixing  end */
 
-// basic font
+//loader animation
+@keyframes loader-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// link animation
+@keyframes lineLoop-animation {
+  0% {
+    background-position: 100% 100%, -30px 100%;
+    background-size: 100% 2px, 0 2px;
+  }
+
+  to {
+    background-position: calc(100% + 30px) 100%, 0 100%;
+    background-size: 0 2px, 100% 2px;
+  }
+}
+
+/* placehoder start */
 %paragragh-font-14 {
-  font-size: 12px;
-  line-height: 16px;
+  font-size: $font-size-12;
 
   @include devicebreak(medium) {
     font-size: $font-size-14;
-    line-height: 19px;
   }
 }
 
 %paragragh-font-16 {
   font-size: $font-size-14;
-  line-height: 20px;
+  line-height: 1.4;
 
   @include devicebreak(medium) {
     font-size: $font-size-16;
-    line-height: 22px;
   }
 }
 
 %paragragh-font-20 {
   font-size: $font-size-16;
-  line-height: 22px;
 
   @include devicebreak(medium) {
     font-size: $font-size-20;
-    line-height: 26px;
   }
 }
 
 %paragragh-font-24 {
   font-size: $font-size-20;
-  line-height: 23px;
+  line-height: 1.1;
 
   @include devicebreak(medium) {
-    font-size: 24px;
-    line-height: 27px;
+    font-size: $font-size-24;
   }
 }
 
@@ -128,10 +142,9 @@
 }
 
 %border-none {
-  border: none;
-
   @extend %img_none;
 
+  border: none;
 }
 
 %sidebar {
@@ -140,11 +153,11 @@
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  padding: 16px;
+  padding: $spacing-16;
   position: relative;
 
   @include devicebreak(medium) {
-    padding: 24px;
+    padding: $spacing-24;
   }
 }
 
@@ -171,19 +184,20 @@
 }
 
 %img-hover-effect {
+  @include transition(opacity 0.5s ease);
+
   background-image: linear-gradient(42deg, $color-yellow, transparent 80%);
   opacity: 0;
-  transition: opacity 0.5s ease;
 }
 
 %button {
-  display: flex;
   align-items: center;
   border: none;
-  font-family: $Font-Family-ProximaBold;
+  display: flex;
   font-size: $font-size-16;
-  line-height: 18px;
+  font-weight: 700;
   letter-spacing: 0.03em;
+  line-height: 1;
 
   @include devicebreak(medium) {
     display: inline-flex;
@@ -199,12 +213,12 @@
 
 %field__image {
   background-repeat: no-repeat;
+  height: 20px;
   left: 10px;
+  left: 14px;
   position: absolute;
   top: 22px;
   width: 20px;
-  height: 20px;
-  left: 14px;
   z-index: 1;
 }
 
@@ -215,17 +229,18 @@
 }
 
 %arrow {
-  top: 50%;
-  content: '';
-  right: 22px;
-  position: absolute;
   @include transform(translateY(-50%));
   @include transition(all 200ms ease-in-out);
+
   background: url('../../assets/images/Icon/Chevron-down.svg') no-repeat center center;
+  content: '';
   float: right;
-  width: 20px;
   height: 13px;
   margin-left: $spacing-24;
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  width: 20px;
 }
 
 %absolute__content {
@@ -254,31 +269,10 @@
 }
 
 %language_switcher {
-  font-family: $Font-Family-ProximaNova;
+  border: none;
   font-size: $font-size-14;
   font-weight: 600;
-  border: none;
   text-transform: uppercase;
-}
-
-// link animation
-@mixin lineLoop {
-  animation: lineLoop-animation 2s linear infinite;
-  -webkit-animation: lineLoop-animation 2s linear infinite;
-  -moz-animation: lineLoop-animation 2s linear infinite;
-  -ms-animation: lineLoop-animation 2s linear infinite;
-  -o-animation: lineLoop-animation 2s linear infinite;
-}
-
-@keyframes lineLoop-animation {
-  0% {
-    background-size: 100% 2px, 0 2px;
-    background-position: 100% 100%, -30px 100%;
-  }
-  to {
-    background-size: 0 2px, 100% 2px;
-    background-position: calc(100% + 30px) 100%, 0 100%;
-  }
 }
 
 %img_none {
@@ -286,40 +280,40 @@
 }
 
 %absolute__overflow {
-  position: absolute;
-  width: 100%;
   height: 100%;
   overflow: hidden;
+  position: absolute;
+  width: 100%;
 }
 
 %select_default {
- padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
- position: relative;
- text-transform: uppercase;
- min-width: 300px;
- border: 2px solid $color-black;
- cursor: pointer;
- font-size: $font-size-16;
- font-family: $Font-Family-ProximaSemiBold;
+  border: 2px solid $color-black;
+  cursor: pointer;
+  font-size: $font-size-16;
+  font-weight: 600;
+  min-width: 296px;
+  padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
+  position: relative;
+  text-transform: uppercase;
 }
 
 %select_option {
-display: none;
-border: 2px solid $color-black;
-max-height: 300px;
-min-height: 100px;
-box-sizing: border-box;
-width: 100%;
-padding: 0 $spacing-16;
+  border: 2px solid $color-black;
+  box-sizing: border-box;
+  display: none;
+  max-height: 300px;
+  min-height: 100px;
+  padding: 0 $spacing-16;
+  width: 100%;
 }
 
-%select_rtl{
-  padding-left: 50px;
-  padding-right: 16px;
+%select_rtl {
+  padding-left: 3.125rem;
+  padding-right: $spacing-16;
   text-align: right;
 }
 
-%select_rtl_after{
+%select_rtl_after {
   left: 22px;
   margin: 0;
   right: auto;
@@ -327,17 +321,19 @@ padding: 0 $spacing-16;
 
 %no-animation {
   animation: none;
-  -webkit-animation: none;
-  -moz-animation: none;
-  -ms-animation: none;
-  -o-animation: none;
+  animation: none;
+  animation: none;
+  animation: none;
+  animation: none;
 }
 
-/* animation start */
 %left-to-right {
   @include transform(translateX(-100px));
+  @include transition(
+    transform 1.2s cubic-bezier(0.34, 0.41, 0.03, 1),
+    opacity 1.2s cubic-bezier(0.34, 0.41, 0.03, 1)
+  );
 
-  @include transition(transform 1.2s cubic-bezier(0.34, 0.41, 0.03, 1), opacity 1.2s cubic-bezier(0.34, 0.41, 0.03, 1));
   opacity: 0;
   visibility: hidden;
 }
@@ -350,29 +346,56 @@ padding: 0 $spacing-16;
 }
 
 %scale-up {
-  @include transform(scale(.9));
-
-  @include transition(transform 1.2s cubic-bezier(.34,.41,.03,1));
+  @include transform(scale(0.9));
+  @include transition(transform 1.2s cubic-bezier(0.34, 0.41, 0.03, 1));
 }
 
 %opacity-only {
+  @include transition(opacity 1.2s cubic-bezier(0.34, 0.41, 0.03, 1));
+
   opacity: 0;
-  @include transition(opacity 1.2s cubic-bezier(.34,.41,.03,1));
 }
 
 %inviewport_opacity_only {
-  opacity: 1;
   @include transform(translateX(0));
+
+  opacity: 1;
 }
 
 %expand_to_size {
+  @include transition(max-width 0.5s ease);
+
   margin: 0 auto;
   max-width: 100%;
-  @include transition(max-width .5s ease);
 }
 
-/* animation end */
-
-@mixin background-image($deg, $colorname, $opacity) {
-  background: linear-gradient($deg, $colorname, $opacity);
+%carousel_arrow {
+  background: $color-gray-700;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 2.784rem;
+  margin: 0 0.4rem;
+  width: 2.784rem;
 }
+
+%carousel_tag {
+  color: $color-black;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 0.84;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+%carousel_title {
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+%carousel_desc {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* placehoder start */

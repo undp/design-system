@@ -1,0 +1,121 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/base';
+
+.download {
+  &-body {
+    display: flex;
+
+    @include devicebreak(small) {
+      height: calc(100% - 80px);
+    }
+  }
+
+  &-content {
+    width: 100%;
+
+    @include devicebreak(medium) {
+      padding-left: $spacing-24;
+      width: calc(100% - 358px);
+    }
+
+    .select-box {
+      margin-bottom: $spacing-32;
+      max-width: 100%;
+
+      @include devicebreak(medium) {
+        margin-right: $spacing-32;
+      }
+
+      .selected {
+        min-width: 100%;
+      }
+    }
+  }
+
+  &-list {
+    @extend .scrollbar-vertical;
+
+    max-height: calc(100% - 82px);
+    overflow-y: auto;
+    padding: 0 $spacing-16;
+
+    @include devicebreak(medium) {
+      max-height: 323px;
+    }
+
+    .selectbox-container {
+      @include devicebreak(medium) {
+        margin-right: $spacing-24;
+      }
+
+      &.hide {
+        display: none;
+      }
+    }
+  }
+
+  &-footer {
+    margin-top: $spacing-32;
+    text-align: right;
+
+    @include devicebreak(medium) {
+      padding-right: $spacing-32;
+    }
+  }
+}
+
+.list-language {
+  max-height: 100%;
+}
+
+.modal-download {
+  .modal-content {
+    max-width: 633px;
+  }
+
+  .download-content {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+[dir='rtl'] {
+  .download {
+    &-list {
+      @include devicebreak(small) {
+        padding-left: $spacing-16;
+        padding-right: 0;
+      }
+
+      @include devicebreak(medium) {
+        .selectbox-container {
+          margin-left: $spacing-24;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &-content {
+      @include devicebreak(medium) {
+        padding-left: 0;
+        padding-right: $spacing-24;
+
+        .select-box {
+          margin-left: $spacing-32;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &-footer {
+      text-align: left;
+
+      @include devicebreak(medium) {
+        padding-left: $spacing-32;
+        padding-right: 0;
+      }
+    }
+  }
+}

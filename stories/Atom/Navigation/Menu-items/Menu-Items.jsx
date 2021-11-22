@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Menu-Items.scss';
 
-export const MenuItems = ({ select, text, ...props }) => (
-  <a href="#" className={['menu_item', `${select}`].join(' ')} {...props}>{text}</a>
+export const MenuItems = ({ active, text }) => (
+  <a href="#" className={['menu_item', `${active}`].join(' ')}>{text}</a>
 );
 
-MenuItems.propTypes = {
-  select: PropTypes.oneOf(['Default', 'selected']),
+MenuItems.defaultProps = {
+  active: 'default',
 };

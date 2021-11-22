@@ -1,23 +1,23 @@
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
-.Scrollbar-horizontal-wrapper {
+.scrollbar-horizontal-wrapper {
   float: left;
-  width: 600px;
   overflow-x: scroll;
+  width: 600px;
 }
 
-.Scrollbar-data {
-  width: 1000px;
+.scrollbar-data {
   visibility: hidden;
+  width: 1000px;
 }
 
-.Scrollbar-vertical-wrapper {
+.scrollbar-vertical-wrapper {
   height: 70vh;
-  width: 65px;
   overflow-y: scroll;
+  width: 65px;
 }
 
-.Scrollbar-data__vertical {
+.scrollbar-data__vertical {
   min-height: 100vh;
 }

@@ -1,41 +1,63 @@
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
-/* icon start */ 
+/* icon start */
+
 .icon--bar {
   cursor: pointer;
 }
+
 .arrow-expand {
-  height: 16px;
+  background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat center center;
   cursor: pointer;
-  background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat center center  ;
-  transform: translateX(0);
+  height: 16px;
+  @include transform (translateX(0));
   width: 20px;
+
   &:hover {
     background: url(#{$img-path-Icon}/arrow-left-expand-hover.svg) no-repeat center center;
-    transform: translateX(10px);
-    transition: transform 0.4s cubic-bezier(0.4, 0.22, 0.28, 1); 
+    @include transform (translateX(10px));
+    @include transition (transform 0.4s);
     width: 100px;
-  } 
+  }
 }
 
-.external-link{
+.external-link {
+  background: url(#{$img-path-Icon}/external-default.svg) no-repeat 0 bottom;
+  cursor: pointer;
   height: 20px;
   width: 21px;
-  cursor: pointer;
-  background: url(#{$img-path-Icon}/external-default.svg) no-repeat 0 bottom ;
+
   &:hover {
     background: url(#{$img-path-Icon}/external-hover.svg) no-repeat 0 bottom;
-  } 
+  }
 }
 
-.download-icon{
+.download-icon {
+  background: url(#{$img-path-Icon}/download-default.svg) no-repeat 0 bottom;
+  cursor: pointer;
   height: 24px;
   width: 24px;
-  cursor: pointer;
-  background: url(#{$img-path-Icon}/download-default.svg) no-repeat 0 bottom ;
+
   &:hover {
-    height: 24px;
     background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
-  } 
+    height: 24px;
+  }
 }
-/* icon end */ 
+
+[dir="rtl"] {
+  .arrow-expand {
+    @include transform(translate(0) rotate(180deg));
+    &:hover {
+      @include transform(translate(-10px) rotate(180deg));
+    }
+  }
+   .external-link {
+    @include transform(rotate(270deg));
+    &:hover {
+      @include transform(rotate(270deg));
+    }
+  }
+}
+
+/* icon end */

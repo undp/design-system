@@ -18,8 +18,8 @@
 
     @include devicebreak(medium) {
       display: inline-flex;
-      margin-bottom: 18px;
-      margin-left: 36px;
+      margin-bottom: 1.125rem;
+      margin-left: 2.25rem;
       text-align: right;
     }
 
@@ -32,7 +32,7 @@
     }
   }
 
-  &--white {
+  &.white {
     a {
       color: $color-white;
     }
@@ -43,6 +43,10 @@
   .footer__condition_text {
     padding-right: 0;
     text-align: right;
+
+    @include devicebreak(medium) {
+      text-align: left;
+    }
   }
 }
 // * footer condition end *//

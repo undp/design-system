@@ -2,106 +2,106 @@ import React from 'react';
 import './layout.scss';
 
 export const Layout = ({ }) => (
-  <div>
+  <>
     <div className="grid_name">Basic</div>
     <div className="grid_description">
-      The structure of XY grid uses .grid-x, .grid-y, and .cell as its base.
+      The structure of grid uses .grid-x and .cell as its base.
       Without defining a gutter type the cells will simply split up the space
       without any gutters.
     </div>
     <div className="grid-x ">
-      <div className="cell small-6 medium-8 large-10 grid--layout">
+      <div className="cell small-12 medium-12 large-12 grid--layout">
         <div className="column">12/12/12 cells </div>
       </div>
     </div>
     <div className="grid-x">
-      <div className="cell  medium-6 large-6 grid--layout">
+      <div className="cell small-12  medium-6 large-6 grid--layout">
         <div className="column">12/6/6 cells </div>
       </div>
-      <div className="cell  medium-6 large-6 grid--layout">
+      <div className="cell small-12  medium-6 large-6 grid--layout">
         <div className="column">12/6/6 cells </div>
       </div>
     </div>
     <div className="grid-x">
-      <div className="cell  medium-4 large-4 grid--layout">
+      <div className="cell small-12  medium-4 large-4 grid--layout">
         <div className="column">12/4/4 cells </div>
       </div>
-      <div className="cell  medium-4 large-4 grid--layout">
+      <div className="cell small-12  medium-4 large-4 grid--layout">
         <div className="column">12/4/4 cells </div>
       </div>
-      <div className="cell  medium-4 large-4 grid--layout">
+      <div className="cell small-12  medium-4 large-4 grid--layout">
         <div className="column">12/4/4 cells </div>
       </div>
     </div>
     <div className="grid-x">
-      <div className="cell  medium-3 large-3 grid--layout">
+      <div className="cell small-12  medium-3 large-3 grid--layout">
         <div className="column">12/3/3 cells </div>
       </div>
-      <div className="cell  medium-3 large-3 grid--layout">
+      <div className="cell small-12  medium-3 large-3 grid--layout">
         <div className="column">12/3/3 cells </div>
       </div>
-      <div className="cell  medium-3 large-3 grid--layout">
+      <div className="cell small-12  medium-3 large-3 grid--layout">
         <div className="column">12/3/3 cells </div>
       </div>
-      <div className="cell  medium-3 large-3 grid--layout">
+      <div className="cell small-12  medium-3 large-3 grid--layout">
         <div className="column">12/3/3 cells </div>
       </div>
     </div>
     <div className="grid-x">
-      <div className="cell  medium-2 large-2 grid--layout">
+      <div className="cell small-12  medium-2 large-2 grid--layout">
         <div className="column">12/2/2 cells </div>
       </div>
-      <div className="cell  medium-2 large-2 grid--layout">
+      <div className="cell small-12  medium-2 large-2 grid--layout">
         <div className="column">12/2/2 cells </div>
       </div>
-      <div className="cell  medium-2 large-2 grid--layout">
+      <div className="cell small-12  medium-2 large-2 grid--layout">
         <div className="column">12/2/2 cells </div>
       </div>
-      <div className="cell  medium-2 large-2 grid--layout">
+      <div className="cell small-12  medium-2 large-2 grid--layout">
         <div className="column">12/2/2 cells </div>
       </div>
-      <div className="cell  medium-2 large-2 grid--layout">
+      <div className="cell small-12  medium-2 large-2 grid--layout">
         <div className="column">12/2/2 cells </div>
       </div>
-      <div className="cell  medium-2 large-2 grid--layout">
+      <div className="cell small-12  medium-2 large-2 grid--layout">
         <div className="column">12/2/2 cells </div>
       </div>
     </div>
     <div className="grid-x">
-      <div className="cell  medium-1 large-1 grid--layout">
+      <div className="cell small-12  medium-1 large-1 grid--layout">
         <div className="column">12/1/1 cells </div>
       </div>
-      <div className="cell  medium-1 large-1 grid--layout">
+      <div className="cell small-12  medium-1 large-1 grid--layout">
         <div className="column">12/1/1 cells </div>
       </div>
-      <div className="cell  medium-1 large-1 grid--layout">
+      <div className="cell small-12  medium-1 large-1 grid--layout">
         <div className="column">12/1/1 cells </div>
       </div>
-      <div className="cell  medium-1 large-1 grid--layout">
+      <div className="cell small-12  medium-1 large-1 grid--layout">
         <div className="column">12/1/1 cells </div>
       </div>
-      <div className="cell  medium-1 large-1 grid--layout">
+      <div className="cell small-12  medium-1 large-1 grid--layout">
         <div className="column">12/1/1 cells </div>
       </div>
-      <div className="cell  medium-1 large-1 grid--layout">
+      <div className="cell small-12  medium-1 large-1 grid--layout">
         <div className="column">12/1/1 cells </div>
       </div>
-      <div className="cell  medium-1 large-1 grid--layout">
+      <div className="cell small-12  medium-1 large-1 grid--layout">
         <div className="column">12/1/1 cells </div>
       </div>
-      <div className="cell  medium-1 large-1 grid--layout">
+      <div className="cell small-12  medium-1 large-1 grid--layout">
         <div className="column">12/1/1 cells </div>
       </div>
-      <div className="cell  medium-1 large-1 grid--layout">
+      <div className="cell small-12  medium-1 large-1 grid--layout">
         <div className="column">12/1/1 cells </div>
       </div>
-      <div className="cell  medium-1 large-1 grid--layout">
+      <div className="cell small-12  medium-1 large-1 grid--layout">
         <div className="column">12/1/1 cells </div>
       </div>
-      <div className="cell  medium-1 large-1 grid--layout">
+      <div className="cell small-12  medium-1 large-1 grid--layout">
         <div className="column">12/1/1 cells </div>
       </div>
-      <div className="cell  medium-1 large-1 grid--layout">
+      <div className="cell small-12  medium-1 large-1 grid--layout">
         <div className="column">12/1/1 cells </div>
       </div>
     </div>
@@ -113,60 +113,60 @@ export const Layout = ({ }) => (
       grid.
     </div>
     <div className="grid-x grid-margin-x">
-      <div className="cell  medium-12 large-12 grid--layout">
+      <div className="cell small-12  medium-12 large-12 grid--layout">
         <div className="column">12/12/12 cells </div>
       </div>
     </div>
     <div className="grid-x grid-margin-x">
-      <div className="cell  medium-6 large-6 grid--layout">
+      <div className="cell small-12  medium-6 large-6 grid--layout">
         <div className="column">12/6/6 cells </div>
       </div>
-      <div className="cell  medium-6 large-6 grid--layout">
+      <div className="cell small-12  medium-6 large-6 grid--layout">
         <div className="column">12/6/6 cells </div>
       </div>
     </div>
     <div className="grid-x grid-margin-x">
-      <div className="cell  medium-4 large-4 grid--layout">
+      <div className="cell small-12  medium-4 large-4 grid--layout">
         <div className="column">12/4/4 cells </div>
       </div>
-      <div className="cell  medium-4 large-4 grid--layout">
+      <div className="cell small-12  medium-4 large-4 grid--layout">
         <div className="column">12/4/4 cells </div>
       </div>
-      <div className="cell  medium-4 large-4 grid--layout">
+      <div className="cell small-12  medium-4 large-4 grid--layout">
         <div className="column">12/4/4 cells </div>
       </div>
     </div>
     <div className="grid-x grid-margin-x">
-      <div className="cell  medium-3 large-3 grid--layout">
+      <div className="cell small-12  medium-3 large-3 grid--layout">
         <div className="column">12/3/3 cells </div>
       </div>
-      <div className="cell  medium-3 large-3 grid--layout">
+      <div className="cell small-12  medium-3 large-3 grid--layout">
         <div className="column">12/3/3 cells </div>
       </div>
-      <div className="cell  medium-3 large-3 grid--layout">
+      <div className="cell small-12  medium-3 large-3 grid--layout">
         <div className="column">12/3/3 cells </div>
       </div>
-      <div className="cell  medium-3 large-3 grid--layout">
+      <div className="cell small-12  medium-3 large-3 grid--layout">
         <div className="column">12/3/3 cells </div>
       </div>
     </div>
     <div className="grid-x grid-margin-x">
-      <div className="cell  medium-2 large-2 grid--layout">
+      <div className="cell small-12  medium-2 large-2 grid--layout">
         <div className="column">12/2/2 cells </div>
       </div>
-      <div className="cell  medium-2 large-2 grid--layout">
+      <div className="cell small-12  medium-2 large-2 grid--layout">
         <div className="column">12/2/2 cells </div>
       </div>
-      <div className="cell  medium-2 large-2 grid--layout">
+      <div className="cell small-12  medium-2 large-2 grid--layout">
         <div className="column">12/2/2 cells </div>
       </div>
-      <div className="cell  medium-2 large-2 grid--layout">
+      <div className="cell small-12  medium-2 large-2 grid--layout">
         <div className="column">12/2/2 cells </div>
       </div>
-      <div className="cell  medium-2 large-2 grid--layout">
+      <div className="cell small-12  medium-2 large-2 grid--layout">
         <div className="column">12/2/2 cells </div>
       </div>
-      <div className="cell  medium-2 large-2 grid--layout">
+      <div className="cell small-12  medium-2 large-2 grid--layout">
         <div className="column">12/2/2 cells </div>
       </div>
     </div>
@@ -175,19 +175,19 @@ export const Layout = ({ }) => (
       The grid defaults to the full width of the available space. To contain
       it horizontally use the grid-container class. The container will be
       centered and have a max-width equal to your $grid-container setting
-      (1200px by default), along with padding on the left/right equal to half
+      (1440px by default), along with padding on the left/right equal to half
       your $grid-container-padding setting.
     </div>
     <div className="grid-container">
       <div className="grid-x grid-margin-x">
         <div className="cell small-4 grid--layout">
-          <div className="column">cells </div>
+          <div className="column">4 cell </div>
         </div>
         <div className="cell small-4 grid--layout">
-          <div className="column">cells </div>
+          <div className="column">4 cell </div>
         </div>
         <div className="cell small-4 grid--layout">
-          <div className="column">cells </div>
+          <div className="column">4 cell </div>
         </div>
       </div>
     </div>
@@ -199,13 +199,13 @@ export const Layout = ({ }) => (
     <div className="grid-container fluid">
       <div className="grid-x grid-margin-x">
         <div className="cell small-4 grid--layout">
-          <div className="column">cells </div>
+          <div className="column">4 cell </div>
         </div>
         <div className="cell small-4 grid--layout">
-          <div className="column">cells </div>
+          <div className="column">4 cell </div>
         </div>
         <div className="cell small-4 grid--layout">
-          <div className="column">cells </div>
+          <div className="column">4 cell </div>
         </div>
       </div>
     </div>
@@ -216,7 +216,7 @@ export const Layout = ({ }) => (
     </div>
     <div className="grid-x grid-margin-x">
       <div className="cell small-4 grid--layout">
-        <div className="column">4 cells </div>
+        <div className="column">4 cell </div>
       </div>
       <div className="cell auto grid--layout">
         <div className="column">Whatever's left! </div>
@@ -227,7 +227,7 @@ export const Layout = ({ }) => (
     </div>
     <div className="grid-x grid-margin-x">
       <div className="cell small-4 grid--layout">
-        <div className="column">4 cells </div>
+        <div className="column">4 cell </div>
       </div>
       <div className="cell auto grid--layout">
         <div className="column">Whatever's left! </div>
@@ -278,7 +278,7 @@ export const Layout = ({ }) => (
     </div>
     <div className="grid_name">
       Collapse Cells
-      <span>X Grid only</span>
+      <div>X Grid only</div>
     </div>
     <div className="grid_description">
       The .[size]-[gutter-type]-collapse class lets you remove cell gutters.
@@ -304,12 +304,12 @@ export const Layout = ({ }) => (
         <div className="column"> Offset 2 on large</div>
       </div>
       <div className="cell small-4 grid--layout">
-        <div className="column"> 4 cells </div>
+        <div className="column"> 4 cell </div>
       </div>
     </div>
     <div className="grid_name">
       Block Grids
-      <span>X Grid only</span>
+      <div>X Grid only</div>
     </div>
     <div className="grid_description">
       To define cell widths within a direction-level, instead of the
@@ -317,24 +317,24 @@ export const Layout = ({ }) => (
       [n] is the number of cells to display per direction, and [size] is the
       breakpoint at which to apply the effect.
     </div>
-    <div className="grid-x grid-padding-x small-up-2 medium-up-4 large-up-6">
+    <div className="grid-x small-up-2 medium-up-4 large-up-6">
       <div className="cell grid--layout">
-        <div className="column"> cells</div>
+        <div className="column"> 4 cell</div>
       </div>
       <div className="cell grid--layout">
-        <div className="column"> cells</div>
+        <div className="column"> 4 cell</div>
       </div>
       <div className="cell grid--layout">
-        <div className="column"> cells</div>
+        <div className="column"> 4 cell</div>
       </div>
       <div className="cell grid--layout">
-        <div className="column"> cells</div>
+        <div className="column"> 4 cell</div>
       </div>
       <div className="cell grid--layout">
-        <div className="column"> cells</div>
+        <div className="column"> 4 cell</div>
       </div>
       <div className="cell grid--layout">
-        <div className="column"> cells</div>
+        <div className="column"> 4 cell</div>
       </div>
     </div>
     <div className="grid_name">Grid Frame</div>
@@ -362,7 +362,8 @@ export const Layout = ({ }) => (
       </div>
       <div className="cell medium-auto medium-cell-block-container">
         <div className="grid-x grid-padding-x">
-          <div className="cell medium-4 medium-cell-block-y ">
+          <div className="cell medium-4 medium-cell-block-y">
+            <div className="grid_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus odio, accumsan id ullamcorper eget, varius nec erat. Nulla facilisi. Donec dui felis, euismod nec finibus vitae, dapibus quis arcu. Maecenas tempor et ipsum quis venenatis. Ut posuere sed augue sit amet efficitur. Sed imperdiet, justo id tempus rhoncus, est est viverra turpis, non vulputate magna lectus et nisl. Pellentesque ultrices porttitor vehicula. Ut aliquet efficitur ligula, a consectetur felis. Proin tristique ut augue nec luctus. Curabitur a sapien pretium, auctor elit a, efficitur erat. Donec tincidunt dui vel velit bibendum euismod. Cras vitae nibh dui. Aliquam erat volutpat. Etiam sit amet arcu a erat efficitur facilisis. Ut viverra dapibus turpis, et ornare justo. Integer in dui cursus, dignissim tortor a, hendrerit risus.</div>
             <div className="grid_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus odio, accumsan id ullamcorper eget, varius nec erat. Nulla facilisi. Donec dui felis, euismod nec finibus vitae, dapibus quis arcu. Maecenas tempor et ipsum quis venenatis. Ut posuere sed augue sit amet efficitur. Sed imperdiet, justo id tempus rhoncus, est est viverra turpis, non vulputate magna lectus et nisl. Pellentesque ultrices porttitor vehicula. Ut aliquet efficitur ligula, a consectetur felis. Proin tristique ut augue nec luctus. Curabitur a sapien pretium, auctor elit a, efficitur erat. Donec tincidunt dui vel velit bibendum euismod. Cras vitae nibh dui. Aliquam erat volutpat. Etiam sit amet arcu a erat efficitur facilisis. Ut viverra dapibus turpis, et ornare justo. Integer in dui cursus, dignissim tortor a, hendrerit risus.</div>
             <div className="grid_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus odio, accumsan id ullamcorper eget, varius nec erat. Nulla facilisi. Donec dui felis, euismod nec finibus vitae, dapibus quis arcu. Maecenas tempor et ipsum quis venenatis. Ut posuere sed augue sit amet efficitur. Sed imperdiet, justo id tempus rhoncus, est est viverra turpis, non vulputate magna lectus et nisl. Pellentesque ultrices porttitor vehicula. Ut aliquet efficitur ligula, a consectetur felis. Proin tristique ut augue nec luctus. Curabitur a sapien pretium, auctor elit a, efficitur erat. Donec tincidunt dui vel velit bibendum euismod. Cras vitae nibh dui. Aliquam erat volutpat. Etiam sit amet arcu a erat efficitur facilisis. Ut viverra dapibus turpis, et ornare justo. Integer in dui cursus, dignissim tortor a, hendrerit risus.</div>
           </div>
@@ -370,9 +371,14 @@ export const Layout = ({ }) => (
             <div className="grid_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus odio, accumsan id ullamcorper eget, varius nec erat. Nulla facilisi. Donec dui felis, euismod nec finibus vitae, dapibus quis arcu. Maecenas tempor et ipsum quis venenatis. Ut posuere sed augue sit amet efficitur. Sed imperdiet, justo id tempus rhoncus, est est viverra turpis, non vulputate magna lectus et nisl. Pellentesque ultrices porttitor vehicula. Ut aliquet efficitur ligula, a consectetur felis. Proin tristique ut augue nec luctus. Curabitur a sapien pretium, auctor elit a, efficitur erat. Donec tincidunt dui vel velit bibendum euismod. Cras vitae nibh dui. Aliquam erat volutpat. Etiam sit amet arcu a erat efficitur facilisis. Ut viverra dapibus turpis, et ornare justo. Integer in dui cursus, dignissim tortor a, hendrerit risus.</div>
             <div className="grid_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus odio, accumsan id ullamcorper eget, varius nec erat. Nulla facilisi. Donec dui felis, euismod nec finibus vitae, dapibus quis arcu. Maecenas tempor et ipsum quis venenatis. Ut posuere sed augue sit amet efficitur. Sed imperdiet, justo id tempus rhoncus, est est viverra turpis, non vulputate magna lectus et nisl. Pellentesque ultrices porttitor vehicula. Ut aliquet efficitur ligula, a consectetur felis. Proin tristique ut augue nec luctus. Curabitur a sapien pretium, auctor elit a, efficitur erat. Donec tincidunt dui vel velit bibendum euismod. Cras vitae nibh dui. Aliquam erat volutpat. Etiam sit amet arcu a erat efficitur facilisis. Ut viverra dapibus turpis, et ornare justo. Integer in dui cursus, dignissim tortor a, hendrerit risus.</div>
             <div className="grid_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus odio, accumsan id ullamcorper eget, varius nec erat. Nulla facilisi. Donec dui felis, euismod nec finibus vitae, dapibus quis arcu. Maecenas tempor et ipsum quis venenatis. Ut posuere sed augue sit amet efficitur. Sed imperdiet, justo id tempus rhoncus, est est viverra turpis, non vulputate magna lectus et nisl. Pellentesque ultrices porttitor vehicula. Ut aliquet efficitur ligula, a consectetur felis. Proin tristique ut augue nec luctus. Curabitur a sapien pretium, auctor elit a, efficitur erat. Donec tincidunt dui vel velit bibendum euismod. Cras vitae nibh dui. Aliquam erat volutpat. Etiam sit amet arcu a erat efficitur facilisis. Ut viverra dapibus turpis, et ornare justo. Integer in dui cursus, dignissim tortor a, hendrerit risus.</div>
+            <div className="grid_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus odio, accumsan id ullamcorper eget, varius nec erat. Nulla facilisi. Donec dui felis, euismod nec finibus vitae, dapibus quis arcu. Maecenas tempor et ipsum quis venenatis. Ut posuere sed augue sit amet efficitur. Sed imperdiet, justo id tempus rhoncus, est est viverra turpis, non vulputate magna lectus et nisl. Pellentesque ultrices porttitor vehicula. Ut aliquet efficitur ligula, a consectetur felis. Proin tristique ut augue nec luctus. Curabitur a sapien pretium, auctor elit a, efficitur erat. Donec tincidunt dui vel velit bibendum euismod. Cras vitae nibh dui. Aliquam erat volutpat. Etiam sit amet arcu a erat efficitur facilisis. Ut viverra dapibus turpis, et ornare justo. Integer in dui cursus, dignissim tortor a, hendrerit risus.</div>
+            <div className="grid_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus odio, accumsan id ullamcorper eget, varius nec erat. Nulla facilisi. Donec dui felis, euismod nec finibus vitae, dapibus quis arcu. Maecenas tempor et ipsum quis venenatis. Ut posuere sed augue sit amet efficitur. Sed imperdiet, justo id tempus rhoncus, est est viverra turpis, non vulputate magna lectus et nisl. Pellentesque ultrices porttitor vehicula. Ut aliquet efficitur ligula, a consectetur felis. Proin tristique ut augue nec luctus. Curabitur a sapien pretium, auctor elit a, efficitur erat. Donec tincidunt dui vel velit bibendum euismod. Cras vitae nibh dui. Aliquam erat volutpat. Etiam sit amet arcu a erat efficitur facilisis. Ut viverra dapibus turpis, et ornare justo. Integer in dui cursus, dignissim tortor a, hendrerit risus.</div>
           </div>
         </div>
       </div>
     </div>
+  <div className="foundation__documentation">For original Foundation documentation :
+  <a href="https://get.foundation/sites/docs/xy-grid.html"> XY-grid | Foundation for sites 6 Docs</a>
   </div>
+  </>
 );

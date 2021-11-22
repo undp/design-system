@@ -37,8 +37,8 @@
   &__box {
     color: $color-white;
     padding: 0 $spacing-24;
-    z-index: 1;
     width: 100%;
+    z-index: 1;
 
     @include devicebreak(medium) {
       padding: 0 $spacing-48;
@@ -48,13 +48,13 @@
   &__number {
     color: $color-gray-700;
     display: block;
-    font-family: $Font-Family-SohneBold;
+    font-family: $Font-Family-SohneBreit;
     font-size: 6.875rem;
     letter-spacing: 0.05rem;
-    line-height: 119.9px;
+    line-height: 1.09;
     margin-bottom: $spacing-16;
-    -webkit-text-stroke: 1px $color-white;
     text-shadow: -1px -1px 0 $color-white, 1px -1px 0 $color-white, -1px 1px 0 $color-white, 1px 1px 0 $color-white;
+    -webkit-text-stroke: 1px $color-white;
 
     @include devicebreak(medium) {
       font-size: 6.6rem;
@@ -68,9 +68,9 @@
 
   &__per {
     display: block;
-    font-family: $Font-Family-ProximaSemiBold;
     font-size: 2.188rem;
-    line-height: 39.97px;
+    font-weight: 600;
+    line-height: 1.12;
     margin-bottom: $spacing-12;
 
     @include devicebreak(medium) {
@@ -79,20 +79,20 @@
   }
 
   p {
-    margin: 0;
     font-size: 1.25rem;
-    line-height: 27px;
+    margin: 0;
   }
 
-  &:hover ,&.active{
+  &:hover,
+  &.active {
     &::after,
     .statspanel__image {
       opacity: 1;
     }
 
     .statspanel__number {
-      -webkit-text-stroke: 1px $color-gray-700;
       text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
+      -webkit-text-stroke: 1px $color-gray-700;
     }
 
     .statspanel__box {

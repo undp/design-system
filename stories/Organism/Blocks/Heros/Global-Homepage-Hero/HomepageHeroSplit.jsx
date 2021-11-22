@@ -17,11 +17,11 @@ export const Homepageherosplit = ({
   return (
     <div className="hero-split">
       <div className="grid-x">
-        <div className="cell medium-6">
-          <div className="hero-split__content">
+        <div className="cell medium-5 medium-offset-1">
+          <div className="hero-split__content ">
             <Heading type="1" className="hero-split__title left-right" label={title} />
             <Heading type="4" className="hero-split__subtitle left-right" label={content} />
-            <div className="show-for-large">
+            <div className="show-large">
               <CtaButton label1={button} />
             </div>
           </div>
@@ -38,7 +38,7 @@ export const Homepageherosplit = ({
                 <img src={BackgroundImg} alt={BackgroundImg} />
               </div>
             )}
-          <div className="show-for-small">
+          <div className="show-small">
             <CtaButton label1={button} />
           </div>
         </div>

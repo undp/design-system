@@ -1,28 +1,21 @@
 import React, { Component, useEffect } from 'react';
 import { StatsCards } from '../../Molecules/Blocks/StatsCards/StatsCards';
-import { StatsSliderFun,CardParallaxFun } from '../../assets/js/SliderCustom';
+import { GlideSlider, ParallaxEffect } from '../../assets/js/SliderCustom';
 import './statsslider.scss';
 
-export const StatsSlider = ({data}) => {
+export const StatsSlider = ({ data }) => {
   useEffect(() => {
-    StatsSliderFun('.stats-card-slider', '20');
-    CardParallaxFun();
-  },[])
+    GlideSlider('.stats-card-slider', '20');
+    ParallaxEffect();
+  }, []);
   return (
     <div className="stats-card-slider stats-card-grid">
-      <div className="glide__bullets" data-glide-el="controls[nav]">
-        <button className="glide__bullet" data-glide-dir="=0"></button>
-        <button className="glide__bullet" data-glide-dir="=1"></button>
-        <button className="glide__bullet" data-glide-dir="=2"></button>
-        <button className="glide__bullet" data-glide-dir="=3"></button>
-        <button className="glide__bullet" data-glide-dir="=4"></button>
-        <button className="glide__bullet" data-glide-dir="=5"></button>
+      <div className="glide__bullets show-for-small" data-glide-el="controls[nav]">
+        {data.map((item, index) => <button className="glide__bullet" data-glide-dir={[`=${index}`]} aria-label={index} key={index} />)}
       </div>
       <div className="glide__track" data-glide-el="track">
         <div className="glide__slides">
-          {data.map((item, index) => {
-            return  <div className="glide__slide" key={index}><StatsCards number ={item.numbername} percent={item.percentname} content={item.text} size='sm'/></div>
-          })}
+          {data.map((item, index) => <div className="glide__slide" key={index}><StatsCards number={item.numbername} percent={item.percentname} content={item.text} size="small" /></div>)}
         </div>
       </div>
     </div>

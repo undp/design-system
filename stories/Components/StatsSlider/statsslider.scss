@@ -1,97 +1,71 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
 @import '../../assets/scss/glideslider';
+@import '../../assets/scss/mixins';
 
-.stats-card-grid{
+.stats-card-grid {
   overflow-x: hidden;
-  .stats-card-parallax{
-    margin-bottom: 2.625rem;
-    &:last-child{
-      margin-bottom: 0;
-    }
-  } 
-  @include devicebreak(medium){
-    .glide{
-      &__slides{
-        transform: none !important;
-        width: initial !important;
-        transition: none !important;
-      }
-      &__slide{
-        width: initial !important;
-        margin-left: initial !important;
-        margin-right: initial !important;
-        padding-right: 0.625rem;
-        padding-left: 0.625rem;
-      }
-    }
-  }
-  .statscard{
-    &:hover{
-      background-color: $color-light-yellow;
-    }
-    @include devicebreak(large){
-      &--sm{
-        max-width: 330px;
-        width:100%;
-        box-sizing: border-box;
-      } 
-    }
-  }
-}
 
-.stats-card-slider{
-  @include devicebreak(small){
-    .statscard{
-      max-width: 100%;
+  @include devicebreak(medium) {
+    .glide {
+      &__slides {
+        display: block;
+      }
+      &__slide {
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
+        width: initial;
+      }
     }
   }
-  .glide{
-    &__slides{
-      margin-top: 34px;
+
+  @include devicebreak(small) {
+    .statscard {
+      max-width: 100%;
+      pointer-events: none;
     }
-    &__slide{
-      &--active {
-        @include devicebreak(small){
-          .statscard{
-            background-color: $color-light-yellow;
-            &__number {
-              color: $color-black;
-            }
+
+    .glide {
+      &__slide--active {
+        .statscard {
+          background-color: $color-light-yellow;
+
+          &__number {
+            color: $color-black;
           }
         }
       }
     }
-    &__bullets{
-      display: flex;
-      position: relative;
-      @include devicebreak(medium){
-        display: none;
-      }
-      &::after{
-        content: '';
-        position: absolute;
-        top: 0.5px;
-        left: 0;
-        height: 1px;
+  }
+
+  .stats-card-parallax {
+    margin-bottom: 2.625rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .statscard {
+    @include devicebreak(large) {
+      &.small {
+        box-sizing: border-box;
+        max-width: 330px;
         width: 100%;
-        border-bottom: 1px solid $color-black;
-        z-index: 1;
       }
     }
-    &__bullet{
-      flex-grow: 1;
-      border-radius: 0;
-      height: 4px;
-      border: none;
-      background: transparent;
-      position: relative;
-      z-index: 2;
-      -webkit-transition: all .8s ease-in-out;
-      transition: all .8s ease-in-out;
-      cursor: pointer;
-      &--active{
-        background: $color-black;
+
+    &:hover {
+      background-color: $color-light-yellow;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .stats-card-grid {
+    @include devicebreak(medium) {
+      .grid-x {
+        flex-direction: row-reverse;
       }
     }
   }

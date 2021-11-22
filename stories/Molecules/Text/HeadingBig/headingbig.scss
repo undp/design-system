@@ -1,12 +1,13 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
-.heading-big-wrapper{
+.heading-big {
   h2 {
     margin-bottom: $spacing-48;
+
     @include devicebreak(medium) {
-       margin-bottom: 0;
+      margin-bottom: 0;
     }
   }
 }

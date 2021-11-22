@@ -56,7 +56,7 @@ we are using these modifier classes:
 <Story name="Extra Large">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <StatsCards title={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} size='xl'></StatsCards>;
+    return <StatsCards title={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} size='x-large'></StatsCards>;
   }}
 </Story>
 
@@ -65,7 +65,7 @@ we are using these modifier classes:
 <Story name="Large">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <StatsCards titlesec={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} size='lg'></StatsCards>;
+    return <StatsCards titlesec={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} size='large'></StatsCards>;
   }}
 </Story>
 
@@ -74,7 +74,7 @@ we are using these modifier classes:
 <Story name="Medium">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <StatsCards percent={caption.percentname} content={caption.text} number={caption.numbername} size='md'></StatsCards>;
+    return <StatsCards percent={caption.percentname} content={caption.text} number={caption.numbername} size='medium'></StatsCards>;
   }}
 </Story>
 
@@ -83,7 +83,7 @@ we are using these modifier classes:
 <Story name="Small">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <StatsCards percent={caption.percentname} content={caption.text} number={caption.numbername} size='sm'></StatsCards>;
+    return <StatsCards percent={caption.percentname} content={caption.text} number={caption.numbername} size='small'></StatsCards>;
   }}
 </Story>
 

@@ -1,13 +1,13 @@
-@import "../../assets/scss/variables";
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/base";
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/base';
 
 .footer {
   background-color: $color-gray-100;
   padding: $spacing-48 $spacing-12 $spacing-40;
 
   @include devicebreak(medium) {
-    padding: 52px 0 $spacing-48;
+    padding: 3.25rem 0 $spacing-48;
   }
 
   &__wrapper {
@@ -16,7 +16,6 @@
 
   p {
     font-size: $font-size-14;
-    line-height: 1.4;
     margin: 0;
 
     @include devicebreak(medium) {
@@ -32,7 +31,7 @@
     }
   }
 
-  &__head {
+  &-head {
     align-items: center;
     border-bottom: 1px solid $color-gray-700;
     justify-content: space-between;
@@ -43,17 +42,21 @@
       margin-bottom: $spacing-48;
     }
 
-    &--two {
+    &.two {
       padding-bottom: $spacing-32;
 
       @include devicebreak(medium) {
         padding-bottom: $spacing-48;
+
+        .footer__icons {
+          justify-content: end;
+        }
       }
     }
   }
 
-  &__bottom {
-    &--two {
+  &-bottom {
+    &.two {
       @include devicebreak(small) {
         flex-direction: column-reverse;
 
@@ -97,7 +100,7 @@
       margin: 0;
     }
 
-    &--blue {
+    &.blue {
       li a {
         &.facebook {
           background-position: 5px -27px;
@@ -123,7 +126,7 @@
   }
 
   .sign-up {
-    &--blue {
+    &.blue {
       .input__controls {
         background-color: transparent;
         border-color: $color-white;
@@ -141,10 +144,10 @@
     }
   }
 
-  &--blue {
+  &.blue {
     background-color: $color-blue-600;
 
-    .footer__head {
+    .footer-head {
       border-color: $color-white;
     }
 
@@ -155,6 +158,21 @@
     label,
     .input-error {
       color: $color-white;
+    }
+  }
+}
+
+@include devicebreak(medium) {
+  [dir='rtl'] {
+    .footer-bottom {
+      &.two {
+        .footer__condition_text {
+          li {
+            margin-left: 0;
+            margin-right: 2.25rem;
+          }
+        }
+      }
     }
   }
 }

@@ -1,12 +1,13 @@
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/typography";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/typography';
 
 .post-wrapper {
   h2 {
     margin-bottom: $spacing-16;
   }
+
   h5 {
-    margin-bottom: $spacing-48;
     color: $color-gray-600;
+    margin-bottom: $spacing-48;
   }
 }

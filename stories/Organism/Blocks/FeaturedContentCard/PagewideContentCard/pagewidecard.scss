@@ -3,46 +3,48 @@
 @import '../../../../assets/scss/base';
 
 .wide-card {
-  &-container {
-    border-top: 2px solid $color-black;
-    @include devicebreak(medium) {
-      &:hover {
-        .wide-card__imgwrapper::before {
-          opacity: 0.75;
-        }
-      }
-    }
+  border-top: 2px solid $color-black;
 
-    &__small-size {
-      @include devicebreak(small) {
-        display: flex;
-        flex-direction: column-reverse;
-      }
-    }
-
-    &__tag {
-      font-family: $Font-Family-ProximaBold;
-      font-size: $font-size-12;
-      padding: $spacing-16 $spacing-16 18px $spacing-16;
-
-      @include devicebreak(medium) {
-        padding: $spacing-16 $spacing-24;
+  @include devicebreak(medium) {
+    &:hover {
+      .wide-card__image::before {
+        opacity: 0.75;
       }
     }
   }
 
   &__wrapper {
-    &--summary {
+    @include devicebreak(small) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__tag {
+    font-size: $font-size-12;
+    font-weight: 700;
+    padding: $spacing-16 $spacing-16 1.125rem $spacing-16;
+
+    @include devicebreak(medium) {
+      padding: $spacing-16 $spacing-24;
+    }
+  }
+
+  &__description {
+    .wide-card__summary {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       height: 100%;
+      justify-content: space-between;
+
       @include devicebreak(medium) {
         align-items: flex-start;
       }
+
       a {
-        cursor: pointer;
         @extend %img_none;
+
+        cursor: pointer;
 
         h4 {
           margin: $spacing-16;
@@ -60,11 +62,12 @@
           }
         }
       }
+
       .button--primary {
         @include devicebreak(medium) {
           margin-left: $spacing-24;
         }
-      }     
+      }
     }
   }
 
@@ -72,7 +75,7 @@
     @extend %img_none;
   }
 
-  &__imgwrapper {
+  &__image {
     @extend %img_none;
 
     position: relative;
@@ -81,7 +84,10 @@
       &::before {
         @include transition(0.5s ease);
 
-        background-image: linear-gradient(45deg, $color-yellow, transparent 80%);
+        background-image:
+          linear-gradient(45deg,
+          $color-yellow,
+          transparent 80%);
         content: '';
         display: block;
         height: 100%;
@@ -101,11 +107,11 @@
 }
 
 [dir='rtl'] {
-  .wide-card__wrapper--summary {
+  .wide-card__summary {
     .button--primary {
       @include devicebreak(medium) {
-        margin-right: $spacing-24;
         margin-left: 0;
+        margin-right: $spacing-24;
       }
     }
   }

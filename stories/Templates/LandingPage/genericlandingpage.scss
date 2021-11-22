@@ -1,0 +1,38 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+// margin styles
+.mtop {
+  &-three {
+    margin-top: $spacing-48;
+  }
+
+  &-four {
+    margin-top: $spacing-64;
+  }
+}
+
+.contentbottom {
+  margin-bottom: $spacing-96;
+}
+
+.multi-select .select-control {
+  min-width: 100%;
+}
+
+/* page hero start */
+.pagehero {
+  &_right_box {
+    height: auto;
+    position: relative;
+    width: 100%;
+
+    @include devicebreak(medium) {
+      height: 100%;
+      position: inherit;
+    }
+  }
+}
+
+/* page hero end */

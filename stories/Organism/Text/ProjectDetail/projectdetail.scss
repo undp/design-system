@@ -4,35 +4,34 @@
 
 .projectdata {
   &-section {
-    border-bottom: 1px solid $color-gray-400;
-    border-top: 2px solid $color-black;
-
-    &__wrapper1,
-    &__wrapper2,
-    &__wrapper3,
-    &__wrapper4 {
-      margin-top: $spacing-32;
-
-      p {
-        color: $color-gray-700;
-        line-height: 2;
+    &__wrapper {
+      border-bottom: 1px solid $color-gray-400;
+      &1,
+      &2,
+      &3,
+      &4 {
+        margin-top: $spacing-32;
+        @include devicebreak(small) {
+          border-bottom: 1px solid $color-gray-400;
+        }
+        p {
+          color: $color-gray-700;
+          line-height: 2;
+          margin-bottom: 2rem;
+        }
+        h6 {
+          margin-bottom: 4px;
+        }
       }
-
-      h6 {
-        margin-bottom: 4px;
+      &4 {
+        border-bottom: 0;
       }
-      
-      @include devicebreak(small) {
-        border-bottom: 1px solid $color-gray-400;
-      }
-    }
-
-    &__wrapper4 {
-      border-bottom: 0;
     }
   }
 }
 
 h2.projectdata-section__title {
-  margin-bottom: $spacing-32;
+  border-bottom: 2px solid $color-black;
+  margin-bottom: 0;
+  padding-bottom: 2rem;
 }

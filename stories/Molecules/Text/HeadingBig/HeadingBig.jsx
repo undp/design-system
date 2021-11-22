@@ -3,7 +3,7 @@ import './headingbig.scss';
 import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
 
 export const HeadingBig = ({ headerText, descriptionText }) => (
-  <div className="heading-big-wrapper grid-x grid-margin-x">
+  <div className="heading-big grid-x grid-margin-x">
     <div className="cell  medium-4 large-4">
       <Heading type="2" label={headerText} />
     </div>

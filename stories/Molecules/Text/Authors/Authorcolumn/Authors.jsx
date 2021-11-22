@@ -8,7 +8,7 @@ export const Author = ({
 }) => (
   <div className={['grid-x', 'author-wrapper', `author-wrapper--${width}`].join(' ')}>
     {data.map((item, index) => (
-      <div className={['author-wrapper__box', 'cell', `${size}`].join(' ')}>
+      <div key={index} className={['author-wrapper__box', 'cell', `${size}`].join(' ')}>
         {image && <Authorimg image={image} variant="Small" />}
         <div className="author__label">
           <Heading type="6" label={item.Authorlabel} />

@@ -6,10 +6,12 @@
 
   li {
     display: inline-block;
-    margin: 12px;
+    margin: $spacing-12;
+
     &:first-child {
       margin-left: 0;
     }
+
     &:last-child {
       margin-right: 0;
     }
@@ -22,13 +24,15 @@
       a {
         margin: 0;
       }
+
       &:first-child {
+        margin-left: $spacing-12;
         margin-right: 0;
-        margin-left: 12px;
       }
+
       &:last-child {
         margin-left: 0;
-        margin-right: 12px;
+        margin-right: $spacing-12;
       }
     }
   }
