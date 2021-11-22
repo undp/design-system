@@ -22,13 +22,13 @@ export function CarouselFun(ele, gapele) {
     navigation: 'none',
     peek: {
       before: 0,
-      after: 50,
+      after: 30,
     },
     breakpoints: {
       767: {
         peek: {
           before: 0,
-          after: 35,
+          after: 25,
         },
       },
     },
