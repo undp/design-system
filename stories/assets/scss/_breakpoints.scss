@@ -7,7 +7,7 @@
   }
   @else if $point==mediumonlytab {
     /* medium design tab */
-    @media (max-width: 89.9375em) and (min-width:48em){
+    @media (min-width:48em) and (max-width: 89.9375em){
       @content;
     }
   }
