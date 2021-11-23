@@ -9,6 +9,7 @@ import { Logo } from '../../../Atom/Global/Logo/logo';
 import { Languageswitcher } from '../../../Molecules/Navbar/Languageswitcher/Languageswitcher';
 import { Menu } from '../../../Molecules/Navbar/Menu/Menu';
 import './GlobalHeader.scss';
+import MegaMenu from '../MegaMenu/MegaMenu';
 
 const GlobalHeader = ({
   text, languageswitcherData, navigationData, rightNavigationData, leftNavigationData, locale,
@@ -38,6 +39,7 @@ const GlobalHeader = ({
             <IconsGlobe />
             <IconsSearch />
           </div>
+          <MegaMenu />
         </div>
       </div>
     </header>

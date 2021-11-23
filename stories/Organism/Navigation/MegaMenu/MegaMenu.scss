@@ -1,0 +1,82 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+
+.mega-nav-option {
+  background: rgba(247, 247, 247, 0.8);
+  box-sizing: border-box;
+  display: none;
+  min-height: 37.5rem;
+  padding: $spacing-64 $spacing-24 0 $spacing-48;
+  position: absolute;
+  top: 7.125rem;
+  z-index: 1;
+
+  &.show-mega {
+    display: block;
+  }
+
+  .submenu {
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding-right: $spacing-48;
+
+      &.active {
+        a {
+          background: $color-blue-600;
+          color: $color-white;
+        }
+      }
+
+      a {
+        background: none;
+        border-bottom: 1px solid $color-gray-400;
+        display: flex;
+        font-size: $spacing-16;
+        font-weight: 700;
+        padding: $spacing-24;
+        text-transform: uppercase;
+
+        &:hover {
+          background: $color-blue-600;
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  .sub-sub-menu {
+    display: flex;
+    margin-top: $spacing-48;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      width: 50%;
+
+      li {
+        line-height: 0;
+        margin-bottom: $spacing-24;
+      }
+    }
+  }
+
+  .mega-image {
+    box-sizing: border-box;
+    padding-left: $spacing-48;
+  }
+}
+
+[dir='rtl'] {
+.mega-nav-option .submenu li {
+    padding-left: 3rem;
+    padding-right:0;
+    }
+    .mega-nav-option .mega-image {
+        box-sizing: border-box;
+        padding-right: 3rem;
+        padding-left:0;
+    }
+}
