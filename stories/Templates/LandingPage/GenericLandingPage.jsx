@@ -19,6 +19,7 @@ export const GenericLandingPage = ({ data, active, herodata, title, imgsrc, vide
             content={content} 
             active={active}
             imgsrc={imgsrc}
+            imgalt={imgsrc}
             videosrc={videosrc}
           />
         </div>
