@@ -57,11 +57,25 @@
 
   &-bottom {
     &.two {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
       @include devicebreak(small) {
         flex-direction: column-reverse;
 
         p {
           margin: 0 $spacing-16 0;
+        }
+      }
+
+      @include devicebreak(medium) {
+        .copyright {
+          width: calc(100% - 525px);
+        }
+
+        .menus {
+          width: 512px;
         }
       }
     }

@@ -23,11 +23,11 @@ export const Footertwo = ({
             <FooterIcons variant={args.color} />
           </div>
         </div>
-        <div className="grid-x footer-bottom two">
-          <div className="cell medium-5">
+        <div className="footer-bottom two">
+          <div className="copyright">
             <P label={copyright} />
           </div>
-          <div className="cell medium-7">
+          <div className="menus">
             <FooterConditions2 footerdata2={menudata} variant={args.color} />
             <div className="show-small">
               <FooterIcons variant={args.color} />

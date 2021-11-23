@@ -42,11 +42,6 @@
 [dir='rtl'] {
   .footer__condition_text {
     padding-right: 0;
-    text-align: right;
-
-    @include devicebreak(medium) {
-      text-align: left;
-    }
   }
 }
 // * footer condition end *//
