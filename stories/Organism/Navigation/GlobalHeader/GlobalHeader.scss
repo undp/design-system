@@ -17,12 +17,16 @@
         display: none;
       }
     }
+    .dropdown-language{
+      margin-left: $spacing-12;
+    }
 
     .icon-bar {
       display: none;
 
       @include devicebreak(mediumonlytab) {
         display: block;
+        margin-left: $spacing-12;
       }
     }
 
@@ -98,6 +102,7 @@
 
     .icon-search {
       margin-left: $spacing-16;
+      margin-right: $spacing-12;
     }
   }
 }
@@ -135,9 +140,19 @@
       }
 
       .icon-search {
-        margin-left: 0;
-        margin-right: $spacing-16;
+        margin-left: $spacing-16;
       }
+    }
+
+    .top-left {
+      .dropdown-language{
+        margin-right: $spacing-12;
+        margin-left:0;
+      }
+      .icon-bar{
+        margin-right: $spacing-12;
+      }
+
     }
   }
 }
