@@ -68,13 +68,13 @@
 
   .glide {
     &__track {
-      margin-right: -100%;
+      overflow: initial;
     }
 
     &__arrows {
-      bottom: 0.25rem;
+      bottom: -0.15rem;
       position: absolute;
-      right: 13%;
+      right: 5rem;
 
       @include devicebreak(large) {
         display: none;
@@ -89,7 +89,7 @@
       @extend %carousel_arrow;
 
       img {
-        width: 0.625rem;
+        width: 2.813rem;
       }
     }
   }
@@ -114,7 +114,7 @@
 
     .glide {
       &__arrows {
-        left: 7%;
+        left: 5rem;
         right: auto;
       }
     }

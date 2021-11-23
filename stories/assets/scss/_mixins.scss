@@ -369,13 +369,11 @@
 }
 
 %carousel_arrow {
-  background: $color-gray-700;
   border: none;
-  border-radius: 50%;
   cursor: pointer;
-  height: 2.784rem;
-  margin: 0 0.4rem;
-  width: 2.784rem;
+  margin: 0 0.75rem;
+  padding: 0;
+  background: transparent;
 }
 
 %carousel_tag {
