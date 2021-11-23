@@ -47,8 +47,8 @@ const toggleFilter = function () {
       el.parents('.select-wrapper').find('.active-filter').removeClass('show-activefilter');
     }
     const id = $(this).attr('option-name');
+    $(this).parents('.select-wrapper').find(`#${id}`).prop('checked', false);
     $(this).remove();
-    el.parents('.select-wrapper').find(`#${id}`).prop('checked', false);
   });
 
   $(document).on('click', '.clear_chips', function () {
