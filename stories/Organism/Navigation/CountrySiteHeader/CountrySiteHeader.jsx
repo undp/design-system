@@ -24,7 +24,7 @@ const CountrySiteHeader = ({
         <div className="grid-x grid-margin-x align-content-middle">
           <div className="cell large-3 small-6 align-self-middle top-left">
             <a href="#" className="left-logo"><Logo src={pnud} alt="UNDP Logo" /></a>
-            <div>
+            <div className="site-title">
               <label>GLOBAL</label>
               <span>Site Title</span>
             </div>
