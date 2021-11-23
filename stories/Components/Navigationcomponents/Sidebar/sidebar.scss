@@ -1,0 +1,102 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+.accordion-wrapper {
+  padding: 0;
+  position: relative;
+
+  .accordion-navbar {
+    display: none;
+    padding: 0;
+
+    @include devicebreak(medium) {
+      display: block;
+    }
+
+    &__item,
+    &__no-children,
+    &__menu {
+      background-color: $color-gray-200;
+      border-bottom: 1px solid $color-gray-500;
+      padding: $spacing-16 0;
+      position: relative;
+
+      @include devicebreak(medium) {
+        background-color: transparent;
+        padding: 0;
+      }
+
+      &--chevron {
+        &::after {
+          @extend %sidebar-chevron;
+        }
+      }
+
+      &.accordion--active {
+        border-bottom: none;
+
+        .accordion-navbar__item--chevron::after {
+          @include transform(rotateZ(180deg));
+        }
+      }
+    }
+
+    &__item:nth-child(1),
+    &__item.accordion--active:nth-child(1) {
+      @include devicebreak(medium) {
+        .accordion-navbar__item--chevron::after {
+          background:
+            url(#{$img-path-Icon}/Chevron-down-white.svg)
+            no-repeat center center;
+        }
+      }
+
+      .accordion-navbar__item--headertext {
+        @include devicebreak(medium) {
+          background-color: $color-blue-600;
+          color: $color-white;
+        }
+      }
+    }
+
+    &__menu {
+      border-bottom: none;
+      display: block;
+      font-weight: 700;
+      padding: $spacing-16;
+      text-transform: uppercase;
+
+      @include devicebreak(medium) {
+        display: none;
+      }
+
+      &::after {
+        @extend %sidebar-chevron;
+      }
+    }
+  }
+
+  &.show {
+    .accordion-navbar {
+      display: block;
+      padding: 0;
+
+      &__menu::after {
+        @include transform(rotateZ(180deg));
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .accordion-navbar {
+    &__item--chevron,
+    &__menu {
+      &::after {
+        left: 24px;
+        right: unset;
+      }
+    }
+  }
+}

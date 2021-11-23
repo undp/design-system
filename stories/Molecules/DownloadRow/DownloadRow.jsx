@@ -1,6 +1,6 @@
 import React from 'react';
 import './downloadrow.scss';
-import { Checkbox } from '../../Atom/Form/Checkbox/Checkbox';
+import { Checkbox } from '../../Components/Forms/Checkbox/Checkbox';
 
 export const DownloadRow = ({
   title, subtitle, value, datalang, ...args

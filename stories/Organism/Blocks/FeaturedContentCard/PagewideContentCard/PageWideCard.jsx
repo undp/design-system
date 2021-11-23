@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import './pagewidecard.scss';
 import viewport from '../../../../assets/js/viewport';
-import { Heading } from '../../../../Atom/Base-typography/Heading/Heading';
+import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
-import { CtaButton } from '../../../../Atom/Buttons-and-labels/Cta_button/CtaButton';
+import { CtaButton } from '../../../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 import BackgroundImg from '../../../../assets/images/Pagewide.jpg';
 
 export const PageWideCard = ({

@@ -1,6 +1,6 @@
 import React from 'react';
 import './page.scss';
-import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
+import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const Page = ({ headerText, countryText, style }) => (
   <div className={['Page-title', `${style}`].join(' ')}>

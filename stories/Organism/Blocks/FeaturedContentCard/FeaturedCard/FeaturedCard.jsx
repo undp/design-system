@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './featuredcard.scss';
-import { FeaturedContentCard } from '../../../../Molecules/Blocks/FeaturedContentCard/FeaturedContentCard';
+import { FeaturedContentCard } from '../../../../Components/UIcomponents/Cards/FeaturedCards/FeaturedContentCard';
 
 export const FeaturedCard = ({ headertext, data }) => (
   <div className="featured-card-container">

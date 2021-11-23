@@ -2,9 +2,9 @@ import React from 'react';
 import './parallaxCard.scss';
 import '../../assets/scss/_grid.scss';
 import Img from '../../assets/images/parallax-card.jpg';
-import { Heading } from '../../Atom/Base-typography/Heading/Heading';
+import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
-import { Ctalink } from '../../Atom/Buttons-and-labels/Cta_link/Cta_link';
+import { Ctalink } from '../../Components/UIcomponents/Buttons/Cta_link/Cta_link';
 
 const ParallaxCard = ({ data, alt }) => (
   <>

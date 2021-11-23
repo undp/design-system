@@ -3,7 +3,7 @@ import viewport from '../../../assets/js/viewport';
 import './authorsummary.scss';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Authorimg } from '../../../Atom/Images/Authorimage/Authorimages';
-import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
+import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const AuthorSummary = ({
   Authorlabel, para, image, text, para1,

@@ -1,0 +1,158 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
+
+.global-header {
+  background-color: $color-gray-100;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  height: 7.1875rem;
+
+  @include devicebreak(mediumonlytab) {
+    height: 4.6875rem;
+  }
+
+  .top-left {
+    @include devicebreak(mediumonlytab) {
+      .dropdown-language {
+        display: none;
+      }
+    }
+    .dropdown-language{
+      margin-left: $spacing-12;
+    }
+
+    .icon-bar {
+      display: none;
+
+      @include devicebreak(mediumonlytab) {
+        display: block;
+        margin-left: $spacing-12;
+      }
+    }
+
+    .icon-close {
+      display: none;
+    }
+  }
+
+  .mid-nav {
+    display: flex;
+    justify-content: center;
+
+    .menu__wrapper {
+      align-items: center;
+      display: flex;
+      height: 7.1875rem;
+
+      @include devicebreak(mediumonlytab) {
+        display: none;
+      }
+
+      li {
+        margin: $spacing-12 0 $spacing-12 4.4375rem;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      &:last-child {
+        li {
+          margin: $spacing-12 4.4375rem $spacing-12 0;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .middle-logo {
+      @extend %img_none;
+
+      margin: 0 $spacing-80;
+
+      @include devicebreak(mediumonlytab) {
+        height: 4.6875rem;
+        margin: 0;
+      }
+
+      .logo {
+        @include devicebreak(mediumonlytab) {
+          height: 4.6875rem;
+        }
+      }
+    }
+  }
+
+  .align-content-middle {
+    align-items: center;
+    position: relative;
+  }
+
+  .top-right {
+    display: flex;
+    justify-content: flex-end;
+
+    @include devicebreak(mediumonlytab) {
+      .icon-globe {
+        display: none;
+      }
+    }
+
+    .icon-search {
+      margin-left: $spacing-16;
+      margin-right: $spacing-12;
+    }
+  }
+}
+
+[dir='rtl'] {
+  header {
+    .mid-nav {
+      .menu__wrapper {
+        &:first-child {
+          li {
+            margin: $spacing-12 4.4375rem $spacing-12 0;
+
+            &:first-child {
+              margin-right: 0;
+            }
+          }
+        }
+
+        &:last-child {
+          li {
+            margin: $spacing-12 0 $spacing-12 4.4375rem;
+
+            &:last-child {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .top-right {
+      .icon-globe {
+        margin-left: 0;
+        margin-right: 1.75rem;
+      }
+
+      .icon-search {
+        margin-left: $spacing-16;
+      }
+    }
+
+    .top-left {
+      .dropdown-language{
+        margin-right: $spacing-12;
+        margin-left:0;
+      }
+      .icon-bar{
+        margin-right: $spacing-12;
+      }
+
+    }
+  }
+}

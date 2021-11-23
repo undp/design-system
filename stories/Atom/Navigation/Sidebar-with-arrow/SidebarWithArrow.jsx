@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading } from '../../Base-typography/Heading/Heading';
+import { Heading } from '../../Typography/Heading/Heading';
 import './SidebarWithArrow.scss';
 
 export const SidebarWithArrow = ({ Mode, text }) => (

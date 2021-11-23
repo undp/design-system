@@ -1,0 +1,88 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Logo } from './logo';
+
+import logo from '../../assets/images/logo.svg';
+import logowhite from '../../assets/images/logo-white.svg';
+import pnud from '../../assets/images/pnud.svg';
+import pnudwhite from '../../assets/images/pnud-white.svg'
+
+<Meta title="Foundation/Logos"  parameters={{
+    backgrounds: {
+      default: 'white',
+      values: [
+        { name: 'white', value: '#fff' },
+        { name: 'gray', value: '#CCC' },
+      ],
+    },
+  }}/>
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  div[id^="story--atoms-logos"] {
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 10px;
+    align-items: center;
+    margin: 25px 25px;
+  }
+  .css-zgt7u1 {
+    background: #d8d8d8;
+  }
+`}</style>  
+
+# UNDP Logos
+The UNDP logo is available in two versions: blue, and white. Each has its own purpose and should be used appropriately, as per official branding guidelines, depending on available screen space and target audience.
+
+<ul>
+<li>Logos are generally used in the header or footer components</li>
+<li>For large devices, the dimensions are (width:60px, Height:122px) and for small devices the dimensions will be converted to (width:60px, Height:70px)</li>
+</ul>
+
+<Story name="UNDP Logo" parameters={{ backgrounds: { default: 'white'}}}>
+  return <Logo src={logo} alt={'UNDP Logo'}></Logo> ;
+</Story>
+
+<Story name="UNDP Logo white" parameters={{ backgrounds: { default: 'gray'}}}>
+  return <Logo src={logowhite} alt={'UNDP Logo'}></Logo> ;
+</Story>
+
+# UNDP Inverted Logos
+PNUD logo is available in two versions: blue, and white. Each has its own purpose and should be used appropriately, as per official branding guidelines, depending on available screen space and target audience.
+
+<ul>
+<li>These logos are only used for specific countries where the following languages are used</li>
+  <ul>
+    <li>French</li>
+    <li>Spanish</li>
+    <li>Portuguese</li>
+  </ul>
+<li>Logos are generally used in the header or footer components</li>
+<li>For large devices, the dimensions are (width:60px, Height:122px) and for small devices the dimensions will be converted to (width:60px, Height:70px)</li>
+</ul>
+
+
+<Story name="UNDP Inverted Logo" parameters={{ backgrounds: { default: 'white'}}}>
+  return <Logo src={pnud} alt={'UNDP Logo'}></Logo> ;
+</Story>
+
+<Story name="UNDP Inverted Logo white" parameters={{ backgrounds: { default: 'gray'}}}>
+  return <Logo src={pnudwhite} alt={'UNDP Logo'}></Logo>;  
+</Story>
+
+<div className="subheading" >Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>logo.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

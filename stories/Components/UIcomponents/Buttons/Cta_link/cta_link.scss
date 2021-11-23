@@ -1,0 +1,68 @@
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/breakpoints';
+
+.cta__link {
+  @extend %button;
+  @extend %img_none;
+
+  color: $color-black;
+
+  &.cta--arrow {
+    &::after {
+      @extend %ctaimg;
+
+      @include transition(0.2s ease);
+
+      background: url(#{$img-path-Iconfourback}/arrow-left-expand-defaut.svg) no-repeat left center;
+    }
+
+    &:hover {
+      &::after {
+        @include translate(10px,0);
+
+        background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
+        width: 100px;
+      }
+    }
+  }
+
+  &.cta--space {
+    &::after {
+      @extend %ctaimg;
+
+      @include transition(0.2s ease);
+
+      background: url(#{$img-path-Iconfourback}/arrow-left-expand-defaut.svg) no-repeat left center;
+    }
+
+    &:hover {
+      &::after {
+        @include translate(70%,0);
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .cta__link {
+    &.cta--space,
+    &.cta--arrow {
+      &::after {
+        @include transform(rotate(180deg));
+
+        margin-left: 0;
+        margin-right: $spacing-12;
+      }
+
+      &:hover::after {
+        @include transform(translate(-50%,0) rotate(180deg));
+      }
+    }
+
+    &.cta--arrow:hover::after {
+      @include transform(translate(-10%,0) rotate(180deg));
+      @include transition(0.2s ease);
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import './headingbig.scss';
-import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
+import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const HeadingBig = ({ headerText, descriptionText }) => (
   <div className="heading-big grid-x grid-margin-x">

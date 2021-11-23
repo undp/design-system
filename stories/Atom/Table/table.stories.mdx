@@ -1,0 +1,73 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { TableTag } from './table'
+
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {headertext: 'Table header', tdtext: 'Content Goes Here', details: 'This is longer content Donec id elit non mi porta gravida at eget metus.'}; return engText;
+    case 'arabic': const arabicText = {headertext: 'رأس الجدول', tdtext: 'المحتوى يذهب هنا', details: 'هذا هو المحتوى الأطول Donec id elit non mi porta gravida في eget metus.'}; return arabicText;
+    case 'burmese': const burmeseText = {headertext: 'ဇယားခေါင်းစီး', tdtext: 'အကြောင်းအရာကဒီမှာ', details: 'ဒါကပိုရှည်တဲ့အကြောင်းအရာ Donec id elit non mi porta gravida at eget metus ။'}; return burmeseText;
+    case 'japanese': const japaneseText = {headertext: 'テーブルヘッダー', tdtext: 'コンテンツはここにあります', details: 'これはより長い内容ですDonecid elit non mi porta gravida at egetmetus。'}; return japaneseText;
+    default:
+      return {headertext: 'Table header', tdtext: 'Content Goes Here', details: 'This is longer content Donec id elit non mi porta gravida at eget metus.' };
+  }
+};
+
+<Meta title="Foundation/Table" component={TableTag}
+  argTypes={{
+    size: {
+        options: ['large', 'small'],
+        control: { type: 'radio' },
+        defaultValue: 'large'
+    },
+    variant: {
+        options: ['default', 'striped', 'border'],
+        control: { type: 'radio' },
+        defaultValue: 'default'
+    },
+    responsive: {
+        options: ['stacked', 'auto', 'scroll'],
+        control: { type: 'radio' },
+        defaultValue: 'auto'
+    }
+  }}/>
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .css-1sy7267 {
+    margin: 10px 0;
+  }
+`}</style>
+
+# Table Component
+
+Tables are used to make large volumes of data easy to understand and access, Table components are created using the following elements
+
+<div classname="subheading">Modifier</div>
+
+<code>Default</code> <code>striped</code> <code>border</code> <code>small</code> <code>stacked</code> <code>scroll</code>
+
+
+<Story name="Table">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <TableTag text={caption.headertext} tdtext={caption.tdtext} details={caption.details} {...args} ></TableTag>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>table.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

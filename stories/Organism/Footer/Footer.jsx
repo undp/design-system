@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './footer.scss';
 import { FooterLogo } from '../../Molecules/FooterNavigation/FooterLogo/FooterLogo';
-import { SignUp } from '../../Molecules/Form/SignUp';
+import { SignUp } from '../../Components/Forms/Newslettersignup/SignUp';
 import { FooterLists } from '../../Molecules/FooterNavigation/FooterLists/FooterLists';
 import { FooterConditions } from '../../Molecules/FooterNavigation/FooterConditions/FooterConditions';
 import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/FooterIcons';

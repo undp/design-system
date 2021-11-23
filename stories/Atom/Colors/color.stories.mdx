@@ -1,0 +1,279 @@
+import { Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Color } from './color'
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {PC: 'Primary colors', AC: 'Accent colors', BC: 'Balance of color palette', PT: 'Primary'}; return engText;
+    case 'arabic': const arabicText = {PC: 'الألوان الأساسية', AC: 'ألوان مميزة', BC: 'توازن لوحة الألوان', PT: 'ابتدائي'}; return arabicText;
+    case 'burmese': const burmeseText = {PC: 'မူလအရောင်များ', AC: 'အရောင်များကိုအလေးပေးပါ', BC: 'အရောင် palette ၏ Balance', PT: 'မူလတန်း'}; return burmeseText;
+    case 'japanese': const japaneseText = {PC: '原色', AC: 'アクセントカラー', BC: 'カラーパレットのバランス', PT: '主要な'}; return japaneseText;
+    default:
+      return {PC: 'Primary colors', AC: 'Accent colors', BC: 'Balance of color palette', PT: 'Primary'};
+  }
+};
+
+<Meta title="Foundation/Colors/Color palette" component={Color} />
+
+<style>{`
+  div#story--atoms-colors--colors {
+    display: none;
+}
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  } 
+  .color_wrapper{
+    display: flex;
+  }
+  .color__item{
+    margin: 5px;
+  }
+  .color__box {
+    width: 90px;
+    height: 60px;
+    display: block;
+  }
+  .color__name{
+   font-size: 13px;
+   color: #666;
+   font-weight: 600;
+  margin: 10px 0;
+  }
+  .color__code{
+    font-size: 13px;
+    color: #666;
+  }
+
+  .color-blue-100 { background-color: #B5D5F5;}
+  .color-blue-200 {background-color: #94C4F5;}
+  .color-blue-300 { background-color: #6BABEB;}
+  .color-blue-400 {background-color: #4F95DD;}
+  .color-blue-500 {background-color: #3288CE;}
+  .color-blue-600 {background-color: #006EB5;}
+  .color-blue-700 {background-color: #1F5A95;}
+
+  .color-gray-100 { background-color: #FAFAFA;}
+  .color-gray-200 {background-color: #F7F7F7;}
+  .color-gray-300 { background-color: #EDEFF0;}
+  .color-gray-400 {background-color: #D4D6D8;}
+  .color-gray-500 {background-color: #A9B1B7;}
+  .color-gray-600 {background-color: #55606E;}
+  .color-gray-700 {background-color: #232E3D;}
+
+  .light-yellow { background-color: #FFE17E;}
+  .yellow {background-color: #FFEB00;}
+  .dark-yellow  { background-color: #FBC412;}
+  .light-red {background-color: #FFBCB7;}
+  .red {background-color: #EE402D;}
+  .dark-red {background-color: #D12800;}
+  .light-green {background-color: #B8ECB6;}
+  .green {background-color: #6DE354;}
+  .dark-green {background-color: #59BA47;}
+  .light-azure {background-color: #A2DAF3;}
+  .azure {background-color: #60D4F2;}
+  .dark-azure {background-color: #00C1FF;}
+
+`}</style>
+
+# Color Component
+This component represents the various colors that can be used on the website as per brand guidelines. All these colors are defined as SCSS variables globally and used accordingly in all the components.
+
+<ul>
+<li>Colors are divided into <code>Primary</code> and <code>Accents</code> colors.</li>
+</ul>
+
+<div className="subheading">Primary Colors</div>
+
+Primary colors are the base colors of the UI, the ones that are used most frequently in the interface. They are used for brand elements and non-interactive elements. Interactive colors are used for primary links and action items that can be clicked or touched, to emphasize important actions and highlight information in your application.
+
+
+<div className="color_wrapper">
+  <div className="color__item">
+    <div className="color__box color-blue-100"></div>
+    <div className="color__name"> blue-100 </div>
+    <div className="color__code"> <code>#B5D5F5</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box color-blue-200"></div>
+    <div className="color__name"> blue-200 </div>
+    <div className="color__code"> <code>#94C4F5</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box color-blue-300"></div>
+    <div className="color__name"> blue-300 </div>
+    <div className="color__code"> <code>#6BABEB</code></div>
+   </div>
+
+   <div className="color__item">
+    <div className="color__box color-blue-400"></div>
+    <div className="color__name"> blue-400 </div>
+    <div className="color__code"> <code>#4F95DD</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box color-blue-500"></div>
+    <div className="color__name"> blue-500 </div>
+    <div className="color__code"> <code>#3288CE</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box color-blue-600"></div>
+    <div className="color__name"> blue-600 </div>
+    <div className="color__code"> <code>#006EB5</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box color-blue-700"></div>
+    <div className="color__name"> blue-700 </div>
+    <div className="color__code"> <code>#1F5A95</code></div>
+   </div>
+</div>
+
+<div className="color_wrapper">
+  <div className="color__item">
+    <div className="color__box color-gray-100"></div>
+    <div className="color__name"> gray-100 </div>
+    <div className="color__code"> <code>#FAFAFA</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box color-gray-200"></div>
+    <div className="color__name"> gray-200 </div>
+    <div className="color__code"> <code>#F7F7F7</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box color-gray-300"></div>
+    <div className="color__name"> gray-300 </div>
+    <div className="color__code"> <code>#EDEFF0</code></div>
+   </div>
+
+   <div className="color__item">
+    <div className="color__box color-gray-400"></div>
+    <div className="color__name"> gray-400 </div>
+    <div className="color__code"> <code>#D4D6D8</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box color-gray-500"></div>
+    <div className="color__name"> gray-500 </div>
+    <div className="color__code"> <code>#A9B1B7</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box color-gray-600"></div>
+    <div className="color__name"> gray-600 </div>
+    <div className="color__code"> <code>#55606E</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box color-gray-700"></div>
+    <div className="color__name"> gray-700 </div>
+    <div className="color__code"> <code>#232E3D</code></div>
+   </div>
+</div>
+
+<div className="subheading">Accent colors</div>
+
+Accent colors are colors that are used for emphasis in a color scheme. These colors can often be bold or vivid and are used sparingly, to emphasize, contrast or create rhythm. More toned down colors such as neutrals or darker shades can also be used depending on the surroundings.
+
+<div className="color_wrapper">
+  <div className="color__item">
+    <div className="color__box light-yellow"></div>
+    <div className="color__name"> light-yellow </div>
+    <div className="color__code"> <code>#FFEB00</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box yellow"></div>
+    <div className="color__name"> yellow </div>
+    <div className="color__code"> <code>#FFEB00</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box dark-yellow"></div>
+    <div className="color__name"> dark-yellow </div>
+    <div className="color__code"> <code>#FBC412</code></div>
+   </div>
+
+   <div className="color__item">
+    <div className="color__box light-red"></div>
+    <div className="color__name"> light-red </div>
+    <div className="color__code"> <code>#FFBCB7</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box red"></div>
+    <div className="color__name"> red</div>
+    <div className="color__code"> <code>#EE402D</code></div>
+   </div>
+
+  <div className="color__item">
+    <div className="color__box dark-red"></div>
+    <div className="color__name"> dark-red</div>
+    <div className="color__code"> <code>#D12800</code></div>
+   </div>
+</div>
+
+<div className="color_wrapper">
+  <div className="color__item">
+    <div className="color__box light-green"></div>
+    <div className="color__name"> light-green</div>
+    <div className="color__code"> <code>#B8ECB6</code></div>
+   </div>
+
+  <div className="color__item">
+      <div className="color__box green"></div>
+      <div className="color__name"> green</div>
+      <div className="color__code"> <code>#6DE354</code></div>
+    </div>
+
+  <div className="color__item">
+      <div className="color__box dark-green"></div>
+      <div className="color__name"> dark-green</div>
+      <div className="color__code"> <code>#59BA47</code></div>
+    </div>
+
+  <div className="color__item">
+      <div className="color__box light-azure"></div>
+      <div className="color__name"> light-azure</div>
+      <div className="color__code"> <code>#A2DAF3</code></div>
+    </div>
+
+  <div className="color__item">
+      <div className="color__box azure"></div>
+      <div className="color__name"> azure</div>
+      <div className="color__code"> <code>#60D4F2</code></div>
+    </div>
+
+  <div className="color__item">
+      <div className="color__box dark-azure"></div>
+      <div className="color__name"> dark-azure</div>
+      <div className="color__code"> <code>#00C1FF</code></div>
+    </div>
+</div>
+
+<Story name="Color palette">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Color Primarytext={caption.PT}   PrimaryColor={caption.PC}  AccentColor={caption.AC} Balancepalette={caption.BC} ></Color>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>We can use any color by taking the color code from the documentation.
+e.g., <code>#B5D5F5</code>. The color code names are defined by their hex code below the color.</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>color.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

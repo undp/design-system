@@ -231,8 +231,8 @@
 %arrow {
   @include transform(translateY(-50%));
   @include transition(all 200ms ease-in-out);
-
-  background: url('../../assets/images/Icon/Chevron-down.svg') no-repeat center center;
+  
+  background: url(#{$img-path-Iconfourback}/Chevron-down.svg) no-repeat center center;
   content: '';
   float: right;
   height: 13px;
@@ -254,7 +254,7 @@
 %sidebar-chevron {
   @include transition(0.1s ease);
 
-  background: url(#{$img-path-Iconback}/Chevron-down.svg) no-repeat center center;
+  background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
   content: '';
   height: 20px;
   position: absolute;

@@ -1,0 +1,89 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Ctalink } from './Cta_link';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail1: 'READ MORE'}; return engText;
+    case 'arabic': const arabicText = {detail1: 'اقرأ أكثر'}; return arabicText;
+    case 'burmese': const burmeseText = {detail1: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail1: '続きを読む'}; return japaneseText;
+    default:
+    return {detail1: 'READ MORE'};
+  }
+};
+
+<Meta title="Components/UI components/Buttons/CTA Link" 
+  argTypes={{
+    variant: {
+      options: ["Arrow", "Space"],
+      control: { type: "radio" },
+    },
+  }}
+/>
+
+<style>{`
+div#story--atoms-buttons--cta-link-arrow, div#story--atoms-buttons--cta-link-space, div#story--atoms-buttons-link--cta-link {
+    display: none;
+  }
+  .cta_wrapper {
+    display: flex;
+  }
+  .cta__label {
+    padding-right: 20px;
+  }
+  .cta_item {
+    padding: 10px;
+  }
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+`}</style>
+
+# CTA Link component
+A cta link is a prompt on a website that tells the user to take some specified action.
+
+<div className="cta_wrapper">
+  <div className="cta_item">
+    <div className="cta__box cta-link-arrow"></div>
+    <div className="cta__label">Cta link arrow expand</div>
+    <div className="cta__code"> <Ctalink label="READ MORE" variant='Arrow'></Ctalink></div>
+  </div>
+</div>
+<div className="cta_wrapper">
+  <div className="cta_item">
+    <div className="cta__box cta-link-space"></div>
+    <div className="cta__label">Cta link with space expand </div>
+    <div className="cta__code"> <Ctalink label="READ MORE" variant='Space'></Ctalink></div>
+  </div>
+</div>
+
+<Story
+  name="CTA Link"
+>
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <Ctalink
+        label={caption.detail1}
+        {...args}
+      ></Ctalink>
+    );
+  }}
+</Story>
+
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
+  <li>Component SCSS file:<code>cta_link.scss</code></li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

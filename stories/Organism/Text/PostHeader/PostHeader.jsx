@@ -1,6 +1,6 @@
 import React from 'react';
 import './postheader.scss';
-import { Breadcrumbcomponent } from '../../../Molecules/Navbar/Breadcrumb/Breadcrumb-link';
+import { Breadcrumbcomponent } from '../../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
 import { Post } from '../../../Molecules/Text/Post/Post';
 
 export const PostHeader = ({
