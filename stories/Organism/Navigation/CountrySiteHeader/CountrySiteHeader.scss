@@ -1,0 +1,148 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+
+.country-header {
+  background-color: $color-gray-100;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  height: 7.1875rem;
+
+  @include devicebreak(mediumonlytab) {
+    height: 4.6875rem;
+  }
+
+  .top-left {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    .site-title {
+      font-size: $font-size-20;
+
+      label {
+        border-bottom: 1px solid $color-gray-500;
+        color: $color-gray-600;
+        font-size: $font-size-12;
+        margin-bottom: 0.5rem;
+      }
+
+      span {
+        display: flex;
+      }
+    }
+
+    .left-logo {
+      @extend %img_none;
+
+      align-items: flex-start;
+      display: flex;
+      height: 7.1875rem;
+
+      @include devicebreak(mediumonlytab) {
+        height: 4.6875rem;
+        margin: 0;
+      }
+
+      .logo {
+        margin-right: $spacing-24;
+
+        @include devicebreak(mediumonlytab) {
+          height: 4.6875rem;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .mid-nav {
+    display: flex;
+    justify-content: center;
+    .menu__wrapper {
+      @include devicebreak(mediumonlytab) {
+        display: none;
+      }
+    }
+  }
+
+  .align-content-middle {
+    align-items: center;
+    position: relative;
+  }
+
+  .menu__wrapper {
+    align-items: center;
+    display: flex;
+    height: 7.1875rem;
+
+    @include devicebreak(mediumonlytab) {
+      display: none;
+    }
+
+    li {
+      margin: $spacing-12 0 $spacing-12 3.6875rem;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .top-right {
+    display: flex;
+    justify-content: flex-end;
+
+    @include devicebreak(mediumonlytab) {
+      .dropdown-language {
+        display: none;
+      }
+    }
+
+    @include devicebreak(mediumonlytab) {
+      .icon-globe {
+        display: none;
+      }
+    }
+
+    .icon-bar {
+      display: none;
+
+      @include devicebreak(mediumonlytab) {
+        display: block;
+      }
+    }
+
+    .icon-close {
+      display: none;
+    }
+
+    .icon-search {
+      margin-left: $spacing-16;
+    }
+
+    .icon-globe {
+      margin-left: 1.75rem;
+    }
+  }
+}
+
+[dir="rtl"] {
+  .country-header {
+    .top-left {
+      .left-logo {
+        .logo {
+          margin-right: 0;
+          margin-left: 1.5rem;
+        }
+      }
+    }
+    .top-right {
+      .icon-search {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+      .icon-globe {
+        margin-left: 0;
+        margin-right: 1.75rem;
+      }
+    }
+  }
+}
