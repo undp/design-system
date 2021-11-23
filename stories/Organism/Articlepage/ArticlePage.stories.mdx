@@ -1,0 +1,75 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import ArticlePage from './ArticlePage';
+import {getCaptionForLocale as imageCaptionData } from "../Images/Images/Images.stories.mdx";
+import {getCaptionForLocale as PostHeadData} from "../Text/PostHeader/PostHeader.stories.mdx";
+import {threeArray as AuthorCardData} from "../../Molecules/Text/Authors/Authorcolumn/Authors.stories.mdx";
+import {getCaptionForLocale as blockquoteData} from "../../Molecules/Text/BlockquoteComponent/BlockquoteComponent.stories.mdx";
+import {getCaptionForLocale as paraLabel} from "../../Atom/Base-typography/Paragraph/Paragarph.stories.mdx";
+import {getCaptionForLocale as headingData} from "../../Atom/Base-typography/Heading/heading.stories.mdx";
+import {getCaptionForLocale as listData} from "../../Atom/Lists/Lists.stories.mdx";
+import {getCaptionForLocale as footerData} from "../Footer/Footer.stories.mdx";
+import {getCaptionForLocale as featuredCardContent} from "../Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard.stories.mdx";
+
+
+export const getAuthorCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail1: 'HEADLINE 1', detail2: 'Headline 2', detail3: 'Headline 3', detail4: 'Headline 4', detail5: 'Authors', detail6: 'HEADLINE 6'}; return engText;
+    case 'arabic': const arabicText = {detail1: 'العنوان 1.', detail2: 'العنوان 2', detail3: 'العنوان 3', detail4: 'العنوان 4', detail5: 'العنوان 5', detail6: 'العنوان 6'}; return arabicText;
+    case 'burmese': const burmeseText = {detail1: 'ခခေါင်းစီး ၁', detail2: 'ခေါင်းစဉ် ၂', detail3: 'ခေါင်းစဉ် ၃', detail4: 'ခေါင်းစဉ် ၄', detail5: 'ခေါင်းစဉ် ၅', detail6: 'ခေါင်းစီး ၆'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail1: '見出し1', detail2: '見出し2', detail3: '見出し3', detail4: '見出し4', detail5: '見出し5', detail6: '見出し6'}; return japaneseText;
+    default:
+      return {detail1: 'HEADLINE 1', detail2: 'Headline 2', detail3: 'Headline 3', detail4: 'Headline 4', detail5: 'Authors', detail6: 'HEADLINE 6'};
+  }
+};
+
+export const getHeadingCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'Some achievements of the project include the following:'; return engText;
+    case 'arabic': const arabicText = 'تشمل بعض إنجازات المشروع ما يلي:'; return arabicText;
+    case 'burmese': const burmeseText = 'ပရောဂျက်၏ အောင်မြင်မှုအချို့မှာ အောက်ပါတို့ ပါဝင်သည်-'; return burmeseText;
+    case 'japanese': const japaneseText = 'プロジェクトのいくつかの成果は次のとおりです。'; return japaneseText;
+    default: return 'Some achievements of the project include the following:';
+  }
+};
+
+<Meta title="Organism/article" />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+`}</style>
+
+<Story name="ArticlePage">
+  {(args, { globals: { locale } }) => {
+    const caption = PostHeadData(locale);
+    const headingLabel=getHeadingCaptionForLocale(locale);
+    return <ArticlePage
+    featuredCardContent={featuredCardContent(locale)}
+    headingLabel={headingLabel} footerData={footerData(locale)}
+    listData={listData(locale)} headingData={getAuthorCaptionForLocale(locale)}
+    paraLabel={paraLabel(locale)} blockquoteData={blockquoteData(locale)}
+     authorCardData={AuthorCardData(locale)} imageCaptionData={imageCaptionData(locale)}
+      data={caption.postheaderdata} header={caption.header} country={caption.country}
+      description={caption.description} active={'default'}></ArticlePage>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<li><u>To use SCSS include the following files in your implementation</u></li>
+<li>Component SCSS file: <code>ArticlePage.scss</code></li>
+<li><u>To use CSS include the following files in your implementation</u></li>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

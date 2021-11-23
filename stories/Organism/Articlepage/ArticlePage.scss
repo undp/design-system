@@ -1,0 +1,59 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/breakpoints";
+
+.author-section {
+  border-bottom: 1px solid $color-gray-400;
+  margin-bottom: 5.56rem;
+  padding-top: $spacing-32;
+
+  @include devicebreak(mediumonlytab) {
+    border-top: 2px solid $color-black;
+  }
+}
+
+.blockq {
+  margin-bottom: 0.625rem;
+  margin-top: 2.82rem;
+}
+
+.section-head {
+  margin-top: 2.6875rem;
+}
+.image-caption {
+  padding-top: $spacing-32;
+
+  @include devicebreak(mediumonlytab) {
+    .image__caption {
+      border-bottom: 0;
+    }
+  }
+}
+.middle-image {
+  margin-bottom: $spacing-32;
+  margin-top: $spacing-64;
+}
+.middle-caption {
+  margin-bottom: 6.375rem;
+}
+.list-section {
+  margin-top: $spacing-32;
+  margin-bottom: 11.25rem;
+}
+.footer {
+  margin-top: $spacing-32;
+}
+
+[dir="rtl"] {
+  .section-head {
+    text-align: right;
+  }
+  .medium-offset-1 {
+    margin-right: 8.33333%;
+    margin-left: 0;
+  }
+  .medium-offset-2 {
+    margin-right: 16.66667%;
+    margin-left: 0;
+  }
+}
