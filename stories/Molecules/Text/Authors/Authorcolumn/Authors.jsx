@@ -6,7 +6,7 @@ import { Authorimg } from '../../../../Atom/Images/Authorimage/Authorimages';
 export const Author = ({
   data, width, image, size,
 }) => (
-  <div className={['grid-x', 'grid-margin-x', `author-wrapper--${width}`].join(' ')}>
+  <div className={['grid-x', `author-wrapper--${width}`].join(' ')}>
     {data.map((item, index) => (
       <div className={['author-wrapper__box', 'cell', `${size}`].join(' ')}>
         {image && <Authorimg image={image} variant="Small" />}
