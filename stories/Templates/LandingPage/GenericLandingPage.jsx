@@ -14,10 +14,9 @@ export const GenericLandingPage = ({
     <div className="grid-container fluid">
       <div className="grid-x grid-margin-x">
         <div className="cell large-12">
-          <PageHeroOption
-            data={herodata}
-            title={title}
-            content={content}
+          <PageHeroOption 
+            data={herodata} 
+            title={title} 
             active={active}
             imgsrc={imgsrc}
             imgalt={imgsrc}
