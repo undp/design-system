@@ -34,6 +34,7 @@ h1 {
   font-size: 2.938rem;
   line-height: 1.08;
   text-transform: uppercase;
+
   @include devicebreak(medium) {
     font-size: 5.125rem;
   }

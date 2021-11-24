@@ -11,9 +11,9 @@ $.fn.isInViewport = function () {
 
 export default function viewport(ele) {
   $(window).on('resize scroll load', () => {
-    /* Each function used for if have same class more then 1.  
+    /* Each function used for if have same class more then 1.
     To do smart resize */
-    $(ele).each(function(){
+    $(ele).each(function () {
       if ($(this).isInViewport()) {
         $(this).addClass('inviewport');
       }

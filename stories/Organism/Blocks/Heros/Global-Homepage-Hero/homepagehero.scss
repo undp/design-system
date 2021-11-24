@@ -18,10 +18,10 @@
     }
 
     &__content {
-      position: relative;
-
       @include devicebreak(medium) {
       }
+
+      position: relative;
 
       .button {
         margin-bottom: $spacing-24;
@@ -64,6 +64,7 @@
   &_right {
     overflow: hidden;
     position: relative;
+
     @include devicebreak(medium) {
       height: 100%;
     }
@@ -103,21 +104,19 @@
   &-split {
     display: flex;
 
-    @include devicebreak(medium) {      
+    @include devicebreak(medium) {
       .grid-x {
-        min-height: 940px;
         align-items: center;
-     }
+        min-height: 940px;
+      }
     }
 
-    
-
     &__content {
-      padding-right: 1.375rem;
-      word-break: break-word;
-
       @include devicebreak(medium) {
       }
+
+      padding-right: 1.375rem;
+      word-break: break-word;
     }
 
     &__title {

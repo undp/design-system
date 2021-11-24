@@ -5,6 +5,7 @@
 /* statscard start */
 .statscard {
   @include transition(300ms all);
+
   background-color: $color-gray-200;
   word-break: break-all;
 
@@ -26,20 +27,22 @@
     margin-bottom: $spacing-24;
     text-shadow: -1px -1px 0 $color-black, 1px -1px 0 $color-black, -1px 1px 0 $color-black, 1px 1px 0 $color-black;
     -webkit-text-stroke: 2px $color-black;
+
     @include devicebreak(medium) {
-        font-size: 6.875rem;
+      font-size: 6.875rem;
       line-height: 1.09;
       margin-bottom: $spacing-32;
     }
   }
 
   &__per {
-    font-weight: 600;
     font-size: 1.875rem;
+    font-weight: 600;
     font-weight: 600;
     letter-spacing: 0;
     line-height: 1.15;
     margin-bottom: $spacing-08;
+
     @include devicebreak(medium) {
       font-size: 2.188rem;
       margin-bottom: $spacing-16;
@@ -48,6 +51,7 @@
 
   p {
     margin: 0;
+
     @include devicebreak(medium) {
       font-size: 1.563rem;
     }
@@ -55,95 +59,118 @@
 
   &.x-large {
     max-width: 351px;
-    .statscard__box {
-      padding: $spacing-40;
-    }
-     .statscard__number {
-      font-size: 7.5rem;
-      line-height: 0.82;
-    }
+
     @include devicebreak(medium) {
       max-width: 684px;
+
       .statscard__box {
         padding: $spacing-96;
       }
-    }  
+    }
+
+    .statscard__box {
+      padding: $spacing-40;
+    }
+
+    .statscard__number {
+      font-size: 7.5rem;
+      line-height: 0.82;
+    }
   }
 
   &.large {
     max-width: 351px;
-    .statscard__box {
-      padding: $spacing-40;
-    }
-    .statscard__per {
-      font-size: $font-size-25;
-      line-height: 1.15;
-    }
+
     @include devicebreak(medium) {
       max-width: 448px;
+
       .statscard__box {
         padding: $spacing-96  $spacing-64;
       }
+
       .statscard__per {
         font-size: 1.875rem;
       }
+    }
+
+    .statscard__box {
+      padding: $spacing-40;
+    }
+
+    .statscard__per {
+      font-size: $font-size-25;
+      line-height: 1.15;
     }
   }
 
   &.medium {
     max-width: 351px;
+
+    @include devicebreak(medium) {
+      max-width: 330px;
+
+      .statscard__per {
+        font-size: 2.188rem;
+      }
+    }
+
     .statscard__per {
       font-size: $font-size-25;
       line-height: 1.15;
     }
+
     .statscard__box {
       padding: $spacing-48;
     }
+
     p {
       font-size: $font-size-20;
-    }
-    @include devicebreak(medium) {
-      max-width: 330px;
-      .statscard__per {
-        font-size: 2.188rem;
-      }
     }
   }
 
   &.small {
     max-width: 170px;
-    
-    .statscard__box {
-      padding: $spacing-24;
-    }
-    .statscard__number {
-      @include transition(300ms all);
-      font-size: 3.125rem;
-      line-height: 1.09;
-      margin-bottom: $spacing-16;
-    }
-    .statscard__per {
-      font-size: $font-size-20;
-    }
-    p {
-      font-size: $font-size-14;
-    }
+
     @include devicebreak(medium) {
       max-width: 212px;
+
       .statscard__box {
         padding: $spacing-32;
       }
+
       .statscard__number {
         font-size: 4.375rem;
         margin-bottom: 2rem;
       }
+
       .statscard__per {
         font-size: $font-size-25;
         margin-bottom: $spacing-08;
       }
+
       p {
         font-size: $font-size-16;
       }
+    }
+
+    .statscard__box {
+      padding: $spacing-24;
+    }
+
+    .statscard__number {
+      @include transition(300ms all);
+
+      font-size: 3.125rem;
+      line-height: 1.09;
+      margin-bottom: $spacing-16;
+    }
+
+    .statscard__per {
+      font-size: $font-size-20;
+    }
+
+    p {
+      font-size: $font-size-14;
     }
 
     .statscard__box {
@@ -170,6 +197,7 @@
 
   &:hover {
     background-color: $color-yellow;
+
     & .statscard__number {
       color: $color-black;
     }

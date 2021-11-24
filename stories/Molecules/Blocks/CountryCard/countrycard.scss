@@ -50,9 +50,9 @@
     }
 
     @include devicebreak(small) {
-
       &.glide__slide {
         height: auto;
+
         &--active {
           .country {
             &-card {
@@ -157,4 +157,5 @@
     }
   }
 }
+
 /* country card end */

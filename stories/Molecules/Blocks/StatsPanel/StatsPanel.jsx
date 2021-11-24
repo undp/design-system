@@ -2,7 +2,9 @@ import React from 'react';
 import './statspanel.scss';
 import BackgroundImg from '../../../assets/images/card2.jpg';
 
-export const StatsPanel = ({ number, percent, content, delaytime }) => (
+export const StatsPanel = ({
+  number, percent, content, delaytime,
+}) => (
   <div className={`cell medium-3 statspanel left-right delay-${delaytime}`}>
     <div
       className="statspanel__image"

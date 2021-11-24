@@ -8,16 +8,18 @@
 }
 
 .arrow-expand {
+  @include transform (translateX(0));
+
   background: url(#{$img-path-Icon}/arrow-left-expand-defaut.svg) no-repeat center center;
   cursor: pointer;
   height: 16px;
-  @include transform (translateX(0));
   width: 20px;
 
   &:hover {
-    background: url(#{$img-path-Icon}/arrow-left-expand-hover.svg) no-repeat center center;
     @include transform (translateX(10px));
     @include transition (transform 0.4s);
+
+    background: url(#{$img-path-Icon}/arrow-left-expand-hover.svg) no-repeat center center;
     width: 100px;
   }
 }
@@ -45,15 +47,18 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .arrow-expand {
     @include transform(translate(0) rotate(180deg));
+
     &:hover {
       @include transform(translate(-10px) rotate(180deg));
     }
   }
-   .external-link {
+
+  .external-link {
     @include transform(rotate(270deg));
+
     &:hover {
       @include transform(rotate(270deg));
     }
