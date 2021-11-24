@@ -8,11 +8,11 @@
 
   .glide {
     &__track {
-      overflow: initial;
+      margin-right: -100%;
     }
 
     &__arrows {
-      bottom: -.2rem;
+      bottom: 0;
       position: absolute;
       right: 5rem;
 
@@ -29,6 +29,7 @@
       @extend %carousel_arrow;
 
       img {
+        vertical-align: bottom;
         width: 2.813rem;
       }
     }
@@ -38,6 +39,11 @@
 [dir='rtl'] {
   .image-only-carousel {
     .glide {
+      &__track {
+        margin-left: -100%;
+        margin-right: 0;
+      }
+
       &__arrows {
         left: 5rem;
         right: auto;

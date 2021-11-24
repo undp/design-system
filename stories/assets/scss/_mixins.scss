@@ -369,11 +369,12 @@
 }
 
 %carousel_arrow {
+  background: transparent;
   border: none;
   cursor: pointer;
   margin: 0 0.75rem;
   padding: 0;
-  background: transparent;
+  vertical-align: bottom;
 }
 
 %carousel_tag {

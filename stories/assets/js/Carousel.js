@@ -5,8 +5,8 @@ export function CarouselFun(ele, gapele, gapele_sm) {
   let direc = 'ltr';
   let lastChild = ':last';
   let firstChild = ':first';
-  var dirRight = '>';
-  var dirLeft = '<';
+  let dirLeft = '<';
+  let dirRight = '>';
   let gapele_sm2 = gapele;
   if (gapele_sm) {
     gapele_sm2 = gapele_sm;
@@ -15,8 +15,8 @@ export function CarouselFun(ele, gapele, gapele_sm) {
     direc = 'rtl',
     lastChild = ':first';
     firstChild = ':last';
-    var dirRight = '<';
-    var dirLeft = '>';
+    dirLeft = '>';
+    dirRight = '<';
   }
   const glide = new Glide(ele, {
     autoplay: false,
@@ -26,14 +26,14 @@ export function CarouselFun(ele, gapele, gapele_sm) {
     navigation: 'none',
     peek: {
       before: 0,
-      after: 30,
+      after: 45,
     },
     breakpoints: {
       767: {
         gap: gapele_sm2,
         peek: {
           before: 0,
-          after: 25,
+          after: 40,
         },
       },
     },
@@ -41,13 +41,18 @@ export function CarouselFun(ele, gapele, gapele_sm) {
   $(ele).click(function (e) {
     const sliderWidth = $(this).offset().left + $(this).width() / 2;
     const i = glide.index;
-    if ((e.pageX < sliderWidth) && (i != 0)) {
+    if ((e.pageX < sliderWidth) && (i != 0) && (i != 2)) {
       glide.go(dirLeft);
-    } else if ((i == 2)) {
-      glide.go(dirLeft);
+    } else if (i == 2) {
+      glide.go('<');
+    } else if (($('html').attr('dir') == 'rtl') && (i == 0)) {
+      glide.go('>');
     } else {
       glide.go(dirRight);
     }
+  });
+  $('.glide__slide a').click((e) => {
+    e.stopPropagation();
   });
   $(ele).mousemove(function (e) {
     const sliderWidth = $(this).offset().left + $(this).width() / 2;

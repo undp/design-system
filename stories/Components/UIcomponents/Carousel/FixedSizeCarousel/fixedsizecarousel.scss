@@ -3,6 +3,7 @@
 
 .fixed-image-size-carousel {
   &__image {
+    display: block;
     width: 100%;
 
     @include devicebreak(small) {
@@ -23,6 +24,7 @@
     @include devicebreak(small) {
       margin-top: 1.5rem;
       padding-left: 1.5rem;
+      padding-right: 2rem;
     }
 
     @include devicebreak(large) {
@@ -68,11 +70,11 @@
 
   .glide {
     &__track {
-      overflow: initial;
+      margin-right: -100%;
     }
 
     &__arrows {
-      bottom: -0.15rem;
+      bottom: 0.25rem;
       position: absolute;
       right: 5rem;
 
@@ -89,6 +91,7 @@
       @extend %carousel_arrow;
 
       img {
+        vertical-align: bottom;
         width: 2.813rem;
       }
     }
@@ -108,11 +111,17 @@
       }
 
       @include devicebreak(small) {
+        padding-left: 2rem;
         padding-right: 1.5rem;
       }
     }
 
     .glide {
+      &__track {
+        margin-left: -100%;
+        margin-right: 0;
+      }
+
       &__arrows {
         left: 5rem;
         right: auto;
