@@ -45,6 +45,17 @@
 
     &:last-child {
       margin-right: 0;
+      display: block;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      white-space: nowrap;
+      width: 60px;
+      @include devicebreak(medium) {
+        overflow: inherit;
+        width: inherit;
+      }
 
       &::after {
         display: none;
@@ -80,19 +91,7 @@
       color: $color-white;
     }
   }
-  &:last-child li:last-child {
-    display: block;
-    font-weight: 600;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-transform: uppercase;
-    white-space: nowrap;
-    width: 60px;
-    @include devicebreak(medium) {
-      overflow: inherit;
-      width: inherit;
-    }
-  }
+  
   &--Default {
     &:last-child, li:last-child {
       color: $color-black;

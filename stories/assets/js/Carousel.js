@@ -1,12 +1,16 @@
 import arrowright from '../images/Icon/arrow-right.svg';
 import arrowleft from '../images/Icon/arrow-left.svg';
 
-export function CarouselFun(ele, gapele) {
+export function CarouselFun(ele, gapele, gapele_sm) {
   let direc = 'ltr';
   let lastChild = ':last';
   let firstChild = ':first';
   var dirRight = '>';
   var dirLeft = '<';
+  let gapele_sm2 = gapele;
+  if (gapele_sm) {
+    gapele_sm2 = gapele_sm;
+  }
   if ($('html').attr('dir') == 'rtl') {
     direc = 'rtl',
     lastChild = ':first';
@@ -22,13 +26,14 @@ export function CarouselFun(ele, gapele) {
     navigation: 'none',
     peek: {
       before: 0,
-      after: 50,
+      after: 30,
     },
     breakpoints: {
       767: {
+        gap: gapele_sm2,
         peek: {
           before: 0,
-          after: 35,
+          after: 25,
         },
       },
     },

@@ -1,7 +1,7 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
-.fixed-image-size-carousel {
+.fluid-image-size-carousel {
   &__image {
     width: 100%;
 
@@ -11,26 +11,9 @@
   }
 
   &__contents {
-    @include devicebreak(medium) {
-      align-content: space-between;
-      display: flex;
-      flex-wrap: wrap;
-      height: 100%;
-      padding-left: 1.5rem;
-      padding-right: 3rem;
-    }
-
     @include devicebreak(small) {
       margin-top: 1.5rem;
       padding-left: 1.5rem;
-    }
-
-    @include devicebreak(large) {
-      padding-left: 7rem;
-    }
-
-    > div {
-      width: 100%;
     }
 
     &-tag {
@@ -39,17 +22,13 @@
 
     h4 {
       @extend %carousel_title;
-
-      @include devicebreak(medium) {
-        margin-bottom: 2rem;
-      }
     }
 
     p {
       @extend %carousel_desc;
 
       @include devicebreak(large) {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
       }
 
       @include devicebreak(small) {
@@ -57,12 +36,8 @@
       }
     }
 
-    .button {
+    .cta__link {
       text-transform: uppercase;
-
-      @include devicebreak(small) {
-        display: inline-flex;
-      }
     }
   }
 
@@ -72,9 +47,9 @@
     }
 
     &__arrows {
-      bottom: -0.15rem;
+      bottom: -0.8rem;
       position: absolute;
-      right: 5rem;
+      right: 2rem;
 
       @include devicebreak(large) {
         display: none;
@@ -87,7 +62,7 @@
 
     &__arrow {
       @extend %carousel_arrow;
-
+      margin: 0 0.4rem;
       img {
         width: 2.813rem;
       }
@@ -96,17 +71,8 @@
 }
 
 [dir='rtl'] {
-  .fixed-image-size-carousel {
+  .fluid-image-size-carousel {
     &__contents {
-      @include devicebreak(medium) {
-        padding-left: 3rem;
-        padding-right: 1.5rem;
-      }
-
-      @include devicebreak(large) {
-        padding-right: 7rem;
-      }
-
       @include devicebreak(small) {
         padding-right: 1.5rem;
       }
@@ -114,7 +80,7 @@
 
     .glide {
       &__arrows {
-        left: 5rem;
+        left: 2rem;
         right: auto;
       }
     }

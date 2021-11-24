@@ -31,7 +31,7 @@
     }
   }
 
-  &__head {
+  &-head {
     align-items: center;
     border-bottom: 1px solid $color-gray-700;
     justify-content: space-between;
@@ -42,7 +42,7 @@
       margin-bottom: $spacing-48;
     }
 
-    &--two {
+    &.two {
       padding-bottom: $spacing-32;
 
       @include devicebreak(medium) {
@@ -55,13 +55,27 @@
     }
   }
 
-  &__bottom {
-    &--two {
+  &-bottom {
+    &.two {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
       @include devicebreak(small) {
         flex-direction: column-reverse;
 
         p {
           margin: 0 $spacing-16 0;
+        }
+      }
+
+      @include devicebreak(medium) {
+        .copyright {
+          width: calc(100% - 525px);
+        }
+
+        .menus {
+          width: 512px;
         }
       }
     }
@@ -100,7 +114,7 @@
       margin: 0;
     }
 
-    &--blue {
+    &.blue {
       li a {
         &.facebook {
           background-position: 5px -27px;
@@ -126,7 +140,7 @@
   }
 
   .sign-up {
-    &--blue {
+    &.blue {
       .input__controls {
         background-color: transparent;
         border-color: $color-white;
@@ -144,10 +158,10 @@
     }
   }
 
-  &--blue {
+  &.blue {
     background-color: $color-blue-600;
 
-    .footer__head {
+    .footer-head {
       border-color: $color-white;
     }
 
@@ -164,11 +178,9 @@
 
 @include devicebreak(medium) {
   [dir='rtl'] {
-    .footer {
-      &__bottom--two {
+    .footer-bottom {
+      &.two {
         .footer__condition_text {
-          text-align: left;
-
           li {
             margin-left: 0;
             margin-right: 2.25rem;

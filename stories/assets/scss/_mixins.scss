@@ -236,7 +236,6 @@
   content: '';
   float: right;
   height: 13px;
-  margin-left: $spacing-24;
   position: absolute;
   right: 22px;
   top: 50%;
@@ -377,6 +376,33 @@
 
   margin: 0 auto;
   max-width: 100%;
+}
+
+%carousel_arrow {
+  border: none;
+  cursor: pointer;
+  margin: 0 0.75rem;
+  padding: 0;
+  background: transparent;
+}
+
+%carousel_tag {
+  color: $color-black;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 0.84;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+%carousel_title {
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+%carousel_desc {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 /* placehoder start */

@@ -3,7 +3,7 @@
 @import '../../assets/scss/breakpoints';
 
 .multi-select {
-  max-width: 300px;
+  max-width: 296px;
   position: relative;
 
   &.open {
@@ -80,8 +80,7 @@
         padding: $spacing-16;
         position: relative;
         text-align: left;
-        width: 100%;
-        width: calc(100% + 32px);
+        width: calc(100% + 2rem);
 
         &:hover {
           background-color: $color-gray-100;
@@ -90,7 +89,7 @@
         &::after {
           @extend %arrow;
 
-          right: 16px;
+          right: $spacing-16;
         }
       }
     }
@@ -127,16 +126,16 @@
     margin: 0 -1rem;
     padding: 0 $spacing-16;
 
-    input[type=checkbox],
-    input[type=checkbox] + label::before {
+    input[type='checkbox'],
+    input[type='checkbox'] + label::before {
       @include transform(translateY(-50%));
 
       left: auto;
-      right: 16px;
+      right: $spacing-16;
       top: 50%;
     }
 
-    input[type=checkbox] + label {
+    input[type='checkbox'] + label {
       display: block;
       padding: $spacing-16 0;
     }
@@ -149,6 +148,9 @@
 }
 
 [dir='rtl'] {
+.multi-select .select-control::after, .multi-select .has-submenu__button::after {
+       //transition:none;
+    }
   .multi-select {
     .select-control,
     .has-submenu__button {
@@ -160,15 +162,19 @@
     }
 
     .has-submenu__button {
+    text-align:right;
       &::after {
-        left: 16px;
+        left: $spacing-16;
+        right:inherit;
+
       }
     }
 
+
     .checkbox-wrapper {
-      input[type=checkbox],
-      input[type=checkbox] + label::before {
-        left: 16px;
+      input[type='checkbox'],
+      input[type='checkbox'] + label::before {
+        left: $spacing-16;
         right: auto;
       }
     }

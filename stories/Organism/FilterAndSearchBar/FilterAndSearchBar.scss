@@ -7,28 +7,38 @@
   border: 0;
   border-bottom: 1px solid $color-black;
   cursor: pointer;
-  padding-bottom: 0.625rem;
+  padding:0 0 0.625rem;
   text-decoration: underline;
+
+  .icon-search-black{
+    height:1.75rem;
+  }
 }
 
-#select-wrapper {
+.select-wrapper {
   display: none;
 
   &.show-filter {
     display: block;
   }
-  .multi-select { padding-top: $spacing-24; }
+
+  .multi-select {
+    padding-top: $spacing-24;
+  }
 }
 
 .selected-chips {
+  max-width: 296px;
   padding-top: $spacing-24;
 
   a {
-    &:first-child { display: none; }
+    &:first-child {
+      display: none;
+    }
   }
 
   .chips {
-    margin: 0 $spacing-12 $spacing-12 0;
+    margin: 0 0.75rem 0.75rem 0;
   }
 }
 
@@ -36,10 +46,35 @@
   font-size: $font-size-16;
 }
 
+.clear_section {
+  display: none;
+
+  &.show-clear {
+    display: block;
+  }
+}
+
 .clear_chips {
   border-bottom: 1px solid $color-red;
   cursor: pointer;
   font-size: $font-size-16;
+}
+
+.active-filter {
+  display: none;
+  padding-top: $spacing-16;
+
+  &.show-activefilter {
+    display: block;
+  }
+
+  span {
+    color: $color-gray-600;
+    font-family: $Font-Family-ProximaNova;
+    font-size: $font-size-16;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
 }
 
 [dir='rtl'] {
