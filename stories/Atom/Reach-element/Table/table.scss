@@ -109,6 +109,11 @@ tbody {
   @include devicebreak(medium) {
     overflow-x: inherit;
   }
+
+  th,
+  td {
+    white-space: nowrap;
+  }
 }
 
 [dir='rtl'] {

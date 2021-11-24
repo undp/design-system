@@ -44,14 +44,15 @@
     }
 
     &:last-child {
-      margin-right: 0;
       display: block;
       font-weight: 600;
+      margin-right: 0;
       overflow: hidden;
       text-overflow: ellipsis;
       text-transform: uppercase;
       white-space: nowrap;
       width: 60px;
+
       @include devicebreak(medium) {
         overflow: inherit;
         width: inherit;
@@ -61,13 +62,16 @@
         display: none;
       }
     }
+
     a {
-     font-weight: 600;
-      font-size: $font-size-12;
-      text-transform: uppercase;
-      color: $color-dark-red;
       @extend %border-none;
       @extend %img_none;
+
+      color: $color-dark-red;
+      font-size: $font-size-12;
+      font-weight: 600;
+      text-transform: uppercase;
+
       &:hover {
         color: $color-red;
       }
@@ -79,6 +83,7 @@
       &::after {
         color: $color-white;
       }
+
       a {
         color: $color-white;
 
@@ -87,13 +92,16 @@
         }
       }
     }
-    &:last-child, li:last-child {
+
+    &:last-child,
+    li:last-child {
       color: $color-white;
     }
   }
-  
+
   &--Default {
-    &:last-child, li:last-child {
+    &:last-child,
+    li:last-child {
       color: $color-black;
     }
   }

@@ -16,9 +16,9 @@ export const size_options2 = {
 };
 
 export const size_options3 = {
-  wide: "",
-  medium: "",
-  portrait: "portrait",
+  wide: '',
+  medium: '',
+  portrait: 'portrait',
 };
 
 export const Images = ({

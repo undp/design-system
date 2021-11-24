@@ -28,13 +28,12 @@ const toggleFilter = function () {
         $(currentChipsWrapper).siblings('.active-filter').addClass('show-activefilter');
       }
     } else {
-    console.log(currentChipsWrapper.find('.chips__cross').length)
-    if (currentChipsWrapper.find('.chips__cross').length < 3) {
-            currentChipsWrapper.siblings('.clear_section').removeClass('show-clear');
-          }
-          if (currentChipsWrapper.find('.chips__cross').length < 3) {
-           currentChipsWrapper.siblings('.active-filter').removeClass('show-activefilter');
-          }
+      if (currentChipsWrapper.find('.chips__cross').length < 3) {
+        currentChipsWrapper.siblings('.clear_section').removeClass('show-clear');
+      }
+      if (currentChipsWrapper.find('.chips__cross').length < 3) {
+        currentChipsWrapper.siblings('.active-filter').removeClass('show-activefilter');
+      }
       $(el).parents('.select-wrapper').find(`[option-name='${eleId}']`).remove();
     }
   });

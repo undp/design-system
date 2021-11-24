@@ -33,6 +33,7 @@
 
   &-slide {
     @extend %feature__card;
+
     position: relative;
 
     @include devicebreak(medium) {
@@ -41,12 +42,12 @@
 
     @include devicebreak(medium) {
       @include transform(translateX(-105%));
+      @include transition(transform 0.3s);
 
       background-color: $color-yellow;
       display: block;
       height: 100%;
       position: absolute;
-      @include transition(transform 0.3s);
       z-index: 5;
     }
 
@@ -166,7 +167,6 @@
       }
     }
   }
-
 }
 
 .large {
@@ -215,4 +215,5 @@
     }
   }
 }
+
 /* feature card end */

@@ -2,12 +2,13 @@
 @import '../../../assets/scss/mixins';
 
 .contentcard {
-  border: 0;
   @extend %img_none;
+
+  background-color: $color-white;
+  border: 0;
   border-top: 2px solid $color-black;
   display: block;
   margin-bottom: $spacing-24;
-  background-color: $color-white;
 
   h6 {
     font-size: 12px;
@@ -27,15 +28,14 @@
   }
 
   &__caption {
-    
-    h5 {
-      margin-bottom: $spacing-24;
-    }
-    
-    padding: $spacing-16 $spacing-24 $spacing-24;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: $spacing-16 $spacing-24 $spacing-24;
+
+    h5 {
+      margin-bottom: $spacing-24;
+    }
 
     .cta__link {
       margin-top: $spacing-08;
@@ -167,7 +167,7 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .contentcard:hover {
     .cta__link::after {
       @include transform(translate(-50%, 0) rotate(180deg));

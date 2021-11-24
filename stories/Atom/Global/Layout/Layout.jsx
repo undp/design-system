@@ -377,8 +377,9 @@ export const Layout = ({ }) => (
         </div>
       </div>
     </div>
-  <div className="foundation__documentation">For original Foundation documentation :
-  <a href="https://get.foundation/sites/docs/xy-grid.html"> XY-grid | Foundation for sites 6 Docs</a>
-  </div>
+    <div className="foundation__documentation">
+      For original Foundation documentation :
+      <a href="https://get.foundation/sites/docs/xy-grid.html"> XY-grid | Foundation for sites 6 Docs</a>
+    </div>
   </>
 );

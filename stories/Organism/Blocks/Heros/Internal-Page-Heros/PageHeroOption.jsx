@@ -6,7 +6,7 @@ import { Heading } from '../../../../Atom/Base-typography/Heading/Heading';
 import { Breadcrumbcomponent } from '../../../../Molecules/Navbar/Breadcrumb/Breadcrumb-link';
 
 export const PageHeroOption = ({
-  data, title, content, active, variant, imgsrc, imgalt, videosrc
+  data, title, content, active, variant, imgsrc, imgalt, videosrc,
 }) => {
   useEffect(() => {
     viewport('.pagehero-option__title');

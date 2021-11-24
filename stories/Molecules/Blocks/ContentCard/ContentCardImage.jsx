@@ -5,13 +5,13 @@ import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
 import { Ctalink } from '../../../Atom/Buttons-and-labels/Cta_link/Cta_link';
 
 export const ContentCardImage = ({
-  data, Image, Hovercolors
+  data, Image, Hovercolors,
 }) => (
   <div className="grid-x grid-margin-x">
     {data.map((item, index) => (
       <div key={index} className="cell medium-4">
-        <a href={item.link} className={['contentcard', `${Image}`, `${[`${Hovercolors}`]}`,].join(' ')}>
-          <Heading  type="6" label={item.contenttile} />
+        <a href={item.link} className={['contentcard', `${Image}`, `${[`${Hovercolors}`]}`].join(' ')}>
+          <Heading type="6" label={item.contenttile} />
           <div className="card-thumbnail__image">
             <img src={item.imgback} alt={item.imgback} />
           </div>

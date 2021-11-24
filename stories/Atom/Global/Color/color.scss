@@ -1,6 +1,6 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
 
 /* color  */
 .color-wrapper {
@@ -11,277 +11,277 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
+}
 
-  .color__row {
+.color__row {
+  width: calc(100%);
+
+  @include devicebreak(medium) {
+    width: calc(100% / 2 - 10px);
+  }
+
+  &.full {
     width: calc(100%);
+  }
+
+  .color__title {
+    color: $color-black;
+    font-size: 0.813rem;
+    min-height: 28px;
 
     @include devicebreak(medium) {
-      width: calc(100% / 2 - 10px);
+      font-size: $font-size-16;
     }
+  }
 
-    &.full {
-      width: calc(100%);
-    }
+  .color__define_wrapper {
+    display: block;
+  }
+}
 
-    .color__title {
-      color: $color-black;
-      font-size: 0.813rem;
-      min-height: 28px;
+.Primary-text {
+  color: $color-black;
+  font-size: $font-size-12;
+  margin-top: -1.538rem;
+  text-align: center;
 
-      @include devicebreak(medium) {
-        font-size: $font-size-16;
-      }
-    }
+  @include devicebreak(medium) {
+    margin-top: -1.55rem;
+  }
 
-    .color__define_wrapper {
+  .polygon {
+    img {
       display: block;
+      margin: 0 auto;
+      width: 10px;
+    }
+  }
+}
+
+.color__define {
+  display: flex;
+  margin-bottom: 1.25rem;
+
+  .color__name {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin: $spacing-08 0;
+    text-align: center;
+
+    @include devicebreak(medium) {
+      flex-basis: 0;
+      flex-grow: 1;
     }
 
-    .color__define {
-      display: flex;
-      margin-bottom: 1.25rem;
-
-      .color__name {
-        flex-basis: 0;
-        flex-grow: 1;
-        margin: $spacing-08 0;
-        text-align: center;
-
-        @include devicebreak(medium) {
-          flex-basis: 0;
-          flex-grow: 1;
-        }
-
-        .Primary-text {
-          color: $color-black;
-          font-size: $font-size-12;
-          margin-top: -1.538rem;
-          text-align: center;
-
-          @include devicebreak(medium) {
-            margin-top: -1.55rem;
-          }
-
-          .polygon {
-            img {
-              display: block;
-              margin: 0 auto;
-              width: 10px;
-            }
-          }
-        }
-
-        .color__box {
-          height: 48px;
-          margin-bottom: 0.625rem;
-          width: 100%;
-
-          @include devicebreak(medium) {
-            height: 70px;
-          }
-
-          @include devicebreak(medium) {
-            height: 85px;
-            width: 100%;
-          }
-
-          &.p-blue-100 {
-            background-color: $color-blue-100;
-          }
-
-          &.p-blue-200 {
-            background-color: $color-blue-200;
-          }
-
-          &.p-blue-300 {
-            background-color: $color-blue-300;
-          }
-
-          &.p-blue-400 {
-            background-color: $color-blue-400;
-          }
-
-          &.p-blue-500 {
-            background-color: $color-blue-500;
-          }
-
-          &.p-blue-600 {
-            background-color: $color-blue-600;
-          }
-
-          &.p-blue-700 {
-            background-color: $color-blue-700;
-          }
-
-          &.p-gray-100 {
-            background-color: $color-gray-100;
-          }
-
-          &.p-gray-200 {
-            background-color: $color-gray-200;
-          }
-
-          &.p-gray-300 {
-            background-color: $color-gray-300;
-          }
-
-          &.p-gray-400 {
-            background-color: $color-gray-400;
-          }
-
-          &.p-gray-500 {
-            background-color: $color-gray-500;
-          }
-
-          &.p-gray-600 {
-            background-color: $color-gray-600;
-          }
-
-          &.p-gray-700 {
-            background-color: $color-gray-700;
-          }
-
-          &.light-yellow {
-            background-color: $color-light-yellow;
-          }
-
-          &.yellow {
-            background-color: $color-yellow;
-          }
-
-          &.dark-yellow {
-            background-color: $color-dark-yellow;
-          }
-
-          &.light-red {
-            background-color: $color-light-red;
-          }
-
-          &.red {
-            background-color: $color-red;
-          }
-
-          &.dark-red {
-            background-color: $color-dark-red;
-          }
-
-          &.light-green {
-            background-color: $color-light-green;
-          }
-
-          &.green {
-            background-color: $color-green;
-          }
-
-          &.dark-green {
-            background-color: $color-dark-green;
-          }
-
-          &.light-azure {
-            background-color: $color-light-azure;
-          }
-
-          &.azure {
-            background-color: $color-azure;
-          }
-
-          &.dark-azure {
-            background-color: $color-dark-azure;
-          }
-        }
-
-        .color__code {
-          font-size: 0.563rem;
-
-          @include devicebreak(medium) {
-            display: flex;
-            font-size: 0.625rem;
-          }
-        }
-      }
-    }
-
-    .color__define_balance {
-      display: flex;
+    .color__box {
+      height: 48px;
+      margin-bottom: 0.625rem;
       width: 100%;
 
-      .color__name {
-        margin: $spacing-08 0;
-        text-align: center;
-
-        .color__box {
-          height: 100%;
-          height: 48px;
-          margin-bottom: 0.625rem;
-
-          @include devicebreak(large) {
-            height: 70px;
-          }
-
-          @include devicebreak(medium) {
-            height: 85px;
-            width: 100%;
-          }
-
-          &.p-gray-100 {
-            background-color: $color-gray-100;
-          }
-
-          &.p-gray-200 {
-            background-color: $color-gray-200;
-          }
-
-          &.p-gray-400 {
-            background-color: $color-gray-400;
-          }
-
-          &.p-gray-700 {
-            background-color: $color-gray-700;
-          }
-
-          &.p-blue-600 {
-            background-color: $color-blue-600;
-          }
-
-          &.dark-red {
-            background-color: $color-dark-red;
-          }
-        }
-
-        .color__code {
-          font-size: 0.625rem;
-        }
-
-        &.bl-1 {
-          height: 75px;
-          width: 45%;
-        }
-
-        &.bl-2 {
-          height: 75px;
-          width: 12%;
-        }
-
-        &.bl-3 {
-          height: 75px;
-          width: 15%;
-        }
-
-        &.bl-4 {
-          height: 75px;
-          width: 18%;
-        }
-
-        &.bl-5 {
-          height: 75px;
-          width: 8%;
-        }
-
-        &.bl-6 {
-          height: 75px;
-          width: 5%;
-        }
+      @include devicebreak(medium) {
+        height: 70px;
       }
+
+      @include devicebreak(medium) {
+        height: 85px;
+        width: 100%;
+      }
+
+      &.p-blue-100 {
+        background-color: $color-blue-100;
+      }
+
+      &.p-blue-200 {
+        background-color: $color-blue-200;
+      }
+
+      &.p-blue-300 {
+        background-color: $color-blue-300;
+      }
+
+      &.p-blue-400 {
+        background-color: $color-blue-400;
+      }
+
+      &.p-blue-500 {
+        background-color: $color-blue-500;
+      }
+
+      &.p-blue-600 {
+        background-color: $color-blue-600;
+      }
+
+      &.p-blue-700 {
+        background-color: $color-blue-700;
+      }
+
+      &.p-gray-100 {
+        background-color: $color-gray-100;
+      }
+
+      &.p-gray-200 {
+        background-color: $color-gray-200;
+      }
+
+      &.p-gray-300 {
+        background-color: $color-gray-300;
+      }
+
+      &.p-gray-400 {
+        background-color: $color-gray-400;
+      }
+
+      &.p-gray-500 {
+        background-color: $color-gray-500;
+      }
+
+      &.p-gray-600 {
+        background-color: $color-gray-600;
+      }
+
+      &.p-gray-700 {
+        background-color: $color-gray-700;
+      }
+
+      &.light-yellow {
+        background-color: $color-light-yellow;
+      }
+
+      &.yellow {
+        background-color: $color-yellow;
+      }
+
+      &.dark-yellow {
+        background-color: $color-dark-yellow;
+      }
+
+      &.light-red {
+        background-color: $color-light-red;
+      }
+
+      &.red {
+        background-color: $color-red;
+      }
+
+      &.dark-red {
+        background-color: $color-dark-red;
+      }
+
+      &.light-green {
+        background-color: $color-light-green;
+      }
+
+      &.green {
+        background-color: $color-green;
+      }
+
+      &.dark-green {
+        background-color: $color-dark-green;
+      }
+
+      &.light-azure {
+        background-color: $color-light-azure;
+      }
+
+      &.azure {
+        background-color: $color-azure;
+      }
+
+      &.dark-azure {
+        background-color: $color-dark-azure;
+      }
+    }
+
+    .color__code {
+      font-size: 0.563rem;
+
+      @include devicebreak(medium) {
+        display: flex;
+        font-size: 0.625rem;
+      }
+    }
+  }
+}
+
+.color__define_balance {
+  display: flex;
+  width: 100%;
+
+  .color__name {
+    margin: $spacing-08 0;
+    text-align: center;
+
+    .color__box {
+      height: 100%;
+      height: 48px;
+      margin-bottom: 0.625rem;
+
+      @include devicebreak(large) {
+        height: 70px;
+      }
+
+      @include devicebreak(medium) {
+        height: 85px;
+        width: 100%;
+      }
+
+      &.p-gray-100 {
+        background-color: $color-gray-100;
+      }
+
+      &.p-gray-200 {
+        background-color: $color-gray-200;
+      }
+
+      &.p-gray-400 {
+        background-color: $color-gray-400;
+      }
+
+      &.p-gray-700 {
+        background-color: $color-gray-700;
+      }
+
+      &.p-blue-600 {
+        background-color: $color-blue-600;
+      }
+
+      &.dark-red {
+        background-color: $color-dark-red;
+      }
+    }
+
+    .color__code {
+      font-size: 0.625rem;
+    }
+
+    &.bl-1 {
+      height: 75px;
+      width: 45%;
+    }
+
+    &.bl-2 {
+      height: 75px;
+      width: 12%;
+    }
+
+    &.bl-3 {
+      height: 75px;
+      width: 15%;
+    }
+
+    &.bl-4 {
+      height: 75px;
+      width: 18%;
+    }
+
+    &.bl-5 {
+      height: 75px;
+      width: 8%;
+    }
+
+    &.bl-6 {
+      height: 75px;
+      width: 5%;
     }
   }
 }
