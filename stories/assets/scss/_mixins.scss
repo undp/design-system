@@ -287,14 +287,14 @@
 }
 
 %select_default {
- padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
- position: relative;
- text-transform: uppercase;
- min-width: 296px;
- border: 2px solid $color-black;
- cursor: pointer;
- font-size: $font-size-16;
- font-weight: 600;
+  border: 2px solid $color-black;
+  cursor: pointer;
+  font-size: $font-size-16;
+  font-weight: 600;
+  min-width: 296px;
+  padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
+  position: relative;
+  text-transform: uppercase;
 }
 
 %select_option {
@@ -317,6 +317,16 @@
   left: 22px;
   margin: 0;
   right: auto;
+}
+
+%header_default{
+  background-color: $color-gray-100;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  height: 7.1875rem;
+
+  @include devicebreak(mediumt) {
+    height: 4.6875rem;
+  }
 }
 
 %no-animation {
