@@ -1,6 +1,6 @@
 import React from 'react';
 import { P } from '../Base-typography/Paragraph/Paragraph';
-import { Heading } from '../Base-typography/Heading/Heading';
+import { Heading } from '../Typography/Heading/Heading';
 
 export const Projectcolumn = ({
   headertext, subtext,

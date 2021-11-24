@@ -1,0 +1,122 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+
+.fixed-image-size-carousel {
+  &__image {
+    width: 100%;
+
+    @include devicebreak(small) {
+      max-width: 10.625rem;
+    }
+  }
+
+  &__contents {
+    @include devicebreak(medium) {
+      align-content: space-between;
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+      padding-left: 1.5rem;
+      padding-right: 3rem;
+    }
+
+    @include devicebreak(small) {
+      margin-top: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    @include devicebreak(large) {
+      padding-left: 7rem;
+    }
+
+    > div {
+      width: 100%;
+    }
+
+    &-tag {
+      @extend %carousel_tag;
+    }
+
+    h4 {
+      @extend %carousel_title;
+
+      @include devicebreak(medium) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    p {
+      @extend %carousel_desc;
+
+      @include devicebreak(large) {
+        margin-bottom: 2rem;
+      }
+
+      @include devicebreak(small) {
+        font-size: 0.875rem;
+      }
+    }
+
+    .button {
+      text-transform: uppercase;
+
+      @include devicebreak(small) {
+        display: inline-flex;
+      }
+    }
+  }
+
+  .glide {
+    &__track {
+      overflow: initial;
+    }
+
+    &__arrows {
+      bottom: -0.15rem;
+      position: absolute;
+      right: 5rem;
+
+      @include devicebreak(large) {
+        display: none;
+      }
+
+      @include devicebreak(small) {
+        display: none;
+      }
+    }
+
+    &__arrow {
+      @extend %carousel_arrow;
+
+      img {
+        width: 2.813rem;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .fixed-image-size-carousel {
+    &__contents {
+      @include devicebreak(medium) {
+        padding-left: 3rem;
+        padding-right: 1.5rem;
+      }
+
+      @include devicebreak(large) {
+        padding-right: 7rem;
+      }
+
+      @include devicebreak(small) {
+        padding-right: 1.5rem;
+      }
+    }
+
+    .glide {
+      &__arrows {
+        left: 5rem;
+        right: auto;
+      }
+    }
+  }
+}

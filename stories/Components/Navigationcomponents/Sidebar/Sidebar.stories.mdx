@@ -1,0 +1,171 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import { Sidebar } from "./Sidebar";
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        sidebardata: [
+          {
+            descriptionText: "Subpage title",
+          },
+          {
+            descriptionText:
+              "Subpage with an exceptionally long title on two lines",
+          },
+          {
+            descriptionText: "Subpage title",
+          },
+        ],
+        headerText: "PAGE TITLE",
+        label: "MENU",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        sidebardata: [
+          {
+            descriptionText: "عنوان الصفحة الفرعية",
+          },
+          {
+            descriptionText: "صفحة فرعية بعنوان طويل بشكل استثنائي في سطرين",
+          },
+          {
+            descriptionText: "عنوان الصفحة الفرعية",
+          },
+        ],
+        headerText: "عنوان الصفحة",
+        label: "قائمة",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        sidebardata: [
+          {
+            descriptionText: "စာမျက်နှာခွဲခေါင်းစဉ်",
+          },
+          {
+            descriptionText:
+              "စာကြောင်းနှစ်ကြောင်းတွင်ထူးခြားသောခေါင်းစဉ်ရှည်ပါ ၀ င်သောစာမျက်နှာခွဲ",
+          },
+          {
+            descriptionText: "စာမျက်နှာခွဲခေါင်းစဉ်",
+          },
+        ],
+        headerText: "စာမျက်နှာခေါင်းစဉ်",
+        label: "မီနူး",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        sidebardata: [
+          {
+            descriptionText: "サブページのタイトル",
+          },
+          {
+            descriptionText: "2行に非常に長いタイトルのサブページ",
+          },
+          {
+            descriptionText: "サブページのタイトル",
+          },
+        ],
+        headerText: "ページタイトル",
+        label: "メニュー",
+      };
+      return japaneseText;
+    default:
+      const dummy = {
+        sidebardata: [
+          {
+            descriptionText: "Subpage title",
+          },
+          {
+            descriptionText:
+              "Subpage with an exceptionally long title on two lines",
+          },
+          {
+            descriptionText: "Subpage title",
+          },
+        ],
+        headerText: "PAGE TITLE",
+        label: "Menu",
+      };
+      return dummy;
+  }
+};
+
+<Meta title="Components/Navigation components/Sidebar" />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  .css-1gh4yjl {
+    font-size: 1rem;
+  }
+`}</style>
+
+# Sidebar Component
+
+The Sidebar Component is a shorter piece of text that appears next to and accompanies a longer article.
+
+<Story name="Sidebar">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <Sidebar
+        data={caption.sidebardata}
+        headerText={caption.headerText}
+        label={caption.label}
+        active={"default"}
+      ></Sidebar>
+    );
+  }}
+</Story>
+
+<div className="subheading">Dependency</div>
+Libraries or another dependency which are used in the component.
+<ul>
+  <li>
+    For toggle functionality its depend on the jQuery plugin library, that is
+    placed in preview-head.html file.
+  </li>
+  <li>
+    Custom JS file (Faq_custom.js) is located in the same component folder.
+  </li>
+  <li>
+    ID - (#accordion) is used in the JSX file to connect the Custom JS file to
+    achieve the functionality.
+  </li>
+</ul>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like variables, mixin from{" "}
+    <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>sidebar.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
+  <u>To use JS include the following files in your implementation</u>
+  <li>
+    The compiled JS file from <code>assets/js/Faq_custom.js</code>
+  </li>
+</ul>

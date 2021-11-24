@@ -1,7 +1,7 @@
 import React from 'react';
 import './genericlandingpage.scss';
-import { PageHeroOption } from '../../Organism/Blocks/Heros/Internal-Page-Heros/PageHeroOption';
-import FilterAndSearchBar from '../../Organism/FilterAndSearchBar/FilterAndSearchBar';
+import { PageHeroOption } from '../../Components/UIcomponents/Hero/Pagehero/PageHeroOption';
+import  FilterAndSearchBar  from "../../Patterns/FilterAndSearchBar/FilterAndSearchBar";
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Footer } from '../../Organism/Footer/Footer';
 import logo from '../../assets/images/logo.svg';

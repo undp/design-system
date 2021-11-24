@@ -1,0 +1,77 @@
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/breakpoints';
+
+.button {
+  @extend %button;
+  @extend %img_none;
+
+  color: $color-white;
+  cursor: pointer;
+  justify-content: center;
+  padding: $spacing-16 $spacing-24;
+
+  &.button--primary {
+    background-color: $color-dark-red;
+
+    &:hover {
+      background-color: $color-red;
+    }
+
+    &.button--arrow {
+      &::after {
+        @include transition(0.2s ease);
+
+        background: url(#{$img-path-Iconfourback}/chevron-right-black.svg) no-repeat left center;
+        content: '';
+        height: 20px;
+        margin-left: $spacing-12;
+        width: 13px;
+      }
+
+      &:hover::after {
+        @include translate(70%,0);
+      }
+
+      &.disabled {
+        &::after {
+          background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
+          content: '';
+        }
+      }
+    }
+  }
+
+  &.button--secondary {
+    background-color: $color-blue-600;
+
+    &:hover {
+      background-color: $color-blue-400;
+    }
+  }
+
+  &.disabled {
+    background-color: $color-gray-400;
+    color: $color-gray-300;
+    pointer-events: none;
+  }
+}
+
+[dir='rtl'] {
+  .button {
+    &.button--primary {
+      &.button--arrow {
+        &::after {
+          @include transform(rotate(180deg));
+
+          margin-left: 0;
+          margin-right: $spacing-12;
+        }
+
+        &:hover::after {
+          @include transform(translate(-50%,0) rotate(180deg));
+        }
+      }
+    }
+  }
+}

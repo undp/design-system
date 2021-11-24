@@ -1,0 +1,139 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Breadcrumbcomponent } from './Breadcrumbs';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {data: [{
+    text : 'Home'
+  },
+  {
+    text : 'Second-level'
+  },
+  {
+    text : 'Third-level'
+  },
+  {
+    text : 'Page title'
+  }]}; return engText.data;
+    case 'arabic': const arabicText = {data: [{
+    text : 'الصفحة الرئيسية'
+  },
+  {
+    text : 'المستوى الثاني'
+  },
+  {
+    text : 'المستوى الثالث'
+  },
+  {
+    text : 'عنوان الصفحة'
+  }]}; return arabicText.data;
+    case 'burmese': const burmeseText = {data: [{
+    text : 'အိမ်'
+  },
+  {
+    text : 'ဒုတိယအဆင့်'
+  },
+  {
+    text : 'တတိယအဆင့်'
+  },
+  {
+    text : 'စာမျက်နှာခေါင်းစဉ်'
+  }]}; return burmeseText.data;
+    case 'japanese': const japaneseText = {data: [{
+    text : '家'
+  },
+  {
+    text : 'セカンドレベル'
+  },
+  {
+    text : '第3レベル'
+  },
+  {
+    text : 'ページタイトル'
+  }]}; return japaneseText.data;
+    default:
+      const dummy =  {data: [{
+    text : 'Home'
+  },
+  {
+    text : 'Second-level'
+  },
+  {
+    text : 'Third-level'
+  },
+  {
+    text : 'Page title'
+  }]};
+  return dummy.data
+  }
+};
+
+<Meta title="Components/Navigation components/Breadcrumbs" 
+  argTypes={{
+      active: {
+          options: ['black', 'white'],
+          control: { type: 'radio' },
+          defaultValue: 'black'
+      }
+  }}
+  parameters={{
+    backgrounds: {
+      default: "white",
+      values: [{ name: "gray", value: "#D4D6D8" }],
+    }
+  }}/>
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }  
+   .subheading2 {
+    font-weight: 700;
+    font-size: 14px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+  }
+  div#story--molecules-navbar--breadcrumb-link, 
+  div#story--molecules-navbar--breadcrumb-link-white {
+    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
+    box-sizing: inherit;
+  }
+  div#story--molecules-navbar--breadcrumb-link-white {
+    background-color: #D4D6D8;
+  }
+`}</style>
+
+
+# Breadcrumb Component
+The Breadcrumb component creates navigation links for the current pathname based on an opinionated configuration object. The idea behind this component is to drop it anywhere with minimal or no configuration and get breadcrumbs generated automatically. 
+
+we are using these modifier classes:
+<code>breadcrumb__wrapper</code>, <code>breadcrumb__wrapper--Modifier</code>, <code>breadcrumb__item</code>
+
+<div className="subheading">Breadcrumb default</div>
+
+<Story name="Breadcrumbs" parameters={{ backgrounds: { default: "gray" } }}>
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Breadcrumbcomponent data={caption} {...args} ></Breadcrumbcomponent>;
+  }}
+</Story>
+
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in canvas</li>  
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
+  <li>Component SCSS file:<code>breadcrumb-link.scss</code></li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

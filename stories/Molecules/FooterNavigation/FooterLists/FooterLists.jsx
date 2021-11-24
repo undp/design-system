@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './footerLists.scss';
-import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
-import { Link } from '../../../Atom/Base-typography/Link/link';
+import { Heading } from '../../../Atom/Typography/Heading/Heading';
+import { Link } from '../../../Atom/Typography/Links/link';
 
 export const FooterLists = ({
   type, headerText, text, style, data, ...args

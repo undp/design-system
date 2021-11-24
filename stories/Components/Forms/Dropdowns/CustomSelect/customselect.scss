@@ -1,0 +1,94 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
+
+.select-box {
+  color: $color-black;
+  display: flex;
+  flex-direction: column;
+  font-size: $font-size-32;
+  height: 52px;
+  max-width: 300px;
+  position: relative;
+
+  &.expanded {
+    .selected {
+      border-bottom: 0;
+
+      &::after {
+        @include transform(translateY(-50%) rotate(-180deg));
+      }
+    }
+
+    .options {
+      border-top: 0;
+      display: block;
+    }
+  }
+
+  .selected {
+    @extend %select_default;
+
+    background: $color-white;
+    display: flex;
+
+    &::after {
+      @extend %arrow;
+    }
+  }
+}
+
+.options-container {
+  @extend %select_option;
+
+  @include transition( all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
+
+  background-color: $color-white;
+  order: 1;
+  position: absolute;
+  top: 51px;
+  z-index: 20;
+
+  &.active {
+    border-top: 0;
+    display: block;
+    overflow-y: auto;
+  }
+
+  &::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.option {
+  border-top: 1px solid $color-gray-400;
+  cursor: pointer;
+  display: block;
+  padding: 0;
+  position: relative;
+
+  span {
+    display: block;
+    font-size: $font-size-16;
+    margin: 0 -16px;
+    padding: 15px $spacing-16;
+    &:hover { background-color: $color-gray-100; }
+  }
+}
+
+[dir='rtl'] {
+  .select-box {
+    .selected {
+      @extend %select_rtl;
+
+      &::after {
+        @extend %select_rtl_after;
+      }
+    }
+  }
+}

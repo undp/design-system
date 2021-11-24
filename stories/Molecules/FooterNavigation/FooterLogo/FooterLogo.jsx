@@ -1,7 +1,7 @@
 import React from 'react';
 import './footerLogo.scss';
-import { Logo } from '../../../Atom/Global/Logo/logo';
-import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
+import { Logo } from '../../../Atom/Logo/logo';
+import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const FooterLogo = ({
   src, headerText, headerText2, style, alt,

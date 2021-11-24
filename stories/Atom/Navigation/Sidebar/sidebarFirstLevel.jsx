@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Heading } from '../../Base-typography/Heading/Heading';
+import { Heading } from '../../Typography/Heading/Heading';
 import './sidebar.scss';
 
 export const SidebarFirstLevel = ({

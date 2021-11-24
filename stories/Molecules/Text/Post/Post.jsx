@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './post.scss';
 import viewport from '../../../assets/js/viewport';
-import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
+import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const Post = ({ headerText, countryText, descriptionText }) => {
   useEffect(() => {

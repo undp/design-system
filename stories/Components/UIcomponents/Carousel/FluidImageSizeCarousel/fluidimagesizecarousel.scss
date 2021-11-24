@@ -1,0 +1,88 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+
+.fluid-image-size-carousel {
+  &__image {
+    width: 100%;
+
+    @include devicebreak(small) {
+      max-width: 10.625rem;
+    }
+  }
+
+  &__contents {
+    @include devicebreak(small) {
+      margin-top: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    &-tag {
+      @extend %carousel_tag;
+    }
+
+    h4 {
+      @extend %carousel_title;
+    }
+
+    p {
+      @extend %carousel_desc;
+
+      @include devicebreak(large) {
+        margin-bottom: 3rem;
+      }
+
+      @include devicebreak(small) {
+        font-size: 0.875rem;
+      }
+    }
+
+    .cta__link {
+      text-transform: uppercase;
+    }
+  }
+
+  .glide {
+    &__track {
+      overflow: initial;
+    }
+
+    &__arrows {
+      bottom: -0.8rem;
+      position: absolute;
+      right: 2rem;
+
+      @include devicebreak(large) {
+        display: none;
+      }
+
+      @include devicebreak(small) {
+        display: none;
+      }
+    }
+
+    &__arrow {
+      @extend %carousel_arrow;
+      margin: 0 0.4rem;
+      img {
+        width: 2.813rem;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .fluid-image-size-carousel {
+    &__contents {
+      @include devicebreak(small) {
+        padding-right: 1.5rem;
+      }
+    }
+
+    .glide {
+      &__arrows {
+        left: 2rem;
+        right: auto;
+      }
+    }
+  }
+}

@@ -7,88 +7,113 @@
 @import './base';
 @import './glideslider';
 
-// Atoms
-@import '../../Atom/Global/Logo/logo';
-@import '../../Atom/Global/Icons/icons';
+//Atom
 @import '../../Atom/Base-typography/Abbr/abbr';
 @import '../../Atom/Base-typography/Blockquote/blockquote';
 @import '../../Atom/Base-typography/Cite/cite';
 @import '../../Atom/Base-typography/Code/code';
-@import '../../Atom/Base-typography/Link/link';
 @import '../../Atom/Base-typography/Mark/mark';
 @import '../../Atom/Base-typography/Quotation/quotation';
 @import '../../Atom/Base-typography/Small/small';
-@import '../../Atom/Global/Color/color';
-@import '../../Atom/Images/Authorimage/authorimage';
-@import '../../Atom/Images/Image/image';
-@import '../../Atom/Images/Imagecredit/imagecredit';
-@import '../../Atom/Form/Radio/radio';
-@import '../../Atom/Form/Checkbox/checkbox';
-@import '../../Atom/Lists/lists';
 @import '../../Atom/Cards/Card-thumbnail/card-thumbnail';
 @import '../../Atom/Cards/Publication-thumbnail/publication-thumbnail';
-@import '../../Atom/Buttons-and-labels/Chips/chips';
-@import '../../Atom/Buttons-and-labels/Cta_button/buttons';
-@import '../../Atom/Buttons-and-labels/Cta_link/cta_link';
-@import '../../Atom/Input-group/input_group';
-@import '../../Atom/Global/Layout/layout';
-@import '../../Atom/Video/video';
-
-// Reach Elemets Atoms
-@import '../../Atom/Reach-element/Details/details';
-@import '../../Atom/Reach-element/Figcaption/figcaption';
-@import '../../Atom/Reach-element/Progressbar/progress';
-@import '../../Atom/Reach-element/Table/table';
-
-// Navigation Atoms
+@import '../../Atom/Colors/color';
+@import '../../Atom/Icons/icons';
+@import '../../Atom/Images/Authorimage/authorimage';
+@import '../../Atom/Images/Image/image';
+@import '../../Atom/Images/Imagecaptioncredit/imagecaption';
+@import '../../Atom/Images/Imagecredit/imagecredit';
+@import '../../Atom/Layout/Grid/grid';
+@import '../../Atom/Layout/Spacing/spacing';
+@import '../../Atom/Logo/logo';
 @import '../../Atom/Navigation/Breadcrumb/breadcrumb';
 @import '../../Atom/Navigation/Language-switcher-row/LanguageSwitcherRow';
-@import '../../Atom/Navigation/Loader/loader';
 @import '../../Atom/Navigation/Menu-items/Menu-Items';
 @import '../../Atom/Navigation/ProgressBarNavigation/ProgressBarNavigation';
 @import '../../Atom/Navigation/Sidebar-second-level/sidebarsecondlevel';
 @import '../../Atom/Navigation/Sidebar-with-arrow/SidebarWithArrow';
 @import '../../Atom/Navigation/Sidebar/sidebar';
+@import '../../Atom/Reach-element/Details/details';
+@import '../../Atom/Reach-element/Figcaption/figcaption';
+@import '../../Atom/Table/table';
+@import '../../Atom/Typography/Links/link';
+@import '../../Atom/Video/video';
+
+//Components
+@import '../../Components/Forms/Checkbox/checkbox';
+@import '../../Components/Forms/Dropdowns/CustomSelect/customselect';
+@import '../../Components/Forms/Dropdowns/Multiselect/multiselect';
+@import '../../Components/Forms/Inputfields/input_group';
+@import '../../Components/Forms/Newslettersignup/signup';
+@import '../../Components/Forms/Radio/radio';
+@import '../../Components/Forms/Select/select';
+@import '../../Components/Navigationcomponents/Breadcrumbs/breadcrumbs';
+@import '../../Components/Navigationcomponents/Menu/menu';
+@import '../../Components/Navigationcomponents/Pagination/pagination';
+@import '../../Components/Navigationcomponents/Sidebar/sidebar';
+@import '../../Components/UIcomponents/Accordion/accordion';
+@import '../../Components/UIcomponents/Author/Authorcard/authorcard';
+@import '../../Components/UIcomponents/Author/Authorcolumn/authors';
+@import '../../Components/UIcomponents/Buttons/Chips/chips';
+@import '../../Components/UIcomponents/Buttons/Cta_button/buttons';
+@import '../../Components/UIcomponents/Buttons/Cta_link/cta_link';
+@import '../../Components/UIcomponents/Cards/BioCard/biocard';
+@import '../../Components/UIcomponents/Cards/ContentCard/contentcard';
+@import '../../Components/UIcomponents/Cards/FeaturedCards/featuredContentCard';
+@import '../../Components/UIcomponents/Cards/ImageRevelCTACard/imagecard';
+@import '../../Components/UIcomponents/Cards/ParallaxCard/parallaxcards';
+@import '../../Components/UIcomponents/Cards/StatsCards/statscards';
+@import '../../Components/UIcomponents/Carousel/FixedSizeCarousel/fixedsizecarousel';
+@import '../../Components/UIcomponents/Carousel/FluidImageSizeCarousel/fluidimagesizecarousel';
+@import '../../Components/UIcomponents/Carousel/ImageOnlyCarousel/imageonlycarousel';
+@import '../../Components/UIcomponents/Hero/Homepagehero/homepagehero';
+@import '../../Components/UIcomponents/Hero/Pagehero/pagehero';
+@import '../../Components/UIcomponents/Hero/Pageherocards/countrycardhero';
+@import '../../Components/UIcomponents/Languageswitcher/languageswitcher';
+@import '../../Components/UIcomponents/Modal/modal';
+@import '../../Components/UIcomponents/Tab/tab';
+@import '../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader';
+@import '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 
 //Molecules
-@import '../../Molecules/Imagecaption/imagecaption';
-@import '../../Molecules/Text/BlockCTA/blockCTA';
-@import '../../Molecules/Text/BlockquoteComponent/blockquotecomp';
-@import '../../Molecules/Text/Faq/Faq';
-@import '../../Molecules/Text/HeadingBig/headingbig';
-@import '../../Molecules/Text/Page/page';
-@import '../../Molecules/Text/Post/post';
-@import '../../Molecules/Text/Tertiary/tertiary';
-@import '../../Molecules/Text/SmallCopy/smallcopy';
-@import '../../Molecules/Text/ProjectDetails/projectdetails';
-@import '../../Molecules/Blocks/SingleContent/singlecontent';
-@import '../../Molecules/Blocks/StatsCards/statscards';
-@import '../../Molecules/Navbar/Breadcrumb/breadcrumb-link';
-@import '../../Molecules/Navbar/Menu/menu';
+@import '../../Molecules/Blocks/CountryCard/countrycard';
+@import '../../Molecules/Blocks/DownloadCard/DownloadCard';
+@import '../../Molecules/Blocks/StatsPanel/statspanel';
+@import '../../Molecules/DownloadRow/downloadrow';
 @import '../../Molecules/FooterNavigation/FooterConditions/footerCondition';
 @import '../../Molecules/FooterNavigation/FooterConditions2/footerCondition2';
 @import '../../Molecules/FooterNavigation/FooterIcons/footerIcons';
 @import '../../Molecules/FooterNavigation/FooterLists/footerLists';
 @import '../../Molecules/FooterNavigation/FooterLogo/footerLogo';
-@import '../../Molecules/Text/Authors/Authorcard/authorcard';
-@import '../../Molecules/Text/Authors/Authorcolumn/authors';
-@import '../../Molecules/Blocks/ImageRevelCard/imagecard';
-@import '../../Molecules/Multiselect/multiselect';
-@import '../../Molecules/Blocks/StatsPanel/statspanel';
-@import '../../Molecules/Form/signup';
-@import '../../Molecules/Navbar/Languageswitcher/languageswitcher';
-@import '../../Molecules/Blocks/CountryCard/countrycard';
-@import '../../Molecules/DownloadRow/downloadrow';
+@import '../../Molecules/Imagecaption/imagecaption';
 @import '../../Molecules/ParallaxCard/parallaxCard';
+@import '../../Molecules/Sidebar-data/sidebardata';
+@import '../../Molecules/Text/BlockCTA/blockCTA';
+@import '../../Molecules/Text/BlockquoteComponent/blockquotecomp';
+@import '../../Molecules/Text/HeadingBig/headingbig';
+@import '../../Molecules/Text/Page/page';
+@import '../../Molecules/Text/Post/post';
+@import '../../Molecules/Text/ProjectDetails/projectdetails';
+@import '../../Molecules/Text/SectionHeader/sectionheader';
+@import '../../Molecules/Text/SmallCopy/smallcopy';
+@import '../../Molecules/Text/Tertiary/tertiary';
 
-//Organism
-@import '../../Organism/Sidebar/sidebar';
-@import '../../Organism/Blocks/Heros/Country-Card-Hero/countrycardhero';
-@import '../../Organism/Blocks/Heros/Global-Homepage-Hero/homepagehero';
-@import '../../Organism/Blocks/Heros/Internal-Page-Heros/pagehero';
-@import '../../Organism/Text/PostHeader/postheader';
-@import '../../Organism/Images/Images/images';
-@import '../../Organism/Blocks/FeaturedContentCard/PagewideContentCard/pagewidecard';
+//Organisum
+@import '../../Organism/Blocks/Authorcard/authorsummary';
 @import '../../Organism/Blocks/FeaturedContentCard/FeaturedCard/featuredcard';
+@import '../../Organism/Blocks/FeaturedContentCard/PagewideContentCard/pagewidecard';
 @import '../../Organism/Footer/footer';
-@import '../../Organism/Blocks/ParallaxCard/parallaxcards';
+@import '../../Organism/Stats/stats';
+@import '../../Organism/Text/PostHeader/postheader';
+@import '../../Organism/Text/ProjectDetail/projectdetail';
+
+//Patterns
+@import '../../Patterns/DownloadModal/downloadmodal';
+@import '../../Patterns/FilterAndSearchBar/FilterAndSearchBar';
+@import '../../Patterns/StatsSlider/statsslider';
+
+//Utilities
+@import '../../Utilities/FrostedImage/frostedimage';
+@import '../../Utilities/Loader/loader';
+@import '../../Utilities/Progressbar/progress';
+@import '../../Utilities/Scroll-bar/scrollbar';

@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import viewport from '../../../assets/js/viewport';
 import './projectdetail.scss';
 import { Projectcolumn } from '../../../Atom/ProjectColumn/ProjectColumn';
-import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
-
+import { Heading } from '../../../Atom/Typography/Heading/Heading';
 export const Projectdetail = ({
   text, title1, subtitle1, title2, subtitle2, title3, subtitle3, title4, subtitle4, title5, subtitle5, title6, subtitle6, title7, subtitle7,
 }) => {

@@ -1,0 +1,23 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+
+.select-default {
+  @extend %select_default;
+
+  @include x-appearance(none);
+
+  background: $color-white url('../../../assets/images/Icon/Chevron-down.svg') no-repeat right 22px center;
+  border-radius: 0;
+  color: $color-black;
+  display: block;
+  
+}
+
+[dir='rtl'] {
+  .select-default {
+    background-position: left 22px center;
+    padding: $spacing-16 $spacing-16 $spacing-16 $spacing-50;
+    text-align: right;
+  }
+}

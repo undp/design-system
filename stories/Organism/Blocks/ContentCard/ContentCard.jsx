@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import viewport from '../../../assets/js/viewport';
-import { ContentCardImage } from '../../../Molecules/Blocks/ContentCard/ContentCardImage';
-import { CtaButton } from '../../../Atom/Buttons-and-labels/Cta_button/CtaButton';
+import { ContentCardImage } from '../../../Components/UIcomponents/Cards/ContentCard/ContentCardImage';
+import { CtaButton } from '../../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 
 export const ContentCard = ({ data, buttontype }) => {
   useEffect(() => {

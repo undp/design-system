@@ -1,6 +1,6 @@
 import React from 'react';
 import './sectionheader.scss';
-import { Heading } from '../../../Atom/Base-typography/Heading/Heading';
+import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const SectionHeader = ({ headerText, descriptionText }) => (
   <div className="header__wrapper">

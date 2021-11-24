@@ -1,5 +1,7 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { initializeRTL } from 'storybook-addon-rtl';
+import anysort from 'anysort'
+import { addParameters } from '@storybook/react'
 import '../stories/assets/scss/normalize.scss';
 
 initializeRTL();
@@ -42,5 +44,26 @@ export const globalTypes = {
 };
 
 
+addParameters({
+  options: {
+    /**
+     * display the top-level grouping as a "root" in the sidebar
+     * @type {Boolean}
+     */
+    showRoots: true,
+    storySort: (previous, next) => {
+      const [previousStory, previousMeta] = previous
+      const [nextStory, nextMeta] = next
 
+      return anysort(previousMeta.kind, nextMeta.kind, [
+        'Getting started/**',
+        'Foundation/**',
+        'Components/**',
+        'Patterns/**',
+        'Utilities/**',
+        'Templates/**'
+      ])
+    }
+  },
+})
 

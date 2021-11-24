@@ -1,7 +1,7 @@
 import React from 'react';
 import './countrycard.scss';
 import '../../../assets/scss/_grid.scss';
-import { Ctalink } from '../../../Atom/Buttons-and-labels/Cta_link/Cta_link';
+import { Ctalink } from '../../../Components/UIcomponents/Buttons/Cta_link/Cta_link';
 
 export const CountryCard = ({ data }) => (
   <div className="grid-x grid-margin-x glide__slides">
