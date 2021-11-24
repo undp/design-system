@@ -1,0 +1,150 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import GlobalHeader from './GlobalHeader';
+import {getCaptionForLocale as Languageswitcher} from "../../../Molecules/Navbar/Languageswitcher/Languageswitcher.stories.mdx";
+
+
+export const getNavLinks = (locale) => {
+    switch (locale) {
+        case 'english':
+            return [
+                {label: 'Who we are',id: 'headerlink1',position: 'left'},
+                {label: 'What we do',id: 'headerlink2',position: 'left'},
+                {label: 'Our Impact',id: 'headerlink3',position: 'right'},
+                {label: 'Get Involved',id: 'headerlink4',position: 'right'},       
+              ];
+        case 'arabic':
+            return [
+              {label: 'من نحن',id: 'headerlink1',position: 'left'},
+              {label: 'الذي نفعله',id: 'headerlink2',position: 'left'},
+              {label: 'تأثيرنا',id: 'headerlink3',position: 'right'},
+              {label: 'شارك',id: 'headerlink4',position: 'right'},
+            ];
+        case 'burmese':
+        return [
+                {label: 'ငါတို့ဘယ်သူလဲ။',id: 'headerlink1',position: 'left'},
+                {label: 'ငါတို့ဘာလုပ်မလဲ။',id: 'headerlink2',position: 'left'},
+                {label: 'ကျွန်ုပ်တို့၏သက်ရောက်မှု',id: 'headerlink3',position: 'right'},
+                {label: 'ပါဝင်လိုက်ပါ။',id: 'headerlink4',position: 'right'},
+            ];
+        case 'japanese':
+            return [
+                {label: '私たちは誰ですか',id: 'headerlink1',position: 'left'},
+                {label: '私達がすること',id: 'headerlink2',position: 'left'},
+                {label: '私たちの影響',id: 'headerlink3',position: 'right'},
+                {label: '参加する',id: 'headerlink4',position: 'right'},
+            ];
+        default: return [
+          {label: 'Who we are',id: 'headerlink1',position: 'left'},
+          {label: 'What we do',id: 'headerlink2',position: 'left'},
+          {label: 'Our Impact',id: 'headerlink3',position: 'right'},
+          {label: 'Get Involved',id: 'headerlink4',position: 'right'},
+      ];
+    }
+}
+
+
+export const getLocationDataForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: 'Locations'}; return engText;
+    case 'arabic': const arabicText = {detail: 'المواقع'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'နေရာမျာ'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: '場所'}; return japaneseText;
+    default:
+      return {detail: 'Locations'};
+  }
+};
+
+export const getBackForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: 'Back'}; return engText;
+    case 'arabic': const arabicText = {detail: 'الى الخلف'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'ကျော'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: '戻る'}; return japaneseText;
+    default:
+      return {detail: 'Back'};
+  }
+};
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'Select Language'; return engText;
+    case 'arabic': const arabicText = 'اختار اللغة'; return arabicText;
+    case 'burmese': const burmeseText = 'ဘာသာစကားကို ရွေးပါ။'; return burmeseText;
+    case 'japanese': const japaneseText = '言語を選択する'; return japaneseText;
+    default: return 'Category';
+  }
+};
+
+export const getSelectlanguage = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'Select Language'; return engText;
+    case 'arabic': const arabicText = 'اختار اللغة'; return arabicText;
+    case 'burmese': const burmeseText = 'ဘာသာစကားကို ရွေးပါ။'; return burmeseText;
+    case 'japanese': const japaneseText = '言語を選択する'; return japaneseText;
+    default: return 'Select Language';
+  }
+};
+
+export const menuData = (locale) => {
+  switch(locale) {
+  case 'english': const engText = {data: [
+    {
+    text : 'menu item'
+  },
+  {
+    text : 'menu item'
+  },
+  ]}; return engText.data;
+    case 'arabic': const arabicText = {data: [{
+    text : 'عنصر القائمة'
+  },
+  {
+    text : 'عنصر القائمة'
+  }]}; return arabicText.data;
+    case 'burmese': const burmeseText = {data: [{
+    text : 'မီနူးပစ္စည်းများ'
+  },
+  {
+    text : 'မီနူးပစ္စည်းများ'
+  }]}; return burmeseText.data;
+    case 'japanese': const japaneseText = {data: [{
+    text : 'メニュー項目'
+  },
+  {
+    text : 'メニュー項目'
+  }]}; return japaneseText.data;
+    default:
+      const dummy =  {data: [{
+    text : 'menu item'
+  },
+  {
+    text : 'menu item'
+  }]};
+  return dummy.data
+  }
+};
+
+<Meta title="Components/Navigation Component/Main Navigation/GlobalHeader" />
+
+
+<Story name="GlobalHeader">
+  {(args, { globals: { locale } }) => {
+    const locationData=getLocationDataForLocale(locale);
+    const caption = getCaptionForLocale(locale);
+    const navigationData= getNavLinks(locale);
+    const leftNavigationData=navigationData.filter(item=>item.position==='left');
+    const rightNavigationData=navigationData.filter(item=>item.position==='right');
+    const backcaption = getBackForLocale(locale);
+    
+    return <GlobalHeader locale={locale} leftNavigationData={leftNavigationData} 
+    backcaption={backcaption} navigationData={navigationData} 
+    rightNavigationData={rightNavigationData} menuData={menuData(locale)} 
+    languageswitcherData={Languageswitcher(locale)} text={caption}
+    locationData={locationData} langSelect={getSelectlanguage(locale)}
+    >
+    </GlobalHeader>;
+  }}
+</Story>
+
+
+
