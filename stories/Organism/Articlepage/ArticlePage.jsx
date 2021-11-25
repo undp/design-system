@@ -44,7 +44,7 @@ const ArticlePage = ({
               label={imageCaptionData.label}
               name={imageCaptionData.name}
               paragraph={imageCaptionData.paragraph}
-              {...{ size: 'wide', caption: 'False', credit: 'False' }}
+              {...{ size: 'wide', caption: 'false', credit: 'false' }}
             />
           </div>
         </div>
@@ -67,7 +67,7 @@ const ArticlePage = ({
         </div>
         <div className="grid-x blockq">
           <div className="cell medium-9">
-            <BlockquoteComponent blockquoteText={blockquoteData.blockquote} citeText={blockquoteData.cite} style="Yellow" />
+            <BlockquoteComponent blockquoteText={blockquoteData.blockquote} citeText={blockquoteData.cite} style="yellow" />
           </div>
         </div>
         <div className="grid-x">
