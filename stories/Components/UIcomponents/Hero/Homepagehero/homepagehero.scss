@@ -61,6 +61,10 @@
     }
   }
 
+  &-border_left{
+    border-left: $spacing-48 solid #EDEFF0;
+  }
+
   &_right {
     overflow: hidden;
     position: relative;
