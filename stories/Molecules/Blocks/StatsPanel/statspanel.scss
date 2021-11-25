@@ -9,17 +9,19 @@
   justify-content: center;
   min-height: 378px;
   position: relative;
+  @include transition(300ms all);
 
   @include devicebreak(medium) {
     min-height: 787px;
   }
 
-  &__image {
+  img {
     @extend %absolute__content;
 
-    background-size: cover;
-    opacity: 0;
-    transition: all 0.4s;
+    object-fit: cover;
+    opacity: 0;  
+    @include transition(300ms all);
+    
   }
 
   &::after {
@@ -55,6 +57,7 @@
     margin-bottom: $spacing-16;
     text-shadow: -1px -1px 0 $color-white, 1px -1px 0 $color-white, -1px 1px 0 $color-white, 1px 1px 0 $color-white;
     -webkit-text-stroke: 1px $color-white;
+    @include transition(300ms all);
 
     @include devicebreak(medium) {
       font-size: 6.6rem;
@@ -86,7 +89,7 @@
   &:hover,
   &.active {
     &::after,
-    .statspanel__image {
+    img {
       opacity: 1;
     }
 

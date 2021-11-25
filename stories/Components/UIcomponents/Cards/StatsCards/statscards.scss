@@ -27,6 +27,7 @@
     margin-bottom: $spacing-24;
     text-shadow: -1px -1px 0 $color-black, 1px -1px 0 $color-black, -1px 1px 0 $color-black, 1px 1px 0 $color-black;
     -webkit-text-stroke: 2px $color-black;
+    @include transition(300ms all);
 
     @include devicebreak(medium) {
       font-size: 6.875rem;
@@ -177,22 +178,6 @@
       padding: $spacing-24;
     }
 
-    .statscard__number {
-      @include transition(300ms all);
-
-      font-size: 3.125rem;
-      line-height: 1.09;
-      margin-bottom: $spacing-16;
-    }
-
-    .statscard__per {
-      font-size: $font-size-20;
-      line-height: 1.1;
-    }
-
-    p {
-      font-size: $font-size-14;
-    }
   }
 
   &:hover {

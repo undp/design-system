@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './statspanel.scss';
-import BackgroundImg from '../../../assets/images/card2.jpg';
+import viewport from '../../../assets/js/viewport';
 
-export const StatsPanel = ({
-  number, percent, content, delaytime,
-}) => (
-  <div className={`cell medium-3 statspanel left-right delay-${delaytime}`}>
-    <div
-      className="statspanel__image"
-      style={{ backgroundImage: `url(${BackgroundImg})` }}
-    />
-    <div className="statspanel__box">
-      <div className="statspanel__number">{number}</div>
-      <div className="statspanel__per">{percent}</div>
-      <p>{content}</p>
+export const StatsPanel = ({ number, percent, content, delaytime, imageback }) => {
+  useEffect(() => {
+    viewport('.statspanel-card');
+  }, []);
+  return (
+    <div className={`cell medium-3 statspanel-card left-right delay-${delaytime}`}>
+      <div className="statspanel">
+        <img src={imageback} alt={imageback} />
+        <div className="statspanel__box">
+          <div className="statspanel__number">{number}</div>
+          <div className="statspanel__per">{percent}</div>
+          <p>{content}</p>
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
