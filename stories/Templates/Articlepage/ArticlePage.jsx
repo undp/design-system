@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import './ArticlePage.scss';
-import { PostHeader } from '../../Organism/Text/PostHeader/PostHeader';
-import { Images } from '../../Atom/Images/Imagecaptioncredit/Imagecaption';
+import { PostHeader } from '../Text/PostHeader/PostHeader';
+import { Images } from '../Images/Images/Images';
 import { Imagecaption } from '../../Molecules/Imagecaption/Imagecaption';
-import { Author } from '../../Components/UIcomponents/Author/Authorcolumn/Authors';
+import { Author } from '../../Molecules/Text/Authors/Authorcolumn/Authors';
 import { BlockquoteComponent } from '../../Molecules/Text/BlockquoteComponent/BlockquoteComponent';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
-import { List } from '../../Atom/Typography/Lists/Lists';
-import { FeaturedCard } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard";
-import { Heading } from '../../Atom/Typography/Heading/Heading';
+import { List } from '../../Atom/Lists/Lists';
+import { FeaturedCard } from "../Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard";
+import { Heading } from '../../Atom/Base-typography/Heading/Heading';
 import farmlandlg from '../../assets/images/farmland-lg.jpg';
 import farmlandmd from '../../assets/images/farmland-md.jpg';
 import farmlandsm from '../../assets/images/farmland-sm.jpg';
 import user from '../../assets/images/user.svg';
-import { Footer } from '../../Organism/Footer/Footer';
+import { Footer } from '../Footer/Footer';
 import logo from '../../assets/images/logo.svg';
 import logowhite from '../../assets/images/logo-white.svg';
 import viewport from '../../assets/js/viewport';
@@ -44,7 +44,7 @@ const ArticlePage = ({
               label={imageCaptionData.label}
               name={imageCaptionData.name}
               paragraph={imageCaptionData.paragraph}
-              {...{ size: 'wide', caption: 'False', credit: 'False' }}
+              {...{ size: 'wide', caption: 'false', credit: 'false' }}
             />
           </div>
         </div>
@@ -67,7 +67,7 @@ const ArticlePage = ({
         </div>
         <div className="grid-x blockq">
           <div className="cell medium-9">
-            <BlockquoteComponent blockquoteText={blockquoteData.blockquote} citeText={blockquoteData.cite} style="Yellow" />
+            <BlockquoteComponent blockquoteText={blockquoteData.blockquote} citeText={blockquoteData.cite} style="yellow" />
           </div>
         </div>
         <div className="grid-x">
