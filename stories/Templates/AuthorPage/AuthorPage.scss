@@ -1,0 +1,19 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/breakpoints";
+
+.author-content {
+  margin-top: $spacing-80;
+  margin-bottom: $spacing-136;
+}
+
+[dir="rtl"] {
+  .author-page {
+    .medium-offset-1 {
+      @include devicebreak(small) {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}
