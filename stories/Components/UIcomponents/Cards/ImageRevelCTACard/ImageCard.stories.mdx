@@ -5,12 +5,67 @@ import imgsmall from '../../../../assets/images/CardImgsmall.jpg';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = { name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', btnlabel: 'READ MORE'}; return engText;
-    case 'arabic': const arabicText = { name: 'الألم هو الحب نفسه', btnlabel: 'اقرأ أكثر'}; return arabicText;
-    case 'burmese': const burmeseText = { name: 'နာကျင်မှုကအချစ်ပါဘဲ', btnlabel: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
-    case 'japanese': const japaneseText = { name: '痛みは愛そのものです', btnlabel: '続きを読む'}; return japaneseText;
+    case 'english': const engText = { 
+      takeactiondata: [
+        {
+        contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+        btnlabel: 'READ MORE',
+        image:img,
+        imgalt:img,
+        link:'#',
+        size:'medium-4',
+        }
+      ]
+    }; return engText;
+    case 'arabic': const arabicText = { 
+      takeactiondata: [
+        {
+          name: 'الألم هو الحب نفسه', 
+          btnlabel: 'اقرأ أكثر',
+          image:img,
+          imgalt:img,
+          link:'#',
+          size:'medium-4',
+        }
+      ]
+    }; return arabicText;
+    case 'burmese': const burmeseText = { 
+      takeactiondata: [
+        {
+          name: 'နာကျင်မှုကအချစ်ပါဘဲ', 
+          btnlabel: 'ပိုပြီးဖတ်ပါ',
+          image:img,
+          imgalt:img,
+          link:'#',
+          size:'medium-4',
+        }
+      ]
+    }; return burmeseText;
+    case 'japanese': const japaneseText = { 
+      takeactiondata: [
+        {
+          name: '痛みは愛そのものです', 
+          btnlabel: '続きを読む',
+          image:img,
+          imgalt:img,
+          link:'#',
+          size:'medium-4',
+        }
+      ]
+    }; return japaneseText;
     default:
-      return { name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', btnlabel: 'READ MORE'};
+      return { 
+         takeactiondata: [
+        {
+          name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', 
+          btnlabel: 'READ MORE',
+          image:img,
+          imgalt:img,
+          link:'#',
+          size:'medium-4',
+        }
+      ]
+    };
   }
 };
 
@@ -41,7 +96,8 @@ The Image reveal card component multi usage component which creates boxes that a
 <Story name="Image card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <ImageRevelCard contentname={caption.name} image={img} button={caption.btnlabel} link='#' size='medium-4'></ImageRevelCard>;
+    return <ImageRevelCard 
+      data={caption.takeactiondata} {...args}></ImageRevelCard>;
   }}
 </Story>
 
@@ -51,16 +107,16 @@ The Image reveal card component multi usage component which creates boxes that a
 <Story name="Image card-small">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <ImageRevelCard contentname={caption.name} image={imgsmall} button={caption.btnlabel} link='#' size='small'></ImageRevelCard>;
+    return <ImageRevelCard  data={caption.takeactiondata} {...args}></ImageRevelCard>;
   }}
 </Story>
 
 <div className="subheading">Usage</div>
 <ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>imagecard.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
+  <li>Component SCSS file: <code>imagecard.scss</code></li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
 </ul>

@@ -11,22 +11,22 @@ export const emphasize_options = {
 };
 
 export const ContentCardWithOutImage = ({
-  data, Emphasize, Hovercolors,
+  data
 }) => (
   <div className="grid-x grid-margin-x">
     {data.map((item, index) => (
-      <div key={index} className="cell medium-4">
-        <a href={item.link} className={['content-card', `${emphasize_options[`${Emphasize}`]}`, `${[`${Hovercolors}`]}`].join(' ')}>
+      <div key={index} className={['cell', `${item.size}`].join(' ')}> 
+        <a href={item.link} className={['content-card', `${emphasize_options[`${item.Emphasize}`]}`, `${[`${item.Hovercolors}`]}`].join(' ')}>
           <Heading type="6" label={item.contenttile} />
           <div className="content-card__caption">
-            {Emphasize === 'true'
+            {item.Emphasize === 'true'
               ? (
                 <Heading type="4" label={item.contentnametwo} />
               )
               : (
                 <></>
               )}
-            {Emphasize === 'false'
+            {item.Emphasize === 'false'
               ? (
                 <div className="content-card__caption_cart">
                   <Heading type="5" label={item.contentname} />
@@ -36,7 +36,7 @@ export const ContentCardWithOutImage = ({
               : (
                 <></>
               )}
-            <Ctalink label={item.button} variant="Space" />
+            <Ctalink label={item.button} variant={item.variant} />
           </div>
         </a>
       </div>
