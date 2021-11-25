@@ -16,10 +16,16 @@
 .progress-bar {
   background: $color-yellow;
   height: 12px;
-  width: 50%;
+  min-width: 1%;
+  z-index: 1;
+  position: fixed;
 
   @include devicebreak(medium) {
     height: 16px;
   }
+}
+
+.progress-top{
+  top:0;
 }
 // * progress navigation end *//

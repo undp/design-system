@@ -9,7 +9,7 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Breadcrumbcomponent } from '../../../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
 
 export const PageHero = ({
-  data, title, content, active, variant,
+  data, title, content, active, variant, imgsrc, imgalt
 }) => {
   useEffect(() => {
     viewport('.pagehero-wrapper__subtitle');
@@ -26,7 +26,7 @@ export const PageHero = ({
         )
         : (
           <div className="pagehero-wrapper__background overlay-grey">
-            <img src={BackgroundImg} alt={BackgroundImg} />
+            <img src={imgsrc} alt={imgalt} />
           </div>
         )}
       <div className="grid-x">
