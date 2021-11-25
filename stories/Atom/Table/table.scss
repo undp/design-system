@@ -101,13 +101,15 @@ tbody {
 
 .scroll {
   overflow-x: scroll;
-  th, 
-  td {
-    white-space: nowrap;
-    -webkit-text-size-adjust:100%;
-  }
+
   @include devicebreak(medium) {
     overflow-x: inherit;
+  }
+
+  th,
+  td {
+    text-size-adjust: 100%;
+    white-space: nowrap;
   }
 
   th,

@@ -1,6 +1,7 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/typography';
 
+/* post start */
 .post-wrapper {
   h2 {
     margin-bottom: $spacing-16;
@@ -11,3 +12,5 @@
     margin-bottom: $spacing-48;
   }
 }
+
+/* post end */

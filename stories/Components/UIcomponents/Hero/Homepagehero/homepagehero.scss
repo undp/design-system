@@ -2,7 +2,7 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/base';
 
-/* global homepage hero */
+/* global homepage hero start */
 .hero {
   &-wrapper {
     @extend %expand_to_size;
@@ -63,10 +63,10 @@
 
 
   &-border_left {
-    border-left: 3rem solid #edeff0;    
+    border-left: 3rem solid $color-gray-300;    
 
     @include devicebreak(small) {
-      border-left: 1rem solid #edeff0;
+      border-left: 1rem solid $color-gray-300;
     }
   }
 
@@ -229,3 +229,5 @@
     padding-left: $spacing-32;
   }
 }
+
+/* global homepage hero end */

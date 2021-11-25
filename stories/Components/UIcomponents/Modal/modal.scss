@@ -23,13 +23,12 @@
   &-content {
     background: $color-white;
     max-width: 837px;
-    overflow-y: auto;
     padding: $spacing-64 $spacing-12 $spacing-12;
     position: relative;
     width: 100%;
 
     @include devicebreak(medium) {
-      max-height: calc(100vh - 158px);
+      height: calc(100vh - 158px);
       padding: $spacing-64 $spacing-64 $spacing-32;
     }
   }

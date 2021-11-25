@@ -98,13 +98,6 @@
       color: $color-white;
     }
   }
-
-  &--Default {
-    &:last-child,
-    li:last-child {
-      color: $color-black;
-    }
-  }
 }
 
 [dir='rtl'] {

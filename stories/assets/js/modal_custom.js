@@ -1,6 +1,6 @@
 /* Modal JS start custom */
 export function ModalFun() {
-  const $modalOverlay = $('#myModal');
+  const $modalOverlay = $('.modal');
   const $modal = $('.modal-content');
   const $modalClose = $('.modal-close-button');
   const $modalOpen = $('#bio-card');

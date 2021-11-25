@@ -19,15 +19,20 @@
   }
 
   &__number {
+    @include transition(300ms all);
+
     color: $color-gray-200;
     font-family: $Font-Family-SohneBreit;
     font-size: 5rem;
     letter-spacing: 0.05rem;
     line-height: 1.1;
     margin-bottom: $spacing-24;
-    text-shadow: -1px -1px 0 $color-black, 1px -1px 0 $color-black, -1px 1px 0 $color-black, 1px 1px 0 $color-black;
+    text-shadow:
+      -1px -1px 0 $color-black,
+      1px -1px 0 $color-black,
+      -1px 1px 0 $color-black,
+      1px 1px 0 $color-black;
     -webkit-text-stroke: 2px $color-black;
-    @include transition(300ms all);
 
     @include devicebreak(medium) {
       font-size: 6.875rem;
@@ -86,7 +91,7 @@
       max-width: 448px;
 
       .statscard__box {
-        padding: $spacing-96  $spacing-64;
+        padding: $spacing-96 $spacing-64;
       }
 
       .statscard__per {
@@ -177,7 +182,6 @@
     .statscard__box {
       padding: $spacing-24;
     }
-
   }
 
   &:hover {

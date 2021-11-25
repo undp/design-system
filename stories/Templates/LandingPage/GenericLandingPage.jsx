@@ -1,7 +1,7 @@
 import React from 'react';
 import './genericlandingpage.scss';
 import { PageHeroOption } from '../../Components/UIcomponents/Hero/Pagehero/PageHeroOption';
-import  FilterAndSearchBar  from "../../Patterns/FilterAndSearchBar/FilterAndSearchBar";
+import FilterAndSearchBar from '../../Patterns/FilterAndSearchBar/FilterAndSearchBar';
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Footer } from '../../Organism/Footer/Footer';
 import logo from '../../assets/images/logo.svg';
@@ -14,9 +14,9 @@ export const GenericLandingPage = ({
     <div className="grid-container fluid">
       <div className="grid-x grid-margin-x">
         <div className="cell large-12">
-          <PageHeroOption 
-            data={herodata} 
-            title={title} 
+          <PageHeroOption
+            data={herodata}
+            title={title}
             active={active}
             imgsrc={imgsrc}
             imgalt={imgsrc}

@@ -2,7 +2,7 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/base';
 
-/* feature card start */
+/* bio card start */
 .bio-card {
   background: $color-gray-200;
   border-bottom: 0;
@@ -146,39 +146,39 @@
   @include devicebreak(medium) {
     display: flex;
   }
+}
 
-  .bio-card-image {
+.bio-card-image {
+  width: 100%;
+
+  @include devicebreak(medium) {
+    min-width: 338px;
+  }
+
+  img {
     width: 100%;
 
     @include devicebreak(medium) {
-      min-width: 338px;
-    }
-
-    img {
-      width: 100%;
-
-      @include devicebreak(medium) {
-        width: auto;
-      }
+      width: auto;
     }
   }
+}
 
-  .bio-card-content {
-    padding: $spacing-32 $spacing-24;
+.bio-card-content {
+  padding: $spacing-32 $spacing-24;
 
-    @include devicebreak(medium) {
-      padding: 0 $spacing-24 $spacing-32;
-    }
+  @include devicebreak(medium) {
+    padding: 0 $spacing-24 $spacing-32;
+  }
 
-    p {
-      margin-bottom: 32px;
-    }
+  p {
+    margin-bottom: $spacing-32;
+  }
 
-    p {
-      &.small {
-        @extend %paragragh-font-16
-      ;
-      }
+  p {
+    &.small {
+      @extend %paragragh-font-16
+    ;
     }
   }
 }
@@ -191,4 +191,4 @@
   }
 }
 
-/* feature card end */
+/* bio card end */

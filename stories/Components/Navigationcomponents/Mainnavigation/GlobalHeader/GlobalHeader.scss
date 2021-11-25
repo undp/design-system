@@ -17,7 +17,8 @@
         display: none;
       }
     }
-    .dropdown-language{
+
+    .dropdown-language {
       margin-left: $spacing-12;
     }
 
@@ -145,14 +146,14 @@
     }
 
     .top-left {
-      .dropdown-language{
-        margin-right: $spacing-12;
-        margin-left:0;
-      }
-      .icon-bar{
+      .dropdown-language {
+        margin-left: 0;
         margin-right: $spacing-12;
       }
 
+      .icon-bar {
+        margin-right: $spacing-12;
+      }
     }
   }
 }

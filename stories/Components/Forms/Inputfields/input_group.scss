@@ -4,10 +4,10 @@
 
 .input-group {
   &__label {
-    &--default-state,
-    &--focus-state,
-    &--error-state,
-    &--disabled-state {
+    &--default,
+    &--focus,
+    &--error,
+    &--disabled {
       @extend %paragragh-font-20;
 
       &-help {
@@ -16,7 +16,7 @@
       }
     }
 
-    &--disabled-state {
+    &--disabled {
       color: $color-gray-400;
 
       &-help {

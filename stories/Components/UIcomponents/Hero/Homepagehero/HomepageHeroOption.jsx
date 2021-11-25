@@ -8,7 +8,7 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { CtaButton } from '../../Buttons/Cta_button/CtaButton';
 
 export const Homepageherooption = ({
-  title, subtitle, button, variant, imgalt, imgsrc
+  title, subtitle, button, variant, imgalt, imgsrc,
 }) => {
   useEffect(() => {
     viewport('.hero-option__title');
