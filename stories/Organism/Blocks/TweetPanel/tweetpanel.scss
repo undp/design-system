@@ -1,0 +1,42 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+
+.twitter {
+  &-panel {
+    background-color: #232e3e;
+    overflow: hidden;
+    padding: $spacing-96 $spacing-24;
+
+    .twitter {
+      background: url(#{$img-path-Icon}/social_icon.png) no-repeat;
+      background-position: -43px -27px;
+      display: block;
+      font-size: 0;
+      height: 25px;
+      margin-bottom: 6px;
+      margin-left: -$spacing-16;
+      width: 30px;
+    }
+  }
+
+  &-header {
+    align-items: end;
+    display: flex;
+    margin-bottom: $spacing-40;
+
+    h2 {
+      color: $color-white;
+      margin-bottom: 0;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .twitter-panel {
+    .twitter {
+      margin-left: 0;
+      margin-right: -$spacing-16;
+    }
+  }
+}
