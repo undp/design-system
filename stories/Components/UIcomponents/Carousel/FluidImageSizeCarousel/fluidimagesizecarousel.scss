@@ -14,6 +14,7 @@
     @include devicebreak(small) {
       margin-top: 1.5rem;
       padding-left: 1.5rem;
+      padding-right: 2rem;
     }
 
     &-tag {
@@ -43,11 +44,11 @@
 
   .glide {
     &__track {
-      overflow: initial;
+      margin-right: -100%;
     }
 
     &__arrows {
-      bottom: -0.8rem;
+      bottom: 0;
       position: absolute;
       right: 2rem;
 
@@ -62,8 +63,11 @@
 
     &__arrow {
       @extend %carousel_arrow;
+
       margin: 0 0.4rem;
+
       img {
+        vertical-align: bottom;
         width: 2.813rem;
       }
     }
@@ -79,6 +83,11 @@
     }
 
     .glide {
+      &__track {
+        margin-left: -100%;
+        margin-right: 0;
+      }
+
       &__arrows {
         left: 2rem;
         right: auto;
