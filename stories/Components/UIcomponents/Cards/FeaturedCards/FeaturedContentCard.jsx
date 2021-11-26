@@ -23,7 +23,7 @@ export const FeaturedContentCard = ({
   }, []);
   return (
     <div className="grid-x grid-margin-x">
-      {headertext && <div className="cell medium-3 feature__card-title medium-offset-1 left-right"><Heading type="2" label={headertext} /></div>}
+      {headertext && <div className="cell large-3 small-6 feature__card-title  large-offset-1 small-offset-1 left-right inviewport"><Heading type="2" label={headertext} /></div>}
       {data.map((item, index) => (
         <div key={index} className={['cell', `${item.size ? column_options[`${item.size}`] : column_options[`${args.column}`]}`].join(' ')}>
           <a href="#" className={['feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_options[`${Image}`]}`}`].join(' ')}>
@@ -40,7 +40,7 @@ export const FeaturedContentCard = ({
                 )}
             </div>
             <article className="feature__card-content">
-              <div className="feature__card-tag">{item.contenttile}</div>
+              <Heading type="6" label={item.contenttile} />
               <div className="feature__card-description">
                 {(item.size ? item.size === 'large' : args.column === 'large') && item.contentname && <Heading type="4" label={item.contentname} />}
                 {(item.size ? item.size === 'medium' : args.column === 'medium') && item.contentname && <Heading type="5" label={item.contentname} />}
@@ -49,7 +49,7 @@ export const FeaturedContentCard = ({
                 {item.descriptionText && <P label={item.descriptionText} />}
               </div>
               <div className="feature__cta">
-                <Ctalink label={item.button} variant="Arrow" />
+                <span className="cta__link cta--arrow" >{item.button}</span>
               </div>
             </article>
           </a>

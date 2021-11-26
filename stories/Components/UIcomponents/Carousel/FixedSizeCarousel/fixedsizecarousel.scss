@@ -12,6 +12,11 @@
     }
   }
 
+  h2 {
+    margin-bottom: $spacing-50;
+    margin-top: $spacing-80;
+  }
+
   &__contents {
     @include devicebreak(medium) {
       align-content: space-between;
