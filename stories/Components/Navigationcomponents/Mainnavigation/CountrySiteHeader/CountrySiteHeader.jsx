@@ -12,8 +12,9 @@ import { init } from '../../../../assets/js/navigation';
 import './CountrySiteHeader.scss';
 
 const CountrySiteHeader = ({
-  text, languageswitcherData, navigationData, leftNavigationData, locale,
+  text, languageswitcherData, navigationData, leftNavigationData, locale, gsiteTitle, gsiteTheme,
 }) => {
+  console.log(gsiteTitle)
   useEffect(() => {
     init(locale);
   }, [locale]);
@@ -25,8 +26,9 @@ const CountrySiteHeader = ({
           <div className="cell large-3 small-6 align-self-middle top-left">
             <a href="#" className="left-logo"><Logo src={pnud} alt="UNDP Logo" /></a>
             <div className="site-title">
-              <label>GLOBAL</label>
-              <span>Site Title</span>
+              
+              <label>{gsiteTitle}</label>
+              <span>{gsiteTheme}</span>
             </div>
           </div>
           <div className="cell large-6 small-1 mid-nav">

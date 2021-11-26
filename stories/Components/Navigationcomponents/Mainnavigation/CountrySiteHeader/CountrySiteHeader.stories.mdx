@@ -10,7 +10,7 @@ export const getNavLinks = (locale) => {
                 {label: 'Who we are',id: 'headerlink1',position: 'left'},
                 {label: 'What we do',id: 'headerlink2',position: 'left'},
                 {label: 'Our Impact',id: 'headerlink3',position: 'left'},
-                {label: 'Get Involed',id: 'headerlink4',position: 'left'},
+                {label: 'Get Involved',id: 'headerlink4',position: 'left'},
               ];
         case 'arabic':
             return [
@@ -37,8 +37,22 @@ export const getNavLinks = (locale) => {
           {label: 'Who we are',id: 'headerlink1',position: 'left'},
           {label: 'What we do',id: 'headerlink2',position: 'left'},
           {label: 'Our Impact',id: 'headerlink3',position: 'left'},
-          {label: 'Get Involed',id: 'headerlink4',position: 'left'},
+          {label: 'Get Involved',id: 'headerlink4',position: 'left'},
       ];
+    }
+}
+
+export const getSiteTitle = (locale) => {
+    switch (locale) {
+        case 'english':
+            return {label: 'GLOBAL',span: 'Site Title'};
+        case 'arabic':
+          return {label: 'عالمي',span: 'عنوان الموقع'};
+        case 'burmese':
+          return {llabel: 'ကမ္ဘာလုံးဆိုင်ရာ',span: 'ငဆိုက်ခေါင်းစဉ်'};
+        case 'japanese':
+          return {label: 'グローバル',span: 'ウェブサイト名'};
+        default:return {label: 'GLOBAL',span: 'Site Title'};
     }
 }
 export const getCaptionForLocale = (locale) => {
@@ -96,7 +110,9 @@ export const menuData = (locale) => {
     const caption = getCaptionForLocale(locale);
     const navigationData= getNavLinks(locale);
     const leftNavigationData=navigationData.filter(item=>item.position==='left');
-    return <CountrySiteHeader locale={locale} leftNavigationData={leftNavigationData} navigationData={navigationData} menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)} text={caption}></CountrySiteHeader>;
+    const siteTitleData = getSiteTitle(locale);
+    console.log('siteTitleData',siteTitleData)
+    return <CountrySiteHeader gsiteTitle={siteTitleData.label} gsiteTheme={siteTitleData.span}  locale={locale} leftNavigationData={leftNavigationData} navigationData={navigationData} menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)} text={caption}></CountrySiteHeader>;
   }}
 </Story>
 

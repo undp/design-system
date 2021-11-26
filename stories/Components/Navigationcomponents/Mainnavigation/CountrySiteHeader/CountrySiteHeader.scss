@@ -18,16 +18,18 @@
 
     .site-title {
       font-size: $font-size-20;
+      margin-top: -0.25rem;
 
       label {
         border-bottom: 1px solid $color-gray-500;
         color: $color-gray-600;
         font-size: $font-size-12;
-        margin-bottom: 0.5rem;
+        padding-bottom: 0.125rem;
       }
 
       span {
         display: flex;
+        margin-top: 0.3rem;
       }
     }
 
@@ -45,6 +47,10 @@
 
       .logo {
         margin-right: $spacing-24;
+
+        @include devicebreak(small){
+          margin-right: $spacing-12;
+        }
 
         @include devicebreak(mediumonlytab) {
           height: 4.6875rem;
