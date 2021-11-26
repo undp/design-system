@@ -1,23 +1,11 @@
 @import '../../assets/scss/mixins';
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
-
+@import '../PublicationPage/publicationpage.scss';
 // margin styles
-.mtop {
-  &-three {
-    margin-top: $spacing-48;
-  }
-
-  &-four {
+.margin-top {
+  &-69 {
     margin-top: 4.3rem;
-  }
-}
-
-.contentbottom {
-  margin-bottom: $spacing-96;
-
-  @include devicebreak(medium) {
-    margin-bottom: $spacing-48;
   }
 }
 
@@ -38,5 +26,4 @@
     }
   }
 }
-
 /* page hero end */
