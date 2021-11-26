@@ -1,0 +1,314 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { GenericPage } from './GenericPage';
+import {getCaptionForLocale as footerData} from "../../Organism/Footer/Footer.stories.mdx";
+import {getCaptionForLocale as sidebarCaptionData} from "../../Components/Navigationcomponents/Sidebar/Sidebar.stories.mdx";
+import {getCaptionForLocale as ContentCardData} from  '../../Organism/Blocks/ContentCard/ContentCard.stories.mdx';
+import heroImage from '../../assets/images/generic_page_hero.jpg';
+import BackgroundVideo from '../../assets/video/video_sample.mp4';
+import fluidCarouselImg from '../../assets/images/crosssboard.jpg';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {herodata: [{
+      text: 'Home'
+    },
+    {
+      text: 'Second-level'
+    },
+    {
+      text: 'Third-level'
+    },
+    {
+      text: 'Page Title'
+    }],
+    title: 'ABOUT US',
+    content: 'UNDP',
+    imgsrc: heroImage,
+    imgalt:heroImage,
+    videosrc: BackgroundVideo,
+    detail2:'Our mission, our goals, our mandate',
+    topParagraph:'As the United Nations lead agency on international development, UNDP works in 170 countries and territories to eradicate poverty and reduce inequality. We help countries to develop policies, leadership skills, partnering abilities, institutional capabilities, and to build resilience to achieve the Sustainable Development Goals. Our work is concentrated in three focus areas; sustainable development, democratic governance and peace building, and climate and disaster resilience.',
+    headingMissionVision:'Mission and vision',
+    paraMissionVision:'UNDP’s mandate is to end poverty, build democratic governance, rule of law, and inclusive institutions. We advocate for change, and connect countries to knowledge, experience and resources to help people build a better life.',
+    headingHistory:'The UN Charter',
+    paraHistory:'The Charter of the United Nations was signed in San Francisco on 26 June 1945, at the conclusion of the United Nations Conference on International Organization, and came into force on 24 October 1945. Its purposes and principles are to maintain international peace and security, develop friendly relations among nations based on equal rights and self-determination, and to achieve international co-operation in solving economic, social, cultural, or humanitarian challenges without distinction for race, sex, language, or religion.',
+    headingUNcharter:'History',
+    paraUNcharter:'UNDP is based on the merging of the United Nations Expanded Programme of Technical Assistance, created in 1949, and the United Nations Special Fund, established in 1958. UNDP, as we know it now, was established in 1965 by the General Assembly of the United Nations.',
+    }; return engText;
+    case 'arabic': const arabicText = {herodata: [{
+     text: 'الصفحة الرئيسية'
+    },
+    {
+      text: 'المستوى الثاني'
+    },
+    {
+      text: 'المستوى الثالث'
+    },
+    {
+      text: 'عنوان الصفحة'
+    }],
+    title: 'معلومات عنا',
+    content: 'برنامج الأمم المتحدة الإنمائي',
+    imgsrc: heroImage,
+    imgalt:heroImage,
+    videosrc: BackgroundVideo,
+    detail2:'مهمتنا ، أهدافنا ، ولايتنا',
+    topParagraph:'بصفته وكالة الأمم المتحدة الرائدة في مجال التنمية الدولية ، يعمل برنامج الأمم المتحدة الإنمائي في 170 دولة وإقليمًا للقضاء على الفقر والحد من عدم المساواة. نحن نساعد البلدان على تطوير السياسات ومهارات القيادة وقدرات الشراكة والقدرات المؤسسية وبناء المرونة لتحقيق أهداف التنمية المستدامة. يتركز عملنا في ثلاثة مجالات تركيز ؛ التنمية المستدامة ، والحكم الديمقراطي وبناء السلام ، والمناخ والصمود في مواجهة الكوارث.',
+    headingMissionVision:'المهمة والرؤية',
+    paraMissionVision:'تتمثل مهمة برنامج الأمم المتحدة الإنمائي في إنهاء الفقر ، وبناء الحكم الديمقراطي ، وسيادة القانون ، والمؤسسات الشاملة. نحن ندعو للتغيير ، ونربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل.',
+    headingHistory:'ميثاق الأمم المتحدة',
+    paraHistory:'تم التوقيع على ميثاق الأمم المتحدة في سان فرانسيسكو في 26 يونيو 1945 ، في ختام مؤتمر الأمم المتحدة المعني بالمنظمة الدولية ، ودخل حيز التنفيذ في 24 أكتوبر 1945. وتتمثل أهدافه ومبادئه في الحفاظ على السلم والأمن الدوليين ، وتطوير العلاقات الودية بين الأمم على أساس المساواة في الحقوق وتقرير المصير ، وتحقيق التعاون الدولي في حل التحديات الاقتصادية أو الاجتماعية أو الثقافية أو الإنسانية دون تمييز بسبب العرق أو الجنس أو اللغة أو الدين.',
+    headingUNcharter:'تاريخ',
+    paraUNcharter:'يعتمد برنامج الأمم المتحدة الإنمائي على دمج برنامج الأمم المتحدة الموسع للمساعدة الفنية ، الذي تم إنشاؤه في عام 1949 ، وصندوق الأمم المتحدة الخاص ، الذي أنشئ في عام 1958. وقد تم إنشاء برنامج الأمم المتحدة الإنمائي ، كما نعرفه الآن ، في عام 1965 من قبل الجمعية العامة للأمم المتحدة. الأمم.',
+    }; return arabicText;
+    case 'burmese': const burmeseText = {herodata: [{
+      text: 'အိမ်ပြန်'
+    },
+    {
+      text: 'ဒုတိယအဆင့်'
+    },
+    {
+      text: 'တတိယအဆင့်'
+    },
+    {
+      text: 'စာမျက်နှာခေါင်းစဉ်'
+    }],
+    title: 'ကြှနျုပျတို့အကွောငျး',
+    content: 'UNDP',
+    imgsrc: heroImage,
+    imgalt:heroImage,
+    videosrc: BackgroundVideo,
+    detail2:'ကျွန်တော်တို့ရဲ့ ရည်မှန်းချက်တွေ၊ ရည်မှန်းချက်တွေ၊ လုပ်ပိုင်ခွင့်တွေ',
+    topParagraph:'ကုလသမဂ္ဂ နိုင်ငံတကာ ဖွံ့ဖြိုးတိုးတက်ရေးဆိုင်ရာ အေဂျင်စီအဖြစ် ဦးဆောင်သည့်အနေဖြင့် UNDP သည် ဆင်းရဲမွဲတေမှု ပပျောက်ရေးနှင့် မညီမျှမှု လျှော့ချရန်အတွက် နိုင်ငံနှင့် နယ်မြေပေါင်း ၁၇၀ တွင် လုပ်ဆောင်လျက်ရှိသည်။ မူဝါဒများ၊ ခေါင်းဆောင်မှုစွမ်းရည်၊ မိတ်ဖက်စွမ်းရည်များ၊ အဖွဲ့အစည်းဆိုင်ရာစွမ်းရည်များ ဖွံ့ဖြိုးတိုးတက်စေရန်နှင့် စဉ်ဆက်မပြတ် ဖွံ့ဖြိုးတိုးတက်မှုပန်းတိုင်များရရှိရန် ကြံ့ကြံ့ခံနိုင်ရည်ရှိစေရန် နိုင်ငံများကို ကျွန်ုပ်တို့ ကူညီပေးပါသည်။ ကျွန်ုပ်တို့၏လုပ်ငန်းကို အာရုံစူးစိုက်မှုနယ်ပယ် သုံးခုတွင် အာရုံစိုက်ထားသည်။ စဉ်ဆက်မပြတ် ဖွံ့ဖြိုးတိုးတက်ရေး၊ ဒီမိုကရေစီ အုပ်ချုပ်ရေးနှင့် ငြိမ်းချမ်းရေး တည်ဆောက်ရေး၊ ရာသီဥတုနှင့် သဘာဝဘေးဒဏ်ကို ခံနိုင်ရည်ရှိရေး၊',
+    headingMissionVision:'ရည်မှန်းချက်နှင့်အမြင်',
+    paraMissionVision:'UNDP ၏ လုပ်ပိုင်ခွင့်မှာ ဆင်းရဲမွဲတေမှု အဆုံးသတ်ရေး၊ ဒီမိုကရေစီ အုပ်ချုပ်ရေး၊ တရားဥပဒေ စိုးမိုးရေးနှင့် ပါဝင်သော အင်စတီကျူးရှင်းများ တည်ဆောက်ရန် ဖြစ်သည်။ ကျွန်ုပ်တို့သည် အပြောင်းအလဲအတွက် ထောက်ခံအားပေးပြီး လူများကို ပိုမိုကောင်းမွန်သောဘဝတည်ဆောက်နိုင်ရန် အသိပညာ၊ အတွေ့အကြုံနှင့် အရင်းအမြစ်များကို နိုင်ငံများနှင့် ချိတ်ဆက်ပေးပါသည်။',
+    headingHistory:'ကုလသမဂ္ဂပဋိညာဉ်စာတမ်း',
+    paraHistory:'ကုလသမဂ္ဂ ပဋိညာဉ်စာတမ်းကို ၁၉၄၅ ခုနှစ် ဇွန်လ ၂၆ ရက်နေ့တွင် ဆန်ဖရန်စစ္စကိုတွင် လက်မှတ်ရေးထိုးခဲ့ပြီး နိုင်ငံတကာအဖွဲ့အစည်းဆိုင်ရာ ကုလသမဂ္ဂ ညီလာခံ အပြီးတွင် ၁၉၄၅ ခုနှစ် အောက်တိုဘာလ ၂၄ ရက်နေ့တွင် အသက်ဝင်ခဲ့သည်။ ၎င်း၏ ရည်ရွယ်ချက်များနှင့် အခြေခံမူများမှာ နိုင်ငံတကာ ငြိမ်းချမ်းရေးနှင့် လုံခြုံရေးကို ထိန်းသိမ်းရန်၊ တန်းတူညီမျှအခွင့်အရေးနှင့် ကိုယ်ပိုင်ပြဋ္ဌာန်းခွင့်အပေါ် အခြေခံသော နိုင်ငံများအကြား ချစ်ကြည်ရင်းနှီးစွာ ဆက်ဆံရေးနှင့် စီးပွားရေး၊ လူမှုရေး၊ ယဉ်ကျေးမှု၊ သို့မဟုတ် လူသားချင်းစာနာမှုဆိုင်ရာ စိန်ခေါ်မှုများကို ဖြေရှင်းရာတွင် အပြည်ပြည်ဆိုင်ရာ ပူးပေါင်းဆောင်ရွက်မှုများ အောင်မြင်စေရန်၊ လူမျိုး၊',
+    headingUNcharter:'သမိုင်း',
+    paraUNcharter:'UNDP သည် 1949 ခုနှစ်တွင်ဖန်တီးခဲ့သော United Nations Expanded Technical Assistance of the Programme နှင့် 1958 ခုနှစ်တွင်တည်ထောင်ခဲ့သော United Nations Special Fund ကိုအခြေခံ၍ UNDP ကိုအခြေခံ၍ UNDP ကို ​​United Nations General Assembly မှ 1965 ခုနှစ်တွင် စတင်ဖွဲ့စည်းခဲ့ပါသည်။ လူမျိုး။',
+    }; return burmeseText;
+    case 'japanese': const japaneseText = {herodata: [{
+      text: 'الصفحة الرئيسية'
+    },
+    {
+      text: 'セカンドレベル'
+    },
+    {
+      text: '第3レベル'
+    },
+    {
+      text: 'ページタイトル'
+    }],
+    title: '私たちに関しては',
+    content: 'UNDP',
+    imgsrc: heroImage,
+    imgalt:heroImage,
+    videosrc: BackgroundVideo,
+    detail2:'私たちの使命、私たちの目標、私たちの使命',
+    topParagraph:'国連が国際開発の主導機関として、UNDPは170の国と地域で貧困を根絶し、不平等を減らすために活動しています。私たちは、各国が政策、リーダーシップスキル、パートナー能力、制度的能力を開発し、持続可能な開発目標を達成するためのレジリエンスを構築するのを支援します。私たちの仕事は3つの重点分野に集中しています。持続可能な開発、民主的統治と平和構築、そして気候と災害に対する回復力',
+    headingMissionVision:'ミッションとビジョン',
+    paraMissionVision:'UNDPの使命は、貧困を終わらせ、民主的な統治、法の支配、そして包摂的な制度を構築することです。私たちは変化を提唱し、人々がより良い生活を築くのを助けるために、国を知識、経験、資源に結び付けます。',
+    headingHistory:'国連憲章',
+    paraHistory:'国連憲章は、1945年6月26日、国際組織に関する国連会議の終わりにサンフランシスコで署名され、1945年10月24日に発効しました。その目的と原則は、国際の平和と安全を維持し、発展させることです。平等な権利と自己決定に基づく国家間の友好関係、および人種、性別、言語、または宗教を区別することなく、経済的、社会的、文化的、または人道的課題を解決するための国際協力を達成すること。',
+    headingUNcharter:'歴史',
+    paraUNcharter:'UNDPは、1949年に創設された国連拡張技術支援プログラムと1958年に設立された国連特別基金の統合に基づいています。UNDPは、現在私たちが知っているように、1965年に国連総会によって設立されました。国連。',
+    }; return japaneseText;
+    default:
+      const dummy =  {herodata: [{
+      text: 'Home'
+    },
+    {
+      text: 'Second-level'
+    },
+    {
+      text: 'Third-level'
+    },
+    {
+      text: 'Page Title'
+    }],
+    title: 'ABOUT US',
+    content: 'UNDP',
+    imgsrc: heroImage,
+    imgalt:heroImage,
+    videosrc: BackgroundVideo,
+    detail2:'Our mission, our goals, our mandate',
+    topParagraph:'As the United Nations lead agency on international development, UNDP works in 170 countries and territories to eradicate poverty and reduce inequality. We help countries to develop policies, leadership skills, partnering abilities, institutional capabilities, and to build resilience to achieve the Sustainable Development Goals. Our work is concentrated in three focus areas; sustainable development, democratic governance and peace building, and climate and disaster resilience.',
+    headingMissionVision:'Mission and vision',
+    paraMissionVision:'UNDP’s mandate is to end poverty, build democratic governance, rule of law, and inclusive institutions. We advocate for change, and connect countries to knowledge, experience and resources to help people build a better life.',
+    headingHistory:'The UN Charter',
+    paraHistory:'The Charter of the United Nations was signed in San Francisco on 26 June 1945, at the conclusion of the United Nations Conference on International Organization, and came into force on 24 October 1945. Its purposes and principles are to maintain international peace and security, develop friendly relations among nations based on equal rights and self-determination, and to achieve international co-operation in solving economic, social, cultural, or humanitarian challenges without distinction for race, sex, language, or religion.',
+    headingUNcharter:'History',
+    paraUNcharter:'UNDP is based on the merging of the United Nations Expanded Programme of Technical Assistance, created in 1949, and the United Nations Special Fund, established in 1958. UNDP, as we know it now, was established in 1965 by the General Assembly of the United Nations.',
+    };
+    return dummy
+  }
+};
+
+export const statsArray = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {data: [{
+      slideImage: fluidCarouselImg,
+      tagtext: 'Blog post',
+      titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
+      descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+      buttonText: 'Read More'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'Blog post',
+      titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
+      descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+      buttonText: 'Read More'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'Blog post',
+      titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
+      descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+    }]}; return engText.data;
+    case 'arabic': const arabicText = {data: [{
+      slideImage: fluidCarouselImg,
+      tagtext: 'مشاركة مدونة',
+      titleText: 'نقاط الدخول والخروج: التطرف العنيف في جنوب شرق آسيا',
+      descText: 'تلخص هذه الدراسة أربع أوراق تكميلية متعمقة تستكشف ...',
+      buttonText: 'اقرأ أكثر'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'مشاركة مدونة',
+      titleText: 'نقاط الدخول والخروج: التطرف العنيف في جنوب شرق آسيا',
+      descText: 'تلخص هذه الدراسة أربع أوراق تكميلية متعمقة تستكشف ...',
+      buttonText: 'اقرأ أكثر'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'مشاركة مدونة',
+      titleText: 'نقاط الدخول والخروج: التطرف العنيف في جنوب شرق آسيا',
+      descText: 'تلخص هذه الدراسة أربع أوراق تكميلية متعمقة تستكشف ...',
+      buttonText: 'اقرأ أكثر'
+    }]}; return arabicText.data;
+    case 'burmese': const burmeseText = {data: [{
+      slideImage: fluidCarouselImg,
+      tagtext: 'ဘလော့ပို့စ်',
+      titleText: 'အဝင်နှင့်အထွက်အချက်များ- အရှေ့တောင် အာရှတွင် ပြင်းထန်သော အစွန်းရောက်ဝါဒ',
+      descText: 'ဤလေ့လာမှုသည် ဒေသန္တရပုံစံကို စူးစမ်းလေ့လာသည့် အသေးစိပ် လေးနက်သော စာတမ်းလေးစောင်ကို အကျဉ်းချုပ်ဖော်ပြထားသည်...',
+      buttonText: 'ပိုပြီးဖတ်ပါ'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'ဘလော့ပို့စ်',
+      titleText: 'အဝင်နှင့်အထွက်အချက်များ- အရှေ့တောင် အာရှတွင် ပြင်းထန်သော အစွန်းရောက်ဝါဒ',
+      descText: 'ဤလေ့လာမှုသည် ဒေသန္တရပုံစံကို စူးစမ်းလေ့လာသည့် အသေးစိပ် လေးနက်သော စာတမ်းလေးစောင်ကို အကျဉ်းချုပ်ဖော်ပြထားသည်...',
+      buttonText: 'ပိုပြီးဖတ်ပါ'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'ဘလော့ပို့စ်',
+      titleText: 'အဝင်နှင့်အထွက်အချက်များ- အရှေ့တောင် အာရှတွင် ပြင်းထန်သော အစွန်းရောက်ဝါဒ',
+      descText: 'ဤလေ့လာမှုသည် ဒေသန္တရပုံစံကို စူးစမ်းလေ့လာသည့် အသေးစိပ် လေးနက်သော စာတမ်းလေးစောင်ကို အကျဉ်းချုပ်ဖော်ပြထားသည်...',
+      buttonText: 'ပိုပြီးဖတ်ပါ'
+    }]}; return burmeseText.data;
+    case 'japanese': const japaneseText = {data: [{
+      slideImage: fluidCarouselImg,
+      tagtext: 'ブログ投稿',
+      titleText: '入口と出口：東南アジアにおける暴力的過激主義',
+      descText: 'この調査では、ローカライズされたものを調査する4つの補足的な詳細な論文を要約しています…',
+      buttonText: '続きを読む'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'ブログ投稿',
+      titleText: '入口と出口：東南アジアにおける暴力的過激主義',
+      descText: 'この調査では、ローカライズされたものを調査する4つの補足的な詳細な論文を要約しています…',
+      buttonText: '続きを読む'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'ブログ投稿',
+      titleText: '入口と出口：東南アジアにおける暴力的過激主義',
+      descText: 'この調査では、ローカライズされたものを調査する4つの補足的な詳細な論文を要約しています…',
+      buttonText: '続きを読む'
+    }]}; return japaneseText.data;
+    default:
+    const dummy =  {data: [{
+      slideImage: fluidCarouselImg,
+      tagtext: 'Blog post',
+      titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
+      descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+      buttonText: 'Read More'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'Blog post',
+      titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
+      descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+      buttonText: 'Read More'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'Blog post',
+      titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
+      descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+      buttonText: 'Read More'
+    }]};
+    return dummy.data
+  }
+};
+
+<Meta title="Templates/Generic Page"/>
+
+<style>{`
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+`}</style>
+
+# Generic Page Templates
+Template for Generic Page
+
+
+<Story name="Generic Page">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    const carouselData = statsArray(locale);
+    return (
+      <GenericPage 
+        herodata={caption.herodata} 
+        title={caption.title} 
+        content={caption.content} 
+        imgsource={caption.imgsrc} 
+        altname={caption.imgalt}
+        topHeading={caption.detail2}
+        topParagraph={caption.topParagraph} 
+        carouselData={carouselData}   
+        headingMissionVision={caption.headingMissionVision}
+        paraMissionVision={caption.paraMissionVision}
+        headingHistory={caption.headingHistory}
+        paraHistory={caption.paraHistory}
+        headingUNcharter={caption.headingUNcharter}
+        paraUNcharter={caption.paraUNcharter}    
+        //heroCaptionData={heroCaptionData(locale)}
+        sidebarCaptionData={sidebarCaptionData(locale)} 
+        ContentCardData={ContentCardData(locale)} 
+        footerData={footerData(locale)}
+        
+      ></GenericPage>
+    );
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+    <li>Take HTML from the HTML tab in the canvas</li>
+    <u>To use SCSS include the following files in your implementation</u>
+    <li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
+    <li>Component SCSS file: <code>postheader.scss</code></li>
+    <u>To use CSS include the following files in your implementation</u>
+    <li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

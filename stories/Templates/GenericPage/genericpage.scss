@@ -1,0 +1,23 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+.sidebar-width .accordion-wrapper{
+    width: 90%;
+    margin-top: 0.8rem;
+}
+
+.margin_top {
+    &-three {
+      margin-top: $spacing-48;
+    }
+  
+    &-four {
+      margin-top: 4.5rem;
+    }
+
+    &-five {
+        margin-top: $spacing-80;
+    }
+  }
+ 

@@ -136,7 +136,7 @@ The Page hero component multiusage component which creates boxes that are usuall
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
-      <PageHero data={caption.herodata} title={caption.title} content={caption.content} active={'white'}  {...args}
+      <PageHero data={caption.herodata} title={caption.title} content={caption.content} active={'white'} imgsrc={caption.imgsrc} imgalt={caption.imgalt} {...args}
       ></PageHero>
     );
   }}
