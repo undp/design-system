@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, Source } from "@storybook/addon-docs";
 import { StatsPanel } from "./StatsPanel";
+import BackgroundImg from '../../../assets/images/card2.jpg';
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
@@ -97,6 +98,7 @@ Stats Panel component defines a card of information data with some items - Image
           percent={caption.percentname}
           content={caption.text}
           number={caption.number}
+          imageback={BackgroundImg}
         ></StatsPanel>
       );
     }}

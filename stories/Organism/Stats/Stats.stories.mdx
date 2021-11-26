@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { Stats } from './Stats';
+import BackgroundImg from '../../assets/images/card2.jpg';
 
 export const statsArray = (locale) => {
   switch(locale) {
@@ -146,7 +147,7 @@ The Stats Component is created for showing the Statspanel grid, designation, and
 <Story name="Stats">
   {(args, { globals: { locale } }) => {
     const caption = statsArray(locale);
-    return <Stats data={caption}></Stats>;
+    return <Stats data={caption} imageback={BackgroundImg} ></Stats>;
   }}
 </Story>
 
