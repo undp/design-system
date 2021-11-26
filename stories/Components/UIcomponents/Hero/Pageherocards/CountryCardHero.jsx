@@ -16,10 +16,10 @@ export const CountryCardHero = ({ data, title, subtitle }) => {
     <div className="countrycard__wrapper">
       <div className="grid-x countrycard__header">
         <div className="cell large-5 medium-12">
-          <Heading type="1" className="left-right-1" label={title} />
+          <Heading type="1" className="left-right" label={title} />
         </div>
         <div className="cell large-4 medium-12 countrycard-border">
-          <Heading type="6" className="left-right-1" label={subtitle} />
+          <Heading type="6" className="left-right" label={subtitle} />
         </div>
       </div>
       <div className="glide countrycard__items">

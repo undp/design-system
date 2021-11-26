@@ -1,0 +1,86 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+
+.parallax-gallery {
+  &-row {
+    &__left-col {
+      display: flex;
+
+      @include devicebreak(small) {
+        margin-bottom: 0.75rem;
+      }
+
+      &.grey {
+        background: $color-gray-200;
+      }
+    }
+
+    &__right-col {
+      position: relative;
+    }
+
+    &__content {
+      padding: 1.5rem 1rem;
+
+      @include devicebreak(medium) {
+        margin: auto;
+        max-width: 28rem;
+      }
+
+      h5 {
+        margin-bottom: 2rem;
+
+        @include devicebreak(small) {
+          margin-bottom: 1rem;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+
+        @include devicebreak(small) {
+          font-size: 0.875rem;
+          margin-bottom: 2rem;
+        }
+      }
+
+      .cta__link {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &-images {
+    display: grid;
+    grid-column-gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -15%;
+    //height: 130%;
+
+    @include devicebreak(small) {
+      grid-column-gap: 0.75rem;
+    }
+
+    img {
+      display: block;
+      font-size: 0;
+      height: 55%;
+      margin-bottom: 1.5rem;
+      object-fit: cover;
+      width: 100%;
+
+      @include devicebreak(small) {
+        margin-bottom: 0.75rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
