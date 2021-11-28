@@ -1,0 +1,20 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/typography';
+@import '../../../assets/scss/breakpoints';
+
+.heading-container {
+  background-color: #232e3e;
+  color: $color-white;
+  justify-content: center;
+  overflow: hidden;
+  padding-bottom: $spacing-96;
+  padding-top: $spacing-96;
+
+  h4 {
+    margin-top: $spacing-50;
+
+    @include devicebreak(medium) {
+      margin-top: 0;
+    }
+  }
+}
