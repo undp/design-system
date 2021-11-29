@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Accordion } from './Accordion'
 
 export const getCaptionForLocale = (locale) => {
@@ -14,60 +14,74 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/UI components/Accordion" component={Accordion} />
 
-<style>{`
-  .sbdocs-h1 {
-    font-weight: 700;
-  }
-  .subheading {
-    font-weight: 500;
-    font-size: 22px;
-    color: #161616;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .high {
-    font-weight: 500;
-    font-size: 14px;
-    color: #161616;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .docblock-code-toggle {
-    display: none;
-  }
-`}</style>
+# Accordion
+## An accordion is a vertically stacked list of titles that reveal or hide additional content when selected.
 
-# Faq Component
-The FAQ component is responsible for managing the isOpen and toggle functionality to each Item component define in this component, for display the data used items fileds - Header title, Description.  <code>H5</code> <code>P</code> Atoms tags are used for creating this section.
+### Overview
+The accordion component delivers large amounts of content in a small space through progressive disclosure. The accordion title gives the user a high-level overview of the content allowing the user to decide which sections to read.
 
-<Story name="Accordion">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Accordion headerText={caption.header} descriptionText={caption.description}></Accordion>;
-  }}
-</Story>
+Accordions make information processing and discovering more effective. However, it does obscure content from users and it is important to account for a user not noticing or reading all content placed within an accordion section. If it is necessary for a user to read all of the content then don’t use an accordion as it adds the burden of an extra click; instead use a full scrolling page with normal headers.
 
-<div className="subheading">Dependency</div>
-
-Libraries or another dependency which are used in the component.
-
-<ul>
-<li>For toggle functionality its depend on the jQuery plugin library, that is placed in preview-head.html file.</li>
-<li>Custom JS file (Faq.js) is located in the same component folder.</li>
-<li>ID - (#accordion) is used in the JSX file to connect the Custom JS file to achieve the functionality.</li>
-</ul>
+#### When to use:
+- To organize related information.
+- To shorten pages and reduce scrolling when content is not crucial to read in full.
+- When space is at a premium and long content cannot be displayed all at once, like on a mobile interface or in a side panel.
+- If you have only a small space to display a lot of content.
 
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>Faq.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Formatting
+
+#### Default
+
+<Canvas>
+  <Story 
+      name="Accordion"
+      parameters={
+        { 
+          docs: { 
+            source: { 
+              code: `<dfdf>`
+            }
+          }
+        }
+      }>
+    {
+      (args, { globals: { locale } }) => {
+        const caption = getCaptionForLocale(locale);
+        return <Accordion headerText={caption.header} descriptionText={caption.description}></Accordion>;
+      }
+    }
+  </Story>
+</Canvas>
+
+
+### Content
+
+The accordion is made up of a title and body copy. Accordion titles should use a short amount of text that describes the content of the body copy.
+
+The contents within an accordion section may utilize multiple paragraphs and subsections as needed.
+
+
+### Behaviors
+
+#### States
+
+An accordion panel  has two states: collapsed and expanded. The chevron icon at the end of the accordion title should indicate the accordion panel’s state. By default, all panels of an accordion should begin at the collapsed state. The following behavior modifiers are available: 
+
+- **Multi-expand**. By default only one panel of the accordion can be open at a time. It can be changed by assigning  data-multi-expand=”true”  attribute to the accordion’s outermost element. 
+- **Disabled**: temporary removing expanding capability of the specific panel while preserving overall look and feel
+- **Active**: while default state of all panels is “close” we can enable certain panels by assigning class  .is-active  to it
+
+
+#### Interactions
+
+The entire accordion title and chevron is selectable. Users can click anywhere in the title area to expand or collapse the content, providing a large, easy to manipulate target.
+
+#### Accordion and URLs
+
+- Optional **deep linking** - allow users to open a particular accordion panel at page load with hash-appended URL. Configurable by setting  data-deep-link=”true” , disabled by default
+- Browser history - modifying widget behavior for browser history modification, by default each click replaces current page’s URL, but by using  data-update-history=”true”  you can instruct browser to insert new entries on every click providing ability to track back the navigation history while clicking Back button.
+
+
+#### Changelog
+1.0 — Released component
