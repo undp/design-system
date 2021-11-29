@@ -16,28 +16,28 @@ import { Authorcard } from '../../Components/UIcomponents/Author/Authorcard/Auth
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 import { SearchExpand } from '../../Components/Forms/expandable search/SearchExpand';
 
-
-const Authors = ({ breadcrumbData, authorSummeryData, contentCardData, footerData,
+const Authors = ({
+  breadcrumbData, authorSummeryData, contentCardData, footerData,
   sortText, viewText, closeText,
-  undpheading, text, authorData, headingData, buttontype, buttonData
+  undpheading, text, authorData, headingData, buttontype, buttonData,
 }) => {
   useEffect(() => {
     viewport('.feature__card--headertext');
     init();
-    $(".sort-btn").click(function(){
-      $(".author-filter").addClass("author-filter-show");
-      $(".close-btn").addClass("show-close");
-      $(this).addClass("hide-sort");
-      $(".author-cards").addClass("find-first-author");
+    $('.sort-btn').click(function sortclick() {
+      $('.author-filter').addClass('author-filter-show');
+      $('.close-btn').addClass('show-close');
+      $(this).addClass('hide-sort');
+      $('.author-cards').addClass('find-first-author');
     });
-    $(".close-btn").click(function(){
-      $(".author-filter").removeClass("author-filter-show");
-      $(this).removeClass("show-close");
-      $(".sort-btn").removeClass("hide-sort");
-      $(".author-cards").removeClass("find-first-author");
+    $('.close-btn').click(function closeclick() {
+      $('.author-filter').removeClass('author-filter-show');
+      $(this).removeClass('show-close');
+      $('.sort-btn').removeClass('hide-sort');
+      $('.author-cards').removeClass('find-first-author');
     });
   }, []);
-  console.log('authorSummeryData', authorSummeryData)
+  console.log('authorSummeryData', authorSummeryData);
   return (
     <div>
       <div className="grid-container fluid author-page">
@@ -52,7 +52,7 @@ const Authors = ({ breadcrumbData, authorSummeryData, contentCardData, footerDat
             <CtaButton label2={sortText} variant="Secondary" />
           </div>
           <div className="cell small-12 close-btn">
-            <CtaButton label2={closeText} variant="Secondary"/>
+            <CtaButton label2={closeText} variant="Secondary" />
           </div>
         </div>
         <div className="grid-x grid-margin-x author-filter">
@@ -80,15 +80,15 @@ const Authors = ({ breadcrumbData, authorSummeryData, contentCardData, footerDat
         <div className="grid-x">
           <div className="cell medium-offset-3 medium-9 small-12">
             <div className="grid-x grid-margin-x author-cards">
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link='#' width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link='#' width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link='#' width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link='#' width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link='#' width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link='#' width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link='#' width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link='#' width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link='#' width="medium-12" />
+              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
+              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
+              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
+              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
+              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
+              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
+              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
+              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
+              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
               <div className="cell small-12 view-btn-cell">
                 <CtaButton label2={viewText} variant="Secondary" />
               </div>
