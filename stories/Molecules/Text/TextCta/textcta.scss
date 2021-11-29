@@ -1,0 +1,29 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+.trusted-partnerships {
+  &__container {
+    background: $color-gray-200;
+    padding-bottom: $spacing-96;
+    padding-top: $spacing-48;
+  }
+
+  &--header {
+    p {
+      margin-top: $spacing-40;
+
+      @include devicebreak(medium) {
+        margin-top: $spacing-80;
+      }
+    }
+
+    .button--primary {
+      margin-top: $spacing-40;
+
+      @include devicebreak(medium) {
+        margin-top: $spacing-64;
+      }
+    }
+  }
+}
