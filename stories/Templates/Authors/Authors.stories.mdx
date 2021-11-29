@@ -1,0 +1,83 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import Authors from './Authors';
+import {getCaptionForLocale as breadcrumbData } from "../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs.stories.mdx"
+import {getCaptionForLocale as authorSummeryData } from "../../Organism/Blocks/Authorcard/AuthorSummary.stories.mdx"
+import {getCaptionForLocale as contentCardData } from "../../Organism/Blocks/ContentCard/ContentCard.stories.mdx"
+import {getCaptionForLocale as footerData} from "../../Organism/Footer//Footer.stories.mdx";
+import {getCaptionForLocale as authorData} from "../../Components/UIcomponents/Author/Authorcard/Authorcard.stories.mdx";
+
+export const getheadingForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'UNDP Authors'; return engText;
+    case 'arabic': const arabicText = 'UNDP المؤلفون'; return arabicText;
+    case 'burmese': const burmeseText = 'UNDP စာရေးသူမျာ'; return burmeseText;
+    case 'japanese': const japaneseText = 'UNDP 著者'; return japaneseText;
+    default: return 'UNDP Authors';
+  }
+};
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'SORT BY'; return engText;
+    case 'arabic': const arabicText = 'اختار اللغة'; return arabicText;
+    case 'burmese': const burmeseText = 'ဘာသာစကားကို ရွေးပါ။'; return burmeseText;
+    case 'japanese': const japaneseText = '言語を選択する'; return japaneseText;
+    default: return 'SORT BY';
+  }
+};
+export const getButtonForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {view:'View more', close:'Close', sort:'Sort & FILTER'}; return engText;
+    case 'arabic': const arabicText = {view:'عرض المزيد', close:'قريب', sort:'فرز وتصفية'}; return arabicText;
+    case 'burmese': const burmeseText = {view:'ပိုမိုကြည့်ရှုပါ။', close:'ပိတ်လိုက်', sort:'စီရန် & စစ်ထုတ်ပါ။'}; return burmeseText;
+    case 'japanese': const japaneseText = {view:'もっと見る', close:'選ぶ', sort:'ソート＆フィルター'}; return japaneseText;
+    default: return {view:'View more', close:'Close', sort:'Sort & FILTER'};
+  }
+};
+
+<Meta title="Templates/Authors" />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+`}</style>
+
+<Story name="Authors">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    const buttonData = getButtonForLocale(locale);
+    const headingData = getheadingForLocale(locale);
+    
+    return <Authors
+    text={caption}
+    viewText = {buttonData.view}
+    sortText = {buttonData.sort}
+    closeText = {buttonData.close}
+     footerData={footerData(locale)}
+     authorData={authorData(locale)}
+     breadcrumbData={breadcrumbData(locale)}
+     authorSummeryData={authorSummeryData(locale)}
+     headingData={headingData}
+     contentCardData={contentCardData(locale)}>
+      </Authors>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<li><u>To use SCSS include the following files in your implementation</u></li>
+<li>Component SCSS file: <code>ArticlePage.scss</code></li>
+<li><u>To use CSS include the following files in your implementation</u></li>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

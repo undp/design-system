@@ -1,0 +1,114 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/breakpoints";
+
+.author-page {
+  .align-center {
+    display: flex;
+    align-items: flex-end;
+    .exoandablesearch {
+      width: 100%;
+    }
+  }
+  .mobile-author-filter {
+    display: none;
+    @include devicebreak(small) {
+      display: block;
+    }
+  }
+  .author-filter {
+    @include devicebreak(small) {
+      display: none;
+      &.author-filter-show {
+        display: block;
+      }
+    }
+  }
+  .hide-sort {
+    display: none;
+  }
+  .close-btn {
+    display: none;
+
+    &.show-close {
+      display: block;
+    }
+    .button {
+      &.button--secondary {
+        background-color: $color-gray-300;
+        color: $color-black;
+      }
+    }
+  }
+  .button {
+    text-transform: uppercase;
+  }
+  .authors-heading {
+    margin: $spacing-96 0 $spacing-64;
+    @include devicebreak(small) {
+      margin: $spacing-40 0 $spacing-64;
+    }
+  }
+
+  .author-content {
+    margin-top: $spacing-80;
+    margin-bottom: $spacing-136;
+  }
+  .authorcard {
+    border-top: 2px solid #000;
+    margin-top: $spacing-64;
+    padding-top: $spacing-24;
+    @include devicebreak(small) {
+      margin-top: $spacing-40;
+    }
+  }
+  @include devicebreak(small) {
+    .author-cards {
+      .cell {
+        &:first-child {
+          .authorcard {
+            @include devicebreak(small) {
+              border-top: 0;
+              margin-top: 0;
+            }
+          }
+        }
+      }
+      &.find-first-author {
+        .cell {
+          &:first-child {
+            .authorcard {
+              @include devicebreak(small) {
+                border-top: 2px solid #000;
+                margin-top: $spacing-40;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .view-btn-cell {
+    margin-top: 3.75rem;
+    margin-bottom: 4.1875rem;
+  }
+  .select-box {
+    max-width: 100%;
+    &.author-select {
+      .selected {
+        min-width: calc(100% - 4px);
+      }
+    }
+  }
+
+  [dir="rtl"] {
+    .author-page {
+      .medium-offset-1 {
+        @include devicebreak(small) {
+          margin-right: 0;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
