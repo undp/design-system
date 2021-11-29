@@ -55,7 +55,7 @@
     margin-bottom: $spacing-136;
   }
   .authorcard {
-    border-top: 2px solid #000;
+    border-top: 2px solid $color-black;
     margin-top: $spacing-64;
     padding-top: $spacing-24;
     @include devicebreak(small) {
@@ -79,7 +79,7 @@
           &:first-child {
             .authorcard {
               @include devicebreak(small) {
-                border-top: 2px solid #000;
+                border-top: 2px solid $color-black;
                 margin-top: $spacing-40;
               }
             }

@@ -17,7 +17,7 @@
     padding-bottom: $spacing-12;
     border: 0;
     box-sizing: border-box;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid $color-black;
     position: relative;
     font-size: $font-size-14;
     background-color: transparent;
@@ -28,7 +28,7 @@
       width: 100%;
       padding-left: $spacing-40;
       outline: none;
-      background-color: #fff;
+      background-color: $color-white;
       z-index: 1;
       cursor: text;
     }
