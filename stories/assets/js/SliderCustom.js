@@ -15,7 +15,7 @@ export function GlideSlider(ele, gapele) {
   });
   const glidefuntion = function () {
     if ($(window).width() <= 767) {
-      $('.stats-card-parallax .glide__slide, .stats-card-parallax .grid-x').unwrap();
+      $('.stats-card-parallax .glide__slide').unwrap();
       glide.mount();
     } else {
       glide.destroy();
@@ -35,25 +35,32 @@ export function ParallaxEffect(ele, yele, triggerclass, scrubtime, cssdiv) {
       const cardWrap = $('.stats-card-grid .glide__slide');
       if (cardWrap.parent('.glide__slides').length) {
         for (let i = 0; i < cardWrap.length; i += 3) {
-          cardWrap.slice(i, i + 3).wrapAll("<div class='stats-card-parallax'><div class='grid-x'></div></div>");
+          cardWrap.slice(i, i + 3).wrapAll("<div class='stats-card-parallax'></div>");
         }
       }
       // Start two row vertical parallax
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.utils.toArray('.stats-card-parallax').forEach((n, index) => {
-        const w = n.querySelector('.grid-x');
-        const [x, xEnd] = (index % 2) ? ['100%', ((w.scrollWidth * 1.5) - n.offsetWidth) * -1] : [(w.scrollWidth) * -1, '20%'];
-        gsap.fromTo(w, { x }, {
-          x: xEnd,
-          scrollTrigger: {
-            scrub: 2,
-            ease: 'SlowMo',
-            trigger: n,
-            duration: 5,
-            start: 'top bottom',
-            end: 'bottom top',
-          },
-        });
+      gsap.utils.toArray('.stats-card-grid').forEach((t) => {
+        t.querySelectorAll('.stats-card-parallax').forEach((function (e, n) {
+          let num = '0';
+          if ($('html').attr('dir') == 'rtl') {
+            num = '1';
+          }
+          var r = (n + 1) % 2 != num,
+            o = gsap.timeline({
+              scrollTrigger: {
+                scrub: !0,
+                ease: "SlowMo",
+                trigger: t,
+                start: "top bottom",
+                end: "bottom top"
+              }
+            });
+          o.from(e, {
+            xPercent: 70 * (r ? -1 : 1)
+          }), o.to(e, {
+            xPercent: 10 * (r ? 1 : -1)
+          })
+        }));
       });
       // End two row vertical parallax
       gsap.to(ele, {
