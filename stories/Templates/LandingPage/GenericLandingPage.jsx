@@ -25,14 +25,14 @@ export const GenericLandingPage = ({
         </div>
       </div>
     </div>
-    <div className="grid-container fluid contentbottom">
-      <div className="grid-x grid-margin-x mtop-three">
+    <div className="grid-container fluid content-bottom">
+      <div className="grid-x grid-margin-x margin-top-48">
         <div className="cell large-3 small-12">
           <div className="column">
             <FilterAndSearchBar data={data} clearText={clearText} activeFilterText={activeFilterText} />
           </div>
         </div>
-        <div className="cell large-9 small-12 mtop-four">
+        <div className="cell large-9 small-12 margin-top-69">
           <div className="column">
             <ContentCard
               data={groupcontentdata}

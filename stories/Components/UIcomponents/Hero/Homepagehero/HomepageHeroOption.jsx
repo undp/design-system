@@ -15,7 +15,7 @@ export const Homepageherooption = ({
     viewport('.hero-option__subtitle');
   }, []);
   return (
-    <div className="hero-option hero-border_left">
+    <div className="hero-option hero-border_left">      
       <Heading type="1" className="hero-option__title left-right" label={title} />
       <div className="grid-x">
         <div className="cell large-4 medium-4">
