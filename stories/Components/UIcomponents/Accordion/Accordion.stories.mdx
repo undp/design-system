@@ -1,4 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { renderToStaticMarkup } from 'react-dom/server'
+
 import { Accordion } from './Accordion'
 
 export const getCaptionForLocale = (locale) => {
@@ -34,17 +36,7 @@ Accordions make information processing and discovering more effective. However, 
 #### Default
 
 <Canvas>
-  <Story 
-      name="Accordion"
-      parameters={
-        { 
-          docs: { 
-            source: { 
-              code: `<dfdf>`
-            }
-          }
-        }
-      }>
+  <Story name="Accordion">
     {
       (args, { globals: { locale } }) => {
         const caption = getCaptionForLocale(locale);
