@@ -42,6 +42,11 @@
   .stats-card-parallax {
     margin-bottom: 2.625rem;
 
+    @include devicebreak(medium){
+      display: flex;
+      justify-content: center;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -58,16 +63,6 @@
 
     &:hover {
       background-color: $color-light-yellow;
-    }
-  }
-}
-
-[dir='rtl'] {
-  .stats-card-grid {
-    @include devicebreak(medium) {
-      .grid-x {
-        flex-direction: row-reverse;
-      }
     }
   }
 }
