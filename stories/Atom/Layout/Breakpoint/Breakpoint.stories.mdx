@@ -1,0 +1,54 @@
+import { Meta, Story, Source} from '@storybook/addon-docs';
+
+<Meta title="Foundation/Layout/Breakpoint" />
+
+# Breakpoints system
+
+Desktop and Tablet
+The grid system is working on the breakpoints, three breakpoint <code> small </code>  <code> medium </code> <code> Large </code>  are define to manage the layout according to devices resolutions with gutter spacing for Left or Right margin. 
+
+<table class="page-table">
+   <thead>
+      <tr>
+         <th>Breakpoints</th>
+         <th>Class prefix</th>
+         <th># of cell</th>
+         <th>Gutter width*</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>small - max-width:767px</td>
+         <td><code>small-</code></td>
+         <td>4</td>
+         <td>6px+6px=12px</td>
+      </tr>
+      <tr>
+         <td>medium - min-width: 768px</td>
+         <td><code>medium-</code></td>
+         <td>8</td>
+         <td>12px+12px=24px</td>
+      </tr>
+      <tr>
+         <td>large - min-width: 1024px </td>
+         <td><code>large-</code></td>
+         <td>10</td>
+         <td>12px+12px=24px</td>
+      </tr>
+      <tr>
+         <td>xlarge - min-width: 1440px</td>
+         <td><code>x-large-</code></td>
+         <td>12</td>
+         <td>12px+12px=24px</td>
+      </tr>
+   </tbody>
+</table>
+
+## Usage
+
+- We can use grid by taking the grid class from the <code>assets/SCSS/grid.scss</code>
+- <u>To use SCSS include the following files in your implementation</u>
+- Include the common SCSS files like normalize, variables from <code>assets/scss</code>
+- Component SCSS file: <code>layout.scss</code>
+- <u>To use CSS include the following files in your implementation</u>
+- The compiled CSS file from <code>assets/css/style.css</code>
