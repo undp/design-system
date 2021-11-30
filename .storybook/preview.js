@@ -4,7 +4,7 @@ import anysort from 'anysort'
 import { addParameters } from '@storybook/react'
 import renderToHTML from './renderToHTML'
 
-import '../stories/assets/scss/normalize.scss';
+//import '../stories/assets/scss/normalize.scss';
 
 initializeRTL();
 
