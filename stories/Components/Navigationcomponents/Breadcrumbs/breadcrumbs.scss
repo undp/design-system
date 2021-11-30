@@ -129,3 +129,10 @@
     }
   }
 }
+
+// burmese lang
+:lang(my){
+  .breadcrumb li:last-child {
+    font-size: $font-size-12;
+  }
+}

@@ -103,4 +103,12 @@
   }
 }
 
+// burmese lang
+:lang(my){
+  .image__caption {
+    .image__caption_para, .credits {
+      line-height: 1.7;
+    }
+  }
+}
 /* image caption end */

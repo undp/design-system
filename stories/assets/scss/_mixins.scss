@@ -434,3 +434,39 @@
   background-color: white;
 }
 /* placehoder end */
+
+//burmese lang
+:lang(my){
+  %carousel_tag {
+    font-size: 1rem;
+  }
+
+  %paragragh-font-16 {
+    font-size: $font-size-12;
+    line-height: 1.7;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-14;
+    }
+  }
+
+  %paragragh-font-20 {
+    font-size: $font-size-14;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-16;
+    }
+  }
+
+  %paragragh-font-24 {
+    font-size: $font-size-20;
+    line-height: 1.1;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-24;
+    }
+  }
+  %button {
+    font-size: $font-size-14;
+  }
+}

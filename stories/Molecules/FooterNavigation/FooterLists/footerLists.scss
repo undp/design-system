@@ -103,4 +103,14 @@
   }
 }
 
+//burmese lang
+:lang(my){
+  .footer {
+    &__panel {
+      a {
+        line-height: 1.9;
+      }
+    }
+  }
+}
 /* footer items end */

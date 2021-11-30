@@ -44,4 +44,15 @@
     padding-right: 0;
   }
 }
+
+//burmese lang
+:lang(my){
+  .footer__condition_text {
+    li {
+      a {
+        line-height: 1.9;
+      }
+    }
+  }
+}
 // * footer condition end *//
