@@ -2,6 +2,7 @@
 @import '../../assets/scss/mixins';
 @import '../../assets/scss/base';
 
+/* footer start */
 .footer {
   background-color: $color-gray-100;
   padding: $spacing-48 $spacing-12 $spacing-40;
@@ -190,3 +191,5 @@
     }
   }
 }
+
+/* footer end */

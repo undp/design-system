@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import pnud from '../../../..//assets/images/logo.svg';
+import pnud from '../../../../assets/images/logo.svg';
 import { IconsGlobe } from '../../../../Atom/Icons/globe';
 import { IconsBar } from '../../../../Atom/Icons/icon_bar';
 import { IconsTimesBlue } from '../../../../Atom/Icons/icon_Times_Blue';
 import { IconsSearch } from '../../../../Atom/Icons/search';
 import { Logo } from '../../../../Atom/Logo/logo';
 import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
-import { Menu } from '../../../Navigationcomponents/Menu/Menu';
+import { Menu } from '../../Menu/Menu';
 import { init } from '../../../../assets/js/navigation';
 
 import './CountrySiteHeader.scss';

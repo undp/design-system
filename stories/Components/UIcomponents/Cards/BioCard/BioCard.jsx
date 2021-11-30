@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import './biocard.scss';
 import '../../../../assets/scss/_grid.scss';
 import viewport from '../../../../assets/js/viewport';
@@ -7,7 +6,6 @@ import { ModalFun } from '../../../../assets/js/modal_custom';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
-import { Modal } from '../../Modal/Modal';
 
 export const size_options = {
   large: 'large-12',
@@ -84,12 +82,21 @@ export const BioCard = ({
           )}
         </div>
       </div>
-      <Modal
-        image={image2}
-        contentname={contentname}
-        descriptionText={descriptionText}
-        descriptionText2={descriptionText2}
-      />
+      <div id="myModal" className="modal">
+        <div className="modal-content">
+          <div className="modal-close-button" />
+          <div className="bio-card-wrapper">
+            <div className="bio-card-image">
+              <img src={image2} alt={image} />
+            </div>
+            <article className="bio-card-content">
+              <Heading type="5" label={contentname} />
+              <P label={descriptionText} />
+              <P label={descriptionText2} className="small" />
+            </article>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

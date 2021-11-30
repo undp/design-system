@@ -15,15 +15,15 @@ export const getCaptionForLocale = (locale) => {
 <Meta title="Components/UI components/Buttons/CTA Button"
   argTypes={{
     variant: {
-      options: ["Primary", "Secondary"],
+      options: ["primary", "secondary"],
       control: { type: "radio" },
       },
       state: {
-      options: ["Disabled", "Default"],
+      options: ["disabled", "default"],
       control: { type: "radio" },
       },
-      For_Primary: {
-      options: ["Arrow", "No_arrow"],
+      for_primary: {
+      options: ["arrow", "no_arrow"],
       control: { type: "radio" },
       },
   }}/>
@@ -72,22 +72,22 @@ When using button classes on elements that are used to trigger in-page functiona
   <div className="cta_item">
     <div className="cta__box cta-primary-exapnd-arrow"></div>
     <div className="cta__label"> Primary cta with exapand state </div>
-    <div className="cta__code"> <CtaButton label="READ MORE" variant='Primary' For_Primary='Arrow'></CtaButton></div>
+    <div className="cta__code"> <CtaButton label="READ MORE" variant='Primary' for_primary='Arrow'></CtaButton></div>
   </div>
   <div className="cta_item">
     <div className="cta__box cta-primary-exapnd-arrow_disabled"></div>
     <div className="cta__label"> Primary cta exapand with disabled state </div>
-    <div className="cta__code"> <CtaButton label="READ MORE" variant='Primary' For_Primary='Arrow' state='Disabled'></CtaButton></div>
+    <div className="cta__code"> <CtaButton label="READ MORE" variant='Primary' for_primary='Arrow' state='Disabled'></CtaButton></div>
   </div>
   <div className="cta_item">
     <div className="cta__box cta-primary"></div>
     <div className="cta__label"> Primary cta with default state </div>
-    <div className="cta__code"> <CtaButton label="READ MORE" variant='Primary' For_Primary='No_arrow'></CtaButton></div>
+    <div className="cta__code"> <CtaButton label="READ MORE" variant='Primary' for_primary='No_arrow'></CtaButton></div>
   </div>
   <div className="cta_item">
     <div className="cta__box cta-primary_disabled"></div>
     <div className="cta__label"> Primary cta with disabled state </div>
-    <div className="cta__code"> <CtaButton label="READ MORE" variant='Primary' For_Primary='No_arrow' state='Disabled'></CtaButton></div>
+    <div className="cta__code"> <CtaButton label="READ MORE" variant='Primary' for_primary='No_arrow' state='Disabled'></CtaButton></div>
   </div>
 </div> 
 

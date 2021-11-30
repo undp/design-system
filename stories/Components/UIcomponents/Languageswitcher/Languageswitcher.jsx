@@ -20,7 +20,7 @@ export const Languageswitcher = ({
       <ul className="dropdown-language__content">
         {data.map((item, index) => (
           <li>
-            <a href="#" key={index} className="dropdown-language__content--item">
+            <a href="#" key={index} className="dropdown-language__content-item">
               {item.descriptionText}
             </a>
           </li>

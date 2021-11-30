@@ -2,6 +2,7 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
 
+/* image card start */
 .imagecard {
   @extend %img_none;
 
@@ -34,42 +35,6 @@
     }
   }
 
-  &__content {
-    position: relative;
-
-    &--thumbnail-image {
-      img {
-        display: block;
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-      }
-    }
-
-    &--caption {
-      padding-top: $spacing-32;
-
-      @include devicebreak(large) {
-        @include translate(0,100%);
-        @include transition(all 0.4s cubic-bezier(0.64,0.05,0.35,1.05));
-
-        background: $color-white;
-        bottom: -1px;
-        height: 0;
-        left: -1px;
-        opacity: 0;
-        overflow: hidden;
-        position: absolute;
-        width: 101%;
-      }
-
-      h5 {
-        margin-bottom: 0;
-        padding: 0 $spacing-24;
-      }
-    }
-  }
-
   .cta__link {
     margin: $spacing-32 0 0 $spacing-24;
 
@@ -95,6 +60,42 @@
       h5 {
         font-size: $font-size-16;
       }
+    }
+  }
+}
+
+.imagecard__content {
+  position: relative;
+
+  &--thumbnail-image {
+    img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &--caption {
+    padding-top: $spacing-32;
+
+    @include devicebreak(large) {
+      @include translate(0,100%);
+      @include transition(all 0.4s cubic-bezier(0.64,0.05,0.35,1.05));
+
+      background: $color-white;
+      bottom: -1px;
+      height: 0;
+      left: -1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      width: 101%;
+    }
+
+    h5 {
+      margin-bottom: 0;
+      padding: 0 $spacing-24;
     }
   }
 }
@@ -130,3 +131,5 @@
     }
   }
 }
+
+/* image card end */

@@ -2,7 +2,7 @@
 @import '../../../assets/scss/typography';
 @import '../../../assets/scss/breakpoints';
 
-/* project details */
+/* project details start */
 .project-data {
   border-bottom: 1px solid $color-gray-400;
 
@@ -33,3 +33,5 @@
     color: $color-gray-700;
   }
 }
+
+/* project details end */

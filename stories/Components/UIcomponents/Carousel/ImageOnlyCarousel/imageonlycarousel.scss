@@ -1,6 +1,7 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 
+/* image only carousel start */
 .image-only-carousel {
   &__image {
     width: 100%;
@@ -51,3 +52,5 @@
     }
   }
 }
+
+/* image only carousel end */

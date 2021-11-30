@@ -1,7 +1,8 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 
-.contentcard {
+/* content-card start */
+.content-card {
   @extend %img_none;
 
   background-color: $color-white;
@@ -11,7 +12,7 @@
   margin-bottom: $spacing-24;
 
   h6 {
-    font-size: 12px;
+    font-size: $font-size-12;
     font-weight: 700;
     letter-spacing: 0.48px;
     line-height: 1.4;
@@ -27,36 +28,10 @@
     }
   }
 
-  &__caption {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: $spacing-16 $spacing-24 $spacing-24;
-
-    h5 {
-      margin-bottom: $spacing-24;
-    }
-
-    .cta__link {
-      margin-top: $spacing-08;
-    }
-
-    &--cart {
-      height: 100%;
-    }
-  }
-
   p {
     display: block;
     font-size: $font-size-16;
     letter-spacing: 0;
-  }
-
-  &--Image,
-  &--Card {
-    &.singlecard--Yellow {
-      background-color: $color-white;
-    }
   }
 
   &.yellow,
@@ -167,10 +142,31 @@
   }
 }
 
+.content-card__caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $spacing-16 $spacing-24 $spacing-24;
+
+  h5 {
+    margin-bottom: $spacing-24;
+  }
+
+  .cta__link {
+    margin-top: $spacing-08;
+  }
+
+  &_cart {
+    height: 100%;
+  }
+}
+
 [dir='rtl'] {
-  .contentcard:hover {
+  .content-card:hover {
     .cta__link::after {
       @include transform(translate(-50%, 0) rotate(180deg));
     }
   }
 }
+
+/* content-card start */

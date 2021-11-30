@@ -1,6 +1,7 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 
+/* fixed carousel start */
 .fixed-image-size-carousel {
   &__image {
     display: block;
@@ -129,3 +130,5 @@
     }
   }
 }
+
+/* fixed carousel end */

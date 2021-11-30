@@ -14,10 +14,10 @@
   width: 20px;
 
   &:hover {
-    background: url(#{$img-path-Iconback}/arrow-left-expand-hover.svg) no-repeat center center;
     @include transform (translateX(10px));
     @include transition (transform 0.4s);
-    
+
+    background: url(#{$img-path-Iconback}/arrow-left-expand-hover.svg) no-repeat center center;
     width: 100px;
   }
 }

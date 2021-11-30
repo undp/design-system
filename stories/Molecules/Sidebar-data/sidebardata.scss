@@ -2,6 +2,7 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
 
+/* sidebar data start */
 .accordion-navbar__item--headertext {
   @extend %img_none;
 
@@ -60,3 +61,5 @@
     }
   }
 }
+
+/* sidebar data end */

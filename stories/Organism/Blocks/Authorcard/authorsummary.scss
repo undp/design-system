@@ -2,6 +2,7 @@
 @import '../../../assets/scss/breakpoints';
 @import '../../../assets/scss/variables';
 
+/* author summary start */
 .author-card {
   border-top: 2px solid $color-black;
   padding-top: $spacing-32;
@@ -13,34 +14,34 @@
 
   &-wrapper {
     h4 {
-      margin-bottom: 39px;
-    }
-  }
-
-  &__summary {
-    @include devicebreak(medium) {
-      display: flex;
-      width: 50%;
-    }
-
-    &--text {
-      margin-top: $spacing-40;
-
-      @include devicebreak(medium) {
-        margin-left: $spacing-40;
-        margin-top: 0;
-        width: calc(100% - 222px);
-      }
-
-      h2 {
-        margin-bottom: $spacing-08;
-      }
+      margin-bottom: 2.438rem;
     }
   }
 
   p {
     @include devicebreak(medium) {
       width: 40%;
+    }
+  }
+}
+
+.author-card__summary {
+  @include devicebreak(medium) {
+    display: flex;
+    width: 50%;
+  }
+
+  &--text {
+    margin-top: $spacing-40;
+
+    @include devicebreak(medium) {
+      margin-left: $spacing-40;
+      margin-top: 0;
+      width: calc(100% - 222px);
+    }
+
+    h2 {
+      margin-bottom: $spacing-08;
     }
   }
 }
@@ -57,3 +58,5 @@
     }
   }
 }
+
+/* author summary end */

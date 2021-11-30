@@ -3,6 +3,7 @@
 @import '../../assets/scss/glideslider';
 @import '../../assets/scss/mixins';
 
+/* stats-card-grid start */
 .stats-card-grid {
   overflow-x: hidden;
 
@@ -66,3 +67,14 @@
     }
   }
 }
+
+[dir='rtl'] {
+  .stats-card-grid {
+    @include devicebreak(medium) {
+      .grid-x {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
+/* stats-card-grid end */

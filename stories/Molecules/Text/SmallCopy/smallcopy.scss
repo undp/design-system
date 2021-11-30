@@ -2,7 +2,7 @@
 @import '../../../assets/scss/typography';
 @import '../../../assets/scss/mixins';
 
-/* small copy */
+/* small copy start */
 .smallcopy__box {
   display: flex;
   margin-bottom: $spacing-04;
@@ -24,3 +24,5 @@
     margin-right: $spacing-04;
   }
 }
+
+/* small copy end */

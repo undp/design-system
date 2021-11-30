@@ -3,7 +3,7 @@ import './pagehero.scss';
 import viewport from '../../../../assets/js/viewport';
 import { Video } from '../../../../Atom/Video/Video';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { Breadcrumbcomponent } from '../../../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
+import { Breadcrumbcomponent } from '../../../Navigationcomponents/Breadcrumbs/Breadcrumbs';
 
 export const PageHeroOption = ({
   data, title, content, active, variant, imgsrc, imgalt, videosrc,
