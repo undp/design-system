@@ -8,45 +8,45 @@
 
 // select box appearance
 @mixin x-appearance($value) {
-  appearance: $value;
-  appearance: $value;
-  appearance: $value;
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+    appearance: $value;
 }
 
 //animation
 @mixin animation($animation) {
-  animation: $animation;
-  animation: $animation;
-  animation: $animation;
-  animation: $animation;
-  animation: $animation;
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -ms-animation: $animation;
+  -o-animation: $animation;
+    animation: $animation;
 }
 
 //transition
 @mixin transition($transitions...) {
-  transition: $transitions;
-  transition: $transitions;
-  transition: $transitions;
-  transition: $transitions;
-  transition: $transitions;
+  -webkit-transition: $transitions;
+  -moz-transition: $transitions;
+  -ms-transition: $transitions;
+  -o-transition: $transitions;
+    transition: $transitions;
 }
 
 //transition-delay
 @mixin transitiondelay($transitiondelay...) {
-  transition-delay: $transitiondelay;
-  transition-delay: $transitiondelay;
-  transition-delay: $transitiondelay;
-  transition-delay: $transitiondelay;
-  transition-delay: $transitiondelay;
+  -webkit-transition-delay: $transitiondelay;
+  -moz-transition-delay: $transitiondelay;
+  -ms-transition-delay: $transitiondelay;
+  -o-transition-delay: $transitiondelay;
+    transition-delay: $transitiondelay;
 }
 
 //transform
 @mixin transform($transforms) {
-  transform: $transforms;
-  transform: $transforms;
-  transform: $transforms;
-  transform: $transforms;
-  transition: $transforms;
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+    transition: $transforms;
 }
 
 // Rotate
@@ -231,7 +231,7 @@
 %arrow {
   @include transform(translateY(-50%));
   @include transition(all 200ms ease-in-out);
-  
+
   background: url(#{$img-path-Iconfourback}/Chevron-down.svg) no-repeat center center;
   content: '';
   float: right;
@@ -319,11 +319,11 @@
 }
 
 %no-animation {
-  animation: none;
-  animation: none;
-  animation: none;
-  animation: none;
-  animation: none;
+  -webkit-animation: none;
+  -moz-animation: none;
+  -ms-animation: none;
+  -o-animation: none;
+   animation: none;
 }
 
 %left-to-right {

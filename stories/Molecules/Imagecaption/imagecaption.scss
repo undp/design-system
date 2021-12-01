@@ -1,7 +1,7 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/breakpoints';
 
-/* image caption */
+/* image caption start */
 .image__caption {
   border-bottom: 2px solid $color-black;
 
@@ -101,3 +101,5 @@
     }
   }
 }
+
+/* image caption end */

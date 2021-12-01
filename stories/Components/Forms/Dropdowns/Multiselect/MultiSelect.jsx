@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './multiselect.scss';
 import init from '../../../../assets/js/multiselect-init';
-import { Checkbox } from '../../../Forms/Checkbox/Checkbox';
+import { Checkbox } from '../../Checkbox/Checkbox';
 
 const SelectTag = ({ text, eleId }) => {
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './signup.scss';
-import { Inputcomponent } from '../../Forms/Inputfields/Input_group';
+import { Inputcomponent } from '../Inputfields/Input_group';
 
 export const SignUp = ({
   element, type, required, mode, label, button, errorText, placeholder, ...args

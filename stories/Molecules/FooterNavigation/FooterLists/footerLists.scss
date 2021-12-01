@@ -30,32 +30,6 @@
         display: none;
       }
     }
-
-    &.white {
-      .footer__heading {
-        color: $color-white;
-      }
-
-      .footer__panel {
-        a {
-          color: $color-white;
-        }
-      }
-    }
-
-    &.blue {
-      border-color: $color-white;
-
-      &::before {
-        background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
-      }
-    }
-
-    &.active {
-      &::before {
-        @include transform(rotateZ(180deg));
-      }
-    }
   }
 
   &__heading {
@@ -86,6 +60,32 @@
       line-height: 1.4;
       margin-bottom: $spacing-08;
     }
+  }
+}
+
+.footer__items.white {
+  .footer__heading {
+    color: $color-white;
+  }
+
+  .footer__panel {
+    a {
+      color: $color-white;
+    }
+  }
+}
+
+.footer__items.blue {
+  border-color: $color-white;
+
+  &::before {
+    background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
+  }
+}
+
+.footer__items.active {
+  &::before {
+    @include transform(rotateZ(180deg));
   }
 }
 

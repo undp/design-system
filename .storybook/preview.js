@@ -2,7 +2,9 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { initializeRTL } from 'storybook-addon-rtl';
 import anysort from 'anysort'
 import { addParameters } from '@storybook/react'
-import '../stories/assets/scss/normalize.scss';
+import renderToHTML from './renderToHTML'
+
+//import '../stories/assets/scss/normalize.scss';
 
 initializeRTL();
 
@@ -22,6 +24,9 @@ export const parameters = {
   },
   viewport: {
     viewports: INITIAL_VIEWPORTS,
+  },
+  docs: {
+    transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn),
   },
 }
 

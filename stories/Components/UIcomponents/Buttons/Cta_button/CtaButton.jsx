@@ -2,32 +2,32 @@ import React from 'react';
 import './buttons.scss';
 
 export const variant_options1 = {
-  Primary: 'primary',
-  Secondary: 'secondary',
+  primary: 'primary',
+  secondary: 'secondary',
 };
 
 export const variant_options2 = {
-  Disabled: 'disabled',
-  Default: ' ',
+  disabled: 'disabled',
+  default: ' ',
 };
 
 export const variant_options3 = {
-  Arrow: 'arrow',
-  No_arrow: 'no-arrow',
+  arrow: 'arrow',
+  no_arrow: 'without-arrow',
 };
 
 export const CtaButton = ({
-  label1, label2, variant, state, For_Primary,
+  label1, label2, variant, state, for_primary,
 }) => (
   <>
-    {variant === 'Primary'
+    {variant === 'primary'
       ? (
-        <a className={['button', `button--${variant_options1[`${variant}`]}`, ` button--${variant_options3[`${For_Primary}`]}`, `${variant_options2[`${state}`]}`].join(' ')}>
+        <a className={['button', `button-${variant_options1[`${variant}`]}`, ` button-${variant_options3[`${for_primary}`]}`, `${variant_options2[`${state}`]}`].join(' ')}>
           {label1}
         </a>
       )
       : (
-        <a className={['button', `button--${variant_options1[`${variant}`]}`, `${variant_options2[`${state}`]}`].join(' ')}>
+        <a className={['button', `button-${variant_options1[`${variant}`]}`, `${variant_options2[`${state}`]}`].join(' ')}>
           {label2}
         </a>
       )}
@@ -35,7 +35,7 @@ export const CtaButton = ({
 );
 
 CtaButton.defaultProps = {
-  variant: 'Primary',
-  state: 'Default',
-  For_Primary: 'Arrow',
+  variant: 'primary',
+  state: 'default',
+  for_primary: 'Arrow',
 };

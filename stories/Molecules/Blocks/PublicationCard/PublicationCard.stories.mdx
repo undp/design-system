@@ -1,0 +1,81 @@
+import { Meta, Story,  Canvas, Source } from '@storybook/addon-docs';
+import { PublicationCard } from './PublicationCard';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {download: 'Download', readmore: 'READ MORE'}; return engText;
+    case 'arabic': const arabicText = {download: 'تحميل', readmore: 'اقرأ أكثر'}; return arabicText;
+    case 'burmese': const burmeseText = {download: 'ဒေါင်းလုပ်', readmore: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {download: 'ダウンロード', readmore: '続きを読む'}; return japaneseText;
+    default:
+      return {download: 'Download', readmore: 'READ MORE'};
+  }
+};
+
+<Meta title="Testing/Blocks/Publication Card"
+  argTypes={{
+    variant: {
+      options: ["Readmore", "Download", "Both"],
+      control: { type: "radio" },
+    },
+  }}
+ />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 20px;
+    color: #031c2d;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 15px;
+  }
+  .subheading2 {
+    font-weight: 700;
+    font-size: 16px;
+    color: #031c2d;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 10px;
+    text-decoration: underline;
+  }
+  .css-1h4ytzj code {
+    padding-right: 10px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    background: black;
+  }
+  div[id^="story--molecules-blocks-download-card"] {
+    align-items: center;
+    margin: 30px 0;
+  }
+
+`}</style>
+
+# Publication Card Component
+
+The Publication Card component defines a card of information data with some items -  Title, Image, format and Downlaod files. 
+
+<div className="subheading2">Publication card Component </div>
+
+<p>Publication cards show the publication category images, title, format, and download option to related the content in the design with short information</p>
+
+<Story name="Publication card" >
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <PublicationCard 
+      download={caption.download} readmore={caption.readmore} image {...args} 
+    ></PublicationCard>;
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
+  <li>Component SCSS file: <code>DownloadCard.scss</code></li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

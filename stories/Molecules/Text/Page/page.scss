@@ -2,7 +2,8 @@
 @import '../../../assets/scss/breakpoints';
 @import '../../../assets/scss/variables';
 
-.Page-title {
+/* page title start */
+.page-title {
   h2 {
     font-family: $Font-Family-SohneBreit;
     margin-bottom: 1.25rem;
@@ -21,3 +22,5 @@
     }
   }
 }
+
+/* page title end */
