@@ -3,7 +3,7 @@ import './pagination.scss';
 
 export const Pagination = ({ text, text2 }) => (
   <ul className="pagination-wrapper">
-    <li className="page__item disabled" />
+    <li className="page__item disabled"><a href="#" aria-label="true">Previous</a></li>
     <li className="page__item">
       {text}
       <span>
@@ -16,6 +16,6 @@ export const Pagination = ({ text, text2 }) => (
         <a href="#">123 </a>
       </span>
     </li>
-    <li className="page__item" />
+     <li className="page__item"><a href="#">Next</a></li>
   </ul>
 );
