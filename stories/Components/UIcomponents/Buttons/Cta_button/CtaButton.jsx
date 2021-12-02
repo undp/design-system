@@ -7,8 +7,8 @@ export const variant_options1 = {
 };
 
 export const variant_options2 = {
-  disabled: 'disabled',
-  default: ' ',
+  Active: ' ',
+  Disabled: 'disabled',
 };
 
 export const variant_options3 = {
@@ -17,25 +17,19 @@ export const variant_options3 = {
 };
 
 export const CtaButton = ({
-  label1, label2, variant, state, for_primary,
+  label1, label2, Type, State, For_Primary,
 }) => (
   <>
-    {variant === 'primary'
+    {Type === 'Primary'
       ? (
-        <a className={['button', `button-${variant_options1[`${variant}`]}`, ` button-${variant_options3[`${for_primary}`]}`, `${variant_options2[`${state}`]}`].join(' ')}>
+        <a className={['button', `button--${variant_options1[`${Type}`]}`, ` button--${variant_options3[`${For_Primary}`]}`, `${variant_options2[`${State}`]}`].join(' ')}>
           {label1}
         </a>
       )
       : (
-        <a className={['button', `button-${variant_options1[`${variant}`]}`, `${variant_options2[`${state}`]}`].join(' ')}>
+        <a className={['button', `button--${variant_options1[`${Type}`]}`, `${variant_options2[`${State}`]}`].join(' ')}>
           {label2}
         </a>
       )}
   </>
 );
-
-CtaButton.defaultProps = {
-  variant: 'primary',
-  state: 'default',
-  for_primary: 'Arrow',
-};

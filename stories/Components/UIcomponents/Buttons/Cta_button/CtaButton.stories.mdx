@@ -14,17 +14,20 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/UI components/Buttons/CTA Button"
   argTypes={{
-    variant: {
-      options: ["primary", "secondary"],
-      control: { type: "radio" },
+    Type: {
+      options: ["Primary", "Secondary"],
+      control: { type: "inline-radio" },
+      defaultValue: 'Primary'
       },
-      state: {
-      options: ["disabled", "default"],
-      control: { type: "radio" },
+      State: {
+      options: ["Active", "Disabled"],
+      control: { type: "inline-radio" },
+      defaultValue: 'Active'
       },
-      for_primary: {
-      options: ["arrow", "no_arrow"],
-      control: { type: "radio" },
+      For_Primary: {
+      options: ["Arrow", "No_arrow"],
+      control: { type: "inline-radio" },
+      defaultValue: 'Arrow'
       },
   }}/>
 
