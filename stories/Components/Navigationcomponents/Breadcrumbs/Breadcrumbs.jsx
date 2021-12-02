@@ -9,7 +9,7 @@ export const Breadcrumbcomponent = ({ data, active, ...args }) => {
   }, []);
   const lastIndex = data.length - 1;
   return (
-    <ul className={['breadcrumb__wrapper left-right', `${active}`].join(' ')}>
+    <ul className={['breadcrumb__wrapper left-right', `${active==='white'?active:''}`].join(' ')}>
       {data.map((item, i) => {
         if (i === lastIndex) {
           return (
