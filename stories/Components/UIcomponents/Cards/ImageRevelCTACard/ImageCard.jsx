@@ -4,15 +4,20 @@ import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
+export const size_options = {
+  Large: 'medium-4',
+  Small: 'small',
+};
+
 export const ImageRevelCard = ({
-  contentname, image, size, link, button,
+  contentname, image, Size, link, button,
 }) => (
   <div className="grid-x grid-margin-x">
-    <div className={['cell', `${size}`].join(' ')}>
-      <a href={link} className={['image-card',].join(' ')}>
-        <div className="image-card__content">
+    <div className={['imagecard', 'cell', `${size_options[`${Size}`]}`].join(' ')}>
+      <a href={link} className={['imagecard', `imagecard__${size_options[`${Size}`]}`].join(' ')}>
+        <div className="imagecard__content">
           {image && (
-            <div className={['image-card__content--thumbnail-image'].join(' ')}>
+            <div className={['imagecard__content--thumbnail-image', `${size_options[`${Size}`]}`].join(' ')}>
               <img src={image} alt={image} />
             </div>
           )}
