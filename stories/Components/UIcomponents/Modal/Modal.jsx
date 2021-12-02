@@ -6,7 +6,7 @@ export const Modal = ({
 }) => (
   <div className="modal">
     <div className="modal-content">
-      <div className="modal-close-button" />
+      <a href="#" className="modal-close-button">close</a>
     </div>
   </div>
 );
