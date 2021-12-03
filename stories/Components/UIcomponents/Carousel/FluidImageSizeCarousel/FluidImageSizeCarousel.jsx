@@ -14,7 +14,6 @@ export const FluidImageSizeCarousel = ({ data }) => {
     viewport('.fluid-image-size-carousel');
   }, []);
   return (
-    <div className="overflow-hidden">
       <div className="fluid-image-size-carousel left-right">
         <div className="glide__bullets" data-glide-el="controls[nav]">
           {data.map((item, index) => <button className="glide__bullet" data-glide-dir={[`=${index}`]} aria-label={index} key={index} />)}
@@ -29,7 +28,7 @@ export const FluidImageSizeCarousel = ({ data }) => {
                   </div>
                   <div className="medium-5 large-4 cell">
                     <div className="fluid-image-size-carousel__contents">
-                      <div className="fluid-image-size-carousel__contents-tag">{item.tagtext}</div>
+                      <Heading type="6" label={item.tagtext} />
                       <Heading type="4" label={item.titleText} />
                       <P label={item.descText} />
                       <Ctalink label={item.buttonText} />
@@ -45,6 +44,5 @@ export const FluidImageSizeCarousel = ({ data }) => {
           <button className="glide__arrow glide__arrow--right" data-glide-dir=">"><img src={chevronRightWhite} alt="Next" /></button>
         </div>
       </div>
-    </div>
   );
 };
