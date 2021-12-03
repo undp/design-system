@@ -5,7 +5,6 @@ import { CtaButton } from '../../../Components/UIcomponents/Buttons/Cta_button/C
 
 export const ContentCard = ({ data, buttontype }) => {
   useEffect(() => {
-    console.log(buttontype);
     viewport('.content-card-container');
   }, []);
   return (
