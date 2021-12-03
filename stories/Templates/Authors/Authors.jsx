@@ -38,7 +38,7 @@ const Authors = ({
     });
   }, []);
   return (
-    <>
+    <div>
       <div className="grid-container fluid author-page">
         <div className="grid-x">
           <div className="cell medium-offset-1 medium-11 small-12">
@@ -118,7 +118,7 @@ const Authors = ({
         menudata={footerData.menudata}
         {...{ color: 'blue' }}
       />
-
+    </div>
   );
 };
 
