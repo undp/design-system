@@ -10,7 +10,7 @@
     display: block;
     font-family: $Font-Family-SohneBreit;
     min-height: 210px;
-    padding: $spacing-16 $spacing-24 0;
+    padding: 2.188rem $spacing-24 0;
     position: relative;
 
     @include devicebreak(medium) {
@@ -39,14 +39,12 @@
       z-index: 1;
 
       @include devicebreak(medium) {
-        @include transform(translate(0, -50%));
 
         font-size: 1.875rem;
         left: 22rem;
         letter-spacing: 0.094rem;
         margin: 0;
         position: absolute;
-        top: 50%;
       }
     }
 
@@ -78,7 +76,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #e4253a);
       }
     }
@@ -90,7 +88,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #dda63a);
       }
     }
@@ -102,7 +100,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #4c9f38);
       }
     }
@@ -114,7 +112,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #c5192d);
       }
     }
@@ -126,7 +124,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #ff3a21);
       }
     }
@@ -138,7 +136,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #26bde2);
       }
     }
@@ -150,7 +148,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #fcc30b);
       }
     }
@@ -162,7 +160,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #a21942);
       }
     }
@@ -174,7 +172,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #fd6925);
       }
     }
@@ -186,7 +184,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #dd1367);
       }
     }
@@ -198,7 +196,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #fd9d24);
       }
     }
@@ -210,7 +208,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #bf8b2e);
       }
     }
@@ -222,7 +220,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #3f7e44);
       }
     }
@@ -234,7 +232,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #0a97d9);
       }
     }
@@ -246,7 +244,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #56c02b);
       }
     }
@@ -258,7 +256,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #00689d);
       }
     }
@@ -270,7 +268,7 @@
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
+          rgba(228, 37, 58, 0) 10%,
           #19486a);
       }
     }
