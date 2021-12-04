@@ -9,7 +9,11 @@
 }
 
 .margin-top {
-   &-72 {
+  &-32 {
+    margin-top: $spacing-32;
+  }
+
+  &-72 {
     margin-top: 4.5rem;
   }
 }

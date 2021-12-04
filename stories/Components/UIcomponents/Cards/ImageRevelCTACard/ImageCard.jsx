@@ -8,19 +8,19 @@ export const ImageRevelCard = ({
   contentname, image, size, link, button,
 }) => (
   <div className="grid-x grid-margin-x">
-    <div className={['imagecard', 'cell', `${size}`].join(' ')}>
-      <a href={link} className={['imagecard', `imagecard__${size}`].join(' ')}>
-        <div className="imagecard__content">
+    <div className={['cell', `${size}`].join(' ')}>
+      <a href={link} className={['image-card',].join(' ')}>
+        <div className="image-card__content">
           {image && (
-            <div className={['imagecard__content--thumbnail-image', `${size}`].join(' ')}>
+            <div className={['image-card__content--thumbnail-image'].join(' ')}>
               <img src={image} alt={image} />
             </div>
           )}
-          <div className="imagecard__content--caption">
+          <div className="image-card__content--caption">
             {contentname && <Heading type="5" label={contentname} />}
           </div>
         </div>
-        <Ctalink label={button} variant="Arrow" />
+        <span className="cta__link cta--arrow">{button}</span>
       </a>
     </div>
   </div>
