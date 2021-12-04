@@ -7,21 +7,21 @@ import { BodyColumnTwo } from '../../../Molecules/Text/BodyColumn/BodyColumn';
 export const Tab = ({ tabdata }) => {
   useEffect(() => {
     TabFun();
-    viewport('.tab__items');
-    viewport('.tab__content');
+    viewport('.tab__items, .tab__content-wrapper');
   }, []);
   return (
-    <div>
-      <ul className="tab__items left-right " id="tab">
+    <>
+      <ul className="tab__items left-right">
         {tabdata.map((item, index) => (
           <li key={index} className="tab__item" data-tab={item.text_id}>
-            {item.text}
+            <a href="javascript:void(0)" >{item.text}</a>
           </li>
         ))}
       </ul>
+      <div className="tab__content-wrapper left-right">
       {tabdata.map((item, index) => (
-        <div key={index} id={item.text_id} className="tab__content left-right"><BodyColumnTwo descriptionText={item.data} /></div>
-      ))}
-    </div>
+        <div key={index} id={item.text_id} className="tab__content"><BodyColumnTwo descriptionText={item.data} /></div>
+      ))}</div>
+    </>
   );
 };
