@@ -1,10 +1,11 @@
 {
-  "name": "new-story",
+  "name": "design-system-undp",
   "version": "1.0.0",
-  "description": "",
+  "description": "Design System for UNDP",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress",
     "storybook": "start-storybook -p 6006 -s ./stories/assets",
     "build-storybook": "build-storybook -s ./stories/assets",
     "scss": "sass --watch ./stories/assets/scss/style.scss ./stories/assets/css/style.css",
@@ -34,6 +35,7 @@
     "eslint-plugin-react": "^7.26.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-spellcheck": "0.0.19",
+    "mini-css-extract-plugin": "^0.9.0",
     "prettier-eslint": "^13.0.0",
     "prettier-stylelint": "^0.4.2",
     "sass": "^1.39.0",
@@ -45,7 +47,10 @@
     "stylelint-config-recommended-scss": "^4.3.0",
     "stylelint-config-sass-guidelines": "^8.0.0",
     "stylelint-config-standard": "^22.0.0",
-    "stylelint-scss": "^3.21.0"
+    "stylelint-scss": "^3.21.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
     "anysort": "^2.0.0",

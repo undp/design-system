@@ -2,13 +2,12 @@
 /.idea
 npm-debug.log
 yarn-error.log
-/dist
 /vendor
 /.github
 /storybook-static
 /stories/assets/css/style.css
 /stories/assets/css/style.css.map
-/.DS_Store
+.DS_Store
 /stories/.DS_Store
 /stories/Molecules/.DS_Store
 /stories/Molecules/Blocks/.DS_Store
