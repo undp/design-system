@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --progress",
+    "build": "webpack --progress --mode development",
     "storybook": "start-storybook -p 6006 -s ./stories/assets",
     "build-storybook": "build-storybook -s ./stories/assets",
     "scss": "sass --watch ./stories/assets/scss/style.scss ./stories/assets/css/style.css",

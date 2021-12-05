@@ -32,5 +32,5 @@ module.exports = {
       onBuildStart:['rm -rf dist'], 
       onBuildEnd:['rm -rf dist/components dist/base-minimal.js']
     })
-  ],
+  ]
 };
