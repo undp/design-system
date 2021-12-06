@@ -2,7 +2,6 @@ import React from 'react';
 import './imagecard.scss';
 import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
 export const size_options = {
   Large: 'medium-4',

@@ -28,7 +28,7 @@ export const Author = ({
     <div className='grid-x grid-margin-x'>
       {data.slice(0, decNumber).map((item, index) => (
         <div className={['author-wrapper__box', 'cell', `${size}`].join(' ')}>
-          {(Image !== 'false') && (decNumber < 4) ? (<Authorimg image={image} variant="Small" />) : (<></>)}
+          {(Image !== 'false') && (decNumber <= 3) ? (<Authorimg image={image} variant="Small" />) : (<></>)}
           <div className="author__label">
             <Heading type="6" label={item.Authorlabel} />
             <div className="author__designation">{item.Authortext}</div>
