@@ -4,13 +4,10 @@ import { Logo } from '../../../Atom/Logo/logo';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const FooterLogo = ({
-  src, headerText, headerText2, style, alt,
+  src, headerText, style, alt,
 }) => (
-  <div className={['footer__logo', `${style}`].join(' ')}>
+  <div className={['cell medium-5', 'footer__logo', `${style}`].join(' ')}>
     <Logo src={src} alt={alt} />
-    <div className="footer__logo_name">
-      <Heading type="5" label={headerText} />
-      <Heading type="5" label={headerText2} />
-    </div>
+    <Heading type="5" label={headerText} />
   </div>
 );
