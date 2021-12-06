@@ -20,7 +20,7 @@
     &:hover {
       .country {
         &-card {
-          &__img {
+          img {
             @include transform(translateY(-50px));
           }
 
@@ -92,7 +92,7 @@
     position: relative;
   }
 
-  &__img {
+  img{
     @extend %img-cover;
 
     @include transition(all 0.4s);
