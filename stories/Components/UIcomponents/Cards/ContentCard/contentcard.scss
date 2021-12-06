@@ -12,12 +12,10 @@
   margin-bottom: $spacing-24;
 
   h6 {
-    font-size: $font-size-12;
-    font-weight: 700;
-    letter-spacing: 0.48px;
-    line-height: 1.4;
-    margin-bottom: 0;
+    @extend %carousel_tag;
+
     padding: $spacing-16 $spacing-24;
+    margin-bottom: 0;
   }
 
   & .card-thumbnail__image {

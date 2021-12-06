@@ -1,5 +1,6 @@
 @import '../../../assets/scss/breakpoints';
 @import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
 /* Tab start */
 .tab__items {
@@ -10,7 +11,6 @@
   .tab__item {
     cursor: pointer;
     display: inline-block;
-    font-size: $font-size-16;
     font-weight: 700;
     letter-spacing: 0.03em;
     margin-bottom: -0.125rem;
@@ -20,6 +20,11 @@
 
     &.active {
       border-bottom: 2px solid $color-dark-red;
+    }
+    a {
+      @extend %img_none;
+      
+      font-size: $font-size-16;
     }
   }
 }

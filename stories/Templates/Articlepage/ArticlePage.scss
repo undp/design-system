@@ -1,6 +1,6 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/breakpoints";
 
 /* article page start */
 .author-section {
@@ -12,10 +12,15 @@
     border-top: 2px solid $color-black;
   }
 }
-
+.mt-h {
+  margin-top: 4.25rem;
+}
 .blockq {
   margin-bottom: 0.625rem;
   margin-top: 2.82rem;
+  @include devicebreak(medium) {
+    margin-bottom: 5.625rem;
+  }
 }
 
 .section-head {
@@ -50,6 +55,7 @@
 }
 
 .list-section {
+  margin-top: $spacing-32;
   margin-bottom: 11.25rem;
 
   li {
@@ -71,7 +77,7 @@
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   @include devicebreak(medium) {
     .medium-offset-1 {
       margin-left: 0;
