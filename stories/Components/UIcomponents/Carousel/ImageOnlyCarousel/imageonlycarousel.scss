@@ -3,6 +3,8 @@
 
 /* image only carousel start */
 .image-only-carousel {
+  overflow:hidden;
+
   &__image {
     width: 100%;
   }

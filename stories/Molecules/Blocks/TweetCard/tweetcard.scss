@@ -40,16 +40,18 @@
   &__body {
     border-top: 3px solid $color-white;
     margin-top: $spacing-32;
-    padding: $spacing-24 5px $spacing-12 0;
+    padding: $spacing-24 0.313rem $spacing-12 0;
 
     &--date,
-    &--description {
+    &--description,
+    a {
       color: $color-gray-500;
       font-size: $font-size-14;
       font-weight: 700;
     }
 
-    &--description {
+    &--description,
+    a {
       color: $color-white;
       font-weight: 400;
       margin-top: 0;
@@ -87,7 +89,7 @@
     }
 
     &__body {
-      padding: $spacing-24 0 $spacing-12 5px;
+      padding: $spacing-24 0 $spacing-12 0.313rem;
     }
   }
 }
