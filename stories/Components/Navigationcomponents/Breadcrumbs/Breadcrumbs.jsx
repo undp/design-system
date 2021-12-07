@@ -3,13 +3,18 @@ import './breadcrumbs.scss';
 import viewport from '../../../assets/js/viewport';
 import { Breadcrumb } from '../../../Atom/Navigation/Breadcrumb/Breadcrumb';
 
-export const Breadcrumbcomponent = ({ data, active, ...args }) => {
+export const type_options = {
+  Black: 'black',
+  White: 'white',
+};
+
+export const Breadcrumbcomponent = ({ data, Color, ...args }) => {
   useEffect(() => {
     viewport('.breadcrumb__wrapper');
   }, []);
   const lastIndex = data.length - 1;
   return (
-    <ul className={['breadcrumb__wrapper left-right', `${active==='white'?active:''}`].join(' ')}>
+    <ul className={['breadcrumb__wrapper left-right', `${type_options[`${Color}`]}`].join(' ')}>
       {data.map((item, i) => {
         if (i === lastIndex) {
           return (
@@ -28,5 +33,5 @@ export const Breadcrumbcomponent = ({ data, active, ...args }) => {
 };
 
 Breadcrumbcomponent.defaultProps = {
-  active: 'black',
+  Black: 'black',
 };
