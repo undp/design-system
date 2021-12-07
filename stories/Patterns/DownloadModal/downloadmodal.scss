@@ -3,6 +3,7 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/base';
 
+/* download modal start */
 .download {
   &-body {
     display: flex;
@@ -119,3 +120,5 @@
     }
   }
 }
+
+/* download modal end */

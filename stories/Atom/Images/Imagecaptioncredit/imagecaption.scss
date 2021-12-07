@@ -2,84 +2,85 @@
 @import '../../../assets/scss/mixins';
 @import '../../../assets/scss/base';
 
+/* image with caption start */
 .image {
   &-section {
     justify-content: center;
+  }
+}
 
-    &__cart {
-      img {
-        @extend %img-cover;
+.image-section.portrait {
+  align-items: flex-end;
 
-        display: block;
+  @include devicebreak(medium) {
+    .image__caption {
+      display: block;
+      margin: 0 0 0 $spacing-24;
+      padding-bottom: 0;
+
+      &_para {
+        font-size: $font-size-14;
+        line-height: 1.4;
+        margin-bottom: $spacing-16;
+        padding: 0;
       }
     }
+  }
 
-    &__description {
-      .image__caption {
-        margin: $spacing-16 $spacing-24 0;
+  .image_credits {
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid $color-gray-500;
+    margin-bottom: $spacing-16;
+    padding: $spacing-16 0 0 0;
+  }
 
-        @include devicebreak(medium) {
-          margin: $spacing-32 0 0;
-        }
-      }
+  .unstag {
+    .image_credits {
+      border: 0;
+      padding: 0;
     }
+  }
 
-    &.portrait {
-      align-items: flex-end;
+  .author__caption {
+    font-size: $font-size-14;
+    line-height: 1.5;
+  }
+}
 
-      @include devicebreak(medium) {
-        .image__caption {
-          display: block;
-          margin: 0 0 0 $spacing-24;
-          padding-bottom: 0;
+.image-section__cart {
+  img {
+    @extend %img-cover;
 
-          &_para {
-            font-size: $font-size-14;
-            line-height: 1.4;
-            margin-bottom: $spacing-16;
-            padding: 0;
-          }
-        }
+    display: block;
+  }
+}
 
-        .image_credits {
-          border-left: 0;
-          border-right: 0;
-          border-top: 1px solid $color-gray-500;
-          margin-bottom: $spacing-16;
-          padding: $spacing-16 0 0 0;
-        }
+.image-section__description {
+  .image__caption {
+    margin: $spacing-16 $spacing-24 0;
 
-        .unstag {
-          .image_credits {
-            border: 0;
-            padding: 0;
-          }
-        }
-
-        .author__caption {
-          font-size: $font-size-14;
-          line-height: 1.5;
-        }
-      }
+    @include devicebreak(medium) {
+      margin: $spacing-32 0 0;
     }
   }
 }
 
 @include devicebreak(medium) {
   [dir='rtl'] {
-    .image {
-      &.portrait {
-        .image {
-          &__caption {
-            margin: 0 $spacing-24 0 0;
-          }
+    .image-section.portrait {
+      .image {
+        &__caption {
+          margin: 0 $spacing-24 0 0;
+        }
 
-          &_credits {
-            border-right: 0;
-            padding-right: 0;
-          }
+        &_credits {
+          border-right: 0;
+          padding-right: 0;
         }
       }
     }
   }
 }
+
+/* image with caption end */

@@ -1,10 +1,15 @@
-/* Faq JS start custom */
+/* accordion JS start custom */
 export function FaqFun() {
-  $('#accordion > li.accordion--active').children('.accordion__panel').slideDown();
-  $('#accordion > li').click(function () {
-    $(this).siblings('li').removeClass('accordion--active').children('.accordion__panel')
+  const $accordion = $('#accordion > li');
+  const $accordion_active_li = $('#accordion > li.accordion--active');
+  const accordion_active = 'accordion--active';
+  const accordion_panel = '.accordion__panel';
+
+  $accordion_active_li.children('.accordion__panel').slideDown();
+  $accordion.click(function () {
+    $(this).siblings('li').removeClass(accordion_active).children(accordion_panel)
       .slideUp();
-    $(this).toggleClass('accordion--active').children('.accordion__panel').slideToggle('');
+    $(this).toggleClass(accordion_active).children(accordion_panel).slideToggle('');
   });
 }
-/* Faq JS end custom */
+/* accordion JS end custom */

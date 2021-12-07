@@ -1,19 +1,22 @@
-@import "../../assets/scss/variables";
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/breakpoints";
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
 
+/* author page start */
 .author-content {
-  margin-top: $spacing-80;
   margin-bottom: $spacing-136;
+  margin-top: $spacing-80;
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .author-page {
     .medium-offset-1 {
       @include devicebreak(small) {
-        margin-right: 0;
         margin-left: 0;
+        margin-right: 0;
       }
     }
   }
 }
+
+/* author page end */

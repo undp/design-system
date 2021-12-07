@@ -10,13 +10,13 @@ import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Footer } from '../../Organism/Footer/Footer';
 import './AuthorPage.scss';
 
-
-const AuthorPage = ({ breadcrumbData, authorSummeryData,contentCardData,footerData,
+const AuthorPage = ({
+  breadcrumbData, authorSummeryData, contentCardData, footerData,
 }) => {
   useEffect(() => {
     viewport('.feature__card--headertext');
   }, []);
-  console.log('authorSummeryData',authorSummeryData)
+
   return (
     <div>
       <div className="grid-container fluid author-page">
@@ -27,12 +27,12 @@ const AuthorPage = ({ breadcrumbData, authorSummeryData,contentCardData,footerDa
         </div>
         <div className="grid-x">
           <div className="cell medium-offset-1 medium-10 small-12">
-            <AuthorSummary image={user}  Authorlabel={authorSummeryData.text2} para={authorSummeryData.paragraph}  para1={authorSummeryData.text3} />
+            <AuthorSummary image={user} Authorlabel={authorSummeryData.text2} para={authorSummeryData.paragraph} para1={authorSummeryData.text3} />
           </div>
         </div>
         <div className="grid-x">
           <div className="cell medium-offset-1 medium-10 small-12 author-content">
-          <ContentCard data={contentCardData.groupcontentdata} buttontype={contentCardData.buttonname}/>
+            <ContentCard data={contentCardData.groupcontentdata} buttontype={contentCardData.buttonname} />
           </div>
         </div>
       </div>

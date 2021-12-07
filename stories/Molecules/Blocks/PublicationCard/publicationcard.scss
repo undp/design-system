@@ -1,0 +1,63 @@
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.download-card {
+  &__title {
+    @extend %paragragh-font-20;
+
+    margin-bottom: $spacing-04;
+  }
+
+  &__format {
+    @extend %paragragh-font-16;
+
+    color: $color-gray-600;
+    margin-bottom: $spacing-16;
+  }
+
+  &__download {
+    @extend %paragragh-font-16;
+
+    align-items: center;
+    display: flex;
+    display: inline-flex;
+    float: left;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  &__readmore {
+    @extend %paragragh-font-16;
+
+    align-items: center;
+    border-left: 2px solid #d4d6d8;
+    display: flex;
+    display: inline-flex;
+    float: right;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding-left: $spacing-12;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    padding-bottom: $spacing-48;
+  }
+}
+
+.download-card__readmore {
+  .external-link {
+    margin-left: $spacing-12;
+  }
+}
+
+[dir='rtl'] {
+  .download-card__readmore {
+    .external-link {
+      margin-left: 0;
+      margin-right: $spacing-12;
+    }
+  }
+}

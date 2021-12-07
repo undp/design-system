@@ -7,7 +7,7 @@ import { Author } from '../../Components/UIcomponents/Author/Authorcolumn/Author
 import { BlockquoteComponent } from '../../Molecules/Text/BlockquoteComponent/BlockquoteComponent';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 import { List } from '../../Atom/Typography/Lists/Lists';
-import { FeaturedCard } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard";
+import { FeaturedCard } from '../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 import farmlandlg from '../../assets/images/farmland-lg.jpg';
 import farmlandmd from '../../assets/images/farmland-md.jpg';
@@ -27,7 +27,7 @@ const ArticlePage = ({
     viewport('.feature__card--headertext');
   }, []);
   return (
-<div>
+    <div>
       <div className="grid-container fluid">
         <div className="grid-x">
           <div className="cell large-9 medium-offset-1 medium-10">
@@ -108,7 +108,8 @@ const ArticlePage = ({
         <div className="grid-x">
           <div className="cell large-12">
             <FeaturedCard data={featuredCardContent.featureddata}
-              headertext={featuredCardContent.headertext} />
+              headertext={featuredCardContent.headertext}
+            />
           </div>
         </div>
       </div>
@@ -134,7 +135,7 @@ const ArticlePage = ({
         menudata={footerData.menudata}
         {...{ color: 'blue' }}
       />
-</div>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/mixins';
 
+/* scrollbar layout start */
 .scrollbar-horizontal-wrapper {
   float: left;
   overflow-x: scroll;
@@ -21,3 +22,5 @@
 .scrollbar-data__vertical {
   min-height: 100vh;
 }
+
+/* scrollbar layout end */

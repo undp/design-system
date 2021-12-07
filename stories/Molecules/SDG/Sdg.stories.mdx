@@ -1,0 +1,184 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import { Sdg } from "./Sdg";
+import sdglinkimage from "../../assets/images/sdg-link-image.png";
+import sdg1 from "../../assets/images/sdg1.png";
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        data: [
+          {
+            text: "No poverty",
+            bgcolor: "color-1",
+            image: sdg1,
+          },
+          {
+            text: "Zero hunger",
+            bgcolor: "color-2",
+            image: sdg1,
+          },
+          {
+            text: "Good health and well-being",
+            bgcolor: "color-3",
+            image: sdg1,
+          },
+          {
+            text: "Quality education",
+            bgcolor: "color-4",
+            image: sdg1,
+          },
+        ],
+        title: "Sustainable Development Goals",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        data: [
+          {
+            text: "لا يوجد فقر",
+            bgcolor: "color-1",
+            image: sdg1,
+          },
+          {
+            text: "انعدام الجوع",
+            bgcolor: "color-2",
+            image: sdg1,
+          },
+          {
+            text: "بصحة جيدة ورفاهية",
+            bgcolor: "color-3",
+            image: sdg1,
+          },
+          {
+            text: "تعليم ذو جودة",
+            bgcolor: "color-4",
+            image: sdg1,
+          },
+        ],
+        title: "أهداف التنمية المستدامة",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        data: [
+          {
+            text: "ဆင်းရဲခြင်း မရှိ။",
+            bgcolor: "color-1",
+            image: sdg1,
+          },
+          {
+            text: "လုံးဝဆာလောင်မှု",
+            bgcolor: "color-2",
+            image: sdg1,
+          },
+          {
+            text: "ကျန်းမာချမ်းသာကြပါစေ",
+            bgcolor: "color-3",
+            image: sdg1,
+          },
+          {
+            text: "ပညာရေးအရည်အသွေး",
+            bgcolor: "color-4",
+            image: sdg1,
+          },
+        ],
+        title: "စဉ်ဆက်မပြတ် ဖွံ့ဖြိုးတိုးတက်ရေး ပန်းတိုင်များ",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        data: [
+          {
+            text: "貧困はありません",
+            bgcolor: "color-1",
+            image: sdg1,
+          },
+          {
+            text: "空腹ゼロ",
+            bgcolor: "color-2",
+            image: sdg1,
+          },
+          {
+            text: "健康と幸福",
+            bgcolor: "color-3",
+            image: sdg1,
+          },
+          {
+            text: "質の高い教育",
+            bgcolor: "color-4",
+            image: sdg1,
+          },
+        ],
+        title: "持続可能な開発目標",
+      };
+      return japaneseText;
+    default:
+      const dummy = {
+        data: [
+          {
+            text: "No poverty",
+            bgcolor: "color-1",
+            image: sdg1,
+          },
+          {
+            text: "Zero hunger",
+            bgcolor: "color-2",
+            image: sdg1,
+          },
+          {
+            text: "Good health and well-being",
+            bgcolor: "color-3",
+            image: sdg1,
+          },
+          {
+            text: "Quality education",
+            bgcolor: "color-4",
+            image: sdg1,
+          },
+        ],
+        title: "Sustainable Development Goals",
+      };
+      return dummy;
+  }
+};
+
+<Meta title="Testing/SDG" />
+
+<style>{`
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  .sbdocs .sbdocs-h2 {
+    border-bottom: none;
+  }
+`}</style>
+
+# SDG Component
+
+The SDG Component is created for showing the title, image on hover. It is a multi-usage component that creates are usually teasing some kind of content.
+
+## Default Representation & various possible states
+
+<Story name="SDG">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <Sdg data={caption.data} imgsrc={sdglinkimage} title={caption.title}></Sdg>
+    );
+  }}
+</Story>
+
+## Dependencies
+
+Not Dependencies
+
+## Usage
+
+- Take HTML from the HTML tab in canvas
+- <u>To use SCSS include the following files in your implementation</u>
+- Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code>
+- Component SCSS file:<code>sdg.scss</code>
+- <u>To use CSS include the following files in your implementation</u>
+- The compiled CSS file from <code>assets/css/style.css</code>

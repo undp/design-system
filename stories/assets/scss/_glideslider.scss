@@ -2,6 +2,7 @@
 @import './breakpoints';
 @import './mixins';
 
+/* gilde slide start */
 .glide {
   box-sizing: border-box;
   position: relative;
@@ -63,3 +64,5 @@
     direction: rtl;
   }
 }
+
+/* gilde slide end */

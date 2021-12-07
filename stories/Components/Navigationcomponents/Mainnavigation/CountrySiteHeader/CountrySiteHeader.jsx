@@ -1,3 +1,4 @@
+
 import { React, useEffect } from 'react';
 import pnud from '../../../../assets/images/logo.svg';
 import { init } from '../../../../assets/js/navigation';

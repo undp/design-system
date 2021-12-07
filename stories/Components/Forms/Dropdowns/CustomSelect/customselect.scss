@@ -75,8 +75,8 @@
   span {
     display: block;
     font-size: $font-size-16;
-    margin: 0 -16px;
-    padding: 15px $spacing-16;
+    margin: 0 -1rem;
+    padding: 0.938rem $spacing-16;
     &:hover { background-color: $color-gray-100; }
   }
 }

@@ -1,6 +1,7 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 
+/* fixed image size carousel start */
 .fluid-image-size-carousel {
   &__image {
     width: 100%;
@@ -95,3 +96,5 @@
     }
   }
 }
+
+/* fixed image size carousel end */

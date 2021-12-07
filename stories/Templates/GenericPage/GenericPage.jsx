@@ -36,7 +36,7 @@ export const GenericPage = ({
             </div>
         </div>
         <div class="grid-container fluid contentbottom">      
-            <div class="grid-x grid-margin-x margin_top-four">
+            <div class="grid-x grid-margin-x margin-top-72">
                 <div class="cell large-3 small-12 sidebar-width">
                     <div class="column">
                         <Sidebar
@@ -62,14 +62,14 @@ export const GenericPage = ({
                                 <P label={topParagraph} />
                             </div>
                         </div>
-                        <div class="cell large-12 small-12 margin_top-five">
+                        <div class="cell large-12 small-12 margin-top-80">
                             <div class="column">
                                 <FluidImageSizeCarousel
                                     data={carouselData}
                                 />
                             </div>
                         </div>                        
-                        <div class="cell large-9 small-12 margin_top-three">
+                        <div class="cell large-9 small-12 margin-top-48">
                             <div class="column">
                                 <Heading 
                                     type='3' 
@@ -83,7 +83,7 @@ export const GenericPage = ({
                             </div>
                         </div>
                         
-                        <div class="cell large-9 small-12 margin_top-three">
+                        <div class="cell large-9 small-12 margin-top-48">
                             <div class="column">
                                 <Heading 
                                     type='3' 
@@ -97,7 +97,7 @@ export const GenericPage = ({
                             </div>
                         </div>
 
-                        <div class="cell large-9 small-12 margin_top-three">
+                        <div class="cell large-9 small-12 margin-top-48">
                             <div class="column">
                                 <Heading 
                                     type='3' 
@@ -110,7 +110,7 @@ export const GenericPage = ({
                                 <P label={paraHistory} />
                             </div>
                         </div>    
-                        <div class="column margin_top-three">
+                        <div class="column margin-top-48">
                             <ContentCard 
                                 data={ContentCardData.groupcontentdata}
                                 buttontype={ContentCardData.buttonname}

@@ -31,106 +31,6 @@
     }
   }
 
-  &-slide {
-    @extend %feature__card;
-
-    position: relative;
-
-    @include devicebreak(medium) {
-      display: inherit;
-    }
-
-    @include devicebreak(medium) {
-      @include transform(translateX(-105%));
-      @include transition(transform 0.3s);
-
-      background-color: $color-yellow;
-      display: block;
-      height: 100%;
-      position: absolute;
-      z-index: 5;
-    }
-
-    &::before {
-      @extend %feature__card;
-
-      bottom: 0;
-      content: '';
-      position: relative;
-
-      @include devicebreak(medium) {
-        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.8));
-        height: 100%;
-        position: absolute;
-      }
-    }
-
-    .feature__card-image {
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100%;
-
-      img {
-        display: block;
-        height: 100%;
-        max-width: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-
-  &-content {
-    @extend %feature__card;
-
-    background: $color-gray-100;
-    flex-direction: column;
-    height: auto;
-    padding: $spacing-32 $spacing-24;
-    position: relative;
-    width: auto;
-
-    @include devicebreak(medium) {
-      background: none;
-      display: flex;
-      height: 80%;
-    }
-
-    .feature__card-tag {
-      font-size: $font-size-12;
-      font-weight: 700;
-      line-height: 1.17;
-      margin-bottom: $spacing-24;
-      text-transform: uppercase;
-
-      @include devicebreak(medium) {
-        margin-bottom: $spacing-48;
-      }
-    }
-
-    .feature__card-description {
-      margin-bottom: 90px;
-    }
-
-    p {
-      font-size: $font-size-14;
-
-      @include devicebreak(medium) {
-        font-size: $font-size-20;
-      }
-    }
-
-    .feature__cta {
-      margin-bottom: 0;
-      margin-top: $spacing-40;
-      z-index: 10;
-
-      @include devicebreak(medium) {
-        margin-top: auto;
-      }
-    }
-  }
-
   &.large {
     &::before {
       @include devicebreak(medium) {
@@ -165,6 +65,106 @@
           linear-gradient(0deg, $color-yellow, $color-yellow),
           $color-gray-200;
       }
+    }
+  }
+}
+
+.feature__card-slide {
+  @extend %feature__card;
+
+  position: relative;
+
+  @include devicebreak(medium) {
+    display: inherit;
+  }
+
+  @include devicebreak(medium) {
+    @include transform(translateX(-105%));
+    @include transition(transform 0.3s);
+
+    background-color: $color-yellow;
+    display: block;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+  }
+
+  &::before {
+    @extend %feature__card;
+
+    bottom: 0;
+    content: '';
+    position: relative;
+
+    @include devicebreak(medium) {
+      background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.8));
+      height: 100%;
+      position: absolute;
+    }
+  }
+
+  .feature__card-image {
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+
+    img {
+      display: block;
+      height: 100%;
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.feature__card-content {
+  @extend %feature__card;
+
+  background: $color-gray-100;
+  flex-direction: column;
+  height: auto;
+  padding: $spacing-32 $spacing-24;
+  position: relative;
+  width: auto;
+
+  @include devicebreak(medium) {
+    background: none;
+    display: flex;
+    height: 80%;
+  }
+
+  .feature__card-tag {
+    font-size: $font-size-12;
+    font-weight: 700;
+    line-height: 1.17;
+    margin-bottom: $spacing-24;
+    text-transform: uppercase;
+
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-48;
+    }
+  }
+
+  .feature__card-description {
+    margin-bottom: 90px;
+  }
+
+  p {
+    font-size: $font-size-14;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-20;
+    }
+  }
+
+  .feature__cta {
+    margin-bottom: 0;
+    margin-top: $spacing-40;
+    z-index: 10;
+
+    @include devicebreak(medium) {
+      margin-top: auto;
     }
   }
 }

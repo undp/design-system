@@ -1,7 +1,7 @@
 import React, { Component, useEffect } from 'react';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
-import { Ctalink } from '../../../../Components/UIcomponents/Buttons/Cta_link/Cta_link';
+import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 import { CarouselFun } from '../../../../assets/js/Carousel';
 import viewport from '../../../../assets/js/viewport';
 import './fluidimagesizecarousel.scss';
