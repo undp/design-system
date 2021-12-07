@@ -70,11 +70,11 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/Navigation components/Breadcrumbs" 
   argTypes={{
-    Color: {
-      options: ['Black', 'White'],
-      control: { type: 'inline-radio' },
-      defaultValue: 'Black'
-    }
+      active: {
+          options: ['black', 'white'],
+          control: { type: 'radio' },
+          defaultValue: ''
+      }
   }}
   parameters={{
     backgrounds: {

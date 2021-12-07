@@ -12,13 +12,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/Forms/Input fields"  argTypes={{
-  State: {
-    options: ['Default', 'Focus', 'Error', 'Disabled'],
-    control: { type: 'inline-radio' },
-    defaultValue: 'Default'
-  }
-}}/>
+<Meta title="Components/Forms/Input fields"  />
 
 <style>{`
   #story--atoms-input-group--text-default, #story--atoms-input-group--text-focus, #story--atoms-input-group--text-error, #story--atoms-input-group--text-disabled, #story--atoms-input-group--search-default, #story--atoms-input-group--search-focus, #story--atoms-input-group--search-error, #story--atoms-input-group--search-disabled, #story--atoms-input-group--number-default, #story--atoms-input-group--number-error, #story--atoms-input-group--number-focus, #story--atoms-input-group--number-error, #story--atoms-input-group--number-disabled, #story--atoms-input-group--password-default, #story--atoms-input-group--password-focus, #story--atoms-input-group--password-error, #story--atoms-input-group--password-disabled, #story--atoms-input-group--telephone-default, #story--atoms-input-group--telephone-focus, #story--atoms-input-group--telephone-error, #story--atoms-input-group--telephone-disabled, #story--atoms-input-group--date-default, #story--atoms-input-group--date-focus, #story--atoms-input-group--date-error, #story--atoms-input-group--date-disabled, #story--atoms-input-group--textarea-default, #story--atoms-input-group--textarea-focus, #story--atoms-input-group--textarea-error, #story--atoms-input-group--textarea-disabled, #story--atoms-input-group--label, #story--atoms-input-group--help-message, #story--atoms-input-group--error-message {
@@ -66,81 +60,415 @@ The <code>input</code> HTML element is used to create interactive controls for w
   <li>input elements of type <code>text</code> create basic single-line text fields.</li>
 </ul>
 
+<div className="input_group_wrapper">
+
+  <div className="input_item">
+    <div className="input__box input-text-default"></div>
+    <div className="input__label"> Input text-Default </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Form Label:'  type='text' id= 'name' mode='default-state' required='required' placeholder= 'Placeholder'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-text-focus"></div>
+    <div className="input__label"> Input text-Focus </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Form Label:' type='text' id= 'name' mode='focus-state' required='required' placeholder= 'Placeholder'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-text-error"></div>
+    <div className="input__label"> Input text-Error </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Form Label:' errorText='*Error: this field is required' type='text' id= 'name' mode='error-state' placeholder= 'Placeholder'></Inputcomponent></div>
+  </div>
+    <div className="input_item">
+    <div className="input__box input-text-disabled"></div>
+    <div className="input__label"> Input text-Disabled </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Form Label:'  type='text' id= 'name' mode='disabled-state' placeholder= 'Placeholder' disabled= 'disabled'></Inputcomponent></div>
+  </div>
+</div>
+
+<div className="subheading"> Search </div>
+<ul>
+  <li>input elements of type <code>search</code> are text fields designed for the user to enter search queries into.</li>
+</ul>
+
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-search-default"></div>
+    <div className="input__label"> Input search-Default </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Search'  type='search' id= 'search' mode='default-state' required='required' placeholder= 'Placeholder'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-search-focus"></div>
+    <div className="input__label"> Input search-Focus </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Search'  type='search' id= 'search' mode='focus-state' required='required' placeholder= 'Placeholder'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-search-error"></div>
+    <div className="input__label"> Input search-Error </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Search' errorText='*Error: this field is required' type='search' id= 'search' mode='error-state' required='required' placeholder= 'Placeholder'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-search-disabled"></div>
+    <div className="input__label"> Input search-Disabled </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Search'  type='search' id= 'search' mode='disabled-state' placeholder= 'Placeholder' disabled= 'disabled'></Inputcomponent></div>
+  </div>
+</div>
+
 <div className="subheading"> Number </div>
 <ul>
   <li>input elements of type <code>number</code> are used to let the user enter a number. They include built-in validation to reject non-numerical entries.</li>
 </ul>
+
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-number-default"></div>
+    <div className="input__label"> Input number-Default </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Number of projects'  type='number' id= 'number' pattern= '[0-9]*' mode='default-state' required='required' placeholder= 'Placeholder'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-search-focus"></div>
+    <div className="input__label"> Input number-Focus </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Number of projects'  type='number' id= 'number' mode='focus-state' required='required' placeholder= 'Placeholder'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-search-error"></div>
+    <div className="input__label"> Input number-Error </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Number of projects' errorText='*Error: this field is required' type='number' id= 'number' mode='error-state' required='required' placeholder= 'Placeholder'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-search-disabled"></div>
+    <div className="input__label"> Input number-Disabled </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Number of projects'  type='number' id= 'number' mode='disabled-state' placeholder= 'Placeholder' disabled= 'disabled'></Inputcomponent></div>
+  </div>
+</div>
 
 <div className="subheading"> Date </div>
 <ul>
   <li>input elements of type <code>date</code> create input fields that let the user enter a date, either with a textbox that validates the input or a special date picker interface.</li>
 </ul>
 
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-date-default"></div>
+    <div className="input__label"> Input date-Default </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Date label'  type='date' id= 'datepicker' mode='default-state' required='required' placeholder= 'dd/mm/yyyy'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-date-focus"></div>
+    <div className="input__label"> Input date-Focus </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Date label'  type='date' id= 'datepicker' mode='focus-state' required='required' placeholder= 'dd/mm/yyyy' hasDatepicker></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-date-error"></div>
+    <div className="input__label"> Input date-Error </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Date label'  type='date' id= 'datepicker' errorText='*Error: this field is required' mode='error-state' required='required' placeholder= 'dd/mm/yyyy'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-date-disabled"></div>
+    <div className="input__label"> Input date-Disabled </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Date label'  type='date' id= 'datepicker' mode='disabled-state' required='required' placeholder= 'dd/mm/yyyy' disabled= 'disabled'></Inputcomponent></div>
+  </div>
+</div>
+
 <div className="subheading"> Phone </div>
 <ul>
   <li>input elements of type <code>tel</code> are used to let the user enter and edit a telephone number.</li>
 </ul>
+
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-phone-default"></div>
+    <div className="input__label"> Input phone-Default </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Phone number'  type='tel' id= 'phnumber' mode='default-state' required='required' placeholder= '+234 000 000 0000'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-phone-focus"></div>
+    <div className="input__label"> Input phone-Focus </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Phone number'  type='tel' id= 'phnumber' mode='focus-state' required='required' placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-phone-error"></div>
+    <div className="input__label"> Input phone-Error </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Phone number'  type='tel' id= 'phnumber' mode='error-state' required='required' errorText='*Error: this field is required' placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-phone-disabled"></div>
+    <div className="input__label"> Input phone-Disabled </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Phone number'  type='number' id= 'phnumber' mode='disabled-state'  disabled= 'disabled' placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'></Inputcomponent></div>
+  </div>
+</div>
 
 <div className="subheading"> Password </div>
 <ul>
   <li>input elements of type <code>password</code> provide a way for the user to securely enter a password.</li>
 </ul>
 
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-password-default"></div>
+    <div className="input__label"> Input password-Default </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Create password' helpText='8 characters minimum' type='password' id= 'password' mode='default-state' required='required'  minlength="8" placeholder='Password'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-password-focus"></div>
+    <div className="input__label"> Input password-Focus </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Create password' helpText='8 characters minimum' type='password' id= 'password' mode='focus-state' required='required'  minlength="8" placeholder='Password'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-password-error"></div>
+    <div className="input__label"> Input password-Error </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Create password' helpText='8 characters minimum' errorText='*Error: this field is required' type='password' id= 'password' mode='error-state' required='required'  minlength="8" placeholder='Password'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-password-disabled"></div>
+    <div className="input__label"> Input password-Disabled </div>
+    <div className="input__code"> <Inputcomponent element='input' labelText='Create password' helpText='8 characters minimum' type='password' id= 'password' mode='disabled-state' minlength="8" placeholder='Password'  disabled= 'disabled'></Inputcomponent></div>
+  </div>
+</div>
+
+<div className="subheading"> Textarea </div>
+<ul>
+  <li>The <code>textarea</code> HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.</li>
+</ul>
+
+<div className="input_group_wrapper">
+  <div className= "input_item">
+    <div className="input__box input-textarea-default"></div>
+    <div className="input__label"> Input textarea-Default </div>
+    <div className="input__code"> <Inputcomponent element='textarea' type='textarea' labelText='Brief description' id= 'textarea' mode='default-state' required='required' placeholder= 'Enter text'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-textarea-focus"></div>
+    <div className="input__label"> Input textarea-Focus </div>
+    <div className="input__code"> <Inputcomponent  element='textarea' type='textarea'labelText='Brief description' id= 'textarea' mode='focus-state' required='required' placeholder= 'Enter text'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-textarea-error"></div>
+    <div className="input__label"> Input textarea-Error </div>
+    <div className="input__code"> <Inputcomponent element='textarea' type='textarea' labelText='Brief description' errorText='*Error: this field is required' id= 'textarea' mode='error-state' required='required' placeholder= 'Enter text'></Inputcomponent></div>
+  </div>
+  <div className="input_item">
+    <div className="input__box input-textarea-disabled"></div>
+    <div className="input__label"> Input textarea-Disabled </div>
+    <div className="input__code"> <Inputcomponent element='textarea' type='textarea' labelText='Brief description' id= 'textarea' inputfor='textarea' mode='disabled-state' disabled= 'disabled' placeholder= 'Enter text'></Inputcomponent></div>
+  </div>
+</div>
+
 <div className="subheading"> Base Input </div>
 
 <Story name="Labeltext">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail1} State='default' {...args}></Inputcomponent>;
+    return <Inputcomponent labelText={caption.detail1} mode='default' ></Inputcomponent>;
   }}
 </Story>
+
 
 <Story name="Label-Help">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Inputcomponent helpText={caption.detail8} State='default' {...args}></Inputcomponent>;
+    return <Inputcomponent helpText={caption.detail8} mode='default' ></Inputcomponent>;
   }}
 </Story>
 
 <Story name="Label-Error">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Inputcomponent errorText={caption.detail2} State='error' {...args}></Inputcomponent>;
+    return <Inputcomponent errorText={caption.detail2} mode='error' ></Inputcomponent>;
   }}
 </Story>
 
-<Story name="Text">
+<Story name="Text-default">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail1} errorText={caption.detail2} element='input' type='text' id= 'name' State='default' required='required' placeholder= {caption.text3} {...args} ></Inputcomponent>;
+    return <Inputcomponent labelText={caption.detail1} element='input' type='text' id= 'name' mode='default' required='required' placeholder= {caption.text3}></Inputcomponent>;
   }}
 </Story>
 
-<Story name="Number">
+<Story name="Text-focus">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail5} errorText={caption.detail2} element='input' type='number' id= 'number' pattern= '[0-9]*' State='default' required='required' placeholder= {caption.text3} {...args}></Inputcomponent>;
+    return <Inputcomponent labelText={caption.detail1} element='input' type='text' id= 'name' mode='focus' required='required' placeholder= {caption.detail1}></Inputcomponent>;
   }}
 </Story>
 
-<Story name="Password">
+<Story name="Text-error">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail6} element='input' helpText={caption.detail8} errorText={caption.detail2} type='password' id= 'password' State='default' required='required'  minlength="8" placeholder={caption.detail7} {...args}></Inputcomponent>;
+    return <Inputcomponent labelText={caption.detail1} element='input' errorText={caption.detail2} type='text' id= 'name' mode='error' required='required' placeholder= {caption.detail1}></Inputcomponent>;
   }}
 </Story>
 
-<Story name="Telephone">
+<Story name="Text-disabled">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail9} element='input' type='tel' id= 'phnumber' State='default' required='required' errorText={caption.detail2} placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}' {...args} ></Inputcomponent>;
+    return <Inputcomponent labelText={caption.detail1} element='input' type='text' id= 'name' mode='disabled' placeholder= {caption.detail1} disabled= 'disabled'></Inputcomponent>;
   }}
 </Story>
 
-<Story name="Date">
+<Story name="Search-default">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.text} errorText={caption.detail2} element='input' type='date' id= 'datepicker' State='default' required='required' placeholder= 'dd/mm/yyyy' {...args}></Inputcomponent>;
+    return <Inputcomponent labelText={caption.detail3} element='input' type='search' id= 'search' mode='default' required='required' placeholder= {caption.detail4}></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Search-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail3} element='input' type='search' id= 'search' mode='focus' required='required' placeholder= {caption.detail4}></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Search-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail3} element='input' errorText={caption.detail2}  type='search' id= 'search' mode='error' required='required' placeholder= {caption.detail4}></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Search-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail3} element='input' type='search' id= 'search' mode='disabled' placeholder= {caption.detail4} disabled= 'disabled'> </Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Number-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail5} element='input' type='number' id= 'number' pattern= '[0-9]*' mode='default' required='required' placeholder= {caption.text3}></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Number-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail5} element='input' type='number' id= 'number' mode='focus' required='required' placeholder= {caption.text3}></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Number-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail5} element='input' errorText={caption.detail2} type='number' id= 'number' mode='error' required='required' placeholder= {caption.text3}></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Number-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail5} element='input' type='number' id= 'number' mode='disabled' placeholder= {caption.text3} disabled= 'disabled'></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Password-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail6} element='input' helpText={caption.detail8} type='password' id= 'password' mode='default' required='required'  minlength="8" placeholder={caption.detail7}></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Password-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail6} element='input' helpText={caption.detail8} type='password' id= 'password' mode='focus' required='required'  minlength="8" placeholder={caption.detail7}></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Password-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail6} element='input' helpText={caption.detail8} errorText={caption.detail2} type='password' id= 'password' mode='error' required='required'  minlength="8" placeholder={caption.detail7}></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Password-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail6} element='input' helpText={caption.detail8} type='password' id= 'password' mode='disabled' minlength="8" placeholder={caption.detail7}  disabled= 'disabled'></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Telephone-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail9} element='input' type='tel' id= 'phnumber' mode='default' required='required' placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}' ></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Telephone-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail9} element='input' type='tel' id= 'phnumber' mode='focus' required='required' placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Telephone-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail9} element='input' type='tel' id= 'phnumber' mode='error' required='required' errorText={caption.detail2} placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Telephone-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail9} element='input' type='tel' id= 'phnumber' mode='disabled'  disabled= 'disabled' placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Date-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.text} element='input' type='date' id= 'datepicker' mode='default' required='required' placeholder= 'dd/mm/yyyy'></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Date-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.text} element='input' type='date' id= 'datepicker' mode='focus' required='required' placeholder= 'dd/mm/yyyy'></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Date-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.text} element='input' type='date' errorText={caption.detail2} id= 'datepicker' mode='error' required='required' placeholder= 'dd/mm/'></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Date-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.text} element='input' type='date' id= 'datepicker' mode='disabled' disabled= 'disabled' placeholder= 'dd/mm/yyyy'></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Textarea-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail10} element='textarea' id= 'textarea' type='textarea' cols='40' rows='10' mode='default' required='required' placeholder= {caption.text2}></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Textarea-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail10} element='textarea' id= 'textarea' type='textarea' cols='40' rows='10' mode='focus' required='required' placeholder= {caption.text2}></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Textarea-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail10} element='textarea' errorText={caption.detail2} id= 'textarea' type='textarea' cols='40' rows='10' mode='error' required='required' placeholder= {caption.text2}></Inputcomponent>;
+  }}
+</Story>
+
+<Story name="Textarea-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Inputcomponent labelText={caption.detail10} element='textarea' id= 'textarea' type='textarea' cols='40' rows='10' mode='disabled' disabled= 'disabled' placeholder= {caption.text2}></Inputcomponent>;
   }}
 </Story>
 
