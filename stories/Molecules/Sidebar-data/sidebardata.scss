@@ -18,12 +18,12 @@
   }
 }
 
-.accordion__panel {
+ul.accordion__panel {
   display: none;
   height: auto;
   padding: 0;
 
-  &--description {
+  li {
     a {
       @extend %img_none;
 
@@ -50,8 +50,8 @@
 }
 
 [dir='rtl'] {
-  .accordion__panel {
-    &--description > a {
+  ul.accordion__panel {
+    li > a {
       margin-left: $spacing-24;
       margin-right: $spacing-32;
 
