@@ -19,51 +19,72 @@ export const PublicationPage = ({
   }) => {
     useEffect(() => {
         viewport('.content-card-container');
+        viewport('.related-publication');   
     }, []);
     return (
     <>
-        <div className="grid-container fluid content-bottom">
+        <div className="grid-container fluid publication-bottom">
             <div class="grid-x grid-margin-x">
-                <div class="cell small-12 large-11 large-offset-1">
+                <div class="cell small-12 medium-12 large-11 large-offset-1 medium-offset-0">
                     <div class="column">
                         <Breadcrumbcomponent data={data} active={active} />                       
                     </div>
                 </div>
             </div>
-            <div class="grid-x grid-margin-x">
-                <div class="cell small-12 large-5 large-offset-1">
+            <div class="grid-x grid-margin-x publication-block">
+                <div class="cell small-12 title-mobile">
+                    <div class="column">
+                        <Heading
+                            type='2' 
+                            label={blockHeader} 
+                        />
+                    </div>
+                </div>
+                <div class="cell small-12 large-5 medium-6 large-offset-1 medium-offset-0">
                     <div class="column sticky">
-                        <PublicationCard 
+                        <PublicationCard
                             image={image && <Publicationthumb/>}
                             download={download}       
                             readmore={readmore}                 
                         />
                     </div>
                 </div>
-                <div class="cell small-12 large-5">
+                <div class="cell small-12 large-5 medium-5">
                     <div class="column">
-                        <Post 
-                            headerText={blockHeader} 
-                            descriptionText={blockDescription}                
+                        <Heading className="title-desktop"
+                            type='2' 
+                            label={blockHeader} 
                         />
+                        <Heading className="description-text"
+                            type='6' 
+                            label={blockDescription} 
+                        />                       
                         <P label={paragraphTop1} className="margin-top-48"/>
                         <P label={paragraphTop2} />
                         <P label={paragraphTop3} />
                     </div>                    
                 </div>
             </div>
-            <div class="grid-x grid-margin-x margin-top-48">
+            <div class="grid-x grid-margin-x margin-top-48 related-publication">
                 <div class="cell small-12 large-6 large-offset-6 border-top-2">
-                    <div class="column related-publication margin-top-80">
+                    <div class="column margin-bottom-48">
                         <Heading 
                             type='2' 
                             label={relatedPublicationHeading} 
                         />
-                        <ContentCardWithOutImage Emphasize='false'
+                    </div>
+                </div>
+                <div class="cell small-12 large-6 large-offset-6">
+                    <div class="column">
+                        <ContentCardWithOutImage
+                            Emphasize='false'
                             data={ContentCardWithOutImageData}
                         />
-                        <CtaButton className="margin-top-48" label2={buttontype} variant="Secondary" />                
-                        
+                    </div>
+                </div>
+                <div class="cell small-12 large-6 large-offset-6">
+                    <div class="column margin-top-48">
+                        <CtaButton label2={buttontype} variant="secondary" />   
                     </div>
                 </div>
             </div>

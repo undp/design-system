@@ -7,7 +7,7 @@ import {getCaptionForLocale as footerData} from "../../Organism/Footer/Footer.st
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = {
-        postheaderdata: [{
+      postheaderdata: [{
         text: 'Home'
       },
       {
@@ -27,7 +27,7 @@ export const getCaptionForLocale = (locale) => {
       paragraphTop2:'Exercitationem ut enim dolore pariatur magni non fuga. Et enim impedit sit eos dolor cupiditate. Blanditiis eum et velit exercitationem quia est consectetur. Aperiam molestiae aut nam. Unde qui possimus. Perferendis animi natus neque atque ab.',
       paragraphTop3:'Earum eos eos qui natus unde vero. Dolorem delectus commodi. Quia cupiditate maiores eos sunt quia ratione consequatur voluptate id.',
       buttonname: "VIEW MORE",
-      PublicationHeading:'Related \nPublications',
+      PublicationHeading:['Related', <br/>,'Publications'],
       contentdata: [
           {
             contenttile: "CONTENT TAG",
@@ -36,6 +36,10 @@ export const getCaptionForLocale = (locale) => {
             paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
             button: "READ MORE",
             link:"#",
+            size:'medium-6',
+            Hovercolors:'gray',
+            Emphasize:"false",
+            variant:"Space",
           },
           {
             contenttile: "CONTENT TAG",
@@ -44,6 +48,10 @@ export const getCaptionForLocale = (locale) => {
             paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
             button: "READ MORE",
             link:"#",
+            size:'medium-6',
+            Hovercolors:'gray',
+            Emphasize:"false",
+            variant:"Space",
           },
           {
             contenttile: "CONTENT TAG",
@@ -52,6 +60,10 @@ export const getCaptionForLocale = (locale) => {
             paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
             button: "READ MORE",
             link:"#",
+            size:'medium-6',
+            Hovercolors:'gray',
+            Emphasize:"false",
+            variant:"Space",
           },
           {
             contenttile: "CONTENT TAG",
@@ -60,6 +72,10 @@ export const getCaptionForLocale = (locale) => {
             paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
             button: "READ MORE",
             link:"#",
+            size:'medium-6',
+            Hovercolors:'gray',
+            Emphasize:"false",
+            variant:"Space",
           },
           {
             contenttile: "CONTENT TAG",
@@ -68,6 +84,10 @@ export const getCaptionForLocale = (locale) => {
             paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
             button: "READ MORE",
             link:"#",
+           size:'medium-6',
+            Hovercolors:'gray',
+            Emphasize:"false",
+            variant:"Space",
           },
           {
             contenttile: "CONTENT TAG",
@@ -76,6 +96,10 @@ export const getCaptionForLocale = (locale) => {
             paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
             button: "READ MORE",
             link:"#",
+            size:'medium-6',
+            Hovercolors:'gray',
+            Emphasize:"false",
+            variant:"Space",
           }
         ]
     }; 
@@ -101,7 +125,7 @@ export const getCaptionForLocale = (locale) => {
       paragraphTop2:'Exercitationem ut enim dolore pariatur magni non fuga. Et enim impedit sit eos dolor cupiditate. Blanditiis eum et velit exercitationem quia est consectetur. Aperiam molestiae aut nam. Unde qui possimus. Perferendis animi natus neque atque ab.',
       paragraphTop3:'Earum eos eos qui natus unde vero. Dolorem delectus commodi. Quia cupiditate maiores eos sunt quia ratione consequatur voluptate id.',
       buttonname: "إنجليزي",
-      PublicationHeading:'المنشورات ذات الصلة',
+      PublicationHeading:['متعلق ب', <br/>,'المنشورات'],
       contentdata: [
         {
           contenttile: "علامة المحتوى",
@@ -110,6 +134,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
           button: "اقرأ أكث",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "علامة المحتوى",
@@ -118,6 +146,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
           button: "اقرأ أكث",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "علامة المحتوى",
@@ -126,13 +158,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
           button: "اقرأ أكث",
           link:"#",
-        },{
-          contenttile: "علامة المحتوى",
-          contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
-          contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
-          paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
-          button: "اقرأ أكث",
-          link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "علامة المحتوى",
@@ -141,6 +170,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
           button: "اقرأ أكث",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "علامة المحتوى",
@@ -149,6 +182,22 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
           button: "اقرأ أكث",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
+        },
+        {
+          contenttile: "علامة المحتوى",
+          contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+          contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+          paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+          button: "اقرأ أكث",
+          link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         }
       ]
     }; 
@@ -174,7 +223,7 @@ export const getCaptionForLocale = (locale) => {
       paragraphTop2:'Exercitationem ut enim dolore pariatur magni non fuga. Et enim impedit sit eos dolor cupiditate. Blanditiis eum et velit exercitationem quia est consectetur. Aperiam molestiae aut nam. Unde qui possimus. Perferendis animi natus neque atque ab.',
       paragraphTop3:'Earum eos eos qui natus unde vero. Dolorem delectus commodi. Quia cupiditate maiores eos sunt quia ratione consequatur voluptate id.',
       buttonname: "ပိုမိုကြည့်ရှုပါ။",
-       PublicationHeading:'ဆက်စပ်စာစောင်မျာ',
+      PublicationHeading:['ဆက်စပ်', <br/>,'စာစောင်များ'],
       contentdata: [
         {
           contenttile: "အကြောင်းအရာ TAG",
@@ -183,6 +232,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
           button: "ပိုပြီးဖတ်ပါ",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "အကြောင်းအရာ TAG",
@@ -191,6 +244,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
           button: "ပိုပြီးဖတ်ပါ",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "အကြောင်းအရာ TAG",
@@ -199,6 +256,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
           button: "ပိုပြီးဖတ်ပါ",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "အကြောင်းအရာ TAG",
@@ -207,6 +268,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
           button: "ပိုပြီးဖတ်ပါ",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "အကြောင်းအရာ TAG",
@@ -215,6 +280,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
           button: "ပိုပြီးဖတ်ပါ",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "အကြောင်းအရာ TAG",
@@ -223,6 +292,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
           button: "ပိုပြီးဖတ်ပါ",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         }
       ]
     }; 
@@ -248,7 +321,7 @@ export const getCaptionForLocale = (locale) => {
       paragraphTop2:'Exercitationem ut enim dolore pariatur magni non fuga. Et enim impedit sit eos dolor cupiditate. Blanditiis eum et velit exercitationem quia est consectetur. Aperiam molestiae aut nam. Unde qui possimus. Perferendis animi natus neque atque ab.',
       paragraphTop3:'Earum eos eos qui natus unde vero. Dolorem delectus commodi. Quia cupiditate maiores eos sunt quia ratione consequatur voluptate id.',
       buttonname: "もっと見る",
-      PublicationHeading:'関連出版物',
+      PublicationHeading:['関連している', <br/>,'出版物'],
       contentdata: [
         {
           contenttile: "コンテンツタグ",
@@ -257,6 +330,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
           button: "続きを読む",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "コンテンツタグ",
@@ -265,6 +342,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
           button: "続きを読む",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "コンテンツタグ",
@@ -273,6 +354,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
           button: "続きを読む",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "コンテンツタグ",
@@ -281,6 +366,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
           button: "続きを読む",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "コンテンツタグ",
@@ -289,6 +378,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
           button: "続きを読む",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "コンテンツタグ",
@@ -297,6 +390,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
           button: "続きを読む",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         }
       ]
     }; 
@@ -323,7 +420,7 @@ export const getCaptionForLocale = (locale) => {
       paragraphTop2:'Exercitationem ut enim dolore pariatur magni non fuga. Et enim impedit sit eos dolor cupiditate. Blanditiis eum et velit exercitationem quia est consectetur. Aperiam molestiae aut nam. Unde qui possimus. Perferendis animi natus neque atque ab.',
       paragraphTop3:'Earum eos eos qui natus unde vero. Dolorem delectus commodi. Quia cupiditate maiores eos sunt quia ratione consequatur voluptate id.',
       buttonname: "VIEW MORE",
-      PublicationHeading:'Related \nPublications',
+      PublicationHeading:['Related', <br/>,'Publications'],
       contentdata: [
         {
           contenttile: "CONTENT TAG",
@@ -332,6 +429,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
           button: "READ MORE",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "CONTENT TAG",
@@ -340,6 +441,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
           button: "READ MORE",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "CONTENT TAG",
@@ -348,6 +453,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
           button: "READ MORE",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "CONTENT TAG",
@@ -356,6 +465,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
           button: "READ MORE",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "CONTENT TAG",
@@ -364,6 +477,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
           button: "READ MORE",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         },
         {
           contenttile: "CONTENT TAG",
@@ -372,6 +489,10 @@ export const getCaptionForLocale = (locale) => {
           paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
           button: "READ MORE",
           link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
         }
       ]
     };

@@ -43,7 +43,11 @@
   }
 
   &__description {
-    padding-bottom: $spacing-48;
+    padding: 1.1rem 1.1rem $spacing-40 1.1rem;
+
+    @include devicebreak(medium) {
+      padding: $spacing-24 $spacing-24 $spacing-48 $spacing-24;
+    }
   }
 }
 

@@ -6,16 +6,35 @@
   border-top: 2px solid #000;
 }
 
-.related-publication .cell.medium-4 {
-  width: 45%;
-
-  @include devicebreak(small) {
+.related-publication {
+  .cell.medium-4 {
     width: 100%;
+  
+    @include devicebreak(medium) {
+      width: 45%;
+    }
   }
-}
 
-.related-publication .contentcard {
-  border: none;
+  .content-card {
+    border: none;
+    margin-top: $spacing-24;
+
+    @include devicebreak(medium) {
+      margin-top: $spacing-48;
+    }
+  }
+
+  .cell {
+    padding: $spacing-12 0;
+  }
+
+  h2{
+    margin-top: $spacing-48;
+
+    @include devicebreak(medium) {
+      margin-top: $spacing-80;
+    }
+  }
 }
 
 // margin styles
@@ -78,22 +97,87 @@
 }
 
 .content-bottom {
-  margin-bottom: $spacing-96;
+  margin-bottom: $spacing-48;
 
-  @include devicebreak(small) {
+  @include devicebreak(medium) {
+    margin-bottom: $spacing-96;
+  }
+}
+
+.description-text{
+  margin-top: $spacing-40;
+
+  @include devicebreak(medium) {
+    margin-top: $spacing-08;
+  }
+}
+
+.publication{
+  &-bottom{
     margin-bottom: $spacing-48;
+
+    @include devicebreak(medium) {
+      margin-bottom: 4.688rem;
+    }
+  }
+  
+  &-block{      
+      margin-top: 4.375rem;
+      scroll-behavior: auto;
+
+    @include devicebreak(medium) {
+      margin-top: 3.313rem;
+    }
   }
 }
 // margin styles end here
 
 //Sticky publication card
 .sticky.stick {
-  position: fixed;
+  position: static;
   top: 0;
-  z-index: 10000;
+  z-index: -1;
+  transition: all 0.5s ease;  
 
-  @include devicebreak(small) {
-    position: static;
+  @include devicebreak(medium) {
+    position: fixed;
+  }
+}
+
+.title{
+  &-desktop{
+    @include devicebreak(small) {
+      display: none;
+    }
+  }
+
+  &-mobile{
+    display: none;
+
+    @include devicebreak(small) {
+      display: block;
+    }
+
+    h2{
+      margin-bottom: $spacing-24;
+    }
+  }
+}
+
+
+[dir="rtl"] {
+  .related-publication{
+    .large-offset-6 {
+      margin-left: 0;
+      margin-right: calc(50% + 1rem / 2);
+    }
+  }
+
+  .publication-bottom{
+    .large-offset-1 {
+      margin-left: 0;
+      margin-right: calc(8.33333% + 1.5rem / 2);
+    }
   }
 }
 //Sticky publication card end
