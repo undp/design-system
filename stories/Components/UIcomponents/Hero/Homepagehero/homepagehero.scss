@@ -150,6 +150,7 @@
   &-option {
     &__content {
       padding: 0;
+      margin-bottom: $spacing-04;
 
       @include devicebreak(medium) {
         padding: 0 1.625rem 0 $spacing-64;
@@ -163,6 +164,14 @@
 
       @include devicebreak(medium) {
         margin-bottom: $spacing-80;
+        padding-left: $spacing-64;
+      }
+    }
+
+    &__title__small{
+      padding-left: 0;
+
+      @include devicebreak(medium) {
         padding-left: $spacing-64;
       }
     }

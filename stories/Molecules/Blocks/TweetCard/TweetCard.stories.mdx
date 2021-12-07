@@ -6,84 +6,64 @@ export const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
-        tweetdata: [
-          {
-            contenttile: "UN Development",
-            contentsubtitle: "@UNDP",
-            contentdate: ["5:00:11 PM ·12/2/2020"],
-            descriptiontext:
-              "Disaster risk governance done well can be the difference between: life and death; being injured or being fit; having a roof over your head or being homeless.",
-            button: "READ MORE",
-            link: "#",
-            imgback: img,
-          },
-        ],
+        contenttile: "UN Development",
+        contentsubtitle: "@UNDP",
+        contentdate: ["5:00:11 PM ·12/2/2020"],
+        descriptiontext:
+          ["Disaster risk governance done well can be the difference between: life and death; being injured or being fit; having a roof over your head or being homeless.",<a href="#">https://bit.ly/2FWFsqH</a>],
+        button: "VIEW ON TWITTER",
+        link: "#",
+        imgback: img,
       };
       return engText;
     case "arabic":
       const arabicText = {
-        tweetdata: [
-          {
-            contenttile: "الأمم المتحدة للتنمية",
-            contentsubtitle: "برنامج الأمم المتحدة الإنمائي",
-            contentdate: ["5:00:11 مساءً · 12/2/2020"],
-            descriptiontext:
-              "إدارة مخاطر الكوارث التي يتم إجراؤها بشكل جيد يمكن أن تكون الفرق بين: الحياة والموت ؛ التعرض للإصابة أو اللياقة ؛ وجود سقف فوق رأسك أو أن تكون بلا مأوى",
-            button: "اقرأ أكث",
-            link: "#",
-            imgback: img,
-          },
-        ],
+        contenttile: "الأمم المتحدة للتنمية",
+        contentsubtitle: "برنامج الأمم المتحدة الإنمائي",
+        contentdate: ["5:00:11 مساءً · 12/2/2020"],
+        descriptiontext:
+          ["إدارة مخاطر الكوارث التي يتم إجراؤها بشكل جيد يمكن أن تكون الفرق بين: الحياة والموت ؛ التعرض للإصابة أو اللياقة ؛ وجود سقف فوق رأسك أو أن تكون بلا مأوى",<a href="#">https://bit.ly/2FWFsqH</a>],
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img,
       };
       return arabicText;
     case "burmese":
       const burmeseText = {
-        tweetdata: [
-          {
-            contenttile: "ကုလသမဂ္ဂ ဖွံ့ဖြိုးတိုးတက်ရေး",
-            contentsubtitle: "@UNDP",
-            contentdate: ["5:00:11 PM ·12/2/2020"],
-            descriptiontext:
-              "သဘာဝဘေး အန္တရာယ်ဆိုင်ရာ စီမံခန့်ခွဲမှုကို ကောင်းမွန်စွာလုပ်ဆောင်နိုင်သည်- အသက်နှင့် သေဆုံးမှုအကြား ခြားနားချက်ဖြစ်နိုင်သည်။ ထိခိုက်ဒဏ်ရာရခြင်း၊ သင့်ခေါင်းပေါ်တွင် အမိုးရှိခြင်း သို့မဟုတ် အိုးမဲ့အိမ်မဲ့ဖြစ်ခြင်း။",
-            button: "ပိုပြီးဖတ်ပါ",
-            link: "#",
-            imgback: img,
-          },
-        ],
+        contenttile: "ကုလသမဂ္ဂ ဖွံ့ဖြိုးတိုးတက်ရေး",
+        contentsubtitle: "@UNDP",
+        contentdate: ["5:00:11 PM ·12/2/2020"],
+        descriptiontext:
+          ["သဘာဝဘေး အန္တရာယ်ဆိုင်ရာ စီမံခန့်ခွဲမှုကို ကောင်းမွန်စွာလုပ်ဆောင်နိုင်သည်- အသက်နှင့် သေဆုံးမှုအကြား ခြားနားချက်ဖြစ်နိုင်သည်။ ထိခိုက်ဒဏ်ရာရခြင်း၊ သင့်ခေါင်းပေါ်တွင် အမိုးရှိခြင်း သို့မဟုတ် အိုးမဲ့အိမ်မဲ့ဖြစ်ခြင်း။",<a href="#">https://bit.ly/2FWFsqH</a>],
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img,
       };
       return burmeseText;
     case "japanese":
       const japaneseText = {
-        tweetdata: [
-          {
-            contenttile: "国連開発",
-            contentsubtitle: "@UNDP",
-            contentdate: ["5:00:11 PM・2020年12月2日"],
-            descriptiontext:
-              "災害リスクガバナンスがうまく行われていることが、生と死の違いになる可能性があります。けがをしたり、体調を崩したりする。頭上に屋根があるか、ホームレスになっている",
-            button: "続きを読む",
-            link: "#",
-            imgback: img,
-          },
-        ],
+        contenttile: "国連開発",
+        contentsubtitle: "@UNDP",
+        contentdate: ["5:00:11 PM・2020年12月2日"],
+        descriptiontext:
+          ["災害リスクガバナンスがうまく行われていることが、生と死の違いになる可能性があります。けがをしたり、体調を崩したりする。頭上に屋根があるか、ホームレスになっている",<a href="#">https://bit.ly/2FWFsqH</a>],
+        button: "続きを読む",
+        link: "#",
+        imgback: img,
       };
       return japaneseText;
     default:
       const dummy = {
-        tweetdata: [
-          {
-            contenttile: "UN Development",
-            contentsubtitle: "@UNDP",
-            contentdate: ["5:00:11 PM ·12/2/2020"],
-            descriptiontext:
-              "Disaster risk governance done well can be the difference between: life and death; being injured or being fit; having a roof over your head or being homeless.",
-            button: "READ MORE",
-            link: "#",
-            imgback: img,
-          },
-        ],
+        contenttile: "UN Development",
+        contentsubtitle: "@UNDP",
+        contentdate: ["5:00:11 PM ·12/2/2020"],
+        descriptiontext:
+          ["Disaster risk governance done well can be the difference between: life and death; being injured or being fit; having a roof over your head or being homeless.",<a href="#">https://bit.ly/2FWFsqH</a>],
+        button: "VIEW ON TWITTER",
+        link: "#",
+        imgback: img,
       };
-    return dummy;
+      return dummy;
   }
 };
 
@@ -103,6 +83,9 @@ export const getCaptionForLocale = (locale) => {
   .sbdocs .sbdocs-li{
     font-size: 1rem;
   }
+  div#story--molecules-blocks-tweet-card--tweet-card {
+    background-color: #232e3e;
+  }
 `}</style>
 
 # Tweet Card Component
@@ -110,7 +93,17 @@ export const getCaptionForLocale = (locale) => {
 <Story name="Tweet Card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <TweetCard data={caption.tweetdata} {...args}></TweetCard>;
+    return (
+      <TweetCard
+        contenttile={caption.contenttile}
+        contentsubtitle={caption.contentsubtitle}
+        contentdate={caption.contentdate}
+        descriptiontext={caption.descriptiontext}
+        button={caption.button}
+        link={caption.link}
+        imgback={caption.imgback}
+      ></TweetCard>
+    );
   }}
 </Story>
 

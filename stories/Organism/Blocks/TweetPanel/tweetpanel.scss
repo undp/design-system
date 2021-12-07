@@ -14,21 +14,24 @@
       display: block;
       font-size: 0;
       height: 25px;
-      margin-bottom: 6px;
+      margin-bottom: 0.375rem;
       margin-left: -$spacing-16;
+      margin-top: 3.688rem;
       width: 30px;
     }
   }
+}
 
-  &-header {
-    align-items: end;
-    display: flex;
-    margin-bottom: $spacing-40;
+.twitter-header {
+  align-items: end;
+  background-color: #232e3e;
+  display: flex;
+  margin-bottom: $spacing-40;
 
-    h2 {
-      color: $color-white;
-      margin-bottom: 0;
-    }
+  h2 {
+    color: $color-white;
+    margin-bottom: 0;
+    margin-right: 0.375rem;
   }
 }
 

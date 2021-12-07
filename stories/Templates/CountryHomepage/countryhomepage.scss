@@ -1,0 +1,19 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+//Stories Container
+.wide-card{
+    margin-top: $spacing-48;
+    padding-top: $spacing-24;
+}
+
+//hero container bootom
+.hero-container{
+    padding-bottom: $spacing-48;
+}
+
+.imagecard{
+    padding: $spacing-12 0;
+}
+// style end

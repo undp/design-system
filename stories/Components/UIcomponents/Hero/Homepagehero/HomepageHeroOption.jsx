@@ -8,15 +8,22 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { CtaButton } from '../../Buttons/Cta_button/CtaButton';
 
 export const Homepageherooption = ({
-  title, subtitle, button, variant, imgalt, imgsrc,
+  title, subtitle, button, variant, imgalt, imgsrc, content
 }) => {
   useEffect(() => {
     viewport('.hero-option__title');
     viewport('.hero-option__subtitle');
+    viewport('.hero-option__title__small');
   }, []);
   return (
-    <div className="hero-option hero-border_left">      
-      <Heading type="1" className="hero-option__title left-right" label={title} />
+    <div className="hero-option hero-border_left">
+      <div className="grid-x">
+        <div className="cell large-8">
+          <Heading type="4" className="hero-option__title__small left-right" label={content} />  
+          <Heading type="2" className="hero-option__title left-right" label={title} />
+        </div>
+      </div>  
+      
       <div className="grid-x">
         <div className="cell large-4 medium-4">
           <div className="hero-option__content">

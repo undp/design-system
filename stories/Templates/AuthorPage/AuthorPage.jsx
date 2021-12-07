@@ -31,7 +31,7 @@ const AuthorPage = ({
           </div>
         </div>
         <div className="grid-x">
-          <div className="cell medium-offset-1 medium-10 small-12 author-content">
+          <div className="cell medium-offset-2 medium-9 small-12 author-content">
             <ContentCard data={contentCardData.groupcontentdata} buttontype={contentCardData.buttonname} />
           </div>
         </div>
