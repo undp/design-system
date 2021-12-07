@@ -15,15 +15,14 @@
       font-size: 0;
       height: 25px;
       margin-bottom: 0.375rem;
-      margin-left: -$spacing-16;
-      margin-top: 3.688rem;
+      margin-left: -0.625rem;
       width: 30px;
     }
   }
 }
 
 .twitter-header {
-  align-items: end;
+  align-items: flex-end;
   background-color: #232e3e;
   display: flex;
   margin-bottom: $spacing-40;
