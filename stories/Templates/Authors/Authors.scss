@@ -44,7 +44,7 @@
     text-transform: uppercase;
   }
   .authors-heading {
-    margin: $spacing-96 0 $spacing-64;
+    margin: 6.125rem 0 4.1875rem;
     @include devicebreak(small) {
       margin: $spacing-40 0 $spacing-64;
     }
@@ -100,14 +100,23 @@
       }
     }
   }
-
-  [dir="rtl"] {
-    .author-page {
-      .medium-offset-1 {
-        @include devicebreak(small) {
-          margin-right: 0;
-          margin-left: 0;
-        }
+}
+[dir="rtl"] {
+  .author-page {
+    .medium-offset-1 {
+      @include devicebreak(small) {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+    @media print, screen and (min-width: 48em) {
+      .grid-margin-x > .medium-offset-3 {
+        margin-right: calc(25% + 1.5rem / 2);
+        margin-left: 0;
+      }
+      .medium-offset-3 {
+        margin-right: 25%;
+        margin-left: 0;
       }
     }
   }
