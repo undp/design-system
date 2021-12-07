@@ -18,11 +18,12 @@
     margin-top: $spacing-96;
 
     &:hover {
-      .country {
-        &-card {
-          &__img {
+      img {
             @include transform(translateY(-50px));
           }
+      .country {
+        &-card {
+          
 
           &__overlay {
             opacity: 1;
@@ -92,7 +93,7 @@
     position: relative;
   }
 
-  &__img {
+  img{
     @extend %img-cover;
 
     @include transition(all 0.4s);
@@ -143,6 +144,9 @@
       }
     }
   }
+}
+.countrycard__items .glide__slide {
+  height: auto;
 }
 
 [dir='rtl'] {

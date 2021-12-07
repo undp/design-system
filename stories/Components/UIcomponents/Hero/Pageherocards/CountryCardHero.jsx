@@ -13,7 +13,7 @@ export const CountryCardHero = ({ data, title, subtitle }) => {
     viewport('.countrycard__header h6');
   }, []);
   return (
-    <div className="countrycard__wrapper">
+    <div className="country-card__wrapper">
       <div className="grid-x countrycard__header">
         <div className="cell large-5 medium-12">
           <Heading type="1" className="left-right" label={title} />
