@@ -11,7 +11,6 @@ export const ImageOnlyCarousel = ({ data }) => {
     viewport('.image-only-carousel');
   }, []);
   return (
-    <div className="overflow-hidden">
       <div className="image-only-carousel left-right">
         <div className="glide__bullets" data-glide-el="controls[nav]">
           {data.map((item, index) => <button className="glide__bullet" data-glide-dir={[`=${index}`]} aria-label={index} key={index} />)}
@@ -22,7 +21,7 @@ export const ImageOnlyCarousel = ({ data }) => {
               <div className="glide__slide">
                 <div className="grid-x grid-margin-x">
                   <div className="medium-8 cell">
-                    <img className="image-only-carousel__image" src={item.slideImage} alt="" />
+                    <img src={item.slideImage} alt={item.slideImage}  />
                   </div>
                 </div>
               </div>
@@ -34,6 +33,5 @@ export const ImageOnlyCarousel = ({ data }) => {
           <button className="glide__arrow glide__arrow--right" data-glide-dir=">"><img src={chevronRightWhite} alt="Next" /></button>
         </div>
       </div>
-    </div>
   );
 };

@@ -12,7 +12,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Buttons/CTA Button"
+<Meta title="Components/UI components/Buttons/Buttons"
   argTypes={{
     variant: {
       options: ["primary", "secondary"],
@@ -109,7 +109,7 @@ When using button classes on elements that are used to trigger in-page functiona
   </div>
 </div>
 
-<Story name="CTA Button">
+<Story name="Buttons">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <CtaButton label1={caption.detail1} label2={caption.detail2} {...args} ></CtaButton>;

@@ -13,7 +13,6 @@ export const AuthorSummary = ({
   }, []);
   return (
     <div className="author-card-wrapper">
-      <Heading type="4" label={text} />
       <div className="author-card left-right">
         <div className="author-card__summary">
           <Authorimg

@@ -3,7 +3,7 @@
 @import '../../../../assets/scss/breakpoints';
 
 /* image card start */
-.imagecard {
+.image-card {
   @extend %img_none;
 
   border: 0;
@@ -17,7 +17,7 @@
     &__content--thumbnail-image {
       opacity: 1;
 
-      .imagecard__content--caption {
+      .image-card__content--caption {
         height: auto;
         opacity: 1;
         transform: translateY(0);
@@ -56,7 +56,7 @@
       }
     }
 
-    .imagecard__content--caption {
+    .image-card__content--caption {
       h5 {
         font-size: $font-size-16;
       }
@@ -64,8 +64,9 @@
   }
 }
 
-.imagecard__content {
+.image-card__content {
   position: relative;
+  overflow: hidden;
 
   &--thumbnail-image {
     img {
@@ -81,7 +82,7 @@
 
     @include devicebreak(large) {
       @include translate(0,100%);
-      @include transition(all 0.4s cubic-bezier(0.64,0.05,0.35,1.05));
+      @include transition(all 0.3s cubic-bezier(0.64,0.05,0.35,1.05));
 
       background: $color-white;
       bottom: -1px;
@@ -101,7 +102,7 @@
 }
 
 [dir='rtl'] {
-  .imagecard {
+  .image-card {
     a {
       margin: 0;
     }

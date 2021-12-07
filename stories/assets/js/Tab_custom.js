@@ -1,8 +1,8 @@
 /* Tab JS start custom */
 export function TabFun() {
-  const $tab_item = $('#tab .tab__item');
+  const $tab_item = $('.tab__item');
   const $tab_content = $('.tab__content');
-  const $tab_item_active = $('#tab .tab__item:first-child, #tab-1');
+  const $tab_item_active = $('.tab__item:first-child, .tab__content-wrapper .tab__content:first-child');
 
   $tab_item_active.addClass('active');
   $tab_item.click(function () {

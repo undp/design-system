@@ -1,0 +1,8 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../Templates/PublicationPage/publicationpage.scss';
+
+.card-yellow.green{
+    background-color: $color-light-green !important;
+}   

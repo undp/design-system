@@ -3,6 +3,8 @@
 
 /* fixed image size carousel start */
 .fluid-image-size-carousel {
+  overflow:hidden;
+
   &__image {
     width: 100%;
 
@@ -18,7 +20,7 @@
       padding-right: 2rem;
     }
 
-    &-tag {
+    h6 {
       @extend %carousel_tag;
     }
 

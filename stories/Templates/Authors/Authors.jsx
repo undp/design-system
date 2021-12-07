@@ -37,7 +37,6 @@ const Authors = ({
       $('.author-cards').removeClass('find-first-author');
     });
   }, []);
-  console.log('authorSummeryData', authorSummeryData);
   return (
     <div>
       <div className="grid-container fluid author-page">

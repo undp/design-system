@@ -41,6 +41,11 @@
     right: 16px;
     top: 10px;
     width: 45px;
+    font-size: 0;
+  
+    &:hover {
+      @extend %no-animation;
+    }
   }
 }
 
