@@ -28,6 +28,11 @@ export const parameters = {
   docs: {
     transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn),
   },
+   options: {
+    storySort: {
+      order: ['Getting started', ['Intro', 'How to use our design system?', 'Browser support'],'Foundation','Components', ,['Navigation components',['Breadcrumbs'],['Main Navigation']],'Patterns', 'Utilities','Templates' ],
+    },
+  },
 }
 
 /* Implementing locale for language switcher */
