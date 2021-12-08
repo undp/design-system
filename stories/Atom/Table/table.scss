@@ -16,6 +16,8 @@ table {
     th,
     td {
       font-size: $font-size-16;
+      -webkit-text-size-adjust:100%;
+      text-size-adjust:100%;
     }
   }
 
@@ -100,11 +102,7 @@ tbody {
 }
 
 .scroll {
-  overflow-x: scroll;
-
-  @include devicebreak(medium) {
-    overflow-x: inherit;
-  }
+  overflow-x: auto;
 
   th,
   td {
