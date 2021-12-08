@@ -8,7 +8,7 @@ export const TextBackground = ({ headerText, descriptionText }) => {
     viewport('.heading-container');
   }, []);
   return (
-    <div className="grid-x grid-margin-x heading-container left-right">
+    <div className="grid-x heading-container align-center left-right">
       <div className="cell medium-3">
         <Heading type="2" label={headerText} />
       </div>

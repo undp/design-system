@@ -17,4 +17,11 @@
       margin-top: 0;
     }
   }
+
+  h2,
+  h4 {
+    @include devicebreak(small) {
+      padding: 0 $spacing-24;
+    }
+  }
 }

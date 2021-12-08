@@ -25,7 +25,8 @@ export const statsArray = (locale) => {
       titleText: 'UNDP Issues Brief on Nature-Based Climate Solutions',
       descText: 'The conservation, rehabilitation and climate-informed management of biodiversity and ecosystems increases resilience to climate change and provides low-cost and long-term solutions to protect lives, livelihoods and infrastructure, and advance progress toward the Sustainable Development Goals.',
       buttonText: 'Read More'  
-    }]}; return engText.data;
+    }],
+    }; return engText;
     case 'arabic': const arabicText = {data: [{
       slideImage: slImage,
       tagtext: 'النشر',
@@ -46,7 +47,8 @@ export const statsArray = (locale) => {
       titleText: 'برنامج الأمم المتحدة الإنمائي يصدر موجزًا ​​عن الحلول المناخية القائمة على الطبيعة',
       descText: 'يزيد حفظ التنوع البيولوجي والنظم البيئية وإعادة تأهيله وإدارته المستنيرة من المرونة في مواجهة تغير المناخ ويوفر حلولًا منخفضة التكلفة وطويلة الأجل لحماية الأرواح وسبل العيش والبنية التحتية ، ودفع التقدم نحو أهداف التنمية المستدامة.',
       buttonText: 'اقرأ أكثر'
-    }]}; return arabicText.data;
+    }],
+    }; return arabicText;
     case 'burmese': const burmeseText = {data: [{
       slideImage: slImage,
       tagtext: 'ထုတ်ဝေခြင်း။',
@@ -67,7 +69,8 @@ export const statsArray = (locale) => {
       titleText: 'UNDP သည် သဘာဝအခြေခံ ရာသီဥတုဆိုင်ရာ ဖြေရှင်းနည်းများဆိုင်ရာ အကျဉ်းချုပ်ကို ထုတ်ပြန်သည်။',
       descText: 'ဇီဝမျိုးစုံမျိုးကွဲများနှင့် ဂေဟစနစ်များ၏ ရာသီဥတုဆိုင်ရာ စီမံခန့်ခွဲမှု၊ ပြန်လည်ထူထောင်ရေးနှင့် ရာသီဥတုဆိုင်ရာ စီမံခန့်ခွဲမှုသည် ရာသီဥတုပြောင်းလဲမှုဒဏ်ကို ခံနိုင်ရည်အား တိုးမြင့်စေပြီး လူနေမှုဘဝ၊ အသက်မွေးဝမ်းကျောင်းမှုနှင့် အခြေခံအဆောက်အအုံများကို ကာကွယ်ရန် ကုန်ကျစရိတ်သက်သာပြီး ရေရှည်ဖြေရှင်းနည်းများ ပံ့ပိုးပေးကာ စဉ်ဆက်မပြတ် ဖွံ့ဖြိုးတိုးတက်ရေးပန်းတိုင်များဆီသို့ တိုးတက်စေသည်။',
       buttonText: 'ပိုပြီးဖတ်ပါ'
-    }]}; return burmeseText.data;
+    }],
+    }; return burmeseText;
     case 'japanese': const japaneseText = {data: [{
       slideImage: slImage,
       tagtext: '出版物',
@@ -88,7 +91,8 @@ export const statsArray = (locale) => {
       titleText: 'UNDPが自然に基づく気候ソリューションに関する概要を発表',
       descText: '生物多様性と生態系の保全、リハビリテーション、気候に基づいた管理は、気候変動に対する回復力を高め、生命、生計、インフラを保護し、持続可能な開発目標に向けて前進するための低コストで長期的なソリューションを提供します。',
       buttonText: '続きを読む'
-    }]}; return japaneseText.data;
+    }],
+    }; return japaneseText;
     default:
     const dummy =  {data: [{
       slideImage: slImage,
@@ -110,8 +114,9 @@ export const statsArray = (locale) => {
       titleText: 'UNDP Issues Brief on Nature-Based Climate Solutions',
       descText: 'The conservation, rehabilitation and climate-informed management of biodiversity and ecosystems increases resilience to climate change and provides low-cost and long-term solutions to protect lives, livelihoods and infrastructure, and advance progress toward the Sustainable Development Goals.',
       buttonText: 'Read More'
-    }]};
-    return dummy.data
+    }],
+    };
+    return dummy
   }
 };
 
@@ -153,7 +158,7 @@ The Fixed image size carousel Component is created for showing slider, designati
 <Story name="Fixed Carousel">
   {(args, { globals: { locale } }) => {
     const caption = statsArray(locale);
-    return <FixedSizeCarousel data={caption}></FixedSizeCarousel>;
+    return <FixedSizeCarousel data={caption.data} label={caption.label}></FixedSizeCarousel>;
   }}
 </Story>
 
