@@ -9,6 +9,7 @@
 .related-publication {
   .cell.medium-4 {
     width: 100%;
+    padding: $spacing-12 0;
   
     @include devicebreak(medium) {
       width: 45%;
@@ -17,15 +18,6 @@
 
   .content-card {
     border: none;
-    margin-top: $spacing-24;
-
-    @include devicebreak(medium) {
-      margin-top: $spacing-48;
-    }
-  }
-
-  .cell {
-    padding: $spacing-12 0;
   }
 
   h2{
@@ -114,7 +106,7 @@
 
 .publication{
   &-bottom{
-    margin-bottom: $spacing-48;
+    margin-bottom: 3.313rem;
 
     @include devicebreak(medium) {
       margin-bottom: 4.688rem;
@@ -122,11 +114,11 @@
   }
   
   &-block{      
-      margin-top: 4.375rem;
+      margin-top: 3.313rem;
       scroll-behavior: auto;
 
     @include devicebreak(medium) {
-      margin-top: 3.313rem;
+      margin-top: 4.375rem;
     }
   }
 }
@@ -146,16 +138,19 @@
 
 .title{
   &-desktop{
-    @include devicebreak(small) {
-      display: none;
+    display: none;
+
+    @include devicebreak(medium) {
+      display: block;
+      margin-bottom: $spacing-24;
     }
   }
 
   &-mobile{
-    display: none;
+    display: block;
 
-    @include devicebreak(small) {
-      display: block;
+    @include devicebreak(medium) {
+      display: none;
     }
 
     h2{
@@ -168,15 +163,19 @@
 [dir="rtl"] {
   .related-publication{
     .large-offset-6 {
-      margin-left: 0;
+      @include devicebreak(medium) {
+        margin-left: 0;
       margin-right: calc(50% + 1rem / 2);
+      }      
     }
   }
 
   .publication-bottom{
-    .large-offset-1 {
-      margin-left: 0;
-      margin-right: calc(8.33333% + 1.5rem / 2);
+    .large-offset-1 {      
+      @include devicebreak(medium) {
+        margin-left: 0;
+        margin-right: calc(8.33333% + 1.5rem / 2);
+      }
     }
   }
 }

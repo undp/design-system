@@ -9,13 +9,11 @@ import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Bread
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 import viewport from '../../assets/js/viewport';
-import logo from '../../assets/images/logo.svg';
-import logowhite from '../../assets/images/logo-white.svg';
 import './publicationpage.scss';
 import '../../assets/js/sticky';
 
 export const PublicationPage = ({
-    data, download, readmore, image, footerData, active, blockHeader, blockDescription, paragraphTop1, paragraphTop2, paragraphTop3, ContentCardWithOutImageData, buttontype, relatedPublicationHeading,Emphasize, Hovercolors,
+    data, download, readmore, image, footerData, active, blockHeader, blockDescription, paragraphTop1, paragraphTop2, paragraphTop3, ContentCardWithOutImageData, buttontype, relatedPublicationHeading,Emphasize, Hovercolors, logo, logowhite
   }) => {
     useEffect(() => {
         viewport('.content-card-container');
@@ -67,16 +65,16 @@ export const PublicationPage = ({
             </div>
             <div class="grid-x grid-margin-x margin-top-48 related-publication">
                 <div class="cell small-12 large-6 large-offset-6 border-top-2">
-                    <div class="column margin-bottom-48">
+                    <div class="column">
                         <Heading 
                             type='2' 
                             label={relatedPublicationHeading} 
                         />
                     </div>
                 </div>
-                <div class="cell small-12 large-6 large-offset-6">
+                <div class="cell small-12 large-6 large-offset-6 margin-top-48">
                     <div class="column">
-                        <ContentCardWithOutImage
+                        <ContentCardWithOutImage className="card-out"
                             Emphasize='false'
                             data={ContentCardWithOutImageData}
                         />
