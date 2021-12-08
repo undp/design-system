@@ -107,11 +107,11 @@
   }
 
   .footer__icons {
-    justify-content: start;
+    justify-content: flex-start;
     margin: 0 $spacing-16 $spacing-32;
 
     @include devicebreak(medium) {
-      justify-content: end;
+      justify-content: flex-end;
       margin: 0;
     }
   }
