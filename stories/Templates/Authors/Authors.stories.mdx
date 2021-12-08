@@ -15,15 +15,15 @@ export const getheadingForLocale = (locale) => {
     default: return 'UNDP Authors';
   }
 };
-export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = 'SORT BY'; return engText;
-    case 'arabic': const arabicText = 'اختار اللغة'; return arabicText;
-    case 'burmese': const burmeseText = 'ဘာသာစကားကို ရွေးပါ။'; return burmeseText;
-    case 'japanese': const japaneseText = '言語を選択する'; return japaneseText;
-    default: return 'SORT BY';
-  }
-};
+// export const getCaptionForLocale = (locale) => {
+//   switch(locale) {
+//     case 'english': const engText = 'SORT BY'; return engText;
+//     case 'arabic': const arabicText = 'اختار اللغة'; return arabicText;
+//     case 'burmese': const burmeseText = 'ဘာသာစကားကို ရွေးပါ။'; return burmeseText;
+//     case 'japanese': const japaneseText = '言語を選択する'; return japaneseText;
+//     default: return 'SORT BY';
+//   }
+// };
 export const getButtonForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = {view:'View more', close:'Close', sort:'Sort & FILTER'}; return engText;
@@ -33,6 +33,17 @@ export const getButtonForLocale = (locale) => {
     default: return {view:'View more', close:'Close', sort:'Sort & FILTER'};
   }
 };
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {sort: 'SORT BY', options:[ 'Most posts', 'Alphabetical']}; return engText;
+    case 'arabic': const arabicText = {sort: 'اختار اللغة', options:[  'معظم المشاركات', 'مرتب حسب الحروف الأبجدية']}; return arabicText;
+    case 'burmese': const burmeseText = {sort: 'ဘာသာစကားကို ရွေးပါ။', options:[ 'ပို့စ်အများစု', 'အက္ခရာစဉ်']}; return burmeseText;
+    case 'japanese': const japaneseText = {sort: '言語を選択する', options:[ 'ほとんどの投稿', 'アルファベット順']}; return japaneseText;
+  default:
+      return {sort: 'SORT BY', options:[ 'Most posts', 'Alphabetical']};
+  }
+};
+
 
 <Meta title="Templates/Authors" />
 
@@ -57,8 +68,7 @@ export const getButtonForLocale = (locale) => {
     const caption = getCaptionForLocale(locale);
     const buttonData = getButtonForLocale(locale);
     const headingData = getheadingForLocale(locale);
-    
-    return <Authors
+ return <Authors
     text={caption}
     viewText = {buttonData.view}
     sortText = {buttonData.sort}

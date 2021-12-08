@@ -16,10 +16,10 @@
   margin-top: 4.25rem;
 }
 .blockq {
-  margin-bottom: 0.625rem;
+  margin-bottom: 5.625rem;
   margin-top: 2.82rem;
-  @include devicebreak(medium) {
-    margin-bottom: 5.625rem;
+  @include devicebreak(large) {
+    margin-bottom: 0.625rem;
   }
 }
 
@@ -57,6 +57,9 @@
 .list-section {
   margin-top: $spacing-32;
   margin-bottom: 11.25rem;
+  @include devicebreak(small) {
+    margin-bottom: 3rem;
+  }
 
   li {
     margin-top: $spacing-24;
