@@ -31,6 +31,7 @@ export const GenericPage = ({
                         content={content}
                         imgsrc={imgsource}
                         imgalt={altname}
+                        active={active}
                     />
                 </div>
             </div>
@@ -57,7 +58,7 @@ export const GenericPage = ({
                                 />
                             </div>
                         </div>
-                        <div class="cell large-10 small-12">
+                        <div class="cell large-10 small-12 margin-top-32">
                             <div class="column">
                                 <P label={topParagraph} />
                             </div>

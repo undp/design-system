@@ -28,7 +28,7 @@ export const FeaturedContentCard = ({
         <div key={index} className={['cell', `${item.size ? column_options[`${item.size}`] : column_options[`${args.column}`]}`].join(' ')}>
           <a href="#" className={['feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_options[`${Image}`]}`}`].join(' ')}>
             <div className="feature__card-slide">
-              {Image === 'Image' || item.type === 'Image' && Image === 'Image'
+              {Image === 'Image' && item.type === 'Image' && Image === 'Image'
                 ? (
                   <div className="feature__card-image">
                     <img src={item.imgback} alt={item.imgback} />

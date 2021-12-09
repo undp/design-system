@@ -19,8 +19,8 @@ export const Languageswitcher = ({
       <button className={['dropdown-btn', `${variant_options[`${args.variant}`]}`].join(' ')}>{headerText}</button>
       <ul className="dropdown-language__content">
         {data.map((item, index) => (
-          <li>
-            <a href="#" key={index} className="dropdown-language__content-item">
+          <li className="dropdown-language__content-item" key={index}>
+            <a href="#">
               {item.descriptionText}
             </a>
           </li>
