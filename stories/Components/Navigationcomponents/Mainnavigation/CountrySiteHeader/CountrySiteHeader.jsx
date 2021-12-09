@@ -32,7 +32,7 @@ const CountrySiteHeader = ({
               <span>{siteTitleData.span}</span>
             </div>
           </div>
-          <div className="cell large-6 small-1 mid-nav">s
+          <div className="cell large-6 small-1 mid-nav">
             {desktopView && <Menu data={navigationData} />}
           </div>
           <div className="cell large-3 small-2 top-right">
