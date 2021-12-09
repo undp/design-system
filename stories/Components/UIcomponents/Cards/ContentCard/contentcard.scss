@@ -43,39 +43,25 @@
 
   &:hover {
     .card-thumbnail__image::before {
-      @include background-image(42deg, $color-yellow, transparent 80%);
-
       opacity: 0.75;
     }
+  }
 
-    &.red {
-      .card-thumbnail__image {
-        &::before {
-          @include background-image(42deg, $color-red, transparent 80%);
-
-          opacity: 0.75;
-        }
-      }
+  &.red {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-red, transparent 80%);
     }
+  }
 
-    &.green {
-      .card-thumbnail__image {
-        &::before {
-          @include background-image(42deg, $color-green, transparent 80%);
-
-          opacity: 0.75;
-        }
-      }
+  &.green {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-green, transparent 80%);
     }
+  }
 
-    &.blue {
-      .card-thumbnail__image {
-        &::before {
-          @include background-image(42deg, $color-azure, transparent 80%);
-
-          opacity: 0.75;
-        }
-      }
+  &.blue {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-azure, transparent 80%);
     }
   }
 
