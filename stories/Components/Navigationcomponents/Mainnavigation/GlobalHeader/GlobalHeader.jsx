@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/logo.svg';
 import { init } from '../../../../assets/js/navigation';
+import { desktopView } from '../../../../assets/js/UNDP';
 import { IconsGlobe } from '../../../../Atom/Icons/globe';
 import { IconsBar } from '../../../../Atom/Icons/icon_bar';
 import { IconsTimesBlue } from '../../../../Atom/Icons/icon_Times_Blue';
@@ -33,15 +34,9 @@ const GlobalHeader = ({
             <IconsTimesBlue />
           </div>
           <div className="cell large-8 small-8 mid-nav">
-            {
-                  window.innerWidth > 1439
-                  && <Menu data={leftNavigationData} />
-                }
+            {desktopView && <Menu data={leftNavigationData} />}
             <a href="#" className="middle-logo"><Logo src={pnud} alt="UNDP Logo" /></a>
-            {
-                  window.innerWidth > 1439
-                  && <Menu data={rightNavigationData} />
-                }
+            {desktopView && <Menu data={rightNavigationData} />}
           </div>
           <div className="cell large-2 small-2 top-right">
             <IconsGlobe />
@@ -51,7 +46,7 @@ const GlobalHeader = ({
             <MegaMenu />
           </div>
           {
-                window.innerWidth < 1440
+                !desktopView
                 && (
                 <MobileNav navigationData={navigationData}
                   languageswitcherData={languageswitcherData}

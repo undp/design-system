@@ -2,6 +2,7 @@
 import { React, useEffect } from 'react';
 import pnud from '../../../../assets/images/logo.svg';
 import { init } from '../../../../assets/js/navigation';
+import { desktopView } from '../../../../assets/js/UNDP';
 import { IconsGlobe } from '../../../../Atom/Icons/globe';
 import { IconsBar } from '../../../../Atom/Icons/icon_bar';
 import { IconsTimesBlue } from '../../../../Atom/Icons/icon_Times_Blue';
@@ -24,20 +25,17 @@ const CountrySiteHeader = ({
     <header className="country-header">
       <div className="grid-container">
         <div className="grid-x grid-margin-x align-content-middle">
-          <div className="cell large-3 small-8 align-self-middle top-left">
+          <div className="cell large-3 small-9 align-self-middle top-left">
             <a href="#" className="left-logo"><Logo src={pnud} alt="UNDP Logo" /></a>
             <div className="site-title">
               <label>{siteTitleData.label}</label>
               <span>{siteTitleData.span}</span>
             </div>
           </div>
-          <div className="cell large-6 small-8 mid-nav">
-            {
-                  window.innerWidth > 1439
-                  && <Menu data={navigationData} />
-                }
+          <div className="cell large-6 small-1 mid-nav">s
+            {desktopView && <Menu data={navigationData} />}
           </div>
-          <div className="cell large-3 small-4 top-right">
+          <div className="cell large-3 small-2 top-right">
             <Languageswitcher
               data={languageswitcherData.languagedata}
               headerText={languageswitcherData.headerText}
@@ -51,7 +49,7 @@ const CountrySiteHeader = ({
             <MegaMenu />
           </div>
           {
-                window.innerWidth < 1440
+                !desktopView
                 && (
                 <MobileNav navigationData={navigationData}
                   languageswitcherData={languageswitcherData}
