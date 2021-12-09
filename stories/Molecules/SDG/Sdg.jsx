@@ -5,17 +5,17 @@ import viewport from '../../assets/js/viewport';
 
 export const Sdg = ({ data, imgsrc, title }) => {
   useEffect(() => {
-    viewport('.sdg-card strong, .sdg-card h4');
+    viewport('.sdg-card h4');
+    viewport('.sdg-card strong');
   }, []);
-  return (
-  <>
+  return(
+    <>
     {data.map((item, index) => (
       <a href="#anchor" className={['sdg-card', `${item.bgcolor}`].join(' ')} key={index}>
-        <strong className='left-right'>{index + 1}</strong>
-        <Heading className='left-right' type="4" label={item.text}/>
+        <strong className="left-right delay-1">{index + 1}</strong>
+        <Heading type="4" className="left-right delay-1" label={item.text}/>
         <div className="sdg-image">
           <img src={item.image} alt={item.image} />
-          <div className="gradient" />
         </div>
       </a>
     ))}
@@ -24,6 +24,5 @@ export const Sdg = ({ data, imgsrc, title }) => {
       <Heading type="4" label={title}/>
     </a>
   </>
- );
+  );
 };
-
