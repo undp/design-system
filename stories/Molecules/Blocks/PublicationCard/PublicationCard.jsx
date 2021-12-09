@@ -14,37 +14,35 @@ export const PublicationCard = ({
     {image && <Publicationthumb />}
     {image2 && <Cardthumb />}
     <div className="download-card__description">
-
-    {args.variant === 'Download' && 
-      <div className="download-card__download">
-        {download}
-        <Icondownload />
-      </div> }
-    {args.variant === 'Readmore' && 
-      <div className="download-card__readmore">
-        {readmore}
-        <Iconexternallink />
-      </div>
-    }
-    {args.variant === 'Both' && 
-      <><div className="download-card__download">
+      {args.variant === 'Download' && 
+        <div className="download-card__download">
           {download}
           <Icondownload />
-        </div><div className="download-card__readmore">
-            {readmore}
-            <Iconexternallink />
-          </div></>
-    }
-
-
-      {/* <div className="download-card__download">
-        {download}
-        <Icondownload />
-      </div>
-      <div className="download-card__readmore">
-        {readmore}
-        <Iconexternallink />
-      </div> */}
+        </div> }
+      {args.variant === 'Readmore' && 
+        <div className="download-card__readmore">
+          {readmore}
+          <Iconexternallink />
+        </div>
+      }
+      {args.variant === 'Both' && 
+        <>
+          <div class="grid-x">
+            <div class="cell small-6">
+              <div className="download-card__download">
+                {download}
+                <Icondownload />
+              </div>
+            </div>
+            <div class="cell small-6">
+              <div className="download-card__readmore">
+                {readmore}
+                <Iconexternallink />
+              </div>
+            </div>
+          </div>
+        </>
+      }
     </div>
   </div>
 );
