@@ -1,5 +1,5 @@
 
-export const getData = () => {
+export const getData = (lang) => {
   $.ajax({
     method: 'GET',
     url: './js/navigationData.json',

@@ -3,7 +3,7 @@
 @import '../../../assets/scss/variables';
 
 // * menu item row start *//
-.menu_item {
+.menu-item a {
   @extend %paragragh-font-14;
   @extend %img_none;
 

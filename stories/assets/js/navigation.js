@@ -9,7 +9,7 @@ export const init = (locale) => {
   const midNav = $('.mid-nav');
   // calling ajax json
   lang = locale === 'en' ? 'english' : locale;
-  getData();
+  getData(lang);
 
   menuItem.on('mouseenter', function () {
     const id = $(this).attr('id');
