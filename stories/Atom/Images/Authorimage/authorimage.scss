@@ -12,12 +12,14 @@
   }
 
   &.small {
+    flex: 0 0 80px;
     height: 80px;
-    width: 80px;
+    max-width: 80px;
   }
 
   &.large {
+    flex: 0 0 180px;
     height: 180px;
-    width: 180px;
+    max-width: 180px;
   }
 }

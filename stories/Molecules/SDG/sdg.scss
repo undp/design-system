@@ -22,8 +22,8 @@
 
     strong {
       color: $color-white;
-      font-size: 2.938rem;
       display: inline-block;
+      font-size: 2.938rem;
 
       @include devicebreak(medium) {
         font-size: 6.875rem;
@@ -72,7 +72,7 @@
     &.sdg-red {
       background-color: #e5243b;
 
-      .sdg-image:before {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
@@ -84,11 +84,11 @@
     &.sdg-mustard {
       background-color: #dda63a;
 
-      .sdg-image:before {
-        background-image: 
-        linear-gradient(270deg,
-          rgba(222,168,60,0),
-          rgba(222,168,60,0) 80%,
+      .sdg-image::before {
+        background-image:
+          linear-gradient(270deg,
+          rgba(222, 168, 60, 0),
+          rgba(222, 168, 60, 0) 80%,
           #dda63a);
       }
     }
@@ -96,35 +96,35 @@
     &.sdg-kelly-green {
       background-color: #4c9f38;
 
-      .sdg-image:before {
-        background-image: 
-        linear-gradient(270deg,
-        rgba(78,159,56,0),
-        rgba(78,159,56,0) 80%,
-        #4e9f38);
+      .sdg-image::before {
+        background-image:
+          linear-gradient(270deg,
+          rgba(78, 159, 56, 0),
+          rgba(78, 159, 56, 0) 80%,
+          #4e9f38);
       }
     }
 
     &.sdg-dark-red {
       background-color: #c5192d;
 
-      .sdg-image:before {
-        background-image: 
+      .sdg-image::before {
+        background-image:
           linear-gradient(270deg,
-          rgba(197,26,45,0),
-          rgba(197,26,45,0) 80%,
-          #c5192d);  
+          rgba(197, 26, 45, 0),
+          rgba(197, 26, 45, 0) 80%,
+          #c5192d);
       }
     }
 
     &.sdg-red-orange {
       background-color: #ff3a21;
 
-      .sdg-image:before {
-        background-image: 
-        linear-gradient(270deg,
-          rgba(255,60,35,0),
-          rgba(255,60,35,0) 80%,
+      .sdg-image::before {
+        background-image:
+          linear-gradient(270deg,
+          rgba(255, 60, 35, 0),
+          rgba(255, 60, 35, 0) 80%,
           #ff3a21);
       }
     }
@@ -132,11 +132,11 @@
     &.sdg-bright-blue {
       background-color: #26bde2;
 
-      .sdg-image:before {
-        background-image: 
-        linear-gradient(270deg,
-          rgba(39,189,227,0),
-          rgba(39,189,227,0) 80%,
+      .sdg-image::before {
+        background-image:
+          linear-gradient(270deg,
+          rgba(39, 189, 227, 0),
+          rgba(39, 189, 227, 0) 80%,
           #26bde2);
       }
     }
@@ -144,11 +144,11 @@
     &.sdg-yellow {
       background-color: #fcc30b;
 
-      .sdg-image:before {
-        background-image: 
-        linear-gradient(270deg,
-          rgba(253,195,10,0),
-          rgba(253,195,10,0) 80%,
+      .sdg-image::before {
+        background-image:
+          linear-gradient(270deg,
+          rgba(253, 195, 10, 0),
+          rgba(253, 195, 10, 0) 80%,
           #fcc30b);
       }
     }
@@ -156,11 +156,11 @@
     &.sdg-burgundy-red {
       background-color: #a21942;
 
-      .sdg-image:before {
-        background-image: 
+      .sdg-image::before {
+        background-image:
           linear-gradient(270deg,
-          rgba(162,24,67,0),
-          rgba(162,24,67,0) 80%,
+          rgba(162, 24, 67, 0),
+          rgba(162, 24, 67, 0) 80%,
           #a21843);
       }
     }
@@ -168,11 +168,11 @@
     &.sdg-orange {
       background-color: #fd6925;
 
-      .sdg-image:before {
-        background-image: 
+      .sdg-image::before {
+        background-image:
           linear-gradient(270deg,
-          rgba(254,105,36,0),
-          rgba(254,105,36,0) 80%,
+          rgba(254, 105, 36, 0),
+          rgba(254, 105, 36, 0) 80%,
           #fd6925);
       }
     }
@@ -180,11 +180,11 @@
     &.sdg-magenta {
       background-color: #dd1367;
 
-      .sdg-image:before {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(222,21,104,0),
-          rgba(222,21,104,0) 80%,
+          rgba(222, 21, 104, 0),
+          rgba(222, 21, 104, 0) 80%,
           #dd1367);
       }
     }
@@ -192,11 +192,11 @@
     &.sdg-golden-yellow {
       background-color: #fd9d24;
 
-      .sdg-image:before {
-        background-image: 
+      .sdg-image::before {
+        background-image:
           linear-gradient(270deg,
-          rgba(254,156,37,0),
-          rgba(254,156,37,0) 80%,
+          rgba(254, 156, 37, 0),
+          rgba(254, 156, 37, 0) 80%,
           #fd9d24);
       }
     }
@@ -204,11 +204,11 @@
     &.sdg-dark-mustard {
       background-color: #bf8b2e;
 
-      .sdg-image:before {
-        background-image: 
+      .sdg-image::before {
+        background-image:
           linear-gradient(270deg,
-          rgba(191,139,46,0),
-          rgba(191,139,46,0) 80%,
+          rgba(191, 139, 46, 0),
+          rgba(191, 139, 46, 0) 80%,
           #bf8b2e);
       }
     }
@@ -216,11 +216,11 @@
     &.sdg-dark-green {
       background-color: #3f7e44;
 
-      .sdg-image:before {
-        background-image: 
+      .sdg-image::before {
+        background-image:
           linear-gradient(270deg,
-          rgba(62,128,69,0),
-          rgba(62,128,69,0) 80%,
+          rgba(62, 128, 69, 0),
+          rgba(62, 128, 69, 0) 80%,
           #3f7e44);
       }
     }
@@ -228,11 +228,11 @@
     &.sdg-blue {
       background-color: #0a97d9;
 
-      .sdg-image:before {
-        background-image: 
+      .sdg-image::before {
+        background-image:
           linear-gradient(270deg,
-          rgba(12,152,218,0),
-          rgba(12,152,218,0) 80%,
+          rgba(12, 152, 218, 0),
+          rgba(12, 152, 218, 0) 80%,
           #0a97d9);
       }
     }
@@ -240,11 +240,11 @@
     &.sdg-lime-green {
       background-color: #56c02b;
 
-      .sdg-image:before {
-        background-image: 
+      .sdg-image::before {
+        background-image:
           linear-gradient(270deg,
-          rgba(88,193,44,0),
-          rgba(88,193,44,0) 80%,
+          rgba(88, 193, 44, 0),
+          rgba(88, 193, 44, 0) 80%,
           #58c12c);
       }
     }
@@ -252,11 +252,11 @@
     &.sdg-royal-blue {
       background-color: #00689d;
 
-      .sdg-image:before {
-        background-image: 
+      .sdg-image::before {
+        background-image:
           linear-gradient(270deg,
-          rgba(3,104,157,0),
-          rgba(3,104,157,0) 80%,
+          rgba(3, 104, 157, 0),
+          rgba(3, 104, 157, 0) 80%,
           #00689d);
       }
     }
@@ -264,11 +264,11 @@
     &.sdg-navy-blue {
       background-color: #19486a;
 
-      .sdg-image:before {
-        background-image: 
+      .sdg-image::before {
+        background-image:
           linear-gradient(270deg,
-          rgba(26,73,107,0),
-          rgba(26,73,107,0) 80%,
+          rgba(26, 73, 107, 0),
+          rgba(26, 73, 107, 0) 80%,
           #1a496b);
       }
     }
@@ -290,10 +290,10 @@
     margin-left: auto;
     max-width: 650px;
     position: relative;
-    z-index: 0;
     width: 100%;
+    z-index: 0;
 
-    &::before{
+    &::before {
       @extend %absolute__content;
 
       @include transition(background-color 0.5s linear);
@@ -342,7 +342,7 @@
         margin-left: unset;
         margin-right: auto;
 
-        &::before{
+        &::before {
           @include transform(scaleX(-1));
         }
       }
