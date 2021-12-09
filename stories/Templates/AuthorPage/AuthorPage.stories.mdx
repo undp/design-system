@@ -5,6 +5,9 @@ import {getCaptionForLocale as authorSummeryData } from "../../Organism/Blocks/A
 import {getCaptionForLocale as contentCardData } from "../../Organism/Blocks/ContentCard/ContentCard.stories.mdx"
 import {getCaptionForLocale as footerData} from "../../Organism/Footer//Footer.stories.mdx";
 
+import {getCaptionForLocale as Languageswitcher} from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {getNavLinks, menuData} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
+
 <Meta title="Templates/Author" />
 
 <style>{`
@@ -25,13 +28,19 @@ import {getCaptionForLocale as footerData} from "../../Organism/Footer//Footer.s
 
 <Story name="Author">
   {(args, { globals: { locale } }) => {
+    const navigationData= getNavLinks(locale);
+    const leftNavigationData=navigationData.filter(item=>item.position==='left');
+     const rightNavigationData=navigationData.filter(item=>item.position==='right');
     
     return <AuthorPage
      footerData={footerData(locale)}
      breadcrumbData={breadcrumbData(locale)}
      authorSummeryData={authorSummeryData(locale)}
-     contentCardData={contentCardData(locale)}>
-      </AuthorPage>;
+     contentCardData={contentCardData(locale)}
+      locale={locale} leftNavigationData={leftNavigationData}
+      navigationData={navigationData} rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
+     ></AuthorPage>;
   }}
 </Story>
 

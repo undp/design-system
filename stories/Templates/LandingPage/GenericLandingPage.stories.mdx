@@ -10,6 +10,9 @@ import img6 from "../../assets/images/CardImage6.jpg";
 import BackgroundImg from '../../assets/images/lady.jpg';
 import BackgroundVideo from '../../assets/video/video_sample.mp4';
 
+import {getCaptionForLocale as Languageswitcher} from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {getNavLinks, menuData} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
+
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = {herodata: [{
@@ -474,6 +477,9 @@ Template for Generic Landing Page
     const categoryText = getCaptionForCategoryLocale(locale);
     const clearText = getCaptionForClearLocale(locale);
     const activeFilterText = getCaptionForActiveLocale(locale);
+    const navigationData= getNavLinks(locale);
+    const leftNavigationData=navigationData.filter(item=>item.position==='left');
+     const rightNavigationData=navigationData.filter(item=>item.position==='right');
     return <GenericLandingPage 
       clearText={clearText} 
       activeFilterText={activeFilterText}  
@@ -486,6 +492,9 @@ Template for Generic Landing Page
       groupcontentdata={caption.groupcontentdata}
       buttonname={caption.buttonname}
       footerData={footerData(locale)}
+      locale={locale} leftNavigationData={leftNavigationData}
+      navigationData={navigationData} rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
       ></GenericLandingPage>;
   }}
 </Story>

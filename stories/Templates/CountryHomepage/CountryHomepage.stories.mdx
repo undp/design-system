@@ -8,6 +8,7 @@ import BackgroundImg from '../../assets/images/country-hero-img.jpg';
 import BackgroundVideo from '../../assets/video/video_sample.mp4';
 import img from "../../assets/images/card2.jpg";
 import {getCaptionForLocale as Languageswitcher} from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {getNavLinks, menuData, getSiteTitle} from "../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader.stories.mdx";
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
@@ -408,8 +409,12 @@ Country Homepage Template
 <Story name="Country Homepage">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    
-    return <CountryHomepage 
+    const navigationData= getNavLinks(locale);
+    const leftNavigationData=navigationData.filter(item=>item.position==='left');
+     const rightNavigationData=navigationData.filter(item=>item.position==='right');
+     const siteTitleData = getSiteTitle(locale);
+     console.log(siteTitleData);
+     return <CountryHomepage 
         herotitle={caption.titlename}
         herotext={caption.text}
         herobtnlabel={caption.btnlabel}
@@ -430,7 +435,11 @@ Country Homepage Template
         storiesHeading={caption.storiesHeading}
         featureddataafterwedo={contentcardimagesdata(locale)}
         StatsSliderData={statssliderdata(locale)}
-        footerData={footerData(locale)}        
+        footerData={footerData(locale)}    
+      locale={locale} leftNavigationData={leftNavigationData}
+      navigationData={navigationData} rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}    
+      gsiteTitle={siteTitleData}
     ></CountryHomepage>;
   }}
 </Story>

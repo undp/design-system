@@ -10,6 +10,8 @@ import { Footer } from '../../Organism/Footer/Footer';
 import logo from '../../assets/images/logo.svg';
 import logowhite from '../../assets/images/logo-white.svg';
 import './genericpage.scss';
+import GlobalHeader from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader";
+
 
 export const GenericPage = ({
     herodata, title, content, active,imgsource,altname, topHeading, topParagraph, footerData, sidebarCaptionData, ContentCardData, headingMissionVision,
@@ -18,9 +20,22 @@ export const GenericPage = ({
     paraHistory,
     headingUNcharter,
     paraUNcharter,
-    carouselData
+    carouselData,
+
+    languageswitcherData,
+    rightNavigationData,
+    leftNavigationData,
+    navigationData,
+    locale,
   }) => (
     <>
+    <GlobalHeader
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        languageswitcherData={languageswitcherData}
+      />
         <div className="grid-container fluid">
             <div className="grid-x grid-margin-x">
                 <div className="cell large-12">                    

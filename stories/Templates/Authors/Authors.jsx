@@ -19,7 +19,11 @@ import { SearchExpand } from '../../Components/Forms/expandable search/SearchExp
 const Authors = ({
   breadcrumbData, authorSummeryData, contentCardData, footerData,
   sortText, viewText, closeText,
-  undpheading, text, authorData, headingData, buttontype, buttonData,
+  undpheading, text, authorData, headingData, buttontype, buttonData,  languageswitcherData,
+  rightNavigationData,
+  leftNavigationData,
+  navigationData,
+  locale,
 }) => {
   useEffect(() => {
   console.log(text);
@@ -40,6 +44,13 @@ const Authors = ({
   }, []);
   return (
     <div>
+      <GlobalHeader
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        languageswitcherData={languageswitcherData}
+      />
       <div className="grid-container fluid author-page">
         <div className="grid-x">
           <div className="cell medium-offset-1 medium-11 small-12">
