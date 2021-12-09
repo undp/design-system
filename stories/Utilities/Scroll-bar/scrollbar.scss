@@ -5,7 +5,8 @@
 .scrollbar-horizontal-wrapper {
   float: left;
   overflow-x: scroll;
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
 }
 
 .scrollbar-data {
