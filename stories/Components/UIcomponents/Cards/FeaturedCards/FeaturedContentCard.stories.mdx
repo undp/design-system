@@ -73,14 +73,15 @@ export const getCaptionForLocale = (locale) => {
 };
 
 <Meta title="Components/UI components/Cards/Featured Cards" argTypes={{
-      Image: {
-        options: ['Image', 'Color'],
+      image: {
+        options: ['image', 'color'],
         control: { type: 'radio' },
-        defaultValue: 'Image'
+        defaultValue: 'image'
       },
-      column: {
+      size: {
         options: ['large', 'medium', 'small'],
-        control: { type: 'radio' }
+        control: { type: 'radio' },
+        defaultValue: 'medium'
       }
     }}/>
 

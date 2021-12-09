@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './featuredcard.scss';
 import { FeaturedContentCard } from '../../../../Components/UIcomponents/Cards/FeaturedCards/FeaturedContentCard';
 
