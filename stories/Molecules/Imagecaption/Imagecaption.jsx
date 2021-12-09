@@ -4,12 +4,12 @@ import { Imagecredit } from '../../Atom/Images/Imagecredit/Imagecredit';
 
 export const caption_options = {
   true: '',
-  false: 'unstag',
+  false: '',
 };
 
 export const credit_options = {
   true: '',
-  false: 'stag',
+  false: '',
 };
 
 export const Imagecaption = ({ label, paragraph, ...args }) => (
