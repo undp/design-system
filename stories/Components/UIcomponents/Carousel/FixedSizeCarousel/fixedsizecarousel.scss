@@ -3,6 +3,29 @@
 
 /* fixed carousel start */
 .fixed-image-size-carousel {
+  &__row {
+    @include devicebreak(medium) {
+      display: flex;
+    }
+  }
+
+  &__image-col {
+    @include devicebreak(medium) {
+      flex: 0 0 18rem;
+      max-width: 18rem;
+    }
+
+    @include devicebreak(large) {
+      flex: 0 0 23.563rem;
+      max-width: 23.563rem;
+    }
+
+    @include devicebreak(xlarge) {
+      flex: 0 0 28rem;
+      max-width: 28rem;
+    }
+  }
+
   &__image {
     display: block;
     width: 100%;
@@ -17,14 +40,18 @@
     margin-top: $spacing-80;
   }
 
-  &__contents {
+  &__content-col {
     @include devicebreak(medium) {
       align-content: space-between;
       display: flex;
       flex-wrap: wrap;
-      height: 100%;
-      padding-left: 1.5rem;
-      padding-right: 3rem;
+      padding-left: 3rem;
+      padding-right: 1.5rem;
+    }
+
+    @include devicebreak(large) {
+      padding-left: 8.875rem;
+      padding-right: 6rem;
     }
 
     @include devicebreak(small) {
@@ -33,16 +60,14 @@
       padding-right: 2rem;
     }
 
-    @include devicebreak(large) {
-      padding-left: 7rem;
-    }
-
     > div {
       width: 100%;
     }
 
-    &-tag {
+    h6 {
       @extend %carousel_tag;
+
+      margin-bottom: 1rem;
     }
 
     h4 {
@@ -57,7 +82,7 @@
       @extend %carousel_desc;
 
       @include devicebreak(large) {
-        margin-bottom: 2rem;
+        margin-bottom: 3.375rem;
       }
 
       @include devicebreak(small) {
@@ -74,15 +99,23 @@
     }
   }
 
+  &__button-wrap {
+    @include devicebreak(medium) {
+      display: inline-flex;
+    }
+  }
+
   .glide {
+    &__slides {
+      margin-top: 3rem;
+    }
+
     &__track {
       margin-right: -100%;
     }
 
     &__arrows {
-      bottom: 0.25rem;
-      position: absolute;
-      right: 5rem;
+      margin-left: 3rem;
 
       @include devicebreak(large) {
         display: none;
@@ -106,14 +139,15 @@
 
 [dir='rtl'] {
   .fixed-image-size-carousel {
-    &__contents {
+    &__content-col {
       @include devicebreak(medium) {
-        padding-left: 3rem;
-        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 3rem;
       }
 
       @include devicebreak(large) {
-        padding-right: 7rem;
+        padding-left: 6rem;
+        padding-right: 8.875rem;
       }
 
       @include devicebreak(small) {
@@ -129,8 +163,8 @@
       }
 
       &__arrows {
-        left: 5rem;
-        right: auto;
+        margin-left: auto;
+        margin-right: 3rem;
       }
     }
   }
