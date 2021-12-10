@@ -24,6 +24,7 @@
     @include transition(all 200ms ease-in-out);
     cursor: pointer;
     z-index: 3;
+    border-radius: 0;
     &:focus {
       width: 100%;
       padding-left: $spacing-40;
