@@ -23,7 +23,7 @@ export const PageWideCard = ({
               <Heading type="4" label={title} />
               <P label={paragraph} />
             </a>
-            <CtaButton label1={button} />
+            <CtaButton label={button} />
           </div>
         </div>
         <a className="cell medium-6 wide-card__image" href="#">

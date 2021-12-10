@@ -29,7 +29,7 @@ export const Homepageherooption = ({
           <div className="hero-option__content">
             <Heading type="5" className="hero-option__subtitle left-right" label={subtitle} />
             <div className="show-large">
-              <CtaButton label1={button} />
+              <CtaButton label={button} />
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ export const Homepageherooption = ({
               </div>
             )}
           <div className="show-small">
-            <CtaButton label1={button} />
+            <CtaButton label={button} />
           </div>
         </div>
       </div>

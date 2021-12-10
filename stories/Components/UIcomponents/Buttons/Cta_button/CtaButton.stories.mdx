@@ -3,28 +3,31 @@ import { CtaButton } from './CtaButton';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = {detail1: 'READ MORE', detail2: 'VIEW MORE'}; return engText;
-    case 'arabic': const arabicText = {detail1: 'اقرأ أكثر', detail2: 'عرض المزيد'}; return arabicText;
-    case 'burmese': const burmeseText = {detail1: 'ပိုပြီးဖတ်ပါ', detail2: 'နောက်ထပ်ကြည့်ပါ'}; return burmeseText;
-    case 'japanese': const japaneseText = {detail1: '続きを読む', detail2: 'vもっと見る'}; return japaneseText;
+    case 'english': const engText = {detail: 'READ MORE'}; return engText;
+    case 'arabic': const arabicText = {detail: 'اقرأ أكثر'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail1: '続きを読む'}; return japaneseText;
     default:
-      return {detail1: 'READ MORE', detail2: 'VIEW MORE'};
+      return {detail: 'READ MORE'};
   }
 };
 
 <Meta title="Components/UI components/Buttons/Buttons"
   argTypes={{
-    variant: {
-      options: ["primary", "secondary"],
-      control: { type: "radio" },
+    Type: {
+      options: ["Primary", "Secondary"],
+      control: { type: "inline-radio" },
+      defaultValue: 'Primary'
       },
-      state: {
-      options: ["disabled", "default"],
-      control: { type: "radio" },
+      State: {
+      options: ["Active", "Disabled"],
+      control: { type: "inline-radio" },
+      defaultValue: 'Active'
       },
-      for_primary: {
-      options: ["arrow", "no_arrow"],
-      control: { type: "radio" },
+      For_Primary: {
+      options: ["Arrow", "No_Arrow"],
+      control: { type: "inline-radio" },
+      defaultValue: 'Arrow'
       },
   }}/>
 
@@ -72,22 +75,22 @@ When using button classes on elements that are used to trigger in-page functiona
   <div className="cta_item">
     <div className="cta__box cta-primary-exapnd-arrow"></div>
     <div className="cta__label"> Primary cta with exapand state </div>
-    <div className="cta__code"> <CtaButton label="READ MORE" variant='Primary' for_primary='Arrow'></CtaButton></div>
+    <div className="cta__code"> <CtaButton label="READ MORE" Type='Primary' For_Primary='Arrow'></CtaButton></div>
   </div>
   <div className="cta_item">
     <div className="cta__box cta-primary-exapnd-arrow_disabled"></div>
     <div className="cta__label"> Primary cta exapand with disabled state </div>
-    <div className="cta__code"> <CtaButton label="READ MORE" variant='Primary' for_primary='Arrow' state='Disabled'></CtaButton></div>
+    <div className="cta__code"> <CtaButton label="READ MORE" Type='Primary' For_Primary='Arrow' State='Disabled'></CtaButton></div>
   </div>
   <div className="cta_item">
     <div className="cta__box cta-primary"></div>
     <div className="cta__label"> Primary cta with default state </div>
-    <div className="cta__code"> <CtaButton label="READ MORE" variant='Primary' for_primary='No_arrow'></CtaButton></div>
+    <div className="cta__code"> <CtaButton label="READ MORE" Type='Primary' For_Primary='No_Arrow'></CtaButton></div>
   </div>
   <div className="cta_item">
     <div className="cta__box cta-primary_disabled"></div>
     <div className="cta__label"> Primary cta with disabled state </div>
-    <div className="cta__code"> <CtaButton label="READ MORE" variant='Primary' for_primary='No_arrow' state='Disabled'></CtaButton></div>
+    <div className="cta__code"> <CtaButton label="READ MORE" Type='Primary' For_Primary='No_Arrow' State='Disabled'></CtaButton></div>
   </div>
 </div> 
 
@@ -100,19 +103,19 @@ When using button classes on elements that are used to trigger in-page functiona
   <div className="cta_item">
     <div className="cta__box cta-secondary"></div>
     <div className="cta__label"> Secondary cta</div>
-    <div className="cta__code"> <CtaButton label="VIEW MORE" variant='Secondary'></CtaButton></div>
+    <div className="cta__code"> <CtaButton label="VIEW MORE" Type='Secondary'></CtaButton></div>
   </div>
   <div className="cta_item">
     <div className="cta__box cta-primary_disabled"></div>
     <div className="cta__label"> Secondary cta with disabled state </div>
-    <div className="cta__code"> <CtaButton label="VIEW MORE" variant='Secondary'state='Disabled' ></CtaButton></div>
+    <div className="cta__code"> <CtaButton label="VIEW MORE" Type='Secondary' State='Disabled' ></CtaButton></div>
   </div>
 </div>
 
 <Story name="Buttons">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <CtaButton label1={caption.detail1} label2={caption.detail2} {...args} ></CtaButton>;
+    return <CtaButton label={caption.detail} {...args} ></CtaButton>;
   }}
 </Story>
 
