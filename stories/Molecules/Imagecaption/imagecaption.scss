@@ -20,24 +20,38 @@
       border: 0;
       font-size: $font-size-16;
       margin: 0;
-      padding-right: $spacing-32;
+    }
+
+    + .credits {
+      border-top: 1px solid $color-gray-500;
+      display: flex;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+      margin-bottom: $spacing-16;
+      padding-top: $spacing-16;
+
+      @include devicebreak(medium) {
+        border-left: 1px solid $color-gray-500;
+        border-top: 0;
+        display: block;
+        margin-bottom: 0;
+        margin-left: $spacing-32;
+        padding-left: $spacing-32;
+        padding-top: 0;
+      }
     }
   }
 
-  .image_credits {
+  .credits {
     border-top: 1px solid $color-gray-500;
     display: flex;
-    flex-shrink: 0;
-    flex-wrap: wrap;
     margin-bottom: $spacing-16;
     padding-top: $spacing-16;
 
     @include devicebreak(medium) {
-      border-left: 1px solid $color-gray-500;
       border-top: 0;
       display: block;
       margin-bottom: 0;
-      padding-left: $spacing-32;
       padding-top: 0;
     }
 
@@ -49,54 +63,42 @@
       }
     }
   }
-
-  &.stag {
-    .image__caption_para {
-      padding-right: 0;
-    }
-  }
-
-  &.unstag {
-    .image_credits {
-      border: 0;
-      padding: 0;
-    }
-  }
 }
 
 [dir='rtl'] {
   .image__caption {
     &_para {
       @include devicebreak(medium) {
-        padding-left: $spacing-40;
         padding-right: 0;
       }
     }
 
-    .image_credits {
+    .credits {
       @include devicebreak(medium) {
         border-left: none;
-        border-right: 1px solid $color-gray-500;
         padding-left: 0;
-        padding-right: $spacing-40;
+        margin-left: 0;
       }
 
       strong {
-        margin-left: 0;
-        margin-right: $spacing-04;
+       margin-right: $spacing-04;
+        @include devicebreak(medium) {
+          margin-right: 0;
+        }
       }
     }
 
-    &.stag {
-      .image__caption_para {
-        padding-left: 0;
-      }
-    }
-
-    &.unstag {
-      .image_credits {
-        border: 0;
-        padding: 0;
+      &_para {
+      + .credits {
+        @include devicebreak(medium) {
+          border-right: 1px solid $color-gray-500;
+          border-top: 0;
+          display: block;
+          margin-bottom: 0;
+          margin-right: $spacing-32;
+          padding-right: $spacing-32;
+          padding-top: 0;
+        }
       }
     }
   }
