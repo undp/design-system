@@ -3,9 +3,38 @@
 @import '../../assets/scss/variables';
 @import '../PublicationPage/publicationpage.scss';
 
-.sidebar-width .accordion-wrapper {
-  margin-top: 0.8rem;
-  width: 90%;
+.sidebar{
+  &-width {  
+    .accordion-wrapper {      
+      width: calc(100% - $spacing-12);
+
+      @include devicebreak(medium) {
+        width: 90%;
+        margin-top: 0.8rem;
+      }
+    }
+
+    ul {
+      list-style: none;
+    }
+  }
+
+  &-mobile { 
+    display: block;
+    margin-bottom: $spacing-12;
+
+    @include devicebreak(medium) {
+      display: none;
+    }
+  }
+
+  &-desktop { 
+    display: none;
+    
+    @include devicebreak(medium) {
+      display: block;
+    }
+  }
 }
 
 .margin-top {
@@ -16,8 +45,4 @@
   &-72 {
     margin-top: 4.5rem;
   }
-}
-
-.sidebar-width ul {
-  list-style: none;
 }
