@@ -237,7 +237,7 @@
   float: right;
   height: 13px;
   position: absolute;
-  right: 22px;
+  right: 19px;
   top: 50%;
   width: 20px;
 }
@@ -291,7 +291,7 @@
   cursor: pointer;
   font-size: $font-size-16;
   font-weight: 600;
-  min-width: 296px;
+  min-width: 288px;
   padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
   position: relative;
   text-transform: uppercase;
@@ -303,6 +303,7 @@
   display: none;
   max-height: 300px;
   min-height: 100px;
+  min-width: 288px;
   padding: 0 $spacing-16;
   width: 100%;
 }
