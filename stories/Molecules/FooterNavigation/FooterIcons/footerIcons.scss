@@ -6,39 +6,36 @@
 .footer__icons {
   display: flex;
   padding-left: 0;
-
   li {
     list-style: none;
 
     a {
       @extend %border-none;
       @extend %no-animation;
-
-      background: url(#{$img-path-Icon}/social_icon.png) no-repeat;
       display: block;
       font-size: 0;
-      height: 25px;
-      margin-right: 1.25rem;
-      width: 30px;
+      height: 20px;
+      margin-right: $spacing-24;
+      width: 20px;
 
       &.facebook {
-        background-position: 5px -2px;
+        background: url(#{$img-path-Icon}/facebook.svg) no-repeat center bottom; 
       }
 
       &.instragram {
-        background-position: -90px -3px;
+        background: url(#{$img-path-Icon}/instagram.svg) no-repeat center bottom;
       }
 
-      &.linkedIn {
-        background-position: -139px -2px;
+      &.linkedin {
+        background: url(#{$img-path-Icon}/linkedin.svg) no-repeat center bottom;
       }
 
       &.twitter {
-        background-position: -43px -2px;
+        background: url(#{$img-path-Icon}/twitter.svg) no-repeat center bottom;
       }
 
       &.youtube {
-        background-position: -187px -2px;
+        background: url(#{$img-path-Icon}/youtube.svg) no-repeat center bottom;
       }
     }
 
@@ -49,27 +46,27 @@
     }
   }
 
-  &.white {
+  &.white, &.blue {
     li {
       a {
         &.facebook {
-          background-position: 5px -27px;
+          background: url(#{$img-path-Icon}/facebook-white.svg) no-repeat center bottom;
         }
 
         &.instragram {
-          background-position: -90px -27px;
+          background: url(#{$img-path-Icon}/instagram-white.svg) no-repeat center bottom;
         }
 
-        &.linkedIn {
-          background-position: -139px -28px;
+        &.linkedin {
+          background: url(#{$img-path-Icon}/linkedin-white.svg) no-repeat center bottom;
         }
 
         &.twitter {
-          background-position: -43px -27px;
+          background: url(#{$img-path-Icon}/twitter-white.svg) no-repeat center bottom;
         }
 
         &.youtube {
-          background-position: -187px -27px;
+          background: url(#{$img-path-Icon}/youtube-white.svg) no-repeat center bottom;
         }
       }
     }
