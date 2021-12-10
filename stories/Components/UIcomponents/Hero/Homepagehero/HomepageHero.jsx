@@ -33,7 +33,7 @@ export const Homepagehero = ({
         <div className="grid-x">
           <div className="cell large-7 medium-offset-1 medium-9 hero-wrapper__content" id="header">
             <Heading type="1" className="hero-wrapper__title color-white left-right" label={title} />
-            <Heading type="4" className="hero-wrapper__subtitle color-white left-right" label={content} />
+            {content && <Heading type="4" className="hero-wrapper__subtitle color-white left-right" label={content} />}
             <CtaButton label={button} />
           </div>
         </div>

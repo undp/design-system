@@ -3,69 +3,38 @@
 @import '../../../../assets/scss/base';
 
 /* country card hero start */
-.country-card {
-  @include devicebreak(large) {
-    &__wrapper {
-      padding-top: $spacing-96;
-    }
-  }
-
-  &__items {
-    @include devicebreak(small) {
-      margin-top: $spacing-32;
-    }
-
-    @include devicebreak(medium) {
-      .glide {
-        &__slides {
-          flex-wrap: wrap;
-        }
-
-        &__slide {
-          height: auto;
-        }
-      }
-    }
-  }
-
+.countrycard {
   &__header {
     justify-content: center;
 
-    @include devicebreak(large) {
-      padding-right: $spacing-48;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      line-height: 1.11;
-      padding-bottom: 1.25rem;
+    h2 {
+      padding-bottom: 1.875rem;
       text-transform: uppercase;
 
-      @include devicebreak(large) {
-        font-size: 3.5rem;
-        line-height: 1.09;
+      @include devicebreak(medium) {
         padding-bottom: 0;
       }
     }
 
-    h6 {
-      font-size: 1.5rem;
-      line-height: 1.4;
-      padding-top: $spacing-24;
-      text-transform: unset;
+    h5 {
+      font-size: 1.563rem;
+      font-weight: 700;
+      line-height: 2.6rem;
+      margin-bottom: 2.188rem;
+      padding-top: 1.25rem;
 
-      @include devicebreak(large) {
-        font-size: 2rem;
-        padding-left: $spacing-64;
+      @include devicebreak(medium) {
+        font-size: 1.875rem;
         padding-top: 0;
       }
     }
   }
 
   &-border {
+    margin-left: 0;
     position: relative;
 
-    @include devicebreak(large) {
+    @include devicebreak(medium) {
       margin-left: $spacing-64;
     }
 
@@ -73,12 +42,17 @@
       @extend %absolute__content;
 
       background: $color-dark-red;
-      height: 4px;
-      width: 95px;
+      height: 7rem;
+      left: 3.5rem;
+      top: -4rem;
+      transform: rotate(90deg);
+      width: 3px;
 
-      @include devicebreak(large) {
+      @include devicebreak(medium) {
         height: 80%;
-        width: 3px;
+        left: -60px;
+        top: 0;
+        transform: rotate(0);
       }
     }
   }
@@ -86,26 +60,20 @@
 
 [dir='rtl'] {
   .countrycard {
-    @include devicebreak(large) {
-      &__header {
-        padding-left: $spacing-48;
-        padding-right: 0;
-      }
-    }
-
     &-border {
-      @include devicebreak(large) {
-        margin-left: 0;
-        margin-right: $spacing-64;
+      margin-left: 0;
+      margin-right: 0;
 
-        h6 {
-          padding-left: 0;
-          padding-right: $spacing-64;
-        }
+      @include devicebreak(medium) {
+        margin-right: $spacing-64;
       }
 
       &::before {
-        right: 0;
+        right: 3.5rem;
+
+        @include devicebreak(medium) {
+          right: -60px;
+        }
       }
     }
 

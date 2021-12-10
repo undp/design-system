@@ -19,8 +19,8 @@ export const Homepageherosplit = ({
       <div className="grid-x">
         <div className="cell medium-5 medium-offset-1">
           <div className="hero-split__content ">
-            <Heading type="1" className="hero-split__title left-right" label={title} />
-            <Heading type="4" className="hero-split__subtitle left-right" label={content} />
+            {content && <Heading type="1" className="hero-split__title left-right" label={title} />}
+            {content && <Heading type="4" className="hero-split__subtitle left-right" label={content} />}
             <div className="show-large">
               <CtaButton label={button} />
             </div>

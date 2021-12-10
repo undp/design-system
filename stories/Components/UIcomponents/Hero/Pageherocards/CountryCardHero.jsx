@@ -9,17 +9,17 @@ import { CountryCard } from '../../../../Molecules/Blocks/CountryCard/CountryCar
 export const CountryCardHero = ({ data, title, subtitle }) => {
   useEffect(() => {
     GlideSlider('.countrycard__items', '24');
-    viewport('.countrycard__header h1');
-    viewport('.countrycard__header h6');
+    viewport('.countrycard__header h2');
+    viewport('.countrycard__header h5');
   }, []);
   return (
     <div className="country-card__wrapper">
       <div className="grid-x countrycard__header">
-        <div className="cell large-5 medium-12">
-          <Heading type="1" className="left-right" label={title} />
+        <div className="cell large-5">
+          <Heading type="2" className="left-right" label={title} />
         </div>
-        <div className="cell large-4 medium-12 countrycard-border">
-          <Heading type="6" className="left-right" label={subtitle} />
+        <div className="cell large-3 large-offset-1 countrycard-border">
+          <Heading type="5" className="left-right" label={subtitle} />
         </div>
       </div>
       <div className="glide countrycard__items">
