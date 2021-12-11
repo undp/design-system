@@ -46,7 +46,7 @@ export const BioCard = ({
               id="bio-card"
               className={['grid-x grid-margin-x bio-card', `${hover_color_options[`${args.hovercolor}`]}`].join(' ')}
             >
-              <article className="bio-card__content large-7">
+              <article className="bio-card__content medium-7">
                 <div className="bio-card__description left-right ">
                   <Heading type="5" label={contentname} />
                   <P label={descriptionText} />
@@ -55,7 +55,7 @@ export const BioCard = ({
                   <Ctalink label={button} variant="Arrow" />
                 </div>
               </article>
-              <div className="card-thumbnail__image large-5">
+              <div className="card-thumbnail__image medium-5">
                 <img src={image} alt={image} />
               </div>
             </a>
