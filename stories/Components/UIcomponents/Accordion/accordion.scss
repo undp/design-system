@@ -33,6 +33,7 @@
   }
 
   &.accordion--active {
+    padding-bottom: 0;
     .accordion__heading {
       margin-bottom: 0.625rem;
       padding-right: $spacing-24;
@@ -47,12 +48,20 @@
       @include transform(rotateZ(180deg));
     }
   }
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 [dir='rtl'] {
   .accordion__item {
     &::before {
       float: left;
+      margin-left: 0;
+      margin-right: $spacing-24;
     }
   }
 
