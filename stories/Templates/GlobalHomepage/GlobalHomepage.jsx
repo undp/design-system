@@ -34,6 +34,7 @@ export const GlobalHomePage = ({
   locale,
   whatwedoheader,
   whatwedodescription,
+  BackgroundImg
 }) => (
   <>
     <GlobalHeader
@@ -62,7 +63,7 @@ export const GlobalHomePage = ({
         </div>
       </div>
       <div className="grid-x">
-        <div className="cell large-11 medium-11 large-offset-1">
+        <div className="cell large-12">
           <HeadingBig
             headerText={whatwedoheader}
             descriptionText={whatwedodescription}
@@ -97,7 +98,7 @@ export const GlobalHomePage = ({
       </div>
       <div className="grid-x">
         <div className="cell large-12">
-          <Stats data={statsdata} />
+          <Stats data={statsdata} imageback={BackgroundImg} />
         </div>
       </div>
       <div className="grid-x fixedcarousel">
@@ -110,14 +111,10 @@ export const GlobalHomePage = ({
           <FeaturedCard data={featureddata} headertext={headertext} />
         </div>
       </div>
-      <div className="grid-x">
-        <div className="cell large-12">
-          <TweetPanel
-            data={tweetdata.tweetpaneldata}
-            headertext={tweetdata.headertext}
-          />
-        </div>
-      </div>
+      <TweetPanel
+        data={tweetdata.tweetpaneldata}
+        headertext={tweetdata.headertext}
+      />
       <div className="grid-x">
         <div className="cell large-12">
           <Footer
