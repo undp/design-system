@@ -11,8 +11,8 @@ import { Stats } from "../../Organism/Stats/Stats";
 import { FixedSizeCarousel } from "../../Components/UIcomponents/Carousel/FixedSizeCarousel/FixedSizeCarousel";
 import { TweetPanel } from "../../Organism/Blocks/TweetPanel/TweetPanel";
 import { Footer } from "../../Organism/Footer/Footer";
-import logo from "../../assets/images/logo.svg";
-import logowhite from "../../assets/images/logo-white.svg";
+import logo from "../../assets/images/undp-logo-blue.svg";
+import logowhite from "../../assets/images/undp-logo-white.svg";
 
 export const GlobalHomePage = ({
   homepagesplit,

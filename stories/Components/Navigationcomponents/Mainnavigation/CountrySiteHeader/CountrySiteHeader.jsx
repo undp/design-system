@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import pnud from '../../../../assets/images/logo.svg';
+import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { IconsGlobe } from '../../../../Atom/Icons/globe';
 import { IconsBar } from '../../../../Atom/Icons/icon_bar';
 import { IconsTimesBlue } from '../../../../Atom/Icons/icon_Times_Blue';
