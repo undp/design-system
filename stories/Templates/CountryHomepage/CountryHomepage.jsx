@@ -10,8 +10,8 @@ import { ImageRevelCards } from '../../Organism/Blocks/ImageRevelCards/ImageReve
 import { StatsSlider } from '../../Patterns/StatsSlider/StatsSlider';
 import { CountrySiteHeader } from '../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader';
 import { Footer } from '../../Organism/Footer/Footer';
-import logo from '../../assets/images/logo.svg';
-import logowhite from '../../assets/images/logo-white.svg';
+import logo from '../../assets/images/undp-logo-blue.svg';
+import logowhite from '../../assets/images/undp-logo-white.svg';
 import './countryhomepage.scss';
 
 export const CountryHomepage = ({
