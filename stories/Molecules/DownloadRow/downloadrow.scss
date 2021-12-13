@@ -2,38 +2,56 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/breakpoints';
 
-/* download-row start */
 .selectbox-container {
-  align-items: center;
-  align-items: center;
   background-color: $color-white;
-  border-bottom: 1px solid $color-gray-400;
-  display: flex;
-  justify-content: space-between;
+  padding: 0 1rem;
 
   &:hover {
     background-color: $color-gray-100;
   }
 
+  &__main {
+    align-items: center;
+    border-bottom: 1px solid $color-gray-400;
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__data {
-    font-size: $font-size-16;
     margin: $spacing-16 0;
     padding-right: $spacing-16;
 
-    &-subtext {
+    h6 {
+      font-weight: normal;
+      margin: 0;
+      text-transform: inherit;
+    }
+
+    span {
       color: $color-gray-500;
+      font-size: $font-size-16;
     }
   }
 
   &__chevron {
     margin: $spacing-16 0 1.188rem $spacing-16;
-    padding-right: $spacing-16;
   }
 
   .checkbox-wrapper {
-    margin: 0;
+    margin-right: -0.375rem;
     padding-bottom: 1.25rem;
   }
 }
 
-/* download-row end */
+[dir='rtl'] {
+  .selectbox-container {
+    &__data {
+      padding-left: $spacing-16;
+      padding-right: 0;
+    }
+
+    &__chevron {
+      margin-left: 0;
+    }
+  }
+}

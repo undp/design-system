@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import logowhite from '../../assets/images/logo-white.svg';
-import logo from '../../assets/images/logo.svg';
+import logowhite from '../../assets/images/undp-logo-white.svg';
+import logo from '../../assets/images/undp-logo-blue.svg';
 import user from '../../assets/images/user.svg';
 import viewport from '../../assets/js/viewport';
 import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';

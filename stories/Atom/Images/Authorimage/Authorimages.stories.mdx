@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { Authorimg } from './Authorimages';
-import user from '../../../assets/images/user.svg';
+import user from '../../../assets/images/author.png';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -18,7 +18,7 @@ argTypes={{
     variant: {
       options: ["Large", "Small"],
       control: { type: "radio" },
-      defaultValue: "Large"
+      defaultValue: "Small"
     }
   }}
 />
@@ -48,7 +48,7 @@ The <code>Author Image</code> component displays the author image.
 <Story name="Author Image">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Authorimg image= {user} {...args}></Authorimg>;
+    return <Authorimg image= {user} alt= 'Author' {...args}></Authorimg>;
   }}
 </Story>
 

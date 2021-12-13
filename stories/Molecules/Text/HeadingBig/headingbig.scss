@@ -7,6 +7,7 @@
   opacity: 0;
   padding: $spacing-136 0;
   z-index: 5;
+  justify-content: center;
 
   &.inviewport{
       opacity: 1;

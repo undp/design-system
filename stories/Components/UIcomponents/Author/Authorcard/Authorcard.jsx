@@ -5,14 +5,14 @@ import { Author } from '../Authorcolumn/Authors';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
 export const Authorcard = ({
-  data, para, button, link, width, image,
+  data, para, button, link, image, alt
 }) => (
   <div className="grid-x grid-margin-x">
     <div className="cell medium-4">
       <a href={link} className="authorcard">
-        <Author data={data} size={width} image={image} variant="small" />
+        <Author data={data} Number="one" image={image} variant="small" alt={alt} />
         <P label={para} />
-        <Ctalink label={button} variant="Space" />
+        <span className='cta__link cta--space'>{button}</span>
       </a>
     </div>
   </div>
