@@ -11,7 +11,7 @@ import { Footer } from '../../Organism/Footer/Footer';
 import './AuthorPage.scss';
 
 const AuthorPage = ({
-  breadcrumbData, authorSummeryData, contentCardData, footerData,  languageswitcherData,
+  breadcrumbData, authorSummaryData, contentCardData, footerData,  languageswitcherData,
   rightNavigationData,
   leftNavigationData,
   navigationData,

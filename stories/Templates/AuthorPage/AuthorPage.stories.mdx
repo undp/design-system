@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import AuthorPage from './AuthorPage';
 import {getCaptionForLocale as breadcrumbData } from "../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs.stories.mdx"
-import {getCaptionForLocale as authorSummeryData } from "../../Organism/Blocks/Authorcard/AuthorSummary.stories.mdx"
+import {getCaptionForLocale as authorSummaryData } from "../../Organism/Blocks/Authorcard/AuthorSummary.stories.mdx"
 import {getCaptionForLocale as contentCardData } from "../../Organism/Blocks/ContentCard/ContentCard.stories.mdx"
 import {getCaptionForLocale as footerData} from "../../Organism/Footer//Footer.stories.mdx";
 
@@ -35,7 +35,7 @@ import {getNavLinks, menuData} from "../../Components/Navigationcomponents/Mainn
     return <AuthorPage
      footerData={footerData(locale)}
      breadcrumbData={breadcrumbData(locale)}
-     authorSummeryData={authorSummeryData(locale)}
+     authorSummaryData={authorSummaryData(locale)}
      contentCardData={contentCardData(locale)}
       locale={locale} leftNavigationData={leftNavigationData}
       navigationData={navigationData} rightNavigationData={rightNavigationData}
