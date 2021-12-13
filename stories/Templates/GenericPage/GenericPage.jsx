@@ -7,8 +7,6 @@ import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 import {FluidImageSizeCarousel} from '../../Components/UIcomponents/Carousel/FluidImageSizeCarousel/FluidImageSizeCarousel';
 import { Footer } from '../../Organism/Footer/Footer';
-import logo from '../../assets/images/undp-logo-blue.svg';
-import logowhite from '../../assets/images/undp-logo-white.svg';
 import './genericpage.scss';
 
 export const GenericPage = ({
