@@ -8,10 +8,17 @@ import logo from '../../assets/images/undp-logo-blue.svg';
 import logowhite from '../../assets/images/undp-logo-white.svg';
 
 export const GenericLandingPage = ({
-  data, active, herodata, title, imgsrc, videosrc, footerData, content, groupcontentdata, buttonname, activeFilterText, clearText,
+  data, active, herodata, title, imgsrc, videosrc, footerData, content, groupcontentdata, buttonname, activeFilterText, clearText, languageswitcherData, rightNavigationData, leftNavigationData, navigationData, locale,
 }) => (
   <>
-    <div className="grid-container fluid">
+    <GlobalHeader
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        languageswitcherData={languageswitcherData}
+    />
+    <div className="grid-container fluid margin-top-32">
       <div className="grid-x grid-margin-x">
         <div className="cell large-12">
           <PageHeroOption

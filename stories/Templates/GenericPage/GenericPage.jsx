@@ -18,28 +18,48 @@ export const GenericPage = ({
     paraHistory,
     headingUNcharter,
     paraUNcharter,
-    carouselData
+    carouselData,
+    languageswitcherData,
+    rightNavigationData,
+    leftNavigationData,
+    navigationData,
+    locale,
+    src, srctwo
   }) => (
     <>
-        <div className="grid-container fluid">
-            <div className="grid-x grid-margin-x">
-                <div className="cell large-12">                    
-                    <ProgressBarNavigation/>
-                    <PageHero 
-                        data={herodata} 
-                        title={title} 
-                        content={content}
-                        imgsrc={imgsource}
-                        imgalt={altname}
-                        active={active}
+        <GlobalHeader
+            locale={locale}
+            leftNavigationData={leftNavigationData}
+            navigationData={navigationData}
+            rightNavigationData={rightNavigationData}
+            languageswitcherData={languageswitcherData}
+        />
+        <ProgressBarNavigation/>
+        <div class="grid-x grid-margin-x">
+            <div class="cell small-12 sidebar-width">
+                <div class="column sidebar-mobile">
+                    <Sidebar
+                        data={sidebarCaptionData.sidebardata}
+                        headerText={sidebarCaptionData.headerText}
+                        label={sidebarCaptionData.label}
+                        active={sidebarCaptionData.active}
                     />
                 </div>
             </div>
         </div>
-        <div class="grid-container fluid contentbottom">      
+        <PageHero 
+            data={herodata} 
+            title={title} 
+            content={content}
+            imgsrc={imgsource}
+            imgalt={altname}
+            active={active}
+        />
+        
+        <div class="grid-container fluid content-bottom">      
             <div class="grid-x grid-margin-x margin-top-72">
                 <div class="cell large-3 small-12 sidebar-width">
-                    <div class="column">
+                    <div class="column sidebar-desktop">
                         <Sidebar
                              data={sidebarCaptionData.sidebardata}
                              headerText={sidebarCaptionData.headerText}
@@ -122,8 +142,8 @@ export const GenericPage = ({
             </div>  
         </div>
         <Footer
-            src={logo}
-            srctwo={logowhite}
+            src={src}
+            srctwo={srctwo}
             headerText={footerData.headerText}
             headerText2={footerData.headerText2}
             style="default"
