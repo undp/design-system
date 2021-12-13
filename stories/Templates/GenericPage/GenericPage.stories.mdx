@@ -7,6 +7,9 @@ import heroImage from '../../assets/images/generic_page_hero.jpg';
 import BackgroundVideo from '../../assets/video/video_sample.mp4';
 import fluidCarouselImg from '../../assets/images/crosssboard.jpg';
 
+import {getCaptionForLocale as Languageswitcher} from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {getNavLinks, menuData} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
+
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = {herodata: [{
@@ -277,6 +280,9 @@ Template for Generic Page
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     const carouselData = statsArray(locale);
+    const navigationData= getNavLinks(locale);
+    const leftNavigationData=navigationData.filter(item=>item.position==='left');
+     const rightNavigationData=navigationData.filter(item=>item.position==='right');
     return (
       <GenericPage 
         active={'white'}
@@ -298,6 +304,9 @@ Template for Generic Page
         sidebarCaptionData={sidebarCaptionData(locale)} 
         ContentCardData={ContentCardData(locale)} 
         footerData={footerData(locale)}
+      locale={locale} leftNavigationData={leftNavigationData}
+      navigationData={navigationData} rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
         
       ></GenericPage>
     );

@@ -11,9 +11,18 @@ import { Heading } from '../../Atom/Typography/Heading/Heading';
 import viewport from '../../assets/js/viewport';
 import './publicationpage.scss';
 import '../../assets/js/sticky';
+import GlobalHeader from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader";
+
 
 export const PublicationPage = ({
-    data, download, readmore, image, footerData, active, blockHeader, blockDescription, paragraphTop1, paragraphTop2, paragraphTop3, ContentCardWithOutImageData, buttontype, relatedPublicationHeading,Emphasize, Hovercolors, logo, logowhite
+    data, download, readmore, image, footerData, active, blockHeader, 
+    blockDescription, paragraphTop1, paragraphTop2, paragraphTop3, 
+    ContentCardWithOutImageData, buttontype, relatedPublicationHeading,
+    Emphasize, Hovercolors, logo, logowhite,  languageswitcherData,
+    rightNavigationData,
+    leftNavigationData,
+    navigationData,
+    locale,
   }) => {
     useEffect(() => {
         viewport('.content-card-container');
@@ -21,6 +30,13 @@ export const PublicationPage = ({
     }, []);
     return (
     <>
+    <GlobalHeader
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        languageswitcherData={languageswitcherData}
+      />
         <div className="grid-container fluid publication-bottom">
             <div class="grid-x grid-margin-x">
                 <div class="cell small-12 medium-12 large-11 large-offset-1 medium-offset-0">

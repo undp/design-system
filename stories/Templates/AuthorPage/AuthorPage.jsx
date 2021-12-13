@@ -11,7 +11,11 @@ import { Footer } from '../../Organism/Footer/Footer';
 import './AuthorPage.scss';
 
 const AuthorPage = ({
-  breadcrumbData, authorSummeryData, contentCardData, footerData,
+  breadcrumbData, authorSummaryData, contentCardData, footerData,  languageswitcherData,
+  rightNavigationData,
+  leftNavigationData,
+  navigationData,
+  locale,
 }) => {
   useEffect(() => {
     viewport('.feature__card--headertext');
@@ -19,6 +23,13 @@ const AuthorPage = ({
 
   return (
     <div>
+      <GlobalHeader
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        languageswitcherData={languageswitcherData}
+      />
       <div className="grid-container fluid author-page">
         <div className="grid-x">
           <div className="cell medium-offset-1 medium-10 small-12">
