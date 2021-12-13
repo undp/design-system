@@ -144,6 +144,11 @@ input[type='date']::-webkit-calendar-picker-indicator {
           background-image: url(#{$img-path-Icon}/datedisabled.svg);
         }
       }
+      @media (hover: none) and (pointer: coarse) {
+        &--date {
+          padding-right: $spacing-24;
+        }
+      }
     }
   }
 
