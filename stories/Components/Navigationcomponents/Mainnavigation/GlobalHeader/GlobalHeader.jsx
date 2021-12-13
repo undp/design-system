@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import pnud from '../../../../assets/images/logo.svg';
+import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { init } from '../../../../assets/js/navigation';
 import { desktopView } from '../../../../assets/js/UNDP';
 import { IconsGlobe } from '../../../../Atom/Icons/globe';

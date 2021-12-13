@@ -12,7 +12,13 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Testing/Text/Blockquote" component={BlockquoteComponent} />
+<Meta title="Testing/Text/Blockquote" component={BlockquoteComponent} argTypes={{
+  color: {
+    options: ['default','yellow','red','green','blue','gray'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'default'
+  }
+}}/>
 
 <style>{`
   .sbdocs-h1 {
@@ -44,31 +50,11 @@ export const getCaptionForLocale = (locale) => {
 The Blockquote component indicates that the enclosed text is an extended quotation or information. It is rendered visually by a surrounding box.<code>Blockquote</code> and <code>Cite</code> atoms tags are used for creating this section.
 
 
-<Story name="Blockquote Gray">
+
+<Story name="Blockquote">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <BlockquoteComponent blockquoteText={caption.blockquote} citeText={caption.cite} style={'gray'}></BlockquoteComponent>;
-  }}
-</Story>
-
-<div className="subheading">Blockquote Component Yellow</div>
-<div className="f14"> It,s the same as the Blockquote Component Gary, only the background color is different. </div>
-
-<Story name="Blockquote Yellow">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <BlockquoteComponent blockquoteText={caption.blockquote} citeText={caption.cite} style={'yellow'} ></BlockquoteComponent>;
-  }}
-</Story>
-
-<div className="subheading">Blockquote Component Default</div>
-<div className="f14">The blockquote component default styling is a little bit different, it's not showing in the box design so box padding and background color are not required in this.
- </div>
-
-<Story name="Blockquote Default">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <BlockquoteComponent blockquoteText={caption.blockquote} citeText={caption.cite} style={'transparent'} ></BlockquoteComponent>;
+    return <BlockquoteComponent blockquoteText={caption.blockquote} citeText={caption.cite} {...args}></BlockquoteComponent>;
   }}
 </Story>
 

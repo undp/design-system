@@ -19,6 +19,12 @@
     &--medium {
       margin-bottom: 1.875rem;
     }
+
+    &.without-image{
+      .feature__card-image {
+        display: none;
+      }
+    }
   }
 }
 

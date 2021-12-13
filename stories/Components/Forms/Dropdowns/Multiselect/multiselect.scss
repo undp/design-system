@@ -142,11 +142,6 @@
     display: block;
     padding: $spacing-16 0;
   }
-
-  input:focus + label::before {
-    box-shadow: 0 0 0 2px $color-blue-600;
-    outline: 3px solid transparent; /* For Windows high contrast mode. */
-  }
 }
 
 [dir='rtl'] {

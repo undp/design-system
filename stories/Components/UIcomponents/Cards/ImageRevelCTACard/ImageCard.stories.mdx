@@ -5,67 +5,12 @@ import imgsmall from '../../../../assets/images/CardImgsmall.jpg';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = { 
-      takeactiondata: [
-        {
-        contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
-        btnlabel: 'READ MORE',
-        image:img,
-        imgalt:img,
-        link:'#',
-        size:'medium-4',
-        }
-      ]
-    }; return engText;
-    case 'arabic': const arabicText = { 
-      takeactiondata: [
-        {
-          name: 'الألم هو الحب نفسه', 
-          btnlabel: 'اقرأ أكثر',
-          image:img,
-          imgalt:img,
-          link:'#',
-          size:'medium-4',
-        }
-      ]
-    }; return arabicText;
-    case 'burmese': const burmeseText = { 
-      takeactiondata: [
-        {
-          name: 'နာကျင်မှုကအချစ်ပါဘဲ', 
-          btnlabel: 'ပိုပြီးဖတ်ပါ',
-          image:img,
-          imgalt:img,
-          link:'#',
-          size:'medium-4',
-        }
-      ]
-    }; return burmeseText;
-    case 'japanese': const japaneseText = { 
-      takeactiondata: [
-        {
-          name: '痛みは愛そのものです', 
-          btnlabel: '続きを読む',
-          image:img,
-          imgalt:img,
-          link:'#',
-          size:'medium-4',
-        }
-      ]
-    }; return japaneseText;
+    case 'english': const engText = { name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', btnlabel: 'READ MORE'}; return engText;
+    case 'arabic': const arabicText = { name: 'الألم هو الحب نفسه', btnlabel: 'اقرأ أكثر'}; return arabicText;
+    case 'burmese': const burmeseText = { name: 'နာကျင်မှုကအချစ်ပါဘဲ', btnlabel: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = { name: '痛みは愛そのものです', btnlabel: '続きを読む'}; return japaneseText;
     default:
-      return { 
-         takeactiondata: [
-        {
-          name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', 
-          btnlabel: 'READ MORE',
-          image:img,
-          imgalt:img,
-          link:'#',
-          size:'medium-4',
-        }
-      ]
-    };
+      return { name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', btnlabel: 'READ MORE'};
   }
 };
 
@@ -96,8 +41,7 @@ The Image reveal card component multi usage component which creates boxes that a
 <Story name="Image card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <ImageRevelCard 
-      data={caption.takeactiondata} {...args}></ImageRevelCard>;
+    return <ImageRevelCard contentname={caption.name} image={img} button={caption.btnlabel} link='#' size='medium-4'></ImageRevelCard>;
   }}
 </Story>
 
@@ -107,7 +51,7 @@ The Image reveal card component multi usage component which creates boxes that a
 <Story name="Image card-small">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <ImageRevelCard  data={caption.takeactiondata} {...args}></ImageRevelCard>;
+    return <ImageRevelCard contentname={caption.name} image={imgsmall} button={caption.btnlabel} link='#' size='small'></ImageRevelCard>;
   }}
 </Story>
 

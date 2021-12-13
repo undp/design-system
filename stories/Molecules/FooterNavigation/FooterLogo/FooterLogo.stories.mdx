@@ -1,16 +1,16 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { FooterLogo } from './FooterLogo';
-import logo from '../../../assets/images/logo.svg';
-import logowhite from '../../../assets/images/logo-white.svg';
+import logo from '../../../assets/images/undp-logo-blue.svg';
+import logowhite from '../../../assets/images/undp-logo-white.svg';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = {headerText: 'United Nations', headerText2: 'Development Programme'}; return engText;
-    case 'arabic': const arabicText = {headerText: 'الأمم المتحدة', headerText2: 'برنامج التطوير'}; return arabicText;
-    case 'burmese': const burmeseText = {headerText: 'ကုလသမဂ္ဂ', headerText2: 'ဖွံ့ဖြိုးရေးအစီအစဉ်'}; return burmeseText;
-    case 'japanese': const japaneseText = {headerText: '国連', headerText2: '開発プログラム'}; return japaneseText;
+    case 'english': const engText = {headerText: ['United Nations',<br/>,'Development Programme']}; return engText;
+    case 'arabic': const arabicText = {headerText: ['الأمم المتحدة',<br/>,'برنامج التطوير']}; return arabicText;
+    case 'burmese': const burmeseText = {headerText: ['ကုလသမဂ္ဂ',<br/>,'ဖွံ့ဖြိုးရေးအစီအစဉ်']}; return burmeseText;
+    case 'japanese': const japaneseText = {headerText: ['国連',<br/>,'開発プログラム']}; return japaneseText;
     default:
-      return {headerText: 'United Nations', headerText2: 'Development Programme'};
+      return {headerText: ['United Nations',<br/>,'Development Programme']};
   }
 };
 
@@ -66,14 +66,14 @@ Footer Logo Component used to display the UNDP or PNUD logo with logo name on th
 <Story name="Footer Logo" parameters={{ backgrounds: { default: 'gray'}}}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <FooterLogo src={logo} headerText={caption.headerText} headerText2={caption.headerText2}  style={'default'} alt={'UNDP Logo'}></FooterLogo>;
+    return <FooterLogo src={logo} src1={logowhite} headerText={caption.headerText} style={''} alt={'UNDP Logo'}></FooterLogo>;
   }}
 </Story>
 
 <Story name="Footer Logo White" parameters={{ backgrounds: { default: 'gray'}}}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <FooterLogo src={logowhite} headerText={caption.headerText} headerText2={caption.headerText2}  style={'white'} alt={'UNDP Logo'}></FooterLogo>;
+    return <FooterLogo src={logowhite} headerText={caption.headerText} style={'white'} alt={'UNDP Logo'}></FooterLogo>;
   }}
 </Story>
 

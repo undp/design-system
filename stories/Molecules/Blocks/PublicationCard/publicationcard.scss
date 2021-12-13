@@ -18,38 +18,65 @@
 
   &__download {
     @extend %paragragh-font-16;
-
-    align-items: center;
-    display: flex;
+    font-size: $spacing-12;
     display: inline-flex;
-    float: left;
+    align-items: center;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+
+    &:hover {
+      .download-icon {
+        background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
+        height: 24px;
+      }
+    }
   }
 
   &__readmore {
     @extend %paragragh-font-16;
 
     align-items: center;
-    border-left: 2px solid #d4d6d8;
-    display: flex;
-    display: inline-flex;
-    float: right;
+    display: inline;
     font-weight: 700;
     letter-spacing: 0.03em;
-    padding-left: $spacing-12;
+    font-size: $spacing-12;
     text-transform: uppercase;
+    float: right;
   }
 
   &__description {
-    padding-bottom: $spacing-48;
-  }
+    padding: $font-size-24;
+    align-items: center;
+
+    .grid-x{
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+
+      .small-6{
+        width: 49%;
+      }
+    }
+
+    .grid-x>:not(:first-of-type) {
+      border-left: $spacing-02 solid #ced0d3;
+      text-align: right;
+    }
+  }  
 }
 
 .download-card__readmore {
   .external-link {
     margin-left: $spacing-12;
+    display: inline-block;
+  }
+
+  &:hover {
+    .download-icon {
+      background: url(#{$img-path-Icon}/external-hover.svg) no-repeat 0 bottom;
+      height: 24px;      
+    }
   }
 }
 

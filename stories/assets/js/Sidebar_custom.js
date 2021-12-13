@@ -10,7 +10,7 @@ export function SidebarNav() {
 }
 
 export function SidebarMenu() {
-  $('#sidebar-menu').click(() => {
-    $('.accordion-wrapper').toggleClass('show');
+  $('.accordion-wrapper > span').click(() => {
+    $('.accordion-wrapper').toggleClass('show-small');
   });
 }

@@ -1,8 +1,8 @@
 import { Meta, Story } from "@storybook/addon-docs";
 import { Footer } from "./Footer";
 import { Footertwo } from "./FooterTwo";
-import logo from "../../assets/images/logo.svg";
-import logowhite from '../../assets/images/logo-white.svg';
+import logo from "../../assets/images/undp-logo-blue.svg";
+import logowhite from '../../assets/images/undp-logo-white.svg';
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
@@ -53,8 +53,7 @@ export const getCaptionForLocale = (locale) => {
             menu: "Submit Social Or Environmental Complaint",
           },
         ],
-        headerText: "United Nations",
-        headerText2: "Development Programme",
+        headerText: ['United Nations',<br/>,'Development Programme'],
         labelname: "Sign up for our newsletter",
         buttonname: "SUBMIT",
         placeholdername: "Email",
@@ -110,8 +109,7 @@ export const getCaptionForLocale = (locale) => {
             menu: "إرسال شكوى اجتماعية أو بيئية",
           },
         ],
-        headerText: "الأمم المتحدة",
-        headerText2: "برنامج التطوير",
+        headerText: ['الأمم المتحدة',<br/>,'برنامج التطوير'],
         labelname: "سجل للحصول على اخر اخبارنا",
         buttonname: "يقدم",
         placeholdername: "بريد الالكتروني",
@@ -167,8 +165,7 @@ export const getCaptionForLocale = (locale) => {
             menu: "လူမှုရေးသို့မဟုတ်ပတ်ဝန်းကျင်ဆိုင်ရာတိုင်ကြားစာကိုတင်ပါ",
           },
         ],
-        headerText: "ကုလသမဂ္ဂ",
-        headerText2: "ဖွံ့ဖြိုးရေးအစီအစဉ်",
+        headerText: ['ကုလသမဂ္ဂ',<br/>,'ဖွံ့ဖြိုးရေးအစီအစဉ်'],
         labelname: "ကျွန်ုပ်တို့၏သတင်းလွှာအတွက်စာရင်းပေးသွင်းပါ",
         buttonname: "တင်ပေးပါ",
         placeholdername: "အီးမေးလ်",
@@ -224,8 +221,7 @@ export const getCaptionForLocale = (locale) => {
             menu: "社会的または環境的苦情を提出する",
           },
         ],
-        headerText: "国連",
-        headerText2: "開発プログラム",
+        headerText: ['国連',<br/>,'開発プログラム'],
         labelname: "ニュースレターに登録する",
         buttonname: "送信",
         placeholdername: "Eメール",
@@ -281,8 +277,7 @@ export const getCaptionForLocale = (locale) => {
             menu: "Submit Social Or Environmental Complaint",
           },
         ],
-        headerText: "United Nations",
-        headerText2: "Development Programme",
+        headerText: ['United Nations',<br/>,'Development Programme'],
         labelname: "Sign up for our newsletter",
         buttonname: "SUBMIT",
         placeholdername: "Email",
@@ -341,7 +336,6 @@ The Footer component multiusage component.
         src={logo}
         srctwo={logowhite}
         headerText={caption.headerText}
-        headerText2={caption.headerText2}
         alt={"UNDP Logo"}
         element="input"
         type="email"
@@ -371,8 +365,6 @@ The Footer component multiusage component.
         src={logo}
         srctwo={logowhite}
         headerText={caption.headerText}
-        headerText2={caption.headerText2}
-        style={"default"}
         alt={"UNDP Logo"}
         element="input"
         type="email"
