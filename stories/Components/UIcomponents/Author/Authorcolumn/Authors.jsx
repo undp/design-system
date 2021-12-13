@@ -4,7 +4,7 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Authorimg } from '../../../../Atom/Images/Authorimage/Authorimages';
 
 export const Author = ({
-  data, image, Image, Number,
+  data, image, alt, Image, Number,
 }) => {
   let size = '';
   let decNumber = '';
@@ -28,7 +28,7 @@ export const Author = ({
     <div className="grid-x grid-margin-x">
       {data.slice(0, decNumber).map((item, index) => (
         <div className={['author-wrapper__box', 'cell', `${size}`].join(' ')}>
-          {(Image !== 'false') && (decNumber <= 3) ? (<Authorimg image={image} variant="Small" />) : (<></>)}
+          {(Image !== 'false') && (decNumber <= 3) ? (<Authorimg image={image} alt={alt} variant="Small" />) : (<></>)}
           <div className="author__label">
             <Heading type="6" label={item.Authorlabel} />
             <div className="author__designation">{item.Authortext}</div>
