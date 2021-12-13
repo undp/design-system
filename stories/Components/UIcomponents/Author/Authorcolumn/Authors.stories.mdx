@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { Author } from './Authors';
-import user from '../../../../assets/images/user.svg';
+import user from '../../../../assets/images/author.png';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -161,7 +161,7 @@ The Authors Component is created for showing the authors name, designation, and 
 <Story name="Author">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Author image={user} data={caption} {...args}></Author>;
+    return <Author image={user} alt= 'Author' data={caption} {...args}></Author>;
   }}
 </Story>
 
