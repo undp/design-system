@@ -10,7 +10,7 @@ export const Authorcard = ({
   <div className="grid-x grid-margin-x">
     <div className="cell medium-4">
       <a href={link} className="authorcard">
-        <Author data={data} Number="one" image={image} variant="small" alt={alt} />
+        <Author data={data} Number="one" image={image} variant="small" alt={alt} title={alt} />
         <P label={para} />
         <span className='cta__link cta--space'>{button}</span>
       </a>

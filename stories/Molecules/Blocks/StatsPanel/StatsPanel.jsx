@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import './statspanel.scss';
 import viewport from '../../../assets/js/viewport';
 
-export const StatsPanel = ({ number, percent, content, delaytime, imageback }) => {
+export const StatsPanel = ({ number, percent, Hovercolors, content, delaytime, imageback }) => {
   useEffect(() => {
     viewport('.statspanel-card');
   }, []);
   return (
     <div className={`cell medium-3 statspanel-card left-right delay-${delaytime}`}>
-      <div className="statspanel">
+      <div className={['statspanel', `${[`${Hovercolors}`]}`].join(' ')}>
         <img src={imageback} alt={imageback} />
         <div className="statspanel__box">
           <div className="statspanel__number">{number}</div>
@@ -18,4 +18,8 @@ export const StatsPanel = ({ number, percent, content, delaytime, imageback }) =
       </div>
     </div>
   );
+};
+
+StatsPanel.defaultProps = {
+  Hovercolors: 'yellow',
 };

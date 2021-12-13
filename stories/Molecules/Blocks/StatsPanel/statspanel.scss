@@ -27,14 +27,25 @@
 
   &::after {
     @extend %absolute__content;
-
-    background:
-      linear-gradient(0deg,
-      $color-yellow 1.21%,
-      $color-yellow 56.78%,
-      rgba(255, 235, 0, 0.7) 100%);
+    
     opacity: 0;
     transition: all 0.4s;
+  }
+
+  &.yellow::after {
+    @include gradient(0deg, $yellow-gradient);
+  }
+
+  &.red::after {
+    @include gradient(0deg, $red-gradient);
+  }
+
+  &.green::after {
+    @include gradient(0deg, $green-gradient);
+  }
+
+  &.blue::after {
+    @include gradient(0deg, $blue-gradient);
   }
 
   &__box {
