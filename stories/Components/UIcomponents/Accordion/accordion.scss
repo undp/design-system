@@ -15,9 +15,9 @@
   overflow: hidden;
   padding: $spacing-16 0 $spacing-24;
   position: relative;
+  margin-bottom: 0;
 
   &::before {
-    @include transition(0.1s ease);
 
     background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
     border-top-color: #f3f3f3;
