@@ -69,6 +69,14 @@
   @include transform(skew(#{$x}deg, #{$y}deg));
 }
 
+//gradient color
+@mixin gradient($direction, $list) { 
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);  
+}
+
 /* mixing  end */
 
 //loader animation
@@ -237,7 +245,7 @@
   float: right;
   height: 13px;
   position: absolute;
-  right: 19px;
+  right: 16px;
   top: 50%;
   width: 20px;
 }
@@ -247,7 +255,6 @@
   height: 100%;
   left: 0;
   position: absolute;
-  z-index: 1;
   top: 0;
   width: 100%;
 }
@@ -295,6 +302,7 @@
   padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
   position: relative;
   text-transform: uppercase;
+  margin: 0;
 }
 
 %select_option {
