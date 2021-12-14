@@ -3,7 +3,7 @@
 @import '../../../assets/scss/variables';
 
 /* author summary start */
-.author-card {
+.author-summary {
   border-top: 2px solid $color-black;
   padding-top: $spacing-32;
 
@@ -18,20 +18,20 @@
     }
   }
 
-  p {
+  &-left {
+    @include devicebreak(medium) {
+      display: flex;
+      width: 50%;
+    }
+  }
+
+  &-right {
     @include devicebreak(medium) {
       width: 40%;
     }
   }
-}
 
-.author-card__summary {
-  @include devicebreak(medium) {
-    display: flex;
-    width: 50%;
-  }
-
-  &--text {
+  &-text {
     margin-top: $spacing-40;
 
     @include devicebreak(medium) {
@@ -47,13 +47,11 @@
 }
 
 [dir='rtl'] {
-  .author-card {
-    &__summary {
-      &--text {
-        @include devicebreak(medium) {
-          margin-left: 0;
-          margin-right: $spacing-40;
-        }
+  .author-summary {
+    &-text {
+      @include devicebreak(medium) {
+        margin-left: 0;
+        margin-right: $spacing-40;
       }
     }
   }
