@@ -26,6 +26,12 @@
       }
     }
   }
+  .feature__card-slide {
+    display: none;
+    @include devicebreak(large) {
+      display: block;
+    }
+  }
 }
 
 [dir='rtl'] {
