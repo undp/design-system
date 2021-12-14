@@ -1,0 +1,62 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
+.form-types {
+    h2 {
+        margin-bottom: $spacing-40;
+    }
+    .input-group {
+        .input__controls {
+            margin: 0;
+        }
+    }
+    .form-photo {
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+    .form-bg {
+        background: $color-gray-100;
+        padding: $spacing-96 0;
+        box-sizing: border-box;
+        @include devicebreak(small) {
+            margin-top: $spacing-16;
+            padding: $spacing-40 $spacing-24;
+        }
+    }
+    .button {
+        @include devicebreak(small) {
+            width: 100%;
+        }
+    }
+    .wide-form {
+        .button {
+            @include devicebreak(small) {
+                margin-top: $spacing-24;
+            }
+        }
+    }
+    .stacked-form {
+        p {
+            margin-bottom: $spacing-40;
+        }
+        .button {
+            margin-top: $spacing-40;
+            @include devicebreak(small) {
+                margin-top: $spacing-24;
+            }
+        }
+    }
+}
+[dir="rtl"] {
+    @media print, screen and (min-width: 64em) {
+        .grid-margin-x > .large-offset-1 {
+            margin-right: calc(8.33333% + 1.5rem / 2);
+            margin-left: 0.75rem;
+        }
+    }
+}
+.mt-0 {
+    margin-top: 0 !important;
+}
