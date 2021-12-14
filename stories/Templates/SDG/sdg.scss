@@ -1,0 +1,62 @@
+@import "../../assets/scss/breakpoints";
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.what-goal {
+  padding: $spacing-96 0;
+
+  @include devicebreak(medium) {
+    padding: $spacing-160 0;
+  }
+
+  @include devicebreak(small) {
+    h4 {
+      margin-top: $spacing-64;
+    }
+  }
+}
+
+.sdg-card-list {
+  + .footer {
+    margin-top: 0;
+  }
+  .modal-sdg {
+    opacity: 0;
+    visibility: hidden;
+
+    > .grid-x {
+      @include transform(translateX(100%));
+    }
+
+    &.sdg-open {
+      opacity: 1;
+      visibility: visible;
+      transition-duration: 0.2s;
+
+      > .grid-x {
+        @include transform(translateX(0));
+      }
+    }
+  }
+}
+
+[dir="rtl"] {
+  .what-goal {
+    > div {
+      margin-left: 0;
+      margin-right: 8.33333%;
+    }
+  }
+  .sdg-card-list {
+    .modal-sdg {
+      > .grid-x {
+        @include transform(translateX(-100%));
+      }
+      &.sdg-open {
+        > .grid-x {
+          @include transform(translateX(0));
+        }
+      }
+    }
+  }
+}

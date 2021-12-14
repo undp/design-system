@@ -1,10 +1,7 @@
 import React from 'react';
-import { ContentCardWithOutImage } from'../../../Components/UIcomponents/Cards/ContentCard/ContentCardWithOutImage';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import { Ctalink } from '../../../Components/UIcomponents/Buttons/Cta_link/Cta_link';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
-import { ContentCardImage } from '../../../Components/UIcomponents/Cards/ContentCard/ContentCardImage';
-import { CtaButton } from '../../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 import './contentcardwithandwithoutimage.scss';
 
 export const image_options = {
@@ -66,10 +63,6 @@ export const ContentCardWithAndWithoutImage = ({
             )}         
         </div>
       ))}
-
-      <div className="cell cta-container">
-            <CtaButton label={storyBtn} For_Primary="No_Arrow"/>
-      </div>       
     </div>
   );
   
