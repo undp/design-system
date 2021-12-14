@@ -20,7 +20,7 @@ export const DownloadModal = ({
   data, button, select, ...args
 }) => {
   useEffect(() => {
-    checkbox('.custom-control-input', '.button-primary');
+    checkbox('.checkbox-wrapper input', '.button-primary');
     selectfilter();
   }, []);
   return (
