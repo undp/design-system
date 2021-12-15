@@ -9,6 +9,8 @@ import img5 from "../../assets/images/CardImage5.jpg";
 import img6 from "../../assets/images/CardImage6.jpg";
 import BackgroundImg from '../../assets/images/lady.jpg';
 import BackgroundVideo from '../../assets/video/video_sample.mp4';
+import logo from '../../assets/images/undp-logo-blue.svg';
+import logowhite from '../../assets/images/undp-logo-white.svg';
 
 import {getCaptionForLocale as Languageswitcher} from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
 import {getNavLinks, menuData} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
@@ -495,6 +497,8 @@ Template for Generic Landing Page
       locale={locale} leftNavigationData={leftNavigationData}
       navigationData={navigationData} rightNavigationData={rightNavigationData}
       menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
+      logo={logo}
+      logowhite={logowhite}
       ></GenericLandingPage>;
   }}
 </Story>
