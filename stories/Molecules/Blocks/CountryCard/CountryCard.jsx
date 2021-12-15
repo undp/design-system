@@ -16,7 +16,7 @@ export const CountryCard = ({ data }) => (
           )}
           <div className="country-card__caption">
             <p>{item.name}</p>
-            <Ctalink label={item.btnlabel} variant="Arrow" />
+            <Ctalink label={item.btnlabel} />
           </div>
         </a>
       </div>

@@ -31,7 +31,7 @@ export const TweetCard = ({
         <P className="tweet-card__body--description" label={descriptiontext} />
         <P className="tweet-card__body--date" label={contentdate} />
       </div>
-      <Ctalink label={button} variant="Space" />
+      <Ctalink label={button} Type="Space" />
     </div>
   );
 };

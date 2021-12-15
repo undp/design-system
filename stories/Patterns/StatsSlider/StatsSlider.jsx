@@ -15,7 +15,7 @@ export const StatsSlider = ({ data }) => {
       </div>
       <div className="glide__track" data-glide-el="track">
         <div className="glide__slides">
-          {data.map((item, index) => <div className="glide__slide" key={index}><StatsCards number={item.numbername} percent={item.percentname} content={item.text} size="small" /></div>)}
+          {data.map((item, index) => <div className="glide__slide" key={index}><StatsCards number={item.numbername} percent={item.percentname} content={item.text} Size="Small" /></div>)}
         </div>
       </div>
     </div>

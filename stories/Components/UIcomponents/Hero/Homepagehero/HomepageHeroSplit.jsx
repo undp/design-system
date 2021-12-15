@@ -22,7 +22,7 @@ export const Homepageherosplit = ({
             <Heading type="1" className="hero-split__title left-right" label={title} />
             <Heading type="4" className="hero-split__subtitle left-right" label={content} />
             <div className="show-large">
-              <CtaButton label1={button} />
+              <CtaButton label={button} />
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@ export const Homepageherosplit = ({
               </div>
             )}
           <div className="show-small">
-            <CtaButton label1={button} />
+            <CtaButton label={button} />
           </div>
         </div>
       </div>

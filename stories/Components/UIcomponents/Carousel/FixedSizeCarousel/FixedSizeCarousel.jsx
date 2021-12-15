@@ -34,7 +34,7 @@ export const FixedSizeCarousel = ({ data, label }) => {
                     <P label={item.descText} />
                   </div>
                   <div className="fixed-image-size-carousel__button-wrap">
-                    <CtaButton label1={item.buttonText} />
+                    <CtaButton label={item.buttonText} />
                     <div className="glide__arrows" data-glide-el="controls">
                       <button className="glide__arrow glide__arrow--left" data-glide-dir="<"><img src={chevronLeftWhite} alt="Prev" /></button>
                       <button className="glide__arrow glide__arrow--right" data-glide-dir=">"><img src={chevronRightWhite} alt="Next" /></button>
