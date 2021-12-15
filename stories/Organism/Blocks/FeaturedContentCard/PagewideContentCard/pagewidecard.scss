@@ -28,6 +28,12 @@
   a {
     @extend %img_none;
   }
+
+  .button-primary{
+    @include devicebreak(medium){
+      margin: 0 1.5rem;
+    }
+  }
 }
 
 .wide-card__description {
