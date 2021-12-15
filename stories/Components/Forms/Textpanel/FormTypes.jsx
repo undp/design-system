@@ -19,7 +19,7 @@ export const FormTypes = ({
   ...args
 }) => (
   <form>
-    <div className="grid-container form-types">
+    <div className="grid-container form-wrapper">
       {args.variant === "text panel and form" && (
         <div className="grid-x grid-margin-x grid-margin-y">
           <div className="medium-5 cell large-offset-1 mt-0">
