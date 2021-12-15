@@ -14,15 +14,15 @@ export const CountryCardHero = ({ data, title, subtitle }) => {
   }, []);
   return (
     <div className="country-card__wrapper">
-      <div className="grid-x countrycard__header">
-        <div className="cell large-5">
-          <Heading type="2" className="left-right" label={title} />
+      <div className="grid-x country-card__header">
+        <div className="cell large-5 medium-12">
+          <Heading type="1" className="left-right" label={title} />
         </div>
-        <div className="cell large-3 large-offset-1 countrycard-border">
-          <Heading type="5" className="left-right" label={subtitle} />
+        <div className="cell large-4 medium-12 country-card-border">
+          <Heading type="6" className="left-right" label={subtitle} />
         </div>
       </div>
-      <div className="glide countrycard__items">
+      <div className="glide country-card__items">
         <div className="glide__bullets show-for-small" data-glide-el="controls[nav]">
           {data.map((item, index) => <button className="glide__bullet" data-glide-dir={[`=${index}`]} aria-label={index} key={index} />)}
         </div>
