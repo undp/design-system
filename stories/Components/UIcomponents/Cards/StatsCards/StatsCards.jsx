@@ -30,8 +30,8 @@ export const StatsCards = ({
     <div className="statscard__box">
       {Size == 'Extra_large' ? (<Heading type="2" className="statscard__title" label={title} />) : (<></>)}
       {Size == 'Large' ? (<Heading type="3" className="statscard__title" label={title} />) : (<></>)}
-      <div className="statscard__number">{number}</div>
-      <div className="statscard__per">{percent}</div>
+      <h2 className="statscard__number">{number}</h2>
+      <h4 className="statscard__per">{percent}</h4>
       <P label={content} />
     </div>
   </div>
