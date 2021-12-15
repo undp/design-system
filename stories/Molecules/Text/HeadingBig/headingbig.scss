@@ -7,7 +7,8 @@
   opacity: 0;
   padding: $spacing-136 0;
   z-index: 5;
-  justify-content: center;
+  justify-content: center; 
+  transition: background-color 0.5s ease;  
 
   &.inviewport{
       opacity: 1;
@@ -29,10 +30,7 @@
 
 .color-blue {
   background-color: #232E3E;
-}
-
-body {
-  transition: background-color .9s ease;
+  transition: background-color 1s ease; 
 }
 
 /* heading-big cta end */

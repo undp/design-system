@@ -1,0 +1,178 @@
+import { Meta, Story, Canvas, Source } from '@storybook/addon-docs';
+import { ImageRevealCards } from "./ImageRevealCards";
+import img from "../../../assets/images/shop.png";
+import img2 from "../../../assets/images/donate.png";
+import img3 from "../../../assets/images/explore.png";
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {
+      data: [{
+        contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+        btnlabel: 'SHOP',
+        link: '#',
+        size: 'medium-4',
+        imageback: img
+      },
+      {
+        contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+        btnlabel: 'DONATE',
+        link: '#',
+        size: 'medium-4',
+        imageback: img2
+      },
+      {
+        contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+        btnlabel: 'EXPLORE',
+        link: '#',
+        size: 'medium-4',
+        imageback: img3
+      }],      
+    }; return engText;
+    case 'arabic': const arabicText = {
+      data: [{
+        contentname: 'الألم هو الحب نفسه', 
+        btnlabel: 'متجر',
+        link: '#',
+        size: 'medium-4',
+        imageback: img
+      },
+      {
+        contentname: 'الألم هو الحب نفسه', 
+        btnlabel: 'يتبرع',
+        link: '#',
+        size: 'medium-4',
+        imageback: img2
+      },
+      {
+        contentname: 'الألم هو الحب نفسه', 
+        btnlabel: 'يكتشف',
+        link: '#',
+        size: 'medium-4',
+        imageback: img3
+      }],      
+    }; return arabicText;
+    case 'burmese': const burmeseText = {
+      data: [{
+        contentname: 'နာကျင်မှုကအချစ်ပါဘဲ', 
+        btnlabel: 'ဆိုင်',
+        link: '#',
+        size: 'medium-4',
+        imageback: img
+      },
+      {
+        contentname: 'နာကျင်မှုကအချစ်ပါဘဲ', 
+        btnlabel: 'လှူဒါန်းပါ။',
+        link: '#',
+        size: 'medium-4',
+        imageback: img2
+      },
+      {
+        contentname: 'နာကျင်မှုကအချစ်ပါဘဲ', 
+        btnlabel: 'စူးစမ်းပါ။',
+        link: '#',
+        size: 'medium-4',
+        imageback: img3
+      }],      
+    }; return burmeseText;
+    case 'japanese': const japaneseText = {
+      data:[{
+        contentname: '痛みは愛そのものです', 
+        btnlabel: '店',
+        link: '#',
+        size: 'medium-4',
+        imageback: img
+      },
+      {
+        contentname: '痛みは愛そのものです', 
+        btnlabel: '寄付',
+        link: '#',
+        size: 'medium-4',
+        imageback: img2
+      },
+      {
+        contentname: '痛みは愛そのものです', 
+        btnlabel: '見る',
+        link: '#',
+        size: 'medium-4',
+        imageback: img3
+      }],      
+    }; return japaneseText;
+    default:
+      const dummy =  {
+        data: [{
+          contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', 
+          btnlabel: 'SHOP',
+          link: '#',
+          size: 'medium-4',
+          imageback: img
+        },
+        {
+          contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', 
+          btnlabel: 'DONATE',
+          link: '#',
+          size: 'medium-4',
+          imageback: img2
+        },
+        {
+          contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', 
+          btnlabel: 'EXPLORE',
+          link: '#',
+          size: 'medium-4',
+          imageback: img3
+        }],        
+      };
+    return dummy;
+  }
+};
+
+<Meta title="Testing/Image Reveal Cards" />
+
+<style>{`
+ .subheading {
+    font-weight: 700;
+    font-size: 24px;
+    color: #031c2d;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+`}</style>
+
+# Content Card Component
+
+The Image Reveal Card component defines a card of information data with some items - Title, Image, Paragraph, and CTA Link. We are using the grid system here <code>assets/scss/grid.scss</code>. Molecules are used for creating this card.
+
+<Story name="Image Reveal Cards">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <ImageRevealCards  
+        data={caption.data}
+        label={caption.label}
+      ></ImageRevealCards>
+    );
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like variables, mixin from{" "}
+    <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>contentcard.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
+</ul>
