@@ -64,19 +64,23 @@
     &__arrows {
       margin-left: 2rem;
 
-      @include devicebreak(large) {
-        display: none;
+      @include devicebreak(large){
+        margin-left: 3rem;
       }
 
-      @include devicebreak(small) {
-        display: none;
-      }
+      @extend %carousel_arrows;
     }
 
     &__arrow {
       @extend %carousel_arrow;
 
-      margin: 0 0.4rem;
+      &:first-child{
+        margin-right: 0.625rem;
+      }
+
+      &:last-child{
+        margin-left: 0.625rem;
+      }
 
       img {
         vertical-align: bottom;
@@ -100,9 +104,25 @@
         margin-right: 0;
       }
 
+      &__arrow{
+        &:first-child{
+          margin-right: 0;
+          margin-left: 0.625rem;
+        }
+  
+        &:last-child{
+          margin-left: 0;
+          margin-right: 0.625rem;
+        }
+      }
+
       &__arrows {
         margin-left: auto;
         margin-right: 2rem;
+
+        @include devicebreak(large){
+          margin-right: 3rem;
+        }
       }
     }
   }
