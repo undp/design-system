@@ -35,7 +35,6 @@ export const GlobalHomePage = ({
   rightNavigationData,
   leftNavigationData,
   locale,
-  getMegaMenuData,
   locationData,
   langSelect,
   backcaption,

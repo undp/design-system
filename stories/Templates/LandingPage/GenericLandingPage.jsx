@@ -16,7 +16,6 @@ export const GenericLandingPage = ({
   rightNavigationData,
   leftNavigationData,
   locale,
-  getMegaMenuData,
   locationData,
   langSelect,
   backcaption,

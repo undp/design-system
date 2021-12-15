@@ -33,13 +33,11 @@ const ArticlePage = ({
   footerData,
   headingLabel,
   featuredCardContent,
-
   languageswitcherData,
   navigationData,
   rightNavigationData,
   leftNavigationData,
   locale,
-  getMegaMenuData,
   locationData,
   langSelect,
   backcaption,

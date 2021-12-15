@@ -4,11 +4,8 @@ import logo from "../../assets/images/undp-logo-blue.svg";
 import user from "../../assets/images/user.svg";
 import viewport from "../../assets/js/viewport";
 import { Heading } from "../../Atom/Typography/Heading/Heading";
-import CustomSelect from "../../Components/Forms/Dropdowns/CustomSelect/CustomSelect";
 import { Breadcrumbcomponent } from "../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs";
 import GlobalHeader from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader";
-import { AuthorSummary } from "../../Organism/Blocks/Authorcard/AuthorSummary";
-import { ContentCard } from "../../Organism/Blocks/ContentCard/ContentCard";
 import { Footer } from "../../Organism/Footer/Footer";
 import "./Authors.scss";
 import init from "../../assets/js/select-init";
@@ -22,7 +19,6 @@ const Authors = ({
   sortText,
   viewText,
   closeText,
-  undpheading,
   text,
   authorData,
   headingData,
@@ -31,13 +27,11 @@ const Authors = ({
   rightNavigationData,
   leftNavigationData,
   locale,
-  getMegaMenuData,
   locationData,
   langSelect,
   backcaption,
 }) => {
   useEffect(() => {
-    console.log(text);
     viewport(".feature__card--headertext");
     init();
     $(".sort-btn").click(function sortclick() {

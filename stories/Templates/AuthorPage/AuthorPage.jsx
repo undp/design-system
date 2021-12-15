@@ -15,13 +15,11 @@ const AuthorPage = ({
   authorSummaryData,
   contentCardData,
   footerData,
-
   languageswitcherData,
   navigationData,
   rightNavigationData,
   leftNavigationData,
   locale,
-  getMegaMenuData,
   locationData,
   langSelect,
   backcaption,

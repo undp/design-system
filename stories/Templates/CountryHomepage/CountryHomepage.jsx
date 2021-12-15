@@ -35,13 +35,11 @@ export const CountryHomepage = ({
   featureddataafterwedo,
   statHeading,
   storiesHeading,
-
   languageswitcherData,
   navigationData,
   rightNavigationData,
   leftNavigationData,
   locale,
-  getMegaMenuData,
   locationData,
   langSelect,
   backcaption,

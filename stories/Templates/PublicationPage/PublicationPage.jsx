@@ -23,7 +23,6 @@ export const PublicationPage = ({
     rightNavigationData,
     leftNavigationData,
     locale,
-    getMegaMenuData,
     locationData,
     langSelect,
     backcaption,
