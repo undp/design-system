@@ -9,7 +9,7 @@ import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 export const size_options = {
   large: 'large-8 medium-8',
   medium: 'medium-4',
-  small: 'medium-4 large-3',
+  small: 'medium-3',
 };
 
 export const image_options = {
