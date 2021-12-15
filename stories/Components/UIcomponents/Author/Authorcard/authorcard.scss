@@ -1,23 +1,13 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/variables';
 
-.authorcard {
+.author-card {
   @extend %img_none;
 
-  border: 0;
   display: block;
 
   .author-wrapper {
     padding-top: $spacing-24;
-
-    &__box {
-      margin-left: 0.625rem;
-      margin-right: 0;
-
-      @include devicebreak(medium) {
-        margin-left: 0.9375rem;
-      }
-    }
   }
 
   p {
@@ -45,19 +35,10 @@
 }
 
 [dir='rtl'] {
-  .authorcard {
+  .author-card {
     &:hover {
       .cta__link::after {
         @include transform(translate(-50%,0) rotate(180deg));
-      }
-    }
-
-    .author-wrapper__box {
-      margin-left: 0;
-      margin-right: 0.625rem;
-
-      @include devicebreak(medium) {
-        margin-right: 0.9375rem;
       }
     }
   }
