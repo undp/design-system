@@ -9,11 +9,11 @@ export const HeadingBig = ({ headerText, descriptionText }) => {
     viewport('.heading-big');
   }, []);
   return(
-    <div className="heading-big grid-x grid-margin-x" data-color="blue">
-      <div className="cell  medium-4 large-4">
+    <div className="grid-x heading-big  align-center" data-color="blue">
+      <div className="cell  medium-4">
         <Heading type="2" label={headerText} />
       </div>
-      <div className="cell  medium-8 large-8">
+      <div className="cell  medium-6">
         <Heading type="4" label={descriptionText} />
       </div>
     </div>

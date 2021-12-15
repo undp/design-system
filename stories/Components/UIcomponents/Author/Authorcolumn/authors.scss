@@ -28,15 +28,14 @@
       margin-bottom: $spacing-08;
       text-transform: uppercase;
     }
-  }
 
-  &__designation {
-    font-size: $font-size-14;
-    line-height: 1.2;
+    p {
+      font-size: $font-size-14;
+      margin-bottom: 0;
 
-    @include devicebreak(medium) {
-      font-size: $font-size-16;
-      line-height: 1.4;
+      @include devicebreak(medium) {
+        font-size: $font-size-16;
+      }
     }
   }
 }

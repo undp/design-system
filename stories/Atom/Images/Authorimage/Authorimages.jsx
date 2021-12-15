@@ -3,12 +3,12 @@ import './authorimage.scss';
 
 export const size_options = {
   Large: 'large',
-  Small: 'small',
+  Small: '',
 };
 
 export const Authorimg = ({ image, alt, ...args }) => (
   <div className={['author__img', `${size_options[`${args.variant}`]}`].join(' ')}>
-    <img src={image} alt={image} />
+    <img src={image} alt={alt} title={alt}/>
   </div>
 );
 

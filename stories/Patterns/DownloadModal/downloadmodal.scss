@@ -69,6 +69,10 @@
 
 .list-language {
   max-height: 100%;
+
+  @include devicebreak(medium) {
+    max-height: 404px;
+  }
 }
 
 .modal-download {

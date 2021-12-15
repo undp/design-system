@@ -14,8 +14,8 @@ import farmlandmd from '../../assets/images/farmland-md.jpg';
 import farmlandsm from '../../assets/images/farmland-sm.jpg';
 import user from '../../assets/images/user.svg';
 import { Footer } from '../../Organism/Footer/Footer';
-import logo from '../../assets/images/logo.svg';
-import logowhite from '../../assets/images/logo-white.svg';
+import logo from '../../assets/images/undp-logo-blue.svg';
+import logowhite from '../../assets/images/undp-logo-white.svg';
 import viewport from '../../assets/js/viewport';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 

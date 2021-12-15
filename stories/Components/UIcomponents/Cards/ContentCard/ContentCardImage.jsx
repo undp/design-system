@@ -17,7 +17,7 @@ export const ContentCardImage = ({
           </div>
           <div className="content-card__caption">
             <Heading type="5" label={item.contentname} />
-            <Ctalink label={item.button} variant="Space" />
+            <Ctalink label={item.button} Type="Space" />
           </div>
         </a>
       </div>

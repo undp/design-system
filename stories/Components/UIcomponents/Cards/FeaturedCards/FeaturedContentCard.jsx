@@ -7,9 +7,9 @@ import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
 export const size_options = {
-  large: 'large-8 large',
-  medium: 'medium-6 large-4 medium',
-  small: 'medium-5 large-3 small',
+  large: 'large-8 medium-8',
+  medium: 'medium-4',
+  small: 'medium-3',
 };
 
 export const image_options = {
@@ -25,7 +25,7 @@ export const FeaturedContentCard = ({
   }, []);
   return (
     <div className="grid-x grid-margin-x">
-      {headertext && <div className="cell large-3 small-6 feature__card-title  large-offset-1 small-offset-1 left-right inviewport"><Heading type="2" label={headertext} /></div>}
+      {headertext && <div className="cell medium-3 medium-offset-1 feature__card-title left-right"><Heading type="2" label={headertext} /></div>}
       {data.map((item, index) => (
         <div key={index} className={['cell', `${item.scale ? size_options[`${item.scale}`] : size_options[`${args.size}`]}`].join(' ')}>
           <a href="#" className={['feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_options[`${image}`]}`}`].join(' ')}>

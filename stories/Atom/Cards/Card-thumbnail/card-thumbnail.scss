@@ -2,23 +2,43 @@
 
 /* card_thumbnail__image start */
 .card-thumbnail__image {
-  display: inline-flex;
   position: relative;
 
   &::before {
-    @extend %img-hover-effect;
+    @extend %absolute__content;
 
-    bottom: 0;
-    content: '';
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    @include transition(opacity 0.5s ease);
+
+    opacity: 0;
   }
 
   &:hover {
     &::before {
       opacity: 0.75;
+    }
+  }
+
+  &.yellow {
+    &::before {
+      @include background-image(42deg, $color-yellow, transparent 80%);
+    }
+  }
+
+  &.red {
+    &::before {
+      @include background-image(42deg, $color-red, transparent 80%);
+    }
+  }
+
+  &.green {
+    &::before {
+      @include background-image(42deg, $color-green, transparent 80%);
+    }
+  }
+
+  &.azure {
+    &::before {
+      @include background-image(42deg, $color-azure, transparent 80%);
     }
   }
 }

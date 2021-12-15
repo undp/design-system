@@ -6,6 +6,9 @@ import {getCaptionForLocale as contentCardData } from "../../Organism/Blocks/Con
 import {getCaptionForLocale as footerData} from "../../Organism/Footer//Footer.stories.mdx";
 import {getCaptionForLocale as authorData} from "../../Components/UIcomponents/Author/Authorcard/Authorcard.stories.mdx";
 
+import {getCaptionForLocale as Languageswitcher} from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {getNavLinks, menuData} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
+
 export const getheadingForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = 'UNDP Authors'; return engText;
@@ -326,6 +329,9 @@ export const getfiltertextForLocale = (locale) => {
     const filtertext = getfiltertextForLocale(locale);
     const buttonData = getButtonForLocale(locale);
     const headingData = getheadingForLocale(locale);
+    const navigationData= getNavLinks(locale);
+    const leftNavigationData=navigationData.filter(item=>item.position==='left');
+     const rightNavigationData=navigationData.filter(item=>item.position==='right');
  return <Authors
     text={filtertext}
     viewText = {buttonData.view}
@@ -336,8 +342,11 @@ export const getfiltertextForLocale = (locale) => {
      breadcrumbData={breadcrumbData(locale)}
      authorSummeryData={authorSummeryData(locale)}
      headingData={headingData}
-     contentCardData={contentCardData(locale)}>
-      </Authors>;
+     contentCardData={contentCardData(locale)}
+      locale={locale} leftNavigationData={leftNavigationData}
+      navigationData={navigationData} rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
+     ></Authors>;
   }}
 </Story>
 

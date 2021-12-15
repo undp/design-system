@@ -74,7 +74,7 @@
       border: 2px solid $color-red;
     }
 
-    &.disabled-state {
+    &.disabled {
       background-color: $color-white;
       border: 2px solid $color-gray-400;
 
@@ -142,6 +142,11 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
         &.disabled-state {
           background-image: url(#{$img-path-Icon}/datedisabled.svg);
+        }
+      }
+      @media (hover: none) and (pointer: coarse) {
+        &--date {
+          padding-right: $spacing-24;
         }
       }
     }

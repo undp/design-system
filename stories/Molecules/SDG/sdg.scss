@@ -297,6 +297,8 @@
       @extend %absolute__content;
 
       @include transition(background-color 0.5s linear);
+
+      z-index: 1;
     }
 
     img {

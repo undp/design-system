@@ -10,7 +10,7 @@ export const getNavLinks = (locale) => {
                 {label: 'Who we are',id: 'headerlink1',position: 'left'},
                 {label: 'What we do',id: 'headerlink2',position: 'left'},
                 {label: 'Our Impact',id: 'headerlink3',position: 'right'},
-                {label: 'Get Involved',id: 'headerlink4',position: 'right'},       
+                {label: 'Get Involved',id: 'headerlink4',position: 'right'},
               ];
         case 'arabic':
             return [
@@ -41,6 +41,39 @@ export const getNavLinks = (locale) => {
       ];
     }
 }
+
+export const getSiteTitle = (locale) => { 
+  switch (locale) { 
+        case 'english': return {label: 'GLOBAL',span: 'Site Title'}; 
+        case 'arabic': return {label: 'عالمي',span: 'عنوان الموقع'}; 
+        case 'burmese': return {label: 'ကမ္ဘာလုံးဆိုင်ရာ',span: 'ငဆိုက်ခေါင်းစဉ်'}; 
+        case 'japanese': return {label: 'グローバル',span: 'ウェブサイト名'}; 
+        default:return {label: 'GLOBAL',span: 'Site Title'}; 
+    } 
+  } 
+
+export const getLocationDataForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: 'Locations'}; return engText;
+    case 'arabic': const arabicText = {detail: 'المواقع'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'နေရာမျာ'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: '場所'}; return japaneseText;
+    default:
+      return {detail: 'Locations'};
+  }
+};
+
+export const getBackForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: 'Back'}; return engText;
+    case 'arabic': const arabicText = {detail: 'الى الخلف'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'ကျော'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: '戻る'}; return japaneseText;
+    default:
+      return {detail: 'Back'};
+  }
+};
+
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = 'Select Language'; return engText;
@@ -50,6 +83,17 @@ export const getCaptionForLocale = (locale) => {
     default: return 'Category';
   }
 };
+
+export const getSelectlanguage = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'Select Language'; return engText;
+    case 'arabic': const arabicText = 'اختار اللغة'; return arabicText;
+    case 'burmese': const burmeseText = 'ဘာသာစကားကို ရွေးပါ။'; return burmeseText;
+    case 'japanese': const japaneseText = '言語を選択する'; return japaneseText;
+    default: return 'Select Language';
+  }
+};
+
 export const menuData = (locale) => {
   switch(locale) {
   case 'english': const engText = {data: [
@@ -94,11 +138,19 @@ export const menuData = (locale) => {
 
 <Story name="Global Header">
   {(args, { globals: { locale } }) => {
+  let lang = locale === 'en' ? 'english' : locale;
     const caption = getCaptionForLocale(locale);
     const navigationData= getNavLinks(locale);
     const leftNavigationData=navigationData.filter(item=>item.position==='left');
      const rightNavigationData=navigationData.filter(item=>item.position==='right');
-    return <GlobalHeader locale={locale} leftNavigationData={leftNavigationData} navigationData={navigationData} rightNavigationData={rightNavigationData} menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)} text={caption}></GlobalHeader>;
+     const backcaption = getBackForLocale(locale);
+     const siteTitleData = getSiteTitle(locale);
+    return <GlobalHeader siteTitleData={siteTitleData} backcaption={backcaption} locale={locale} leftNavigationData={leftNavigationData}
+     navigationData={navigationData} rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
+     text={caption}
+      locationData={getLocationDataForLocale(locale)} langSelect={getSelectlanguage(locale)}
+      ></GlobalHeader>;
   }}
 </Story>
 
