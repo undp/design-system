@@ -3,52 +3,80 @@
 @import '../../../assets/scss/mixins';
 
 /* statspanel card start */
-.statspanel {
-  align-items: center;
-  background-color: $color-gray-700;
-  display: flex;
-  justify-content: center;
-  min-height: 378px;
-  position: relative;
-  @include transition(300ms all);
-
-  @include devicebreak(medium) {
-    min-height: 787px;
-  }
-
-  img {
-    @extend %absolute__content;
-
-    object-fit: cover;
-    opacity: 0;  
+.stats {
+  &-panel {
     @include transition(300ms all);
-    
+
+    align-items: center;
+    background-color: $color-gray-700;
+    display: flex;
+    justify-content: center;
+    min-height: 378px;
+    position: relative;
+
+    @include devicebreak(medium) {
+      min-height: 787px;
+    }
+
+    img {
+      @extend %absolute__content;
+
+
+      @include transition(300ms all);
+
+      object-fit: cover;
+      opacity: 0;
+    }
+
+    &::after {
+      @extend %absolute__content;
+
+      opacity: 0;
+      transition: all 0.4s;
+    }
+
+    &.yellow::after {
+      @include gradient(0deg, $yellow-gradient);
+    }
+
+    &.red::after {
+      @include gradient(0deg, $red-gradient);
+    }
+
+    &.green::after {
+      @include gradient(0deg, $green-gradient);
+    }
+
+    &.blue::after {
+      @include gradient(0deg, $blue-gradient);
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+
+    &:hover,
+    &.active {
+      &::after,
+      img {
+        opacity: 1;
+      }
+
+      .stats {
+        &-number {
+          text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
+          -webkit-text-stroke: 1px $color-gray-700;
+        }
+
+        &-box {
+          color: $color-gray-700;
+        }
+      }
+    }
   }
 
-  &::after {
-    @extend %absolute__content;
-    
-    opacity: 0;
-    transition: all 0.4s;
-  }
-
-  &.yellow::after {
-    @include gradient(0deg, $yellow-gradient);
-  }
-
-  &.red::after {
-    @include gradient(0deg, $red-gradient);
-  }
-
-  &.green::after {
-    @include gradient(0deg, $green-gradient);
-  }
-
-  &.blue::after {
-    @include gradient(0deg, $blue-gradient);
-  }
-
-  &__box {
+  &-box {
     color: $color-white;
     padding: 0 $spacing-24;
     width: 100%;
@@ -59,7 +87,9 @@
     }
   }
 
-  &__number {
+  &-number {
+    @include transition(300ms all);
+
     color: $color-gray-700;
     display: block;
     font-family: $Font-Family-SohneBreit;
@@ -69,7 +99,6 @@
     margin-bottom: $spacing-16;
     text-shadow: -1px -1px 0 $color-white, 1px -1px 0 $color-white, -1px 1px 0 $color-white, 1px 1px 0 $color-white;
     -webkit-text-stroke: 1px $color-white;
-    @include transition(300ms all);
 
     @include devicebreak(medium) {
       font-size: 6.6rem;
@@ -81,7 +110,7 @@
     }
   }
 
-  &__per {
+  &-per {
     display: block;
     font-size: 2.188rem;
     font-weight: 600;
@@ -90,28 +119,6 @@
 
     @include devicebreak(medium) {
       margin-bottom: $spacing-16;
-    }
-  }
-
-  p {
-    font-size: 1.25rem;
-    margin: 0;
-  }
-
-  &:hover,
-  &.active {
-    &::after,
-    img {
-      opacity: 1;
-    }
-
-    .statspanel__number {
-      text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
-      -webkit-text-stroke: 1px $color-gray-700;
-    }
-
-    .statspanel__box {
-      color: $color-gray-700;
     }
   }
 }

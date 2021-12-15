@@ -6,7 +6,7 @@ import './stats.scss';
 
 export const Stats = ({ data, imageback }) => {
   useEffect(() => {
-    StatsFun('.stats-grid .statspanel');
+    StatsFun('.stats-grid .stats-panel');
     viewport('.stats-grid .statspanel-card');
   }, []);
   return (
