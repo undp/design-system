@@ -18,11 +18,15 @@ export const PublicationPage = ({
     data, download, readmore, image, footerData, active, blockHeader, 
     blockDescription, paragraphTop1, paragraphTop2, paragraphTop3, 
     ContentCardWithOutImageData, buttontype, relatedPublicationHeading,
-    Emphasize, Hovercolors, logo, logowhite,  languageswitcherData,
+    Emphasize, Hovercolors, logo, logowhite,    languageswitcherData,
+    navigationData,
     rightNavigationData,
     leftNavigationData,
-    navigationData,
     locale,
+    getMegaMenuData,
+    locationData,
+    langSelect,
+    backcaption,
   }) => {
     useEffect(() => {
         viewport('.content-card-container');
@@ -31,12 +35,15 @@ export const PublicationPage = ({
     return (
     <>
     <GlobalHeader
+        backcaption={backcaption}
         locale={locale}
         leftNavigationData={leftNavigationData}
         navigationData={navigationData}
         rightNavigationData={rightNavigationData}
         languageswitcherData={languageswitcherData}
-      />
+        locationData={locationData}
+        langSelect={langSelect}
+      ></GlobalHeader>
         <div className="grid-container fluid publication-bottom">
             <div class="grid-x grid-margin-x">
                 <div class="cell small-12 medium-12 large-11 large-offset-1 medium-offset-0">
