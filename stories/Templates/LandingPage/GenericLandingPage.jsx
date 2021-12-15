@@ -4,8 +4,8 @@ import { PageHeroOption } from '../../Components/UIcomponents/Hero/Pagehero/Page
 import FilterAndSearchBar from '../../Patterns/FilterAndSearchBar/FilterAndSearchBar';
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Footer } from '../../Organism/Footer/Footer';
-import logo from '../../assets/images/logo.svg';
-import logowhite from '../../assets/images/logo-white.svg';
+import logo from '../../assets/images/undp-logo-blue.svg';
+import logowhite from '../../assets/images/undp-logo-white.svg';
 
 export const GenericLandingPage = ({
   data, active, herodata, title, imgsrc, videosrc, footerData, content, groupcontentdata, buttonname, activeFilterText, clearText,

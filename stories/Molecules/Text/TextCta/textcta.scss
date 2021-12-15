@@ -4,7 +4,6 @@
 
 .trusted-partnerships {
   &__container {
-    background: $color-gray-200;
     padding-bottom: $spacing-96;
     padding-top: $spacing-48;
   }
@@ -18,8 +17,12 @@
       }
     }
 
-    .button--primary {
+    .button-arrow {
       margin-top: $spacing-40;
+
+      @include devicebreak(small) {
+        display: inline-flex;
+      }
 
       @include devicebreak(medium) {
         margin-top: $spacing-64;

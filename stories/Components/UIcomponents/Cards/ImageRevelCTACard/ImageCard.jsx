@@ -5,25 +5,23 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
 export const ImageRevelCard = ({
-  data, contentname, image, size, link, button,
+  contentname, image, size, link, button,
 }) => (
   <div className="grid-x grid-margin-x">
-    {data.map((item, index) => (
-      <div key={index} className={['imagecard', 'cell', `${item.size}`].join(' ')}>
-        <a href={item.link} className={['imagecard', `imagecard__${item.size}`].join(' ')}>
-          <div className="imagecard__content">
-            {item.image && (
-              <div className={['imagecard__content--thumbnail-image', `${item.size}`].join(' ')}>
-                <img src={item.image} alt={item.imgalt} />
-              </div>
-            )}
-            <div className="imagecard__content--caption">
-              {item.contentname && <Heading type="5" label={item.contentname} />}
+    <div className={['image-card', 'cell', `${size}`].join(' ')}>
+      <a href={link} className={['image-card', `imagecard__${size}`].join(' ')}>
+        <div className="image-card__content">
+          {image && (
+            <div className={['image-card__content--thumbnail-image', `${size}`].join(' ')}>
+              <img src={image} alt={image} />
             </div>
+          )}
+          <div className="image-card__content--caption">
+            {contentname && <Heading type="5" label={contentname} />}
           </div>
-          <Ctalink label={item.btnlabel} variant="Arrow" />
-        </a>
-      </div>
-    ))}
+        </div>
+        <Ctalink label={button} variant="Arrow" />
+      </a>
+    </div>
   </div>
 );

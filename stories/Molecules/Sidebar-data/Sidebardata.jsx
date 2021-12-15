@@ -7,7 +7,7 @@ export const Sidebardata = ({ data, headerText }) => (
     <span className="accordion-navbar__item--chevron" />
     <ul className="accordion__panel">
       {data.map((item, index) => (
-        <li className="accordion__panel--description">
+        <li>
           <a href="#" key={index}>
             {item.descriptionText}
           </a>

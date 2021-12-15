@@ -14,14 +14,15 @@
   h6 {
     @extend %carousel_tag;
 
-    padding: $spacing-16 $spacing-24;
     margin-bottom: 0;
+    padding: $spacing-16 $spacing-24 1.625rem $spacing-24;
   }
 
   & .card-thumbnail__image {
     width: 100%;
 
     img {
+      display: block;
       width: 100%;
     }
   }
@@ -43,39 +44,25 @@
 
   &:hover {
     .card-thumbnail__image::before {
-      @include background-image(42deg, $color-yellow, transparent 80%);
-
       opacity: 0.75;
     }
+  }
 
-    &.red {
-      .card-thumbnail__image {
-        &::before {
-          @include background-image(42deg, $color-red, transparent 80%);
-
-          opacity: 0.75;
-        }
-      }
+  &.red {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-red, transparent 80%);
     }
+  }
 
-    &.green {
-      .card-thumbnail__image {
-        &::before {
-          @include background-image(42deg, $color-green, transparent 80%);
-
-          opacity: 0.75;
-        }
-      }
+  &.green {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-green, transparent 80%);
     }
+  }
 
-    &.blue {
-      .card-thumbnail__image {
-        &::before {
-          @include background-image(42deg, $color-azure, transparent 80%);
-
-          opacity: 0.75;
-        }
-      }
+  &.blue {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-azure, transparent 80%);
     }
   }
 
@@ -156,6 +143,10 @@
 
   &_cart {
     height: 100%;
+
+    h5 {
+      margin-bottom: $spacing-16;
+    }
   }
 }
 

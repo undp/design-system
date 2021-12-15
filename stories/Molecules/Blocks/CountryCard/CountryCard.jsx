@@ -11,7 +11,7 @@ export const CountryCard = ({ data }) => (
           {item.imageback && (
           <>
             <div className="country-card__overlay" />
-            <img src={item.imageback} alt={item.imageback} className="country-card__img" />
+            <img src={item.imageback} alt={item.imageback} />
           </>
           )}
           <div className="country-card__caption">

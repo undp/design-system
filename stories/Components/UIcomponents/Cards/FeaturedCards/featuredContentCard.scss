@@ -134,7 +134,7 @@
     height: 80%;
   }
 
-  .feature__card-tag {
+  h6 {
     font-size: $font-size-12;
     font-weight: 700;
     line-height: 1.17;
@@ -147,7 +147,17 @@
   }
 
   .feature__card-description {
-    margin-bottom: 90px;
+    margin-bottom: $spacing-48;
+    @include devicebreak(medium) {
+      margin-bottom: 5.625rem;
+    }
+  }
+
+  h4, h5 {
+    margin-bottom: $spacing-24;
+     @include devicebreak(medium) {
+      margin-bottom: $spacing-32;
+    }
   }
 
   p {

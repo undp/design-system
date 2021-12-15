@@ -12,7 +12,7 @@ export const Sidebar = ({ headerText, label, data }) => {
   return (
     <div className="grid-x grid-margin-x">
       <div className="cell medium-4 accordion-wrapper">
-        <span className="accordion-navbar__menu" id="sidebar-menu">{label}</span>
+        <span className="accordion-navbar__menu">{label}</span>
         <ul className="accordion-navbar" id="accordion-menu">
           <li className="accordion-navbar__item">
             <Sidebardata data={data} headerText={headerText} />

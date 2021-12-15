@@ -3,9 +3,10 @@
 
 /* image only carousel start */
 .image-only-carousel {
-  overflow:hidden;
+  overflow: hidden;
 
   &__image {
+    display: block;
     width: 100%;
   }
 
@@ -15,9 +16,9 @@
     }
 
     &__arrows {
-      bottom: 0;
-      position: absolute;
-      right: 5rem;
+      align-self: flex-end;
+      margin-left: auto;
+      margin-right: auto;
 
       @include devicebreak(large) {
         display: none;

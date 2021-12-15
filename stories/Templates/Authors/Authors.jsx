@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import logowhite from '../../assets/images/logo-white.svg';
-import logo from '../../assets/images/logo.svg';
+import logowhite from '../../assets/images/undp-logo-white.svg';
+import logo from '../../assets/images/undp-logo-blue.svg';
 import user from '../../assets/images/user.svg';
 import viewport from '../../assets/js/viewport';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
@@ -22,6 +22,7 @@ const Authors = ({
   undpheading, text, authorData, headingData, buttontype, buttonData,
 }) => {
   useEffect(() => {
+  console.log(text);
     viewport('.feature__card--headertext');
     init();
     $('.sort-btn').click(function sortclick() {
@@ -48,10 +49,10 @@ const Authors = ({
         </div>
         <div className="grid-x grid-margin-x mobile-author-filter">
           <div className="cell small-12 sort-btn">
-            <CtaButton label2={sortText} variant="Secondary" />
+            <CtaButton label2={sortText} variant="secondary" />
           </div>
           <div className="cell small-12 close-btn">
-            <CtaButton label2={closeText} variant="Secondary" />
+            <CtaButton label2={closeText} variant="secondary" />
           </div>
         </div>
         <div className="grid-x grid-margin-x author-filter">
@@ -63,15 +64,18 @@ const Authors = ({
           <div className="cell medium-3">
             <div className="select-box author-select" data-select="">
               <button type="button" aria-haspopup="listbox" aria-label="Select" id="exp_button" className="selected" data-select-open="">
-                {text}
+                {text.sort}
               </button>
               <ul tabIndex="-1" role="listbox" aria-labelledby="exp_button" className="options-container" data-select-options="">
-                <li id="default-language-select" className="option" role="option" data-value="default">
-                  <span>Most posts</span>
-                </li>
-                <li id="pasto-1" className="option" role="option" data-value="pasto">
-                  <span>Alphabetical</span>
-                </li>
+                {
+                text.options.map((option,index)=>(
+                 <li  className="option" role="option" data-value="default">
+                  <span>{option}</span>
+                 </li>
+                ))
+                }
+
+
               </ul>
             </div>
           </div>
@@ -89,7 +93,7 @@ const Authors = ({
               <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
               <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
               <div className="cell small-12 view-btn-cell">
-                <CtaButton label2={viewText} variant="Secondary" />
+                <CtaButton label2={viewText} variant="secondary" />
               </div>
             </div>
 

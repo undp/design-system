@@ -15,17 +15,15 @@ export const Footer = ({
     accordion('.footer__heading', '.footer__panel', 'active');
   }, []);
   return (
-    <footer className={['footer', `${args.color}`].join(' ')}>
+    <footer className={['footer', `${args.color==='blue'?args.color:''}`].join(' ')}>
       <div className="grid-x">
         <div className="cell medium-10 footer__wrapper">
           <div className="grid-x footer-head">
-            <div className="cell medium-5">
               {args.color === 'default' ? (
-                <FooterLogo src={src} headerText={headerText} headerText2={headerText2} alt={alt} style={args.color} />
+                <FooterLogo src={src} headerText={headerText} alt={alt} style={''} />
               ) : (
-                <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} style={args.color} />
+                <FooterLogo src={srctwo} headerText={headerText} alt={alt} style={args.color} />
               )}
-            </div>
             <div className="cell medium-4 footer__newsletter">
               <SignUp
                 element={element}
@@ -41,13 +39,13 @@ export const Footer = ({
             </div>
           </div>
           <div className=" grid-x grid-margin-x footer-bottom">
-            <FooterLists data={data} headerText={menutitle} variant={args.color} />
-            <FooterLists data={data} headerText={menutitle} variant={args.color} />
-            <FooterLists data={data} headerText={menutitle} variant={args.color} />
-            <FooterLists data={data} headerText={menutitle} variant={args.color} />
+            <FooterLists data={data} headerText={menutitle} variant={args.color==='blue'?args.color:''} />
+            <FooterLists data={data} headerText={menutitle} variant={args.color==='blue'?args.color:''} />
+            <FooterLists data={data} headerText={menutitle} variant={args.color==='blue'?args.color:''} />
+            <FooterLists data={data} headerText={menutitle} variant={args.color==='blue'?args.color:''} />
             <div className="cell medium-4">
-              <FooterConditions footerdata={menudata} variant={args.color} />
-              <FooterIcons variant={args.color} />
+              <FooterConditions footerdata={menudata} variant={args.color==='blue'?args.color:''} />
+              <FooterIcons variant={args.color==='blue'?args.color:''} />
             </div>
           </div>
           <div className="footer__foot">

@@ -15,7 +15,7 @@ export const getCaptionForLocale = (locale) => {
 <Meta title="Components/Forms/Input fields"  />
 
 <style>{`
-  #story--atoms-input-group--text-default, #story--atoms-input-group--text-focus, #story--atoms-input-group--text-error, #story--atoms-input-group--text-disabled, #story--atoms-input-group--search-default, #story--atoms-input-group--search-focus, #story--atoms-input-group--search-error, #story--atoms-input-group--search-disabled, #story--atoms-input-group--number-default, #story--atoms-input-group--number-error, #story--atoms-input-group--number-focus, #story--atoms-input-group--number-error, #story--atoms-input-group--number-disabled, #story--atoms-input-group--password-default, #story--atoms-input-group--password-focus, #story--atoms-input-group--password-error, #story--atoms-input-group--password-disabled, #story--atoms-input-group--telephone-default, #story--atoms-input-group--telephone-focus, #story--atoms-input-group--telephone-error, #story--atoms-input-group--telephone-disabled, #story--atoms-input-group--date-default, #story--atoms-input-group--date-focus, #story--atoms-input-group--date-error, #story--atoms-input-group--date-disabled, #story--atoms-input-group--textarea-default, #story--atoms-input-group--textarea-focus, #story--atoms-input-group--textarea-error, #story--atoms-input-group--textarea-disabled, #story--atoms-input-group--label, #story--atoms-input-group--help-message, #story--atoms-input-group--error-message {
+  #story--atoms-input-group--text-default, #story--atoms-input-group--text-focus, #story--atoms-input-group--text-error, #story--atoms-input-group--text-disabled,#story--atoms-input-group--number-default, #story--atoms-input-group--number-error, #story--atoms-input-group--number-focus, #story--atoms-input-group--number-error, #story--atoms-input-group--number-disabled, #story--atoms-input-group--password-default, #story--atoms-input-group--password-focus, #story--atoms-input-group--password-error, #story--atoms-input-group--password-disabled, #story--atoms-input-group--telephone-default, #story--atoms-input-group--telephone-focus, #story--atoms-input-group--telephone-error, #story--atoms-input-group--telephone-disabled, #story--atoms-input-group--date-default, #story--atoms-input-group--date-focus, #story--atoms-input-group--date-error,#story--atoms-input-group--help-message, #story--atoms-input-group--error-message {
     display: none;
   }
   .sbdocs.sbdocs-div.input_group_wrapper.css-14m39zm {
@@ -55,10 +55,8 @@ export const getCaptionForLocale = (locale) => {
 # Input group Component
 The <code>input</code> HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <code>input</code> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
 
-<div className="subheading"> Text </div>
-<ul>
-  <li>input elements of type <code>text</code> create basic single-line text fields.</li>
-</ul>
+### Text
+- input elements of type <code>text</code> create basic single-line text fields.
 
 <div className="input_group_wrapper">
 
@@ -84,38 +82,8 @@ The <code>input</code> HTML element is used to create interactive controls for w
   </div>
 </div>
 
-<div className="subheading"> Search </div>
-<ul>
-  <li>input elements of type <code>search</code> are text fields designed for the user to enter search queries into.</li>
-</ul>
-
-<div className="input_group_wrapper">
-  <div className= "input_item">
-    <div className="input__box input-search-default"></div>
-    <div className="input__label"> Input search-Default </div>
-    <div className="input__code"> <Inputcomponent element='input' labelText='Search'  type='search' id= 'search' mode='default-state' required='required' placeholder= 'Placeholder'></Inputcomponent></div>
-  </div>
-  <div className="input_item">
-    <div className="input__box input-search-focus"></div>
-    <div className="input__label"> Input search-Focus </div>
-    <div className="input__code"> <Inputcomponent element='input' labelText='Search'  type='search' id= 'search' mode='focus-state' required='required' placeholder= 'Placeholder'></Inputcomponent></div>
-  </div>
-  <div className="input_item">
-    <div className="input__box input-search-error"></div>
-    <div className="input__label"> Input search-Error </div>
-    <div className="input__code"> <Inputcomponent element='input' labelText='Search' errorText='*Error: this field is required' type='search' id= 'search' mode='error-state' required='required' placeholder= 'Placeholder'></Inputcomponent></div>
-  </div>
-  <div className="input_item">
-    <div className="input__box input-search-disabled"></div>
-    <div className="input__label"> Input search-Disabled </div>
-    <div className="input__code"> <Inputcomponent element='input' labelText='Search'  type='search' id= 'search' mode='disabled-state' placeholder= 'Placeholder' disabled= 'disabled'></Inputcomponent></div>
-  </div>
-</div>
-
-<div className="subheading"> Number </div>
-<ul>
-  <li>input elements of type <code>number</code> are used to let the user enter a number. They include built-in validation to reject non-numerical entries.</li>
-</ul>
+### Number
+- input elements of type <code>number</code> are used to let the user enter a number. They include built-in validation to reject non-numerical entries
 
 <div className="input_group_wrapper">
   <div className= "input_item">
@@ -140,10 +108,8 @@ The <code>input</code> HTML element is used to create interactive controls for w
   </div>
 </div>
 
-<div className="subheading"> Date </div>
-<ul>
-  <li>input elements of type <code>date</code> create input fields that let the user enter a date, either with a textbox that validates the input or a special date picker interface.</li>
-</ul>
+### Date
+- input elements of type <code>date</code> create input fields that let the user enter a date, either with a textbox that validates the input or a special date picker interface.
 
 <div className="input_group_wrapper">
   <div className= "input_item">
@@ -168,10 +134,8 @@ The <code>input</code> HTML element is used to create interactive controls for w
   </div>
 </div>
 
-<div className="subheading"> Phone </div>
-<ul>
-  <li>input elements of type <code>tel</code> are used to let the user enter and edit a telephone number.</li>
-</ul>
+### Phone
+- input elements of type <code>tel</code> are used to let the user enter and edit a telephone number.
 
 <div className="input_group_wrapper">
   <div className= "input_item">
@@ -196,10 +160,8 @@ The <code>input</code> HTML element is used to create interactive controls for w
   </div>
 </div>
 
-<div className="subheading"> Password </div>
-<ul>
-  <li>input elements of type <code>password</code> provide a way for the user to securely enter a password.</li>
-</ul>
+### Password
+- input elements of type <code>password</code> provide a way for the user to securely enter a password.
 
 <div className="input_group_wrapper">
   <div className= "input_item">
@@ -224,35 +186,7 @@ The <code>input</code> HTML element is used to create interactive controls for w
   </div>
 </div>
 
-<div className="subheading"> Textarea </div>
-<ul>
-  <li>The <code>textarea</code> HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.</li>
-</ul>
-
-<div className="input_group_wrapper">
-  <div className= "input_item">
-    <div className="input__box input-textarea-default"></div>
-    <div className="input__label"> Input textarea-Default </div>
-    <div className="input__code"> <Inputcomponent element='textarea' type='textarea' labelText='Brief description' id= 'textarea' mode='default-state' required='required' placeholder= 'Enter text'></Inputcomponent></div>
-  </div>
-  <div className="input_item">
-    <div className="input__box input-textarea-focus"></div>
-    <div className="input__label"> Input textarea-Focus </div>
-    <div className="input__code"> <Inputcomponent  element='textarea' type='textarea'labelText='Brief description' id= 'textarea' mode='focus-state' required='required' placeholder= 'Enter text'></Inputcomponent></div>
-  </div>
-  <div className="input_item">
-    <div className="input__box input-textarea-error"></div>
-    <div className="input__label"> Input textarea-Error </div>
-    <div className="input__code"> <Inputcomponent element='textarea' type='textarea' labelText='Brief description' errorText='*Error: this field is required' id= 'textarea' mode='error-state' required='required' placeholder= 'Enter text'></Inputcomponent></div>
-  </div>
-  <div className="input_item">
-    <div className="input__box input-textarea-disabled"></div>
-    <div className="input__label"> Input textarea-Disabled </div>
-    <div className="input__code"> <Inputcomponent element='textarea' type='textarea' labelText='Brief description' id= 'textarea' inputfor='textarea' mode='disabled-state' disabled= 'disabled' placeholder= 'Enter text'></Inputcomponent></div>
-  </div>
-</div>
-
-<div className="subheading"> Base Input </div>
+### Base Input
 
 <Story name="Labeltext">
   {(args, { globals: { locale } }) => {
@@ -260,7 +194,6 @@ The <code>input</code> HTML element is used to create interactive controls for w
     return <Inputcomponent labelText={caption.detail1} mode='default' ></Inputcomponent>;
   }}
 </Story>
-
 
 <Story name="Label-Help">
   {(args, { globals: { locale } }) => {
@@ -301,34 +234,6 @@ The <code>input</code> HTML element is used to create interactive controls for w
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <Inputcomponent labelText={caption.detail1} element='input' type='text' id= 'name' mode='disabled' placeholder= {caption.detail1} disabled= 'disabled'></Inputcomponent>;
-  }}
-</Story>
-
-<Story name="Search-default">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail3} element='input' type='search' id= 'search' mode='default' required='required' placeholder= {caption.detail4}></Inputcomponent>;
-  }}
-</Story>
-
-<Story name="Search-focus">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail3} element='input' type='search' id= 'search' mode='focus' required='required' placeholder= {caption.detail4}></Inputcomponent>;
-  }}
-</Story>
-
-<Story name="Search-error">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail3} element='input' errorText={caption.detail2}  type='search' id= 'search' mode='error' required='required' placeholder= {caption.detail4}></Inputcomponent>;
-  }}
-</Story>
-
-<Story name="Search-disabled">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail3} element='input' type='search' id= 'search' mode='disabled' placeholder= {caption.detail4} disabled= 'disabled'> </Inputcomponent>;
   }}
 </Story>
 
@@ -444,40 +349,11 @@ The <code>input</code> HTML element is used to create interactive controls for w
   }}
 </Story>
 
-<Story name="Textarea-default">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail10} element='textarea' id= 'textarea' type='textarea' cols='40' rows='10' mode='default' required='required' placeholder= {caption.text2}></Inputcomponent>;
-  }}
-</Story>
+### Usage
 
-<Story name="Textarea-focus">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail10} element='textarea' id= 'textarea' type='textarea' cols='40' rows='10' mode='focus' required='required' placeholder= {caption.text2}></Inputcomponent>;
-  }}
-</Story>
-
-<Story name="Textarea-error">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail10} element='textarea' errorText={caption.detail2} id= 'textarea' type='textarea' cols='40' rows='10' mode='error' required='required' placeholder= {caption.text2}></Inputcomponent>;
-  }}
-</Story>
-
-<Story name="Textarea-disabled">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail10} element='textarea' id= 'textarea' type='textarea' cols='40' rows='10' mode='disabled' disabled= 'disabled' placeholder= {caption.text2}></Inputcomponent>;
-  }}
-</Story>
-
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like mixin <code>assets/scss</code></li>
-  <li>Component SCSS file <code>input_group.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+- Take HTML from the HTML tab in the canvas
+- <u>To use SCSS include the following files in your implementation</u>
+- Include the common SCSS files like mixin <code>assets/scss</code>
+- Component SCSS file <code>input_group.scss</code>
+- <u>To use CSS include the following files in your implementation</u>
+- The compiled CSS file from <code>assets/css/style.css</code>

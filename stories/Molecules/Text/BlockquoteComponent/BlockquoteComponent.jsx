@@ -1,17 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Blockquote } from '../../../Atom/Base-typography/Blockquote/blockquote';
 import './blockquotecomp.scss';
 
+export const color_options = {
+  yellow: 'yellow',
+  red: 'red',
+  green: 'green',
+  blue: 'blue',
+  gray: 'gray',
+  default: '',
+};
+
 export const BlockquoteComponent = ({
-  blockquoteText, citeText, style, props,
+  blockquoteText, citeText, ...args
 }) => (
-  <div className={['blockquote-wrapper', `${style}`].join(' ')} {...props}>
+  <div className={['blockquote-wrapper',`${color_options[`${args.color}`]}`].join(' ')}>
     <Blockquote text={blockquoteText} citeText={citeText}> </Blockquote>
   </div>
 );
-
-BlockquoteComponent.propTypes = {
-  blockquoteText: PropTypes.string.isRequired,
-  citeText: PropTypes.string.isRequired,
-};
