@@ -4,11 +4,41 @@
 
 .glabal-page {
   .featured-card-container {
-    margin-top: $spacing-24;
+    margin-top: 7rem;
+
+    @include devicebreak(medium) {
+      margin-top: $spacing-24;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
+    }
   }
 
-  .ourexpertise {
+  .heading-big {
+    padding-bottom: 9rem;
+    padding-top: 9rem;
+  }
+
+  .parallax {
+    margin-top: -$spacing-80;
+    overflow: hidden;
     padding-bottom: $spacing-80;
+    position: relative;
+
+    @include devicebreak(medium) {
+      background-image: none;
+      border-right: none;
+      transition: none;
+    }
+
+    @include devicebreak(medium) {
+      &.lines-background {
+        background-image: linear-gradient(90deg, $color-gray-400 1px, rgba(212, 214, 216, 0) 0);
+        border-right: 1px solid $color-gray-400;
+        transition: opacity 0.1s ease-out;
+      }
+    }
   }
 
   .stats-grid {
@@ -32,7 +62,14 @@
       }
     }
   }
+
   .twitter-panel {
     margin: 0;
+  }
+
+  .hero-split {
+    @include devicebreak(small) {
+      margin-top: 7rem;
+    }
   }
 }
