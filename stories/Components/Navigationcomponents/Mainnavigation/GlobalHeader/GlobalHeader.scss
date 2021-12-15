@@ -79,9 +79,12 @@
 
     .middle-logo {
       @extend %img_none;
-      position: fixed;
-      left: 50%;
-      @include transform(translateX(-50%));
+
+      @include devicebreak(xlarge) {
+        position: fixed;
+        left: 50%;
+        @include transform(translateX(-50%));
+      }
 
       @include devicebreak(mediumonlytab) {
         height: 4.6875rem;
