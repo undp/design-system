@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { init } from '../../../../assets/js/navigation';
+import { desktopView } from '../../../../assets/js/UNDP';
 import { IconsGlobe } from '../../../../Atom/Icons/globe';
 import { IconsBar } from '../../../../Atom/Icons/icon_bar';
 import { IconsTimesBlue } from '../../../../Atom/Icons/icon_Times_Blue';
@@ -9,9 +10,12 @@ import { Logo } from '../../../../Atom/Logo/logo';
 import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
 import { Menu } from '../../Menu/Menu';
 import './GlobalHeader.scss';
+import MegaMenu from '../MegaMenu/MegaMenu';
+import MobileNav from '../MobileNav/MobileNav';
 
 const GlobalHeader = ({
   text, languageswitcherData, navigationData, rightNavigationData, leftNavigationData, locale,
+  getMegaMenuData, locationData, langSelect, backcaption,
 }) => {
   useEffect(() => {
     init(locale);
@@ -30,14 +34,29 @@ const GlobalHeader = ({
             <IconsTimesBlue />
           </div>
           <div className="cell large-8 small-8 mid-nav">
-            <Menu data={leftNavigationData} />
+            {desktopView && <Menu data={leftNavigationData} />}
             <a href="#" className="middle-logo"><Logo src={pnud} alt="UNDP Logo" /></a>
-            <Menu data={rightNavigationData} />
+            {desktopView && <Menu data={rightNavigationData} />}
           </div>
           <div className="cell large-2 small-2 top-right">
             <IconsGlobe />
             <IconsSearch />
           </div>
+          <div className="mega-wrapper cell large-12">
+            <MegaMenu />
+          </div>
+          {
+                !desktopView
+                && (
+                <MobileNav navigationData={navigationData}
+                  languageswitcherData={languageswitcherData}
+                  locationData={locationData}
+                  backcaption={backcaption}
+                  langSelect={langSelect}
+                  text="Mobile Nav"
+                />
+                )
+              }
         </div>
       </div>
     </header>
