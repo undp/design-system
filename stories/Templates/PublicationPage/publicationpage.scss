@@ -3,7 +3,7 @@
 @import '../../assets/scss/variables';
 
 .border-top-2 {
-  border-top: 2px solid #000;
+  border-top: 2px solid $color-black
 }
 
 .related-publication {
@@ -18,21 +18,35 @@
 
   .content-card {
     border: none;
+    margin-top: $spacing-12;
+
+    @include devicebreak(medium) {
+      margin-top: 1.25rem;
+    }
   }
 
-  h2{
+  h2 {
     margin-top: $spacing-48;
 
     @include devicebreak(medium) {
       margin-top: $spacing-80;
     }
   }
+
+  .grid-x.grid-margin-x {
+    @include devicebreak(small) {
+      padding: 0 $spacing-12 $spacing-12 0;
+    }
+  }
 }
 
-// margin styles
 .margin-top {
   &-24 {
     margin-top: $spacing-24;
+  }
+
+  &-36 {
+    margin-top: 2.25rem;
   }
 
   &-40 {
@@ -64,6 +78,10 @@
     margin-bottom: $spacing-24;
   }
 
+  &-36 {
+    margin-bottom: 2.25rem;
+  }
+
   &-40 {
     margin-bottom: $spacing-40;
   }
@@ -83,6 +101,7 @@
   &-80 {
     margin-bottom: $spacing-80;
   }
+
   &-136 {
     margin-bottom: $spacing-136;
   }
@@ -96,7 +115,7 @@
   }
 }
 
-.description-text{
+.description-text {
   margin-top: $spacing-40;
 
   @include devicebreak(medium) {
@@ -104,56 +123,65 @@
   }
 }
 
-.publication{
-  &-bottom{
+.publication {
+  &-bottom {
     margin-bottom: 3.313rem;
 
-    @include devicebreak(medium) {
-      margin-bottom: 4.688rem;
+    .breadcrumb__wrapper {
+      margin-top: 4.562rem;
     }
   }
   
-  &-block{      
-      margin-top: 3.313rem;
+  &-block {      
+      margin-top: 2.563rem;
       scroll-behavior: auto;
 
     @include devicebreak(medium) {
-      margin-top: 4.375rem;
+      margin-top: 4.25rem;
+    }
+  }
+
+  .download-card {
+    margin-bottom: $spacing-40;
+  }
+}
+
+.sticky {
+  position: relative;
+
+  &.stick {
+    position: relative;
+    top: 0;
+    z-index: -1;      
+  
+    @include devicebreak(medium) {
+      position: sticky;
     }
   }
 }
-// margin styles end here
 
-//Sticky publication card
-.sticky.stick {
-  position: static;
-  top: 0;
-  z-index: -1;
-  transition: all 0.5s ease;  
-
-  @include devicebreak(medium) {
-    position: fixed;
-  }
-}
-
-.title{
-  &-desktop{
+.title {
+  &-desktop {
     display: none;
 
     @include devicebreak(medium) {
       display: block;
       margin-bottom: $spacing-24;
     }
+
+    @include devicebreak(medium) {
+      display: block;
+    }
   }
 
-  &-mobile{
+  &-mobile {
     display: block;
 
     @include devicebreak(medium) {
       display: none;
     }
 
-    h2{
+    h2 {
       margin-bottom: $spacing-24;
     }
   }
@@ -161,16 +189,16 @@
 
 
 [dir="rtl"] {
-  .related-publication{
+  .related-publication {
     .large-offset-6 {
       @include devicebreak(medium) {
         margin-left: 0;
-      margin-right: calc(50% + 1rem / 2);
+        margin-right: calc(50% + 1rem / 2);
       }      
     }
   }
 
-  .publication-bottom{
+  .publication-bottom {
     .large-offset-1 {      
       @include devicebreak(medium) {
         margin-left: 0;
@@ -179,26 +207,22 @@
     }
   }
 }
-//Sticky publication card end
 
-//align text
-.text-left{
+.text-left {
   text-align: left;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
-.text-right{
+.text-right {
   text-align: right;
 }
-//align text end 
 
-.publication-post-header{
+.publication-post-header {
   margin-top: 1.813rem;
   @include devicebreak(medium) {
     margin-top: $spacing-80;
   }
 }
-//Style end here
