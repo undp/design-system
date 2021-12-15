@@ -2,7 +2,7 @@ import React from 'react';
 import './imagecredit.scss';
 
 export const Imagecredit = ({ label }) => (
-  <div className="image_credits">
+  <div className="credits">
     {label}
   </div>
 );

@@ -26,15 +26,24 @@
       }
     }
   }
+  .feature__card-slide {
+    display: none;
+    @include devicebreak(large) {
+      display: block;
+    }
+  }
 }
 
 [dir='rtl'] {
   .featured-card-container {
     .feature__card {
       &-title {
+        margin-right: calc(8.33333% + 0.75rem / 2);
+        margin-left: 0.375rem;
+
         @include devicebreak(medium) {
-          margin-left: unset;
-          margin-right: 5.25rem;
+          margin-left: 0.75rem;
+          margin-right: calc(8.33333% + 1.5rem / 2);
         }
       }
     }

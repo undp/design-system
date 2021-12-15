@@ -14,7 +14,7 @@ export const TextCta = ({ headerText, descriptionText, label }) => {
       <div className="cell medium-7 small-10 medium-offset-1 small-offset-1 trusted-partnerships--header">
         <Heading type="2" label={headerText} />
         <P label={descriptionText} />
-        <CtaButton label1={label} variant="primary" for_primary="arrow" />
+        <CtaButton label={label} />
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ const FilterAndSearchBar = ({ data, clearText, activeFilterText }) => {
 
         <div className="active-filter"><span>{activeFilterText}</span></div>
         <div className="selected-chips">
-          <Chips label="demo" variant="Cross" />
+          <Chips label="demo" Type='With_X' />
         </div>
         <div className="clear_section"><span className="clear_chips">{clearText}</span></div>
       </div>

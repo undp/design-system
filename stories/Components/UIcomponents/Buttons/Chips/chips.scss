@@ -24,10 +24,6 @@
       position: relative;
       top: 5px;
       width: 13px;
-
-      @include devicebreak(medium) {
-        top: 3px;
-      }
     }
   }
 }

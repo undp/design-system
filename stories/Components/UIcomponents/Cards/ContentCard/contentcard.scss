@@ -9,7 +9,11 @@
   border: 0;
   border-top: 2px solid $color-black;
   display: block;
-  margin-bottom: $spacing-24;
+  margin-bottom: 3.438rem;
+
+  @include devicebreak(medium){
+    margin-bottom: 3.875rem;
+  }
 
   h6 {
     @extend %carousel_tag;
@@ -131,7 +135,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: $spacing-16 $spacing-24 $spacing-24;
+  padding: $spacing-16 $spacing-24 0;
 
   h5 {
     margin-bottom: $spacing-24;

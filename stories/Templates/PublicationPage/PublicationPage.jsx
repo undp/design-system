@@ -98,7 +98,7 @@ export const PublicationPage = ({
                 </div>
                 <div class="cell small-12 large-6 large-offset-6">
                     <div class="column margin-top-48">
-                        <CtaButton label2={buttontype} variant="secondary" />   
+                        <CtaButton label={buttontype} Type="Secondary" />   
                     </div>
                 </div>
             </div>

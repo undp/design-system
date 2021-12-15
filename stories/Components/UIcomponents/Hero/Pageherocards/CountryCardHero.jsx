@@ -9,8 +9,8 @@ import { CountryCard } from '../../../../Molecules/Blocks/CountryCard/CountryCar
 export const CountryCardHero = ({ data, title, subtitle }) => {
   useEffect(() => {
     GlideSlider('.countrycard__items', '24');
-    viewport('.countrycard__header h1');
-    viewport('.countrycard__header h6');
+    viewport('.countrycard__header h2');
+    viewport('.countrycard__header h5');
   }, []);
   return (
     <div className="country-card__wrapper">

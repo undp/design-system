@@ -194,3 +194,11 @@
   text-align: right;
 }
 //align text end 
+
+.publication-post-header{
+  margin-top: 1.813rem;
+  @include devicebreak(medium) {
+    margin-top: $spacing-80;
+  }
+}
+//Style end here

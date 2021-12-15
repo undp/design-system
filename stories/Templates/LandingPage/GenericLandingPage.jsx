@@ -4,8 +4,6 @@ import { PageHeroOption } from '../../Components/UIcomponents/Hero/Pagehero/Page
 import FilterAndSearchBar from '../../Patterns/FilterAndSearchBar/FilterAndSearchBar';
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Footer } from '../../Organism/Footer/Footer';
-import logo from '../../assets/images/undp-logo-blue.svg';
-import logowhite from '../../assets/images/undp-logo-white.svg';
 import GlobalHeader from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader";
 
 export const GenericLandingPage = ({
@@ -16,6 +14,8 @@ export const GenericLandingPage = ({
   leftNavigationData,
   navigationData,
   locale,
+  logo,
+  logowhite
 }) => (
   <>
   <GlobalHeader
