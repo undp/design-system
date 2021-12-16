@@ -8,6 +8,6 @@ export const BlockCTA = ({ headerText, descriptionText, ctaText }) => (
   <div className="block-cta">
     <Heading type="4" label={headerText} />
     <P label={descriptionText} />
-    <Ctalink label={ctaText} variant="Arrow" />
+    <Ctalink label={ctaText} />
   </div>
 );

@@ -1,7 +1,7 @@
 @import '../../../assets/scss/breakpoints';
 @import '../../../assets/scss/variables';
 
-.menu__wrapper {
+.menu {
   padding: 0;
 
   li {
@@ -19,7 +19,7 @@
 }
 
 [dir='rtl'] {
-  .menu__wrapper {
+  .menu{
     li {
       a {
         margin: 0;

@@ -1,32 +1,35 @@
 import React, { useEffect } from 'react';
 import './breadcrumbs.scss';
 import viewport from '../../../assets/js/viewport';
-import { Breadcrumb } from '../../../Atom/Navigation/Breadcrumb/Breadcrumb';
 
-export const Breadcrumbcomponent = ({ data, active, ...args }) => {
+export const Breadcrumbcomponent = ({ data, Color, ...args}) => {
   useEffect(() => {
-    viewport('.breadcrumb__wrapper');
+    viewport('.breadcrumb');
   }, []);
   const lastIndex = data.length - 1;
+  
+  let color = '';
+  if(Color == 'White'){
+    color = 'white';
+  }
+  
   return (
-    <ul className={['breadcrumb__wrapper left-right', `${active==='white'?active:''}`].join(' ')}>
-      {data.map((item, i) => {
-        if (i === lastIndex) {
+    <nav aria-label='breadcrumbs'>
+      <ul className={['breadcrumb left-right', `${color}`].join(' ')}>
+        {data.map((item, i) => {
+          if (i === lastIndex) {
+            return (
+              <li key={i} aria-current='page'>{item.text}</li>
+            );
+          }
+
           return (
-            <li key={i}>{item.text}</li>
+            <li key={i}>
+              <a href='#'>{item.text}</a>
+            </li>
           );
-        }
-
-        return (
-          <li key={i}>
-            <Breadcrumb text={item.text} />
-          </li>
-        );
-      })}
-    </ul>
+        })}
+      </ul>
+    </nav>
   );
-};
-
-Breadcrumbcomponent.defaultProps = {
-  active: 'black',
 };

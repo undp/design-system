@@ -5,8 +5,15 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
 export const ImageRevelCard = ({
-  contentname, image, size, link, button,
-}) => (
+  contentname, image, Size, link, button,
+}) =>{
+
+  let size = 'medium-4';
+  if(Size == 'Small'){
+    size = 'small'
+  }
+  
+  return (
   <div className="grid-x grid-margin-x">
     <div className={['image-card', 'cell', `${size}`].join(' ')}>
       <a href={link} className={['image-card', `imagecard__${size}`].join(' ')}>
@@ -20,8 +27,8 @@ export const ImageRevelCard = ({
             {contentname && <Heading type="5" label={contentname} />}
           </div>
         </div>
-        <Ctalink label={button} variant="Arrow" />
+        <span className='cta__link cta--arrow'>{button}</span>
       </a>
     </div>
   </div>
-);
+)};

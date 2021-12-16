@@ -8,6 +8,11 @@
     align-items: flex-end;
     .exoandablesearch {
       width: 100%;
+
+      @include devicebreak(large) {
+        margin-left: -0.3125rem;
+        margin-right: -0.3125rem;
+      }
     }
   }
   .mobile-author-filter {
@@ -46,7 +51,7 @@
   .authors-heading {
     margin: 6.125rem 0 4.1875rem;
     @include devicebreak(small) {
-      margin: $spacing-40 0 $spacing-64;
+      margin: 3.3125rem 0 $spacing-64;
     }
   }
 
@@ -96,7 +101,8 @@
     max-width: 100%;
     &.author-select {
       .selected {
-        min-width: calc(100% - 4px);
+        min-width: 100%;
+        width: 100%;
       }
     }
   }
@@ -112,11 +118,11 @@
     @media print, screen and (min-width: 48em) {
       .grid-margin-x > .medium-offset-3 {
         margin-right: calc(25% + 1.5rem / 2);
-        margin-left: 0;
+        margin-left: 0.625rem;
       }
       .medium-offset-3 {
         margin-right: 25%;
-        margin-left: 0;
+        margin-left: 0.625rem;
       }
     }
   }
