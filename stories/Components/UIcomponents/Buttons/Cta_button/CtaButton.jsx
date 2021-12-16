@@ -7,7 +7,8 @@ export const CtaButton = ({
   
   let type = 'primary';
   if(Type == 'Secondary'){
-    type = 'secondary'
+    type = 'secondary',
+    label = 'VIEW MORE'
   }
   let state = 'active';
   if(State == 'Disabled'){
@@ -33,9 +34,3 @@ export const CtaButton = ({
       )}
   </>
 )};
-
-CtaButton.defaultProps = {
-  variant: 'primary',
-  state: 'default',
-  for_primary: 'Arrow',
-};
