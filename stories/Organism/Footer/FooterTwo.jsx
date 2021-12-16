@@ -18,7 +18,7 @@ export const Footertwo = ({
               <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} style={args.color} />
             )}
           <div className="cell medium-5 show-large">
-            <FooterIcons variant={args.color} />
+            <FooterIcons  variant={args.color==='blue'?args.color:''} />
           </div>
         </div>
         <div className="footer-bottom two">
@@ -26,9 +26,9 @@ export const Footertwo = ({
             <P label={copyright} />
           </div>
           <div className="menus">
-            <FooterConditions2 footerdata2={menudata} variant={args.color} />
+            <FooterConditions2 footerdata2={menudata}  variant={args.color==='blue'?args.color:''} />
             <div className="show-small">
-              <FooterIcons variant={args.color} />
+              <FooterIcons  variant={args.color==='blue'?args.color:''} />
             </div>
           </div>
         </div>

@@ -114,6 +114,14 @@ ol {
   }
 }
 
+ul li {
+  margin-bottom: $spacing-24;
+}
+
+ol li {
+  margin-bottom: 1.063rem;
+}
+
 dl {
   font-size: 0.875rem;
   line-height: 1.37;
@@ -121,6 +129,18 @@ dl {
 
   @include devicebreak(medium) {
     font-size: 1.25rem;
+  }
+}
+
+dt {
+  margin-bottom: $spacing-08;
+}
+
+dd {
+  margin-inline-start: $spacing-40;
+
+  @include devicebreak(medium) {
+    margin-inline-start: $spacing-48;
   }
 }
 

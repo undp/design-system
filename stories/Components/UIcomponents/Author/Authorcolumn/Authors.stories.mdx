@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { Author } from './Authors';
-import user from '../../../../assets/images/user.svg';
+import user from '../../../../assets/images/author.png';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -112,14 +112,14 @@ export const getCaptionForLocale = (locale) => {
 <Meta 
   title="Components/UI components/Authors/Author" argTypes={{
   Image: {
-    options: ['true', 'false'],
+    options: ['True', 'False'],
     control: { type: 'inline-radio' },
-    defaultValue: 'true'
+    defaultValue: 'True'
   },
   Number: {
-    options: ['one', 'two', 'three', 'four', 'five'],
+    options: ['One', 'Two', 'Three', 'Four', 'Five'],
     control: { type: 'inline-radio' },
-    defaultValue: 'one'
+    defaultValue: 'One'
   }
   }}/>
 
@@ -161,7 +161,7 @@ The Authors Component is created for showing the authors name, designation, and 
 <Story name="Author">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Author image={user} data={caption} {...args}></Author>;
+    return <Author image={user} alt= 'Headshot of XYZ' data={caption} {...args}></Author>;
   }}
 </Story>
 

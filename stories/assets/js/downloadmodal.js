@@ -15,13 +15,13 @@ export function checkbox(ele, submitbtn) {
 export function selectfilter() {
   $('.select-box .option span').on('click', function () {
     const datavalue = $(this).parent().attr('data-value');
-    $(this).parents('.download-content').find('.custom-control-input').prop('checked', false);
+    $(this).closest('.download-content').find('.checkbox-wrapper input').prop('checked', false);
     $('.download-footer .button').addClass('disabled');
     if (datavalue != 'default') {
-      $(this).parents('.download-content').find('.selectbox-container').addClass('hide');
-      $(this).parents('.download-content').find(`[data-lang=${datavalue}]`).removeClass('hide');
+      $(this).closest('.download-content').find('.selectbox-container').addClass('hide');
+      $(this).closest('.download-content').find(`[data-lang=${datavalue}]`).removeClass('hide');
     } else {
-      $(this).parents('.download-content').find('.selectbox-container').removeClass('hide');
+      $(this).closest('.download-content').find('.selectbox-container').removeClass('hide');
     }
   });
 }

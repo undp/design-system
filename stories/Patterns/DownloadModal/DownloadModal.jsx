@@ -20,11 +20,11 @@ export const DownloadModal = ({
   data, button, select, ...args
 }) => {
   useEffect(() => {
-    checkbox('.custom-control-input', '.button--primary');
+    checkbox('.checkbox-wrapper input', '.button-primary');
     selectfilter();
   }, []);
   return (
-    <div id="myDownload" className={['modal', `${Image_options[`${args.Image}`]}`].join(' ')}>
+    <div className={['modal', `${Image_options[`${args.Image}`]}`].join(' ')}>
       <div className="modal-content">
         <div className="modal-close-button" />
         <div className="download-body">
@@ -43,7 +43,7 @@ export const DownloadModal = ({
           </div>
         </div>
         <div className="download-footer">
-          <CtaButton label1={button} For_Primary="No_arrow" state="Disabled" />
+          <CtaButton label={button} For_Primary="No_Arrow"/>
         </div>
       </div>
     </div>

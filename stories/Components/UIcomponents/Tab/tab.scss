@@ -21,6 +21,13 @@
     &.active {
       border-bottom: 2px solid $color-dark-red;
     }
+
+    &:hover {
+      @include devicebreak(large) {
+        border-bottom: 2px solid $color-gray-500;
+      }
+    }
+
     a {
       @extend %img_none;
       

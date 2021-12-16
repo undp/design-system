@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import logowhite from '../../assets/images/logo-white.svg';
-import logo from '../../assets/images/logo.svg';
+import logowhite from '../../assets/images/undp-logo-white.svg';
+import logo from '../../assets/images/undp-logo-blue.svg';
 import user from '../../assets/images/user.svg';
 import viewport from '../../assets/js/viewport';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
@@ -19,7 +19,11 @@ import { SearchExpand } from '../../Components/Forms/expandable search/SearchExp
 const Authors = ({
   breadcrumbData, authorSummeryData, contentCardData, footerData,
   sortText, viewText, closeText,
-  undpheading, text, authorData, headingData, buttontype, buttonData,
+  undpheading, text, authorData, headingData, buttontype, buttonData,  languageswitcherData,
+  rightNavigationData,
+  leftNavigationData,
+  navigationData,
+  locale,
 }) => {
   useEffect(() => {
   console.log(text);
@@ -40,6 +44,13 @@ const Authors = ({
   }, []);
   return (
     <div>
+      <GlobalHeader
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        languageswitcherData={languageswitcherData}
+      />
       <div className="grid-container fluid author-page">
         <div className="grid-x">
           <div className="cell medium-offset-1 medium-11 small-12">
@@ -49,10 +60,10 @@ const Authors = ({
         </div>
         <div className="grid-x grid-margin-x mobile-author-filter">
           <div className="cell small-12 sort-btn">
-            <CtaButton label2={sortText} variant="secondary" />
+            <CtaButton label={sortText} Type='Secondary' />
           </div>
           <div className="cell small-12 close-btn">
-            <CtaButton label2={closeText} variant="secondary" />
+            <CtaButton label={closeText} Type='Secondary' />
           </div>
         </div>
         <div className="grid-x grid-margin-x author-filter">
@@ -86,7 +97,7 @@ const Authors = ({
           <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
             <div className="grid-x grid-margin-x author-cards">
               <div className="cell small-12 view-btn-cell">
-                <CtaButton label2={viewText} variant="secondary" />
+                <CtaButton label={viewText} Type="Secondary" />
               </div>
             </div>
 

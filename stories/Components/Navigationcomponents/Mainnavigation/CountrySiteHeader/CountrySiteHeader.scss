@@ -48,7 +48,7 @@
       .logo {
         margin-right: $spacing-24;
 
-        @include devicebreak(small){
+        @include devicebreak(small) {
           margin-right: $spacing-12;
         }
 

@@ -1,6 +1,6 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/breakpoints';
+@import "../../../../assets/scss/variables";
+@import "../../../../assets/scss/mixins";
+@import "../../../../assets/scss/breakpoints";
 
 .global-header {
   background-color: $color-gray-100;
@@ -33,6 +33,7 @@
 
     .icon-close {
       display: none;
+      margin-left: $spacing-12;
     }
   }
 
@@ -44,6 +45,14 @@
       align-items: center;
       display: flex;
       height: 7.1875rem;
+      width: 50%;
+      padding-left: 6.9375rem;
+
+      &:first-child {
+        padding-right: 6.9375rem;
+        padding-left: 0;
+        justify-content: end;
+      }
 
       @include devicebreak(mediumonlytab) {
         display: none;
@@ -71,7 +80,11 @@
     .middle-logo {
       @extend %img_none;
 
-      margin: 0 $spacing-80;
+      @include devicebreak(xlarge) {
+        position: fixed;
+        left: 50%;
+        @include transform(translateX(-50%));
+      }
 
       @include devicebreak(mediumonlytab) {
         height: 4.6875rem;
@@ -108,7 +121,7 @@
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   header {
     .mid-nav {
       .menu__wrapper {

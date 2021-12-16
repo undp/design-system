@@ -41,7 +41,13 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Testing/Blocks/Stats Panel" component={StatsPanel} />
+<Meta title="Testing/Blocks/Stats Panel" component={StatsPanel}  argTypes={{
+  Hovercolors: {
+    options: ['yellow', 'red', 'green', 'blue'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'yellow'
+  }
+}}/>
 
 <style>{`
  .subheading {
@@ -98,7 +104,7 @@ Stats Panel component defines a card of information data with some items - Image
           percent={caption.percentname}
           content={caption.text}
           number={caption.number}
-          imageback={BackgroundImg}
+          imageback={BackgroundImg} {...args}
         ></StatsPanel>
       );
     }}

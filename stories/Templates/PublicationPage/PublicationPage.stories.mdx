@@ -3,8 +3,11 @@ import { PublicationPage } from './PublicationPage';
 import {getCaptionForLocale as PublicationCardData} from "../../Molecules/Blocks/PublicationCard/PublicationCard.stories.mdx";
 import { getCaptionForLocale as  ContentCardWithOutImageData } from '../../Components/UIcomponents/Cards/ContentCard/ContentCardWithOutImage.stories.mdx';
 import {getCaptionForLocale as footerData} from "../../Organism/Footer/Footer.stories.mdx";
-import logo from '../../assets/images/logo.svg';
-import logowhite from '../../assets/images/logo-white.svg';
+import logo from '../../assets/images/undp-logo-blue.svg';
+import logowhite from '../../assets/images/undp-logo-white.svg';
+
+import {getCaptionForLocale as Languageswitcher} from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {getNavLinks, menuData} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -521,6 +524,9 @@ Template for Publication Page
 <Story name="Publication Page">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
+    const navigationData= getNavLinks(locale);
+    const leftNavigationData=navigationData.filter(item=>item.position==='left');
+     const rightNavigationData=navigationData.filter(item=>item.position==='right');
     return <PublicationPage
         data={caption.postheaderdata}
         active={'default'}
@@ -538,6 +544,9 @@ Template for Publication Page
         footerData={footerData(locale)}
         logo={logo}
         logowhite={logowhite}
+      locale={locale} leftNavigationData={leftNavigationData}
+      navigationData={navigationData} rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
     ></PublicationPage>;
   }}
 </Story>
