@@ -26,6 +26,12 @@
       border-bottom: 2px solid $color-gray-500;
     }
 
+    @media only screen and (hover: none) and (pointer: coarse){
+      &:hover {
+        border-bottom: 2px solid $color-dark-red;
+      }
+    }
+
     a {
       @extend %img_none;
       
@@ -59,3 +65,4 @@
 }
 
 /* Tab end */
+
