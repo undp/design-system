@@ -1,6 +1,6 @@
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
 
 .download-card {
   &__title {
@@ -24,12 +24,14 @@
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-
-    &:hover {
-      .download-icon {
-        background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
-        height: 24px;
-      }
+    background-image: none;
+    &::after {
+      content: "";
+      background: url(#{$img-path-Icon}/download-default.svg) no-repeat 0 bottom;
+      cursor: pointer;
+      height: 24px;
+      width: 24px;
+      margin-left: 0.75rem;
     }
   }
 
@@ -49,21 +51,29 @@
     padding: $font-size-24;
     align-items: center;
 
-    .grid-x{
+    .grid-x {
       align-items: center;
       display: flex;
       flex-flow: row wrap;
 
-      .small-6{
+      .small-6 {
         width: 49%;
       }
     }
 
-    .grid-x>:not(:first-of-type) {
+    .grid-x > :not(:first-of-type) {
       border-left: $spacing-02 solid #ced0d3;
       text-align: right;
     }
-  }  
+  }
+
+  &:hover {
+    .download-card__download {
+      &::after {
+        background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
+      }
+    }
+  }
 }
 
 .download-card__readmore {
@@ -75,12 +85,12 @@
   &:hover {
     .download-icon {
       background: url(#{$img-path-Icon}/external-hover.svg) no-repeat 0 bottom;
-      height: 24px;      
+      height: 24px;
     }
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .download-card__readmore {
     .external-link {
       margin-left: 0;
