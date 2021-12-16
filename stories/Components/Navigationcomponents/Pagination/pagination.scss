@@ -3,14 +3,13 @@
 @import '../../../assets/scss/mixins';
 
 /* pagination start */
-.pagination-wrapper {
+.pagination {
   align-items: center;
   display: flex;
   list-style: none;
   padding-left: 0;
-}
 
-.page__item {
+  li {
   font-size: $font-size-16;
   margin-right: $spacing-24;
   position: relative;
@@ -61,14 +60,17 @@
       }
     }
   }
+  }
 }
 
+
+
 [dir='rtl'] {
-  .pagination-wrapper {
+  .pagination {
     padding-right: 0;
   }
 
-  .page__item {
+  li {
     margin-left: $spacing-24;
     margin-right: 0;
 
