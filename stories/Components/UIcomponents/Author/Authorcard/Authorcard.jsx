@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './authorcard.scss';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
@@ -7,6 +8,7 @@ export const Authorcard = ({
   data, para, button, link, image, alt,
 }) => (
   <div className="grid-x grid-margin-x">
+  {data.map((item, index) => (
     <div className="cell medium-4">
       <a href={link} className="author-card">
         <Author data={data} Number="One" image={image} variant="small" alt={alt} title={alt} />
@@ -14,5 +16,6 @@ export const Authorcard = ({
         <span className="cta__link cta--space">{button}</span>
       </a>
     </div>
+  ))}
   </div>
 );

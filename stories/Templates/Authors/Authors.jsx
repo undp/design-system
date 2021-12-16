@@ -91,18 +91,11 @@ const Authors = ({
             </div>
           </div>
         </div>
+        
         <div className="grid-x">
           <div className="cell medium-offset-3 medium-9 small-12">
+          <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
             <div className="grid-x grid-margin-x author-cards">
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
-              <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
               <div className="cell small-12 view-btn-cell">
                 <CtaButton label={viewText} Type="Secondary" />
               </div>
