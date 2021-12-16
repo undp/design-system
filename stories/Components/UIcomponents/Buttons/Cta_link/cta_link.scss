@@ -19,10 +19,9 @@
 
     &:hover {
       &::after {
-        @include translate(10px,0);
-
         background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
         width: 100px;
+        margin-left: 0.25rem;
       }
     }
   }
@@ -61,8 +60,10 @@
     }
 
     &.cta--arrow:hover::after {
-      @include transform(translate(-10%,0) rotate(180deg));
+      @include transform(rotate(180deg));
       @include transition(0.2s ease);
+      margin-right: 0.25rem;
+      margin-left: 0;
     }
   }
 }
