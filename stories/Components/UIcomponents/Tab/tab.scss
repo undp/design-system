@@ -23,7 +23,9 @@
     }
 
     &:hover {
-      border-bottom: 2px solid $color-gray-500;
+      @include devicebreak(large) {
+        border-bottom: 2px solid $color-gray-500;
+      }
     }
 
     a {

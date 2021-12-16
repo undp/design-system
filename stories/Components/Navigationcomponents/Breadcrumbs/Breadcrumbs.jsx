@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
 import './breadcrumbs.scss';
 import viewport from '../../../assets/js/viewport';
-import { Breadcrumb } from '../../../Atom/Navigation/Breadcrumb/Breadcrumb';
-
 
 export const Breadcrumbcomponent = ({ data, Color, ...args}) => {
   useEffect(() => {
-    viewport('.breadcrumb__wrapper');
+    viewport('.breadcrumb');
   }, []);
   const lastIndex = data.length - 1;
   
@@ -16,20 +14,22 @@ export const Breadcrumbcomponent = ({ data, Color, ...args}) => {
   }
   
   return (
-    <ul className={['breadcrumb__wrapper left-right', `${color}`].join(' ')}>
-      {data.map((item, i) => {
-        if (i === lastIndex) {
-          return (
-            <li key={i}>{item.text}</li>
-          );
-        }
+    <nav aria-label='breadcrumbs'>
+      <ul className={['breadcrumb left-right', `${color}`].join(' ')}>
+        {data.map((item, i) => {
+          if (i === lastIndex) {
+            return (
+              <li key={i} aria-current='page'>{item.text}</li>
+            );
+          }
 
-        return (
-          <li key={i}>
-            <Breadcrumb text={item.text} />
-          </li>
-        );
-      })}
-    </ul>
+          return (
+            <li key={i}>
+              <a href='#'>{item.text}</a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 };
