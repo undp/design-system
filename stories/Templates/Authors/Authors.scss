@@ -8,10 +8,10 @@
     align-items: flex-end;
     .exoandablesearch {
       width: 100%;
-      
+
       @include devicebreak(large) {
         margin-left: -0.3125rem;
-      margin-right: -0.3125rem;
+        margin-right: -0.3125rem;
       }
     }
   }
@@ -52,7 +52,6 @@
     margin: 6.125rem 0 4.1875rem;
     @include devicebreak(small) {
       margin: 3.3125rem 0 $spacing-64;
-
     }
   }
 
