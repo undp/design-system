@@ -51,6 +51,10 @@
 
     @include devicebreak(large) {
       padding-left: 8.875rem;
+      padding-right: 4rem;
+    }
+
+    @include devicebreak(xlarge) {
       padding-right: 6rem;
     }
 
@@ -115,19 +119,25 @@
     }
 
     &__arrows {
-      margin-left: 3rem;
+      margin-left: 2.5rem;
 
-      @include devicebreak(large) {
-        display: none;
+      @include devicebreak(large){
+        margin-left: 4rem;
       }
 
-      @include devicebreak(small) {
-        display: none;
-      }
+      @extend %carousel_arrows;
     }
 
     &__arrow {
       @extend %carousel_arrow;
+
+      &:first-child{
+        margin-right: 0.75rem;
+      }
+
+      &:last-child{
+        margin-left: 0.75rem;
+      }
 
       img {
         vertical-align: bottom;
@@ -146,8 +156,12 @@
       }
 
       @include devicebreak(large) {
-        padding-left: 6rem;
+        padding-left: 4rem;
         padding-right: 8.875rem;
+      }
+
+      @include devicebreak(xlarge) {
+        padding-left: 6rem;
       }
 
       @include devicebreak(small) {
@@ -162,9 +176,25 @@
         margin-right: 0;
       }
 
+      &__arrow{
+        &:first-child{
+          margin-right: 0;
+          margin-left: 0.75rem;
+        }
+  
+        &:last-child{
+          margin-left: 0;
+          margin-right: 0.75rem;
+        }
+      }
+
       &__arrows {
         margin-left: auto;
-        margin-right: 3rem;
+        margin-right: 2.5rem;
+
+        @include devicebreak(large){
+          margin-right: 4rem;
+        }
       }
     }
   }

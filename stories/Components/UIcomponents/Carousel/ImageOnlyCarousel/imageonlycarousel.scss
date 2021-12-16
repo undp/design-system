@@ -5,9 +5,10 @@
 .image-only-carousel {
   overflow: hidden;
 
-  &__image {
-    display: block;
-    width: 100%;
+  .medium-8{
+    img{
+      width: 100%;
+    }
   }
 
   .glide {
@@ -17,20 +18,21 @@
 
     &__arrows {
       align-self: flex-end;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 4rem;
 
-      @include devicebreak(large) {
-        display: none;
-      }
-
-      @include devicebreak(small) {
-        display: none;
-      }
+      @extend %carousel_arrows;
     }
 
     &__arrow {
       @extend %carousel_arrow;
+
+      &:first-child{
+        margin-right: 0.75rem;
+      }
+
+      &:last-child{
+        margin-left: 0.75rem;
+      }
 
       img {
         vertical-align: bottom;
@@ -48,9 +50,21 @@
         margin-right: 0;
       }
 
+      &__arrow{
+        &:first-child{
+          margin-right: 0;
+          margin-left: 0.75rem;
+        }
+  
+        &:last-child{
+          margin-left: 0;
+          margin-right: 0.75rem;
+        }
+      }
+      
       &__arrows {
-        left: 5rem;
-        right: auto;
+        margin-right: 4rem;
+        margin-left: 0;
       }
     }
   }

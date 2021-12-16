@@ -384,7 +384,6 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  margin: 0 0.75rem;
   padding: 0;
   vertical-align: bottom;
 }
@@ -408,4 +407,11 @@
   margin-bottom: 1.5rem;
 }
 
+%carousel_arrows{
+  display: none;
+  
+  @media (pointer: coarse) and (hover: none) and (min-width: 48em) {
+    display: block;
+  }
+}
 /* placehoder start */
