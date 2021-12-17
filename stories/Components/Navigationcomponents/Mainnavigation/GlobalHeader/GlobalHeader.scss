@@ -39,7 +39,7 @@
     display: flex;
     justify-content: center;
 
-    .menu__wrapper {
+    .menu{
       align-items: center;
       display: flex;
       height: 7.1875rem;
@@ -122,7 +122,7 @@
 [dir="rtl"] {
   header {
     .mid-nav {
-      .menu__wrapper {
+      .menu {
         &:first-child {
           li {
             margin: $spacing-12 4.4375rem $spacing-12 0;
