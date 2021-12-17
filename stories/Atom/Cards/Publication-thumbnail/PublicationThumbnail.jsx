@@ -8,6 +8,6 @@ export const Publicationthumb = ({ }) => {
     alt: 'Image',
   };
   return (
-    <div className="publication-thumbnail__image"><img src={image.src} alt={image.alt} /></div>
+    <div className="publication-thumbnail__image yellow"><img src={image.src} alt={image.alt} /></div>
   );
 };
