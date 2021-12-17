@@ -3,9 +3,7 @@
 @import "../../../../assets/scss/breakpoints";
 
 .global-header {
-  background-color: $color-gray-100;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  height: 7.1875rem;
+  @extend %header;
 
   @include devicebreak(mediumonlytab) {
     height: 4.6875rem;
@@ -41,7 +39,7 @@
     display: flex;
     justify-content: center;
 
-    .menu__wrapper {
+    .menu{
       align-items: center;
       display: flex;
       height: 7.1875rem;
@@ -124,7 +122,7 @@
 [dir="rtl"] {
   header {
     .mid-nav {
-      .menu__wrapper {
+      .menu {
         &:first-child {
           li {
             margin: $spacing-12 4.4375rem $spacing-12 0;

@@ -9,22 +9,28 @@ import GlobalHeader from "../../Components/Navigationcomponents/Mainnavigation/G
 export const GenericLandingPage = ({
   data, active, herodata, title, imgsrc, videosrc, footerData, content, 
   groupcontentdata, buttonname, activeFilterText, clearText,
+  logo,
+  logowhite,
   languageswitcherData,
+  navigationData,
   rightNavigationData,
   leftNavigationData,
-  navigationData,
   locale,
-  logo,
-  logowhite
+  locationData,
+  langSelect,
+  backcaption,
 }) => (
   <>
   <GlobalHeader
+        backcaption={backcaption}
         locale={locale}
         leftNavigationData={leftNavigationData}
         navigationData={navigationData}
         rightNavigationData={rightNavigationData}
         languageswitcherData={languageswitcherData}
-      />
+        locationData={locationData}
+        langSelect={langSelect}
+      ></GlobalHeader>
     <div className="grid-container fluid">
       <div className="grid-x grid-margin-x">
         <div className="cell large-12">

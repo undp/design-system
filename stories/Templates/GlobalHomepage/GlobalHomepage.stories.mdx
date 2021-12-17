@@ -1,8 +1,5 @@
 import { Meta, Story } from "@storybook/addon-docs";
 import { GlobalHomePage } from "./GlobalHomepage";
-import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
-import { getNavLinks } from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
-import { menuData } from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.mdx";
 import { getCaptionForLocale as featuredcarddata } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard.stories.mdx";
 import { getCaptionForLocale as parallaxdata } from "../../Components/UIcomponents/Cards/ParallaxCard/ParallaxCards.stories.mdx";
@@ -13,6 +10,16 @@ import { statsArray as fixedcarouseldata } from "../../Components/UIcomponents/C
 import { getCaptionForLocale as tweetdata } from "../../Organism/Blocks/TweetPanel/TweetPanel.stories.mdx";
 import { getCaptionForLocale as homepagesplit } from "../../Components/UIcomponents/Hero/Homepagehero/HomepageHero.stories.mdx";
 import img from "../../assets/images/card2.jpg";
+
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {
+  getNavLinks,
+  menuData,
+  getSiteTitle,
+  getLocationDataForLocale,
+  getBackForLocale,
+  getSelectlanguage,
+} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
@@ -588,14 +595,18 @@ Template for Global Home Page
         label={caption.label}
         tweetdata={tweetdata(locale)}
         footerData={footerData(locale)}
+        languageswitcherData={Languageswitcher(locale)}
+        whatwedoheader={caption.whatwedoheader} 
+        whatwedodescription={caption.whatwedodescription}
         locale={locale}
         leftNavigationData={leftNavigationData}
         navigationData={navigationData}
         rightNavigationData={rightNavigationData}
         menuData={menuData(locale)}
         languageswitcherData={Languageswitcher(locale)}
-        whatwedoheader={caption.whatwedoheader} 
-        whatwedodescription={caption.whatwedodescription}
+        locationData={getLocationDataForLocale(locale)}
+        langSelect={getSelectlanguage(locale)}
+        backcaption={getBackForLocale(locale)}
       ></GlobalHomePage>
     );
   }}

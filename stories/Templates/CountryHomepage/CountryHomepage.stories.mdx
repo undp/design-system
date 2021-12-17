@@ -7,9 +7,16 @@ import {getCaptionForLocale as contentcardimagesdata} from '../../Organism/Block
 import BackgroundImg from '../../assets/images/country-hero-img.jpg';
 import BackgroundVideo from '../../assets/video/video_sample.mp4';
 import img from "../../assets/images/card2.jpg";
-import {getCaptionForLocale as Languageswitcher} from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
-import {getNavLinks, menuData, getSiteTitle} from "../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader.stories.mdx";
 
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {
+  getNavLinks,
+  menuData,
+  getSiteTitle,
+  getLocationDataForLocale,
+  getBackForLocale,
+  getSelectlanguage,
+} from "../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader.stories.mdx";
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
@@ -435,11 +442,17 @@ Country Homepage Template
         storiesHeading={caption.storiesHeading}
         featureddataafterwedo={contentcardimagesdata(locale)}
         StatsSliderData={statssliderdata(locale)}
-        footerData={footerData(locale)}    
-      locale={locale} leftNavigationData={leftNavigationData}
-      navigationData={navigationData} rightNavigationData={rightNavigationData}
-      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}    
-      gsiteTitle={siteTitleData}
+        footerData={footerData(locale)}
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        menuData={menuData(locale)}
+        languageswitcherData={Languageswitcher(locale)}
+        locationData={getLocationDataForLocale(locale)}
+        langSelect={getSelectlanguage(locale)}
+        backcaption={getBackForLocale(locale)}
+        siteTitleData={getSiteTitle(locale)}
     ></CountryHomepage>;
   }}
 </Story>

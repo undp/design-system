@@ -11,10 +11,16 @@ import BackgroundImg from '../../assets/images/lady.jpg';
 import BackgroundVideo from '../../assets/video/video_sample.mp4';
 import logo from '../../assets/images/undp-logo-blue.svg';
 import logowhite from '../../assets/images/undp-logo-white.svg';
-
-import {getCaptionForLocale as Languageswitcher} from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
-import {getNavLinks, menuData} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
-
+ 
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {
+  getNavLinks,
+  menuData,
+  getSiteTitle,
+  getLocationDataForLocale,
+  getBackForLocale,
+  getSelectlanguage,
+} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = {herodata: [{
@@ -494,11 +500,17 @@ Template for Generic Landing Page
       groupcontentdata={caption.groupcontentdata}
       buttonname={caption.buttonname}
       footerData={footerData(locale)}
-      locale={locale} leftNavigationData={leftNavigationData}
-      navigationData={navigationData} rightNavigationData={rightNavigationData}
-      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
       logo={logo}
       logowhite={logowhite}
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        menuData={menuData(locale)}
+        languageswitcherData={Languageswitcher(locale)}
+        locationData={getLocationDataForLocale(locale)}
+        langSelect={getSelectlanguage(locale)}
+        backcaption={getBackForLocale(locale)}
       ></GenericLandingPage>;
   }}
 </Story>

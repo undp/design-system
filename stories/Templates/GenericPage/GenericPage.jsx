@@ -19,22 +19,30 @@ export const GenericPage = ({
     headingUNcharter,
     paraUNcharter,
     carouselData,
+    logo,
+    logowhite,
     languageswitcherData,
+    navigationData,
     rightNavigationData,
     leftNavigationData,
-    navigationData,
     locale,
-    logo,
-    logowhite
+    locationData,
+    langSelect,
+    backcaption,
   }) => (
     <>
+    
     <GlobalHeader
+        backcaption={backcaption}
         locale={locale}
         leftNavigationData={leftNavigationData}
         navigationData={navigationData}
         rightNavigationData={rightNavigationData}
         languageswitcherData={languageswitcherData}
-      />
+        locationData={locationData}
+        langSelect={langSelect}
+      ></GlobalHeader>
+      
       <ProgressBarNavigation/>
         <div class="grid-x grid-margin-x">
             <div class="cell small-12 sidebar-width">

@@ -1,38 +1,96 @@
-import { Meta, Story } from '@storybook/addon-docs';
-import ArticlePage from './ArticlePage';
-import {getCaptionForLocale as imageCaptionData } from "../../Atom/Images/Imagecaptioncredit/Imagecaption.stories.mdx";
-import {getCaptionForLocale as PostHeadData} from "../../Organism/Text/PostHeader/PostHeader.stories.mdx";
-import {getCaptionForLocale as AuthorCardData} from "../../Components/UIcomponents/Author/Authorcolumn/Authors.stories.mdx";
-import {getCaptionForLocale as blockquoteData} from "../../Molecules/Text/BlockquoteComponent/BlockquoteComponent.stories.mdx";
-import {getCaptionForLocale as paraLabel} from "../../Atom/Base-typography/Paragraph/Paragarph.stories.mdx";
-import {getCaptionForLocale as headingData} from "../../Atom/Typography/Heading/heading.stories.mdx";
-import {getCaptionForLocale as listData} from "../../Atom/Typography/Lists/Lists.stories.mdx";
-import {getCaptionForLocale as footerData} from "../../Organism/Footer//Footer.stories.mdx";
-import {getCaptionForLocale as featuredCardContent} from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard.stories.mdx";
+import { Meta, Story } from "@storybook/addon-docs";
+import ArticlePage from "./ArticlePage";
+import { getCaptionForLocale as imageCaptionData } from "../../Atom/Images/Imagecaptioncredit/Imagecaption.stories.mdx";
+import { getCaptionForLocale as PostHeadData } from "../../Organism/Text/PostHeader/PostHeader.stories.mdx";
+import { getCaptionForLocale as AuthorCardData } from "../../Components/UIcomponents/Author/Authorcolumn/Authors.stories.mdx";
+import { getCaptionForLocale as blockquoteData } from "../../Molecules/Text/BlockquoteComponent/BlockquoteComponent.stories.mdx";
+import { getCaptionForLocale as paraLabel } from "../../Atom/Base-typography/Paragraph/Paragarph.stories.mdx";
+import { getCaptionForLocale as headingData } from "../../Atom/Typography/Heading/heading.stories.mdx";
+import { getCaptionForLocale as listData } from "../../Atom/Typography/Lists/Lists.stories.mdx";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer//Footer.stories.mdx";
+import { getCaptionForLocale as featuredCardContent } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard.stories.mdx";
 
-import {getCaptionForLocale as Languageswitcher} from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
-import {getNavLinks as getNavLinks} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
-import {menuData as menuData} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
-
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {
+  getNavLinks,
+  menuData,
+  getSiteTitle,
+  getLocationDataForLocale,
+  getBackForLocale,
+  getSelectlanguage,
+} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
 
 export const getAuthorCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {detail1: 'HEADLINE 1', detail2: 'Headline 2', detail3: 'Headline 3', detail4: 'Headline 4', detail5: 'Authors', detail6: 'HEADLINE 6'}; return engText;
-    case 'arabic': const arabicText = {detail1: 'العنوان 1.', detail2: 'العنوان 2', detail3: 'العنوان 3', detail4: 'العنوان 4', detail5: 'العنوان 5', detail6: 'العنوان 6'}; return arabicText;
-    case 'burmese': const burmeseText = {detail1: 'ခခေါင်းစီး ၁', detail2: 'ခေါင်းစဉ် ၂', detail3: 'ခေါင်းစဉ် ၃', detail4: 'ခေါင်းစဉ် ၄', detail5: 'ခေါင်းစဉ် ၅', detail6: 'ခေါင်းစီး ၆'}; return burmeseText;
-    case 'japanese': const japaneseText = {detail1: '見出し1', detail2: '見出し2', detail3: '見出し3', detail4: '見出し4', detail5: '見出し5', detail6: '見出し6'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = {
+        detail1: "HEADLINE 1",
+        detail2: "Headline 2",
+        detail3: "Headline 3",
+        detail4: "Headline 4",
+        detail5: "Authors",
+        detail6: "HEADLINE 6",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        detail1: "العنوان 1.",
+        detail2: "العنوان 2",
+        detail3: "العنوان 3",
+        detail4: "العنوان 4",
+        detail5: "العنوان 5",
+        detail6: "العنوان 6",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        detail1: "ခခေါင်းစီး ၁",
+        detail2: "ခေါင်းစဉ် ၂",
+        detail3: "ခေါင်းစဉ် ၃",
+        detail4: "ခေါင်းစဉ် ၄",
+        detail5: "ခေါင်းစဉ် ၅",
+        detail6: "ခေါင်းစီး ၆",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        detail1: "見出し1",
+        detail2: "見出し2",
+        detail3: "見出し3",
+        detail4: "見出し4",
+        detail5: "見出し5",
+        detail6: "見出し6",
+      };
+      return japaneseText;
     default:
-      return {detail1: 'HEADLINE 1', detail2: 'Headline 2', detail3: 'Headline 3', detail4: 'Headline 4', detail5: 'Authors', detail6: 'HEADLINE 6'};
+      return {
+        detail1: "HEADLINE 1",
+        detail2: "Headline 2",
+        detail3: "Headline 3",
+        detail4: "Headline 4",
+        detail5: "Authors",
+        detail6: "HEADLINE 6",
+      };
   }
 };
 
 export const getHeadingCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = 'Some achievements of the project include the following:'; return engText;
-    case 'arabic': const arabicText = 'تشمل بعض إنجازات المشروع ما يلي:'; return arabicText;
-    case 'burmese': const burmeseText = 'ပရောဂျက်၏ အောင်မြင်မှုအချို့မှာ အောက်ပါတို့ ပါဝင်သည်-'; return burmeseText;
-    case 'japanese': const japaneseText = 'プロジェクトのいくつかの成果は次のとおりです。'; return japaneseText;
-    default: return 'Some achievements of the project include the following:';
+  switch (locale) {
+    case "english":
+      const engText = "Some achievements of the project include the following:";
+      return engText;
+    case "arabic":
+      const arabicText = "تشمل بعض إنجازات المشروع ما يلي:";
+      return arabicText;
+    case "burmese":
+      const burmeseText =
+        "ပရောဂျက်၏ အောင်မြင်မှုအချို့မှာ အောက်ပါတို့ ပါဝင်သည်-";
+      return burmeseText;
+    case "japanese":
+      const japaneseText = "プロジェクトのいくつかの成果は次のとおりです。";
+      return japaneseText;
+    default:
+      return "Some achievements of the project include the following:";
   }
 };
 
@@ -57,30 +115,57 @@ export const getHeadingCaptionForLocale = (locale) => {
 <Story name="Article">
   {(args, { globals: { locale } }) => {
     const caption = PostHeadData(locale);
-    const headingLabel=getHeadingCaptionForLocale(locale);
-    const navigationData= getNavLinks(locale);
-    const leftNavigationData=navigationData.filter(item=>item.position==='left');
-     const rightNavigationData=navigationData.filter(item=>item.position==='right');
-    return <ArticlePage
-    featuredCardContent={featuredCardContent(locale)}
-    headingLabel={headingLabel} footerData={footerData(locale)}
-    listData={listData(locale)} headingData={getAuthorCaptionForLocale(locale)}
-    paraLabel={paraLabel(locale)} blockquoteData={blockquoteData(locale)}
-     authorCardData={AuthorCardData(locale)} imageCaptionData={imageCaptionData(locale)}
-      data={caption.postheaderdata} header={caption.header} country={caption.country}
-      description={caption.description} active={'default'}
-      locale={locale} leftNavigationData={leftNavigationData}
-      navigationData={navigationData} rightNavigationData={rightNavigationData}
-      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
-      ></ArticlePage>;
+    const headingLabel = getHeadingCaptionForLocale(locale);
+    const navigationData = getNavLinks(locale);
+    const leftNavigationData = navigationData.filter(
+      (item) => item.position === "left"
+    );
+    const rightNavigationData = navigationData.filter(
+      (item) => item.position === "right"
+    );
+    return (
+      <ArticlePage
+        featuredCardContent={featuredCardContent(locale)}
+        headingLabel={headingLabel}
+        footerData={footerData(locale)}
+        listData={listData(locale)}
+        headingData={getAuthorCaptionForLocale(locale)}
+        paraLabel={paraLabel(locale)}
+        blockquoteData={blockquoteData(locale)}
+        authorCardData={AuthorCardData(locale)}
+        imageCaptionData={imageCaptionData(locale)}
+        data={caption.postheaderdata}
+        header={caption.header}
+        country={caption.country}
+        description={caption.description}
+        active={"default"}
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        menuData={menuData(locale)}
+        languageswitcherData={Languageswitcher(locale)}
+        locationData={getLocationDataForLocale(locale)}
+        langSelect={getSelectlanguage(locale)}
+        backcaption={getBackForLocale(locale)}
+      ></ArticlePage>
+    );
   }}
 </Story>
 
 <div className="subheading">Usage</div>
 <ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<li><u>To use SCSS include the following files in your implementation</u></li>
-<li>Component SCSS file: <code>ArticlePage.scss</code></li>
-<li><u>To use CSS include the following files in your implementation</u></li>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <li>
+    <u>To use SCSS include the following files in your implementation</u>
+  </li>
+  <li>
+    Component SCSS file: <code>ArticlePage.scss</code>
+  </li>
+  <li>
+    <u>To use CSS include the following files in your implementation</u>
+  </li>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
 </ul>

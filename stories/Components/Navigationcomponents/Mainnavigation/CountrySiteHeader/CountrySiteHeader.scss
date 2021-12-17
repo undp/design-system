@@ -2,10 +2,9 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
 
+
 .country-header {
-  background-color: $color-gray-100;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  height: 7.1875rem;
+  @extend %header;
 
   @include devicebreak(mediumonlytab) {
     height: 4.6875rem;
@@ -64,7 +63,7 @@
     display: flex;
     justify-content: center;
 
-    .menu__wrapper {
+    .menu {
       @include devicebreak(mediumonlytab) {
         display: none;
       }
@@ -76,7 +75,7 @@
     position: relative;
   }
 
-  .menu__wrapper {
+  .menu {
     align-items: center;
     display: flex;
     height: 7.1875rem;

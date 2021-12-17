@@ -27,23 +27,30 @@ export const GlobalHomePage = ({
   tweetdata,
   textctadata,
   textbackgrounddata,
-  languageswitcherData,
-  rightNavigationData,
-  leftNavigationData,
-  navigationData,
-  locale,
   whatwedoheader,
   whatwedodescription,
-  BackgroundImg
+  BackgroundImg,
+  languageswitcherData,
+  navigationData,
+  rightNavigationData,
+  leftNavigationData,
+  locale,
+  locationData,
+  langSelect,
+  backcaption,
 }) => (
   <>
+    
     <GlobalHeader
-      locale={locale}
-      leftNavigationData={leftNavigationData}
-      navigationData={navigationData}
-      rightNavigationData={rightNavigationData}
-      languageswitcherData={languageswitcherData}
-    />
+        backcaption={backcaption}
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        languageswitcherData={languageswitcherData}
+        locationData={locationData}
+        langSelect={langSelect}
+      ></GlobalHeader>
     <div className="grid-container fluid glabal-page">
       <div className="grid-x">
         <div className="cell large-12">

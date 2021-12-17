@@ -36,21 +36,28 @@ export const CountryHomepage = ({
   statHeading,
   storiesHeading,
   languageswitcherData,
+  navigationData,
   rightNavigationData,
   leftNavigationData,
-  navigationData,
-  gsiteTitle,
   locale,
+  locationData,
+  langSelect,
+  backcaption,
+  siteTitleData,
 }) => {
   return (
     <div>
-      <CountrySiteHeader 
-      gsiteTitle={gsiteTitle.label} 
-      gsiteTheme={gsiteTitle.span}  
-    locale={locale} 
-    leftNavigationData={leftNavigationData} 
-    navigationData={navigationData} 
-    languageswitcherData={languageswitcherData} />
+    <CountrySiteHeader
+        siteTitleData={siteTitleData}
+        backcaption={backcaption}
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        languageswitcherData={languageswitcherData}
+        locationData={locationData}
+        langSelect={langSelect}
+      />
 
       <div className="grid-container fluid content-bottom">
         <div className="grid-x grid-margin-x hero-container">

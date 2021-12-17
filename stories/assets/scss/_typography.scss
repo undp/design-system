@@ -7,9 +7,13 @@ body {
   font-family: $Font-Family-ProximaNova;
   font-size: 1rem;
   line-height: 1.4;
+  margin-top: 4.6875rem;
 
   @include devicebreak(medium) {
     font-size: 1.25rem;
+  }
+  @include devicebreak(xlarge) {
+    margin-top: 7.1875rem;
   }
 }
 
