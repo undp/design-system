@@ -3,6 +3,11 @@
 @import "../../assets/scss/breakpoints";
 
 .author-page {
+  margin-top: 4.75rem;
+
+  @include devicebreak(xlarge) {
+    margin-top: 10.75rem;
+  }
   .align-center {
     display: flex;
     align-items: flex-end;
@@ -39,7 +44,7 @@
       display: block;
     }
     .button {
-      &.button--secondary {
+      &.button-secondary {
         background-color: $color-gray-300;
         color: $color-black;
       }
@@ -59,7 +64,7 @@
     margin-top: $spacing-80;
     margin-bottom: $spacing-136;
   }
-  .authorcard {
+  .author-card {
     border-top: 2px solid $color-black;
     margin-top: $spacing-64;
     padding-top: $spacing-24;

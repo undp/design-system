@@ -338,11 +338,10 @@ export const getfiltertextForLocale = (locale) => {
     const navigationData= getNavLinks(locale);
     const leftNavigationData=navigationData.filter(item=>item.position==='left');
      const rightNavigationData=navigationData.filter(item=>item.position==='right');
+     console.log(buttonData)
  return <Authors
     text={filtertext}
-    viewText = {buttonData.view}
-    sortText = {buttonData.sort}
-    closeText = {buttonData.close}
+    buttonData = {buttonData}
      footerData={footerData(locale)}
      authorData={getCaptionForLocale(locale)}
      breadcrumbData={breadcrumbData(locale)}
