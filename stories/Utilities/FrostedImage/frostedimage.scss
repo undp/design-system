@@ -4,6 +4,7 @@
 
   &::before {
     backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
     background: rgba(247, 247, 247, 0.8);
     content: '';
     height: 100%;

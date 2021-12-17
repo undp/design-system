@@ -5,13 +5,13 @@
 /* blockquote cta start */
 .blockquote-wrapper {
   background-color: none;
-  padding: 0;  
+  padding: 0;
 
   &.gray, &.yellow, &.red, &.green, &.blue   {
-    padding: 1.875rem;
+    padding: $spacing-32 $spacing-24;
 
     @include devicebreak(medium) {
-      padding: 5.313rem;
+      padding: 5.313rem $spacing-96;
     }
   }
 

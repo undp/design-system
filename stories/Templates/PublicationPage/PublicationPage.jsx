@@ -94,7 +94,7 @@ export const PublicationPage = ({
                         />
                     </div>
                 </div>
-                <div class="cell small-12 large-6 large-offset-6 margin-top-48">
+                <div class="cell small-12 large-6 large-offset-6">
                     <div class="column">
                         <ContentCardWithOutImage className="card-out"
                             Emphasize='false'
@@ -103,7 +103,7 @@ export const PublicationPage = ({
                     </div>
                 </div>
                 <div class="cell small-12 large-6 large-offset-6">
-                    <div class="column margin-top-48">
+                    <div class="column margin-top-36">
                         <CtaButton label={buttontype} Type="Secondary" />   
                     </div>
                 </div>

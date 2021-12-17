@@ -5,7 +5,7 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
 export const ContentCardImage = ({
-  data, Image, Hovercolors,
+  data, Hovercolors,
 }) => (
   <div className="grid-x grid-margin-x">
     {data.map((item, index) => (
