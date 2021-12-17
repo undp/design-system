@@ -83,10 +83,6 @@
   position: relative;
 
   @include devicebreak(medium) {
-    display: inherit;
-  }
-
-  @include devicebreak(medium) {
     @include transform(translateX(-105%));
     @include transition(transform 0.3s);
 
@@ -123,6 +119,13 @@
       max-width: 100%;
       object-fit: cover;
     }
+  }
+  @include devicebreak(medium) {
+    display: none;
+  }
+
+  @include devicebreak(large) {
+    display: inherit;
   }
 }
 
