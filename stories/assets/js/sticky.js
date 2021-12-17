@@ -6,7 +6,7 @@ $( document ).ready(function() {
     if (!!$sticky.offset()) {  
       var generalSidebarHeight = $sticky.innerHeight();
       var stickyTop = $sticky.offset().top;
-      var stickOffset = 0;
+      var stickOffset = 70;
       var stickyStopperPosition = $stickyrStopper.offset().top;
       var stopPoint = stickyStopperPosition -(generalSidebarHeight +stickOffset);
       var diff = stopPoint -($('footer').innerHeight()/1.7);
