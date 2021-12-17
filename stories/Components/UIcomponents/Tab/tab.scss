@@ -3,12 +3,17 @@
 @import '../../../assets/scss/mixins';
 
 /* Tab start */
-.tab__items {
+.tabs {
   border-bottom: 2px solid $color-gray-300;
   list-style: none;
-  padding-left: $spacing-48;
+  background-color: $color-white;
+  padding-left: 0;
 
-  .tab__item {
+  @include devicebreak(medium) {
+    padding-left: $spacing-48;
+  }
+
+  li {
     cursor: pointer;
     display: inline-block;
     font-weight: 700;
@@ -17,8 +22,9 @@
     margin-right: $spacing-24;
     padding-bottom: $spacing-08;
     text-transform: uppercase;
-
-    &.active {
+    margin-top: 0.75rem;
+    border-bottom: 2px solid transparent;
+    &.is-active {
       border-bottom: 2px solid $color-dark-red;
     }
 
@@ -28,23 +34,32 @@
       }
     }
 
+    @media only screen and (hover: none) and (pointer: coarse){
+      &:hover {
+        border-bottom: 2px solid $color-dark-red;
+      }
+    }
+
     a {
       @extend %img_none;
-      
       font-size: $font-size-16;
     }
   }
 }
 
-.tab__content {
+.tabs-panel {
   display: none;
+  background-color: $color-white ;
 
-  &.active {
+  &.is-active {
     display: inherit;
   }
 
   p {
-    margin-top: 2.5rem;
+    margin-top: $spacing-16;
+     @include devicebreak(medium) {
+       margin-top: 2.5rem;
+    }
   }
 }
 
