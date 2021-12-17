@@ -84,7 +84,7 @@ export const BioCard = ({
       </div>
       <div id="myModal" className="modal">
         <div className="modal-content">
-          <div className="modal-close-button" />
+          <a href="#" className="modal-close-button">close</a>
           <div className="bio-card-wrapper">
             <div className="bio-card-image">
               <img src={image2} alt={image} />

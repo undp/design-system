@@ -5,6 +5,7 @@ export function ModalFun() {
   const $modalClose = $('.modal-close-button');
   const $modalOpen = $('#bio-card');
   const modal = '#myModal';
+  const modalSelector = '.modal';
 
   $(modal).css('visibility', 'hidden');
 
@@ -13,7 +14,8 @@ export function ModalFun() {
       $(modal).css('visibility', 'visible').addClass('open');
     });
     $modalOverlay.click(() => {
-      $(modal).css('visibility', 'hidden').removeClass('open');
+       $(modal).css('visibility', 'hidden').removeClass('open');
+       $(modalSelector).css('visibility', 'hidden').removeClass('open');
     });
   }
 
@@ -22,6 +24,7 @@ export function ModalFun() {
   });
 
   $modalClose.click(() => {
+    console.log('close');
     $modalOverlay.click();
   });
 

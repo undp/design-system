@@ -4,7 +4,8 @@
 
 /* Modal lightbox card start */
 .modal {
-  background: $color-white;
+  background: rgba(247, 247, 247, 0.8);
+  backdrop-filter: blur(80px);
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -17,13 +18,19 @@
 
   @include devicebreak(medium) {
     align-items: center;
+
+  }
+
+  &.frosty-image {
+    background: url(#{$img-path}/field.jpg) no-repeat left center; 
+    background-size: cover;
     background: rgba(247, 247, 247, 0.8);
+    backdrop-filter: blur(80px);
   }
 
   &-content {
     background: $color-white;
     max-width: 837px;
-    overflow-y: auto;
     padding: $spacing-64 $spacing-12 $spacing-12;
     position: relative;
     width: 100%;
