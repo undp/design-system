@@ -4,7 +4,7 @@ import { Breadcrumbcomponent } from "../../../Components/Navigationcomponents/Br
 import { Post } from "../../../Molecules/Text/Post/Post";
 
 export const PostHeader = ({ data, active, header, country, description }) => (
-  <>
+  <> 
     <Breadcrumbcomponent data={data} active={active} />
     <Post
       headerText={header}

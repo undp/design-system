@@ -25,7 +25,7 @@ export const Projectdetail = ({
               <Projectcolumn headertext={title3} subtext={subtitle3} />
             </div>
           </div>
-        </div>
+        </div> 
         <div className="cell large-2 medium-2">
           <Projectcolumn headertext={title4} subtext={subtitle4} />
         </div>
