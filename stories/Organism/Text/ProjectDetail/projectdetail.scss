@@ -12,11 +12,7 @@
 }
 
 .project-data__section {
-  .block {
-    &-1,
-    &-2,
-    &-3,
-    &-4 {
+  > .cell {
       margin-top: $spacing-32;
 
       @include devicebreak(small) {
@@ -33,7 +29,7 @@
         margin-bottom: 4px;
       }
     }
-  }
+  
 }
 
 h2.project-data__title {
