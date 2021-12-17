@@ -14,7 +14,7 @@ export const getCaptionForLocale = (locale) => {
 /* todo: we are using "=" for remove from storybook only. Need to find a better solution.*/
 <Meta = />
 
-<Story name="MegaMenu">s
+<Story name="MegaMenu">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <MegaMenu text={caption}></MegaMenu>;
