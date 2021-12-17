@@ -15,7 +15,7 @@ export const Projectdetail = ({
     <div className="project-data__wrapper">
       <Heading type="2" className="project-data__title left-right" label={text} />
       <div className="project-data__section left-right grid-x grid-margin-x">
-        <div className="cell large-2 medium-2 block-1">
+        <div className="cell large-2 medium-2">
           <div className="grid-x">
             <div className="cell large-12 medium-12 small-6">
               <Projectcolumn headertext={title1} subtext={subtitle1} />
@@ -26,10 +26,10 @@ export const Projectdetail = ({
             </div>
           </div>
         </div>
-        <div className="cell large-2 medium-2 block-2">
+        <div className="cell large-2 medium-2">
           <Projectcolumn headertext={title4} subtext={subtitle4} />
         </div>
-        <div className="cell large-5 medium-5 block-3">
+        <div className="cell large-5 medium-5">
           <div className="grid-x">
             <div className="cell large-7 medium-5 small-6">
               <Projectcolumn headertext={title5} subtext={subtitle5} />
@@ -39,7 +39,7 @@ export const Projectdetail = ({
             </div>
           </div>
         </div>
-        <div className="cell large-3 medium-3 block-4">
+        <div className="cell large-3 medium-3">
           <Projectcolumn headertext={title7} subtext={subtitle7} />
         </div>
       </div>
