@@ -23,8 +23,8 @@ export const Statscardslider = ({ data }) => {
               />
             </div>
           ))}
-        </div>
       </div>
+    </div>
     </div>
   );
 };
