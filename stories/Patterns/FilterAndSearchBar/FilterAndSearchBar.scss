@@ -1,6 +1,6 @@
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/breakpoints";
+@import "../../assets/scss/variables";
 
 /* toggle search start */
 .toggle-search {
@@ -9,13 +9,9 @@
   cursor: pointer;
   padding: 0 0 0.625rem;
   text-decoration: underline;
-  background:#fff url(#{$img-path-Iconback}/Search_black.svg) no-repeat 0 0/28px;
-  height: 42px;
-  width: 28px;
-
-  .icon-search-black {
-    height: 1.75rem;
-  }
+  background: #fff url(#{$img-path-Iconback}/Search_black.svg) no-repeat 0 0/1.75rem;
+  height: 2.625rem;
+  width: 1.75rem;
 }
 
 .select-wrapper {
@@ -80,7 +76,7 @@
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .selected-chips {
     .chips {
       margin: 0 0 $spacing-12 $spacing-12;
