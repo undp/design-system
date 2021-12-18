@@ -2,12 +2,18 @@
 @import "../../../assets/scss/mixins";
 
 .form-wrapper {
+    .text-panel{
+        .button{
+            margin-top: 0.1875rem;
+        }
+    }
     h2 {
         margin-bottom: $spacing-40;
     }
     .input-group {
         .input__controls {
-            margin: 0;
+            margin:0.9375rem 0;
+            border-radius: 0;
         }
     }
     .form-photo {
@@ -22,7 +28,7 @@
         box-sizing: border-box;
         @include devicebreak(small) {
             margin-top: $spacing-16;
-            padding: $spacing-40 $spacing-24;
+            padding: $spacing-48 $spacing-24;
         }
     }
     .button {
@@ -31,20 +37,44 @@
         }
     }
     .wide-form {
-        .button {
-            @include devicebreak(small) {
-                margin-top: $spacing-24;
+        @include devicebreak(small){
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            background: $color-gray-100;
+            margin: -1.375rem;
+            padding: 0 $spacing-32;
+        }
+        h2{
+            margin-bottom: $spacing-24;
+        }
+        .input-group {
+            
+            .input__controls {
+                margin:$spacing-12 0;
+                @include devicebreak(small) {
+                    margin:$spacing-08 0;
+                }
             }
+        }
+        .button {
+                margin-top: $spacing-16;
+            
         }
     }
     .stacked-form {
         p {
-            margin-bottom: $spacing-40;
+            margin-bottom: $spacing-50;
+        }
+        .input-group {
+            .input__controls {
+                margin:$spacing-12 0;
+            }
         }
         .button {
-            margin-top: $spacing-40;
+            margin-top: $spacing-48;
             @include devicebreak(small) {
-                margin-top: $spacing-24;
+                margin-top: $spacing-32;
             }
         }
     }
