@@ -4,12 +4,14 @@
 
 /* toggle search start */
 .toggle-search {
-  background: none;
   border: 0;
   border-bottom: 1px solid $color-black;
   cursor: pointer;
   padding: 0 0 0.625rem;
   text-decoration: underline;
+  background:#fff url(#{$img-path-Iconback}/Search_black.svg) no-repeat 0 0/28px;
+  height: 42px;
+  width: 28px;
 
   .icon-search-black {
     height: 1.75rem;
