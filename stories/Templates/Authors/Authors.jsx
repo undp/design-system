@@ -16,9 +16,7 @@ import { SearchExpand } from "../../Components/Forms/expandable search/SearchExp
 const Authors = ({
   breadcrumbData,
   footerData,
-  sortText,
-  viewText,
-  closeText,
+  buttonData,
   text,
   authorData,
   headingData,
@@ -32,8 +30,6 @@ const Authors = ({
   backcaption,
 }) => {
   useEffect(() => {
-    viewport(".feature__card--headertext");
-    init();
     $(".sort-btn").click(function sortclick() {
       $(".author-filter").addClass("author-filter-show");
       $(".close-btn").addClass("show-close");
@@ -68,10 +64,10 @@ const Authors = ({
         </div>
         <div className="grid-x grid-margin-x mobile-author-filter">
           <div className="cell small-12 sort-btn">
-            <CtaButton label={sortText} Type="Secondary" />
+            <CtaButton label={buttonData.sort} Type="Secondary" />
           </div>
           <div className="cell small-12 close-btn">
-            <CtaButton label={closeText} Type="Secondary" />
+            <CtaButton label={buttonData.close} Type="Secondary" />
           </div>
         </div>
         <div className="grid-x grid-margin-x author-filter">
@@ -108,21 +104,20 @@ const Authors = ({
             </div>
           </div>
         </div>
-        
+
         <div className="grid-x">
           <div className="cell medium-offset-3 medium-9 small-12">
-          <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
-            <div className="grid-x grid-margin-x author-cards">
-              <Authorcard
-                image={user}
-                data={authorData.authordata}
-                para={authorData.paragraph}
-                button={authorData.button}
-                link="#"
-                width="medium-12"
-              />
+            <Authorcard
+              image={user}
+              data={authorData.authordata}
+              para={authorData.paragraph}
+              button={authorData.button}
+              link="#"
+              width="medium-12"
+            />
+            <div className="grid-x grid-margin-x">
               <div className="cell small-12 view-btn-cell">
-                <CtaButton label={viewText} Type="Secondary" />
+                <CtaButton label={buttonData.view} Type="Secondary" />
               </div>
             </div>
           </div>

@@ -49,7 +49,7 @@
       &:first-child {
         padding-right: 6.9375rem;
         padding-left: 0;
-        justify-content: end;
+        justify-content: flex-end;
       }
 
       @include devicebreak(mediumonlytab) {
