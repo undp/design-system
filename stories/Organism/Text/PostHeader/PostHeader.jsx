@@ -1,10 +1,10 @@
-import React from "react";
-import "./postheader.scss";
-import { Breadcrumbcomponent } from "../../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs";
-import { Post } from "../../../Molecules/Text/Post/Post";
+import React from 'react';
+import './postheader.scss';
+import { Breadcrumbcomponent } from '../../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
+import { Post } from '../../../Molecules/Text/Post/Post';
 
 export const PostHeader = ({ data, active, header, country, description }) => (
-  <> 
+  <>  
     <Breadcrumbcomponent data={data} active={active} />
     <Post
       headerText={header}
