@@ -1,8 +1,8 @@
-import React from "react";
-import "./FormTypes.scss";
-import { Inputcomponent } from "../Inputfields/Input_group";
-import { Image } from "../../../Atom/Images/Image/Image";
-import { Heading } from "../../../Atom/Typography/Heading/Heading";
+import React from 'react';
+import './FormTypes.scss';
+import { Inputcomponent } from '../Inputfields/Input_group';
+import { Image } from '../../../Atom/Images/Image/Image';
+import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const FormTypes = ({
   element,
@@ -14,6 +14,8 @@ export const FormTypes = ({
   errorText,
   placeholder,
   placeholderemail,
+  placeholderfirst,
+  placeholderlast,
   anchorTag,
   para,
   ...args
@@ -108,7 +110,7 @@ export const FormTypes = ({
                 <Inputcomponent
                   element={element}
                   type={type}
-                  placeholder={placeholder}
+                  placeholder={placeholderfirst}
                   required={required}
                   mode={mode}
                 />
@@ -117,7 +119,7 @@ export const FormTypes = ({
                 <Inputcomponent
                   element={element}
                   type={type}
-                  placeholder={placeholder}
+                  placeholder={placeholderlast}
                   required={required}
                   mode={mode}
                 />
