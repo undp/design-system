@@ -16,7 +16,7 @@ export const ContentCardWithAndWithoutImage = ({ CardWithOutImage, storyBtn, Car
                 <ContentCardWithOutImage data={CardWithOutImage}/>
             </div>
         </div>
-        <CtaButton label={storyBtn} For_Primary="No_Arrow"/>
+        <CtaButton label={storyBtn} For_Primary="No Arrow"/>
     </>
     ); 
 };

@@ -7,15 +7,14 @@ export const CtaButton = ({
   
   let type = 'primary';
   if(Type == 'Secondary'){
-    type = 'secondary',
-    label = 'VIEW MORE'
+    type = 'secondary'
   }
   let state = 'active';
   if(State == 'Disabled'){
     state = 'disabled'
   }
   let for_primary = 'arrow';
-  if(For_Primary == 'No_Arrow'){
+  if(For_Primary == 'No Arrow'){
     for_primary = 'without-arrow'
   }
 

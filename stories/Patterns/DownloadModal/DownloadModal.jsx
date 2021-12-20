@@ -43,7 +43,7 @@ export const DownloadModal = ({
           </div>
         </div>
         <div className="download-footer">
-          <CtaButton label={button} For_Primary="No_Arrow"/>
+          <CtaButton label={button} For_Primary="No Arrow"/>
         </div>
       </div>
     </div>
