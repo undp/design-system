@@ -1,16 +1,16 @@
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/breakpoints";
-@import "../../assets/scss/variables";
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
 
 /* toggle search start */
 .toggle-search {
+  background: $color-white url(#{$img-path-Iconback}/Search_black.svg) no-repeat 0 0/1.75rem;
   border: 0;
   border-bottom: 1px solid $color-black;
   cursor: pointer;
+  height: 2.625rem;
   padding: 0 0 0.625rem;
   text-decoration: underline;
-  background: #fff url(#{$img-path-Iconback}/Search_black.svg) no-repeat 0 0/1.75rem;
-  height: 2.625rem;
   width: 1.75rem;
 }
 
