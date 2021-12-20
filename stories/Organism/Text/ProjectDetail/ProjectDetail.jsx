@@ -11,7 +11,7 @@ export const Projectdetail = ({
     viewport('.project-data__title');
     viewport('.project-data__section');
   }, []);
-  return (
+  return ( 
     <div className="project-data__wrapper">
       <Heading type="2" className="project-data__title left-right" label={text} />
       <div className="project-data__section left-right grid-x grid-margin-x">
