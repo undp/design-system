@@ -25,7 +25,11 @@
   }
 
   span {
-    margin: 0 0.375rem ;
+    margin: 0 0.375rem;
+
+    &:last-child{
+      margin-right: 0;
+    }
   }
 
   &:first-child,

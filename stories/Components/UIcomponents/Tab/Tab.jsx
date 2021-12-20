@@ -11,7 +11,7 @@ export const Tab = ({ tabdata }) => {
   }, []);
   return (
     <>
-     <ul className="tabs left-right" data-deep-link="true" data-tabs id="tab">
+     <ul className="tabs left-right" data-deep-link="true" data-tabs id="tab" role="tablist">
       {tabdata.map((item, index) => (
         <li key={index} className="tabs-title">
           <a href={'#'+item.text_id} aria-selected="true" >{item.text}</a>
