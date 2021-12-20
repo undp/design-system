@@ -3,7 +3,7 @@ import './FormTypes.scss';
 import { Inputcomponent } from '../Inputfields/Input_group';
 import { Image } from '../../../Atom/Images/Image/Image';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
-
+ 
 export const FormTypes = ({
   element,
   type,
