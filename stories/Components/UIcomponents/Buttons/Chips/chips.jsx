@@ -4,7 +4,7 @@ import './chips.scss';
 export const Chips = ({ label, Type }) => {
 
   let type = 'no-cross';
-  if(Type == 'With_X'){
+  if(Type == 'With X'){
     type = 'cross'
   }
   
