@@ -4,16 +4,14 @@
 
 /* toggle search start */
 .toggle-search {
-  background: none;
+  background: $color-white url(#{$img-path-Iconback}/Search_black.svg) no-repeat 0 0/1.75rem;
   border: 0;
   border-bottom: 1px solid $color-black;
   cursor: pointer;
+  height: 2.625rem;
   padding: 0 0 0.625rem;
   text-decoration: underline;
-
-  .icon-search-black {
-    height: 1.75rem;
-  }
+  width: 1.75rem;
 }
 
 .select-wrapper {

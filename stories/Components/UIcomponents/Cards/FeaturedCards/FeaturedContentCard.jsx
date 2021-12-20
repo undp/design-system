@@ -25,7 +25,7 @@ export const FeaturedContentCard = ({
   }, []);
   return (
     <div className="grid-x grid-margin-x">
-      {headertext && <div className="cell medium-3 medium-offset-1 feature__card-title left-right"><Heading type="2" label={headertext} /></div>}
+      {headertext && <div className="cell medium-3 medium-offset-1 small-offset-1 feature__card-title left-right"><Heading type="2" label={headertext} /></div>}
       {data.map((item, index) => (
         <div key={index} className={['cell', `${item.scale ? size_options[`${item.scale}`] : size_options[`${args.size}`]}`].join(' ')}>
           <a href="#" className={['feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_options[`${image}`]}`}`].join(' ')}>

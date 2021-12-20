@@ -1,7 +1,7 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/typography';
 @import '../../../assets/scss/mixins';
-
+ 
 /* project data start */
 .project-data__wrapper {
   border-bottom: 1px solid $color-gray-400;
@@ -12,11 +12,7 @@
 }
 
 .project-data__section {
-  .block {
-    &-1,
-    &-2,
-    &-3,
-    &-4 {
+  > .cell {
       margin-top: $spacing-32;
 
       @include devicebreak(small) {
@@ -30,10 +26,10 @@
       }
 
       h6 {
-        margin-bottom: 4px;
+        margin-bottom: 0.25rem;
       }
     }
-  }
+
 }
 
 h2.project-data__title {
