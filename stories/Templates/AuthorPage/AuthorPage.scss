@@ -1,23 +1,26 @@
-@import "../../assets/scss/variables";
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/breakpoints";
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
 
 /* author page start */
 .author-page {
   margin-top: 4.75rem;
-  @include devicebreak(xlarge){
+
+  @include devicebreak(xlarge) {
     margin-top: 10.75rem;
   }
-  .breadcrumb{
+
+  .breadcrumb {
     margin: 3.5625rem 0;
   }
+
   .author-content {
     margin-bottom: $spacing-136;
     margin-top: $spacing-80;
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .author-page {
     .medium-offset-1 {
       @include devicebreak(small) {
