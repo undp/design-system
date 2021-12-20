@@ -112,10 +112,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    width: 100%;
 
     img {
       display: block;
       height: 100%;
+      width: 100%;
       max-width: 100%;
       object-fit: cover;
     }
@@ -157,7 +159,7 @@
   }
 
   .feature__card-description {
-    margin-bottom: 2.125rem;
+    margin-bottom: 3rem;
     @include devicebreak(medium) {
       margin-bottom: 4.688rem;
     }
