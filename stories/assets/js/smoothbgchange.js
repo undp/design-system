@@ -6,7 +6,7 @@ $(window).scroll(function() {
     var scroll = $window.scrollTop() + ($window.height() / 3);
     $container.each(function () {
       var $this = $(this);
-      if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+      if ($this.position().top <= scroll && $this.position().top + $this.height() + 150 > scroll) {
         $body.removeClass(function (index, css) {
           return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
         });

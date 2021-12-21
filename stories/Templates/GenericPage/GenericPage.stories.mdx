@@ -8,8 +8,15 @@ import BackgroundVideo from '../../assets/video/video_sample.mp4';
 import fluidCarouselImg from '../../assets/images/crosssboard.jpg';
 import logo from '../../assets/images/undp-logo-blue.svg';
 import logowhite from '../../assets/images/undp-logo-white.svg';
-import {getCaptionForLocale as Languageswitcher} from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
-import {getNavLinks, menuData} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {
+  getNavLinks,
+  menuData,
+  getSiteTitle,
+  getLocationDataForLocale,
+  getBackForLocale,
+  getSelectlanguage,
+} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -305,9 +312,15 @@ Template for Generic Page
         sidebarCaptionData={sidebarCaptionData(locale)} 
         ContentCardData={ContentCardData(locale)} 
         footerData={footerData(locale)}
-      locale={locale} leftNavigationData={leftNavigationData}
-      navigationData={navigationData} rightNavigationData={rightNavigationData}
-      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
+      locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        menuData={menuData(locale)}
+        languageswitcherData={Languageswitcher(locale)}
+        locationData={getLocationDataForLocale(locale)}
+        langSelect={getSelectlanguage(locale)}
+        backcaption={getBackForLocale(locale)}
         logo={logo}
         logowhite={logowhite}
       ></GenericPage>

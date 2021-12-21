@@ -121,7 +121,7 @@
       opacity: 0.75;
     }
 
-    .cta__link::after {
+    .cta--space::after {
       @include translate(70%, 0);
     }
   }
@@ -152,7 +152,7 @@
 
 [dir='rtl'] {
   .content-card:hover {
-    .cta__link::after {
+    .cta--space::after {
       @include transform(translate(-50%, 0) rotate(180deg));
     }
   }

@@ -6,13 +6,12 @@ import { Heading } from "../../Atom/Typography/Heading/Heading";
 import { FeaturedCard } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard";
 import { HeadingBig } from "../../Molecules/Text/HeadingBig/HeadingBig";
 import { PageWideCard } from "../../Organism/Blocks/FeaturedContentCard/PagewideContentCard/PageWideCard";
-import { ImageRevelCards } from "../../Organism/Blocks/ImageRevelCards/ImageRevelCards";
+import { ImageRevealCards } from "../../Organism/Blocks/ImageRevealCards/ImageRevealCards";
 import { StatsSlider } from "../../Patterns/StatsSlider/StatsSlider";
 import CountrySiteHeader from "../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader"
 import { Footer } from "../../Organism/Footer/Footer";
-import logo from '../../assets/images/undp-logo-blue.svg';
-import logowhite from '../../assets/images/undp-logo-white.svg';
 import "./countryhomepage.scss";
+
 
 export const CountryHomepage = ({
   footerData,
@@ -44,7 +43,14 @@ export const CountryHomepage = ({
   langSelect,
   backcaption,
   siteTitleData,
+  logo,
+  logowhite,
+  headingTop,
+  takeAcrtionHead
 }) => {
+  useEffect(() => {
+    viewport('.our-impact h2');  
+}, []);
   return (
     <div>
     <CountrySiteHeader
@@ -59,11 +65,12 @@ export const CountryHomepage = ({
         langSelect={langSelect}
       />
 
-      <div className="grid-container fluid content-bottom">
+      <div className="grid-container fluid country-page-wrapper">
         <div className="grid-x grid-margin-x hero-container">
           <div className="cell large-12">
             <Homepageherooption
               title={herotitle}
+              headingTop={headingTop}
               content={herotext}
               button={herobtnlabel}
               subtitle={herosubtitle}
@@ -72,11 +79,7 @@ export const CountryHomepage = ({
             />
           </div>
         </div>
-        <div className="grid-x grid-margin-x">
-          <div className="cell large-12">
-            <FeaturedCard data={featureddata} headertext={headertext} />
-          </div>
-        </div>
+        <FeaturedCard data={featureddata} headertext={headertext} />
         <div className="grid-x grid-margin-x">
           <div className="cell large-11 medium-11 large-offset-1">
             <HeadingBig
@@ -85,46 +88,34 @@ export const CountryHomepage = ({
             />
           </div>
         </div>
-        <div class="grid-x margin-top-136">
+        <div class="grid-x wide-card-heading">
           <div class="cell small-12 medium-12 large-11 large-offset-1">
             <Heading type="2" label={storiesHeading} />
           </div>
-        </div>
-        <div className="grid-x grid-margin-x">
-          <div className="cell large-12">
             <PageWideCard
               label={PagewidecardTag}
               title={PagewidecardTitle}
               paragraph={PagewidecardParagraph}
               button={PagewidecardBtnlabel}
             />
-          </div>
         </div>
-        <div className="grid-x grid-margin-x">
-          <div className="cell large-12">
-            <ContentCardWithAndWithoutImage
-              CardWithOutImage={featureddataafterwedo.contentdata}
-              CardWithImage={featureddataafterwedo.CardWithImageData}
-              storyBtn={featureddataafterwedo.storyBtn}
+        
+        <ContentCardWithAndWithoutImage
+              data={featureddataafterwedo.contentdata }
+              storyBtn={featureddataafterwedo.storyBtn }
             />
-          </div>
-        </div>
-        <div class="grid-x margin-top-136">
+        <div class="grid-x our-impact">
           <div class="cell small-12 medium-12 large-11 large-offset-1">
-            <Heading type="2" label={statHeading} />
+            <Heading className="left-right" type="2" label={statHeading} />
           </div>
-          <div class="cell small-12 medium-12 large-12 margin-top-48">
+          <div class="cell small-12 medium-12 large-12">
             <StatsSlider data={StatsSliderData} />
           </div>
         </div>
-        <div className="grid-x grid-margin-x">
-          <div className="cell large-12">
-            <ImageRevelCards
-              data={takeactioncard.takeactiondata}
-              takeActionHeading={takeactioncard.takeActionHeading}
-            />
-          </div>
-        </div>
+        <ImageRevealCards
+            data={takeactioncard.data}
+            label={takeAcrtionHead}
+          />
       </div>
 
       <Footer

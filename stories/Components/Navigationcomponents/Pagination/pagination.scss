@@ -72,25 +72,25 @@
 [dir='rtl'] {
   .pagination {
     padding-right: 0;
-  }
 
-  li {
-    margin-left: $spacing-24;
-    margin-right: 0;
-
-    &:first-child {
-      a {
-        &::before {
-          @include transform(rotateZ(180deg));
+    li {
+      margin-left: $spacing-24;
+      margin-right: 0;
+  
+      &:first-child {
+        a {
+          &::before {
+            @include transform(rotateZ(180deg));
+          }
         }
+  
       }
-
-    }
-
-    &:last-child {
-      a {
-        &::before {
-          @include transform(rotateZ(180deg));
+  
+      &:last-child {
+        a {
+          &::before {
+            @include transform(rotateZ(180deg));
+          }
         }
       }
     }
