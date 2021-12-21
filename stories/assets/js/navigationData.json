@@ -40,7 +40,7 @@
             },
             "title": "Page Title 2",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -85,7 +85,7 @@
             },
             "title": "Page Title 3",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -163,7 +163,7 @@
             },
             "title": "Page Title",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -208,7 +208,7 @@
             },
             "title": "Page Title",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -253,7 +253,7 @@
             },
             "title": "Page Title",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -298,7 +298,7 @@
             },
             "title": "Page Title",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -348,7 +348,7 @@
             },
             "title": "Page Title234",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -393,7 +393,7 @@
             },
             "title": "Page Title",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -438,7 +438,7 @@
             },
             "title": "Page Title",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -483,7 +483,7 @@
             },
             "title": "Page Title",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -533,7 +533,7 @@
             },
             "title": "Page Title",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -578,7 +578,7 @@
             },
             "title": "Page Title",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -623,7 +623,7 @@
             },
             "title": "Page Title",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -668,7 +668,7 @@
             },
             "title": "Page Title",
             "description": "Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "Sub Page",
@@ -752,7 +752,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -797,7 +797,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -875,7 +875,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -920,7 +920,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -965,7 +965,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -1010,7 +1010,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -1060,7 +1060,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -1105,7 +1105,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -1150,7 +1150,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -1195,7 +1195,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -1245,7 +1245,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -1290,7 +1290,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -1335,7 +1335,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -1380,7 +1380,7 @@
             },
             "title": "عنوان الصفحة",
             "description": "لم أكن أكرهها أبدا. لم يعاني أي شخص من أي من هذه العواقب ، وبالتالي لم يكن أحد يعاني من أي من هذه الآلام. سآتي من أي تمييز مقابل. أو أفسدهم كل حكيم آخر.",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "الصفحة الفرعية",
@@ -1464,7 +1464,7 @@
             },
             "title": "Page Title 2",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -1509,7 +1509,7 @@
             },
             "title": "Page Title 3",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -1587,7 +1587,7 @@
             },
             "title": "Page Title",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -1632,7 +1632,7 @@
             },
             "title": "Page Title",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -1677,7 +1677,7 @@
             },
             "title": "Page Title",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -1722,7 +1722,7 @@
             },
             "title": "Page Title",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -1772,7 +1772,7 @@
             },
             "title": "Page Title234",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -1817,7 +1817,7 @@
             },
             "title": "Page Title",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -1862,7 +1862,7 @@
             },
             "title": "Page Title",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -1907,7 +1907,7 @@
             },
             "title": "Page Title",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -1957,7 +1957,7 @@
             },
             "title": "Page Title",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -2002,7 +2002,7 @@
             },
             "title": "Page Title",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -2047,7 +2047,7 @@
             },
             "title": "Page Title",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -2092,7 +2092,7 @@
             },
             "title": "Page Title",
             "description": "သူမကို ဘယ်တုန်းကမှ မမုန်းခဲ့ဖူးဘူး။ ဒီလိုဆိုးကျိုးတွေ ဘယ်သူမှ မကြုံဖူးကြတဲ့အတွက် ဒီဝေဒနာကို ဘယ်သူမှ မခံစားရပါဘူး။ ဆန့်ကျင်ဘက် ခွဲခြားမှုကနေ လာမယ်။ သို့တည်းမဟုတ် အခြားသောပညာရှိတိုင်း ဖောက်ပြန်တတ်၏။",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
@@ -2175,7 +2175,7 @@
             },
             "title": "Page Title 2",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2220,7 +2220,7 @@
             },
             "title": "Page Title 3",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2298,7 +2298,7 @@
             },
             "title": "Page Title",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2343,7 +2343,7 @@
             },
             "title": "Page Title",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2388,7 +2388,7 @@
             },
             "title": "Page Title",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2433,7 +2433,7 @@
             },
             "title": "Page Title",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2483,7 +2483,7 @@
             },
             "title": "Page Title234",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2528,7 +2528,7 @@
             },
             "title": "Page Title",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2573,7 +2573,7 @@
             },
             "title": "Page Title",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2618,7 +2618,7 @@
             },
             "title": "Page Title",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2668,7 +2668,7 @@
             },
             "title": "Page Title",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2713,7 +2713,7 @@
             },
             "title": "Page Title",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2758,7 +2758,7 @@
             },
             "title": "Page Title",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",
@@ -2803,7 +2803,7 @@
             },
             "title": "Page Title",
             "description": "私は彼女を憎んだことは一度もない。誰もこれらの結果を経験したことがないので、誰もこれらの苦痛を経験していません。私は反論された区別から来ます。または他のすべての賢者はそれらを破壊しました。",
-            "image": "http://localhost:6006/static/media/stories/assets/images/bees.svg",
+            "image": "../images/bees.svg",
             "linksCol1": [
               {
                 "label": "サブページ",

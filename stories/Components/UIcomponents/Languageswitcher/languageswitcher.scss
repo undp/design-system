@@ -1,6 +1,6 @@
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
 /* language-switcher start */
 .dropdown-language {
@@ -18,9 +18,12 @@
     left: 16px;
     padding: 0;
     position: absolute;
+    z-index: 9;
 
     &-item {
       list-style: none;
+      margin-bottom: 0;
+
       a {
         @extend %language_switcher;
 
@@ -45,7 +48,7 @@
 
   &::before {
     background: url(#{$img-path-Icon}/Language.svg) no-repeat left center;
-    content: "";
+    content: '';
     height: 26px;
     margin-right: $spacing-08;
     width: 25px;
@@ -55,7 +58,7 @@
     @include transition(0.2s ease-in-out);
 
     background: url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
-    content: "";
+    content: '';
     height: 10px;
     margin-left: $spacing-08;
     width: 15px;
@@ -74,7 +77,7 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .dropdown-language {
     &__content {
       left: unset;
@@ -89,8 +92,8 @@
   }
 
   .dropdown-btn::after {
-    margin-right: $spacing-08;
     margin-left: 0;
+    margin-right: $spacing-08;
   }
 }
 

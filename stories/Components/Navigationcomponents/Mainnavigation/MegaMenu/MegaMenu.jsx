@@ -23,10 +23,10 @@ const MegaMenu = ({ text }) => (
             <p className="mega-description">Ea rem numquam ad odit. Consequatur numquam harum nemo quisquam dolores harum itaque omnis qui. Veniam a quisquam distinctio repellendus. Vel sapiente omnis alias eos corrupti.</p>
             <div className="sub-sub-menu">
               <ul className="list-col-first">
-                <li><a className="cta__link cta--arrow" href="#">Sub Page</a></li>
+                <li><a className="cta__link cta--space" href="#">Sub Page</a></li>
               </ul>
               <ul className="list-col-second">
-                <li><a className="cta__link cta--arrow" href="#">Sub Page</a></li>
+                <li><a className="cta__link cta--space" href="#">Sub Page</a></li>
               </ul>
             </div>
           </div>
