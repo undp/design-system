@@ -70,10 +70,13 @@
         line-height: 0;
         list-style-type: none;
         margin-bottom: $spacing-24;
+        text-transform: uppercase;
       }
     }
   }
-
+.mega-title{
+  margin-bottom: $spacing-24;
+}
   .mega-image {
     box-sizing: border-box;
     padding-left: $spacing-48;
