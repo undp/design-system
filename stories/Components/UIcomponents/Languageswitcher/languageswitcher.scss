@@ -21,6 +21,8 @@
 
     &-item {
       list-style: none;
+      margin-bottom: 0;
+
       a {
         @extend %language_switcher;
 
@@ -93,5 +95,4 @@
     margin-left: 0;
   }
 }
-
 /* language-switcher start */

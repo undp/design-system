@@ -3,6 +3,7 @@
 /* card_thumbnail__image start */
 .card-thumbnail__image {
   position: relative;
+  display: inline-flex;
 
   &::before {
     @extend %absolute__content;
