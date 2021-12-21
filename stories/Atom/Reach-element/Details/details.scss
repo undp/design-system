@@ -48,10 +48,17 @@ details {
 }
 
 [dir='rtl'] {
-  details summary::before {
+  details {
+    summary::before {
     margin-left: $spacing-04;
     margin-right: 0;
+      @include transform(translate(0) rotate(180deg));
+    }
+    &[open] { 
+      summary::before {
+        @include transform(translate(0) rotate(0deg));
+      }
+    }
   }
 }
-
 /* details tag end */
