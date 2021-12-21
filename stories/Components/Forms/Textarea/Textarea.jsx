@@ -10,13 +10,13 @@ export const Textarea = ({
 
   return (
     <>
-      <div className="input-group">
-        {labelText && <label htmlFor={[`${type}`]} className={[`input-group__label--${state}`].join(' ')}>{ labelText }</label>}
-        <div className={[`input-group__icon ${type}-field ${state}`].join(' ')}>
-          <textarea type={type} id={id}  disabled={State == 'Disabled'} required={required} placeholder={placeholder} minlength={minlength} cols={cols} rows={rows} className={['input__controls', `input__controls--${type} ${state}`].join(' ')}></textarea>
+      <div className={['input-group', `${state}`].join(' ')}>
+        {labelText && <label htmlFor={[`${type}`]} className='input-group__label'>{ labelText }</label>}
+        <div className={[`input-group__icon ${type}-field`]}>
+          <textarea type={type} id={id}  disabled={State == 'Disabled'} required={required} placeholder={placeholder} minlength={minlength} cols={cols} rows={rows} className={['input__controls ', `input__controls--${type} ${state}-state`].join(' ')}></textarea>
         </div>
-        {helpText && <div htmlFor={[`${type}`]} className={[`input-group__label--${state}-help`].join(' ')}>{ helpText }</div>}
-        {(State == 'Error') && <div htmlFor={[`${type}`]} className={['input-error', `input-group__label--${state}-error`].join(' ')}>{ errorText }</div>}
+        {helpText && <p className='input-group__label-help'>{ helpText }</p>}
+        {(State == 'Error') && <p className='input-error'>{ errorText }</p>}
       </div>
     </>
 )};
