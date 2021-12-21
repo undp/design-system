@@ -47,6 +47,27 @@
   }
 }
 
-.progress-container {
-  margin-top: 3.813rem;
+.global-header {
+  + .progress-container {
+    margin-top: 4.6875rem;
+    position: fixed;
+    z-index: 1;
+
+    @include devicebreak(xlarge) {
+      margin-top: 7.1875rem;
+    }
+    .progress-top {
+      top: inherit;
+    }
+  }
+
+  ~ .pagehero-wrapper {
+    margin-top: 1.25rem;
+    @include devicebreak(large) {
+      margin-top: 5.688rem;
+    }
+    @include devicebreak(xlarge) {
+      margin-top: 7.1875rem;
+    }
+  }
 }
