@@ -36,7 +36,7 @@
 
     @media only screen and (hover: none) and (pointer: coarse){
       &:hover {
-        border-bottom: 2px solid $color-dark-red;
+        border-bottom: 2px solid transparent;
       }
     }
 
