@@ -11,6 +11,12 @@
       font-size: $font-size-14;
       margin-bottom: 0;
     }
+
+    &-error {
+      color: $color-red;
+      font-size: $font-size-16;
+      margin-bottom: 0;
+    }
   }
   
   &.disabled {
@@ -102,12 +108,6 @@
       max-width: 100%;
       resize: vertical;
     }
-  }
-
-  .input-error {
-    color: $color-red;
-    font-size: $font-size-16;
-    margin-bottom: 0;
   }
 }
 
