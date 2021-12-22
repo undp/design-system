@@ -1,4 +1,5 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { Author } from './Authors';
 import user from '../../../../assets/images/author.png';
 
@@ -110,72 +111,115 @@ export const getCaptionForLocale = (locale) => {
 };
 
 <Meta 
-  title="Components/UI components/Authors/Author" argTypes={{
-  Image: {
-    options: ['True', 'False'],
-    control: { type: 'inline-radio' },
-    defaultValue: 'True'
-  },
-  Number: {
-    options: ['One', 'Two', 'Three', 'Four', 'Five'],
-    control: { type: 'inline-radio' },
-    defaultValue: 'One'
-  }
-  }}/>
-
-<style>{`
-  .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-  div[id^="story--molecules-text-authors"] {
-    padding: 20px;
-    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 25px 0px 40px;
-    border-radius: 4px;
-  }
-`}</style>
-
-# Authors component
-
-## Overview
-
-The Authors Component is created for showing the authors name, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
-
-## Default Representation & various possible states
-
-<div className="subheading">Author Column</div>
-
-<Story name="Author">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Author image={user} alt= 'Headshot of XYZ' data={caption} {...args}></Author>;
+  title="Components/UI components/Authors/Author" 
+  argTypes={{
+    Image: {
+      options: ['True', 'False'],
+      control: { type: 'inline-radio' },
+      defaultValue: 'True'
+    },
+    Number: {
+      options: ['One', 'Two', 'Three', 'Four', 'Five'],
+      control: { type: 'inline-radio' },
+      defaultValue: 'One'
+    }
   }}
-</Story>
+/>
 
-## Dependencies
 
-Not Applicable
+# Author
+The author component gives an overview of the authors of an article/photo.
 
-## Usage
 
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>authors.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Overview
+
+The Author component highlights the author(s) ’s name, designation, and photo for an article or story they have contributed to on the site.
+
+#### When to use:
+
+- The author component is primarily used to give credit to any article or story they have published on the site.
+
+### Formatting
+
+#### Default
+The author component consists of a single author or multiple authors.
+If the author has a profile picture, it is displayed as follows,
+
+<Canvas>
+  <Story name="With picture">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Author image={user} alt='Headshot of XYZ' data={caption} {...args} Image="True"></Author>;
+    }}
+  </Story>
+</Canvas>
+
+If the author does not have a profile photo or there are 4 or more authors contributing to a single article/photo, then their information is displayed as follows.
+
+<Canvas>
+  <Story name="Without picture">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Author image={user} alt='Headshot of XYZ' data={caption} {...args} Image="False"></Author>;
+    }}
+  </Story>
+</Canvas>
+
+#### Multiple authors
+
+If there are up to 3 authors, they are displayed horizontally.
+
+<Canvas>
+  <Story name="Multiple authors with picture">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Author Image="False" image={user} alt='Headshot of XYZ' data={caption} {...args} Number="Three"></Author>;
+    }}
+  </Story>
+</Canvas>
+
+
+If there are 4 or more authors, their profile pictures are not displayed.
+
+<Canvas>
+  <Story name="Multiple authors without picture">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Author Image="False" image={user} alt='Headshot of XYZ' data={caption} {...args} Number="Four" Image="False"></Author>;
+    }}
+  </Story>
+</Canvas>
+
+On smaller devices, the authors are stacked vertically if less than 4
+
+![Author on small screen](https://github.com/undp/design-system/blob/develop/docs-media/author-small-screen-picture.jpg "Author on small screen")
+
+If more than 4 authors, on smaller screens, they are displayed as follows
+
+![Author on small screen](https://github.com/undp/design-system/blob/develop/docs-media/author-small-screen.jpg "Author on small screen")
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+
+### Content
+The author component contains the first and last name, profile picture (optional) and designation of the author(s).
+
+### Behaviors
+
+#### States
+
+The author component will have a minimum of 1 author and can expand to as many authors as needed. There can be combinations of authors with or without profile photos.
+
+#### Interactions
+
+The author component can be used with or without a link. When linking, the entire block—image, name, designation—should be clickable. 
+
+### Changelog
+1.0 — Released component
