@@ -1,6 +1,13 @@
 import { Meta, Story } from '@storybook/addon-docs';
 
-<Meta title="Getting started/Intro" />
+<Meta title="Getting started/Intro" 
+	parameters={{
+		viewMode: 'docs',
+		previewTabs: { 
+			canvas: { hidden: true } 
+		},
+	}}
+/>
 
 # Intro
 The select component allows users to choose multiples option from a list. It is used in forms when there are multiple choices that can be collapsed under one title.
