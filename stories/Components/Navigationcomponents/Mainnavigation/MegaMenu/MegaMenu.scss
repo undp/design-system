@@ -37,6 +37,22 @@
         a {
           background: $color-blue-600;
           color: $color-white;
+          &.sub-external{
+            justify-content: space-between;
+            align-items: center;
+          &::after{
+            background: url(#{$img-path-Iconfourback}/external-default-white.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
+            cursor: pointer;
+            height: $spacing-32;
+            width: $spacing-32;
+            content:'';
+          }
+          &:hover{
+            &::after{
+              background: url(#{$img-path-Iconfourback}/external-white-hover.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
+            }
+          }
+        }
         }
       }
 
@@ -48,6 +64,23 @@
         font-weight: 700;
         padding: $spacing-24;
         text-transform: uppercase;
+
+        &.sub-external{
+            justify-content: space-between;
+            align-items: center;
+          &::after{
+            background: url(#{$img-path-Iconfourback}/external-default.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
+            cursor: pointer;
+            height: $spacing-32;
+            width: $spacing-32;
+            content:'';
+          }
+          &:hover{
+            &::after{
+              background: url(#{$img-path-Iconfourback}/external-hover.svg) no-repeat 0 bottom/32px 34px;
+            }
+          }
+        }
 
         &:hover {
           background: $color-blue-600;
