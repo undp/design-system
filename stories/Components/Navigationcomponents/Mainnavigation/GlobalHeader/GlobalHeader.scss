@@ -122,20 +122,31 @@
 }
 
 [dir='rtl'] {
-  header {
+  .global-header {
     .mid-nav {
       .menu {
-        &:first-child {
-          li {
-            margin: $spacing-12 4.4375rem $spacing-12 0;
+        &:last-child {
+          justify-content: flex-start;
+          padding-left: 0;
+          padding-right: 6.9375rem;
+        }
 
-            &:first-child {
-              margin-right: 0;
-            }
+        li {
+          margin: $spacing-12 4.4375rem $spacing-12 0;
+
+          &:first-child {
+            margin-right: 0;
+          }
+
+          &:last-child {
+            margin-right: 4.4375rem;
           }
         }
 
-        &:last-child {
+        &:first-child {
+          padding-left: 6.9375rem;
+          padding-right: 0;
+
           li {
             margin: $spacing-12 0 $spacing-12 4.4375rem;
 
