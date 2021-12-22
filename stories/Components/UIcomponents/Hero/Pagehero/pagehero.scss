@@ -31,6 +31,10 @@
       font-weight: 700;
       padding: 0 $spacing-12;
       text-transform: uppercase;
+      margin-top: $spacing-96;
+      @include devicebreak(medium) {
+        margin-top: 197px;
+      }
     }
 
     &__subtitle {
@@ -40,6 +44,9 @@
 
       @include devicebreak(medium) {
         margin-top: 12.625rem;
+      }
+      & + .pagehero-wrapper__title {
+        margin-top: 0;
       }
     }
   }

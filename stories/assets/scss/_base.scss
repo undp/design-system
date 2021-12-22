@@ -27,6 +27,10 @@
   }
 }
 
+.height-full {
+  height: 100%;
+}
+
 .overlay-grey {
   &::before {
     @extend %absolute__content;

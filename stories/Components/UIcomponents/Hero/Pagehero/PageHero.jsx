@@ -32,8 +32,8 @@ export const PageHero = ({
       <div className="grid-x">
         <div className="cell large-6 medium-9 pagehero__content">
           <Breadcrumbcomponent data={data} Color='White' />
-          <Heading type="4" className="pagehero-wrapper__subtitle color-white left-right" label={content} />
-          <Heading type="2" className="pagehero-wrapper__title color-white left-right" label={title} />
+          {content && <Heading type="4" className="pagehero-wrapper__subtitle color-white left-right" label={content} />}
+          {title && <Heading type="2" className="pagehero-wrapper__title color-white left-right" label={title} />}
         </div>
       </div>
     </div>

@@ -124,6 +124,11 @@
     .cta--space::after {
       @include translate(70%, 0);
     }
+    .cta--arrow::after {
+        background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
+        width: 100px;
+        margin-left: 0.25rem;
+    }
   }
 }
 
@@ -154,6 +159,10 @@
   .content-card:hover {
     .cta--space::after {
       @include transform(translate(-50%, 0) rotate(180deg));
+    }
+    .cta--arrow::after {
+      margin-right: 0.25rem;
+      margin-left: 0;
     }
   }
 }
