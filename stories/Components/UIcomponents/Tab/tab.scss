@@ -34,12 +34,6 @@
       }
     }
 
-    @media only screen and (hover: none) and (pointer: coarse){
-      &:hover {
-        border-bottom: 2px solid $color-dark-red;
-      }
-    }
-
     a {
       @extend %img_none;
       font-size: $font-size-16;
