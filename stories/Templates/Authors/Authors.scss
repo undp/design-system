@@ -1,82 +1,19 @@
-@import "../../assets/scss/variables";
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/breakpoints";
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
 
-.author-page {
+.authors-page {
   margin-top: 4.75rem;
 
   @include devicebreak(xlarge) {
     margin-top: 10.75rem;
   }
-  .align-center {
-    display: flex;
-    align-items: flex-end;
-    .exoandablesearch {
-      width: 100%;
 
-      @include devicebreak(large) {
-        margin-left: -0.3125rem;
-        margin-right: -0.3125rem;
-      }
-    }
-  }
-  .mobile-author-filter {
-    display: none;
-    @include devicebreak(small) {
-      display: block;
-    }
-  }
-  .author-filter {
-    @include devicebreak(small) {
-      display: none;
-      &.author-filter-show {
-        display: block;
-      }
-    }
-  }
-  .hide-sort {
-    display: none;
-  }
-  .close-btn {
-    display: none;
-
-    &.show-close {
-      display: block;
-    }
-    .button {
-      &.button-secondary {
-        background-color: $color-gray-300;
-        color: $color-black;
-      }
-    }
-  }
-  .button {
-    text-transform: uppercase;
-  }
-  .authors-heading {
-    margin: 6.125rem 0 4.1875rem;
-    @include devicebreak(small) {
-      margin: 3.3125rem 0 $spacing-64;
-    }
-  }
-
-  .author-content {
-    margin-top: $spacing-80;
-    margin-bottom: $spacing-136;
-  }
-  .author-card {
-    border-top: 2px solid $color-black;
-    margin-top: $spacing-64;
-    padding-top: $spacing-24;
-    @include devicebreak(small) {
-      margin-top: $spacing-40;
-    }
-  }
   @include devicebreak(small) {
     .author-cards {
       .cell {
         &:first-child {
-          .authorcard {
+          .author-card {
             @include devicebreak(small) {
               border-top: 0;
               margin-top: 0;
@@ -84,10 +21,11 @@
           }
         }
       }
+
       &.find-first-author {
         .cell {
           &:first-child {
-            .authorcard {
+            .author-card {
               @include devicebreak(small) {
                 border-top: 2px solid $color-black;
                 margin-top: $spacing-40;
@@ -98,36 +36,137 @@
       }
     }
   }
-  .view-btn-cell {
-    margin-top: 3.75rem;
-    margin-bottom: 4.1875rem;
+
+  .breadcrumb {
+    margin-top: $spacing-80;
+
+    @include devicebreak(small) {
+      margin-top: $spacing-24;
+    }
   }
+
+  .align-center {
+    align-items: flex-end;
+    display: flex;
+
+    .exoandablesearch {
+      width: 100%;
+
+      @include devicebreak(large) {
+        margin-left: -0.3125rem;
+        margin-right: -0.3125rem;
+      }
+    }
+  }
+
+  .mobile-author-filter {
+    display: none;
+
+    @include devicebreak(small) {
+      display: block;
+    }
+  }
+
+  .author-filter {
+    @include devicebreak(small) {
+      display: none;
+
+      &.author-filter-show {
+        display: block;
+      }
+    }
+  }
+
+  .hide-sort {
+    display: none;
+  }
+
+  .close-btn {
+    display: none;
+
+    &.show-close {
+      display: block;
+    }
+
+    .button {
+      &.button-secondary {
+        background-color: $color-gray-300;
+        color: $color-black;
+      }
+    }
+  }
+
+  .button {
+    text-transform: uppercase;
+  }
+
+  .authors-heading {
+    margin: 6.125rem 0 4.1875rem;
+
+    @include devicebreak(small) {
+      margin: 3.3125rem 0 $spacing-64;
+    }
+  }
+
+  .author-content {
+    margin-bottom: $spacing-136;
+    margin-top: $spacing-80;
+  }
+
+  .author-card {
+    border-top: 2px solid $color-black;
+    margin-top: 3.75rem;
+    padding-top: $spacing-24;
+
+    @include devicebreak(small) {
+      margin-top: $spacing-48;
+
+      h6 {
+        font-size: $font-size-16;
+      }
+    }
+  }
+
+  .view-btn-cell {
+    margin-bottom: 4.1875rem;
+    margin-top: 3.75rem;
+  }
+
   .select-box {
+    height: auto;
     max-width: 100%;
+
     &.author-select {
       .selected {
         min-width: 100%;
         width: 100%;
       }
     }
+
+    .options-container {
+      min-width: inherit;
+    }
   }
 }
-[dir="rtl"] {
-  .author-page {
+
+[dir='rtl'] {
+  .authors-page {
     .medium-offset-1 {
       @include devicebreak(small) {
-        margin-right: 0;
         margin-left: 0;
+        margin-right: 0;
       }
     }
+
     @media print, screen and (min-width: 48em) {
       .grid-margin-x > .medium-offset-3 {
+        margin-left: 0.625rem;
         margin-right: calc(25% + 1.5rem / 2);
-        margin-left: 0.625rem;
       }
+
       .medium-offset-3 {
-        margin-right: 25%;
         margin-left: 0.625rem;
+        margin-right: 25%;
       }
     }
   }
