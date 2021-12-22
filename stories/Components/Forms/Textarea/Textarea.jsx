@@ -16,7 +16,7 @@ export const Textarea = ({
           <textarea type={type} id={id}  disabled={State == 'Disabled'} required={required} placeholder={placeholder} minlength={minlength} cols={cols} rows={rows} className={['input__controls ', `input__controls--${type} ${state}-state`].join(' ')}></textarea>
         </div>
         {helpText && <p className='input-group__label-help'>{ helpText }</p>}
-        {(State == 'Error') && <p className='input-error'>{ errorText }</p>}
+        {(State == 'Error') && <p className='input-group__label-error'>{ errorText }</p>}
       </div>
     </>
 )};

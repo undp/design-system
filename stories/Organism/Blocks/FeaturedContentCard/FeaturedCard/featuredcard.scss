@@ -32,7 +32,11 @@
   .featured-card-container {
     .feature__card {
       &-title {
-        
+        @include devicebreak(small){
+          margin-right: calc(8.33333% + 0.75rem / 2);
+          margin-left: 0.375rem;
+        }
+
         @include devicebreak(medium){
           margin-right: calc(8.33333% + 0.75rem / 2);
           margin-left: 0.375rem;

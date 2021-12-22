@@ -86,27 +86,6 @@ The <code>input</code> HTML element is used to create interactive controls for w
 
 <div className="subheading"> Base Input </div>
 
-<Story name="Labeltext">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail1} {...args}></Inputcomponent>;
-  }}
-</Story>
-
-<Story name="Label-Help">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent helpText={caption.detail8} {...args}></Inputcomponent>;
-  }}
-</Story>
-
-<Story name="Label-Error">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent errorText={caption.detail2} {...args}></Inputcomponent>;
-  }}
-</Story>
-
 <Story name="Text">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);

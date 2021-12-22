@@ -28,7 +28,7 @@ export const Inputcomponent = ({
           />
         </div>
         {helpText && <p className='input-group__label-help'>{ helpText }</p>}
-        {(State == 'Error') && <p className='input-error'>{ errorText }</p>}
+        {(State == 'Error') && <p className='input-group__label-error'>{ errorText }</p>}
       </div>
     </>
   );

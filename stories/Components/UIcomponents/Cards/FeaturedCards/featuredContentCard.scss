@@ -23,9 +23,7 @@
     }
 
     .cta--arrow::after {
-      @include translate(10px, 0);
-      @include transition(0.2s ease);
-
+      margin-left: 0.25rem;
       background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
       width: 100px;
     }
@@ -223,7 +221,8 @@
 [dir='rtl'] {
   .feature__card:hover {
     .cta--arrow::after {
-      @include transform(translate(0, 0) rotate(180deg));
+      @include transform(rotate(180deg));
+      margin-right: 0.25rem;
     }
   }
 
