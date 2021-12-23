@@ -6,6 +6,15 @@
 .image {
   &-section {
     justify-content: center;
+
+    .image__caption {
+      margin: $spacing-16 $spacing-24 0;
+
+      @include devicebreak(medium) {
+        margin: $spacing-32 0 0;
+        width: 58.33333%;
+      }
+    }
   }
 }
 
@@ -17,6 +26,7 @@
       display: block;
       margin: 0 0 0 $spacing-24;
       padding-bottom: 0;
+      width: 25%;
 
       &_para {
         font-size: $font-size-14;
@@ -50,16 +60,6 @@
     @extend %img-cover;
 
     display: block;
-  }
-}
-
-.image-section__description {
-  .image__caption {
-    margin: $spacing-16 $spacing-24 0;
-
-    @include devicebreak(medium) {
-      margin: $spacing-32 0 0;
-    }
   }
 }
 
