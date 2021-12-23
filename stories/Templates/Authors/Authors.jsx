@@ -12,6 +12,7 @@ import init from "../../assets/js/select-init";
 import { Authorcard } from "../../Components/UIcomponents/Author/Authorcard/Authorcard";
 import { CtaButton } from "../../Components/UIcomponents/Buttons/Cta_button/CtaButton";
 import { SearchExpand } from "../../Components/Forms/expandable search/SearchExpand";
+import CustomSelect from "../../Components/Forms/Dropdowns/CustomSelect/CustomSelect";
 
 const Authors = ({
   breadcrumbData,
@@ -30,6 +31,7 @@ const Authors = ({
   backcaption,
 }) => {
   useEffect(() => {
+    init();
     $(".sort-btn").click(function sortclick() {
       $(".author-filter").addClass("author-filter-show");
       $(".close-btn").addClass("show-close");
@@ -55,7 +57,7 @@ const Authors = ({
         locationData={locationData}
         langSelect={langSelect}
       ></GlobalHeader>
-      <div className="grid-container fluid author-page">
+      <div className="grid-container fluid authors-page">
         <div className="grid-x">
           <div className="cell medium-offset-1 medium-11 small-12">
             <Breadcrumbcomponent data={breadcrumbData} />
@@ -106,12 +108,13 @@ const Authors = ({
         </div>
 
         <div className="grid-x">
-          <div className="cell medium-offset-3 medium-9 small-12">
+          <div className="cell medium-offset-3 medium-9 small-12 author-cards">
             <Authorcard
               image={user}
               data={authorData.authordata}
               para={authorData.paragraph}
               button={authorData.button}
+              alt="author name"
               link="#"
               width="medium-12"
             />
