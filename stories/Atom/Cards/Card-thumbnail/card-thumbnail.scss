@@ -44,4 +44,32 @@
   }
 }
 
+[dir='rtl'] {
+  .card-thumbnail__image {
+
+    &.yellow {
+      &::before {
+        @include background-image(318deg, $color-yellow, transparent 80%);
+      }
+    }
+  
+    &.red {
+      &::before {
+        @include background-image(318deg, $color-red, transparent 80%);
+      }
+    }
+  
+    &.green {
+      &::before {
+        @include background-image(318deg, $color-green, transparent 80%);
+      }
+    }
+  
+    &.azure {
+      &::before {
+        @include background-image(318deg, $color-azure, transparent 80%);
+      }
+    }
+  }
+}
 /* card_thumbnail__image end */

@@ -48,6 +48,12 @@
     }
   }
 
+  &.yellow {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-yellow, transparent 80%);
+    }
+  }
+
   &.red {
     .card-thumbnail__image::before {
       @include background-image(42deg, $color-red, transparent 80%);
@@ -156,7 +162,8 @@
 }
 
 [dir='rtl'] {
-  .content-card:hover {
+  .content-card {
+    &:hover{
     .cta--space::after {
       @include transform(translate(-50%, 0) rotate(180deg));
     }
@@ -164,6 +171,29 @@
       margin-right: 0.25rem;
       margin-left: 0;
     }
+  }
+  &.yellow {
+    .card-thumbnail__image::before {
+      @include background-image(318deg, $color-yellow, transparent 80%);
+    }
+  }
+  &.red {
+    .card-thumbnail__image::before {
+      @include background-image(318deg, $color-red, transparent 80%);
+    }
+  }
+
+  &.green {
+    .card-thumbnail__image::before {
+      @include background-image(318deg, $color-green, transparent 80%);
+    }
+  }
+
+  &.blue {
+    .card-thumbnail__image::before {
+      @include background-image(318deg, $color-azure, transparent 80%);
+    }
+  }
   }
 }
 
