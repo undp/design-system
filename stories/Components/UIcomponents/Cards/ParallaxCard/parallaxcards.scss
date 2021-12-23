@@ -10,7 +10,6 @@
     background-image: linear-gradient(90deg, $color-gray-400 1px, rgba(212, 214, 216, 0) 0);
     background-size: 25%;
     border-right: 1px solid $color-gray-400;
-    padding-bottom: $spacing-50;
     padding-top: $spacing-160;
   }
 
@@ -20,7 +19,7 @@
     @include devicebreak(medium) {
       margin-bottom: 0;
       position: absolute;
-      top: 9%;
+      top: 15rem;
     }
 
     h2 {
@@ -33,6 +32,7 @@
 
     @include devicebreak(medium) {
       display: block;
+      padding-bottom: $spacing-50;
     }
   }
 }

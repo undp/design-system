@@ -14,8 +14,8 @@ export const Breadcrumbcomponent = ({ data, Color, ...args }) => {
   }
 
   return (
-    <nav aria-label="breadcrumbs">
-      <ul className={['breadcrumb left-right', `${color}`].join(' ')}>
+    <nav aria-label='breadcrumbs'>
+      <ul className={['breadcrumb left-right', `${color}`].join(' ').trim()}>
         {data.map((item, i) => {
           if (i === lastIndex) {
             return (
