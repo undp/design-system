@@ -2,7 +2,6 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
-// publication-card
 .publication-card {
   display: inline-block;
 
@@ -67,6 +66,7 @@
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    cursor: pointer;
 
     &::after {
       cursor: pointer;
@@ -98,7 +98,9 @@
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-
+    background-image: none;
+    cursor: pointer;
+    
     &::after {
       cursor: pointer;
       height: $spacing-24;
