@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Pagination } from './Pagination';
 
 export const getCaptionForLocale = (locale) => {
@@ -14,37 +14,43 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/Navigation components/Pagination"  />
 
-<style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  } 
-`}</style>
+# Pagination
+The Pagination component divides the content of the website into different pages.
 
+### Overview
+The Pagination component allows users to make large amounts of content easy to find and breaks up several entries or web content into multiple pages.
 
-# Pagination Component
+#### When to use:
+- When web content needs to be divided into pages.
 
-Pagination allows you to make large amounts of content easy to find and breaks up several entries or web content into multiple pages.
+### Formatting
+#### Default
+The Pagination component displays the number of the page and contains navigational arrows to flip through the pages. Dark coloured arrow represents that there are more pages to go backwards or forwards. The Light coloured arrow represents the last or first page.
 
+### Behaviors
+#### States
+There is only the default state of Pagination.
 
-<Story name="Pagination">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Pagination text={caption.text} text2={caption.text2} ></Pagination>;
-  }}
-</Story>
+<Canvas>
+  <Story name="Pagination">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Pagination text={caption.text} text2={caption.text2} ></Pagination>;
+    }}
+  </Story>
+</Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>  
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
-  <li>Component SCSS file:<code>pagination.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Interactions
+By clicking on the forward or backward arrow, the pages are flipped forwards or backwards.
+
+### Changelog
+1.0 — Released component

@@ -193,38 +193,26 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/UI components/Cards/Parallax Cards" />
 
-<style>{`
- .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-  .css-1h4ytzj code {
-    padding-right: 10px;
-    width: 100%;
-    font-size: 14px;
-    line-height: 16px;
-      background: black;
-  }
-`}</style>
+# Parallax Cards
+The Parallax Cards component defines a card of information data with some items- Title, Paragraph and CTA Link. 
 
-# Parallax Cards Component
+### Overview
+Parallax is a trend where the background image or the content of the web page changes at different speeds while scrolling.  
 
-## Overview
+#### When to use:
+- To create a 3-D effect.
 
-The Parallax Cards component defines a card of information data with some items - Title, Paragraph, and CTA Link. We are using a grid system to manage the different types of sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+### Formatting
 
-## Default Representation & various possible states
+#### Default
+The Parallax uses a Grid system to manage the different sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+
+### Behaviors
+
+#### States
+
+1. **Default:** The Image is placed in either part of the grid and the Title, Paragraph and CTA Link in the other part. As we scroll the page the image remains constant, while the contents move slightly up or down depending on the direction of the scrolling. The CTA link is expandable.
+2. **Mobile:** The Title is placed at the top of the card, followed by Image, Paragraph and CTA Link. The images scroll horizontally with a scroll bar at the top. The CTA link is expandable.
 
 <Canvas>
   <Story name="Parallax Cards">
@@ -237,21 +225,22 @@ The Parallax Cards component defines a card of information data with some items 
   </Story>
 </Canvas>
 
-## Dependencies
+### CSS and JS References [ADDED BY DEVs]
 
-Libraries or another dependency which are used in the component.
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
 
-- For animation functionality its depend on the jQuery plugin library.
-- Custom JS file (SliderCustom.js) is located in the same js folder.
-- Include JS Slider library file from <code>assets/js/glideslider.js</code>
-- Include JS Parallax library file from <code>assets/js/gsap.min.js</code>
-- Include JS Parallax library file from <code>assets/js/ScrollTrigger.min.js</code>
+#### JS:
+- dist/js/[component].js
 
-## Usage
+### Dependencies
+- `glideslider` library
+- `gsap` library
 
-- Take HTML from the HTML tab in the canvas.
-- <u>To use SCSS include the following files in your implementation</u>
-- Include the common SCSS files like variables, mixin from <code>assets/scss</code>
-- Component SCSS file: <code>parallaxcards.scss</code>
--  <u>To use CSS include the following files in your implementation</u>
-- The compiled CSS file from <code>assets/css/style.css</code>
+### Interactions
+1. While scrolling the page, contents of the card move to give a 3-D effect.
+2. By clicking on the CTA link, the page is redirected to the detailed page.
+
+### Changelog
+1.0 — Released component

@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas, Source } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Images } from "./Imagecaption";
 import farmlandlg from "../../../assets/images/farmland-lg.jpg";
 import farmlandmd from "../../../assets/images/farmland-md.jpg";
@@ -59,50 +59,27 @@ export const getCaptionForLocale = (locale) => {
   }}
 />
 
-<style>{`
- .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-  .css-1h4ytzj code {
-    padding-right: 10px;
-    width: 100%;
-    font-size: 14px;
-    line-height: 16px;
-      background: black;
-  }
-`}</style>
+# Image with caption and credit
+The Image with Caption and Credit describes the image and gives credit to it’s source.
 
-# Image with caption and credit component
+### Overview
+The Image with caption and credit creates boxes that are usually teasing some kind of content like- Image, Text and Image author name. A grid system is used to manage the different types of sizes and caption molecules are used for creating the card.
 
-## Overview
+#### When to use:
+- When description and credit for the source of the image is to be added.
 
-The Image with caption and credit component multiusage component which creates boxes that are usually teasing some kind of content like - Image, Text, and Image author name. We are using a grid system to manage the different types of sizes and for the animation here assets/js/viewport.js. Image Caption Molecule are used for creating this card.
+### Formatting
 
-## Default Representation & various possible states
+#### Default
+It consists of a grid with an image and the description and the source of the image mentioned below or beside the image.
 
-<div className="subheading">Story Controls</div>
+### Behaviors
+It consists of three states: Wide, Medium and Portrait.
 
-We can check all types of Image with caption and credit variants by storybook <code> controls </code> .
+1. **Wide:** In the wide state, the image is large sized and the caption and credit are mentioned below the image.
+2. **Medium:** In medium state the image is medium sized and the caption and credit are mentioned below the image.
+3. **Portrait:** In portrait state the image is situated on either side of the grid and the caption and credit beside the image.
 
-<ul>
-<li>In the column, we check the option of card sizes like <code>Wide</code> , <code>Medium</code> , <code>Portrait</code> that's belong to the grid.</li>
-</ul>
-
-<div className="subheading">Modifier class</div>
-
-<code>image-section--portrait</code> <code>image__caption--unstag</code> <code>image__caption--stag</code>
 
 <Canvas>
   <Story name="Image with credit + caption" parameters={{ docs: { source: { code: `<div class="grid-x image-section">
@@ -136,28 +113,17 @@ We can check all types of Image with caption and credit variants by storybook <c
   </Story>
 </Canvas>
 
-## Dependencies
+### CSS and JS References [ADDED BY DEVs]
 
-Libraries or another dependency which are used in the component.
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
 
-<ul>
-  <li>For animation functionality its depend on the jQuery plugin library.</li>
-  <li>Custom JS file (viewport.js) is located in the same js folder.</li>
-</ul>
+#### JS:
+- dist/js/[component].js
 
-## Usage
+### Dependencies
+Not Applicable
 
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>images.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+### Changelog
+1.0 — Released component

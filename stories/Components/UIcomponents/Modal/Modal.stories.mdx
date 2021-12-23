@@ -3,40 +3,44 @@ import { Modal } from './Modal';
 
 <Meta title="Components/UI components/Modal" />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 20px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 15px;
-  }
-  .subheading2 {
-    font-weight: 700;
-    font-size: 16px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 10px;
-    text-decoration: underline;
-  }
-`}</style>
+# Modal Card
+The Modal is a popup window or dialog box which appears on the top of the current page.
 
-# Modal Card Component
+### Overview
+The Modal element is a popup window or dialog box which is a secondary window that appears over the primary window, disabling the primary window but keeping it visible.
 
-The Modal component defines a block of information data with some.
+#### When to use:
+- To direct the user’s attention to other important actions which need to be completed before operating the primary window.
 
-<Story name="Modal" >
-  return <Modal></Modal>;
-</Story>
+### Formatting
+#### Default
+It consists of a dialog box or popup window.
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>modal.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+#### Content
+Any image or information can be placed in the modal window.
+
+### Behaviors
+#### States
+There is only one state in Modal.
+
+<Canvas>
+  <Story name="Modal">
+    return <Modal></Modal>;
+  </Story>
+</Canvas>
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Interactions
+- By clicking on the image/text, it pops up.
+- The pop-up window can be closed by clicking on the cross icon.
+
+### Changelog
+1.0 — Released component

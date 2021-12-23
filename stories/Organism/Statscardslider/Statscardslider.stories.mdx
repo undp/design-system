@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Statscardslider } from './Statscardslider';
 
 export const statsArray = (locale) => {
@@ -160,32 +160,62 @@ export const statsArray = (locale) => {
 
 <Meta title="Testing/Stats card slider"/>
 
-# Stats card slider component
+# Stats Slider
+A Stats slider is a group of cards arranged horizontally in two rows that slide in from opposite directions on page scroll.
+
 
 ## Overview
 
-The StatsSlider Component is created for showing the card slider and slider in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+The stats slider component is an effective way to represent multiple stats visually. The slider consists of multiple cards arranged in two rows that slide in from opposite directions when the user scrolls the page thus grabbing the user’s attention.
 
-## Default Representation & various possible states
+The stats card slider is a type of pattern which uses multiple components and arranges them in a visually appealing way.
 
-<Story name="Stats card slider">
-  {(args, { globals: { locale } }) => {
-    const caption = statsArray(locale);
-    return <Statscardslider data={caption}></Statscardslider>;
-  }}
-</Story>
+The stats card slider is used to show various related statistics.
 
-## Dependencies
+#### When to use:
+- To showcase related stats
+- To grab a users attention while scrolling through
+- If you have only a small space to display a lot of content.
 
+## Formatting
+
+### Default
+<Canvas>
+  <Story name="Stats card slider">
+    {(args, { globals: { locale } }) => {
+      const caption = statsArray(locale);
+      return <Statscardslider data={caption}></Statscardslider>;
+    }}
+  </Story>
+</Canvas>
+
+### Content
+The stats card slider is made up of a group of stats cards arranged in two rows. The stats cards contain a value, label, and description. The description should be precise and not more than a couple of lines.
+
+The number of cards will be divided equally into two rows and will fit the grid width.
+
+### Behaviors
+
+#### States
+A stats card slider has 2 states on larger resolutions. Static and scrolling. 
+By default, only the section title of the slider should be displayed. As a user scrolls down the page, the first card from both rows will be shown at the extreme left and right of the page. As the user scrolls further and the slider is in the center of the viewport, all the cards in both rows should be displayed and both rows should be aligned in the center of the page. Additionally, an accent color overlay is displayed on hover
+
+On mobile, this slider is converted to a standard carousel. The card in the center of the viewport will display the hover effect.
+
+The following behavior modifiers are available:
+
+A medium or a small stats card is used in sliders
+- Medium: .statscard--md 
+- Small: .statscard--sm
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Dependencies
 Not Applicable
-
-## Usage
-
-- Take HTML from the HTML tab in the canvas
-- <u>To use SCSS include the following files in your implementation</u>
-- Include the common SCSS files like variables, mixin from <code>assets/scss</code>
-- <u>To use CSS include the following files in your implementation</u>
-- The compiled CSS file from <code>assets/css/style.css</code>
-- <u>To use JS include the following files in your implementation</u>
-- Include JS Slider library file  from <code>assets/js/glideslider.js</code>
-- Include JS Parallax library file from <code>assets/js/gsap.min.js</code>

@@ -1,6 +1,5 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Chips } from './chips';
-
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -24,71 +23,47 @@ export const getCaptionForLocale = (locale) => {
   }}
 />
 
-<style>{`
-  div#story--atoms-buttons-chips--chip {
-    margin-bottom: 30px;
-  }
-  div#story--atoms-buttons-chips--chip {
-    display: none;
-  }
-  .cta_wrapper {
-    display: flex;
-  }
-  .cta__label {
-    padding-right: 20px;
-  }
-  .cta_item {
-    padding: 10px;
-  }
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-`}</style>
-
-# Chips Component
+# Chips
 Chips are compact elements that allow users to enter information, select a choice, filter content, or trigger an action.
 
-<div className="cta_wrapper">
-  <div className="cta_item">
-    <div className="cta__box cta-link-arrow"></div>
-    <div className="cta__label">Chip cross</div>
-    <div className="cta__code"> <Chips label="Label" Type='With X'></Chips></div>
-  </div>
-</div>
-<div className="cta_wrapper">
-  <div className="cta_item">
-    <div className="cta__box cta-link-space"></div>
-    <div className="cta__label">Chip without cross </div>
-    <div className="cta__code"> <Chips label="Label"></Chips></div>
-  </div>
-</div>
+**Chips:**
+Chip with default state, true icon and a cross with allows users to select an option, filter it or add information. Also the cross lets them cancel or delete the information.
 
-<Story
-  name="Chips"
->
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <Chips
-        label={caption.detail}
-        {...args}
-      ></Chips>
-    );
-  }}
-</Story>
+<Canvas>
+  <Story name="Chips">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <Chips label={caption.detail} {...args}></Chips>
+      );
+    }}
+  </Story>
+</Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
-  <li>Component SCSS file:<code>chips.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+Chip with hover state, true icon and a cross changes appearance when a mouse hovers over it.
+--component here--
+
+Chip with default state and false icon does not have a cross with it, which means it doesn’t provide the option of deleting the information written or action which has been done.
+--component here--
+
+Chip with hover state and false icon changes appearance once the mouse moves over it. 
+--component here--
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Dependencies
+Not Applicable
+
+### Interactions
+The hover state is applied to the entire button.
+
+### Changelog
+1.0 — Released component
+

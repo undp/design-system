@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { StatsCards } from './StatsCards';
 
 export const getCaptionForLocale = (locale) => {
@@ -12,70 +12,73 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Cards" argTypes={{
-  Size: {
-    options: ['Small', 'Medium', 'Large', 'Extra_large'],
-    control: { type: 'inline-radio' },
-    defaultValue: 'Medium'
-  }
-}}/>
+<Meta 
+  title="Components/UI components/Cards" 
+  argTypes={{
+    Size: {
+      options: ['Small', 'Medium', 'Large', 'Extra_large'],
+      control: { type: 'inline-radio' },
+      defaultValue: 'Medium'
+    }
+  }}/>
 
-<style>{`
- .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-  div[id^="story--molecules-blocks-stats-cards"] {
-    padding: 20px;
-    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 25px 0px 40px;
-    border-radius: 4px;
-  }
-`}</style>
+# Stats Card
+A stats card contains the value, label, and a one-line description of a statistic
 
-# Stats Cards Component
+### Overview
+A stats card highlights an individual statistic. It contains a value, label, and a short description.
 
-## Overview
+Stats cards are usually displayed as a part of a collection of similar cards highlighting various statistics
 
-Stats Cards component are means of displaying content composed of different types of sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+A card is intended to be modular. This means that you can vary the order of cards in a collection without destroying any individual card’s meaning.
 
-we are using these modifier classes:
-<code>.statscard--xl</code>, <code>.statscard--lg</code>, <code>.statscard--md</code>, <code>.statscard--sm</code>
+#### When to use:
+- To display and highlight multiple statistics about a subject/country
 
+### Formatting
+#### Default
+The stats card consists of a value, label, and short description. An accent color overlay is displayed on hover.
 
-## Default Representation & various possible states
+<Canvas>
+  <Story name="Stats Cards">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <StatsCards title={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} {...args}></StatsCards>;
+    }}
+  </Story>
+</Canvas>
 
-<div className="subheading">Stats Card</div>
+### Content
+The stats card requires at a minimum a value and label. A short description can also be added optionally.
+Extra-large and large cards can also have a title.
 
-<Story name="Stats Card">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <StatsCards title={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} {...args}></StatsCards>;
-  }}
-</Story>
+### Behaviors
+#### States
+The stats card has default and hover states. 
 
-## Dependencies
+There are 4 size variations of the card: Small, medium, large and extra-large
 
+The following size modifiers are available:
+
+- Extra large: .statscard--xl
+- Large: .statscard--lg
+- Medium: .statscard--md 
+- Small: .statscard--sm
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Dependencies
 Not Applicable
 
-## Usage
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like breakpoints, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>statscards.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Interactions
+The hover state is applied to the entire card
+
+### Changelog
+1.0 — Released component

@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Inputcomponent } from './Input_group';
 
 export const getCaptionForLocale = (locale) => {
@@ -12,7 +12,8 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/Forms/Input fields"  argTypes={{
+<Meta 
+  title="Components/Forms/Input fields"  argTypes={{
   State: {
     options: ['Default', 'Focus', 'Error', 'Disabled'],
     control: { type: 'inline-radio' },
@@ -20,113 +21,84 @@ export const getCaptionForLocale = (locale) => {
   }
 }}/>
 
-<style>{`
-  #story--atoms-input-group--text-default, #story--atoms-input-group--text-focus, #story--atoms-input-group--text-error, #story--atoms-input-group--text-disabled,#story--atoms-input-group--number-default, #story--atoms-input-group--number-error, #story--atoms-input-group--number-focus, #story--atoms-input-group--number-error, #story--atoms-input-group--number-disabled, #story--atoms-input-group--password-default, #story--atoms-input-group--password-focus, #story--atoms-input-group--password-error, #story--atoms-input-group--password-disabled, #story--atoms-input-group--telephone-default, #story--atoms-input-group--telephone-focus, #story--atoms-input-group--telephone-error, #story--atoms-input-group--telephone-disabled, #story--atoms-input-group--date-default, #story--atoms-input-group--date-focus, #story--atoms-input-group--date-error,#story--atoms-input-group--help-message, #story--atoms-input-group--error-message {
-    display: none;
-  }
-  .sbdocs.sbdocs-div.input_group_wrapper.css-14m39zm {
-    display: flex;
-    flex-wrap: 1;
-    justify-content: space-around;
-    margin-bottom: 40px;
-    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
-  }
-  .sbdocs.sbdocs-div.input__code.css-14m39zm {
-    margin: 10px;
-  }
-  .sbdocs.sbdocs-div.input__label.css-14m39zm {
-    text-align: center;
-    text-decoration: underline;
-  }
-  .sbdocs.sbdocs-div.input_base-wrapper.css-14m39zm {
-    display: inline-flex;
-    align-items: baseline;
-    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
-  }
-  .sbdocs.sbdocs-div.base_item.css-14m39zm {
-    margin-left: 20px;
-  }
+# Input fields
+The `Input Field` is used when the user requires to fill information.
 
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }  
-`}</style>
+### Overview
+The input HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The input element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes. 
 
-# Input group Component
-The <code>input</code> HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <code>input</code> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
+#### When to use:
+- When the user needs to fill data.
 
-### Text
-- input elements of type <code>text</code> create basic single-line text fields.
+### Formatting
 
-<div className="subheading"> Number </div>
-<ul>
-  <li>input elements of type <code>number</code> are used to let the user enter a number. They include built-in validation to reject non-numerical entries.</li>
-</ul>
+#### Default
+The Input Field consists of various fields of rectangular boxes used to fill information.  There is a Base Input where the user needs to fill data, a Label which describes the input box, Help Text which is a sub-heading to the input box but doesn’t appear in the field area and an Error message which pops up if an error has occurred.
 
-<div className="subheading"> Date </div>
-<ul>
-  <li>input elements of type <code>date</code> create input fields that let the user enter a date, either with a textbox that validates the input or a special date picker interface.</li>
-</ul>
+The Input Fields are:
 
-<div className="subheading"> Phone </div>
-<ul>
-  <li>input elements of type <code>tel</code> are used to let the user enter and edit a telephone number.</li>
-</ul>
+1. **Text:** Input elements of type text create basic single-line text fields. 
 
-<div className="subheading"> Password </div>
-<ul>
-  <li>input elements of type <code>password</code> provide a way for the user to securely enter a password.</li>
-</ul>
+<Canvas>
+  <Story name="Text">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Inputcomponent labelText={caption.detail1} errorText={caption.detail2} element='input' type='text' id='name' required='required' placeholder={caption.text3} {...args} ></Inputcomponent>;
+    }}
+  </Story>
+</Canvas>
 
-<div className="subheading"> Base Input </div>
+2. **Number:** Input elements of type number are used to let the user enter a number. They include built-in validation to reject non-numerical entries.
 
-<Story name="Text">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail1} errorText={caption.detail2} element='input' type='text' id= 'name' required='required' placeholder= {caption.text3} {...args} ></Inputcomponent>;
-  }}
-</Story>
+<Canvas>
+  <Story name="Number">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Inputcomponent labelText={caption.detail5} errorText={caption.detail2} element='input' type='number' id='number' pattern= '[0-9]*' required='required' placeholder={caption.text3} {...args}></Inputcomponent>;
+    }}
+  </Story>
+</Canvas>
 
-<Story name="Number">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail5} errorText={caption.detail2} element='input' type='number' id= 'number' pattern= '[0-9]*' required='required' placeholder= {caption.text3} {...args}></Inputcomponent>;
-  }}
-</Story>
+3. **Date:** Input elements of type date create input fields that let the user enter a date, either with a textbox that validates the input or special date picker interface.
 
-<Story name="Password">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail6} element='input' helpText={caption.detail8} errorText={caption.detail2} type='password' id= 'password' required='required'  minlength="8" placeholder={caption.detail7} {...args}></Inputcomponent>;
-  }}
-</Story>
+<Canvas>
+  <Story name="Date">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Inputcomponent labelText={caption.text} errorText={caption.detail2} element='input' type='date' id='datepicker' required='required' placeholder='dd/mm/yyyy' {...args}></Inputcomponent>;
+    }}
+  </Story>
+</Canvas>
 
-<Story name="Telephone">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail9} element='input' type='tel' id= 'phnumber' required='required' errorText={caption.detail2} placeholder= '+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}' {...args} ></Inputcomponent>;
-  }}
-</Story>
+4. **Phone:** Input elements of type tel are used to let the user enter and edit a telephone number.
 
-<Story name="Date">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.text} errorText={caption.detail2} element='input' type='date' id= 'datepicker' required='required' placeholder= 'dd/mm/yyyy' {...args}></Inputcomponent>;
-  }}
-</Story>
+<Canvas>
+  <Story name="Telephone">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Inputcomponent labelText={caption.detail9} element='input' type='tel' id='phnumber' required='required' errorText={caption.detail2} placeholder='+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}' {...args} ></Inputcomponent>;
+    }}
+  </Story>
+</Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like mixin <code>assets/scss</code></li>
-  <li>Component SCSS file <code>input_group.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+5. **Password:** Input elements of type password provides a way for the user to enter a password.
+
+<Canvas>
+  <Story name="Password">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Inputcomponent labelText={caption.detail6} element='input' helpText={caption.detail8} errorText={caption.detail2} type='password' id='password' required='required'  minlength="8" placeholder={caption.detail7} {...args}></Inputcomponent>;
+    }}
+  </Story>
+</Canvas>
+
+### Behaviors
+
+#### States
+The Input Field has four states: Default, Focus. Error and Disabled.
+
+### CSS and JS References
+All input fields are part of default base style, no seperate CSS and JS required
+
+### Changelog
+1.0 — Released component

@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Textarea } from './Textarea';
 
 export const getCaptionForLocale = (locale) => {
@@ -98,67 +98,37 @@ export const getCaptionForLocale = (locale) => {
   }
 }}/>
 
-<style>{`
-  #story--atoms-input-group--text-default, #story--atoms-input-group--text-focus, #story--atoms-input-group--text-error, #story--atoms-input-group--text-disabled, #story--atoms-input-group--search-default, #story--atoms-input-group--search-focus, #story--atoms-input-group--search-error, #story--atoms-input-group--search-disabled, #story--atoms-input-group--number-default, #story--atoms-input-group--number-error, #story--atoms-input-group--number-focus, #story--atoms-input-group--number-error, #story--atoms-input-group--number-disabled, #story--atoms-input-group--password-default, #story--atoms-input-group--password-focus, #story--atoms-input-group--password-error, #story--atoms-input-group--password-disabled, #story--atoms-input-group--telephone-default, #story--atoms-input-group--telephone-focus, #story--atoms-input-group--telephone-error, #story--atoms-input-group--telephone-disabled, #story--atoms-input-group--date-default, #story--atoms-input-group--date-focus, #story--atoms-input-group--date-error, #story--atoms-input-group--date-disabled, #story--atoms-input-group--textarea-default, #story--atoms-input-group--textarea-focus, #story--atoms-input-group--textarea-error, #story--atoms-input-group--textarea-disabled, #story--atoms-input-group--label, #story--atoms-input-group--help-message, #story--atoms-input-group--error-message {
-    display: none;
-  }
-  .sbdocs.sbdocs-div.input_group_wrapper.css-14m39zm {
-    display: flex;
-    flex-wrap: 1;
-    justify-content: space-around;
-    margin-bottom: 40px;
-    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
-  }
-  .sbdocs.sbdocs-div.input__code.css-14m39zm {
-    margin: 10px;
-  }
-  .sbdocs.sbdocs-div.input__label.css-14m39zm {
-    text-align: center;
-    text-decoration: underline;
-  }
-  .sbdocs.sbdocs-div.input_base-wrapper.css-14m39zm {
-    display: inline-flex;
-    align-items: baseline;
-    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
-  }
-  .sbdocs.sbdocs-div.base_item.css-14m39zm {
-    margin-left: 20px;
-  }
+# Textarea
+The Text Area is a multi-line section used to enter text.
 
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }  
-`}</style>
+### Overview
+The TextArea element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizable amount of free-form text.
 
-# Input group Component
-The <code>input</code> HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <code>input</code> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
+#### When to use:
+- To enter multi-line texts.
 
-<div className="subheading"> Textarea </div>
-<ul>
-  <li>The <code>textarea</code> HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.</li>
-</ul>
+### Formatting
+#### Default
+It consists of a textbox used to enter data.
 
-<div className="subheading"> Base Input </div>
+### Behaviors
+#### States
+There are four states in Textarea: Default, Focus, Error and Disabled
 
-<Story name="Textarea">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Textarea labelText={caption.detail10} errorText={caption.detail2} id= 'textarea' type='textarea' cols='40' rows='10' required='required' placeholder= {caption.text2} {...args} ></Textarea>;
-  }}
-</Story>
+<Canvas>
+	<Story name="Textarea">
+		{(args, { globals: { locale } }) => {
+			const caption = getCaptionForLocale(locale);
+			return <Textarea labelText={caption.detail10} errorText={caption.detail2} id='textarea' type='textarea' cols='40' rows='10' required='required' placeholder= {caption.text2} {...args} ></Textarea>;
+		}}
+	</Story>
+</Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like mixin <code>assets/scss</code></li>
-  <li>Component SCSS file <code>input_group.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### CSS and JS References
+All input fields are part of default base style, no seperate CSS and JS required
+
+### Interactions
+- By clicking on the textarea, data can be entered into it.
+
+### Changelog
+1.0 — Released component

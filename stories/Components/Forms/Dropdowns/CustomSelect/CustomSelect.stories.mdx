@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import CustomSelect from './CustomSelect';
 
 export const getCaptionForLocale = (locale) => {
@@ -13,39 +13,54 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/Forms/Dropdown/Custom Select" />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-`}</style>
-
 # MultiSelect
-The select component allows users to choose multiples option from a list. It is used in forms when there are multiple choices that can be collapsed under one title.
+The Dropdown allows the user to select one or multiple options.
 
-<Story name="Custom Select">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <CustomSelect text={caption}></CustomSelect>;
-  }}
-</Story>
+### Overview
+The Dropdown element allows users to choose single or multiple options from a list. It is used in forms when there are multiple choices that can be collapsed under one title.
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<li>Take the multiselect js files from <code>assets/js/multiselect.js</code> and <code>assets/js/multiselect-init.js</code></li>
-<li><u>To use SCSS include the following files in your implementation</u></li>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>multiselect.scss</code></li>
-<li><u>To use CSS include the following files in your implementation</u></li>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+#### When to use:
+- When multiple options are to be grouped under a single title.
+
+### Formatting
+#### Default
+It consists of a dropdown box with an arrow to indicate if it is closed or open.
+
+#### Content
+There are two types of Dropdown boxes: Standard and Multiselect.
+1. Standard: In the standard dropdown box, only one option can be selected.
+2. Multiselect: In the multiselect dropdown box, multiple options can be selected.
+The direction of the arrow indicates if the box is opened or closed. The downward arrow indicates a closed box and upward arrow indicates open box.
+
+### Behaviors
+#### States
+The Dropdown boxes are either opened or closed. 
+
+**Standard:** The standard dropdown boxes either have auto or fixed height.
+
+**Multiselect:** A select list where user can select multiple options from the dropdown.
+
+<Canvas>
+  <Story name="Custom Select">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <CustomSelect text={caption}></CustomSelect>;
+    }}
+  </Story>
+</Canvas>
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Interactions
+- By clicking on the arrow, the drop down box can be opened or closed.
+- By clicking on the option/options, those can be selected.
+
+### Changelog
+1.0 — Released component

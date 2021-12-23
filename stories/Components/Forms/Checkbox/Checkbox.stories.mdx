@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Checkbox } from './Checkbox';
 
 export const getCaptionForLocale = (locale) => {
@@ -14,38 +14,54 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/Forms/Checkbox" />
 
-<style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-`}</style>
+# Checkbox
+A checkbox or tick box is an interactive box which allows the user to select one, none or multiple options.
 
-# Checkbox Component
-Checkboxes are used when there are multiple items to select in a list.
+### Overview
+A checkbox is a type of indicator which allows the user to choose single or multiple options from the select box. Each checkbox is independent, which allows the user to select multiple options and the previously selected options do not get canceled. 
 
-<Story name="Checkbox">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Checkbox label={caption.label} value={caption.value} id='edit-checkbox'></Checkbox>;
-  }}
-</Story>
+#### When to use:
+- When the user needs to select or deselect multiple options.
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>checkbox.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Formatting
+#### Default
+The checkbox is a square shaped selection box with white space or tick which displays if options are selected or deselected. Independent checkboxes are available beside each option.
+
+### Content
+The checkbox is square shaped. The color and the space inside the square indicates if the options are selected or not. 
+
+### Behaviors
+#### States
+The checkbox has default, checked and hover states which indicates that an option is to be selected or has already been selected.
+
+The following behavior modifiers are available:
+
+#### Default state
+The Red coloured checkbox with white space indicates the default state where the user gets an option to select it. 
+
+#### Checked state: 
+The Red coloured checkbox with a tick inside it indicates the checked state where the option has already been selected and can be deselected as well. 
+
+#### Hover state 
+The Light Red coloured checkbox with white space indicates the hover state which changes appearance when the mouse hovers over it.
+
+<Canvas>
+  <Story name="Checkbox">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Checkbox label={caption.label} value={caption.value} id='edit-checkbox'></Checkbox>;
+    }}
+  </Story>
+</Canvas>
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Changelog
+1.0 — Released component

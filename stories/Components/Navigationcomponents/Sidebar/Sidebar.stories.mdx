@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Sidebar } from "./Sidebar";
 
 export const getCaptionForLocale = (locale) => {
@@ -96,76 +96,78 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/Navigation components/Sidebar" />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .css-1gh4yjl {
-    font-size: 1rem;
-  }
-`}</style>
-
-# Sidebar Component
-
+# Sidebar
 The Sidebar Component is a shorter piece of text that appears next to and accompanies a longer article.
 
-<Story name="Sidebar">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <Sidebar
-        data={caption.sidebardata}
-        headerText={caption.headerText}
-        label={caption.label}
-        active={"default"}
-      ></Sidebar>
-    );
-  }}
-</Story>
+### Overview
+A sidebar is a column in the left or right side of a page which highlights the extra information related to the page. 
 
-<div className="subheading">Dependency</div>
-Libraries or another dependency which are used in the component.
-<ul>
-  <li>
-    For toggle functionality its depend on the jQuery plugin library, that is
-    placed in preview-head.html file.
-  </li>
-  <li>
-    Custom JS file (Faq_custom.js) is located in the same component folder.
-  </li>
-  <li>
-    ID - (#accordion) is used in the JSX file to connect the Custom JS file to
-    achieve the functionality.
-  </li>
-</ul>
+When to use:
+- When an extra piece of information needs to be added to the page.
+- When links to the supplementary information need to be added.
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like variables, mixin from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>sidebar.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-  <u>To use JS include the following files in your implementation</u>
-  <li>
-    The compiled JS file from <code>assets/js/Faq_custom.js</code>
-  </li>
-</ul>
+### Formatting
+#### Default
+The sidebar is a column which displays the supplementary information or links related to the page.
+
+### Behaviors
+#### States
+The sidebar First level row has two types: default and mobile with three states: default, hover and selected. The mobile sidebar is used for mobile applications.
+
+The following behavior modifiers are available:
+
+**Default state**
+- The White coloured box with default state indicates that the sidebar isn’t opened or expanded yet.
+- The White coloured box with down arrow and default state indicates that the sidebar isn’t open but expanded.
+- The White coloured box with the up arrow and default state indicates that the sidebar is opened and expanded.
+
+**Hover state**
+- The Gray coloured box with hover state indicates that once the mouse is hovered over the sidebar it changes appearance.
+- The Gray coloured box with down arrow and hover state indicates that the sidebar changes appearance when the mouse hovers over it. The down arrow indicates that it is not opened but expanded.
+- The Grey coloured box with the up arrow and hover state indicates that the sidebar changes appearance when the mouse hovers over it. The up arrow indicates that it is opened and expanded.
+
+** Selected state:**
+- The Blue coloured box with selected state indicates that the sidebar is selected but it isn’t opened or expanded.
+- The Blue coloured box with down arrow and selected state indicates that the sidebar is selected. The down arrow indicates that the sidebar is expanded but isn’t opened.
+- The Blue coloured box with the up arrow and selected state indicates that the    sidebar is selected. The up arrow indicates that the sidebar is opened and expanded.
+
+The Second level row has two types: default and mobile with two states: default and hover. The font size is smaller for mobile sidebar to make it more convenient as the mobile screen is smaller than laptop/desktop.
+
+**Default state:**
+- The White coloured box with default state indicates the second sidebar which contains more information regarding the page.
+
+**Hover state:**
+- The Grey coloured box with hover state indicates that the sidebar changes appearance once the mouse hovers over it. 
+
+<Canvas>
+  <Story name="Sidebar">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <Sidebar
+          data={caption.sidebardata}
+          headerText={caption.headerText}
+          label={caption.label}
+          active={"default"}></Sidebar>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Dependencies
+Not Applicable
+
+### Interactions
+The entire card is clickable. Clicking any part of the card should take the user to the associated author detail page. 
+
+### Changelog
+1.0 — Released component

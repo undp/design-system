@@ -14,103 +14,38 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Cards/Bio Cards" argTypes={{
-      size: {
-        options: ['large', 'medium'],
-        control: { type: 'radio' },
-        defaultValue: 'medium'
-      },
-      hovercolor: {
-        options: ['yellow', 'red', 'green', 'azure'],
-        control: { type: 'radio' },
-        defaultValue: 'yellow'
-      }
-    }}/>
-
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 20px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 15px;
+<Meta 
+  title="Components/UI components/Cards/Bio Cards" argTypes={{
+  size: {
+    options: ['large', 'medium'],
+    control: { type: 'radio' },
+    defaultValue: 'medium'
+  },
+  hovercolor: {
+    options: ['yellow', 'red', 'green', 'azure'],
+    control: { type: 'radio' },
+    defaultValue: 'yellow'
   }
-  .subheading2 {
-    font-weight: 700;
-    font-size: 16px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 10px;
-  }
-  .css-1h4ytzj code {
-    padding-right: 10px;
-    width: 100%;
-    font-size: 14px;
-    line-height: 16px;
-      background: black;
-  }
-`}</style>
+}}/>
 
-# Feature Content Card Component
+# Bio Card
+A bio card is a profile summary of an author/leader along with their profile picture
 
-The Feature Content Card component defines a card of information data with some items - Tag, Title, Image, Paragraph, and CTA Link. We are using a grid system to manage the different types of sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+### Overview
+A bio card showcases a contributor’s name, title, photo, and a short summary of their background and work. It also contains a CTA to open more information in a lightbox modal.
 
-<div className="subheading">Feature Card With Image</div>
+A bio card is usually displayed with a story, article that the user has contributed to. It is an entry point to a more detailed description of the contributor when clicked on.
 
-By default Feature content cards are show the information about the card with related fields like Tag, Title, Image, Description, and CTA Link. When we mouse over the card (On hover) it shows the image.
+#### When to use:
+- To give a brief introduction of the author/contributor of the article or story and act as an entry point to more information in a lightbox modal
 
-<div className="subheading">Feature Card Without Image</div>
+### Formatting
 
-When We mouse over the card (On hover) it shows the yellow color except the image.
-
-<div className="subheading">Story Controls</div>
-
-We can check all types of feature card variants by storybook <code> controls </code> .
-
-<ul>
-<li>the variant we check the option of card like <code>with image</code> and <code>without image</code></li>
-<li>n the column, we check the option of card sizes like <code>large</code> , <code>medium</code> , <code>small</code> that's belong to the grid.</li>
-</ul>
-
-<div className="subheading2">Modifier class</div>
-
-<code>with-image</code> <code>without-image</code> <code>feature__card--large</code> <code>feature__card--medium</code> 
-<code>feature__card--small</code> <code>large</code> <code>medium</code> <code>small</code>
-
+#### Default
+The bio card consists of a user’s first and last names, title, a brief summary of their background/work, a profile picture, and a CTA that opens up a lightbox modal highlighting salient information about the user.
 
 <Canvas>
-  <Story name="Bio Cards" parameters={{ docs: { source: { code: `<div class="grid-x grid-margin-x">
-  <div class="cell large-8 feature__card--large">
-    <a href="#" class="feature__card feature__card--with-image">
-      <div class="feature__card_slide">
-        <div
-          class="feature__card_image"
-          style='background-image: url("static/media/stories/assets/images/card2.jpg");'
-        ></div>
-      </div>
-      <article class="feature__card_content">
-        <div class="feature__card_tag">CONTENT TAG</div>
-        <div class="feature__card_description">
-          <h4>
-            Mongolia receives new $23.1 million GCF grant to strengthen climate
-            resilience
-          </h4>
-          <p>
-            With the new Green Climate Fund grant, UNDP-supported project will
-            benefit close to one million vulnerable population..
-          </p>
-        </div>
-        <div class="feature__cta">
-          <a class="cta__link cta--arrow" href="javascript:void(0)">
-            READ MORE
-          </a>
-        </div>
-      </article>
-    </a>
-  </div>
-</div>` } } }}>
+  <Story name="Bio Cards">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <BioCard contenttile={caption.title} contentname={caption.name}  descriptionText={caption.descriptionText} descriptionText2={caption.descriptionText2}  button={caption.btnlabel}  alt={'feature card'} image={img} image2={img2} {...args} ></BioCard>;
@@ -118,12 +53,32 @@ We can check all types of feature card variants by storybook <code> controls </c
   </Story>
 </Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>featuredContentCard.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Content
+The bio card requires a profile image, first and last name, title,  profile summary, and a CTA that opens the lightbox modal with more information.
+
+### Behaviors
+
+#### States
+The bio card has a default and hover state. On hover, an accent color overlay is displayed over the profile photo.
+
+The following behavior modifiers are available:
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Dependencies
+Not Applicable
+
+### Interactions
+- The hover state is applied to the profile image only.
+- Clicking the bio card opens the information in a lightbox modal
+- The bio card should never be used without the modal
+
+### Changelog
+1.0 — Released component

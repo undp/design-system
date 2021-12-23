@@ -1,8 +1,9 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ProgressBarNavigation } from './ProgressBarNavigation';
 
 
-<Meta title="Testing/Navigation/Progress Bar Navigation" argTypes={{
+<Meta 
+  title="Testing/Navigation/Progress Bar Navigation" argTypes={{
   Type: {
     options: ['Large', 'Small'],
     control: { type: 'inline-radio' },
@@ -10,36 +11,51 @@ import { ProgressBarNavigation } from './ProgressBarNavigation';
   }
 }}/>
 
-<style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }  
-`}</style>
+# Progress Bar
+The Progress Bar provides a visual representation of a user’s progress on page.
 
-# Progress Bar Component
-The Progress Bar component is used to displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+### Overview
+A progress bar is a graphical content element which shows the progress of an ongoing task on a computer.
 
-<ul>
-<li>Progress Bar will be work on page scroll.</li>
-</ul>
+#### When to use:
+- When the process requires more time to complete, so that the user gets the exact progress.
 
-<Story name="Progress Bar Navigation">
-  {(args) =>{
-    return <ProgressBarNavigation {...args}></ProgressBarNavigation>;
-  }}
-</Story>
+### Formatting
+#### Default
+The progress bar is an elongated rectangular bar which displays the progress of an extended computer operation.
 
-<div className="subheading">Usage</div>
-<ul>
-<li>We can take HTML from the HTML tab in the canvas tab</li>
-<li>Include the common SCSS file like normalize, variables, mixins, breakpoints from the folder <code>assets/scss</code></li>
-<li>Component wise SCSS file residing in each component <code>ProgressBarNavigation.css</code></li>
-<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
-</ul>
+### Behaviors
 
+#### States
+The progress bar has two states: default and short.
+
+The following behavior modifiers are available:
+
+**Default:**
+The Yellow coloured rectangular bar with default states indicates the default progress bar which is used to display progress.
+
+**Short:**
+The Yellow colored rectangular bar with short states indicates the shorter progress bar which can be used instead of the default one to display progress.
+
+<Canvas>
+  <Story name="Progress Bar Navigation">
+    {(args) =>{
+      return <ProgressBarNavigation {...args}></ProgressBarNavigation>;
+    }}
+  </Story>
+</Canvas>
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Dependencies
+Not Applicable
+
+### Changelog
+1.0 — Released component

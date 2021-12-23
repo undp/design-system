@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { List } from './Lists';
 import { Descriptionlist } from './Descriptionlist';
 
@@ -71,67 +71,66 @@ return dummy.data
 
 <Meta title="Foundation/Typography/Lists"/>
 
-<style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-`}</style>
+# Lists
+A List consists of related items grouped together.
 
-# List component
-Lists consist of related items grouped together.
+### Overview
+Lists are used to display data in a linear way. When a bunch of information is to be conveyed, it can be grouped together in a list and can be mentioned in a systematic way so that the readers find it more effective to read.
 
-<div className="subheading">Unordered List</div>
-<p>An unordered list is used if there is no hierarchy required. Unordered lists start with a bullet.</p>
-<p>Start an unordered list with the <code>u1</code> tag.</p>
-<p>Add a <code>li</code> tag for each list item</p>
-<p>E.g</p>
+#### When to use:
+- To arrange related information in a systematic way.
+- To describe information in a hierarchical structure.
 
-<Story name="Unordered List">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <List data={caption} type="ul"></List>;
-  }}
-</Story>
+### Formatting
 
-<div className="subheading">Ordered List</div>
-<p>An ordered list is used if there is a relation/hierarchy between list items. Ordered list items begin with a number generally.</p>
-<p>Start an ordered list with the <code>o1</code> tag.</p>
-<p>Add a <code>li</code> tag for each list item</p>
+#### Default
+The List consists of information arranged one below another. It can be in a hierarchical or descriptive format. 
 
-<Story name="Ordered List">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <List data={caption} type="ol"></List>;
-  }}
-</Story>
+### Content
 
-<div className="subheading">Description List</div>
-<p>A description list is a list of terms, with a description of each term.</p>
-<p>The <code>dl</code> tag defines the description list, the <code>dt</code> tag defines the term (name), and the <code>dd</code> tag describes each term.</p>
+The list consists of three types: Unordered, Ordered and Description.
 
-<Story name="Description List">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Descriptionlist data={caption}></Descriptionlist>;
-  }}
-</Story>
+1. **Unordered List**: An unordered list is used if there is no hierarchy required. They start with a bullet. For starting an unordered list, ul tag is used. A li tag is added for each list item.
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>lists.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+<Canvas>
+  <Story name="Unordered List">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <List data={caption} type="ul"></List>;
+    }}
+  </Story>
+</Canvas>
+
+2. **Ordered List**: An ordered list is used if there is a relation/hierarchy between list items. They generally begin with numbers. For starting an ordered list, an ol tag is used. A li tag is added for each list item.
+
+<Canvas>
+  <Story name="Ordered List">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <List data={caption} type="ol"></List>;
+    }}
+  </Story>
+</Canvas>
+
+3. **Description List:** A description list is a list of terms, with a description of each term. The d1 tag defines the term (name), and the dd tag describes each term.
+
+<Canvas>
+  <Story name="Description List">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Descriptionlist data={caption}></Descriptionlist>;
+    }}
+  </Story>
+</Canvas>
+
+### Behaviors
+
+#### States
+
+The text sizes of Lists for Desktops, Laptops and Tablets remains the same, while the text size for mobile is small for the convenience of the users as mobile screens are smaller in size.
+
+### CSS and JS References
+No need of seperate CSS, styling comes as base styling, make sure you have include the base styling css.
+
+### Changelog
+1.0 — Released component

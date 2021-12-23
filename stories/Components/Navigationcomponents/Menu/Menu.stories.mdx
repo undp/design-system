@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Menu } from './Menu';
 
 export const getCaptionForLocale = (locale) => {
@@ -128,51 +128,52 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/Navigation components/Menu" component={Menu} />
 
-<style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  } 
-  div#story--molecules-navbar-menu--menu {
-    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
-    box-sizing: inherit;
-  } 
-`}</style>
+# Menu
+The Menu bar is a horizontal bar with drop-down menus containing the links to other important pages of the website.
 
-# Menu Component
+### Overview
+The Horizontal menu consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browsing through the site and is present on every page.
 
-The Horizontal Menu consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browswing through the site and is present on every page.
+#### When to use:
+- When a drop-down list is to be created of important links.
 
-<ul>
-  we are using these modifier classes:
-  <code>menu__wrapper</code>, <code>menu_item</code>
-</ul>
+### Formatting
+#### Default
+It consists of a horizontal bar with drop-down items.
 
-<Story name="Menu">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Menu data={caption}></Menu>;
-  }}
-</Story>
+### Content
+The menu bar consists of a drop-down list for the important links.
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like normalize, variables, mixins from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file:<code>menu.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+### Behaviors
+
+#### States
+There are 3 states in Menu: Default, Hover and Open
+
+1. Default: The Black coloured labels indicate the default state.
+2. Hover: The Gray coloured labels indicate the hover state in which the label changes appearance when the mouse hovers over it.
+3. Open: The Black coloured labels with a horizontal line below it indicate the open state.
+
+<Canvas>
+  <Story name="Menu">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Menu data={caption}></Menu>;
+    }}
+  </Story>
+</Canvas>
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Interactions
+Hover state applies to the entire label.
+After clicking on the label, the page is redirected to the mentioned link.
+
+### Changelog
+1.0 — Released component

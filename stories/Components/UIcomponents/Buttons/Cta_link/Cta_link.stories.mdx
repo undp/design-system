@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Ctalink } from './Cta_link';
 
 export const getCaptionForLocale = (locale) => {
@@ -12,7 +12,8 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Buttons/CTA Link" 
+<Meta 
+  title="Components/UI components/Buttons/CTA Link" 
   argTypes={{
     Type: {
       options: ["Expanding arrow", "Space"],
@@ -22,69 +23,54 @@ export const getCaptionForLocale = (locale) => {
   }}
 />
 
-<style>{`
-div#story--atoms-buttons--cta-link-arrow, div#story--atoms-buttons--cta-link-space, div#story--atoms-buttons-link--cta-link {
-    display: none;
-  }
-  .cta_wrapper {
-    display: flex;
-  }
-  .cta__label {
-    padding-right: 20px;
-  }
-  .cta_item {
-    padding: 10px;
-  }
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-`}</style>
-
-# CTA Link component
+# CTA Link
 A cta link is a prompt on a website that tells the user to take some specified action.
 
-<div className="cta_wrapper">
-  <div className="cta_item">
-    <div className="cta__box cta-link-arrow"></div>
-    <div className="cta__label">Cta link arrow expand</div>
-    <div className="cta__code"> <Ctalink label="READ MORE" Type='Arrow'></Ctalink></div>
-  </div>
-</div>
-<div className="cta_wrapper">
-  <div className="cta_item">
-    <div className="cta__box cta-link-space"></div>
-    <div className="cta__label">Cta link with space expand </div>
-    <div className="cta__code"> <Ctalink label="READ MORE" Type='Space'></Ctalink></div>
-  </div>
-</div>
+**CTA Link:**
+The CTA link with the arrow prompts the users to take actions and is in default state but the arrow does not expand.
 
-<Story
-  name="CTA Link"
->
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <Ctalink
-        label={caption.detail1}
-        {...args}
-      ></Ctalink>
-    );
-  }}
-</Story>
+<Canvas>
+  <Story name="CTA Link">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <div>
+          <Ctalink label={caption.detail1} {...args}></Ctalink>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
 
+The CTA links with the arrow in hover state which changes its appearance once the mouse hovers over it but the arrow does not expand.
+<Canvas>
+   {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (<Ctalink label={caption.detail1} {...args}></Ctalink>);
+    }}
+</Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
-  <li>Component SCSS file:<code>cta_link.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+The CTA link with space expand in default state is a space expand link where the space after the text expands but the arrow does not. 
+--Component here--
+
+The CTA link with the arrow expand is in hover state. When the mouse hovers over the link the text changes its appearance and the arrow expands.
+--component here--
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Dependencies
+Not Applicable
+
+### Interactions
+The hover state is applied to the entire button.
+
+### Changelog
+1.0 — Released component
+

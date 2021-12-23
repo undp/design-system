@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Tab } from './Tab';
 
 export const getCaptionForLocale = (locale) => {
@@ -88,37 +88,52 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Tabs"  />
+<Meta title="Components/UI components/Tabs" />
 
-<style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  } 
-`}</style>
+# Tabs
+The Tabs are used to navigate through the same groups of content.
 
+### Overview
+The Tab components are used to show the tabs to alternate between views within the same content, not to navigate to different areas. The active tab is the highlight with the red color. 
 
-# Tab Component
-Tab Component use to show the tabs to alternate between views within the same context, not to navigate to different areas. The active tab is the highlight with the red color.
+#### When to use:
+- To navigate through the same groups of content.
 
-<Story name="Tabs">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Tab tabdata={caption} ></Tab>;
-  }}
-</Story>
+### Formatting
+#### Default
+It consists of different tabs and a tab border.
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>  
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
-  <li>Component SCSS file:<code>tab.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Content
+There are two types of tabs: `single tab` and `tab bar with wrapping`.
+
+### Behaviors
+#### States 
+There are three states:  Default, Hover and Selected.
+1. Default: It is the tab bar which is displayed when the page opens.
+2. Hover: It changes appearance once the mouse hovers over it.
+3. Selected: It is a selected state with a red horizontal line below it.
+
+<Canvas>
+  <Story name="Tabs">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Tab tabdata={caption} ></Tab>;
+    }}
+  </Story>
+</Canvas>
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Interactions
+- Hover state appears to the entire tab.
+- By clicking on the tab the particular tab opens.
+
+### Changelog
+1.0 — Released component
