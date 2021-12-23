@@ -115,12 +115,14 @@
   }
 }
 
-.footer-subtitle {
-  text-transform: uppercase;
-}
-
-.sign-up {
+.footer {
   .form-submit {
     text-transform: uppercase;
+  }
+
+  &.blue {
+    .footer-subtitle {
+      text-transform: uppercase;
+    }
   }
 }

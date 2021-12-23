@@ -116,16 +116,27 @@
   }
 }
 
-.description-text {
-  margin-top: $spacing-40;
+.publication-card__title {
+  h2 {
+    display: none;
 
-  @include devicebreak(medium) {
-    margin-top: $spacing-08;
+    @include devicebreak(medium) {
+      display: block;
+      margin-bottom: $spacing-24;
+    }
+  }
+
+  h6 {
+    margin-top: $spacing-40;
+  
+    @include devicebreak(medium) {
+      margin-top: $spacing-08;
+    }
   }
 }
 
 .publication {
-  &-bottom {
+  &-page {
     margin-bottom: 3.313rem;
     margin-top: $spacing-96;
 
@@ -150,6 +161,31 @@
   .download-card {
     margin-bottom: $spacing-40;
   }
+
+  &-menu {
+    margin-top: 3.5rem;
+    margin-bottom: $spacing-50;
+
+    @include devicebreak(medium) {
+      margin-top: $spacing-80;
+    }
+
+    h6 {
+      margin-top: $spacing-08;
+
+      @include devicebreak(medium) {
+        margin-top: $spacing-16;
+      }
+    }
+
+    .menu-item {
+      margin-top: $spacing-02;
+
+      @include devicebreak(medium) {
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 .sticky {
@@ -172,19 +208,6 @@
 }
 
 .title {
-  &-desktop {
-    display: none;
-
-    @include devicebreak(medium) {
-      display: block;
-      margin-bottom: $spacing-24;
-    }
-
-    @include devicebreak(medium) {
-      display: block;
-    }
-  }
-
   &-mobile {
     display: block;
 
@@ -208,7 +231,7 @@
     }
   }
 
-  .publication-bottom {
+  .publication-page {
     .large-offset-1 {
       @include devicebreak(medium) {
         margin-left: 0;

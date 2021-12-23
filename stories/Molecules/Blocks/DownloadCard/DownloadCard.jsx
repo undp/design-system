@@ -16,7 +16,6 @@ export const DownloadCard = ({
       <p className="download-card__format">{format}</p>
       <a href="#" className="download-card__download">
         {download}
-        <Icondownload/>
       </a>
     </div>
   </div>
