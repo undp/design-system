@@ -1,13 +1,86 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Source } from '@storybook/addon-docs';
 
-<Meta title="Getting started/Intro" 
+<!---
+* Documentation for Design System Introduction
+* 
+* This document has CSS and HTML instead markdown, 
+* CSS is to override this page styling
+* HTML as we have strucuture it in a different way
+* Markdown does not work inside <div>
+-->
+
+<Meta 
+	title="Getting started/Intro"
 	parameters={{
 		viewMode: 'docs',
-		previewTabs: { 
-			canvas: { hidden: true } 
-		},
-	}}
-/>
+		options: { isToolshown: false}
+	}}/>
 
-# Intro
-The select component allows users to choose multiples option from a list. It is used in forms when there are multiple choices that can be collapsed under one title.
+<style>{`
+  .sb-main-fullscreen .sbdocs {
+    padding: 0;
+  } 
+  .sb-main-fullscreen .sbdocs-content{
+    max-width: 100%;
+  }
+  .sb-main-fullscreen .sbdocs-content > p {
+    margin: 0;
+  }
+	.intro-page {
+		 margin: 0 10%;
+	}
+	.atomic {
+		width: 50%;
+	}
+`}</style>
+
+![Banner](https://raw.githubusercontent.com/undp/design-system/story/UND-82-getting-started-documentation/docs-media/banner.png "Welcome to UNDP Design System")
+
+<div class="intro-page">
+	<h2>Introduction</h2>
+	<p>
+		The purpose of this project is to create unified user interfaces for UNDP by the designer and developers.
+	</p>
+	<p>
+		These projects will have consistent look and feel and accessible in nature by just following the guidelines in the documentation.
+	</p>
+	<p>
+		By unifiying design elements into reusable components, development will simplify and accelerate the development of these digital products.
+	</p>
+	<p>
+		The Guide is a living document created to meet the needs of UNDP's front-end developers and designers. If there is a Component or Pattern that you need, or you have any other feedback, question or comment please contact us.
+	</p>
+	<h2>Structure</h2>
+	<p>
+		UNDP’s design system uses an atomic design approach. Within the seven thematic groups, each group is further organized by atomic level.
+	</p>
+	<img src="https://raw.githubusercontent.com/undp/design-system/story/UND-82-getting-started-documentation/docs-media/atomic.png" alt="Atomic design" class="atomic"/>
+	<h2>Codebase</h2>
+	<p>
+		For developers looking to build with UNDP’s design system it will soon be available as a StorybookJS package. All front-end code (HTML/CSS/JS) will be architected in a modular and scalable way.
+	</p>
+	<p>
+		Codebase can be access at <a href="https://github.com/undp/design-system" target="_blank">github</a> 
+	</p>
+	<Source 
+			language='code'
+			code={`
+				https://github.com/undp/design-system
+	`}/>
+	<p>
+		Path location of <strong>CSS</strong> for Components part of this design system is:
+	</p>
+	<Source 
+		language='code'
+		code={`
+     https://github.com/undp/design-system/dist/css
+  `}/>
+	<p>
+		Path location of <strong>JS</strong> for Components part of this design system is:
+	</p>
+	<Source 
+		language='html'
+		code={`
+     https://github.com/undp/design-system/dist/js
+  `}/>
+</div>

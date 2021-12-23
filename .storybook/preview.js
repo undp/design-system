@@ -29,6 +29,7 @@ export const parameters = {
     transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn),
   },
    options: {
+    isToolshown: true,
     storySort: {
       order: ['Getting started', ['Intro', 'How to use our design system?', 'Browser support'],'Foundation','Components', ,['Navigation components',['Breadcrumbs'],['Main Navigation']],'Patterns', 'Utilities','Templates' ],
     },
