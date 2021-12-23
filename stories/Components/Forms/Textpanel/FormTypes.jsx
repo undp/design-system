@@ -17,6 +17,7 @@ export const FormTypes = ({
   placeholderfirst,
   placeholderlast,
   anchorTag,
+  anchorTag2,
   para,
   ...args
 }) => (
@@ -103,7 +104,7 @@ export const FormTypes = ({
             <div className="large-8 cell">
               <div className="grid-x">
                 <div className="large-12 cell">
-                  <Heading type="2" label={anchorTag} />
+                  <Heading type="2" label={anchorTag2} />
                 </div>
               </div>
               <div className="grid-x grid-margin-x">
