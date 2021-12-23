@@ -20,7 +20,7 @@ export const DownloadModal = ({
   data, button, select, ...args
 }) => {
   useEffect(() => {
-    checkbox('.checkbox-wrapper input', '.button-primary');
+    checkbox('.checkbox input', '.button-primary');
     selectfilter();
   }, []);
   return (
@@ -43,7 +43,7 @@ export const DownloadModal = ({
           </div>
         </div>
         <div className="download-footer">
-          <CtaButton label={button} For_Primary="No Arrow"/>
+          <CtaButton label={button} For_Primary="No Arrow" State="Disabled"/>
         </div>
       </div>
     </div>
