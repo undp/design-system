@@ -2,7 +2,7 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/breakpoints';
 
-.selectbox-container {
+.checkbox-container {
   background-color: $color-white;
   padding: 0 1rem;
 
@@ -44,7 +44,7 @@
 }
 
 [dir='rtl'] {
-  .selectbox-container {
+  .checkbox-container {
     &__data {
       padding-left: $spacing-16;
       padding-right: 0;

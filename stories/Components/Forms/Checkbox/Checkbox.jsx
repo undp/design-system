@@ -3,7 +3,7 @@ import './checkbox.scss';
 
 export const Checkbox = ({ label, value, id }) => (
   <div className="checkbox-wrapper">
-    <input type="checkbox" id={id} value={value}/>
+    <input type="checkbox" id={id} value={value} aria-label="Checkbox"/>
     <label htmlFor={id}>{ label }</label>
   </div>
 );
