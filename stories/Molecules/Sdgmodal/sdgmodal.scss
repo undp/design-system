@@ -5,7 +5,7 @@
 .modal-sdg {
   @include transition(all 0.4s ease);
 
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   height: calc(100vh - 7.1875rem);
   opacity: 1;
@@ -17,8 +17,8 @@
   z-index: 99;
 
   @include devicebreak(mediumonlytab) {
-    top: 4.6875rem;
     height: calc(100vh - 4.6875rem);
+    top: 4.6875rem;
   }
 
   @include devicebreak(small) {
@@ -579,9 +579,6 @@
 
 .ndg-container {
   padding-left: $spacing-32;
-  .sdg-image {
-    display: none;
-  }
 
   @include devicebreak(small) {
     padding-left: $spacing-12;
@@ -621,6 +618,10 @@
         display: none;
       }
     }
+  }
+
+  .sdg-image {
+    display: none;
   }
 }
 

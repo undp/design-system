@@ -20,7 +20,7 @@
       margin-bottom: 1.875rem;
     }
 
-    &.without-image{
+    &.without-image {
       .feature__card-image {
         display: none;
       }
@@ -32,16 +32,16 @@
   .featured-card-container {
     .feature__card {
       &-title {
-        @include devicebreak(small){
-          margin-right: calc(8.33333% + 0.75rem / 2);
+        @include devicebreak(small) {
           margin-left: 0.375rem;
+          margin-right: calc(8.33333% + 0.75rem / 2);
         }
 
-        @include devicebreak(medium){
-          margin-right: calc(8.33333% + 0.75rem / 2);
+        @include devicebreak(medium) {
           margin-left: 0.375rem;
+          margin-right: calc(8.33333% + 0.75rem / 2);
         }
-        
+
         @include devicebreak(large) {
           margin-left: 0.75rem;
           margin-right: calc(8.33333% + 1.5rem / 2);

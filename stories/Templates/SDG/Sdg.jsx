@@ -28,7 +28,7 @@ export const SdgPage = ({
         locationData={locationData}
         langSelect={langSelect}
       />
-      <div className='sdg-banner'>
+      <div className="sdg-banner">
         <PageHero
           data={herodata}
           title={title}

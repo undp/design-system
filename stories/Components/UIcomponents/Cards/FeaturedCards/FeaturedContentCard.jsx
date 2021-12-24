@@ -51,7 +51,7 @@ export const FeaturedContentCard = ({
                 {item.descriptionText && <P label={item.descriptionText} />}
               </div>
               <div className="feature__cta">
-                <span className="cta__link cta--arrow" >{item.button}</span>
+                <span className="cta__link cta--arrow">{item.button}</span>
               </div>
             </article>
           </a>

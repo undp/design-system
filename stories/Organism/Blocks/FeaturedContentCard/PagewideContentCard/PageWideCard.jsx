@@ -21,8 +21,8 @@ export const PageWideCard = ({
       <div className="grid-x wide-card__wrapper">
         <div className="cell medium-6 wide-card__description left-right">
           <div className="card-summary">
-          <Heading type="4" label={title} />
-          <P label={paragraph} />
+            <Heading type="4" label={title} />
+            <P label={paragraph} />
           </div>
           <CtaButton label={button} for_primary="arrow" />
         </div>

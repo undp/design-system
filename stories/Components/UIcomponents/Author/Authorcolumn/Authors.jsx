@@ -32,7 +32,7 @@ export const Author = ({
     default:
       decNumber = 1;
   }
-  
+
   return (
     <>
       {Number == 'One'

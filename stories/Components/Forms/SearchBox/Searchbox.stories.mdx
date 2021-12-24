@@ -88,28 +88,28 @@ The <code>input</code> HTML element is used to create interactive controls for w
 <Story name="Search-default">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Searchbox labelText={caption.detail3} type='search' id= 'search' mode='default-state' required='required' placeholder= {caption.detail4}></Searchbox>;
+    return <Searchbox labelText={caption.detail3} type='search' id= 'search' mode=' ' required='required' placeholder= {caption.detail4}></Searchbox>;
   }}
 </Story>
 
 <Story name="Search-focus">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Searchbox labelText={caption.detail3} type='search' id= 'search' mode='focus-state' required='required' placeholder= {caption.detail4}></Searchbox>;
+    return <Searchbox labelText={caption.detail3} type='search' id= 'search' mode='focus' required='required' placeholder= {caption.detail4}></Searchbox>;
   }}
 </Story>
 
 <Story name="Search-error">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Searchbox labelText={caption.detail3} errorText={caption.detail2}  type='search' id= 'search' mode='error-state' required='required' placeholder= {caption.detail4}></Searchbox>;
+    return <Searchbox labelText={caption.detail3} errorText={caption.detail2}  type='search' id= 'search' mode='error' required='required' placeholder= {caption.detail4}></Searchbox>;
   }}
 </Story>
 
 <Story name="Search-disabled">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Searchbox labelText={caption.detail3} type='search' id= 'search' mode='disabled-state' placeholder= {caption.detail4} disabled= 'disabled'> </Searchbox>;
+    return <Searchbox labelText={caption.detail3} type='search' id= 'search' mode='disabled' placeholder= {caption.detail4} disabled= 'disabled'> </Searchbox>;
   }}
 </Story>
 

@@ -4,8 +4,8 @@
 /* scrollbar layout start */
 .scrollbar-horizontal-wrapper {
   float: left;
-  overflow-x: scroll;
   max-width: $width-600;
+  overflow-x: scroll;
   width: 100%;
 }
 

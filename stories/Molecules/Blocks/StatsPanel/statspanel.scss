@@ -21,7 +21,6 @@
     img {
       @extend %absolute__content;
 
-
       @include transition(300ms all);
 
       object-fit: cover;
@@ -77,11 +76,11 @@
 
     .statscard {
       background-color: transparent;
-      width: 100%;
       max-width: 100%;
-      z-index: 1;
       padding: 0 $spacing-24;
+      width: 100%;
       word-break: unset;
+      z-index: 1;
 
       @include devicebreak(medium) {
         padding: 0 $spacing-48;
@@ -91,10 +90,10 @@
         color: $color-white;
         width: 100%;
       }
-  
+
       &__number {
         @include transition(300ms all);
-  
+
         color: $color-gray-700;
         font-size: 6.875rem;
         letter-spacing: 0.05rem;
@@ -102,11 +101,11 @@
         text-shadow: -1px -1px 0 $color-white, 1px -1px 0 $color-white, -1px 1px 0 $color-white, 1px 1px 0 $color-white;
         -webkit-text-stroke: 1px $color-white;
 
-        @include devicebreak(medium){
+        @include devicebreak(medium) {
           font-size: 6.6rem;
         }
 
-        @include devicebreak(large){
+        @include devicebreak(large) {
           font-size: 6.875rem;
         }
 
@@ -114,15 +113,15 @@
           margin-bottom: $spacing-16;
         }
       }
-  
+
       &__per {
-        
         @include devicebreak(small) {
           margin-bottom: $spacing-12;
         }
       }
+
       &.medium {
-        .statscard__box{
+        .statscard__box {
           padding: 0;
         }
 

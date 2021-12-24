@@ -5,8 +5,8 @@
 .image-only-carousel {
   overflow: hidden;
 
-  .medium-8{
-    img{
+  .medium-8 {
+    img {
       width: 100%;
     }
   }
@@ -17,20 +17,20 @@
     }
 
     &__arrows {
+      @extend %carousel_arrows;
+
       align-self: flex-end;
       margin-left: 4rem;
-
-      @extend %carousel_arrows;
     }
 
     &__arrow {
       @extend %carousel_arrow;
 
-      &:first-child{
+      &:first-child {
         margin-right: 0.75rem;
       }
 
-      &:last-child{
+      &:last-child {
         margin-left: 0.75rem;
       }
 
@@ -50,21 +50,21 @@
         margin-right: 0;
       }
 
-      &__arrow{
-        &:first-child{
-          margin-right: 0;
+      &__arrow {
+        &:first-child {
           margin-left: 0.75rem;
+          margin-right: 0;
         }
-  
-        &:last-child{
+
+        &:last-child {
           margin-left: 0;
           margin-right: 0.75rem;
         }
       }
-      
+
       &__arrows {
-        margin-right: 4rem;
         margin-left: 0;
+        margin-right: 4rem;
       }
     }
   }
