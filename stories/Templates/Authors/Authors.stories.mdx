@@ -330,7 +330,9 @@ export const getfiltertextForLocale = (locale) => {
   }
 `}</style>
 
-<Story name="Authors">
+<Story name="Authors" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const filtertext = getfiltertextForLocale(locale);
     const buttonData = getButtonForLocale(locale);

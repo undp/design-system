@@ -33,7 +33,9 @@ import {
   }
 `}</style>
 
-<Story name="Author page">
+<Story name="Author page" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const navigationData = getNavLinks(locale);
     const leftNavigationData = navigationData.filter(

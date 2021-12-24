@@ -479,7 +479,9 @@ export const getCaptionForActiveLocale = (locale) => {
 # Landing Page Templates
 Template for Generic Landing Page
 
-<Story name="Generic Landing Page">
+<Story name="Generic Landing Page" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     const categoryText = getCaptionForCategoryLocale(locale);

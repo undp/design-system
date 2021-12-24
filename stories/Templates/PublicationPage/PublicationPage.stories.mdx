@@ -526,7 +526,9 @@ export const getCaptionForLocale = (locale) => {
 # Publication Page Templates
 Template for Publication Page
 
-<Story name="Publication Page">
+<Story name="Publication Page" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     const navigationData= getNavLinks(locale);
