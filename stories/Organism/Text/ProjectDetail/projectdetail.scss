@@ -32,10 +32,14 @@
 
 }
 
-h2.project-data__title {
+.project-data__title {
   border-bottom: 2px solid $color-black;
   margin-bottom: 0;
   padding-bottom: 2rem;
+}
+
+.details-first {
+  flex-direction: row-reverse;
 }
 
 /* project data end */

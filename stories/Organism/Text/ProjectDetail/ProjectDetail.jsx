@@ -16,7 +16,7 @@ export const Projectdetail = ({
       <Heading type="2" className="project-data__title left-right" label={text} />
       <div className="project-data__section left-right grid-x grid-margin-x">
         <div className="cell large-2 medium-2">
-          <div className="grid-x">
+          <div className="grid-x details-first">
             <div className="cell large-12 medium-12 small-6">
               <Projectcolumn headertext={title1} subtext={subtitle1} />
             </div>

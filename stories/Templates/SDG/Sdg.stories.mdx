@@ -1236,7 +1236,9 @@ export const getCaptionForLocale = (locale) => {
 
 Template for SDG Page
 
-<Story name="SDG Page">
+<Story name="SDG Page" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     const navigationData = getNavLinks(locale);

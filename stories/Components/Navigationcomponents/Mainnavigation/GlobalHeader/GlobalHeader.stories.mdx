@@ -136,7 +136,9 @@ export const menuData = (locale) => {
 <Meta title="Components/Navigation Components/Main Navigation/Global Header" />
 
 
-<Story name="Global Header">
+<Story name="Global Header" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
   let lang = locale === 'en' ? 'english' : locale;
     const caption = getCaptionForLocale(locale);
