@@ -26,7 +26,7 @@ export const StatsCards = ({
   }
 
   return (
-  <div className={['statscard', 'cell', `${size}`].join(' ')}>
+  <div className={['statscard', `${size}`].join(' ')}>
     <div className="statscard__box">
       {Size == 'Extra_large' ? (<Heading type="2" className="statscard__title" label={title} />) : (<></>)}
       {Size == 'Large' ? (<Heading type="3" className="statscard__title" label={title} />) : (<></>)}

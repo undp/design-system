@@ -63,62 +63,75 @@
         opacity: 1;
       }
 
-      .stats {
-        &-number {
+      .statscard {
+        &__number {
           text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
           -webkit-text-stroke: 1px $color-gray-700;
         }
 
-        &-box {
+        &__box {
           color: $color-gray-700;
         }
       }
     }
-  }
 
-  &-box {
-    color: $color-white;
-    padding: 0 $spacing-24;
-    width: 100%;
-    z-index: 1;
+    .statscard {
+      background-color: transparent;
+      width: 100%;
+      max-width: 100%;
+      z-index: 1;
+      padding: 0 $spacing-24;
+      word-break: unset;
 
-    @include devicebreak(medium) {
-      padding: 0 $spacing-48;
-    }
-  }
+      @include devicebreak(medium) {
+        padding: 0 $spacing-48;
+      }
 
-  &-number {
-    @include transition(300ms all);
+      &__box {
+        color: $color-white;
+        width: 100%;
+      }
+  
+      &__number {
+        @include transition(300ms all);
+  
+        color: $color-gray-700;
+        font-size: 6.875rem;
+        letter-spacing: 0.05rem;
+        line-height: 1.09;
+        text-shadow: -1px -1px 0 $color-white, 1px -1px 0 $color-white, -1px 1px 0 $color-white, 1px 1px 0 $color-white;
+        -webkit-text-stroke: 1px $color-white;
 
-    color: $color-gray-700;
-    display: block;
-    font-family: $Font-Family-SohneBreit;
-    font-size: 6.875rem;
-    letter-spacing: 0.05rem;
-    line-height: 1.09;
-    margin-bottom: $spacing-16;
-    text-shadow: -1px -1px 0 $color-white, 1px -1px 0 $color-white, -1px 1px 0 $color-white, 1px 1px 0 $color-white;
-    -webkit-text-stroke: 1px $color-white;
+        @include devicebreak(medium){
+          font-size: 6.6rem;
+        }
 
-    @include devicebreak(medium) {
-      font-size: 6.6rem;
-      margin-bottom: $spacing-32;
-    }
+        @include devicebreak(large){
+          font-size: 6.875rem;
+        }
 
-    @include devicebreak(large) {
-      font-size: 6.875rem;
-    }
-  }
+        @include devicebreak(small) {
+          margin-bottom: $spacing-16;
+        }
+      }
+  
+      &__per {
+        
+        @include devicebreak(small) {
+          margin-bottom: $spacing-12;
+        }
+      }
+      &.medium {
+        .statscard__box{
+          padding: 0;
+        }
 
-  &-per {
-    display: block;
-    font-size: 2.188rem;
-    font-weight: 600;
-    line-height: 1.12;
-    margin-bottom: $spacing-12;
-
-    @include devicebreak(medium) {
-      margin-bottom: $spacing-16;
+        .statscard__per {
+          font-size: 2.188rem;
+          font-weight: 600;
+          line-height: 1.12;
+        }
+      }
     }
   }
 }

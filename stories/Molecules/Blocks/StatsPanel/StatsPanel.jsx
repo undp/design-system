@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './statspanel.scss';
+import {StatsCards} from '../../../Components/UIcomponents/Cards/StatsCards/StatsCards';
 import viewport from '../../../assets/js/viewport';
 
 export const StatsPanel = ({
@@ -12,11 +13,7 @@ export const StatsPanel = ({
     <div className={`cell medium-3 statspanel-card left-right delay-${delaytime}`}>
       <div className={['stats-panel', `${[`${Hovercolors}`]}`].join(' ')}>
         <img src={imageback} alt={imageback} />
-        <div className="stats-box">
-          <div className="stats-number">{number}</div>
-          <div className="stats-per">{percent}</div>
-          <p>{content}</p>
-        </div>
+        <StatsCards number={number} percent={percent}  content={content}/>
       </div>
     </div>
   );
