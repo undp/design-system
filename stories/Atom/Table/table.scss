@@ -102,16 +102,17 @@ tbody {
 
 .scroll {
   overflow-x: auto;
-
-  th,
-  td {
-    -webkit-text-size-adjust: 100%;
-    white-space: nowrap;
+  
+  thead{
+    th,
+    td {
+      white-space: nowrap;
+    }
   }
-
+  
   th,
   td {
-    white-space: nowrap;
+    text-size-adjust: 100%;
   }
 }
 
