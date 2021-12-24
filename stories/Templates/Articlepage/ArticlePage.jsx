@@ -110,7 +110,7 @@ const ArticlePage = ({
             <BlockquoteComponent
               blockquoteText={blockquoteData.blockquote}
               citeText={blockquoteData.cite}
-              style="yellow"
+              Colors="yellow"
             />
           </div>
         </div>

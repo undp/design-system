@@ -10,7 +10,7 @@ export const PublicationCard = ({
   image, image2, download, readmore, ...args
 }) => (
   <div className="publication-card">
-    {image && <Publicationthumb />}
+    {image && <Publicationthumb Hovercolors="yellow"/>}
     {image2 && <Cardthumb />}
     <div className="publication-card__description">
       {args.variant === 'Download' && 
@@ -25,24 +25,22 @@ export const PublicationCard = ({
         </div>
         }
       {args.variant === 'Both'
-        && 
-        <>
-          <div class="grid-x">
-            <div class="cell small-6">
-              <div className="publication-card__download">
-                {download}
-                <Icondownload />
-              </div>
-            </div>
-            <div class="cell small-6">
-              <div className="publication-card__readmore">
-                {readmore}
-                <Iconexternallink />
-              </div>
+        && (
+        <div class="grid-x">
+          <div class="cell small-6">
+            <div className="publication-card__download">
+              {download}
+              <Icondownload />
             </div>
           </div>
-        </>
-        }
+          <div class="cell small-6">
+            <div className="publication-card__readmore">
+              {readmore}
+              <Iconexternallink />
+            </div>
+          </div>
+        </div>
+        )}
     </div>
   </div>
 );

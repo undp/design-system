@@ -4,7 +4,7 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 
 export const StatsCards = ({
-  title, number, percent, content, Size,
+  title, number, percent, content, Size, Hovercolors,
 }) => {
   let size;
   switch (Size) {
@@ -25,7 +25,7 @@ export const StatsCards = ({
   }
 
   return (
-    <div className={['statscard', `${size}`].join(' ')}>
+    <div className={['statscard', `${size} ${Hovercolors}`].join(' ')}>
       <div className="statscard__box">
         {Size == 'Extra_large' ? (<Heading type="2" className="statscard__title" label={title} />) : (<></>)}
         {Size == 'Large' ? (<Heading type="3" className="statscard__title" label={title} />) : (<></>)}
@@ -35,4 +35,8 @@ export const StatsCards = ({
       </div>
     </div>
   );
+};
+
+StatsCards.defaultProps = {
+  Hovercolors: 'yellow',
 };

@@ -72,6 +72,12 @@
     }
   }
 
+  &.gray {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-gray-100, transparent 80%);
+    }
+  }
+
   &.card,
   &.card-yellow {
     &.yellow,

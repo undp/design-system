@@ -61,6 +61,7 @@ const AuthorPage = ({
             <ContentCard
               data={contentCardData.groupcontentdata}
               buttontype={contentCardData.buttonname}
+              Hovercolors='yellow'
             />
           </div>
         </div>

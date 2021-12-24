@@ -11,7 +11,18 @@ import './genericpage.scss';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 
 export const GenericPage = ({
-  herodata, title, content, active, imgsource, altname, topHeading, topParagraph, footerData, sidebarCaptionData, ContentCardData, headingMissionVision,
+  herodata,
+  title,
+  content,
+  active,
+  imgsource,
+  altname,
+  topHeading,
+  topParagraph,
+  footerData,
+  sidebarCaptionData,
+  ContentCardData,
+  headingMissionVision,
   paraMissionVision,
   headingHistory,
   paraHistory,
@@ -30,7 +41,6 @@ export const GenericPage = ({
   backcaption,
 }) => (
   <>
-
     <GlobalHeader
       backcaption={backcaption}
       locale={locale}
@@ -41,8 +51,7 @@ export const GenericPage = ({
       locationData={locationData}
       langSelect={langSelect}
     />
-
-    <ProgressBarNavigation />
+    <ProgressBarNavigation Colors="yellow" />
     <div className="grid-x grid-margin-x">
       <div className="cell small-12 sidebar-width">
         <div className="column sidebar-mobile">
@@ -63,7 +72,6 @@ export const GenericPage = ({
       imgalt={altname}
       active={active}
     />
-
     <div className="grid-container fluid content-bottom">
       <div className="grid-x grid-margin-x margin-top-72">
         <div className="cell large-3 small-12 sidebar-width">
@@ -80,10 +88,7 @@ export const GenericPage = ({
           <div className="grid-x grid-margin-x">
             <div className="cell large-10 small-12">
               <div className="column">
-                <Heading
-                  type="2"
-                  label={topHeading}
-                />
+                <Heading type="2" label={topHeading} />
               </div>
             </div>
             <div className="cell large-10 small-12 margin-top-32">
@@ -93,17 +98,12 @@ export const GenericPage = ({
             </div>
             <div className="cell large-12 small-12 margin-top-80">
               <div className="column">
-                <FluidImageSizeCarousel
-                  data={carouselData}
-                />
+                <FluidImageSizeCarousel data={carouselData} />
               </div>
             </div>
             <div className="cell large-9 small-12 margin-top-48">
               <div className="column">
-                <Heading
-                  type="3"
-                  label={headingMissionVision}
-                />
+                <Heading type="3" label={headingMissionVision} />
               </div>
             </div>
             <div className="cell large-10 small-12">
@@ -114,10 +114,7 @@ export const GenericPage = ({
 
             <div className="cell large-9 small-12 margin-top-48">
               <div className="column">
-                <Heading
-                  type="3"
-                  label={headingUNcharter}
-                />
+                <Heading type="3" label={headingUNcharter} />
               </div>
             </div>
             <div className="cell large-10 small-12">
@@ -125,13 +122,9 @@ export const GenericPage = ({
                 <P label={paraUNcharter} />
               </div>
             </div>
-
             <div className="cell large-9 small-12 margin-top-48">
               <div className="column">
-                <Heading
-                  type="3"
-                  label={headingHistory}
-                />
+                <Heading type="3" label={headingHistory} />
               </div>
             </div>
             <div className="cell large-10 small-12">
@@ -143,6 +136,7 @@ export const GenericPage = ({
               <ContentCard
                 data={ContentCardData.groupcontentdata}
                 buttontype={ContentCardData.buttonname}
+                Hovercolors='yellow'
               />
             </div>
           </div>

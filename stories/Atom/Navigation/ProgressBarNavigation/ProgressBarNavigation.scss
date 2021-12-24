@@ -30,7 +30,6 @@
 }
 
 .progress-bar {
-  background: $color-yellow;
   height: 0.75rem;
   min-width: 1%;
   position: fixed;
@@ -39,6 +38,22 @@
 
   @include devicebreak(medium) {
     height: 1rem;
+  }
+
+  &.yellow {
+    background: $color-yellow;
+  }
+
+  &.red {
+    background: $color-red;
+  }
+
+  &.green {
+    background: $color-green;
+  }
+
+  &.blue {
+    background: $color-azure;
   }
 }
 
