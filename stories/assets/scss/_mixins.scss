@@ -70,11 +70,11 @@
 }
 
 //gradient color
-@mixin gradient($direction, $list) { 
+@mixin gradient($direction, $list) {
   background: -webkit-linear-gradient($direction, $list);
   background: -moz-linear-gradient($direction, $list);
   background: -o-linear-gradient($direction, $list);
-  background: linear-gradient($direction, $list);  
+  background: linear-gradient($direction, $list);
 }
 
 /* mixing  end */
@@ -420,9 +420,16 @@
 
 %carousel_arrows{
   display: none;
-  
+
   @media (pointer: coarse) and (hover: none) and (min-width: 48em) {
     display: block;
+  }
+}
+%verticl_center-mb{
+  @include devicebreak(small) {
+    height: 100vh;
+    display: flex;
+    align-items: center;
   }
 }
 /* placehoder start */

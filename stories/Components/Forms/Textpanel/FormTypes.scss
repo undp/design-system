@@ -1,8 +1,9 @@
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
 .form-wrapper {
     .text-panel{
+        @extend %verticl_center-mb;
         .button{
             margin-top: 0.1875rem;
         }
@@ -20,6 +21,9 @@
         img {
             object-fit: cover;
             height: 100%;
+        }
+        .stacked-form{
+            height: inherit;
         }
     }
     .form-bg {
@@ -42,14 +46,13 @@
             align-items: center;
             height: 100vh;
             background: $color-gray-100;
-            margin: -1.375rem;
-            padding: 0 $spacing-32;
+            padding: 0 0.625rem;
         }
         h2{
             margin-bottom: $spacing-24;
         }
         .input-group {
-            
+
             .input__controls {
                 margin:$spacing-12 0;
                 @include devicebreak(small) {
@@ -59,10 +62,11 @@
         }
         .button {
                 margin-top: $spacing-16;
-            
+
         }
     }
     .stacked-form {
+        @extend %verticl_center-mb;
         p {
             margin-bottom: $spacing-50;
         }
