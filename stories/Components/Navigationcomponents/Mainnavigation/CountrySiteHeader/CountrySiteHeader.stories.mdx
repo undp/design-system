@@ -1,56 +1,56 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import CountrySiteHeader from './CountrySiteHeader';
 import {getCaptionForLocale as Languageswitcher} from "../../../UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
 
 
 export const getNavLinks = (locale) => {
-    switch (locale) {
-        case 'english':
-            return [
-                {label: 'Who we are',id: 'headerlink1',position: 'left'},
-                {label: 'What we do',id: 'headerlink2',position: 'left'},
-                {label: 'Our Impact',id: 'headerlink3',position: 'right'},
-                {label: 'Get Involved',id: 'headerlink4',position: 'right'},
-              ];
-        case 'arabic':
-            return [
-              {label: 'من نحن',id: 'headerlink1',position: 'left'},
-              {label: 'الذي نفعله',id: 'headerlink2',position: 'left'},
-              {label: 'تأثيرنا',id: 'headerlink3',position: 'right'},
-              {label: 'شارك',id: 'headerlink4',position: 'right'},
-            ];
-        case 'burmese':
-        return [
-                {label: 'ငါတို့ဘယ်သူလဲ။',id: 'headerlink1',position: 'left'},
-                {label: 'ငါတို့ဘာလုပ်မလဲ။',id: 'headerlink2',position: 'left'},
-                {label: 'ကျွန်ုပ်တို့၏သက်ရောက်မှု',id: 'headerlink3',position: 'right'},
-                {label: 'ပါဝင်လိုက်ပါ။',id: 'headerlink4',position: 'right'},
-            ];
-        case 'japanese':
-            return [
-                {label: '私たちは誰ですか',id: 'headerlink1',position: 'left'},
-                {label: '私達がすること',id: 'headerlink2',position: 'left'},
-                {label: '私たちの影響',id: 'headerlink3',position: 'left'},
-                {label: '参加する',id: 'headerlink4',position: 'left'},
-            ];
-        default: return [
-          {label: 'Who we are',id: 'headerlink1',position: 'left'},
-          {label: 'What we do',id: 'headerlink2',position: 'left'},
-          {label: 'Our Impact',id: 'headerlink3',position: 'right'},
-          {label: 'Get Involved',id: 'headerlink4',position: 'right'},
+  switch (locale) {
+    case 'english':
+      return [
+        {label: 'Who we are',id: 'headerlink1',position: 'left'},
+        {label: 'What we do',id: 'headerlink2',position: 'left'},
+        {label: 'Our Impact',id: 'headerlink3',position: 'right'},
+        {label: 'Get Involved',id: 'headerlink4',position: 'right'},
       ];
-    }
+    case 'arabic':
+      return [
+        {label: 'من نحن',id: 'headerlink1',position: 'left'},
+        {label: 'الذي نفعله',id: 'headerlink2',position: 'left'},
+        {label: 'تأثيرنا',id: 'headerlink3',position: 'right'},
+        {label: 'شارك',id: 'headerlink4',position: 'right'},
+      ];
+    case 'burmese':
+      return [
+        {label: 'ငါတို့ဘယ်သူလဲ။',id: 'headerlink1',position: 'left'},
+        {label: 'ငါတို့ဘာလုပ်မလဲ။',id: 'headerlink2',position: 'left'},
+        {label: 'ကျွန်ုပ်တို့၏သက်ရောက်မှု',id: 'headerlink3',position: 'right'},
+        {label: 'ပါဝင်လိုက်ပါ။',id: 'headerlink4',position: 'right'},
+      ];
+    case 'japanese':
+      return [
+        {label: '私たちは誰ですか',id: 'headerlink1',position: 'left'},
+        {label: '私達がすること',id: 'headerlink2',position: 'left'},
+        {label: '私たちの影響',id: 'headerlink3',position: 'left'},
+        {label: '参加する',id: 'headerlink4',position: 'left'},
+      ];
+    default: return [
+      {label: 'Who we are',id: 'headerlink1',position: 'left'},
+      {label: 'What we do',id: 'headerlink2',position: 'left'},
+      {label: 'Our Impact',id: 'headerlink3',position: 'right'},
+      {label: 'Get Involved',id: 'headerlink4',position: 'right'},
+    ];
+  }
 }
 
 export const getSiteTitle = (locale) => { 
   switch (locale) { 
-        case 'english': return {label: 'GLOBAL',span: 'Site Title'}; 
-        case 'arabic': return {label: 'عالمي',span: 'عنوان الموقع'}; 
-        case 'burmese': return {label: 'ကမ္ဘာလုံးဆိုင်ရာ',span: 'ငဆိုက်ခေါင်းစဉ်'}; 
-        case 'japanese': return {label: 'グローバル',span: 'ウェブサイト名'}; 
-        default:return {label: 'GLOBAL',span: 'Site Title'}; 
-    } 
+    case 'english': return {label: 'GLOBAL',span: 'Site Title'}; 
+    case 'arabic': return {label: 'عالمي',span: 'عنوان الموقع'}; 
+    case 'burmese': return {label: 'ကမ္ဘာလုံးဆိုင်ရာ',span: 'ငဆိုက်ခေါင်းစဉ်'}; 
+    case 'japanese': return {label: 'グローバル',span: 'ウェブサイト名'}; 
+    default:return {label: 'GLOBAL',span: 'Site Title'}; 
   } 
+} 
 
 export const getLocationDataForLocale = (locale) => {
   switch(locale) {
@@ -133,26 +133,73 @@ export const menuData = (locale) => {
   }
 };
 
+<style>{`
+  .sbdocs iframe {
+    min-height: 300px;
+  }
+`}</style>
+
 <Meta title="Components/Navigation Components/Main Navigation/Country Header" />
 
+# Country Header
+The Country Site Header is a header which contains the site name .
 
-<Story name="Country Header">
-  {(args, { globals: { locale } }) => {
-  let lang = locale === 'en' ? 'english' : locale;
-    const caption = getCaptionForLocale(locale);
-    const navigationData= getNavLinks(locale);
-    const leftNavigationData=navigationData.filter(item=>item.position==='left');
-     const rightNavigationData=navigationData.filter(item=>item.position==='right');
-     const backcaption = getBackForLocale(locale);
-     const siteTitleData = getSiteTitle(locale);
-return <CountrySiteHeader siteTitleData={siteTitleData} backcaption={backcaption} locale={locale} leftNavigationData={leftNavigationData}
-     navigationData={navigationData} rightNavigationData={rightNavigationData}
-      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
-     text={caption}
-      locationData={getLocationDataForLocale(locale)} langSelect={getSelectlanguage(locale)}
-      ></CountrySiteHeader>;
-  }}
-</Story>
+### Overview
+The Country Site Header component is a navigation bar which allows access to important functions across the website. It is present at the top of the page. 
 
+#### When to use:
+To indicate the location of the current page and to navigate back to each of the previously visited pages.
 
+### Formatting
+#### Default
+It consists of a navigation bar with drop-down menus, CTA links,search bar, logo and site name. The Logo is situated at the left hand corner of the bar followed by the site title..
 
+#### Content
+There are two types of Country Header: Without Progress Bar and With Progress Bar
+
+### Behaviors
+
+#### States
+There are three states:  Default, Tablet and Mobile.
+
+<Canvas>
+  <Story 
+    name="Country Header" 
+    parameters={{
+      docs: {
+        inlineStories: false,
+      }
+    }}>
+    {(args, { globals: { locale } }) => {
+    let lang = locale === 'en' ? 'english' : locale;
+      const caption = getCaptionForLocale(locale);
+      const navigationData= getNavLinks(locale);
+      const leftNavigationData=navigationData.filter(item=>item.position==='left');
+      const rightNavigationData=navigationData.filter(item=>item.position==='right');
+      const backcaption = getBackForLocale(locale);
+      const siteTitleData = getSiteTitle(locale);
+  return <CountrySiteHeader siteTitleData={siteTitleData} backcaption={backcaption} locale={locale} leftNavigationData={leftNavigationData}
+      navigationData={navigationData} rightNavigationData={rightNavigationData}
+        menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
+      text={caption}
+        locationData={getLocationDataForLocale(locale)} langSelect={getSelectlanguage(locale)}
+        ></CountrySiteHeader>;
+    }}
+  </Story>
+</Canvas>
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Interactions
+- By clicking on the CTA Link, the page is directed to the subsequent link page.
+- By clicking on the search icon, the search tab opens.
+
+### Changelog
+1.0 — Released component

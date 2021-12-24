@@ -43,12 +43,6 @@ The CTA link with the arrow prompts the users to take actions and is in default 
 </Canvas>
 
 The CTA links with the arrow in hover state which changes its appearance once the mouse hovers over it but the arrow does not expand.
-<Canvas>
-   {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocale(locale);
-      return (<Ctalink label={caption.detail1} {...args}></Ctalink>);
-    }}
-</Canvas>
 
 The CTA link with space expand in default state is a space expand link where the space after the text expands but the arrow does not. 
 --Component here--

@@ -1,49 +1,42 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { FrostedImage } from "./FrostedImage";
 
 <Meta title="Utilities/Frosted background" />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-`}</style>{" "}
+# Frosted background
+The Frosted Background component is used to give a translucent effect to the background.
 
-# Frosted background Component
+### Overview
+The Frosted Background component is used to embed an overlay in a web page.
 
-The Frosted background Component is used to embed an overlay in a web page.
+#### When to use:
+To create an engaging background.
 
-<Story name="Frosted background">
-  return <FrostedImage></FrostedImage> ;
-</Story>
+### Formatting
+#### Default
+It consists of a glassy background and an image on one side of the page.
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>
-  <li>
-    Author Images are saved in assets/images/ folder in SVG, PNG, JPG, JPEG
-    formats
-  </li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like normalize, variables from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>frostedimage.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+### Behaviors
+#### States
+There is only one state: Default.
+
+<Canvas>
+  <Story name="Frosted background">
+    return <FrostedImage></FrostedImage> ;
+  </Story>
+</Canvas>
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Interactions
+- No interaction required with Frosted Background.
+
+### Changelog
+1.0 — Released component

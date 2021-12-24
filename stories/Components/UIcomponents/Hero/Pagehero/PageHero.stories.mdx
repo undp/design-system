@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { PageHero } from "./PageHero";
 import { PageHeroOption } from "./PageHeroOption";
 import BackgroundImg from '../../../../assets/images/garden.jpg';
@@ -96,77 +96,86 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Hero"
+<Meta 
+  title="Components/UI components/Hero"
   argTypes={{
     variant: {
       options: ["video", "image"],
       control: { type: "radio" },
     },
-  }}/>
+}}/>
 
-<style>{`
- .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-`}</style>
+# Page Hero
+The Page Hero images are large sized images with text beside or above the image and present at the top of the homepage. 
 
-# Page Hero Component
+### Overview
+The Page Hero component is a multi-usage component  which creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle and Breadcrumb. Animation and atom tags are used for creating this card.
 
-## Overview
+#### When to use:
+- When the website needs to grab the user's attention to a particular page.
 
-The Page hero component multiusage component which creates boxes that are usually teasing some kind of content like - Image, Text, Subtitle, and Breadcrumb. We are using the animation here assets/js/viewport.js. Atoms tags are used for creating this card.
+### Formatting
+#### Default
+It consists of a grid with title, subtitle, image and breadcrumbs.
 
-## Default Representation & various possible states
+#### Content
+The Tall Page Hero image consists of an Image situated at either side or at the bottom of the grid. The text is either at the other side of the grid or above the image.
 
-#### Page hero - Full-width
+### Behaviors
+#### States
+There are two states in the Tall Image Page- Default and Mobile.
+1. Default: It consists of an image on either side of the grid and content on the other side.
+2. Mobile: It consists of an image at the bottom of the grid and content above the grid.
 
-<Story name="Page hero - Full-width">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <PageHero data={caption.herodata} title={caption.title} content={caption.content} active={'white'} imgsrc={caption.imgsrc} imgalt={caption.imgalt} {...args}
-      ></PageHero>
-    );
-  }}
-</Story>
+<Canvas>
+  <Story name="Page hero - Tall image">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <PageHeroOption data={caption.herodata} title={caption.title} content={caption.content} active={'default'} imgsrc={caption.imgsrc} imgalt={caption.imgalt} videosrc={caption.videosrc} {...args}
+        ></PageHeroOption>
+      );
+    }}
+  </Story>
+</Canvas>
 
-### Page hero - Tall image
+### Formatting
+#### Default
+It consists of a grid with title, subtitle, image and breadcrumbs.
 
-<Story name="Page hero - Tall image">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <PageHeroOption data={caption.herodata} title={caption.title} content={caption.content} active={'default'} imgsrc={caption.imgsrc} imgalt={caption.imgalt} videosrc={caption.videosrc} {...args}
-      ></PageHeroOption>
-    );
-  }}
-</Story>
+#### Content
+The Full-width Page Hero image consists of an Image and text, subtitle and breadcrumbs in the front of the image. The image covers the entire grid.
 
-## Dependencies
+### Behaviors
+#### States
+There are two states in the Full-width Page- Default and Mobile.
+1. Default: It consists of an image and breadcrumbs in the front of the image at the top and title and subtitle below it. 
+2. Mobile: It consists of a vertical image with breadcrumbs, title and subtitles in the front of the image.
 
-Libraries or another dependency which are used in the component.
+<Canvas>
+  <Story name="Page hero - Full-width">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <PageHero data={caption.herodata} title={caption.title} content={caption.content} active={'white'} imgsrc={caption.imgsrc} imgalt={caption.imgalt} {...args}
+        ></PageHero>
+      );
+    }}
+  </Story>
+</Canvas>
 
-- For animation functionality its depend on the jQuery plugin library.
-- Custom JS file (viewport.js) and (animation.js) is located in the same js folder.
+### CSS and JS References [ADDED BY DEVs]
 
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
 
-## Usage
+#### JS:
+- dist/js/[component].js
 
-- Take HTML from the HTML tab in the canvas.
-- <u>To use SCSS include the following files in your implementation</u>
-- Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
--  Component SCSS file: <code>pagehero.scss</code>
-- <u>To use CSS include the following files in your implementation</u>
-- The compiled CSS file from <code>assets/css/style.css</code>
+### Interactions
+- When the page is opened, the contents of the card appears beside the image.
+- When the page is opened, the contents of the card appears beside the image and the image zooms in.  
+
+### Changelog
+1.0 — Released component

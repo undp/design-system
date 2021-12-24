@@ -27,6 +27,7 @@ export const parameters = {
   },
   docs: {
     transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn),
+    iframeHeight: 'auto'
   },
    options: {
     isToolshown: true,

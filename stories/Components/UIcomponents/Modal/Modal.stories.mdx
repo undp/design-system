@@ -1,5 +1,11 @@
-import { Meta, Story, canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Modal } from './Modal';
+
+<style>{`
+  .sbdocs iframe {
+    min-height: 300px;
+  }
+`}</style>
 
 <Meta title="Components/UI components/Modal" />
 
@@ -24,7 +30,13 @@ Any image or information can be placed in the modal window.
 There is only one state in Modal.
 
 <Canvas>
-  <Story name="Modal">
+  <Story 
+    name="Modal"
+    parameters={{
+      docs: {
+        inlineStories: false,
+      }
+    }}>
     return <Modal></Modal>;
   </Story>
 </Canvas>

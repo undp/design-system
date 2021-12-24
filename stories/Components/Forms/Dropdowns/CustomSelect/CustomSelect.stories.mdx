@@ -11,6 +11,12 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
+<style>{`
+  .sbdocs iframe {
+    min-height: 200px;
+  }
+`}</style>
+
 <Meta title="Components/Forms/Dropdown/Custom Select" />
 
 # MultiSelect
@@ -41,7 +47,16 @@ The Dropdown boxes are either opened or closed.
 **Multiselect:** A select list where user can select multiple options from the dropdown.
 
 <Canvas>
-  <Story name="Custom Select">
+  <Story 
+    name="Custom Select"
+    parameters={{
+      docs: {
+        inlineStories: false,
+        iframe: {
+          height: '750px'
+        }
+      }
+    }}>
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <CustomSelect text={caption}></CustomSelect>;

@@ -74,7 +74,12 @@ The Dark Red Primary button with an arrow is the default button displayed on the
   <Story name="Buttonsa">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <CtaButton label={caption.detail} {...args} ></CtaButton>;
+      return (
+        <>
+          <CtaButton label={caption.detail} {...args} ></CtaButton>
+          <CtaButton label={caption.detail} {...args} ></CtaButton>
+        </>
+      );
     }}
   </Story>
 </Canvas>

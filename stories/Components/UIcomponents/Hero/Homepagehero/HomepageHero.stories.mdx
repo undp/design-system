@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Homepagehero } from "./HomepageHero";
 import { Homepageherosplit } from "./HomepageHeroSplit";
 import { Homepageherooption } from "./HomepageHeroOption";
@@ -79,96 +79,133 @@ export const getCaptionForLocale = (locale) => {
   }}
 />
 
-<style>{`
- .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-`}</style>
+# Homepage Hero
+The Homepage Hero images are large sized images with text in front of the image and present at the top of the homepage. 
 
-# Homepage Hero Component
+### Overview
+The Homepage Hero component is a multi-usage component  which creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle and Breadcrumb. Animation and atom tags are used for creating this card.
 
-## Overview
+#### When to use:
+- When the website needs to grab the user's attention to a particular page.
 
-The Homepage hero component multiusage component which creates boxes that are usually teasing some kind of content like - Image, Text, Subtitle, and CTA Link. We are using the animation here assets/js/viewport.js. Atoms tags are used for creating this card.
+## Full Width
 
-## Default Representation & various possible states
+### Formatting
 
-### Homepage hero - Full-width
+#### Default
+It consists of a grid with title, subtitle, image and chip.
 
-<Story name="Homepage hero - Full-width">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <Homepagehero
-        title={caption.titlename}
-        content={caption.text}
-        button={caption.btnlabel}
-        {...args}
-      ></Homepagehero>
-    );
-  }}
-</Story>
+#### Content
+The Full-width homepage consists of an Image and title, subtitle, breadcrumbs and chip is in front of the image. The entire grid is covered with the image.
 
-### Homepage hero - Tall image
+### Behaviors
+#### States
+There are two states in the Full-width homepage- Default and Mobile.
+1. Default: It consists of a horizontal image 
+2. Mobile: It consists of a vertical image.
 
-<Story name="Homepage hero - Tall image">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <Homepageherosplit
-        title={caption.titlename}
-        content={caption.text}
-        button={caption.btnlabel}
-        {...args}
-      ></Homepageherosplit>
-    );
-  }}
-</Story>
+<Canvas>
+  <Story name="Homepage hero - Full-width">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <Homepagehero
+          title={caption.titlename}
+          content={caption.text}
+          button={caption.btnlabel}
+          {...args}
+        ></Homepagehero>
+      );
+    }}
+  </Story>
+</Canvas>
 
-### Homepage hero - Wide image
+## Tall Image
 
-<Story name="Homepage hero - Wide image">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <Homepageherooption
-        title={caption.titlename}
-        content={caption.text}
-        button={caption.btnlabel}
-        subtitle={caption.subtitle}
-        imgsrc={caption.imgsrc}
-        imgalt={caption.imgalt}
-        headingTop={caption.headingTop}
-        {...args}
-      ></Homepageherooption>
-    );
-  }}
-</Story>
+### Formatting
 
-## Dependencies
+#### Default
+It consists of a grid with title, subtitle, image and chip.
+
+#### Content
+The Tall homepage image consists of an Image on one side of the grid and title, subtitle, breadcrumbs and chip on the other side of the grid. Half of the grid is covered with an image and the other half with content.
+
+### Behaviors
+#### States
+There are two states in the Tall Image homepage- Default and Mobile.
+1. Default: It consists of an image on either side of the page and content on the other side of the page.
+2. It consists of title and subtitle in the top, image below it and the chip in the bottom of the grid.
+
+<Canvas>
+  <Story name="Homepage hero - Tall Image">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <Homepageherosplit
+          title={caption.titlename}
+          content={caption.text}
+          button={caption.btnlabel}
+          {...args}
+        ></Homepageherosplit>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Wide Image
+
+### Formatting
+
+#### Default
+It consists of a grid with title, subtitle, image and chip.
+
+#### Content
+The Wide homepage image consists of an Image situated at the bottom right or middle of the grid. The title is at the top of the grid and subtitle and chip beside the image.
+
+### Behaviors
+#### States
+There are two states in the Tall Image homepage- Default and Mobile.
+1. Default: It consists of an image situated at the bottom right of the grid. The title is at the top and subtitle and chip beside the image. 
+2. Mobile:  It consists of title and subtitle in the top, image below it and the chip in the bottom of the grid. 
+
+<Canvas>
+  <Story name="Homepage Hero - Wide Image">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <Homepageherooption
+          title={caption.titlename}
+          content={caption.text}
+          button={caption.btnlabel}
+          subtitle={caption.subtitle}
+          imgsrc={caption.imgsrc}
+          imgalt={caption.imgalt}
+          headingTop={caption.headingTop}
+          {...args}
+        ></Homepageherooption>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Dependencies
 
 Libraries or another dependency which are used in the component.
 
 - For animation functionality its depend on the jQuery plugin library.
 - Custom JS file (viewport.js) and (animation.js) is located in the same js folder.
 
-## Usage
+### Interactions
+- When the page is opened, the contents of the card appears over the image.. 
 
-- Take HTML from the HTML tab in the canvas.
-- <u>To use SCSS include the following files in your implementation</u>
-- Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
--  Component SCSS file: <code>homepagehero.scss</code>
-- <u>To use CSS include the following files in your implementation</u>
-- The compiled CSS file from <code>assets/css/style.css</code>
+### Changelog
+1.0 — Released component
