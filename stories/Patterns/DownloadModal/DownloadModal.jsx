@@ -30,7 +30,7 @@ export const DownloadModal = ({
         <div className="download-body">
           {args.Image === 'True' && (
           <div className="show-large">
-            <Publicationthumb />
+            <Publicationthumb Hovercolors="yellow" />
           </div>
           )}
           <div className="download-content">
@@ -43,7 +43,7 @@ export const DownloadModal = ({
           </div>
         </div>
         <div className="download-footer">
-          <CtaButton label={button} For_Primary="No Arrow"/>
+          <CtaButton label={button} For_Primary="No Arrow" />
         </div>
       </div>
     </div>

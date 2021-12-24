@@ -12,14 +12,14 @@
     height: 1rem;
   }
 
-  &.small{
+  &.small {
     height: 0.625rem;
-    
+
     @include devicebreak(medium) {
       height: 0.75rem;
     }
-    
-    .progress-bar{
+
+    .progress-bar {
       height: 0.625rem;
 
       @include devicebreak(medium) {
@@ -30,19 +30,34 @@
 }
 
 .progress-bar {
-  background: $color-yellow;
   height: 0.75rem;
   min-width: 1%;
+  position: fixed;
   width: 34%;
   z-index: 1;
-  position: fixed;
 
   @include devicebreak(medium) {
     height: 1rem;
   }
+
+  &.yellow {
+    background: $color-yellow;
+  }
+
+  &.red {
+    background: $color-red;
+  }
+
+  &.green {
+    background: $color-green;
+  }
+
+  &.blue {
+    background: $color-azure;
+  }
 }
 
-.progress-top{
-  top:0;
+.progress-top {
+  top: 0;
 }
 // * progress navigation end *//

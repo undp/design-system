@@ -57,6 +57,7 @@ export const GenericLandingPage = ({
             <ContentCard
               data={groupcontentdata}
               buttontype={buttonname}
+              Hovercolors='yellow'
             />
           </div>
         </div>

@@ -9,7 +9,7 @@ export const DownloadCard = ({
   image, image2, title, format, download,
 }) => (
   <div className="download-card">
-    {image && <Publicationthumb />}
+    {image && <Publicationthumb Hovercolors="yellow" />}
     {image2 && <Cardthumb />}
     <div className="download-card__description">
       <p className="download-card__title">{title}</p>

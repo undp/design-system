@@ -2,12 +2,14 @@ import React from 'react';
 import './publication-thumbnail.scss';
 import user from '../../../assets/images/publication-thumbnail.jpg';
 
-export const Publicationthumb = ({ }) => {
+export const Publicationthumb = ({ Hovercolors }) => {
   const image = {
     src: user,
     alt: 'Image',
   };
   return (
-    <div className="publication-thumbnail__image yellow"><img src={image.src} alt={image.alt} /></div>
+    <div className={['publication-thumbnail__image', `${[`${Hovercolors}`]}`].join(' ')}>
+      <img src={image.src} alt={image.alt} />
+    </div>
   );
 };

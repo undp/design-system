@@ -1,23 +1,23 @@
-import React, { useEffect } from "react";
-import "./ArticlePage.scss";
-import { PostHeader } from "../../Organism/Text/PostHeader/PostHeader";
-import { Images } from "../../Atom/Images/Imagecaptioncredit/Imagecaption";
-import { Imagecaption } from "../../Molecules/Imagecaption/Imagecaption";
-import { Author } from "../../Components/UIcomponents/Author/Authorcolumn/Authors";
-import { BlockquoteComponent } from "../../Molecules/Text/BlockquoteComponent/BlockquoteComponent";
-import { P } from "../../Atom/Base-typography/Paragraph/Paragraph";
-import { List } from "../../Atom/Typography/Lists/Lists";
-import { FeaturedCard } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard";
-import { Heading } from "../../Atom/Typography/Heading/Heading";
-import farmlandlg from "../../assets/images/farmland-lg.jpg";
-import farmlandmd from "../../assets/images/farmland-md.jpg";
-import farmlandsm from "../../assets/images/farmland-sm.jpg";
-import user from "../../assets/images/user.svg";
-import { Footer } from "../../Organism/Footer/Footer";
-import logo from "../../assets/images/undp-logo-blue.svg";
-import logowhite from "../../assets/images/undp-logo-white.svg";
-import viewport from "../../assets/js/viewport";
-import GlobalHeader from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader";
+import React, { useEffect } from 'react';
+import './ArticlePage.scss';
+import { PostHeader } from '../../Organism/Text/PostHeader/PostHeader';
+import { Images } from '../../Atom/Images/Imagecaptioncredit/Imagecaption';
+import { Imagecaption } from '../../Molecules/Imagecaption/Imagecaption';
+import { Author } from '../../Components/UIcomponents/Author/Authorcolumn/Authors';
+import { BlockquoteComponent } from '../../Molecules/Text/BlockquoteComponent/BlockquoteComponent';
+import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
+import { List } from '../../Atom/Typography/Lists/Lists';
+import { FeaturedCard } from '../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard';
+import { Heading } from '../../Atom/Typography/Heading/Heading';
+import farmlandlg from '../../assets/images/farmland-lg.jpg';
+import farmlandmd from '../../assets/images/farmland-md.jpg';
+import farmlandsm from '../../assets/images/farmland-sm.jpg';
+import user from '../../assets/images/user.svg';
+import { Footer } from '../../Organism/Footer/Footer';
+import logo from '../../assets/images/undp-logo-blue.svg';
+import logowhite from '../../assets/images/undp-logo-white.svg';
+import viewport from '../../assets/js/viewport';
+import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 
 const ArticlePage = ({
   data,
@@ -42,9 +42,8 @@ const ArticlePage = ({
   langSelect,
   backcaption,
 }) => {
-
   useEffect(() => {
-    viewport(".feature__card--headertext");
+    viewport('.feature__card--headertext');
   }, []);
   return (
     <div>
@@ -57,8 +56,8 @@ const ArticlePage = ({
         languageswitcherData={languageswitcherData}
         locationData={locationData}
         langSelect={langSelect}
-      ></GlobalHeader>
-      
+      />
+
       <div className="grid-container full mt-h">
         <div className="grid-x">
           <div className="cell large-9 medium-offset-1 medium-10">
@@ -81,7 +80,7 @@ const ArticlePage = ({
               label={imageCaptionData.label}
               name={imageCaptionData.name}
               paragraph={imageCaptionData.paragraph}
-              {...{ size: "wide", caption: "false", credit: "false" }}
+              {...{ size: 'wide', caption: 'false', credit: 'false' }}
             />
           </div>
         </div>
@@ -111,7 +110,7 @@ const ArticlePage = ({
             <BlockquoteComponent
               blockquoteText={blockquoteData.blockquote}
               citeText={blockquoteData.cite}
-              style="yellow"
+              Colors="yellow"
             />
           </div>
         </div>
@@ -129,7 +128,7 @@ const ArticlePage = ({
               label={imageCaptionData.label}
               name={imageCaptionData.name}
               paragraph={imageCaptionData.paragraph}
-              {...{ size: "wide", caption: "false", credit: "false" }}
+              {...{ size: 'wide', caption: 'false', credit: 'false' }}
             />
           </div>
           <div className="cell medium-7 medium-offset-2 middle-caption">
@@ -182,7 +181,7 @@ const ArticlePage = ({
         data={footerData.footerdata}
         copyright={footerData.copyright}
         menudata={footerData.menudata}
-        {...{ color: "blue" }}
+        {...{ color: 'blue' }}
       />
     </div>
   );
