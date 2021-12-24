@@ -3,7 +3,7 @@
 @import '../../../../assets/scss/variables';
 
 /* parallax card start */
-.ourexpertise {
+.parallax {
   position: relative;
 
   @include devicebreak(medium) {
@@ -38,7 +38,7 @@
 }
 
 [dir='rtl'] {
-  .ourexpertise {
+  .parallax {
     &__heading {
       margin-left: 0;
       margin-right: 8.33333%;

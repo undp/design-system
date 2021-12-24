@@ -45,9 +45,7 @@
       width: 100%;
 
       img {
-        height: 100%;
-        max-width: none;
-        width: auto;
+        @extend %img-cover;
       }
     }
 

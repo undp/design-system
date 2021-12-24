@@ -88,7 +88,7 @@
     display: block;
     height: 100%;
     position: absolute;
-    z-index: 5;
+    z-index: 1;
   }
 
   &::before {
@@ -181,7 +181,7 @@
   .feature__cta {
     margin-bottom: 0;
     margin-top: $spacing-40;
-    z-index: 10;
+    z-index: 2;
 
     @include devicebreak(medium) {
       margin-top: auto;
