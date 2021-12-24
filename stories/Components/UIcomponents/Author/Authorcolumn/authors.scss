@@ -1,5 +1,6 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/breakpoints';
+@import '../../../../assets/scss/mixins';
 
 .author {
   &-wrapper {
@@ -11,6 +12,8 @@
     }
 
     &__box {
+      @extend %img_none;
+
       display: inline-flex;
       margin-bottom: $spacing-24;
       width: 100%;
