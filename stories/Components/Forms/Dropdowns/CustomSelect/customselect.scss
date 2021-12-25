@@ -36,18 +36,17 @@
       @extend %arrow;
     }
   }
-}
 
-.options-container {
-  @extend %select_option;
+  ul {
+    @extend %select_option;
 
-  @include transition( all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
+    @include transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
 
-  background-color: $color-white;
-  order: 1;
-  position: absolute;
-  top: 51px;
-  z-index: 20;
+    background-color: $color-white;
+    order: 1;
+    position: absolute;
+    top: 51px;
+    z-index: 20;
 
   &.active {
     border-top: 0;
@@ -56,34 +55,37 @@
     @extend %background-white;
   }
 
-  &::-webkit-scrollbar {
-    background-color: rgba(0, 0, 0, 0.3);
-    width: 4px;
-  }
+    &::-webkit-scrollbar {
+      background-color: rgba(0, 0, 0, 0.3);
+      width: 4px;
+    }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.6);
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    li {
+      border-top: 1px solid $color-gray-400;
+      cursor: pointer;
+      display: block;
+      padding: 0;
+      position: relative;
+      margin-bottom: 0;
+
+      span {
+        display: block;
+        font-size: $font-size-16;
+        margin: 0 -1rem;
+        padding: 0.938rem $spacing-16;
+        &:hover {
+          background-color: $color-gray-100;
+        }
+      }
+    }
   }
 }
 
-.option {
-  border-top: 1px solid $color-gray-400;
-  cursor: pointer;
-  display: block;
-  margin-bottom: 0;
-  padding: 0;
-  position: relative;
-
-  span {
-    display: block;
-    font-size: $font-size-16;
-    margin: 0 -1rem;
-    padding: 0.938rem $spacing-16;
-    &:hover { background-color: $color-gray-100; }
-  }
-}
-
-[dir='rtl'] {
+[dir="rtl"] {
   .select-box {
     .selected {
       @extend %select_rtl;
