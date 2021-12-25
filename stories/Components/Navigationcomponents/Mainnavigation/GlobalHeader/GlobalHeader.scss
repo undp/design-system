@@ -94,7 +94,8 @@
       .logo {
         @include devicebreak(mediumonlytab) {
           height: 4.6875rem;
-        }
+        } 
+        @extend %logo;
       }
     }
   }
