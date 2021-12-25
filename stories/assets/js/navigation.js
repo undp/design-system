@@ -25,6 +25,15 @@ export const init = (locale) => {
     megaMenu.find('.submenu li:first-child').addClass('active').siblings().removeClass('active');
   });
 
+  $(window).scroll(function() {    
+    var $scroll = $(window).scrollTop();
+    if ($scroll >= 1) {
+        $(".logo").addClass("scrolled");
+    } else {
+        $(".logo").removeClass("scrolled");
+    }
+  });
+
   $('.mega-wrapper').mouseleave(function () {
     $(this).find('.mega-nav-option.show-mega').removeClass('show-mega');
   });

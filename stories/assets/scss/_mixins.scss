@@ -435,4 +435,14 @@
 %background-white {
   background-color: white;
 }
+
+%logo{
+  @include transition(all .4s cubic-bezier(.64,.05,.35,1.05));
+  @include devicebreak(xlarge) {
+    height: 122px;
+    &.scrolled{
+      height: 7.1875rem;
+    }
+  }
+}
 /* placehoder end */
