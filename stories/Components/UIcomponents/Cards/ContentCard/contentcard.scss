@@ -131,9 +131,9 @@
       @include translate(70%, 0);
     }
     .cta--arrow::after {
-        background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
-        width: 100px;
-        margin-left: 0.25rem;
+      background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
+      width: 100px;
+      margin-left: 0.25rem;
     }
   }
 }
@@ -161,22 +161,27 @@
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .content-card {
-    &:hover{
-    .cta--space::after {
-      @include transform(translate(-50%, 0) rotate(180deg));
+    &:hover {
+      .cta--space::after {
+        @include transform(translate(-50%, 0) rotate(180deg));
+      }
+      .cta--arrow::after {
+        margin-right: 0.25rem;
+        margin-left: 0;
+      }
     }
-    .cta--arrow::after {
-      margin-right: 0.25rem;
-      margin-left: 0;
-    }
-  }
 
-  $colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "blue": $color-azure);
+    $colors: (
+      "yellow": $color-yellow,
+      "red": $color-red,
+      "green": $color-green,
+      "blue": $color-azure,
+    );
     @each $name, $color in $colors {
-      &.#{$name}{
-        .card-thumbnail__image::before{
+      &.#{$name} {
+        .card-thumbnail__image::before {
           @include background-image(318deg, #{$color}, transparent 80%);
         }
       }
