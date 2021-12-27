@@ -6,7 +6,7 @@ import { ContentCardWithAndWithoutImage } from '../../Organism/Blocks/ContentCar
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 
 export const Sdgmodal = ({
-  statsData, goalcount, goaldata, contentdata, storyBtn, Sdgcontenttitle, modaltitle, description, goaltitle, sdgimg, alt,
+  statsData, goalcount, goaldata, contentdata, storyBtn, Sdgcontenttitle, modaltitle, description, goaltitle, sdgimg, alt, nextcardtitle,
 }) => (
   <div className="modal-sdg modal-dialog" role="dialog" aria-modal="true" tabIndex="0" aria-label="SDG-Modal">
     <div className="grid-x height-full">
@@ -32,6 +32,9 @@ export const Sdgmodal = ({
               </div>
             </div>
           </div>
+          <div className="sdg-stats">
+            <Statscardslider data={statsData} />
+          </div>
           <div className="grid-x bulleted-list">
             <div className="cell small-7 medium-4">
               <Heading type="2" label={goaltitle} />
@@ -44,9 +47,6 @@ export const Sdgmodal = ({
               </ul>
             </div>
           </div>
-          <div className="sdg-stats">
-            <Statscardslider data={statsData} />
-          </div>
           <div className="sdg-content-cards">
             <Heading type="3" label={Sdgcontenttitle} />
             <ContentCardWithAndWithoutImage data={contentdata} />
@@ -54,12 +54,9 @@ export const Sdgmodal = ({
           </div>
         </div>
         <div className="ndg-container">
-          <a href="#no-poverty" className="sdg-card sdg-red" data-slug="#no-poverty" data-color="sdg-red">
-            <strong>1</strong>
-            <Heading type="4" label="No poverty" />
-            <div className="sdg-image">
-              <img src="static/media/stories/assets/images/sdg1.png" alt="sdg-image" />
-            </div>
+          <a href="#no-poverty" className="sdg-card sdg-kelly-green" data-slug="#good-health">
+            <strong>3</strong>
+            <Heading type="4" label={nextcardtitle} />
           </a>
         </div>
       </div>
