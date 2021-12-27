@@ -124,6 +124,7 @@ export const getCaptionForLocale = (locale) => {
         ],
         storyBtn:'VIEW MORE',
         Sdgcontenttitle: 'SDGs in Action',
+        nextcardtitle: 'Good health and well being',
       };
       return engText;
     case "arabic":
@@ -242,6 +243,7 @@ export const getCaptionForLocale = (locale) => {
         ],
         storyBtn:'عرض المزيد',
         Sdgcontenttitle: 'أهداف التنمية المستدامة في العمل',
+        nextcardtitle: 'صحة جيدة ورفاهية',
       };
       return arabicText;
     case "burmese":
@@ -317,7 +319,7 @@ export const getCaptionForLocale = (locale) => {
           },
           {
             contenttile: "အကြောင်းအရာ TAG",
-            contentname: "In Costa Rica, rural women grow their own",
+            contentname: "ကော်စတာရီကာတွင် ကျေးလက်နေ အမျိုးသမီးများသည် ၎င်းတို့ကိုယ်တိုင် စိုက်ပျိုးကြသည်။",
             button: "ပိုပြီးဖတ်ပါ",
             link:"#",
             imgback: img,
@@ -360,6 +362,7 @@ export const getCaptionForLocale = (locale) => {
         ],
         storyBtn:'ပိုမိုကြည့်ရှုပါ။',
         Sdgcontenttitle: 'လုပ်ဆောင်ချက်ရှိ SDGs',
+        nextcardtitle: 'ကျန်းမာချမ်းသာကြပါစေ',
       };
       return burmeseText;
     case "japanese":
@@ -478,6 +481,7 @@ export const getCaptionForLocale = (locale) => {
         ],
         storyBtn:'もっと見る',
         Sdgcontenttitle: '実行中のSDGs',
+        nextcardtitle: '健康と幸福',
       };
       return japaneseText;
     default:
@@ -596,6 +600,7 @@ export const getCaptionForLocale = (locale) => {
         ],
         storyBtn:'VIEW MORE',
         Sdgcontenttitle: 'SDGs in Action',
+        nextcardtitle: 'Good health and well being',
       };
       return dummy;
   }
@@ -607,7 +612,9 @@ export const getCaptionForLocale = (locale) => {
 
 SDG Modal
 
-<Story name="SDG Modal">
+<Story name="SDG Modal"  parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
@@ -617,6 +624,7 @@ SDG Modal
         contentdata={caption.contentdata}
         storyBtn={caption.storyBtn}
         Sdgcontenttitle={caption.Sdgcontenttitle}
+        nextcardtitle={caption.nextcardtitle}
         modaltitle={caption.title}
         description={caption.description}
         goaltitle={caption.goaltitle}

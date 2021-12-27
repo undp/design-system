@@ -12,7 +12,6 @@
     min-height: 210px;
     padding: 2.188rem $spacing-24 $spacing-16;
     position: relative;
-    word-break: break-word;
 
     @include devicebreak(medium) {
       cursor: url(#{$img-path-Iconback}/arrow-right-white.svg), auto;
@@ -28,7 +27,7 @@
 
       @include devicebreak(medium) {
         font-size: 6.875rem;
-        padding-left: 8.75rem;
+        padding-left: 6.313rem;
       }
     }
 
@@ -42,7 +41,7 @@
 
       @include devicebreak(medium) {
         font-size: 1.875rem;
-        left: 22rem;
+        left: 18rem;
         letter-spacing: 0.094rem;
         margin: 0;
         position: absolute;
@@ -64,7 +63,7 @@
 
         @include devicebreak(medium) {
           height: 130px;
-          padding-left: 8.75rem;
+          padding-left: 6.313rem;
           width: 130px;
         }
       }

@@ -4,6 +4,7 @@
 
 .what-goal {
   padding: $spacing-96 0;
+  word-break: break-word;
 
   @include devicebreak(medium) {
     padding: $spacing-160 0;
