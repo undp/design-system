@@ -1,18 +1,11 @@
 import React from 'react';
 import './radio.scss';
 
-export const Radio = ({ label }) => (
+export const Radio = ({ label, id }) => (
   <>
     <div className="radio">
-      <input type="radio" id="undp" name={label} aria-label="Radio" />
-      <label htmlFor="undp">
-        <span />
-        { label }
-      </label>
-    </div>
-    <div className="radio">
-      <input type="radio" id="undp2" name={label} aria-label="Radio" />
-      <label htmlFor="undp2">
+    <input type="radio" id={id} name='undp' aria-label="Radio" />
+      <label htmlFor={id}>
         <span />
         { label }
       </label>

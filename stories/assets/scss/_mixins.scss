@@ -301,7 +301,7 @@
   font-size: $font-size-16;
   font-weight: 600;
   margin: 0;
-  min-width: 288px;
+  width: 100%;
   padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
   position: relative;
   text-transform: uppercase;
@@ -313,9 +313,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: none;
-  max-height: 300px;
   min-height: 100px;
-  min-width: 288px;
   padding: 0 $spacing-16;
   width: 100%;
 }
