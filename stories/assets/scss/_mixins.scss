@@ -425,11 +425,5 @@
     display: block;
   }
 }
-%verticl_center-mb{
-  @include devicebreak(small) {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+
 /* placehoder start */

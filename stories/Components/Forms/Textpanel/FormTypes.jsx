@@ -24,46 +24,44 @@ export const FormTypes = ({
   <form>
     <div className="grid-container form-wrapper">
       {args.variant === "text panel and form" && (
-        <div className='text-panel'>
-          <div className="grid-x grid-margin-x grid-margin-y">
-            <div className="medium-5 cell large-offset-1 mt-0">
-              <Heading type="2" label={anchorTag} />
-              <p>{para}</p>
-            </div>
-            <div className="large-4 medium-6 cell medium-offset-1">
-              <div className="grid-x grid-margin-x">
-                <div className="cell">
-                  <Inputcomponent
-                    element={element}
-                    type={type}
-                    placeholder={placeholder}
-                    required={required}
-                    mode={mode}
-                  />
-                </div>
-                <div className="cell">
-                  <Inputcomponent
-                    element={element}
-                    type={type}
-                    placeholder={placeholderemail}
-                    required={required}
-                    mode={mode}
-                  />
-                </div>
+        <div className="grid-x grid-margin-x grid-margin-y text-panel">
+          <div className="medium-5 cell large-offset-1 mt-0">
+            <Heading type="2" label={anchorTag} />
+            <p>{para}</p>
+          </div>
+          <div className="large-4 medium-6 cell medium-offset-1">
+            <div className="grid-x grid-margin-x">
+              <div className="cell">
+                <Inputcomponent
+                  element={element}
+                  type={type}
+                  placeholder={placeholder}
+                  required={required}
+                  mode={mode}
+                />
+              </div>
+              <div className="cell">
+                <Inputcomponent
+                  element={element}
+                  type={type}
+                  placeholder={placeholderemail}
+                  required={required}
+                  mode={mode}
+                />
+              </div>
 
-                <div className="cell">
-                  {" "}
-                  <button type="submit" className="button button-primary">
-                    {button}
-                  </button>
-                </div>
+              <div className="cell">
+                {" "}
+                <button type="submit" className="button button-primary">
+                  {button}
+                </button>
               </div>
             </div>
           </div>
         </div>
       )}
       {args.variant === "form with photo" && (
-        <div className="grid-x grid-margin-x form-photo">
+        <div className="grid-x form-photo">
           <div className="medium-5 cell">
             <Image />
           </div>
@@ -101,84 +99,80 @@ export const FormTypes = ({
         </div>
       )}
       {args.variant === "wide form" && (
-        <div className="wide-form">
-          <div className="grid-x grid-margin-x">
-            <div className="large-8 cell">
-              <div className="grid-x">
-                <div className="large-12 cell">
-                  <Heading type="2" label={anchorTag2} />
-                </div>
+        <div className="grid-x grid-margin-x wide-form">
+          <div className="large-8 cell">
+            <div className="grid-x">
+              <div className="large-12 cell">
+                <Heading type="2" label={anchorTag2} />
               </div>
-              <div className="grid-x grid-margin-x">
-                <div className="medium-6 cell">
-                  <Inputcomponent
-                    element={element}
-                    type={type}
-                    placeholder={placeholderfirst}
-                    required={required}
-                    mode={mode}
-                  />
-                </div>
-                <div className="medium-6 cell">
-                  <Inputcomponent
-                    element={element}
-                    type={type}
-                    placeholder={placeholderlast}
-                    required={required}
-                    mode={mode}
-                  />
-                </div>
-                <div className="medium-12 cell">
-                  <Inputcomponent
-                    element={element}
-                    type={type}
-                    placeholder={placeholderemail}
-                    required={required}
-                    mode={mode}
-                  />
-                </div>
-                <div className="medium-12 cell">
-                  <button type="submit" className="button button-primary">
-                    {button}
-                  </button>
-                </div>
+            </div>
+            <div className="grid-x grid-margin-x">
+              <div className="medium-6 cell">
+                <Inputcomponent
+                  element={element}
+                  type={type}
+                  placeholder={placeholderfirst}
+                  required={required}
+                  mode={mode}
+                />
+              </div>
+              <div className="medium-6 cell">
+                <Inputcomponent
+                  element={element}
+                  type={type}
+                  placeholder={placeholderlast}
+                  required={required}
+                  mode={mode}
+                />
+              </div>
+              <div className="medium-12 cell">
+                <Inputcomponent
+                  element={element}
+                  type={type}
+                  placeholder={placeholderemail}
+                  required={required}
+                  mode={mode}
+                />
+              </div>
+              <div className="medium-12 cell">
+                <button type="submit" className="button button-primary">
+                  {button}
+                </button>
               </div>
             </div>
           </div>
         </div>
       )}
       {args.variant === "stacked form" && (
-        <div className='stacked-form'>
-          <div className="grid-x grid-margin-x grid-margin-y">
-            <div className="large-4 medium-6 cell">
-              <div className="grid-x">
-                <div className="large-12 cell">
-                  <Heading type="2" label={anchorTag} />
-                  <p>{para}</p>
-                  <div className="grid-x">
-                    <div className="cell">
-                      <Inputcomponent
-                        element={element}
-                        type={type}
-                        placeholder={placeholder}
-                        required={required}
-                        mode={mode}
-                      />
-                    </div>
-                    <div className="cell">
-                      <Inputcomponent
-                        element={element}
-                        type={type}
-                        placeholder={placeholderemail}
-                        required={required}
-                        mode={mode}
-                      />
-                    </div>
-                    <div className="cell">
-                      <button type="submit" className="button button-primary">
-                        {button}
-                      </button>
-                    </div>
+        <div className="grid-x grid-margin-x grid-margin-y stacked-form">
+          <div className="large-4 medium-6 cell">
+            <div className="grid-x">
+              <div className="large-12 cell">
+                <Heading type="2" label={anchorTag} />
+                <p>{para}</p>
+                <div className="grid-x">
+                  <div className="cell">
+                    <Inputcomponent
+                      element={element}
+                      type={type}
+                      placeholder={placeholder}
+                      required={required}
+                      mode={mode}
+                    />
+                  </div>
+                  <div className="cell">
+                    <Inputcomponent
+                      element={element}
+                      type={type}
+                      placeholder={placeholderemail}
+                      required={required}
+                      mode={mode}
+                    />
+                  </div>
+                  <div className="cell">
+                    <button type="submit" className="button button-primary">
+                      {button}
+                    </button>
                   </div>
                 </div>
               </div>
