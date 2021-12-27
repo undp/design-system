@@ -32,12 +32,13 @@ export const init = (locale) => {
     $('.mega-wrapper').find(this).addClass('show-mega');
   });
 
-  $('.mega-wrapper').on('mouseenter', '.submenu li', function () {
+  $('.mega-wrapper').on('mouseenter focus', '.submenu li', function () {
     $(this).addClass('active').siblings().removeClass('active');
     const id = $(this).attr('id');
     $(this).parents('.mega-wrapper').find(`[data-id='${id}']`).addClass('active-content')
     .siblings().removeClass('active-content');
   });
+
 
   $(document).on('click', '.mob-links .cta__link', function () {
     const id = $(this).attr('id');
