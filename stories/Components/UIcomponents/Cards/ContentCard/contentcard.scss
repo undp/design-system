@@ -57,18 +57,28 @@
   &.red {
     .card-thumbnail__image::before {
       @include background-image(42deg, $color-red, transparent 80%);
+      transition: opacity .9s ease;
     }
   }
 
   &.green {
     .card-thumbnail__image::before {
       @include background-image(42deg, $color-green, transparent 80%);
+      transition: opacity .9s ease;
     }
   }
 
   &.blue {
     .card-thumbnail__image::before {
       @include background-image(42deg, $color-azure, transparent 80%);
+      transition: opacity .9s ease;
+    }
+  }
+
+  &.yellow {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-yellow, transparent 80%);
+      transition: opacity .9s ease;
     }
   }
 
@@ -83,6 +93,7 @@
       display: flex;
       flex-wrap: wrap;
       height: 100%;
+      transition: background-color .6s ease;
     }
 
     &.yellow:hover {
@@ -107,12 +118,24 @@
   }
 
   &.card-yellow {
-    &.yellow,
-    &.red,
-    &.green,
-    &.blue,
-    &.gray {
+    &.yellow {
       background-color: $color-light-yellow;
+    }
+
+    &.red {
+      background-color: $color-light-red;
+    }
+
+    &.green {
+      background-color: $color-light-green;
+    }
+
+    &.blue {
+      background-color: $color-light-azure;
+    }
+
+    &.gray {
+      background-color: $color-gray-100;
     }
 
     .card-thumbnail__image {
@@ -121,7 +144,7 @@
   }
 
   &:hover {
-    @include transition(0.2s ease);
+    @include transition(0.5s ease);
 
     .card_thumbnail__image::before {
       opacity: 0.75;
@@ -188,6 +211,8 @@
       }
     }
   }
+  .card-thumbnail__image {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
 }
-
-/* content-card start */
