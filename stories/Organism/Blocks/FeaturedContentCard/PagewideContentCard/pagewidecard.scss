@@ -79,7 +79,6 @@
     @include devicebreak(medium) {
       &::before {
         @include transition(0.5s ease);
-  
         background-image: linear-gradient(45deg, $color-yellow, transparent 80%);
         content: '';
         display: block;
@@ -107,6 +106,15 @@
       @include devicebreak(medium) {
         margin-left: 0;
         margin-right: $spacing-24;
+      }
+    }
+  }
+  .wide-card__image {
+    a {
+      @include devicebreak(medium) {
+        &::before {
+          background-image: linear-gradient(315deg, $color-yellow, transparent 80%);
+        }
       }
     }
   }

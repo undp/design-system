@@ -234,6 +234,11 @@
         @include transform(translateX(0));
       }
     }
+    &::before {
+      @include devicebreak(medium) {
+        background: transparent linear-gradient(153deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.8));
+      }
+    }
   }
 }
 

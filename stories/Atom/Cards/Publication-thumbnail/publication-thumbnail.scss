@@ -46,5 +46,15 @@
     }
   }
 }
-
+[dir='rtl'] {
+  .publication-thumbnail__image {
+    &:hover {
+      &.yellow {
+        &::after {
+          background-image: linear-gradient(318deg, $color-yellow, transparent 80%);
+        }
+      }
+    }
+  }
+}
 /* publication thumbnail end */
