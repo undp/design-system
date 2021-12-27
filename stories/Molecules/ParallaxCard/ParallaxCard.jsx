@@ -11,13 +11,13 @@ const ParallaxCard = ({ data, alt }) => (
     {data.map((item, index) => (
       <article className="grid-x parallax-card glide__slide" key={index}>
         <div className={index % 2 === 0 ? 'cell medium-3 small-10 parallax-card__image parallax-card-right-img' : 'cell medium-3 small-10 parallax-card__image parallax-card-left-img'}>
-          <img src={Img} alt={alt} data-speed="-1"/>
+          <img src={Img} alt={alt} data-speed="-1" />
         </div>
         <div className={index % 2 === 0 ? 'cell medium-3 parallax-card__content parallax-card-right' : 'cell medium-3 parallax-card__content parallax-card-left'}>
           <a href="#" className="parallax-card__link">
             {item.name && <Heading type="3" label={item.name} />}
             {item.descriptionText && <P label={item.descriptionText} />}
-            <span className="cta__link cta--space" >{item.btnlabel}</span>
+            <span className="cta__link cta--space">{item.btnlabel}</span>
           </a>
         </div>
       </article>

@@ -14,7 +14,7 @@ export const color_options = {
 export const BlockquoteComponent = ({
   blockquoteText, citeText, ...args
 }) => (
-  <div className={['blockquote-wrapper',`${color_options[`${args.color}`]}`].join(' ')}>
+  <div className={['blockquote-wrapper', `${color_options[`${args.color}`]}`].join(' ')}>
     <Blockquote text={blockquoteText} citeText={citeText}> </Blockquote>
   </div>
 );

@@ -29,7 +29,7 @@
     }
   }
 
-  &__content{
+  &__content {
     padding-top: $spacing-16;
 
     @include devicebreak(medium) {
@@ -37,4 +37,5 @@
     }
   }
 }
+
 /* page hero end */

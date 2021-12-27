@@ -74,19 +74,20 @@
     .credits {
       @include devicebreak(medium) {
         border-left: none;
-        padding-left: 0;
         margin-left: 0;
+        padding-left: 0;
       }
 
       strong {
-       margin-right: $spacing-04;
+        margin-right: $spacing-04;
+
         @include devicebreak(medium) {
           margin-right: 0;
         }
       }
     }
 
-      &_para {
+    &_para {
       + .credits {
         @include devicebreak(medium) {
           border-right: 1px solid $color-gray-500;
@@ -101,4 +102,5 @@
     }
   }
 }
+
 /* image caption end */

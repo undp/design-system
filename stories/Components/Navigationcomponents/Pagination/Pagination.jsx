@@ -5,7 +5,7 @@ export const Pagination = ({ text, text2 }) => (
   <nav aria-label="Pagination" role="navigation">
     <ul className="pagination">
       <li className="disabled"><a href="#" role="button" aria-current="true" aria-label="Previous">Previous</a></li>
-      <li >
+      <li>
         {text}
         <span>
           {' '}

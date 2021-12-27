@@ -8,6 +8,7 @@
 
   &__wrapper {
     position: relative;
+
     @include devicebreak(small) {
       display: flex;
       flex-direction: column-reverse;
@@ -29,8 +30,8 @@
     @extend %img_none;
   }
 
-  .button-primary{
-    @include devicebreak(medium){
+  .button-primary {
+    @include devicebreak(medium) {
       margin: 0 1.5rem;
     }
   }
@@ -74,12 +75,10 @@
 .wide-card__image {
   position: relative;
 
-
   a {
     @include devicebreak(medium) {
       &::before {
         @include transition(0.5s ease);
-  
         background-image: linear-gradient(45deg, $color-yellow, transparent 80%);
         content: '';
         display: block;
@@ -90,11 +89,14 @@
         top: 0;
         width: 100%;
       }
-      &:hover::before, &.card-gradient::before {
+
+      &:hover::before,
+      &.card-gradient::before {
         opacity: 0.75;
       }
     }
   }
+
   img {
     height: 100%;
     width: 100%;
@@ -110,5 +112,15 @@
       }
     }
   }
+  .wide-card__image {
+    a {
+      @include devicebreak(medium) {
+        &::before {
+          background-image: linear-gradient(315deg, $color-yellow, transparent 80%);
+        }
+      }
+    }
+  }
 }
+
 /* page-wide-card end */

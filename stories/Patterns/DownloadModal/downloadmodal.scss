@@ -46,7 +46,7 @@
       max-height: 323px;
     }
 
-    .selectbox-container {
+    .checkbox-container {
       @include devicebreak(medium) {
         margin-right: $spacing-24;
       }
@@ -95,7 +95,7 @@
       }
 
       @include devicebreak(medium) {
-        .selectbox-container {
+        .checkbox-container {
           margin-left: $spacing-24;
           margin-right: 0;
         }

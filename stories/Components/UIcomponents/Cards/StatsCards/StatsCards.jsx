@@ -6,9 +6,8 @@ import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 export const StatsCards = ({
   title, number, percent, content, Size,
 }) => {
-  
   let size;
-  switch(Size){
+  switch (Size) {
     case 'Small':
       size = 'small';
       break;
@@ -26,13 +25,14 @@ export const StatsCards = ({
   }
 
   return (
-  <div className={['statscard', 'cell', `${size}`].join(' ')}>
-    <div className="statscard__box">
-      {Size == 'Extra_large' ? (<Heading type="2" className="statscard__title" label={title} />) : (<></>)}
-      {Size == 'Large' ? (<Heading type="3" className="statscard__title" label={title} />) : (<></>)}
-      <h2 className="statscard__number">{number}</h2>
-      <h4 className="statscard__per">{percent}</h4>
-      <P label={content} />
+    <div className={['statscard', `${size}`].join(' ')}>
+      <div className="statscard__box">
+        {Size == 'Extra_large' ? (<Heading type="2" className="statscard__title" label={title} />) : (<></>)}
+        {Size == 'Large' ? (<Heading type="3" className="statscard__title" label={title} />) : (<></>)}
+        <h2 className="statscard__number">{number}</h2>
+        <h4 className="statscard__per">{percent}</h4>
+        <P label={content} />
+      </div>
     </div>
-  </div>
-)};
+  );
+};

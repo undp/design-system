@@ -30,7 +30,7 @@ const MegaMenu = ({ text }) => (
               </ul>
             </div>
           </div>
-          <div className="cell large-6 mega-image"><Image/></div>
+          <div className="cell large-6 mega-image"><Image /></div>
         </div>
       </div>
     </div>

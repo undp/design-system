@@ -13,17 +13,17 @@
   position: fixed;
   top: 7.1875rem;
   visibility: visible;
-  width: calc(100% - 1rem);
+  width: 100%;
   z-index: 99;
 
   @include devicebreak(mediumonlytab) {
-    top: 4.6875rem;
     height: calc(100vh - 4.6875rem);
+    top: 4.6875rem;
   }
 
   @include devicebreak(small) {
     padding-left: $spacing-12;
-    width: calc(100% - 1.75rem);
+    width: calc(100% - 0.75rem);
   }
 
   > .grid-x {
@@ -579,9 +579,6 @@
 
 .ndg-container {
   padding-left: $spacing-32;
-  .sdg-image {
-    display: none;
-  }
 
   @include devicebreak(small) {
     padding-left: $spacing-12;
@@ -621,6 +618,10 @@
         display: none;
       }
     }
+  }
+
+  .sdg-image {
+    display: none;
   }
 }
 

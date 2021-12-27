@@ -419,7 +419,9 @@ export const getCaptionForLocale = (locale) => {
 
 Country Homepage Template
 
-<Story name="Country Homepage">
+<Story name="Country Homepage" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     const navigationData= getNavLinks(locale);

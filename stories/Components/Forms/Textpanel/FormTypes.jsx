@@ -23,7 +23,7 @@ export const FormTypes = ({
 }) => (
   <form>
     <div className="grid-container form-wrapper">
-      {args.variant === "text panel and form" && (
+      {args.variant === 'text panel and form' && (
         <div className="grid-x grid-margin-x grid-margin-y text-panel">
           <div className="medium-5 cell large-offset-1 mt-0">
             <Heading type="2" label={anchorTag} />
@@ -51,7 +51,7 @@ export const FormTypes = ({
               </div>
 
               <div className="cell">
-                {" "}
+                {' '}
                 <button type="submit" className="button button-primary">
                   {button}
                 </button>
@@ -143,7 +143,7 @@ export const FormTypes = ({
           </div>
         </div>
       )}
-      {args.variant === "stacked form" && (
+      {args.variant === 'stacked form' && (
         <div className="grid-x grid-margin-x grid-margin-y stacked-form">
           <div className="large-4 medium-6 cell">
             <div className="grid-x">

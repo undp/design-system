@@ -1,8 +1,50 @@
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
-.download-card {
+// publication-card
+.publication-card {
+  display: inline-block;
+
+  @include devicebreak(medium) {
+    min-width: 20.625rem;
+  }
+
+  &:hover {
+    .publication_thumbnail__image {
+      &::after {
+        opacity: 0.75;
+      }
+    }
+
+    .card_thumbnail__image {
+      &::before {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  &__description {
+    background: $color-gray-100;
+    padding: $spacing-24;
+    align-items: center;
+
+    .grid-x {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+
+      .small-6 {
+        width: 49%;
+      }
+    }
+
+    .grid-x>:not(:first-of-type) {
+      border-left: $spacing-02 solid $color-silvery-moonlight;
+      text-align: right;
+    }
+  }
+
   &__title {
     @extend %paragragh-font-20;
 
@@ -18,17 +60,31 @@
 
   &__download {
     @extend %paragragh-font-16;
-    display: inline-flex;
+
     align-items: center;
+    background-image: none;
+    display: inline-flex;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    background-image: none;
+
     &::after {
       cursor: pointer;
-      height: 24px;
-      width: 24px;
-      margin-left: 0.75rem;
+      height: $spacing-24;
+      width: $spacing-24;
+    }
+
+    .download-icon{
+      margin-left: $spacing-12;
+    }
+
+    &:hover {
+      color: $color-shuttle-gray;
+      
+      .download-icon {
+        background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
+        height: $spacing-24;
+      }
     }
   }
 
@@ -37,60 +93,37 @@
 
     align-items: center;
     display: inline;
+    float: right;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    float: right;
-  }
+    background-image: none;
+    &::after {
+      cursor: pointer;
+      height: $spacing-24;
+      width: $spacing-24;
+    }
 
-  &__description {
-    padding: $font-size-24;
-    align-items: center;
+    .external-link {
+      margin-left: $spacing-12;
+      display: inline-block;
+    }
 
-    .grid-x {
-      align-items: center;
-      display: flex;
-      flex-flow: row wrap;
+    &:hover {
+      color: $color-shuttle-gray;
 
-      .small-6 {
-        width: 49%;
+      .external-link {
+        background: url(#{$img-path-Icon}/external-hover.svg) no-repeat 0 bottom;
       }
-    }
-
-
-    .grid-x>:not(:first-of-type) {
-      border-left: $spacing-02 solid $color-silvery-moonlight;
-      text-align: right;
-    }
-  }
-
-  &:hover {
-    .download-card__download {
-      &::after {
-        background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
-      }
-    }
-  }
-}
-
-.download-card__readmore {
-  .external-link {
-    margin-left: $spacing-12;
-    display: inline-block;
-  }
-
-  &:hover {
-    .download-icon {
-      background: url(#{$img-path-Icon}/external-hover.svg) no-repeat 0 bottom;
-      height: 24px;
     }
   }
 }
 
 [dir='rtl'] {
-  .download-card {
+  .publication-card{
     &__readmore {
       float: left;
+
       .external-link {
         margin-left: 0;
         margin-right: $spacing-12;
@@ -98,12 +131,12 @@
     }
 
     &__description {
-      .grid-x>:not(:first-of-type) {
+      .grid-x > :not(:first-of-type) {
         border-left: 0;
         border-right: $spacing-02 solid $color-silvery-moonlight;
         text-align: left;
       }
-    } 
+    }
 
     &__download {
       float: right;

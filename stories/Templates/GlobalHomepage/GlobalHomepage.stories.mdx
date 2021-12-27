@@ -570,7 +570,9 @@ export const getCaptionForLocale = (locale) => {
 
 Template for Global Home Page
 
-<Story name="Global Home Page">
+<Story name="Global Home Page" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     const navigationData = getNavLinks(locale);
