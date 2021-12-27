@@ -22,6 +22,28 @@
       background-color: $color-white;
       border-top: 0;
       display: block;
+      &.fix-height {
+        max-height: 300px;
+      }
+      .radio {
+        display: flex;
+        margin: 0 -1rem;
+        padding: $spacing-16;
+        &:hover {
+          background-color: $color-gray-100;
+        }
+
+        label {
+          width: 100%;
+          font-size: $font-size-16;
+        }
+        span {
+          left: inherit;
+          right: $spacing-16;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
     }
   }
 
@@ -131,8 +153,8 @@
   margin: 0 -1rem;
   padding: 0 $spacing-16;
 
-  input[type='checkbox'],
-  input[type='checkbox'] + label::before {
+  input[type="checkbox"],
+  input[type="checkbox"] + label::before {
     @include transform(translateY(-50%));
 
     left: auto;
@@ -140,13 +162,13 @@
     top: 50%;
   }
 
-  input[type='checkbox'] + label {
+  input[type="checkbox"] + label {
     display: block;
     padding: $spacing-16 0;
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .multi-select {
     .select-control,
     .has-submenu__button {
@@ -163,6 +185,14 @@
       &::after {
         left: $spacing-16;
         right: inherit;
+      }
+    }
+    &.open {
+      .radio {
+        span {
+          left: $spacing-16;
+          right: inherit;
+        }
       }
     }
 
