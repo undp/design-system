@@ -2,14 +2,14 @@ import React, { Component, useEffect } from 'react';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
-import { parallaxGalleryFun } from '../../../../assets/js/parallax-gallery';
+import { parallaxGallery } from '../../../../assets/js/parallax_gallery';
 import './parallaxgallery.scss';
 
 export const ParallaxGallery = ({
   titleText, descText, buttonText, galleryimg1, galleryimg2, galleryimg3, galleryimg4, Background,
 }) => {
   useEffect(() => {
-    parallaxGalleryFun('.parallax-gallery-images__col', '85', '.parallax-gallery-images');
+    parallaxGallery('.parallax-gallery-images__col', '85', '.parallax-gallery-images');
   }, []);
   let background = '';
   if (Background == 'Grey') {

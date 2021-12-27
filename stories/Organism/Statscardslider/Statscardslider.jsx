@@ -1,11 +1,11 @@
 import React, { Component, useEffect } from 'react';
 import './statscardslider.scss';
-import { CarouselFun } from '../../assets/js/Carousel';
+import { carousel } from '../../assets/js/carousel';
 import { StatsCards } from '../../Components/UIcomponents/Cards/StatsCards/StatsCards';
 
 export const Statscardslider = ({ data }) => {
   useEffect(() => {
-    CarouselFun('.stats-slider', 20, 20, 4, 0.2);
+    carousel('.stats-slider', 20, 20, 4, 0.2);
   }, []);
   return (
     <div className="stats-slider">

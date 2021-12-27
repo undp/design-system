@@ -2,7 +2,7 @@ import React, { Component, useEffect } from 'react';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
-import { CarouselFun } from '../../../../assets/js/Carousel';
+import { carousel } from '../../../../assets/js/Carousel';
 import viewport from '../../../../assets/js/viewport';
 import './fluidimagesizecarousel.scss';
 import chevronRightWhite from '../../../../assets/images/Icon/circle-right.svg';
@@ -10,7 +10,7 @@ import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
 
 export const FluidImageSizeCarousel = ({ data }) => {
   useEffect(() => {
-    CarouselFun('.fluid-carousel', 20, 20, 1, 0);
+    carousel('.fluid-carousel', 20, 20, 1, 0);
     viewport('.fluid-carousel');
   }, []);
   return (

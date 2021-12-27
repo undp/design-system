@@ -1,4 +1,4 @@
-export function LangSwitch() {
+export function langSwitch() {
   $('.dropdown-language').click(function () {
     $('.dropdown-language').toggleClass('active');
   });

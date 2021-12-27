@@ -8,10 +8,10 @@ import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Bread
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 import { Footer } from '../../Organism/Footer/Footer';
 import './Authors.scss';
-import init from '../../assets/js/select-init';
+import { select } from '../../assets/js/select';
 import { Authorcard } from '../../Components/UIcomponents/Author/Authorcard/Authorcard';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
-import { SearchExpand } from '../../Components/Forms/expandable search/SearchExpand';
+import { SearchExpand } from '../../Components/Forms/ExpandableSearch/SearchExpand';
 import CustomSelect from '../../Components/Forms/Dropdowns/CustomSelect/CustomSelect';
 
 const Authors = ({
@@ -31,7 +31,7 @@ const Authors = ({
   backcaption,
 }) => {
   useEffect(() => {
-    init();
+    select();
     $('.sort-btn').click(function sortclick() {
       $('.author-filter').addClass('author-filter-show');
       $('.close-btn').addClass('show-close');

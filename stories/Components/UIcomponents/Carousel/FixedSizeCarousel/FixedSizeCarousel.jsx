@@ -2,7 +2,7 @@ import React, { Component, useEffect } from 'react';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { CtaButton } from '../../Buttons/Cta_button/CtaButton';
-import { CarouselFun } from '../../../../assets/js/Carousel';
+import { carousel } from '../../../../assets/js/carousel';
 import viewport from '../../../../assets/js/viewport';
 import './fixedsizecarousel.scss';
 import chevronRightWhite from '../../../../assets/images/Icon/circle-right.svg';
@@ -10,7 +10,7 @@ import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
 
 export const FixedSizeCarousel = ({ data, label }) => {
   useEffect(() => {
-    CarouselFun('.fixed-image-size-carousel', 20, 20, 1, 0);
+    carousel('.fixed-image-size-carousel', 20, 20, 1, 0);
     viewport('.fixed-image-size-carousel');
   }, []);
   return (

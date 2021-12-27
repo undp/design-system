@@ -1,7 +1,7 @@
 import arrowright from '../images/Icon/arrow-right.svg';
 import arrowleft from '../images/Icon/arrow-left.svg';
 
-export function CarouselFun(ele, gapele, gapele_sm, viewcard, focusSpace) {
+export function carousel(ele, gapele, gapele_sm, viewcard, focusSpace) {
   /**
    * A Custom component to get Glide Slides Length and Width.
    *
