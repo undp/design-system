@@ -8,6 +8,7 @@
 
   &__wrapper {
     position: relative;
+
     @include devicebreak(small) {
       display: flex;
       flex-direction: column-reverse;
@@ -29,8 +30,8 @@
     @extend %img_none;
   }
 
-  .button-primary{
-    @include devicebreak(medium){
+  .button-primary {
+    @include devicebreak(medium) {
       margin: 0 1.5rem;
     }
   }
@@ -74,7 +75,6 @@
 .wide-card__image {
   position: relative;
 
-
   a {
     @include devicebreak(medium) {
       &::before {
@@ -89,11 +89,14 @@
         top: 0;
         width: 100%;
       }
-      &:hover::before, &.card-gradient::before {
+
+      &:hover::before,
+      &.card-gradient::before {
         opacity: 0.75;
       }
     }
   }
+
   img {
     height: 100%;
     width: 100%;
@@ -119,4 +122,5 @@
     }
   }
 }
+
 /* page-wide-card end */

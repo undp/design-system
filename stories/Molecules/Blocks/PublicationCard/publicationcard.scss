@@ -1,7 +1,8 @@
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
+// publication-card
 .publication-card {
   display: inline-block;
 
@@ -59,12 +60,14 @@
 
   &__download {
     @extend %paragragh-font-16;
-    display: inline-flex;
+
     align-items: center;
+    background-image: none;
+    display: inline-flex;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    background-image: none;
+
     &::after {
       cursor: pointer;
       height: $spacing-24;
@@ -90,6 +93,7 @@
 
     align-items: center;
     display: inline;
+    float: right;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -119,6 +123,7 @@
   .publication-card{
     &__readmore {
       float: left;
+
       .external-link {
         margin-left: 0;
         margin-right: $spacing-12;
@@ -126,12 +131,12 @@
     }
 
     &__description {
-      .grid-x>:not(:first-of-type) {
+      .grid-x > :not(:first-of-type) {
         border-left: 0;
         border-right: $spacing-02 solid $color-silvery-moonlight;
         text-align: left;
       }
-    } 
+    }
 
     &__download {
       float: right;

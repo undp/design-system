@@ -2,8 +2,8 @@
 
 /* card_thumbnail__image start */
 .card-thumbnail__image {
-  position: relative;
   display: inline-flex;
+  position: relative;
 
   &::before {
     @extend %absolute__content;

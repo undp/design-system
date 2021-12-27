@@ -16,12 +16,12 @@
     background-color: $color-gray-200;
   }
 }
-[dir='rtl']{
+
+[dir='rtl'] {
   .sidebar__sub-item {
-  
-    padding-right: $spacing-32;
     padding-left: $spacing-24;
-  
+    padding-right: $spacing-32;
+
     @include devicebreak(medium) {
       padding-right: $spacing-48;
     }

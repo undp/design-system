@@ -23,8 +23,8 @@
     }
 
     .cta--arrow::after {
-      margin-left: 0.25rem;
       background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
+      margin-left: 0.25rem;
       width: 100px;
     }
   }
@@ -66,7 +66,7 @@
     }
   }
 
-  &.image{
+  &.image {
     .feature__card-description {
       @include devicebreak(medium) {
         margin-bottom: 6.125rem;
@@ -89,6 +89,14 @@
     height: 100%;
     position: absolute;
     z-index: 1;
+  }
+
+  @include devicebreak(medium) {
+    display: none;
+  }
+
+  @include devicebreak(large) {
+    display: inherit;
   }
 
   &::before {
@@ -115,17 +123,10 @@
     img {
       display: block;
       height: 100%;
-      width: 100%;
       max-width: 100%;
       object-fit: cover;
+      width: 100%;
     }
-  }
-  @include devicebreak(medium) {
-    display: none;
-  }
-
-  @include devicebreak(large) {
-    display: inherit;
   }
 }
 
@@ -158,14 +159,17 @@
 
   .feature__card-description {
     margin-bottom: 3rem;
+
     @include devicebreak(medium) {
       margin-bottom: 4.688rem;
     }
   }
 
-  h4, h5 {
+  h4,
+  h5 {
     margin-bottom: $spacing-24;
-     @include devicebreak(medium) {
+
+    @include devicebreak(medium) {
       margin-bottom: $spacing-32;
     }
   }
@@ -222,6 +226,7 @@
   .feature__card:hover {
     .cta--arrow::after {
       @include transform(rotate(180deg));
+
       margin-right: 0.25rem;
     }
   }

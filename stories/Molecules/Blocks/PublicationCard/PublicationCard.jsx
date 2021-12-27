@@ -4,7 +4,7 @@ import '../../../assets/scss/_grid.scss';
 import { Publicationthumb } from '../../../Atom/Cards/Publication-thumbnail/PublicationThumbnail';
 import { Cardthumb } from '../../../Atom/Cards/Card-thumbnail/CardThumbnail';
 import { Icondownload } from '../../../Atom/Icons/download';
-import { Iconexternallink } from '../../../Atom/Icons/external_link'
+import { Iconexternallink } from '../../../Atom/Icons/external_link';
 
 export const PublicationCard = ({
   image, image2, download, readmore, ...args
@@ -23,8 +23,9 @@ export const PublicationCard = ({
           {readmore}
           <Iconexternallink />
         </div>
-      }
-      {args.variant === 'Both' && 
+        }
+      {args.variant === 'Both'
+        && 
         <>
           <div class="grid-x">
             <div class="cell small-6">
@@ -41,7 +42,7 @@ export const PublicationCard = ({
             </div>
           </div>
         </>
-      }
+        }
     </div>
   </div>
 );

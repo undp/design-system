@@ -1,4 +1,5 @@
-import {getData} from "./navigationData";
+import { getData } from './navigationData';
+
 var lang = 'english';
 
 export const init = (locale) => {
@@ -8,7 +9,7 @@ export const init = (locale) => {
   const submenuli = $('.submenu li');
   const midNav = $('.mid-nav');
   const megaMenu = $('.show-mega');
-  
+
   // calling ajax json
   lang = locale === 'en' ? 'english' : locale;
   getData(lang);
@@ -19,14 +20,13 @@ export const init = (locale) => {
     menuItem.siblings().removeClass('show-mega');
     menuItem.addClass('show-mega');
     megaMenu.find('.sub-menu-content:first-child').addClass('active-content')
-    .siblings().removeClass('active-content');
+      .siblings().removeClass('active-content');
     megaMenu.find('.submenu li:first-child').addClass('active').siblings().removeClass('active');
   });
 
   $('.mega-wrapper').mouseleave(function () {
     $(this).find('.mega-nav-option.show-mega').removeClass('show-mega');
   });
-
 
   $('.mega-wrapper').mouseenter(function () {
     $('.mega-wrapper').find(this).addClass('show-mega');
@@ -36,7 +36,8 @@ export const init = (locale) => {
     $(this).addClass('active').siblings().removeClass('active');
     const id = $(this).attr('id');
     $(this).parents('.mega-wrapper').find(`[data-id='${id}']`).addClass('active-content')
-    .siblings().removeClass('active-content');
+      .siblings()
+      .removeClass('active-content');
   });
 
   $(document).on('click', '.mob-links .cta__link', function () {

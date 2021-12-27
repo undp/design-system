@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
-import logowhite from "../../assets/images/undp-logo-white.svg";
-import logo from "../../assets/images/undp-logo-blue.svg";
-import user from "../../assets/images/user.svg";
-import viewport from "../../assets/js/viewport";
-import { Breadcrumbcomponent } from "../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs";
-import GlobalHeader from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader";
-import { AuthorSummary } from "../../Organism/Blocks/Authorcard/AuthorSummary";
-import { ContentCard } from "../../Organism/Blocks/ContentCard/ContentCard";
-import { Footer } from "../../Organism/Footer/Footer";
-import "./AuthorPage.scss";
+import React, { useEffect } from 'react';
+import logowhite from '../../assets/images/undp-logo-white.svg';
+import logo from '../../assets/images/undp-logo-blue.svg';
+import user from '../../assets/images/user.svg';
+import viewport from '../../assets/js/viewport';
+import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
+import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
+import { AuthorSummary } from '../../Organism/Blocks/Authorcard/AuthorSummary';
+import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
+import { Footer } from '../../Organism/Footer/Footer';
+import './AuthorPage.scss';
 
 const AuthorPage = ({
   breadcrumbData,
@@ -25,7 +25,7 @@ const AuthorPage = ({
   backcaption,
 }) => {
   useEffect(() => {
-    viewport(".feature__card--headertext");
+    viewport('.feature__card--headertext');
   }, []);
 
   return (
@@ -39,7 +39,7 @@ const AuthorPage = ({
         languageswitcherData={languageswitcherData}
         locationData={locationData}
         langSelect={langSelect}
-      ></GlobalHeader>
+      />
       <div className="grid-container fluid author-page">
         <div className="grid-x">
           <div className="cell medium-offset-1 medium-10 small-12">
@@ -85,7 +85,7 @@ const AuthorPage = ({
         data={footerData.footerdata}
         copyright={footerData.copyright}
         menudata={footerData.menudata}
-        {...{ color: "blue" }}
+        {...{ color: 'blue' }}
       />
     </div>
   );

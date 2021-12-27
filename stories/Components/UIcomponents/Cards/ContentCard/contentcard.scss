@@ -130,6 +130,7 @@
     .cta--space::after {
       @include translate(70%, 0);
     }
+
     .cta--arrow::after {
       background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
       width: 100px;

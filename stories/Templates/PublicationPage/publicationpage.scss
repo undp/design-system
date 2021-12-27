@@ -3,14 +3,14 @@
 @import '../../assets/scss/variables';
 
 .border-top-2 {
-  border-top: 2px solid $color-black
+  border-top: 2px solid $color-black;
 }
 
 .related-publication {
   .cell.medium-4 {
-    width: 100%;
     padding: $spacing-12 0;
-  
+    width: 100%;
+
     @include devicebreak(medium) {
       width: 45%;
     }
@@ -68,6 +68,7 @@
   &-80 {
     margin-top: $spacing-80;
   }
+
   &-136 {
     margin-top: $spacing-136;
   }
@@ -136,10 +137,10 @@
       }
     }
   }
-  
-  &-block {      
-      margin-top: 2.563rem;
-      scroll-behavior: auto;
+
+  &-block {
+    margin-top: 2.563rem;
+    scroll-behavior: auto;
 
     @include devicebreak(medium) {
       margin-top: 4.25rem;
@@ -162,8 +163,8 @@
   &.stick {
     position: relative;
     top: 0;
-    z-index: -1;      
-  
+    z-index: -1;
+
     @include devicebreak(medium) {
       position: sticky;
     }
@@ -197,19 +198,18 @@
   }
 }
 
-
-[dir="rtl"] {
+[dir='rtl'] {
   .related-publication {
     .large-offset-6 {
       @include devicebreak(medium) {
         margin-left: 0;
         margin-right: calc(50% + 1rem / 2);
-      }      
+      }
     }
   }
 
   .publication-bottom {
-    .large-offset-1 {      
+    .large-offset-1 {
       @include devicebreak(medium) {
         margin-left: 0;
         margin-right: calc(8.33333% + 1.5rem / 2);
@@ -232,6 +232,7 @@
 
 .publication-post-header {
   margin-top: 1.813rem;
+
   @include devicebreak(medium) {
     margin-top: $spacing-80;
   }
