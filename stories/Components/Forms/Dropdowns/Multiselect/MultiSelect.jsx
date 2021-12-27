@@ -14,7 +14,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
         className="select-control"
         aria-label="Region"
         aria-expanded="false"
-        id={`select_button-${eleId}`}
+        id={`select_button`}
       >
         {text}
       </button>
@@ -25,7 +25,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
             args.Height === "Fix height" ? " fix-height" : "",
           ].join("")}
           data-type="region"
-          aria-labelledby={`select_button-${eleId}`}
+          aria-labelledby={`select_button`}
           role="listbox"
           aria-multiselectable="true"
           aria-hidden="true"
@@ -39,7 +39,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
             />
           </li>
           <li role="option" className="has-submenu">
-            <button className="has-submenu__button checkbox-item">
+            <button className="checkbox-item">
               {text}
             </button>
             <ul role="listbox" className="sub-menu">
@@ -96,7 +96,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
             args.Height === "Fix height" ? " fix-height" : "",
           ].join("")}
           data-type="region"
-          aria-labelledby={`select_button-${eleId}`}
+          aria-labelledby={`select_button`}
           role="listbox"
           aria-multiselectable="true"
           aria-hidden="true"
@@ -111,7 +111,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
             />
           </li>
           <li role="option" className="has-submenu">
-            <button className="has-submenu__button checkbox-item">
+            <button className="checkbox-item">
               {text}
             </button>
             <ul role="listbox" className="sub-menu">
