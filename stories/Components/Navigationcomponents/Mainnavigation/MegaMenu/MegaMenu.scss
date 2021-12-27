@@ -1,6 +1,6 @@
-@import "../../../../assets/scss/variables";
-@import "../../../../assets/scss/mixins";
-@import "../../../../assets/scss/breakpoints";
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
 
 .mega-nav-option {
   background: rgba(247, 247, 247, 0.8);
@@ -129,7 +129,7 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .mega-nav-option .submenu li {
     padding-left: 3rem;
     padding-right: 0;
