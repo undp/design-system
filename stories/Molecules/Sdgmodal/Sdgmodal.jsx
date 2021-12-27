@@ -31,6 +31,9 @@ export const Sdgmodal = ({ statsData, goalcount, goaldata, contentdata, storyBtn
                 </div>
               </div>
             </div>
+            <div className="sdg-stats">
+              <Statscardslider data={statsData} />
+            </div>
             <div className="grid-x bulleted-list">
               <div className="cell small-7 medium-4">
                 <Heading type="2" label={goaltitle} />
@@ -42,9 +45,6 @@ export const Sdgmodal = ({ statsData, goalcount, goaldata, contentdata, storyBtn
                   ))}
                 </ul>
               </div>
-            </div>
-            <div className="sdg-stats">
-              <Statscardslider data={statsData} />
             </div>
             <div className="sdg-content-cards">
               <Heading type="3" label={Sdgcontenttitle} />
