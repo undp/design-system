@@ -24,17 +24,17 @@ export function SdgModal() {
     $('.modal-sdg').addClass('sdg-open');
     $($modalOpen).attr('tabindex', '-1');
   });
-  
+
   // Modal close someone hits the escape key
-  $(document).keydown(function(event) {
+  $(document).keydown((event) => {
     if (event.keyCode == 27 && $('.modal-sdg').hasClass('sdg-open')) {
       removeHash();
       $('.modal-sdg').removeClass('sdg-open');
     }
   });
-  
+
   // Modal close on close button
-  $('.modal-sdg .close').on('click', function () {
+  $('.modal-sdg .close').on('click', () => {
     $('.modal-sdg').removeClass('sdg-open');
     $($modalOpen).removeAttr('tabindex');
     // Call removeHash funtion for remove hash in url on close button

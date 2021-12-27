@@ -3,7 +3,7 @@ import './FormTypes.scss';
 import { Inputcomponent } from '../Inputfields/Input_group';
 import { Image } from '../../../Atom/Images/Image/Image';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
- 
+
 export const FormTypes = ({
   element,
   type,
@@ -22,7 +22,7 @@ export const FormTypes = ({
 }) => (
   <form>
     <div className="grid-container form-wrapper">
-      {args.variant === "text panel and form" && (
+      {args.variant === 'text panel and form' && (
         <div className="grid-x grid-margin-x grid-margin-y text-panel">
           <div className="medium-5 cell large-offset-1 mt-0">
             <Heading type="2" label={anchorTag} />
@@ -50,7 +50,7 @@ export const FormTypes = ({
               </div>
 
               <div className="cell">
-                {" "}
+                {' '}
                 <button type="submit" className="button button-primary">
                   {button}
                 </button>
@@ -59,7 +59,7 @@ export const FormTypes = ({
           </div>
         </div>
       )}
-      {args.variant === "form with photo" && (
+      {args.variant === 'form with photo' && (
         <div className="grid-x grid-margin-x form-photo">
           <div className="medium-5 cell">
             <Image />
@@ -97,7 +97,7 @@ export const FormTypes = ({
           </div>
         </div>
       )}
-      {args.variant === "wide form" && (
+      {args.variant === 'wide form' && (
         <div className="wide-form">
           <div className="grid-x grid-margin-x">
             <div className="large-8 cell">
@@ -144,7 +144,7 @@ export const FormTypes = ({
           </div>
         </div>
       )}
-      {args.variant === "stacked form" && (
+      {args.variant === 'stacked form' && (
         <div className="grid-x grid-margin-x grid-margin-y stacked-form">
           <div className="large-4 medium-6 cell">
             <div className="grid-x">

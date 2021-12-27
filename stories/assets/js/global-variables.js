@@ -9,4 +9,3 @@ const breakpoints = {
 };
 
 export { breakpoints };
-  

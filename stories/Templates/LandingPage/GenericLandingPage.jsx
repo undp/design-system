@@ -4,10 +4,10 @@ import { PageHeroOption } from '../../Components/UIcomponents/Hero/Pagehero/Page
 import FilterAndSearchBar from '../../Patterns/FilterAndSearchBar/FilterAndSearchBar';
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Footer } from '../../Organism/Footer/Footer';
-import GlobalHeader from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader";
+import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 
 export const GenericLandingPage = ({
-  data, active, herodata, title, imgsrc, videosrc, footerData, content, 
+  data, active, herodata, title, imgsrc, videosrc, footerData, content,
   groupcontentdata, buttonname, activeFilterText, clearText,
   logo,
   logowhite,
@@ -21,16 +21,16 @@ export const GenericLandingPage = ({
   backcaption,
 }) => (
   <>
-  <GlobalHeader
-        backcaption={backcaption}
-        locale={locale}
-        leftNavigationData={leftNavigationData}
-        navigationData={navigationData}
-        rightNavigationData={rightNavigationData}
-        languageswitcherData={languageswitcherData}
-        locationData={locationData}
-        langSelect={langSelect}
-      ></GlobalHeader>
+    <GlobalHeader
+      backcaption={backcaption}
+      locale={locale}
+      leftNavigationData={leftNavigationData}
+      navigationData={navigationData}
+      rightNavigationData={rightNavigationData}
+      languageswitcherData={languageswitcherData}
+      locationData={locationData}
+      langSelect={langSelect}
+    />
     <div className="grid-container fluid">
       <div className="grid-x grid-margin-x">
         <div className="cell large-12">

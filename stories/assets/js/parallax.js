@@ -9,7 +9,7 @@ export function parallaxlines() {
     var windowTop = $(window).scrollTop();
     var diff = windowTop + 500;
     // calculates the window width
-    let windowWidth = $(window).width();
+    const windowWidth = $(window).width();
     $('.parallax .glide__slides').each(function () {
       if (windowWidth > breakpoints.small) {
         $('.parallax').removeClass('lines-background');

@@ -7,7 +7,11 @@
   background-color: none;
   padding: 0;
 
-  &.gray, &.yellow, &.red, &.green, &.blue   {
+  &.gray,
+  &.yellow,
+  &.red,
+  &.green,
+  &.blue {
     padding: $spacing-32 $spacing-24;
 
     @include devicebreak(medium) {
@@ -34,6 +38,6 @@
   &.blue {
     background-color: $color-azure;
   }
-
 }
+
 /* blockquote cta end */

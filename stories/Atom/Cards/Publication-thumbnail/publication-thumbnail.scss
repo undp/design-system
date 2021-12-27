@@ -1,4 +1,4 @@
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/mixins';
 
 /* publication_thumbnail */
 .publication-thumbnail__image {
@@ -12,7 +12,7 @@
     background: #7b8085;
     border-radius: 21%;
     bottom: 37px;
-    content: "";
+    content: '';
     filter: blur(4px);
     height: 27px;
     left: 32px;
@@ -27,7 +27,7 @@
     @extend %img-hover-effect;
 
     bottom: 0;
-    content: "";
+    content: '';
     left: 0;
     position: absolute;
     top: 0;
@@ -39,6 +39,7 @@
     &::after {
       opacity: 0.75;
     }
+
     &.yellow {
       &::after {
         background-image: linear-gradient(42deg, $color-yellow, transparent 80%);
@@ -46,5 +47,15 @@
     }
   }
 }
-
+[dir='rtl'] {
+  .publication-thumbnail__image {
+    &:hover {
+      &.yellow {
+        &::after {
+          background-image: linear-gradient(318deg, $color-yellow, transparent 80%);
+        }
+      }
+    }
+  }
+}
 /* publication thumbnail end */

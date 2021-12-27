@@ -1,6 +1,6 @@
 export function parallaxGalleryFun(ele, yele, triggerclass) {
   gsap.registerPlugin(ScrollTrigger);
-  document.querySelectorAll(ele).forEach(((e, n) => {
+  document.querySelectorAll(ele).forEach((e, n) => {
     var r = (n + 1) % 2 != 0;
     var o = gsap.timeline({
       scrollTrigger: {
@@ -16,5 +16,5 @@ export function parallaxGalleryFun(ele, yele, triggerclass) {
     }), o.to(e, {
       y: yele * (r ? 1 : -1),
     });
-  }));
+  });
 }

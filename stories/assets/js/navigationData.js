@@ -1,4 +1,3 @@
-
 export const getData = (lang) => {
   $.ajax({
     method: 'GET',
@@ -97,7 +96,6 @@ export const getData = (lang) => {
         `;
         mobileMegaWrapper.append(renderMobileHtml);
       });
-    }
+    },
   });
 };
-

@@ -34,9 +34,9 @@ export const FluidImageSizeCarousel = ({ data }) => {
                     <div className="fluid-image-size-carousel__button-wrap">
                       <Ctalink Type="Space" label={item.buttonText} />
                       <div className="glide__arrows" data-glide-el="controls">
-                          <button className="glide__arrow glide__arrow--left" data-glide-dir="<"><img src={chevronLeftWhite} alt="Prev" /></button>
-                          <button className="glide__arrow glide__arrow--right" data-glide-dir=">"><img src={chevronRightWhite} alt="Next" /></button>
-                        </div>
+                        <button className="glide__arrow glide__arrow--left" data-glide-dir="<"><img src={chevronLeftWhite} alt="Prev" /></button>
+                        <button className="glide__arrow glide__arrow--right" data-glide-dir=">"><img src={chevronRightWhite} alt="Next" /></button>
+                      </div>
                     </div>
                   </div>
                 </div>
