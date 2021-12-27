@@ -128,8 +128,12 @@
     margin-bottom: 3.313rem;
     margin-top: $spacing-96;
 
-    .breadcrumb__wrapper {
-      margin-top: 4.562rem;
+    .breadcrumb {
+      margin-top: 1.813rem;
+      
+      @include devicebreak(medium) {
+        margin-top: 5.313rem;
+      }
     }
   }
   
@@ -149,6 +153,11 @@
 
 .sticky {
   position: relative;
+
+  @include devicebreak(small) {
+    display: flex;
+    justify-content: center;
+  }
 
   &.stick {
     position: relative;
