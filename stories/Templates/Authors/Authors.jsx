@@ -1,18 +1,17 @@
-import React, { useEffect } from 'react';
-import logowhite from '../../assets/images/undp-logo-white.svg';
-import logo from '../../assets/images/undp-logo-blue.svg';
-import user from '../../assets/images/user.svg';
-import viewport from '../../assets/js/viewport';
-import { Heading } from '../../Atom/Typography/Heading/Heading';
-import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
-import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
-import { Footer } from '../../Organism/Footer/Footer';
-import './Authors.scss';
-import init from '../../assets/js/select-init';
-import { Authorcard } from '../../Components/UIcomponents/Author/Authorcard/Authorcard';
-import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
-import { SearchExpand } from '../../Components/Forms/expandable search/SearchExpand';
-import CustomSelect from '../../Components/Forms/Dropdowns/CustomSelect/CustomSelect';
+import React, { useEffect } from "react";
+import logowhite from "../../assets/images/undp-logo-white.svg";
+import logo from "../../assets/images/undp-logo-blue.svg";
+import user from "../../assets/images/user.svg";
+import viewport from "../../assets/js/viewport";
+import { Heading } from "../../Atom/Typography/Heading/Heading";
+import { Breadcrumbcomponent } from "../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs";
+import GlobalHeader from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader";
+import { Footer } from "../../Organism/Footer/Footer";
+import "./Authors.scss";
+import init from "../../assets/js/select-init";
+import { Authorcard } from "../../Components/UIcomponents/Author/Authorcard/Authorcard";
+import { CtaButton } from "../../Components/UIcomponents/Buttons/Cta_button/CtaButton";
+import { SearchExpand } from "../../Components/Forms/expandable search/SearchExpand";
 
 const Authors = ({
   breadcrumbData,
@@ -73,12 +72,12 @@ const Authors = ({
           </div>
         </div>
         <div className="grid-x grid-margin-x author-filter">
-          <div className="cell medium-offset-3 medium-6 align-center">
+          <div className="cell medium-offset-3 medium-5 large-6 align-center">
             <div className="exoandablesearch">
               <SearchExpand />
             </div>
           </div>
-          <div className="cell medium-3">
+          <div className="cell medium-4 large-3">
             <div className="select-box author-select" data-select="">
               <button
                 type="button"

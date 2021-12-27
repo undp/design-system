@@ -6,7 +6,7 @@
   margin-top: 4.75rem;
 
   @include devicebreak(xlarge) {
-    margin-top: 10.75rem;
+    margin-top: 7.1875rem;
   }
 
   @include devicebreak(small) {
@@ -122,7 +122,7 @@
       margin-top: $spacing-48;
 
       h6 {
-        font-size: $font-size-16;
+        font-size: 0.875rem;
       }
     }
   }
@@ -149,7 +149,7 @@
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .authors-page {
     .medium-offset-1 {
       @include devicebreak(small) {

@@ -25,7 +25,7 @@
     box-sizing: border-box;
     cursor: pointer;
     font-size: $font-size-14;
-    line-height: 1.75rem;
+    line-height: 1.85rem;
     padding-bottom: $spacing-12;
     position: relative;
     width: 0;
@@ -46,10 +46,11 @@
     padding-bottom: 0.88rem;
     width: 1.6875rem;
     z-index: 2;
+    height: 28px;
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .expand-search {
     .icon-search-black {
       left: inherit;
