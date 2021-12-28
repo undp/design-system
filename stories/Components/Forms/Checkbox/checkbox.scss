@@ -37,7 +37,7 @@
     }
 
     &:checked + label::before {
-      background-image: url(#{$img-path-Icon}icon-check.svg);
+      background-image: url(#{$img-path-Icon}/icon-check.svg);
     }
 
     &:focus-visible + label::before {
