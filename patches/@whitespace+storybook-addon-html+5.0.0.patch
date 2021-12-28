@@ -1,0 +1,18 @@
+diff --git a/node_modules/@whitespace/storybook-addon-html/.DS_Store b/node_modules/@whitespace/storybook-addon-html/.DS_Store
+new file mode 100644
+index 0000000..cdc8eda
+Binary files /dev/null and b/node_modules/@whitespace/storybook-addon-html/.DS_Store differ
+diff --git a/node_modules/@whitespace/storybook-addon-html/out/decorators/withHTML.js b/node_modules/@whitespace/storybook-addon-html/out/decorators/withHTML.js
+index e1c48b9..6813b77 100644
+--- a/node_modules/@whitespace/storybook-addon-html/out/decorators/withHTML.js
++++ b/node_modules/@whitespace/storybook-addon-html/out/decorators/withHTML.js
+@@ -26,7 +26,8 @@ var withHTML = (0, _addons.makeDecorator)({
+       if (parameters.removeEmptyComments) {
+         html = html.replace(/<!--\s*-->/g, '');
+       }
+-
++      // removing style attribute added by the JS
++      html = html.replace(/style="[^"]+"/g, '');
+       channel.emit(_shared.EVENT_CODE_RECEIVED, {
+         html: html,
+         options: parameters
