@@ -10,7 +10,7 @@
 @mixin x-appearance($value) {
   -webkit-appearance: $value;
   -moz-appearance: $value;
-    appearance: $value;
+  appearance: $value;
 }
 
 //animation
@@ -19,7 +19,7 @@
   -moz-animation: $animation;
   -ms-animation: $animation;
   -o-animation: $animation;
-    animation: $animation;
+  animation: $animation;
 }
 
 //transition
@@ -28,7 +28,7 @@
   -moz-transition: $transitions;
   -ms-transition: $transitions;
   -o-transition: $transitions;
-    transition: $transitions;
+  transition: $transitions;
 }
 
 //transition-delay
@@ -37,7 +37,7 @@
   -moz-transition-delay: $transitiondelay;
   -ms-transition-delay: $transitiondelay;
   -o-transition-delay: $transitiondelay;
-    transition-delay: $transitiondelay;
+  transition-delay: $transitiondelay;
 }
 
 //transform
@@ -46,7 +46,7 @@
   -moz-transform: $transforms;
   -ms-transform: $transforms;
   -o-transform: $transforms;
-    transition: $transforms;
+  transition: $transforms;
 }
 
 // Rotate
@@ -70,11 +70,11 @@
 }
 
 //gradient color
-@mixin gradient($direction, $list) { 
+@mixin gradient($direction, $list) {
   background: -webkit-linear-gradient($direction, $list);
   background: -moz-linear-gradient($direction, $list);
   background: -o-linear-gradient($direction, $list);
-  background: linear-gradient($direction, $list);  
+  background: linear-gradient($direction, $list);
 }
 
 /* mixing  end */
@@ -298,11 +298,11 @@
   cursor: pointer;
   font-size: $font-size-16;
   font-weight: 600;
+  margin: 0;
   min-width: 288px;
   padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
   position: relative;
   text-transform: uppercase;
-  margin: 0;
 }
 
 %select_option {
@@ -335,7 +335,7 @@
   -moz-animation: none;
   -ms-animation: none;
   -o-animation: none;
-   animation: none;
+  animation: none;
 }
 
 %left-to-right {
@@ -392,8 +392,8 @@
   color: $color-black;
   font-size: 0.75rem;
   font-weight: 700;
-  line-height: 0.84;
   letter-spacing: 0.48px;
+  line-height: 0.84;
   text-transform: uppercase;
 }
 
@@ -411,18 +411,19 @@
   background-color: $color-gray-100;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   height: 7.1875rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
   left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 9;
 }
 
-%carousel_arrows{
+%carousel_arrows {
   display: none;
-  
+
   @media (pointer: coarse) and (hover: none) and (min-width: 48em) {
     display: block;
   }
 }
+
 /* placehoder start */

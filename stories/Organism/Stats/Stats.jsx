@@ -11,11 +11,11 @@ export const Stats = ({ data, imageback }) => {
   }, []);
   return (
     <div className="grid-x stats-grid">
-      {data.map((item, index) =>
+      {data.map((item, index) => (
         <div className={`cell medium-3 stats-panel-card left-right delay-${2 + index++}`} key={index}>
           <StatsPanel number={item.number} imageback={imageback} percent={item.percent} content={item.content} />
         </div>
-      )}
+      ))}
     </div>
   );
 };
