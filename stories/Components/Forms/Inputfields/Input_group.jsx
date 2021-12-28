@@ -14,7 +14,6 @@ export const Inputcomponent = ({
     <>
       <div className={['input-group', `${state}`].join(' ')}>
         {labelText && <label htmlFor={[`${type}`]}>{ labelText }</label>}
-        <div className={[`${type}-field`]}>
           <InputTag
             type={type}
             disabled={State == 'Disabled'}
@@ -22,9 +21,8 @@ export const Inputcomponent = ({
             minlength={minlength}
             cols={cols}
             rows={rows}
-            className={['input__controls', `${type} ${state}`].join(' ')}
+            className={[`${type} ${state}`].join(' ')}
           />
-        </div>
         {helpText && <p className="help">{ helpText }</p>}
         {(State == 'Error') && <p className="error">{ errorText }</p>}
       </div>

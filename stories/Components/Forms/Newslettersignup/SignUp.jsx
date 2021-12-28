@@ -9,7 +9,7 @@ export const SignUp = ({
   return (
     <form action="/">
       <div className={['sign-up', `${args.variant}`].join(' ')}>
-        <label className="footer-subtitle">{label}</label>
+        <label htmlFor={type}>{label}</label>
         <div className="sign-up--field">
           <Inputcomponent element={element} type={type} placeholder={placeholder} required={required} mode={mode} errorText={errorText} />
           <InputTag

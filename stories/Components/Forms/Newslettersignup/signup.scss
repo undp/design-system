@@ -2,15 +2,20 @@
 @import '../../../assets/scss/mixins';
 
 /* signup newsletter start */
-.footer-subtitle {
-  display: block;
-  font-size: 1rem;
-  line-height: 1.4;
-  margin-bottom: $spacing-12;
-  text-align: left;
+.sign-up {
+  label{
+    display: block;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: $spacing-12;
+    text-align: left;
 
-  @include devicebreak(medium) {
-    text-align: right;
+    @include devicebreak(medium) {
+      text-align: right;
+    }
+  }
+  &.white {
+    color: $color-white;
   }
 }
 
