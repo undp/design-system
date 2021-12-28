@@ -2,6 +2,10 @@
 @import './variables';
 @import './breakpoints';
 
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   color: $color-black;
   font-family: $Font-Family-ProximaNova;
@@ -32,6 +36,7 @@ caption {
 h1 {
   font-family: $Font-Family-SohneBreit;
   font-size: 2.938rem;
+  letter-spacing: 0.06rem;
   line-height: 1.08;
   text-transform: uppercase;
 
@@ -91,26 +96,25 @@ h5 {
 h6 {
   font-size: 1rem;
   font-weight: 700;
+  letter-spacing: 0.03rem;
   line-height: 1.15;
   text-transform: uppercase;
 }
 
 p {
-  font-size: 1rem;
   margin-top: 0;
-
-  @include devicebreak(medium) {
-    font-size: 1.25rem;
-  }
 }
 
 ul,
 ol {
-  font-size: 1rem;
   margin: 0;
 
-  @include devicebreak(medium) {
-    font-size: 1.25rem;
+  li {
+    margin-bottom: $spacing-16;
+
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-24;
+    }
   }
 }
 
@@ -122,6 +126,22 @@ dl {
   @include devicebreak(medium) {
     font-size: 1.25rem;
   }
+}
+
+dt {
+  margin-bottom: $spacing-08;
+}
+
+dd {
+  margin-inline-start: $spacing-40;
+
+  @include devicebreak(medium) {
+    margin-inline-start: $spacing-48;
+  }
+}
+
+hr {
+  border-width: 2px;
 }
 
 /* typograpgy end */

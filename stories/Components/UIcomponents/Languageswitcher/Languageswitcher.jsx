@@ -8,19 +8,19 @@ export const variant_options = {
 };
 
 export const Languageswitcher = ({
-  headerText, data, ...args
+  headerText, data, lang, ...args
 }) => {
   useEffect(() => {
     LangSwitch();
   }, []);
 
   return (
-    <div className="dropdown-language" id="switcher">
-      <button className={['dropdown-btn', `${variant_options[`${args.variant}`]}`].join(' ')}>{headerText}</button>
-      <ul className="dropdown-language__content">
+    <div className="dropdown-language sr-only">
+      <button className={['dropdown-btn', `${variant_options[`${args.variant}`]}`].join(' ')} aria-label="English, Select your language" aria-expanded="false">{headerText}</button>
+      <ul className="dropdown-language__content" role="listbox">
         {data.map((item, index) => (
-          <li className="dropdown-language__content-item" key={index}>
-            <a href="#">
+          <li key={index}>
+            <a href="#" lang={item.lang} hrefLang={item.lang} role="option">
               {item.descriptionText}
             </a>
           </li>

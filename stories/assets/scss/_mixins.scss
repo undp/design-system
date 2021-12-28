@@ -10,7 +10,7 @@
 @mixin x-appearance($value) {
   -webkit-appearance: $value;
   -moz-appearance: $value;
-    appearance: $value;
+  appearance: $value;
 }
 
 //animation
@@ -19,7 +19,7 @@
   -moz-animation: $animation;
   -ms-animation: $animation;
   -o-animation: $animation;
-    animation: $animation;
+  animation: $animation;
 }
 
 //transition
@@ -28,7 +28,7 @@
   -moz-transition: $transitions;
   -ms-transition: $transitions;
   -o-transition: $transitions;
-    transition: $transitions;
+  transition: $transitions;
 }
 
 //transition-delay
@@ -37,7 +37,7 @@
   -moz-transition-delay: $transitiondelay;
   -ms-transition-delay: $transitiondelay;
   -o-transition-delay: $transitiondelay;
-    transition-delay: $transitiondelay;
+  transition-delay: $transitiondelay;
 }
 
 //transform
@@ -46,7 +46,7 @@
   -moz-transform: $transforms;
   -ms-transform: $transforms;
   -o-transform: $transforms;
-    transition: $transforms;
+  transition: $transforms;
 }
 
 // Rotate
@@ -67,6 +67,14 @@
 // Skew
 @mixin skew($x, $y) {
   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//gradient color
+@mixin gradient($direction, $list) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
 }
 
 /* mixing  end */
@@ -237,7 +245,7 @@
   float: right;
   height: 13px;
   position: absolute;
-  right: 22px;
+  right: 19px;
   top: 50%;
   width: 20px;
 }
@@ -252,18 +260,19 @@
 }
 
 %sidebar-chevron {
-  @include transition(0.1s ease);
+  @include transition(0.3s ease);
 
   background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
   content: '';
-  height: 20px;
+  height: 0.813rem;
   position: absolute;
-  right: $spacing-24;
-  top: 17px;
+  right: 1.188rem;
+  top: 20px;
   width: 20px;
 
   @include devicebreak(medium) {
-    top: 27px;
+    top: 1.125rem;
+    padding: 0.625rem 0;
   }
 }
 
@@ -290,7 +299,8 @@
   cursor: pointer;
   font-size: $font-size-16;
   font-weight: 600;
-  min-width: 296px;
+  margin: 0;
+  min-width: 288px;
   padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
   position: relative;
   text-transform: uppercase;
@@ -298,10 +308,13 @@
 
 %select_option {
   border: 2px solid $color-black;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: none;
   max-height: 300px;
   min-height: 100px;
+  min-width: 288px;
   padding: 0 $spacing-16;
   width: 100%;
 }
@@ -313,7 +326,7 @@
 }
 
 %select_rtl_after {
-  left: 22px;
+  left: 16px;
   margin: 0;
   right: auto;
 }
@@ -323,7 +336,7 @@
   -moz-animation: none;
   -ms-animation: none;
   -o-animation: none;
-   animation: none;
+  animation: none;
 }
 
 %left-to-right {
@@ -372,7 +385,6 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  margin: 0 0.75rem;
   padding: 0;
   vertical-align: bottom;
 }
@@ -381,8 +393,8 @@
   color: $color-black;
   font-size: 0.75rem;
   font-weight: 700;
-  line-height: 0.84;
   letter-spacing: 0.48px;
+  line-height: 0.84;
   text-transform: uppercase;
 }
 
@@ -394,6 +406,25 @@
 %carousel_desc {
   font-size: 1rem;
   margin-bottom: 1.5rem;
+}
+
+%header {
+  background-color: $color-gray-100;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  height: 7.1875rem;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+%carousel_arrows {
+  display: none;
+
+  @media (pointer: coarse) and (hover: none) and (min-width: 48em) {
+    display: block;
+  }
 }
 
 /* placehoder start */

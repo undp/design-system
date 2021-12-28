@@ -1,7 +1,14 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { Cardthumb } from './CardThumbnail';
+import img from '../../../assets/images/card-thumbnail.jpg';
 
-<Meta title="Testing/Cards/Card Thumbnail"/>
+<Meta title="Testing/Cards/Card Thumbnail" argTypes={{
+  hovercolor: {
+    options: ['yellow', 'red', 'green', 'azure'],
+    control: { type: 'radio' },
+    defaultValue: 'yellow'
+  }
+}}/>
 
 <style>{`
 .subheading {
@@ -18,7 +25,14 @@ import { Cardthumb } from './CardThumbnail';
 The Card Thumbnail Component is used to embed an image on a web page.
 
 <Story name="Card Thumbnail">
-    return <Cardthumb> </Cardthumb> ;
+  {(args, { globals: { locale } }) => {
+    return (
+      <Cardthumb
+      image={img}
+       {...args}
+      ></Cardthumb>
+    );
+  }}
 </Story>
 
 <div className="subheading">Usage</div>

@@ -12,7 +12,18 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Cards/Stats Cards" />
+<Meta title="Components/UI components/Cards" argTypes={{
+  Size: {
+    options: ['Small', 'Medium', 'Large', 'Extra_large'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'Medium'
+  },
+  Hovercolors: {
+    options: ['yellow', 'red', 'green', 'blue'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'yellow'
+  }
+}}/>
 
 <style>{`
  .subheading {
@@ -51,39 +62,12 @@ we are using these modifier classes:
 
 ## Default Representation & various possible states
 
-<div className="subheading">Stats Card Extra Large</div>
+<div className="subheading">Stats Card</div>
 
-<Story name="Extra Large">
+<Story name="Stats Card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <StatsCards title={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} size='x-large'></StatsCards>;
-  }}
-</Story>
-
-<div className="subheading">Stats Card Large</div>
-
-<Story name="Large">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <StatsCards titlesec={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} size='large'></StatsCards>;
-  }}
-</Story>
-
-<div className="subheading">Stats Card Medium</div>
-
-<Story name="Medium">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <StatsCards percent={caption.percentname} content={caption.text} number={caption.numbername} size='medium'></StatsCards>;
-  }}
-</Story>
-
-<div className="subheading">Stats Card Small</div>
-
-<Story name="Small">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <StatsCards percent={caption.percentname} content={caption.text} number={caption.numbername} size='small'></StatsCards>;
+    return <StatsCards title={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} {...args}></StatsCards>;
   }}
 </Story>
 

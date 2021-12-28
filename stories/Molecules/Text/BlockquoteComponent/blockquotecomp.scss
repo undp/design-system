@@ -4,10 +4,19 @@
 
 /* blockquote cta start */
 .blockquote-wrapper {
-  padding: 1.875rem;
+  background-color: none;
+  padding: 0;
 
-  @include devicebreak(medium) {
-    padding: 5.313rem;
+  &.gray,
+  &.yellow,
+  &.red,
+  &.green,
+  &.blue {
+    padding: $spacing-32 $spacing-24;
+
+    @include devicebreak(medium) {
+      padding: 5.313rem $spacing-96;
+    }
   }
 
   &.gray {
@@ -18,9 +27,16 @@
     background-color: $color-yellow;
   }
 
-  &.transparent {
-    background-color: none;
-    padding: 0;
+  &.red {
+    background-color: $color-red;
+  }
+
+  &.green {
+    background-color: $color-green;
+  }
+
+  &.blue {
+    background-color: $color-azure;
   }
 }
 

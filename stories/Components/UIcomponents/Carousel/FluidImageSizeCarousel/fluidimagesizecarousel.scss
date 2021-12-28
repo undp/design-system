@@ -3,9 +3,10 @@
 
 /* fixed image size carousel start */
 .fluid-image-size-carousel {
-  overflow:hidden;
+  overflow: hidden;
 
   &__image {
+    display: block;
     width: 100%;
 
     @include devicebreak(small) {
@@ -45,29 +46,41 @@
     }
   }
 
+  &__button-wrap {
+    @include devicebreak(medium) {
+      display: inline-flex;
+    }
+  }
+
   .glide {
+    &__slides {
+      margin-top: 3rem;
+    }
+
     &__track {
       margin-right: -100%;
     }
 
     &__arrows {
-      bottom: 0;
-      position: absolute;
-      right: 2rem;
+      @extend %carousel_arrows;
+
+      margin-left: 2rem;
 
       @include devicebreak(large) {
-        display: none;
-      }
-
-      @include devicebreak(small) {
-        display: none;
+        margin-left: 3rem;
       }
     }
 
     &__arrow {
       @extend %carousel_arrow;
 
-      margin: 0 0.4rem;
+      &:first-child {
+        margin-right: 0.625rem;
+      }
+
+      &:last-child {
+        margin-left: 0.625rem;
+      }
 
       img {
         vertical-align: bottom;
@@ -91,9 +104,25 @@
         margin-right: 0;
       }
 
+      &__arrow {
+        &:first-child {
+          margin-left: 0.625rem;
+          margin-right: 0;
+        }
+
+        &:last-child {
+          margin-left: 0;
+          margin-right: 0.625rem;
+        }
+      }
+
       &__arrows {
-        left: 2rem;
-        right: auto;
+        margin-left: auto;
+        margin-right: 2rem;
+
+        @include devicebreak(large) {
+          margin-right: 3rem;
+        }
       }
     }
   }

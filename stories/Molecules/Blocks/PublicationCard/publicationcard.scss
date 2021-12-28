@@ -2,7 +2,49 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
-.download-card {
+// publication-card
+.publication-card {
+  display: inline-block;
+
+  @include devicebreak(medium) {
+    min-width: 20.625rem;
+  }
+
+  &:hover {
+    .publication_thumbnail__image {
+      &::after {
+        opacity: 0.75;
+      }
+    }
+
+    .card_thumbnail__image {
+      &::before {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  &__description {
+    align-items: center;
+    background: $color-gray-100;
+    padding: $spacing-24;
+
+    .grid-x {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+
+      .small-6 {
+        width: 49%;
+      }
+    }
+
+    .grid-x > :not(:first-of-type) {
+      border-left: $spacing-02 solid $color-silvery-moonlight;
+      text-align: right;
+    }
+  }
+
   &__title {
     @extend %paragragh-font-20;
 
@@ -20,44 +62,85 @@
     @extend %paragragh-font-16;
 
     align-items: center;
-    display: flex;
+    background-image: none;
     display: inline-flex;
-    float: left;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+
+    &::after {
+      cursor: pointer;
+      height: $spacing-24;
+      width: $spacing-24;
+    }
+
+    .download-icon {
+      margin-left: $spacing-12;
+    }
+
+    &:hover {
+      color: $color-shuttle-gray;
+
+      .download-icon {
+        background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
+        height: $spacing-24;
+      }
+    }
   }
 
   &__readmore {
     @extend %paragragh-font-16;
 
     align-items: center;
-    border-left: 2px solid #d4d6d8;
-    display: flex;
-    display: inline-flex;
+    background-image: none;
+    display: inline;
     float: right;
     font-weight: 700;
     letter-spacing: 0.03em;
-    padding-left: $spacing-12;
     text-transform: uppercase;
-  }
 
-  &__description {
-    padding-bottom: $spacing-48;
-  }
-}
+    &::after {
+      cursor: pointer;
+      height: $spacing-24;
+      width: $spacing-24;
+    }
 
-.download-card__readmore {
-  .external-link {
-    margin-left: $spacing-12;
+    .external-link {
+      display: inline-block;
+      margin-left: $spacing-12;
+    }
+
+    &:hover {
+      color: $color-shuttle-gray;
+
+      .external-link {
+        background: url(#{$img-path-Icon}/external-hover.svg) no-repeat 0 bottom;
+      }
+    }
   }
 }
 
 [dir='rtl'] {
-  .download-card__readmore {
-    .external-link {
-      margin-left: 0;
-      margin-right: $spacing-12;
+  .publication-card {
+    &__readmore {
+      float: left;
+
+      .external-link {
+        margin-left: 0;
+        margin-right: $spacing-12;
+      }
+    }
+
+    &__description {
+      .grid-x > :not(:first-of-type) {
+        border-left: 0;
+        border-right: $spacing-02 solid $color-silvery-moonlight;
+        text-align: left;
+      }
+    }
+
+    &__download {
+      float: right;
     }
   }
 }

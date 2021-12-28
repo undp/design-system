@@ -1,11 +1,21 @@
-import { Meta, Story } from '@storybook/addon-docs';
-import AuthorPage from './AuthorPage';
-import {getCaptionForLocale as breadcrumbData } from "../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs.stories.mdx"
-import {getCaptionForLocale as authorSummeryData } from "../../Organism/Blocks/Authorcard/AuthorSummary.stories.mdx"
-import {getCaptionForLocale as contentCardData } from "../../Organism/Blocks/ContentCard/ContentCard.stories.mdx"
-import {getCaptionForLocale as footerData} from "../../Organism/Footer//Footer.stories.mdx";
+import { Meta, Story } from "@storybook/addon-docs";
+import AuthorPage from "./AuthorPage";
+import { getCaptionForLocale as breadcrumbData } from "../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs.stories.mdx";
+import { getCaptionForLocale as authorSummaryData } from "../../Organism/Blocks/Authorcard/AuthorSummary.stories.mdx";
+import { getCaptionForLocale as contentCardData } from "../../Organism/Blocks/ContentCard/ContentCard.stories.mdx";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer//Footer.stories.mdx";
 
-<Meta title="Templates/Author" />
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {
+  getNavLinks,
+  menuData,
+  getSiteTitle,
+  getLocationDataForLocale,
+  getBackForLocale,
+  getSelectlanguage,
+} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
+
+<Meta title="Templates" />
 
 <style>{`
  .subheading {
@@ -23,23 +33,50 @@ import {getCaptionForLocale as footerData} from "../../Organism/Footer//Footer.s
   }
 `}</style>
 
-<Story name="Author">
+<Story name="Author page" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
-    
-    return <AuthorPage
-     footerData={footerData(locale)}
-     breadcrumbData={breadcrumbData(locale)}
-     authorSummeryData={authorSummeryData(locale)}
-     contentCardData={contentCardData(locale)}>
-      </AuthorPage>;
+    const navigationData = getNavLinks(locale);
+    const leftNavigationData = navigationData.filter(
+      (item) => item.position === "left"
+    );
+    const rightNavigationData = navigationData.filter(
+      (item) => item.position === "right"
+    );
+    return (
+      <AuthorPage
+        footerData={footerData(locale)}
+        breadcrumbData={breadcrumbData(locale)}
+        authorSummaryData={authorSummaryData(locale)}
+        contentCardData={contentCardData(locale)}
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        menuData={menuData(locale)}
+        languageswitcherData={Languageswitcher(locale)}
+        locationData={getLocationDataForLocale(locale)}
+        langSelect={getSelectlanguage(locale)}
+        backcaption={getBackForLocale(locale)}
+      ></AuthorPage>
+    );
   }}
 </Story>
 
 <div className="subheading">Usage</div>
 <ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<li><u>To use SCSS include the following files in your implementation</u></li>
-<li>Component SCSS file: <code>ArticlePage.scss</code></li>
-<li><u>To use CSS include the following files in your implementation</u></li>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <li>
+    <u>To use SCSS include the following files in your implementation</u>
+  </li>
+  <li>
+    Component SCSS file: <code>ArticlePage.scss</code>
+  </li>
+  <li>
+    <u>To use CSS include the following files in your implementation</u>
+  </li>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
 </ul>

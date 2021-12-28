@@ -3,10 +3,12 @@
 
 /* image only carousel start */
 .image-only-carousel {
-  overflow:hidden;
+  overflow: hidden;
 
-  &__image {
-    width: 100%;
+  .medium-8 {
+    img {
+      width: 100%;
+    }
   }
 
   .glide {
@@ -15,21 +17,22 @@
     }
 
     &__arrows {
-      bottom: 0;
-      position: absolute;
-      right: 5rem;
+      @extend %carousel_arrows;
 
-      @include devicebreak(large) {
-        display: none;
-      }
-
-      @include devicebreak(small) {
-        display: none;
-      }
+      align-self: flex-end;
+      margin-left: 4rem;
     }
 
     &__arrow {
       @extend %carousel_arrow;
+
+      &:first-child {
+        margin-right: 0.75rem;
+      }
+
+      &:last-child {
+        margin-left: 0.75rem;
+      }
 
       img {
         vertical-align: bottom;
@@ -47,9 +50,21 @@
         margin-right: 0;
       }
 
+      &__arrow {
+        &:first-child {
+          margin-left: 0.75rem;
+          margin-right: 0;
+        }
+
+        &:last-child {
+          margin-left: 0;
+          margin-right: 0.75rem;
+        }
+      }
+
       &__arrows {
-        left: 5rem;
-        right: auto;
+        margin-left: 0;
+        margin-right: 4rem;
       }
     }
   }

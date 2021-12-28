@@ -2,17 +2,101 @@ import { Meta, Story } from '@storybook/addon-docs';
 import { Textarea } from './Textarea';
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {detail1: 'Form Label:', detail2: '*Error: this field is required', detail3: 'Search', detail4:'Enter search term', detail5: 'Number of projects', detail6: 'Create password', detail7: 'Password', detail8: '8 characters minimum', detail9: 'Phone number', detail10: 'Brief description', text: 'Date label', text2: 'Enter text', text3: 'Placeholder'}; return engText;
-    case 'arabic': const arabicText = {detail1: 'تسمية النموذج:', detail2: '* خطأ: هذا الحقل مطلوب', detail3: 'بحث', detail4: 'أدخل مصطلح البحث', detail5:'عدد المشاريع', detail6: 'أنشئ كلمة مرور', detail7: 'كلمه السر', detail8: '8 أحرف كحد أدنى', detail9: 'رقم الهاتف', detail10: 'وصف مختصر', text: 'تسمية التاريخ', text2: 'أدخل النص', text3: 'نائب'}; return arabicText;
-    case 'burmese': const burmeseText = {detail1: 'ပုံစံတံဆိပ်:',detail2: '*အမှား - ဤအကွက်လိုအပ်သည်', detail3: 'ရှာဖွေပါ', detail4: 'ရှာဖွေရေးစာလုံးရိုက်ထည့်ပါ', detail5:'စီမံကိန်းအရေအတွက်', detail6: 'စကားဝှက်ဖန်တီးပါ', detail7: 'စကားဝှက်', detail8: 'အနည်းဆုံးစာလုံး ၈ လုံး', detail9: 'ဖုန်းနံပါတ်', detail10: 'အကျဉ်းချုပ်ဖော်ပြချက်', text: 'ရက်စွဲတံဆိပ်', text2: 'စာသားရိုက်ထည့်ပါ', text3: 'နေရာယူသည်'}; return burmeseText;
-    case 'japanese': const japaneseText = {detail1: 'フォームラベル：', detail2: '*エラー：このフィールドは必須です', detail3: '検索', detail4: '検索語を入力してください', detail5:'プロジェクト数', detail6: 'パスワードを作成する', detail7: 'パスワード', detail8: '最小8文字', detail9: '電話番号', detail10: '簡単な説明', text: '日付ラベル', text2: 'テキストを入力してください', text3: 'プレースホルダー'}; return japaneseText;
-    default:
-      return {detail1: 'Form Label:',detail2: '*Error: this field is required', detail3: 'Search', detail4: 'Enter search term', detail5: 'Number of projects', detail6: 'Create password', detail7: 'Password', detail8: '8 characters minimum', detail9: 'Phone number', detail10: 'Brief description', text: 'Date label', text2: 'Enter text', text3: 'Placeholder'};
+  switch (locale) {
+	case 'english':
+		const engText = {
+			detail1: 'Form Label:',
+			detail2: '*Error: this field is required',
+			detail3: 'Search',
+			detail4: 'Enter search term',
+			detail5: 'Number of projects',
+			detail6: 'Create password',
+			detail7: 'Password',
+			detail8: '8 characters minimum',
+			detail9: 'Phone number',
+			detail10: 'Brief description',
+			text: 'Date label',
+			text2: 'Enter text',
+			text3: 'Placeholder'
+		};
+		return engText;
+	case 'arabic':
+		const arabicText = {
+			detail1: 'تسمية النموذج:',
+			detail2: '* خطأ: هذا الحقل مطلوب',
+			detail3: 'بحث',
+			detail4: 'أدخل مصطلح البحث',
+			detail5: 'عدد المشاريع',
+			detail6: 'أنشئ كلمة مرور',
+			detail7: 'كلمه السر',
+			detail8: '8 أحرف كحد أدنى',
+			detail9: 'رقم الهاتف',
+			detail10: 'وصف مختصر',
+			text: 'تسمية التاريخ',
+			text2: 'أدخل النص',
+			text3: 'نائب'
+		};
+		return arabicText;
+	case 'burmese':
+		const burmeseText = {
+			detail1: 'ပုံစံတံဆိပ်:',
+			detail2: '*အမှား - ဤအကွက်လိုအပ်သည်',
+			detail3: 'ရှာဖွေပါ',
+			detail4: 'ရှာဖွေရေးစာလုံးရိုက်ထည့်ပါ',
+			detail5: 'စီမံကိန်းအရေအတွက်',
+			detail6: 'စကားဝှက်ဖန်တီးပါ',
+			detail7: 'စကားဝှက်',
+			detail8: 'အနည်းဆုံးစာလုံး ၈ လုံး',
+			detail9: 'ဖုန်းနံပါတ်',
+			detail10: 'အကျဉ်းချုပ်ဖော်ပြချက်',
+			text: 'ရက်စွဲတံဆိပ်',
+			text2: 'စာသားရိုက်ထည့်ပါ',
+			text3: 'နေရာယူသည်'
+		};
+		return burmeseText;
+	case 'japanese':
+		const japaneseText = {
+			detail1: 'フォームラベル：',
+			detail2: '*エラー：このフィールドは必須です',
+			detail3: '検索',
+			detail4: '検索語を入力してください',
+			detail5: 'プロジェクト数',
+			detail6: 'パスワードを作成する',
+			detail7: 'パスワード',
+			detail8: '最小8文字',
+			detail9: '電話番号',
+			detail10: '簡単な説明',
+			text: '日付ラベル',
+			text2: 'テキストを入力してください',
+			text3: 'プレースホルダー'
+		};
+		return japaneseText;
+	default:
+		return {
+			detail1: 'Form Label:',
+			detail2: '*Error: this field is required',
+			detail3: 'Search',
+			detail4: 'Enter search term',
+			detail5: 'Number of projects',
+			detail6: 'Create password',
+			detail7: 'Password',
+			detail8: '8 characters minimum',
+			detail9: 'Phone number',
+			detail10: 'Brief description',
+			text: 'Date label',
+			text2: 'Enter text',
+			text3: 'Placeholder'
+		};
   }
 };
 
-<Meta title="Components/Forms/Textarea"  />
+<Meta title="Components/Forms"  argTypes={{
+  State: {
+    options: ['Default', 'Focus', 'Error', 'Disabled'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'Default'
+  }
+}}/>
 
 <style>{`
   #story--atoms-input-group--text-default, #story--atoms-input-group--text-focus, #story--atoms-input-group--text-error, #story--atoms-input-group--text-disabled, #story--atoms-input-group--search-default, #story--atoms-input-group--search-focus, #story--atoms-input-group--search-error, #story--atoms-input-group--search-disabled, #story--atoms-input-group--number-default, #story--atoms-input-group--number-error, #story--atoms-input-group--number-focus, #story--atoms-input-group--number-error, #story--atoms-input-group--number-disabled, #story--atoms-input-group--password-default, #story--atoms-input-group--password-focus, #story--atoms-input-group--password-error, #story--atoms-input-group--password-disabled, #story--atoms-input-group--telephone-default, #story--atoms-input-group--telephone-focus, #story--atoms-input-group--telephone-error, #story--atoms-input-group--telephone-disabled, #story--atoms-input-group--date-default, #story--atoms-input-group--date-focus, #story--atoms-input-group--date-error, #story--atoms-input-group--date-disabled, #story--atoms-input-group--textarea-default, #story--atoms-input-group--textarea-focus, #story--atoms-input-group--textarea-error, #story--atoms-input-group--textarea-disabled, #story--atoms-input-group--label, #story--atoms-input-group--help-message, #story--atoms-input-group--error-message {
@@ -60,56 +144,12 @@ The <code>input</code> HTML element is used to create interactive controls for w
   <li>The <code>textarea</code> HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.</li>
 </ul>
 
-<div className="input_group_wrapper">
-  <div className= "input_item">
-    <div className="input__box input-textarea-default"></div>
-    <div className="input__label"> Input textarea-Default </div>
-    <div className="input__code"> <Textarea type='textarea' labelText='Brief description' id= 'textarea' mode='default-state' required='required' placeholder= 'Enter text'></Textarea></div>
-  </div>
-  <div className="input_item">
-    <div className="input__box input-textarea-focus"></div>
-    <div className="input__label"> Input textarea-Focus </div>
-    <div className="input__code"> <Textarea type='textarea'labelText='Brief description' id= 'textarea' mode='focus-state' required='required' placeholder= 'Enter text'></Textarea></div>
-  </div>
-  <div className="input_item">
-    <div className="input__box input-textarea-error"></div>
-    <div className="input__label"> Input textarea-Error </div>
-    <div className="input__code"> <Textarea type='textarea' labelText='Brief description' errorText='*Error: this field is required' id= 'textarea' mode='error-state' required='required' placeholder= 'Enter text'></Textarea></div>
-  </div>
-  <div className="input_item">
-    <div className="input__box input-textarea-disabled"></div>
-    <div className="input__label"> Input textarea-Disabled </div>
-    <div className="input__code"> <Textarea type='textarea' labelText='Brief description' id= 'textarea' inputfor='textarea' mode='disabled-state' disabled= 'disabled' placeholder= 'Enter text'></Textarea></div>
-  </div>
-</div>
-
 <div className="subheading"> Base Input </div>
 
-<Story name="Textarea-default">
+<Story name="Textarea">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Textarea labelText={caption.detail10} id= 'textarea' type='textarea' cols='40' rows='10' mode='default-state' required='required' placeholder= {caption.text2}></Textarea>;
-  }}
-</Story>
-
-<Story name="Textarea-focus">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Textarea labelText={caption.detail10} id= 'textarea' type='textarea' cols='40' rows='10' mode='focus-state' required='required' placeholder= {caption.text2}></Textarea>;
-  }}
-</Story>
-
-<Story name="Textarea-error">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Textarea labelText={caption.detail10} errorText={caption.detail2} id= 'textarea' type='textarea' cols='40' rows='10' mode='error-state' required='required' placeholder= {caption.text2}></Textarea>;
-  }}
-</Story>
-
-<Story name="Textarea-disabled">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Textarea labelText={caption.detail10} id= 'textarea' type='textarea' cols='40' rows='10' mode='disabled-state' disabled= 'disabled' placeholder= {caption.text2}></Textarea>;
+    return <Textarea labelText={caption.detail10} errorText={caption.detail2} id= 'textarea' type='textarea' cols='40' rows='10' required='required' placeholder= {caption.text2} {...args} ></Textarea>;
   }}
 </Story>
 

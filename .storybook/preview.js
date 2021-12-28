@@ -28,9 +28,15 @@ export const parameters = {
   docs: {
     transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn),
   },
+   options: {
+    storySort: {
+      order: ['Getting started', ['Intro', 'How to use our design system?', 'Browser support'],'Foundation','Components', ,['Navigation components',['Breadcrumbs'],['Main Navigation']],'Patterns', 'Utilities','Templates' ],
+    },
+  },
 }
 
 /* Implementing locale for language switcher */
+// Note: Languages added to items array need to be added to the getLangCode() function below.
 export const globalTypes = {
   locale: {
     name: 'Locale',
@@ -72,3 +78,39 @@ addParameters({
   },
 })
 
+/**
+ * Function to get current language code.
+ * @param {*} Story renders Stories in iFrame.
+ * @param {*} context Current context for Addons.
+ * @returns Current Language Code.
+ */
+const getLangCode=(Story,context)=>{
+  let activeLang = context.globals.locale;
+
+  // Set window object for iframe.
+  window.UNDP.langCode = (window.UNDP) ? activeLang : window.UNDP= { langCode : activeLang };
+
+  // Language Array to map language alpha code.
+  const langArr = {
+    'english' : 'en',
+    'arabic': 'ar',
+    'burmese': 'my',
+    'japanese': 'ja'
+  };
+
+  // Check if language exists.
+  if (typeof langArr[activeLang] == 'undefined') {
+    activeLang = 'english';
+  }
+
+  // Set HTML lang attribute for iframe.
+  const htmlElem = document.querySelector('html');
+  htmlElem.setAttribute('lang', langArr[activeLang]);
+
+  return (
+    <Story {...context} />
+  )
+}
+
+// Trigger callback in Storybook Addons.
+export const decorators = [getLangCode];

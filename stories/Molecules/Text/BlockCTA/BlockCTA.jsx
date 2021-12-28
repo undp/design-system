@@ -5,9 +5,9 @@ import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../../Components/UIcomponents/Buttons/Cta_link/Cta_link';
 
 export const BlockCTA = ({ headerText, descriptionText, ctaText }) => (
-  <div className="block-cta">
+  <div className="paragraph-block">
     <Heading type="4" label={headerText} />
     <P label={descriptionText} />
-    <Ctalink label={ctaText} variant="Arrow" />
+    <Ctalink label={ctaText} />
   </div>
 );

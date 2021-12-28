@@ -3,9 +3,7 @@
 @import '../../../../assets/scss/breakpoints';
 
 .country-header {
-  background-color: $color-gray-100;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  height: 7.1875rem;
+  @extend %header;
 
   @include devicebreak(mediumonlytab) {
     height: 4.6875rem;
@@ -39,6 +37,8 @@
       align-items: flex-start;
       display: flex;
       height: 7.1875rem;
+      position: relative;
+      z-index: 2;
 
       @include devicebreak(mediumonlytab) {
         height: 4.6875rem;
@@ -48,7 +48,7 @@
       .logo {
         margin-right: $spacing-24;
 
-        @include devicebreak(small){
+        @include devicebreak(small) {
           margin-right: $spacing-12;
         }
 
@@ -64,7 +64,7 @@
     display: flex;
     justify-content: center;
 
-    .menu__wrapper {
+    .menu {
       @include devicebreak(mediumonlytab) {
         display: none;
       }
@@ -76,7 +76,7 @@
     position: relative;
   }
 
-  .menu__wrapper {
+  .menu {
     align-items: center;
     display: flex;
     height: 7.1875rem;
@@ -152,6 +152,15 @@
       .icon-globe {
         margin-left: 0;
         margin-right: 1.75rem;
+      }
+    }
+    .menu {
+      li {
+        margin: $spacing-12 3.6875rem $spacing-12 0;
+  
+        &:first-child {
+          margin-right: 0;
+        }
       }
     }
   }

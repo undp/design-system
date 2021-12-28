@@ -2,8 +2,8 @@ import React from 'react';
 import './checkbox.scss';
 
 export const Checkbox = ({ label, value, id }) => (
-  <div className="checkbox-wrapper">
-    <input type="checkbox" id={id} className="custom-control-input" value={value} />
-    <label htmlFor={id} name="checkboxone" className="custom-control-label">{ label }</label>
+  <div className="checkbox">
+    <input type="checkbox" id={id} value={value} aria-label="Checkbox" />
+    <label htmlFor={id}>{ label }</label>
   </div>
 );

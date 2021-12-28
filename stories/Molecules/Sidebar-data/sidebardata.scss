@@ -9,6 +9,7 @@
   border: none;
   font-size: $font-size-16;
   font-weight: 700;
+  line-height: 1.15;
   margin-bottom: 0;
   padding: $spacing-16;
 
@@ -18,12 +19,13 @@
   }
 }
 
-.accordion__panel {
+ul.accordion__panel {
+  border-top: 1px solid $color-gray-500;
   display: none;
   height: auto;
   padding: 0;
 
-  &--description {
+  li {
     a {
       @extend %img_none;
 
@@ -50,8 +52,8 @@
 }
 
 [dir='rtl'] {
-  .accordion__panel {
-    &--description > a {
+  ul.accordion__panel {
+    li > a {
       margin-left: $spacing-24;
       margin-right: $spacing-32;
 

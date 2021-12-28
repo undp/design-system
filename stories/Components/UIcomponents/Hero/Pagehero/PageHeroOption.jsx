@@ -17,7 +17,7 @@ export const PageHeroOption = ({
       <div className="grid-x">
         <div className="cell large-5 medium-6">
           <div className="pagehero__content">
-            <Breadcrumbcomponent data={data} active={active} />
+            <Breadcrumbcomponent data={data} />
             <Heading type="4" className="pagehero-option__title left-right" label={content} />
             <Heading type="2" className="pagehero-option__subtitle left-right" label={title} />
           </div>

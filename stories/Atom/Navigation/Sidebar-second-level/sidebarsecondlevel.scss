@@ -16,4 +16,15 @@
     background-color: $color-gray-200;
   }
 }
+
+[dir='rtl'] {
+  .sidebar__sub-item {
+    padding-left: $spacing-24;
+    padding-right: $spacing-32;
+
+    @include devicebreak(medium) {
+      padding-right: $spacing-48;
+    }
+  }
+}
 // * Slidebar Second level end *//

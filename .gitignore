@@ -9,3 +9,4 @@ yarn-error.log
 /stories/assets/css/style.css.map
 .DS_Store
 .scannerwork
+.vscode/

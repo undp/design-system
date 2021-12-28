@@ -5,27 +5,59 @@
 // * progress navigation start *//
 .progress-container {
   background: $color-gray-300;
-  height: 12px;
+  height: 0.75rem;
   width: 100%;
 
   @include devicebreak(medium) {
-    height: 16px;
+    height: 1rem;
+  }
+
+  &.small {
+    height: 0.625rem;
+
+    @include devicebreak(medium) {
+      height: 0.75rem;
+    }
+
+    .progress-bar {
+      height: 0.625rem;
+
+      @include devicebreak(medium) {
+        height: 0.75rem;
+      }
+    }
   }
 }
 
 .progress-bar {
-  background: $color-yellow;
-  height: 12px;
+  height: 0.75rem;
   min-width: 1%;
-  z-index: 1;
   position: fixed;
+  width: 34%;
+  z-index: 1;
 
   @include devicebreak(medium) {
-    height: 16px;
+    height: 1rem;
+  }
+
+  &.yellow {
+    background: $color-yellow;
+  }
+
+  &.red {
+    background: $color-red;
+  }
+
+  &.green {
+    background: $color-green;
+  }
+
+  &.blue {
+    background: $color-azure;
   }
 }
 
-.progress-top{
-  top:0;
+.progress-top {
+  top: 0;
 }
 // * progress navigation end *//

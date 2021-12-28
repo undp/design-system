@@ -9,21 +9,19 @@
     padding: $spacing-96 $spacing-24;
 
     .twitter {
-      background: url(#{$img-path-Icon}/social_icon.png) no-repeat;
-      background-position: -43px -27px;
+      background: url(#{$img-path-Icon}/tweet-white.svg) no-repeat center bottom;
       display: block;
       font-size: 0;
-      height: 25px;
+      height: 36px;
       margin-bottom: 0.375rem;
-      margin-left: -$spacing-16;
-      margin-top: 3.688rem;
-      width: 30px;
+      margin-left: -0.625rem;
+      width: 36px;
     }
   }
 }
 
 .twitter-header {
-  align-items: end;
+  align-items: flex-end;
   background-color: #232e3e;
   display: flex;
   margin-bottom: $spacing-40;

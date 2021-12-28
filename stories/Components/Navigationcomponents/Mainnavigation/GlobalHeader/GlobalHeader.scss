@@ -3,9 +3,7 @@
 @import '../../../../assets/scss/breakpoints';
 
 .global-header {
-  background-color: $color-gray-100;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  height: 7.1875rem;
+  @extend %header;
 
   @include devicebreak(mediumonlytab) {
     height: 4.6875rem;
@@ -33,6 +31,7 @@
 
     .icon-close {
       display: none;
+      margin-left: $spacing-12;
     }
   }
 
@@ -40,13 +39,21 @@
     display: flex;
     justify-content: center;
 
-    .menu__wrapper {
+    .menu {
       align-items: center;
       display: flex;
       height: 7.1875rem;
+      padding-left: 6.9375rem;
+      width: 50%;
 
       @include devicebreak(mediumonlytab) {
         display: none;
+      }
+
+      &:first-child {
+        justify-content: flex-end;
+        padding-left: 0;
+        padding-right: 6.9375rem;
       }
 
       li {
@@ -71,7 +78,13 @@
     .middle-logo {
       @extend %img_none;
 
-      margin: 0 $spacing-80;
+      @include devicebreak(xlarge) {
+        @include transform(translateX(-50%));
+
+        left: 50%;
+        position: fixed;
+        z-index: 9;
+      }
 
       @include devicebreak(mediumonlytab) {
         height: 4.6875rem;
@@ -109,20 +122,31 @@
 }
 
 [dir='rtl'] {
-  header {
+  .global-header {
     .mid-nav {
-      .menu__wrapper {
-        &:first-child {
-          li {
-            margin: $spacing-12 4.4375rem $spacing-12 0;
+      .menu {
+        &:last-child {
+          justify-content: flex-start;
+          padding-left: 0;
+          padding-right: 6.9375rem;
+        }
 
-            &:first-child {
-              margin-right: 0;
-            }
+        li {
+          margin: $spacing-12 4.4375rem $spacing-12 0;
+
+          &:first-child {
+            margin-right: 0;
+          }
+
+          &:last-child {
+            margin-right: 4.4375rem;
           }
         }
 
-        &:last-child {
+        &:first-child {
+          padding-left: 6.9375rem;
+          padding-right: 0;
+
           li {
             margin: $spacing-12 0 $spacing-12 4.4375rem;
 

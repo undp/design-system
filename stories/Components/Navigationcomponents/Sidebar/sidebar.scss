@@ -1,21 +1,28 @@
 @import '../../../assets/scss/mixins';
 @import '../../../assets/scss/breakpoints';
 @import '../../../assets/scss/variables';
+@import '../../../assets/scss/base';
 
 /* sidebar start */
 .accordion-wrapper {
   padding: 0;
   position: relative;
 
-  &.show {
+  &.show-small {
     .accordion-navbar {
       display: block;
       padding: 0;
 
       &__menu::after {
-        @include transform(rotateZ(180deg));
+        @include transform(rotateZ(-180deg));
       }
     }
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+    margin-bottom: 0;
   }
 }
 
@@ -51,7 +58,7 @@
     border-bottom: none;
 
     .accordion-navbar__item--chevron::after {
-      @include transform(rotateZ(180deg));
+      @include transform(rotateZ(-180deg));
     }
   }
 }

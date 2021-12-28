@@ -23,6 +23,7 @@
   &-content {
     background: $color-white;
     max-width: 837px;
+    overflow-y: auto;
     padding: $spacing-64 $spacing-12 $spacing-12;
     position: relative;
     width: 100%;
@@ -36,13 +37,13 @@
   &-close-button {
     background: url(#{$img-path-Icon}/Times_circle.svg) no-repeat left center;
     cursor: pointer;
+    font-size: 0;
     height: 45px;
     position: absolute;
     right: 16px;
     top: 10px;
     width: 45px;
-    font-size: 0;
-  
+
     &:hover {
       @extend %no-animation;
     }

@@ -23,23 +23,20 @@
         line-height: 1.4;
         margin-bottom: $spacing-16;
         padding: 0;
+
+        + .credits {
+          border-top: 1px solid $color-gray-500;
+          margin-left: 0;
+          padding: $spacing-16 0 0 0; 
+        }
       }
     }
   }
 
-  .image_credits {
+  .credits {
     border-left: 0;
     border-right: 0;
-    border-top: 1px solid $color-gray-500;
     margin-bottom: $spacing-16;
-    padding: $spacing-16 0 0 0;
-  }
-
-  .unstag {
-    .image_credits {
-      border: 0;
-      padding: 0;
-    }
   }
 
   .author__caption {
@@ -73,11 +70,14 @@
         &__caption {
           margin: 0 $spacing-24 0 0;
         }
+      }
 
-        &_credits {
-          border-right: 0;
-          padding-right: 0;
-        }
+      .credits {
+        border-right: 0;
+        border-top: 1px solid $color-gray-500;
+        margin-right: 0;
+        padding: $spacing-16 0;
+        padding-right: 0;
       }
     }
   }

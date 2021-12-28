@@ -20,17 +20,17 @@ export const DownloadModal = ({
   data, button, select, ...args
 }) => {
   useEffect(() => {
-    checkbox('.custom-control-input', '.button--primary');
+    checkbox('.checkbox input', '.button-primary');
     selectfilter();
   }, []);
   return (
-    <div id="myDownload" className={['modal', `${Image_options[`${args.Image}`]}`].join(' ')}>
+    <div className={['modal', `${Image_options[`${args.Image}`]}`].join(' ')} aria-modal="true" role="dialog" aria-label="download_modal">
       <div className="modal-content">
-        <div className="modal-close-button" />
+        <a href="javascript:void(0)" className="modal-close-button" />
         <div className="download-body">
           {args.Image === 'True' && (
           <div className="show-large">
-            <Publicationthumb />
+            <Publicationthumb Hovercolors="yellow" />
           </div>
           )}
           <div className="download-content">
@@ -43,7 +43,7 @@ export const DownloadModal = ({
           </div>
         </div>
         <div className="download-footer">
-          <CtaButton label1={button} For_Primary="No_arrow" state="Disabled" />
+          <CtaButton label={button} For_Primary="No Arrow" State="Disabled" />
         </div>
       </div>
     </div>

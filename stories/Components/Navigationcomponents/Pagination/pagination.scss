@@ -3,40 +3,45 @@
 @import '../../../assets/scss/mixins';
 
 /* pagination start */
-.pagination-wrapper {
+.pagination {
   align-items: center;
   display: flex;
   list-style: none;
   padding-left: 0;
-}
 
-.page__item {
-  font-size: $font-size-16;
-  margin-right: $spacing-24;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  a {
-    @extend %img_none;
-
-    border-bottom: 0;
+  li {
+    align-items: center;
+    display: flex;
     font-size: $font-size-16;
-  }
+    justify-content: space-between;
+    margin-right: $spacing-24;
+    position: relative;
 
-  span {
-    margin: 0 0.375rem ;
-  }
+    a {
+      @extend %img_none;
 
-  &:first-child,
-  &:last-child {
-    cursor: pointer;
+      border-bottom: 0;
+      font-size: $font-size-16;
+    }
+
+    span {
+      margin: 0 0.375rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &:first-child,
+    &:last-child {
+      cursor: pointer;
+
       a {
+        font-size: 0;
         height: 45px;
         width: 45px;
-        font-size: 0;
-          &::before {
+
+        &::before {
           background: url(#{$img-path-Icon}/circle-left.svg) no-repeat center center;
           content: ' ';
           display: block;
@@ -44,47 +49,53 @@
           width: 45px;
         }
       }
-  }
+    }
 
-  &.disabled {
-    a {
-      &::before {
-        opacity: 0.3;
+    &.disabled {
+      a {
+        &::before {
+          opacity: 0.3;
+        }
       }
     }
-  }
 
-  &:last-child {
-    a {
-      &::before {
-        background: url(#{$img-path-Icon}/circle-right.svg) no-repeat center center;
+    &:last-child {
+      a {
+        &::before {
+          background: url(#{$img-path-Icon}/circle-right.svg) no-repeat center center;
+        }
       }
     }
   }
 }
 
 [dir='rtl'] {
-  .pagination-wrapper {
+  .pagination {
     padding-right: 0;
-  }
 
-  .page__item {
-    margin-left: $spacing-24;
-    margin-right: 0;
+    li {
+      margin-left: $spacing-24;
+      margin-right: 0;
 
-    &:first-child {
-      a {
-        &::before {
-          @include transform(rotateZ(180deg));
+      &:first-child {
+        a {
+          &::before {
+            @include transform(rotateZ(180deg));
+          }
         }
       }
 
-    }
+      &:last-child {
+        a {
+          &::before {
+            @include transform(rotateZ(180deg));
+          }
+        }
+      }
 
-    &:last-child {
-      a {
-        &::before {
-          @include transform(rotateZ(180deg));
+      span {
+        &:last-child {
+          margin-right: 0.375rem;
         }
       }
     }

@@ -6,6 +6,17 @@ import {getCaptionForLocale as ContentCardData} from  '../../Organism/Blocks/Con
 import heroImage from '../../assets/images/generic_page_hero.jpg';
 import BackgroundVideo from '../../assets/video/video_sample.mp4';
 import fluidCarouselImg from '../../assets/images/crosssboard.jpg';
+import logo from '../../assets/images/undp-logo-blue.svg';
+import logowhite from '../../assets/images/undp-logo-white.svg';
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import {
+  getNavLinks,
+  menuData,
+  getSiteTitle,
+  getLocationDataForLocale,
+  getBackForLocale,
+  getSelectlanguage,
+} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -165,6 +176,7 @@ export const statsArray = (locale) => {
       tagtext: 'Blog post',
       titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
       descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+      buttonText: 'Read More'
     }]}; return engText.data;
     case 'arabic': const arabicText = {data: [{
       slideImage: fluidCarouselImg,
@@ -255,6 +267,7 @@ export const statsArray = (locale) => {
   }
 };
 
+
 <Meta title="Templates/Generic Page"/>
 
 <style>{`
@@ -273,10 +286,15 @@ export const statsArray = (locale) => {
 Template for Generic Page
 
 
-<Story name="Generic Page">
+<Story name="Generic Page" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     const carouselData = statsArray(locale);
+    const navigationData= getNavLinks(locale);
+    const leftNavigationData=navigationData.filter(item=>item.position==='left');
+    const rightNavigationData=navigationData.filter(item=>item.position==='right');
     return (
       <GenericPage 
         active={'white'}
@@ -294,11 +312,20 @@ Template for Generic Page
         paraHistory={caption.paraHistory}
         headingUNcharter={caption.headingUNcharter}
         paraUNcharter={caption.paraUNcharter}    
-        //heroCaptionData={heroCaptionData(locale)}
         sidebarCaptionData={sidebarCaptionData(locale)} 
         ContentCardData={ContentCardData(locale)} 
         footerData={footerData(locale)}
-        
+      locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        menuData={menuData(locale)}
+        languageswitcherData={Languageswitcher(locale)}
+        locationData={getLocationDataForLocale(locale)}
+        langSelect={getSelectlanguage(locale)}
+        backcaption={getBackForLocale(locale)}
+        logo={logo}
+        logowhite={logowhite}
       ></GenericPage>
     );
   }}

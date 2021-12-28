@@ -10,8 +10,9 @@
     display: block;
     font-family: $Font-Family-SohneBreit;
     min-height: 210px;
-    padding: $spacing-16 $spacing-24 0;
+    padding: 2.188rem $spacing-24 $spacing-16;
     position: relative;
+    word-break: break-word;
 
     @include devicebreak(medium) {
       cursor: url(#{$img-path-Iconback}/arrow-right-white.svg), auto;
@@ -22,6 +23,7 @@
 
     strong {
       color: $color-white;
+      display: inline-block;
       font-size: 2.938rem;
 
       @include devicebreak(medium) {
@@ -39,14 +41,11 @@
       z-index: 1;
 
       @include devicebreak(medium) {
-        @include transform(translate(0, -50%));
-
         font-size: 1.875rem;
         left: 22rem;
         letter-spacing: 0.094rem;
         margin: 0;
         position: absolute;
-        top: 50%;
       }
     }
 
@@ -71,207 +70,207 @@
       }
     }
 
-    &.color-1 {
-      background-color: #e5243b;
+    &.sdg-red {
+      background-color: $sdg-red;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
           rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #e4253a);
+          rgba(228, 37, 58, 0) 10%,
+          $sdg-red);
       }
     }
 
-    &.color-2 {
-      background-color: #dda63a;
+    &.sdg-mustard {
+      background-color: $sdg-mustard;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #dda63a);
+          rgba(222, 168, 60, 0),
+          rgba(222, 168, 60, 0) 80%,
+          $sdg-mustard);
       }
     }
 
-    &.color-3 {
-      background-color: #4c9f38;
+    &.sdg-kelly-green {
+      background-color: $sdg-kelly-green;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #4c9f38);
+          rgba(78, 159, 56, 0),
+          rgba(78, 159, 56, 0) 80%,
+          $sdg-kelly-green);
       }
     }
 
-    &.color-4 {
-      background-color: #c5192d;
+    &.sdg-dark-red {
+      background-color: $sdg-dark-red;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #c5192d);
+          rgba(197, 26, 45, 0),
+          rgba(197, 26, 45, 0) 80%,
+          $sdg-dark-red);
       }
     }
 
-    &.color-5 {
-      background-color: #ff3a21;
+    &.sdg-red-orange {
+      background-color: $sdg-red-orange;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #ff3a21);
+          rgba(255, 60, 35, 0),
+          rgba(255, 60, 35, 0) 80%,
+          $sdg-red-orange);
       }
     }
 
-    &.color-6 {
-      background-color: #26bde2;
+    &.sdg-bright-blue {
+      background-color: $sdg-bright-blue;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #26bde2);
+          rgba(39, 189, 227, 0),
+          rgba(39, 189, 227, 0) 80%,
+          $sdg-bright-blue);
       }
     }
 
-    &.color-7 {
-      background-color: #fcc30b;
+    &.sdg-yellow {
+      background-color: $sdg-yellow;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #fcc30b);
+          rgba(253, 195, 10, 0),
+          rgba(253, 195, 10, 0) 80%,
+          $sdg-yellow);
       }
     }
 
-    &.color-8 {
-      background-color: #a21942;
+    &.sdg-burgundy-red {
+      background-color: $sdg-burgundy-red;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #a21942);
+          rgba(162, 24, 67, 0),
+          rgba(162, 24, 67, 0) 80%,
+          $sdg-burgundy-red);
       }
     }
 
-    &.color-9 {
-      background-color: #fd6925;
+    &.sdg-orange {
+      background-color: $sdg-orange;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #fd6925);
+          rgba(254, 105, 36, 0),
+          rgba(254, 105, 36, 0) 80%,
+          $sdg-orange);
       }
     }
 
-    &.color-10 {
-      background-color: #dd1367;
+    &.sdg-magenta {
+      background-color: $sdg-magenta;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #dd1367);
+          rgba(222, 21, 104, 0),
+          rgba(222, 21, 104, 0) 80%,
+          $sdg-magenta);
       }
     }
 
-    &.color-11 {
-      background-color: #fd9d24;
+    &.sdg-golden-yellow {
+      background-color: $sdg-golden-yellow;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #fd9d24);
+          rgba(254, 156, 37, 0),
+          rgba(254, 156, 37, 0) 80%,
+          $sdg-golden-yellow);
       }
     }
 
-    &.color-12 {
-      background-color: #bf8b2e;
+    &.sdg-dark-mustard {
+      background-color: $sdg-dark-mustard;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #bf8b2e);
+          rgba(191, 139, 46, 0),
+          rgba(191, 139, 46, 0) 80%,
+          $sdg-dark-mustard);
       }
     }
 
-    &.color-13 {
-      background-color: #3f7e44;
+    &.sdg-dark-green {
+      background-color: $sdg-dark-green;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #3f7e44);
+          rgba(62, 128, 69, 0),
+          rgba(62, 128, 69, 0) 80%,
+          $sdg-dark-green);
       }
     }
 
-    &.color-14 {
-      background-color: #0a97d9;
+    &.sdg-blue {
+      background-color: $sdg-blue;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #0a97d9);
+          rgba(12, 152, 218, 0),
+          rgba(12, 152, 218, 0) 80%,
+          $sdg-blue);
       }
     }
 
-    &.color-15 {
-      background-color: #56c02b;
+    &.sdg-lime-green {
+      background-color: $sdg-lime-green;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #56c02b);
+          rgba(88, 193, 44, 0),
+          rgba(88, 193, 44, 0) 80%,
+          $sdg-lime-green);
       }
     }
 
-    &.color-16 {
-      background-color: #00689d;
+    &.sdg-royal-blue {
+      background-color: $sdg-royal-blue;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #00689d);
+          rgba(3, 104, 157, 0),
+          rgba(3, 104, 157, 0) 80%,
+          $sdg-royal-blue);
       }
     }
 
-    &.color-17 {
-      background-color: #19486a;
+    &.sdg-navy-blue {
+      background-color: $sdg-navy-blue;
 
-      .gradient {
+      .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 80%,
-          #19486a);
+          rgba(26, 73, 107, 0),
+          rgba(26, 73, 107, 0) 80%,
+          $sdg-navy-blue);
       }
     }
 
@@ -293,6 +292,15 @@
     max-width: 650px;
     position: relative;
     width: 100%;
+    z-index: 0;
+
+    &::before {
+      @extend %absolute__content;
+
+      @include transition(background-color 0.5s linear);
+
+      z-index: 1;
+    }
 
     img {
       @include transition(opacity 0.5s ease);
@@ -305,12 +313,6 @@
       @include devicebreak(medium) {
         display: block;
       }
-    }
-
-    .gradient {
-      @extend %absolute__content;
-
-      @include transition(background-color 0.5s linear);
     }
   }
 }
@@ -343,7 +345,7 @@
         margin-left: unset;
         margin-right: auto;
 
-        .gradient {
+        &::before {
           @include transform(scaleX(-1));
         }
       }

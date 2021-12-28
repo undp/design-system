@@ -5,15 +5,12 @@
 /* author image */
 .author__img {
   border-radius: 50%;
+  height: 80px;
   overflow: hidden;
+  width: 80px;
 
   img {
     @extend %img-cover;
-  }
-
-  &.small {
-    height: 80px;
-    width: 80px;
   }
 
   &.large {

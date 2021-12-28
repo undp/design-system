@@ -46,7 +46,7 @@
       max-height: 323px;
     }
 
-    .selectbox-container {
+    .checkbox-container {
       @include devicebreak(medium) {
         margin-right: $spacing-24;
       }
@@ -69,6 +69,10 @@
 
 .list-language {
   max-height: 100%;
+
+  @include devicebreak(medium) {
+    max-height: 404px;
+  }
 }
 
 .modal-download {
@@ -91,7 +95,7 @@
       }
 
       @include devicebreak(medium) {
-        .selectbox-container {
+        .checkbox-container {
           margin-left: $spacing-24;
           margin-right: 0;
         }

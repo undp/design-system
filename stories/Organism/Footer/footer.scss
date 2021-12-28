@@ -50,7 +50,7 @@
         padding-bottom: $spacing-48;
 
         .footer__icons {
-          justify-content: end;
+          justify-content: flex-end;
         }
       }
     }
@@ -106,37 +106,13 @@
     }
   }
 
-  &__icons {
-    justify-content: start;
+  .footer__icons {
+    justify-content: flex-start;
     margin: 0 $spacing-16 $spacing-32;
 
     @include devicebreak(medium) {
-      justify-content: end;
+      justify-content: flex-end;
       margin: 0;
-    }
-
-    &.blue {
-      li a {
-        &.facebook {
-          background-position: 5px -27px;
-        }
-
-        &.linkedIn {
-          background-position: -139px -28px;
-        }
-
-        &.instragram {
-          background-position: -90px -27px;
-        }
-
-        &.twitter {
-          background-position: -43px -27px;
-        }
-
-        &.youtube {
-          background-position: -187px -27px;
-        }
-      }
     }
   }
 
@@ -179,6 +155,12 @@
 
 @include devicebreak(medium) {
   [dir='rtl'] {
+    .footer {
+      .footer__icons {
+        justify-content: flex-start;
+      }
+    }
+
     .footer-bottom {
       &.two {
         .footer__condition_text {

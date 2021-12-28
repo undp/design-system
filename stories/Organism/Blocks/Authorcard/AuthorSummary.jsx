@@ -9,23 +9,21 @@ export const AuthorSummary = ({
   Authorlabel, para, image, text, para1,
 }) => {
   useEffect(() => {
-    viewport('.author-card');
+    viewport('.author-summary');
   }, []);
   return (
     <div className="author-card-wrapper">
-      <div className="author-card left-right">
-        <div className="author-card__summary">
-          <Authorimg
-            className="author-card__summary--image"
-            image={image}
-            variant="Large"
-          />
-          <div className="author-card__summary--text">
+      <div className="author-summary left-right">
+        <div className="author-summary-left">
+          <Authorimg image={image} variant="Large" />
+          <div className="author-summary-text">
             <Heading type="2" label={Authorlabel} />
             <P label={para1} />
           </div>
         </div>
-        <P label={para} className="author-card__paragraph" />
+        <div className="author-summary-right">
+          <P label={para} />
+        </div>
       </div>
     </div>
   );

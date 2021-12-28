@@ -23,10 +23,8 @@
     }
 
     .cta--arrow::after {
-      @include translate(10px, 0);
-      @include transition(0.2s ease);
-
       background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
+      margin-left: 0.25rem;
       width: 100px;
     }
   }
@@ -67,16 +65,20 @@
       }
     }
   }
+
+  &.image {
+    .feature__card-description {
+      @include devicebreak(medium) {
+        margin-bottom: 6.125rem;
+      }
+    }
+  }
 }
 
 .feature__card-slide {
   @extend %feature__card;
 
   position: relative;
-
-  @include devicebreak(medium) {
-    display: inherit;
-  }
 
   @include devicebreak(medium) {
     @include transform(translateX(-105%));
@@ -86,7 +88,15 @@
     display: block;
     height: 100%;
     position: absolute;
-    z-index: 5;
+    z-index: 1;
+  }
+
+  @include devicebreak(medium) {
+    display: none;
+  }
+
+  @include devicebreak(large) {
+    display: inherit;
   }
 
   &::before {
@@ -108,12 +118,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    width: 100%;
 
     img {
       display: block;
       height: 100%;
       max-width: 100%;
       object-fit: cover;
+      width: 100%;
     }
   }
 }
@@ -131,10 +143,9 @@
   @include devicebreak(medium) {
     background: none;
     display: flex;
-    height: 80%;
   }
 
-  .feature__card-tag {
+  h6 {
     font-size: $font-size-12;
     font-weight: 700;
     line-height: 1.17;
@@ -147,7 +158,20 @@
   }
 
   .feature__card-description {
-    margin-bottom: 90px;
+    margin-bottom: 3rem;
+
+    @include devicebreak(medium) {
+      margin-bottom: 4.688rem;
+    }
+  }
+
+  h4,
+  h5 {
+    margin-bottom: $spacing-24;
+
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-32;
+    }
   }
 
   p {
@@ -161,7 +185,7 @@
   .feature__cta {
     margin-bottom: 0;
     margin-top: $spacing-40;
-    z-index: 10;
+    z-index: 2;
 
     @include devicebreak(medium) {
       margin-top: auto;
@@ -201,7 +225,9 @@
 [dir='rtl'] {
   .feature__card:hover {
     .cta--arrow::after {
-      @include transform(translate(0, 0) rotate(180deg));
+      @include transform(rotate(180deg));
+
+      margin-right: 0.25rem;
     }
   }
 
@@ -211,6 +237,12 @@
 
       &:hover {
         @include transform(translateX(0));
+      }
+    }
+
+    &::before {
+      @include devicebreak(medium) {
+        background: transparent linear-gradient(153deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.8));
       }
     }
   }

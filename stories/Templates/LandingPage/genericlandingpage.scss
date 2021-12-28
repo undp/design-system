@@ -7,6 +7,10 @@
   &-69 {
     margin-top: 4.3rem;
   }
+
+  &-32 {
+    margin-top: $spacing-32;
+  }
 }
 
 .multi-select .select-control {
@@ -24,5 +28,14 @@
       position: inherit;
     }
   }
+
+  &__content {
+    padding-top: $spacing-16;
+
+    @include devicebreak(medium) {
+      padding-top: $spacing-80;
+    }
+  }
 }
+
 /* page hero end */

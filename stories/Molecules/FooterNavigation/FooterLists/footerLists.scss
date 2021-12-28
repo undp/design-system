@@ -64,6 +64,10 @@
 }
 
 .footer__items.white {
+  &::before {
+    background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
+  }
+
   .footer__heading {
     color: $color-white;
   }

@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
-import pnud from '../../../../assets/images/logo.svg';
+import pnud from '../../../../assets/images/undp-logo-blue.svg';
+import { init } from '../../../../assets/js/navigation';
+import { desktopView } from '../../../../assets/js/UNDP';
 import { IconsGlobe } from '../../../../Atom/Icons/globe';
 import { IconsBar } from '../../../../Atom/Icons/icon_bar';
 import { IconsTimesBlue } from '../../../../Atom/Icons/icon_Times_Blue';
 import { IconsSearch } from '../../../../Atom/Icons/search';
 import { Logo } from '../../../../Atom/Logo/logo';
-import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
 import { Menu } from '../../Menu/Menu';
-import { init } from '../../../../assets/js/navigation';
-
+import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
+import MegaMenu from '../MegaMenu/MegaMenu';
+import MobileNav from '../MobileNav/MobileNav';
 import './CountrySiteHeader.scss';
 
 const CountrySiteHeader = ({
-  text, languageswitcherData, navigationData, leftNavigationData, locale, gsiteTitle, gsiteTheme,
+  languageswitcherData, navigationData, locale, backcaption, locationData, langSelect, siteTitleData,
 }) => {
   useEffect(() => {
     init(locale);
@@ -25,13 +27,12 @@ const CountrySiteHeader = ({
           <div className="cell large-3 small-9 align-self-middle top-left">
             <a href="#" className="left-logo"><Logo src={pnud} alt="UNDP Logo" /></a>
             <div className="site-title">
-
-              <label>{gsiteTitle}</label>
-              <span>{gsiteTheme}</span>
+              <label>{siteTitleData.label}</label>
+              <span>{siteTitleData.span}</span>
             </div>
           </div>
           <div className="cell large-6 small-1 mid-nav">
-            <Menu data={leftNavigationData} />
+            {desktopView && <Menu data={navigationData} />}
           </div>
           <div className="cell large-3 small-2 top-right">
             <Languageswitcher
@@ -43,6 +44,21 @@ const CountrySiteHeader = ({
             <IconsGlobe />
             <IconsSearch />
           </div>
+          <div className="mega-wrapper cell large-12">
+            <MegaMenu />
+          </div>
+          {
+                !desktopView
+                && (
+                <MobileNav navigationData={navigationData}
+                  languageswitcherData={languageswitcherData}
+                  locationData={locationData}
+                  backcaption={backcaption}
+                  langSelect={langSelect}
+                  text="Mobile Nav"
+                />
+                )
+              }
         </div>
       </div>
     </header>

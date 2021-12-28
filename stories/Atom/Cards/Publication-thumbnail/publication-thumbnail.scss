@@ -24,20 +24,53 @@
   }
 
   &::after {
-    @extend %img-hover-effect;
+    @extend %absolute__content;
 
-    bottom: 0;
-    content: '';
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 99;
+    @include transition(opacity 0.5s ease);
+
+    opacity: 0;
+    z-index: 1;
   }
 
   &:hover {
     &::after {
       opacity: 0.75;
+    }
+
+    &.yellow {
+      &::after {
+        background-image: linear-gradient(42deg, $color-yellow, transparent 80%);
+      }
+    }
+
+    &.red {
+      &::after {
+        background-image: linear-gradient(42deg, $color-red, transparent 80%);
+      }
+    }
+
+    &.green {
+      &::after {
+        background-image: linear-gradient(42deg, $color-green, transparent 80%);
+      }
+    }
+
+    &.blue {
+      &::after {
+        background-image: linear-gradient(42deg, $color-azure, transparent 80%);
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .publication-thumbnail__image {
+    &:hover {
+      &.yellow {
+        &::after {
+          background-image: linear-gradient(318deg, $color-yellow, transparent 80%);
+        }
+      }
     }
   }
 }

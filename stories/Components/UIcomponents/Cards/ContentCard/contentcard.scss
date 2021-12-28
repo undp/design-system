@@ -9,19 +9,20 @@
   border: 0;
   border-top: 2px solid $color-black;
   display: block;
-  margin-bottom: $spacing-24;
+  margin-bottom: 2.375rem;
 
   h6 {
     @extend %carousel_tag;
 
-    padding: $spacing-16 $spacing-24;
     margin-bottom: 0;
+    padding: $spacing-16 $spacing-24 1.625rem $spacing-24;
   }
 
   & .card-thumbnail__image {
     width: 100%;
 
     img {
+      display: block;
       width: 100%;
     }
   }
@@ -43,39 +44,47 @@
 
   &:hover {
     .card-thumbnail__image::before {
-      @include background-image(42deg, $color-yellow, transparent 80%);
-
       opacity: 0.75;
     }
+  }
 
-    &.red {
-      .card-thumbnail__image {
-        &::before {
-          @include background-image(42deg, $color-red, transparent 80%);
-
-          opacity: 0.75;
-        }
-      }
+  &.yellow {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-yellow, transparent 80%);
     }
+  }
 
-    &.green {
-      .card-thumbnail__image {
-        &::before {
-          @include background-image(42deg, $color-green, transparent 80%);
-
-          opacity: 0.75;
-        }
-      }
+  &.red {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-red, transparent 80%);
+      transition: opacity .9s ease;
     }
+  }
 
-    &.blue {
-      .card-thumbnail__image {
-        &::before {
-          @include background-image(42deg, $color-azure, transparent 80%);
+  &.green {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-green, transparent 80%);
+      transition: opacity .9s ease;
+    }
+  }
 
-          opacity: 0.75;
-        }
-      }
+  &.blue {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-azure, transparent 80%);
+      transition: opacity .9s ease;
+    }
+  }
+
+  &.yellow {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-yellow, transparent 80%);
+      transition: opacity .9s ease;
+    }
+  }
+
+  &.gray {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-gray-100, transparent 80%);
     }
   }
 
@@ -90,6 +99,7 @@
       display: flex;
       flex-wrap: wrap;
       height: 100%;
+      transition: background-color .6s ease;
     }
 
     &.yellow:hover {
@@ -114,12 +124,24 @@
   }
 
   &.card-yellow {
-    &.yellow,
-    &.red,
-    &.green,
-    &.blue,
-    &.gray {
+    &.yellow {
       background-color: $color-light-yellow;
+    }
+
+    &.red {
+      background-color: $color-light-red;
+    }
+
+    &.green {
+      background-color: $color-light-green;
+    }
+
+    &.blue {
+      background-color: $color-light-azure;
+    }
+
+    &.gray {
+      background-color: $color-gray-100;
     }
 
     .card-thumbnail__image {
@@ -128,14 +150,20 @@
   }
 
   &:hover {
-    @include transition(0.2s ease);
+    @include transition(0.5s ease);
 
     .card_thumbnail__image::before {
       opacity: 0.75;
     }
 
-    .cta__link::after {
+    .cta--space::after {
       @include translate(70%, 0);
+    }
+
+    .cta--arrow::after {
+      background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
+      margin-left: 0.25rem;
+      width: 100px;
     }
   }
 }
@@ -156,15 +184,44 @@
 
   &_cart {
     height: 100%;
-  }
-}
 
-[dir='rtl'] {
-  .content-card:hover {
-    .cta__link::after {
-      @include transform(translate(-50%, 0) rotate(180deg));
+    h5 {
+      margin-bottom: $spacing-16;
     }
   }
 }
 
-/* content-card start */
+[dir='rtl'] {
+  .content-card {
+
+    $colors: (
+      'yellow': $color-yellow,
+      'red': $color-red,
+      'green': $color-green,
+      'blue': $color-azure,
+    );
+
+    &:hover {
+      .cta--space::after {
+        @include transform(translate(-50%, 0) rotate(180deg));
+      }
+
+      .cta--arrow::after {
+        margin-left: 0;
+        margin-right: 0.25rem;
+      }
+    }
+
+    @each $name, $color in $colors {
+      &.#{$name} {
+        .card-thumbnail__image::before {
+          @include background-image(318deg, #{$color}, transparent 80%);
+        }
+      }
+    }
+  }
+  .card-thumbnail__image {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+}

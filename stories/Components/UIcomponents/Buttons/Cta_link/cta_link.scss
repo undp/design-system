@@ -12,16 +12,15 @@
     &::after {
       @extend %ctaimg;
 
-      @include transition(0.2s ease);
+      @include transition(0.1s ease);
 
       background: url(#{$img-path-Iconfourback}/arrow-left-expand-defaut.svg) no-repeat left center;
     }
 
     &:hover {
       &::after {
-        @include translate(10px,0);
-
         background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
+        margin-left: 0.25rem;
         width: 100px;
       }
     }
@@ -61,8 +60,10 @@
     }
 
     &.cta--arrow:hover::after {
-      @include transform(translate(-10%,0) rotate(180deg));
-      @include transition(0.2s ease);
+      @include transform(rotate(180deg));
+
+      margin-left: 0;
+      margin-right: 0.25rem;
     }
   }
 }

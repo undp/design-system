@@ -12,13 +12,12 @@
   border-bottom: 1px solid $color-gray-500;
   cursor: pointer;
   list-style: none;
+  margin-bottom: 0;
   overflow: hidden;
   padding: $spacing-16 0 $spacing-24;
   position: relative;
 
   &::before {
-    @include transition(0.1s ease);
-
     background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
     border-top-color: #f3f3f3;
     content: '';
@@ -33,6 +32,8 @@
   }
 
   &.accordion--active {
+    padding-bottom: 0;
+
     .accordion__heading {
       margin-bottom: 0.625rem;
       padding-right: $spacing-24;
@@ -47,12 +48,20 @@
       @include transform(rotateZ(180deg));
     }
   }
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 [dir='rtl'] {
   .accordion__item {
     &::before {
       float: left;
+      margin-left: 0;
+      margin-right: $spacing-24;
     }
   }
 

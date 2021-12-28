@@ -3,46 +3,237 @@
 @import '../../assets/scss/variables';
 
 .border-top-2 {
-  border-top: 2px solid #000;
+  border-top: 2px solid $color-black;
 }
 
-.related-publication .cell.medium-4 {
-  width: 45%;
-
-  @include devicebreak(small) {
+.related-publication {
+  .cell.medium-4 {
+    padding: $spacing-12 0;
     width: 100%;
+
+    @include devicebreak(medium) {
+      width: 45%;
+    }
+  }
+
+  .content-card {
+    border: none;
+    margin-top: $spacing-12;
+
+    @include devicebreak(medium) {
+      margin-top: 1.25rem;
+    }
+  }
+
+  h2 {
+    margin-top: $spacing-48;
+
+    @include devicebreak(medium) {
+      margin-top: $spacing-80;
+    }
+  }
+
+  .grid-x.grid-margin-x {
+    @include devicebreak(small) {
+      padding: 0 $spacing-12 $spacing-12 0;
+    }
   }
 }
 
-.related-publication .contentcard {
-  border: none;
-}
-
-// margin styles
 .margin-top {
+  &-24 {
+    margin-top: $spacing-24;
+  }
+
+  &-36 {
+    margin-top: 2.25rem;
+  }
+
+  &-40 {
+    margin-top: $spacing-40;
+  }
+
   &-48 {
     margin-top: $spacing-48;
+  }
+
+  &-64 {
+    margin-top: $spacing-64;
+  }
+
+  &-72 {
+    margin-top: 4.5rem;
   }
 
   &-80 {
     margin-top: $spacing-80;
   }
-}
 
-.content-bottom {
-  margin-bottom: $spacing-96;
-
-  @include devicebreak(small) {
-    margin-bottom: $spacing-48;
+  &-136 {
+    margin-top: $spacing-136;
   }
 }
 
-.sticky.stick {
-  position: fixed;
-  top: 0;
-  z-index: 10000;
+.margin-bottom {
+  &-24 {
+    margin-bottom: $spacing-24;
+  }
+
+  &-36 {
+    margin-bottom: 2.25rem;
+  }
+
+  &-40 {
+    margin-bottom: $spacing-40;
+  }
+
+  &-48 {
+    margin-bottom: $spacing-48;
+  }
+
+  &-64 {
+    margin-bottom: $spacing-64;
+  }
+
+  &-72 {
+    margin-bottom: 4.5rem;
+  }
+
+  &-80 {
+    margin-bottom: $spacing-80;
+  }
+
+  &-136 {
+    margin-bottom: $spacing-136;
+  }
+}
+
+.content-bottom {
+  margin-bottom: $spacing-48;
+
+  @include devicebreak(medium) {
+    margin-bottom: $spacing-96;
+  }
+}
+
+.description-text {
+  margin-top: $spacing-40;
+
+  @include devicebreak(medium) {
+    margin-top: $spacing-08;
+  }
+}
+
+.publication {
+  &-bottom {
+    margin-bottom: 3.313rem;
+    margin-top: $spacing-96;
+
+    .breadcrumb {
+      margin-top: 1.813rem;
+
+      @include devicebreak(medium) {
+        margin-top: 5.313rem;
+      }
+    }
+  }
+
+  &-block {
+    margin-top: 2.563rem;
+    scroll-behavior: auto;
+
+    @include devicebreak(medium) {
+      margin-top: 4.25rem;
+    }
+  }
+
+  .download-card {
+    margin-bottom: $spacing-40;
+  }
+}
+
+.sticky {
+  position: relative;
 
   @include devicebreak(small) {
-    position: static;
+    display: flex;
+    justify-content: center;
+  }
+
+  &.stick {
+    position: relative;
+    top: 0;
+    z-index: -1;
+
+    @include devicebreak(medium) {
+      position: sticky;
+    }
+  }
+}
+
+.title {
+  &-desktop {
+    display: none;
+
+    @include devicebreak(medium) {
+      display: block;
+      margin-bottom: $spacing-24;
+    }
+
+    @include devicebreak(medium) {
+      display: block;
+    }
+  }
+
+  &-mobile {
+    display: block;
+
+    @include devicebreak(medium) {
+      display: none;
+    }
+
+    h2 {
+      margin-bottom: $spacing-24;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .related-publication {
+    .large-offset-6 {
+      @include devicebreak(medium) {
+        margin-left: 0;
+        margin-right: calc(50% + 1rem / 2);
+      }
+    }
+  }
+
+  .publication-bottom {
+    .large-offset-1 {
+      @include devicebreak(medium) {
+        margin-left: 0;
+        margin-right: calc(8.33333% + 1.5rem / 2);
+      }
+    }
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.publication-post-header {
+  margin-top: 1.813rem;
+
+  @include devicebreak(medium) {
+    margin-top: $spacing-80;
   }
 }

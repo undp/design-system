@@ -22,17 +22,20 @@
       @extend %absolute__overflow;
 
       img {
-        height: 100%;
-        max-width: none;
-        width: auto;
+        @extend %img-cover;
       }
     }
 
     &__title {
       font-family: $Font-Family-SohneBreit;
       font-weight: 700;
+      margin-top: $spacing-96;
       padding: 0 $spacing-12;
       text-transform: uppercase;
+
+      @include devicebreak(medium) {
+        margin-top: 197px;
+      }
     }
 
     &__subtitle {
@@ -41,7 +44,11 @@
       padding: 0 $spacing-12;
 
       @include devicebreak(medium) {
-        margin-top: 197px;
+        margin-top: 12.625rem;
+      }
+
+      & + .pagehero-wrapper__title {
+        margin-top: 0;
       }
     }
   }
@@ -93,7 +100,7 @@
       margin-top: $spacing-64;
 
       @include devicebreak(medium) {
-        margin-top: 197px;
+        margin-top: 12.625rem;
       }
     }
 
@@ -104,7 +111,7 @@
       text-transform: uppercase;
 
       @include devicebreak(medium) {
-        margin-bottom: 240px;
+        margin-bottom: 15rem;
       }
     }
   }

@@ -2,7 +2,7 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/base';
 
-/* global homepage hero start */
+/* global homepage hero */
 .hero {
   &-wrapper {
     @extend %expand_to_size;
@@ -18,16 +18,21 @@
     }
 
     &__content {
-      @include devicebreak(medium) {
-      }
-
+      margin-left: 0;
+      padding-top: 10.438rem;
       position: relative;
+
+      @include devicebreak(medium) {
+        margin-left: $spacing-64;
+        padding-top: 13.125rem;
+      }
 
       .button {
         margin-bottom: $spacing-24;
         margin-top: $spacing-64;
 
         @include devicebreak(medium) {
+          margin-bottom: $spacing-160;
           margin-top: 0;
         }
       }
@@ -40,9 +45,7 @@
       width: 100%;
 
       img {
-        height: 100%;
-        max-width: none;
-        width: auto;
+        @extend %img-cover;
       }
     }
 
@@ -61,22 +64,9 @@
     }
   }
 
-
-  &-border_left {
-    border-left: 3rem solid $color-gray-300;    
-
-    @include devicebreak(small) {
-      border-left: 1rem solid $color-gray-300;
-    }
-  }
-
   &_right {
     overflow: hidden;
     position: relative;
-
-    @include devicebreak(medium) {
-      height: 100%;
-    }
 
     &_box {
       height: auto;
@@ -87,6 +77,7 @@
       @include devicebreak(medium) {
         height: 100%;
         margin-bottom: 0;
+        position: absolute;
       }
 
       video {
@@ -111,21 +102,18 @@
   }
 
   &-split {
-    display: flex;
-
-    @include devicebreak(medium) {
-      .grid-x {
-        align-items: center;
-        min-height: 940px;
-      }
-    }
+    word-break: break-word;
 
     &__content {
+      padding: 0;
+
       @include devicebreak(medium) {
+        padding: $spacing-136 1.375rem $spacing-136 0;
       }
 
-      padding-right: 1.375rem;
-      word-break: break-word;
+      @include devicebreak(large) {
+        padding-left: $spacing-64;
+      }
     }
 
     &__title {
@@ -148,6 +136,10 @@
   }
 
   &-option {
+    @include devicebreak(medium) {
+      border-left: 3rem solid $color-gray-300;
+    }
+
     &__content {
       padding: 0;
 
@@ -156,7 +148,7 @@
       }
     }
 
-    &__title {
+    h1 {
       margin-bottom: $spacing-16;
       padding-left: 0;
       text-transform: uppercase;
@@ -167,7 +159,7 @@
       }
     }
 
-    &__subtitle {
+    h5 {
       margin: 0;
       padding-bottom: $spacing-32;
 
@@ -197,12 +189,21 @@
         padding-right: 0;
 
         @include devicebreak(medium) {
+          padding-left: 1.375rem;
+        }
+
+        @include devicebreak(large) {
           padding-right: $spacing-64;
         }
       }
     }
 
     &-option {
+      @include devicebreak(medium) {
+        border-left: 0;
+        border-right: 3rem solid $color-gray-300;
+      }
+
       &__content {
         padding: 0;
 
@@ -212,7 +213,7 @@
         }
       }
 
-      &__title {
+      h1 {
         padding-left: 0;
         padding-right: 0;
 
@@ -223,11 +224,3 @@
     }
   }
 }
-
-.hero-option {
-  @include devicebreak(small) {
-    padding-left: $spacing-32;
-  }
-}
-
-/* global homepage hero end */

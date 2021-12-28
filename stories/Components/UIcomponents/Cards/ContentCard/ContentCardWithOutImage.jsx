@@ -11,7 +11,7 @@ export const emphasize_options = {
 };
 
 export const ContentCardWithOutImage = ({
-  data, Emphasize, Hovercolors,
+  data, Hovercolors, Emphasize,
 }) => (
   <div className="grid-x grid-margin-x">
     {data.map((item, index) => (
@@ -36,7 +36,7 @@ export const ContentCardWithOutImage = ({
               : (
                 <></>
               )}
-            <Ctalink label={item.button} variant="Space" />
+            <Ctalink label={item.button} Type="Space" />
           </div>
         </a>
       </div>

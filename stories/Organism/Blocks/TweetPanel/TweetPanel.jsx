@@ -12,7 +12,7 @@ export const TweetPanel = ({ data, headertext }) => {
   }, []);
   return (
     <div className="grid-x grid-margin-x twitter-panel">
-      <div className="cell medium-11 twitter-header left-right medium-offset-1 small-offset-1">
+      <div className="cell medium-11 twitter-header left-right medium-offset-1">
         <Heading type="2" label={headertext} />
         <span className="twitter" />
       </div>

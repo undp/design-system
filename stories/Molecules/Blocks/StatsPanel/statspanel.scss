@@ -3,104 +3,134 @@
 @import '../../../assets/scss/mixins';
 
 /* statspanel card start */
-.statspanel {
-  align-items: center;
-  background-color: $color-gray-700;
-  display: flex;
-  justify-content: center;
-  min-height: 378px;
-  position: relative;
-  @include transition(300ms all);
-
-  @include devicebreak(medium) {
-    min-height: 787px;
-  }
-
-  img {
-    @extend %absolute__content;
-
-    object-fit: cover;
-    opacity: 0;  
-    @include transition(300ms all);
-    
-  }
-
-  &::after {
-    @extend %absolute__content;
-
-    background:
-      linear-gradient(0deg,
-      $color-yellow 1.21%,
-      $color-yellow 56.78%,
-      rgba(255, 235, 0, 0.7) 100%);
-    opacity: 0;
-    transition: all 0.4s;
-  }
-
-  &__box {
-    color: $color-white;
-    padding: 0 $spacing-24;
-    width: 100%;
-    z-index: 1;
-
-    @include devicebreak(medium) {
-      padding: 0 $spacing-48;
-    }
-  }
-
-  &__number {
-    color: $color-gray-700;
-    display: block;
-    font-family: $Font-Family-SohneBreit;
-    font-size: 6.875rem;
-    letter-spacing: 0.05rem;
-    line-height: 1.09;
-    margin-bottom: $spacing-16;
-    text-shadow: -1px -1px 0 $color-white, 1px -1px 0 $color-white, -1px 1px 0 $color-white, 1px 1px 0 $color-white;
-    -webkit-text-stroke: 1px $color-white;
+.stats {
+  &-panel {
     @include transition(300ms all);
 
-    @include devicebreak(medium) {
-      font-size: 6.6rem;
-      margin-bottom: $spacing-32;
-    }
-
-    @include devicebreak(large) {
-      font-size: 6.875rem;
-    }
-  }
-
-  &__per {
-    display: block;
-    font-size: 2.188rem;
-    font-weight: 600;
-    line-height: 1.12;
-    margin-bottom: $spacing-12;
+    align-items: center;
+    background-color: $color-gray-700;
+    display: flex;
+    justify-content: center;
+    min-height: 378px;
+    position: relative;
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-16;
+      min-height: 787px;
     }
-  }
 
-  p {
-    font-size: 1.25rem;
-    margin: 0;
-  }
-
-  &:hover,
-  &.active {
-    &::after,
     img {
-      opacity: 1;
+      @extend %absolute__content;
+
+      @include transition(300ms all);
+
+      object-fit: cover;
+      opacity: 0;
     }
 
-    .statspanel__number {
-      text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
-      -webkit-text-stroke: 1px $color-gray-700;
+    &::after {
+      @extend %absolute__content;
+
+      opacity: 0;
+      transition: all 0.4s;
     }
 
-    .statspanel__box {
-      color: $color-gray-700;
+    &.yellow::after {
+      @include gradient(0deg, $yellow-gradient);
+    }
+
+    &.red::after {
+      @include gradient(0deg, $red-gradient);
+    }
+
+    &.green::after {
+      @include gradient(0deg, $green-gradient);
+    }
+
+    &.blue::after {
+      @include gradient(0deg, $blue-gradient);
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+
+    &:hover,
+    &.active {
+      &::after,
+      img {
+        opacity: 1;
+      }
+
+      .statscard {
+        &__number {
+          text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
+          -webkit-text-stroke: 1px $color-gray-700;
+        }
+
+        &__box {
+          color: $color-gray-700;
+        }
+      }
+    }
+
+    .statscard {
+      background-color: transparent;
+      max-width: 100%;
+      padding: 0 $spacing-24;
+      width: 100%;
+      word-break: unset;
+      z-index: 1;
+
+      @include devicebreak(medium) {
+        padding: 0 $spacing-48;
+      }
+
+      &__box {
+        color: $color-white;
+        width: 100%;
+      }
+
+      &__number {
+        @include transition(300ms all);
+
+        color: $color-gray-700;
+        font-size: 6.875rem;
+        letter-spacing: 0.05rem;
+        line-height: 1.09;
+        text-shadow: -1px -1px 0 $color-white, 1px -1px 0 $color-white, -1px 1px 0 $color-white, 1px 1px 0 $color-white;
+        -webkit-text-stroke: 1px $color-white;
+
+        @include devicebreak(medium) {
+          font-size: 6.6rem;
+        }
+
+        @include devicebreak(large) {
+          font-size: 6.875rem;
+        }
+
+        @include devicebreak(small) {
+          margin-bottom: $spacing-16;
+        }
+      }
+
+      &__per {
+        @include devicebreak(small) {
+          margin-bottom: $spacing-12;
+        }
+      }
+
+      &.medium {
+        .statscard__box {
+          padding: 0;
+        }
+
+        .statscard__per {
+          font-size: 2.188rem;
+          font-weight: 600;
+          line-height: 1.12;
+        }
+      }
     }
   }
 }
