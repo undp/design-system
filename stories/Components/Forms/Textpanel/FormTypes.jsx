@@ -17,6 +17,7 @@ export const FormTypes = ({
   placeholderfirst,
   placeholderlast,
   anchorTag,
+  anchorTag2,
   para,
   ...args
 }) => (
@@ -59,8 +60,8 @@ export const FormTypes = ({
           </div>
         </div>
       )}
-      {args.variant === 'form with photo' && (
-        <div className="grid-x grid-margin-x form-photo">
+      {args.variant === "form with photo" && (
+        <div className="grid-x form-photo">
           <div className="medium-5 cell">
             <Image />
           </div>
@@ -97,48 +98,46 @@ export const FormTypes = ({
           </div>
         </div>
       )}
-      {args.variant === 'wide form' && (
-        <div className="wide-form">
-          <div className="grid-x grid-margin-x">
-            <div className="large-8 cell">
-              <div className="grid-x">
-                <div className="large-12 cell">
-                  <Heading type="2" label={anchorTag} />
-                </div>
+      {args.variant === "wide form" && (
+        <div className="grid-x grid-margin-x wide-form">
+          <div className="large-8 cell">
+            <div className="grid-x">
+              <div className="large-12 cell">
+                <Heading type="2" label={anchorTag2} />
               </div>
-              <div className="grid-x grid-margin-x">
-                <div className="medium-6 cell">
-                  <Inputcomponent
-                    element={element}
-                    type={type}
-                    placeholder={placeholderfirst}
-                    required={required}
-                    mode={mode}
-                  />
-                </div>
-                <div className="medium-6 cell">
-                  <Inputcomponent
-                    element={element}
-                    type={type}
-                    placeholder={placeholderlast}
-                    required={required}
-                    mode={mode}
-                  />
-                </div>
-                <div className="medium-12 cell">
-                  <Inputcomponent
-                    element={element}
-                    type={type}
-                    placeholder={placeholderemail}
-                    required={required}
-                    mode={mode}
-                  />
-                </div>
-                <div className="medium-12 cell">
-                  <button type="submit" className="button button-primary">
-                    {button}
-                  </button>
-                </div>
+            </div>
+            <div className="grid-x grid-margin-x">
+              <div className="medium-6 cell">
+                <Inputcomponent
+                  element={element}
+                  type={type}
+                  placeholder={placeholderfirst}
+                  required={required}
+                  mode={mode}
+                />
+              </div>
+              <div className="medium-6 cell">
+                <Inputcomponent
+                  element={element}
+                  type={type}
+                  placeholder={placeholderlast}
+                  required={required}
+                  mode={mode}
+                />
+              </div>
+              <div className="medium-12 cell">
+                <Inputcomponent
+                  element={element}
+                  type={type}
+                  placeholder={placeholderemail}
+                  required={required}
+                  mode={mode}
+                />
+              </div>
+              <div className="medium-12 cell">
+                <button type="submit" className="button button-primary">
+                  {button}
+                </button>
               </div>
             </div>
           </div>
