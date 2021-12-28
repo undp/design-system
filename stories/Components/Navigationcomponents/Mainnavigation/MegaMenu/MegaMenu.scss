@@ -79,14 +79,15 @@
             height: $spacing-32;
             width: $spacing-32;
           }
-
-          &:hover {
-            &::after {
-              background: url(#{$img-path-Iconfourback}/external-hover.svg) no-repeat 0 bottom/32px 34px;
+          &:hover{
+            &::after{
+              background: url(#{$img-path-Iconfourback}/external-hover.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
             }
           }
         }
-
+        &:focus{
+          border: 0;
+        }
         &:hover {
           background: $color-blue-600;
           color: $color-white;
