@@ -7,6 +7,7 @@
 .accordion-wrapper {
   padding: 0;
   position: relative;
+  @extend %background-white;
 
   &.show-small {
     .accordion-navbar {

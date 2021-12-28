@@ -10,7 +10,7 @@ export const Accordion = ({ headerText, descriptionText }) => {
   }, []);
 
   return (
-    <ul className="accordion" id="accordion">
+    <ul className="accordion">
       <li className="accordion__item">
         <Heading type="5" label={headerText} className="accordion__heading" />
         <div className="accordion__panel">
