@@ -29,7 +29,8 @@
     }
   }
 
-  .input__controls {
+   input[type=text], input[type=number], input[type=email], input[type=password], input[type=search], 
+   input[type=tel], input[type=date], textarea  {
     border: 2px solid $color-black;
     box-sizing: border-box;
     font-size: $font-size-16;
@@ -71,6 +72,10 @@
       height: auto;
       max-width: 100%;
       resize: vertical;
+    }
+
+    &.date {
+      padding-left: $spacing-40;
     }
   }
 
@@ -126,7 +131,8 @@ input[type='date']::-webkit-calendar-picker-indicator {
       right: 14px;
     }
 
-    .input__controls {
+    input[type=text], input[type=number], input[type=email], input[type=password], input[type=search], 
+    input[type=tel], input[type=date], textarea {
       &.search {
         padding-left: 0.625rem;
         padding-right: $spacing-40;

@@ -34,7 +34,7 @@ export const Footer = ({
                 button={button}
                 errorText={errorText}
                 placeholder={placeholder}
-                variant={args.color}
+                variant={args.color === 'blue' ? args.color : ''}
               />
             </div>
           </div>
