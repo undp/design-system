@@ -139,8 +139,8 @@
 
     .cta--arrow::after {
       background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
-      width: 100px;
       margin-left: 0.25rem;
+      width: 100px;
     }
   }
 }
@@ -168,24 +168,27 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .content-card {
+
+    $colors: (
+      'yellow': $color-yellow,
+      'red': $color-red,
+      'green': $color-green,
+      'blue': $color-azure,
+    );
+
     &:hover {
       .cta--space::after {
         @include transform(translate(-50%, 0) rotate(180deg));
       }
+
       .cta--arrow::after {
-        margin-right: 0.25rem;
         margin-left: 0;
+        margin-right: 0.25rem;
       }
     }
 
-    $colors: (
-      "yellow": $color-yellow,
-      "red": $color-red,
-      "green": $color-green,
-      "blue": $color-azure,
-    );
     @each $name, $color in $colors {
       &.#{$name} {
         .card-thumbnail__image::before {

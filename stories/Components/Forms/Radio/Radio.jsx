@@ -4,16 +4,16 @@ import './radio.scss';
 export const Radio = ({ label }) => (
   <>
     <div className="radio">
-      <input type="radio" id="undp" name={label} aria-label="Radio"/>
+      <input type="radio" id="undp" name={label} aria-label="Radio" />
       <label htmlFor="undp">
-        <span/>
+        <span />
         { label }
       </label>
     </div>
     <div className="radio">
-      <input type="radio" id="undp2" name={label} aria-label="Radio"/>
+      <input type="radio" id="undp2" name={label} aria-label="Radio" />
       <label htmlFor="undp2">
-        <span/>
+        <span />
         { label }
       </label>
     </div>

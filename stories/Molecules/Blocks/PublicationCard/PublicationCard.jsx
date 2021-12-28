@@ -13,17 +13,20 @@ export const PublicationCard = ({
     {image && <Publicationthumb Hovercolors="yellow"/>}
     {image2 && <Cardthumb />}
     <div className="publication-card__description">
-      {args.variant === 'Download' && 
+      {args.variant === 'Download'
+        && (
         <div className="publication-card__download">
           {download}
           <Icondownload />
-        </div> }
-      {args.variant === 'Readmore' && 
+        </div>
+        ) }
+      {args.variant === 'Readmore'
+        && (
         <div className="publication-card__readmore">
           {readmore}
           <Iconexternallink />
         </div>
-        }
+        )}
       {args.variant === 'Both'
         && (
         <div class="grid-x">

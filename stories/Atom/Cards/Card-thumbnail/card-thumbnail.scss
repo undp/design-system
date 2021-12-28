@@ -46,7 +46,8 @@
 
 [dir='rtl'] {
   // color map
-  $colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "azure": $color-azure);
+  $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
+
   .card-thumbnail__image {
     @each $name, $color in $colors {
       &.#{$name}:before {
@@ -55,4 +56,5 @@
     }
   }
 }
+
 /* card_thumbnail__image end */
