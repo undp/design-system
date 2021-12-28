@@ -7,12 +7,9 @@
   align-items: center;
 
   @include devicebreak(medium) {
-    flex-direction: row-reverse;
-
-    &:nth-child(odd) {
-      .parallax-card__link {
-        padding-left: $spacing-12;
-      }
+    flex-direction: row;
+    .parallax-card__link {
+      padding-right: $spacing-12;
     }
   }
 
@@ -36,20 +33,22 @@
   &__image {
     img {
       @extend %img-cover;
-
       display: block;
     }
   }
 
   .cta__link {
     @extend %img_none;
+    @include devicebreak(medium) {
+      padding-left: $spacing-24;
+    }
   }
 
   h3 {
     margin-bottom: $spacing-24;
 
     @include devicebreak(medium) {
-      padding-right: $spacing-24;
+      padding-left: $spacing-24;
     }
   }
 
@@ -61,29 +60,29 @@
 
     @include devicebreak(medium) {
       border-bottom: solid 2px $color-black;
-      padding: 0 $spacing-24 $spacing-24 0;
+      padding: 0 0 $spacing-24 $spacing-24 ;
     }
   }
 
-  &:nth-child(even) {
-    flex-direction: unset;
-
+  &-right {
     @include devicebreak(medium) {
+      flex-direction: row-reverse;
       .parallax-card__link {
-        padding-right: $spacing-12;
-      }
-
-      h3 {
-        padding-left: $spacing-24;
+        padding-left: $spacing-12;
         padding-right: 0;
       }
 
+      h3 {
+        padding-right: $spacing-24;
+        padding-left: 0;
+      }
+
       p {
-        padding: 0 0 $spacing-24 $spacing-24;
+        padding: 0 $spacing-24 $spacing-24 0;
       }
 
       .cta__link {
-        padding-left: $spacing-24;
+        padding-left: 0
       }
     }
   }
@@ -93,42 +92,45 @@
   .parallax-card {
     @include devicebreak(medium) {
       h3 {
-        padding-left: $spacing-24;
-        padding-right: 0;
+        padding-right: $spacing-24;
+        padding-left: 0;
       }
 
       p {
-        padding: 0 0 $spacing-24 $spacing-24;
+        padding: 0 $spacing-24 $spacing-24 0;
       }
 
-      &:nth-child(odd) {
-        .parallax-card__link {
-          padding-left: 0;
-          padding-right: $spacing-12;
-        }
+      .parallax-card__link {
+        padding-right: 0;
+        padding-left: $spacing-12;
+      }
+
+      .cta__link {
+        padding-right: $spacing-24;
+        padding-left: 0;
       }
     }
 
-    &:nth-child(even) {
+    &-right {
       @include devicebreak(medium) {
         h3 {
-          padding-left: 0;
-          padding-right: $spacing-24;
+          padding-right: 0;
+          padding-left: $spacing-24;
         }
 
         p {
-          padding: 0 $spacing-24 $spacing-24 0;
+          padding: 0 0 $spacing-24 $spacing-24;
         }
 
         .parallax-card__link {
-          padding-left: $spacing-12;
-          padding-right: 0;
+          padding-right: $spacing-12;
+          padding-left: 0;
         }
       }
 
       .cta__link {
-        padding-left: 0;
-        padding-right: $spacing-24;
+        padding-right: 0;
+        padding-left: $spacing-24;
       }
     }
 

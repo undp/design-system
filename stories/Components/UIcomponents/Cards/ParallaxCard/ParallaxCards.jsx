@@ -10,9 +10,9 @@ import '../../../../assets/js/smartresize';
 const ParallaxCards = ({ carddata, alt, title }) => (
   useEffect(() => {
     GlideSlider('.parallax__content', '46');
-    ParallaxEffect('.parallax-card-right', '50', '.glide__slides', '1', '.parallax-card__image');
+    ParallaxEffect('.parallax-card-right-content', '50', '.glide__slides', '1', '.parallax-card__image');
     ParallaxEffect('.parallax-card-right-img', '-100', '.glide__slides', '0.1', '.parallax-card__content');
-    ParallaxEffect('.parallax-card-left', '60', '.glide__slides', '1');
+    ParallaxEffect('.parallax-card-left-content', '60', '.glide__slides', '1');
     ParallaxEffect('.parallax-card-left-img', '-130', '.glide__slides', '0.7');
   }, []),
     <section className="parallax">
@@ -30,6 +30,6 @@ const ParallaxCards = ({ carddata, alt, title }) => (
         </div>
       </div>
     </section>
-);
+)
 
 export default ParallaxCards;
