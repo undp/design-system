@@ -21,33 +21,34 @@ export const getData = (lang) => {
             index === 0
               ? 'grid-x sub-menu-content active-content'
               : 'grid-x sub-menu-content'
-          }" data-id="${menu.link.id}-${item.id}">
+          }" data-submenu-id="${menu.link.id}-${item.id}">
                       <div class="${
-  menu.image
-    ? 'cell mega-sub-description large-6'
-    : 'cell mega-sub-description large-10'
-}">
+                        menu.image
+                          ? 'cell mega-sub-description large-6'
+                          : 'cell mega-sub-description large-10'
+                      }">
                         <h3 class="mega-title">${menu.title}</h3>
                         <p class="mega-description">${menu.description}</p>
                         <div class="sub-sub-menu">
                             <ul class="list-col-first">
                             ${
-  menu.linksCol1.length > 0
-    ? menu.linksCol1
-      .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
-      .join(' ')
-    : ''
-}
+                              menu.linksCol1.length > 0
+                                ? menu.linksCol1
+                                  .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
+                                  .join(' ')
+                                : ''
+                            }
                             </ul>
-                            <ul class="list-col-second">
                             ${
-  menu.linksCol2.length > 0
-    ? menu.linksCol2
-      .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
-      .join(' ')
-    : ''
-}
-                            </ul>
+                              menu.linksCol2.length > 0
+                                ?
+                              `<ul class="list-col-second">
+                                  ${menu.linksCol2
+                                          .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
+                                          .join(' ')
+                                  }
+                              </ul>`:''
+                            }
                         </div>
                       </div>
                       ${
@@ -59,7 +60,7 @@ export const getData = (lang) => {
           .join(' ');
 
         const renderHtml = `
-                    <div class="cell large-12 mega-nav-option" menu-item-id="${item.id}">
+                    <div class="cell large-12 mega-nav-option" data-menu-item-id="${item.id}">
                     <div class="grid-x">
                         <div class="cell large-3">
                           <ul class="submenu">
