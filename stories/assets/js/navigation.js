@@ -3,7 +3,7 @@ import { getData } from './navigationData';
 var lang = 'english';
 
 export const init = (locale) => {
-  const menuItem = $('.menu-item');
+  const menuItem = $('.menu li');
   const megaNavOption = $('.mega-nav-option');
   const mobLinkWrapper = $('.mob-links');
   const submenuli = $('.submenu li');
