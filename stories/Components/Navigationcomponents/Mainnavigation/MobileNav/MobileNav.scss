@@ -62,7 +62,13 @@
 
   .mob-sub-menu {
     display: none;
+<<<<<<< HEAD
     padding: 2.25rem 0;
+=======
+    padding: 2.0625rem 0 2.25rem;
+    position: absolute;
+    top: 0;
+>>>>>>> und-746 mobile menu changes
 
     &.show-sub {
       display: block;
@@ -70,8 +76,9 @@
     }
 
     .sub-heading {
-      padding: 2.25rem 0 1.25rem;
+      padding: 2.5625rem 0 2.25rem;
       text-transform: uppercase;
+      margin-bottom: 0;
     }
 
     .sub-sub-menus {
@@ -80,7 +87,7 @@
 
       li {
         list-style: none;
-        margin-bottom: 0.46875rem;
+        margin-bottom: 0;
 
         span {
           font-size: $font-size-16;
@@ -88,7 +95,13 @@
 
         ul {
           margin: 0;
-          padding: $spacing-16 1.6875rem;
+          padding: $spacing-24 1.6875rem;
+          li{
+            margin-bottom: 0.46875rem;
+            &:last-child{
+              margin-bottom: 0;
+            }
+          }
         }
 
         a {

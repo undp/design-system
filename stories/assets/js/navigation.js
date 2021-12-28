@@ -56,7 +56,9 @@ export const init = (locale) => {
   $(document).on('click', '.mob-links .cta__link', function () {
     const id = $(this).attr('id');
     const text = $(this).text();
+    console.log(text)
     $('.mobile-mega-content').find('.sub-heading').text(text);
+    console.log($('.mobile-mega-wrapper').find(`[data-mobile-id='${id}']`));
     $('.mobile-mega-wrapper').find(`[data-mobile-id='${id}']`).addClass('show-content');
     $('.mob-links').addClass('hide-mob-links');
     $('.mob-sub-menu').addClass('show-sub');
