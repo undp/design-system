@@ -10,36 +10,38 @@
   padding-left: 0;
 
   li {
-  font-size: $font-size-16;
-  margin-right: $spacing-24;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  a {
-    @extend %img_none;
-
-    border-bottom: 0;
+    align-items: center;
+    display: flex;
     font-size: $font-size-16;
-  }
+    justify-content: space-between;
+    margin-right: $spacing-24;
+    position: relative;
 
-  span {
-    margin: 0 0.375rem;
+    a {
+      @extend %img_none;
 
-    &:last-child{
-      margin-right: 0;
+      border-bottom: 0;
+      font-size: $font-size-16;
     }
-  }
 
-  &:first-child,
-  &:last-child {
-    cursor: pointer;
+    span {
+      margin: 0 0.375rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &:first-child,
+    &:last-child {
+      cursor: pointer;
+
       a {
+        font-size: 0;
         height: 45px;
         width: 45px;
-        font-size: 0;
-          &::before {
+
+        &::before {
           background: url(#{$img-path-Icon}/circle-left.svg) no-repeat center center;
           content: ' ';
           display: block;
@@ -47,23 +49,23 @@
           width: 45px;
         }
       }
-  }
+    }
 
-  &.disabled {
-    a {
-      &::before {
-        opacity: 0.3;
+    &.disabled {
+      a {
+        &::before {
+          opacity: 0.3;
+        }
       }
     }
-  }
 
-  &:last-child {
-    a {
-      &::before {
-        background: url(#{$img-path-Icon}/circle-right.svg) no-repeat center center;
+    &:last-child {
+      a {
+        &::before {
+          background: url(#{$img-path-Icon}/circle-right.svg) no-repeat center center;
+        }
       }
     }
-  }
   }
 }
 
@@ -74,16 +76,15 @@
     li {
       margin-left: $spacing-24;
       margin-right: 0;
-  
+
       &:first-child {
         a {
           &::before {
             @include transform(rotateZ(180deg));
           }
         }
-  
       }
-  
+
       &:last-child {
         a {
           &::before {
@@ -93,11 +94,12 @@
       }
 
       span {
-        &:last-child{
-          margin-right:0.375rem;
+        &:last-child {
+          margin-right: 0.375rem;
         }
       }
     }
   }
 }
+
 /* pagination end */

@@ -40,27 +40,27 @@ export function ParallaxEffect(ele, yele, triggerclass, scrubtime, cssdiv) {
       }
       // Start two row vertical parallax
       gsap.utils.toArray('.stats-card-grid').forEach((t) => {
-        t.querySelectorAll('.stats-card-parallax').forEach((function (e, n) {
+        t.querySelectorAll('.stats-card-parallax').forEach((e, n) => {
           let num = '0';
           if ($('html').attr('dir') == 'rtl') {
             num = '1';
           }
-          var r = (n + 1) % 2 != num,
-            o = gsap.timeline({
-              scrollTrigger: {
-                scrub: !0,
-                ease: "SlowMo",
-                trigger: t,
-                start: "top bottom",
-                end: "bottom top"
-              }
-            });
+          var r = (n + 1) % 2 != num;
+          var o = gsap.timeline({
+            scrollTrigger: {
+              scrub: !0,
+              ease: 'SlowMo',
+              trigger: t,
+              start: 'top bottom',
+              end: 'bottom top',
+            },
+          });
           o.from(e, {
-            xPercent: 70 * (r ? -1 : 1)
+            xPercent: 70 * (r ? -1 : 1),
           }), o.to(e, {
-            xPercent: 10 * (r ? 1 : -1)
-          })
-        }));
+            xPercent: 10 * (r ? 1 : -1),
+          });
+        });
       });
       // End two row vertical parallax
       gsap.to(ele, {

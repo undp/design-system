@@ -1,7 +1,7 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/typography';
 @import '../../../assets/scss/mixins';
- 
+
 /* project data start */
 .project-data__wrapper {
   border-bottom: 1px solid $color-gray-400;
@@ -13,29 +13,32 @@
 
 .project-data__section {
   > .cell {
-      margin-top: $spacing-32;
+    margin-top: $spacing-32;
 
-      @include devicebreak(small) {
-        border-bottom: 1px solid $color-gray-400;
-      }
-
-      p {
-        color: $color-gray-700;
-        line-height: 2;
-        margin-bottom: 2rem;
-      }
-
-      h6 {
-        margin-bottom: 0.25rem;
-      }
+    @include devicebreak(small) {
+      border-bottom: 1px solid $color-gray-400;
     }
 
+    p {
+      color: $color-gray-700;
+      line-height: 2;
+      margin-bottom: 2rem;
+    }
+
+    h6 {
+      margin-bottom: 0.25rem;
+    }
+  }
 }
 
-h2.project-data__title {
+.project-data__title {
   border-bottom: 2px solid $color-black;
   margin-bottom: 0;
   padding-bottom: 2rem;
+}
+
+.details-first {
+  flex-direction: row-reverse;
 }
 
 /* project data end */

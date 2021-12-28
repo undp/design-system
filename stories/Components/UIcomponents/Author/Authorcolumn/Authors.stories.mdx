@@ -1,5 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs'
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { Meta, Story } from '@storybook/addon-docs';
 import { Author } from './Authors';
 import user from '../../../../assets/images/author.png';
 
@@ -190,26 +189,24 @@ If there are 4 or more authors, their profile pictures are not displayed.
 
 ### CSS and JS References [ADDED BY DEVs]
 
-#### CSS:
-Add the base layout style from dist/css/base-minimal.css
-- dist/css/components/[component].css
 
-#### JS:
-- dist/js/[component].js
+# Authors component
 
+## Overview
 
-### Content
-The author component contains the first and last name, profile picture (optional) and designation of the author(s).
+The Authors Component is created for showing the authors name, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
 
-### Behaviors
+## Default Representation & various possible states
 
-#### States
+<div className="subheading">Author Column</div>
 
-The author component will have a minimum of 1 author and can expand to as many authors as needed. There can be combinations of authors with or without profile photos.
+<Story name="Author">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Author image={user} alt= 'Headshot of XYZ' data={caption} {...args}></Author>;
+  }}
+</Story>
 
-#### Interactions
+## Dependencies
 
-The author component can be used with or without a link. When linking, the entire block—image, name, designation—should be clickable. 
-
-### Changelog
-1.0 — Released component
+Not Applicable

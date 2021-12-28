@@ -13,4 +13,4 @@ UNDP.keyCode = {
 
 window.UNDP = window.UNDP || UNDP;
 
-export const desktopView=window.innerWidth>1439;
+export const desktopView = window.innerWidth > 1439;

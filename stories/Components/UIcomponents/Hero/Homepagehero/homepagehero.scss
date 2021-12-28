@@ -112,7 +112,7 @@
       }
 
       @include devicebreak(large) {
-        padding-left:$spacing-64;
+        padding-left: $spacing-64;
       }
     }
 
@@ -142,7 +142,6 @@
 
     &__content {
       padding: 0;
-
 
       @include devicebreak(medium) {
         padding: 0 1.625rem 0 $spacing-64;

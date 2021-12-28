@@ -14,6 +14,7 @@ import {
   getBackForLocale,
   getSelectlanguage,
 } from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
+
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = {
@@ -526,7 +527,9 @@ export const getCaptionForLocale = (locale) => {
 # Publication Page Templates
 Template for Publication Page
 
-<Story name="Publication Page">
+<Story name="Publication Page" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     const navigationData= getNavLinks(locale);

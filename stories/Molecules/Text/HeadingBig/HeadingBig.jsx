@@ -8,7 +8,7 @@ export const HeadingBig = ({ headerText, descriptionText }) => {
   useEffect(() => {
     viewport('.heading-big');
   }, []);
-  return(
+  return (
     <div className="grid-x heading-big  align-center" data-color="blue">
       <div className="cell  medium-4">
         <Heading type="2" label={headerText} />
@@ -18,4 +18,4 @@ export const HeadingBig = ({ headerText, descriptionText }) => {
       </div>
     </div>
   );
-}
+};

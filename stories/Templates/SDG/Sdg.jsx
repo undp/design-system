@@ -28,13 +28,15 @@ export const SdgPage = ({
         locationData={locationData}
         langSelect={langSelect}
       />
-      <PageHero
-        data={herodata}
-        title={title}
-        imgsrc={imgsource}
-        imgalt={altname}
-        active={active}
-      />
+      <div className="sdg-banner">
+        <PageHero
+          data={herodata}
+          title={title}
+          imgsrc={imgsource}
+          imgalt={altname}
+          active={active}
+        />
+      </div>
       <div className="grid-container">
         <div className="grid-x what-goal">
           <div className="cell large-3 medium-4 small-9 small-offset-1">

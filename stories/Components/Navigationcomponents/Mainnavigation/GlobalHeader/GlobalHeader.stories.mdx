@@ -174,7 +174,7 @@ There are 3 states: Default, Mobile and Tablet.
       }
     }}>
     {(args, { globals: { locale } }) => {
-    let lang = locale === 'en' ? 'english' : locale;
+      let lang = locale === 'en' ? 'english' : locale;
       const caption = getCaptionForLocale(locale);
       const navigationData= getNavLinks(locale);
       const leftNavigationData=navigationData.filter(item=>item.position==='left');
@@ -187,7 +187,7 @@ There are 3 states: Default, Mobile and Tablet.
       text={caption}
         locationData={getLocationDataForLocale(locale)} langSelect={getSelectlanguage(locale)}
         ></GlobalHeader>;
-    }}
+  }}
   </Story>
 </Canvas>
 

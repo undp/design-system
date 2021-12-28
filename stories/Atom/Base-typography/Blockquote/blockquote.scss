@@ -7,6 +7,7 @@ blockquote {
   font-weight: 600;
   line-height: 1.16;
   margin: 0;
+
   @include devicebreak(medium) {
     font-size: $font-size-35;
     line-height: 1.15;

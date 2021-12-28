@@ -9,9 +9,9 @@
   border: none;
   font-size: $font-size-16;
   font-weight: 700;
+  line-height: 1.15;
   margin-bottom: 0;
   padding: $spacing-16;
-  line-height: 1.15;
 
   @include devicebreak(medium) {
     display: block;
@@ -20,10 +20,10 @@
 }
 
 ul.accordion__panel {
+  border-top: 1px solid $color-gray-500;
   display: none;
   height: auto;
   padding: 0;
-  border-top: 1px solid $color-gray-500;
 
   li {
     a {

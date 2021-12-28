@@ -5,10 +5,10 @@ import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Authorimg } from '../../../../Atom/Images/Authorimage/Authorimages';
 
 export const Author = ({
-  data, image, alt, Image, Number,
+  data, image, alt, Image, Number, Link,
 }) => {
-  let size;
-  let decNumber;
+  let size; let
+    decNumber;
   switch (Number) {
     case 'One':
       decNumber = 1;
@@ -32,36 +32,65 @@ export const Author = ({
     default:
       decNumber = 1;
   }
-  
   return (
     <>
-      {Number == 'One'
-        ? (
-          <>
-            {data.slice(0, decNumber).map((item, index) => (
-              <div className="author-wrapper__box" key={index}>
-                {(Image !== 'False') && (decNumber <= 3) ? (<Authorimg image={image} alt={alt} variant="Small" />) : (<></>)}
-                <div className="author__label">
-                  <Heading type="6" label={item.Authorlabel} />
-                  <P label={item.Authortext} />
+      {Number == 'One' ? (
+        <>
+          {data.slice(0, decNumber).map((item, index) => (
+            <>
+              {Link == 'False' ? (
+                <div className="author-wrapper__box" key={index}>
+                  {Image !== 'False' && decNumber <= 3 ? (
+                    <Authorimg image={image} alt={alt} variant="Small" />
+                  ) : (<></>)}
+                  <div className="author__label">
+                    <Heading type="6" label={item.Authorlabel} />
+                    <P label={item.Authortext} />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </>
-        )
-        : (
-          <div className="grid-x grid-margin-x">
-            {data.slice(0, decNumber).map((item, index) => (
-              <div className={['author-wrapper__box', 'cell', `${size}`].join(' ')} key={index}>
-                {(Image !== 'False') && (decNumber <= 3) ? (<Authorimg image={image} alt={alt} variant="Small" />) : (<></>)}
-                <div className="author__label">
-                  <Heading type="6" label={item.Authorlabel} />
-                  <P label={item.Authortext} />
+              ) : (
+                <a href="#" className="author-wrapper__box" key={index}>
+                  {Image !== 'False' && decNumber <= 3 ? (
+                    <Authorimg image={image} alt={alt} variant="Small" />
+                  ) : (<></>)}
+                  <div className="author__label">
+                    <Heading type="6" label={item.Authorlabel} />
+                    <P label={item.Authortext} />
+                  </div>
+                </a>
+              )}
+            </>
+          ))}
+        </>
+      ) : (
+        <div className="grid-x grid-margin-x">
+          {data.slice(0, decNumber).map((item, index) => (
+            <>
+              {Link == 'False' ? (
+                <div className={['author-wrapper__box', 'cell', `${size}`].join(' ')} key={index}>
+                  {Image !== 'False' && decNumber <= 3 ? (
+                    <Authorimg image={image} alt={alt} variant="Small" />
+                  ) : (<></>)}
+                  <div className="author__label">
+                    <Heading type="6" label={item.Authorlabel} />
+                    <P label={item.Authortext} />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ) : (
+                <a href="#" className={['author-wrapper__box', 'cell', `${size}`].join(' ')} key={index}>
+                  {Image !== 'False' && decNumber <= 3 ? (
+                    <Authorimg image={image} alt={alt} variant="Small" />
+                  ) : (<></>)}
+                  <div className="author__label">
+                    <Heading type="6" label={item.Authorlabel} />
+                    <P label={item.Authortext} />
+                  </div>
+                </a>
+              )}
+            </>
+          ))}
+        </div>
+      )}
     </>
   );
 };

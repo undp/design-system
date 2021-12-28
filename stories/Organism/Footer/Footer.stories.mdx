@@ -328,7 +328,9 @@ The Footer component multiusage component.
 
 <div className="subheading">Footer</div>
 
-<Story name="Footer">
+<Story name="Footer" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
@@ -357,7 +359,9 @@ The Footer component multiusage component.
 
 <div className="subheading">Footer Two</div>
 
-<Story name="Footer Two">
+<Story name="Footer Two" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (

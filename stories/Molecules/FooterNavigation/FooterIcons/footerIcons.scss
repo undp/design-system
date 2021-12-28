@@ -6,12 +6,14 @@
 .footer__icons {
   display: flex;
   padding-left: 0;
+
   li {
     list-style: none;
 
     a {
       @extend %border-none;
       @extend %no-animation;
+
       display: block;
       font-size: 0;
       height: 20px;
@@ -19,7 +21,7 @@
       width: 20px;
 
       &.facebook {
-        background: url(#{$img-path-Icon}/facebook.svg) no-repeat center bottom; 
+        background: url(#{$img-path-Icon}/facebook.svg) no-repeat center bottom;
       }
 
       &.instragram {
@@ -46,7 +48,8 @@
     }
   }
 
-  &.white, &.blue {
+  &.white,
+  &.blue {
     li {
       a {
         &.facebook {

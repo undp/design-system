@@ -11,11 +11,11 @@ export const emphasize_options = {
 };
 
 export const ContentCardWithOutImage = ({
-  data, Hovercolors, Emphasize
+  data, Hovercolors, Emphasize,
 }) => (
   <div className="grid-x grid-margin-x">
     {data.map((item, index) => (
-      <div key={index} className="cell medium-4"> 
+      <div key={index} className="cell medium-4">
         <a href={item.link} className={['content-card', `${emphasize_options[`${Emphasize}`]}`, `${[`${Hovercolors}`]}`].join(' ')}>
           <Heading type="6" label={item.contenttile} />
           <div className="content-card__caption">
