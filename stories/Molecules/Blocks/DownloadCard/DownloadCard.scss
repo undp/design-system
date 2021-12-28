@@ -10,11 +10,6 @@
   }
 
   &:hover {
-    .download-icon {
-      background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
-      height: 24px;
-    }
-
     .publication_thumbnail__image {
       &::after {
         opacity: 0.75;
@@ -26,15 +21,18 @@
         opacity: 0.75;
       }
     }
+    .download-card__download {
+      &::after {
+        background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
+      }
+    }
   }
 
   &__description {
     background: $color-gray-100;
     padding: $spacing-24;
   }
-}
 
-.download-card {
   &__title {
     @extend %paragragh-font-20;
 
@@ -51,27 +49,30 @@
   &__download {
     @extend %paragragh-font-16;
 
-    align-items: center;
+    align-items: flex-end;
     display: flex;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-  }
-}
+    background-image: none;
 
-.download-card__download {
-  .download-icon {
-    margin-left: $spacing-12;
+    &::after {
+      content: "";
+      background: url(#{$img-path-Icon}/download-default.svg) no-repeat 0 bottom;
+      cursor: pointer;
+      height: 1.6875rem;
+      width: 1.3rem;
+      margin-left: 0.75rem;
+    }
   }
 }
 
 [dir='rtl'] {
   .download-card__download {
-    .download-icon {
+    &:after {
+      margin-right: 0.75rem;
       margin-left: 0;
-      margin-right: $spacing-12;
     }
   }
 }
-
 /* download card end */
