@@ -17,8 +17,8 @@
   z-index: 1;
 
   @include devicebreak(mediumonlytab) {
-    height: calc(100vh - 4.6875rem);
     top: 4.6875rem;
+    height: calc(100vh - 4.6875rem);
   }
 
   @include devicebreak(small) {
@@ -133,7 +133,7 @@ body.modal-open {
     }
   }
 
-  .content-card {
+  .sdg-content {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
@@ -165,7 +165,7 @@ body.modal-open {
       background-color: $sdg-red;
     }
 
-    .content-card {
+    .sdg-content {
       &.color {
         background-color: #dc9099;
       }
@@ -173,6 +173,9 @@ body.modal-open {
       &:hover {
         background-color: $sdg-red;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-red, transparent 80%);
     }
   }
 
@@ -189,7 +192,7 @@ body.modal-open {
       background-color: $sdg-mustard;
     }
 
-    .content-card {
+    .sdg-content {
       &.color {
         background-color: #d3bb8a;
       }
@@ -197,6 +200,9 @@ body.modal-open {
       &:hover {
         background-color: $sdg-mustard;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-mustard, transparent 80%);
     }
   }
 
@@ -213,7 +219,7 @@ body.modal-open {
       background-color: $sdg-kelly-green;
     }
 
-    .content-card {
+    .sdg-content {
       &.color {
         background-color: #9fd092;
       }
@@ -221,6 +227,9 @@ body.modal-open {
       &:hover {
         background-color: $sdg-kelly-green;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-kelly-green, transparent 80%);
     }
   }
 
@@ -237,7 +246,7 @@ body.modal-open {
       background-color: $sdg-dark-red;
     }
 
-    .content-card {
+    .sdg-content {
       &.color {
         background-color: #ce8f97;
       }
@@ -245,6 +254,9 @@ body.modal-open {
       &:hover {
         background-color: $sdg-dark-red;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-dark-red, transparent 80%);
     }
   }
 
@@ -261,7 +273,7 @@ body.modal-open {
       background-color: $sdg-red-orange;
     }
 
-    .content-card {
+    .sdg-content {
       &.color {
         background-color: #ce9890;
       }
@@ -269,6 +281,9 @@ body.modal-open {
       &:hover {
         background-color: $sdg-red-orange;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-red-orange, transparent 80%);
     }
   }
 
@@ -285,7 +300,7 @@ body.modal-open {
       background-color: $sdg-bright-blue;
     }
 
-    .content-card {
+    .sdg-content {
       &.color {
         background-color: #9ac8d3;
       }
@@ -293,6 +308,9 @@ body.modal-open {
       &:hover {
         background-color: $sdg-bright-blue;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-bright-blue, transparent 80%);
     }
   }
 
@@ -309,7 +327,7 @@ body.modal-open {
       background-color: $sdg-yellow;
     }
 
-    .content-card {
+    .sdg-content {
       &.color {
         background-color: #d3c79d;
       }
@@ -317,6 +335,9 @@ body.modal-open {
       &:hover {
         background-color: $sdg-yellow;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-yellow, transparent 80%);
     }
   }
 
@@ -333,7 +354,7 @@ body.modal-open {
       background-color: $sdg-burgundy-red;
     }
 
-    .content-card {
+    .sdg-content {
       &.color {
         background-color: #ce94a6;
       }
@@ -341,6 +362,9 @@ body.modal-open {
       &:hover {
         background-color: $sdg-burgundy-red;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-burgundy-red, transparent 80%);
     }
   }
 
@@ -357,7 +381,7 @@ body.modal-open {
       background-color: $sdg-orange;
     }
 
-    .content-card {
+    .sdg-content {
       &.color {
         background-color: #d2aa98;
       }
@@ -365,6 +389,9 @@ body.modal-open {
       &:hover {
         background-color: $sdg-orange;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-orange, transparent 80%);
     }
   }
 
@@ -381,7 +408,7 @@ body.modal-open {
       background-color: $sdg-magenta;
     }
 
-    .content-card {
+    .sdg-content {
       &.color {
         background-color: #c994aa;
       }
@@ -389,6 +416,9 @@ body.modal-open {
       &:hover {
         background-color: $sdg-magenta;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-magenta, transparent 80%);
     }
   }
 
@@ -405,7 +435,7 @@ body.modal-open {
       background-color: $sdg-golden-yellow;
     }
 
-    .content-card {
+    .sdg-content {
       &.color {
         background-color: #c7b094;
       }
@@ -413,6 +443,9 @@ body.modal-open {
       &:hover {
         background-color: $sdg-golden-yellow;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-golden-yellow, transparent 80%);
     }
   }
 
@@ -429,7 +462,7 @@ body.modal-open {
       background-color: $sdg-dark-mustard;
     }
 
-    .content-card {
+    .sdg-content {
       &.color {
         background-color: #ceba98;
       }
@@ -437,6 +470,9 @@ body.modal-open {
       &:hover {
         background-color: $sdg-dark-mustard;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-dark-mustard, transparent 80%);
     }
   }
 
@@ -453,18 +489,17 @@ body.modal-open {
       background-color: $sdg-dark-green;
     }
 
-    .content-card {
-      &[class*='background-'] {
+    .sdg-content {
+      &.color {
         background-color: #a2d7a6;
       }
 
       &:hover {
-        &.card,
-        &.content-card__image,
-        &[class*='background-'] {
-          background-color: $sdg-dark-green;
-        }
+        background-color: $sdg-dark-green;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-dark-green, transparent 80%);
     }
   }
 
@@ -481,18 +516,17 @@ body.modal-open {
       background-color: $sdg-blue;
     }
 
-    .content-card {
-      &[class*='background-'] {
+    .sdg-content {
+      &.color {
         background-color: #a1c6d7;
       }
 
       &:hover {
-        &.card,
-        &.content-card__image,
-        &[class*='background-'] {
-          background-color: $sdg-blue;
-        }
+        background-color: $sdg-blue;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-blue, transparent 80%);
     }
   }
 
@@ -509,18 +543,17 @@ body.modal-open {
       background-color: $sdg-lime-green;
     }
 
-    .content-card {
-      &[class*='background-'] {
+    .sdg-content {
+      &.color {
         background-color: #abce9e;
       }
 
       &:hover {
-        &.card,
-        &.content-card__image,
-        &[class*='background-'] {
-          background-color: $sdg-lime-green;
-        }
+        background-color: $sdg-lime-green;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-lime-green, transparent 80%);
     }
   }
 
@@ -537,18 +570,17 @@ body.modal-open {
       background-color: $sdg-royal-blue;
     }
 
-    .content-card {
-      &[class*='background-'] {
+    .sdg-content {
+      &.color {
         background-color: #748f9d;
       }
 
       &:hover {
-        &.card,
-        &.content-card__image,
-        &[class*='background-'] {
-          background-color: $sdg-royal-blue;
-        }
+        background-color: $sdg-royal-blue;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-royal-blue, transparent 80%);
     }
   }
 
@@ -565,24 +597,26 @@ body.modal-open {
       background-color: $sdg-navy-blue;
     }
 
-    .content-card {
-      &[class*='background-'] {
+    .sdg-content {
+      &.color {
         background-color: #a2c2d8;
       }
 
       &:hover {
-        &.card,
-        &.content-card__image,
-        &[class*='background-'] {
-          background-color: $sdg-navy-blue;
-        }
+        background-color: $sdg-navy-blue;
       }
+    }
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $sdg-navy-blue, transparent 80%);
     }
   }
 }
 
 .ndg-container {
   padding-left: $spacing-32;
+  .sdg-image {
+    display: none;
+  }
 
   @include devicebreak(medium) {
     .sdg-card {
@@ -595,7 +629,6 @@ body.modal-open {
       }
     }
   }
-
 
   @include devicebreak(small) {
     padding-bottom: $spacing-12;
@@ -616,13 +649,11 @@ body.modal-open {
         h4 {
           font-size: 0.938rem;
           margin: 0;
-          width: calc(100% - 3rem);
+          width: calc(100% - 4rem);
         }
 
         &::after {
-          background:
-            url(#{$img-path-Iconback}/Chevron-right.svg) no-repeat
-            center center;
+          background: url(#{$img-path-Iconback}/Chevron-right.svg) no-repeat center center;
           content: '';
           filter: invert(1) brightness(10);
           height: 20px;

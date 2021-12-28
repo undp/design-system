@@ -7,8 +7,8 @@ import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
 
 export const ImageOnlyCarousel = ({ data }) => {
   useEffect(() => {
-    CarouselFun('.image-carousel', '20', '30', '1');
-    viewport('.image-carousel');
+    CarouselFun('.image-only-carousel', 20, 30, 1, 0);
+    viewport('.image-only-carousel');
   }, []);
   return (
     <div className="image-carousel left-right">
