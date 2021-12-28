@@ -3,6 +3,7 @@ import { getData } from './navigationData';
 var lang = 'english';
 
 export const init = (locale) => {
+  const $menu = $('.menu');
   const menuItem = $('.menu li');
   const megaNavOption = $('.mega-nav-option');
   const mobLinkWrapper = $('.mob-links');
@@ -16,7 +17,7 @@ export const init = (locale) => {
 
   menuItem.on('mouseenter', function () {
     const id = $(this).attr('id');
-    const menuItem = $(document).find(`[menu-item-id='${id}']`);
+    const menuItem = $(document).find(`[data-menu-item-id='${id}']`);
     menuItem.siblings().removeClass('show-mega');
     menuItem.addClass('show-mega');
     megaMenu.find('.sub-menu-content:first-child').addClass('active-content')
@@ -31,13 +32,24 @@ export const init = (locale) => {
   $('.mega-wrapper').mouseenter(function () {
     $('.mega-wrapper').find(this).addClass('show-mega');
   });
+  $menu.mouseleave(function (event) {
+    if(event.type==='mouseleave'){
+      const el=event.toElement;
+        if(!el.classList.contains('mega-nav-option')){
+          $('.mega-nav-option.show-mega').removeClass('show-mega');
+        }
+      }
+  });
+
+  $('.mega-wrapper').mouseleave(function () {
+    $(this).find('.mega-nav-option.show-mega').removeClass('show-mega');
+  });
 
   $('.mega-wrapper').on('mouseenter focus', '.submenu li', function () {
     $(this).addClass('active').siblings().removeClass('active');
     const id = $(this).attr('id');
-    $(this).parents('.mega-wrapper').find(`[data-id='${id}']`).addClass('active-content')
-      .siblings()
-      .removeClass('active-content');
+    $(this).parents('.mega-wrapper').find(`[data-submenu-id='${id}']`).addClass('active-content')
+    .siblings().removeClass('active-content');
   });
 
 
