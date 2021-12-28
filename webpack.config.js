@@ -1,36 +1,66 @@
-
+const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const WebpackShellPlugin = require('webpack-shell-plugin');
-const path = require("path");
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const webpackEntry = require('./webpack.entries');
+const packMode = 'production';
 
-module.exports = {
-  entry: {
-    "base-minimal": [
-      './stories/assets/scss/base-minimal.scss'
-    ],
-    "components/accordion": [
-      './stories/Components/UIcomponents/Accordion/accordion.scss'
+/*
+* Webpack build for scss and js
+*/
+module.exports = [
+  {
+    mode: packMode,
+    entry: webpackEntry(),
+    module: {
+      rules: [
+        {
+          test: /\.scss$/, 
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader:'css-loader',
+              options: {
+                url: false
+              }
+            },
+            'sass-loader',
+          ],
+        },
+        {
+          test: /\.(svg|png|jpg)$/,
+          loader: 'url-loader?limit=8192'
+        },
+      ]
+    },
+    plugins: [
+      new FixStyleOnlyEntriesPlugin(),
+      new MiniCssExtractPlugin({
+        filename: '[name].min.css',
+      })
     ]
   },
-  module: {
-    rules: [
-      {
-        test: /\.(scss)/, 
-        use: [MiniCssExtractPlugin.loader,'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.(svg|png|jpg)$/,
-        loader: 'url-loader?limit=8192'
-      },
-    ],
+  {
+    mode: packMode,
+    entry: webpackEntry('js'),
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: '[name].min.js',
+    },
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader'
+          }
+        },
+        {
+          test: /\.(svg|png|jpg)$/,
+          loader: 'url-loader?limit=8192'
+        }
+      ]
+    }
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
-    }),
-    new WebpackShellPlugin({
-      onBuildStart:['rm -rf dist'], 
-      onBuildEnd:['rm -rf dist/components dist/base-minimal.js']
-    })
-  ]
-};
+];
+

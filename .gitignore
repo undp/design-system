@@ -8,9 +8,4 @@ yarn-error.log
 /stories/assets/css/style.css
 /stories/assets/css/style.css.map
 .DS_Store
-/stories/.DS_Store
-/stories/Molecules/.DS_Store
-/stories/Molecules/Blocks/.DS_Store
-/stories/Organism/.DS_Store
-/stories/assets/.DS_Store
-/stories/assets/js/.DS_Store
+.scannerwork
