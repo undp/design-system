@@ -189,6 +189,7 @@
   position: absolute;
   top: 5px;
   width: 12px;
+  @extend %background-white;
 }
 
 %img-hover-effect {
@@ -427,4 +428,7 @@
   }
 }
 
-/* placehoder start */
+%background-white {
+  background-color: white;
+}
+/* placehoder end */

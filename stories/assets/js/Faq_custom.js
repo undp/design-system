@@ -1,7 +1,7 @@
 /* accordion JS start custom */
 export function FaqFun() {
-  const $accordion = $('#accordion > li');
-  const $accordion_active_li = $('#accordion > li.accordion--active');
+  const $accordion = $('.accordion > li');
+  const $accordion_active_li = $('.accordion > li.accordion--active');
   const accordion_active = 'accordion--active';
   const accordion_panel = '.accordion__panel';
 
