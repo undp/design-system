@@ -54,7 +54,7 @@ export const CountryHomepage = ({
     viewport('.our-impact h2');
   }, []);
   return (
-    <div>
+    <>
       <CountrySiteHeader
         siteTitleData={siteTitleData}
         backcaption={backcaption}
@@ -144,6 +144,6 @@ export const CountryHomepage = ({
         menudata={footerData.menudata}
         {...{ color: 'blue' }}
       />
-    </div>
+    </>
   );
 };
