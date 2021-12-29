@@ -59,9 +59,7 @@
       z-index: 0;
 
       &::before {
-        background:
-          linear-gradient(0deg, $color-yellow, $color-yellow),
-          $color-gray-200;
+        display: none;
       }
     }
   }
@@ -85,14 +83,42 @@
     @include transition(transform 0.3s);
 
     background-color: $color-yellow;
-    display: block;
+    display: none;
     height: 100%;
     position: absolute;
     z-index: 1;
-  }
 
-  @include devicebreak(medium) {
-    display: none;
+    &.yellow {
+      background-color: $color-yellow;
+
+      &::before {
+        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.8));
+      }
+    }
+
+    &.red {
+      background-color: $color-red;
+
+      &::before {
+        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgb(230 45 45 / 78%));
+      }
+    }
+
+    &.green {
+      background-color: $color-green;
+
+      &::before {
+        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgb(92 222 83 / 82%));
+      }
+    }
+
+    &.blue {
+      background-color: $color-azure;
+
+      &::before {
+        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgb(94 232 246 / 82%));
+      }
+    }
   }
 
   @include devicebreak(large) {
@@ -104,10 +130,8 @@
 
     bottom: 0;
     content: '';
-    position: relative;
 
     @include devicebreak(medium) {
-      background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.8));
       height: 100%;
       position: absolute;
     }

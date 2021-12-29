@@ -23,27 +23,14 @@
     }
   }
 
-  &.yellow {
-    .card-thumbnail__image::before {
-      @include background-image(42deg, $color-yellow, transparent 80%);
-    }
-  }
+  // color map
+  $colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "azure": $color-azure);
 
-  &.red {
-    .card-thumbnail__image::before {
-      @include background-image(42deg, $color-red, transparent 80%);
-    }
-  }
-
-  &.green {
-    .card-thumbnail__image::before {
-      @include background-image(42deg, $color-green, transparent 80%);
-    }
-  }
-
-  &.azure {
-    .card-thumbnail__image::before {
-      @include background-image(42deg, $color-azure, transparent 80%);
+  @each $name, $color in $colors {
+    &.#{$name} {
+      .card-thumbnail__image::before {
+      @include background-image(42deg, #{$color}, transparent 80%);
+      }
     }
   }
 

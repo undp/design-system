@@ -9,7 +9,7 @@ export const BlockquoteComponent = ({ blockquoteText, citeText, Colors }) => (
         {' '}
       </Blockquote>
     ) : (
-      <div className={['blockquote-wrapper', `${[`${Colors}`]}`].join(' ')}>
+      <div className={['blockquote', `${[`${Colors}`]}`].join(' ')}>
         <Blockquote text={blockquoteText} citeText={citeText}>
           {' '}
         </Blockquote>
