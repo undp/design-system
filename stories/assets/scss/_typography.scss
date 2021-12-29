@@ -134,9 +134,11 @@ dt {
 
 dd {
   margin-inline-start: $spacing-40;
+  margin-bottom: $spacing-16;
 
   @include devicebreak(medium) {
     margin-inline-start: $spacing-48;
+    margin-bottom: $spacing-24;
   }
 }
 
