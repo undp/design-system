@@ -25,7 +25,12 @@
       }
 
       h1 {
-        font-size: 5.5rem;
+        font-size: $spacing-40;
+        font-weight: 700;
+
+        @include devicebreak(medium) {
+          font-size: $spacing-48;
+        }
       }
     }
 
@@ -64,6 +69,10 @@
           margin-top: $spacing-40;
         }
       }
+    }
+
+    .cta-container {
+      margin-top: 5.75rem;
     }
   }
 }

@@ -51,6 +51,9 @@
     margin: 0;
     min-width: 107px;
     padding: 0;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+    border-radius: 0;
   }
 
   &.white {
@@ -72,6 +75,8 @@
     .form-submit {
       background-color: $color-white;
       color: $color-blue-600;
+      -webkit-appearance: none;
+      border-radius: 0;
 
       &:hover {
         background-color: $color-blue-600;
@@ -92,5 +97,3 @@
     justify-content: flex-start;
   }
 }
-
-/* signup newsletter end */
