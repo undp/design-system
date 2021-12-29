@@ -1,4 +1,3 @@
-
 export const getData = (lang) => {
   $.ajax({
     method: 'GET',
@@ -14,7 +13,7 @@ export const getData = (lang) => {
         const submenus = item.submenus
           .map((menu, index) => `<li id="${menu.link.id}-${item.id}" class="${
             index === 0 ? 'active' : ''
-          }"><a href="${menu.external_link?menu.external_link:'#'}" class="${menu.external_link?['sub-link','sub-external'].join(' '):'sub-link'}">${menu.link.label}</a></li>`)
+          }"><a tabindex="${index+1}" href="${menu.external_link?menu.external_link:'#'}" class="${menu.external_link?['sub-link','sub-external'].join(' '):'sub-link'}">${menu.link.label}</a></li>`)
           .join(' ');
 
         const gridX = item.submenus
@@ -97,7 +96,6 @@ export const getData = (lang) => {
         `;
         mobileMegaWrapper.append(renderMobileHtml);
       });
-    }
+    },
   });
 };
-

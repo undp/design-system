@@ -3,7 +3,7 @@
 @import '../../../assets/scss/breakpoints';
 
 /* checkbox */
-.checkbox-wrapper {
+.checkbox {
   display: inline-block;
   margin-right: $spacing-16;
   padding-left: $spacing-24;
@@ -37,7 +37,11 @@
     }
 
     &:checked + label::before {
-      background-image: url(#{$img-path-Icon}icon-check.svg);
+      background-image: url(#{$img-path-Icon}/icon-check.svg);
+    }
+
+    &:focus-visible + label::before {
+      outline: $color-blue-500 solid 2px;
     }
   }
 }

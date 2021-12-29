@@ -185,7 +185,21 @@
   }
 
   &:hover {
-    background-color: $color-yellow;
+    &.yellow {
+      background-color: $color-yellow;
+    }
+
+    &.red {
+      background-color: $color-red;
+    }
+
+    &.green {
+      background-color: $color-green;
+    }
+
+    &.blue {
+      background-color: $color-azure;
+    }
 
     & .statscard__number {
       color: $color-black;

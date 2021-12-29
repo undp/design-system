@@ -11,7 +11,7 @@ import { Heading } from '../../Atom/Typography/Heading/Heading';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 
 export const SdgPage = ({
-  herodata, title, active, imgsource, altname, footerData, statsData, goaldata, modaltitle, description, modalgoaltitle, modalsdgimg, modalsdgimgalt, goalcount, Sdgnewdata, imgsrcsdg, sdgtitle, goaltitle, goalpara, languageswitcherData, rightNavigationData, backcaption, contentdata, storyBtn, Sdgcontenttitle, locationData, langSelect, leftNavigationData, navigationData, locale,
+  herodata, title, active, imgsource, altname, footerData, statsData, goaldata, modaltitle, description, modalgoaltitle, modalsdgimg, modalsdgimgalt, goalcount, Sdgnewdata, imgsrcsdg, sdgtitle, goaltitle, goalpara, languageswitcherData, rightNavigationData, backcaption, contentdata, storyBtn, Sdgcontenttitle, locationData, langSelect, nextcardtitle, leftNavigationData, navigationData, locale,
 }) => {
   useEffect(() => {
     SdgModal();
@@ -28,7 +28,7 @@ export const SdgPage = ({
         locationData={locationData}
         langSelect={langSelect}
       />
-      <div className='sdg-banner'>
+      <div className="sdg-banner">
         <PageHero
           data={herodata}
           title={title}
@@ -39,17 +39,17 @@ export const SdgPage = ({
       </div>
       <div className="grid-container">
         <div className="grid-x what-goal">
-          <div className="cell large-3 medium-4 small-9 small-offset-1">
+          <div className="cell large-3 medium-5 small-9 small-offset-1">
             <Heading type="2" label={goaltitle} />
           </div>
-          <div className="cell large-6 medium-5 small-10 small-offset-1">
+          <div className="cell large-6 medium-4 small-10 small-offset-1">
             <Heading type="4" label={goalpara} />
           </div>
         </div>
       </div>
       <div className="sdg-card-list">
         <Sdg data={Sdgnewdata} imgsrc={imgsrcsdg} title={sdgtitle} />
-        <Sdgmodal goaldata={goaldata} statsData={statsData} goalcount={goalcount} modaltitle={modaltitle} description={description} goaltitle={modalgoaltitle} sdgimg={modalsdgimg} alt={modalsdgimgalt} title={modalsdgimgalt} contentdata={contentdata} storyBtn={storyBtn} Sdgcontenttitle={Sdgcontenttitle} />
+        <Sdgmodal goaldata={goaldata} statsData={statsData} goalcount={goalcount} modaltitle={modaltitle} description={description} goaltitle={modalgoaltitle} sdgimg={modalsdgimg} alt={modalsdgimgalt} title={modalsdgimgalt} contentdata={contentdata} storyBtn={storyBtn} Sdgcontenttitle={Sdgcontenttitle} nextcardtitle={nextcardtitle} />
       </div>
       <Footer
         src={logo}

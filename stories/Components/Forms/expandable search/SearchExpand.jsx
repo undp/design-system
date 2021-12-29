@@ -1,8 +1,7 @@
-import React from "react";
-import "./SearchExpand.scss";
-import { IconsSearchBlack } from "../../../Atom/Icons/search_black";
-import { init } from "../../../assets/js/expand-search.js";
-import { useEffect } from "react";
+import React, { useEffect } from 'react';
+import './SearchExpand.scss';
+import { IconsSearchBlack } from '../../../Atom/Icons/search_black';
+import { init } from '../../../assets/js/expand-search';
 
 export const SearchExpand = ({}) => {
   useEffect(() => {

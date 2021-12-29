@@ -7,11 +7,15 @@ import './stats.scss';
 export const Stats = ({ data, imageback }) => {
   useEffect(() => {
     StatsFun('.stats-grid .stats-panel');
-    viewport('.stats-grid .statspanel-card');
+    viewport('.stats-panel-card');
   }, []);
   return (
     <div className="grid-x stats-grid">
-      {data.map((item, index) => <StatsPanel number={item.number} imageback={imageback} percent={item.percent} content={item.content} delaytime={2 + index++} key={index} />)}
+      {data.map((item, index) => (
+        <div className={`cell medium-3 stats-panel-card left-right delay-${2 + index++}`} key={index}>
+          <StatsPanel number={item.number} imageback={imageback} percent={item.percent} content={item.content} />
+        </div>
+      ))}
     </div>
   );
 };

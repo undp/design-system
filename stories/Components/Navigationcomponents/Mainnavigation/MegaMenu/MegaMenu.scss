@@ -10,7 +10,7 @@
   padding: $spacing-64 $spacing-24 0 $spacing-48;
   position: absolute;
   top: 7.125rem;
-  z-index: 1;
+  z-index: 2;
 
   &.show-mega {
     display: block;
@@ -37,22 +37,25 @@
         a {
           background: $color-blue-600;
           color: $color-white;
-          &.sub-external{
-            justify-content: space-between;
+
+          &.sub-external {
             align-items: center;
-          &::after{
-            background: url(#{$img-path-Iconfourback}/external-default-white.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
-            cursor: pointer;
-            height: $spacing-32;
-            width: $spacing-32;
-            content:'';
-          }
-          &:hover{
-            &::after{
-              background: url(#{$img-path-Iconfourback}/external-white-hover.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
+            justify-content: space-between;
+
+            &::after {
+              background: url(#{$img-path-Iconfourback}/external-default-white.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
+              content: '';
+              cursor: pointer;
+              height: $spacing-32;
+              width: $spacing-32;
+            }
+
+            &:hover {
+              &::after {
+                background: url(#{$img-path-Iconfourback}/external-white-hover.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
+              }
             }
           }
-        }
         }
       }
 
@@ -65,23 +68,26 @@
         padding: $spacing-24;
         text-transform: uppercase;
 
-        &.sub-external{
-            justify-content: space-between;
-            align-items: center;
-          &::after{
+        &.sub-external {
+          align-items: center;
+          justify-content: space-between;
+
+          &::after {
             background: url(#{$img-path-Iconfourback}/external-default.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
+            content: '';
             cursor: pointer;
             height: $spacing-32;
             width: $spacing-32;
-            content:'';
           }
           &:hover{
             &::after{
-              background: url(#{$img-path-Iconfourback}/external-hover.svg) no-repeat 0 bottom/32px 34px;
+              background: url(#{$img-path-Iconfourback}/external-hover.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
             }
           }
         }
-
+        &:focus{
+          border: 0;
+        }
         &:hover {
           background: $color-blue-600;
           color: $color-white;

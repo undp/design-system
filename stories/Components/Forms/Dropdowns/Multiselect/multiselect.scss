@@ -51,7 +51,7 @@
     list-style: none;
     margin-bottom: 0;
 
-    > .checkbox-wrapper {
+    > .checkbox {
       &:hover {
         background-color: $color-gray-100;
       }
@@ -126,7 +126,7 @@
   }
 }
 
-.options .checkbox-wrapper {
+.options .checkbox {
   display: block;
   margin: 0 -1rem;
   padding: 0 $spacing-16;
@@ -166,7 +166,7 @@
       }
     }
 
-    .checkbox-wrapper {
+    .checkbox {
       input[type='checkbox'],
       input[type='checkbox'] + label::before {
         left: $spacing-16;

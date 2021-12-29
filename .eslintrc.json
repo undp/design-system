@@ -32,6 +32,8 @@
 		"jsx-a11y/role-has-required-aria-props": "off",
 		"jsx-a11y/control-has-associated-label": "off",
 		"jsx-a11y/anchor-is-valid": "off",
+		"jsx-a11y/img-redundant-alt": "off",
+		"jsx-a11y/no-noninteractive-tabindex": "off",
 		"no-mixed-operators": "off",
 		"jsx-a11y/role-supports-aria-props": "off",
 		"no-param-reassign": "off",
@@ -56,13 +58,18 @@
 		"vars-on-top": "off",
 		"no-redeclare": "off",
 		"mdx/no-unused-expressions": "off",
+		"prefer-const": "off",
+		"jsx-a11y/anchor-has-content": "off",
+		"import/no-unresolved": [0],
 		"react/no-unescaped-entities": [0],
 		"react-a11y-role-has-required-aria-props": [0],
 		"@typescript-eslint/no-empty-interface": [0],
 		"import/no-extraneous-dependencie": "off",
     "react/jsx-props-no-spreading": "off",
 		"import/no-extraneous-dependencies": "off",
-		"no-console": "off"
+		"no-console": "off",
+		"no-return-assign": ["warn", "always"],
+		"func-names": ["warn", "never"]
 	},
 	"settings": {
 		"mdx/code-blocks": true
@@ -72,6 +79,5 @@
 			"files": ["stories/**/*.jsx", "stories/**/*.mdx"]
 		}
 	]
-	
 }
 

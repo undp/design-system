@@ -9,13 +9,14 @@ export const DownloadCard = ({
   image, image2, title, format, download,
 }) => (
   <div className="download-card">
-    {image && <Publicationthumb />}
+    {image && <Publicationthumb Hovercolors="yellow" />}
     {image2 && <Cardthumb />}
     <div className="download-card__description">
       <p className="download-card__title">{title}</p>
       <p className="download-card__format">{format}</p>
       <a href="#" className="download-card__download">
         {download}
+        <Icondownload/>
       </a>
     </div>
   </div>

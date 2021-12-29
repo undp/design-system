@@ -2,13 +2,13 @@ import React from 'react';
 import { ProgressBarNavigation } from '../../Atom/Navigation/ProgressBarNavigation/ProgressBarNavigation';
 import { PageHero } from '../../Components/UIcomponents/Hero/Pagehero/PageHero';
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
-import { Sidebar } from "../../Components/Navigationcomponents/Sidebar/Sidebar";
+import { Sidebar } from '../../Components/Navigationcomponents/Sidebar/Sidebar';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 import {FluidImageSizeCarousel} from '../../Components/UIcomponents/Carousel/FluidImageSizeCarousel/FluidImageSizeCarousel';
 import { Footer } from '../../Organism/Footer/Footer';
 import './genericpage.scss';
-import GlobalHeader from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader";
+import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 
 
 export const GenericPage = ({
@@ -28,11 +28,10 @@ export const GenericPage = ({
     locale,
     locationData,
     langSelect,
-    backcaption,
+    backcaption
   }) => (
-    <>
-    
-    <GlobalHeader
+    <div className="generic-page">
+     <GlobalHeader
         backcaption={backcaption}
         locale={locale}
         leftNavigationData={leftNavigationData}
@@ -42,28 +41,27 @@ export const GenericPage = ({
         locationData={locationData}
         langSelect={langSelect}
       ></GlobalHeader>
-      
-      <ProgressBarNavigation/>
+      <ProgressBarNavigation Colors='yellow'/>
         <div class="grid-x grid-margin-x">
             <div class="cell small-12 sidebar-width">
                 <div class="column sidebar-mobile">
                     <Sidebar
-                            data={sidebarCaptionData.sidebardata}
-                            headerText={sidebarCaptionData.headerText}
-                            label={sidebarCaptionData.label}
-                            active={sidebarCaptionData.active}
+                        data={sidebarCaptionData.sidebardata}
+                        headerText={sidebarCaptionData.headerText}
+                        label={sidebarCaptionData.label}
+                        active={sidebarCaptionData.active}
                     />
                 </div>
             </div>
         </div>
-      <PageHero 
-        data={herodata} 
-        title={title} 
-        content={content}
-        imgsrc={imgsource}
-        imgalt={altname}
-        active={active}
-      />
+        <PageHero 
+            data={herodata} 
+            title={title} 
+            content={content}
+            imgsrc={imgsource}
+            imgalt={altname}
+            active={active}
+        />
     
         <div class="grid-container fluid content-bottom">      
             <div class="grid-x grid-margin-x margin-top-72">
@@ -99,7 +97,7 @@ export const GenericPage = ({
                                 />
                             </div>
                         </div>                        
-                        <div class="cell large-9 small-12 margin-top-48">
+                        <div class="cell large-9 small-12 margin-top-80">
                             <div class="column">
                                 <Heading 
                                     type='3' 
@@ -170,7 +168,7 @@ export const GenericPage = ({
             copyright={footerData.copyright}
             menudata={footerData.menudata}
             {...{ color: 'blue' }}
-            />
-    </>
+        />
+    </div>
   );
   

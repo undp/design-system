@@ -1,16 +1,17 @@
-import React, { useEffect } from "react";
-import viewport from "../../assets/js/viewport";
-import { Homepageherooption } from "../../Components/UIcomponents/Hero/Homepagehero/HomepageHeroOption";
-import { ContentCardWithAndWithoutImage } from "../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage";
-import { Heading } from "../../Atom/Typography/Heading/Heading";
-import { FeaturedCard } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard";
-import { HeadingBig } from "../../Molecules/Text/HeadingBig/HeadingBig";
-import { PageWideCard } from "../../Organism/Blocks/FeaturedContentCard/PagewideContentCard/PageWideCard";
-import { ImageRevealCards } from "../../Organism/Blocks/ImageRevealCards/ImageRevealCards";
-import { StatsSlider } from "../../Patterns/StatsSlider/StatsSlider";
-import CountrySiteHeader from "../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader"
-import { Footer } from "../../Organism/Footer/Footer";
-import "./countryhomepage.scss";
+import React, { useEffect } from 'react';
+import viewport from '../../assets/js/viewport';
+import { Homepageherooption } from '../../Components/UIcomponents/Hero/Homepagehero/HomepageHeroOption';
+import { ContentCardWithAndWithoutImage } from '../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage';
+import { Heading } from '../../Atom/Typography/Heading/Heading';
+import { FeaturedCard } from '../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard';
+import { HeadingBig } from '../../Molecules/Text/HeadingBig/HeadingBig';
+import { PageWideCard } from '../../Organism/Blocks/FeaturedContentCard/PagewideContentCard/PageWideCard';
+import { ImageRevealCards } from '../../Organism/Blocks/ImageRevealCards/ImageRevealCards';
+import { StatsSlider } from '../../Patterns/StatsSlider/StatsSlider';
+import CountrySiteHeader from '../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader'
+import { Footer } from '../../Organism/Footer/Footer';
+import './countryhomepage.scss';
+import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 
 
 export const CountryHomepage = ({
@@ -46,14 +47,15 @@ export const CountryHomepage = ({
   logo,
   logowhite,
   headingTop,
-  takeAcrtionHead
+  takeAcrtionHead,
+  storyBtn
 }) => {
   useEffect(() => {
-    viewport('.our-impact h2');  
-}, []);
+    viewport('.our-impact h2');
+  }, []);
   return (
     <div>
-    <CountrySiteHeader
+      <CountrySiteHeader
         siteTitleData={siteTitleData}
         backcaption={backcaption}
         locale={locale}
@@ -88,34 +90,37 @@ export const CountryHomepage = ({
             />
           </div>
         </div>
-        <div class="grid-x wide-card-heading">
-          <div class="cell small-12 medium-12 large-11 large-offset-1">
+        <div className="grid-x wide-card-heading">
+          <div className="cell small-12 medium-12 large-11 large-offset-1">
             <Heading type="2" label={storiesHeading} />
           </div>
-            <PageWideCard
-              label={PagewidecardTag}
-              title={PagewidecardTitle}
-              paragraph={PagewidecardParagraph}
-              button={PagewidecardBtnlabel}
-            />
+          <PageWideCard
+            label={PagewidecardTag}
+            title={PagewidecardTitle}
+            paragraph={PagewidecardParagraph}
+            button={PagewidecardBtnlabel}
+          />
         </div>
-        
+
         <ContentCardWithAndWithoutImage
-              data={featureddataafterwedo.contentdata }
-              storyBtn={featureddataafterwedo.storyBtn }
-            />
+          data={featureddataafterwedo.contentdata }
+          storyBtn={featureddataafterwedo.storyBtn }
+        />
+        <div className="cell cta-container">
+            <CtaButton label={storyBtn} For_Primary='No Arrow' />
+        </div> 
         <div class="grid-x our-impact">
           <div class="cell small-12 medium-12 large-11 large-offset-1">
             <Heading className="left-right" type="2" label={statHeading} />
           </div>
-          <div class="cell small-12 medium-12 large-12">
+          <div className="cell small-12 medium-12 large-12">
             <StatsSlider data={StatsSliderData} />
           </div>
         </div>
         <ImageRevealCards
-            data={takeactioncard.data}
-            label={takeAcrtionHead}
-          />
+          data={takeactioncard.data}
+          label={takeAcrtionHead}
+        />
       </div>
 
       <Footer
@@ -137,7 +142,7 @@ export const CountryHomepage = ({
         data={footerData.footerdata}
         copyright={footerData.copyright}
         menudata={footerData.menudata}
-        {...{ color: "blue" }}
+        {...{ color: 'blue' }}
       />
     </div>
   );

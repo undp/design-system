@@ -119,23 +119,23 @@
     }
 
     &__arrows {
+      @extend %carousel_arrows;
+
       margin-left: 2.5rem;
 
-      @include devicebreak(large){
+      @include devicebreak(large) {
         margin-left: 4rem;
       }
-
-      @extend %carousel_arrows;
     }
 
     &__arrow {
       @extend %carousel_arrow;
 
-      &:first-child{
+      &:first-child {
         margin-right: 0.75rem;
       }
 
-      &:last-child{
+      &:last-child {
         margin-left: 0.75rem;
       }
 
@@ -176,13 +176,13 @@
         margin-right: 0;
       }
 
-      &__arrow{
-        &:first-child{
-          margin-right: 0;
+      &__arrow {
+        &:first-child {
           margin-left: 0.75rem;
+          margin-right: 0;
         }
-  
-        &:last-child{
+
+        &:last-child {
           margin-left: 0;
           margin-right: 0.75rem;
         }
@@ -192,7 +192,7 @@
         margin-left: auto;
         margin-right: 2.5rem;
 
-        @include devicebreak(large){
+        @include devicebreak(large) {
           margin-right: 4rem;
         }
       }

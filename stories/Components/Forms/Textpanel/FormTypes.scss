@@ -1,9 +1,9 @@
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
 .form-wrapper {
-    .text-panel{
-        .button{
+    .text-panel {
+        .button {
             margin-top: 0.1875rem;
         }
     }
@@ -12,7 +12,7 @@
     }
     .input-group {
         .input__controls {
-            margin:0.9375rem 0;
+            margin: 0.9375rem 0;
             border-radius: 0;
         }
     }
@@ -21,13 +21,30 @@
             object-fit: cover;
             height: 100%;
         }
+        .stacked-form {
+            height: inherit;
+            h2 {
+                margin-bottom: $spacing-16;
+            }
+            p {
+                margin-bottom: 2.25rem;
+                @include devicebreak(small) {
+                    margin-bottom: 1.25rem;
+                }
+            }
+            .button {
+                margin-top: 2.25rem;
+                @include devicebreak(small) {
+                    margin-bottom: 1.25rem;
+                }
+            }
+        }
     }
     .form-bg {
         background: $color-gray-100;
         padding: $spacing-96 0;
         box-sizing: border-box;
         @include devicebreak(small) {
-            margin-top: $spacing-16;
             padding: $spacing-48 $spacing-24;
         }
     }
@@ -37,38 +54,31 @@
         }
     }
     .wide-form {
-        @include devicebreak(small){
-            display: flex;
-            align-items: center;
-            height: 100vh;
-            background: $color-gray-100;
-            margin: -1.375rem;
-            padding: 0 $spacing-32;
-        }
-        h2{
+        h2 {
             margin-bottom: $spacing-24;
         }
         .input-group {
-            
             .input__controls {
-                margin:$spacing-12 0;
-                @include devicebreak(small) {
-                    margin:$spacing-08 0;
-                }
+                margin: $spacing-12 0;
             }
         }
         .button {
-                margin-top: $spacing-16;
-            
+            margin-top: 2.25rem;
+            @include devicebreak(small) {
+                margin-top: 1.25rem;
+            }
         }
     }
     .stacked-form {
+        h2 {
+            margin-bottom: $spacing-16;
+        }
         p {
-            margin-bottom: $spacing-50;
+            margin-bottom: 2.25rem;
         }
         .input-group {
             .input__controls {
-                margin:$spacing-12 0;
+                margin: $spacing-12 0;
             }
         }
         .button {

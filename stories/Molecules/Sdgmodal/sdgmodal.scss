@@ -5,8 +5,8 @@
 .modal-sdg {
   @include transition(all 0.4s ease);
 
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
   height: calc(100vh - 7.1875rem);
   opacity: 1;
   overflow-x: hidden;
@@ -14,11 +14,11 @@
   top: 7.1875rem;
   visibility: visible;
   width: 100%;
-  z-index: 99;
+  z-index: 1;
 
   @include devicebreak(mediumonlytab) {
-    top: 4.6875rem;
     height: calc(100vh - 4.6875rem);
+    top: 4.6875rem;
   }
 
   @include devicebreak(small) {
@@ -60,6 +60,10 @@
     height: 100%;
     overflow-y: auto;
   }
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 .sdg-container {
@@ -579,11 +583,22 @@
 
 .ndg-container {
   padding-left: $spacing-32;
-  .sdg-image {
-    display: none;
+
+  @include devicebreak(medium) {
+    .sdg-card {
+      strong {
+        padding-left: $spacing-32;
+      }
+
+      h4 {
+        left: 15rem;
+      }
+    }
   }
 
+
   @include devicebreak(small) {
+    padding-bottom: $spacing-12;
     padding-left: $spacing-12;
 
     .sdg {
@@ -615,10 +630,6 @@
           right: $spacing-24;
           width: 13px;
         }
-      }
-
-      &-image {
-        display: none;
       }
     }
   }
@@ -694,8 +705,10 @@
 
 [dir='rtl'] {
   .modal-sdg {
-    padding-left: 0;
-    padding-right: $spacing-12;
+    @include devicebreak(small) {
+      padding-left: 0;
+      padding-right: $spacing-12;
+    }
 
     .modal-header {
       left: 0;
@@ -710,6 +723,8 @@
 
   .sdg-container {
     @include devicebreak(medium) {
+      padding: 0 $spacing-32 0 $spacing-24;
+
       .description {
         padding: 4.375rem $spacing-96 5.625rem 3.75rem;
 
@@ -734,6 +749,20 @@
   .ndg-container {
     padding-left: 0;
     padding-right: $spacing-32;
+
+    @include devicebreak(medium) {
+      .sdg-card {
+        strong {
+          padding-left: 0;
+          padding-right: $spacing-32;
+        }
+
+        h4 {
+          left: unset;
+          right: 15rem;
+        }
+      }
+    }
 
     @include devicebreak(small) {
       padding-right: $spacing-12;

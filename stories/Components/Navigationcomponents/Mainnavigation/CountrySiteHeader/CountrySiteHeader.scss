@@ -2,7 +2,6 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
 
-
 .country-header {
   @extend %header;
 
@@ -38,6 +37,8 @@
       align-items: flex-start;
       display: flex;
       height: 7.1875rem;
+      position: relative;
+      z-index: 2;
 
       @include devicebreak(mediumonlytab) {
         height: 4.6875rem;
@@ -152,6 +153,15 @@
       .icon-globe {
         margin-left: 0;
         margin-right: 1.75rem;
+      }
+    }
+    .menu {
+      li {
+        margin: $spacing-12 3.6875rem $spacing-12 0;
+  
+        &:first-child {
+          margin-right: 0;
+        }
       }
     }
   }

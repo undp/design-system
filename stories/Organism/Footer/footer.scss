@@ -155,6 +155,12 @@
 
 @include devicebreak(medium) {
   [dir='rtl'] {
+    .footer {
+      .footer__icons {
+        justify-content: flex-start;
+      }
+    }
+
     .footer-bottom {
       &.two {
         .footer__condition_text {

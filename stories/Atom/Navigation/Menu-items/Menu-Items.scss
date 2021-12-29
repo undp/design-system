@@ -1,9 +1,9 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 // * menu item row start *//
-.menu-item {
+.menu li {
   a {
     @extend %paragragh-font-14;
     @extend %img_none;

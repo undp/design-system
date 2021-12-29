@@ -2,15 +2,20 @@
 @import '../../../assets/scss/mixins';
 
 /* signup newsletter start */
-.footer-subtitle {
-  display: block;
-  font-size: 1rem;
-  line-height: 1.4;
-  margin-bottom: $spacing-12;
-  text-align: left;
+.sign-up {
+  label{
+    display: block;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: $spacing-12;
+    text-align: left;
 
-  @include devicebreak(medium) {
-    text-align: right;
+    @include devicebreak(medium) {
+      text-align: right;
+    }
+  }
+  &.white {
+    color: $color-white;
   }
 }
 
@@ -39,12 +44,16 @@
   }
 
   .form-submit {
+    background-color: $color-dark-red;
     cursor: pointer;
     font-weight: 700;
+    height: 46px;
+    margin: 0;
     min-width: 107px;
     padding: 0;
-    margin: 0;
-    background-color: $color-dark-red;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+    border-radius: 0;
   }
 
   &.white {
@@ -66,6 +75,8 @@
     .form-submit {
       background-color: $color-white;
       color: $color-blue-600;
+      -webkit-appearance: none;
+      border-radius: 0;
 
       &:hover {
         background-color: $color-blue-600;
@@ -86,5 +97,3 @@
     justify-content: flex-start;
   }
 }
-
-/* signup newsletter end */

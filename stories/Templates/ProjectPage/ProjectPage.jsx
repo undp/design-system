@@ -1,0 +1,177 @@
+import React, { useEffect } from 'react';
+import viewport from '../../assets/js/viewport';
+import { PageHero } from '../../Components/UIcomponents/Hero/Pagehero/PageHero';
+import CountrySiteHeader from '../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader';
+import { HeadingBig } from '../../Molecules/Text/HeadingBig/HeadingBig';
+import { Footer } from '../../Organism/Footer/Footer';
+import { Heading } from '../../Atom/Typography/Heading/Heading';
+import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
+import { DownloadCard } from '../../Molecules/Blocks/DownloadCard/DownloadCard';
+import { Projectdetail } from '../../Organism/Text/ProjectDetail/ProjectDetail';
+import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { ContentCardWithAndWithoutImage } from '../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage';
+import { Icondownload } from '../../Atom/Icons/download';
+import { Statscardslider } from '../../Organism/Statscardslider/Statscardslider';
+import './projectpage.scss';
+
+export const ProjectPage = ({
+    footerData, siteTitleData, backcaption, locale, leftNavigationData, navigationData, rightNavigationData, languageswitcherData, locationData, langSelect, logo, logowhite, herodata, content, title, imgsrc, imgalt, topHeading, topParagraph, topParagraph1, whatwedoheader, whatwedodescription, relatedHeading, download, downloadTitle, downloadTitle1, downloadTitle2, downloadTitle3, downloadTitle4, downloadTitle5, downloadTitle6, impactHead, title1, title2, title3, title4, title5, title6, title7, subtitle1, subtitle2, subtitle3, subtitle4, subtitle5, subtitle6, subtitle7, buttonProjectInfo, supportHeading, exploreHeading, exploreMoreBtn, exploreMoreData, statsliderdata
+  }) => {
+    return (
+      <>
+      <CountrySiteHeader
+          siteTitleData={siteTitleData}
+          backcaption={backcaption}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          languageswitcherData={languageswitcherData}
+          locationData={locationData}
+          langSelect={langSelect}
+        />
+        <div className="project-page-hero">
+            <PageHero 
+                data={herodata} 
+                title={title} 
+                content={content} 
+                active={'white'} 
+                imgsrc={imgsrc} 
+                imgalt={imgalt} 
+            />
+        </div>        
+        
+        <div className="grid-container fluid project-page">
+            <div class="grid-x grid-margin-x">
+                <div class="cell large-offset-1 small-offset-1 small-10">
+                    <div class="column">
+                        <Heading type='2' label={topHeading} />
+                    </div>
+                </div>
+                <div class="cell large-offset-3 large-7 small-offset-1 small-10 copy-text">
+                    <div class="column">
+                        <P label={topParagraph}/>
+                        <P label={topParagraph1} />
+                    </div>
+                </div>
+                <div className="cell large-11 medium-11 large-offset-1">
+                    <div class="column">
+                        <HeadingBig
+                            headerText={whatwedoheader}
+                            descriptionText={whatwedodescription}
+                        />
+                    </div>
+                </div>                               
+            </div>
+            <div class="grid-x grid-margin-x project-material">
+                <div class="cell large-offset-1 small-offset-1 small-10">
+                    <div class="column">
+                        <Heading type='2' label={relatedHeading} />
+                    </div>
+                </div> 
+                <div class="cell small-10 small-offset-1 large-offset-3 large-6">
+                    <div class="column">
+                        <DownloadCard title={downloadTitle} download={download} />
+                    </div>
+                    <div class="grid-x grid-margin-x margin-top-24">
+                        <div class="cell large-6">
+                            <div class="column">
+                                <DownloadCard title={downloadTitle1} download={download} />
+                            </div>
+                        </div>
+                        <div class="cell large-6">
+                            <div class="column">
+                                <DownloadCard title={downloadTitle2} download={download} />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column margin-top-24">
+                        <DownloadCard title={downloadTitle3} download={download} />
+                    </div> 
+                    <div class="column margin-top-24">
+                        <DownloadCard title={downloadTitle4} download={download} />
+                    </div>  
+                    <div class="column margin-top-24">
+                        <DownloadCard title={downloadTitle5} download={download} />
+                    </div>
+                    <div class="grid-x grid-margin-x margin-top-24">
+                        <div class="cell large-6">
+                            <div class="column">
+                                <DownloadCard title={downloadTitle6} download={download} />
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+            </div>
+            <div class="grid-x grid-margin-x project-impact">
+                <div class="cell large-offset-1 large-10">
+                    <Projectdetail
+                        text={impactHead}
+                        title1={title1}
+                        title2={title2}
+                        title3={title3}
+                        title4={title4}
+                        title5={title5}
+                        title6={title6}
+                        title7={title7}
+                        subtitle1={subtitle1}
+                        subtitle2={subtitle2}
+                        subtitle3={subtitle3}
+                        subtitle4={subtitle4}
+                        subtitle5={subtitle5}
+                        subtitle6={subtitle6}
+                        subtitle7={subtitle7}                        
+                    />
+                    <CtaButton label={buttonProjectInfo} Type="Secondary" /> 
+                </div>                
+            </div>
+            <div class="grid-x grid-margin-x project-support">
+                <div class="cell large-offset-1 small-offset-1 small-10">
+                    <div class="column">
+                        <Heading type='2' label={supportHeading} />
+                    </div>                    
+                </div> 
+                <div class="cell large-offset-1 small-offset-1 small-11 large-11">
+                    <div class="column">
+                        <Statscardslider data={statsliderdata}/>
+                    </div>                    
+                </div> 
+            </div>
+            <div class="grid-x grid-margin-x project-explore">
+                <div class="cell large-offset-1 small-offset-1 small-10">
+                    <div class="column">
+                        <Heading type='2' label={exploreHeading} />
+                    </div>
+                </div> 
+                <ContentCardWithAndWithoutImage data={exploreMoreData} />
+                <div className="cell cta-container">
+                    <CtaButton label={exploreMoreBtn} Type="Secondary" />
+                </div> 
+            </div>
+        </div>
+  
+        <Footer
+          src={logo}
+          srctwo={logowhite}
+          headerText={footerData.headerText}
+          headerText2={footerData.headerText2}
+          style="default"
+          alt="UNDP Logo"
+          element="input"
+          type="email"
+          required="required"
+          mode="form-email"
+          errorText={footerData.errorLabel}
+          label={footerData.labelname}
+          button={footerData.buttonname}
+          placeholder={footerData.placeholdername}
+          menutitle={footerData.pageTitle}
+          data={footerData.footerdata}
+          copyright={footerData.copyright}
+          menudata={footerData.menudata}
+          {...{ color: "blue" }}
+        />
+      </>
+    );
+  };
+  
