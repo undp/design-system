@@ -1,7 +1,7 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
- 
+  
 .mobile-nav {
   background: rgba(247, 247, 247, 0.8);
   box-sizing: border-box;
@@ -62,13 +62,7 @@
 
   .mob-sub-menu {
     display: none;
-<<<<<<< HEAD
     padding: 2.25rem 0;
-=======
-    padding: 2.0625rem 0 2.25rem;
-    position: absolute;
-    top: 0;
->>>>>>> und-746 mobile menu changes
 
     &.show-sub {
       display: block;
