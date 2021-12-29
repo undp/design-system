@@ -180,11 +180,19 @@
         &:first-child {
           margin-left: 0.75rem;
           margin-right: 0;
+
+          img{
+            @include transform(rotate(180deg))
+          }
         }
 
         &:last-child {
           margin-left: 0;
           margin-right: 0.75rem;
+
+          img{
+            @include transform(rotate(-180deg))
+          }
         }
       }
 
