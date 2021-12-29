@@ -67,7 +67,11 @@
 
         &__number {
           text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
-          -webkit-text-stroke: 1px $color-gray-700;
+
+          @supports (-webkit-text-stroke: 2px $color-gray-700) {
+            text-shadow: none;
+            -webkit-text-stroke: 2px $color-gray-700;
+          }
         }
 
         &__box {
@@ -101,7 +105,11 @@
         letter-spacing: 0.05rem;
         line-height: 1.09;
         text-shadow: -1px -1px 0 $color-white, 1px -1px 0 $color-white, -1px 1px 0 $color-white, 1px 1px 0 $color-white;
-        -webkit-text-stroke: 1px $color-white;
+
+        @supports (-webkit-text-stroke: 2px $color-white) {
+          text-shadow: none;
+          -webkit-text-stroke: 2px $color-white;
+        }
 
         @include devicebreak(medium) {
           font-size: 6.6rem;
