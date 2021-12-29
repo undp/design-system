@@ -6,7 +6,7 @@ export function FaqFun() {
   const accordion_panel = '.accordion__panel';
 
   $accordion_active_li.children('.accordion__panel').slideDown();
-  $accordion.click(function () {
+  $accordion.on('click, focus', function () {
     $(this).siblings('li').removeClass(accordion_active).children(accordion_panel)
       .slideUp();
     $(this).toggleClass(accordion_active).children(accordion_panel).slideToggle('');

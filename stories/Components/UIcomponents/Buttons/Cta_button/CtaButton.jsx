@@ -21,12 +21,12 @@ export const CtaButton = ({
     <>
       {Type === 'Secondary'
         ? (
-          <a className={['button', `button-${type}`, `${state}`].join(' ')}>
+          <a className={['button', `button-${type}`, `${state}`].join(' ')} role="button"  aria-pressed="false" href="#" >
             {label}
           </a>
         )
         : (
-          <a className={['button', `button-${type}`, ` button-${for_primary}`, `${state}`].join(' ')}>
+          <a className={['button', `button-${type}`, ` button-${for_primary}`, `${state}`].join(' ')} role="button" aria-pressed="false" href="#">
             {label}
           </a>
         )}

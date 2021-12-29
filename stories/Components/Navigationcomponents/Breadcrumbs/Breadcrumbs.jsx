@@ -19,13 +19,13 @@ export const Breadcrumbcomponent = ({ data, Color, ...args }) => {
         {data.map((item, i) => {
           if (i === lastIndex) {
             return (
-              <li key={i} aria-current="page">{item.text}</li>
+              <li key={i} aria-current="current page">{item.text}</li>
             );
           }
 
           return (
             <li key={i}>
-              <a href="#">{item.text}</a>
+              <a href="#" aria-label="page">{item.text}</a>
             </li>
           );
         })}
