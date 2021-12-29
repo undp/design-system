@@ -7,8 +7,8 @@ import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
 
 export const ImageOnlyCarousel = ({ data }) => {
   useEffect(() => {
-    CarouselFun('.image-only-carousel', 20, 30, 1, 0);
-    viewport('.image-only-carousel');
+    CarouselFun('.image-carousel', 20, 30, 1, 0);
+    viewport('.image-carousel');
   }, []);
   return (
     <div className="image-carousel left-right">
@@ -18,7 +18,7 @@ export const ImageOnlyCarousel = ({ data }) => {
       <div className="glide__track" data-glide-el="track">
         <div className="glide__slides">
           {data.map((item, index) => (
-            <div className="glide__slide">
+            <div className="glide__slide" aria-label={index}>
               <div className="grid-x">
                 <img className="image-carousel__image" src={item.slideImage} alt={item.slideImage} />
                 <div className="glide__arrows" data-glide-el="controls">

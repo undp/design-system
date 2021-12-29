@@ -2,7 +2,7 @@ import React from 'react';
 import './input_group.scss';
 
 export const Inputcomponent = ({
-  id, type, element, rows, cols, placeholder, required, labelText, errorText, minlength, helpText, State,
+  id, type, element, rows, cols, placeholder, name, required, labelText, errorText, minlength, helpText, State,
 }) => {
   const InputTag = `${element}`;
 
@@ -21,6 +21,7 @@ export const Inputcomponent = ({
             minlength={minlength}
             cols={cols}
             rows={rows}
+            name={type}
             className={[`${type} ${state}`].join(' ')}
           />
         {helpText && <p className="help">{ helpText }</p>}

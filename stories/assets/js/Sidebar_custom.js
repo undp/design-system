@@ -3,7 +3,7 @@ export function SidebarNav() {
       accordionPanel = $('.accordion-navbar .accordion__panel');
   $(accordionNav).each(function (index, element) {
     if ($(element).find('.accordion__panel').length) {
-      $(element).find('span').off('click').click(function (e) {
+      $(element).find('span').off('click').on('click, focus', function (e) {
         e.preventDefault();
         e.stopPropagation();
         const duration = '30';
