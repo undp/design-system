@@ -35,7 +35,7 @@
     }
 
     &.yellow::after {
-      @include gradient(0deg, $yellow-gradient);
+      @include gradient(15deg, $yellow-gradient);
     }
 
     &.red::after {
@@ -63,6 +63,8 @@
       }
 
       .statscard {
+        background-color: transparent;
+
         &__number {
           text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
           -webkit-text-stroke: 1px $color-gray-700;
