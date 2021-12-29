@@ -2,12 +2,22 @@
 @import '../../../../assets/scss/mixins';
 
 /* image only carousel start */
-.image-only-carousel {
+.image-carousel {
   overflow: hidden;
 
-  .medium-8 {
-    img {
-      width: 100%;
+  &__image{
+    max-width: 65%;
+    width: auto;
+    object-fit: cover;
+    height: 30rem;
+
+    @include devicebreak(large) {
+      height: 38.75rem;
+    }
+
+    @include devicebreak(small) {
+      max-width: 100%;
+      height: 21.875rem;
     }
   }
 
@@ -43,7 +53,7 @@
 }
 
 [dir='rtl'] {
-  .image-only-carousel {
+  .image-carousel {
     .glide {
       &__track {
         margin-left: -100%;
@@ -54,11 +64,19 @@
         &:first-child {
           margin-left: 0.75rem;
           margin-right: 0;
+
+          img{
+            @include transform(rotate(180deg))
+          }
         }
 
         &:last-child {
           margin-left: 0;
           margin-right: 0.75rem;
+
+          img{
+            @include transform(rotate(-180deg))
+          }
         }
       }
 

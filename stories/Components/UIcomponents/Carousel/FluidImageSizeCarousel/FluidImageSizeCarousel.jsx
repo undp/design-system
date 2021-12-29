@@ -10,11 +10,11 @@ import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
 
 export const FluidImageSizeCarousel = ({ data }) => {
   useEffect(() => {
-    CarouselFun('.fluid-image-size-carousel', '20', '20', '1');
-    viewport('.fluid-image-size-carousel');
+    CarouselFun('.fluid-carousel', '20', '20', '1');
+    viewport('.fluid-carousel');
   }, []);
   return (
-    <div className="fluid-image-size-carousel left-right">
+    <div className="fluid-carousel left-right">
       <div className="glide__bullets" data-glide-el="controls[nav]">
         {data.map((item, index) => <button className="glide__bullet" data-glide-dir={[`=${index}`]} aria-label={index} key={index} />)}
       </div>
@@ -22,21 +22,17 @@ export const FluidImageSizeCarousel = ({ data }) => {
         <div className="glide__slides">
           {data.map((item, index) => (
             <div className="glide__slide">
-              <div className="grid-x grid-margin-x">
-                <div className="medium-7 large-8 cell">
-                  <img className="fluid-image-size-carousel__image" src={item.slideImage} alt="" />
-                </div>
-                <div className="medium-5 large-4 cell">
-                  <div className="fluid-image-size-carousel__contents">
-                    <Heading type="6" label={item.tagtext} />
-                    <Heading type="4" label={item.titleText} />
-                    <P label={item.descText} />
-                    <div className="fluid-image-size-carousel__button-wrap">
-                      <Ctalink Type="Space" label={item.buttonText} />
-                      <div className="glide__arrows" data-glide-el="controls">
-                        <button className="glide__arrow glide__arrow--left" data-glide-dir="<"><img src={chevronLeftWhite} alt="Prev" /></button>
-                        <button className="glide__arrow glide__arrow--right" data-glide-dir=">"><img src={chevronRightWhite} alt="Next" /></button>
-                      </div>
+              <div className="grid-x">
+                <img className="fluid-carousel__image" src={item.slideImage} alt="" />
+                <div className="slide-content">
+                  <Heading type="6" label={item.tagtext} />
+                  <Heading type="4" label={item.titleText} />
+                  <P label={item.descText} />
+                  <div className="slide-content__button-wrap">
+                    <Ctalink Type="Space" label={item.buttonText} />
+                    <div className="glide__arrows" data-glide-el="controls">
+                      <button className="glide__arrow glide__arrow--left" data-glide-dir="<"><img src={chevronLeftWhite} alt="Prev" /></button>
+                      <button className="glide__arrow glide__arrow--right" data-glide-dir=">"><img src={chevronRightWhite} alt="Next" /></button>
                     </div>
                   </div>
                 </div>
