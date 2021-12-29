@@ -8,7 +8,7 @@ export const Ctalink = ({ label, Type, ...args }) => {
   }
 
   return (
-    <a className={['cta__link', `cta--${type}`].join(' ')} href="#">
+    <a className={['cta__link', `cta--${type}`].join(' ')} href="#" role="button" aria-pressed="false">
       {label}
     </a>
   );

@@ -10,8 +10,8 @@ import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
 
 export const FluidImageSizeCarousel = ({ data }) => {
   useEffect(() => {
-    CarouselFun('.fluid-image-size-carousel', 20, 20, 1, 0);
-    viewport('.fluid-image-size-carousel');
+    CarouselFun('.fluid-carousel', 20, 20, 1, 0);
+    viewport('.fluid-carousel');
   }, []);
   return (
     <div className="fluid-carousel left-right">
@@ -21,7 +21,7 @@ export const FluidImageSizeCarousel = ({ data }) => {
       <div className="glide__track" data-glide-el="track">
         <div className="glide__slides">
           {data.map((item, index) => (
-            <div className="glide__slide">
+            <div className="glide__slide" aria-label={index}>
               <div className="grid-x">
                 <img className="fluid-carousel__image" src={item.slideImage} alt="" />
                 <div className="slide-content">
