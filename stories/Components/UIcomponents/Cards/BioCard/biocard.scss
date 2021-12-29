@@ -23,6 +23,12 @@
     }
   }
 
+  &.yellow {
+    .card-thumbnail__image::before {
+      @include background-image(42deg, $color-yellow, transparent 80%);
+    }
+  }
+
   &.red {
     .card-thumbnail__image::before {
       @include background-image(42deg, $color-red, transparent 80%);
