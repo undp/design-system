@@ -13,9 +13,13 @@
       display: block;
       font-size: 0;
       height: 36px;
-      margin-bottom: 0.375rem;
+      margin-bottom: $spacing-04;
       margin-left: -0.625rem;
       width: 36px;
+
+      @include devicebreak(medium) {
+        margin-bottom: 0.375rem;
+      }
     }
   }
 }
@@ -35,9 +39,9 @@
 
 [dir='rtl'] {
   .twitter-panel {
-    .twitter {
-      margin-left: 0;
-      margin-right: -$spacing-16;
+    h2 {
+      margin-left: 0.375rem;
+      margin-right: 0;
     }
   }
 }

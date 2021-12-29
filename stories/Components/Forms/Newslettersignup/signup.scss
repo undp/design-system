@@ -9,6 +9,7 @@
     line-height: 1.4;
     margin-bottom: $spacing-12;
     text-align: left;
+    text-transform: none;
 
     @include devicebreak(medium) {
       text-align: right;

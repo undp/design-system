@@ -118,7 +118,7 @@
 
   .sign-up {
     &.blue {
-      .input__controls {
+      input[type=email]{
         background-color: transparent;
         border-color: $color-white;
         color: $color-white;

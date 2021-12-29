@@ -53,6 +53,7 @@
     border-top: 0;
     display: block;
     overflow-y: auto;
+    @extend %background-white;
   }
 
   &::-webkit-scrollbar {

@@ -20,7 +20,7 @@ export const GenericLandingPage = ({
   langSelect,
   backcaption,
 }) => (
-  <>
+  <div className='landing-page'>
     <GlobalHeader
       backcaption={backcaption}
       locale={locale}
@@ -52,7 +52,7 @@ export const GenericLandingPage = ({
             <FilterAndSearchBar data={data} clearText={clearText} activeFilterText={activeFilterText} />
           </div>
         </div>
-        <div className="cell large-9 small-12 margin-top-69">
+        <div className="cell large-9 small-12">
           <div className="column">
             <ContentCard
               data={groupcontentdata}
@@ -84,6 +84,5 @@ export const GenericLandingPage = ({
       menudata={footerData.menudata}
       {...{ color: 'blue' }}
     />
-
-  </>
+  </div>
 );
