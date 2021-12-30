@@ -293,7 +293,7 @@ export const getCaptionForLocale = (locale) => {
   title="Testing/Footer"
   argTypes={{
     color: {
-      options: ["default", "blue"],
+      options: ["default", "inverted"],
       control: { type: "radio" },
       defaultValue: "default",
     },
@@ -337,6 +337,7 @@ The Footer component multiusage component.
       <Footer
         src={logo}
         srctwo={logowhite}
+        logolink="https://www.undp.org"
         headerText={caption.headerText}
         alt={"UNDP Logo"}
         element="input"
@@ -369,6 +370,7 @@ The Footer component multiusage component.
         src={logo}
         srctwo={logowhite}
         headerText={caption.headerText}
+        logolink="https://www.undp.org"
         alt={"UNDP Logo"}
         element="input"
         type="email"

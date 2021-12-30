@@ -90,7 +90,7 @@ const AuthorPage = ({
         data={footerData.footerdata}
         copyright={footerData.copyright}
         menudata={footerData.menudata}
-        {...{ color: 'blue' }}
+        {...{ color: 'default' }}
       />
     </div>
   );

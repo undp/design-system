@@ -3,7 +3,8 @@
 
 /* signup newsletter start */
 .sign-up {
-  label{
+  label {
+    color: $color-white;
     display: block;
     font-size: 1rem;
     line-height: 1.4;
@@ -15,7 +16,8 @@
       text-align: right;
     }
   }
-  &.white {
+
+  &.inverted {
     color: $color-white;
   }
 }
@@ -30,70 +32,56 @@
       width: calc(100% - 107px);
     }
 
-    & .input-error {
-      position: absolute;
-      top: 107%;
-      width: 100%;
-    }
-  }
-
-  .input__controls.form-email {
-    border-radius: 0;
-    height: 54px;
-    margin: 0;
-    outline: none;
-  }
-
-  .form-submit {
-    background-color: $color-dark-red;
-    cursor: pointer;
-    font-weight: 700;
-    height: 46px;
-    margin: 0;
-    min-width: 107px;
-    padding: 0;
-    text-transform: uppercase;
-    -webkit-appearance: none;
-    border-radius: 0;
-  }
-
-  &.white {
-    .footer-subtitle,
-    .sign-up--field .input-error {
-      color: $color-white;
-    }
-
-    .input__controls.form-email {
+    input.email {
       background-color: transparent;
-      border: 2px solid $color-white;
+      border-color: $color-white;
+      border-radius: 0;
       color: $color-white;
+      height: 54px;
+      margin: 0;
+      outline: none;
 
       &::placeholder {
         color: $color-white;
       }
     }
+  }
+
+  .form-submit {
+    -webkit-appearance: none;
+    background-color: $color-white;
+    border-radius: 0;
+    color: $color-blue-600;
+    height: 54px;
+    margin: 0;
+    min-width: 107px;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  &.inverted {
+    label {
+      color: $color-black;
+    }
+
+    .email {
+      background-color: $color-white;
+      border-color: $color-black;
+      color: $color-black;
+
+      &::placeholder {
+        color: $color-black;
+      }
+    }
 
     .form-submit {
-      background-color: $color-white;
-      color: $color-blue-600;
-      -webkit-appearance: none;
-      border-radius: 0;
-
-      &:hover {
-        background-color: $color-blue-600;
-        color: $color-white;
-      }
+      background-color: $color-dark-red;
+      color: $color-white;
     }
   }
 }
 
 [dir='rtl'] {
-  .footer {
-    &-subtitle {
-      text-align: right;
-    }
-  }
-
   .sign-up--field {
     justify-content: flex-start;
   }
@@ -101,8 +89,10 @@
 
 //burmese lang
 :lang(my){
-  .footer-subtitle {
-    line-height: 1.9;
+  .sign-up {
+    label {
+      line-height: 1.9;
+    }
   }
 }
 

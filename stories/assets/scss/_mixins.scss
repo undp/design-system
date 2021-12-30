@@ -447,6 +447,23 @@
   align-items: center;
 }
 
+%footerlink {
+  @extend %img_none;
+  color: $color-white;
+  font-size: $font-size-16;
+  line-height: 1.4;
+  &:hover {
+    color: $color-blue-100;
+  }
+}
+
+%footerlinkinvert {
+  color: $color-black;
+  &:hover {
+    color: $color-gray-600;
+  }
+}
+
 //burmese lang
 :lang(my){
   %carousel_tag {

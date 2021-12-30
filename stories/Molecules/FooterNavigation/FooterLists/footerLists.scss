@@ -8,7 +8,6 @@
     border-bottom: 2px solid $color-gray-400;
     padding: 0;
     position: relative;
-    position: relative;
 
     @include devicebreak(medium) {
       border-bottom: 0;
@@ -17,7 +16,7 @@
     &::before {
       @include transition(0.1s ease);
 
-      background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
+      background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
       content: '';
       display: block;
       float: right;
@@ -30,16 +29,44 @@
         display: none;
       }
     }
+
+    &::before {
+      background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
+    }
+
+    &.inverted {
+      &::before {
+        background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
+      }
+
+      .footer__heading {
+        color: $color-black;
+      }
+
+      .footer__panel {
+        a {
+          @extend %footerlinkinvert;
+        }
+      }
+    }
+
+    &.active {
+      &::before {
+        @include transform(rotateZ(180deg));
+      }
+    }
   }
 
   &__heading {
+    color: $color-white;
     margin-bottom: 0;
     padding: $spacing-16;
     text-transform: uppercase;
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-12;
+      margin-bottom: 1.25rem;
       padding: 0;
+      pointer-events: none;
     }
   }
 
@@ -53,43 +80,11 @@
     }
 
     a {
-      @extend %img_none;
+      @extend %footerlink;
 
       display: block;
-      font-size: $font-size-16;
-      line-height: 1.4;
-      margin-bottom: $spacing-08;
+      margin-bottom: $spacing-16;
     }
-  }
-}
-
-.footer__items.white {
-  &::before {
-    background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
-  }
-
-  .footer__heading {
-    color: $color-white;
-  }
-
-  .footer__panel {
-    a {
-      color: $color-white;
-    }
-  }
-}
-
-.footer__items.blue {
-  border-color: $color-white;
-
-  &::before {
-    background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
-  }
-}
-
-.footer__items.active {
-  &::before {
-    @include transform(rotateZ(180deg));
   }
 }
 
@@ -104,7 +99,7 @@
 }
 
 //burmese lang
-:lang(my){
+:lang(my) {
   .footer {
     &__panel {
       a {
@@ -113,4 +108,5 @@
     }
   }
 }
+
 /* footer items end */

@@ -16,24 +16,20 @@
     }
 
     a {
-      @extend %img_none;
-
-      border-bottom: 0;
-      display: block;
-      font-size: $font-size-16;
-      line-height: 1.4;
+      @extend %footerlink;
     }
   }
 
-  &.white {
+  &.inverted {
     a {
-      color: $color-white;
+      @extend %footerlinkinvert;
     }
   }
 }
 
 [dir='rtl'] {
   .footer__condition {
+    float: left;
     padding-right: 0;
 
     li {
@@ -43,7 +39,7 @@
 }
 
 //burmese lang
-:lang(my){
+:lang(my) {
   .footer__condition {
     li {
       a {
