@@ -14,7 +14,6 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/Forms/Radio" />
 
-<<<<<<< HEAD
 # Radio
 A radio button is a utility that allows the user to select a single option from a set of options by clicking on the button.
 
@@ -48,7 +47,7 @@ The following behavior modifiers are available:
   <Story name="Radio">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <Radio label={caption.label}></Radio>;
+      return <Radio label={caption.label} id='undp'></Radio>;
     }}
   </Story>
 </Canvas>
@@ -64,40 +63,3 @@ Add the base layout style from dist/css/base-minimal.css
 
 ### Changelog
 1.0 — Released component
-=======
-<style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-`}</style>
-
-# Radio Component
-Radio buttons enable the selection of one out of at least two options provided in a list. Activation of a radio button therefore rules out the activation of other radio buttons of the same group.
-
-<Story name="Radio">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Radio label={caption.label} id='undp'></Radio>;
-  }}
-</Story>
-
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>radio.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
->>>>>>> 3e59ffcf3e79d2d1345b659b0a6f9ad1ba76ca8f

@@ -171,7 +171,7 @@ There are three states:  Default, Tablet and Mobile.
       }
     }}>
     {(args, { globals: { locale } }) => {
-      let lang = locale === 'en' ? 'english' : locale;
+    let lang = locale === 'en' ? 'english' : locale;
       const caption = getCaptionForLocale(locale);
       const navigationData= getNavLinks(locale);
       const leftNavigationData=navigationData.filter(item=>item.position==='left');
@@ -183,44 +183,15 @@ There are three states:  Default, Tablet and Mobile.
         menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
       text={caption}
         locationData={getLocationDataForLocale(locale)} langSelect={getSelectlanguage(locale)}
-        ></CountrySiteHeader>;
+      ></CountrySiteHeader>;
   }}
   </Story>
 </Canvas>
 
 ### CSS and JS References [ADDED BY DEVs]
-
-<<<<<<< HEAD
-<<<<<<< HEAD
 #### CSS:
 Add the base layout style from dist/css/base-minimal.css
 - dist/css/components/[component].css
-=======
-<Story name="Country Header" parameters={{
-    layout: "fullscreen"
-  }}>
-  {(args, { globals: { locale } }) => {
-  let lang = locale === 'en' ? 'english' : locale;
-    const caption = getCaptionForLocale(locale);
-    const navigationData= getNavLinks(locale);
-    const leftNavigationData=navigationData.filter(item=>item.position==='left');
-     const rightNavigationData=navigationData.filter(item=>item.position==='right');
-     const backcaption = getBackForLocale(locale);
-     const siteTitleData = getSiteTitle(locale);
-return <CountrySiteHeader siteTitleData={siteTitleData} backcaption={backcaption} locale={locale} leftNavigationData={leftNavigationData}
-     navigationData={navigationData} rightNavigationData={rightNavigationData}
-      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
-     text={caption}
-      locationData={getLocationDataForLocale(locale)} langSelect={getSelectlanguage(locale)}
-      ></CountrySiteHeader>;
-  }}
-</Story>
->>>>>>> 3e59ffcf3e79d2d1345b659b0a6f9ad1ba76ca8f
-=======
-#### CSS:
-Add the base layout style from dist/css/base-minimal.css
-- dist/css/components/[component].css
->>>>>>> 3e204e8ed783a5ba59a921856596ddbbee6fb071
 
 #### JS:
 - dist/js/[component].js
