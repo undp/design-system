@@ -43,7 +43,7 @@
   .stats-card-parallax {
     margin-bottom: 2.625rem;
 
-    @include devicebreak(medium){
+    @include devicebreak(medium) {
       display: flex;
       justify-content: center;
     }
@@ -77,4 +77,5 @@
     }
   }
 }
+
 /* stats-card-grid end */

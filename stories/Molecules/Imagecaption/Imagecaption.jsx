@@ -12,12 +12,21 @@ export const credit_options = {
   false: '',
 };
 
-export const Imagecaption = ({ label, paragraph, ...args }) => (
+const cls = (...classes) => classes.filter(Boolean).join(' ');
+
+export const Imagecaption = ({ label, paragraph, opacityOnly, ...args }) => {
+
+  let opacityonly = '';
+  if(opacityOnly === 'yes'){
+    opacityonly = 'opacity-only';
+  }
+
+  return(
   <>
     {args.caption === 'false' && args.credit === 'false' ? (
       <></>
     ) : (
-      <figcaption className={['image__caption', `${caption_options[`${args.caption}`]}`, `${credit_options[`${args.credit}`]}`].join(' ')}>
+      <figcaption className={cls('image__caption', `${opacityonly}`, `${caption_options[`${args.caption}`]}`, `${credit_options[`${args.credit}`]}`)}>
         {args.caption === 'true' && (
           <div className="image__caption_para">{paragraph}</div>
         )}
@@ -25,7 +34,7 @@ export const Imagecaption = ({ label, paragraph, ...args }) => (
       </figcaption>
     )}
   </>
-);
+)};
 
 Imagecaption.defaultProps = {
   caption: 'true',

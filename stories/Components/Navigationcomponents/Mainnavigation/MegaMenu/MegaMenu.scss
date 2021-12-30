@@ -7,10 +7,13 @@
   box-sizing: border-box;
   display: none;
   min-height: 37.5rem;
-  padding: $spacing-64 $spacing-24 0 $spacing-48;
+  padding: $spacing-64 0 0 $spacing-48;
   position: absolute;
   top: 7.125rem;
   z-index: 1;
+  max-width: $width-1440;
+  left: 50%;
+  @include transform(translateX(-50%));
 
   &.show-mega {
     display: block;
@@ -37,22 +40,18 @@
         a {
           background: $color-blue-600;
           color: $color-white;
-          &.sub-external{
-            justify-content: space-between;
-            align-items: center;
-          &::after{
-            background: url(#{$img-path-Iconfourback}/external-default-white.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
-            cursor: pointer;
-            height: $spacing-32;
-            width: $spacing-32;
-            content:'';
-          }
-          &:hover{
-            &::after{
-              background: url(#{$img-path-Iconfourback}/external-white-hover.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
+          &.sub-external {
+            @extend %sub-external;
+            &::after {
+              background: url(#{$img-path-Iconfourback}/external-default-white.svg) no-repeat 0 bottom/1.25rem 1.125rem;
+              @extend %external;
+            }
+            &:hover {
+              &::after {
+                background: url(#{$img-path-Iconfourback}/external-white-hover.svg) no-repeat 0 bottom/1.25rem 1.125rem;
+              }
             }
           }
-        }
         }
       }
 
@@ -65,23 +64,21 @@
         padding: $spacing-24;
         text-transform: uppercase;
 
-        &.sub-external{
-            justify-content: space-between;
-            align-items: center;
-          &::after{
-            background: url(#{$img-path-Iconfourback}/external-default.svg) no-repeat 0 bottom/$spacing-32 $spacing-32;
-            cursor: pointer;
-            height: $spacing-32;
-            width: $spacing-32;
-            content:'';
+        &.sub-external {
+          @extend %sub-external;
+          &::after {
+            background: url(#{$img-path-Iconfourback}/external-default.svg) no-repeat 0 bottom/1.25rem 1.125rem;
+            @extend %external;
           }
-          &:hover{
-            &::after{
-              background: url(#{$img-path-Iconfourback}/external-hover.svg) no-repeat 0 bottom/32px 34px;
+          &:hover {
+            &::after {
+              background: url(#{$img-path-Iconfourback}/external-hover.svg) no-repeat 0 bottom/1.25rem 1.125rem;
             }
           }
         }
-
+        &:focus{
+          border: 0;
+        }
         &:hover {
           background: $color-blue-600;
           color: $color-white;
@@ -89,32 +86,38 @@
       }
     }
   }
+  .sub-menu-content {
+    min-height: 31.25rem;
+    .sub-sub-menu {
+      display: flex;
+      margin-top: $spacing-48;
 
-  .sub-sub-menu {
-    display: flex;
-    margin-top: $spacing-48;
+      ul {
+        margin: 0;
+        padding: 0;
+        width: 50%;
 
-    ul {
-      margin: 0;
-      padding: 0;
-      width: 50%;
-
-      li {
-        line-height: 0;
-        list-style-type: none;
-        margin-bottom: $spacing-24;
-        text-transform: uppercase;
+        li {
+          line-height: 0;
+          list-style-type: none;
+          margin-bottom: $spacing-24;
+          text-transform: uppercase;
+        }
       }
     }
-  }
+    .mega-title {
+      margin-bottom: $spacing-24;
+    }
 
-  .mega-title {
-    margin-bottom: $spacing-24;
-  }
-
-  .mega-image {
-    box-sizing: border-box;
-    padding-left: $spacing-48;
+    .mega-image {
+      box-sizing: border-box;
+      padding-left: $spacing-48;
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
   }
 }
 

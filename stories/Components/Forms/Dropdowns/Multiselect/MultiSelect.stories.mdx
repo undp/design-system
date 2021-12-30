@@ -11,6 +11,31 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
+<<<<<<< HEAD
+=======
+<Meta
+  title="Components/Forms/Dropdown/MultiSelect"
+  argTypes={{
+    Height: {
+      options: [
+        "Fix height",
+        "Auto height",
+      ],
+      control: { type: "radio" },
+      defaultValue: "Auto height",
+    },
+    variant: {
+      options: [
+        "Checkbox",
+        "Radio",
+      ],
+      control: { type: "radio" },
+      defaultValue: "Checkbox",
+    },
+  }}
+/>
+
+>>>>>>> 3e59ffcf3e79d2d1345b659b0a6f9ad1ba76ca8f
 <style>{`
   .sbdocs iframe {
     min-height: 300px;
@@ -25,7 +50,7 @@ The select component allows users to choose multiples option from a list. It is 
 <Story name="MultiSelect">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <MultiSelect text={caption} eleId="select"></MultiSelect>;
+    return <MultiSelect {...args} text={caption} eleId="select"></MultiSelect>;
   }}
 </Story>
 

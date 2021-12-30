@@ -112,7 +112,9 @@ export const getHeadingCaptionForLocale = (locale) => {
   }
 `}</style>
 
-<Story name="Article">
+<Story name="Article" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = PostHeadData(locale);
     const headingLabel = getHeadingCaptionForLocale(locale);

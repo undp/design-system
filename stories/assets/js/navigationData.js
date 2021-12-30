@@ -1,10 +1,10 @@
-
-export const getData = (lang) => {
+export const getData = (lang) => { 
   $.ajax({
     method: 'GET',
     url: './js/navigationData.json',
     dataType: 'json',
     success(res) {
+      lang=lang?lang:'english';
       const resData = res.find((item) => item.language === lang);
       const megaWrapper = $('.mega-wrapper');
       const mobileMegaWrapper = $('.mobile-mega-wrapper');
@@ -14,7 +14,7 @@ export const getData = (lang) => {
         const submenus = item.submenus
           .map((menu, index) => `<li id="${menu.link.id}-${item.id}" class="${
             index === 0 ? 'active' : ''
-          }"><a href="${menu.external_link?menu.external_link:'#'}" class="${menu.external_link?['sub-link','sub-external'].join(' '):'sub-link'}">${menu.link.label}</a></li>`)
+          }"><a tabindex="${index+1}" href="${menu.external_link?menu.external_link:'#'}" class="${menu.external_link?['sub-link','sub-external'].join(' '):'sub-link'}">${menu.link.label}</a></li>`)
           .join(' ');
 
         const gridX = item.submenus
@@ -22,33 +22,34 @@ export const getData = (lang) => {
             index === 0
               ? 'grid-x sub-menu-content active-content'
               : 'grid-x sub-menu-content'
-          }" data-id="${menu.link.id}-${item.id}">
+          }" data-submenu-id="${menu.link.id}-${item.id}">
                       <div class="${
-  menu.image
-    ? 'cell mega-sub-description large-6'
-    : 'cell mega-sub-description large-10'
-}">
+                        menu.image
+                          ? 'cell mega-sub-description large-6'
+                          : 'cell mega-sub-description large-10'
+                      }">
                         <h3 class="mega-title">${menu.title}</h3>
                         <p class="mega-description">${menu.description}</p>
                         <div class="sub-sub-menu">
                             <ul class="list-col-first">
                             ${
-  menu.linksCol1.length > 0
-    ? menu.linksCol1
-      .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
-      .join(' ')
-    : ''
-}
+                              menu.linksCol1.length > 0
+                                ? menu.linksCol1
+                                  .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
+                                  .join(' ')
+                                : ''
+                            }
                             </ul>
-                            <ul class="list-col-second">
                             ${
-  menu.linksCol2.length > 0
-    ? menu.linksCol2
-      .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
-      .join(' ')
-    : ''
-}
-                            </ul>
+                              menu.linksCol2.length > 0
+                                ?
+                              `<ul class="list-col-second">
+                                  ${menu.linksCol2
+                                          .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
+                                          .join(' ')
+                                  }
+                              </ul>`:''
+                            }
                         </div>
                       </div>
                       ${
@@ -60,7 +61,7 @@ export const getData = (lang) => {
           .join(' ');
 
         const renderHtml = `
-                    <div class="cell large-12 mega-nav-option" menu-item-id="${item.id}">
+                    <div class="cell large-12 mega-nav-option" data-menu-item-id="${item.id}">
                     <div class="grid-x">
                         <div class="cell large-3">
                           <ul class="submenu">
@@ -97,7 +98,6 @@ export const getData = (lang) => {
         `;
         mobileMegaWrapper.append(renderMobileHtml);
       });
-    }
+    },
   });
 };
-

@@ -6,19 +6,19 @@
 .accordion {
   padding: 0;
   position: relative;
+  @extend %background-white;
 }
 
 .accordion__item {
   border-bottom: 1px solid $color-gray-500;
   cursor: pointer;
   list-style: none;
+  margin-bottom: 0;
   overflow: hidden;
   padding: $spacing-16 0 $spacing-24;
   position: relative;
-  margin-bottom: 0;
 
   &::before {
-
     background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
     border-top-color: #f3f3f3;
     content: '';
@@ -34,6 +34,7 @@
 
   &.accordion--active {
     padding-bottom: 0;
+
     .accordion__heading {
       margin-bottom: 0.625rem;
       padding-right: $spacing-24;

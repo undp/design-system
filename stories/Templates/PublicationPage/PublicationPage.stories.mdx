@@ -1,11 +1,11 @@
 import { Meta, Story, Canvas, Source } from '@storybook/addon-docs';
 import { PublicationPage } from './PublicationPage';
-import {getCaptionForLocale as PublicationCardData} from "../../Molecules/Blocks/PublicationCard/PublicationCard.stories.mdx";
+import {getCaptionForLocale as PublicationCardData} from '../../Molecules/Blocks/PublicationCard/PublicationCard.stories.mdx';
 import { getCaptionForLocale as  ContentCardWithOutImageData } from '../../Components/UIcomponents/Cards/ContentCard/ContentCardWithOutImage.stories.mdx';
-import {getCaptionForLocale as footerData} from "../../Organism/Footer/Footer.stories.mdx";
+import {getCaptionForLocale as footerData} from '../../Organism/Footer/Footer.stories.mdx';
 import logo from '../../assets/images/undp-logo-blue.svg';
 import logowhite from '../../assets/images/undp-logo-white.svg';
-import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import { getCaptionForLocale as Languageswitcher } from '../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx';
 import {
   getNavLinks,
   menuData,
@@ -13,7 +13,8 @@ import {
   getLocationDataForLocale,
   getBackForLocale,
   getSelectlanguage,
-} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
+} from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx';
+
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = {
@@ -39,79 +40,121 @@ export const getCaptionForLocale = (locale) => {
       buttonname: "VIEW MORE",
       PublicationHeading:['Related', <br/>,'Publications'],
       contentdata: [
-          {
-            contenttile: "CONTENT TAG",
-            contentname: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
-            contentnametwo: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
-            paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
-            button: "READ MORE",
-            link:"#",
-            size:'medium-6',
-            Hovercolors:'gray',
-            Emphasize:"false",
-            variant:"Space",
-          },
-          {
-            contenttile: "CONTENT TAG",
-            contentname: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
-            contentnametwo: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
-            paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
-            button: "READ MORE",
-            link:"#",
-            size:'medium-6',
-            Hovercolors:'gray',
-            Emphasize:"false",
-            variant:"Space",
-          },
-          {
-            contenttile: "CONTENT TAG",
-            contentname: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
-            contentnametwo: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
-            paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
-            button: "READ MORE",
-            link:"#",
-            size:'medium-6',
-            Hovercolors:'gray',
-            Emphasize:"false",
-            variant:"Space",
-          },
-          {
-            contenttile: "CONTENT TAG",
-            contentname: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
-            contentnametwo: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
-            paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
-            button: "READ MORE",
-            link:"#",
-            size:'medium-6',
-            Hovercolors:'gray',
-            Emphasize:"false",
-            variant:"Space",
-          },
-          {
-            contenttile: "CONTENT TAG",
-            contentname: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
-            contentnametwo: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
-            paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
-            button: "READ MORE",
-            link:"#",
-           size:'medium-6',
-            Hovercolors:'gray',
-            Emphasize:"false",
-            variant:"Space",
-          },
-          {
-            contenttile: "CONTENT TAG",
-            contentname: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
-            contentnametwo: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
-            paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
-            button: "READ MORE",
-            link:"#",
-            size:'medium-6',
-            Hovercolors:'gray',
-            Emphasize:"false",
-            variant:"Space",
-          }
-        ]
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          contentnametwo: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          contentnametwo: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          contentnametwo: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          contentnametwo: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          contentnametwo: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          contentnametwo: "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link:"#",
+          size:'medium-6',
+          Hovercolors:'gray',
+          Emphasize:"false",
+          variant:"Space",
+        }
+      ],
+      menuTitle1: 'TOPICS',
+      menuTitle2: ['REGIONS &',<br/>,'COUNTRIES'],
+      menuTitle3: 'SDGS',
+      menuTitle4: 'AUTHORS',
+      menuData1: [
+        {
+          label: "Topic 1",
+        },
+        {
+          label: "Topic 2",
+        },
+        {
+          label: "Topic 3",
+        },
+      ],
+      menuData2: [
+        {
+          label: "Region 1",
+        },
+        {
+          label: "Region 2",
+        },
+        {
+          label: "Region 3",
+        },
+      ],
+      menuData3: [
+        {
+          label: "SGD 1",
+        },
+        {
+          label: "SGD 2",
+        },
+      ],
+      menuData4: [
+        {
+          label: "First Name Last Name",
+        },
+        {
+          label: "First Name Last Name",
+        },
+      ],
     }; 
     return engText;
     case 'arabic': const arabicText = {
@@ -209,7 +252,49 @@ export const getCaptionForLocale = (locale) => {
           Emphasize:"false",
           variant:"Space",
         }
-      ]
+      ],
+      menuTitle1: 'المواضيع',
+      menuTitle2: ['المناطق و',<br/>,'الدول'],
+      menuTitle3: 'أهداف التنمية المستدامة',
+      menuTitle4: 'المؤلفون',
+      menuData1: [
+        {
+          label: "الموضوع 1",
+        },
+        {
+          label: "الموضوع 2",
+        },
+        {
+          label: "الموضوع 3",
+        },
+      ],
+      menuData2: [
+        {
+          label: "المنطقة 1",
+        },
+        {
+          label: "المنطقة 2",
+        },
+        {
+          label: "المنطقة 3",
+        },
+      ],
+      menuData3: [
+        {
+          label: "دولار سنغافوري 1",
+        },
+        {
+          label: "دولار سنغافوري 2",
+        },
+      ],
+      menuData4: [
+        {
+          label: "الاسم الاول الاسم الاخير",
+        },
+        {
+          label: "الاسم الاول الاسم الاخير",
+        },
+      ],
     }; 
     return arabicText;
     case 'burmese': const burmeseText = {
@@ -307,7 +392,49 @@ export const getCaptionForLocale = (locale) => {
           Emphasize:"false",
           variant:"Space",
         }
-      ]
+      ],
+      menuTitle1: 'ခေါင်းစဉ်များ',
+      menuTitle2: ['ဒေသများ &',<br/>,'နိုင်ငံများ'],
+      menuTitle3: 'SDGS',
+      menuTitle4: 'စာရေးသူများ',
+      menuData1: [
+        {
+          label: "ခေါင်းစဉ် ၁",
+        },
+        {
+          label: "ခေါင်းစဉ် ၂",
+        },
+        {
+          label: "ခေါင်းစဉ် ၃",
+        },
+      ],
+      menuData2: [
+        {
+          label: "တိုင်းဒေသကြီး ၁",
+        },
+        {
+          label: "တိုင်းဒေသကြီး ၂",
+        },
+        {
+          label: "တိုင်းဒေသကြီး ၃",
+        },
+      ],
+      menuData3: [
+        {
+          label: "SGD ၁",
+        },
+        {
+          label: "SGD ၂",
+        },
+      ],
+      menuData4: [
+        {
+          label: "ပထမအမည် နောက်ဆုံးအမည်",
+        },
+        {
+          label: "ပထမအမည် နောက်ဆုံးအမည်",
+        },
+      ],
     }; 
     return burmeseText;
     case 'japanese': const japaneseText = {
@@ -405,7 +532,49 @@ export const getCaptionForLocale = (locale) => {
           Emphasize:"false",
           variant:"Space",
         }
-      ]
+      ],
+      menuTitle1: 'トピック',
+      menuTitle2: ['地域＆',<br/>,'国'],
+      menuTitle3: 'SDGS',
+      menuTitle4: '著者',
+      menuData1: [
+        {
+          label: "トピック1",
+        },
+        {
+          label: "トピック2",
+        },
+        {
+          label: "トピック3",
+        },
+      ],
+      menuData2: [
+        {
+          label: "リージョン1",
+        },
+        {
+          label: "リージョン2",
+        },
+        {
+          label: "リージョン3",
+        },
+      ],
+      menuData3: [
+        {
+          label: "SGD 1",
+        },
+        {
+          label: "SGD 2",
+        },
+      ],
+      menuData4: [
+        {
+          label: "名前苗字",
+        },
+        {
+          label: "名前苗字",
+        },
+      ],
     }; 
     return japaneseText;
     default:
@@ -504,7 +673,49 @@ export const getCaptionForLocale = (locale) => {
           Emphasize:"false",
           variant:"Space",
         }
-      ]
+      ],
+      menuTitle1: 'TOPICS',
+      menuTitle2: ['REGIONS &',<br/>,'COUNTRIES'],
+      menuTitle3: 'SDGS',
+      menuTitle4: 'AUTHORS',
+      menuData1: [
+        {
+          label: "Topic 1",
+        },
+        {
+          label: "Topic 2",
+        },
+        {
+          label: "Topic 3",
+        },
+      ],
+      menuData2: [
+        {
+          label: "Region 1",
+        },
+        {
+          label: "Region 2",
+        },
+        {
+          label: "Region 3",
+        },
+      ],
+      menuData3: [
+        {
+          label: "SGD 1",
+        },
+        {
+          label: "SGD 2",
+        },
+      ],
+      menuData4: [
+        {
+          label: "First Name Last Name",
+        },
+        {
+          label: "First Name Last Name",
+        },
+      ],
     };
   }
 };
@@ -526,7 +737,9 @@ export const getCaptionForLocale = (locale) => {
 # Publication Page Templates
 Template for Publication Page
 
-<Story name="Publication Page">
+<Story name="Publication Page" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     const navigationData= getNavLinks(locale);
@@ -558,6 +771,14 @@ Template for Publication Page
         locationData={getLocationDataForLocale(locale)}
         langSelect={getSelectlanguage(locale)}
         backcaption={getBackForLocale(locale)}
+        menuTitle1={caption.menuTitle1}
+        menuTitle2={caption.menuTitle2}
+        menuTitle3={caption.menuTitle3}
+        menuTitle4={caption.menuTitle4}
+        menuData1={caption.menuData1}
+        menuData2={caption.menuData2}
+        menuData3={caption.menuData3}
+        menuData4={caption.menuData4}
     ></PublicationPage>;
   }}
 </Story>

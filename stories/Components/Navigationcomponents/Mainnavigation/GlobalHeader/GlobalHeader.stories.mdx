@@ -200,11 +200,33 @@ Add the base layout style from dist/css/base-minimal.css
 #### JS:
 - dist/js/[component].js
 
+<<<<<<< HEAD
 ### Interactions
 - By clicking on the CTA Link, the page is directed to the subsequent link page.
 - By clicking on the Drop-down menu, it expands and clicking on the x icon closes it.
 - By clicking on the search icon, the search tab opens.
 - By clicking on the language switcher, it expands and clicking on the x icon closes it.
+=======
+<Story name="Global Header" parameters={{
+    layout: "fullscreen"
+  }}>
+  {(args, { globals: { locale } }) => {
+  let lang = locale === 'en' ? 'english' : locale;
+    const caption = getCaptionForLocale(locale);
+    const navigationData= getNavLinks(locale);
+    const leftNavigationData=navigationData.filter(item=>item.position==='left');
+     const rightNavigationData=navigationData.filter(item=>item.position==='right');
+     const backcaption = getBackForLocale(locale);
+     const siteTitleData = getSiteTitle(locale);
+    return <GlobalHeader siteTitleData={siteTitleData} backcaption={backcaption} locale={locale} leftNavigationData={leftNavigationData}
+     navigationData={navigationData} rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
+     text={caption}
+      locationData={getLocationDataForLocale(locale)} langSelect={getSelectlanguage(locale)}
+      ></GlobalHeader>;
+  }}
+</Story>
+>>>>>>> 3e59ffcf3e79d2d1345b659b0a6f9ad1ba76ca8f
 
 ### Changelog
 1.0 — Released component

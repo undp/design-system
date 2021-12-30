@@ -43,17 +43,17 @@ export const getCaptionForLocale = (locale) => {
   argTypes={{
     size: {
       options: ["wide", "medium", "portrait"],
-      control: { type: "radio" },
+      control: { type: "inline-radio" },
       defaultValue: "wide"
     },
     caption: {
       options: ["true", "false"],
-      control: { type: "radio" },
+      control: { type: "inline-radio" },
       defaultValue: "true"
     },
     credit: {
       options: ["true", "false"],
-      control: { type: "radio" },
+      control: { type: "inline-radio" },
       defaultValue: "true"
     },
   }}

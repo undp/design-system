@@ -12,6 +12,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
+<<<<<<< HEAD
 <Meta 
   title="Components/UI components/Cards" 
   argTypes={{
@@ -24,6 +25,45 @@ export const getCaptionForLocale = (locale) => {
 
 # Stats Card
 A stats card contains the value, label, and a one-line description of a statistic
+=======
+<Meta title="Components/UI components/Cards" argTypes={{
+  Size: {
+    options: ['Small', 'Medium', 'Large', 'Extra_large'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'Medium'
+  },
+  Hovercolors: {
+    options: ['yellow', 'red', 'green', 'blue'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'yellow'
+  }
+}}/>
+
+<style>{`
+ .subheading {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  .sbdocs .sbdocs-h2 {
+    border-bottom: none;
+  }
+  div[id^="story--molecules-blocks-stats-cards"] {
+    padding: 20px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 25px 0px 40px;
+    border-radius: 4px;
+  }
+`}</style>
+>>>>>>> 3e59ffcf3e79d2d1345b659b0a6f9ad1ba76ca8f
 
 ### Overview
 A stats card highlights an individual statistic. It contains a value, label, and a short description.

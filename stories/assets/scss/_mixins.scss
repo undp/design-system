@@ -10,7 +10,7 @@
 @mixin x-appearance($value) {
   -webkit-appearance: $value;
   -moz-appearance: $value;
-    appearance: $value;
+  appearance: $value;
 }
 
 //animation
@@ -19,7 +19,7 @@
   -moz-animation: $animation;
   -ms-animation: $animation;
   -o-animation: $animation;
-    animation: $animation;
+  animation: $animation;
 }
 
 //transition
@@ -28,7 +28,7 @@
   -moz-transition: $transitions;
   -ms-transition: $transitions;
   -o-transition: $transitions;
-    transition: $transitions;
+  transition: $transitions;
 }
 
 //transition-delay
@@ -37,7 +37,7 @@
   -moz-transition-delay: $transitiondelay;
   -ms-transition-delay: $transitiondelay;
   -o-transition-delay: $transitiondelay;
-    transition-delay: $transitiondelay;
+  transition-delay: $transitiondelay;
 }
 
 //transform
@@ -46,7 +46,7 @@
   -moz-transform: $transforms;
   -ms-transform: $transforms;
   -o-transform: $transforms;
-    transition: $transforms;
+  transition: $transforms;
 }
 
 // Rotate
@@ -70,11 +70,11 @@
 }
 
 //gradient color
-@mixin gradient($direction, $list) { 
+@mixin gradient($direction, $list) {
   background: -webkit-linear-gradient($direction, $list);
   background: -moz-linear-gradient($direction, $list);
   background: -o-linear-gradient($direction, $list);
-  background: linear-gradient($direction, $list);  
+  background: linear-gradient($direction, $list);
 }
 
 /* mixing  end */
@@ -189,6 +189,7 @@
   position: absolute;
   top: 5px;
   width: 12px;
+  @extend %background-white;
 }
 
 %img-hover-effect {
@@ -260,18 +261,19 @@
 }
 
 %sidebar-chevron {
-  @include transition(0.1s ease);
+  @include transition(0.3s ease);
 
   background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
   content: '';
-  height: 20px;
+  height: 0.813rem;
   position: absolute;
-  right: $spacing-24;
-  top: 17px;
+  right: 1.188rem;
+  top: 20px;
   width: 20px;
 
   @include devicebreak(medium) {
-    top: 27px;
+    top: 1.125rem;
+    padding: 0.625rem 0;
   }
 }
 
@@ -298,11 +300,13 @@
   cursor: pointer;
   font-size: $font-size-16;
   font-weight: 600;
-  min-width: 288px;
+  margin: 0;
+  width: 100%;
   padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
   position: relative;
   text-transform: uppercase;
   margin: 0;
+  color:$color-black;
 }
 
 %select_option {
@@ -311,9 +315,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: none;
-  max-height: 300px;
   min-height: 100px;
-  min-width: 288px;
   padding: 0 $spacing-16;
   width: 100%;
 }
@@ -335,7 +337,7 @@
   -moz-animation: none;
   -ms-animation: none;
   -o-animation: none;
-   animation: none;
+  animation: none;
 }
 
 %left-to-right {
@@ -386,14 +388,16 @@
   cursor: pointer;
   padding: 0;
   vertical-align: bottom;
+  width: 2.75rem;
+  height: 2.75rem;
 }
 
 %carousel_tag {
   color: $color-black;
   font-size: 0.75rem;
   font-weight: 700;
-  line-height: 0.84;
   letter-spacing: 0.48px;
+  line-height: 0.84;
   text-transform: uppercase;
 }
 
@@ -411,18 +415,82 @@
   background-color: $color-gray-100;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   height: 7.1875rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
   left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 9;
 }
 
-%carousel_arrows{
+%carousel_arrows {
   display: none;
-  
+
   @media (pointer: coarse) and (hover: none) and (min-width: 48em) {
     display: block;
   }
 }
-/* placehoder start */
+
+%background-white {
+  background-color: white;
+}
+
+%sub-external{
+  justify-content: space-between;
+  align-items: center;
+}
+
+%external{
+  cursor: pointer;
+  height: 1.125rem;
+  width: 1.25rem;
+  content: "";
+  align-items: center;
+}
+
+//burmese lang
+:lang(my){
+  %carousel_tag {
+    font-size: 1rem;
+  }
+
+  %paragragh-font-16 {
+    font-size: $font-size-12;
+    line-height: 1.7;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-14;
+    }
+  }
+
+  %paragragh-font-20 {
+    font-size: $font-size-14;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-16;
+    }
+  }
+
+  %paragragh-font-24 {
+    font-size: $font-size-20;
+    line-height: 1.1;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-24;
+    }
+  }
+  %button {
+    font-size: $font-size-14;
+  }
+}
+
+%logo{
+  @include transition(all .4s cubic-bezier(.64,.05,.35,1.05));
+  @include devicebreak(xlarge) {
+    height: 7.625rem;
+    &.scrolled{
+      height: 7.1875rem;
+    }
+  }
+}
+
+/* placehoder end */

@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Languageswitcher } from "./Languageswitcher";
-
+ 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
@@ -8,12 +8,14 @@ export const getCaptionForLocale = (locale) => {
         languagedata: [
           {
             descriptionText: "Français",
+            lang: "fr",
           },
           {
             descriptionText: "Español",
+            lang: "es",
           },
         ],
-        headerText: "ENGLISH",
+        headerText: "English",
       };
       return engText;
     case "arabic":
@@ -21,9 +23,11 @@ export const getCaptionForLocale = (locale) => {
         languagedata: [
           {
             descriptionText: "فرنسي",
+            lang: "fr",
           },
           {
             descriptionText: "الاسبانية",
+            lang: "es",
           },
         ],
         headerText: "إنجليزي",
@@ -34,9 +38,11 @@ export const getCaptionForLocale = (locale) => {
         languagedata: [
           {
             descriptionText: "ပြင်သစ်",
+            lang: "fr",
           },
           {
             descriptionText: "ငပိ",
+            lang: "es",
           },
         ],
         headerText: "အင်္ဂလိပ်စာ",
@@ -47,9 +53,11 @@ export const getCaptionForLocale = (locale) => {
         languagedata: [
           {
             descriptionText: "フランス語",
+            lang: "fr",
           },
           {
             descriptionText: "スペイン語",
+            lang: "es",
           },
         ],
         headerText: "英語",
@@ -60,12 +68,14 @@ export const getCaptionForLocale = (locale) => {
         languagedata: [
           {
             descriptionText: "Français",
+            lang: "fr",
           },
           {
             descriptionText: "Español",
+            lang: "es",
           },
         ],
-        headerText: "ENGLISH",
+        headerText: "English",
       };
       return dummy;
   }

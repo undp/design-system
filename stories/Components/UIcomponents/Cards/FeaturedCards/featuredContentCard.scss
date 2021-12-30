@@ -3,7 +3,7 @@
 
 /* feature card start */
 .feature__card {
-  background: $color-gray-100;
+  background: $color-gray-200;
   border-bottom: 0;
   height: 100%;
   overflow: hidden;
@@ -23,8 +23,8 @@
     }
 
     .cta--arrow::after {
-      margin-left: 0.25rem;
       background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
+      margin-left: 0.25rem;
       width: 100px;
     }
   }
@@ -59,14 +59,12 @@
       z-index: 0;
 
       &::before {
-        background:
-          linear-gradient(0deg, $color-yellow, $color-yellow),
-          $color-gray-200;
+        display: none;
       }
     }
   }
 
-  &.image{
+  &.image {
     .feature__card-description {
       @include devicebreak(medium) {
         margin-bottom: 6.125rem;
@@ -85,10 +83,46 @@
     @include transition(transform 0.3s);
 
     background-color: $color-yellow;
-    display: block;
+    display: none;
     height: 100%;
     position: absolute;
     z-index: 1;
+
+    &.yellow {
+      background-color: $color-yellow;
+
+      &::before {
+        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.8));
+      }
+    }
+
+    &.red {
+      background-color: $color-red;
+
+      &::before {
+        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgb(230 45 45 / 78%));
+      }
+    }
+
+    &.green {
+      background-color: $color-green;
+
+      &::before {
+        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgb(92 222 83 / 82%));
+      }
+    }
+
+    &.blue {
+      background-color: $color-azure;
+
+      &::before {
+        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgb(94 232 246 / 82%));
+      }
+    }
+  }
+
+  @include devicebreak(large) {
+    display: inherit;
   }
 
   &::before {
@@ -96,10 +130,8 @@
 
     bottom: 0;
     content: '';
-    position: relative;
 
     @include devicebreak(medium) {
-      background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.8));
       height: 100%;
       position: absolute;
     }
@@ -115,17 +147,10 @@
     img {
       display: block;
       height: 100%;
-      width: 100%;
       max-width: 100%;
       object-fit: cover;
+      width: 100%;
     }
-  }
-  @include devicebreak(medium) {
-    display: none;
-  }
-
-  @include devicebreak(large) {
-    display: inherit;
   }
 }
 
@@ -158,14 +183,17 @@
 
   .feature__card-description {
     margin-bottom: 3rem;
+
     @include devicebreak(medium) {
       margin-bottom: 4.688rem;
     }
   }
 
-  h4, h5 {
+  h4,
+  h5 {
     margin-bottom: $spacing-24;
-     @include devicebreak(medium) {
+
+    @include devicebreak(medium) {
       margin-bottom: $spacing-32;
     }
   }
@@ -222,6 +250,7 @@
   .feature__card:hover {
     .cta--arrow::after {
       @include transform(rotate(180deg));
+
       margin-right: 0.25rem;
     }
   }
@@ -232,6 +261,12 @@
 
       &:hover {
         @include transform(translateX(0));
+      }
+    }
+
+    &::before {
+      @include devicebreak(medium) {
+        background: transparent linear-gradient(153deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.8));
       }
     }
   }

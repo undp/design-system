@@ -2,7 +2,7 @@ import React from 'react';
 import './link.scss';
 
 export const Link = ({ label }) => (
-  <a href="#">
+  <a href="#" title={label}>
     { label }
   </a>
 );

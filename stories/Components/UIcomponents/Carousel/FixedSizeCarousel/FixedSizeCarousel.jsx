@@ -10,7 +10,7 @@ import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
 
 export const FixedSizeCarousel = ({ data, label }) => {
   useEffect(() => {
-    CarouselFun('.fixed-image-size-carousel', '20', '20', '1');
+    CarouselFun('.fixed-image-size-carousel', 20, 20, 1, 0);
     viewport('.fixed-image-size-carousel');
   }, []);
   return (
@@ -22,7 +22,7 @@ export const FixedSizeCarousel = ({ data, label }) => {
       <div className="glide__track" data-glide-el="track">
         <div className="glide__slides">
           {data.map((item, index) => (
-            <div className="glide__slide">
+            <div className="glide__slide" aria-label={index}>
               <div className="fixed-image-size-carousel__row">
                 <div className="fixed-image-size-carousel__image-col">
                   <img className="fixed-image-size-carousel__image" src={item.slideImage} alt="" />

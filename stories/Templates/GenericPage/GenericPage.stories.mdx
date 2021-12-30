@@ -267,6 +267,7 @@ export const statsArray = (locale) => {
   }
 };
 
+
 <Meta title="Templates/Generic Page"/>
 
 <style>{`
@@ -285,13 +286,15 @@ export const statsArray = (locale) => {
 Template for Generic Page
 
 
-<Story name="Generic Page">
+<Story name="Generic Page" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     const carouselData = statsArray(locale);
     const navigationData= getNavLinks(locale);
     const leftNavigationData=navigationData.filter(item=>item.position==='left');
-     const rightNavigationData=navigationData.filter(item=>item.position==='right');
+    const rightNavigationData=navigationData.filter(item=>item.position==='right');
     return (
       <GenericPage 
         active={'white'}

@@ -1,15 +1,15 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { CountryHomepage } from './CountryHomepage';
-import {getCaptionForLocale as footerData} from "../../Organism/Footer/Footer.stories.mdx";
+import {getCaptionForLocale as footerData} from '../../Organism/Footer/Footer.stories.mdx';
 import {statsArray as statssliderdata} from '../../Patterns/StatsSlider/StatsSlider.stories.mdx';
 import {getCaptionForLocale as takeactioncard} from '../../Organism/Blocks/ImageRevealCards/ImageRevealCards.stories.mdx';
 import {getCaptionForLocale as contentcardimagesdata} from '../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage.stories.mdx';
 import BackgroundImg from '../../assets/images/country-hero-img.jpg';
 import BackgroundVideo from '../../assets/video/video_sample.mp4';
-import img from "../../assets/images/card2.jpg";
+import img from '../../assets/images/card2.jpg';
 import logo from '../../assets/images/undp-logo-blue.svg';
 import logowhite from '../../assets/images/undp-logo-white.svg';
-import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
+import { getCaptionForLocale as Languageswitcher } from '../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx';
 import {
   getNavLinks,
   menuData,
@@ -22,7 +22,7 @@ export const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
-        titlename: "Sierra Leone Youth Minister Launches 2020 Social Good Summit",
+        titlename: ['Sierra Leone Youth',<br/>,'Minister Launches ',<br/>,'2020 Social Good Summit'],
         text: "Sierra Leone",
         btnlabel: "READ MORE",
         subtitle:"As we ‘come to our feet’ to respond to public health issues at the borders, key messages on Covid-19 should be reinforced, border security enhanced…",
@@ -90,12 +90,13 @@ export const getCaptionForLocale = (locale) => {
         whatwedodescription:'UNDP has had a presence in Sierra Leone since 1965, working in partnership with the Government of Sierra Leone, development partners, UN agencies, civil society and local communities, contributing to inclusive growth, sustainabily, and efficient democratic governance.',
         statHeading:'Our Impact',
         storiesHeading:'Stories',
-        takeAcrtionHead:'Take Action'
+        takeAcrtionHead:'Take Action',
+        storyBtn:'SEE ALL STORIES',
       };
       return engText;
     case "arabic":
       const arabicText = {
-        titlename: "وزير الشباب السيراليوني يطلق قمة الخير الاجتماعي لعام 2020",
+        titlename: ['شباب سيراليون',<br/>,'الوزير يطلق',<br/>,'2020 قمة الخير الاجتماعي'],
         text: "سيرا ليون",
         btnlabel: "اقرأ أكثر",
         subtitle:"الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Cras mattis quis nibh في molestie. وهكذا كان المراهقون الدافئون هم احتياجات المراهقين. Duis in eros sauce سعر الملعقة.",
@@ -163,12 +164,13 @@ export const getCaptionForLocale = (locale) => {
         whatwedodescription:'تواجد برنامج الأمم المتحدة الإنمائي في سيراليون منذ عام 1965 ، حيث يعمل في شراكة مع حكومة سيراليون ، وشركاء التنمية ، ووكالات الأمم المتحدة ، والمجتمع المدني والمجتمعات المحلية ، ويساهم في النمو الشامل والحكم الديمقراطي الفعال والمستدام.',
         statHeading:'تأثيرنا',
         storiesHeading:'قصص',
-        takeAcrtionHead:'أبدي فعل'
+        takeAcrtionHead:'أبدي فعل',
+        storyBtn:'شاهد كل القصص',
       };
       return arabicText;
     case "burmese":
       const burmeseText = {
-        titlename: "Sierra Leone လူငယ်ရေးရာဝန်ကြီးသည် 2020 လူမှုအကျိုးပြုထိပ်သီးအစည်းအဝေးကို စတင်ခဲ့သည်။",
+        titlename: ['Sierra Leone လူငယ်',<br/>,'ဝန်ကြီးက စတင်လိုက်ပါတယ်။',<br/>,' 2020 လူမှုရေးကောင်းမွန်သောထိပ်သီးအစည်းအဝေး'],
         text:"ဆီးရီးယားလီယွန်",
         btnlabel: "ပိုပြီးဖတ်ပါ",
         subtitle:"နယ်စပ်ရှိပြည်သူ့ကျန်းမာရေးပြဿနာများကိုတုံ့ပြန်ရန်ကျွန်ုပ်တို့ 'ခြေရာခံ' လာသည်နှင့်အမျှ Covid-19 ဆိုင်ရာအဓိကသတင်းစကားများကိုအားဖြည့်သင့်သည်၊ နယ်စပ်လုံခြုံရေးကိုတိုးမြှင့်သင့်သည်...",
@@ -236,12 +238,13 @@ export const getCaptionForLocale = (locale) => {
         whatwedodescription:'UNDP သည် Sierra Leone အစိုးရ၊ ဖွံ့ဖြိုးတိုးတက်ရေးမိတ်ဖက်များ၊ UN အေဂျင်စီများ၊ အရပ်ဘက်လူမှုအဖွဲ့အစည်းများနှင့် ဒေသခံလူထုများ ပါဝင်သော တိုးတက်မှု၊ ရေရှည်တည်တံ့ခိုင်မြဲပြီး ထိရောက်သောဒီမိုကရေစီ အုပ်ချုပ်ရေးကို ပံ့ပိုးပေးသည့် ဖွံ့ဖြိုးတိုးတက်ရေးမိတ်ဖက်များ၊ ကုလသမဂ္ဂအေဂျင်စီများနှင့် ပူးပေါင်းလုပ်ဆောင်သည့် ၁၉၆၅ ခုနှစ်ကတည်းက Sierra Leone တွင် ရောက်ရှိခဲ့ပါသည်။',
         statHeading:'ကျွန်ုပ်တို့၏သက်ရောက်မှု',
         storiesHeading:'ပုံပြင်မျာ',
-        takeAcrtionHead:'အရေးယူပါ။'
+        takeAcrtionHead:'အရေးယူပါ။',
+        storyBtn:'ဇာတ်လမ်းများအားလုံးကို ကြည့်ပါ။',
       };
       return burmeseText;
     case "japanese":
       const japaneseText = {
-        titlename: "シエラレオネ青年大臣が2020年ソーシャルグッドサミットを開始",
+        titlename: ['シエラレオネユース',<br/>,'大臣が発足',<br/>,'2020ソーシャルグッドサミット'],
         text: "シエラレオネ",
         btnlabel: "続きを読む",
         subtitle:"国境での公衆衛生問題に対応するために「立ち上がって」いるので、Covid-19に関する重要なメッセージを強化し、国境のセキュリティを強化する必要があります…",
@@ -309,12 +312,13 @@ export const getCaptionForLocale = (locale) => {
         whatwedodescription:'UNDPは、1965年以来、シエラレオネに存在し、シエラレオネ政府、開発パートナー、国連機関、市民社会、地域社会と協力して、包摂的な成長、持続可能、効率的な民主的ガバナンスに貢献しています。',
         statHeading:'私たちの影響',
         storiesHeading:'ストーリー',
-        takeAcrtionHead:'行動を起こす'
+        takeAcrtionHead:'行動を起こす',
+        storyBtn:'すべてのストーリーを見る',
       };
       return japaneseText;
     default:
       return {
-        titlename: "Sierra Leone Youth Minister Launches 2020 Social Good Summit",
+        titlename: ['Sierra Leone Youth',<br/>,'Minister Launches',<br/>,'2020 Social Good Summit'],
         text: "Sierra Leone",
         btnlabel: "READ MORE",
         subtitle:"As we ‘come to our feet’ to respond to public health issues at the borders, key messages on Covid-19 should be reinforced, border security enhanced…",
@@ -382,7 +386,8 @@ export const getCaptionForLocale = (locale) => {
         whatwedodescription:'UNDP has had a presence in Sierra Leone since 1965, working in partnership with the Government of Sierra Leone, development partners, UN agencies, civil society and local communities, contributing to inclusive growth, sustainabily, and efficient democratic governance.',
         statHeading:'Our Impact',
         storiesHeading:'Stories',
-        takeAcrtionHead:'Take Action'
+        takeAcrtionHead:'Take Action',
+        storyBtn:'SEE ALL STORIES',
     };
   }
 };
@@ -419,7 +424,9 @@ export const getCaptionForLocale = (locale) => {
 
 Country Homepage Template
 
-<Story name="Country Homepage">
+<Story name="Country Homepage" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     const navigationData= getNavLinks(locale);
@@ -462,6 +469,7 @@ Country Homepage Template
         logo={logo}
         logowhite={logowhite}
         takeAcrtionHead={caption.takeAcrtionHead}
+        storyBtn={caption.storyBtn}
     ></CountryHomepage>;
   }}
 </Story>

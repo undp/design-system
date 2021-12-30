@@ -4,9 +4,9 @@
 
 /* Tab start */
 .tabs {
+  background-color: $color-white;
   border-bottom: 2px solid $color-gray-300;
   list-style: none;
-  background-color: $color-white;
   padding-left: 0;
 
   @include devicebreak(medium) {
@@ -14,16 +14,17 @@
   }
 
   li {
+    border-bottom: 2px solid transparent;
     cursor: pointer;
     display: inline-block;
     font-weight: 700;
     letter-spacing: 0.03em;
     margin-bottom: -0.125rem;
     margin-right: $spacing-24;
+    margin-top: 0.75rem;
     padding-bottom: $spacing-08;
     text-transform: uppercase;
-    margin-top: 0.75rem;
-    border-bottom: 2px solid transparent;
+
     &.is-active {
       border-bottom: 2px solid $color-dark-red;
     }
@@ -36,6 +37,7 @@
 
     a {
       @extend %img_none;
+
       font-size: $font-size-16;
     }
   }
@@ -53,6 +55,7 @@
 
     p {
       margin-top: $spacing-16;
+
       @include devicebreak(medium) {
         margin-top: 2.5rem;
       }
@@ -60,13 +63,14 @@
   }
 }
 
-
 [dir='rtl'] {
   .tabs {
     padding-right: 0;
+
     @include devicebreak(medium) {
-       padding-right: $spacing-48;
+      padding-right: $spacing-48;
     }
+
     li {
       margin-left: $spacing-24;
       margin-right: 0;

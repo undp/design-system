@@ -57,4 +57,13 @@
   }
 }
 
+//burmese lang
+:lang(my){
+  .modal {
+    &-close-button {
+      font-size: 0;
+    }
+  }
+}
+
 /* Modal lightbox card end */

@@ -20,7 +20,7 @@
     position: absolute;
     z-index: 9;
 
-    &-item {
+    li {
       list-style: none;
       margin-bottom: 0;
 
@@ -96,4 +96,5 @@
     margin-right: $spacing-08;
   }
 }
+
 /* language-switcher start */

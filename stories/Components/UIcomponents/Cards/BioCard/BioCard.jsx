@@ -7,13 +7,15 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
+const cls = (...classes) => classes.filter(Boolean).join(' ');
+
 export const size_options = {
   large: 'large-12',
   medium: 'large-3',
 };
 
 export const hover_color_options = {
-  yellow: '',
+  yellow: 'yellow',
   green: 'green',
   red: 'red',
   azure: 'azure',
@@ -40,14 +42,11 @@ export const BioCard = ({
   return (
     <>
       <div className="grid-x grid-margin-x">
-        <div className={['cell', `${size_options[`${args.size}`]}`].join(' ')}>
+        <div className={cls('cell', `${size_options[`${args.size}`]}`)}>
           {args.size === 'large' && (
-            <a
-              id="bio-card"
-              className={['grid-x grid-margin-x bio-card', `${hover_color_options[`${args.hovercolor}`]}`].join(' ')}
-            >
+            <a className={cls('grid-x', 'grid-margin-x', 'bio-card', `${hover_color_options[`${args.hovercolor}`]}`)}>
               <article className="bio-card__content medium-7">
-                <div className="bio-card__description left-right ">
+                <div className="bio-card__description left-right">
                   <Heading type="5" label={contentname} />
                   <P label={descriptionText} />
                 </div>
@@ -62,15 +61,12 @@ export const BioCard = ({
           )}
 
           {args.size === 'medium' && (
-            <a
-              id="bio-card"
-              className={['bio-card medium', `${hover_color_options[`${args.hovercolor}`]}`].join(' ')}
-            >
-              <div className="card-thumbnail__image ">
+            <a className={cls('bio-card', 'medium', `${hover_color_options[`${args.hovercolor}`]}`)}>
+              <div className="card-thumbnail__image">
                 <img src={image} alt={image} />
               </div>
-              <article className="bio-card__content ">
-                <div className="bio-card__description left-right ">
+              <article className="bio-card__content">
+                <div className="bio-card__description left-right">
                   <Heading type="5" label={contentname} />
                   <P label={descriptionText} />
                 </div>

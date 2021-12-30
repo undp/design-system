@@ -3,7 +3,7 @@ import './signup.scss';
 import { Inputcomponent } from '../Inputfields/Input_group';
 
 export const SignUp = ({
-  element, type, required, mode, label, button, errorText, placeholder, ...args
+  element, type, required, mode, label, button, btnType, btnID, errorText, placeholder, ...args
 }) => {
   const InputTag = `${element}`;
   return(
@@ -15,13 +15,14 @@ export const SignUp = ({
         <InputTag
           type='submit'
           id='submit'
+          Value={button}
           className="form-submit button button--primary"
           />
+        </div>
       </div>
-    </div>
-  </form>
-);
-}
+    </form>
+  );
+};
 SignUp.defaultProps = {
   variant: 'black',
 };

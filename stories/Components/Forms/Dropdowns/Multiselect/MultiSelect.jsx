@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import './multiselect.scss';
 import init from '../../../../assets/js/multiselect-init';
 import { Checkbox } from '../../Checkbox/Checkbox';
+import { Radio } from '../../Radio/Radio';
 
-const SelectTag = ({ text, eleId }) => {
+const SelectTag = ({ text, eleId, ...args }) => {
   useEffect(() => {
     init();
   }, []);
@@ -13,56 +14,159 @@ const SelectTag = ({ text, eleId }) => {
         className="select-control"
         aria-label="Region"
         aria-expanded="false"
-        id={`select_button-${eleId}`}
+        id={`select_button`}
       >
         {text}
       </button>
-      <ul
-        className="options"
-        data-type="region"
-        aria-labelledby={`select_button-${eleId}`}
-        role="listbox"
-        aria-multiselectable="true"
-        aria-hidden="true"
-        aria-modal="true"
-      >
-        <li role="option">
-          <Checkbox label={`${text}`} value="category1" id={`category1-${eleId}`} />
-        </li>
-        <li role="option" className="has-submenu">
-          <button className="has-submenu__button checkbox-item">
-            {text}
-          </button>
-          <ul role="listbox" className="sub-menu">
-            <li role="option">
-              <Checkbox
-                label={`${text}`}
-                value="subcategory1"
-                id={`subcategory1-${eleId}`}
-              />
-            </li>
-            <li role="option">
-              <Checkbox
-                label={`${text}`}
-                value="subcategory2"
-                id={`subcategory2-${eleId}`}
-              />
-            </li>
-          </ul>
-        </li>
-        <li role="option">
-          <Checkbox label={`${text}`} value="category2" id={`category2-${eleId}`} />
-        </li>
-        <li role="option">
-          <Checkbox label={`${text}`} value="category3" id={`category3-${eleId}`} />
-        </li>
-        <li role="option">
-          <Checkbox label={`${text}`} value="category4" id={`category4-${eleId}`} />
-        </li>
-        <li role="option">
-          <Checkbox label={`${text}`} value="category5" id={`category5-${eleId}`} />
-        </li>
-      </ul>
+      {args.variant === "Checkbox" && (
+        <ul
+          className={[
+            "options",
+            args.Height === "Fix height" ? " fix-height" : "",
+          ].join("")}
+          data-type="region"
+          aria-labelledby={`select_button`}
+          role="listbox"
+          aria-multiselectable="true"
+          aria-hidden="true"
+          aria-modal="true"
+        >
+          <li role="option">
+            <Checkbox
+              label={`${text}`}
+              value="category1"
+              id={`category1-${eleId}`}
+            />
+          </li>
+          <li role="option" className="has-submenu">
+            <button className="checkbox-item">
+              {text}
+            </button>
+            <ul role="listbox" className="sub-menu">
+              <li role="option">
+                <Checkbox
+                  label={`${text}`}
+                  value="subcategory1"
+                  id={`subcategory1-${eleId}`}
+                />
+              </li>
+              <li role="option">
+                <Checkbox
+                  label={`${text}`}
+                  value="subcategory2"
+                  id={`subcategory2-${eleId}`}
+                />
+              </li>
+            </ul>
+          </li>
+          <li role="option">
+            <Checkbox
+              label={`${text}`}
+              value="category2"
+              id={`category2-${eleId}`}
+            />
+          </li>
+          <li role="option">
+            <Checkbox
+              label={`${text}`}
+              value="category3"
+              id={`category3-${eleId}`}
+            />
+          </li>
+          <li role="option">
+            <Checkbox
+              label={`${text}`}
+              value="category4"
+              id={`category4-${eleId}`}
+            />
+          </li>
+          <li role="option">
+            <Checkbox
+              label={`${text}`}
+              value="category5"
+              id={`category5-${eleId}`}
+            />
+          </li>
+        </ul>
+      )}
+      {args.variant === "Radio" && (
+        <ul
+          className={[
+            "options",
+            args.Height === "Fix height" ? " fix-height" : "",
+          ].join("")}
+          data-type="region"
+          aria-labelledby={`select_button`}
+          role="listbox"
+          aria-multiselectable="true"
+          aria-hidden="true"
+          aria-modal="true"
+        >
+          <li role="option">
+            <Radio
+              label={`${text}`}
+              value="category1"
+              id={`category1-${eleId}`}
+              name={`category1-${eleId}`}
+            />
+          </li>
+          <li role="option" className="has-submenu">
+            <button className="checkbox-item">
+              {text}
+            </button>
+            <ul role="listbox" className="sub-menu">
+              <li role="option">
+                <Radio
+                  label={`${text}`}
+                  value="subcategory1"
+                  id={`subcategory1-${eleId}`}
+                  name={`subcategory1-${eleId}`}
+                />
+              </li>
+              <li role="option">
+                <Radio
+                  label={`${text}`}
+                  value="subcategory2"
+                  id={`subcategory2-${eleId}`}
+                  name={`subcategory2-${eleId}`}
+                />
+              </li>
+            </ul>
+          </li>
+          <li role="option">
+            <Radio
+              label={`${text}`}
+              value="category2"
+              id={`category2-${eleId}`}
+              name={`category2-${eleId}`}
+            />
+          </li>
+          <li role="option">
+            <Radio
+              label={`${text}`}
+              value="category3"
+              id={`category3-${eleId}`}
+              name={`category3-${eleId}`}
+            />
+          </li>
+          <li role="option">
+            <Radio
+              label={`${text}`}
+              value="category4"
+              id={`category4-${eleId}`}
+              name={`category4-${eleId}`}
+            />
+          </li>
+          <li role="option">
+            <Radio
+              label={`${text}`}
+              value="category5"
+              id={`category5-${eleId}`}
+              name={`category5-${eleId}`}
+            />
+          </li>
+        </ul>
+      )}
     </div>
   );
 };

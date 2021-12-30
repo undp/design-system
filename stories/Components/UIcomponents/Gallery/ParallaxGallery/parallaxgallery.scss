@@ -99,7 +99,6 @@
           margin-left: 0.375rem;
         }
       }
-
     }
 
     img {
@@ -131,41 +130,37 @@
   }
 }
 
-[dir='rtl']{
-  .parallax-gallery{
-    &-images{
+[dir='rtl'] {
+  .parallax-gallery {
+    &-images {
       > div {
-        
-        &:first-child {
-          margin-left: 0.5rem;
-        }
-  
-        &:last-child {
-          margin-right: 0.5rem;
-        }
-  
         @include devicebreak(large) {
-  
           &:first-child {
             margin-left: 0.75rem;
           }
-  
+
           &:last-child {
             margin-right: 0.75rem;
           }
         }
-  
+
         @include devicebreak(small) {
-  
           &:first-child {
             margin-left: 0.375rem;
           }
-  
+
           &:last-child {
             margin-right: 0.375rem;
           }
         }
-  
+
+        &:first-child {
+          margin-left: 0.5rem;
+        }
+
+        &:last-child {
+          margin-right: 0.5rem;
+        }
       }
     }
   }

@@ -1,22 +1,20 @@
 import React from 'react';
 
 export const Textarea = ({
-  id, type, rows, cols, placeholder, required, labelText, errorText, minlength, helpText, State,
+  id, type, rows, cols, placeholder, required, labelText, name, errorText, minlength, helpText, State,
 }) => {
-
   let state;
-  const states = ["Focus", "Error", "Disabled"];
-  state = states.includes(State) ? State.toLowerCase() : 'default';
+  const states = ['Focus', 'Error', 'Disabled'];
+  state = states.includes(State) ? State.toLowerCase() : ' ';
 
   return (
     <>
       <div className={['input-group', `${state}`].join(' ')}>
-        {labelText && <label htmlFor={[`${type}`]} className='input-group__label'>{ labelText }</label>}
-        <div className={[`input-group__icon ${type}-field`]}>
-          <textarea type={type} id={id}  disabled={State == 'Disabled'} required={required} placeholder={placeholder} minlength={minlength} cols={cols} rows={rows} className={['input__controls ', `input__controls--${type} ${state}-state`].join(' ')}></textarea>
-        </div>
-        {helpText && <p className='input-group__label-help'>{ helpText }</p>}
-        {(State == 'Error') && <p className='input-group__label-error'>{ errorText }</p>}
+        {labelText && <label htmlFor={[`${type}`]}>{ labelText }</label>}
+          <textarea type={type} disabled={State == 'Disabled'} placeholder={placeholder} minLength={minlength} cols={cols} rows={rows} name={type} className={[`${type} ${state}`].join(' ')} />
+        {helpText && <p className="help">{ helpText }</p>}
+        {(State == 'Error') && <p className="error">{ errorText }</p>}
       </div>
     </>
-)};
+  );
+};

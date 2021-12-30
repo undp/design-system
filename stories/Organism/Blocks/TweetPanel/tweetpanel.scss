@@ -9,14 +9,17 @@
     padding: $spacing-96 $spacing-24;
 
     .twitter {
-      background: url(#{$img-path-Icon}/social_icon.png) no-repeat;
-      background-position: -43px -27px;
+      background: url(#{$img-path-Icon}/tweet-white.svg) no-repeat center bottom;
       display: block;
       font-size: 0;
-      height: 25px;
-      margin-bottom: 0.375rem;
+      height: 36px;
+      margin-bottom: $spacing-04;
       margin-left: -0.625rem;
-      width: 30px;
+      width: 36px;
+
+      @include devicebreak(medium) {
+        margin-bottom: 0.375rem;
+      }
     }
   }
 }
@@ -36,9 +39,9 @@
 
 [dir='rtl'] {
   .twitter-panel {
-    .twitter {
-      margin-left: 0;
-      margin-right: -$spacing-16;
+    h2 {
+      margin-left: 0.375rem;
+      margin-right: 0;
     }
   }
 }

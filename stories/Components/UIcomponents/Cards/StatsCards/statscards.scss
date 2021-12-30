@@ -32,7 +32,11 @@
       1px -1px 0 $color-black,
       -1px 1px 0 $color-black,
       1px 1px 0 $color-black;
-    -webkit-text-stroke: 2px $color-black;
+
+    @supports (-webkit-text-stroke: 2px $color-black) {
+      text-shadow: none;
+      -webkit-text-stroke: 2px $color-black;
+    }
 
     @include devicebreak(medium) {
       font-size: 6.875rem;
@@ -185,7 +189,21 @@
   }
 
   &:hover {
-    background-color: $color-yellow;
+    &.yellow {
+      background-color: $color-yellow;
+    }
+
+    &.red {
+      background-color: $color-red;
+    }
+
+    &.green {
+      background-color: $color-green;
+    }
+
+    &.blue {
+      background-color: $color-azure;
+    }
 
     & .statscard__number {
       color: $color-black;

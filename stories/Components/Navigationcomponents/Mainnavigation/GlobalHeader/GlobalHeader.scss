@@ -8,6 +8,11 @@
   @include devicebreak(mediumonlytab) {
     height: 4.6875rem;
   }
+  @include devicebreak(xlarge) {
+    .fluid{
+      margin:0 $spacing-70;
+    }
+  }
 
   .top-left {
     @include devicebreak(mediumonlytab) {
@@ -94,7 +99,8 @@
       .logo {
         @include devicebreak(mediumonlytab) {
           height: 4.6875rem;
-        }
+        } 
+        @extend %logo;
       }
     }
   }

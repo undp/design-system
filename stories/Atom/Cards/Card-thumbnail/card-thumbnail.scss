@@ -2,8 +2,8 @@
 
 /* card_thumbnail__image start */
 .card-thumbnail__image {
-  position: relative;
   display: inline-flex;
+  position: relative;
 
   &::before {
     @extend %absolute__content;
@@ -40,6 +40,19 @@
   &.azure {
     &::before {
       @include background-image(42deg, $color-azure, transparent 80%);
+    }
+  }
+}
+
+[dir='rtl'] {
+  // color map
+  $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
+
+  .card-thumbnail__image {
+    @each $name, $color in $colors {
+      &.#{$name}:before {
+        @include background-image(318deg, #{$color}, transparent 80%);
+      }
     }
   }
 }

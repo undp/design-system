@@ -74,19 +74,20 @@
     .credits {
       @include devicebreak(medium) {
         border-left: none;
-        padding-left: 0;
         margin-left: 0;
+        padding-left: 0;
       }
 
       strong {
-       margin-right: $spacing-04;
+        margin-right: $spacing-04;
+
         @include devicebreak(medium) {
           margin-right: 0;
         }
       }
     }
 
-      &_para {
+    &_para {
       + .credits {
         @include devicebreak(medium) {
           border-right: 1px solid $color-gray-500;
@@ -98,6 +99,15 @@
           padding-top: 0;
         }
       }
+    }
+  }
+}
+
+// burmese lang
+:lang(my){
+  .image__caption {
+    .image__caption_para, .credits {
+      line-height: 1.7;
     }
   }
 }

@@ -3,7 +3,7 @@ export function ModalFun() {
   const $modalOverlay = $('.modal');
   const $modal = $('.modal-content');
   const $modalClose = $('.modal-close-button');
-  const $modalOpen = $('#bio-card');
+  const $modalOpen = $('.bio-card');
   const modal = '#myModal';
 
   $(modal).css('visibility', 'hidden');

@@ -8,7 +8,7 @@ import BackgroundImg from '../../../../assets/images/Pagewide.jpg';
 import { Cardgradient } from '../../../../assets/js/cardgradient';
 
 export const PageWideCard = ({
-  label, title, paragraph, button,
+  label, title, paragraph, button, hovercolor,
 }) => {
   useEffect(() => {
     Cardgradient();
@@ -21,12 +21,12 @@ export const PageWideCard = ({
       <div className="grid-x wide-card__wrapper">
         <div className="cell medium-6 wide-card__description left-right">
           <div className="card-summary">
-          <Heading type="4" label={title} />
-          <P label={paragraph} />
+            <Heading type="4" label={title} />
+            <P label={paragraph} />
           </div>
           <CtaButton label={button} for_primary="arrow" />
         </div>
-        <div className="cell medium-6 wide-card__image">
+        <div className={['cell medium-6 wide-card__image', `${hovercolor}`].join(' ')}>
           <a href="#">
             <img src={BackgroundImg} alt={BackgroundImg} />
           </a>
@@ -34,4 +34,8 @@ export const PageWideCard = ({
       </div>
     </div>
   );
+};
+
+PageWideCard.defaultProps = {
+  hovercolor: 'yellow',
 };

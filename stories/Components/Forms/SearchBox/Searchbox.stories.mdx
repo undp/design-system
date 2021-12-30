@@ -36,6 +36,7 @@ Input elements of type search are text fields designed for the user to enter sea
   </Story>
 </Canvas>
 
+<<<<<<< HEAD
 #### Error
 <Canvas>
   <Story name="Search-error">
@@ -61,6 +62,35 @@ The Input Field has four states: Default, Focus. Error and Disabled.
 
 ### CSS and JS References
 All input fields are part of default base style, no seperate CSS and JS required
+=======
+<Story name="Search-default">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Searchbox labelText={caption.detail3} type='search' id= 'search' mode=' ' required='required' placeholder= {caption.detail4}></Searchbox>;
+  }}
+</Story>
+
+<Story name="Search-focus">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Searchbox labelText={caption.detail3} type='search' id= 'search' mode='focus' required='required' placeholder= {caption.detail4}></Searchbox>;
+  }}
+</Story>
+
+<Story name="Search-error">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Searchbox labelText={caption.detail3} errorText={caption.detail2}  type='search' id= 'search' mode='error' required='required' placeholder= {caption.detail4}></Searchbox>;
+  }}
+</Story>
+
+<Story name="Search-disabled">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Searchbox labelText={caption.detail3} type='search' id= 'search' mode='disabled' placeholder= {caption.detail4} disabled= 'disabled'> </Searchbox>;
+  }}
+</Story>
+>>>>>>> 3e59ffcf3e79d2d1345b659b0a6f9ad1ba76ca8f
 
 ### Changelog
 1.0 — Released component

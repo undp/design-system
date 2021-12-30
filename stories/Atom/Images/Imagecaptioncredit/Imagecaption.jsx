@@ -9,28 +9,24 @@ export const size_options = {
   portrait: 'medium-4',
 };
 
-export const size_options2 = {
-  wide: 'medium-7',
-  medium: 'medium-7',
-  portrait: 'medium-3',
-};
-
 export const size_options3 = {
   wide: '',
   medium: '',
   portrait: 'portrait',
 };
 
+const cls = (...classes) => classes.filter(Boolean).join(' ');
+
 export const Images = ({
   imagelg, imagemd, imagesm, alt, label, paragraph, ...args
 }) => {
   useEffect(() => {
     viewport('.image-section__cart');
-    viewport('.image-section__description');
+    viewport('.image-section .image__caption');
   }, []);
   return (
-    <div className={['grid-x', 'image-section', `${size_options3[`${args.size}`]}`].join(' ')}>
-      <div className={['cell', 'image-section__cart', 'scale-up', `${size_options[`${args.size}`]}`].join(' ')}>
+    <figure className={cls('grid-x', 'image-section', `${size_options3[`${args.size}`]}`)}>
+      <div className={cls('cell', 'image-section__cart', 'scale-up', `${size_options[`${args.size}`]}`)}>
         {args.size === 'wide' && <img src={imagelg} alt={alt} />}
         {args.size === 'medium' && <img src={imagemd} alt={alt} />}
         {args.size === 'portrait' && <img src={imagesm} alt={alt} />}
@@ -39,12 +35,9 @@ export const Images = ({
       {args.caption === 'false' && args.credit === 'false' ? (
         <></>
       ) : (
-        <div className={['cell', 'image-section__description', 'opacity-only', `${size_options2[`${args.size}`]}`].join(' ')}>
-          <Imagecaption label={label} paragraph={paragraph} caption={args.caption} credit={args.credit} />
-        </div>
+        <Imagecaption opacityOnly='yes' label={label} paragraph={paragraph} caption={args.caption} credit={args.credit} />
       )}
-
-    </div>
+    </figure>
   );
 };
 

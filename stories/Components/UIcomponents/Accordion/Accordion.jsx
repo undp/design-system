@@ -10,24 +10,24 @@ export const Accordion = ({ headerText, descriptionText }) => {
   }, []);
 
   return (
-    <ul className="accordion" id="accordion">
-      <li className="accordion__item">
-        <Heading type="5" label={headerText} className="accordion__heading" />
-        <div className="accordion__panel">
+    <ul className="accordion" aria-label="accordion">
+      <li className="accordion__item" tabindex="0">
+        <Heading type="5" label={headerText} className="accordion__heading" aria-label="accordion heading"/>
+        <div className="accordion__panel" aria-label="accordion description">
           <P label={descriptionText} />
           <P label={descriptionText} />
         </div>
       </li>
-      <li className="accordion__item">
-        <Heading type="5" label={headerText} className="accordion__heading" />
-        <div className="accordion__panel">
+      <li className="accordion__item" tabindex="0" >
+        <Heading type="5" label={headerText} className="accordion__heading" aria-label="accordion heading"/>
+        <div className="accordion__panel" aria-label="accordion description">
           <P label={descriptionText} />
           <P label={descriptionText} />
         </div>
       </li>
-      <li className="accordion__item">
-        <Heading type="5" label={headerText} className="accordion__heading" />
-        <div className="accordion__panel">
+      <li className="accordion__item" tabindex="0">
+        <Heading type="5" label={headerText} className="accordion__heading" aria-label="accordion heading"/>
+        <div className="accordion__panel" aria-label="accordion description">
           <P label={descriptionText} />
           <P label={descriptionText} />
         </div>
