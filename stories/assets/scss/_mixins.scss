@@ -305,7 +305,6 @@
   padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
   position: relative;
   text-transform: uppercase;
-  margin: 0;
   color:$color-black;
 }
 
@@ -432,6 +431,16 @@
   }
 }
 
+%logo{
+  @include transition(all .4s cubic-bezier(.64,.05,.35,1.05));
+  @include devicebreak(xlarge) {
+    height: 7.625rem;
+    &.scrolled{
+      height: 7.1875rem;
+    }
+  }
+}
+
 %background-white {
   background-color: white;
 }
@@ -495,3 +504,4 @@
     font-size: $font-size-14;
   }
 }
+
