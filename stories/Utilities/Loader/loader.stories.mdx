@@ -1,32 +1,47 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Loader } from './loader';
 
 <Meta title="Utilities/Loading" component={Loader} />
 
-<style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }  
-`}</style>
+# Loader
+A loading spinner is a utility that shows a loading page overlay when clicking a link or button
 
-# Loader Component
+### Overview
+A loading spinner displays a loading page overlay to inform the user of some background activity happening in response to their action on a page. This helps the user understand that they need to wait for the activity to finish before proceeding further.
 
-The loader component is used to show the loading time of the web page. It will be animated until the complete site loading.
+#### When to use:
+- To inform the user that some background activity is happening when they encounter a delay in response to a button or link click
 
-<Story name="Loading">
-  return <Loader ></Loader>;
-</Story>
+### Formatting
 
-<div className="subheading">Usage</div>
-<ul>
-<li>We can take HTML from the HTML tab in the canvas tab</li>
-<li>Include the common SCSS file like normalize, variables, mixins, breakpoints from the folder <code>assets/scss</code></li>
-<li>Component wise SCSS file residing in each component</li>
-<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
-</ul>
+#### Default
+The loading spinner is a simple animation that informs the user that the page is loading. It will be displayed until the full page has been loaded.
+
+<Canvas>
+  <Story name="Loading">
+    <Loader ></Loader>;
+  </Story>
+</Canvas>
+
+### CSS and JS References [ADDED BY DEVs]
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/[component].css
+
+#### JS:
+- dist/js/[component].js
+
+### Content
+The loading spinner is a simple circle animation. The size varies depending on the screen size.
+
+### Behaviors
+
+#### States
+The loading spinner has just one state - spinning. As soon as the page loads, the loading spinner is removed
+
+#### Interactions
+- No interactions are needed with the loader
+
+### Changelog
+1.0 — Released component

@@ -1,8 +1,8 @@
-import React from "react";
-import "./FormTypes.scss";
-import { Inputcomponent } from "../Inputfields/Input_group";
-import { Image } from "../../../Atom/Images/Image/Image";
-import { Heading } from "../../../Atom/Typography/Heading/Heading";
+import React from 'react';
+import './FormTypes.scss';
+import { Inputcomponent } from '../Inputfields/Input_group';
+import { Image } from '../../../Atom/Images/Image/Image';
+import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const FormTypes = ({
   element,
@@ -14,20 +14,23 @@ export const FormTypes = ({
   errorText,
   placeholder,
   placeholderemail,
+  placeholderfirst,
+  placeholderlast,
   anchorTag,
+  anchorTag2,
   para,
   ...args
 }) => (
   <form>
     <div className="grid-container form-wrapper">
-      {args.variant === "text panel and form" && (
-        <div className="grid-x grid-margin-x grid-margin-y">
+      {args.variant === 'text panel and form' && (
+        <div className="grid-x grid-margin-x grid-margin-y text-panel">
           <div className="medium-5 cell large-offset-1 mt-0">
             <Heading type="2" label={anchorTag} />
             <p>{para}</p>
           </div>
           <div className="large-4 medium-6 cell medium-offset-1">
-            <div className="grid-x grid-margin-x grid-margin-y">
+            <div className="grid-x grid-margin-x">
               <div className="cell">
                 <Inputcomponent
                   element={element}
@@ -48,7 +51,7 @@ export const FormTypes = ({
               </div>
 
               <div className="cell">
-                {" "}
+                {' '}
                 <button type="submit" className="button button-primary">
                   {button}
                 </button>
@@ -58,15 +61,15 @@ export const FormTypes = ({
         </div>
       )}
       {args.variant === "form with photo" && (
-        <div className="grid-x grid-margin-x form-photo">
+        <div className="grid-x form-photo">
           <div className="medium-5 cell">
             <Image />
           </div>
           <div className="medium-7 cell form-bg">
-            <div className="grid-x grid-margin-y stacked-form">
+            <div className="grid-x stacked-form">
               <div className="cell medium-8 medium-offset-2">
-              <Heading type="2" label={anchorTag} />
-              <p>{para}</p>
+                <Heading type="2" label={anchorTag} />
+                <p>{para}</p>
               </div>
               <div className="cell medium-8 medium-offset-2">
                 <Inputcomponent
@@ -96,19 +99,19 @@ export const FormTypes = ({
         </div>
       )}
       {args.variant === "wide form" && (
-        <div className="grid-x grid-margin-x">
+        <div className="grid-x grid-margin-x wide-form">
           <div className="large-8 cell">
             <div className="grid-x">
               <div className="large-12 cell">
-              <Heading type="2" label={anchorTag} />
+                <Heading type="2" label={anchorTag2} />
               </div>
             </div>
-            <div className="grid-x grid-margin-x grid-margin-y wide-form">
+            <div className="grid-x grid-margin-x">
               <div className="medium-6 cell">
                 <Inputcomponent
                   element={element}
                   type={type}
-                  placeholder={placeholder}
+                  placeholder={placeholderfirst}
                   required={required}
                   mode={mode}
                 />
@@ -117,7 +120,7 @@ export const FormTypes = ({
                 <Inputcomponent
                   element={element}
                   type={type}
-                  placeholder={placeholder}
+                  placeholder={placeholderlast}
                   required={required}
                   mode={mode}
                 />
@@ -140,14 +143,14 @@ export const FormTypes = ({
           </div>
         </div>
       )}
-      {args.variant === "stacked form" && (
+      {args.variant === 'stacked form' && (
         <div className="grid-x grid-margin-x grid-margin-y stacked-form">
           <div className="large-4 medium-6 cell">
             <div className="grid-x">
               <div className="large-12 cell">
-              <Heading type="2" label={anchorTag} />
-              <p>{para}</p>
-                <div className="grid-x grid-margin-y">
+                <Heading type="2" label={anchorTag} />
+                <p>{para}</p>
+                <div className="grid-x">
                   <div className="cell">
                     <Inputcomponent
                       element={element}

@@ -2,7 +2,18 @@ import { Meta, Story } from '@storybook/addon-docs';
 import { ProgressBarNavigation } from './ProgressBarNavigation';
 
 
-<Meta title="Testing/Navigation/Progress Bar Navigation" component={ProgressBarNavigation} />
+<Meta title="Testing/Navigation/Progress Bar Navigation" argTypes={{
+  Type: {
+    options: ['Large', 'Small'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'Large'
+  },
+  Colors: {
+    options: ['yellow', 'red', 'green', 'blue'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'yellow'
+  }
+}}/>
 
 <style>{`
   .subheading {
@@ -24,7 +35,9 @@ The Progress Bar component is used to displays an indicator showing the completi
 </ul>
 
 <Story name="Progress Bar Navigation">
-  return <ProgressBarNavigation ></ProgressBarNavigation>;
+  {(args) =>{
+    return <ProgressBarNavigation {...args}></ProgressBarNavigation>;
+  }}
 </Story>
 
 <div className="subheading">Usage</div>

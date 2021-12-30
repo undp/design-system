@@ -118,7 +118,7 @@
 
   .sign-up {
     &.blue {
-      .input__controls {
+      input[type=email]{
         background-color: transparent;
         border-color: $color-white;
         color: $color-white;
@@ -155,6 +155,12 @@
 
 @include devicebreak(medium) {
   [dir='rtl'] {
+    .footer {
+      .footer__icons {
+        justify-content: flex-start;
+      }
+    }
+
     .footer-bottom {
       &.two {
         .footer__condition_text {

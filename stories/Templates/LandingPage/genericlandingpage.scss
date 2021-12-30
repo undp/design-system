@@ -13,27 +13,88 @@
   }
 }
 
-.multi-select .select-control {
-  min-width: 100%;
-}
+.landing-page {
+  .multi-select {
+    max-width: 100%;
 
-.pagehero {
-  &_right_box {
-    height: auto;
-    position: relative;
-    width: 100%;
+    .select-control {
+      min-width: 100%;
+    }
 
-    @include devicebreak(medium) {
-      height: 100%;
-      position: inherit;
+    .options {
+      min-width: 100%;
     }
   }
 
-  &__content{
-    padding-top: $spacing-16;
+  .pagehero {
+    &_right_box {
+      height: auto;
+      position: relative;
+      width: 100%;
+      margin-top: 0;
+  
+      @include devicebreak(medium) {
+        margin-top: 7rem;
+        height: 100%;
+        position: inherit;
+      }
+
+      @include devicebreak(xlarge) {
+        margin-top: 9.125rem;
+        height: 100%;
+        position: inherit;
+      }
+    }
+  
+    &__content {
+      margin-top: $spacing-40;
+      padding-top: $spacing-64;
+
+      @include devicebreak(medium) {
+        margin-top: 8.688rem;
+        padding-top: $spacing-80;
+      }
+    }
+
+    &-option {
+      margin-bottom: 0;
+
+      @include devicebreak(medium) {
+        margin-bottom: 5.879rem;
+      }
+
+      &__title {
+        display: none;
+      }
+
+      &__subtitle {
+        margin-top: 1.75rem;
+
+        @include devicebreak(medium) {
+          margin-top: 12.625rem;
+        }
+      }
+    }
+  }
+
+  .content-card-container {
+    margin-top: $spacing-24;
 
     @include devicebreak(medium) {
-      padding-top: $spacing-80;
+      margin-top: 4.313rem;
+    }
+  }
+}
+
+.sign-up {
+  &.blue {
+    .sign-up--field input {
+      border-color: $color-white;
+      background: transparent;
+
+      &::placeholder {
+        color: $color-white;
+      }
     }
   }
 }

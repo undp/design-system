@@ -3,22 +3,29 @@
 @import '../../../assets/scss/mixins';
 
 /* Tab start */
-.tab__items {
+.tabs {
+  background-color: $color-white;
   border-bottom: 2px solid $color-gray-300;
   list-style: none;
-  padding-left: $spacing-48;
+  padding-left: 0;
 
-  .tab__item {
+  @include devicebreak(medium) {
+    padding-left: $spacing-48;
+  }
+
+  li {
+    border-bottom: 2px solid transparent;
     cursor: pointer;
     display: inline-block;
     font-weight: 700;
     letter-spacing: 0.03em;
     margin-bottom: -0.125rem;
     margin-right: $spacing-24;
+    margin-top: 0.75rem;
     padding-bottom: $spacing-08;
     text-transform: uppercase;
 
-    &.active {
+    &.is-active {
       border-bottom: 2px solid $color-dark-red;
     }
 
@@ -30,28 +37,39 @@
 
     a {
       @extend %img_none;
-      
+
       font-size: $font-size-16;
     }
   }
 }
 
-.tab__content {
-  display: none;
+.tabs-content {
+  background-color: $color-white;
 
-  &.active {
-    display: inherit;
-  }
+  .tabs-panel {
+    display: none;
 
-  p {
-    margin-top: 2.5rem;
+    &.is-active {
+      display: inherit;
+    }
+
+    p {
+      margin-top: $spacing-16;
+
+      @include devicebreak(medium) {
+        margin-top: 2.5rem;
+      }
+    }
   }
 }
 
 [dir='rtl'] {
-  .tab__items {
-    padding-left: 0;
-    padding-right: $spacing-48;
+  .tabs {
+    padding-right: 0;
+
+    @include devicebreak(medium) {
+      padding-right: $spacing-48;
+    }
 
     li {
       margin-left: $spacing-24;

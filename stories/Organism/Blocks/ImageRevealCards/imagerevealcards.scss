@@ -1,0 +1,19 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+.reveal-cards {
+  margin-top: 3.75rem;
+
+  @include devicebreak(medium) {
+    margin-top: $spacing-40;
+  }
+
+  .cell {
+    padding: $spacing-12 0;
+
+    @include devicebreak(medium) {
+      padding: 0;
+    }
+  }
+}

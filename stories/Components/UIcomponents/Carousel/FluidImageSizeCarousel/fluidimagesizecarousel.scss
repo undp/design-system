@@ -2,19 +2,49 @@
 @import '../../../../assets/scss/mixins';
 
 /* fixed image size carousel start */
-.fluid-image-size-carousel {
+.fluid-carousel {
   overflow: hidden;
 
   &__image {
+    height: 31rem;
     display: block;
-    width: 100%;
+    object-fit: cover;
+    max-width: 55%;
+
+    @include devicebreak(large) {
+      max-width: 65%;
+    }
+
+    @include devicebreak(xlarge) {
+      max-width: 70%;
+    }
 
     @include devicebreak(small) {
-      max-width: 10.625rem;
+      max-width: 100%;
+      width: auto;
+      height: 18rem;
     }
   }
 
-  &__contents {
+  .slide-content {
+    padding-left: $spacing-24;
+    box-sizing: border-box;
+
+    @include devicebreak(medium) {
+      flex: 0 0 45%;
+      max-width: 45%;
+    }
+
+    @include devicebreak(large) {
+      flex: 0 0 35%;
+      max-width: 35%;
+    }
+
+    @include devicebreak(xlarge) {
+      flex: 0 0 30%;
+      max-width: 30%;
+    }
+
     @include devicebreak(small) {
       margin-top: 1.5rem;
       padding-left: 1.5rem;
@@ -44,15 +74,18 @@
     .cta__link {
       text-transform: uppercase;
     }
-  }
 
-  &__button-wrap {
-    @include devicebreak(medium) {
-      display: inline-flex;
+    &__button-wrap {
+      @include devicebreak(medium) {
+        display: inline-flex;
+      }
     }
   }
 
+  
+
   .glide {
+
     &__slides {
       margin-top: 3rem;
     }
@@ -62,23 +95,23 @@
     }
 
     &__arrows {
+      @extend %carousel_arrows;
+
       margin-left: 2rem;
 
-      @include devicebreak(large){
+      @include devicebreak(large) {
         margin-left: 3rem;
       }
-
-      @extend %carousel_arrows;
     }
 
     &__arrow {
       @extend %carousel_arrow;
 
-      &:first-child{
+      &:first-child {
         margin-right: 0.625rem;
       }
 
-      &:last-child{
+      &:last-child {
         margin-left: 0.625rem;
       }
 
@@ -91,8 +124,12 @@
 }
 
 [dir='rtl'] {
-  .fluid-image-size-carousel {
-    &__contents {
+  .fluid-carousel {
+
+    .slide-content {
+      padding-left: 0;
+      padding-right: $spacing-24;
+
       @include devicebreak(small) {
         padding-right: 1.5rem;
       }
@@ -104,15 +141,23 @@
         margin-right: 0;
       }
 
-      &__arrow{
-        &:first-child{
-          margin-right: 0;
+      &__arrow {
+        &:first-child {
           margin-left: 0.625rem;
+          margin-right: 0;
+
+          img{
+            @include transform(rotate(180deg))
+          }
         }
-  
-        &:last-child{
+
+        &:last-child {
           margin-left: 0;
           margin-right: 0.625rem;
+
+          img{
+            @include transform(rotate(-180deg))
+          }
         }
       }
 
@@ -120,7 +165,7 @@
         margin-left: auto;
         margin-right: 2rem;
 
-        @include devicebreak(large){
+        @include devicebreak(large) {
           margin-right: 3rem;
         }
       }

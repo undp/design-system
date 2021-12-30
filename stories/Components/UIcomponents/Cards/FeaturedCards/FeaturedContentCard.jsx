@@ -4,7 +4,6 @@ import '../../../../assets/scss/_grid.scss';
 import viewport from '../../../../assets/js/viewport';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
-import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
 export const size_options = {
   large: 'large-8 medium-8',
@@ -18,18 +17,18 @@ export const image_options = {
 };
 
 export const FeaturedContentCard = ({
-  type, cell, data, image, headertext, ...args
+  type, cell, data, image, headertext, hovercolor, ...args
 }) => {
   useEffect(() => {
     viewport('.feature__card-title');
   }, []);
   return (
     <div className="grid-x grid-margin-x">
-      {headertext && <div className="cell medium-3 medium-offset-1 feature__card-title left-right"><Heading type="2" label={headertext} /></div>}
+      {headertext && <div className="cell medium-3 medium-offset-1 small-offset-1 feature__card-title left-right"><Heading type="2" label={headertext} /></div>}
       {data.map((item, index) => (
         <div key={index} className={['cell', `${item.scale ? size_options[`${item.scale}`] : size_options[`${args.size}`]}`].join(' ')}>
           <a href="#" className={['feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_options[`${image}`]}`}`].join(' ')}>
-            <div className="feature__card-slide">
+            <div className={['feature__card-slide', `${hovercolor}`].join(' ')}>
               {image === 'image' || (item.type === 'image' && image === 'image')
                 ? (
                   <div className="feature__card-image">
@@ -51,7 +50,7 @@ export const FeaturedContentCard = ({
                 {item.descriptionText && <P label={item.descriptionText} />}
               </div>
               <div className="feature__cta">
-                <span className="cta__link cta--arrow" >{item.button}</span>
+                <span className="cta__link cta--arrow">{item.button}</span>
               </div>
             </article>
           </a>
@@ -63,4 +62,5 @@ export const FeaturedContentCard = ({
 
 FeaturedContentCard.defaultProps = {
   image: 'image',
+  hovercolor: 'yellow',
 };

@@ -330,7 +330,9 @@ export const getfiltertextForLocale = (locale) => {
   }
 `}</style>
 
-<Story name="Authors">
+<Story name="Authors" parameters={{
+    layout: "fullscreen"
+  }}>
   {(args, { globals: { locale } }) => {
     const filtertext = getfiltertextForLocale(locale);
     const buttonData = getButtonForLocale(locale);
@@ -340,9 +342,7 @@ export const getfiltertextForLocale = (locale) => {
      const rightNavigationData=navigationData.filter(item=>item.position==='right');
  return <Authors
     text={filtertext}
-    viewText = {buttonData.view}
-    sortText = {buttonData.sort}
-    closeText = {buttonData.close}
+    buttonData = {buttonData}
      footerData={footerData(locale)}
      authorData={getCaptionForLocale(locale)}
      breadcrumbData={breadcrumbData(locale)}

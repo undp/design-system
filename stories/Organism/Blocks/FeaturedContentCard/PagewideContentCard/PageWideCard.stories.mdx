@@ -51,7 +51,13 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Testing/Pagewide Featured Content Card" component={PageWideCard} />
+<Meta title="Testing/Pagewide Featured Content Card" component={PageWideCard} argTypes={{
+  hovercolor: {
+    options: ['yellow', 'red', 'green', 'blue'],
+    control: { type: 'radio' },
+    defaultValue: 'yellow'
+  }
+}}/>
 
 <style>{`
  .subheading {
@@ -82,7 +88,7 @@ export const getCaptionForLocale = (locale) => {
         label={caption.tag}
         title={caption.label1}
         paragraph={caption.label2}
-        button={caption.btnlabel}
+        button={caption.btnlabel} {...args}
       ></PageWideCard>
     );
   }}

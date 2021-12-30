@@ -4,33 +4,32 @@ import './buttons.scss';
 export const CtaButton = ({
   label, Type, State, For_Primary,
 }) => {
-  
   let type = 'primary';
-  if(Type == 'Secondary'){
-    type = 'secondary',
-    label = 'VIEW MORE'
+  if (Type == 'Secondary') {
+    type = 'secondary';
   }
   let state = 'active';
-  if(State == 'Disabled'){
-    state = 'disabled'
+  if (State == 'Disabled') {
+    state = 'disabled';
   }
   let for_primary = 'arrow';
-  if(For_Primary == 'No_Arrow'){
-    for_primary = 'without-arrow'
+  if (For_Primary == 'No Arrow') {
+    for_primary = 'without-arrow';
   }
 
-  return(
-  <>
-    {Type === 'Secondary'
-      ? (
-        <a className={['button', `button-${type}`, `${state}`].join(' ')}>
-          {label}
-        </a>
-      )
-      : (
-        <a className={['button', `button-${type}`, ` button-${for_primary}`, `${state}`].join(' ')}>
-          {label}
-        </a>
-      )}
-  </>
-)};
+  return (
+    <>
+      {Type === 'Secondary'
+        ? (
+          <a className={['button', `button-${type}`, `${state}`].join(' ')} role="button"  aria-pressed="false" href="#" >
+            {label}
+          </a>
+        )
+        : (
+          <a className={['button', `button-${type}`, ` button-${for_primary}`, `${state}`].join(' ')} role="button" aria-pressed="false" href="#">
+            {label}
+          </a>
+        )}
+    </>
+  );
+};

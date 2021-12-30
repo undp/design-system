@@ -11,7 +11,7 @@ export const TextCta = ({ headerText, descriptionText, label }) => {
   }, []);
   return (
     <div className="grid-x trusted-partnerships__container left-right">
-      <div className="cell medium-7 small-10 medium-offset-1 small-offset-1 trusted-partnerships--header">
+      <div className="cell medium-7 small-12 medium-offset-1 trusted-partnerships--header">
         <Heading type="2" label={headerText} />
         <P label={descriptionText} />
         <CtaButton label={label} />

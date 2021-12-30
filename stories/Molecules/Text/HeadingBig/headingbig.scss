@@ -4,35 +4,33 @@
 
 /* heading-big cta start */
 .heading-big {
+  justify-content: center;
   opacity: 0;
   padding: $spacing-136 0;
+  transition: background-color 0.5s ease;
   z-index: 5;
-  justify-content: center;
 
-  &.inviewport{
-      opacity: 1;
+  &.inviewport {
+    opacity: 1;
   }
 
   h2 {
-    margin-bottom: $spacing-48;
     color: $color-black;
+    margin-bottom: $spacing-48;
 
     @include devicebreak(medium) {
       margin-bottom: 0;
     }
   }
 
-  h4{
+  h4 {
     color: $color-black;
   }
 }
 
 .color-blue {
-  background-color: #232E3E;
-}
-
-body {
-  transition: background-color .9s ease;
+  background-color: #232e3e;
+  transition: background-color 1s ease;
 }
 
 /* heading-big cta end */

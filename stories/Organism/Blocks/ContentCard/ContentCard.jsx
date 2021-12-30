@@ -9,8 +9,8 @@ export const ContentCard = ({ data, buttontype, Hovercolors }) => {
   }, []);
   return (
     <div className="content-card-container left-right">
-      <ContentCardImage data={data} Hovercolors={Hovercolors}/>
-      <CtaButton label={buttontype} Type="Secondary"/>
+      <ContentCardImage data={data} Hovercolors={Hovercolors} />
+      <CtaButton label={buttontype} Type="Secondary" />
     </div>
   );
 };

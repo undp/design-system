@@ -25,6 +25,8 @@ export const variant_options2 = {
   scroll: "scroll",
 };
 
+const cls = (...classes) => classes.filter(Boolean).join(' ');
+
 export const TableTag = ({ text, tdtext, details, variant, size, responsive, ...args }) => {
 	return (
 		<TableScroll tableType={responsive}>
@@ -63,7 +65,7 @@ export const TableTag = ({ text, tdtext, details, variant, size, responsive, ...
       </table>
       )
       : (
-        <table className={[`${variant_options[`${variant}`]}`, `${variant_options1[`${size}`]}`, `${variant_options2[`${responsive}`]}`].join(` `)}>
+			<table className={cls(`${variant_options[`${variant}`]}`, `${variant_options1[`${size}`]}`, `${variant_options2[`${responsive}`]}`)}>
 				<thead>
 					<tr>
 						<th>{text}</th>

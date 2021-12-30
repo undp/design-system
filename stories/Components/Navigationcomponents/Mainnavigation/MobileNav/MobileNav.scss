@@ -1,12 +1,11 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
-
+  
 .mobile-nav {
   background: rgba(247, 247, 247, 0.8);
   box-sizing: border-box;
   display: none;
-  height: calc(100vh - 4.6875rem);
   left: 0;
   margin: 0;
   overflow-y: auto;
@@ -26,7 +25,7 @@
     padding: 5.625rem 0 3.75rem;
 
     &.hide-mob-links {
-      opacity: 0;
+      display: none;
       pointer-events: none;
     }
 
@@ -37,7 +36,9 @@
 
       li {
         list-style: none;
+        margin-bottom: 0;
         padding-bottom: 2.25rem;
+        text-transform: uppercase;
       }
     }
   }
@@ -62,16 +63,16 @@
   .mob-sub-menu {
     display: none;
     padding: 2.25rem 0;
-    position: absolute;
-    top: 0;
 
     &.show-sub {
       display: block;
+      height: calc(100vh - 9.1875rem);
     }
 
     .sub-heading {
-      padding: 2.25rem 0 1.25rem;
+      padding: 2.5625rem 0 2.25rem;
       text-transform: uppercase;
+      margin-bottom: 0;
     }
 
     .sub-sub-menus {
@@ -80,6 +81,7 @@
 
       li {
         list-style: none;
+        margin-bottom: 0;
 
         span {
           font-size: $font-size-16;
@@ -87,7 +89,13 @@
 
         ul {
           margin: 0;
-          padding: $spacing-16 1.6875rem;
+          padding: $spacing-24 1.6875rem;
+          li{
+            margin-bottom: 0.46875rem;
+            &:last-child{
+              margin-bottom: 0;
+            }
+          }
         }
 
         a {
@@ -104,6 +112,7 @@
     display: flex;
     flex-wrap: wrap;
     font-size: 1rem;
+    text-transform: uppercase;
 
     span {
       align-items: center;
@@ -116,14 +125,12 @@
   }
 
   .mob-sub-lang {
-    opacity: 0;
+    display: none;
     padding: 2.25rem 0;
     pointer-events: none;
-    position: absolute;
-    top: 0;
 
     &.show-sub {
-      opacity: 1;
+      display: block;
       pointer-events: all;
     }
 

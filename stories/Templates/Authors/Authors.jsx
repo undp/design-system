@@ -1,24 +1,23 @@
-import React, { useEffect } from "react";
-import logowhite from "../../assets/images/undp-logo-white.svg";
-import logo from "../../assets/images/undp-logo-blue.svg";
-import user from "../../assets/images/user.svg";
-import viewport from "../../assets/js/viewport";
-import { Heading } from "../../Atom/Typography/Heading/Heading";
-import { Breadcrumbcomponent } from "../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs";
-import GlobalHeader from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader";
-import { Footer } from "../../Organism/Footer/Footer";
-import "./Authors.scss";
-import init from "../../assets/js/select-init";
-import { Authorcard } from "../../Components/UIcomponents/Author/Authorcard/Authorcard";
-import { CtaButton } from "../../Components/UIcomponents/Buttons/Cta_button/CtaButton";
-import { SearchExpand } from "../../Components/Forms/expandable search/SearchExpand";
+import React, { useEffect } from 'react';
+import logowhite from '../../assets/images/undp-logo-white.svg';
+import logo from '../../assets/images/undp-logo-blue.svg';
+import user from '../../assets/images/user.svg';
+import viewport from '../../assets/js/viewport';
+import { Heading } from '../../Atom/Typography/Heading/Heading';
+import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
+import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
+import { Footer } from '../../Organism/Footer/Footer';
+import './Authors.scss';
+import init from '../../assets/js/select-init';
+import { Authorcard } from '../../Components/UIcomponents/Author/Authorcard/Authorcard';
+import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { SearchExpand } from '../../Components/Forms/expandable search/SearchExpand';
+import CustomSelect from '../../Components/Forms/Dropdowns/CustomSelect/CustomSelect';
 
 const Authors = ({
   breadcrumbData,
   footerData,
-  sortText,
-  viewText,
-  closeText,
+  buttonData,
   text,
   authorData,
   headingData,
@@ -32,19 +31,18 @@ const Authors = ({
   backcaption,
 }) => {
   useEffect(() => {
-    viewport(".feature__card--headertext");
     init();
-    $(".sort-btn").click(function sortclick() {
-      $(".author-filter").addClass("author-filter-show");
-      $(".close-btn").addClass("show-close");
-      $(this).addClass("hide-sort");
-      $(".author-cards").addClass("find-first-author");
+    $('.sort-btn').click(function sortclick() {
+      $('.author-filter').addClass('author-filter-show');
+      $('.close-btn').addClass('show-close');
+      $(this).addClass('hide-sort');
+      $('.author-cards').addClass('find-first-author');
     });
-    $(".close-btn").click(function closeclick() {
-      $(".author-filter").removeClass("author-filter-show");
-      $(this).removeClass("show-close");
-      $(".sort-btn").removeClass("hide-sort");
-      $(".author-cards").removeClass("find-first-author");
+    $('.close-btn').click(function closeclick() {
+      $('.author-filter').removeClass('author-filter-show');
+      $(this).removeClass('show-close');
+      $('.sort-btn').removeClass('hide-sort');
+      $('.author-cards').removeClass('find-first-author');
     });
   }, []);
   return (
@@ -58,8 +56,8 @@ const Authors = ({
         languageswitcherData={languageswitcherData}
         locationData={locationData}
         langSelect={langSelect}
-      ></GlobalHeader>
-      <div className="grid-container fluid author-page">
+      />
+      <div className="grid-container fluid authors-page">
         <div className="grid-x">
           <div className="cell medium-offset-1 medium-11 small-12">
             <Breadcrumbcomponent data={breadcrumbData} />
@@ -68,10 +66,10 @@ const Authors = ({
         </div>
         <div className="grid-x grid-margin-x mobile-author-filter">
           <div className="cell small-12 sort-btn">
-            <CtaButton label={sortText} Type="Secondary" />
+            <CtaButton label={buttonData.sort} Type="Secondary" />
           </div>
           <div className="cell small-12 close-btn">
-            <CtaButton label={closeText} Type="Secondary" />
+            <CtaButton label={buttonData.close} Type="Secondary" />
           </div>
         </div>
         <div className="grid-x grid-margin-x author-filter">
@@ -108,21 +106,21 @@ const Authors = ({
             </div>
           </div>
         </div>
-        
+
         <div className="grid-x">
-          <div className="cell medium-offset-3 medium-9 small-12">
-          <Authorcard image={user} data={authorData.authordata} para={authorData.paragraph} button={authorData.button} link="#" width="medium-12" />
-            <div className="grid-x grid-margin-x author-cards">
-              <Authorcard
-                image={user}
-                data={authorData.authordata}
-                para={authorData.paragraph}
-                button={authorData.button}
-                link="#"
-                width="medium-12"
-              />
+          <div className="cell medium-offset-3 medium-9 small-12 author-cards">
+            <Authorcard
+              image={user}
+              data={authorData.authordata}
+              para={authorData.paragraph}
+              button={authorData.button}
+              alt="author name"
+              link="#"
+              width="medium-12"
+            />
+            <div className="grid-x grid-margin-x">
               <div className="cell small-12 view-btn-cell">
-                <CtaButton label={viewText} Type="Secondary" />
+                <CtaButton label={buttonData.view} Type="Secondary" />
               </div>
             </div>
           </div>
@@ -148,7 +146,7 @@ const Authors = ({
         data={footerData.footerdata}
         copyright={footerData.copyright}
         menudata={footerData.menudata}
-        {...{ color: "blue" }}
+        {...{ color: 'blue' }}
       />
     </div>
   );

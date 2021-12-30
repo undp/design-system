@@ -65,8 +65,8 @@
 }
 
 .image-card__content {
-  position: relative;
   overflow: hidden;
+  position: relative;
 
   &--thumbnail-image {
     img {
@@ -82,17 +82,16 @@
 
     @include devicebreak(large) {
       @include translate(0,100%);
-      @include transition(all 0.3s cubic-bezier(0.64,0.05,0.35,1.05));
+      @include transition(all .4s cubic-bezier(.64,.05,.35,1.05));
 
+      transition-delay: 0.2s;
       background: $color-white;
       bottom: -1px;
-      height: 0;
       left: -1px;
       opacity: 0;
       overflow: hidden;
       position: absolute;
       width: 101%;
-      transition-delay: .3s;
     }
 
     h5 {

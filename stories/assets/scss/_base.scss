@@ -27,6 +27,10 @@
   }
 }
 
+.height-full {
+  height: 100%;
+}
+
 .overlay-grey {
   &::before {
     @extend %absolute__content;
@@ -176,6 +180,30 @@
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.background-yellow {
+  background-color: $color-light-yellow;
+}
+
+.background-red {
+  background-color: $color-light-red;
+}
+
+.background-green {
+  background-color: $color-light-green;
+}
+
+.background-blue {
+  background-color: $color-blue-100;
+}
+
+.background-gray {
+  background-color: $color-gray-100;
+}
+
+.background-white {
+  background-color: $color-white;
 }
 
 /* base end */

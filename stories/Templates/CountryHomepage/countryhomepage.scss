@@ -2,18 +2,127 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
 
-//Stories Container
-.wide-card{
-    margin-top: $spacing-48;
-    padding-top: $spacing-24;
+.country-page {
+  &-wrapper {
+    margin-bottom: 4.375rem;
+
+    .wide-card {
+      margin-top: 2.688rem;
+      padding-top: 1.25rem;
+    }
+
+    .hero-container {
+      margin-top: 4.375em;
+      padding-bottom: 1.875rem;
+      padding-top: 1.875rem;
+
+      @include devicebreak(medium) {
+        margin-top: 7.188rem;
+        padding-bottom: 3.125rem;
+        padding-top: 4.375rem;
+      }
+
+      .small-heading {
+        margin-bottom: $spacing-24;
+
+        @include devicebreak(medium) {
+          padding-left: $spacing-64;
+        }
+      }
+
+      h1 {
+        font-size: 1.8rem;
+
+        @include devicebreak(medium) {
+          font-size: $spacing-64;
+        }
+      }
+
+      .hero-option {
+        @include devicebreak(small) {
+           border-left: 2rem solid $color-gray-300;
+           padding-left: calc(8.33333% + 1.5rem / 2);
+        }
+      }
+    }
+
+    .featured-card-container {
+      margin-bottom: $spacing-24;
+      margin-top: 7.5rem;
+
+      @include devicebreak(medium) {
+        margin-top: $spacing-24;
+      }
+    }
+
+    .wide-card-heading {
+      margin-bottom: $spacing-40;
+      margin-top: 5.563rem;
+    }
+
+    .our-impact {
+      margin-top: 8.313rem;
+
+      .stats-card-slider {
+        margin-top: 4.125rem;
+      }
+    }
+
+    .reveal {
+      &-head {
+        margin-top: 7.313rem;
+        text-align: center;
+
+        @include devicebreak(medium) {
+          margin-top: 9.375rem;
+        }
+      }
+
+      &-cards {
+        margin-top: 3.75rem;
+
+        @include devicebreak(medium) {
+          margin-top: $spacing-40;
+        }
+      }
+    }
+
+    .cta-container {
+      margin-top: 5.75rem;
+    }
+  }
 }
 
-//hero container bootom
-.hero-container{
-    padding-bottom: $spacing-48;
+[dir='rtl'] {
+  .hero-container {
+    .small-heading {
+      margin-bottom: $spacing-24;
+      padding-right: 0;
+
+      @include devicebreak(medium) {
+        padding-right: $spacing-64;
+      }
+    }
+
+    .hero-option {
+      @include devicebreak(small) {
+        border-left: none;
+        padding-left: 0;
+        border-right: 2rem solid $color-gray-300;
+        padding-right: calc(8.33333% + 1.5rem / 2);
+      }
+    }
+  }
 }
 
-.imagecard{
-    padding: $spacing-12 0;
+.footer {
+  .form-submit {
+    text-transform: uppercase;
+  }
+
+  &.blue {
+    .footer-subtitle {
+      text-transform: uppercase;
+    }
+  }
 }
-// style end

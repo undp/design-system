@@ -16,8 +16,7 @@ table {
     th,
     td {
       font-size: $font-size-16;
-      -webkit-text-size-adjust:100%;
-      text-size-adjust:100%;
+      -webkit-text-size-adjust: 100%;
     }
   }
 
@@ -103,16 +102,17 @@ tbody {
 
 .scroll {
   overflow-x: auto;
-
+  
+  thead{
+    th,
+    td {
+      white-space: nowrap;
+    }
+  }
+  
   th,
   td {
     text-size-adjust: 100%;
-    white-space: nowrap;
-  }
-
-  th,
-  td {
-    white-space: nowrap;
   }
 }
 
@@ -121,6 +121,14 @@ tbody {
   td {
     padding: $spacing-12 $spacing-12 $spacing-12 $spacing-40;
     text-align: right;
+  }
+}
+
+// burmese lang
+:lang(my){
+  th,
+  td {
+    line-height: 1.7;
   }
 }
 

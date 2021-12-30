@@ -12,9 +12,7 @@ const FilterAndSearchBar = ({ data, clearText, activeFilterText }) => {
 
   return (
     <div className="search-filter">
-      <button type="button" className="toggle-search">
-        <IconsSearchBlack />
-      </button>
+      <button type="button" className="toggle-search" aria-label="filter and search" />
       <div className="select-wrapper">
         <SelectTag text={data} eleId="select-1" />
         <SelectTag text={data} eleId="select-2" />
@@ -23,7 +21,7 @@ const FilterAndSearchBar = ({ data, clearText, activeFilterText }) => {
 
         <div className="active-filter"><span>{activeFilterText}</span></div>
         <div className="selected-chips">
-          <Chips label="demo" Type='With_X' />
+          <Chips label="demo" Type="With X" />
         </div>
         <div className="clear_section"><span className="clear_chips">{clearText}</span></div>
       </div>

@@ -14,7 +14,7 @@ import MobileNav from '../MobileNav/MobileNav';
 import './CountrySiteHeader.scss';
 
 const CountrySiteHeader = ({
-  languageswitcherData, navigationData, locale, backcaption, locationData, langSelect,siteTitleData
+  languageswitcherData, navigationData, locale, backcaption, locationData, langSelect, siteTitleData,
 }) => {
   useEffect(() => {
     init(locale);

@@ -1,9 +1,9 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/base';
-
+ 
 /* country card hero start */
-.countrycard {
+.country-card {
   &__header {
     justify-content: center;
 
@@ -59,7 +59,7 @@
 }
 
 [dir='rtl'] {
-  .countrycard {
+  .country-card {
     &-border {
       margin-left: 0;
       margin-right: 0;

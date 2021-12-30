@@ -27,19 +27,19 @@ export const ParallaxGallery = ({
       <div className="medium-6 cell parallax-gallery-row__right-col overflow-hidden">
         <div>
           <div className="parallax-gallery-images">
-            <div className="parallax-gallery-images__col">
-              <img src={galleryimg1} alt="" />
-              <img src={galleryimg3} alt="" />
-              <img src={galleryimg1} alt="" />
-              <img src={galleryimg3} alt="" />
-              <img src={galleryimg1} alt="" />
+            <div className="parallax-gallery-images__col" role="img" aria-label="parallax gallery images">
+              <img src={galleryimg1} alt="image 1" />
+              <img src={galleryimg3} alt="image 2" />
+              <img src={galleryimg1} alt="image 3" />
+              <img src={galleryimg3} alt="image 4" />
+              <img src={galleryimg1} alt="image 5" />
             </div>
-            <div className="parallax-gallery-images__col">
-              <img src={galleryimg2} alt="" />
-              <img src={galleryimg4} alt="" />
-              <img src={galleryimg2} alt="" />
-              <img src={galleryimg4} alt="" />
-              <img src={galleryimg2} alt="" />
+            <div className="parallax-gallery-images__col" role="img" aria-label="parallax gallery images">
+              <img src={galleryimg2} alt="image 6" />
+              <img src={galleryimg4} alt="image 7" />
+              <img src={galleryimg2} alt="image 8" />
+              <img src={galleryimg4} alt="image 9" />
+              <img src={galleryimg2} alt="image 10" />
             </div>
           </div>
         </div>

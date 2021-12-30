@@ -1,8 +1,68 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 @import '../../../assets/scss/breakpoints';
-@import '../../../Templates/PublicationPage/publicationpage.scss';
 
-.card-yellow.green{
-    background-color: $color-light-green !important;
-}   
+.content-data {
+  .content-card {
+    margin-bottom: $spacing-16;
+    word-break: break-word;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+
+    &__caption {
+      padding-bottom: $spacing-16;
+    }
+
+    &__image {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      justify-content: space-between;
+
+      @include devicebreak(medium) {
+        height: 100%;
+      }
+    }
+
+    &.card,
+    &.background-yellow,
+    &.background-green,
+    &.background-red,
+    &.background-blue,
+    &.background-gray {
+      display: flex;
+      flex-wrap: wrap;
+      height: auto;
+
+      @include devicebreak(medium) {
+        height: 100%;
+      }
+    }
+
+    &.yellow:hover {
+      background-color: $color-yellow;
+    }
+
+    &.red:hover {
+      background-color: $color-red;
+    }
+
+    &.green:hover {
+      background-color: $color-green;
+    }
+
+    &.blue:hover {
+      background-color: $color-azure;
+    }
+    
+    &.content-card__image:hover,
+    &.gray:hover {
+      background-color: $color-gray-100;
+    }
+  }
+
+  .cta-container {
+    margin-top: 5.75rem;
+  }
+}
