@@ -83,14 +83,12 @@ export const init = (locale) => {
   $('header .icon-bar').click(function () {
     $('.mobile-nav').addClass('show-mobile-nav');
     $('.mob-sub-menu').addClass('show-sub');
-    $(this).removeClass('show');
-    $(this).siblings('.icon-close').addClass('show');
+    $(this).removeClass('show').siblings('.icon-close').addClass('show');
     $('.back-nav').click();
   });
   $('header .icon-close').click(function () {
     $('.mobile-nav').removeClass('show-mobile-nav');
     $('.mob-sub-menu').removeClass('show-sub');
-    $(this).removeClass('show');
-    $(this).siblings('.icon-bar').addClass('show');
+    $(this).removeClass('show').siblings('.icon-bar').addClass('show');
   });
 };
