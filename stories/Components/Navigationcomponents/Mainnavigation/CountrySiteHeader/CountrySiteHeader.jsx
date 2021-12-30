@@ -24,7 +24,7 @@ const CountrySiteHeader = ({
     <header className="country-header">
       <div className="grid-container">
         <div className="grid-x grid-margin-x align-content-middle">
-          <div className="cell large-3 small-9 align-self-middle top-left">
+          <div className="cell large-3 small-7 align-self-middle top-left">
             <a href="#" className="left-logo"><Logo src={pnud} alt="UNDP Logo" /></a>
             <div className="site-title">
               <label>{siteTitleData.label}</label>
@@ -34,13 +34,13 @@ const CountrySiteHeader = ({
           <div className="cell large-6 small-1 mid-nav">
             {desktopView && <Menu data={navigationData} />}
           </div>
-          <div className="cell large-3 small-2 top-right">
+          <div className="cell large-3 small-4 top-right">
             <Languageswitcher
               data={languageswitcherData.languagedata}
               headerText={languageswitcherData.headerText}
             />
-            <IconsBar />
-            <IconsTimesBlue />
+            <a href="javascript:void(0)" className='icon-bar show'>iconbar</a>
+            <a href="javascript:void(0)" className='icon-close'>iconclose</a>
             <IconsGlobe />
             <IconsSearch />
           </div>

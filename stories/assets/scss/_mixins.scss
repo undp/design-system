@@ -493,4 +493,20 @@
   }
 }
 
+%header-icon{
+  @include devicebreak(mediumonlytab) {
+    margin-left: $spacing-12;
+    display: none;
+    font-size: 0;
+    background-image: none;
+    width:1.375rem;
+    height: 1.375rem;
+    &:hover{
+      animation: none;
+    }
+    &.show{
+      display: inline-block;
+    }
+  }
+}
 /* placehoder end */

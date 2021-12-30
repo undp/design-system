@@ -113,14 +113,18 @@
 
     .icon-bar {
       display: none;
-
       @include devicebreak(mediumonlytab) {
-        display: block;
+        background:url(#{$img-path-Iconfourback}/Bars.svg) no-repeat 0 0/1.375rem 1.375rem;
       }
+      @extend %header-icon;
     }
 
     .icon-close {
       display: none;
+      @include devicebreak(mediumonlytab) {
+        background:url(#{$img-path-Iconfourback}/Times-blue.svg) no-repeat -0.4375rem -0.3125rem/2.125rem 2.125rem;
+      }
+      @extend %header-icon;
     }
 
     .icon-search {

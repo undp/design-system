@@ -19,6 +19,7 @@
       .dropdown-language {
         display: none;
       }
+      display: flex;
     }
 
     .dropdown-language {
@@ -27,16 +28,18 @@
 
     .icon-bar {
       display: none;
-
       @include devicebreak(mediumonlytab) {
-        display: block;
-        margin-left: $spacing-12;
+        background:url(#{$img-path-Iconfourback}/Bars.svg) no-repeat 0 0/1.375rem 1.375rem;
       }
+      @extend %header-icon;
     }
 
     .icon-close {
       display: none;
-      margin-left: $spacing-12;
+      @include devicebreak(mediumonlytab) {
+        background:url(#{$img-path-Iconfourback}/Times-blue.svg) no-repeat -0.4375rem -0.3125rem/2.125rem 2.125rem;
+      }
+      @extend %header-icon;
     }
   }
 
@@ -44,21 +47,24 @@
     display: flex;
     justify-content: center;
 
+    nav{
+      &:first-child{
+        .menu{
+          justify-content: flex-end;
+          padding-left: 0;
+          padding-right: 6.9375rem;
+        }
+      }
+    }
     .menu {
       align-items: center;
       display: flex;
       height: 7.1875rem;
       padding-left: 6.9375rem;
-      width: 50%;
+      //width: 50%;
 
       @include devicebreak(mediumonlytab) {
         display: none;
-      }
-
-      &:first-child {
-        justify-content: flex-end;
-        padding-left: 0;
-        padding-right: 6.9375rem;
       }
 
       li {
@@ -130,12 +136,14 @@
 [dir='rtl'] {
   .global-header {
     .mid-nav {
-      .menu {
-        &:last-child {
+      nav:last-child{
+        .menu{
           justify-content: flex-start;
           padding-left: 0;
           padding-right: 6.9375rem;
         }
+      }
+      .menu {
 
         li {
           margin: $spacing-12 4.4375rem $spacing-12 0;
