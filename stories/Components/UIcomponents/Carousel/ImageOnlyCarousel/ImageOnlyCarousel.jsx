@@ -7,7 +7,7 @@ import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
 
 export const ImageOnlyCarousel = ({ data }) => {
   useEffect(() => {
-    carousel('.image-carousel', 20, 30, 1, 0);
+    carousel('.image-carousel', 20, 30, 1, 1, 0);
     viewport('.image-carousel');
   }, []);
   return (

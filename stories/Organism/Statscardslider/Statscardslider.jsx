@@ -5,7 +5,7 @@ import { StatsCards } from '../../Components/UIcomponents/Cards/StatsCards/Stats
 
 export const Statscardslider = ({ data }) => {
   useEffect(() => {
-    carousel('.stats-slider', 20, 20, 4, 0.2);
+    carousel('.stats-slider', 20, 20, 4, 2, 0.2);
   }, []);
   return (
     <div className="stats-slider">
