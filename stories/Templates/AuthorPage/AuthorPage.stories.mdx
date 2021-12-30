@@ -15,6 +15,17 @@ import {
   getSelectlanguage,
 } from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
 
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {authorheading: 'Author'}; return engText;
+    case 'arabic': const arabicText = {authorheading: 'مؤلف'}; return arabicText;
+    case 'burmese': const burmeseText = {authorheading: 'စာရေးသူ'}; return burmeseText;
+    case 'japanese': const japaneseText = {authorheading: '著者'}; return japaneseText;
+    default:
+      return {authorheading: 'Author' };
+  }
+};
+
 <Meta title="Templates" />
 
 <style>{`
@@ -59,6 +70,7 @@ import {
         locationData={getLocationDataForLocale(locale)}
         langSelect={getSelectlanguage(locale)}
         backcaption={getBackForLocale(locale)}
+        Authorlabel={getCaptionForLocale(locale)}
       ></AuthorPage>
     );
   }}
