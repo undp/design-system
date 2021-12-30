@@ -10,7 +10,7 @@ import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
 
 export const FixedSizeCarousel = ({ data, label }) => {
   useEffect(() => {
-    carousel('.fixed-image-size-carousel', 20, 20, 1, 0);
+    carousel('.fixed-image-size-carousel', 20, 20, 1, 1, 0);
     viewport('.fixed-image-size-carousel');
   }, []);
   return (

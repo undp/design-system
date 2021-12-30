@@ -10,7 +10,7 @@ import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
 
 export const FluidImageSizeCarousel = ({ data }) => {
   useEffect(() => {
-    carousel('.fluid-carousel', 20, 20, 1, 0);
+    carousel('.fluid-carousel', 20, 20, 1, 1, 0);
     viewport('.fluid-carousel');
   }, []);
   return (

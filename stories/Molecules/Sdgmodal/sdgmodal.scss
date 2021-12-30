@@ -653,9 +653,8 @@ body.modal-open {
         }
 
         &::after {
-          background: url(#{$img-path-Iconback}/Chevron-right.svg) no-repeat center center;
+          background: url(#{$img-path-Iconback}/Chevron-right-white-small.png) no-repeat center center;
           content: '';
-          filter: invert(1) brightness(10);
           height: 20px;
           position: absolute;
           right: $spacing-24;
