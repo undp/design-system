@@ -435,4 +435,17 @@
 %background-white {
   background-color: white;
 }
+
+%sub-external{
+  justify-content: space-between;
+  align-items: center;
+}
+
+%external{
+  cursor: pointer;
+  height: 1.125rem;
+  width: 1.25rem;
+  content: "";
+  align-items: center;
+}
 /* placehoder end */
