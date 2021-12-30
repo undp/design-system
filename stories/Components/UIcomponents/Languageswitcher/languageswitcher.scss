@@ -7,18 +7,14 @@
   display: inline-block;
   position: relative;
 
-  &.active {
-    .dropdown-btn::after {
-      @include transform(rotateZ(180deg));
-    }
-  }
-
-  &__content {
-    display: none;
+  ul {
+    overflow:hidden;
     left: 16px;
     padding: 0;
     position: absolute;
     z-index: 9;
+    @include transition(0.3s ease-in-out);
+    height: 0;
 
     li {
       list-style: none;
@@ -35,44 +31,53 @@
       }
     }
   }
-}
 
-.dropdown-btn {
-  @extend %language_switcher;
-
-  align-items: center;
-  background-color: transparent;
-  color: $color-blue-600;
-  display: flex;
-  padding: 0;
-
-  &::before {
-    background: url(#{$img-path-Icon}/Language.svg) no-repeat left center;
-    content: '';
-    height: 26px;
-    margin-right: $spacing-08;
-    width: 25px;
+  &.active {
+    button::after {
+      @include transform(rotateZ(180deg));
+    }
+    ul {
+     height: 5.6rem;
+    }
   }
 
-  &::after {
-    @include transition(0.2s ease-in-out);
+  button {
+    @extend %language_switcher;
 
-    background: url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
-    content: '';
-    height: 10px;
-    margin-left: $spacing-08;
-    width: 15px;
-  }
-
-  &.white {
-    color: $color-white;
+    align-items: center;
+    background-color: transparent;
+    color: $color-blue-600;
+    display: flex;
+    padding: 0;
 
     &::before {
-      background: url(#{$img-path-Icon}/Language-white.svg) no-repeat left center;
+      background: url(#{$img-path-Icon}/Language.svg) no-repeat left center;
+      content: '';
+      height: 26px;
+      margin-right: $spacing-08;
+      width: 25px;
     }
 
     &::after {
-      background: url(#{$img-path-Icon}/arrowwhitedown.svg) no-repeat left center;
+      @include transition(0.2s ease-in-out);
+
+      background: url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
+      content: '';
+      height: 10px;
+      margin-left: $spacing-08;
+      width: 15px;
+    }
+
+    &.white {
+      color: $color-white;
+
+      &::before {
+        background: url(#{$img-path-Icon}/Language-white.svg) no-repeat left center;
+      }
+
+      &::after {
+        background: url(#{$img-path-Icon}/arrowwhitedown.svg) no-repeat left center;
+      }
     }
   }
 }
@@ -83,18 +88,17 @@
       left: unset;
       right: 16px;
     }
-  }
 
-  .dropdown-btn::before {
-    margin-left: $spacing-08;
-    margin-right: 0;
-    transform: scaleX(-1);
-  }
+    button::before {
+      margin-left: $spacing-08;
+      margin-right: 0;
+      transform: scaleX(-1);
+    }
 
-  .dropdown-btn::after {
-    margin-left: 0;
-    margin-right: $spacing-08;
+    button::after {
+      margin-left: 0;
+      margin-right: $spacing-08;
+    }
   }
 }
-
 /* language-switcher start */
