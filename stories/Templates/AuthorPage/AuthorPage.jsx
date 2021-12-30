@@ -9,6 +9,7 @@ import { AuthorSummary } from '../../Organism/Blocks/Authorcard/AuthorSummary';
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Footer } from '../../Organism/Footer/Footer';
 import './AuthorPage.scss';
+import { Heading } from '../../Atom/Typography/Heading/Heading';
 
 const AuthorPage = ({
   breadcrumbData,
@@ -23,6 +24,7 @@ const AuthorPage = ({
   locationData,
   langSelect,
   backcaption,
+  Authorlabel,
 }) => {
   useEffect(() => {
     viewport('.feature__card--headertext');
@@ -48,6 +50,8 @@ const AuthorPage = ({
         </div>
         <div className="grid-x">
           <div className="cell medium-offset-1 medium-10 small-12">
+            <Heading className="authorheading" type="2" label={Authorlabel.authorheading} />
+          
             <AuthorSummary
               image={user}
               Authorlabel={authorSummaryData.text2}
