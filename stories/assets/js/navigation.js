@@ -52,6 +52,14 @@ export const init = (locale) => {
     .siblings().removeClass('active-content');
   });
  
+  $(window).scroll(function() {    
+    var $scroll = $(window).scrollTop();
+    if ($scroll >= 1) {
+        $(".logo").addClass("scrolled");
+    } else {
+        $(".logo").removeClass("scrolled");
+    }
+  });
 
   $(document).on('click', '.mob-links .cta__link', function () {
     const id = $(this).attr('id');

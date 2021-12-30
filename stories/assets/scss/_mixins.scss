@@ -448,7 +448,6 @@
   content: "";
   align-items: center;
 }
-/* placehoder end */
 
 //burmese lang
 :lang(my){
@@ -485,3 +484,15 @@
     font-size: $font-size-14;
   }
 }
+
+%logo{
+  @include transition(all .4s cubic-bezier(.64,.05,.35,1.05));
+  @include devicebreak(xlarge) {
+    height: 7.625rem;
+    &.scrolled{
+      height: 7.1875rem;
+    }
+  }
+}
+
+/* placehoder end */
