@@ -12,7 +12,13 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Testing/Text/Heading Big Block" component={HeadingBig} />
+<Meta title="Testing/Text/Heading Big Block" component={HeadingBig} argTypes={{
+  Emphasize: {
+    options: ['true', 'false'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'true'
+  }
+}}/>
 
 <style>{`
   .sbdocs-h1 {
@@ -48,7 +54,7 @@ The Heading Block defines a section of information data with some items - Header
 <Story name="Heading Big Block">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <HeadingBig headerText={caption.header} descriptionText={caption.description}></HeadingBig>;
+    return <HeadingBig headerText={caption.header} descriptionText={caption.description} {...args}></HeadingBig>;
   }}
 </Story>
 
