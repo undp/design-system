@@ -23,7 +23,7 @@ const GlobalHeader = ({
 
   return (
     <header className="global-header">
-      <div className="grid-container">
+      <div className="grid-container fluid">
         <div className="grid-x grid-margin-x align-content-middle">
           <div className="cell large-2 small-2 align-self-middle top-left">
             <Languageswitcher
