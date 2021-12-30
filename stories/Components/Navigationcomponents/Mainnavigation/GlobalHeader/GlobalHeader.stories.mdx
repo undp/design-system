@@ -174,7 +174,7 @@ There are 3 states: Default, Mobile and Tablet.
       }
     }}>
     {(args, { globals: { locale } }) => {
-    let lang = locale === 'en' ? 'english' : locale;
+      let lang = locale === 'en' ? 'english' : locale;
       const caption = getCaptionForLocale(locale);
       const navigationData= getNavLinks(locale);
       const leftNavigationData=navigationData.filter(item=>item.position==='left');
@@ -187,7 +187,7 @@ There are 3 states: Default, Mobile and Tablet.
       text={caption}
         locationData={getLocationDataForLocale(locale)} langSelect={getSelectlanguage(locale)}
         ></GlobalHeader>;
-    }}
+  }}
   </Story>
 </Canvas>
 
@@ -201,11 +201,15 @@ Add the base layout style from dist/css/base-minimal.css
 - dist/js/[component].js
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3e204e8ed783a5ba59a921856596ddbbee6fb071
 ### Interactions
 - By clicking on the CTA Link, the page is directed to the subsequent link page.
 - By clicking on the Drop-down menu, it expands and clicking on the x icon closes it.
 - By clicking on the search icon, the search tab opens.
 - By clicking on the language switcher, it expands and clicking on the x icon closes it.
+<<<<<<< HEAD
 =======
 <Story name="Global Header" parameters={{
     layout: "fullscreen"
@@ -227,6 +231,8 @@ Add the base layout style from dist/css/base-minimal.css
   }}
 </Story>
 >>>>>>> 3e59ffcf3e79d2d1345b659b0a6f9ad1ba76ca8f
+=======
+>>>>>>> 3e204e8ed783a5ba59a921856596ddbbee6fb071
 
 ### Changelog
 1.0 — Released component
