@@ -4,9 +4,9 @@ import { Checkbox } from '../../Components/Forms/Checkbox/Checkbox';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 
 export const DownloadRow = ({
-  title, subtitle, value, datalang, ...args
+  title, subtitle, value, ...args
 }) => (
-  <div className="checkbox-container" data-lang={datalang}>
+  <div className="checkbox-container">
     <div className="checkbox-container__main">
       <div className="checkbox-container__data">
         <Heading type="6" label={title} />
