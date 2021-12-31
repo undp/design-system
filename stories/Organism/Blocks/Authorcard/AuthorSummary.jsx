@@ -12,18 +12,16 @@ export const AuthorSummary = ({
     viewport('.author-summary');
   }, []);
   return (
-    <div className="author-card-wrapper">
-      <div className="author-summary left-right">
-        <div className="author-summary-left">
-          <Authorimg image={image} variant="Large" />
-          <div className="author-summary-text">
-            <Heading type="2" label={Authorlabel} />
-            <P label={para1} />
-          </div>
+    <div className="author-summary left-right">
+      <div className="author-summary-left">
+        <Authorimg image={image} variant="Large" />
+        <div className="author-summary-text">
+          <Heading type="2" label={Authorlabel} />
+          <P label={para1} />
         </div>
-        <div className="author-summary-right">
-          <P label={para} />
-        </div>
+      </div>
+      <div className="author-summary-right">
+        <P label={para} />
       </div>
     </div>
   );
