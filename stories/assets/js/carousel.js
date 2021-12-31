@@ -1,5 +1,6 @@
 import arrowright from '../images/Icon/arrow-right.svg';
 import arrowleft from '../images/Icon/arrow-left.svg';
+import Glide from '@glidejs/glide';
 
 export function carousel(ele, gapele, gapele_sm, viewcard, focusSpace) {
   /**
