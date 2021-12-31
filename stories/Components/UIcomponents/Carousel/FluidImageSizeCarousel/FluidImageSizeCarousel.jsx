@@ -2,7 +2,7 @@ import React, { Component, useEffect } from 'react';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
-import { carousel } from '../../../../assets/js/Carousel';
+import { carousel } from '../../../../assets/js/carousel';
 import viewport from '../../../../assets/js/viewport';
 import './fluidimagesizecarousel.scss';
 import chevronRightWhite from '../../../../assets/images/Icon/circle-right.svg';

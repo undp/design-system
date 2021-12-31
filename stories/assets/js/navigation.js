@@ -2,7 +2,7 @@ import { getData } from './navigation_data';
 
 var lang = 'english';
 
-export const init = (locale) => {
+export const navigationInitialize = (locale) => {
   const $menu = $('.menu');
   const $menuItem = $('.menu li');
   const $megaMenu = $('.show-mega');

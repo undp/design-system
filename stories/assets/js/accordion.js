@@ -1,13 +1,15 @@
 /* accordion JS start custom */
 export function accordion() {
-  let accordionActive = 'accordion--active';
-  let accordionPanel = '.accordion__panel';
+  const $accordion = $('.accordion > li');
+  const $accordion_active_li = $('.accordion > li.accordion--active');
+  const accordion_active = 'accordion--active';
+  const accordion_panel = '.accordion__panel';
 
-  $('#accordion > li.accordion--active').children('.accordion__panel').slideDown();
-  $('#accordion > li').click(function () {
-    $(this).siblings('li').removeClass(accordionActive).children(accordionPanel)
+  $accordion_active_li.children('.accordion__panel').slideDown();
+  $accordion.on('click, focus', function () {
+    $(this).siblings('li').removeClass(accordion_active).children(accordion_panel)
       .slideUp();
-    $(this).toggleClass(accordionActive).children(accordionPanel).slideToggle('');
+    $(this).toggleClass(accordion_active).children(accordion_panel).slideToggle('');
   });
 }
 /* accordion JS end custom */
