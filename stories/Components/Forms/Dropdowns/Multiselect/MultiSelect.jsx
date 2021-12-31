@@ -14,7 +14,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
         className="select-control"
         aria-label="Region"
         aria-expanded="false"
-        id={`select_button`}
+        id={`select_button-${eleId}`}
       >
         {text}
       </button>
@@ -25,7 +25,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
             args.Height === "Fix height" ? " fix-height" : "",
           ].join("")}
           data-type="region"
-          aria-labelledby={`select_button`}
+          aria-labelledby={`select_button-${eleId}`}
           role="listbox"
           aria-multiselectable="true"
           aria-hidden="true"
@@ -96,7 +96,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
             args.Height === "Fix height" ? " fix-height" : "",
           ].join("")}
           data-type="region"
-          aria-labelledby={`select_button`}
+          aria-labelledby={`select_button-${eleId}`}
           role="listbox"
           aria-multiselectable="true"
           aria-hidden="true"
