@@ -1,7 +1,7 @@
 /* footer menu on mobile view start */
-export function accordion(ele, find, topupclass) {
+export function footerAccordion(ele, find, topupclass) {
   $(window).bind('load resize orientationchange', () => {
-    if ($(window).width() < 768) {
+    if ($(window).width() < window.UNDP.breakpoints.MEDIUM) {
       $(ele).off('click').on('click', function () {
         $(this).parent().find(find).slideToggle();
         $(this).parent().siblings().find(find)

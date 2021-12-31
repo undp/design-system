@@ -1,5 +1,5 @@
 /* Modal JS start custom */
-export function ModalFun() {
+export function modal() {
   const $modalOverlay = $('.modal');
   const $modal = $('.modal-content');
   const $modalClose = $('.modal-close-button');

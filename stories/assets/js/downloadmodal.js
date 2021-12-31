@@ -1,8 +1,8 @@
 /* checkbox click start */
 export function checkbox(ele, submitbtn) {
   $(ele).click(() => {
-    const check = $('input:checked').length;
-    if (check < 1) {
+    const CHECK = $('input:checked').length;
+    if (CHECK < 1) {
       $(submitbtn).addClass('disabled');
     } else {
       $(submitbtn).removeClass('disabled');
@@ -12,7 +12,7 @@ export function checkbox(ele, submitbtn) {
 /* checkbox click end */
 
 /* select option filter click start */
-export function selectfilter() {
+export function selectFilter() {
   $('.select-box .option span').on('click', function () {
     const datavalue = $(this).parent().attr('data-value');
     $(this).closest('.download-content').find('.checkbox input').prop('checked', false);

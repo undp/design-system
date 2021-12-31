@@ -1,5 +1,9 @@
+import Glide from '@glidejs/glide';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 /* Glide Slider start */
-export function GlideSlider(ele, gapele) {
+export function glideSlider(ele, gapele) {
   let direc = 'ltr';
   if ($('html').attr('dir') == 'rtl') {
     direc = 'rtl';
@@ -13,7 +17,7 @@ export function GlideSlider(ele, gapele) {
       after: 70,
     },
   });
-  const glidefuntion = function () {
+  const glidefunction = function () {
     if ($(window).width() <= 767) {
       $('.stats-card-parallax .glide__slide').unwrap();
       glide.mount();
@@ -22,14 +26,15 @@ export function GlideSlider(ele, gapele) {
     }
   };
   $(window)
-    .off('load orientationChanged', glidefuntion)
-    .on('load orientationChanged', glidefuntion)
-    .smartresize(glidefuntion);
+    .off('load orientationChanged', glidefunction)
+    .on('load orientationChanged', glidefunction)
+    .smartresize(glidefunction);
 }
 /* Glide Slider end */
 
 /* Parallax Effect Vertical Position start */
-export function ParallaxEffect(ele, yele, triggerclass, scrubtime, cssdiv) {
+export function parallaxEffect(ele, yele, triggerclass, scrubtime, cssdiv) {
+  gsap.registerPlugin(ScrollTrigger);
   const parallaxfuntion = function () {
     if ($(window).width() >= 768) {
       const cardWrap = $('.stats-card-grid .glide__slide');

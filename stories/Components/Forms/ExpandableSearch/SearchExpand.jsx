@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import './SearchExpand.scss';
 import { IconsSearchBlack } from '../../../Atom/Icons/search_black';
-import { init } from '../../../assets/js/expand-search';
+import { expandSearch } from '../../../assets/js/expand_search';
 
 export const SearchExpand = ({}) => {
   useEffect(() => {
-    init();
+    expandSearch();
   }, []);
   return (
     <div className="expand-search">

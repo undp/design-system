@@ -1,5 +1,5 @@
 /* accordion JS start custom */
-export function FaqFun() {
+export function accordion() {
   const $accordion = $('.accordion > li');
   const $accordion_active_li = $('.accordion > li.accordion--active');
   const accordion_active = 'accordion--active';

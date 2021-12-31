@@ -6,13 +6,13 @@ import { FooterLists } from '../../Molecules/FooterNavigation/FooterLists/Footer
 import { FooterConditions } from '../../Molecules/FooterNavigation/FooterConditions/FooterConditions';
 import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/FooterIcons';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
-import { accordion } from '../../assets/js/accordion_custom';
+import { footerAccordion } from '../../assets/js/footer_accordion';
 
 export const Footer = ({
   headerText, headerText2, style, alt, src, srctwo, element, type, required, mode, label, button, errorText, placeholder, menutitle, copyright, data, menudata, ...args
 }) => {
   useEffect(() => {
-    accordion('.footer__heading', '.footer__panel', 'active');
+    footerAccordion('.footer__heading', '.footer__panel', 'active');
   }, []);
   return (
     <footer className={['footer', `${args.color === 'blue' ? args.color : ''}`].join(' ')}>

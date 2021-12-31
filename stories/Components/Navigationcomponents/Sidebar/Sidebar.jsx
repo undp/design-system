@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { SidebarNav, SidebarMenu } from '../../../assets/js/Sidebar_custom';
+import { sidebarNav, sidebarMenu } from '../../../assets/js/sidebar';
 import { Sidebardata } from '../../../Molecules/Sidebar-data/Sidebardata';
 import './sidebar.scss';
 
 export const Sidebar = ({ headerText, label, data }) => {
   useEffect(() => {
-    SidebarNav();
-    SidebarMenu();
+    sidebarNav();
+    sidebarMenu();
   }, []);
 
   return (

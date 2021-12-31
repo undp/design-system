@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
-import { init } from '../../../../assets/js/navigation';
-import { desktopView } from '../../../../assets/js/UNDP';
+import { navigationInitialize } from '../../../../assets/js/navigation';
+import { desktopView } from '../../../../assets/js/undp';
 import { IconsGlobe } from '../../../../Atom/Icons/globe';
 import { IconsBar } from '../../../../Atom/Icons/icon_bar';
 import { IconsTimesBlue } from '../../../../Atom/Icons/icon_Times_Blue';
@@ -18,7 +18,7 @@ const GlobalHeader = ({
   getMegaMenuData, locationData, langSelect, backcaption,
 }) => {
   useEffect(() => {
-    init(locale);
+    navigationInitialize(locale);
   }, [locale]);
 
   return (

@@ -1,5 +1,5 @@
 import React, { Component, useEffect } from 'react';
-import { CarouselFun } from '../../../../assets/js/Carousel';
+import { carousel } from '../../../../assets/js/carousel';
 import viewport from '../../../../assets/js/viewport';
 import './imageonlycarousel.scss';
 import chevronRightWhite from '../../../../assets/images/Icon/circle-right.svg';
@@ -7,7 +7,7 @@ import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
 
 export const ImageOnlyCarousel = ({ data }) => {
   useEffect(() => {
-    CarouselFun('.image-carousel', 20, 30, 1, 0);
+    carousel('.image-carousel', 20, 30, 1, 0);
     viewport('.image-carousel');
   }, []);
   return (

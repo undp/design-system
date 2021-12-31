@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProgressBarNavigation.scss';
-import '../../../assets/js/scrollingProgressbar';
+import '../../../assets/js/scrolling_progressbar';
 
 export const ProgressBarNavigation = ({ Type, Colors }) => {
   let type;

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './downloadmodal.scss';
 import { Publicationthumb } from '../../Atom/Cards/Publication-thumbnail/PublicationThumbnail';
 import { DownloadRow } from '../../Molecules/DownloadRow/DownloadRow';
-import { checkbox, selectfilter } from '../../assets/js/downloadmodal';
+import { checkbox, selectFilter } from '../../assets/js/downloadmodal';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 import CustomSelect from '../../Components/Forms/Dropdowns/CustomSelect/CustomSelect';
 
@@ -21,7 +21,7 @@ export const DownloadModal = ({
 }) => {
   useEffect(() => {
     checkbox('.checkbox input', '.button-primary');
-    selectfilter();
+    selectFilter();
   }, []);
   return (
     <div className={['modal', `${Image_options[`${args.Image}`]}`].join(' ')} aria-modal="true" role="dialog" aria-label="download_modal">
