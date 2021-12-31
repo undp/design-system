@@ -350,7 +350,11 @@
   opacity: 0;
   visibility: hidden;
 }
-
+[dir='rtl'] {
+  %left-to-right {
+    @include transform(translateX(100px));
+  }
+}
 %inviewport_left_right {
   @include transform(translateX(0));
 

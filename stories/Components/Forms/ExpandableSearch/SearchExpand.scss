@@ -30,6 +30,7 @@
     position: relative;
     width: 0;
     z-index: 3;
+    height: 43px;
 
     &:focus {
       background-color: $color-white;
@@ -43,7 +44,7 @@
 
   .icon-search-black {
     border-bottom: 1px solid #000;
-    padding-bottom: 0.88rem;
+    height: 42px;
     width: 1.6875rem;
     z-index: 2;
   }
