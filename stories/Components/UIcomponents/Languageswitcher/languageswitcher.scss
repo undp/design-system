@@ -49,6 +49,7 @@
     color: $color-blue-600;
     display: flex;
     padding: 0;
+    cursor: pointer;
 
     &::before {
       background: url(#{$img-path-Icon}/Language.svg) no-repeat left center;

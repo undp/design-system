@@ -5,16 +5,21 @@
 
 /* sidebar start */
 .accordion-wrapper {
+  @extend %background-white;
+
   padding: 0;
   position: relative;
-  @extend %background-white;
 
   &.show-small {
     .accordion-navbar {
       display: block;
       padding: 0;
+    }
 
-      &__menu::after {
+    & > span {
+      border-bottom: 2px solid $color-black;
+
+      &::after {
         @include transform(rotateZ(-180deg));
       }
     }
@@ -24,6 +29,31 @@
   li {
     list-style-type: none;
     margin-bottom: 0;
+
+    @include devicebreak(medium) {
+      a {
+        &:hover {
+          background-color: #edeff0;
+        }
+      }
+    }
+  }
+
+  & > span {
+    background-color: $color-gray-200;
+    cursor: pointer;
+    display: block;
+    font-weight: 700;
+    padding: $spacing-16;
+    text-transform: uppercase;
+
+    @include devicebreak(medium) {
+      display: none;
+    }
+
+    &::after {
+      @extend %sidebar-chevron;
+    }
   }
 }
 
@@ -34,78 +64,58 @@
   @include devicebreak(medium) {
     display: block;
   }
-}
 
-.accordion-navbar__item,
-.accordion-navbar__no-children,
-.accordion-navbar__menu {
-  background-color: $color-gray-200;
-  border-bottom: 1px solid $color-gray-500;
-  padding: $spacing-16 0;
-  position: relative;
-
-  @include devicebreak(medium) {
-    background-color: transparent;
-    padding: 0;
-  }
-
-  &--chevron {
-    &::after {
-      @extend %sidebar-chevron;
-    }
-  }
-
-  &.accordion--active {
+  & > .accordion--active {
     border-bottom: none;
 
-    .accordion-navbar__item--chevron::after {
+    & > span::after {
       @include transform(rotateZ(-180deg));
     }
   }
-}
 
-.accordion-navbar__item:nth-child(1),
-.accordion-navbar__item.accordion--active:nth-child(1) {
-  @include devicebreak(medium) {
-    .accordion-navbar__item--chevron::after {
-      background:
-        url(#{$img-path-Icon}/Chevron-down-white.svg)
-        no-repeat center center;
-    }
-  }
-
-  .accordion-navbar__item--headertext {
+  & > li:nth-child(1),
+  & > .accordion--active:nth-child(1) {
     @include devicebreak(medium) {
-      background-color: $color-blue-600;
-      color: $color-white;
+      span::after {
+        background:
+          url(#{$img-path-Icon}/Chevron-down-white.svg)
+          no-repeat center center;
+      }
+    }
+
+    & > a {
+      @include devicebreak(medium) {
+        background-color: $color-blue-600;
+        color: $color-white;
+      }
     }
   }
-}
 
-.accordion-navbar__menu {
-  border-bottom: none;
-  display: block;
-  font-weight: 700;
-  padding: $spacing-16;
-  text-transform: uppercase;
+  & > li {
+    background-color: $color-gray-200;
+    position: relative;
 
-  @include devicebreak(medium) {
-    display: none;
-  }
+    @include devicebreak(medium) {
+      background-color: transparent;
+      padding: 0;
+    }
 
-  &::after {
-    @extend %sidebar-chevron;
+    span {
+      cursor: pointer;
+
+      &::after {
+        @extend %sidebar-chevron;
+      }
+    }
   }
 }
 
 [dir='rtl'] {
-  .accordion-navbar {
-    &__item--chevron,
-    &__menu {
-      &::after {
-        left: 24px;
-        right: unset;
-      }
+  .accordion-wrapper > span,
+  .accordion-navbar li > span {
+    &::after {
+      left: 24px;
+      right: unset;
     }
   }
 }

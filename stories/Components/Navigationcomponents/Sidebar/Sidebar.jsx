@@ -12,22 +12,22 @@ export const Sidebar = ({ headerText, label, data }) => {
   return (
     <div className="grid-x grid-margin-x">
       <div className="cell medium-4 accordion-wrapper" role="complementary" aria-label="Sidebar">
-        <span className="accordion-navbar__menu">{label}</span>
+        <span>{label}</span>
         <ul className="accordion-navbar">
-          <li className="accordion-navbar__item" tabindex="0" aria-label="Sidebar heading">
+          <li tabIndex="0" aria-label="Sidebar heading">
             <Sidebardata data={data} headerText={headerText} />
           </li>
-          <li className="accordion-navbar__no-children" tabindex="0" aria-label="Sidebar heading">
-            <a href="#" className="accordion-navbar__item--headertext">{headerText}</a>
+          <li tabIndex="0" aria-label="Sidebar heading">
+            <a href="#">{headerText}</a>
           </li>
-          <li className="accordion-navbar__item" tabindex="0" aria-label="Sidebar heading">
+          <li tabIndex="0" aria-label="Sidebar heading">
             <Sidebardata data={data} headerText={headerText} />
           </li>
-          <li className="accordion-navbar__no-children" tabindex="0" aria-label="Sidebar heading">
-            <a href="#" className="accordion-navbar__item--headertext">{headerText}</a>
+          <li tabIndex="0" aria-label="Sidebar heading">
+            <a href="#">{headerText}</a>
           </li>
-          <li className="accordion-navbar__no-children" tabindex="0" aria-label="Sidebar heading">
-            <a href="#" className="accordion-navbar__item--headertext">{headerText}</a>
+          <li tabIndex="0" aria-label="Sidebar heading">
+            <a href="#">{headerText}</a>
           </li>
         </ul>
       </div>
