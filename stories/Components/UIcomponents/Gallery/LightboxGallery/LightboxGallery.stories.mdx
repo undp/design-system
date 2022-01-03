@@ -1,0 +1,288 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import {LightboxGallery} from './LightboxGallery';
+import galleryImg1 from '../../../../assets/images/parallax-gallery-img1.jpg';
+import galleryImg2 from '../../../../assets/images/parallax-gallery-img2.jpg';
+import galleryImg3 from '../../../../assets/images/parallax-gallery-img3.jpg';
+import galleryImg4 from '../../../../assets/images/parallax-gallery-img4.jpg';
+import galleryImg8 from '../../../../assets/images/parallax-gallery-img8.jpg';
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+       titleText: 'UNDP Hope',
+       descText: 'UNDP works in about 170 countries and territories, helping to achieve the eradication of poverty, and the reduction of inequalities and exclusion. We help countries to develop policies, leadership skills, partnering abilities, institutional capabilities and build resilience in order to sustain development results.',
+       buttonText: 'Read More',
+       featureddata: [
+          {
+          galleryimg1: galleryImg1,
+          label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
+          paragraph: "Lorem ipsum dolor sit amet, . Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+          },
+          {
+          galleryimg1: galleryImg2,
+          label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+          },
+          {
+          galleryimg1: galleryImg3,
+          label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+          },
+          {
+          galleryimg1: galleryImg4,
+          label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+          },
+          {
+          galleryimg1: galleryImg2,
+          label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+          },
+          {
+          galleryimg1: galleryImg8,
+          label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus. Lorem ipsum",
+          }
+        ],
+        headertext: ["Related",<br/>,"Posts"]
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        titleText: 'برنامج الأمم المتحدة الإنمائي الأمل',
+        descText: 'يعمل برنامج الأمم المتحدة الإنمائي في حوالي 170 دولة وإقليم ، للمساعدة في تحقيق القضاء على الفقر ، والحد من عدم المساواة والإقصاء. نحن نساعد البلدان على تطوير السياسات ومهارات القيادة وقدرات الشراكة والقدرات المؤسسية وبناء المرونة من أجل الحفاظ على نتائج التنمية.',
+        buttonText: 'اقرأ أكثر',
+        featureddata: [
+          {
+          galleryimg1: galleryImg1,
+          label: ['برنامج الأمم المتحدة الإنمائي / أنغولا',<br/>,<strong>جيروم بيل</strong>],
+          paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Morbi lorem tortor، fermentum eu lorem at، venenatis malesuada laughter.",
+          },
+          {
+          galleryimg1: galleryImg2,
+          label: ['برنامج الأمم المتحدة الإنمائي / أنغولا',<br/>,<strong>جيروم بيل</strong>],
+          paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Morbi lorem tortor، fermentum eu  lorem at، venenatis malesuada laughter.",
+          },
+          {
+          galleryimg1: galleryImg3,
+          label: ['برنامج الأمم المتحدة الإنمائي / أنغولا',<br/>,<strong>جيروم بيل</strong>],
+          paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Morbi lorem tortor، fermentum eu lorem at، venenatis malesuada laughter.",
+          },
+          {
+          galleryimg1: galleryImg4,
+          label: ['برنامج الأمم المتحدة الإنمائي / أنغولا',<br/>,<strong>جيروم بيل</strong>],
+          paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Morbi lorem tortor، fermentum eu lorem at، venenatis malesuada laughter.",
+          },
+          {
+          galleryimg1: galleryImg2,
+          label: ['برنامج الأمم المتحدة الإنمائي / أنغولا',<br/>,<strong>جيروم بيل</strong>],
+          paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Morbi lorem tortor، fermentum eu lorem at، venenatis malesuada laughter.",
+          },
+          {
+          galleryimg1: galleryImg8,
+          label: ['برنامج الأمم المتحدة الإنمائي / أنغولا',<br/>,<strong>جيروم بيل</strong>],
+          paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Morbi lorem tortor، fermentum eu lorem at، venenatis malesuada laughter.",
+          }
+        ],
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        titleText: 'UNDP မျှော်လင့်ချက်',
+        descText: 'UNDP သည် နိုင်ငံနှင့် နယ်မြေပေါင်း ၁၇၀ ခန့်တွင် လုပ်ဆောင်နေပြီး ဆင်းရဲမွဲတေမှု ပပျောက်ရေးနှင့် မညီမျှမှုများ လျှော့ချရေးနှင့် ချန်လှပ်ထားမှုတို့ကို လျှော့ချရန် ကူညီပေးသည်။ မူဝါဒများ၊ ခေါင်းဆောင်မှုစွမ်းရည်၊ မိတ်ဖက်စွမ်းရည်များ၊ အဖွဲ့အစည်းဆိုင်ရာ စွမ်းဆောင်ရည်များနှင့် ဖွံ့ဖြိုးတိုးတက်မှုရလဒ်များကို ရေရှည်တည်တံ့စေရန်အတွက် နိုင်ငံများကို ဖွံ့ဖြိုးတိုးတက်စေရန် ကျွန်ုပ်တို့မှ ကူညီပါသည်။',
+        buttonText: 'ပိုပြီးဖတ်ပါ',
+        featureddata: [
+          {
+          galleryimg1: galleryImg1,
+          label: ['UNDP/အန်ဂိုလာ',<br/>,<strong>ဂျရုမ်း ဘဲလ်</strong>],
+          paragraph: "နာကျင်မှုကိုယ်တိုင်က နာကျင်ပေမယ့် အဓိက အာရုံစိုက်တာက ဖောက်သည်အပေါ်ပါ။ Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada ရယ်မောခြင်း။",
+          },
+          {
+          galleryimg1: galleryImg2,
+          label: ['UNDP/အန်ဂိုလာ',<br/>,<strong>ဂျရုမ်း ဘဲလ်</strong>],
+          paragraph: "နာကျင်မှုကိုယ်တိုင်က နာကျင်ပေမယ့် အဓိက အာရုံစိုက်တာက ဖောက်သည်အပေါ်ပါ။ Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada ရယ်မောခြင်း။",
+          },
+          {
+          galleryimg1: galleryImg3,
+          llabel: ['UNDP/အန်ဂိုလာ',<br/>,<strong>ဂျရုမ်း ဘဲလ်</strong>],
+          paragraph: "နာကျင်မှုကိုယ်တိုင်က နာကျင်ပေမယ့် အဓိက အာရုံစိုက်တာက ဖောက်သည်အပေါ်ပါ။ Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada ရယ်မောခြင်း။",
+          },
+          {
+          galleryimg1: galleryImg4,
+          label: ['UNDP/အန်ဂိုလာ',<br/>,<strong>ဂျရုမ်း ဘဲလ်</strong>],
+          paragraph: "နာကျင်မှုကိုယ်တိုင်က နာကျင်ပေမယ့် အဓိက အာရုံစိုက်တာက ဖောက်သည်အပေါ်ပါ။ Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada ရယ်မောခြင်း။",
+          },
+          {
+          galleryimg1: galleryImg2,
+          label: ['UNDP/အန်ဂိုလာ',<br/>,<strong>ဂျရုမ်း ဘဲလ်</strong>],
+          paragraph: "နာကျင်မှုကိုယ်တိုင်က နာကျင်ပေမယ့် အဓိက အာရုံစိုက်တာက ဖောက်သည်အပေါ်ပါ။ Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada ရယ်မောခြင်း။",
+          },
+          {
+          galleryimg1: galleryImg8,
+          label: ['UNDP/အန်ဂိုလာ',<br/>,<strong>ဂျရုမ်း ဘဲလ်</strong>],
+          paragraph: "နာကျင်မှုကိုယ်တိုင်က နာကျင်ပေမယ့် အဓိက အာရုံစိုက်တာက ဖောက်သည်အပေါ်ပါ။ Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada ရယ်မောခြင်း။",
+          }
+        ],
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        titleText: 'UNDPの希望',
+        descText: 'UNDPは約170の国と地域で活動しており、貧困の撲滅と不平等と排除の削減を支援しています。私たちは、開発成果を維持するために、各国が政策、リーダーシップスキル、パートナー能力、制度的能力を開発し、レジリエンスを構築するのを支援します。',
+        buttonText: '続きを読む',
+        featureddata: [
+          {
+          galleryimg1: galleryImg1,
+          label: ['UNDP /アンゴラ',<br/>,<strong>ジェロームベル</strong>],
+          paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 Morbi lorem tortor、fermentum eu lorem at、venenatismalesuadaの笑い声。",
+          },
+          {
+          galleryimg1: galleryImg2,
+          label: ['UNDP /アンゴラ',<br/>,<strong>ジェロームベル</strong>],
+          paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 Morbi lorem tortor、fermentum eu lorem at、venenatismalesuadaの笑い声。",
+          },
+          {
+          galleryimg1: galleryImg3,
+          label: ['UNDP /アンゴラ',<br/>,<strong>ジェロームベル</strong>],
+          paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 Morbi lorem tortor、fermentum eu lorem at、venenatismalesuadaの笑い声。",
+          },
+          {
+          galleryimg1: galleryImg4,
+          label: ['UNDP /アンゴラ',<br/>,<strong>ジェロームベル</strong>],
+          paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 Morbi lorem tortor、fermentum eu lorem at、venenatismalesuadaの笑い声。",
+          },
+          {
+          galleryimg1: galleryImg2,
+          label: ['UNDP /アンゴラ',<br/>,<strong>ジェロームベル</strong>],
+          paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 Morbi lorem tortor、fermentum eu lorem at、venenatismalesuadaの笑い声。",
+          },
+          {
+          galleryimg1: galleryImg8,
+          label: ['UNDP /アンゴラ',<br/>,<strong>ジェロームベル</strong>],
+          paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 Morbi lorem tortor、fermentum eu lorem at、venenatismalesuadaの笑い声。",
+          }
+        ],
+      };
+      return japaneseText;
+    default:
+      return {
+        titleText: 'UNDP Hope',
+        descText: 'UNDP works in about 170 countries and territories, helping to achieve the eradication of poverty, and the reduction of inequalities and exclusion. We help countries to develop policies, leadership skills, partnering abilities, institutional capabilities and build resilience in order to sustain development results.',
+        buttonText: 'Read More',
+        featureddata: [
+          {
+          galleryimg1: galleryImg1,
+          label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+          },
+          {
+          galleryimg1: galleryImg2,
+          label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+          },
+          {
+          galleryimg1: galleryImg3,
+          label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+          },
+          {
+          galleryimg1: galleryImg4,
+          label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+          },
+          {
+          galleryimg1: galleryImg2,
+          label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+          },
+          {
+          galleryimg1: galleryImg8,
+          label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
+          paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+          }
+        ],
+      };
+  }
+};
+
+
+<Meta title="Components/UI components/Gallery/Lightbox Gallery" />
+
+<style>{`
+  .subheading {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  .sbdocs .sbdocs-h2 {
+    border-bottom: none;
+  }
+  div[id^="story--molecules-text-authors"] {
+    padding: 20px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 25px 0px 40px;
+    border-radius: 4px;
+  }
+`}</style>
+
+# Parallax Gallery component
+
+## Overview
+
+The Parallax Gallery Component is created for showing gallery, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+
+## Default Representation & various possible states
+
+<Story name="Lightbox Gallery">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <LightboxGallery 
+        titleText={caption.titleText}
+        descText={caption.descText}
+        buttonText={caption.buttonText}
+        data={caption.featureddata}
+        {...args}
+        ></LightboxGallery>;
+  }}
+</Story>
+
+## Dependencies
+
+Not Applicable
+
+## Usage
+
+<ul>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like variables, mixin from{" "}
+    <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>parallaxgallery.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
+  <u>To use JS include the following files in your implementation</u>
+  <li>
+    Include JS Parallax library file from <code>assets/js/gsap.min.js</code>
+  </li>
+  <li>
+    Include JS Parallax library file from <code>assets/js/ScrollTrigger.min.js</code>
+  </li>
+  <li>
+    Include JS file  from <code>assets/js/parallax-gallery.js</code>
+  </li>
+</ul>
