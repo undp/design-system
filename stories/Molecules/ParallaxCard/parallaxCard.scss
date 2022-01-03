@@ -6,13 +6,6 @@
 .parallax-card {
   align-items: center;
 
-  @include devicebreak(medium) {
-    flex-direction: row;
-    .parallax-card__link {
-      padding-right: $spacing-12;
-    }
-  }
-
   &__link {
     @extend %img_none;
     @extend %img_none;
@@ -21,6 +14,10 @@
 
     @include devicebreak(small) {
       padding: $spacing-24 0 0 $spacing-24;
+    }
+
+    @include devicebreak(medium) {
+      padding-right: $spacing-12;
     }
 
     &:hover {
@@ -33,12 +30,14 @@
   &__image {
     img {
       @extend %img-cover;
+
       display: block;
     }
   }
 
   .cta__link {
     @extend %img_none;
+
     @include devicebreak(medium) {
       padding-left: $spacing-24;
     }
@@ -60,29 +59,77 @@
 
     @include devicebreak(medium) {
       border-bottom: solid 2px $color-black;
-      padding: 0 0 $spacing-24 $spacing-24 ;
+      padding: 0 0 $spacing-24 $spacing-24;
     }
   }
 
-  &-right {
+  .order {
+    order: -1;
+
+    @include devicebreak(medium){
+      .parallax-card__link{
+        padding-left: $spacing-12;
+        padding-right: 0;
+      }
+
+      .cta__link {
+        padding-left: 0;
+        padding-right: $spacing-24;
+      }
+
+      h3 {
+        padding-left: 0;
+        padding-right: $spacing-24;
+      }
+  
+      p {
+        padding: 0 $spacing-24 $spacing-24 0;
+      }
+    }
+  }
+
+  &.right {
     @include devicebreak(medium) {
       flex-direction: row-reverse;
+
+      .cta__link {
+        padding-left: 0;
+        padding-right: $spacing-24;
+      }
+
+      h3 {
+        padding-left: 0;
+        padding-right: $spacing-24;
+      }
+  
+      p {
+        padding: 0 $spacing-24 $spacing-24 0;
+      }
+  
       .parallax-card__link {
         padding-left: $spacing-12;
         padding-right: 0;
       }
 
-      h3 {
-        padding-right: $spacing-24;
-        padding-left: 0;
-      }
-
-      p {
-        padding: 0 $spacing-24 $spacing-24 0;
-      }
-
-      .cta__link {
-        padding-left: 0
+      .order {
+        .parallax-card__link {
+          padding-right: $spacing-12;
+          padding-left: 0;
+        }
+  
+        .cta__link {
+          padding-left: $spacing-24;
+          padding-right: 0;
+        }
+  
+        h3 {
+          padding-left: $spacing-24;
+          padding-right: 0;
+        }
+  
+        p {
+          padding: 0 0 $spacing-24 $spacing-24;
+        }
       }
     }
   }
@@ -100,41 +147,40 @@
         padding: 0 $spacing-24 $spacing-24 0;
       }
 
-      .parallax-card__link {
-        padding-right: 0;
-        padding-left: $spacing-12;
-      }
-
-      .cta__link {
+      .cta__link{
         padding-right: $spacing-24;
-        padding-left: 0;
       }
-    }
 
-    &-right {
-      @include devicebreak(medium) {
+      &.right, &.left .order {
+
+        .cta__link {
+          padding-right: 0;
+          padding-left: $spacing-24;
+        }
+  
         h3 {
           padding-right: 0;
           padding-left: $spacing-24;
         }
-
+    
         p {
           padding: 0 0 $spacing-24 $spacing-24;
         }
-
+    
         .parallax-card__link {
           padding-right: $spacing-12;
           padding-left: 0;
         }
       }
-
-      .cta__link {
-        padding-right: 0;
-        padding-left: $spacing-24;
-      }
     }
 
     &__link {
+
+      @include devicebreak(medium){
+        padding-left: $spacing-12;
+        padding-right: 0;
+      }
+
       @include devicebreak(small) {
         padding: $spacing-24 $spacing-24 0 0;
       }

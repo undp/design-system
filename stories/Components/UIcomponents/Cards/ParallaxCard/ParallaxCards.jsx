@@ -7,7 +7,7 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import ParallaxCard from '../../../../Molecules/ParallaxCard/ParallaxCard';
 import '../../../../assets/js/smartresize';
 
-const ParallaxCards = ({ carddata, alt, title }) => (
+const ParallaxCards = ({ data, alt, title }) => (
   useEffect(() => {
     glideSlider('.parallax__content', '46');
     parallaxEffect('.parallax-card-right-content', '50', '.glide__slides', '1', '.parallax-card__image');
@@ -21,15 +21,19 @@ const ParallaxCards = ({ carddata, alt, title }) => (
       </div>
       <div className="glide parallax__content">
         <div className="glide__bullets show-for-small" data-glide-el="controls[nav]">
-          {carddata.map((item, index) => <button className="glide__bullet" data-glide-dir={[`=${index}`]} aria-label={index} key={index} />)}
+          {data.map((item, index) => <button className="glide__bullet" data-glide-dir={[`=${index}`]} aria-label={index} key={index} />)}
         </div>
         <div className="glide__track" data-glide-el="track">
           <div className="glide__slides parallax-check">
-            <ParallaxCard data={carddata} alt={alt} src={Img} />
+            {data.map((item, index) => (
+              <>
+                {index++ % 2 == 0 ? <ParallaxCard Content="Right" name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} /> : <ParallaxCard name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} />}
+              </>
+            ))}
           </div>
         </div>
       </div>
     </section>
-)
+);
 
 export default ParallaxCards;
