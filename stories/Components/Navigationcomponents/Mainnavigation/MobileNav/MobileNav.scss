@@ -185,6 +185,54 @@
   }
 }
 
+
+.menu-hamburger {
+  margin-left: $spacing-12;
+  width: 22px;
+  display: block;
+  cursor: pointer;
+  min-height: 28px;
+  position: relative;
+  z-index:25;
+  background: none;
+  border: 0;
+}
+
+.menu-hamburger.is-active .hamburger-line.line-top {
+  transform:translateY(0) rotate(45deg)
+}
+
+.menu-hamburger.is-active .hamburger-line.line-middle {
+  opacity: 0;
+  transform:translateX(6.33px)
+}
+
+.menu-hamburger.is-active .hamburger-line.line-bottom {
+  transform:translateY(0) rotate(-45deg)
+}
+
+.menu-hamburger .hamburger-line {
+  left: 0;
+  right: 0;
+  top: 12px;
+  width: 100%;
+  margin: auto;
+  height: 2px;
+  display: block;
+  position: absolute;
+  transition: .2s ease-out;
+  background-color:#006eb5
+}
+
+.menu-hamburger .hamburger-line.line-top {
+  transform:translateY(-6.5px)
+}
+
+.menu-hamburger .hamburger-line.line-bottom {
+  transform:translateY(6.5px)
+}
+
+
 [dir='rtl'] {
   .mobile-nav {
     .mob-nav-options {
