@@ -39,7 +39,7 @@ const CountrySiteHeader = ({
               data={languageswitcherData.languagedata}
               headerText={languageswitcherData.headerText}
             />
-            <button className='menu-icon'>mobile bar</button>
+            <button className='menu-icon'>menu toggle</button>
             <IconsGlobe />
             <IconsSearch />
           </div>
