@@ -1,5 +1,6 @@
 import { Meta, Story,  Canvas, Source } from '@storybook/addon-docs';
 import { DownloadCard } from './DownloadCard';
+import img from '../../../assets/images/card-thumbnail.jpg';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -68,7 +69,7 @@ The Download Card component defines a card of information data with some items -
 <Story name="Card module" >
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <DownloadCard title={caption.title} format={caption.format}  download={caption.download}  image2 {...args} ></DownloadCard>;
+    return <DownloadCard title={caption.title} format={caption.format}  download={caption.download}  image2={img} {...args} ></DownloadCard>;
   }}
 </Story>
 
