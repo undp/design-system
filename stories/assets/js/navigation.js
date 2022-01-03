@@ -80,15 +80,11 @@ export const init = (locale) => {
     $('.mobile-mega-content').removeClass('show-content');
     $('.mob-links').removeClass('hide-mob-links');
   });
-  $('header .icon-bar').click(function () {
-    $('.mobile-nav').addClass('show-mobile-nav');
-    $('.mob-sub-menu').addClass('show-sub');
-    $(this).removeClass('show').siblings('.icon-close').addClass('show');
+  $('header .menu-icon').click(function (e) {
+    e.stopImmediatePropagation();
+    $('.mobile-nav').toggleClass('show-mobile-nav');
+    $('.mob-sub-menu').toggleClass('show-sub');
+    $(this).toggleClass('open');
     $('.back-nav').click();
-  });
-  $('header .icon-close').click(function () {
-    $('.mobile-nav').removeClass('show-mobile-nav');
-    $('.mob-sub-menu').removeClass('show-sub');
-    $(this).removeClass('show').siblings('.icon-bar').addClass('show');
-  });
+  })
 };

@@ -493,38 +493,20 @@
   }
 }
 
-%header-icon{
-  @include devicebreak(mediumonlytab) {
-    margin-left: $spacing-12;
-    display: none;
-    font-size: 0;
-    background-image: none;
-    width:1.375rem;
-    height: 1.375rem;
-    &:hover{
-      animation: none;
-    }
-    &.show{
-      display: inline-block;
-    }
-  }
-}
-
-%header-close{
-  .icon-bar {
-    display: none;
+%menu-icon{
+  .menu-icon{
     @include devicebreak(mediumonlytab) {
       background:url(#{$img-path-Iconfourback}/Bars.svg) no-repeat 0 0/1.375rem 1.375rem;
+      margin-left: $spacing-12;
+      font-size: 0;
+      width:1.375rem;
+      height: 1.375rem;
+      border: 0;
+      cursor: pointer;
+      &.open{
+        background:url(#{$img-path-Iconfourback}/Times-blue.svg) no-repeat -0.4375rem -0.3125rem/2.125rem 2.125rem;
+      }
     }
-    @extend %header-icon;
-  }
-
-  .icon-close {
-    display: none;
-    @include devicebreak(mediumonlytab) {
-      background:url(#{$img-path-Iconfourback}/Times-blue.svg) no-repeat -0.4375rem -0.3125rem/2.125rem 2.125rem;
-    }
-    @extend %header-icon;
   }
 }
 
