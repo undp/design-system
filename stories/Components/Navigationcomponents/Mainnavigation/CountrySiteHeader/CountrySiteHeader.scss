@@ -111,17 +111,7 @@
       }
     }
 
-    .icon-bar {
-      display: none;
-
-      @include devicebreak(mediumonlytab) {
-        display: block;
-      }
-    }
-
-    .icon-close {
-      display: none;
-    }
+    @extend %menu-icon;
 
     .icon-search {
       margin-left: $spacing-16;
