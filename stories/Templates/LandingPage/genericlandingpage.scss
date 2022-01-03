@@ -54,6 +54,10 @@
         margin-top: 8.688rem;
         padding-top: $spacing-80;
       }
+
+      .breadcrumb{
+        padding-left: 0;
+      }
     }
 
     &-option {
@@ -82,6 +86,12 @@
 
     @include devicebreak(medium) {
       margin-top: 4.313rem;
+    }
+
+    .button {
+      @include devicebreak(medium) {
+        margin: 0 $spacing-16;
+      }
     }
   }
 }
