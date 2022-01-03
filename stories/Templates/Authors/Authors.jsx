@@ -100,7 +100,7 @@ const Authors = ({
                 data-select-options=""
               >
                 {text.options.map((option, index) => (
-                  <li className="option" role="option" data-value="default">
+                  <li role="option" data-value="default">
                     <span>{option}</span>
                   </li>
                 ))}
