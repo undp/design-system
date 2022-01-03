@@ -40,7 +40,7 @@
     "prettier-stylelint": "^0.4.2",
     "sass": "^1.39.0",
     "sass-loader": "^10.1.1",
-    "storybook-addon-rtl": "^0.3.0",
+    "storybook-addon-rtl": "^0.4.2",
     "style-loader": "^2.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
