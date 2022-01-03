@@ -358,6 +358,12 @@
   visibility: visible;
 }
 
+[dir='rtl'] {
+  %left-to-right {
+    @include transform(translateX(100px));
+  }
+}
+
 %scale-up {
   @include transform(scale(0.9));
   @include transition(transform 1.2s cubic-bezier(0.34, 0.41, 0.03, 1));
