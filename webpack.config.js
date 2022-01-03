@@ -1,6 +1,8 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const CopyPlugin = require("copy-webpack-plugin");
 const webpackEntry = require('./webpack.entries');
 const packMode = 'production';
 
@@ -17,22 +19,44 @@ module.exports = [
           test: /\.scss$/, 
           use: [
             MiniCssExtractPlugin.loader,
+            'css-loader',
             {
-              loader:'css-loader',
+              loader: 'resolve-url-loader',
               options: {
-                url: false
+                attempts: 1,
+                sourceMap: true
               }
             },
-            'sass-loader',
+            {
+              loader: 'sass-loader',
+              options: { sourceMap: true }
+            }
           ],
         },
         {
           test: /\.(svg|png|jpg)$/,
-          loader: 'url-loader?limit=8192'
+          use: [
+            {
+              loader: 'url-loader'
+            },
+          ],
         },
       ]
     },
+    optimization: {
+      minimizer: [
+        new CssMinimizerPlugin(),
+      ],
+    },
     plugins: [
+      // copying icons folder for better reach 
+      // to dist folder
+      new CopyPlugin({
+        patterns: [
+          { from: "./stories/assets/images/Icon", to: "images" },
+        ]
+      }),
+      // remove .js file from every .css file
       new FixStyleOnlyEntriesPlugin(),
       new MiniCssExtractPlugin({
         filename: '[name].min.css',
@@ -57,7 +81,7 @@ module.exports = [
         },
         {
           test: /\.(svg|png|jpg)$/,
-          loader: 'url-loader?limit=8192'
+          loader: 'url-loader'
         }
       ]
     }

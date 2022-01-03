@@ -7,7 +7,7 @@
   .sidebar {
     &-width {
       .accordion-wrapper {
-        width: calc(100% - $spacing-12);
+        width: calc(100% - #{$spacing-12});
   
         @include devicebreak(medium) {
           margin-top: 0.8rem;

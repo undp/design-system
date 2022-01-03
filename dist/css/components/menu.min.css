@@ -1,1 +1,1 @@
-.menu__wrapper{padding:0}.menu__wrapper li{display:inline-block;margin:.75rem}.menu__wrapper li:first-child{margin-left:0}.menu__wrapper li:last-child{margin-right:0}[dir=rtl] .menu__wrapper li a{margin:0}[dir=rtl] .menu__wrapper li:first-child{margin-left:.75rem;margin-right:0}[dir=rtl] .menu__wrapper li:last-child{margin-left:0;margin-right:.75rem}
+.menu{padding:0}.menu li{display:inline-block;margin:.75rem 1.5rem .75rem 0}[dir=rtl] .menu li{margin-left:1.5rem;margin-right:0}[dir=rtl] .menu li a{margin:0}
