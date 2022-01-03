@@ -261,7 +261,7 @@
 }
 
 %sidebar-chevron {
-  @include transition(0.3s ease);
+  @include transition(all 0.3s ease);
 
   background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
   content: '';

@@ -4,9 +4,10 @@
 
 /* Accordian start */
 .accordion {
+  @extend %background-white;
+
   padding: 0;
   position: relative;
-  @extend %background-white;
 }
 
 .accordion__item {
@@ -19,6 +20,8 @@
   position: relative;
 
   &::before {
+    @include transition(all 0.3s ease);
+
     background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
     border-top-color: #f3f3f3;
     content: '';
@@ -46,7 +49,7 @@
     }
 
     &::before {
-      @include transform(rotateZ(180deg));
+      @include transform(rotateZ(-180deg));
     }
   }
 
