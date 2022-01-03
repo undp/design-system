@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     lazyloadThrottleTimeout = setTimeout(() => {
-      const scrollTop = window.pageYOffset;
+      const SCROLL_TOP = window.pageYOffset;
       lazyloadImages.forEach((img) => {
-        if (img.parentElement.parentElement.offsetTop < (window.innerHeight + scrollTop)) {
+        if (img.parentElement.parentElement.offsetTop < (window.innerHeight + SCROLL_TOP)) {
           img.src = img.dataset.src;
           img.classList.remove('lazy');
         }

@@ -18,7 +18,7 @@ export const Inputcomponent = ({
             type={type}
             disabled={State == 'Disabled'}
             placeholder={placeholder}
-            minlength={minlength}
+            minLength={minlength}
             cols={cols}
             rows={rows}
             name={type}

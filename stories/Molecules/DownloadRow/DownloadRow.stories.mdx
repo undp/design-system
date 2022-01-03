@@ -8,7 +8,6 @@ export const getCaptionForLocale = (locale) => {
         label: "Title of the publication quite long",
         label2: "PDF (1.2MB)",
         value: "category",
-        datalang: "en",
       };
       return engText;
     case "arabic":
@@ -16,7 +15,6 @@ export const getCaptionForLocale = (locale) => {
         label: "عنوان المنشور طويل جدا",
         label2: "PDF (1.2 ميجابايت)",
         value: "فئة",
-        datalang: "ar",
       };
       return arabicText;
     case "burmese":
@@ -24,7 +22,6 @@ export const getCaptionForLocale = (locale) => {
         label: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။",
         label2: "PDF (1.2MB)",
         value: "အမျိုးအစား",
-        datalang: "my",
       };
       return burmeseText;
     case "japanese":
@@ -32,7 +29,6 @@ export const getCaptionForLocale = (locale) => {
         label: "出版物のタイトルはかなり長い",
         label2: "PDF (1.2MB)",
         value: "カテゴリー",
-        datalang: "ja",
       };
       return japaneseText;
     default:
@@ -40,7 +36,6 @@ export const getCaptionForLocale = (locale) => {
         label: "Title of the publication quite long",
         label2: "PDF (1.2MB)",
         value: "category",
-        datalang: "de",
       };
   }
 };
@@ -84,7 +79,6 @@ Download row is comes with checkbox, download and external link controls.
         title={caption.label}
         subtitle={caption.label2}
         value={caption.value}
-        datalang={caption.datalang}
         {...args}
       ></DownloadRow>
     );

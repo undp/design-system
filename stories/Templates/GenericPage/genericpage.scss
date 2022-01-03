@@ -51,12 +51,12 @@
   
   .progress {
     &-container {
-      margin-top: 4.6875rem;
+      top: 4.6875rem;
       position: fixed;
       z-index: 1;
 
       @include devicebreak(xlarge) {
-        margin-top: 7.1875rem;
+        top: 7.1875rem;
       }
     }
     

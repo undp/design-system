@@ -1,12 +1,12 @@
 import React, { Component, useEffect } from 'react';
 import { StatsPanel } from '../../Molecules/Blocks/StatsPanel/StatsPanel';
-import { StatsFun } from '../../assets/js/Stats-custom';
+import { StatsHover } from '../../assets/js/stats';
 import viewport from '../../assets/js/viewport';
 import './stats.scss';
 
 export const Stats = ({ data, imageback }) => {
   useEffect(() => {
-    StatsFun('.stats-grid .stats-panel');
+    StatsHover('.stats-grid .stats-panel');
     viewport('.stats-panel-card');
   }, []);
   return (

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import './multiselect.scss';
-import init from '../../../../assets/js/multiselect-init';
+import { multiSelect } from '../../../../assets/js/multiselect';
 import { Checkbox } from '../../Checkbox/Checkbox';
 import { Radio } from '../../Radio/Radio';
 
 const SelectTag = ({ text, eleId, ...args }) => {
   useEffect(() => {
-    init();
+    multiSelect();
   }, []);
   return (
     <div className="multi-select" data-multi-select="">

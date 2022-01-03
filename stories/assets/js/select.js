@@ -1,4 +1,4 @@
-import './UNDP';
+import './undp';
 
 class Select {
   constructor(element) {
@@ -152,4 +152,10 @@ class Select {
   }
 }
 
-export default Select;
+export function select() {
+  const selects = $('[data-select]');
+  selects.each((i, select) => {
+    const selectInstance = new Select(select);
+    selectInstance.init();
+  });
+}
