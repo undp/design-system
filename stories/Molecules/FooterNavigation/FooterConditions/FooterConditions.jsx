@@ -1,8 +1,14 @@
 import React from 'react';
 import './footerCondition.scss';
 
+export const variant_options = {
+  default: '',
+  inverted: 'inverted',
+};
+
+const cls = (...classes) => classes.filter(Boolean).join(' ');
 export const FooterConditions = ({ style, footerdata, ...args }) => (
-  <ul className={['footer__condition', `${args.variant}`].join(' ')}>
+  <ul className={cls('footer__condition', `${variant_options[`${args.variant}`]}`)}>
     {footerdata.map((item, index) => (
       <li key={index}><a href="#">{item.menu}</a></li>
     ))}
@@ -10,5 +16,5 @@ export const FooterConditions = ({ style, footerdata, ...args }) => (
 );
 
 FooterConditions.defaultProps = {
-  variant: 'black',
+  variant: 'default',
 };

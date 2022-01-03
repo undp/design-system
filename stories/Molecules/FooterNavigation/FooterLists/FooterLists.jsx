@@ -3,10 +3,16 @@ import './footerLists.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import { Link } from '../../../Atom/Typography/Links/link';
 
+export const variant_options = {
+  default: '',
+  inverted: 'inverted',
+};
+
+const cls = (...classes) => classes.filter(Boolean).join(' ');
 export const FooterLists = ({
   type, headerText, text, style, data, ...args
 }) => (
-  <div className={['cell', 'medium-2', 'footer__items', `${args.variant}`].join(' ')}>
+  <div className={cls('cell', 'medium-2', 'footer__items', `${variant_options[`${args.variant}`]}`)}>
     <Heading type="6" label={headerText} className="footer__heading" />
     <div className="footer__panel">
       {data.map((item, index) => (
@@ -17,5 +23,5 @@ export const FooterLists = ({
 );
 
 FooterLists.defaultProps = {
-  variant: 'black',
+  variant: 'default',
 };
