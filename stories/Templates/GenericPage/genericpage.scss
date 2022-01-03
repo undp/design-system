@@ -83,4 +83,13 @@
   .glide__bullets {
     width: 95%;
   }
+
+  .fluid-carousel {
+    .slide-content {
+      @include devicebreak(xlarge) {
+        flex: 1 0 40%;
+        max-width: 100%;
+      }
+    }
+  }
 }
