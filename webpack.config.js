@@ -43,6 +43,16 @@ module.exports = [
         },
       ]
     },
+    resolve: {
+      // @TODO: Need to find a valid solution
+      alias: {
+        "../../../../../../assets/images/Icon/Bars.svg": path.resolve(__dirname, 'stories/assets/images/Icon/Bars.svg'),
+        "../../../../../../assets/images/Icon/Chevron-down.svg": path.resolve(__dirname, 'stories/assets/images/Icon/Chevron-down.svg'),
+        "../../../../../../assets/images/Icon/Bars.svg": path.resolve(__dirname, 'stories/assets/images/Icon/Bars.svg'),
+        "../../../../assets/images/Icon/Chevron-down.svg": path.resolve(__dirname, 'stories/assets/images/Icon/Chevron-down.svg'),
+        "../../../../../../assets/images/Icon/Times-blue.svg": path.resolve(__dirname, 'stories/assets/images/Icon/Times-blue.svg')
+      },
+    },
     optimization: {
       minimizer: [
         new CssMinimizerPlugin(),
