@@ -518,10 +518,12 @@
 
 %menu-icon{
   .menu-icon{
+    display: none;
     @include devicebreak(mediumonlytab) {
       background:url(#{$img-path-Iconfourback}/Bars.svg) no-repeat 0 0/1.375rem 1.375rem;
       margin-left: $spacing-12;
       font-size: 0;
+      display: block;
       width:1.375rem;
       height: 1.375rem;
       border: 0;

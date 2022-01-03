@@ -51,9 +51,9 @@ export const navigationInitialize = (locale) => {
   $(window).scroll(function() {
     var $scroll = $(window).scrollTop();
     if ($scroll >= 1) {
-        $(".logo").addClass("scrolled");
+        $(".logo img").addClass("scrolled");
     } else {
-        $(".logo").removeClass("scrolled");
+        $(".logo img").removeClass("scrolled");
     }
   });
 

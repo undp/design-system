@@ -72,7 +72,7 @@
       }
     }
 
-    .middle-logo {
+    .logo {
       @extend %img_none;
 
       @include devicebreak(xlarge) {
@@ -88,7 +88,7 @@
         margin: 0;
       }
 
-      .logo {
+      img {
         @include devicebreak(mediumonlytab) {
           height: 4.6875rem;
         } 

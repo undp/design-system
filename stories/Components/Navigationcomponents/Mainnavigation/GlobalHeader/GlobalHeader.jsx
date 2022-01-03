@@ -34,7 +34,7 @@ const GlobalHeader = ({
           </div>
           <div className="cell large-8 small-8 mid-nav">
             {desktopView && <Menu data={leftNavigationData} />}
-            <a href="#" className="middle-logo"><Logo src={pnud} alt="UNDP Logo" /></a>
+            <a href="#" className="logo"><Logo src={pnud} alt="UNDP Logo" /></a>
             {desktopView && <Menu data={rightNavigationData} />}
           </div>
           <div className="cell large-2 small-2 top-right">
