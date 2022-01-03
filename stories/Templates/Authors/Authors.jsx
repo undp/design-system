@@ -33,12 +33,14 @@ const Authors = ({
   useEffect(() => {
     select();
     $('.sort-btn').click(function sortclick() {
+      event.preventDefault();
       $('.author-filter').addClass('author-filter-show');
       $('.close-btn').addClass('show-close');
       $(this).addClass('hide-sort');
       $('.author-cards').addClass('find-first-author');
     });
     $('.close-btn').click(function closeclick() {
+      event.preventDefault();
       $('.author-filter').removeClass('author-filter-show');
       $(this).removeClass('show-close');
       $('.sort-btn').removeClass('hide-sort');
