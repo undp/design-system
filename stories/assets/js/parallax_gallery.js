@@ -1,4 +1,7 @@
-export function parallaxGalleryFun(ele, yele, triggerclass) {
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+export function parallaxGallery(ele, yele, triggerclass) {
   gsap.registerPlugin(ScrollTrigger);
   document.querySelectorAll(ele).forEach((e, n) => {
     var r = (n + 1) % 2 != 0;

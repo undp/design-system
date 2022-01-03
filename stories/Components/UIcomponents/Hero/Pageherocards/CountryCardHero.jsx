@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import './countrycardhero.scss';
 import viewport from '../../../../assets/js/viewport';
 import '../../../../assets/js/smartresize';
-import { GlideSlider } from '../../../../assets/js/SliderCustom';
+import { glideSlider } from '../../../../assets/js/slider';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { CountryCard } from '../../../../Molecules/Blocks/CountryCard/CountryCard';
 
 export const CountryCardHero = ({ data, title, subtitle }) => {
   useEffect(() => {
-    GlideSlider('.country-card__items', '24');
+    glideSlider('.country-card__items', '24');
     viewport('.country-card__header h2');
     viewport('.country-card__header h5');
   }, []);

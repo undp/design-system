@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { FaqFun } from '../../../assets/js/Faq_custom';
+import { accordion } from '../../../assets/js/accordion';
 import './accordion.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 
 export const Accordion = ({ headerText, descriptionText }) => {
   useEffect(() => {
-    FaqFun();
+    accordion();
   }, []);
 
   return (

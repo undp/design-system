@@ -1,15 +1,15 @@
-export const getData = (lang) => { 
+export const getData = (lang) => {
   $.ajax({
     method: 'GET',
     url: './js/navigationData.json',
     dataType: 'json',
     success(res) {
-      lang=lang?lang:'english';
+      lang = lang ? lang : 'english';
       const resData = res.find((item) => item.language === lang);
-      const megaWrapper = $('.mega-wrapper');
-      const mobileMegaWrapper = $('.mobile-mega-wrapper');
-      megaWrapper.empty();
-      mobileMegaWrapper.empty();
+      const $megaWrapper = $('.mega-wrapper');
+      const $mobileMegaWrapper = $('.mobile-mega-wrapper');
+      $megaWrapper.empty();
+      $mobileMegaWrapper.empty();
       resData.data.forEach((item, index) => {
         const submenus = item.submenus
           .map((menu, index) => `<li id="${menu.link.id}-${item.id}" class="${
@@ -74,7 +74,7 @@ export const getData = (lang) => {
                     </div>
            </div>
         `;
-        megaWrapper.append(renderHtml);
+        $megaWrapper.append(renderHtml);
 
         // render mobile mega navs
         const renderMobileHtml = `
@@ -96,7 +96,7 @@ export const getData = (lang) => {
     .join(' ')}
         </div>
         `;
-        mobileMegaWrapper.append(renderMobileHtml);
+        $mobileMegaWrapper.append(renderMobileHtml);
       });
     },
   });

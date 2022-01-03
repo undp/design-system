@@ -11,7 +11,7 @@ export const Sdg = ({ data, imgsrc, title }) => {
   return (
     <>
       {data.map((item, index) => (
-        <a href={[`${item.anchor}`]} className={['sdg-card', `${item.bgcolor}`].join(' ')} key={index}>
+        <a href={[`${item.anchor}`]} className={['sdg-card', `${item.bgcolor}`].join(' ')} key={index} aria-label={item.bgcolor}>
           <strong className="left-right delay-1">{index + 1}</strong>
           <Heading type="4" className="left-right delay-1" label={item.text} />
           <div className="sdg-image">

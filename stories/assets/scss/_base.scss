@@ -71,6 +71,7 @@
 
 /* glide slider start */
 .glide {
+  max-width: 100%;
   &__slides {
     margin-top: $spacing-32;
   }

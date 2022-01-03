@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { LangSwitch } from '../../../assets/js/Lang_switcher';
+import { langSwitch } from '../../../assets/js/lang_switcher';
 import './languageswitcher.scss';
 
 export const variant_options = {
@@ -11,16 +11,16 @@ export const Languageswitcher = ({
   headerText, data, lang, ...args
 }) => {
   useEffect(() => {
-    LangSwitch();
+    langSwitch();
   }, []);
 
   return (
-    <div className="dropdown-language sr-only">
-      <button className={['dropdown-btn', `${variant_options[`${args.variant}`]}`].join(' ')} aria-label="English, Select your language" aria-expanded="false">{headerText}</button>
-      <ul className="dropdown-language__content" role="listbox">
+    <div className="dropdown-language">
+      <button className={[`${variant_options[`${args.variant}`]}`].join(' ')} aria-label="English, Select your language" aria-expanded="false">{headerText}</button>
+      <ul role="menu">
         {data.map((item, index) => (
-          <li key={index}>
-            <a href="#" lang={item.lang} hrefLang={item.lang} role="option">
+          <li key={index} role="menuitem" >
+            <a href="#" lang={item.lang} hrefLang={item.lang} tabindex="0">
               {item.descriptionText}
             </a>
           </li>

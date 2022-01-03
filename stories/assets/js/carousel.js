@@ -1,7 +1,8 @@
 import arrowright from '../images/Icon/arrow-right.svg';
 import arrowleft from '../images/Icon/arrow-left.svg';
+import Glide from '@glidejs/glide';
 
-export function CarouselFun(ele, gapele, gapele_sm, viewcard, focusSpace) {
+export function carousel(ele, gapele, gapele_sm, viewcard, perViewtablet, focusSpace) {
   /**
    * A Custom component to get Glide Slides Length and Width.
    *
@@ -55,6 +56,9 @@ export function CarouselFun(ele, gapele, gapele_sm, viewcard, focusSpace) {
       after: 45,
     },
     breakpoints: {
+      1024: {
+        perView: perViewtablet,
+      },
       767: {
         perView: 1,
         gap: gapele_sm2,

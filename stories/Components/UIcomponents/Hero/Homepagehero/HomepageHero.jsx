@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './homepagehero.scss';
 import viewport from '../../../../assets/js/viewport';
-import expandtosize from '../../../../assets/js/animation';
+import expandToSize from '../../../../assets/js/animation';
 import BackgroundImg from '../../../../assets/images/field.jpg';
 import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
 import { Video } from '../../../../Atom/Video/Video';
@@ -14,7 +14,7 @@ export const Homepagehero = ({
   useEffect(() => {
     viewport('.hero-wrapper__title');
     viewport('.hero-wrapper__subtitle');
-    expandtosize('#hero');
+    expandToSize('#hero');
   }, []);
   return (
     <div className="hero-wrapper" id="hero">

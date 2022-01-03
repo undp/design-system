@@ -4,9 +4,9 @@
 
 /* gilde slide start */
 .glide {
+  max-width: 100%;
   box-sizing: border-box;
   position: relative;
-  width: 100%;
 
   & * {
     box-sizing: inherit;

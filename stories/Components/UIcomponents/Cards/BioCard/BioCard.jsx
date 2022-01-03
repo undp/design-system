@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './biocard.scss';
 import '../../../../assets/scss/_grid.scss';
 import viewport from '../../../../assets/js/viewport';
-import { ModalFun } from '../../../../assets/js/modal_custom';
+import { modal } from '../../../../assets/js/modal';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
@@ -37,7 +37,7 @@ export const BioCard = ({
 }) => {
   useEffect(() => {
     viewport('.bio-card__description');
-    ModalFun();
+    modal();
   }, []);
   return (
     <>

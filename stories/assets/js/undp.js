@@ -11,6 +11,16 @@ UNDP.keyCode = {
   DOWN: 40,
 };
 
+UNDP.breakpoints = {
+  TINY: 320,
+  SMALL: 767,
+  MEDIUM: 768,
+  LARGE: 1024,
+  EXTRALARGE: 1440,
+  MEDIUMTAB: 1439,
+  TABLET: 834,
+};
+
 window.UNDP = window.UNDP || UNDP;
 
 export const desktopView = window.innerWidth > 1439;
