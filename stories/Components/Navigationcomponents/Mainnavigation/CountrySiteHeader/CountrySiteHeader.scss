@@ -31,7 +31,7 @@
       }
     }
 
-    .left-logo {
+    .logo {
       @extend %img_none;
 
       align-items: flex-start;
@@ -45,7 +45,7 @@
         margin: 0;
       }
 
-      .logo {
+      img {
         margin-right: $spacing-24;
 
         @include devicebreak(small) {
@@ -111,8 +111,6 @@
       }
     }
 
-    @extend %menu-icon;
-
     .icon-search {
       margin-left: $spacing-16;
     }
@@ -126,8 +124,8 @@
 [dir='rtl'] {
   .country-header {
     .top-left {
-      .left-logo {
-        .logo {
+      .logo {
+        img {
           margin-left: 1.5rem;
           margin-right: 0;
         }
