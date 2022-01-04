@@ -99,24 +99,32 @@
     display: flex;
     justify-content: flex-end;
 
+    .icon-search {
+      margin-left: $spacing-16;
+      border: 0;
+      background: none;
+      padding: 0;
+      display: inline-flex;
+    }
+
     @include devicebreak(mediumonlytab) {
       .dropdown-language {
         display: none;
       }
     }
 
+    .icon-globe {
+      margin-left: 1.75rem;
+      border: 0;
+      background: none;
+      padding: 0;
+      display: inline-flex;
+    }
+
     @include devicebreak(mediumonlytab) {
       .icon-globe {
         display: none;
       }
-    }
-
-    .icon-search {
-      margin-left: $spacing-16;
-    }
-
-    .icon-globe {
-      margin-left: 1.75rem;
     }
   }
 }

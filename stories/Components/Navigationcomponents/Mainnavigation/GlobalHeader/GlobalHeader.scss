@@ -103,6 +103,13 @@
   .top-right {
     display: flex;
     justify-content: flex-end;
+    
+    .icon-globe {
+      border: 0;
+      background: none;
+      padding: 0;
+      display: inline-flex;
+    }
 
     @include devicebreak(mediumonlytab) {
       .icon-globe {
@@ -113,6 +120,10 @@
     .icon-search {
       margin-left: $spacing-16;
       margin-right: $spacing-12;
+      border: 0;
+      background: none;
+      padding: 0;
+      display: inline-flex;
     }
   }
 }
