@@ -2,7 +2,7 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
-.breadcrumb {
+.breadcrumb ul {
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
@@ -23,40 +23,15 @@
       top: 0;
     }
 
-    .last-item {
-      color: $color-black;
-      display: block;
-      font-weight: 600;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-transform: uppercase;
-      white-space: nowrap;
-      width: 60px;
-
-      @include devicebreak(medium) {
-        overflow: inherit;
-        width: inherit;
-      }
-    }
-
     &:first-child {
       margin-left: 0;
     }
 
     &:last-child {
-      display: block;
       font-weight: 600;
       margin-right: 0;
       max-width: calc(100vw - 2rem);
-      overflow: hidden;
-      text-overflow: ellipsis;
       text-transform: uppercase;
-      white-space: nowrap;
-
-      @include devicebreak(medium) {
-        overflow: inherit;
-        width: inherit;
-      }
 
       &::after {
         display: none;
@@ -131,7 +106,7 @@
 }
 
 // burmese lang
-:lang(my){
+:lang(my) {
   .breadcrumb li:last-child {
     font-size: $font-size-12;
   }

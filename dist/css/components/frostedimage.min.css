@@ -1,1 +1,1 @@
-.frosted-overlay{position:relative}.frosted-overlay::before{backdrop-filter:blur(80px);background:rgba(247,247,247,.8);content:"";height:100%;position:absolute;width:62%}.frosted-overlay img{display:block;object-fit:cover}
+.frosted-overlay{position:relative}.frosted-overlay:before{backdrop-filter:blur(80px);background:hsla(0,0%,96.9%,.8);content:"";height:100%;position:absolute;width:62%}.frosted-overlay img{display:block;object-fit:cover}

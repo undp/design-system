@@ -7,8 +7,8 @@ export const size_options = {
 };
 
 export const Authorimg = ({ image, alt, ...args }) => (
-  <div className={['author__img', `${size_options[`${args.variant}`]}`].join(' ')}>
-    <img src={image} alt={alt} title={alt} />
+  <div className={['author__img', `${size_options[`${args.variant}`]}`].join(' ').trim()}>
+    <img src={image} alt={alt} title={alt}/>
   </div>
 );
 

@@ -29,7 +29,27 @@ export const getCaptionForActiveLocale = (locale) => {
   }
 };
 
-<Meta title="Patterns/Filter and search sidebar" />
+<Meta
+  title="Patterns/Filter and search sidebar"
+  argTypes={{
+    Height: {
+      options: [
+        "Fix height",
+        "Auto height",
+      ],
+      control: { type: "radio" },
+      defaultValue: "Auto height",
+    },
+    variant: {
+      options: [
+        "Checkbox",
+        "Radio",
+      ],
+      control: { type: "radio" },
+      defaultValue: "Checkbox",
+    },
+  }}
+/>
 
 # Filter and search
 The Filter and Search option allows the user to apply filters to the search section.
@@ -66,7 +86,7 @@ The search bar is rectangular shaped with a search icon. The active filters are 
       const clearText = getCaptionForClearLocale(locale);
       const activeFilterText = getCaptionForActiveLocale(locale);
       return (
-        <FilterAndSearchBar clearText={clearText} activeFilterText={activeFilterText}  data={caption}></FilterAndSearchBar>
+        <FilterAndSearchBar args={args} clearText={clearText} activeFilterText={activeFilterText}  data={caption}></FilterAndSearchBar>
       );
     }}
   </Story>

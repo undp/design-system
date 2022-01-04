@@ -8,13 +8,18 @@
   display: flex;
 
   h5 {
+    color: $color-white;
     margin: 0 $spacing-16;
   }
 
-  &.white {
+  &.inverted {
     h5 {
-      color: $color-white;
+      color: $color-black;
     }
+  }
+
+  a {
+    @extend %img_none;
   }
 }
 // * footer Logo end *//

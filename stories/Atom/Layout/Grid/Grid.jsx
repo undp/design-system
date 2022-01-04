@@ -1,7 +1,7 @@
 import React from 'react';
 import './grid.scss';
 
-export const Layout = ({ }) => (
+export const Layout = () => (
   <>
     <div className="grid_name">Basic</div>
     <div className="grid_description">

@@ -2,8 +2,8 @@ import React from 'react';
 import './pagination.scss';
 
 export const Pagination = ({ text, text2 }) => (
-  <nav aria-label="Pagination" role="navigation">
-    <ul className="pagination">
+  <nav className="pagination" aria-label="Pagination" role="navigation">
+    <ul>
       <li className="disabled"><a href="#" role="button" aria-current="true" aria-label="Previous">Previous</a></li>
       <li>
         {text}

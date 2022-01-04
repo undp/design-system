@@ -11,10 +11,6 @@
     margin: $spacing-24 0;
   }
 
-  label {
-    display: none;
-  }
-
   input {
     @include transition(all 200ms ease-in-out);
 
@@ -30,8 +26,11 @@
     position: relative;
     width: 0;
     z-index: 3;
+    height:2.675rem;
+  }
 
-    &:focus {
+  &.open{
+    input {
       background-color: $color-white;
       cursor: text;
       outline: none;
@@ -43,7 +42,7 @@
 
   .icon-search-black {
     border-bottom: 1px solid #000;
-    padding-bottom: 0.88rem;
+    height:2.625rem;
     width: 1.6875rem;
     z-index: 2;
   }

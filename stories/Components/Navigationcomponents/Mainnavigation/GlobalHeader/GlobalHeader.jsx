@@ -30,8 +30,7 @@ const GlobalHeader = ({
               data={languageswitcherData.languagedata}
               headerText={languageswitcherData.headerText}
             />
-            <IconsBar />
-            <IconsTimesBlue />
+            <button className='menu-icon'></button>
           </div>
           <div className="cell large-8 small-8 mid-nav">
             {desktopView && <Menu data={leftNavigationData} />}

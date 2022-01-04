@@ -6,9 +6,11 @@
   margin-top: 4.75rem;
 
   @include devicebreak(xlarge) {
-    margin-top: 10.75rem;
+    margin-top: 7.1875rem;
   }
-
+  .author__label p {
+      font-size: 1rem;
+  }
   @include devicebreak(small) {
     .author-cards {
       .cell {
