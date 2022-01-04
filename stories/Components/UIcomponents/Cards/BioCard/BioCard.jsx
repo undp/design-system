@@ -51,7 +51,7 @@ export const BioCard = ({
                   <P label={descriptionText} />
                 </div>
                 <div className="bio-cta">
-                  <Ctalink label={button} />
+                  <span className="cta__link cta--arrow">{button}</span>
                 </div>
               </article>
               <div className="card-thumbnail__image medium-5">
@@ -71,7 +71,7 @@ export const BioCard = ({
                   <P label={descriptionText} />
                 </div>
                 <div className="bio-cta">
-                  <Ctalink label={button} />
+                  <span className="cta__link cta--arrow">{button}</span>
                 </div>
               </article>
             </a>
