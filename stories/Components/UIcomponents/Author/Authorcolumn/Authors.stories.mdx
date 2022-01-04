@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Author } from './Authors';
 import user from '../../../../assets/images/author.png';
 
@@ -175,7 +175,6 @@ If there are up to 3 authors, they are displayed horizontally.
   </Story>
 </Canvas>
 
-
 If there are 4 or more authors, their profile pictures are not displayed.
 
 <Canvas>
@@ -187,26 +186,17 @@ If there are 4 or more authors, their profile pictures are not displayed.
   </Story>
 </Canvas>
 
-### CSS and JS References [ADDED BY DEVs]
+### CSS and JS References
 
+#### CSS:
+Add the base layout style from **dist/css/base-minimal.css** and the CSS listed below.
+- dist/css/components/author.css
 
-# Authors component
+#### JS:
+- NA
 
-## Overview
+#### Interactions
+- The author component can be used with or without a link. When linking, the entire block—image, name, designation—should be clickable. 
 
-The Authors Component is created for showing the authors name, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
-
-## Default Representation & various possible states
-
-<div className="subheading">Author Column</div>
-
-<Story name="Author">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Author image={user} alt= 'Headshot of XYZ' data={caption} {...args}></Author>;
-  }}
-</Story>
-
-## Dependencies
-
-Not Applicable
+### Changelog
+1.0 — Released component

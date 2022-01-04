@@ -15,7 +15,7 @@ export const size_options3 = {
   portrait: 'portrait',
 };
 
-const cls = (...classes) => classes.filter(Boolean).join(' ');
+const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
 
 export const Images = ({
   imagelg, imagemd, imagesm, alt, label, paragraph, ...args

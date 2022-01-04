@@ -43,7 +43,7 @@ The Input Fields are:
   <Story name="Text">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <Inputcomponent labelText={caption.detail1} errorText={caption.detail2} element='input' type='text' id='name' required='required' placeholder={caption.text3} {...args} ></Inputcomponent>;
+      return <Inputcomponent labelText={caption.detail1} errorText={caption.detail2} element='input' type='text' placeholder={caption.text3} {...args} ></Inputcomponent>;
     }}
   </Story>
 </Canvas>
@@ -54,7 +54,7 @@ The Input Fields are:
   <Story name="Number">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <Inputcomponent labelText={caption.detail5} errorText={caption.detail2} element='input' type='number' id='number' pattern= '[0-9]*' required='required' placeholder={caption.text3} {...args}></Inputcomponent>;
+      return <Inputcomponent labelText={caption.detail5} errorText={caption.detail2} element='input' type='number' pattern='[0-9]*' placeholder={caption.text3} {...args}></Inputcomponent>;
     }}
   </Story>
 </Canvas>
@@ -65,7 +65,7 @@ The Input Fields are:
   <Story name="Date">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <Inputcomponent labelText={caption.text} errorText={caption.detail2} element='input' type='date' id='datepicker' required='required' placeholder='dd/mm/yyyy' {...args}></Inputcomponent>;
+      return <Inputcomponent labelText={caption.text} errorText={caption.detail2} element='input' type='date' placeholder='dd/mm/yyyy' {...args}></Inputcomponent>;
     }}
   </Story>
 </Canvas>
@@ -76,7 +76,7 @@ The Input Fields are:
   <Story name="Telephone">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <Inputcomponent labelText={caption.detail9} element='input' type='tel' id='phnumber' required='required' errorText={caption.detail2} placeholder='+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}' {...args} ></Inputcomponent>;
+      return <Inputcomponent labelText={caption.detail9} element='input' type='tel' errorText={caption.detail2} placeholder='+234 000 000 0000' pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}' {...args} ></Inputcomponent>;
     }}
   </Story>
 </Canvas>
@@ -87,7 +87,7 @@ The Input Fields are:
   <Story name="Password">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <Inputcomponent labelText={caption.detail6} element='input' helpText={caption.detail8} errorText={caption.detail2} type='password' id='password' required='required'  minlength="8" placeholder={caption.detail7} {...args}></Inputcomponent>;
+      return <Inputcomponent labelText={caption.detail6} element='input' helpText={caption.detail8} errorText={caption.detail2} type='password' minlength="8" placeholder={caption.detail7} {...args}></Inputcomponent>;
     }}
   </Story>
 </Canvas>
@@ -102,3 +102,4 @@ All input fields are part of default base style, no seperate CSS and JS required
 
 ### Changelog
 1.0 — Released component
+

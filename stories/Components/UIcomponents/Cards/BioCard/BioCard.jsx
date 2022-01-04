@@ -7,7 +7,7 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
-const cls = (...classes) => classes.filter(Boolean).join(' ');
+const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
 
 export const size_options = {
   large: 'large-12',
@@ -51,7 +51,7 @@ export const BioCard = ({
                   <P label={descriptionText} />
                 </div>
                 <div className="bio-cta">
-                  <Ctalink label={button} />
+                  <span className="cta__link cta--arrow">{button}</span>
                 </div>
               </article>
               <div className="card-thumbnail__image medium-5">
@@ -71,7 +71,7 @@ export const BioCard = ({
                   <P label={descriptionText} />
                 </div>
                 <div className="bio-cta">
-                  <Ctalink label={button} />
+                  <span className="cta__link cta--arrow">{button}</span>
                 </div>
               </article>
             </a>

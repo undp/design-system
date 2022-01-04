@@ -8,7 +8,8 @@ export const variant_options = {
   inverted: 'inverted',
 };
 
-const cls = (...classes) => classes.filter(Boolean).join(' ');
+const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+
 export const FooterLists = ({
   type, headerText, text, style, data, ...args
 }) => (

@@ -1,7 +1,7 @@
 export const getData = (lang) => {
   $.ajax({
     method: 'GET',
-    url: './js/navigationData.json',
+    url: './js/navigation_data.json',
     dataType: 'json',
     success(res) {
       lang = lang ? lang : 'english';
@@ -12,9 +12,9 @@ export const getData = (lang) => {
       $mobileMegaWrapper.empty();
       resData.data.forEach((item, index) => {
         const submenus = item.submenus
-          .map((menu, index) => `<li id="${menu.link.id}-${item.id}" class="${
+          .map((menu, index) => `<li tabindex="${index+1}" id="${menu.link.id}-${item.id}" class="${
             index === 0 ? 'active' : ''
-          }"><a tabindex="${index+1}" href="${menu.external_link?menu.external_link:'#'}" class="${menu.external_link?['sub-link','sub-external'].join(' '):'sub-link'}">${menu.link.label}</a></li>`)
+          }"><a href="${menu.external_link?menu.external_link:'#'}" class="${menu.external_link?['sub-link','sub-external'].join(' '):'sub-link'}">${menu.link.label}</a></li>`)
           .join(' ');
 
         const gridX = item.submenus

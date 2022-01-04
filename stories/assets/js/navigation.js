@@ -51,9 +51,9 @@ export const navigationInitialize = (locale) => {
   $(window).scroll(function() {
     var $scroll = $(window).scrollTop();
     if ($scroll >= 1) {
-        $(".logo").addClass("scrolled");
+        $(".logo img").addClass("scrolled");
     } else {
-        $(".logo").removeClass("scrolled");
+        $(".logo img").removeClass("scrolled");
     }
   });
 
@@ -76,11 +76,11 @@ export const navigationInitialize = (locale) => {
     $('.mobile-mega-content').removeClass('show-content');
     $('.mob-links').removeClass('hide-mob-links');
   });
-  $('header .menu-icon').click(function (e) {
+  $('.menu-hamburger').click(function (e) {
     e.stopImmediatePropagation();
     $('.mobile-nav').toggleClass('show-mobile-nav');
     $('.mob-sub-menu').toggleClass('show-sub');
-    $(this).toggleClass('open');
+    $(this).toggleClass('is-active');
     $('.back-nav').click();
   })
 };

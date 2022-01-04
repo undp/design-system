@@ -31,7 +31,7 @@
       }
     }
 
-    .left-logo {
+    .logo {
       @extend %img_none;
 
       align-items: flex-start;
@@ -45,7 +45,7 @@
         margin: 0;
       }
 
-      .logo {
+      img {
         margin-right: $spacing-24;
 
         @include devicebreak(small) {
@@ -99,10 +99,26 @@
     display: flex;
     justify-content: flex-end;
 
+    .icon-search {
+      margin-left: $spacing-16;
+      border: 0;
+      background: none;
+      padding: 0;
+      display: inline-flex;
+    }
+
     @include devicebreak(mediumonlytab) {
       .dropdown-language {
         display: none;
       }
+    }
+
+    .icon-globe {
+      margin-left: 1.75rem;
+      border: 0;
+      background: none;
+      padding: 0;
+      display: inline-flex;
     }
 
     @include devicebreak(mediumonlytab) {
@@ -110,24 +126,14 @@
         display: none;
       }
     }
-
-    @extend %menu-icon;
-
-    .icon-search {
-      margin-left: $spacing-16;
-    }
-
-    .icon-globe {
-      margin-left: 1.75rem;
-    }
   }
 }
 
 [dir='rtl'] {
   .country-header {
     .top-left {
-      .left-logo {
-        .logo {
+      .logo {
+        img {
           margin-left: 1.5rem;
           margin-right: 0;
         }

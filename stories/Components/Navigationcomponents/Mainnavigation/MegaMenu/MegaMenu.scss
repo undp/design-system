@@ -54,6 +54,9 @@
           }
         }
       }
+      &:focus{
+        outline: 0;
+      }
 
       a {
         background: none;
@@ -75,9 +78,6 @@
               background: url(#{$img-path-Iconfourback}/external-hover.svg) no-repeat 0 bottom/1.25rem 1.125rem;
             }
           }
-        }
-        &:focus{
-          border: 0;
         }
         &:hover {
           background: $color-blue-600;

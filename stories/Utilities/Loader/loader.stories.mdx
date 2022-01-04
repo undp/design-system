@@ -10,7 +10,7 @@ A loading spinner is a utility that shows a loading page overlay when clicking a
 A loading spinner displays a loading page overlay to inform the user of some background activity happening in response to their action on a page. This helps the user understand that they need to wait for the activity to finish before proceeding further.
 
 #### When to use:
-- To inform the user that some background activity is happening when they encounter a delay in response to a button or link click
+- To inform the user that some background activity is happening when they encounter a delay in response to a button or link click.
 
 ### Formatting
 
@@ -19,18 +19,9 @@ The loading spinner is a simple animation that informs the user that the page is
 
 <Canvas>
   <Story name="Loading">
-    <Loader ></Loader>;
+    <Loader></Loader>
   </Story>
 </Canvas>
-
-### CSS and JS References [ADDED BY DEVs]
-
-#### CSS:
-Add the base layout style from dist/css/base-minimal.css
-- dist/css/components/[component].css
-
-#### JS:
-- dist/js/[component].js
 
 ### Content
 The loading spinner is a simple circle animation. The size varies depending on the screen size.
@@ -39,6 +30,15 @@ The loading spinner is a simple circle animation. The size varies depending on t
 
 #### States
 The loading spinner has just one state - spinning. As soon as the page loads, the loading spinner is removed
+
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from **dist/css/base-minimal.css** and the CSS listed below.
+- dist/css/components/loader.css
+
+#### JS:
+- NA
 
 #### Interactions
 - No interactions are needed with the loader

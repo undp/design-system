@@ -20,7 +20,7 @@ export const Languageswitcher = ({
       <ul role="menu">
         {data.map((item, index) => (
           <li key={index} role="menuitem" >
-            <a href="#" lang={item.lang} hrefLang={item.lang} tabindex="0">
+            <a href="#" lang={item.lang} hrefLang={item.lang} tabIndex="0">
               {item.descriptionText}
             </a>
           </li>

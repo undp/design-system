@@ -170,15 +170,13 @@
 
 [dir="rtl"] {
   .multi-select {
-    .select-control,
-    .has-submenu {
       button{
         @extend %select_rtl;
 
         &::after {
           @extend %select_rtl_after;
         }
-      }
+      
     }
 
     .has-submenu {

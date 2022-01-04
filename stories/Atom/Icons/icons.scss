@@ -12,6 +12,7 @@
   cursor: pointer;
   height: 16px;
   width: 20px;
+  display: inline-flex;
 
   &:hover {
     @include transform (translateX(10px));
@@ -27,6 +28,7 @@
   cursor: pointer;
   height: 20px;
   width: 21px;
+  display: inline-flex;
 
   &:hover {
     background: url(#{$img-path-Iconback}/external-hover.svg) no-repeat 0 bottom;
@@ -38,6 +40,7 @@
   cursor: pointer;
   height: 24px;
   width: 24px;
+  display: inline-flex;
 
   &:hover {
     background: url(#{$img-path-Iconback}/download-hover.svg) no-repeat 0 bottom;

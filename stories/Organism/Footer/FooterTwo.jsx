@@ -5,7 +5,8 @@ import { FooterConditions2 } from '../../Molecules/FooterNavigation/FooterCondit
 import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/FooterIcons';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 
-const cls = (...classes) => classes.filter(Boolean).join(' ');
+const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+
 export const Footertwo = ({
   headerText, headerText2, style, alt, src, srctwo, logolink, element, type, required, mode, label, button, errorText, placeholder, menutitle, copyright, data, menudata, ...args
 }) => (

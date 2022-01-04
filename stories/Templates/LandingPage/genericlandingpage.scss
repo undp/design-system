@@ -89,7 +89,7 @@
     }
 
     .button {
-      @include devicebreak(medium) {
+      @include devicebreak(small) {
         margin: 0 $spacing-16;
       }
     }

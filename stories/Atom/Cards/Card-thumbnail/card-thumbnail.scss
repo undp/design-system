@@ -1,6 +1,8 @@
 @import '../../../assets/scss/mixins';
 
 /* card_thumbnail__image start */
+$colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "azure": $color-azure);
+
 .card-thumbnail__image {
   display: inline-flex;
   position: relative;
@@ -8,7 +10,7 @@
   &::before {
     @extend %absolute__content;
 
-    @include transition(opacity 0.5s ease);
+    @include transition(all .6s);
 
     opacity: 0;
   }
@@ -19,39 +21,20 @@
     }
   }
 
-  &.yellow {
-    &::before {
-      @include background-image(42deg, $color-yellow, transparent 80%);
-    }
-  }
-
-  &.red {
-    &::before {
-      @include background-image(42deg, $color-red, transparent 80%);
-    }
-  }
-
-  &.green {
-    &::before {
-      @include background-image(42deg, $color-green, transparent 80%);
-    }
-  }
-
-  &.azure {
-    &::before {
-      @include background-image(42deg, $color-azure, transparent 80%);
+  @each $name, $color in $colors {
+    &.#{$name}::before {
+      @include background-image(42deg, #{$color}, transparent 80%);
     }
   }
 }
 
 [dir='rtl'] {
-  // color map
-  $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
-
   .card-thumbnail__image {
-    @each $name, $color in $colors {
-      &.#{$name}:before {
-        @include background-image(318deg, #{$color}, transparent 80%);
+    &:hover {
+      @each $name, $color in $colors {
+        &.#{$name}::before {
+          @include background-image(42deg, #{$color}, transparent 80%);
+        }
       }
     }
   }

@@ -1,0 +1,70 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Icons } from './Icons';
+import data from './Icons.json';
+const arrfor = data.icons;
+
+<Meta
+  title="Foundation/Icons"
+  parameters={{
+    viewMode: "docs",
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  }}
+/>
+
+<style>{`
+  #story--foundation-icons--icons {
+    display: flex;
+    flex-wrap: wrap;    
+    align-items: center;
+  }
+  #story--foundation-icons--icons > div {
+    width: 25%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  #story--foundation-icons--icons > div > div {
+      margin: 0 auto;
+  }
+`}</style>
+
+# Icons Component
+Icons can grab attention and draw users into a piece of content. They can help users quickly understand the context in which they are placed.
+
+## When to use
+Use icons where the content is complex and dense to help users comprehend the available actions.
+Icons can be used in place of long words or phrases, saving space.
+Use Icons that are recognizable and accompany corresponding text labels where possible to make sure the users understand the context.
+
+- Icons animation was done by the css
+- Icons are saved in <code>assets/images/Icons</code> folder in SVG format.
+
+<Canvas>
+  <Story name="Icons" parameters={{ docs: { source: { code: 
+    arrfor.map((item, i) => {
+         if(item.type == 'img') {
+           return (`<img src="static/media/${item.name}.svg" alt="icon"/>\n`);
+          } else {
+           return (`<span class="${item.name}"></span>\n`);
+         }
+      })
+   } } }}>
+    {arrfor.map((item, i) => {
+      if(item.type == 'img') {
+        return (<div><img src={`static/media/${item.name}.svg`} alt="icon"/>
+        <p>{`${item.label}`}</p></div>);
+      } else {
+        return (<div><span class={`${item.name}`}></span><p>{`${item.label}`}</p></div>);
+      }
+    })}
+  </Story>
+</Canvas>
+
+## Usage
+
+- Take HTML from the HTML tab in canvas
+- <u>To use SCSS include the following files in your implementation</u>
+- Include the common SCSS files like normalize, variables from <code>assets/scss</code>
+- <u>To use CSS include the following files in your implementation</u>
+- The compiled CSS file from <code>assets/css/style.css</code>
