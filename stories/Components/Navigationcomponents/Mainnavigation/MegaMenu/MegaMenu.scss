@@ -54,6 +54,9 @@
           }
         }
       }
+      &:focus{
+        outline: 0;
+      }
 
       a {
         background: none;
