@@ -5,8 +5,8 @@ import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 import { carousel } from '../../../../assets/js/carousel';
 import viewport from '../../../../assets/js/viewport';
 import './fluidimagesizecarousel.scss';
-import chevronRightWhite from '../../../../assets/images/Icon/circle-right.svg';
-import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
+import chevronRightWhite from '../../../../assets/icons/circle-right.svg';
+import chevronLeftWhite from '../../../../assets/icons/circle-left.svg';
 
 export const FluidImageSizeCarousel = ({ data }) => {
   useEffect(() => {

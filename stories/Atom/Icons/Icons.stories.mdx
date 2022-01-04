@@ -44,7 +44,7 @@ Use Icons that are recognizable and accompany corresponding text labels where po
   <Story name="Icons" parameters={{ docs: { source: { code: 
     arrfor.map((item, i) => {
          if(item.type == 'img') {
-           return (`<img src="images/Icon/${item.name}.svg" alt="icon"/>\n`);
+           return (`<img src="icons/${item.name}.svg" alt="icon"/>\n`);
           } else {
            return (`<span class="${item.name}"></span>\n`);
          }
@@ -52,7 +52,7 @@ Use Icons that are recognizable and accompany corresponding text labels where po
    } } }}>
     {arrfor.map((item, i) => {
       if(item.type == 'img') {
-        return (<div><img src={`images/Icon/${item.name}.svg`} alt="icon"/>
+        return (<div><img src={`icons/${item.name}.svg`} alt="icon"/>
         <p>{`${item.label}`}</p></div>);
       } else {
         return (<div><span class={`${item.name}`}></span><p>{`${item.label}`}</p></div>);

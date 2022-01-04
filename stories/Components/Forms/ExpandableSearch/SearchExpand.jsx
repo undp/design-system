@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './SearchExpand.scss';
-import img from '../../../assets/images/Icon/Search_black.svg';
+import img from '../../../assets/icons/Search_black.svg';
 import { expandSearch } from '../../../assets/js/expand_search';
 
 export const SearchExpand = ({}) => {

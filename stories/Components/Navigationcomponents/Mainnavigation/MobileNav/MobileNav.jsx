@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Icons } from '../../../../Atom/Icons/Icons';
-import Iconsback from '../../../../assets/images/Icon/back.svg';
-import IconsGlobe from '../../../../assets/images/Icon/Globe.svg';
-import IconsLanguage from '../../../../assets/images/Icon/Language.svg';
+import Iconsback from '../../../../assets/icons/back.svg';
+import IconsGlobe from '../../../../assets/icons/Globe.svg';
+import IconsLanguage from '../../../../assets/icons/Language.svg';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 import './MobileNav.scss';
 
