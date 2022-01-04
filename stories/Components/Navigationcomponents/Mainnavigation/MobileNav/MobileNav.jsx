@@ -3,7 +3,7 @@ import { Iconsback } from '../../../../Atom/Icons/back';
 import { IconsGlobe } from '../../../../Atom/Icons/globe';
 import { IconsLanguage } from '../../../../Atom/Icons/Language';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { init } from '../../../../assets/js/navigation';
+import { navigationInitialize } from '../../../../assets/js/navigation';
 import './MobileNav.scss';
 
 const MobileNav = ({
@@ -16,7 +16,7 @@ const MobileNav = ({
   langSelect,
 }) => {
   useEffect(() => {
-    init(locale);
+    navigationInitialize(locale);
   }, [locale]);
 
   return (
@@ -25,7 +25,7 @@ const MobileNav = ({
         <div className="cell small-12 mob-links">
           <ul>
             {navigationData.map((item, index) => (
-              <li>
+              <li key={index}>
                 <a
                   className="cta__link cta--arrow"
                   href="javascript:void(0)"
@@ -95,8 +95,8 @@ const MobileNav = ({
                   <a href="#">{languageswitcherData.headerText}</a>
                 </li>
                 {languageswitcherData.languagedata.map((item, index) => (
-                  <li>
-                    <a href="#" key={index} className="">
+                  <li key={index}>
+                    <a href="#" className="">
                       {item.descriptionText}
                     </a>
                   </li>

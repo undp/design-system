@@ -4,7 +4,7 @@ import './tab.scss';
 import viewport from '../../../assets/js/viewport';
 import { BodyColumnTwo } from '../../../Molecules/Text/BodyColumn/BodyColumn';
 
-export const Tab = ({ tabdata, tabdata2 }) => {
+export const Tab = ({ tabdata }) => {
   useEffect(() => {
     tabs();
     viewport('.tabs, .tabs-content');

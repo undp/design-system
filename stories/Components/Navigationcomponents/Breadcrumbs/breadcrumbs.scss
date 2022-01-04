@@ -3,77 +3,54 @@
 @import '../../../assets/scss/mixins';
 
 .breadcrumb {
-  align-items: baseline;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: $font-size-12;
-  padding: 0;
+  ul {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: $font-size-12;
+    padding: 0;
 
-  li {
-    display: inline-block;
-    margin: $spacing-12 $spacing-24 $spacing-12 0;
-    position: relative;
-
-    &::after {
-      color: $color-dark-red;
-      content: '/';
-      font-weight: bold;
-      position: absolute;
-      right: -12px;
-      top: 0;
-    }
-
-    .last-item {
-      color: $color-black;
-      display: block;
-      font-weight: 600;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-transform: uppercase;
-      white-space: nowrap;
-      width: 60px;
-
-      @include devicebreak(medium) {
-        overflow: inherit;
-        width: inherit;
-      }
-    }
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      display: block;
-      font-weight: 600;
-      margin-right: 0;
-      max-width: calc(100vw - 2rem);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-transform: uppercase;
-      white-space: nowrap;
-
-      @include devicebreak(medium) {
-        overflow: inherit;
-        width: inherit;
-      }
+    li {
+      display: inline-block;
+      margin: $spacing-12 $spacing-24 $spacing-12 0;
+      position: relative;
 
       &::after {
-        display: none;
+        color: $color-dark-red;
+        content: '/';
+        font-weight: bold;
+        position: absolute;
+        right: -12px;
+        top: 0;
       }
-    }
 
-    a {
-      @extend %border-none;
-      @extend %img_none;
+      &:first-child {
+        margin-left: 0;
+      }
 
-      color: $color-dark-red;
-      font-size: $font-size-12;
-      font-weight: 600;
-      text-transform: uppercase;
+      &:last-child {
+        font-weight: 600;
+        margin-right: 0;
+        max-width: calc(100vw - 2rem);
+        text-transform: uppercase;
 
-      &:hover {
-        color: $color-red;
+        &::after {
+          display: none;
+        }
+      }
+
+      a {
+        @extend %border-none;
+        @extend %img_none;
+
+        color: $color-dark-red;
+        font-size: $font-size-12;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $color-red;
+        }
       }
     }
   }
@@ -131,7 +108,7 @@
 }
 
 // burmese lang
-:lang(my){
+:lang(my) {
   .breadcrumb li:last-child {
     font-size: $font-size-12;
   }

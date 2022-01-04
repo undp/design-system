@@ -19,46 +19,36 @@
       .dropdown-language {
         display: none;
       }
+      display: flex;
     }
 
     .dropdown-language {
       margin-left: $spacing-12;
     }
-
-    .icon-bar {
-      display: none;
-
-      @include devicebreak(mediumonlytab) {
-        display: block;
-        margin-left: $spacing-12;
-      }
-    }
-
-    .icon-close {
-      display: none;
-      margin-left: $spacing-12;
-    }
+    
   }
 
   .mid-nav {
     display: flex;
     justify-content: center;
 
+    nav{
+      &:first-child{
+        .menu{
+          justify-content: flex-end;
+          padding-left: 0;
+          padding-right: 6.9375rem;
+        }
+      }
+    }
     .menu {
       align-items: center;
       display: flex;
       height: 7.1875rem;
       padding-left: 6.9375rem;
-      width: 50%;
 
       @include devicebreak(mediumonlytab) {
         display: none;
-      }
-
-      &:first-child {
-        justify-content: flex-end;
-        padding-left: 0;
-        padding-right: 6.9375rem;
       }
 
       li {
@@ -80,7 +70,7 @@
       }
     }
 
-    .middle-logo {
+    .logo {
       @extend %img_none;
 
       @include devicebreak(xlarge) {
@@ -96,7 +86,7 @@
         margin: 0;
       }
 
-      .logo {
+      img {
         @include devicebreak(mediumonlytab) {
           height: 4.6875rem;
         } 
@@ -130,12 +120,14 @@
 [dir='rtl'] {
   .global-header {
     .mid-nav {
-      .menu {
-        &:last-child {
+      nav:last-child{
+        .menu{
           justify-content: flex-start;
           padding-left: 0;
           padding-right: 6.9375rem;
         }
+      }
+      .menu {
 
         li {
           margin: $spacing-12 4.4375rem $spacing-12 0;

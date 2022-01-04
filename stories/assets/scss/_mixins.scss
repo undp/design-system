@@ -261,7 +261,7 @@
 }
 
 %sidebar-chevron {
-  @include transition(0.3s ease);
+  @include transition(all 0.3s ease);
 
   background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
   content: '';
@@ -358,6 +358,12 @@
   visibility: visible;
 }
 
+[dir='rtl'] {
+  %left-to-right {
+    @include transform(translateX(100px));
+  }
+}
+
 %scale-up {
   @include transform(scale(0.9));
   @include transition(transform 1.2s cubic-bezier(0.34, 0.41, 0.03, 1));
@@ -445,6 +451,23 @@
   width: 1.25rem;
   content: "";
   align-items: center;
+}
+
+%footerlink {
+  @extend %img_none;
+  color: $color-white;
+  font-size: $font-size-16;
+  line-height: 1.4;
+  &:hover {
+    color: $color-blue-100;
+  }
+}
+
+%footerlinkinvert {
+  color: $color-black;
+  &:hover {
+    color: $color-gray-600;
+  }
 }
 
 //burmese lang

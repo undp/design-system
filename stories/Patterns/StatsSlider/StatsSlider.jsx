@@ -1,12 +1,12 @@
 import React, { Component, useEffect } from 'react';
 import { StatsCards } from '../../Components/UIcomponents/Cards/StatsCards/StatsCards';
-import { GlideSlider, ParallaxEffect } from '../../assets/js/SliderCustom';
+import { glideSlider, parallaxEffect } from '../../assets/js/slider';
 import './statsslider.scss';
 
 export const StatsSlider = ({ data }) => {
   useEffect(() => {
-    GlideSlider('.stats-card-slider', '20');
-    ParallaxEffect();
+    glideSlider('.stats-card-slider', '20');
+    parallaxEffect();
   }, []);
   return (
     <div className="stats-card-slider stats-card-grid"  aria-labelledby="carousel" >

@@ -1,4 +1,4 @@
-export function Cardgradient() {
+export function cardGradient() {
   $('.wide-card__description .button-arrow').mouseenter(() => {
     $('.wide-card__image a').addClass('card-gradient');
   });

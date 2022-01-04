@@ -29,16 +29,7 @@ export const FeaturedContentCard = ({
         <div key={index} className={['cell', `${item.scale ? size_options[`${item.scale}`] : size_options[`${args.size}`]}`].join(' ')}>
           <a href="#" className={['feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_options[`${image}`]}`}`].join(' ')}>
             <div className={['feature__card-slide', `${hovercolor}`].join(' ')}>
-              {image === 'image' || (item.type === 'image' && image === 'image')
-                ? (
-                  <div className="feature__card-image">
-                    <img src={item.imgback} alt={item.imgback} />
-                  </div>
-                )
-                : (
-                  <>
-                  </>
-                )}
+              {item.imgback && (image === 'image' || (item.type === 'image' && image === 'image')) && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
             </div>
             <article className="feature__card-content">
               <Heading type="6" label={item.contenttile} />

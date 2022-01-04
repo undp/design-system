@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './biocard.scss';
 import '../../../../assets/scss/_grid.scss';
 import viewport from '../../../../assets/js/viewport';
-import { ModalFun } from '../../../../assets/js/modal_custom';
+import { modal } from '../../../../assets/js/modal';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
@@ -37,7 +37,7 @@ export const BioCard = ({
 }) => {
   useEffect(() => {
     viewport('.bio-card__description');
-    ModalFun();
+    modal();
   }, []);
   return (
     <>
@@ -51,7 +51,7 @@ export const BioCard = ({
                   <P label={descriptionText} />
                 </div>
                 <div className="bio-cta">
-                  <Ctalink label={button} />
+                  <span className="cta__link cta--arrow">{button}</span>
                 </div>
               </article>
               <div className="card-thumbnail__image medium-5">
@@ -71,7 +71,7 @@ export const BioCard = ({
                   <P label={descriptionText} />
                 </div>
                 <div className="bio-cta">
-                  <Ctalink label={button} />
+                  <span className="cta__link cta--arrow">{button}</span>
                 </div>
               </article>
             </a>

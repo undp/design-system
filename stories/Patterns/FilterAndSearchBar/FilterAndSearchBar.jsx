@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import toggleFilter from '../../assets/js/FilterAndSearchBar';
+import toggleFilter from '../../assets/js/filter_seach_bar';
 import { Chips } from '../../Components/UIcomponents/Buttons/Chips/chips';
 import { IconsSearchBlack } from '../../Atom/Icons/search_black';
 import SelectTag from '../../Components/Forms/Dropdowns/Multiselect/MultiSelect';
 import './FilterAndSearchBar.scss';
 
-const FilterAndSearchBar = ({ data, clearText, activeFilterText }) => {
+const FilterAndSearchBar = ({ args, data, clearText, activeFilterText }) => {
   useEffect(() => {
     toggleFilter();
   }, []);
@@ -14,10 +14,11 @@ const FilterAndSearchBar = ({ data, clearText, activeFilterText }) => {
     <div className="search-filter">
       <button type="button" className="toggle-search" aria-label="filter and search" />
       <div className="select-wrapper">
-        <SelectTag text={data} eleId="select-1" />
-        <SelectTag text={data} eleId="select-2" />
-        <SelectTag text={data} eleId="select-3" />
-        <SelectTag text={data} eleId="select-4" />
+        <SelectTag {...args} text={data} eleId="select-1" />
+        <SelectTag {...args} text={data} eleId="select-2" />
+        <SelectTag {...args} text={data} eleId="select-3" />
+        <SelectTag {...args} text={data} eleId="select-4" />
+       
 
         <div className="active-filter"><span>{activeFilterText}</span></div>
         <div className="selected-chips">

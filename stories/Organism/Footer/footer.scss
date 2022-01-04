@@ -5,6 +5,8 @@
 /* footer start */
 .footer {
   background-color: $color-gray-100;
+  background-color: $color-blue-600;
+  color: $color-white;
   padding: $spacing-48 $spacing-12 $spacing-40;
 
   @include devicebreak(medium) {
@@ -34,7 +36,7 @@
 
   &-head {
     align-items: center;
-    border-bottom: 1px solid $color-gray-700;
+    border-bottom: 1px solid $color-white;
     justify-content: space-between;
     margin-bottom: $spacing-32;
     padding-bottom: $spacing-48;
@@ -116,51 +118,18 @@
     }
   }
 
-  .sign-up {
-    &.blue {
-      input[type=email]{
-        background-color: transparent;
-        border-color: $color-white;
-        color: $color-white;
-
-        &::placeholder {
-          color: $color-white;
-        }
-      }
-
-      .form-submit {
-        background-color: $color-white;
-        color: $color-blue-600;
-      }
-    }
-  }
-
-  &.blue {
-    background-color: $color-blue-600;
+  &.inverted {
+    background-color: $color-gray-100;
+    color: $color-black;
 
     .footer-head {
-      border-color: $color-white;
-    }
-
-    h5,
-    h6,
-    a,
-    p,
-    label,
-    .input-error {
-      color: $color-white;
+      border-color: $color-gray-700;
     }
   }
 }
 
 @include devicebreak(medium) {
   [dir='rtl'] {
-    .footer {
-      .footer__icons {
-        justify-content: flex-start;
-      }
-    }
-
     .footer-bottom {
       &.two {
         .footer__condition_text {

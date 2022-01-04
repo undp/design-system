@@ -6,46 +6,38 @@ import { FooterLists } from '../../Molecules/FooterNavigation/FooterLists/Footer
 import { FooterConditions } from '../../Molecules/FooterNavigation/FooterConditions/FooterConditions';
 import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/FooterIcons';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
-import { accordion } from '../../assets/js/accordion_custom';
+import { footerAccordion } from '../../assets/js/footer_accordion';
+
+const cls = (...classes) => classes.filter(Boolean).join(' ');
 
 export const Footer = ({
-  headerText, headerText2, style, alt, src, srctwo, element, type, required, mode, label, button, errorText, placeholder, menutitle, copyright, data, menudata, ...args
+  headerText, headerText2, style, alt, src, srctwo, logolink, element, type, required, mode, label, button, errorText, placeholder, menutitle, copyright, data, menudata, ...args
 }) => {
   useEffect(() => {
-    accordion('.footer__heading', '.footer__panel', 'active');
+    footerAccordion('.footer__heading', '.footer__panel', 'active');
   }, []);
   return (
-    <footer className={['footer', `${args.color === 'blue' ? args.color : ''}`].join(' ')}>
+    <footer className={cls('footer', `${args.color === 'inverted' ? args.color : ''}`)}>
       <div className="grid-x">
         <div className="cell medium-10 footer__wrapper">
           <div className="grid-x footer-head">
             {args.color === 'default' ? (
-              <FooterLogo src={src} headerText={headerText} alt={alt} style="" />
+              <FooterLogo src={srctwo} headerText={headerText} alt={alt} logolink={logolink} style="" />
             ) : (
-              <FooterLogo src={srctwo} headerText={headerText} alt={alt} style={args.color} />
+              <FooterLogo src={src} headerText={headerText} alt={alt} logolink={logolink} style={args.color} />
             )}
             <div className="cell medium-4 footer__newsletter">
-              <SignUp
-                element={element}
-                type={type}
-                required={required}
-                mode={mode}
-                label={label}
-                button={button}
-                errorText={errorText}
-                placeholder={placeholder}
-                variant={args.color === 'blue' ? args.color : ''}
-              />
+              <SignUp element={element} type={type} required={required} mode={mode} label={label} button={button} errorText={errorText} placeholder={placeholder} variant={args.color === 'default' ? args.color : 'inverted'}/>
             </div>
           </div>
           <div className=" grid-x grid-margin-x footer-bottom">
-            <FooterLists data={data} headerText={menutitle} variant={args.color === 'blue' ? args.color : ''} />
-            <FooterLists data={data} headerText={menutitle} variant={args.color === 'blue' ? args.color : ''} />
-            <FooterLists data={data} headerText={menutitle} variant={args.color === 'blue' ? args.color : ''} />
-            <FooterLists data={data} headerText={menutitle} variant={args.color === 'blue' ? args.color : ''} />
+            <FooterLists data={data} headerText={menutitle} variant={args.color === 'default' ? args.color : 'inverted'} />
+            <FooterLists data={data} headerText={menutitle} variant={args.color === 'default' ? args.color : 'inverted'} />
+            <FooterLists data={data} headerText={menutitle} variant={args.color === 'default' ? args.color : 'inverted'} />
+            <FooterLists data={data} headerText={menutitle} variant={args.color === 'default' ? args.color : 'inverted'} />
             <div className="cell medium-4">
-              <FooterConditions footerdata={menudata} variant={args.color === 'blue' ? args.color : ''} />
-              <FooterIcons variant={args.color === 'blue' ? args.color : ''} />
+              <FooterConditions footerdata={menudata} variant={args.color === 'default' ? args.color : 'inverted'} />
+              <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
             </div>
           </div>
           <div className="footer__foot">

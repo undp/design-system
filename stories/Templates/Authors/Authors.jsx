@@ -8,10 +8,10 @@ import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Bread
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 import { Footer } from '../../Organism/Footer/Footer';
 import './Authors.scss';
-import init from '../../assets/js/select-init';
+import { select } from '../../assets/js/select';
 import { Authorcard } from '../../Components/UIcomponents/Author/Authorcard/Authorcard';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
-import { SearchExpand } from '../../Components/Forms/expandable search/SearchExpand';
+import { SearchExpand } from '../../Components/Forms/ExpandableSearch/SearchExpand';
 import CustomSelect from '../../Components/Forms/Dropdowns/CustomSelect/CustomSelect';
 
 const Authors = ({
@@ -31,14 +31,16 @@ const Authors = ({
   backcaption,
 }) => {
   useEffect(() => {
-    init();
+    select();
     $('.sort-btn').click(function sortclick() {
+      event.preventDefault();
       $('.author-filter').addClass('author-filter-show');
       $('.close-btn').addClass('show-close');
       $(this).addClass('hide-sort');
       $('.author-cards').addClass('find-first-author');
     });
     $('.close-btn').click(function closeclick() {
+      event.preventDefault();
       $('.author-filter').removeClass('author-filter-show');
       $(this).removeClass('show-close');
       $('.sort-btn').removeClass('hide-sort');
@@ -98,7 +100,7 @@ const Authors = ({
                 data-select-options=""
               >
                 {text.options.map((option, index) => (
-                  <li className="option" role="option" data-value="default">
+                  <li role="option" data-value="default">
                     <span>{option}</span>
                   </li>
                 ))}
@@ -146,7 +148,7 @@ const Authors = ({
         data={footerData.footerdata}
         copyright={footerData.copyright}
         menudata={footerData.menudata}
-        {...{ color: 'blue' }}
+        {...{ color: 'default' }}
       />
     </div>
   );

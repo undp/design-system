@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import './multiselect.scss';
-import init from '../../../../assets/js/multiselect-init';
+import { multiSelect } from '../../../../assets/js/multiselect';
 import { Checkbox } from '../../Checkbox/Checkbox';
 import { Radio } from '../../Radio/Radio';
 
 const SelectTag = ({ text, eleId, ...args }) => {
   useEffect(() => {
-    init();
+    multiSelect();
   }, []);
   return (
     <div className="multi-select" data-multi-select="">
@@ -14,7 +14,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
         className="select-control"
         aria-label="Region"
         aria-expanded="false"
-        id={`select_button`}
+        id={`select_button-${eleId}`}
       >
         {text}
       </button>
@@ -25,7 +25,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
             args.Height === "Fix height" ? " fix-height" : "",
           ].join("")}
           data-type="region"
-          aria-labelledby={`select_button`}
+          aria-labelledby={`select_button-${eleId}`}
           role="listbox"
           aria-multiselectable="true"
           aria-hidden="true"
@@ -96,7 +96,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
             args.Height === "Fix height" ? " fix-height" : "",
           ].join("")}
           data-type="region"
-          aria-labelledby={`select_button`}
+          aria-labelledby={`select_button-${eleId}`}
           role="listbox"
           aria-multiselectable="true"
           aria-hidden="true"

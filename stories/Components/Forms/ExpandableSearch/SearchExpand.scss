@@ -1,0 +1,65 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/breakpoints';
+
+.expand-search {
+  align-items: flex-start;
+  display: flex;
+  position: relative;
+
+  @include devicebreak(small) {
+    margin: $spacing-24 0;
+  }
+
+  input {
+    @include transition(all 200ms ease-in-out);
+
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid $color-black;
+    border-radius: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: $font-size-14;
+    line-height: 1.75rem;
+    padding-bottom: $spacing-12;
+    position: relative;
+    width: 0;
+    z-index: 3;
+    height:2.675rem;
+  }
+
+  &.open{
+    input {
+      background-color: $color-white;
+      cursor: text;
+      outline: none;
+      padding-left: 0.8125rem;
+      width: calc(100% - 1.6875rem);
+      z-index: 1;
+    }
+  }
+
+  .icon-search-black {
+    border-bottom: 1px solid #000;
+    height:2.625rem;
+    width: 1.6875rem;
+    z-index: 2;
+  }
+}
+
+[dir='rtl'] {
+  .expand-search {
+    .icon-search-black {
+      left: inherit;
+      right: 0;
+    }
+
+    input {
+      &:focus {
+        padding-left: 0;
+        padding-right: $spacing-40;
+      }
+    }
+  }
+}

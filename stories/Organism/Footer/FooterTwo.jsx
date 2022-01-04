@@ -5,20 +5,21 @@ import { FooterConditions2 } from '../../Molecules/FooterNavigation/FooterCondit
 import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/FooterIcons';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 
+const cls = (...classes) => classes.filter(Boolean).join(' ');
 export const Footertwo = ({
-  headerText, headerText2, style, alt, src, srctwo, element, type, required, mode, label, button, errorText, placeholder, menutitle, copyright, data, menudata, ...args
+  headerText, headerText2, style, alt, src, srctwo, logolink, element, type, required, mode, label, button, errorText, placeholder, menutitle, copyright, data, menudata, ...args
 }) => (
-  <footer className={['footer', `${args.color === 'blue' ? args.color : ''}`].join(' ')}>
+  <footer className={cls('footer', `${args.color === 'inverted' ? args.color : ''}`)}>
     <div className="grid-x">
       <div className="cell medium-10 footer__wrapper">
         <div className="grid-x footer-head two">
           {args.color === 'default' ? (
-            <FooterLogo src={src} headerText={headerText} headerText2={headerText2} alt={alt} style="" />
+            <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style="" />
           ) : (
-            <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} style={args.color} />
+            <FooterLogo src={src} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style={args.color} />
           )}
           <div className="cell medium-5 show-large">
-            <FooterIcons variant={args.color === 'blue' ? args.color : ''} />
+            <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
           </div>
         </div>
         <div className="footer-bottom two">
@@ -26,9 +27,9 @@ export const Footertwo = ({
             <P label={copyright} />
           </div>
           <div className="menus">
-            <FooterConditions2 footerdata2={menudata} variant={args.color === 'blue' ? args.color : ''} />
+            <FooterConditions2 footerdata2={menudata} variant={args.color === 'default' ? args.color : 'inverted'} />
             <div className="show-small">
-              <FooterIcons variant={args.color === 'blue' ? args.color : ''} />
+              <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
             </div>
           </div>
         </div>

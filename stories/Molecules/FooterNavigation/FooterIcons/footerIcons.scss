@@ -6,11 +6,15 @@
 .footer__icons {
   display: flex;
   padding-left: 0;
+  width: 100%;
 
   li {
     list-style: none;
 
     a {
+
+      $socials: ('facebook', 'instagram', 'linkedin', 'twitter', 'youtube');
+
       @extend %border-none;
       @extend %no-animation;
 
@@ -20,24 +24,10 @@
       margin-right: $spacing-24;
       width: 20px;
 
-      &.facebook {
-        background: url(#{$img-path-Icon}/facebook.svg) no-repeat center bottom;
-      }
-
-      &.instragram {
-        background: url(#{$img-path-Icon}/instagram.svg) no-repeat center bottom;
-      }
-
-      &.linkedin {
-        background: url(#{$img-path-Icon}/linkedIn.svg) no-repeat center bottom;
-      }
-
-      &.twitter {
-        background: url(#{$img-path-Icon}/twitter.svg) no-repeat center bottom;
-      }
-
-      &.youtube {
-        background: url(#{$img-path-Icon}/youtube.svg) no-repeat center bottom;
+      @each $name in $socials {
+        &.#{$name} {
+          background: url(#{$img-path-Icon}/#{$name}-white.svg) no-repeat center bottom;
+        }
       }
     }
 
@@ -48,28 +38,15 @@
     }
   }
 
-  &.white,
-  &.blue {
+  &.inverted {
     li {
       a {
-        &.facebook {
-          background: url(#{$img-path-Icon}/facebook-white.svg) no-repeat center bottom;
-        }
+        $socials: ('facebook', 'instagram', 'linkedin', 'twitter', 'youtube');
 
-        &.instragram {
-          background: url(#{$img-path-Icon}/instagram-white.svg) no-repeat center bottom;
-        }
-
-        &.linkedin {
-          background: url(#{$img-path-Icon}/linkedin-white.svg) no-repeat center bottom;
-        }
-
-        &.twitter {
-          background: url(#{$img-path-Icon}/twitter-white.svg) no-repeat center bottom;
-        }
-
-        &.youtube {
-          background: url(#{$img-path-Icon}/youtube-white.svg) no-repeat center bottom;
+        @each $name in $socials {
+          &.#{$name} {
+            background: url(#{$img-path-Icon}/#{$name}.svg) no-repeat center bottom;
+          }
         }
       }
     }

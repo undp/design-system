@@ -3,10 +3,12 @@
 @import '../../assets/scss/variables';
 
 /* sidebar data start */
-.accordion-navbar__item--headertext {
+.accordion-navbar > li > a {
   @extend %img_none;
 
   border: none;
+  border-bottom: 1px solid $color-gray-500;
+  display: block;
   font-size: $font-size-16;
   font-weight: 700;
   line-height: 1.15;
@@ -14,13 +16,11 @@
   padding: $spacing-16;
 
   @include devicebreak(medium) {
-    display: block;
     padding: $spacing-24;
   }
 }
 
 ul.accordion__panel {
-  border-top: 1px solid $color-gray-500;
   display: none;
   height: auto;
   padding: 0;
@@ -33,20 +33,16 @@ ul.accordion__panel {
       display: block;
       font-size: $font-size-14;
       font-weight: 400;
-      margin: $spacing-16 $spacing-24 $spacing-32 $spacing-32;
+      padding: $spacing-16 $spacing-24 $spacing-16 $spacing-32;
 
       @include devicebreak(medium) {
         font-size: $font-size-16;
-        margin-left: $spacing-48;
+        padding-left: $spacing-48;
       }
     }
 
     &:last-child a {
       margin-bottom: 0;
-
-      @include devicebreak(medium) {
-        margin-bottom: $spacing-16;
-      }
     }
   }
 }
@@ -54,11 +50,11 @@ ul.accordion__panel {
 [dir='rtl'] {
   ul.accordion__panel {
     li > a {
-      margin-left: $spacing-24;
-      margin-right: $spacing-32;
+      padding-left: $spacing-24;
+      padding-right: $spacing-32;
 
       @include devicebreak(medium) {
-        margin-right: $spacing-48;
+        padding-right: $spacing-48;
       }
     }
   }

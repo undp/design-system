@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import './customselect.scss';
-import init from '../../../../assets/js/select-init';
+import { select } from '../../../../assets/js/select';
 
 const CustomSelect = ({ text }) => {
   useEffect(() => {
-    init();
+    select();
   }, []);
   return (
     <div className="select-box" data-select="">

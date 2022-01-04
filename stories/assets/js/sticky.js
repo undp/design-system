@@ -1,5 +1,3 @@
-import { breakpoints } from './global-variables';
-
 $(document).ready(() => {
   var $sticky = $('.sticky');
   var $stickyrStopper = $('.footer');
@@ -13,7 +11,7 @@ $(document).ready(() => {
     console.log(breakpoints.tablet);
     $(window).scroll(() => {
       var windowTop = $(window).scrollTop();
-      if ($(window).width() > breakpoints.tablet) {
+      if ($(window).width() > window.UNDP.breakpoints.TABLET) {
         if ($('.footer').isInViewport()) {
           $sticky.css({ position: 'absolute', top: diff });
         } else if (stickyTop < windowTop + stickOffset) {

@@ -5,13 +5,13 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { CtaButton } from '../../../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 import BackgroundImg from '../../../../assets/images/Pagewide.jpg';
-import { Cardgradient } from '../../../../assets/js/cardgradient';
+import { cardGradient } from '../../../../assets/js/cardgradient';
 
 export const PageWideCard = ({
   label, title, paragraph, button, hovercolor,
 }) => {
   useEffect(() => {
-    Cardgradient();
+    cardGradient();
     viewport('.wide-card h6');
     viewport('.wide-card__description');
   }, []);
