@@ -156,7 +156,7 @@ The Horizontal Menu consists of multiple clickable items placed at the top of th
 <Story name="Menu">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Menu data={caption}></Menu>;
+    return <Menu data={caption} role="navigation" arialabel="menu"></Menu>;
   }}
 </Story>
 
