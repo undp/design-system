@@ -12,7 +12,7 @@ export const credit_options = {
   false: '',
 };
 
-const cls = (...classes) => classes.filter(Boolean).join(' ');
+const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
 
 export const Imagecaption = ({ label, paragraph, opacityOnly, ...args }) => {
 

@@ -2,7 +2,8 @@ import React from 'react';
 import './signup.scss';
 import { Inputcomponent } from '../Inputfields/Input_group';
 
-const cls = (...classes) => classes.filter(Boolean).join(' ');
+const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+
 export const SignUp = ({
   element, type, required, mode, label, button, btnType, btnID, errorText, placeholder, ...args
 }) => {
