@@ -30,7 +30,7 @@ const GlobalHeader = ({
               data={languageswitcherData.languagedata}
               headerText={languageswitcherData.headerText}
             />
-            <button className='menu-icon menu-hamburger'>
+            <button className='menu-icon menu-hamburger' aria-label='menu-icon'>
               <span class="hamburger-line line-top"></span>
               <span class="hamburger-line line-middle"></span>
               <span class="hamburger-line line-bottom"></span>
