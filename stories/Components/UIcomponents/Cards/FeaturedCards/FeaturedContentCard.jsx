@@ -49,7 +49,7 @@ export const FeaturedContentCard = ({
                 {item.size}
                 {item.descriptionText && <P label={item.descriptionText} />}
               </div>
-              <div className="feature__cta">
+              <div className={['feature__cta', `${size_options[`${args.size}`]}`].join(' ')}>
                 <span className="cta__link cta--arrow">{item.button}</span>
               </div>
             </article>
