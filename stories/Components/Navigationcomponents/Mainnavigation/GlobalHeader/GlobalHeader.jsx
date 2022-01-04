@@ -34,6 +34,7 @@ const GlobalHeader = ({
               <span class="hamburger-line line-top"></span>
               <span class="hamburger-line line-middle"></span>
               <span class="hamburger-line line-bottom"></span>
+              Nav toggle
             </button>
           </div>
           <div className="cell large-8 small-8 mid-nav">
