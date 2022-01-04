@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import toggleFilter from '../../assets/js/filter_seach_bar';
 import { Chips } from '../../Components/UIcomponents/Buttons/Chips/chips';
-import { IconsSearchBlack } from '../../Atom/Icons/search_black';
 import SelectTag from '../../Components/Forms/Dropdowns/Multiselect/MultiSelect';
 import './FilterAndSearchBar.scss';
 
-const FilterAndSearchBar = ({ args, data, clearText, activeFilterText }) => {
+const FilterAndSearchBar = ({
+  args, data, clearText, activeFilterText,
+}) => {
   useEffect(() => {
     toggleFilter();
   }, []);
@@ -18,7 +19,6 @@ const FilterAndSearchBar = ({ args, data, clearText, activeFilterText }) => {
         <SelectTag {...args} text={data} eleId="select-2" />
         <SelectTag {...args} text={data} eleId="select-3" />
         <SelectTag {...args} text={data} eleId="select-4" />
-       
 
         <div className="active-filter"><span>{activeFilterText}</span></div>
         <div className="selected-chips">

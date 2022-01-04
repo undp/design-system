@@ -2,20 +2,27 @@ import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 import { desktopView } from '../../../../assets/js/undp';
-import { IconsGlobe } from '../../../../Atom/Icons/globe';
-import { IconsBar } from '../../../../Atom/Icons/icon_bar';
-import { IconsTimesBlue } from '../../../../Atom/Icons/icon_Times_Blue';
-import { IconsSearch } from '../../../../Atom/Icons/search';
+import { Icons } from '../../../../Atom/Icons/Icons';
+import IconsGlobe from '../../../../assets/images/Icon/Globe.svg';
+import IconsSearch from '../../../../assets/images/Icon/Search.svg';
 import { Logo } from '../../../../Atom/Logo/logo';
 import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
 import { Menu } from '../../Menu/Menu';
-import './GlobalHeader.scss';
 import MegaMenu from '../MegaMenu/MegaMenu';
 import MobileNav from '../MobileNav/MobileNav';
+import './GlobalHeader.scss';
 
 const GlobalHeader = ({
-  text, languageswitcherData, navigationData, rightNavigationData, leftNavigationData, locale,
-  getMegaMenuData, locationData, langSelect, backcaption,
+  text,
+  languageswitcherData,
+  navigationData,
+  rightNavigationData,
+  leftNavigationData,
+  locale,
+  getMegaMenuData,
+  locationData,
+  langSelect,
+  backcaption,
 }) => {
   useEffect(() => {
     navigationInitialize(locale);
@@ -30,37 +37,40 @@ const GlobalHeader = ({
               data={languageswitcherData.languagedata}
               headerText={languageswitcherData.headerText}
             />
-            <button className='menu-icon menu-hamburger'>
-              <span class="hamburger-line line-top"></span>
-              <span class="hamburger-line line-middle"></span>
-              <span class="hamburger-line line-bottom"></span>
-              Nav toggle
+            <button className="menu-icon menu-hamburger">
+              <span className="hamburger-line line-top" />
+              <span className="hamburger-line line-middle" />
+              <span className="hamburger-line line-bottom" />
             </button>
           </div>
           <div className="cell large-8 small-8 mid-nav">
             {desktopView && <Menu data={leftNavigationData} />}
-            <a href="#" className="logo"><Logo src={pnud} alt="UNDP Logo" /></a>
+            <a href="#" className="logo">
+              <Logo src={pnud} alt="UNDP Logo" />
+            </a>
             {desktopView && <Menu data={rightNavigationData} />}
           </div>
           <div className="cell large-2 small-2 top-right">
-            <IconsGlobe />
-            <IconsSearch />
+            <button className="icon-globe">
+              <Icons src={IconsGlobe} alt="icon-global" />
+            </button>
+            <button className="icon-search">
+              <Icons src={IconsSearch} alt="icon-search" />
+            </button>
           </div>
           <div className="mega-wrapper cell large-12">
             <MegaMenu />
           </div>
-          {
-                !desktopView
-                && (
-                <MobileNav navigationData={navigationData}
-                  languageswitcherData={languageswitcherData}
-                  locationData={locationData}
-                  backcaption={backcaption}
-                  langSelect={langSelect}
-                  text="Mobile Nav"
-                />
-                )
-              }
+          {!desktopView && (
+            <MobileNav
+              navigationData={navigationData}
+              languageswitcherData={languageswitcherData}
+              locationData={locationData}
+              backcaption={backcaption}
+              langSelect={langSelect}
+              text="Mobile Nav"
+            />
+          )}
         </div>
       </div>
     </header>

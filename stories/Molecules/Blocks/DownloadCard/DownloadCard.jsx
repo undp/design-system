@@ -3,7 +3,6 @@ import './DownloadCard.scss';
 import '../../../assets/scss/_grid.scss';
 import { Publicationthumb } from '../../../Atom/Cards/Publication-thumbnail/PublicationThumbnail';
 import { Cardthumb } from '../../../Atom/Cards/Card-thumbnail/CardThumbnail';
-import { Icondownload } from '../../../Atom/Icons/download';
 
 export const DownloadCard = ({
   image, image2, title, format, download,

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { Iconsback } from '../../../../Atom/Icons/back';
-import { IconsGlobe } from '../../../../Atom/Icons/globe';
-import { IconsLanguage } from '../../../../Atom/Icons/Language';
-import { Heading } from '../../../../Atom/Typography/Heading/Heading';
+import { Icons } from '../../../../Atom/Icons/Icons';
+import Iconsback from '../../../../assets/images/Icon/back.svg';
+import IconsGlobe from '../../../../assets/images/Icon/Globe.svg';
+import IconsLanguage from '../../../../assets/images/Icon/Language.svg';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 import './MobileNav.scss';
 
@@ -39,14 +39,14 @@ const MobileNav = ({
           <div className="mob-nav-options">
             <div>
               <a href="javascript:void(0)" className="mob-lang-switcher">
-                <IconsLanguage />
+                <Icons src={IconsLanguage} alt="icon-language" />
                 {' '}
                 {languageswitcherData.headerText}
               </a>
             </div>
             <div>
               <a href="#" className="mob-globe">
-                <IconsGlobe />
+                <Icons src={IconsGlobe} alt="icon-global" />
                 {' '}
                 {locationData.detail}
               </a>
@@ -57,7 +57,7 @@ const MobileNav = ({
         <div className="cell small-12 mob-sub-menu">
           <div className="back-nav">
             <span>
-              <Iconsback />
+              <Icons src={Iconsback} alt="icon-back" />
               {' '}
               {backcaption.detail}
             </span>
@@ -82,7 +82,7 @@ const MobileNav = ({
         <div className="cell small-12 mob-sub-lang">
           <div className="back-nav">
             <span>
-              <Iconsback />
+              <Icons src={Iconsback} alt="icon-back" />
               {' '}
               {backcaption.detail}
             </span>

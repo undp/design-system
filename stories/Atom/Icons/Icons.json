@@ -1,0 +1,139 @@
+{
+  "icons": [
+    {
+      "name": "Bars",
+      "label": "Bars",
+      "type": "img"
+    },
+    {
+      "name": "Times",
+      "label": "Times",
+      "type": "img"
+    },
+    {
+      "name": "Times_circle",
+      "label": "Times Close",
+      "type": "img"
+    },
+    {
+      "name": "Search",
+      "label": "Search",
+      "type": "img"
+    },
+    {
+      "name": "Language",
+      "label": "Language",
+      "type": "img"
+    },
+    {
+      "name": "Globe",
+      "label": "Global",
+      "type": "img"
+    },
+    {
+      "name": "Calendar",
+      "label": "Calendar",
+      "type": "img"
+    },
+    {
+      "name": "circle-Play",
+      "label": "Play circle",
+      "type": "img"
+    },
+    {
+      "name": "circle-up",
+      "label": "Chevron circle up",
+      "type": "img"
+    },
+    {
+      "name": "circle-down",
+      "label": "Chevron circle down",
+      "type": "img"
+    },
+    {
+      "name": "circle-left",
+      "label": "Chevron circle left",
+      "type": "img"
+    },
+    {
+      "name": "circle-right",
+      "label": "Chevron circle right",
+      "type": "img"
+    },
+    {
+      "name": "Chevron-down",
+      "label": "Chevron down",
+      "type": "img"
+    },
+    {
+      "name": "Chevron-up",
+      "label": "Chevron up",
+      "type": "img"
+    },
+    {
+      "name": "Chevron-left",
+      "label": "Chevron left",
+      "type": "img"
+    },
+    {
+      "name": "Chevron-right",
+      "label": "Chevron right",
+      "type": "img"
+    },
+    {
+      "name": "Chevron-small-left",
+      "label": "Chevron small left",
+      "type": "img"
+    },
+    {
+      "name": "Chevron-small-right",
+      "label": "Chevron small right",
+      "type": "img"
+    },
+    {
+      "name": "Chevron-small-up",
+      "label": "Chevron small up",
+      "type": "img"
+    },
+    {
+      "name": "Chevron-small-down",
+      "label": "Chevron small down",
+      "type": "img"
+    },
+    {
+      "name": "arrow-right",
+      "label": "Cursor arrow right",
+      "type": "img"
+    },
+    {
+      "name": "arrow-right-white",
+      "label": "Cursor arrow right white",
+      "type": "img"
+    },
+    {
+      "name": "arrow-left",
+      "label": "Cursor arrow left",
+      "type": "img"
+    },
+    {
+      "name": "arrow-left-white",
+      "label": "Cursor arrow left white",
+      "type": "img"
+    },
+    {
+      "name": "arrow-expand",
+      "label": "Chevron right expanded",
+      "type": "span"
+    },
+    {
+      "name": "external-link",
+      "label": "External",
+      "type": "span"
+    },
+    {
+      "name": "download-icon",
+      "label": "Download",
+      "type": "span"
+    }
+  ]
+}
