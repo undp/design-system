@@ -2,7 +2,7 @@ import React from 'react';
 import './table.scss';
 
 const TableScroll = ({ tableType, children }) => (tableType == 'scroll' ?
-	<div className="scroll" tabindex="0">
+	<div className="scroll" tabIndex="0">
 		{children}
 	</div>
 	: children
@@ -22,10 +22,10 @@ export const variant_options1 = {
 export const variant_options2 = {
 	auto: "",
 	stacked: "stacked",
-  scroll: "scroll",
+  scroll: "",
 };
 
-const cls = (...classes) => classes.filter(Boolean).join(' ');
+const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
 
 export const TableTag = ({ text, tdtext, details, variant, size, responsive, ...args }) => {
 	return (

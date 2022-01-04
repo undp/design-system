@@ -8,7 +8,7 @@ import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/Footer
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 import { footerAccordion } from '../../assets/js/footer_accordion';
 
-const cls = (...classes) => classes.filter(Boolean).join(' ');
+const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
 
 export const Footer = ({
   headerText, headerText2, style, alt, src, srctwo, logolink, element, type, required, mode, label, button, errorText, placeholder, menutitle, copyright, data, menudata, ...args
