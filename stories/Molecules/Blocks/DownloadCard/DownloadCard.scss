@@ -2,6 +2,8 @@
 @import '../../../assets/scss/mixins';
 
 /* download card start */
+$colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "azure": $color-azure);
+
 .download-card {
   display: inline-block;
 
@@ -10,17 +12,25 @@
   }
 
   &:hover {
-    .publication_thumbnail__image {
-      &::after {
-        opacity: 0.75;
+    .publication-thumbnail__image {
+      @each $name, $color in $colors {
+        &.#{$name}:after {
+          opacity: 0.75;
+          @include background-image(42deg, #{$color}, transparent 80%);
+        }
+      }
+    }
+    
+
+    .card-thumbnail__image {
+      @each $name, $color in $colors {
+        &.#{$name}::before {
+          opacity: 0.75;
+          @include background-image(42deg, #{$color}, transparent 80%);
+        }
       }
     }
 
-    .card_thumbnail__image {
-      &::before {
-        opacity: 0.75;
-      }
-    }
     .download-card__download {
       &::after {
         background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
@@ -72,6 +82,18 @@
     &:after {
       margin-right: 0.75rem;
       margin-left: 0;
+    }
+  }
+
+  .download-card {
+    &:hover {
+      .publication-thumbnail__image {
+        @each $name, $color in $colors {
+          &.#{$name}:after {
+            @include background-image(318deg, #{$color}, transparent 80%);
+          }
+        }
+      }
     }
   }
 }

@@ -1,13 +1,15 @@
 @import '../../../assets/scss/mixins';
 
 /* publication_thumbnail */
+$colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "azure": $color-azure);
+
 .publication-thumbnail__image {
   background: linear-gradient(180deg, #c9d0d6 70%, #c9d0d6 0, #414648 70.5%, #9ea5ac 0, #9ea5ac);
   display: inline-flex;
   padding: 2.188rem 2.938rem;
   position: relative;
   z-index: 1;
-
+  
   &::before {
     background: #7b8085;
     border-radius: 21%;
@@ -26,7 +28,7 @@
   &::after {
     @extend %absolute__content;
 
-    @include transition(opacity 0.5s ease);
+    @include transition(all .6s);
 
     opacity: 0;
     z-index: 1;
@@ -36,29 +38,11 @@
     &::after {
       opacity: 0.75;
     }
+  }
 
-    &.yellow {
-      &::after {
-        background-image: linear-gradient(42deg, $color-yellow, transparent 80%);
-      }
-    }
-
-    &.red {
-      &::after {
-        background-image: linear-gradient(42deg, $color-red, transparent 80%);
-      }
-    }
-
-    &.green {
-      &::after {
-        background-image: linear-gradient(42deg, $color-green, transparent 80%);
-      }
-    }
-
-    &.blue {
-      &::after {
-        background-image: linear-gradient(42deg, $color-azure, transparent 80%);
-      }
+  @each $name, $color in $colors {
+    &.#{$name}:after {
+      @include background-image(42deg, #{$color}, transparent 80%);
     }
   }
 }
@@ -66,9 +50,9 @@
 [dir='rtl'] {
   .publication-thumbnail__image {
     &:hover {
-      &.yellow {
-        &::after {
-          background-image: linear-gradient(318deg, $color-yellow, transparent 80%);
+      @each $name, $color in $colors {
+        &.#{$name}:after {
+          @include background-image(318deg, #{$color}, transparent 80%);
         }
       }
     }
