@@ -34,14 +34,14 @@
 
     nav{
       &:first-child{
-        .menu{
+        ul{
           justify-content: flex-end;
           padding-left: 0;
           padding-right: 6.9375rem;
         }
       }
     }
-    .menu {
+    ul {
       align-items: center;
       display: flex;
       height: 7.1875rem;
@@ -121,13 +121,13 @@
   .global-header {
     .mid-nav {
       nav:last-child{
-        .menu{
+        ul{
           justify-content: flex-start;
           padding-left: 0;
           padding-right: 6.9375rem;
         }
       }
-      .menu {
+      ul {
 
         li {
           margin: $spacing-12 4.4375rem $spacing-12 0;
