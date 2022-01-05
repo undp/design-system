@@ -85,7 +85,7 @@ export const GlobalHomePage = ({
           <div className="cell large-12">
             <ParallaxCards
               alt="feature card"
-              carddata={parallaxdata.data}
+              data={parallaxdata.data}
               title={parallaxdata.title}
             />
           </div>

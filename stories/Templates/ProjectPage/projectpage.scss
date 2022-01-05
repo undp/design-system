@@ -89,7 +89,7 @@
       }
 
       &__bullets {
-        display: none;
+        margin-left: -10rem;
       }
     }
 
@@ -185,6 +185,15 @@
           @include devicebreak(medium) {
             font-size: 3rem;
           }
+        }
+      }
+    }
+
+    &-support {
+      .glide {
+        &__bullets {
+          margin-left: 0rem;
+          margin-right: -10rem;
         }
       }
     }

@@ -3,9 +3,14 @@ import './statscardslider.scss';
 import { carousel } from '../../assets/js/carousel';
 import { StatsCards } from '../../Components/UIcomponents/Cards/StatsCards/StatsCards';
 
-export const Statscardslider = ({ data }) => {
+export const Statscardslider = ({ data, gapel, gapelsm, viewcard, perViewtablet, focusSpace }) => {
+  viewcard = viewcard ? viewcard : 4;
+  perViewtablet = perViewtablet ? perViewtablet : 2;
+  gapel = gapel ? gapel : 20;
+  gapelsm = gapelsm ? gapelsm : 20;
+  focusSpace = focusSpace ? focusSpace : 0.2;
   useEffect(() => {
-    carousel('.stats-slider', 20, 20, 4, 2, 0.2);
+    carousel('.stats-slider', gapel, gapelsm, viewcard, perViewtablet, focusSpace);
   }, []);
   return (
     <div className="stats-slider">
