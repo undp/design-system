@@ -11,7 +11,6 @@ const SelectTag = ({ text, eleId, ...args }) => {
   return (
     <div className="multi-select" data-multi-select="">
       <button
-        className="select-control"
         aria-label="Region"
         aria-expanded="false"
         id={`select_button-${eleId}`}
@@ -21,8 +20,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
       {args.variant === "Checkbox" && (
         <ul
           className={[
-            "options",
-            args.Height === "Fix height" ? " fix-height" : "",
+            args.Height === "Fix height" ? "fix-height" : "",
           ].join("")}
           data-type="region"
           aria-labelledby={`select_button-${eleId}`}
@@ -92,8 +90,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
       {args.variant === "Radio" && (
         <ul
           className={[
-            "options",
-            args.Height === "Fix height" ? " fix-height" : "",
+            args.Height === "Fix height" ? "fix-height" : "",
           ].join("")}
           data-type="region"
           aria-labelledby={`select_button-${eleId}`}

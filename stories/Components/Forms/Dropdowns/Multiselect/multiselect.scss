@@ -8,7 +8,7 @@
   position: relative;
 
   &.open {
-    .select-control {
+    > button {
       border-bottom: 0;
 
       &::after {
@@ -18,7 +18,7 @@
       }
     }
 
-    .options {
+    ul {
       background-color: $color-white;
       border-top: 0;
       display: block;
@@ -44,10 +44,24 @@
           transform: translateY(-50%);
         }
       }
+      ul {
+        border: 0;
+        padding: 0 0 0 40px;
+        overflow: hidden;
+        display: none;
+        .radio {
+          &:hover {
+            background-color: inherit;
+          }
+        }
+      }
+      li {
+        margin-bottom: 0;
+      }
     }
   }
 
-  .select-control {
+  > button {
     @extend %select_default;
 
     background: $color-white;
@@ -59,128 +73,136 @@
       @extend %arrow;
     }
   }
-}
 
-.options {
-  @extend %select_option;
+  ul {
+    @extend %select_option;
 
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  overflow-y: auto;
-
-  > li {
-    border-top: 1px solid $color-gray-400;
-    cursor: pointer;
-    list-style: none;
-    margin-bottom: 0;
-
-    > .checkbox {
-      &:hover {
-        background-color: $color-gray-100;
-      }
-    }
-  }
-
-  .has-submenu {
-    position: relative;
-
-    &.open-submenu {
-      .sub-menu {
-        border-top: solid 1px $color-gray-400;
-        display: block;
-      }
-
-      button::after {
-        @include transform(translateY(-50%) rotate(-180deg));
-
-        top: 50%;
-      }
-    }
-
-    button {
-      background: $color-white;
-      border: 0;
-      cursor: pointer;
-      display: block;
-      font-size: $font-size-16;
-      margin: 0 -1rem;
-      padding: $spacing-16;
-      position: relative;
-      text-align: left;
-      width: calc(100% + 2rem);
-
-      &:hover {
-        background-color: $color-gray-100;
-      }
-
-      &::after {
-        @extend %arrow;
-
-        right: $spacing-16;
-      }
-    }
-  }
-
-  .sub-menu {
-    display: none;
-    list-style: none;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-y: auto;
 
     > li {
       border-top: 1px solid $color-gray-400;
+      cursor: pointer;
+      list-style: none;
       margin-bottom: 0;
 
-      &:first-of-type {
-        border-top: 0;
-      }
-
-      > .checkbox-wrapper:hover {
-        background-color: $color-gray-100;
-      }
-    }
-  }
-
-  &::-webkit-scrollbar {
-    background-color: rgba(0, 0, 0, 0.3);
-    width: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-}
-
-.options .checkbox {
-  display: block;
-  margin: 0 -1rem;
-  padding: 0 $spacing-16;
-
-  input[type="checkbox"],
-  input[type="checkbox"] + label::before {
-    @include transform(translateY(-50%));
-
-    left: auto;
-    right: $spacing-16;
-    top: 50%;
-  }
-
-  input[type="checkbox"] + label {
-    display: block;
-    padding: $spacing-16 0;
-  }
-}
-
-[dir="rtl"] {
-  .multi-select {
-      button{
-        @extend %select_rtl;
-
-        &::after {
-          @extend %select_rtl_after;
+      > .checkbox {
+        &:hover {
+          background-color: $color-gray-100;
         }
-      
+      }
+      ul {
+        .checkbox {
+          &:hover {
+            background-color: inherit;
+          }
+        }
+      }
     }
 
     .has-submenu {
-      button{
+      position: relative;
+
+      &.open-submenu {
+        ul {
+          border: 0;
+          border-top: solid 1px $color-gray-400;
+          display: block;
+          padding: 0 0 0 40px;
+        }
+
+        button::after {
+          @include transform(translateY(-50%) rotate(-180deg));
+
+          top: 50%;
+        }
+      }
+
+      button {
+        background: $color-white;
+        border: 0;
+        cursor: pointer;
+        display: block;
+        font-size: $font-size-16;
+        margin: 0 -1rem;
+        padding: $spacing-16;
+        position: relative;
+        text-align: left;
+        width: calc(100% + 2rem);
+
+        &:hover {
+          background-color: $color-gray-100;
+        }
+
+        &::after {
+          @extend %arrow;
+
+          right: $spacing-16;
+        }
+      }
+    }
+
+    .sub-menu {
+      display: none;
+      list-style: none;
+
+      > li {
+        border-top: 1px solid $color-gray-400;
+        margin-bottom: 0;
+
+        &:first-of-type {
+          border-top: 0;
+        }
+
+        > .checkbox-wrapper:hover {
+          background-color: $color-gray-100;
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+      background-color: rgba(0, 0, 0, 0.3);
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  ul .checkbox {
+    display: block;
+    margin: 0 -1rem;
+    padding: 0 $spacing-16;
+
+    input[type='checkbox'],
+    input[type='checkbox'] + label::before {
+      @include transform(translateY(-50%));
+
+      left: auto;
+      right: $spacing-16;
+      top: 50%;
+    }
+
+    input[type='checkbox'] + label {
+      display: block;
+      padding: $spacing-16 0;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .multi-select {
+    button {
+      @extend %select_rtl;
+
+      &::after {
+        @extend %select_rtl_after;
+      }
+    }
+
+    .has-submenu {
+      button {
         text-align: right;
 
         &::after {
@@ -194,6 +216,11 @@
         span {
           left: $spacing-16;
           right: inherit;
+        }
+      }
+      ul {
+        ul {
+          padding: 0 40px 0 0;
         }
       }
     }

@@ -4,7 +4,7 @@ class MultiSelect {
 
     this.$window = $(window);
     this.$currentSelect = $(element);
-    this.$selectTrigger = this.$currentSelect.find('.select-control');
+    this.$selectTrigger = this.$currentSelect.find('> button');
   }
 
   init() {
