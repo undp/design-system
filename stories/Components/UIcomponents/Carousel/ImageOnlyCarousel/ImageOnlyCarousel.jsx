@@ -12,6 +12,9 @@ export const ImageOnlyCarousel = ({ data }) => {
   }, []);
   return (
     <div className="image-carousel left-right">
+      <div class="glide__scrollbar" aria-valuemin="0" aria-valuemax="100">
+        <span class="glide__scrollbar-drag"></span>
+      </div>
       <div className="glide__bullets" data-glide-el="controls[nav]">
         {data.map((item, index) => <button className="glide__bullet" data-glide-dir={[`=${index}`]} aria-label={index} key={index} />)}
       </div>

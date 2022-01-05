@@ -110,14 +110,6 @@
   }
 
   .glide {
-    &__slides {
-      margin-top: 3rem;
-    }
-
-    // &__track {
-    //   //margin-right: -100%;
-    // }
-
     &__arrows {
       @extend %carousel_arrows;
 
@@ -171,10 +163,9 @@
     }
 
     .glide {
-      // &__track {
-      //   margin-left: -100%;
-      //   margin-right: 0;
-      // }
+      &__bullets {
+        margin-bottom: $spacing-48;
+      }
 
       &__arrow {
         &:first-child {
