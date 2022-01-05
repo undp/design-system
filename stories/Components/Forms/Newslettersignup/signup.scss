@@ -32,7 +32,7 @@
       width: calc(100% - 107px);
     }
 
-    input.email {
+    input[type=email] {
       background-color: transparent;
       border-color: $color-white;
       border-radius: 0;
@@ -64,7 +64,7 @@
       color: $color-black;
     }
 
-    .email {
+    input[type=email] {
       background-color: $color-white;
       border-color: $color-black;
       color: $color-black;
@@ -88,7 +88,7 @@
 }
 
 //burmese lang
-:lang(my){
+:lang(my) {
   .sign-up {
     label {
       line-height: 1.9;
