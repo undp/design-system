@@ -2,7 +2,7 @@ import React from 'react';
 import './buttons.scss';
 
 export const CtaButton = ({
-  label, Type, State, For_Primary,
+  label, Type, State, For_Primary, id
 }) => {
   let type = 'primary';
   if (Type == 'Secondary') {
@@ -23,12 +23,12 @@ export const CtaButton = ({
     <>
       {Type === 'Secondary'
         ? (
-          <a className={cls('button', `button-${type}`, `${state}`)} role="button" href="#" >
+          <a className={cls('button', `button-${type}`, `${state}`)} role="button" href="#" id={id} >
             {label}
           </a>
         )
         : (
-          <a className={cls('button', `button-${type}`, `button-${for_primary}`, `${state}`)} role="button" href="#">
+          <a className={cls('button', `button-${type}`, `button-${for_primary}`, `${state}`)} role="button" href="#" id={id}>
             {label}
           </a>
         )}
