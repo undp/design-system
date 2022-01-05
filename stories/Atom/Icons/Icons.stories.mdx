@@ -48,7 +48,7 @@ Use Icons that are recognizable and accompany corresponding text labels where po
           } else {
            return (`<span class="${item.name}"></span>\n`);
          }
-      })
+      }).join('')
    } } }}>
     {arrfor.map((item, i) => {
       if(item.type == 'img') {

@@ -26,7 +26,7 @@ export const DownloadModal = ({
   return (
     <div className={['modal', `${Image_options[`${args.Image}`]}`].join(' ')} aria-modal="true" role="dialog" aria-label="download_modal">
       <div className="modal-content">
-        <a href="javascript:void(0)" className="modal-close-button" />
+        <a href="javascript:void(0)" className="modal-close-button" aria-label="Close modal"/>
         <div className="download-body">
           {args.Image === 'True' && (
           <div className="show-large">
