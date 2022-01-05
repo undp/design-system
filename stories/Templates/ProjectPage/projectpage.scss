@@ -43,10 +43,16 @@
 
     &-hero {
       .breadcrumb {
-        @include devicebreak(small) {
-          margin-top: $spacing-64;
-          padding-left: $spacing-16;
+        margin-top: $spacing-16;
+        padding-left: $spacing-16;
+
+        @include devicebreak(medium) {
+          margin-top: $spacing-48;
         }
+      }
+
+      .pagehero-wrapper__title {
+        font-size: 3.1rem;
       }
     }
   }
@@ -173,10 +179,8 @@
 
       &-hero {
         .breadcrumb {
-          @include devicebreak(small) {
-            margin-top: $spacing-64;
-            padding-right: $spacing-16;
-          }
+          padding-right: $spacing-16;
+          padding-left: 0;
         }
 
         .pagehero-wrapper__title {
