@@ -13,7 +13,7 @@ export const ParallaxGallery = ({
   }, []);
 
   let background;
-  const backgrounds = ["Grey"];
+  const backgrounds = ["Gray"];
   background = backgrounds.includes(Background) ? Background.toLowerCase() : '';
 
   return (
