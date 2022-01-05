@@ -63,6 +63,23 @@
   &--rtl {
     direction: rtl;
   }
+
+  &__scrollbar {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 3px;
+    overflow: hidden;
+    bottom: -2px;
+
+    &-drag {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      height: 3px;
+      background: $color-black;
+    }
+  }
 }
 
 /* gilde slide end */

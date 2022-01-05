@@ -10,7 +10,7 @@ export function carousel(ele, gapele, gapele_sm, viewcard, perViewtablet, focusS
    * @param {Object} Components
    * @param {EventsBus} Events
    */
-  const CustomLength = function (Glide, Components, Events) {
+  const GlideComponents = function (Glide, Components, Events) {
     return {
       mount() {
         Events.emit('glide.length', Components.Sizes.length);
@@ -20,16 +20,24 @@ export function carousel(ele, gapele, gapele_sm, viewcard, perViewtablet, focusS
   };
 
   // Declare the Glide parameters.
-  let direc = 'ltr';
-  let lastChild = ':last';
-  let firstChild = ':first';
-  let dirLeft = '<';
-  let dirRight = '>';
-  let gapele_sm2 = gapele;
-  let optsTriggered = true;
-  let leftArrow = arrowleft;
-  let rightArrow = arrowright;
-  let rtl = false;
+  let direc = 'ltr',
+  lastChild = ':last',
+  firstChild = ':first',
+  dirLeft = '<',
+  dirRight = '>',
+  gapele_sm2 = gapele,
+  optsTriggered = true,
+  leftArrow = arrowleft,
+  rightArrow = arrowright,
+  rtl = false,
+  dragSize,
+  progress,
+  newPos,
+  trackSize;
+
+  // Set initial scrollbar values to 0.
+  dragSize = progress = newPos = trackSize = 0;
+
   if (gapele_sm) {
     gapele_sm2 = gapele_sm;
   }
@@ -86,6 +94,21 @@ export function carousel(ele, gapele, gapele_sm, viewcard, perViewtablet, focusS
     glideWidth = width;
   });
 
+  // Calculate and set scrollbar progress and position during slide transition.
+  glide.on('run', (e) => {
+    const slidesPerView = glide.settings.perView;
+    if (slidesPerView == 1) {
+      progress = ( (glide.index) / (sliderLength-1) ) * 100;
+    } else {
+      progress = ( (glide.index) / (sliderLength - slidesPerView) ) * 100;
+    }
+    newPos = ((trackSize - dragSize) * progress) / 100;
+    if (rtl) {
+      newPos = -newPos;
+    }
+    $(".glide__scrollbar-drag").css({'transform': 'translate3d(' + newPos + 'px, 0, 0)', 'transition': '500ms'});
+  });
+
   // Function `glideUpdate` to update config dynamically.
   // Example: `glideUpdate({ key: value });`
   const glideUpdate = (opts) => {
@@ -97,7 +120,7 @@ export function carousel(ele, gapele, gapele_sm, viewcard, perViewtablet, focusS
 
   // Mount Glide Slider to render on page.
   glide.mount({
-    CustomLength,
+    GlideComponents,
   });
 
   // We need to modify Glide parameters on window load due to the RTL toggle being a StoryBook Addon.
@@ -127,6 +150,11 @@ export function carousel(ele, gapele, gapele_sm, viewcard, perViewtablet, focusS
     // This is only needed incase of perView > 1.
     const slideBound = sliderLength - slidesPerView;
 
+    // Get scrollbar track width.
+    trackSize = $(".glide__scrollbar").width();
+    // Get the scrollbar drag width based on the number of slides in the slider track.
+    dragSize = Number(Math.round(parseFloat(trackSize / sliderLength + 'e2')) + 'e-2');
+
     // We remove extra bullets incase of perView setting is > 1.
     if (slidesPerView > 1) {
       const bullet = $(elem).find('.glide__bullet');
@@ -136,11 +164,17 @@ export function carousel(ele, gapele, gapele_sm, viewcard, perViewtablet, focusS
           $(elem).remove();
         }
       }
+      const newBulletLength = $(elem).find('.glide__bullet').length;
+      // Calculate the same scrollbar drag size when slidesPerView is 1.
+      dragSize = Number(Math.round(parseFloat(trackSize / newBulletLength + 'e2')) + 'e-2');
     }
 
+    // Set initial drag position and width of the scrollbar.
+    $(".glide__scrollbar-drag").width(dragSize).css({'transform': 'translate3d(0, 0, 0)', 'transition': '500ms'});
+
     // Click of Left or Right Arrows
-    $(elem).click(function (e) {
-      const sliderWidth = $(this).offset().left + glideWidth / 2;
+    $(elem).find(".glide__track").click(function (e) {
+      const sliderWidth = $(this).closest($(elem)).offset().left + glideWidth / 2;
       const slideIndex = glide.index;
       if (slidesPerView == 1) {
         // e.pageX checks the current mouse location on the viewport.
@@ -148,68 +182,108 @@ export function carousel(ele, gapele, gapele_sm, viewcard, perViewtablet, focusS
         if (e.pageX < sliderWidth) {
           if (slideIndex == 0) {
             glide.go(dirRight);
-          } else if (rtl) {
-            (slideIndex == sliderLength - 1) ? glide.go(dirLeft) : glide.go(dirRight);
           } else {
-            glide.go(dirLeft);
+            if (rtl) {
+              (slideIndex == sliderLength - 1) ? glide.go(dirLeft): glide.go(dirRight);
+            } else {
+              glide.go(dirLeft);
+            }
           }
-        } else if (slideIndex == sliderLength - 1) {
-          glide.go(dirLeft);
-        } else if (rtl) {
-          (slideIndex == 0) ? glide.go(dirRight) : glide.go(dirLeft);
         } else {
-          glide.go(dirRight);
-        }
-      } else if (slideIndex === 0) {
-        glide.go(dirRight);
-      } else if (slideIndex > 0 && slideIndex < slideBound) {
-        if (e.pageX < sliderWidth) {
-          if (rtl) {
-            glide.go(dirRight);
+          if (slideIndex == sliderLength - 1) {
+            glide.go(dirLeft);
           } else {
-            glide.go(dirLeft);
+            if (rtl) {
+              (slideIndex == 0) ? glide.go(dirRight) : glide.go(dirLeft);
+            } else {
+              glide.go(dirRight);
+            }
           }
-        } else if (rtl) {
-          (slideIndex == 0) ? glide.go(dirRight) : glide.go(dirLeft);
-        } else {
-          glide.go(dirRight);
         }
-      } else if (slideIndex === slideBound) {
-        glide.go(dirLeft);
       } else {
-        glide.go(dirRight);
+        if (slideIndex === 0) {
+          glide.go(dirRight);
+        } else if (slideIndex > 0 && slideIndex < slideBound) {
+          if (e.pageX < sliderWidth) {
+            if (rtl) {
+              glide.go(dirRight);
+            } else {
+              glide.go(dirLeft);
+            }
+          } else {
+            if (rtl) {
+              (slideIndex == 0) ? glide.go(dirRight) : glide.go(dirLeft);
+            } else {
+              glide.go(dirRight);
+            }
+          }
+        } else if (slideIndex === slideBound) {
+          glide.go(dirLeft);
+        } else {
+          glide.go(dirRight);
+        }
       }
     });
 
     // Change CSS Pointer/Cursor based on Mouse move.
-    $(elem).mousemove(function (e) {
+    $(elem).find(".glide__track").mousemove(function (e) {
       const sliderWidth = $(this).offset().left + glideWidth / 2;
       if (slidesPerView == 1) {
         if (e.pageX < sliderWidth) {
-          $(this).find('.glide__slide').not(firstChild).css('cursor', `url(${leftArrow}), auto`);
+          if (glide.index === 0) {
+            if (rtl) {
+              $(this).find('.glide__slide').not(firstChild).css('cursor', `url(${leftArrow}), auto`);
+            } else {
+              $(this).find('.glide__slide').not(lastChild).css('cursor', `url(${rightArrow}), auto`);
+            }
+          } else if (glide.index > 0 && glide.index < slideBound) {
+              $(this).find('.glide__slide').not(firstChild).css('cursor', `url(${leftArrow}), auto`);
+          } else {
+            if (rtl) {
+              $(this).find('.glide__slide').not(lastChild).css('cursor', `url(${rightArrow}), auto`);
+            } else {
+              $(this).find('.glide__slide').not(firstChild).css('cursor', `url(${leftArrow}), auto`);
+            }
+          }
         } else {
-          $(this).find('.glide__slide').not(lastChild).css('cursor', `url(${rightArrow}), auto`);
-        }
-      } else if (glide.index === 0) {
-        if (rtl) {
-          $(this).css('cursor', `url(${leftArrow}), auto`);
-        } else {
-          $(this).css('cursor', `url(${rightArrow}), auto`);
-        }
-      } else if (glide.index > 0 && glide.index < slideBound) {
-        if (e.pageX < sliderWidth) {
-          $(this).css('cursor', `url(${leftArrow}), auto`);
-        } else {
-          $(this).css('cursor', `url(${rightArrow}), auto`);
-        }
-      } else if (glide.index === slideBound) {
-        if (rtl) {
-          $(this).css('cursor', `url(${rightArrow}), auto`);
-        } else {
-          $(this).css('cursor', `url(${leftArrow}), auto`);
+          if (glide.index === 0) {
+            if (rtl) {
+              $(this).find('.glide__slide').not(firstChild).css('cursor', `url(${leftArrow}), auto`);
+            } else {
+              $(this).find('.glide__slide').not(lastChild).css('cursor', `url(${rightArrow}), auto`);
+            }
+          } else if (glide.index > 0 && glide.index < slideBound) {
+              $(this).find('.glide__slide').not(lastChild).css('cursor', `url(${rightArrow}), auto`);
+          } else {
+            if (rtl) {
+              $(this).find('.glide__slide').not(lastChild).css('cursor', `url(${rightArrow}), auto`);
+            } else {
+              $(this).find('.glide__slide').not(firstChild).css('cursor', `url(${leftArrow}), auto`);
+            }
+          }
         }
       } else {
-        $(this).css('cursor', 'default');
+        if (glide.index === 0) {
+          if (rtl) {
+            $(this).css('cursor', `url(${leftArrow}), auto`);
+          } else {
+            $(this).css('cursor', `url(${rightArrow}), auto`);
+          }
+        } else if (glide.index > 0 && glide.index < slideBound) {
+          if (e.pageX < sliderWidth) {
+            $(this).css('cursor', `url(${leftArrow}), auto`);
+          } else {
+            $(this).css('cursor', `url(${rightArrow}), auto`);
+          }
+        } else if (glide.index === slideBound) {
+          if (rtl) {
+            $(this).css('cursor', `url(${rightArrow}), auto`);
+          } else {
+            $(this).css('cursor', `url(${leftArrow}), auto`);
+          }
+        } else {
+          $(this).css('cursor', "default");
+        }
       }
     });
   });
