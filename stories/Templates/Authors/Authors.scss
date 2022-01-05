@@ -10,6 +10,9 @@
   }
   .author__label p {
       font-size: 1rem;
+      @include devicebreak(small) {
+        font-size: 0.875rem;
+      }
   }
   @include devicebreak(small) {
     .author-cards {
@@ -125,6 +128,9 @@
 
       h6 {
         font-size: $font-size-16;
+        @include devicebreak(small) {
+          font-size: 0.875rem;
+        }
       }
     }
   }
