@@ -24,6 +24,8 @@
       margin-right: $spacing-16;
       margin-top: $spacing-16;
       width: 20px;
+      z-index: 0;
+      position: relative;
 
       @include devicebreak(medium) {
         display: none;
@@ -62,6 +64,8 @@
     margin-bottom: 0;
     padding: $spacing-16;
     text-transform: uppercase;
+    z-index: 1;
+    position: relative;
 
     @include devicebreak(medium) {
       margin-bottom: 1.25rem;
