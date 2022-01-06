@@ -12,7 +12,12 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Foundation/Layout/Grid" component={Layout} />
+<Meta title="Foundation/Layout/Grid" component={Layout} parameters={{
+    viewMode: "docs",
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  }}/>
 
 <style>{`
   div#story--atoms-layout--layout {
@@ -436,12 +441,11 @@ The XY grid incorporates the grid frame from Foundation for Apps plus many other
   }}
 </Story>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>We can use grid by taking the grid class from the <code>assets/SCSS/grid.scss</code></li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>layout.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Usage
+
+- We can use grid by taking the grid class from the <code>assets/SCSS/grid.scss</code>
+- <u>To use SCSS include the following files in your implementation</u>
+- Include the common SCSS files like normalize, variables from <code>assets/scss</code>
+- Component SCSS file: <code>layout.scss</code>
+- <u>To use CSS include the following files in your implementation</u>
+- The compiled CSS file from <code>assets/css/style.css</code>
