@@ -4,7 +4,7 @@
 
 /* multi-select start */
 .multi-select {
-  max-width: 296px;
+  max-width: 18.5rem;
   position: relative;
 
   &.open {
@@ -23,7 +23,7 @@
       border-top: 0;
       display: block;
       &.fix-height {
-        max-height: 300px;
+        max-height: 18.75rem;
       }
       .radio {
         display: flex;
@@ -46,7 +46,7 @@
       }
       ul {
         border: 0;
-        padding: 0 0 0 40px;
+        padding: 0 0 0 $spacing-40;
         overflow: hidden;
         display: none;
         .radio {
@@ -103,12 +103,12 @@
     .has-submenu {
       position: relative;
 
-      &.open-submenu {
+      &.open {
         ul {
           border: 0;
           border-top: solid 1px $color-gray-400;
           display: block;
-          padding: 0 0 0 40px;
+          padding: 0 0 0 $spacing-40;
         }
 
         button::after {
@@ -220,7 +220,7 @@
       }
       ul {
         ul {
-          padding: 0 40px 0 0;
+          padding: 0 $spacing-40 0 0;
         }
       }
     }
