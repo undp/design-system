@@ -2,55 +2,71 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/breakpoints';
 
-.checkbox-container {
-  background-color: $color-white;
-  padding: 0 1rem;
+.download {
+  &-row {
+    background-color: $color-white;
+    padding: 0 1rem;
 
-  &:hover {
-    background-color: $color-gray-100;
-  }
-
-  &__main {
-    align-items: center;
-    border-bottom: 1px solid $color-gray-400;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__data {
-    margin: $spacing-16 0;
-    padding-right: $spacing-16;
-
-    h6 {
-      font-weight: normal;
-      margin: 0;
-      text-transform: inherit;
+    &:hover {
+      background-color: $color-gray-100;
     }
 
-    span {
-      color: $color-gray-500;
-      font-size: $font-size-16;
+    &__main {
+      align-items: center;
+      border-bottom: 1px solid $color-gray-400;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__data {
+      margin: $spacing-16 0;
+      padding-right: $spacing-16;
+
+      h6 {
+        font-weight: normal;
+        margin: 0;
+        text-transform: inherit;
+      }
+
+      span {
+        color: $color-gray-500;
+        font-size: $font-size-16;
+      }
+    }
+
+    .external-link {
+      margin: $spacing-16 0 1.188rem $spacing-16;
+    }
+
+    .checkbox {
+      margin-right: -0.375rem;
+      padding-bottom: 1.25rem;
+    }
+
+    a {
+      @extend %img_none;
     }
   }
 
-  &__chevron {
+  &-icon {
     margin: $spacing-16 0 1.188rem $spacing-16;
-  }
-
-  .checkbox {
-    margin-right: -0.375rem;
-    padding-bottom: 1.25rem;
   }
 }
 
 [dir='rtl'] {
-  .checkbox-container {
-    &__data {
-      padding-left: $spacing-16;
-      padding-right: 0;
+  .download {
+    &-row {
+      &__data {
+        padding-left: $spacing-16;
+        padding-right: 0;
+      }
+
+      .external-link {
+        margin-left: 0;
+      }
     }
 
-    &__chevron {
+    &-icon {
       margin-left: 0;
     }
   }
