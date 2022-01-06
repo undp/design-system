@@ -25,6 +25,30 @@
   }
 </style>
 
+<script type="text/javascript">
+
+  // trigger onload event on window when root data change
+  // @TODO: a better way to trigger onload for animation
+  function runOnPageChange() {
+    $(window).trigger('load');
+    $(document).trigger('ready');
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    const callback = function(mutationsList) {
+      for (let i = 0, len = mutationsList.length; i < len; i++) {
+        if (mutationsList[i].type == 'childList') {
+          runOnPageChange();
+          break;
+        }
+      }
+    };
+    const observer = new MutationObserver(callback);
+    const config = { childList: true, subtree: false };
+    observer.observe(document.getElementById('root'), config);
+  }, false);
+
+</script>
+
 <style type="text/css">
 /* ProximaNova */
 @font-face {
