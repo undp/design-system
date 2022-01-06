@@ -22,15 +22,14 @@
         @include transform(translateY(-50px));
       }
 
+      a:before {
+        opacity: 1;
+        top: -50px;
+        content: '';
+      }
+
       .country {
         &-card {
-          &__link:before {
-            opacity: 1;
-            top: -50px;
-            content:'';
-
-          }
-
           &__caption {
             opacity: 1;
 
@@ -57,6 +56,9 @@
       height: auto;
 
       &--active {
+        a:before {
+          opacity: 1;
+        }
         .country {
           &-card {
             &__caption {
@@ -65,10 +67,6 @@
               p {
                 opacity: 1;
               }
-            }
-
-            &__link:before {
-              opacity: 1;
             }
           }
         }
@@ -85,7 +83,7 @@
     }
   }
 
-  &__link {
+  a {
     @extend %img_none;
 
     border: 0;
@@ -102,7 +100,7 @@
     position: relative;
   }
 
-  &__link:before {
+  a:before {
     @extend %absolute__content;
 
     @include transition(all 0.4s);

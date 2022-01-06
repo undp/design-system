@@ -6,7 +6,7 @@ export const CountryCard = ({ data }) => (
   <div className="grid-x grid-margin-x glide__slides">
     {data.map((item, index) => (
       <div className={['country-card', 'cell', 'glide__slide', `${item.size}`].join(' ')} key={index}>
-        <a href={item.link} className="country-card__link">
+        <a href={item.link}>
           {item.imageback && <img src={item.imageback} alt={item.imageback} />}
           <div className="country-card__caption">
             <p>{item.name}</p>
