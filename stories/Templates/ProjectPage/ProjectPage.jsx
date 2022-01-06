@@ -129,9 +129,9 @@ export const ProjectPage = ({
             <Heading type="2" label={supportHeading} />
           </div>
         </div>
-        <div className="cell large-offset-1 small-offset-1 small-11 large-11">
+        <div className="cell large-offset-1 large-11">
           <div className="column">
-            <Statscardslider data={statsliderdata} />
+            <Statscardslider data={statsliderdata} gapel='20' gapelsm='20' viewcard='5' perViewtablet='3' focusSpace='0'/>
           </div>
         </div>
       </div>
