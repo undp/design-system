@@ -6,7 +6,7 @@
 .generic-page {
   .sidebar {
     &-width {
-      .accordion-wrapper {
+      .sidebar-accordion {
         width: calc(100% - #{$spacing-12});
 
         @include devicebreak(medium) {

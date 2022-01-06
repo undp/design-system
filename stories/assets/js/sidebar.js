@@ -1,10 +1,10 @@
 export function sidebarNav() {
-  let $accordionNav = $('.accordion-navbar li');
-  let $accordionPanel = $('.accordion-navbar .accordion__panel');
+  let $accordionNav = $('.sidebar-accordion li');
+  let $accordionPanel = $('.sidebar-accordion .accordion__panel');
   $accordionNav.each((index, element) => {
     if ($(element).find('.accordion__panel').length) {
-      $(element).find('span').first().off('click')
-        .click(function (e) {
+      $(element).find('button').first().off('click keypress')
+        .on('click keypress', function (e) {
           e.preventDefault();
           e.stopPropagation();
           const duration = '30';
@@ -25,13 +25,13 @@ export function sidebarNav() {
 }
 
 export function sidebarMenu() {
-  let $accordionWrapper = $('.accordion-wrapper');
+  let $accordionWrapper = $('.sidebar-accordion');
   $accordionWrapper.each((index, element) => {
-    $(element).find('span').first().off('click')
+    $(element).find('h6').first().off('click')
       .click(function (e) {
         e.preventDefault();
         e.stopPropagation();
-        $(this).closest('.accordion-wrapper').toggleClass('show-small');
+        $(this).closest('.sidebar-accordion').toggleClass('show-small');
       });
   });
 }

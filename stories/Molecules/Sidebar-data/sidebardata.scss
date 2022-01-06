@@ -3,7 +3,7 @@
 @import '../../assets/scss/variables';
 
 /* sidebar data start */
-.accordion-navbar > li > a {
+.sidebar-accordion li > a {
   @extend %img_none;
 
   border: none;
@@ -20,41 +20,16 @@
   }
 }
 
-ul.accordion__panel {
-  display: none;
-  height: auto;
-  padding: 0;
-
-  li {
-    a {
-      @extend %img_none;
-
-      border: none;
-      display: block;
-      font-size: $font-size-14;
-      font-weight: 400;
-      padding: $spacing-16 $spacing-24 $spacing-16 $spacing-32;
-
-      @include devicebreak(medium) {
-        font-size: $font-size-16;
-        padding-left: $spacing-48;
-      }
-    }
-
-    &:last-child a {
-      margin-bottom: 0;
-    }
-  }
-}
-
 [dir='rtl'] {
-  ul.accordion__panel {
-    li > a {
-      padding-left: $spacing-24;
-      padding-right: $spacing-32;
+  .sidebar-accordion {
+    .accordion__panel {
+      li > a {
+        padding-left: $spacing-24;
+        padding-right: $spacing-32;
 
-      @include devicebreak(medium) {
-        padding-right: $spacing-48;
+        @include devicebreak(medium) {
+          padding-right: $spacing-48;
+        }
       }
     }
   }

@@ -14,16 +14,16 @@
 }
 
 .country-card {
-
   &--item {
-
     @include devicebreak(medium) {
-      &.glide__slide{
-        a{
-          overflow: hidden;
+      margin-top: $spacing-96;
+
+      &.glide__slide {
+        a {
           @include transition(all 0.4s);
           @include transform(translateY(0));
 
+          overflow: hidden;
           overflow: hidden;
         }
 
@@ -35,7 +35,7 @@
           }
         }
       }
-      margin-top: $spacing-96;
+
       &:hover {
         a::before {
           content: '';
@@ -77,8 +77,9 @@
           .country {
             &-card {
               &__caption {
-                opacity: 1;
                 bottom: 0;
+                opacity: 1;
+
                 p {
                   opacity: 1;
                 }

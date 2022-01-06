@@ -71,6 +71,7 @@ export const GenericPage = ({
               headerText={sidebarCaptionData.headerText}
               label={sidebarCaptionData.label}
               active={sidebarCaptionData.active}
+              size="medium-12"
             />
           </div>
         </div>
