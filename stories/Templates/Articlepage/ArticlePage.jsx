@@ -41,6 +41,7 @@ const ArticlePage = ({
   locationData,
   langSelect,
   backcaption,
+  para,
 }) => {
   useEffect(() => {
     viewport('.feature__card--headertext');
@@ -101,8 +102,8 @@ const ArticlePage = ({
         </div>
         <div className="grid-x">
           <div className="cell medium-7 medium-offset-2">
-            <P label={paraLabel.detail} />
-            <P label={paraLabel.detail} />
+            <P label={para.para1} />
+            <P label={para.para2} />
           </div>
         </div>
         <div className="grid-x blockq">
@@ -116,8 +117,8 @@ const ArticlePage = ({
         </div>
         <div className="grid-x">
           <div className="cell medium-7 medium-offset-2">
-            <P label={paraLabel.detail} />
-            <P label={paraLabel.detail} />
+            <P label={para.para1} />
+            <P label={para.para2} />
           </div>
           <div className="cell medium-7 medium-offset-2 middle-image">
             <Images
@@ -153,15 +154,11 @@ const ArticlePage = ({
             <List data={listData} type="ul" />
           </div>
         </div>
-        <div className="grid-x">
-          <div className="cell large-12">
-            <FeaturedCard
+      </div>
+      <FeaturedCard
               data={featuredCardContent.featureddata}
               headertext={featuredCardContent.headertext}
             />
-          </div>
-        </div>
-      </div>
       <Footer
         src={logo}
         srctwo={logowhite}
