@@ -12,11 +12,15 @@
     }
 
     &__box {
-      @extend %img_none;
-
       display: inline-flex;
       margin-bottom: $spacing-24;
       width: 100%;
+
+      a {
+        @extend %img_none;
+
+        display: inline-flex;
+      }
     }
   }
 
