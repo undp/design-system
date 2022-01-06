@@ -2,6 +2,9 @@
 @import '../../../../assets/scss/mixins';
 
 /* content-card start */
+$colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "blue": $color-azure);
+$backgroundcolors: ("yellow": $color-light-yellow, "red": $color-light-red, "green": $color-light-green, "blue": $color-light-azure, "gray": $color-gray-100);
+
 .content-card {
   @extend %img_none;
 
@@ -48,43 +51,12 @@
     }
   }
 
-  &.yellow {
-    .card-thumbnail__image::before {
-      @include background-image(42deg, $color-yellow, transparent 80%);
-    }
-  }
-
-  &.red {
-    .card-thumbnail__image::before {
-      @include background-image(42deg, $color-red, transparent 80%);
-      transition: opacity .9s ease;
-    }
-  }
-
-  &.green {
-    .card-thumbnail__image::before {
-      @include background-image(42deg, $color-green, transparent 80%);
-      transition: opacity .9s ease;
-    }
-  }
-
-  &.blue {
-    .card-thumbnail__image::before {
-      @include background-image(42deg, $color-azure, transparent 80%);
-      transition: opacity .9s ease;
-    }
-  }
-
-  &.yellow {
-    .card-thumbnail__image::before {
-      @include background-image(42deg, $color-yellow, transparent 80%);
-      transition: opacity .9s ease;
-    }
-  }
-
-  &.gray {
-    .card-thumbnail__image::before {
-      @include background-image(42deg, $color-gray-100, transparent 80%);
+  @each $name, $color in $colors {
+    &.#{$name} {
+      .card-thumbnail__image::before {
+        @include background-image(42deg, #{$color}, transparent 80%);
+        transition: opacity .9s ease;
+      }
     }
   }
 
@@ -99,49 +71,24 @@
       display: flex;
       flex-wrap: wrap;
       height: 100%;
-      transition: background-color .6s ease;
+      transition: background-color .9s ease;
     }
 
-    &.yellow:hover {
-      background-color: $color-yellow;
-    }
-
-    &.red:hover {
-      background-color: $color-red;
-    }
-
-    &.green:hover {
-      background-color: $color-green;
-    }
-
-    &.blue:hover {
-      background-color: $color-azure;
-    }
-
-    &.gray:hover {
-      background-color: $color-gray-100;
+    &:hover {
+      @each $name, $color in $colors {
+        &.#{$name} {
+          transition: opacity .9s ease;
+          background-color: #{$color};
+        }
+      }
     }
   }
 
   &.card-yellow {
-    &.yellow {
-      background-color: $color-light-yellow;
-    }
-
-    &.red {
-      background-color: $color-light-red;
-    }
-
-    &.green {
-      background-color: $color-light-green;
-    }
-
-    &.blue {
-      background-color: $color-light-azure;
-    }
-
-    &.gray {
-      background-color: $color-gray-100;
+    @each $name, $color in $backgroundcolors {
+      &.#{$name} {
+        background-color: #{$color};
+      }
     }
 
     .card-thumbnail__image {
@@ -215,11 +162,13 @@
     @each $name, $color in $colors {
       &.#{$name} {
         .card-thumbnail__image::before {
-          @include background-image(318deg, #{$color}, transparent 80%);
+          @include background-image(42deg, #{$color}, transparent 80%);
+          transition: opacity .9s ease;
         }
       }
     }
   }
+
   .card-thumbnail__image {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
