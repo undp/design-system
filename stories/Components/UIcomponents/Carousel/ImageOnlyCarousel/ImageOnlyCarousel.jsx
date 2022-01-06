@@ -2,8 +2,8 @@ import React, { Component, useEffect } from 'react';
 import { carousel } from '../../../../assets/js/carousel';
 import viewport from '../../../../assets/js/viewport';
 import './imageonlycarousel.scss';
-import chevronRightWhite from '../../../../assets/images/Icon/circle-right.svg';
-import chevronLeftWhite from '../../../../assets/images/Icon/circle-left.svg';
+import chevronRightWhite from '../../../../assets/icons/circle-right.svg';
+import chevronLeftWhite from '../../../../assets/icons/circle-left.svg';
 
 export const ImageOnlyCarousel = ({ data }) => {
   useEffect(() => {
