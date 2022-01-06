@@ -22,6 +22,11 @@
   }
 
   .glide {
+    
+    &__bullets{
+      margin-bottom: $spacing-48;
+    }
+
     &__arrows {
       @extend %carousel_arrows;
 
