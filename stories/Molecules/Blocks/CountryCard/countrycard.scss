@@ -24,9 +24,11 @@
 
       .country {
         &-card {
-          &__overlay {
+          &__link:before {
             opacity: 1;
             top: -50px;
+            content:'';
+
           }
 
           &__caption {
@@ -65,7 +67,7 @@
               }
             }
 
-            &__overlay {
+            &__link:before {
               opacity: 1;
             }
           }
@@ -100,7 +102,7 @@
     position: relative;
   }
 
-  &__overlay {
+  &__link:before {
     @extend %absolute__content;
 
     @include transition(all 0.4s);
