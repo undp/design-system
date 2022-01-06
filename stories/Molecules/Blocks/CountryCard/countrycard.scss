@@ -14,6 +14,7 @@
 }
 
 .country-card {
+  overflow: hidden;
   @include devicebreak(medium) {
     margin-top: $spacing-96;
 
@@ -22,15 +23,16 @@
         @include transform(translateY(-50px));
       }
 
+      a:before {
+        opacity: 1;
+        top: -50px;
+        content: '';
+      }
+
       .country {
         &-card {
-          &__overlay {
-            opacity: 1;
-            top: -50px;
-          }
-
           &__caption {
-            opacity: 1;
+            transform: translateY(-100%);
 
             p {
               opacity: 1;
@@ -55,6 +57,9 @@
       height: auto;
 
       &--active {
+        a:before {
+          opacity: 1;
+        }
         .country {
           &-card {
             &__caption {
@@ -63,10 +68,6 @@
               p {
                 opacity: 1;
               }
-            }
-
-            &__overlay {
-              opacity: 1;
             }
           }
         }
@@ -83,7 +84,7 @@
     }
   }
 
-  &__link {
+  a {
     @extend %img_none;
 
     border: 0;
@@ -100,7 +101,7 @@
     position: relative;
   }
 
-  &__overlay {
+  a:before {
     @extend %absolute__content;
 
     @include transition(all 0.4s);
@@ -112,9 +113,9 @@
 
   &__caption {
     background: $color-white;
-    bottom: 0;
+    @include transform(translateY(0));
+    @include transition(all 0.3s);
     left: 0;
-    opacity: 0;
     padding-top: $spacing-24;
     position: absolute;
     width: 100%;
