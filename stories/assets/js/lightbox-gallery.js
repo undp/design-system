@@ -3,7 +3,7 @@
  */
 export function lightbox_Gallery() {
    var lightboxDescription = GLightbox({
-      selector: '.glightbox2',
+      selector: '.glightbox',
       draggable: true,
   });
 
