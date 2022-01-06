@@ -13,6 +13,29 @@
     display: flex;
   }
 
+  @include devicebreak(medium) {
+    .cta__link.cta--arrow {
+      width: 100%;
+
+      &::after {
+        background-position: right top;
+      }
+    }
+  }
+
+  @include devicebreak(large) {
+    .cta__link.cta--arrow {
+      &::after {
+        margin-left: 0.75rem;
+        width: 0.813rem;
+      }
+
+      &:hover::after {
+        width: calc(100% - 6rem);
+      }
+    }
+  }
+
   &::before {
     content: '';
   }
@@ -22,10 +45,43 @@
       @include transform(translateX(0));
     }
 
-    .cta--arrow::after {
+    .cta__link.cta--arrow::after {
       background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
       margin-left: 0.25rem;
-      width: 100px;
+      width: 6.25rem;
+
+      @include devicebreak(medium) {
+        max-width: 16.25rem;
+        width: calc(100% - 6.25rem);
+
+        &:hover::after {
+          width: calc(100% - 6.25rem);
+        }
+      }
+
+      @include devicebreak(large) {
+        width: 6.25rem;
+      }
+    }
+  }
+
+  .feature__cta.large-8.medium-8 {
+    .cta__link.cta--arrow::after {
+      @include devicebreak(medium) {
+        max-width: 6.25rem;
+      }
+    }
+  }
+
+  .feature__cta.medium-3 {
+    .cta__link.cta--arrow::after {
+      @include devicebreak(medium) {
+        margin-left: 0;
+      }
+
+      @include devicebreak(large) {
+        margin-left: 0.75rem;
+      }
     }
   }
 
@@ -79,6 +135,10 @@
   position: relative;
 
   @include devicebreak(medium) {
+
+    // color map
+    $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green': rgba(92 222 83 / 82%), 'blue': rgba(94 232 246 / 82%));
+
     @include transform(translateX(-105%));
     @include transition(transform 0.3s);
 
@@ -88,35 +148,13 @@
     position: absolute;
     z-index: 1;
 
-    &.yellow {
-      background-color: $color-yellow;
+    @each $name, $color in $colors {
+      &.#{$name} {
+        background-color: #{$color};
 
-      &::before {
-        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.8));
-      }
-    }
-
-    &.red {
-      background-color: $color-red;
-
-      &::before {
-        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgb(230 45 45 / 78%));
-      }
-    }
-
-    &.green {
-      background-color: $color-green;
-
-      &::before {
-        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgb(92 222 83 / 82%));
-      }
-    }
-
-    &.blue {
-      background-color: $color-azure;
-
-      &::before {
-        background: transparent linear-gradient(207deg, hsla(0, 0%, 100%, 0.2) 30%, rgb(94 232 246 / 82%));
+        &::before {
+          @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
+        }
       }
     }
   }
@@ -266,7 +304,36 @@
 
     &::before {
       @include devicebreak(medium) {
-        background: transparent linear-gradient(153deg, hsla(0, 0%, 100%, 0.2) 30%, rgba(255, 235, 0, 0.8));
+        background:
+          transparent
+          linear-gradient(153deg,
+          hsla(0, 0%, 100%, 0.2) 30%,
+          rgba(255, 235, 0, 0.8));
+      }
+    }
+  }
+
+  .feature__card {
+    @include devicebreak(medium) {
+      .cta__link.cta--arrow {
+        width: 100%;
+
+        &::after {
+          margin-left: inherit;
+        }
+      }
+    }
+
+    .feature__cta.medium-3 {
+      .cta__link.cta--arrow::after {
+        @include devicebreak(medium) {
+          margin-right: 0;
+        }
+
+        @include devicebreak(large) {
+          margin-left: inherit;
+          margin-right: 0.75rem;
+        }
       }
     }
   }

@@ -516,4 +516,8 @@
   }
 }
 
+@mixin background($background...) {
+  background: linear-gradient($background);
+}
+
 /* placehoder end */
