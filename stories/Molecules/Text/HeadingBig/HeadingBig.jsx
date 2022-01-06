@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import viewport from '../../../assets/js/viewport';
 import './headingbig.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
+import { List } from '../../../Atom/Typography/Lists/Lists';
 import '../../../assets/js/smoothbgchange';
 
 export const transition_options = {
@@ -9,7 +10,7 @@ export const transition_options = {
   false: 'heading-container',
 };
 
-export const HeadingBig = ({ headerText, descriptionText, ...args }) => {
+export const HeadingBig = ({ headerText, descriptionText, listData, ...args }) => {
   useEffect(() => {
     viewport('.heading-big');
     viewport('.heading-big h2');
@@ -24,6 +25,10 @@ export const HeadingBig = ({ headerText, descriptionText, ...args }) => {
       </div>
       <div className="cell  medium-6">
         <Heading className="left-right" type="4" label={descriptionText} />
+        {
+          listData &&
+          <List data={listData} type="ul"></List>
+        }
       </div>
     </div>
   );
