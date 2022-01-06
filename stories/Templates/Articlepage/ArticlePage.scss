@@ -15,6 +15,12 @@
 
 .mt-h {
   margin-top: 4.25rem;
+  @include devicebreak(medium) {
+    margin-top: 8.9375rem;
+  }
+  @include devicebreak(xlarge) {
+    margin-top: 10.75rem;
+  }
 }
 
 .blockq {
