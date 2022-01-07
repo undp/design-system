@@ -57,7 +57,6 @@ class MultiSelect {
     this.$window.click((evt) => {
       if (this.$currentSelect && !this.$currentSelect.is(evt.target)
         && this.$currentSelect.has(evt.target).length === 0 && this.$currentSelect.hasClass(this.classOpen)) {
-          alert("hi");
         this.$currentSelect.removeClass(this.classOpen);
         this.$selectTrigger.attr('aria-expanded', 'false');
       }
