@@ -90,8 +90,7 @@
         width: 100%;
       }
 
-      &:hover::before,
-      &.card-gradient::before {
+      &:hover::before {
         opacity: 0.75;
       }
     }
@@ -125,7 +124,7 @@
     a {
       @include devicebreak(medium) {
         &::before {
-          background-image: linear-gradient(315deg, $color-yellow, transparent 80%);
+          @include transform(scaleX(-1));
         }
       }
     }
