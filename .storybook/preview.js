@@ -120,19 +120,21 @@ const getLangCode=(Story,context)=>{
   )
 }
 
-const sbFrameReset=(Story,context)=>{
+const sbFrameReset = (Story, context) => {
   // Get Storybook Iframe's body element.
   const iframeBody = document.querySelector('body');
   // Get Storybook sidebar items in an array.
   const sidebarItem = parent.document.querySelectorAll('.sidebar-item');
   // Add click event listner on each sidebar item.
-  sidebarItem.forEach(function(item, i){
+  sidebarItem.forEach(function (item, i) {
     item.addEventListener('click', function (e) {
-      // Remove body class only if it exists.
-      if (iframeBody.classList.contains('sdgmodal-open')) {
-        iframeBody.classList.remove('sdgmodal-open');
+      // Classes to remove.
+      const classNames = ['sdgmodal-open', 'color-blue'];
+      // Check if above classes exist in `body` element and remove them.
+      if (classNames.some(className => iframeBody.classList.contains(className))) {
+        iframeBody.classList.remove(...classNames);
       }
-    }, false);
+    });
   });
   return (
     <Story {...context} />
