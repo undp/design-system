@@ -10,7 +10,7 @@ export const getData = (lang) => {
       const $mobileMegaWrapper = $('.mobile-mega-wrapper');
       $megaWrapper.empty();
       $mobileMegaWrapper.empty();
-      resData.data.forEach((item, index) => {
+      return  resData.data.forEach((item, index) => {
         const submenus = item.submenus
           .map((menu, index) => `<li tabindex="${index+1}" id="${menu.link.id}-${item.id}" class="${
             index === 0 ? 'active' : ''
