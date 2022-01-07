@@ -14,10 +14,16 @@
 }
 
 .country-card {
-  overflow: hidden;
+  &.glide__slide{
+    height: fit-content;
+  }
+
   @include devicebreak(medium) {
     margin-top: $spacing-96;
 
+    img{
+      height: auto;
+    }
     &:hover {
       img {
         @include transform(translateY(-50px));
@@ -89,8 +95,12 @@
 
     border: 0;
     display: block;
-    height: 100%;
+    height: auto;
     position: relative;
+    overflow: hidden;
+    &:hover{
+      overflow: visible;
+    }
   }
 
   img {
