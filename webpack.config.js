@@ -46,16 +46,24 @@ module.exports = [
     resolve: {
       // @TODO: Need to find a valid solution
       alias: {
-        "../../../../../../assets/images/Icon/Bars.svg": path.resolve(__dirname, 'stories/assets/images/Icon/Bars.svg'),
-        "../../../../../../assets/images/Icon/Chevron-down.svg": path.resolve(__dirname, 'stories/assets/images/Icon/Chevron-down.svg'),
-        "../../../../../../assets/images/Icon/Bars.svg": path.resolve(__dirname, 'stories/assets/images/Icon/Bars.svg'),
-        "../../../../assets/images/Icon/Chevron-down.svg": path.resolve(__dirname, 'stories/assets/images/Icon/Chevron-down.svg'),
-        "../../../../../../assets/images/Icon/Times-blue.svg": path.resolve(__dirname, 'stories/assets/images/Icon/Times-blue.svg')
+        "../../../../../../assets/icons/Bars.svg": path.resolve(__dirname, 'stories/assets/icons/Bars.svg'),
+        "../../../../../../assets/icons/Chevron-down.svg": path.resolve(__dirname, 'stories/assets/icons/Chevron-down.svg'),
+        "../../../../assets/icons/Chevron-down.svg": path.resolve(__dirname, 'stories/assets/icons/Chevron-down.svg'),
+        "../../../../../../assets/icons/Times-blue.svg": path.resolve(__dirname, 'stories/assets/icons/Times-blue.svg')
       },
     },
     optimization: {
       minimizer: [
-        new CssMinimizerPlugin(),
+        new CssMinimizerPlugin({
+          minimizerOptions: {
+            preset: [
+              "default",
+              {
+                discardComments: { removeAll: true },
+              },
+            ],
+          },
+        }),
       ],
     },
     plugins: [
@@ -63,7 +71,7 @@ module.exports = [
       // to dist folder
       new CopyPlugin({
         patterns: [
-          { from: "./stories/assets/images/Icon", to: "images" },
+          { from: "./stories/assets/icons", to: "images" },
         ]
       }),
       // remove .js file from every .css file
