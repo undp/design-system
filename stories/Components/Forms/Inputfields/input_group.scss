@@ -48,6 +48,9 @@
     margin-bottom: $spacing-08;
     padding: 0.625rem;
     width: 100%;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
 
     &::placeholder {
       color: $color-gray-500;

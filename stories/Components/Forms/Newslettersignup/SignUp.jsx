@@ -17,7 +17,7 @@ export const SignUp = ({
           <InputTag
             type="submit"
             id="submit"
-            Value={button}
+            value={button}
             className="form-submit button button--primary"
           />
         </div>
