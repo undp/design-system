@@ -2,7 +2,19 @@
 @import '../../../assets/scss/breakpoints';
 @import '../../../assets/scss/variables';
 
-a {
+// link animation
+@keyframes lineLoop-animation {
+  0% {
+    background-position: 100% 100%, -30px 100%;
+    background-size: 100% 2px, 0 2px;
+  }
+
+  to {
+    background-position: calc(100% + 30px) 100%, 0 100%;
+    background-size: 0 2px, 100% 2px;
+  }
+}
+a.animated-link {
   @extend %paragragh-font-20;
 
   background-image:

@@ -74,7 +74,7 @@ module.exports = [
           { from: "./stories/assets/icons", to: "images" },
         ]
       }),
-      // remove .js file from every .css file
+      // remove .js file which is generated from every css file
       new FixStyleOnlyEntriesPlugin(),
       new MiniCssExtractPlugin({
         filename: '[name].min.css',
