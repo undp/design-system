@@ -14,24 +14,29 @@
 }
 
 .country-card {
-  &.glide__slide{
-    height: 100%;
-  }
-
   @include devicebreak(medium) {
+    &.glide__slide{
+      height: 100%;
+      a{
+        overflow: hidden;
+        @include transition(all 0.4s);
+        @include transform(translateY(0));
+      }
+      &:hover{
+        a{
+          overflow: visible;
+          @include transform(translateY(-50px));
+        }
+      }
+    }
     margin-top: $spacing-96;
 
     img{
       height: auto;
     }
     &:hover {
-      img {
-        @include transform(translateY(-50px));
-      }
-
       a:before {
         opacity: 1;
-        top: -50px;
         content: '';
       }
 
@@ -97,25 +102,17 @@
     display: block;
     height: auto;
     position: relative;
-    overflow: hidden;
-    &:hover{
-      overflow: visible;
-    }
   }
 
   img {
     @extend %img-cover;
-
     @include transition(all 0.4s);
-
     position: relative;
   }
 
   a:before {
     @extend %absolute__content;
-
     @include transition(all 0.4s);
-
     background: linear-gradient(45deg, rgba(255, 235, 0, 0.3), transparent);
     opacity: 0;
     z-index: 1;
