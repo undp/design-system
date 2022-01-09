@@ -140,8 +140,8 @@ const ArticlePage = ({
             />
           </div>
           <div className="cell medium-7 medium-offset-2">
-            <P label={paraLabel.detail} />
-            <P label={paraLabel.detail} />
+            <P label={para.para1} />
+            <P label={para.para2} />
           </div>
         </div>
         <div className="grid-x section-head">
