@@ -15,7 +15,7 @@
 
 .country-card {
   &.glide__slide{
-    height: fit-content;
+    height: 100%;
   }
 
   @include devicebreak(medium) {
