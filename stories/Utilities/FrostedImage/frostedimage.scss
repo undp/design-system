@@ -3,13 +3,14 @@
   position: relative;
 
   &::before {
-    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
     backdrop-filter: blur(80px);
     background: rgba(247, 247, 247, 0.8);
     content: '';
     height: 100%;
     position: absolute;
-    width: 62%;
+    width: 100%;
+    z-index: 9;
   }
 
   img {

@@ -3,8 +3,8 @@ import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 import { desktopView } from '../../../../assets/js/undp';
 import { Icons } from '../../../../Atom/Icons/Icons';
-import IconsGlobe from '../../../../assets/images/Icon/Globe.svg';
-import IconsSearch from '../../../../assets/images/Icon/Search.svg';
+import IconsGlobe from '../../../../assets/icons/Globe.svg';
+import IconsSearch from '../../../../assets/icons/Search.svg';
 import { Logo } from '../../../../Atom/Logo/logo';
 import { Menu } from '../../Menu/Menu';
 import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
@@ -46,10 +46,11 @@ const CountrySiteHeader = ({
               data={languageswitcherData.languagedata}
               headerText={languageswitcherData.headerText}
             />
-            <button className="menu-hamburger">
-              <span className="hamburger-line line-top" />
-              <span className="hamburger-line line-middle" />
-              <span className="hamburger-line line-bottom" />
+            <button class="menu-hamburger" aria-label="menu-icon">
+              <span class="hamburger-line line-top"/>
+              <span class="hamburger-line line-middle"/>
+              <span class="hamburger-line line-bottom"/>
+              Nav toggle
             </button>
             <button className="icon-globe">
               <Icons src={IconsGlobe} alt="icon-global" />

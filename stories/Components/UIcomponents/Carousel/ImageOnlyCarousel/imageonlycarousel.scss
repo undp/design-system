@@ -22,9 +22,10 @@
   }
 
   .glide {
-    // &__track {
-    //   margin-right: -100%;
-    // }
+    
+    &__bullets{
+      margin-bottom: $spacing-48;
+    }
 
     &__arrows {
       @extend %carousel_arrows;
@@ -55,11 +56,6 @@
 [dir='rtl'] {
   .image-carousel {
     .glide {
-      // &__track {
-      //   margin-left: -100%;
-      //   margin-right: 0;
-      // }
-
       &__arrow {
         &:first-child {
           margin-left: 0.75rem;

@@ -2,6 +2,8 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
+$colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "azure": $color-azure);
+
 .publication-card {
   display: inline-block;
 
@@ -10,15 +12,12 @@
   }
 
   &:hover {
-    .publication_thumbnail__image {
-      &::after {
-        opacity: 0.75;
-      }
-    }
-
-    .card_thumbnail__image {
-      &::before {
-        opacity: 0.75;
+    .publication-thumbnail__image {
+      @each $name, $color in $colors {
+        &.#{$name}:after {
+          opacity: 0.75;
+          @include background-image(42deg, #{$color}, transparent 80%);
+        }
       }
     }
   }
@@ -94,7 +93,6 @@
     align-items: center;
     background-image: none;
     display: inline;
-    float: right;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -125,8 +123,6 @@
 [dir='rtl'] {
   .publication-card {
     &__readmore {
-      float: left;
-
       .external-link {
         margin-left: 0;
         margin-right: $spacing-12;
@@ -141,8 +137,15 @@
       }
     }
 
-    &__download {
-      float: right;
+    &:hover {
+      .publication-thumbnail__image {
+        @each $name, $color in $colors {
+          &.#{$name}:after {
+            opacity: 0.75;
+            @include background-image(318deg, #{$color}, transparent 80%);
+          }
+        }
+      }
     }
   }
 }

@@ -79,30 +79,6 @@
 
 /* mixing  end */
 
-//loader animation
-@keyframes loader-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-// link animation
-@keyframes lineLoop-animation {
-  0% {
-    background-position: 100% 100%, -30px 100%;
-    background-size: 100% 2px, 0 2px;
-  }
-
-  to {
-    background-position: calc(100% + 30px) 100%, 0 100%;
-    background-size: 0 2px, 100% 2px;
-  }
-}
-
 /* placehoder start */
 %paragragh-font-14 {
   font-size: $font-size-12;
@@ -514,6 +490,10 @@
       height: 7.1875rem;
     }
   }
+}
+
+@mixin background($background...) {
+  background: linear-gradient($background);
 }
 
 /* placehoder end */

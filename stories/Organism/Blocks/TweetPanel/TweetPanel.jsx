@@ -7,16 +7,11 @@ import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const TweetPanel = ({ data, headertext }) => {
   useEffect(() => {
-    viewport('.twitter-panel .tweet-card');
-    viewport('.twitter-header');
+    viewport('.twitter-panel h2');
   }, []);
   return (
     <div className="grid-x grid-margin-x twitter-panel">
-      <div className="cell medium-11 twitter-header left-right medium-offset-1">
-        <Heading type="2" label={headertext} />
-        <span className="twitter" />
-      </div>
-
+      <Heading className="cell medium-11 left-right medium-offset-1" type="2" label={headertext} />
       {data.map((item, index) => (
         <TweetCard
           contenttile={item.contenttile}

@@ -1,83 +1,70 @@
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/breakpoints";
+@import "../../assets/scss/variables";
 
 /* toggle search start */
-.toggle-search {
-  background: $color-white url(#{$img-path-Iconback}/Search_black.svg) no-repeat 0 0/1.75rem;
-  border: 0;
-  border-bottom: 1px solid $color-black;
-  cursor: pointer;
-  height: 2.625rem;
-  padding: 0 0 0.625rem;
-  text-decoration: underline;
-  width: 1.75rem;
-}
-
-.select-wrapper {
-  display: none;
-
-  &.show-filter {
-    display: block;
+.search-filter {
+  .expand-search {
+    max-width: 296px;
   }
-
-  .multi-select {
+  .select-wrapper {
+    .multi-select {
+      padding-top: $spacing-24;
+    }
+  }
+  .selected-chips {
+    max-width: 296px;
     padding-top: $spacing-24;
-  }
-}
 
-.selected-chips {
-  max-width: 296px;
-  padding-top: $spacing-24;
+    a {
+      &:first-child {
+        display: none;
+      }
+    }
 
-  a {
-    &:first-child {
-      display: none;
+    .chips {
+      display: inline-block;
+      margin: 0 0.75rem 0.75rem 0;
     }
   }
 
   .chips {
-    display: inline-block;
-    margin: 0 0.75rem 0.75rem 0;
-  }
-}
-
-.chips {
-  font-size: $font-size-16;
-}
-
-.clear_section {
-  display: none;
-
-  &.show-clear {
-    display: block;
-  }
-}
-
-.clear_chips {
-  border-bottom: 1px solid $color-red;
-  cursor: pointer;
-  font-size: $font-size-16;
-}
-
-.active-filter {
-  display: none;
-  padding-top: $spacing-16;
-
-  &.show-activefilter {
-    display: block;
-  }
-
-  span {
-    color: $color-gray-600;
-    font-family: $Font-Family-ProximaNova;
     font-size: $font-size-16;
-    font-weight: 600;
-    text-transform: uppercase;
+  }
+
+  .clear_section {
+    display: none;
+
+    &.show-clear {
+      display: block;
+    }
+  }
+
+  .clear_chips {
+    border-bottom: 1px solid $color-red;
+    cursor: pointer;
+    font-size: $font-size-16;
+  }
+
+  .active-filter {
+    display: none;
+    padding-top: $spacing-16;
+
+    &.show-activefilter {
+      display: block;
+    }
+
+    span {
+      color: $color-gray-600;
+      font-family: $Font-Family-ProximaNova;
+      font-size: $font-size-16;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .selected-chips {
     .chips {
       margin: 0 0 $spacing-12 $spacing-12;

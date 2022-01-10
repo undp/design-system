@@ -8,7 +8,7 @@ export const Chips = ({ label, Type }) => {
   }
 
   return (
-    <a className={['chips', `chips__${type}`].join(' ')} href="#" role="button" aria-pressed="false">
+    <a className={['chips', `chips__${type}`].join(' ')} href="#" role="button">
       {label}
     </a>
   );

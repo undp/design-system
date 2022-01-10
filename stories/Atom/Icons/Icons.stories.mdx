@@ -16,13 +16,7 @@ const arrfor = data.icons;
 <style>{`
   #story--foundation-icons--icons {
     display: flex;
-    flex-wrap: wrap;    
-    align-items: center;
-  }
-  #story--foundation-icons--icons > div {
-    width: 25%;
-    text-align: center;
-    margin-bottom: 30px;
+    flex-wrap: wrap;
   }
   #story--foundation-icons--icons > div > div {
       margin: 0 auto;
@@ -44,15 +38,15 @@ Use Icons that are recognizable and accompany corresponding text labels where po
   <Story name="Icons" parameters={{ docs: { source: { code: 
     arrfor.map((item, i) => {
          if(item.type == 'img') {
-           return (`<img src="static/media/${item.name}.svg" alt="icon"/>\n`);
+           return (`<img src="icons/${item.name}.svg" alt="icon"/>\n`);
           } else {
            return (`<span class="${item.name}"></span>\n`);
          }
-      })
+      }).join('')
    } } }}>
     {arrfor.map((item, i) => {
       if(item.type == 'img') {
-        return (<div><img src={`static/media/${item.name}.svg`} alt="icon"/>
+        return (<div><img src={`icons/${item.name}.svg`} alt="icon"/>
         <p>{`${item.label}`}</p></div>);
       } else {
         return (<div><span class={`${item.name}`}></span><p>{`${item.label}`}</p></div>);

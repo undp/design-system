@@ -12,21 +12,16 @@
   position: relative;
 
   &.expanded {
-    .selected {
+    button {
       border-bottom: 0;
 
       &::after {
         @include transform(translateY(-50%) rotate(-180deg));
       }
     }
-
-    .options {
-      border-top: 0;
-      display: block;
-    }
   }
 
-  .selected {
+  button {
     @extend %select_default;
 
     background: $color-white;
@@ -87,7 +82,7 @@
 
 [dir="rtl"] {
   .select-box {
-    .selected {
+    button {
       @extend %select_rtl;
 
       &::after {

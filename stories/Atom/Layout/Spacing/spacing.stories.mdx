@@ -1,7 +1,12 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { Spacing } from './spacing';
 
-<Meta title="Foundation/Layout/Spacing" component={Spacing} />
+<Meta title="Foundation/Layout/Spacing" component={Spacing} parameters={{
+    viewMode: "docs",
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  }}/>
 
 <style>{`
   div#story--atoms-spacing--spacing {
@@ -28,12 +33,11 @@ The following units can be applied to margin or padding properties, vertically o
   return <Spacing></Spacing>;
 </Story>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>spacing.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Usage
+
+- Take HTML from the HTML tab in canvas
+- <u>To use SCSS include the following files in your implementation</u>
+- Include the common SCSS files like normalize, variables from <code>assets/scss</code>
+- Component SCSS file: <code>spacing.scss</code>
+- <u>To use CSS include the following files in your implementation</u>
+- The compiled CSS file from <code>assets/css/style.css</code>

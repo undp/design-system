@@ -4,7 +4,7 @@ class MultiSelect {
 
     this.$window = $(window);
     this.$currentSelect = $(element);
-    this.$selectTrigger = this.$currentSelect.find('.select-control');
+    this.$selectTrigger = this.$currentSelect.find('button').first();
   }
 
   init() {
@@ -35,7 +35,7 @@ class MultiSelect {
 
         const $rowHasSubmenu = $(ev.currentTarget).closest('li.has-submenu');
         const $caretButton = $rowHasSubmenu.find('button.caret');
-        $rowHasSubmenu.toggleClass('open-submenu');
+        $rowHasSubmenu.toggleClass('open');
 
         if ($rowHasSubmenu.attr('aria-expanded') === 'true') {
           $rowHasSubmenu.attr('aria-expanded', 'false');
@@ -80,4 +80,3 @@ export function multiSelect() {
     multiSelect.init();
   });
 }
-

@@ -56,6 +56,11 @@
       }
     }
   }
+  &.glide__slide {
+    @include devicebreak(medium) {
+      height: auto;
+    }
+  }
 }
 
 [dir='rtl'] {

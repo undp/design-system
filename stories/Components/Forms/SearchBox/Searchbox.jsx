@@ -1,16 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export const Searchbox = ({
-  id, type, rows, cols, placeholder, required, mode, labelText, errorText, disabled, minlength, helpText,
-}) => (
-  <>
-    <div className={['input-group', `${mode}`].join(' ')}>
-      {labelText && <label htmlFor={[`${type}`]}>{ labelText }</label>}
-      <div className={[`${type}-field ${mode}`].join(' ')}>
-        <input type={type} disabled={disabled} placeholder={placeholder} minLength={minlength} cols={cols} rows={rows} className={['input__controls', `${type} ${mode}`].join(' ')} />
+  type, element, placeholder, labelText, errorText, helpText, State,
+}) => {
+  const InputTag = `${element}`;
+  let state;
+  const states = ['Focus', 'Error', 'Disabled'];
+  state = states.includes(State) ? State.toLowerCase() : '';
+  const inputElement = useRef(null);
+  useEffect(() => {
+    if (state == 'focus') {
+      inputElement.current.focus();
+    } else {
+      inputElement.current.blur();
+    }
+  }, [state]);
+  return (
+    <>
+      <div className={['input-group', `${state}`].join(' ')}>
+        {labelText && <label htmlFor={[`${type}`]}>{ labelText }</label>}
+        <InputTag
+          ref={inputElement}
+          type={type}
+          disabled={State == 'Disabled'}
+          placeholder={placeholder}
+          name={type}
+        />
+        {helpText && <p className="help">{ helpText }</p>}
+        {(State == 'Error') && <p className="error">{ errorText }</p>}
       </div>
-      {helpText && <div htmlFor={[`${type}`]} className={[`${mode}`].join(' ')}>{ helpText }</div>}
-      {errorText && <p className={[`${mode}`].join(' ')}>{ errorText }</p>}
-    </div>
-  </>
-);
+    </>
+  );
+};

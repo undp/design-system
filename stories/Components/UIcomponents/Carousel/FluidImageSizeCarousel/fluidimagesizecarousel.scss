@@ -82,17 +82,11 @@
     }
   }
 
-  
-
   .glide {
-
-    &__slides {
-      margin-top: 3rem;
+    
+    &__bullets {
+      margin-bottom: $spacing-48;
     }
-
-    // &__track {
-    //   // margin-right: -100%;
-    // }
 
     &__arrows {
       @extend %carousel_arrows;

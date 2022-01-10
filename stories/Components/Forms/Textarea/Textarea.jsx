@@ -18,7 +18,7 @@ export const Textarea = ({
     <>
       <div className={['input-group', `${state}`].join(' ')}>
         {labelText && <label htmlFor={[`${type}`]}>{ labelText }</label>}
-        <textarea ref={inputElement} type={type} disabled={State == 'Disabled'} placeholder={placeholder} minLength={minlength} cols={cols} rows={rows} className={[`${type}`].join(' ')} />
+        <textarea ref={inputElement} type={type} disabled={State == 'Disabled'} placeholder={placeholder} minLength={minlength} cols={cols} rows={rows} />
         {helpText && <p className="help">{ helpText }</p>}
         {(State == 'Error') && <p className="error">{ errorText }</p>}
       </div>

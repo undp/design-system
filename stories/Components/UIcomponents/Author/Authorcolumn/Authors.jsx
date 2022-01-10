@@ -39,25 +39,27 @@ export const Author = ({
           {data.slice(0, decNumber).map((item, index) => (
             <>
               {Link == 'False' ? (
-                <div className="author-wrapper__box" key={index}>
+                <div className="author-box" key={index}>
                   {Image !== 'False' && decNumber <= 3 ? (
                     <Authorimg image={image} alt={alt} variant="Small" />
                   ) : (<></>)}
-                  <div className="author__label">
+                  <div className="author-label">
                     <Heading type="6" label={item.Authorlabel} />
                     <P label={item.Authortext} />
                   </div>
                 </div>
               ) : (
-                <a href="#" className="author-wrapper__box" key={index}>
-                  {Image !== 'False' && decNumber <= 3 ? (
-                    <Authorimg image={image} alt={alt} variant="Small" />
-                  ) : (<></>)}
-                  <div className="author__label">
-                    <Heading type="6" label={item.Authorlabel} />
-                    <P label={item.Authortext} />
-                  </div>
-                </a>
+                <div className="author-box" key={index}>
+                  <a href="#">
+                    {Image !== 'False' && decNumber <= 3 ? (
+                      <Authorimg image={image} alt={alt} variant="Small" />
+                    ) : (<></>)}
+                    <div className="author-label">
+                      <Heading type="6" label={item.Authorlabel} />
+                      <P label={item.Authortext} />
+                    </div>
+                  </a>
+                </div>
               )}
             </>
           ))}
@@ -67,25 +69,27 @@ export const Author = ({
           {data.slice(0, decNumber).map((item, index) => (
             <>
               {Link == 'False' ? (
-                <div className={['author-wrapper__box', 'cell', `${size}`].join(' ')} key={index}>
+                <div className={['author-box', 'cell', `${size}`].join(' ')} key={index}>
                   {Image !== 'False' && decNumber <= 3 ? (
                     <Authorimg image={image} alt={alt} variant="Small" />
                   ) : (<></>)}
-                  <div className="author__label">
+                  <div className="author-label">
                     <Heading type="6" label={item.Authorlabel} />
                     <P label={item.Authortext} />
                   </div>
                 </div>
               ) : (
-                <a href="#" className={['author-wrapper__box', 'cell', `${size}`].join(' ')} key={index}>
-                  {Image !== 'False' && decNumber <= 3 ? (
-                    <Authorimg image={image} alt={alt} variant="Small" />
-                  ) : (<></>)}
-                  <div className="author__label">
-                    <Heading type="6" label={item.Authorlabel} />
-                    <P label={item.Authortext} />
-                  </div>
-                </a>
+                <div className={['author-box', 'cell', `${size}`].join(' ')} key={index}>
+                  <a href="#">
+                    {Image !== 'False' && decNumber <= 3 ? (
+                      <Authorimg image={image} alt={alt} variant="Small" />
+                    ) : (<></>)}
+                    <div className="author-label">
+                      <Heading type="6" label={item.Authorlabel} />
+                      <P label={item.Authortext} />
+                    </div>
+                  </a>
+                </div>
               )}
             </>
           ))}

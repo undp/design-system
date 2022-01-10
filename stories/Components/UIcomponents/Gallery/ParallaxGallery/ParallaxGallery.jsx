@@ -13,19 +13,21 @@ export const ParallaxGallery = ({
   }, []);
 
   let background;
-  const backgrounds = ["Grey"];
+  const backgrounds = ["Gray"];
   background = backgrounds.includes(Background) ? Background.toLowerCase() : '';
 
+  const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+
   return (
-    <div className="grid-x grid-margin-x parallax-gallery-row">
-      <div className={['medium-6 cell parallax-gallery-row__left-col', `${[`${background}`]}`].join(' ').trim()}>
-        <div className="parallax-gallery-row__content">
+    <div className="grid-x grid-margin-x parallax-gallery">
+      <div className={cls('medium-6', 'cell', 'parallax-gallery-left', `${[`${background}`]}`)}>
+        <div className="parallax-gallery-content">
           <Heading type="5" label={titleText} />
           <P label={descText} />
           <Ctalink label={buttonText} />
         </div>
       </div>
-      <div className="medium-6 cell parallax-gallery-row__right-col overflow-hidden">
+      <div className="medium-6 cell parallax-gallery-right">
         <div className="parallax-gallery-images">
           <div className='column' role="img" aria-label="parallax gallery images">
             <img src={galleryimg1} alt="Image 1" />

@@ -29,8 +29,12 @@
 
 [dir='rtl'] {
   .footer__condition {
-    float: left;
+    float: right;
     padding-right: 0;
+
+    @include devicebreak(medium) {
+      float: left;
+    }
 
     li {
       text-align: right;

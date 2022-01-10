@@ -27,6 +27,10 @@
     }
 
     .heading-big {
+      @include devicebreak(medium) { 
+        padding-bottom: 25rem;
+      }
+
       ul li {
         margin-top: $spacing-40;
       }
@@ -37,16 +41,22 @@
       }
 
       h4 {
-        font-size: $spacing-32;
+        font-size: $spacing-24;
       }
     }
 
     &-hero {
       .breadcrumb {
-        @include devicebreak(small) {
-          margin-top: $spacing-64;
-          padding-left: $spacing-16;
+        margin-top: $spacing-16;
+        padding-left: $spacing-16;
+
+        @include devicebreak(medium) {
+          margin-top: $spacing-48;
         }
+      }
+
+      .pagehero-wrapper__title {
+        font-size: 3.1rem;
       }
     }
   }
@@ -89,7 +99,7 @@
       }
 
       &__bullets {
-        display: none;
+        margin-left: -10rem;
       }
     }
 
@@ -173,10 +183,8 @@
 
       &-hero {
         .breadcrumb {
-          @include devicebreak(small) {
-            margin-top: $spacing-64;
-            padding-right: $spacing-16;
-          }
+          padding-right: $spacing-16;
+          padding-left: 0;
         }
 
         .pagehero-wrapper__title {
@@ -185,6 +193,15 @@
           @include devicebreak(medium) {
             font-size: 3rem;
           }
+        }
+      }
+    }
+
+    &-support {
+      .glide {
+        &__bullets {
+          margin-left: 0rem;
+          margin-right: -10rem;
         }
       }
     }

@@ -21,11 +21,16 @@
     }
 
     &__content {
-      padding: 1.5rem 1rem;
+      padding: 0 $spacing-12 $spacing-24;
 
       @include devicebreak(medium) {
         margin: auto;
         max-width: 28rem;
+        padding: 1.5rem 0.5rem;
+      }
+
+       @include devicebreak(xlarge) {
+        padding: 0;
       }
 
       h5 {
@@ -59,7 +64,7 @@
       column-gap: $spacing-12;
       margin: auto;
       width: 100%;
-      @include devicebreak(large) {
+      @include devicebreak(xlarge) {
         column-count: 3;
         column-gap: $spacing-24;
       }
@@ -77,9 +82,10 @@
           background-image: none;
         }
         &:hover {
-           @include devicebreak(large) {
             .image-section__description {
-              display: block;
+              display: none;
+              @include devicebreak(xlarge) {
+               display: block;
             }
           }
         }
@@ -104,10 +110,13 @@
       bottom: 0;
       display: none;
       .image__caption {
-        display: block;
-        border-bottom: 0;
-        padding: $spacing-32 $spacing-24;
-        margin-top: 0;
+        display: none;
+        @include devicebreak(xlarge) { 
+          display: block;
+          border-bottom: 0;
+          padding: $spacing-32 $spacing-24;
+          margin-top: 0;
+        }
 
         &_para {
           color: $color-white;

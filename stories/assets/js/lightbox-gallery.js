@@ -3,8 +3,9 @@
  */
 export function lightbox_Gallery() {
    var lightboxDescription = GLightbox({
-      selector: '.glightbox2',
+      selector: '.glightbox',
       draggable: true,
+      moreLength: 0,
   });
 
   //caption alignment set according image block

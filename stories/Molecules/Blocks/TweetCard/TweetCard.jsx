@@ -23,13 +23,13 @@ export const TweetCard = ({
       <a href={link} target="_blank" rel="noreferrer">
         <img src={imgback} alt={imgback} />
         <div className="tweet-card__header">
-          <P className="tweet-card__header--title" label={contenttile} />
+          <P label={contenttile} />
           <P className="tweet-card__header--subtitle" label={contentsubtitle} />
         </div>
       </a>
       <div className="tweet-card__body">
-        <P className="tweet-card__body--description" label={descriptiontext} />
-        <P className="tweet-card__body--date" label={contentdate} />
+        <P label={descriptiontext} />
+        <time>{contentdate}</time>
       </div>
       <Ctalink label={button} Type="Space" />
     </div>

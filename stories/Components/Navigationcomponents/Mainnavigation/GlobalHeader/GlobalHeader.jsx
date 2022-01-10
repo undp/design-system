@@ -3,8 +3,8 @@ import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 import { desktopView } from '../../../../assets/js/undp';
 import { Icons } from '../../../../Atom/Icons/Icons';
-import IconsGlobe from '../../../../assets/images/Icon/Globe.svg';
-import IconsSearch from '../../../../assets/images/Icon/Search.svg';
+import IconsGlobe from '../../../../assets/icons/Globe.svg';
+import IconsSearch from '../../../../assets/icons/Search.svg';
 import { Logo } from '../../../../Atom/Logo/logo';
 import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
 import { Menu } from '../../Menu/Menu';
@@ -37,18 +37,19 @@ const GlobalHeader = ({
               data={languageswitcherData.languagedata}
               headerText={languageswitcherData.headerText}
             />
-            <button className="menu-icon menu-hamburger">
+            <button className="menu-icon menu-hamburger" aria-label='menu-icon'>
               <span className="hamburger-line line-top" />
               <span className="hamburger-line line-middle" />
               <span className="hamburger-line line-bottom" />
+              Nav toggle
             </button>
           </div>
           <div className="cell large-8 small-8 mid-nav">
-            {desktopView && <Menu data={leftNavigationData} />}
+            {desktopView && <Menu data={leftNavigationData} role='navigation' arialabel='Navigation'/>}
             <a href="#" className="logo">
               <Logo src={pnud} alt="UNDP Logo" />
             </a>
-            {desktopView && <Menu data={rightNavigationData} />}
+            {desktopView && <Menu data={rightNavigationData} role='navigation' arialabel='Main'/>}
           </div>
           <div className="cell large-2 small-2 top-right">
             <button className="icon-globe">

@@ -15,22 +15,35 @@
 
 .country-card {
   @include devicebreak(medium) {
+    &.glide__slide{
+      height: 100%;
+      a{
+        overflow: hidden;
+        @include transition(all 0.4s);
+        @include transform(translateY(0));
+      }
+      &:hover{
+        a{
+          overflow: visible;
+          @include transform(translateY(-50px));
+        }
+      }
+    }
     margin-top: $spacing-96;
 
+    img{
+      height: auto;
+    }
     &:hover {
-      img {
-        @include transform(translateY(-50px));
+      a:before {
+        opacity: 1;
+        content: '';
       }
 
       .country {
         &-card {
-          &__overlay {
-            opacity: 1;
-            top: -50px;
-          }
-
           &__caption {
-            opacity: 1;
+            transform: translateY(-100%);
 
             p {
               opacity: 1;
@@ -55,6 +68,9 @@
       height: auto;
 
       &--active {
+        a:before {
+          opacity: 1;
+        }
         .country {
           &-card {
             &__caption {
@@ -63,10 +79,6 @@
               p {
                 opacity: 1;
               }
-            }
-
-            &__overlay {
-              opacity: 1;
             }
           }
         }
@@ -83,28 +95,24 @@
     }
   }
 
-  &__link {
+  a {
     @extend %img_none;
 
     border: 0;
     display: block;
-    height: 100%;
+    height: auto;
     position: relative;
   }
 
   img {
     @extend %img-cover;
-
     @include transition(all 0.4s);
-
     position: relative;
   }
 
-  &__overlay {
+  a:before {
     @extend %absolute__content;
-
     @include transition(all 0.4s);
-
     background: linear-gradient(45deg, rgba(255, 235, 0, 0.3), transparent);
     opacity: 0;
     z-index: 1;
@@ -112,9 +120,9 @@
 
   &__caption {
     background: $color-white;
-    bottom: 0;
+    @include transform(translateY(0));
+    @include transition(all 0.3s);
     left: 0;
-    opacity: 0;
     padding-top: $spacing-24;
     position: absolute;
     width: 100%;

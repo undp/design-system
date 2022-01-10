@@ -14,8 +14,7 @@ export const navigationInitialize = (locale) => {
   $menuItem.on('mouseenter', function () {
     const id = $(this).attr('id');
     const $menuItem = $(document).find(`[data-menu-item-id='${id}']`);
-    $menuItem.siblings().removeClass('show-mega');
-    $menuItem.addClass('show-mega');
+    $menuItem.addClass('show-mega').siblings().removeClass('show-mega');
     $megaMenu.find('.sub-menu-content:first-child').addClass('active-content')
       .siblings().removeClass('active-content');
     $megaMenu.find('.submenu li:first-child').addClass('active').siblings().removeClass('active');
@@ -83,4 +82,7 @@ export const navigationInitialize = (locale) => {
     $(this).toggleClass('is-active');
     $('.back-nav').click();
   })
+  
 };
+
+

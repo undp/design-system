@@ -75,12 +75,12 @@ const Authors = ({
           </div>
         </div>
         <div className="grid-x grid-margin-x author-filter">
-          <div className="cell medium-offset-3 medium-6 align-center">
+          <div className="cell medium-offset-3 medium-5 large-6 align-center">
             <div className="exoandablesearch">
               <SearchExpand />
             </div>
           </div>
-          <div className="cell medium-3">
+          <div className="cell medium-4 large-3">
             <div className="select-box author-select" data-select="">
               <button
                 type="button"

@@ -89,6 +89,14 @@ addParameters({
 const getLangCode=(Story,context)=>{
   let activeLang = context.globals.locale;
 
+  // trigger onload event
+  // UI has some animation element which trigger on load.
+  let delay = 10;
+  setTimeout(function() {
+    const evt = new Event('load');
+    window.dispatchEvent(evt);
+  }, delay);
+
   // Set window object for iframe.
   window.UNDP.langCode = (window.UNDP) ? activeLang : window.UNDP= { langCode : activeLang };
 
@@ -114,5 +122,27 @@ const getLangCode=(Story,context)=>{
   )
 }
 
+const sbFrameReset = (Story, context) => {
+  // Get Storybook Iframe's body element.
+  const iframeBody = document.querySelector('body');
+  // Get Storybook sidebar items in an array.
+  const sidebarItem = parent.document.querySelectorAll('.sidebar-item');
+  // Add click event listner on each sidebar item.
+  sidebarItem.forEach(function (item, i) {
+    item.addEventListener('click', function (e) {
+      // Classes to remove.
+      const classNames = ['sdgmodal-open', 'color-blue'];
+      // Check if above classes exist in `body` element and remove them.
+      if (classNames.some(className => iframeBody.classList.contains(className))) {
+        iframeBody.classList.remove(...classNames);
+      }
+    });
+  });
+  return (
+    <Story {...context} />
+  )
+}
+
+
 // Trigger callback in Storybook Addons.
-export const decorators = [getLangCode];
+export const decorators = [getLangCode, sbFrameReset];

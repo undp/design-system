@@ -62,7 +62,7 @@
   }
 }
 
-body.modal-open {
+body.sdgmodal-open {
   overflow: hidden;
 }
 
@@ -83,7 +83,7 @@ body.modal-open {
     }
 
     h2 {
-      font-family: 'SohneBreit';
+      font-family: $Font-Family-SohneBreit;
       text-transform: uppercase;
     }
   }
@@ -121,13 +121,13 @@ body.modal-open {
   }
 
   .statscard:hover {
-    .statscard__number {
+    h2 {
       color: $color-white;
       text-shadow: none;
       -webkit-text-stroke: unset;
     }
 
-    .statscard__per,
+    h4,
     p {
       color: $color-white;
     }

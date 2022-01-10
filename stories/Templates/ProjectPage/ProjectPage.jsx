@@ -14,7 +14,7 @@ import { Statscardslider } from '../../Organism/Statscardslider/Statscardslider'
 import './projectpage.scss';
 
 export const ProjectPage = ({
-  footerData, siteTitleData, backcaption, locale, leftNavigationData, navigationData, rightNavigationData, languageswitcherData, locationData, langSelect, logo, logowhite, herodata, content, title, imgsrc, imgalt, topHeading, topParagraph, topParagraph1, whatwedoheader, whatwedodescription, relatedHeading, download, downloadTitle, downloadTitle1, downloadTitle2, downloadTitle3, downloadTitle4, downloadTitle5, downloadTitle6, impactHead, title1, title2, title3, title4, title5, title6, title7, subtitle1, subtitle2, subtitle3, subtitle4, subtitle5, subtitle6, subtitle7, buttonProjectInfo, supportHeading, exploreHeading, exploreMoreBtn, exploreMoreData, statsliderdata,
+  footerData, siteTitleData, backcaption, locale, leftNavigationData, navigationData, rightNavigationData, languageswitcherData, locationData, langSelect, logo, logowhite, herodata, content, title, imgsrc, imgalt, topHeading, topParagraph, topParagraph1, whatwedoheader, whatwedodescription, relatedHeading, download, downloadTitle, downloadTitle1, downloadTitle2, downloadTitle3, downloadTitle4, downloadTitle5, downloadTitle6, impactHead, title1, title2, title3, title4, title5, title6, title7, subtitle1, subtitle2, subtitle3, subtitle4, subtitle5, subtitle6, subtitle7, buttonProjectInfo, supportHeading, exploreHeading, exploreMoreBtn, exploreMoreData, statsliderdata, listData
 }) => (
   <>
     <CountrySiteHeader
@@ -57,6 +57,7 @@ export const ProjectPage = ({
             <HeadingBig
               headerText={whatwedoheader}
               descriptionText={whatwedodescription}
+              listData={listData}
             />
           </div>
         </div>
@@ -129,9 +130,9 @@ export const ProjectPage = ({
             <Heading type="2" label={supportHeading} />
           </div>
         </div>
-        <div className="cell large-offset-1 small-offset-1 small-11 large-11">
+        <div className="cell large-offset-1 large-11">
           <div className="column">
-            <Statscardslider data={statsliderdata} />
+            <Statscardslider data={statsliderdata} gapel='20' gapelsm='20' viewcard='5' perViewtablet='3' focusSpace='0'/>
           </div>
         </div>
       </div>

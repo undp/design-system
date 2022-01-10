@@ -66,4 +66,24 @@
   }
 }
 
+// For doc styling only
+#story--foundation-icons--icons > div {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: column;
+  width: calc(100% - 2rem);
+  justify-content: center;
+  background: $color-gray-300;
+  padding: $spacing-16 $spacing-08;
+  margin: 0 $spacing-16 $spacing-32;
+  border: 1px solid $color-gray-400;
+  box-shadow: 2px 2px 4px $color-gray-300;
+  
+  @include devicebreak(medium) {
+    width: calc(25% - 2rem);
+  }
+}
+
 /* icon end */

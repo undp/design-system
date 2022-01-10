@@ -40,8 +40,8 @@
 
       .hero-option {
         @include devicebreak(small) {
-           border-left: 2rem solid $color-gray-300;
-           padding-left: calc(8.33333% + 1.5rem / 2);
+           border-left: 1rem solid $color-gray-300;
+           padding-left: calc(8.33333% + #{$spacing-24} / 2);
         }
       }
     }
@@ -108,8 +108,8 @@
       @include devicebreak(small) {
         border-left: none;
         padding-left: 0;
-        border-right: 2rem solid $color-gray-300;
-        padding-right: calc(8.33333% + 1.5rem / 2);
+        border-right: 1rem solid $color-gray-300;
+        padding-right: calc(8.33333% + #{$spacing-24}/ 2);
       }
     }
   }

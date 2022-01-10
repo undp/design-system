@@ -3,28 +3,24 @@
 @import '../../../../assets/scss/mixins';
 
 .author {
-  &-wrapper {
-    &--4 {
-      .author__label {
-        padding: 0;
-        width: 100%;
-      }
-    }
+  &-box {
+    display: inline-flex;
+    margin-bottom: $spacing-24;
+    width: 100%;
 
-    &__box {
+    a {
       @extend %img_none;
 
       display: inline-flex;
-      margin-bottom: $spacing-24;
-      width: 100%;
     }
   }
+
 
   &__img {
     margin-right: $spacing-24;
   }
 
-  &__label {
+  &-label {
     padding-top: $spacing-04;
 
     h6 {
@@ -44,17 +40,9 @@
 }
 
 [dir='rtl'] {
-  .author__label {
-    padding-left: 0;
-  }
-
   .author {
-    &-wrapper {
-      &--4 {
-        .author__label {
-          padding-right: 0;
-        }
-      }
+    &-label {
+      padding-left: 0;
     }
 
     &__img {

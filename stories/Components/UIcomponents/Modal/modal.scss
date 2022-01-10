@@ -4,7 +4,9 @@
 
 /* Modal lightbox card start */
 .modal {
-  background: $color-white;
+  background: rgba(247, 247, 247, 0.8);
+  -webkit-backdrop-filter: blur(80px);
+  backdrop-filter: blur(80px);
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -12,12 +14,12 @@
   position: fixed;
   right: 0;
   top: 0;
-  visibility: visible;
   z-index: 99;
+  opacity: 0;
+  @include transition(all 0.4s ease-in-out);
 
   @include devicebreak(medium) {
     align-items: center;
-    background: rgba(247, 247, 247, 0.8);
   }
 
   &-content {
@@ -47,6 +49,9 @@
     &:hover {
       @extend %no-animation;
     }
+  }
+  &.open {
+    opacity: 1;
   }
 }
 

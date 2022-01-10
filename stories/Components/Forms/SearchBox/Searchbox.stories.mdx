@@ -12,7 +12,13 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/Forms/Search Box"/>
+<Meta title="Components/Forms/Search Box"  argTypes={{
+  State: {
+    options: ['Default', 'Focus', 'Error', 'Disabled'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'Default'
+  }
+}}/>
 
 # Seach Box
 A complete search widget for user to make search query.
@@ -47,10 +53,10 @@ Input elements of type search are text fields designed for the user to enter sea
 
 #### Disabled
 <Canvas>
-  <Story name="Search-disabled">
+  <Story name="Search Box">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <Searchbox labelText={caption.detail3} type='search' id='search' mode='disabled-state' placeholder={caption.detail4} disabled= 'disabled'> </Searchbox>;
+      return <Searchbox labelText={caption.detail3} errorText={caption.detail2} element='input' type='search' placeholder= {caption.detail4} {...args} ></Searchbox>;
     }}
   </Story>
 </Canvas>
