@@ -27,6 +27,9 @@
     width: 0;
     z-index: 3;
     height:2.675rem;
+    &:focus{
+      outline:none;
+    }
   }
 
   &.open{
@@ -45,6 +48,7 @@
     height:2.625rem;
     width: 1.6875rem;
     z-index: 2;
+    cursor: pointer;
   }
 }
 
