@@ -29,6 +29,7 @@ export const Statscardslider = ({ data, gapel, gapelsm, viewcard, perViewtablet,
                 percent={item.percentname}
                 content={item.text}
                 Size="Small"
+                Hovercolors="yellow"
               />
             </div>
           ))}

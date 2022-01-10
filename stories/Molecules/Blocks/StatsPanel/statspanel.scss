@@ -5,6 +5,10 @@
 /* statspanel card start */
 .stats {
   &-panel {
+
+    // color map
+    $colors: ('yellow': $yellow-gradient, 'red': $red-gradient, 'green': $green-gradient, 'blue': $blue-gradient);
+
     @include transition(300ms all);
 
     align-items: center;
@@ -34,27 +38,6 @@
       transition: all 0.4s;
     }
 
-    &.yellow::after {
-      @include gradient(15deg, $yellow-gradient);
-    }
-
-    &.red::after {
-      @include gradient(0deg, $red-gradient);
-    }
-
-    &.green::after {
-      @include gradient(0deg, $green-gradient);
-    }
-
-    &.blue::after {
-      @include gradient(0deg, $blue-gradient);
-    }
-
-    p {
-      font-size: 1.25rem;
-      margin: 0;
-    }
-
     &:hover,
     &.active {
       &::after,
@@ -63,9 +46,8 @@
       }
 
       .statscard {
-        background-color: transparent;
-
-        &__number {
+        h2 {
+          color: $color-gray-700;
           text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
 
           @supports (-webkit-text-stroke: 2px $color-gray-700) {
@@ -92,28 +74,21 @@
         padding: 0 $spacing-48;
       }
 
+      @include devicebreak(small) {
+        h4 {
+          font-size: 2.188rem;
+          margin-bottom: $spacing-12;
+        }
+      }
+
       &__box {
         color: $color-white;
         width: 100%;
       }
 
-      &__number {
-        @include transition(300ms all);
-
+      h2 {
         color: $color-gray-700;
-        font-size: 6.875rem;
-        letter-spacing: 0.05rem;
-        line-height: 1.09;
         text-shadow: -1px -1px 0 $color-white, 1px -1px 0 $color-white, -1px 1px 0 $color-white, 1px 1px 0 $color-white;
-
-        @supports (-webkit-text-stroke: 2px $color-white) {
-          text-shadow: none;
-          -webkit-text-stroke: 2px $color-white;
-        }
-
-        @include devicebreak(medium) {
-          font-size: 6.6rem;
-        }
 
         @include devicebreak(large) {
           font-size: 6.875rem;
@@ -122,11 +97,10 @@
         @include devicebreak(small) {
           margin-bottom: $spacing-16;
         }
-      }
 
-      &__per {
-        @include devicebreak(small) {
-          margin-bottom: $spacing-12;
+        @supports (-webkit-text-stroke: 2px $color-white) {
+          text-shadow: none;
+          -webkit-text-stroke: 2px $color-white;
         }
       }
 
@@ -134,11 +108,13 @@
         .statscard__box {
           padding: 0;
         }
+      }
+    }
 
-        .statscard__per {
-          font-size: 2.188rem;
-          font-weight: 600;
-          line-height: 1.12;
+    @each $name, $color in $colors {
+      &.#{$name} {
+        &::after {
+          @include gradient(15deg, #{$color});
         }
       }
     }

@@ -9,8 +9,16 @@
   background-color: $color-gray-200;
   word-break: break-all;
 
-  &__title {
-    font-weight: 700;
+  @include devicebreak(small) {
+    max-width: 351px;
+
+    &__box {
+      padding: $spacing-40;
+    }
+  }
+
+  h3 {
+    font-weight: 600;
     margin-bottom: $spacing-40;
 
     @include devicebreak(medium) {
@@ -18,7 +26,7 @@
     }
   }
 
-  &__number {
+  h2 {
     @include transition(300ms all);
 
     color: $color-gray-200;
@@ -45,15 +53,12 @@
     }
   }
 
-  &__per {
-    font-size: 1.875rem;
-    font-weight: 600;
+  h4 {
     letter-spacing: 0;
     line-height: 1.15;
     margin-bottom: $spacing-08;
 
     @include devicebreak(medium) {
-      font-size: 2.188rem;
       margin-bottom: $spacing-16;
     }
   }
@@ -62,74 +67,78 @@
     margin: 0;
 
     @include devicebreak(medium) {
-      font-size: 1.563rem;
+      font-size: $font-size-25;
     }
   }
 
   &.x-large {
-    max-width: 351px;
-
     @include devicebreak(medium) {
       max-width: 684px;
+    }
 
-      .statscard__box {
-        padding: $spacing-96;
+    .statscard {
+      &__box {
+        padding: $spacing-40;
+
+        @include devicebreak(medium) {
+          padding: $spacing-96;
+        }
       }
     }
 
-    .statscard__box {
-      padding: $spacing-40;
+    h2 {
+      font-size: 5.625rem;
+
+      @include devicebreak(medium) {
+        font-size: 7.5rem;
+      }
     }
 
-    .statscard__number {
-      font-size: 7.5rem;
-      line-height: 0.82;
+    h3 {
+      font-size: $spacing-40;
+      font-weight: 700;
+
+      @include devicebreak(medium) {
+        font-size: 3.438rem;
+      }
+    }
+
+    h4 {
+      font-weight: 600;
+
+      @include devicebreak(small) {
+        font-size: 1.875rem;
+      }
     }
   }
 
   &.large {
-    max-width: 351px;
-
     @include devicebreak(medium) {
       max-width: 448px;
-
-      .statscard__box {
-        padding: $spacing-96 $spacing-64;
-      }
-
-      .statscard__per {
-        font-size: 1.875rem;
-      }
     }
 
-    .statscard__box {
-      padding: $spacing-40;
-    }
-
-    .statscard__per {
-      font-size: $font-size-25;
-      line-height: 1.15;
+    .statscard {
+      &__box {
+        @include devicebreak(medium) {
+          padding: $spacing-96 $spacing-64;
+        }
+      }
     }
   }
 
   &.medium {
-    max-width: 351px;
-
     @include devicebreak(medium) {
       max-width: 330px;
 
-      .statscard__per {
-        font-size: 2.188rem;
+      h4 {
+        font-weight: 600;
       }
     }
 
-    .statscard__per {
-      font-size: $font-size-25;
-      line-height: 1.15;
-    }
-
-    .statscard__box {
-      padding: $spacing-48;
+    .statscard {
+      &__box {
+        padding: $spacing-48;
+      }
     }
 
     p {
@@ -142,69 +151,55 @@
 
     @include devicebreak(medium) {
       max-width: 212px;
+    }
 
-      .statscard__box {
-        padding: $spacing-32;
-      }
+    .statscard {
+      &__box {
+        padding: $spacing-24;
 
-      .statscard__number {
-        font-size: 4.375rem;
-        margin-bottom: 2rem;
-      }
-
-      .statscard__per {
-        font-size: $font-size-25;
-        margin-bottom: $spacing-08;
-      }
-
-      p {
-        font-size: $font-size-16;
+        @include devicebreak(medium) {
+          padding: $spacing-32;
+        }
       }
     }
 
-    .statscard__box {
-      padding: $spacing-24;
-    }
-
-    .statscard__number {
-      @include transition(300ms all);
-
+    h2 {
       font-size: 3.125rem;
-      line-height: 1.09;
-      margin-bottom: $spacing-16;
+
+      @include devicebreak(medium) {
+        font-size: 4.375rem;
+      }
     }
 
-    .statscard__per {
+    h4 {
       font-size: $font-size-20;
+
+      @include devicebreak(medium) {
+        font-size: $font-size-25;
+      }
     }
 
     p {
       font-size: $font-size-14;
-    }
 
-    .statscard__box {
-      padding: $spacing-24;
+      @include devicebreak(medium) {
+        font-size: $font-size-16;
+      }
     }
   }
 
   &:hover {
-    &.yellow {
-      background-color: $color-yellow;
+
+    // color map
+    $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+    @each $name, $color in $colors {
+      &.#{$name} {
+        background-color: #{$color};
+      }
     }
 
-    &.red {
-      background-color: $color-red;
-    }
-
-    &.green {
-      background-color: $color-green;
-    }
-
-    &.blue {
-      background-color: $color-azure;
-    }
-
-    & .statscard__number {
+    & h2 {
       color: $color-black;
     }
   }

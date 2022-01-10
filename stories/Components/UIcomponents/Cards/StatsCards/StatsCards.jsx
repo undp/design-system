@@ -3,6 +3,8 @@ import './statscards.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
+
 export const StatsCards = ({
   title, number, percent, content, Size, Hovercolors,
 }) => {
@@ -25,12 +27,11 @@ export const StatsCards = ({
   }
 
   return (
-    <div className={['statscard', `${size} ${Hovercolors}`].join(' ')}>
+    <div className={cls('statscard', `${size}`, `${Hovercolors}`)}>
       <div className="statscard__box">
-        {Size == 'Extra_large' ? (<Heading type="2" className="statscard__title" label={title} />) : (<></>)}
-        {Size == 'Large' ? (<Heading type="3" className="statscard__title" label={title} />) : (<></>)}
-        <h2 className="statscard__number">{number}</h2>
-        <h4 className="statscard__per">{percent}</h4>
+        {Size == 'Extra_large' || Size == 'Large' ? (<Heading type="3" label={title} />) : (<></>)}
+        <Heading type="2" label={number} />
+        <Heading type="4" label={percent} />
         <P label={content} />
       </div>
     </div>
@@ -38,5 +39,5 @@ export const StatsCards = ({
 };
 
 StatsCards.defaultProps = {
-  Hovercolors: 'yellow',
+  Hovercolors: '',
 };
