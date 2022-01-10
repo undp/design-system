@@ -40,6 +40,9 @@
   textarea {
     @extend %background-white;
 
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
     border: 2px solid $color-black;
     border-radius: 0;
     box-sizing: border-box;
@@ -48,56 +51,28 @@
     margin-bottom: $spacing-08;
     padding: 0.625rem;
     width: 100%;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
 
     &::placeholder {
       color: $color-gray-500;
     }
 
-    &.search {
+    input[type=date],
+    input[type=search] {
       padding-left: $spacing-40;
       position: relative;
     }
+  }
 
-
-
-    input[type=date] {
-      padding-left: $spacing-40;
-      position: relative;
-    }
+  input[type=search] {
+    background: url(#{$img-path-Icon}/Search_black.svg) no-repeat left 14px bottom 12px;
+    color: #a9b1b7;
+    padding-left: 2.5rem;
   }
 
   textarea {
     height: auto;
     max-width: 100%;
     resize: vertical;
-  }
-
-  .search-field {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-
-    &.undefined-field {
-      display: none;
-    }
-
-    &::before {
-      @extend %field__image;
-
-      background-image: url(#{$img-path-Icon}/Search_black.svg);
-      content: '';
-      top: 13px;
-    }
-
-    &.disabled {
-      &::before {
-        background-image: url(#{$img-path-Icon}/Searchgray.svg);
-        content: '';
-      }
-    }
   }
 
   input[type=date] {
@@ -141,7 +116,10 @@
 
     input[type=date] {
       background-image: url(#{$img-path-Icon}/datedisabled.svg);
-      color: $color-gray-400;
+    }
+
+    input[type=search] {
+      background-image: url(#{$img-path-Icon}/Searchgray.svg);
     }
   }
 
@@ -170,10 +148,6 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 [dir='rtl'] {
   .input-group {
-    input[type=search]::before {
-      right: 14px;
-    }
-
     input[type=text],
     input[type=number],
     input[type=email],
@@ -182,11 +156,6 @@ input[type='date']::-webkit-calendar-picker-indicator {
     input[type=tel],
     input[type=date],
     textarea {
-      &.search {
-        padding-left: 0.625rem;
-        padding-right: $spacing-40;
-      }
-
       @media (hover: none) and (pointer: coarse) {
         input[type=date] {
           padding-right: $spacing-24;
@@ -194,7 +163,8 @@ input[type='date']::-webkit-calendar-picker-indicator {
       }
     }
 
-    input[type=date] {
+    input[type=date],
+    input[type=search] {
       background:
         url(#{$img-path-Icon}/calender_black.svg) no-repeat
         right 14px bottom 12px;
@@ -202,9 +172,19 @@ input[type='date']::-webkit-calendar-picker-indicator {
       text-align: right;
     }
 
+    input[type=search] {
+      background:
+        url(#{$img-path-Icon}/Search_black.svg) no-repeat
+        right 14px bottom 12px;
+    }
+
     &.disabled {
       input[type=date] {
         background-image: url(#{$img-path-Icon}/datedisabled.svg);
+      }
+
+      input[type=search] {
+        background-image: url(#{$img-path-Icon}/Searchgray.svg);
       }
     }
   }

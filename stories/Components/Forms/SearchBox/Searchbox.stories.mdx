@@ -12,7 +12,13 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/Forms/Search Box"/>
+<Meta title="Components/Forms/Search Box"  argTypes={{
+  State: {
+    options: ['Default', 'Focus', 'Error', 'Disabled'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'Default'
+  }
+}}/>
 
 <style>{`
      #story--atoms-input-group--search-default, #story--atoms-input-group--search-focus, #story--atoms-input-group--search-error, #story--atoms-input-group--search-disabled {
@@ -60,58 +66,13 @@ The <code>input</code> HTML element is used to create interactive controls for w
   <li>input elements of type <code>search</code> are text fields designed for the user to enter search queries into.</li>
 </ul>
 
-<div className="input_group_wrapper">
-  <div className= "input_item">
-    <div className="input__box input-search-default"></div>
-    <div className="input__label"> Input search-Default </div>
-    <div className="input__code"> <Searchbox labelText='Search'  type='search' id= 'search' mode='default-state' required='required' placeholder= 'Placeholder'></Searchbox></div>
-  </div>
-  <div className="input_item">
-    <div className="input__box input-search-focus"></div>
-    <div className="input__label"> Input search-Focus </div>
-    <div className="input__code"> <Searchbox labelText='Search'  type='search' id= 'search' mode='focus-state' required='required' placeholder= 'Placeholder'></Searchbox></div>
-  </div>
-  <div className="input_item">
-    <div className="input__box input-search-error"></div>
-    <div className="input__label"> Input search-Error </div>
-    <div className="input__code"> <Searchbox labelText='Search' errorText='*Error: this field is required' type='search' id= 'search' mode='error-state' required='required' placeholder= 'Placeholder'></Searchbox></div>
-  </div>
-  <div className="input_item">
-    <div className="input__box input-search-disabled"></div>
-    <div className="input__label"> Input search-Disabled </div>
-    <div className="input__code"> <Searchbox labelText='Search'  type='search' id= 'search' mode='disabled-state' placeholder= 'Placeholder' disabled= 'disabled'></Searchbox></div>
-  </div>
-</div>
-
-<div className="subheading"> Base Input </div>
-
-<Story name="Search-default">
+<Story name="Search Box">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Searchbox labelText={caption.detail3} type='search' id= 'search' mode=' ' required='required' placeholder= {caption.detail4}></Searchbox>;
+    return <Searchbox labelText={caption.detail3} errorText={caption.detail2} element='input' type='search' placeholder= {caption.detail4} {...args} ></Searchbox>;
   }}
 </Story>
 
-<Story name="Search-focus">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Searchbox labelText={caption.detail3} type='search' id= 'search' mode='focus' required='required' placeholder= {caption.detail4}></Searchbox>;
-  }}
-</Story>
-
-<Story name="Search-error">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Searchbox labelText={caption.detail3} errorText={caption.detail2}  type='search' id= 'search' mode='error' required='required' placeholder= {caption.detail4}></Searchbox>;
-  }}
-</Story>
-
-<Story name="Search-disabled">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Searchbox labelText={caption.detail3} type='search' id= 'search' mode='disabled' placeholder= {caption.detail4} disabled= 'disabled'> </Searchbox>;
-  }}
-</Story>
 
 <div className="subheading">Usage</div>
 <ul>
