@@ -37,7 +37,7 @@
       @include transform(rotateZ(180deg));
     }
     ul {
-     height: 5.6rem;
+     height: auto;
     }
   }
 
@@ -85,7 +85,7 @@
 
 [dir='rtl'] {
   .dropdown-language {
-    &__content {
+    ul {
       left: unset;
       right: 16px;
     }
