@@ -17,11 +17,11 @@ const SelectTag = ({ text, eleId, ...args }) => {
       >
         {text}
       </button>
-      {args.variant === "Checkbox" && (
+      {args.variant === 'Checkbox' && (
         <ul
           className={[
-            args.Height === "Fix height" ? "fix-height" : "",
-          ].join("")}
+            args.Height === 'Fix height' ? 'fix-height' : '',
+          ].join('')}
           data-type="region"
           aria-labelledby={`filter-${eleId}`}
           role="listbox"
@@ -87,11 +87,11 @@ const SelectTag = ({ text, eleId, ...args }) => {
           </li>
         </ul>
       )}
-      {args.variant === "Radio" && (
+      {args.variant === 'Radio' && (
         <ul
           className={[
-            args.Height === "Fix height" ? "fix-height" : "",
-          ].join("")}
+            args.Height === 'Fix height' ? 'fix-height' : '',
+          ].join('')}
           data-type="region"
           aria-labelledby={`filter-${eleId}`}
           role="listbox"

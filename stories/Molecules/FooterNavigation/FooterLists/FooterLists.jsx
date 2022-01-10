@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './footerLists.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import { Link } from '../../../Atom/Typography/Links/link';
@@ -8,20 +8,23 @@ export const variant_options = {
   inverted: 'inverted',
 };
 
-const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
 export const FooterLists = ({
   type, headerText, text, style, data, ...args
-}) => (
-  <div className={cls('cell', 'medium-2', 'footer__items', `${variant_options[`${args.variant}`]}`)}>
-    <Heading type="6" label={headerText} className="footer__heading" />
-    <div className="footer__panel">
-      {data.map((item, index) => (
-        <Link key={index} label={item.text} />
-      ))}
+}) => {
+  let screen_variant = variant_options[`${args.variant}`];
+  return (
+    <div className={cls('cell', 'medium-2', 'footer__items', `${screen_variant}`)}>
+      <Heading type="6" label={headerText} className="footer__heading" />
+      <div className="footer__panel">
+        {data.map((item, index) => (
+          <Link key={index} label={item.text} />
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 FooterLists.defaultProps = {
   variant: 'default',

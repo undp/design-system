@@ -27,13 +27,13 @@ export const navigationInitialize = (locale) => {
   $('.mega-wrapper').mouseenter(function () {
     $('.mega-wrapper').find(this).addClass('show-mega');
   });
-  $menu.mouseleave(function (event) {
-    if(event.type==='mouseleave'){
-      const el=event.toElement;
-        if(!el.classList.contains('mega-nav-option')){
-          $('.mega-nav-option.show-mega').removeClass('show-mega');
-        }
+  $menu.mouseleave((event) => {
+    if (event.type === 'mouseleave') {
+      const el = event.toElement;
+      if (!el.classList.contains('mega-nav-option')) {
+        $('.mega-nav-option.show-mega').removeClass('show-mega');
       }
+    }
   });
 
   $('.mega-wrapper').mouseleave(function () {
@@ -44,15 +44,16 @@ export const navigationInitialize = (locale) => {
     $(this).addClass('active').siblings().removeClass('active');
     const ID = $(this).attr('id');
     $(this).parents('.mega-wrapper').find(`[data-submenu-id='${ID}']`).addClass('active-content')
-    .siblings().removeClass('active-content');
+      .siblings()
+      .removeClass('active-content');
   });
 
-  $(window).scroll(function() {
+  $(window).scroll(() => {
     var $scroll = $(window).scrollTop();
     if ($scroll >= 1) {
-        $(".logo img").addClass("scrolled");
+      $('.logo img').addClass('scrolled');
     } else {
-        $(".logo img").removeClass("scrolled");
+      $('.logo img').removeClass('scrolled');
     }
   });
 
@@ -81,5 +82,5 @@ export const navigationInitialize = (locale) => {
     $('.mob-sub-menu').toggleClass('show');
     $(this).toggleClass('is-active');
     $('.back-nav').click();
-  })
+  });
 };

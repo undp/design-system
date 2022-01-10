@@ -4,11 +4,15 @@
 
 /* bio card start */
 .bio-card {
+
+  // color map
+  $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
+
   background: $color-gray-200;
   border-bottom: 0;
+  display: block;
   height: 100%;
   position: relative;
-  display: block;
 
   &:hover {
     .cta--arrow::after {
@@ -21,17 +25,6 @@
 
     .card-thumbnail__image::before {
       opacity: 0.75;
-    }
-  }
-
-  // color map
-  $colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "azure": $color-azure);
-
-  @each $name, $color in $colors {
-    &.#{$name} {
-      .card-thumbnail__image::before {
-      @include background-image(42deg, #{$color}, transparent 80%);
-      }
     }
   }
 
@@ -107,6 +100,14 @@
       }
     }
   }
+
+  @each $name, $color in $colors {
+    &.#{$name} {
+      .card-thumbnail__image::before {
+        @include background-image(42deg, #{$color}, transparent 80%);
+      }
+    }
+  }
 }
 
 .modal {
@@ -155,12 +156,9 @@
 
   p {
     margin-bottom: $spacing-32;
-  }
 
-  p {
     &.small {
-      @extend %paragragh-font-16
-    ;
+      @extend %paragragh-font-16;
     }
   }
 }

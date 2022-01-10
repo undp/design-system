@@ -37,21 +37,24 @@ const MobileNav = ({
             ))}
           </ul>
           <div className="mob-nav-options">
-              <a href="javascript:void(0)" className="mob-lang-switcher">
-                <Icons src={IconsLanguage} alt="icon-language" />
-                {' '}
-                {languageswitcherData.headerText}
-              </a>
-              <a href="#" className="mob-globe">
-                <Icons src={IconsGlobe} alt="icon-global" />
-                {' '}
-                {locationData.detail}
-              </a>
+            <a href="javascript:void(0)" className="mob-lang-switcher">
+              <Icons src={IconsLanguage} alt="icon-language" />
+              {' '}
+              {languageswitcherData.headerText}
+            </a>
+            <a href="#" className="mob-globe">
+              <Icons src={IconsGlobe} alt="icon-global" />
+              {' '}
+              {locationData.detail}
+            </a>
           </div>
         </div>
 
         <div className="cell mob-sub-menu">
-          <button className="back-nav"><Icons src={Iconsback} alt="back button" />{backcaption.detail}</button>
+          <button className="back-nav">
+            <Icons src={Iconsback} alt="back button" />
+            {backcaption.detail}
+          </button>
           <div className="mobile-mega-wrapper">
             <div className="mobile-mega-content">
               <h6 className="sub-heading">Page Title</h6>
@@ -70,7 +73,10 @@ const MobileNav = ({
         </div>
 
         <div className="cell mob-sub-lang">
-          <button className="back-nav"><Icons src={Iconsback} alt="back button" />{backcaption.detail}</button>
+          <button className="back-nav">
+            <Icons src={Iconsback} alt="back button" />
+            {backcaption.detail}
+          </button>
           <ul className="sub-sub-lang">
             <li>
               <span>{langSelect}</span>

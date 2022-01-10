@@ -17,8 +17,8 @@
   z-index: 1;
 
   @include devicebreak(mediumonlytab) {
-    top: 4.6875rem;
     height: calc(100vh - 4.6875rem);
+    top: 4.6875rem;
   }
 
   @include devicebreak(small) {
@@ -174,6 +174,7 @@ body.sdgmodal-open {
         background-color: $sdg-red;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-red, transparent 80%);
     }
@@ -201,6 +202,7 @@ body.sdgmodal-open {
         background-color: $sdg-mustard;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-mustard, transparent 80%);
     }
@@ -228,6 +230,7 @@ body.sdgmodal-open {
         background-color: $sdg-kelly-green;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-kelly-green, transparent 80%);
     }
@@ -255,6 +258,7 @@ body.sdgmodal-open {
         background-color: $sdg-dark-red;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-dark-red, transparent 80%);
     }
@@ -282,6 +286,7 @@ body.sdgmodal-open {
         background-color: $sdg-red-orange;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-red-orange, transparent 80%);
     }
@@ -309,6 +314,7 @@ body.sdgmodal-open {
         background-color: $sdg-bright-blue;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-bright-blue, transparent 80%);
     }
@@ -336,6 +342,7 @@ body.sdgmodal-open {
         background-color: $sdg-yellow;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-yellow, transparent 80%);
     }
@@ -363,6 +370,7 @@ body.sdgmodal-open {
         background-color: $sdg-burgundy-red;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-burgundy-red, transparent 80%);
     }
@@ -390,6 +398,7 @@ body.sdgmodal-open {
         background-color: $sdg-orange;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-orange, transparent 80%);
     }
@@ -417,6 +426,7 @@ body.sdgmodal-open {
         background-color: $sdg-magenta;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-magenta, transparent 80%);
     }
@@ -444,6 +454,7 @@ body.sdgmodal-open {
         background-color: $sdg-golden-yellow;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-golden-yellow, transparent 80%);
     }
@@ -471,6 +482,7 @@ body.sdgmodal-open {
         background-color: $sdg-dark-mustard;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-dark-mustard, transparent 80%);
     }
@@ -498,6 +510,7 @@ body.sdgmodal-open {
         background-color: $sdg-dark-green;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-dark-green, transparent 80%);
     }
@@ -525,6 +538,7 @@ body.sdgmodal-open {
         background-color: $sdg-blue;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-blue, transparent 80%);
     }
@@ -552,6 +566,7 @@ body.sdgmodal-open {
         background-color: $sdg-lime-green;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-lime-green, transparent 80%);
     }
@@ -579,6 +594,7 @@ body.sdgmodal-open {
         background-color: $sdg-royal-blue;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-royal-blue, transparent 80%);
     }
@@ -606,6 +622,7 @@ body.sdgmodal-open {
         background-color: $sdg-navy-blue;
       }
     }
+
     .card-thumbnail__image::before {
       @include background-image(42deg, $sdg-navy-blue, transparent 80%);
     }
@@ -614,9 +631,6 @@ body.sdgmodal-open {
 
 .ndg-container {
   padding-left: $spacing-32;
-  .sdg-image {
-    display: none;
-  }
 
   @include devicebreak(medium) {
     .sdg-card {
@@ -662,6 +676,10 @@ body.sdgmodal-open {
         }
       }
     }
+  }
+
+  .sdg-image {
+    display: none;
   }
 }
 

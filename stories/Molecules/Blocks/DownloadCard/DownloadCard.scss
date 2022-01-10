@@ -2,7 +2,7 @@
 @import '../../../assets/scss/mixins';
 
 /* download card start */
-$colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "azure": $color-azure);
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
 
 .download-card {
   display: inline-block;
@@ -15,18 +15,19 @@ $colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "az
     .publication-thumbnail__image {
       @each $name, $color in $colors {
         &.#{$name}:after {
-          opacity: 0.75;
           @include background-image(42deg, #{$color}, transparent 80%);
+
+          opacity: 0.75;
         }
       }
     }
-    
 
     .card-thumbnail__image {
       @each $name, $color in $colors {
         &.#{$name}::before {
-          opacity: 0.75;
           @include background-image(42deg, #{$color}, transparent 80%);
+
+          opacity: 0.75;
         }
       }
     }
@@ -60,28 +61,28 @@ $colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "az
     @extend %paragragh-font-16;
 
     align-items: flex-end;
+    background-image: none;
     display: flex;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    background-image: none;
 
     &::after {
-      content: "";
       background: url(#{$img-path-Icon}/download-default.svg) no-repeat 0 bottom;
+      content: '';
       cursor: pointer;
       height: 1.6875rem;
-      width: 1.3rem;
       margin-left: 0.75rem;
+      width: 1.3rem;
     }
   }
 }
 
 [dir='rtl'] {
   .download-card__download {
-    &:after {
-      margin-right: 0.75rem;
+    &::after {
       margin-left: 0;
+      margin-right: 0.75rem;
     }
   }
 
@@ -97,4 +98,5 @@ $colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "az
     }
   }
 }
+
 /* download card end */

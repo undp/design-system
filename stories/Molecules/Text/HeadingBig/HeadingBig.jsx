@@ -10,7 +10,9 @@ export const transition_options = {
   false: 'heading-container',
 };
 
-export const HeadingBig = ({ headerText, descriptionText, listData, ...args }) => {
+export const HeadingBig = ({
+  headerText, descriptionText, listData, ...args
+}) => {
   useEffect(() => {
     viewport('.heading-big');
     viewport('.heading-big h2');
@@ -18,16 +20,17 @@ export const HeadingBig = ({ headerText, descriptionText, listData, ...args }) =
     viewport('.heading-container h2');
     viewport('.heading-container h4');
   }, []);
+  let transition_variant = transition_options[`${args.Emphasize}`];
   return (
-    <div data-color="blue" className={['grid-x align-center', `${transition_options[`${args.Emphasize}`]}`].join(' ')}>
+    <div data-color="blue" className={['grid-x align-center', `${transition_variant}`].join(' ')}>
       <div className="cell  medium-4">
         <Heading className="left-right" type="2" label={headerText} />
       </div>
       <div className="cell  medium-6">
         <Heading className="left-right" type="4" label={descriptionText} />
         {
-          listData &&
-          <List data={listData} type="ul"></List>
+          listData
+          && <List data={listData} type="ul" />
         }
       </div>
     </div>
@@ -35,5 +38,5 @@ export const HeadingBig = ({ headerText, descriptionText, listData, ...args }) =
 };
 
 HeadingBig.defaultProps = {
-  Emphasize: 'true'
+  Emphasize: 'true',
 };

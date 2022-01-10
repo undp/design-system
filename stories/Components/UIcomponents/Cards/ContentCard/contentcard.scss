@@ -2,8 +2,8 @@
 @import '../../../../assets/scss/mixins';
 
 /* content-card start */
-$colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "blue": $color-azure);
-$backgroundcolors: ("yellow": $color-light-yellow, "red": $color-light-red, "green": $color-light-green, "blue": $color-light-azure, "gray": $color-gray-100);
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+$backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
 
 .content-card {
   @extend %img_none;
@@ -45,17 +45,12 @@ $backgroundcolors: ("yellow": $color-light-yellow, "red": $color-light-red, "gre
     }
   }
 
-  &:hover {
-    .card-thumbnail__image::before {
-      opacity: 0.75;
-    }
-  }
-
   @each $name, $color in $colors {
     &.#{$name} {
       .card-thumbnail__image::before {
         @include background-image(42deg, #{$color}, transparent 80%);
-        transition: opacity .9s ease;
+
+        transition: opacity 0.9s ease;
       }
     }
   }
@@ -71,14 +66,14 @@ $backgroundcolors: ("yellow": $color-light-yellow, "red": $color-light-red, "gre
       display: flex;
       flex-wrap: wrap;
       height: 100%;
-      transition: background-color .9s ease;
+      transition: background-color 0.9s ease;
     }
 
     &:hover {
       @each $name, $color in $colors {
         &.#{$name} {
-          transition: opacity .9s ease;
           background-color: #{$color};
+          transition: opacity 0.9s ease;
         }
       }
     }
@@ -163,7 +158,8 @@ $backgroundcolors: ("yellow": $color-light-yellow, "red": $color-light-red, "gre
       &.#{$name} {
         .card-thumbnail__image::before {
           @include background-image(42deg, #{$color}, transparent 80%);
-          transition: opacity .9s ease;
+
+          transition: opacity 0.9s ease;
         }
       }
     }
@@ -176,7 +172,7 @@ $backgroundcolors: ("yellow": $color-light-yellow, "red": $color-light-red, "gre
 }
 
 //burmese lang
-:lang(my){
+:lang(my) {
   h6 {
     font-size: 1rem;
   }
@@ -184,4 +180,3 @@ $backgroundcolors: ("yellow": $color-light-yellow, "red": $color-light-red, "gre
 
 
 /* content-card start */
-

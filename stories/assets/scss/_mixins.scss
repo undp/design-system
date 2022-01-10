@@ -158,6 +158,8 @@
 }
 
 %checbox-radio-before {
+  @extend %background-white;
+
   border: 2px solid $color-dark-red;
   content: '';
   height: 12px;
@@ -165,7 +167,6 @@
   position: absolute;
   top: 5px;
   width: 12px;
-  @extend %background-white;
 }
 
 %img-hover-effect {
@@ -248,8 +249,8 @@
   width: 20px;
 
   @include devicebreak(medium) {
-    top: 1.125rem;
     padding: 0.625rem 0;
+    top: 1.125rem;
   }
 }
 
@@ -273,16 +274,15 @@
 
 %select_default {
   border: 2px solid $color-black;
+  color: $color-black;
   cursor: pointer;
   font-size: $font-size-16;
   font-weight: 600;
   margin: 0;
-  width: 100%;
   padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
   position: relative;
   text-transform: uppercase;
-  margin: 0;
-  color:$color-black;
+  width: 100%;
 }
 
 %select_option {
@@ -368,10 +368,10 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  height: 2.75rem;
   padding: 0;
   vertical-align: bottom;
   width: 2.75rem;
-  height: 2.75rem;
 }
 
 %carousel_tag {
@@ -416,24 +416,26 @@
   background-color: white;
 }
 
-%sub-external{
-  justify-content: space-between;
+%sub-external {
   align-items: center;
+  justify-content: space-between;
 }
 
-%external{
+%external {
+  align-items: center;
+  content: '';
   cursor: pointer;
   height: 1.125rem;
   width: 1.25rem;
-  content: "";
-  align-items: center;
 }
 
 %footerlink {
   @extend %img_none;
+
   color: $color-white;
   font-size: $font-size-16;
   line-height: 1.4;
+
   &:hover {
     color: $color-blue-100;
   }
@@ -441,13 +443,14 @@
 
 %footerlinkinvert {
   color: $color-black;
+
   &:hover {
     color: $color-gray-600;
   }
 }
 
 //burmese lang
-:lang(my){
+:lang(my) {
   %carousel_tag {
     font-size: 1rem;
   }
@@ -482,11 +485,13 @@
   }
 }
 
-%logo{
-  @include transition(all .4s cubic-bezier(.64,.05,.35,1.05));
+%logo {
+  @include transition(all 0.4s cubic-bezier(0.64,0.05,0.35,1.05));
+
   @include devicebreak(xlarge) {
     height: 7.625rem;
-    &.scrolled{
+
+    &.scrolled {
       height: 7.1875rem;
     }
   }

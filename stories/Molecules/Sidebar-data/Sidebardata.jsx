@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './sidebardata.scss';
 
 export const Sidebardata = ({ data, headerText }) => (

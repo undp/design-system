@@ -1,5 +1,3 @@
-import React from "react";
+import React from 'react';
 
-export const Icons = ({ src, alt }) => {
-  return <img src={src} alt={alt} />;
-};
+export const Icons = ({ src, alt }) => <img src={src} alt={alt} />;

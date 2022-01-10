@@ -14,9 +14,9 @@ export const ImageRevelCard = ({
   return (
     <div className="grid-x grid-margin-x">
       <div className={['cell', `${size}`].join(' ')}>
-        <a href={link} className='image-card'>
+        <a href={link} className="image-card">
           <div className="image-card__content">
-            {image && ( <img src={image} alt={image} /> )}
+            {image && (<img src={image} alt={image} />)}
             {contentname && <Heading type="5" label={contentname} />}
           </div>
           <span className="cta__link cta--arrow">{button}</span>

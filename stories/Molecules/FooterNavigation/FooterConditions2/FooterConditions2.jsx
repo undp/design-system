@@ -6,17 +6,20 @@ export const variant_options = {
   inverted: 'inverted',
 };
 
-const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
 export const FooterConditions2 = ({
   style, text, footerdata2, ...args
-}) => (
-  <ul className={cls('footer__condition_text', `${variant_options[`${args.variant}`]}`)}>
-    {footerdata2.map((item, index) => (
-      <li key={index}><a href="#">{item.menu}</a></li>
-    ))}
-  </ul>
-);
+}) => {
+  let screen_variant = variant_options[`${args.variant}`];
+  return (
+    <ul className={cls('footer__condition_text', `${screen_variant}`)}>
+      {footerdata2.map((item, index) => (
+        <li key={index}><a href="#">{item.menu}</a></li>
+      ))}
+    </ul>
+  );
+};
 
 FooterConditions2.defaultProps = {
   variant: 'default',

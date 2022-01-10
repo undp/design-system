@@ -14,11 +14,11 @@ export const ContentCardWithAndWithoutImage = ({
 }) => (
   <div className="grid-x grid-margin-x content-data">
     {data.map((item, index) => (
-      <div key={index} className={['cell', `${[`${item.scale}`]}`].join(' ')}>
+      <div key={index} className={['cell', `${item.scale}`].join(' ')}>
 
         {item.type === 'image'
           ? (
-            <a href={item.link} className={['content-card', 'content-card__image', `${[`${item.Hovercolors}`]}`].join(' ')}>
+            <a href={item.link} className={['content-card', 'content-card__image', `${item.Hovercolors}`].join(' ')}>
               <Heading type="6" label={item.contenttile} />
               <div className="card-thumbnail__image">
                 <img src={item.imgback} alt={item.imgback} />
@@ -34,7 +34,7 @@ export const ContentCardWithAndWithoutImage = ({
           )}
         {item.type === 'color'
           ? (
-            <a href={item.link} className={['content-card', `${item.BackgroundColor}`, `${[`${item.Hovercolors}`]}`].join(' ')}>
+            <a href={item.link} className={['content-card', `${item.BackgroundColor}`, `${item.Hovercolors}`].join(' ')}>
               <Heading type="6" label={item.contenttile} />
               <div className="content-card__caption">
                 {item.Emphasize === 'true'

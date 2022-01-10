@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { StatsPanel } from '../../Molecules/Blocks/StatsPanel/StatsPanel';
 import { StatsHover } from '../../assets/js/stats';
 import viewport from '../../assets/js/viewport';

@@ -64,11 +64,11 @@
   }
 
   &.text-left {
-    .parallax-card__content{
+    .parallax-card__content {
       order: -1;
 
-      @include devicebreak(medium){
-        .parallax-card__link{
+      @include devicebreak(medium) {
+        .parallax-card__link {
           padding-left: $spacing-12;
           padding-right: 0;
         }
@@ -82,7 +82,7 @@
           padding-left: 0;
           padding-right: $spacing-24;
         }
-    
+
         p {
           padding: 0 $spacing-24 $spacing-24 0;
         }
@@ -103,11 +103,11 @@
         padding-left: 0;
         padding-right: $spacing-24;
       }
-  
+
       p {
         padding: 0 $spacing-24 $spacing-24 0;
       }
-  
+
       .parallax-card__link {
         padding-left: $spacing-12;
         padding-right: 0;
@@ -116,20 +116,20 @@
       &.text-left {
         .parallax-card__content {
           .parallax-card__link {
-            padding-right: $spacing-12;
             padding-left: 0;
+            padding-right: $spacing-12;
           }
-    
+
           .cta__link {
             padding-left: $spacing-24;
             padding-right: 0;
           }
-    
+
           h3 {
             padding-left: $spacing-24;
             padding-right: 0;
           }
-    
+
           p {
             padding: 0 0 $spacing-24 $spacing-24;
           }
@@ -143,44 +143,43 @@
   .parallax-card {
     @include devicebreak(medium) {
       h3 {
-        padding-right: $spacing-24;
         padding-left: 0;
+        padding-right: $spacing-24;
       }
 
       p {
         padding: 0 $spacing-24 $spacing-24 0;
       }
 
-      .cta__link{
+      .cta__link {
         padding-right: $spacing-24;
       }
 
-      &.image-right, &.text-left {
-
+      &.image-right,
+      &.text-left {
         .cta__link {
-          padding-right: 0;
           padding-left: $spacing-24;
+          padding-right: 0;
         }
-  
+
         h3 {
-          padding-right: 0;
           padding-left: $spacing-24;
+          padding-right: 0;
         }
-    
+
         p {
           padding: 0 0 $spacing-24 $spacing-24;
         }
-    
+
         .parallax-card__link {
-          padding-right: $spacing-12;
           padding-left: 0;
+          padding-right: $spacing-12;
         }
       }
     }
 
     &__link {
-
-      @include devicebreak(medium){
+      @include devicebreak(medium) {
         padding-left: $spacing-12;
         padding-right: 0;
       }

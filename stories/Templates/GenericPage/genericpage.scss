@@ -8,63 +8,63 @@
     &-width {
       .accordion-wrapper {
         width: calc(100% - #{$spacing-12});
-  
+
         @include devicebreak(medium) {
           margin-top: 0.8rem;
           width: 90%;
         }
       }
-  
+
       ul {
         list-style: none;
       }
     }
-  
+
     &-mobile {
       display: block;
       margin-bottom: $spacing-12;
       margin-top: 5.5rem;
-  
+
       @include devicebreak(medium) {
         display: none;
       }
     }
-  
+
     &-desktop {
       display: none;
-  
+
       @include devicebreak(medium) {
         display: block;
       }
     }
   }
-  
+
   .margin-top {
     &-32 {
       margin-top: $spacing-32;
     }
-  
+
     &-72 {
       margin-top: 4.5rem;
     }
   }
-  
+
   .progress {
     &-container {
-      top: 4.6875rem;
       position: fixed;
+      top: 4.6875rem;
       z-index: 1;
 
       @include devicebreak(xlarge) {
         top: 7.1875rem;
       }
     }
-    
+
     &-top {
       top: inherit;
     }
 
-    &-bar{
+    &-bar {
       width: 0%;
     }
   }
@@ -75,6 +75,7 @@
     @include devicebreak(medium) {
       margin-top: 5.688rem;
     }
+
     @include devicebreak(xlarge) {
       margin-top: 8.1875rem;
     }

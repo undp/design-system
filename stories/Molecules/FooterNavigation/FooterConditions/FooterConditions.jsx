@@ -6,15 +6,18 @@ export const variant_options = {
   inverted: 'inverted',
 };
 
-const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
-export const FooterConditions = ({ style, footerdata, ...args }) => (
-  <ul className={cls('footer__condition', `${variant_options[`${args.variant}`]}`)}>
-    {footerdata.map((item, index) => (
-      <li key={index}><a href="#">{item.menu}</a></li>
-    ))}
-  </ul>
-);
+export const FooterConditions = ({ style, footerdata, ...args }) => {
+  let screen_variant = variant_options[`${args.variant}`];
+  return (
+    <ul className={cls('footer__condition', `${screen_variant}`)}>
+      {footerdata.map((item, index) => (
+        <li key={index}><a href="#">{item.menu}</a></li>
+      ))}
+    </ul>
+  );
+};
 
 FooterConditions.defaultProps = {
   variant: 'default',

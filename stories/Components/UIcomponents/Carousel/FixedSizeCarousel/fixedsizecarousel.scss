@@ -4,7 +4,7 @@
 /* fixed carousel start */
 .fixed-carousel {
   overflow: hidden;
-  
+
   &__row {
     @include devicebreak(medium) {
       display: flex;
@@ -112,8 +112,7 @@
   }
 
   .glide {
-    
-    &__bullets{
+    &__bullets {
       margin-bottom: $spacing-48;
     }
 
@@ -179,8 +178,8 @@
           margin-left: 0.75rem;
           margin-right: 0;
 
-          img{
-            @include transform(rotate(180deg))
+          img {
+            @include transform(rotate(180deg));
           }
         }
 
@@ -188,8 +187,8 @@
           margin-left: 0;
           margin-right: 0.75rem;
 
-          img{
-            @include transform(rotate(-180deg))
+          img {
+            @include transform(rotate(-180deg));
           }
         }
       }

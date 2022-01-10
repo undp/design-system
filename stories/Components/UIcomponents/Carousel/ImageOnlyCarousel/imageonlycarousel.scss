@@ -5,25 +5,24 @@
 .image-carousel {
   overflow: hidden;
 
-  &__image{
-    max-width: 65%;
-    width: auto;
-    object-fit: cover;
+  &__image {
     height: 30rem;
+    max-width: 65%;
+    object-fit: cover;
+    width: auto;
 
     @include devicebreak(large) {
       height: 38.75rem;
     }
 
     @include devicebreak(small) {
-      max-width: 100%;
       height: 21.875rem;
+      max-width: 100%;
     }
   }
 
   .glide {
-    
-    &__bullets{
+    &__bullets {
       margin-bottom: $spacing-48;
     }
 
@@ -61,8 +60,8 @@
           margin-left: 0.75rem;
           margin-right: 0;
 
-          img{
-            @include transform(rotate(180deg))
+          img {
+            @include transform(rotate(180deg));
           }
         }
 
@@ -70,8 +69,8 @@
           margin-left: 0;
           margin-right: 0.75rem;
 
-          img{
-            @include transform(rotate(-180deg))
+          img {
+            @include transform(rotate(-180deg));
           }
         }
       }

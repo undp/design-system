@@ -4,7 +4,7 @@ export const getData = (lang) => {
     url: './js/navigation_data.json',
     dataType: 'json',
     success(res) {
-      lang = lang ? lang : 'english';
+      lang = lang || 'english';
       const resData = res.find((item) => item.language === lang);
       const $megaWrapper = $('.mega-wrapper');
       const $mobileMegaWrapper = $('.mobile-mega-wrapper');
@@ -12,9 +12,9 @@ export const getData = (lang) => {
       $mobileMegaWrapper.empty();
       resData.data.forEach((item, index) => {
         const submenus = item.submenus
-          .map((menu, index) => `<li tabindex="${index+1}" id="${menu.link.id}-${item.id}" class="${
+          .map((menu, index) => `<li tabindex="${index + 1}" id="${menu.link.id}-${item.id}" class="${
             index === 0 ? 'active' : ''
-          }"><a href="${menu.external_link?menu.external_link:'#'}" class="${menu.external_link?['sub-link','sub-external'].join(' '):'sub-link'}">${menu.link.label}</a></li>`)
+          }"><a href="${menu.external_link ? menu.external_link : '#'}" class="${menu.external_link ? ['sub-link', 'sub-external'].join(' ') : 'sub-link'}">${menu.link.label}</a></li>`)
           .join(' ');
 
         const gridX = item.submenus
@@ -24,32 +24,31 @@ export const getData = (lang) => {
               : 'grid-x sub-menu-content'
           }" data-submenu-id="${menu.link.id}-${item.id}">
                       <div class="${
-                        menu.image
-                          ? 'cell mega-sub-description large-6'
-                          : 'cell mega-sub-description large-10'
-                      }">
+  menu.image
+    ? 'cell mega-sub-description large-6'
+    : 'cell mega-sub-description large-10'
+}">
                         <h3 class="mega-title">${menu.title}</h3>
                         <p class="mega-description">${menu.description}</p>
                         <div class="sub-sub-menu">
                             <ul class="list-col-first">
                             ${
-                              menu.linksCol1.length > 0
-                                ? menu.linksCol1
-                                  .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
-                                  .join(' ')
-                                : ''
-                            }
+  menu.linksCol1.length > 0
+    ? menu.linksCol1
+      .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
+      .join(' ')
+    : ''
+}
                             </ul>
                             ${
-                              menu.linksCol2.length > 0
-                                ?
-                              `<ul class="list-col-second">
+  menu.linksCol2.length > 0
+    ? `<ul class="list-col-second">
                                   ${menu.linksCol2
-                                          .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
-                                          .join(' ')
-                                  }
-                              </ul>`:''
-                            }
+    .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
+    .join(' ')
+}
+                              </ul>` : ''
+}
                         </div>
                       </div>
                       ${

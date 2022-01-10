@@ -8,7 +8,7 @@ export function modal() {
 
   // modal function
   function modalOpen(modal) {
-    $modalOpen.click(() => {
+    $modalOpen.click((event) => {
       event.preventDefault();
       $(modalSelector).addClass('open');
     });
@@ -23,7 +23,7 @@ export function modal() {
   });
 
   // Close icon function
-  $modalClose.click(() => {
+  $modalClose.click((event) => {
     event.preventDefault();
     $modalOverlay.click();
   });

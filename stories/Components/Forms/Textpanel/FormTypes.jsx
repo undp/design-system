@@ -60,7 +60,7 @@ export const FormTypes = ({
           </div>
         </div>
       )}
-      {args.variant === "form with photo" && (
+      {args.variant === 'form with photo' && (
         <div className="grid-x form-photo">
           <div className="medium-5 cell">
             <Image />
@@ -98,7 +98,7 @@ export const FormTypes = ({
           </div>
         </div>
       )}
-      {args.variant === "wide form" && (
+      {args.variant === 'wide form' && (
         <div className="grid-x grid-margin-x wide-form">
           <div className="large-8 cell">
             <div className="grid-x">

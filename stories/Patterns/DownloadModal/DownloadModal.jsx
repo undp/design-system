@@ -23,10 +23,13 @@ export const DownloadModal = ({
     checkbox('.checkbox input', '.button-primary');
     selectFilter();
   }, []);
+
+  let image_variant = Image_options[`${args.Image}`];
+  let category_variant = Category_options[`${args.Category}`];
   return (
-    <div className={['modal', `${Image_options[`${args.Image}`]}`].join(' ')} aria-modal="true" role="dialog" aria-label="download_modal">
+    <div className={['modal', `${image_variant}`].join(' ')} aria-modal="true" role="dialog" aria-label="download_modal">
       <div className="modal-content">
-        <a href="javascript:void(0)" className="modal-close-button" aria-label="Close modal"/>
+        <a href="javascript:void(0)" className="modal-close-button" aria-label="Close modal" />
         <div className="download-body">
           {args.Image === 'True' && (
           <div className="show-large">
@@ -35,7 +38,7 @@ export const DownloadModal = ({
           )}
           <div className="download-content">
             {args.Category === 'Multiplelanguages' && <CustomSelect text={select} />}
-            <div className={['download-list', `${Category_options[`${args.Category}`]}`].join(' ')}>
+            <div className={['download-list', `${category_variant}`].join(' ')}>
               {data.map((item, index) => (
                 <DownloadRow title={item.title} subtitle={item.subtitle} datalang={item.datalang} key={index} value={index} />
               ))}

@@ -18,16 +18,16 @@
     position: relative;
 
     button {
+      background: transparent;
+      border: none;
       display: block;
-      width: 100%;
-      margin: 0 auto;
-      padding: $spacing-16 0 $spacing-24;
       font-size: $font-size-25;
       font-weight: 400;
       line-height: 1.15;
-      border: none;
-      background: transparent;
+      margin: 0 auto;
+      padding: $spacing-16 0 $spacing-24;
       text-align: left;
+      width: 100%;
 
       &::before {
         @include transition(all 0.3s ease);
@@ -35,12 +35,12 @@
         background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
         border-top-color: #f3f3f3;
         content: '';
-        right: $spacing-16;
         height: 1.25rem;
         margin-left: $spacing-24;
-        width: 1.25rem;
         position: absolute;
+        right: $spacing-16;
         top: $spacing-24;
+        width: 1.25rem;
       }
 
       &.accordion--active {
@@ -61,13 +61,13 @@
 [dir='rtl'] {
   .accordion {
     li {
-      button { 
+      button {
         text-align: right;
 
         &::before {
-          right: unset;
           left: 0;
           margin-left: $spacing-08;
+          right: unset;
         }
 
         &.accordion--active {

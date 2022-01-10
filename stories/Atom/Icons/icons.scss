@@ -10,9 +10,9 @@
 .arrow-expand {
   background: url(#{$img-path-Iconback}/arrow-left-expand-defaut.svg) no-repeat center center;
   cursor: pointer;
+  display: inline-flex;
   height: 16px;
   width: 20px;
-  display: inline-flex;
 
   &:hover {
     @include transform (translateX(10px));
@@ -26,9 +26,9 @@
 .external-link {
   background: url(#{$img-path-Iconback}/external-default.svg) no-repeat 0 bottom;
   cursor: pointer;
+  display: inline-flex;
   height: 20px;
   width: 21px;
-  display: inline-flex;
 
   &:hover {
     background: url(#{$img-path-Iconback}/external-hover.svg) no-repeat 0 bottom;
@@ -38,9 +38,9 @@
 .download-icon {
   background: url(#{$img-path-Iconback}/download-default.svg) no-repeat 0 bottom;
   cursor: pointer;
+  display: inline-flex;
   height: 24px;
   width: 24px;
-  display: inline-flex;
 
   &:hover {
     background: url(#{$img-path-Iconback}/download-hover.svg) no-repeat 0 bottom;
@@ -68,19 +68,19 @@
 
 // For doc styling only
 #story--foundation-icons--icons > div {
-  display: flex;
-  text-align: center;
   align-items: center;
-  box-sizing: border-box;
-  flex-direction: column;
-  width: calc(100% - 2rem);
-  justify-content: center;
   background: $color-gray-300;
-  padding: $spacing-16 $spacing-08;
-  margin: 0 $spacing-16 $spacing-32;
   border: 1px solid $color-gray-400;
   box-shadow: 2px 2px 4px $color-gray-300;
-  
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 $spacing-16 $spacing-32;
+  padding: $spacing-16 $spacing-08;
+  text-align: center;
+  width: calc(100% - 2rem);
+
   @include devicebreak(medium) {
     width: calc(25% - 2rem);
   }

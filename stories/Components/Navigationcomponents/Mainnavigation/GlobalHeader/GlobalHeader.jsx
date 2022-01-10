@@ -37,7 +37,7 @@ const GlobalHeader = ({
               data={languageswitcherData.languagedata}
               headerText={languageswitcherData.headerText}
             />
-            <button className="menu-icon menu-hamburger" aria-label='menu-icon'>
+            <button className="menu-icon menu-hamburger" aria-label="menu-icon">
               <span className="hamburger-line line-top" />
               <span className="hamburger-line line-middle" />
               <span className="hamburger-line line-bottom" />
@@ -45,11 +45,11 @@ const GlobalHeader = ({
             </button>
           </div>
           <div className="cell large-8 small-8 mid-nav">
-            {desktopView && <Menu data={leftNavigationData} role='navigation' arialabel='Navigation'/>}
+            {desktopView && <Menu data={leftNavigationData} role="navigation" arialabel="Navigation" />}
             <a href="#" className="logo">
               <Logo src={pnud} alt="UNDP Logo" />
             </a>
-            {desktopView && <Menu data={rightNavigationData} role='navigation' arialabel='Main'/>}
+            {desktopView && <Menu data={rightNavigationData} role="navigation" arialabel="Main" />}
           </div>
           <div className="cell large-2 small-2 top-right">
             <button className="icon-globe">

@@ -14,6 +14,7 @@
     transform: rotate(360deg);
   }
 }
+
 .loader {
   @include animation(loader-animation 2s linear infinite);
 

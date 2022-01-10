@@ -29,23 +29,23 @@
   .pagehero {
     &_right_box {
       height: auto;
+      margin-top: 0;
       position: relative;
       width: 100%;
-      margin-top: 0;
-  
+
       @include devicebreak(medium) {
-        margin-top: 7rem;
         height: 100%;
+        margin-top: 7rem;
         position: inherit;
       }
 
       @include devicebreak(xlarge) {
-        margin-top: 9.125rem;
         height: 100%;
+        margin-top: 9.125rem;
         position: inherit;
       }
     }
-  
+
     &__content {
       margin-top: $spacing-40;
       padding-top: $spacing-64;
@@ -55,7 +55,7 @@
         padding-top: $spacing-80;
       }
 
-      .breadcrumb{
+      .breadcrumb {
         padding-left: 0;
       }
     }
@@ -99,8 +99,8 @@
 .sign-up {
   &.blue {
     .sign-up--field input {
-      border-color: $color-white;
       background: transparent;
+      border-color: $color-white;
 
       &::placeholder {
         color: $color-white;
@@ -108,4 +108,5 @@
     }
   }
 }
+
 /* page hero end */

@@ -5,24 +5,29 @@
 /* author page start */
 .author-page {
   margin-top: 4.75rem;
-  .authorheading{
-    display: none;
-    @include devicebreak(small) {
-      display: block;
-      padding:0 $spacing-24 $spacing-16;
-      font-weight: 700;
-    }  
-  }
-  .author-summary{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+
   @include devicebreak(xlarge) {
     margin-top: 10.75rem;
   }
 
+  .authorheading {
+    display: none;
+
+    @include devicebreak(small) {
+      display: block;
+      font-weight: 700;
+      padding: 0 $spacing-24 $spacing-16;
+    }
+  }
+
+  .author-summary {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .breadcrumb {
     margin: 3.5625rem 0;
+
     @include devicebreak(small) {
       margin: $spacing-24 0;
     }
@@ -31,14 +36,17 @@
   .author-content {
     margin-bottom: $spacing-136;
     margin-top: $spacing-80;
+
     @include devicebreak(small) {
       margin-bottom: $spacing-40;
-      h2{
+
+      h2 {
         font-weight: 600;
       }
-      .button{
-        margin:0 1.5rem;
-      } 
+
+      .button {
+        margin: 0 1.5rem;
+      }
     }
   }
 }

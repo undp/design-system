@@ -7,8 +7,9 @@ export const Publicationthumb = ({ Hovercolors }) => {
     src: user,
     alt: 'Image',
   };
+
   return (
-    <div className={['publication-thumbnail__image', `${[`${Hovercolors}`]}`].join(' ')}>
+    <div className={['publication-thumbnail__image', `${Hovercolors}`].join(' ')}>
       <img src={image.src} alt={image.alt} />
     </div>
   );

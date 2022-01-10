@@ -73,7 +73,7 @@
 .glide {
   max-width: 100%;
 
-  &__scrollbar{
+  &__scrollbar {
     @include devicebreak(medium) {
       &.show-for-small {
         display: none;
@@ -83,8 +83,8 @@
 
   &__bullets {
     display: flex;
-    position: relative;
     margin-bottom: $spacing-32;
+    position: relative;
 
     @include devicebreak(medium) {
       &.show-for-small {
@@ -107,20 +107,20 @@
   &__bullet {
     @include transition(all 0.1s);
 
-    padding: 3px 0;
     background: transparent;
     border: none;
     border-radius: 0;
     cursor: pointer;
     flex-grow: 1;
     height: 4px;
+    padding: 3px 0;
     position: relative;
     z-index: 2;
   }
 
-  &__slide{
-    &[aria-hidden="true"]{
-      a{
+  &__slide {
+    &[aria-hidden='true'] {
+      a {
         display: none;
       }
     }

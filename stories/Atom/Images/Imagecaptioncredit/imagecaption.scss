@@ -37,7 +37,7 @@
         + .credits {
           border-top: 1px solid $color-gray-500;
           margin-left: 0;
-          padding: $spacing-16 0 0 0; 
+          padding: $spacing-16 0 0 0;
         }
       }
     }
@@ -74,12 +74,13 @@
 
       .credits {
         border-right: 0;
+        margin-bottom: 0;
         margin-right: 0;
         padding: $spacing-16 0;
         padding-right: 0;
-        margin-bottom: 0;
       }
     }
   }
 }
+
 /* image with caption end */

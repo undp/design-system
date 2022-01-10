@@ -13,13 +13,13 @@ export const Languageswitcher = ({
   useEffect(() => {
     langSwitch();
   }, []);
-
+  let color_variant = variant_options[`${args.variant}`];
   return (
     <div className="dropdown-language">
-      <button className={[`${variant_options[`${args.variant}`]}`].join(' ')} aria-label="English, Select your language" aria-expanded="false">{headerText}</button>
+      <button className={[`${color_variant}`].join(' ')} aria-label="English, Select your language" aria-expanded="false">{headerText}</button>
       <ul role="menu">
         {data.map((item, index) => (
-          <li key={index} role="menuitem" >
+          <li key={index} role="menuitem">
             <a href="#" lang={item.lang} hrefLang={item.lang} tabIndex="0">
               {item.descriptionText}
             </a>

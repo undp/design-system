@@ -16,9 +16,11 @@ body {
     font-size: 1.25rem;
   }
 }
-button{
+
+button {
   font-family: $Font-Family-ProximaNova;
 }
+
 h1,
 h2,
 h3,
@@ -135,12 +137,12 @@ dt {
 }
 
 dd {
-  margin-inline-start: $spacing-40;
   margin-bottom: $spacing-16;
+  margin-inline-start: $spacing-40;
 
   @include devicebreak(medium) {
-    margin-inline-start: $spacing-48;
     margin-bottom: $spacing-24;
+    margin-inline-start: $spacing-48;
   }
 }
 
@@ -149,17 +151,22 @@ hr {
 }
 
 // burmese lang
-:lang(my){
+:lang(my) {
   body {
     font-family: $Font-Family-NotoSans;
     line-height: 1.7;
   }
 
-  h1,h2,h3,h4,h5,h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     line-height: 1.7;
   }
- 
- h1 {
+
+  h1 {
     font-size: 2.625rem;
 
     @include devicebreak(medium) {
@@ -182,12 +189,15 @@ hr {
       font-size: 2.813rem;
     }
   }
+
   h4 {
-  font-size: 1.3rem;
+    font-size: 1.3rem;
+
     @include devicebreak(medium) {
       font-size: 1.8rem;
     }
   }
+
   h5 {
     font-size: $font-size-20;
 
@@ -195,22 +205,26 @@ hr {
       font-size: 1.375rem;
     }
   }
+
   p {
-    line-height: 1.9;
     font-size: $font-size-14;
+    line-height: 1.9;
 
     @include devicebreak(medium) {
       font-size: $font-size-16;
     }
   }
 
-  ul li, ol li, dl {
-    line-height: 1.9;
+  ul li,
+  ol li,
+  dl {
     font-size: 0.875rem;
+    line-height: 1.9;
+
     @include devicebreak(medium) {
       font-size: 1.125rem;
     }
   }
-
 }
+
 /* typograpgy end */

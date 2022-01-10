@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import logowhite from '../../assets/images/undp-logo-white.svg';
 import logo from '../../assets/images/undp-logo-blue.svg';
 import user from '../../assets/images/user.svg';
-import viewport from '../../assets/js/viewport';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
@@ -12,7 +11,6 @@ import { select } from '../../assets/js/select';
 import { Authorcard } from '../../Components/UIcomponents/Author/Authorcard/Authorcard';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 import { SearchExpand } from '../../Components/Forms/ExpandableSearch/SearchExpand';
-import CustomSelect from '../../Components/Forms/Dropdowns/CustomSelect/CustomSelect';
 
 const Authors = ({
   breadcrumbData,
@@ -32,14 +30,14 @@ const Authors = ({
 }) => {
   useEffect(() => {
     select();
-    $('.sort-btn').click(function sortclick() {
+    $('.sort-btn').click(function sortclick(event) {
       event.preventDefault();
       $('.author-filter').addClass('author-filter-show');
       $('.close-btn').addClass('show-close');
       $(this).addClass('hide-sort');
       $('.author-cards').addClass('find-first-author');
     });
-    $('.close-btn').click(function closeclick() {
+    $('.close-btn').click(function closeclick(event) {
       event.preventDefault();
       $('.author-filter').removeClass('author-filter-show');
       $(this).removeClass('show-close');
