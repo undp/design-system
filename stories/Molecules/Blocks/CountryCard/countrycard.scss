@@ -15,12 +15,9 @@
 
 .country-card {
   @include devicebreak(medium) {
-    margin-top: $spacing-96;
-
-    &.glide__slide {
-      height: 100%;
-
-      a {
+    &.glide__slide{
+      a{
+        overflow: hidden;
         @include transition(all 0.4s);
         @include transform(translateY(0));
 
@@ -35,11 +32,7 @@
         }
       }
     }
-
-    img {
-      height: auto;
-    }
-
+    margin-top: $spacing-96;
     &:hover {
       a::before {
         content: '';
@@ -49,7 +42,7 @@
       .country {
         &-card {
           &__caption {
-            transform: translateY(-100%);
+            transform: translateY(calc(-100% + 2.75rem));
 
             p {
               opacity: 1;
@@ -107,7 +100,7 @@
 
     border: 0;
     display: block;
-    height: auto;
+    height: 100%;
     position: relative;
   }
 
