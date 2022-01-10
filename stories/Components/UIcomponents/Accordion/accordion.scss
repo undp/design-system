@@ -8,70 +8,76 @@
 
   padding: 0;
   position: relative;
-}
 
-.accordion__item {
-  border-bottom: 1px solid $color-gray-500;
-  cursor: pointer;
-  list-style: none;
-  margin-bottom: 0;
-  overflow: hidden;
-  padding: $spacing-16 0 $spacing-24;
-  position: relative;
-
-  &::before {
-    @include transition(all 0.3s ease);
-
-    background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
-    border-top-color: #f3f3f3;
-    content: '';
-    float: right;
-    height: 20px;
-    margin-left: $spacing-24;
-    width: 20px;
-  }
-
-  .accordion__heading {
+  li {
+    border-bottom: 1px solid $color-gray-500;
+    cursor: pointer;
+    list-style: none;
     margin-bottom: 0;
-  }
+    overflow: hidden;
+    position: relative;
 
-  &.accordion--active {
-    padding-bottom: 0;
+    button {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      padding: $spacing-16 0 $spacing-24;
+      font-size: $font-size-25;
+      font-weight: 400;
+      line-height: 1.15;
+      border: none;
+      background: transparent;
+      text-align: left;
 
-    .accordion__heading {
-      margin-bottom: 0.625rem;
-      padding-right: $spacing-24;
+      &::before {
+        @include transition(all 0.3s ease);
 
-      @include devicebreak(medium) {
-        margin-bottom: 0;
-        padding-bottom: $spacing-16;
+        background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
+        border-top-color: #f3f3f3;
+        content: '';
+        right: $spacing-16;
+        height: 1.25rem;
+        margin-left: $spacing-24;
+        width: 1.25rem;
+        position: absolute;
+        top: $spacing-24;
+      }
+
+      &.accordion--active {
+        &::before {
+          @include transform(rotateZ(-180deg));
+        }
       }
     }
 
-    &::before {
-      @include transform(rotateZ(-180deg));
-    }
-  }
-
-  p {
-    &:last-child {
-      margin-bottom: 0;
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
 
 [dir='rtl'] {
-  .accordion__item {
-    &::before {
-      float: left;
-      margin-left: 0;
-      margin-right: $spacing-24;
-    }
-  }
+  .accordion {
+    li {
+      button { 
+        text-align: right;
 
-  .accordion--active {
-    .accordion__heading {
-      padding-right: 0;
+        &::before {
+          right: unset;
+          left: 0;
+          margin-left: $spacing-08;
+        }
+
+        &.accordion--active {
+          padding-right: 0;
+
+          &::before {
+            @include transform(rotateZ(180deg));
+          }
+        }
+      }
     }
   }
 }
