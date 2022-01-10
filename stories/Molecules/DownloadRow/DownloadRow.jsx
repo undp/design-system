@@ -9,17 +9,17 @@ export const DownloadRow = ({
   <div className="download-row">
     <div className="download-row__main">
       <div className="download-row__data">
-        <Heading type="6" label={title} />
-        <span>{subtitle}</span>
+        <Heading type="6" label={title} tabIndex='0' />
+        <span tabIndex='0'>{subtitle}</span>
       </div>
       {args.type === 'Checkbox' && <Checkbox value={value} /> }
       {args.type === 'Download' && (
-      <a href="#">
+      <a href="#" aria-label="download" target="_blank">
         <span className="download-icon" />
         {' '}
       </a>
       )}
-      {args.type === 'External_link' && <a href="#"><span className="external-link" /></a>}
+      {args.type === 'External_link' && <a href="#" aria-label="external-link" target="_blank"><span className="external-link" /></a>}
     </div>
   </div>
 );
