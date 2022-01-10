@@ -25,47 +25,28 @@
     .dropdown-language {
       margin-left: $spacing-12;
     }
-    
   }
 
   .mid-nav {
     display: flex;
     justify-content: center;
 
-    nav{
-      &:first-child{
-        ul{
-          justify-content: flex-end;
-          padding-left: 0;
-          padding-right: 6.9375rem;
-        }
-      }
-    }
     ul {
       align-items: center;
       display: flex;
       height: 7.1875rem;
-      padding-left: 6.9375rem;
 
       @include devicebreak(mediumonlytab) {
         display: none;
       }
 
       li {
-        margin: $spacing-12 0 $spacing-12 4.4375rem;
-
-        &:first-child {
-          margin-left: 0;
+        margin: $spacing-12 2.188rem;
+        &:nth-child(2){
+          margin-right: 6.563rem;
         }
-      }
-
-      &:last-child {
-        li {
-          margin: $spacing-12 4.4375rem $spacing-12 0;
-
-          &:last-child {
-            margin-right: 0;
-          }
+        &:nth-child(3){
+          margin-left: 6.563rem;
         }
       }
     }
@@ -130,14 +111,7 @@
 
 [dir='rtl'] {
   .global-header {
-    .mid-nav {
-      nav:last-child{
-        ul{
-          justify-content: flex-start;
-          padding-left: 0;
-          padding-right: 6.9375rem;
-        }
-      }
+    nav {
       ul {
 
         li {
@@ -145,23 +119,6 @@
 
           &:first-child {
             margin-right: 0;
-          }
-
-          &:last-child {
-            margin-right: 4.4375rem;
-          }
-        }
-
-        &:first-child {
-          padding-left: 6.9375rem;
-          padding-right: 0;
-
-          li {
-            margin: $spacing-12 0 $spacing-12 4.4375rem;
-
-            &:last-child {
-              margin-left: 0;
-            }
           }
         }
       }

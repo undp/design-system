@@ -12,8 +12,9 @@
   padding: 0 $spacing-24;
   position: absolute;
   top: 4.6875rem;
+  width:100%;
 
-  &.show-mobile-nav {
+  &.show {
     display: block;
   }
 
@@ -113,14 +114,9 @@
     flex-wrap: wrap;
     font-size: 1rem;
     text-transform: uppercase;
-
-    span {
-      align-items: center;
-      display: flex;
-
-      img {
-        margin-right: 0.46875rem;
-      }
+    align-items: center;
+    img {
+      margin-right: 0.46875rem;
     }
   }
 

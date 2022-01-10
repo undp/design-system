@@ -4,17 +4,17 @@ var lang = 'english';
 
 export const navigationInitialize = (locale) => {
   const $menu = $('.menu');
-  const $menuItem = $('.menu li');
+  const $menuItem = $('.menu li a');
   const $megaMenu = $('.show-mega');
 
   // calling ajax json
   lang = locale === 'en' ? 'english' : locale;
   getData(lang);
 
-  $menuItem.on('mouseenter', function () {
-    const id = $(this).attr('id');
-    const $menuItem = $(document).find(`[data-menu-item-id='${id}']`);
-    $menuItem.addClass('show-mega').siblings().removeClass('show-mega');
+  $menuItem.on('mouseenter focus', function () {
+    const id = $(this).parent().attr('menu-id');
+    const $menuItemId = $(document).find(`[data-menu-item-id='${id}']`);
+    $menuItemId.addClass('show-mega').siblings().removeClass('show-mega');
     $megaMenu.find('.sub-menu-content:first-child').addClass('active-content')
       .siblings().removeClass('active-content');
     $megaMenu.find('.submenu li:first-child').addClass('active').siblings().removeClass('active');
@@ -77,12 +77,9 @@ export const navigationInitialize = (locale) => {
   });
   $('.menu-hamburger').click(function (e) {
     e.stopImmediatePropagation();
-    $('.mobile-nav').toggleClass('show-mobile-nav');
+    $('.mobile-nav').toggleClass('show');
     $('.mob-sub-menu').toggleClass('show-sub');
     $(this).toggleClass('is-active');
     $('.back-nav').click();
   })
-  
 };
-
-

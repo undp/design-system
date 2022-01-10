@@ -6,7 +6,7 @@ export const Menu = ({ data, role, arialabel }) => (
   <nav className="menu" role={role} aria-label={arialabel}>
     <ul>
       {data.map((item, index) => (
-        <li key={index} id={item.id}><MenuItems text={item.label} /></li>
+        <li key={index} menu-id={item.id}><MenuItems text={item.label} /></li>
       ))}
     </ul>
   </nav>
