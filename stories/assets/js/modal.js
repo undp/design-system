@@ -3,25 +3,28 @@ export function modal() {
   const $modalOverlay = $('.modal');
   const $modal = $('.modal-content');
   const $modalClose = $('.modal-close-button');
-  const $modalOpen = $('.bio-card');
-  const modal = '#myModal';
+  const $modalOpen = $('.bio-card, #modal');
+  const modalSelector = '.modal';
 
-  $(modal).css('visibility', 'hidden');
-
+  // modal function
   function modalOpen(modal) {
     $modalOpen.click(() => {
-      $(modal).css('visibility', 'visible').addClass('open');
+      event.preventDefault();
+      $(modalSelector).addClass('open');
     });
     $modalOverlay.click(() => {
-      $(modal).css('visibility', 'hidden').removeClass('open');
+      $(modalSelector).removeClass('open');
     });
   }
 
+  // stop close function for modal content
   $modal.click((e) => {
     e.stopPropagation();
   });
 
+  // Close icon function
   $modalClose.click(() => {
+    event.preventDefault();
     $modalOverlay.click();
   });
 
