@@ -4,7 +4,7 @@ import './pagination.scss';
 export const Pagination = ({ text, text2 }) => (
   <nav className="pagination" aria-label="Pagination" role="navigation">
     <ul>
-      <li className="disabled"><a href="#" role="button" aria-current="true" aria-label="Previous">Previous</a></li>
+      <li className="disabled"  aria-disabled="true"><a href="#" role="button" aria-current="true" aria-label="Previous">Previous</a></li>
       <li>
         {text}
         <span>
