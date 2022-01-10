@@ -3,42 +3,38 @@
 @import '../../../assets/scss/mixins';
 
 /* project data start */
-.project-data__wrapper {
+.project-detail {
   border-bottom: 1px solid $color-gray-400;
 
   &-4 {
     border-bottom: 0;
   }
-}
 
-.project-data__section {
-  > .cell {
-    margin-top: $spacing-32;
+  h2 {
+    border-bottom: 2px solid $color-black;
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+  }
 
-    @include devicebreak(small) {
-      border-bottom: 1px solid $color-gray-400;
-    }
+  &-list {
+    > .cell {
+      margin-top: $spacing-32;
 
-    p {
-      color: $color-gray-700;
-      line-height: 2;
-      margin-bottom: 2rem;
-    }
+      @include devicebreak(small) {
+        border-bottom: 1px solid $color-gray-400;
+      }
 
-    h6 {
-      margin-bottom: 0.25rem;
+      p {
+        color: $color-gray-700;
+        line-height: 2;
+        margin-bottom: 2rem;
+      }
+
+      h6 {
+        margin-bottom: 0.25rem;
+      }
     }
   }
-}
-
-.project-data__title {
-  border-bottom: 2px solid $color-black;
-  margin-bottom: 0;
-  padding-bottom: 2rem;
-}
-
-.details-first {
-  flex-direction: row-reverse;
 }
 
 /* project data end */
