@@ -10,10 +10,10 @@ import '../../../../assets/js/smartresize';
 const ParallaxCards = ({ data, alt, title }) => (
   useEffect(() => {
     glideSlider('.parallax__content', '46');
-    parallaxEffect('.parallax-card-right-content', '50', '.glide__slides', '1', '.parallax-card__image');
-    parallaxEffect('.parallax-card-right-img', '-100', '.glide__slides', '0.1', '.parallax-card__content');
-    parallaxEffect('.parallax-card-left-content', '60', '.glide__slides', '1');
-    parallaxEffect('.parallax-card-left-img', '-130', '.glide__slides', '0.7');
+    parallaxEffect('.parallax-card.image-right .parallax-card__content', '50', '.glide__slides', '1', '.parallax-card__image');
+    parallaxEffect('.parallax-card.image-right .parallax-card__image', '-100', '.glide__slides', '0.1', '.parallax-card__content');
+    parallaxEffect('.parallax-card.image-left .parallax-card__content', '60', '.glide__slides', '1');
+    parallaxEffect('.parallax-card.image-left .parallax-card__image', '-130', '.glide__slides', '0.7');
   }, []),
     <section className="parallax">
       <div className="parallax__heading small-offset-1">
@@ -27,7 +27,7 @@ const ParallaxCards = ({ data, alt, title }) => (
           <div className="glide__slides parallax-check">
             {data.map((item, index) => (
               <>
-                {index++ % 2 == 0 ? <ParallaxCard Content="Right" name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} /> : <ParallaxCard name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} />}
+                {index++ % 2 == 0 ? <ParallaxCard glideClass='yes' Image="Right" name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} /> : <ParallaxCard glideClass='yes' name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} />}
               </>
             ))}
           </div>

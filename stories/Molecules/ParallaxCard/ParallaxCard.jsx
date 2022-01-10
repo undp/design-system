@@ -6,25 +6,33 @@ import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 
 const ParallaxCard = ({
-  name, descrption, button, alt, Text, Content,
+  name, descrption, button, alt, Text, Image, glideClass,
 }) => {
-  let text = '';
-  let content = 'left';
+  let text = '',
+  image = 'image-left',
+   addClass = '';
 
   if (Text == 'Left') {
-    text = 'order';
+    text = 'text-left';
   }
 
-  if (Content == 'Right') {
-    content = 'right';
+  if (Image == 'Right') {
+    image = 'image-right';
   }
+
+  if(glideClass == 'yes') {
+    addClass = 'glide__slide'
+  }
+
+  const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+  
   return (
     <>
-      <article className={['grid-x parallax-card', 'glide__slide', `${content}`].join(' ')}>
-        <div className={['cell medium-3 small-10 parallax-card__image', `parallax-card-${content}-img`].join(' ')}>
+      <article className={cls('grid-x parallax-card', `${addClass}`, `${image}`, `${text}`)}>
+        <div className='cell medium-3 small-10 parallax-card__image'>
           <img src={Img} alt={alt} data-speed="-1" />
         </div>
-        <div className={['cell medium-3 parallax-card__content', `parallax-card-${content}`, `${text}`].join(' ').trim()}>
+        <div className='cell medium-3 parallax-card__content'>
           <a href="#" className="parallax-card__link">
             {name && <Heading type="3" label={name} />}
             {descrption && <P label={descrption} />}
