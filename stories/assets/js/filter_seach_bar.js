@@ -1,9 +1,6 @@
 const toggleFilter = function () {
   const selectWrapper = $('.select-wrapper');
-  $('.toggle-search').click(function () {
-    $(this).siblings(selectWrapper).toggleClass('show-filter');
-  });
-  const searchOption = $('.multi-select li input');
+  const searchOption = $('.options li input');
   const chipsWrapper = $('.search-filter .selected-chips');
 
   $('.multi-select').on('click', function (e) {
