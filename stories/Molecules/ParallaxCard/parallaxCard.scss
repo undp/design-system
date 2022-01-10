@@ -63,32 +63,34 @@
     }
   }
 
-  .order {
-    order: -1;
+  &.text-left {
+    .parallax-card__content{
+      order: -1;
 
-    @include devicebreak(medium){
-      .parallax-card__link{
-        padding-left: $spacing-12;
-        padding-right: 0;
-      }
+      @include devicebreak(medium){
+        .parallax-card__link{
+          padding-left: $spacing-12;
+          padding-right: 0;
+        }
 
-      .cta__link {
-        padding-left: 0;
-        padding-right: $spacing-24;
-      }
+        .cta__link {
+          padding-left: 0;
+          padding-right: $spacing-24;
+        }
 
-      h3 {
-        padding-left: 0;
-        padding-right: $spacing-24;
-      }
-  
-      p {
-        padding: 0 $spacing-24 $spacing-24 0;
+        h3 {
+          padding-left: 0;
+          padding-right: $spacing-24;
+        }
+    
+        p {
+          padding: 0 $spacing-24 $spacing-24 0;
+        }
       }
     }
   }
 
-  &.right {
+  &.image-right {
     @include devicebreak(medium) {
       flex-direction: row-reverse;
 
@@ -111,24 +113,26 @@
         padding-right: 0;
       }
 
-      .order {
-        .parallax-card__link {
-          padding-right: $spacing-12;
-          padding-left: 0;
-        }
-  
-        .cta__link {
-          padding-left: $spacing-24;
-          padding-right: 0;
-        }
-  
-        h3 {
-          padding-left: $spacing-24;
-          padding-right: 0;
-        }
-  
-        p {
-          padding: 0 0 $spacing-24 $spacing-24;
+      &.text-left {
+        .parallax-card__content {
+          .parallax-card__link {
+            padding-right: $spacing-12;
+            padding-left: 0;
+          }
+    
+          .cta__link {
+            padding-left: $spacing-24;
+            padding-right: 0;
+          }
+    
+          h3 {
+            padding-left: $spacing-24;
+            padding-right: 0;
+          }
+    
+          p {
+            padding: 0 0 $spacing-24 $spacing-24;
+          }
         }
       }
     }
@@ -151,7 +155,7 @@
         padding-right: $spacing-24;
       }
 
-      &.right, &.left .order {
+      &.image-right, &.text-left {
 
         .cta__link {
           padding-right: 0;
