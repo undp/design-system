@@ -48,7 +48,7 @@ export const getCaptionForLocale = (locale) => {
             imgback: img,
           },
         ],
-        headertext: ["@UNDP",<br/>,"Tweets"]
+        headertext: ["@UNDP",<br/>,"Tweets",<span className="twitter" />]
       };
       return engText;
     case "arabic":
@@ -92,7 +92,7 @@ export const getCaptionForLocale = (locale) => {
             imgback: img
           }
         ],
-        headertext: ["@UNDP",<br/>,"تغريدات"]
+        headertext: ["@UNDP",<br/>,"تغريدات",<span className="twitter" />]
       };
       return arabicText;
     case "burmese":
@@ -139,7 +139,7 @@ export const getCaptionForLocale = (locale) => {
             imgback: img,
           }
         ],
-        headertext: ["@UNDP",<br/>,"တွိပါ။"]
+        headertext: ["@UNDP",<br/>,"တွိပါ။",<span className="twitter" />]
       };
       return burmeseText;
     case "japanese":
@@ -186,7 +186,7 @@ export const getCaptionForLocale = (locale) => {
             imgback: img,
           }
         ],
-        headertext: ["@UNDP",<br/>,"ツイート"]
+        headertext: ["@UNDP",<br/>,"ツイート",<span className="twitter" />]
       };
       return japaneseText;
     default:
@@ -233,7 +233,7 @@ export const getCaptionForLocale = (locale) => {
             imgback: img,
           },
         ],
-        headertext: ["@UNDP",<br/>,"Tweets"]
+        headertext: ["@UNDP",<br/>,"Tweets",<span className="twitter" />]
       };
       return dummy;
   }
@@ -254,10 +254,6 @@ export const getCaptionForLocale = (locale) => {
   .sbdocs .sbdocs-p,
   .sbdocs .sbdocs-li{
     font-size: 1rem;
-  }
-  .sbdocs h2:first-of-type {
-    margin: 0 0;
-    padding-bottom: 0;
   }
 `}</style>
 

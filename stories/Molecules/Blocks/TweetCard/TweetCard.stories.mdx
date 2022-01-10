@@ -67,7 +67,15 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Testing/Blocks/Tweet Card" />
+<Meta title="Testing/Blocks/Tweet Card"  parameters={{
+  backgrounds: {
+    default: 'white',
+    values: [
+      { name: 'white', value: '#fff' },
+      { name: 'gray', value: '#CCC' },
+    ],
+  },
+}}/>
 
 <style>{`
  .subheading {
@@ -83,14 +91,14 @@ export const getCaptionForLocale = (locale) => {
   .sbdocs .sbdocs-li{
     font-size: 1rem;
   }
-  div#story--molecules-blocks-tweet-card--tweet-card {
-    background-color: #232e3e;
+  #story--testing-blocks-tweet-card--tweet-card {
+    background-color: #CCC;
   }
 `}</style>
 
 # Tweet Card Component
 
-<Story name="Tweet Card">
+<Story name="Tweet Card" parameters={{ backgrounds: { default: 'gray'}}}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
