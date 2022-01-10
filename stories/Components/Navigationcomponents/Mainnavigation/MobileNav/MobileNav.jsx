@@ -22,7 +22,7 @@ const MobileNav = ({
   return (
     <div className="mobile-nav">
       <div className="grid-x">
-        <div className="cell mob-links">
+        <div className="cell mobile-links">
           <ul>
             {navigationData.map((item, index) => (
               <li key={index}>
@@ -51,11 +51,7 @@ const MobileNav = ({
         </div>
 
         <div className="cell mob-sub-menu">
-          <span className="back-nav">
-            <Icons src={Iconsback} alt="icon-back" />
-            {' '}
-            {backcaption.detail}
-          </span>
+          <button className="back-nav"><Icons src={Iconsback} alt="back button" />{backcaption.detail}</button>
           <div className="mobile-mega-wrapper">
             <div className="mobile-mega-content">
               <h6 className="sub-heading">Page Title</h6>
@@ -74,11 +70,7 @@ const MobileNav = ({
         </div>
 
         <div className="cell mob-sub-lang">
-          <span className="back-nav">
-            <Icons src={Iconsback} alt="icon-back" />
-            {' '}
-            {backcaption.detail}
-          </span>
+          <button className="back-nav"><Icons src={Iconsback} alt="back button" />{backcaption.detail}</button>
           <ul className="sub-sub-lang">
             <li>
               <span>{langSelect}</span>

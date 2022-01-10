@@ -45,10 +45,11 @@ const GlobalHeader = ({
             </button>
           </div>
           <div className="cell large-8 small-8 mid-nav">
-            {desktopView && <Menu data={navigationData} role='navigation' arialabel='Navigation'/>}
-            <a href="#" className="logo" tabIndex="0">
+            {desktopView && <Menu data={leftNavigationData} role='navigation' arialabel='Navigation'/>}
+            <a href="#" className="logo">
               <Logo src={pnud} alt="UNDP Logo" />
             </a>
+            {desktopView && <Menu data={rightNavigationData} role='navigation' arialabel='Main'/>}
           </div>
           <div className="cell large-2 small-2 top-right">
             <button className="icon-globe">
