@@ -1,5 +1,4 @@
-import { Meta, Story, ArgsTable } from '@storybook/addon-docs';
-import { Color } from './color'
+import { Meta, Story } from '@storybook/addon-docs';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -12,7 +11,12 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Foundation/Colors/Color palette" component={Color} />
+<Meta title="Foundation/Colors/Color palette" component={Color} parameters={{
+    viewMode: 'docs',
+    previewTabs: { 
+      canvas: { hidden: true } 
+     }
+  }}/>
 
 <style>{`
   div#story--atoms-colors--colors {
@@ -30,11 +34,13 @@ export const getCaptionForLocale = (locale) => {
   .color_wrapper{
     display: flex;
   }
-  .color__item{
+   .color__item{
     margin: 5px;
+    padding: 10px;
+    border: 1px solid #D4D6D8;
   }
   .color__box {
-    width: 90px;
+    width: 110px;
     height: 60px;
     display: block;
   }
@@ -48,22 +54,25 @@ export const getCaptionForLocale = (locale) => {
     font-size: 13px;
     color: #666;
   }
+  .color-wrapper {
+    display:none
+  }
 
-  .color-blue-100 { background-color: #B5D5F5;}
-  .color-blue-200 {background-color: #94C4F5;}
-  .color-blue-300 { background-color: #6BABEB;}
-  .color-blue-400 {background-color: #4F95DD;}
-  .color-blue-500 {background-color: #3288CE;}
-  .color-blue-600 {background-color: #006EB5;}
-  .color-blue-700 {background-color: #1F5A95;}
+  .blue-100 { background-color: #B5D5F5;}
+  .blue-200 {background-color: #94C4F5;}
+  .blue-300 { background-color: #6BABEB;}
+  .blue-400 {background-color: #4F95DD;}
+  .blue-500 {background-color: #3288CE;}
+  .blue-600 {background-color: #006EB5;}
+  .blue-700 {background-color: #1F5A95;}
 
-  .color-gray-100 { background-color: #FAFAFA;}
-  .color-gray-200 {background-color: #F7F7F7;}
-  .color-gray-300 { background-color: #EDEFF0;}
-  .color-gray-400 {background-color: #D4D6D8;}
-  .color-gray-500 {background-color: #A9B1B7;}
-  .color-gray-600 {background-color: #55606E;}
-  .color-gray-700 {background-color: #232E3D;}
+  .gray-100 { background-color: #FAFAFA;}
+  .gray-200 {background-color: #F7F7F7;}
+  .gray-300 { background-color: #EDEFF0;}
+  .gray-400 {background-color: #D4D6D8;}
+  .gray-500 {background-color: #A9B1B7;}
+  .gray-600 {background-color: #55606E;}
+  .gray-700 {background-color: #232E3D;}
 
   .light-yellow { background-color: #FFE17E;}
   .yellow {background-color: #FFEB00;}
@@ -83,142 +92,143 @@ export const getCaptionForLocale = (locale) => {
 # Color Component
 This component represents the various colors that can be used on the website as per brand guidelines. All these colors are defined as SCSS variables globally and used accordingly in all the components.
 
-<ul>
-<li>Colors are divided into <code>Primary</code> and <code>Accents</code> colors.</li>
-</ul>
+- Colors are divided into <code>Primary</code> and <code>Accents</code> colors.
 
-<div className="subheading">Primary Colors</div>
+#### 
+#### 
+### Primary Colors
 
 Primary colors are the base colors of the UI, the ones that are used most frequently in the interface. They are used for brand elements and non-interactive elements. Interactive colors are used for primary links and action items that can be clicked or touched, to emphasize important actions and highlight information in your application.
 
 
 <div className="color_wrapper">
   <div className="color__item">
-    <div className="color__box color-blue-100"></div>
+    <div className="color__box blue-100"></div>
     <div className="color__name"> blue-100 </div>
-    <div className="color__code"> <code>#B5D5F5</code></div>
+    <div className="color__code">Hex: <code>#B5D5F5</code></div>
    </div>
 
   <div className="color__item">
-    <div className="color__box color-blue-200"></div>
+    <div className="color__box blue-200"></div>
     <div className="color__name"> blue-200 </div>
-    <div className="color__code"> <code>#94C4F5</code></div>
+    <div className="color__code">Hex: <code>#94C4F5</code></div>
    </div>
 
   <div className="color__item">
-    <div className="color__box color-blue-300"></div>
+    <div className="color__box blue-300"></div>
     <div className="color__name"> blue-300 </div>
-    <div className="color__code"> <code>#6BABEB</code></div>
+    <div className="color__code">Hex: <code>#6BABEB</code></div>
    </div>
 
    <div className="color__item">
-    <div className="color__box color-blue-400"></div>
+    <div className="color__box blue-400"></div>
     <div className="color__name"> blue-400 </div>
-    <div className="color__code"> <code>#4F95DD</code></div>
+    <div className="color__code">Hex: <code>#4F95DD</code></div>
    </div>
 
   <div className="color__item">
-    <div className="color__box color-blue-500"></div>
+    <div className="color__box blue-500"></div>
     <div className="color__name"> blue-500 </div>
-    <div className="color__code"> <code>#3288CE</code></div>
+    <div className="color__code">Hex: <code>#3288CE</code></div>
    </div>
 
   <div className="color__item">
-    <div className="color__box color-blue-600"></div>
+    <div className="color__box blue-600"></div>
     <div className="color__name"> blue-600 </div>
-    <div className="color__code"> <code>#006EB5</code></div>
+    <div className="color__code">Hex: <code>#006EB5</code></div>
    </div>
 
   <div className="color__item">
-    <div className="color__box color-blue-700"></div>
+    <div className="color__box blue-700"></div>
     <div className="color__name"> blue-700 </div>
-    <div className="color__code"> <code>#1F5A95</code></div>
+    <div className="color__code">Hex: <code>#1F5A95</code></div>
    </div>
 </div>
 
 <div className="color_wrapper">
   <div className="color__item">
-    <div className="color__box color-gray-100"></div>
+    <div className="color__box gray-100"></div>
     <div className="color__name"> gray-100 </div>
-    <div className="color__code"> <code>#FAFAFA</code></div>
+    <div className="color__code">Hex: <code>#FAFAFA</code></div>
    </div>
 
   <div className="color__item">
-    <div className="color__box color-gray-200"></div>
+    <div className="color__box gray-200"></div>
     <div className="color__name"> gray-200 </div>
-    <div className="color__code"> <code>#F7F7F7</code></div>
+    <div className="color__code">Hex: <code>#F7F7F7</code></div>
    </div>
 
   <div className="color__item">
-    <div className="color__box color-gray-300"></div>
+    <div className="color__box gray-300"></div>
     <div className="color__name"> gray-300 </div>
-    <div className="color__code"> <code>#EDEFF0</code></div>
+    <div className="color__code">Hex: <code>#EDEFF0</code></div>
    </div>
 
    <div className="color__item">
-    <div className="color__box color-gray-400"></div>
+    <div className="color__box gray-400"></div>
     <div className="color__name"> gray-400 </div>
-    <div className="color__code"> <code>#D4D6D8</code></div>
+    <div className="color__code">Hex: <code>#D4D6D8</code></div>
    </div>
 
   <div className="color__item">
-    <div className="color__box color-gray-500"></div>
+    <div className="color__box gray-500"></div>
     <div className="color__name"> gray-500 </div>
-    <div className="color__code"> <code>#A9B1B7</code></div>
+    <div className="color__code">Hex: <code>#A9B1B7</code></div>
    </div>
 
   <div className="color__item">
-    <div className="color__box color-gray-600"></div>
+    <div className="color__box gray-600"></div>
     <div className="color__name"> gray-600 </div>
-    <div className="color__code"> <code>#55606E</code></div>
+    <div className="color__code">Hex: <code>#55606E</code></div>
    </div>
 
   <div className="color__item">
-    <div className="color__box color-gray-700"></div>
+    <div className="color__box gray-700"></div>
     <div className="color__name"> gray-700 </div>
-    <div className="color__code"> <code>#232E3D</code></div>
+    <div className="color__code">Hex: <code>#232E3D</code></div>
    </div>
 </div>
 
-<div className="subheading">Accent colors</div>
-
+#### 
+#### 
+### Accent Colors
 Accent colors are colors that are used for emphasis in a color scheme. These colors can often be bold or vivid and are used sparingly, to emphasize, contrast or create rhythm. More toned down colors such as neutrals or darker shades can also be used depending on the surroundings.
 
 <div className="color_wrapper">
   <div className="color__item">
     <div className="color__box light-yellow"></div>
     <div className="color__name"> light-yellow </div>
-    <div className="color__code"> <code>#FFEB00</code></div>
+    <div className="color__code">Hex: <code>#FFEB00</code></div>
    </div>
 
   <div className="color__item">
     <div className="color__box yellow"></div>
     <div className="color__name"> yellow </div>
-    <div className="color__code"> <code>#FFEB00</code></div>
+    <div className="color__code">Hex: <code>#FFEB00</code></div>
    </div>
 
   <div className="color__item">
     <div className="color__box dark-yellow"></div>
     <div className="color__name"> dark-yellow </div>
-    <div className="color__code"> <code>#FBC412</code></div>
+    <div className="color__code">Hex: <code>#FBC412</code></div>
    </div>
 
    <div className="color__item">
     <div className="color__box light-red"></div>
     <div className="color__name"> light-red </div>
-    <div className="color__code"> <code>#FFBCB7</code></div>
+    <div className="color__code">Hex: <code>#FFBCB7</code></div>
    </div>
 
   <div className="color__item">
     <div className="color__box red"></div>
     <div className="color__name"> red</div>
-    <div className="color__code"> <code>#EE402D</code></div>
+    <div className="color__code">Hex: <code>#EE402D</code></div>
    </div>
 
   <div className="color__item">
     <div className="color__box dark-red"></div>
     <div className="color__name"> dark-red</div>
-    <div className="color__code"> <code>#D12800</code></div>
+    <div className="color__code">Hex: <code>#D12800</code></div>
    </div>
 </div>
 
@@ -226,54 +236,56 @@ Accent colors are colors that are used for emphasis in a color scheme. These col
   <div className="color__item">
     <div className="color__box light-green"></div>
     <div className="color__name"> light-green</div>
-    <div className="color__code"> <code>#B8ECB6</code></div>
+    <div className="color__code">Hex: <code>#B8ECB6</code></div>
    </div>
 
   <div className="color__item">
       <div className="color__box green"></div>
       <div className="color__name"> green</div>
-      <div className="color__code"> <code>#6DE354</code></div>
+      <div className="color__code">Hex: <code>#6DE354</code></div>
     </div>
 
   <div className="color__item">
       <div className="color__box dark-green"></div>
       <div className="color__name"> dark-green</div>
-      <div className="color__code"> <code>#59BA47</code></div>
+      <div className="color__code">Hex: <code>#59BA47</code></div>
     </div>
 
   <div className="color__item">
       <div className="color__box light-azure"></div>
       <div className="color__name"> light-azure</div>
-      <div className="color__code"> <code>#A2DAF3</code></div>
+      <div className="color__code">Hex: <code>#A2DAF3</code></div>
     </div>
 
   <div className="color__item">
       <div className="color__box azure"></div>
       <div className="color__name"> azure</div>
-      <div className="color__code"> <code>#60D4F2</code></div>
+      <div className="color__code">Hex: <code>#60D4F2</code></div>
     </div>
 
   <div className="color__item">
       <div className="color__box dark-azure"></div>
       <div className="color__name"> dark-azure</div>
-      <div className="color__code"> <code>#00C1FF</code></div>
+      <div className="color__code">Hex: <code>#00C1FF</code></div>
     </div>
 </div>
 
 <Story name="Color palette">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Color Primarytext={caption.PT}   PrimaryColor={caption.PC}  AccentColor={caption.AC} Balancepalette={caption.BC} ></Color>;
+    return <Color></Color>;
   }}
 </Story>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>We can use any color by taking the color code from the documentation.
-e.g., <code>#B5D5F5</code>. The color code names are defined by their hex code below the color.</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>color.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+#### 
+#### Usage
+
+- We can pick a color by HEX color code.
+e.g., <code>#B5D5F5</code>. Colors are also defined in the variables by the same name like  <code>blue-100</code> it's <code>$color-blue-100</code>
+
+  **use SCSS include the following files in your implementation**
+- Include the common SCSS files like normalize, variables from <code>assets/scss</code>
+- Component SCSS file: <code>assets/atom/colors/color.scss</code> 
+
+  **To use CSS include the following files in your implementation**
+- The compiled CSS file from <code>assets/css/style.css</code>
