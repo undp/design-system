@@ -8,21 +8,20 @@ export const Projectdetail = ({
   text, title1, subtitle1, title2, subtitle2, title3, subtitle3, title4, subtitle4, title5, subtitle5, title6, subtitle6, title7, subtitle7,
 }) => {
   useEffect(() => {
-    viewport('.project-data__title');
-    viewport('.project-data__section');
+    viewport('.left-right');
   }, []);
   return (
-    <div className="project-data__wrapper">
-      <Heading type="2" className="project-data__title left-right" label={text} />
-      <div className="project-data__section left-right grid-x grid-margin-x">
+    <div className="project-detail">
+      <Heading type="2" className="left-right" label={text} />
+      <div className="grid-x grid-margin-x project-detail-list left-right">
         <div className="cell large-2 medium-2">
-          <div className="grid-x details-first">
-            <div className="cell large-12 medium-12 small-6">
-              <Projectcolumn headertext={title1} subtext={subtitle1} />
-            </div>
+          <div className="grid-x">
             <div className="cell large-12 medium-12 small-6">
               <Projectcolumn headertext={title2} subtext={subtitle2} />
               <Projectcolumn headertext={title3} subtext={subtitle3} />
+            </div>
+            <div className="cell large-12 medium-12 small-6">
+              <Projectcolumn headertext={title1} subtext={subtitle1} />
             </div>
           </div>
         </div>
