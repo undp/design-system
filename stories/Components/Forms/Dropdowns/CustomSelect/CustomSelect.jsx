@@ -8,7 +8,7 @@ const CustomSelect = ({ text }) => {
   }, []);
   return (
     <div className="select-box" data-select="">
-      <button type="button" aria-haspopup="listbox" aria-label="Select" id="exp_button" className="selected" data-select-open="">
+      <button type="button" aria-haspopup="listbox" aria-label="Select" data-select-open="">
         {text}
       </button>
       <ul tabIndex="-1" role="listbox" aria-labelledby="exp_button" data-select-options="">

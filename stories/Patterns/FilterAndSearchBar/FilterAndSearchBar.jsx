@@ -15,10 +15,10 @@ const FilterAndSearchBar = ({
     <div className="search-filter">
       <button type="button" className="toggle-search" aria-label="filter and search" />
       <div className="select-wrapper">
-        <SelectTag {...args} text={data} eleId="select-1" />
-        <SelectTag {...args} text={data} eleId="select-2" />
-        <SelectTag {...args} text={data} eleId="select-3" />
-        <SelectTag {...args} text={data} eleId="select-4" />
+        <SelectTag {...args} text={data} eleId="1" />
+        <SelectTag {...args} text={data} eleId="2" />
+        <SelectTag {...args} text={data} eleId="3" />
+        <SelectTag {...args} text={data} eleId="4" />
 
         <div className="active-filter"><span>{activeFilterText}</span></div>
         <div className="selected-chips">

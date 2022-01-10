@@ -11,21 +11,19 @@ const SelectTag = ({ text, eleId, ...args }) => {
   return (
     <div className="multi-select" data-multi-select="">
       <button
-        className="select-control"
         aria-label="Region"
         aria-expanded="false"
-        id={`select_button-${eleId}`}
+        data-id={`filter-${eleId}`}
       >
         {text}
       </button>
       {args.variant === "Checkbox" && (
         <ul
           className={[
-            "options",
-            args.Height === "Fix height" ? " fix-height" : "",
+            args.Height === "Fix height" ? "fix-height" : "",
           ].join("")}
           data-type="region"
-          aria-labelledby={`select_button-${eleId}`}
+          aria-labelledby={`filter-${eleId}`}
           role="listbox"
           aria-multiselectable="true"
           aria-hidden="true"
@@ -92,11 +90,10 @@ const SelectTag = ({ text, eleId, ...args }) => {
       {args.variant === "Radio" && (
         <ul
           className={[
-            "options",
-            args.Height === "Fix height" ? " fix-height" : "",
+            args.Height === "Fix height" ? "fix-height" : "",
           ].join("")}
           data-type="region"
-          aria-labelledby={`select_button-${eleId}`}
+          aria-labelledby={`filter-${eleId}`}
           role="listbox"
           aria-multiselectable="true"
           aria-hidden="true"
