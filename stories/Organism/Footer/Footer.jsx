@@ -6,7 +6,6 @@ import { FooterLists } from '../../Molecules/FooterNavigation/FooterLists/Footer
 import { FooterConditions } from '../../Molecules/FooterNavigation/FooterConditions/FooterConditions';
 import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/FooterIcons';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
-import { footerAccordion } from '../../assets/js/footer_accordion';
 import { accordion } from '../../assets/js/accordion';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
@@ -22,27 +21,29 @@ export const Footer = ({
       <div className="grid-x">
         <div className="cell medium-10 footer__wrapper">
           <div className="grid-x footer-head">
-            {args.color === 'default' ? (
-              <FooterLogo src={srctwo} headerText={headerText} alt={alt} logolink={logolink} style="" />
-            ) : (
-              <FooterLogo src={src} headerText={headerText} alt={alt} logolink={logolink} style={args.color} />
-            )}
-            <div className="cell medium-4 footer__newsletter">
+            <div className="cell medium-5">
+              {args.color === 'default' ? (
+                <FooterLogo src={srctwo} headerText={headerText} alt={alt} logolink={logolink} style="" />
+              ) : (
+                <FooterLogo src={src} headerText={headerText} alt={alt} logolink={logolink} style={args.color} />
+              )}
+            </div>
+            <div className="cell medium-4">
               <SignUp element={element} type={type} required={required} mode={mode} label={label} button={button} errorText={errorText} placeholder={placeholder} variant={args.color === 'default' ? args.color : 'inverted'} />
             </div>
           </div>
           <div className=" grid-x grid-margin-x footer-bottom" data-accordion="mobile">
-            <FooterLists data={data} headerText={menutitle} variant={args.color === 'default' ? args.color : 'inverted'} />
-            <FooterLists data={data} headerText={menutitle} variant={args.color === 'default' ? args.color : 'inverted'} />
-            <FooterLists data={data} headerText={menutitle} variant={args.color === 'default' ? args.color : 'inverted'} />
-            <FooterLists data={data} headerText={menutitle} variant={args.color === 'default' ? args.color : 'inverted'} />
+            <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-1" arialabel="footer-item-1" variant={args.color === 'default' ? args.color : 'inverted'} />
+            <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-2" arialabel="footer-item-2" variant={args.color === 'default' ? args.color : 'inverted'} />
+            <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-3" arialabel="footer-item-3" variant={args.color === 'default' ? args.color : 'inverted'} />
+            <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-4" arialabel="footer-item-4" variant={args.color === 'default' ? args.color : 'inverted'} />
             <div className="cell medium-4">
               <FooterConditions footerdata={menudata} variant={args.color === 'default' ? args.color : 'inverted'} />
               <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
             </div>
           </div>
           <div className="footer__foot">
-            <P label={copyright} />
+            <P label={copyright} tabIndex="0" />
           </div>
         </div>
       </div>

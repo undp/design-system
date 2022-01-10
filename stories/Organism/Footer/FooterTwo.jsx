@@ -14,18 +14,20 @@ export const Footertwo = ({
     <div className="grid-x">
       <div className="cell medium-10 footer__wrapper">
         <div className="grid-x footer-head two">
-          {args.color === 'default' ? (
-            <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style="" />
-          ) : (
-            <FooterLogo src={src} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style={args.color} />
-          )}
+          <div className="cell medium-5">
+            {args.color === 'default' ? (
+              <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style="" />
+            ) : (
+              <FooterLogo src={src} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style={args.color} />
+            )}
+          </div>
           <div className="cell medium-5 show-large">
             <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
           </div>
         </div>
         <div className="footer-bottom two">
           <div className="copyright">
-            <P label={copyright} />
+            <P label={copyright} tabIndex="0" />
           </div>
           <div className="menus">
             <FooterConditions2 footerdata2={menudata} variant={args.color === 'default' ? args.color : 'inverted'} />

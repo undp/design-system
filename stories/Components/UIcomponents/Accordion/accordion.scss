@@ -92,15 +92,18 @@
   }
 }
 
-[data-accordion="mobile"] {
-  .desktop-visible {
-    @include devicebreak(medium) {
-      display: block !important;
+[data-accordion='mobile'] {
+  .desktop {
+    &-visible {
+      @include devicebreak(medium) {
+        display: block !important;
+      }
     }
-  }
-  .desktop-event-none {
-    @include devicebreak(medium) {
-      pointer-events: none;
+
+    &-event-none {
+      @include devicebreak(medium) {
+        pointer-events: none;
+      }
     }
   }
 }

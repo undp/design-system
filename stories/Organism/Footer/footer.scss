@@ -13,6 +13,12 @@
     padding: 3.25rem 0 $spacing-48;
   }
 
+  @include devicebreak(small) {
+    & .sign-up {
+      margin-top: $spacing-24;
+    }
+  }
+
   &__wrapper {
     margin: 0 auto;
   }
@@ -23,14 +29,6 @@
 
     @include devicebreak(medium) {
       font-size: $font-size-16;
-    }
-  }
-
-  &__newsletter {
-    margin-top: $spacing-24;
-
-    @include devicebreak(medium) {
-      margin-top: 0;
     }
   }
 
