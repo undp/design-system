@@ -21,12 +21,14 @@ export const Footer = ({
       <div className="grid-x">
         <div className="cell medium-10 footer__wrapper">
           <div className="grid-x footer-head">
-            {args.color === 'default' ? (
-              <FooterLogo src={srctwo} headerText={headerText} alt={alt} logolink={logolink} style="" />
-            ) : (
-              <FooterLogo src={src} headerText={headerText} alt={alt} logolink={logolink} style={args.color} />
-            )}
-            <div className="cell medium-4 footer__newsletter">
+            <div className="cell medium-5">
+              {args.color === 'default' ? (
+                <FooterLogo src={srctwo} headerText={headerText} alt={alt} logolink={logolink} style="" />
+              ) : (
+                <FooterLogo src={src} headerText={headerText} alt={alt} logolink={logolink} style={args.color} />
+              )}
+            </div>
+            <div className="cell medium-4">
               <SignUp element={element} type={type} required={required} mode={mode} label={label} button={button} errorText={errorText} placeholder={placeholder} variant={args.color === 'default' ? args.color : 'inverted'}/>
             </div>
           </div>

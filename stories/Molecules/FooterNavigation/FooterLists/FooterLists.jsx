@@ -14,7 +14,7 @@ export const FooterLists = ({
   type, headerText, text, style, data, ...args
 }) => (
   <div className={cls('cell', 'medium-2', 'footer__items', `${variant_options[`${args.variant}`]}`)}>
-    <Heading type="6" label={headerText} className="footer__heading" />
+    <Heading type="6" label={headerText} className="footer__heading" tabIndex="0"/>
     <div className="footer__panel">
       {data.map((item, index) => (
         <Link key={index} label={item.text} />
