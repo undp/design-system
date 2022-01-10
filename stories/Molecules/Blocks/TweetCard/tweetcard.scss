@@ -10,10 +10,9 @@
   }
 
   a {
-    @extend %img_none;
-
     align-items: flex-start;
-    display: flex;
+    display: inline-flex;
+    text-decoration: none;
 
     img {
       border-radius: 50%;
@@ -24,12 +23,14 @@
     }
   }
 
+  p {
+    margin-bottom: 0;
+    word-break: break-word;
+  }
+
   &__header {
     color: $color-white;
-
-    &--title {
-      font-weight: 400;
-    }
+    font-weight: 400;
 
     &--subtitle {
       font-size: $font-size-14;
@@ -40,36 +41,35 @@
   &__body {
     border-top: 3px solid $color-white;
     margin-top: $spacing-32;
-    padding: $spacing-24 0.313rem $spacing-12 0;
+    padding: $spacing-24 0.313rem 0 0;
 
-    &--date,
-    &--description,
+    time,
+    p,
     a {
       color: $color-gray-500;
       font-size: $font-size-14;
       font-weight: 700;
     }
 
-    &--description,
+    p,
     a {
       color: $color-white;
       font-weight: 400;
-      margin-top: 0;
     }
 
-    &--date {
+    time {
       margin-top: $spacing-16;
     }
-  }
 
-  p {
-    margin-bottom: 0;
-    word-break: break-word;
+    p {
+      margin-bottom: 1.125rem;
+    }
   }
 
   .cta__link {
     color: $color-white;
     font-size: 0.938rem;
+    margin-top: $spacing-32;
 
     &:hover {
       color: $color-gray-400;
