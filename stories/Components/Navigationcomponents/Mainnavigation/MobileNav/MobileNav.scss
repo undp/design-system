@@ -1,7 +1,7 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
-  
+
 .mobile-nav {
   background: rgba(247, 247, 247, 0.8);
   box-sizing: border-box;
@@ -12,7 +12,7 @@
   padding: 0 $spacing-24;
   position: absolute;
   top: 4.6875rem;
-  width:100%;
+  width: 100%;
 
   &.show {
     display: block;
@@ -71,9 +71,9 @@
     }
 
     .sub-heading {
+      margin-bottom: 0;
       padding: 2.5625rem 0 2.25rem;
       text-transform: uppercase;
-      margin-bottom: 0;
     }
 
     .sub-sub-menus {
@@ -91,9 +91,11 @@
         ul {
           margin: 0;
           padding: $spacing-24 1.6875rem;
-          li{
+
+          li {
             margin-bottom: 0.46875rem;
-            &:last-child{
+
+            &:last-child {
               margin-bottom: 0;
             }
           }
@@ -110,14 +112,15 @@
   }
 
   .back-nav {
+    align-items: center;
+    background: none;
+    border: 0;
     display: flex;
     flex-wrap: wrap;
     font-size: 1rem;
-    text-transform: uppercase;
-    align-items: center;
-    border: 0;
     padding: 0;
-    background: none;
+    text-transform: uppercase;
+
     img {
       margin-right: 0.46875rem;
     }
@@ -184,58 +187,56 @@
   }
 }
 
-
 .menu-hamburger {
-  margin-left: $spacing-12;
-  width: 1.375rem;
-  display: block;
-  cursor: pointer;
-  min-height: 1.75rem;
-  position: relative;
-  z-index:25;
   background: none;
   border: 0;
+  cursor: pointer;
   display: none;
   font-size: 0;
-  @include devicebreak(mediumonlytab){
+  margin-left: $spacing-12;
+  min-height: 1.75rem;
+  position: relative;
+  width: 1.375rem;
+  z-index: 25;
+
+  @include devicebreak(mediumonlytab) {
     display: block;
   }
 }
 
 .menu-hamburger.is-active .hamburger-line.line-top {
-  transform:translateY(0) rotate(45deg)
+  transform: translateY(0) rotate(45deg);
 }
 
 .menu-hamburger.is-active .hamburger-line.line-middle {
   opacity: 0;
-  transform:translateX(6.33px)
+  transform: translateX(6.33px);
 }
 
 .menu-hamburger.is-active .hamburger-line.line-bottom {
-  transform:translateY(0) rotate(-45deg)
+  transform: translateY(0) rotate(-45deg);
 }
 
 .menu-hamburger .hamburger-line {
+  background-color: #006eb5;
+  display: block;
+  height: 0.125rem;
   left: 0;
+  margin: auto;
+  position: absolute;
   right: 0;
   top: $spacing-12;
+  transition: 0.2s ease-out;
   width: 100%;
-  margin: auto;
-  height: 0.125rem;
-  display: block;
-  position: absolute;
-  transition: .2s ease-out;
-  background-color:#006eb5
 }
 
 .menu-hamburger .hamburger-line.line-top {
-  transform:translateY(-6.5px)
+  transform: translateY(-6.5px);
 }
 
 .menu-hamburger .hamburger-line.line-bottom {
-  transform:translateY(6.5px)
+  transform: translateY(6.5px);
 }
-
 
 [dir='rtl'] {
   .mobile-nav {

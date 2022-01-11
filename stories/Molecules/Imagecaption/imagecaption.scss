@@ -69,6 +69,18 @@
       @include devicebreak(medium) {
         padding-right: 0;
       }
+
+      + .credits {
+        @include devicebreak(medium) {
+          border-right: 1px solid $color-gray-500;
+          border-top: 0;
+          display: block;
+          margin-bottom: 0;
+          margin-right: $spacing-32;
+          padding-right: $spacing-32;
+          padding-top: 0;
+        }
+      }
     }
 
     .credits {
@@ -86,29 +98,17 @@
         }
       }
     }
-
-    &_para {
-      + .credits {
-        @include devicebreak(medium) {
-          border-right: 1px solid $color-gray-500;
-          border-top: 0;
-          display: block;
-          margin-bottom: 0;
-          margin-right: $spacing-32;
-          padding-right: $spacing-32;
-          padding-top: 0;
-        }
-      }
-    }
   }
 }
 
 // burmese lang
-:lang(my){
+:lang(my) {
   .image__caption {
-    .image__caption_para, .credits {
+    .image__caption_para,
+    .credits {
       line-height: 1.7;
     }
   }
 }
+
 /* image caption end */

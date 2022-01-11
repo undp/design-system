@@ -156,9 +156,9 @@ const ArticlePage = ({
         </div>
       </div>
       <FeaturedCard
-              data={featuredCardContent.featureddata}
-              headertext={featuredCardContent.headertext}
-            />
+        data={featuredCardContent.featureddata}
+        headertext={featuredCardContent.headertext}
+      />
       <Footer
         src={logo}
         srctwo={logowhite}

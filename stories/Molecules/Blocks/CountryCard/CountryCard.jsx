@@ -10,7 +10,7 @@ export const CountryCard = ({ data }) => (
           {item.imageback && <img src={item.imageback} alt={item.imageback} />}
           <div className="country-card__caption">
             <p>{item.name}</p>
-            <span class="cta__link cta--arrow">{item.btnlabel}</span>
+            <span className="cta__link cta--arrow">{item.btnlabel}</span>
           </div>
         </a>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './spacing.scss';
 
-export const Spacing = ({}) => (
+export const Spacing = () => (
   <div className="spacing-wrapper">
     <div className="spacing__row">
       <div className="spacing__title Primary">Spacing</div>

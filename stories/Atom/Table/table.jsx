@@ -28,6 +28,9 @@ export const variant_options2 = {
 const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
 
 export const TableTag = ({ text, tdtext, details, variant, size, responsive, ...args }) => {
+	let table_type = variant_options[`${variant}`];
+	let table_size = variant_options1[`${size}`];
+	let table_responsive = variant_options2[`${responsive}`];
 	return (
 		<TableScroll tableType={responsive}>
       {variant === 'default' && size === 'large' && responsive === 'auto'
@@ -65,7 +68,7 @@ export const TableTag = ({ text, tdtext, details, variant, size, responsive, ...
       </table>
       )
       : (
-			<table className={cls(`${variant_options[`${variant}`]}`, `${variant_options1[`${size}`]}`, `${variant_options2[`${responsive}`]}`)}>
+			<table className={cls(`${table_type}`, `${table_size}`, `${table_responsive}`)}>
 				<thead>
 					<tr>
 						<th>{text}</th>

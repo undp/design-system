@@ -20,7 +20,7 @@ export const GenericLandingPage = ({
   langSelect,
   backcaption,
 }) => (
-  <div className='landing-page'>
+  <div className="landing-page">
     <GlobalHeader
       backcaption={backcaption}
       locale={locale}
@@ -57,7 +57,7 @@ export const GenericLandingPage = ({
             <ContentCard
               data={groupcontentdata}
               buttontype={buttonname}
-              Hovercolors='yellow'
+              Hovercolors="yellow"
             />
           </div>
         </div>

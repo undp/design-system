@@ -6,10 +6,10 @@
   overflow: hidden;
 
   &__image {
-    height: 31rem;
     display: block;
-    object-fit: cover;
+    height: 31rem;
     max-width: 55%;
+    object-fit: cover;
 
     @include devicebreak(large) {
       max-width: 65%;
@@ -20,15 +20,15 @@
     }
 
     @include devicebreak(small) {
+      height: 18rem;
       max-width: 100%;
       width: auto;
-      height: 18rem;
     }
   }
 
   .slide-content {
-    padding-left: $spacing-24;
     box-sizing: border-box;
+    padding-left: $spacing-24;
 
     @include devicebreak(medium) {
       flex: 0 0 45%;
@@ -83,7 +83,6 @@
   }
 
   .glide {
-    
     &__bullets {
       margin-bottom: $spacing-48;
     }
@@ -119,7 +118,6 @@
 
 [dir='rtl'] {
   .fluid-carousel {
-
     .slide-content {
       padding-left: 0;
       padding-right: $spacing-24;
@@ -140,8 +138,8 @@
           margin-left: 0.625rem;
           margin-right: 0;
 
-          img{
-            @include transform(rotate(180deg))
+          img {
+            @include transform(rotate(180deg));
           }
         }
 
@@ -149,8 +147,8 @@
           margin-left: 0;
           margin-right: 0.625rem;
 
-          img{
-            @include transform(rotate(-180deg))
+          img {
+            @include transform(rotate(-180deg));
           }
         }
       }

@@ -15,29 +15,35 @@
 
 .country-card {
   @include devicebreak(medium) {
-    &.glide__slide{
+    margin-top: $spacing-96;
+
+    &.glide__slide {
       height: 100%;
-      a{
-        overflow: hidden;
+
+      a {
         @include transition(all 0.4s);
         @include transform(translateY(0));
+
+        overflow: hidden;
       }
-      &:hover{
-        a{
-          overflow: visible;
+
+      &:hover {
+        a {
           @include transform(translateY(-50px));
+
+          overflow: visible;
         }
       }
     }
-    margin-top: $spacing-96;
 
-    img{
+    img {
       height: auto;
     }
+
     &:hover {
-      a:before {
-        opacity: 1;
+      a::before {
         content: '';
+        opacity: 1;
       }
 
       .country {
@@ -68,9 +74,10 @@
       height: auto;
 
       &--active {
-        a:before {
+        a::before {
           opacity: 1;
         }
+
         .country {
           &-card {
             &__caption {
@@ -106,22 +113,27 @@
 
   img {
     @extend %img-cover;
+
     @include transition(all 0.4s);
+
     position: relative;
   }
 
-  a:before {
+  a::before {
     @extend %absolute__content;
+
     @include transition(all 0.4s);
+
     background: linear-gradient(45deg, rgba(255, 235, 0, 0.3), transparent);
     opacity: 0;
     z-index: 1;
   }
 
   &__caption {
-    background: $color-white;
     @include transform(translateY(0));
     @include transition(all 0.3s);
+
+    background: $color-white;
     left: 0;
     padding-top: $spacing-24;
     position: absolute;

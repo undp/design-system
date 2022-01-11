@@ -23,17 +23,13 @@
       height: 20px;
       margin-right: $spacing-16;
       margin-top: $spacing-16;
+      position: relative;
       width: 20px;
       z-index: 0;
-      position: relative;
 
       @include devicebreak(medium) {
         display: none;
       }
-    }
-
-    &::before {
-      background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
     }
 
     &.inverted {
@@ -63,9 +59,9 @@
     color: $color-white;
     margin-bottom: 0;
     padding: $spacing-16;
+    position: relative;
     text-transform: uppercase;
     z-index: 1;
-    position: relative;
 
     @include devicebreak(medium) {
       margin-bottom: 1.25rem;

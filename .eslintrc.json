@@ -69,7 +69,10 @@
 		"import/no-extraneous-dependencies": "off",
 		"no-console": "off",
 		"no-return-assign": ["warn", "always"],
-		"func-names": ["warn", "never"]
+		"func-names": ["warn", "never"],
+		"no-underscore-dangle": [0],
+		"no-use-before-define": "off",
+		"react/jsx-no-duplicate-props": [1, { "ignoreCase": false }]
 	},
 	"settings": {
 		"mdx/code-blocks": true

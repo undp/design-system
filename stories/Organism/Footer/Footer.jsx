@@ -8,7 +8,7 @@ import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/Footer
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 import { footerAccordion } from '../../assets/js/footer_accordion';
 
-const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
 export const Footer = ({
   headerText, headerText2, style, alt, src, srctwo, logolink, element, type, required, mode, label, button, errorText, placeholder, menutitle, copyright, data, menudata, ...args
@@ -27,7 +27,7 @@ export const Footer = ({
               <FooterLogo src={src} headerText={headerText} alt={alt} logolink={logolink} style={args.color} />
             )}
             <div className="cell medium-4 footer__newsletter">
-              <SignUp element={element} type={type} required={required} mode={mode} label={label} button={button} errorText={errorText} placeholder={placeholder} variant={args.color === 'default' ? args.color : 'inverted'}/>
+              <SignUp element={element} type={type} required={required} mode={mode} label={label} button={button} errorText={errorText} placeholder={placeholder} variant={args.color === 'default' ? args.color : 'inverted'} />
             </div>
           </div>
           <div className=" grid-x grid-margin-x footer-bottom">

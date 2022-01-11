@@ -43,12 +43,13 @@
     top: 51px;
     z-index: 20;
 
-  &.active {
-    border-top: 0;
-    display: block;
-    overflow-y: auto;
-    @extend %background-white;
-  }
+    &.active {
+      @extend %background-white;
+
+      border-top: 0;
+      display: block;
+      overflow-y: auto;
+    }
 
     &::-webkit-scrollbar {
       background-color: rgba(0, 0, 0, 0.3);
@@ -63,15 +64,16 @@
       border-top: 1px solid $color-gray-400;
       cursor: pointer;
       display: block;
+      margin-bottom: 0;
       padding: 0;
       position: relative;
-      margin-bottom: 0;
 
       span {
         display: block;
         font-size: $font-size-16;
         margin: 0 -1rem;
         padding: 0.938rem $spacing-16;
+
         &:hover {
           background-color: $color-gray-100;
         }
@@ -80,7 +82,7 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .select-box {
     button {
       @extend %select_rtl;
@@ -93,7 +95,7 @@
 }
 
 // burmese lang
-:lang(my){
+:lang(my) {
   .options-container {
     top: 69px;
   }

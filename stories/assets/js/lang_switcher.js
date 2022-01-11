@@ -1,5 +1,5 @@
 export function langSwitch() {
-  $('.dropdown-language').click(function () {
+  $('.dropdown-language').click(() => {
     $('.dropdown-language').toggleClass('active');
   });
 

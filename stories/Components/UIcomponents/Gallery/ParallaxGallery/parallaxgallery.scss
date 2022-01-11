@@ -2,7 +2,6 @@
 @import '../../../../assets/scss/mixins';
 
 .parallax-gallery {
-
   &-left {
     display: flex;
 
@@ -16,8 +15,8 @@
   }
 
   &-right {
-    position: relative;
     overflow: hidden;
+    position: relative;
   }
 
   &-content {
@@ -56,7 +55,6 @@
       text-transform: uppercase;
     }
   }
-  
 
   &-images {
     display: flex;

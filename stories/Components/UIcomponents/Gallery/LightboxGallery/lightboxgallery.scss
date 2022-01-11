@@ -1,5 +1,5 @@
-@import "../../../../assets/scss/variables";
-@import "../../../../assets/scss/mixins";
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
 
 // lightbox-gallery start
 .lightbox-gallery {
@@ -29,7 +29,7 @@
         padding: 1.5rem 0.5rem;
       }
 
-       @include devicebreak(xlarge) {
+      @include devicebreak(xlarge) {
         padding: 0;
       }
 
@@ -59,46 +59,56 @@
 
   &-images {
     ul {
-      padding-left: 0;
       column-count: 2;
       column-gap: $spacing-12;
       margin: auto;
+      padding-left: 0;
       width: 100%;
+
       @include devicebreak(xlarge) {
         column-count: 3;
         column-gap: $spacing-24;
       }
+
       li {
         list-style: none;
-        position: relative;
         margin-bottom: $spacing-12;
         position: relative;
         width: 100%;
+
         @include devicebreak(large) {
           margin-bottom: $spacing-24;
         }
+
         a {
           @extend %no-animation;
+
           background-image: none;
         }
+
         &:hover {
-            .image-section__description {
-              display: none;
-              @include devicebreak(xlarge) {
-               display: block;
+          .image-section__description {
+            display: none;
+
+            @include devicebreak(xlarge) {
+              display: block;
             }
           }
         }
+
         .image {
           margin-bottom: -6px;
+
           @include devicebreak(large) {
             min-height: 200px;
           }
-            img {
-              padding-bottom: 0;
-              @include devicebreak(large) {
-              object-fit: cover;
+
+          img {
+            padding-bottom: 0;
+
+            @include devicebreak(large) {
               min-height: 200px;
+              object-fit: cover;
             }
           }
         }
@@ -106,57 +116,62 @@
     }
 
     .image-section__description {
-      position: absolute;
       bottom: 0;
       display: none;
+      position: absolute;
+
       .image__caption {
         display: none;
-        @include devicebreak(xlarge) { 
-          display: block;
+
+        @include devicebreak(xlarge) {
           border-bottom: 0;
-          padding: $spacing-32 $spacing-24;
+          display: block;
           margin-top: 0;
+          padding: $spacing-32 $spacing-24;
         }
 
         &_para {
           color: $color-white;
-          padding-right: 0;
           margin-bottom: $spacing-16;
+          padding-right: 0;
+
           + .credits {
             @include devicebreak(large) {
-               margin-left: 0;
+              margin-left: 0;
             }
           }
         }
 
         .credits {
-          color: $color-white;
           border-left: 0;
+          color: $color-white;
           padding-left: 0;
         }
       }
+
       &.caption_top {
-        top: 0;
         bottom: inherit;
-        overflow-y: hidden;
         -webkit-mask-image: linear-gradient(to bottom, $color-black 50%, transparent 100%);
         mask-image: linear-gradient(to bottom, $color-black 50%, transparent 100%);
+        overflow-y: hidden;
+        top: 0;
       }
     }
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .lightbox-gallery {
     &-images {
       ul {
         padding-right: 0;
       }
-    .credits {
-        color: $color-white;
+
+      .credits {
         border-right: 0;
-        padding-right: 0;
+        color: $color-white;
         margin-right: 0;
+        padding-right: 0;
       }
     }
   }

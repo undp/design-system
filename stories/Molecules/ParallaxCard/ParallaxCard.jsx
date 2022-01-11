@@ -8,9 +8,9 @@ import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 const ParallaxCard = ({
   name, descrption, button, alt, Text, Image, glideClass,
 }) => {
-  let text = '',
-  image = 'image-left',
-   addClass = '';
+  let text = '';
+  let image = 'image-left';
+  let addClass = '';
 
   if (Text == 'Left') {
     text = 'text-left';
@@ -20,19 +20,19 @@ const ParallaxCard = ({
     image = 'image-right';
   }
 
-  if(glideClass == 'yes') {
-    addClass = 'glide__slide'
+  if (glideClass == 'yes') {
+    addClass = 'glide__slide';
   }
 
-  const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
-  
+  const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
+
   return (
     <>
       <article className={cls('grid-x parallax-card', `${addClass}`, `${image}`, `${text}`)}>
-        <div className='cell medium-3 small-10 parallax-card__image'>
+        <div className="cell medium-3 small-10 parallax-card__image">
           <img src={Img} alt={alt} data-speed="-1" />
         </div>
-        <div className='cell medium-3 parallax-card__content'>
+        <div className="cell medium-3 parallax-card__content">
           <a href="#" className="parallax-card__link">
             {name && <Heading type="3" label={name} />}
             {descrption && <P label={descrption} />}

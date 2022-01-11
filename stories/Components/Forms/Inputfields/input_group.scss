@@ -28,6 +28,31 @@
     .help {
       color: $color-gray-400;
     }
+
+    input[type=text],
+    input[type=number],
+    input[type=email],
+    input[type=password],
+    input[type=search],
+    input[type=tel],
+    input[type=date],
+    textarea {
+      background-color: $color-white;
+      border: 2px solid $color-gray-400;
+      color: $color-gray-400;
+
+      &::placeholder {
+        color: $color-gray-400;
+      }
+    }
+
+    input[type=date] {
+      background-image: url(#{$img-path-Icon}/datedisabled.svg);
+    }
+
+    input[type=search] {
+      background-image: url(#{$img-path-Icon}/Searchgray.svg);
+    }
   }
 
   input[type=text],
@@ -93,33 +118,6 @@
     input[type=date],
     textarea {
       border: 2px solid $color-red;
-    }
-  }
-
-  &.disabled {
-    input[type=text],
-    input[type=number],
-    input[type=email],
-    input[type=password],
-    input[type=search],
-    input[type=tel],
-    input[type=date],
-    textarea {
-      background-color: $color-white;
-      border: 2px solid $color-gray-400;
-      color: $color-gray-400;
-
-      &::placeholder {
-        color: $color-gray-400;
-      }
-    }
-
-    input[type=date] {
-      background-image: url(#{$img-path-Icon}/datedisabled.svg);
-    }
-
-    input[type=search] {
-      background-image: url(#{$img-path-Icon}/Searchgray.svg);
     }
   }
 

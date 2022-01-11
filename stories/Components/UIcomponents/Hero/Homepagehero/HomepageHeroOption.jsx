@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './homepagehero.scss';
 import viewport from '../../../../assets/js/viewport';
-import BackgroundImg from '../../../../assets/images/refugee.jpg';
 import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
 import { Video } from '../../../../Atom/Video/Video';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';

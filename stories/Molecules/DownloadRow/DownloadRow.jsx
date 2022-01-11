@@ -9,8 +9,8 @@ export const DownloadRow = ({
   <div className="download-row">
     <div className="download-row__main">
       <div className="download-row__data">
-        <Heading type="6" label={title} tabIndex='0' />
-        <span tabIndex='0'>{subtitle}</span>
+        <Heading type="6" label={title} tabIndex="0" />
+        <span tabIndex="0">{subtitle}</span>
       </div>
       {args.type === 'Checkbox' && <Checkbox value={value} /> }
       {args.type === 'Download' && (

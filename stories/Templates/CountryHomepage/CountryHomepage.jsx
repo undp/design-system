@@ -8,11 +8,10 @@ import { HeadingBig } from '../../Molecules/Text/HeadingBig/HeadingBig';
 import { PageWideCard } from '../../Organism/Blocks/FeaturedContentCard/PagewideContentCard/PageWideCard';
 import { ImageRevealCards } from '../../Organism/Blocks/ImageRevealCards/ImageRevealCards';
 import { StatsSlider } from '../../Patterns/StatsSlider/StatsSlider';
-import CountrySiteHeader from '../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader'
+import CountrySiteHeader from '../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader';
 import { Footer } from '../../Organism/Footer/Footer';
 import './countryhomepage.scss';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
-
 
 export const CountryHomepage = ({
   footerData,
@@ -48,7 +47,7 @@ export const CountryHomepage = ({
   logowhite,
   headingTop,
   takeAcrtionHead,
-  storyBtn
+  storyBtn,
 }) => {
   useEffect(() => {
     viewport('.our-impact h2');
@@ -103,14 +102,14 @@ export const CountryHomepage = ({
         </div>
 
         <ContentCardWithAndWithoutImage
-          data={featureddataafterwedo.contentdata }
-          storyBtn={featureddataafterwedo.storyBtn }
+          data={featureddataafterwedo.contentdata}
+          storyBtn={featureddataafterwedo.storyBtn}
         />
         <div className="cell cta-container">
-            <CtaButton label={storyBtn} For_Primary='No Arrow' />
-        </div> 
-        <div class="grid-x our-impact">
-          <div class="cell small-12 medium-12 large-11 large-offset-1">
+          <CtaButton label={storyBtn} For_Primary="No Arrow" />
+        </div>
+        <div className="grid-x our-impact">
+          <div className="cell small-12 medium-12 large-11 large-offset-1">
             <Heading className="left-right" type="2" label={statHeading} />
           </div>
           <div className="cell small-12 medium-12 large-12">

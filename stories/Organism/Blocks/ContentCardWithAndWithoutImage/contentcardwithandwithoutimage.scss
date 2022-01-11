@@ -4,11 +4,11 @@
 
 .content-data {
   .content-card {
-    margin-bottom: $spacing-16;
-    word-break: break-word;
     display: flex;
     flex-wrap: wrap;
     height: 100%;
+    margin-bottom: $spacing-16;
+    word-break: break-word;
 
     &__caption {
       padding-bottom: $spacing-16;
@@ -55,7 +55,7 @@
     &.blue:hover {
       background-color: $color-azure;
     }
-    
+
     &.content-card__image:hover,
     &.gray:hover {
       background-color: $color-gray-100;

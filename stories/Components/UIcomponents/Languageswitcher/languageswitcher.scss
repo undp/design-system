@@ -8,13 +8,14 @@
   position: relative;
 
   ul {
-    overflow:hidden;
+    @include transition(0.3s ease-in-out);
+
+    height: 0;
     left: 16px;
+    overflow: hidden;
     padding: 0;
     position: absolute;
     z-index: 9;
-    @include transition(0.3s ease-in-out);
-    height: 0;
 
     li {
       list-style: none;
@@ -36,8 +37,9 @@
     button::after {
       @include transform(rotateZ(180deg));
     }
+
     ul {
-     height: auto;
+      height: auto;
     }
   }
 
@@ -47,9 +49,9 @@
     align-items: center;
     background-color: transparent;
     color: $color-blue-600;
+    cursor: pointer;
     display: flex;
     padding: 0;
-    cursor: pointer;
 
     &::before {
       background: url(#{$img-path-Icon}/Language.svg) no-repeat left center;
@@ -102,4 +104,5 @@
     }
   }
 }
+
 /* language-switcher start */

@@ -46,10 +46,10 @@ const CountrySiteHeader = ({
               data={languageswitcherData.languagedata}
               headerText={languageswitcherData.headerText}
             />
-            <button class="menu-hamburger" aria-label="menu-icon">
-              <span class="hamburger-line line-top"/>
-              <span class="hamburger-line line-middle"/>
-              <span class="hamburger-line line-bottom"/>
+            <button className="menu-hamburger" aria-label="menu-icon">
+              <span className="hamburger-line line-top" />
+              <span className="hamburger-line line-middle" />
+              <span className="hamburger-line line-bottom" />
               Nav toggle
             </button>
             <button className="icon-globe">

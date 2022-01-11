@@ -2,7 +2,7 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
-$colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "azure": $color-azure);
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
 
 .publication-card {
   display: inline-block;
@@ -15,8 +15,9 @@ $colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "az
     .publication-thumbnail__image {
       @each $name, $color in $colors {
         &.#{$name}:after {
-          opacity: 0.75;
           @include background-image(42deg, #{$color}, transparent 80%);
+
+          opacity: 0.75;
         }
       }
     }
@@ -61,11 +62,11 @@ $colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "az
 
     align-items: center;
     background-image: none;
+    cursor: pointer;
     display: inline-flex;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    cursor: pointer;
 
     &::after {
       cursor: pointer;
@@ -92,13 +93,12 @@ $colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "az
 
     align-items: center;
     background-image: none;
+    cursor: pointer;
     display: inline;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    background-image: none;
-    cursor: pointer;
-    
+
     &::after {
       cursor: pointer;
       height: $spacing-24;
@@ -141,8 +141,9 @@ $colors: ("yellow": $color-yellow, "red": $color-red, "green": $color-green, "az
       .publication-thumbnail__image {
         @each $name, $color in $colors {
           &.#{$name}:after {
-            opacity: 0.75;
             @include background-image(318deg, #{$color}, transparent 80%);
+
+            opacity: 0.75;
           }
         }
       }

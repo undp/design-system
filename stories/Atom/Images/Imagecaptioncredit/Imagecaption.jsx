@@ -15,7 +15,7 @@ export const size_options3 = {
   portrait: 'portrait',
 };
 
-const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
 export const Images = ({
   imagelg, imagemd, imagesm, alt, label, paragraph, ...args
@@ -24,9 +24,13 @@ export const Images = ({
     viewport('.image-section__cart');
     viewport('.image-section .image__caption');
   }, []);
+
+  let portrait_variant = size_options3[`${args.size}`];
+  let size_variant = size_options[`${args.size}`];
+
   return (
-    <figure className={cls('grid-x', 'image-section', `${size_options3[`${args.size}`]}`)}>
-      <div className={cls('cell', 'image-section__cart', 'scale-up', `${size_options[`${args.size}`]}`)}>
+    <figure className={cls('grid-x', 'image-section', `${portrait_variant}`)}>
+      <div className={cls('cell', 'image-section__cart', 'scale-up', `${size_variant}`)}>
         {args.size === 'wide' && <img src={imagelg} alt={alt} />}
         {args.size === 'medium' && <img src={imagemd} alt={alt} />}
         {args.size === 'portrait' && <img src={imagesm} alt={alt} />}
@@ -35,7 +39,7 @@ export const Images = ({
       {args.caption === 'false' && args.credit === 'false' ? (
         <></>
       ) : (
-        <Imagecaption opacityOnly='yes' label={label} paragraph={paragraph} caption={args.caption} credit={args.credit} />
+        <Imagecaption opacityOnly="yes" label={label} paragraph={paragraph} caption={args.caption} credit={args.credit} />
       )}
     </figure>
   );

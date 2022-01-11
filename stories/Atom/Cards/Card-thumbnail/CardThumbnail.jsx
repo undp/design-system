@@ -8,11 +8,14 @@ export const hover_color_options = {
   azure: 'azure',
 };
 
-export const Cardthumb = ({ image, ...args }) => (
-  <div className={['card-thumbnail__image', `${hover_color_options[`${args.hovercolor}`]}`].join(' ')}>
-    <img src={image} alt={image} />
-  </div>
-);
+export const Cardthumb = ({ image, ...args }) => {
+  let color_variant = hover_color_options[`${args.hovercolor}`];
+  return (
+    <div className={['card-thumbnail__image', `${color_variant}`].join(' ')}>
+      <img src={image} alt={image} />
+    </div>
+  );
+};
 
 Cardthumb.defaultProps = {
   hovercolor: 'yellow',

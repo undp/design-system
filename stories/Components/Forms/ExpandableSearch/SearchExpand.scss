@@ -21,18 +21,19 @@
     box-sizing: border-box;
     cursor: pointer;
     font-size: $font-size-14;
+    height: 2.675rem;
     line-height: 1.75rem;
     padding-bottom: $spacing-12;
     position: relative;
     width: 0;
     z-index: 3;
-    height:2.675rem;
-    &:focus{
-      outline:none;
+
+    &:focus {
+      outline: none;
     }
   }
 
-  &.open{
+  &.open {
     input {
       background-color: $color-white;
       cursor: text;
@@ -45,10 +46,10 @@
 
   .icon-search-black {
     border-bottom: 1px solid #000;
-    height:2.625rem;
+    cursor: pointer;
+    height: 2.625rem;
     width: 1.6875rem;
     z-index: 2;
-    cursor: pointer;
   }
 }
 

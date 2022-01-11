@@ -1,108 +1,108 @@
-@import "../../../../assets/scss/variables";
-@import "../../../../assets/scss/mixins";
-@import "../../../../assets/scss/breakpoints";
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
 
 // backgroundoverlay
 .goverlay {
-  width: 100%;
-  height: calc(100vh + 1px);
-  position: fixed;
-  top: -1px;
-  left: 0;
-  background: rgba(247, 247, 247, 0.8);
   -webkit-backdrop-filter: blur(80px);
   backdrop-filter: blur(80px);
+  background: rgba(247, 247, 247, 0.8);
+  height: calc(100vh + 1px);
+  left: 0;
+  position: fixed;
+  top: -1px;
+  width: 100%;
   will-change: opacity;
 }
 
 // desktop
 .glightbox-container {
-  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   height: 100%;
-  position: fixed;
-  top: 0;
   left: 0;
-  z-index: 9;
+  outline: none;
   overflow: hidden;
-  -ms-touch-action: none;
-  touch-action: none;
+  position: fixed;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  outline: none;
-  overflow: hidden;
+  top: 0;
+  -ms-touch-action: none;
+  touch-action: none;
+  width: 100%;
+  z-index: 9;
 
   &.inactive {
     display: none;
   }
 
   .gcontainer {
+    height: 100%;
+    overflow: hidden;
     position: relative;
     width: 100%;
-    height: 100%;
     z-index: 10;
-    overflow: hidden;
 
     //controls
     .gprev,
     .gnext,
     .gclose {
-        z-index: 3;
-        cursor: pointer;
-        width: 45px;
-        height: 45px;
-        border: none;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
+      align-items: center;
+      border: none;
+      -webkit-box-align: center;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-box-pack: center;
+      cursor: pointer;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: center;
+      height: 45px;
+      justify-content: center;
+      width: 45px;
+      z-index: 3;
 
-        svg {
-          display: none;
-        }
+      svg {
+        display: none;
+      }
 
-        &.disabled {
-          opacity: 0.1;
-        }
+      &.disabled {
+        opacity: 0.1;
+      }
     }
 
     .gprev {
+      background: url(#{$img-path-Iconfourback}/circle-left.svg) no-repeat left center;
+      left: 3px;
       position: absolute;
       top: 47%;
-      left: 3px;  
-      background: url(#{$img-path-Iconfourback}/circle-left.svg) no-repeat left center;
 
       @include devicebreak(medium) {
-        left: 20px; 
+        left: 20px;
         top: 45%;
       }
+
       @include devicebreak(xlarge) {
         left: 40px;
       }
     }
 
     .gnext {
-      position: absolute;
-      top: 47%;
-      right: 3px;
       background: url(#{$img-path-Iconfourback}/circle-right.svg) no-repeat left center;
+      position: absolute;
+      right: 3px;
+      top: 47%;
 
       @include devicebreak(medium) {
         right: 20px;
         top: 45%;
       }
+
       @include devicebreak(xlarge) {
         right: 40px;
       }
@@ -110,6 +110,7 @@
 
     .gclose {
       background: url(#{$img-path-Iconfourback}/Times_circle.svg) no-repeat left center;
+      border: 0;
       cursor: pointer;
       font-size: 0;
       height: 45px;
@@ -117,72 +118,70 @@
       right: 19px;
       top: 16px;
       width: 45px;
-      border: 0;
     }
 
     //slider
     .gslider {
+      align-items: center;
+      -webkit-box-align: center;
+      -webkit-box-pack: center;
+      display: -webkit-box !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -ms-flex-align: center;
+      -ms-flex-pack: center;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      overflow: hidden;
+      position: relative;
+      top: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
       -webkit-transition: -webkit-transform 0.4s ease;
       transition: -webkit-transform 0.4s ease;
       transition: transform 0.4s ease;
       transition: transform 0.4s ease, -webkit-transform 0.4s ease;
-      height: 100%;
-      left: 0;
-      top: 0;
       width: 100%;
-      position: relative;
-      overflow: hidden;
-      display: -webkit-box !important;
-      display: -ms-flexbox !important;
-      display: flex !important;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
 
       .gslide {
-        width: 100%;
+        align-items: center;
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        opacity: 0;
         position: absolute;
-        opacity: 1;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        opacity: 0;
+        width: 100%;
 
         &.current {
           opacity: 1;
-          z-index: 9;
           position: relative;
+          z-index: 9;
         }
 
         .gslide-inner-content {
           width: 100%;
 
           .ginner-container {
-            position: relative;
-            width: 100%;
+            -webkit-box-orient: vertical;
+            -webkit-box-pack: center;
             display: -webkit-box;
             display: -ms-flexbox;
-            -webkit-box-pack: center;
             -ms-flex-pack: center;
-            -webkit-box-orient: vertical;
-            max-width: 100%;
-            margin: auto;
             height: 100vh;
+            margin: auto;
+            max-width: 100%;
+            position: relative;
+            width: 100%;
 
             @include devicebreak(medium) {
               display: inherit;
@@ -191,29 +190,30 @@
 
             //image
             .gslide-image {
+              align-items: center;
               -webkit-box-align: center;
               -ms-flex-align: center;
-              align-items: center;
-              max-height: 200px;
-              overflow:hidden;
               height: 100%;
+              max-height: 200px;
+              overflow: hidden;
+
               @include devicebreak(medium) {
-                max-height: inherit;
                 margin-top: 40px;
-                height: 100%;
+                max-height: inherit;
               }
+
               img {
-                height: 100%;
                 display: block;
+                height: 100%;
                 margin: auto;
-                
+
                 @include devicebreak(medium) {
                   height: auto;
                 }
+
                 @include devicebreak(xlarge) {
                   max-height: calc(100vh - 150px);
                 }
-
 
                 &.dragging {
                   cursor: -webkit-grabbing !important;
@@ -229,17 +229,20 @@
               -webkit-box-flex: 1;
               -ms-flex: 1 0 100%;
               flex: 1 0 100%;
+
               @include devicebreak(large) {
                 position: relative;
               }
 
-              &.description-left{
+              &.description-left {
+                margin: 0 auto;
                 max-width: 100%;
                 max-width: 800px;
-                margin:  0 auto;
               }
+
               .gdesc-inner {
                 padding: 48px 20px;
+
                 @include devicebreak(large) {
                   padding: 32px 20px;
                 }
@@ -254,13 +257,13 @@
       }
     }
   }
-  
+
   //closing
   &.glightbox-closing {
     .gprev,
     .gnext,
     .gclose {
-      opacity: 0!important;
+      opacity: 0 !important;
     }
   }
 }
@@ -271,9 +274,9 @@
     .gslide-description {
       position: absolute;
       top: calc(50% + 65px);
-      
-     @include devicebreak(medium) {
-         position:relative;
+
+      @include devicebreak(medium) {
+        position: relative;
       }
     }
 
@@ -288,44 +291,44 @@
   }
 }
 
-/*CSS Animations*/
+/* CSS Animations */
 .gfadeIn {
-  -webkit-animation: gfadeIn 0.5s ease;
+  -webkit-animation: gfadein 0.5s ease;
   animation: gfadeIn 0.5s ease;
 }
 
 .gfadeOut {
-  -webkit-animation: gfadeOut 0.5s ease;
+  -webkit-animation: gfadeout 0.5s ease;
   animation: gfadeOut 0.5s ease;
 }
 
 .gslideOutLeft {
-  -webkit-animation: gslideOutLeft 0.3s ease;
+  -webkit-animation: gslideoutleft 0.3s ease;
   animation: gslideOutLeft 0.3s ease;
 }
 
 .gslideInLeft {
-  -webkit-animation: gslideInLeft 0.3s ease;
+  -webkit-animation: gslideinleft 0.3s ease;
   animation: gslideInLeft 0.3s ease;
 }
 
 .gslideOutRight {
-  -webkit-animation: gslideOutRight 0.3s ease;
+  -webkit-animation: gslideoutright 0.3s ease;
   animation: gslideOutRight 0.3s ease;
 }
 
 .gslideInRight {
-  -webkit-animation: gslideInRight 0.3s ease;
+  -webkit-animation: gslideinright 0.3s ease;
   animation: gslideInRight 0.3s ease;
 }
 
 .gzoomIn {
-  -webkit-animation: gzoomIn 0.5s ease;
+  -webkit-animation: gzoomin 0.5s ease;
   animation: gzoomIn 0.5s ease;
 }
 
 .gzoomOut {
-  -webkit-animation: gzoomOut 0.5s ease;
+  -webkit-animation: gzoomout 0.5s ease;
   animation: gzoomOut 0.5s ease;
 }
 
@@ -334,6 +337,7 @@
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -345,6 +349,7 @@
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -355,6 +360,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -364,6 +370,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -373,6 +380,7 @@
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
@@ -382,6 +390,7 @@
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
@@ -393,11 +402,12 @@
     -webkit-transform: translate3d(-60%, 0, 0);
     transform: translate3d(-60%, 0, 0);
   }
+
   to {
-    visibility: visible;
+    opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -407,25 +417,27 @@
     -webkit-transform: translate3d(-60%, 0, 0);
     transform: translate3d(-60%, 0, 0);
   }
+
   to {
-    visibility: visible;
+    opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    opacity: 1;
+    visibility: visible;
   }
 }
 
 @-webkit-keyframes gslideOutLeft {
   from {
     opacity: 1;
-    visibility: visible;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    visibility: visible;
   }
+
   to {
+    opacity: 0;
     -webkit-transform: translate3d(-60%, 0, 0);
     transform: translate3d(-60%, 0, 0);
-    opacity: 0;
     visibility: hidden;
   }
 }
@@ -433,14 +445,15 @@
 @keyframes gslideOutLeft {
   from {
     opacity: 1;
-    visibility: visible;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    visibility: visible;
   }
+
   to {
+    opacity: 0;
     -webkit-transform: translate3d(-60%, 0, 0);
     transform: translate3d(-60%, 0, 0);
-    opacity: 0;
     visibility: hidden;
   }
 }
@@ -448,56 +461,60 @@
 @-webkit-keyframes gslideInRight {
   from {
     opacity: 0;
-    visibility: visible;
     -webkit-transform: translate3d(60%, 0, 0);
     transform: translate3d(60%, 0, 0);
+    visibility: visible;
   }
+
   to {
+    opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    opacity: 1;
   }
 }
 
 @keyframes gslideInRight {
   from {
     opacity: 0;
-    visibility: visible;
     -webkit-transform: translate3d(60%, 0, 0);
     transform: translate3d(60%, 0, 0);
+    visibility: visible;
   }
+
   to {
+    opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    opacity: 1;
   }
 }
 
 @-webkit-keyframes gslideOutRight {
   from {
     opacity: 1;
-    visibility: visible;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    visibility: visible;
   }
+
   to {
+    opacity: 0;
     -webkit-transform: translate3d(60%, 0, 0);
     transform: translate3d(60%, 0, 0);
-    opacity: 0;
   }
 }
 
 @keyframes gslideOutRight {
   from {
     opacity: 1;
-    visibility: visible;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    visibility: visible;
   }
+
   to {
+    opacity: 0;
     -webkit-transform: translate3d(60%, 0, 0);
     transform: translate3d(60%, 0, 0);
-    opacity: 0;
   }
 }
 
@@ -507,6 +524,7 @@
     -webkit-transform: scale3d(0.3, 0.3, 0.3);
     transform: scale3d(0.3, 0.3, 0.3);
   }
+
   to {
     opacity: 1;
   }
@@ -518,6 +536,7 @@
     -webkit-transform: scale3d(0.3, 0.3, 0.3);
     transform: scale3d(0.3, 0.3, 0.3);
   }
+
   to {
     opacity: 1;
   }
@@ -527,11 +546,13 @@
   from {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
     -webkit-transform: scale3d(0.3, 0.3, 0.3);
     transform: scale3d(0.3, 0.3, 0.3);
   }
+
   to {
     opacity: 0;
   }
@@ -541,11 +562,13 @@
   from {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
     -webkit-transform: scale3d(0.3, 0.3, 0.3);
     transform: scale3d(0.3, 0.3, 0.3);
   }
+
   to {
     opacity: 0;
   }

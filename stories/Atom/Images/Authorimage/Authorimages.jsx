@@ -6,11 +6,14 @@ export const size_options = {
   Small: '',
 };
 
-export const Authorimg = ({ image, alt, ...args }) => (
-  <div className={['author__img', `${size_options[`${args.variant}`]}`].join(' ').trim()}>
-    <img src={image} alt={alt} title={alt}/>
-  </div>
-);
+export const Authorimg = ({ image, alt, ...args }) => {
+  let size_variant = size_options[`${args.variant}`];
+  return (
+    <div className={['author__img', `${size_variant}`].join(' ').trim()}>
+      <img src={image} alt={alt} title={alt} />
+    </div>
+  );
+};
 
 Authorimg.defaultProps = {
   size: 'large',

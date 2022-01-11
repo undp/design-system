@@ -22,21 +22,25 @@
       background-color: $color-white;
       border-top: 0;
       display: block;
+
       &.fix-height {
         max-height: 18.75rem;
       }
+
       .radio {
         display: flex;
         margin: 0 -1rem;
         padding: $spacing-16;
+
         &:hover {
           background-color: $color-gray-100;
         }
 
         label {
-          width: 100%;
           font-size: $font-size-16;
+          width: 100%;
         }
+
         span {
           left: inherit;
           right: $spacing-16;
@@ -44,17 +48,20 @@
           transform: translateY(-50%);
         }
       }
+
       ul {
         border: 0;
-        padding: 0 0 0 $spacing-40;
-        overflow: hidden;
         display: none;
+        overflow: hidden;
+        padding: 0 0 0 $spacing-40;
+
         .radio {
           &:hover {
             background-color: inherit;
           }
         }
       }
+
       li {
         margin-bottom: 0;
       }
@@ -91,6 +98,7 @@
           background-color: $color-gray-100;
         }
       }
+
       ul {
         .checkbox {
           &:hover {
@@ -113,6 +121,7 @@
 
         button::after {
           @include transform(translateY(-50%) rotate(-180deg));
+
           top: 50%;
         }
       }
@@ -210,6 +219,7 @@
         }
       }
     }
+
     &.open {
       .radio {
         span {
@@ -217,6 +227,7 @@
           right: inherit;
         }
       }
+
       ul {
         ul {
           padding: 0 $spacing-40 0 0;

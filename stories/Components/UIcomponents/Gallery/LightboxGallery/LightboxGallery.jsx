@@ -7,7 +7,7 @@ import './lightbox.scss';
 import './lightboxgallery.scss';
 
 export const LightboxGallery = ({
-  titleText, descText, buttonText, data
+  titleText, descText, buttonText, data,
 }) => {
   useEffect(() => {
     lightbox_Gallery();
@@ -22,33 +22,31 @@ export const LightboxGallery = ({
         </div>
       </div>
       <div className="medium-8 large-9 cell lightbox-gallery-row__right-col overflow-hidden">
-          <div className="lightbox-gallery-images">
-            <ul >
-              {data.map((item) => {
-                 return (
-                    <>
-                    <li>
-                      <a href={item.galleryimg1} class="glightbox" data-glightbox="description:.custom-desc1; descPosition:left;">
-                        <figure>
-                          <div className="image"><img src={item.galleryimg1} alt="image" /></div>
-                            <div class="custom-desc1 image-section__description">
-                              <figcaption class="image__caption">
-                                <div class="image__caption_para">
-                                {item.paragraph}
-                                </div>
-                                <div class="credits">
-                                  {item.label}
-                                </div>
-                              </figcaption>
-                            </div>
-                          </figure>
-                        </a>
-                      </li>
-                    </>
-                  );
-              })}
-            </ul>
-          </div>
+        <div className="lightbox-gallery-images">
+          <ul>
+            {data.map((item) => (
+              <>
+                <li>
+                  <a href={item.galleryimg1} className="glightbox" data-glightbox="description:.custom-desc1; descPosition:left;">
+                    <figure>
+                      <div className="image"><img src={item.galleryimg1} alt="image" /></div>
+                      <div className="custom-desc1 image-section__description">
+                        <figcaption className="image__caption">
+                          <div className="image__caption_para">
+                            {item.paragraph}
+                          </div>
+                          <div className="credits">
+                            {item.label}
+                          </div>
+                        </figcaption>
+                      </div>
+                    </figure>
+                  </a>
+                </li>
+              </>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

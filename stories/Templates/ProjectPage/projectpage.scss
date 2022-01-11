@@ -27,7 +27,7 @@
     }
 
     .heading-big {
-      @include devicebreak(medium) { 
+      @include devicebreak(medium) {
         padding-bottom: 25rem;
       }
 
@@ -183,8 +183,8 @@
 
       &-hero {
         .breadcrumb {
-          padding-right: $spacing-16;
           padding-left: 0;
+          padding-right: $spacing-16;
         }
 
         .pagehero-wrapper__title {
@@ -200,7 +200,7 @@
     &-support {
       .glide {
         &__bullets {
-          margin-left: 0rem;
+          margin-left: 0;
           margin-right: -10rem;
         }
       }

@@ -7,8 +7,8 @@ import { Authorimg } from '../../../../Atom/Images/Authorimage/Authorimages';
 export const Author = ({
   data, image, alt, Image, Number, Link,
 }) => {
-  let size; let
-    decNumber;
+  let size;
+  let decNumber;
   switch (Number) {
     case 'One':
       decNumber = 1;

@@ -9,17 +9,18 @@ export function accordion() {
       $(currentElem).siblings('.accordion__panel').slideDown('fast').attr('aria-hidden', false);
       // Close all other list items and panels.
       $(accordionListItem).not($(currentElem)).removeClass('accordion--active').attr('aria-expanded', false);
-      $(accordionListItem).not($(currentElem)).siblings('.accordion__panel').slideUp('fast').attr('aria-hidden', true);
+      $(accordionListItem).not($(currentElem)).siblings('.accordion__panel').slideUp('fast')
+        .attr('aria-hidden', true);
     } else {
       // Close active list item if open.
       $(currentElem).removeClass('accordion--active').attr('aria-expanded', false);
       $(currentElem).siblings('.accordion__panel').slideUp('fast').attr('aria-hidden', true);
     }
-  }
+  };
 
   // Get all accordions on the page.
   const accordion = $('.accordion');
-  $(accordion).each(function (index, element) {
+  $(accordion).each((index, element) => {
     const accordionListItem = $(element).find('button');
     $(accordionListItem).click(function (e) {
       e.preventDefault();

@@ -17,12 +17,6 @@
     }
   }
 
-  &.inverted {
-    color: $color-white;
-  }
-}
-
-.sign-up {
   &--field {
     display: flex;
     justify-content: flex-end;
@@ -60,6 +54,8 @@
   }
 
   &.inverted {
+    color: $color-white;
+
     label {
       color: $color-black;
     }

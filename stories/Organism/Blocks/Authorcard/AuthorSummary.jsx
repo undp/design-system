@@ -14,7 +14,7 @@ export const AuthorSummary = ({
   return (
     <div className="author-summary left-right">
       <div className="author-summary-left">
-        <Authorimg image={image} variant="Large" alt="Author"/>
+        <Authorimg image={image} variant="Large" alt="Author" />
         <div className="author-summary-text">
           <Heading type="2" label={Authorlabel} />
           <P label={para1} />

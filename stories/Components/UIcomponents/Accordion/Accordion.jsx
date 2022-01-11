@@ -3,7 +3,9 @@ import { accordion } from '../../../assets/js/accordion';
 import './accordion.scss';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 
-export const Accordion = ({ headerText, descriptionText, accordionpanelId, accordionpanelId1, accordionpanelId2, accordionButtonID, accordionButtonID1, accordionButtonID2 }) => {
+export const Accordion = ({
+  headerText, descriptionText, accordionpanelId, accordionpanelId1, accordionpanelId2, accordionButtonID, accordionButtonID1, accordionButtonID2,
+}) => {
   useEffect(() => {
     accordion();
   }, []);

@@ -51,7 +51,7 @@ const AuthorPage = ({
         <div className="grid-x">
           <div className="cell medium-offset-1 medium-10 small-12">
             <Heading className="authorheading" type="2" label={Authorlabel.authorheading} />
-          
+
             <AuthorSummary
               image={user}
               Authorlabel={authorSummaryData.text2}
@@ -65,7 +65,7 @@ const AuthorPage = ({
             <ContentCard
               data={contentCardData.groupcontentdata}
               buttontype={contentCardData.buttonname}
-              Hovercolors='yellow'
+              Hovercolors="yellow"
             />
           </div>
         </div>

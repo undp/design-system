@@ -14,17 +14,21 @@
     background-size: 0 2px, 100% 2px;
   }
 }
+
 a {
   @extend %paragragh-font-20;
+
   color: $color-black;
   text-decoration: none;
 
   &.animated-link {
-    background-image: linear-gradient($color-dark-red, $color-dark-red),
+    background-image:
+      linear-gradient($color-dark-red, $color-dark-red),
       linear-gradient($color-dark-red, $color-dark-red);
     background-position: 100% 100%, -30px 100%;
     background-repeat: no-repeat;
     background-size: 100% 2px, 0 1px;
+
     &:hover {
       @include animation(lineLoop-animation 2s linear infinite);
     }

@@ -1,17 +1,19 @@
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/breakpoints";
-@import "../../assets/scss/variables";
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
 
 /* toggle search start */
 .search-filter {
   .expand-search {
     max-width: 296px;
   }
+
   .select-wrapper {
     .multi-select {
       padding-top: $spacing-24;
     }
   }
+
   .selected-chips {
     max-width: 296px;
     padding-top: $spacing-24;
@@ -64,7 +66,7 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .selected-chips {
     .chips {
       margin: 0 0 $spacing-12 $spacing-12;
