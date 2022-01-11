@@ -40,6 +40,8 @@
 }
 
 .scrollbar-horizontal {
+  overflow-x: scroll;
+
   &::-webkit-scrollbar-track {
     background: linear-gradient(0deg, transparent 10%, $color-black 33%, transparent 0);
   }
@@ -55,6 +57,8 @@
 }
 
 .scrollbar-vertical {
+  overflow-y: scroll;
+
   &::-webkit-scrollbar-track {
     background: linear-gradient(90deg, transparent 10%, $color-black 33%, transparent 0);
   }

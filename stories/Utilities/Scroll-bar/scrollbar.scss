@@ -5,7 +5,6 @@
 .scrollbar-horizontal-wrapper {
   float: left;
   max-width: $width-600;
-  overflow-x: scroll;
   width: 100%;
 }
 
@@ -16,7 +15,6 @@
 
 .scrollbar-vertical-wrapper {
   height: 70vh;
-  overflow-y: scroll;
   width: 65px;
 }
 
