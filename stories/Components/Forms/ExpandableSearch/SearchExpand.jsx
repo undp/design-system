@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './SearchExpand.scss';
 import img from '../../../assets/icons/Search_black.svg';
+import img_close from '../../../assets/icons/Times.svg';
 import { expandSearch } from '../../../assets/js/expand_search';
 
 export const SearchExpand = () => {
@@ -9,8 +10,9 @@ export const SearchExpand = () => {
   }, []);
   return (
     <div className="expand-search">
-      <img src={img} alt="icon" className="icon-search-black" />
+      <button><img src={img} alt="search expand" /></button>
       <input type="text" aria-label="expand-search" />
+      <button className='close'><img src={img_close} alt="search expand" /></button>
     </div>
   );
 };

@@ -1,6 +1,11 @@
 export const expandSearch = () => {
-  $(document).on('click', '.icon-search-black', function () {
+  $(document).on('click', '.expand-search button', function () {
     $(this).parent('.expand-search').toggleClass('open');
-    $(this).siblings('input').focus();
+    if($(this).parent().hasClass('open')){ 
+      $(this).siblings('input').focus();
+    }
+    else{
+      $(this).siblings('input').focusout();
+    }
   });
 };
