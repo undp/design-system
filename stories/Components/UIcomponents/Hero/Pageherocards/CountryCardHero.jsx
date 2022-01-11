@@ -13,12 +13,12 @@ export const CountryCardHero = ({ data, title, subtitle }) => {
     viewport('.country-card__header h5');
   }, []);
   return (
-    <div className="country-card__wrapper">
+    <div className="country-card">
       <div className="grid-x country-card__header">
         <div className="cell large-5 medium-12">
           <Heading type="2" className="left-right" label={title} />
         </div>
-        <div className="cell large-4 medium-12 country-card-border">
+        <div className="cell large-4 medium-12 country-card-subhead">
           <Heading type="5" className="left-right" label={subtitle} />
         </div>
       </div>
