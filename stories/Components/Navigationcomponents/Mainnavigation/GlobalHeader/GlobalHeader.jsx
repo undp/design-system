@@ -59,7 +59,7 @@ const GlobalHeader = ({
               <Icons src={IconsSearch} alt="icon-search" />
             </button>
           </div>
-          <div className="mega-wrapper cell large-12">
+          <div className="mega-wrapper">
             <MegaMenu />
           </div>
           {!desktopView && (

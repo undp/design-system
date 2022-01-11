@@ -4,17 +4,17 @@ var lang = 'english';
 
 export const navigationInitialize = (locale) => {
   const $menu = $('.menu');
-  const $menuItem = $('.menu li');
+  const $menuItem = $('.menu li a');
   const $megaMenu = $('.show-mega');
 
   // calling ajax json
   lang = locale === 'en' ? 'english' : locale;
   getData(lang);
 
-  $menuItem.on('mouseenter', function () {
-    const id = $(this).attr('id');
-    const $menuItem = $(document).find(`[data-menu-item-id='${id}']`);
-    $menuItem.addClass('show-mega').siblings().removeClass('show-mega');
+  $menuItem.on('mouseenter focus', function () {
+    const id = $(this).parent().attr('data-menu-id');
+    const $menuItemId = $(document).find(`[data-menu-item-id='${id}']`);
+    $menuItemId.addClass('show-mega').siblings().removeClass('show-mega');
     $megaMenu.find('.sub-menu-content:first-child').addClass('active-content')
       .siblings().removeClass('active-content');
     $megaMenu.find('.submenu li:first-child').addClass('active').siblings().removeClass('active');
@@ -56,33 +56,30 @@ export const navigationInitialize = (locale) => {
     }
   });
 
-  $(document).on('click', '.mob-links .cta__link', function () {
+  $(document).on('click', '.mobile-links .cta__link', function () {
     const ID = $(this).attr('id');
     const TEXT = $(this).text();
     $('.mobile-mega-content').find('.sub-heading').text(TEXT);
     $('.mobile-mega-wrapper').find(`[data-mobile-id='${ID}']`).addClass('show-content');
-    $('.mob-links').addClass('hide-mob-links');
-    $('.mob-sub-menu').addClass('show-sub');
+    $('.mobile-links').addClass('hide');
+    $('.mob-sub-menu').addClass('show');
   });
 
   $('.mob-lang-switcher').click(() => {
-    $('.mob-sub-lang').addClass('show-sub');
-    $('.mob-links').addClass('hide-mob-links');
+    $('.mob-sub-lang').addClass('show');
+    $('.mobile-links').addClass('hide');
   });
 
   $('.back-nav').click(() => {
-    $('.mob-sub-menu, .mob-sub-lang').removeClass('show-sub');
+    $('.mob-sub-menu, .mob-sub-lang').removeClass('show');
     $('.mobile-mega-content').removeClass('show-content');
-    $('.mob-links').removeClass('hide-mob-links');
+    $('.mobile-links').removeClass('hide');
   });
   $('.menu-hamburger').click(function (e) {
     e.stopImmediatePropagation();
-    $('.mobile-nav').toggleClass('show-mobile-nav');
-    $('.mob-sub-menu').toggleClass('show-sub');
+    $('.mobile-nav').toggleClass('show');
+    $('.mob-sub-menu').toggleClass('show');
     $(this).toggleClass('is-active');
     $('.back-nav').click();
   })
-  
 };
-
-

@@ -12,8 +12,9 @@
   padding: 0 $spacing-24;
   position: absolute;
   top: 4.6875rem;
+  width:100%;
 
-  &.show-mobile-nav {
+  &.show {
     display: block;
   }
 
@@ -21,10 +22,10 @@
     position: relative;
   }
 
-  .mob-links {
+  .mobile-links {
     padding: 5.625rem 0 3.75rem;
 
-    &.hide-mob-links {
+    &.hide {
       display: none;
       pointer-events: none;
     }
@@ -64,7 +65,7 @@
     display: none;
     padding: 2.0625rem 0;
 
-    &.show-sub {
+    &.show {
       display: block;
       height: calc(100vh - 9.1875rem);
     }
@@ -113,14 +114,12 @@
     flex-wrap: wrap;
     font-size: 1rem;
     text-transform: uppercase;
-
-    span {
-      align-items: center;
-      display: flex;
-
-      img {
-        margin-right: 0.46875rem;
-      }
+    align-items: center;
+    border: 0;
+    padding: 0;
+    background: none;
+    img {
+      margin-right: 0.46875rem;
     }
   }
 
@@ -129,7 +128,7 @@
     padding: 2.25rem 0;
     pointer-events: none;
 
-    &.show-sub {
+    &.show {
       display: block;
       pointer-events: all;
     }
