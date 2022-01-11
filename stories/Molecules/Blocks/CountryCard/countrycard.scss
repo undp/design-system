@@ -42,7 +42,7 @@
       .country {
         &-card {
           &__caption {
-            transform: translateY(calc(-100% + 2.75rem));
+            transform: translateY(calc(-100% + #{$spacing-44}));
 
             p {
               opacity: 1;
