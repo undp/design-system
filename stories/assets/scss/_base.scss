@@ -117,14 +117,6 @@
     position: relative;
     z-index: 2;
   }
-
-  &__slide {
-    &[aria-hidden='true'] {
-      a {
-        display: none;
-      }
-    }
-  }
 }
 
 /* animation start */
