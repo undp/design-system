@@ -137,6 +137,7 @@ body.sdgmodal-open {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
+    @include transition(background-color 0.9s ease);
 
     &:hover {
       color: $color-white;
@@ -175,7 +176,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-red, transparent 80%);
     }
   }
@@ -203,7 +204,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-mustard, transparent 80%);
     }
   }
@@ -231,7 +232,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-kelly-green, transparent 80%);
     }
   }
@@ -259,7 +260,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-dark-red, transparent 80%);
     }
   }
@@ -287,7 +288,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-red-orange, transparent 80%);
     }
   }
@@ -315,7 +316,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-bright-blue, transparent 80%);
     }
   }
@@ -343,7 +344,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-yellow, transparent 80%);
     }
   }
@@ -371,7 +372,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-burgundy-red, transparent 80%);
     }
   }
@@ -399,7 +400,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-orange, transparent 80%);
     }
   }
@@ -427,7 +428,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-magenta, transparent 80%);
     }
   }
@@ -455,7 +456,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-golden-yellow, transparent 80%);
     }
   }
@@ -483,7 +484,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-dark-mustard, transparent 80%);
     }
   }
@@ -511,7 +512,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-dark-green, transparent 80%);
     }
   }
@@ -539,7 +540,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-blue, transparent 80%);
     }
   }
@@ -567,7 +568,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-lime-green, transparent 80%);
     }
   }
@@ -595,7 +596,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-royal-blue, transparent 80%);
     }
   }
@@ -623,7 +624,7 @@ body.sdgmodal-open {
       }
     }
 
-    .card-thumbnail__image::before {
+    .image::before {
       @include background-image(42deg, $sdg-navy-blue, transparent 80%);
     }
   }
