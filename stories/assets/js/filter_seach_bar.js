@@ -58,3 +58,6 @@ const toggleFilter = function () {
 };
 
 export default toggleFilter;
+
+// for webpack build
+export {toggleFilter as toggleFilter}
