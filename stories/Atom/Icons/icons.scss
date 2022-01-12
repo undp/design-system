@@ -7,44 +7,152 @@
   cursor: pointer;
 }
 
-.arrow-expand {
-  background: url(#{$img-path-Iconback}/arrow-left-expand-defaut.svg) no-repeat center center;
+.arrow-expand { 
   cursor: pointer;
-  display: inline-flex;
-  height: 16px;
-  width: 20px;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: $spacing-16;
+  height: $spacing-16;
+  @include transition (width 0.5s);
 
-  &:hover {
-    @include transform (translateX(10px));
-    @include transition (transform 0.4s);
-
-    background: url(#{$img-path-Iconback}/arrow-left-expand-hover.svg) no-repeat center center;
-    width: 100px;
+  &::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: $color-red;
+    right: 0;
+    top: 7px;
+    @include transition (all 0.5s);
+  }
+  
+  &::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: $spacing-12;
+    height: $spacing-12;
+    border-top: 2px solid $color-red;
+    border-right: 2px solid $color-red;
+    @include transform (rotate(45deg));
+    right: 0;
+    top: 2px;
+  } 
+  &:hover{
+    width: $spacing-80;
+    &:before{
+      width: 100%;
+    }
   }
 }
 
 .external-link {
-  background: url(#{$img-path-Iconback}/external-default.svg) no-repeat 0 bottom;
   cursor: pointer;
-  display: inline-flex;
-  height: 20px;
-  width: 21px;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: $spacing-12;
+  height: $spacing-12;
+  box-shadow:
+  -2px 2px 0px 0px $color-dark-red, -4px 0px 0px -2px $color-dark-red, -3px 3px 0 -1px $color-dark-red;
+  margin-left: -2px; 
+  margin-top: 1px;
 
-  &:hover {
-    background: url(#{$img-path-Iconback}/external-hover.svg) no-repeat 0 bottom;
+  &:before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    right: -2.5px;
+    top: 3.5px;
+    background: $color-dark-red;
+    @include transform (rotate(-45deg) translate(0,0));
+    width: 10px;
+    height: 2px;
+    @include transition (all 0.3s);
+    }
+  &:after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    right: -1px;
+    top: 0;
+    width: $spacing-08;
+    height: $spacing-08;
+    border-right: 2px solid $color-dark-red;
+    border-top: 2px solid $color-dark-red;
+    @include transition (all 0.3s);
+    @include transform (translate(0,0));
+  }
+
+  &:hover{
+    &:after {
+      @include transform (translate(5px,-5px));
+    }
+    &:before {
+      @include transform (rotate(-45deg) translate(7px,0));
+    }
   }
 }
 
 .download-icon {
-  background: url(#{$img-path-Iconback}/download-default.svg) no-repeat 0 bottom;
   cursor: pointer;
-  display: inline-flex;
-  height: 24px;
-  width: 24px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: 12px;
+  
 
-  &:hover {
-    background: url(#{$img-path-Iconback}/download-hover.svg) no-repeat 0 bottom;
-    height: 24px;
+  i{
+    display: block;
+    width: 18px;
+    height: 6px;
+    border: 2px solid $color-dark-red;
+    border-top: 0;
+    
+  }
+  
+  &::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-left: 2px solid $color-dark-red;
+    border-bottom: 2px solid $color-dark-red;
+    left: 7px;
+    bottom: 6px;
+    @include transform (rotate(-45deg) translate(0,0));
+    @include transition (all 0.3s);
+  }
+  
+  &::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: $color-dark-red;
+    left: 10px;
+    bottom: 7px;
+    @include transform (translate(0,0));
+    @include transition (all 0.3s);
+  } 
+  &:hover{
+    &:after {
+      @include transform (rotate(-45deg) translate(7px,-7px));
+    }
+    &:before {
+      @include transform (translate(0,-10px));
+    }
   }
 }
 

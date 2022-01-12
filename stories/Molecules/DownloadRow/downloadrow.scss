@@ -47,10 +47,6 @@
       @extend %img_none;
     }
   }
-
-  &-icon {
-    margin: $spacing-16 0 1.188rem $spacing-16;
-  }
 }
 
 [dir='rtl'] {
