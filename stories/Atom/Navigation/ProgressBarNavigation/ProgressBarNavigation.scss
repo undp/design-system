@@ -27,6 +27,30 @@
       }
     }
   }
+
+  &.yellow {
+    .progress-bar {
+      background: $color-yellow;
+    }
+  }
+
+  &.red {
+    .progress-bar {
+      background: $color-red;
+    }
+  }
+
+  &.green {
+    .progress-bar {
+      background: $color-green;
+    }
+  }
+
+  &.blue {
+    .progress-bar {
+      background: $color-azure;
+    }
+  }
 }
 
 .progress-bar {
@@ -38,22 +62,6 @@
 
   @include devicebreak(medium) {
     height: 1rem;
-  }
-
-  &.yellow {
-    background: $color-yellow;
-  }
-
-  &.red {
-    background: $color-red;
-  }
-
-  &.green {
-    background: $color-green;
-  }
-
-  &.blue {
-    background: $color-azure;
   }
 }
 
