@@ -26,6 +26,7 @@ export const Inputcomponent = ({
           disabled={State == 'Disabled'}
           placeholder={placeholder}
           name={type}
+          id={type}
         />
         {helpText && <p className="help">{ helpText }</p>}
         {(State == 'Error') && <p className="error">{ errorText }</p>}
