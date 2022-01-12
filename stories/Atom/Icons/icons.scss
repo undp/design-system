@@ -17,10 +17,7 @@
   @include transition (width 0.5s);
 
   &::before {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
+    @extend %pseudo-icon;
     width: 0;
     height: 2px;
     background-color: $color-red;
@@ -30,10 +27,7 @@
   }
   
   &::after {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
+    @extend %pseudo-icon;
     width: $spacing-12;
     height: $spacing-12;
     border-top: 2px solid $color-red;
@@ -63,10 +57,7 @@
   margin-top: 1px;
 
   &:before {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
+    @extend %pseudo-icon;
     right: -2.5px;
     top: 3.5px;
     background: $color-dark-red;
@@ -76,10 +67,7 @@
     @include transition (all 0.3s);
     }
   &:after {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
+    @extend %pseudo-icon;
     right: -1px;
     top: 0;
     width: $spacing-08;
@@ -117,10 +105,7 @@
   }
   
   &::after {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
+    @extend %pseudo-icon;
     width: 8px;
     height: 8px;
     border-left: 2px solid $color-dark-red;
@@ -132,10 +117,7 @@
   }
   
   &::before {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
+    @extend %pseudo-icon;
     width: 2px;
     height: 10px;
     background: $color-dark-red;

@@ -502,4 +502,10 @@
   background: linear-gradient($background);
 }
 
+%pseudo-icon {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+}
 /* placehoder end */
