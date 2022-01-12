@@ -107,7 +107,6 @@
   display: flex;
   align-items: flex-end;
   height: 12px;
-  
 
   i{
     display: block;
@@ -115,7 +114,6 @@
     height: 6px;
     border: 2px solid $color-dark-red;
     border-top: 0;
-    
   }
   
   &::after {
