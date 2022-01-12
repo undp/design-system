@@ -28,87 +28,87 @@
     width: 100px;
 
     @include devicebreak(medium) {
-      margin: 0 6.25rem;
+      margin: 0 11rem;
     }
   }
 
-  .spacing__box1,
-  .spacing__box2,
-  .spacing__box3,
-  .spacing__box4,
-  .spacing__box5,
-  .spacing__box6,
-  .spacing__box7,
-  .spacing__box8,
-  .spacing__box9,
-  .spacing__box10,
-  .spacing__box11,
-  .spacing__box12,
-  .spacing__box13 {
+  .spacing-1,
+  .spacing-2,
+  .spacing-3,
+  .spacing-4,
+  .spacing-5,
+  .spacing-6,
+  .spacing-7,
+  .spacing-8,
+  .spacing-9,
+  .spacing-10,
+  .spacing-11,
+  .spacing-12,
+  .spacing-13 {
     background-color: $color-blue-600;
   }
 
-  .spacing__box1 {
+  .spacing-1 {
     height: 2px;
     width: 2px;
   }
 
-  .spacing__box2 {
+  .spacing-2 {
     height: 4px;
     width: 4px;
   }
 
-  .spacing__box3 {
+  .spacing-3 {
     height: 8px;
     width: 8px;
   }
 
-  .spacing__box4 {
+  .spacing-4 {
     height: 12px;
     width: 12px;
   }
 
-  .spacing__box5 {
+  .spacing-5 {
     height: 16px;
     width: 16px;
   }
 
-  .spacing__box6 {
+  .spacing-6 {
     height: 24px;
     width: 24px;
   }
 
-  .spacing__box7 {
+  .spacing-7 {
     height: 32px;
     width: 32px;
   }
 
-  .spacing__box8 {
+  .spacing-8 {
     height: 40px;
     width: 40px;
   }
 
-  .spacing__box9 {
+  .spacing-9 {
     height: 48px;
     width: 48px;
   }
 
-  .spacing__box10 {
+  .spacing-10 {
     height: 64px;
     width: 64px;
   }
 
-  .spacing__box11 {
+  .spacing-11 {
     height: 80px;
     width: 80px;
   }
 
-  .spacing__box12 {
+  .spacing-12 {
     height: 96px;
     width: 96px;
   }
 
-  .spacing__box13 {
+  .spacing-13 {
     height: 160px;
     width: 160px;
   }
