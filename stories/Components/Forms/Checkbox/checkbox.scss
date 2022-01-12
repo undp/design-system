@@ -38,6 +38,8 @@
 
     &:checked + label::before {
       background-image: url(#{$img-path-Icon}/icon-check.svg);
+      background-position: 1px 0px;
+      background-repeat: no-repeat;
     }
 
     &:focus-visible + label::before {
