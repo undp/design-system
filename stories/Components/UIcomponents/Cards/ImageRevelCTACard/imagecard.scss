@@ -12,14 +12,6 @@
   overflow: hidden;
   position: relative;
 
-  @include devicebreak(large) {
-    &:hover h5 {
-      height: auto;
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   .image-card__content {
     overflow: hidden;
     position: relative;
@@ -50,6 +42,14 @@
         width: 100%;
       }
     }
+
+    @include devicebreak(large) {
+      &:hover h5 {
+        height: auto;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }  
   }
 
   &:hover {
@@ -75,19 +75,17 @@
   }
 }
 
-.small {
-  .image-card {
-    @include devicebreak(medium) {
-      max-width: 212px;
+.small.image-card {
+  @include devicebreak(medium) {
+    max-width: 212px;
 
-      .cta__link {
-        margin-left: 0;
-      }
+    .cta__link {
+      margin-left: 0;
     }
+  }
 
-    h5 {
-      font-size: $font-size-16;
-    }
+  h5 {
+    font-size: $font-size-16;
   }
 }
 
@@ -114,12 +112,10 @@
     }
   }
 
-  .small {
-    .image-card {
-      .cta__link {
-        @include devicebreak(medium) {
-          margin-right: 0;
-        }
+  .small.image-card {
+    .cta__link {
+      @include devicebreak(medium) {
+        margin-right: 0;
       }
     }
   }
