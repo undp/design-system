@@ -18,3 +18,6 @@ export default function viewport(ele) {
     });
   });
 }
+
+// for webpack build
+export {viewport as viewport}
