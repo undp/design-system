@@ -3,20 +3,30 @@
 @import '../../assets/scss/variables';
 
 /* sidebar data start */
-.sidebar-accordion li > a {
-  @extend %img_none;
+.sidebar-accordion {
+  li > a {
+    @extend %img_none;
 
-  border: none;
-  border-bottom: 1px solid $color-gray-500;
-  display: block;
-  font-size: $font-size-16;
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 0;
-  padding: $spacing-16;
+    border: none;
+    border-bottom: 1px solid $color-gray-500;
+    display: block;
+    font-size: $font-size-16;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0;
+    padding: $spacing-16;
 
-  @include devicebreak(medium) {
-    padding: $spacing-24;
+    @include devicebreak(medium) {
+      padding: $spacing-24;
+    }
+  }
+
+  &.narrow {
+    li > a {
+      @include devicebreak(medium) {
+        padding: $spacing-16;
+      }
+    }
   }
 }
 
