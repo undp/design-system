@@ -62,20 +62,20 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
     &.green,
     &.blue,
     &.gray {
+      @include transition(background-color 0.9s ease);
+
       background-color: $color-white;
       display: flex;
       flex-wrap: wrap;
       height: 100%;
-
-      @include transition(background-color 0.9s ease);
     }
 
     &:hover {
       @each $name, $color in $colors {
         &.#{$name} {
-          background-color: #{$color};
-          
           @include transition(opacity 0.9s ease);
+
+          background-color: #{$color};
         }
       }
     }
@@ -115,7 +115,6 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
     &.#{$name} {
       .image::before {
         @include background-image(42deg, #{$color}, transparent 80%);
-
         @include transition(opacity 0.9s ease);
       }
     }
@@ -170,7 +169,6 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
       &.#{$name} {
         .image::before {
           @include background-image(42deg, #{$color}, transparent 80%);
-
           @include transition(opacity 0.9s ease);
         }
       }

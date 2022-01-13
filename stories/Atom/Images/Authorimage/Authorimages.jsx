@@ -6,10 +6,18 @@ export const size_options = {
   Small: '',
 };
 
+export const hover_color_options = {
+  yellow: 'yellow',
+  green: 'green',
+  red: 'red',
+  azure: 'azure',
+};
+
 export const Authorimg = ({ image, alt, ...args }) => {
   let size_variant = size_options[`${args.variant}`];
+  let Hovercolors = hover_color_options[`${args.hovercolor}`];
   return (
-    <div className={['author__img', `${size_variant}`].join(' ').trim()}>
+    <div className={['author__img', `${size_variant}`, `${Hovercolors}`].join(' ').trim()}>
       <img src={image} alt={alt} title={alt} />
     </div>
   );
@@ -17,4 +25,5 @@ export const Authorimg = ({ image, alt, ...args }) => {
 
 Authorimg.defaultProps = {
   size: 'large',
+  hovercolor: 'yellow',
 };
