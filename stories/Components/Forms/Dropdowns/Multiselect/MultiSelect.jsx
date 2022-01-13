@@ -104,7 +104,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
               label={`${text}`}
               value="category1"
               id={`category1-${eleId}`}
-              name={`category1-${eleId}`}
+              name={`filter-${eleId}`}
             />
           </li>
           <li role="option" className="has-submenu">
@@ -117,7 +117,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
                   label={`${text}`}
                   value="subcategory1"
                   id={`subcategory1-${eleId}`}
-                  name={`subcategory1-${eleId}`}
+                  name={`filter-${eleId}`}
                 />
               </li>
               <li role="option">
@@ -125,7 +125,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
                   label={`${text}`}
                   value="subcategory2"
                   id={`subcategory2-${eleId}`}
-                  name={`subcategory2-${eleId}`}
+                  name={`filter-${eleId}`}
                 />
               </li>
             </ul>
@@ -135,7 +135,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
               label={`${text}`}
               value="category2"
               id={`category2-${eleId}`}
-              name={`category2-${eleId}`}
+              name={`filter-${eleId}`}
             />
           </li>
           <li role="option">
@@ -143,7 +143,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
               label={`${text}`}
               value="category3"
               id={`category3-${eleId}`}
-              name={`category3-${eleId}`}
+              name={`filter-${eleId}`}
             />
           </li>
           <li role="option">
@@ -151,7 +151,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
               label={`${text}`}
               value="category4"
               id={`category4-${eleId}`}
-              name={`category4-${eleId}`}
+              name={`filter-${eleId}`}
             />
           </li>
           <li role="option">
@@ -159,7 +159,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
               label={`${text}`}
               value="category5"
               id={`category5-${eleId}`}
-              name={`category5-${eleId}`}
+              name={`filter-${eleId}`}
             />
           </li>
         </ul>
