@@ -13,9 +13,9 @@ export const ImageRevelCard = ({
 
   return (
     <div className="grid-x grid-margin-x">
-      <div className={['cell', `${size}`, 'image-card'].join(' ')}>
+      <div className={['cell', `${size}`, 'image-reveal-card'].join(' ')}>
         <a href={link}>
-          <div className="image-card__content">
+          <div className="image-reveal-card__content">
             {image && (<img src={image} alt={image} />)}
             {contentname && <Heading type="5" label={contentname} />}
           </div>

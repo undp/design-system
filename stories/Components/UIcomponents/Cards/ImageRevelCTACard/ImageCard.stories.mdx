@@ -14,7 +14,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Cards/reveal" argTypes={{
+<Meta title="Components/UI components/Cards/Image Reveal Card" argTypes={{
   Size: {
     options: ['Large', 'Small'],
     control: { type: 'inline-radio' },
@@ -44,7 +44,7 @@ The Image reveal card component multi usage component which creates boxes that a
 <div className="subheading">Image Reveal Card</div>
 <p>Image Reveal Card are shows the Image, and CTA Link. The text will show on hover.</p>
 
-<Story name="Image reveal cards">
+<Story name="Image Reveal Card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <ImageRevelCard contentname={caption.name} image={img} button={caption.btnlabel} link='#' {...args}> </ImageRevelCard>;
