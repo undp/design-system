@@ -4,7 +4,7 @@ import './sidebardata.scss';
 export const Sidebardata = ({ data, headerText }) => (
   <>
     <a href="#">{headerText}</a>
-    <span tabIndex="0" />
+    <button tabIndex="0" aria-expanded="false" aria-label="button" />
     <ul className="accordion__panel">
       {data.map((item, index) => (
         <li key={index}>

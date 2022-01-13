@@ -4,24 +4,24 @@
 @import '../../../assets/scss/base';
 
 /* sidebar start */
-.accordion-wrapper {
+.sidebar-accordion {
   @extend %background-white;
 
   padding: 0;
   position: relative;
 
   &.show-small {
-    .accordion-navbar {
-      display: block;
-      padding: 0;
-    }
-
-    & > span {
+    h6 {
       border-bottom: 2px solid $color-black;
 
       &::after {
         @include transform(rotateZ(-180deg));
       }
+    }
+
+    ul {
+      display: block;
+      padding: 0;
     }
   }
 
@@ -39,13 +39,12 @@
     }
   }
 
-  & > span {
+  h6 {
     background-color: $color-gray-200;
     cursor: pointer;
     display: block;
-    font-weight: 700;
+    margin-bottom: 0;
     padding: $spacing-16;
-    text-transform: uppercase;
 
     @include devicebreak(medium) {
       display: none;
@@ -55,68 +54,124 @@
       @extend %sidebar-chevron;
     }
   }
-}
 
-.accordion-navbar {
-  display: none;
-  padding: 0;
+  ul {
+    display: none;
+    padding: 0;
 
-  @include devicebreak(medium) {
-    display: block;
-  }
-
-  & > .accordion--active {
-    border-bottom: none;
-
-    & > span::after {
-      @include transform(rotateZ(-180deg));
-    }
-  }
-
-  & > li:nth-child(1),
-  & > .accordion--active:nth-child(1) {
     @include devicebreak(medium) {
-      span::after {
-        background:
-          url(#{$img-path-Icon}/Chevron-down-white.svg)
-          no-repeat center center;
+      display: block;
+    }
+
+    & > .accordion--active {
+      border-bottom: none;
+
+      & > button::after {
+        @include transform(rotateZ(-180deg));
       }
     }
 
-    & > a {
+    & > li:nth-child(1),
+    & > .accordion--active:nth-child(1) {
       @include devicebreak(medium) {
-        background-color: $color-blue-600;
-        color: $color-white;
+        button::after {
+          background:
+            url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat
+            center center;
+        }
+      }
+
+      & > a {
+        @include devicebreak(medium) {
+          background-color: $color-blue-600;
+          color: $color-white;
+        }
       }
     }
-  }
 
-  & > li {
-    background-color: $color-gray-200;
-    position: relative;
+    & > li {
+      background-color: $color-gray-200;
+      position: relative;
 
-    @include devicebreak(medium) {
-      background-color: transparent;
-      padding: 0;
+      @include devicebreak(medium) {
+        background-color: transparent;
+        padding: 0;
+      }
+
+      button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        display: block;
+        float: right;
+        height: 1.25rem;
+        margin-right: 1.188rem;
+        margin-top: -2.188rem;
+        width: 1.25rem;
+
+        @include devicebreak(medium) {
+          margin-top: -2.688rem;
+        }
+
+        &::after {
+          @extend %sidebar-chevron;
+        }
+      }
     }
 
-    span {
-      cursor: pointer;
+    ul.accordion__panel {
+      display: none;
+      height: auto;
+      padding: 0;
 
-      &::after {
-        @extend %sidebar-chevron;
+      li {
+        a {
+          @extend %img_none;
+
+          border: none;
+          display: block;
+          font-size: $font-size-14;
+          font-weight: 400;
+          padding: $spacing-16 $spacing-24 $spacing-16 $spacing-32;
+
+          @include devicebreak(medium) {
+            font-size: $font-size-16;
+            padding-left: $spacing-48;
+          }
+        }
+
+        &:first-child a {
+          background-color: transparent;
+          color: $color-black;
+
+          @include devicebreak(medium) {
+            &:hover {
+              background-color: #edeff0;
+            }
+          }
+        }
+
+        &:last-child a {
+          margin-bottom: 0;
+        }
       }
     }
   }
 }
 
 [dir='rtl'] {
-  .accordion-wrapper > span,
-  .accordion-navbar li > span {
+  .sidebar-accordion h6,
+  .sidebar-accordion ul li > button {
     &::after {
       left: 24px;
       right: unset;
     }
+  }
+
+  .sidebar-accordion button {
+    float: left;
+    margin-left: $spacing-24;
+    margin-right: 0;
   }
 }
 
