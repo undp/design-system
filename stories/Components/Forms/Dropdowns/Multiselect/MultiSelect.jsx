@@ -21,9 +21,6 @@ const SelectTag = ({ text, eleId, ...args }) => {
       </button>
       {args.variant === 'Checkbox' && (
         <ul
-          // className={[
-          //   args.Height === 'Fix height' ? 'fix-height' : '',
-          // ].join('')}
           className={cls(`${args.Height === 'Fix height' ? 'fix-height' : ''}`)}
           data-type="region"
           aria-labelledby={`filter-${eleId}`}
