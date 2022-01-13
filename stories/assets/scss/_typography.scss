@@ -147,7 +147,8 @@ dd {
 }
 
 hr {
-  border-width: 2px;
+  // border-width: 2px;
+  border: 1px solid $color-black;
 }
 
 // burmese lang
@@ -168,6 +169,7 @@ hr {
 
   h1 {
     font-size: 2.625rem;
+    font-family: $Font-Family-NotoSans;
 
     @include devicebreak(medium) {
       font-size: 3.875rem;
