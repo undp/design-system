@@ -33,11 +33,12 @@
 
   &-text {
     margin-top: $spacing-40;
+    word-break: break-word;
 
     @include devicebreak(medium) {
       margin-left: $spacing-40;
       margin-top: 0;
-      width: calc(100% - 222px);
+      width: calc(100% - 244px);
     }
 
     h2 {
