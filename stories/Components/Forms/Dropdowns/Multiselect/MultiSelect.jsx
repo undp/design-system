@@ -4,6 +4,8 @@ import { multiSelect } from '../../../../assets/js/multiselect';
 import { Checkbox } from '../../Checkbox/Checkbox';
 import { Radio } from '../../Radio/Radio';
 
+const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+
 const SelectTag = ({ text, eleId, ...args }) => {
   useEffect(() => {
     multiSelect();
@@ -19,9 +21,10 @@ const SelectTag = ({ text, eleId, ...args }) => {
       </button>
       {args.variant === 'Checkbox' && (
         <ul
-          className={[
-            args.Height === 'Fix height' ? 'fix-height' : '',
-          ].join('')}
+          // className={[
+          //   args.Height === 'Fix height' ? 'fix-height' : '',
+          // ].join('')}
+          className={cls(`${args.Height === 'Fix height' ? 'fix-height' : ''}`)}
           data-type="region"
           aria-labelledby={`filter-${eleId}`}
           role="listbox"
@@ -33,7 +36,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
             <Checkbox
               label={`${text}`}
               value="category1"
-              id={`category1-${eleId}`}
+              id={`category1${eleId}`}
             />
           </li>
           <li role="option" className="has-submenu">
@@ -45,7 +48,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
                 <Checkbox
                   label={`${text}`}
                   value="subcategory1"
-                  id={`subcategory1-${eleId}`}
+                  id={`subcategory1${eleId}`}
                 />
               </li>
               <li role="option">
@@ -103,7 +106,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
             <Radio
               label={`${text}`}
               value="category1"
-              id={`category1-${eleId}`}
+              id={`category1${eleId}`}
               name={`filter-${eleId}`}
             />
           </li>
@@ -116,7 +119,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
                 <Radio
                   label={`${text}`}
                   value="subcategory1"
-                  id={`subcategory1-${eleId}`}
+                  id={`subcategory1${eleId}`}
                   name={`filter-${eleId}`}
                 />
               </li>
