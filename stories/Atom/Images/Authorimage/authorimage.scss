@@ -6,7 +6,7 @@
 $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
 
 .author__img {
-  border-radius: 50%;
+  border-radius: $author-image-radius;
   height: 80px;
   overflow: hidden;
   width: 80px;
@@ -19,6 +19,8 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
     @include transition(all 0.6s);
 
     opacity: 0;
+    border-radius: $author-image-radius;
+    overflow: hidden;
   }
 
   &:hover {
@@ -46,9 +48,12 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
 
 [dir='rtl'] { 
   .author__img { 
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+
     @each $name, $color in $colors {
       &.#{$name}::before {
-        @include background-image(318deg, #{$color}, transparent 80%);
+        @include background-image(42deg, #{$color}, transparent 80%);
         @include transition(all 0.9s);
       }
     }
