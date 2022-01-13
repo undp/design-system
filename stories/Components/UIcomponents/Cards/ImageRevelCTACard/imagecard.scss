@@ -3,7 +3,7 @@
 @import '../../../../assets/scss/breakpoints';
 
 /* image card start */
-.image-card {
+.image-reveal-card {
   @extend %img_none;
 
   border: 0;
@@ -12,7 +12,7 @@
   overflow: hidden;
   position: relative;
 
-  .image-card__content {
+  .image-reveal-card__content {
     overflow: hidden;
     position: relative;
 
@@ -75,7 +75,7 @@
   }
 }
 
-.small.image-card {
+.small.image-reveal-card {
   @include devicebreak(medium) {
     max-width: 212px;
 
@@ -90,7 +90,7 @@
 }
 
 [dir='rtl'] {
-  .image-card {
+  .image-reveal-card {
     margin: 0;
 
     .cta__link {
@@ -112,7 +112,7 @@
     }
   }
 
-  .small.image-card {
+  .small.image-reveal-card {
     .cta__link {
       @include devicebreak(medium) {
         margin-right: 0;
