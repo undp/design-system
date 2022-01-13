@@ -33,6 +33,7 @@
 
   &-text {
     margin-top: $spacing-40;
+    word-break: break-word;
 
     @include devicebreak(medium) {
       margin-left: $spacing-40;
