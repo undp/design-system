@@ -4,9 +4,9 @@ import { Blockquote } from './blockquote';
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = {detail: '“Blockquote lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices.”', citeText: '-Firstname Lastname'}; return engText;
-    case 'arabic': const arabicText = {detail: '"Blockquote "و ألم الإنترنت نفسه الأريكة الانتقامية', citeText: 'الاسم الاول الاسم الاخير-'}; return arabicText;
-    case 'burmese': const burmeseText = {detail: '“ Blockquote သည်အင်တာနက်ကိုယ်တိုင်၏နာကျင်မှုဖြစ်သည် လက်စားချေရသေးတယ်"', citeText: '-နာမည် မျိုးနွယ်အမည်'}; return burmeseText;
-    case 'japanese': const japaneseText = {detail: '"「Blockquoteはインターネット自体の苦痛です復讐に燃えるソファ"', citeText: '-名前苗字'}; return japaneseText;
+    case 'arabic': const arabicText = {detail: '“بلوككوت هو ألم الإنترنت نفسه. من هو وسادة الانتقام في العبارة”', citeText: 'الاسم الاول الاسم الاخير-'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: '“Blockquote သည်အင်တာနက်ကိုယ်တိုင်၏နာကျင်မှုဖြစ်သည်။ ကူးတို့ဆိပ်ရဲ့ ဒဏ်ပေးအုံး ဘယ်သူလဲ။”', citeText: '-နာမည် မျိုးနွယ်အမည်'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: '“ブロッククォートはインターネット自体の苦痛です。 フェリーの復讐に満ちたクッションは誰ですか”', citeText: '-名前苗字'}; return japaneseText;
     default:
       return {detail: '“Blockquote lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices.”', citeText: '-Firstname Lastname'};
   }
