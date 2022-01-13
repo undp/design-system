@@ -2,6 +2,8 @@
 @import '../../../assets/scss/mixins';
 @import '../../../assets/scss/breakpoints';
 
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure, 'gray': $color-gray-200);
+
 .content-data {
   .content-card {
     display: flex;
@@ -34,31 +36,38 @@
       display: flex;
       flex-wrap: wrap;
       height: auto;
+      @include transition(background-color 0.9s ease);
 
       @include devicebreak(medium) {
         height: 100%;
       }
+
+      &:hover {
+        @each $name, $color in $colors {
+          &.#{$name} {
+            background-color: #{$color};
+            @include transition(all 0.9s);
+          }
+        }
+      }
     }
 
-    &.yellow:hover {
-      background-color: $color-yellow;
+    &:hover {
+      @include transition(0.5s ease);
+
+      .image::before {
+        opacity: 0.75;
+      }
     }
 
-    &.red:hover {
-      background-color: $color-red;
-    }
+    @each $name, $color in $colors {
+      &.#{$name} {
+        .image::before {
+          @include background-image(42deg, #{$color}, transparent 80%);
 
-    &.green:hover {
-      background-color: $color-green;
-    }
-
-    &.blue:hover {
-      background-color: $color-azure;
-    }
-
-    &.content-card__image:hover,
-    &.gray:hover {
-      background-color: $color-gray-100;
+          @include transition(opacity 0.9s ease);
+        }
+      }
     }
   }
 

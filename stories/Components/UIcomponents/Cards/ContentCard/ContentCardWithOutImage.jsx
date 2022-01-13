@@ -18,29 +18,31 @@ export const ContentCardWithOutImage = ({
     <div className="grid-x grid-margin-x">
       {data.map((item, index) => (
         <div key={index} className="cell medium-4">
-          <a href={item.link} className={['content-card', `${emphasize_variant}`, `${Hovercolors}`].join(' ')}>
-            <Heading type="6" label={item.contenttile} />
-            <div className="content-card__caption">
-              {Emphasize === 'true'
-                ? (
-                  <Heading type="4" label={item.contentnametwo} />
-                )
-                : (
-                  <></>
-                )}
-              {Emphasize === 'false'
-                ? (
-                  <div className="content-card__caption_cart">
-                    <Heading type="5" label={item.contentname} />
-                    <P label={item.paragraph} />
-                  </div>
-                )
-                : (
-                  <></>
-                )}
-              <Ctalink label={item.button} Type="Space" />
-            </div>
-          </a>
+          <div className={['content-card', `${emphasize_variant}`, `${Hovercolors}`].join(' ')}>
+            <a href={item.link}>
+              <Heading type="6" label={item.contenttile} />
+              <div className="content-card__caption">
+                {Emphasize === 'true'
+                  ? (
+                    <Heading type="4" label={item.contentnametwo} />
+                  )
+                  : (
+                    <></>
+                  )}
+                {Emphasize === 'false'
+                  ? (
+                    <div className="content-card__caption_cart">
+                      <Heading type="5" label={item.contentname} />
+                      <P label={item.paragraph} />
+                    </div>
+                  )
+                  : (
+                    <></>
+                  )}
+                <Ctalink label={item.button} Type="Space" />
+              </div>
+            </a>
+          </div>
         </div>
       ))}
     </div>
