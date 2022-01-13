@@ -13,44 +13,19 @@
       border-bottom: 0;
     }
 
-    &::before {
-      @include transition(0.1s ease);
-
-      background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
-      content: '';
-      display: block;
-      float: right;
-      height: 20px;
-      margin-right: $spacing-16;
-      margin-top: $spacing-16;
-      position: relative;
-      width: 20px;
-      z-index: 0;
-
-      @include devicebreak(medium) {
-        display: none;
-      }
-    }
-
     &.inverted {
-      &::before {
-        background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
-      }
-
       .footer__heading {
         color: $color-black;
+
+        &::before {
+          background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
+        }
       }
 
       .footer__panel {
         a {
           @extend %footerlinkinvert;
         }
-      }
-    }
-
-    &.active {
-      &::before {
-        @include transform(rotateZ(180deg));
       }
     }
   }
@@ -61,12 +36,41 @@
     padding: $spacing-16;
     position: relative;
     text-transform: uppercase;
-    z-index: 1;
+    font-size: $font-size-16;
+    font-weight: 700;
+    letter-spacing: 0.03rem;
+    line-height: 1.15;
+    display: block;
+    border: 0;
+    background: transparent;
+    width: 100%;
+    text-align: left;
 
     @include devicebreak(medium) {
       margin-bottom: 1.25rem;
       padding: 0;
       pointer-events: none;
+    }
+
+    &::before {
+      @include transition(0.1s ease);
+
+      background: url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat center center;
+      content: '';
+      display: block;
+      float: right;
+      height: 20px;
+      width: 20px;
+
+      @include devicebreak(medium) {
+        display: none;
+      }
+    }
+
+    &.active {
+      &::before {
+        @include transform(rotateZ(180deg));
+      }
     }
   }
 
@@ -89,12 +93,11 @@
 }
 
 [dir='rtl'] {
-  .footer__items {
+  .footer__heading {
+    text-align: right;
     &::before {
       float: left;
-      margin-left: $spacing-16;
-      margin-right: 0;
-    }
+      }
   }
 }
 
