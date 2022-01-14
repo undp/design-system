@@ -54,13 +54,19 @@
     }
 
     h5 {
-      font-size: $font-size-25;
-      margin-bottom: 0.75rem;
+      margin-bottom: 1.125rem;
+      @include devicebreak(medium) {
+        margin-bottom: 0.75rem;
+      }
     }
 
     p {
-      font-size: $font-size-16;
-      margin-bottom: 0;
+      @extend %paragragh-font-16;
+      margin-bottom: 2.063rem;
+
+      @include devicebreak(medium) {
+          margin-bottom: 1.5rem;
+        }
     }
 
     .bio-cta {
@@ -70,33 +76,6 @@
 
       @include devicebreak(medium) {
         margin-top: auto;
-      }
-    }
-  }
-
-  &.medium {
-    .card-thumbnail__image {
-      img {
-        width: 100%;
-      }
-    }
-
-    .bio-card__content {
-      h5 {
-        font-size: $font-size-20;
-        margin-bottom: 1.125rem;
-      }
-
-      p {
-        font-size: $font-size-14;
-
-        @include devicebreak(medium) {
-          margin-bottom: 1.5rem;
-        }
-      }
-
-      .bio-card__description {
-        margin-bottom: 0;
       }
     }
   }
@@ -169,6 +148,18 @@
       @include transform(translate(0, 0) rotate(180deg));
     }
   }
+
+  .bio-card {
+    $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
+
+    @each $name, $color in $colors {
+      &.#{$name} {
+        .card-thumbnail__image::before {
+          @include background-image(311deg, #{$color}, transparent 80%);
+        }
+      }
+    }
+  } 
 }
 
 /* bio card end */
