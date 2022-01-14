@@ -20,7 +20,7 @@ export const Modaldata = (image2, contentname, descriptionText, descriptionText2
 );
 
 export const Modal = ({
-  image2, contentname, descriptionText, descriptionText2, content,
+  image2, contentname, descriptionText, descriptionText2, content, ...props
 }) => {
   useEffect(() => {
     modal();
@@ -28,11 +28,11 @@ export const Modal = ({
 
   return (
     <>
-      {content === '' && <CtaButton label="Modal" id="modal" /> }
-      <div className="modal" role="dialog" aria-labelledby="modal" aria-modal="true">
+      {content === '' && <CtaButton label="Modal" data-toggle="modal" data-target-modal="#exampleModal" />}
+      <div className="modal" role="dialog" aria-labelledby="modal" aria-modal="true" {...props}>
         <div className="modal-content" aria-describedby="content">
-          <a href="#" className="modal-close-button" aria-label="close">close</a>
-          {content === '' ? Modaldata(image2, contentname, descriptionText, descriptionText2) : content }
+          <span className="modal-close-button" aria-label="close">close</span>
+          {content === '' ? Modaldata(image2, contentname, descriptionText, descriptionText2) : content}
         </div>
       </div>
     </>
