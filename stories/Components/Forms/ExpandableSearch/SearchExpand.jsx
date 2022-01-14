@@ -10,9 +10,9 @@ export const SearchExpand = () => {
   }, []);
   return (
     <div className="expand-search">
-      <button className='expand-btn'><img src={img} alt="search expand" /></button>
+      <button className='expand-button'><img src={img} alt="search expand" /></button>
       <input type="text" aria-label="expand-search" />
-      <button className='close'><img src={img_close} alt="search close" /></button>
+      <button className='close-button'><img src={img_close} alt="search close" /></button>
     </div>
   );
 };
