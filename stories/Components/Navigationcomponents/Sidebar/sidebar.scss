@@ -40,11 +40,13 @@
   }
 
   h6 {
-    background-color: $color-gray-200;
-    cursor: pointer;
-    display: block;
-    margin-bottom: 0;
-    padding: $spacing-16;
+    @include devicebreak(small) {
+      background-color: $color-gray-300;
+      cursor: pointer;
+      display: block;
+      margin-bottom: 0;
+      padding: $spacing-16;
+    }
 
     @include devicebreak(medium) {
       display: none;
@@ -63,16 +65,9 @@
       display: block;
     }
 
-    & > .accordion--active {
+    & > .active {
       border-bottom: none;
 
-      & > button::after {
-        @include transform(rotateZ(-180deg));
-      }
-    }
-
-    & > li:nth-child(1),
-    & > .accordion--active:nth-child(1) {
       @include devicebreak(medium) {
         button::after {
           background:
@@ -87,10 +82,14 @@
           color: $color-white;
         }
       }
+
+      & > button::after {
+        @include transform(rotateZ(-180deg));
+      }
     }
 
     & > li {
-      background-color: $color-gray-200;
+      background-color: $color-gray-300;
       position: relative;
 
       @include devicebreak(medium) {
@@ -157,6 +156,31 @@
       }
     }
   }
+
+  &.narrow {
+    ul.accordion__panel {
+      li {
+        a {
+          @include devicebreak(medium) {
+            font-size: 0.875rem;
+            padding-left: $spacing-32;
+          }
+        }
+
+        &:last-child a {
+          @include devicebreak(medium) {
+            margin-bottom: $spacing-40;
+          }
+        }
+      }
+    }
+
+    ul > li button::after {
+      @include devicebreak(medium) {
+        top: 8px;
+      }
+    }
+  }
 }
 
 [dir='rtl'] {
@@ -168,10 +192,25 @@
     }
   }
 
-  .sidebar-accordion button {
-    float: left;
-    margin-left: $spacing-24;
-    margin-right: 0;
+  .sidebar-accordion {
+    button {
+      float: left;
+      margin-left: $spacing-24;
+      margin-right: 0;
+    }
+
+    &.narrow {
+      ul.accordion__panel {
+        li {
+          a {
+            @include devicebreak(medium) {
+              padding-left: $spacing-24;
+              padding-right: $spacing-32;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

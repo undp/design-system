@@ -4,21 +4,28 @@ import { Sidebardata } from '../../../Molecules/Sidebar-data/Sidebardata';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import './sidebar.scss';
 
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
+
 export const Sidebar = ({
-  headerText, label, data, size,
+  headerText, label, data, size, Height,
 }) => {
   useEffect(() => {
     sidebarNav();
     sidebarMenu();
   }, []);
 
+  let height = '';
+  if (Height == 'Narrow') {
+    height = 'narrow';
+  }
+
   return (
-    <nav className="sidebar-accordion" role="navigation" aria-label="Sidebar">
+    <nav role="navigation" aria-label="Sidebar" className={cls('sidebar-accordion', `${height}`)}>
       <div className="grid-x grid-margin-x">
         <div className={['cell', `${size}`].join(' ')}>
           <Heading type="6" label={label} />
           <ul>
-            <li aria-label="Sidebar heading">
+            <li aria-label="Sidebar heading" className="active">
               <Sidebardata data={data} headerText={headerText} />
             </li>
             <li aria-label="Sidebar heading">

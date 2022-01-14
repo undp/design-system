@@ -94,7 +94,17 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/Navigation components/Sidebar" />
+<!-- {/* <Meta title="Components/Navigation components/Sidebar" /> */} -->
+
+<Meta title="Components/Navigation components/Sidebar" 
+  argTypes={{
+    Height: {
+      options: ['Default', 'Narrow'],
+      control: { type: 'inline-radio' },
+      defaultValue: 'Default'
+    }
+  }}
+/>
 
 <style>{`
  .subheading {
@@ -129,6 +139,7 @@ The Sidebar Component is a shorter piece of text that appears next to and accomp
         label={caption.label}
         size="medium-4"
         active={"default"}
+        {...args}
       ></Sidebar>
     );
   }}

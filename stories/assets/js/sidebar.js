@@ -3,6 +3,9 @@ export function sidebarNav() {
   let $accordionPanel = $('.sidebar-accordion .accordion__panel');
   $accordionNav.each((index, element) => {
     if ($(element).find('.accordion__panel').length) {
+      if ($accordionNav.first().hasClass('active')) {
+        $accordionNav.find('.accordion__panel').first().slideDown();
+      }
       $(element).find('button').first().off('click keypress')
         .on('click keypress', function (e) {
           e.preventDefault();
@@ -10,14 +13,14 @@ export function sidebarNav() {
           const duration = '30';
           let $activeLi = $(this).closest('li');
           let $activePanel = $activeLi.find('.accordion__panel');
-          if ($activeLi.hasClass('accordion--active') && $activePanel.is(':visible')) {
+          if ($activeLi.hasClass('active') && $activePanel.is(':visible')) {
             $activePanel.slideUp(duration);
-            $activeLi.removeClass('accordion--active');
+            $activeLi.removeClass('active');
           } else {
-            $accordionNav.removeClass('accordion--active');
+            $accordionNav.removeClass('active').removeAttr('class');
             $accordionPanel.slideUp(duration);
             $activePanel.slideDown(duration);
-            $activeLi.addClass('accordion--active');
+            $activeLi.addClass('active');
           }
         });
     }
