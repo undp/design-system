@@ -22,14 +22,14 @@
   }
 
   @include devicebreak(small) {
-    .statscard {
+    .stats-card {
       max-width: 100%;
       pointer-events: none;
     }
 
     .glide {
       &__slide--active {
-        .statscard {
+        .stats-card {
           background-color: $color-light-yellow;
 
           h2 {
@@ -53,7 +53,7 @@
     }
   }
 
-  .statscard {
+  .stats-card {
     @include devicebreak(large) {
       &.small {
         box-sizing: border-box;

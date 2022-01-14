@@ -45,7 +45,7 @@
         opacity: 1;
       }
 
-      .statscard {
+      .stats-card {
         h2 {
           color: $color-gray-700;
           text-shadow: -1px -1px 0 $color-gray-700, 1px -1px 0 $color-gray-700, -1px 1px 0 $color-gray-700, 1px 1px 0 $color-gray-700;
@@ -56,13 +56,13 @@
           }
         }
 
-        &__box {
+        &-box {
           color: $color-gray-700;
         }
       }
     }
 
-    .statscard {
+    .stats-card {
       background-color: transparent;
       max-width: 100%;
       padding: 0 $spacing-24;
@@ -81,7 +81,7 @@
         }
       }
 
-      &__box {
+      &-box {
         color: $color-white;
         width: 100%;
       }
@@ -105,7 +105,7 @@
       }
 
       &.medium {
-        .statscard__box {
+        .stats-card-box {
           padding: 0;
         }
       }
