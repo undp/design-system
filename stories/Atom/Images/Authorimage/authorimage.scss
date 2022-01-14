@@ -10,8 +10,8 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
   height: 80px;
   overflow: hidden;
   width: 80px;
-  display: inline-flex;
   position: relative;
+  min-width: 80px;
 
   &::before {
     @extend %absolute__content;

@@ -4,10 +4,18 @@
 .author-card {
   a {
     display: block;
+    margin-bottom: $font-size-32;
 
     &:hover {
       .cta__link::after {
         @include translate(70%,0);
+      }
+
+      .author__img {
+
+        &::before {
+          opacity: 0.75;
+        }
       }
     }
   }
