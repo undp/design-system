@@ -3,7 +3,7 @@
 @import '../../../../assets/scss/mixins';
 
 /* statscard start */
-.statscard {
+.stats-card {
   @include transition(300ms all);
 
   background-color: $color-gray-200;
@@ -12,7 +12,7 @@
   @include devicebreak(small) {
     max-width: 351px;
 
-    &__box {
+    &-box {
       padding: $spacing-40;
     }
   }
@@ -76,8 +76,8 @@
       max-width: 684px;
     }
 
-    .statscard {
-      &__box {
+    .stats-card {
+      &-box {
         padding: $spacing-40;
 
         @include devicebreak(medium) {
@@ -117,8 +117,8 @@
       max-width: 448px;
     }
 
-    .statscard {
-      &__box {
+    .stats-card {
+      &-box {
         @include devicebreak(medium) {
           padding: $spacing-96 $spacing-64;
         }
@@ -135,8 +135,8 @@
       }
     }
 
-    .statscard {
-      &__box {
+    .stats-card {
+      &-box {
         padding: $spacing-48;
       }
     }
@@ -153,8 +153,8 @@
       max-width: 212px;
     }
 
-    .statscard {
-      &__box {
+    .stats-card {
+      &-box {
         padding: $spacing-24;
 
         @include devicebreak(medium) {
