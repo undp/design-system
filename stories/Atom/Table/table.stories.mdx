@@ -4,12 +4,12 @@ import { TableTag } from './table'
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = {headertext: 'Table header', tdtext: 'Content Goes Here', details: 'This is longer content Donec id elit non mi porta gravida at eget metus.'}; return engText;
-    case 'arabic': const arabicText = {headertext: 'رأس الجدول', tdtext: 'المحتوى يذهب هنا', details: 'هذا هو المحتوى الأطول Donec id elit non mi porta gravida في eget metus.'}; return arabicText;
-    case 'burmese': const burmeseText = {headertext: 'ဇယားခေါင်းစီး', tdtext: 'အကြောင်းအရာကဒီမှာ', details: 'ဒါကပိုရှည်တဲ့အကြောင်းအရာ Donec id elit non mi porta gravida at eget metus ။'}; return burmeseText;
-    case 'japanese': const japaneseText = {headertext: 'テーブルヘッダー', tdtext: 'コンテンツはここにあります', details: 'これはより長い内容ですDonecid elit non mi porta gravida at egetmetus。'}; return japaneseText;
+    case 'english': const engText = {headertext: 'Table header', tdtext: 'Content Goes Here', details: 'In publishing and graphic design, dummy is a placeholder text commonly used to demonstrate'}; return engText;
+    case 'arabic': const arabicText = {headertext: 'رأس الجدول', tdtext: 'المحتوى يذهب هنا', details: 'في النشر والتصميم الجرافيكي ، الدمية هي عنصر نائب يستخدم عادة للتوضيح'}; return arabicText;
+    case 'burmese': const burmeseText = {headertext: 'ဇယားခေါင်းစီး', tdtext: 'အကြောင်းအရာကဒီမှာ', details: 'ထုတ်ဝေခြင်းနှင့် ဂရပ်ဖစ်ဒီဇိုင်းများတွင်၊  သည် သရုပ်ပြရန်အတွက် အသုံးများသော နေရာယူထားသော စာသားဖြစ်သည်။'}; return burmeseText;
+    case 'japanese': const japaneseText = {headertext: 'テーブルヘッダー', tdtext: 'コンテンツはここにあります', details: '出版やグラフィックデザインでは、ダミーはデモンストレーションに一般的に使用されるプレースホルダーテキストです'}; return japaneseText;
     default:
-      return {headertext: 'Table header', tdtext: 'Content Goes Here', details: 'This is longer content Donec id elit non mi porta gravida at eget metus.' };
+      return {headertext: 'Table header', tdtext: 'Content Goes Here', details: 'In publishing and graphic design, dummy is a placeholder text commonly used to demonstrate' };
   }
 };
 
