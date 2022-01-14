@@ -4,6 +4,8 @@ import { Ctalink } from '../../../Components/UIcomponents/Buttons/Cta_link/Cta_l
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 import './contentcardwithandwithoutimage.scss';
 
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
+
 export const image_options = {
   image: 'image',
   color: 'without-image',
@@ -14,17 +16,16 @@ export const ContentCardWithAndWithoutImage = ({
 }) => (
   <div className="grid-x grid-margin-x content-data">
     {data.map((item, index) => (
-      <div key={index} className={['cell', `${item.scale}`].join(' ')}>
-
+      <div key={index} className={cls('cell', `${item.scale}`)}>
         {item.type === 'image'
           ? (
-            <div className={['content-card', 'content-card__image', `${item.Hovercolors}`].join(' ')}>
+            <div className={cls('content-card', `${item.Hovercolors}`)}>
               <a href={item.link}>
                 <Heading type="6" label={item.contenttile} />
                 <div className="image">
                   <img src={item.imgback} alt={item.imgback} />
                 </div>
-                <div className="content-card__caption">
+                <div className="content-caption">
                   <Heading type="5" label={item.contentname} />
                   <Ctalink label={item.button} Type={item.btnType} />
                 </div>
@@ -36,10 +37,10 @@ export const ContentCardWithAndWithoutImage = ({
           )}
         {item.type === 'color'
           ? (
-            <div className={['content-card', `${item.BackgroundColor}`, `${item.Hovercolors}`].join(' ')}>
+            <div className={cls('content-card', `${item.BackgroundColor}`, `${item.Hovercolors}`)}>
               <a href={item.link}>
                 <Heading type="6" label={item.contenttile} />
-                <div className="content-card__caption">
+                <div className="content-caption">
                   {item.Emphasize === 'true'
                     ? (
                       <Heading type="4" label={item.contentnametwo} />
@@ -49,10 +50,10 @@ export const ContentCardWithAndWithoutImage = ({
                     )}
                   {item.Emphasize === 'false'
                     ? (
-                      <div className="content-card__caption_cart">
+                      <>
                         <Heading type="5" label={item.contentname} />
                         <P label={item.paragraph} />
-                      </div>
+                      </>
                     )
                     : (
                       <></>

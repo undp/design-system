@@ -13,7 +13,7 @@ export function checkbox(ele, submitbtn) {
 
 /* select option filter click start */
 export function selectFilter() {
-  $('.select-box .option span').on('click', function () {
+  $('.select-box li span').on('click', function () {
     const datavalue = $(this).parent().attr('data-value');
     $(this).closest('.download-content').find('.checkbox input').prop('checked', false);
     $('.download-footer .button').addClass('disabled');

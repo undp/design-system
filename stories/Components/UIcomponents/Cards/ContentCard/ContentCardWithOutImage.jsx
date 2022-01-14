@@ -5,8 +5,10 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
+
 export const emphasize_options = {
-  true: 'card-yellow',
+  true: 'card-color',
   false: 'card',
 };
 
@@ -18,10 +20,10 @@ export const ContentCardWithOutImage = ({
     <div className="grid-x grid-margin-x">
       {data.map((item, index) => (
         <div key={index} className="cell medium-4">
-          <div className={['content-card', `${emphasize_variant}`, `${Hovercolors}`].join(' ')}>
+          <div className={cls('content-card', `${emphasize_variant}`, `${Hovercolors}`)}>
             <a href={item.link}>
               <Heading type="6" label={item.contenttile} />
-              <div className="content-card__caption">
+              <div className="content-caption">
                 {Emphasize === 'true'
                   ? (
                     <Heading type="4" label={item.contentnametwo} />
@@ -31,10 +33,10 @@ export const ContentCardWithOutImage = ({
                   )}
                 {Emphasize === 'false'
                   ? (
-                    <div className="content-card__caption_cart">
+                    <>
                       <Heading type="5" label={item.contentname} />
                       <P label={item.paragraph} />
-                    </div>
+                    </>
                   )
                   : (
                     <></>

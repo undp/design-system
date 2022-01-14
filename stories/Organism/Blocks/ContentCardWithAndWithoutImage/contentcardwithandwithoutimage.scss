@@ -2,74 +2,9 @@
 @import '../../../assets/scss/mixins';
 @import '../../../assets/scss/breakpoints';
 
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure, 'gray': $color-gray-200);
-
 .content-data {
-  .content-card {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
-    margin-bottom: $spacing-16;
-    word-break: break-word;
-
-    &__caption {
-      padding-bottom: $spacing-16;
-    }
-
-    &__image {
-      display: flex;
-      flex-direction: column;
-      height: auto;
-      justify-content: space-between;
-
-      @include devicebreak(medium) {
-        height: 100%;
-      }
-    }
-
-    &.card,
-    &.background-yellow,
-    &.background-green,
-    &.background-red,
-    &.background-blue,
-    &.background-gray {
-      @include transition(background-color 0.9s ease);
-
-      display: flex;
-      flex-wrap: wrap;
-      height: auto;
-
-      @include devicebreak(medium) {
-        height: 100%;
-      }
-
-      &:hover {
-        @each $name, $color in $colors {
-          &.#{$name} {
-            @include transition(all 0.9s);
-
-            background-color: #{$color};
-          }
-        }
-      }
-    }
-
-    &:hover {
-      @include transition(0.5s ease);
-
-      .image::before {
-        opacity: 0.75;
-      }
-    }
-
-    @each $name, $color in $colors {
-      &.#{$name} {
-        .image::before {
-          @include background-image(42deg, #{$color}, transparent 80%);
-          @include transition(opacity 0.9s ease);
-        }
-      }
-    }
+  > .cell {
+    margin-bottom: $spacing-32;
   }
 
   .cta-container {
