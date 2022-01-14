@@ -104,16 +104,14 @@ tbody {
   overflow-x: auto;
 
   thead {
-    th,
-    td {
+    th {
       white-space: nowrap;
     }
   }
 
   th,
   td {
-    -webkit-text-size-adjust: 100%;
-    white-space: nowrap;
+    text-size-adjust: 100%;
   }
 }
 
