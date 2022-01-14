@@ -11,17 +11,37 @@ export const navigationInitialize = (locale) => {
   lang = locale === 'en' ? 'english' : locale;
   getData(lang);
 
-  $menuItem.on('mouseenter focus', function () {
+  $menuItem.on('mouseenter click', function () {
     const id = $(this).parent().attr('data-menu-id');
     const $menuItemId = $(document).find(`[data-menu-item-id='${id}']`);
     $menuItemId.addClass('show-mega').siblings().removeClass('show-mega');
     $megaMenu.find('.sub-menu-content:first-child').addClass('active-content')
       .siblings().removeClass('active-content');
     $megaMenu.find('.submenu li:first-child').addClass('active').siblings().removeClass('active');
+
+    if($menuItemId.hasClass('show-mega'))
+    {
+      $menuItem.attr("tabIndex","-1");
+      $('.logo, .top-right button').attr("tabIndex","-1");
+    }else{
+      $menuItem.attr("tabIndex","0");
+      $($menuItem +'.logo, .top-right button').attr("tabIndex","0");
+    }
+  });
+  $menuItem.on('mouseleave', function () {
+    $menuItem.attr("tabIndex","0");
+    $($menuItem +'.logo, .top-right button').attr("tabIndex","0");
+  });
+  $(document).on('click', '.show-on-focus', function () {
+    $('.mega-nav-option').removeClass('show-mega');
+    $menuItem.attr("tabIndex","0").focus();
+    $menuItem.first().focus();
+    $('.logo, .top-right button').attr("tabIndex","0");
   });
 
   $('.mega-wrapper').mouseleave(function () {
     $(this).find('.mega-nav-option.show-mega').removeClass('show-mega');
+    
   });
 
   $('.mega-wrapper').mouseenter(function () {

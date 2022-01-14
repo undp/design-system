@@ -12,9 +12,9 @@ export const getData = (lang) => {
       $mobileMegaWrapper.empty();
       resData.data.forEach((item, index) => {
         const submenus = item.submenus
-          .map((menu, index) => `<li tabindex="${index + 1}" id="${menu.link.id}-${item.id}" class="${
+          .map((menu, index) => `<li id="${menu.link.id}-${item.id}" class="${
             index === 0 ? 'active' : ''
-          }"><a href="${menu.external_link ? menu.external_link : '#'}" class="${menu.external_link ? ['sub-link', 'sub-external'].join(' ') : 'sub-link'}">${menu.link.label}</a></li>`)
+          }"><a tabindex="0" href="${menu.external_link ? menu.external_link : '#'}" class="${menu.external_link ? ['sub-link', 'sub-external'].join(' ') : 'sub-link'}">${menu.link.label}</a></li>`)
           .join(' ');
 
         const gridX = item.submenus
@@ -70,6 +70,7 @@ export const getData = (lang) => {
                         <div class="cell large-9">
                           ${gridX}
                         </div>
+                        <button class="show-on-focus" aria-label="Close mega menu"></button>
                     </div>
            </div>
         `;
