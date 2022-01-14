@@ -108,4 +108,14 @@
   }
 }
 
+// burmese lang
+:lang(my) {
+  .accordion {
+    li {
+      button {
+        font-family: $Font-Family-NotoSans;
+      }
+    }
+  }
+}
 /* Accordian end */
