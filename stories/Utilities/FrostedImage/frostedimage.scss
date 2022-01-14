@@ -1,10 +1,10 @@
-/* frosted-overlay start */
-.frosted-overlay {
+/* frosted-background start */
+.frosted-background {
   position: relative;
 
   &::before {
-    -webkit-backdrop-filter: blur(80px);
-    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
     background: rgba(247, 247, 247, 0.8);
     content: '';
     height: 100%;
@@ -19,4 +19,4 @@
   }
 }
 
-/* frosted-overlay end */
+/* frosted-backfround end */

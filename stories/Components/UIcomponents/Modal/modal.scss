@@ -6,8 +6,8 @@
 .modal {
   @include transition(all 0.4s ease-in-out);
 
-  -webkit-backdrop-filter: blur(80px);
-  backdrop-filter: blur(80px);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
   background: rgba(247, 247, 247, 0.8);
   bottom: 0;
   display: flex;

@@ -3,7 +3,7 @@ import './frostedimage.scss';
 import BackgroundImg from '../../assets/images/bees.svg';
 
 export const FrostedImage = () => (
-  <div className="frosted-overlay">
+  <div className="frosted-background">
     <img src={BackgroundImg} alt={BackgroundImg} />
   </div>
 );
