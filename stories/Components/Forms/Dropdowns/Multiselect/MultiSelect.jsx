@@ -4,6 +4,8 @@ import { multiSelect } from '../../../../assets/js/multiselect';
 import { Checkbox } from '../../Checkbox/Checkbox';
 import { Radio } from '../../Radio/Radio';
 
+const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+
 const SelectTag = ({ text, eleId, ...args }) => {
   useEffect(() => {
     multiSelect();
@@ -13,17 +15,15 @@ const SelectTag = ({ text, eleId, ...args }) => {
       <button
         aria-label="Region"
         aria-expanded="false"
-        data-id={`filter-${eleId}`}
+        data-id={`filter${eleId}`}
       >
         {text}
       </button>
       {args.variant === 'Checkbox' && (
         <ul
-          className={[
-            args.Height === 'Fix height' ? 'fix-height' : '',
-          ].join('')}
+          className={cls(`${args.Height === 'Fix height' ? 'fix-height' : ''}`)}
           data-type="region"
-          aria-labelledby={`filter-${eleId}`}
+          aria-labelledby={`filter${eleId}`}
           role="listbox"
           aria-multiselectable="true"
           aria-hidden="true"
@@ -33,7 +33,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
             <Checkbox
               label={`${text}`}
               value="category1"
-              id={`category1-${eleId}`}
+              id={`category1${eleId}`}
             />
           </li>
           <li role="option" className="has-submenu">
@@ -45,14 +45,14 @@ const SelectTag = ({ text, eleId, ...args }) => {
                 <Checkbox
                   label={`${text}`}
                   value="subcategory1"
-                  id={`subcategory1-${eleId}`}
+                  id={`subcategory1${eleId}`}
                 />
               </li>
               <li role="option">
                 <Checkbox
                   label={`${text}`}
                   value="subcategory2"
-                  id={`subcategory2-${eleId}`}
+                  id={`subcategory2${eleId}`}
                 />
               </li>
             </ul>
@@ -61,28 +61,28 @@ const SelectTag = ({ text, eleId, ...args }) => {
             <Checkbox
               label={`${text}`}
               value="category2"
-              id={`category2-${eleId}`}
+              id={`category2${eleId}`}
             />
           </li>
           <li role="option">
             <Checkbox
               label={`${text}`}
               value="category3"
-              id={`category3-${eleId}`}
+              id={`category3${eleId}`}
             />
           </li>
           <li role="option">
             <Checkbox
               label={`${text}`}
               value="category4"
-              id={`category4-${eleId}`}
+              id={`category4${eleId}`}
             />
           </li>
           <li role="option">
             <Checkbox
               label={`${text}`}
               value="category5"
-              id={`category5-${eleId}`}
+              id={`category5${eleId}`}
             />
           </li>
         </ul>
@@ -93,7 +93,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
             args.Height === 'Fix height' ? 'fix-height' : '',
           ].join('')}
           data-type="region"
-          aria-labelledby={`filter-${eleId}`}
+          aria-labelledby={`filter${eleId}`}
           role="listbox"
           aria-multiselectable="true"
           aria-hidden="true"
@@ -103,8 +103,8 @@ const SelectTag = ({ text, eleId, ...args }) => {
             <Radio
               label={`${text}`}
               value="category1"
-              id={`category1-${eleId}`}
-              name={`category1-${eleId}`}
+              id={`category1${eleId}`}
+              name={`filter${eleId}`}
             />
           </li>
           <li role="option" className="has-submenu">
@@ -116,16 +116,16 @@ const SelectTag = ({ text, eleId, ...args }) => {
                 <Radio
                   label={`${text}`}
                   value="subcategory1"
-                  id={`subcategory1-${eleId}`}
-                  name={`subcategory1-${eleId}`}
+                  id={`subcategory1${eleId}`}
+                  name={`filter${eleId}`}
                 />
               </li>
               <li role="option">
                 <Radio
                   label={`${text}`}
                   value="subcategory2"
-                  id={`subcategory2-${eleId}`}
-                  name={`subcategory2-${eleId}`}
+                  id={`subcategory2${eleId}`}
+                  name={`filter${eleId}`}
                 />
               </li>
             </ul>
@@ -134,32 +134,32 @@ const SelectTag = ({ text, eleId, ...args }) => {
             <Radio
               label={`${text}`}
               value="category2"
-              id={`category2-${eleId}`}
-              name={`category2-${eleId}`}
+              id={`category2${eleId}`}
+              name={`filter${eleId}`}
             />
           </li>
           <li role="option">
             <Radio
               label={`${text}`}
               value="category3"
-              id={`category3-${eleId}`}
-              name={`category3-${eleId}`}
+              id={`category3${eleId}`}
+              name={`filter${eleId}`}
             />
           </li>
           <li role="option">
             <Radio
               label={`${text}`}
               value="category4"
-              id={`category4-${eleId}`}
-              name={`category4-${eleId}`}
+              id={`category4${eleId}`}
+              name={`filter${eleId}`}
             />
           </li>
           <li role="option">
             <Radio
               label={`${text}`}
               value="category5"
-              id={`category5-${eleId}`}
-              name={`category5-${eleId}`}
+              id={`category5${eleId}`}
+              name={`filter${eleId}`}
             />
           </li>
         </ul>
