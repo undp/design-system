@@ -5,11 +5,7 @@
 /* small copy start */
 .smallcopy__box {
   margin-bottom: $spacing-04;
-
-  a {
-    @extend %border-none;
-  }
-
+  
   &-locale {
     margin-bottom: $spacing-32;
 
