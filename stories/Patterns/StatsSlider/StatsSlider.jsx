@@ -10,8 +10,8 @@ export const StatsSlider = ({ data }) => {
     parallaxEffect('.stats-card-slider');
   }, []);
   return (
-    <div className="swiper stats-card-slider stats-card-grid" data-swiper-device='mobile' dir={`${window.UNDP.dir}`} >
-      <div className="swiper-scrollbar"></div>
+    <div className="stats-card-slider" data-swiper-device="mobile" dir={`${window.UNDP.dir}`}>
+      <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (
           <div className="swiper-slide" aria-label={`slide ${1 + index}`} key={index}>

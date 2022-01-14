@@ -90,11 +90,10 @@ const getLangCode=(Story,context)=>{
   // trigger onload event
   // UI has some animation element which trigger on load.
   let delay = 10;
-  const windowLoadedFinished = setTimeout(function() {
+  setTimeout(function() {
     const evt = new Event('load');
     window.dispatchEvent(evt);
   }, delay);
-  clearTimeout(windowLoadedFinished);
 
   // Set window object for iframe.
   window.UNDP.langCode = (window.UNDP) ? activeLang : window.UNDP= { langCode : activeLang };

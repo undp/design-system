@@ -5,7 +5,7 @@
 @import '../../assets/scss/mixins';
 
 /* stats-card-grid start */
-.stats-card-grid {
+.stats-card-slider {
   overflow-x: hidden;
 
   @include devicebreak(medium) {
@@ -67,13 +67,29 @@
       background-color: $color-light-yellow;
     }
   }
+
+  .swiper-slide-active {
+    @include devicebreak(small) {
+      margin-left: -$spacing-64;
+      padding-left: $spacing-64;
+    }
+  }
 }
 
 [dir='rtl'] {
-  .stats-card-grid {
+  .stats-card-slider {
     @include devicebreak(medium) {
       .grid-x {
         flex-direction: row-reverse;
+      }
+    }
+
+    .swiper-slide-active {
+      @include devicebreak(small) {
+        margin-left: 0;
+        margin-right: -$spacing-64;
+        padding-left: 0;
+        padding-right: $spacing-64;
       }
     }
   }

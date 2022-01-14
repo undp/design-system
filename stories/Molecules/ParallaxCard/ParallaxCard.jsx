@@ -21,7 +21,7 @@ const ParallaxCard = ({
   }
 
   if (glideClass == 'yes') {
-    addClass = 'glide__slide';
+    addClass = 'swiper-slide';
   }
 
   const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
@@ -33,7 +33,7 @@ const ParallaxCard = ({
           <img src={Img} alt={alt} data-speed="-1" />
         </div>
         <div className="cell medium-3 parallax-card__content">
-          <a href="#" className="parallax-card__link">
+          <a href="#">
             {name && <Heading type="3" label={name} />}
             {descrption && <P label={descrption} />}
             <span className="cta__link cta--space">{button}</span>

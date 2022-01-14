@@ -3,24 +3,14 @@
 @import '../../../assets/scss/breakpoints';
 
 /* country card start */
-.pagehero {
-  @include devicebreak(small) {
-    &-cards__items {
-      .glide__slides {
-        flex-flow: unset;
-      }
-    }
-  }
-}
-
-.pagehero-cards {
-  &-box {
-    @include devicebreak(large) {
-      margin-top: $spacing-96;
-    }
+.country-card {
+  &--item {
+    overflow: hidden;
 
     @include devicebreak(medium) {
-      &.glide__slide {
+      margin-top: $spacing-96;
+
+      &.swiper-slide {
         a {
           @include transition(all 0.4s);
           @include transform(translateY(0));
@@ -44,8 +34,8 @@
           opacity: 1;
         }
 
-        .pagehero {
-          &-cards {
+        .country {
+          &-card {
             &__caption {
               transform: translateY(calc(-100% + #{$spacing-44}));
 
@@ -68,16 +58,16 @@
     }
 
     @include devicebreak(small) {
-      &.glide__slide {
+      &.swiper-slide {
         height: auto;
 
-        &--active {
+        &-active {
           a::before {
             opacity: 1;
           }
 
-          .pagehero {
-            &-cards {
+          .country {
+            &-card {
               &__caption {
                 bottom: 0;
                 opacity: 1;
@@ -166,9 +156,9 @@
 }
 
 [dir='rtl'] {
-  .pagehero-cards-box {
+  .country-card--item {
     &:hover,
-    &.glide__slide--active {
+    &.swiper-slide-active {
       .cta--arrow::after {
         @include transform(translate(0, 0) rotate(180deg));
 

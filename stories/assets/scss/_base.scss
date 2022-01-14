@@ -43,9 +43,8 @@
   overflow-x: scroll;
 
   &::-webkit-scrollbar-track {
-      border-bottom: 1px solid $color-black;
-      margin-right: -1px;
-
+    border-bottom: 1px solid $color-black;
+    margin-right: -1px;
   }
 
   &::-webkit-scrollbar {
@@ -73,56 +72,6 @@
 
   &::-webkit-scrollbar-thumb {
     background-color: $color-black;
-  }
-}
-
-/* glide slider start */
-.glide {
-  max-width: 100%;
-
-  &__scrollbar {
-    @include devicebreak(medium) {
-      &.show-for-small {
-        display: none;
-      }
-    }
-  }
-
-  &__bullets {
-    display: flex;
-    margin-bottom: $spacing-32;
-    position: relative;
-
-    @include devicebreak(medium) {
-      &.show-for-small {
-        display: none;
-      }
-    }
-
-    &::after {
-      border-bottom: 1px solid $color-black;
-      content: '';
-      height: 1px;
-      left: 0;
-      position: absolute;
-      top: 2px;
-      width: 100%;
-      z-index: 1;
-    }
-  }
-
-  &__bullet {
-    @include transition(all 0.1s);
-
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    cursor: pointer;
-    flex-grow: 1;
-    height: 4px;
-    padding: 3px 0;
-    position: relative;
-    z-index: 2;
   }
 }
 
