@@ -70,7 +70,7 @@ export const getData = (lang) => {
                         <div class="cell large-9">
                           ${gridX}
                         </div>
-                        <button class="show-on-focus" aria-label="Close mega menu"></button>
+                        <button class="show-on-focus" aria-label="Close mega menu">Close mega menu</button>
                     </div>
            </div>
         `;
