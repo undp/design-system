@@ -1,0 +1,95 @@
+@import './variables';
+@import './breakpoints';
+@import './mixins';
+
+.swiper {
+  box-sizing: border-box;
+  max-width: 100%;
+  position: relative;
+
+  & * {
+    box-sizing: inherit;
+  }
+
+  &-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 0;
+    flex-wrap: nowrap;
+    backface-visibility: hidden;
+    list-style: none;
+    touch-action: pan-y;
+    transform-style: preserve-3d;
+    white-space: nowrap;
+    will-change: transform;
+    transition-property: transform;
+  }
+
+  &-slide {
+    flex-shrink: 0;
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+    white-space: normal;
+    width: 100%;
+
+    a {
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+
+    &-active {
+      // Active styles.
+    }
+  }
+
+  [class*="swiper-button-"] {
+    display: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+    cursor: pointer;
+    img {
+      cursor: pointer;
+    }
+  }
+
+  @at-root .swiper-arrows {
+    [class*="swiper-button-"] {
+      cursor: pointer;
+    }
+  }
+
+  &-button-disabled {
+    opacity: 0.5;
+    cursor: default;
+    img {
+      cursor: default;
+    }
+  }
+
+  @at-root [dir="rtl"] #{&} {
+    direction: rtl;
+  }
+
+  &-scrollbar {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 4px;
+    margin-bottom: $spacing-32;
+    background: $color-gray-400;
+
+    &-drag{
+      height: 100%;
+      background: $color-black;
+    }
+  }
+
+  &-notification {
+    display: none;
+  }
+
+}

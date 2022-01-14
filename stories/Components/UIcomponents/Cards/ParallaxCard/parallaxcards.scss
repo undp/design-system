@@ -26,7 +26,7 @@
     }
   }
 
-  .glide__slides {
+  .swiper-wrapper {
     display: flex;
 
     @include devicebreak(medium) {

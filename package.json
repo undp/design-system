@@ -83,6 +83,7 @@
     "svg-spritemap-webpack-plugin": "^2.6.0",
     "svgo": "^1.0.5",
     "svgo-loader": "^2.1.0",
+    "swiper": "^7.4.1",
     "webpack-cli": "^4.9.1"
   }
 }

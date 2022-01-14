@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './parallaxcards.scss';
 import '../../../../assets/scss/_glideslider.scss';
 import { carousel } from '../../../../assets/js/carousel';
-import { parallaxEffect } from '../../../../assets/js/slider';
+import { parallaxEffect } from '../../../../assets/js/parallax';
 import Img from '../../../../assets/images/parallax-card.jpg';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import ParallaxCard from '../../../../Molecules/ParallaxCard/ParallaxCard';
