@@ -31,20 +31,19 @@
   }
 
   &__heading {
+    background: transparent;
+    border: 0;
     color: $color-white;
-    margin-bottom: 0;
-    padding: $spacing-16;
-    position: relative;
-    text-transform: uppercase;
+    display: block;
     font-size: $font-size-16;
     font-weight: 700;
     letter-spacing: 0.03rem;
     line-height: 1.15;
-    display: block;
-    border: 0;
-    background: transparent;
-    width: 100%;
+    padding: $spacing-16;
+    position: relative;
     text-align: left;
+    text-transform: uppercase;
+    width: 100%;
 
     @include devicebreak(medium) {
       margin-bottom: 1.25rem;
@@ -103,11 +102,9 @@
 
 //burmese lang
 :lang(my) {
-  .footer {
-    &__panel {
-      a {
-        line-height: 1.9;
-      }
+  .footer__panel {
+    a {
+      line-height: 1.9;
     }
   }
 }

@@ -21,7 +21,6 @@ export function accordion(accordionSelector, accordionSiblingSelector, accordion
       $(currentElem).siblings(accordinSiblingElement).slideUp('fast').attr('aria-hidden', true);
     }
   };
-
   const accordionClick = (accordion, accordionSibling, accordionActiveClass) => {
     const hasMobileAttr = $(accordion).attr('data-accordion') == 'mobile';
     $(accordion).each((index, element) => {

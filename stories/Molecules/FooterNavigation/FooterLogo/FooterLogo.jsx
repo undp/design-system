@@ -8,10 +8,10 @@ const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filt
 export const FooterLogo = ({
   src, headerText, style, alt, logolink,
 }) => (
-  <div className={cls('cell', 'medium-5', 'footer__logo', `${style}`)}>
+  <div className={cls('footer__logo', `${style}`)}>
     <a href={logolink}>
       <Logo src={src} alt={alt} />
     </a>
-    <Heading type="5" label={headerText} />
+    <Heading type="5" label={headerText} tabIndex="0" />
   </div>
 );

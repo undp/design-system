@@ -78,8 +78,14 @@
 }
 
 [dir='rtl'] {
-  .sign-up--field {
-    justify-content: flex-start;
+  .sign-up {
+    label {
+      text-align: right;
+    }
+
+    &--field {
+      justify-content: flex-start;
+    }
   }
 }
 
