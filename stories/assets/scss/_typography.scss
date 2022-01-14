@@ -168,8 +168,8 @@ hr {
   }
 
   h1 {
-    font-size: 2.625rem;
     font-family: $Font-Family-NotoSans;
+    font-size: 2.625rem;
 
     @include devicebreak(medium) {
       font-size: 3.875rem;
@@ -225,6 +225,23 @@ hr {
 
     @include devicebreak(medium) {
       font-size: 1.125rem;
+    }
+  }
+
+  .sbdocs {
+    .sbdocs-content,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      font-family: $Font-Family-NotoSans;
+    }
+
+    .sbdocs-h1 {
+      font-size: $spacing-32;
     }
   }
 }

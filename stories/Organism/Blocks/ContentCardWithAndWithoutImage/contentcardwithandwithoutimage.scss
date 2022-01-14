@@ -33,10 +33,11 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'bl
     &.background-red,
     &.background-blue,
     &.background-gray {
+      @include transition(background-color 0.9s ease);
+
       display: flex;
       flex-wrap: wrap;
       height: auto;
-      @include transition(background-color 0.9s ease);
 
       @include devicebreak(medium) {
         height: 100%;
@@ -45,8 +46,9 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'bl
       &:hover {
         @each $name, $color in $colors {
           &.#{$name} {
-            background-color: #{$color};
             @include transition(all 0.9s);
+
+            background-color: #{$color};
           }
         }
       }
@@ -64,7 +66,6 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'bl
       &.#{$name} {
         .image::before {
           @include background-image(42deg, #{$color}, transparent 80%);
-
           @include transition(opacity 0.9s ease);
         }
       }

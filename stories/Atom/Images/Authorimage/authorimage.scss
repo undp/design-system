@@ -3,11 +3,36 @@
 @import '../../../assets/scss/breakpoints';
 
 /* author image */
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
+
 .author__img {
   border-radius: 50%;
   height: 80px;
   overflow: hidden;
   width: 80px;
+  display: inline-flex;
+  position: relative;
+
+  &::before {
+    @extend %absolute__content;
+
+    @include transition(all 0.6s);
+
+    opacity: 0;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0.75;
+    }
+  }
+
+  @each $name, $color in $colors {
+    &.#{$name}::before {
+      @include background-image(42deg, #{$color}, transparent 80%);
+      @include transition(all 0.9s);
+    }
+  }
 
   img {
     @extend %img-cover;
@@ -16,5 +41,16 @@
   &.large {
     height: 180px;
     width: 180px;
+  }
+}
+
+[dir='rtl'] { 
+  .author__img { 
+    @each $name, $color in $colors {
+      &.#{$name}::before {
+        @include background-image(318deg, #{$color}, transparent 80%);
+        @include transition(all 0.9s);
+      }
+    }
   }
 }
