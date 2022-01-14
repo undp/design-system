@@ -25,12 +25,12 @@ export const navigationInitialize = (locale) => {
       $('.logo, .top-right button').attr("tabIndex","-1");
     }else{
       $menuItem.attr("tabIndex","0");
-      $($menuItem +'.logo, .top-right button').attr("tabIndex","0");
+      $('.logo, .top-right button').attr("tabIndex","0");
     }
   });
   $menuItem.on('mouseleave', function () {
     $menuItem.attr("tabIndex","0");
-    $($menuItem +'.logo, .top-right button').attr("tabIndex","0");
+    $('.logo, .top-right button').attr("tabIndex","0");
   });
   $(document).on('click', '.show-on-focus', function () {
     $('.mega-nav-option').removeClass('show-mega');
