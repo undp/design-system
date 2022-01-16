@@ -49,7 +49,7 @@ Use Icons that are recognizable and accompany corresponding text labels where po
         return (<div><img src={`icons/${item.name}.svg`} alt="icon"/>
         <p>{`${item.label}`}</p></div>);
       }
-      if(item.name == 'download-icon') {
+      if(item.name == 'download-icon' , 'arrow-expand') {
         return (<div><span class={`${item.name}`}><i></i></span><p>{`${item.label}`}</p></div>);
       } else {
         return (<div><span class={`${item.name}`}></span><p>{`${item.label}`}</p></div>);
