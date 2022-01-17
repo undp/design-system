@@ -16,6 +16,7 @@
     margin-bottom: 0;
     overflow: hidden;
     position: relative;
+    padding-left: 0;
 
     button {
       background: transparent;
@@ -38,7 +39,7 @@
         height: 1.25rem;
         margin-left: $spacing-24;
         position: absolute;
-        right: $spacing-16;
+        right: 0;
         top: $spacing-24;
         width: 1.25rem;
       }
@@ -66,7 +67,7 @@
 
         &::before {
           left: 0;
-          margin-left: $spacing-08;
+          margin-left: 0;
           right: unset;
         }
 
