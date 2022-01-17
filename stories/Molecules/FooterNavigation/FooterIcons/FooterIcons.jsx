@@ -11,7 +11,7 @@ const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filt
 export const FooterIcons = ({ ...args }) => {
   let screen_variant = variant_options[`${args.variant}`];
   return (
-    <ul className={cls('footer__icons', `${screen_variant}`)}>
+    <ul className={cls('footer-icons', `${screen_variant}`)}>
       <li><a href="#" className="facebook" title="Facebook">facebook</a></li>
       <li><a href="#" className="linkedin" title="LinkedIn">linkedIn</a></li>
       <li><a href="#" className="instagram" title="Instagram">instagram</a></li>

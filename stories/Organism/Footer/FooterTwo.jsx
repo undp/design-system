@@ -12,8 +12,8 @@ export const Footertwo = ({
 }) => (
   <footer className={cls('footer', `${args.color === 'inverted' ? args.color : ''}`)}>
     <div className="grid-x">
-      <div className="cell medium-10 footer__wrapper">
-        <div className="grid-x footer-head two">
+      <div className="cell medium-10 medium-offset-1">
+        <div className="grid-x footer-top">
           <div className="cell medium-5">
             {args.color === 'default' ? (
               <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style="" />
@@ -25,11 +25,11 @@ export const Footertwo = ({
             <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
           </div>
         </div>
-        <div className="footer-bottom two">
-          <div className="copyright">
+        <div className="grid-x footer-bottom">
+          <div className="cell medium-5">
             <P label={copyright} tabIndex="0" />
           </div>
-          <div className="menus">
+          <div className="cell medium-6">
             <FooterConditions2 footerdata2={menudata} variant={args.color === 'default' ? args.color : 'inverted'} />
             <div className="show-small">
               <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />

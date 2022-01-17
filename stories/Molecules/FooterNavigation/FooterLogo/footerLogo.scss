@@ -3,7 +3,7 @@
 @import '../../../assets/scss/variables';
 
 // * footer Logo start *//
-.footer__logo {
+.footer-logo {
   align-items: center;
   display: flex;
 
@@ -16,10 +16,6 @@
     h5 {
       color: $color-black;
     }
-  }
-
-  a {
-    @extend %img_none;
   }
 }
 // * footer Logo end *//

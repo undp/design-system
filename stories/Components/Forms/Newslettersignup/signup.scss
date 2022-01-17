@@ -23,7 +23,11 @@
     position: relative;
 
     .input-group {
-      width: calc(100% - 107px);
+      width: calc(100% - 86px);
+
+      @include devicebreak(medium) {
+        width: calc(100% - 107px);
+      }
     }
 
     input[type=email] {
@@ -48,9 +52,13 @@
     color: $color-blue-600;
     height: 54px;
     margin: 0;
-    min-width: 107px;
+    min-width: 86px;
     padding: 0;
     text-transform: uppercase;
+
+    @include devicebreak(medium) {
+      min-width: 107px;
+    }
   }
 
   &.inverted {

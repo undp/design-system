@@ -11,7 +11,7 @@ const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filt
 export const FooterConditions = ({ style, footerdata, ...args }) => {
   let screen_variant = variant_options[`${args.variant}`];
   return (
-    <ul className={cls('footer__condition', `${screen_variant}`)}>
+    <ul className={cls('footer-links', `${screen_variant}`)}>
       {footerdata.map((item, index) => (
         <li key={index}><a href="#">{item.menu}</a></li>
       ))}

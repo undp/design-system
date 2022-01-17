@@ -14,12 +14,12 @@ export const Footer = ({
   headerText, headerText2, style, alt, src, srctwo, logolink, element, type, required, mode, label, button, errorText, placeholder, menutitle, copyright, data, menudata, ...args
 }) => {
   useEffect(() => {
-    accordion('.footer-bottom', '.footer__panel', 'active');
+    accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
   }, []);
   return (
     <footer className={cls('footer', `${args.color === 'inverted' ? args.color : ''}`)}>
       <div className="grid-x">
-        <div className="cell medium-10 footer__wrapper">
+        <div className="cell medium-10 medium-offset-1">
           <div className="grid-x footer-head">
             <div className="cell medium-5">
               {args.color === 'default' ? (
@@ -32,7 +32,7 @@ export const Footer = ({
               <SignUp element={element} type={type} required={required} mode={mode} label={label} button={button} errorText={errorText} placeholder={placeholder} variant={args.color === 'default' ? args.color : 'inverted'} />
             </div>
           </div>
-          <div className=" grid-x grid-margin-x footer-bottom" data-accordion="mobile">
+          <div className="grid-x grid-margin-x" data-accordion="mobile">
             <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-1" arialabel="footer-item-1" variant={args.color === 'default' ? args.color : 'inverted'} />
             <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-2" arialabel="footer-item-2" variant={args.color === 'default' ? args.color : 'inverted'} />
             <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-3" arialabel="footer-item-3" variant={args.color === 'default' ? args.color : 'inverted'} />
@@ -42,7 +42,7 @@ export const Footer = ({
               <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
             </div>
           </div>
-          <div className="footer__foot">
+          <div className="footer-copyright">
             <P label={copyright} tabIndex="0" />
           </div>
         </div>

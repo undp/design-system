@@ -82,11 +82,9 @@
   }
 }
 
-.footer {
-  margin-top: $spacing-32;
-}
-
 .featured-card-container {
+  margin-bottom: $spacing-32;
+
   .cell {
     margin-bottom: $spacing-24;
   }

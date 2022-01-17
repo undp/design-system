@@ -13,7 +13,7 @@ export const FooterConditions2 = ({
 }) => {
   let screen_variant = variant_options[`${args.variant}`];
   return (
-    <ul className={cls('footer__condition_text', `${screen_variant}`)}>
+    <ul className={cls('footer-lists', `${screen_variant}`)}>
       {footerdata2.map((item, index) => (
         <li key={index}><a href="#">{item.menu}</a></li>
       ))}
