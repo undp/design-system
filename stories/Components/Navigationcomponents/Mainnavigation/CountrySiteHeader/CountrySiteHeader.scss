@@ -16,7 +16,6 @@
       margin-right: $spacing-32;
     }
     
-
     label {
       border-bottom: 1px solid $color-gray-500;
       color: $color-gray-600;
@@ -33,8 +32,6 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-
-    
 
     .logo {
       @extend %img_none;
