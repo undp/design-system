@@ -256,4 +256,21 @@ hr {
   }
 }
 
+[dir='rtl'] {
+  ul,
+  ol {
+    padding-left: 0;
+    padding-right: 1.125rem;
+    @include devicebreak(medium) {
+      padding-right: 1.313rem;
+    }
+    li {
+      padding-left: 0;
+      padding-right: 0.875rem;
+      @include devicebreak(medium) {
+        padding-right: $spacing-12;
+      }
+    }
+  }
+}
 /* typograpgy end */
