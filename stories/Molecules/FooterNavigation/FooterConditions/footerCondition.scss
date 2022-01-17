@@ -3,12 +3,13 @@
 @import '../../../assets/scss/variables';
 
 // * footer condition start *//
-.footer__condition {
+.footer-links {
   padding-left: 0;
 
   li {
     list-style: none;
     margin-bottom: $spacing-12;
+    padding: 0;
     text-align: left;
 
     @include devicebreak(medium) {
@@ -28,13 +29,8 @@
 }
 
 [dir='rtl'] {
-  .footer__condition {
-    float: right;
+  .footer-links {
     padding-right: 0;
-
-    @include devicebreak(medium) {
-      float: left;
-    }
 
     li {
       text-align: right;
@@ -44,7 +40,7 @@
 
 //burmese lang
 :lang(my) {
-  .footer__condition {
+  .footer-links {
     li {
       a {
         line-height: 1.9;

@@ -19,10 +19,6 @@
     }
   }
 
-  &__wrapper {
-    margin: 0 auto;
-  }
-
   p {
     font-size: $font-size-14;
     margin: 0;
@@ -42,47 +38,34 @@
     @include devicebreak(medium) {
       margin-bottom: $spacing-48;
     }
+  }
 
-    &.two {
-      padding-bottom: $spacing-32;
+  &-top {
+    align-items: center;
+    border-bottom: 1px solid $color-white;
+    justify-content: space-between;
+    margin-bottom: $spacing-32;
+    padding-bottom: $spacing-32;
 
-      @include devicebreak(medium) {
-        padding-bottom: $spacing-48;
-
-        .footer__icons {
-          justify-content: flex-end;
-        }
-      }
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-32;
+      padding-bottom: $spacing-48;
     }
   }
 
   &-bottom {
-    &.two {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    justify-content: space-between;
 
-      @include devicebreak(small) {
-        flex-direction: column-reverse;
+    @include devicebreak(small) {
+      flex-direction: column-reverse;
 
-        p {
-          margin: 0 $spacing-16 0;
-        }
-      }
-
-      @include devicebreak(medium) {
-        .copyright {
-          width: calc(100% - 525px);
-        }
-
-        .menus {
-          width: 512px;
-        }
+      p {
+        margin: 0 $spacing-16 0;
       }
     }
   }
 
-  &__foot {
+  &-copyright {
     margin: 0 $spacing-16;
 
     @include devicebreak(medium) {
@@ -90,7 +73,7 @@
     }
   }
 
-  &__condition {
+  &-links {
     margin: $spacing-32 $spacing-16;
 
     @include devicebreak(medium) {
@@ -106,9 +89,8 @@
     }
   }
 
-  .footer__icons {
-    justify-content: flex-start;
-    margin: 0 $spacing-16 $spacing-32;
+  .footer-icons {
+    margin: 0 1.25rem $spacing-32;
 
     @include devicebreak(medium) {
       justify-content: flex-end;
@@ -120,22 +102,10 @@
     background-color: $color-gray-100;
     color: $color-black;
 
-    .footer-head {
-      border-color: $color-gray-700;
-    }
-  }
-}
-
-@include devicebreak(medium) {
-  [dir='rtl'] {
-    .footer-bottom {
-      &.two {
-        .footer__condition_text {
-          li {
-            margin-left: 0;
-            margin-right: 2.25rem;
-          }
-        }
+    .footer {
+      &-head,
+      &-top {
+        border-color: $color-gray-700;
       }
     }
   }

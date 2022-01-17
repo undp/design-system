@@ -4,17 +4,20 @@
 
 /* footer items start */
 .footer {
-  &__items {
-    border-bottom: 2px solid $color-gray-400;
-    padding: 0;
+  &-item {
     position: relative;
 
-    @include devicebreak(medium) {
-      border-bottom: 0;
+    @include devicebreak(small) {
+      &::after {
+        border-bottom: 2px solid $color-gray-400;
+        content: '';
+        position: absolute;
+        width: calc(100% - 1.3rem);
+      }
     }
 
     &.inverted {
-      .footer__heading {
+      .footer-heading {
         color: $color-black;
 
         &::before {
@@ -22,7 +25,7 @@
         }
       }
 
-      .footer__panel {
+      .footer-panel {
         a {
           @extend %footerlinkinvert;
         }
@@ -30,7 +33,7 @@
     }
   }
 
-  &__heading {
+  &-heading {
     background: transparent;
     border: 0;
     color: $color-white;
@@ -73,7 +76,7 @@
     }
   }
 
-  &__panel {
+  &-panel {
     display: none;
     padding: 0 $spacing-16 $spacing-08;
 
@@ -92,17 +95,18 @@
 }
 
 [dir='rtl'] {
-  .footer__heading {
+  .footer-heading {
     text-align: right;
+
     &::before {
       float: left;
-      }
+    }
   }
 }
 
 //burmese lang
 :lang(my) {
-  .footer__panel {
+  .footer-panel {
     a {
       line-height: 1.9;
     }

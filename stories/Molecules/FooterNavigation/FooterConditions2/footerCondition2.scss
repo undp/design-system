@@ -3,24 +3,27 @@
 @import '../../../assets/scss/variables';
 
 // * footer condition start *//
-.footer__condition_text {
+.footer-lists {
   padding-left: 0;
 
   @include devicebreak(medium) {
-    float: right;
     max-width: 690px;
     text-align: right;
+  }
+
+  @include devicebreak(small) {
+    margin: 0 $spacing-16 $spacing-32;
   }
 
   li {
     list-style: none;
     margin-bottom: $spacing-12;
+    padding-left: 0;
 
     @include devicebreak(medium) {
       display: inline-flex;
       margin-bottom: 1.125rem;
       margin-left: 2.25rem;
-      text-align: right;
     }
 
     a {
@@ -36,14 +39,21 @@
 }
 
 [dir='rtl'] {
-  .footer__condition_text {
+  .footer-lists {
     padding-right: 0;
+
+    @include devicebreak(medium) {
+      li {
+        margin-left: 0;
+        margin-right: 2.25rem;
+      }
+    }
   }
 }
 
 //burmese lang
 :lang(my) {
-  .footer__condition_text {
+  .footer-lists {
     li {
       a {
         line-height: 1.9;
