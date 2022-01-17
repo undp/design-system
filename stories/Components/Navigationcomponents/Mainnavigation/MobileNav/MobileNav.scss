@@ -52,8 +52,9 @@
       color: $color-blue-600;
       display: flex;
       flex-wrap: wrap;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.58125rem;
       text-transform: uppercase;
+      font-size: 0.875rem;
 
       img {
         margin-right: 0.625rem;
@@ -117,7 +118,7 @@
     border: 0;
     display: flex;
     flex-wrap: wrap;
-    font-size: 1rem;
+    font-size: 0.875rem;
     padding: 0;
     text-transform: uppercase;
 
@@ -250,9 +251,15 @@
     }
 
     .back-nav {
-      span {
-        flex-flow: row-reverse;
+      img {
+        @include transform(rotateY(180deg));
+        margin-left: 0.46875rem;
+        margin-right: 0;
       }
     }
+  }
+  .menu-hamburger{
+    margin-right: $spacing-12;
+    margin-left:0;
   }
 }

@@ -29,7 +29,7 @@ const CountrySiteHeader = ({
     <header className="country-header">
       <div className="grid-container">
         <div className="grid-x grid-margin-x align-content-middle">
-          <div className="cell large-3 small-7 align-self-middle top-left">
+          <div className="cell large-9 small-8 align-self-middle top-left">
             <a href="#" className="logo" tabIndex="0">
               <Logo src={pnud} alt="UNDP Logo" />
             </a>
@@ -37,8 +37,6 @@ const CountrySiteHeader = ({
               <label>{siteTitleData.label}</label>
               <span>{siteTitleData.span}</span>
             </div>
-          </div>
-          <div className="cell large-6 small-1 mid-nav">
             {desktopView && <Menu data={navigationData} />}
           </div>
           <div className="cell large-3 small-4 top-right">

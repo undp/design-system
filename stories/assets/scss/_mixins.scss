@@ -488,12 +488,19 @@
 
 %logo {
   @include transition(all 0.4s cubic-bezier(0.64,0.05,0.35,1.05));
-
+  width: 40px;
   @include devicebreak(xlarge) {
     height: 7.625rem;
+    width: 60px;
 
     &.scrolled {
       height: 7.1875rem;
+    }
+  }
+  @include devicebreak(mediumonlytab) {
+    height: 5.125rem;
+    &.scrolled{
+      height: 4.6875rem;
     }
   }
 }

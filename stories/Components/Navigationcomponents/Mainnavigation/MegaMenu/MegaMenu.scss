@@ -132,12 +132,12 @@
   }
   .show-on-focus{
     font-size: 0;
-    width:40px;
-    height: 40px;
+    width:$spacing-40;
+    height: $spacing-40;
     color: #000;
     position:absolute;
-    top: 10px;
-    right: 10px;
+    top: 0.625rem;
+    right: 0.625rem;
     border: 0;
     opacity: 0;
     background: url(#{$img-path-Iconfourback}/Times.svg) no-repeat center center;
@@ -149,14 +149,17 @@
 }
 
 [dir='rtl'] {
-  .mega-nav-option .submenu li {
-    padding-left: 3rem;
-    padding-right: 0;
-  }
+  .mega-nav-option {
+    padding: $spacing-64 $spacing-48 0 0;
+    .submenu li {
+      padding-left: 3rem;
+      padding-right: 0;
+    }
 
-  .mega-nav-option .mega-image {
-    box-sizing: border-box;
-    padding-left: 0;
-    padding-right: 3rem;
+    .mega-image {
+      box-sizing: border-box;
+      padding-left: 0;
+      padding-right: 3rem;
+    }
   }
 }
