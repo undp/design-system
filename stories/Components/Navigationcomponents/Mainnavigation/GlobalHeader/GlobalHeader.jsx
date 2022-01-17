@@ -45,11 +45,13 @@ const GlobalHeader = ({
             </button>
           </div>
           <div className="cell large-8 small-8 mid-nav">
-            {desktopView && <Menu data={leftNavigationData} role="navigation" arialabel="Navigation" />}
-            <a href="#" className="logo">
-              <Logo src={pnud} alt="UNDP Logo" />
-            </a>
-            {desktopView && <Menu data={rightNavigationData} role="navigation" arialabel="Main" />}
+            <nav className="menu" role="navigation" arialabel="Navigation">
+              {desktopView && <Menu data={leftNavigationData} isGHeader={true} />}
+              <a href="#" className="logo">
+                <Logo src={pnud} alt="UNDP Logo" />
+              </a>
+              {desktopView && <Menu data={rightNavigationData} isGHeader={true}/>}
+            </nav>
           </div>
           <div className="cell large-2 small-2 top-right">
             <button className="icon-globe">

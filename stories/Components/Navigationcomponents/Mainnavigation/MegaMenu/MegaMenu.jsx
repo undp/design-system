@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image } from '../../../../Atom/Images/Image/Image';
+
 import './MegaMenu.scss';
 
 const MegaMenu = ({ text }) => (

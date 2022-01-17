@@ -32,43 +32,35 @@
   .mid-nav {
     display: flex;
     justify-content: center;
-
-    nav {
-      &:first-child {
-        ul {
-          justify-content: flex-end;
-          padding-left: 0;
-          padding-right: 6.9375rem;
-        }
-      }
+    position: relative;
+    @include devicebreak(xlarge) {
+      height: 7.1875rem;
     }
 
     ul {
-      align-items: center;
+      position: absolute;
+      left: 50%;
+      width: 50%;    
+      top: 50%;
+      transform: translateY(-50%);
+      padding-left: 4.375rem;
       display: flex;
-      height: 7.1875rem;
-      padding-left: 6.9375rem;
+      height: 100%;
+      align-items: center;
+
+      &:first-child{
+        right: 50%;
+        left: inherit;
+        justify-content: right;
+        padding-right: 4.375rem;
+        padding-left: 0;
+      }
 
       @include devicebreak(mediumonlytab) {
         display: none;
       }
-
-      li {
-        margin: $spacing-12 0 $spacing-12 4.4375rem;
-
-        &:first-child {
-          margin-left: 0;
-        }
-      }
-
-      &:last-child {
-        li {
-          margin: $spacing-12 4.4375rem $spacing-12 0;
-
-          &:last-child {
-            margin-right: 0;
-          }
-        }
+      li{
+        margin: 0 2.1875rem;
       }
     }
 
