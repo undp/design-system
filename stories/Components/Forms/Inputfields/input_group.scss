@@ -199,3 +199,10 @@ input[type='date']::-webkit-calendar-picker-indicator {
     text-align: right;
   }
 }
+
+// burmese lang
+:lang(my) {
+  .input-group .error {
+    line-height: 1.7;
+  }
+}

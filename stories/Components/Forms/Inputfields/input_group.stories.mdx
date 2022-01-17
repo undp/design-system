@@ -89,7 +89,7 @@ The <code>input</code> HTML element is used to create interactive controls for w
 <Story name="Text">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail1} errorText={caption.detail2} element='input' type='text' id='' placeholder= {caption.text3} {...args} ></Inputcomponent>;
+    return <Inputcomponent labelText={caption.detail1} errorText={caption.detail2} element='input' type='text' id='text' placeholder= {caption.text3} {...args} ></Inputcomponent>;
   }}
 </Story>
 
