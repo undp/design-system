@@ -25,6 +25,7 @@
       margin-top: 0.75rem;
       padding-bottom: $spacing-08;
       text-transform: uppercase;
+      padding-left: 0;
 
       &.is-active {
         border-bottom: 2px solid $color-dark-red;
