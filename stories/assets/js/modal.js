@@ -3,12 +3,13 @@ export function modal() {
   const $modalOverlay = $('.modal');
   const $modal = $('.modal-content');
   const $modalClose = $('.modal-close-button');
-  const $modalOpen = $('.bio-card, #modal');
-  const modalSelector = '.modal';
+  const $modalOpen = $('[data-toggle="modal"]');
 
   // modal function
   function modalOpen(modal) {
+    let modalSelector = '';
     $modalOpen.click((event) => {
+      modalSelector = event.currentTarget.getAttribute('data-target-modal');
       event.preventDefault();
       $(modalSelector).addClass('open');
     });

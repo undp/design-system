@@ -44,7 +44,7 @@ The Modal component defines a block of information data with some.
   <Story name="Modal">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <Modal contenttile={caption.title} contentname={caption.name}  descriptionText={caption.descriptionText} descriptionText2={caption.descriptionText2}  button={caption.btnlabel}  alt={'modal image'} image={img} image2={img2} {...args} content={caption.content}></Modal>;
+      return <Modal id="exampleModal" contenttile={caption.title} contentname={caption.name}  descriptionText={caption.descriptionText} descriptionText2={caption.descriptionText2}  button={caption.btnlabel}  alt={'modal image'} image={img} image2={img2} {...args} content={caption.content}></Modal>;
     }}
   </Story>
 </Canvas>
