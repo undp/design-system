@@ -58,43 +58,46 @@ export const BioCard = ({
 
   return (
     <>
-      <div className="grid-x grid-margin-x">
-        <div className={cls('cell', `${size_variant}`)}>
-          {args.size === 'large' && (
-            <a className={cls('grid-x', 'grid-margin-x', 'bio-card', `${hovercolor_variant}`)} href="#" role="button" data-toggle="modal" data-target-modal="#bioCard">
-              <article className="bio-card__content medium-7">
-                <div className="bio-card__description left-right">
-                  <Heading type="5" label={contentname} />
-                  <P label={descriptionText} />
+        {args.size === 'large' && (
+          <div className={cls('grid-x grid-margin-x', 'bio-card', `${hovercolor_variant}`)}>
+            <div className={cls('cell', `${size_variant}`)}>
+              <a href="#" role="button" data-toggle="modal" data-target-modal="#bioCard">
+                <div className='grid-x'>
+                  <article className="bio-card__content medium-7">
+                    <div className="bio-card__description left-right">
+                      <Heading type="5" label={contentname} />
+                      <P label={descriptionText} />
+                    </div>
+                      <span className="cta__link cta--arrow">{button}</span>
+                  </article>
+                  <div className="card-thumbnail__image medium-5">
+                    <img src={image} alt={image} />
+                  </div>
                 </div>
-                <div className="bio-cta">
-                  <span className="cta__link cta--arrow">{button}</span>
-                </div>
-              </article>
-              <div className="card-thumbnail__image medium-5">
-                <img src={image} alt={image} />
-              </div>
-            </a>
-          )}
+              </a>
+            </div>
+          </div>
+        )}
 
           {args.size === 'medium' && (
-            <a className={cls('bio-card', 'medium', `${hovercolor_variant}`)} href="#" role="button" data-toggle="modal" data-target-modal="#bioCard">
-              <div className="card-thumbnail__image">
-                <img src={image} alt={image} />
-              </div>
-              <article className="bio-card__content">
-                <div className="bio-card__description left-right">
-                  <Heading type="5" label={contentname} />
-                  <P label={descriptionText} />
+            <div className={cls('grid-x', 'bio-card', 'medium', `${hovercolor_variant}`)}>
+              <div className={cls('cell', `${size_variant}`)}> 
+               <a href="#" role="button" data-toggle="modal" data-target-modal="#bioCard">
+                <div className="card-thumbnail__image">
+                  <img src={image} alt={image} />
                 </div>
-                <div className="bio-cta">
-                  <span className="cta__link cta--arrow">{button}</span>
-                </div>
-              </article>
-            </a>
+                <article className="bio-card__content">
+                  <div className="bio-card__description left-right">
+                    <Heading type="5" label={contentname} />
+                    <P label={descriptionText} />
+                  </div>
+                    <span className="cta__link cta--arrow">{button}</span>
+                </article>
+              </a>
+            </div>
+          </div>
           )}
-        </div>
-      </div>
+        
       <Modal id="bioCard" content={biodata(image2, contentname, descriptionText, descriptionText2)} />
     </>
   );
