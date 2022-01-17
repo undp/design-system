@@ -8,6 +8,7 @@
   display: flex;
   list-style: none;
   padding-left: 0;
+  padding-right: 0;
 
   li {
     align-items: center;
@@ -15,6 +16,7 @@
     font-size: $font-size-16;
     justify-content: space-between;
     margin-right: $spacing-24;
+    padding-left: 0;
     position: relative;
 
     a {
