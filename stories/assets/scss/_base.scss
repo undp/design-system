@@ -43,7 +43,13 @@
   overflow-x: scroll;
 
   &::-webkit-scrollbar-track {
-    background: linear-gradient(0deg, transparent 10%, $color-black 33%, transparent 0);
+      //background: linear-gradient(0deg, transparent 10%, $color-black 33%, transparent 0);
+      // background: $color-red;
+      // background-size: 2px;
+      //  height: 1px!important;
+        border-bottom: 1px solid black;
+
+        height: 1px;
   }
 
   &::-webkit-scrollbar {
@@ -60,7 +66,11 @@
   overflow-y: scroll;
 
   &::-webkit-scrollbar-track {
-    background: linear-gradient(90deg, transparent 10%, $color-black 33%, transparent 0);
+      //background: linear-gradient(90deg, transparent 10%, $color-black 33%, transparent 0);
+      //background: $color-black;
+      //background: linear-gradient(90deg, transparent 10%, $color-black 33%, transparent 0);
+      width: 1px;
+              border-right: 1px solid black;
   }
 
   &::-webkit-scrollbar {
