@@ -6,18 +6,27 @@
 
   li {
     display: inline-block;
-    margin: $spacing-12 $spacing-24 $spacing-12 0;
+    margin: $spacing-12 3.75rem $spacing-12 0;
+    padding-left: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
 [dir='rtl'] {
   .menu ul {
     li {
-      margin-left: $spacing-24;
+      margin-left: 3.75rem;
       margin-right: 0;
 
       a {
         margin: 0;
+      }
+
+      &:last-child {
+        margin-left: 0;
       }
     }
   }

@@ -199,6 +199,16 @@
   }
 }
 
+// burmese lang
+:lang(my) {
+  .multi-select {
+    ul li,
+    button {
+      font-family: $Font-Family-NotoSans;
+    }
+  }
+}
+
 [dir='rtl'] {
   .multi-select {
     button {
