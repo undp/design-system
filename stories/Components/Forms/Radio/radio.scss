@@ -5,7 +5,6 @@
 /* radio */
 .radio {
   display: inline-block;
-  margin-right: $spacing-16;
   padding-left: $spacing-24;
   position: relative;
 
@@ -17,6 +16,7 @@
 
     & + label {
       cursor: pointer;
+      font-size: $font-size-16;
 
       span {
         @extend %checbox-radio-before;
@@ -43,6 +43,25 @@
 
     &:focus-visible + label span {
       outline: $color-blue-500 solid 2px;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .radio {
+    padding-left: unset;
+    padding-right: 1.5rem;
+
+    input[type=radio] {
+      left: unset;
+      right: 0;
+
+      & + label {
+        span {
+          left: unset;
+          right: 0;
+        }
+      }
     }
   }
 }
