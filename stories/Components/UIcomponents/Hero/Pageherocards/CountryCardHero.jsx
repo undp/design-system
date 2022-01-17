@@ -8,21 +8,20 @@ import { CountryCard } from '../../../../Molecules/Blocks/CountryCard/CountryCar
 
 export const CountryCardHero = ({ data, title, subtitle }) => {
   useEffect(() => {
-    carousel('.country-card__items', 24, 24, 1, 1, 0, true, true);
-    viewport('.country-card__header h2');
-    viewport('.country-card__header h5');
+    carousel('.pagehero-cards-items', 24, 24, 1, 1, 0, true, true);
+    viewport('.left-right');
   }, []);
   return (
-    <div className="country-card">
-      <div className="grid-x country-card__header">
+    <div className="pagehero-cards">
+      <div className="grid-x pagehero-cards-top">
         <div className="cell large-5 medium-12">
           <Heading type="2" className="left-right" label={title} />
         </div>
-        <div className="cell large-4 medium-12 country-card-subhead">
-          <Heading type="5" className="left-right" label={subtitle} />
+        <div className="cell large-4 medium-12">
+          <Heading type="3" className="left-right" label={subtitle} />
         </div>
       </div>
-      <div className="glide country-card__items">
+      <div className="glide pagehero-cards-items">
         <div className="glide__scrollbar show-for-small" aria-valuemin="0" aria-valuemax="100">
           <span className="glide__scrollbar-drag" />
         </div>

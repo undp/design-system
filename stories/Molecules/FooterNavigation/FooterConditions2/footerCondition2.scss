@@ -42,8 +42,10 @@
   .footer-lists {
     padding-right: 0;
 
-    @include devicebreak(medium) {
-      li {
+    li {
+      padding-right: 0;
+
+      @include devicebreak(medium) {
         margin-left: 0;
         margin-right: 2.25rem;
       }

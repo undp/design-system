@@ -11,28 +11,25 @@ export const PageHero = ({
   data, title, content, variant, imgsrc, imgalt,
 }) => {
   useEffect(() => {
-    viewport('.pagehero-wrapper__subtitle');
-    viewport('.pagehero-wrapper__title');
-    expandToSize('#pagehero');
+    viewport('.left-right');
+    expandToSize('.pagehero-full');
   }, []);
   return (
-    <div className="pagehero-wrapper" id="pagehero">
+    <div className="pagehero-full">
       {variant === 'video'
         ? (
-          <div className="pagehero-wrapper__background">
-            <Video src={BackgroundVideo} width="100%" height="100%" />
-          </div>
+          <Video src={BackgroundVideo} width="100%" height="100%" />
         )
         : (
-          <div className="pagehero-wrapper__background overlay-grey">
+          <div className="overlay-grey">
             <img src={imgsrc} alt={imgalt} />
           </div>
         )}
-      <div className="grid-x">
-        <div className="cell large-6 medium-9 pagehero__content">
+      <div className="grid-x pagehero-content">
+        <div className="cell medium-6 medium-offset-1">
           <Breadcrumbcomponent data={data} Color="White" />
-          {content && <Heading type="4" className="pagehero-wrapper__subtitle color-white left-right" label={content} />}
-          {title && <Heading type="2" className="pagehero-wrapper__title color-white left-right" label={title} />}
+          {content && <Heading type="4" className="color-white left-right" label={content} />}
+          {title && <Heading type="2" className="color-white left-right" label={title} />}
         </div>
       </div>
     </div>

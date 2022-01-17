@@ -146,7 +146,9 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
 [dir='rtl'] {
   .content-card {
     .image {
-      @include transform(scaleX(-1));
+      &::before{
+        @include transform(scaleX(-1));
+      }
     }
 
     &:hover {
