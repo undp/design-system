@@ -8,8 +8,9 @@
 }
 
 .arrow-expand {
-  min-width: $spacing-16;
   display: inline-block;
+  width: 100%;
+  max-width: 6rem;
 
   i {
     width: 0;
