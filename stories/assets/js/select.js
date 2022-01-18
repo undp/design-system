@@ -99,8 +99,6 @@ class Select {
         this.$selectOptions[0].scrollTop = element.offsetTop;
       }
     }
-
-    //this.changeSelectedOption();
   }
 
   defocusItem(element) {
