@@ -1,6 +1,7 @@
 import React from 'react';
 import './imagecaption.scss';
 import { Imagecredit } from '../../Atom/Images/Imagecredit/Imagecredit';
+import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 
 export const caption_options = {
   true: '',
@@ -32,7 +33,8 @@ export const Imagecaption = ({
       ) : (
         <figcaption className={cls('image__caption', `${opacityonly}`, `${caption_variant}`, `${credit_variant}`)}>
           {args.caption === 'true' && (
-          <div className="image__caption_para">{paragraph}</div>
+          <P label={paragraph} />
+
           )}
           {args.credit === 'true' && <Imagecredit label={label} name={name} />}
         </figcaption>

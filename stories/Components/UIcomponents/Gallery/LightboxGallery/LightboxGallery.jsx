@@ -29,12 +29,10 @@ export const LightboxGallery = ({
                     <li>
                       <a href={item.galleryimg1} class="glightbox" data-glightbox="description:.image__description; descPosition:left;">
                         <figure>
-                          <div className="image"><img src={item.galleryimg1} alt="image" /></div>
+                          <div className="image"><img src={item.galleryimg1} alt="image"/></div>
                             <div class="image__description">
                               <figcaption class="image__caption">
-                                <div class="image__caption_para">
-                                {item.paragraph}
-                                </div>
+                                 <P label={item.paragraph}/>
                                 <div class="credits">
                                   {item.label}
                                 </div>
