@@ -53,60 +53,26 @@ export const getCaptionForLocale = (locale) => {
   }
 `}</style>
 
-# Feature Content Card Component
+# Bio Content Card Component
 
-The Feature Content Card component defines a card of information data with some items - Tag, Title, Image, Paragraph, and CTA Link. We are using a grid system to manage the different types of sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
-
-<div className="subheading">Feature Card With Image</div>
-
-By default Feature content cards are show the information about the card with related fields like Tag, Title, Image, Description, and CTA Link. When we mouse over the card (On hover) it shows the image.
-
-<div className="subheading">Feature Card Without Image</div>
-
-When We mouse over the card (On hover) it shows the yellow color except the image.
-
-<div className="subheading">Story Controls</div>
-
-We can check all types of feature card variants by storybook <code> controls </code> .
-
-<ul>
-<li>the variant we check the option of card like <code>with image</code> and <code>without image</code></li>
-<li>n the column, we check the option of card sizes like <code>large</code> , <code>medium</code> , <code>small</code> that's belong to the grid.</li>
-</ul>
-
-<div className="subheading2">Modifier class</div>
-
-<code>with-image</code> <code>without-image</code> <code>feature__card--large</code> <code>feature__card--medium</code> 
-<code>feature__card--small</code> <code>large</code> <code>medium</code> <code>small</code>
-
+The Bio Content Card component defines a card of information data with some items -  Title, Image, Paragraph, and CTA Link. We are using a grid system to manage the different types of sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
 
 <Canvas>
-  <Story name="Bio Cards" parameters={{ docs: { source: { code: `<div class="grid-x grid-margin-x">
-  <div class="cell large-8 feature__card--large">
-    <a href="#" class="feature__card feature__card--with-image">
-      <div class="feature__card_slide">
-        <div
-          class="feature__card_image"
-          style='background-image: url("static/media/stories/assets/images/card2.jpg");'
-        ></div>
+  <Story name="Bio Cards" parameters={{ docs: { source: { code: `<div class="grid-x bio-card medium yellow">
+  <div class="cell large-3">
+    <a href="#" role="button" data-toggle="modal" data-target-modal="#bioCard">
+      <div class="card-thumbnail__image">
+        <img src="static/media/bio.jpg" alt="static/media/bio.jpg" />
       </div>
-      <article class="feature__card_content">
-        <div class="feature__card_tag">CONTENT TAG</div>
-        <div class="feature__card_description">
-          <h4>
-            Mongolia receives new $23.1 million GCF grant to strengthen climate
-            resilience
-          </h4>
+      <article class="bio-card__content">
+        <div class="bio-card__description left-right inviewport">
+          <h5>Firstname Lastname</h5>
           <p>
-            With the new Green Climate Fund grant, UNDP-supported project will
-            benefit close to one million vulnerable population..
+            Director of UNDP’s Representation Office in Brussels, UN
+            Secretary-General’s Representative
           </p>
         </div>
-        <div class="feature__cta">
-          <a class="cta__link cta--arrow" href="javascript:void(0)">
-            READ MORE
-          </a>
-        </div>
+        <span class="cta__link cta--arrow">READ MORE</span>
       </article>
     </a>
   </div>
@@ -118,12 +84,11 @@ We can check all types of feature card variants by storybook <code> controls </c
   </Story>
 </Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>featuredContentCard.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Usage
+
+- Take HTML from the HTML tab in the canvas
+- **To use SCSS include the following files in your implementation**
+- Include the common SCSS files like variables, mixin from <code>assets/scss</code>
+- Component SCSS file: <code>featuredContentCard.scss</code>
+- **To use CSS include the following files in your implementation**
+- The compiled CSS file from <code>assets/css/style.css</code>
