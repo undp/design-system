@@ -28,12 +28,10 @@ export const StatsCards = ({
 
   return (
     <div className={cls('stats-card', `${size}`, `${Hovercolors}`)}>
-      <div className="stats-card-box">
-        {Size == 'Extra_large' || Size == 'Large' ? (<Heading type="3" label={title} />) : (<></>)}
-        <Heading type="2" label={number} />
-        <Heading type="4" label={percent} />
-        <P label={content} />
-      </div>
+      {Size == 'Extra_large' || Size == 'Large' ? (<Heading type="3" label={title} />) : (<></>)}
+      <Heading type="2" label={number} />
+      <Heading type="4" label={percent} />
+      <P label={content} />
     </div>
   );
 };
