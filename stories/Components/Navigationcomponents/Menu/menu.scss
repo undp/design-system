@@ -17,9 +17,12 @@
 
 [dir='rtl'] {
   .menu ul {
+    padding-right: 0;
+
     li {
       margin-left: 3.75rem;
       margin-right: 0;
+      padding-right: 0;
 
       a {
         margin: 0;
