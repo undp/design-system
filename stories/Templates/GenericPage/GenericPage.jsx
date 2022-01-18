@@ -142,6 +142,7 @@ export const GenericPage = ({
               <ContentCard
                 data={ContentCardData.groupcontentdata}
                 buttontype={ContentCardData.buttonname}
+                Hovercolors="yellow"
               />
             </div>
           </div>

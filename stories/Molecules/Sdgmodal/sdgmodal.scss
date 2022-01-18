@@ -134,15 +134,11 @@ body.sdgmodal-open {
   }
 
   .sdg-content {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
-    @include transition(background-color 0.9s ease);
-
     &:hover {
-      color: $color-white;
-
+      h4,
+      h5,
       h6,
+      p,
       .cta__link {
         color: $color-white;
 
@@ -150,6 +146,10 @@ body.sdgmodal-open {
           background-image: url(#{$img-path-Iconback}/arrow-right-white.svg);
         }
       }
+    }
+
+    &.color {
+      @include transition(background-color 0.5s ease);
     }
   }
 
@@ -738,8 +738,10 @@ body.sdgmodal-open {
   margin-top: $spacing-96;
 
   .content-data {
+    margin-top: $spacing-24;
+
     > div {
-      margin-top: $spacing-24;
+      margin-bottom: $spacing-24;
     }
   }
 

@@ -6,19 +6,30 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'bl
 $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
 
 .content-card {
-  @extend %img_none;
-
   background-color: $color-white;
-  border: 0;
   border-top: 2px solid $color-black;
-  display: block;
-  margin-bottom: 2.375rem;
+  height: 100%;
+  word-break: break-word;
+
+  > a {
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    padding-bottom: 2.625rem;
+    position: relative;
+  }
 
   h6 {
     @extend %carousel_tag;
 
     margin-bottom: 0;
     padding: $spacing-16 $spacing-24 1.625rem $spacing-24;
+  }
+
+  &.card {
+    h6 {
+      padding-bottom: $spacing-16;
+    }
   }
 
   .image {
@@ -34,67 +45,51 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
     &::before {
       @extend %absolute__content;
 
-      @include transition(all 0.6s);
+      @include transition(opacity 0.5s ease);
 
       opacity: 0;
     }
   }
 
   p {
-    display: block;
     font-size: $font-size-16;
-    letter-spacing: 0;
-  }
-
-  &.yellow,
-  &.red,
-  &.green,
-  &.blue {
-    &:hover {
-      background-color: $color-white;
-    }
+    margin: 0;
+    padding-top: $spacing-16;
   }
 
   &.card,
-  &.card-yellow {
-    &.yellow,
-    &.red,
-    &.green,
-    &.blue,
-    &.gray {
-      @include transition(background-color 0.9s ease);
-
-      background-color: $color-white;
-      display: flex;
-      flex-wrap: wrap;
-      height: 100%;
-    }
-
+  &.card-color {
     &:hover {
       @each $name, $color in $colors {
         &.#{$name} {
-          @include transition(opacity 0.9s ease);
-
           background-color: #{$color};
+        }
+      }
+
+      &.red {
+        .cta--space::after {
+          filter: invert(0) brightness(0);
+        }
+
+        .cta--arrow::after {
+          background-image: url(#{$img-path-Iconfourback}/arrow-right.svg);
         }
       }
     }
   }
 
-  &.card-yellow {
+  &.card-color {
+    @include transition(background-color 0.5s ease);
+
     @each $name, $color in $backgroundcolors {
       &.#{$name} {
         background-color: #{$color};
       }
     }
-
-    .image {
-      display: none;
-    }
   }
 
   &:hover {
-    @include transition(0.5s ease);
+    background-color: $color-gray-100;
 
     .image::before {
       opacity: 0.75;
@@ -111,28 +106,32 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
     }
   }
 
+  &-container {
+    .cell {
+      margin-bottom: $spacing-32;
+    }
+  }
+
   @each $name, $color in $colors {
     &.#{$name} {
       .image::before {
         @include background-image(42deg, #{$color}, transparent 80%);
-        @include transition(opacity 0.9s ease);
       }
     }
   }
 }
 
-.content-card__caption {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: $spacing-16 $spacing-24 $spacing-24;
+.content-caption {
+  padding: $spacing-16 $spacing-24 $spacing-32 $spacing-24;
 
-  h5 {
-    margin-bottom: $spacing-24;
+  h5,
+  h4 {
+    margin-bottom: 0;
   }
 
   .cta__link {
-    margin-top: $spacing-08;
+    bottom: $spacing-24;
+    position: absolute;
   }
 
   &_cart {
@@ -146,38 +145,22 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
 
 [dir='rtl'] {
   .content-card {
-
-    $colors: (
-      'yellow': $color-yellow,
-      'red': $color-red,
-      'green': $color-green,
-      'blue': $color-azure,
-    );
-
-    &:hover {
-      .cta--space::after {
-        @include transform(translate(-50%, 0) rotate(180deg));
-      }
-
-      .cta--arrow::after {
-        margin-left: 0;
-        margin-right: 0.25rem;
-      }
+    .image {
+      @include transform(scaleX(-1));
     }
 
-    @each $name, $color in $colors {
-      &.#{$name} {
-        .image::before {
-          @include background-image(42deg, #{$color}, transparent 80%);
-          @include transition(opacity 0.9s ease);
+    &:hover {
+      .cta {
+        &--space::after {
+          @include transform(translate(-50%, 0) rotate(180deg));
+        }
+
+        &--arrow::after {
+          margin-left: 0;
+          margin-right: 0.25rem;
         }
       }
     }
-  }
-
-  .image {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
   }
 }
 
@@ -187,6 +170,5 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
     font-size: 1rem;
   }
 }
-
 
 /* content-card start */

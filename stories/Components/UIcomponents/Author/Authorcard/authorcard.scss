@@ -5,6 +5,7 @@
   a {
     display: block;
     margin-bottom: $font-size-32;
+    word-break: break-word;
 
     &:hover {
       .cta__link::after {

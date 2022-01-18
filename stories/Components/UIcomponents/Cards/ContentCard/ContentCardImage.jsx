@@ -4,19 +4,21 @@ import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
+
 export const ContentCardImage = ({
   data, Hovercolors,
 }) => (
   <div className="grid-x grid-margin-x">
     {data.map((item, index) => (
       <div key={index} className="cell medium-4">
-        <div className={['content-card', `${Hovercolors}`].join(' ')}>
+        <div className={cls('content-card', `${Hovercolors}`)}>
           <a href={item.link}>
             <Heading type="6" label={item.contenttile} />
             <div className="image">
               <img src={item.imgback} alt={item.imgback} />
             </div>
-            <div className="content-card__caption">
+            <div className="content-caption">
               <Heading type="5" label={item.contentname} />
               <Ctalink label={item.button} Type="Space" />
             </div>

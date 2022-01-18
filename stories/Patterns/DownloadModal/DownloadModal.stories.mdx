@@ -85,6 +85,7 @@ export const statsArray = (locale) => {
     }],
     button: 'DOWNLOAD',
     select: 'Select language',
+    content: ''
     }; return engText;
     case 'arabic': const arabicText = {data: [{
       title: 'عنوان المنشور طويل جدا - باستو',
@@ -167,7 +168,8 @@ export const statsArray = (locale) => {
       datalang: 'portuguese'
     }],
     button: 'تحميل',
-    select: 'اختار اللغة'
+    select: 'اختار اللغة',
+    content: ''
     }; return arabicText;
     case 'burmese': const burmeseText = {data: [{
       title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ခေါက်ဆွဲ',
@@ -250,7 +252,8 @@ export const statsArray = (locale) => {
       datalang: 'portuguese'
     }],
     button: 'ဒေါင်းလုဒ်လုပ်ပါ။',
-    select: 'ဘာသာစကားကို ရွေးပါ။'
+    select: 'ဘာသာစကားကို ရွေးပါ။',
+    content: ''
     }; return burmeseText;
     case 'japanese': const japaneseText = {data: [{
       title: '出版物のタイトルはかなり長い - パスト',
@@ -333,7 +336,8 @@ export const statsArray = (locale) => {
       datalang: 'portuguese'
     }],
     button: 'ダウンロード',
-    select: '言語を選択する'
+    select: '言語を選択する',
+    content: ''
     }; return japaneseText;
     default:
     const dummy =  {data: [{
@@ -418,6 +422,7 @@ export const statsArray = (locale) => {
     }],
     button: 'DOWNLOAD',
     select: 'Select language',
+    content: ''
     };
     return dummy
   }
@@ -458,7 +463,7 @@ The Download Modal Component is created for showing the modal popup include: Ima
 <Story name="Download Modal">
   {(args, { globals: { locale } }) => {
     const caption = statsArray(locale);
-    return <DownloadModal data={caption.data} button={caption.button} select={caption.select} {...args}></DownloadModal>;
+    return <DownloadModal data={caption.data} button={caption.button} select={caption.select} content={caption.content} {...args}></DownloadModal>;
   }}
 </Story>
 
