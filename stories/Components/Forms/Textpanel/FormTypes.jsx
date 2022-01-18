@@ -21,11 +21,12 @@ export const FormTypes = ({
   para,
   ...args
 }) => (
-  <form>
-    <div className="grid-container form-wrapper">
+  
+  <div className="grid-container form-wrapper">
+    <form>
       {args.variant === 'text panel and form' && (
         <div className="grid-x grid-margin-x grid-margin-y text-panel">
-          <div className="medium-5 cell large-offset-1 mt-0">
+          <div className="medium-5 cell large-offset-1">
             <Heading type="2" label={anchorTag} />
             <p>{para}</p>
           </div>
@@ -180,6 +181,7 @@ export const FormTypes = ({
           </div>
         </div>
       )}
-    </div>
-  </form>
+    </form>
+  </div>
+  
 );
