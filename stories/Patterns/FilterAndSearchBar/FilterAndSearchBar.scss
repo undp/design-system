@@ -72,6 +72,17 @@
       margin: 0 0 $spacing-12 $spacing-12;
     }
   }
+  .multi-select{
+    button{
+      display: flex;
+      span{
+        padding-right: 5px;
+      }
+    }
+    ul{
+    padding: 0 1rem;
+    }
+  }
 }
 
 /* toggle search end */
