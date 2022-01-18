@@ -11,7 +11,6 @@
 
   li {
     border-bottom: 1px solid $color-gray-500;
-    cursor: pointer;
     list-style: none;
     margin-bottom: 0;
     overflow: hidden;
@@ -21,13 +20,12 @@
     button {
       background: transparent;
       border: none;
-      display: block;
       font-size: $font-size-25;
       font-weight: 400;
       line-height: 1.15;
-      margin: 0 auto;
       padding: $spacing-16 0 $spacing-24;
       text-align: left;
+      cursor: pointer;
       width: 100%;
 
       &::before {
