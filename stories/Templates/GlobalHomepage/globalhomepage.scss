@@ -67,8 +67,8 @@
     margin: 0;
   }
 
-  .hero-split {
-    @include devicebreak(small) {
+  @include devicebreak(small) {
+    .homepage-hero-tall {
       margin-top: 7rem;
     }
   }

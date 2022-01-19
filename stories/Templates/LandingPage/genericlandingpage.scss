@@ -2,6 +2,7 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
 @import '../PublicationPage/publicationpage.scss';
+
 // margin styles
 .margin-top {
   &-69 {
@@ -26,61 +27,6 @@
     }
   }
 
-  .pagehero {
-    &_right_box {
-      height: auto;
-      margin-top: 0;
-      position: relative;
-      width: 100%;
-
-      @include devicebreak(medium) {
-        height: 100%;
-        margin-top: 7rem;
-        position: inherit;
-      }
-
-      @include devicebreak(xlarge) {
-        height: 100%;
-        margin-top: 9.125rem;
-        position: inherit;
-      }
-    }
-
-    &__content {
-      margin-top: $spacing-40;
-      padding-top: $spacing-64;
-
-      @include devicebreak(medium) {
-        margin-top: 8.688rem;
-        padding-top: $spacing-80;
-      }
-
-      .breadcrumb {
-        padding-left: 0;
-      }
-    }
-
-    &-option {
-      margin-bottom: 0;
-
-      @include devicebreak(medium) {
-        margin-bottom: 5.879rem;
-      }
-
-      &__title {
-        display: none;
-      }
-
-      &__subtitle {
-        margin-top: 1.75rem;
-
-        @include devicebreak(medium) {
-          margin-top: 12.625rem;
-        }
-      }
-    }
-  }
-
   .content-card-container {
     margin-top: $spacing-24;
 
@@ -94,19 +40,22 @@
       }
     }
   }
-}
 
-.sign-up {
-  &.blue {
-    .sign-up--field input {
-      background: transparent;
-      border-color: $color-white;
+  .pagehero {
+    @include devicebreak(small) {
+      &-content {
+        h2 {
+          margin-top: 1.75rem;
+        }
+      }
+    }
 
-      &::placeholder {
-        color: $color-white;
+    &-tall {
+      margin-top: $spacing-40;
+
+      @include devicebreak(medium) {
+        margin-top: 7rem;
       }
     }
   }
 }
-
-/* page hero end */

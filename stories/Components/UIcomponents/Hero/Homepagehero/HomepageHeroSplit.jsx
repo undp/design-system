@@ -11,33 +11,30 @@ export const Homepageherosplit = ({
   title, content, button, variant,
 }) => {
   useEffect(() => {
-    viewport('.hero-split__title');
-    viewport('.hero-split__subtitle');
+    viewport('.left-right');
   }, []);
   return (
-    <div className="hero-split">
+    <div className="homepage-hero-tall">
       <div className="grid-x">
         <div className="cell medium-5 medium-offset-1">
-          <div className="hero-split__content ">
-            {content && <Heading type="1" className="hero-split__title left-right" label={title} />}
-            {content && <Heading type="4" className="hero-split__subtitle left-right" label={content} />}
+        <div className="homepage-hero-tall-content">
+            {content && <Heading type="1" className="left-right" label={title} />}
+            {content && <Heading type="4" className="left-right" label={content} />}
             <div className="show-large">
               <CtaButton label={button} />
             </div>
           </div>
         </div>
-        <div className="cell medium-6 hero_right">
-          {variant === 'video'
-            ? (
-              <div className="hero_right_box">
+        <div className="cell medium-6">
+          <div className="homepage-hero-image">
+            {variant === 'video'
+              ? (
                 <Video src={BackgroundVideo} width="100%" height="100%" />
-              </div>
             )
             : (
-              <div className="hero_right_box">
                 <img src={BackgroundImg} alt={BackgroundImg} />
-              </div>
             )}
+          </div>
           <div className="show-small">
             <CtaButton label={button} />
           </div>

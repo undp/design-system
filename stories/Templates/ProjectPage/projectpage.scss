@@ -48,15 +48,16 @@
     &-hero {
       .breadcrumb {
         margin-top: $spacing-16;
-        padding-left: $spacing-16;
 
         @include devicebreak(medium) {
           margin-top: $spacing-48;
         }
       }
 
-      .pagehero-wrapper__title {
-        font-size: 3.1rem;
+      .pagehero-full {
+        h2 {
+          font-size: 3.1rem;
+        }
       }
     }
   }

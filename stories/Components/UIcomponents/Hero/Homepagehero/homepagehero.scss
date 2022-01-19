@@ -3,222 +3,155 @@
 @import '../../../../assets/scss/base';
 
 /* global homepage hero */
-.hero {
-  &-wrapper {
+.homepage-hero {
+  &-full {
     @extend %expand_to_size;
 
-    align-items: flex-end;
-    display: flex;
-    min-height: 649px;
     position: relative;
 
-    @include devicebreak(medium) {
-      align-items: center;
-      min-height: 940px;
+    .overlay-grey {
+      @extend %absolute__content;
     }
 
-    &__content {
-      margin-left: 0;
+    img {
+      @extend %img-cover;
+    }
+
+    video {
+      @extend %absolute__content;
+      @extend %img-cover;
+    }
+
+    h1 {
+      margin-bottom: $spacing-40;
+    }
+
+    h4 {
+      margin-bottom: 0;
+      padding-bottom: $spacing-64;
+    }
+
+    .button {
+      margin-bottom: $spacing-24;
+
+      @include devicebreak(medium) {
+        margin-bottom: 10.188rem;
+      }
+
+      @include devicebreak(small) {
+        margin-top: $spacing-64;
+      }
+    }
+  }
+
+  &-content {
+    @include devicebreak(small) {
+      padding: 0 $spacing-24;
+    }
+
+    & > div {
       padding-top: 10.438rem;
       position: relative;
 
       @include devicebreak(medium) {
-        margin-left: $spacing-64;
-        padding-top: 13.125rem;
-      }
-
-      .button {
-        margin-bottom: $spacing-24;
-        margin-top: $spacing-64;
-
-        @include devicebreak(medium) {
-          margin-bottom: $spacing-160;
-          margin-top: 0;
-        }
-      }
-    }
-
-    &__background {
-      height: 100%;
-      overflow: hidden;
-      position: absolute;
-      width: 100%;
-
-      img {
-        @extend %img-cover;
-      }
-    }
-
-    &__container {
-      padding: 0 $spacing-24;
-    }
-
-    &__title {
-      margin-bottom: $spacing-40;
-      text-transform: uppercase;
-    }
-
-    &__subtitle {
-      margin: 0;
-      padding-bottom: $spacing-64;
-    }
-  }
-
-  &_right {
-    overflow: hidden;
-    position: relative;
-
-    &_box {
-      height: auto;
-      margin-bottom: $spacing-32;
-      position: relative;
-      width: 100%;
-
-      @include devicebreak(medium) {
-        height: 100%;
-        margin-bottom: 0;
-        position: absolute;
-      }
-
-      video {
-        height: auto;
-
-        @include devicebreak(medium) {
-          height: 100%;
-        }
-      }
-
-      img {
-        height: auto;
-        width: 100%;
-
-        @include devicebreak(medium) {
-          height: 100%;
-          max-width: none;
-          width: auto;
-        }
+        padding-top: 13.688rem;
       }
     }
   }
 
-  &-split {
+  &-tall {
     word-break: break-word;
 
-    &__content {
-      padding: 0;
-
+    &-content {
       @include devicebreak(medium) {
-        padding: $spacing-136 1.375rem $spacing-136 0;
+        padding: 8.563rem 1.375rem 8.563rem 0;
       }
 
-      @include devicebreak(large) {
-        padding-left: $spacing-64;
+      h1 {
+        margin-bottom: $spacing-16;
+
+        @include devicebreak(medium) {
+          margin-bottom: $spacing-40;
+        }
       }
-    }
 
-    &__title {
-      margin-bottom: $spacing-16;
-      text-transform: uppercase;
+      h4 {
+        margin-bottom: $spacing-32;
 
-      @include devicebreak(medium) {
-        margin-bottom: $spacing-40;
-      }
-    }
-
-    &__subtitle {
-      margin: 0;
-      padding-bottom: $spacing-32;
-
-      @include devicebreak(medium) {
-        padding-bottom: $spacing-64;
+        @include devicebreak(medium) {
+          margin-bottom: $spacing-64;
+        }
       }
     }
   }
 
-  &-option {
+  &-image {
+    width: 100%;
+
+    @include devicebreak(medium) {
+      height: 100%;
+    }
+
+    @include devicebreak(small) {
+      margin-bottom: 2rem;
+    }
+
+    img,
+    video {
+      @extend %img-cover;
+    }
+  }
+
+  &-wide {
+    position: relative;
+
     @include devicebreak(medium) {
       border-left: 3rem solid $color-gray-300;
     }
 
-    &__content {
-      padding: 0;
-
-      @include devicebreak(medium) {
-        padding: 0 1.625rem 0 $spacing-64;
-      }
-    }
-
     h1 {
       margin-bottom: $spacing-16;
-      padding-left: 0;
-      text-transform: uppercase;
 
       @include devicebreak(medium) {
         margin-bottom: $spacing-80;
-        padding-left: $spacing-64;
+        padding-top: 4.688rem;
+      }
+    }
+
+    h3 {
+      margin-bottom: $spacing-24;
+
+      + h1 {
+        padding-top: 0;
       }
     }
 
     h5 {
-      margin: 0;
-      padding-bottom: $spacing-32;
+      margin-bottom: $spacing-32;
 
       @include devicebreak(medium) {
-        padding-bottom: 7.75rem;
+        margin-bottom: 7.75rem;
+        padding-right: 1.625rem;
       }
     }
   }
 }
 
-[dir='rtl'] {
-  .hero {
-    &-wrapper {
-      &__content {
-        margin-left: 0;
-        margin-right: 0;
-
-        @include devicebreak(medium) {
-          margin-right: $spacing-64;
-        }
-      }
-    }
-
-    &-split {
-      &__content {
-        padding-left: 0;
+[dir=rtl] {
+  .homepage-hero {
+    @include devicebreak(medium) {
+      &-tall-content {
+        padding-left: 1.375rem;
         padding-right: 0;
-
-        @include devicebreak(medium) {
-          padding-left: 1.375rem;
-        }
-
-        @include devicebreak(large) {
-          padding-right: $spacing-64;
-        }
       }
-    }
 
-    &-option {
-      @include devicebreak(medium) {
+      &-wide {
         border-left: 0;
         border-right: 3rem solid $color-gray-300;
-      }
 
-      &__content {
-        padding: 0;
-
-        @include devicebreak(medium) {
+        h5 {
           padding-left: 1.625rem;
-          padding-right: $spacing-64;
-        }
-      }
-
-      h1 {
-        padding-left: 0;
-        padding-right: 0;
-
-        @include devicebreak(medium) {
-          padding-right: $spacing-64;
+          padding-right: 0;
         }
       }
     }

@@ -2,30 +2,74 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/base';
 
-/* country card hero start */
-.country-card {
-  &__header {
+/* pagehero card hero start */
+.pagehero-cards {
+  @include devicebreak(medium) {
+    &-items {
+      .glide__slides {
+        flex-wrap: wrap;
+      }
+    }
+
+    &-box {
+      margin-bottom: $spacing-24;
+
+      &.glide__slide {
+        height: auto;
+      }
+    }
+  }
+
+  &-top {
     justify-content: center;
+    position: relative;
 
     h2 {
       padding-bottom: 1.875rem;
       text-transform: uppercase;
 
-      @include devicebreak(medium) {
+      @include devicebreak(large) {
         padding-bottom: 0;
       }
     }
 
-    h5 {
-      font-size: 1.563rem;
+    h3 {
+      font-size: $font-size-25;
       font-weight: 700;
-      line-height: 2.6rem;
       margin-bottom: 2.188rem;
       padding-top: 1.25rem;
 
-      @include devicebreak(medium) {
+      @include devicebreak(large) {
         font-size: 1.875rem;
         padding-top: 0;
+      }
+    }
+
+    .large-4 {
+      position: relative;
+
+      @include devicebreak(large) {
+        margin-left: $spacing-64;
+      }
+
+      &::before {
+        @extend %absolute__content;
+
+        @include transform(rotate(90deg));
+
+        background-color: $color-dark-red;
+        height: 7rem;
+        left: 3.5rem;
+        top: -4rem;
+        width: 3px;
+
+        @include devicebreak(large) {
+          @include transform(rotate(0));
+
+          height: 80%;
+          left: -60px;
+          top: 0;
+        }
       }
     }
   }
@@ -56,22 +100,11 @@
       }
     }
   }
-
-  &--item {
-    &.glide__slide {
-      @include devicebreak(medium) {
-        height: auto;
-      }
-    }
-  }
 }
 
 [dir='rtl'] {
-  .country-card {
-    &-subhead {
-      margin-left: 0;
-      margin-right: 0;
-
+  .pagehero-cards-top {
+    .large-4 {
       @include devicebreak(medium) {
         margin-right: $spacing-64;
       }
@@ -84,12 +117,7 @@
         }
       }
     }
-
-    &__subtitle {
-      padding-left: 0;
-      padding-right: $spacing-64;
-    }
   }
 }
 
-/* country card hero end */
+/* pagehero card hero end */
