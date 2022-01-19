@@ -15,7 +15,7 @@ export const DownloadRow = ({
       {args.type === 'Checkbox' && <Checkbox value={value} /> }
       {args.type === 'Download' && (
       <a href="#" aria-label="download" target="_blank">
-        <span className="download-icon" />
+        <span className="download-icon" ><i/></span>
         {' '}
       </a>
       )}
