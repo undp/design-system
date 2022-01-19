@@ -1,9 +1,9 @@
 @import '../../../assets/scss/mixins';
 
 /* card_thumbnail__image start */
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
 
-.card-thumbnail__image {
+div.card-thumbnail__image {
   display: inline-flex;
   position: relative;
 
@@ -31,6 +31,7 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
 [dir='rtl'] {
   .card-thumbnail__image {
     &:hover {
+      
       @each $name, $color in $colors {
         &.#{$name}::before {
           @include background-image(42deg, #{$color}, transparent 80%);

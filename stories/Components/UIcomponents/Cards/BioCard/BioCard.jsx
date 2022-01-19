@@ -32,7 +32,7 @@ export const hover_color_options = {
   yellow: 'yellow',
   green: 'green',
   red: 'red',
-  azure: 'azure',
+  blue: 'blue',
 };
 
 export const BioCard = ({

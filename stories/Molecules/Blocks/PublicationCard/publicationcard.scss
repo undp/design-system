@@ -2,9 +2,9 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
 
-.publication-card {
+div.publication-card {
   display: inline-block;
 
   @include devicebreak(medium) {

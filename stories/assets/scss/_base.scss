@@ -167,7 +167,6 @@
 }
 
 // global colors
-
 // color map gradient
 $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green': rgba(92 222 83 / 82%), 'blue': rgba(94 232 246 / 82%));
 
@@ -178,7 +177,83 @@ $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green
       @include background-image(42deg, #{$color}, transparent 80%);
     }
 
-    //
+    //bio-card
+    .bio-card a {
+      .card-thumbnail__image::before {
+        @include background(42deg, #{$color}, transparent 80%);
+      }
+    }
+
+    //author__img
+    .author__img:hover{
+      &::before {
+        @include background(42deg, #{$color}, transparent 80%);
+      }
+    }
+
+    //publication-thumbnail__image
+    .publication-thumbnail__image{
+       &::after {
+        @include background-image(42deg, #{$color}, transparent 80%);
+      }
+    }
+
+    //download card
+    .download-card:hover {
+      .card-thumbnail__image::before {
+        @include background-image(42deg, #{$color}, transparent 80%);
+        opacity: 0.75;
+      }
+      .publication-thumbnail__image{
+       &::after {
+        @include background-image(42deg, #{$color}, transparent 80%);
+        opacity: 0.75;
+        }
+      }
+    }
+
+    //publication-card
+    .publication-card:hover {
+      .publication-thumbnail__image{
+       &::after {
+        @include background-image(42deg, #{$color}, transparent 80%);
+        opacity: 0.75;
+        }
+      }
+    }
+    
+    //stats-panel
+    .stats-panel:hover {
+      &::after {
+         @include background-image(42deg, #{$color}, transparent 80%);
+      }
+      .stats-card {
+        background-color: transparent;
+      }
+    }
+
+    //wide-card
+    .wide-card__image a:hover {
+      &::before {
+        @include background-image(42deg, #{$color}, transparent 80%);
+      }
+    }
+
+    //feature-card
+    .feature__card-slide {
+        &::before {
+           @include background-image(42deg, #{$color}, transparent 80%);
+        }
+      }
+
+    //content-card
+    .content-card {
+       .image {
+        &::before {
+          @include background-image(42deg, #{$color}, transparent 80%);
+        }
+      }
+    }    
   }
 }
 
@@ -193,8 +268,48 @@ $colors-solid: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-gree
         background-color: #{$color};
       }
     }
+
+    //progress-bar
+    .progress-bar {
+      background: #{$color};
+    }
+    
+    //.blockquote
+    .blockquote {
+      background-color: #{$color};
+    }
+
+    //content crad
+    .content-card.card:hover {
+       background-color: #{$color};
+
+      .cta--space::after {
+        filter: invert(0) brightness(0);
+      }
+    }
+
+    //content card - Emphasize
+    .content-card.card-color:hover, .content-card.card-emphasize:hover {
+      background-color: #{$color};
+    }
+
+    //feature-card
+    .feature__card-slide {
+      background: #{$color};
+    }
   }
 }
 
 
-/* base end */
+// color map light-color content card only
+$colors-light: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure);
+
+@each $name, $color in $colors-light {
+  .#{$name} {
+    //content card - Emphasize default state color
+    .content-card.card-emphasize {
+      background-color: #{$color};
+    }
+  }
+}
+/* base end */  
