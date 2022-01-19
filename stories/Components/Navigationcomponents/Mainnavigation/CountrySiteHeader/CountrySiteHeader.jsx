@@ -34,7 +34,7 @@ const CountrySiteHeader = ({
               <Logo src={pnud} alt="UNDP Logo" />
             </a>
             <div className="site-title">
-              <label>{siteTitleData.label}</label>
+              <span>{siteTitleData.label}</span>
               <span>{siteTitleData.span}</span>
             </div>
             {desktopView && <Menu data={navigationData} />}

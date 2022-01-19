@@ -16,14 +16,16 @@
       margin-right: $spacing-32;
     }
     
-    label {
+    span:first-child {
       border-bottom: 1px solid $color-gray-500;
       color: $color-gray-600;
       font-size: $font-size-12;
-      padding-bottom: 0.125rem;
+      padding-bottom: 1px;
+      margin: 0;
+      display: inline-block;
     }
 
-    span {
+    span{
       display: flex;
       margin-top: 0.3rem;
     }
