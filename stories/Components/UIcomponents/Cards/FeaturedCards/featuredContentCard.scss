@@ -3,22 +3,27 @@
 
 /* feature card start */
 .feature__card {
-  background: $color-gray-200;
-  border-bottom: 0;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-
   @include devicebreak(medium) {
-    display: flex;
-  }
-
-  @include devicebreak(medium) {
+    //CTA-link
     .cta__link.cta--arrow {
       width: 100%;
 
       &::after {
         background-position: right top;
+      }
+    }
+
+    //colors
+    $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green': rgba(92 222 83 / 82%), 'blue': rgba(94 232 246 / 82%));
+
+    @each $name, $color in $colors {
+      &.#{$name} {
+        .feature__card-slide {
+          background-color: #{$color};
+          &::before {
+            @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
+          }
+        }
       }
     }
   }
@@ -36,45 +41,56 @@
     }
   }
 
-  &::before {
-    content: '';
-  }
+  a {
+    background: $color-gray-200;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
 
-  &:hover {
-    .feature__card-slide {
-      @include transform(translateX(0));
+    @include devicebreak(medium) {
+      display: flex;
     }
+        
+    &:hover {
+      .feature__card-slide {
+        @include transform(translateX(0));
+      }
 
-    .cta__link.cta--arrow::after {
-      background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
-      margin-left: 0.25rem;
-      width: 6.25rem;
+      .cta__link.cta--arrow::after {
+        background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
+        margin-left: 0.25rem;
+        width: 6.25rem;
 
-      @include devicebreak(medium) {
+        @include devicebreak(medium) {
         max-width: 16.25rem;
-        width: calc(100% - 6.25rem);
-
-        &:hover::after {
           width: calc(100% - 6.25rem);
+
+          &:hover::after {
+            width: calc(100% - 6.25rem);
+          }
+        }
+
+        @include devicebreak(large) {
+          max-width: 16.25rem;
+          width: 6.25rem;
         }
       }
-
-      @include devicebreak(large) {
-        width: 6.25rem;
-      }
     }
   }
 
-  .feature__cta.large-8.medium-8 {
-    .cta__link.cta--arrow::after {
+   //CTA-link
+  .cta__link.large-8.medium-8 {
+    &::after {
       @include devicebreak(medium) {
         max-width: 6.25rem;
       }
     }
   }
 
-  .feature__cta.medium-3 {
-    .cta__link.cta--arrow::after {
+  //CTA-link
+  .cta__link.medium-3 {
+   &::after {
       @include devicebreak(medium) {
         margin-left: 0;
       }
@@ -85,31 +101,7 @@
     }
   }
 
-  &.large {
-    &::before {
-      @include devicebreak(medium) {
-        padding-top: 43%;
-      }
-    }
-  }
-
-  &.small,
-  &.medium {
-    &::before {
-      @include devicebreak(medium) {
-        padding-top: 100%;
-      }
-    }
-
-    .feature__card-content {
-      p {
-        @include devicebreak(medium) {
-          font-size: $font-size-16;
-        }
-      }
-    }
-  }
-
+  //variant image or without-out image
   &.without-image {
     .feature__card-slide {
       z-index: 0;
@@ -119,26 +111,14 @@
       }
     }
   }
-
-  &.image {
-    .feature__card-description {
-      @include devicebreak(medium) {
-        margin-bottom: 6.125rem;
-      }
-    }
-  }
 }
 
+//feature slide
 .feature__card-slide {
   @extend %feature__card;
-
   position: relative;
 
   @include devicebreak(medium) {
-
-    // color map
-    $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green': rgba(92 222 83 / 82%), 'blue': rgba(94 232 246 / 82%));
-
     @include transform(translateX(-105%));
     @include transition(transform 0.3s);
 
@@ -147,16 +127,6 @@
     height: 100%;
     position: absolute;
     z-index: 1;
-
-    @each $name, $color in $colors {
-      &.#{$name} {
-        background-color: #{$color};
-
-        &::before {
-          @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
-        }
-      }
-    }
   }
 
   @include devicebreak(large) {
@@ -192,6 +162,7 @@
   }
 }
 
+//feature content
 .feature__card-content {
   @extend %feature__card;
 
@@ -244,7 +215,7 @@
     }
   }
 
-  .feature__cta {
+  .cta__link {
     margin-bottom: 0;
     margin-top: $spacing-40;
     z-index: 2;
@@ -255,64 +226,7 @@
   }
 }
 
-.large {
-  .feature__card {
-    &::before {
-      @include devicebreak(medium) {
-        padding-top: 43%;
-      }
-    }
-  }
-}
-
-.small,
-.medium {
-  .feature__card {
-    &::before {
-      @include devicebreak(medium) {
-        padding-top: 100%;
-      }
-    }
-  }
-
-  .feature__card-content {
-    p {
-      @include devicebreak(medium) {
-        font-size: $font-size-16;
-      }
-    }
-  }
-}
-
 [dir='rtl'] {
-  .feature__card:hover {
-    .cta--arrow::after {
-      @include transform(rotate(180deg));
-
-      margin-right: 0.25rem;
-    }
-  }
-
-  .feature__card-slide {
-    @include devicebreak(medium) {
-      @include transform(translateX(105%));
-
-      &:hover {
-        @include transform(translateX(0));
-      }
-    }
-
-    &::before {
-      @include devicebreak(medium) {
-        background:
-          transparent
-          linear-gradient(153deg,
-          hsla(0, 0%, 100%, 0.2) 30%,
-          rgba(255, 235, 0, 0.8));
-      }
-    }
-  }
-
   .feature__card {
     @include devicebreak(medium) {
       .cta__link.cta--arrow {
@@ -322,10 +236,44 @@
           margin-left: inherit;
         }
       }
+
+      //colors
+      $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green': rgba(92 222 83 / 82%), 'blue': rgba(94 232 246 / 82%));
+
+      @each $name, $color in $colors {
+        &.#{$name} {
+          .feature__card-slide {
+            background-color: #{$color};
+            &::before {
+              @include background(153deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
+            }
+          }
+        }
+      }
+
+      //feature__card-slide 
+      .feature__card-slide {
+        @include devicebreak(medium) {
+          @include transform(translateX(105%));
+
+          &:hover {
+            @include transform(translateX(0));
+          }
+        }
+      }
     }
 
-    .feature__cta.medium-3 {
-      .cta__link.cta--arrow::after {
+    //hover
+    &:hover {
+      .cta--arrow::after {
+        @include transform(rotate(180deg));
+        margin-right: 0.25rem;
+      }
+    }
+
+    //CTA-link
+    .cta__link.medium-3 {
+      &::after {
         @include devicebreak(medium) {
           margin-right: 0;
         }
@@ -338,5 +286,4 @@
     }
   }
 }
-
 /* feature card end */
