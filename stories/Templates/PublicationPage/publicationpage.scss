@@ -18,18 +18,17 @@
 
   .content-card {
     border: none;
-    margin-top: $spacing-12;
-
-    @include devicebreak(medium) {
-      margin-top: 1.25rem;
-    }
+    margin-bottom: 0;
+    padding-top: $spacing-08;
   }
 
   h2 {
     margin-top: $spacing-48;
+    margin-bottom: $spacing-24;
 
     @include devicebreak(medium) {
       margin-top: $spacing-80;
+      margin-bottom: $spacing-48;
     }
   }
 

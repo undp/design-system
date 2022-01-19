@@ -27,7 +27,7 @@ export const ContentCardWithAndWithoutImage = ({
                 </div>
                 <div className="content-caption">
                   <Heading type="5" label={item.contentname} />
-                  <Ctalink label={item.button} Type={item.btnType} />
+                  <Ctalink label={item.button} Type="arrow" button_option="span"/>
                 </div>
               </a>
             </div>
@@ -58,7 +58,7 @@ export const ContentCardWithAndWithoutImage = ({
                     : (
                       <></>
                     )}
-                  <Ctalink label={item.button} Type={item.btnType} />
+                  <Ctalink label={item.button} Type="arrow" button_option="span"/>
                 </div>
               </a>
             </div>
