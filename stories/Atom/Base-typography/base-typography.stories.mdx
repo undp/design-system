@@ -77,50 +77,24 @@ export const getCaptionForLocaleHeading = (locale) => {
   }}
 />
 
-## Base Typography
+# Base Typography
 Basic elements which the design system has some styling listed here, you can use the elements as it is, without any specific CSS classes. 
 
 
 ### Headings
-We can use the <code>h1/h2/h3/h4/h5/h6 tags</code> in any component to display the headings. h1 for most important heading to h6 for least important heading.
-
-Typographic scale when using headings in text component:
 
 <Canvas>
-  <Story name="H1">
+  <Story name="Headings">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocaleHeading(locale);
-      return <Heading type="1" label={caption.detail1}></Heading>;
-    }}
-  </Story>
-  <Story name="H2">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleHeading(locale);
-      return <Heading type="2" label={caption.detail2}></Heading>;
-    }}
-  </Story>
-  <Story name="H3">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleHeading(locale);
-      return <Heading type="3" label={caption.detail3}></Heading>;
-    }}
-  </Story>
-  <Story name="H4">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleHeading(locale);
-      return <Heading type="4" label={caption.detail4}></Heading>;
-    }}
-  </Story>
-  <Story name="H5">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleHeading(locale);
-      return <Heading type="5" label={caption.detail5}></Heading>;
-    }}
-  </Story>
-  <Story name="H6">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleHeading(locale);
-      return <Heading type="6" label={caption.detail6}></Heading>;
+      return <>
+        <Heading type="1" label={caption.detail1}></Heading>
+        <Heading type="2" label={caption.detail2}></Heading>
+        <Heading type="3" label={caption.detail3}></Heading>
+        <Heading type="4" label={caption.detail4}></Heading>
+        <Heading type="5" label={caption.detail5}></Heading>
+        <Heading type="6" label={caption.detail6}></Heading>
+      </>;
     }}
   </Story>
 </Canvas>
@@ -777,4 +751,4 @@ The <code>dl</code> tag defines the description list, the <code>dt</code> tag de
 
 
 ### Usage
-Include **dist/css/base-minimal.css** file in your HTML file, no other CSS and JS file required.
+- Include **dist/css/base-minimal.css** file in your HTML file, no other CSS and JS file required.
