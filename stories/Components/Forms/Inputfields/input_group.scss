@@ -168,7 +168,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         bottom 12px;
       padding-left: 0.635rem;
       padding-right: $spacing-40;
-      padding-inline-start: $spacing-40;
       text-align: right;
     }
 
@@ -189,9 +188,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   input[type="date"]::-webkit-calendar-picker-indicator {
-    left: inherit;
-    position: absolute;
-    right: 27px;
+    display: none;
   }
 
   input::-webkit-date-and-time-value {
