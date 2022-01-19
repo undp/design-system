@@ -3,64 +3,53 @@
 @import '../../../assets/scss/breakpoints';
 
 /* radio */
-.radio {
-  display: inline-block;
-  padding-left: $spacing-24;
-  position: relative;
+input[type='radio'] {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 2px;
 
-  input[type='radio'] {
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 2px;
+  & + label {
+    cursor: pointer;
+    font-size: $font-size-16;
 
-    & + label {
-      cursor: pointer;
-      font-size: $font-size-16;
+    &::before {
+      @extend %checbox-radio-before;
 
-      span {
-        @extend %checbox-radio-before;
-
-        border-radius: 50%;
-      }
-
-      &:hover span {
-        border-color: $color-light-pink;
-      }
-    }
-
-    &:checked + label span::after {
-      background: $color-dark-red;
       border-radius: 50%;
-      content: '';
-      height: 6px;
-      left: 3px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 6px;
     }
 
-    &:focus-visible + label span {
-      outline: $color-blue-500 solid 2px;
+    &:hover::before {
+      border-color: $color-light-pink;
     }
+  }
+
+  &:checked + label::after {
+    background: $color-dark-red;
+    border-radius: 50%;
+    content: '';
+    height: 6px;
+    left: 5px;
+    position: absolute;
+    top: 52%;
+    transform: translateY(-52%);
+    width: 6px;
+  }
+
+  &:focus-visible + label::before {
+    outline: $color-blue-500 solid 2px;
   }
 }
 
 [dir='rtl'] {
-  .radio {
-    padding-left: unset;
-    padding-right: 1.5rem;
+  input[type=radio] {
+    left: unset;
+    right: 0;
 
-    input[type=radio] {
-      left: unset;
-      right: 0;
-
-      & + label {
-        span {
-          left: unset;
-          right: 0;
-        }
+    & + label {
+      span {
+        left: unset;
+        right: 0;
       }
     }
   }

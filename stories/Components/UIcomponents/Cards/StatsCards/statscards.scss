@@ -7,14 +7,12 @@
   @include transition(300ms all);
 
   background-color: $color-gray-200;
+  box-sizing: border-box;
   word-break: break-all;
 
   @include devicebreak(small) {
     max-width: 351px;
-
-    &-box {
-      padding: $spacing-40;
-    }
+    padding: $spacing-40;
   }
 
   h3 {
@@ -72,18 +70,11 @@
   }
 
   &.x-large {
+    padding: $spacing-40;
+
     @include devicebreak(medium) {
       max-width: 684px;
-    }
-
-    .stats-card {
-      &-box {
-        padding: $spacing-40;
-
-        @include devicebreak(medium) {
-          padding: $spacing-96;
-        }
-      }
+      padding: $spacing-96;
     }
 
     h2 {
@@ -115,29 +106,18 @@
   &.large {
     @include devicebreak(medium) {
       max-width: 448px;
-    }
-
-    .stats-card {
-      &-box {
-        @include devicebreak(medium) {
-          padding: $spacing-96 $spacing-64;
-        }
-      }
+      padding: $spacing-96 $spacing-64;
     }
   }
 
   &.medium {
+    padding: $spacing-48;
+
     @include devicebreak(medium) {
       max-width: 330px;
 
       h4 {
         font-weight: 600;
-      }
-    }
-
-    .stats-card {
-      &-box {
-        padding: $spacing-48;
       }
     }
 
@@ -148,19 +128,11 @@
 
   &.small {
     max-width: 170px;
+    padding: $spacing-24;
 
     @include devicebreak(medium) {
       max-width: 212px;
-    }
-
-    .stats-card {
-      &-box {
-        padding: $spacing-24;
-
-        @include devicebreak(medium) {
-          padding: $spacing-32;
-        }
-      }
+      padding: $spacing-32;
     }
 
     h2 {
@@ -191,16 +163,18 @@
   &:hover {
 
     // color map
-    $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+    $colors: ('red': $color-red, 'green': $color-green, 'blue': $color-azure);
 
-    @each $name, $color in $colors {
-      &.#{$name} {
-        background-color: #{$color};
-      }
-    }
+    background-color: $color-yellow;
 
     & h2 {
       color: $color-black;
     }
+    
+    @each $name, $color in $colors {
+      &.#{$name} {
+        background-color: #{$color};
+      }
+    }    
   }
 }

@@ -5,8 +5,15 @@ import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
+export const Hovercolors_options = {
+  yellow: '',
+  red: 'red',
+  green: 'green',
+  blue: 'blue',
+};
+
 export const StatsCards = ({
-  title, number, percent, content, Size, Hovercolors,
+  title, number, percent, content, Size, ...args
 }) => {
   let size;
   switch (Size) {
@@ -25,19 +32,17 @@ export const StatsCards = ({
     default:
       size = 'medium';
   }
-
+  let screen_variant = Hovercolors_options[`${args.Hovercolors}`];
   return (
-    <div className={cls('stats-card', `${size}`, `${Hovercolors}`)}>
-      <div className="stats-card-box">
-        {Size == 'Extra_large' || Size == 'Large' ? (<Heading type="3" label={title} />) : (<></>)}
-        <Heading type="2" label={number} />
-        <Heading type="4" label={percent} />
-        <P label={content} />
-      </div>
+    <div className={cls('stats-card', `${size}`, `${screen_variant}`)}>
+      {Size == 'Extra_large' || Size == 'Large' ? (<Heading type="3" label={title} />) : (<></>)}
+      <Heading type="2" label={number} />
+      <Heading type="4" label={percent} />
+      <P label={content} />
     </div>
   );
 };
 
 StatsCards.defaultProps = {
-  Hovercolors: '',
+  Hovercolors: 'yellow'
 };
