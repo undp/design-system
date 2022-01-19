@@ -7,8 +7,8 @@
   @include transition(300ms all);
 
   background-color: $color-gray-200;
-  word-break: break-all;
   box-sizing: border-box;
+  word-break: break-all;
 
   @include devicebreak(small) {
     max-width: 351px;
@@ -73,8 +73,8 @@
     padding: $spacing-40;
 
     @include devicebreak(medium) {
-      padding: $spacing-96;
       max-width: 684px;
+      padding: $spacing-96;
     }
 
     h2 {
@@ -163,16 +163,18 @@
   &:hover {
 
     // color map
-    $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+    $colors: ('red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+    background-color: $color-yellow;
+
+    & h2 {
+      color: $color-black;
+    }
 
     @each $name, $color in $colors {
       &.#{$name} {
         background-color: #{$color};
       }
-    }
-
-    & h2 {
-      color: $color-black;
     }
   }
 }

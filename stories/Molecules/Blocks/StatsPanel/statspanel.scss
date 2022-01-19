@@ -7,7 +7,7 @@
   &-panel {
 
     // color map
-    $colors: ('yellow': $yellow-gradient, 'red': $red-gradient, 'green': $green-gradient, 'blue': $blue-gradient);
+    $colors: ('red': $red-gradient, 'green': $green-gradient, 'blue': $blue-gradient);
 
     @include transition(300ms all);
 
@@ -34,8 +34,10 @@
     &::after {
       @extend %absolute__content;
 
+      @include gradient(15deg, #{$yellow-gradient});
+      @include transition(opacity 0.4s cubic-bezier(0.64,0.05,0.35,1.05));
+
       opacity: 0;
-      transition: all 0.4s;
     }
 
     &:hover,
@@ -62,12 +64,12 @@
 
     .stats-card {
       background-color: transparent;
+      color: $color-white;
       max-width: 100%;
       padding: 0 $spacing-24;
       width: 100%;
       word-break: unset;
       z-index: 1;
-      color: $color-white;
 
       @include devicebreak(medium) {
         padding: 0 $spacing-16;

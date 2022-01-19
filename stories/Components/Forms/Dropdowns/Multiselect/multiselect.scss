@@ -93,14 +93,14 @@
       list-style: none;
       margin-bottom: 0;
 
-      > .checkbox {
+      > .form-check {
         &:hover {
           background-color: $color-gray-100;
         }
       }
 
       ul {
-        .checkbox {
+        .form-check {
           &:hover {
             background-color: inherit;
           }
@@ -162,7 +162,7 @@
           border-top: 0;
         }
 
-        > .checkbox-wrapper:hover {
+        > .form-check-wrapper:hover {
           background-color: $color-gray-100;
         }
       }
@@ -178,7 +178,7 @@
     }
   }
 
-  ul .checkbox {
+  ul .form-check {
     display: block;
     margin: 0 -1rem;
     padding: 0 $spacing-16;
@@ -245,7 +245,7 @@
       }
     }
 
-    .checkbox {
+    .form-check {
       input[type='checkbox'],
       input[type='checkbox'] + label::before {
         left: $spacing-16;

@@ -3,64 +3,64 @@
 @import '../../../assets/scss/breakpoints';
 
 /* checkbox */
-.checkbox {
+.form-check {
   display: inline-block;
   padding-left: $spacing-24;
   position: relative;
+}
 
-  input[type=checkbox] {
+input[type=checkbox] {
+  cursor: pointer;
+  height: 16px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 5px;
+  width: 16px;
+  z-index: 1;
+
+  &:hover + label::before {
+    border-color: $color-light-pink;
+  }
+
+  & + label {
     cursor: pointer;
-    height: 16px;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 5px;
-    width: 16px;
-    z-index: 1;
+    font-size: $font-size-16;
 
-    &:hover + label::before {
+    &:hover::before {
       border-color: $color-light-pink;
     }
 
-    & + label {
-      cursor: pointer;
-      font-size: $font-size-16;
-
-      &:hover::before {
-        border-color: $color-light-pink;
-      }
-
-      &::before {
-        @extend %checbox-radio-before;
-      }
+    &::before {
+      @extend %checbox-radio-before;
     }
+  }
 
-    &:checked + label::before {
-      background-image: url(#{$img-path-Icon}/icon-check.svg);
-      background-position: 1px 0;
-      background-repeat: no-repeat;
-    }
+  &:checked + label::before {
+    background-image: url(#{$img-path-Icon}/icon-check.svg);
+    background-position: 1px 0;
+    background-repeat: no-repeat;
+  }
 
-    &:focus-visible + label::before {
-      outline: $color-blue-500 solid 2px;
-    }
+  &:focus-visible + label::before {
+    outline: $color-blue-500 solid 2px;
   }
 }
 
 [dir='rtl'] {
-  .checkbox {
+  .form-check {
     padding-left: unset;
-    padding-right: 1.5rem;
+    padding-right: $spacing-24;
+  }
 
-    input[type=checkbox] {
-      left: unset;
-      right: 0;
+  input[type=checkbox] {
+    left: unset;
+    right: 0;
 
-      & + label {
-        &::before {
-          left: unset;
-          right: 0;
-        }
+    & + label {
+      &::before {
+        left: unset;
+        right: 0;
       }
     }
   }
