@@ -1,6 +1,6 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
 
 .input-group {
   label {
@@ -29,13 +29,13 @@
       color: $color-gray-400;
     }
 
-    input[type=text],
-    input[type=number],
-    input[type=email],
-    input[type=password],
-    input[type=search],
-    input[type=tel],
-    input[type=date],
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="date"],
     textarea {
       background-color: $color-white;
       border: 2px solid $color-gray-400;
@@ -46,22 +46,22 @@
       }
     }
 
-    input[type=date] {
+    input[type="date"] {
       background-image: url(#{$img-path-Icon}/datedisabled.svg);
     }
 
-    input[type=search] {
+    input[type="search"] {
       background-image: url(#{$img-path-Icon}/Searchgray.svg);
     }
   }
 
-  input[type=text],
-  input[type=number],
-  input[type=email],
-  input[type=password],
-  input[type=search],
-  input[type=tel],
-  input[type=date],
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="date"],
   textarea {
     @extend %background-white;
 
@@ -81,15 +81,16 @@
       color: $color-gray-500;
     }
 
-    input[type=date],
-    input[type=search] {
+    input[type="date"],
+    input[type="search"] {
       padding-left: $spacing-40;
       position: relative;
     }
   }
 
-  input[type=search] {
-    background: url(#{$img-path-Icon}/Search_black.svg) no-repeat left 14px bottom 12px;
+  input[type="search"] {
+    background: url(#{$img-path-Icon}/Search_black.svg) no-repeat left 14px
+      bottom 12px;
     color: #a9b1b7;
     padding-left: 2.5rem;
   }
@@ -101,35 +102,34 @@
     resize: vertical;
   }
 
-  input[type=date] {
-    background:
-      url(#{$img-path-Icon}/calender_black.svg) no-repeat left
-      14px bottom 12px;
+  input[type="date"] {
+    background: url(#{$img-path-Icon}/calender_black.svg) no-repeat left 14px
+      bottom 12px;
     color: $color-gray-500;
     padding-left: $spacing-40;
   }
 
   &.error {
-    input[type=text],
-    input[type=number],
-    input[type=email],
-    input[type=password],
-    input[type=search],
-    input[type=tel],
-    input[type=date],
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="date"],
     textarea {
       border: 2px solid $color-red;
     }
   }
 
   &.focus {
-    input[type=text],
-    input[type=number],
-    input[type=email],
-    input[type=password],
-    input[type=search],
-    input[type=tel],
-    input[type=date],
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="date"],
     textarea {
       &:focus {
         box-shadow: 0 0 4px #0468b1;
@@ -138,58 +138,57 @@
   }
 }
 
-input[type='date']::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-calendar-picker-indicator {
   appearance: none;
   left: 3px;
   opacity: 0;
   position: absolute;
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .input-group {
-    input[type=text],
-    input[type=number],
-    input[type=email],
-    input[type=password],
-    input[type=search],
-    input[type=tel],
-    input[type=date],
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="date"],
     textarea {
       @media (hover: none) and (pointer: coarse) {
-        input[type=date] {
+        input[type="date"] {
           padding-right: $spacing-24;
         }
       }
     }
 
-    input[type=date],
-    input[type=search] {
-      background:
-        url(#{$img-path-Icon}/calender_black.svg) no-repeat
-        right 14px bottom 12px;
+    input[type="date"],
+    input[type="search"] {
+      background: url(#{$img-path-Icon}/calender_black.svg) no-repeat right 14px
+        bottom 12px;
       padding-left: 0.635rem;
       padding-right: $spacing-40;
+      padding-inline-start: $spacing-40;
       text-align: right;
     }
 
-    input[type=search] {
-      background:
-        url(#{$img-path-Icon}/Search_black.svg) no-repeat
-        right 14px bottom 12px;
+    input[type="search"] {
+      background: url(#{$img-path-Icon}/Search_black.svg) no-repeat right 14px
+        bottom 12px;
     }
 
     &.disabled {
-      input[type=date] {
+      input[type="date"] {
         background-image: url(#{$img-path-Icon}/datedisabled.svg);
       }
 
-      input[type=search] {
+      input[type="search"] {
         background-image: url(#{$img-path-Icon}/Searchgray.svg);
       }
     }
   }
 
-  input[type='date']::-webkit-calendar-picker-indicator {
+  input[type="date"]::-webkit-calendar-picker-indicator {
     left: inherit;
     position: absolute;
     right: 27px;
