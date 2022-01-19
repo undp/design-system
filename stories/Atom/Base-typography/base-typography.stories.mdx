@@ -1,0 +1,757 @@
+import { Canvas, Meta, Story, Source } from "@storybook/addon-docs";
+
+import { Heading } from "./../Typography/Heading/Heading";
+import { Abbreviation } from "./Abbr/abbr";
+import { Blockquote } from "./Blockquote/blockquote";
+import { Cite } from "./Cite/cite";
+import { Code } from "./Code/code";
+import { Hr } from "./Hr/hr";
+import { Mark } from "./Mark/mark";
+import { P } from "./Paragraph/Paragraph";
+import { Quotation } from "./Quotation/quotation";
+import { Small } from "./Small/small";
+import { List } from "./../Typography/Lists/Lists";
+import { Descriptionlist } from "./../Typography/Lists/Descriptionlist";
+
+export const getCaptionForLocaleHeading = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        detail1: "HEADLINE 1",
+        detail2: "Headline 2",
+        detail3: "Headline 3",
+        detail4: "Headline 4",
+        detail5: "Headline 5",
+        detail6: "HEADLINE 6",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        detail1: "العنوان 1.",
+        detail2: "العنوان 2",
+        detail3: "العنوان 3",
+        detail4: "العنوان 4",
+        detail5: "العنوان 5",
+        detail6: "العنوان 6",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        detail1: "ခခေါင်းစီး ၁",
+        detail2: "ခေါင်းစဉ် ၂",
+        detail3: "ခေါင်းစဉ် ၃",
+        detail4: "ခေါင်းစဉ် ၄",
+        detail5: "ခေါင်းစဉ် ၅",
+        detail6: "ခေါင်းစီး ၆",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        detail1: "見出し1",
+        detail2: "見出し2",
+        detail3: "見出し3",
+        detail4: "見出し4",
+        detail5: "見出し5",
+        detail6: "見出し6",
+      };
+      return japaneseText;
+    default:
+      return {
+        detail1: "HEADLINE 1",
+        detail2: "Headline 2",
+        detail3: "Headline 3",
+        detail4: "Headline 4",
+        detail5: "Headline 5",
+        detail6: "HEADLINE 6",
+      };
+  }
+};
+
+<Meta
+  title="Foundation/Typography/Base-Typography"
+  parameters={{
+    viewMode: "docs",
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+# Base Typography
+Basic elements which the design system has some styling listed here, you can use the elements as it is, without any specific CSS classes. 
+
+
+### Headings
+We can use the <code>h1/h2/h3/h4/h5/h6 tags</code> in any component to display the headings. h1 for most important heading to h6 for least important heading.
+
+Typographic scale when using headings in text component:
+
+<Canvas>
+  <Story name="Headings">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleHeading(locale);
+      return <>
+        <Heading type="1" label={caption.detail1}></Heading>
+        <Heading type="2" label={caption.detail2}></Heading>
+        <Heading type="3" label={caption.detail3}></Heading>
+        <Heading type="4" label={caption.detail4}></Heading>
+        <Heading type="5" label={caption.detail5}></Heading>
+        <Heading type="6" label={caption.detail6}></Heading>
+      </>;
+    }}
+  </Story>
+</Canvas>
+
+
+### Abbreviation
+
+export const getCaptionForLocaleAbbr = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        detail1: "HyperText Markup Language",
+        detail2: "Cascading Style Sheets",
+        text1: "You can use",
+        text2: "to style your",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        detail1: "لغة ترميز النصوص التشعبية",
+        detail2: "اوراق النمط المتعاقب",
+        text1: "يمكنك استخدام",
+        text2: "لأسلوبك",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        detail1: "hyperText အမှတ်အသားဘာသာစကား",
+        detail2: "Cascading ပုံစံစာရွက်များ",
+        text1: "သင်သုံးနိုင်သည်",
+        text2: "မင်းရဲ့စတိုင်လ်ကို",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        detail1: "ハイパーテキストマークアップ言語",
+        detail2: "カスケードスタイルシート",
+        text1: "あなたが使用することができます",
+        text2: "あなたのスタイルを整える",
+      };
+      return japaneseText;
+    default:
+      return {
+        detail1: "HyperText Markup Language",
+        detail2: "Cascading Style Sheets",
+        text1: "You can use",
+        text2: "to style your",
+      };
+  }
+};
+
+Abbreviation component defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".
+
+- We can use the <code>abbr tag</code> in any component, to display as a tooltip when you hover over the element.
+
+Typographic scale when using abbreviation in text component:
+
+<Canvas>
+  <Story name="Abbrivation">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleAbbr(locale);
+      return <Abbreviation type="1" label={caption.detail1}></Abbreviation>;
+    }}
+  </Story>
+</Canvas>
+
+
+
+### Blockquote
+
+export const getCaptionForLocaleBlockquote = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        detail:
+          "“Blockquote lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices.”",
+        citeText: "-Firstname Lastname",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        detail:
+          "“بلوككوت هو ألم الإنترنت نفسه. من هو وسادة الانتقام في العبارة”",
+        citeText: "الاسم الاول الاسم الاخير-",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        detail:
+          "“Blockquote သည်အင်တာနက်ကိုယ်တိုင်၏နာကျင်မှုဖြစ်သည်။ ကူးတို့ဆိပ်ရဲ့ ဒဏ်ပေးအုံး ဘယ်သူလဲ။”",
+        citeText: "-နာမည် မျိုးနွယ်အမည်",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        detail:
+          "“ブロッククォートはインターネット自体の苦痛です。 フェリーの復讐に満ちたクッションは誰ですか”",
+        citeText: "-名前苗字",
+      };
+      return japaneseText;
+    default:
+      return {
+        detail:
+          "“Blockquote lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices.”",
+        citeText: "-Firstname Lastname",
+      };
+  }
+};
+
+The Blockquote component specifies a section that is quoted from another source.
+
+- We can use <code>blockquote</code> in any component to render the text found within the <code>blockquote tag</code> as indented text
+
+Typographic scale when using blockquote in text component:
+
+<Canvas>
+  <Story name="Blockquote">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleBlockquote(locale);
+      return (
+        <Blockquote
+          text={caption.detail}
+          citeText={caption.citeText}
+        ></Blockquote>
+      );
+    }}
+  </Story>
+</Canvas>
+
+
+### Cite
+
+export const getCaptionForLocaleCite = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = { detail: "-Firstname Lastname" };
+      return engText;
+    case "arabic":
+      const arabicText = { detail: "الاسم الاول الاسم الاخير-" };
+      return arabicText;
+    case "burmese":
+      const burmeseText = { detail: "-နာမည် မျိုးနွယ်အမည်" };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = { detail: "-名前苗字" };
+      return japaneseText;
+    default:
+      return { detail: "-Firstname Lastname" };
+  }
+};
+
+The Cite component defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.).
+
+- We can use <code>cite</code> in any component to render the text found within the <code>cite tag</code>.
+
+Typographic scale when using cite in text component:
+
+<Canvas>
+  <Story name="Cite">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleCite(locale);
+      return <p><Cite label={caption.detail}></Cite></p>;
+    }}
+  </Story>
+</Canvas>
+
+
+### Code
+
+export const getCaptionForLocaleCode = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        detail1: "The",
+        detail2: "length()",
+        detail3: "method on a",
+        detail4: "String",
+        detail5:
+          "object contains the length of the string. It can also serve as a character counter.",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        detail1: "ال",
+        detail2: "الطول()",
+        detail3: "طريقة على",
+        detail4: "",
+        detail5:
+          "يحتوي الكائن على طول السلسلة. يمكن أن يكون أيضًا بمثابة عداد أحرف.",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        detail1: "ဟိ",
+        detail2: "အရှည် ()",
+        detail3: "a ပေါ်မှာနည်းလမ်း",
+        detail4: "စာတန်း",
+        detail5:
+          "object တွင် string အရှည်ရှိသည်။ ၎င်းကိုဇာတ်ကောင်ကောင်တာတစ်ခုအဖြစ်လည်းဆောင်ရွက်နိုင်သည်။",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        detail1: "NS",
+        detail2: "長さ（）",
+        detail3: "上のメソッド",
+        detail4: "弦",
+        detail5:
+          "オブジェクトには文字列の長さが含まれます。キャラクターカウンターとしても使用できます。",
+      };
+      return japaneseText;
+    default:
+      return {
+        detail1: "The",
+        detail2: "length()",
+        detail3: "method on a",
+        detail4: "String",
+        detail5:
+          "object contains the length of the string. It can also serve as a character counter.",
+      };
+  }
+};
+
+The code component is used to define a piece of computer code. The content inside is displayed in the browser's default monospace font.
+
+- We can use the <code>code</code> in any component to render the text found within the <code>code tag</code> in monospace font.
+
+Typographic scale when using code in text component:
+
+<Canvas>
+  <Story name="Code">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleCode(locale);
+      return (
+        <p>
+          {caption.detail1} <Code label={caption.detail2}></Code> {
+            caption.detail3
+          } <Code label={caption.detail4}></Code> {caption.detail5}
+        </p>
+      );
+    }}
+  </Story>
+</Canvas>
+
+
+### HR
+
+export const getCaptionForLocaleHr = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        detail:
+          "Large paragraph lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices. Quisque eget placerat odio, vel viverra ipsum. Sed pharetra varius dignissim. Cras varius luctus est sit amet sollicitudin. Donec eget dui eget nulla luctus ultrices. Sed eu turpis quam. Nulla facilisi.",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        detail:
+          "فقرة كبيرة lorem ipsum dolor sit amet، consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices. Quisque eget placerat odio، vel viverra ipsum. Sed pharetra varius gentissim. Cras varius luctus est sit amet sollicitudin. Donec eget dui eget nulla luctus ultrices. Sed eu Turpis quam. نولا فاسيليسي.-",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        detail:
+          "ကြီးမားသောစာပိုဒ် lorem ipsum dolor sit amet, consectetur adipiscing elit ။ Pellentesque porttitor mauris quis pulvinar ultrices Quisque eget placerat odio, vel viverra ipsum ။ Sed pharetra varius dignissim ဖြစ်သည်။ Cras varius luctus est amet sollicitudin ထိုင်သည်။ Donec eget dui eget nulla luctus ultrices ။ Sed eu turpis quam ။ Nulla facilisi",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        detail:
+          "大きな段落はインターネット自体の苦痛です。 Pellentesque porttitor mauris quis pulvinarultrices。誰もが本物、または漫画自体を嫌う必要があります。しかし、矢筒は資産です。悲しみは大変なことです。住宅の必要性が痛みを必要としないまで。しかし、どれほど素晴らしくて醜い。複雑なことは何もありません。",
+      };
+      return japaneseText;
+    default:
+      return {
+        detail:
+          "Large paragraph lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices. Quisque eget placerat odio, vel viverra ipsum. Sed pharetra varius dignissim. Cras varius luctus est sit amet sollicitudin. Donec eget dui eget nulla luctus ultrices. Sed eu turpis quam. Nulla facilisi.",
+      };
+  }
+};
+
+The Hr component defines a thematic break in an HTML page (e.g. a shift of topic).
+
+- We can use the <code>hr tag</code> in any component to display the horizontal break.
+
+Typographic scale when using hr in text component:
+
+<Canvas>
+  <Story name="Hr">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleHr(locale);
+      return <Hr detailsText={caption.detail}></Hr>;
+    }}
+  </Story>
+</Canvas>
+
+### Mark
+
+export const getCaptionForLocaleMark = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = { detail: "Eos nulla molestiae" };
+      return engText;
+    case "arabic":
+      const arabicText = { detail: "لا إزعاج" };
+      return arabicText;
+    case "burmese":
+      const burmeseText = { detail: "အဆင်မပြေတာမရှိဘူး" };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = { detail: "不快感なし" };
+      return japaneseText;
+    default:
+      return { detail: "Eos nulla molestiae" };
+  }
+};
+
+The Mark component define the marked text. It is used to highlight the part of the text in a paragraph.
+
+- We can use the <code>mark</code> in any component to render the text found within the <code>mark tag</code> as text with a light yellow background
+
+Typographic scale when using mark in text component:
+
+<Canvas>
+  <Story
+    name="Mark"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+          <p><mark>Eos nulla molestiae</mark></p>
+        `,
+        },
+      },
+    }}
+  >
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleMark(locale);
+      return <Mark label={caption.detail}></Mark>;
+    }}
+  </Story>
+</Canvas>
+
+
+### Paragraph
+
+export const getCaptionForLocaleParagraph = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        detail:
+          "Large paragraph lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices. Quisque eget placerat odio, vel viverra ipsum. Sed pharetra varius dignissim. Cras varius luctus est sit amet sollicitudin. Donec eget dui eget nulla luctus ultrices. Sed eu turpis quam. Nulla facilisi.",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        detail:
+          "فقرة كبيرة lorem ipsum dolor sit amet، consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices. Quisque eget placerat odio، vel viverra ipsum. Sed pharetra varius gentissim. Cras varius luctus est sit amet sollicitudin. Donec eget dui eget nulla luctus ultrices. Sed eu Turpis quam. نولا فاسيليسي.-",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        detail:
+          "ကြီးမားသောစာပိုဒ် lorem ipsum dolor sit amet, consectetur adipiscing elit ။ Pellentesque porttitor mauris quis pulvinar ultrices Quisque eget placerat odio, vel viverra ipsum ။ Sed pharetra varius dignissim ဖြစ်သည်။ Cras varius luctus est amet sollicitudin ထိုင်သည်။ Donec eget dui eget nulla luctus ultrices ။ Sed eu turpis quam ။ Nulla facilisi",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        detail:
+          "大きな段落はインターネット自体の苦痛です。 Pellentesque porttitor mauris quis pulvinarultrices。誰もが本物、または漫画自体を嫌う必要があります。しかし、矢筒は資産です。悲しみは大変なことです。住宅の必要性が痛みを必要としないまで。しかし、どれほど素晴らしくて醜い。複雑なことは何もありません。",
+      };
+      return japaneseText;
+    default:
+      return {
+        detail:
+          "Large paragraph lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices. Quisque eget placerat odio, vel viverra ipsum. Sed pharetra varius dignissim. Cras varius luctus est sit amet sollicitudin. Donec eget dui eget nulla luctus ultrices. Sed eu turpis quam. Nulla facilisi.",
+      };
+  }
+};
+
+The Paragraph component defines a paragraph.
+
+- We can use the <code>p tag</code> in any component to define a paragraph.
+
+Typographic scale when using paragraph in text component:
+
+<Canvas>
+  <Story name="P">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleParagraph(locale);
+      return <P label={caption.detail}></P>;
+    }}
+  </Story>
+</Canvas>
+
+
+### Quotation
+
+export const getCaptionForLocaleQuotation = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        detail:
+          "Scientists are considering whether the Earth has entered an entirely new geological epoch: the Anthropocene, or the age of humans.",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        detail:
+          "يفكر العلماء فيما إذا كانت الأرض قد دخلت حقبة جيولوجية جديدة تمامًا: الأنثروبوسين ، أو عصر البشر.",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        detail:
+          "သိပ္ပံပညာရှင်များသည်ကမ္ဘာမြေသည်လုံးဝဘူမိဗေဒခေတ်ဖြစ်သည့် Anthropocene (သို့) လူသား၏အသက်",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        detail:
+          "科学者たちは、地球がまったく新しい地質学的時代、人新世、または人間の時代に入ったかどうかを検討しています。",
+      };
+      return japaneseText;
+    default:
+      return {
+        detail:
+          "Scientists are considering whether the Earth has entered an entirely new geological epoch: the Anthropocene, or the age of humans.",
+      };
+  }
+};
+
+The Quotation component defines a short quotation.
+
+- We can use the <code>q</code> in any component to render quotation marks around the text found within the <code>q tag</code>.
+
+Typographic scale when using quotation in text component:
+
+<Canvas>
+  <Story name="Quotation">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleQuotation(locale);
+      return <Quotation label={caption.detail}></Quotation>;
+    }}
+  </Story>
+</Canvas>
+
+### Small
+
+export const getCaptionForLocaleSmall = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = { detail: "Et occaecati eos nulla molestiae repellat." };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        detail: "Et Occaecati eos nulla molestiae repellat.",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        detail: "Et occaecati eos nulla molestiae repellat ဖြစ်သည်။",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        detail: "そして盲目になると、彼は迷惑をかけずに彼らを撃退します。",
+      };
+      return japaneseText;
+    default:
+      return { detail: "Et occaecati eos nulla molestiae repellat." };
+  }
+};
+
+The Small component defines smaller text (like copyright and other side-comments).
+
+- We can use the <code>small</code> in any component to makes text one font size smaller in the HTML document.
+
+Typographic scale when using small in text component:
+
+<Canvas>
+  <Story name="Small">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleSmall(locale);
+      return <Small label={caption.detail}></Small>;
+    }}
+  </Story>
+</Canvas>
+
+
+### Lists
+
+export const getCaptionForLocaleList = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        data: [
+          {
+            label: "United Nations Development Programme",
+            text:
+              "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
+          },
+          {
+            label: "United Nations Development Programme",
+            text:
+              "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
+          },
+          {
+            label: "United Nations Development Programme",
+            text:
+              "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
+          },
+        ],
+      };
+      return engText.data;
+    case "arabic":
+      const arabicText = {
+        data: [
+          {
+            label: "برنامج الأمم المتحدة الإنمائي",
+            text:
+              "برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.",
+          },
+          {
+            label: "برنامج الأمم المتحدة الإنمائي",
+            text:
+              "برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.",
+          },
+          {
+            label: "برنامج الأمم المتحدة الإنمائي",
+            text:
+              "برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.",
+          },
+        ],
+      };
+      return arabicText.data;
+    case "burmese":
+      const burmeseText = {
+        data: [
+          {
+            label: "ကုလသမဂ္ဂဖွံ့ဖြိုးရေးအစီအစဉ်",
+            text:
+              "ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးအားမြှောက် ပြု၍ ပြောင်းလဲမှုအတွက်ထောက်ခံသူများနှင့်နိုင်ငံများအားလူတို့အတွက်ပိုမိုကောင်းမွန်သောဘ ၀ ကိုတည်ဆောက်ရန်အကူအညီများ၊ အတွေ့အကြုံများနှင့်အရင်းအမြစ်များသို့ချိတ်ဆက်ပေးသည်။",
+          },
+          {
+            label: "ကုလသမဂ္ဂဖွံ့ဖြိုးရေးအစီအစဉ်",
+            text:
+              "ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးအားမြှောက် ပြု၍ ပြောင်းလဲမှုအတွက်ထောက်ခံသူများနှင့်နိုင်ငံများအားလူတို့အတွက်ပိုမိုကောင်းမွန်သောဘ ၀ ကိုတည်ဆောက်ရန်အကူအညီများ၊ အတွေ့အကြုံများနှင့်အရင်းအမြစ်များသို့ချိတ်ဆက်ပေးသည်။",
+          },
+          {
+            label: "ကုလသမဂ္ဂဖွံ့ဖြိုးရေးအစီအစဉ်",
+            text:
+              "ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးအားမြှောက် ပြု၍ ပြောင်းလဲမှုအတွက်ထောက်ခံသူများနှင့်နိုင်ငံများအားလူတို့အတွက်ပိုမိုကောင်းမွန်သောဘ ၀ ကိုတည်ဆောက်ရန်အကူအညီများ၊ အတွေ့အကြုံများနှင့်အရင်းအမြစ်များသို့ချိတ်ဆက်ပေးသည်။",
+          },
+        ],
+      };
+      return burmeseText.data;
+    case "japanese":
+      const japaneseText = {
+        data: [
+          {
+            label: "国連開発計画",
+            text:
+              "国連開発計画は、国連のグローバルな開発ネットワークです。 それは、国家間の技術的および投資協力を促進し、変化を提唱し、人々がより良い生活を築くのを助けるために、国家を知識、経験および資源に結び付けます。",
+          },
+          {
+            label: "国連開発計画",
+            text:
+              "国連開発計画は、国連のグローバルな開発ネットワークです。 それは、国家間の技術的および投資協力を促進し、変化を提唱し、人々がより良い生活を築くのを助けるために、国家を知識、経験および資源に結び付けます。",
+          },
+          {
+            label: "国連開発計画",
+            text:
+              "国連開発計画は、国連のグローバルな開発ネットワークです。 それは、国家間の技術的および投資協力を促進し、変化を提唱し、人々がより良い生活を築くのを助けるために、国家を知識、経験および資源に結び付けます。",
+          },
+        ],
+      };
+      return japaneseText.data;
+    default:
+      const dummy = {
+        data: [
+          {
+            label: "United Nations Development Programme",
+            text:
+              "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
+          },
+          {
+            label: "United Nations Development Programme",
+            text:
+              "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
+          },
+          {
+            label: "United Nations Development Programme",
+            text:
+              "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
+          },
+        ],
+      };
+      return dummy.data;
+  }
+};
+
+Lists consist of related items grouped together.
+
+#### Unordered List
+An unordered list is used if there is no hierarchy required. Unordered lists start with a bullet.
+
+Start an unordered list with the <code>u1</code> tag.
+
+Add a <code>li</code> tag for each list item
+
+<Canvas>
+  <Story name="Unordered List">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleList(locale);
+      return <List data={caption} type="ul"></List>;
+    }}
+  </Story>
+</Canvas>
+
+
+#### Ordered List
+An ordered list is used if there is a relation/hierarchy between list items. Ordered list items begin with a number generally.
+
+Start an ordered list with the <code>o1</code> tag.
+
+Add a <code>li</code> tag for each list item
+
+
+<Canvas>
+  <Story name="Ordered List">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleList(locale);
+      return <List data={caption} type="ol"></List>;
+    }}
+  </Story>
+</Canvas>
+
+
+#### Description List
+
+A description list is a list of terms, with a description of each term.
+
+The <code>dl</code> tag defines the description list, the <code>dt</code> tag defines the term (name), and the <code>dd</code> tag describes each term.
+
+<Canvas>
+  <Story name="Description List">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleList(locale);
+      return <Descriptionlist data={caption}></Descriptionlist>;
+    }}
+  </Story>
+</Canvas>
+
+
+### Usage
+- Include **dist/css/base-minimal.css** file in your HTML file, no other CSS and JS file required.
