@@ -13,12 +13,13 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Testing/Navigation/Sidebar With Arrow" 
+<Meta title="Testing/Navigation/Sidebar With Arrow"
  argTypes={{
-    Mode: {
-      options: ["default", "default-up", "selected", "selected-up"],
-      control: { type: "radio" }
-    }
+    variant: {
+      options: ["default", "default_up", "selected", "selected_up"],
+      control: { type: "radio" },
+      defaultValue: 'default',
+    },
   }}
 />
 
