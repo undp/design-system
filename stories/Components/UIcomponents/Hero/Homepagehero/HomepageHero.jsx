@@ -12,30 +12,25 @@ export const Homepagehero = ({
   title, content, button, variant, ...args
 }) => {
   useEffect(() => {
-    viewport('.hero-wrapper__title');
-    viewport('.hero-wrapper__subtitle');
-    expandToSize('#hero');
+    viewport('.left-right');
+    expandToSize('.homepage-hero-full');
   }, []);
   return (
-    <div className="hero-wrapper" id="hero">
+    <div className="homepage-hero-full">
       {variant === 'video'
         ? (
-          <div className="hero-wrapper__background">
-            <Video src={BackgroundVideo} width="100%" height="100%" />
-          </div>
+          <Video src={BackgroundVideo} width="100%" height="100%" />
         )
         : (
-          <div className="hero-wrapper__background overlay-grey">
+          <div className="overlay-grey">
             <img src={BackgroundImg} alt={BackgroundImg} />
           </div>
         )}
-      <div className="hero-wrapper__container">
-        <div className="grid-x">
-          <div className="cell large-7 medium-offset-1 medium-9 hero-wrapper__content" id="header">
-            <Heading type="1" className="hero-wrapper__title color-white left-right" label={title} />
-            {content && <Heading type="4" className="hero-wrapper__subtitle color-white left-right" label={content} />}
-            <CtaButton label={button} />
-          </div>
+       <div className="grid-x homepage-hero-content">
+        <div className="cell large-7 medium-9 medium-offset-1">
+          <Heading type="1" className="color-white left-right" label={title} />
+          {content && <Heading type="4" className="color-white left-right" label={content} />}
+          <CtaButton label={button} />
         </div>
       </div>
     </div>

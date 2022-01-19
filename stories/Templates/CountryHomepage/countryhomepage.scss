@@ -22,14 +22,6 @@
         padding-top: 4.375rem;
       }
 
-      .small-heading {
-        margin-bottom: $spacing-24;
-
-        @include devicebreak(medium) {
-          padding-left: $spacing-64;
-        }
-      }
-
       h1 {
         font-size: 1.8rem;
 
@@ -38,8 +30,8 @@
         }
       }
 
-      .hero-option {
-        @include devicebreak(small) {
+      @include devicebreak(small) {
+        .homepage-hero-wide {
           border-left: 1rem solid $color-gray-300;
           padding-left: calc(8.33333% + #{$spacing-24} / 2);
         }
@@ -95,16 +87,7 @@
 
 [dir='rtl'] {
   .hero-container {
-    .small-heading {
-      margin-bottom: $spacing-24;
-      padding-right: 0;
-
-      @include devicebreak(medium) {
-        padding-right: $spacing-64;
-      }
-    }
-
-    .hero-option {
+    .homepage-hero-wide {
       @include devicebreak(small) {
         border-left: none;
         border-right: 1rem solid $color-gray-300;
