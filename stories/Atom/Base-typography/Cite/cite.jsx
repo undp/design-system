@@ -1,8 +1,7 @@
 import React from 'react';
 import './cite.scss';
+import { P } from '../Paragraph/Paragraph';
 
 export const Cite = ({ label }) => (
-  <cite>
-    { label }
-  </cite>
+  <P label={<cite>{label}</cite>} />
 );
