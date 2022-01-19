@@ -31,10 +31,12 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
         }
       }
     }
-
-    .download-card__download {
-      &::after {
-        background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
+    .download-icon{
+      &:after {
+        @include transform(rotate(-45deg) translate(7px, -7px));
+      }
+      &:before {
+        @include transform(translate(0, -10px));
       }
     }
   }
@@ -67,13 +69,8 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
     letter-spacing: 0.03em;
     text-transform: uppercase;
 
-    &::after {
-      background: url(#{$img-path-Icon}/download-default.svg) no-repeat 0 bottom;
-      content: '';
-      cursor: pointer;
-      height: 1.6875rem;
+    .download-icon{
       margin-left: 0.75rem;
-      width: 1.3rem;
     }
   }
 }
