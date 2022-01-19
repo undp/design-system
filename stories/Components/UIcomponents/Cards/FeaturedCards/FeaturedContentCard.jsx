@@ -16,6 +16,8 @@ export const image_options = {
   color: 'without-image',
 };
 
+const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+
 export const FeaturedContentCard = ({
   type, cell, data, image, headertext, hovercolor, ...args
 }) => {
@@ -25,12 +27,13 @@ export const FeaturedContentCard = ({
   let size_variant = size_options[`${args.size}`];
   let image_variant = image_options[`${image}`];
   return (
-    <div className="grid-x grid-margin-x">
+    <>
+    <div className='grid-x grid-margin-x'>
       {headertext && <div className="cell medium-3 medium-offset-1 small-offset-1 feature__card-title left-right"><Heading type="2" label={headertext} /></div>}
-      {data.map((item, index) => (
-        <div key={index} className={['cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`].join(' ')}>
-          <a href="#" className={['feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`].join(' ')}>
-            <div className={['feature__card-slide', `${hovercolor}`].join(' ')}>
+         {data.map((item, index) => (
+        <div key={index}  className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`, `${hovercolor}`)}>
+          <a href="#">
+            <div className="feature__card-slide">
               {item.imgback && (image === 'image' || (item.type === 'image' && image === 'image')) && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
             </div>
             <article className="feature__card-content">
@@ -42,14 +45,13 @@ export const FeaturedContentCard = ({
                 {item.size}
                 {item.descriptionText && <P label={item.descriptionText} />}
               </div>
-              <div className={['feature__cta', `${size_variant}`].join(' ')}>
-                <span className="cta__link cta--arrow">{item.button}</span>
-              </div>
+                <span className='cta__link cta--arrow'>{item.button}</span>
             </article>
           </a>
         </div>
-      ))}
-    </div>
+        ))}
+     </div>
+  </>
   );
 };
 

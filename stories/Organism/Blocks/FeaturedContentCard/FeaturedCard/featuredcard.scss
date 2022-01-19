@@ -39,7 +39,7 @@
 
         @include devicebreak(medium) {
           margin-left: 0.375rem;
-          margin-right: calc(8.33333% + 0.75rem / 2);
+          margin-right: calc(8.33333% + 1.75rem / 2);
         }
 
         @include devicebreak(large) {
