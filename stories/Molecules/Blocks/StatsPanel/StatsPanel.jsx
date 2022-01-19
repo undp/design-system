@@ -24,5 +24,5 @@ export const StatsPanel = ({
 };
 
 StatsPanel.defaultProps = {
-  Hovercolors: 'yellow',
+  Hovercolors: 'yellow'
 };

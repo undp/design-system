@@ -44,5 +44,5 @@ export const StatsCards = ({
 };
 
 StatsCards.defaultProps = {
-  Hovercolors: 'yellow',
+  Hovercolors: 'yellow'
 };
