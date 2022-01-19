@@ -8,7 +8,7 @@ import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
 export const emphasize_options = {
-  true: 'card-color',
+  true: 'card-emphasize',
   false: 'card',
 };
 
@@ -41,7 +41,7 @@ export const ContentCardWithOutImage = ({
                   : (
                     <></>
                   )}
-                <Ctalink label={item.button} Type="Space" />
+                <Ctalink label={item.button} Type="Space" button_option="span"/>
               </div>
             </a>
           </div>

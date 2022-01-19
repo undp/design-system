@@ -141,10 +141,10 @@
     }
 
     .cta-container {
-      margin-top: 3.75rem;
+      margin-top: 1.875rem;
 
       @include devicebreak(medium) {
-        margin-top: 4.375rem;
+        margin-top: $spacing-40;
       }
     }
   }

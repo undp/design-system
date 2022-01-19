@@ -20,7 +20,7 @@ export const ContentCardImage = ({
             </div>
             <div className="content-caption">
               <Heading type="5" label={item.contentname} />
-              <Ctalink label={item.button} Type="Space" />
+              <Ctalink label={item.button} Type="Space" button_option="span"/>
             </div>
           </a>
         </div>

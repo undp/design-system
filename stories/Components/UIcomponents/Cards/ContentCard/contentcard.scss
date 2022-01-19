@@ -10,6 +10,7 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
   border-top: 2px solid $color-black;
   height: 100%;
   word-break: break-word;
+  @include transition(background-color 0.5s ease);
 
   > a {
     box-sizing: border-box;
@@ -58,7 +59,7 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
   }
 
   &.card,
-  &.card-color {
+  &.card-emphasize {
     &:hover {
       @each $name, $color in $colors {
         &.#{$name} {
@@ -78,7 +79,7 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
     }
   }
 
-  &.card-color {
+  &.card-emphasize {
     @include transition(background-color 0.5s ease);
 
     @each $name, $color in $backgroundcolors {
