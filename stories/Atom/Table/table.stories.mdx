@@ -1,6 +1,5 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { TableTag } from './table'
-
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -32,42 +31,31 @@ export const getCaptionForLocale = (locale) => {
     }
   }}/>
 
+# Table
+
+Tables are used to make large volumes of data easy to understand and access, by displaying data in tabular format.
+
+We have applied different variations in table, which are as follows:
+- Sizes: Table comes with large and small size
+- Variant: default, striped and border
+- Responsive: stacked, auto and scroll, fit for different use cases
+
+### Usage
+- Visit the **Canvas** tab
+- Try different variations from the controls
+- Go to HTML tab, copy the HTML and paste it in your HTML file
+- Inlude **dist/css/base-minimal.css** in your HTML page, and you should have a styled table
+
 <style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .css-1sy7267 {
-    margin: 10px 0;
-  }
-`}</style>
+  .sbdocs-preview {display: none;}
+`}
+</style>
 
-# Table Component
-
-Tables are used to make large volumes of data easy to understand and access, Table components are created using the following elements
-
-<div classname="subheading">Modifier</div>
-
-<code>Default</code> <code>striped</code> <code>border</code> <code>small</code> <code>stacked</code> <code>scroll</code>
-
-
-<Story name="Table">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <TableTag text={caption.headertext} tdtext={caption.tdtext} details={caption.details} {...args} ></TableTag>;
-  }}
-</Story>
-
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>table.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+<Canvas>
+  <Story name="Table">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <TableTag text={caption.headertext} tdtext={caption.tdtext} details={caption.details} {...args} ></TableTag>;
+    }}
+  </Story>
+</Canvas>
