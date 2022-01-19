@@ -72,9 +72,13 @@
     @extend %select_default;
 
     background: $color-white;
-    display: block;
+    display: flex;
     max-width: 100%;
     text-align: left;
+
+    span{
+      padding-left: 0.3125rem;
+    }
 
     &::after {
       @extend %arrow;
@@ -213,10 +217,16 @@
   .multi-select {
     button {
       @extend %select_rtl;
-
       &::after {
         @extend %select_rtl_after;
       }
+      span{
+        padding-right: 0.3125rem;
+        padding-left:0;
+      }
+    }
+    ul{
+      padding: 0 $spacing-16;
     }
 
     .has-submenu {

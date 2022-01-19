@@ -23,7 +23,6 @@ const SelectTag = ({ text, eleId, ...args }) => {
         <ul
           className={cls(`${args.Height === 'Fix height' ? 'fix-height' : ''}`)}
           data-type="region"
-          aria-labelledby={`filter${eleId}`}
           role="listbox"
           aria-multiselectable="true"
           aria-hidden="true"
