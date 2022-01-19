@@ -166,4 +166,35 @@
   background-color: $color-white;
 }
 
+// global colors
+
+// color map gradient
+$colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green': rgba(92 222 83 / 82%), 'blue': rgba(94 232 246 / 82%));
+
+@each $name, $color in $colors {
+  .#{$name} {
+    //card-thumbnail
+    .card-thumbnail__image::before {
+      @include background-image(42deg, #{$color}, transparent 80%);
+    }
+
+    //
+  }
+}
+
+// color map solid
+$colors-solid: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+@each $name, $color in $colors-solid {
+  .#{$name} {
+    //statscard
+    .stats-card {
+      &:hover {
+        background-color: #{$color};
+      }
+    }
+  }
+}
+
+
 /* base end */
