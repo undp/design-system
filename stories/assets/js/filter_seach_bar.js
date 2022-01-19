@@ -11,7 +11,7 @@ const toggleFilter = function () {
     const currentChipsWrapper = el.parents('.select-wrapper').find('.selected-chips');
     const eleId = el.attr('id');
     const numberOfChecked = $(this).parents('.multi-select').find('input:checkbox:checked').length;
-    const filterButton = $(this).parents('ul').siblings();
+    const filterButton = $(this).parents('ul').not('.sub-menu').siblings();
     if(numberOfChecked > 0){
       filterButton.find('span').remove();
       filterButton.append('<span> (' + numberOfChecked + ') </span>');
@@ -53,7 +53,7 @@ const toggleFilter = function () {
     const findId = $(this).parents('.select-wrapper').find(`#${id}`);
     findId.prop('checked', false);
     const inputCount = findId.parents('.multi-select').find('input:checkbox:checked').length;
-    const currentInputCount = findId.parents('ul').siblings();
+    const currentInputCount = findId.parents('ul').not('.sub-menu').siblings();
     if(inputCount > 0){
       currentInputCount.find('span').remove();
       currentInputCount.append('<span> (' + inputCount + ') </span>');
