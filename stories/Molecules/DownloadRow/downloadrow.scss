@@ -38,13 +38,9 @@
       margin: $spacing-16 0 1.188rem $spacing-16;
     }
 
-    .checkbox {
+    .form-check {
       margin-right: -0.375rem;
       padding-bottom: 1.25rem;
-    }
-
-    a {
-      @extend %img_none;
     }
   }
 }
