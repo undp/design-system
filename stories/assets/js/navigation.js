@@ -14,7 +14,7 @@ export const navigationInitialize = (locale) => {
   $menuItem.on('mouseenter click', function () {
     const id = $(this).parent().attr('data-menu-id');
     const $menuItemId = $(document).find(`[data-menu-item-id='${id}']`);
-    $menuItemId.addClass('show-mega').siblings().removeClass('show-mega');
+    $menuItemId.addClass('show-mega').removeClass('hide').siblings().removeClass('show-mega');
     $megaMenu.find('.sub-menu-content:first-child').addClass('active-content')
       .siblings().removeClass('active-content');
     $megaMenu.find('.submenu li:first-child').addClass('active').siblings().removeClass('active');
@@ -39,10 +39,10 @@ export const navigationInitialize = (locale) => {
     $('.logo, .top-right button').attr("tabIndex","0");
   });
 
-  $('.mega-wrapper').mouseleave(function () {
-    $(this).find('.mega-nav-option.show-mega').removeClass('show-mega');
-    
-  });
+  // $('.mega-wrapper').mouseleave(function () {
+  //   $(this).find('.mega-nav-option.show-mega').removeClass('show-mega');
+  //   $(this).find('.mega-nav-option.show-mega').addClass('show-mega-back');
+  // });
 
   $('.mega-wrapper').mouseenter(function () {
     $('.mega-wrapper').find(this).addClass('show-mega');
@@ -57,7 +57,13 @@ export const navigationInitialize = (locale) => {
   });
 
   $('.mega-wrapper').mouseleave(function () {
-    $(this).find('.mega-nav-option.show-mega').removeClass('show-mega');
+    $(this).find('.mega-nav-option.show-mega').removeClass('show-mega').addClass('hide');
+    setTimeout(function () {
+      $('.mega-nav-option').removeClass('hide').addClass('show-mega-back');
+    }, 10);
+    setTimeout(function () {
+      $('.mega-nav-option').removeClass('show-mega-back');
+    }, 300);
   });
 
   $('.mega-wrapper').on('mouseenter focus', '.submenu li', function () {
