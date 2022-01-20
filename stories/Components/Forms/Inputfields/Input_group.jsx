@@ -18,7 +18,7 @@ export const Inputcomponent = ({
   }, [state]);
   return (
     <>
-      <div className={['input-group', `${state}`].join(' ')}>
+      <div className={['input-group', `${state}`].join(' ').trim()}>
         {labelText && <label htmlFor={[`${type}`]}>{ labelText }</label>}
         <InputTag
           ref={inputElement}
@@ -27,6 +27,7 @@ export const Inputcomponent = ({
           placeholder={placeholder}
           name={type}
           id={type}
+          {...(labelText ? '' : {'aria-label': placeholder})}
         />
         {helpText && <p className="help">{ helpText }</p>}
         {(State == 'Error') && <p className="error">{ errorText }</p>}
