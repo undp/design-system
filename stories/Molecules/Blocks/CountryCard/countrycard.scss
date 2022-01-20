@@ -47,11 +47,8 @@
         }
 
         .cta__link {
-          &::after {
-            @include translate(10px, 0);
-
-            background-image: url(#{$img-path-Icon}/arrow-left-expand-hover.svg);
-            width: 100px;
+          i {
+            width: $spacing-80;
           }
         }
       }
@@ -76,15 +73,6 @@
                   opacity: 1;
                 }
               }
-            }
-          }
-
-          .cta__link {
-            &::after {
-              @include translate(10px, 0);
-
-              background-image: url(#{$img-path-Icon}/arrow-left-expand-hover.svg);
-              width: 100px;
             }
           }
         }

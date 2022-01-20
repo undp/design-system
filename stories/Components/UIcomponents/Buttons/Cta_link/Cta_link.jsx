@@ -14,12 +14,12 @@ export const Ctalink = ({ label, Type, ...args }) => {
       {`${args.button_option}` === 'span'
       ? (
         <span className={cls('cta__link', `cta--${type}`)}>
-          {label}
+          {label} <i/>
         </span>
       )
       : (
         <a className={cls('cta__link', `cta--${type}`)} href="#">
-          {label}
+          {label} <i/>
         </a>
       )}
     </>

@@ -4,6 +4,7 @@ import '../../../../assets/scss/_grid.scss';
 import viewport from '../../../../assets/js/viewport';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
+import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
 export const size_options = {
   large: 'large-8 medium-8',
@@ -45,7 +46,7 @@ export const FeaturedContentCard = ({
                 {item.size}
                 {item.descriptionText && <P label={item.descriptionText} />}
               </div>
-                <span className='cta__link cta--arrow'>{item.button}</span>
+                <Ctalink label={item.button} button_option="span"/>
             </article>
           </a>
         </div>
