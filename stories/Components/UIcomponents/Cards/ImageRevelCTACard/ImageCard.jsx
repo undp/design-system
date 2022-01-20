@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import viewport from '../../../../assets/js/viewport';
 import './imagecard.scss';
 import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
+import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
 export const ImageRevelCard = ({
-  contentname, image, Size, link, button,
+  contentname, image, Size, data, delaytime,
 }) => {
+  useEffect(() => {
+    viewport('.image-reveal-card');
+  }, []);
+
   let size = 'medium-4';
   if (Size == 'Small') {
     size = 'small';
@@ -13,15 +19,17 @@ export const ImageRevelCard = ({
 
   return (
     <div className="grid-x grid-margin-x">
-      <div className={['cell', `${size}`, 'image-reveal-card'].join(' ')}>
-        <a href={link}>
-          <div className="image-reveal-card__content">
-            {image && (<img src={image} alt={image} />)}
-            {contentname && <Heading type="5" label={contentname} />}
-          </div>
-          <span className="cta__link cta--arrow">{button}</span>
-        </a>
-      </div>
+      {data.map((item, index) => (
+        <div key={index} className={['cell', `${size}`, 'image-reveal-card left-right', `delay-${2 + index++}`].join(' ')}>
+          <a href={item.link}>
+            <div className="image-reveal-card__content">
+              {item.imageback && (<img src={item.imageback} alt={item.imageback} />)}
+              {item.contentname && <Heading type="5" label={item.contentname} />}
+            </div>
+            <Ctalink label={item.btnlabel} button_option="span" />
+          </a>
+        </div>
+      ))}
     </div>
   );
 };
