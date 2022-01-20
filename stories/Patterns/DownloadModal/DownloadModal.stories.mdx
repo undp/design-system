@@ -463,7 +463,7 @@ The Download Modal Component is created for showing the modal popup include: Ima
 <Story name="Download Modal">
   {(args, { globals: { locale } }) => {
     const caption = statsArray(locale);
-    return <DownloadModal data={caption.data} button={caption.button} select={caption.select} id="exampleModal" content={caption.content} {...args}></DownloadModal>;
+    return <DownloadModal data={caption.data} button={caption.button} select={caption.select} id="downloadModal" content={caption.content} {...args}></DownloadModal>;
   }}
 </Story>
 
