@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const RemovePlugin = require('remove-files-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const webpackEntry = require('./webpack.entries');
 const packMode = 'production';
@@ -41,10 +42,22 @@ module.exports = [
             },
           ],
         },
+        {
+          test: /\.(eot|woff|woff2|ttf)([\?]?.*)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: '../fonts' // relative path for CSS file, if change delete the folder
+              }
+            }
+          ]
+        }
       ]
     },
     resolve: {
-      // @TODO: Need to find a valid solution
+      // @TODO: Need to find a valid option to manage these icon to resolve
       alias: {
         "../../../../../../assets/icons/Bars.svg": path.resolve(__dirname, 'stories/assets/icons/Bars.svg'),
         "../../../../../../assets/icons/Chevron-down.svg": path.resolve(__dirname, 'stories/assets/icons/Chevron-down.svg'),
@@ -72,12 +85,22 @@ module.exports = [
       new CopyPlugin({
         patterns: [
           { from: "./stories/assets/icons", to: "images" },
+          { from: "./stories/assets/fonts", to: "fonts" },
         ]
       }),
       // remove .js file which is generated from every css file
       new FixStyleOnlyEntriesPlugin(),
       new MiniCssExtractPlugin({
         filename: '[name].min.css',
+      }),
+      // delete fonts from the root directory
+      new RemovePlugin({
+        after: {
+          include: [
+            'fonts'
+          ],
+          trash: true
+        }
       })
     ]
   },
