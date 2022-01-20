@@ -72,7 +72,7 @@
         display: block;
         font-size: $font-size-16;
         margin: 0 -1rem;
-        padding: 0.938rem $spacing-16;
+        padding: $spacing-16;
 
         &:hover {
           background-color: $color-gray-100;
@@ -90,6 +90,9 @@
       &::after {
         @extend %select_rtl_after;
       }
+    }
+    ul {
+      padding: 0 $spacing-16;
     }
   }
 }

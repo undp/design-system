@@ -11,7 +11,7 @@ const CustomSelect = ({ text }) => {
       <button type="button" aria-haspopup="listbox" aria-label="Select" data-select-open="">
         {text}
       </button>
-      <ul tabIndex="-1" role="listbox" aria-labelledby="exp_button" data-select-options="">
+      <ul tabIndex="-1" role="listbox" data-select-options="">
         <li role="option" data-value="default">
           <span>All</span>
         </li>
