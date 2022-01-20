@@ -4,27 +4,25 @@
 
 /* bio card start */
 .bio-card {
-
   // color map
   $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
 
-  background: $color-gray-200;
-  border-bottom: 0;
-  display: block;
-  height: 100%;
-  position: relative;
+  a {
+    display: block;
+    background: $color-gray-200; 
+    
+    &:hover {
+      .cta--arrow::after {
+        @include translate(10px, 0);
+        @include transition(0.2s ease);
 
-  &:hover {
-    .cta--arrow::after {
-      @include translate(10px, 0);
-      @include transition(0.2s ease);
+        background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
+        width: 100px;
+      }
 
-      background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
-      width: 100px;
-    }
-
-    .card-thumbnail__image::before {
-      opacity: 0.75;
+      .card-thumbnail__image::before {
+        opacity: 0.75;
+      }
     }
   }
 
@@ -32,13 +30,16 @@
     background: $color-gray-100;
     flex-direction: column;
     order: 2;
-    padding: $spacing-32 $spacing-24;
     position: relative;
 
     @include devicebreak(medium) {
       background: none;
       display: flex;
       order: inherit;
+    }
+    
+    .bio-card__description {
+      padding: $spacing-32 $spacing-24 0 ;
     }
 
     .card-thumbnail__image {
@@ -69,11 +70,10 @@
         }
     }
 
-    .bio-cta {
+    .cta__link {
       margin-bottom: 0;
       margin-top: $spacing-24;
-      z-index: 10;
-
+      padding: 0  $spacing-24 $spacing-32;
       @include devicebreak(medium) {
         margin-top: auto;
       }
@@ -143,9 +143,11 @@
 }
 
 [dir='rtl'] {
-  .bio-card:hover {
-    .cta--arrow::after {
+  .bio-card{
+    a:hover  {
+      .cta--arrow::after {
       @include transform(translate(0, 0) rotate(180deg));
+      }
     }
   }
 
@@ -161,5 +163,4 @@
     }
   } 
 }
-
 /* bio card end */
