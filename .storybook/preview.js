@@ -4,10 +4,13 @@ import anysort from 'anysort'
 import { addParameters } from '@storybook/react'
 import renderToHTML from './renderToHTML'
 
-//import '../stories/assets/scss/normalize.scss';
+// include fonts globally
+import '../stories/assets/scss/_fonts.scss';
 
+// initialise RTL
 initializeRTL();
 
+// Configure Storybook
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {

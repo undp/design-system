@@ -1,1 +1,1 @@
-.scrollbar-horizontal-wrapper{float:left;max-width:37.5rem;width:100%}.scrollbar-data{visibility:hidden;width:1000px}.scrollbar-vertical-wrapper{height:70vh;width:65px}.scrollbar-data__vertical{min-height:100vh}
+.scrollbar-horizontal-wrapper{float:left;max-width:37.5rem;width:100%;line-height:normal}.scrollbar-data{visibility:hidden;width:1000px}.scrollbar-vertical-wrapper{height:70vh;width:65px}.scrollbar-data__vertical{min-height:100vh}[dir=rtl] .scrollbar-horizontal-wrapper,[dir=rtl] .scrollbar-vertical-wrapper{float:right}

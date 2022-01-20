@@ -1,1 +1,1 @@
-.menu ul{padding:0}.menu ul li{display:inline-block;margin:.75rem 1.5rem .75rem 0}[dir=rtl] .menu ul li{margin-left:1.5rem;margin-right:0}[dir=rtl] .menu ul li a{margin:0}
+.menu ul{padding:0}.menu ul li{display:inline-block;margin:.75rem 3.75rem .75rem 0;padding-left:0}.menu ul li:last-child{margin-right:0}[dir=rtl] .menu ul li{margin-left:3.75rem;margin-right:0}[dir=rtl] .menu ul li a{margin:0}[dir=rtl] .menu ul li:last-child{margin-left:0}
