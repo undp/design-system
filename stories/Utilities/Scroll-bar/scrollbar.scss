@@ -23,4 +23,9 @@
   min-height: 100vh;
 }
 
+[dir='rtl'] {
+  .scrollbar-horizontal-wrapper, .scrollbar-vertical-wrapper  {
+    float: right;
+  }
+}
 /* scrollbar layout end */
