@@ -31,10 +31,10 @@ export const DownloadModal = ({
   let category_variant = Category_options[`${Category}`];
   return (
     <>
-      {content === '' && <CtaButton label="Modal" data-toggle="modal" data-target-modal="#exampleModal" />}
-      <div className={cls('modal', `${image_variant}`)} role="dialog" aria-labelledby="modal" aria-modal="true" {...props}>
+      {content === '' && <CtaButton label="Modal" data-toggle="modal" data-target-modal="#downloadModal" />}
+      <div className={cls('modal', `${image_variant}`)} role="dialog" aria-label="downloadModal" aria-modal="true" {...props}>
         <div className="modal-content" aria-describedby="content">
-          <span className="modal-close-button" aria-label="close">Close</span>
+          <button type="button" class="modal-close-button" data-dismiss="modal" aria-label="Close">Close</button>
           <div className="download-body">
             {Image === 'True' && (
             <div className="show-large">

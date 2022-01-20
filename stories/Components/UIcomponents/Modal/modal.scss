@@ -46,6 +46,7 @@
     right: 16px;
     top: 10px;
     width: 45px;
+    border: 0;
 
     &:hover {
       @extend %no-animation;

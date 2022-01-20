@@ -29,9 +29,9 @@ export const Modal = ({
   return (
     <>
       {content === '' && <CtaButton label="Modal" data-toggle="modal" data-target-modal="#exampleModal" />}
-      <div className="modal" role="dialog" aria-labelledby="modal" aria-modal="true" {...props}>
+      <div className="modal" role="dialog" aria-label="modal" aria-modal="true" {...props}>
         <div className="modal-content" aria-describedby="content">
-          <span className="modal-close-button" aria-label="close">close</span>
+        <button type="button" class="modal-close-button" data-dismiss="modal" aria-label="Close">Close</button>
           {content === '' ? Modaldata(image2, contentname, descriptionText, descriptionText2) : content}
         </div>
       </div>
