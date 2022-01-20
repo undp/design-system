@@ -4,7 +4,9 @@
 
 /* image with caption start */
 .image {
-  &-section {
+  &-figcaption {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 
     .image__caption {
@@ -18,10 +20,27 @@
   }
 }
 
-.image-section.portrait {
+.image-figcaption.medium {
+  
+  @include devicebreak(medium) {
+    width: 58.3333%;
+    margin: 0 auto;
+
+    .image__caption {
+      width: 100%;
+    }
+  }
+}
+
+.image-figcaption.portrait {
   align-items: flex-end;
 
   @include devicebreak(medium) {
+
+    .image-figcaption__cart {
+      width: 33.33333%;
+    }
+
     .image__caption {
       display: block;
       margin: 0 0 0 $spacing-24;
@@ -55,7 +74,7 @@
   }
 }
 
-.image-section__cart {
+.image-figcaption__cart {
   img {
     @extend %img-cover;
 
@@ -65,7 +84,7 @@
 
 @include devicebreak(medium) {
   [dir='rtl'] {
-    .image-section.portrait {
+    .image-figcaption.portrait {
       .image {
         &__caption {
           margin: 0 $spacing-24 0 0;
