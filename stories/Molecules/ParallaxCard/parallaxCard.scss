@@ -6,23 +6,25 @@
 .parallax-card {
   align-items: center;
 
-  &__link {
-    @extend %img_none;
-    @extend %img_none;
+  &__content {
+    > a {
+      @extend %img_none;
+      @extend %img_none;
 
-    display: block;
+      display: block;
 
-    @include devicebreak(small) {
-      padding: $spacing-24 0 0 $spacing-24;
-    }
+      @include devicebreak(small) {
+        padding: $spacing-24 0 0 $spacing-24;
+      }
 
-    @include devicebreak(medium) {
-      padding-right: $spacing-12;
-    }
+      @include devicebreak(medium) {
+        padding-right: $spacing-12;
+      }
 
-    &:hover {
-      .cta__link::after {
-        @include translate(70%,0);
+      &:hover {
+        .cta__link::after {
+          @include translate(70%,0);
+        }
       }
     }
   }
@@ -32,6 +34,10 @@
       @extend %img-cover;
 
       display: block;
+
+      @include devicebreak(small) {
+        height: 17.875rem;
+      }
     }
   }
 
@@ -68,7 +74,7 @@
       order: -1;
 
       @include devicebreak(medium) {
-        .parallax-card__link {
+        > a {
           padding-left: $spacing-12;
           padding-right: 0;
         }
@@ -108,14 +114,14 @@
         padding: 0 $spacing-24 $spacing-24 0;
       }
 
-      .parallax-card__link {
+      .parallax-card__content > a {
         padding-left: $spacing-12;
         padding-right: 0;
       }
 
       &.text-left {
         .parallax-card__content {
-          .parallax-card__link {
+          > a {
             padding-left: 0;
             padding-right: $spacing-12;
           }
@@ -171,26 +177,28 @@
           padding: 0 0 $spacing-24 $spacing-24;
         }
 
-        .parallax-card__link {
+        .parallax-card__content > a {
           padding-left: 0;
           padding-right: $spacing-12;
         }
       }
     }
 
-    &__link {
-      @include devicebreak(medium) {
-        padding-left: $spacing-12;
-        padding-right: 0;
-      }
+    &__content {
+      > a {
+        @include devicebreak(medium) {
+          padding-left: $spacing-12;
+          padding-right: 0;
+        }
 
-      @include devicebreak(small) {
-        padding: $spacing-24 $spacing-24 0 0;
-      }
+        @include devicebreak(small) {
+          padding: $spacing-24 $spacing-24 0 0;
+        }
 
-      &:hover {
-        .cta__link::after {
-          @include transform(translate(-50%,0) rotate(180deg));
+        &:hover {
+          .cta__link::after {
+            @include transform(translate(-50%,0) rotate(180deg));
+          }
         }
       }
     }

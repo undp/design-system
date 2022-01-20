@@ -5,6 +5,10 @@
 .fluid-carousel {
   overflow: hidden;
 
+  .slider-slide {
+    @extend %carousel_slider_slide;
+  }
+
   &__image {
     display: block;
     height: 31rem;
@@ -82,22 +86,19 @@
     }
   }
 
-  .glide {
-    &__bullets {
-      margin-bottom: $spacing-48;
+  .swiper-scrollbar {
+    @extend %carousel_bar_margin;
+  }
+
+  .slider-arrows {
+
+    margin-left: 2rem;
+
+    @include devicebreak(large) {
+      margin-left: 3rem;
     }
 
-    &__arrows {
-      @extend %carousel_arrows;
-
-      margin-left: 2rem;
-
-      @include devicebreak(large) {
-        margin-left: 3rem;
-      }
-    }
-
-    &__arrow {
+    [class*='swiper-button-'] {
       @extend %carousel_arrow;
 
       &:first-child {
@@ -127,13 +128,15 @@
       }
     }
 
-    .glide {
-      // &__track {
-      //   // margin-left: -100%;
-      //   margin-right: 0;
-      // }
+    .slider-arrows {
+      margin-left: auto;
+      margin-right: 2rem;
 
-      &__arrow {
+      @include devicebreak(large) {
+        margin-right: 3rem;
+      }
+
+      [class*='swiper-button-'] {
         &:first-child {
           margin-left: 0.625rem;
           margin-right: 0;
@@ -150,15 +153,6 @@
           img {
             @include transform(rotate(-180deg));
           }
-        }
-      }
-
-      &__arrows {
-        margin-left: auto;
-        margin-right: 2rem;
-
-        @include devicebreak(large) {
-          margin-right: 3rem;
         }
       }
     }

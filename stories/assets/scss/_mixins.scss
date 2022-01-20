@@ -366,6 +366,7 @@
 }
 
 %carousel_arrow {
+  display: inline-block;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -382,6 +383,7 @@
   letter-spacing: 0.48px;
   line-height: 0.84;
   text-transform: uppercase;
+  margin-bottom: $spacing-16;
 }
 
 %carousel_title {
@@ -394,6 +396,16 @@
   margin-bottom: 1.5rem;
 }
 
+%carousel_bar_margin {
+  margin-bottom: $spacing-48;
+}
+
+%carousel_slider_slide {
+  @include devicebreak(medium) {
+    display: flex;
+  }
+}
+
 %header {
   background-color: $color-gray-100;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -403,14 +415,6 @@
   top: 0;
   width: 100%;
   z-index: 9;
-}
-
-%carousel_arrows {
-  display: none;
-
-  @media (pointer: coarse) and (hover: none) and (min-width: 48em) {
-    display: block;
-  }
 }
 
 %background-white {

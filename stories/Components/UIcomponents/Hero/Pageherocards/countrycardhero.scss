@@ -2,25 +2,13 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/base';
 
-/* pagehero card hero start */
-.pagehero-cards {
-  @include devicebreak(medium) {
-    &-items {
-      .glide__slides {
-        flex-wrap: wrap;
-      }
-    }
-
-    &-box {
-      margin-bottom: $spacing-24;
-
-      &.glide__slide {
-        height: auto;
-      }
-    }
+/* country card hero start */
+.country-card {
+  @include devicebreak(small) {
+    overflow: hidden;
   }
 
-  &-top {
+  &__header {
     justify-content: center;
     position: relative;
 
@@ -100,6 +88,23 @@
       }
     }
   }
+
+  &--item {
+    &.swiper-slide {
+      @include devicebreak(medium) {
+        height: auto;
+      }
+    }
+  }
+
+  .swiper-wrapper {
+    .swiper-slide-active {
+      @include devicebreak(small) {
+        margin-left: -$spacing-64;
+        padding-left: $spacing-64;
+      }
+    }
+  }
 }
 
 [dir='rtl'] {
@@ -114,6 +119,22 @@
 
         @include devicebreak(medium) {
           right: -60px;
+        }
+      }
+    }
+
+    &__subtitle {
+      padding-left: 0;
+      padding-right: $spacing-64;
+    }
+
+    .swiper-wrapper {
+      .swiper-slide-active {
+        @include devicebreak(small) {
+          margin-left: 0;
+          margin-right: -$spacing-64;
+          padding-right: $spacing-64;
+          padding-right: 0;
         }
       }
     }

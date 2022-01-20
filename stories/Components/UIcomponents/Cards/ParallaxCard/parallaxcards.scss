@@ -6,6 +6,10 @@
 .parallax {
   position: relative;
 
+  @include devicebreak(small) {
+    overflow: hidden;
+  }
+
   @include devicebreak(medium) {
     background-image: linear-gradient(90deg, $color-gray-400 1px, rgba(212, 214, 216, 0) 0);
     background-size: 25%;
@@ -26,7 +30,14 @@
     }
   }
 
-  .glide__slides {
+  &-card {
+    @include devicebreak(small) {
+      box-sizing: border-box;
+      padding-right: 1.25rem;
+    }
+  }
+
+  .swiper-wrapper {
     display: flex;
 
     @include devicebreak(medium) {
@@ -42,6 +53,13 @@
     &__heading {
       margin-left: 0;
       margin-right: 8.33333%;
+    }
+
+    &-card {
+      @include devicebreak(small) {
+        padding-left: 1.25rem;
+        padding-right: 0;
+      }
     }
   }
 }

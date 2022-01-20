@@ -1,5 +1,45 @@
-.glide__slide {
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+.stats-slider {
   .stats-card {
     max-width: 100%;
+  }
+
+  .swiper-wrapper {
+
+    @include devicebreak(medium) {
+      .swiper-slide-active {
+        padding-left: 0;
+        margin-left: 0;
+
+        @include devicebreak(medium) {
+          &:first-child {
+            margin-left: $spacing-50;
+          }
+        }
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .stats-slider {
+    .swiper-wrapper {
+  
+      @include devicebreak(medium) {
+        .swiper-slide-active {
+          padding-right: 0;
+          margin-right: 0;
+  
+          @include devicebreak(medium) {
+            &:first-child {
+              margin-right: $spacing-50;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
   }
 }

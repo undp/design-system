@@ -141,6 +141,28 @@ const sbFrameReset = (Story, context) => {
   )
 }
 
+const setDirection = (Story, options) => {
+  // Set default direction.
+  let direction = 'ltr';
+  // LTR-RTL Toggle button.
+  const input = parent.document.querySelector('[aria-controls="rtl-status"]');
+  // Callback function for LTR-RTL Toggle.
+  const checkRTL = (elem) => {
+    if (elem.checked) {
+      direction = 'rtl';
+    }
+  }
+  // Change direction on LTR-RTL Toggle.
+  if (input && input.checked) {
+    input.addEventListener('change', checkRTL(input), false);
+  }
+  // Set window object for iframe.
+  window.UNDP.dir = (window.UNDP) ? direction : window.UNDP= { dir : direction };
+
+  return (
+    <Story {...options} />
+  )
+}
 
 // Trigger callback in Storybook Addons.
-export const decorators = [getLangCode, sbFrameReset];
+export const decorators = [getLangCode,sbFrameReset, setDirection];

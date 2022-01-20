@@ -1,19 +1,20 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
 @import '../../assets/scss/glideslider';
+@import '../../assets/scss/swiper';
 @import '../../assets/scss/mixins';
 
 /* stats-card-grid start */
-.stats-card-grid {
+.stats-card-slider {
   overflow-x: hidden;
 
   @include devicebreak(medium) {
-    .glide {
-      &__slides {
+    .swiper {
+      &-wrapper {
         display: block;
       }
 
-      &__slide {
+      &-slide {
         padding-left: 0.625rem;
         padding-right: 0.625rem;
         width: initial;
@@ -27,9 +28,9 @@
       pointer-events: none;
     }
 
-    .glide {
-      &__slide--active {
-        .stats-card {
+    .swiper {
+      &-slide-active {
+        .statscard {
           background-color: $color-light-yellow;
 
           h2 {
@@ -66,13 +67,29 @@
       background-color: $color-light-yellow;
     }
   }
+
+  .swiper-slide-active {
+    @include devicebreak(small) {
+      margin-left: -$spacing-64;
+      padding-left: $spacing-64;
+    }
+  }
 }
 
 [dir='rtl'] {
-  .stats-card-grid {
+  .stats-card-slider {
     @include devicebreak(medium) {
       .grid-x {
         flex-direction: row-reverse;
+      }
+    }
+
+    .swiper-slide-active {
+      @include devicebreak(small) {
+        margin-left: 0;
+        margin-right: -$spacing-64;
+        padding-left: 0;
+        padding-right: $spacing-64;
       }
     }
   }

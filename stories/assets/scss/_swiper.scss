@@ -1,0 +1,135 @@
+@import './variables';
+@import './breakpoints';
+@import './mixins';
+
+.swiper {
+  box-sizing: border-box;
+  max-width: 100%;
+  position: relative;
+
+  & * {
+    box-sizing: inherit;
+  }
+
+  &-wrapper {
+    backface-visibility: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    touch-action: pan-y;
+    transform-style: preserve-3d;
+    transition-property: transform;
+    white-space: nowrap;
+    width: 100%;
+    will-change: transform;
+
+    .swiper-slide-active {
+      box-sizing: border-box;
+      margin-left: -$spacing-44;
+      padding-left: $spacing-44;
+
+      @include devicebreak(small) {
+        margin-left: -$spacing-40;
+        padding-left: $spacing-40;
+      }
+    }
+  }
+
+  &-slide {
+    flex-shrink: 0;
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+    white-space: normal;
+    width: 100%;
+
+    a {
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+  }
+
+  [class*='swiper-button-'] {
+    cursor: pointer;
+    display: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  @at-root .swiper-arrows {
+    [class*='swiper-button-'] {
+      cursor: pointer;
+    }
+  }
+
+  &-button-disabled {
+    cursor: default;
+    opacity: 0.5;
+
+    img {
+      cursor: default;
+    }
+  }
+
+  @at-root [dir='rtl'] #{&} {
+    direction: rtl;
+  }
+
+  &-scrollbar {
+    background: transparent;
+    display: block;
+    height: 4px;
+    margin-bottom: $spacing-32;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+
+    &::after {
+      border-bottom: 1px solid $color-black;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: 1px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &-drag {
+      background: $color-black;
+      height: 100%;
+    }
+  }
+
+  &-notification {
+    display: none;
+  }
+}
+
+
+[dir='rtl'] {
+  .swiper {
+    &-wrapper {
+      .swiper-slide-active {
+        margin-left: 0;
+        margin-right: -$spacing-44;
+        padding-left: 0;
+        padding-right: $spacing-44;
+
+        @include devicebreak(small) {
+          margin-right: -$spacing-40;
+          padding-right: $spacing-40;
+        }
+      }
+    }
+  }
+}

@@ -5,13 +5,14 @@
 .fixed-carousel {
   overflow: hidden;
 
-  &__row {
-    @include devicebreak(medium) {
-      display: flex;
-    }
+  .slider-slide {
+    @extend %carousel_slider_slide;
   }
 
-  &__image-col {
+  &__image {
+    display: block;
+    object-fit: contain;
+
     @include devicebreak(medium) {
       flex: 0 0 18rem;
       max-width: 18rem;
@@ -26,11 +27,6 @@
       flex: 0 0 28rem;
       max-width: 28rem;
     }
-  }
-
-  &__image {
-    display: block;
-    width: 100%;
 
     @include devicebreak(small) {
       max-width: 10.625rem;
@@ -42,7 +38,8 @@
     margin-top: $spacing-80;
   }
 
-  &__content-col {
+  .slide-content {
+
     @include devicebreak(medium) {
       align-content: space-between;
       display: flex;
@@ -70,37 +67,37 @@
       width: 100%;
     }
 
-    h6 {
-      @extend %carousel_tag;
-
-      margin-bottom: 1rem;
-    }
-
-    h4 {
-      @extend %carousel_title;
-
-      @include devicebreak(medium) {
-        margin-bottom: 2rem;
-      }
-    }
-
-    p {
-      @extend %carousel_desc;
-
-      @include devicebreak(large) {
-        margin-bottom: 3.375rem;
-      }
-
-      @include devicebreak(small) {
-        font-size: 0.875rem;
-      }
-    }
-
     .button {
       text-transform: uppercase;
 
       @include devicebreak(small) {
         display: inline-flex;
+      }
+    }
+
+    &-wrap {
+      h6 {
+        @extend %carousel_tag;
+      }
+
+      h4 {
+        @extend %carousel_title;
+
+        @include devicebreak(medium) {
+          margin-bottom: 2rem;
+        }
+      }
+
+      p {
+        @extend %carousel_desc;
+
+        @include devicebreak(large) {
+          margin-bottom: 3.375rem;
+        }
+
+        @include devicebreak(small) {
+          font-size: 0.875rem;
+        }
       }
     }
   }
@@ -111,22 +108,19 @@
     }
   }
 
-  .glide {
-    &__bullets {
-      margin-bottom: $spacing-48;
+  .swiper-scrollbar {
+    @extend %carousel_bar_margin;
+  }
+
+  .slider-arrows {
+
+    margin-left: 2.5rem;
+
+    @include devicebreak(large) {
+      margin-left: 4rem;
     }
 
-    &__arrows {
-      @extend %carousel_arrows;
-
-      margin-left: 2.5rem;
-
-      @include devicebreak(large) {
-        margin-left: 4rem;
-      }
-    }
-
-    &__arrow {
+    [class*='swiper-button-'] {
       @extend %carousel_arrow;
 
       &:first-child {
@@ -147,7 +141,7 @@
 
 [dir='rtl'] {
   .fixed-carousel {
-    &__content-col {
+    .slide-content {
       @include devicebreak(medium) {
         padding-left: 1.5rem;
         padding-right: 3rem;
@@ -168,12 +162,15 @@
       }
     }
 
-    .glide {
-      &__bullets {
-        margin-bottom: $spacing-48;
+    .slider-arrows {
+      margin-left: auto;
+      margin-right: 2.5rem;
+
+      @include devicebreak(large) {
+        margin-right: 4rem;
       }
 
-      &__arrow {
+      [class*='swiper-button-'] {
         &:first-child {
           margin-left: 0.75rem;
           margin-right: 0;
@@ -190,15 +187,6 @@
           img {
             @include transform(rotate(-180deg));
           }
-        }
-      }
-
-      &__arrows {
-        margin-left: auto;
-        margin-right: 2.5rem;
-
-        @include devicebreak(large) {
-          margin-right: 4rem;
         }
       }
     }

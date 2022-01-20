@@ -5,6 +5,10 @@
 .image-carousel {
   overflow: hidden;
 
+  .slider-slide {
+    @extend %carousel_slider_slide;
+  }
+
   &__image {
     height: 30rem;
     max-width: 65%;
@@ -21,19 +25,16 @@
     }
   }
 
-  .glide {
-    &__bullets {
-      margin-bottom: $spacing-48;
-    }
+  .swiper-scrollbar {
+    @extend %carousel_bar_margin;
+  }
 
-    &__arrows {
-      @extend %carousel_arrows;
+  .slider-arrows {
 
-      align-self: flex-end;
-      margin-left: 4rem;
-    }
+    align-self: flex-end;
+    margin-left: 4rem;
 
-    &__arrow {
+    [class*='swiper-button-'] {
       @extend %carousel_arrow;
 
       &:first-child {
@@ -54,8 +55,11 @@
 
 [dir='rtl'] {
   .image-carousel {
-    .glide {
-      &__arrow {
+    .slider-arrows {
+      margin-left: 0;
+      margin-right: 4rem;
+
+      [class*='swiper-button-'] {
         &:first-child {
           margin-left: 0.75rem;
           margin-right: 0;
@@ -73,11 +77,6 @@
             @include transform(rotate(-180deg));
           }
         }
-      }
-
-      &__arrows {
-        margin-left: 0;
-        margin-right: 4rem;
       }
     }
   }
