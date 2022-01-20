@@ -1,11 +1,16 @@
+const selectCount = [];
 const toggleFilter = function () {
   const searchOption = $('.multi-select li input');
   const chipsWrapper = $('.search-filter .selected-chips');
 
-  $('.multi-select').on('click', function (e) {
-    $(this).toggleClass('open');
+  $(".multi-select").each(function( index ) { 
+    const numberOfCheck = $(this).find('input:checkbox:checked').length;
+    if(numberOfCheck > 0){
+      $(this).find('button').first().find('span').remove();
+      $(this).find('button').first().append('<span> (' + numberOfCheck + ') </span>');
+    }
   });
-
+  
   $(searchOption).on('click', function () {
     const el = $(this);
     const currentChipsWrapper = el.parents('.select-wrapper').find('.selected-chips');

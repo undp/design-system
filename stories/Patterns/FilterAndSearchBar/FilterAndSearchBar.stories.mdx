@@ -81,7 +81,7 @@ The Sidebar Component is a shorter piece of text that appears next to and accomp
     const activeFilterText = getCaptionForActiveLocale(locale);
     
     return (
-      <FilterAndSearchBar args={args} clearText={clearText} activeFilterText={activeFilterText}  data={caption}></FilterAndSearchBar>
+      <FilterAndSearchBar locale={locale} args={args} clearText={clearText} activeFilterText={activeFilterText}  data={caption}></FilterAndSearchBar>
     );
   }}
 </Story>

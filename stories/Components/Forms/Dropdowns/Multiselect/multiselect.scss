@@ -27,39 +27,11 @@
         max-height: 18.75rem;
       }
 
-      .radio {
-        display: flex;
-        margin: 0 -1rem;
-        padding: $spacing-16;
-
-        &:hover {
-          background-color: $color-gray-100;
-        }
-
-        label {
-          font-size: $font-size-16;
-          width: 100%;
-        }
-
-        span {
-          left: inherit;
-          right: $spacing-16;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-      }
-
       ul {
         border: 0;
         display: none;
         overflow: hidden;
         padding: 0 0 0 $spacing-40;
-
-        .radio {
-          &:hover {
-            background-color: inherit;
-          }
-        }
       }
 
       li {
@@ -96,6 +68,7 @@
       cursor: pointer;
       list-style: none;
       margin-bottom: 0;
+      padding-left: 0;
 
       > .form-check {
         &:hover {
@@ -187,8 +160,8 @@
     margin: 0 -1rem;
     padding: 0 $spacing-16;
 
-    input[type='checkbox'],
-    input[type='checkbox'] + label::before {
+    input,
+    input + label::before {
       @include transform(translateY(-50%));
 
       left: auto;
@@ -196,9 +169,16 @@
       top: 50%;
     }
 
-    input[type='checkbox'] + label {
+    input + label {
       display: block;
       padding: $spacing-16 0;
+    }
+
+    input[type=radio]:checked + label::after{
+      left:inherit;
+      right: 21px;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 }

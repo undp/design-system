@@ -6,10 +6,10 @@ import { Radio } from '../../Radio/Radio';
 
 const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
 
-const SelectTag = ({ text, eleId, ...args }) => {
+const SelectTag = ({ text, eleId, locale, ...args }) => {
   useEffect(() => {
-    multiSelect();
-  }, []);
+    multiSelect(locale);
+  }, [locale]);
   return (
     <div className="multi-select" data-multi-select="">
       <button
@@ -20,6 +20,7 @@ const SelectTag = ({ text, eleId, ...args }) => {
         {text}
       </button>
       {args.variant === 'Checkbox' && (
+        
         <ul
           className={cls(`${args.Height === 'Fix height' ? 'fix-height' : ''}`)}
           data-type="region"
