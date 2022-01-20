@@ -47,9 +47,14 @@ input[type='radio'] {
     right: 0;
 
     & + label {
-      span {
+      &::before {
         left: unset;
         right: 0;
+      }
+      
+      &::after {
+        right: 5px;
+        left: unset;
       }
     }
   }
