@@ -28,7 +28,7 @@
       padding-bottom: 0;
       width: 25%;
 
-      &_para {
+      p {
         font-size: $font-size-14;
         line-height: 1.4;
         margin-bottom: $spacing-16;
@@ -74,7 +74,6 @@
 
       .credits {
         border-right: 0;
-        margin-bottom: 0;
         margin-right: 0;
         padding: $spacing-16 0;
         padding-right: 0;

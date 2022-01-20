@@ -11,7 +11,7 @@
     padding-bottom: $spacing-32;
   }
 
-  &_para {
+  p {
     color: $color-gray-600;
     font-size: $font-size-14;
     margin-bottom: $spacing-16;
@@ -65,7 +65,7 @@
 
 [dir='rtl'] {
   .image__caption {
-    &_para {
+    p {
       @include devicebreak(medium) {
         padding-right: 0;
       }
@@ -75,7 +75,6 @@
           border-right: 1px solid $color-gray-500;
           border-top: 0;
           display: block;
-          margin-bottom: 0;
           margin-right: $spacing-32;
           padding-right: $spacing-32;
           padding-top: 0;
@@ -104,7 +103,7 @@
 // burmese lang
 :lang(my) {
   .image__caption {
-    .image__caption_para,
+    p,
     .credits {
       line-height: 1.7;
     }
