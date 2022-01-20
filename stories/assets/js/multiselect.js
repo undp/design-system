@@ -13,7 +13,8 @@ class MultiSelect {
   }
 
   addListeners() {
-    this.$selectTrigger.click(() => {
+    this.$selectTrigger.click((ev) => {
+      ev.stopImmediatePropagation();
       this.toggleSelect();
     });
 
@@ -74,6 +75,27 @@ class MultiSelect {
 }
 
 export function multiSelect() {
+  $(".multi-select").each(function( index ) { 
+    const numberOfCheck = $(this).find('input:checkbox:checked').length;
+    if(numberOfCheck > 0){
+      $(this).find('button').first().find('span').remove();
+      $(this).find('button').first().append('<span> (' + numberOfCheck + ') </span>');
+    }
+  });
+  const searchOption = $('.multi-select li input');
+  $(searchOption).on('click', function () {
+    const el = $(this);
+    const currentChipsWrapper = el.parents('.select-wrapper').find('.selected-chips');
+    const eleId = el.attr('id');
+    const numberOfChecked = $(this).parents('.multi-select').find('input:checkbox:checked').length;
+    const filterButton = $(this).parents('ul').not('.sub-menu').siblings();
+    if(numberOfChecked > 0){
+      filterButton.find('span').remove();
+      filterButton.append('<span> (' + numberOfChecked + ') </span>');
+    }else{
+      filterButton.find('span').remove();
+    }
+  });
   const $selects = $('[data-multi-select]');
   $selects.each((i, select) => {
     const multiSelect = new MultiSelect(select);

@@ -56,7 +56,7 @@ The select component allows users to choose multiples option from a list. It is 
 <Story name="MultiSelect">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <MultiSelect {...args} text={caption} eleId=""></MultiSelect>;
+    return <MultiSelect locale={locale} {...args} text={caption} eleId=""></MultiSelect>;
   }}
 </Story>
 
