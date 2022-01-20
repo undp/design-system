@@ -6,7 +6,9 @@ import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const FormTypes = ({
   element,
-  type,
+  typeemail,
+  typename,
+  typelname,
   required,
   mode,
   label,
@@ -33,14 +35,14 @@ export const FormTypes = ({
           <div className="large-4 medium-6 cell medium-offset-1">
             <Inputcomponent
               element={element}
-              type={type}
+              type={typename}
               placeholder={placeholder}
               required={required}
               mode={mode}
             />
             <Inputcomponent
               element={element}
-              type={type}
+              type={typeemail}
               placeholder={placeholderemail}
               required={required}
               mode={mode}
@@ -64,14 +66,14 @@ export const FormTypes = ({
                 <p>{para}</p>
                 <Inputcomponent
                   element={element}
-                  type={type}
+                  type={typename}
                   placeholder={placeholder}
                   required={required}
                   mode={mode}
                 />
                 <Inputcomponent
                   element={element}
-                  type={type}
+                  type={typeemail}
                   placeholder={placeholderemail}
                   required={required}
                   mode={mode}
@@ -93,7 +95,7 @@ export const FormTypes = ({
               <div className="medium-6 cell">
                 <Inputcomponent
                   element={element}
-                  type={type}
+                  type={typename}
                   placeholder={placeholderfirst}
                   required={required}
                   mode={mode}
@@ -102,7 +104,7 @@ export const FormTypes = ({
               <div className="medium-6 cell">
                 <Inputcomponent
                   element={element}
-                  type={type}
+                  type={typelname}
                   placeholder={placeholderlast}
                   required={required}
                   mode={mode}
@@ -111,7 +113,7 @@ export const FormTypes = ({
               <div className="medium-12 cell">
                 <Inputcomponent
                   element={element}
-                  type={type}
+                  type={typeemail}
                   placeholder={placeholderemail}
                   required={required}
                   mode={mode}
@@ -133,14 +135,14 @@ export const FormTypes = ({
             <p>{para}</p>
             <Inputcomponent
               element={element}
-              type={type}
+              type={typename}
               placeholder={placeholder}
               required={required}
               mode={mode}
             />
             <Inputcomponent
               element={element}
-              type={type}
+              type={typeemail}
               placeholder={placeholderemail}
               required={required}
               mode={mode}
