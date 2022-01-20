@@ -84,9 +84,6 @@ export function multiSelect() {
   });
   const searchOption = $('.multi-select li input');
   $(searchOption).on('click', function () {
-    const el = $(this);
-    const currentChipsWrapper = el.parents('.select-wrapper').find('.selected-chips');
-    const eleId = el.attr('id');
     const numberOfChecked = $(this).parents('.multi-select').find('input:checkbox:checked').length;
     const filterButton = $(this).parents('ul').not('.sub-menu').siblings();
     if(numberOfChecked > 0){
