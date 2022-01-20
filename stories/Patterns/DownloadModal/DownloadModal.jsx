@@ -23,7 +23,7 @@ export const DownloadModal = ({
   data, button, select, content, Image, Category, ...props
 }) => {
   useEffect(() => {
-    checkbox('.checkbox input', '.download-footer .button-primary');
+    checkbox('.form-check input', '.download-footer .button-primary');
     selectFilter();
     modal();
   }, []);
