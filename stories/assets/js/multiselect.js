@@ -82,7 +82,7 @@ export function multiSelect() {
       $(this).find('button').first().append('<span> (' + numberOfCheck + ') </span>');
     }
   });
-  const searchOption = $('.multi-select li input');
+  const searchOption = $('.multi-select li input:checkbox');
   $(searchOption).on('click', function () {
     const numberOfChecked = $(this).parents('.multi-select').find('input:checkbox:checked').length;
     const filterButton = $(this).parents('ul').not('.sub-menu').siblings();

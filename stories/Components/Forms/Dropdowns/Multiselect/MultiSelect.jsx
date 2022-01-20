@@ -20,6 +20,7 @@ const SelectTag = ({ text, eleId, locale, ...args }) => {
         {text}
       </button>
       {args.variant === 'Checkbox' && (
+        
         <ul
           className={cls(`${args.Height === 'Fix height' ? 'fix-height' : ''}`)}
           data-type="region"

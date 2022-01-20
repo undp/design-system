@@ -60,13 +60,6 @@ class Select {
     });
   }
 
-  changeSelectedOption() {
-    // Using this instead of innerText or innerHTML so trapFocus mutationObserver doesn't trigger
-    this.$buttonTrigger[0].firstChild.nodeValue = this.$selectOptions.find(`#${this.optionSelectedId}`).text();
-
-    this.$currentSelect.data('selected-value', this.value);
-    this.$currentSelect.trigger('change');
-  }
 
   close() {
     this.$selectOptions.removeClass(this.activeClass);
@@ -153,6 +146,9 @@ class Select {
 }
 
 export function select() {
+  $('.select-box li').on('click', function(){
+    $(this).parent().siblings().text($(this).find('span').text());
+  });
   const selects = $('[data-select]');
   selects.each((i, select) => {
     const selectInstance = new Select(select);

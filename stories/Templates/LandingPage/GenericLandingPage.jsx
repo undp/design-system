@@ -6,9 +6,10 @@ import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Footer } from '../../Organism/Footer/Footer';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 
-export const GenericLandingPage = ({
+export const GenericLandingPage = ({ 
   data, active, herodata, title, imgsrc, videosrc, footerData, content,
   groupcontentdata, buttonname, activeFilterText, clearText,
+  args,
   logo,
   logowhite,
   languageswitcherData,
@@ -49,7 +50,7 @@ export const GenericLandingPage = ({
       <div className="grid-x grid-margin-x margin-top-48">
         <div className="cell large-3 small-12">
           <div className="column">
-            <FilterAndSearchBar data={data} clearText={clearText} activeFilterText={activeFilterText} />
+            <FilterAndSearchBar locale={locale} args={args} clearText={clearText} activeFilterText={activeFilterText}  data={data}></FilterAndSearchBar>
           </div>
         </div>
         <div className="cell large-9 small-12">
