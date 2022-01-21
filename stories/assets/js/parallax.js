@@ -24,8 +24,8 @@ export function parallaxEffect(selector, direction) {
     // This will only init on Desktop, unless specified to also init on mobile.
     if (desktop.matches || mobileEnabled) {
       let parallaxSlideElem;
-      let transformStart = 'top-=100 center';
-      let transformEnd = 'bottom+=50 center';
+      let transformStart = 'top-=100px center';
+      let transformEnd = 'bottom+=50px center';
       let offsetHeight;
 
       if (direction == 'horizontal') {
@@ -40,7 +40,7 @@ export function parallaxEffect(selector, direction) {
         }
         parallaxSlideElem = $('[class*="parallax-slide-"]');
       } else {
-        transformEnd = 'bottom+=85 center';
+        transformEnd = 'bottom+=85px center';
       }
 
       // Incase of vertical direction we enable mobile media query as well.
@@ -52,6 +52,7 @@ export function parallaxEffect(selector, direction) {
         [scrollMedia]() {
           const triggerTimeline = (elem, triggerElem, start, end, reverse) => {
             // ScrollTrigger (this automatically gets killed when the breakpoint no longer matches...
+            console.log(triggerElem);
             const scrollSlide = gsap.utils.toArray(elem);
             scrollSlide.forEach((element, k) => {
               const timeline = gsap.timeline({
@@ -95,7 +96,8 @@ export function parallaxEffect(selector, direction) {
             // Add class based on index incase of multiple parallax.
             $(trigger).addClass(`parallax-slider-${i}`);
             if (direction == 'horizontal') {
-              transformStart = 'top-=50px center';
+              transformStart = 'top-=10% bottom';
+              transformEnd = 'bottom top';
             } else if ($(trigger).hasClass('parallax-card')) {
               parallaxSlideElem = '.parallax-card__image, .parallax-card__content';
               parallaxCards.push(`.parallax-slider-${i}`);
@@ -142,18 +144,17 @@ export function parallaxEffect(selector, direction) {
     }
   });
 }
-
 // parallaxlines Function.
 export function parallaxlines() {
   $(window).scroll(() => {
     // variables
-    var $sticky = $('.parallax .glide__slides');
+    var $sticky = $('.parallax .swiper-wrapper');
     var stickyTop = $sticky.offset().top;
     var windowTop = $(window).scrollTop();
     var diff = windowTop + 500;
     // calculates the window width
     const windowWidth = $(window).width();
-    $('.parallax .glide__slides').each(function () {
+    $('.parallax .swiper-wrapper').each(function () {
       if (windowWidth > window.UNDP.breakpoints.SMALL) {
         $('.parallax').removeClass('lines-background');
         if ($(this).isInViewport()) {
