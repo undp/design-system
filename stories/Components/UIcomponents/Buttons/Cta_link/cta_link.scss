@@ -9,21 +9,7 @@
   color: $color-black;
 
   &.cta--arrow {
-    &::after {
-      @extend %ctaimg;
-
-      @include transition(0.1s ease);
-
-      background: url(#{$img-path-Iconfourback}/arrow-left-expand-defaut.svg) no-repeat left center;
-    }
-
-    &:hover {
-      &::after {
-        background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
-        margin-left: 0.25rem;
-        width: 100px;
-      }
-    }
+    @extend %chevron-right-expanded;
   }
 
   &.cta--space {
@@ -45,8 +31,7 @@
 
 [dir='rtl'] {
   .cta__link {
-    &.cta--space,
-    &.cta--arrow {
+    &.cta--space {
       &::after {
         @include transform(rotate(180deg));
 
@@ -59,11 +44,16 @@
       }
     }
 
-    &.cta--arrow:hover::after {
-      @include transform(rotate(180deg));
+    &.cta--arrow {
+      i {
+        left: 0;
+        right: 1.25rem;
+        @include transform(translate(0) rotate(180deg));
 
-      margin-left: 0;
-      margin-right: 0.25rem;
+        &:hover {
+          @include transform(translate(-10px) rotate(180deg));
+        }
+      }
     }
   }
 }

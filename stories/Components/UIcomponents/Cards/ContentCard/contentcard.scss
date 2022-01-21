@@ -98,11 +98,11 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
       @include translate(70%, 0);
     }
 
-    .cta--arrow::after {
-      background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
-      margin-left: 0.25rem;
-      width: 100px;
-    }
+    .cta--arrow {
+        i {
+          width: $spacing-80;
+        }
+      }
   }
 
   &-container {

@@ -142,8 +142,14 @@ body.sdgmodal-open {
       .cta__link {
         color: $color-white;
 
-        &::after {
-          background-image: url(#{$img-path-Iconback}/arrow-right-white.svg);
+        i {
+          &::before {
+            background-color: $color-white;
+          }
+
+          &::after {
+            border-color: $color-white;
+          }
         }
       }
     }

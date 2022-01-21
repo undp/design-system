@@ -8,8 +8,12 @@
     .cta__link.cta--arrow {
       width: 100%;
 
-      &::after {
-        background-position: right top;
+      i {
+        max-width: 6.25rem;
+
+        &::after {
+          background-position: right top;
+        }
       }
     }
 
@@ -30,13 +34,11 @@
 
   @include devicebreak(large) {
     .cta__link.cta--arrow {
-      &::after {
-        margin-left: 0.75rem;
-        width: 0.813rem;
-      }
-
-      &:hover::after {
-        width: calc(100% - 6rem);
+      i {
+        &::after {
+          margin-left: 0.75rem;
+          width: 0.813rem;
+        }
       }
     }
   }
@@ -57,46 +59,18 @@
         @include transform(translateX(0));
       }
 
-      .cta__link.cta--arrow::after {
-        background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
-        margin-left: 0.25rem;
-        width: 6.25rem;
+      .cta__link.cta--arrow {
+        i {
+          width: $spacing-80;
+          
+          @include devicebreak(medium) {
+            width: calc(100% - 6.25rem);
+          }
 
-        @include devicebreak(medium) {
-        max-width: 16.25rem;
-          width: calc(100% - 6.25rem);
-
-          &:hover::after {
+          @include devicebreak(large) {
             width: calc(100% - 6.25rem);
           }
         }
-
-        @include devicebreak(large) {
-          max-width: 16.25rem;
-          width: 6.25rem;
-        }
-      }
-    }
-  }
-
-   //CTA-link
-  .cta__link.large-8.medium-8 {
-    &::after {
-      @include devicebreak(medium) {
-        max-width: 6.25rem;
-      }
-    }
-  }
-
-  //CTA-link
-  .cta__link.medium-3 {
-   &::after {
-      @include devicebreak(medium) {
-        margin-left: 0;
-      }
-
-      @include devicebreak(large) {
-        margin-left: 0.75rem;
       }
     }
   }
@@ -232,8 +206,10 @@
       .cta__link.cta--arrow {
         width: 100%;
 
-        &::after {
-          margin-left: inherit;
+        i {
+          &::after {
+            margin-left: inherit;
+          }
         }
       }
 
@@ -259,28 +235,6 @@
           &:hover {
             @include transform(translateX(0));
           }
-        }
-      }
-    }
-
-    //hover
-    &:hover {
-      .cta--arrow::after {
-        @include transform(rotate(180deg));
-        margin-right: 0.25rem;
-      }
-    }
-
-    //CTA-link
-    .cta__link.medium-3 {
-      &::after {
-        @include devicebreak(medium) {
-          margin-right: 0;
-        }
-
-        @include devicebreak(large) {
-          margin-left: inherit;
-          margin-right: 0.75rem;
         }
       }
     }
