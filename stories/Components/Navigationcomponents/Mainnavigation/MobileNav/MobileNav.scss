@@ -4,6 +4,8 @@
 
 .mobile-nav {
   background: rgba(247, 247, 247, 0.8);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
   box-sizing: border-box;
   display: none;
   left: 0;

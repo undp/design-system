@@ -17,6 +17,7 @@
   position: fixed;
   top: 7.125rem;
   z-index: 8;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
 
 
   &.show-mega {
@@ -46,6 +47,20 @@
     display: block;
     -webkit-animation: none reverse;
     animation: none reverse;
+  }
+  &.no-effect{
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-duration: 0s;
+    animation-duration: 0s;
+
+    > div{
+      opacity: 1;
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+      -webkit-animation-duration: 0s;
+      animation-duration: 0s;
+    }
   }
   > div{
     opacity: 0;
