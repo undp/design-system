@@ -33,7 +33,7 @@ export const DownloadModal = ({
     <>
       {content === '' && <CtaButton label={modalbtn} data-toggle="modal" data-target-modal="#downloadModal" />}
       <div className={cls('modal', `${image_variant}`)} role="dialog" aria-label="modal" aria-modal="true" {...props}>
-        <div className="modal-content" aria-describedby="content">
+        <div className="modal-content">
           <button type="button" class="modal-close-button" data-dismiss="modal" aria-label="Close">Close</button>
           <div className="download-body">
             {Image === 'True' && (
