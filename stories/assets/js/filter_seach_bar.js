@@ -11,7 +11,8 @@ const toggleFilter = function () {
     }
   });
   
-  $(searchOption).on('click', function () {
+  $(searchOption).on('click', function (e) {
+    e.stopImmediatePropagation();
     const el = $(this);
     const currentChipsWrapper = el.parents('.select-wrapper').find('.selected-chips');
     const eleId = el.attr('id');
