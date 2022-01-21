@@ -24,7 +24,13 @@
       .feature__card-image {
         display: none;
       }
+    &.yellow{
+        .feature__card-slide {
+          background: $color-yellow;
+        }
+      }
     }
+    
   }
 }
 

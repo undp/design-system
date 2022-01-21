@@ -1,14 +1,22 @@
-import { Meta, Story } from '@storybook/addon-docs';
-import { Checkbox } from './Checkbox';
+import { Meta, Story } from "@storybook/addon-docs";
+import { Checkbox } from "./Checkbox";
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {label: 'Category', value: 'category'}; return engText;
-    case 'arabic': const arabicText = {label: 'فئة', value: 'فئة'}; return arabicText;
-    case 'burmese': const burmeseText = {label: 'အမျိုးအစား', value: 'အမျိုးအစား'}; return burmeseText;
-    case 'japanese': const japaneseText = {label: 'カテゴリー', value: 'カテゴリー'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = { label: "Category", value: "category" };
+      return engText;
+    case "arabic":
+      const arabicText = { label: "فئة", value: "فئة" };
+      return arabicText;
+    case "burmese":
+      const burmeseText = { label: "အမျိုးအစား", value: "အမျိုးအစား" };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = { label: "カテゴリー", value: "カテゴリー" };
+      return japaneseText;
     default:
-      return {label: 'Category'};
+      return { label: "Category" };
   }
 };
 
@@ -31,21 +39,35 @@ export const getCaptionForLocale = (locale) => {
 `}</style>
 
 # Checkbox Component
+
 Checkboxes are used when there are multiple items to select in a list.
 
 <Story name="Checkbox">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Checkbox label={caption.label} value={caption.value} id='edit-checkbox'></Checkbox>;
+    return (
+      <Checkbox
+        label={caption.label}
+        value={caption.value}
+        id="edit-checkbox"
+      ></Checkbox>
+    );
   }}
 </Story>
 
 <div className="subheading">Usage</div>
 <ul>
-<li>Take HTML from the HTML tab in canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>checkbox.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+  <li>Take HTML from the HTML tab in canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like normalize, variables from{" "}
+    <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>checkbox.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
 </ul>

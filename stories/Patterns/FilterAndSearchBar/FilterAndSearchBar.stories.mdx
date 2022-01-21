@@ -1,50 +1,71 @@
 import { Meta, Story } from "@storybook/addon-docs";
-import  FilterAndSearchBar  from "./FilterAndSearchBar";
+import FilterAndSearchBar from "./FilterAndSearchBar";
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = 'Category'; return engText;
-    case 'arabic': const arabicText = 'فئة'; return arabicText;
-    case 'burmese': const burmeseText = 'အမျိုးအစား'; return burmeseText;
-    case 'japanese': const japaneseText = 'カテゴリー'; return japaneseText;
-    default: return 'Category';
+  switch (locale) {
+    case "english":
+      const engText = "Category";
+      return engText;
+    case "arabic":
+      const arabicText = "فئة";
+      return arabicText;
+    case "burmese":
+      const burmeseText = "အမျိုးအစား";
+      return burmeseText;
+    case "japanese":
+      const japaneseText = "カテゴリー";
+      return japaneseText;
+    default:
+      return "Category";
   }
 };
 export const getCaptionForClearLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = 'Clear All'; return engText;
-    case 'arabic': const arabicText = 'امسح الكل'; return arabicText;
-    case 'burmese': const burmeseText = 'အားလုံးကိုရှင်း'; return burmeseText;
-    case 'japanese': const japaneseText = 'すべてクリア'; return japaneseText;
-    default: return 'Clear All';
+  switch (locale) {
+    case "english":
+      const engText = "Clear All";
+      return engText;
+    case "arabic":
+      const arabicText = "امسح الكل";
+      return arabicText;
+    case "burmese":
+      const burmeseText = "အားလုံးကိုရှင်း";
+      return burmeseText;
+    case "japanese":
+      const japaneseText = "すべてクリア";
+      return japaneseText;
+    default:
+      return "Clear All";
   }
 };
 export const getCaptionForActiveLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = 'Active Filters:'; return engText;
-    case 'arabic': const arabicText = 'عوامل التصفية النشطة:'; return arabicText;
-    case 'burmese': const burmeseText = 'အသက်ဝင်သော စစ်ထုတ်မှုများ:'; return burmeseText;
-    case 'japanese': const japaneseText = 'すべてクリア:'; return japaneseText;
-    default: return 'Active Filters:';
+  switch (locale) {
+    case "english":
+      const engText = "Active Filters:";
+      return engText;
+    case "arabic":
+      const arabicText = "عوامل التصفية النشطة:";
+      return arabicText;
+    case "burmese":
+      const burmeseText = "အသက်ဝင်သော စစ်ထုတ်မှုများ:";
+      return burmeseText;
+    case "japanese":
+      const japaneseText = "すべてクリア:";
+      return japaneseText;
+    default:
+      return "Active Filters:";
   }
 };
 
 <Meta
- title="Patterns/Filter and search sidebar"
+  title="Patterns/Filter and search sidebar"
   argTypes={{
     Height: {
-      options: [
-        "Fix height",
-        "Auto height",
-      ],
+      options: ["Fix height", "Auto height"],
       control: { type: "radio" },
       defaultValue: "Auto height",
     },
     variant: {
-      options: [
-        "Checkbox",
-        "Radio",
-      ],
+      options: ["Checkbox", "Radio"],
       control: { type: "radio" },
       defaultValue: "Checkbox",
     },
@@ -79,9 +100,14 @@ The Sidebar Component is a shorter piece of text that appears next to and accomp
     const caption = getCaptionForLocale(locale);
     const clearText = getCaptionForClearLocale(locale);
     const activeFilterText = getCaptionForActiveLocale(locale);
-    
     return (
-      <FilterAndSearchBar args={args} clearText={clearText} activeFilterText={activeFilterText}  data={caption}></FilterAndSearchBar>
+      <FilterAndSearchBar
+        locale={locale}
+        args={args}
+        clearText={clearText}
+        activeFilterText={activeFilterText}
+        data={caption}
+      ></FilterAndSearchBar>
     );
   }}
 </Story>

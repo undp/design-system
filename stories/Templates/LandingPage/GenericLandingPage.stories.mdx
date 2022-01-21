@@ -774,7 +774,26 @@ export const getCaptionForActiveLocale = (locale) => {
   }
 };
 
-<Meta title="Templates/Generic Landing Page"/>
+<Meta title="Templates/Generic Landing Page"  
+argTypes={{
+    Height: {
+      options: [
+        "Fix height",
+        "Auto height",
+      ],
+      control: { type: "radio" },
+      defaultValue: "Auto height",
+    },
+    variant: {
+      options: [
+        "Checkbox",
+        "Radio",
+      ],
+      control: { type: "radio" },
+      defaultValue: "Checkbox",
+    },
+  }}
+/>
 
 <style>{`
   .subheading {
@@ -803,6 +822,7 @@ Template for Generic Landing Page
     const leftNavigationData=navigationData.filter(item=>item.position==='left');
      const rightNavigationData=navigationData.filter(item=>item.position==='right');
     return <GenericLandingPage 
+      args={args}
       clearText={clearText} 
       activeFilterText={activeFilterText}  
       data={categoryText}

@@ -3,20 +3,12 @@
 @import '../../../assets/scss/variables';
 
 /* blockquote cta start */
-.blockquote {
+div.blockquote {
   background-color: none;
-  padding: 0;
+  padding: $spacing-32 $spacing-24;
 
-  &.gray,
-  &.yellow,
-  &.red,
-  &.green,
-  &.blue {
-    padding: $spacing-32 $spacing-24;
-
-    @include devicebreak(medium) {
-      padding: 5.313rem $spacing-96;
-    }
+  @include devicebreak(medium) {
+    padding: 5.313rem $spacing-96;
   }
 
   &.gray {

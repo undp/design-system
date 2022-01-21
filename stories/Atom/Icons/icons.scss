@@ -12,40 +12,7 @@
   width: 100%;
   max-width: 6rem;
 
-  i {
-    width: 0;
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    left: 0.875rem;
-    height: $spacing-16;
-    @include transition(width 0.5s);
-
-    &::before {
-      @extend %pseudo-icon;
-      width: 100%;
-      height: 2px;
-      background-color: $color-red;
-      right: 0;
-      top: 7px;
-    }
-
-    &::after {
-      @extend %pseudo-icon;
-      width: $spacing-12;
-      height: $spacing-12;
-      border-top: 2px solid $color-red;
-      border-right: 2px solid $color-red;
-      @include transform(rotate(45deg));
-      right: 0;
-      top: 2px;
-    }
-  }
-  &:hover {
-    i {
-      width: $spacing-80;
-    }
-  }
+  @extend %chevron-right-expanded;
 }
 
 .external-link {

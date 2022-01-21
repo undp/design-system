@@ -2,9 +2,9 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
 
-.publication-card {
+div.publication-card {
   display: inline-block;
 
   @include devicebreak(medium) {
@@ -28,19 +28,14 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
     background: $color-gray-100;
     padding: $spacing-24;
 
-    .grid-x {
+    .description-grid {
       align-items: center;
-      display: flex;
-      flex-flow: row wrap;
+      flex-wrap: unset;
 
-      .small-6 {
-        width: 49%;
+      > :not(:first-of-type) {
+        border-left: $spacing-02 solid $color-silvery-moonlight;
+        text-align: right;
       }
-    }
-
-    .grid-x > :not(:first-of-type) {
-      border-left: $spacing-02 solid $color-silvery-moonlight;
-      text-align: right;
     }
   }
 
@@ -68,12 +63,6 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
     letter-spacing: 0.03em;
     text-transform: uppercase;
 
-    &::after {
-      cursor: pointer;
-      height: $spacing-24;
-      width: $spacing-24;
-    }
-
     .download-icon {
       margin-left: $spacing-12;
     }
@@ -82,8 +71,12 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
       color: $color-shuttle-gray;
 
       .download-icon {
-        background: url(#{$img-path-Icon}/download-hover.svg) no-repeat 0 bottom;
-        height: $spacing-24;
+        &:after {
+          @include transform(rotate(-45deg) translate(7px, -7px));
+        }
+        &:before {
+          @include transform(translate(0, -10px));
+        }
       }
     }
   }
@@ -99,12 +92,6 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
     letter-spacing: 0.03em;
     text-transform: uppercase;
 
-    &::after {
-      cursor: pointer;
-      height: $spacing-24;
-      width: $spacing-24;
-    }
-
     .external-link {
       display: inline-block;
       margin-left: $spacing-12;
@@ -114,7 +101,12 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
       color: $color-shuttle-gray;
 
       .external-link {
-        background: url(#{$img-path-Icon}/external-hover.svg) no-repeat 0 bottom;
+        &:after {
+          @include transform(translate(5px, -5px));
+        }
+        &:before {
+          @include transform(rotate(-45deg) translate(7px, 0));
+        }
       }
     }
   }
@@ -129,8 +121,15 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
       }
     }
 
+    &__download {
+      .download-icon {
+        margin-left: 0;
+        margin-right: $spacing-12;
+      }
+    }
+
     &__description {
-      .grid-x > :not(:first-of-type) {
+      .description-grid > :not(:first-of-type) {
         border-left: 0;
         border-right: $spacing-02 solid $color-silvery-moonlight;
         text-align: left;

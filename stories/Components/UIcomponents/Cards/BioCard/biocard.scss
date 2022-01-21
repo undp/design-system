@@ -3,30 +3,40 @@
 @import '../../../../assets/scss/base';
 
 /* bio card start */
-.bio-card {
-  // color map
-  $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
-
+div.bio-card {
   a {
     display: block;
     background: $color-gray-200; 
+    @include transition(0.2s ease);
     
     &:hover {
-      .cta--arrow::after {
-        @include translate(10px, 0);
-        @include transition(0.2s ease);
-
-        background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
-        width: 100px;
+      .cta--arrow {
+        i {
+          width: $spacing-80;
+        }
       }
 
       .card-thumbnail__image::before {
         opacity: 0.75;
+        @include background-image(42deg, $color-yellow, transparent 80%);
       }
     }
   }
 
-  &__content {
+  // color map
+  $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+  @each $name, $color in $colors {
+    &.#{$name} {
+        a {
+          .card-thumbnail__image::before {
+          @include background-image(42deg, #{$color}, transparent 80%);
+        }
+      }
+    }
+  }
+
+  .bio-card__content {
     background: $color-gray-100;
     flex-direction: column;
     order: 2;
@@ -76,14 +86,6 @@
       padding: 0  $spacing-24 $spacing-32;
       @include devicebreak(medium) {
         margin-top: auto;
-      }
-    }
-  }
-
-  @each $name, $color in $colors {
-    &.#{$name} {
-      .card-thumbnail__image::before {
-        @include background-image(42deg, #{$color}, transparent 80%);
       }
     }
   }
@@ -159,6 +161,11 @@
         .card-thumbnail__image::before {
           @include background-image(311deg, #{$color}, transparent 80%);
         }
+      }
+    }
+    &:hover {
+      .card-thumbnail__image::before {
+        @include background-image(311deg, $color-yellow, transparent 80%);
       }
     }
   } 

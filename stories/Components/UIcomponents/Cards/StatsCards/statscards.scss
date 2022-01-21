@@ -3,7 +3,7 @@
 @import '../../../../assets/scss/mixins';
 
 /* statscard start */
-.stats-card {
+ div.stats-card {
   @include transition(300ms all);
 
   background-color: $color-gray-200;
@@ -161,10 +161,8 @@
   }
 
   &:hover {
-
     // color map
-    $colors: ('red': $color-red, 'green': $color-green, 'blue': $color-azure);
-
+    $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
     background-color: $color-yellow;
 
     & h2 {
@@ -177,4 +175,4 @@
       }
     }    
   }
-}
+  }

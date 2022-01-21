@@ -6,6 +6,7 @@ import { modal } from '../../../../assets/js/modal';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Modal } from '../../Modal/Modal';
+import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 
 export const biodata = (image2, contentname, descriptionText, descriptionText2) => (
   <div className="bio-card-wrapper">
@@ -31,7 +32,7 @@ export const hover_color_options = {
   yellow: 'yellow',
   green: 'green',
   red: 'red',
-  azure: 'azure',
+  blue: 'blue',
 };
 
 export const BioCard = ({
@@ -68,7 +69,7 @@ export const BioCard = ({
                       <Heading type="5" label={contentname} />
                       <P label={descriptionText} />
                     </div>
-                      <span className="cta__link cta--arrow">{button}</span>
+                    <Ctalink label={item.button} button_option="span"/>
                   </article>
                   <div className="card-thumbnail__image medium-5">
                     <img src={image} alt={image} />
@@ -91,7 +92,7 @@ export const BioCard = ({
                     <Heading type="5" label={contentname} />
                     <P label={descriptionText} />
                   </div>
-                    <span className="cta__link cta--arrow">{button}</span>
+                  <Ctalink label={button} button_option="span"/>
                 </article>
               </a>
             </div>

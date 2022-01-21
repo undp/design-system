@@ -1,14 +1,22 @@
-import { Meta, Story } from '@storybook/addon-docs';
-import { Radio } from './Radio';
+import { Meta, Story } from "@storybook/addon-docs";
+import { Radio } from "./Radio";
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {label: 'Category'}; return engText;
-    case 'arabic': const arabicText = {label: 'فئة'}; return arabicText;
-    case 'burmese': const burmeseText = {label: 'အမျိုးအစား'}; return burmeseText;
-    case 'japanese': const japaneseText = {label: 'カテゴリー'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = { label: "Category" };
+      return engText;
+    case "arabic":
+      const arabicText = { label: "فئة" };
+      return arabicText;
+    case "burmese":
+      const burmeseText = { label: "အမျိုးအစား" };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = { label: "カテゴリー" };
+      return japaneseText;
     default:
-      return {label: 'Category'};
+      return { label: "Category" };
   }
 };
 
@@ -31,21 +39,29 @@ export const getCaptionForLocale = (locale) => {
 `}</style>
 
 # Radio Component
+
 Radio buttons enable the selection of one out of at least two options provided in a list. Activation of a radio button therefore rules out the activation of other radio buttons of the same group.
 
 <Story name="Radio">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Radio label={caption.label} id='undp' name='undp'></Radio>;
+    return <Radio label={caption.label} id="undp" name="undp"></Radio>;
   }}
 </Story>
 
 <div className="subheading">Usage</div>
 <ul>
-<li>Take HTML from the HTML tab in canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>radio.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+  <li>Take HTML from the HTML tab in canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like normalize, variables from{" "}
+    <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>radio.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
 </ul>

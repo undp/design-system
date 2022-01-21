@@ -1,13 +1,22 @@
-import { Meta, Story } from '@storybook/addon-docs';
-import MultiSelect from './MultiSelect';
+import { Meta, Story } from "@storybook/addon-docs";
+import MultiSelect from "./MultiSelect";
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = 'Category'; return engText;
-    case 'arabic': const arabicText = 'فئة'; return arabicText;
-    case 'burmese': const burmeseText = 'အမျိုးအစား'; return burmeseText;
-    case 'japanese': const japaneseText = 'カテゴリー'; return japaneseText;
-    default: return 'Category';
+  switch (locale) {
+    case "english":
+      const engText = "Category";
+      return engText;
+    case "arabic":
+      const arabicText = "فئة";
+      return arabicText;
+    case "burmese":
+      const burmeseText = "အမျိုးအစား";
+      return burmeseText;
+    case "japanese":
+      const japaneseText = "カテゴリー";
+      return japaneseText;
+    default:
+      return "Category";
   }
 };
 
@@ -15,18 +24,12 @@ export const getCaptionForLocale = (locale) => {
   title="Components/Forms/Dropdown/MultiSelect"
   argTypes={{
     Height: {
-      options: [
-        "Fix height",
-        "Auto height",
-      ],
+      options: ["Fix height", "Auto height"],
       control: { type: "radio" },
       defaultValue: "Auto height",
     },
     variant: {
-      options: [
-        "Checkbox",
-        "Radio",
-      ],
+      options: ["Checkbox", "Radio"],
       control: { type: "radio" },
       defaultValue: "Checkbox",
     },
@@ -49,24 +52,45 @@ export const getCaptionForLocale = (locale) => {
   }
 `}</style>
 
-
 # MultiSelect
+
 The select component allows users to choose multiples option from a list. It is used in forms when there are multiple choices that can be collapsed under one title.
 
 <Story name="MultiSelect">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <MultiSelect {...args} text={caption} eleId=""></MultiSelect>;
+    return (
+      <MultiSelect
+        locale={locale}
+        {...args}
+        text={caption}
+        eleId=""
+      ></MultiSelect>
+    );
   }}
 </Story>
 
 <div className="subheading">Usage</div>
 <ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<li>Take the multiselect js files from <code>assets/js/multiselect.js</code> and <code>assets/js/multiselect-init.js</code></li>
-<li><u>To use SCSS include the following files in your implementation</u></li>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>multiselect.scss</code></li>
-<li><u>To use CSS include the following files in your implementation</u></li>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+  <li>Take HTML from the HTML tab in the canvas</li>
+  <li>
+    Take the multiselect js files from <code>assets/js/multiselect.js</code> and{" "}
+    <code>assets/js/multiselect-init.js</code>
+  </li>
+  <li>
+    <u>To use SCSS include the following files in your implementation</u>
+  </li>
+  <li>
+    Include the common SCSS files like normalize, variables from{" "}
+    <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>multiselect.scss</code>
+  </li>
+  <li>
+    <u>To use CSS include the following files in your implementation</u>
+  </li>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
 </ul>

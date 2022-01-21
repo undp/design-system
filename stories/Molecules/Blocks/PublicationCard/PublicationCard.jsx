@@ -16,29 +16,29 @@ export const PublicationCard = ({
         && (
         <div className="publication-card__download">
           {download}
-          <span className="download-icon" />
+          <span className="download-icon"><i/></span>
         </div>
         ) }
       {args.variant === 'Readmore'
         && (
         <div className="publication-card__readmore">
           {readmore}
-          <span className="external-link" />
+          <span className="external-link"><i/></span>
         </div>
         )}
       {args.variant === 'Both'
         && (
-        <div className="grid-x">
+        <div className="grid-x description-grid">
           <div className="cell small-6">
             <div className="publication-card__download">
               {download}
-              <span className="download-icon" />
+              <span className="download-icon"><i/></span>
             </div>
           </div>
           <div className="cell small-6">
             <div className="publication-card__readmore">
               {readmore}
-              <span className="external-link" />
+              <span className="external-link"><i/></span>
             </div>
           </div>
         </div>

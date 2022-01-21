@@ -1,5 +1,5 @@
-@import './variables';
-@import './breakpoints';
+@import "./variables";
+@import "./breakpoints";
 
 //background image gradient
 @mixin background-image($deg, $colorname, $opacity) {
@@ -158,15 +158,19 @@
 }
 
 %checbox-radio-before {
-  @extend %background-white;
-
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
   border: 2px solid $color-dark-red;
-  content: '';
-  height: 12px;
-  left: 0;
-  position: absolute;
-  top: 7px;
-  width: 12px;
+  appearance: none;
+  margin: 0;
+  &:hover {
+    border-color: $color-light-pink;
+  }
+
+  &:focus-visible {
+    outline: $color-blue-500 solid 2px;
+  }
 }
 
 %img-hover-effect {
@@ -191,7 +195,7 @@
 }
 
 %ctaimg {
-  content: '';
+  content: "";
   height: 20px;
   margin-left: $spacing-12;
   width: 13px;
@@ -218,8 +222,9 @@
   @include transform(translateY(-50%));
   @include transition(all 200ms ease-in-out);
 
-  background: url(#{$img-path-Iconfourback}/Chevron-down.svg) no-repeat center center;
-  content: '';
+  background: url(#{$img-path-Iconfourback}/Chevron-down.svg) no-repeat center
+    center;
+  content: "";
   float: right;
   height: 13px;
   position: absolute;
@@ -229,7 +234,7 @@
 }
 
 %absolute__content {
-  content: '';
+  content: "";
   height: 100%;
   left: 0;
   position: absolute;
@@ -241,7 +246,7 @@
   @include transition(all 0.3s ease);
 
   background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
-  content: '';
+  content: "";
   height: 0.813rem;
   position: absolute;
   right: 1.188rem;
@@ -335,7 +340,7 @@
   visibility: visible;
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   %left-to-right {
     @include transform(translateX(100px));
   }
@@ -428,7 +433,7 @@
 
 %external {
   align-items: center;
-  content: '';
+  content: "";
   cursor: pointer;
   height: 1.125rem;
   width: 1.25rem;
@@ -491,7 +496,7 @@
 }
 
 %logo {
-  @include transition(all 0.4s cubic-bezier(0.64,0.05,0.35,1.05));
+  @include transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
   width: 40px;
   @include devicebreak(xlarge) {
     height: 7.625rem;
@@ -503,7 +508,7 @@
   }
   @include devicebreak(mediumonlytab) {
     height: 5.125rem;
-    &.scrolled{
+    &.scrolled {
       height: 4.6875rem;
     }
   }
@@ -519,8 +524,48 @@
   box-sizing: border-box;
   position: absolute;
 }
+
+%chevron-right-expanded {
+  i {
+    width: 0;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    left: 1.25rem;
+    height: $spacing-16;
+    @include transition(width 0.5s);
+
+    &::before {
+      @extend %pseudo-icon;
+      width: 100%;
+      height: 2px;
+      background-color: $color-red;
+      right: 0;
+      top: 7px;
+    }
+
+    &::after {
+      @extend %pseudo-icon;
+      width: $spacing-12;
+      height: $spacing-12;
+      border-top: 2px solid $color-red;
+      border-right: 2px solid $color-red;
+      @include transform(rotate(45deg));
+      right: 0;
+      top: 2px;
+    }
+  }
+  
+  &:hover {
+    i {
+      width: $spacing-80;
+    }
+  }
+}
+
 %mega-animation{
   -webkit-animation: circle-square-transition 0.3s cubic-bezier(.25, .27, .11, .99);
-    animation: circle-square-transition 0.3s cubic-bezier(.25, .27, .11, .99);
+   animation: circle-square-transition 0.3s cubic-bezier(.25, .27, .11, .99);
 }
+
 /* placehoder end */

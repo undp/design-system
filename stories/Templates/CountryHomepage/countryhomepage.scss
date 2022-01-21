@@ -55,8 +55,8 @@
     .our-impact {
       margin-top: 8.313rem;
 
-      .stats-card-slider {
-        margin-top: 4.125rem;
+      > div:first-child {
+        margin-bottom: 4.125rem;
       }
     }
 

@@ -197,5 +197,13 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
   input::-webkit-date-and-time-value {
     text-align: right;
+    margin-right: 0;
+  }
+}
+
+// burmese lang
+:lang(my) {
+  .input-group .error {
+    line-height: 1.7;
   }
 }

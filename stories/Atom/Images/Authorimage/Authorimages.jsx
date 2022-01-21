@@ -10,7 +10,7 @@ export const hover_color_options = {
   yellow: 'yellow',
   green: 'green',
   red: 'red',
-  azure: 'azure',
+  blue: 'blue',
 };
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
