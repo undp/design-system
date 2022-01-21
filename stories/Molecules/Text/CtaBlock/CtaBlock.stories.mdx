@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs';
-import { BlockCTA } from './BlockCTA'
+import { CtaBlock } from './CtaBlock'
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -12,7 +12,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Testing/Text/CTA Block" component={BlockCTA} />
+<Meta title="Testing/Text/CTA Block" component={CtaBlock} />
 
 <style>{`
   .sbdocs-h1 {
@@ -48,7 +48,7 @@ CTA Block Component defines a section of information data with some items - Head
 <Story name="CTA Block">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <BlockCTA headerText={caption.header} descriptionText={caption.description} ctaText={caption.cta}></BlockCTA>;
+    return <CtaBlock headerText={caption.header} descriptionText={caption.description} ctaText={caption.cta}></CtaBlock>;
   }}
 </Story>
 
@@ -57,7 +57,7 @@ CTA Block Component defines a section of information data with some items - Head
 <li>Take HTML from the HTML tab in the canvas</li>
 <u>To use SCSS include the following files in your implementation</u>
 <li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>blockCTA.scss</code></li>
+<li>Component SCSS file: <code>CtaBlock.scss</code></li>
 <u>To use CSS include the following files in your implementation</u>
 <li>The compiled CSS file from <code>assets/css/style.css</code></li>
 </ul>
