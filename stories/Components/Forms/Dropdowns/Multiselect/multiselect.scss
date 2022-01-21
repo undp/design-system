@@ -1,6 +1,6 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/breakpoints';
+@import "../../../../assets/scss/variables";
+@import "../../../../assets/scss/mixins";
+@import "../../../../assets/scss/breakpoints";
 
 /* multi-select start */
 .multi-select {
@@ -48,7 +48,7 @@
     max-width: 100%;
     text-align: left;
 
-    span{
+    span {
       padding-left: 0.3125rem;
     }
 
@@ -70,17 +70,9 @@
       margin-bottom: 0;
       padding-left: 0;
 
-      > .form-check {
+      .form-check {
         &:hover {
           background-color: $color-gray-100;
-        }
-      }
-
-      ul {
-        .form-check {
-          &:hover {
-            background-color: inherit;
-          }
         }
       }
     }
@@ -156,29 +148,11 @@
   }
 
   ul .form-check {
-    display: block;
+    justify-content: space-between;
     margin: 0 -1rem;
-    padding: 0 $spacing-16;
-
-    input,
-    input + label::before {
-      @include transform(translateY(-50%));
-
-      left: auto;
-      right: $spacing-16;
-      top: 50%;
-    }
-
-    input + label {
-      display: block;
-      padding: $spacing-16 0;
-    }
-
-    input[type=radio]:checked + label::after{
-      left:inherit;
-      right: 21px;
-      top: 50%;
-      transform: translateY(-50%);
+    padding: $spacing-16;
+    label {
+      padding: 0;
     }
   }
 }
@@ -193,19 +167,19 @@
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .multi-select {
     button {
       @extend %select_rtl;
       &::after {
         @extend %select_rtl_after;
       }
-      span{
+      span {
         padding-right: 0.3125rem;
-        padding-left:0;
+        padding-left: 0;
       }
     }
-    ul{
+    ul {
       padding: 0 $spacing-16;
     }
 
@@ -232,14 +206,6 @@
         ul {
           padding: 0 $spacing-40 0 0;
         }
-      }
-    }
-
-    .form-check {
-      input[type='checkbox'],
-      input[type='checkbox'] + label::before {
-        left: $spacing-16;
-        right: auto;
       }
     }
   }

@@ -6,11 +6,11 @@ import './FilterAndSearchBar.scss';
 import { SearchExpand } from '../../Components/Forms/ExpandableSearch/SearchExpand';
 
 const FilterAndSearchBar = ({
-  args, data, clearText, activeFilterText,locale
+  args, data, clearText, activeFilterText,
 }) => {
   useEffect(() => {
-    toggleFilter(locale);
-  }, [locale]);
+    toggleFilter();
+  }, []);
 
   return (
     <div className="search-filter">

@@ -1,61 +1,16 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/breakpoints';
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/breakpoints";
 
 /* radio */
-input[type='radio'] {
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 2px;
+input[type="radio"] {
+  @extend %checbox-radio-before;
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 $color-white;
+  background-color: transparent;
 
-  & + label {
-    cursor: pointer;
-    font-size: $font-size-16;
-
-    &::before {
-      @extend %checbox-radio-before;
-
-      border-radius: 50%;
-    }
-
-    &:hover::before {
-      border-color: $color-light-pink;
-    }
-  }
-
-  &:checked + label::after {
-    background: $color-dark-red;
-    border-radius: 50%;
-    content: '';
-    height: 6px;
-    left: 5px;
-    position: absolute;
-    top: 52%;
-    transform: translateY(-52%);
-    width: 6px;
-  }
-
-  &:focus-visible + label::before {
-    outline: $color-blue-500 solid 2px;
-  }
-}
-
-[dir='rtl'] {
-  input[type=radio] {
-    left: unset;
-    right: 0;
-
-    & + label {
-      &::before {
-        left: unset;
-        right: 0;
-      }
-      
-      &::after {
-        right: 5px;
-        left: unset;
-      }
-    }
+  &:checked {
+    background-color: $color-dark-red;
+    box-shadow: inset 0 0 0 3px $color-white;
   }
 }
