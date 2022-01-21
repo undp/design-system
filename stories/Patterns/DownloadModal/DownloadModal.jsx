@@ -20,7 +20,7 @@ export const Category_options = {
 };
 
 export const DownloadModal = ({
-  data, button, select, content, Image, Category, ...props
+  data, button, select, modalbtn, content, Image, Category, ...props
 }) => {
   useEffect(() => {
     checkbox('.form-check input', '.download-footer .button-primary');
@@ -31,8 +31,8 @@ export const DownloadModal = ({
   let category_variant = Category_options[`${Category}`];
   return (
     <>
-      {content === '' && <CtaButton label="Modal" data-toggle="modal" data-target-modal="#downloadModal" />}
-      <div className={cls('modal', `${image_variant}`)} role="dialog" aria-label="downloadModal" aria-modal="true" {...props}>
+      {content === '' && <CtaButton label={modalbtn} data-toggle="modal" data-target-modal="#downloadModal" />}
+      <div className={cls('modal', `${image_variant}`)} role="dialog" aria-label="modal" aria-modal="true" {...props}>
         <div className="modal-content" aria-describedby="content">
           <button type="button" class="modal-close-button" data-dismiss="modal" aria-label="Close">Close</button>
           <div className="download-body">
@@ -43,9 +43,9 @@ export const DownloadModal = ({
             )}
             <div className="download-content">
               {Category === 'Multiplelanguages' && <CustomSelect text={select} />}
-              <div className={cls('download-list', `${category_variant}`)}>
+              <div className={cls('download-list', 'scrollbar-vertical', `${category_variant}`)}>
                 {data.map((item, index) => (
-                  <DownloadRow title={item.title} subtitle={item.subtitle} datalang={item.datalang} key={index} value={index} />
+                  <DownloadRow title={item.title} subtitle={item.subtitle} dataValue={item.dataValue} key={index} value={index} />
                 ))}
               </div>
             </div>

@@ -36,21 +36,15 @@
   }
 
   &-list {
-    @extend .scrollbar-vertical;
-
     max-height: calc(100% - 82px);
-    overflow-y: auto;
     padding-right: $spacing-24;
+    overflow-y: auto;
 
     @include devicebreak(medium) {
       max-height: 323px;
     }
 
-    .checkbox-container {
-      @include devicebreak(medium) {
-        margin-right: $spacing-24;
-      }
-
+    .download-row {
       &.hide {
         display: none;
       }
@@ -97,7 +91,7 @@
       }
 
       @include devicebreak(medium) {
-        .checkbox-container {
+        .download-row {
           margin-left: $spacing-24;
           margin-right: 0;
         }
