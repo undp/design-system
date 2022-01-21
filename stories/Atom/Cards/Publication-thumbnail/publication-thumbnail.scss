@@ -1,9 +1,9 @@
 @import '../../../assets/scss/mixins';
 
 /* publication_thumbnail */
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
 
-.publication-thumbnail__image {
+div.publication-thumbnail__image {
   background: linear-gradient(180deg, #c9d0d6 70%, #c9d0d6 0, #414648 70.5%, #9ea5ac 0, #9ea5ac);
   display: inline-flex;
   padding: 2.188rem 2.938rem;

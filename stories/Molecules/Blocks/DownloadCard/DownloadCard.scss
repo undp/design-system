@@ -2,9 +2,9 @@
 @import '../../../assets/scss/mixins';
 
 /* download card start */
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'azure': $color-azure);
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
 
-.download-card {
+div.download-card {
   display: inline-block;
 
   @include devicebreak(medium) {
@@ -12,7 +12,7 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
   }
 
   &:hover {
-    .publication-thumbnail__image {
+    div.publication-thumbnail__image {
       @each $name, $color in $colors {
         &.#{$name}:after {
           @include background-image(42deg, #{$color}, transparent 80%);
@@ -22,7 +22,7 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
       }
     }
 
-    .card-thumbnail__image {
+  div.card-thumbnail__image {
       @each $name, $color in $colors {
         &.#{$name}::before {
           @include background-image(42deg, #{$color}, transparent 80%);
@@ -41,25 +41,25 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'az
     }
   }
 
-  &__description {
+  .download-card__description {
     background: $color-gray-100;
     padding: $spacing-24;
   }
 
-  &__title {
+  .download-card__title {
     @extend %paragragh-font-20;
 
     margin-bottom: $spacing-04;
   }
 
-  &__format {
+  .download-card__format {
     @extend %paragragh-font-16;
 
     color: $color-gray-600;
     margin-bottom: $spacing-16;
   }
 
-  &__download {
+  .download-card__download {
     @extend %paragragh-font-16;
 
     align-items: flex-end;

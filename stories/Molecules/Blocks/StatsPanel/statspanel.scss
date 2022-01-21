@@ -46,7 +46,7 @@
         opacity: 1;
       }
 
-      .stats-card {
+      div.stats-card {
         color: $color-gray-700;
 
         h2 {
@@ -61,7 +61,7 @@
       }
     }
 
-    .stats-card {
+    div.stats-card {
       background-color: transparent;      
       color: $color-white;
       max-width: 100%;

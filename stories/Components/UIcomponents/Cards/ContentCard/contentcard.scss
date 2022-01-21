@@ -5,7 +5,7 @@
 $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
 $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
 
-.content-card {
+div.content-card {
   background-color: $color-white;
   border-top: 2px solid $color-black;
   height: 100%;
@@ -56,6 +56,19 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
     font-size: $font-size-16;
     margin: 0;
     padding-top: $spacing-16;
+  }
+
+  &.card{
+    &:hover {
+      background-color: $color-yellow;
+    }
+  }
+
+  &.card-emphasize {
+    background-color: $color-light-yellow;
+    &:hover {
+      background-color: $color-yellow;
+    }
   }
 
   &.card,
@@ -109,6 +122,10 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
     .cell {
       margin-bottom: $spacing-32;
     }
+  }
+
+  .image::before {
+    @include background-image(42deg, $color-yellow, transparent 80%);
   }
 
   @each $name, $color in $colors {
