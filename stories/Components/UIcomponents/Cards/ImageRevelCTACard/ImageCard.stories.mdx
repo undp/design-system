@@ -5,14 +5,56 @@ import imgsmall from '../../../../assets/images/CardImgsmall.jpg';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = { name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', btnlabel: 'READ MORE'}; return engText;
-    case 'arabic': const arabicText = { name: 'الألم هو الحب نفسه', btnlabel: 'اقرأ أكثر'}; return arabicText;
-    case 'burmese': const burmeseText = { name: 'နာကျင်မှုကအချစ်ပါဘဲ', btnlabel: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
-    case 'japanese': const japaneseText = { name: '痛みは愛そのものです', btnlabel: '続きを読む'}; return japaneseText;
+    case 'english': const engText = {
+      data: [{
+        contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+        btnlabel: 'READ MORE',
+        link: '#',
+        size: 'medium-4',
+        imageback: img
+      }],      
+    }; return engText;
+    case 'arabic': const arabicText = {
+      data: [{
+        contentname: 'الألم هو الحب نفسه', 
+        btnlabel: 'متجر',
+        link: '#',
+        size: 'medium-4',
+        imageback: img
+      }],      
+    }; return arabicText;
+    case 'burmese': const burmeseText = {
+      data: [{
+        contentname: 'နာကျင်မှုကအချစ်ပါဘဲ နာကျင်မှုက အချစ်ပါဘဲ နာကျ င်မှုကအချစ်ပါဘဲနာကျင်မှုကအချစ်ပါဘဲ', 
+        btnlabel: 'ပိုပြီးဖတ်ပါ',
+        link: '#',
+        size: 'medium-4',
+        imageback: img
+      }],      
+    }; return burmeseText;
+    case 'japanese': const japaneseText = {
+      data:[{
+        contentname: '痛みは愛そのものです', 
+        btnlabel: '店',
+        link: '#',
+        size: 'medium-4',
+        imageback: img
+      }],      
+    }; return japaneseText;
     default:
-      return { name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', btnlabel: 'READ MORE'};
+      const dummy =  {
+        data: [{
+          contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', 
+          btnlabel: 'READ MORE',
+          link: '#',
+          size: 'medium-4',
+          imageback: img
+        }],        
+      };
+    return dummy;
   }
 };
+
 
 <Meta title="Components/UI components/Cards/Image Reveal Card" argTypes={{
   Size: {
@@ -47,7 +89,7 @@ The Image reveal card component multi usage component which creates boxes that a
 <Story name="Image Reveal Card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <ImageRevelCard contentname={caption.name} image={img} button={caption.btnlabel} link='#' {...args}> </ImageRevelCard>;
+    return <ImageRevelCard data={caption.data} {...args}> </ImageRevelCard>;
   }}
 </Story>
 

@@ -25,7 +25,7 @@
 
     h5 {
       margin-bottom: 0;
-      padding: $spacing-32 $spacing-32 0;
+      padding: $spacing-32 $spacing-24 0;
 
       @include devicebreak(large) {
         @include translate(0, 100%);
@@ -42,35 +42,34 @@
         width: 100%;
       }
     }
+  }
+
+  .cta__link {
+    margin: $spacing-32 0 0 $spacing-24;
+    width: 100%;
 
     @include devicebreak(large) {
-      &:hover h5 {
-        height: auto;
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }  
+      margin-left: $spacing-24;
+    }
   }
 
   &:hover {
+    .image-reveal-card__content {
+      @include devicebreak(large) {
+        h5 {
+          height: auto;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
     .cta__link::after {
       @include translate(10px, 0);
       @include transition(0.2s ease);
 
       background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
       width: 100px;
-    }
-  }
-
-  .cta__link {
-    margin: $spacing-32 0 0 $spacing-24;
-
-    @include devicebreak(medium) {
-      margin-left: 1.125rem;
-    }
-
-    @include devicebreak(large) {
-      margin-left: $spacing-24;
     }
   }
 }
@@ -80,32 +79,39 @@
     max-width: 212px;
 
     .cta__link {
-      margin-left: 0;
+      width: 100%;
     }
   }
 
   h5 {
     font-size: $font-size-16;
   }
+
+  &:hover {
+    @include devicebreak(medium) {
+      .cta__link {
+        &::after {
+          margin-left: 0;
+          width: calc(100% - 115px);
+        }
+      }
+    }
+  }
 }
 
 [dir='rtl'] {
   .image-reveal-card {
-    margin: 0;
-
     .cta__link {
       margin-right: $spacing-24;
       margin-top: $spacing-32;
 
       @include devicebreak(medium) {
-        margin-right: 1.125rem;
-      }
-
-      @include devicebreak(large) {
         margin-right: $spacing-24;
       }
+    }
 
-      &::after {
+    &:hover {
+      .cta__link::after {
         @include transform(translate(-10%, 0) rotate(180deg));
         @include transition(0.2s ease);
       }
@@ -113,9 +119,11 @@
   }
 
   .small.image-reveal-card {
-    .cta__link {
-      @include devicebreak(medium) {
-        margin-right: 0;
+    &:hover {
+      .cta__link::after {
+        @include devicebreak(medium) {
+          margin-right: 0;
+        }
       }
     }
   }
