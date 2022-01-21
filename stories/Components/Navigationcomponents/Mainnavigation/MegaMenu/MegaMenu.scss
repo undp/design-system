@@ -22,8 +22,7 @@
 
   &.show-mega {
     display: block;
-    -webkit-animation: circle-square-transition .3s cubic-bezier(.25, .27, .11, .99);
-    animation: circle-square-transition .3s cubic-bezier(.25, .27, .11, .99);
+    @extend %mega-animation;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
@@ -40,8 +39,14 @@
   }
   &.show-mega-back {
     display: block;
-    -webkit-animation: circle-square-transition 0.3s cubic-bezier(.25, .27, .11, .99) reverse;
-    animation: circle-square-transition 0.3s cubic-bezier(.25, .27, .11, .99) reverse;
+    box-shadow: none;
+    @extend %mega-animation;
+    animation-direction: reverse;
+
+    > div{
+      animation-direction: alternate;
+
+    }
   }
   &.hide {
     display: block;
@@ -80,18 +85,24 @@
           background: $color-blue-600;
           color: $color-white;
 
-          &.sub-external {
-            @extend %sub-external;
-
-            &::after {
-              @extend %external;
-
-              background: url(#{$img-path-Iconfourback}/external-default-white.svg) no-repeat 0 bottom/1.25rem 1.125rem;
+          .external-link {
+            box-shadow: -2px 2px 0px 0px $color-white, -4px 0px 0px -2px $color-white, -3px 3px 0 -1px $color-white;
+          
+            &:before {
+              background: $color-white;
             }
-
-            &:hover {
-              &::after {
-                background: url(#{$img-path-Iconfourback}/external-white-hover.svg) no-repeat 0 bottom/1.25rem 1.125rem;
+            &:after {
+              border-right: 2px solid $color-white;
+              border-top: 2px solid $color-white;
+            }
+          }
+          &:hover{
+            .external-link {
+              &:after {
+                @include transform(translate(5px, -5px));
+              }
+              &:before {
+                @include transform(rotate(-45deg) translate(7px, 0));
               }
             }
           }
@@ -110,21 +121,9 @@
         font-weight: 700;
         padding: $spacing-24;
         text-transform: uppercase;
-
-        &.sub-external {
-          @extend %sub-external;
-
-          &::after {
-            @extend %external;
-
-            background: url(#{$img-path-Iconfourback}/external-default.svg) no-repeat 0 bottom/1.25rem 1.125rem;
-          }
-
-          &:hover {
-            &::after {
-              background: url(#{$img-path-Iconfourback}/external-hover.svg) no-repeat 0 bottom/1.25rem 1.125rem;
-            }
-          }
+        
+        .external-link{
+          margin: 2px 0 0 $spacing-16;
         }
 
         &:hover {

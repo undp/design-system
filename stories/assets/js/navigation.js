@@ -53,10 +53,10 @@ export const navigationInitialize = (locale) => {
         $('.mega-nav-option.show-mega').removeClass('show-mega');
         $('.mega-nav-option.show-mega').removeClass('show-mega').addClass('hide');
         setTimeout(function () {
-          $('.mega-nav-option.hide').removeClass('hide').addClass('show-mega-back');
-        }, 10);
+          $('.mega-nav-option').removeClass('hide no-effect').addClass('show-mega-back');
+        }, 1);
         setTimeout(function () {
-          $('.mega-nav-option.show-mega-back').removeClass('show-mega-back');
+          $('.mega-nav-option').removeClass('show-mega-back');
         }, 300);
       }
     }
