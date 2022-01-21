@@ -58,16 +58,14 @@ const CountrySiteHeader = ({
                 <Icons src={IconsSearch} alt="icon-search" />
               </button>
             </div>
-            {!desktopView && (
-              <MobileNav
-                navigationData={navigationData}
-                languageswitcherData={languageswitcherData}
-                locationData={locationData}
-                backcaption={backcaption}
-                langSelect={langSelect}
-                text="Mobile Nav"
-              />
-            )}
+            <MobileNav
+              navigationData={navigationData}
+              languageswitcherData={languageswitcherData}
+              locationData={locationData}
+              backcaption={backcaption}
+              langSelect={langSelect}
+              text="Mobile Nav"
+            />
           </div>
         </div>
       </section>
