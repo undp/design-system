@@ -23,6 +23,13 @@ export function modal() {
     e.stopPropagation();
   });
 
+  // handle escape key
+  $(document).keydown(function(e) {
+    if (e.keyCode == 27 && $modalClose) {
+      $modalClose.trigger('click');
+    }
+  });
+
   // Close icon function
   $modalClose.click((event) => {
     event.preventDefault();

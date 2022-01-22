@@ -6,6 +6,7 @@ import { DownloadRow } from '../../Molecules/DownloadRow/DownloadRow';
 import { checkbox, selectFilter } from '../../assets/js/downloadmodal';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 import CustomSelect from '../../Components/Forms/Dropdowns/CustomSelect/CustomSelect';
+import { Modal } from '../../Components/UIcomponents/Modal/Modal';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
@@ -32,29 +33,32 @@ export const DownloadModal = ({
   return (
     <>
       {content === '' && <CtaButton label={modalbtn} data-toggle="modal" data-target-modal="#downloadModal" />}
-      <div className={cls('modal', `${image_variant}`)} role="dialog" aria-label="modal" aria-modal="true" {...props}>
-        <div className="modal-content">
-          <button type="button" class="modal-close-button" data-dismiss="modal" aria-label="Close">Close</button>
-          <div className="download-body">
-            {Image === 'True' && (
-            <div className="show-large">
-              <Publicationthumb Hovercolors="yellow" />
-            </div>
-            )}
-            <div className="download-content">
-              {Category === 'Multiplelanguages' && <CustomSelect text={select} />}
-              <div className={cls('download-list', 'scrollbar-vertical', `${category_variant}`)}>
-                {data.map((item, index) => (
-                  <DownloadRow title={item.title} subtitle={item.subtitle} dataValue={item.dataValue} key={index} value={index} />
-                ))}
+      <Modal 
+        id="downloadModal"
+        css_class={image_variant}
+        content={
+          <>
+            <div className="download-body">
+              {Image === 'True' && (
+              <div className="show-large">
+                <Publicationthumb Hovercolors="yellow" />
+              </div>
+              )}
+              <div className="download-content">
+                {Category === 'Multiplelanguages' && <CustomSelect text={select} />}
+                <div className={cls('download-list', 'scrollbar-vertical', `${category_variant}`)}>
+                  {data.map((item, index) => (
+                    <DownloadRow title={item.title} subtitle={item.subtitle} dataValue={item.dataValue} key={index} value={index} />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="download-footer">
-            <CtaButton label={button} For_Primary="No Arrow" State="Disabled" />
-          </div>
-        </div>
-      </div>
+            <div className="download-footer">
+              <CtaButton label={button} For_Primary="No Arrow" State="Disabled" />
+            </div>  
+          </>
+        }
+      />
     </>
   );
 };
