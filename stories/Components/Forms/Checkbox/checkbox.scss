@@ -16,6 +16,7 @@
 
 input[type="checkbox"] {
   @extend %checbox-radio-before;
+  border-radius: 0;
 
   &:checked {
     background: url(#{$img-path-Icon}/icon-check.svg) 1px 0 no-repeat;
