@@ -5,6 +5,9 @@ import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 import { lightbox_Gallery } from '../../../../assets/js/lightbox-gallery';
 import './lightbox.scss';
 import './lightboxgallery.scss';
+import { Imagecaption } from '../../../../Molecules/Imagecaption/Imagecaption';
+
+const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
 
 export const LightboxGallery = ({
   titleText, descText, buttonText, data
@@ -23,20 +26,15 @@ export const LightboxGallery = ({
       </div>
       <div className="medium-8 large-9 cell lightbox-gallery__right">
             <ul className="lightbox-gallery-images">
-              {data.map((item) => {
+              {data.map((item, index) => {
                  return (
                     <>
                     <li>
-                      <a href={item.galleryimg1} class="glightbox" data-glightbox="description:.image__description; descPosition:left;">
+                      <a href={item.galleryimg1} class="glightbox" data-glightbox={"description:.glightbox-"+`${index}`+";"} descPosition="bottom">
                         <figure>
                           <div className="image"><img src={item.galleryimg1} alt="image"/></div>
-                            <div class="image__description">
-                              <figcaption class="image__caption">
-                                 <P label={item.paragraph}/>
-                                <div class="credits">
-                                  {item.label}
-                                </div>
-                              </figcaption>
+                            <div className={cls('image__description', `glightbox-${index}`)}>
+                              <Imagecaption label={item.label} paragraph={item.paragraph} />
                             </div>
                           </figure>
                         </a>

@@ -81,7 +81,26 @@
           line-height: 0;
         }
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:focus-within {
+          outline: 0;
+          .image {
+            @include devicebreak(xlarge) { 
+              &:before {
+                content: "";
+                top: 0;
+                left: 0;
+                background-color: $color-black;
+                z-index: 1;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                opacity: 0.4;
+               }
+             }
+          }
+    
           .image__description {
             display: none;
 
@@ -92,7 +111,6 @@
         }
 
         .image {
-          
           @include devicebreak(large) {
             min-height: 200px;
           }
@@ -113,6 +131,7 @@
       bottom: 0;
       display: none;
       position: absolute;
+      z-index: 2;
 
       .image__caption {
         @include devicebreak(xlarge) {
@@ -143,17 +162,10 @@
 
       &.caption_top {
         bottom: inherit;
-        -webkit-mask-image: linear-gradient(
-          to bottom,
-          $color-black 50%,
-          transparent 100%
-        );
-        mask-image: linear-gradient(
-          to bottom,
-          $color-black 50%,
-          transparent 100%
-        );
+        -webkit-mask-image: linear-gradient(to bottom, $color-black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, $color-black 50%, transparent 100%);
         overflow-y: hidden;
+        height: 100%;
         top: 0;
       }
     }
@@ -163,17 +175,22 @@
 [dir="rtl"] {
   .lightbox-gallery {
     &__right {
-      
       .lightbox-gallery-images {
         padding-right: 0;
         li {
-            padding-right: 0;
+          padding-right: 0;
         }
       }
 
       .credits {
         border-right: 0;
         color: $color-white;
+        margin-right: 0;
+        padding-right: 0;
+      }
+
+      .image__caption p + .credits {
+        border-right: none;
         margin-right: 0;
         padding-right: 0;
       }
