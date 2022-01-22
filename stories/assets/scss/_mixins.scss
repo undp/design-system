@@ -163,6 +163,7 @@
   width: 16px;
   border: 2px solid $color-dark-red;
   appearance: none;
+  -webkit-appearance: none;
   margin: 0;
   &:hover {
     border-color: $color-light-pink;
