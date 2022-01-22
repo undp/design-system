@@ -12,7 +12,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Testing/Text/Blockquote" component={BlockquoteComponent} argTypes={{
+<Meta title="Components/UI components/Text/Callout" component={BlockquoteComponent} argTypes={{
   Colors: {
     options: ['default','yellow','red','green','blue','gray'],
     control: { type: 'inline-radio' },
@@ -51,7 +51,7 @@ The Blockquote component indicates that the enclosed text is an extended quotati
 
 
 
-<Story name="Blockquote">
+<Story name="Callout">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <BlockquoteComponent blockquoteText={caption.blockquote} citeText={caption.cite} {...args}></BlockquoteComponent>;
