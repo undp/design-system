@@ -3,7 +3,6 @@
 @import '../../../assets/scss/breakpoints';
 
 .pagehero-cards {
-
   &-wrap {
     display: flex;
   }
@@ -12,16 +11,7 @@
     margin-left: 0.75rem;
     margin-right: 0.75rem;
 
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-
     @include devicebreak(medium) {
-
       flex: 0 0 calc(25% - 1.5rem);
       max-width: calc(25% - 1.5rem);
 
@@ -68,7 +58,7 @@
       }
     }
 
-    @include devicebreak(large) {
+    @include devicebreak(medium) {
       margin-top: $spacing-96;
     }
 
@@ -84,8 +74,7 @@
           .pagehero {
             &-cards {
               &__caption {
-                bottom: 0;
-                opacity: 1;
+                @include transform(translateY(calc(-100% + -0.4rem)));
 
                 p {
                   opacity: 1;
@@ -144,42 +133,45 @@
       opacity: 0;
     }
 
+    .cta--arrow {
+      padding: 0;
+
+      i {
+        left: $spacing-16;
+      }
+    }
+
     .cta__link {
       @include transition(all 0.4s);
       @include transitiondelay(0.6s);
 
-      border: 0;
-      font-weight: 700;
       margin-top: $spacing-32;
-
-      &::after {
-        @include transition(0.2s ease);
-
-        margin-left: -$spacing-04;
-      }
     }
   }
 }
 
 [dir='rtl'] {
   .pagehero-cards-box {
+    text-align: right;
+
+    @include devicebreak(small) {
+      margin-right: 0;
+    }
+
     &:hover,
     &.swiper-slide-active {
-      .cta--arrow::after {
-        @include transform(translate(0, 0) rotate(180deg));
+      .cta--arrow {
+        padding: 0;
 
-        margin-right: $spacing-04;
+        @include devicebreak(medium) {
+          flex-direction: row-reverse;
+        }
+
+        i {
+          left: unset;
+          right: $spacing-16;
+        }
       }
-    }
-
-    &:first-child {
-      margin-right: 0;
-      margin-left: 0.75rem;
-    }
-
-    &:last-child {
-      margin-left: 0;
-      margin-right: 0.75rem;
     }
   }
 }

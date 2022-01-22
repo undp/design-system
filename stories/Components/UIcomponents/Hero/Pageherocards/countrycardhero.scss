@@ -4,10 +4,12 @@
 
 /* pagehero card hero start */
 .pagehero-cards {
-  
   &-items {
-    .pagehero-cards-box {
+    @include devicebreak(small) {
+      overflow: hidden;
+    }
 
+    .pagehero-cards-box {
       @include devicebreak(medium) {
         flex: 0 0 calc(33.333% - 1.5rem);
         max-width: calc(33.333% - 1.5rem);
@@ -17,7 +19,7 @@
         flex: 0 0 calc(16.66667% - 1.5rem);
         max-width: calc(16.66667% - 1.5rem);
       }
-      
+
       @include devicebreak(large) {
         &.large {
           flex: 0 0 calc(25% - 1.5rem);
@@ -29,17 +31,10 @@
         margin-left: 0;
       }
     }
-
-    @include devicebreak(small) {
-      overflow: hidden;
-    }
   }
 
   &-box {
-
     @include devicebreak(medium) {
-      margin-bottom: $spacing-24;
-
       &.swiper-slide {
         height: auto;
       }
@@ -129,6 +124,7 @@
 
   .swiper-wrapper {
     @include devicebreak(medium) {
+      flex-wrap: wrap;
       overflow: hidden;
     }
 
@@ -136,6 +132,12 @@
       @include devicebreak(small) {
         margin-left: -$spacing-64;
         padding-left: $spacing-64;
+
+        .cta__link {
+          i {
+            width: $spacing-80;
+          }
+        }
       }
     }
   }
@@ -143,40 +145,29 @@
 
 [dir='rtl'] {
   .pagehero-cards {
-
     &-top {
       .large-4 {
-        @include devicebreak(medium) {
+        @include devicebreak(large) {
           margin-right: $spacing-64;
         }
-  
+
         &::before {
           right: 3.5rem;
-  
-          @include devicebreak(medium) {
+
+          @include devicebreak(large) {
             right: -60px;
           }
         }
       }
     }
 
-    &-items {
-
-      .pagehero-cards-box {
-
-        @include devicebreak(small) {
-          margin-right: 0;
-        }
-      }
-    }
 
     .swiper-wrapper {
-
       .swiper-slide-active {
         @include devicebreak(small) {
           margin-left: 0;
-          padding-left: 0;
           margin-right: -$spacing-64;
+          padding-left: 0;
           padding-right: $spacing-64;
         }
       }

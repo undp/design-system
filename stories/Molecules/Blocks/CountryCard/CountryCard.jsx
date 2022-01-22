@@ -1,6 +1,7 @@
 import React from 'react';
 import './countrycard.scss';
 import '../../../assets/scss/_grid.scss';
+import { Ctalink } from '../../../Components/UIcomponents/Buttons/Cta_link/Cta_link';
 
 export const CountryCard = ({ data }) => {
   const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
@@ -13,10 +14,11 @@ export const CountryCard = ({ data }) => {
             {item.imageback && <img src={item.imageback} alt={item.imageback} />}
             <div className="pagehero-cards__caption">
               <p>{item.name}</p>
-              <span className="cta__link cta--arrow">{item.btnlabel}</span>
+              <Ctalink label={item.btnlabel} button_option="span" />
             </div>
           </a>
         </div>
       ))}
     </div>
-  )}
+  );
+};
