@@ -58,9 +58,8 @@ export const FormTypes = ({
           <div className="medium-5 cell">
             <Image />
           </div>
-          <div className="medium-7 cell form-bg stacked-form">
-            
-            <div className="grid-x stacked-form">
+          <div className="medium-7 cell form-bg stacked-form">   
+            <div className="grid-x">
               <div className="cell medium-8 medium-offset-2">
                 <Heading type="2" label={anchorTag} />
                 <p>{para}</p>
