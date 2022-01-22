@@ -2,20 +2,34 @@
 @import '../../../assets/scss/mixins';
 @import '../../../assets/scss/breakpoints';
 
-/* country card start */
-.country-card {
-  &--item {
-    overflow: hidden;
+.pagehero-cards {
+
+  &-wrap {
+    display: flex;
+  }
+
+  &-box {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     @include devicebreak(medium) {
-      margin-top: $spacing-96;
+
+      flex: 0 0 calc(25% - 1.5rem);
+      max-width: calc(25% - 1.5rem);
 
       &.swiper-slide {
         a {
           @include transition(all 0.4s);
           @include transform(translateY(0));
 
-          overflow: hidden;
           overflow: hidden;
         }
 
@@ -34,8 +48,8 @@
           opacity: 1;
         }
 
-        .country {
-          &-card {
+        .pagehero {
+          &-cards {
             &__caption {
               transform: translateY(calc(-100% + #{$spacing-44}));
 
@@ -54,6 +68,10 @@
       }
     }
 
+    @include devicebreak(large) {
+      margin-top: $spacing-96;
+    }
+
     @include devicebreak(small) {
       &.swiper-slide {
         height: auto;
@@ -63,8 +81,8 @@
             opacity: 1;
           }
 
-          .country {
-            &-card {
+          .pagehero {
+            &-cards {
               &__caption {
                 bottom: 0;
                 opacity: 1;
@@ -144,7 +162,7 @@
 }
 
 [dir='rtl'] {
-  .country-card--item {
+  .pagehero-cards-box {
     &:hover,
     &.swiper-slide-active {
       .cta--arrow::after {
@@ -152,6 +170,16 @@
 
         margin-right: $spacing-04;
       }
+    }
+
+    &:first-child {
+      margin-right: 0;
+      margin-left: 0.75rem;
+    }
+
+    &:last-child {
+      margin-left: 0;
+      margin-right: 0.75rem;
     }
   }
 }

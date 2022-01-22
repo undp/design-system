@@ -257,6 +257,6 @@ export const swiper = (selector, arrowsSelector, options) => {
 
   let getDevice = getDeviceType();
   if(getDevice == 'tablet') {
-    $(arrowsSelector).append(`<div class="slider-arrows" aria-label="carousel-arrows"><div class="swiper-button-prev" aria-label="prev"><img src=${chevronLeftWhite} alt="Prev" /></div><div class="swiper-button-next" aria-label="next"><img src=${chevronRightWhite} alt="Next" /></div></div>`)
+    
   }
 };
