@@ -89,13 +89,6 @@
       @include devicebreak(small) {
         padding-left: $spacing-16;
       }
-
-      @include devicebreak(medium) {
-        .download-row {
-          margin-left: $spacing-24;
-          margin-right: 0;
-        }
-      }
     }
 
     &-content {
