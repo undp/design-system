@@ -1,5 +1,5 @@
 import { Meta, Story, canvas } from '@storybook/addon-docs';
-import { Modal } from './Modal';
+import { ModalSample } from './ModalSample';
 import img from '../../../assets/images/bio.jpg';
 import img2 from '../../../assets/images/modal.png';
 
@@ -44,7 +44,7 @@ The Modal component defines a block of information data with some.
   <Story name="Modal">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <Modal id="exampleModal" contenttile={caption.title} contentname={caption.name}  descriptionText={caption.descriptionText} descriptionText2={caption.descriptionText2}  button={caption.btnlabel}  alt={'modal image'} image={img} image2={img2} {...args} content={caption.content}></Modal>;
+      return <ModalSample contenttile={caption.title} contentname={caption.name}  descriptionText={caption.descriptionText} descriptionText2={caption.descriptionText2}  button={caption.btnlabel}  alt={'modal image'} image={img} image2={img2} {...args} ></ModalSample>;
     }}
   </Story>
 </Canvas>
