@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { ReactDOM } from 'react-dom';
 import './modal.scss';
 import { modal } from '../../../assets/js/modal';
 
