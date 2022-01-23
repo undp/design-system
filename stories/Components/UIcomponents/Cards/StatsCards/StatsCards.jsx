@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { FontResize } from '../../../../assets/js/font_resize';
 import './statscards.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
@@ -32,6 +33,12 @@ export const StatsCards = ({
     default:
       size = 'medium';
   }
+
+  useEffect(() => {
+    // resize the text
+    FontResize('.stats-card > h2');
+  }, []);
+
   let screen_variant = Hovercolors_options[`${args.Hovercolors}`];
   return (
     <div className={cls('stats-card', `${size}`, `${screen_variant}`)}>
