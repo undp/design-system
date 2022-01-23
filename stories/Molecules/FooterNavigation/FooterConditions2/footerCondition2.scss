@@ -41,6 +41,9 @@
 [dir='rtl'] {
   .footer-lists {
     padding-right: 0;
+    @include devicebreak(medium) {
+      text-align: left;
+    }
 
     li {
       padding-right: 0;
