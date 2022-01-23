@@ -76,13 +76,6 @@ div.download-card {
 }
 
 [dir='rtl'] {
-  .download-card__download {
-    &::after {
-      margin-left: 0;
-      margin-right: 0.75rem;
-    }
-  }
-
   .download-card {
     &:hover {
       .publication-thumbnail__image {
@@ -91,6 +84,16 @@ div.download-card {
             @include background-image(318deg, #{$color}, transparent 80%);
           }
         }
+      }
+    }
+    .download-card__download {
+      &::after {
+        margin-left: 0;
+        margin-right: 0.75rem;
+      }
+      .download-icon {
+        margin-left:  0;
+        margin-right: 0.75rem;
       }
     }
   }
