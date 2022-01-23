@@ -22,6 +22,15 @@
   animation: $animation;
 }
 
+//keyframe
+@mixin keyframes($keyframes...) {
+  -webkit-keyframes: $keyframes;
+  -moz-keyframes: $keyframes;
+  -ms-keyframes: $keyframes;
+  -o-keyframes: $keyframes;
+  keyframes: $keyframes;
+}
+
 //transition
 @mixin transition($transitions...) {
   -webkit-transition: $transitions;

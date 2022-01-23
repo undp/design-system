@@ -36,7 +36,7 @@ const MobileNav = ({
               </li>
             ))}
           </ul>
-          <div className="mob-nav-options">
+          <div className="mobile-nav-options">
             <a href="#" className="mob-lang-switcher">
               <Icons src={IconsLanguage} alt="icon-language" />
               {' '}
@@ -50,7 +50,7 @@ const MobileNav = ({
           </div>
         </div>
 
-        <div className="cell mob-sub-menu">
+        <div className="cell mobile-sub-menu">
           <button className="back-nav">
             <Icons src={Iconsback} alt="back button" />
             {backcaption.detail}

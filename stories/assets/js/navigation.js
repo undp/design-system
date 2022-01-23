@@ -50,14 +50,15 @@ export const navigationInitialize = (locale) => {
     if (event.type === 'mouseleave') {
       const el = event.toElement;
       if (!el.classList.contains('mega-nav-option')) {
-        $('.mega-nav-option.show-mega').removeClass('show-mega');
-        $('.mega-nav-option.show-mega').removeClass('show-mega').addClass('hide');
-        setTimeout(function () {
-          $('.mega-nav-option').removeClass('hide no-effect').addClass('show-mega-back');
-        }, 1);
-        setTimeout(function () {
-          $('.mega-nav-option').removeClass('show-mega-back');
-        }, 300);
+        if($('.mega-nav-option').hasClass('show-mega')){
+          $('.mega-nav-option.show-mega').removeClass('show-mega').addClass('hide');
+          setTimeout(function () {
+            $('.mega-nav-option').removeClass('hide no-effect').addClass('show-mega-back');
+          }, 1);
+          setTimeout(function () {
+            $('.mega-nav-option').removeClass('show-mega-back');
+          }, 300);
+        }
       }
     }
   });
@@ -67,7 +68,7 @@ export const navigationInitialize = (locale) => {
     $(this).find('.mega-nav-option.show-mega').removeClass('show-mega no-effect').addClass('hide');
     setTimeout(function () {
       $('.mega-nav-option').removeClass('hide').addClass('show-mega-back');
-    }, 10);
+    }, 1);
     setTimeout(function () {
       $('.mega-nav-option').removeClass('show-mega-back');
     }, 300);
@@ -77,8 +78,7 @@ export const navigationInitialize = (locale) => {
     $(this).addClass('active').siblings().removeClass('active');
     const ID = $(this).attr('id');
     $(this).parents('.mega-wrapper').find(`[data-submenu-id='${ID}']`).addClass('active-content')
-      .siblings()
-      .removeClass('active-content');
+      .siblings().removeClass('active-content');
   });
 
   $(window).scroll(() => {
@@ -97,7 +97,7 @@ export const navigationInitialize = (locale) => {
     $('.mobile-mega-content').find('.sub-heading').text(TEXT);
     $('.mobile-mega-wrapper').find(`[data-mobile-id='${ID}']`).addClass('show-content');
     $('.mobile-links').addClass('hide');
-    $('.mob-sub-menu').addClass('show');
+    $('.mobile-sub-menu').addClass('show');
   });
 
   $('.mob-lang-switcher').click(() => {
@@ -106,14 +106,14 @@ export const navigationInitialize = (locale) => {
   });
 
   $('.back-nav').click(() => {
-    $('.mob-sub-menu, .mob-sub-lang').removeClass('show');
+    $('.mobile-sub-menu, .mob-sub-lang').removeClass('show');
     $('.mobile-mega-content').removeClass('show-content');
     $('.mobile-links').removeClass('hide');
   });
   $('.menu-hamburger').click(function (e) {
     e.stopImmediatePropagation();
     $('.mobile-nav').toggleClass('show');
-    $('.mob-sub-menu').toggleClass('show');
+    $('.mobile-sub-menu').toggleClass('show');
     $(this).toggleClass('is-active');
     $('.back-nav').click();
   });
