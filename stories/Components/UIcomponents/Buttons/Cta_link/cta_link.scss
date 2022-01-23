@@ -10,6 +10,7 @@
 
   &.cta--arrow {
     @extend %chevron-right-expanded;
+
     padding-left: 0;
     padding-right: $spacing-24;
   }
@@ -51,13 +52,10 @@
       padding-right: 0;
 
       i {
-        left: 0;
-        right: 1.25rem;
         @include transform(translate(0) rotate(180deg));
 
-        &:hover {
-          @include transform(translate(-10px) rotate(180deg));
-        }
+        left: 0;
+        right: 1.25rem;
       }
     }
   }

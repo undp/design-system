@@ -22,7 +22,7 @@ div.download-card {
       }
     }
 
-  div.card-thumbnail__image {
+    div.card-thumbnail__image {
       @each $name, $color in $colors {
         &.#{$name}::before {
           @include background-image(42deg, #{$color}, transparent 80%);
@@ -31,11 +31,13 @@ div.download-card {
         }
       }
     }
-    .download-icon{
-      &:after {
+
+    .download-icon {
+      &::after {
         @include transform(rotate(-45deg) translate(7px, -7px));
       }
-      &:before {
+
+      &::before {
         @include transform(translate(0, -10px));
       }
     }
@@ -62,28 +64,25 @@ div.download-card {
   .download-card__download {
     @extend %paragragh-font-16;
 
-    align-items: flex-end;
-    background-image: none;
+    align-items: center;
     display: flex;
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
 
-    .download-icon{
-      margin-left: 0.75rem;
+    .download-icon {
+      margin-left: $spacing-12;
     }
   }
 }
 
 [dir='rtl'] {
-  .download-card__download {
-    &::after {
+  div.download-card {
+    .download-icon {
       margin-left: 0;
-      margin-right: 0.75rem;
+      margin-right: $spacing-12;
     }
-  }
 
-  .download-card {
     &:hover {
       .publication-thumbnail__image {
         @each $name, $color in $colors {

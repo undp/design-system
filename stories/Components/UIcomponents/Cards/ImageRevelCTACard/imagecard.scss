@@ -54,6 +54,12 @@
   }
 
   &:hover {
+    .cta--arrow {
+      i {
+        width: 5rem;
+      }
+    }
+
     .image-reveal-card__content {
       @include devicebreak(large) {
         h5 {
