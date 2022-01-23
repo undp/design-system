@@ -9,7 +9,7 @@ export const ParallaxGallery = ({
   titleText, descText, buttonText, galleryimg1, galleryimg2, galleryimg3, galleryimg4, Background,
 }) => {
   useEffect(() => {
-    parallaxEffect('.parallax-gallery-images', 'vertical');
+    parallaxEffect('.parallax-gallery-images', '.column', 'top center', 'bottom+=15% center', 'vertical', 'all');
   }, []);
 
   let background;

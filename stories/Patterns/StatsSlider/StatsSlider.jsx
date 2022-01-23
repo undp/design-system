@@ -4,13 +4,18 @@ import { swiper } from '../../assets/js/swiper';
 import { parallaxEffect } from '../../assets/js/parallax';
 import './statsslider.scss';
 
+// RTL Fix for Storybook.
+let rtl = document.dir || 'ltr';
+if (window.location.href.indexOf("direction=rtl") > -1) {
+  rtl = 'rtl';
+}
 export const StatsSlider = ({ data }) => {
   useEffect(() => {
     swiper('.stats-card-slider');
-    parallaxEffect('.stats-card-slider');
+    parallaxEffect('.stats-card-slider', '.parallax-slide', 'top bottom', 'bottom top', 'horizontal');
   }, []);
   return (
-    <div className="stats-card-slider" data-swiper-device="mobile" dir={`${window.UNDP.dir}`}>
+    <div className="stats-card-slider" data-swiper-device="mobile" dir={rtl}>
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (

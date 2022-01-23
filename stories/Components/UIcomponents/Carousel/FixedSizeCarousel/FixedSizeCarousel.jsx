@@ -6,13 +6,18 @@ import { swiper } from '../../../../assets/js/swiper';
 import viewport from '../../../../assets/js/viewport';
 import './fixedsizecarousel.scss';
 
+// RTL Fix for Storybook.
+let rtl = document.dir || 'ltr';
+if (window.location.href.indexOf("direction=rtl") > -1) {
+  rtl = 'rtl';
+}
 export const FixedSizeCarousel = ({ data, label }) => {
   useEffect(() => {
     swiper('.fixed-carousel', '.fixed-carousel__button-wrap');
     viewport('.fixed-carousel');
   }, []);
   return (
-    <section className="fixed-carousel left-right" dir={`${window.UNDP.dir}`}>
+    <section className="fixed-carousel left-right" dir={rtl}>
       {label && <Heading type="2" label={label} />}
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">

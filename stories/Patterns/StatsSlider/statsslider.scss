@@ -68,10 +68,14 @@
     }
   }
 
-  .swiper-slide-active {
+  &.swiper-initialized {
     @include devicebreak(small) {
-      margin-left: -$spacing-64;
-      padding-left: $spacing-64;
+      padding-right: $spacing-64;
+    }
+    .swiper-scrollbar {
+      @include devicebreak(small) {
+        padding-right: $spacing-64;
+      }
     }
   }
 }
@@ -83,13 +87,16 @@
         flex-direction: row-reverse;
       }
     }
-
-    .swiper-slide-active {
+    &.swiper-initialized {
       @include devicebreak(small) {
-        margin-left: 0;
-        margin-right: -$spacing-64;
-        padding-left: 0;
-        padding-right: $spacing-64;
+        padding-left: $spacing-64;
+        padding-right: 0;
+      }
+      .swiper-scrollbar {
+        @include devicebreak(small) {
+          padding-left: $spacing-64;
+          padding-right: 0;
+        }
       }
     }
   }

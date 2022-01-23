@@ -3,13 +3,18 @@ import { swiper } from '../../../../assets/js/swiper';
 import viewport from '../../../../assets/js/viewport';
 import './imageonlycarousel.scss';
 
+// RTL Fix for Storybook.
+let rtl = document.dir || 'ltr';
+if (window.location.href.indexOf("direction=rtl") > -1) {
+  rtl = 'rtl';
+}
 export const ImageOnlyCarousel = ({ data }) => {
   useEffect(() => {
     swiper('.image-carousel', '.image-carousel .slider-slide');
     viewport('.image-carousel');
   }, []);
   return (
-    <div className="image-carousel left-right" dir={`${window.UNDP.dir}`}>
+    <div className="image-carousel left-right" dir={rtl}>
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (

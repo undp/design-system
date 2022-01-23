@@ -8,14 +8,31 @@ import chevronLeftWhite from '../icons/circle-left.svg';
 
 // Swiper Slider
 export const swiper = (selector, arrowsSelector, options) => {
+
+  'use strict';
+
   // Get Swiper Selector.
   let swiperSelector = $(selector);
   let dragsize = 'auto';
 
   // data-swiper-device="mobile" // will work only on mobile
   // data-swiper-device="desktop" // will work only on desktop
-  let mobile = window.matchMedia('(min-width: 0px) and (max-width: 767px)');
-  let desktop = window.matchMedia('(min-width: 768px)');
+  // Get device type
+  const getDeviceType = () => {
+    let device;
+    let mobile = 'only screen and (min-width: 0px) and (max-width: 767px)';
+    let potrait = 'only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) and (pointer: coarse)';
+    let landscape = 'only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape) and (pointer: coarse)';
+    let desktop = window.matchMedia('(min-width: 768px)');
+    if (window.matchMedia(mobile).matches) {
+      device = 'mobile';
+    } else if (window.matchMedia(potrait).matches || window.matchMedia(landscape).matches) {
+      device = 'tablet';
+    } else {
+      device = 'desktop';
+    }
+    return device;
+  };
 
   // Incase of multiple swiper sliders.
   swiperSelector.each((index, element) => {
@@ -43,7 +60,6 @@ export const swiper = (selector, arrowsSelector, options) => {
       a11y: true,
       keyboardControl: true,
       // Navigation arrows
-      slidesPerGroup: 1,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -60,10 +76,14 @@ export const swiper = (selector, arrowsSelector, options) => {
         768: {
           noSwiping: true,
           slidesPerView: $(element).data('swiper-slides-view-tablet') ? $(element).data('swiper-slides-view-tablet') : 1,
+          slidesOffsetBefore: $(element).data('swiper-offset') ? $(element).data('swiper-offset') : 0,
+          slidesOffsetAfter: $(element).data('swiper-offset') ? -$(element).data('swiper-offset') : 0,
         },
         1024: {
           noSwiping: true,
           slidesPerView: $(element).data('swiper-slides-view-desktop') ? $(element).data('swiper-slides-view-desktop') : 1,
+          slidesOffsetBefore: $(element).data('swiper-offset') ? $(element).data('swiper-offset') : 0,
+          slidesOffsetAfter: $(element).data('swiper-offset') ? -$(element).data('swiper-offset') : 0,
         }
       },
     };
@@ -100,28 +120,48 @@ export const swiper = (selector, arrowsSelector, options) => {
       return dragsize;
     };
 
+    const swiperArrow = () => {
+      const arrows = `<div class="slider-arrows"><button class="swiper-button-prev"><img src=${chevronLeftWhite} alt="Next" /></button><button class="swiper-button-next"><img src=${chevronRightWhite} alt="Next" /></button></div>`;
+      return arrows;
+    };
+
+    const swiperDestroyMouseEvents = () => {
+      const events = $._data($(element).find('.swiper-wrapper')[0], 'events');
+      if (events) {
+        if (events.click.length > 0) {
+          $(element).find('.swiper-wrapper').off('click');
+        }
+        if (events.mousemove.length > 0) {
+          $(element).find('.swiper-wrapper').off('mousemove');
+        }
+        $(element).find('.swiper-wrapper').css('cursor', 'auto');
+      }
+    }
+
     // Define Swiper Element
     let swiper = new Swiper(element, options);
 
     // Before mount
     const beforeSwiperMount = (swiper) => {
+      // Update dragSize.
+      let dragsize = getDragSize();
+      swiper.params.scrollbar.dragSize = dragsize;
       swiper.on('beforeInit', () => {
         $(element).find('.stats-card-parallax .swiper-slide').unwrap();
+        if (getDeviceType() == "tablet" && $(element).find('.fixed-carousel__button-wrap').length) {
+          $(element).find('.fixed-carousel__button-wrap').append(swiperArrow); // Change this classname `fixed-carousel__button-wrap` in HTML and here and then remove this comment.
+        }
       });
     };
 
     // Swiper Enable Callback
     const swiperEnable = () => {
-      // Update dragSize.
-      let dragsize = getDragSize();
       if (swiper.destroyed) {
         const newSwiper = new Swiper(element, options);
         swiper = newSwiper;
-        swiper.params.scrollbar.dragSize = dragsize;
         beforeSwiperMount(swiper);
         swiper.init();
       } else {
-        swiper.params.scrollbar.dragSize = dragsize;
         beforeSwiperMount(swiper);
         swiper.init();
       }
@@ -136,15 +176,7 @@ export const swiper = (selector, arrowsSelector, options) => {
         swiper.scrollbar.destroy();
         // Remove any events bound on the Swiper wrapper.
         swiper.on('beforeDestroy', () => {
-          const events = $._data($(element).find('.swiper-wrapper').get(0), 'events');
-          if (events) {
-            if (events.click.length > 0) {
-              $(element).find('.swiper-wrapper').off('click');
-            }
-            if (events.mousemove.length > 0) {
-              $(element).find('.swiper-wrapper').off('mousemove');
-            }
-          }
+          swiperDestroyMouseEvents();
         });
         swiper.destroy();
       }
@@ -161,25 +193,35 @@ export const swiper = (selector, arrowsSelector, options) => {
     const swiperInit = () => {
       const dataDevice = $(element).data('swiper-device');
       // Device based activation of swiper.
-      if (dataDevice && (dataDevice == 'mobile' || dataDevice == 'desktop')) {
-        if (mobile.matches && dataDevice == 'mobile') {
+      if (dataDevice && (dataDevice == 'mobile' || dataDevice == 'desktop' || dataDevice == 'tablet')) {
+        if (getDeviceType() == "mobile" && dataDevice == 'mobile') {
           if (!swiper.initialized) {
             swiperEnable();
           }
-        } else if (desktop.matches && dataDevice == 'desktop') {
+        } else if (getDeviceType() == "tablet" && dataDevice == 'tablet') {
+          if (!swiper.initialized) {
+            swiperEnable();
+          }
+        } else if (getDeviceType() == "desktop" && dataDevice == 'desktop') {
           if (!swiper.initialized) {
             swiperEnable();
           }
         } else {
           swiperDisable();
         }
-      } else if (!swiper.initialized) {
-        swiperEnable();
+      } else {
+        if (!swiper.initialized) {
+          swiperEnable();
+        }
       }
+
       if (swiper !== undefined) {
         // Update arrows callback.
         const updateArrow = (e) => {
-          const sliderCenter = swiper.size / 2;
+          const sliderWidth = $(element).outerWidth();
+          const sliderOffset = $(element).offset();
+          const ePageXOffset = e.pageX - sliderOffset.left;
+          const sliderCenter = sliderWidth/2;
           let leftCursor = `url(${arrowleft}), auto`;
           let rightCursor = `url(${arrowright}), auto`;
           if (swiper.isBeginning) {
@@ -192,10 +234,12 @@ export const swiper = (selector, arrowsSelector, options) => {
           }
           if (!swiper.initialized || swiper.destroyed) {
             $(element).find('.swiper-wrapper').css('cursor', 'auto');
-          } else if (e.pageX <= sliderCenter) {
-            $(element).find('.swiper-wrapper').css('cursor', leftCursor);
           } else {
-            $(element).find('.swiper-wrapper').css('cursor', rightCursor);
+            if (sliderCenter > ePageXOffset) {
+              $(element).find('.swiper-wrapper').css('cursor', leftCursor);
+            } else {
+              $(element).find('.swiper-wrapper').css('cursor', rightCursor);
+            }
           }
         };
 
@@ -205,9 +249,12 @@ export const swiper = (selector, arrowsSelector, options) => {
         // Swiper slides click eventlistner.
         $(element).find('.swiper-wrapper').off('click').on('click', (e) => {
           e.preventDefault();
+          const sliderWidth = $(element).outerWidth();
+          const sliderOffset = $(element).offset();
+          const ePageXOffset = e.pageX - sliderOffset.left;
+          const sliderCenter = sliderWidth/2;
           if (!swiper.initialized) return false;
-          const sliderCenter = swiper.size / 2;
-          if (e.pageX <= sliderCenter) {
+          if (sliderCenter > ePageXOffset) {
             if (swiper.isBeginning) {
               swiper.slideNext();
             } else if (swiper.isEnd) {
@@ -215,26 +262,31 @@ export const swiper = (selector, arrowsSelector, options) => {
             } else {
               swiper.rtl ? swiper.slideNext() : swiper.slidePrev();
             }
-          } else if (swiper.isBeginning) {
-            swiper.slideNext();
-          } else if (swiper.isEnd) {
-            swiper.slidePrev();
           } else {
-            swiper.rtl ? swiper.slidePrev() : swiper.slideNext();
-            console.log('Prev');
+            if (swiper.isBeginning) {
+              swiper.slideNext();
+            } else if (swiper.isEnd) {
+              swiper.slidePrev();
+            } else {
+              swiper.rtl ? swiper.slidePrev() : swiper.slideNext();
+            }
           }
           updateArrow(e);
-        })
-          .find(ignoreClick)
-          .on('click', (e) => {
-            e.stopPropagation();
-          });
+        }).find(ignoreClick).on('click', (e) => {
+          e.stopPropagation();
+        });
 
         // Swiper slides mousemove eventlistner.
         $(element).find('.swiper-wrapper').off('mousemove').on('mousemove', (e) => {
           e.preventDefault();
           updateArrow(e);
         });
+
+        // Disable mouse events on Tablet and Mobile
+        if (getDeviceType() == "mobile" || getDeviceType() == "tablet") {
+          swiperDestroyMouseEvents();
+        }
+
       }
     };
 
@@ -247,16 +299,4 @@ export const swiper = (selector, arrowsSelector, options) => {
     });
   });
 
-  // Get device type of tablet
-  const getDeviceType = () => {
-    const ua = navigator.userAgent;
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-      return "tablet";
-    }
-  };
-
-  let getDevice = getDeviceType();
-  if(getDevice == 'tablet') {
-    
-  }
 };
