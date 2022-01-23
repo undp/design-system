@@ -13,7 +13,7 @@ if (window.location.href.indexOf("direction=rtl") > -1) {
 }
 export const CountryCardHero = ({ data, title, subtitle }) => {
   useEffect(() => {
-    swiper('.pagehero-cards-items');
+    swiper('.country-card__items');
     viewport('.left-right');
   }, []);
   return (
