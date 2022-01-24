@@ -14,6 +14,7 @@
   justify-content: center;
   left: 0;
   opacity: 0;
+  visibility: hidden;
   position: fixed;
   right: 0;
   top: 0;
@@ -55,6 +56,7 @@
 
   &.open {
     opacity: 1;
+    visibility: visible;
   }
 }
 
