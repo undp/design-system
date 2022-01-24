@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './pagehero.scss';
+import './page-hero.scss';
 import viewport from '../../../../assets/js/viewport';
 import expandToSize from '../../../../assets/js/animation';
 import BackgroundVideo from '../../../../assets/video/video_sample.mp4';

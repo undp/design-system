@@ -10,7 +10,7 @@ import { Projectdetail } from '../../Organism/Text/ProjectDetail/ProjectDetail';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 import { ContentCardWithAndWithoutImage } from '../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage';
 import { Statscardslider } from '../../Organism/Statscardslider/Statscardslider';
-import './projectpage.scss';
+import './project-page.scss';
 
 export const ProjectPage = ({
   footerData, siteTitleData, backcaption, locale, leftNavigationData, navigationData, rightNavigationData, languageswitcherData, locationData, langSelect, logo, logowhite, herodata, content, title, imgsrc, imgalt, topHeading, topParagraph, topParagraph1, whatwedoheader, whatwedodescription, relatedHeading, download, downloadTitle, downloadTitle1, downloadTitle2, downloadTitle3, downloadTitle4, downloadTitle5, downloadTitle6, impactHead, title1, title2, title3, title4, title5, title6, title7, subtitle1, subtitle2, subtitle3, subtitle4, subtitle5, subtitle6, subtitle7, buttonProjectInfo, supportHeading, exploreHeading, exploreMoreBtn, exploreMoreData, statsliderdata, listData,

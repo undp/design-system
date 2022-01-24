@@ -4,7 +4,7 @@ import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 import { lightbox_Gallery } from '../../../../assets/js/lightbox-gallery';
 import './lightbox.scss';
-import './lightboxgallery.scss';
+import './lightbox-gallery.scss';
 import { Imagecaption } from '../../../../Molecules/Imagecaption/Imagecaption';
 
 const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;

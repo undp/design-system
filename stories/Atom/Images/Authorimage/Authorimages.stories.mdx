@@ -1,30 +1,39 @@
-import { Meta, Story } from '@storybook/addon-docs';
-import { Authorimg } from './Authorimages';
-import user from '../../../assets/images/author.png';
+import { Meta, Story } from "@storybook/addon-docs";
+import { Authorimg } from "./Authorimages";
+import user from "../../../assets/images/author.png";
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {}; return engText;
-    case 'arabic': const arabicText = {}; return arabicText;
-    case 'burmese': const burmeseText = {}; return burmeseText;
-    case 'japanese': const japaneseText = {}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = {};
+      return engText;
+    case "arabic":
+      const arabicText = {};
+      return arabicText;
+    case "burmese":
+      const burmeseText = {};
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {};
+      return japaneseText;
     default:
       return {};
   }
 };
 
-<Meta title="Foundation/Images/Author Image"
-argTypes={{
+<Meta
+  title="Foundation/Images/Author Image"
+  argTypes={{
     variant: {
       options: ["Large", "Small"],
       control: { type: "inline-radio" },
-      defaultValue: "Small"
+      defaultValue: "Small",
     },
     hovercolor: {
-      options: ['yellow', 'red', 'green', 'blue'],
-      control: { type: 'inline-radio' },
-      defaultValue: 'yellow'
-    }
+      options: ["yellow", "red", "green", "blue"],
+      control: { type: "inline-radio" },
+      defaultValue: "yellow",
+    },
   }}
 />
 
@@ -48,22 +57,33 @@ argTypes={{
 `}</style>
 
 # Author Image Component
+
 The <code>Author Image</code> component displays the author image.
 
 <Story name="Author Image">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Authorimg image= {user} alt= 'Headshot of XYZ' {...args}></Authorimg>;
+    return <Authorimg image={user} alt="Headshot of XYZ" {...args}></Authorimg>;
   }}
 </Story>
 
 <div className="subheading">Usage</div>
 <ul>
-<li>Take HTML from the HTML tab in canvas</li>
-<li>Author Images are saved in assets/images/ folder in SVG, PNG, JPG, JPEG formats</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>authorimage.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+  <li>Take HTML from the HTML tab in canvas</li>
+  <li>
+    Author Images are saved in assets/images/ folder in SVG, PNG, JPG, JPEG
+    formats
+  </li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>
+    Include the common SCSS files like normalize, variables from{" "}
+    <code>assets/scss</code>
+  </li>
+  <li>
+    Component SCSS file: <code>author-image.scss</code>
+  </li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>
+    The compiled CSS file from <code>assets/css/style.css</code>
+  </li>
 </ul>

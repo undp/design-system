@@ -1,5 +1,5 @@
 import React from 'react';
-import './frostedimage.scss';
+import './frosted-background.scss';
 import BackgroundImg from '../../assets/images/bees.svg';
 
 export const FrostedImage = () => (

@@ -1,5 +1,5 @@
 import React from 'react';
-import './featuredcard.scss';
+import './featured-card.scss';
 import { FeaturedContentCard } from '../../../../Components/UIcomponents/Cards/FeaturedCards/FeaturedContentCard';
 
 export const FeaturedCard = ({ headertext, data }) => (

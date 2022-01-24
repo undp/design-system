@@ -10,7 +10,7 @@ import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languag
 import { Menu } from '../../Menu/Menu';
 import MegaMenu from '../MegaMenu/MegaMenu';
 import MobileNav from '../MobileNav/MobileNav';
-import './GlobalHeader.scss';
+import './global-header.scss';
 
 const GlobalHeader = ({
   text,

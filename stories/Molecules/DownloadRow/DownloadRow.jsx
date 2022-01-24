@@ -1,5 +1,5 @@
 import React from 'react';
-import './downloadrow.scss';
+import './download-row.scss';
 import { Checkbox } from '../../Components/Forms/Checkbox/Checkbox';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 

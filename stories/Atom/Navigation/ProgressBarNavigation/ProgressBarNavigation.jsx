@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProgressBarNavigation.scss';
+import './progress-bar-navigation.scss';
 import '../../../assets/js/scrolling_progressbar';
 
 const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './countrycardhero.scss';
+import './country-card-hero.scss';
 import viewport from '../../../../assets/js/viewport';
 import '../../../../assets/js/smartresize';
 import { swiper } from '../../../../assets/js/swiper';

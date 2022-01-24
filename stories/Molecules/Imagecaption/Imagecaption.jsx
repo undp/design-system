@@ -1,5 +1,5 @@
 import React from 'react';
-import './imagecaption.scss';
+import './image-caption.scss';
 import { Imagecredit } from '../../Atom/Images/Imagecredit/Imagecredit';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './FormTypes.scss';
+import './form-types.scss';
 import { Inputcomponent } from '../Inputfields/Input_group';
 import { Image } from '../../../Atom/Images/Image/Image';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';

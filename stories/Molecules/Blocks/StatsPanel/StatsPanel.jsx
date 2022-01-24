@@ -1,5 +1,5 @@
 import React from 'react';
-import './statspanel.scss';
+import './stats-panel.scss';
 import { StatsCards } from '../../../Components/UIcomponents/Cards/StatsCards/StatsCards';
 
 export const Hovercolors_options = {

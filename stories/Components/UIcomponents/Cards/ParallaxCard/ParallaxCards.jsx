@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './parallaxcards.scss';
+import './parallax-cards.scss';
 import '../../../../assets/scss/_glideslider.scss';
 import { swiper } from '../../../../assets/js/swiper';
 import { parallaxEffect } from '../../../../assets/js/parallax';

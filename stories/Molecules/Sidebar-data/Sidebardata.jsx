@@ -1,5 +1,5 @@
 import React from 'react';
-import './sidebardata.scss';
+import './sidebar-data.scss';
 
 export const Sidebardata = ({ data, headerText }) => (
   <>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './ArticlePage.scss';
+import './article-page.scss';
 import { PostHeader } from '../../Organism/Text/PostHeader/PostHeader';
 import { Images } from '../../Atom/Images/Imagecaptioncredit/Imagecaption';
 import { Imagecaption } from '../../Molecules/Imagecaption/Imagecaption';

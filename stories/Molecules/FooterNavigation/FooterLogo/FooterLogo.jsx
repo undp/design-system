@@ -1,5 +1,5 @@
 import React from 'react';
-import './footerLogo.scss';
+import './footer-logo.scss';
 import { Logo } from '../../../Atom/Logo/logo';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 

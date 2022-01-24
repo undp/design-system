@@ -10,7 +10,7 @@ import { Menu } from '../../Menu/Menu';
 import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
 import MegaMenu from '../MegaMenu/MegaMenu';
 import MobileNav from '../MobileNav/MobileNav';
-import './CountrySiteHeader.scss';
+import './country-site-header.scss';
 
 const CountrySiteHeader = ({
   languageswitcherData,

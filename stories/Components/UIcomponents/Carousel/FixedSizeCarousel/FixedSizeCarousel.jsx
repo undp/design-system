@@ -4,7 +4,7 @@ import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { CtaButton } from '../../Buttons/Cta_button/CtaButton';
 import { swiper } from '../../../../assets/js/swiper';
 import viewport from '../../../../assets/js/viewport';
-import './fixedsizecarousel.scss';
+import './fixed-size-carousel.scss';
 
 // RTL Fix for Storybook.
 let rtl = document.dir || undefined;

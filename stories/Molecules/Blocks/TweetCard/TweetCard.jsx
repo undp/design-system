@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import viewport from '../../../assets/js/viewport';
-import './tweetcard.scss';
+import './tweet-card.scss';
 import '../../../assets/scss/_grid.scss';
 import { Ctalink } from '../../../Components/UIcomponents/Buttons/Cta_link/Cta_link';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';

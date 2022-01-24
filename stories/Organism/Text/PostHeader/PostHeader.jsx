@@ -1,5 +1,5 @@
 import React from 'react';
-import './postheader.scss';
+import './post-header.scss';
 import { Breadcrumbcomponent } from '../../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
 import { Post } from '../../../Molecules/Text/Post/Post';
 

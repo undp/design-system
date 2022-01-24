@@ -1,5 +1,5 @@
 import React from 'react';
-import './parallaxCard.scss';
+import './parallax-card.scss';
 import '../../assets/scss/_grid.scss';
 import Img from '../../assets/images/parallax-card.jpg';
 import { Heading } from '../../Atom/Typography/Heading/Heading';

@@ -8,7 +8,7 @@ import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/G
 import { AuthorSummary } from '../../Organism/Blocks/Authorcard/AuthorSummary';
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Footer } from '../../Organism/Footer/Footer';
-import './AuthorPage.scss';
+import './author-page.scss';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 
 const AuthorPage = ({
