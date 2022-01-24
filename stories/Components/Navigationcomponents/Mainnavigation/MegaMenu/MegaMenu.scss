@@ -18,6 +18,8 @@
   top: 7.125rem;
   z-index: 8;
   box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+  animation-fill-mode: backwards;
+
 
 
   &.show-mega {
@@ -40,18 +42,12 @@
   &.show-mega-back {
     display: block;
     box-shadow: none;
-    @extend %mega-animation;
-    animation-direction: reverse;
+    @extend %mega-animation-back;
 
     > div{
       animation-direction: alternate;
 
     }
-  }
-  &.hide {
-    display: block;
-    -webkit-animation: none reverse;
-    animation: none reverse;
   }
   &.no-effect{
     -webkit-animation-delay: 0s;
@@ -190,121 +186,6 @@
   }
   .show-on-focus:focus{
     opacity: 1;
-  }
-}
-
-.animation{
-  opacity: 0;
-  animation: circle-square-transition .2s cubic-bezier(.25, .27, .11, .99) reverse;
-}
-
-@-webkit-keyframes circle-square-transition {
-  0% {
-    opacity: .4;
-    width: 100px;
-    height: 50px;
-    margin-top: -70px;
-    border-radius: 50%
-  }
-  15% {
-    opacity: .25;
-    width: 180px;
-    height: 150px;
-    margin-top: -70px;
-    border-radius: 50%
-  }
-  30% {
-    opacity: .5;
-    width: 600px;
-    height: 600px;
-    margin-top: -330px;
-    border-radius: 50%
-  }
-  45% {
-    width: 705px;
-    height: 705px;
-    margin-top: -330px;
-    border-radius: 45%
-  }
-  60% {
-    width: 900px;
-    height: 840px;
-    margin-top: -330px;
-    border-radius: 0 0 80% 80%/0 0 70% 70%
-  }
-  75% {
-    max-width: 1096px;
-    height: 900px;
-    margin-top: -330px;
-    border-radius: 0 0 50% 50%/0 0 20% 20%
-  }
-  to {
-    opacity: 1;
-    border-radius: 0
-  }
-}
-
-@keyframes circle-square-transition {
-  0% {
-    opacity: .4;
-    width: 100px;
-    height: 50px;
-    margin-top: -70px;
-    border-radius: 50%
-  }
-  15% {
-    opacity: .25;
-    width: 180px;
-    height: 150px;
-    margin-top: -70px;
-    border-radius: 50%
-  }
-  30% {
-    opacity: .5;
-    width: 600px;
-    height: 600px;
-    margin-top: -330px;
-    border-radius: 50%
-  }
-  45% {
-    width: 705px;
-    height: 705px;
-    margin-top: -330px;
-    border-radius: 45%
-  }
-  60% {
-    width: 900px;
-    height: 840px;
-    margin-top: -330px;
-    border-radius: 0 0 80% 80%/0 0 70% 70%
-  }
-  75% {
-    max-width: 1096px;
-    height: 900px;
-    margin-top: -330px;
-    border-radius: 0 0 50% 50%/0 0 20% 20%
-  }
-  to {
-    opacity: 1;
-    border-radius: 0
-  }
-}
-
-@-webkit-keyframes transition-opacity {
-  0% {
-    opacity: 0
-  }
-  to {
-    opacity: 1
-  }
-}
-
-@keyframes transition-opacity {
-  0% {
-    opacity: 0
-  }
-  to {
-    opacity: 1
   }
 }
 

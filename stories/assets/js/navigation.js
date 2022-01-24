@@ -51,12 +51,9 @@ export const navigationInitialize = (locale) => {
       const el = event.toElement;
       if (!el.classList.contains('mega-nav-option')) {
         if($('.mega-nav-option').hasClass('show-mega')){
-          $('.mega-nav-option.show-mega').removeClass('show-mega').addClass('hide');
+          $('.mega-nav-option.show-mega').removeClass('show-mega').addClass('show-mega-back');
           setTimeout(function () {
-            $('.mega-nav-option').removeClass('hide no-effect').addClass('show-mega-back');
-          }, 1);
-          setTimeout(function () {
-            $('.mega-nav-option').removeClass('show-mega-back');
+            $('.mega-nav-option.show-mega-back').removeClass('show-mega-back');
           }, 300);
         }
       }
@@ -65,12 +62,9 @@ export const navigationInitialize = (locale) => {
 
   $('.mega-wrapper').mouseleave(function () {
     $('.mega-nav-option').removeClass('no-effect');
-    $(this).find('.mega-nav-option.show-mega').removeClass('show-mega no-effect').addClass('hide');
+    $(this).find('.mega-nav-option.show-mega').removeClass('show-mega no-effect').addClass('show-mega-back');
     setTimeout(function () {
-      $('.mega-nav-option').removeClass('hide').addClass('show-mega-back');
-    }, 1);
-    setTimeout(function () {
-      $('.mega-nav-option').removeClass('show-mega-back');
+      $('.mega-nav-option.show-mega-back').removeClass('show-mega-back');
     }, 300);
   });
 
