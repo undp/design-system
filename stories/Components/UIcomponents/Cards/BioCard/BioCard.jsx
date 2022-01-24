@@ -60,16 +60,16 @@ export const BioCard = ({
   return (
     <>
         {args.size === 'large' && (
-          <div className={cls('grid-x grid-margin-x', 'bio-card', `${hovercolor_variant}`)}>
-            <div className={cls('cell', `${size_variant}`)}>
-              <a href="#" role="button" data-toggle="modal" data-target-modal="#bioCard">
+          <div className={cls('grid-x grid-margin-x')}>
+            <div className={cls('cell bio-card', `${size_variant}`, `${hovercolor_variant}`)}>
+              <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
                 <div className='grid-x'>
                   <article className="bio-card__content medium-7">
                     <div className="bio-card__description left-right">
                       <Heading type="5" label={contentname} />
                       <P label={descriptionText} />
                     </div>
-                    <Ctalink label={item.button} button_option="span"/>
+                    <Ctalink label={button} button_option="span"/>
                   </article>
                   <div className="card-thumbnail__image medium-5">
                     <img src={image} alt={image} />
@@ -81,9 +81,9 @@ export const BioCard = ({
         )}
 
           {args.size === 'medium' && (
-            <div className={cls('grid-x', 'bio-card', 'medium', `${hovercolor_variant}`)}>
-              <div className={cls('cell', `${size_variant}`)}> 
-               <a href="#" role="button" data-toggle="modal" data-target-modal="#bioCard">
+            <div className={cls('grid-x')}>
+              <div className={cls('cell bio-card medium' , `${size_variant}`, `${hovercolor_variant}`)}> 
+               <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
                 <div className="card-thumbnail__image">
                   <img src={image} alt={image} />
                 </div>
