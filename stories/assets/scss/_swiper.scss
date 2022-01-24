@@ -118,7 +118,6 @@
       padding-right: $spacing-40;
     }
     .swiper-scrollbar {
-      padding-right: $spacing-44;
       @include devicebreak(small) {
         padding-right: $spacing-40;
       }
@@ -136,7 +135,6 @@
       padding-right: 0;
     }
     .swiper-scrollbar {
-      padding-left: $spacing-44;
       padding-right: 0;
       @include devicebreak(small) {
         padding-left: $spacing-40;

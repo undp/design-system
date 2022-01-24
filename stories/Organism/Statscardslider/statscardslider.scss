@@ -2,7 +2,25 @@
 @import '../../assets/scss/variables';
 
 .stats-slider {
-  .stats-card {
+  .stats-card.small {
     max-width: 100%;
+  }
+
+  .swiper-scrollbar {
+    @include devicebreak(medium) {
+      padding-right: $spacing-44;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .stats-slider {
+    &.swiper-initialized {
+      .swiper-scrollbar {
+        @include devicebreak(medium) {
+          padding-left: $spacing-44;
+        }
+      }
+    }
   }
 }
