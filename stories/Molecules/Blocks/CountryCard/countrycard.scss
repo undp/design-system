@@ -3,25 +3,19 @@
 @import '../../../assets/scss/breakpoints';
 
 .pagehero-cards {
-
   &-wrap {
-    display: flex;
+    &.swiper-wrapper {
+      @include devicebreak(medium) {
+        flex-wrap: wrap;
+      }
+    }
   }
 
   &-box {
     margin-left: 0.75rem;
     margin-right: 0.75rem;
 
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-
     @include devicebreak(medium) {
-
       flex: 0 0 calc(25% - 1.5rem);
       max-width: calc(25% - 1.5rem);
 
@@ -61,14 +55,17 @@
         }
 
         .cta__link {
+          padding: 0;
+
           i {
+            left: $spacing-16;
             width: $spacing-80;
           }
         }
       }
     }
 
-    @include devicebreak(large) {
+    @include devicebreak(medium) {
       margin-top: $spacing-96;
     }
 
@@ -94,14 +91,18 @@
               }
             }
           }
+
+          .cta__link {
+            i {
+              left: $spacing-16;
+              width: $spacing-80;
+            }
+          }
         }
       }
     }
 
     a {
-      @extend %img_none;
-
-      border: 0;
       display: block;
       height: 100%;
       position: relative;
@@ -123,15 +124,6 @@
       background: linear-gradient(45deg, rgba(255, 235, 0, 0.3), transparent);
       opacity: 0;
       z-index: 1;
-    }
-  }
-
-  &__items {
-    .swiper-wrapper {
-      @include devicebreak(small) {
-        margin-left: 0;
-        margin-right: 0;
-      }
     }
   }
 
@@ -158,38 +150,24 @@
       @include transition(all 0.4s);
       @include transitiondelay(0.6s);
 
-      border: 0;
       font-weight: 700;
       margin-top: $spacing-32;
-
-      &::after {
-        @include transition(0.2s ease);
-
-        margin-left: -$spacing-04;
-      }
     }
   }
 }
 
 [dir='rtl'] {
   .pagehero-cards-box {
+    text-align: right;
+
     &:hover,
     &.swiper-slide-active {
-      .cta--arrow::after {
-        @include transform(translate(0, 0) rotate(180deg));
-
-        margin-right: $spacing-04;
+      .cta__link {
+        i {
+          left: unset;
+          right: $spacing-16;
+        }
       }
-    }
-
-    &:first-child {
-      margin-right: 0;
-      margin-left: 0.75rem;
-    }
-
-    &:last-child {
-      margin-left: 0;
-      margin-right: 0.75rem;
     }
   }
 }

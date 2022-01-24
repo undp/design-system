@@ -7,8 +7,8 @@ import viewport from '../../../../assets/js/viewport';
 import './fixedsizecarousel.scss';
 
 // RTL Fix for Storybook.
-let rtl = document.dir || 'ltr';
-if (window.location.href.indexOf("direction=rtl") > -1) {
+let rtl = document.dir || undefined;
+if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
 export const FixedSizeCarousel = ({ data, label }) => {
@@ -25,7 +25,7 @@ export const FixedSizeCarousel = ({ data, label }) => {
           <div className="swiper-slide slider-slide" aria-roledescription="slide" aria-label={`slide ${1 + index}`} key={index}>
             <img className="fixed-carousel__image" src={item.slideImage} alt="" />
             <article className="slide-content">
-              <div className='slide-content-wrap'>
+              <div className="slide-content-wrap">
                 <h6>{item.tagtext}</h6>
                 <Heading type="4" label={item.titleText} />
                 <P label={item.descText} />
