@@ -37,7 +37,6 @@
 
   &-list {
     max-height: calc(100% - 82px);
-    overflow-y: auto;
 
     @include devicebreak(medium) {
       max-height: 323px;

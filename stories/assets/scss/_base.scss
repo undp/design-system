@@ -40,7 +40,7 @@
 }
 
 .scrollbar-horizontal {
-  overflow-x: scroll;
+  overflow-x: auto;
 
   &::-webkit-scrollbar-track {
     border-bottom: 1px solid $color-black;
@@ -58,7 +58,7 @@
 }
 
 .scrollbar-vertical {
-  overflow-y: scroll;
+  overflow-y: auto;
 
   &::-webkit-scrollbar-track {
     border-right: 1px solid $color-black;
