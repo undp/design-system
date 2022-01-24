@@ -13,7 +13,7 @@ if (window.location.href.indexOf("direction=rtl") > -1) {
 }
 export const FluidImageSizeCarousel = ({ data }) => {
   useEffect(() => {
-    swiper('.fluid-carousel', '.slide-content__button-wrap');
+    swiper('.fluid-carousel', '.slide-content');
     viewport('.fluid-carousel');
   }, []);
   return (
@@ -27,9 +27,7 @@ export const FluidImageSizeCarousel = ({ data }) => {
               <Heading type="6" label={item.tagtext} />
               <Heading type="4" label={item.titleText} />
               <P label={item.descText} />
-              <div className="slide-content__button-wrap">
-                <Ctalink Type="Space" label={item.buttonText} />
-              </div>
+              <Ctalink Type="Space" label={item.buttonText} />
             </article>
           </div>
         ))}

@@ -23,14 +23,14 @@
   }
 
   @include devicebreak(small) {
-    .stats-card {
+    .stats-card.small {
       max-width: 100%;
       pointer-events: none;
     }
 
     .swiper {
       &-slide-active {
-        .statscard {
+        .stats-card {
           background-color: $color-light-yellow;
 
           h2 {
