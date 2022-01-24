@@ -12,6 +12,9 @@ import { Quotation } from "./Quotation/quotation";
 import { Small } from "./Small/small";
 import { List } from "./../Typography/Lists/Lists";
 import { Descriptionlist } from "./../Typography/Lists/Descriptionlist";
+import { DetailsTag } from '../Reach-element/Details/details';
+import { Figcaption } from '../Reach-element/Figcaption/figcaption';
+
 
 export const getCaptionForLocaleHeading = (locale) => {
   switch (locale) {
@@ -748,6 +751,55 @@ The <code>dl</code> tag defines the description list, the <code>dt</code> tag de
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocaleList(locale);
       return <Descriptionlist data={caption}></Descriptionlist>;
+    }}
+  </Story>
+</Canvas>
+
+
+### Details
+
+The details tag creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.
+
+export const getLocaleForDetails = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {summary: 'Epcot Center', details: 'Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.'}; return engText;
+    case 'arabic': const arabicText = {summary: 'مركز Epcot', details: 'pcot هي حديقة ترفيهية في Walt Disney World Resort تضم معالم جذب مثيرة وأجنحة دولية وألعاب نارية حائزة على جوائز ومناسبات موسمية خاصة.'}; return arabicText;
+    case 'burmese': const burmeseText = {summary: 'Epcot စင်တာ', details: 'pcot သည်စိတ်လှုပ်ရှားဖွယ်ဆွဲဆောင်မှုများ၊ နိုင်ငံတကာမဏ္ionsပ်များ၊ ဆုရမီးရှူးမီးပန်းများနှင့်ရာသီအလိုက်အထူးအစီအစဉ်များပါ ၀ င်သော Walt Disney World Resort တွင်အဓိကပန်းခြံဖြစ်သည်။'}; return burmeseText;
+    case 'japanese': const japaneseText = {summary: 'エプコットセンター', details: 'pcotは、エキサイティングなアトラクション、国際的なパビリオン、受賞歴のある花火、季節の特別イベントを備えたウォルトディズニーワールドリゾートのテーマパークです。'}; return japaneseText;
+    default:
+      return {summary: 'Epcot Center', details: 'Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.'};
+  }
+};
+
+<Canvas>
+  <Story name="Details">
+    {(args, { globals: { locale } }) => {
+      const caption = getLocaleForDetails(locale);
+      return <DetailsTag summary={caption.summary} details={caption.details}></DetailsTag>;
+    }}
+  </Story>
+</Canvas>
+
+### Figcaption
+The <code>figcaption</code> tag is used to caption the image. The <code>figcaption</code> tag is used with the <code>figure</code> tag.
+
+
+export const getLocaleForFigcaption = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {details: 'Dummy text refers to the bits of content that are used to fill a website mock-up. This text helps web designers better envision how the website will look as a finished product. '}; return engText;
+    case 'arabic': const arabicText = {details: 'يشير النص الوهمي إلى أجزاء المحتوى المستخدمة لملء نموذج موقع الويب. يساعد هذا النص مصممي الويب على تصور أفضل لكيفية ظهور موقع الويب كمنتج نهائي.'}; return arabicText;
+    case 'burmese': const burmeseText = {details: 'Dummy စာသားသည် ၀ က်ဘ်ဆိုက်၏လှောင်ပြောင်မှုကိုဖြည့်ရန်အသုံးပြုသောအကြောင်းအရာအနည်းငယ်ကိုရည်ညွှန်းသည်။ ဤစာသားသည် ၀ က်ဘ်ဒီဇိုင်နာများအနေဖြင့် ၀ က်ဘ်ဆိုက်သည်အချောထည်ထုတ်ကုန်တစ်ခုအဖြစ်မည်သို့ပုံဖော်ရန်စိတ်ကူးကောင်းမြင်နိုင်စေသည်။'}; return burmeseText;
+    case 'japanese': const japaneseText = {details: 'ダミーテキストとは、Webサイトのモックアップを埋めるために使用されるコンテンツの一部を指します。このテキストは、WebデザイナーがWebサイトが完成品としてどのように見えるかをよりよく想像するのに役立ちます。'}; return japaneseText;
+    default:
+      return {details: 'Dummy text refers to the bits of content that are used to fill a website mock-up. This text helps web designers better envision how the website will look as a finished product. '};
+  }
+};
+
+<Canvas>
+  <Story name="Figcaption">
+    {(args, { globals: { locale } }) => {
+      const caption = getLocaleForFigcaption(locale);
+      return <Figcaption details={caption.details}></Figcaption>;
     }}
   </Story>
 </Canvas>
