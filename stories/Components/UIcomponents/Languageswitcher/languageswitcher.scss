@@ -71,6 +71,17 @@
       width: 15px;
     }
 
+    &:hover{
+      color:$color-blue-400;
+
+      &::before {
+        background: url(#{$img-path-Icon}/Languagehover.svg) no-repeat left center;
+      }
+      &::after {
+        background: url(#{$img-path-Icon}/arrowbluehover.svg) no-repeat left center;
+      }
+    }
+
     &.white {
       color: $color-white;
 
