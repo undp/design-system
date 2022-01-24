@@ -6,13 +6,18 @@ import { swiper } from '../../../../assets/js/swiper';
 import viewport from '../../../../assets/js/viewport';
 import './fluidimagesizecarousel.scss';
 
+// RTL Fix for Storybook.
+let rtl = document.dir || 'ltr';
+if (window.location.href.indexOf("direction=rtl") > -1) {
+  rtl = 'rtl';
+}
 export const FluidImageSizeCarousel = ({ data }) => {
   useEffect(() => {
     swiper('.fluid-carousel', '.slide-content__button-wrap');
     viewport('.fluid-carousel');
   }, []);
   return (
-    <section className="fluid-carousel left-right" dir={`${window.UNDP.dir}`}>
+    <section className="fluid-carousel left-right" dir={rtl}>
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (

@@ -75,6 +75,7 @@
     @include devicebreak(small) {
       &.swiper-slide {
         height: auto;
+        margin-left: 0;
 
         &-active {
           a::before {
@@ -122,6 +123,15 @@
       background: linear-gradient(45deg, rgba(255, 235, 0, 0.3), transparent);
       opacity: 0;
       z-index: 1;
+    }
+  }
+
+  &__items {
+    .swiper-wrapper {
+      @include devicebreak(small) {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
 

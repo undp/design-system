@@ -11,6 +11,13 @@
     box-sizing: inherit;
   }
 
+  @at-root [class*='swiper-slider-'] {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
   &-wrapper {
     backface-visibility: hidden;
     display: flex;
@@ -25,16 +32,6 @@
     width: 100%;
     will-change: transform;
 
-    .swiper-slide-active {
-      box-sizing: border-box;
-      margin-left: -$spacing-44;
-      padding-left: $spacing-44;
-
-      @include devicebreak(small) {
-        margin-left: -$spacing-40;
-        padding-left: $spacing-40;
-      }
-    }
   }
 
   &-slide {
@@ -45,6 +42,7 @@
     user-select: none;
     white-space: normal;
     width: 100%;
+    box-sizing: border-box;
 
     a {
       -webkit-user-drag: none;
@@ -113,22 +111,36 @@
   &-notification {
     display: none;
   }
+
+  &-initialized {
+    padding-right: $spacing-44;
+    @include devicebreak(small) {
+      padding-right: $spacing-40;
+    }
+    .swiper-scrollbar {
+      padding-right: $spacing-44;
+      @include devicebreak(small) {
+        padding-right: $spacing-40;
+      }
+    }
+  }
 }
 
 
 [dir='rtl'] {
-  .swiper {
-    &-wrapper {
-      .swiper-slide-active {
-        margin-left: 0;
-        margin-right: -$spacing-44;
-        padding-left: 0;
-        padding-right: $spacing-44;
-
-        @include devicebreak(small) {
-          margin-right: -$spacing-40;
-          padding-right: $spacing-40;
-        }
+  .swiper-initialized {
+    padding-left: $spacing-44;
+    padding-right: 0;
+    @include devicebreak(small) {
+      padding-left: $spacing-40;
+      padding-right: 0;
+    }
+    .swiper-scrollbar {
+      padding-left: $spacing-44;
+      padding-right: 0;
+      @include devicebreak(small) {
+        padding-left: $spacing-40;
+        padding-right: 0;
       }
     }
   }

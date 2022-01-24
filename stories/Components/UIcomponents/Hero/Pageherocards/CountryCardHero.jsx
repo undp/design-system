@@ -6,9 +6,14 @@ import { swiper } from '../../../../assets/js/swiper';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { CountryCard } from '../../../../Molecules/Blocks/CountryCard/CountryCard';
 
+// RTL Fix for Storybook.
+let rtl = document.dir || 'ltr';
+if (window.location.href.indexOf("direction=rtl") > -1) {
+  rtl = 'rtl';
+}
 export const CountryCardHero = ({ data, title, subtitle }) => {
   useEffect(() => {
-    swiper('.pagehero-cards-items');
+    swiper('.country-card__items');
     viewport('.left-right');
   }, []);
   return (
@@ -21,7 +26,7 @@ export const CountryCardHero = ({ data, title, subtitle }) => {
           <Heading type="3" className="left-right" label={subtitle} />
         </div>
       </div>
-      <div className="pagehero-cards-items" data-swiper-device="mobile" dir={`${window.UNDP.dir}`}>
+      <div className="country-card__items" data-swiper-device="mobile" dir={rtl}>
         <div className="swiper-scrollbar" />
         <CountryCard data={data} />
       </div>

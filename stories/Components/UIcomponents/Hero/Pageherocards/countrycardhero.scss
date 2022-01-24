@@ -4,7 +4,7 @@
 
 /* pagehero card hero start */
 .pagehero-cards {
-  
+
   &-items {
     .pagehero-cards-box {
 
@@ -17,7 +17,7 @@
         flex: 0 0 calc(16.66667% - 1.5rem);
         max-width: calc(16.66667% - 1.5rem);
       }
-      
+
       @include devicebreak(large) {
         &.large {
           flex: 0 0 calc(25% - 1.5rem);
@@ -127,15 +127,33 @@
     }
   }
 
-  .swiper-wrapper {
-    @include devicebreak(medium) {
-      overflow: hidden;
-    }
-
-    .swiper-slide-active {
+  &--item {
+    &.swiper-slide {
+      @include devicebreak(medium) {
+        height: auto;
+      }
       @include devicebreak(small) {
-        margin-left: -$spacing-64;
-        padding-left: $spacing-64;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__items {
+    .swiper-wrapper {
+      @include devicebreak(small) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .swiper-initialized {
+    @include devicebreak(small) {
+      padding-right: $spacing-64;
+    }
+    .swiper-scrollbar {
+      @include devicebreak(small) {
+        padding-right: $spacing-64;
       }
     }
   }
@@ -149,10 +167,10 @@
         @include devicebreak(medium) {
           margin-right: $spacing-64;
         }
-  
+
         &::before {
           right: 3.5rem;
-  
+
           @include devicebreak(medium) {
             right: -60px;
           }
@@ -170,18 +188,17 @@
       }
     }
 
-    .swiper-wrapper {
-
-      .swiper-slide-active {
+    .swiper-initialized {
+      @include devicebreak(small) {
+        padding-left: $spacing-64;
+        padding-right: 0;
+      }
+      .swiper-scrollbar {
         @include devicebreak(small) {
-          margin-left: 0;
-          padding-left: 0;
-          margin-right: -$spacing-64;
-          padding-right: $spacing-64;
+          padding-left: $spacing-64;
+          padding-right: 0;
         }
       }
     }
   }
 }
-
-/* pagehero card hero end */

@@ -56,10 +56,16 @@
     }
   }
 
+  &-container {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
   &-images {
     display: flex;
-    margin-bottom: -5.313rem;
-    margin-top: -5.313rem;
+    margin: -5.313rem auto;
 
     .column {
       flex: 0 0 calc(50% - 0.5rem);
