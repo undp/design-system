@@ -4,6 +4,8 @@
 
 .mobile-nav {
   background: rgba(247, 247, 247, 0.8);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
   box-sizing: border-box;
   display: none;
   left: 0;
@@ -44,7 +46,7 @@
     }
   }
 
-  .mob-nav-options {
+  .mobile-nav-options {
     a {
       @extend %img_none;
 
@@ -62,7 +64,7 @@
     }
   }
 
-  .mob-sub-menu {
+  .mobile-sub-menu {
     display: none;
     padding: 2.0625rem 0;
 
@@ -241,7 +243,7 @@
 
 [dir='rtl'] {
   .mobile-nav {
-    .mob-nav-options {
+    .mobile-nav-options {
       a {
         img {
           margin-left: 0.625rem;

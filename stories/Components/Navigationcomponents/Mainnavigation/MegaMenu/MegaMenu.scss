@@ -5,6 +5,8 @@
 .mega-nav-option {
   @include transform(translateX(-50%));
 
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
   background: rgba(247, 247, 247, 0.8);
   box-sizing: border-box;
   display: none;
@@ -14,12 +16,56 @@
   padding: $spacing-64 0 0 $spacing-48;
   position: fixed;
   top: 7.125rem;
-  z-index: 1;
+  z-index: 8;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+  animation-fill-mode: backwards;
+
+
 
   &.show-mega {
     display: block;
-  }
+    @extend %mega-animation;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 
+    > div{
+      -webkit-animation-delay: .3s;
+      animation-delay: .3s;
+      -webkit-animation-duration: .3s;
+      animation-duration: .3s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-name: transition-opacity;
+      animation-name: transition-opacity;
+    }
+  }
+  &.show-mega-back {
+    display: block;
+    box-shadow: none;
+    @extend %mega-animation-back;
+
+    > div{
+      animation-direction: alternate;
+
+    }
+  }
+  &.no-effect{
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-duration: 0s;
+    animation-duration: 0s;
+
+    > div{
+      opacity: 1;
+      -webkit-animation-delay: 0s;
+      animation-delay: 0s;
+      -webkit-animation-duration: 0s;
+      animation-duration: 0s;
+    }
+  }
+  > div{
+    opacity: 0;
+  }
   .submenu {
     margin: 0;
     padding: 0;
@@ -28,24 +74,31 @@
       list-style: none;
       margin-bottom: 0;
       padding-right: $spacing-48;
+      padding-left: 0;
 
       &.active {
         a {
           background: $color-blue-600;
           color: $color-white;
 
-          &.sub-external {
-            @extend %sub-external;
-
-            &::after {
-              @extend %external;
-
-              background: url(#{$img-path-Iconfourback}/external-default-white.svg) no-repeat 0 bottom/1.25rem 1.125rem;
+          .external-link {
+            box-shadow: -2px 2px 0px 0px $color-white, -4px 0px 0px -2px $color-white, -3px 3px 0 -1px $color-white;
+          
+            &:before {
+              background: $color-white;
             }
-
-            &:hover {
-              &::after {
-                background: url(#{$img-path-Iconfourback}/external-white-hover.svg) no-repeat 0 bottom/1.25rem 1.125rem;
+            &:after {
+              border-right: 2px solid $color-white;
+              border-top: 2px solid $color-white;
+            }
+          }
+          &:hover{
+            .external-link {
+              &:after {
+                @include transform(translate(5px, -5px));
+              }
+              &:before {
+                @include transform(rotate(-45deg) translate(7px, 0));
               }
             }
           }
@@ -64,21 +117,9 @@
         font-weight: 700;
         padding: $spacing-24;
         text-transform: uppercase;
-
-        &.sub-external {
-          @extend %sub-external;
-
-          &::after {
-            @extend %external;
-
-            background: url(#{$img-path-Iconfourback}/external-default.svg) no-repeat 0 bottom/1.25rem 1.125rem;
-          }
-
-          &:hover {
-            &::after {
-              background: url(#{$img-path-Iconfourback}/external-hover.svg) no-repeat 0 bottom/1.25rem 1.125rem;
-            }
-          }
+        
+        .external-link{
+          margin: 2px 0 0 $spacing-16;
         }
 
         &:hover {
@@ -141,7 +182,7 @@
     border: 0;
     opacity: 0;
     background: url(#{$img-path-Iconfourback}/Times.svg) no-repeat center center;
-    z-index: 9; 
+    z-index: 9;
   }
   .show-on-focus:focus{
     opacity: 1;

@@ -28,7 +28,7 @@ const MobileNav = ({
               <li key={index}>
                 <a
                   className="cta__link cta--arrow"
-                  href="javascript:void(0)"
+                  href="#"
                   id={item.id}
                 >
                   {item.label}
@@ -36,8 +36,8 @@ const MobileNav = ({
               </li>
             ))}
           </ul>
-          <div className="mob-nav-options">
-            <a href="javascript:void(0)" className="mob-lang-switcher">
+          <div className="mobile-nav-options">
+            <a href="#" className="mob-lang-switcher">
               <Icons src={IconsLanguage} alt="icon-language" />
               {' '}
               {languageswitcherData.headerText}
@@ -50,7 +50,7 @@ const MobileNav = ({
           </div>
         </div>
 
-        <div className="cell mob-sub-menu">
+        <div className="cell mobile-sub-menu">
           <button className="back-nav">
             <Icons src={Iconsback} alt="back button" />
             {backcaption.detail}

@@ -51,6 +51,7 @@
       display: flex;
       height: 100%;
       align-items: center;
+      z-index: 9;
 
       &:first-child{
         right: 50%;
