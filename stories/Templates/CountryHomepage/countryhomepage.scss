@@ -54,6 +54,11 @@
 
     .our-impact {
       margin-top: 8.313rem;
+      
+      @include devicebreak(small) {
+        padding-left: $spacing-24;
+        padding-right: $spacing-24;
+      }
 
       > div:first-child {
         margin-bottom: 4.125rem;
