@@ -118,4 +118,23 @@
   }
 }
 
+[dir='rtl'] {
+  .stats {
+    .stats-panel {
+      &:hover{
+        // color map
+        $colors: ('red': $red-gradient, 'green': $green-gradient, 'blue': $blue-gradient);
+
+        @each $name, $color in $colors {
+          &.#{$name} {
+            &::after {
+             @include transform(scaleX(-1));
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 /* statspanel card start */
