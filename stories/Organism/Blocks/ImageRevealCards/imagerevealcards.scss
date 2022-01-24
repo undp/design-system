@@ -2,11 +2,9 @@
 @import '../../../assets/scss/breakpoints';
 @import '../../../assets/scss/variables';
 
-.reveal-cards {
-  margin-top: 3.75rem;
-
-  @include devicebreak(medium) {
-    margin-top: $spacing-40;
+.image-reveal-card {
+  @include devicebreak(small) {
+    margin-top: 3.75rem;
   }
 
   .cell {
@@ -15,5 +13,13 @@
     @include devicebreak(medium) {
       padding: 0;
     }
+  }
+}
+
+.reveal-head {
+  margin-bottom: $spacing-24;
+
+  @include devicebreak(medium) {
+    margin-bottom: $spacing-40;
   }
 }
