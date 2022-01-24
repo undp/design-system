@@ -8,10 +8,11 @@ export const Ctalink = ({ label, Type, ...args }) => {
   if (Type == 'Space') {
     type = 'space';
   }
+  let button_type = (args.button_option) ? args.button_option.toLowerCase() : '';
 
   return (
     <>
-      {`${args.button_option}` === 'span'
+      {`${button_type}` === 'span' || `${button_type}` === 'inline'
       ? (
         <span className={cls('cta__link', `cta--${type}`)}>
           {label} <i/>
