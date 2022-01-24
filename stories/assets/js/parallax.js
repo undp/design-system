@@ -7,7 +7,7 @@ import './viewport';
 gsap.registerPlugin(ScrollTrigger, SlowMo);
 
 // parallaxEffect
-export function parallaxEffect(trigger, selector, start, end, direction, device) {
+export function parallaxEffect(trigger, selector, start, end, direction, device, percent) {
 
   'use strict';
 
@@ -20,6 +20,7 @@ export function parallaxEffect(trigger, selector, start, end, direction, device)
   end = end || 'bottom top';
   direction = direction || 'horizontal';
   device = device || 'desktop';
+  percent = percent || 'pixels';
 
   // RTL Fix for Storybook.
   let rtl = document.dir || 'ltr';
@@ -75,11 +76,19 @@ export function parallaxEffect(trigger, selector, start, end, direction, device)
             xPercent: 10 * (odd ? 1 : -1), duration: 1, ease: 'SlowMo',
           });
         } else {
-          timeline.from(element, {
-            y: 85 * (odd ? -1 : 1), duration: 1, ease: 'SlowMo',
-          }).to(element, {
-            y: 85 * (odd ? 1 : -1), duration: 1, ease: 'SlowMo',
-          });
+          if (percent == 'percent') {
+            timeline.from(element, {
+              yPercent: 10 * (odd ? 1 : -1), duration: 1, ease: 'SlowMo',
+            }).to(element, {
+              yPercent: 10 * (odd ? -1 : 1), duration: 1, ease: 'SlowMo',
+            });
+          } else {
+            timeline.from(element, {
+              y: 85 * (odd ? -1 : 1), duration: 1, ease: 'SlowMo',
+            }).to(element, {
+              y: 85 * (odd ? 1 : -1), duration: 1, ease: 'SlowMo',
+            });
+          }
         }
       });
 

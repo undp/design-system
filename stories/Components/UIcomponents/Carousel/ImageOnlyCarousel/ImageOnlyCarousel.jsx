@@ -10,7 +10,7 @@ if (window.location.href.indexOf("direction=rtl") > -1) {
 }
 export const ImageOnlyCarousel = ({ data }) => {
   useEffect(() => {
-    swiper('.image-carousel', '.image-carousel .slider-slide');
+    swiper('.image-carousel', '.slider-slide');
     viewport('.image-carousel');
   }, []);
   return (

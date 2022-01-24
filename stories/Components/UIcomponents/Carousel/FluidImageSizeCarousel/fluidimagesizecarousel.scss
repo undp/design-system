@@ -37,6 +37,7 @@
     @include devicebreak(medium) {
       flex: 0 0 45%;
       max-width: 45%;
+      position: relative;
     }
 
     @include devicebreak(large) {
@@ -92,21 +93,19 @@
 
   .slider-arrows {
 
-    margin-left: 2rem;
-
-    @include devicebreak(large) {
-      margin-left: 3rem;
-    }
+    position: absolute;
+    bottom: 0;
+    right: 0;
 
     [class*='swiper-button-'] {
       @extend %carousel_arrow;
 
       &:first-child {
-        margin-right: 0.625rem;
+        margin-right: 0.344rem;
       }
 
       &:last-child {
-        margin-left: 0.625rem;
+        margin-left: 0.344rem;
       }
 
       img {
@@ -129,16 +128,10 @@
     }
 
     .slider-arrows {
-      margin-left: auto;
-      margin-right: 2rem;
-
-      @include devicebreak(large) {
-        margin-right: 3rem;
-      }
 
       [class*='swiper-button-'] {
         &:first-child {
-          margin-left: 0.625rem;
+          margin-left: 0.344rem;
           margin-right: 0;
 
           img {
@@ -148,7 +141,7 @@
 
         &:last-child {
           margin-left: 0;
-          margin-right: 0.625rem;
+          margin-right: 0.344rem;
 
           img {
             @include transform(rotate(-180deg));

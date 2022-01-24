@@ -16,7 +16,7 @@ if (window.location.href.indexOf("direction=rtl") > -1) {
 const ParallaxCards = ({ data, alt, title }) => {
   useEffect(() => {
     swiper('.parallax__content');
-    parallaxEffect('.parallax-card', ['.parallax-card__image', '.parallax-card__content'], 'top center', 'bottom+=85 center', 'vertical');
+    parallaxEffect('.parallax-card', ['.parallax-card__image', '.parallax-card__content'], 'top center', 'bottom+=85 center', 'vertical', 'desktop', 'percent');
   }, []);
   return (
     <section className="parallax">
