@@ -64,12 +64,8 @@
       }
     }
 
-    .cta__link::after {
-      @include translate(10px, 0);
-      @include transition(0.2s ease);
-
-      background-image: url(#{$img-path-Iconfourback}/arrow-left-expand-hover.svg);
-      width: 100px;
+    .cta--arrow i {
+      width: 5rem;
     }
   }
 }
@@ -86,17 +82,6 @@
   h5 {
     font-size: $font-size-16;
   }
-
-  &:hover {
-    @include devicebreak(medium) {
-      .cta__link {
-        &::after {
-          margin-left: 0;
-          width: calc(100% - 115px);
-        }
-      }
-    }
-  }
 }
 
 [dir='rtl'] {
@@ -107,23 +92,6 @@
 
       @include devicebreak(medium) {
         margin-right: $spacing-24;
-      }
-    }
-
-    &:hover {
-      .cta__link::after {
-        @include transform(translate(-10%, 0) rotate(180deg));
-        @include transition(0.2s ease);
-      }
-    }
-  }
-
-  .small.image-reveal-card {
-    &:hover {
-      .cta__link::after {
-        @include devicebreak(medium) {
-          margin-right: 0;
-        }
       }
     }
   }

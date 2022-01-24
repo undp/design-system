@@ -76,7 +76,12 @@ div.download-card {
 }
 
 [dir='rtl'] {
-  .download-card {
+  div.download-card {
+    .download-icon {
+      margin-left: 0;
+      margin-right: $spacing-12;
+    }
+    
     &:hover {
       .publication-thumbnail__image {
         @each $name, $color in $colors {
