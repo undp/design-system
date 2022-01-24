@@ -34,34 +34,31 @@
     font-size: $font-size-16;
   }
 
-  .clear_section {
+  .clear-search-filter {
     display: none;
-
-    &.show-clear {
-      display: block;
-    }
-  }
-
-  .clear_chips {
+    border: 0;
+    background: none;
+    padding: 0;
     border-bottom: 1px solid $color-red;
     cursor: pointer;
     font-size: $font-size-16;
+
+    &.show-clear {
+      display: inline-block;
+    }
   }
 
   .active-filter {
+    color: $color-gray-600;
+    font-family: $Font-Family-ProximaNova;
+    font-size: $font-size-16;
+    font-weight: 600;
+    text-transform: uppercase;
     display: none;
     padding-top: $spacing-16;
 
     &.show-activefilter {
       display: block;
-    }
-
-    span {
-      color: $color-gray-600;
-      font-family: $Font-Family-ProximaNova;
-      font-size: $font-size-16;
-      font-weight: 600;
-      text-transform: uppercase;
     }
   }
 }
