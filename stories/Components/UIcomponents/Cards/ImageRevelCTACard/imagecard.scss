@@ -5,6 +5,7 @@
 /* image card start */
 .image-reveal-card {
   @extend %img_none;
+  background: $color-white;
 
   border: 0;
   display: block;
@@ -64,8 +65,10 @@
       }
     }
 
-    .cta--arrow i {
-      width: 5rem;
+    .cta__link {
+      i {
+        width: 5rem;
+      }
     }
   }
 }
@@ -81,6 +84,17 @@
 
   h5 {
     font-size: $font-size-16;
+  }
+
+  &:hover {
+    @include devicebreak(medium) {
+      .cta__link.cta--arrow {
+        i {
+          margin-left: 0;
+          width: calc(100% - 9.438rem);
+        }
+      }
+    }
   }
 }
 
