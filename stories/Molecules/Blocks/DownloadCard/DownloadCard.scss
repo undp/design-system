@@ -62,7 +62,7 @@ div.download-card {
   .download-card__download {
     @extend %paragragh-font-16;
 
-    align-items: flex-end;
+    align-items: center;
     background-image: none;
     display: flex;
     font-weight: 700;
@@ -70,13 +70,17 @@ div.download-card {
     text-transform: uppercase;
 
     .download-icon{
-      margin-left: 0.75rem;
+      margin-left: $spacing-12;
     }
   }
 }
 
 [dir='rtl'] {
   div.download-card {
+    .download-icon {
+      margin-left: 0;
+      margin-right: $spacing-12;
+    }
     &:hover {
       div.publication-thumbnail__image {
         @each $name, $color in $colors {
