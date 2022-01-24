@@ -36,7 +36,7 @@ Use Icons that are recognizable and accompany corresponding text labels where po
 
 <Canvas>
   <Story name="Icons" parameters={{ docs: { source: { code: 
-    arrfor.map((item, i) => {
+    arrfor.map((item) => {
          if(item.type == 'img') {
            return (`<img src="icons/${item.name}.svg" alt="icon"/>\n`);
           } else {
@@ -44,15 +44,15 @@ Use Icons that are recognizable and accompany corresponding text labels where po
          }
       }).join('')
    } } }}>
-    {arrfor.map((item, i) => {
+    {arrfor.map((item, index) => {
       if(item.type == 'img') {
-        return (<div><img src={`icons/${item.name}.svg`} alt="icon"/>
+        return (<div key={index}><img src={`icons/${item.name}.svg`} alt="icon"/>
         <p>{`${item.label}`}</p></div>);
       }
       if(item.name == 'download-icon' , 'arrow-expand') {
-        return (<div><span class={`${item.name}`}><i></i></span><p>{`${item.label}`}</p></div>);
+        return (<div key={index}><span className={`${item.name}`}><i></i></span><p>{`${item.label}`}</p></div>);
       } else {
-        return (<div><span class={`${item.name}`}></span><p>{`${item.label}`}</p></div>);
+        return (<div key={index}><span className={`${item.name}`}></span><p>{`${item.label}`}</p></div>);
       }
     })}
   </Story>

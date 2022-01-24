@@ -85,7 +85,7 @@
       }
     }
 
-    .large-4 {
+    >:nth-child(2) {
       position: relative;
 
       @include devicebreak(large) {
@@ -175,9 +175,10 @@
     }
 
     &-top {
-      .large-4 {
+      >:nth-child(2){
         @include devicebreak(large) {
           margin-right: $spacing-64;
+          margin-left: 0;
         }
 
         &::before {

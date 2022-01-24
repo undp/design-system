@@ -82,10 +82,19 @@
   }
 }
 
+header {
+  ~ .featured-card-container {
+    > div {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
 .featured-card-container {
   margin-bottom: $spacing-32;
 
-  .cell {
+  .feature__card {
     margin-bottom: $spacing-24;
   }
 }

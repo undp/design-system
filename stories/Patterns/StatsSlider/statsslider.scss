@@ -1,6 +1,5 @@
 @import '../../assets/scss/breakpoints';
 @import '../../assets/scss/variables';
-@import '../../assets/scss/glideslider';
 @import '../../assets/scss/swiper';
 @import '../../assets/scss/mixins';
 
@@ -82,11 +81,6 @@
 
 [dir='rtl'] {
   .stats-card-slider {
-    @include devicebreak(medium) {
-      .grid-x {
-        flex-direction: row-reverse;
-      }
-    }
     &.swiper-initialized {
       @include devicebreak(small) {
         padding-left: $spacing-64;
@@ -101,5 +95,4 @@
     }
   }
 }
-
 /* stats-card-grid end */

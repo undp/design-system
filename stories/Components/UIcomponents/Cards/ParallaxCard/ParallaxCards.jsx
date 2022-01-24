@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './parallaxcards.scss';
-import '../../../../assets/scss/_glideslider.scss';
 import { swiper } from '../../../../assets/js/swiper';
 import { parallaxEffect } from '../../../../assets/js/parallax';
 import Img from '../../../../assets/images/parallax-card.jpg';
@@ -28,7 +27,7 @@ const ParallaxCards = ({ data, alt, title }) => {
         <div className="swiper-wrapper">
           {data.map((item, index) => (
             <>
-              {index % 2 == 0 ? <ParallaxCard glideClass="yes" Image="Right" name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} /> : <ParallaxCard glideClass="yes" name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} />}
+              {index % 2 == 0 ? <ParallaxCard swipeClass="yes" Image="Right" name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} /> : <ParallaxCard swipeClass="yes" name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} />}
             </>
           ))}
         </div>
