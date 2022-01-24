@@ -148,8 +148,8 @@ export const swiper = (selector, arrowsSelector, options) => {
       swiper.params.scrollbar.dragSize = dragsize;
       swiper.on('beforeInit', () => {
         $(element).find('.stats-card-parallax .swiper-slide').unwrap();
-        if (getDeviceType() == "tablet" && $(element).find('.fixed-carousel__button-wrap').length) {
-          $(element).find('.fixed-carousel__button-wrap').append(swiperArrow); // Change this classname `fixed-carousel__button-wrap` in HTML and here and then remove this comment.
+        if (getDeviceType() == "tablet" && $(element).find(arrowsSelector).length) {
+          $(element).find(arrowsSelector).append(swiperArrow);
         }
       });
     };
