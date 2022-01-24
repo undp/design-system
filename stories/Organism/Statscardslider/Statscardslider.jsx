@@ -4,8 +4,8 @@ import { swiper } from '../../assets/js/swiper';
 import { StatsCards } from '../../Components/UIcomponents/Cards/StatsCards/StatsCards';
 
 // RTL Fix for Storybook.
-let rtl = document.dir || 'ltr';
-if (window.location.href.indexOf("direction=rtl") > -1) {
+let rtl = document.dir || undefined;
+if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
 export const Statscardslider = ({ data }) => {

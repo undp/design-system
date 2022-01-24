@@ -4,10 +4,29 @@
 
 /* pagehero card hero start */
 .pagehero-cards {
+  @include devicebreak(small) {
+    &-items {
+      .swiper-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    .swiper-initialized {
+      padding-right: $spacing-64;
+
+      .swiper-scrollbar {
+        padding-right: $spacing-64;
+      }
+    }
+  }
 
   &-items {
-    .pagehero-cards-box {
+    @include devicebreak(small) {
+      overflow: hidden;
+    }
 
+    .pagehero-cards-box {
       @include devicebreak(medium) {
         flex: 0 0 calc(33.333% - 1.5rem);
         max-width: calc(33.333% - 1.5rem);
@@ -29,14 +48,9 @@
         margin-left: 0;
       }
     }
-
-    @include devicebreak(small) {
-      overflow: hidden;
-    }
   }
 
   &-box {
-
     @include devicebreak(medium) {
       margin-bottom: $spacing-24;
 
@@ -127,30 +141,11 @@
     }
   }
 
-  &--item {
-    &.swiper-slide {
-      @include devicebreak(medium) {
-        height: auto;
-      }
-      @include devicebreak(small) {
-        margin-left: 0;
-      }
-    }
-  }
-
-  &__items {
-    .swiper-wrapper {
-      @include devicebreak(small) {
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
-  }
-
   .swiper-initialized {
     @include devicebreak(small) {
       padding-right: $spacing-64;
     }
+
     .swiper-scrollbar {
       @include devicebreak(small) {
         padding-right: $spacing-64;
@@ -161,17 +156,34 @@
 
 [dir='rtl'] {
   .pagehero-cards {
+    @include devicebreak(small) {
+      &-items {
+        .pagehero-cards-box {
+          margin-right: 0;
+        }
+      }
+
+      .swiper-initialized {
+        padding-left: $spacing-64;
+        padding-right: 0;
+
+        .swiper-scrollbar {
+          padding-left: $spacing-64;
+          padding-right: 0;
+        }
+      }
+    }
 
     &-top {
       .large-4 {
-        @include devicebreak(medium) {
+        @include devicebreak(large) {
           margin-right: $spacing-64;
         }
 
         &::before {
           right: 3.5rem;
 
-          @include devicebreak(medium) {
+          @include devicebreak(large) {
             right: -60px;
           }
         }
@@ -179,24 +191,9 @@
     }
 
     &-items {
-
       .pagehero-cards-box {
-
         @include devicebreak(small) {
           margin-right: 0;
-        }
-      }
-    }
-
-    .swiper-initialized {
-      @include devicebreak(small) {
-        padding-left: $spacing-64;
-        padding-right: 0;
-      }
-      .swiper-scrollbar {
-        @include devicebreak(small) {
-          padding-left: $spacing-64;
-          padding-right: 0;
         }
       }
     }

@@ -4,8 +4,8 @@ import viewport from '../../../../assets/js/viewport';
 import './imageonlycarousel.scss';
 
 // RTL Fix for Storybook.
-let rtl = document.dir || 'ltr';
-if (window.location.href.indexOf("direction=rtl") > -1) {
+let rtl = document.dir || undefined;
+if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
 export const ImageOnlyCarousel = ({ data }) => {
@@ -19,7 +19,7 @@ export const ImageOnlyCarousel = ({ data }) => {
       <div className="swiper-wrapper">
         {data.map((item, index) => (
           <div className="swiper-slide slider-slide" aria-roledescription="slide" aria-label={`slide ${1 + index}`} key={index}>
-              <img className="image-carousel__image" src={item.slideImage} alt={item.slideImage} />
+            <img className="image-carousel__image" src={item.slideImage} alt={item.slideImage} />
           </div>
         ))}
       </div>

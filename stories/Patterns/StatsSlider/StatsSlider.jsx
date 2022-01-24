@@ -5,8 +5,8 @@ import { parallaxEffect } from '../../assets/js/parallax';
 import './statsslider.scss';
 
 // RTL Fix for Storybook.
-let rtl = document.dir || 'ltr';
-if (window.location.href.indexOf("direction=rtl") > -1) {
+let rtl = document.dir || undefined;
+if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
 export const StatsSlider = ({ data }) => {
