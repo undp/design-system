@@ -3,8 +3,8 @@ export function sidebarNav() {
   let $accordionPanel = $('.sidebar-accordion .accordion__panel');
   $accordionNav.each((index, element) => {
     if ($(element).find('.accordion__panel').length) {
-      if ($accordionNav.first().hasClass('active')) {
-        $accordionNav.find('.accordion__panel').first().slideDown();
+      if ($(element).hasClass('active')) {
+        $(element).find('.accordion__panel').slideDown();
       }
       $(element).find('button').first().off('click keypress')
         .on('click keypress', function (e) {
@@ -15,7 +15,7 @@ export function sidebarNav() {
           let $activePanel = $activeLi.find('.accordion__panel');
           if ($activeLi.hasClass('active') && $activePanel.is(':visible')) {
             $activePanel.slideUp(duration);
-            $activeLi.removeClass('active');
+            $activeLi.removeClass('active').removeAttr('class');
           } else {
             $accordionNav.removeClass('active').removeAttr('class');
             $accordionPanel.slideUp(duration);
