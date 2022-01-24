@@ -35,6 +35,43 @@ const SelectTag = ({ text, eleId, locale, ...args }) => {
             value="category1"
             id={`category1${eleId}`}
             label_pos='before'
+            name={`filter${eleId}`}
+          />
+        </li>
+        <li role="option">
+          <ElementTag
+            label={`${text}`}
+            value="category2"
+            id={`category2${eleId}`}
+            label_pos='before'
+            name={`filter${eleId}`}
+          />
+        </li>
+        <li role="option">
+          <ElementTag
+            label={`${text}`}
+            value="category3"
+            id={`category3${eleId}`}
+            label_pos='before'
+            name={`filter${eleId}`}
+          />
+        </li>
+        <li role="option">
+          <ElementTag
+            label={`${text}`}
+            value="category4"
+            id={`category4${eleId}`}
+            label_pos='before'
+            name={`filter${eleId}`}
+          />
+        </li>
+        <li role="option">
+          <ElementTag
+            label={`${text}`}
+            value="category5"
+            id={`category5${eleId}`}
+            label_pos='before'
+            name={`filter${eleId}`}
           />
         </li>
         <li role="option" className="has-submenu">
@@ -46,6 +83,7 @@ const SelectTag = ({ text, eleId, locale, ...args }) => {
                 value="subcategory1"
                 id={`subcategory1${eleId}`}
                 label_pos='before'
+                name={`filter${eleId}`}
               />
             </li>
             <li role="option">
@@ -54,41 +92,10 @@ const SelectTag = ({ text, eleId, locale, ...args }) => {
                 value="subcategory2"
                 id={`subcategory2${eleId}`}
                 label_pos='before'
+                name={`filter${eleId}`}
               />
             </li>
           </ul>
-        </li>
-        <li role="option">
-          <ElementTag
-            label={`${text}`}
-            value="category2"
-            id={`category2${eleId}`}
-            label_pos='before'
-          />
-        </li>
-        <li role="option">
-          <ElementTag
-            label={`${text}`}
-            value="category3"
-            id={`category3${eleId}`}
-            label_pos='before'
-          />
-        </li>
-        <li role="option">
-          <ElementTag
-            label={`${text}`}
-            value="category4"
-            id={`category4${eleId}`}
-            label_pos='before'
-          />
-        </li>
-        <li role="option">
-          <ElementTag
-            label={`${text}`}
-            value="category5"
-            id={`category5${eleId}`}
-            label_pos='before'
-          />
         </li>
       </ul>
     </div>
