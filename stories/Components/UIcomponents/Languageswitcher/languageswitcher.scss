@@ -45,7 +45,6 @@
 
   button {
     @extend %language_switcher;
-
     align-items: center;
     background-color: transparent;
     color: $color-blue-600;
@@ -54,7 +53,9 @@
     padding: 0;
 
     &::before {
-      background: url(#{$img-path-Icon}/Language.svg) no-repeat left center;
+      background-color:$color-blue-600;
+      -webkit-mask: url(#{$img-path-Icon}/Language.svg) no-repeat left center;
+      mask: url(#{$img-path-Icon}/Language.svg) no-repeat left center;
       content: '';
       height: 26px;
       margin-right: $spacing-08;
@@ -63,8 +64,9 @@
 
     &::after {
       @include transition(0.2s ease-in-out);
-
-      background: url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
+      background-color:$color-blue-600;
+      -webkit-mask: url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
+      mask: url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
       content: '';
       height: 10px;
       margin-left: $spacing-08;
@@ -73,12 +75,11 @@
 
     &:hover{
       color:$color-blue-400;
-
       &::before {
-        background: url(#{$img-path-Icon}/Languagehover.svg) no-repeat left center;
+        background-color: $color-blue-400;
       }
       &::after {
-        background: url(#{$img-path-Icon}/arrowbluehover.svg) no-repeat left center;
+        background-color: $color-blue-400;
       }
     }
 
