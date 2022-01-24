@@ -15,14 +15,14 @@ export const getCaptionForLocale = (locale) => {
 <Meta title="Components/UI components/Buttons/CTA Link" 
   argTypes={{
     Type: {
-      options: ["Expanding arrow", "Space"],
+      options: ["Expanding Arrow", "Space"],
       control: { type: "inline-radio" },
-      defaultValue: 'Expanding arrow'
+      defaultValue: 'Expanding Arrow'
     },
-    Tag_Type: {
-      options: ['link', 'span'],
+    Tag: {
+      options: ['Hyperlink', 'Inline'],
       control: { type: 'inline-radio' },
-      defaultValue: 'link'
+      defaultValue: 'Hyperlink'
     },
   }}
 />
@@ -75,8 +75,8 @@ A cta link is a prompt on a website that tells the user to take some specified a
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     // replace key
-    args['button_option'] = args['Tag_Type'];
-    delete args['Tag_Type'];
+    args['button_option'] = args['Tag'];
+    delete args['Tag'];
     return (
       <Ctalink
         label={caption.detail1}
