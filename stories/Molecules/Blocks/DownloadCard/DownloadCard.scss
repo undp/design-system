@@ -77,21 +77,26 @@ div.download-card {
 
 [dir='rtl'] {
   div.download-card {
-    .download-icon {
-      margin-left: 0;
-      margin-right: $spacing-12;
-    }
-    
     &:hover {
-      .publication-thumbnail__image {
+      div.publication-thumbnail__image {
         @each $name, $color in $colors {
           &.#{$name}:after {
             @include background-image(318deg, #{$color}, transparent 80%);
           }
         }
       }
+
+      div.card-thumbnail__image  {
+        @each $name, $color in $colors {
+          &.#{$name}:before {
+            @include background-image(318deg, #{$color}, transparent 80%);
+          }
+        }
+      }
     }
-    .download-card__download {
+     
+  
+    div.download-card__download {
       &::after {
         margin-left: 0;
         margin-right: 0.75rem;
@@ -103,5 +108,4 @@ div.download-card {
     }
   }
 }
-
 /* download card end */
