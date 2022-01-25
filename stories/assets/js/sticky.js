@@ -1,3 +1,5 @@
+import './undp';
+
 $(document).ready(() => {
   var $sticky = $('.sticky');
   var $stickyrStopper = $('.footer');
@@ -8,7 +10,7 @@ $(document).ready(() => {
     var stickyStopperPosition = $stickyrStopper.offset().top;
     var stopPoint = stickyStopperPosition - (generalSidebarHeight + stickOffset);
     var diff = stopPoint - ($('footer').innerHeight() / 1.7);
-    console.log(breakpoints.tablet);
+   
     $(window).scroll(() => {
       var windowTop = $(window).scrollTop();
       if ($(window).width() > window.UNDP.breakpoints.TABLET) {
