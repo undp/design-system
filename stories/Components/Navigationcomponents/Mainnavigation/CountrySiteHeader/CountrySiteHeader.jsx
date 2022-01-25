@@ -26,8 +26,8 @@ const CountrySiteHeader = ({
   }, [locale]);
 
   return (
-    <header>
-      <section className="country-header">
+    <header className="country-header">
+      <section className="header">
         <div className="grid-container">
           <div className="grid-x grid-margin-x align-content-middle">
             <div className="cell large-9 small-8 align-self-middle top-left">
