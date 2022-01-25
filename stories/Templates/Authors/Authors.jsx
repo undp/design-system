@@ -6,7 +6,7 @@ import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 import { Footer } from '../../Organism/Footer/Footer';
-import './authors.scss';
+import './Authors.scss';
 import { select } from '../../assets/js/select';
 import { Authorcard } from '../../Components/UIcomponents/Author/Authorcard/Authorcard';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
