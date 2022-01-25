@@ -6,7 +6,7 @@ import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 
 const ParallaxCard = ({
-  name, descrption, button, alt, Text, Image, glideClass,
+  name, descrption, button, alt, Text, Image, swipeClass,
 }) => {
   let text = '';
   let image = 'image-left';
@@ -20,7 +20,7 @@ const ParallaxCard = ({
     image = 'image-right';
   }
 
-  if (glideClass == 'yes') {
+  if (swipeClass == 'yes') {
     addClass = 'swiper-slide';
   }
 

@@ -93,21 +93,6 @@
   &-support {
     margin-top: $spacing-96;
 
-    .glide {
-      &__track {
-        overflow: visible;
-        padding-top: $spacing-32;
-
-        @include devicebreak(medium) {
-          padding-top: $spacing-80;
-        }
-      }
-
-      &__bullets {
-        margin-left: -10rem;
-      }
-    }
-
     .stats-slider {
       margin-top: 4.375rem;
 
@@ -198,15 +183,6 @@
           @include devicebreak(medium) {
             font-size: 3rem;
           }
-        }
-      }
-    }
-
-    &-support {
-      .glide {
-        &__bullets {
-          margin-left: 0;
-          margin-right: -10rem;
         }
       }
     }

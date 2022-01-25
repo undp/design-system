@@ -53,9 +53,7 @@
     background-color: $color-gray-200;
     padding-bottom: $spacing-80;
 
-    h2,
-    .glide__bullets,
-    .glide__slide {
+    h2 {
       @include devicebreak(small) {
         margin-left: 15px;
         margin-right: 15px;

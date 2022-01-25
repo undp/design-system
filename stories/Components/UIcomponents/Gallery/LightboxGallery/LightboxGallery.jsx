@@ -29,8 +29,8 @@ export const LightboxGallery = ({
               {data.map((item, index) => {
                  return (
                     <>
-                    <li>
-                      <a href={item.galleryimg1} class="glightbox" data-glightbox={"description:.glightbox-"+`${index}`+";"} descPosition="bottom">
+                    <li key={index}>
+                      <a href={item.galleryimg1} className="glightbox" data-glightbox={"description:.glightbox-"+`${index}`+";"} descPosition="bottom">
                         <figure>
                           <div className="image"><img src={item.galleryimg1} alt="image"/></div>
                             <div className={cls('image__description', `glightbox-${index}`)}>

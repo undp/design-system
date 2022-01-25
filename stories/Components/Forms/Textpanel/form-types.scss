@@ -113,7 +113,7 @@
 
 [dir='rtl'] {
   @media print, screen and (min-width: 64em) {
-    .grid-margin-x > .large-offset-1 {
+    .text-panel >:nth-child(1) {
       margin-left: 0.75rem;
       margin-right: calc(8.33333% + 1.5rem / 2);
     }
