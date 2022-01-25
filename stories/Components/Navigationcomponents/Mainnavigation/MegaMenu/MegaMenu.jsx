@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from '../../../../Atom/Images/Image/Image';
 
-import './MegaMenu.scss';
+import './mega-menu.scss';
 
 const MegaMenu = ({ text }) => (
   <div className="cell large-12 mega-nav-option" data-menu-item-id="headerlink2">

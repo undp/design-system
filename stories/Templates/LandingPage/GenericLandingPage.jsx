@@ -1,5 +1,5 @@
 import React from 'react';
-import './genericlandingpage.scss';
+import './generic-landing-page.scss';
 import { PageHeroOption } from '../../Components/UIcomponents/Hero/Pagehero/PageHeroOption';
 import FilterAndSearchBar from '../../Patterns/FilterAndSearchBar/FilterAndSearchBar';
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';

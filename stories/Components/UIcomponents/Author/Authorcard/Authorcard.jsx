@@ -1,5 +1,5 @@
 import React from 'react';
-import './authorcard.scss';
+import './author-card.scss';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Author } from '../Authorcolumn/Authors';
 

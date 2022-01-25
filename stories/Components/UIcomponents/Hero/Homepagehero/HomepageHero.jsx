@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './homepagehero.scss';
+import './homepage-hero.scss';
 import viewport from '../../../../assets/js/viewport';
 import expandToSize from '../../../../assets/js/animation';
 import BackgroundImg from '../../../../assets/images/field.jpg';

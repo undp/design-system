@@ -4,7 +4,7 @@ import Iconsback from '../../../../assets/icons/back.svg';
 import IconsGlobe from '../../../../assets/icons/Globe.svg';
 import IconsLanguage from '../../../../assets/icons/Language.svg';
 import { navigationInitialize } from '../../../../assets/js/navigation';
-import './MobileNav.scss';
+import './mobile-nav.scss';
 
 const MobileNav = ({
   text,

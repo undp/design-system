@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './pagewidecard.scss';
+import './page-wide-card.scss';
 import viewport from '../../../../assets/js/viewport';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';

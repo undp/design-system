@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './input_group.scss';
+import './input-group.scss';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 

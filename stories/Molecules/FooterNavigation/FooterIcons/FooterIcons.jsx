@@ -1,5 +1,5 @@
 import React from 'react';
-import './footerIcons.scss';
+import './footer-icons.scss';
 
 export const variant_options = {
   default: '',

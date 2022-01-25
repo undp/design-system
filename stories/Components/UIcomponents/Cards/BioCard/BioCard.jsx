@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './biocard.scss';
+import './bio-card.scss';
 import '../../../../assets/scss/_grid.scss';
 import viewport from '../../../../assets/js/viewport';
 import { modal } from '../../../../assets/js/modal';

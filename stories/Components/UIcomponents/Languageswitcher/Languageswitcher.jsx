@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { langSwitch } from '../../../assets/js/lang_switcher';
-import './languageswitcher.scss';
+import './language-switcher.scss';
 
 export const variant_options = {
   blue: 'blue',

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './globalhomepage.scss';
+import './globalhome-page.scss';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 import { Homepageherosplit } from '../../Components/UIcomponents/Hero/Homepagehero/HomepageHeroSplit';
 import { FeaturedCard } from '../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard';

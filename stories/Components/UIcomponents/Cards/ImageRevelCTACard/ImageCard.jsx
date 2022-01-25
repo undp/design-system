@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import viewport from '../../../../assets/js/viewport';
-import './imagecard.scss';
+import './image-card.scss';
 import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';

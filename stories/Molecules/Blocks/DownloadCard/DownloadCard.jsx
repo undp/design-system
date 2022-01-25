@@ -1,5 +1,5 @@
 import React from 'react';
-import './DownloadCard.scss';
+import './download-card.scss';
 import '../../../assets/scss/_grid.scss';
 import { Publicationthumb } from '../../../Atom/Cards/Publication-thumbnail/PublicationThumbnail';
 import { Cardthumb } from '../../../Atom/Cards/Card-thumbnail/CardThumbnail';

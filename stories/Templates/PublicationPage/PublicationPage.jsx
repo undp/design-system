@@ -9,7 +9,7 @@ import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaB
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { Menu } from '../../Components/Navigationcomponents/Menu/Menu';
 import viewport from '../../assets/js/viewport';
-import './publicationpage.scss';
+import './publication-page.scss';
 import '../../assets/js/sticky';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 

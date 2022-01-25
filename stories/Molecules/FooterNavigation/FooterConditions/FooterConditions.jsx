@@ -1,5 +1,5 @@
 import React from 'react';
-import './footerCondition.scss';
+import './footer-condition.scss';
 
 export const variant_options = {
   default: '',

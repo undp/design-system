@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './downloadmodal.scss';
+import './download-modal.scss';
 import { Publicationthumb } from '../../Atom/Cards/Publication-thumbnail/PublicationThumbnail';
 import { modal } from '../../assets/js/modal';
 import { DownloadRow } from '../../Molecules/DownloadRow/DownloadRow';

@@ -1,5 +1,5 @@
 import React from 'react';
-import './imagecredit.scss';
+import './image-credit.scss';
 
 export const Imagecredit = ({ label }) => (
   <div className="credits">

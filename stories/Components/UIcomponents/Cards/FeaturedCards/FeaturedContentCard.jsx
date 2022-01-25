@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './featuredContentCard.scss';
+import './featured-content-card.scss';
 import '../../../../assets/scss/_grid.scss';
 import viewport from '../../../../assets/js/viewport';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';

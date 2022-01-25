@@ -7,7 +7,7 @@ import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 import { FluidImageSizeCarousel } from '../../Components/UIcomponents/Carousel/FluidImageSizeCarousel/FluidImageSizeCarousel';
 import { Footer } from '../../Organism/Footer/Footer';
-import './genericpage.scss';
+import './generic-page.scss';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 
 export const GenericPage = ({

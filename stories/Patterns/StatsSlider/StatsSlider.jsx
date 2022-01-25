@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { StatsCards } from '../../Components/UIcomponents/Cards/StatsCards/StatsCards';
 import { swiper } from '../../assets/js/swiper';
 import { parallaxEffect } from '../../assets/js/parallax';
-import './statsslider.scss';
+import './stats-slider.scss';
 
 // RTL Fix for Storybook.
 let rtl = document.dir || undefined;

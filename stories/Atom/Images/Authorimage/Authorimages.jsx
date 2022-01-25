@@ -1,5 +1,5 @@
 import React from 'react';
-import './authorimage.scss';
+import './author-image.scss';
 
 export const size_options = {
   Large: 'large',

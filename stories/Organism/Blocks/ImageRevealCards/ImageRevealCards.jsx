@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
-import './imagerevealcards.scss';
+import './image-reveal-cards.scss';
 import viewport from '../../../assets/js/viewport';
 import { ImageRevelCard } from '../../../Components/UIcomponents/Cards/ImageRevelCTACard/ImageCard';
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import viewport from '../../../assets/js/viewport';
-import './tweetpanel.scss';
+import './tweet-panel.scss';
 import '../../../assets/scss/_grid.scss';
 import { TweetCard } from '../../../Molecules/Blocks/TweetCard/TweetCard';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';

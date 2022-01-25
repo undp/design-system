@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './pagehero.scss';
+import './page-hero.scss';
 import viewport from '../../../../assets/js/viewport';
 import { Video } from '../../../../Atom/Video/Video';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';

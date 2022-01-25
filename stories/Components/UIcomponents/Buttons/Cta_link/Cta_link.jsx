@@ -1,5 +1,5 @@
 import React from 'react';
-import './cta_link.scss';
+import './cta-link.scss';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 

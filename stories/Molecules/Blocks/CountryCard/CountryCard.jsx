@@ -1,5 +1,5 @@
 import React from 'react';
-import './countrycard.scss';
+import './country-card.scss';
 import '../../../assets/scss/_grid.scss';
 import { Ctalink } from '../../../Components/UIcomponents/Buttons/Cta_link/Cta_link';
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import viewport from '../../../assets/js/viewport';
-import './authorsummary.scss';
+import './author-summary.scss';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Authorimg } from '../../../Atom/Images/Authorimage/Authorimages';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';

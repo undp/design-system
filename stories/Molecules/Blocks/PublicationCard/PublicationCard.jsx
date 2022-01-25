@@ -1,5 +1,5 @@
 import React from 'react';
-import './publicationcard.scss';
+import './publication-card.scss';
 import '../../../assets/scss/_grid.scss';
 import '../../../Atom/Icons/icons.scss';
 import { Publicationthumb } from '../../../Atom/Cards/Publication-thumbnail/PublicationThumbnail';

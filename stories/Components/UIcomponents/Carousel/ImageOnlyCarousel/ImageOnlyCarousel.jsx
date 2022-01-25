@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { swiper } from '../../../../assets/js/swiper';
 import viewport from '../../../../assets/js/viewport';
-import './imageonlycarousel.scss';
+import './image-only-carousel.scss';
 
 // RTL Fix for Storybook.
 let rtl = document.dir || undefined;

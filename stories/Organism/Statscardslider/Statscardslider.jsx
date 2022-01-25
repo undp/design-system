@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './statscardslider.scss';
+import './stats-card-slider.scss';
 import { swiper } from '../../assets/js/swiper';
 import { StatsCards } from '../../Components/UIcomponents/Cards/StatsCards/StatsCards';
 import { FontResize } from '../../assets/js/font_resize';

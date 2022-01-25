@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import viewport from '../../../assets/js/viewport';
-import './projectdetail.scss';
+import './project-detail.scss';
 import { Projectcolumn } from '../../../Atom/ProjectColumn/ProjectColumn';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 

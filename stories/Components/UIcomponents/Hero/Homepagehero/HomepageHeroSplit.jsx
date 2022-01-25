@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './homepagehero.scss';
+import './homepage-hero.scss';
 import viewport from '../../../../assets/js/viewport';
 import BackgroundImg from '../../../../assets/images/scuba.jpg';
 import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
