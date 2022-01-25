@@ -1,7 +1,15 @@
 import { Meta, Story } from '@storybook/addon-docs';
 import { ProgressBar } from './progress_bar'
 
-<Meta title="Utilities/Progress bar" component={ProgressBar} />
+<Meta title="Utilities/Progress bar" component={ProgressBar} 
+   argTypes={{
+     Percentage: {
+       options: ["0", "25", "50", "100"],
+       control: { type: "radio" },
+       defaultValue: "25",
+     },
+   }}
+ />
 
 <style>{`
   .subheading {
@@ -19,22 +27,13 @@ import { ProgressBar } from './progress_bar'
 
 Progressbar provides a visual representation of a user’s progress on a page
 
-<Story name="Progress bar 0">
-  return <ProgressBar  value={0}></ProgressBar>;
-</Story>
-
-<Story name="Progress bar 25">
-  return <ProgressBar  value={25}></ProgressBar>;
-</Story>
-
-<Story name="Progress bar 50">
-  return <ProgressBar  value={50}></ProgressBar>;
-</Story>
-
-<Story name="Progress bar 100">
-  return <ProgressBar  value={100}></ProgressBar>;
-</Story>
-
+<Story name="Progress bar">
+   {(args) => {
+     return (
+       <ProgressBar {...args}></ProgressBar>
+     );
+   }}
+ </Story>
 
 <div className="subheading">Usage</div>
 <ul>
