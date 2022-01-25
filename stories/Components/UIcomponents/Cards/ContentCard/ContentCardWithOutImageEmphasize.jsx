@@ -1,5 +1,5 @@
 import React from 'react';
-import './contentcard.scss';
+import './content-card.scss';
 import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
