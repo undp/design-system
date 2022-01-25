@@ -150,42 +150,28 @@
   .mega-nav-option{
     animation-fill-mode: backwards;
     &.show-mega {
-      @extend %mega-animation;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
+      @include animation(circle-square-transition forwards 0.3s cubic-bezier(.25, .27, .11, .99));
   
       > div{
-        -webkit-animation-delay: .3s;
-        animation-delay: .3s;
-        -webkit-animation-duration: .3s;
-        animation-duration: .3s;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-        -webkit-animation-name: transition-opacity;
-        animation-name: transition-opacity;
+        @include animation(transition-opacity forwards 0.3s 0.3s);
       }
     }
     &.show-mega-back {
       display: block;
       box-shadow: none;
-      @extend %mega-animation-back;
+      @include animation(circle-square-transition-back 0.3s cubic-bezier(.25, .27, .11, .99));
   
       > div{
         animation-direction: alternate;
       }
     }
     &.no-effect{
-      -webkit-animation-delay: 0s;
-      animation-delay: 0s;
-      -webkit-animation-duration: 0s;
-      animation-duration: 0s;
+      @include animation(none 0s 0s);
+      
   
       > div{
         opacity: 1;
-        -webkit-animation-delay: 0s;
-        animation-delay: 0s;
-        -webkit-animation-duration: 0s;
-        animation-duration: 0s;
+        @include animation(none 0s 0s);
       }
     }
     > div{
