@@ -139,8 +139,7 @@ export const PublicationPage = ({
           <div className="cell small-12 large-6 large-offset-6">
             <div className="column">
               <ContentCardWithOutImage
-                className="card-out"
-                Emphasize="false"
+                Hovercolors='yellow'
                 data={ContentCardWithOutImageData}
               />
             </div>

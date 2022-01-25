@@ -10,7 +10,6 @@ export const getCaptionForLocale = (locale) => {
           {
             contenttile: "CONTENT TAG",
             contentname: "Title of the post goes here and it’s two lines",
-            contentnametwo: "Title of the post goes here and it’s two lines",
             paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
             button: "READ MORE",
             link:"#",
@@ -25,7 +24,6 @@ export const getCaptionForLocale = (locale) => {
           {
             contenttile: "علامة المحتوى",
             contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
-            contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
             paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
             button: "اقرأ أكث",
             link:"#",
@@ -41,7 +39,6 @@ export const getCaptionForLocale = (locale) => {
           {
             contenttile: "အကြောင်းအရာ TAG",
             contentname: "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
-            contentnametwo: "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
             paragraph: "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
             button: "ပိုပြီးဖတ်ပါ",
             link:"#",
@@ -56,7 +53,6 @@ export const getCaptionForLocale = (locale) => {
           {
             contenttile: "コンテンツタグ",
             contentname: "投稿のタイトルはここにあり、2行です",
-            contentnametwo: "投稿のタイトルはここにあり、2行です",
             paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
             button: "続きを読む",
             link:"#",
@@ -71,7 +67,6 @@ export const getCaptionForLocale = (locale) => {
           {
             contenttile: "CONTENT TAG",
             contentname: "Title of the post goes here and it’s two lines",
-            contentnametwo: "Title of the post goes here and it’s two lines",
             paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
             button: "READ MORE",
             link:"#",
@@ -83,43 +78,21 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Cards/Content Card" argTypes={{
-  Emphasize: {
-    options: ['true', 'false'],
+<Meta title="Components/UI components/Cards/Content Card/Without Image" argTypes={{
+  Hovercolors: { 
+    options: ['default', 'yellow', 'red', 'green', 'blue'],
     control: { type: 'inline-radio' },
-    defaultValue: 'false'
-  },
-  Hovercolors: {
-    options: ['yellow', 'red', 'green', 'blue'],
-    control: { type: 'inline-radio' },
-    defaultValue: 'yellow'
+    defaultValue: 'default'
   }
 }}/>
-
-
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-`}</style>
 
 # Single Content Card Component
 The Single Content Card component defines a card of information data with some items - Title, Image, Paragraph, and CTA Link. We are using the grid system here <code>assets/scss/grid.scss</code>. Atoms tags are used for creating this card.
 
-<div className="subheading">Single Content Card</div>
-<p>Single content card with image are show the Title, Image, and CTA Link. The background color is different on hover.</p>
+### Single Content Card
+Single content card with image are show the Title, Image, and CTA Link. The background color is different on hover.
 
-<Story name="Without Image">
+<Story name="Without Emphasize">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
@@ -130,12 +103,10 @@ The Single Content Card component defines a card of information data with some i
   }}
 </Story>
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-  <li>Component SCSS file: <code>singlecontent.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Usage
+- Take HTML from the HTML tab in the canvas
+- <u>To use SCSS include the following files in your implementation</u>
+- Include the common SCSS files like variables, mixin from <code>assets/scss</code>
+- Component SCSS file: <code>singlecontent.scss</code>
+- <u>To use CSS include the following files in your implementation</u>
+- The compiled CSS file from <code>assets/css/style.css</code>
