@@ -8,35 +8,7 @@
   @include devicebreak(xlarge) {
     margin-top: 7.1875rem;
   }
-
-  @include devicebreak(small) {
-    .author-cards {
-      .cell {
-        &:first-child {
-          .author-card {
-            @include devicebreak(small) {
-              border-top: 0;
-              margin-top: 0;
-            }
-          }
-        }
-      }
-
-      &.find-first-author {
-        .cell {
-          &:first-child {
-            .author-card {
-              @include devicebreak(small) {
-                border-top: 2px solid $color-black;
-                margin-top: $spacing-40;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
+  
   .author__label p {
     font-size: 1rem;
 
@@ -78,10 +50,12 @@
   .author-filter {
     @include devicebreak(small) {
       display: none;
-      margin-top: $spacing-24;
 
       &.author-filter-show {
         display: block;
+        .expand-search{
+          margin: $spacing-24 0;
+        }    
       }
     }
   }
@@ -123,7 +97,7 @@
   }
 
   .author-card {
-    margin-top: 3.75rem;
+    margin-top: $spacing-76;
 
     @include devicebreak(small) {
       margin-top: 0;
@@ -132,11 +106,20 @@
         font-size: $font-size-16;
 
         @include devicebreak(small) {
-          font-size: 0.875rem;
+          h6 {
+            font-size: $font-size-16;
+            @include devicebreak(small) {
+              font-size: 0.875rem;
+            }
+          }
         }
       }
-      > div:first-child a {
-        border-top: 0;
+    }
+    > div:first-child{
+      a{
+          @include devicebreak(small) {
+            border-top: 0;
+          }  
       }
     }
   }
@@ -161,14 +144,6 @@
 
     .options-container {
       min-width: inherit;
-    }
-
-    &.expanded {
-      border-bottom: 2px solid transparent;
-    }
-
-    @include devicebreak(small) {
-      margin-top: $spacing-24;
     }
   }
 }

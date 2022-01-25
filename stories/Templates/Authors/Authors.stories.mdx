@@ -304,7 +304,7 @@ export const getfiltertextForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = {sort: 'SORT BY', options:[ 'Most posts', 'Alphabetical']}; return engText;
     case 'arabic': const arabicText = {sort: 'اختار اللغة', options:[  'معظم المشاركات', 'مرتب حسب الحروف الأبجدية']}; return arabicText;
-    case 'burmese': const burmeseText = {sort: 'ဘာသာစကားကို ရွေးပါ။', options:[ 'ပို့စ်အများစု', 'အက္ခရာစဉ်']}; return burmeseText;
+    case 'burmese': const burmeseText = {sort: 'အလိုက်စဥ်သည်', options:[ 'ပို့စ်အများစု', 'အက္ခရာစဉ်']}; return burmeseText;
     case 'japanese': const japaneseText = {sort: '言語を選択する', options:[ 'ほとんどの投稿', 'アルファベット順']}; return japaneseText;
   default:
       return {sort: 'SORT BY', options:[ 'Most posts', 'Alphabetical']};
