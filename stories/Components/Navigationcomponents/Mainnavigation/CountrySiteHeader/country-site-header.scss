@@ -108,6 +108,7 @@
         display: inline-flex;
         margin-left: $spacing-16;
         padding: 0;
+        cursor: pointer;
       }
 
       .icon-globe {
@@ -116,6 +117,7 @@
         display: inline-flex;
         margin-left: 1.75rem;
         padding: 0;
+        cursor: pointer;
         @include devicebreak(mediumonlytab) {
             display: none;
         }
