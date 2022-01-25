@@ -73,12 +73,17 @@
     box-sizing: border-box;
     font-size: $font-size-16;
     height: 46px;
-    margin-bottom: $spacing-08;
+    margin-bottom: $spacing-24;
     padding: 0.625rem;
     width: 100%;
 
     &::placeholder {
       color: $color-gray-500;
+    }
+
+    &:focus {
+      box-shadow: 0 0 4px $color-blue-800;
+      outline: 0;
     }
 
     input[type=date],
@@ -120,21 +125,6 @@
     input[type=date],
     textarea {
       border: 2px solid $color-red;
-    }
-  }
-
-  &.focus {
-    input[type=text],
-    input[type=number],
-    input[type=email],
-    input[type=password],
-    input[type=search],
-    input[type=tel],
-    input[type=date],
-    textarea {
-      &:focus {
-        box-shadow: 0 0 4px #0468b1;
-      }
     }
   }
 }
