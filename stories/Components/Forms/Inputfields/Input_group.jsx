@@ -20,7 +20,7 @@ export const Inputcomponent = ({
   }, [state]);
   return (
     <>
-      <div className={cls('input-group', `${state}`)}>
+      <div className={cls('input-group')} > 
         {labelText && <label htmlFor={[`${type}`]}>{ labelText }</label>}
         <InputTag
           ref={inputElement}
