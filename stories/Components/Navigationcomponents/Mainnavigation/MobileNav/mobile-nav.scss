@@ -20,10 +20,6 @@
     display: block;
   }
 
-  .grid-x {
-    position: relative;
-  }
-
   .mobile-links {
     padding: 5.625rem 0 3.75rem;
 
@@ -42,6 +38,7 @@
         margin-bottom: 0;
         padding-bottom: 2.25rem;
         text-transform: uppercase;
+        padding-left: 0;
       }
     }
   }
@@ -86,6 +83,7 @@
       li {
         list-style: none;
         margin-bottom: 0;
+        padding-left: 0;
 
         span {
           font-size: $font-size-16;
@@ -179,17 +177,6 @@
   }
 }
 
-.grid-margin-x {
-  & > {
-    .cell {
-      &.mobile-nav {
-        margin: 0;
-        width: 100%;
-      }
-    }
-  }
-}
-
 .menu-hamburger {
   background: none;
   border: 0;
@@ -257,6 +244,21 @@
         @include transform(rotateY(180deg));
         margin-left: 0.46875rem;
         margin-right: 0;
+      }
+    }
+
+    .mobile-sub-menu { 
+      ul {
+        li {
+          padding-right: 0;
+        }
+      }
+    }
+    .mobile-links {
+      ul {
+        li {
+          padding-right: 0;
+        }
       }
     }
   }

@@ -104,15 +104,16 @@
           .image__description {
             display: none;
 
-            @include devicebreak(xlarge) {
+            @include devicebreak(large) {
               display: block;
             }
           }
         }
 
         .image {
-          @include devicebreak(large) {
+          @include devicebreak(xlarge) {
             min-height: 200px;
+            overflow: hidden;
           }
 
           img {
