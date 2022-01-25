@@ -114,6 +114,8 @@
 
   .slider-arrows {
 
+    display: flex;
+    align-items: center;
     margin-left: 2.5rem;
 
     @include devicebreak(large) {
@@ -163,7 +165,7 @@
     }
 
     .slider-arrows {
-      margin-left: auto;
+      margin-left: 0;
       margin-right: 2.5rem;
 
       @include devicebreak(large) {
