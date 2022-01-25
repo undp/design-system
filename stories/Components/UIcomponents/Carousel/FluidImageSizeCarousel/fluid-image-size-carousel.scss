@@ -129,6 +129,9 @@
 
     .slider-arrows {
 
+      left: 0;
+      right: auto;
+
       [class*='swiper-button-'] {
         &:first-child {
           margin-left: 0.344rem;

@@ -20,7 +20,7 @@ export const swiper = (selector, arrowsSelector, options) => {
   // Get device type
   const getDeviceType = () => {
     let device;
-    let mobile = 'only screen and (min-width: 0px) and (max-width: 767px)';
+    let mobile = 'only screen and (min-device-width: 0px) and (max-device-width: 767px) and (pointer: coarse)';
     let potrait = 'only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) and (pointer: coarse)';
     let landscape = 'only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape) and (pointer: coarse)';
     let desktop = window.matchMedia('(min-width: 768px)');
@@ -39,8 +39,6 @@ export const swiper = (selector, arrowsSelector, options) => {
     // Add class based on index incase of multiple sliders.
     $(element).addClass(`swiper-slider-${index}`);
 
-    // Get data-swiper-parallax
-    // let swiperParallax = $(element).data('swiper-parallax') ? $(element).data('swiper-parallax') : false;
     // Default options
     let defaults = {
       // Let us init (element) after loading custom configs.
@@ -74,13 +72,13 @@ export const swiper = (selector, arrowsSelector, options) => {
       breakpoints: {
         // This will be enabled on Desktop Breakpoint.
         768: {
-          noSwiping: true,
+          noSwiping: getDeviceType() == "tablet" ? false : true,
           slidesPerView: $(element).data('swiper-slides-view-tablet') ? $(element).data('swiper-slides-view-tablet') : 1,
           slidesOffsetBefore: $(element).data('swiper-offset') ? $(element).data('swiper-offset') : 0,
           slidesOffsetAfter: $(element).data('swiper-offset') ? -$(element).data('swiper-offset') : 0,
         },
         1024: {
-          noSwiping: true,
+          noSwiping: getDeviceType() == "tablet" ? false : true,
           slidesPerView: $(element).data('swiper-slides-view-desktop') ? $(element).data('swiper-slides-view-desktop') : 1,
           slidesOffsetBefore: $(element).data('swiper-offset') ? $(element).data('swiper-offset') : 0,
           slidesOffsetAfter: $(element).data('swiper-offset') ? -$(element).data('swiper-offset') : 0,
