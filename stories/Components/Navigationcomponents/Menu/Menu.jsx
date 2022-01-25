@@ -1,6 +1,6 @@
 import React from 'react';
 import './menu.scss';
-import { MenuItems } from '../../../Atom/Navigation/Menu-items/Menu-Items';
+import { MenuItems } from '../../../Atom/Navigation/Menu-items/MenuItems';
 
 export const Menu = ({ data, role, arialabel,isGHeader }) => {
   if(isGHeader != undefined && isGHeader){
