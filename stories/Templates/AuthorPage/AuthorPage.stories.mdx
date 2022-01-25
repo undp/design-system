@@ -26,25 +26,10 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Templates" />
+<Meta title="Templates/Author Page" />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-`}</style>
-
-<Story name="Author page" parameters={{
+<Story name="Author Detail" 
+  parameters={{
     layout: "fullscreen"
   }}>
   {(args, { globals: { locale } }) => {
@@ -76,19 +61,10 @@ export const getCaptionForLocale = (locale) => {
   }}
 </Story>
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <li>
-    <u>To use SCSS include the following files in your implementation</u>
-  </li>
-  <li>
-    Component SCSS file: <code>ArticlePage.scss</code>
-  </li>
-  <li>
-    <u>To use CSS include the following files in your implementation</u>
-  </li>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+
+### Usage
+ 
+- Take HTML from the HTML tab in the canvas and paste in your HTML file
+- Include the following files in your HTML file
+  - Base CSS file **dist/css/base-minimal.css**
+  - Template CSS file **dist/css/templates/author-page.css**
