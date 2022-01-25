@@ -1,6 +1,6 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/breakpoints";
 
 .authors-page {
   margin-top: 4.75rem;
@@ -161,7 +161,7 @@
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .authors-page {
     .medium-offset-1 {
       @include devicebreak(small) {
