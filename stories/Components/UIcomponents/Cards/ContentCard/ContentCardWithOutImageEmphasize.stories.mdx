@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs';
-import { ContentCardImage } from './ContentCardImage';
+import { ContentCardWithOutImageEmphasize } from './ContentCardWithOutImageEmphasize';
 import img from '../../../../assets/images/card-thumbnail.jpg';
 
 export const getCaptionForLocale = (locale) => {
@@ -9,23 +9,26 @@ export const getCaptionForLocale = (locale) => {
         contentdata: [
           {
             contenttile: "CONTENT TAG",
-            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
             button: "READ MORE",
             link:"#",
             imgback: img,
           }
         ]
       };
-      return engText;
+    return engText;
     case "arabic":
       const arabicText = {
         contentdata: [
           {
             contenttile: "علامة المحتوى",
-            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
             button: "اقرأ أكث",
             link:"#",
             imgback: img,
+            size:'medium-4',
           }
         ]
       };
@@ -35,7 +38,8 @@ export const getCaptionForLocale = (locale) => {
         contentdata: [
           {
             contenttile: "အကြောင်းအရာ TAG",
-            contentname: "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            contentnametwo: "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            paragraph: "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
             button: "ပိုပြီးဖတ်ပါ",
             link:"#",
             imgback: img,
@@ -48,7 +52,8 @@ export const getCaptionForLocale = (locale) => {
         contentdata: [
           {
             contenttile: "コンテンツタグ",
-            contentname: "投稿のタイトルはここにあり、2行です",
+            contentnametwo: "投稿のタイトルはここにあり、2行です",
+            paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
             button: "続きを読む",
             link:"#",
             imgback: img,
@@ -61,7 +66,8 @@ export const getCaptionForLocale = (locale) => {
         contentdata: [
           {
             contenttile: "CONTENT TAG",
-            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
             button: "READ MORE",
             link:"#",
             imgback: img,
@@ -72,13 +78,14 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Cards/Content Card/With Image" argTypes={{
+<Meta title="Components/UI components/Cards/Content Card/Without Image" argTypes={{
   Hovercolors: {
     options: ['yellow', 'red', 'green', 'blue'],
     control: { type: 'inline-radio' },
     defaultValue: 'yellow'
   }
-}}/>
+}}
+/>
 
 # Single Content Card Component
 The Single Content Card component defines a card of information data with some items - Title, Image, Paragraph, and CTA Link. We are using the grid system here <code>assets/scss/grid.scss</code>. Atoms tags are used for creating this card.
@@ -86,13 +93,13 @@ The Single Content Card component defines a card of information data with some i
 ### Single Content Card
 Single content card with image are show the Title, Image, and CTA Link. The background color is different on hover.
 
-<Story name="With Image">
+<Story name="With Emphasize">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
-      <ContentCardImage
+      <ContentCardWithOutImageEmphasize
         data={caption.contentdata} {...args}
-      ></ContentCardImage>
+      ></ContentCardWithOutImageEmphasize>
     );
   }}
 </Story>
