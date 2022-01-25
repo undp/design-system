@@ -3,10 +3,12 @@
 @import '../../../../assets/scss/breakpoints';
 
 .chips {
+  align-items: baseline;
   background: $color-gray-200;
   border: none;
   border-radius: 20px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
   padding: $spacing-04 $spacing-16;
 
   &:hover {
@@ -19,9 +21,10 @@
       content: '';
       display: inline-flex;
       height: 22px;
+      margin-left: -$spacing-04;
       margin-right: 0.375rem;
       position: relative;
-      top: 4px;
+      top: 5px;
       width: 22px;
     }
   }
@@ -29,7 +32,7 @@
 
 [dir='rtl'] {
   .chips__cross::before {
-    margin-left: 0.625rem;
-    margin-right: 0;
+    margin-left: 0.375rem;
+    margin-right: -$spacing-04;
   }
 }
