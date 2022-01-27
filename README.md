@@ -53,6 +53,30 @@ The design system is based on:
 - CSS directory at: ***dist/css***. 
 - JS directory at: ***dist/js***. 
 
+## Storybook and File references
+
+| Storybook path  | File path |
+| ------------- | ------------- |
+| Components/UI components/Cards/Download Card   | stories/Molecules/Blocks/DownloadCard/DownloadCard  |
+| Components/UI components/Cards/Publication Card  | stories/Molecules/Blocks/DownloadCard/PublicationCard  |
+| Components/UI components/Text/Callout   | stories/Molecules/Text/BlockquoteComponent  |
+| Components/UI components/Text/CTA Block  | stories/Molecules/Text/CtaBlock  |
+| Components/UI components/Text/Heading Big Block  | stories/Molecules/Text/HeadingBig  |
+| Components/UI components/Text/Post Block  | stories/Molecules/Text/Post  |
+| Components/UI components/Text/Small Copy Lockup  | stories/Molecules/Text/SmallCopy  |
+| Components/UI components/Text/Tertiary Block  | stories/Molecules/Text/Tertiary  |
+| Components/UI components/Text/Text Background  | stories/Molecules/Text/TextBackground  |
+| Components/UI components/Text/Text Cta  | stories/Molecules/Text/TextCta  |
+| Components/UI components/Author Summary  | stories/Organism/Blocks/Authorcard  |
+| Components/UI components/Content Cards  | stories/Organism/Blocks/ContentCard  |
+| Components/UI components/Content Cards With and Without Image  | stories/Organism/Blocks/ContentCardWithAndWithoutImage  |
+| Components/UI components/Featured Cards  | stories/Organism/Blocks/FeaturedContentCard/FeaturedCard  |
+| Components/UI components/Pagewide Featured Content Card  | stories/Organism/Blocks/FeaturedContentCard/PagewideContentCard  |
+| Components/UI components/Image Reveal Cards  | stories/Organism/Blocks/ImageRevealCards  |
+| Components/UI components/Footer  | stories/Organism/Footer  |
+| Components/UI components/Stats  | stories/Organism/Stats  |
+| Components/UI components/Stats Card Slider  | stories/Organism/Statscardslider  |
+| Utilities/Progress Bar Navigation  | stories/Atom/Navigation/ProgressBarNavigation  |
 
 ## LICENSE
 This codebase hai MIT license.
