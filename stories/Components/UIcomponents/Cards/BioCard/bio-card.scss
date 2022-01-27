@@ -13,6 +13,9 @@ div.bio-card {
       .cta--arrow {
         i {
           width: $spacing-80;
+          &::before {
+            display: unset;
+          }
         }
       }
 

@@ -78,6 +78,9 @@
           @include devicebreak(large) {
             width: calc(100% - 6.25rem);
           }
+          &::before {
+            display: unset;
+          }
         }
       }
     }
