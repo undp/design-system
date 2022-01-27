@@ -61,35 +61,27 @@ export const getCaptionForLocale = (locale) => {
 # Input group Component
 The <code>input</code> HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <code>input</code> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
 
+### Date
+- input elements of type <code>date</code> create input fields that let the user enter a date, either with a textbox that validates the input or a special date picker interface.
+
+### Number
+- input elements of type <code>number</code> are used to let the user enter a number. They include built-in validation to reject non-numerical entries.
+
+### Password
+- input elements of type <code>password</code> provide a way for the user to securely enter a password.
+
+### Phone
+- input elements of type <code>tel</code> are used to let the user enter and edit a telephone number.
+
 ### Text
 - input elements of type <code>text</code> create basic single-line text fields.
 
-<div className="subheading"> Number </div>
-<ul>
-  <li>input elements of type <code>number</code> are used to let the user enter a number. They include built-in validation to reject non-numerical entries.</li>
-</ul>
+### Base Input
 
-<div className="subheading"> Date </div>
-<ul>
-  <li>input elements of type <code>date</code> create input fields that let the user enter a date, either with a textbox that validates the input or a special date picker interface.</li>
-</ul>
-
-<div className="subheading"> Phone </div>
-<ul>
-  <li>input elements of type <code>tel</code> are used to let the user enter and edit a telephone number.</li>
-</ul>
-
-<div className="subheading"> Password </div>
-<ul>
-  <li>input elements of type <code>password</code> provide a way for the user to securely enter a password.</li>
-</ul>
-
-<div className="subheading"> Base Input </div>
-
-<Story name="Text">
+<Story name="Date">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.detail1} errorText={caption.detail2} element='input' type='text' id='text' placeholder= {caption.text3} {...args} ></Inputcomponent>;
+    return <Inputcomponent labelText={caption.text} errorText={caption.detail2} element='input' type='date' id='date'  placeholder= 'dd/mm/yyyy' {...args}></Inputcomponent>;
   }}
 </Story>
 
@@ -114,19 +106,17 @@ The <code>input</code> HTML element is used to create interactive controls for w
   }}
 </Story>
 
-<Story name="Date">
+<Story name="Text">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Inputcomponent labelText={caption.text} errorText={caption.detail2} element='input' type='date' id='date'  placeholder= 'dd/mm/yyyy' {...args}></Inputcomponent>;
+    return <Inputcomponent labelText={caption.detail1} errorText={caption.detail2} element='input' type='text' id='text' placeholder= {caption.text3} {...args} ></Inputcomponent>;
   }}
 </Story>
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like mixin <code>assets/scss</code></li>
-  <li>Component SCSS file <code>input_group.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Usage
+- Take HTML from the HTML tab in the canvas
+- <u>To use SCSS include the following files in your implementation</u>
+- Include the common SCSS files like mixin <code>assets/scss</code>
+- Component SCSS file <code>input_group.scss</code>
+- <u>To use CSS include the following files in your implementation</u>
+- The compiled CSS file from <code>assets/css/style.css</code>
