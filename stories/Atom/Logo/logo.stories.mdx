@@ -42,33 +42,7 @@ The UNDP and PNUD logos are available in blue or white and used as per the page 
 
 The following behavior modifiers are available:
 
-1. UNDP Logo - Blue [Download](https://github.com/undp/design-system/blob/develop/stories/assets/images/undp-logo-blue.svg)
-
-This is the default logo and is used primarily in the header of every page as well as country sites.
-
-<Canvas>
-  <Story name="UNDP Logo - Blue" parameters={{ backgrounds: { default: 'white'}}}>
-    return <Logo src={logo} alt={'UNDP Logo'}></Logo>;
-  </Story>
-</Canvas>
-
-2. UNDP Logo - White [Download](https://github.com/undp/design-system/blob/develop/stories/assets/images/undp-logo-white.svg)
-
-The UNDP white logo is primarily used in the footer of all pages as well as on a dark background.
-
-<Canvas>
-  <Story name="UNDP Logo - White" parameters={{ 
-    backgrounds: { default: 'gray'},
-    docs: {
-      inlineStories: false,
-      iframeHeight: '100%'
-    }
-  }}>
-    return <Logo src={logowhite} alt={'UNDP Logo'}></Logo>;
-  </Story>
-</Canvas>
-
-3. PNUD logo - Blue [Download](https://github.com/undp/design-system/blob/develop/stories/assets/images/pnud-logo-blue.svg)
+1. PNUD logo - Blue [Download](https://github.com/undp/design-system/blob/develop/stories/assets/images/pnud-logo-blue.svg)
 
 This is the default PNUD logo and is used primarily in the header of every page as well as country sites. 
 
@@ -78,7 +52,7 @@ This is the default PNUD logo and is used primarily in the header of every page 
   </Story>
 </Canvas>
 
-4. PNUD logo - White [Download](https://github.com/undp/design-system/blob/develop/stories/assets/images/pnud-logo-white.svg)
+2. PNUD logo - White [Download](https://github.com/undp/design-system/blob/develop/stories/assets/images/pnud-logo-white.svg)
 
 The PNUD white logo is primarily used in the footer of all pages as well as on a dark background. 
 
@@ -91,6 +65,32 @@ The PNUD white logo is primarily used in the footer of all pages as well as on a
     }
   }}>
     return <Logo src={pnudwhite} alt={'UNDP Logo'}></Logo>;  
+  </Story>
+</Canvas>
+
+3. UNDP Logo - Blue [Download](https://github.com/undp/design-system/blob/develop/stories/assets/images/undp-logo-blue.svg)
+
+This is the default logo and is used primarily in the header of every page as well as country sites.
+
+<Canvas>
+  <Story name="UNDP Logo - Blue" parameters={{ backgrounds: { default: 'white'}}}>
+    return <Logo src={logo} alt={'UNDP Logo'}></Logo>;
+  </Story>
+</Canvas>
+
+4. UNDP Logo - White [Download](https://github.com/undp/design-system/blob/develop/stories/assets/images/undp-logo-white.svg)
+
+The UNDP white logo is primarily used in the footer of all pages as well as on a dark background.
+
+<Canvas>
+  <Story name="UNDP Logo - White" parameters={{ 
+    backgrounds: { default: 'gray'},
+    docs: {
+      inlineStories: false,
+      iframeHeight: '100%'
+    }
+  }}>
+    return <Logo src={logowhite} alt={'UNDP Logo'}></Logo>;
   </Story>
 </Canvas>
 
