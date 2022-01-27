@@ -33,6 +33,7 @@ export const parameters = {
   },
    options: {
     storySort: {
+      method: 'alphabetical',
       order: ['Getting started', ['Intro', 'How to use our design system?', 'Browser support'],'Foundation','Components', ,['Navigation components',['Breadcrumbs'],['Main Navigation']],'Patterns', 'Utilities','Templates' ],
     },
   },
