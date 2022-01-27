@@ -64,11 +64,8 @@
     overflow-y: auto;
 
     > li {
-      border-top: 1px solid $color-gray-400;
-      cursor: pointer;
+      @extend %selectoption;
       list-style: none;
-      margin-bottom: 0;
-      padding-left: 0;
 
       .form-check {
         &:hover {
@@ -181,6 +178,10 @@
     }
     ul {
       padding: 0 $spacing-16;
+
+      li {
+        padding-right: 0;
+      }
     }
 
     .has-submenu {

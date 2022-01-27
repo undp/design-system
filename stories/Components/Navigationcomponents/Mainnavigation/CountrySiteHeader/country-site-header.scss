@@ -103,21 +103,13 @@
       
 
       .icon-search {
-        background: none;
-        border: 0;
-        display: inline-flex;
+        @extend %header-icon;
         margin-left: $spacing-16;
-        padding: 0;
-        cursor: pointer;
       }
 
       .icon-globe {
-        background: none;
-        border: 0;
-        display: inline-flex;
+       @extend %header-icon;
         margin-left: 1.75rem;
-        padding: 0;
-        cursor: pointer;
         @include devicebreak(mediumonlytab) {
             display: none;
         }

@@ -7,22 +7,17 @@
   display: flex;
   position: relative;
 
-
   input {
     @include transition(all 200ms ease-in-out);
+    @extend %expand_search;
 
-    background-color: transparent;
-    border: 0;
-    border-bottom: 1px solid $color-black;
-    border-radius: 0;
+    background-color: $color-white;
+    padding: 0;
     box-sizing: border-box;
-    cursor: pointer;
     font-size: $font-size-14;
     height: 2.675rem;
-    line-height: 1.75rem;
     position: relative;
     width: 0;
-    z-index: 3;
 
     &:focus {
       outline: none;
@@ -31,19 +26,16 @@
 
   &.open {
     input {
-      background-color: $color-white;
-      cursor: text;
       outline: none;
       padding-left: 0.8125rem;
+      padding-right: $spacing-24;
       width: calc(100% - 1.6875rem);
       z-index: 1;
     }
   }
 
   button {
-    border: 0;
-    border-bottom: 1px solid #000;
-    cursor: pointer;
+    @extend %expand_search;
     height: 2.625rem;
     width: 1.6875rem;
     z-index: 2;
@@ -75,7 +67,7 @@
     }
     &.open {
       input {
-        padding-left: 0;
+        padding-left: $spacing-24;
         padding-right: 0.8125rem;
       }
     }

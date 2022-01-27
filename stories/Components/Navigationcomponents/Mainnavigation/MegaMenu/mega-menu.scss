@@ -4,10 +4,7 @@
 
 .mega-nav-option {
   @include transform(translateX(-50%));
-
-  -webkit-backdrop-filter: blur(18px);
-  backdrop-filter: blur(18px);
-  background: rgba(247, 247, 247, 0.8);
+  @extend %frosted-bg;
   box-sizing: border-box;
   display: none;
   left: 50%;

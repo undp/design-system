@@ -29,10 +29,7 @@
   }
 
   &-head {
-    align-items: center;
-    border-bottom: 1px solid $color-white;
-    justify-content: space-between;
-    margin-bottom: $spacing-32;
+    @extend %footer-block;
     padding-bottom: $spacing-48;
 
     @include devicebreak(medium) {
@@ -41,10 +38,7 @@
   }
 
   &-top {
-    align-items: center;
-    border-bottom: 1px solid $color-white;
-    justify-content: space-between;
-    margin-bottom: $spacing-32;
+    @extend %footer-block;
     padding-bottom: $spacing-32;
 
     @include devicebreak(medium) {

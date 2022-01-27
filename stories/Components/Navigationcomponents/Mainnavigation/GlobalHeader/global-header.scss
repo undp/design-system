@@ -110,24 +110,16 @@
       }
 
       .icon-globe {
-        background: none;
-        border: 0;
-        display: inline-flex;
-        padding: 0;
-        cursor: pointer;
+        @extend %header-icon;
         @include devicebreak(mediumonlytab) {
           display: none;
         }
       }
 
       .icon-search {
-        background: none;
-        border: 0;
-        display: inline-flex;
+        @extend %header-icon;
         margin-left: $spacing-16;
         margin-right: $spacing-12;
-        padding: 0;
-        cursor: pointer;
       }
     }
   }

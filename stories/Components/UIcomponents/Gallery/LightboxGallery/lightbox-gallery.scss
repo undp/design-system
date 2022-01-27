@@ -79,6 +79,7 @@
           @extend %no-animation;
           background-image: none;
           line-height: 0;
+          display: block;
         }
 
         &:hover,
@@ -111,9 +112,11 @@
         }
 
         .image {
+          @include devicebreak(medium) {
+            overflow: hidden;
+          }
           @include devicebreak(xlarge) {
             min-height: 200px;
-            overflow: hidden;
           }
 
           img {

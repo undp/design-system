@@ -99,10 +99,7 @@
       }
 
       button {
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        display: block;
+        @extend %button;
         float: right;
         height: 1.25rem;
         margin-right: 1.188rem;
