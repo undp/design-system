@@ -43,7 +43,7 @@
     height: $spacing-08;
     border-right: 2px solid $color-dark-red;
     border-top: 2px solid $color-dark-red;
-    @include transition(all 0.3s);
+    @include transition(transform 0.3s);
     @include transform(translate(0, 0));
   }
 
