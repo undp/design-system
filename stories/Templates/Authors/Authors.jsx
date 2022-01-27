@@ -53,11 +53,10 @@ const Authors = ({
           </div>
         </div>
         <div className="grid-x grid-margin-x mobile-author-filter">
-          <div className="cell small-12 sort-btn">
-            <CtaButton label={buttonData.sort} Type="Secondary" />
-          </div>
-          <div className="cell small-12 close-btn">
-            <CtaButton label={buttonData.close} Type="Secondary" />
+          <div className="cell small-12 ">
+            <button className="button button-secondary sort-filter">
+              {buttonData.sort}<span>{buttonData.close}</span>
+            </button>
           </div>
         </div>
         <div className="grid-x grid-margin-x author-filter">

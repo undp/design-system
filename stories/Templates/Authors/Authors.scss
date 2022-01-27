@@ -64,17 +64,17 @@
     display: none;
   }
 
-  .close-btn {
-    display: none;
-
-    &.show-close {
-      display: block;
-    }
-
-    .button {
-      &.button-secondary {
-        background-color: $color-gray-300;
-        color: $color-black;
+  .sort-filter{
+    width:100%;
+    span{
+      display: none;
+      font-size: 1rem;}
+    &.close{
+      font-size: 0;
+      background-color: $color-gray-300;
+      color: $color-black;
+      span{
+        display: block;
       }
     }
   }
