@@ -4,8 +4,14 @@
 .author-card {
   a {
     display: block;
-    margin-bottom: $font-size-32;
+    margin-bottom: $spacing-48;
     word-break: break-word;
+    padding-top: $spacing-24;
+    border-top: 2px solid $color-black;
+    
+    @include devicebreak(medium) {
+      margin-bottom:  3.75rem;
+    }
 
     &:hover {
       .cta__link::after {
