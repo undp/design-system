@@ -18,7 +18,7 @@ export const ContentCardImage = ({
 }) => {
   let hovercolors_variant = hovercolors_options[`${Hovercolors}`];
   return (
-    <div className="grid-x grid-margin-x">
+    <div className="grid-x grid-margin-x content-card-wrapper">
       {data.map((item, index) => (
         <div key={index} className="cell medium-4">
           <div className={cls('content-card', `${hovercolors_variant}`)}>

@@ -17,7 +17,7 @@
   }
 
   &-list {
-    > .cell {
+    > div {
       margin-top: $spacing-32;
 
       @include devicebreak(small) {

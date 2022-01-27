@@ -15,7 +15,9 @@ export function lightbox_Gallery() {
       var gImgHeight = $(this).siblings('.image').height();
       if (gDesHeight > gImgHeight) {
         $(this).addClass('caption_top');
-      } 
+      } else {
+        $(this).removeClass('caption_top');
+      }
     });
 
     $('.lightbox-gallery-images li').click(function(){
