@@ -118,8 +118,8 @@ div.content-card {
       }
   }
 
-  &-container {
-    .cell {
+  &-wrapper {
+    > div {
       margin-bottom: $spacing-32;
     }
   }

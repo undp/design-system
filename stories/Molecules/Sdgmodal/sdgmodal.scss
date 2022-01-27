@@ -26,7 +26,7 @@
     width: calc(100% - 0.75rem);
   }
 
-  > .grid-x {
+  .sdg-modal-dialog {
     @include transition(all 0.4s ease);
   }
 
@@ -106,7 +106,7 @@ body.sdgmodal-open {
     }
 
     @include devicebreak(small) {
-      > .grid-x {
+      .sdg-modal-dialog {
         flex-direction: column-reverse;
 
         > div:first-child {

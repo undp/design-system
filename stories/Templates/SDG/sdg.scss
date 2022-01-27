@@ -27,7 +27,7 @@
       opacity: 0;
       visibility: hidden;
 
-      > .grid-x {
+      .sdg-modal-dialog {
         @include transform(translateX(100%));
       }
 
@@ -36,7 +36,7 @@
         transition-duration: 0.2s;
         visibility: visible;
 
-        > .grid-x {
+        .sdg-modal-dialog {
           @include transform(translateX(0));
         }
       }
@@ -62,12 +62,12 @@
 
   .sdg-card-list {
     .modal-sdg {
-      > .grid-x {
+      .sdg-modal-dialog {
         @include transform(translateX(-100%));
       }
 
       &.sdg-open {
-        > .grid-x {
+        .sdg-modal-dialog {
           @include transform(translateX(0));
         }
       }

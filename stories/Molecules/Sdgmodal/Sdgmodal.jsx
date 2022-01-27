@@ -9,7 +9,7 @@ export const Sdgmodal = ({
   statsData, goalcount, goaldata, contentdata, storyBtn, Sdgcontenttitle, modaltitle, description, goaltitle, sdgimg, alt, nextcardtitle,
 }) => (
   <div className="modal-sdg modal-dialog" role="dialog" aria-modal="true" tabIndex="0" aria-label="SDG-Modal">
-    <div className="grid-x height-full">
+    <div className="grid-x sdg-modal-dialog">
       <div className="cell medium-2 modal-header show-large">
         <button type="button" className="close" data-dismiss="modal" aria-label="Close" />
       </div>
