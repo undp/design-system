@@ -140,6 +140,42 @@
   border: none;
 }
 
+%header-icon {
+  background: none;
+  border: 0;
+  display: inline-flex;
+  padding: 0;
+  cursor: pointer;
+}
+
+%frosted-bg {
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  background: rgba(247, 247, 247, 0.8);
+}
+
+%footer-block {
+  align-items: center;
+  border-bottom: 1px solid $color-white;
+  justify-content: space-between;
+  margin-bottom: $spacing-32;
+}
+
+%mobile-nav {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+%button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
 %sidebar {
   align-items: center;
   cursor: pointer;
@@ -380,6 +416,13 @@
   max-width: 100%;
 }
 
+%expand_search {
+  border: 0;
+  border-bottom: 1px solid $color-black;
+  border-radius: 0;
+  cursor: pointer;
+}
+
 %carousel_arrow {
   display: inline-block;
   background: transparent;
@@ -468,6 +511,15 @@
     color: $color-gray-600;
   }
 }
+
+%selectoption {
+  border-top: 1px solid $color-gray-400;
+  cursor: pointer;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+
 
 //burmese lang
 :lang(my) {

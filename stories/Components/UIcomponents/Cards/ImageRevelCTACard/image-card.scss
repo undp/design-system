@@ -27,7 +27,6 @@
     h5 {
       margin-bottom: 0;
       padding: $spacing-32 $spacing-24 0;
-
       @include devicebreak(large) {
         @include translate(0, 100%);
         @include transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));

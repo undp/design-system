@@ -1,11 +1,14 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+
 /* frosted-background start */
 .frosted-background {
   position: relative;
 
   &::before {
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
-    background: rgba(247, 247, 247, 0.8);
+    @extend %frosted-bg;
     content: '';
     height: 100%;
     position: absolute;

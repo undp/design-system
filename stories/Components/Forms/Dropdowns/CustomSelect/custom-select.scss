@@ -61,11 +61,8 @@
     }
 
     li {
-      border-top: 1px solid $color-gray-400;
-      cursor: pointer;
+      @extend %selectoption;
       display: block;
-      margin-bottom: 0;
-      padding: 0;
       position: relative;
 
       span {
