@@ -69,7 +69,6 @@
         mask: inherit;
       }
     }
-
     &::after {
       @include transition(0.2s ease-in-out);
       background-color:$color-blue-600;
