@@ -94,7 +94,8 @@ export const navigationInitialize = (locale) => {
     $('.mobile-sub-menu').addClass('show');
   });
 
-  $('.mob-lang-switcher').click(() => {
+  $('.mob-lang-switcher').click((ev) => {
+    ev.preventDefault();
     $('.mob-sub-lang').addClass('show');
     $('.mobile-links').addClass('hide');
   });

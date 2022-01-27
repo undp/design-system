@@ -64,10 +64,11 @@
       width: 25px;
 
       @include devicebreak(small) {
-        background:url(#{$img-path-Icon}/Language.svg) no-repeat left center;
+        background:transparent url(#{$img-path-Icon}/Language.svg) no-repeat left center;
+        -webkit-mask: inherit;
+        mask: inherit;
       }
     }
-
     &::after {
       @include transition(0.2s ease-in-out);
       background-color:$color-blue-600;
@@ -78,7 +79,9 @@
       margin-left: $spacing-08;
       width: 15px;
       @include devicebreak(small) {
-        background:url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
+        background:transparent url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
+        -webkit-mask: inherit;
+        mask: inherit;
       }
     }
 

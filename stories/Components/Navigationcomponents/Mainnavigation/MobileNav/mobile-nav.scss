@@ -147,6 +147,7 @@
       padding: 0;
 
       li {
+        padding-left: 0;
         list-style: none;
 
         span {
@@ -238,7 +239,13 @@
         }
       }
     }
-
+    .mob-sub-lang{
+      .sub-sub-lang {
+        li{
+          padding-right: 0;
+        }
+      }
+    }
     .back-nav {
       img {
         @include transform(rotateY(180deg));
