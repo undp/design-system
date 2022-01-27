@@ -18,54 +18,11 @@
   top: 7.125rem;
   z-index: 8;
   box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
-  animation-fill-mode: backwards;
-
-
 
   &.show-mega {
     display: block;
-    @extend %mega-animation;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-
-    > div{
-      -webkit-animation-delay: .3s;
-      animation-delay: .3s;
-      -webkit-animation-duration: .3s;
-      animation-duration: .3s;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-      -webkit-animation-name: transition-opacity;
-      animation-name: transition-opacity;
-    }
   }
-  &.show-mega-back {
-    display: block;
-    box-shadow: none;
-    @extend %mega-animation-back;
 
-    > div{
-      animation-direction: alternate;
-
-    }
-  }
-  &.no-effect{
-    -webkit-animation-delay: 0s;
-    animation-delay: 0s;
-    -webkit-animation-duration: 0s;
-    animation-duration: 0s;
-
-    > div{
-      opacity: 1;
-      -webkit-animation-delay: 0s;
-      animation-delay: 0s;
-      -webkit-animation-duration: 0s;
-      animation-duration: 0s;
-    }
-  }
-  > div{
-    opacity: 0;
-  }
   .submenu {
     margin: 0;
     padding: 0;
@@ -189,12 +146,51 @@
   }
 }
 
+.global-header{
+  .mega-nav-option{
+    animation-fill-mode: backwards;
+    &.show-mega {
+      @include animation(circle-square-transition forwards 0.3s cubic-bezier(.25, .27, .11, .99));
+  
+      > div{
+        @include animation(transition-opacity forwards 0.3s 0.3s);
+      }
+    }
+    &.show-mega-back {
+      display: block;
+      box-shadow: none;
+      @include animation(circle-square-transition-back 0.3s cubic-bezier(.25, .27, .11, .99));
+  
+      > div{
+        animation-direction: alternate;
+      }
+    }
+    &.no-effect{
+      @include animation(none 0s 0s);
+      
+  
+      > div{
+        opacity: 1;
+        @include animation(none 0s 0s);
+      }
+    }
+    > div{
+      opacity: 0;
+    }
+  }
+}
+
 [dir='rtl'] {
   .mega-nav-option {
     padding: $spacing-64 $spacing-48 0 0;
     .submenu li {
       padding-left: 3rem;
       padding-right: 0;
+      a{
+        .external-link {
+          margin: 2px $spacing-16 0 0;
+        }
+      }
     }
 
     .mega-image {

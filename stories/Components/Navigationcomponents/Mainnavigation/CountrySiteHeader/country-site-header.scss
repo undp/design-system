@@ -3,120 +3,124 @@
 @import '../../../../assets/scss/breakpoints';
 
 .country-header {
-  @extend %header;
+  .header{
+    @extend %header;
 
-  @include devicebreak(mediumonlytab) {
-    height: 4.6875rem;
-  }
-  .site-title {
-    font-size: $font-size-20;
-    margin-top: -0.25rem;
-    @include devicebreak(xlarge) {
-      width: 14.4375rem;
-      margin-right: $spacing-32;
+    @include devicebreak(mediumonlytab) {
+      height: 4.6875rem;
     }
-    
-    span:first-child {
-      border-bottom: 1px solid $color-gray-500;
-      color: $color-gray-600;
-      font-size: $font-size-12;
-      padding-bottom: 1px;
-      margin: 0;
-      display: inline-block;
-    }
-
-    span{
-      display: flex;
-      margin-top: 0.3rem;
-    }
-  }
-  .top-left {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-
-    .logo {
-      @extend %img_none;
-
-      align-items: flex-start;
-      display: flex;
-      height: 7.1875rem;
-      position: relative;
-      z-index: 2;
-
-      @include devicebreak(mediumonlytab) {
-        height: 4.6875rem;
+    .site-title {
+      font-size: $font-size-20;
+      margin-top: -0.25rem;
+      @include devicebreak(xlarge) {
+        width: 14.4375rem;
+        margin-right: $spacing-32;
+      }
+      
+      span:first-child {
+        border-bottom: 1px solid $color-gray-500;
+        color: $color-gray-600;
+        font-size: $font-size-12;
+        padding-bottom: 1px;
         margin: 0;
+        display: inline-block;
       }
 
-      img {
-        @extend %logo;
+      span{
+        display: flex;
+        margin-top: 0.3rem;
+      }
+    }
+    .top-left {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
 
-        margin-right: $spacing-24;
+      .logo {
+        @extend %img_none;
 
-        @include devicebreak(small) {
-          margin-right: $spacing-12;
+        align-items: flex-start;
+        display: flex;
+        height: 7.1875rem;
+        position: relative;
+        z-index: 2;
+
+        @include devicebreak(mediumonlytab) {
+          height: 4.6875rem;
+          margin: 0;
+        }
+
+        img {
+          @extend %logo;
+
+          margin-right: $spacing-24;
+
+          @include devicebreak(small) {
+            margin-right: $spacing-12;
+          }
         }
       }
     }
-  }
 
-  .align-content-middle {
-    align-items: center;
-    position: relative;
-  }
-
-  .menu {
-    align-items: center;
-    display: flex;
-    height: 7.1875rem;
-
-    @include devicebreak(mediumonlytab) {
-      display: none;
+    .align-content-middle {
+      align-items: center;
+      position: relative;
     }
 
-    li {
-      margin: $spacing-12 0 $spacing-12 3.6875rem;
+    .menu {
+      align-items: center;
+      display: flex;
+      height: 7.1875rem;
 
-      &:first-child {
-        margin-left: 0;
-      }
-    }
-  }
-
-  .top-right {
-    display: flex;
-    justify-content: flex-end;
-
-    @include devicebreak(xlarge) {
-      padding-right: $spacing-90;
-      box-sizing: border-box;
-    }
-
-    @include devicebreak(mediumonlytab) {
-      .dropdown-language {
+      @include devicebreak(mediumonlytab) {
         display: none;
       }
+
+      li {
+        margin: $spacing-12 0 $spacing-12 3.6875rem;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
     }
 
-    
+    .top-right {
+      display: flex;
+      justify-content: flex-end;
 
-    .icon-search {
-      background: none;
-      border: 0;
-      display: inline-flex;
-      margin-left: $spacing-16;
-      padding: 0;
-    }
+      @include devicebreak(xlarge) {
+        padding-right: $spacing-90;
+        box-sizing: border-box;
+      }
 
-    .icon-globe {
-      background: none;
-      border: 0;
-      display: inline-flex;
-      margin-left: 1.75rem;
-      padding: 0;
       @include devicebreak(mediumonlytab) {
+        .dropdown-language {
           display: none;
+        }
+      }
+
+      
+
+      .icon-search {
+        background: none;
+        border: 0;
+        display: inline-flex;
+        margin-left: $spacing-16;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .icon-globe {
+        background: none;
+        border: 0;
+        display: inline-flex;
+        margin-left: 1.75rem;
+        padding: 0;
+        cursor: pointer;
+        @include devicebreak(mediumonlytab) {
+            display: none;
+        }
       }
     }
   }
