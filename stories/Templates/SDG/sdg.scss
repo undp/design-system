@@ -49,6 +49,18 @@
     @include devicebreak(mediumonlytab) {
       margin-top: 4.6875rem;
     }
+
+    .pagehero-content {
+      padding-top: $spacing-64;
+
+      @include devicebreak(small) {
+        padding-top: $spacing-32;
+
+        h2 {
+          margin-top: 10.313rem;
+        }
+      }
+    }
   }
 }
 

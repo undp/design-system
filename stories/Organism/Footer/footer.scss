@@ -31,6 +31,7 @@
   &-head {
     @extend %footer-block;
     padding-bottom: $spacing-48;
+    margin-bottom: 1.188rem;
 
     @include devicebreak(medium) {
       margin-bottom: $spacing-48;
@@ -105,4 +106,30 @@
   }
 }
 
+.icons-search {
+  display: flex;
+  margin: $spacing-32 $spacing-16 0;
+
+  @include devicebreak(medium) {
+    justify-content: end;
+    margin: 0 0 $spacing-32 0;
+  }
+
+  & span {
+    display: inline-flex;
+  }
+
+  & .icon-globe {
+    margin-right: $spacing-16;
+  }
+}
+
+[dir=rtl] {
+  .icons-search {
+    & .icon-globe {
+      margin-right: 0;
+      margin-left: $spacing-16;
+    }
+  }
+}
 /* footer end */
