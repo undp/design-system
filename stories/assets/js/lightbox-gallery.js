@@ -9,8 +9,10 @@ export function lightbox_Gallery() {
   });
 
   // caption alignment set according image block
-  $(window).load(() => {
+  const captionalignment = () => {
     $('.image__description').each(function () {
+
+      // caption class add
       var gDesHeight = $(this).height();
       var gImgHeight = $(this).siblings('.image').height();
       if (gDesHeight > gImgHeight) {
@@ -20,9 +22,17 @@ export function lightbox_Gallery() {
       }
     });
 
+    // frostedbackground class add
     $('.lightbox-gallery-images li').click(function(){
       $('.goverlay, .gloader').remove();
       $('.gcontainer').addClass('frosted-background');
     })
-  });
+  }
+
+  //function load
+  window.onload = function() {
+  if(document.readyState == 'complete') {
+      captionalignment();
+    }
+  };
 }
