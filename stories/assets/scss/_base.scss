@@ -39,41 +39,32 @@
   }
 }
 
-.scrollbar-horizontal {
+.custom-scrollbar, 
+%custom-scrollbar {
+  scroll-behavior: smooth;
   overflow-x: auto;
-
-  &::-webkit-scrollbar-track {
-    border-bottom: 1px solid $color-black;
-    margin-right: -1px;
-  }
-
-  &::-webkit-scrollbar {
-    height: 4px;
-    margin-right: 2px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: $color-black;
-  }
-}
-
-.scrollbar-vertical {
   overflow-y: auto;
 
-  &::-webkit-scrollbar-track {
-    border-right: 1px solid $color-black;
-    margin-bottom: -1px;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
   }
 
-  &::-webkit-scrollbar {
-    margin-right: 2px;
-    width: 4px;
+  &::-webkit-scrollbar-track {
+    background: $color-black;
+    border: 2px solid $color-white;
+    background-clip: padding-box;
+  }
+
+  &::-webkit-scrollbar-corner {
+   display: none;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $color-black;
+    background: $color-black;
   }
 }
+
 
 /* animation start */
 .left-right {

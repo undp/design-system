@@ -37,6 +37,7 @@
 
   &-list {
     max-height: calc(100% - 82px);
+    @extend %custom-scrollbar;
 
     @include devicebreak(medium) {
       max-height: 323px;

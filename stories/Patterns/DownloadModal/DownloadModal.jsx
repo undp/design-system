@@ -46,7 +46,7 @@ export const DownloadModal = ({
               )}
               <div className="download-content">
                 {Category === 'Multiplelanguages' && <CustomSelect text={select} />}
-                <div className={cls('download-list', 'scrollbar-vertical', `${category_variant}`)}>
+                <div className={cls('download-list', `${category_variant}`)}>
                   {data.map((item, index) => (
                     <DownloadRow title={item.title} subtitle={item.subtitle} dataValue={item.dataValue} key={index} value={index} />
                   ))}
