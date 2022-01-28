@@ -213,9 +213,9 @@
   &:hover {
     border-color: $color-light-pink;
   }
-
   &:focus-visible {
-    outline: $color-blue-500 solid 2px;
+    box-shadow: 0 0 4px $color-blue-800;
+    outline: 0;
   }
 }
 
@@ -346,6 +346,10 @@
   min-height: 100px;
   padding: 0 $spacing-16;
   width: 100%;
+  &:focus{
+    outline:0;
+    box-shadow: 0 0 4px $color-blue-800;
+  }
 }
 
 %select_rtl {
