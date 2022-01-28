@@ -27,7 +27,7 @@ const MobileNav = ({
             {navigationData.map((item, index) => (
               <li key={index}>
                 <a
-                  className="cta__link cta--arrow"
+                  className="cta__link cta--space"
                   href="#"
                   id={item.id}
                 >

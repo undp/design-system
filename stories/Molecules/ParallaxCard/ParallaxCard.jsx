@@ -28,7 +28,7 @@ const ParallaxCard = ({
 
   return (
     <>
-      <article className={cls('grid-x parallax-card', `${addClass}`, `${image}`, `${text}`)}>
+      <div className={cls('grid-x parallax-card', `${addClass}`, `${image}`, `${text}`)}>
         <div className="cell medium-3 small-10 parallax-card__image">
           <img src={Img} alt={alt} data-speed="-1" />
         </div>
@@ -39,7 +39,7 @@ const ParallaxCard = ({
             <span className="cta__link cta--space">{button}</span>
           </a>
         </div>
-      </article>
+      </div>
     </>
   );
 };
