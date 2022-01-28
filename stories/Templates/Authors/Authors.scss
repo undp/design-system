@@ -78,6 +78,7 @@
   .author-filter {
     @include devicebreak(small) {
       display: none;
+      margin-top: $spacing-24;
 
       &.author-filter-show {
         display: block;
@@ -122,12 +123,10 @@
   }
 
   .author-card {
-    border-top: 2px solid $color-black;
     margin-top: 3.75rem;
-    padding-top: $spacing-24;
 
     @include devicebreak(small) {
-      margin-top: $spacing-48;
+      margin-top: 0;
 
       h6 {
         font-size: $font-size-16;
@@ -136,12 +135,17 @@
           font-size: 0.875rem;
         }
       }
+      > div:first-child a {
+        border-top: 0;
+      }
     }
   }
 
   .view-btn-cell {
-    margin-bottom: 4.1875rem;
-    margin-top: 3.75rem;
+    margin-bottom: 4.188rem;
+    @include devicebreak(medium) {
+      margin-bottom: 13.563rem;
+    }
   }
 
   .select-box {
@@ -157,6 +161,14 @@
 
     .options-container {
       min-width: inherit;
+    }
+
+    &.expanded {
+      border-bottom: 2px solid transparent;
+    }
+
+    @include devicebreak(small) {
+      margin-top: $spacing-24;
     }
   }
 }
