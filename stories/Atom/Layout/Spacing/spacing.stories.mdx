@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Spacing } from './spacing';
 
 <Meta title="Foundation/Layout/Spacing" component={Spacing} parameters={{
@@ -9,36 +9,37 @@ import { Spacing } from './spacing';
   }}/>
 
 <style>{`
-  div#story--atoms-spacing--spacing {
-    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
-    box-sizing: inherit;
-  }
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }  
+  #story--foundation-icons--icons p {
+    font-size: 14px;
+    margin-top: 10px;
+  } 
 `}</style>
 
-# Spacing Component
-Space units create visual rhythm and balance.
+# Spacing
+The Spacing units create visual rhythm and balance.
 
-The following units can be applied to margin or padding properties, vertically or horizontally.
+### When to use:
+- To create spacing before, after, or in-between texts.
 
-<Story name="Spacing">
-  return <Spacing></Spacing>;
-</Story>
+### States
+There are thirteen states with different spacing widths.
+<Canvas>
+  <Story name="Spacing">
+    return <Spacing></Spacing>;
+  </Story>
+</Canvas>
 
 ### Usage
+Use of standard spaces are already applied on different components, if you want to change the space, that can be done in stories/assets/scss/_varaibles.scss.
 
-- Take HTML from the HTML tab in canvas
-- <u>To use SCSS include the following files in your implementation</u>
-- Include the common SCSS files like normalize, variables from <code>assets/scss</code>
-- Component SCSS file: <code>spacing.scss</code>
-- Spacing variables are defined in <code>variables.scss</code>file
-- <u>To use CSS include the following files in your implementation</u>
-- The compiled CSS file from <code>assets/css/style.css</code>
+### CSS and JS References
+
+### CSS:
+NA
+
+### JS:
+NA
+
+### Changelog
+1.0 — Released component
+

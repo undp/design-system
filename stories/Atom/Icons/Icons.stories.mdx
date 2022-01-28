@@ -21,18 +21,18 @@ const arrfor = data.icons;
   #story--foundation-icons--icons > div > div {
       margin: 0 auto;
   }
+  #story--foundation-icons--icons p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
 `}</style>
 
-# Icons Component
-Icons can grab attention and draw users into a piece of content. They can help users quickly understand the context in which they are placed.
+# Icons
+The Icon components can grab attention and draw users into a piece of content. They can help users quickly understand the context in which they are placed.
 
-## When to use
-Use icons where the content is complex and dense to help users comprehend the available actions.
-Icons can be used in place of long words or phrases, saving space.
-Use Icons that are recognizable and accompany corresponding text labels where possible to make sure the users understand the context.
-
-- Icons animation was done by the css
-- Icons are saved in <code>assets/images/Icons</code> folder in SVG format.
+### When to use:
+- When content is dense and complex to help comprehend the users the available actions
+- When space needs to be saved instead of using words or long phrases.
 
 <Canvas>
   <Story name="Icons" parameters={{ docs: { source: { code: 
@@ -58,10 +58,16 @@ Use Icons that are recognizable and accompany corresponding text labels where po
   </Story>
 </Canvas>
 
-## Usage
+### Usage
 
-- Take HTML from the HTML tab in canvas
-- <u>To use SCSS include the following files in your implementation</u>
-- Include the common SCSS files like normalize, variables from <code>assets/scss</code>
-- <u>To use CSS include the following files in your implementation</u>
-- The compiled CSS file from <code>assets/css/style.css</code>
+- For svg icons download it from dist/images and use it on your webpage.
+- For CSS based icons eg: .arrow-expand, .external-link and .download-icon use these classes in **span** element and include **dist/css/icons.css** file.
+
+
+#### CSS and JS References
+
+#### CSS:
+Add the base layout style from **dist/css/base-minimal.css**
+
+#### JS:
+NA
