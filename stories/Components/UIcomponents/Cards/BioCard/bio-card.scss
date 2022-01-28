@@ -100,7 +100,7 @@ div.bio-card {
 }
 
 .bio-card-wrapper {
-  @extend .scrollbar-vertical;
+  @extend %custom-scrollbar;
 
   display: block;
   height: 100%;
