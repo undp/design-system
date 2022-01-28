@@ -101,6 +101,15 @@
       }
     }
   }
+
+  .country-page-wrapper {
+    .large-offset-1 {
+      @include devicebreak(medium) {
+        margin-left: 0;
+        margin-right: calc(8.33333% + 1.5rem / 2);
+      }
+    }
+  }
 }
 
 .footer {
