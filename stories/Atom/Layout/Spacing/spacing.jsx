@@ -4,7 +4,6 @@ import './spacing.scss';
 export const Spacing = () => (
   <div className="spacing-wrapper">
     <div className="spacing__row">
-      <div className="spacing__title Primary">Spacing</div>
       <div className="spacing__define">
         <div className="spacing__name">
           <div className="spacing__label">spacing-01</div>
