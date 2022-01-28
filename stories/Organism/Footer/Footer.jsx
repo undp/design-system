@@ -7,6 +7,11 @@ import { FooterConditions } from '../../Molecules/FooterNavigation/FooterConditi
 import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/FooterIcons';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 import { accordion } from '../../assets/js/accordion';
+import { Icons } from '../../Atom/Icons/Icons';
+import IconsGlobe from '../../assets/icons/Globe.svg';
+import IconsGlobeWhite from '../../assets/icons/Globe-white.svg';
+import IconsSearch from '../../assets/icons/Search.svg';
+import IconsSearchWhite from '../../assets/icons/Search-white.svg';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
@@ -38,6 +43,28 @@ export const Footer = ({
             <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-3" arialabel="footer-item-3" variant={args.color === 'default' ? args.color : 'inverted'} />
             <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-4" arialabel="footer-item-4" variant={args.color === 'default' ? args.color : 'inverted'} />
             <div className="cell medium-4">
+              <div className='icons-search'>
+                {args.color === 'default' ? (
+                  <>
+                    <span className="icon-globe">
+                      <Icons src={IconsGlobeWhite} alt="icon-global" />
+                    </span>
+                    <span className="icon-search">
+                      <Icons src={IconsSearchWhite} alt="icon-search" />
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className="icon-globe">
+                      <Icons src={IconsGlobe} alt="icon-global" />
+                    </span>
+                    <span className="icon-search">
+                      <Icons src={IconsSearch} alt="icon-search" />
+                    </span>
+                  </>
+                )}
+                
+              </div>
               <FooterConditions footerdata={menudata} variant={args.color === 'default' ? args.color : 'inverted'} />
               <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
             </div>
