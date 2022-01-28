@@ -242,9 +242,9 @@
 
 %ctaimg {
   content: "";
-  height: 20px;
+  height: 1.438rem;
   margin-left: $spacing-12;
-  width: 13px;
+  width: 0.906rem;
 }
 
 %field__image {
@@ -595,7 +595,7 @@
     display: block;
     left: 1.25rem;
     height: $spacing-16;
-    @include transition(width 0.5s);
+    @include transition(width 0.3s);
 
     &::before {
       @extend %pseudo-icon;
@@ -604,6 +604,7 @@
       background-color: $color-red;
       right: 0;
       top: 7px;
+      display: none;
     }
 
     &::after {
@@ -621,6 +622,9 @@
   &:hover {
     i {
       width: $spacing-80;
+      &::before {
+        display: unset;
+      }
     }
   }
 }

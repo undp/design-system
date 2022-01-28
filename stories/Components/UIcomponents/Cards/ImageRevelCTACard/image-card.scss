@@ -67,6 +67,9 @@
     .cta__link {
       i {
         width: 5rem;
+        &::before {
+          display: unset;
+        }
       }
     }
   }

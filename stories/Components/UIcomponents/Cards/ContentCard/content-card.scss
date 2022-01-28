@@ -114,6 +114,9 @@ div.content-card {
     .cta--arrow {
         i {
           width: $spacing-80;
+          &::before {
+            display: unset;
+          }
         }
       }
   }
