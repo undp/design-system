@@ -84,9 +84,6 @@ class Select {
 
   focusItem(element) {
     this.defocusItem(document.getElementById(this.optionSelectedId));
-
-    element.classList.add('focused');
-
     this.$selectOptions.attr('aria-activedescendant', element.id);
     this.optionSelectedId = element.id;
     this.value = element.dataset.value;
@@ -108,7 +105,6 @@ class Select {
     if (!element) {
       return;
     }
-    element.classList.remove('focused');
   }
 
   checkKeyPress(evt) {

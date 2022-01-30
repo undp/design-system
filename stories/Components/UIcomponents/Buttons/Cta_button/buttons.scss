@@ -10,6 +10,16 @@
   cursor: pointer;
   justify-content: center;
   padding: $spacing-16 $spacing-24;
+  &:focus {
+    box-shadow: 0 0 4px $color-blue-800;
+    outline: 0;
+  }
+}
+button{
+  &:focus {
+    box-shadow: 0 0 4px $color-blue-800;
+    outline: 0;
+  }
 }
 
 .button.button-primary {
