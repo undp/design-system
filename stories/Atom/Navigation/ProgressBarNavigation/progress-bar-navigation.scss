@@ -54,6 +54,8 @@
 }
 
 .progress-bar {
+  @include transition(width .2s linear);
+
   height: 0.75rem;
   min-width: 1%;
   position: fixed;

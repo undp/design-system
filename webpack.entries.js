@@ -4,7 +4,7 @@ const cssPathPrefix = 'css';
 
 /*
 * Get entry points for webpack
-* CSS and JS seperatly 
+* CSS and JS seperately
 */
 module.exports = (type = 'css') => {
   let files = {};
@@ -12,7 +12,7 @@ module.exports = (type = 'css') => {
   let ignoreFiles = [
     './node_modules',
     './stories/assets/**/lib/**',
-    './stories/**/_*.scss', // no partials
+    './stories/**/_!(swiper)*.scss', // no partials
     './stories/**/normalize.scss', // merged atom into base styling
     './stories/**/style.scss', // we don't need this file
     './stories/Atom/**', // merged atom into base styling
@@ -45,6 +45,12 @@ module.exports = (type = 'css') => {
     // if base styling keep it in root
     if (file.indexOf('assets/scss') > 0) {
       objKey = `${cssPathPrefix}/${fileName}`;
+    }
+
+    // if scss is a partial then remove the leading '_'.
+    if (file.indexOf('/_') > 0) {
+      fileName = fileName.replace(/[_]/g, '');
+      objKey = `${cssPathPrefix}/components/${fileName}`
     }
 
     // add 'css' and 'js' prefix to create auto directory
