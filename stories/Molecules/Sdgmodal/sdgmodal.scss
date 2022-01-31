@@ -28,6 +28,7 @@
 
   .sdg-modal-dialog {
     @include transition(all 0.4s ease);
+    height: 100%;
   }
 
   .modal-header {
@@ -106,7 +107,7 @@ body.sdgmodal-open {
     }
 
     @include devicebreak(small) {
-      .sdg-modal-dialog {
+      > div {
         flex-direction: column-reverse;
 
         > div:first-child {
@@ -164,6 +165,19 @@ body.sdgmodal-open {
       h2,
       h3 {
         color: $sdg-red;
+      }
+      h2 {
+        font-size: $font-size-25;
+        @include devicebreak(medium) {
+          font-size: 3.438rem;
+          padding-left: $spacing-16;
+        }
+      }
+      h3 {
+        font-size: $font-size-20;
+        @include devicebreak(medium) {
+          font-size: 2.188rem;
+        }
       }
     }
 
