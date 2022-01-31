@@ -39,7 +39,7 @@ export function SdgModal() {
   });
 
   // Modal close on close button
-  $('.modal-sdg .close').on('click', () => {
+  $('.modal-sdg .close, .modal-sdg .modal-header').on('click', () => {
     $('.modal-sdg').removeClass('sdg-open');
     $('body').removeClass('sdgmodal-open');
     $($modalOpen).removeAttr('tabindex');
