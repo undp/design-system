@@ -83,6 +83,7 @@
           border-top: solid 1px $color-gray-400;
           display: block;
           padding: 0 0 0 $spacing-40;
+          overflow: visible;
         }
 
         button::after {
