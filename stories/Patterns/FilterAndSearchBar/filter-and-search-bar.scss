@@ -18,14 +18,7 @@
     max-width: 296px;
     padding-top: $spacing-24;
 
-    a {
-      &:first-child {
-        display: none;
-      }
-    }
-
     .chips {
-      display: inline-block;
       margin: 0 0.75rem 0.75rem 0;
     }
   }

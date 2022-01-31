@@ -22,9 +22,7 @@ const FilterAndSearchBar = ({
         <SelectTag {...args} text={data} eleId="4" />
 
         <span className="active-filter">{activeFilterText}</span>
-        <div className="selected-chips">
-          <Chips label="demo" Type="With X" />
-        </div>
+        <div className="selected-chips"></div>
         <button className='clear-search-filter'>{clearText}</button>
 
       </div>

@@ -26,22 +26,22 @@ const toggleFilter = function () {
     }
     if (el.is(':checked')) {
       const optionValue = $(this).siblings().text();
-      const chips = $(currentChipsWrapper).find('.chips:first-child').clone();
+      const chips = $('<a class="chips chips__cross" href="#" role="button">demo</a>').clone();
       chips.text(optionValue);
       chips.attr({'option-name': eleId });
       $(currentChipsWrapper).append(chips);
 
-      if (currentChipsWrapper.find('.chips__cross').length > 1) {
+      if (currentChipsWrapper.find('.chips__cross').length > 0) {
         $(currentChipsWrapper).siblings('.clear-search-filter').addClass('show-clear');
       }
-      if ($(currentChipsWrapper).find('.chips__cross').length > 1) {
+      if ($(currentChipsWrapper).find('.chips__cross').length > 0) {
         $(currentChipsWrapper).siblings('.active-filter').addClass('show-activefilter');
       }
     } else {
-      if (currentChipsWrapper.find('.chips__cross').length < 3) {
+      if (currentChipsWrapper.find('.chips__cross').length < 0) {
         currentChipsWrapper.siblings('.clear-search-filter').removeClass('show-clear');
       }
-      if (currentChipsWrapper.find('.chips__cross').length < 3) {
+      if (currentChipsWrapper.find('.chips__cross').length < 0) {
         currentChipsWrapper.siblings('.active-filter').removeClass('show-activefilter');
       }
       $(el).parents('.select-wrapper').find(`[option-name='${eleId}']`).remove();
@@ -52,7 +52,7 @@ const toggleFilter = function () {
     event.preventDefault();
     const el = $(this);
     const currentChipsWrapper = el.parents('.select-wrapper').find('.selected-chips');
-    if ($(currentChipsWrapper).find('.chips__cross').length < 3) {
+    if ($(currentChipsWrapper).find('.chips__cross').length < 2) {
       el.parents('.select-wrapper').find('.clear-search-filter').removeClass('show-clear');
       el.parents('.select-wrapper').find('.active-filter').removeClass('show-activefilter');
     }
@@ -73,7 +73,7 @@ const toggleFilter = function () {
   $(document).on('click', '.clear-search-filter', function () {
     const el = $(this);
     const currentChipsWrapper = el.parents('.select-wrapper').find('.selected-chips');
-    $(currentChipsWrapper).find('a').not(':first-child').remove();
+    $(currentChipsWrapper).find('a').remove();
     el.parents('.select-wrapper').find('.clear-search-filter').removeClass('show-clear');
     el.parents('.select-wrapper').find('.active-filter').removeClass('show-activefilter');
     el.parents('.select-wrapper').find("input[type='checkbox']").prop('checked', false);

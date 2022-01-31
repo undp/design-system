@@ -12,8 +12,8 @@ export const navigationInitialize = (locale) => {
   getData(lang);
 
   $menuItem.on('mouseenter click', function (event) {
-    const id = $(this).parent().attr('data-menu-id');
-    const $menuItemId = $(document).find(`[data-menu-item-id='${id}']`);
+    const navId = $(this).parent().attr('data-menu-id');
+    const $menuItemId = $(document).find(`[data-menu-item-id='${navId}']`);
     $menuItemId.addClass('show-mega').removeClass('hide').siblings().removeClass('show-mega').addClass('no-effect');
     $megaMenu.find('.sub-menu-content:first-child').addClass('active-content')
       .siblings().removeClass('active-content');
@@ -49,7 +49,7 @@ export const navigationInitialize = (locale) => {
     $('.mega-nav-option').removeClass('no-effect');
     if (event.type === 'mouseleave') {
       const el = event.toElement;
-      if (!el.classList.contains('mega-nav-option')) {
+      if (el != null && !el.classList.contains('mega-nav-option')) { 
         if($('.mega-nav-option').hasClass('show-mega')){
           $('.mega-nav-option.show-mega').removeClass('show-mega').addClass('show-mega-back');
           setTimeout(function () {
@@ -70,14 +70,14 @@ export const navigationInitialize = (locale) => {
 
   $('.mega-wrapper').on('mouseenter focus', '.submenu li', function () {
     $(this).addClass('active').siblings().removeClass('active');
-    const ID = $(this).attr('id');
-    $(this).parents('.mega-wrapper').find(`[data-submenu-id='${ID}']`).addClass('active-content')
+    const navId = $(this).attr('id');
+    $(this).parents('.mega-wrapper').find(`[data-submenu-id='${navId}']`).addClass('active-content')
       .siblings().removeClass('active-content');
   });
 
   $(window).scroll(() => {
-    var $scroll = $(window).scrollTop();
-    if ($scroll >= 1) {
+    var winScroll = $(window).scrollTop();
+    if (winScroll >= 1) {
       $('.logo img').addClass('scrolled');
     } else {
       $('.logo img').removeClass('scrolled');
@@ -85,11 +85,11 @@ export const navigationInitialize = (locale) => {
   });
 
   $(document).on('click', '.mobile-links .cta__link', function (e) {
-    const ID = $(this).attr('id');
-    const TEXT = $(this).text();
+    const navId = $(this).attr('id');
+    const navText = $(this).text();
     e.preventDefault();
-    $('.mobile-mega-content').find('.sub-heading').text(TEXT);
-    $('.mobile-mega-wrapper').find(`[data-mobile-id='${ID}']`).addClass('show-content');
+    $('.mobile-mega-content').find('.sub-heading').text(navText);
+    $('.mobile-mega-wrapper').find(`[data-mobile-id='${navId}']`).addClass('show-content');
     $('.mobile-links').addClass('hide');
     $('.mobile-sub-menu').addClass('show');
   });
