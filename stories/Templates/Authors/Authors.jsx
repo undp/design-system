@@ -8,6 +8,7 @@ import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/G
 import { Footer } from '../../Organism/Footer/Footer';
 import './Authors.scss';
 import { select } from '../../assets/js/select';
+import { authorFilter } from '../../assets/js/author_filter';
 import { Authorcard } from '../../Components/UIcomponents/Author/Authorcard/Authorcard';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 import { SearchExpand } from '../../Components/Forms/ExpandableSearch/SearchExpand';
@@ -30,20 +31,7 @@ const Authors = ({
 }) => {
   useEffect(() => {
     select();
-    $('.sort-btn').click(function sortclick(event) {
-      event.preventDefault();
-      $('.author-filter').addClass('author-filter-show');
-      $('.close-btn').addClass('show-close');
-      $(this).addClass('hide-sort');
-      $('.author-cards').addClass('find-first-author');
-    });
-    $('.close-btn').click(function closeclick(event) {
-      event.preventDefault();
-      $('.author-filter').removeClass('author-filter-show');
-      $(this).removeClass('show-close');
-      $('.sort-btn').removeClass('hide-sort');
-      $('.author-cards').removeClass('find-first-author');
-    });
+    authorFilter();
   }, []);
   return (
     <div>
@@ -65,11 +53,10 @@ const Authors = ({
           </div>
         </div>
         <div className="grid-x grid-margin-x mobile-author-filter">
-          <div className="cell small-12 sort-btn">
-            <CtaButton label={buttonData.sort} Type="Secondary" />
-          </div>
-          <div className="cell small-12 close-btn">
-            <CtaButton label={buttonData.close} Type="Secondary" />
+          <div className="cell small-12 ">
+            <button className="button button-secondary sort-filter">
+              {buttonData.sort}<span>{buttonData.close}</span>
+            </button>
           </div>
         </div>
         <div className="grid-x grid-margin-x author-filter">
