@@ -33,6 +33,7 @@
 
 [dir='rtl'] {
   .cta__link {
+    align-items: flex-end;
     &.cta--space {
       &::after {
         @include transform(rotate(180deg));

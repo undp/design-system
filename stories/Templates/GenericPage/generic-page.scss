@@ -1,9 +1,15 @@
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/breakpoints";
-@import "../../assets/scss/variables";
-@import "../PublicationPage/publication-page.scss";
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+@import '../PublicationPage/publication-page.scss';
 
 .generic-page {
+  @include devicebreak(medium) {
+    .button-secondary {
+      margin-left: 0.75rem;
+    }
+  }
+
   .sidebar {
     &-width {
       .sidebar-accordion {
@@ -94,6 +100,15 @@
     .grid-margin-x {
       margin-left: 0;
       margin-right: 0;
+    }
+  }
+}
+
+[dir='rtl'] {
+  @include devicebreak(medium) {
+    .button-secondary {
+      margin-left: unset;
+      margin-right: 0.75rem;
     }
   }
 }
