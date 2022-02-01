@@ -3,6 +3,12 @@
 
 /* feature card start */
 .feature__card {
+  &.red{
+    a:hover{
+      .cta__link.cta--arrow i::before{background-color: #000;}
+      .cta__link.cta--arrow i::after{border-color:#000;}
+    }
+  }
   @include devicebreak(medium) {
     //CTA-link
     .cta__link.cta--arrow {
@@ -230,7 +236,7 @@
       $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green': rgba(92 222 83 / 82%), 'blue': rgba(94 232 246 / 82%));
 
       @each $name, $color in $colors {
-        &.#{$name} {
+        &.#{$name}.image {
           .feature__card-slide {
             background-color: #{$color};
             &::before {
