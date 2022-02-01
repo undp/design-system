@@ -11,7 +11,7 @@ export const Sdgmodal = ({
   <div className="modal-sdg modal-dialog" role="dialog" aria-modal="true" tabIndex="0" aria-label="SDG-Modal">
     <div className="grid-x sdg-modal-dialog">
       <div className="cell medium-2 modal-header show-large">
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close" />
+        <button type="button" className="close" data-dismiss="modal" aria-label="Close" tabIndex="0"/>
       </div>
       <div className="cell medium-10 modal-sdg-content">
         <div className="modal-header show-small">
