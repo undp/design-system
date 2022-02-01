@@ -37,6 +37,15 @@ div.download-card {
         @include transform(translate(0, -10px));
       }
     }
+
+    .external-link{
+      &:after {
+        @include transform(translate(5px, -5px));
+      }
+      &:before {
+        @include transform(rotate(-45deg) translate(7px, 0));
+      }
+    }
   }
 
   .download-card__description {
@@ -67,15 +76,21 @@ div.download-card {
     letter-spacing: 0.03em;
     text-transform: uppercase;
 
-    .download-icon{
+    .download-icon {
       margin-left: $spacing-12;
+    }
+
+    .external-link{
+      margin-left: $spacing-12;
+      margin-bottom: $spacing-08;
     }
   }
 }
 
 [dir='rtl'] {
   div.download-card {
-    .download-icon {
+    .download-icon,
+    .external-link {
       margin-left: 0;
       margin-right: $spacing-12;
     }

@@ -134,6 +134,7 @@
       margin-top: 1.875rem;
 
       @include devicebreak(medium) {
+        margin-left: 0;
         margin-top: $spacing-40;
       }
     }
@@ -183,6 +184,14 @@
           @include devicebreak(medium) {
             font-size: 3rem;
           }
+        }
+      }
+    }
+
+    &-explore {
+      .cta-container {
+        @include devicebreak(medium) {
+          margin-right: 0;
         }
       }
     }
