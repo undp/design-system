@@ -112,7 +112,7 @@
         &::after {
           @extend %arrow;
 
-          right: $spacing-16;
+          right: 0.875rem;
         }
       }
     }
