@@ -89,7 +89,7 @@ export const getCaptionForLocale = (locale) => {
 
 `}</style>
 
-# Color Component
+# Colors
 This component represents the various colors that can be used on the website as per brand guidelines. All these colors are defined as SCSS variables globally and used accordingly in all the components.
 
 - Colors are divided into <code>Primary</code> and <code>Accents</code> colors.
@@ -270,6 +270,7 @@ Accent colors are colors that are used for emphasis in a color scheme. These col
     </div>
 </div>
 
+
 <Story name="Color palette">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
@@ -277,15 +278,8 @@ Accent colors are colors that are used for emphasis in a color scheme. These col
   }}
 </Story>
 
-#### 
-#### Usage
 
+### Usage
 - We can pick a color by HEX color code.
-e.g., <code>#B5D5F5</code>. Colors are also defined in the variables by the same name like  <code>blue-100</code> it's <code>$color-blue-100</code>
+e.g., <code>#B5D5F5</code>. Colors are also defined in the **stories/assets/scss/variables.scss** by the same name like  <code>blue-100</code> it's <code>$color-blue-100</code> 
 
-  **use SCSS include the following files in your implementation**
-- Include the common SCSS files like normalize, variables from <code>assets/scss</code>
-- Component SCSS file: <code>assets/atom/colors/color.scss</code> 
-
-  **To use CSS include the following files in your implementation**
-- The compiled CSS file from <code>assets/css/style.css</code>
