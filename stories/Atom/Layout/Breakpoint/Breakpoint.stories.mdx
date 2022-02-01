@@ -7,53 +7,30 @@ import { Meta, Story, Source} from '@storybook/addon-docs';
     }
   }}/>
 
-# Breakpoints system
+# Breakpoints
 
-Desktop and Tablet
-The grid system is working on the breakpoints, three breakpoint <code> small </code>  <code> medium </code> <code> Large </code>  are define to manage the layout according to devices resolutions with gutter spacing for Left or Right margin. 
+The Breakpoints are the points at which the content of the website adapts itself as per the user’s device width.
 
-<table class="page-table small">
-   <thead>
-      <tr>
-         <th>Breakpoints</th>
-         <th>Class prefix</th>
-         <th># of cell</th>
-         <th>Gutter width*</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td>small - max-width:767px</td>
-         <td><code>small-</code></td>
-         <td>4</td>
-         <td>6px+6px=12px</td>
-      </tr>
-      <tr>
-         <td>medium - min-width: 768px</td>
-         <td><code>medium-</code></td>
-         <td>8</td>
-         <td>12px+12px=24px</td>
-      </tr>
-      <tr>
-         <td>large - min-width: 1024px </td>
-         <td><code>large-</code></td>
-         <td>10</td>
-         <td>12px+12px=24px</td>
-      </tr>
-      <tr>
-         <td>xlarge - min-width: 1440px</td>
-         <td><code>x-large-</code></td>
-         <td>12</td>
-         <td>12px+12px=24px</td>
-      </tr>
-   </tbody>
-</table>
+### Overview
+The Breakpoint components are defined to manage the layout of the website according to the device’s resolution with gutter spacing for left or right margins. The design system uses a mobile-first approach which means styles are applied first to mobile devices. Advanced styles and other overrides for larger screens are then added to the stylesheet via media queries.
+ 
+#### When to use:
+ - To make the content of the website adaptable to the user’s device resolution.
 
-## Usage
+### Formatting
 
-- We can use grid by taking the grid class from the <code>assets/SCSS/grid.scss</code>
-- <u>To use SCSS include the following files in your implementation</u>
-- Include the common SCSS files like normalize, variables from <code>assets/scss</code>
-- Component SCSS file: <code>layout.scss</code>
-- <u>To use CSS include the following files in your implementation</u>
-- The compiled CSS file from <code>assets/css/style.css</code>
+#### Default
+There are three types of breakpoints: small, medium, and large.
+Content
+
+#### States 
+There are four states in Breakpoints: Desktop, Laptop, Tablet, and Mobile.
+1. Desktop: The minimum width is 1440px
+2. Laptop: The minimum width is 1025px and maximum width is 1439px.
+3. Tablet: The minimum width is 481px and maximum width is 1024px
+4. Mobile: The maximum width is 480px
+
+### CSS and JS References
+We are mostly using Foundation Grid system for layouting and managing our component for different screen sizes shared above.
+
+You need to include **dist/css/base-minimal.css** in your html file and you are good to go.
