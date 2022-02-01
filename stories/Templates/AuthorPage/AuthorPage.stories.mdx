@@ -4,7 +4,12 @@ import { getCaptionForLocale as breadcrumbData } from "../../Components/Navigati
 import { getCaptionForLocale as authorSummaryData } from "../../Organism/Blocks/Authorcard/AuthorSummary.stories.mdx";
 import { getCaptionForLocale as contentCardData } from "../../Organism/Blocks/ContentCard/ContentCard.stories.mdx";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer//Footer.stories.mdx";
-
+import img from "../../assets/images/card-thumbnail.jpg";
+import img2 from "../../assets/images/CardImage2.jpg";
+import img3 from "../../assets/images/CardImage3.jpg";
+import img4 from "../../assets/images/CardImage4.jpg";
+import img5 from "../../assets/images/CardImage5.jpg";
+import img6 from "../../assets/images/CardImage6.jpg";
 import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx";
 import {
   getNavLinks,
@@ -16,24 +21,534 @@ import {
 } from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {authorheading: 'Author'}; return engText;
-    case 'arabic': const arabicText = {authorheading: 'مؤلف'}; return arabicText;
-    case 'burmese': const burmeseText = {authorheading: 'စာရေးသူ'}; return burmeseText;
-    case 'japanese': const japaneseText = {authorheading: '著者'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = { authorheading: "Author" };
+      return engText;
+    case "arabic":
+      const arabicText = { authorheading: "مؤلف" };
+      return arabicText;
+    case "burmese":
+      const burmeseText = { authorheading: "စာရေးသူ" };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = { authorheading: "著者" };
+      return japaneseText;
     default:
-      return {authorheading: 'Author' };
+      return { authorheading: "Author" };
+  }
+};
+
+export const getCaptionDataLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {
+    groupcontentdata: [
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img2,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img6,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img2,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img3,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img4,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img5,
+      },
+      {
+        contenttile: "CONTENT TAG",
+        contentname: "Title of the post goes here and it’s two lines",
+        contentnametwo: "Title of the post goes here and it’s two lines",
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+        button: "READ MORE",
+        link: "#",
+        imgback: img6,
+      },
+    ],
+    buttonname: "VIEW MORE",
+    titlename: "Title of the hero story",
+    text: "Subtitle or excerpt of the story goes below and it is two lines",
+    btnlabel: "READ MORE",
+    searchData:'Select Language',
+    }; return engText;    
+    case 'arabic': const arabicText = {
+    groupcontentdata: [
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img5,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img6,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img2,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img3,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img4,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img5,
+      },
+      {
+        contenttile: "علامة المحتوى",
+        contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        contentnametwo: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+        button: "اقرأ أكث",
+        link: "#",
+        imgback: img6,
+      },
+    ], buttonname: "إنجليزي",}; return arabicText;
+    case 'burmese': const burmeseText = {
+    groupcontentdata: [
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img5,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img6,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img2,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img3,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img4,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img5,
+      },
+      {
+        contenttile: "အကြောင်းအရာ TAG",
+        contentname:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        contentnametwo:
+          "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+        paragraph:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+        button: "ပိုပြီးဖတ်ပါ",
+        link: "#",
+        imgback: img6,
+      },
+    ],
+    buttonname: "ပိုမိုကြည့်ရှုပါ။",}; return burmeseText;
+    case 'japanese': const japaneseText = {
+    groupcontentdata: [
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img2,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img6,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img2,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img3,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img4,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img5,
+      },
+      {
+        contenttile: "コンテンツタグ",
+        contentname: "投稿のタイトルはここにあり、2行です",
+        contentnametwo: "投稿のタイトルはここにあり、2行です",
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+        button: "続きを読む",
+        link: "#",
+        imgback: img6,
+      },
+    ],
+    buttonname: "もっと見る",}; return japaneseText;
+    default:
+      const dummy =  {
+      groupcontentdata: [
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img2,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img3,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img2,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img3,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img4,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img5,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname: "Title of the post goes here and it’s two lines",
+          contentnametwo: "Title of the post goes here and it’s two lines",
+          paragraph:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+          button: "READ MORE",
+          link: "#",
+          imgback: img6,
+        },
+      ],
+      buttonname: "VIEW MORE",};
+      return dummy
   }
 };
 
 <Meta title="Templates" />
 
-<Story name="Author Detail" 
+<Story
+  name="Author Detail"
   parameters={{
-    layout: "fullscreen"
-  }}>
+    layout: "fullscreen",
+  }}
+>
   {(args, { globals: { locale } }) => {
     const navigationData = getNavLinks(locale);
+    const caption = getCaptionDataLocale(locale);
     const leftNavigationData = navigationData.filter(
       (item) => item.position === "left"
     );
@@ -45,7 +560,8 @@ export const getCaptionForLocale = (locale) => {
         footerData={footerData(locale)}
         breadcrumbData={breadcrumbData(locale)}
         authorSummaryData={authorSummaryData(locale)}
-        contentCardData={contentCardData(locale)}
+        groupcontentdata={caption.groupcontentdata}
+        buttonname={caption.buttonname}
         locale={locale}
         leftNavigationData={leftNavigationData}
         navigationData={navigationData}
@@ -61,9 +577,8 @@ export const getCaptionForLocale = (locale) => {
   }}
 </Story>
 
-
 ### Usage
- 
+
 - Take HTML from the HTML tab in the canvas and paste in your HTML file
 - Include the following files in your HTML file
   - Base CSS file **dist/css/base-minimal.css**

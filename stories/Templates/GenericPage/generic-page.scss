@@ -106,9 +106,11 @@
 
 [dir='rtl'] {
   @include devicebreak(medium) {
-    .button-secondary {
-      margin-left: unset;
-      margin-right: 0.75rem;
+    .generic-page {
+      .button-secondary {
+        margin-left: unset;
+        margin-right: 0.75rem;
+      }
     }
   }
 }

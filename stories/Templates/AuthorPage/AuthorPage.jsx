@@ -14,7 +14,6 @@ import { Heading } from '../../Atom/Typography/Heading/Heading';
 const AuthorPage = ({
   breadcrumbData,
   authorSummaryData,
-  contentCardData,
   footerData,
   languageswitcherData,
   navigationData,
@@ -25,6 +24,8 @@ const AuthorPage = ({
   langSelect,
   backcaption,
   Authorlabel,
+  groupcontentdata,
+  buttonname,
 }) => {
   useEffect(() => {
     viewport('.feature__card--headertext');
@@ -62,9 +63,9 @@ const AuthorPage = ({
         </div>
         <div className="grid-x">
           <div className="cell medium-offset-2 medium-9 small-12 author-content">
-            <ContentCard
-              data={contentCardData.groupcontentdata}
-              buttontype={contentCardData.buttonname}
+          <ContentCard
+              data={groupcontentdata}
+              buttontype={buttonname}
               Hovercolors="yellow"
             />
           </div>
