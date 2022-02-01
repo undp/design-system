@@ -106,6 +106,9 @@
           -webkit-text-stroke: 2px $color-white;
         }
       }
+      p {
+        height:$spacing-100;
+      }
     }
 
     @each $name, $color in $colors {

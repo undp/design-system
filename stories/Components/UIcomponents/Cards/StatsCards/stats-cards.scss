@@ -102,9 +102,6 @@
       }
     }
   }
-  p{
-    height:$spacing-100;
-  }
 
   &.large {
     @include devicebreak(medium) {
@@ -178,4 +175,4 @@
       }
     }    
   }
-  }
+}
