@@ -6,6 +6,7 @@ const RemovePlugin = require('remove-files-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const webpackEntry = require('./webpack.entries');
 const packMode = 'production';
+const nodeExternals = require('webpack-node-externals');
 
 /*
 * Webpack build for scss and js
@@ -17,7 +18,7 @@ module.exports = [
     module: {
       rules: [
         {
-          test: /\.scss$/, 
+          test: /\.scss$/,
           use: [
             MiniCssExtractPlugin.loader,
             'css-loader',
@@ -80,7 +81,7 @@ module.exports = [
       ],
     },
     plugins: [
-      // copying icons folder for better reach 
+      // copying icons folder for better reach
       // to dist folder
       new CopyPlugin({
         patterns: [
@@ -107,6 +108,7 @@ module.exports = [
   {
     mode: packMode,
     entry: webpackEntry('js'),
+    externals: [nodeExternals()],
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].min.js',
