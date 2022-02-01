@@ -89,17 +89,20 @@ export const getCaptionForLocale = (locale) => {
 
 `}</style>
 
-# Color Component
-This component represents the various colors that can be used on the website as per brand guidelines. All these colors are defined as SCSS variables globally and used accordingly in all the components.
+# Colors
+The Color enable users to select the colors by either choosing one from a color picker interface or by entering the color name into a text field in hexadecimal format.
 
-- Colors are divided into <code>Primary</code> and <code>Accents</code> colors.
+### Overview
+The Color represents the various colors that can be used on the website as per the brand guidelines. All these colors are defined as SCSS variables globally and used accordingly in all the components.
 
-#### 
-#### 
+#### When to use:
+- To provide a color interface to the user for selecting colors.
+
+Colors are divided into <code>Primary</code> and <code>Accents</code> colors.
+
 ### Primary Colors
 
-Primary colors are the base colors of the UI, the ones that are used most frequently in the interface. They are used for brand elements and non-interactive elements. Interactive colors are used for primary links and action items that can be clicked or touched, to emphasize important actions and highlight information in your application.
-
+Primary colors: Primary colors are the base colors of the UI, the ones that are most frequently used in the interface. They are used for brand elements and non-interactive elements. Interactive colors are used for primary links and action items that can be clicked or touched to emphasize important actions and highlight information in the application.
 
 <div className="color_wrapper">
   <div className="color__item">
@@ -142,7 +145,7 @@ Primary colors are the base colors of the UI, the ones that are used most freque
     <div className="color__box blue-700"></div>
     <div className="color__name"> blue-700 </div>
     <div className="color__code">Hex: <code>#1F5A95</code></div>
-   </div>
+  </div>
 </div>
 
 <div className="color_wrapper">
@@ -186,13 +189,11 @@ Primary colors are the base colors of the UI, the ones that are used most freque
     <div className="color__box gray-700"></div>
     <div className="color__name"> gray-700 </div>
     <div className="color__code">Hex: <code>#232E3D</code></div>
-   </div>
+  </div>
 </div>
 
-#### 
-#### 
 ### Accent Colors
-Accent colors are colors that are used for emphasis in a color scheme. These colors can often be bold or vivid and are used sparingly, to emphasize, contrast or create rhythm. More toned down colors such as neutrals or darker shades can also be used depending on the surroundings.
+Accent colors: Accent colors are the colors that are used for emphasis in a color scheme. These colors can often be bold or vivid and used sparingly to emphasize contrast or create rhythm. More toned colors such as neutrals or darker shades can also be used depending on the surroundings. 
 
 <div className="color_wrapper">
   <div className="color__item">
@@ -270,6 +271,7 @@ Accent colors are colors that are used for emphasis in a color scheme. These col
     </div>
 </div>
 
+
 <Story name="Color palette">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
@@ -277,15 +279,7 @@ Accent colors are colors that are used for emphasis in a color scheme. These col
   }}
 </Story>
 
-#### 
-#### Usage
 
-- We can pick a color by HEX color code.
-e.g., <code>#B5D5F5</code>. Colors are also defined in the variables by the same name like  <code>blue-100</code> it's <code>$color-blue-100</code>
+### Usage
+- You can pick a color by HEX color code. e.g., #B5D5F5. Colors are also defined in the variables **stories/assets/scss/_variables.scss** by the same name like blue-100 it's $color-blue-100 
 
-  **use SCSS include the following files in your implementation**
-- Include the common SCSS files like normalize, variables from <code>assets/scss</code>
-- Component SCSS file: <code>assets/atom/colors/color.scss</code> 
-
-  **To use CSS include the following files in your implementation**
-- The compiled CSS file from <code>assets/css/style.css</code>
