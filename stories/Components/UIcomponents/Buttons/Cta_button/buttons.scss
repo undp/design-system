@@ -4,19 +4,20 @@
 
 .button {
   @extend %button;
-  @extend %img_none;
 
   color: $color-white;
   cursor: pointer;
   justify-content: center;
   padding: $spacing-16 $spacing-24;
-  &:focus {
+
+  &:focus-visible {
     box-shadow: 0 0 4px $color-blue-800;
     outline: 0;
   }
 }
-button{
-  &:focus {
+
+button {
+  &:focus-visible {
     box-shadow: 0 0 4px $color-blue-800;
     outline: 0;
   }
