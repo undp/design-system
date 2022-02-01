@@ -107,11 +107,11 @@
 }
 
 .icons-search {
-  display: flex;
   margin: $spacing-32 $spacing-16 0;
+  text-align: left;
 
   @include devicebreak(medium) {
-    justify-content: end;
+    text-align: right;
     margin: 0 0 $spacing-32 0;
   }
 
@@ -126,6 +126,12 @@
 
 [dir=rtl] {
   .icons-search {
+    text-align: right;
+
+    @include devicebreak(medium) {
+      text-align: left;
+    }
+
     & .icon-globe {
       margin-right: 0;
       margin-left: $spacing-16;
