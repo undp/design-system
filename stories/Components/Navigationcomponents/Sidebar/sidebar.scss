@@ -34,7 +34,7 @@
     @include devicebreak(medium) {
       a {
         &:hover {
-          background-color: #edeff0;
+          background-color: $color-gray-300;
         }
       }
     }
@@ -100,6 +100,7 @@
 
       button {
         @extend %button;
+
         float: right;
         height: 1.25rem;
         margin-right: 1.188rem;
@@ -143,7 +144,7 @@
 
           @include devicebreak(medium) {
             &:hover {
-              background-color: #edeff0;
+              background-color: $color-gray-300;
             }
           }
         }
@@ -191,6 +192,11 @@
   }
 
   .sidebar-accordion {
+    ul,
+    li {
+      padding-right: 0;
+    }
+
     button {
       float: left;
       margin-left: $spacing-24;

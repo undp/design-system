@@ -245,6 +245,10 @@
   height: 1.188rem;
   margin-left: $spacing-12;
   width: 0.813rem;
+  margin-top: 2px;
+  @include devicebreak(medium) {
+  margin-top: 0;
+  }
 }
 
 %field__image {

@@ -34,7 +34,6 @@ div.content-card {
   }
 
   .image {
-    display: inline-flex;
     position: relative;
     width: 100%;
 
@@ -141,7 +140,7 @@ div.content-card {
 }
 
 .content-caption {
-  padding: $spacing-16 $spacing-24 $spacing-32 $spacing-24;
+  padding: $spacing-16 $spacing-24 $spacing-24 $spacing-24;
 
   h5,
   h4 {
