@@ -16,7 +16,6 @@
 
 .landing-page {
   .multi-select {
-    max-width: 100%;
 
     .select-control {
       min-width: 100%;
@@ -56,6 +55,25 @@
       @include devicebreak(medium) {
         margin-top: 7rem;
       }
+
+      @include devicebreak(xlarge) {
+        margin-top: 9.125rem;
+      }
     }
+  }
+
+  .search-filter {
+    .expand-search {
+      max-width: 100%;
+    } 
+  }
+
+  .content-bottom {
+    margin-top: $spacing-48;
+
+    @include devicebreak(medium) {
+      margin-top: 8.438rem;
+    }
+
   }
 }
