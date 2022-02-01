@@ -113,16 +113,27 @@ ul,
 ol {
   margin: 0;
   padding-left: 1.125rem;
+
   @include devicebreak(medium) {
     padding-left: 1.313rem;
   }
+
   li {
     margin-bottom: $spacing-16;
     padding-left: 0.875rem;
+
     @include devicebreak(medium) {
       margin-bottom: $spacing-24;
       padding-left: $spacing-12;
     }
+  }
+}
+
+ul li::marker {
+  font-size: 1.125rem;
+
+  @include devicebreak(medium) {
+    font-size: 1.313rem;
   }
 }
 
@@ -261,16 +272,20 @@ hr {
   ol {
     padding-left: 0;
     padding-right: 1.125rem;
+
     @include devicebreak(medium) {
       padding-right: 1.313rem;
     }
+
     li {
       padding-left: 0;
       padding-right: 0.875rem;
+
       @include devicebreak(medium) {
         padding-right: $spacing-12;
       }
     }
   }
 }
+
 /* typograpgy end */
