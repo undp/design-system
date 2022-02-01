@@ -87,6 +87,8 @@ body.sdgmodal-open {
       font-family: $Font-Family-SohneBreit;
       text-transform: uppercase;
     }
+
+    @extend %sdg-modal-title;
   }
 
   .description {
@@ -165,19 +167,6 @@ body.sdgmodal-open {
       h2,
       h3 {
         color: $sdg-red;
-      }
-      h2 {
-        font-size: $font-size-25;
-        @include devicebreak(medium) {
-          font-size: 3.438rem;
-          padding-left: $spacing-16;
-        }
-      }
-      h3 {
-        font-size: $font-size-20;
-        @include devicebreak(medium) {
-          font-size: 2.188rem;
-        }
       }
     }
 
@@ -721,7 +710,7 @@ body.sdgmodal-open {
     li {
       font-size: $font-size-20;
       list-style: none;
-      padding-left: $spacing-24;
+      padding-left: $spacing-32;
       position: relative;
 
       &::before {
@@ -806,6 +795,13 @@ body.sdgmodal-open {
       margin-left: 0;
       margin-right: 1.875rem;
 
+      h2 {
+        @include devicebreak(medium) {
+          padding-left: 0;
+          padding-right: $spacing-16;
+        }
+      }
+
       @include devicebreak(medium) {
         margin-left: 0;
         margin-right: $spacing-96;
@@ -859,16 +855,19 @@ body.sdgmodal-open {
       margin-right: $spacing-80;
     }
 
-    ul li {
-      padding-left: 0;
-      padding-right: $spacing-24;
+    ul {
+      padding-right: 0;
+      li {
+        padding-left: 0;
+        padding-right: $spacing-32;
 
-      &::before {
-        left: 0;
-        right: 0;
+        &::before {
+          left: 0;
+          right: 0;
 
-        @include devicebreak(medium) {
-          right: -$spacing-16;
+          @include devicebreak(medium) {
+            right: -$spacing-16;
+          }
         }
       }
     }

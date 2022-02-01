@@ -176,6 +176,22 @@
   display: block;
 }
 
+%sdg-modal-title {
+  h2 {
+    font-size: $font-size-25;
+    @include devicebreak(medium) {
+      font-size: 3.438rem;
+      padding-left: $spacing-16;
+    }
+  }
+  h3 {
+    font-size: $font-size-20;
+    @include devicebreak(medium) {
+      font-size: 2.188rem;
+    }
+  }
+}
+
 %sidebar {
   align-items: center;
   cursor: pointer;
