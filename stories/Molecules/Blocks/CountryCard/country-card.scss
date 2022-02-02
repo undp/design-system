@@ -61,7 +61,7 @@
             left: $spacing-16;
             width: $spacing-80;
             &::before {
-              display: unset;
+              display: inline-block;
             }
           }
         }
