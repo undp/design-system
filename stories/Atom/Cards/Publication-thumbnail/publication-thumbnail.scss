@@ -38,21 +38,20 @@ div.publication-thumbnail__image {
     &::after {
       opacity: 0.75;
     }
-  }
-
-  @each $name, $color in $colors {
-    &.#{$name}:after {
-      @include background-image(42deg, #{$color}, transparent 80%);
+    @each $name, $color in $colors {
+      &.#{$name}:after {
+        @include background-image(27.66deg, #{$color}, transparent 70.49%);
+      }
     }
   }
 }
 
 [dir='rtl'] {
-  .publication-thumbnail__image {
+  div.publication-thumbnail__image {
     &:hover {
       @each $name, $color in $colors {
         &.#{$name}:after {
-          @include background-image(318deg, #{$color}, transparent 80%);
+          @include background-image(318deg, #{$color}, transparent 70.49%);
         }
       }
     }

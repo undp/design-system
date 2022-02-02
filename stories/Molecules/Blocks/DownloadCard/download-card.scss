@@ -15,18 +15,16 @@ div.download-card {
     div.publication-thumbnail__image {
       @each $name, $color in $colors {
         &.#{$name}:after {
-          @include background-image(42deg, #{$color}, transparent 80%);
-
+          @include background-image(27.66deg, #{$color}, transparent 70.49%);
           opacity: 0.75;
         }
       }
     }
 
-  div.card-thumbnail__image {
+    div.card-thumbnail__image {
       @each $name, $color in $colors {
         &.#{$name}::before {
-          @include background-image(42deg, #{$color}, transparent 80%);
-
+          @include background-image(67.76deg, #{$color}, transparent 61.11%);
           opacity: 0.75;
         }
       }
@@ -85,7 +83,7 @@ div.download-card {
       div.publication-thumbnail__image {
         @each $name, $color in $colors {
           &.#{$name}:after {
-            @include background-image(318deg, #{$color}, transparent 80%);
+            @include background-image(318deg, #{$color}, transparent 70.49%);
           }
         }
       }
@@ -93,7 +91,7 @@ div.download-card {
       div.card-thumbnail__image  {
         @each $name, $color in $colors {
           &.#{$name}:before {
-            @include background-image(318deg, #{$color}, transparent 80%);
+            @include background-image(297deg, #{$color}, transparent 61.11%);
           }
         }
       }

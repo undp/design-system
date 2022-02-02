@@ -164,26 +164,29 @@ $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green
 @each $name, $color in $colors {
   .#{$name} {
     //card-thumbnail
-    .card-thumbnail__image::before {
-      @include background-image(42deg, #{$color}, transparent 80%);
+    .card-thumbnail__image:hover {
+      &::before {
+        @include background-image(42deg, #{$color}, transparent 80%);
+      }
     }
 
     //bio-card
-    .bio-card a {
+    .bio-card:hover {
       .card-thumbnail__image::before {
-        @include background(42deg, #{$color}, transparent 80%);
+        @include background-image(67.76deg, #{$color}, transparent 61.11%);
+        opacity: 0.75;
       }
     }
 
     //author__img
     .author__img:hover{
       &::before {
-        @include background(42deg, #{$color}, transparent 80%);
+        @include background(45deg, #{$color}, transparent 53%);
       }
     }
 
     //publication-thumbnail__image
-    .publication-thumbnail__image{
+    .publication-thumbnail__image:hover{
        &::after {
         @include background-image(42deg, #{$color}, transparent 80%);
       }
@@ -216,7 +219,7 @@ $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green
     //stats-panel
     .stats-panel:hover {
       &::after {
-         @include background-image(42deg, #{$color}, transparent 80%);
+       @include background-image(0deg, #{$color}, transparent 140%); 
       }
       .stats-card {
         background-color: transparent;
@@ -227,15 +230,16 @@ $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green
     .wide-card__image a:hover {
       &::before {
         @include background-image(42deg, #{$color}, transparent 80%);
+        opacity: 0.75;
       }
     }
 
     //feature-card
     .feature__card-slide {
-        &::before {
-           @include background-image(42deg, #{$color}, transparent 80%);
-        }
+      &::before {
+          @include background-image(45deg, #{$color}, transparent 67%);
       }
+    }
 
     //content-card
     .content-card {
@@ -244,7 +248,78 @@ $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green
           @include background-image(42deg, #{$color}, transparent 80%);
         }
       }
-    }    
+    }
+  }
+}
+
+ //rtl
+[dir='rtl'] {
+@each $name, $color in $colors {
+    .#{$name} {
+      //card-thumbnail
+      .card-thumbnail__image:hover {
+        &::before {
+          @include background-image(297deg, #{$color}, transparent 61.11%);
+        }
+      }
+
+      //bio-card
+      .bio-card:hover {
+        .card-thumbnail__image::before {
+          @include background-image(297deg, #{$color}, transparent 61.11%);
+          opacity: 0.75;
+        }
+      }
+
+      //publication-card
+      .publication-card:hover {
+        .publication-thumbnail__image{
+          &::after {
+          @include background-image(318deg, #{$color}, transparent 70.49%);
+          opacity: 0.75;
+          }
+        }
+      }
+
+      //download card
+      .download-card:hover {
+        .card-thumbnail__image::before {
+          @include background-image(297deg, #{$color}, transparent 61.11%);
+          opacity: 0.75;
+        }
+        .publication-thumbnail__image{
+        &::after {
+          @include background-image(318deg, #{$color}, transparent 70.49%);
+          opacity: 0.75;
+          }
+        }
+      }
+
+      //publication-card
+      .publication-card:hover {
+        .publication-thumbnail__image{
+          &::after {
+            @include background-image(318deg, #{$color}, transparent 70.49%);
+            opacity: 0.75;
+          }
+        }
+      }
+
+      //wide-card
+      .wide-card__image a:hover {
+        &::before {
+          @include background-image(318deg, #{$color}, transparent 80%);
+          opacity: 0.75;
+        }
+      }
+
+      //feature-card
+      .feature__card-slide {
+        &::before {
+          @include background-image(318deg, #{$color}, transparent 67.25%);
+        }
+      }
+    }
   }
 }
 
@@ -290,7 +365,6 @@ $colors-solid: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-gree
     }
   }
 }
-
 
 // color map light-color content card only
 $colors-light: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure);
