@@ -5,7 +5,7 @@ import { Publicationthumb } from '../../../Atom/Cards/Publication-thumbnail/Publ
 import { Cardthumb } from '../../../Atom/Cards/Card-thumbnail/CardThumbnail';
 
 export const DownloadCard = ({
-  image, image2, title, format, download,
+  image, image2, title, format, download, ...args
 }) => (
   <div className="download-card">
     <a href="#">
@@ -16,7 +16,7 @@ export const DownloadCard = ({
         <p className="download-card__format">{format}</p>
         <span href="#" className="download-card__download">
           {download}
-          <span className="download-icon" ><i/></span>
+          <span className={[`${(args.variant == 'External Link' ? 'external-link' :'download-icon')}`]}><i/></span>
         </span>
       </div>
     </a>

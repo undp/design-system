@@ -10,6 +10,7 @@
     min-height: 642px;
     position: relative;
     word-break: break-word;
+    overflow: hidden;
 
     @include devicebreak(medium) {
       min-height: 746px;

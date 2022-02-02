@@ -13,7 +13,7 @@ import { Statscardslider } from '../../Organism/Statscardslider/Statscardslider'
 import './project-page.scss';
 
 export const ProjectPage = ({
-  footerData, siteTitleData, backcaption, locale, leftNavigationData, navigationData, rightNavigationData, languageswitcherData, locationData, langSelect, logo, logowhite, herodata, content, title, imgsrc, imgalt, topHeading, topParagraph, topParagraph1, whatwedoheader, whatwedodescription, relatedHeading, download, downloadTitle, downloadTitle1, downloadTitle2, downloadTitle3, downloadTitle4, downloadTitle5, downloadTitle6, impactHead, title1, title2, title3, title4, title5, title6, title7, subtitle1, subtitle2, subtitle3, subtitle4, subtitle5, subtitle6, subtitle7, buttonProjectInfo, supportHeading, exploreHeading, exploreMoreBtn, exploreMoreData, statsliderdata, listData,
+  footerData, siteTitleData, backcaption, locale, leftNavigationData, navigationData, rightNavigationData, languageswitcherData, locationData, langSelect, logo, logowhite, herodata, content, title, imgsrc, imgalt, topHeading, topParagraph, topParagraph1, whatwedoheader, whatwedodescription, relatedHeading, download, downloadTitle, downloadTitle1, downloadTitle2, downloadTitle3, downloadTitle4, downloadTitle5, downloadTitle6, impactHead, title1, title2, title3, title4, title5, title6, title7, subtitle1, subtitle2, subtitle3, subtitle4, subtitle5, subtitle6, subtitle7, buttonProjectInfo, supportHeading, exploreHeading, exploreMoreBtn, exploreMoreData, statsliderdata, listData, readmore
 }) => (
   <>
     <CountrySiteHeader
@@ -69,17 +69,17 @@ export const ProjectPage = ({
         </div>
         <div className="cell small-10 small-offset-1 large-offset-3 large-6">
           <div className="column">
-            <DownloadCard title={downloadTitle} download={download} />
+            <DownloadCard title={downloadTitle} download={readmore}  variant="External Link"/>
           </div>
           <div className="grid-x grid-margin-x margin-top-24">
             <div className="cell large-6">
               <div className="column">
-                <DownloadCard title={downloadTitle1} download={download} />
+                <DownloadCard title={downloadTitle1} download={readmore} variant="External Link"/>
               </div>
             </div>
             <div className="cell large-6">
               <div className="column">
-                <DownloadCard title={downloadTitle2} download={download} />
+                <DownloadCard title={downloadTitle2} download={readmore} variant="External Link"/>
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@ export const ProjectPage = ({
           <div className="grid-x grid-margin-x margin-top-24">
             <div className="cell large-6">
               <div className="column">
-                <DownloadCard title={downloadTitle6} download={download} />
+                <DownloadCard title={downloadTitle6} download={readmore} variant="External Link" />
               </div>
             </div>
           </div>
