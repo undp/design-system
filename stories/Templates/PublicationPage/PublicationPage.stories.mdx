@@ -723,72 +723,129 @@ export const getCaptionForLocale = (locale) => {
 <Meta title="Templates/Publication Page"/>
 
 <style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
+  .sbdocs-preview {display: none}
 `}</style>
 
-# Publication Page Templates
-Template for Publication Page
+# Publication Page
 
-<Story name="Publication Page" parameters={{
-    layout: "fullscreen"
-  }}>
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    const navigationData= getNavLinks(locale);
-    const leftNavigationData=navigationData.filter(item=>item.position==='left');
-     const rightNavigationData=navigationData.filter(item=>item.position==='right');
-    return <PublicationPage
-        data={caption.postheaderdata}
-        active={'default'}
-        download={caption.download} 
-        readmore={caption.readmore} 
-        image
-        blockHeader={caption.header} 
-        blockDescription={caption.description}
-        paragraphTop1={caption.paragraphTop1}
-        paragraphTop2={caption.paragraphTop2}
-        paragraphTop3={caption.paragraphTop3}
-        buttontype={caption.buttonname}
-        relatedPublicationHeading={caption.PublicationHeading}
-        ContentCardWithOutImageData={caption.contentdata}
-        footerData={footerData(locale)}
-        logo={logo}
-        logowhite={logowhite}
-        locale={locale}
-        leftNavigationData={leftNavigationData}
-        navigationData={navigationData}
-        rightNavigationData={rightNavigationData}
-        menuData={menuData(locale)}
-        languageswitcherData={Languageswitcher(locale)}
-        locationData={getLocationDataForLocale(locale)}
-        langSelect={getSelectlanguage(locale)}
-        backcaption={getBackForLocale(locale)}
-        menuTitle1={caption.menuTitle1}
-        menuTitle2={caption.menuTitle2}
-        menuTitle3={caption.menuTitle3}
-        menuTitle4={caption.menuTitle4}
-        menuData1={caption.menuData1}
-        menuData2={caption.menuData2}
-        menuData3={caption.menuData3}
-        menuData4={caption.menuData4}
-    ></PublicationPage>;
-  }}
-</Story>
+A Publication page has information about important things like copyright, publication details, and legal disclaimers. 
 
-<div className="subheading">Usage</div>
-<ul>
-    <li>Take HTML from the HTML tab in the canvas</li>
-    <u>To use SCSS include the following files in your implementation</u>
-    <li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
-    <li>Component SCSS file: <code>postheader.scss</code></li>
-    <u>To use CSS include the following files in your implementation</u>
-    <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Overview
+
+In the Publication Page, the user can get important information such as copyright, publication details, and legal disclaimers. Mockup - https://www.undp.org/publications/fossil-fuel-subsidy-reform-lessons-and-opportunities
+
+### Template Structure
+
+The following components are used to create the “Article Page” template in the design system
+- Global header
+- Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.
+- Download Card - Download the document in the user preferred language
+- Read more links - Help users quickly understand the context in which they are placed
+- Post block without description - Defines a section of information data with some items - Header Title, Date.
+- Paragraph
+- Menu links with label - Consists of multiple clickable items placed at the top of the page
+- Featured Content Cards - Featured card groups that will have CTA links (this can be just #).
+- View more buttons for showing more featured cards:  Call to action that will be performed when the user clicks it.
+- Standard footer 
+
+### Performance
+- The page performance will be optimized by considering the following:
+- Lazy load
+- Use appropriate media renditions based on the client’s viewpoint.
+- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
+- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
+- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.
+
+<Canvas>
+  <Story name="Publication Page" parameters={{
+      layout: "fullscreen"
+    }}>
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      const navigationData= getNavLinks(locale);
+      const leftNavigationData=navigationData.filter(item=>item.position==='left');
+      const rightNavigationData=navigationData.filter(item=>item.position==='right');
+      return <PublicationPage
+          data={caption.postheaderdata}
+          active={'default'}
+          download={caption.download} 
+          readmore={caption.readmore} 
+          image
+          blockHeader={caption.header} 
+          blockDescription={caption.description}
+          paragraphTop1={caption.paragraphTop1}
+          paragraphTop2={caption.paragraphTop2}
+          paragraphTop3={caption.paragraphTop3}
+          buttontype={caption.buttonname}
+          relatedPublicationHeading={caption.PublicationHeading}
+          ContentCardWithOutImageData={caption.contentdata}
+          footerData={footerData(locale)}
+          logo={logo}
+          logowhite={logowhite}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          menuTitle1={caption.menuTitle1}
+          menuTitle2={caption.menuTitle2}
+          menuTitle3={caption.menuTitle3}
+          menuTitle4={caption.menuTitle4}
+          menuData1={caption.menuData1}
+          menuData2={caption.menuData2}
+          menuData3={caption.menuData3}
+          menuData4={caption.menuData4}
+      ></PublicationPage>;
+    }}
+  </Story>
+</Canvas>
+
+### Usage
+- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
+- Initialize viewport,  navigation, language switcher, accordion, filter by calling below mentioned functions.
+  - viewport('.left-right');
+  - navigationInitialize();
+  - langSwitch();
+  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+
+### CSS and JS Reference
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/global-header.min.css
+- dist/css/components/language-switcher.min.css
+- dist/css/components/menu.min.css
+- dist/css/components/mega-menu.min.css
+- dist/css/components/mobile-nav.min.css
+- dist/css/components/breadcrumbs.min.css
+- dist/css/components/content-card.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/publication-card.min.css
+- dist/css/components/footer-logo.min.css
+- dist/css/components/footer-lists.min.css
+- dist/css/components/footer-icons.min.css
+- dist/css/components/footer-condition.min.css
+- dist/css/components/input-group.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/signup.min.css
+- dist/css/components/accordion.min.css
+- dist/css/components/footer.min.css
+- dist/css/templates/publication-page.min.css
+
+#### Js:
+- dist/js/animation.min.js
+- dist/js/navigation.min.js
+- dist/js/UNDP.min.js
+- dist/js/lang_switcher.min.js
+- dist/js/accordion.min.js
+- dist/js/viewport.min.js
+- dist/js/sticky.min.js
+
+### Changelog
+- 1.0 — Released component

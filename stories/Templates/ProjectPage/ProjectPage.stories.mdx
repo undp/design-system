@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ProjectPage } from './ProjectPage';
 import {getCaptionForLocale as footerData} from '../../Organism/Footer/Footer.stories.mdx';
 import { getCaptionForLocale as Languageswitcher } from '../../Components/UIcomponents/Languageswitcher/Languageswitcher.stories.mdx';
@@ -1521,104 +1521,84 @@ export const statsArray = (locale) => {
 <Meta title="Templates/Project Page"/>
 
 <style>{`
-  .sbdocs-h1 {
-    font-weight: 700;
-  }
-  .subheading {
-    font-weight: 500;
-    font-size: 22px;
-    color: #161616;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .high {
-    font-weight: 500;
-    font-size: 14px;
-    color: #161616;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .docblock-code-toggle {
-    display: none;
-  }
+  .sbdocs-preview {display: none}
 `}</style>
 
 # Project Page 
 
 Project Page Template
 
-<Story name="Project Page">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    const navigationData= getNavLinks(locale);
-    const leftNavigationData=navigationData.filter(item=>item.position==='left');
-    const rightNavigationData=navigationData.filter(item=>item.position==='right');
-    const siteTitleData = getSiteTitle(locale);
-    const statCaption = statsArray(locale);
-    return <ProjectPage        
-        herodata={caption.herodata} 
-        title={caption.title} 
-        content={caption.content} 
-        active={'default'} 
-        imgsrc={caption.imgsrc} 
-        imgalt={caption.imgalt} 
-        videosrc={caption.videosrc}
-        topHeading={caption.topHeading}
-        topParagraph={caption.topParagraph}
-        topParagraph1={caption.topParagraph1}
-        whatwedoheader={caption.whatwedoheader} 
-        relatedHeading={caption.relatedHeading}
-        whatwedodescription={caption.whatwedodescription}
-        download={caption.download}
-        readmore={caption.readmore}
-        downloadTitle={caption.downloadTitle}
-        downloadTitle1={caption.downloadTitle1}
-        downloadTitle2={caption.downloadTitle2}
-        downloadTitle3={caption.downloadTitle3}
-        downloadTitle4={caption.downloadTitle4}
-        downloadTitle5={caption.downloadTitle5}
-        downloadTitle6={caption.downloadTitle6}
-        footerData={footerData(locale)}
-        locale={locale}
-        leftNavigationData={leftNavigationData}
-        navigationData={navigationData}
-        rightNavigationData={rightNavigationData}
-        menuData={menuData(locale)}
-        languageswitcherData={Languageswitcher(locale)}
-        locationData={getLocationDataForLocale(locale)}
-        langSelect={getSelectlanguage(locale)}
-        backcaption={getBackForLocale(locale)}
-        siteTitleData={getSiteTitle(locale)}
-        logo={logo}
-        logowhite={logowhite}
-        impactHead={caption.impactHead}
-        title1={caption.title1}
-        title2={caption.title2}
-        title3={caption.title3}
-        title4={caption.title4}
-        title5={caption.title5}
-        title6={caption.title6}
-        title7={caption.title7}
-        subtitle1={caption.subtitle1}
-        subtitle2={caption.subtitle2}
-        subtitle3={caption.subtitle3}
-        subtitle4={caption.subtitle4}
-        subtitle5={caption.subtitle5}
-        subtitle6={caption.subtitle6}
-        subtitle7={caption.subtitle7}
-        buttonProjectInfo={caption.buttonProjectInfo}
-        supportHeading={caption.supportHeading}
-        exploreHeading={caption.exploreHeading}
-        exploreMoreData={caption.contentdata} 
-        exploreMoreBtn={caption.storyBtn}
-        statsliderdata={statCaption}
-        listData={caption.listData}
-    ></ProjectPage>;
-  }}
-</Story>
+<Canvas>
+  <Story name="Project Page">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      const navigationData= getNavLinks(locale);
+      const leftNavigationData=navigationData.filter(item=>item.position==='left');
+      const rightNavigationData=navigationData.filter(item=>item.position==='right');
+      const siteTitleData = getSiteTitle(locale);
+      const statCaption = statsArray(locale);
+      return <ProjectPage        
+          herodata={caption.herodata} 
+          title={caption.title} 
+          content={caption.content} 
+          active={'default'} 
+          imgsrc={caption.imgsrc} 
+          imgalt={caption.imgalt} 
+          videosrc={caption.videosrc}
+          topHeading={caption.topHeading}
+          topParagraph={caption.topParagraph}
+          topParagraph1={caption.topParagraph1}
+          whatwedoheader={caption.whatwedoheader} 
+          relatedHeading={caption.relatedHeading}
+          whatwedodescription={caption.whatwedodescription}
+          download={caption.download}
+          readmore={caption.readmore}
+          downloadTitle={caption.downloadTitle}
+          downloadTitle1={caption.downloadTitle1}
+          downloadTitle2={caption.downloadTitle2}
+          downloadTitle3={caption.downloadTitle3}
+          downloadTitle4={caption.downloadTitle4}
+          downloadTitle5={caption.downloadTitle5}
+          downloadTitle6={caption.downloadTitle6}
+          footerData={footerData(locale)}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          siteTitleData={getSiteTitle(locale)}
+          logo={logo}
+          logowhite={logowhite}
+          impactHead={caption.impactHead}
+          title1={caption.title1}
+          title2={caption.title2}
+          title3={caption.title3}
+          title4={caption.title4}
+          title5={caption.title5}
+          title6={caption.title6}
+          title7={caption.title7}
+          subtitle1={caption.subtitle1}
+          subtitle2={caption.subtitle2}
+          subtitle3={caption.subtitle3}
+          subtitle4={caption.subtitle4}
+          subtitle5={caption.subtitle5}
+          subtitle6={caption.subtitle6}
+          subtitle7={caption.subtitle7}
+          buttonProjectInfo={caption.buttonProjectInfo}
+          supportHeading={caption.supportHeading}
+          exploreHeading={caption.exploreHeading}
+          exploreMoreData={caption.contentdata} 
+          exploreMoreBtn={caption.storyBtn}
+          statsliderdata={statCaption}
+          listData={caption.listData}
+      ></ProjectPage>;
+    }}
+  </Story>
+</Canvas>
 
 <div className="subheading">Usage</div>
 <ul>

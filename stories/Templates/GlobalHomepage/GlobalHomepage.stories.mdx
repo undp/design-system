@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story, Canvas, DocsPage, DocsContainer } from "@storybook/addon-docs";
 import { GlobalHomePage } from "./GlobalHomepage";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.mdx";
 import { getCaptionForLocale as featuredcarddata } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard.stories.mdx";
@@ -552,82 +552,155 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Templates/Global Home Page" />
+<Meta title="Templates/Global Homepage" />
 
 <style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
+  .sbdocs-preview {display: none}
 `}</style>
 
-# Global home Page Template
+# Global Homepage
 
-Template for Global Home Page
+A global page has all dynamic content lists from the website
 
-<Story name="Global Home Page" parameters={{
-    layout: "fullscreen"
-  }}>
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    const navigationData = getNavLinks(locale);
-    const leftNavigationData = navigationData.filter(
-      (item) => item.position === "left"
-    );
-    const rightNavigationData = navigationData.filter(
-      (item) => item.position === "right"
-    );
-    return (
-      <GlobalHomePage
-        label={caption.label}
-        homepagesplit={homepagesplit(locale)}
-        featuredcarddata={featuredcarddata(locale)}
-        parallaxdata={parallaxdata(locale)}
-        textctadata={textctadata(locale)}
-        textbackgrounddata={textbackgrounddata(locale)}
-        statsdata={statsdata(locale)}
-        fixedcarouseldata={fixedcarouseldata(locale)}
-        featureddata={caption.groupcontentdata}
-        headertext={caption.headertext}
-        BackgroundImg={caption.img}
-        label={caption.label}
-        tweetdata={tweetdata(locale)}
-        footerData={footerData(locale)}
-        languageswitcherData={Languageswitcher(locale)}
-        whatwedoheader={caption.whatwedoheader} 
-        whatwedodescription={caption.whatwedodescription}
-        locale={locale}
-        leftNavigationData={leftNavigationData}
-        navigationData={navigationData}
-        rightNavigationData={rightNavigationData}
-        menuData={menuData(locale)}
-        languageswitcherData={Languageswitcher(locale)}
-        locationData={getLocationDataForLocale(locale)}
-        langSelect={getSelectlanguage(locale)}
-        backcaption={getBackForLocale(locale)}
-      ></GlobalHomePage>
-    );
-  }}
-</Story>
+### Overview
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like normalize, variables, mixins from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file:<code>globalhomepage.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+A global page has all the content listed. This helps the user to get all the data in one place.
+Mock Up: https://undp-design-system.azurewebsites.net/
+
+### Template Structure
+
+The following components are used to create the “Article Page” template in the design system
+1. Global header
+2. Page Hero - Creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle, and Breadcrumb.
+3. Group of single content cards with images along with CTA links (this can be just #).
+4. Background image(color) with text
+5. Parallax Gallery - The images move at a different speed than the content.
+6. Title with big image copy and also has CTA button
+7. Background image(color) with text, Header, and Description
+8. Stats panel - displayed as a part of a collection of similar cards highlighting various statistics
+9. Carousel - Shows sliders, designation, and image in a particular section.
+10. Group of single content cards with images along with CTA links (this can be just #).
+11. Tweets section - Where the user can redirect to the Twitter page 
+12. Standard footer
+
+### Performance
+The page performance will be optimized by considering the following:
+- Lazy load
+- Use appropriate media renditions based on the client’s viewpoint.
+- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
+- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
+- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
+
+<Canvas>
+  <Story name="Global Homepage" 
+    parameters={{
+      layout: "fullscreen"
+    }}>
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      const navigationData = getNavLinks(locale);
+      const leftNavigationData = navigationData.filter(
+        (item) => item.position === "left"
+      );
+      const rightNavigationData = navigationData.filter(
+        (item) => item.position === "right"
+      );
+      return (
+        <GlobalHomePage
+          label={caption.label}
+          homepagesplit={homepagesplit(locale)}
+          featuredcarddata={featuredcarddata(locale)}
+          parallaxdata={parallaxdata(locale)}
+          textctadata={textctadata(locale)}
+          textbackgrounddata={textbackgrounddata(locale)}
+          statsdata={statsdata(locale)}
+          fixedcarouseldata={fixedcarouseldata(locale)}
+          featureddata={caption.groupcontentdata}
+          headertext={caption.headertext}
+          BackgroundImg={caption.img}
+          label={caption.label}
+          tweetdata={tweetdata(locale)}
+          footerData={footerData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          whatwedoheader={caption.whatwedoheader} 
+          whatwedodescription={caption.whatwedodescription}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+        ></GlobalHomePage>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Usage:
+- Copy HTML from the HTML tab of Canvas and include css and js files shared in **CSS and JS References** section below.
+- Initialize viewport, navigation, language switcher, accordion, StatsHover, swiper and parallax effect by calling below mentioned functions in your js code.
+  - <code> viewport('.left-right'); </code> // make sure to add this class on element which needs animation when visible on screen 
+  - <code> navigationInitialize();</code>
+  - <code> langSwitch();</code>
+  - <code> accordion('[data-accordion="mobile"]', '.footer-panel', 'active');</code>
+  - <code> parallaxEffect('.parallax-card', ['.parallax-card__image', '.parallax-card__content'], 'top center', 'bottom+=85 center', 'vertical', 'desktop', 'percent');</code>
+  - <code> StatsHover();</code>
+  - <code> swiper(‘.parallax__content'’, '.fixed-carousel', '.fixed-carousel__button-wrap');</code>
+
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/global-header.min.css
+- dist/css/components/language-switcher.min.css
+- dist/css/components/menu.min.css
+- dist/css/components/mega-menu.min.css
+- dist/css/components/mobile-nav.min.css
+- dist/css/components/homepage-hero.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/featured-content-card.min.css
+- dist/css/components/headingbig.min.css
+- dist/css/components/textbackground.min.css
+- dist/css/components/textcta.min.css
+- dist/css/components/parallax-cards.min.css
+- dist/css/components/stats-cards.min.css
+- dist/css/components/stats-panel.min.css
+- dist/css/components/stats.min.css
+- dist/css/components/fixed-size-carousel.min.css
+- dist/css/components/tweet-card.min.css
+- dist/css/components/tweet-panel.min.css
+- dist/css/components/footer-logo.min.css
+- dist/css/components/footer-lists.min.css
+- dist/css/components/footer-icons.min.css
+- dist/css/components/footer-condition.min.css
+- dist/css/components/input-group.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/signup.min.css
+- dist/css/components/accordion.min.css
+- dist/css/components/footer.min.css
+- dist/css/templates/globalhome-page.min.css
+- dist/css/templates/article-page.min.css
+- dist/css/components/swiper.min.css
+
+#### JS:
+
+- dist/js/swiper.min.js
+- dist/js/parallax.min.js
+- dist/js/smartresize.min.js
+- dist/js/navigation.min.js
+- dist/js/undp.min.js
+- dist/js/lang_switcher.min.js
+- dist/js/accordion.min.js
+- dist/js/sticky.min.js
+- dist/js/stats.min.js
+- dist/js/smoothbgchange.min.js
+- dist/js/viewport.min.js
+
+### Changelog
+1.0 — Released component

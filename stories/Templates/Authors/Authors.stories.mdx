@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import Authors from './Authors';
 import {getCaptionForLocale as breadcrumbData } from "../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs.stories.mdx"
 import {getCaptionForLocale as contentCardData } from "../../Organism/Blocks/ContentCard/ContentCard.stories.mdx"
@@ -313,42 +313,120 @@ export const getfiltertextForLocale = (locale) => {
 
 <Meta title="Templates/Author Listing" />
 
-<Story 
-  name="Author Listing"
-  parameters={{
-    layout: "fullscreen"
-  }}>
-    {(args, { globals: { locale } }) => {
-      const filtertext = getfiltertextForLocale(locale);
-      const buttonData = getButtonForLocale(locale);
-      const headingData = getheadingForLocale(locale);
-      const navigationData= getNavLinks(locale);
-      const leftNavigationData=navigationData.filter(item=>item.position==='left');
-      const rightNavigationData=navigationData.filter(item=>item.position==='right');
-  return <Authors
-      text={filtertext}
-      buttonData = {buttonData}
-      footerData={footerData(locale)}
-      authorData={getCaptionForLocale(locale)}
-      breadcrumbData={breadcrumbData(locale)}
-      headingData={headingData}
-      contentCardData={contentCardData(locale)}
-          locale={locale}
-          leftNavigationData={leftNavigationData}
-          navigationData={navigationData}
-          rightNavigationData={rightNavigationData}
-          menuData={menuData(locale)}
-          languageswitcherData={Languageswitcher(locale)}
-          locationData={getLocationDataForLocale(locale)}
-          langSelect={getSelectlanguage(locale)}
-          backcaption={getBackForLocale(locale)}
-      ></Authors>;
-    }}
-</Story>
+<style>{`
+  .sbdocs-preview {display: none}
+`}</style>
+
+# Authors Listing
+
+An Authors page has all information about every author who is registered in the website.
+
+### Overview
+
+Authors page has all the information about every author who is registered on the website. The user will get every information about the authors at one place.
+
+### Template Structure
+
+The following components are used to create the “Article page” template in the design system
+- Global header
+- Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.
+- Title has author name
+- Expanding search bar - Used to search for any specific author
+- Select menu with options (Most posts and Alphabetical)
+- Author Card grid - Has image of the author
+- View more button in case of more content available
+- Standard footer 
+
+### Performance
+The page performance will be optimized by considering following:
+- Lazy load
+- Use appropriate media renditions based on the client’s viewpoint.
+- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
+- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
+- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
+
+<Canvas>
+  <Story 
+    name="Author Listing"
+    parameters={{
+      layout: "fullscreen"
+    }}>
+      {(args, { globals: { locale } }) => {
+        const filtertext = getfiltertextForLocale(locale);
+        const buttonData = getButtonForLocale(locale);
+        const headingData = getheadingForLocale(locale);
+        const navigationData= getNavLinks(locale);
+        const leftNavigationData=navigationData.filter(item=>item.position==='left');
+        const rightNavigationData=navigationData.filter(item=>item.position==='right');
+    return <Authors
+        text={filtertext}
+        buttonData = {buttonData}
+        footerData={footerData(locale)}
+        authorData={getCaptionForLocale(locale)}
+        breadcrumbData={breadcrumbData(locale)}
+        headingData={headingData}
+        contentCardData={contentCardData(locale)}
+            locale={locale}
+            leftNavigationData={leftNavigationData}
+            navigationData={navigationData}
+            rightNavigationData={rightNavigationData}
+            menuData={menuData(locale)}
+            languageswitcherData={Languageswitcher(locale)}
+            locationData={getLocationDataForLocale(locale)}
+            langSelect={getSelectlanguage(locale)}
+            backcaption={getBackForLocale(locale)}
+        ></Authors>;
+      }}
+  </Story>
+</Canvas>
 
 ### Usage
- 
-- Take HTML from the HTML tab in the canvas and paste in your HTML file
-- Include the following files in your HTML file
-  - Base CSS file **dist/css/base-minimal.css**
-  - Template CSS file **dist/css/templates/authors.css**
+- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
+- Initialize viewport,  navigation, language switcher, accordion, select and filter by calling below mentioned functions.
+  - viewport('.left-right');
+  - navigationInitialize();
+  - langSwitch();
+  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+  - expandSearch();
+  - select();
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/global-header.min.css
+- dist/css/components/language-switcher.min.css
+- dist/css/components/menu.min.css
+- dist/css/components/mega-menu.min.css
+- dist/css/components/mobile-nav.min.css
+- dist/css/components/breadcrumbs.min.css
+- dist/css/components/author-card.min.css
+- dist/css/components/authors.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/custom-select.min.css
+- dist/css/components/search-expand.min.css
+- dist/css/components/footer-logo.min.css
+- dist/css/components/footer-lists.min.css
+- dist/css/components/footer-icons.min.css
+- dist/css/components/footer-condition.min.css
+- dist/css/components/input-group.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/signup.min.css
+- dist/css/components/accordion.min.css
+- dist/css/components/footer.min.css
+- dist/css/templates/Authors.min.css
+
+#### JS:
+- dist/js/animation.min.js
+- dist/js/navigation.min.js
+- dist/js/UNDP.min.js
+- dist/js/lang_switcher.min.js
+- dist/js/accordion.min.js
+- dist/js/viewport.min.js
+- dist/js/expand_search.min.js
+- dist/js/select.min.js
+
+### Changelog
+1.0 — Released component

@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { SdgPage } from "./Sdg";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.mdx";
 import { getCaptionForLocale as sdgsmodaldata } from "../../Molecules/Sdgmodal/Sdgmodal";
@@ -1337,60 +1337,67 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Templates/SDG Page" />
 
-# SDG Page Templates
+<style>{`
+  .sbdocs-preview {display: none}
+`}</style>
+
+# SDG Page
 
 Template for SDG Page
 
-<Story name="SDG Page" parameters={{
-    layout: "fullscreen"
-  }}>
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    const navigationData = getNavLinks(locale);
-    const leftNavigationData = navigationData.filter(
-      (item) => item.position === "left"
-    );
-    const rightNavigationData = navigationData.filter(
-      (item) => item.position === "right"
-    );
-    return (
-      <SdgPage
-        active={"white"}
-        herodata={caption.herodata}
-        title={caption.title}
-        imgsource={caption.imgsrc}
-        altname={caption.imgalt}
-        footerData={footerData(locale)}
-        locale={locale}
-        leftNavigationData={leftNavigationData}
-        navigationData={navigationData}
-        rightNavigationData={rightNavigationData}
-        menuData={menuData(locale)}
-        locationData={getLocationDataForLocale(locale)}
-        langSelect={getSelectlanguage(locale)}
-        backcaption={getBackForLocale(locale)}
-        languageswitcherData={Languageswitcher(locale)}
-        Sdgnewdata={caption.Sdgdata}
-        imgsrcsdg={sdglinkimage}
-        sdgtitle={caption.sdgtitle}
-        goaltitle={caption.goaltitle}
-        goalpara={caption.goalpara}
-        statsData={statsData(locale)}
-        goaldata={caption.goaldata}
-        contentdata={caption.contentdata}
-        storyBtn={caption.storyBtn}
-        Sdgcontenttitle={caption.Sdgcontenttitle}
-        nextcardtitle={caption.nextcardtitle}
-        goalcount={caption.goalcount}
-        modaltitle={caption.modaltitle}
-        description={caption.description}
-        modalgoaltitle={caption.modalgoaltitle}
-        modalsdgimg ={sdgimg}
-        modalsdgimgalt ='sdg image'
-      ></SdgPage>
-    );
-  }}
-</Story>
+<Canvas>
+  <Story name="SDG Page" 
+    parameters={{
+      layout: "fullscreen"
+    }}>
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      const navigationData = getNavLinks(locale);
+      const leftNavigationData = navigationData.filter(
+        (item) => item.position === "left"
+      );
+      const rightNavigationData = navigationData.filter(
+        (item) => item.position === "right"
+      );
+      return (
+        <SdgPage
+          active={"white"}
+          herodata={caption.herodata}
+          title={caption.title}
+          imgsource={caption.imgsrc}
+          altname={caption.imgalt}
+          footerData={footerData(locale)}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          Sdgnewdata={caption.Sdgdata}
+          imgsrcsdg={sdglinkimage}
+          sdgtitle={caption.sdgtitle}
+          goaltitle={caption.goaltitle}
+          goalpara={caption.goalpara}
+          statsData={statsData(locale)}
+          goaldata={caption.goaldata}
+          contentdata={caption.contentdata}
+          storyBtn={caption.storyBtn}
+          Sdgcontenttitle={caption.Sdgcontenttitle}
+          nextcardtitle={caption.nextcardtitle}
+          goalcount={caption.goalcount}
+          modaltitle={caption.modaltitle}
+          description={caption.description}
+          modalgoaltitle={caption.modalgoaltitle}
+          modalsdgimg ={sdgimg}
+          modalsdgimgalt ='sdg image'
+        ></SdgPage>
+      );
+    }}
+  </Story>
+</Canvas>
 
 ### Usage
 

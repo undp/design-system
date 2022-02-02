@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { CountryHomepage } from './CountryHomepage';
 import {getCaptionForLocale as footerData} from '../../Organism/Footer/Footer.stories.mdx';
 import {statsArray as statssliderdata} from '../../Patterns/StatsSlider/StatsSlider.stories.mdx';
@@ -395,84 +395,64 @@ export const getCaptionForLocale = (locale) => {
 <Meta title="Templates/Country Homepage"/>
 
 <style>{`
-  .sbdocs-h1 {
-    font-weight: 700;
-  }
-  .subheading {
-    font-weight: 500;
-    font-scale: 22px;
-    color: #161616;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .high {
-    font-weight: 500;
-    font-size: 14px;
-    color: #161616;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .docblock-code-toggle {
-    display: none;
-  }
+  .sbdocs-preview {display: none}
 `}</style>
 
 # Country Homepage 
 
 Country Homepage Template
 
-<Story name="Country Homepage" parameters={{
-    layout: "fullscreen"
-  }}>
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    const navigationData= getNavLinks(locale);
-    const leftNavigationData=navigationData.filter(item=>item.position==='left');
-     const rightNavigationData=navigationData.filter(item=>item.position==='right');
-     const siteTitleData = getSiteTitle(locale);
-     console.log(siteTitleData);
-     return <CountryHomepage 
-        herotitle={caption.titlename}
-        headingTop={caption.text}
-        herobtnlabel={caption.btnlabel}
-        herosubtitle={caption.subtitle}
-        heroimgsrc={caption.imgsrc}
-        heroimgalt={caption.imgalt}   
-        featureddata={caption.featureddata}
-        featureddataafterwedo={caption.featureddataafterwedo}
-        headertext={caption.headertext}
-        PagewidecardTag={caption.tag}
-        PagewidecardTitle={caption.label1}
-        PagewidecardParagraph={caption.label2}
-        PagewidecardBtnlabel={caption.pagewidecardbtn}
-        whatwedoheader={caption.whatwedoheader} 
-        whatwedodescription={caption.whatwedodescription}
-        takeactioncard={takeactioncard(locale)}
-        statHeading={caption.statHeading}
-        storiesHeading={caption.storiesHeading}
-        featureddataafterwedo={contentcardimagesdata(locale)}
-        StatsSliderData={statssliderdata(locale)}
-        footerData={footerData(locale)}
-        locale={locale}
-        leftNavigationData={leftNavigationData}
-        navigationData={navigationData}
-        rightNavigationData={rightNavigationData}
-        menuData={menuData(locale)}
-        languageswitcherData={Languageswitcher(locale)}
-        locationData={getLocationDataForLocale(locale)}
-        langSelect={getSelectlanguage(locale)}
-        backcaption={getBackForLocale(locale)}
-        siteTitleData={getSiteTitle(locale)}        
-        logo={logo}
-        logowhite={logowhite}
-        takeAcrtionHead={caption.takeAcrtionHead}
-        storyBtn={caption.storyBtn}
-    ></CountryHomepage>;
-  }}
-</Story>
+<Canvas>
+  <Story name="Country Homepage" parameters={{
+      layout: "fullscreen"
+    }}>
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      const navigationData= getNavLinks(locale);
+      const leftNavigationData=navigationData.filter(item=>item.position==='left');
+      const rightNavigationData=navigationData.filter(item=>item.position==='right');
+      const siteTitleData = getSiteTitle(locale);
+      console.log(siteTitleData);
+      return <CountryHomepage 
+          herotitle={caption.titlename}
+          headingTop={caption.text}
+          herobtnlabel={caption.btnlabel}
+          herosubtitle={caption.subtitle}
+          heroimgsrc={caption.imgsrc}
+          heroimgalt={caption.imgalt}   
+          featureddata={caption.featureddata}
+          featureddataafterwedo={caption.featureddataafterwedo}
+          headertext={caption.headertext}
+          PagewidecardTag={caption.tag}
+          PagewidecardTitle={caption.label1}
+          PagewidecardParagraph={caption.label2}
+          PagewidecardBtnlabel={caption.pagewidecardbtn}
+          whatwedoheader={caption.whatwedoheader} 
+          whatwedodescription={caption.whatwedodescription}
+          takeactioncard={takeactioncard(locale)}
+          statHeading={caption.statHeading}
+          storiesHeading={caption.storiesHeading}
+          featureddataafterwedo={contentcardimagesdata(locale)}
+          StatsSliderData={statssliderdata(locale)}
+          footerData={footerData(locale)}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          siteTitleData={getSiteTitle(locale)}        
+          logo={logo}
+          logowhite={logowhite}
+          takeAcrtionHead={caption.takeAcrtionHead}
+          storyBtn={caption.storyBtn}
+      ></CountryHomepage>;
+    }}
+  </Story>
+</Canvas>
 
 <div className="subheading">Usage</div>
 <ul>
