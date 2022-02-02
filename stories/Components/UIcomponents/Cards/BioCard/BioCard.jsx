@@ -29,7 +29,7 @@ export const size_options = {
 };
 
 export const hover_color_options = {
-  yellow: 'yellow',
+  yellow: '',
   green: 'green',
   red: 'red',
   blue: 'blue',

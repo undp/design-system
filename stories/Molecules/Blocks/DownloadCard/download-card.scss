@@ -13,6 +13,11 @@ div.download-card {
 
   &:hover {
     div.publication-thumbnail__image {
+      &::after {
+        @include background-image(27.66deg, $color-yellow, transparent 70.49%);
+        opacity: 0.75;
+      }
+
       @each $name, $color in $colors {
         &.#{$name}:after {
           @include background-image(27.66deg, #{$color}, transparent 70.49%);
@@ -22,6 +27,11 @@ div.download-card {
     }
 
     div.card-thumbnail__image {
+      &::before {
+        @include background-image(67.76deg, $color-yellow, transparent 61.11%);
+        opacity: 0.75;
+      }
+
       @each $name, $color in $colors {
         &.#{$name}::before {
           @include background-image(67.76deg, #{$color}, transparent 61.11%);
@@ -48,25 +58,25 @@ div.download-card {
     }
   }
 
-  .download-card__description {
+  .description {
     background: $color-gray-100;
     padding: $spacing-24;
   }
 
-  .download-card__title {
+  .title {
     @extend %paragragh-font-20;
 
     margin-bottom: $spacing-04;
   }
 
-  .download-card__format {
+  .format {
     @extend %paragragh-font-16;
 
     color: $color-gray-600;
     margin-bottom: $spacing-16;
   }
 
-  .download-card__download {
+  .download {
     @extend %paragragh-font-16;
 
     align-items: center;
@@ -96,6 +106,10 @@ div.download-card {
     }
     &:hover {
       div.publication-thumbnail__image {
+        &::after {
+          @include background-image(318deg, $color-yellow, transparent 70.49%);
+        }
+
         @each $name, $color in $colors {
           &.#{$name}:after {
             @include background-image(318deg, #{$color}, transparent 70.49%);
@@ -104,6 +118,10 @@ div.download-card {
       }
 
       div.card-thumbnail__image  {
+        &::before {
+          @include background-image(297deg, $color-yellow, transparent 61.11%);
+        }
+
         @each $name, $color in $colors {
           &.#{$name}:before {
             @include background-image(297deg, #{$color}, transparent 61.11%);
