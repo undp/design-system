@@ -90,9 +90,6 @@ div.wide-card__image {
         width: 100%;
       }
     }
-    &::before {
-      background-image: linear-gradient(45deg, $color-yellow, transparent 80%);
-    }
   }
 
   img {
@@ -102,6 +99,10 @@ div.wide-card__image {
   }
 
   &:hover {
+    a::before {
+      background-image: linear-gradient(67.76deg, $color-yellow, transparent 61.11%);
+      opacity: 0.75;
+    }
     @each $name, $color in $colors {
       &.#{$name} a::before {
         background-image: linear-gradient(67.76deg, #{$color}, transparent 61.11%);
@@ -124,6 +125,9 @@ div.wide-card__image {
 
   .wide-card__image {
     &:hover {
+      a::before {
+        background-image: linear-gradient(297deg, $color-yellow, transparent 61.11%);
+      }
       @each $name, $color in $colors {
         &.#{$name} a::before {
           background-image: linear-gradient(297deg, #{$color}, transparent 61.11%);
