@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { GenericPage } from './GenericPage';
 import {getCaptionForLocale as footerData} from "../../Organism/Footer/Footer.stories.mdx";
 import {getCaptionForLocale as sidebarCaptionData} from "../../Components/Navigationcomponents/Sidebar/Sidebar.stories.mdx";
@@ -271,72 +271,135 @@ export const statsArray = (locale) => {
 <Meta title="Templates/Generic Page"/>
 
 <style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
+  .sbdocs-preview {display: none}
 `}</style>
 
-# Generic Page Templates
-Template for Generic Page
+# Generic Page
+
+In the generic page, it shows all the information about the company or author.
+
+### Overview
+
+Generic Page is the template for all the information about the company or author. The user can also see the related information in this. This helps the users to get complete information about the company or author. Mockup - https://www.undp.org/partners/united-nations-system
+
+### Template Structure
+
+- The following components are used to create the “Article Page” template in the design system
+- Global header
+- Progress bar - reading meter, updated on scroll based on the amount of text remaining in the article. The related content part is not counted, only actual Article’s content.
+- Page Hero - Creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle, and Breadcrumb. 
+- Sidebar menu (3 columns wide) - Column on the left or right side of a page which highlights the extra information related to the page.
+- H2 Title along with large Paragraphs
+- Fluid image size carousel -  Shows sliders, designation, and image in a particular section. It is a multi-usage component that creates teasing kinds of content.
+- Text/paragraphs about company or author
+- Group of single content cards with images along with CTA links (this can be just #).
+- Standard footer 
+
+### Performance
+The page performance will be optimized by considering the following:
+- Lazy load
+- Use appropriate media renditions based on the client’s viewpoint.
+- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
+- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
+- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
 
 
-<Story name="Generic Page" parameters={{
-    layout: "fullscreen"
-  }}>
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    const carouselData = statsArray(locale);
-    const navigationData= getNavLinks(locale);
-    const leftNavigationData=navigationData.filter(item=>item.position==='left');
-    const rightNavigationData=navigationData.filter(item=>item.position==='right');
-    return (
-      <GenericPage 
-        active={'white'}
-        herodata={caption.herodata} 
-        title={caption.title} 
-        content={caption.content} 
-        imgsource={caption.imgsrc} 
-        altname={caption.imgalt}
-        topHeading={caption.detail2}
-        topParagraph={caption.topParagraph} 
-        carouselData={carouselData}   
-        headingMissionVision={caption.headingMissionVision}
-        paraMissionVision={caption.paraMissionVision}
-        headingHistory={caption.headingHistory}
-        paraHistory={caption.paraHistory}
-        headingUNcharter={caption.headingUNcharter}
-        paraUNcharter={caption.paraUNcharter}    
-        sidebarCaptionData={sidebarCaptionData(locale)} 
-        ContentCardData={ContentCardData(locale)} 
-        footerData={footerData(locale)}
-      locale={locale}
-        leftNavigationData={leftNavigationData}
-        navigationData={navigationData}
-        rightNavigationData={rightNavigationData}
-        menuData={menuData(locale)}
-        languageswitcherData={Languageswitcher(locale)}
-        locationData={getLocationDataForLocale(locale)}
-        langSelect={getSelectlanguage(locale)}
-        backcaption={getBackForLocale(locale)}
-        logo={logo}
-        logowhite={logowhite}
-      ></GenericPage>
-    );
-  }}
-</Story>
+<Canvas>
+  <Story name="Generic Page" parameters={{
+      layout: "fullscreen"
+    }}>
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      const carouselData = statsArray(locale);
+      const navigationData= getNavLinks(locale);
+      const leftNavigationData=navigationData.filter(item=>item.position==='left');
+      const rightNavigationData=navigationData.filter(item=>item.position==='right');
+      return (
+        <GenericPage 
+          active={'white'}
+          herodata={caption.herodata} 
+          title={caption.title} 
+          content={caption.content} 
+          imgsource={caption.imgsrc} 
+          altname={caption.imgalt}
+          topHeading={caption.detail2}
+          topParagraph={caption.topParagraph} 
+          carouselData={carouselData}   
+          headingMissionVision={caption.headingMissionVision}
+          paraMissionVision={caption.paraMissionVision}
+          headingHistory={caption.headingHistory}
+          paraHistory={caption.paraHistory}
+          headingUNcharter={caption.headingUNcharter}
+          paraUNcharter={caption.paraUNcharter}    
+          sidebarCaptionData={sidebarCaptionData(locale)} 
+          ContentCardData={ContentCardData(locale)} 
+          footerData={footerData(locale)}
+        locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          logo={logo}
+          logowhite={logowhite}
+        ></GenericPage>
+      );
+    }}
+  </Story>
+</Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-    <li>Take HTML from the HTML tab in the canvas</li>
-    <u>To use SCSS include the following files in your implementation</u>
-    <li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
-    <li>Component SCSS file: <code>postheader.scss</code></li>
-    <u>To use CSS include the following files in your implementation</u>
-    <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Usage
+- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
+- Initialize viewport,  navigation, language switcher, accordion, sidebar and swiper  by calling below mentioned functions.
+  - viewport('.left-right');
+  - navigationInitialize();
+  - langSwitch();
+  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+  - expandToSize('.pagehero-full');
+  - sidebarNav();
+  - sidebarMenu();
+  - swiper('.fluid-carousel', '.slide-content');
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/page-hero.min.css
+- dist/css/components/breadcrumbs.min.css
+- dist/css/components/progress.min.css
+- dist/css/components/content-card.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/sidebar.min.css
+- dist/css/components/swiper.min.css
+- dist/css/components/sidebar-data.min.css
+- dist/css/components/fluid-image-size-carousel.min.css
+- dist/css/components/footer-logo.min.css
+- dist/css/components/footer-lists.min.css
+- dist/css/components/footer-icons.min.css
+- dist/css/components/footer-condition.min.css
+- dist/css/components/input-group.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/signup.min.css
+- dist/css/components/accordion.min.css
+- dist/css/components/footer.min.css
+- dist/css/templates/generic-page.min.css
+- dist/css/components/swiper.min.css
+
+#### JS:
+- dist/js/navigation.min.js
+- dist/js/UNDP.min.js
+- dist/js/lang_switcher.min.js
+- dist/js/accordion.min.js
+- dist/js/viewport.min.js
+- dist/js/scrolling_progressbar.min.js
+- dist/js/sidebar.min.js
+- dist/js/swiper.min.js
+
+### Changelog
+1.0 — Released component
+
+
