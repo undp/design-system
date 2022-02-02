@@ -97,11 +97,15 @@ div.wide-card__image {
         opacity: 0.75;
       }
     }
+    &::before {
+      background-image: linear-gradient(45deg, $color-yellow, transparent 80%);
+    }
   }
 
   img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
   }
 
   @each $name, $color in $colors {
