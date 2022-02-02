@@ -18,13 +18,13 @@
     max-width: 296px;
     padding-top: $spacing-24;
 
-    .chips {
+    .chip {
       margin: 0 0.75rem 0.75rem 0;
       cursor: pointer;
     }
   }
 
-  .chips {
+  .chip {
     font-size: $font-size-16;
   }
 
@@ -59,7 +59,7 @@
 
 [dir='rtl'] {
   .selected-chips {
-    .chips {
+    .chip {
       margin: 0 0 $spacing-12 $spacing-12;
     }
   }
