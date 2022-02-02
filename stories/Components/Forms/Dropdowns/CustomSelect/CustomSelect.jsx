@@ -11,26 +11,26 @@ const CustomSelect = ({ text }) => {
       <button type="button" aria-haspopup="listbox" aria-label="Select" data-select-open="">
         {text}
       </button>
-      <ul tabIndex="-1" role="listbox" data-select-options="">
-        <li role="option" data-value="default">
+      <ul role="listbox" data-select-options="">
+        <li role="option" tabIndex="0" data-value="default">
           <span>All</span>
         </li>
-        <li role="option" data-value="pasto">
+        <li role="option" tabIndex="0" data-value="pasto">
           <span>Pasto</span>
         </li>
-        <li role="option" data-value="dari">
+        <li role="option" tabIndex="0" data-value="dari">
           <span>Dari</span>
         </li>
-        <li role="option" data-value="en">
+        <li role="option" tabIndex="0" data-value="en">
           <span>English</span>
         </li>
-        <li role="option" data-value="albanian">
+        <li role="option" tabIndex="0" data-value="albanian">
           <span>Albanian</span>
         </li>
-        <li role="option" data-value="arabic">
+        <li role="option" tabIndex="0" data-value="arabic">
           <span>Arabic</span>
         </li>
-        <li role="option" data-value="portuguese">
+        <li role="option" tabIndex="0" data-value="portuguese">
           <span>Portuguese</span>
         </li>
       </ul>
