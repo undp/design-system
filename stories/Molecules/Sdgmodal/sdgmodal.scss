@@ -701,32 +701,18 @@ body.sdgmodal-open {
   }
 
   ul {
-    padding: $spacing-50 0 0;
+    padding-top: $spacing-50;
+    margin-left: $spacing-08;
 
     @include devicebreak(medium) {
       padding: 0;
+      margin-left: 0;
     }
 
     li {
       font-size: $font-size-20;
-      list-style: none;
       padding-left: $spacing-32;
       position: relative;
-
-      &::before {
-        background: $color-black;
-        border-radius: 50%;
-        content: '';
-        height: 10px;
-        left: 0;
-        margin-top: $spacing-08;
-        position: absolute;
-        width: 10px;
-
-        @include devicebreak(medium) {
-          left: -$spacing-16;
-        }
-      }
 
       &:not(:last-child) {
         margin-bottom: $spacing-64;
@@ -856,7 +842,12 @@ body.sdgmodal-open {
     }
 
     ul {
-      padding-right: 0;
+      margin-right: $spacing-08;
+      margin-left: unset;
+      @include devicebreak(medium) {
+        padding-right: 0;
+        margin-right: 0;
+      }
       li {
         padding-left: 0;
         padding-right: $spacing-32;
