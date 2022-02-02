@@ -90,11 +90,15 @@ div.wide-card__image {
         width: 100%;
       }
     }
+    &::before {
+      background-image: linear-gradient(45deg, $color-yellow, transparent 80%);
+    }
   }
 
   img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
   }
 
   &:hover {
