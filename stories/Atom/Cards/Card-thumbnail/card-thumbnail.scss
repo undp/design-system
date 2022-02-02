@@ -19,22 +19,20 @@ div.card-thumbnail__image {
     &::before {
       opacity: 0.75;
     }
-  }
-
-  @each $name, $color in $colors {
-    &.#{$name}::before {
-      @include background-image(42deg, #{$color}, transparent 80%);
+    @each $name, $color in $colors {
+      &.#{$name}::before {
+        @include background-image(67.76deg, #{$color}, transparent 61.11%);
+      }
     }
   }
 }
 
 [dir='rtl'] {
-  .card-thumbnail__image {
+  div.card-thumbnail__image {
     &:hover {
-      
       @each $name, $color in $colors {
         &.#{$name}::before {
-          @include background-image(42deg, #{$color}, transparent 80%);
+          @include background-image(297deg, #{$color}, transparent 61.11%);
         }
       }
     }

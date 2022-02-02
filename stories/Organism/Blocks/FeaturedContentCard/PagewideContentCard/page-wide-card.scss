@@ -73,11 +73,8 @@
 }
 
 div.wide-card__image {
-
   $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
-
   position: relative;
-
   a {
     @include devicebreak(medium) {
       &::before {
@@ -92,10 +89,6 @@ div.wide-card__image {
         top: 0;
         width: 100%;
       }
-
-      &:hover::before {
-        opacity: 0.75;
-      }
     }
   }
 
@@ -104,11 +97,15 @@ div.wide-card__image {
     width: 100%;
   }
 
-  @each $name, $color in $colors {
-    &.#{$name} a::before {
-      background-image: linear-gradient(45deg, #{$color}, transparent 80%);
+  &:hover {
+    @each $name, $color in $colors {
+      &.#{$name} a::before {
+        background-image: linear-gradient(67.76deg, #{$color}, transparent 61.11%);
+        opacity: 0.75;
+      }
     }
   }
+
 }
 
 [dir='rtl'] {
@@ -122,10 +119,10 @@ div.wide-card__image {
   }
 
   .wide-card__image {
-    a {
-      @include devicebreak(medium) {
-        &::before {
-          @include transform(scaleX(-1));
+    &:hover {
+      @each $name, $color in $colors {
+        &.#{$name} a::before {
+          background-image: linear-gradient(297deg, #{$color}, transparent 61.11%);
         }
       }
     }
