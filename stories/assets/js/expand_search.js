@@ -27,4 +27,13 @@ export const expandSearch = () => {
     $(this).siblings('input').val('');
     $(this).removeClass('show');
   });
+  $(document).mouseup(function(e) {
+    var container = $(".expand-search");
+    if($(".expand-search").find('input').val().length < 1){
+      if (!container.is(e.target) && container.has(e.target).length === 0) 
+      {
+          container.removeClass('open');
+      }
+    }
+  });
 };

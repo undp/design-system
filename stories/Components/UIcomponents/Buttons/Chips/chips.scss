@@ -2,7 +2,7 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/breakpoints';
 
-.chips {
+.chip {
   align-items: center;
   background: $color-gray-200;
   border: none;
@@ -16,7 +16,7 @@
     background-color: $color-gray-300;
   }
 
-  &.chips__cross {
+  &.chip__cross {
     &::before {
       background: url(#{$img-path-Iconfourback}/Timesred.svg) no-repeat left;
       content: '';
@@ -32,14 +32,14 @@
 }
 
 [dir='rtl'] {
-  .chips__cross::before {
+  .chip__cross::before {
     margin-left: 0.375rem;
     margin-right: -$spacing-04;
   }
 }
 
 :lang(my) {
-  .chips {
+  .chip {
     align-items: flex-end;
 
     &__cross {

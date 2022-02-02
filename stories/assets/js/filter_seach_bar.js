@@ -1,7 +1,7 @@
 const selectCount = [];
 const toggleFilter = function () {
   const searchOption = $('.multi-select li input:checkbox');
-  const chipsWrapper = $('.search-filter .selected-chips');
+  const chipWrapper = $('.search-filter .selected-chips');
 
   $(".multi-select").each(function( index ) { 
     const numberOfCheck = $(this).find('input:checkbox:checked').length;
@@ -14,7 +14,7 @@ const toggleFilter = function () {
   $(searchOption).on('click', function (e) {
     e.stopImmediatePropagation();
     const el = $(this);
-    const currentChipsWrapper = el.parents('.select-wrapper').find('.selected-chips');
+    const currentchipWrapper = el.parents('.select-wrapper').find('.selected-chips');
     const eleId = el.attr('id');
     const numberOfChecked = $(this).parents('.multi-select').find('input:checkbox:checked').length;
     const filterButton = $(this).parents('ul').not('.sub-menu').siblings();
@@ -26,33 +26,29 @@ const toggleFilter = function () {
     }
     if (el.is(':checked')) {
       const optionValue = $(this).siblings().text();
-      const chips = $(currentChipsWrapper).find('.chips:first-child').clone();
-      chips.text(optionValue);
-      chips.attr({'option-name': eleId });
-      $(currentChipsWrapper).append(chips);
+      const chip = $('<span class="chip chip__cross" tabindex="0" role="button"></span>').clone();
+      chip.text(optionValue);
+      chip.attr({'option-name': eleId });
+      $(currentchipWrapper).append(chip);
 
-      if (currentChipsWrapper.find('.chips__cross').length > 1) {
-        $(currentChipsWrapper).siblings('.clear-search-filter').addClass('show-clear');
-      }
-      if ($(currentChipsWrapper).find('.chips__cross').length > 1) {
-        $(currentChipsWrapper).siblings('.active-filter').addClass('show-activefilter');
+      if (currentchipWrapper.find('.chip__cross').length > 0) {
+        currentchipWrapper.siblings('.clear-search-filter').addClass('show-clear')
+        .siblings('.active-filter').addClass('show-activefilter');
       }
     } else {
-      if (currentChipsWrapper.find('.chips__cross').length < 3) {
-        currentChipsWrapper.siblings('.clear-search-filter').removeClass('show-clear');
-      }
-      if (currentChipsWrapper.find('.chips__cross').length < 3) {
-        currentChipsWrapper.siblings('.active-filter').removeClass('show-activefilter');
+      if (currentchipWrapper.find('.chip__cross').length < 2) {
+        currentchipWrapper.siblings('.clear-search-filter').removeClass('show-clear')
+        .siblings('.active-filter').removeClass('show-activefilter');
       }
       $(el).parents('.select-wrapper').find(`[option-name='${eleId}']`).remove();
     }
   });
 
-  $(chipsWrapper).on('click', '.chips__cross', function (event) {
+  $(chipWrapper).on('click', '.chip__cross', function (event) {
     event.preventDefault();
     const el = $(this);
-    const currentChipsWrapper = el.parents('.select-wrapper').find('.selected-chips');
-    if ($(currentChipsWrapper).find('.chips__cross').length < 3) {
+    const currentchipWrapper = el.parents('.select-wrapper').find('.selected-chips');
+    if ($(currentchipWrapper).find('.chip__cross').length < 2) {
       el.parents('.select-wrapper').find('.clear-search-filter').removeClass('show-clear');
       el.parents('.select-wrapper').find('.active-filter').removeClass('show-activefilter');
     }
@@ -72,8 +68,8 @@ const toggleFilter = function () {
 
   $(document).on('click', '.clear-search-filter', function () {
     const el = $(this);
-    const currentChipsWrapper = el.parents('.select-wrapper').find('.selected-chips');
-    $(currentChipsWrapper).find('a').not(':first-child').remove();
+    const currentchipWrapper = el.parents('.select-wrapper').find('.selected-chips');
+    $(currentchipWrapper).find('.chip').remove();
     el.parents('.select-wrapper').find('.clear-search-filter').removeClass('show-clear');
     el.parents('.select-wrapper').find('.active-filter').removeClass('show-activefilter');
     el.parents('.select-wrapper').find("input[type='checkbox']").prop('checked', false);
