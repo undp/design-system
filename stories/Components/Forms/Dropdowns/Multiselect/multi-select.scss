@@ -148,9 +148,14 @@
   ul .form-check {
     justify-content: space-between;
     margin: 0 -1rem;
-    padding: $spacing-16;
+    padding:0 $spacing-16;
     label {
-      padding: 0;
+      padding:$spacing-16 0;
+      width: 100%;
+    }
+    input{
+      position: absolute;
+      right:$spacing-16;
     }
   }
 }
@@ -182,6 +187,11 @@
 
       li {
         padding-right: 0;
+      }
+
+      .form-check input{
+        left:$spacing-16;
+        right:inherit;
       }
     }
 
