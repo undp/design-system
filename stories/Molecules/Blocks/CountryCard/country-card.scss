@@ -60,6 +60,9 @@
           i {
             left: $spacing-16;
             width: $spacing-80;
+            &::before {
+              display: inline-block;
+            }
           }
         }
       }
