@@ -38,6 +38,7 @@ div.publication-thumbnail__image {
     &::after {
       opacity: 0.75;
     }
+
     @each $name, $color in $colors {
       &.#{$name}:after {
         @include background-image(27.66deg, #{$color}, transparent 70.49%);

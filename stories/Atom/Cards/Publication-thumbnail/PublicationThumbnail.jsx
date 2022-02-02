@@ -9,7 +9,7 @@ export const Publicationthumb = ({ Hovercolors }) => {
   };
 
   return (
-    <div className={['publication-thumbnail__image', `${Hovercolors}`].join(' ')}>
+    <div className={['publication-thumbnail__image'].join(' ')}>
       <img src={image.src} alt={image.alt} />
     </div>
   );

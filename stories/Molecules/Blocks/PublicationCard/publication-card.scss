@@ -12,23 +12,26 @@ div.publication-card {
   }
 
   &:hover {
-    .publication-thumbnail__image {
+    div.publication-thumbnail__image {
+      &::after {
+        @include background-image(27.66deg, $color-yellow, transparent 70.49%);
+        opacity: 0.75;
+      }
       @each $name, $color in $colors {
         &.#{$name}:after {
-          @include background-image(42deg, #{$color}, transparent 80%);
-
+          @include background-image(27.66deg, $color-yellow, transparent 70.49%);
           opacity: 0.75;
         }
       }
     }
   }
 
-  &__description {
+  .description {
     align-items: center;
     background: $color-gray-100;
     padding: $spacing-24;
 
-    .description-grid {
+    > div{
       align-items: center;
       flex-wrap: unset;
 
@@ -39,20 +42,20 @@ div.publication-card {
     }
   }
 
-  &__title {
+  .title {
     @extend %paragragh-font-20;
 
     margin-bottom: $spacing-04;
   }
 
-  &__format {
+  .format {
     @extend %paragragh-font-16;
 
     color: $color-gray-600;
     margin-bottom: $spacing-16;
   }
 
-  &__download {
+  .download {
     @extend %paragragh-font-16;
 
     align-items: center;
@@ -81,7 +84,7 @@ div.publication-card {
     }
   }
 
-  &__readmore {
+  .readmore {
     @extend %paragragh-font-16;
 
     align-items: center;
@@ -114,22 +117,22 @@ div.publication-card {
 
 [dir='rtl'] {
   .publication-card {
-    &__readmore {
+    .readmore {
       .external-link {
         margin-left: 0;
         margin-right: $spacing-12;
       }
     }
 
-    &__download {
+    .download {
       .download-icon {
         margin-left: 0;
         margin-right: $spacing-12;
       }
     }
 
-    &__description {
-      .description-grid > :not(:first-of-type) {
+    .description {
+      > div > :not(:first-of-type) {
         border-left: 0;
         border-right: $spacing-02 solid $color-silvery-moonlight;
         text-align: left;
@@ -138,11 +141,12 @@ div.publication-card {
 
     &:hover {
       .publication-thumbnail__image {
+        &::after {
+          @include background-image(318deg, $color-yellow, transparent 70.49%);
+        }
         @each $name, $color in $colors {
           &.#{$name}:after {
-            @include background-image(318deg, #{$color}, transparent 80%);
-
-            opacity: 0.75;
+            @include background-image(318deg, #{$color}, transparent 70.49%);
           }
         }
       }

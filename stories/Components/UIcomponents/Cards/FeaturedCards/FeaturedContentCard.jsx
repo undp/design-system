@@ -17,6 +17,13 @@ export const image_options = {
   color: 'without-image',
 };
 
+export const hovercolor_options = {
+  yellow : '',
+  red : 'red',
+  green: 'green',
+  blue : 'blue',
+};
+
 const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
 
 export const FeaturedContentCard = ({
@@ -27,12 +34,13 @@ export const FeaturedContentCard = ({
   }, []);
   let size_variant = size_options[`${args.size}`];
   let image_variant = image_options[`${image}`];
+  let hovercolor_variant = hovercolor_options[`${hovercolor}`];
   return (
     <>
     <div className='grid-x grid-margin-x'>
       {headertext && <div className="cell medium-3 medium-offset-1 small-offset-1 feature__card-title left-right"><Heading type="2" label={headertext} /></div>}
          {data.map((item, index) => (
-        <div key={index}  className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`, `${hovercolor}`)}>
+        <div key={index}  className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`, `${hovercolor_variant}`)}>
           <a href="#">
             <div className="feature__card-slide">
               {item.imgback && (image === 'image' || (item.type === 'image' && image === 'image')) && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
@@ -58,5 +66,4 @@ export const FeaturedContentCard = ({
 
 FeaturedContentCard.defaultProps = {
   image: 'image',
-  hovercolor: 'yellow',
 };
