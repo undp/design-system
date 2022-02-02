@@ -48,95 +48,95 @@ export const CountryHomepage = ({
   takeAcrtionHead,
   storyBtn,
 }) => (
-  <>
-    <CountrySiteHeader
-      siteTitleData={siteTitleData}
-      backcaption={backcaption}
-      locale={locale}
-      leftNavigationData={leftNavigationData}
-      navigationData={navigationData}
-      rightNavigationData={rightNavigationData}
-      languageswitcherData={languageswitcherData}
-      locationData={locationData}
-      langSelect={langSelect}
-    />
+    <>
+      <CountrySiteHeader
+        siteTitleData={siteTitleData}
+        backcaption={backcaption}
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        languageswitcherData={languageswitcherData}
+        locationData={locationData}
+        langSelect={langSelect}
+      />
 
-    <div className="grid-container fluid country-page-wrapper">
-      <div className="grid-x grid-margin-x hero-container">
-        <div className="cell large-12">
-          <Homepageherooption
-            title={herotitle}
-            headingTop={headingTop}
-            content={herotext}
-            button={herobtnlabel}
-            subtitle={herosubtitle}
-            imgsrc={heroimgsrc}
-            imgalt={heroimgalt}
+      <div className="grid-container fluid country-page-wrapper">
+        <div className="grid-x grid-margin-x hero-container">
+          <div className="cell large-12">
+            <Homepageherooption
+              title={herotitle}
+              headingTop={headingTop}
+              content={herotext}
+              button={herobtnlabel}
+              subtitle={herosubtitle}
+              imgsrc={heroimgsrc}
+              imgalt={heroimgalt}
+            />
+          </div>
+        </div>
+        <FeaturedCard data={featureddata} headertext={headertext} />
+        <div className="grid-x grid-margin-x">
+          <div className="cell large-11 medium-11 large-offset-1">
+            <HeadingBig
+              headerText={whatwedoheader}
+              descriptionText={whatwedodescription}
+            />
+          </div>
+        </div>
+        <div className="grid-x wide-card-heading">
+          <div className="cell small-12 medium-12 large-11 large-offset-1">
+            <Heading type="2" label={storiesHeading} />
+          </div>
+          <PageWideCard
+            label={PagewidecardTag}
+            title={PagewidecardTitle}
+            paragraph={PagewidecardParagraph}
+            button={PagewidecardBtnlabel}
           />
         </div>
-      </div>
-      <FeaturedCard data={featureddata} headertext={headertext} />
-      <div className="grid-x grid-margin-x">
-        <div className="cell large-11 medium-11 large-offset-1">
-          <HeadingBig
-            headerText={whatwedoheader}
-            descriptionText={whatwedodescription}
-          />
+
+        <ContentCardWithAndWithoutImage
+          data={featureddataafterwedo.contentdata}
+          storyBtn={featureddataafterwedo.storyBtn}
+        />
+        <div className="cell cta-container">
+          <CtaButton label={storyBtn} For_Primary="No Arrow" />
         </div>
-      </div>
-      <div className="grid-x wide-card-heading">
-        <div className="cell small-12 medium-12 large-11 large-offset-1">
-          <Heading type="2" label={storiesHeading} />
+        <div className="grid-x our-impact">
+          <div className="cell small-12 medium-12 large-11 large-offset-1" data-viewport="true">
+            <Heading type="2" label={statHeading} />
+          </div>
+          <div className="cell small-12 medium-12 large-12">
+            <StatsSlider data={StatsSliderData} />
+          </div>
         </div>
-        <PageWideCard
-          label={PagewidecardTag}
-          title={PagewidecardTitle}
-          paragraph={PagewidecardParagraph}
-          button={PagewidecardBtnlabel}
+        <ImageRevealCards
+          data={takeactioncard.data}
+          label={takeAcrtionHead}
         />
       </div>
 
-      <ContentCardWithAndWithoutImage
-        data={featureddataafterwedo.contentdata}
-        storyBtn={featureddataafterwedo.storyBtn}
+      <Footer
+        src={logo}
+        srctwo={logowhite}
+        headerText={footerData.headerText}
+        headerText2={footerData.headerText2}
+        style="default"
+        alt="UNDP Logo"
+        element="input"
+        type="email"
+        required="required"
+        mode="form-email"
+        errorText={footerData.errorLabel}
+        label={footerData.labelname}
+        button={footerData.buttonname}
+        placeholder={footerData.placeholdername}
+        menutitle={footerData.pageTitle}
+        data={footerData.footerdata}
+        copyright={footerData.copyright}
+        menudata={footerData.menudata}
+        {...{ color: 'default' }}
       />
-      <div className="cell cta-container">
-        <CtaButton label={storyBtn} For_Primary="No Arrow" />
-      </div>
-      <div className="grid-x our-impact">
-        <div className="cell small-12 medium-12 large-11 large-offset-1" data-viewport="true">
-          <Heading type="2" label={statHeading} />
-        </div>
-        <div className="cell small-12 medium-12 large-12">
-          <StatsSlider data={StatsSliderData} />
-        </div>
-      </div>
-      <ImageRevealCards
-        data={takeactioncard.data}
-        label={takeAcrtionHead}
-      />
-    </div>
-
-    <Footer
-      src={logo}
-      srctwo={logowhite}
-      headerText={footerData.headerText}
-      headerText2={footerData.headerText2}
-      style="default"
-      alt="UNDP Logo"
-      element="input"
-      type="email"
-      required="required"
-      mode="form-email"
-      errorText={footerData.errorLabel}
-      label={footerData.labelname}
-      button={footerData.buttonname}
-      placeholder={footerData.placeholdername}
-      menutitle={footerData.pageTitle}
-      data={footerData.footerdata}
-      copyright={footerData.copyright}
-      menudata={footerData.menudata}
-      {...{ color: 'default' }}
-    />
-  </>
-);
+    </>
+  );

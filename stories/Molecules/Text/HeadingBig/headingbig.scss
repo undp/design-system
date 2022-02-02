@@ -6,16 +6,21 @@
 .heading-big {
   justify-content: center;
   opacity: 0;
-  padding: $spacing-13 0;
-  transition: background-color 0.5s ease;
+  padding: $width-150 0 10.938rem;
   z-index: 5;
+  @include transition(all 0.5s);
+
+  @include devicebreak(medium) {
+    padding: $spacing-400 0 $spacing-320;
+  }
 
   &.inviewport {
     opacity: 1;
   }
 
+
   h2 {
-    color: $color-black;
+    color: $color-white;
     margin-bottom: $spacing-09;
 
     @include devicebreak(medium) {
@@ -24,7 +29,7 @@
   }
 
   h4 {
-    color: $color-black;
+    color: $color-white;
   }
 
   ul {
@@ -34,8 +39,24 @@
 }
 
 .color-blue {
-  background-color: #232e3e;
-  transition: background-color 1s ease;
+  background-color: $color-ebony-clay;
+  @include transition(background-color 0.5s ease);
 }
 
+.change-background {
+  opacity: 1;
+}
+
+
+:root {
+  --light: $color-white;
+  --blue: #{$color-ebony-clay};
+}
+body{
+  background:var(--light);
+}
+
+.color-blue{
+  color: $color-white;
+}
 /* heading-big cta end */

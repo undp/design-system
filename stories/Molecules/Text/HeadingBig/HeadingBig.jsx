@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './headingbig.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import { List } from '../../../Atom/Typography/Lists/Lists';
-import '../../../assets/js/smooth-bg-change';
+import { changeBackground } from '../../../assets/js/smooth-bg-change';
 
 export const transition_options = {
   true: 'heading-big',
@@ -12,6 +12,10 @@ export const transition_options = {
 export const HeadingBig = ({
   headerText, descriptionText, listData, ...args
 }) => {
+  useEffect(() => {
+    changeBackground('body', '.heading-big');
+  }, []);
+
   let transition_variant = transition_options[`${args.Emphasize}`];
   return (
     <div data-color="blue" data-viewport="true" className={['grid-x align-center', `${transition_variant}`].join(' ')}>
