@@ -51,9 +51,6 @@ export const swiper = (selector, arrowsSelector, options) => {
       // We need to set this to 0 as we don't need extra classes on slides.
       loopAdditionalSlides: 0,
       autoplay: false,
-      // Swiping allowed on mobile
-      noSwiping: false,
-      noSwipingClass: 'swiper-slide',
       // Accessibility
       a11y: true,
       keyboardControl: true,
@@ -72,13 +69,11 @@ export const swiper = (selector, arrowsSelector, options) => {
       breakpoints: {
         // This will be enabled on Desktop Breakpoint.
         768: {
-          noSwiping: getDeviceType() == "tablet" ? false : true,
           slidesPerView: $(element).data('swiper-slides-view-tablet') ? $(element).data('swiper-slides-view-tablet') : 1,
           slidesOffsetBefore: $(element).data('swiper-offset') ? $(element).data('swiper-offset') : 0,
           slidesOffsetAfter: $(element).data('swiper-offset') ? -$(element).data('swiper-offset') : 0,
         },
         1024: {
-          noSwiping: getDeviceType() == "tablet" ? false : true,
           slidesPerView: $(element).data('swiper-slides-view-desktop') ? $(element).data('swiper-slides-view-desktop') : 1,
           slidesOffsetBefore: $(element).data('swiper-offset') ? $(element).data('swiper-offset') : 0,
           slidesOffsetAfter: $(element).data('swiper-offset') ? -$(element).data('swiper-offset') : 0,

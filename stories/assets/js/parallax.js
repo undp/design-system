@@ -7,7 +7,7 @@ import './viewport';
 gsap.registerPlugin(ScrollTrigger, SlowMo);
 
 // parallaxEffect
-export function parallaxEffect(trigger, selector, start, end, direction, device, percent) {
+export const parallaxEffect = (trigger, selector, start, end, direction, device, percent) => {
 
   'use strict';
 
