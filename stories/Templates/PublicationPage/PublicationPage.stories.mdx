@@ -756,6 +756,53 @@ The following components are used to create the “Article Page” template in t
 - Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
 - Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.
 
+### Usage
+- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
+- Initialize viewport,  navigation, language switcher, accordion, filter by calling below mentioned functions.
+  - viewport('.left-right');
+  - navigationInitialize();
+  - langSwitch();
+  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+
+#### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/global-header.min.css
+- dist/css/components/language-switcher.min.css
+- dist/css/components/menu.min.css
+- dist/css/components/mega-menu.min.css
+- dist/css/components/mobile-nav.min.css
+- dist/css/components/breadcrumbs.min.css
+- dist/css/components/content-card.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/publication-card.min.css
+- dist/css/components/footer-logo.min.css
+- dist/css/components/footer-lists.min.css
+- dist/css/components/footer-icons.min.css
+- dist/css/components/footer-condition.min.css
+- dist/css/components/input-group.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/signup.min.css
+- dist/css/components/accordion.min.css
+- dist/css/components/footer.min.css
+- dist/css/templates/publication-page.min.css
+
+#### Js:
+- dist/js/animation.min.js
+- dist/js/navigation.min.js
+- dist/js/UNDP.min.js
+- dist/js/lang_switcher.min.js
+- dist/js/accordion.min.js
+- dist/js/viewport.min.js
+- dist/js/sticky.min.js
+
+### Changelog
+- 1.0 — Released component
+
+
 <Canvas>
   <Story name="Publication Page" parameters={{
       layout: "fullscreen"
@@ -803,49 +850,3 @@ The following components are used to create the “Article Page” template in t
     }}
   </Story>
 </Canvas>
-
-### Usage
-- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
-- Initialize viewport,  navigation, language switcher, accordion, filter by calling below mentioned functions.
-  - viewport('.left-right');
-  - navigationInitialize();
-  - langSwitch();
-  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
-
-### CSS and JS Reference
-
-#### CSS:
-
-Add the base layout style from dist/css/base-minimal.css
-
-- dist/css/components/global-header.min.css
-- dist/css/components/language-switcher.min.css
-- dist/css/components/menu.min.css
-- dist/css/components/mega-menu.min.css
-- dist/css/components/mobile-nav.min.css
-- dist/css/components/breadcrumbs.min.css
-- dist/css/components/content-card.min.css
-- dist/css/components/cta-link.min.css
-- dist/css/components/publication-card.min.css
-- dist/css/components/footer-logo.min.css
-- dist/css/components/footer-lists.min.css
-- dist/css/components/footer-icons.min.css
-- dist/css/components/footer-condition.min.css
-- dist/css/components/input-group.min.css
-- dist/css/components/buttons.min.css
-- dist/css/components/signup.min.css
-- dist/css/components/accordion.min.css
-- dist/css/components/footer.min.css
-- dist/css/templates/publication-page.min.css
-
-#### Js:
-- dist/js/animation.min.js
-- dist/js/navigation.min.js
-- dist/js/UNDP.min.js
-- dist/js/lang_switcher.min.js
-- dist/js/accordion.min.js
-- dist/js/viewport.min.js
-- dist/js/sticky.min.js
-
-### Changelog
-- 1.0 — Released component

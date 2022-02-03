@@ -568,45 +568,6 @@ The following components are used to create the “Article Page” template in t
 - Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
 - Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.
 
-<Canvas>
-  <Story
-    name="Author Detail"
-    parameters={{
-      layout: "fullscreen",
-    }}>
-    {(args, { globals: { locale } }) => {
-      const navigationData = getNavLinks(locale);
-      const caption = getCaptionDataLocale(locale);
-      const leftNavigationData = navigationData.filter(
-        (item) => item.position === "left"
-      );
-      const rightNavigationData = navigationData.filter(
-        (item) => item.position === "right"
-      );
-      return (
-        <AuthorPage
-          footerData={footerData(locale)}
-          breadcrumbData={breadcrumbData(locale)}
-          authorSummaryData={authorSummaryData(locale)}
-          groupcontentdata={caption.groupcontentdata}
-          buttonname={caption.buttonname}
-          locale={locale}
-          leftNavigationData={leftNavigationData}
-          navigationData={navigationData}
-          rightNavigationData={rightNavigationData}
-          menuData={menuData(locale)}
-          languageswitcherData={Languageswitcher(locale)}
-          locationData={getLocationDataForLocale(locale)}
-          langSelect={getSelectlanguage(locale)}
-          backcaption={getBackForLocale(locale)}
-          Authorlabel={getCaptionForLocale(locale)}
-        ></AuthorPage>
-      );
-    }}
-  </Story>
-</Canvas>
-
-
 ### Usage
 - Copy HTML from the HTML tab of Canvas and include below listed css and js files.
 - Initialize viewport,  navigation, language switcher, accordion, filter by calling below mentioned functions.
@@ -615,7 +576,7 @@ The following components are used to create the “Article Page” template in t
   - langSwitch();
   - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
 
-### CSS and JS References
+#### CSS and JS References
 
 #### CSS:
 Add the base layout style from dist/css/base-minimal.css
@@ -655,3 +616,40 @@ Add the base layout style from dist/css/base-minimal.css
 1.0 — Released component
 
 
+<Canvas>
+  <Story
+    name="Author Detail"
+    parameters={{
+      layout: "fullscreen",
+    }}>
+    {(args, { globals: { locale } }) => {
+      const navigationData = getNavLinks(locale);
+      const caption = getCaptionDataLocale(locale);
+      const leftNavigationData = navigationData.filter(
+        (item) => item.position === "left"
+      );
+      const rightNavigationData = navigationData.filter(
+        (item) => item.position === "right"
+      );
+      return (
+        <AuthorPage
+          footerData={footerData(locale)}
+          breadcrumbData={breadcrumbData(locale)}
+          authorSummaryData={authorSummaryData(locale)}
+          groupcontentdata={caption.groupcontentdata}
+          buttonname={caption.buttonname}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          Authorlabel={getCaptionForLocale(locale)}
+        ></AuthorPage>
+      );
+    }}
+  </Story>
+</Canvas>

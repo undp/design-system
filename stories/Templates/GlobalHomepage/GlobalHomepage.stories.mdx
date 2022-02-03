@@ -591,56 +591,8 @@ The page performance will be optimized by considering the following:
 - Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
 - Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
 
-<Canvas>
-  <Story name="Global Homepage" 
-    parameters={{
-      layout: "fullscreen"
-    }}>
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocale(locale);
-      const navigationData = getNavLinks(locale);
-      const leftNavigationData = navigationData.filter(
-        (item) => item.position === "left"
-      );
-      const rightNavigationData = navigationData.filter(
-        (item) => item.position === "right"
-      );
-      return (
-        <GlobalHomePage
-          label={caption.label}
-          homepagesplit={homepagesplit(locale)}
-          featuredcarddata={featuredcarddata(locale)}
-          parallaxdata={parallaxdata(locale)}
-          textctadata={textctadata(locale)}
-          textbackgrounddata={textbackgrounddata(locale)}
-          statsdata={statsdata(locale)}
-          fixedcarouseldata={fixedcarouseldata(locale)}
-          featureddata={caption.groupcontentdata}
-          headertext={caption.headertext}
-          BackgroundImg={caption.img}
-          label={caption.label}
-          tweetdata={tweetdata(locale)}
-          footerData={footerData(locale)}
-          languageswitcherData={Languageswitcher(locale)}
-          whatwedoheader={caption.whatwedoheader} 
-          whatwedodescription={caption.whatwedodescription}
-          locale={locale}
-          leftNavigationData={leftNavigationData}
-          navigationData={navigationData}
-          rightNavigationData={rightNavigationData}
-          menuData={menuData(locale)}
-          languageswitcherData={Languageswitcher(locale)}
-          locationData={getLocationDataForLocale(locale)}
-          langSelect={getSelectlanguage(locale)}
-          backcaption={getBackForLocale(locale)}
-        ></GlobalHomePage>
-      );
-    }}
-  </Story>
-</Canvas>
-
 ### Usage:
-- Copy HTML from the HTML tab of Canvas and include css and js files shared in **CSS and JS References** section below.
+- Copy HTML from the HTML tab of Canvas and include css and js files shared in **# CSS and JS References** section below.
 - Initialize viewport, navigation, language switcher, accordion, StatsHover, swiper and parallax effect by calling below mentioned functions in your js code.
   - <code> viewport('.left-right'); </code> // make sure to add this class on element which needs animation when visible on screen 
   - <code> navigationInitialize();</code>
@@ -651,7 +603,7 @@ The page performance will be optimized by considering the following:
   - <code> swiper(‘.parallax__content'’, '.fixed-carousel', '.fixed-carousel__button-wrap');</code>
 
 
-### CSS and JS References
+#### CSS and JS References
 
 #### CSS:
 
@@ -704,3 +656,52 @@ Add the base layout style from dist/css/base-minimal.css
 
 ### Changelog
 1.0 — Released component
+
+
+<Canvas>
+  <Story name="Global Homepage" 
+    parameters={{
+      layout: "fullscreen"
+    }}>
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      const navigationData = getNavLinks(locale);
+      const leftNavigationData = navigationData.filter(
+        (item) => item.position === "left"
+      );
+      const rightNavigationData = navigationData.filter(
+        (item) => item.position === "right"
+      );
+      return (
+        <GlobalHomePage
+          label={caption.label}
+          homepagesplit={homepagesplit(locale)}
+          featuredcarddata={featuredcarddata(locale)}
+          parallaxdata={parallaxdata(locale)}
+          textctadata={textctadata(locale)}
+          textbackgrounddata={textbackgrounddata(locale)}
+          statsdata={statsdata(locale)}
+          fixedcarouseldata={fixedcarouseldata(locale)}
+          featureddata={caption.groupcontentdata}
+          headertext={caption.headertext}
+          BackgroundImg={caption.img}
+          label={caption.label}
+          tweetdata={tweetdata(locale)}
+          footerData={footerData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          whatwedoheader={caption.whatwedoheader} 
+          whatwedodescription={caption.whatwedodescription}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+        ></GlobalHomePage>
+      );
+    }}
+  </Story>
+</Canvas>
