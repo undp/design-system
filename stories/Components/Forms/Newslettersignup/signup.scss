@@ -24,7 +24,8 @@
 
     .input-group {
       width: calc(100% - 86px);
-
+      margin-top: 0;
+      
       @include devicebreak(medium) {
         width: calc(100% - 107px);
       }
