@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { swiper } from '../../../../assets/js/swiper';
-import viewport from '../../../../assets/js/viewport';
 import './image-only-carousel.scss';
 
 // RTL Fix for Storybook.
@@ -11,10 +10,9 @@ if (window.location.href.indexOf('direction=rtl') > -1) {
 export const ImageOnlyCarousel = ({ data }) => {
   useEffect(() => {
     swiper('.image-carousel', '.slider-slide');
-    viewport('.image-carousel');
   }, []);
   return (
-    <div className="image-carousel left-right" dir={rtl}>
+    <div data-viewport="true" className="image-carousel" dir={rtl}>
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (

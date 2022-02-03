@@ -9,15 +9,10 @@ $.fn.isInViewport = function () {
   return $elementBottom > $viewportTop && $elementTop < $viewportBottom;
 };
 
-export default function viewport(ele) {
-  $(window).on('resize scroll load', () => {
-    $(ele).each(function () {
-      if ($(this).isInViewport()) {
-        $(this).addClass('inviewport');
-      }
-    });
+$(window).on('resize scroll load', () => {
+  $('[data-viewport=true]').each(function () {
+    if ($(this).isInViewport()) {
+      $(this).addClass('inviewport');
+    }
   });
-}
-
-// for webpack build
-export {viewport as viewport}
+});

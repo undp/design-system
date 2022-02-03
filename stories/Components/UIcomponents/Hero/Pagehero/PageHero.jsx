@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './page-hero.scss';
-import viewport from '../../../../assets/js/viewport';
 import expandToSize from '../../../../assets/js/animation';
 import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
 import { Video } from '../../../../Atom/Video/Video';
@@ -11,7 +10,6 @@ export const PageHero = ({
   data, title, content, variant, imgsrc, imgalt,
 }) => {
   useEffect(() => {
-    viewport('.left-right');
     expandToSize('.pagehero-full');
   }, []);
   return (
@@ -28,8 +26,8 @@ export const PageHero = ({
       <div className="grid-x pagehero-content">
         <div className="cell medium-6 medium-offset-1">
           <Breadcrumbcomponent data={data} Color="White" />
-          {content && <Heading type="4" className="color-white left-right" label={content} />}
-          {title && <Heading type="2" className="color-white left-right" label={title} />}
+          {content && <Heading type="4" className="color-white" label={content} dataViewport="true"/>}
+          {title && <Heading type="2" className="color-white" label={title} dataViewport="true"/>}
         </div>
       </div>
     </div>

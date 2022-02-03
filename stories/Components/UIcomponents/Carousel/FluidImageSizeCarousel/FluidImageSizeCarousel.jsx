@@ -3,7 +3,6 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
 import { swiper } from '../../../../assets/js/swiper';
-import viewport from '../../../../assets/js/viewport';
 import './fluid-image-size-carousel.scss';
 
 // RTL Fix for Storybook.
@@ -14,10 +13,9 @@ if (window.location.href.indexOf('direction=rtl') > -1) {
 export const FluidImageSizeCarousel = ({ data }) => {
   useEffect(() => {
     swiper('.fluid-carousel', '.slide-content');
-    viewport('.fluid-carousel');
   }, []);
   return (
-    <section className="fluid-carousel left-right" dir={rtl}>
+    <section data-viewport="true" className="fluid-carousel" dir={rtl}>
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (

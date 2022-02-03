@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './bio-card.scss';
 import '../../../../assets/scss/_grid.scss';
-import viewport from '../../../../assets/js/viewport';
 import { modal } from '../../../../assets/js/modal';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
@@ -50,7 +49,6 @@ export const BioCard = ({
   ...args
 }) => {
   useEffect(() => {
-    viewport('.bio-card__description');
     modal();
   }, []);
 
@@ -65,7 +63,7 @@ export const BioCard = ({
               <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
                 <div className='grid-x'>
                   <article className="bio-card__content medium-7">
-                    <div className="bio-card__description left-right">
+                    <div data-viewport="true" className="bio-card__description">
                       <Heading type="5" label={contentname} />
                       <P label={descriptionText} />
                     </div>
@@ -88,7 +86,7 @@ export const BioCard = ({
                   <img src={image} alt={image} />
                 </div>
                 <article className="bio-card__content">
-                  <div className="bio-card__description left-right">
+                  <div data-viewport="true" className="bio-card__description">
                     <Heading type="5" label={contentname} />
                     <P label={descriptionText} />
                   </div>

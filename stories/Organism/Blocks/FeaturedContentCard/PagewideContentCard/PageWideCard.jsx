@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './page-wide-card.scss';
-import viewport from '../../../../assets/js/viewport';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { CtaButton } from '../../../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
@@ -18,16 +17,12 @@ export const hovercolors_options = {
 export const PageWideCard = ({
   label, title, paragraph, button, Hovercolors,
 }) => {
-  useEffect(() => {
-    viewport('.wide-card h6');
-    viewport('.wide-card__description');
-  }, []);
   let hovercolors_variant = hovercolors_options[`${Hovercolors}`];
   return (
     <div className="wide-card">
-      <Heading className="left-right" type="6" label={label} />
+      <Heading type="6" label={label} dataViewport="true"/>
       <div className="grid-x wide-card__wrapper">
-        <div className="cell medium-6 wide-card__description left-right">
+        <div className="cell medium-6 wide-card__description" data-viewport="true">
           <div className="card-summary">
             <Heading type="4" label={title} />
             <P label={paragraph} />

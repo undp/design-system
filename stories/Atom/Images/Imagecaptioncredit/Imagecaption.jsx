@@ -1,15 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './image-caption.scss';
-import viewport from '../../../assets/js/viewport';
 import { Imagecaption } from '../../../Molecules/Imagecaption/Imagecaption';
 
 export const Images = ({
   imagelg, imagemd, imagesm, alt, label, paragraph, ...args
 }) => {
-  useEffect(() => {
-    viewport('.image-figcaption__cart');
-    viewport('.image-figcaption .image__caption');
-  }, []);
 
   let size;
   const sizes = ['medium', 'portrait'];
@@ -18,8 +13,8 @@ export const Images = ({
   const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
   return (
-    <figure className={cls('image-figcaption', `${size}`)}>
-      <div className='image-figcaption__cart scale-up'>
+    <figure data-viewport="true" className={cls('image-figcaption', `${size}`)}>
+      <div data-viewport="true" className='image-figcaption__cart scale-up'>
         {args.size === 'wide' && <img src={imagelg} alt={alt} />}
         {args.size === 'medium' && <img src={imagemd} alt={alt} />}
         {args.size === 'portrait' && <img src={imagesm} alt={alt} />}
