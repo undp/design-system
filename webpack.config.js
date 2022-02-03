@@ -6,7 +6,6 @@ const RemovePlugin = require('remove-files-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const webpackEntry = require('./webpack.entries');
 const packMode = 'production';
-const nodeExternals = require('webpack-node-externals');
 
 /*
 * Webpack build for scss and js
@@ -108,7 +107,6 @@ module.exports = [
   {
     mode: packMode,
     entry: webpackEntry('js'),
-    externals: [nodeExternals()],
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].min.js',
