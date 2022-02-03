@@ -3,6 +3,8 @@
 @import '../../../assets/scss/variables';
 
 .input-group {
+
+  margin-top: $spacing-24;
   label {
     @extend %paragragh-font-20;
 
@@ -73,7 +75,6 @@
     box-sizing: border-box;
     font-size: $font-size-16;
     height: 46px;
-    margin-bottom: $spacing-24;
     padding: 0.625rem;
     width: 100%;
 
