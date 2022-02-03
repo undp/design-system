@@ -88,6 +88,9 @@
     }
     ul {
       padding: 0 $spacing-16;
+      li{
+        padding-right: 0;
+      }
     }
   }
 }
