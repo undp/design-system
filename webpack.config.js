@@ -17,7 +17,7 @@ module.exports = [
     module: {
       rules: [
         {
-          test: /\.scss$/, 
+          test: /\.scss$/,
           use: [
             MiniCssExtractPlugin.loader,
             'css-loader',
@@ -80,7 +80,7 @@ module.exports = [
       ],
     },
     plugins: [
-      // copying icons folder for better reach 
+      // copying icons folder for better reach
       // to dist folder
       new CopyPlugin({
         patterns: [
