@@ -14,6 +14,7 @@
     color: $color-gray-500;
     display: block;
     font-size: $font-size-14;
+    margin-top: $spacing-08;
     margin-bottom: 0;
   }
 
@@ -21,6 +22,7 @@
     color: $color-red;
     font-size: $font-size-16;
     margin-bottom: 0;
+    margin-top: $spacing-08;
   }
 
   &.disabled {
@@ -71,15 +73,17 @@
     border: 2px solid $color-black;
     border-radius: 0;
     box-sizing: border-box;
+    font-family: $Font-Family-ProximaNova;
     font-size: $font-size-16;
     height: 46px;
-    margin-bottom: $spacing-24;
     padding: 0.625rem;
     width: 100%;
+    display: block;
 
     &::placeholder {
       color: $color-gray-500;
     }
+
     &:focus {
       box-shadow: 0 0 4px $color-blue-800;
       outline: 0;
@@ -100,7 +104,6 @@
 
   textarea {
     height: auto;
-    margin-bottom: 0;
     max-width: 100%;
     resize: vertical;
   }
@@ -109,9 +112,9 @@
     background:
       url(#{$img-path-Icon}/calender_black.svg) no-repeat left
       14px bottom 12px;
+    background-color: $color-white;
     color: $color-gray-500;
     padding-left: $spacing-40;
-    background-color: $color-white;
   }
 
   &.error {
@@ -157,10 +160,10 @@ input[type='date']::-webkit-calendar-picker-indicator {
       background:
         url(#{$img-path-Icon}/calender_black.svg) no-repeat
         right 14px bottom 12px;
+      background-color: $color-white;
       padding-left: 0.635rem;
       padding-right: $spacing-40;
       text-align: right;
-      background-color: $color-white;
     }
 
     input[type=search] {
@@ -187,14 +190,27 @@ input[type='date']::-webkit-calendar-picker-indicator {
   }
 
   input::-webkit-date-and-time-value {
-    text-align: right;
     margin-right: 0;
+    text-align: right;
   }
 }
 
 // burmese lang
 :lang(my) {
-  .input-group .error {
-    line-height: 1.7;
+  .input-group {
+    .error {
+      line-height: 1.7;
+    }
+
+    input[type=text],
+    input[type=number],
+    input[type=email],
+    input[type=password],
+    input[type=search],
+    input[type=tel],
+    input[type=date],
+    textarea {
+      font-family: $Font-Family-NotoSans;
+    }
   }
 }
