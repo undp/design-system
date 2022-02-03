@@ -304,6 +304,58 @@ The page performance will be optimized by considering the following:
 - Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
 
 
+### Usage
+- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
+- Initialize viewport,  navigation, language switcher, accordion, sidebar and swiper  by calling below mentioned functions.
+  - viewport('.left-right');
+  - navigationInitialize();
+  - langSwitch();
+  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+  - expandToSize('.pagehero-full');
+  - sidebarNav();
+  - sidebarMenu();
+  - swiper('.fluid-carousel', '.slide-content');
+
+#### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/page-hero.min.css
+- dist/css/components/breadcrumbs.min.css
+- dist/css/components/progress.min.css
+- dist/css/components/content-card.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/sidebar.min.css
+- dist/css/components/swiper.min.css
+- dist/css/components/sidebar-data.min.css
+- dist/css/components/fluid-image-size-carousel.min.css
+- dist/css/components/footer-logo.min.css
+- dist/css/components/footer-lists.min.css
+- dist/css/components/footer-icons.min.css
+- dist/css/components/footer-condition.min.css
+- dist/css/components/input-group.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/signup.min.css
+- dist/css/components/accordion.min.css
+- dist/css/components/footer.min.css
+- dist/css/templates/generic-page.min.css
+- dist/css/components/swiper.min.css
+
+#### JS:
+- dist/js/navigation.min.js
+- dist/js/UNDP.min.js
+- dist/js/lang_switcher.min.js
+- dist/js/accordion.min.js
+- dist/js/viewport.min.js
+- dist/js/scrolling_progressbar.min.js
+- dist/js/sidebar.min.js
+- dist/js/swiper.min.js
+
+### Changelog
+1.0 — Released component
+
+
 <Canvas>
   <Story name="Generic Page" parameters={{
       layout: "fullscreen"
@@ -350,56 +402,3 @@ The page performance will be optimized by considering the following:
     }}
   </Story>
 </Canvas>
-
-### Usage
-- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
-- Initialize viewport,  navigation, language switcher, accordion, sidebar and swiper  by calling below mentioned functions.
-  - viewport('.left-right');
-  - navigationInitialize();
-  - langSwitch();
-  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
-  - expandToSize('.pagehero-full');
-  - sidebarNav();
-  - sidebarMenu();
-  - swiper('.fluid-carousel', '.slide-content');
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from dist/css/base-minimal.css
-- dist/css/components/page-hero.min.css
-- dist/css/components/breadcrumbs.min.css
-- dist/css/components/progress.min.css
-- dist/css/components/content-card.min.css
-- dist/css/components/cta-link.min.css
-- dist/css/components/sidebar.min.css
-- dist/css/components/swiper.min.css
-- dist/css/components/sidebar-data.min.css
-- dist/css/components/fluid-image-size-carousel.min.css
-- dist/css/components/footer-logo.min.css
-- dist/css/components/footer-lists.min.css
-- dist/css/components/footer-icons.min.css
-- dist/css/components/footer-condition.min.css
-- dist/css/components/input-group.min.css
-- dist/css/components/buttons.min.css
-- dist/css/components/signup.min.css
-- dist/css/components/accordion.min.css
-- dist/css/components/footer.min.css
-- dist/css/templates/generic-page.min.css
-- dist/css/components/swiper.min.css
-
-#### JS:
-- dist/js/navigation.min.js
-- dist/js/UNDP.min.js
-- dist/js/lang_switcher.min.js
-- dist/js/accordion.min.js
-- dist/js/viewport.min.js
-- dist/js/scrolling_progressbar.min.js
-- dist/js/sidebar.min.js
-- dist/js/swiper.min.js
-
-### Changelog
-1.0 — Released component
-
-

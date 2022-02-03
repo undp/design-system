@@ -1343,7 +1343,104 @@ export const getCaptionForLocale = (locale) => {
 
 # SDG Page
 
-Template for SDG Page
+An SDG page has a collection of 17 interlinked global goals designed.
+
+### Overview
+SDG page is a collection of 17 interlinked global goals designed to be a blueprint to achieve a better and more sustainable future for all.
+Mock Up: https://www.undp.org/sustainable-development-goals
+
+### Template Structure
+
+The following components are used to create the “Article Page” template in the design system
+- Country header
+- Homepage Hero - full width - Homepage Hero images are large-sized images with text in front of the image and present at the top of the homepage.
+- Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.
+- Text - Title + Description
+- SDG card molecule 1-17 + white background
+- Standard footer 
+
+### Behavior
+- Clicking any of the SDG cards will open a modal/lightbox
+  - Individual SDG goals appear as a modal and modal window that includes transparent overlay by blurring the original page on the back. It also includes a floating close X button.	
+    - It includes a floating closing X button.
+    - Individual goal details are displayed on a white background having the following components
+      - Title + subtitle -Title text color should match individual goal’s color
+      - Every individual SDG goal invocation should change the URL of the page adding the #sdgX-title-of-the-goal anchor. The goal here is to provide deep links for individual Goals so when a page is accessed via URL with a hash anchor - the respective goal is popped right after the page load.
+      - Color - Matches card background-color
+      - Text
+      - Image
+      - Group of stats cards - glide - Group of cards arranged horizontally in two rows that slide in from opposite directions on page scroll.
+      - Note: Stats cards should have the same accent color as the background color of the SDG card molecule
+      - Text: Title
+      - List items: Consists of related items grouped together
+      - Title: SDGs in Action
+      - Group of featured content cards- Featured card groups that will have CTA links (this can be just #)
+      - SDG card molecule - Next card color
+        - No image with gradient
+        - On hover - show an arrow
+        - On click - Open next card content in the right section of the modal and scroll to the top. The left section remains as is
+        - The transition between goals should also change the address according to the currently displaying Goal.
+      - If the current SDG card is the last one on the page, don’t show the next SDG card molecule
+  - Clicking X in the left panel closes both modals
+  - Clicking ESC also closes both modals 
+
+### Performance
+- The page performance will be optimized by considering the following:
+- Lazy load
+- Use appropriate media renditions based on the client’s viewpoint.
+- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
+- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
+- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.
+
+
+### Usage:
+- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
+- Initialize viewport,  navigation, language switcher, accordion and SdgModal by calling below mentioned functions.
+- langSwitch();
+- navigationInitialize(locale);
+- viewport();
+- SdgModal();
+- accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+
+#### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/global-header.min.css
+- dist/css/components/mobile-nav.min.css
+- dist/css/components/language-switcher.min.css
+- dist/css/components/menu.min.css
+- dist/css/components/mega-menu.min.css
+- dist/css/components/sdg.min.css
+- dist/css/components/sdgmodal.min.css
+- dist/css/components/page-hero.min.css
+- dist/css/components/breadcrumbs.min.css
+- dist/css/components/footer.min.css
+- dist/css/components/footer-condition.min.css
+- dist/css/components/footer-icons.min.css
+- dist/css/components/footer-lists.min.css
+- dist/css/components/footer-logo.min.css
+- dist/css/components/input-group.min.css
+- dist/css/components/stats-cards.min.css
+- dist/css/components/stats-card-slider.min.css
+- dist/css/components/signup.min.css
+- dist/css/components/content-card.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/buttons.min.css
+- dist/css/templates/sdg.min.css
+
+#### JS:
+- dist/js/sdgmodal.min.js
+- dist/js/viewport.min.js
+- dist/js/navigation.min.js
+- dist/js/UNDP.min.js
+- dist/js/lang_switcher.min.js
+- dist/js/accordion.min.js
+
+### Changelog
+1.0 — Released component
 
 <Canvas>
   <Story name="SDG Page" 
@@ -1398,15 +1495,3 @@ Template for SDG Page
     }}
   </Story>
 </Canvas>
-
-### Usage
-
-- Take HTML from the HTML tab in the canvas
-- <u>To use SCSS include the following files in your implementation</u>
-- Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code>
-- Component SCSS file: <code>sdg.scss</code>
-- <u>To use CSS include the following files in your implementation</u>
-- The compiled CSS file from <code>assets/css/style.css</code>
-- <u>To use JS include the following files in your implementation</u>
-- Include JS Slider library file from <code>assets/js/sdgmodal.js</code>
-- The compiled JS file from <code>assets/js/sdgmodal.js</code>

@@ -781,9 +781,91 @@ export const getCaptionForActiveLocale = (locale) => {
 `}</style>
 
 # Landing Page
-Template for Generic Landing Page
+A generic landing page has dynamic content list
 
-  <Canvas>
+### Overview
+
+Generic Landing Page is the template where all the content is available for the user. The user can easily search for specific content here. Mock up - https://www.undp.org/news-centre
+
+### Template Structure
+
+The following components are used to create the “Article page” template in the design system
+Global header
+- Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.
+- Page Hero - Creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle and Breadcrumb.
+- Filters and search bar - Allows the user to apply filters to the search section.
+- Set of content cards(Results should be filtered based on Filter and search bar) - card of information with some items
+- View more button - Call to action that will be performed when the user clicks/touches it
+- Standard footer 
+
+### Performance
+The page performance will be optimized by considering following:
+- Lazy load
+- Use appropriate media renditions based on the client’s viewpoint.
+- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
+- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
+- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.
+
+### Usage
+- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
+- Initialize viewport,  size animation, navigation, language switcher, multi-select, accordion, filter by calling below mentioned functions.
+- viewport();
+- expandToSize('.pagehero-full');
+- navigationInitialize();
+- langSwitch();
+- expandSearch();
+- multiSelect();
+- toggleFilter();
+- accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+
+#### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/global-header.min.css
+- dist/css/components/language-switcher.min.css
+- dist/css/components/menu.min.css
+- dist/css/components/mega-menu.min.css
+- dist/css/components/mobile-nav.min.css
+- dist/css/components/page-hero.min.css
+- dist/css/components/breadcrumbs.min.css
+- dist/css/components/filter-and-search-bar.min.css
+- dist/css/components/multi-select.min.css
+- dist/css/components/checkbox.min.css
+- dist/css/components/radio.min.css
+- dist/css/components/search-expand.min.css
+- dist/css/components/content-card.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/chips.min.css
+- dist/css/components/footer-logo.min.css
+- dist/css/components/footer-lists.min.css
+- dist/css/components/footer-icons.min.css
+- dist/css/components/footer-condition.min.css
+- dist/css/components/input-group.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/signup.min.css
+- dist/css/components/accordion.min.css
+- dist/css/components/footer.min.css
+- dist/css/templates/generic-landing-page.min.css
+
+#### JS:
+
+- dist/js/animation.min.js
+- dist/js/filter_seach_bar.min.js
+- dist/js/multiSelect.min.js
+- dist/js/expand_search.min.js
+- dist/js/navigation.min.js
+- dist/js/UNDP.min.js
+- dist/js/lang_switcher.min.js
+- dist/js/accordion.min.js
+- dist/js/viewport.min.js
+
+### Changelog
+1.0 — Released component
+
+<Canvas>
   <Story name="Generic Landing Page" parameters={{
       layout: "fullscreen"
     }}>
@@ -823,13 +905,3 @@ Template for Generic Landing Page
     }}
   </Story>
 </Canvas>
-
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
-  <li>Component SCSS file:<code>chips.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>

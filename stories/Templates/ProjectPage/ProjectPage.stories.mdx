@@ -1526,7 +1526,97 @@ export const statsArray = (locale) => {
 
 # Project Page 
 
-Project Page Template
+A Project page has the list of projects that the company is dealing with.
+
+### Overview
+A project page has all the projects listed. This helps the user to get all the list of projects at one place.
+Mock Up: https://undp-design-system.azurewebsites.net/project-page
+
+### Template Structure
+
+The following components are used to create the “Article page” template in the design system
+- Country header
+- Homepage Hero - Homepage Hero images are large-sized images with text in front of the image and present at the top of the homepage.
+- Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.
+- Title of the project
+- Text 
+- Text with background image
+- Title
+- Group of download modules where the document can be downloaded.
+- Title
+- Project Details - Complete details about the project like status, start date, Project office, contribution amount, donors, Implementing partners.
+- Secondary button with text: “FULL PROJECT INFORMATION
+- Title
+- Grid of content cards with image, without image, with emphasis
+- Secondary button, no arrow
+- Standard footer 
+
+### Performance
+The page performance will be optimized by considering the following:
+- Lazy load
+- Use appropriate media renditions based on the client’s viewpoint.
+- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
+- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
+- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
+
+### Usage:
+- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
+- Initialize viewport,  navigation, language switcher, accordion, swiper, animation and parallax effect by calling below mentioned functions.
+- viewport();
+- expandToSize('.pagehero-full');
+- navigationInitialize();
+- langSwitch();
+- accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+- swiper('.stats-slider');
+- FontResize('.stats-card > h2');
+
+#### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/country-site-header.min.css
+- dist/css/components/language-switcher.min.css
+- dist/css/components/menu.min.css
+- dist/css/components/mega-menu.min.css
+- dist/css/components/mobile-nav.min.css
+- dist/css/components/page-hero.min.css
+- dist/css/components/breadcrumbs.min.css
+- dist/css/components/headingbig.min.css
+- dist/css/components/download-card.min.css
+- dist/css/components/project-detail.min.css
+- dist/css/components/projectdetails.min.css
+- dist/css/components/content-card.min.css
+- dist/css/components/contentcardwithandwithoutimage.min.css
+- dist/css/components/stats-slider.min.css
+- dist/css/components/stats-cards.min.css
+- dist/css/components/stats-card-slider.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/footer-logo.min.css
+- dist/css/components/footer-lists.min.css
+- dist/css/components/footer-icons.min.css
+- dist/css/components/footer-condition.min.css
+- dist/css/components/input-group.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/signup.min.css
+- dist/css/components/accordion.min.css
+- dist/css/components/footer.min.css
+- dist/css/templates/project-page.min.css
+- dist/css/components/swiper.min.css
+
+#### JS:
+- dist/js/navigation.min.js
+- dist/js/UNDP.min.js
+- dist/js/lang_switcher.min.js
+- dist/js/accordion.min.js
+- dist/js/smoothbgchange.min.js
+- dist/js/swiper.min.js
+- dist/js/font_resize.min.js
+- dist/js/viewport.min.js
+
+### Changelog
+1.0 — Released component
 
 <Canvas>
   <Story name="Project Page">
@@ -1600,12 +1690,3 @@ Project Page Template
   </Story>
 </Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-    <li>Take HTML from the HTML tab in the canvas</li>
-    <u>To use SCSS include the following files in your implementation</u>
-    <li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
-    <li>Component SCSS file: <code>postheader.scss</code></li>
-    <u>To use CSS include the following files in your implementation</u>
-    <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>

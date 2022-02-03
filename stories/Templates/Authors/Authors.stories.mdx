@@ -345,41 +345,6 @@ The page performance will be optimized by considering following:
 - Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
 - Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
 
-<Canvas>
-  <Story 
-    name="Author Listing"
-    parameters={{
-      layout: "fullscreen"
-    }}>
-      {(args, { globals: { locale } }) => {
-        const filtertext = getfiltertextForLocale(locale);
-        const buttonData = getButtonForLocale(locale);
-        const headingData = getheadingForLocale(locale);
-        const navigationData= getNavLinks(locale);
-        const leftNavigationData=navigationData.filter(item=>item.position==='left');
-        const rightNavigationData=navigationData.filter(item=>item.position==='right');
-    return <Authors
-        text={filtertext}
-        buttonData = {buttonData}
-        footerData={footerData(locale)}
-        authorData={getCaptionForLocale(locale)}
-        breadcrumbData={breadcrumbData(locale)}
-        headingData={headingData}
-        contentCardData={contentCardData(locale)}
-            locale={locale}
-            leftNavigationData={leftNavigationData}
-            navigationData={navigationData}
-            rightNavigationData={rightNavigationData}
-            menuData={menuData(locale)}
-            languageswitcherData={Languageswitcher(locale)}
-            locationData={getLocationDataForLocale(locale)}
-            langSelect={getSelectlanguage(locale)}
-            backcaption={getBackForLocale(locale)}
-        ></Authors>;
-      }}
-  </Story>
-</Canvas>
-
 ### Usage
 - Copy HTML from the HTML tab of Canvas and include below listed css and js files.
 - Initialize viewport,  navigation, language switcher, accordion, select and filter by calling below mentioned functions.
@@ -390,7 +355,7 @@ The page performance will be optimized by considering following:
   - expandSearch();
   - select();
 
-### CSS and JS References
+#### CSS and JS References
 
 #### CSS:
 
@@ -430,3 +395,39 @@ Add the base layout style from dist/css/base-minimal.css
 
 ### Changelog
 1.0 — Released component
+
+
+<Canvas>
+  <Story 
+    name="Author Listing"
+    parameters={{
+      layout: "fullscreen"
+    }}>
+      {(args, { globals: { locale } }) => {
+        const filtertext = getfiltertextForLocale(locale);
+        const buttonData = getButtonForLocale(locale);
+        const headingData = getheadingForLocale(locale);
+        const navigationData= getNavLinks(locale);
+        const leftNavigationData=navigationData.filter(item=>item.position==='left');
+        const rightNavigationData=navigationData.filter(item=>item.position==='right');
+    return <Authors
+        text={filtertext}
+        buttonData = {buttonData}
+        footerData={footerData(locale)}
+        authorData={getCaptionForLocale(locale)}
+        breadcrumbData={breadcrumbData(locale)}
+        headingData={headingData}
+        contentCardData={contentCardData(locale)}
+            locale={locale}
+            leftNavigationData={leftNavigationData}
+            navigationData={navigationData}
+            rightNavigationData={rightNavigationData}
+            menuData={menuData(locale)}
+            languageswitcherData={Languageswitcher(locale)}
+            locationData={getLocationDataForLocale(locale)}
+            langSelect={getSelectlanguage(locale)}
+            backcaption={getBackForLocale(locale)}
+        ></Authors>;
+      }}
+  </Story>
+</Canvas>
