@@ -24,14 +24,16 @@
 
   &-content {
     background: $color-white;
-    max-width: 837px;
+    max-width: 64rem;
     padding: $spacing-64 $spacing-12 $spacing-12;
     position: relative;
     width: 100%;
-
+    @extend %custom-scrollbar;
     @include devicebreak(medium) {
-      height: calc(100vh - 158px);
-      padding: $spacing-64 $spacing-64 $spacing-32;
+      max-height: calc(100vh - 291px);
+      margin-left: $spacing-80;
+      margin-right: $spacing-80;
+      padding: $spacing-64;
     }
   }
 
@@ -41,13 +43,17 @@
     font-size: 0;
     height: 45px;
     position: absolute;
-    right: 16px;
-    top: 10px;
+    right: $spacing-12;
+    top: $spacing-12;
     width: 45px;
     border: 0;
 
     &:hover {
       @extend %no-animation;
+    }
+    @include devicebreak(medium) { 
+      right: $spacing-24;
+      top: $spacing-24;
     }
   }
 
