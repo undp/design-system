@@ -3,6 +3,8 @@
 @import '../../../assets/scss/variables';
 
 .input-group {
+
+  margin-top: $spacing-24;
   label {
     @extend %paragragh-font-20;
 

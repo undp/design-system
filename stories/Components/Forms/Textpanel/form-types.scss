@@ -4,7 +4,7 @@
 .form-wrapper {
   .text-panel {
     .button {
-      margin-top: 0.1875rem;
+      margin-top: $spacing-24;
     }
   }
 
@@ -33,18 +33,18 @@
       }
 
       p {
-        margin-bottom: 2.25rem;
+        margin-bottom: $spacing-48;
 
         @include devicebreak(small) {
-          margin-bottom: 1.25rem;
+          margin-bottom: $spacing-32;
         }
       }
 
       .button {
-        margin-top: 2.25rem;
+        margin-top: $spacing-48;
 
         @include devicebreak(small) {
-          margin-bottom: 1.25rem;
+          margin-top: $spacing-32;
         }
       }
     }
@@ -69,6 +69,9 @@
   .wide-form {
     h2 {
       margin-bottom: $spacing-24;
+      @include devicebreak(small) {
+        margin-bottom: $spacing-08;
+      }
     }
 
     .input-group {
@@ -78,10 +81,10 @@
     }
 
     .button {
-      margin-top: 2.25rem;
+      margin-top: $spacing-48;
 
       @include devicebreak(small) {
-        margin-top: 1.25rem;
+        margin-top: $spacing-32;
       }
     }
   }
@@ -92,7 +95,10 @@
     }
 
     p {
-      margin-bottom: 2.25rem;
+      margin-bottom: $spacing-48;
+      @include devicebreak(small) {
+        margin-bottom: $spacing-32;
+      }
     }
 
     .input-group {
