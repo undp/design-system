@@ -87,6 +87,9 @@
               &__caption {
                 bottom: 0;
                 opacity: 1;
+                border-left: 1px solid $color-white;
+                border-right: 1px solid $color-white;
+                margin-left: -1px;
 
                 p {
                   opacity: 1;
@@ -99,6 +102,10 @@
             i {
               left: $spacing-16;
               width: $spacing-80;
+
+              &::before {
+                display: inline-block;
+              }
             }
           }
         }
@@ -133,6 +140,10 @@
   &__caption {
     @include transform(translateY(0));
     @include transition(all 0.3s);
+
+    @include devicebreak(small) {
+      @include transition(none);
+    }
 
     background: $color-white;
     left: 0;
