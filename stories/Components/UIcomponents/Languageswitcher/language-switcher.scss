@@ -31,6 +31,9 @@
         box-shadow: 0 3px 4px rgb(0 0 0 / 10%);
         display: block;
         padding: $spacing-12 $spacing-16;
+        &:hover {
+          color: rgba(35,46,62,.7);
+        }
       }
     }
   }
