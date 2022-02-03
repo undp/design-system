@@ -1,7 +1,7 @@
 export const getData = (lang) => {
   $.ajax({
     method: 'GET',
-    url: './js/navigation_data.json',
+    url: './js/navigation-data.json',
     dataType: 'json',
     success(res) {
       lang = lang || 'english';

@@ -3,7 +3,7 @@ import viewport from '../../../assets/js/viewport';
 import './headingbig.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import { List } from '../../../Atom/Typography/Lists/Lists';
-import '../../../assets/js/smoothbgchange';
+import '../../../assets/js/smooth-bg-change';
 
 export const transition_options = {
   true: 'heading-big',

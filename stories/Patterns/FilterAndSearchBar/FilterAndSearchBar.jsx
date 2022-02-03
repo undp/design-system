@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import toggleFilter from '../../assets/js/filter_seach_bar';
+import toggleFilter from '../../assets/js/filter-seach-bar';
 import { Chips } from '../../Components/UIcomponents/Buttons/Chips/chips';
 import SelectTag from '../../Components/Forms/Dropdowns/Multiselect/MultiSelect';
 import './filter-and-search-bar.scss';

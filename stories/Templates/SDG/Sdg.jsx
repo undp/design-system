@@ -4,7 +4,7 @@ import { PageHero } from '../../Components/UIcomponents/Hero/Pagehero/PageHero';
 import { Footer } from '../../Organism/Footer/Footer';
 import logo from '../../assets/images/undp-logo-blue.svg';
 import logowhite from '../../assets/images/undp-logo-white.svg';
-import { SdgModal } from '../../assets/js/sdgmodal';
+import { SdgModal } from '../../assets/js/sdg-modal';
 import { Sdg } from '../../Molecules/SDG/Sdg';
 import { Sdgmodal } from '../../Molecules/Sdgmodal/Sdgmodal';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
