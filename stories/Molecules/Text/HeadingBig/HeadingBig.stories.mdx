@@ -3,12 +3,12 @@ import { HeadingBig } from './HeadingBig'
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = {header: 'Our Mission', description: 'UNDP works in 170 countries and territories to eradicate poverty while protecting the planet. We help countries develop strong policies, skills, partnerships and institutions so they can sustain their progress.'}; return engText;
-    case 'arabic': const arabicText = {header: 'مهمتنا', description: 'يعمل برنامج الأمم المتحدة الإنمائي في 170 دولة وإقليم للقضاء على الفقر مع حماية كوكب الأرض. نحن نساعد البلدان على تطوير سياسات ومهارات وشراكات ومؤسسات قوية حتى تتمكن من الحفاظ على تقدمها.'}; return arabicText;
-    case 'burmese': const burmeseText = {header: 'ကျွန်ုပ်တို့၏မစ်ရှင်', description: 'UNDP သည်ကမ္ဘာနှင့်နယ်မြေ ၁၇၀ တွင်ဆင်းရဲနွမ်းပါးမှုပပျောက်ရန်ကမ္ဘာကိုကာကွယ်နေသည်။ သူတို့ရဲ့တိုးတက်မှုတွေကိုဆက်ထိန်းထားနိုင်အောင်ခိုင်မာတဲ့မူဝါဒတွေ၊ ကျွမ်းကျင်မှုတွေ၊ မိတ်ဖက်တွေ၊ အဖွဲ့အစည်းတွေတည်ဆောက်ဖို့ငါတို့ကကူညီပေးတယ်။'}; return burmeseText;
-    case 'japanese': const japaneseText = {header: '私たちの使命', description: 'UNDPは、地球を保護しながら貧困を根絶するために170の国と地域で活動しています。私たちは、各国が進歩を維持できるように、強力な政策、スキル、パートナーシップ、制度を開発するのを支援します。'}; return japaneseText;
+    case 'english': const engText = {header: ['Our',<br/>,'Mission'], description: 'UNDP works in 170 countries and territories to eradicate poverty while protecting the planet. We help countries develop strong policies, skills, partnerships and institutions so they can sustain their progress.'}; return engText;
+    case 'arabic': const arabicText = {header: ["علامة",<br/>,"المحتو"], description: 'يعمل برنامج الأمم المتحدة الإنمائي في 170 دولة وإقليم للقضاء على الفقر مع حماية كوكب الأرض. نحن نساعد البلدان على تطوير سياسات ومهارات وشراكات ومؤسسات قوية حتى تتمكن من الحفاظ على تقدمها.'}; return arabicText;
+    case 'burmese': const burmeseText = {header: ["အကြောင်",<br/>,"အကြောင်"], description: 'UNDP သည်ကမ္ဘာနှင့်နယ်မြေ ၁၇၀ တွင်ဆင်းရဲနွမ်းပါးမှုပပျောက်ရန်ကမ္ဘာကိုကာကွယ်နေသည်။ သူတို့ရဲ့တိုးတက်မှုတွေကိုဆက်ထိန်းထားနိုင်အောင်ခိုင်မာတဲ့မူဝါဒတွေ၊ ကျွမ်းကျင်မှုတွေ၊ မိတ်ဖက်တွေ၊ အဖွဲ့အစည်းတွေတည်ဆောက်ဖို့ငါတို့ကကူညီပေးတယ်။'}; return burmeseText;
+    case 'japanese': const japaneseText = {header: ["コンテン",<br/>,"ツタグ"], description: 'UNDPは、地球を保護しながら貧困を根絶するために170の国と地域で活動しています。私たちは、各国が進歩を維持できるように、強力な政策、スキル、パートナーシップ、制度を開発するのを支援します。'}; return japaneseText;
     default:
-      return {header: 'Our Mission', description: 'UNDP works in 170 countries and territories to eradicate poverty while protecting the planet. We help countries develop strong policies, skills, partnerships and institutions so they can sustain their progress.'};
+      return {header: ['Our',<br/>,'Mission'], description: 'UNDP works in 170 countries and territories to eradicate poverty while protecting the planet. We help countries develop strong policies, skills, partnerships and institutions so they can sustain their progress.'};
   }
 };
 
