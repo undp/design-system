@@ -1,4 +1,3 @@
-import './undp';
 export function select() {
   let selectButton = $('.select-box button');
   let selectList = $('.select-box li');
@@ -8,17 +7,11 @@ export function select() {
   });
   selectList.on('click keypress', function(){
     $(this).parent().siblings().text($(this).find('span').text());
+    $(this).parent().removeClass('active').parents().removeClass('expanded');
   });
   $(document).mouseup(function(e) {
-    if (!selectButton.is(e.target) && selectButton.has(e.target).length === 0) 
-    {
+    if (!selectButton.is(e.target) && selectButton.has(e.target).length === 0) {
       selectButton.parent().removeClass('expanded').find('ul').removeClass('active');
-    }
-  });
-  selectList.on('keypress',function(e) {
-    if(e.which == 13) {
-      $(this).parent().siblings().text($(this).find('span').text());
-      $(this).parent().removeClass('active').parents().removeClass('expanded');
     }
   });
 }
