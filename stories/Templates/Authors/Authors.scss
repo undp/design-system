@@ -102,6 +102,13 @@
     @include devicebreak(small) {
       margin-top: 0;
 
+      > div{
+        display: none;
+      }
+      > div:nth-child(-n + 6){
+        display: block;
+      }
+
       h6 {
         font-size: $font-size-16;
 
