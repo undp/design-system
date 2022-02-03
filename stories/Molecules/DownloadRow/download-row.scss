@@ -16,21 +16,29 @@
       border-bottom: 1px solid $color-gray-400;
       display: flex;
       justify-content: space-between;
+      position: relative;
+
+      .form-check {
+        position: absolute;
+        right: 0;
+      }
     }
 
     &__data {
-      margin: $spacing-16 0;
-      padding-right: $spacing-16;
-
-      h6 {
-        font-weight: normal;
-        margin: 0;
-        text-transform: inherit;
-      }
+      padding: $spacing-16 $spacing-32 $spacing-16 0;
+      flex-grow: 1;
+      font-weight: normal;
+      text-transform: inherit;
+      font-size: $font-size-16;
+      line-height: 1.25;
+      cursor: pointer;
 
       span {
         color: $color-gray-500;
         font-size: $font-size-16;
+        display: block;
+        margin-top: 4px;
+        line-height: 1.4;
       }
     }
 
@@ -44,8 +52,16 @@
   .download {
     &-row {
       &__data {
-        padding-left: $spacing-16;
+        padding-left: $spacing-32;
         padding-right: 0;
+      }
+
+      &__main {
+  
+        .form-check {
+          right: auto;
+          left: 0;
+        }
       }
 
       .external-link {
