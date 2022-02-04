@@ -136,4 +136,12 @@
   }
 }
 
-/* language-switcher start */
+// burmese lang
+:lang(my) {
+  .dropdown-language {
+    button {
+      font-family: $Font-Family-NotoSans;
+    }
+  }
+}
+/* language-switcher end */
