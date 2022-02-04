@@ -9,7 +9,7 @@ import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaB
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { Menu } from '../../Components/Navigationcomponents/Menu/Menu';
 import './publication-page.scss';
-import '../../assets/js/sticky';
+import { sticky } from  '../../assets/js/sticky';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 
 export const PublicationPage = ({
@@ -45,7 +45,11 @@ export const PublicationPage = ({
   menuData3,
   menuTitle4,
   menuData4,
-}) => (
+}) => {
+  useEffect(() => {
+    sticky(locale);
+  }, [locale]);
+  return (
   <>
     <GlobalHeader
       backcaption={backcaption}
