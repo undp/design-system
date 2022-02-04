@@ -26,7 +26,7 @@
       }
 
       .dropdown-language {
-        margin-left: $spacing-12;
+        margin-left: $spacing-04;
       }
     }
 
@@ -118,8 +118,8 @@
 
       .icon-search {
         @extend %header-icon;
-        margin-left: $spacing-16;
-        margin-right: $spacing-12;
+        margin-left: $spacing-05;
+        margin-right: $spacing-04;
       }
     }
   }
@@ -155,18 +155,18 @@
       }
 
       .icon-search {
-        margin-left: $spacing-16;
+        margin-left: $spacing-05;
       }
     }
 
     .top-left {
       .dropdown-language {
         margin-left: 0;
-        margin-right: $spacing-12;
+        margin-right: $spacing-04;
       }
 
       .icon-bar {
-        margin-right: $spacing-12;
+        margin-right: $spacing-04;
       }
     }
   }

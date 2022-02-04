@@ -4,19 +4,19 @@
 
 .input-group {
 
-  margin-top: $spacing-24;
+  margin-top: $spacing-06;
   label {
     @extend %paragragh-font-20;
 
     display: block;
-    margin-bottom: $spacing-08;
+    margin-bottom: $spacing-03;
   }
 
   .help {
     color: $color-gray-500;
     display: block;
     font-size: $font-size-14;
-    margin-top: $spacing-08;
+    margin-top: $spacing-03;
     margin-bottom: 0;
   }
 
@@ -24,7 +24,7 @@
     color: $color-red;
     font-size: $font-size-16;
     margin-bottom: 0;
-    margin-top: $spacing-08;
+    margin-top: $spacing-03;
   }
 
   &.disabled {
@@ -93,7 +93,7 @@
 
     input[type=date],
     input[type=search] {
-      padding-left: $spacing-40;
+      padding-left: $spacing-08;
       position: relative;
     }
   }
@@ -116,7 +116,7 @@
       14px bottom 12px;
     background-color: $color-white;
     color: $color-gray-500;
-    padding-left: $spacing-40;
+    padding-left: $spacing-08;
   }
 
   &.error {
@@ -152,7 +152,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
     textarea {
       @media (hover: none) and (pointer: coarse) {
         input[type=date] {
-          padding-right: $spacing-24;
+          padding-right: $spacing-06;
         }
       }
     }
@@ -164,7 +164,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
         right 14px bottom 12px;
       background-color: $color-white;
       padding-left: 0.635rem;
-      padding-right: $spacing-40;
+      padding-right: $spacing-08;
       text-align: right;
     }
 

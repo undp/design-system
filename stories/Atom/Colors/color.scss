@@ -65,7 +65,7 @@
   .color__name {
     flex-basis: 0;
     flex-grow: 1;
-    margin: $spacing-08 0;
+    margin: $spacing-03 0;
     text-align: center;
 
     @include devicebreak(medium) {
@@ -208,7 +208,7 @@
   width: 100%;
 
   .color__name {
-    margin: $spacing-08 0;
+    margin: $spacing-03 0;
     text-align: center;
 
     .color__box {

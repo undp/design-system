@@ -7,7 +7,7 @@
     margin-top: 7rem;
 
     @include devicebreak(medium) {
-      margin-top: $spacing-24;
+      margin-top: $spacing-06;
     }
 
     h2 {
@@ -21,9 +21,9 @@
   }
 
   .parallax {
-    margin-top: -$spacing-80;
+    margin-top: -$spacing-11;
     overflow: hidden;
-    padding-bottom: $spacing-80;
+    padding-bottom: $spacing-11;
     position: relative;
 
     @include devicebreak(medium) {
@@ -51,7 +51,7 @@
 
   .fixedcarousel {
     background-color: $color-gray-200;
-    padding-bottom: $spacing-80;
+    padding-bottom: $spacing-11;
 
     h2 {
       @include devicebreak(small) {

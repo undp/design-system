@@ -7,15 +7,15 @@
   background-color: $color-gray-100;
   background-color: $color-blue-600;
   color: $color-white;
-  padding: $spacing-48 $spacing-12 $spacing-40;
+  padding: $spacing-09 $spacing-04 $spacing-08;
 
   @include devicebreak(medium) {
-    padding: 3.25rem 0 $spacing-48;
+    padding: 3.25rem 0 $spacing-09;
   }
 
   @include devicebreak(small) {
     & .sign-up {
-      margin-top: $spacing-24;
+      margin-top: $spacing-06;
     }
   }
 
@@ -30,21 +30,21 @@
 
   &-head {
     @extend %footer-block;
-    padding-bottom: $spacing-48;
+    padding-bottom: $spacing-09;
     margin-bottom: 1.188rem;
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-48;
+      margin-bottom: $spacing-09;
     }
   }
 
   &-top {
     @extend %footer-block;
-    padding-bottom: $spacing-32;
+    padding-bottom: $spacing-07;
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-32;
-      padding-bottom: $spacing-48;
+      margin-bottom: $spacing-07;
+      padding-bottom: $spacing-09;
     }
   }
 
@@ -55,37 +55,37 @@
       flex-direction: column-reverse;
 
       p {
-        margin: 0 $spacing-16 0;
+        margin: 0 $spacing-05 0;
       }
     }
   }
 
   &-copyright {
-    margin: 0 $spacing-16;
+    margin: 0 $spacing-05;
 
     @include devicebreak(medium) {
-      margin: $spacing-80 0 0;
+      margin: $spacing-11 0 0;
     }
   }
 
   &-links {
-    margin: $spacing-32 $spacing-16;
+    margin: $spacing-07 $spacing-05;
 
     @include devicebreak(medium) {
-      margin: 0 0 $spacing-32 0;
+      margin: 0 0 $spacing-07 0;
     }
 
     &_text {
-      margin: 0 $spacing-16 $spacing-32;
+      margin: 0 $spacing-05 $spacing-07;
 
       @include devicebreak(medium) {
-        margin: 0 0 $spacing-32 0;
+        margin: 0 0 $spacing-07 0;
       }
     }
   }
 
   .footer-icons {
-    margin: 0 1.25rem $spacing-32;
+    margin: 0 1.25rem $spacing-07;
 
     @include devicebreak(medium) {
       justify-content: flex-end;
@@ -107,12 +107,12 @@
 }
 
 .icons-search {
-  margin: $spacing-32 $spacing-16 0;
+  margin: $spacing-07 $spacing-05 0;
   text-align: left;
 
   @include devicebreak(medium) {
     text-align: right;
-    margin: 0 0 $spacing-32 0;
+    margin: 0 0 $spacing-07 0;
   }
 
   & span {
@@ -120,7 +120,7 @@
   }
 
   & .icon-globe {
-    margin-right: $spacing-16;
+    margin-right: $spacing-05;
   }
 }
 
@@ -134,7 +134,7 @@
 
     & .icon-globe {
       margin-right: 0;
-      margin-left: $spacing-16;
+      margin-left: $spacing-05;
     }
   }
 }

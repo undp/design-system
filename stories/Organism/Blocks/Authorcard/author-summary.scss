@@ -5,7 +5,7 @@
 /* author summary start */
 .author-summary {
   border-top: 2px solid $color-black;
-  padding-top: $spacing-32;
+  padding-top: $spacing-07;
 
   @include devicebreak(medium) {
     display: flex;
@@ -32,17 +32,17 @@
   }
 
   &-text {
-    margin-top: $spacing-40;
+    margin-top: $spacing-08;
     word-break: break-word;
 
     @include devicebreak(medium) {
-      margin-left: $spacing-40;
+      margin-left: $spacing-08;
       margin-top: 0;
       width: calc(100% - 244px);
     }
 
     h2 {
-      margin-bottom: $spacing-08;
+      margin-bottom: $spacing-03;
     }
   }
 }
@@ -52,7 +52,7 @@
     &-text {
       @include devicebreak(medium) {
         margin-left: 0;
-        margin-right: $spacing-40;
+        margin-right: $spacing-08;
       }
     }
   }

@@ -13,7 +13,7 @@
   }
 
   &__content {
-    padding: 0 $spacing-12 $spacing-24;
+    padding: 0 $spacing-04 $spacing-06;
 
     @include devicebreak(medium) {
       margin: auto;
@@ -54,25 +54,25 @@
     //gallery image list
     .lightbox-gallery-images {
       column-count: 2;
-      column-gap: $spacing-12;
+      column-gap: $spacing-04;
       margin: auto;
       padding-left: 0;
       width: 100%;
 
       @include devicebreak(xlarge) {
         column-count: 3;
-        column-gap: $spacing-24;
+        column-gap: $spacing-06;
       }
 
       li {
         list-style: none;
-        margin-bottom: $spacing-12;
+        margin-bottom: $spacing-04;
         position: relative;
         width: 100%;
         padding-left: 0;
 
         @include devicebreak(xlarge) {
-          margin-bottom: $spacing-24;
+          margin-bottom: $spacing-06;
         }
 
         a {
@@ -142,12 +142,12 @@
           border-bottom: 0;
           display: block;
           margin-top: 0;
-          padding: $spacing-32 $spacing-24;
+          padding: $spacing-07 $spacing-06;
         }
 
         p {
           color: $color-white;
-          margin-bottom: $spacing-16;
+          margin-bottom: $spacing-05;
           padding-right: 0;
 
           + .credits {

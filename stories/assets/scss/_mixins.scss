@@ -158,7 +158,7 @@
   align-items: center;
   border-bottom: 1px solid $color-white;
   justify-content: space-between;
-  margin-bottom: $spacing-32;
+  margin-bottom: $spacing-07;
 }
 
 %mobile-nav {
@@ -181,7 +181,7 @@
     font-size: $font-size-25;
     @include devicebreak(medium) {
       font-size: 3.438rem;
-      padding-left: $spacing-16;
+      padding-left: $spacing-05;
     }
   }
   h3 {
@@ -198,11 +198,11 @@
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  padding: $spacing-16;
+  padding: $spacing-05;
   position: relative;
 
   @include devicebreak(medium) {
-    padding: $spacing-24;
+    padding: $spacing-06;
   }
 }
 
@@ -259,7 +259,7 @@
 %ctaimg {
   content: "";
   height: 1.188rem;
-  margin-left: $spacing-12;
+  margin-left: $spacing-04;
   width: 0.813rem;
   margin-top: 2px;
   @include devicebreak(medium) {
@@ -350,7 +350,7 @@
   font-size: $font-size-16;
   font-weight: 600;
   margin: 0;
-  padding: $spacing-16 $spacing-50 $spacing-16 $spacing-16;
+  padding: $spacing-05 $spacing-50 $spacing-05 $spacing-05;
   line-height: 1.125rem;
   position: relative;
   text-transform: uppercase;
@@ -364,7 +364,7 @@
   box-sizing: border-box;
   display: none;
   min-height: 100px;
-  padding: 0 $spacing-16;
+  padding: 0 $spacing-05;
   width: 100%;
   &:focus{
     outline:0;
@@ -374,7 +374,7 @@
 
 %select_rtl {
   padding-left: 3.125rem;
-  padding-right: $spacing-16;
+  padding-right: $spacing-05;
   text-align: right;
 }
 
@@ -465,7 +465,7 @@
   letter-spacing: 0.48px;
   line-height: 0.84;
   text-transform: uppercase;
-  margin-bottom: $spacing-16;
+  margin-bottom: $spacing-05;
 }
 
 %carousel_title {
@@ -479,7 +479,7 @@
 }
 
 %carousel_bar_margin {
-  margin-bottom: $spacing-48;
+  margin-bottom: $spacing-09;
 }
 
 %carousel_slider_slide {
@@ -618,7 +618,7 @@
     position: relative;
     display: block;
     left: 1.25rem;
-    height: $spacing-16;
+    height: $spacing-05;
     @include transition(width 0.3s);
 
     &::before {
@@ -633,8 +633,8 @@
 
     &::after {
       @extend %pseudo-icon;
-      width: $spacing-12;
-      height: $spacing-12;
+      width: $spacing-04;
+      height: $spacing-04;
       border-top: 2px solid $color-red;
       border-right: 2px solid $color-red;
       @include transform(rotate(45deg));
@@ -645,7 +645,7 @@
   
   &:hover {
     i {
-      width: $spacing-80;
+      width: $spacing-11;
       &::before {
         display: unset;
       }

@@ -26,29 +26,29 @@
         font-size: 1.8rem;
 
         @include devicebreak(medium) {
-          font-size: $spacing-64;
+          font-size: $spacing-10;
         }
       }
 
       @include devicebreak(small) {
         .homepage-hero-wide {
           border-left: 1rem solid $color-gray-300;
-          padding-left: calc(8.33333% + #{$spacing-24} / 2);
+          padding-left: calc(8.33333% + #{$spacing-06} / 2);
         }
       }
     }
 
     .featured-card-container {
-      margin-bottom: $spacing-24;
+      margin-bottom: $spacing-06;
       margin-top: 7.5rem;
 
       @include devicebreak(medium) {
-        margin-top: $spacing-24;
+        margin-top: $spacing-06;
       }
     }
 
     .wide-card-heading {
-      margin-bottom: $spacing-40;
+      margin-bottom: $spacing-08;
       margin-top: 5.563rem;
     }
 
@@ -56,8 +56,8 @@
       margin-top: 8.313rem;
       
       @include devicebreak(small) {
-        padding-left: $spacing-24;
-        padding-right: $spacing-24;
+        padding-left: $spacing-06;
+        padding-right: $spacing-06;
       }
 
       > div:first-child {
@@ -79,7 +79,7 @@
         margin-top: 3.75rem;
 
         @include devicebreak(medium) {
-          margin-top: $spacing-40;
+          margin-top: $spacing-08;
         }
       }
     }
@@ -97,7 +97,7 @@
         border-left: none;
         border-right: 1rem solid $color-gray-300;
         padding-left: 0;
-        padding-right: calc(8.33333% + #{$spacing-24}/ 2);
+        padding-right: calc(8.33333% + #{$spacing-06}/ 2);
       }
     }
   }

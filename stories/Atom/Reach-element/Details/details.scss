@@ -21,7 +21,7 @@ details {
       content: '';
       display: inline-block;
       height: 14px;
-      margin-right: $spacing-04;
+      margin-right: $spacing-02;
       width: 14px;
     }
   }
@@ -52,7 +52,7 @@ details {
     summary::before {
       @include transform(translate(0) rotate(180deg));
 
-      margin-left: $spacing-04;
+      margin-left: $spacing-02;
       margin-right: 0;
     }
 

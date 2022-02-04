@@ -31,7 +31,7 @@
         border: 0;
         display: none;
         overflow: hidden;
-        padding: 0 0 0 $spacing-40;
+        padding: 0 0 0 $spacing-08;
       }
 
       li {
@@ -82,7 +82,7 @@
           border: 0;
           border-top: solid 1px $color-gray-400;
           display: block;
-          padding: 0 0 0 $spacing-40;
+          padding: 0 0 0 $spacing-08;
           overflow: visible;
         }
 
@@ -100,7 +100,7 @@
         display: block;
         font-size: $font-size-16;
         margin: 0 -1rem;
-        padding: $spacing-16;
+        padding: $spacing-05;
         position: relative;
         text-align: left;
         width: calc(100% + 2rem);
@@ -148,14 +148,14 @@
   ul .form-check {
     justify-content: space-between;
     margin: 0 -1rem;
-    padding:0 $spacing-16;
+    padding:0 $spacing-05;
     label {
-      padding:$spacing-16 0;
+      padding:$spacing-05 0;
       width: 100%;
     }
     input{
       position: absolute;
-      right:$spacing-16;
+      right:$spacing-05;
     }
   }
 }
@@ -183,14 +183,14 @@
       }
     }
     ul {
-      padding: 0 $spacing-16;
+      padding: 0 $spacing-05;
 
       li {
         padding-right: 0;
       }
 
       .form-check input{
-        left:$spacing-16;
+        left:$spacing-05;
         right:inherit;
       }
     }
@@ -200,7 +200,7 @@
         text-align: right;
 
         &::after {
-          left: $spacing-16;
+          left: $spacing-05;
           right: inherit;
         }
       }
@@ -209,14 +209,14 @@
     &.open {
       .radio {
         span {
-          left: $spacing-16;
+          left: $spacing-05;
           right: inherit;
         }
       }
 
       ul {
         ul {
-          padding: 0 $spacing-40 0 0;
+          padding: 0 $spacing-08 0 0;
         }
       }
     }

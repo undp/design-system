@@ -8,7 +8,7 @@
   color: $color-white;
   cursor: pointer;
   justify-content: center;
-  padding: $spacing-16 $spacing-24;
+  padding: $spacing-05 $spacing-06;
 
   &:focus-visible {
     box-shadow: 0 0 4px $color-blue-800;
@@ -37,7 +37,7 @@ button {
       background: url(#{$img-path-Iconfourback}/chevron-right-black.svg) no-repeat left center;
       content: '';
       height: 20px;
-      margin-left: $spacing-12;
+      margin-left: $spacing-04;
       width: 13px;
     }
 
@@ -76,7 +76,7 @@ button {
           @include transform(rotate(180deg));
 
           margin-left: 0;
-          margin-right: $spacing-12;
+          margin-right: $spacing-04;
         }
 
         &:hover::after {

@@ -6,14 +6,14 @@
   &-panel {
     background-color: #232e3e;
     overflow: hidden;
-    padding: $spacing-96 $spacing-24;
+    padding: $spacing-12 $spacing-06;
 
     .twitter {
       background: url(#{$img-path-Icon}/tweet-white.svg) no-repeat center bottom;
       display: block;
       font-size: 0;
       height: 36px;
-      margin-bottom: $spacing-04;
+      margin-bottom: $spacing-02;
       width: 36px;
 
       @include devicebreak(medium) {
@@ -25,7 +25,7 @@
       align-items: flex-end;
       color: $color-white;
       display: flex;
-      margin-bottom: $spacing-40;
+      margin-bottom: $spacing-08;
     }
 
     a {

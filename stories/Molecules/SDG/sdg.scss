@@ -10,7 +10,7 @@
     display: block;
     font-family: $Font-Family-SohneBreit;
     min-height: 210px;
-    padding: 2.188rem $spacing-24 $spacing-16;
+    padding: 2.188rem $spacing-06 $spacing-05;
     position: relative;
 
     @include devicebreak(medium) {

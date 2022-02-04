@@ -32,7 +32,7 @@
       }
 
       ul li {
-        margin-top: $spacing-40;
+        margin-top: $spacing-08;
       }
 
       a {
@@ -41,16 +41,16 @@
       }
 
       h4 {
-        font-size: $spacing-24;
+        font-size: $spacing-06;
       }
     }
 
     &-hero {
       .breadcrumb {
-        margin-top: $spacing-16;
+        margin-top: $spacing-05;
 
         @include devicebreak(medium) {
-          margin-top: $spacing-48;
+          margin-top: $spacing-09;
         }
       }
 
@@ -69,7 +69,7 @@
   &-impact {
     background: $color-gray-100;
     margin-top: 0;
-    padding-bottom: $spacing-40;
+    padding-bottom: $spacing-08;
     padding-top: 6.25rem;
 
     .project-data__title {
@@ -91,7 +91,7 @@
   }
 
   &-support {
-    margin-top: $spacing-96;
+    margin-top: $spacing-12;
 
     .stats-slider {
       margin-top: 4.375rem;
@@ -113,7 +113,7 @@
         }
 
         &__box {
-          padding: $spacing-40 2.188rem;
+          padding: $spacing-08 2.188rem;
         }
       }
     }
@@ -123,7 +123,7 @@
     margin-top: 15.313rem;
 
     .content-data {
-      margin-top: $spacing-40;
+      margin-top: $spacing-08;
 
       .cell {
         margin-bottom: 1.875rem;
@@ -135,7 +135,7 @@
 
       @include devicebreak(medium) {
         margin-left: 0;
-        margin-top: $spacing-40;
+        margin-top: $spacing-08;
       }
     }
   }
@@ -175,7 +175,7 @@
       &-hero {
         .breadcrumb {
           padding-left: 0;
-          padding-right: $spacing-16;
+          padding-right: $spacing-05;
         }
 
         .pagehero-wrapper__title {

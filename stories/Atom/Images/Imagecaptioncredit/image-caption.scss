@@ -10,10 +10,10 @@
     justify-content: center;
 
     .image__caption {
-      margin: $spacing-16 $spacing-24 0;
+      margin: $spacing-05 $spacing-06 0;
 
       @include devicebreak(medium) {
-        margin: $spacing-32 0 0;
+        margin: $spacing-07 0 0;
         width: 58.33333%;
       }
     }
@@ -41,20 +41,20 @@
 
     .image__caption {
       display: block;
-      margin: 0 0 0 $spacing-24;
+      margin: 0 0 0 $spacing-06;
       padding-bottom: 0;
       width: 25%;
 
       p {
         font-size: $font-size-14;
         line-height: 1.4;
-        margin-bottom: $spacing-16;
+        margin-bottom: $spacing-05;
         padding: 0;
 
         + .credits {
           border-top: 1px solid $color-gray-500;
           margin-left: 0;
-          padding: $spacing-16 0 0 0;
+          padding: $spacing-05 0 0 0;
         }
       }
     }
@@ -63,7 +63,7 @@
   .credits {
     border-left: 0;
     border-right: 0;
-    margin-bottom: $spacing-16;
+    margin-bottom: $spacing-05;
   }
 
   .author__caption {
@@ -85,14 +85,14 @@
     .image-figcaption.portrait {
       .image {
         &__caption {
-          margin: 0 $spacing-24 0 0;
+          margin: 0 $spacing-06 0 0;
         }
       }
 
       .credits {
         border-right: 0;
         margin-right: 0;
-        padding: $spacing-16 0;
+        padding: $spacing-05 0;
         padding-right: 0;
       }
     }

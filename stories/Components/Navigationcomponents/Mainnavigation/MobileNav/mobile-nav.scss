@@ -9,7 +9,7 @@
   left: 0;
   margin: 0;
   overflow-y: auto;
-  padding: 0 $spacing-24;
+  padding: 0 $spacing-06;
   position: absolute;
   top: 4.6875rem;
   width: 100%;
@@ -84,7 +84,7 @@
 
         ul {
           margin: 0;
-          padding: $spacing-24 1.6875rem;
+          padding: $spacing-06 1.6875rem;
 
           li {
             margin-bottom: 0.46875rem;
@@ -133,7 +133,7 @@
     }
 
     .sub-sub-lang {
-      margin: $spacing-40 0 0;
+      margin: $spacing-08 0 0;
       padding: 0;
 
       li {
@@ -146,7 +146,7 @@
 
         ul {
           margin: 0;
-          padding: $spacing-16 1.6875rem;
+          padding: $spacing-05 1.6875rem;
         }
 
         a {
@@ -174,7 +174,7 @@
   cursor: pointer;
   display: none;
   font-size: 0;
-  margin-left: $spacing-12;
+  margin-left: $spacing-04;
   min-height: 1.75rem;
   position: relative;
   width: 1.375rem;
@@ -206,7 +206,7 @@
   margin: auto;
   position: absolute;
   right: 0;
-  top: $spacing-12;
+  top: $spacing-04;
   transition: 0.2s ease-out;
   width: 100%;
 }
@@ -260,7 +260,7 @@
     }
   }
   .menu-hamburger{
-    margin-right: $spacing-12;
+    margin-right: $spacing-04;
     margin-left:0;
   }
 }

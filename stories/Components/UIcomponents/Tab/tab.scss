@@ -11,7 +11,7 @@
     padding-left: 0;
 
     @include devicebreak(medium) {
-      padding-left: $spacing-48;
+      padding-left: $spacing-09;
     }
 
     li {
@@ -21,9 +21,9 @@
       font-weight: 700;
       letter-spacing: 0.03em;
       margin-bottom: -0.125rem;
-      margin-right: $spacing-24;
+      margin-right: $spacing-06;
       margin-top: 0.75rem;
-      padding-bottom: $spacing-08;
+      padding-bottom: $spacing-03;
       text-transform: uppercase;
       padding-left: 0;
 
@@ -55,7 +55,7 @@
       }
 
       p {
-        margin-top: $spacing-16;
+        margin-top: $spacing-05;
 
         @include devicebreak(medium) {
           margin-top: 2.5rem;
@@ -71,11 +71,11 @@
       padding-right: 0;
 
       @include devicebreak(medium) {
-        padding-right: $spacing-48;
+        padding-right: $spacing-09;
       }
 
       li {
-        margin-left: $spacing-24;
+        margin-left: $spacing-06;
         margin-right: 0;
         padding-right: 0;
       }

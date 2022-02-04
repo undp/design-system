@@ -12,12 +12,12 @@
   }
 
   @include devicebreak(small) {
-    margin: 0 $spacing-16 $spacing-32;
+    margin: 0 $spacing-05 $spacing-07;
   }
 
   li {
     list-style: none;
-    margin-bottom: $spacing-12;
+    margin-bottom: $spacing-04;
     padding-left: 0;
 
     @include devicebreak(medium) {

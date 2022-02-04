@@ -4,9 +4,9 @@
 .author-card {
   a {
     display: block;
-    margin-bottom: $spacing-48;
+    margin-bottom: $spacing-09;
     word-break: break-word;
-    padding-top: $spacing-24;
+    padding-top: $spacing-06;
     border-top: 2px solid $color-black;
     
     @include devicebreak(medium) {
@@ -30,7 +30,7 @@
   p {
     font-size: $font-size-14;
     line-height: 1.4;
-    margin-bottom: $spacing-24;
+    margin-bottom: $spacing-06;
 
     @include devicebreak(medium) {
       font-size: $font-size-16;

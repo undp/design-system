@@ -4,10 +4,10 @@
 
 /* small copy start */
 .smallcopy__box {
-  margin-bottom: $spacing-04;
+  margin-bottom: $spacing-02;
   
   &-locale {
-    margin-bottom: $spacing-32;
+    margin-bottom: $spacing-07;
 
     strong {
       font-size: $font-size-16;
@@ -16,7 +16,7 @@
   }
 
   strong {
-    margin-right: $spacing-04;
+    margin-right: $spacing-02;
   }
 }
 

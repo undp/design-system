@@ -80,11 +80,11 @@ th,
 td {
   font-size: $font-size-20;
   line-height: 1.4;
-  padding: $spacing-12;
+  padding: $spacing-04;
   vertical-align: top;
 
   @include devicebreak(medium) {
-    padding: $spacing-12 $spacing-40 $spacing-12 $spacing-12;
+    padding: $spacing-04 $spacing-08 $spacing-04 $spacing-04;
   }
 }
 
@@ -124,7 +124,7 @@ tbody {
   td {
     text-align: right;
     @include devicebreak(medium) {
-      padding: $spacing-12 $spacing-12 $spacing-12 $spacing-40;
+      padding: $spacing-04 $spacing-04 $spacing-04 $spacing-08;
     }
   }
 }

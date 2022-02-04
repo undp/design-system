@@ -29,7 +29,7 @@ h5,
 h6,
 caption {
   margin: 0;
-  margin-bottom: $spacing-12;
+  margin-bottom: $spacing-04;
   padding: 0;
 
   @include devicebreak(medium) {
@@ -119,12 +119,12 @@ ol {
   }
 
   li {
-    margin-bottom: $spacing-16;
+    margin-bottom: $spacing-05;
     padding-left: 0.875rem;
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-24;
-      padding-left: $spacing-12;
+      margin-bottom: $spacing-06;
+      padding-left: $spacing-04;
     }
   }
 }
@@ -154,16 +154,16 @@ dl {
 }
 
 dt {
-  margin-bottom: $spacing-08;
+  margin-bottom: $spacing-03;
 }
 
 dd {
-  margin-bottom: $spacing-16;
-  margin-inline-start: $spacing-40;
+  margin-bottom: $spacing-05;
+  margin-inline-start: $spacing-08;
 
   @include devicebreak(medium) {
-    margin-bottom: $spacing-24;
-    margin-inline-start: $spacing-48;
+    margin-bottom: $spacing-06;
+    margin-inline-start: $spacing-09;
   }
 }
 
@@ -262,7 +262,7 @@ hr {
     }
 
     .sbdocs-h1 {
-      font-size: $spacing-32;
+      font-size: $spacing-07;
     }
   }
 }
@@ -282,7 +282,7 @@ hr {
       padding-right: 0.875rem;
 
       @include devicebreak(medium) {
-        padding-right: $spacing-12;
+        padding-right: $spacing-04;
       }
     }
   }

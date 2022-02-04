@@ -5,7 +5,7 @@
 .author {
   &-box {
     display: inline-flex;
-    margin-bottom: $spacing-24;
+    margin-bottom: $spacing-06;
     width: 100%;
 
     a {
@@ -25,14 +25,14 @@
   }
 
   &__img {
-    margin-right: $spacing-24;
+    margin-right: $spacing-06;
   }
 
   &-label {
-    padding-top: $spacing-04;
+    padding-top: $spacing-02;
 
     h6 {
-      margin-bottom: $spacing-08;
+      margin-bottom: $spacing-03;
       text-transform: uppercase;
     }
 
@@ -54,7 +54,7 @@
     }
 
     &__img {
-      margin-left: $spacing-24;
+      margin-left: $spacing-06;
       margin-right: 0;
     }
   }

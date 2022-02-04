@@ -10,7 +10,7 @@
   left: 50%;
   max-width: 75.5rem;
   min-height: 37.5rem;
-  padding: $spacing-64 0 0 $spacing-48;
+  padding: $spacing-10 0 0 $spacing-09;
   position: fixed;
   top: 7.125rem;
   z-index: 8;
@@ -27,7 +27,7 @@
     li {
       list-style: none;
       margin-bottom: 0;
-      padding-right: $spacing-48;
+      padding-right: $spacing-09;
       padding-left: 0;
 
       &.active {
@@ -67,13 +67,13 @@
         background: none;
         border-bottom: 1px solid $color-gray-400;
         display: flex;
-        font-size: $spacing-16;
+        font-size: $spacing-05;
         font-weight: 700;
-        padding: $spacing-24;
+        padding: $spacing-06;
         text-transform: uppercase;
         
         .external-link{
-          margin: 2px 0 0 $spacing-16;
+          margin: 2px 0 0 $spacing-05;
         }
 
         &:hover {
@@ -90,7 +90,7 @@
 
     .sub-sub-menu {
       display: flex;
-      margin-top: $spacing-48;
+      margin-top: $spacing-09;
 
       ul {
         margin: 0;
@@ -100,19 +100,19 @@
         li {
           line-height: 0;
           list-style-type: none;
-          margin-bottom: $spacing-24;
+          margin-bottom: $spacing-06;
           text-transform: uppercase;
         }
       }
     }
 
     h3 {
-      margin-bottom: $spacing-24;
+      margin-bottom: $spacing-06;
     }
 
     .mega-image {
       box-sizing: border-box;
-      padding-left: $spacing-48;
+      padding-left: $spacing-09;
 
       img {
         height: 100%;
@@ -127,8 +127,8 @@
   }
   .show-on-focus{
     font-size: 0;
-    width:$spacing-40;
-    height: $spacing-40;
+    width:$spacing-08;
+    height: $spacing-08;
     color: #000;
     position:absolute;
     top: 0.625rem;
@@ -179,13 +179,13 @@
 
 [dir='rtl'] {
   .mega-nav-option {
-    padding: $spacing-64 $spacing-48 0 0;
+    padding: $spacing-10 $spacing-09 0 0;
     .submenu li {
       padding-left: 3rem;
       padding-right: 0;
       a{
         .external-link {
-          margin: 2px $spacing-16 0 0;
+          margin: 2px $spacing-05 0 0;
         }
       }
     }
@@ -201,8 +201,8 @@
 @-webkit-keyframes circle-square-transition {
   0% {
     opacity: .4;
-    width: $width-100;
-    height: $width-50;
+    width: $spacing-100;
+    height: $spacing-50;
     margin-top: -$spacing-70;
     border-radius: 50%
   }
@@ -247,8 +247,8 @@
 @keyframes circle-square-transition {
   0% {
     opacity: .4;
-    width: $width-100;
-    height: $width-50;
+    width: $spacing-100;
+    height: $spacing-50;
     margin-top: -$spacing-70;
     border-radius: 50%
   }
@@ -330,8 +330,8 @@
   }
   to {
     opacity: .4;
-    width: $width-100;
-    height: $width-50;
+    width: $spacing-100;
+    height: $spacing-50;
     margin-top: -$spacing-70;
     border-radius: 50%
   }
@@ -376,8 +376,8 @@
   }
   to {
     opacity: .4;
-    width: $width-100;
-    height: $width-50;
+    width: $spacing-100;
+    height: $spacing-50;
     margin-top: -$spacing-70;
     border-radius: 50%
   }

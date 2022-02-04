@@ -10,13 +10,13 @@
 
   .select-wrapper {
     .multi-select {
-      padding-top: $spacing-24;
+      padding-top: $spacing-06;
     }
   }
 
   .selected-chips {
     max-width: 296px;
-    padding-top: $spacing-24;
+    padding-top: $spacing-06;
 
     .chip {
       margin: 0 0.75rem 0.75rem 0;
@@ -49,7 +49,7 @@
     font-weight: 600;
     text-transform: uppercase;
     display: none;
-    padding-top: $spacing-16;
+    padding-top: $spacing-05;
 
     &.show-activefilter {
       display: block;
@@ -60,7 +60,7 @@
 [dir='rtl'] {
   .selected-chips {
     .chip {
-      margin: 0 0 $spacing-12 $spacing-12;
+      margin: 0 0 $spacing-04 $spacing-04;
     }
   }
 }

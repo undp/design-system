@@ -84,7 +84,7 @@
     background: transparent;
     display: block;
     height: 4px;
-    margin-bottom: $spacing-32;
+    margin-bottom: $spacing-07;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -115,11 +115,11 @@
   &-initialized {
     padding-right: $spacing-44;
     @include devicebreak(small) {
-      padding-right: $spacing-40;
+      padding-right: $spacing-08;
     }
     .swiper-scrollbar {
       @include devicebreak(small) {
-        padding-right: $spacing-40;
+        padding-right: $spacing-08;
       }
     }
   }
@@ -131,13 +131,13 @@
     padding-left: $spacing-44;
     padding-right: 0;
     @include devicebreak(small) {
-      padding-left: $spacing-40;
+      padding-left: $spacing-08;
       padding-right: 0;
     }
     .swiper-scrollbar {
       padding-right: 0;
       @include devicebreak(small) {
-        padding-left: $spacing-40;
+        padding-left: $spacing-08;
         padding-right: 0;
       }
     }

@@ -19,10 +19,10 @@
     font-size: $font-size-12;
     font-weight: 700;
     margin-bottom: 0;
-    padding: $spacing-16 $spacing-16 1.125rem $spacing-16;
+    padding: $spacing-05 $spacing-05 1.125rem $spacing-05;
 
     @include devicebreak(medium) {
-      padding: $spacing-16 $spacing-24;
+      padding: $spacing-05 $spacing-06;
     }
   }
 
@@ -46,10 +46,10 @@
   }
 
   h4 {
-    margin: $spacing-16;
+    margin: $spacing-05;
 
     @include devicebreak(medium) {
-      margin: $spacing-48 $spacing-24 $spacing-32;
+      margin: $spacing-09 $spacing-06 $spacing-07;
     }
 
     a {
@@ -58,16 +58,16 @@
   }
 
   p {
-    margin: $spacing-16 $spacing-16 $spacing-32;
+    margin: $spacing-05 $spacing-05 $spacing-07;
 
     @include devicebreak(medium) {
-      margin: 0 $spacing-24 $spacing-32;
+      margin: 0 $spacing-06 $spacing-07;
     }
   }
 
   .button-arrow {
     @include devicebreak(medium) {
-      margin-left: $spacing-24;
+      margin-left: $spacing-06;
     }
   }
 }
@@ -118,7 +118,7 @@ div.wide-card__image {
     .button-arrow {
       @include devicebreak(medium) {
         margin-left: 0;
-        margin-right: $spacing-24;
+        margin-right: $spacing-06;
       }
     }
   }

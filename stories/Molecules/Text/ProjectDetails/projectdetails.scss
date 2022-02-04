@@ -12,7 +12,7 @@
 
   &__col {
     display: inline-block;
-    margin-bottom: $spacing-32;
+    margin-bottom: $spacing-07;
     width: 50%;
 
     @include devicebreak(medium) {
@@ -26,7 +26,7 @@
     font-weight: 700;
     letter-spacing: 0.03em;
     line-height: 1.15;
-    margin-bottom: $spacing-04;
+    margin-bottom: $spacing-02;
   }
 
   &__text {

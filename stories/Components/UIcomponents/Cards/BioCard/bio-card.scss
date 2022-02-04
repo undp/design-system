@@ -15,7 +15,7 @@ div.bio-card {
     //cta 
     .cta--arrow {
       i {
-        width: $spacing-80;
+        width: $spacing-11;
         &::before {
           display: unset;
         }
@@ -54,7 +54,7 @@ div.bio-card {
     }
     
     .bio-card__description {
-      padding: $spacing-32 $spacing-24 0 ;
+      padding: $spacing-07 $spacing-06 0 ;
     }
 
     .card-thumbnail__image {
@@ -87,8 +87,8 @@ div.bio-card {
 
     .cta__link {
       margin-bottom: 0;
-      margin-top: $spacing-24;
-      padding: 0  $spacing-24 $spacing-32;
+      margin-top: $spacing-06;
+      padding: 0  $spacing-06 $spacing-07;
       @include devicebreak(medium) {
         margin-top: auto;
       }
@@ -134,14 +134,14 @@ div.bio-card {
 }
 
 .bio-card-content {
-  padding: $spacing-32 $spacing-24;
+  padding: $spacing-07 $spacing-06;
 
   @include devicebreak(medium) {
-    padding: 0 $spacing-24 0;
+    padding: 0 $spacing-06 0;
   }
 
   p {
-    margin-bottom: $spacing-32;
+    margin-bottom: $spacing-07;
 
     &.small {
       @extend %paragragh-font-16;

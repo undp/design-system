@@ -18,7 +18,7 @@
 
   &-list {
     > div {
-      margin-top: $spacing-32;
+      margin-top: $spacing-07;
 
       @include devicebreak(small) {
         border-bottom: 1px solid $color-gray-400;

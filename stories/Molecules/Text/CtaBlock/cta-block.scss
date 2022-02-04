@@ -6,10 +6,10 @@
 .cta-block {
   h4 {
     font-weight: 600;
-    margin-bottom: $spacing-24;
+    margin-bottom: $spacing-06;
 
     @include devicebreak(large) {
-      margin-bottom: $spacing-48;
+      margin-bottom: $spacing-09;
     }
   }
 
@@ -20,7 +20,7 @@
   }
 
   p {
-    margin-bottom: $spacing-40;
+    margin-bottom: $spacing-08;
   }
 }
 

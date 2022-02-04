@@ -4,14 +4,14 @@
 .form-wrapper {
   .text-panel {
     .button {
-      margin-top: $spacing-24;
+      margin-top: $spacing-06;
     }
   }
 
   h2 {
-    margin-bottom: $spacing-40;
+    margin-bottom: $spacing-08;
     @include devicebreak(small) {
-      margin-bottom: $spacing-12;
+      margin-bottom: $spacing-04;
     }
   }
 
@@ -32,25 +32,25 @@
       height: inherit;
 
       h2 {
-        margin-bottom: $spacing-16;
+        margin-bottom: $spacing-05;
         @include devicebreak(small) {
-          margin-bottom: $spacing-12;
+          margin-bottom: $spacing-04;
         }
       }
 
       p {
-        margin-bottom: $spacing-48;
+        margin-bottom: $spacing-09;
 
         @include devicebreak(small) {
-          margin-bottom: $spacing-32;
+          margin-bottom: $spacing-07;
         }
       }
 
       .button {
-        margin-top: $spacing-48;
+        margin-top: $spacing-09;
 
         @include devicebreak(small) {
-          margin-top: $spacing-32;
+          margin-top: $spacing-07;
         }
       }
     }
@@ -59,10 +59,10 @@
   .form-bg {
     background: $color-gray-100;
     box-sizing: border-box;
-    padding: $spacing-96 0;
+    padding: $spacing-12 0;
 
     @include devicebreak(small) {
-      padding: $spacing-48 $spacing-24;
+      padding: $spacing-09 $spacing-06;
     }
   }
 
@@ -74,53 +74,53 @@
 
   .wide-form {
     h2 {
-      margin-bottom: $spacing-24;
+      margin-bottom: $spacing-06;
       @include devicebreak(small) {
-        margin-bottom: $spacing-08;
+        margin-bottom: $spacing-03;
       }
     }
 
     .input-group {
       .input__controls {
-        margin: $spacing-12 0;
+        margin: $spacing-04 0;
       }
     }
 
     .button {
-      margin-top: $spacing-48;
+      margin-top: $spacing-09;
 
       @include devicebreak(small) {
-        margin-top: $spacing-32;
+        margin-top: $spacing-07;
       }
     }
   }
 
   .stacked-form {
     h2 {
-      margin-bottom: $spacing-16;
+      margin-bottom: $spacing-05;
       @include devicebreak(small) {
-        margin-bottom: $spacing-12;
+        margin-bottom: $spacing-04;
       }
     }
 
     p {
-      margin-bottom: $spacing-48;
+      margin-bottom: $spacing-09;
       @include devicebreak(small) {
-        margin-bottom: $spacing-32;
+        margin-bottom: $spacing-07;
       }
     }
 
     .input-group {
       .input__controls {
-        margin: $spacing-12 0;
+        margin: $spacing-04 0;
       }
     }
 
     .button {
-      margin-top: $spacing-48;
+      margin-top: $spacing-09;
 
       @include devicebreak(small) {
-        margin-top: $spacing-32;
+        margin-top: $spacing-07;
       }
     }
   }
