@@ -67,7 +67,7 @@
 
 
 /* animation start */
-.left-right {
+*[data-viewport='true'] {
   @extend %left-to-right;
 
   &.inviewport {
@@ -120,7 +120,7 @@
 }
 
 [dir='rtl'] {
-  .left-right {
+  *[data-viewport='true'] {
     @include transform(translateX(100px));
 
     &.inviewport {

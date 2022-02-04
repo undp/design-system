@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './homepage-hero.scss';
-import viewport from '../../../../assets/js/viewport';
 import expandToSize from '../../../../assets/js/animation';
 import BackgroundImg from '../../../../assets/images/field.jpg';
 import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
@@ -12,7 +11,6 @@ export const Homepagehero = ({
   title, content, button, variant, ...args
 }) => {
   useEffect(() => {
-    viewport('.left-right');
     expandToSize('.homepage-hero-full');
   }, []);
   return (
@@ -28,8 +26,8 @@ export const Homepagehero = ({
         )}
        <div className="grid-x homepage-hero-content">
         <div className="cell large-7 medium-9 medium-offset-1">
-          <Heading type="1" className="color-white left-right" label={title} />
-          {content && <Heading type="4" className="color-white left-right" label={content} />}
+          <Heading type="1" className="color-white" label={title} dataViewport="true"/>
+          {content && <Heading type="4" className="color-white" label={content} dataViewport="true"/>}
           <CtaButton label={button} />
         </div>
       </div>

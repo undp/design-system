@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
 import { tabs } from '../../../assets/js/tabs';
 import './tab.scss';
-import viewport from '../../../assets/js/viewport';
 import { BodyColumnTwo } from '../../../Molecules/Text/BodyColumn/BodyColumn';
 
 export const Tab = ({ tabdata }) => {
   useEffect(() => {
     tabs();
-    viewport('.tabs');
   }, []);
   return (
     <>
-      <div className="tabs left-right">
+      <div className="tabs" data-viewport="true">
         <ul data-deep-link="true" data-tabs id="tablist_1" role="tablist">
           {tabdata.map((item, index) => (
             <li key={index} className={index == 0 ? 'tabs-title is-active' : 'tabs-title'}>

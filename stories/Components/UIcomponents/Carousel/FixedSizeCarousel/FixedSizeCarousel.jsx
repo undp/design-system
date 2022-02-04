@@ -3,7 +3,6 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { CtaButton } from '../../Buttons/Cta_button/CtaButton';
 import { swiper } from '../../../../assets/js/swiper';
-import viewport from '../../../../assets/js/viewport';
 import './fixed-size-carousel.scss';
 
 // RTL Fix for Storybook.
@@ -14,10 +13,9 @@ if (window.location.href.indexOf('direction=rtl') > -1) {
 export const FixedSizeCarousel = ({ data, label }) => {
   useEffect(() => {
     swiper('.fixed-carousel', '.fixed-carousel__button-wrap');
-    viewport('.fixed-carousel');
   }, []);
   return (
-    <section className="fixed-carousel left-right" dir={rtl}>
+    <section data-viewport="true" className="fixed-carousel" dir={rtl}>
       {label && <Heading type="2" label={label} />}
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
