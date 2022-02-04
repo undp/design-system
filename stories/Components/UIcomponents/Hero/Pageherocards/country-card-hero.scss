@@ -68,6 +68,10 @@
       padding-bottom: 1.875rem;
       text-transform: uppercase;
 
+      @include devicebreak(medium) {
+        margin-right: $spacing-04;
+      }
+
       @include devicebreak(large) {
         padding-bottom: 0;
       }
@@ -186,6 +190,12 @@
           @include devicebreak(large) {
             right: -60px;
           }
+        }
+      }
+      h2 {
+        @include devicebreak(medium) {
+          margin-left: $spacing-04;
+          margin-right: 0;
         }
       }
     }
