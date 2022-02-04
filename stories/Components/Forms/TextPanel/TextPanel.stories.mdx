@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs';
-import { FormTypes } from './FormTypes';
+import { FormTypes } from './TextPanel';
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
@@ -76,7 +76,7 @@ export const getCaptionForLocale = (locale) => {
 };
 
 <Meta
-  title="Components/Forms/Text panel"
+  title="Components/Forms/Text Panel"
   argTypes={{
     variant: {
       options: [
@@ -91,7 +91,7 @@ export const getCaptionForLocale = (locale) => {
   }}
 />
 
-<Story name="Text panel">
+<Story name="Text Panel">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (

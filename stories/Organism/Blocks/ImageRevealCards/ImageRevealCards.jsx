@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import './image-reveal-cards.scss';
 import viewport from '../../../assets/js/viewport';
-import { ImageRevelCard } from '../../../Components/UIcomponents/Cards/ImageRevelCTACard/ImageCard';
+import { ImageRevelCard } from '../../../Components/UIcomponents/Cards/ImageRevelCTACard/ImageRevelCTACard';
 
 export const ImageRevealCards = ({ data, label }) => {
   useEffect(() => {

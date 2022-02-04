@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { accordion } from '../../../assets/js/accordion';
 import './accordion.scss';
-import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../../Atom/Base-Typography/Paragraph/Paragraph';
 
 export const Accordion = ({
   headerText, descriptionText

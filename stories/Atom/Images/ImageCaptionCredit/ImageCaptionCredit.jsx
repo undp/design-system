@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './image-caption.scss';
+import './image-caption-credit.scss';
 import viewport from '../../../assets/js/viewport';
 import { Imagecaption } from '../../../Molecules/Imagecaption/Imagecaption';
 

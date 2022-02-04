@@ -3,7 +3,7 @@ import './sdgmodal.scss';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { Statscardslider } from '../../Organism/Statscardslider/Statscardslider';
 import { ContentCardWithAndWithoutImage } from '../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage';
-import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 
 export const Sdgmodal = ({
   statsData, goalcount, goaldata, contentdata, storyBtn, Sdgcontenttitle, modaltitle, description, goaltitle, sdgimg, alt, nextcardtitle,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { P } from '../Base-typography/Paragraph/Paragraph';
+import { P } from '../Base-Typography/Paragraph/Paragraph';
 import { Heading } from '../Typography/Heading/Heading';
 
 export const Projectcolumn = ({

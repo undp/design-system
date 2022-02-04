@@ -4,7 +4,7 @@ import viewport from '../../../../assets/js/viewport';
 import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
 import { Video } from '../../../../Atom/Video/Video';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { CtaButton } from '../../Buttons/Cta_button/CtaButton';
+import { CtaButton } from '../../Buttons/CtaButton/CtaButton';
 
 export const Homepageherooption = ({
   title, subtitle, button, variant, imgalt, imgsrc, content, headingTop,

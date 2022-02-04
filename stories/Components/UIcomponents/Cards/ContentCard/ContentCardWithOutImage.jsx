@@ -2,8 +2,8 @@ import React from 'react';
 import './content-card.scss';
 import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
-import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
+import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
+import { P } from '../../../../Atom/Base-Typography/Paragraph/Paragraph';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 

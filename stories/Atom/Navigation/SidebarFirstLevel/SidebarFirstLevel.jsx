@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heading } from '../../Typography/Heading/Heading';
-import './sidebar.scss';
+import './sidebar-first-level.scss';
 
 export const variant_options = {
   default: '',

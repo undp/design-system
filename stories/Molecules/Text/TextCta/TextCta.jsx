@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import viewport from '../../../assets/js/viewport';
 import './textcta.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
-import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
-import { CtaButton } from '../../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { P } from '../../../Atom/Base-Typography/Paragraph/Paragraph';
+import { CtaButton } from '../../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 
 export const TextCta = ({ headerText, descriptionText, label }) => {
   useEffect(() => {

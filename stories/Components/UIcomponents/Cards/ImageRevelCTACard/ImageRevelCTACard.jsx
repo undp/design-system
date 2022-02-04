@@ -3,7 +3,7 @@ import viewport from '../../../../assets/js/viewport';
 import './image-card.scss';
 import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
+import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
 
 export const ImageRevelCard = ({
   contentname, image, Size, data, delaytime,

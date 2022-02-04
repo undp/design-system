@@ -1,5 +1,5 @@
 import React from 'react';
-import { Blockquote } from '../../../Atom/Base-typography/Blockquote/blockquote';
+import { Blockquote } from '../../../Atom/Base-Typography/Blockquote/blockquote';
 import './blockquotecomp.scss';
 
 export const BlockquoteComponent = ({ blockquoteText, citeText, Colors }) => (

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import './sdg.scss';
-import { PageHero } from '../../Components/UIcomponents/Hero/Pagehero/PageHero';
+import { PageHero } from '../../Components/UIcomponents/Hero/PageHero/PageHero';
 import { Footer } from '../../Organism/Footer/Footer';
 import logo from '../../assets/images/undp-logo-blue.svg';
 import logowhite from '../../assets/images/undp-logo-white.svg';
 import { SdgModal } from '../../assets/js/sdg-modal';
-import { Sdg } from '../../Molecules/SDG/Sdg';
-import { Sdgmodal } from '../../Molecules/Sdgmodal/Sdgmodal';
+import { Sdg } from '../../Molecules/Sdg/Sdg';
+import { Sdgmodal } from '../../Molecules/SdgModal/SdgModal';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 

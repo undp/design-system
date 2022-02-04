@@ -1,8 +1,8 @@
 import React from 'react';
-import './authors.scss';
+import './author-column.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
-import { Authorimg } from '../../../../Atom/Images/Authorimage/Authorimages';
+import { P } from '../../../../Atom/Base-Typography/Paragraph/Paragraph';
+import { Authorimg } from '../../../../Atom/Images/AuthorImage/AuthorImage';
 
 export const Author = ({
   data, image, alt, Image, Number, Link,

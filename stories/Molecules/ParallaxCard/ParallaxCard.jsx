@@ -3,7 +3,7 @@ import './parallax-card.scss';
 import '../../assets/scss/_grid.scss';
 import Img from '../../assets/images/parallax-card.jpg';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
-import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../Atom/Base-Typography/Paragraph/Paragraph';
 
 const ParallaxCard = ({
   name, descrption, button, alt, Text, Image, swipeClass,

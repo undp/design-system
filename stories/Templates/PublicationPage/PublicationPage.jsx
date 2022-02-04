@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { PublicationCard } from '../../Molecules/Blocks/PublicationCard/PublicationCard';
-import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../Atom/Base-Typography/Paragraph/Paragraph';
 import { ContentCardWithOutImage } from '../../Components/UIcomponents/Cards/ContentCard/ContentCardWithOutImage';
 import { Footer } from '../../Organism/Footer/Footer';
 import { Publicationthumb } from '../../Atom/Cards/Publication-thumbnail/PublicationThumbnail';
 import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
-import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { Menu } from '../../Components/Navigationcomponents/Menu/Menu';
 import viewport from '../../assets/js/viewport';

@@ -11,7 +11,7 @@ import { StatsSlider } from '../../Patterns/StatsSlider/StatsSlider';
 import CountrySiteHeader from '../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader';
 import { Footer } from '../../Organism/Footer/Footer';
 import './countryhome-page.scss';
-import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 
 export const CountryHomepage = ({
   footerData,

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import viewport from '../../../assets/js/viewport';
 import './author-summary.scss';
-import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
-import { Authorimg } from '../../../Atom/Images/Authorimage/Authorimages';
+import { P } from '../../../Atom/Base-Typography/Paragraph/Paragraph';
+import { Authorimg } from '../../../Atom/Images/AuthorImage/AuthorImage';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const AuthorSummary = ({
