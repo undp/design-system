@@ -85,11 +85,7 @@
           .pagehero {
             &-cards {
               &__caption {
-                bottom: 0;
                 opacity: 1;
-                border-left: 1px solid $color-white;
-                border-right: 1px solid $color-white;
-                margin-left: -1px;
 
                 p {
                   opacity: 1;
@@ -142,7 +138,12 @@
     @include transition(all 0.3s);
 
     @include devicebreak(small) {
-      @include transition(none);
+      bottom: 0;
+      opacity: 0;
+      box-sizing: border-box;
+      box-shadow: 0 1px 0 1px $color-white; 
+      @include transition(all .4s);
+      @include transitiondelay(.2s);
     }
 
     background: $color-white;
