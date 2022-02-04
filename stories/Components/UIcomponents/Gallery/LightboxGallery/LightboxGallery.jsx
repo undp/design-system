@@ -30,9 +30,9 @@ export const LightboxGallery = ({
                  return (
                     <>
                     <li key={index}>
-                      <a href={item.galleryimg1} className="glightbox" data-glightbox={"description:.glightbox-"+`${index}`+";"} descPosition="bottom">
+                      <a href={item.galleryimg} className="glightbox" data-glightbox={"description:.glightbox-"+`${index}`+";"} descPosition="bottom">
                         <figure>
-                          <div className="image"><img src={item.galleryimg1} alt="image"/></div>
+                          <div className="image"><img src={item.gallerythum} alt="image"/></div>
                             <div className={cls('image__description', `glightbox-${index}`)}>
                               <Imagecaption label={item.label} paragraph={item.paragraph} />
                             </div>
