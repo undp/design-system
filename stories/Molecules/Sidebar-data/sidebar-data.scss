@@ -14,17 +14,17 @@
     font-weight: 700;
     line-height: 1.15;
     margin-bottom: 0;
-    padding: $spacing-16;
+    padding: $spacing-05;
 
     @include devicebreak(medium) {
-      padding: $spacing-24;
+      padding: $spacing-06;
     }
   }
 
   &.narrow {
     li > a {
       @include devicebreak(medium) {
-        padding: $spacing-16;
+        padding: $spacing-05;
       }
     }
   }
@@ -34,11 +34,11 @@
   .sidebar-accordion {
     .accordion__panel {
       li > a {
-        padding-left: $spacing-24;
-        padding-right: $spacing-32;
+        padding-left: $spacing-06;
+        padding-right: $spacing-07;
 
         @include devicebreak(medium) {
-          padding-right: $spacing-48;
+          padding-right: $spacing-09;
         }
       }
     }

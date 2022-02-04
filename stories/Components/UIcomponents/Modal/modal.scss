@@ -25,15 +25,15 @@
   &-content {
     background: $color-white;
     max-width: 64rem;
-    padding: $spacing-64 $spacing-12 $spacing-12;
+    padding: $spacing-10 $spacing-04 $spacing-04;
     position: relative;
     width: 100%;
     @extend %custom-scrollbar;
     @include devicebreak(medium) {
       max-height: calc(100vh - 291px);
-      margin-left: $spacing-80;
-      margin-right: $spacing-80;
-      padding: $spacing-64;
+      margin-left: $spacing-11;
+      margin-right: $spacing-11;
+      padding: $spacing-10;
     }
   }
 
@@ -43,8 +43,8 @@
     font-size: 0;
     height: 45px;
     position: absolute;
-    right: $spacing-12;
-    top: $spacing-12;
+    right: $spacing-04;
+    top: $spacing-04;
     width: 45px;
     border: 0;
 
@@ -52,8 +52,8 @@
       @extend %no-animation;
     }
     @include devicebreak(medium) { 
-      right: $spacing-24;
-      top: $spacing-24;
+      right: $spacing-06;
+      top: $spacing-06;
     }
   }
 

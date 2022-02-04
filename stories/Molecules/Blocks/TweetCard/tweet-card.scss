@@ -6,7 +6,7 @@
   -webkit-font-smoothing: antialiased;
 
   @include devicebreak(small) {
-    margin-bottom: $spacing-96;
+    margin-bottom: $spacing-12;
   }
 
   a {
@@ -17,7 +17,7 @@
     img {
       border-radius: 50%;
       height: 44px;
-      margin-right: $spacing-16;
+      margin-right: $spacing-05;
       min-width: 44px;
       width: 44px;
     }
@@ -40,8 +40,8 @@
 
   &__body {
     border-top: 3px solid $color-white;
-    margin-top: $spacing-32;
-    padding: $spacing-24 0.313rem 0 0;
+    margin-top: $spacing-07;
+    padding: $spacing-06 0.313rem 0 0;
 
     time,
     p,
@@ -58,7 +58,7 @@
     }
 
     time {
-      margin-top: $spacing-16;
+      margin-top: $spacing-05;
     }
 
     p {
@@ -69,14 +69,14 @@
   .cta__link {
     color: $color-white;
     font-size: 0.938rem;
-    margin-top: $spacing-32;
+    margin-top: $spacing-07;
 
     &:hover {
       color: $color-gray-400;
     }
 
     &::after {
-      margin-top: -$spacing-02;
+      margin-top: -$spacing-01;
     }
   }
 }
@@ -84,12 +84,12 @@
 [dir='rtl'] {
   .tweet-card {
     img {
-      margin-left: $spacing-16;
+      margin-left: $spacing-05;
       margin-right: 0;
     }
 
     &__body {
-      padding: $spacing-24 0 $spacing-12 0.313rem;
+      padding: $spacing-06 0 $spacing-04 0.313rem;
     }
   }
 }

@@ -25,7 +25,7 @@
     }
 
     &__data {
-      padding: $spacing-16 $spacing-32 $spacing-16 0;
+      padding: $spacing-05 $spacing-07 $spacing-05 0;
       flex-grow: 1;
       font-weight: normal;
       text-transform: inherit;
@@ -43,7 +43,7 @@
     }
 
     .external-link {
-      margin: $spacing-16 0 1.188rem $spacing-16;
+      margin: $spacing-05 0 1.188rem $spacing-05;
     }
   }
 }
@@ -52,7 +52,7 @@
   .download {
     &-row {
       &__data {
-        padding-left: $spacing-32;
+        padding-left: $spacing-07;
         padding-right: 0;
       }
 

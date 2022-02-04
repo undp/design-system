@@ -6,18 +6,18 @@
 .tertiary {
   h4 {
     font-weight: 600;
-    margin-bottom: $spacing-24;
+    margin-bottom: $spacing-06;
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-48;
+      margin-bottom: $spacing-09;
     }
   }
 
   h5 {
-    margin-bottom: $spacing-12;
+    margin-bottom: $spacing-04;
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-24;
+      margin-bottom: $spacing-06;
     }
   }
 }

@@ -31,16 +31,16 @@
   }
 
   &-content {
-    padding-top: $spacing-80;
+    padding-top: $spacing-11;
     position: relative;
 
     @include devicebreak(small) {
-      padding-left: $spacing-12;
-      padding-right: $spacing-12;
+      padding-left: $spacing-04;
+      padding-right: $spacing-04;
     }
 
     h4 {
-      margin-bottom: $spacing-08;
+      margin-bottom: $spacing-03;
       padding-top: 6.313rem;
 
       @include devicebreak(medium) {
@@ -80,7 +80,7 @@
 
   &-tall {
     .pagehero-content {
-      padding-bottom: $spacing-40;
+      padding-bottom: $spacing-08;
 
       @include devicebreak(medium) {
         padding-bottom: 17.313rem;
@@ -92,7 +92,7 @@
         padding-right: 0;
 
         h4 {
-          padding-top: $spacing-64;
+          padding-top: $spacing-10;
         }
       }
     }

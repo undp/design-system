@@ -13,7 +13,7 @@
   .sidebar {
     &-width {
       .sidebar-accordion {
-        width: calc(100% - #{$spacing-12});
+        width: calc(100% - #{$spacing-04});
 
         @include devicebreak(medium) {
           margin-top: 0.8rem;
@@ -28,7 +28,7 @@
 
     &-mobile {
       display: block;
-      margin-bottom: $spacing-12;
+      margin-bottom: $spacing-04;
       margin-top: 5.5rem;
 
       @include devicebreak(medium) {
@@ -47,7 +47,7 @@
 
   .margin-top {
     &-32 {
-      margin-top: $spacing-32;
+      margin-top: $spacing-07;
     }
 
     &-72 {

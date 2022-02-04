@@ -17,7 +17,7 @@
   }
 
   &__heading {
-    margin-bottom: $spacing-32;
+    margin-bottom: $spacing-07;
 
     @include devicebreak(medium) {
       margin-bottom: 0;
@@ -43,7 +43,7 @@
     @include devicebreak(medium) {
       display: block;
       padding-bottom: $spacing-50;
-      padding-top: $spacing-160;
+      padding-top: $spacing-13;
     }
   }
 }

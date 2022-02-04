@@ -6,8 +6,8 @@
 .grid_name {
   color: $color-black;
   font-size: 1.375rem;
-  margin-bottom: $spacing-16;
-  margin-top: $spacing-16;
+  margin-bottom: $spacing-05;
+  margin-top: $spacing-05;
   min-height: 28px;
 
   @include devicebreak(small) {
@@ -28,8 +28,8 @@
 
 .grid--layout {
   background-color: $color-gray-300;
-  height: $spacing-48;
-  margin-bottom: $spacing-08;
+  height: $spacing-09;
+  margin-bottom: $spacing-03;
 
   &:nth-child(odd) {
     background-color: $color-gray-200;

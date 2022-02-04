@@ -24,7 +24,7 @@
       font-weight: 400;
       line-height: 1.15;
       margin: 0 auto;
-      padding: $spacing-16 0 $spacing-24;
+      padding: $spacing-05 0 $spacing-06;
       text-align: left;
       width: 100%;
 
@@ -35,10 +35,10 @@
         border-top-color: #f3f3f3;
         content: '';
         height: 1.25rem;
-        margin-left: $spacing-24;
+        margin-left: $spacing-06;
         position: absolute;
         right: 0;
-        top: $spacing-24;
+        top: $spacing-06;
         width: 1.25rem;
       }
 
@@ -84,10 +84,10 @@
 .accordion__panel {
   display: none;
   height: auto;
-  padding: $spacing-32;
+  padding: $spacing-07;
 
   @include devicebreak(medium) {
-    padding: $spacing-40;
+    padding: $spacing-08;
   }
 }
 

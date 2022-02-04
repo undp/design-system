@@ -22,7 +22,7 @@
       display: block;
       font-size: 0;
       height: 20px;
-      margin-right: $spacing-32;
+      margin-right: $spacing-07;
       width: 20px;
 
       @each $name in $socials {
@@ -62,7 +62,7 @@
       padding: 0;
       
       a {
-        margin-left: $spacing-32;
+        margin-left: $spacing-07;
         margin-right: 0;
       }
 

@@ -11,7 +11,7 @@
   &.cta--arrow {
     @extend %chevron-right-expanded;
     padding-left: 0;
-    padding-right: $spacing-24;
+    padding-right: $spacing-06;
   }
 
   &.cta--space {
@@ -39,7 +39,7 @@
         @include transform(rotate(180deg));
 
         margin-left: 0;
-        margin-right: $spacing-12;
+        margin-right: $spacing-04;
       }
 
       &:hover::after {
@@ -48,7 +48,7 @@
     }
 
     &.cta--arrow {
-      padding-left: $spacing-24;
+      padding-left: $spacing-06;
       padding-right: 0;
 
       i {

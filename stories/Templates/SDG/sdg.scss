@@ -3,16 +3,16 @@
 @import '../../assets/scss/mixins';
 
 .what-goal {
-  padding: $spacing-96 0;
+  padding: $spacing-12 0;
   word-break: break-word;
 
   @include devicebreak(medium) {
-    padding: $spacing-160 0;
+    padding: $spacing-13 0;
   }
 
   @include devicebreak(small) {
     h4 {
-      margin-top: $spacing-64;
+      margin-top: $spacing-10;
     }
   }
 }
@@ -51,10 +51,10 @@
     }
 
     .pagehero-content {
-      padding-top: $spacing-64;
+      padding-top: $spacing-10;
 
       @include devicebreak(small) {
-        padding-top: $spacing-32;
+        padding-top: $spacing-07;
 
         h2 {
           margin-top: 10.313rem;

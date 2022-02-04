@@ -32,7 +32,7 @@
 
   .slide-content {
     box-sizing: border-box;
-    padding-left: $spacing-24;
+    padding-left: $spacing-06;
 
     @include devicebreak(medium) {
       flex: 0 0 45%;
@@ -120,7 +120,7 @@
   .fluid-carousel {
     .slide-content {
       padding-left: 0;
-      padding-right: $spacing-24;
+      padding-right: $spacing-06;
 
       @include devicebreak(small) {
         padding-right: 1.5rem;

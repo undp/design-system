@@ -9,22 +9,22 @@
 
   &--header {
     p {
-      margin-top: $spacing-40;
+      margin-top: $spacing-08;
 
       @include devicebreak(medium) {
-        margin-top: $spacing-80;
+        margin-top: $spacing-11;
       }
     }
 
     .button-arrow {
-      margin-top: $spacing-40;
+      margin-top: $spacing-08;
 
       @include devicebreak(small) {
         display: inline-flex;
       }
 
       @include devicebreak(medium) {
-        margin-top: $spacing-64;
+        margin-top: $spacing-10;
       }
     }
   }

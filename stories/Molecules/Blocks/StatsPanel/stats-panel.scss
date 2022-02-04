@@ -65,23 +65,23 @@
       background-color: transparent;      
       color: $color-white;
       max-width: 100%;
-      padding: 0 $spacing-24;
+      padding: 0 $spacing-06;
       width: 100%;
       word-break: unset;
       z-index: 1;
 
       @include devicebreak(medium) {
-        padding: 0 $spacing-16;
+        padding: 0 $spacing-05;
       }
 
       @include devicebreak(large) {
-        padding: 0 $spacing-48;
+        padding: 0 $spacing-09;
       }
 
       @include devicebreak(small) {
         h4 {
           font-size: 2.188rem;
-          margin-bottom: $spacing-12;
+          margin-bottom: $spacing-04;
         }
       }
 
@@ -98,7 +98,7 @@
         }
 
         @include devicebreak(small) {
-          margin-bottom: $spacing-16;
+          margin-bottom: $spacing-05;
         }
 
         @supports (-webkit-text-stroke: 2px $color-white) {

@@ -20,8 +20,8 @@
   box-sizing: border-box;
   position: relative;
   display: inline-block;
-  width: $spacing-12;
-  height: $spacing-12;
+  width: $spacing-04;
+  height: $spacing-04;
   box-shadow: -2px 2px 0px 0px $color-dark-red, -4px 0px 0px -2px $color-dark-red, -3px 3px 0 -1px $color-dark-red;
   margin-left: -2px;
 
@@ -39,8 +39,8 @@
     @extend %pseudo-icon;
     right: 0;
     top: 0;
-    width: $spacing-08;
-    height: $spacing-08;
+    width: $spacing-03;
+    height: $spacing-03;
     border-right: 2px solid $color-dark-red;
     border-top: 2px solid $color-dark-red;
     @include transition(transform 0.3s);
@@ -133,8 +133,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 $spacing-16 $spacing-32;
-  padding: $spacing-16 $spacing-08;
+  margin: 0 $spacing-05 $spacing-07;
+  padding: $spacing-05 $spacing-03;
   text-align: center;
   width: calc(100% - 2rem);
 

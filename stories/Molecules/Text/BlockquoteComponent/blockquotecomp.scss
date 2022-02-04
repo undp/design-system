@@ -5,10 +5,10 @@
 /* blockquote cta start */
 div.blockquote {
   background-color: none;
-  padding: $spacing-32 $spacing-24;
+  padding: $spacing-07 $spacing-06;
 
   @include devicebreak(medium) {
-    padding: 5.313rem $spacing-96;
+    padding: 5.313rem $spacing-12;
   }
 
   &.gray {

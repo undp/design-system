@@ -10,7 +10,7 @@
   }
 
   &-32 {
-    margin-top: $spacing-32;
+    margin-top: $spacing-07;
   }
 }
 
@@ -28,7 +28,7 @@
   }
 
   .content-card-container {
-    margin-top: $spacing-24;
+    margin-top: $spacing-06;
 
     @include devicebreak(medium) {
       margin-top: 4.313rem;
@@ -36,7 +36,7 @@
 
     .button {
       @include devicebreak(small) {
-        margin: 0 $spacing-16;
+        margin: 0 $spacing-05;
       }
     }
   }
@@ -51,7 +51,7 @@
     }
 
     &-tall {
-      margin-top: $spacing-40;
+      margin-top: $spacing-08;
 
       @include devicebreak(medium) {
         margin-top: 7rem;
@@ -70,7 +70,7 @@
   }
 
   .content-bottom {
-    margin-top: $spacing-48;
+    margin-top: $spacing-09;
 
     @include devicebreak(medium) {
       margin-top: 8.438rem;

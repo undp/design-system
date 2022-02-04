@@ -12,15 +12,15 @@
 
   @include devicebreak(small) {
     max-width: 351px;
-    padding: $spacing-40;
+    padding: $spacing-08;
   }
 
   h3 {
     font-weight: 600;
-    margin-bottom: $spacing-40;
+    margin-bottom: $spacing-08;
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-80;
+      margin-bottom: $spacing-11;
     }
   }
 
@@ -32,7 +32,7 @@
     font-size: 5rem;
     letter-spacing: 0.05rem;
     line-height: 1.1;
-    margin-bottom: $spacing-24;
+    margin-bottom: $spacing-06;
     text-shadow:
       -1px -1px 0 $color-black,
       1px -1px 0 $color-black,
@@ -47,17 +47,17 @@
     @include devicebreak(medium) {
       font-size: 6.875rem;
       line-height: 1.09;
-      margin-bottom: $spacing-32;
+      margin-bottom: $spacing-07;
     }
   }
 
   h4 {
     letter-spacing: 0;
     line-height: 1.15;
-    margin-bottom: $spacing-08;
+    margin-bottom: $spacing-03;
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-16;
+      margin-bottom: $spacing-05;
     }
   }
 
@@ -70,11 +70,11 @@
   }
 
   &.x-large {
-    padding: $spacing-40;
+    padding: $spacing-08;
 
     @include devicebreak(medium) {
       max-width: 684px;
-      padding: $spacing-96;
+      padding: $spacing-12;
     }
 
     h2 {
@@ -86,7 +86,7 @@
     }
 
     h3 {
-      font-size: $spacing-40;
+      font-size: $spacing-08;
       font-weight: 700;
 
       @include devicebreak(medium) {
@@ -106,12 +106,12 @@
   &.large {
     @include devicebreak(medium) {
       max-width: 448px;
-      padding: $spacing-96 $spacing-64;
+      padding: $spacing-12 $spacing-10;
     }
   }
 
   &.medium {
-    padding: $spacing-48;
+    padding: $spacing-09;
 
     @include devicebreak(medium) {
       max-width: 330px;
@@ -128,11 +128,11 @@
 
   &.small {
     max-width: 170px;
-    padding: $spacing-24;
+    padding: $spacing-06;
 
     @include devicebreak(medium) {
       max-width: 212px;
-      padding: $spacing-32;
+      padding: $spacing-07;
     }
 
     h2 {

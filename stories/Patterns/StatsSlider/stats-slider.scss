@@ -69,11 +69,11 @@
 
   &.swiper-initialized {
     @include devicebreak(small) {
-      padding-right: $spacing-64;
+      padding-right: $spacing-10;
     }
     .swiper-scrollbar {
       @include devicebreak(small) {
-        padding-right: $spacing-64;
+        padding-right: $spacing-10;
       }
     }
   }
@@ -83,12 +83,12 @@
   .stats-card-slider {
     &.swiper-initialized {
       @include devicebreak(small) {
-        padding-left: $spacing-64;
+        padding-left: $spacing-10;
         padding-right: 0;
       }
       .swiper-scrollbar {
         @include devicebreak(small) {
-          padding-left: $spacing-64;
+          padding-left: $spacing-10;
           padding-right: 0;
         }
       }

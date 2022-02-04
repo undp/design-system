@@ -16,7 +16,7 @@
     @include devicebreak(small) {
       display: block;
       font-weight: 700;
-      padding: 0 $spacing-24 $spacing-16;
+      padding: 0 $spacing-06 $spacing-05;
     }
   }
 
@@ -29,16 +29,16 @@
     margin: 3.5625rem 0;
 
     @include devicebreak(small) {
-      margin: $spacing-24 0;
+      margin: $spacing-06 0;
     }
   }
 
   .author-content {
     margin-bottom: $spacing-136;
-    margin-top: $spacing-80;
+    margin-top: $spacing-11;
 
     @include devicebreak(small) {
-      margin-bottom: $spacing-40;
+      margin-bottom: $spacing-08;
 
       h2 {
         font-weight: 600;

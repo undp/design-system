@@ -6,7 +6,7 @@
 .heading-big {
   justify-content: center;
   opacity: 0;
-  padding: $spacing-160 0;
+  padding: $spacing-13 0;
   transition: background-color 0.5s ease;
   z-index: 5;
 
@@ -16,7 +16,7 @@
 
   h2 {
     color: $color-black;
-    margin-bottom: $spacing-48;
+    margin-bottom: $spacing-09;
 
     @include devicebreak(medium) {
       margin-bottom: 0;
@@ -29,7 +29,7 @@
 
   ul {
     color: $color-white;
-    margin-top: $spacing-40;
+    margin-top: $spacing-08;
   }
 }
 

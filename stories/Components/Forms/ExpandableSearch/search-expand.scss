@@ -28,7 +28,7 @@
     input {
       outline: none;
       padding-left: 0.8125rem;
-      padding-right: $spacing-24;
+      padding-right: $spacing-06;
       width: calc(100% - 1.6875rem);
       z-index: 1;
     }
@@ -67,7 +67,7 @@
     }
     &.open {
       input {
-        padding-left: $spacing-24;
+        padding-left: $spacing-06;
         padding-right: 0.8125rem;
       }
     }

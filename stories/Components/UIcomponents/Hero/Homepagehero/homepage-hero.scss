@@ -23,30 +23,30 @@
     }
 
     h1 {
-      margin-bottom: $spacing-40;
+      margin-bottom: $spacing-08;
     }
 
     h4 {
       margin-bottom: 0;
-      padding-bottom: $spacing-64;
+      padding-bottom: $spacing-10;
     }
 
     .button {
-      margin-bottom: $spacing-24;
+      margin-bottom: $spacing-06;
 
       @include devicebreak(medium) {
         margin-bottom: 10.188rem;
       }
 
       @include devicebreak(small) {
-        margin-top: $spacing-64;
+        margin-top: $spacing-10;
       }
     }
   }
 
   &-content {
     @include devicebreak(small) {
-      padding: 0 $spacing-24;
+      padding: 0 $spacing-06;
     }
 
     & > div {
@@ -68,18 +68,18 @@
       }
 
       h1 {
-        margin-bottom: $spacing-16;
+        margin-bottom: $spacing-05;
 
         @include devicebreak(medium) {
-          margin-bottom: $spacing-40;
+          margin-bottom: $spacing-08;
         }
       }
 
       h4 {
-        margin-bottom: $spacing-32;
+        margin-bottom: $spacing-07;
 
         @include devicebreak(medium) {
-          margin-bottom: $spacing-64;
+          margin-bottom: $spacing-10;
         }
       }
     }
@@ -110,16 +110,16 @@
     }
 
     h1 {
-      margin-bottom: $spacing-16;
+      margin-bottom: $spacing-05;
 
       @include devicebreak(medium) {
-        margin-bottom: $spacing-80;
+        margin-bottom: $spacing-11;
         padding-top: 4.688rem;
       }
     }
 
     h3 {
-      margin-bottom: $spacing-24;
+      margin-bottom: $spacing-06;
 
       + h1 {
         padding-top: 0;
@@ -127,7 +127,7 @@
     }
 
     h5 {
-      margin-bottom: $spacing-32;
+      margin-bottom: $spacing-07;
 
       @include devicebreak(medium) {
         margin-bottom: 7.75rem;

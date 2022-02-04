@@ -24,12 +24,12 @@ div.content-card {
     @extend %carousel_tag;
 
     margin-bottom: 0;
-    padding: $spacing-16 $spacing-24 1.625rem $spacing-24;
+    padding: $spacing-05 $spacing-06 1.625rem $spacing-06;
   }
 
   &.card {
     h6 {
-      padding-bottom: $spacing-16;
+      padding-bottom: $spacing-05;
     }
   }
 
@@ -54,7 +54,7 @@ div.content-card {
   p {
     font-size: $font-size-16;
     margin: 0;
-    padding-top: $spacing-16;
+    padding-top: $spacing-05;
   }
 
   &.card{
@@ -112,7 +112,7 @@ div.content-card {
 
     .cta--arrow {
         i {
-          width: $spacing-80;
+          width: $spacing-11;
           &::before {
             display: unset;
           }
@@ -122,7 +122,7 @@ div.content-card {
 
   &-wrapper {
     > div {
-      margin-bottom: $spacing-32;
+      margin-bottom: $spacing-07;
     }
   }
 
@@ -140,7 +140,7 @@ div.content-card {
 }
 
 .content-caption {
-  padding: $spacing-16 $spacing-24 $spacing-24 $spacing-24;
+  padding: $spacing-05 $spacing-06 $spacing-06 $spacing-06;
 
   h5,
   h4 {
@@ -148,7 +148,7 @@ div.content-card {
   }
 
   .cta__link {
-    bottom: $spacing-24;
+    bottom: $spacing-06;
     position: absolute;
   }
 
@@ -156,7 +156,7 @@ div.content-card {
     height: 100%;
 
     h5 {
-      margin-bottom: $spacing-16;
+      margin-bottom: $spacing-05;
     }
   }
 }

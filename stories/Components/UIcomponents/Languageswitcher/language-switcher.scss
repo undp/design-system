@@ -11,7 +11,7 @@
     @include transition(0.3s ease-in-out);
 
     height: 0;
-    left: $spacing-16;
+    left: $spacing-05;
     top: calc(100% + 3px);
     overflow: hidden;
     padding: 0;
@@ -30,7 +30,7 @@
         border-bottom: 1px solid $color-gray-400;
         box-shadow: 0 3px 4px rgb(0 0 0 / 10%);
         display: block;
-        padding: $spacing-12 $spacing-16;
+        padding: $spacing-04 $spacing-05;
         &:hover {
           color: rgba(35,46,62,.7);
         }
@@ -63,7 +63,7 @@
       mask: url(#{$img-path-Icon}/Language.svg) no-repeat left center;
       content: '';
       height: 26px;
-      margin-right: $spacing-08;
+      margin-right: $spacing-03;
       width: 25px;
 
       @include devicebreak(small) {
@@ -79,7 +79,7 @@
       mask: url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
       content: '';
       height: 10px;
-      margin-left: $spacing-08;
+      margin-left: $spacing-03;
       width: 15px;
       @include devicebreak(small) {
         background:transparent url(#{$img-path-Icon}/arrowblue.svg) no-repeat left center;
@@ -124,14 +124,14 @@
     }
 
     button::before {
-      margin-left: $spacing-08;
+      margin-left: $spacing-03;
       margin-right: 0;
       transform: scaleX(-1);
     }
 
     button::after {
       margin-left: 0;
-      margin-right: $spacing-08;
+      margin-right: $spacing-03;
     }
   }
 }

@@ -67,7 +67,7 @@
         display: block;
         font-size: $font-size-16;
         margin: 0 -1rem;
-        padding: $spacing-16;
+        padding: $spacing-05;
 
         &:hover {
           background-color: $color-gray-100;
@@ -87,7 +87,7 @@
       }
     }
     ul {
-      padding: 0 $spacing-16;
+      padding: 0 $spacing-05;
       li{
         padding-right: 0;
       }

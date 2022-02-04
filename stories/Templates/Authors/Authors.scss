@@ -18,10 +18,10 @@
   }
 
   .breadcrumb {
-    margin-top: $spacing-80;
+    margin-top: $spacing-11;
 
     @include devicebreak(small) {
-      margin-top: $spacing-24;
+      margin-top: $spacing-06;
     }
   }
 
@@ -54,7 +54,7 @@
       &.author-filter-show {
         display: block;
         .expand-search{
-          margin: $spacing-24 0;
+          margin: $spacing-06 0;
         }    
       }
     }
@@ -87,13 +87,13 @@
     margin: 6.125rem 0 4.1875rem;
 
     @include devicebreak(small) {
-      margin: 3.3125rem 0 $spacing-64;
+      margin: 3.3125rem 0 $spacing-10;
     }
   }
 
   .author-content {
     margin-bottom: $spacing-136;
-    margin-top: $spacing-80;
+    margin-top: $spacing-11;
   }
 
   .author-card {

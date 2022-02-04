@@ -29,14 +29,14 @@ div.publication-card {
   .description {
     align-items: center;
     background: $color-gray-100;
-    padding: $spacing-24;
+    padding: $spacing-06;
 
     > div{
       align-items: center;
       flex-wrap: unset;
 
       > :not(:first-of-type) {
-        border-left: $spacing-02 solid $color-silvery-moonlight;
+        border-left: $spacing-01 solid $color-silvery-moonlight;
         text-align: right;
       }
     }
@@ -45,14 +45,14 @@ div.publication-card {
   .title {
     @extend %paragragh-font-20;
 
-    margin-bottom: $spacing-04;
+    margin-bottom: $spacing-02;
   }
 
   .format {
     @extend %paragragh-font-16;
 
     color: $color-gray-600;
-    margin-bottom: $spacing-16;
+    margin-bottom: $spacing-05;
   }
 
   .download {
@@ -67,7 +67,7 @@ div.publication-card {
     text-transform: uppercase;
 
     .download-icon {
-      margin-left: $spacing-12;
+      margin-left: $spacing-04;
     }
 
     &:hover {
@@ -97,7 +97,7 @@ div.publication-card {
 
     .external-link {
       display: inline-block;
-      margin-left: $spacing-12;
+      margin-left: $spacing-04;
     }
 
     &:hover {
@@ -120,21 +120,21 @@ div.publication-card {
     .readmore {
       .external-link {
         margin-left: 0;
-        margin-right: $spacing-12;
+        margin-right: $spacing-04;
       }
     }
 
     .download {
       .download-icon {
         margin-left: 0;
-        margin-right: $spacing-12;
+        margin-right: $spacing-04;
       }
     }
 
     .description {
       > div > :not(:first-of-type) {
         border-left: 0;
-        border-right: $spacing-02 solid $color-silvery-moonlight;
+        border-right: $spacing-01 solid $color-silvery-moonlight;
         text-align: left;
       }
     }

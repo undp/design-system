@@ -22,7 +22,7 @@
   }
 
   @include devicebreak(small) {
-    padding-left: $spacing-12;
+    padding-left: $spacing-04;
     width: calc(100% - 0.75rem);
   }
 
@@ -69,18 +69,18 @@ body.sdgmodal-open {
 
 .sdg-container {
   overflow-x: hidden;
-  padding: 4.375rem $spacing-12 0;
+  padding: 4.375rem $spacing-04 0;
   word-break: break-word;
 
   @include devicebreak(medium) {
-    padding: 0 $spacing-24 0 $spacing-32;
+    padding: 0 $spacing-06 0 $spacing-07;
   }
 
   .heading {
     margin: 0 0 0 1.875rem;
 
     @include devicebreak(medium) {
-      margin: $spacing-96 0 0 $spacing-96;
+      margin: $spacing-12 0 0 $spacing-12;
     }
 
     h2 {
@@ -92,15 +92,15 @@ body.sdgmodal-open {
   }
 
   .description {
-    margin-top: $spacing-40;
-    padding: $spacing-16 $spacing-16 $spacing-80 $spacing-16;
+    margin-top: $spacing-08;
+    padding: $spacing-05 $spacing-05 $spacing-11 $spacing-05;
 
     @include devicebreak(medium) {
-      margin-top: $spacing-80;
-      padding: 4.375rem 3.75rem 5.625rem $spacing-96;
+      margin-top: $spacing-11;
+      padding: 4.375rem 3.75rem 5.625rem $spacing-12;
 
       p {
-        margin-right: $spacing-80;
+        margin-right: $spacing-11;
       }
 
       img {
@@ -113,7 +113,7 @@ body.sdgmodal-open {
         flex-direction: column-reverse;
 
         > div:first-child {
-          margin-top: $spacing-24;
+          margin-top: $spacing-06;
         }
       }
     }
@@ -640,12 +640,12 @@ body.sdgmodal-open {
 }
 
 .ndg-container {
-  padding-left: $spacing-32;
+  padding-left: $spacing-07;
 
   @include devicebreak(medium) {
     .sdg-card {
       strong {
-        padding-left: $spacing-32;
+        padding-left: $spacing-07;
       }
 
       h4 {
@@ -655,19 +655,19 @@ body.sdgmodal-open {
   }
 
   @include devicebreak(small) {
-    padding-bottom: $spacing-12;
-    padding-left: $spacing-12;
+    padding-bottom: $spacing-04;
+    padding-left: $spacing-04;
 
     .sdg {
       &-card {
         display: flex;
         min-height: 85px;
-        padding: 0 $spacing-24;
+        padding: 0 $spacing-06;
         position: relative;
 
         strong {
           font-size: 0.938rem;
-          margin-right: $spacing-16;
+          margin-right: $spacing-05;
         }
 
         h4 {
@@ -681,7 +681,7 @@ body.sdgmodal-open {
           content: '';
           height: 20px;
           position: absolute;
-          right: $spacing-24;
+          right: $spacing-06;
           width: 13px;
         }
       }
@@ -694,15 +694,15 @@ body.sdgmodal-open {
 }
 
 .bulleted-list {
-  margin: $spacing-80 0 0;
+  margin: $spacing-11 0 0;
 
   @include devicebreak(medium) {
-    margin: $spacing-96 0 0 $spacing-80;
+    margin: $spacing-12 0 0 $spacing-11;
   }
 
   ul {
     padding-top: $spacing-50;
-    margin-left: $spacing-08;
+    margin-left: $spacing-03;
 
     @include devicebreak(medium) {
       padding: 0;
@@ -711,36 +711,36 @@ body.sdgmodal-open {
 
     li {
       font-size: $font-size-20;
-      padding-left: $spacing-32;
+      padding-left: $spacing-07;
       position: relative;
 
       &:not(:last-child) {
-        margin-bottom: $spacing-64;
+        margin-bottom: $spacing-10;
       }
     }
   }
 }
 
 .sdg-stats {
-  margin-top: $spacing-96;
+  margin-top: $spacing-12;
 }
 
 .sdg-content-cards {
-  margin-top: $spacing-96;
+  margin-top: $spacing-12;
 
   .content-data {
-    margin-top: $spacing-24;
+    margin-top: $spacing-06;
 
     > div {
-      margin-bottom: $spacing-24;
+      margin-bottom: $spacing-06;
     }
   }
 
   .button {
-    margin: $spacing-24 0 $spacing-32;
+    margin: $spacing-06 0 $spacing-07;
 
     @include devicebreak(medium) {
-      margin: $spacing-80 0 $spacing-64;
+      margin: $spacing-11 0 $spacing-10;
     }
   }
 }
@@ -749,7 +749,7 @@ body.sdgmodal-open {
   .modal-sdg {
     @include devicebreak(small) {
       padding-left: 0;
-      padding-right: $spacing-12;
+      padding-right: $spacing-04;
     }
 
     .modal-header {
@@ -765,13 +765,13 @@ body.sdgmodal-open {
 
   .sdg-container {
     @include devicebreak(medium) {
-      padding: 0 $spacing-32 0 $spacing-24;
+      padding: 0 $spacing-07 0 $spacing-06;
 
       .description {
-        padding: 4.375rem $spacing-96 5.625rem 3.75rem;
+        padding: 4.375rem $spacing-12 5.625rem 3.75rem;
 
         p {
-          margin-left: $spacing-80;
+          margin-left: $spacing-11;
           margin-right: 0;
         }
       }
@@ -784,26 +784,26 @@ body.sdgmodal-open {
       h2 {
         @include devicebreak(medium) {
           padding-left: 0;
-          padding-right: $spacing-16;
+          padding-right: $spacing-05;
         }
       }
 
       @include devicebreak(medium) {
         margin-left: 0;
-        margin-right: $spacing-96;
+        margin-right: $spacing-12;
       }
     }
   }
 
   .ndg-container {
     padding-left: 0;
-    padding-right: $spacing-32;
+    padding-right: $spacing-07;
 
     @include devicebreak(medium) {
       .sdg-card {
         strong {
           padding-left: 0;
-          padding-right: $spacing-32;
+          padding-right: $spacing-07;
         }
 
         h4 {
@@ -814,18 +814,18 @@ body.sdgmodal-open {
     }
 
     @include devicebreak(small) {
-      padding-right: $spacing-12;
+      padding-right: $spacing-04;
 
       .sdg-card {
         strong {
-          margin-left: $spacing-16;
+          margin-left: $spacing-05;
           margin-right: 0;
         }
 
         &::after {
           @include transform(rotateY(180deg));
 
-          left: $spacing-24;
+          left: $spacing-06;
           right: unset;
         }
       }
@@ -838,11 +838,11 @@ body.sdgmodal-open {
 
     @include devicebreak(medium) {
       margin-left: 0;
-      margin-right: $spacing-80;
+      margin-right: $spacing-11;
     }
 
     ul {
-      margin-right: $spacing-08;
+      margin-right: $spacing-03;
       margin-left: unset;
       @include devicebreak(medium) {
         padding-right: 0;
@@ -850,14 +850,14 @@ body.sdgmodal-open {
       }
       li {
         padding-left: 0;
-        padding-right: $spacing-32;
+        padding-right: $spacing-07;
 
         &::before {
           left: 0;
           right: 0;
 
           @include devicebreak(medium) {
-            right: -$spacing-16;
+            right: -$spacing-05;
           }
         }
       }

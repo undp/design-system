@@ -17,12 +17,12 @@
     width: 100%;
 
     @include devicebreak(medium) {
-      padding-left: $spacing-24;
+      padding-left: $spacing-06;
       width: calc(100% - 358px);
     }
 
     .select-box {
-      margin-bottom: $spacing-32;
+      margin-bottom: $spacing-07;
       max-width: 100%;
 
       @include devicebreak(medium) {
@@ -52,11 +52,11 @@
   }
 
   &-footer {
-    margin-top: $spacing-32;
+    margin-top: $spacing-07;
     text-align: right;
 
     @include devicebreak(medium) {
-      padding-right: $spacing-24;
+      padding-right: $spacing-06;
     }
   }
 }
@@ -92,7 +92,7 @@
     &-content {
       @include devicebreak(medium) {
         padding-left: 0;
-        padding-right: $spacing-24;
+        padding-right: $spacing-06;
 
         .select-box {
           margin-left: 1.563rem;
@@ -105,7 +105,7 @@
       text-align: left;
 
       @include devicebreak(medium) {
-        padding-left: $spacing-24;
+        padding-left: $spacing-06;
         padding-right: 0;
       }
     }

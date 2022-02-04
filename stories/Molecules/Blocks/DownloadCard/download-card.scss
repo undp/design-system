@@ -60,20 +60,20 @@ div.download-card {
 
   .description {
     background: $color-gray-100;
-    padding: $spacing-24;
+    padding: $spacing-06;
   }
 
   .title {
     @extend %paragragh-font-20;
 
-    margin-bottom: $spacing-04;
+    margin-bottom: $spacing-02;
   }
 
   .format {
     @extend %paragragh-font-16;
 
     color: $color-gray-600;
-    margin-bottom: $spacing-16;
+    margin-bottom: $spacing-05;
   }
 
   .download {
@@ -87,12 +87,12 @@ div.download-card {
     text-transform: uppercase;
 
     .download-icon {
-      margin-left: $spacing-12;
+      margin-left: $spacing-04;
     }
 
     .external-link{
-      margin-left: $spacing-12;
-      margin-bottom: $spacing-08;
+      margin-left: $spacing-04;
+      margin-bottom: $spacing-03;
     }
   }
 }
@@ -102,7 +102,7 @@ div.download-card {
     .download-icon,
     .external-link {
       margin-left: 0;
-      margin-right: $spacing-12;
+      margin-right: $spacing-04;
     }
     &:hover {
       div.publication-thumbnail__image {

@@ -46,7 +46,7 @@
       cursor: pointer;
       display: block;
       margin-bottom: 0;
-      padding: $spacing-16;
+      padding: $spacing-05;
     }
 
     @include devicebreak(medium) {
@@ -130,11 +130,11 @@
           display: block;
           font-size: $font-size-14;
           font-weight: 400;
-          padding: $spacing-16 $spacing-24 $spacing-16 $spacing-32;
+          padding: $spacing-05 $spacing-06 $spacing-05 $spacing-07;
 
           @include devicebreak(medium) {
             font-size: $font-size-16;
-            padding-left: $spacing-48;
+            padding-left: $spacing-09;
           }
         }
 
@@ -162,13 +162,13 @@
         a {
           @include devicebreak(medium) {
             font-size: 0.875rem;
-            padding-left: $spacing-32;
+            padding-left: $spacing-07;
           }
         }
 
         &:last-child a {
           @include devicebreak(medium) {
-            margin-bottom: $spacing-40;
+            margin-bottom: $spacing-08;
           }
         }
       }
@@ -199,7 +199,7 @@
 
     button {
       float: left;
-      margin-left: $spacing-24;
+      margin-left: $spacing-06;
       margin-right: 0;
     }
 
@@ -208,8 +208,8 @@
         li {
           a {
             @include devicebreak(medium) {
-              padding-left: $spacing-24;
-              padding-right: $spacing-32;
+              padding-left: $spacing-06;
+              padding-right: $spacing-07;
             }
           }
         }

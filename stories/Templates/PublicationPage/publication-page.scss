@@ -8,7 +8,7 @@
 
 .related-publication {
   .cell.medium-4 {
-    padding: $spacing-12 0;
+    padding: $spacing-04 0;
     width: 100%;
 
     @include devicebreak(medium) {
@@ -19,29 +19,29 @@
   .content-card {
     border: none;
     margin-bottom: 0;
-    padding-top: $spacing-08;
+    padding-top: $spacing-03;
   }
 
   h2 {
-    margin-top: $spacing-48;
-    margin-bottom: $spacing-24;
+    margin-top: $spacing-09;
+    margin-bottom: $spacing-06;
 
     @include devicebreak(medium) {
-      margin-top: $spacing-80;
-      margin-bottom: $spacing-48;
+      margin-top: $spacing-11;
+      margin-bottom: $spacing-09;
     }
   }
 
   .grid-x.grid-margin-x {
     @include devicebreak(small) {
-      padding: 0 $spacing-12 $spacing-12 0;
+      padding: 0 $spacing-04 $spacing-04 0;
     }
   }
 }
 
 .margin-top {
   &-24 {
-    margin-top: $spacing-24;
+    margin-top: $spacing-06;
   }
 
   &-36 {
@@ -49,15 +49,15 @@
   }
 
   &-40 {
-    margin-top: $spacing-40;
+    margin-top: $spacing-08;
   }
 
   &-48 {
-    margin-top: $spacing-48;
+    margin-top: $spacing-09;
   }
 
   &-64 {
-    margin-top: $spacing-64;
+    margin-top: $spacing-10;
   }
 
   &-72 {
@@ -65,7 +65,7 @@
   }
 
   &-80 {
-    margin-top: $spacing-80;
+    margin-top: $spacing-11;
   }
 
   &-136 {
@@ -75,7 +75,7 @@
 
 .margin-bottom {
   &-24 {
-    margin-bottom: $spacing-24;
+    margin-bottom: $spacing-06;
   }
 
   &-36 {
@@ -83,15 +83,15 @@
   }
 
   &-40 {
-    margin-bottom: $spacing-40;
+    margin-bottom: $spacing-08;
   }
 
   &-48 {
-    margin-bottom: $spacing-48;
+    margin-bottom: $spacing-09;
   }
 
   &-64 {
-    margin-bottom: $spacing-64;
+    margin-bottom: $spacing-10;
   }
 
   &-72 {
@@ -99,7 +99,7 @@
   }
 
   &-80 {
-    margin-bottom: $spacing-80;
+    margin-bottom: $spacing-11;
   }
 
   &-136 {
@@ -108,10 +108,10 @@
 }
 
 .content-bottom {
-  margin-bottom: $spacing-48;
+  margin-bottom: $spacing-09;
 
   @include devicebreak(medium) {
-    margin-bottom: $spacing-96;
+    margin-bottom: $spacing-12;
   }
 }
 
@@ -121,15 +121,15 @@
 
     @include devicebreak(medium) {
       display: block;
-      margin-bottom: $spacing-24;
+      margin-bottom: $spacing-06;
     }
   }
 
   h6 {
-    margin-top: $spacing-40;
+    margin-top: $spacing-08;
 
     @include devicebreak(medium) {
-      margin-top: $spacing-08;
+      margin-top: $spacing-03;
     }
   }
 }
@@ -137,7 +137,7 @@
 .publication {
   &-page {
     margin-bottom: 3.313rem;
-    margin-top: $spacing-96;
+    margin-top: $spacing-12;
 
     .breadcrumb {
       margin-top: 1.813rem;
@@ -158,7 +158,7 @@
   }
 
   .download-card {
-    margin-bottom: $spacing-40;
+    margin-bottom: $spacing-08;
   }
 
   &-menu {
@@ -166,19 +166,19 @@
     margin-top: 3.5rem;
 
     @include devicebreak(medium) {
-      margin-top: $spacing-80;
+      margin-top: $spacing-11;
     }
 
     h6 {
-      margin-top: $spacing-08;
+      margin-top: $spacing-03;
 
       @include devicebreak(medium) {
-        margin-top: $spacing-16;
+        margin-top: $spacing-05;
       }
     }
 
     .menu-item {
-      margin-top: $spacing-02;
+      margin-top: $spacing-01;
 
       @include devicebreak(medium) {
         margin-top: 0;
@@ -221,7 +221,7 @@
     }
 
     h2 {
-      margin-bottom: $spacing-24;
+      margin-bottom: $spacing-06;
     }
   }
 }
@@ -262,6 +262,6 @@
   margin-top: 1.813rem;
 
   @include devicebreak(medium) {
-    margin-top: $spacing-80;
+    margin-top: $spacing-11;
   }
 }

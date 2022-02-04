@@ -13,10 +13,10 @@
     }
 
     .swiper-initialized {
-      padding-right: $spacing-64;
+      padding-right: $spacing-10;
 
       .swiper-scrollbar {
-        padding-right: $spacing-64;
+        padding-right: $spacing-10;
       }
     }
   }
@@ -52,7 +52,7 @@
 
   &-box {
     @include devicebreak(medium) {
-      margin-bottom: $spacing-24;
+      margin-bottom: $spacing-06;
 
       &.swiper-slide {
         height: auto;
@@ -93,7 +93,7 @@
       position: relative;
 
       @include devicebreak(large) {
-        margin-left: $spacing-64;
+        margin-left: $spacing-10;
       }
 
       &::before {
@@ -123,7 +123,7 @@
     position: relative;
 
     @include devicebreak(medium) {
-      margin-left: $spacing-64;
+      margin-left: $spacing-10;
     }
 
     &::before {
@@ -147,12 +147,12 @@
 
   .swiper-initialized {
     @include devicebreak(small) {
-      padding-right: $spacing-64;
+      padding-right: $spacing-10;
     }
 
     .swiper-scrollbar {
       @include devicebreak(small) {
-        padding-right: $spacing-64;
+        padding-right: $spacing-10;
       }
     }
   }
@@ -168,11 +168,11 @@
       }
 
       .swiper-initialized {
-        padding-left: $spacing-64;
+        padding-left: $spacing-10;
         padding-right: 0;
 
         .swiper-scrollbar {
-          padding-left: $spacing-64;
+          padding-left: $spacing-10;
           padding-right: 0;
         }
       }
@@ -181,7 +181,7 @@
     &-top {
       >:nth-child(2) {
         @include devicebreak(large) {
-          margin-right: $spacing-64;
+          margin-right: $spacing-10;
         }
 
         &::before {

@@ -14,11 +14,11 @@
       display: block;
 
       @include devicebreak(small) {
-        padding: $spacing-24 0 0 $spacing-24;
+        padding: $spacing-06 0 0 $spacing-06;
       }
 
       @include devicebreak(medium) {
-        padding-right: $spacing-12;
+        padding-right: $spacing-04;
       }
 
       &:hover {
@@ -45,27 +45,27 @@
     @extend %img_none;
 
     @include devicebreak(medium) {
-      padding-left: $spacing-24;
+      padding-left: $spacing-06;
     }
   }
 
   h3 {
-    margin-bottom: $spacing-24;
+    margin-bottom: $spacing-06;
 
     @include devicebreak(medium) {
-      padding-left: $spacing-24;
+      padding-left: $spacing-06;
     }
   }
 
   p {
     font-size: $font-size-16;
     line-height: 1.4;
-    margin-bottom: $spacing-24;
-    padding-bottom: $spacing-24;
+    margin-bottom: $spacing-06;
+    padding-bottom: $spacing-06;
 
     @include devicebreak(medium) {
       border-bottom: solid 2px $color-black;
-      padding: 0 0 $spacing-24 $spacing-24;
+      padding: 0 0 $spacing-06 $spacing-06;
     }
   }
 
@@ -75,22 +75,22 @@
 
       @include devicebreak(medium) {
         > a {
-          padding-left: $spacing-12;
+          padding-left: $spacing-04;
           padding-right: 0;
         }
 
         .cta__link {
           padding-left: 0;
-          padding-right: $spacing-24;
+          padding-right: $spacing-06;
         }
 
         h3 {
           padding-left: 0;
-          padding-right: $spacing-24;
+          padding-right: $spacing-06;
         }
 
         p {
-          padding: 0 $spacing-24 $spacing-24 0;
+          padding: 0 $spacing-06 $spacing-06 0;
         }
       }
     }
@@ -102,20 +102,20 @@
 
       .cta__link {
         padding-left: 0;
-        padding-right: $spacing-24;
+        padding-right: $spacing-06;
       }
 
       h3 {
         padding-left: 0;
-        padding-right: $spacing-24;
+        padding-right: $spacing-06;
       }
 
       p {
-        padding: 0 $spacing-24 $spacing-24 0;
+        padding: 0 $spacing-06 $spacing-06 0;
       }
 
       .parallax-card__content > a {
-        padding-left: $spacing-12;
+        padding-left: $spacing-04;
         padding-right: 0;
       }
 
@@ -123,21 +123,21 @@
         .parallax-card__content {
           > a {
             padding-left: 0;
-            padding-right: $spacing-12;
+            padding-right: $spacing-04;
           }
 
           .cta__link {
-            padding-left: $spacing-24;
+            padding-left: $spacing-06;
             padding-right: 0;
           }
 
           h3 {
-            padding-left: $spacing-24;
+            padding-left: $spacing-06;
             padding-right: 0;
           }
 
           p {
-            padding: 0 0 $spacing-24 $spacing-24;
+            padding: 0 0 $spacing-06 $spacing-06;
           }
         }
       }
@@ -150,36 +150,36 @@
     @include devicebreak(medium) {
       h3 {
         padding-left: 0;
-        padding-right: $spacing-24;
+        padding-right: $spacing-06;
       }
 
       p {
-        padding: 0 $spacing-24 $spacing-24 0;
+        padding: 0 $spacing-06 $spacing-06 0;
       }
 
       .cta__link {
-        padding-right: $spacing-24;
+        padding-right: $spacing-06;
       }
 
       &.image-right,
       &.text-left {
         .cta__link {
-          padding-left: $spacing-24;
+          padding-left: $spacing-06;
           padding-right: 0;
         }
 
         h3 {
-          padding-left: $spacing-24;
+          padding-left: $spacing-06;
           padding-right: 0;
         }
 
         p {
-          padding: 0 0 $spacing-24 $spacing-24;
+          padding: 0 0 $spacing-06 $spacing-06;
         }
 
         .parallax-card__content > a {
           padding-left: 0;
-          padding-right: $spacing-12;
+          padding-right: $spacing-04;
         }
       }
     }
@@ -187,12 +187,12 @@
     &__content {
       > a {
         @include devicebreak(medium) {
-          padding-left: $spacing-12;
+          padding-left: $spacing-04;
           padding-right: 0;
         }
 
         @include devicebreak(small) {
-          padding: $spacing-24 $spacing-24 0 0;
+          padding: $spacing-06 $spacing-06 0 0;
         }
 
         &:hover {
