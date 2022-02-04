@@ -103,11 +103,7 @@
           }
     
           .image__description {
-            display: none;
-
-            @include devicebreak(xlarge) {
-              display: block;
-            }
+            opacity: 1;
           }
         }
 
@@ -136,6 +132,13 @@
       display: none;
       position: absolute;
       z-index: 2;
+      opacity: 0;
+
+      @include transition(all 0.2s ease-in-out);
+
+      @include devicebreak(xlarge) {
+        display: block;
+      }
 
       .image__caption {
         @include devicebreak(xlarge) {
