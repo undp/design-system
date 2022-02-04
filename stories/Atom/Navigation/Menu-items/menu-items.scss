@@ -7,6 +7,7 @@
   a {
     @extend %paragragh-font-14;
     @extend %img_none;
+    letter-spacing: 0.03em;
 
     border: none;
     display: inline;

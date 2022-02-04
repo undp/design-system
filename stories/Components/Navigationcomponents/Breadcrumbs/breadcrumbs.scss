@@ -34,6 +34,7 @@
         margin-right: 0;
         max-width: calc(100vw - 2rem);
         text-transform: uppercase;
+        letter-spacing: 0.03em;
 
         &::after {
           display: none;
@@ -46,6 +47,7 @@
         font-weight: 600;
         text-transform: uppercase;
         transition: opacity .2s ease;
+        letter-spacing: 0.03em;
 
         &:hover {
           color: $color-red;
