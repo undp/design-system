@@ -68,11 +68,11 @@ The design system is based on:
 | Components/UI components/Text/Text Background  | stories/Molecules/Text/TextBackground  |
 | Components/UI components/Text/Text Cta  | stories/Molecules/Text/TextCta  |
 | Components/UI components/Author Summary  | stories/Organism/Blocks/Authorcard  |
-| Components/UI components/Content Cards  | stories/Organism/Blocks/ContentCard  |
-| Components/UI components/Content Cards With and Without Image  | stories/Organism/Blocks/ContentCardWithAndWithoutImage  |
-| Components/UI components/Featured Cards  | stories/Organism/Blocks/FeaturedContentCard/FeaturedCard  |
+| Patterns/Card grids/Content Cards  | stories/Organism/Blocks/ContentCard  |
+| Patterns/Card grids/Content Cards With and Without Image  | stories/Organism/Blocks/ContentCardWithAndWithoutImage  |
+| Patterns/Card grids/Featured Cards  | stories/Organism/Blocks/FeaturedContentCard/FeaturedCard  |
 | Components/UI components/Pagewide Featured Content Card  | stories/Organism/Blocks/FeaturedContentCard/PagewideContentCard  |
-| Components/UI components/Image Reveal Cards  | stories/Organism/Blocks/ImageRevealCards  |
+| Patterns/Card grids/Image Reveal Cards  | stories/Organism/Blocks/ImageRevealCards  |
 | Components/UI components/Footer  | stories/Organism/Footer  |
 | Components/UI components/Stats  | stories/Organism/Stats  |
 | Components/UI components/Stats Card Slider  | stories/Organism/Statscardslider  |
