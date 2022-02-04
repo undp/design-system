@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./multi-select.scss";
-import { multiSelect } from "../../../../assets/js/multiselect";
+import { multiSelect } from "../../../../assets/js/multi-select";
 import { Checkbox } from "../../Checkbox/Checkbox";
 
 const cls = (...classes) =>

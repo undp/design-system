@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { langSwitch } from '../../../assets/js/lang_switcher';
+import { langSwitch } from '../../../assets/js/lang-switcher';
 import './language-switcher.scss';
 
 export const variant_options = {

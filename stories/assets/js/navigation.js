@@ -1,4 +1,4 @@
-import { getData } from './navigation_data';
+import { getData } from './navigation-data';
 
 var lang = 'english';
 

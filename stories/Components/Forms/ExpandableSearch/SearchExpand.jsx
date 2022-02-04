@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './search-expand.scss';
 import img from '../../../assets/icons/Search_black.svg';
 import img_close from '../../../assets/icons/Times.svg';
-import { expandSearch } from '../../../assets/js/expand_search';
+import { expandSearch } from '../../../assets/js/expand-search';
 
 export const SearchExpand = () => {
   useEffect(() => {
