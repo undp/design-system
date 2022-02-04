@@ -10,6 +10,9 @@
 
   h2 {
     margin-bottom: $spacing-40;
+    @include devicebreak(small) {
+      margin-bottom: $spacing-12;
+    }
   }
 
   .input-group {
@@ -30,6 +33,9 @@
 
       h2 {
         margin-bottom: $spacing-16;
+        @include devicebreak(small) {
+          margin-bottom: $spacing-12;
+        }
       }
 
       p {
@@ -92,6 +98,9 @@
   .stacked-form {
     h2 {
       margin-bottom: $spacing-16;
+      @include devicebreak(small) {
+        margin-bottom: $spacing-12;
+      }
     }
 
     p {
