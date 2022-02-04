@@ -8,11 +8,11 @@ export const DownloadRow = ({
 }) => (
   <div className="download-row" {...(dataValue ? {'data-value': dataValue} : '')}>
     <div className="download-row__main">
-      <div className="download-row__data">
-        <Heading type="6" label={title} tabIndex="0" />
+      <label for={`list-${value}`} className="download-row__data">
+        {title}
         <span tabIndex="0">{subtitle}</span>
-      </div>
-      {args.type === 'Checkbox' && <Checkbox value={value} arialabel="checkbox"/> }
+      </label>
+      {args.type === 'Checkbox' && <Checkbox value={value} id={`list-${value}`} arialabel="checkbox"/> }
       {args.type === 'Download' && (
       <a href="#" aria-label="download" target="_blank">
         <span className="download-icon" ><i/></span>
