@@ -2,7 +2,7 @@ import React from 'react';
 import './page-wide-card.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
-import { CtaButton } from '../../../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { CtaButton } from '../../../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 import BackgroundImg from '../../../../assets/images/Pagewide.jpg';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);

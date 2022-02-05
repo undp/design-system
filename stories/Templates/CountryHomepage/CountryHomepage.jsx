@@ -1,5 +1,5 @@
 import React from 'react';
-import { Homepageherooption } from '../../Components/UIcomponents/Hero/Homepagehero/HomepageHeroOption';
+import { Homepageherooption } from '../../Components/UIcomponents/Hero/HomePageHero/HomePageHeroOption';
 import { ContentCardWithAndWithoutImage } from '../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { FeaturedCard } from '../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard';
@@ -10,7 +10,7 @@ import { StatsSlider } from '../../Patterns/StatsSlider/StatsSlider';
 import CountrySiteHeader from '../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader';
 import { Footer } from '../../Organism/Footer/Footer';
 import './countryhome-page.scss';
-import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 
 export const CountryHomepage = ({
   footerData,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
-import { Ctalink } from '../../../Components/UIcomponents/Buttons/Cta_link/Cta_link';
+import { Ctalink } from '../../../Components/UIcomponents/Buttons/CtaLink/CtaLink';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 import './contentcardwithandwithoutimage.scss';
 

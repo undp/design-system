@@ -7,7 +7,7 @@ import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 import { DownloadCard } from '../../Molecules/Blocks/DownloadCard/DownloadCard';
 import { Projectdetail } from '../../Organism/Text/ProjectDetail/ProjectDetail';
-import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 import { ContentCardWithAndWithoutImage } from '../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage';
 import { Statscardslider } from '../../Organism/Statscardslider/Statscardslider';
 import './project-page.scss';

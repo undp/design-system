@@ -5,7 +5,7 @@ import { ContentCardWithOutImage } from '../../Components/UIcomponents/Cards/Con
 import { Footer } from '../../Organism/Footer/Footer';
 import { Publicationthumb } from '../../Atom/Cards/Publication-thumbnail/PublicationThumbnail';
 import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
-import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { Menu } from '../../Components/Navigationcomponents/Menu/Menu';
 import './publication-page.scss';

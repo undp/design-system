@@ -4,7 +4,7 @@ import { Publicationthumb } from '../../Atom/Cards/Publication-thumbnail/Publica
 import { modal } from '../../assets/js/modal';
 import { DownloadRow } from '../../Molecules/DownloadRow/DownloadRow';
 import { checkbox, selectFilter } from '../../assets/js/download-modal';
-import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 import CustomSelect from '../../Components/Forms/Dropdowns/CustomSelect/CustomSelect';
 import { Modal } from '../../Components/UIcomponents/Modal/Modal';
 

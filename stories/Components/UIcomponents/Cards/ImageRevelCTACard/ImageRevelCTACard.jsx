@@ -1,8 +1,8 @@
 import React from 'react';
-import './image-card.scss';
+import './image-revel-cta-card.scss';
 import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
+import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
 
 export const ImageRevelCard = ({
   contentname, image, Size, data, delaytime,

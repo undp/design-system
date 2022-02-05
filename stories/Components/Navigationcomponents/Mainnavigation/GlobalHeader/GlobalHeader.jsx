@@ -6,7 +6,7 @@ import { Icons } from '../../../../Atom/Icons/Icons';
 import IconsGlobe from '../../../../assets/icons/Globe.svg';
 import IconsSearch from '../../../../assets/icons/Search.svg';
 import { Logo } from '../../../../Atom/Logo/logo';
-import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
+import { Languageswitcher } from '../../../UIcomponents/LanguageSwitcher/LanguageSwitcher';
 import { Menu } from '../../Menu/Menu';
 import MegaMenu from '../MegaMenu/MegaMenu';
 import MobileNav from '../MobileNav/MobileNav';

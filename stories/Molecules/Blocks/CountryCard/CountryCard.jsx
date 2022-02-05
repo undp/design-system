@@ -1,7 +1,7 @@
 import React from 'react';
 import './country-card.scss';
 import '../../../assets/scss/_grid.scss';
-import { Ctalink } from '../../../Components/UIcomponents/Buttons/Cta_link/Cta_link';
+import { Ctalink } from '../../../Components/UIcomponents/Buttons/CtaLink/CtaLink';
 
 export const CountryCard = ({ data }) => {
   const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
