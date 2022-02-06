@@ -2,7 +2,7 @@ import React from 'react';
 import './cta-block.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
-import { Ctalink } from '../../../Components/UIcomponents/Buttons/Cta_link/Cta_link';
+import { Ctalink } from '../../../Components/UIcomponents/Buttons/CtaLink/CtaLink';
 
 export const CtaBlock = ({ headerText, descriptionText, ctaText }) => (
   <div className="cta-block">

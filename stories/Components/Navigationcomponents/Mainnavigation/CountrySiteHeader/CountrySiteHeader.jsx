@@ -5,7 +5,7 @@ import { desktopView } from '../../../../assets/js/undp';
 import { Icons } from '../../../../Atom/Icons/Icons';
 import IconsGlobe from '../../../../assets/icons/Globe.svg';
 import IconsSearch from '../../../../assets/icons/Search.svg';
-import { Logo } from '../../../../Atom/Logo/logo';
+import { Logo } from '../../../../Atom/Logo/Logo';
 import { Menu } from '../../Menu/Menu';
 import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
 import MegaMenu from '../MegaMenu/MegaMenu';

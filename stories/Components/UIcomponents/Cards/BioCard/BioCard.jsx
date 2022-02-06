@@ -5,7 +5,7 @@ import { modal } from '../../../../assets/js/modal';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Modal } from '../../Modal/Modal';
-import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
+import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
 
 export const biodata = (image2, contentname, descriptionText, descriptionText2) => (
   <div className="bio-card-wrapper">

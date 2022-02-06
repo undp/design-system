@@ -3,7 +3,7 @@ import './featured-content-card.scss';
 import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
-import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
+import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
 
 export const size_options = {
   large: 'large-8 medium-8',

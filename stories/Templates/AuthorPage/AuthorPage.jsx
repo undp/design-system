@@ -4,7 +4,7 @@ import logo from '../../assets/images/undp-logo-blue.svg';
 import user from '../../assets/images/user.svg';
 import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
-import { AuthorSummary } from '../../Organism/Blocks/Authorcard/AuthorSummary';
+import { AuthorSummary } from '../../Organism/Blocks/AuthorSummary/AuthorSummary';
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Footer } from '../../Organism/Footer/Footer';
 import './author-page.scss';
