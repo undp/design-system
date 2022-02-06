@@ -109,3 +109,4 @@ TableTag.defaultProps = {
 	size: 'large',
 	responsive: 'auto',
 };
+

@@ -1,8 +1,8 @@
 import React from 'react';
 import './download-card.scss';
 import '../../../assets/scss/_grid.scss';
-import { Publicationthumb } from '../../../Atom/Cards/Publication-thumbnail/PublicationThumbnail';
-import { Cardthumb } from '../../../Atom/Cards/Card-thumbnail/CardThumbnail';
+import { Publicationthumb } from '../../../Atom/Cards/PublicationThumbnail/PublicationThumbnail';
+import { Cardthumb } from '../../../Atom/Cards/CardThumbnail/CardThumbnail';
 
 export const DownloadCard = ({
   image, image2, title, format, download, ...args

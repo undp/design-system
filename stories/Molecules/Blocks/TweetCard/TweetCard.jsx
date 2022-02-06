@@ -1,7 +1,7 @@
 import React from 'react';
 import './tweet-card.scss';
 import '../../../assets/scss/_grid.scss';
-import { Ctalink } from '../../../Components/UIcomponents/Buttons/Cta_link/Cta_link';
+import { Ctalink } from '../../../Components/UIcomponents/Buttons/CtaLink/CtaLink';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
 
 export const TweetCard = ({

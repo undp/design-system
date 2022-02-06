@@ -1,5 +1,5 @@
 import React from 'react';
-import './image-caption.scss';
+import './image-caption-credit.scss';
 import { Imagecaption } from '../../../Molecules/Imagecaption/Imagecaption';
 
 export const Images = ({
