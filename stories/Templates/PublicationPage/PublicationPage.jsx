@@ -3,7 +3,7 @@ import { PublicationCard } from '../../Molecules/Blocks/PublicationCard/Publicat
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 import { ContentCardWithOutImage } from '../../Components/UIcomponents/Cards/ContentCard/ContentCardWithOutImage';
 import { Footer } from '../../Organism/Footer/Footer';
-import { Publicationthumb } from '../../Atom/Cards/Publication-thumbnail/PublicationThumbnail';
+import { Publicationthumb } from '../../Atom/Cards/PublicationThumbnail/PublicationThumbnail';
 import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
