@@ -1,7 +1,7 @@
 import React from 'react';
 import './article-page.scss';
 import { PostHeader } from '../../Organism/Text/PostHeader/PostHeader';
-import { Images } from '../../Atom/Images/Imagecaptioncredit/Imagecaption';
+import { Images } from '../../Atom/Images/ImageCaptionCredit/ImageCaptionCredit';
 import { Imagecaption } from '../../Molecules/Imagecaption/Imagecaption';
 import { Author } from '../../Components/UIcomponents/Author/Authorcolumn/Authors';
 import { BlockquoteComponent } from '../../Molecules/Text/BlockquoteComponent/BlockquoteComponent';

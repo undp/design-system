@@ -2,7 +2,7 @@ import React from 'react';
 import './content-card.scss';
 import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { Ctalink } from '../../Buttons/Cta_link/Cta_link';
+import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 

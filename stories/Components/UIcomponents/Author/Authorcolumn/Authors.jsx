@@ -2,7 +2,7 @@ import React from 'react';
 import './authors.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
-import { Authorimg } from '../../../../Atom/Images/Authorimage/Authorimages';
+import { Authorimg } from '../../../../Atom/Images/AuthorImage/AuthorImages';
 
 export const Author = ({
   data, image, alt, Image, Number, Link,

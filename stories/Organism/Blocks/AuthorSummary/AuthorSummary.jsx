@@ -1,7 +1,7 @@
 import React from 'react';
 import './author-summary.scss';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
-import { Authorimg } from '../../../Atom/Images/Authorimage/Authorimages';
+import { Authorimg } from '../../../Atom/Images/AuthorImage/AuthorImages';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const AuthorSummary = ({

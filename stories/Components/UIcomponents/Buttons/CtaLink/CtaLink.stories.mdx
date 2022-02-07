@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs';
-import { Ctalink } from './Cta_link';
+import { Ctalink } from './CtaLink';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -28,7 +28,7 @@ export const getCaptionForLocale = (locale) => {
 />
 
 <style>{`
-div#story--atoms-buttons--cta-link-arrow, div#story--atoms-buttons--cta-link-space, div#story--atoms-buttons-link--cta-link {
+div#story--atoms-buttons--CtaLink-arrow, div#story--atoms-buttons--CtaLink-space, div#story--atoms-buttons-link--CtaLink {
     display: none;
   }
   .cta_wrapper {
@@ -56,14 +56,14 @@ A cta link is a prompt on a website that tells the user to take some specified a
 
 <div className="cta_wrapper">
   <div className="cta_item">
-    <div className="cta__box cta-link-arrow"></div>
+    <div className="cta__box CtaLink-arrow"></div>
     <div className="cta__label">Cta link arrow expand</div>
     <div className="cta__code"> <Ctalink label="READ MORE" Type='Arrow'></Ctalink></div>
   </div>
 </div>
 <div className="cta_wrapper">
   <div className="cta_item">
-    <div className="cta__box cta-link-space"></div>
+    <div className="cta__box CtaLink-space"></div>
     <div className="cta__label">Cta link with space expand </div>
     <div className="cta__code"> <Ctalink label="READ MORE" Type='Space'></Ctalink></div>
   </div>
@@ -92,7 +92,7 @@ A cta link is a prompt on a website that tells the user to take some specified a
   <li>Take HTML from the HTML tab in canvas</li>
   <u>To use SCSS include the following files in your implementation</u>
   <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
-  <li>Component SCSS file:<code>cta_link.scss</code></li>
+  <li>Component SCSS file:<code>CtaLink.scss</code></li>
   <u>To use CSS include the following files in your implementation</u>
   <li>The compiled CSS file from <code>assets/css/style.css</code></li>
 </ul>

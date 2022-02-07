@@ -1,6 +1,6 @@
 import React from 'react';
 import './footer-logo.scss';
-import { Logo } from '../../../Atom/Logo/logo';
+import { Logo } from '../../../Atom/Logo/Logo';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
