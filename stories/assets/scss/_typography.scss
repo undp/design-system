@@ -6,6 +6,10 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+:focus {
+  outline: -webkit-focus-ring-color auto 0;
+}
+
 body {
   color: $color-black;
   font-family: $Font-Family-ProximaNova;
