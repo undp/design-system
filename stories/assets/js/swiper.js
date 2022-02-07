@@ -1,5 +1,4 @@
 // import Swiper JS
-import Swiper from 'swiper/swiper-bundle';
 import * as utility from './resize';
 import arrowright from '../icons/arrow-right.svg';
 import arrowleft from '../icons/arrow-left.svg';

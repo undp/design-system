@@ -1,15 +1,12 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SlowMo } from 'gsap/EasePack';
 import './viewport';
-
-// Register GSAP required plugins and effects.
-gsap.registerPlugin(ScrollTrigger, SlowMo);
 
 // parallaxEffect
 export const parallaxEffect = (trigger, selector, start, end, direction, device, percent) => {
 
   'use strict';
+
+  // Register GSAP required plugins and effects.
+  gsap.registerPlugin(ScrollTrigger, SlowMo);
 
   // Save Initial ScrollTrigger Styles.
   ScrollTrigger.saveStyles(selector);
