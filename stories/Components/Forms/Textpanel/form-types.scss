@@ -5,6 +5,9 @@
   .text-panel {
     .button {
       margin-top: $spacing-06;
+      @include devicebreak(small) {
+        margin-top: $spacing-07;
+      }
     }
   }
 
@@ -12,6 +15,11 @@
     margin-bottom: $spacing-08;
     @include devicebreak(small) {
       margin-bottom: $spacing-04;
+    }
+  }
+  p {
+    @include devicebreak(small) {
+      margin-bottom: $spacing-03;
     }
   }
 
