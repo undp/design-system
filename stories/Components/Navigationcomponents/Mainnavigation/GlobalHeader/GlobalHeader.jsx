@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 import { desktopView } from '../../../../assets/js/undp';
-import { Logo } from '../../../../Atom/Logo/logo';
+import { Logo } from '../../../../Atom/Logo/Logo';
 import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
 import { Menu } from '../../Menu/Menu';
 import MegaMenu from '../MegaMenu/MegaMenu';
