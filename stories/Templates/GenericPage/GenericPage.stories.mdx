@@ -305,15 +305,16 @@ The page performance will be optimized by considering the following:
 
 
 ### Usage
-- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
-- Initialize viewport,  navigation, language switcher, accordion, sidebar and swiper  by calling below mentioned functions.
+- Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
+- Initialize navigation, language switcher, accordion, sidebar and swiper  by calling below mentioned functions.
   - navigationInitialize();
   - langSwitch();
   - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
   - expandToSize('.pagehero-full');
   - sidebarNav();
   - sidebarMenu();
-  - swiper('.fluid-carousel', '.slide-content');
+  - swiper('.fluid-carousel', '.slide-content'); on load (Include swiper library from here https://swiperjs.com/get-started in your html page).
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
 
 #### CSS and JS References
 
@@ -341,15 +342,21 @@ Add the base layout style from dist/css/base-minimal.css
 - dist/css/templates/generic-page.min.css
 - dist/css/components/swiper.min.css
 
-#### JS:
+- #### JS:
 - dist/js/navigation.min.js
-- dist/js/UNDP.min.js
-- dist/js/lang_switcher.min.js
+- dist/js/undp.min.js
+- dist/js/lang-switcher.min.js
 - dist/js/accordion.min.js
-- dist/js/viewport.min.js
-- dist/js/scrolling_progressbar.min.js
+- dist/js/scrolling-progressbar.min.js
 - dist/js/sidebar.min.js
 - dist/js/swiper.min.js
+- dist/js/viewport.min.js
+
+Add following external libraries
+- Swiper (https://swiperjs.com/get-started)
+- GSAP (https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo)
+
+
 
 ### Changelog
 1.0 — Released component

@@ -1560,14 +1560,15 @@ The page performance will be optimized by considering the following:
 - Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
 
 ### Usage:
-- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
-- Initialize viewport,  navigation, language switcher, accordion, swiper, animation and parallax effect by calling below mentioned functions.
-- expandToSize('.pagehero-full');
-- navigationInitialize();
-- langSwitch();
-- accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
-- swiper('.stats-slider');
-- fontResize('.stats-card > h2');
+- Copy HTML from the HTML tab of Canvas and  include CSS and JS file in ‘CSS and JS References’ section
+- Initialize navigation, language switcher, accordion, swiper, animation and parallax effect by calling below mentioned functions.
+  - expandToSize('.pagehero-full');
+  - navigationInitialize();
+  - langSwitch();
+  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+  - swiper('.stats-slider');
+  - fontResize('.stats-card > h2');
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
 
 #### CSS and JS References
 
@@ -1606,13 +1607,18 @@ Add the base layout style from dist/css/base-minimal.css
 
 #### JS:
 - dist/js/navigation.min.js
-- dist/js/UNDP.min.js
-- dist/js/lang_switcher.min.js
+- dist/js/undp.min.js
+- dist/js/lang-switcher.min.js
 - dist/js/accordion.min.js
 - dist/js/smoothbgchange.min.js
 - dist/js/swiper.min.js
-- dist/js/font_resize.min.js
+- dist/js/font-resize.min.js
 - dist/js/viewport.min.js
+
+Add following external libraries
+- Swiper (https://swiperjs.com/get-started)
+- GSAP (https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo)
+
 
 ### Changelog
 1.0 — Released component

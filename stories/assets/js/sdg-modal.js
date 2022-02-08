@@ -1,5 +1,5 @@
 // sdg modal open
-export function SdgModal() {
+export function sdgModal() {
   const windowTop = window.top || window;
   const $modalOpen = $('.sdg-card:not(.sdg-card-link)');
 
