@@ -2,7 +2,7 @@ import React from 'react';
 import './textcta.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
-import { CtaButton } from '../../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { CtaButton } from '../../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 
 export const TextCta = ({ headerText, descriptionText, label }) => (
   <div className="grid-x trusted-partnerships__container" data-viewport="true">

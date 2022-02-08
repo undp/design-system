@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageHero } from '../../Components/UIcomponents/Hero/Pagehero/PageHero';
+import { PageHero } from '../../Components/UIcomponents/Hero/PageHero/PageHero';
 import CountrySiteHeader from '../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader';
 import { HeadingBig } from '../../Molecules/Text/HeadingBig/HeadingBig';
 import { Footer } from '../../Organism/Footer/Footer';
@@ -7,7 +7,7 @@ import { Heading } from '../../Atom/Typography/Heading/Heading';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 import { DownloadCard } from '../../Molecules/Blocks/DownloadCard/DownloadCard';
 import { Projectdetail } from '../../Organism/Text/ProjectDetail/ProjectDetail';
-import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
+import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 import { ContentCardWithAndWithoutImage } from '../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage';
 import { Statscardslider } from '../../Organism/Statscardslider/Statscardslider';
 import './project-page.scss';

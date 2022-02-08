@@ -1,0 +1,59 @@
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+
+.author-card {
+  a {
+    display: block;
+    margin-bottom: $spacing-09;
+    word-break: break-word;
+    padding-top: $spacing-06;
+    border-top: 2px solid $color-black;
+    
+    @include devicebreak(medium) {
+      margin-bottom:  3.75rem;
+    }
+
+    &:hover {
+      .cta__link::after {
+        @include translate(70%,0);
+      }
+
+      .author__img {
+
+        &::before {
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: $font-size-14;
+    line-height: 1.4;
+    margin-bottom: $spacing-06;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-16;
+    }
+  }
+
+  h6 {
+    @include devicebreak(small) {
+      font-size: $font-size-14;
+      line-height: 1.2;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .author-card {
+    a {
+      &:hover {
+        .cta__link::after {
+          @include transform(translate(-50%,0) rotate(180deg));
+        }
+      }
+    }
+  }
+}
+/* authorcard end */

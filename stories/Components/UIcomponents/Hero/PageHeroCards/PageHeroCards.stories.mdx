@@ -1,0 +1,252 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import { CountryCardHero } from "./PageHeroCards";
+import field_2 from '../../../../assets/images/field_2.jpg';
+import field from '../../../../assets/images/field.jpg';
+import garden from '../../../../assets/images/garden.jpg';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {countrydata: [{
+       name: 'Women earn only 77 cents for every dollar that men get for the same work', 
+      btnlabel: 'EXPLORE',
+      link: '#',
+      size: '',
+      imageback: field_2
+    },
+    {
+      name: 'Women earn only 77 cents for every dollar that men get for the same work', 
+      btnlabel: 'EXPLORE',
+      link: '#',
+      size: '',
+      imageback: field
+    },
+    {
+      name: 'Women earn only 77 cents for every dollar that men get for the same work', 
+      btnlabel: 'EXPLORE',
+      link: '#',
+      size: 'large',
+      imageback: garden
+    },
+    {
+      name: 'Women earn only 77 cents for every dollar that men get for the same work', 
+      btnlabel: 'EXPLORE',
+      link: '#',
+      size: '',
+      imageback: field_2
+    },
+    {
+      name: 'Women earn only 77 cents for every dollar that men get for the same work', 
+      btnlabel: 'EXPLORE',
+      link: '#',
+      size: 'large',
+      imageback: garden
+    }],
+    title: 'Country Level Hero Headline',
+    subtitle: 'Re-imagining Life in a Post-pandemic World'}; return engText;
+    case 'arabic': const arabicText = {countrydata: [{
+      name: 'تكسب النساء 77 سنتًا فقط مقابل كل دولار يتقاضاه الرجل مقابل نفس العمل',
+      btnlabel: 'يكتشف',
+      link: '#',
+      size: '',
+      imageback: field_2
+    },
+    {
+      name: 'تكسب النساء 77 سنتًا فقط مقابل كل دولار يتقاضاه الرجل مقابل نفس العمل',
+      btnlabel: 'يكتشف',
+      link: '#',
+      size: '',
+      imageback: field
+    },
+    {
+      name: 'تكسب النساء 77 سنتًا فقط مقابل كل دولار يتقاضاه الرجل مقابل نفس العمل',
+      btnlabel: 'يكتشف',
+      link: '#',
+      size: 'large',
+      imageback: garden
+    },
+    {
+      name: 'تكسب النساء 77 سنتًا فقط مقابل كل دولار يتقاضاه الرجل مقابل نفس العمل',
+      btnlabel: 'يكتشف',
+      link: '#',
+      size: '',
+      imageback: field_2
+    },
+    {
+      name: 'تكسب النساء 77 سنتًا فقط مقابل كل دولار يتقاضاه الرجل مقابل نفس العمل',
+      btnlabel: 'يكتشف',
+      link: '#',
+      size: 'large',
+      imageback: garden
+    }],
+    title: 'العنوان الرئيسي للبطل على مستوى الدولة',
+    subtitle: 'إعادة تخيل الحياة في عالم ما بعد الجائحة'}; return arabicText;
+    case 'burmese': const burmeseText = {countrydata: [{
+      name: 'အမျိုးသမီးများသည်တူညီသောအလုပ်အတွက်အမျိုးသားများရရှိသောတစ်ဒေါ်လာလျှင် ၇၇ ဆင့်သာရရှိသည်',
+      btnlabel: 'စူးစမ်းသည်',
+      link: '#',
+      size: '',
+      imageback: field_2
+    },
+    {
+      name: 'အမျိုးသမီးများသည်တူညီသောအလုပ်အတွက်အမျိုးသားများရရှိသောတစ်ဒေါ်လာလျှင် ၇၇ ဆင့်သာရရှိသည်',
+      btnlabel: 'စူးစမ်းသည်',
+      link: '#',
+      size: '',
+      imageback: field
+    },
+    {
+      name: 'အမျိုးသမီးများသည်တူညီသောအလုပ်အတွက်အမျိုးသားများရရှိသောတစ်ဒေါ်လာလျှင် ၇၇ ဆင့်သာရရှိသည်',
+      btnlabel: 'စူးစမ်းသည်',
+      link: '#',
+      size: 'large',
+      imageback: garden
+    },
+    {
+      name: 'အမျိုးသမီးများသည်တူညီသောအလုပ်အတွက်အမျိုးသားများရရှိသောတစ်ဒေါ်လာလျှင် ၇၇ ဆင့်သာရရှိသည်',
+      btnlabel: 'စူးစမ်းသည်',
+      link: '#',
+      size: '',
+      imageback: field_2
+    },
+    {
+      name: 'အမျိုးသမီးများသည်တူညီသောအလုပ်အတွက်အမျိုးသားများရရှိသောတစ်ဒေါ်လာလျှင် ၇၇ ဆင့်သာရရှိသည်',
+      btnlabel: 'စူးစမ်းသည်',
+      link: '#',
+      size: 'large',
+      imageback: garden
+    }],
+    title: 'နိုင်ငံအဆင့်သူရဲကောင်းခေါင်းစဉ်',
+    subtitle: 'ကပ်ရောဂါအပြီးတွင်ကမ္ဘာတစ်ခု၏ဘ ၀ ကိုပြန်လည်စိတ်ကူးယဉ်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {countrydata: [{
+      name: '女性は男性が同じ仕事のために得る1ドルにつき77セントしか稼ぎません',
+      btnlabel: '見る',
+      link: '#',
+      size: '',
+      imageback: field_2
+    },
+    {
+      name: '女性は男性が同じ仕事のために得る1ドルにつき77セントしか稼ぎません',
+      btnlabel: '見る',
+      link: '#',
+      size: '',
+      imageback: field
+    },
+    {
+      name: '女性は男性が同じ仕事のために得る1ドルにつき77セントしか稼ぎません',
+      btnlabel: '見る',
+      link: '#',
+      size: 'large',
+      imageback: garden
+    },
+    {
+      name: '女性は男性が同じ仕事のために得る1ドルにつき77セントしか稼ぎません',
+      btnlabel: '見る',
+      link: '#',
+      size: '',
+      imageback: field_2
+    },
+    {
+      name: '女性は男性が同じ仕事のために得る1ドルにつき77セントしか稼ぎません',
+      btnlabel: '見る',
+      link: '#',
+      size: 'large',
+      imageback: garden
+    }],
+    title: '国レベルのヒーローの見出し',
+    subtitle: 'パンデミック後の世界での生活を再考する'}; return japaneseText;
+    default:
+    const dummy =  {countrydata: [{
+    name: 'Women earn only 77 cents for every dollar that men get for the same work', 
+    btnlabel: 'EXPLORE',
+    link: '#',
+    size: '',
+    imageback: field_2
+    },
+    {
+    name: 'Women earn only 77 cents for every dollar that men get for the same work', 
+    btnlabel: 'EXPLORE',
+    link: '#',
+    size: '',
+    imageback: field
+    },
+    {
+      name: 'Women earn only 77 cents for every dollar that men get for the same work', 
+      btnlabel: 'EXPLORE',
+      link: '#',
+      size: 'large',
+      imageback: garden
+    },
+    {
+      name: 'Women earn only 77 cents for every dollar that men get for the same work', 
+      btnlabel: 'EXPLORE',
+      link: '#',
+      size: '',
+      imageback: field_2
+    },
+    {
+      name: 'Women earn only 77 cents for every dollar that men get for the same work', 
+      btnlabel: 'EXPLORE',
+      link: '#',
+      size: 'large',
+      imageback: garden
+    }],
+    title: 'Country Level Hero Headline',
+    subtitle: 'Re-imagining Life in a Post-pandemic World'};
+    return dummy
+  }
+};
+
+<Meta title="Components/UI components/Hero/Page hero - Cards" component={CountryCardHero}/>
+
+<style>{`
+ .subheading {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  .sbdocs .sbdocs-h2 {
+    border-bottom: none;
+  }
+`}</style>
+
+# Page hero - Cards Component
+
+## Overview
+
+The Page hero - Cards component multiusage component which creates boxes that are usually teasing some kind of content like - Image, Text, Subtitle, and Breadcrumb. We are using the animation here assets/js/viewport.js. Atoms tags and Country Card Molecule are used for creating this card
+
+## Default Representation & various possible states
+
+<Story name="Page hero - Cards">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <CountryCardHero data={caption.countrydata} title={caption.title} subtitle={caption.subtitle}
+      ></CountryCardHero>
+    );
+  }}
+</Story>
+
+## Dependencies
+
+Libraries or another dependency which are used in the component.
+
+- For animation functionality its depend on the jQuery plugin library.
+- Custom JS file (viewport.js) is located in the same js folder.
+- Custom JS file (SliderCustom.js) is located in the same js folder.
+
+## Usage
+
+- Take HTML from the HTML tab in the canvas.
+- <u>To use SCSS include the following files in your implementation</u>
+- Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
+- Component SCSS file: <code>countrycardhero.scss</code> and <code>countrycard.scss</code>
+- <u>To use CSS include the following files in your implementation</u>
+- The compiled CSS file from <code>assets/css/style.css</code>

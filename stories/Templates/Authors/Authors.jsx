@@ -9,9 +9,9 @@ import { Footer } from '../../Organism/Footer/Footer';
 import './Authors.scss';
 import { select } from '../../assets/js/select';
 import { authorFilter } from '../../assets/js/author-filter';
-import { Authorcard } from '../../Components/UIcomponents/Author/Authorcard/Authorcard';
-import { CtaButton } from '../../Components/UIcomponents/Buttons/Cta_button/CtaButton';
-import { SearchExpand } from '../../Components/Forms/ExpandableSearch/SearchExpand';
+import { Authorcard } from '../../Components/UIcomponents/Author/AuthorCard/AuthorCard';
+import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
+import { SearchExpand } from '../../Components/Forms/SearchExpand/SearchExpand';
 
 const Authors = ({
   breadcrumbData,

@@ -21,14 +21,14 @@
 @import "../../Atom/Images/AuthorImage/author-image";
 @import "../../Atom/Images/Image/image";
 @import "../../Atom/Images/ImageCaptionCredit/image-caption-credit";
-@import "../../Atom/Images/Imagecredit/image-credit";
+@import "../../Atom/Images/ImageCredit/image-credit";
 @import "../../Atom/Layout/Grid/grid";
 @import "../../Atom/Layout/Spacing/spacing";
 @import "../../Atom/Navigation/Breadcrumb/breadcrumb";
 @import "../../Atom/Navigation/LanguageSwitcherRow/language-switcher-row";
 @import "../../Atom/Navigation/MenuItems/menu-items";
 @import "../../Atom/Navigation/ProgressBarNavigation/progress-bar-navigation";
-@import "../../Atom/Navigation/Sidebar/sidebar";
+@import "../../Atom/Navigation/SidebarFirstLevel/sidebar-first-level";
 @import "../../Atom/ReachElement/Details/details";
 @import "../../Atom/ReachElement/Figcaption/figcaption";
 @import "../../Atom/Table/table";
@@ -39,8 +39,8 @@
 @import "../../Components/Forms/Checkbox/checkbox";
 @import "../../Components/Forms/Dropdowns/CustomSelect/custom-select";
 @import "../../Components/Forms/Dropdowns/Multiselect/multi-select";
-@import "../../Components/Forms/Inputfields/input-group";
-@import "../../Components/Forms/Newslettersignup/signup";
+@import "../../Components/Forms/InputFields/input-fields";
+@import "../../Components/Forms/NewsLetterSignUp/newsletter-signup";
 @import "../../Components/Forms/Radio/radio";
 @import "../../Components/Forms/Select/select";
 @import "../../Components/Navigationcomponents/Breadcrumbs/breadcrumbs";
@@ -48,23 +48,23 @@
 @import "../../Components/Navigationcomponents/Pagination/pagination";
 @import "../../Components/Navigationcomponents/Sidebar/sidebar";
 @import "../../Components/UIcomponents/Accordion/accordion";
-@import "../../Components/UIcomponents/Author/Authorcard/author-card";
-@import "../../Components/UIcomponents/Author/Authorcolumn/authors";
-@import "../../Components/UIcomponents/Buttons/Chips/chips";
-@import "../../Components/UIcomponents/Buttons/Cta_button/buttons";
+@import "../../Components/UIcomponents/Author/AuthorCard/author-card";
+@import "../../Components/UIcomponents/Author/AuthorColumn/author-column";
+@import "../../Components/UIcomponents/Buttons/Chips/Chips";
+@import "../../Components/UIcomponents/Buttons/CtaButton/buttons";
 @import "../../Components/UIcomponents/Buttons/CtaLink/cta-link";
 @import "../../Components/UIcomponents/Cards/BioCard/bio-card";
 @import "../../Components/UIcomponents/Cards/ContentCard/content-card";
-@import "../../Components/UIcomponents/Cards/FeaturedCards/featured-content-card";
+@import "../../Components/UIcomponents/Cards/FeaturedCard/featured-content-card";
 @import "../../Components/UIcomponents/Cards/ImageRevelCTACard/image-revel-cta-card";
 @import "../../Components/UIcomponents/Cards/ParallaxCard/parallax-cards";
 @import "../../Components/UIcomponents/Cards/StatsCards/stats-cards";
 @import "../../Components/UIcomponents/Carousel/FixedSizeCarousel/fixed-size-carousel";
 @import "../../Components/UIcomponents/Carousel/FluidImageSizeCarousel/fluid-image-size-carousel";
 @import "../../Components/UIcomponents/Carousel/ImageOnlyCarousel/image-only-carousel";
-@import "../../Components/UIcomponents/Hero/Homepagehero/home-page-hero";
-@import "../../Components/UIcomponents/Hero/Pagehero/page-hero";
-@import "../../Components/UIcomponents/Hero/Pageherocards/country-card-hero";
+@import "../../Components/UIcomponents/Hero/HomePageHero/homepage-hero";
+@import "../../Components/UIcomponents/Hero/PageHero/page-hero";
+@import "../../Components/UIcomponents/Hero/PageHeroCards/pagehero-cards";
 @import "../../Components/UIcomponents/Languageswitcher/language-switcher";
 @import "../../Components/UIcomponents/Modal/modal";
 @import "../../Components/UIcomponents/Tab/tab";
@@ -81,7 +81,7 @@
 @import "../../Molecules/FooterNavigation/FooterIcons/footer-icons";
 @import "../../Molecules/FooterNavigation/FooterLists/footer-lists";
 @import "../../Molecules/FooterNavigation/FooterLogo/footer-logo";
-@import "../../Molecules/Imagecaption/image-caption";
+@import "../../Molecules/ImageCaption/image-caption";
 @import "../../Molecules/ParallaxCard/parallax-card";
 @import "../../Molecules/Sidebar-data/sidebar-data";
 @import "../../Molecules/Text/CtaBlock/cta-block";
@@ -93,7 +93,7 @@
 @import "../../Molecules/Text/SectionHeader/section-header";
 @import "../../Molecules/Text/SmallCopy/smallcopy";
 @import "../../Molecules/Text/Tertiary/tertiary";
-@import "../../Molecules/SDG/sdg";
+@import "../../Molecules/Sdg/sdg";
 @import "../../Molecules/Sdgmodal/sdgmodal";
 
 //Organisum
