@@ -5,7 +5,7 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { Breadcrumbcomponent } from '../../../Navigationcomponents/Breadcrumbs/Breadcrumbs';
 
 export const PageHeroOption = ({
-  data, title, content, active, variant, imgsrc, imgalt, videosrc,
+  data, title, content, active, variant, imgsrc, imgsrc2, imgalt, videosrc,
 }) => (
   <div className="pagehero-tall">
     <div className="grid-x">
@@ -17,11 +17,14 @@ export const PageHeroOption = ({
         </div>
       </div>
       <div className="cell medium-7">
-        <div className="pagehero-image">
+        <div className="homepage-hero-image">
           {variant === 'video' ? (
             <Video src={videosrc} width="100%" height="100%" />
           ) : (
-            <img src={imgsrc} alt={imgalt} />
+            <picture>
+              <source media="(min-width: 767px)" srcset={imgsrc} />
+              <img src={imgsrc2} alt={imgalt} />
+            </picture>
           )}
         </div>
       </div>

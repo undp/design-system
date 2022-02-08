@@ -25,6 +25,8 @@ export const swiper = (selector, arrowsSelector, options) => {
     let desktop = window.matchMedia('(min-width: 768px)');
     if (window.matchMedia(mobile).matches) {
       device = 'mobile';
+    } else if (window.matchMedia(potrait).matches || window.matchMedia(landscape).matches || window.matchMedia(mobile).matches) {
+      device = 'mobtab';
     } else if (window.matchMedia(potrait).matches || window.matchMedia(landscape).matches) {
       device = 'tablet';
     } else {
@@ -185,12 +187,16 @@ export const swiper = (selector, arrowsSelector, options) => {
     const swiperInit = () => {
       const dataDevice = $(element).data('swiper-device');
       // Device based activation of swiper.
-      if (dataDevice && (dataDevice == 'mobile' || dataDevice == 'desktop' || dataDevice == 'tablet')) {
+      if (dataDevice && (dataDevice == 'mobile' || dataDevice == 'desktop' || dataDevice == 'tablet' || dataDevice == 'mobtab')) {
         if (getDeviceType() == "mobile" && dataDevice == 'mobile') {
           if (!swiper.initialized) {
             swiperEnable();
           }
         } else if (getDeviceType() == "tablet" && dataDevice == 'tablet') {
+          if (!swiper.initialized) {
+            swiperEnable();
+          }
+        } else if (getDeviceType() == "mobtab" && dataDevice == 'mobtab') {
           if (!swiper.initialized) {
             swiperEnable();
           }

@@ -6,7 +6,7 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { CtaButton } from '../../Buttons/CtaButton/CtaButton';
 
 export const Homepageherooption = ({
-  title, subtitle, button, variant, imgalt, imgsrc, content, headingTop,
+  title, subtitle, button, variant, imgalt, imgsrc, imgsrc2, content, headingTop,
 }) => (
   <div className="homepage-hero-wide">
     {headingTop && <Heading type="3" className="medium-offset-1" label={headingTop} dataViewport="true"/>}
@@ -27,7 +27,10 @@ export const Homepageherooption = ({
               <Video src={BackgroundVideo} width="100%" height="100%" />
           )
           : (
-            <img src={imgsrc} alt={imgalt} />
+            <picture>
+              <source media="(min-width:767px)" srcset={imgsrc} />
+              <img src={imgsrc2} alt={imgalt} />
+            </picture>
             )}
           </div>
         <div className="show-small">
