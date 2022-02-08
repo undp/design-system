@@ -1,0 +1,94 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Chips } from './Chips';
+
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: 'Label'}; return engText;
+    case 'arabic': const arabicText = {detail: 'ملصق'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'တံဆိပ်'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: 'ラベル'}; return japaneseText;
+    default:
+      return {detail: 'Label'};
+  }
+};
+
+<Meta
+  title="Components/UI components/Buttons/Chips"
+  argTypes={{
+    Type: {
+      options: ["Without X", "With X"],
+      control: { type: "inline-radio" },
+      defaultValue: 'Without X'
+    },
+  }}
+/>
+
+<style>{`
+  div#story--atoms-buttons-chips--chip {
+    margin-bottom: 30px;
+  }
+  div#story--atoms-buttons-chips--chip {
+    display: none;
+  }
+  .cta_wrapper {
+    display: flex;
+  }
+  .cta__label {
+    padding-right: 20px;
+  }
+  .cta_item {
+    padding: 10px;
+  }
+  .subheading {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+`}</style>
+
+# Chips Component
+Chips are compact elements that allow users to enter information, select a choice, filter content, or trigger an action.
+
+<div className="cta_wrapper">
+  <div className="cta_item">
+    <div className="cta__box CtaLink-arrow"></div>
+    <div className="cta__label">Chip cross</div>
+    <div className="cta__code"> <Chips label="Label" Type='With X'></Chips></div>
+  </div>
+</div>
+<div className="cta_wrapper">
+  <div className="cta_item">
+    <div className="cta__box CtaLink-space"></div>
+    <div className="cta__label">Chip without cross </div>
+    <div className="cta__code"> <Chips label="Label"></Chips></div>
+  </div>
+</div>
+
+<Story
+  name="Chips"
+>
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <Chips
+        label={caption.detail}
+        {...args}
+      ></Chips>
+    );
+  }}
+</Story>
+
+<div className="subheading">Usage</div>
+<ul>
+  <li>Take HTML from the HTML tab in canvas</li>
+  <u>To use SCSS include the following files in your implementation</u>
+  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
+  <li>Component SCSS file:<code>chips.scss</code></li>
+  <u>To use CSS include the following files in your implementation</u>
+  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

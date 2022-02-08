@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProgressBarNavigation } from '../../Atom/Navigation/ProgressBarNavigation/ProgressBarNavigation';
-import { PageHero } from '../../Components/UIcomponents/Hero/Pagehero/PageHero';
+import { PageHero } from '../../Components/UIcomponents/Hero/PageHero/PageHero';
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Sidebar } from '../../Components/Navigationcomponents/Sidebar/Sidebar';
 import { Heading } from '../../Atom/Typography/Heading/Heading';

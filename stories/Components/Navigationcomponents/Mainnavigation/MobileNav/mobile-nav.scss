@@ -13,6 +13,7 @@
   position: absolute;
   top: 4.6875rem;
   width: 100%;
+  height: calc(100vh - 4.6875rem);
 
   &.show {
     display: block;
