@@ -6,3 +6,4 @@ export const Imagecredit = ({ label }) => (
     {label}
   </div>
 );
+

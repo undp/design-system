@@ -1,6 +1,6 @@
 import React from 'react';
 import './image-caption.scss';
-import { Imagecredit } from '../../Atom/Images/Imagecredit/Imagecredit';
+import { Imagecredit } from '../../Atom/Images/ImageCredit/ImageCredit';
 import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
 
 export const caption_options = {
