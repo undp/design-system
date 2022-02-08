@@ -757,11 +757,12 @@ The following components are used to create the “Article Page” template in t
 - Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.
 
 ### Usage
-- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
-- Initialize viewport,  navigation, language switcher, accordion, filter by calling below mentioned functions.
+- Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
+- Initialize navigation, language switcher, accordion, filter by calling below mentioned functions.
   - navigationInitialize();
   - langSwitch();
   - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
 
 #### CSS and JS References
 
@@ -792,11 +793,12 @@ Add the base layout style from dist/css/base-minimal.css
 #### Js:
 - dist/js/animation.min.js
 - dist/js/navigation.min.js
-- dist/js/UNDP.min.js
-- dist/js/lang_switcher.min.js
+- dist/js/undp.min.js
+- dist/js/lang-switcher.min.js
 - dist/js/accordion.min.js
-- dist/js/viewport.min.js
 - dist/js/sticky.min.js
+- dist/js/viewport.min.js
+
 
 ### Changelog
 - 1.0 — Released component

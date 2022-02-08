@@ -465,14 +465,15 @@ The page performance will be optimized by considering following:
 - Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
 - Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
 
-### Usage
-- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
-- Initialize viewport,  navigation, language switcher, accordion, select and filter by calling below mentioned functions.
+- ### Usage
+- Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
+- Initialize navigation, language switcher, accordion, select and filter by calling below mentioned functions.
   - navigationInitialize();
   - langSwitch();
   - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
   - expandSearch();
   - select();
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
 
 #### CSS and JS References
 
@@ -500,16 +501,16 @@ Add the base layout style from dist/css/base-minimal.css
 - dist/css/components/signup.min.css
 - dist/css/components/accordion.min.css
 - dist/css/components/footer.min.css
-- dist/css/templates/Authors.min.css
+- dist/css/templates/authors.min.css
 
 #### JS:
 - dist/js/animation.min.js
 - dist/js/navigation.min.js
-- dist/js/UNDP.min.js
-- dist/js/lang_switcher.min.js
+- dist/js/undp.min.js
+- dist/js/lang-switcher.min.js
 - dist/js/accordion.min.js
 - dist/js/viewport.min.js
-- dist/js/expand_search.min.js
+- dist/js/expand-search.min.js
 - dist/js/select.min.js
 
 ### Changelog

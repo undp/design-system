@@ -1,5 +1,5 @@
 /* Stats JS start custom */
-export function StatsHover() {
+export function statsHover() {
   var $winHeight = $(window).height() - 378;
   var $newWinHeight = $(window).height() + 378;
   $(window).scroll(() => {

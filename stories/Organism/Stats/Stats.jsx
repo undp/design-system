@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { StatsPanel } from '../../Molecules/Blocks/StatsPanel/StatsPanel';
-import { StatsHover } from '../../assets/js/stats';
+import { statsHover } from '../../assets/js/stats';
 import './stats.scss';
 
 export const Stats = ({ data, imageback }) => {
   useEffect(() => {
-    StatsHover();
+    statsHover();
   }, []);
   return (
     <div className="grid-x stats-grid">

@@ -807,15 +807,17 @@ The page performance will be optimized by considering following:
 - Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.
 
 ### Usage
-- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
-- Initialize viewport,  size animation, navigation, language switcher, multi-select, accordion, filter by calling below mentioned functions.
-- expandToSize('.pagehero-full');
-- navigationInitialize();
-- langSwitch();
-- expandSearch();
-- multiSelect();
-- toggleFilter();
-- accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+- Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
+- Initialize size animation, navigation, language switcher, multi-select, accordion, filter by calling below mentioned functions.
+  - expandToSize('.pagehero-full');
+  - navigationInitialize();
+  - langSwitch();
+  - expandSearch();
+  - multiSelect();
+  - toggleFilter();
+  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+- Add data-viewport=”true” attribute on elements for the visibility animation
+
 
 #### CSS and JS References
 
@@ -853,11 +855,11 @@ Add the base layout style from dist/css/base-minimal.css
 
 - dist/js/animation.min.js
 - dist/js/filter_seach_bar.min.js
-- dist/js/multiSelect.min.js
-- dist/js/expand_search.min.js
+- dist/js/multi-select.min.js
+- dist/js/expand-search.min.js
 - dist/js/navigation.min.js
-- dist/js/UNDP.min.js
-- dist/js/lang_switcher.min.js
+- dist/js/undp.min.js
+- dist/js/lang-switcher.min.js
 - dist/js/accordion.min.js
 - dist/js/viewport.min.js
 

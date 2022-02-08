@@ -1394,12 +1394,13 @@ The following components are used to create the “Article Page” template in t
 
 
 ### Usage:
-- Copy HTML from the HTML tab of Canvas and include below listed css and js files.
-- Initialize viewport,  navigation, language switcher, accordion and SdgModal by calling below mentioned functions.
-- langSwitch();
-- navigationInitialize(locale);
-- SdgModal();
-- accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+- Copy HTML from the HTML tab of Canvas and  include CSS and JS file in ‘CSS and JS References’ section
+- Initialize navigation, language switcher, accordion and sdgModal by calling below mentioned functions.
+  - langSwitch();
+  - navigationInitialize(locale);
+  - sdgModal();
+  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
 
 #### CSS and JS References
 
@@ -1432,11 +1433,12 @@ Add the base layout style from dist/css/base-minimal.css
 
 #### JS:
 - dist/js/sdgmodal.min.js
-- dist/js/viewport.min.js
 - dist/js/navigation.min.js
-- dist/js/UNDP.min.js
-- dist/js/lang_switcher.min.js
+- dist/js/undp.min.js
+- dist/js/lang-switcher.min.js
 - dist/js/accordion.min.js
+- dist/js/sdg-modal.min.js
+
 
 ### Changelog
 1.0 — Released component

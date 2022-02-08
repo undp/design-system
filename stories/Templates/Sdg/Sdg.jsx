@@ -4,7 +4,7 @@ import { PageHero } from '../../Components/UIcomponents/Hero/PageHero/PageHero';
 import { Footer } from '../../Organism/Footer/Footer';
 import logo from '../../assets/images/undp-logo-blue.svg';
 import logowhite from '../../assets/images/undp-logo-white.svg';
-import { SdgModal } from '../../assets/js/sdg-modal';
+import { sdgModal } from '../../assets/js/sdg-modal';
 import { Sdg } from '../../Molecules/Sdg/Sdg';
 import { Sdgmodal } from '../../Molecules/Sdgmodal/Sdgmodal';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
@@ -14,7 +14,7 @@ export const SdgPage = ({
   herodata, title, active, imgsource, altname, footerData, statsData, goaldata, modaltitle, description, modalgoaltitle, modalsdgimg, modalsdgimgalt, goalcount, Sdgnewdata, imgsrcsdg, sdgtitle, goaltitle, goalpara, languageswitcherData, rightNavigationData, backcaption, contentdata, storyBtn, Sdgcontenttitle, locationData, langSelect, nextcardtitle, leftNavigationData, navigationData, locale,
 }) => {
   useEffect(() => {
-    SdgModal();
+    sdgModal();
   }, []);
   return (
     <>
