@@ -1,0 +1,89 @@
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.what-goal {
+  padding: $spacing-12 0;
+  word-break: break-word;
+
+  @include devicebreak(medium) {
+    padding: $spacing-13 0;
+  }
+
+  @include devicebreak(small) {
+    h4 {
+      margin-top: $spacing-10;
+    }
+  }
+}
+
+.sdg {
+  &-card-list {
+    + .footer {
+      margin-top: 0;
+    }
+
+    .modal-sdg {
+      opacity: 0;
+      visibility: hidden;
+
+      .sdg-modal-dialog {
+        @include transform(translateX(100%));
+      }
+
+      &.sdg-open {
+        opacity: 1;
+        transition-duration: 0.2s;
+        visibility: visible;
+
+        .sdg-modal-dialog {
+          @include transform(translateX(0));
+        }
+      }
+    }
+  }
+
+  &-banner {
+    margin-top: 7.1875rem;
+
+    @include devicebreak(mediumonlytab) {
+      margin-top: 4.6875rem;
+    }
+
+    .pagehero-content {
+      padding-top: $spacing-10;
+
+      @include devicebreak(small) {
+        padding-top: $spacing-07;
+
+        h2 {
+          margin-top: 10.313rem;
+        }
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .what-goal {
+    > div {
+      margin-left: 0;
+      margin-right: 8.33333%;
+    }
+  }
+
+  .sdg-card-list {
+    .modal-sdg {
+      .sdg-modal-dialog {
+        @include transform(translateX(-100%));
+      }
+
+      &.sdg-open {
+        .sdg-modal-dialog {
+          @include transform(translateX(0));
+        }
+      }
+    }
+  }
+}
+

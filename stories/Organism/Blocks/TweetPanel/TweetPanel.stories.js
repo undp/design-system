@@ -1,7 +1,7 @@
 import { Meta, Story } from "@storybook/addon-docs";
 import { TweetPanel } from "./TweetPanel";
 import img from "../../../assets/images/undp-twitter.jpg";
-import { Link } from '../../../Atom/Typography/Links/link';
+import { Link } from '../../../Atom/Typography/Links/Links';
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {

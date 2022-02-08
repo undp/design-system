@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Link } from './Links';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: 'Default link'}; return engText;
+    case 'arabic': const arabicText = {detail: 'الارتباط الافتراضي'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'မူရင်းလင့်ခ်'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: 'デフォルトのリンク'}; return japaneseText;
+    default:
+      return {detail: 'Default link'};
+  }
+};
+
+<Meta 
+  title="Foundation/Typography/Links" component={Link} 
+  argTypes={{
+      variant: {
+          options: ['default', 'animated'],
+          control: { type: 'inline-radio' },
+          defaultValue: 'default'
+      },
+    }}/>
+
+# Link
+
+The Link component defines a hyperlink, which is used to link from one page to another.
+
+<Canvas>
+  <Story name="Links">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <>
+          <Link label={caption.detail} {...args}></Link>
+        </>;
+    }}
+  </Story>
+</Canvas>
+
+<pre>&nbsp;</pre>
+### Usage
+
+- Copy the HTML from Canvas page
+- Add **animated-link** class in your link if you want to have a animated underline (optional)
+- Include **dist/css/components/link.css** file in your html
+
+

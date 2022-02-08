@@ -1,0 +1,181 @@
+import { Meta, Story } from '@storybook/addon-docs';
+import { Author } from './AuthorColumn';
+import user from '../../../../assets/images/author.png';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {data: [{
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    },
+    {
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    },
+    {
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    },
+    {
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    },
+    {
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    }]}; return engText.data;
+    case 'arabic': const arabicText = {data: [{
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    },
+    {
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    },
+    {
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    },
+    {
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    },
+    {
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    }]}; return arabicText.data;
+    case 'burmese': const burmeseText = {data: [{
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    },
+    {
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    },
+    {
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    },
+    {
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    },
+    {
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    }]}; return burmeseText.data;
+    case 'japanese': const japaneseText = {data: [{
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    },
+    {
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    },
+    {
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    },
+    {
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    },
+    {
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    }]}; return japaneseText.data;
+    default:
+      const dummy =  {data: [{
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      },
+      {
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      },
+      {
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      },
+      {
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      },
+      {
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      }]};
+    return dummy.data
+  }
+};
+
+<Meta 
+  title="Components/UI components/Authors/Author" argTypes={{
+  Image: {
+    options: ['True', 'False'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'True'
+  },
+  Number: {
+    options: ['One', 'Two', 'Three', 'Four', 'Five'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'One'
+  }
+  }}/>
+
+<style>{`
+  .subheading {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333333;
+    line-height: 24px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+  .sbdocs .sbdocs-p,
+  .sbdocs .sbdocs-li{
+    font-size: 1rem;
+  }
+  .sbdocs .sbdocs-h2 {
+    border-bottom: none;
+  }
+  div[id^="story--molecules-text-authors"] {
+    padding: 20px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 25px 0px 40px;
+    border-radius: 4px;
+  }
+`}</style>
+
+# Authors component
+
+## Overview
+
+The Authors Component is created for showing the authors name, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+
+## Default Representation & various possible states
+
+<div className="subheading">Author Column</div>
+
+<Story name="Author">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Author image={user} alt= 'Headshot of XYZ' data={caption} {...args}></Author>;
+  }}
+</Story>
+
+## Dependencies
+
+Not Applicable
+
+## Usage
+
+<ul>
+<li>Take HTML from the HTML tab in the canvas</li>
+<u>To use SCSS include the following files in your implementation</u>
+<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
+<li>Component SCSS file: <code>authors.scss</code></li>
+<u>To use CSS include the following files in your implementation</u>
+<li>The compiled CSS file from <code>assets/css/style.css</code></li>
+</ul>

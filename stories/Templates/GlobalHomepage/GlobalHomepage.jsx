@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './globalhome-page.scss';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
-import { Homepageherosplit } from '../../Components/UIcomponents/Hero/Homepagehero/HomepageHeroSplit';
+import { Homepageherosplit } from '../../Components/UIcomponents/Hero/HomePageHero/HomePageHeroSplit';
 import { FeaturedCard } from '../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard';
 import { HeadingBig } from '../../Molecules/Text/HeadingBig/HeadingBig';
 import ParallaxCards from '../../Components/UIcomponents/Cards/ParallaxCard/ParallaxCards';
