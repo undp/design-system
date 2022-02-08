@@ -3,7 +3,7 @@ import './footer.scss';
 import { FooterLogo } from '../../Molecules/FooterNavigation/FooterLogo/FooterLogo';
 import { FooterConditions2 } from '../../Molecules/FooterNavigation/FooterConditions2/FooterConditions2';
 import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/FooterIcons';
-import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../Atom/BaseTypography/Paragraph/Paragraph';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 

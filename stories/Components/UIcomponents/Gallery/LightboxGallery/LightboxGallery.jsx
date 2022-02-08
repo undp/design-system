@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
 import { lightboxGallery } from '../../../../assets/js/lightbox-gallery';
 import './lightbox.scss';

@@ -6,3 +6,4 @@ export const Code = ({ label }) => (
     {label}
   </code>
 );
+

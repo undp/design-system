@@ -8,3 +8,4 @@ export const Mark = ({ label }) => (
     </mark>
   </p>
 );
+

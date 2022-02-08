@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { sidebarNav, sidebarMenu } from '../../../assets/js/sidebar';
-import { Sidebardata } from '../../../Molecules/Sidebar-data/Sidebardata';
+import { Sidebardata } from '../../../Molecules/SidebarData/SidebarData';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import './sidebar.scss';
 

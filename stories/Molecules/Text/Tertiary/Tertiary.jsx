@@ -1,7 +1,7 @@
 import React from 'react';
 import './tertiary.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
-import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../../Atom/BaseTypography/Paragraph/Paragraph';
 
 export const Tertiary = ({ headerText, countryText, descriptionText }) => (
   <div className="tertiary">

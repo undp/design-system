@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './stats-cards.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 

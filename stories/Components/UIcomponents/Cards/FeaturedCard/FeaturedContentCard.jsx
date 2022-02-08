@@ -2,7 +2,7 @@ import React from 'react';
 import './featured-content-card.scss';
 import '../../../../assets/scss/_grid.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
 
 export const size_options = {

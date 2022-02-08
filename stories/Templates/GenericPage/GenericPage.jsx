@@ -4,7 +4,7 @@ import { PageHero } from '../../Components/UIcomponents/Hero/PageHero/PageHero';
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Sidebar } from '../../Components/Navigationcomponents/Sidebar/Sidebar';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
-import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../Atom/BaseTypography/Paragraph/Paragraph';
 import { FluidImageSizeCarousel } from '../../Components/UIcomponents/Carousel/FluidImageSizeCarousel/FluidImageSizeCarousel';
 import { Footer } from '../../Organism/Footer/Footer';
 import './generic-page.scss';

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../assets/scss/_grid.scss';
-import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../../Atom/BaseTypography/Paragraph/Paragraph';
 
 export const BodyColumnTwo = ({ descriptionText }) => (
   <div className="grid-x grid-margin-x">

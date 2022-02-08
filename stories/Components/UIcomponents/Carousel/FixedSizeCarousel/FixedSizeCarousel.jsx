@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { CtaButton } from '../../Buttons/CtaButton/CtaButton';
 import { swiper } from '../../../../assets/js/swiper';
 import './fixed-size-carousel.scss';

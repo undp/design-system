@@ -5,7 +5,7 @@ import { SignUp } from '../../Components/Forms/NewsLetterSignUp/NewsLetterSignUp
 import { FooterLists } from '../../Molecules/FooterNavigation/FooterLists/FooterLists';
 import { FooterConditions } from '../../Molecules/FooterNavigation/FooterConditions/FooterConditions';
 import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/FooterIcons';
-import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../Atom/BaseTypography/Paragraph/Paragraph';
 import { accordion } from '../../assets/js/accordion';
 import { Icons } from '../../Atom/Icons/Icons';
 import IconsGlobe from '../../assets/icons/Globe.svg';

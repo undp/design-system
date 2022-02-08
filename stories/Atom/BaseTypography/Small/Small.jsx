@@ -8,3 +8,4 @@ export const Small = ({ label }) => (
     </small>
   </p>
 );
+
