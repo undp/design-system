@@ -7,7 +7,7 @@
   display: flex;
   position: relative;
 
-  input {
+  input[type="text"] {
     @include transition(all 200ms ease-in-out);
     @extend %expand_search;
 
@@ -21,6 +21,7 @@
 
     &:focus {
       outline: none;
+      box-shadow: none;
     }
   }
 

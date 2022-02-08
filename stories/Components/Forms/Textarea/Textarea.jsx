@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
+
 export const Textarea = ({
   type, rows, cols, placeholder, labelText, errorText, minlength, helpText, State,
 }) => {
@@ -16,12 +18,10 @@ export const Textarea = ({
   }, [state]);
   return (
     <>
-      <div className={['input-group', `${state}`].join(' ')}>
-        {labelText && <label htmlFor={[`${type}`]}>{ labelText }</label>}
-        <textarea ref={inputElement} type={type} disabled={State == 'Disabled'} placeholder={placeholder} minLength={minlength} cols={cols} rows={rows} id={type} />
-        {helpText && <p className="help">{ helpText }</p>}
-        {(State == 'Error') && <p className="error">{ errorText }</p>}
-      </div>
+      {labelText && <label className={cls((`${state}` == 'disabled') ? `${state}` : '')} htmlFor={[`${type}`]}>{ labelText }</label>}
+      <textarea className={cls((`${state}` !== 'focus') ? `${state}` : '')} ref={inputElement} type={type} placeholder={placeholder} minLength={minlength} cols={cols} rows={rows} id={type} />
+      {helpText && <p className="help">{ helpText }</p>}
+      {(State == 'Error') && <p className="error">{ errorText }</p>}
     </>
   );
 };
