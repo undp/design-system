@@ -17,7 +17,7 @@ export const PageHeroOption = ({
         </div>
       </div>
       <div className="cell medium-7">
-        <div className="pagehero-image">
+        <div className="homepage-hero-image">
           {variant === 'video' ? (
             <Video src={videosrc} width="100%" height="100%" />
           ) : (

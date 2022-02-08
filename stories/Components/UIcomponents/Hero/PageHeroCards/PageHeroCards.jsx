@@ -24,7 +24,7 @@ export const CountryCardHero = ({ data, title, subtitle }) => {
           <Heading type="3" label={subtitle} dataViewport="true"/>
         </div>
       </div>
-      <div className="pagehero-cards-items" data-swiper-device="mobile" dir={rtl}>
+      <div className="pagehero-cards-items" data-swiper-device="tablet" dir={rtl}>
         <div className="swiper-scrollbar" />
         <CountryCard data={data} />
       </div>

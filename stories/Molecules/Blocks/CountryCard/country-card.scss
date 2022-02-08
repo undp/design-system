@@ -5,19 +5,19 @@
 .pagehero-cards {
   &-wrap {
     &.swiper-wrapper {
-      @include devicebreak(medium) {
+      @include devicebreak(large) {
         flex-wrap: wrap;
       }
     }
   }
 
   &-box {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
 
-    @include devicebreak(medium) {
+    @include devicebreak(large) {
       flex: 0 0 calc(25% - 1.5rem);
       max-width: calc(25% - 1.5rem);
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
 
       &.swiper-slide {
         a {
@@ -68,7 +68,7 @@
       }
     }
 
-    @include devicebreak(medium) {
+    @include devicebreak(large) {
       margin-top: $spacing-12;
     }
 

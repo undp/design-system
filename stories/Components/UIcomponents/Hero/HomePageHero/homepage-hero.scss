@@ -99,6 +99,10 @@
     img,
     video {
       @extend %img-cover;
+
+      @include devicebreak(small) {
+        height: 20.313rem;
+      }
     }
   }
 
