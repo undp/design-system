@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { FontResize } from '../../../../assets/js/font-resize';
 import './stats-cards.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';

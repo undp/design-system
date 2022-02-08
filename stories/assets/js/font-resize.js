@@ -1,5 +1,5 @@
 
-export function FontResize(element) {
+export function fontResize(element) {
   // run the function
   resize();
   function resize() {

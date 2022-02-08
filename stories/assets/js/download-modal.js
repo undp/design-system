@@ -14,12 +14,12 @@ export function checkbox(ele, submitbtn) {
 /* select option filter click start */
 export function selectFilter() {
   $('.select-box li span').on('click', function () {
-    const datavalue = $(this).parent().attr('data-value');
+    const $datavalue = $(this).parent().attr('data-value');
     $(this).closest('.download-content').find('.form-check input').prop('checked', false);
     $('.download-footer .button').addClass('disabled');
-    if (datavalue != 'default') {
+    if ($datavalue != 'default') {
       $(this).closest('.download-content').find('.download-row').addClass('hide');
-      $(this).closest('.download-content').find(`[data-value=${datavalue}]`).removeClass('hide');
+      $(this).closest('.download-content').find(`[data-value=${$datavalue}]`).removeClass('hide');
     } else {
       $(this).closest('.download-content').find('.download-row').removeClass('hide');
     }
