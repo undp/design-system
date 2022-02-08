@@ -2,10 +2,7 @@ import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 import { desktopView } from '../../../../assets/js/undp';
-import { Icons } from '../../../../Atom/Icons/Icons';
-import IconsGlobe from '../../../../assets/icons/Globe.svg';
-import IconsSearch from '../../../../assets/icons/Search.svg';
-import { Logo } from '../../../../Atom/Logo/Logo';
+import { Logo } from '../../../../Atom/Logo/logo';
 import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
 import { Menu } from '../../Menu/Menu';
 import MegaMenu from '../MegaMenu/MegaMenu';
@@ -55,12 +52,8 @@ const GlobalHeader = ({
               </nav>
             </div>
             <div className="cell large-2 small-2 top-right">
-              <button className="icon-globe">
-                <Icons src={IconsGlobe} alt="icon-global" />
-              </button>
-              <button className="icon-search">
-                <Icons src={IconsSearch} alt="icon-search" />
-              </button>
+              <button className="icon-globe">Global</button>
+              <button className="icon-search">Search</button>
             </div>
             <MobileNav
               navigationData={navigationData}

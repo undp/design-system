@@ -2,10 +2,7 @@ import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 import { desktopView } from '../../../../assets/js/undp';
-import { Icons } from '../../../../Atom/Icons/Icons';
-import IconsGlobe from '../../../../assets/icons/Globe.svg';
-import IconsSearch from '../../../../assets/icons/Search.svg';
-import { Logo } from '../../../../Atom/Logo/Logo';
+import { Logo } from '../../../../Atom/Logo/logo';
 import { Menu } from '../../Menu/Menu';
 import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
 import MegaMenu from '../MegaMenu/MegaMenu';
@@ -26,11 +23,11 @@ const CountrySiteHeader = ({
   }, [locale]);
 
   return (
-    <header className="country-header">
+    <header className="country-header country-load-animation">
       <section className="header">
-        <div className="grid-container">
+        <div className="grid-container fluid">
           <div className="grid-x grid-margin-x align-content-middle">
-            <div className="cell large-9 small-8 align-self-middle top-left">
+            <div className="cell large-9 small-9 align-self-middle top-left">
               <a href="#" className="logo" tabIndex="0">
                 <Logo src={pnud} alt="UNDP Logo" />
               </a>
@@ -40,7 +37,7 @@ const CountrySiteHeader = ({
               </div>
               {desktopView && <Menu data={navigationData} />}
             </div>
-            <div className="cell large-3 small-4 top-right">
+            <div className="cell large-3 small-3 top-right">
               <Languageswitcher
                 data={languageswitcherData.languagedata}
                 headerText={languageswitcherData.headerText}
@@ -51,12 +48,8 @@ const CountrySiteHeader = ({
                 <span className="hamburger-line line-bottom" />
                 Nav toggle
               </button>
-              <button className="icon-globe">
-                <Icons src={IconsGlobe} alt="icon-global" />
-              </button>
-              <button className="icon-search">
-                <Icons src={IconsSearch} alt="icon-search" />
-              </button>
+              <button className="icon-globe">Global</button>
+              <button className="icon-search">Search</button>
             </div>
             <MobileNav
               navigationData={navigationData}
