@@ -10,7 +10,7 @@ export const DownloadRow = ({
     <div className="download-row__main">
       <label for={`list-${value}`} className="download-row__data">
         {title}
-        <span tabIndex="0">{subtitle}</span>
+        <span>{subtitle}</span>
       </label>
       {args.type === 'Checkbox' && <Checkbox value={value} id={`list-${value}`} arialabel="checkbox"/> }
       {args.type === 'Download' && (
