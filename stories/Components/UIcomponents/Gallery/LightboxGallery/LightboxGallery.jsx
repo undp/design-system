@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
-import { lightbox_Gallery } from '../../../../assets/js/lightbox-gallery';
+import { lightboxGallery } from '../../../../assets/js/lightbox-gallery';
 import './lightbox.scss';
 import './lightbox-gallery.scss';
 import { Imagecaption } from '../../../../Molecules/Imagecaption/Imagecaption';
@@ -13,7 +13,7 @@ export const LightboxGallery = ({
   titleText, descText, buttonText, data
 }) => {
   useEffect(() => {
-    lightbox_Gallery();
+    lightboxGallery();
   }, []);
   return (
     <div className="grid-x grid-margin-x lightbox-gallery">

@@ -1,7 +1,7 @@
 /**
- * lightbox_gallery.js library
+ * lightbox-gallery.js library
  */
-export function lightbox_Gallery() {
+export function lightboxGallery() {
   var lightboxDescription = GLightbox({
     selector: '.glightbox',
     draggable: true,
@@ -13,9 +13,9 @@ export function lightbox_Gallery() {
     $('.image__description').each(function () {
 
       // caption class add
-      var gDesHeight = $(this).height();
-      var gImgHeight = $(this).siblings('.image').height();
-      if (gDesHeight > gImgHeight) {
+      var $gDesHeight = $(this).height();
+      var $gImgHeight = $(this).siblings('.image').height();
+      if ($gDesHeight > $gImgHeight) {
         $(this).addClass('caption_top');
       } else {
         $(this).removeClass('caption_top');
