@@ -4,22 +4,26 @@
 
 .country-page {
   &-wrapper {
-    margin-bottom: 4.375rem;
+    margin-bottom: $spacing-70;
 
     .wide-card {
       margin-top: 2.688rem;
-      padding-top: 1.25rem;
+      padding-top: $font-size-20;
+
+      h6 {
+        padding-top: 0;
+      }
     }
 
     .hero-container {
-      margin-top: 4.375em;
+      margin-top: $spacing-70;
       padding-bottom: 1.875rem;
       padding-top: 1.875rem;
 
       @include devicebreak(medium) {
         margin-top: 7.188rem;
-        padding-bottom: 3.125rem;
-        padding-top: 4.375rem;
+        padding-bottom: $spacing-50;
+        padding-top: $spacing-70;
       }
 
       h1 {
@@ -32,7 +36,7 @@
 
       @include devicebreak(small) {
         .homepage-hero-wide {
-          border-left: 1rem solid $color-gray-300;
+          border-left: $spacing-05 solid $color-gray-300;
           padding-left: calc(8.33333% + #{$spacing-06} / 2);
         }
       }
@@ -71,12 +75,12 @@
         text-align: center;
 
         @include devicebreak(medium) {
-          margin-top: 9.375rem;
+          margin-top: $width-150;
         }
       }
 
       &-cards {
-        margin-top: 3.75rem;
+        margin-top: $spacing-60;
 
         @include devicebreak(medium) {
           margin-top: $spacing-08;
@@ -85,7 +89,7 @@
     }
 
     .cta-container {
-      margin-top: 5.75rem;
+      margin-top: $spacing-60;
     }
   }
 }
@@ -95,7 +99,7 @@
     .homepage-hero-wide {
       @include devicebreak(small) {
         border-left: none;
-        border-right: 1rem solid $color-gray-300;
+        border-right: $spacing-05 solid $color-gray-300;
         padding-left: 0;
         padding-right: calc(8.33333% + #{$spacing-06}/ 2);
       }

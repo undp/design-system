@@ -27,10 +27,6 @@
     }
 
     .heading-big {
-      @include devicebreak(medium) {
-        padding-bottom: 25rem;
-      }
-
       ul li {
         margin-top: $spacing-08;
       }
@@ -83,7 +79,6 @@
 
   &-material {
     padding-bottom: 7.188rem;
-    padding-top: 5.625rem;
 
     h2 {
       margin-bottom: 2.813rem;
