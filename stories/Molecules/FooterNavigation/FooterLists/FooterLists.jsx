@@ -1,5 +1,4 @@
 import React from 'react';
-import './footer-lists.scss';
 import { Link } from '../../../Atom/Typography/Links/Links';
 
 export const variant_options = {
