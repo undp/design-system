@@ -75,6 +75,17 @@ export const navigationInitialize = (locale) => {
       .siblings().removeClass('active-content');
   });
 
+  $('.mega-wrapper').on('focus', '.submenu li a', function () {
+    $(this).parent().addClass('active').siblings().find('a').attr("tabIndex","-1");
+    $('.show-on-focus').attr("tabIndex","0"); 
+  });
+
+  $('.mega-wrapper').on('focus', '.sub-sub-menu ul:last-child li:last-child a:last-child', function (e) {
+    e.stopImmediatePropagation();
+    $(".submenu li a").attr("tabIndex","0");
+    $(".submenu li.active").next().find('a').focus();
+  });
+
   $(window).scroll(() => {
     var winScroll = $(window).scrollTop();
     if (winScroll >= 1) {
