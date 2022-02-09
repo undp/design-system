@@ -1,5 +1,4 @@
 import React from 'react';
-import './footer-icons.scss';
 
 export const variant_options = {
   default: '',

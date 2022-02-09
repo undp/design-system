@@ -4,6 +4,7 @@ import { FooterLogo } from '../../Molecules/FooterNavigation/FooterLogo/FooterLo
 import { SignUp } from '../../Components/Forms/NewsLetterSignUp/NewsLetterSignUp';
 import { FooterLists } from '../../Molecules/FooterNavigation/FooterLists/FooterLists';
 import { FooterConditions } from '../../Molecules/FooterNavigation/FooterConditions/FooterConditions';
+import { FooterConditions2 } from '../../Molecules/FooterNavigation/FooterConditions2/FooterConditions2';
 import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/FooterIcons';
 import { P } from '../../Atom/BaseTypography/Paragraph/Paragraph';
 import { accordion } from '../../assets/js/accordion';
@@ -16,13 +17,15 @@ import IconsSearchWhite from '../../assets/icons/Search-white.svg';
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
 export const Footer = ({
-  headerText, headerText2, style, alt, src, srctwo, logolink, element, type, required, mode, label, button, errorText, placeholder, menutitle, copyright, data, menudata, ...args
+  headerText, headerText2, style, alt, src, srctwo, logolink, element, type, required, mode, label, button, errorText, placeholder, menutitle, copyright, data, menudata, variant, ...args
 }) => {
   useEffect(() => {
     accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
   }, []);
   return (
-    <footer className={cls('footer', `${args.color === 'inverted' ? args.color : ''}`)}>
+    <>
+    {variant === 'default' && (
+     <footer className={cls('footer', `${args.color === 'inverted' ? args.color : ''}`)}>
       <div className="grid-x">
         <div className="cell medium-10 medium-offset-1">
           <div className="grid-x footer-head">
@@ -75,9 +78,44 @@ export const Footer = ({
         </div>
       </div>
     </footer>
-  );
+    )}
+
+    {variant === 'simple' && (
+     <footer className={cls('footer', `${args.color === 'inverted' ? args.color : ''}`)}>
+      <div className="grid-x">
+        <div className="cell medium-10 medium-offset-1">
+          <div className="grid-x footer-top">
+            <div className="cell medium-5">
+              {args.color === 'default' ? (
+                <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style="" />
+              ) : (
+                <FooterLogo src={src} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style={args.color} />
+              )}
+            </div>
+            <div className="cell medium-5 show-large">
+              <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
+            </div>
+          </div>
+          <div className="grid-x footer-bottom">
+            <div className="cell medium-5">
+              <P label={copyright} tabIndex="0" />
+            </div>
+            <div className="cell medium-6">
+              <FooterConditions2 footerdata2={menudata} variant={args.color === 'default' ? args.color : 'inverted'} />
+              <div className="show-small">
+                <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    )}
+
+    </>
+    );
 };
 
 Footer.defaultProps = {
-  color: 'default',
+  color: 'default'
 };

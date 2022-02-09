@@ -1,6 +1,5 @@
 import { Meta, Story } from "@storybook/addon-docs";
 import { Footer } from "./Footer";
-import { Footertwo } from "./FooterTwo";
 import logo from "../../assets/images/undp-logo-blue.svg";
 import logowhite from '../../assets/images/undp-logo-white.svg';
 
@@ -292,9 +291,14 @@ export const getCaptionForLocale = (locale) => {
 <Meta
   title="Components/UI components/Footer"
   argTypes={{
+    variant: {
+      options: ["default", "simple"],
+      control: { type: "inline-radio" },
+      defaultValue: "default",
+    },
     color: {
       options: ["default", "inverted"],
-      control: { type: "radio" },
+      control: { type: "inline-radio" },
       defaultValue: "default",
     },
   }}
@@ -324,9 +328,8 @@ export const getCaptionForLocale = (locale) => {
 
 The Footer component multiusage component.
 
-## Default Representation & various possible states
+#### Default Representation & various possible states
 
-<div className="subheading">Footer</div>
 
 <Story name="Footer" parameters={{
     layout: "fullscreen"
@@ -358,58 +361,16 @@ The Footer component multiusage component.
   }}
 </Story>
 
-<div className="subheading">Footer Two</div>
-
-<Story name="Footer Two" parameters={{
-    layout: "fullscreen"
-  }}>
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <Footertwo
-        src={logo}
-        srctwo={logowhite}
-        headerText={caption.headerText}
-        logolink="https://www.undp.org"
-        alt={"UNDP Logo"}
-        element="input"
-        type="email"
-        required="required"
-        mode="form-email"
-        errorText={caption.errorLabel}
-        label={caption.labelname}
-        button={caption.buttonname}
-        placeholder={caption.placeholdername}
-        menutitle={caption.pageTitle}
-        data={caption.footerdata}
-        copyright={caption.copyright}
-        menudata={caption.menudata2}
-        {...args}
-      ></Footertwo>
-    );
-  }}
-</Story>
-
-## Dependencies
+### Dependencies
 
 Libraries or another dependency which are used in the component.
 
-<ul>
-  <li>For animation functionality its depend on the jQuery plugin library.</li>
-  <li>Custom JS file (footer_custom.js) is located in the same js folder.</li>
-</ul>
+- For animation functionality its depend on the jQuery plugin library.
+- Custom JS file **(accordion.js)** is located in the same js folder.
+- Take HTML from the HTML tab in the canvas
 
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>footer.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+- To use SCSS include the following files in your implementation
+- Include the common SCSS files like breakpoints, variables from **(accordion.js)**
+- Component SCSS file: **footer.scss**
+- To use CSS include the following files in your implementation
+- The compiled CSS file from **assets/css/style.css**
