@@ -126,6 +126,7 @@ export const navigationInitialize = (locale) => {
 
   const headerClass=localStorage.getItem('current-nav');
   if (headerClass == 'global-header') {
+    $('.global-header').removeClass('global-load-animation');
     $('.country-load-animation').addClass('run-animation');
     setTimeout(function () {
       $('.country-load-animation.run-animation').removeClass('country-load-animation run-animation').addClass('show-content');
@@ -136,6 +137,13 @@ export const navigationInitialize = (locale) => {
     }, 1000);
   } else {
     $('.country-header').removeClass('country-load-animation');
-    localStorage.setItem("current-nav", document.getElementsByTagName("header")[0].classList[0]);
+    $('.global-load-animation').addClass('run-animation');
+    setTimeout(function () {
+      $('.global-load-animation.run-animation').removeClass('global-load-animation run-animation').addClass('show-content');
+    }, 800);
+    setTimeout(function () {
+      $('.global-header').removeClass('show-content');
+      localStorage.setItem("current-nav", document.getElementsByTagName("header")[0].classList[0]);
+    }, 1000);
   }
 };

@@ -199,5 +199,18 @@
         }
       }
     }
+    &.country-load-animation{
+      .header .top-left .logo{
+        left: inherit;
+        right: 50%;
+      }
+    }
+    &.run-animation{
+      .header .top-left .logo{
+        left: inherit;
+        right:$spacing-04;
+        transform: translateX(0);
+      }
+    }
   }
 }

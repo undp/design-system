@@ -128,8 +128,35 @@
 
         @include devicebreak(small) {
           background:transparent url(#{$img-path-Iconfourback}/Search.svg) no-repeat left center;
+          margin-left: 0;
         }
       }
+    }
+  }
+
+  &.global-load-animation{
+    .header .mid-nav .logo{
+      position: fixed;
+      left:$spacing-04;
+      transform: translateX(0);
+      top:0;
+      @include transition(all 0.7s ease);
+    }
+    .mid-nav ul, .top-left, .top-right{
+      opacity: 0;
+      @include transition(opacity 0.3s ease);
+    }
+  }
+  &.run-animation{
+    .header .mid-nav .logo{
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &.show-content{
+    .mid-nav ul, .top-left, .top-right{
+       opacity: 1;
     }
   }
 }
@@ -165,6 +192,7 @@
 
       .icon-search {
         margin-left: $spacing-05;
+        margin-right: 0;
       }
     }
 
@@ -176,6 +204,18 @@
 
       .icon-bar {
         margin-right: $spacing-04;
+      }
+    }
+    &.global-load-animation{
+      .header .mid-nav .logo{
+        right:$spacing-04;
+        left:inherit;
+      }
+    }
+    &.run-animation{
+      .header .mid-nav .logo{
+        right: 50%;
+        left: inherit;
       }
     }
   }

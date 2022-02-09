@@ -26,7 +26,7 @@ const GlobalHeader = ({
   }, [locale]);
 
   return (
-    <header className="global-header">
+    <header className="global-header global-load-animation">
       <section className="header">
         <div className="grid-container fluid">
           <div className="grid-x grid-margin-x align-content-middle">
@@ -45,7 +45,7 @@ const GlobalHeader = ({
             <div className="cell large-8 small-8 mid-nav">
               <nav className="menu" role="navigation" arialabel="Navigation">
                 {desktopView && <Menu data={leftNavigationData} isGHeader={true} />}
-                <a href="#" className="logo">
+                <a href="https://develop.design-system.pages.dev/iframe?id=components-navigation-components-main-navigation-country-header--country-header&globals=locale:english&args=&viewMode=story" className="logo">
                   <Logo src={pnud} alt="UNDP Logo" />
                 </a>
                 {desktopView && <Menu data={rightNavigationData} isGHeader={true}/>}
