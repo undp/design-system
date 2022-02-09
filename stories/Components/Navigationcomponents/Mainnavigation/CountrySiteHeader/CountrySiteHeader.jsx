@@ -4,7 +4,7 @@ import { navigationInitialize } from '../../../../assets/js/navigation';
 import { desktopView } from '../../../../assets/js/undp';
 import { Logo } from '../../../../Atom/Logo/Logo';
 import { Menu } from '../../Menu/Menu';
-import { Languageswitcher } from '../../../UIcomponents/Languageswitcher/Languageswitcher';
+import { Languageswitcher } from '../../../UIcomponents/LanguageSwitcher/LanguageSwitcher';
 import MegaMenu from '../MegaMenu/MegaMenu';
 import MobileNav from '../MobileNav/MobileNav';
 import './country-site-header.scss';
