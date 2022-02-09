@@ -80,10 +80,13 @@ export const navigationInitialize = (locale) => {
     $('.show-on-focus').attr("tabIndex","0"); 
   });
 
-  $('.mega-wrapper').on('focus', '.sub-sub-menu ul:last-child li:last-child a:last-child', function (e) {
+  $('.mega-wrapper').on('focus keydown', '.sub-sub-menu ul:last-child li:last-child a:last-child', function (e) {
     e.stopImmediatePropagation();
     $(".submenu li a").attr("tabIndex","0");
-    $(".submenu li.active").next().find('a').focus();
+    var key = e.which;
+    if(key == 9){
+      $(".submenu li.active").next().find('a').focus();  
+    }
   });
 
   $(window).scroll(() => {
