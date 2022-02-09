@@ -5,7 +5,7 @@ import { Images } from '../../Atom/Images/ImageCaptionCredit/ImageCaptionCredit'
 import { Imagecaption } from '../../Molecules/ImageCaption/ImageCaption';
 import { Author } from '../../Components/UIcomponents/Author/AuthorColumn/AuthorColumn';
 import { BlockquoteComponent } from '../../Molecules/Text/BlockquoteComponent/BlockquoteComponent';
-import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../Atom/BaseTypography/Paragraph/Paragraph';
 import { List } from '../../Atom/Typography/Lists/Lists';
 import { FeaturedCard } from '../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
@@ -179,3 +179,4 @@ const ArticlePage = ({
 );
 
 export default ArticlePage;
+

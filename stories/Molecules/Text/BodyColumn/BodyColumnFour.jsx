@@ -1,5 +1,5 @@
 import React from 'react';
-import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../../Atom/BaseTypography/Paragraph/Paragraph';
 
 export const BodyColumnFour = ({ descriptionText }) => (
   <div className="grid-x grid-margin-x">

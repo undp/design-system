@@ -1,6 +1,6 @@
 import React from 'react';
 import './author-card.scss';
-import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { Author } from '../AuthorColumn/AuthorColumn';
 
 export const Authorcard = ({

@@ -1,7 +1,7 @@
 import React from 'react';
 import './sdgmodal.scss';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
-import { Statscardslider } from '../../Organism/Statscardslider/Statscardslider';
+import { Statscardslider } from '../../Organism/StatsCardSlider/StatsCardSlider';
 import { ContentCardWithAndWithoutImage } from '../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 

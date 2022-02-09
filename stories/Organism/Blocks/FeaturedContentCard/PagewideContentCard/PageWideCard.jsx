@@ -1,7 +1,7 @@
 import React from 'react';
 import './page-wide-card.scss';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
-import { P } from '../../../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { CtaButton } from '../../../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 import BackgroundImg from '../../../../assets/images/Pagewide.jpg';
 

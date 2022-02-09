@@ -6,3 +6,4 @@ export const Abbreviation = ({ label }) => (
     { label }
   </abbr>
 );
+

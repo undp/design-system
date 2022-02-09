@@ -8,3 +8,4 @@ export const Quotation = ({ label }) => (
     </q>
   </p>
 );
+

@@ -6,3 +6,4 @@ export const Cite = ({ label }) => (
     { label }
   </cite>
 );
+

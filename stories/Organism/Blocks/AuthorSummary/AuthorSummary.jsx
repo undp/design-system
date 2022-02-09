@@ -1,6 +1,6 @@
 import React from 'react';
 import './author-summary.scss';
-import { P } from '../../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { Authorimg } from '../../../Atom/Images/AuthorImage/AuthorImages';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 

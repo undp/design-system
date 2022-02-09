@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { PublicationCard } from '../../Molecules/Blocks/PublicationCard/PublicationCard';
-import { P } from '../../Atom/Base-typography/Paragraph/Paragraph';
+import { P } from '../../Atom/BaseTypography/Paragraph/Paragraph';
 import { ContentCardWithOutImage } from '../../Components/UIcomponents/Cards/ContentCard/ContentCardWithOutImage';
 import { Footer } from '../../Organism/Footer/Footer';
 import { Publicationthumb } from '../../Atom/Cards/PublicationThumbnail/PublicationThumbnail';
