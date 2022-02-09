@@ -33,3 +33,4 @@ export const Languageswitcher = ({
 Languageswitcher.defaultProps = {
   variant: 'blue',
 };
+
