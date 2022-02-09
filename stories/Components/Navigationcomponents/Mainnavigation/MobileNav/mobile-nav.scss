@@ -185,6 +185,9 @@
     display: block;
   }
 }
+.top-right .menu-hamburger {
+  margin-left:0;
+}
 
 .menu-hamburger.is-active .hamburger-line.line-top {
   transform: translateY(0) rotate(45deg);
