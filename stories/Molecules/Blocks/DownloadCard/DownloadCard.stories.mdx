@@ -1,4 +1,4 @@
-import { Meta, Story,  Canvas, Source } from '@storybook/addon-docs';
+import { Meta, Story,  Canvas, Source, Anchor } from '@storybook/addon-docs';
 import { DownloadCard } from './DownloadCard';
 import img from '../../../assets/images/card-thumbnail.jpg';
 
@@ -70,6 +70,8 @@ The Download Card component defines a card of information data with some items -
   }}
 </Story>
 
+<Anchor storyId='components-ui-components-cards-download-card--card-module'></Anchor>
+
 <div className="subheading2">Card Component</div>
 
 <p>Cards show the card category images, title, format, and download option to related the content in the design with short information</p>
@@ -80,6 +82,8 @@ The Download Card component defines a card of information data with some items -
     return <DownloadCard title={caption.title} format={caption.format}  download={caption.download} image2={img} {...args} ></DownloadCard>;
   }}
 </Story>
+
+<Anchor storyId='components-ui-components-cards-download-card--download-module'></Anchor>
 
 <div className="subheading2">Download Component</div>
 
