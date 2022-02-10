@@ -70,7 +70,7 @@
         position: relative;
         width: 100%;
         padding-left: 0;
-
+        
         @include devicebreak(xlarge) {
           margin-bottom: $spacing-06;
         }
@@ -86,6 +86,7 @@
         &:focus,
         &:focus-within {
           outline: 0;
+        
           .image {
             @include devicebreak(xlarge) { 
               &:before {
@@ -98,12 +99,14 @@
                 width: 100%;
                 position: absolute;
                 opacity: 0.4;
+                @include transition(all 0.3s ease-in);
                }
-             }
+            }
           }
     
           .image__description {
             opacity: 1;
+            @include transition(all 0.3s ease-in);
           }
         }
 
@@ -133,8 +136,6 @@
       position: absolute;
       z-index: 2;
       opacity: 0;
-
-      @include transition(all 0.2s ease-in-out);
 
       @include devicebreak(xlarge) {
         display: block;

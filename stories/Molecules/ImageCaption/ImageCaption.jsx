@@ -31,7 +31,7 @@ export const Imagecaption = ({
       {args.caption === 'false' && args.credit === 'false' ? (
         <></>
       ) : (
-        <figcaption className={cls('image__caption', `${opacityonly}`, `${caption_variant}`, `${credit_variant}`)} data-viewport='true'>
+        <figcaption className={cls('image__caption', `${opacityonly}`, `${caption_variant}`, `${credit_variant}`)} >
           {args.caption === 'true' && (
           <P label={paragraph} />
 
