@@ -117,5 +117,6 @@ export const Footer = ({
 };
 
 Footer.defaultProps = {
-  color: 'default'
+  color: 'default',
+  variant: 'default'
 };
