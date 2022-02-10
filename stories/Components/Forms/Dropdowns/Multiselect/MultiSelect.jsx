@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./multi-select.scss";
 import { multiSelect } from "../../../../assets/js/multi-select";
 import { Checkbox } from "../../Checkbox/Checkbox";
+import { Radio } from "../../Radio/Radio";
 
 const cls = (...classes) =>
   classes.filter(Boolean).length > 0 ? classes.filter(Boolean).join(" ") : null;
@@ -11,7 +12,7 @@ const SelectTag = ({ text, eleId, locale, ...args }) => {
     multiSelect(locale);
   }, [locale]);
 
-  let ElementTag = Checkbox;
+  let ElementTag = (args.variant === "Radio") ? Radio : Checkbox;
 
   return (
     <div className="multi-select" data-multi-select="">
