@@ -160,38 +160,41 @@ export const statsArray = (locale) => {
 
 <Meta title="Patterns/Stats slider (two rows)"/>
 
-<style>{`
-  .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-  div[id^="story--molecules-text-authors"] {
-    padding: 20px;
-    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 25px 0px 40px;
-    border-radius: 4px;
-  }
-`}</style>
+# Stats Slider
 
-# StatsSlider component
+A Stats slider is a group of cards arranged horizontally in two rows that slide in from opposite directions on a page scroll.
 
-## Overview
+### Overview
 
-The StatsSlider Component is created for showing the card grid in desktop with parallax effects and slider in mobile view, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+The stats slider component is an effective way to represent multiple stats visually. The slider consists of multiple cards arranged in two rows that slide in from opposite directions when the user scrolls the page thus grabbing the user’s attention.
 
-## Default Representation & various possible states
+The stats card slider is a type of pattern which uses multiple components and arranges them in a visually appealing way.
+
+The stats card slider is used to show various related statistics.
+
+### When to use:
+To showcase related stats
+To grab a users attention while scrolling through
+If you have only a small space to display a lot of content.
+
+### Content
+The stats card slider is made up of a group of stats cards arranged in two rows. The stats cards contain a value, label, and description. The description should be precise and not more than a couple of lines.
+
+The number of cards will be divided equally into two rows and will fit the grid width.
+
+### Behaviors
+#### States
+
+A stats card slider has 2 states on larger resolutions. Static and scrolling. 
+By default, only the section title of the slider should be displayed. As a user scrolls down the page, the first card from both rows will be shown at the extreme left and right of the page. As the user scrolls further and the slider is in the center of the viewport, all the cards in both rows should be displayed and both rows should be aligned in the center of the page. Additionally, an accent color overlay is displayed on the hover
+
+On mobile, this slider is converted to a standard carousel. The card in the center of the viewport will display the hover effect.
+
+The following behavior modifiers are available:
+
+A medium or a small stats card is used in sliders
+- Medium: .statscard--md 
+- Small: .statscard--sm
 
 <Story name="Stats slider (two rows)">
   {(args, { globals: { locale } }) => {
@@ -200,37 +203,43 @@ The StatsSlider Component is created for showing the card grid in desktop with p
   }}
 </Story>
 
-## Dependencies
+### Usage:
+- Copy HTML from the HTML tab of canvas in your HTML page and include CSS and JS in ‘CSS and JS References’ section.
+- Initialize the swiper and parallax effect by calling functions mentioned below 
+- swiper('.stats-card-slider')
+- parallaxEffect('.stats-card-slider')
 
-Not Applicable
+This widget displays parallax on desktop and slider on mobile, so it has to apply both on load. 
+Include Swiper (https://swiperjs.com/get-started) and https://greensock.com/docs/v3/Installation GSAP libraries for parallax (include gsap, ScrollTrigger and EasePack) and slider effects in your HTML file.
 
-## Usage
+### CSS and JS References
 
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like variables, mixin from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>statsslider.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-  <u>To use JS include the following files in your implementation</u>
-  <li>
-    Include JS Slider library file  from <code>assets/js/swiper.js</code>
-  </li>
-  <li>
-    Include JS Parallax library file from <code>assets/js/gsap.min.js</code>
-  </li>
-  <li>
-    Include JS Parallax library file from <code>assets/js/ScrollTrigger.min.js</code>
-  </li>
-  <li>
-    The compiled JS file from <code>assets/js/SliderCustom.js</code>
-  </li>
-</ul>
+#### CSS:
+Include dist/css/base-minimal.min.css along with following css files.
+- dist/css/components/stats-slider.min.css
+- dist/css/components/stats-cards.min.css
+- dist/css/components/swiper.min.css
+
+#### JS:
+Includes following JS Files:
+- dist/js/swiper.min.js
+- dist/js/parallax.min.js
+
+Following external libraries needs to be included as well.
+- Swiper
+- GSAP core
+- GSAP ScrollTrigger plugin
+- GSAP EasePack plugin
+
+### Interactions
+
+The stats card slider follows the hover-over effect of the cards used. These cards are not clickable.
+
+### Changelog
+1.0 — Released component
+
+
+
+
+
+

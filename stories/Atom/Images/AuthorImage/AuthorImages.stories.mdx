@@ -1,6 +1,6 @@
-import { Meta, Story } from "@storybook/addon-docs";
-import { Authorimg } from "./AuthorImages";
-import user from "../../../assets/images/author.png";
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Authorimg } from './AuthorImages';
+import user from '../../../assets/images/author.png';
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
@@ -37,53 +37,41 @@ export const getCaptionForLocale = (locale) => {
   }}
 />
 
-<style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  div[id^="story--atoms-image-author-image"] {
-    display: inline-block;
-  }
-`}</style>
+# Author Image
+The Author Image component reveals the photo of the author.
 
-# Author Image Component
+### Overview
+The Author Image component displays the author’s image but does not contain any information.
 
-The <code>Author Image</code> component displays the author image.
+#### When to use:
+- When the image of the author is to be displayed.
 
-<Story name="Author Image">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Authorimg image={user} alt="Headshot of XYZ" {...args}></Authorimg>;
-  }}
-</Story>
+### Formatting
+#### Default
+It’s circular shaped with an image inside it.
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>
-  <li>
-    Author Images are saved in assets/images/ folder in SVG, PNG, JPG, JPEG
-    formats
-  </li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like normalize, variables from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>author-image.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+### Behaviors
+#### States
+There are two states in the Author Image component: Small and Large.
+- Samll
+- Large
+
+<Canvas>
+  <Story name="Author Image">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Authorimg image={user} alt="Headshot of XYZ" {...args}></Authorimg>;
+    }}
+  </Story>
+</Canvas>
+
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+
+#### JS:
+NA 
+
+### Changelog
+1.0 — Released component

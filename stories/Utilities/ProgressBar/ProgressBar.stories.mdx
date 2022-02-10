@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ProgressBar } from './ProgressBar'
 
 <Meta title="Utilities/Progress bar" component={ProgressBar} 
@@ -11,36 +11,66 @@ import { ProgressBar } from './ProgressBar'
    }}
  />
 
-<style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }  
-`}</style>
+The Progress Bar provides a visual representation of a user’s progress on-page.
 
-# Progressbar Component
+### Overview
+A progress bar is a graphical content element that shows the progress of an ongoing task on a computer.
 
-Progressbar provides a visual representation of a user’s progress on a page
+#### When to use:
 
-<Story name="Progress bar">
-   {(args) => {
-     return (
-       <ProgressBar {...args}></ProgressBar>
-     );
-   }}
- </Story>
+When the process requires more time to complete the user gets the exact progress.
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>progress.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Formatting
+#### Default
+The progress bar is an elongated rectangular bar that displays the progress of an extended computer operation.
+
+### Behaviors
+#### States
+The progress bar has two states: default and short.
+
+The following behavior modifiers are available:
+ 
+Progress Bar 0:
+Progressbar provides a visual representation of a user’s progress on a page indicating the progress bar is in 0 state showing the progress bar is in the initial state.
+
+
+Progress Bar 25:
+Progressbar provides a visual representation of a user’s progress on a page indicating the progress bar is in 25% progress.
+
+Progress Bar 50:
+Progressbar provides a visual representation of a user’s progress on a page indicating the progress bar is in 50% progress.
+	
+Progress Bar 100:
+Progressbar provides a visual representation of a user’s progress on a page indicating the progress bar is in 100% progress.
+
+<Canvas>
+  <Story name="Progress bar">
+    {(args) => {
+      return (
+        <ProgressBar {...args}></ProgressBar>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Usage
+- Copy the HTML from the HTML tab of canvas and include the CSS file.
+- To change the visual on progressbar need to change the value of value attribute [0 to 100] .
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/progress.min.css
+
+#### JS:
+
+NA
+
+### Interactions
+No interactions are needed with the progress bar. 
+
+### Changelog
+1.0 — Released component

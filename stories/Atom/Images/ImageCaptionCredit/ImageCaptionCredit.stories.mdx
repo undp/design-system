@@ -86,23 +86,29 @@ export const getCaptionForLocale = (locale) => {
 
 # Image with caption and credit component
 
+The Image with Caption and Credit describes the image and gives credit to it’s source.
+
+
 ## Overview
 
-The Image with caption and credit component multiusage component which creates boxes that are usually teasing some kind of content like - Image, Text, and Image author name. We are using a grid system to manage the different types of sizes and for the animation here assets/js/viewport.js. Image Caption Molecule are used for creating this card.
+The Image with caption and credit creates boxes that are usually teasing some kind of content like- Image, Text, and Image author name. A grid system is used to manage the different types of sizes and caption molecules are used for creating the card.
 
-## Default Representation & various possible states
+#### When to use:
 
-<div className="subheading">Story Controls</div>
+- When description and credit for the source of the image are to be added.
 
-We can check all types of Image with caption and credit variants by storybook <code> controls </code> .
+### Formatting
+#### Default
+It consists of a grid with an image and the description and the source of the image mentioned below or beside the image.
 
-<ul>
-<li>In the column, we check the option of card sizes like <code>Wide</code> , <code>Medium</code> , <code>Portrait</code> that's belong to the grid.</li>
-</ul>
+### Behaviors
 
-<div className="subheading">Modifier class</div>
+#### States
+It consists of three states: Wide, Medium, and Portrait.
 
-<code>image-section--portrait</code> <code>image__caption--unstag</code> <code>image__caption--stag</code>
+- Wide: In the wide state, the image is large-sized and the caption and credit are mentioned below the image.
+- Medium: In the medium state, the image is medium-sized and the caption and credit are mentioned below the image.
+- Portrait: In portrait state, the image is situated on either side of the grid, and the caption and credit beside the image.
 
 <Canvas>
   <Story name="Image with credit + caption" parameters={{ docs: { source: { code: `<div class="grid-x image-section">
@@ -136,28 +142,25 @@ We can check all types of Image with caption and credit variants by storybook <c
   </Story>
 </Canvas>
 
-## Dependencies
+### Usage:
+- Choose the size controls as either wide, medium or portrait from the Canvas. Caption and Credit controls as true or false from the control tab of canvas.
+- Copy the HTML from the HTML tab and include below listed css file.
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js.
 
-Libraries or another dependency which are used in the component.
+### CSS and JS References
 
-<ul>
-  <li>For animation functionality its depend on the jQuery plugin library.</li>
-  <li>Custom JS file (viewport.js) is located in the same js folder.</li>
-</ul>
+#### CSS:
 
-## Usage
+Add the base layout style from dist/css/base-minimal.css along with followings: 
 
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>images.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+- dist/css/components/image-caption.min.css
+
+#### JS:
+
+- dist/js/viewport.min.js
+
+### Interactions
+When the page containing the image is opened, the image zooms out and gives a 3-D effect.
+
+### Changelog
+1.0 — Released component

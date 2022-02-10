@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ProgressBarNavigation } from './ProgressBarNavigation';
 
 
@@ -15,36 +15,50 @@ import { ProgressBarNavigation } from './ProgressBarNavigation';
   }
 }}/>
 
-<style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }  
-`}</style>
+# Progress Bar
+The Progress Bar is used to display an indicator showing the completion progress of a task, typically displayed as a progress bar.
 
-# Progress Bar Component
-The Progress Bar component is used to displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+#### When to use:
+- When a user page needs an indicator to be displayed on top of the page to show the length of scroll for a particular page.
 
-<ul>
-<li>Progress Bar will be work on page scroll.</li>
-</ul>
+### Formatting
+#### Default
+Progress bar can be used as reading meter where scrolling progress of the page is captured in the bar. In this case additional javascript initialization is required as explained below. 
 
-<Story name="Progress Bar Navigation">
-  {(args) =>{
-    return <ProgressBarNavigation {...args}></ProgressBarNavigation>;
-  }}
-</Story>
+It has different color variations, which increase the length of the color based on the amount of scrolling done by the user.
 
-<div className="subheading">Usage</div>
-<ul>
-<li>We can take HTML from the HTML tab in the canvas tab</li>
-<li>Include the common SCSS file like normalize, variables, mixins, breakpoints from the folder <code>assets/scss</code></li>
-<li>Component wise SCSS file residing in each component <code>ProgressBarNavigation.css</code></li>
-<li>Include the Compiled CSS file from the <code>assets/css/style.css</code></li>
-</ul>
+<Canvas>
+  <Story 
+    name="Progress Bar Navigation"
+    parameters={{
+        layout: "fullscreen",
+        docs: {
+          inlineStories: false,
+        }
+      }}>
+    {(args) =>{
+      return <ProgressBarNavigation {...args}></ProgressBarNavigation>;
+    }}
+  </Story>
+</Canvas>
+
+### Usage
+To use this component, follow these steps:
+- Copy the HTML from the canvas
+- Add it to your HTML page
+- Include the CSS and JS listed below
+- You should have loader-ready
+
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/progress-bar-navigation.css
+
+#### JS:
+- dist/js/scrolling-progress-bar.min.js
+
+### Changelog
+1.0 — Released component
+
 

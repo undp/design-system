@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -21,16 +21,7 @@ export const getCaptionForLocale = (locale) => {
 <style>{`
   div#story--atoms-colors--colors {
     display: none;
-}
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  } 
+} 
   .color_wrapper{
     display: flex;
   }
@@ -270,7 +261,6 @@ Accent colors: Accent colors are the colors that are used for emphasis in a colo
       <div className="color__code">Hex: <code>#00C1FF</code></div>
     </div>
 </div>
-
 
 <Story name="Color palette">
   {(args, { globals: { locale } }) => {

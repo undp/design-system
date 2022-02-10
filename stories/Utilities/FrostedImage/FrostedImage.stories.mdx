@@ -1,49 +1,30 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { FrostedImage } from "./FrostedImage";
 
 <Meta title="Utilities/Frosted background" />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-`}</style>{" "}
+# Frosted background
 
-# Frosted background Component
+The Frosted background is used to embed an overlay in a web page.
 
-The Frosted background Component is used to embed an overlay in a web page.
+<Canvas>
+  <Story name="Frosted background">
+    return <FrostedImage></FrostedImage> ;
+  </Story>
+</Canvas>
 
-<Story name="Frosted background">
-  return <FrostedImage></FrostedImage> ;
-</Story>
+###
+### Usage
+- Take HTML from the HTML tab in canvas
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>
-  <li>
-    Author Images are saved in assets/images/ folder in SVG, PNG, JPG, JPEG
-    formats
-  </li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like normalize, variables from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>frostedimage.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+### CSS and JS References
+
+#### CSS:
+Add the base style only, located at **dist/css/base-minimal.css** along with following:
+- dist/css/components/froasted-background.min.css
+
+#### JS:
+NA
+
+### Changelog
+1.0 — Released component
