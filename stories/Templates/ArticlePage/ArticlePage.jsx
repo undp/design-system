@@ -92,7 +92,7 @@ const ArticlePage = ({
       <div className="grid-x">
         <div className="cell large-7 medium-10 medium-offset-2 author-section">
           <Heading type="5" label={headingData.detail5} />
-          <Author image={user} data={authorCardData} Number="three" />
+          <Author image={user} data={authorCardData} Number="Three" />
         </div>
       </div>
       <div className="grid-x">

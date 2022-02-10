@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import toggleFilter from '../../assets/js/filter-seach-bar';
+import toggleFilter from '../../assets/js/filter-search-bar';
 import { Chips } from '../../Components/UIcomponents/Buttons/Chips/Chips';
 import SelectTag from '../../Components/Forms/Dropdowns/Multiselect/MultiSelect';
 import './filter-and-search-bar.scss';
@@ -22,7 +22,7 @@ const FilterAndSearchBar = ({
         <SelectTag {...args} text={data} eleId="4" />
 
         <span className="active-filter">{activeFilterText}</span>
-        <div className="selected-Chips"></div>
+        <div className="selected-chips"></div>
         <button className='clear-search-filter'>{clearText}</button>
 
       </div>
