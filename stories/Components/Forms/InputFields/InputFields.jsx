@@ -20,20 +20,19 @@ export const Inputcomponent = ({
   }, [state]);
   return (
     <>
-      <div className={cls('input-group', (`${state}` !== 'focus') ? `${state}` : '')} > 
-        {labelText && <label htmlFor={[`${type}`]}>{ labelText }</label>}
-        <InputTag
-          ref={inputElement}
-          type={type}
-          disabled={State == 'Disabled'}
-          placeholder={placeholder}
-          name={type}
-          id={id}
-          {...(labelText ? '' : {'aria-label': placeholder})}
-        />
-        {helpText && <p className="help">{ helpText }</p>}
-        {(State == 'Error') && <p className="error">{ errorText }</p>}
-      </div>
+      {labelText && <label className={cls((`${state}` == 'disabled') ? `${state}` : '')} htmlFor={[`${type}`]}>{ labelText }</label>}
+      <InputTag
+        className={cls((`${state}` !== 'focus') ? `${state}` : '')}
+        ref={inputElement}
+        type={type}
+        disabled={State == 'Disabled'}
+        placeholder={placeholder}
+        name={type}
+        id={id}
+        {...(labelText ? '' : {'aria-label': placeholder})}
+      />
+      {helpText && <p className="help">{ helpText }</p>}
+      {(State == 'Error') && <p className="error">{ errorText }</p>}
     </>
   );
 };
