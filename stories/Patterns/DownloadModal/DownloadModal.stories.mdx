@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DownloadModal } from './DownloadModal';
 
 export const statsArray = (locale) => {
@@ -447,43 +447,72 @@ export const statsArray = (locale) => {
     }
   }}/>
 
-<style>{`
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-`}</style>
+# Download Modal
 
-# Download Modal component
+The download modal is used to download the individual digital assets associated with the main page, optionally grouped by category.
 
-## Overview
+### Overview
 
-The Download Modal Component is created for showing the modal popup include: Image, Select, Listing and CTA Button. It is a multi-usage component that creates are usually teasing some kind of content.
+This is a complex widget appearing in the modal window and representing a combination of Image (optional), Dropdown menu, and items list with corresponding checkboxes and Download button.
 
-## Default Representation & various possible states
+#### When to use:
 
-<Story name="Download Modal">
-  {(args, { globals: { locale } }) => {
-    const caption = statsArray(locale);
-    return <DownloadModal data={caption.data} button={caption.button} select={caption.select} id="downloadModal" modalbtn={caption.modalbtn} content={caption.content} {...args}></DownloadModal>;
-  }}
-</Story>
+To download assets, optionally grouped by category
 
-## Dependencies
+### Formatting
 
-Libraries or another dependency which are used in the component.
+#### Default
 
-- For animation functionality its depend on the jQuery plugin library.
-- Custom JS file (downloadmodal.js) is located in the same js folder.
+In this, the user will be given a list where he can select one or more assets to download. 
 
-## Usage
+### Behaviors
 
-- Take HTML from the HTML tab in the canvas.
-- <u>To use SCSS include the following files in your implementation</u>
-- Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
-- Component SCSS file: <code>downloadmodal.scss</code>
-- <u>To use CSS include the following files in your implementation</u>
-- The compiled CSS file from <code>assets/css/style.css</code>
+#### States 
+There are two state for download modal: Default and Select
+Default: In this, the user will be given options to choose the language for downloading the document. When no checkboxes are checked - The download button is in a disabled state.
+
+Select: In this, the user will be given the dropdown to select one or more languages to download the document.
+
+Close button dismisses the entire modal window and resets filter states and checkboxes.
+
+<Canvas>
+  <Story name="Download Modal">
+    {(args, { globals: { locale } }) => {
+      const caption = statsArray(locale);
+      return <DownloadModal data={caption.data} button={caption.button} select={caption.select} id="downloadModal" modalbtn={caption.modalbtn} content={caption.content} {...args}></DownloadModal>;
+    }}
+  </Story>
+</Canvas>
+
+### Usage
+- Choose the image either true or false and Category either Single or Multiple Languages from the control tab on canvas.
+- Grab the HTML from the HTML tab in the canvas and include css and js files listed below.
+- Make sure to add data-toggle='modal' and data-target-modal='&lt;your-modal-id&gt;' in your button or link which will open the modal box.
+- If you want select option then include select.min.js and initialize select by calling select();
+- If you want the add modal on click then include modal.min.js and initialize modal();
+- If you want the filter select on click then include downloadmodal.min.js and initialize selectFilter(); and checkbox('.form-check input', '.download-footer .button-primary'); on load.
+
+### CSS and JS References
+
+#### CSS
+
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/buttons.min.css
+- dist/css/components/publication-card.min.css
+- dist/css/components/modal.min.css
+- dist/css/components/custom-select.min.css
+- dist/css/components/checkbox.min.css
+- dist/css/components/download-modal.min.css
+- dist/css/components/download-row.min.css
+
+#### JS
+- dist/js/modal.min.js.
+- dist/js/select.min.js.
+- dist/js/downloadmodal.min.js.
+
+### Interactions
+There will be a checkbox where the user can click on it to select the asset and then click on the download button to download the document.
+
+### Changelog
+1.0 — Released component

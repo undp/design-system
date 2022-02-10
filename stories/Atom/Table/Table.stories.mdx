@@ -33,23 +33,44 @@ export const getCaptionForLocale = (locale) => {
 
 # Table
 
-Tables are used to make large volumes of data easy to understand and access, by displaying data in tabular format.
+Tables are used to represent data sets that are easy to understand and access.
 
-We have applied different variations in table, which are as follows:
-- Sizes: Table comes with large and small size
-- Variant: default, striped and border
-- Responsive: stacked, auto and scroll, fit for different use cases
 
-### Usage
-- Visit the **Canvas** tab
-- Try different variations from the controls
-- Go to HTML tab, copy the HTML and paste it in your HTML file
-- Inlude **dist/css/base-minimal.css** in your HTML page, and you should have a styled table
+### Overview
+Tables are used for large volumes of data that can be accessed easily and understandable by the user. These tables are created using various modifiers like default, striped, bordered, small, stacked, scroll. 
 
-<style>{`
-  .sbdocs-preview {display: none;}
-`}
-</style>
+#### When to use:
+
+These tables are used when there is huge data. When there is a huge volume of data to handle. Using this the data can be accessed easily.
+
+
+### Formatting
+#### Default
+The table is large in size, variant default and responsive is auto
+ 
+### Behaviors
+#### States
+
+The tables are created using various modifiers:
+
+**Default**: In this, there are 2 different states: 
+
+Large: In this state, the table size will be large, the variant is the default, and has auto responsive.
+Small: In the state, the table size is small, the variant is the default, and has auto responsive.
+
+**Selected**: In this, it has 2 different types of modifiers:
+
+Striped: The table size can be larger, or small, the variant is striped and the responsiveness of the table is either stacked, auto or scroll. 
+
+Stripped with stacked table view: In this, the table has stripped rows with stacked views.
+			
+Stripped with scrolled table view: In this, the table has a stripped style of view with scrollable content.
+		
+		
+The table size can be large or small, the variant is the border. The responsiveness of the table is either stacked, auto or scroll.
+
+- Border with stacked table view: This table has a border and will be stacked.
+- Border with scroll table view:  In this, the table has a border and will be scrollable.
 
 <Canvas>
   <Story name="Table">
@@ -59,3 +80,27 @@ We have applied different variations in table, which are as follows:
     }}
   </Story>
 </Canvas>
+
+### Usage
+- Select the size control as either Large or Small, variant as Default, Stripped or Border and responsive control as Stacked, Auto or Scroll from the control tab of canvas.
+- Copy the HTML from the HTML tab and include the css mentioned below.
+
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/table.css
+
+#### JS:
+NA
+
+### Interactions
+No interactions are needed with the progress bar. 
+
+### Changelog
+1.0 — Released component
+
+
+
+
+
