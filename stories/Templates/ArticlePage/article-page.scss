@@ -96,6 +96,9 @@
     @include devicebreak(medium) {
       margin-top: $spacing-70;
     }
+    img{
+      width: 100%;
+    }
   }
 
   .middle-caption {
