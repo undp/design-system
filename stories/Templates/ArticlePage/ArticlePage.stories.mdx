@@ -19,6 +19,13 @@ import {
   getBackForLocale,
   getSelectlanguage,
 } from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
+import mongoliaGoat from "../../assets/images/Mongolia-cashmere-goats.jpg";
+import farmlandlg from '../../assets/images/farmland-lg.jpg';
+import farmlandmd from '../../assets/images/farmland-md.jpg';
+import farmlandsm from '../../assets/images/farmland-sm.jpg';
+import logo from '../../assets/images/undp-logo-blue.svg';
+import logowhite from '../../assets/images/undp-logo-white.svg';
+
 export const getParaForLocale = (locale) => {
   switch (locale) {
     case "english":
@@ -60,6 +67,7 @@ export const getParaForLocale = (locale) => {
       };
   }
 };
+
 export const getAuthorCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
@@ -261,6 +269,12 @@ Add the base layout style from dist/css/base-minimal.css
           locationData={getLocationDataForLocale(locale)}
           langSelect={getSelectlanguage(locale)}
           backcaption={getBackForLocale(locale)}
+          mongoliaGoat={mongoliaGoat}
+          farmlandlg={farmlandlg}
+          farmlandmd={farmlandmd}
+          farmlandsm={farmlandsm}
+          logo={logo}
+          logowhite={logowhite}
         ></ArticlePage>
       );
     }}

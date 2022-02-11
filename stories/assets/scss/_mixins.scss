@@ -664,5 +664,15 @@
     }
   }
 }
+
+%progress-bar {
+  position: fixed;
+  top: 4.7rem;
+  z-index: 5;
+
+  @include devicebreak(xlarge) {
+    top: 7.1875rem;
+  }
+}
 /* placehoder end */
 

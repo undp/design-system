@@ -9,14 +9,10 @@ import { P } from '../../Atom/BaseTypography/Paragraph/Paragraph';
 import { List } from '../../Atom/Typography/Lists/Lists';
 import { FeaturedCard } from '../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard';
 import { Heading } from '../../Atom/Typography/Heading/Heading';
-import farmlandlg from '../../assets/images/farmland-lg.jpg';
-import farmlandmd from '../../assets/images/farmland-md.jpg';
-import farmlandsm from '../../assets/images/farmland-sm.jpg';
 import user from '../../assets/images/user.svg';
 import { Footer } from '../../Organism/Footer/Footer';
-import logo from '../../assets/images/undp-logo-blue.svg';
-import logowhite from '../../assets/images/undp-logo-white.svg';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
+import { ProgressBarNavigation } from '../../Atom/Navigation/ProgressBarNavigation/ProgressBarNavigation';
 
 const ArticlePage = ({
   data,
@@ -41,8 +37,14 @@ const ArticlePage = ({
   langSelect,
   backcaption,
   para,
+  mongoliaGoat,
+  farmlandlg,
+  farmlandmd,
+  farmlandsm,
+  logo,
+  logowhite
 }) => (
-  <div>
+  <div className='article-page'>
     <GlobalHeader
       backcaption={backcaption}
       locale={locale}
@@ -53,8 +55,8 @@ const ArticlePage = ({
       locationData={locationData}
       langSelect={langSelect}
     />
-
-    <div className="grid-container full mt-h">
+    <ProgressBarNavigation Colors="yellow" />
+    <div className="grid-container fluid mt-h">
       <div className="grid-x">
         <div className="cell large-9 medium-offset-1 medium-10">
           <PostHeader
@@ -69,9 +71,9 @@ const ArticlePage = ({
       <div className="grid-x">
         <div className="cell large-12 large-article-image">
           <Images
-            imagelg={farmlandlg}
-            imagemd={farmlandmd}
-            imagesm={farmlandsm}
+            imagelg={mongoliaGoat}
+            imagemd={mongoliaGoat}
+            imagesm={mongoliaGoat}
             alt="farmland"
             label={imageCaptionData.label}
             name={imageCaptionData.name}
@@ -92,7 +94,7 @@ const ArticlePage = ({
       <div className="grid-x">
         <div className="cell large-7 medium-10 medium-offset-2 author-section">
           <Heading type="5" label={headingData.detail5} />
-          <Author image={user} data={authorCardData} Number="Three" />
+          <Author image={user} data={authorCardData} Number="three" />
         </div>
       </div>
       <div className="grid-x">
