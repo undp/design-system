@@ -84,10 +84,19 @@
       }
     }
   }
-
-  .middle-image {
-    margin-bottom: $spacing-07;
-    margin-top: $spacing-10;
+}
+.large-article-image {
+  img{
+    width: 100%;;
+  }
+}
+.middle-image {
+  margin-bottom: $spacing-07;
+  margin-top: $spacing-10;
+  img{
+    width: 100%;
+  }
+}
 
     @include devicebreak(medium) {
       margin-top: $spacing-70;

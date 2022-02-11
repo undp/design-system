@@ -1,13 +1,29 @@
 import React from 'react';
 import './image.scss';
-import user from '../../../assets/images/bees.svg';
+import mongoliaGoat from '../../../assets/images/mongoliaGoat.jpg';
+import farmlandmd from '../../../assets/images/farmland-md.jpg';
+import farmlandsm from '../../../assets/images/farmland-sm.jpg';
 
-export const Image = () => {
+export const Image = ({ className, Type }) => {
   const image = {
-    src: user,
-    alt: 'Author Image',
+    srclg: mongoliaGoat,
+    srcmd: farmlandmd,
+    srcsm: farmlandsm,
+    alt: 'Undp Image',
   };
   return (
-    <img src={image.src} alt={image.alt} className="image" />
+    <>
+    {Type == 'img'
+      ? (
+        <img src={image.srclg} alt={image.alt} className={className} />
+      )
+      : (
+        <picture>
+            <source media="(min-width:1200px)" srcset={image.srclg} />
+            <source media="(min-width:767px)" srcset={image.srcmd} />
+            <img src={image.srcsm} alt={image.alt} className={className} />
+        </picture>
+      )}
+    </>
   );
 };
