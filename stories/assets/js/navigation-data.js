@@ -35,7 +35,7 @@ export const getData = (lang) => {
                             ${
   menu.linksCol1.length > 0
     ? menu.linksCol1
-      .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
+      .map((link) => `<li><a class="cta__link cta--space" tabindex="-1" href="#">${link.label}</a></li>`)
       .join(' ')
     : ''
 }
@@ -44,7 +44,7 @@ export const getData = (lang) => {
   menu.linksCol2.length > 0
     ? `<ul class="list-col-second">
                                   ${menu.linksCol2
-    .map((link) => `<li><a class="cta__link cta--space" href="#">${link.label}</a></li>`)
+    .map((link) => `<li><a class="cta__link cta--space" tabindex="-1" href="#">${link.label}</a></li>`)
     .join(' ')
 }
                               </ul>` : ''
