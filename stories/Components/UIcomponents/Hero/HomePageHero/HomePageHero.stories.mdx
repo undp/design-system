@@ -3,6 +3,7 @@ import { Homepagehero } from "./HomePageHero";
 import { Homepageherosplit } from "./HomePageHeroSplit";
 import { Homepageherooption } from "./HomePageHeroOption";
 import BackgroundImg from '../../../../assets/images/refugee.jpg';
+import BackgroundImg2 from '../../../../assets/images/refugee2.jpg';
 import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
 
 export const getCaptionForLocale = (locale) => {
@@ -15,6 +16,7 @@ export const getCaptionForLocale = (locale) => {
         subtitle:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis quis nibh in molestie. Proin fermentum eleifend erat eget eleifend. Duis in eros condimentum, pretium ligula.",
           imgsrc: BackgroundImg,
+          imgsrc2: BackgroundImg2,
           imgalt:BackgroundImg,
           videosrc: BackgroundVideo
       };
@@ -27,6 +29,7 @@ export const getCaptionForLocale = (locale) => {
         subtitle:
           "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Cras mattis quis nibh في molestie. وهكذا كان المراهقون الدافئون هم احتياجات المراهقين. Duis in eros sauce سعر الملعقة.",
           imgsrc: BackgroundImg,
+          imgsrc2: BackgroundImg2,
           imgalt:BackgroundImg,
           videosrc: BackgroundVideo
       };
@@ -39,6 +42,7 @@ export const getCaptionForLocale = (locale) => {
         subtitle:
           "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ Cras mattis quis nibh မုဒိန်းကျင့်ခံရခြင်း။ ထို့ကြောင့်နွေးထွေးသောဆယ်ကျော်သက်များသည်ဆယ်ကျော်သက်များ၏လိုအပ်ချက်များဖြစ်သည်။ Duis in eros ငံပြာရည် တစ်ဇွန်း၏စျေးနှုန်း။",
           imgsrc: BackgroundImg,
+          imgsrc2: BackgroundImg2,
           imgalt:BackgroundImg,
           videosrc: BackgroundVideo
       };
@@ -51,6 +55,7 @@ export const getCaptionForLocale = (locale) => {
         subtitle:
           "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 Cras mattis quis nibh inmolestie。 したがって、暖かいティーンエイジャーはティーンエイジャーのニーズでした。 エロスソースの飲酒運転、スプーンの価格。",
           imgsrc: BackgroundImg,
+          imgsrc2: BackgroundImg2,
           imgalt:BackgroundImg,
           videosrc: BackgroundVideo
       };
@@ -63,6 +68,7 @@ export const getCaptionForLocale = (locale) => {
         subtitle:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis quis nibh in molestie. Proin fermentum eleifend erat eget eleifend. Duis in eros condimentum, pretium ligula.",
           imgsrc: BackgroundImg,
+          imgsrc2: BackgroundImg2,
           imgalt:BackgroundImg,
           videosrc: BackgroundVideo
       };
@@ -150,6 +156,7 @@ The Homepage hero component multiusage component which creates boxes that are us
         button={caption.btnlabel}
         subtitle={caption.subtitle}
         imgsrc={caption.imgsrc}
+        imgsrc2={caption.imgsrc2}
         imgalt={caption.imgalt}
         headingTop={caption.headingTop}
         {...args}

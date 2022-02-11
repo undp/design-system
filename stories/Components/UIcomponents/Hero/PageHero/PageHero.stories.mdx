@@ -2,6 +2,7 @@ import { Meta, Story } from "@storybook/addon-docs";
 import { PageHero } from "./PageHero";
 import { PageHeroOption } from "./PageHeroOption";
 import BackgroundImg from '../../../../assets/images/garden.jpg';
+import BackgroundImg2 from '../../../../assets/images/garden2.jpg';
 import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
 
 export const getCaptionForLocale = (locale) => {
@@ -21,6 +22,7 @@ export const getCaptionForLocale = (locale) => {
     title: 'The sdgs in action',
     content: 'Our Focus',
     imgsrc: BackgroundImg,
+    imgsrc2: BackgroundImg2,
     imgalt:BackgroundImg,
     videosrc: BackgroundVideo}; return engText;
     case 'arabic': const arabicText = {herodata: [{
@@ -38,6 +40,7 @@ export const getCaptionForLocale = (locale) => {
     title: 'أهداف التنمية المستدامة في العمل',
     content: 'تركيزنا',
     imgsrc: BackgroundImg,
+    imgsrc2: BackgroundImg2,
     imgalt:BackgroundImg,
     videosrc: BackgroundVideo}; return arabicText;
     case 'burmese': const burmeseText = {herodata: [{
@@ -55,6 +58,7 @@ export const getCaptionForLocale = (locale) => {
     title: 'sdgs သည်လုပ်ဆောင်သည်',
     content: 'ကျွန်ုပ်တို့၏အာရုံ',
     imgsrc: BackgroundImg,
+    imgsrc2: BackgroundImg2,
     imgalt:BackgroundImg,
     videosrc: BackgroundVideo}; return burmeseText;
     case 'japanese': const japaneseText = {herodata: [{
@@ -72,6 +76,7 @@ export const getCaptionForLocale = (locale) => {
     title: '動作中のsdgs',
     content: '私たちの焦点',
     imgsrc: BackgroundImg,
+    imgsrc2: BackgroundImg2,
     imgalt:BackgroundImg,
     videosrc: BackgroundVideo}; return japaneseText;
     default:
@@ -90,6 +95,7 @@ export const getCaptionForLocale = (locale) => {
     title: 'The sdgs in action',
     content: 'Our Focus',
     imgsrc: BackgroundImg,
+    imgsrc2: BackgroundImg2,
     imgalt:BackgroundImg,
     videosrc: BackgroundVideo};
     return dummy
@@ -149,7 +155,7 @@ The Page hero component multiusage component which creates boxes that are usuall
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
-      <PageHeroOption data={caption.herodata} title={caption.title} content={caption.content} active={'default'} imgsrc={caption.imgsrc} imgalt={caption.imgalt} videosrc={caption.videosrc} {...args}
+      <PageHeroOption data={caption.herodata} title={caption.title} content={caption.content} active={'default'} imgsrc={caption.imgsrc} imgsrc2={caption.imgsrc2} imgalt={caption.imgalt} videosrc={caption.videosrc} {...args}
       ></PageHeroOption>
     );
   }}

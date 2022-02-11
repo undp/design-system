@@ -80,22 +80,20 @@ export const swiper = (selector, arrowsSelector, options) => {
       },
     };
 
-    // Extend options
+    // Extend options.
     options = options || {};
-    for (let name in defaults) {
-      if (options[name] === undefined) {
-        options[name] = defaults[name];
-      }
-    }
+
+    // Merge options into defaults, recursively with `true` option, without modifying defaults.
+    const settings = $.extend( true, {}, defaults, options);
 
     // Get scrollbar track width.
     const getTrackSize = () => $(element).find('.swiper-scrollbar').width();
 
-    // Get number of the slides
+    // Get number of the slides.
     const getSliderLength = () => $(element).find('.swiper-slide').length;
 
     // Get the Slider Bound in case of perView is more than 1.
-    const getSliderBound = () => (getSliderLength() - options.slidesPerView);
+    const getSliderBound = () => (getSliderLength() - settings.slidesPerView);
 
     // Get the scrollbar drag width based on the number of slides in the slider track.
     // Set drag size to fixed number if slidesPerView is more than 1.
@@ -104,8 +102,8 @@ export const swiper = (selector, arrowsSelector, options) => {
       const sliderLength = getSliderLength();
       const sliderBound = getSliderBound();
       // Get the dragsize round to 2 decimal points.
-      if (options.slidesPerView > 1) {
-        dragsize = Number(`${Math.round(parseFloat(`${trackSize / sliderBound}e2`))}e-2`) - (options.spaceBetween * options.slidesPerView);
+      if (settings.slidesPerView > 1) {
+        dragsize = Number(`${Math.round(parseFloat(`${trackSize / sliderBound}e2`))}e-2`) - (settings.spaceBetween * settings.slidesPerView);
       } else {
         dragsize = Number(`${Math.round(parseFloat(`${trackSize / sliderLength}e2`))}e-2`);
       }
@@ -131,7 +129,7 @@ export const swiper = (selector, arrowsSelector, options) => {
     }
 
     // Define Swiper Element
-    let swiper = new Swiper(element, options);
+    let swiper = new Swiper(element, settings);
 
     // Before mount
     const beforeSwiperMount = (swiper) => {
@@ -149,7 +147,7 @@ export const swiper = (selector, arrowsSelector, options) => {
     // Swiper Enable Callback
     const swiperEnable = () => {
       if (swiper.destroyed) {
-        const newSwiper = new Swiper(element, options);
+        const newSwiper = new Swiper(element, settings);
         swiper = newSwiper;
         beforeSwiperMount(swiper);
         swiper.init();
@@ -183,24 +181,35 @@ export const swiper = (selector, arrowsSelector, options) => {
 
     // Define swiperInit.
     const swiperInit = () => {
-      const dataDevice = $(element).data('swiper-device');
-      // Device based activation of swiper.
-      if (dataDevice && (dataDevice == 'mobile' || dataDevice == 'desktop' || dataDevice == 'tablet')) {
-        if (getDeviceType() == "mobile" && dataDevice == 'mobile') {
-          if (!swiper.initialized) {
-            swiperEnable();
+      const elemData = $(element).data();
+      if (elemData) {
+        $.each(elemData, function (key, val) {
+          if (key == 'swiperDesktop' || key == 'swiperTablet' || key == 'swiperMobile' || key == 'swiperAll') {
+            if ((key == 'swiperDesktop') && getDeviceType() == "desktop") {
+              if (!swiper.initialized) {
+                swiperEnable();
+              }
+              return false;
+            } else if ((key == 'swiperTablet') && getDeviceType() == "tablet") {
+              if (!swiper.initialized) {
+                swiperEnable();
+              }
+              return false;
+            } else if ((key == 'swiperMobile') && getDeviceType() == "mobile") {
+              if (!swiper.initialized) {
+                swiperEnable();
+              }
+              return false;
+            } else if (key == 'swiperAll') {
+              if (!swiper.initialized) {
+                swiperEnable();
+              }
+              return false;
+            } else {
+              swiperDisable();
+            }
           }
-        } else if (getDeviceType() == "tablet" && dataDevice == 'tablet') {
-          if (!swiper.initialized) {
-            swiperEnable();
-          }
-        } else if (getDeviceType() == "desktop" && dataDevice == 'desktop') {
-          if (!swiper.initialized) {
-            swiperEnable();
-          }
-        } else {
-          swiperDisable();
-        }
+        });
       } else {
         if (!swiper.initialized) {
           swiperEnable();

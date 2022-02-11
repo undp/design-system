@@ -22,7 +22,7 @@ const ParallaxCards = ({ data, alt, title }) => {
       <div className="parallax__heading small-offset-1">
         <Heading type="2" label={title} />
       </div>
-      <div className="parallax__content" data-swiper-device="mobile" dir={rtl}>
+      <div className="parallax__content" data-swiper-mobile dir={rtl}>
         <div className="swiper-scrollbar" />
         <div className="swiper-wrapper">
           {data.map((item, index) => (

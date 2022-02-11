@@ -15,7 +15,7 @@ export const StatsSlider = ({ data }) => {
     parallaxEffect('.stats-card-slider', '.parallax-slide', 'top bottom', 'bottom top', 'horizontal');
   }, []);
   return (
-    <div className="stats-card-slider" data-swiper-device="mobile" dir={rtl}>
+    <div className="stats-card-slider" data-swiper-mobile dir={rtl}>
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (

@@ -1,6 +1,7 @@
 import React from 'react';
 import './homepage-hero.scss';
 import BackgroundImg from '../../../../assets/images/scuba.jpg';
+import BackgroundImg2 from '../../../../assets/images/scuba2.jpg';
 import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
 import { Video } from '../../../../Atom/Video/Video';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
@@ -27,7 +28,10 @@ export const Homepageherosplit = ({
               <Video src={BackgroundVideo} width="100%" height="100%" />
           )
           : (
-              <img src={BackgroundImg} alt={BackgroundImg} />
+            <picture>
+              <source media="(min-width:767px )" srcset={BackgroundImg2} />
+              <img src={BackgroundImg2} alt={BackgroundImg} />
+            </picture>
           )}
         </div>
         <div className="show-small">

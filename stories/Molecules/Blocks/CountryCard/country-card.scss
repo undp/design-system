@@ -5,19 +5,19 @@
 .pagehero-cards {
   &-wrap {
     &.swiper-wrapper {
-      @include devicebreak(medium) {
+      @include devicebreak(large) {
         flex-wrap: wrap;
       }
     }
   }
 
   &-box {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
 
-    @include devicebreak(medium) {
+    @include devicebreak(large) {
       flex: 0 0 calc(25% - 1.5rem);
       max-width: calc(25% - 1.5rem);
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
 
       &.swiper-slide {
         a {
@@ -68,44 +68,8 @@
       }
     }
 
-    @include devicebreak(medium) {
+    @include devicebreak(large) {
       margin-top: $spacing-12;
-    }
-
-    @include devicebreak(small) {
-      &.swiper-slide {
-        height: auto;
-        margin-left: 0;
-
-        &-active {
-          a::before {
-            opacity: 1;
-          }
-
-          .pagehero {
-            &-cards {
-              &__caption {
-                opacity: 1;
-
-                p {
-                  opacity: 1;
-                }
-              }
-            }
-          }
-
-          .cta__link {
-            i {
-              left: $spacing-05;
-              width: $spacing-11;
-
-              &::before {
-                display: inline-block;
-              }
-            }
-          }
-        }
-      }
     }
 
     a {
@@ -137,15 +101,6 @@
     @include transform(translateY(0));
     @include transition(all 0.3s);
 
-    @include devicebreak(small) {
-      bottom: 0;
-      opacity: 0;
-      box-sizing: border-box;
-      box-shadow: 0 1px 0 1px $color-white; 
-      @include transition(all .4s);
-      @include transitiondelay(.2s);
-    }
-
     background: $color-white;
     left: 0;
     padding-top: $spacing-06;
@@ -167,6 +122,87 @@
 
       font-weight: 700;
       margin-top: $spacing-07;
+    }
+  }
+  
+  .swiper-initialized {
+    .pagehero-cards {
+
+      &__caption {
+        bottom: 0;
+        opacity: 0;
+        box-sizing: border-box;
+        box-shadow: 0 1px 0 1px $color-white; 
+        @include transition(all .5s cubic-bezier(.64,.05,.35,1.05));
+        @include transitiondelay(.3s);
+
+        p {
+          @include transition(all .5s cubic-bezier(.64,.05,.35,1.05));
+          @include transitiondelay(.3s)
+        }
+      }
+    }
+
+    .swiper-slide {
+      height: auto;
+      margin-left: 0;
+
+      &-active {
+        a::before {
+          opacity: 1;
+        }
+
+        .pagehero {
+          &-cards {
+            &__caption {
+              opacity: 1;
+
+              p {
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        .cta__link {
+          i {
+            left: $spacing-05;
+            width: $spacing-11;
+
+            &::before {
+              display: inline-block;
+            }
+          }
+        }
+
+        + .swiper-slide {
+          
+          @include devicebreak(medium) {
+            .pagehero {
+              &-cards {
+                &__caption {
+                  opacity: 1;
+    
+                  p {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+
+            .cta__link {
+              i {
+                left: $spacing-05;
+                width: $spacing-11;
+    
+                &::before {
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
