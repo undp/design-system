@@ -1,6 +1,6 @@
 import React from 'react';
 import './image.scss';
-import mongoliaGoat from '../../../assets/images/mongoliaGoat.jpg';
+import mongoliaGoat from '../../../assets/images/Mongolia-cashmere-goats.jpg';
 import farmlandmd from '../../../assets/images/farmland-md.jpg';
 import farmlandsm from '../../../assets/images/farmland-sm.jpg';
 
@@ -19,7 +19,7 @@ export const Image = ({ className, Type }) => {
       )
       : (
         <picture>
-            <source media="(min-width:1200px)" srcset={image.srclg} />
+            <source media="(min-width:1024px)" srcset={image.srclg} />
             <source media="(min-width:767px)" srcset={image.srcmd} />
             <img src={image.srcsm} alt={image.alt} className={className} />
         </picture>
