@@ -6,14 +6,18 @@
   .header{
     @extend %header;
 
+    height: auto;
+    min-height: 7.1875rem;
+
     @include devicebreak(mediumonlytab) {
-      height: 4.6875rem;
+      min-height: 4.6875rem;
     }
     .site-title {
       font-size: $font-size-16;
       margin-top: -0.25rem;
       width: calc(100% - 52px);
       line-height: $font-size-16;
+      padding: 0.438rem 0;
       @include devicebreak(mediumonlytab) {
         width: calc(100% - 64px);
       }
@@ -40,7 +44,6 @@
     .top-left {
       align-items: center;
       display: flex;
-      flex-wrap: wrap;
 
       .logo {
         @extend %img_none;
@@ -50,20 +53,20 @@
         height: 7.1875rem;
         position: relative;
         z-index: 2;
+        margin-right: $spacing-06;
+        flex: 0 0 2.5rem;
+        max-width: 2.5rem;
 
         @include devicebreak(mediumonlytab) {
           height: 4.6875rem;
-          margin: 0;
+        }
+
+        @include devicebreak(small) {
+          margin-right: $spacing-04;
         }
 
         img {
           @extend %logo;
-
-          margin-right: $spacing-06;
-
-          @include devicebreak(small) {
-            margin-right: $spacing-04;
-          }
         }
       }
     }
@@ -76,7 +79,8 @@
     .menu {
       align-items: center;
       display: flex;
-      height: 7.1875rem;
+      min-height: 7.1875rem;
+      align-self: stretch;
 
       @include devicebreak(mediumonlytab) {
         display: none;
