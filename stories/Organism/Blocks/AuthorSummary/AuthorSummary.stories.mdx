@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { AuthorSummary } from "./AuthorSummary";
 import user from "../../../assets/images/user.svg";
 
@@ -51,66 +51,42 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/UI components/Author Summary" component={AuthorSummary} />
 
-<style>{`
-  .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-  div[id^="story--molecules-text-authors"] {
-    padding: 20px;
-    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 25px 0px 40px;
-    border-radius: 4px;
-  }
-`}</style>
+# Author Summary
 
-# Author card component
+### Overview
 
-## Overview
+The Author summary is created for showing the authors name, designation, photo and bio in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
 
-The Author card Component is created for showing the authors name, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+<Canvas>
+  <Story name="Author Summary">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <AuthorSummary
+          image={user}
+          para={caption.paragraph}
+          text={caption.text1}
+          Authorlabel={caption.text2}
+          para1={caption.text3}
+        ></AuthorSummary>
+      );
+    }}
+  </Story>
+</Canvas>
 
-<Story name="Author Summary">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <AuthorSummary
-        image={user}
-        para={caption.paragraph}
-        text={caption.text1}
-        Authorlabel={caption.text2}
-        para1={caption.text3}
-      ></AuthorSummary>
-    );
-  }}
-</Story>
+### Usage
+- Copy HTML from the Canvas page and add CSS and JS from the 'CSS and JS References' section below. 
 
-## Usage
+### CSS and JS References
 
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like variables, mixin from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>authorsummary.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+#### CSS
+
+Add the base layout style from dist/css/base-minimal.css along with following.
+
+- dist/css/components/author-summary.min.css
+
+#### JS
+NA
+
+### Changelog
+1.0 — Released component

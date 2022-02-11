@@ -23,85 +23,97 @@ export const getCaptionForLocale = (locale) => {
   }}
 />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 20px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 15px;
-  }
-  .subheading2 {
-    font-weight: 700;
-    font-size: 16px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 10px;
-    text-decoration: underline;
-  }
-  .css-1h4ytzj code {
-    padding-right: 10px;
-    width: 100%;
-    font-size: 14px;
-    line-height: 16px;
-    background: black;
-  }
-  div[id^="story--molecules-blocks-download-card"] {
-    align-items: center;
-    margin: 30px 0;
-  }
+# Download Card
 
-`}</style>
+Download card has the card with information along with various items like title, image, file format with file size and download file link.
 
-# Download Card Component
+### Overview
 
-The Download Card component defines a card of information data with some items -  Title, Image, format and Downlaod files. 
+Download card component will have information of the card with various attributes like title, image related to the card, format of the file implies the file is in the form of pdf or docx, anyother way. There will even be a download link that allows the users to download the file.
 
-<div className="subheading2">Publication card Component </div>
+#### When to use:
+When the user wants to download the file to know the complete details about the card.
 
-<p>Publication cards show the publication category images, title, format, and download option to related the content in the design with short information</p>
+### Formatting
+#### Default
 
-<Story name="Publication module" >
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <DownloadCard title={caption.title} format={caption.format}  download={caption.download} image {...args} ></DownloadCard>;
-  }}
-</Story>
+It consists of an image with title, file format with file size, and download link.
+
+### Content
+The download card consists of an Image below its title, file format with file size and download link. The image covers the grid. There are 3 types of download card: Publication module, card module, download module.
+
+Publication module: In this the user can see the publication image, title, file format, file size and download link. 
+
+Card module: In this the user can see image, title, file size and format along with a downloadable link.
+
+Download Module: In this the user will be give title, file format with size and with download link where the user can directly download the file.
+
+
+### Behaviors
+
+#### States
+
+There are 2 states in download cards: default and hover state
+
+Default: In this state the user can see the image, title, file type and size and the downloadable link which allows downloading.
+Publication default state view:
+	
+Hover: In this state, when the mouse hovers over the download card, image is displayed along yellow color over the image.
+
+#### Publication module
+<Canvas>
+  <Story name="Publication module" >
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <DownloadCard title={caption.title} format={caption.format}  download={caption.download} image {...args} ></DownloadCard>;
+    }}
+  </Story>
+</Canvas>
 
 <Anchor storyId='components-ui-components-cards-download-card--card-module'></Anchor>
 
-<div className="subheading2">Card Component</div>
+#### Card module
 
-<p>Cards show the card category images, title, format, and download option to related the content in the design with short information</p>
-
-<Story name="Card module" >
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <DownloadCard title={caption.title} format={caption.format}  download={caption.download} image2={img} {...args} ></DownloadCard>;
-  }}
-</Story>
+<Canvas>
+  <Story name="Card module" >
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <DownloadCard title={caption.title} format={caption.format}  download={caption.download} image2={img} {...args} ></DownloadCard>;
+    }}
+  </Story>
+</Canvas>
 
 <Anchor storyId='components-ui-components-cards-download-card--download-module'></Anchor>
 
-<div className="subheading2">Download Component</div>
+#### Download module
 
-<p>Download show the card category title, format, and download option to related the content. </p>
+<Canvas>
+  <Story name="Download module" >
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <DownloadCard title={caption.title} format={caption.format}  download={caption.download} alt={'feature card'} {...args} ></DownloadCard>;
+    }}
+  </Story>
+</Canvas>
 
-<Story name="Download module" >
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <DownloadCard title={caption.title} format={caption.format}  download={caption.download} alt={'feature card'} {...args} ></DownloadCard>;
-  }}
-</Story>
+### Usage:
+Copy HTML from the HTML tab of canvas and include below listed css file.
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>DownloadCard.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/download-card.min.css
+
+#### JS:
+
+NA
+
+### Interactions
+- Hover state applies to the image only.
+- By clicking on the download Link, the associated file will be downloaded . 
+
+### Changelog
+1.0 — Released component

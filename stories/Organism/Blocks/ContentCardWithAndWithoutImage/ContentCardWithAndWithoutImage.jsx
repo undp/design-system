@@ -2,7 +2,7 @@ import React from 'react';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import { Ctalink } from '../../../Components/UIcomponents/Buttons/CtaLink/CtaLink';
 import { P } from '../../../Atom/BaseTypography/Paragraph/Paragraph';
-import './contentcardwithandwithoutimage.scss';
+import './content-card-with-and-without-image.scss';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 

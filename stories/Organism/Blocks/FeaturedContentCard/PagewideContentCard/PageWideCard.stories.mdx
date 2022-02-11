@@ -59,54 +59,72 @@ export const getCaptionForLocale = (locale) => {
   }
 }}/>
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 20px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 15px;
-  }
-  .subheading2 {
-    font-weight: 700;
-    font-size: 16px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 10px;
-  }
-`}</style>
+# Pagewide Card
 
-# Pagewide Card Component
+The Card page wide components are cards with information along with image and CTA link. 
 
-<Story name="Pagewide Featured Content Card">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <PageWideCard
-        label={caption.tag}
-        title={caption.label1}
-        paragraph={caption.label2}
-        button={caption.btnlabel} {...args}
-      ></PageWideCard>
-    );
-  }}
-</Story>
+### Overview
+The Card pagewide component defines a card of information with some items- Tag, Title, Image, Paragraph and CTA Link. 
+ 
+#### When to use:
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like variables, mixin from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>pagewidecard.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+When a card with data, CTA link and image is to be displayed.
+
+### Formatting
+#### Default
+It consists of a grid with title tag, paragraph, cta link and  image.
+
+### Content
+
+The card pagewide requires a image, some information, title,  content tag and a CTA that opens with more information.
+
+### Behaviors
+
+#### States 
+There are two states for card pagewide components. Default and hover
+
+Default: It shows the title, paragraph, CTA link and image for Card with pagewide.
+
+Hover: In hover state, when the mouse hovers over the Card, an image is displayed. The yellow color is displayed with the image.
+
+<Canvas>
+  <Story name="Pagewide Featured Content Card">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <PageWideCard
+          label={caption.tag}
+          title={caption.label1}
+          paragraph={caption.label2}
+          button={caption.btnlabel} {...args}
+        ></PageWideCard>
+      );
+    }}
+  </Story>
+</Canvas>
+
+
+### Usage:
+- Copy HTML from the HTML tab in your HTML file
+- If you want to add visibility animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.
+
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/page-wide-card.min.css
+- dist/css/components/buttons.min.css
+
+#### JS:
+
+- dist/js/viewport.min.js
+
+### Interactions
+Hover state applies to the image only.
+By clicking on the CTA Link, the associated page is opened. 
+
+### Changelog
+1.0 — Released component
