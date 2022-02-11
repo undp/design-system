@@ -4,7 +4,11 @@
 
 /* post header start */
 .post-wrapper {
-  margin-top: 4.25rem;
+  margin-top: $spacing-05;
+
+  @include devicebreak(medium) {
+    margin-top: 4.563rem;
+  }
 }
 
 /* post header end */

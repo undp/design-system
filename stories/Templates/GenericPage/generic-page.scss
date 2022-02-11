@@ -57,13 +57,7 @@
 
   .progress {
     &-container {
-      position: fixed;
-      top: 4.6875rem;
-      z-index: 1;
-
-      @include devicebreak(xlarge) {
-        top: 7.1875rem;
-      }
+      @extend %progress-bar;
     }
 
     &-top {
