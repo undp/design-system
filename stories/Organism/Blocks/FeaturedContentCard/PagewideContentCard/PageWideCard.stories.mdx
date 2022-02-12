@@ -51,7 +51,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Pagewide Featured Content Card" component={PageWideCard} argTypes={{
+<Meta title="Components/UI components/Pagewide featured content card" component={PageWideCard} argTypes={{
   Hovercolors: {
     options: ['yellow', 'red', 'green', 'blue'],
     control: { type: 'inline-radio' },
@@ -88,7 +88,7 @@ Default: It shows the title, paragraph, CTA link and image for Card with pagewid
 Hover: In hover state, when the mouse hovers over the Card, an image is displayed. The yellow color is displayed with the image.
 
 <Canvas>
-  <Story name="Pagewide Featured Content Card">
+  <Story name="Pagewide featured content card">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return (

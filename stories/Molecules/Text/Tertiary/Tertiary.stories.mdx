@@ -12,14 +12,14 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Text/Tertiary Block" component={Tertiary} />
+<Meta title="Components/UI components/Text/Tertiary block" component={Tertiary} />
 
 # Tertiary Bloack
 
 Tertiary Block defines a section of information data with some items - location, country and description. `H2` `H4` `P` atoms tags are used for creating this section.
 
 <Canvas>
-  <Story name="Tertiary Block">
+  <Story name="Tertiary block">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <Tertiary headerText={caption.header} countryText={caption.country}  descriptionText={caption.description}></Tertiary>;

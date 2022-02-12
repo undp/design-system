@@ -433,7 +433,7 @@ export const statsArray = (locale) => {
   }
 };
 
-<Meta title="Patterns/Download Modal"
+<Meta title="Patterns/Download modal"
   argTypes={{
     Image: {
       options: ["True", "False"],
@@ -476,7 +476,7 @@ Select: In this, the user will be given the dropdown to select one or more langu
 Close button dismisses the entire modal window and resets filter states and checkboxes.
 
 <Canvas>
-  <Story name="Download Modal">
+  <Story name="Download modal">
     {(args, { globals: { locale } }) => {
       const caption = statsArray(locale);
       return <DownloadModal data={caption.data} button={caption.button} select={caption.select} id="downloadModal" modalbtn={caption.modalbtn} content={caption.content} {...args}></DownloadModal>;

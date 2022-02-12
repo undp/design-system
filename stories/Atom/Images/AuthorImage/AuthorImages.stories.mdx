@@ -22,7 +22,7 @@ export const getCaptionForLocale = (locale) => {
 };
 
 <Meta
-  title="Foundation/Images/Author Image"
+  title="Foundation/Images/Author image"
   argTypes={{
     variant: {
       options: ["Large", "Small"],
@@ -57,7 +57,7 @@ There are two states in the Author Image component: Small and Large.
 - Large
 
 <Canvas>
-  <Story name="Author Image">
+  <Story name="Author image">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <Authorimg image={user} alt="Headshot of XYZ" {...args}></Authorimg>;
