@@ -71,6 +71,7 @@ export const navigationInitialize = (locale) => {
   });
 
   $('.mega-wrapper').on('mouseenter focus keydown', '.submenu li', function (e) {
+    $('.sub-sub-menu li').find('a').attr("tabIndex","-1");
     $(this).addClass('active').siblings().removeClass('active');
     const navId = $(this).attr('id');
     $(this).parents('.mega-wrapper').find(`[data-submenu-id='${navId}']`).addClass('active-content')
@@ -78,7 +79,6 @@ export const navigationInitialize = (locale) => {
       e.stopImmediatePropagation();
       var key = e.which;
       if(key == 39){
-        console.log("hi");
         $('.submenu li').find('a').attr("tabIndex","-1");
         $(this).parents('.mega-wrapper').find(`[data-submenu-id='${navId}']`).addClass('active-content')
         .siblings().removeClass('active-content').find('a').attr("tabIndex","0");
