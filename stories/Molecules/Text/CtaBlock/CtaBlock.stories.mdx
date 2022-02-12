@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { CtaBlock } from './CtaBlock'
 
 export const getCaptionForLocale = (locale) => {
@@ -14,50 +14,33 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/UI components/Text/CTA Block" component={CtaBlock} />
 
-<style>{`
-  .sbdocs-h1 {
-    font-weight: 700;
-  }
-  .subheading {
-    font-weight: 500;
-    font-size: 22px;
-    color: #161616;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .subheading-2 {
-    font-weight: 500;
-    font-size: 14px;
-    color: #161616;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .docblock-code-toggle {
-    display: none;
-  }
-`}</style>
+# CTA Block
 
-# CTA Block Component
+CTA Block Component defines a section of information data with some items - header title, description. `H4` `P` atoms tags are used for creating this section.
 
-CTA Block Component defines a section of information data with some items - Header title, Description. <code>H4</code> <code>P</code> Atoms tags are used for creating this section.
+<Canvas>
+  <Story name="CTA Block">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <CtaBlock headerText={caption.header} descriptionText={caption.description} ctaText={caption.cta}></CtaBlock>;
+    }}
+  </Story>
+</Canvas>
 
-<Story name="CTA Block">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <CtaBlock headerText={caption.header} descriptionText={caption.description} ctaText={caption.cta}></CtaBlock>;
-  }}
-</Story>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>CtaBlock.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+###
+### Usage
+- Take HTML from the HTML tab in canvas
+- Include CSS and JS from the 'CSS and JS References' section
+
+### CSS and JS References
+
+#### CSS:
+Add the base style only, located at **dist/css/base-minimal.css** along with following:
+- dist/css/components/cta-block.min.css
+
+#### JS:
+NA
+
+### Changelog
+1.0 — Released component

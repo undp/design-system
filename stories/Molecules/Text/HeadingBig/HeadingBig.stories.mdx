@@ -1,4 +1,4 @@
-import { Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { HeadingBig } from './HeadingBig'
 
 export const getCaptionForLocale = (locale) => {
@@ -20,50 +20,32 @@ export const getCaptionForLocale = (locale) => {
   }
 }}/>
 
-<style>{`
-  .sbdocs-h1 {
-    font-weight: 700;
-  }
-  .subheading {
-    font-weight: 500;
-    font-size: 22px;
-    color: #161616;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .high {
-    font-weight: 500;
-    font-size: 14px;
-    color: #161616;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .docblock-code-toggle {
-    display: none;
-  }
-`}</style>
-
 # Heading Big Block 
 
-The Heading Block defines a section of information data with some items - Header title, Description. <code>H2</code> <code>H4</code> Atoms tags are used for creating this section.
+The Heading Block defines a section of information data with some items - Header title, Description. `H2` `H4` atoms tags are used for creating this section.
 
+<Canvas style={{background: "gray"}}>
+  <Story name="Heading Big Block">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <HeadingBig headerText={caption.header} descriptionText={caption.description} listData={caption.listData} {...args}></HeadingBig>;
+    }}
+  </Story>
+</Canvas>
 
-<Story name="Heading Big Block">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <HeadingBig headerText={caption.header} descriptionText={caption.description} listData={caption.listData} {...args}></HeadingBig>;
-  }}
-</Story>
+###
+### Usage
+- Take HTML from the HTML tab in canvas whichever (select variant you like)
+- Include CSS and JS from the 'CSS and JS References' section
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>headingbig.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### CSS and JS References
+
+#### CSS:
+Add the base style only, located at **dist/css/base-minimal.css** along with following:
+- dist/css/components/headingbig.min.css
+
+#### JS:
+- dist/js/viewport.min.js (optional for viewport animation)
+
+### Changelog
+1.0 — Released component
