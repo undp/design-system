@@ -39,7 +39,7 @@ div.download-card {
         }
       }
     }
-    .download-icon{
+    .download-animated{
       &:after {
         @include transform(rotate(-45deg) translate(7px, -7px));
       }
@@ -48,7 +48,7 @@ div.download-card {
       }
     }
 
-    .external-link{
+    .external-link-animated{
       &:after {
         @include transform(translate(5px, -5px));
       }
@@ -86,11 +86,11 @@ div.download-card {
     letter-spacing: 0.03em;
     text-transform: uppercase;
 
-    .download-icon {
+    .download-animated {
       margin-left: $spacing-04;
     }
 
-    .external-link{
+    .external-link-animated{
       margin-left: $spacing-04;
       margin-bottom: $spacing-03;
     }
@@ -99,8 +99,8 @@ div.download-card {
 
 [dir='rtl'] {
   div.download-card {
-    .download-icon,
-    .external-link {
+    .download-animated,
+    .external-link-animated {
       margin-left: 0;
       margin-right: $spacing-04;
     }
@@ -136,7 +136,7 @@ div.download-card {
         margin-left: 0;
         margin-right: 0.75rem;
       }
-      .download-icon {
+      .download-animated {
         margin-left:  0;
         margin-right: 0.75rem;
       }

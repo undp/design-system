@@ -84,11 +84,13 @@
       }
     }
   }
+  
   .large-article-image {
     img{
       width: 100%;;
     }
   }
+
   .middle-image {
     margin-bottom: $spacing-07;
     margin-top: $spacing-10;
@@ -125,17 +127,17 @@
       }
     }
   }
+}
 
-  .featured-card-container {
-    margin-bottom: $spacing-07;
+.featured-card-container {
+  margin-bottom: $spacing-07;
 
-    @include devicebreak(medium) {
-      margin-bottom: $spacing-10;
-    }
+  @include devicebreak(medium) {
+    margin-bottom: $spacing-10;
+  }
 
-    .feature__card {
-      margin-bottom: $spacing-06;
-    }
+  .feature__card {
+    margin-bottom: $spacing-06;
   }
 }
 

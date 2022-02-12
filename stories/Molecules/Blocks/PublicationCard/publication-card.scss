@@ -66,14 +66,14 @@ div.publication-card {
     letter-spacing: 0.03em;
     text-transform: uppercase;
 
-    .download-icon {
+    .download-animated {
       margin-left: $spacing-04;
     }
 
     &:hover {
       color: $color-shuttle-gray;
 
-      .download-icon {
+      .download-animated {
         &:after {
           @include transform(rotate(-45deg) translate(7px, -7px));
         }
@@ -95,7 +95,7 @@ div.publication-card {
     letter-spacing: 0.03em;
     text-transform: uppercase;
 
-    .external-link {
+    .external-link-animated {
       display: inline-block;
       margin-left: $spacing-04;
     }
@@ -103,7 +103,7 @@ div.publication-card {
     &:hover {
       color: $color-shuttle-gray;
 
-      .external-link {
+      .external-link-animated {
         &:after {
           @include transform(translate(5px, -5px));
         }
@@ -118,14 +118,14 @@ div.publication-card {
 [dir='rtl'] {
   .publication-card {
     .readmore {
-      .external-link {
+      .external-link-animated {
         margin-left: 0;
         margin-right: $spacing-04;
       }
     }
 
     .download {
-      .download-icon {
+      .download-animated {
         margin-left: 0;
         margin-right: $spacing-04;
       }
