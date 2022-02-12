@@ -300,7 +300,7 @@
   @include transform(translateY(-50%));
   @include transition(all 200ms ease-in-out);
 
-  background: url(#{$img-path-Iconfourback}/Chevron-down.svg) no-repeat center
+  background: url(#{$img-path-Iconfourback}/chevron-down.svg) no-repeat center
     center;
   content: "";
   float: right;
@@ -323,7 +323,7 @@
 %sidebar-chevron {
   @include transition(all 0.3s ease);
 
-  background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
+  background: url(#{$img-path-Icon}/chevron-down.svg) no-repeat center center;
   content: "";
   height: 0.813rem;
   position: absolute;

@@ -125,17 +125,17 @@
       }
     }
   }
+}
 
-  .featured-card-container {
-    margin-bottom: $spacing-07;
+.featured-card-container {
+  margin-bottom: $spacing-07;
 
-    @include devicebreak(medium) {
-      margin-bottom: $spacing-10;
-    }
+  @include devicebreak(medium) {
+    margin-bottom: $spacing-10;
+  }
 
-    .feature__card {
-      margin-bottom: $spacing-06;
-    }
+  .feature__card {
+    margin-bottom: $spacing-06;
   }
 }
 
