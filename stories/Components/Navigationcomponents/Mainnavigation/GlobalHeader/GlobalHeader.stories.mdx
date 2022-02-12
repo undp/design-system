@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import GlobalHeader from './GlobalHeader';
 import {getCaptionForLocale as Languageswitcher} from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.mdx";
 
@@ -135,7 +135,38 @@ export const menuData = (locale) => {
 
 <Meta title="Components/Navigation Components/Main Navigation/Global Header" />
 
+# Global Header
+The Global Header contains elements that provide context and easy access to key functions throughout the website.
 
+
+### Overview
+The Global Header component is a navigation bar that allows access to important functions across the website. It is present at the top of each page. 
+
+When to use:
+- When the website needs a header to navigate through the pages.
+
+Formatting
+#### Default
+The Global header is a fixed horizontal panel on the top of the page, with a shaded bottom border, optionally accompanied by the Reading progress meter widget. 
+
+### Content
+Global Header consists of a navigation bar with drop-down menus, CTA links, Logo, language switcher, Globe icon (invoking Locations flyout), and Search icon (providing access to the Search overlay. The Logo is centered, menu items are aligned to the center as well on both sides of the Logo.
+
+On small screens, the mega menu is transitioning into an off-screen menu accessible through the Hamburger icon. Language switcher and Locations flyout are accessible through the first level menu panel.
+
+
+### Behaviors
+
+#### States 
+
+1. Default: The Logo overflows the header section when there is no progress bar or the progress bar is at the starting point. When the page scrolls for the first time logo contracts to match the Header’s height and the entire header’s panel remains fixed on the top of the page regardless of the depth of scrolling
+
+- Without Progress Bar:
+- With Progress Bar:
+	
+ The filled part of the Progress bar (in the current page’s accent color) is demonstrating the proportionate part of the content of the page the user has scrolled through so far without navigational and decorative sections.
+
+<Canvas>
 <Story name="Global Header" parameters={{
     layout: "fullscreen"
   }}>
@@ -155,6 +186,34 @@ export const menuData = (locale) => {
       ></GlobalHeader>;
   }}
 </Story>
+</Canvas>
 
+### Usage:
+1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
+2. Initialize the navigationInitialize(), langSwitch().
 
+### CSS and JS References
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
 
+1. dist/css/components/GlobalHeader.min.css
+2. dist/css/components/languageswitcher.min.css
+3. dist/css/components/menu.min.css
+4. dist/css/components/MegaMenu.min.css
+5. dist/css/components/MobileNav.min.css
+
+#### JS:
+1. dist/js/navigation.min.js
+2. dist/js/UNDP.min.js
+3. dist/js/lang_switcher.min.js
+
+### Interactions
+- By clicking on the CTA Link, the page is directed to the subsequent link page.
+- By clicking on the Drop-down menu, it expands, and clicking on the x icon closes it.
+- By clicking on the search icon, the search tab opens.
+- By clicking on the language switcher, it expands, and clicking on the x icon closes it.
+- Logo expands/contracts based on the scrolling depth
+- Reading meter (if used) updated based on the scrolling depth into content
+
+### Changelog
+1.0 — Released component
