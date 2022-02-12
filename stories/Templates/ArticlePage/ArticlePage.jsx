@@ -13,6 +13,8 @@ import user from '../../assets/images/user.svg';
 import { Footer } from '../../Organism/Footer/Footer';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 import { ProgressBarNavigation } from '../../Atom/Navigation/ProgressBarNavigation/ProgressBarNavigation';
+import { Image } from '../../Atom/Images/Image/Image';
+import '../../assets/js/lazyload.js';
 
 const ArticlePage = ({
   data,
@@ -37,10 +39,6 @@ const ArticlePage = ({
   langSelect,
   backcaption,
   para,
-  mongoliaGoat,
-  farmlandlg,
-  farmlandmd,
-  farmlandsm,
   logo,
   logowhite
 }) => (
@@ -70,16 +68,7 @@ const ArticlePage = ({
       </div>
       <div className="grid-x">
         <div className="cell large-12 large-article-image">
-          <Images
-            imagelg={mongoliaGoat}
-            imagemd={mongoliaGoat}
-            imagesm={mongoliaGoat}
-            alt="farmland"
-            label={imageCaptionData.label}
-            name={imageCaptionData.name}
-            paragraph={imageCaptionData.paragraph}
-            {...{ size: 'wide', caption: 'false', credit: 'false' }}
-          />
+          <Image />
         </div>
       </div>
       <div className="grid-x">
@@ -118,16 +107,7 @@ const ArticlePage = ({
           <P label={para.para2} />
         </div>
         <div className="cell medium-7 medium-offset-2 middle-image">
-          <Images
-            imagelg={farmlandlg}
-            imagemd={farmlandmd}
-            imagesm={farmlandsm}
-            alt="farmland"
-            label={imageCaptionData.label}
-            name={imageCaptionData.name}
-            paragraph={imageCaptionData.paragraph}
-            {...{ size: 'wide', caption: 'false', credit: 'false' }}
-          />
+          <Image className="lazy" />
         </div>
         <div className="cell medium-7 medium-offset-2 middle-caption">
           <Imagecaption
