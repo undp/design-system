@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Footer } from "./Footer";
 import logo from "../../assets/images/undp-logo-blue.svg";
 import logowhite from '../../assets/images/undp-logo-white.svg';
@@ -304,73 +304,96 @@ export const getCaptionForLocale = (locale) => {
   }}
 />
 
-<style>{`
- .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-`}</style>
+# Footer
 
-# Footer Component
+A footer has a list of information about the website at the bottom of the page.  
 
-## Overview
+### Overview
+A footer has all the information or other web pages that are there in the website. Footer is treated as its own section of the web page that is separated from the header, content and sidebars.This includes the copyright information for the website, the name of the website's author, the business name and address.
 
-The Footer component multiusage component.
+#### When to use:
+When a standardized footer is required to be placed at the bottom of a webpage
 
-#### Default Representation & various possible states
+### Formatting
+#### Default
+Footer in default state is with blue color background which has newsletter subscription section, Company name logo in white background. It has a list of internal webpages, search and globe icons. Even there will be social media icons like LinkedIn, Twitter, Facebook, Instagram, and youtube. There will be copyright and terms of the company. 
+
+### Content
+There are 2 types of footers: Default and Simple
+
+Default: This has a blue background with newsletter subscription section, company name logo in white background, internal webpage links, search and global icon, along with social media logos.
+
+Simple: This has blue background with logo in white background with company name.This will have only social media logos, terms and copyright sections. 
+
+### Behaviors
+#### States
+Footer has 2 states: Default, and Inverted
+
+Default: In default state footer background will be in blue color. The text will be in white color.
+
+Desktop view: In this view, the footer appears in rectangle shape.
+
+Mobile view: In this view, the footer will appear in verticle shaped box
+
+Inverted : In the state the footer has white background and the text will be in blue color rest will be same as default state. 
+
+<Canvas>
+  <Story name="Footer" parameters={{
+      layout: "fullscreen"
+    }}>
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <Footer
+          src={logo}
+          srctwo={logowhite}
+          logolink="https://www.undp.org"
+          headerText={caption.headerText}
+          alt={"UNDP Logo"}
+          element="input"
+          type="email"
+          required="required"
+          mode="form-email"
+          errorText={caption.errorLabel}
+          label={caption.labelname}
+          button={caption.buttonname}
+          placeholder={caption.placeholdername}
+          menutitle={caption.pageTitle}
+          data={caption.footerdata}
+          copyright={caption.copyright}
+          menudata={caption.menudata}
+          {...args}
+        ></Footer>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Usage:
+- Choose the control either Default or Inverted from the control tab of canvas.
+- Copy HTML from the HTML tab and include below listed css and js files.
+- Initialize the accordion by calling accordion('[data-accordion="mobile"]', '.footer-panel', 'active'); function, this needs to be called to make links accordion on smaller screen (mobile).
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/footer.min.css
+- dist/css/components/input-group.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/newsletter-signup.min.css
+- dist/css/components/accordion.min.css
+
+#### JS:
+
+- dist/js/accordion.min.js
+
+### Interactions
+No interactions 
+
+### Changelog
+1.0 — Released component
 
 
-<Story name="Footer" parameters={{
-    layout: "fullscreen"
-  }}>
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <Footer
-        src={logo}
-        srctwo={logowhite}
-        logolink="https://www.undp.org"
-        headerText={caption.headerText}
-        alt={"UNDP Logo"}
-        element="input"
-        type="email"
-        required="required"
-        mode="form-email"
-        errorText={caption.errorLabel}
-        label={caption.labelname}
-        button={caption.buttonname}
-        placeholder={caption.placeholdername}
-        menutitle={caption.pageTitle}
-        data={caption.footerdata}
-        copyright={caption.copyright}
-        menudata={caption.menudata}
-        {...args}
-      ></Footer>
-    );
-  }}
-</Story>
-
-### Dependencies
-
-Libraries or another dependency which are used in the component.
-
-- For animation functionality its depend on the jQuery plugin library.
-- Custom JS file **(accordion.js)** is located in the same js folder.
-- Take HTML from the HTML tab in the canvas
-
-- To use SCSS include the following files in your implementation
-- Include the common SCSS files like breakpoints, variables from **(accordion.js)**
-- Component SCSS file: **footer.scss**
-- To use CSS include the following files in your implementation
-- The compiled CSS file from **assets/css/style.css**

@@ -350,32 +350,25 @@ export const getCaptionForLocale = (locale) => {
 
 # Content Card With and Without Image
 
-Content Card With and Without Image
+This is just collection of the following components:
+- [Content card](/docs/components-ui-components-cards-content-card-with-image--with-image)
+- [Content card without Emphasize](/docs/components-ui-components-cards-content-card-without-image--without-emphasize)
+- [Content card without Emphasize](/story/components-ui-components-cards-content-card-without-image--with-emphasize)
 
-<Story name="Content Cards With and Without Image">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <ContentCardWithAndWithoutImage
-        data={caption.contentdata} storyBtn={caption.storyBtn} {...args}
-      ></ContentCardWithAndWithoutImage>
-    );
-  }}
-</Story>
+<Canvas>
+  <Story name="Content Cards With and Without Image">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <ContentCardWithAndWithoutImage
+          data={caption.contentdata} storyBtn={caption.storyBtn} {...args}
+        ></ContentCardWithAndWithoutImage>
+      );
+    }}
+  </Story>
+</Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like variables, mixin from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>contentcard.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+### 
+### Usage
+- Copy the HTML from the canvas
+- Include the CSS and JS resource defined in the `Content card`

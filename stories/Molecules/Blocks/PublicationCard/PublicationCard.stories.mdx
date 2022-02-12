@@ -21,61 +21,43 @@ export const getCaptionForLocale = (locale) => {
   }}
  />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 20px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 15px;
-  }
-  .subheading2 {
-    font-weight: 700;
-    font-size: 16px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 10px;
-    text-decoration: underline;
-  }
-  .css-1h4ytzj code {
-    padding-right: 10px;
-    width: 100%;
-    font-size: 14px;
-    line-height: 16px;
-    background: black;
-  }
-  div[id^="story--molecules-blocks-download-card"] {
-    align-items: center;
-    margin: 30px 0;
-  }
+# Publication Card
 
-`}</style>
+The Publication card defines a card of information data with some items -  Title, Image, format and Downlaod files. 
 
-# Publication Card Component
+### Overview
+Publication cards show the publication category images, title, format, and download option to related the content in the design with short information
 
-The Publication Card component defines a card of information data with some items -  Title, Image, format and Downlaod files. 
+<Canvas>
+  <Story name="Publication Card" >
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <PublicationCard 
+        download={caption.download} readmore={caption.readmore} image {...args} 
+      ></PublicationCard>;
+    }}
+  </Story>
+</Canvas>
 
-<div className="subheading2">Publication card Component </div>
+### Usage:
+Copy HTML from the HTML tab of canvas and include below listed css file.
 
-<p>Publication cards show the publication category images, title, format, and download option to related the content in the design with short information</p>
+### CSS and JS References
 
-<Story name="Publication Card" >
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <PublicationCard 
-      download={caption.download} readmore={caption.readmore} image {...args} 
-    ></PublicationCard>;
-  }}
-</Story>
+#### CSS:
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-  <li>Component SCSS file: <code>DownloadCard.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+Add the base layout style from dist/css/base-minimal.css
+
+- dist/css/components/publication-card.min.css
+
+#### JS:
+
+NA
+
+### Interactions
+- Hover state applies to entire
+- By clicking on the download Link, the associated file will be downloaded
+- By clicking on the read more Link, the associated URL will be opened
+
+### Changelog
+1.0 — Released component

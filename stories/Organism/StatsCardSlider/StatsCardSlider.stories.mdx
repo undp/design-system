@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Statscardslider } from './StatsCardSlider';
 
 export const statsArray = (locale) => {
@@ -160,35 +160,27 @@ export const statsArray = (locale) => {
 
 <Meta title="Components/UI components/Stats Card Slider"/>
 
-# Stats card slider component
+# Stats card slider
 
-## Overview
+This is collection of [Stats card](/docs/components-ui-components-cards-stats-card--stats-card) with slider
 
-The StatsSlider Component is created for showing the card grid in desktop with parallax effects and slider in mobile view, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+<Canvas>
+  <Story name="Stats Card Slider">
+    {(args, { globals: { locale } }) => {
+      const caption = statsArray(locale);
+      return <Statscardslider data={caption}></Statscardslider>;
+    }}
+  </Story>
+</Canvas>
 
-## Default Representation & various possible states
-
-<Story name="Stats Card Slider">
-  {(args, { globals: { locale } }) => {
-    const caption = statsArray(locale);
-    return <Statscardslider data={caption}></Statscardslider>;
-  }}
-</Story>
-
-## Dependencies
-
-Not Applicable
-
-## Usage
-
-- Take HTML from the HTML tab in the canvas
-- <u>To use SCSS include the following files in your implementation</u>
-- Include the common SCSS files like variables, mixin from <code>assets/scss</code>
-- Component SCSS file: <code>statsslider.scss</code>
-- <u>To use CSS include the following files in your implementation</u>
-- The compiled CSS file from <code>assets/css/style.css</code>
-- <u>To use JS include the following files in your implementation</u>
-- Include JS Slider library file  from <code>assets/js/swiper.js</code>
-- Include JS Parallax library file from <code>assets/js/gsap.min.js</code>
-- Include JS Parallax library file from <code>assets/js/ScrollTrigger.min.js</code>
-- The compiled JS file from <code>assets/js/SliderCustom.js</code>
+### 
+### Usage
+- Copy the HTML from the canvas
+- Include the CSS and JS resource defined in the `Stats card`
+- Include the `dist/css/components/stats-card-slider.min.css` file
+- In you JS file initiliase following JS function
+  - swiper('.stats-slider');
+  - fontResize('.stats-card > h2');
+- Add following JS files too
+  - Swiper (https://swiperjs.com/)
+  - dist/js/swiper.min.js

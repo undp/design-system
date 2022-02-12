@@ -128,51 +128,26 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Patterns/Card grids/Image Reveal Cards" />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-`}</style>
+# Image Reveal Cards
 
-# Content Card Component
+This is just collection of the [Featured card](/docs/components-ui-components-cards-image-reveal-card--image-reveal-card)
 
-The Image Reveal Card component defines a card of information data with some items - Title, Image, Paragraph, and CTA Link. We are using the grid system here <code>assets/scss/grid.scss</code>. Molecules are used for creating this card.
+<Canvas>
+  <Story name="Image Reveal Cards">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <ImageRevealCards  
+          data={caption.data}
+          label={caption.label}
+        ></ImageRevealCards>
+      );
+    }}
+  </Story>
+</Canvas>
 
-<Story name="Image Reveal Cards">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <ImageRevealCards  
-        data={caption.data}
-        label={caption.label}
-      ></ImageRevealCards>
-    );
-  }}
-</Story>
-
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like variables, mixin from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>contentcard.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+### 
+### Usage
+- Copy the HTML from the canvas
+- Include the CSS and JS resource defined in the `Image reveal card`
+- Include the `dist/css/components/image-reveal-cards.min.css` file

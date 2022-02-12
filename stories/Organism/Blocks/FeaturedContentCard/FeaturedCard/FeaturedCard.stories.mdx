@@ -233,85 +233,27 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Patterns/Card grids/Featured Cards" />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 20px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 15px;
-  }
-  .subheading2 {
-    font-weight: 700;
-    font-size: 16px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 10px;
-  }
-  .css-1h4ytzj code {
-    padding-right: 10px;
-    width: 100%;
-    font-size: 14px;
-    line-height: 16px;
-      background: black;
-  }
-`}</style>
+# Featured Cards
 
-# Feature Content Card Component
+This is just collection of the [Featured card](/story/components-ui-components-cards-featured-card--featured-card)
 
-The Feature Content Card component defines a card of information data with some items - Tag, Title, Image, Paragraph, and CTA Link. We are using a grid system to manage the different types of sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+<Canvas>
+  <Story name="Featured Cards">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <FeaturedCard
+          data={caption.featureddata}
+          headertext={caption.headertext}
+          {...args}
+        ></FeaturedCard>
+      );
+    }}
+  </Story>
+</Canvas>
 
-<div className="subheading">Feature Card With Image</div>
-
-By default Feature content cards are show the information about the card with related fields like Tag, Title, Image, Description, and CTA Link. When we mouse over the card (On hover) it shows the image.
-
-<div className="subheading">Feature Card Without Image</div>
-
-When We mouse over the card (On hover) it shows the yellow color except the image.
-
-<div className="subheading">Story Controls</div>
-
-We can check all types of feature card variants by storybook <code> controls </code> .
-
-<ul>
-  <li>
-    the variant we check the option of card like <code>with image</code> and{" "}
-    <code>without image</code>
-  </li>
-  <li>
-    n the column, we check the option of card sizes like <code>large</code> ,{" "}
-    <code>medium</code> , <code>small</code> that's belong to the grid.
-  </li>
-</ul>
-
-<Story name="Featured Cards">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <FeaturedCard
-        data={caption.featureddata}
-        headertext={caption.headertext}
-        {...args}
-      ></FeaturedCard>
-    );
-  }}
-</Story>
-
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like variables, mixin from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>featuredcard.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-</ul>
+### 
+### Usage
+- Copy the HTML from the canvas
+- Include the CSS and JS resource defined in the `Featured card`
+- Include the `dist/css/components/featured-card.min.css` file
