@@ -54,8 +54,6 @@
         position: relative;
         z-index: 2;
         margin-right: $spacing-06;
-        flex: 0 0 2.5rem;
-        max-width: 2.5rem;
 
         @include devicebreak(mediumonlytab) {
           height: 4.6875rem;
@@ -165,6 +163,7 @@
   .country-header {
     .top-left {
       .logo {
+        margin-right: 0;
         img {
           margin-left: 1.5rem;
           margin-right: 0;
