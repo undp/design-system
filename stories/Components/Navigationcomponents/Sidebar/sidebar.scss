@@ -72,7 +72,7 @@
       @include devicebreak(medium) {
         button::after {
           background:
-            url(#{$img-path-Icon}/Chevron-down-white.svg) no-repeat
+            url(#{$img-path-Icon}/chevron-down-white.svg) no-repeat
             center center;
         }
       }

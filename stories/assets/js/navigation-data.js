@@ -14,7 +14,7 @@ export const getData = (lang) => {
         const submenus = item.submenus
           .map((menu, index) => `<li id="${menu.link.id}-${item.id}" class="${
             index === 0 ? 'active' : ''
-          }"><a tabindex="0" href="${menu.external_link ? menu.external_link : '#'}" class="sub-link">${menu.link.label}${menu.external_link ? '<span class="external-link"></span>' : ''}</a></li>`)
+          }"><a tabindex="0" href="${menu.external_link ? menu.external_link : '#'}" class="sub-link">${menu.link.label}${menu.external_link ? '<span class="external-link-animated"></span>' : ''}</a></li>`)
           .join(' ');
 
         const gridX = item.submenus

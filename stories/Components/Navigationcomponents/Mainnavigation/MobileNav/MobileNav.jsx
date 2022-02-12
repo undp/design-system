@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { Icons } from '../../../../Atom/Icons/Icons';
 import Iconsback from '../../../../assets/icons/back.svg';
-import IconsGlobe from '../../../../assets/icons/Globe.svg';
-import IconsLanguage from '../../../../assets/icons/Language.svg';
+import IconsGlobe from '../../../../assets/icons/globe.svg';
+import IconsLanguage from '../../../../assets/icons/language.svg';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 import './mobile-nav.scss';
 
 const MobileNav = ({
-  text,
   locale,
   navigationData,
   languageswitcherData,

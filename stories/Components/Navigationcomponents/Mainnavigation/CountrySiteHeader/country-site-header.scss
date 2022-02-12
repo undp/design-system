@@ -115,19 +115,19 @@
       .icon-search {
         @extend %header-icon;
         margin-left: $spacing-05;
-        -webkit-mask: url(#{$img-path-Iconfourback}/Search.svg) no-repeat left center;
-        mask: url(#{$img-path-Iconfourback}/Search.svg) no-repeat left center;
+        -webkit-mask: url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
+        mask: url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
 
         @include devicebreak(small) {
-          background:transparent url(#{$img-path-Iconfourback}/Search.svg) no-repeat left center;
+          background:transparent url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
         }
       }
 
       .icon-globe {
         @extend %header-icon;
         margin-left: 1.75rem;
-        -webkit-mask: url(#{$img-path-Iconfourback}/Globe.svg) no-repeat left center;
-        mask: url(#{$img-path-Iconfourback}/Globe.svg) no-repeat left center;
+        -webkit-mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
+        mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
         @include devicebreak(mediumonlytab) {
             display: none;
         }

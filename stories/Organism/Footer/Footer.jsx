@@ -9,10 +9,10 @@ import { FooterIcons } from '../../Molecules/FooterNavigation/FooterIcons/Footer
 import { P } from '../../Atom/BaseTypography/Paragraph/Paragraph';
 import { accordion } from '../../assets/js/accordion';
 import { Icons } from '../../Atom/Icons/Icons';
-import IconsGlobe from '../../assets/icons/Globe.svg';
-import IconsGlobeWhite from '../../assets/icons/Globe-white.svg';
-import IconsSearch from '../../assets/icons/Search.svg';
-import IconsSearchWhite from '../../assets/icons/Search-white.svg';
+import IconsGlobe from '../../assets/icons/globe.svg';
+import IconsGlobeWhite from '../../assets/icons/globe-white.svg';
+import IconsSearch from '../../assets/icons/search.svg';
+import IconsSearchWhite from '../../assets/icons/search-white.svg';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
