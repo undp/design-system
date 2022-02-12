@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import CountrySiteHeader from './CountrySiteHeader';
 import {getCaptionForLocale as Languageswitcher} from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.mdx";
 
@@ -135,7 +135,43 @@ export const menuData = (locale) => {
 
 <Meta title="Components/Navigation Components/Main Navigation/Country Header" />
 
+# Country Header
+The Country Site Header is a header that contains the site name.
 
+### Overview
+The Country Site Header component is a navigation bar that allows access to important functions across the website. It is present at the top of the page. 
+
+
+When to use:
+- To indicate the location of the current page and to navigate back to each of the previously visited pages.
+
+Formatting
+
+#### Default
+It consists of a navigation bar with drop-down menus, CTA links, search bar, logo, and site name. The Logo is situated at the left-hand corner of the bar followed by the site title.
+
+### Content
+There are two types of Country Header: Without Progress Bar and With Progress Bar
+
+### Behaviors
+
+States 
+There are three states:  Default, Tablet, and Mobile.
+
+1. Default
+-- Without Progress Bar:
+-- With Progress Bar:
+
+2. Tablet
+-- Without Progress Bar:
+-- With Progress Bar:
+
+3. Mobile
+-- Without Progress Bar:
+-- With Progress Bar:
+
+
+<Canvas>
 <Story name="Country Header" parameters={{
     layout: "fullscreen"
   }}>
@@ -155,6 +191,32 @@ return <CountrySiteHeader siteTitleData={siteTitleData} backcaption={backcaption
       ></CountrySiteHeader>;
   }}
 </Story>
+</Canvas>
+
+### Usage:
+1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
+2. Initialize the navigationInitialize(), langSwitch() function in your js file’s document ready
+
+### CSS and JS References
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+1. dist/css/components/country-site-header.min.css
+2. dist/css/components/language-switcher.min.css
+3. dist/css/components/menu.min.css
+4. dist/css/components/mega-menu.min.css
+5. dist/css/components/mobile-nav.min.css
+
+### JS:
+1. dist/js/navigation.min.js
+2. dist/js/undp.min.js
+3. dist/js/lang-switcher.min.js
+
+### Interactions
+- By clicking on the CTA Link, the page is directed to the subsequent link page.
+- By clicking on the search icon, the search tab opens.
+
+### Changelog
+1.0 — Released component
 
 
 

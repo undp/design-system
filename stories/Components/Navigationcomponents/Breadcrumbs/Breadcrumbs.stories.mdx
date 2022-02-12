@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Breadcrumbcomponent } from './Breadcrumbs';
 
 export const getCaptionForLocale = (locale) => {
@@ -83,57 +83,47 @@ export const getCaptionForLocale = (locale) => {
     }
   }}/>
 
-<style>{`
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }  
-   .subheading2 {
-    font-weight: 700;
-    font-size: 14px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-  }
-  div#story--molecules-navbar--breadcrumb-link, 
-  div#story--molecules-navbar--breadcrumb-link-white {
-    box-shadow: 0 1px 8px rgb(0 0 0 / 15%);
-    box-sizing: inherit;
-  }
-  div#story--molecules-navbar--breadcrumb-link-white {
-    background-color: #D4D6D8;
-  }
-`}</style>
+# Breadcrumbs
+The Breadcrumb provides links to each of the previously visited pages and indicates the location of the current page.
 
-
-# Breadcrumb Component
+### Overview
 The Breadcrumb component creates navigation links for the current pathname based on an opinionated configuration object. The idea behind this component is to drop it anywhere with minimal or no configuration and get breadcrumbs generated automatically. 
 
-we are using these modifier classes:
-<code>breadcrumb__wrapper</code>, <code>breadcrumb__wrapper--Modifier</code>, <code>breadcrumb__item</code>
+#### When to use:
+- To indicate the location of the current page and to navigate back to each of the previously visited pages.
 
-<div className="subheading">Breadcrumb default</div>
+Formatting
+#### Default
+It is present under the main navigation bar.
 
+### Behaviors
+#### States 
+There is only a Default state.
+
+<Canvas>
 <Story name="Breadcrumbs" parameters={{ backgrounds: { default: "gray" } }}>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <Breadcrumbcomponent data={caption} {...args} ></Breadcrumbcomponent>;
   }}
 </Story>
+</Canvas>
 
+### Usage:
+1. Copy the HTML from the HTML tab of canvas and also include the js and css files listed below.
+2. If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>  
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
-  <li>Component SCSS file:<code>breadcrumb-link.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+1. dist/css/components/breadcrumbs.min.css
+
+#### JS:
+1. dist/js/viewport.min.js
+
+### Interactions
+- By clicking on the breadcrumb, the current page is redirected to the respective previous page.
+
+### Changelog
+1.0 — Released component
