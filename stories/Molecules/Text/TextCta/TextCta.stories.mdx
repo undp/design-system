@@ -1,4 +1,4 @@
-import { Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { TextCta } from './TextCta'
 
 export const getCaptionForLocale = (locale) => {
@@ -14,36 +14,33 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/UI components/Text/Text Cta" component={TextCta} />
 
-<style>{`
-  .sbdocs-h1 {
-    font-weight: 700;
-  }
-  .subheading {
-    font-weight: 500;
-    font-size: 22px;
-    color: #161616;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-`}</style>
+# Text CTA
 
-# Text CTA component
+Text CTA block defines a section of information data with some items - title, button/cta and description. `H2`,  `P` and `Button` atoms tags are used for creating this section.
 
-<Story name="Text Cta">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <TextCta headerText={caption.header} descriptionText={caption.description} label={caption.button} ></TextCta>;
-  }}
-</Story>
+<Canvas>
+  <Story name="Text Cta">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <TextCta headerText={caption.header} descriptionText={caption.description} label={caption.button} ></TextCta>;
+    }}
+  </Story>
+</Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>textcta.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+###
+### Usage
+- Take HTML from the HTML tab in canvas
+- Include CSS and JS from the 'CSS and JS References' section
+- 
+
+### CSS and JS References
+
+#### CSS:
+Add the base style only, located at **dist/css/base-minimal.css** along with following:
+- dist/css/components/textcta.min.css
+
+#### JS:
+- dist/js/viewport.min.js (optional for viewport animation)
+
+### Changelog
+1.0 — Released component

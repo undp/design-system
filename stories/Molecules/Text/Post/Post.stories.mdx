@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Post } from './Post'
 
 export const getCaptionForLocale = (locale) => {
@@ -14,60 +14,49 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/UI components/Text/Post Block" component={Post} />
 
-<style>{`
-  .sbdocs-h1 {
-    font-weight: 700;
-  }
-  .subheading {
-    font-weight: 500;
-    font-size: 22px;
-    color: #161616;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .high {
-    font-weight: 500;
-    font-size: 14px;
-    color: #161616;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .docblock-code-toggle {
-    display: none;
-  }
-`}</style>
+# Post Block 
 
-# Post Title Block 
+The post Block Component defines a section of information data with some items - header title, date,  Description. `H2`, `H5`, and `H6` atoms tags are used for creating this section.
 
-The post Block Component defines a section of information data with some items - Header title, Date,  Description. <code>H2</code> <code>H5</code> <code>H6</code>  Atoms tags are used for creating this section.
+It,s divided into two variations - First with Description option and Second is without description option.
 
-<ul>
-<li>It,s divided into two variations - First with Description option and Second is without description option.</li>
-</ul>
+Post block are of 2 types
 
-<Story name="Post Block with Description">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Post headerText={caption.header} countryText={caption.country} descriptionText={caption.description}></Post>;
-  }}
-</Story>
+- Post Block with Description
 
-<Story name="Post Block without Description">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Post headerText={caption.header} descriptionText={caption.description} ></Post>;
-  }}
-</Story>
+<Canvas>
+  <Story name="Post Block with Description">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Post headerText={caption.header} countryText={caption.country} descriptionText={caption.description}></Post>;
+    }}
+  </Story>
+</Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like breakpoints, variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>post.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+- Post Block without Description
+
+<Canvas>
+  <Story name="Post Block without Description">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Post headerText={caption.header} descriptionText={caption.description} ></Post>;
+    }}
+  </Story>
+</Canvas>
+
+###
+### Usage
+- Take HTML from the HTML tab in canvas
+- Include CSS and JS from the 'CSS and JS References' section
+
+### CSS and JS References
+
+#### CSS:
+Add the base style only, located at **dist/css/base-minimal.css** along with following:
+- dist/css/components/post.min.css
+
+#### JS:
+- dist/js/viewport.min.js (optional for viewport animation)
+
+### Changelog
+1.0 — Released component

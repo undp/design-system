@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Smallcopy } from './SmallCopy';
 
 export const getCaptionForLocale = (locale) => {
@@ -14,38 +14,32 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/UI components/Text/Small Copy Lockup" />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-`}</style>
+# Small Copy Lockup
+Small Copy Lockup component defines a section of information data with some items - location, phone number and email ID.
 
-# Small Copy Lockup Component
-Small Copy Lockup component defines a section of information data with some items - Location, Phone Number and Email ID.
+<Canvas>
+  <Story name="Small Copy Lockup">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Smallcopy locationName={caption.locationlabel} phoneName={caption.phonelabel} phonenumber={caption.phone} emailName={caption.emaillabel} emailid={caption.email}></Smallcopy>;
+    }}
+  </Story>
+</Canvas>
 
-<Story name="Small Copy Lockup">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Smallcopy locationName={caption.locationlabel} phoneName={caption.phonelabel} phonenumber={caption.phone} emailName={caption.emaillabel} emailid={caption.email}></Smallcopy>;
-  }}
-</Story>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>smallcopy.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+###
+### Usage
+- Take HTML from the HTML tab in canvas whichever backgorund color you like
+- Include CSS and JS from the 'CSS and JS References' section
+
+### CSS and JS References
+
+#### CSS:
+Add the base style only, located at **dist/css/base-minimal.css** along with following:
+- dist/css/components/smallcopy.min.css
+
+#### JS:
+NA
+
+### Changelog
+1.0 — Released component
