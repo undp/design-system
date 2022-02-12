@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import CustomSelect from './CustomSelect';
 
 export const getCaptionForLocale = (locale) => {
@@ -13,39 +13,62 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/Forms/Dropdown/Custom select" />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-`}</style>
+# Custom Select
+The custom select dropdown allows the user to select one.
 
-# MultiSelect
-The select component allows users to choose multiples option from a list. It is used in forms when there are multiple choices that can be collapsed under one title.
+### Overview
+The custom select dropdown element allows users to choose a single option from a list. It is used in forms when there are single choices that can be collapsed under one title.
 
-<Story name="Custom select">
+### When to use:
+- When single or custom options are to be grouped under a single title.
+
+### Formatting
+
+#### Default
+It consists of a dropdown with an arrow from which the user can select any one option.
+
+### Content
+In the custom dropdown select, only one option can be selected.
+
+The direction of the arrow indicates if one option is selected. The downward arrow indicates a closed box and the upward arrow indicates an open box.
+
+### Behaviors
+
+#### States 
+The Dropdown boxes are either opened or closed. 
+The Custom dropdown boxes either have auto or fixed height.
+- Closed and Auto Height:
+- Closed and Fixed Height:
+- Open and Auto Height:
+- Open and Fixed Height:
+
+<Canvas>
+<Story name="Custom Select">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <CustomSelect text={caption}></CustomSelect>;
   }}
 </Story>
+</Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<li>Take the multiselect js files from <code>assets/js/multiselect.js</code> and <code>assets/js/multiselect-init.js</code></li>
-<li><u>To use SCSS include the following files in your implementation</u></li>
-<li>Include the common SCSS files like normalize, variables from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>multiselect.scss</code></li>
-<li><u>To use CSS include the following files in your implementation</u></li>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Usage:
+Copy the HTML from the HTML tab of Canvas.
+Include the css and js files listed below.
+Initialize the select by calling select() function.
+If you need a fixed height dropdown then apply Height to the "ul" tag of dropdown. It will scroll inside the dropdown.
+
+
+### CSS and JS References 
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+1. dist/css/components/custom-select.min.css
+
+#### JS:
+1. dist/js/select.min.js
+
+### Interactions
+- By clicking on the arrow, the custom select dropdown box can be opened or closed.
+- By clicking on the option/options, those can be selected.
+
+### Changelog
+1.0 — Released component
