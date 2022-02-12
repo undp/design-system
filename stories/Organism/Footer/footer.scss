@@ -216,7 +216,7 @@
         color: $color-black;
 
         &::before {
-          background: url(#{$img-path-Iconback}/Chevron-down.svg) no-repeat center center;
+          background: url(#{$img-path-Iconback}/chevron-down.svg) no-repeat center center;
         }
       }
 
@@ -252,7 +252,7 @@
     &::before {
       @include transition(0.1s ease);
 
-      background: url(#{$img-path-Iconback}/Chevron-down-white.svg) no-repeat center center;
+      background: url(#{$img-path-Iconback}/chevron-down-white.svg) no-repeat center center;
       content: '';
       display: block;
       float: right;

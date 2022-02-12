@@ -16,7 +16,7 @@ details {
 
     &::before {
       background:
-        url(#{$img-path-Icon}/Chevron-small-right.svg)
+        url(#{$img-path-Icon}/chevron-small-right.svg)
         no-repeat left center;
       content: '';
       display: inline-block;
@@ -36,7 +36,7 @@ details {
 
       &::before {
         background:
-          url(#{$img-path-Icon}/Chevron-small-down.svg)
+          url(#{$img-path-Icon}/chevron-small-down.svg)
           no-repeat left center;
         content: '';
         display: inline-block;

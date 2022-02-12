@@ -49,7 +49,7 @@ The Icon components can grab attention and draw users into a piece of content. T
         return (<div key={index}><img src={`icons/${item.name}.svg`} alt="icon"/>
         <p>{`${item.label}`}</p></div>);
       }
-      if(item.name == 'download-icon' , 'arrow-expand') {
+      if(item.name == 'download-animated' , 'chevron-right-animated') {
         return (<div key={index}><span className={`${item.name}`}><i></i></span><p>{`${item.label}`}</p></div>);
       } else {
         return (<div key={index}><span className={`${item.name}`}></span><p>{`${item.label}`}</p></div>);
@@ -61,7 +61,7 @@ The Icon components can grab attention and draw users into a piece of content. T
 ### Usage
 
 - For svg icons download it from dist/images and use it on your webpage.
-- For CSS based icons eg: .arrow-expand, .external-link and .download-icon use these classes in **span** element and include **dist/css/icons.css** file.
+- For CSS based icons eg: .chevron-right-animated, .external-link-animated and .download-animated use these classes in **span** element and include **dist/css/icons.css** file.
 
 
 #### CSS and JS References

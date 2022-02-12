@@ -41,7 +41,7 @@
         width: 45px;
 
         &::before {
-          background: url(#{$img-path-Icon}/circle-left.svg) no-repeat center center;
+          background: url(#{$img-path-Icon}/chevron-left-circle.svg) no-repeat center center;
           content: ' ';
           display: block;
           height: 45px;
@@ -62,7 +62,7 @@
       margin-right: 0;
       a {
         &::before {
-          background: url(#{$img-path-Icon}/circle-right.svg) no-repeat center center;
+          background: url(#{$img-path-Icon}/chevron-right-circle.svg) no-repeat center center;
         }
       }
     }

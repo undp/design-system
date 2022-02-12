@@ -2,8 +2,8 @@
 import * as utility from './resize';
 import arrowright from '../icons/arrow-right.svg';
 import arrowleft from '../icons/arrow-left.svg';
-import chevronRightWhite from '../icons/circle-right.svg';
-import chevronLeftWhite from '../icons/circle-left.svg';
+import chevronRightWhite from '../icons/chevron-right-circle.svg';
+import chevronLeftWhite from '../icons/chevron-left-circle.svg';
 
 // Swiper Slider
 export const swiper = (selector, arrowsSelector, options) => {

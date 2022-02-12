@@ -81,7 +81,7 @@
     }
 
     .gprev {
-      background: url(#{$img-path-Iconfourback}/circle-left.svg) no-repeat left center;
+      background: url(#{$img-path-Iconfourback}/chevron-left-circle.svg) no-repeat left center;
       left: 3px;
       position: absolute;
       top: 47%;
@@ -97,7 +97,7 @@
     }
 
     .gnext {
-      background: url(#{$img-path-Iconfourback}/circle-right.svg) no-repeat left center;
+      background: url(#{$img-path-Iconfourback}/chevron-right-circle.svg) no-repeat left center;
       position: absolute;
       right: 3px;
       top: 47%;
@@ -113,7 +113,7 @@
     }
 
     .gclose {
-      background: url(#{$img-path-Iconfourback}/Times_circle.svg) no-repeat left center;
+      background: url(#{$img-path-Iconfourback}/times-circle.svg) no-repeat left center;
       border: 0;
       cursor: pointer;
       font-size: 0;

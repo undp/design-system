@@ -31,7 +31,7 @@
       &::before {
         @include transition(all 0.3s ease);
 
-        background: url(#{$img-path-Icon}/Chevron-down.svg) no-repeat center center;
+        background: url(#{$img-path-Icon}/chevron-down.svg) no-repeat center center;
         border-top-color: #f3f3f3;
         content: '';
         height: 1.25rem;

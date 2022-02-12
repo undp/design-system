@@ -15,11 +15,11 @@ export const DownloadRow = ({
       {args.type === 'Checkbox' && <Checkbox value={value} id={`list-${value}`} arialabel="checkbox"/> }
       {args.type === 'Download' && (
       <a href="#" aria-label="download" target="_blank">
-        <span className="download-icon" ><i/></span>
+        <span className="download-animated" ><i/></span>
         {' '}
       </a>
       )}
-      {args.type === 'External_link' && <a href="#" aria-label="external-link" target="_blank"><span className="external-link" /></a>}
+      {args.type === 'External_link' && <a href="#" aria-label="external-link-animated" target="_blank"><span className="external-link-animated" /></a>}
     </div>
   </div>
 );
