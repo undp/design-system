@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import {LightboxGallery} from './LightboxGallery';
 import galleryThum1 from '../../../../assets/images/parallax-gallery-thumb1.jpg';
 import galleryImg1 from '../../../../assets/images/parallax-gallery-img1.jpg';
@@ -244,39 +244,34 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/UI components/Gallery/Lightbox gallery" />
 
-<style>{`
-  .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-  div[id^="story--molecules-text-authors"] {
-    padding: 20px;
-    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 25px 0px 40px;
-    border-radius: 4px;
-  }
-`}</style>
+# Lightbox Gallery
 
-# Parallax Gallery component
+The Lightbox Gallery displays images in the front darkening the rest of the webpage.
 
-## Overview
+### Overview
+The Lightbox Gallery component when clicked on a particular image, pop-ups that specific image, gaining the users’ attention. 
 
-The Parallax Gallery Component is created for showing gallery, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+#### When to use:
 
-## Default Representation & various possible states
+To gain the attention of the user.
 
+### Formatting
+
+#### Default
+It consists of two sections: text with CTA link section and Image section.
+
+### Content
+
+### Behaviors
+
+#### States 
+There will be a set of 2-row images when clicked on a specific image then that image will be displayed in a popup view. The component is compatible with both mobile and tablet.
+
+View of a set of images in a row: 
+
+When selected a specific image:
+
+<Canvas>
 <Story name="Lightbox gallery">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
@@ -289,35 +284,32 @@ The Parallax Gallery Component is created for showing gallery, designation, and 
         ></LightboxGallery>;
   }}
 </Story>
+</Canvas>
 
-## Dependencies
+### Usage:
+- Copy HTML from the HTML tab of canvas and also include css and js files.
+- Initialize lightbox gallery by calling lightbox_Gallery() function.
+- Include below library files as well.
+https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/plugins/foundation.core.min.js
+https://cdn.jsdelivr.net/npm/glightbox@3.1.0/dist/js/glightbox.min.js
 
-Not Applicable
+### CSS and JS References
 
-## Usage
+#### CSS:
 
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like variables, mixin from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>parallaxgallery.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-  <u>To use JS include the following files in your implementation</u>
-  <li>
-    Include JS Parallax library file from <code>assets/js/gsap.min.js</code>
-  </li>
-  <li>
-    Include JS Parallax library file from <code>assets/js/ScrollTrigger.min.js</code>
-  </li>
-  <li>
-    Include JS file  from <code>assets/js/parallax-gallery.js</code>
-  </li>
-</ul>
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/lightbox.min.css
+- dist/css/components/lightbox-gallery.min.css
+- dist/css/components/cta-link.min.css
+
+JS:
+- dist/js/lib/lightbox.min.js
+- dist/js/lightbox-gallery.min.js
+
+### Interactions
+- By clicking on the image, it opens in the lightbox.
+- By clicking on the close option, it can be closed.
+- By swiping left/right or by using keyboard arrows, the images can be navigated.
+
+### Changelog
+1.0 — Released component

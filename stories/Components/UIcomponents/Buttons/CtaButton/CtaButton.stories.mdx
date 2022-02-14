@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { CtaButton } from './CtaButton';
 
 export const getCaptionForLocale = (locale) => {
@@ -31,108 +31,96 @@ export const getCaptionForLocale = (locale) => {
       },
   }}/>
 
-<style>{`
-  div#story--atoms-buttons--primary-arrow, div#story--atoms-buttons--primary-arrow-disabled, div#story--atoms-buttons--primary-no-arrow, div#story--atoms-buttons--primary-no-arrow-disabled, div#story--atoms-buttons--secondary, div#story--atoms-buttons--secondary-disabled, div#story--atoms-buttons-cta--cta-button {
-    display: none;
-  }
-  .cta_wrapper {
-    display: flex;
-  }
-  .cta__label {
-    padding-right: 20px;
-  }
-  .cta_item {
-    padding: 10px;
-  }
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-`}</style>
 
-# Buttons and CTA Component
-<ul>
-  <li>Buttons are clickable elements that are used to trigger actions. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. Button labels express what action will occur when the user interacts with it.</li>
-  <li>CTA-Button are divided into two options - Primary and Secondary cta.</li>
-</ul>
+# Buttons and Labels
 
-we are using these modifier classes:
-<code>.button</code>, <code>.button--primary</code>, <code>.button--secondary</code>, <code>.button--arrow</code>, <code>.disabled</code>, <code>.cta__link</code>, <code>.cta--arrow</code>
+A button describes what action will be performed when a user clicks or touches it. 
 
-When using button classes on elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a role="button" to appropriately convey their purpose to assistive technologies such as screen readers.
+### Overview
+A button describes the call to action that will be performed when the user clicks/touches it. It has a label and an optional animation. 
 
-<div className="subheading"> Primary CTA </div>
-<ul>
-<li>The primary action associated have a stronger visual weight.</li>
-</ul>
+#### When to use:
 
-<div className="cta_wrapper">
-  <div className="cta_item">
-    <div className="cta__box cta-primary-exapnd-arrow"></div>
-    <div className="cta__label"> Primary cta with exapand state </div>
-    <div className="cta__code"> <CtaButton label="READ MORE" Type='Primary' For_Primary='Arrow'></CtaButton></div>
-  </div>
-  <div className="cta_item">
-    <div className="cta__box cta-primary-exapnd-arrow_disabled"></div>
-    <div className="cta__label"> Primary cta exapand with disabled state </div>
-    <div className="cta__code"> <CtaButton label="READ MORE" Type='Primary' For_Primary='Arrow' State='Disabled'></CtaButton></div>
-  </div>
-  <div className="cta_item">
-    <div className="cta__box cta-primary"></div>
-    <div className="cta__label"> Primary cta with default state </div>
-    <div className="cta__code"> <CtaButton label="READ MORE" Type='Primary' For_Primary='No Arrow'></CtaButton></div>
-  </div>
-  <div className="cta_item">
-    <div className="cta__box cta-primary_disabled"></div>
-    <div className="cta__label"> Primary cta with disabled state </div>
-    <div className="cta__code"> <CtaButton label="READ MORE" Type='Primary' For_Primary='No Arrow' State='Disabled'></CtaButton></div>
-  </div>
-</div> 
+- Buttons should be used as primary or secondary calls to actions
+- Ideally, a page should have one or two primary buttons only. Other call-to-actions should be shown as secondary buttons
+- Examples of buttons can be to “VIEW MORE” or “READ MORE” or “SIGN UP”
+- If there are multiple choices for an action item, one default button should be active and the other buttons inactive
 
-<div className="subheading">Secondary CTA </div>
-<ul>
-  <li>Secondary buttons are the alternative we give users to the primary action.</li>
-</ul>
+### Formatting 
 
-<div className="cta_wrapper">
-  <div className="cta_item">
-    <div className="cta__box cta-secondary"></div>
-    <div className="cta__label"> Secondary cta</div>
-    <div className="cta__code"> <CtaButton label="VIEW MORE" Type='Secondary'></CtaButton></div>
-  </div>
-  <div className="cta_item">
-    <div className="cta__box cta-primary_disabled"></div>
-    <div className="cta__label"> Secondary cta with disabled state </div>
-    <div className="cta__code"> <CtaButton label="VIEW MORE" Type='Secondary' State='Disabled' ></CtaButton></div>
-  </div>
-</div>
+#### Default
+There are multiple button types in our design system
+1. Primary button with arrow and without arrows
+2. Secondary buttons without the arrow
+3. CTA links with and without expanding arrows
+4. Chips
 
+### Content
+Button”s color and text indicate the default setting and call of action of the button.
+Primary CTA: Dark Red: Default call of action button
+                      Red: Hover overcall of action button
+                      Gray: Disabled call of action button
+Secondary Button: Blue-600: Default secondary button
+                      Blue-400: Hover over the secondary button
+                      Gray-400: Disabled secondary button
+
+### Behaviors
+
+#### States
+The following size modifiers are available:
+
+Primary CTA: 
+The Dark Red Primary button with an arrow is the default button displayed on the website with default breakpoint which indicates the main task to be completed. 
+                       
+
+CSS
+
+
+The Red Primary button with an arrow is a hover over button with a default breakpoint which changes its appearance once a mouse hovers over it, even if it is not selected. 
+
+
+
+The Gray-400 Primary button is disabled with an arrow and default breakpoint which will be disabled if there is an error and the error needs to be cleared for abling it.
+
+
+Secondary Buttons: 
+The Blue-600 Secondary Button is the default secondary button which is used as an alternative to the primary button. Its color is different from the Primary button as the viewers won’t get confused with the Primary button.
+
+
+
+The Blue-400 Secondary button is a hover button that changes its appearance once the mouse hovers over it. 
+
+
+
+The Gray-400 Secondary button is in a disabled state and will require error corrections for enabling it to select the alternative option.
+
+<Canvas>
 <Story name="Buttons">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <CtaButton label={caption.detail} {...args} ></CtaButton>;
   }}
 </Story>
+</Canvas>
 
-<div className="subheading">Actions</div>
-<ul>
-  <li>When an action required by the user has more than one option, always use a negative action button (secondary) paired with a positive action button (primary) in that order.</li>
-  <li>Negative action buttons will be on the left.</li>
-  <li>Positive action buttons should be on the right.</li>
-  <li>When these two types buttons are paired in the correct order, they will automatically space themselves apart.</li>
-</ul>
+### Usage
+- Copy the HTML from the HTML Tab of canvas for either Chips, CTA Button, and CTA Link from the controls.
+- Include the CSS files listed below concerning the button you choose.
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
-  <li>Component SCSS file:<code>buttons.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/buttons.min.css
+
+Use above CSS concerning CTA Button
+
+#### JS:
+NA
+
+### Interactions
+- The hover state is applied to the entire button.
+
+### Changelog
+1.0 — Released component

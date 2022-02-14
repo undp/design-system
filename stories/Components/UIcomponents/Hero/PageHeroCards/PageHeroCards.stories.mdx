@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { CountryCardHero } from "./PageHeroCards";
 import field_2 from '../../../../assets/images/field_2.jpg';
 import field from '../../../../assets/images/field.jpg';
@@ -198,32 +198,30 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/UI components/Hero/Page hero - cards" component={CountryCardHero}/>
 
-<style>{`
- .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-`}</style>
+# Page hero - Cards
 
-# Page hero - Cards Component
+The Page Hero Cards are cards with text and images.
+### Overview
+The Page Hero Card component is a multi-usage component that creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle, and Breadcrumb. Animation and country card molecules are used for creating this card.
 
-## Overview
+#### When to use:
 
-The Page hero - Cards component multiusage component which creates boxes that are usually teasing some kind of content like - Image, Text, Subtitle, and Breadcrumb. We are using the animation here assets/js/viewport.js. Atoms tags and Country Card Molecule are used for creating this card
+When the website needs to grab the user's attention to a particular page.
 
-## Default Representation & various possible states
+### Formatting
 
+#### Default
+It consists of a grid with title, subtitle and image.
+
+### Content
+The Page Hero Card consists of text in the topmost part of the card and images in the bottom part of the card.
+
+### Behaviors
+
+#### States 
+There is only one default state for the page hero card.
+
+<Canvas>
 <Story name="Page hero - cards">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
@@ -233,20 +231,34 @@ The Page hero - Cards component multiusage component which creates boxes that ar
     );
   }}
 </Story>
+</Canvas>
 
-## Dependencies
+### Usage:
+- Copy HTML from the HTML tab of canvas.
+- Make sure to remove swiper-slider-0 swiper-initialized swiper-horizontal swiper-pointer-events remove these classes, remove ID and aria-label attribute
+- Include css and js files listed below.
+- Include Swiper library from here https://swiperjs.com/get-started in your html page.
+- Initialize swiper by calling swiper('.pagehero-cards-items') function.
+- If you are using left to right animation, please add data-viewport=”true” attribute to your HTML element and include viewport.min.js.
 
-Libraries or another dependency which are used in the component.
+### CSS and JS References
 
-- For animation functionality its depend on the jQuery plugin library.
-- Custom JS file (viewport.js) is located in the same js folder.
-- Custom JS file (SliderCustom.js) is located in the same js folder.
+#### CSS:
 
-## Usage
+Add the base layout style from dist/css/base-minimal.css
+- ist/css/components/country-card-hero.min.css
+- dist/css/components/country-card.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/swiper.min.css
 
-- Take HTML from the HTML tab in the canvas.
-- <u>To use SCSS include the following files in your implementation</u>
-- Include the common SCSS files like breakpoints, variables from <code>assets/scss</code>
-- Component SCSS file: <code>countrycardhero.scss</code> and <code>countrycard.scss</code>
-- <u>To use CSS include the following files in your implementation</u>
-- The compiled CSS file from <code>assets/css/style.css</code>
+#### JS:
+- dist/js/swiper.min.js
+- dist/js/smartresize.min.js
+- dist/js/viewport.min.js
+
+### Interactions
+- When the page is opened, the text appears over the image.
+- When clicked on the image, the image lifts up a bit.
+
+### Changelog
+1.0 — Released component

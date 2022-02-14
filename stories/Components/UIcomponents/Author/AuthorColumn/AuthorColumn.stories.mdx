@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Author } from './AuthorColumn';
 import user from '../../../../assets/images/author.png';
 
@@ -123,59 +123,78 @@ export const getCaptionForLocale = (locale) => {
   }
   }}/>
 
-<style>{`
-  .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-  div[id^="story--molecules-text-authors"] {
-    padding: 20px;
-    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 25px 0px 40px;
-    border-radius: 4px;
-  }
-`}</style>
+# Authors
 
-# Authors component
+The author component gives an overview of the authors of an article/photo.
 
-## Overview
+### Overview
+The Author component highlights the author(s) ’s name, designation, and photo for an article or story they have contributed to on the site.
 
-The Authors Component is created for showing the authors name, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+#### When to use:
+The author component is primarily used to give credit to any article or story they have published on the site.
 
-## Default Representation & various possible states
+### Formatting 
 
-<div className="subheading">Author Column</div>
+#### Default
+The author component consists of a single author or multiple authors.
+If the author has a profile picture, it is displayed as follows,
 
+
+If the author does not have a profile photo or more authors are contributing to a single article/photo, then their information is displayed as follows.
+
+#### Multiple authors
+If there are up to 3 authors, they are displayed horizontally.
+
+
+If there are 4 or more authors, their profile pictures are not displayed.
+
+
+
+On smaller devices, the authors are stacked vertically if less than 4
+
+
+If more than 4 authors, on smaller screens, they are displayed as follows
+
+
+
+### Content
+
+The author component contains the first and last name, profile picture (optional), and designation of the author(s).
+
+### Behaviors
+
+#### States
+The author component will have a minimum of 1 author and can expand to as many authors as needed. There can be combinations of authors with or without profile photos.
+
+The following behavior modifiers are available:
+
+<Canvas>
 <Story name="Author">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <Author image={user} alt= 'Headshot of XYZ' data={caption} {...args}></Author>;
   }}
 </Story>
+</Canvas>
 
-## Dependencies
+### Usage:
+- Choose the author with or without an image from image control and several authors to display from number control from the canvas control tab.
+- Copy the HTML from the HTML tab and also include the below-listed CSS file.
+- CSS and JS References
 
-Not Applicable
+### CSS and JS References
 
-## Usage
+#### CSS:
 
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>authors.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/authors.min.css
+
+#### Js:
+
+NA
+
+### Interactions
+- The author component can be used with or without a link. When linking, the entire block—image, name, designation—should be clickable.  
+
+### Changelog
+1.0 — Released component

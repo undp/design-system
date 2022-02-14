@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Chips } from './Chips';
 
 
@@ -24,51 +24,46 @@ export const getCaptionForLocale = (locale) => {
   }}
 />
 
-<style>{`
-  div#story--atoms-buttons-chips--chip {
-    margin-bottom: 30px;
-  }
-  div#story--atoms-buttons-chips--chip {
-    display: none;
-  }
-  .cta_wrapper {
-    display: flex;
-  }
-  .cta__label {
-    padding-right: 20px;
-  }
-  .cta_item {
-    padding: 10px;
-  }
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-`}</style>
+# Buttons and Labels
 
-# Chips Component
-Chips are compact elements that allow users to enter information, select a choice, filter content, or trigger an action.
+A button describes what action will be performed when a user clicks or touches it. 
 
-<div className="cta_wrapper">
-  <div className="cta_item">
-    <div className="cta__box CtaLink-arrow"></div>
-    <div className="cta__label">Chip cross</div>
-    <div className="cta__code"> <Chips label="Label" Type='With X'></Chips></div>
-  </div>
-</div>
-<div className="cta_wrapper">
-  <div className="cta_item">
-    <div className="cta__box CtaLink-space"></div>
-    <div className="cta__label">Chip without cross </div>
-    <div className="cta__code"> <Chips label="Label"></Chips></div>
-  </div>
-</div>
+### Overview
+A button describes the call to action that will be performed when the user clicks/touches it. It has a label and an optional animation. 
 
+#### When to use:
+
+- Buttons should be used as primary or secondary calls to actions
+- Ideally, a page should have one or two primary buttons only. Other call-to-actions should be shown as secondary buttons
+- Examples of buttons can be to “VIEW MORE” or “READ MORE” or “SIGN UP”
+- If there are multiple choices for an action item, one default button should be active and the other buttons inactive
+
+### Formatting 
+
+#### Default
+There are multiple button types in our design system
+1. Primary button with arrow and without arrows
+2. Secondary buttons without the arrow
+3. CTA links with and without expanding arrows
+4. Chips
+
+### Content
+
+### Behaviors
+
+#### States
+
+Chips: Chips are used to show an active search or filter term.
+
+Chip with default state, and an icon. The close icon lets them cancel or delete the information.
+
+Chip with hover state and icon which changes appearance when a mouse hovers over it.
+
+Chip with default state and no close icon which means it doesn’t provide the option of deleting the information written or action which has been taken.
+
+Chip with hover state and close icon. Changes appearance once the mouse moves over it. 
+
+<Canvas>
 <Story
   name="Chips"
 >
@@ -82,13 +77,26 @@ Chips are compact elements that allow users to enter information, select a choic
     );
   }}
 </Story>
+</Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
-  <li>Component SCSS file:<code>chips.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Usage
+- Copy the HTML from the HTML Tab of canvas for either Chips, CTA Button, and CTA Link from the controls.
+- Include the CSS files listed below concerning the button you choose.
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/chips.min.css
+
+Use above CSS concerning Chips
+
+#### JS:
+NA
+
+### Interactions
+- The hover state is applied to the entire button.
+
+### Changelog
+1.0 — Released component

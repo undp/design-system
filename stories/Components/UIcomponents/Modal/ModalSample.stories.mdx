@@ -1,4 +1,4 @@
-import { Meta, Story, canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ModalSample } from './ModalSample';
 import img from '../../../assets/images/bio.jpg';
 import img2 from '../../../assets/images/modal.png';
@@ -16,29 +16,31 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/UI components/Modal" />
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 20px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 15px;
-  }
-  .subheading2 {
-    font-weight: 700;
-    font-size: 16px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 10px;
-    text-decoration: underline;
-  }
-`}</style>
+# Modal
 
-# Modal Card Component
+The Modal is a popup window or dialog box which appears on the top of the current page.
 
-The Modal component defines a block of information data with some.
+### Overview
+The Modal component is a popup window or dialog box which is a secondary window that appears over the primary window, disabling the primary window but keeping it visible. Overlay with the “frosty” effect is applied to the underlying page if the modal window size is smaller than the viewport.
+
+
+#### When to use:
+
+To direct the user’s attention to other important actions which need to be completed before operating the primary window.
+
+### Formatting
+
+#### Default
+It consists of a dialog box or popup window.
+
+### Content
+Any image or information or image with information can be placed in the modal window.
+
+### Behaviors
+
+### States 
+There is only one state in Modal.
+
 
 <Canvas>
   <Story name="Modal">
@@ -49,12 +51,27 @@ The Modal component defines a block of information data with some.
   </Story>
 </Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>modal.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+
+### Usage
+- Grab the HTML from the HTML tab in the canvas and include JS and CSS in ‘CSS and JS References’ section.
+- Make sure to add data-toggle=’modal’ and  data-target-modal=’your-modal-id’ in your button or link which will open the modal box.
+- Include modal.min.js file and initialize modal();
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/buttons.min.css.
+- dist/css/components/bio-card.min.css.
+- dist/css/components/modal.min.css.
+
+#### JS:
+- dist/js/modal.min.js.
+
+### Interactions
+- By clicking on the image/text, it pops up.
+- The pop-up window can be closed by clicking on the cross icon or anywhere outside of the modal container.
+
+### Changelog
+1.0 — Released component
