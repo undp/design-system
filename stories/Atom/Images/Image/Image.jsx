@@ -1,14 +1,14 @@
 import React from 'react';
 import './image.scss';
 import mongoliaGoat from '../../../assets/images/Mongolia-cashmere-goats.jpg';
-import farmlandmd from '../../../assets/images/farmland-md.jpg';
-import farmlandsm from '../../../assets/images/farmland-sm.jpg';
+import mongoliaGoatmd from '../../../assets/images/Mongolia-cashmere-goats-md.jpg';
+import mongoliaGoatsm from '../../../assets/images/Mongolia-cashmere-goats-sm.jpg';
 
 export const Image = ({ className, Type }) => {
   const image = {
     srclg: mongoliaGoat,
-    srcmd: farmlandmd,
-    srcsm: farmlandsm,
+    srcmd: mongoliaGoatmd,
+    srcsm: mongoliaGoatsm,
     alt: 'Undp Image',
   };
   return (
