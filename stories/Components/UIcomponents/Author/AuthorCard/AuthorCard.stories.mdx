@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Authorcard } from './AuthorCard';
 import user from '../../../../assets/images/author.png';
 
@@ -41,59 +41,55 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Components/UI components/Authors/Author card" />
 
-<style>{`
-  .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-  div[id^="story--molecules-text-authors-author-card"] {
-    padding: 20px;
-    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 25px 0px 40px;
-    border-radius: 4px;
-  }
-`}</style>
+# Author Card
 
-# Author Card component
+An author card is a brief summary of an author highlighting their work.
 
-## Overview
+### Overview
+An author card gives a quick overview of an author. It includes their name, title, profile picture- optionally, a summary of their work, and a count of the number of articles they have published on the site. It acts as an entry point to all the articles published by them.
 
-The Author Card Component is created for showing the author name, designation, image, and content in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+#### When to use:
+Author cards are mainly used in the author directory. 
 
-## Default Representation & various possible states
+### Formatting 
 
-<div className="subheading">Author Card</div>
+#### Default
 
+### Content
+
+An author card contains the first and last name, profile picture (optional), summary, count of the number of articles published by them on the site, and a CTA to a more detailed description and list of their published articles.
+
+### Behaviors
+
+#### States
+There is a single state for the Author card.
+
+<Canvas>
 <Story name="Author card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <Authorcard image= {user} alt= 'Headshot of XYZ' data={caption.authordata} para={caption.paragraph} button={caption.button} link='#' width="medium-12"></Authorcard>;
   }}
 </Story>
+</Canvas>
 
-## Dependencies
+### Usage:
+- Copy the HTML from the canvas and also include the below-listed CSS files.
 
-Not Applicable
+### CSS and JS References
 
-## Usage
+#### CSS:
 
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>authorcard.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+- Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/author-card.min.css
+- dist/css/components/authors.min.css
+- dist/css/components/cta-link.min.css
+
+#### Js:
+NA
+
+### Interactions
+- The entire card is clickable. Clicking any part of the card should take the user to the associated author detail page. 
+
+### Changelog
+1.0 — Released component

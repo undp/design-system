@@ -1,4 +1,4 @@
-import { Meta, Story,  Canvas, Source } from '@storybook/addon-docs';
+import { Meta, Story, Canvas, Source } from '@storybook/addon-docs';
 import { BioCard } from './BioCard';
 import img from '../../../../assets/images/bio.jpg';
 import img2 from '../../../../assets/images/modal.png';
@@ -27,56 +27,35 @@ export const getCaptionForLocale = (locale) => {
       }
     }}/>
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 20px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 15px;
-  }
-  .subheading2 {
-    font-weight: 700;
-    font-size: 16px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 10px;
-  }
-  .css-1h4ytzj code {
-    padding-right: 10px;
-    width: 100%;
-    font-size: 14px;
-    line-height: 16px;
-      background: black;
-  }
-`}</style>
+# Bio Content Card
 
-# Bio Content Card Component
+A bio card is a profile summary of an author/leader along with their profile picture
 
-The Bio Content Card component defines a card of information data with some items -  Title, Image, Paragraph, and CTA Link. We are using a grid system to manage the different types of sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+### Overview
+A bio card showcases a contributor’s name, title, photo, and a summary of their background and work. It also contains a CTA to open more information in a lightbox modal.
+
+A bio card is usually displayed with a story, article that the user has contributed to. It is an entry point to a more detailed description of the contributor when clicked on.
+
+#### When to use:
+
+To give a brief introduction of the author/contributor of the article or story and act as an entry point to more information in a lightbox modal
+
+### Formatting
+
+#### Default
+The bio card consists of a user’s first and last names, title, a summary of their background/work, a profile picture, and a CTA that opens up a lightbox modal highlighting salient information about the user.
+
+### Content
+
+The bio card requires a profile image, first and last name, title,  profile summary, and a CTA that opens the lightbox modal with more information.
+
+### Behaviors
+
+#### States
+The bio card has a default and hover state. On hover, an accent color overlay is displayed over the profile photo.
 
 <Canvas>
-  <Story name="Bio card" parameters={{ docs: { source: { code: `<div class="grid-x bio-card medium yellow">
-  <div class="cell large-3">
-    <a href="#" role="button" data-toggle="modal" data-target-modal="#bioCard">
-      <div class="card-thumbnail__image">
-        <img src="static/media/bio.jpg" alt="static/media/bio.jpg" />
-      </div>
-      <article class="bio-card__content">
-        <div data-viewport="true" class="bio-card__description inviewport">
-          <h5>Firstname Lastname</h5>
-          <p>
-            Director of UNDP’s Representation Office in Brussels, UN
-            Secretary-General’s Representative
-          </p>
-        </div>
-        <span class="cta__link cta--arrow">READ MORE</span>
-      </article>
-    </a>
-  </div>
-</div>` } } }}>
+  <Story name="Bio card">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <BioCard contenttile={caption.title} contentname={caption.name}  descriptionText={caption.descriptionText} descriptionText2={caption.descriptionText2}  button={caption.btnlabel}  alt={'feature card'} image={img} image2={img2} {...args} ></BioCard>;
@@ -85,10 +64,31 @@ The Bio Content Card component defines a card of information data with some item
 </Canvas>
 
 ### Usage
+- Choose the size either large or medium from the control tab on canvas.
+- Copy the HTML from the HTML tab in the canvas and include css and js files listed below.
+- If you want left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.
+- If you want the add modal on click then include modal.min.js and initialize modal(); on load.
 
-- Take HTML from the HTML tab in the canvas
-- **To use SCSS include the following files in your implementation**
-- Include the common SCSS files like variables, mixin from <code>assets/scss</code>
-- Component SCSS file: <code>featuredContentCard.scss</code>
-- **To use CSS include the following files in your implementation**
-- The compiled CSS file from <code>assets/css/style.css</code>
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/bio-card.min.css, 
+- dist/css/components/modal.min.css,
+- dist/css/components/cta-link.min.css
+
+#### JS:
+- dist/js/modal.min.js.
+- dist/js/viewport.min.js
+
+
+The following behavior modifiers are available:
+
+### Interactions
+- The hover state is applied to the profile image only.
+- Clicking the bio card opens the information in a lightbox modal
+- The bio card should never be used without the modal
+
+### Changelog
+1.0 — Released component

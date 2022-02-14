@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import {FluidImageSizeCarousel} from './FluidImageSizeCarousel';
 import fluidCarouselImg from '../../../../assets/images/fluid-carousel-img.jpg';
 
@@ -116,71 +116,78 @@ export const statsArray = (locale) => {
 
 <Meta title="Components/UI components/Carousel/Fluid carousel"/>
 
-<style>{`
-  .subheading {
-    font-weight: 600;
-    font-size: 20px;
-    color: #333333;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-  .sbdocs .sbdocs-h2 {
-    border-bottom: none;
-  }
-  div[id^="story--molecules-text-authors"] {
-    padding: 20px;
-    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px 0px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 25px 0px 40px;
-    border-radius: 4px;
-  }
-`}</style>
+# carousel - Fluid image size carousel
 
-# Fluid image size carousel component
+The Carousel is a slideshow of multiple images or content.
 
-## Overview
+### Overview
+The Carousel component is created for showing sliders, designation, and image in a particular section. It is a multi-usage component that creates teasing kinds of content.
 
-The Fluid image size carousel Component is created for showing slider, designation, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+#### When to use:
 
-## Default Representation & various possible states
+When multiple images or content is to be displayed in a single slide.
 
+### Formatting
+
+#### Default
+It consists of multiple grids with an image, description, and CTA link.
+
+### Content
+There are 3 types of Carousel: Fluid, Image, and Fixed 
+1. Fluid Image Size Carousel Component:
+In Fluid Image Size Carousel Component, the page layout of the content is adjusted as per the user’s device screen. It consists of a horizontal scroll bar, Image, Text area, CTA Link, Right cursor arrow (left in case of RTL).
+
+2. Image Only Carousel Component:
+In Image Only Carousel Component, only images are available in the slideshow while content and cta links are not included.
+
+3. Fixed Image Size Carousel Component:
+In Fixed Image Size Carousel Component, the size of the image does not change as per the user’s device screen. It consists of a horizontal scroll bar, Image, Text area, Primary button with arrow, Pagination(tablet only), Cursor arrow right (left in case of RTL). The horizontal scroll bar indicates the current position.
+
+
+### Behaviors
+
+#### States 
+Fluid Image Size Carousel Component:
+- Default state
+- Tablet
+
+<Canvas>	
 <Story name="Fluid carousel">
   {(args, { globals: { locale } }) => {
     const caption = statsArray(locale);
     return <FluidImageSizeCarousel data={caption}></FluidImageSizeCarousel>;
   }}
 </Story>
+</Canvas>
 
-## Dependencies
+### Usage:
+- Copy HTML from the HTML tab of canvas.
+- Include Swiper library from here https://swiperjs.com/get-started in your html page.
+- If you use fixed image size carousel then include fluid-image-size-carousel.min.css and initialize carousel by calling swiper('.fixed-carousel', '.fixed-carousel__button-wrap'); functions
+- If you use Fluid image size carousel then include fixed-size-carousel.min.css and initialize carousel by calling swiper('.fluid-carousel', '.slide-content'); functions
+- If you use Image only carousel then include image-only-carousel.min.css and initialize the carousel by calling swiper('.image-carousel', '.slider-slide'); functions.
+- If you want to add left-right animation then add data-viewport=”true” attribute to the HTML element you want to animate and include viewport.min.js file.
 
-Not Applicable
+### CSS and JS References
 
-## Usage
+#### CSS:
 
-<ul>
-  <li>Take HTML from the HTML tab in the canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>
-    Include the common SCSS files like variables, mixin from{" "}
-    <code>assets/scss</code>
-  </li>
-  <li>
-    Component SCSS file: <code>fluidimagesizecarousel.scss</code>
-  </li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>
-    The compiled CSS file from <code>assets/css/style.css</code>
-  </li>
-  <u>To use JS include the following files in your implementation</u>
-  <li>
-    Include JS Slider library file  from <code>assets/js/swiper.js</code>
-  </li>
-  <li>
-    The compiled JS file from <code>assets/js/viewport.js</code>
-  </li>
-</ul>
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/base-minimal.min.css
+- dist/css/components/fluid-image-size-carousel.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/swiper.min.css
+
+#### JS:
+- dist/js/swiper.min.js
+- dist/js/viewport.min.js
+- 3rd party libraries 
+Swiper (https://swiperjs.com/get-started)
+
+### Interactions
+- By clicking on the Chips and CTA Links user is directed to the detailed information page.
+- By clicking on the Arrows Buttons, the slides can be swiped forward or backward. 
+
+### Changelog
+1.0 — Released component

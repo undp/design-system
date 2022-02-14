@@ -90,90 +90,38 @@ export const getCaptionForLocale = (locale) => {
       }
     }}/>
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 20px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 15px;
-  }
-  .subheading2 {
-    font-weight: 700;
-    font-size: 16px;
-    color: #031c2d;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 10px;
-  }
-  .css-1h4ytzj code {
-    padding-right: 10px;
-    width: 100%;
-    font-size: 14px;
-    line-height: 16px;
-      background: black;
-  }
-`}</style>
+# Feature Content Card
 
-# Feature Content Card Component
+The Featured Content Card components are cards with information and/or image. 
 
-The Feature Content Card component defines a card of information data with some items - Tag, Title, Image, Paragraph, and CTA Link. We are using a grid system to manage the different types of sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+### Overview
+The Featured Content Card component defines a card of information with some items- Tag, Title, Image, Paragraph, and CTA Link. It uses a grid system to manage the different sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+ 
+#### When to use:
 
-<div className="subheading">Feature Card With Image</div>
+When a card with data, CTA link and image is to be displayed.
 
-By default Feature content cards are show the information about the card with related fields like Tag, Title, Image, Description, and CTA Link. When we mouse over the card (On hover) it shows the image.
+### Formatting
 
-<div className="subheading">Feature Card Without Image</div>
+#### Default
+It consists of a grid with title, paragraph, cta link, and/or image.
 
-When We mouse over the card (On hover) it shows the yellow color except the image.
+### Content
+There are two types of featured card components: Featured Card with Image and Featured Card without Image. It consists of three sizes: Small, Default, and Large.
+1. Small
+2. Default
+3. Large
 
-<div className="subheading">Story Controls</div>
+### Behaviors
 
-We can check all types of feature card variants by storybook <code> controls </code> .
+#### States 
+There are two states in Featured Cards: Default, Hover.
 
-<ul>
-<li>the variant we check the option of card like <code>with image</code> and <code>without image</code></li>
-<li>n the column, we check the option of card sizes like <code>large</code> , <code>medium</code> , <code>small</code> that's belong to the grid.</li>
-</ul>
-
-<div className="subheading2">Modifier class</div>
-
-<code>with-image</code> <code>without-image</code> <code>feature__card--large</code> <code>feature__card--medium</code> 
-<code>feature__card--small</code> <code>large</code> <code>medium</code> <code>small</code>
-
+1. Default: It shows the title, paragraph, CTA link, and image for Featured Card with Image and title, paragraph, and CTA Link for Featured Card without Image.
+2. Hover: In hover state, when the mouse hovers over the Featured Card with Image, image is displayed. While for Featured Cards without Image, when the mouse hovers over it, yellow color is displayed without image.
 
 <Canvas>
-  <Story name="Featured card" parameters={{ docs: { source: { code: `<div class="grid-x grid-margin-x">
-  <div class="cell large-8 feature__card--large">
-    <a href="#" class="feature__card feature__card--with-image">
-      <div class="feature__card_slide">
-        <div
-          class="feature__card_image"
-          style='background-image: url("static/media/stories/assets/images/card2.jpg");'
-        ></div>
-      </div>
-      <article class="feature__card_content">
-        <div class="feature__card_tag">CONTENT TAG</div>
-        <div class="feature__card_description">
-          <h4>
-            Mongolia receives new $23.1 million GCF grant to strengthen climate
-            resilience
-          </h4>
-          <p>
-            With the new Green Climate Fund grant, UNDP-supported project will
-            benefit close to one million vulnerable population..
-          </p>
-        </div>
-        <div class="feature__cta">
-          <a class="cta__link cta--arrow" href="javascript:void(0)">
-            READ MORE
-          </a>
-        </div>
-      </article>
-    </a>
-  </div>
-</div>` } } }}>
+  <Story name="Featured card">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <FeaturedContentCard data={caption.featuredcontentdata} headertext={caption.headertext} {...args} ></FeaturedContentCard>;
@@ -181,12 +129,25 @@ We can check all types of feature card variants by storybook <code> controls </c
   </Story>
 </Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>featuredContentCard.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Usage
+- From the control tab of canvas, choose Image control either Image or Color, Size control either Large, Medium or Small and Hover color from Yellow, Red, Green or Blue.
+- Copy the HTML from the HTML tab and include the css and js files listed below.
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js.
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+- Include dist/css/components/cta-link.min.css
+- Include dist/css/components/featured-content-card.min.css
+
+#### JS:
+- dist/js/viewport.min.js
+
+### Interactions
+- Hover state applies to the image only.
+- By clicking on the CTA Link, the associated page is opened. 
+
+### Changelog
+1.0 — Released component

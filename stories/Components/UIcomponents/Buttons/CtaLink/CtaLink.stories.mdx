@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Ctalink } from './CtaLink';
 
 export const getCaptionForLocale = (locale) => {
@@ -27,48 +27,44 @@ export const getCaptionForLocale = (locale) => {
   }}
 />
 
-<style>{`
-div#story--atoms-buttons--CtaLink-arrow, div#story--atoms-buttons--CtaLink-space, div#story--atoms-buttons-link--CtaLink {
-    display: none;
-  }
-  .cta_wrapper {
-    display: flex;
-  }
-  .cta__label {
-    padding-right: 20px;
-  }
-  .cta_item {
-    padding: 10px;
-  }
-  .subheading {
-    font-weight: 700;
-    font-size: 18px;
-    color: #666;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-`}</style>
+# Buttons and Labels
 
-# CTA Link component
-A cta link is a prompt on a website that tells the user to take some specified action.
+A button describes what action will be performed when a user clicks or touches it. 
 
-<div className="cta_wrapper">
-  <div className="cta_item">
-    <div className="cta__box CtaLink-arrow"></div>
-    <div className="cta__label">Cta link arrow expand</div>
-    <div className="cta__code"> <Ctalink label="READ MORE" Type='Arrow'></Ctalink></div>
-  </div>
-</div>
-<div className="cta_wrapper">
-  <div className="cta_item">
-    <div className="cta__box CtaLink-space"></div>
-    <div className="cta__label">Cta link with space expand </div>
-    <div className="cta__code"> <Ctalink label="READ MORE" Type='Space'></Ctalink></div>
-  </div>
-</div>
+### Overview
+A button describes the call to action that will be performed when the user clicks/touches it. It has a label and an optional animation. 
 
+#### When to use:
+
+- Buttons should be used as primary or secondary calls to actions
+- Ideally, a page should have one or two primary buttons only. Other call-to-actions should be shown as secondary buttons
+- Examples of buttons can be to “VIEW MORE” or “READ MORE” or “SIGN UP”
+- If there are multiple choices for an action item, one default button should be active and the other buttons inactive
+
+### Formatting 
+
+#### Default
+There are multiple button types in our design system
+1. Primary button with arrow and without arrows
+2. Secondary buttons without the arrow
+3. CTA links with and without expanding arrows
+4. Chips
+
+### Content
+
+### Behaviors
+
+#### States
+CTA Link:
+The CTA link with the arrow prompts the users to take action. and is in default state but the arrow does not expand.
+
+The CTA links with the arrow in the hover state which changes its appearance once the mouse hovers over it but the arrow does not expand.
+
+The CTA link with space expand in default state is a space expand link where the space after the text expands but the arrow does not. 
+
+The CTA link with the arrow expand is in a hover state. When the mouse hovers over the link the text changes its appearance and the arrow expands.
+
+<Canvas>
 <Story
   name="CTA link"
 >
@@ -85,14 +81,26 @@ A cta link is a prompt on a website that tells the user to take some specified a
     );
   }}
 </Story>
+</Canvas>
 
+### Usage
+- Copy the HTML from the HTML Tab of canvas for either Chips, CTA Button, and CTA Link from the controls.
+- Include the CSS files listed below concerning the button you choose.
 
-<div className="subheading">Usage</div>
-<ul>
-  <li>Take HTML from the HTML tab in canvas</li>
-  <u>To use SCSS include the following files in your implementation</u>
-  <li>Include the common SCSS files like normalize, variables, mixins from <code>assets/scss</code></li>
-  <li>Component SCSS file:<code>CtaLink.scss</code></li>
-  <u>To use CSS include the following files in your implementation</u>
-  <li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+- dist/css/components/cta-link.min.css
+
+Use above CSS concerning CTA link.
+
+#### JS:
+NA
+
+### Interactions
+- The hover state is applied to the entire button.
+
+### Changelog
+1.0 — Released component

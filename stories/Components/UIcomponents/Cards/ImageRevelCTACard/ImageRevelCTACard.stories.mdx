@@ -64,41 +64,68 @@ export const getCaptionForLocale = (locale) => {
   }
 }}/>
 
-<style>{`
- .subheading {
-    font-weight: 700;
-    font-size: 24px;
-    color: #031c2d;
-    letter-spacing: 1.5px;
-    line-height: 24px;
-    margin-bottom: 12px;
-    margin-top: 40px;
-  }
-  .sbdocs .sbdocs-p,
-  .sbdocs .sbdocs-li{
-    font-size: 1rem;
-  }
-`}</style>
+# Image Reveal Card
 
-# Image Reveal Card Component
-The Image reveal card component multi usage component which creates boxes that are usually teasing some kind of content like - Image, Text, and CTA Link. We are using the grid system here <code>assets/scss/grid.scss</code>. Atoms tags are used for creating this card.
+Image reveal cards are cards with information about the image and CTA links for detailed information.
 
-<div className="subheading">Image Reveal Card</div>
-<p>Image Reveal Card are shows the Image, and CTA Link. The text will show on hover.</p>
+### Overview
+The Image reveals card component is a multi-usage component that creates boxes that are usually teasing some kind of content like- Image, Text, and CTA Link. 
 
+#### When to use:
+
+When text and CTA Link need to be attached with an image.
+
+### Formatting
+
+#### Default
+It consists of a grid with an image, text, and CTA link.
+
+### Content
+There are two types of image reveal card: Medium and Small
+1. Medium: Image Reveal Card of medium-size shows the Image and CTA Link. The Text will show on hover.
+2. Small: Image Reveal Card of small size comes with a different Image and CTA Link. The Text will show on hover.
+ 
+### Behaviors
+
+#### States 
+There are 2 states in the Image Reveal Card: Default and Hover.
+
+Default: It consists of Image and CTA Link.
+1. Medium size
+2. Small size
+
+Hover: It consists of Image, Text, and CTA Link. It changes appearance when the mouse hovers over it.
+1. Medium size
+2. Small size
+
+<Canvas>
 <Story name="Image reveal card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <ImageRevelCard data={caption.data} {...args}> </ImageRevelCard>;
   }}
 </Story>
+</Canvas>
 
-<div className="subheading">Usage</div>
-<ul>
-<li>Take HTML from the HTML tab in the canvas</li>
-<u>To use SCSS include the following files in your implementation</u>
-<li>Include the common SCSS files like variables, mixin from <code>assets/scss</code></li>
-<li>Component SCSS file: <code>imagecard.scss</code></li>
-<u>To use CSS include the following files in your implementation</u>
-<li>The compiled CSS file from <code>assets/css/style.css</code></li>
-</ul>
+### Usage
+- Select size control either Large or Small from the control tab on canvas.
+- Copy the HTML from the HTML tab and include below listed css and js files.
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.css
+- Include dist/css/components/cta-link.min.css
+- Include dist/css/components/image-card.min.css
+
+#### JS:
+- dist/js/viewport.min.js
+
+### Interactions
+- over state applies to the entire card.
+- By clicking on the CTA Link, the page is forwarded to the detailed information page.
+
+### Changelog
+1.0 — Released component
