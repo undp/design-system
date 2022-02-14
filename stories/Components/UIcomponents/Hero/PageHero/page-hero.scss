@@ -68,6 +68,12 @@
   &-image {
     width: 100%;
 
+    @include devicebreak(small) {
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%;
+    }
+
     @include devicebreak(medium) {
       height: 100%;
     }
@@ -75,6 +81,9 @@
     img,
     video {
       @extend %img-cover;
+      @include devicebreak(small) {
+        position: absolute;
+      }
     }
   }
 
