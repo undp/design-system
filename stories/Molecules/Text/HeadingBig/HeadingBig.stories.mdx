@@ -12,7 +12,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Text/Heading Big Block" component={HeadingBig} argTypes={{
+<Meta title="Components/UI components/Text/Heading big block" component={HeadingBig} argTypes={{
   Emphasize: {
     options: ['true', 'false'],
     control: { type: 'inline-radio' },
@@ -25,7 +25,7 @@ export const getCaptionForLocale = (locale) => {
 The Heading Block defines a section of information data with some items - Header title, Description. `H2` `H4` atoms tags are used for creating this section.
 
 <Canvas style={{background: "gray"}}>
-  <Story name="Heading Big Block">
+  <Story name="Heading big block">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <HeadingBig headerText={caption.header} descriptionText={caption.description} listData={caption.listData} {...args}></HeadingBig>;

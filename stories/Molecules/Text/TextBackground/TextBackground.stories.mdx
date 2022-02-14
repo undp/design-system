@@ -12,14 +12,14 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Text/Text Background" />
+<Meta title="Components/UI components/Text/Text background" />
 
 # Text Background
 
 Text Background block defines a section of information data with some items - title and description. `H2` and `H4` atoms tags are used for creating this section.
 
 <Canvas>
-  <Story name="Text Background">
+  <Story name="Text background">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <TextBackground headerText={caption.header} descriptionText={caption.description} ></TextBackground>;

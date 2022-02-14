@@ -12,7 +12,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Cards/Publication Card"
+<Meta title="Components/UI components/Cards/Publication card"
   argTypes={{
     variant: {
       options: ["Readmore", "Download", "Both"],
@@ -29,7 +29,7 @@ The Publication card defines a card of information data with some items -  Title
 Publication cards show the publication category images, title, format, and download option to related the content in the design with short information
 
 <Canvas>
-  <Story name="Publication Card" >
+  <Story name="Publication card" >
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <PublicationCard 

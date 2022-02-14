@@ -12,7 +12,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Text/Post Block" component={Post} />
+<Meta title="Components/UI components/Text/Post block" component={Post} />
 
 # Post Block 
 
@@ -25,7 +25,7 @@ Post block are of 2 types
 - Post Block with Description
 
 <Canvas>
-  <Story name="Post Block with Description">
+  <Story name="Post block with description">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <Post headerText={caption.header} countryText={caption.country} descriptionText={caption.description}></Post>;
@@ -36,7 +36,7 @@ Post block are of 2 types
 - Post Block without Description
 
 <Canvas>
-  <Story name="Post Block without Description">
+  <Story name="Post block without description">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <Post headerText={caption.header} descriptionText={caption.description} ></Post>;

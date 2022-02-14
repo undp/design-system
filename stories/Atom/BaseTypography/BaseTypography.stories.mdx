@@ -71,7 +71,7 @@ export const getCaptionForLocaleHeading = (locale) => {
 };
 
 <Meta
-  title="Foundation/Typography/BaseTypography"
+  title="Foundation/Typography/Base typography"
   parameters={{
     viewMode: "docs",
     previewTabs: {
@@ -334,7 +334,7 @@ A description list is a list of terms, with a description of each term.
 The <code>dl</code> tag defines the description list, the <code>dt</code> tag defines the term (name), and the <code>dd</code> tag describes each term.
 
 <Canvas>
-  <Story name="Description List">
+  <Story name="Description list">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocaleList(locale);
       return <Descriptionlist data={caption}></Descriptionlist>;
@@ -530,7 +530,7 @@ Add a <code>li</code> tag for each list item
 
 
 <Canvas>
-  <Story name="Ordered List">
+  <Story name="Ordered list">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocaleList(locale);
       return <List data={caption} type="ol"></List>;
@@ -812,7 +812,7 @@ Start an unordered list with the <code>u1</code> tag.
 Add a <code>li</code> tag for each list item
 
 <Canvas>
-  <Story name="Unordered List">
+  <Story name="Unordered list">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocaleList(locale);
       return <List data={caption} type="ul"></List>;

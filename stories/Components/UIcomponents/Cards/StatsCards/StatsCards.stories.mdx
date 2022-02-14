@@ -12,7 +12,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Cards/Stats Card" argTypes={{
+<Meta title="Components/UI components/Cards/Stats card" argTypes={{
   Size: {
     options: ['Small', 'Medium', 'Large', 'Extra_large'],
     control: { type: 'inline-radio' },
@@ -64,7 +64,7 @@ we are using these modifier classes:
 
 <div className="subheading">Stats Card</div>
 
-<Story name="Stats Card">
+<Story name="Stats card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <StatsCards title={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} {...args}></StatsCards>;

@@ -2,7 +2,6 @@ import { Meta, Story } from '@storybook/addon-docs';
 import {ImageOnlyCarousel} from './ImageOnlyCarousel';
 import fluidCarouselImg from '../../../../assets/images/carousel3-img.jpg';
 
-
 export const statsArray = (locale) => {
   switch(locale) {
     case 'english': const engText = {data: [{
@@ -55,7 +54,7 @@ export const statsArray = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Carousel/Image Carousel"/>
+<Meta title="Components/UI components/Carousel/Image carousel"/>
 
 <style>{`
   .subheading {
@@ -90,7 +89,7 @@ The Image only carousel Component is created for showing slider, designation, an
 
 ## Default Representation & various possible states
 
-<Story name="Image Carousel">
+<Story name="Image carousel">
   {(args, { globals: { locale } }) => {
     const caption = statsArray(locale);
     return <ImageOnlyCarousel data={caption}></ImageOnlyCarousel>;

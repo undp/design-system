@@ -12,13 +12,13 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Text/Small Copy Lockup" />
+<Meta title="Components/UI components/Text/Small copy lockup" />
 
 # Small Copy Lockup
 Small Copy Lockup component defines a section of information data with some items - location, phone number and email ID.
 
 <Canvas>
-  <Story name="Small Copy Lockup">
+  <Story name="Small copy lockup">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <Smallcopy locationName={caption.locationlabel} phoneName={caption.phonelabel} phonenumber={caption.phone} emailName={caption.emaillabel} emailid={caption.email}></Smallcopy>;

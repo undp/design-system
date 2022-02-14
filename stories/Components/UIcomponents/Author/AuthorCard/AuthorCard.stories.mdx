@@ -39,7 +39,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Authors/Author Card" />
+<Meta title="Components/UI components/Authors/Author card" />
 
 <style>{`
   .subheading {
@@ -76,7 +76,7 @@ The Author Card Component is created for showing the author name, designation, i
 
 <div className="subheading">Author Card</div>
 
-<Story name="Author Card">
+<Story name="Author card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <Authorcard image= {user} alt= 'Headshot of XYZ' data={caption.authordata} para={caption.paragraph} button={caption.button} link='#' width="medium-12"></Authorcard>;

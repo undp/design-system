@@ -12,14 +12,14 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Text/Text Cta" component={TextCta} />
+<Meta title="Components/UI components/Text/Text cta" component={TextCta} />
 
 # Text CTA
 
 Text CTA block defines a section of information data with some items - title, button/cta and description. `H2`,  `P` and `Button` atoms tags are used for creating this section.
 
 <Canvas>
-  <Story name="Text Cta">
+  <Story name="Text cta">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return <TextCta headerText={caption.header} descriptionText={caption.description} label={caption.button} ></TextCta>;
