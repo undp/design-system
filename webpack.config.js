@@ -59,10 +59,10 @@ module.exports = [
     resolve: {
       // @TODO: Need to find a valid option to manage these icon to resolve
       alias: {
-        "../../../../../../assets/icons/Bars.svg": path.resolve(__dirname, 'stories/assets/icons/Bars.svg'),
-        "../../../../../../assets/icons/Chevron-down.svg": path.resolve(__dirname, 'stories/assets/icons/Chevron-down.svg'),
-        "../../../../assets/icons/Chevron-down.svg": path.resolve(__dirname, 'stories/assets/icons/Chevron-down.svg'),
-        "../../../../../../assets/icons/Times-blue.svg": path.resolve(__dirname, 'stories/assets/icons/Times-blue.svg')
+        "../../../../../../assets/icons/hamburger.svg": path.resolve(__dirname, 'stories/assets/icons/hamburger.svg'),
+        "../../../../../../assets/icons/chevron-down.svg": path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
+        "../../../../assets/icons/chevron-down.svg": path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
+        "../../../../../../assets/icons/times-blue.svg": path.resolve(__dirname, 'stories/assets/icons/times-blue.svg')
       },
     },
     optimization: {
