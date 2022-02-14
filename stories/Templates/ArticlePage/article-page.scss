@@ -33,7 +33,7 @@
     padding-top: $spacing-07;
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-90;
+      margin-bottom: 5.5rem;
     }
 
     @include devicebreak(mediumonlytab) {
@@ -45,11 +45,11 @@
     margin-top: 5.25rem;
 
     @include devicebreak(medium) {
-      margin-top: 7.75rem;
+      margin-top: 8.75rem;
     }
 
     @include devicebreak(xlarge) {
-      margin-top: 9.75rem;
+      margin-top: 11.875rem
     }
   }
 
@@ -58,8 +58,8 @@
     margin-top: 2.82rem;
 
     @include devicebreak(large) {
-      margin-bottom: $spacing-90;
-      margin-top: $spacing-90;
+      margin-bottom: 2.125rem;
+      margin-top: 2.563rem;
     }
   }
 
@@ -91,10 +91,10 @@
   }
   .middle-image {
     margin-bottom: $spacing-07;
-    margin-top: $spacing-10;
+    margin-top: 3.063rem;
 
     @include devicebreak(medium) {
-      margin-top: $spacing-70;
+      margin-top: 2.813rem;
     }
     img{
       width: 100%;
@@ -105,13 +105,13 @@
     margin-bottom: $spacing-50;
 
     @include devicebreak(medium) {
-      margin-bottom: 6.375rem;
+      margin-bottom: 6.125rem;
     }
   }
 
   .list-section {
     margin-bottom: $spacing-09;
-    margin-top: $spacing-07;
+    margin-top: 2.25rem;
 
     @include devicebreak(medium) {
       margin-bottom: $width-180;
