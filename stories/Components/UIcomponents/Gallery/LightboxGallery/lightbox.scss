@@ -253,6 +253,9 @@
                 @include devicebreak(large) {
                   padding: 32px 20px;
                 }
+                figcaption {
+                  @extend %inviewport_left_right;
+                }
               }
 
               p {
