@@ -15,13 +15,13 @@ export const Image = ({ className, Type }) => {
     <>
     {Type == 'img'
       ? (
-        <img src={image.srclg} alt={image.alt} className={className} />
+        <img data-src={image.srclg} alt={image.alt} className={className} />
       )
       : (
         <picture className={className}>
             <source media="(min-width:1024px)" srcset={image.srclg} />
             <source media="(min-width:767px)" srcset={image.srcmd} />
-            <img src={image.srcsm} alt={image.alt} />
+            <img data-src={image.srcsm} alt={image.alt} />
         </picture>
       )}
     </>
