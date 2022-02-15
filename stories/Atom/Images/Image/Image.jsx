@@ -15,14 +15,28 @@ export const Image = ({ className, Type }) => {
     <>
     {Type == 'img'
       ? (
-        <img data-src={image.srclg} alt={image.alt} className={className} />
+        <>
+        {className == 'lazy' ?
+        <img  alt={image.alt} className={className} data-src={image.srclg}/> : <img  alt={image.alt} className={className} src={image.srclg}/> 
+        }
+        </>
       )
       : (
-        <picture className={className}>
+        <>
+        {className == 'lazy' ?
+          <picture className={className}>
             <source media="(min-width:1024px)" data-srcset={image.srclg} />
             <source media="(min-width:767px)" data-srcset={image.srcmd} />
             <img data-src={image.srcsm} alt={image.alt} />
-        </picture>
+          </picture>
+         : 
+         <picture className={className}>
+            <source media="(min-width:1024px)" srcset={image.srclg} />
+            <source media="(min-width:767px)" srcset={image.srcmd} />
+            <img src={image.srcsm} alt={image.alt} />
+          </picture>
+         }
+        </>
       )}
     </>
   );
