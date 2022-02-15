@@ -52,7 +52,9 @@
     width: 100%;
 
     @include devicebreak(large) {
-      margin-left: $spacing-06;
+      padding-left: $spacing-06;
+      margin-left: 0;
+      box-sizing: border-box;
     }
   }
 
@@ -99,7 +101,7 @@
       .cta__link.cta--arrow {
         i {
           margin-left: 0;
-          width: calc(100% - 9.438rem);
+          width: calc(100% - #{$spacing-12});
         }
       }
     }
@@ -109,11 +111,13 @@
 [dir='rtl'] {
   .image-reveal-card {
     .cta__link {
-      margin-right: $spacing-06;
+      padding-right: $spacing-06;
+      margin-right: 0;
       margin-top: $spacing-07;
 
       @include devicebreak(medium) {
-        margin-right: $spacing-06;
+        margin-right: 0;
+        padding-right: $spacing-06;
       }
     }
   }
