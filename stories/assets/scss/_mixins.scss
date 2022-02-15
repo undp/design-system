@@ -674,13 +674,5 @@
     top: 7.1875rem;
   }
 }
-
-.lazy{
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  &.loaded {
-    opacity: 1;
-  }
-}
 /* placehoder end */
 

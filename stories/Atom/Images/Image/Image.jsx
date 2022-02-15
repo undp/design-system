@@ -19,8 +19,8 @@ export const Image = ({ className, Type }) => {
       )
       : (
         <picture className={className}>
-            <source media="(min-width:1024px)" srcset={image.srclg} />
-            <source media="(min-width:767px)" srcset={image.srcmd} />
+            <source media="(min-width:1024px)" data-srcset={image.srclg} />
+            <source media="(min-width:767px)" data-srcset={image.srcmd} />
             <img data-src={image.srcsm} alt={image.alt} />
         </picture>
       )}
