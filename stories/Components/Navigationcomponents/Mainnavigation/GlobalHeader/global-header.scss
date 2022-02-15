@@ -129,6 +129,8 @@
         @include devicebreak(small) {
           background:transparent url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
           margin-left: 0;
+          -webkit-mask: inherit;
+          mask: inherit;
         }
       }
     }
