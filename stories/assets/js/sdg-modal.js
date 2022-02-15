@@ -19,7 +19,7 @@ export function sdgModal() {
   // Modal open on sdgcard click
   $($modalOpen).on('click', function (event) {
     event.preventDefault();
-    $('.modal-sdg-content').animate({ scrollTop: 0 }, '5000');
+    $('.modal-sdg-content').animate({ scrollTop: 0 }, 'slow');
 
     // Get href in sdgcard
     var url = $(this).attr('href');
