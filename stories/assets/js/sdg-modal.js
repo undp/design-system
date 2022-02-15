@@ -19,11 +19,12 @@ export function sdgModal() {
   // Modal open on sdgcard click
   $($modalOpen).on('click', function (event) {
     event.preventDefault();
-    $('.modal-sdg-content').animate({ scrollTop: 0 }, 'slow');
+    $('.modal-sdg-content').animate({ scrollTop: 0 }, '5000');
 
     // Get href in sdgcard
     var url = $(this).attr('href');
     windowTop.location.hash = url;
+    $(this).addClass('lastactice');
     $('.modal-sdg').addClass('sdg-open');
     $('body').addClass('sdgmodal-open');
     $($modalOpen).attr('tabindex', '-1');
@@ -35,6 +36,8 @@ export function sdgModal() {
       removeHash();
       $('.modal-sdg').removeClass('sdg-open');
       $('body').removeClass('sdgmodal-open');
+      $('.lastactice').focus().removeClass('lastactice');
+      $($modalOpen).attr('tabindex', '0');
     }
   });
 
