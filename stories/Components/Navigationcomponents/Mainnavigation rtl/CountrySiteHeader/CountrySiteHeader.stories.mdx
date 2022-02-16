@@ -1,0 +1,222 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import CountrySiteHeader from './CountrySiteHeader';
+import {getCaptionForLocale as Languageswitcher} from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.mdx";
+
+
+export const getNavLinks = (locale) => {
+    switch (locale) {
+        case 'english':
+            return [
+                {label: 'Who we are',id: 'headerlink1',position: 'left'},
+                {label: 'What we do',id: 'headerlink2',position: 'left'},
+                {label: 'Our Impact',id: 'headerlink3',position: 'right'},
+                {label: 'Get Involved',id: 'headerlink4',position: 'right'},
+              ];
+        case 'arabic':
+            return [
+              {label: 'من نحن',id: 'headerlink1',position: 'left'},
+              {label: 'الذي نفعله',id: 'headerlink2',position: 'left'},
+              {label: 'تأثيرنا',id: 'headerlink3',position: 'right'},
+              {label: 'شارك',id: 'headerlink4',position: 'right'},
+            ];
+        case 'burmese':
+        return [
+                {label: 'ငါတို့ဘယ်သူလဲ။',id: 'headerlink1',position: 'left'},
+                {label: 'ငါတို့ဘာလုပ်မလဲ။',id: 'headerlink2',position: 'left'},
+                {label: 'ကျွန်ုပ်တို့၏သက်ရောက်မှု',id: 'headerlink3',position: 'right'},
+                {label: 'ပါဝင်လိုက်ပါ။',id: 'headerlink4',position: 'right'},
+            ];
+        case 'japanese':
+            return [
+                {label: '私たちは誰ですか',id: 'headerlink1',position: 'left'},
+                {label: '私達がすること',id: 'headerlink2',position: 'left'},
+                {label: '私たちの影響',id: 'headerlink3',position: 'left'},
+                {label: '参加する',id: 'headerlink4',position: 'left'},
+            ];
+        default: return [
+          {label: 'Who we are',id: 'headerlink1',position: 'left'},
+          {label: 'What we do',id: 'headerlink2',position: 'left'},
+          {label: 'Our Impact',id: 'headerlink3',position: 'right'},
+          {label: 'Get Involved',id: 'headerlink4',position: 'right'},
+      ];
+    }
+}
+
+export const getSiteTitle = (locale) => { 
+  switch (locale) {  
+        case 'english': return {label: 'REGION',span: 'Site Title'}; 
+        case 'arabic': return {label: 'عالمي',span: 'عنوان الموقع'}; 
+        case 'burmese': return {label: 'ကမ္ဘာလုံးဆိုင်ရာ',span: 'ငဆိုက်ခေါင်းစဉ်'}; 
+        case 'japanese': return {label: 'グローバル',span: 'ウェブサイト名'}; 
+        default:return {label: 'REGION',span: 'Site Title'}; 
+    } 
+  } 
+
+export const getLocationDataForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: 'Locations'}; return engText;
+    case 'arabic': const arabicText = {detail: 'المواقع'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'နေရာမျာ'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: '場所'}; return japaneseText;
+    default:
+      return {detail: 'Locations'};
+  }
+};
+
+export const getBackForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: 'Back'}; return engText;
+    case 'arabic': const arabicText = {detail: 'الى الخلف'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'ကျော'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: '戻る'}; return japaneseText;
+    default:
+      return {detail: 'Back'};
+  }
+};
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'Select Language'; return engText;
+    case 'arabic': const arabicText = 'اختار اللغة'; return arabicText;
+    case 'burmese': const burmeseText = 'ဘာသာစကားကို ရွေးပါ။'; return burmeseText;
+    case 'japanese': const japaneseText = '言語を選択する'; return japaneseText;
+    default: return 'Category';
+  }
+};
+
+export const getSelectlanguage = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'Select Language'; return engText;
+    case 'arabic': const arabicText = 'اختار اللغة'; return arabicText;
+    case 'burmese': const burmeseText = 'ဘာသာစကားကို ရွေးပါ။'; return burmeseText;
+    case 'japanese': const japaneseText = '言語を選択する'; return japaneseText;
+    default: return 'Select Language';
+  }
+};
+
+export const menuData = (locale) => {
+  switch(locale) {
+  case 'english': const engText = {data: [
+    {
+    text : 'menu item'
+  },
+  {
+    text : 'menu item'
+  },
+  ]}; return engText.data;
+    case 'arabic': const arabicText = {data: [{
+    text : 'عنصر القائمة'
+  },
+  {
+    text : 'عنصر القائمة'
+  }]}; return arabicText.data;
+    case 'burmese': const burmeseText = {data: [{
+    text : 'မီနူးပစ္စည်းများ'
+  },
+  {
+    text : 'မီနူးပစ္စည်းများ'
+  }]}; return burmeseText.data;
+    case 'japanese': const japaneseText = {data: [{
+    text : 'メニュー項目'
+  },
+  {
+    text : 'メニュー項目'
+  }]}; return japaneseText.data;
+    default:
+      const dummy =  {data: [{
+    text : 'menu item'
+  },
+  {
+    text : 'menu item'
+  }]};
+  return dummy.data
+  }
+};
+
+<Meta title="Components/Navigation components/Main navigation/Country header rtl" />
+
+# Country Header
+The Country Site Header is a header that contains the site name.
+
+### Overview
+The Country Site Header component is a navigation bar that allows access to important functions across the website. It is present at the top of the page. 
+
+
+When to use:
+- To indicate the location of the current page and to navigate back to each of the previously visited pages.
+
+Formatting
+
+#### Default
+It consists of a navigation bar with drop-down menus, CTA links, search bar, logo, and site name. The Logo is situated at the left-hand corner of the bar followed by the site title.
+
+### Content
+There are two types of Country Header: Without Progress Bar and With Progress Bar
+
+### Behaviors
+
+States 
+There are three states:  Default, Tablet, and Mobile.
+
+1. Default
+-- Without Progress Bar:
+-- With Progress Bar:
+
+2. Tablet
+-- Without Progress Bar:
+-- With Progress Bar:
+
+3. Mobile
+-- Without Progress Bar:
+-- With Progress Bar:
+
+
+<Canvas>
+<Story name="Country header rtl" parameters={{
+    layout: "fullscreen"
+  }}>
+  {(args, { globals: { locale } }) => {
+  let lang = locale === 'en' ? 'english' : locale;
+    const caption = getCaptionForLocale(locale);
+    const navigationData= getNavLinks(locale);
+    const leftNavigationData=navigationData.filter(item=>item.position==='left');
+     const rightNavigationData=navigationData.filter(item=>item.position==='right');
+     const backcaption = getBackForLocale(locale);
+     const siteTitleData = getSiteTitle(locale);
+return <CountrySiteHeader siteTitleData={siteTitleData} backcaption={backcaption} locale={locale} leftNavigationData={leftNavigationData}
+     navigationData={navigationData} rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)} languageswitcherData={Languageswitcher(locale)}
+     text={caption}
+      locationData={getLocationDataForLocale(locale)} langSelect={getSelectlanguage(locale)}
+      ></CountrySiteHeader>;
+  }}
+</Story>
+</Canvas>
+
+### Usage:
+1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
+2. Initialize the navigationInitialize(), langSwitch() function in your js file’s document ready
+
+### CSS and JS References
+#### CSS:
+Add the base layout style from dist/css/base-minimal.css
+1. dist/css/components/country-site-header.min.css
+2. dist/css/components/language-switcher.min.css
+3. dist/css/components/menu.min.css
+4. dist/css/components/mega-menu.min.css
+5. dist/css/components/mobile-nav.min.css
+
+### JS:
+1. dist/js/navigation.min.js
+2. dist/js/undp.min.js
+3. dist/js/lang-switcher.min.js
+
+### Interactions
+- By clicking on the CTA Link, the page is directed to the subsequent link page.
+- By clicking on the search icon, the search tab opens.
+
+### Changelog
+1.0 — Released component
+
+
+
