@@ -1,4 +1,4 @@
-$(function () {
+$(window).load(function () {
   const lazyClass = "lazy";
   const lazyImg = "img." + lazyClass;
   const lazyPicture = "picture." + lazyClass;
