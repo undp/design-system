@@ -3,8 +3,6 @@
 @import '../../assets/scss/mixins';
 
 .modal-sdg {
-  @include transition(opacity 0.4s ease);
-
   -webkit-backdrop-filter: blur(30px);
   backdrop-filter: blur(30px);
   height: calc(100vh - 7.1875rem);
