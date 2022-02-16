@@ -5,7 +5,7 @@ import { Heading } from '../../Atom/Typography/Heading/Heading';
 export const Sdg = ({ data, imgsrc, title }) => (
   <>
     {data.map((item, index) => (
-      <a href={[`${item.anchor}`]} className={['sdg-card', `${item.bgcolor}`].join(' ')} key={index} aria-label={item.bgcolor}>
+      <a href={[`${item.anchor}`]} className={['sdg-card', `${item.bgcolor}`].join(' ')} key={index} aria-label={item.bgcolor} tabindex="0">
         <strong data-viewport="true" className="delay-1">{index + 1}</strong>
         <Heading type="4" className="delay-1" label={item.text} dataViewport="true"/>
         <div className="sdg-image">
