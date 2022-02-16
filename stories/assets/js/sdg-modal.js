@@ -28,7 +28,7 @@ export function sdgModal() {
     var currentheading = $(this).find('strong').text();
 
     windowTop.location.hash = url;
-    $(this).addClass('lastactive');
+    $(this).addClass('last-active');
     $('.modal-sdg').addClass('sdg-open').find('.sdg-container').addClass(currentcolor);
     $('.modal-sdg').find('.heading').find('h3').text('Goal '+ currentheading);
     $('.modal-sdg').find('.heading').find('h2').text(currentgoal);
@@ -43,7 +43,7 @@ export function sdgModal() {
       removeHash();
       $('.modal-sdg').removeClass('sdg-open');
       $('body').removeClass('sdgmodal-open');
-      $('.lastactive').focus().removeClass('lastactive');
+      $('.last-active').focus().removeClass('last-active');
       $($modalOpen).attr('tabindex', '0');
     }
   });
