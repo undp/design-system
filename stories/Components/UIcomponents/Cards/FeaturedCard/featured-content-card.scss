@@ -1,6 +1,7 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 
+$colors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
 /* feature card start */
 .feature__card {
   &.red{
@@ -22,17 +23,16 @@
     }
 
     .feature__card-slide {
-        &::before {
-           @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, $color-yellow);
-        }
+      &::before {
+          @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, $color-yellow);
       }
+    }
 
     //colors
-    $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green': rgba(92 222 83 / 82%), 'blue': rgba(94 232 246 / 82%));
-
     @each $name, $color in $colors {
       &.#{$name} {
         .feature__card-slide {
+         background: $color;
           &::before {
             @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
           }
@@ -233,8 +233,6 @@
       }
 
       //colors
-      $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green': rgba(92 222 83 / 82%), 'blue': rgba(94 232 246 / 82%));
-
       @each $name, $color in $colors {
         &.#{$name}.image {
           .feature__card-slide {
@@ -255,6 +253,10 @@
             @include transform(translateX(0));
           }
         }
+
+        &::before {
+          @include background(153deg, hsla(0, 0%, 100%, 0.2) 30%, $color-yellow);
+      }
       }
     }
   }
