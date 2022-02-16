@@ -17,7 +17,7 @@ export const Sdgmodal = ({
         <div className="modal-header show-small">
           <button type="button" className="close" data-dismiss="modal" aria-label="Close" />
         </div>
-        <div className="sdg-container sdg-red">
+        <div className="sdg-container">
           <div className="heading">
             <Heading type="3" label={goalcount} />
             <Heading type="2" label={modaltitle} />

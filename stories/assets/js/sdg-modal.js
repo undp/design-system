@@ -23,8 +23,15 @@ export function sdgModal() {
 
     // Get href in sdgcard
     var url = $(this).attr('href');
+    var currentcolor = $(this).attr('class').split(' ')[1];
+    var currentgoal = $(this).find('h4').text();
+    var currentheading = $(this).find('strong').text();
+
     windowTop.location.hash = url;
-    $('.modal-sdg').addClass('sdg-open');
+    $('.modal-sdg').addClass('sdg-open').find('.sdg-container').addClass(currentcolor);
+    $('.modal-sdg').find('.heading').find('h3').text('Goal '+ currentheading);
+    $('.modal-sdg').find('.heading').find('h2').text(currentgoal);
+
     $('body').addClass('sdgmodal-open');
     $($modalOpen).attr('tabindex', '-1');
   });
@@ -40,6 +47,8 @@ export function sdgModal() {
 
   // Modal close on close button
   $('.modal-sdg .close, .modal-sdg .modal-header').on('click', () => {
+    var currentcolor = $('.sdg-container').attr('class').split(' ')[1];
+    $('.sdg-container').removeClass(currentcolor);
     $('.modal-sdg').removeClass('sdg-open');
     $('body').removeClass('sdgmodal-open');
     $($modalOpen).removeAttr('tabindex');
