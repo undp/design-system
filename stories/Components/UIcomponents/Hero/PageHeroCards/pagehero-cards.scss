@@ -21,14 +21,12 @@
     .pagehero-cards-box {
 
       @include devicebreak(large) {
-        flex: 0 0 calc(16.66667% - 1.5rem);
-        max-width: calc(16.66667% - 1.5rem);
-      }
-
-      @include devicebreak(large) {
+        flex: 0 0 calc(16.66667% - #{$spacing-06});
+        max-width: calc(16.66667% - #{$spacing-06});
+        
         &.large {
-          flex: 0 0 calc(25% - 1.5rem);
-          max-width: calc(25% - 1.5rem);
+          flex: 0 0 calc(25% - #{$spacing-06});
+          max-width: calc(25% - #{$spacing-06});
         }
       }
 
@@ -44,6 +42,8 @@
 
       &.swiper-slide {
         height: auto;
+        margin-left: 0;
+        margin-right: $font-size-20;
       }
     }
   }
@@ -68,8 +68,8 @@
     h3 {
       font-size: $font-size-25;
       font-weight: 700;
-      margin-bottom: 2.188rem;
-      padding-top: 1.25rem;
+      margin-bottom: $font-size-35;
+      padding-top: $font-size-20;
 
       @include devicebreak(large) {
         font-size: 1.875rem;
@@ -137,14 +137,14 @@
     padding-right: $spacing-10;
 
     @include devicebreak(medium) {
-      padding-right: 10rem;
+      padding-right: $spacing-13;
     }
 
     .swiper-scrollbar {
       padding-right: $spacing-10;
 
       @include devicebreak(medium) {
-        padding-right: 10rem;
+        padding-right: $spacing-13;
       }
     }
   }
@@ -180,7 +180,7 @@
       padding-left: $spacing-10;
   
       @include devicebreak(medium) {
-        padding-left: 10rem;
+        padding-left: $spacing-13;
       }
   
       .swiper-scrollbar {
@@ -188,7 +188,7 @@
         padding-left: $spacing-10;
   
         @include devicebreak(medium) {
-          padding-left: 10rem;
+          padding-left: $spacing-13;
         }
       }
 
