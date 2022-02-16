@@ -35,7 +35,7 @@ const CountrySiteHeader = ({
                 <span>{siteTitleData.label}</span>
                 <span>{siteTitleData.span}</span>
               </div>
-              {desktopView && <Menu data={navigationData} />}
+              <Menu data={navigationData} />
             </div>
             <div className="cell large-3 small-3 top-right">
               <Languageswitcher
