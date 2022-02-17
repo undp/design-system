@@ -101,6 +101,14 @@
       .cta__link.cta--arrow {
         i {
           margin-left: 0;
+          width: 4rem;
+        }
+      }
+    }
+    
+    @include devicebreak(large) {
+      .cta__link.cta--arrow {
+        i {
           width: calc(100% - #{$spacing-12});
         }
       }

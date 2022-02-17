@@ -79,6 +79,9 @@
     @include devicebreak(xlarge) {
       margin-top: 8.1875rem;
     }
+    .content-box {
+      width: auto;
+    }
   }
 
   .fluid-carousel {

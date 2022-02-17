@@ -53,7 +53,7 @@
 
           @supports (-webkit-text-stroke: 2px $color-gray-700) {
             text-shadow: none;
-            -webkit-text-stroke: 2px $color-gray-700;
+            -webkit-text-stroke: transparent;
           }
         }
       }
