@@ -17,6 +17,7 @@
       max-width: calc(25% - #{$spacing-06});
       margin-left: $spacing-04;
       margin-right: $spacing-04;
+      margin-top: $spacing-12;
 
       &.swiper-slide {
         a {
@@ -39,13 +40,18 @@
     &:hover {
       .cta__link {
         padding: 0;
+        width: 100%;
 
         i {
-          left: $spacing-05;
-          width: $spacing-11;
           @include transition(all .4s);
           @include transitiondelay(.2s);
+          left: $spacing-05;
+          width: $spacing-11;
           
+          @include devicebreak(large) { 
+            width: 30%;
+          }
+
           &::before {
             display: inline-block;
           }
@@ -71,10 +77,6 @@
         }
       }
 
-    }
-
-    @include devicebreak(large) {
-      margin-top: $spacing-12;
     }
 
     a {

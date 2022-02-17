@@ -20,8 +20,8 @@ export const swiper = (selector, arrowsSelector, options) => {
   const getDeviceType = () => {
     let device;
     let mobile = 'only screen and (min-width: 0px) and (max-width: 767px)';
-    let potrait = 'only screen and (min-width: 768px) and (max-width: 1024px) and (orientation:portrait)';
-    let landscape = 'only screen and (min-width: 768px) and (max-width: 1024px) and (orientation:landscape)';
+    let potrait = 'only screen and (min-width: 768px) and (max-width: 1023px) and (orientation:portrait)';
+    let landscape = 'only screen and (min-width: 768px) and (max-width: 1023px) and (orientation:landscape)';
     let desktop = window.matchMedia('(min-width: 768px)');
     if (window.matchMedia(mobile).matches) {
       device = 'mobile';
