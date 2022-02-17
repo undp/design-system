@@ -28,6 +28,34 @@
       @extend %absolute__content;
       @extend %img-cover;
     }
+
+    .pagehero-content {
+      position: absolute;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      top: 0;
+      padding-top: 0;
+
+      h4 {
+        padding-top: 0;
+      }
+    }
+
+    .content-box {
+      @include devicebreak(medium) {
+        width: 65%;
+      }
+    }
+
+    .breadcrumb {
+      padding-top: $spacing-11;
+
+      @include devicebreak(small) {
+        padding-left: $spacing-04;
+        padding-right: $spacing-04;
+      }
+    }
   }
 
   &-content {

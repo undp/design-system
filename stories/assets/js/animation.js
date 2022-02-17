@@ -7,6 +7,7 @@ export default function expandToSize(ele) {
       $(ele).removeClass('expand-to-size');
     }
   });
+  $('.breadcrumb').addClass('medium-offset-1');
 }
 // for webpack build
 export {expandToSize as expandToSize}
