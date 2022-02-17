@@ -3,6 +3,7 @@
 @import '../../assets/scss/swiper';
 @import '../../assets/scss/mixins';
 
+$backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
 /* stats-card-grid start */
 .stats-card-slider {
   overflow-x: hidden;
@@ -14,8 +15,8 @@
       }
 
       &-slide {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
+        padding-left: $spacing-04;
+        padding-right: $spacing-04;
         width: initial;
       }
     }
@@ -31,6 +32,12 @@
       &-slide-active {
         .stats-card {
           background-color: $color-light-yellow;
+          
+          @each $name, $color in $backgroundcolors {
+            &.#{$name} {
+              background-color: #{$color};
+            }
+          }
 
           h2 {
             color: $color-black;
@@ -57,13 +64,19 @@
     @include devicebreak(large) {
       &.small {
         box-sizing: border-box;
-        max-width: 330px;
+        max-width: 18.75rem;
         width: 100%;
       }
     }
 
     &:hover {
       background-color: $color-light-yellow;
+          
+      @each $name, $color in $backgroundcolors {
+        &.#{$name} {
+          background-color: #{$color};
+        }
+      }
     }
   }
 

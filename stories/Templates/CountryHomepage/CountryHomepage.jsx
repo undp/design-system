@@ -19,6 +19,7 @@ export const CountryHomepage = ({
   herobtnlabel,
   herosubtitle,
   heroimgsrc,
+  heroimgsrc2,
   heroimgalt,
   featureddata,
   headertext,
@@ -47,6 +48,7 @@ export const CountryHomepage = ({
   headingTop,
   takeAcrtionHead,
   storyBtn,
+  statdata
 }) => (
     <>
       <CountrySiteHeader
@@ -71,6 +73,7 @@ export const CountryHomepage = ({
               button={herobtnlabel}
               subtitle={herosubtitle}
               imgsrc={heroimgsrc}
+              imgsrc2={heroimgsrc2}
               imgalt={heroimgalt}
             />
           </div>
@@ -93,6 +96,7 @@ export const CountryHomepage = ({
             title={PagewidecardTitle}
             paragraph={PagewidecardParagraph}
             button={PagewidecardBtnlabel}
+            Hovercolors="green"
           />
         </div>
 
@@ -108,7 +112,7 @@ export const CountryHomepage = ({
             <Heading type="2" label={statHeading} />
           </div>
           <div className="cell small-12 medium-12 large-12">
-            <StatsSlider data={StatsSliderData} />
+            <StatsSlider data={statdata} />
           </div>
         </div>
         <ImageRevealCards

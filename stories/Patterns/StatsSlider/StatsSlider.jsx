@@ -25,6 +25,7 @@ export const StatsSlider = ({ data }) => {
               content={item.text}
               Size="Small"
               aria-roledescription="slide"
+              Hovercolors={item.Hovercolors}
             />
           </div>
         ))}
