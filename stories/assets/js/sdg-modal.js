@@ -41,7 +41,10 @@ export function sdgModal() {
   $(document).keydown((event) => {
     if (event.keyCode == 27 && $('.modal-sdg').hasClass('sdg-open')) {
       removeHash();
-      $('.modal-sdg').removeClass('sdg-open');
+      $('.modal-sdg').addClass('animation-out');
+      setTimeout(function () {
+        $('.modal-sdg').removeClass('sdg-open animation-out');
+      }, 200);
       $('body').removeClass('sdgmodal-open');
       $('.last-active').focus().removeClass('last-active');
       $($modalOpen).attr('tabindex', '0');
@@ -52,7 +55,10 @@ export function sdgModal() {
   $('.modal-sdg .close, .modal-sdg .modal-header').on('click', () => {
     var currentcolor = $('.sdg-container').attr('class').split(' ')[1];
     $('.sdg-container').removeClass(currentcolor);
-    $('.modal-sdg').removeClass('sdg-open');
+    $('.modal-sdg').addClass('animation-out');
+    setTimeout(function () {
+      $('.modal-sdg').removeClass('sdg-open animation-out');
+    }, 200);
     $('body').removeClass('sdgmodal-open');
     $($modalOpen).removeAttr('tabindex');
     // Call removeHash funtion for remove hash in url on close button

@@ -3,7 +3,7 @@
 @import '../../assets/scss/mixins';
 
 .modal-sdg {
-  @include transition(opacity 0.4s ease);
+  @include transition(transform 0.4s linear);
 
   -webkit-backdrop-filter: blur(30px);
   backdrop-filter: blur(30px);
