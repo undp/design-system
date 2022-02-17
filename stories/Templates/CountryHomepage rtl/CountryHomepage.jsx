@@ -36,6 +36,6 @@ export const CountryHomepage = ({
         langSelect={langSelect}
       />
 
-      <a href= "http://localhost:6006/iframe.html?id=templates-global-homepage-rtl--global-homepage-rtl&args=&viewMode=story" className="switch_btn button button-primary">Click here to switch logo animation</a>
+      <a href= "https://develop.design-system.pages.dev/iframe?id=templates-global-homepage-rtl--global-homepage-rtl&direction=ltr&globals=locale:english&viewMode=story" className="switch_btn button button-primary">Click here to switch logo animation</a>
     </div>
   );
