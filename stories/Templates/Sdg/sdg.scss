@@ -38,6 +38,11 @@
         .sdg-modal-dialog {
           @include transform(translateX(0));
         }
+        &.animation-out {
+          .sdg-modal-dialog {
+            @include transform(translateX(100%));
+          }
+        }
       }
     }
   }
