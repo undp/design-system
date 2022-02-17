@@ -2,6 +2,7 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
 
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
 /* image card start */
 .image-reveal-card {
   @extend %img_none;
@@ -45,6 +46,24 @@
         width: 100%;
       }
     }
+
+    .image {
+      position: relative;
+      width: 100%;
+  
+      img {
+        display: block;
+        width: 100%;
+      }
+  
+      &::before {
+        @extend %absolute__content;
+  
+        @include transition(all 0.9s);
+  
+        opacity: 0;
+      }
+    }
   }
 
   .cta__link {
@@ -77,12 +96,29 @@
         }
       }
     }
+
+    .image::before {
+      opacity: 0.75;
+    }
+  }
+
+  .image::before {
+    @include background-image(67.76deg, $color-yellow, transparent 61.11%);
+    opacity: 0.75;
+  }
+
+  @each $name, $color in $colors {
+    &.#{$name} {
+      .image::before {
+        @include background-image(67.76deg, #{$color}, transparent 61.11%);
+      }
+    }
   }
 }
 
 .small.image-reveal-card {
   @include devicebreak(medium) {
-    max-width: 212px;
+    max-width: 13.25rem;
 
     .cta__link {
       width: 100%;
@@ -101,7 +137,7 @@
       .cta__link.cta--arrow {
         i {
           margin-left: 0;
-          width: 4rem;
+          width: $spacing-10;
         }
       }
     }
@@ -128,6 +164,12 @@
         padding-right: $spacing-06;
       }
     }
+
+    .image {
+      &::before{
+        @include transform(scaleX(-1));
+      }
+    } 
   }
 }
 
