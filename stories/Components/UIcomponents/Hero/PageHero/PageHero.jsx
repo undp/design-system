@@ -23,9 +23,9 @@ export const PageHero = ({
             <img src={imgsrc} alt={imgalt} />
           </div>
         )}
-      <div className="grid-x pagehero-content">
-        <div className="cell medium-6 medium-offset-1">
-          <Breadcrumbcomponent data={data} Color="White" />
+      <Breadcrumbcomponent data={data} Color="White"/>
+      <div className="pagehero-content  medium-offset-1">
+        <div className="content-box">
           {content && <Heading type="4" className="color-white" label={content} dataViewport="true"/>}
           {title && <Heading type="2" className="color-white" label={title} dataViewport="true"/>}
         </div>
@@ -37,4 +37,3 @@ export const PageHero = ({
 PageHero.defaultProps = {
   variant: 'image',
 };
-
