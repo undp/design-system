@@ -11,6 +11,7 @@ import BackgroundImg from '../../assets/images/lady.jpg';
 import BackgroundVideo from '../../assets/video/video_sample.mp4';
 import logo from '../../assets/images/undp-logo-blue.svg';
 import logowhite from '../../assets/images/undp-logo-white.svg';
+import { getButtonForLocale as buttonData } from '../../Patterns/FilterAndSearchBar/FilterAndSearchBar.stories.mdx';
  
 import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.mdx";
 import {
@@ -878,6 +879,7 @@ Add the base layout style from dist/css/base-minimal.css
         args={args}
         clearText={clearText} 
         activeFilterText={activeFilterText}  
+        buttonData={buttonData(locale)}
         data={categoryText}
         herodata={caption.herodata} 
         title={caption.title} 

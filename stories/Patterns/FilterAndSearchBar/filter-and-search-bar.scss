@@ -3,7 +3,31 @@
 @import '../../assets/scss/variables';
 
 /* toggle search start */
+.sort-filter-search{
+  width: 100%;
+  display: none;
+  span{
+    display: none;
+    font-size: 1rem;}
+  &.close{
+    font-size: 0;
+    background-color: $color-gray-300;
+    color: $color-black;
+    span{
+      display: block;
+    }
+  }
+  @include devicebreak(small) {
+    display: block;
+  }
+}
 .search-filter {
+  @include devicebreak(small) {
+    display: none;
+    &.show-filter{
+      display: block;
+    }
+  }
   .expand-search {
     max-width: 296px;
   }

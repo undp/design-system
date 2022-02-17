@@ -9,6 +9,7 @@ import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/G
 export const GenericLandingPage = ({ 
   data, active, herodata, title, imgsrc, videosrc, footerData, content,
   groupcontentdata, buttonname, activeFilterText, clearText,
+  buttonData,
   args,
   logo,
   logowhite,
@@ -50,7 +51,7 @@ export const GenericLandingPage = ({
       <div className="grid-x grid-margin-x">
         <div className="cell large-3 small-12">
           <div className="column">
-            <FilterAndSearchBar locale={locale} args={args} clearText={clearText} activeFilterText={activeFilterText} data={data} />
+            <FilterAndSearchBar locale={locale} buttonData={buttonData} args={args} clearText={clearText} activeFilterText={activeFilterText} data={data} />
           </div>
         </div>
         <div className="cell large-9 small-12">
