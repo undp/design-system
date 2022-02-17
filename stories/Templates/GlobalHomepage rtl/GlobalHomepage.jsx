@@ -55,7 +55,7 @@ export const GlobalHomePage = ({
         locationData={locationData}
         langSelect={langSelect}
       />
-      <a href= "http://localhost:6006/iframe.html?id=templates-country-homepage-rtl--country-homepage-rtl&args=&viewMode=story" className="switch_btn button button-primary">Click here to switch logo animation</a>
+      <a href= "https://develop.design-system.pages.dev/iframe?id=templates-country-homepage-rtl--country-homepage-rtl&direction=ltr&globals=locale:english&args=&viewMode=story" className="switch_btn button button-primary">Click here to switch logo animation</a>
     </div>
   );
 };
