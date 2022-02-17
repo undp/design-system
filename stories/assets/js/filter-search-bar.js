@@ -75,6 +75,10 @@ const toggleFilter = function () {
     $el.parents('.select-wrapper').find("input[type='checkbox']").prop('checked', false);
     $el.parents('.select-wrapper').find("button").find('span').remove();
   });
+  $(document).on('click', '.sort-filter-search', function () {
+    $(this).toggleClass('close');
+    $(this).next('.search-filter').toggleClass('show-filter');
+  });
 };
 
 export default toggleFilter;

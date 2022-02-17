@@ -129,6 +129,7 @@
         @include devicebreak(small) {
           background:transparent url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
           margin-left: 0;
+          margin-right:0;
           -webkit-mask: inherit;
           mask: inherit;
         }
@@ -193,7 +194,6 @@
       }
 
       .icon-search {
-        margin-right: $spacing-05;
         margin-left: 0;
       }
     }

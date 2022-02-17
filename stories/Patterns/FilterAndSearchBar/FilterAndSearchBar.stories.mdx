@@ -56,6 +56,16 @@ export const getCaptionForActiveLocale = (locale) => {
   }
 };
 
+export const getButtonForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {close:'Close', sort:'Search and filter'}; return engText;
+    case 'arabic': const arabicText = {close:'قريب', sort:'البحث والتصفية'}; return arabicText;
+    case 'burmese': const burmeseText = {close:'ပိတ်လိုက်', sort:'ရှာဖွေပြီး စစ်ထုတ်ပါ။'}; return burmeseText;
+    case 'japanese': const japaneseText = {close:'選ぶ', sort:'検索とフィルタリング'}; return japaneseText;
+    default: return {close:'Close', sort:'Search and filter'};
+  }
+};
+
 <Meta
   title="Patterns/Filter and search sidebar"
   argTypes={{
@@ -97,11 +107,13 @@ Select: The search bar having a horizontal line below the search icon indicates 
   <Story name="Filter and search sidebar">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
+      const buttonData = getButtonForLocale(locale);
       const clearText = getCaptionForClearLocale(locale);
       const activeFilterText = getCaptionForActiveLocale(locale);
       return (
         <FilterAndSearchBar
           locale={locale}
+          buttonData={buttonData}
           args={args}
           clearText={clearText}
           activeFilterText={activeFilterText}

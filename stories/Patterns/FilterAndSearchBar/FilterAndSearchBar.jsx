@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react';
 import toggleFilter from '../../assets/js/filter-search-bar';
-import { Chips } from '../../Components/UIcomponents/Buttons/Chips/Chips';
 import SelectTag from '../../Components/Forms/Dropdowns/Multiselect/MultiSelect';
 import './filter-and-search-bar.scss';
 import { SearchExpand } from '../../Components/Forms/SearchExpand/SearchExpand';
 
 const FilterAndSearchBar = ({
-  args, data, clearText, activeFilterText, locale,
+  args, data, clearText, activeFilterText, locale, buttonData
 }) => {
   useEffect(() => {
     toggleFilter(locale);
   }, [locale]);
 
   return (
+    <>
+    <button className="button button-secondary sort-filter-search">
+      {buttonData.sort}<span>{buttonData.close}</span>
+    </button>
     <div className="search-filter">
       <SearchExpand />
       <div className="select-wrapper">
@@ -24,9 +27,9 @@ const FilterAndSearchBar = ({
         <span className="active-filter">{activeFilterText}</span>
         <div className="selected-chips"></div>
         <button className='clear-search-filter'>{clearText}</button>
-
       </div>
     </div>
+    </>
   );
 };
 
