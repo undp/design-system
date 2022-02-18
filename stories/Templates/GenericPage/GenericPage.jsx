@@ -64,7 +64,7 @@ export const GenericPage = ({
 
     <div className="grid-container fluid content-bottom">
       <div className="grid-x grid-margin-x margin-top-72">
-        <div className="cell large-3 medium- 4 small-12 sidebar-width">
+        <div className="cell large-3 small-12 sidebar-width">
           <div className="column sidebar-desktop">
             <Sidebar
               data={sidebarCaptionData.sidebardata}
@@ -75,7 +75,7 @@ export const GenericPage = ({
             />
           </div>
         </div>
-        <div className="cell large-9 medium-8 small-12">
+        <div className="cell large-9 small-12">
           <div className="grid-x grid-margin-x">
             <div className="cell large-10 small-12">
               <div className="column">

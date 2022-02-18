@@ -46,13 +46,6 @@
       display: block;
       margin-bottom: 0;
       padding: $spacing-05;
-    @include devicebreak(small) {
-      
-    }
-
-    // @include devicebreak(medium) {
-    //   display: none;
-    // }
 
     &::after {
       @extend %sidebar-chevron;
