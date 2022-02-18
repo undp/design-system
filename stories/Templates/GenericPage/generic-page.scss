@@ -13,11 +13,13 @@
   .sidebar {
     &-width {
       .sidebar-accordion {
-        width: calc(100% - #{$spacing-04});
 
         @include devicebreak(medium) {
           margin-top: 0.8rem;
           width: 90%;
+        }
+        &.show-small{
+          display: block;
         }
       }
 
@@ -27,20 +29,33 @@
     }
 
     &-mobile {
-      display: block;
       margin-bottom: $spacing-04;
       margin-top: 5.5rem;
 
-      @include devicebreak(medium) {
-        display: none;
+      display: none;
+      @media (max-width:1023px){
+        display: block;
+        .sidebar-accordion{
+          width:100%;
+          h6::after {
+              top: 0.5rem;
+          }
+          ul{
+            display: none;
+          }
+          &.show-small{
+            ul{
+              display: block;
+            }
+          }
+        }
       }
     }
 
     &-desktop {
-      display: none;
-
-      @include devicebreak(medium) {
-        display: block;
+      display: block;
+      @media (max-width:1023px){
+        display: none;
       }
     }
   }
@@ -72,12 +87,20 @@
   .pagehero-full {
     margin-top: 0;
 
-    @include devicebreak(medium) {
+    @include devicebreak(large) {
       margin-top: 5.688rem;
     }
 
     @include devicebreak(xlarge) {
       margin-top: 8.1875rem;
+    }
+    .content-box {
+      width: auto;
+    }
+    .breadcrumb {
+      @include devicebreak(small) {
+        padding-top: $spacing-04;
+      }
     }
   }
 
@@ -90,14 +113,35 @@
     }
   }
 
+  .genric-slider{
+    margin-right: -#{$spacing-36};
+    @include devicebreak(small) {
+      margin-right: -#{$spacing-06};
+      .swiper-initialized .swiper-scrollbar {
+        padding-right: 0;
+      }
+    }
+  }
 }
 
 [dir='rtl'] {
-  @include devicebreak(medium) {
-    .generic-page {
-      .button-secondary {
-        margin-left: unset;
-        margin-right: 0.75rem;
+  .generic-page {
+    @include devicebreak(medium) {
+        .button-secondary {
+          margin-left: unset;
+          margin-right: 0.75rem;
+        }
+      }
+    
+    .genric-slider{
+      margin-left: -#{$spacing-36};
+      margin-right: 0;
+      @include devicebreak(small) {
+        margin-left: -#{$spacing-06};
+        margin-right: 0;
+        .swiper-initialized .swiper-scrollbar {
+          padding-left: 0;
+        }
       }
     }
   }
