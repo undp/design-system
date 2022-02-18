@@ -113,12 +113,6 @@
     }
   }
 
-  .content-bottom {
-    .grid-margin-x {
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
   .genric-slider{
     margin-right: -#{$spacing-04};
     @include devicebreak(small) {
@@ -151,3 +145,4 @@
     }
   }
 }
+

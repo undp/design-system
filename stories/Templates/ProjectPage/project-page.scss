@@ -132,9 +132,13 @@
         margin-left: 0;
         margin-top: $spacing-08;
       }
-    }
+    } 
   }
 }
+@include devicebreak(small) {
+  .sb-show-main.sb-main-padded{padding: 0;}
+}
+
 
 [dir='rtl'] {
   .project {

@@ -101,7 +101,7 @@ export const ProjectPage = ({
           </div>
         </div>
       </div>
-      <div className="grid-x grid-margin-x project-impact">
+      <div className="grid-x project-impact">
         <div className="cell large-offset-1 large-10">
           <Projectdetail
             text={impactHead}
@@ -123,7 +123,7 @@ export const ProjectPage = ({
           <CtaButton label={buttonProjectInfo} Type="Secondary" />
         </div>
       </div>
-      <div className="grid-x grid-margin-x project-support">
+      <div className="grid-x project-support">
         <div className="cell large-offset-1 small-offset-1 small-10">
           <div className="column">
             <Heading type="2" label={supportHeading} />
@@ -135,7 +135,7 @@ export const ProjectPage = ({
           </div>
         </div>
       </div>
-      <div className="grid-x grid-margin-x project-explore">
+      <div className="grid-x project-explore">
         <div className="cell large-offset-1 small-offset-1 small-10">
           <div className="column">
             <Heading type="2" label={exploreHeading} />
