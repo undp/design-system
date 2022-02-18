@@ -28,7 +28,7 @@ export const ImageRevelCard = ({
       {data.map((item, index) => (
         <div key={index} data-viewport="true" className={['cell', `${size}`, 'image-reveal-card', `delay-${2 + index++}`].join(' ')}>
           <a href={item.link}>
-            <div className={cls('image-reveal-card__content', `${hovercolors_variant}`)}>
+            <div className={cls('image-reveal-card__content', `${item.Hovercolors ? `${hovercolors_options[`${item.Hovercolors}`]}` : `${hovercolors_variant}`}`)}>
               <div className="image">
                 {item.imageback && (<img src={item.imageback} alt={item.imageback} />)}
               </div>
