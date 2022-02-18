@@ -22,13 +22,13 @@ export function sticky() {
           } else if (stopPoint) {
             $($sticky).css({ position: 'absolute', top: diff });
           } else {
-            $($sticky).css({ position: 'absolute', top: 'initial', width: 'initial'});
+            $($sticky).css({ position: 'absolute', top: 'initial', width: 'inherit'});
           }
         });
       } else {
         // Unbind window scroll event and Reset sticky position if stickyScroll disabled.
         $(window).on('scroll', function () {
-          $($sticky).css({ position: '', top: '', width: 'initial' });
+          $($sticky).css({ position: '', top: '', width: '100%' });
         });
       }
     }
