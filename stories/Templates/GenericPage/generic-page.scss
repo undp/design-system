@@ -13,7 +13,6 @@
   .sidebar {
     &-width {
       .sidebar-accordion {
-        width: calc(100% - #{$spacing-04});
 
         @include devicebreak(medium) {
           margin-top: 0.8rem;
@@ -81,6 +80,11 @@
     }
     .content-box {
       width: auto;
+    }
+    .breadcrumb {
+      @include devicebreak(small) {
+        padding-top: $spacing-04;
+      }
     }
   }
 

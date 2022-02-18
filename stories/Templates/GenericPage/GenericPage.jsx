@@ -41,7 +41,7 @@ export const GenericPage = ({
       langSelect={langSelect}
     />
     <ProgressBarNavigation Colors="yellow" />
-    <div className="grid-x grid-margin-x">
+    <div className="grid-x">
       <div className="cell small-12 sidebar-width">
         <div className="column sidebar-mobile">
           <Sidebar
@@ -63,7 +63,7 @@ export const GenericPage = ({
     />
 
     <div className="grid-container fluid content-bottom">
-      <div className="grid-x grid-margin-x margin-top-72">
+      <div className="grid-x margin-top-72">
         <div className="cell large-3 small-12 sidebar-width">
           <div className="column sidebar-desktop">
             <Sidebar
@@ -76,7 +76,7 @@ export const GenericPage = ({
           </div>
         </div>
         <div className="cell large-9 small-12">
-          <div className="grid-x grid-margin-x">
+          <div className="grid-x">
             <div className="cell large-10 small-12">
               <div className="column">
                 <Heading

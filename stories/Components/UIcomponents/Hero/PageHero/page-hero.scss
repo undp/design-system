@@ -55,6 +55,9 @@
         padding-left: $spacing-04;
         padding-right: $spacing-04;
       }
+      ul li {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -84,12 +87,7 @@
       font-family: $Font-Family-SohneBreit;
       font-weight: 700;
       margin-bottom: 0;
-      margin-top: 6.313rem;
       text-transform: uppercase;
-
-      @include devicebreak(medium) {
-        margin-top: 12.625rem;
-      }
     }
   }
 

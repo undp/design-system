@@ -21,7 +21,7 @@ export const Sidebar = ({
 
   return (
     <nav role="navigation" aria-label="Sidebar" className={cls('sidebar-accordion', `${height}`)}>
-      <div className="grid-x grid-margin-x">
+      <div className="grid-x">
         <div className={['cell', `${size}`].join(' ')}>
           <Heading type="6" label={label} />
           <ul>
