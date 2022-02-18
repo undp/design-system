@@ -1,6 +1,6 @@
 import React from 'react';
 import './publication-thumbnail.scss';
-import user from '../../../assets/images/publication-thumbnail.jpg';
+import user from '../../../assets/images/publication-thumbnail.png';
 
 export const Publicationthumb = ({ Hovercolors }) => {
   const image = {

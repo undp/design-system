@@ -7,6 +7,8 @@
 }
 
 .related-publication {
+  margin-top: 2.25rem;
+
   .cell.medium-4 {
     padding: $spacing-04 0;
     width: 100%;
@@ -24,11 +26,11 @@
 
   h2 {
     margin-top: $spacing-09;
-    margin-bottom: $spacing-06;
+    margin-bottom: $spacing-04;
 
-    @include devicebreak(medium) {
+    @include devicebreak(large) {
       margin-top: $spacing-11;
-      margin-bottom: $spacing-09;
+      margin-bottom: 2.25rem;
     }
   }
 
@@ -110,7 +112,7 @@
 .content-bottom {
   margin-bottom: $spacing-09;
 
-  @include devicebreak(medium) {
+  @include devicebreak(large) {
     margin-bottom: $spacing-12;
   }
 }
@@ -119,16 +121,20 @@
   h2 {
     display: none;
 
-    @include devicebreak(medium) {
+    @include devicebreak(large) {
       display: block;
       margin-bottom: $spacing-06;
+    }
+
+    >p {
+      margin-top: 2.25rem;
     }
   }
 
   h6 {
     margin-top: $spacing-08;
 
-    @include devicebreak(medium) {
+    @include devicebreak(large) {
       margin-top: $spacing-03;
     }
   }
@@ -137,13 +143,23 @@
 .publication {
   &-page {
     margin-bottom: 3.313rem;
-    margin-top: $spacing-12;
+    margin-top: $spacing-11;
+
+    @include devicebreak(medium) {
+      margin-top: 4.6rem;
+    }
+
+    @include devicebreak(xlarge) {
+      margin-top: 7.4rem;
+      margin-bottom: 4.688rem;
+    }
+    
 
     .breadcrumb {
-      margin-top: 1.813rem;
+      margin-top: 1.063rem;
 
-      @include devicebreak(medium) {
-        margin-top: 5.313rem;
+      @include devicebreak(large) {
+        margin-top: 4.563rem;
       }
     }
   }
@@ -152,8 +168,8 @@
     margin-top: 2.563rem;
     scroll-behavior: auto;
 
-    @include devicebreak(medium) {
-      margin-top: 4.25rem;
+    @include devicebreak(large) {
+      margin-top: 3.625rem;
     }
   }
 
@@ -162,17 +178,16 @@
   }
 
   &-menu {
-    margin-bottom: $spacing-50;
-    margin-top: 3.5rem;
+    margin-top: $spacing-50;
 
-    @include devicebreak(medium) {
+    @include devicebreak(large) {
       margin-top: $spacing-11;
     }
 
     h6 {
       margin-top: $spacing-04;
 
-      @include devicebreak(medium) {
+      @include devicebreak(large) {
         margin-top: $spacing-05;
       }
     }
@@ -180,14 +195,20 @@
     .menu-item {
       margin-top: $spacing-01;
 
-      @include devicebreak(medium) {
+      @include devicebreak(large) {
         margin-top: 0;
       }
     }
 
     .menu {
-      li a {
-        text-transform: none;
+      li {
+        margin-top: 0.375rem;
+
+        a {
+          text-transform: none;
+          font-size: $spacing-05;
+          @extend %animate-link;
+        }
       }
     }
   }
@@ -216,7 +237,7 @@
   &-mobile {
     display: block;
 
-    @include devicebreak(medium) {
+    @include devicebreak(large) {
       display: none;
     }
 
@@ -229,18 +250,18 @@
 [dir='rtl'] {
   .related-publication {
     .large-offset-6 {
-      @include devicebreak(medium) {
+      @include devicebreak(large) {
         margin-left: 0;
-        margin-right: calc(50% + 1rem / 2);
+        margin-right: calc(50% + #{$spacing-05} / 2);
       }
     }
   }
 
   .publication-page {
     .large-offset-1 {
-      @include devicebreak(medium) {
+      @include devicebreak(large) {
         margin-left: 0;
-        margin-right: calc(8.33333% + 1.5rem / 2);
+        margin-right: calc(8.33333% + #{$spacing-06}/ 2);
       }
     }
   }
@@ -261,7 +282,7 @@
 .publication-post-header {
   margin-top: 1.813rem;
 
-  @include devicebreak(medium) {
+  @include devicebreak(large) {
     margin-top: $spacing-11;
   }
 }

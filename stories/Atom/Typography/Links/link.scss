@@ -22,15 +22,6 @@ a {
   text-decoration: none;
 
   &.animated-link {
-    background-image:
-      linear-gradient($color-dark-red, $color-dark-red),
-      linear-gradient($color-dark-red, $color-dark-red);
-    background-position: 100% 100%, -30px 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 2px, 0 1px;
-
-    &:hover {
-      @include animation(lineLoop-animation 2s linear infinite);
-    }
+   @extend %animate-link;
   }
 }
