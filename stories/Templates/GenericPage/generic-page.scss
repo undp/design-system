@@ -20,7 +20,10 @@
         }
         &.show-small{
           display: block;
+        @include devicebreak(small) {
+          width:100%;
         }
+        
       }
 
       ul {
@@ -113,12 +116,6 @@
     }
   }
 
-  .content-bottom {
-    .grid-margin-x {
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
   .genric-slider{
     margin-right: -#{$spacing-36};
     @include devicebreak(small) {

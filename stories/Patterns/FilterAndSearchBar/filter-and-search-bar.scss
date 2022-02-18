@@ -6,6 +6,7 @@
 .sort-filter-search{
   width: 100%;
   display: none;
+  text-transform: uppercase;
   span{
     display: none;
     font-size: 1rem;}
@@ -13,6 +14,9 @@
     font-size: 0;
     background-color: $color-gray-300;
     color: $color-black;
+    :hover{
+      background-color: $color-gray-300;
+    }
     span{
       display: block;
     }

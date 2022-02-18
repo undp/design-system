@@ -154,6 +154,7 @@
   @include devicebreak(small) {
     -webkit-mask: inherit;
     mask: inherit;
+    margin-right:0;
   }
   &:hover{
     background-color: $color-blue-400;
