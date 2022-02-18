@@ -40,6 +40,9 @@
       h4 {
         padding-top: 0;
       }
+      h2 {
+        margin-top: 0;
+      }
     }
 
     .content-box {
@@ -88,6 +91,9 @@
       font-weight: 700;
       margin-bottom: 0;
       text-transform: uppercase;
+      @include devicebreak(medium) {
+        margin-top: 12.625rem;
+      }
     }
   }
 
