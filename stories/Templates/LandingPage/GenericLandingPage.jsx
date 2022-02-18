@@ -21,6 +21,7 @@ export const GenericLandingPage = ({
   locationData,
   langSelect,
   backcaption,
+  heroimgsrc2
 }) => (
   <div className="landing-page">
     <GlobalHeader
@@ -42,6 +43,7 @@ export const GenericLandingPage = ({
             active={active}
             imgsrc={imgsrc}
             imgalt={imgsrc}
+            imgsrc2={heroimgsrc2} 
             videosrc={videosrc}
           />
         </div>

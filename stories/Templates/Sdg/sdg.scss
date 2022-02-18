@@ -54,14 +54,10 @@
       margin-top: 4.6875rem;
     }
 
-    .pagehero-content {
-      padding-top: $spacing-10;
-
-      @include devicebreak(small) {
-        padding-top: $spacing-07;
-
-        h2 {
-          margin-top: 10.313rem;
+    @include devicebreak(small) {
+    .pagehero-full {
+        .breadcrumb {
+          padding-top: $spacing-04;
         }
       }
     }
