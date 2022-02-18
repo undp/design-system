@@ -120,9 +120,8 @@
     }
   }
   .genric-slider{
-    margin-right: -#{$spacing-36};
+    margin-right: -#{$spacing-04};
     @include devicebreak(small) {
-      margin-right: -#{$spacing-06};
       .swiper-initialized .swiper-scrollbar {
         padding-right: 0;
       }
