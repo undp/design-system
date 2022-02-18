@@ -18,17 +18,18 @@ export function sticky() {
           let diff = Math.round($footerTop - $stickyHeight) - 20;
           let stopPoint = windowTop > diff - $headerHeight;
           if (startPoint && !stopPoint) {
-            $($sticky).css({ position: 'fixed', top: $headerHeight });
+            $($sticky).css({ position: 'fixed', top: $headerHeight, width: 'inherit'});
           } else if (stopPoint) {
             $($sticky).css({ position: 'absolute', top: diff });
           } else {
-            $($sticky).css({ position: 'absolute', top: 'initial' });
+            $($sticky).css({ position: 'absolute', top: 'initial', width: 'initial'});
           }
         });
       } else {
         // Unbind window scroll event and Reset sticky position if stickyScroll disabled.
-        $(window).off("scroll");
-        $($sticky).css({ position: '', top: '' });
+        $(window).on('scroll', function () {
+          $($sticky).css({ position: '', top: '', width: 'initial' });
+        });
       }
     }
   }

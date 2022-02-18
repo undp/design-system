@@ -75,7 +75,7 @@ export const PublicationPage = ({
             <Heading type="2" label={blockHeader} />
           </div>
         </div>
-        <div className="cell small-12 large-5 medium-6 large-offset-1 medium-offset-0">
+        <div className="cell small-12 large-offset-1 large-4 medium-6 medium-offset-0">
           <div className="column sticky">
             <PublicationCard
               image={image && <Publicationthumb />}
@@ -84,11 +84,11 @@ export const PublicationPage = ({
             />
           </div>
         </div>
-        <div className="cell small-12 large-5 medium-5">
+        <div className="cell small-12 large-offset-1 large-5 medium-6">
           <div className="column publication-card__title">
             <Heading type="2" label={blockHeader} />
             <Heading type="6" label={blockDescription} />
-            <P label={paragraphTop1} className="margin-top-48" />
+            <P label={paragraphTop1} className="margin-top-36" />
             <P label={paragraphTop2} />
             <P label={paragraphTop3} />
           </div>
@@ -128,7 +128,7 @@ export const PublicationPage = ({
           </div>
         </div>
       </div>
-      <div className="grid-x grid-margin-x margin-top-48 related-publication" data-viewport="true">
+      <div className="grid-x grid-margin-x related-publication" data-viewport="true">
         <div className="cell small-12 large-6 large-offset-6 border-top-2">
           <div className="column">
             <Heading type="2" label={relatedPublicationHeading} />
