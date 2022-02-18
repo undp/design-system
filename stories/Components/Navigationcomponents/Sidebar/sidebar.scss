@@ -41,17 +41,11 @@
   }
 
   h6 {
-    @include devicebreak(small) {
       background-color: $color-gray-300;
       cursor: pointer;
       display: block;
       margin-bottom: 0;
       padding: $spacing-05;
-    }
-
-    @include devicebreak(medium) {
-      display: none;
-    }
 
     &::after {
       @extend %sidebar-chevron;

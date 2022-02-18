@@ -91,7 +91,7 @@ export const GenericPage = ({
               </div>
             </div>
             <div className="cell large-12 small-12 margin-top-80">
-              <div className="column">
+              <div className="column genric-slider">
                 <FluidImageSizeCarousel
                   data={carouselData}
                 />
