@@ -43,6 +43,9 @@
 
     &-hero {
       margin-top: $spacing-11;
+      @include devicebreak(small) {
+        padding: $spacing-04;
+      }
 
       .breadcrumb {
         @include devicebreak(small) {
