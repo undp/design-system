@@ -12,7 +12,7 @@ import BackgroundVideo from '../../assets/video/video_sample.mp4';
 import logo from '../../assets/images/undp-logo-blue.svg';
 import logowhite from '../../assets/images/undp-logo-white.svg';
 import { getButtonForLocale as buttonData } from '../../Patterns/FilterAndSearchBar/FilterAndSearchBar.stories.mdx';
- 
+
 import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.mdx";
 import {
   getNavLinks,
@@ -167,7 +167,7 @@ export const getCaptionForLocale = (locale) => {
     text: "Subtitle or excerpt of the story goes below and it is two lines",
     btnlabel: "READ MORE",
     searchData:'Select Language',
-    }; return engText;    
+    }; return engText;
     case 'arabic': const arabicText = {herodata: [{
      text: 'الصفحة الرئيسية'
     },
@@ -802,7 +802,7 @@ Global header
 - Filters and search bar - Allows the user to apply filters to the search section.
 - Set of content cards(Results should be filtered based on Filter and search bar) - card of information with some items
 - View more button - Call to action that will be performed when the user clicks/touches it
-- Standard footer 
+- Standard footer
 
 ### Performance
 The page performance will be optimized by considering following:
@@ -846,7 +846,7 @@ Add the base layout style from dist/css/base-minimal.css
 - dist/css/components/content-card.min.css
 - dist/css/components/cta-link.min.css
 - dist/css/components/chips.min.css
-- dist/css/components/input-group.min.css
+- dist/css/components/input-fields.min.css
 - dist/css/components/buttons.min.css
 - dist/css/components/newsletter-signup.min.css
 - dist/css/components/accordion.min.css
@@ -880,16 +880,16 @@ Add the base layout style from dist/css/base-minimal.css
       const navigationData= getNavLinks(locale);
       const leftNavigationData=navigationData.filter(item=>item.position==='left');
       const rightNavigationData=navigationData.filter(item=>item.position==='right');
-      return <GenericLandingPage 
+      return <GenericLandingPage
         args={args}
-        clearText={clearText} 
-        activeFilterText={activeFilterText}  
+        clearText={clearText}
+        activeFilterText={activeFilterText}
         buttonData={buttonData(locale)}
         data={categoryText}
-        herodata={caption.herodata} 
-        title={caption.title} 
-        imgsrc={caption.imgsrc} 
-        heroimgsrc2={caption.imgsrc2} 
+        herodata={caption.herodata}
+        title={caption.title}
+        imgsrc={caption.imgsrc}
+        heroimgsrc2={caption.imgsrc2}
         videosrc={caption.videosrc}
         active={'default'}
         groupcontentdata={caption.groupcontentdata}

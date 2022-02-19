@@ -287,13 +287,13 @@ Generic Page is the template for all the information about the company or author
 - The following components are used to create the “Article Page” template in the design system
 - Global header
 - Progress bar - reading meter, updated on scroll based on the amount of text remaining in the article. The related content part is not counted, only actual Article’s content.
-- Page Hero - Creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle, and Breadcrumb. 
+- Page Hero - Creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle, and Breadcrumb.
 - Sidebar menu (3 columns wide) - Column on the left or right side of a page which highlights the extra information related to the page.
 - H2 Title along with large Paragraphs
 - Fluid image size carousel -  Shows sliders, designation, and image in a particular section. It is a multi-usage component that creates teasing kinds of content.
 - Text/paragraphs about company or author
 - Group of single content cards with images along with CTA links (this can be just #).
-- Standard footer 
+- Standard footer
 
 ### Performance
 The page performance will be optimized by considering the following:
@@ -330,7 +330,7 @@ Add the base layout style from dist/css/base-minimal.css
 - dist/css/components/swiper.min.css
 - dist/css/components/sidebar-data.min.css
 - dist/css/components/fluid-image-size-carousel.min.css
-- dist/css/components/input-group.min.css
+- dist/css/components/input-fields.min.css
 - dist/css/components/buttons.min.css
 - dist/css/components/newsletter-signup.min.css
 - dist/css/components/accordion.min.css
@@ -369,24 +369,24 @@ Add following external libraries
       const leftNavigationData=navigationData.filter(item=>item.position==='left');
       const rightNavigationData=navigationData.filter(item=>item.position==='right');
       return (
-        <GenericPage 
+        <GenericPage
           active={'white'}
-          herodata={caption.herodata} 
-          title={caption.title} 
-          content={caption.content} 
-          imgsource={caption.imgsrc} 
+          herodata={caption.herodata}
+          title={caption.title}
+          content={caption.content}
+          imgsource={caption.imgsrc}
           altname={caption.imgalt}
           topHeading={caption.detail2}
-          topParagraph={caption.topParagraph} 
-          carouselData={carouselData}   
+          topParagraph={caption.topParagraph}
+          carouselData={carouselData}
           headingMissionVision={caption.headingMissionVision}
           paraMissionVision={caption.paraMissionVision}
           headingHistory={caption.headingHistory}
           paraHistory={caption.paraHistory}
           headingUNcharter={caption.headingUNcharter}
-          paraUNcharter={caption.paraUNcharter}    
-          sidebarCaptionData={sidebarCaptionData(locale)} 
-          ContentCardData={ContentCardData(locale)} 
+          paraUNcharter={caption.paraUNcharter}
+          sidebarCaptionData={sidebarCaptionData(locale)}
+          ContentCardData={ContentCardData(locale)}
           footerData={footerData(locale)}
         locale={locale}
           leftNavigationData={leftNavigationData}
