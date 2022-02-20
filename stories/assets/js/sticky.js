@@ -8,19 +8,23 @@ export function sticky() {
       if (state) {
         // Calculate values only if stickyScroll enabled.
         const $stickyTop = $($sticky).offset().top;
-        const $headerHeight = $('.header').innerHeight() || 115
+        const $headerHeight = $('.header').innerHeight() +15 || 130
         const $footerTop = $('.footer').offset().top;
+        
         $(window).on("scroll", () => {
           // Calculate this inside scroll after image loads.
           const $stickyHeight = $($sticky).innerHeight();
+          const $stickyReleaseHeight = $('.related-publication').innerHeight();
+          const $stickyReleaseOffset = $('.related-publication').offset().top;
+
           let windowTop = Math.round($(window).scrollTop());
           let startPoint = Math.round($stickyTop - $headerHeight) < windowTop;
-          let diff = Math.round($footerTop - $stickyHeight) - 20;
-          let stopPoint = windowTop > diff - $headerHeight;
+          let $stickyScrollUp = Math.round(($stickyReleaseOffset + $stickyReleaseHeight) - $stickyHeight);
+          let stopPoint = windowTop > $stickyScrollUp  - $headerHeight;
           if (startPoint && !stopPoint) {
             $($sticky).css({ position: 'fixed', top: $headerHeight, width: 'inherit'});
           } else if (stopPoint) {
-            $($sticky).css({ position: 'absolute', top: diff });
+            $($sticky).css({ position: 'absolute', top: $stickyScrollUp , width: 'inherit' });
           } else {
             $($sticky).css({ position: 'absolute', top: 'initial', width: 'inherit'});
           }

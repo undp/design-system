@@ -7,14 +7,14 @@
 }
 
 .related-publication {
-  margin-top: 2.25rem;
+  margin-top: $spacing-07;
 
   .cell.medium-4 {
     padding: $spacing-04 0;
     width: 100%;
 
     @include devicebreak(medium) {
-      width: 45%;
+      width: calc(50% - #{$spacing-06});
     }
   }
 
@@ -203,6 +203,7 @@
     .menu {
       li {
         margin-top: 0.375rem;
+        margin-right: $font-size-20;
 
         a {
           text-transform: none;
@@ -220,16 +221,6 @@
   @include devicebreak(small) {
     display: flex;
     justify-content: center;
-  }
-
-  &.stick {
-    position: relative;
-    top: 0;
-    z-index: -1;
-
-    @include devicebreak(medium) {
-      position: sticky;
-    }
   }
 }
 
