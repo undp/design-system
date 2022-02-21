@@ -84,12 +84,13 @@ export const CountryHomepage = ({
             <HeadingBig
               headerText={whatwedoheader}
               descriptionText={whatwedodescription}
+              dataViewport="false"
             />
           </div>
         </div>
         <div className="grid-x wide-card-heading">
           <div className="cell small-12 medium-12 large-11 large-offset-1">
-            <Heading type="2" label={storiesHeading} />
+            <Heading type="2" label={storiesHeading} dataViewport="true"/>
           </div>
           <PageWideCard
             label={PagewidecardTag}
@@ -103,6 +104,7 @@ export const CountryHomepage = ({
         <ContentCardWithAndWithoutImage
           data={featureddataafterwedo.contentdata}
           storyBtn={featureddataafterwedo.storyBtn}
+          dataViewport="true"
         />
         <div className="cell cta-container">
           <CtaButton label={storyBtn} For_Primary="No Arrow" />

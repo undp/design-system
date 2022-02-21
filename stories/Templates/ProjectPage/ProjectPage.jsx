@@ -42,10 +42,10 @@ export const ProjectPage = ({
       <div className="grid-x grid-margin-x">
         <div className="cell large-offset-1 small-offset-1 small-10">
           <div className="column">
-            <Heading type="2" label={topHeading} />
+            <Heading type="2" label={topHeading} dataViewport="true"/>
           </div>
         </div>
-        <div className="cell large-offset-3 large-7 small-offset-1 small-10 copy-text">
+        <div className="cell large-offset-3 large-7 small-offset-1 small-10 copy-text" data-viewport="true">
           <div className="column">
             <P label={topParagraph} />
             <P label={topParagraph1} />
@@ -57,6 +57,7 @@ export const ProjectPage = ({
               headerText={whatwedoheader}
               descriptionText={whatwedodescription}
               listData={listData}
+              dataViewport="false"
             />
           </div>
         </div>
@@ -64,10 +65,10 @@ export const ProjectPage = ({
       <div className="grid-x grid-margin-x project-material">
         <div className="cell large-offset-1 small-offset-1 small-10">
           <div className="column">
-            <Heading type="2" label={relatedHeading} />
+            <Heading type="2" label={relatedHeading} dataViewport="true" />
           </div>
         </div>
-        <div className="cell small-10 small-offset-1 large-offset-3 large-6">
+        <div className="cell small-10 small-offset-1 large-offset-3 large-6" data-viewport="true">
           <div className="column">
             <DownloadCard title={downloadTitle} download={readmore}  variant="External Link"/>
           </div>
@@ -126,10 +127,10 @@ export const ProjectPage = ({
       <div className="grid-x project-support">
         <div className="cell large-offset-1 small-offset-1 small-10">
           <div className="column">
-            <Heading type="2" label={supportHeading} />
+            <Heading type="2" label={supportHeading} dataViewport="true" />
           </div>
         </div>
-        <div className="cell large-offset-1 large-11">
+        <div className="cell large-offset-1 large-11" data-viewport="true">
           <div className="column">
             <Statscardslider data={statsliderdata} gapel="20" gapelsm="20" viewcard="5" perViewtablet="3" focusSpace="0" />
           </div>
@@ -138,7 +139,7 @@ export const ProjectPage = ({
       <div className="grid-x project-explore">
         <div className="cell large-offset-1 small-offset-1 small-10">
           <div className="column">
-            <Heading type="2" label={exploreHeading} />
+            <Heading type="2" label={exploreHeading} dataViewport="true"/>
           </div>
         </div>
         <ContentCardWithAndWithoutImage data={exploreMoreData} />

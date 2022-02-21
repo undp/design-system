@@ -10,7 +10,7 @@ export const transition_options = {
 };
 
 export const HeadingBig = ({
-  headerText, descriptionText, listData, ...args
+  headerText, descriptionText, listData, dataViewport, ...args
 }) => {
   useEffect(() => {
     changeBackground('body', '.heading-big');
@@ -18,12 +18,12 @@ export const HeadingBig = ({
 
   let transition_variant = transition_options[`${args.Emphasize}`];
   return (
-    <div data-color="blue" data-viewport="true" className={['grid-x align-center', `${transition_variant}`].join(' ')}>
+    <div data-color="blue" data-viewport={dataViewport} className={['grid-x align-center', `${transition_variant}`].join(' ')}>
       <div className="cell medium-4">
-        <Heading type="2" label={headerText} dataViewport="true"/>
+        <Heading type="2" label={headerText} />
       </div>
       <div className="cell medium-6">
-        <Heading type="4" label={descriptionText} dataViewport="true"/>
+        <Heading type="4" label={descriptionText} />
         {
           listData
           && <List data={listData} type="ul" />
