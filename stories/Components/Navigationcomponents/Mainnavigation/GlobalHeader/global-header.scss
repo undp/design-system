@@ -135,6 +135,9 @@
         }
       }
     }
+    .mid-nav ul, .top-left, .top-right{
+      @include transition(opacity 0.3s ease);
+    }
   }
 
   &.global-load-animation{
@@ -147,7 +150,6 @@
     }
     .mid-nav ul, .top-left, .top-right{
       opacity: 0;
-      @include transition(opacity 0.3s ease);
     }
   }
   &.run-animation{

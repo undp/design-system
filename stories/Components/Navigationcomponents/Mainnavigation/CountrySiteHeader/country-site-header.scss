@@ -131,6 +131,9 @@
         }
       }
     }
+    .menu, .site-title, .top-right{
+      @include transition(opacity 0.3s ease);
+    }
   }
   &.country-load-animation{
     .header .top-left .logo{
@@ -142,7 +145,6 @@
     }
     .menu, .site-title, .top-right{
       opacity: 0;
-      @include transition(opacity 0.3s ease);
     }
   }
   &.run-animation{
