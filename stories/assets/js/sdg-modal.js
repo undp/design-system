@@ -30,6 +30,55 @@ export function sdgModal() {
     var nextcolor = $(this).next(".sdg-card").attr('class').split(' ')[1];
     var nextgoal = $(this).next(".sdg-card").find('h4').text();
     var nextheading = $(this).next(".sdg-card").find('strong').text();
+    var nexturl = $(this).next(".sdg-card").attr('href');
+
+    windowTop.location.hash = url;
+    $(this).addClass('last-active').siblings().removeClass('last-active');;
+    $('.modal-sdg').addClass('sdg-open').find('.sdg-container').addClass(currentcolor);
+    $('.modal-sdg').find('.heading').find('h3').text('Goal '+ currentheading);
+    $('.modal-sdg').find('.heading').find('h2').text(currentgoal);
+
+    $('.modal-sdg').find('.ndg-container .sdg-card').attr("href",nexturl).addClass(nextcolor);
+    $('.modal-sdg').find('.ndg-container strong').text(nextheading);
+    $('.modal-sdg').find('.ndg-container h4').text(nextgoal);
+
+    $('body').addClass('sdgmodal-open');
+    $($modalOpen).attr('tabindex', '-1');
+  });
+  $(document).on('click', '.ndg-container .sdg-card', function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    var lastactive = $(".last-active").next(".sdg-card");
+    var bottomcolor = lastactive.attr('class').split(' ')[1];
+    var bottomgoal = lastactive.find('h4').text();
+    var bottomheading = lastactive.find('strong').text();
+    var nextcolor = lastactive.next(".sdg-card").attr('class').split(' ')[1];
+    var nextgoal = lastactive.next(".sdg-card").find('h4').text();
+    var nextheading = lastactive.next(".sdg-card").find('strong').text();
+    var nexturl = lastactive.next(".sdg-card").attr('href');
+
+    $('.sdg-container').addClass(bottomcolor);
+    $('.modal-sdg').find('.heading').find('h3').text('Goal '+ bottomheading);
+    $('.modal-sdg').find('.heading').find('h2').text(bottomgoal);
+    $('.modal-sdg').find('.ndg-container .sdg-card').attr("href",nexturl).addClass(nextcolor);
+    $('.modal-sdg').find('.ndg-container strong').text(nextheading);
+    $('.modal-sdg').find('.ndg-container h4').text(nextgoal);
+    $(".last-active").next(".sdg-card").addClass('last-active').siblings().removeClass('last-active');
+  });
+
+  $($modalOpen).on('click', function (event) {
+    event.preventDefault();
+    $('.modal-sdg-content').animate({ scrollTop: 0 }, 'slow');
+
+    // Get href in sdgcard
+    var url = $(this).attr('href');
+    var currentcolor = $(this).attr('class').split(' ')[1];
+    var currentgoal = $(this).find('h4').text();
+    var currentheading = $(this).find('strong').text();
+
+    var nextcolor = $(this).next(".sdg-card").attr('class').split(' ')[1];
+    var nextgoal = $(this).next(".sdg-card").find('h4').text();
+    var nextheading = $(this).next(".sdg-card").find('strong').text();
 
     windowTop.location.hash = url;
     $(this).addClass('last-active');
