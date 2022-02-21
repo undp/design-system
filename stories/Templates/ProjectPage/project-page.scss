@@ -138,6 +138,12 @@
     } 
   }
 }
+
+.project-footer {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
 @include devicebreak(small) {
   .sb-show-main.sb-main-padded{padding: 0;}
 }

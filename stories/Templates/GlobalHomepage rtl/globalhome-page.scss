@@ -56,10 +56,6 @@
     }
   }
 
-  .twitter-panel {
-    margin: 0;
-  }
-
   @include devicebreak(small) {
     .homepage-hero-tall {
       margin-top: 7rem;

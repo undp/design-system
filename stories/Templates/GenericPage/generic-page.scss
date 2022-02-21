@@ -37,9 +37,6 @@
         display: block;
         .sidebar-accordion{
           width:100%;
-          h6::after {
-              top: 0.5rem;
-          }
           ul{
             display: none;
           }
@@ -56,6 +53,11 @@
       display: block;
       @media (max-width:1023px){
         display: none;
+      }
+      @include devicebreak(medium) {
+        .sidebar-accordion h6 {
+          display: none;
+        }
       }
     }
   }

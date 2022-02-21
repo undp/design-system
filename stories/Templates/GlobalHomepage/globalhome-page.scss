@@ -56,14 +56,11 @@
     }
   }
 
-  .twitter-panel {
-    margin: 0;
-  }
 
   @include devicebreak(small) {
     .homepage-hero-tall {
       margin-top: 7rem;
     }
   }
-  .no-gap{margin-left: -#{$spacing-04}; margin-right:-#{$spacing-04};}
 }
+.no-gap{margin-left: -#{$spacing-04}; margin-right:-#{$spacing-04};}
