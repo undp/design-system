@@ -463,7 +463,7 @@ export const statsArray = (locale) => {
         percentname: 'Offices',
         numbername: '9',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        Hovercolors: 'green'    
+        Hovercolors: 'green'
     }]}; return engText.data;
     case 'arabic': const arabicText = {data: [{
       percentname: 'نسبه مئويه',
@@ -499,7 +499,7 @@ export const statsArray = (locale) => {
       percentname: 'مكاتب',
       numbername: '9',
       text: "الألم بحد ذاته هو الحب ، الزبون الرئيسي",
-      Hovercolors: 'green'  
+      Hovercolors: 'green'
     }]}; return arabicText.data;
     case 'burmese': const burmeseText = {data: [{
       percentname: "ရာခိုင်နှုန်း",
@@ -620,7 +620,7 @@ export const statsArray = (locale) => {
   .sbdocs-preview {display: none}
 `}</style>
 
-# Country Homepage 
+# Country Homepage
 
 A country homepage has all the list of content related to one particular country.
 
@@ -640,10 +640,10 @@ The following components are used to create the “Article Page” template in t
 - Pagewide featured content card
 - Group of content cards
 - Secondary button, no arrow
-- Stats slider - Group of cards arranged horizontally in two rows that slide in from opposite directions on page scroll. 
+- Stats slider - Group of cards arranged horizontally in two rows that slide in from opposite directions on page scroll.
 - Text title - Take action
-- Group of image reveal cards 
-- Standard footer 
+- Group of image reveal cards
+- Standard footer
 - Performance
 - The page performance will be optimized by considering the following:
 - Lazy load
@@ -666,8 +666,9 @@ The following components are used to create the “Article Page” template in t
 
 #### CSS:
 
-Add the base layout style from dist/css/base-minimal.css
+Add the base layout style from 
 
+- dist/css/base-minimal.css
 - dist/css/components/country-site-header.min.css
 - dist/css/components/language-switcher.min.css
 - dist/css/components/menu.min.css
@@ -677,7 +678,7 @@ Add the base layout style from dist/css/base-minimal.css
 - dist/css/components/breadcrumbs.min.css
 - dist/css/components/headingbig.min.css
 - dist/css/components/content-card.min.css
-- dist/css/components/contentcardwithandwithoutimage.min.css
+- dist/css/components/content-card-with-and-without-image.min.css
 - dist/css/components/featured-content-card.min.css
 - dist/css/components/cta-link.min.css
 - dist/css/components/page-wide-card.min.css
@@ -686,7 +687,7 @@ Add the base layout style from dist/css/base-minimal.css
 - dist/css/components/stats.min.css
 - dist/css/components/stats-cards.min.css
 - dist/css/components/stats-slider.min.css
-- dist/css/components/input-group.min.css
+- dist/css/components/input-fields.min.css
 - dist/css/components/buttons.min.css
 - dist/css/components/newsletter-signup.min.css
 - dist/css/components/accordion.min.css
@@ -724,14 +725,14 @@ Add following external libraries
       const rightNavigationData=navigationData.filter(item=>item.position==='right');
       const siteTitleData = getSiteTitle(locale);
       const statCaption = statsArray(locale);
-      return <CountryHomepage 
+      return <CountryHomepage
           herotitle={caption.titlename}
           headingTop={caption.text}
           herobtnlabel={caption.btnlabel}
           herosubtitle={caption.subtitle}
           heroimgsrc={caption.imgsrc}
           heroimgsrc2={caption.imgsrc2}
-          heroimgalt={caption.imgalt}   
+          heroimgalt={caption.imgalt}
           featureddata={caption.featureddata}
           featureddataafterwedo={caption.featureddataafterwedo}
           headertext={caption.headertext}
@@ -739,7 +740,7 @@ Add following external libraries
           PagewidecardTitle={caption.label1}
           PagewidecardParagraph={caption.label2}
           PagewidecardBtnlabel={caption.pagewidecardbtn}
-          whatwedoheader={caption.whatwedoheader} 
+          whatwedoheader={caption.whatwedoheader}
           whatwedodescription={caption.whatwedodescription}
           takeactioncard={takeactioncard(locale)}
           statHeading={caption.statHeading}
@@ -755,7 +756,7 @@ Add following external libraries
           locationData={getLocationDataForLocale(locale)}
           langSelect={getSelectlanguage(locale)}
           backcaption={getBackForLocale(locale)}
-          siteTitleData={getSiteTitle(locale)}        
+          siteTitleData={getSiteTitle(locale)}
           logo={logo}
           logowhite={logowhite}
           takeAcrtionHead={caption.takeAcrtionHead}
