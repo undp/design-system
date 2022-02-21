@@ -118,6 +118,7 @@ export const CountryHomepage = ({
         <ImageRevealCards
           data={takeactioncard.data}
           label={takeAcrtionHead}
+          Hovercolors="green"
         />
       </div>
 

@@ -3,6 +3,16 @@ export function changeBackground(body, container) {
   gsap.registerPlugin(ScrollTrigger);
 
   let $startTrigger = $(container).find('h2');
+  let $endPoint;
+
+
+  const $windowWidth = $(window).width();
+  const breakpoint = window.UNDP.breakpoints.TABLET || 834;
+  if ($windowWidth > breakpoint) {
+    $endPoint = ($(container).innerHeight() - 500 )+'px';
+  } else {
+    $endPoint = ($(container).innerHeight() + 250 )+'px';
+  }
 
   if(!$(container).length) return false;
 
@@ -39,7 +49,7 @@ export function changeBackground(body, container) {
       blueToWhiteScroll = ScrollTrigger.create({
       trigger: $startTrigger,
       start: startBlueToWhite,
-      end: "+=200px",
+      end: $endPoint,
       scrub: true,
       animation: blueToWhite,
       onEnter: () => $(body).removeClass('change-background'),

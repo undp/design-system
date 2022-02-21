@@ -249,6 +249,13 @@ $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green
         }
       }
     }
+
+    .image-reveal-card:hover {
+        .image::before {
+          @include background-image(67.76deg, #{$color}, transparent 61.11%);
+          opacity: 0.75;
+        }
+    }
   }
 }
 

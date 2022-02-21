@@ -86,6 +86,22 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'bl
           transform: translateY(0);
         }
       }
+      .image::before {
+        @include background-image(67.76deg, $color-yellow, transparent 61.11%);
+        opacity: 0.75;
+      }
+    
+      // color map
+      $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+    
+      @each $name, $color in $colors {
+        &.#{$name} {
+          .image::before {
+            @include background-image(67.76deg, #{$color}, transparent 61.11%);
+            opacity: 0.75;
+          }
+        }
+      }
     }
 
     .cta__link {
@@ -102,18 +118,6 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'bl
     }
   }
 
-  .image::before {
-    @include background-image(67.76deg, $color-yellow, transparent 61.11%);
-    opacity: 0.75;
-  }
-
-  @each $name, $color in $colors {
-    &.#{$name} {
-      .image::before {
-        @include background-image(67.76deg, #{$color}, transparent 61.11%);
-      }
-    }
-  }
 }
 
 .small.image-reveal-card {
