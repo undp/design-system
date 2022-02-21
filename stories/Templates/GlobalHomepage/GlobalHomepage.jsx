@@ -112,7 +112,7 @@ export const GlobalHomePage = ({
             <Stats data={statsdata} imageback={BackgroundImg} />
           </div>
         </div>
-        <div className="grid-x fixedcarousel">
+        <div className="grid-x fixedcarousel no-gap">
           <div className="cell large-11 medium-offset-1">
             <FixedSizeCarousel data={fixedcarouseldata.data} label={label} />
           </div>
