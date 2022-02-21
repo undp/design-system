@@ -1,7 +1,11 @@
 /* img start */
-img {
+img,
+picture {
   height: auto;
   max-width: 100%;
 }
 
+picture {
+  display: block;
+}
 /* img end */
