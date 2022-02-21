@@ -59,11 +59,6 @@
       }
 
       @include devicebreak(large) { 
-        a::before {
-          content: '';
-          opacity: 1;
-        }
-  
         .pagehero {
           &-cards {
             &__caption {
@@ -91,16 +86,6 @@
       @include transition(all 0.4s);
 
       position: relative;
-    }
-
-    a::before {
-      @extend %absolute__content;
-
-      @include transition(all 0.4s);
-
-      background: linear-gradient(45deg, rgba(255, 235, 0, 0.3), transparent);
-      opacity: 0;
-      z-index: 1;
     }
   }
 
@@ -152,10 +137,6 @@
       margin-left: 0;
 
       &-active {
-        a::before {
-          opacity: 1;
-        }
-
         .pagehero {
           &-cards {
             &__caption {

@@ -14,7 +14,7 @@ export const DownloadCard = ({
       <div className="description">
         <p className="title">{title}</p>
         <p className="format">{format}</p>
-        <span href="#" className="download">
+        <span className="download">
           {download}
           <span className={[`${(args.variant == 'External Link' ? 'external-link-animated' :'download-animated')}`]}><i/></span>
         </span>
