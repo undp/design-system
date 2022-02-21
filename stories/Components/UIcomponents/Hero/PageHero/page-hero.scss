@@ -124,8 +124,44 @@
       padding-bottom: $spacing-08;
 
       @include devicebreak(medium) {
-        padding-bottom: 17.313rem;
+        padding-bottom: 0;
         padding-right: 1.438rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .breadcrumb {
+          position: absolute;
+          top: $spacing-50;
+        }
+        
+        h4 {
+          padding-top: 0;
+          font-size: 1.563rem;
+        }
+
+        h2 {
+          font-size: $spacing-08;
+        }
+      }
+
+      @include devicebreak(large) {
+        .breadcrumb {
+          top: $spacing-50;
+        }
+
+        h4 {
+          padding-top: 0;
+          font-size: 2.188rem;
+        }
+
+        h2 {
+          font-size: 3.438rem;
+        }
       }
 
       @include devicebreak(small) {
