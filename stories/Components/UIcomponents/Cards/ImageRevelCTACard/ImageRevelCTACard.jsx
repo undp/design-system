@@ -14,21 +14,19 @@ export const hovercolors_options = {
 };
 
 export const ImageRevelCard = ({
-  contentname, image, Size, data, delaytime, Hovercolors
+  contentname, image, Size, data, delaytime,
 }) => {
   let size = 'medium-4';
   if (Size == 'Small') {
     size = 'small';
   }
 
-  let hovercolors_variant = hovercolors_options[`${Hovercolors}`];
-
   return (
     <div className="grid-x grid-margin-x">
       {data.map((item, index) => (
         <div key={index} data-viewport="true" className={['cell', `${size}`, 'image-reveal-card', `delay-${2 + index++}`].join(' ')}>
           <a href={item.link}>
-            <div className={cls('image-reveal-card__content', `${item.Hovercolors ? `${hovercolors_options[`${item.Hovercolors}`]}` : `${hovercolors_variant}`}`)}>
+            <div className={cls('image-reveal-card__content')}>
               <div className="image">
                 {item.imageback && (<img src={item.imageback} alt={item.imageback} />)}
               </div>
