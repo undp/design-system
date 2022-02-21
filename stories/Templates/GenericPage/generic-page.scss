@@ -37,9 +37,6 @@
         display: block;
         .sidebar-accordion{
           width:100%;
-          h6::after {
-              top: 0.5rem;
-          }
           ul{
             display: none;
           }

@@ -15,7 +15,7 @@
       border-bottom: 2px solid $color-black;
 
       &::after {
-        @include transform(rotateZ(-180deg));
+        @include transform(translateY(-50%) rotateZ(-180deg));
       }
     }
 
@@ -46,6 +46,7 @@
       display: block;
       margin-bottom: 0;
       padding: $spacing-05;
+      position: relative;
 
     &::after {
       @extend %sidebar-chevron;
