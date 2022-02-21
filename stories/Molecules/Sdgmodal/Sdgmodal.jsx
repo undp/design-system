@@ -54,7 +54,7 @@ export const Sdgmodal = ({
           </div>
         </div>
         <div className="ndg-container">
-          <a href="#no-poverty" className="sdg-card sdg-kelly-green" data-slug="#good-health">
+          <a href="#no-poverty" className="sdg-card" data-slug="#good-health">
             <strong>3</strong>
             <Heading type="4" label={nextcardtitle} />
           </a>
