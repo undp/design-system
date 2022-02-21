@@ -12,9 +12,9 @@ export const image_options = {
 };
 
 export const ContentCardWithAndWithoutImage = ({
-  data, storyBtn, ...args
+  data, storyBtn, dataViewport, ...args
 }) => (
-  <div className="grid-x grid-margin-x content-data">
+  <div className="grid-x grid-margin-x content-data" data-viewport={dataViewport}>
     {data.map((item, index) => (
       <div key={index} className={cls('cell', `${item.scale}`)}>
         {item.type === 'image'

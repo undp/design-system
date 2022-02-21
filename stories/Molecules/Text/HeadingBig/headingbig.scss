@@ -5,7 +5,7 @@
 /* heading-big cta start */
 .heading-big {
   justify-content: center;
-  opacity: 0;
+  opacity: 1;
   padding: $width-150 0 10.938rem;
   z-index: 5;
   @include transition(all 0.5s);
@@ -14,9 +14,9 @@
     padding: $spacing-400 0 $spacing-320;
   }
 
-  &.inviewport {
-    opacity: 1;
-  }
+  // &.inviewport {
+  //   opacity: 1;
+  // }
 
 
   h2 {

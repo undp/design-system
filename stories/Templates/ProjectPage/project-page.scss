@@ -43,9 +43,19 @@
 
     &-hero {
       margin-top: $spacing-11;
+
       @include devicebreak(small) {
         padding: $spacing-04;
       }
+
+      @include devicebreak(medium) {
+        margin-top: 5rem;
+      }
+
+      @include devicebreak(xlarge) {
+        margin-top: 7.5rem;
+      }
+
 
       .breadcrumb {
         @include devicebreak(small) {
@@ -113,6 +123,21 @@
         &__box {
           padding: $spacing-08 2.188rem;
         }
+      }
+
+      .swiper-scrollbar {
+        @include devicebreak(medium) {
+          padding-right: 6rem;
+        }
+      }
+    }
+
+    .swiper-initialized {
+      padding-right: 3rem;
+      overflow: visible;
+
+      @include devicebreak(medium) {
+        padding-right: 8rem;
       }
     }
   }
@@ -192,6 +217,29 @@
           @include devicebreak(medium) {
             font-size: 3rem;
           }
+        }
+      }
+    }
+
+    &-support {
+      .stats-slider {
+        .swiper-scrollbar {
+          padding-left: $spacing-10;
+
+          @include devicebreak(medium) {
+            padding-left: 0;
+            padding-right: 0;
+            width: calc(100% + #{$spacing-12});
+          }
+        }
+      }
+  
+      .swiper-initialized {
+        padding-left: $spacing-11;
+        padding-right: 0;
+
+        @include devicebreak(medium) {
+          padding-left: 8rem;
         }
       }
     }

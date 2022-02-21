@@ -28,7 +28,7 @@ The Heading Block defines a section of information data with some items - Header
   <Story name="Heading big block">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <HeadingBig headerText={caption.header} descriptionText={caption.description} listData={caption.listData} {...args}></HeadingBig>;
+      return <HeadingBig headerText={caption.header} descriptionText={caption.description} listData={caption.listData} dataViewport="true" {...args}></HeadingBig>;
     }}
   </Story>
 </Canvas>

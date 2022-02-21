@@ -80,6 +80,7 @@ export const GlobalHomePage = ({
             <HeadingBig
               headerText={whatwedoheader}
               descriptionText={whatwedodescription}
+              dataViewport="false"
             />
           </div>
         </div>
