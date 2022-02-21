@@ -8,6 +8,7 @@ import { Languageswitcher } from '../../../UIcomponents/LanguageSwitcher/Languag
 import MegaMenu from '../MegaMenu/MegaMenu';
 import MobileNav from '../MobileNav/MobileNav';
 import './country-site-header.scss';
+import '../../../../assets/js/lazyload.js';
 
 const CountrySiteHeader = ({
   languageswitcherData,

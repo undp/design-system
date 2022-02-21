@@ -8,6 +8,7 @@ import { Menu } from '../../Menu/Menu';
 import MegaMenu from '../MegaMenu/MegaMenu';
 import MobileNav from '../MobileNav/MobileNav';
 import './global-header.scss';
+import '../../../../assets/js/lazyload.js';
 
 const GlobalHeader = ({
   text,

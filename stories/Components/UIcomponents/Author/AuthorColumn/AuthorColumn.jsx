@@ -41,7 +41,7 @@ export const Author = ({
               {Link == 'False' ? (
                 <div className="author-box" key={index}>
                   {Image !== 'False' && decNumber <= 3 ? (
-                    <Authorimg image={image} alt={alt} variant="Small" />
+                    <Authorimg image={image} alt={item.Authorlabel} variant="Small" />
                   ) : (<></>)}
                   <div className="author-label">
                     <Heading type="6" label={item.Authorlabel} />
@@ -52,7 +52,7 @@ export const Author = ({
                 <div className="author-box" key={index}>
                   <a href="#">
                     {Image !== 'False' && decNumber <= 3 ? (
-                      <Authorimg image={image} alt={alt} variant="Small" />
+                      <Authorimg image={image} alt={item.Authorlabel} variant="Small" />
                     ) : (<></>)}
                     <div className="author-label">
                       <Heading type="6" label={item.Authorlabel} />
@@ -71,7 +71,7 @@ export const Author = ({
               {Link == 'False' ? (
                 <div className={['author-box', 'cell', `${size}`].join(' ')} key={index}>
                   {Image !== 'False' && decNumber <= 3 ? (
-                    <Authorimg image={image} alt={alt} variant="Small" />
+                    <Authorimg image={image} alt={item.Authorlabel} variant="Small" />
                   ) : (<></>)}
                   <div className="author-label">
                     <Heading type="6" label={item.Authorlabel} />
@@ -82,7 +82,7 @@ export const Author = ({
                 <div className={['author-box', 'cell', `${size}`].join(' ')} key={index}>
                   <a href="#">
                     {Image !== 'False' && decNumber <= 3 ? (
-                      <Authorimg image={image} alt={alt} variant="Small" />
+                      <Authorimg image={image} alt={item.Authorlabel} variant="Small" />
                     ) : (<></>)}
                     <div className="author-label">
                       <Heading type="6" label={item.Authorlabel} />
