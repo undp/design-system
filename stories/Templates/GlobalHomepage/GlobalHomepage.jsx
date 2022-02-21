@@ -101,7 +101,7 @@ export const GlobalHomePage = ({
             />
           </div>
         </div>
-        <div className="grid-x">
+        <div className="grid-x no-gap">
           <div className="cell large-12">
             <TextBackground
               headerText={textbackgrounddata.header}
@@ -109,7 +109,7 @@ export const GlobalHomePage = ({
             />
           </div>
         </div>
-        <div className="grid-x">
+        <div className="grid-x no-gap">
           <div className="cell large-12">
             <Stats data={statsdata} imageback={BackgroundImg} />
           </div>
@@ -128,7 +128,7 @@ export const GlobalHomePage = ({
           data={tweetdata.tweetpaneldata}
           headertext={tweetdata.headertext}
         />
-        <div className="grid-x">
+        <div className="grid-x no-gap">
           <div className="cell large-12">
             <Footer
               src={logo}

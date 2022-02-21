@@ -147,27 +147,30 @@ export const ProjectPage = ({
         </div>
       </div>
     </div>
-
-    <Footer
-      src={logo}
-      srctwo={logowhite}
-      headerText={footerData.headerText}
-      headerText2={footerData.headerText2}
-      style="default"
-      alt="UNDP Logo"
-      element="input"
-      type="email"
-      required="required"
-      mode="form-email"
-      errorText={footerData.errorLabel}
-      label={footerData.labelname}
-      button={footerData.buttonname}
-      placeholder={footerData.placeholdername}
-      menutitle={footerData.pageTitle}
-      data={footerData.footerdata}
-      copyright={footerData.copyright}
-      menudata={footerData.menudata}
-      {...{ color: 'default' }}
-    />
+    <div className="grid-x project-footer">
+      <div className="cell large-12">
+        <Footer
+          src={logo}
+          srctwo={logowhite}
+          headerText={footerData.headerText}
+          headerText2={footerData.headerText2}
+          style="default"
+          alt="UNDP Logo"
+          element="input"
+          type="email"
+          required="required"
+          mode="form-email"
+          errorText={footerData.errorLabel}
+          label={footerData.labelname}
+          button={footerData.buttonname}
+          placeholder={footerData.placeholdername}
+          menutitle={footerData.pageTitle}
+          data={footerData.footerdata}
+          copyright={footerData.copyright}
+          menudata={footerData.menudata}
+          {...{ color: 'default' }}
+        />
+      </div>
+    </div>
   </>
 );

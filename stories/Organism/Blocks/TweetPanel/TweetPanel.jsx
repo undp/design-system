@@ -5,7 +5,7 @@ import { TweetCard } from '../../../Molecules/Blocks/TweetCard/TweetCard';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const TweetPanel = ({ data, headertext }) => (
-  <div className="grid-x grid-margin-x twitter-panel">
+  <div className="grid-x grid-margin-x twitter-panel no-gap">
     <Heading className="cell medium-11 medium-offset-1" type="2" label={headertext} dataViewport="true"/>
     {data.map((item, index) => (
       <TweetCard
