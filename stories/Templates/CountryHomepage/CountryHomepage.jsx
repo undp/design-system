@@ -27,7 +27,6 @@ export const CountryHomepage = ({
   PagewidecardTitle,
   PagewidecardParagraph,
   PagewidecardBtnlabel,
-  StatsSliderData,
   takeactioncard,
   whatwedoheader,
   whatwedodescription,
@@ -63,7 +62,7 @@ export const CountryHomepage = ({
         langSelect={langSelect}
       />
 
-      <div className="grid-container fluid country-page-wrapper">
+      <div className="grid-container fluid country-page-wrapper green">
         <div className="grid-x grid-margin-x hero-container">
           <div className="cell large-12">
             <Homepageherooption
@@ -97,7 +96,6 @@ export const CountryHomepage = ({
             title={PagewidecardTitle}
             paragraph={PagewidecardParagraph}
             button={PagewidecardBtnlabel}
-            Hovercolors="green"
           />
         </div>
 
@@ -117,10 +115,10 @@ export const CountryHomepage = ({
             <StatsSlider data={statdata} />
           </div>
         </div>
-        <ImageRevealCards
-          data={takeactioncard.data}
-          label={takeAcrtionHead}
-        />
+          <ImageRevealCards
+            data={takeactioncard.data}
+            label={takeAcrtionHead}
+          />
       </div>
 
       <Footer
