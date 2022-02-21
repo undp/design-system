@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { PublicationCard } from '../../Molecules/Blocks/PublicationCard/PublicationCard';
 import { P } from '../../Atom/BaseTypography/Paragraph/Paragraph';
-import { ContentCardWithOutImage } from '../../Components/UIcomponents/Cards/ContentCard/ContentCardWithOutImage';
 import { Footer } from '../../Organism/Footer/Footer';
 import { Publicationthumb } from '../../Atom/Cards/PublicationThumbnail/PublicationThumbnail';
 import { Breadcrumbcomponent } from '../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs';
@@ -11,6 +10,7 @@ import { Menu } from '../../Components/Navigationcomponents/Menu/Menu';
 import './publication-page.scss';
 import { sticky } from  '../../assets/js/sticky';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
+import { FeaturedContentCard } from '../../Components/UIcomponents/Cards/FeaturedCard/FeaturedContentCard';
 
 export const PublicationPage = ({
   data,
@@ -24,7 +24,6 @@ export const PublicationPage = ({
   paragraphTop1,
   paragraphTop2,
   paragraphTop3,
-  ContentCardWithOutImageData,
   buttontype,
   relatedPublicationHeading,
   logo,
@@ -45,6 +44,7 @@ export const PublicationPage = ({
   menuData3,
   menuTitle4,
   menuData4,
+  FeaturedCardData
 }) => {
   useEffect(() => {
     sticky(locale);
@@ -94,35 +94,35 @@ export const PublicationPage = ({
           </div>
           <div className="column publication-menu">
             <div className="grid-x grid-margin-x">
-              <div className="cell small-4">
+              <div className="cell small-4 large-3">
                 <Heading type="6" label={menuTitle1} />
               </div>
-              <div className="cell small-8">
-                <Menu data={menuData1} />
+              <div className="cell small-8 large-9">
+                <Menu data={menuData1} role="navigation" arialabel="menu-list1" />
               </div>
             </div>
             <div className="grid-x grid-margin-x">
-              <div className="cell small-4">
+              <div className="cell small-4 large-3">
                 <Heading type="6" label={menuTitle2} />
               </div>
-              <div className="cell small-8">
-                <Menu data={menuData2} />
+              <div className="cell small-8 large-9">
+                <Menu data={menuData2} role="navigation" arialabel="menu-list2" />
               </div>
             </div>
             <div className="grid-x grid-margin-x">
-              <div className="cell small-4">
+              <div className="cell small-4 large-3">
                 <Heading type="6" label={menuTitle3} />
               </div>
-              <div className="cell small-8">
-                <Menu data={menuData3} />
+              <div className="cell small-8 large-9">
+                <Menu data={menuData3} role="navigation" arialabel="menu-list3" />
               </div>
             </div>
             <div className="grid-x grid-margin-x">
-              <div className="cell small-4">
+              <div className="cell small-4 large-3">
                 <Heading type="6" label={menuTitle4} />
               </div>
-              <div className="cell small-8">
-                <Menu data={menuData4} />
+              <div className="cell small-8 large-9">
+                <Menu data={menuData4} role="navigation" arialabel="menu-list4" />
               </div>
             </div>
           </div>
@@ -136,10 +136,7 @@ export const PublicationPage = ({
         </div>
         <div className="cell small-12 large-6 large-offset-6">
           <div className="column">
-            <ContentCardWithOutImage
-              Hovercolors='yellow'
-              data={ContentCardWithOutImageData}
-            />
+            <FeaturedContentCard data={FeaturedCardData} />
           </div>
         </div>
         <div className="cell small-12 large-6 large-offset-6">

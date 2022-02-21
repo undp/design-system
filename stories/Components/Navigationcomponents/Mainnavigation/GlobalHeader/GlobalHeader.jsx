@@ -43,7 +43,7 @@ const GlobalHeader = ({
               </button>
             </div>
             <div className="cell large-8 small-8 mid-nav">
-              <nav className="menu" role="navigation" arialabel="Navigation">
+              <nav className="menu" role="navigation" aria-label="navigation">
                 <Menu data={leftNavigationData} isGHeader={true} />
                 <a href="https://develop.design-system.pages.dev/iframe?id=components-navigation-components-main-navigation-country-header--country-header&globals=locale:english&args=&viewMode=story" className="logo">
                   <Logo src={pnud} alt="UNDP Logo" />
