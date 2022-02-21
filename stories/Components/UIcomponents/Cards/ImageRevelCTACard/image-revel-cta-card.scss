@@ -2,7 +2,6 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
 
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
 /* image card start */
 .image-reveal-card {
   @extend %img_none;

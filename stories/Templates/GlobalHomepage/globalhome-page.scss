@@ -54,6 +54,12 @@
         margin-right: 15px;
       }
     }
+
+    .swiper-initialized .swiper-scrollbar {
+      @include devicebreak(medium) {
+        width: calc(100% - #{$spacing-11});
+      }
+    }
   }
 
 

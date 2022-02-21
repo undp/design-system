@@ -6,6 +6,6 @@ import { ImageRevelCard } from '../../../Components/UIcomponents/Cards/ImageReve
 export const ImageRevealCards = ({ data, label }) => (
   <>
     {label && <Heading className="reveal-head" type="2" label={label} dataViewport="true"/>}
-    <ImageRevelCard data={data} />
+    <ImageRevelCard data={data}/>
   </>
 );
