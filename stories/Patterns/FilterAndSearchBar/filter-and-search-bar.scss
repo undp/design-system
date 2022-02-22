@@ -14,7 +14,7 @@
     font-size: 0;
     background-color: $color-gray-300;
     color: $color-black;
-    :hover{
+    &:hover{
       background-color: $color-gray-300;
     }
     span{

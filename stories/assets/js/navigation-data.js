@@ -53,7 +53,7 @@ export const getData = (lang) => {
                       </div>
                       ${
   menu.image
-    ? `<div class="cell large-6 mega-image"><img src="${menu.image}" alt="Author Image" class="image lazy"></div>`
+    ? `<div class="cell large-6 mega-image"><img src="${menu.image}" alt="Author Image" class="image"></div>`
     : ''
 }
                   </div>`)
