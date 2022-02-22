@@ -5,12 +5,13 @@ export function changeBackground(body, container) {
   let $startTrigger = $(container).find('h2');
   let $endPoint;
 
+
   const $windowWidth = $(window).width();
   const breakpoint = window.UNDP.breakpoints.TABLET || 834;
   if ($windowWidth > breakpoint) {
-    $endPoint = ($(container).outerHeight() - 500 )+'px';
+    $endPoint = ($(container).innerHeight() - 500 )+'px';
   } else {
-    $endPoint = ($(container).outerHeight() + 250 )+'px';
+    $endPoint = ($(container).innerHeight() + 250 )+'px';
   }
 
   if(!$(container).length) return false;
@@ -30,9 +31,7 @@ export function changeBackground(body, container) {
             trigger: section,
             scrub: true,
             start:'top+=40% bottom',
-            end: '+=400px',
-            onEnter: () => $(body).addClass('change-background'),
-            onLeaveBack: () => $(body).removeClass('change-background')
+            end: '+=400px'
           }
         });
       }
@@ -40,7 +39,7 @@ export function changeBackground(body, container) {
   }
   
   function createScrollsBlueToWhite() {
-    let startBlueToWhite = $blueToWhitebegin
+    let startBlueToWhite = "bottom top+=200px"
 
     blueToWhite = gsap.fromTo('body',
       { backgroundColor: "#232E3E" },
@@ -49,7 +48,7 @@ export function changeBackground(body, container) {
      
       blueToWhiteScroll = ScrollTrigger.create({
       trigger: $startTrigger,
-      start: "bottom top+=200px",
+      start: startBlueToWhite,
       end: $endPoint,
       scrub: true,
       animation: blueToWhite,

@@ -30,7 +30,7 @@
 
         &:hover {
           a {
-            @include transform(translateY(-50px));
+            @include transform(translateY(-#{$spacing-50}));
 
             overflow: visible;
           }
