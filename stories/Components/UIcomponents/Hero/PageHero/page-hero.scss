@@ -65,12 +65,10 @@
   }
 
   &-content {
-    padding-top: $spacing-11;
-    position: relative;
-
     @include devicebreak(small) {
       padding-left: $spacing-04;
       padding-right: $spacing-04;
+      height: auto;
     }
 
     h4 {
@@ -78,7 +76,7 @@
       padding-top: 6.313rem;
 
       @include devicebreak(medium) {
-        padding-top: 12.625rem;
+        padding-top: 0;
       }
 
       + h2 {
@@ -91,9 +89,6 @@
       font-weight: 700;
       margin-bottom: 0;
       text-transform: uppercase;
-      @include devicebreak(medium) {
-        margin-top: 12.625rem;
-      }
     }
   }
 
@@ -121,20 +116,47 @@
 
   &-tall {
     .pagehero-content {
-      padding-bottom: $spacing-08;
-
-      @include devicebreak(medium) {
-        padding-bottom: 17.313rem;
-        padding-right: 1.438rem;
-      }
-
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100%;
+      word-break: break-word;
+  
       @include devicebreak(small) {
-        padding-left: 0;
-        padding-right: 0;
+        height: auto;
+        padding: 0 0 $spacing-08;
 
         h4 {
           padding-top: $spacing-10;
         }
+      }
+  
+      @include devicebreak(medium) {
+        padding-bottom: 0;
+        padding-right: 1.438rem;
+      }
+    }
+
+    .breadcrumb {
+      position: initial;
+      margin-top: $spacing-11;
+
+      @include devicebreak(medium) {
+        position: absolute;
+        top: 30px;
+        margin-top: 0;
+      }
+
+      @include devicebreak(large) {
+        position: absolute;
+        top: 80px;
+      }
+
+      ul li {
+        margin-bottom: 0;
+        margin-top: 0;
       }
     }
   }
