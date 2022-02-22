@@ -55,7 +55,7 @@ export const getData = (lang) => {
   menu.image
     ? `<div class="cell large-6 mega-image"><img src="${menu.image}" alt="Author Image" class="image"></div>`
     : ''
-}
+} 
                   </div>`)
           .join(' ');
 
