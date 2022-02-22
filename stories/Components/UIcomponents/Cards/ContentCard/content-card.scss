@@ -2,7 +2,7 @@
 @import '../../../../assets/scss/mixins';
 
 /* content-card start */
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure, 'gray': $color-gray-100);
 $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
 
 div.content-card {
