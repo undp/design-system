@@ -59,14 +59,22 @@
     }
   }
 
+  &-tall, &-wide {
+    &-content {
+      @include devicebreak(medium) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+      }
+    }
+  }
+
   &-tall {
     word-break: break-word;
 
     &-content {
-      @include devicebreak(medium) {
-        padding: 8.563rem 1.375rem 8.563rem 0;
-      }
-
       h1 {
         margin-bottom: $spacing-05;
 
@@ -87,6 +95,10 @@
 
   &-image {
     width: 100%;
+    
+    picture {
+      display: initial;
+    }
     @include devicebreak(small) {
       margin-bottom: 2rem;
       position: relative;
@@ -109,6 +121,10 @@
 
   &-wide {
     position: relative;
+
+    &-content {
+      justify-content: space-between;
+    }
 
     @include devicebreak(medium) {
       border-left: 3rem solid $color-gray-300;
