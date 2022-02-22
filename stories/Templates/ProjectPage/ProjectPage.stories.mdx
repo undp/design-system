@@ -1621,7 +1621,10 @@ Add following external libraries
 1.0 — Released component
 
 <Canvas>
-  <Story name="Project page">
+  <Story name="Project page"
+    parameters={{
+      layout: "fullscreen",
+    }}>
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       const navigationData= getNavLinks(locale);

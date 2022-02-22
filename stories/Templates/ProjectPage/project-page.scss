@@ -29,6 +29,7 @@
     .heading-big {
       ul li {
         margin-top: $spacing-08;
+        margin-bottom: 0;
       }
 
       a {
@@ -36,9 +37,9 @@
         font-size: inherit;
       }
 
-      h4 {
-        font-size: $spacing-06;
-      }
+      // h4 {
+      //   font-size: $spacing-06;
+      // }
     }
 
     &-hero {
@@ -53,7 +54,7 @@
       }
 
       @include devicebreak(xlarge) {
-        margin-top: 7.5rem;
+        margin-top: 8.5rem;
       }
 
 
@@ -163,16 +164,6 @@
     } 
   }
 }
-
-.project-footer {
-  margin-left: -1rem;
-  margin-right: -1rem;
-}
-
-@include devicebreak(small) {
-  .sb-show-main.sb-main-padded{padding: 0;}
-}
-
 
 [dir='rtl'] {
   .project {
