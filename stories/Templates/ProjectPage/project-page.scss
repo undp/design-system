@@ -29,6 +29,7 @@
     .heading-big {
       ul li {
         margin-top: $spacing-08;
+        margin-bottom: 0;
       }
 
       a {
@@ -49,11 +50,11 @@
       }
 
       @include devicebreak(medium) {
-        margin-top: 5rem;
+        margin-top: $spacing-11;
       }
 
       @include devicebreak(xlarge) {
-        margin-top: 7.5rem;
+        margin-top: $spacing-136;
       }
 
 
@@ -79,7 +80,7 @@
     background: $color-gray-100;
     margin-top: 0;
     padding-bottom: $spacing-08;
-    padding-top: 6.25rem;
+    padding-top: $spacing-100;
 
     .project-data__title {
       padding-bottom: 3.313rem;
@@ -102,7 +103,7 @@
     margin-top: $spacing-12;
 
     .stats-slider {
-      margin-top: 4.375rem;
+      margin-top: $spacing-70;
 
       @include devicebreak(medium) {
         margin-top: 5.438rem;
@@ -113,7 +114,7 @@
           align-items: center;
           display: flex;
           max-width: 100%;
-          min-height: 270px;
+          min-height: 16.875rem;
 
           @include devicebreak(medium) {
             max-width: 100%;
@@ -127,13 +128,13 @@
 
       .swiper-scrollbar {
         @include devicebreak(medium) {
-          padding-right: 6rem;
+          padding-right: $spacing-12;
         }
       }
     }
 
     .swiper-initialized {
-      padding-right: 3rem;
+      padding-right: $spacing-09;
       overflow: visible;
 
       @include devicebreak(medium) {
@@ -164,44 +165,34 @@
   }
 }
 
-.project-footer {
-  margin-left: -1rem;
-  margin-right: -1rem;
-}
-
-@include devicebreak(small) {
-  .sb-show-main.sb-main-padded{padding: 0;}
-}
-
-
 [dir='rtl'] {
   .project {
     &-page {
       .large-offset-6 {
         @include devicebreak(medium) {
           margin-left: 0;
-          margin-right: calc(50% + 1rem / 2);
+          margin-right: calc(50% + #{$spacing-05} / 2);
         }
       }
 
       .large-offset-3 {
         @include devicebreak(medium) {
           margin-left: 0;
-          margin-right: calc(25% + 1.5rem / 2);
+          margin-right: calc(25% + #{$spacing-06} / 2);
         }
       }
 
       .large-offset-1 {
         @include devicebreak(medium) {
           margin-left: 0;
-          margin-right: calc(8.33333% + 1.5rem / 2);
+          margin-right: calc(8.33333% + #{$spacing-06} / 2);
         }
       }
 
       .small-offset-1 {
         @include devicebreak(small) {
           margin-left: 0;
-          margin-right: calc(8.33333% + 0.75rem / 2);
+          margin-right: calc(8.33333% + #{$spacing-04} / 2);
         }
       }
 
@@ -212,10 +203,10 @@
         }
 
         .pagehero-wrapper__title {
-          font-size: 2rem;
+          font-size: $spacing-07;
 
           @include devicebreak(medium) {
-            font-size: 3rem;
+            font-size: $spacing-09;
           }
         }
       }

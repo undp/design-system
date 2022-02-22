@@ -41,8 +41,8 @@ export function sticky() {
   // initialize stickyScroll function and enable/disable based on mediaQuery breakpoint.
   const initStickyScroll = (params) => {
     const $windowWidth = $(window).width();
-    const breakpoint = window.UNDP.breakpoints.TABLET || 834;
-    if ($windowWidth > breakpoint) {
+    const breakpoint = window.UNDP.breakpoints.LARGE || 1024;
+    if ($windowWidth >= breakpoint) {
       // Enable Sticky Scroll.
       stickyScroll(true);
     } else {

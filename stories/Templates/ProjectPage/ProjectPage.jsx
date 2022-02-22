@@ -51,7 +51,7 @@ export const ProjectPage = ({
             <P label={topParagraph1} />
           </div>
         </div>
-        <div className="cell large-11 medium-11 large-offset-1">
+        <div className="cell large-11 medium-11 large-offset-1 small-offset-1 small-10">
           <div className="column">
             <HeadingBig
               headerText={whatwedoheader}
