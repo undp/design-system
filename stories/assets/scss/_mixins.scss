@@ -329,13 +329,11 @@
   height: 0.813rem;
   position: absolute;
   right: 1.188rem;
-  top: 20px;
+  top: 50%;
+  @include transform(translateY(-50%));
   width: 20px;
 
-  @include devicebreak(medium) {
-    padding: 0.625rem 0;
-    top: 1.125rem;
-  }
+
 }
 
 %language_switcher {
