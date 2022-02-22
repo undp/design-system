@@ -11,7 +11,7 @@
     }
 
     h2 {
-      margin-bottom: 2rem;
+      margin-bottom: $spacing-07;
     }
   }
 
@@ -20,6 +20,12 @@
     overflow: hidden;
     padding-bottom: $spacing-11;
     position: relative;
+
+    @include devicebreak(small) {
+      .parallax__heading {
+        margin-top: $spacing-11;
+      }
+    }
 
     @include devicebreak(medium) {
       background-image: none;
@@ -50,8 +56,8 @@
 
     h2 {
       @include devicebreak(small) {
-        margin-left: 15px;
-        margin-right: 15px;
+        margin-left: 0.938rem;
+        margin-right: 0.938rem;
       }
     }
 
