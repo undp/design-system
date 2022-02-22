@@ -79,4 +79,4 @@ The design system is based on:
 | Utilities/Progress Bar Navigation  | stories/Atom/Navigation/ProgressBarNavigation  |
 
 ## LICENSE
-This codebase hai MIT license.
+MIT license.
