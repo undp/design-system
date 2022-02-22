@@ -48,6 +48,7 @@ export function sdgModal() {
   $(document).on('click', '.ndg-container .sdg-card', function(event){
     event.preventDefault();
     event.stopPropagation();
+    var url = $(this).attr('href');
     var lastactive = $(".last-active").next(".sdg-card");
     var bottomcolor = lastactive.attr('class').split(' ')[1];
     var bottomgoal = lastactive.find('h4').text();
@@ -64,6 +65,8 @@ export function sdgModal() {
     $('.modal-sdg').find('.ndg-container strong').text(nextheading);
     $('.modal-sdg').find('.ndg-container h4').text(nextgoal);
     $(".last-active").next(".sdg-card").addClass('last-active').siblings().removeClass('last-active');
+
+    windowTop.location.hash = url;
   });
 
   $($modalOpen).on('click', function (event) {
