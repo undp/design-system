@@ -13,7 +13,7 @@ export const HeadingBig = ({
   headerText, descriptionText, listData, dataViewport, ...args
 }) => {
   useEffect(() => {
-    changeBackground('body', '.heading-big');
+    changeBackground('.heading-big');
   }, []);
 
   let transition_variant = transition_options[`${args.Emphasize}`];

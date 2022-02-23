@@ -4,6 +4,7 @@ export function changeBackground(container) {
 
   'use strict';
 
+  // Register GSAP required plugins and effects.
   gsap.registerPlugin(ScrollTrigger, SlowMo);
 
   const bodyElement = $('body');
@@ -33,7 +34,6 @@ export function changeBackground(container) {
         start: 'top+='+sectionStart+' center+='+headerHeight,
         end: 'bottom-='+sectionEnd+' center+='+headerHeight,
         scrub: true,
-        markers: true,
         preventOverlaps: true,
         fastScrollEnd: true,
         animation: colorToBlue,
@@ -47,7 +47,6 @@ export function changeBackground(container) {
         start: 'bottom-='+sectionStartReverse+' top+='+headerHeight,
         end: 'bottom-=40px top+='+headerHeight,
         scrub: true,
-        markers: true,
         preventOverlaps: true,
         fastScrollEnd: true,
         animation: colorToWhite,
