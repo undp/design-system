@@ -217,6 +217,8 @@
 
 .sticky {
   position: relative;
+  z-index: 1;
+  text-align: center;
 
   @include devicebreak(small) {
     display: flex;
@@ -246,6 +248,12 @@
         margin-right: calc(50% + #{$spacing-05} / 2);
       }
     }
+
+    .grid-x.grid-margin-x {
+      @include devicebreak(small) {
+        padding: 0 0 $spacing-04 $spacing-04;
+      }
+    }
   }
 
   .publication-page {
@@ -253,6 +261,13 @@
       @include devicebreak(large) {
         margin-left: 0;
         margin-right: calc(8.33333% + #{$spacing-06}/ 2);
+      }
+    }
+
+    .menu {
+      li {
+        margin-left: $font-size-20;
+        margin-right: 0;
       }
     }
   }
