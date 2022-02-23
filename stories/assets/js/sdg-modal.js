@@ -8,16 +8,6 @@ export function sdgModal() {
     windowTop.history.pushState('', document.title, windowTop.location.pathname + windowTop.location.search);
   }
 
-  // Load modal open with hash
-  $(window).on("load", function() {
-    var hash = windowTop.location.hash;
-    if (hash.length) {
-      $(`a[href$='${hash}'].sdg-card:not(.sdg-card-link)`).trigger('click');
-    }
-  });
-
-  $('.modal-sdg').find('.sdg-card-link').addClass('xxxxx');
-
   // Modal open on sdgcard click
   $($modalOpen).on('click', function (event) {
     event.preventDefault();
@@ -39,7 +29,6 @@ export function sdgModal() {
     $('.modal-sdg').addClass('sdg-open').find('.sdg-container').addClass(currentcolor);
     $('.modal-sdg').find('.heading').find('h3').text('Goal '+ currentheading);
     $('.modal-sdg').find('.heading').find('h2').text(currentgoal);
-    $('.modal-sdg').find('.sdg-card-link').addClass('xxxxx');
     $('.modal-sdg').find('.ndg-container .sdg-card').attr("href",nexturl).addClass(nextcolor);
     $('.modal-sdg').find('.ndg-container strong').text(nextheading);
     $('.modal-sdg').find('.ndg-container h4').text(nextgoal);
