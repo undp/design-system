@@ -14,7 +14,6 @@ import { Footer } from '../../Organism/Footer/Footer';
 import logo from '../../assets/images/undp-logo-blue.svg';
 import logowhite from '../../assets/images/undp-logo-white.svg';
 import { parallaxlines } from '../../assets/js/parallax';
-import { changeBackground } from '../../assets/js/smooth-bg-change';
 
 
 export const GlobalHomePage = ({

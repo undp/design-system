@@ -1,38 +1,69 @@
-export function changeBackground(body, container) {
+import * as utility from './resize';
+
+export function changeBackground(container) {
+
+  'use strict';
+
   // Register GSAP required plugins and effects.
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, SlowMo);
 
-  const $section = $(container);
-  const $startTrigger = $section.find("h2");
-  let $endPoint;
+  const bodyElement = $('body');
+  const section = container || '.heading-big';
+  // Set Light and Dark Background colors.
+  const colorDark = "#232E3E";
+  const colorLight = "#ffffff";
+  // Calculate height for start and end trigger
+  const sectionHeight = $('.heading-big').height();
+  const sectionFullHeight = $('.heading-big').innerHeight();
+  const sectionStart = Math.round((sectionFullHeight - sectionHeight) / 2) + 40 + 'px';
+  const sectionEnd = Math.round(sectionFullHeight / 2) - 40 + 'px';
+  const sectionStartReverse = Math.round((sectionFullHeight - sectionHeight) / 2) - 40 + 'px';
+  const headerHeight = $('.header').innerHeight() + 5 || 120;
 
-  const $windowWidth = $(window).width();
-  const breakpoint = window.UNDP.breakpoints.TABLET || 834;
-  if ($windowWidth > breakpoint) {
-    $endPoint = ($(container).innerHeight() - 500 )+'px';
-  } else {
-    $endPoint = ($(container).innerHeight() - 200 )+'px';
+  // Save Initial ScrollTrigger Styles.
+  ScrollTrigger.saveStyles("body");
+
+  // create ScrollTrigger instance and animation
+  const bgScrollAnimation = () => {
+    if ($(section).length) {
+      // Tween for animation
+      const colorToBlue = gsap.fromTo(bodyElement, { backgroundColor: colorLight, duration: 1, ease: 'SlowMo' },{ backgroundColor: colorDark, duration: 1, ease: 'SlowMo' });
+      // Create ScrollTrigger instance
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top+='+sectionStart+' center+='+headerHeight,
+        end: 'bottom-='+sectionEnd+' center+='+headerHeight,
+        scrub: true,
+        preventOverlaps: true,
+        fastScrollEnd: true,
+        animation: colorToBlue,
+        onLeaveBack: () => gsap.to(bodyElement, { backgroundColor: colorLight, overwrite: "auto" }),
+      });
+      // Tween for animation
+      const colorToWhite= gsap.fromTo(bodyElement, { backgroundColor: colorDark, duration: 1, ease: 'SlowMo' },{ backgroundColor: colorLight, duration: 1, ease: 'SlowMo', immediateRender: false });
+      // Create ScrollTrigger instance
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'bottom-='+sectionStartReverse+' top+='+headerHeight,
+        end: 'bottom-=40px top+='+headerHeight,
+        scrub: true,
+        preventOverlaps: true,
+        fastScrollEnd: true,
+        animation: colorToWhite,
+      });
+    }
   }
 
-  const colorToBlue = gsap.fromTo(body, { backgroundColor: "#ffffff" },{ backgroundColor: "#232E3E" })
+  // init ScrollTrigger
+  let init = false;
+  if (!init) {
+    bgScrollAnimation();
+    init = true;
+  }
 
-  ScrollTrigger.create({
-    trigger: $startTrigger,
-    start: "top-=500px top+=200px",
-    end: "+=500px",
-    scrub: true,
-    animation: colorToBlue,
-    onLeaveBack: () =>
-     gsap.to(body, { backgroundColor: "white", overwrite: "auto" })
+  // Custom windowResize;
+  utility.windowResize($(window), (e) => {
+    bgScrollAnimation();
   });
 
-  const colorToWhite= gsap.fromTo(body, { backgroundColor: "#232E3E" },{ backgroundColor: "#ffffff", immediateRender: false })
-
-  ScrollTrigger.create({
-    trigger: $startTrigger,
-    start: "bottom top-=50px",
-    end: $endPoint,
-    scrub: true,
-    animation: colorToWhite,
-  });
 }
