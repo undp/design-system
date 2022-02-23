@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
+import { getMegaMenu } from '../../../../assets/js/navigation-data';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 import { desktopView } from '../../../../assets/js/undp';
 import { Logo } from '../../../../Atom/Logo/Logo';
@@ -23,6 +24,7 @@ const GlobalHeader = ({
   backcaption,
 }) => {
   useEffect(() => {
+    getMegaMenu(locale);
     navigationInitialize(locale);
   }, [locale]);
 

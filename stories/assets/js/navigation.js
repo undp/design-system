@@ -1,15 +1,8 @@
-import { getData } from './navigation-data';
-
-var lang = 'english';
 
 export const navigationInitialize = (locale) => {
   const $menu = $('.menu');
   const $menuItem = $('.menu li a');
   const $megaMenu = $('.show-mega');
-
-  // calling ajax json
-  lang = locale === 'en' ? 'english' : locale;
-  getData(lang);
 
   $menuItem.on('mouseenter click', function (event) {
     const navId = $(this).parent().attr('data-menu-id');
@@ -125,23 +118,23 @@ export const navigationInitialize = (locale) => {
     $('.mobile-sub-menu').addClass('show');
   });
 
-  $('.mob-lang-switcher').click((ev) => {
+  $('.mob-lang-switcher').on('click', function(ev) {
     ev.preventDefault();
     $('.mob-sub-lang').addClass('show');
     $('.mobile-links').addClass('hide');
   });
 
-  $('.back-nav').click(() => {
+  $('.back-nav').on('click', function() {
     $('.mobile-sub-menu, .mob-sub-lang').removeClass('show');
     $('.mobile-mega-content').removeClass('show-content');
     $('.mobile-links').removeClass('hide');
   });
-  $('.menu-hamburger').click(function (e) {
+  $('.menu-hamburger').on('click', function(e) {
     e.stopImmediatePropagation();
     $('.mobile-nav').toggleClass('show');
     $('.mobile-sub-menu').toggleClass('show');
     $(this).toggleClass('is-active');
-    $('.back-nav').click();
+    $('.back-nav').trigger("click");
   });
 
   const headerClass=localStorage.getItem('current-nav');
