@@ -4,18 +4,19 @@ import * as utility from './resize';
 export function sticky() {
   const stickyScroll = (state) => {
     const $sticky = $('.sticky');
-    if ($($sticky).length) {
+    const $relatedPublication = $('.related-publication');
+    if ($($sticky).length && $($relatedPublication).length) {
       if (state) {
         // Calculate values only if stickyScroll enabled.
         const $stickyTop = $($sticky).offset().top;
         const $headerHeight = $('.header').innerHeight() +15 || 130
         const $footerTop = $('.footer').offset().top;
-        
+
         $(window).on("scroll", () => {
           // Calculate this inside scroll after image loads.
           const $stickyHeight = $($sticky).innerHeight();
-          const $stickyReleaseHeight = $('.related-publication').innerHeight();
-          const $stickyReleaseOffset = $('.related-publication').offset().top;
+          const $stickyReleaseHeight = $($relatedPublication).innerHeight();
+          const $stickyReleaseOffset = $($relatedPublication).offset().top;
 
           let windowTop = Math.round($(window).scrollTop());
           let startPoint = Math.round($stickyTop - $headerHeight) < windowTop;

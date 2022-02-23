@@ -18,8 +18,8 @@ export const Image = ({ className, Type }) => {
         <>
         {className == 'lazy' ?
         <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt={image.alt} className={className} data-src={image.srclg}/>
-        : 
-        <img alt={image.alt} className={className} src={image.srclg}/> 
+        :
+        <img alt={image.alt} className={className} src={image.srclg}/>
         }
         </>
       )
@@ -31,10 +31,10 @@ export const Image = ({ className, Type }) => {
             <source media="(min-width:767px)" srcSet="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-srcset={image.srcmd} />
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src={image.srcsm} alt={image.alt} />
           </picture>
-         : 
+         :
          <picture className={className}>
-            <source media="(min-width:1024px)" srcset={image.srclg} />
-            <source media="(min-width:767px)" srcset={image.srcmd} />
+            <source media="(min-width:1024px)" srcSet={image.srclg} />
+            <source media="(min-width:767px)" srcSet={image.srcmd} />
             <img src={image.srcsm} alt={image.alt} />
           </picture>
          }

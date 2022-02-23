@@ -29,7 +29,7 @@ export const Homepageherosplit = ({
           )
           : (
             <picture>
-              <source media="(min-width:767px )" srcset={BackgroundImg2} />
+              <source media="(min-width:767px )" srcSet={BackgroundImg2} />
               <img src={BackgroundImg2} alt={BackgroundImg} />
             </picture>
           )}

@@ -28,7 +28,7 @@ export const Homepageherooption = ({
           )
           : (
             <picture>
-              <source media="(min-width:767px)" srcset={imgsrc} />
+              <source media="(min-width:767px)" srcSet={imgsrc} />
               <img src={imgsrc2} alt={imgalt} />
             </picture>
             )}
