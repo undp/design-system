@@ -132,6 +132,9 @@
           margin-right:0;
           -webkit-mask: inherit;
           mask: inherit;
+          &:hover {
+            background-color: transparent;
+          }
         }
       }
     }
