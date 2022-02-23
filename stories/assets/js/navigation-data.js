@@ -4,7 +4,7 @@ export const getData = (lang) => {
     url: './js/navigation-data.json',
     dataType: 'json',
     success(res) {
-      lang = lang || 'english';
+      lang = (lang === 'en') ? 'english' : lang;
       const resData = res.find((item) => item.language === lang);
       const $megaWrapper = $('.mega-wrapper');
       const $mobileMegaWrapper = $('.mobile-mega-wrapper');
