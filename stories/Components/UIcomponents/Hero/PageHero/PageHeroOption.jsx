@@ -22,7 +22,7 @@ export const PageHeroOption = ({
             <Video src={videosrc} width="100%" height="100%" />
           ) : (
             <picture>
-              <source media="(min-width: 767px)" srcset={imgsrc} />
+              <source media="(min-width: 767px)" srcSet={imgsrc} />
               <img src={imgsrc2} alt={imgalt} />
             </picture>
           )}
