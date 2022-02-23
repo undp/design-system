@@ -16,6 +16,8 @@ export function sdgModal() {
     }
   });
 
+  $('.modal-sdg').find('.sdg-card-link').addClass('xxxxx');
+
   // Modal open on sdgcard click
   $($modalOpen).on('click', function (event) {
     event.preventDefault();
@@ -37,7 +39,7 @@ export function sdgModal() {
     $('.modal-sdg').addClass('sdg-open').find('.sdg-container').addClass(currentcolor);
     $('.modal-sdg').find('.heading').find('h3').text('Goal '+ currentheading);
     $('.modal-sdg').find('.heading').find('h2').text(currentgoal);
-
+    $('.modal-sdg').find('.sdg-card-link').addClass('xxxxx');
     $('.modal-sdg').find('.ndg-container .sdg-card').attr("href",nexturl).addClass(nextcolor);
     $('.modal-sdg').find('.ndg-container strong').text(nextheading);
     $('.modal-sdg').find('.ndg-container h4').text(nextgoal);
@@ -63,12 +65,12 @@ export function sdgModal() {
     $('.modal-sdg').find('.heading').find('h3').text('Goal '+ bottomheading);
     $('.modal-sdg').find('.heading').find('h2').text(bottomgoal);
     $('.modal-sdg').find('.ndg-container .sdg-card').attr("href",nexturl).addClass(nextcolor);
-    $('.modal-sdg').find('.ndg-container .sdg-card-link').attr('class', 'sdg-card sdg-card-link');
     $('.modal-sdg').find('.ndg-container strong').text(nextheading);
     $('.modal-sdg').find('.ndg-container h4').text(nextgoal);
     $(".last-active").next(".sdg-card").addClass('last-active').siblings().removeClass('last-active');
     windowTop.location.hash = url;
   });
+  
 
   $($modalOpen).on('click', function (event) {
     event.preventDefault();
