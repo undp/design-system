@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
-import { getData } from '../../../../assets/js/navigation-data';
+import { getMegaMenu } from '../../../../assets/js/navigation-data';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 import { desktopView } from '../../../../assets/js/undp';
 import { Logo } from '../../../../Atom/Logo/Logo';
@@ -21,7 +21,7 @@ const CountrySiteHeader = ({
   siteTitleData,
 }) => {
   useEffect(() => { 
-    getData(locale);
+    getMegaMenu(locale);
     navigationInitialize(locale);
   }, [locale]);
 

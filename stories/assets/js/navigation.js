@@ -124,7 +124,7 @@ export const navigationInitialize = (locale) => {
     $('.mobile-links').addClass('hide');
   });
 
-  $('.back-nav').on('click',() => {
+  $('.back-nav').on('click', function() {
     $('.mobile-sub-menu, .mob-sub-lang').removeClass('show');
     $('.mobile-mega-content').removeClass('show-content');
     $('.mobile-links').removeClass('hide');
@@ -134,7 +134,7 @@ export const navigationInitialize = (locale) => {
     $('.mobile-nav').toggleClass('show');
     $('.mobile-sub-menu').toggleClass('show');
     $(this).toggleClass('is-active');
-    $('.back-nav').click();
+    $('.back-nav').trigger("click");
   });
 
   const headerClass=localStorage.getItem('current-nav');

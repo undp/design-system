@@ -1,4 +1,4 @@
-export const getData = (lang) => {
+export const getMegaMenu = (lang) => {
   $.ajax({
     method: 'GET',
     url: './js/navigation-data.json',
