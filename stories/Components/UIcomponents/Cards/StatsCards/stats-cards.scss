@@ -137,6 +137,7 @@
 
     h2 {
       font-size: $spacing-50;
+      height: $spacing-10;
 
       @include devicebreak(medium) {
         font-size: $spacing-70;
@@ -153,6 +154,7 @@
 
     p {
       font-size: $font-size-14;
+      word-break: normal;
 
       @include devicebreak(medium) {
         font-size: $font-size-16;

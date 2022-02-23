@@ -45,6 +45,7 @@ export function sdgModal() {
     $('body').addClass('sdgmodal-open');
     $($modalOpen).attr('tabindex', '-1');
   });
+
   $(document).on('click', '.ndg-container .sdg-card', function(event){
     event.preventDefault();
     event.stopPropagation();
@@ -62,10 +63,10 @@ export function sdgModal() {
     $('.modal-sdg').find('.heading').find('h3').text('Goal '+ bottomheading);
     $('.modal-sdg').find('.heading').find('h2').text(bottomgoal);
     $('.modal-sdg').find('.ndg-container .sdg-card').attr("href",nexturl).addClass(nextcolor);
+    $('.modal-sdg').find('.ndg-container .sdg-card-link').attr('class', 'sdg-card sdg-card-link');
     $('.modal-sdg').find('.ndg-container strong').text(nextheading);
     $('.modal-sdg').find('.ndg-container h4').text(nextgoal);
     $(".last-active").next(".sdg-card").addClass('last-active').siblings().removeClass('last-active');
-
     windowTop.location.hash = url;
   });
 
