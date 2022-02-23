@@ -255,6 +255,13 @@
         margin-right: calc(8.33333% + #{$spacing-06}/ 2);
       }
     }
+
+    .menu {
+      li {
+        margin-left: $font-size-20;
+        margin-right: 0;
+      }
+    }
   }
 }
 
