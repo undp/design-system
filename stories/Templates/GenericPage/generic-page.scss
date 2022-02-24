@@ -13,13 +13,17 @@
   .sidebar {
     &-width {
       .sidebar-accordion {
-
         @include devicebreak(medium) {
           margin-top: 0.8rem;
           width: 90%;
         }
         &.show-small{
           display: block;
+        }
+
+        &.scrollbar{
+          overflow-y: auto;
+          height: calc(100vh - 9.375rem);
         }
       }
 
