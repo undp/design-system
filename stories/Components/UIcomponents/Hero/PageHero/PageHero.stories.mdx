@@ -103,7 +103,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Hero"
+<Meta title="Components/UI components/Hero/Page"
   argTypes={{
     variant: {
       options: ["video", "image"],
@@ -140,15 +140,15 @@ There are two states in the Full-width Page- Default and Mobile.
 2. Mobile: It consists of a vertical image with breadcrumbs, title and subtitles in the front of the image.
 
 <Canvas>
-<Story name="Page hero - full-width">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <PageHero data={caption.herodata} title={caption.title} content={caption.content} active={'white'} imgsrc={caption.imgsrc} imgalt={caption.imgalt} {...args}
-      ></PageHero>
-    );
-  }}
-</Story>
+  <Story name="Page hero - full-width">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <PageHero data={caption.herodata} title={caption.title} content={caption.content} active={'white'} imgsrc={caption.imgsrc} imgalt={caption.imgalt} {...args}
+        ></PageHero>
+      );
+    }}
+  </Story>
 </Canvas>
 
 ### Usage:
@@ -173,9 +173,6 @@ Add the base layout style from
 
 ### Interactions
 - When the page is opened, the contents of the card appears beside the image and the image zooms in. 
-
-### Changelog
-1.0 — Released component
 
 <Anchor storyId='components-ui-components-hero--page-hero-tall-image'></Anchor>
 

@@ -122,31 +122,29 @@ Language switcher has two colors: Default and White.
 #### States 
 There are two states: Default and Open.
 1. Default: It shows the option to select the language. It has a downward arrow to open the menu.
-Default color:
-
-White color:
-
 2. Open: It shows that the language switcher is opened and the user can select the desired language. It has an upward arrow with an opened menu.
-Default color:
-
-White color:
 
 <Canvas>
-<Story
-  name="Language switcher"
-  parameters={{ backgrounds: { default: "gray" } }}
->
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <Languageswitcher
-        data={caption.languagedata}
-        headerText={caption.headerText}
-        {...args}
-      ></Languageswitcher>
-    );
-  }}
-</Story>
+  <Story
+    name="Language switcher"
+    parameters={{ 
+      backgrounds: { default: 'gray'},
+      docs: {
+        inlineStories: false,
+        iframeHeight: '100%'
+      }
+    }}>
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <Languageswitcher
+          data={caption.languagedata}
+          headerText={caption.headerText}
+          {...args}
+        ></Languageswitcher>
+      );
+    }}
+  </Story>
 </Canvas>
 
 ### Usage:
