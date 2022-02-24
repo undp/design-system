@@ -218,11 +218,14 @@
 .sticky {
   position: relative;
   z-index: 1;
-  text-align: center;
 
   @include devicebreak(small) {
     display: flex;
     justify-content: center;
+  }
+
+  @include devicebreak(mediumonlytab) {
+    text-align: center;
   }
 }
 
