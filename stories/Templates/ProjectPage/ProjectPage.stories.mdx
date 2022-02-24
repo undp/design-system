@@ -1561,13 +1561,14 @@ The page performance will be optimized by considering the following:
 
 ### Usage:
 - Copy HTML from the HTML tab of Canvas and  include CSS and JS file in ‘CSS and JS References’ section
-- Initialize navigation, language switcher, accordion, swiper, animation and parallax effect by calling below mentioned functions.
+- Initialize navigation, language switcher, accordion, swiper and animation by calling below mentioned functions.
   - expandToSize('.pagehero-full');
   - navigationInitialize();
   - langSwitch();
   - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
   - swiper('.stats-slider');
   - fontResize('.stats-card > h2');
+- Refer [this document] (https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration
 - If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
 
 #### CSS and JS References
@@ -1576,7 +1577,7 @@ The page performance will be optimized by considering the following:
 
 Add the base layout style from 
 
-- dist/css/base-minimal.css
+- dist/css/base-minimal.min.css
 - dist/css/components/country-site-header.min.css
 - dist/css/components/language-switcher.min.css
 - dist/css/components/menu.min.css

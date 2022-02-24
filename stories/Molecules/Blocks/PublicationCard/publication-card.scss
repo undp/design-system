@@ -31,9 +31,13 @@ div.publication-card {
     background: $color-gray-100;
     padding: $spacing-06;
 
-    > div{
+    > div {
       align-items: center;
       flex-wrap: unset;
+
+      &:first-child {
+        text-align: left;
+      }
 
       > :not(:first-of-type) {
         border-left: $spacing-01 solid $color-silvery-moonlight;
@@ -132,10 +136,16 @@ div.publication-card {
     }
 
     .description {
-      > div > :not(:first-of-type) {
-        border-left: 0;
-        border-right: $spacing-01 solid $color-silvery-moonlight;
-        text-align: left;
+      > div {
+        &:first-child {
+          text-align: right;
+        }
+
+        > :not(:first-of-type) {
+          border-left: 0;
+          border-right: $spacing-01 solid $color-silvery-moonlight;
+          text-align: left;
+        }
       }
     }
 
