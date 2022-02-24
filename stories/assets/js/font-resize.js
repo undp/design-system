@@ -13,7 +13,7 @@ export function fontResize(element) {
       });
       let el_width = $(this).width();
       let el_parent_width = $(this).parent().width();
-      if (el_width > el_parent_width) {
+      if ((el_width + 32) > el_parent_width) {
         $(this).css({
           'font-size': el_parent_width/text_size, // get max width and devide by characters
           "display": "block",

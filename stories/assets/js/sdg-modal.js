@@ -93,8 +93,7 @@ export function sdgModal() {
   $(document).keydown((event) => {
     if (event.keyCode == 27 && $('.modal-sdg').hasClass('sdg-open')) {
       removeHash();
-      var currentcolor = $('.sdg-container').attr('class').split(' ')[1];
-      $('.sdg-container').removeClass(currentcolor);
+      $('.sdg-container').attr("class","sdg-container");
       $('.ndg-container .sdg-card').attr("class","sdg-card");
       $('.modal-sdg').addClass('animation-out');
       setTimeout(function () {
@@ -108,8 +107,7 @@ export function sdgModal() {
 
   // Modal close on close button
   $('.modal-sdg .close, .modal-sdg .modal-header').on('click', () => {
-    var currentcolor = $('.sdg-container').attr('class').split(' ')[1];
-    $('.sdg-container').removeClass(currentcolor);
+    $('.sdg-container').attr("class","sdg-container");
     $('.ndg-container .sdg-card').attr("class","sdg-card");
     $('.modal-sdg').addClass('animation-out');
     setTimeout(function () {
