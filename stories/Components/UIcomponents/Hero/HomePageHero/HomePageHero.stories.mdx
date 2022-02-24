@@ -76,7 +76,7 @@ export const getCaptionForLocale = (locale) => {
 };
 
 <Meta
-  title="Components/UI components/Hero"
+  title="Components/UI components/Hero/Homepage"
   argTypes={{
     variant: {
       options: ["video", "image"],
@@ -114,19 +114,19 @@ There are two states in the Full-width homepage- Default and Mobile.
 2. Mobile: It consists of a vertical image.
 
 <Canvas>
-<Story name="Homepage hero - full-width">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <Homepagehero
-        title={caption.titlename}
-        content={caption.text}
-        button={caption.btnlabel}
-        {...args}
-      ></Homepagehero>
-    );
-  }}
-</Story>
+  <Story name="Homepage hero - full-width">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <Homepagehero
+          title={caption.titlename}
+          content={caption.text}
+          button={caption.btnlabel}
+          {...args}
+        ></Homepagehero>
+      );
+    }}
+  </Story>
 </Canvas>
 
 ### Usage:
@@ -150,9 +150,6 @@ Add the base layout style from
 
 ### Interactions
 - When the page is opened, the contents on the card appear over the image.
-
-### Changelog
-1.0 — Released component
 
 <Anchor storyId='components-ui-components-hero--homepage-hero-tall-image'></Anchor>
 
@@ -213,9 +210,6 @@ Add the base layout style from dist/css/base-minimal.min.css
 
 ### Interactions
 - When the page is opened, the contents on the card appear beside the image.. 
-
-### Changelog
-1.0 — Released component
 
 <Anchor storyId='components-ui-components-hero--homepage-hero-wide-image'></Anchor>
 

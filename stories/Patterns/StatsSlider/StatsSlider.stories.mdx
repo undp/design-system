@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { StatsSlider } from './StatsSlider';
 
 export const statsArray = (locale) => {
@@ -196,12 +196,14 @@ A medium or a small stats card is used in sliders
 - Medium: .statscard--md 
 - Small: .statscard--sm
 
-<Story name="Stats slider (two rows)">
-  {(args, { globals: { locale } }) => {
-    const caption = statsArray(locale);
-    return <StatsSlider data={caption}></StatsSlider>;
-  }}
-</Story>
+<Canvas>
+  <Story name="Stats slider (two rows)">
+    {(args, { globals: { locale } }) => {
+      const caption = statsArray(locale);
+      return <StatsSlider data={caption}></StatsSlider>;
+    }}
+  </Story>
+</Canvas>
 
 ### Usage:
 - Copy HTML from the HTML tab of canvas in your HTML page and include CSS and JS in ‘CSS and JS References’ section.
