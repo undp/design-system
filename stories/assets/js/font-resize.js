@@ -1,10 +1,9 @@
 
 export function fontResize(element) {
-  // run the function
-  resize();
-  function resize() {
-    $(element).each(function() {
-      let text_size = $(this).text().length;
+  $(element).each(function() {
+    let text_size = $(this).text().trim();
+    if(text_size) {
+      text_size = text_size.length;
       // make it inline-block easy to calculate width
       // and compare with the parent
       $(this).css({
@@ -21,6 +20,6 @@ export function fontResize(element) {
       } else {
         $(this).removeAttr('style');
       }
-    });
-  }
+    }
+  });
 }
