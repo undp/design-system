@@ -62,4 +62,5 @@ export const FeaturedContentCard = ({
 
 FeaturedContentCard.defaultProps = {
   image: 'image',
+  hovercolor: 'yellow'
 };
