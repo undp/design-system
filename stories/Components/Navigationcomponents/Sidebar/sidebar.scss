@@ -51,6 +51,9 @@
     &::after {
       @extend %sidebar-chevron;
     }
+    @include devicebreak(medium) { 
+      display: none;
+    }
   }
 
   ul {
@@ -81,6 +84,10 @@
 
       & > button::after {
         @include transform(rotateZ(-180deg));
+        top: 1.125rem;
+         @include devicebreak(medium) { 
+          top: $spacing-06;
+        }
       }
     }
 
@@ -104,10 +111,15 @@
 
         @include devicebreak(medium) {
           margin-top: -2.688rem;
+          top: 2.063rem;
         }
 
         &::after {
           @extend %sidebar-chevron;
+           top: $spacing-06;
+          @include devicebreak(medium) {
+            top: 2.063rem;
+          }
         }
       }
     }
@@ -171,9 +183,18 @@
 
     ul > li button::after {
       @include devicebreak(medium) {
-        top: 8px;
+        top: 1.625rem;
       }
     }
+
+    li.active {
+      button::after {
+        @include devicebreak(medium) {
+          top: 1.125rem;
+        }
+      }
+    }
+
   }
 }
 
