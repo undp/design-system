@@ -166,23 +166,23 @@ body.sdgmodal-open {
   }
 
 $sdg-colors: 
-  'sdg-color-1' $sdg-red '#e5243b',
-  'sdg-color-2' $sdg-mustard '#dda63a',
-  'sdg-color-3' $sdg-kelly-green '#4c9f38',
-  'sdg-color-4' $sdg-dark-red '#c5192d',
-  'sdg-color-5' $sdg-red-orange '#ff3a21',
-  'sdg-color-6' $sdg-bright-blue '#26bde2',
-  'sdg-color-7' $sdg-yellow '#fcc30b',
-  'sdg-color-8' $sdg-burgundy-red '#a21942',
-  'sdg-color-9' $sdg-orange '#fd6925',
-  'sdg-color-10' $sdg-magenta '#dd1367',
-  'sdg-color-11' $sdg-golden-yellow '#fd9d24',
-  'sdg-color-12' $sdg-dark-mustard '#bf8b2e',
-  'sdg-color-13' $sdg-dark-green '#3f7e44',
-  'sdg-color-14' $sdg-blue '#0a97d9',
-  'sdg-color-15' $sdg-lime-green '#56c02b',
-  'sdg-color-16' $sdg-royal-blue '#00689d',
-  'sdg-color-17' $sdg-navy-blue '#19486a';
+  'sdg-color-1' $sdg-red $sdg-hover-red,
+  'sdg-color-2' $sdg-mustard $sdg-hover-mustard,
+  'sdg-color-3' $sdg-kelly-green $sdg-hover-kelly-green,
+  'sdg-color-4' $sdg-dark-red $sdg-hover-dark-red,
+  'sdg-color-5' $sdg-red-orange $sdg-hover-red-orange,
+  'sdg-color-6' $sdg-bright-blue $sdg-hover-bright-blue,
+  'sdg-color-7' $sdg-yellow $sdg-hover-yellow,
+  'sdg-color-8' $sdg-burgundy-red $sdg-hover-burgundy-red,
+  'sdg-color-9' $sdg-orange $sdg-hover-orange,
+  'sdg-color-10' $sdg-magenta $sdg-hover-magenta,
+  'sdg-color-11' $sdg-golden-yellow $sdg-hover-golden-yellow,
+  'sdg-color-12' $sdg-dark-mustard $sdg-hover-dark-mustard,
+  'sdg-color-13' $sdg-dark-green $sdg-hover-dark-green,
+  'sdg-color-14' $sdg-blue $sdg-hover-blue,
+  'sdg-color-15' $sdg-lime-green $sdg-hover-lime-green,
+  'sdg-color-16' $sdg-royal-blue $sdg-hover-royal-blue,
+  'sdg-color-17' $sdg-navy-blue $sdg-hover-navy-blue;
 
   @each $name, $color, $bg in $sdg-colors {
     &.#{$name} {
