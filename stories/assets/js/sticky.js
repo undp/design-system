@@ -1,10 +1,10 @@
 import * as utility from './resize';
 
 // stickyScroll handler function.
-export function sticky() {
+export function sticky(stickyArea, stickyMovingSide, StickyScrollBar) {
   const stickyScroll = (state) => {
-    const $sticky = $('.sticky');
-    const $relatedPublication = $('.related-publication');
+    const $sticky = $(stickyArea);
+    const $relatedPublication = $(stickyMovingSide);
     if ($($sticky).length && $($relatedPublication).length) {
       if (state) {
         // Calculate values only if stickyScroll enabled.
@@ -39,6 +39,31 @@ export function sticky() {
     }
   }
 
+  //stickyScrollBar add on Sidebar,if sidebar content is more than [window screen - header Height].
+  const stickyScrollBar = () => {
+    // initialize stickyScrollBar 
+    const $sidebarWrapper = $(StickyScrollBar);
+
+    // stickyScrollBar length check 
+    if ($($sidebarWrapper).length) {
+      const $sidebarHeight = $sidebarWrapper.innerHeight();
+      const $windowHeight = $(window).innerHeight();
+      const $headerHeight = $('.header').height();
+
+      // stickyScrollBar function condition check.
+      if ($sidebarHeight > ($windowHeight - $headerHeight)) {
+        $sidebarWrapper.addClass('scrollbar');
+      } else {
+        $sidebarWrapper.removeClass('scrollbar');
+      }
+    }
+  };
+
+  // initialize stickyScrollBar function.
+  $(window).on('load', function () {
+    stickyScrollBar();
+  });
+  
   // initialize stickyScroll function and enable/disable based on mediaQuery breakpoint.
   const initStickyScroll = (params) => {
     const $windowWidth = $(window).width();
@@ -64,5 +89,6 @@ export function sticky() {
   // Custom windowResize;
   utility.windowResize($(window), (e) => {
     initStickyScroll();
+    stickyScrollBar();
   });
 }

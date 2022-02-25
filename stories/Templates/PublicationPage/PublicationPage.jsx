@@ -47,7 +47,7 @@ export const PublicationPage = ({
   FeaturedCardData
 }) => {
   useEffect(() => {
-    sticky(locale);
+    sticky('.sticky','.related-publication', locale);
   }, [locale]);
   return (
   <>

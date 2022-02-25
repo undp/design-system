@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ProgressBarNavigation } from '../../Atom/Navigation/ProgressBarNavigation/ProgressBarNavigation';
 import { PageHero } from '../../Components/UIcomponents/Hero/PageHero/PageHero';
 import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
@@ -8,6 +8,7 @@ import { P } from '../../Atom/BaseTypography/Paragraph/Paragraph';
 import { FluidImageSizeCarousel } from '../../Components/UIcomponents/Carousel/FluidImageSizeCarousel/FluidImageSizeCarousel';
 import { Footer } from '../../Organism/Footer/Footer';
 import './generic-page.scss';
+import { sticky } from  '../../assets/js/sticky';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 
 export const GenericPage = ({
@@ -28,8 +29,12 @@ export const GenericPage = ({
   locationData,
   langSelect,
   backcaption,
-}) => (
-  <div className="generic-page">
+}) => {
+   useEffect(() => {
+    sticky('.sidebar-desktop','.generic-content', '.sidebar-desktop .sidebar-accordion');
+  });
+    return (
+    <div className="generic-page">
     <GlobalHeader
       backcaption={backcaption}
       locale={locale}
@@ -75,7 +80,7 @@ export const GenericPage = ({
             />
           </div>
         </div>
-        <div className="cell large-9 small-12">
+        <div className="cell large-9 small-12 generic-content">
           <div className="grid-x">
             <div className="cell large-10 small-12">
               <div className="column">
@@ -171,4 +176,5 @@ export const GenericPage = ({
       {...{ color: 'default' }}
     />
   </div>
-);
+    );
+};
