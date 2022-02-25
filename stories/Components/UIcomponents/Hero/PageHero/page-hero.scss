@@ -1,8 +1,9 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/base';
+@import '../../../../assets/scss/grid';
 
-/* page hero start */ 
+/* page hero start */
 .pagehero {
   &-full {
     @extend %expand_to_size;
@@ -53,6 +54,8 @@
 
     .breadcrumb {
       padding-top: $spacing-11;
+
+      @extend .medium-offset-1;
 
       @include devicebreak(small) {
         padding-left: $spacing-04;
@@ -123,7 +126,7 @@
       align-items: flex-start;
       height: 100%;
       word-break: break-word;
-  
+
       @include devicebreak(small) {
         height: auto;
         padding: 0 0 $spacing-08;
@@ -132,7 +135,7 @@
           padding-top: $spacing-10;
         }
       }
-  
+
       @include devicebreak(medium) {
         padding-bottom: 0;
         padding-right: 1.438rem;
