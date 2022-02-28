@@ -1,0 +1,298 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+.border-top-2 {
+  border-top: 2px solid $color-black;
+}
+
+.related-publication {
+  margin-top: $spacing-07;
+
+  .cell.medium-4 {
+    padding: $spacing-04 0;
+    width: 100%;
+
+    @include devicebreak(medium) {
+      width: calc(50% - #{$spacing-06});
+    }
+  }
+
+  .content-card {
+    border: none;
+    margin-bottom: 0;
+    padding-top: $spacing-03;
+  }
+
+  h2 {
+    margin-bottom: $spacing-04;
+    margin-top: $spacing-09;
+
+    @include devicebreak(large) {
+      margin-bottom: 2.25rem;
+      margin-top: $spacing-11;
+    }
+  }
+
+  .grid-x.grid-margin-x {
+    @include devicebreak(small) {
+      padding: 0 $spacing-04 $spacing-04 0;
+    }
+  }
+}
+
+.margin-top {
+  &-24 {
+    margin-top: $spacing-06;
+  }
+
+  &-36 {
+    margin-top: 2.25rem;
+  }
+
+  &-40 {
+    margin-top: $spacing-08;
+  }
+
+  &-48 {
+    margin-top: $spacing-09;
+  }
+
+  &-64 {
+    margin-top: $spacing-10;
+  }
+
+  &-72 {
+    margin-top: 4.5rem;
+  }
+
+  &-80 {
+    margin-top: $spacing-11;
+  }
+
+  &-136 {
+    margin-top: $spacing-136;
+  }
+}
+
+.margin-bottom {
+  &-24 {
+    margin-bottom: $spacing-06;
+  }
+
+  &-36 {
+    margin-bottom: 2.25rem;
+  }
+
+  &-40 {
+    margin-bottom: $spacing-08;
+  }
+
+  &-48 {
+    margin-bottom: $spacing-09;
+  }
+
+  &-64 {
+    margin-bottom: $spacing-10;
+  }
+
+  &-72 {
+    margin-bottom: 4.5rem;
+  }
+
+  &-80 {
+    margin-bottom: $spacing-11;
+  }
+
+  &-136 {
+    margin-bottom: $spacing-136;
+  }
+}
+
+.content-bottom {
+  margin-bottom: $spacing-09;
+
+  @include devicebreak(large) {
+    margin-bottom: $spacing-12;
+  }
+}
+
+.publication-card__title {
+  h2 {
+    display: none;
+
+    @include devicebreak(large) {
+      display: block;
+      margin-bottom: $spacing-06;
+    }
+
+    >p {
+      margin-top: 2.25rem;
+    }
+  }
+
+  h6 {
+    margin-top: $spacing-08;
+
+    @include devicebreak(large) {
+      margin-top: $spacing-03;
+    }
+  }
+}
+
+.publication {
+  &-page {
+    margin-bottom: 3.313rem;
+    margin-top: $spacing-11;
+
+    @include devicebreak(medium) {
+      margin-top: 4.6rem;
+    }
+
+    @include devicebreak(xlarge) {
+      margin-bottom: 4.688rem;
+      margin-top: 7.4rem;
+    }
+
+    .breadcrumb {
+      margin-top: 1.063rem;
+
+      @include devicebreak(large) {
+        margin-top: 4.563rem;
+      }
+    }
+  }
+
+  &-block {
+    margin-top: 2.563rem;
+    scroll-behavior: auto;
+
+    @include devicebreak(large) {
+      margin-top: 3.625rem;
+    }
+  }
+
+  .download-card {
+    margin-bottom: $spacing-08;
+  }
+
+  &-menu {
+    margin-top: $spacing-50;
+
+    @include devicebreak(large) {
+      margin-top: $spacing-11;
+    }
+
+    h6 {
+      margin-top: $spacing-04;
+
+      @include devicebreak(large) {
+        margin-top: $spacing-05;
+      }
+    }
+
+    .menu-item {
+      margin-top: $spacing-01;
+
+      @include devicebreak(large) {
+        margin-top: 0;
+      }
+    }
+
+    .menu {
+      li {
+        margin-right: $font-size-20;
+        margin-top: 0.375rem;
+
+        a {
+          @extend %animate-link;
+
+          font-size: $spacing-05;
+          text-transform: none;
+        }
+      }
+    }
+  }
+}
+
+.sticky {
+  position: relative;
+  z-index: 1;
+
+  @include devicebreak(small) {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include devicebreak(mediumonlytab) {
+    text-align: center;
+  }
+}
+
+.title {
+  &-mobile {
+    display: block;
+
+    @include devicebreak(large) {
+      display: none;
+    }
+
+    h2 {
+      margin-bottom: $spacing-06;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .related-publication {
+    .large-offset-6 {
+      @include devicebreak(large) {
+        margin-left: 0;
+        margin-right: calc(50% + #{$spacing-05} / 2);
+      }
+    }
+
+    .grid-x.grid-margin-x {
+      @include devicebreak(small) {
+        padding: 0 0 $spacing-04 $spacing-04;
+      }
+    }
+  }
+
+  .publication-page {
+    .large-offset-1 {
+      @include devicebreak(large) {
+        margin-left: 0;
+        margin-right: calc(8.33333% + #{$spacing-06}/ 2);
+      }
+    }
+
+    .menu {
+      li {
+        margin-left: $font-size-20;
+        margin-right: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.publication-post-header {
+  margin-top: 1.813rem;
+
+  @include devicebreak(large) {
+    margin-top: $spacing-11;
+  }
+}

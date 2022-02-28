@@ -1,0 +1,201 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Author } from './AuthorColumn';
+import user from '../../../../assets/images/author.png';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {data: [{
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    },
+    {
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    },
+    {
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    },
+    {
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    },
+    {
+      Authorlabel: 'Theresa Webb',
+      Authortext: 'Resilience Project Manager'
+    }]}; return engText.data;
+    case 'arabic': const arabicText = {data: [{
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    },
+    {
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    },
+    {
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    },
+    {
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    },
+    {
+      Authorlabel: 'تيريزا ويب',
+      Authortext: 'مدير مشروع المرونة'
+    }]}; return arabicText.data;
+    case 'burmese': const burmeseText = {data: [{
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    },
+    {
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    },
+    {
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    },
+    {
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    },
+    {
+      Authorlabel: 'ထရီဇာဝက်ဘ်',
+      Authortext: 'ကြံ့ခိုင်မှုစီမံကိန်းမန်နေဂျာ'
+    }]}; return burmeseText.data;
+    case 'japanese': const japaneseText = {data: [{
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    },
+    {
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    },
+    {
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    },
+    {
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    },
+    {
+      Authorlabel: 'テレサウェッブ',
+      Authortext: 'レジリエンスプロジェクトマネージャー'
+    }]}; return japaneseText.data;
+    default:
+      const dummy =  {data: [{
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      },
+      {
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      },
+      {
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      },
+      {
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      },
+      {
+        Authorlabel: 'Theresa Webb',
+        Authortext: 'Resilience Project Manager'
+      }]};
+    return dummy.data
+  }
+};
+
+<Meta 
+  title="Components/UI components/Authors/Author" argTypes={{
+  Image: {
+    options: ['True', 'False'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'True'
+  },
+  Number: {
+    options: ['One', 'Two', 'Three', 'Four', 'Five'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'One'
+  }
+  }}/>
+
+# Authors
+
+The author component gives an overview of the authors of an article/photo.
+
+### Overview
+The Author component highlights the author(s) ’s name, designation, and photo for an article or story they have contributed to on the site.
+
+#### When to use:
+The author component is primarily used to give credit to any article or story they have published on the site.
+
+### Formatting 
+
+#### Default
+The author component consists of a single author or multiple authors.
+If the author has a profile picture, it is displayed as follows,
+
+
+If the author does not have a profile photo or more authors are contributing to a single article/photo, then their information is displayed as follows.
+
+#### Multiple authors
+If there are up to 3 authors, they are displayed horizontally.
+
+
+If there are 4 or more authors, their profile pictures are not displayed.
+
+
+
+On smaller devices, the authors are stacked vertically if less than 4
+
+
+If more than 4 authors, on smaller screens, they are displayed as follows
+
+
+
+### Content
+
+The author component contains the first and last name, profile picture (optional), and designation of the author(s).
+
+### Behaviors
+
+#### States
+The author component will have a minimum of 1 author and can expand to as many authors as needed. There can be combinations of authors with or without profile photos.
+
+The following behavior modifiers are available:
+
+<Canvas>
+<Story name="Author">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Author image={user} alt= 'Headshot of XYZ' data={caption} {...args}></Author>;
+  }}
+</Story>
+</Canvas>
+
+### Usage:
+- Choose the author with or without an image from image control and several authors to display from number control from the canvas control tab.
+- Copy the HTML from the HTML tab and also include the below-listed CSS file.
+- CSS and JS References
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/author-column.min.css
+
+#### JS:
+- NA
+
+### Interactions
+- The author component can be used with or without a link. When linking, the entire block—image, name, designation—should be clickable.  
+
+### Changelog
+1.0 — Released component

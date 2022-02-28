@@ -1,0 +1,156 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+
+/* fixed image size carousel start */
+.fluid-carousel {
+  overflow: hidden;
+
+  .slider-slide {
+    @extend %carousel_slider_slide;
+  }
+
+  &__image {
+    display: block;
+    height: 31rem;
+    max-width: 55%;
+    object-fit: cover;
+
+    @include devicebreak(large) {
+      max-width: 65%;
+    }
+
+    @include devicebreak(xlarge) {
+      max-width: 70%;
+    }
+
+    @include devicebreak(small) {
+      height: 18rem;
+      max-width: 100%;
+      width: auto;
+    }
+  }
+
+  .slide-content {
+    box-sizing: border-box;
+    padding-left: $spacing-06;
+
+    @include devicebreak(medium) {
+      flex: 0 0 45%;
+      max-width: 45%;
+      position: relative;
+    }
+
+    @include devicebreak(large) {
+      flex: 0 0 35%;
+      max-width: 35%;
+    }
+
+    @include devicebreak(xlarge) {
+      flex: 0 0 30%;
+      max-width: 30%;
+    }
+
+    @include devicebreak(small) {
+      margin-top: 1.5rem;
+      padding-left: 1.5rem;
+      padding-right: 2rem;
+    }
+
+    h6 {
+      @extend %carousel_tag;
+    }
+
+    h4 {
+      @extend %carousel_title;
+    }
+
+    p {
+      @extend %carousel_desc;
+
+      @include devicebreak(large) {
+        margin-bottom: 3rem;
+      }
+
+      @include devicebreak(small) {
+        font-size: 0.875rem;
+      }
+    }
+
+    .cta__link {
+      text-transform: uppercase;
+    }
+
+    &__button-wrap {
+      @include devicebreak(medium) {
+        display: inline-flex;
+      }
+    }
+  }
+
+  .swiper-scrollbar {
+    @extend %carousel_bar_margin;
+  }
+
+  .slider-arrows {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+
+    [class*='swiper-button-'] {
+      @extend %carousel_arrow;
+
+      &:first-child {
+        margin-right: 0.344rem;
+      }
+
+      &:last-child {
+        margin-left: 0.344rem;
+      }
+
+      img {
+        vertical-align: bottom;
+        width: 2.813rem;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .fluid-carousel {
+    .slide-content {
+      padding-left: 0;
+      padding-right: $spacing-06;
+
+      @include devicebreak(small) {
+        padding-right: 1.5rem;
+      }
+    }
+
+    .slider-arrows {
+      left: 0;
+      right: auto;
+
+      [class*='swiper-button-'] {
+        &:first-child {
+          margin-left: 0.344rem;
+          margin-right: 0;
+
+          img {
+            @include transform(rotate(180deg));
+          }
+        }
+
+        &:last-child {
+          margin-left: 0;
+          margin-right: 0.344rem;
+
+          img {
+            @include transform(rotate(-180deg));
+          }
+        }
+      }
+    }
+  }
+}
+
+/* fixed image size carousel end */

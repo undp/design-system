@@ -1,0 +1,122 @@
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.breadcrumb {
+  ul {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: $font-size-12;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin: $spacing-04 $spacing-06 $spacing-04 0;
+      padding-left: 0;
+      position: relative;
+
+      &::after {
+        color: $color-dark-red;
+        content: '/';
+        font-weight: bold;
+        position: absolute;
+        right: -12px;
+        top: 0;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        margin-right: 0;
+        max-width: calc(100vw - 2rem);
+        text-transform: uppercase;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      a {
+        color: $color-dark-red;
+        font-size: $font-size-12;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+          color: $color-red;
+        }
+      }
+    }
+  }
+
+  &.white {
+    li {
+      &::after {
+        color: $color-white;
+      }
+
+      a {
+        color: $color-white;
+
+        &:hover {
+          color: $color-white;
+          opacity: 0.7;
+        }
+      }
+    }
+
+    &:last-child,
+    li:last-child {
+      color: $color-white;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .breadcrumb {
+    ul {
+      padding: 0;
+    }
+
+    li {
+      margin: $spacing-04 0 $spacing-04 $spacing-06;
+      padding-right: 0;
+
+      a {
+        margin: 0;
+      }
+
+      &:first-child {
+        margin-left: $spacing-06;
+        margin-right: 0;
+      }
+
+      &:last-child {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      &::after {
+        @include transform(translate(0,-63%) rotate(140deg));
+
+        left: -14px;
+        right: unset;
+        top: 63%;
+      }
+    }
+  }
+}
+
+// burmese lang
+:lang(my) {
+  .breadcrumb li:last-child {
+    font-size: $font-size-12;
+  }
+}

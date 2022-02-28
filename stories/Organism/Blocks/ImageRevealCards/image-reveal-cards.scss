@@ -1,0 +1,17 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+.image-reveal-card {
+  @include devicebreak(small) {
+    margin-top: 3.75rem;
+  }
+}
+
+.reveal-head {
+  margin-bottom: $spacing-06;
+
+  @include devicebreak(medium) {
+    margin-bottom: $spacing-08;
+  }
+}

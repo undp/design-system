@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Spacing } from './Spacing';
+
+<Meta title="Foundation/Layout/Spacing" component={Spacing} parameters={{
+    viewMode: "docs",
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  }}/>
+
+<style>{`
+  #story--foundation-icons--icons p {
+    font-size: 14px;
+    margin-top: 10px;
+  } 
+`}</style>
+
+# Spacing
+The Spacing units create visual rhythm and balance.
+
+### When to use:
+- To create spacing before, after, or in-between texts.
+
+### States
+There are thirteen states with different spacing widths.
+<Canvas>
+  <Story name="Spacing">
+    return <Spacing></Spacing>;
+  </Story>
+</Canvas>
+
+### Usage
+Use of standard spaces are already applied on different components, if you want to change the space, that can be done in **stories/assets/scss/_varaibles.scss**.
+

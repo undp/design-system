@@ -1,0 +1,16 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/typography';
+
+/* post start */
+.post-wrapper {
+  h2 {
+    margin-bottom: $spacing-05;
+  }
+
+  h5 {
+    color: $color-gray-600;
+    margin-bottom: $spacing-09;
+  }
+}
+
+/* post end */

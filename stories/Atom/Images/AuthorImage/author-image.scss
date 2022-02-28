@@ -1,0 +1,58 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+
+/* author image */
+
+div.author__img {
+  border-radius: $author-image-radius;
+  height: 80px;
+  min-width: 80px;
+  overflow: hidden;
+  position: relative;
+  width: 80px;
+
+  &::before {
+    @extend %absolute__content;
+
+    @include transition(all 0.6s);
+
+    border-radius: $author-image-radius;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  &:hover {
+
+    $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+    &::before {
+      @include background-image(45deg, $color-yellow , transparent 53%);
+
+      opacity: 0.75;
+    }
+
+    @each $name, $color in $colors {
+      &.#{$name}::before {
+        @include background-image(45deg, $color-yellow , transparent 53%);
+      }
+    }
+  }
+
+  img {
+    @extend %img-cover;
+  }
+
+  &.large {
+    height: 180px;
+    width: 180px;
+  }
+}
+
+[dir='rtl'] {
+  .author__img {
+    &::before {
+      @include transform(scaleX(-1));
+    }
+  }
+}

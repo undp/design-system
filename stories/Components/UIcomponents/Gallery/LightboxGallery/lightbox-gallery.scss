@@ -1,0 +1,213 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+
+// lightbox-gallery start
+.lightbox-gallery {
+  &__left {
+    align-items: center;
+    display: flex;
+
+    @include devicebreak(small) {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  &__content {
+    padding: 0 $spacing-04 $spacing-06;
+
+    @include devicebreak(medium) {
+      margin: auto;
+      max-width: 28rem;
+      padding: 1.5rem 0.5rem;
+    }
+
+    @include devicebreak(xlarge) {
+      padding: 0;
+    }
+
+    h5 {
+      margin-bottom: 2rem;
+
+      @include devicebreak(small) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 3rem;
+
+      @include devicebreak(small) {
+        font-size: 0.875rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .cta__link {
+      text-transform: uppercase;
+    }
+  }
+
+  &__right {
+    position: relative;
+
+    //gallery image list
+    .lightbox-gallery-images {
+      column-count: 2;
+      column-gap: $spacing-04;
+      margin: auto;
+      padding-left: 0;
+      width: 100%;
+
+      @include devicebreak(xlarge) {
+        column-count: 3;
+        column-gap: $spacing-06;
+      }
+
+      li {
+        list-style: none;
+        margin-bottom: $spacing-04;
+        padding-left: 0;
+        position: relative;
+        width: 100%;
+
+        @include devicebreak(xlarge) {
+          margin-bottom: $spacing-06;
+        }
+
+        a {
+          @extend %no-animation;
+
+          background-image: none;
+          display: block;
+          line-height: 0;
+        }
+
+        &:hover,
+        &:focus,
+        &:focus-within {
+          outline: 0;
+
+          .image {
+            @include devicebreak(xlarge) {
+              &::before {
+                @include transition(all 0.3s ease-in);
+
+                background-color: $color-black;
+                content: '';
+                height: 100%;
+                left: 0;
+                opacity: 0.4;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 1;
+              }
+            }
+          }
+
+          .image__description {
+            @include transition(all 0.3s ease-in);
+
+            opacity: 1;
+          }
+        }
+
+        .image {
+          @include devicebreak(medium) {
+            overflow: hidden;
+          }
+
+          @include devicebreak(xlarge) {
+            min-height: 200px;
+          }
+
+          img {
+            padding-bottom: 0;
+
+            @include devicebreak(large) {
+              min-height: 200px;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+
+    .image__description {
+      bottom: 0;
+      display: none;
+      opacity: 0;
+      position: absolute;
+      z-index: 2;
+
+      @include devicebreak(xlarge) {
+        display: block;
+      }
+
+      .image__caption {
+        @include devicebreak(xlarge) {
+          border-bottom: 0;
+          display: block;
+          margin-top: 0;
+          padding: $spacing-07 $spacing-06;
+        }
+
+        p {
+          color: $color-white;
+          margin-bottom: $spacing-05;
+          padding-right: 0;
+
+          + .credits {
+            @include devicebreak(large) {
+              margin-left: 0;
+            }
+          }
+        }
+
+        .credits {
+          border-left: 0;
+          color: $color-white;
+          padding-left: 0;
+        }
+      }
+
+      &.caption_top {
+        bottom: inherit;
+        height: 100%;
+        -webkit-mask-image: linear-gradient(to bottom, $color-black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, $color-black 50%, transparent 100%);
+        overflow-y: hidden;
+        top: 0;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .lightbox-gallery {
+    &__right {
+      .lightbox-gallery-images {
+        padding-right: 0;
+
+        li {
+          padding-right: 0;
+        }
+      }
+
+      .credits {
+        border-right: 0;
+        color: $color-white;
+        margin-right: 0;
+        padding-right: 0;
+      }
+
+      .image__caption p + .credits {
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+// lightbox-gallery end

@@ -1,0 +1,84 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Link } from './Links';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {detail: 'Default link'}; return engText;
+    case 'arabic': const arabicText = {detail: 'الارتباط الافتراضي'}; return arabicText;
+    case 'burmese': const burmeseText = {detail: 'မူရင်းလင့်ခ်'}; return burmeseText;
+    case 'japanese': const japaneseText = {detail: 'デフォルトのリンク'}; return japaneseText;
+    default:
+      return {detail: 'Default link'};
+  }
+};
+
+<Meta 
+  title="Foundation/Typography/Links" component={Link} 
+  argTypes={{
+      variant: {
+          options: ['default', 'animated'],
+          control: { type: 'inline-radio' },
+          defaultValue: 'default'
+      },
+    }}/>
+
+# Link
+
+The Link component is used to attach links to the text component.
+
+### Overview
+
+The Link component defines a hyperlink that is used to link one page to another.
+
+#### When to use:
+
+When hyperlinks are to be attached.
+
+### Formatting
+#### Default
+The Link component consists of the link with a red horizontal line below it.
+
+### Behaviors
+
+#### States 
+There are three states in the Link component: Desktop & Laptop. The component is compatible with tablets and mobile.
+
+Desktop & Laptop: The font size of the Link is biggest in Desktop and Laptop.
+
+<Canvas>
+  <Story name="Links">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <>
+          <Link label={caption.detail} {...args}></Link>
+        </>;
+    }}
+  </Story>
+</Canvas>
+
+### Usage
+
+- Copy the HTML from Canvas page
+- Add **animated-link** class in your link if you want to have a animated underline (optional)
+- Include **dist/css/components/link.min.css** file in your html
+
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/link.min.css
+
+#### JS:
+NA
+
+### Interactions
+By clicking on the link, the current page is forwarded to the next page.
+
+### Changelog
+1.0 — Released component
+
+
+
+

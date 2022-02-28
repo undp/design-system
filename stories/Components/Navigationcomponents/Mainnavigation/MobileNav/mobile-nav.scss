@@ -1,0 +1,276 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
+
+.mobile-nav {
+  @extend %frosted-bg;
+
+  box-sizing: border-box;
+  display: none;
+  height: calc(100vh - 4.6875rem);
+  left: 0;
+  margin: 0;
+  overflow-y: auto;
+  padding: 0 $spacing-06;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+
+  &.show {
+    display: block;
+  }
+
+  .mobile-links {
+    padding: 5.625rem 0 3.75rem;
+
+    &.hide {
+      display: none;
+      pointer-events: none;
+    }
+
+    ul {
+      border-bottom: 1px solid $color-gray-500;
+      margin-bottom: 2.25rem;
+      padding: 0;
+
+      li {
+        list-style: none;
+        margin-bottom: 0;
+        padding-bottom: 2.25rem;
+        padding-left: 0;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .mobile-nav-options {
+    a {
+      @extend %img_none;
+      @extend %mobile-nav;
+
+      color: $color-blue-600;
+      margin-bottom: 1.58125rem;
+
+      img {
+        margin-right: 0.625rem;
+      }
+    }
+  }
+
+  .mobile-sub-menu {
+    display: none;
+    padding: 2.0625rem 0;
+
+    &.show {
+      display: block;
+      height: calc(100vh - 9.1875rem);
+    }
+
+    .sub-heading {
+      margin-bottom: 0;
+      padding: 2.5625rem 0 2.25rem;
+      text-transform: uppercase;
+    }
+
+    .sub-sub-menus {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        margin-bottom: 0;
+        padding-left: 0;
+
+        span {
+          font-size: $font-size-16;
+        }
+
+        ul {
+          margin: 0;
+          padding: $spacing-06 1.6875rem;
+
+          li {
+            margin-bottom: 0.46875rem;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        a {
+          @extend %img_none;
+
+          font-size: 0.875rem;
+          padding: 0.46875rem 0;
+        }
+      }
+    }
+  }
+
+  .back-nav {
+    @extend %mobile-nav;
+
+    background: none;
+    border: 0;
+    padding: 0;
+
+    img {
+      margin-right: 0.46875rem;
+    }
+  }
+
+  .mob-sub-lang {
+    display: none;
+    padding: 2.25rem 0;
+    pointer-events: none;
+
+    &.show {
+      display: block;
+      pointer-events: all;
+    }
+
+    .sub-heading {
+      padding: 2.25rem 0 1.25rem;
+      text-transform: uppercase;
+    }
+
+    .sub-sub-lang {
+      margin: $spacing-08 0 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        padding-left: 0;
+
+        span {
+          font-size: $font-size-16;
+        }
+
+        ul {
+          margin: 0;
+          padding: $spacing-05 1.6875rem;
+        }
+
+        a {
+          @extend %img_none;
+
+          font-size: 0.875rem;
+          padding: 0.46875rem 0;
+        }
+      }
+    }
+  }
+
+  .mobile-mega-content {
+    display: none;
+
+    &.show-content {
+      display: block;
+    }
+  }
+}
+
+.menu-hamburger {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: none;
+  font-size: 0;
+  min-height: 1.75rem;
+  position: relative;
+  width: 1.375rem;
+  z-index: 25;
+
+  @include devicebreak(mediumonlytab) {
+    display: block;
+  }
+}
+
+.top-right .menu-hamburger {
+  margin-left: 0;
+}
+
+.menu-hamburger.is-active .hamburger-line.line-top {
+  transform: translateY(0) rotate(45deg);
+}
+
+.menu-hamburger.is-active .hamburger-line.line-middle {
+  opacity: 0;
+  transform: translateX(6.33px);
+}
+
+.menu-hamburger.is-active .hamburger-line.line-bottom {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.menu-hamburger .hamburger-line {
+  background-color: #006eb5;
+  display: block;
+  height: 0.125rem;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: $spacing-04;
+  transition: 0.2s ease-out;
+  width: 100%;
+}
+
+.menu-hamburger .hamburger-line.line-top {
+  transform: translateY(-6.5px);
+}
+
+.menu-hamburger .hamburger-line.line-bottom {
+  transform: translateY(6.5px);
+}
+
+[dir='rtl'] {
+  .mobile-nav {
+    .mobile-nav-options {
+      a {
+        img {
+          margin-left: 0.625rem;
+          margin-right: 0;
+        }
+      }
+    }
+
+    .mob-sub-lang {
+      .sub-sub-lang {
+        li {
+          padding-right: 0;
+        }
+      }
+    }
+
+    .back-nav {
+      img {
+        @include transform(rotateY(180deg));
+
+        margin-left: 0.46875rem;
+        margin-right: 0;
+      }
+    }
+
+    .mobile-sub-menu {
+      ul {
+        li {
+          padding-right: 0;
+        }
+      }
+    }
+
+    .mobile-links {
+      ul {
+        li {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  .menu-hamburger {
+    margin-left: 0;
+  }
+}

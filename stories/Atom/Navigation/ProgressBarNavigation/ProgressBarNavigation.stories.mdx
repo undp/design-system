@@ -1,0 +1,66 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ProgressBarNavigation } from './ProgressBarNavigation';
+
+
+<Meta title="Utilities/Progress bar navigation" argTypes={{
+  Type: {
+    options: ['Large', 'Small'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'Large'
+  },
+  Colors: {
+    options: ['yellow', 'red', 'green', 'blue'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'yellow'
+  }
+}}/>
+
+# Progress Bar
+The Progress Bar is used to display an indicator showing the completion progress of a task, typically displayed as a progress bar.
+
+#### When to use:
+- When a user page needs an indicator to be displayed on top of the page to show the length of scroll for a particular page.
+
+### Formatting
+#### Default
+Progress bar can be used as reading meter where scrolling progress of the page is captured in the bar. In this case additional javascript initialization is required as explained below. 
+
+It has different color variations, which increase the length of the color based on the amount of scrolling done by the user.
+
+<Canvas>
+  <Story 
+    name="Progress bar navigation"
+    parameters={{
+        layout: "fullscreen",
+        docs: {
+          inlineStories: false,
+        }
+      }}>
+    {(args) =>{
+      return <ProgressBarNavigation {...args}></ProgressBarNavigation>;
+    }}
+  </Story>
+</Canvas>
+
+### Usage
+To use this component, follow these steps:
+- Copy the HTML from the canvas
+- Add it to your HTML page
+- Include the CSS and JS listed below
+- You should have loader-ready
+
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/progress-bar-navigation.css
+
+#### JS:
+- dist/js/scrolling-progress-bar.min.js
+
+### Changelog
+1.0 — Released component
+
+

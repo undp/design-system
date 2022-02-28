@@ -1,0 +1,64 @@
+import { Meta, Story,  Canvas, Source } from '@storybook/addon-docs';
+import { PublicationCard } from './PublicationCard';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {download: 'Download', readmore: 'READ MORE'}; return engText;
+    case 'arabic': const arabicText = {download: 'تحميل', readmore: 'اقرأ أكثر'}; return arabicText;
+    case 'burmese': const burmeseText = {download: 'ဒေါင်းလုပ်', readmore: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {download: 'ダウンロード', readmore: '続きを読む'}; return japaneseText;
+    default:
+      return {download: 'Download', readmore: 'READ MORE'};
+  }
+};
+
+<Meta title="Components/UI components/Cards/Publication card"
+  argTypes={{
+    variant: {
+      options: ["Readmore", "Download", "Both"],
+      control: { type: "radio" },
+    },
+  }}
+ />
+
+# Publication Card
+
+The Publication card defines a card of information data with some items -  Title, Image, format and Downlaod files. 
+
+### Overview
+Publication cards show the publication category images, title, format, and download option to related the content in the design with short information
+
+<Canvas>
+  <Story name="Publication card" >
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <PublicationCard 
+        download={caption.download} readmore={caption.readmore} image {...args} 
+      ></PublicationCard>;
+    }}
+  </Story>
+</Canvas>
+
+### Usage:
+Copy HTML from the HTML tab of canvas and include below listed css file.
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/publication-card.min.css
+
+#### JS:
+
+NA
+
+### Interactions
+- Hover state applies to entire
+- By clicking on the download Link, the associated file will be downloaded
+- By clicking on the read more Link, the associated URL will be opened
+
+### Changelog
+1.0 — Released component

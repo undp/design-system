@@ -1,0 +1,143 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/base';
+
+/* page-wide-card start */
+.wide-card {
+  border-top: 2px solid $color-black;
+
+  &__wrapper {
+    position: relative;
+
+    @include devicebreak(small) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  h6 {
+    font-size: $font-size-12;
+    font-weight: 700;
+    margin-bottom: 0;
+    padding: $spacing-05 $spacing-05 1.125rem $spacing-05;
+
+    @include devicebreak(medium) {
+      padding: $spacing-05 $spacing-06;
+    }
+  }
+
+  a {
+    @extend %img_none;
+  }
+
+  .button-primary {
+    @include devicebreak(medium) {
+      margin: 0 1.5rem;
+    }
+  }
+}
+
+.wide-card__description {
+  @include devicebreak(medium) {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  h4 {
+    margin: $spacing-05;
+
+    @include devicebreak(medium) {
+      margin: $spacing-09 $spacing-06 $spacing-07;
+    }
+
+    a {
+      font-size: inherit;
+    }
+  }
+
+  p {
+    margin: $spacing-05 $spacing-05 $spacing-07;
+
+    @include devicebreak(medium) {
+      margin: 0 $spacing-06 $spacing-07;
+    }
+  }
+
+  .button-arrow {
+    @include devicebreak(medium) {
+      margin-left: $spacing-06;
+    }
+  }
+}
+
+div.wide-card__image {
+  $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+  position: relative;
+
+  a {
+    @include devicebreak(medium) {
+      &::before {
+        @include transition(0.5s ease);
+
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &:hover {
+    a::before {
+      background-image: linear-gradient(67.76deg, $color-yellow, transparent 61.11%);
+      opacity: 0.75;
+    }
+
+    @each $name, $color in $colors {
+      &.#{$name} a::before {
+        background-image: linear-gradient(67.76deg, #{$color}, transparent 61.11%);
+        opacity: 0.75;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .wide-card__description {
+    .button-arrow {
+      @include devicebreak(medium) {
+        margin-left: 0;
+        margin-right: $spacing-06;
+      }
+    }
+  }
+
+  .wide-card__image {
+    &:hover {
+      a::before {
+        background-image: linear-gradient(297deg, $color-yellow, transparent 61.11%);
+      }
+
+      @each $name, $color in $colors {
+        &.#{$name} a::before {
+          background-image: linear-gradient(297deg, #{$color}, transparent 61.11%);
+        }
+      }
+    }
+  }
+}
+
+/* page-wide-card end */

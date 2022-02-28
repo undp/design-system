@@ -1,0 +1,182 @@
+@import '../../../../assets/scss/breakpoints';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+
+/* statscard start */
+div.stats-card {
+  @include transition(300ms all);
+
+  background-color: $color-gray-200;
+  box-sizing: border-box;
+  word-break: break-all;
+
+  @include devicebreak(small) {
+    max-width: 21.938rem;
+    padding: $spacing-08;
+  }
+
+  h3 {
+    font-weight: 600;
+    margin-bottom: $spacing-08;
+
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-11;
+    }
+  }
+
+  h2 {
+    @include transition(300ms all);
+
+    color: $color-gray-200;
+    font-family: $Font-Family-SohneBreit;
+    font-size: $spacing-11;
+    letter-spacing: 0.05rem;
+    line-height: 1.1;
+    margin-bottom: $spacing-06;
+    text-shadow:
+      -1px -1px 0 $color-black,
+      1px -1px 0 $color-black,
+      -1px 1px 0 $color-black,
+      1px 1px 0 $color-black;
+
+    @supports (-webkit-text-stroke: 2px $color-black) {
+      text-shadow: none;
+      -webkit-text-stroke: 2px $color-black;
+    }
+
+    @include devicebreak(medium) {
+      font-size: 6.875rem;
+      line-height: 1.09;
+      margin-bottom: $spacing-07;
+    }
+  }
+
+  h4 {
+    letter-spacing: 0;
+    line-height: 1.15;
+    margin-bottom: $spacing-03;
+
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-05;
+    }
+  }
+
+  p {
+    margin: 0;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-25;
+    }
+  }
+
+  &.x-large {
+    padding: $spacing-08;
+
+    @include devicebreak(medium) {
+      max-width: 42.75rem;
+      padding: $spacing-12;
+    }
+
+    h2 {
+      font-size: $spacing-90;
+
+      @include devicebreak(medium) {
+        font-size: 7.5rem;
+      }
+    }
+
+    h3 {
+      font-size: $spacing-08;
+      font-weight: 700;
+
+      @include devicebreak(medium) {
+        font-size: 3.438rem;
+      }
+    }
+
+    h4 {
+      font-weight: 600;
+
+      @include devicebreak(small) {
+        font-size: 1.875rem;
+      }
+    }
+  }
+
+  &.large {
+    @include devicebreak(medium) {
+      max-width: 28rem;
+      padding: $spacing-12 $spacing-10;
+    }
+  }
+
+  &.medium {
+    padding: $spacing-09;
+
+    @include devicebreak(medium) {
+      max-width: $spacing-330;
+
+      h4 {
+        font-weight: 600;
+      }
+    }
+
+    p {
+      font-size: $font-size-20;
+    }
+  }
+
+  &.small {
+    max-width: 10.625rem;
+    padding: $spacing-06;
+
+    @include devicebreak(medium) {
+      max-width: 13.25rem;
+      padding: $spacing-07;
+    }
+
+    h2 {
+      font-size: $spacing-50;
+      height: $spacing-10;
+      white-space: nowrap;
+
+      @include devicebreak(medium) {
+        font-size: $spacing-70;
+      }
+    }
+
+    h4 {
+      font-size: $font-size-20;
+
+      @include devicebreak(medium) {
+        font-size: $font-size-25;
+      }
+    }
+
+    p {
+      font-size: $font-size-14;
+      word-break: normal;
+
+      @include devicebreak(medium) {
+        font-size: $font-size-16;
+      }
+    }
+  }
+
+  &:hover {
+    // color map
+    $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+    background-color: $color-yellow;
+
+    & h2 {
+      color: $color-black;
+    }
+
+    @each $name, $color in $colors {
+      &.#{$name} {
+        background-color: #{$color};
+      }
+    }
+  }
+}

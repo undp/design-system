@@ -1,0 +1,196 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+
+/* fixed carousel start */
+.fixed-carousel {
+  overflow: hidden;
+
+  .slider-slide {
+    @extend %carousel_slider_slide;
+  }
+
+  &__image {
+    display: block;
+    object-fit: contain;
+
+    @include devicebreak(medium) {
+      flex: 0 0 18rem;
+      max-width: 18rem;
+    }
+
+    @include devicebreak(large) {
+      flex: 0 0 23.563rem;
+      max-width: 23.563rem;
+    }
+
+    @include devicebreak(xlarge) {
+      flex: 0 0 28rem;
+      max-width: 28rem;
+    }
+
+    @include devicebreak(small) {
+      max-width: 10.625rem;
+    }
+  }
+
+  h2 {
+    margin-bottom: $spacing-50;
+    margin-top: $spacing-11;
+  }
+
+  .slide-content {
+    @include devicebreak(medium) {
+      align-content: space-between;
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 3rem;
+      padding-right: 1.5rem;
+    }
+
+    @include devicebreak(large) {
+      padding-left: 8.875rem;
+      padding-right: 4rem;
+    }
+
+    @include devicebreak(xlarge) {
+      padding-right: 6rem;
+    }
+
+    @include devicebreak(small) {
+      margin-top: 1.5rem;
+      padding-left: 1.5rem;
+      padding-right: 2rem;
+    }
+
+    > div {
+      width: 100%;
+    }
+
+    .button {
+      text-transform: uppercase;
+
+      @include devicebreak(small) {
+        display: inline-flex;
+      }
+    }
+
+    &-wrap {
+      h6 {
+        @extend %carousel_tag;
+      }
+
+      h4 {
+        @extend %carousel_title;
+
+        @include devicebreak(medium) {
+          margin-bottom: 2rem;
+        }
+      }
+
+      p {
+        @extend %carousel_desc;
+
+        @include devicebreak(large) {
+          margin-bottom: 3.375rem;
+        }
+
+        @include devicebreak(small) {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+
+  &__button-wrap {
+    @include devicebreak(medium) {
+      display: inline-flex;
+    }
+  }
+
+  .swiper-scrollbar {
+    @extend %carousel_bar_margin;
+  }
+
+  .slider-arrows {
+    align-items: center;
+    display: flex;
+    margin-left: 2.5rem;
+
+    @include devicebreak(large) {
+      margin-left: 4rem;
+    }
+
+    [class*='swiper-button-'] {
+      @extend %carousel_arrow;
+
+      &:first-child {
+        margin-right: 0.75rem;
+      }
+
+      &:last-child {
+        margin-left: 0.75rem;
+      }
+
+      img {
+        vertical-align: bottom;
+        width: 2.813rem;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .fixed-carousel {
+    .slide-content {
+      @include devicebreak(medium) {
+        padding-left: 1.5rem;
+        padding-right: 3rem;
+      }
+
+      @include devicebreak(large) {
+        padding-left: 4rem;
+        padding-right: 8.875rem;
+      }
+
+      @include devicebreak(xlarge) {
+        padding-left: 6rem;
+      }
+
+      @include devicebreak(small) {
+        padding-left: 2rem;
+        padding-right: 1.5rem;
+      }
+    }
+
+    .slider-arrows {
+      margin-left: 0;
+      margin-right: 2.5rem;
+
+      @include devicebreak(large) {
+        margin-right: 4rem;
+      }
+
+      [class*='swiper-button-'] {
+        &:first-child {
+          margin-left: 0.75rem;
+          margin-right: 0;
+
+          img {
+            @include transform(rotate(180deg));
+          }
+        }
+
+        &:last-child {
+          margin-left: 0;
+          margin-right: 0.75rem;
+
+          img {
+            @include transform(rotate(-180deg));
+          }
+        }
+      }
+    }
+  }
+}
+
+/* fixed carousel end */

@@ -1,0 +1,115 @@
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+@import '../../assets/scss/swiper';
+@import '../../assets/scss/mixins';
+
+$backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
+
+/* stats-card-grid start */
+.stats-card-slider {
+  overflow-x: hidden;
+
+  @include devicebreak(medium) {
+    .swiper {
+      &-wrapper {
+        display: block;
+      }
+
+      &-slide {
+        padding-left: $spacing-04;
+        padding-right: $spacing-04;
+        width: initial;
+      }
+    }
+  }
+
+  @include devicebreak(small) {
+    .stats-card.small {
+      max-width: 100%;
+      pointer-events: none;
+    }
+
+    .swiper {
+      &-slide-active {
+        .stats-card {
+          background-color: $color-light-yellow;
+
+          @each $name, $color in $backgroundcolors {
+            &.#{$name} {
+              background-color: #{$color};
+            }
+          }
+
+          h2 {
+            color: $color-black;
+          }
+        }
+      }
+    }
+  }
+
+  .stats-card-parallax {
+    margin-bottom: 2.625rem;
+
+    @include devicebreak(medium) {
+      display: flex;
+      justify-content: center;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .stats-card {
+    @include devicebreak(large) {
+      &.small {
+        box-sizing: border-box;
+        max-width: 18.75rem;
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      background-color: $color-light-yellow;
+
+      @each $name, $color in $backgroundcolors {
+        &.#{$name} {
+          background-color: #{$color};
+        }
+      }
+    }
+  }
+
+  &.swiper-initialized {
+    @include devicebreak(small) {
+      padding-right: $spacing-10;
+    }
+
+    .swiper-scrollbar {
+      @include devicebreak(small) {
+        padding-right: $spacing-10;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .stats-card-slider {
+    &.swiper-initialized {
+      @include devicebreak(small) {
+        padding-left: $spacing-10;
+        padding-right: 0;
+      }
+
+      .swiper-scrollbar {
+        @include devicebreak(small) {
+          padding-left: $spacing-10;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+/* stats-card-grid end */

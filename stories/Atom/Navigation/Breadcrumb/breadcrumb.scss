@@ -1,0 +1,19 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+// * breadcrumb start *//
+.breadcrumb__item {
+  @extend %border-none;
+  @extend %img_none;
+
+  color: $color-dark-red;
+  font-size: $font-size-12;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $color-red;
+  }
+}
+// * breadcrumb end *//

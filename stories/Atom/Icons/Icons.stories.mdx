@@ -1,0 +1,74 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Icons } from './Icons';
+import data from './Icons.json';
+const arrfor = data.icons;
+
+<Meta
+  title="Foundation/Icons"
+  parameters={{
+    viewMode: "docs",
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  }}
+/>
+
+<style>{`
+  #story--foundation-icons--icons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #story--foundation-icons--icons > div > div {
+      margin: 0 auto;
+  }
+  #story--foundation-icons--icons p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+`}</style>
+
+# Icons
+The Icon components can grab attention and draw users into a piece of content. They can help users quickly understand the context in which they are placed.
+
+### When to use:
+- When content is dense and complex to help comprehend the users the available actions
+- When space needs to be saved instead of using words or long phrases.
+
+<Canvas>
+  <Story name="Icons" parameters={{ docs: { source: { code: 
+    arrfor.map((item) => {
+         if(item.type == 'img') {
+           return (`<img src="icons/${item.name}.svg" alt="icon"/>\n`);
+          } else {
+           return (`<span class="${item.name}"></span>\n`);
+         }
+      }).join('')
+   } } }}>
+    {arrfor.map((item, index) => {
+      if(item.type == 'img') {
+        return (<div key={index}><img src={`icons/${item.name}.svg`} alt="icon"/>
+        <p>{`${item.label}`}</p></div>);
+      }
+      if(item.name == 'download-animated' , 'chevron-right-animated') {
+        return (<div key={index}><span className={`${item.name}`}><i></i></span><p>{`${item.label}`}</p></div>);
+      } else {
+        return (<div key={index}><span className={`${item.name}`}></span><p>{`${item.label}`}</p></div>);
+      }
+    })}
+  </Story>
+</Canvas>
+
+### Usage
+
+- For svg icons download it from dist/images and use it on your webpage.
+- For CSS based icons eg: .chevron-right-animated, .external-link-animated and .download-animated use these classes in **span** element and include **dist/css/icons.css** file.
+
+
+#### CSS and JS References
+
+#### CSS:
+Add the base layout style from
+- dist/css/base-minimal.min.css
+
+#### JS:
+NA

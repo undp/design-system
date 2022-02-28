@@ -1,0 +1,25 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+/* tertiary start */
+.tertiary {
+  h4 {
+    font-weight: 600;
+    margin-bottom: $spacing-06;
+
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-09;
+    }
+  }
+
+  h5 {
+    margin-bottom: $spacing-04;
+
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-06;
+    }
+  }
+}
+
+/* tertiary end */

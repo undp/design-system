@@ -1,0 +1,194 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import {FluidImageSizeCarousel} from './FluidImageSizeCarousel';
+import fluidCarouselImg from '../../../../assets/images/fluid-carousel-img.jpg';
+
+export const statsArray = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {data: [{
+      slideImage: fluidCarouselImg,
+      tagtext: 'Blog post',
+      titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
+      descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+      buttonText: 'Read More'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'Blog post',
+      titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
+      descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+      buttonText: 'Read More'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'Blog post',
+      titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
+      descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+      buttonText: 'Read More' 
+    }]}; return engText.data;
+    case 'arabic': const arabicText = {data: [{
+      slideImage: fluidCarouselImg,
+      tagtext: 'مشاركة مدونة',
+      titleText: 'نقاط الدخول والخروج: التطرف العنيف في جنوب شرق آسيا',
+      descText: 'تلخص هذه الدراسة أربع أوراق تكميلية متعمقة تستكشف ...',
+      buttonText: 'اقرأ أكثر'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'مشاركة مدونة',
+      titleText: 'نقاط الدخول والخروج: التطرف العنيف في جنوب شرق آسيا',
+      descText: 'تلخص هذه الدراسة أربع أوراق تكميلية متعمقة تستكشف ...',
+      buttonText: 'اقرأ أكثر'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'مشاركة مدونة',
+      titleText: 'نقاط الدخول والخروج: التطرف العنيف في جنوب شرق آسيا',
+      descText: 'تلخص هذه الدراسة أربع أوراق تكميلية متعمقة تستكشف ...',
+      buttonText: 'اقرأ أكثر'
+    }]}; return arabicText.data;
+    case 'burmese': const burmeseText = {data: [{
+      slideImage: fluidCarouselImg,
+      tagtext: 'ဘလော့ပို့စ်',
+      titleText: 'အဝင်နှင့်အထွက်အချက်များ- အရှေ့တောင် အာရှတွင် ပြင်းထန်သော အစွန်းရောက်ဝါဒ',
+      descText: 'ဤလေ့လာမှုသည် ဒေသန္တရပုံစံကို စူးစမ်းလေ့လာသည့် အသေးစိပ် လေးနက်သော စာတမ်းလေးစောင်ကို အကျဉ်းချုပ်ဖော်ပြထားသည်...',
+      buttonText: 'ပိုပြီးဖတ်ပါ'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'ဘလော့ပို့စ်',
+      titleText: 'အဝင်နှင့်အထွက်အချက်များ- အရှေ့တောင် အာရှတွင် ပြင်းထန်သော အစွန်းရောက်ဝါဒ',
+      descText: 'ဤလေ့လာမှုသည် ဒေသန္တရပုံစံကို စူးစမ်းလေ့လာသည့် အသေးစိပ် လေးနက်သော စာတမ်းလေးစောင်ကို အကျဉ်းချုပ်ဖော်ပြထားသည်...',
+      buttonText: 'ပိုပြီးဖတ်ပါ'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'ဘလော့ပို့စ်',
+      titleText: 'အဝင်နှင့်အထွက်အချက်များ- အရှေ့တောင် အာရှတွင် ပြင်းထန်သော အစွန်းရောက်ဝါဒ',
+      descText: 'ဤလေ့လာမှုသည် ဒေသန္တရပုံစံကို စူးစမ်းလေ့လာသည့် အသေးစိပ် လေးနက်သော စာတမ်းလေးစောင်ကို အကျဉ်းချုပ်ဖော်ပြထားသည်...',
+      buttonText: 'ပိုပြီးဖတ်ပါ'
+    }]}; return burmeseText.data;
+    case 'japanese': const japaneseText = {data: [{
+      slideImage: fluidCarouselImg,
+      tagtext: 'ブログ投稿',
+      titleText: '入口と出口：東南アジアにおける暴力的過激主義',
+      descText: 'この調査では、ローカライズされたものを調査する4つの補足的な詳細な論文を要約しています…',
+      buttonText: '続きを読む'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'ブログ投稿',
+      titleText: '入口と出口：東南アジアにおける暴力的過激主義',
+      descText: 'この調査では、ローカライズされたものを調査する4つの補足的な詳細な論文を要約しています…',
+      buttonText: '続きを読む'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'ブログ投稿',
+      titleText: '入口と出口：東南アジアにおける暴力的過激主義',
+      descText: 'この調査では、ローカライズされたものを調査する4つの補足的な詳細な論文を要約しています…',
+      buttonText: '続きを読む'
+    }]}; return japaneseText.data;
+    default:
+    const dummy =  {data: [{
+      slideImage: fluidCarouselImg,
+      tagtext: 'Blog post',
+      titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
+      descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+      buttonText: 'Read More'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'Blog post',
+      titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
+      descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+      buttonText: 'Read More'
+    },
+    {
+      slideImage: fluidCarouselImg,
+      tagtext: 'Blog post',
+      titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
+      descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
+      buttonText: 'Read More'
+    }]};
+    return dummy.data
+  }
+};
+
+<Meta title="Components/UI components/Carousel/Fluid carousel"/>
+
+# carousel - Fluid image size carousel
+
+The Carousel is a slideshow of multiple images or content.
+
+### Overview
+The Carousel component is created for showing sliders, designation, and image in a particular section. It is a multi-usage component that creates teasing kinds of content.
+
+#### When to use:
+
+When multiple images or content is to be displayed in a single slide.
+
+### Formatting
+
+#### Default
+It consists of multiple grids with an image, description, and CTA link.
+
+### Content
+There are 3 types of Carousel: Fluid, Image, and Fixed 
+1. Fluid Image Size Carousel Component:
+In Fluid Image Size Carousel Component, the page layout of the content is adjusted as per the user’s device screen. It consists of a horizontal scroll bar, Image, Text area, CTA Link, Right cursor arrow (left in case of RTL).
+
+2. Image Only Carousel Component:
+In Image Only Carousel Component, only images are available in the slideshow while content and cta links are not included.
+
+3. Fixed Image Size Carousel Component:
+In Fixed Image Size Carousel Component, the size of the image does not change as per the user’s device screen. It consists of a horizontal scroll bar, Image, Text area, Primary button with arrow, Pagination(tablet only), Cursor arrow right (left in case of RTL). The horizontal scroll bar indicates the current position.
+
+
+### Behaviors
+
+#### States 
+Fluid Image Size Carousel Component:
+- Default state
+- Tablet
+
+<Canvas>	
+<Story name="Fluid carousel">
+  {(args, { globals: { locale } }) => {
+    const caption = statsArray(locale);
+    return <FluidImageSizeCarousel data={caption}></FluidImageSizeCarousel>;
+  }}
+</Story>
+</Canvas>
+
+### Usage:
+- Copy HTML from the HTML tab of canvas.
+- Include Swiper library from here https://swiperjs.com/get-started in your html page.
+- If you use fixed image size carousel then include fluid-image-size-carousel.min.css and initialize carousel by calling swiper('.fixed-carousel', '.fixed-carousel__button-wrap'); functions
+- If you use Fluid image size carousel then include fixed-size-carousel.min.css and initialize carousel by calling swiper('.fluid-carousel', '.slide-content'); functions
+- If you use Image only carousel then include image-only-carousel.min.css and initialize the carousel by calling swiper('.image-carousel', '.slider-slide'); functions.
+- If you want to add left-right animation then add data-viewport=”true” attribute to the HTML element you want to animate and include viewport.min.js file.
+- Refer [this document](https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration & options
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from
+- dist/css/base-minimal.min.css
+- dist/css/components/fluid-image-size-carousel.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/swiper.min.css
+
+#### JS:
+- dist/js/swiper.min.js
+- dist/js/viewport.min.js
+- 3rd party libraries 
+Swiper (https://swiperjs.com/get-started)
+
+### Interactions
+- By clicking on the Chips and CTA Links user is directed to the detailed information page.
+- By clicking on the Arrows Buttons, the slides can be swiped forward or backward. 
+
+### Changelog
+1.0 — Released component

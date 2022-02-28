@@ -1,0 +1,14 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/typography';
+@import '../../../assets/scss/mixins';
+
+/* post header start */
+.post-wrapper {
+  margin-top: $spacing-05;
+
+  @include devicebreak(medium) {
+    margin-top: 4.563rem;
+  }
+}
+
+/* post header end */

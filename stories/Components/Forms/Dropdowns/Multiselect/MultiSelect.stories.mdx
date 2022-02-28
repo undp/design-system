@@ -1,0 +1,117 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import MultiSelect from "./MultiSelect";
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = "Category";
+      return engText;
+    case "arabic":
+      const arabicText = "فئة";
+      return arabicText;
+    case "burmese":
+      const burmeseText = "အမျိုးအစား";
+      return burmeseText;
+    case "japanese":
+      const japaneseText = "カテゴリー";
+      return japaneseText;
+    default:
+      return "Category";
+  }
+};
+
+<Meta
+  title="Components/Forms/Dropdown/Multiselect"
+  argTypes={{
+    Height: {
+      options: ["Fix height", "Auto height"],
+      control: { type: "radio" },
+      defaultValue: "Auto height",
+    },   
+    variant: {
+       options: ["Radio", "Checkbox"],
+       control: { type: "radio" },
+       defaultValue: "Checkbox",
+     },
+  }}
+/>
+
+# MultiSelect
+The multiselect dropdown allows the user to multiple options from the list.
+
+### Overview
+The multiselect component allows users to choose multiple options from a list. It is used in forms when there are multiple choices that can be collapsed under one title.
+
+When to use:
+- When multiselect options are to be grouped under a single title.
+
+Formatting
+#### Default
+It consists of a dropdown with an arrow from which the user can select multiple options.
+
+### Content
+In the multiselect dropdown, multiple options can be selected.
+
+The direction of the arrow indicates if multiple options are selected. The downward arrow indicates a closed box and upward arrow indicates open box.
+
+### Behaviors
+
+#### States 
+A multi-select box in an open state can adjust its height to the content (default behavior) or use preset max height by applying a .fix-height  class to the unordered list container. 
+
+#### Closed:
+
+#### Open:
+- The sidebar component with a red colored box and empty space in the default state indicates that the option is not selected. 
+- The sidebar component with a red colored box and empty space in the hover state indicates that the option is not selected and it changes appearance once the mouse hovers over it.
+- The sidebar component with a red colored box and red tick in the default state indicate that the option is selected.
+- The sidebar component with a red colored box and red tick in the hover state indicate that the option is selected and it changes appearance once the mouse hovers over it.
+- The sidebar component with the download icon in the default state indicates that the option can be downloaded. 
+- The sidebar component with the download icon in the hover state indicates that the option can be downloaded and it changes appearance once the mouse hovers over it.
+- The sidebar component with an external link icon in the default state indicates that the option contains an external link related to the search.
+- The sidebar component with external link icon in hover state indicates that the options contains an external link related to the search and it changes appearance once the mouse hovers over it. 
+
+
+<Canvas>
+<Story name="MultiSelect">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <MultiSelect
+        locale={locale}
+        {...args}
+        text={caption}
+        eleId=""
+      ></MultiSelect>
+    );
+  }}
+</Story>
+</Canvas>
+
+### Usage:
+1. Select the variant either Checkbox or Radio button and height option for dropdown which has Fixed Height or Auto Height from the control tab on canvas.
+2. Then grab the HTML from the HTML tab and include the below listed css and js files.
+3. If you choose Checkbox variant then include checkbox.min.css
+4. If you choose Radio button variant then include radio.min.css
+5. Initialize the multi-select by calling multiSelect() function.
+
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/multi-select.min.css
+- dist/css/components/checkbox.min.css
+- dist/css/components/radio.min.css
+
+#### JS:
+- dist/js/multi-select.min.js
+
+### Interactions
+- By clicking on the arrow, the drop-down box can be opened or closed.
+- By clicking on the option/options, those can be selected.
+
+### Changelog
+1.0 — Released component
+

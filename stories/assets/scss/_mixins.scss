@@ -1,0 +1,704 @@
+@import './variables';
+@import './breakpoints';
+
+//background image gradient
+@mixin background-image($deg, $colorname, $opacity) {
+  background: linear-gradient($deg, $colorname, $opacity);
+}
+
+// select box appearance
+@mixin x-appearance($value) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  appearance: $value;
+}
+
+//animation
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -ms-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
+}
+
+//keyframe
+@mixin keyframes($keyframes...) {
+  -webkit-keyframes: $keyframes;
+  -moz-keyframes: $keyframes;
+  -ms-keyframes: $keyframes;
+  -o-keyframes: $keyframes;
+  keyframes: $keyframes;
+}
+
+//transition
+@mixin transition($transitions...) {
+  -webkit-transition: $transitions;
+  -moz-transition: $transitions;
+  -ms-transition: $transitions;
+  -o-transition: $transitions;
+  transition: $transitions;
+}
+
+//transition-delay
+@mixin transitiondelay($transitiondelay...) {
+  -webkit-transition-delay: $transitiondelay;
+  -moz-transition-delay: $transitiondelay;
+  -ms-transition-delay: $transitiondelay;
+  -o-transition-delay: $transitiondelay;
+  transition-delay: $transitiondelay;
+}
+
+//transform
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+  transition: $transforms;
+}
+
+// Rotate
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// Translate
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+// Scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+// Skew
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//gradient color
+@mixin gradient($direction, $list) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
+}
+
+/* mixing  end */
+
+/* placehoder start */
+%paragragh-font-14 {
+  font-size: $font-size-12;
+
+  @include devicebreak(medium) {
+    font-size: $font-size-14;
+  }
+}
+
+%paragragh-font-16 {
+  font-size: $font-size-14;
+  line-height: 1.4;
+
+  @include devicebreak(medium) {
+    font-size: $font-size-16;
+  }
+}
+
+%paragragh-font-20 {
+  font-size: $font-size-16;
+
+  @include devicebreak(medium) {
+    font-size: $font-size-20;
+  }
+}
+
+%paragragh-font-24 {
+  font-size: $font-size-20;
+  line-height: 1.1;
+
+  @include devicebreak(medium) {
+    font-size: $font-size-24;
+  }
+}
+
+%border-bottom {
+  border-bottom: 1px solid $color-gray-400;
+}
+
+%img-cover {
+  height: 100%;
+  object-fit: cover;
+  padding: 0;
+  width: 100%;
+}
+
+%border-none {
+  @extend %img_none;
+
+  border: none;
+}
+
+%header-icon {
+  background-color: $color-blue-600;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0;
+  height: 26px;
+  margin-right: $spacing-03;
+  padding: 0;
+  width: 25px;
+
+  @include devicebreak(small) {
+    margin-right: 0;
+    -webkit-mask: inherit;
+    mask: inherit;
+  }
+
+  &:hover {
+    background-color: $color-blue-400;
+  }
+}
+
+%frosted-bg {
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  background: rgba(247, 247, 247, 0.8);
+}
+
+%footer-block {
+  align-items: center;
+  border-bottom: 1px solid $color-white;
+  justify-content: space-between;
+  margin-bottom: $spacing-07;
+}
+
+%mobile-nav {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+%button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
+%sdg-modal-title {
+  h2 {
+    font-size: $font-size-25;
+
+    @include devicebreak(medium) {
+      font-size: 3.438rem;
+      padding-left: $spacing-05;
+    }
+  }
+
+  h3 {
+    font-size: $font-size-20;
+
+    @include devicebreak(medium) {
+      font-size: 2.188rem;
+    }
+  }
+}
+
+%sidebar {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: $spacing-05;
+  position: relative;
+
+  @include devicebreak(medium) {
+    padding: $spacing-06;
+  }
+}
+
+%sidebar-selected {
+  background-color: $color-blue-600;
+
+  h6 {
+    color: $color-white;
+  }
+
+  &:hover {
+    background-color: $color-blue-600;
+  }
+}
+
+%checbox-radio-before {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid $color-dark-red;
+  cursor: pointer;
+  height: 16px;
+  margin: 0;
+  width: 16px;
+
+  &:hover {
+    border-color: $color-light-pink;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 4px $color-blue-800;
+    outline: 0;
+  }
+}
+
+%img-hover-effect {
+  @include transition(opacity 0.5s ease);
+
+  background-image: linear-gradient(42deg, $color-yellow, transparent 80%);
+  opacity: 0;
+}
+
+%button {
+  align-items: center;
+  border: none;
+  display: flex;
+  font-size: $font-size-16;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1;
+
+  @include devicebreak(medium) {
+    display: inline-flex;
+  }
+}
+
+%ctaimg {
+  content: '';
+  height: 1.188rem;
+  margin-left: $spacing-04;
+  margin-top: 2px;
+  width: 0.813rem;
+
+  @include devicebreak(medium) {
+    margin-top: 0;
+  }
+}
+
+%field__image {
+  background-repeat: no-repeat;
+  height: 20px;
+  left: 10px;
+  left: 14px;
+  position: absolute;
+  top: 22px;
+  width: 20px;
+  z-index: 1;
+}
+
+%feature__card {
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+%arrow {
+  @include transform(translateY(-50%));
+  @include transition(all 200ms ease-in-out);
+
+  background:
+    url(#{$img-path-Iconfourback}/chevron-down.svg) no-repeat center
+    center;
+  content: '';
+  float: right;
+  height: 13px;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  width: 20px;
+}
+
+%absolute__content {
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+%sidebar-chevron {
+  @include transition(all 0.3s ease);
+  @include transform(translateY(-50%));
+
+  background: url(#{$img-path-Icon}/chevron-down.svg) no-repeat center center;
+  content: '';
+  height: 0.813rem;
+  position: absolute;
+  right: 1.188rem;
+  top: 50%;
+  width: 20px;
+}
+
+%language_switcher {
+  border: none;
+  font-size: $font-size-14;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+%img_none {
+  background-image: none;
+}
+
+%absolute__overflow {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+%select_default {
+  border: 2px solid $color-black;
+  color: $color-black;
+  cursor: pointer;
+  font-size: $font-size-16;
+  font-weight: 600;
+  line-height: 1.125rem;
+  margin: 0;
+  padding: $spacing-05 $spacing-50 $spacing-05 $spacing-05;
+  position: relative;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+%select_option {
+  border: 2px solid $color-black;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: none;
+  min-height: 100px;
+  padding: 0 $spacing-05;
+  width: 100%;
+
+  &:focus {
+    box-shadow: 0 0 4px $color-blue-800;
+    outline: 0;
+  }
+}
+
+%select_rtl {
+  padding-left: 3.125rem;
+  padding-right: $spacing-05;
+  text-align: right;
+}
+
+%select_rtl_after {
+  left: 16px;
+  margin: 0;
+  right: auto;
+}
+
+%no-animation {
+  -webkit-animation: none;
+  -moz-animation: none;
+  -ms-animation: none;
+  -o-animation: none;
+  animation: none;
+}
+
+%left-to-right {
+  @include transform(translateX(-100px));
+  @include transition(
+    transform 1.2s cubic-bezier(0.34, 0.41, 0.03, 1),
+    opacity 1.2s cubic-bezier(0.34, 0.41, 0.03, 1)
+  );
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+%inviewport_left_right {
+  @include transform(translateX(0));
+
+  opacity: 1;
+  visibility: visible;
+}
+
+[dir='rtl'] {
+  %left-to-right {
+    @include transform(translateX(100px));
+  }
+}
+
+%scale-up {
+  @include transform(scale(0.9));
+  @include transition(transform 1.2s cubic-bezier(0.34, 0.41, 0.03, 1));
+}
+
+%opacity-only {
+  @include transition(opacity 1.2s cubic-bezier(0.34, 0.41, 0.03, 1));
+
+  opacity: 0;
+}
+
+%inviewport_opacity_only {
+  @include transform(translateX(0));
+
+  opacity: 1;
+}
+
+%expand_to_size {
+  @include transition(max-width 0.5s ease);
+
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+%expand_search {
+  border: 0;
+  border-bottom: 1px solid $color-black;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+%carousel_arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  height: 2.75rem;
+  padding: 0;
+  vertical-align: bottom;
+  width: 2.75rem;
+}
+
+%carousel_tag {
+  color: $color-black;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.48px;
+  line-height: 0.84;
+  margin-bottom: $spacing-05;
+  text-transform: uppercase;
+}
+
+%carousel_title {
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+%carousel_desc {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+%carousel_bar_margin {
+  margin-bottom: $spacing-09;
+}
+
+%carousel_slider_slide {
+  @include devicebreak(medium) {
+    display: flex;
+  }
+}
+
+%header {
+  background-color: $color-gray-100;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  height: 7.1875rem;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+%background-white {
+  background-color: white;
+}
+
+%sub-external {
+  align-items: center;
+  justify-content: space-between;
+}
+
+%external {
+  align-items: center;
+  content: '';
+  cursor: pointer;
+  height: 1.125rem;
+  width: 1.25rem;
+}
+
+%footerlink {
+  @extend %img_none;
+
+  color: $color-white;
+  font-size: $font-size-16;
+  line-height: 1.4;
+
+  &:hover {
+    color: $color-blue-100;
+  }
+}
+
+%footerlinkinvert {
+  color: $color-black;
+
+  &:hover {
+    color: $color-gray-600;
+  }
+}
+
+%selectoption {
+  border-top: 1px solid $color-gray-400;
+  cursor: pointer;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+//burmese lang
+:lang(my) {
+  %carousel_tag {
+    font-size: 1rem;
+  }
+
+  %paragragh-font-16 {
+    font-size: $font-size-12;
+    line-height: 1.7;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-14;
+    }
+  }
+
+  %paragragh-font-20 {
+    font-size: $font-size-14;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-16;
+    }
+  }
+
+  %paragragh-font-24 {
+    font-size: $font-size-20;
+    line-height: 1.1;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-24;
+    }
+  }
+  %button {
+    font-size: $font-size-14;
+  }
+}
+
+%logo {
+  @include transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
+
+  width: 40px;
+
+  @include devicebreak(xlarge) {
+    height: 7.625rem;
+    width: 60px;
+
+    &.scrolled {
+      height: 7.1875rem;
+    }
+  }
+
+  @include devicebreak(mediumonlytab) {
+    height: 5.125rem;
+
+    &.scrolled {
+      height: 4.6875rem;
+    }
+  }
+}
+
+@mixin background($background...) {
+  background: linear-gradient($background);
+}
+
+%pseudo-icon {
+  box-sizing: border-box;
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+%chevron-right-expanded {
+  i {
+    @include transition(width 0.3s);
+
+    box-sizing: border-box;
+    display: block;
+    height: $spacing-05;
+    left: 1.25rem;
+    position: relative;
+    width: 0;
+
+    &::before {
+      @extend %pseudo-icon;
+
+      background-color: $color-red;
+      display: none;
+      height: 2px;
+      right: 0;
+      top: 7px;
+      width: 100%;
+    }
+
+    &::after {
+      @extend %pseudo-icon;
+
+      @include transform(rotate(45deg));
+
+      border-right: 2px solid $color-red;
+      border-top: 2px solid $color-red;
+      height: $spacing-04;
+      right: 0;
+      top: 2px;
+      width: $spacing-04;
+    }
+  }
+
+  &:hover {
+    i {
+      width: $spacing-11;
+
+      &::before {
+        display: unset;
+      }
+    }
+  }
+}
+
+%progress-bar {
+  position: fixed;
+  top: 4.7rem;
+  z-index: 5;
+
+  @include devicebreak(xlarge) {
+    top: 7.1875rem;
+  }
+}
+
+%animate-link {
+  background-image:
+    linear-gradient($color-dark-red, $color-dark-red),
+    linear-gradient($color-dark-red, $color-dark-red);
+  background-position: 100% 100%, -30px 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 2px, 0 1px;
+
+  &:hover {
+    @include animation(lineLoop-animation 2s linear infinite);
+  }
+}
+
+/* placehoder end */

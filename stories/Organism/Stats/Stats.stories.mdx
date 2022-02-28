@@ -1,0 +1,134 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Stats } from './Stats';
+import BackgroundImg from '../../assets/images/card2.jpg';
+
+export const statsArray = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {data: [{
+        number: '35',
+        percent: 'Percent',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    },
+    {
+        number: '19',
+        percent: 'People',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    },
+    {
+        number: '70',
+        percent: 'Countries',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    },
+    {
+        number: '50',
+        percent: 'Years',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    }]}; return engText.data;
+    case 'arabic': const arabicText = {data: [{
+        number: '35',
+        percent: "نسبه مئويه",
+        content: "الألم بحد ذاته هو الحب ، الزبون الرئيسي",
+    },
+    {
+        number: '19',
+        percent: 'الناس',
+        content: "الألم بحد ذاته هو الحب ، الزبون الرئيسي",
+    },
+    {
+        number: '70',
+        percent: 'بلدان',
+        content: "الألم بحد ذاته هو الحب ، الزبون الرئيسي",
+    },
+    {
+        number: '50',
+        percent: 'سنوات',
+        content: "الألم بحد ذاته هو الحب ، الزبون الرئيسي",
+    }]}; return arabicText.data;
+    case 'burmese': const burmeseText = {data: [{
+        number: '35',
+        percent: "ရာခိုင်နှုန်း",
+        content: "နာကျင်မှုကိုယ်တိုင်ကအချစ်ကိုအဓိကဖောက်သည်ချသည်",
+    },
+    {
+        number: '19',
+        percent: 'လူတွေ',
+        content: "နာကျင်မှုကိုယ်တိုင်ကအချစ်ကိုအဓိကဖောက်သည်ချသည်",
+    },
+    {
+        number: '70',
+        percent: 'နိုင်ငံတွေ',
+        content: "နာကျင်မှုကိုယ်တိုင်ကအချစ်ကိုအဓိကဖောက်သည်ချသည်",
+    },
+    {
+        number: '50',
+        percent: 'နှစ်တွေ',
+        content: "နာကျင်မှုကိုယ်တိုင်ကအချစ်ကိုအဓိကဖောက်သည်ချသည်",
+    }]}; return burmeseText.data;
+    case 'japanese': const japaneseText = {data: [{
+        number: '35',
+        percent: "パーセント",
+        content: "痛み自体は愛、主な顧客です"
+    },
+    {
+        number: '19',
+        percent: '人',
+        content: "痛み自体は愛、主な顧客です"
+    },
+    {
+        number: '70',
+        percent: '国',
+        content: "痛み自体は愛、主な顧客です"
+    },
+    {
+        number: '50',
+        percent: '年',
+        content: "痛み自体は愛、主な顧客です"
+    }]}; return japaneseText.data;
+    default:
+      const dummy =  {data: [{
+        number: '35',
+        percent: 'Percent',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    },
+    {
+        number: '19',
+        percent: 'People',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    },
+    {
+        number: '70',
+        percent: 'Countries',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    },
+    {
+        number: '50',
+        percent: 'Years',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    }]};
+    return dummy.data
+  }
+};
+
+<Meta title="Components/UI components/Stats" />
+
+# Stats
+
+The Stats is created for showing the Statspanel grid, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
+
+<Canvas>
+  <Story name="Stats">
+    {(args, { globals: { locale } }) => {
+      const caption = statsArray(locale);
+      return <Stats data={caption} imageback={BackgroundImg} ></Stats>;
+    }}
+  </Story>
+</Canvas>
+
+### 
+### Usage
+- Copy the HTML from the canvas
+- Include the `dist/css/components/stats.min.css` file
+- In you JS file initiliase following JS function
+  - statsHover();
+- Add following JS files too
+  - dist/js/stats.min.js

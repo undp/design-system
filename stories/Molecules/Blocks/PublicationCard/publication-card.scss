@@ -1,0 +1,171 @@
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+div.publication-card {
+  display: inline-block;
+
+  @include devicebreak(medium) {
+    min-width: 20.625rem;
+  }
+
+  &:hover {
+    div.publication-thumbnail__image {
+      &::after {
+        @include background-image(27.66deg, $color-yellow, transparent 70.49%);
+
+        opacity: 0.75;
+      }
+
+      @each $name, $color in $colors {
+        &.#{$name}:after {
+          @include background-image(27.66deg, $color-yellow, transparent 70.49%);
+
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+
+  .description {
+    align-items: center;
+    background: $color-gray-100;
+    padding: $spacing-06;
+
+    > div {
+      align-items: center;
+      flex-wrap: unset;
+
+      &:first-child {
+        text-align: left;
+      }
+
+      > :not(:first-of-type) {
+        border-left: $spacing-01 solid $color-silvery-moonlight;
+        text-align: right;
+      }
+    }
+  }
+
+  .title {
+    @extend %paragragh-font-20;
+
+    margin-bottom: $spacing-02;
+  }
+
+  .format {
+    @extend %paragragh-font-16;
+
+    color: $color-gray-600;
+    margin-bottom: $spacing-05;
+  }
+
+  .download {
+    @extend %paragragh-font-16;
+
+    align-items: center;
+    background-image: none;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    .download-animated {
+      margin-left: $spacing-04;
+    }
+
+    &:hover {
+      color: $color-shuttle-gray;
+
+      .download-animated {
+        &::after {
+          @include transform(rotate(-45deg) translate(7px, -7px));
+        }
+
+        &::before {
+          @include transform(translate(0, -10px));
+        }
+      }
+    }
+  }
+
+  .readmore {
+    @extend %paragragh-font-16;
+
+    align-items: center;
+    background-image: none;
+    cursor: pointer;
+    display: inline;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    .external-link-animated {
+      display: inline-block;
+      margin-left: $spacing-04;
+    }
+
+    &:hover {
+      color: $color-shuttle-gray;
+
+      .external-link-animated {
+        &::after {
+          @include transform(translate(5px, -5px));
+        }
+
+        &::before {
+          @include transform(rotate(-45deg) translate(7px, 0));
+        }
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .publication-card {
+    .readmore {
+      .external-link-animated {
+        margin-left: 0;
+        margin-right: $spacing-04;
+      }
+    }
+
+    .download {
+      .download-animated {
+        margin-left: 0;
+        margin-right: $spacing-04;
+      }
+    }
+
+    .description {
+      > div {
+        &:first-child {
+          text-align: right;
+        }
+
+        > :not(:first-of-type) {
+          border-left: 0;
+          border-right: $spacing-01 solid $color-silvery-moonlight;
+          text-align: left;
+        }
+      }
+    }
+
+    &:hover {
+      .publication-thumbnail__image {
+        &::after {
+          @include background-image(318deg, $color-yellow, transparent 70.49%);
+        }
+
+        @each $name, $color in $colors {
+          &.#{$name}:after {
+            @include background-image(318deg, #{$color}, transparent 70.49%);
+          }
+        }
+      }
+    }
+  }
+}

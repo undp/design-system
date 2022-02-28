@@ -1,0 +1,13 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+
+.content-data {
+  > div {
+    margin-bottom: $spacing-07;
+  }
+
+  .cta-container {
+    margin-top: 5.75rem;
+  }
+}

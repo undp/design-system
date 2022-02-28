@@ -1,0 +1,33 @@
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+.menu ul {
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin: $spacing-04 3.75rem $spacing-04 0;
+    padding-left: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .menu ul {
+    li {
+      margin-left: 3.75rem;
+      margin-right: 0;
+
+      a {
+        margin: 0;
+      }
+
+      &:last-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

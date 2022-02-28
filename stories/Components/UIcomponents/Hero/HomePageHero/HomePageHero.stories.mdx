@@ -1,0 +1,284 @@
+import { Meta, Story, Canvas, Anchor } from "@storybook/addon-docs";
+import { Homepagehero } from "./HomePageHero";
+import { Homepageherosplit } from "./HomePageHeroSplit";
+import { Homepageherooption } from "./HomePageHeroOption";
+import BackgroundImg from '../../../../assets/images/refugee.jpg';
+import BackgroundImg2 from '../../../../assets/images/refugee2.jpg';
+import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        titlename: "Title of the hero story",
+        text: 'Subtitle or excerpt of the story goes below and it is two lines ',
+        btnlabel: "READ MORE",
+        subtitle:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis quis nibh in molestie. Proin fermentum eleifend erat eget eleifend. Duis in eros condimentum, pretium ligula.",
+          imgsrc: BackgroundImg,
+          imgsrc2: BackgroundImg2,
+          imgalt:BackgroundImg,
+          videosrc: BackgroundVideo
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        titlename: "عنوان قصة البطل",
+        text: "يوجد أدناه عنوان فرعي أو مقتطف من القصة ويتألف من سطرين",
+        btnlabel: "اقرأ أكثر",
+        subtitle:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Cras mattis quis nibh في molestie. وهكذا كان المراهقون الدافئون هم احتياجات المراهقين. Duis in eros sauce سعر الملعقة.",
+          imgsrc: BackgroundImg,
+          imgsrc2: BackgroundImg2,
+          imgalt:BackgroundImg,
+          videosrc: BackgroundVideo
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        titlename: "သူရဲကောင်းဇာတ်လမ်းခေါင်းစဉ်",
+        text: "ဇာတ်လမ်း၏ ခေါင်းစဉ်ခွဲ သို့မဟုတ် ကောက်နုတ်ချက်သည် အောက်တွင်ရှိပြီး ၎င်းသည် စာကြောင်းနှစ်ကြောင်းဖြစ်သည်။",
+        btnlabel: "ပိုပြီးဖတ်ပါ",
+        subtitle:
+          "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ Cras mattis quis nibh မုဒိန်းကျင့်ခံရခြင်း။ ထို့ကြောင့်နွေးထွေးသောဆယ်ကျော်သက်များသည်ဆယ်ကျော်သက်များ၏လိုအပ်ချက်များဖြစ်သည်။ Duis in eros ငံပြာရည် တစ်ဇွန်း၏စျေးနှုန်း။",
+          imgsrc: BackgroundImg,
+          imgsrc2: BackgroundImg2,
+          imgalt:BackgroundImg,
+          videosrc: BackgroundVideo
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        titlename: "ヒーローストーリーのタイトル",
+        text: "ストーリーの字幕または抜粋は以下のとおりで、2行です",
+        btnlabel: "続きを読む",
+        subtitle:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 Cras mattis quis nibh inmolestie。 したがって、暖かいティーンエイジャーはティーンエイジャーのニーズでした。 エロスソースの飲酒運転、スプーンの価格。",
+          imgsrc: BackgroundImg,
+          imgsrc2: BackgroundImg2,
+          imgalt:BackgroundImg,
+          videosrc: BackgroundVideo
+      };
+      return japaneseText;
+    default:
+      return {
+        titlename: "Title of the hero story",
+        text: "Subtitle or excerpt of the story goes below and it is two lines",
+        btnlabel: "READ MORE",
+        subtitle:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis quis nibh in molestie. Proin fermentum eleifend erat eget eleifend. Duis in eros condimentum, pretium ligula.",
+          imgsrc: BackgroundImg,
+          imgsrc2: BackgroundImg2,
+          imgalt:BackgroundImg,
+          videosrc: BackgroundVideo
+      };
+  }
+};
+
+<Meta
+  title="Components/UI components/Hero/Homepage"
+  argTypes={{
+    variant: {
+      options: ["video", "image"],
+      control: { type: "radio" },
+      defaultValue: 'image'
+    },
+  }}
+/>
+
+# Homepage Hero - Full-width
+
+The Homepage Hero images are large sized images with text in front of the image and present at the top of the homepage. 
+
+### Overview
+The homepage Hero component is a multi-usage component  which creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle and Breadcrumb. Animation and atom tags are used for creating this card.
+
+#### When to use:
+
+When the website needs to grab the user's attention to a particular page.
+
+### Formatting
+
+#### Default
+It consists of a grid with title, subtitle, image and chip.
+
+### Content
+The Full-width homepage consists of an Image and title, subtitle, breadcrumbs and chip is in front of the image. The entire grid is covered with the image.
+
+### Behaviors
+
+#### States 
+There are two states in the Full-width homepage- Default and Mobile.
+1. Default: It consists of a horizontal image 
+
+2. Mobile: It consists of a vertical image.
+
+<Canvas>
+  <Story name="Homepage hero - full-width">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <Homepagehero
+          title={caption.titlename}
+          content={caption.text}
+          button={caption.btnlabel}
+          {...args}
+        ></Homepagehero>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Usage:
+- Choose the variant either video or Image from the control tab on canvas.
+- Grab the HTML from the HTML tab and also include css and js files listed below.
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.
+- If you want the image to expand size on scroll then include animation.min.js and initialize expandToSize('.homepage-hero-full').
+
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/homepagehero.min.css
+- dist/css/components/buttons.min.css
+
+#### JS:
+- dist/js/animation.min.js
+- dist/js/viewport.min.js
+
+### Interactions
+- When the page is opened, the contents on the card appear over the image.
+
+<Anchor storyId='components-ui-components-hero--homepage-hero-tall-image'></Anchor>
+
+# Homepage Hero - Tall Image
+
+The tall homepage Hero component is a multi-usage component  which creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle and Breadcrumb. Animation and atom tags are used for creating this card.
+
+### When to use:
+
+When the website needs to grab the user's attention to a particular page.
+
+### Formatting
+#### Default
+It consists of a grid with title, subtitle, image and chip.
+
+### Content
+The Tall homepage image consists of an Image on one side of the grid and title, subtitle, breadcrumbs and chip on the other side of the grid. Half of the grid is covered with an image and the other half with content.
+
+### Behaviors
+
+#### States 
+There are two states in the Tall Image homepage- Default and Mobile.
+1. Default: It consists of an image on either side of the page and content on the other side of the page.
+
+2. Mobile: It consists of title and subtitle in the top, image below it and the chip in the bottom in vertical position.
+
+<Canvas>
+<Story name="Homepage hero - tall image">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <Homepageherosplit
+        title={caption.titlename}
+        content={caption.text}
+        button={caption.btnlabel}
+        {...args}
+      ></Homepageherosplit>
+    );
+  }}
+</Story>
+</Canvas>
+
+### Usage:
+- Choose the variant either video or Image from the control tab on canvas.
+- Grab the HTML from the HTML tab and also include css and js files listed below.
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js.
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.min.css
+- dist/css/components/homepagehero.min.css
+- dist/css/components/buttons.min.css
+
+#### JS:
+- dist/js/viewport.min.js
+
+### Interactions
+- When the page is opened, the contents on the card appear beside the image.. 
+
+<Anchor storyId='components-ui-components-hero--homepage-hero-wide-image'></Anchor>
+
+# Homepage hero - Wide image
+
+The Homepage Hero wide images are large sized at the bottom right of the grid which is present at the top of the homepage. 
+
+### Overview
+The wide homepage Hero component is a multi-usage component  which creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle and Breadcrumb. Animation and atom tags are used for creating this card.
+
+#### When to use:
+
+When the website needs to grab the user's attention to a particular page.
+
+### Formatting
+
+#### Default
+It consists of a grid with title, subtitle, image and chip.
+
+### Content
+The Wide homepage image consists of an image situated at the bottom right or middle of the grid. The title is at the top of the grid and subtitles with a chip beside the image.
+
+### Behaviors
+
+#### States 
+There are two states in the wide Image homepage- Default and Mobile.
+1. Default: It consists of an image situated at the bottom right of the grid. The title is at the top and subtitle with chip beside the image.
+
+2. Mobile:  It consists of title and subtitle in the top, image below it and the chip in the bottom of the grid. 
+
+<Canvas>
+<Story name="Homepage hero - wide image">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <Homepageherooption
+        title={caption.titlename}
+        content={caption.text}
+        button={caption.btnlabel}
+        subtitle={caption.subtitle}
+        imgsrc={caption.imgsrc}
+        imgsrc2={caption.imgsrc2}
+        imgalt={caption.imgalt}
+        headingTop={caption.headingTop}
+        {...args}
+      ></Homepageherooption>
+    );
+  }}
+</Story>
+</Canvas>
+
+### Usage:
+- Choose the variant either video or Image from the control tab on canvas.
+- Grab the HTML from the HTML tab and also include css and js files listed below.
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.min.css
+- dist/css/components/homepagehero.min.css
+- dist/css/components/buttons.min.css
+
+#### JS:
+- dist/js/viewport.min.js
+
+### Interactions
+- When the page is opened, the contents of the card appears beside the image.. 
+
+### Changelog
+1.0 — Released component

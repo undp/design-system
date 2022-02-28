@@ -1,0 +1,159 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ContentCardWithOutImage } from './ContentCardWithOutImage';
+import img from '../../../../assets/images/card-thumbnail.jpg';
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        contentdata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link:"#",
+            imgback: img,
+          }
+        ]
+      };
+    return engText;
+    case "arabic":
+      const arabicText = {
+        contentdata: [
+          {
+            contenttile: "علامة المحتوى",
+            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. من جعبة اليخت الناعمة ، عدد كبير من اللحم البقري النقي",
+            button: "اقرأ أكث",
+            link:"#",
+            imgback: img,
+            size:'medium-4',
+          }
+        ]
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        contentdata: [
+          {
+            contenttile: "အကြောင်းအရာ TAG",
+            contentname: "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            paragraph: "နာကျင်မှုသည်ကိုယ်တိုင်နာကျင်မှုများစွာရှိသော်လည်းအဓိကအာရုံစိုက်သူမှာ ၀ ယ်သူဖြစ်သည်။ ရွက်လှေ၏နူးညံ့သောကျည်တောက်မှအမဲသားစစ်စစ်ကိုလိုသည်ထက်ပိုစားသည်",
+            button: "ပိုပြီးဖတ်ပါ",
+            link:"#",
+            imgback: img,
+          }
+        ]
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        contentdata: [
+          {
+            contenttile: "コンテンツタグ",
+            contentname: "投稿のタイトルはここにあり、2行です",
+            paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 ヨットのやわらかい矢筒から、たっぷりの純粋な牛肉",
+            button: "続きを読む",
+            link:"#",
+            imgback: img,
+          }
+        ]
+      };
+      return japaneseText;
+    default:
+      const dummy = {
+        contentdata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link:"#",
+            imgback: img,
+          }
+        ]
+      };
+      return dummy;
+  }
+};
+
+<Meta title="Components/UI components/Cards/Content card/Without image/Without emphasize" argTypes={{
+  Hovercolors: { 
+    options: ['default', 'yellow', 'red', 'green', 'blue'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'default'
+  }
+}}/>
+
+
+
+# Content Cards
+
+The Content Card components are cards with information and/or image. 
+
+### Overview
+The Content Card component defines a card of information with some items. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
+ 
+#### When to use:
+
+When a card with data, CTA link and image is to be displayed.
+
+### Formatting
+
+#### Default
+It consists of a title, paragraph, CTA link, and/or image with colors like green, yellow, red, blue.
+
+### Content
+There are two types of Content card components: Content Card with Image and Content Card without Image. 
+
+### Behaviors
+
+#### States 
+Content Card without image:
+There are two states in content Cards: Default, Hover.
+
+Default: It shows the title, paragraph, CTA link, and content card without Image and title, paragraph, and CTA Link.
+
+Hover: In the hover state, when the mouse hovers over the content Card will display the title, content card, and CTA Link. On hover, the background color is changing to the accent color of the page.
+
+Content Card w/o Image can be presented with the Emphasized title (without description). In this content, the card will display the title and CTA link. On hover, the background color will be changed to the accent of the page.
+
+<Canvas>
+<Story name="Without emphasize">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return (
+      <ContentCardWithOutImage
+        data={caption.contentdata} {...args}
+      ></ContentCardWithOutImage>
+    );
+  }}
+</Story>
+</Canvas>
+
+### Usage
+- Choose the Hover color and emphasize options from the control tab of canvas.
+- Grab the HTML from the HTML tab and also include the CSS files listed below.
+- Optional for grid layout: Add .content-data CSS class to the .grid-x  on which you want inside items, set margin-bottom property css, and make sure to add foundation grid (https://get.foundation/sites/docs/grid.html) or any other grid system if you are creating a grid for card..
+
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/content-card.min.css
+- dist/css/components/buttons.min.css - if “View more” button is used
+
+#### JS:
+NA
+
+### Interactions
+- Hover state applies to the image only.
+- By clicking on the CTA Link, the associated page is opened. 
+
+### Changelog
+1.0 — Released component
+

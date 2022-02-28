@@ -1,0 +1,86 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/base';
+
+/* Modal lightbox card start */
+.modal {
+  @extend %frosted-bg;
+
+  @include transition(all 0.4s ease-in-out);
+
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  z-index: 99;
+
+  @include devicebreak(medium) {
+    align-items: center;
+  }
+
+  &-content {
+    @extend %custom-scrollbar;
+
+    background: $color-white;
+    max-width: 64rem;
+    padding: $spacing-10 $spacing-04 $spacing-04;
+    position: relative;
+    width: 100%;
+
+    @include devicebreak(medium) {
+      margin-left: $spacing-11;
+      margin-right: $spacing-11;
+      max-height: calc(100vh - 291px);
+      padding: $spacing-10;
+    }
+  }
+
+  &-close-button {
+    background: url(#{$img-path-Icon}/times-circle.svg) no-repeat left center;
+    border: 0;
+    cursor: pointer;
+    font-size: 0;
+    height: 45px;
+    position: absolute;
+    right: $spacing-04;
+    top: $spacing-04;
+    width: 45px;
+
+    @include devicebreak(medium) {
+      right: $spacing-06;
+      top: $spacing-06;
+    }
+
+    &:hover {
+      @extend %no-animation;
+    }
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+[dir='rtl'] {
+  .modal-close-button {
+    left: 16px;
+    right: unset;
+  }
+}
+
+//burmese lang
+:lang(my) {
+  .modal {
+    &-close-button {
+      font-size: 0;
+    }
+  }
+}
+
+/* Modal lightbox card end */

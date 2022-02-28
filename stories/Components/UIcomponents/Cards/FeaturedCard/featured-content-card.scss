@@ -1,0 +1,272 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+
+$colors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
+
+/* feature card start */
+.feature__card {
+  @include devicebreak(medium) {
+    //CtaLink
+    .cta__link.cta--arrow {
+      width: 100%;
+
+      i {
+        max-width: 6.25rem;
+
+        &::after {
+          background-position: right top;
+        }
+      }
+    }
+
+    .feature__card-slide {
+      &::before {
+        @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, $color-yellow);
+      }
+    }
+
+    //colors
+    @each $name, $color in $colors {
+      &.#{$name} {
+        .feature__card-slide {
+          background: $color;
+
+          &::before {
+            @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
+          }
+        }
+      }
+    }
+  }
+
+  @include devicebreak(large) {
+    .cta__link.cta--arrow {
+      i {
+        &::after {
+          margin-left: 0.75rem;
+          width: 0.813rem;
+        }
+      }
+    }
+  }
+
+  &.red {
+    a:hover {
+      .cta__link.cta--arrow i::before { background-color: #000; }
+      .cta__link.cta--arrow i::after { border-color: #000; }
+    }
+  }
+
+  a {
+    background: $color-gray-200;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    position: relative;
+
+    @include devicebreak(medium) {
+      display: flex;
+    }
+
+    &:hover {
+      .feature__card-slide {
+        @include transform(translateX(0));
+      }
+
+      .cta__link.cta--arrow {
+        i {
+          width: $spacing-11;
+
+          @include devicebreak(medium) {
+            width: calc(100% - 6.25rem);
+          }
+
+          @include devicebreak(large) {
+            width: calc(100% - 6.25rem);
+          }
+
+          &::before {
+            display: unset;
+          }
+        }
+      }
+    }
+  }
+
+  //variant image or without-out image
+  &.without-image {
+    .feature__card-slide {
+      z-index: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &.yellow {
+      .feature__card-slide {
+        background: $color-yellow;
+      }
+    }
+  }
+}
+
+//feature slide
+.feature__card-slide {
+  @extend %feature__card;
+
+  position: relative;
+
+  @include devicebreak(medium) {
+    @include transform(translateX(-105%));
+    @include transition(transform 0.3s);
+
+    background: $color-yellow;
+    display: none;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+  }
+
+  @include devicebreak(large) {
+    display: inherit;
+  }
+
+  &::before {
+    @extend %feature__card;
+
+    bottom: 0;
+    content: '';
+
+    @include devicebreak(medium) {
+      height: 100%;
+      position: absolute;
+    }
+  }
+
+  .feature__card-image {
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+    img {
+      display: block;
+      height: 100%;
+      max-width: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}
+
+//feature content
+.feature__card-content {
+  @extend %feature__card;
+
+  background: $color-gray-100;
+  flex-direction: column;
+  height: auto;
+  padding: $spacing-07 $spacing-06;
+  position: relative;
+  width: auto;
+
+  @include devicebreak(medium) {
+    background: none;
+    display: flex;
+  }
+
+  h6 {
+    font-size: $font-size-12;
+    font-weight: 700;
+    line-height: 1.17;
+    margin-bottom: $spacing-06;
+    text-transform: uppercase;
+
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-09;
+    }
+  }
+
+  .feature__card-description {
+    margin-bottom: 3rem;
+
+    @include devicebreak(medium) {
+      margin-bottom: 4.688rem;
+    }
+  }
+
+  h4,
+  h5 {
+    margin-bottom: $spacing-06;
+
+    @include devicebreak(medium) {
+      margin-bottom: $spacing-07;
+    }
+  }
+
+  p {
+    font-size: $font-size-14;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-20;
+    }
+  }
+
+  .cta__link {
+    margin-bottom: 0;
+    margin-top: $spacing-08;
+    z-index: 2;
+
+    @include devicebreak(medium) {
+      margin-top: auto;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .feature__card {
+    @include devicebreak(medium) {
+      .cta__link.cta--arrow {
+        width: 100%;
+
+        i {
+          &::after {
+            margin-left: inherit;
+          }
+        }
+      }
+
+      //colors
+      @each $name, $color in $colors {
+        &.#{$name}.image {
+          .feature__card-slide {
+            background-color: #{$color};
+
+            &::before {
+              @include background(153deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
+            }
+          }
+        }
+      }
+
+      //feature__card-slide
+      .feature__card-slide {
+        @include devicebreak(medium) {
+          @include transform(translateX(105%));
+
+          &:hover {
+            @include transform(translateX(0));
+          }
+        }
+
+        &::before {
+          @include background(153deg, hsla(0, 0%, 100%, 0.2) 30%, $color-yellow);
+        }
+      }
+    }
+  }
+}
+
+/* feature card end */

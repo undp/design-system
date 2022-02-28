@@ -1,0 +1,26 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/breakpoints';
+
+/* checkbox */
+.form-check {
+  align-items: center;
+  display: flex;
+  position: relative;
+
+  label {
+    cursor: pointer;
+    font-size: $font-size-16;
+    padding: 0 7px;
+  }
+}
+
+input[type='checkbox'] {
+  @extend %checbox-radio-before;
+
+  border-radius: 0;
+
+  &:checked {
+    background: url(#{$img-path-Icon}/icon-check.svg) 1px 0 no-repeat;
+  }
+}

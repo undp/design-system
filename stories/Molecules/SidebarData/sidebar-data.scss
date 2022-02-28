@@ -1,0 +1,48 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+/* sidebar data start */
+.sidebar-accordion {
+  li > a {
+    @extend %img_none;
+
+    border: none;
+    border-bottom: 1px solid $color-gray-500;
+    display: block;
+    font-size: $font-size-16;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0;
+    padding: $spacing-05;
+
+    @include devicebreak(medium) {
+      padding: $spacing-06;
+    }
+  }
+
+  &.narrow {
+    li > a {
+      @include devicebreak(medium) {
+        padding: $spacing-05;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .sidebar-accordion {
+    .accordion__panel {
+      li > a {
+        padding-left: $spacing-06;
+        padding-right: $spacing-07;
+
+        @include devicebreak(medium) {
+          padding-right: $spacing-09;
+        }
+      }
+    }
+  }
+}
+
+/* sidebar data end */

@@ -1,0 +1,33 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+/* scrollbar layout start */
+.scrollbar-horizontal-wrapper {
+  float: left;
+  line-height: normal;
+  max-width: $width-600;
+  width: 100%;
+}
+
+.scrollbar-data {
+  visibility: hidden;
+  width: 1000px;
+}
+
+.scrollbar-vertical-wrapper {
+  height: 70vh;
+  width: 65px;
+}
+
+.scrollbar-data__vertical {
+  min-height: 100vh;
+}
+
+[dir='rtl'] {
+  .scrollbar-horizontal-wrapper,
+  .scrollbar-vertical-wrapper {
+    float: right;
+  }
+}
+
+/* scrollbar layout end */

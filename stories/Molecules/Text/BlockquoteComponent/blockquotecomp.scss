@@ -1,0 +1,35 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+/* blockquote cta start */
+div.blockquote {
+  background-color: none;
+  padding: $spacing-07 $spacing-06;
+
+  @include devicebreak(medium) {
+    padding: 5.313rem $spacing-12;
+  }
+
+  &.gray {
+    background-color: $color-gray-200;
+  }
+
+  &.yellow {
+    background-color: $color-yellow;
+  }
+
+  &.red {
+    background-color: $color-red;
+  }
+
+  &.green {
+    background-color: $color-green;
+  }
+
+  &.blue {
+    background-color: $color-azure;
+  }
+}
+
+/* blockquote cta end */

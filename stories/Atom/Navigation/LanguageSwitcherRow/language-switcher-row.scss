@@ -1,0 +1,15 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+// * language row start *//
+.language__item {
+  @extend %paragragh-font-16;
+  @extend %border-bottom;
+
+  display: inline-block;
+  line-height: 0.9;
+  min-width: 100px;
+  padding: $spacing-04 $spacing-05;
+}
+// * language row end *//

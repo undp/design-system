@@ -1,0 +1,10 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+code {
+  @extend %paragragh-font-20;
+
+  background: $color-gray-200;
+  padding: 0 $spacing-02 $spacing-02;
+}

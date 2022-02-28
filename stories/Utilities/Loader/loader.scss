@@ -1,0 +1,34 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+// * loader start *//
+
+//loader animation
+@keyframes loader-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  @include animation(loader-animation 2s linear infinite);
+
+  border: 8px solid $color-blue-600;
+  border-radius: 50%;
+  border-top: 8px solid $color-gray-300;
+  height: 40px;
+  width: 40px;
+
+  @include devicebreak(medium) {
+    border: 14px solid $color-blue-600;
+    border-top: 14px solid $color-gray-300;
+    height: 96px;
+    width: 96px;
+  }
+}
+// * loader end *//

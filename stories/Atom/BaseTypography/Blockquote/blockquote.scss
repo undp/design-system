@@ -1,0 +1,22 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+blockquote {
+  font-size: $font-size-26;
+  font-weight: 600;
+  line-height: 1.16;
+  margin: 0;
+
+  @include devicebreak(medium) {
+    font-size: $font-size-35;
+    line-height: 1.15;
+  }
+}
+
+//burmese lang
+:lang(my) {
+  blockquote {
+    line-height: 1.7;
+  }
+}

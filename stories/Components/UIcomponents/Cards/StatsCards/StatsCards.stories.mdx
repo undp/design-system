@@ -1,0 +1,95 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { StatsCards } from './StatsCards';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {titlename: 'Lorem Title', percentname: 'Percent', numbername: '35', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}; return engText;
+    case 'arabic': const arabicText = {titlename: 'عنوان مستقل', percentname: 'نسبه مئويه', numbername: '35', text: 'الألم بحد ذاته هو الحب ، الزبون الرئيسي'}; return arabicText;
+    case 'burmese': const burmeseText = {titlename: 'လွတ်လပ်သောခေါင်းစဉ်', percentname: 'ရာခိုင်နှုန်း', numbername: '35', text: 'နာကျင်မှုကိုယ်တိုင်ကအချစ်ကိုအဓိကဖောက်သည်ချသည်'}; return burmeseText;
+    case 'japanese': const japaneseText = {titlename: '独立したタイトル', percentname: 'パーセント', numbername: '35', text: '痛み自体は愛、主な顧客です'}; return japaneseText;
+    default:
+      return {titlename: 'Lorem Title', percentname: 'Percent', numbername: '35', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'};
+  }
+};
+
+<Meta title="Components/UI components/Cards/Stats card" argTypes={{
+  Size: {
+    options: ['Small', 'Medium', 'Large', 'Extra_large'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'Medium'
+  },
+  Hovercolors: {
+    options: ['yellow', 'red', 'green', 'blue'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'yellow'
+  }
+}}/>
+
+# Stats Cards
+
+A stats card contains the value, label, and a one-line description of a statistic
+
+### Overview
+A stats card highlights an individual statistic. It contains a value, label, and a short description.
+
+Stats cards are usually displayed as a part of a collection of similar cards highlighting various statistics
+
+A card is intended to be modular. This means that you can vary the order of cards in a collection without destroying any individual card’s meaning.
+
+### When to use:
+
+To display and highlight multiple statistics about a subject/country
+
+### Formatting
+
+#### Default
+The stats card consists of a value, label, and short description. An accent color overlay is displayed on hover.
+
+### Content
+The stats card requires at a minimum a value and label. A short description can also be added optionally.
+Extra-large and large cards can also have a title
+
+### Behaviors
+
+#### States
+The stats card has defaulted and hovers states. 
+
+There are 4 size variations of the card: Small, medium, large and extra-large
+
+The following size modifiers are available:
+
+- Extra large
+- Large
+- Medium
+- Small
+
+<Canvas>
+<Story name="Stats card">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <StatsCards title={caption.titlename} percent={caption.percentname} content={caption.text} number={caption.numbername} {...args}></StatsCards>;
+  }}
+</Story>
+</Canvas>
+
+### Usage
+- Choose a different variation from the control tab on canvas.
+- Copy the HTML from the HTML tab in the canvas
+- Include the CSS and JS shared below
+
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/stats-cards.min.css
+
+#### JS:
+- Include dist/js/font-resize.min.js if the larger text (digit in the card) needs to be auto resize based on the container size. Target the text to be resized by initializing the function like this: fontResize('.stats-card h2')
+
+### Interactions
+The hover state is applied to the entire card
+
+### Changelog
+1.0 — Released component

@@ -1,0 +1,232 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
+
+/* multi-select start */
+.multi-select {
+  max-width: 18.5rem;
+  position: relative;
+
+  &.open {
+    > button {
+      border-bottom: 0;
+
+      &::after {
+        @include transform(translateY(-50%) rotate(-180deg));
+
+        top: 50%;
+      }
+    }
+
+    ul {
+      background-color: $color-white;
+      border-top: 0;
+      display: block;
+
+      &.fix-height {
+        max-height: 18.75rem;
+      }
+
+      ul {
+        border: 0;
+        display: none;
+        overflow: hidden;
+        padding: 0 0 0 $spacing-08;
+      }
+
+      li {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  > button {
+    @extend %select_default;
+
+    background: $color-white;
+    display: flex;
+    max-width: 100%;
+    text-align: left;
+
+    span {
+      padding-left: 0.3125rem;
+    }
+
+    &::after {
+      @extend %arrow;
+    }
+  }
+
+  ul {
+    @extend %select_option;
+
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-y: auto;
+
+    > li {
+      @extend %selectoption;
+
+      list-style: none;
+
+      .form-check {
+        &:hover {
+          background-color: $color-gray-100;
+        }
+      }
+    }
+
+    .has-submenu {
+      position: relative;
+
+      &.open {
+        ul {
+          border: 0;
+          border-top: solid 1px $color-gray-400;
+          display: block;
+          overflow: visible;
+          padding: 0 0 0 $spacing-08;
+        }
+
+        button::after {
+          @include transform(translateY(-50%) rotate(-180deg));
+
+          top: 50%;
+        }
+      }
+
+      button {
+        background: $color-white;
+        border: 0;
+        cursor: pointer;
+        display: block;
+        font-size: $font-size-16;
+        margin: 0 -1rem;
+        padding: $spacing-05;
+        position: relative;
+        text-align: left;
+        width: calc(100% + 2rem);
+
+        &:hover {
+          background-color: $color-gray-100;
+        }
+
+        &::after {
+          @extend %arrow;
+
+          right: 0.875rem;
+        }
+      }
+    }
+
+    .sub-menu {
+      display: none;
+      list-style: none;
+
+      > li {
+        border-top: 1px solid $color-gray-400;
+        margin-bottom: 0;
+
+        &:first-of-type {
+          border-top: 0;
+        }
+
+        > .checkbox-wrapper:hover {
+          background-color: $color-gray-100;
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+      background-color: rgba(0, 0, 0, 0.3);
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  ul .form-check {
+    justify-content: space-between;
+    margin: 0 -1rem;
+    padding: 0 $spacing-05;
+
+    label {
+      padding: $spacing-05 0;
+      width: 100%;
+    }
+
+    input {
+      position: absolute;
+      right: $spacing-05;
+    }
+  }
+}
+
+// burmese lang
+:lang(my) {
+  .multi-select {
+    ul li,
+    button {
+      font-family: $Font-Family-NotoSans;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .multi-select {
+    button {
+      @extend %select_rtl;
+
+      &::after {
+        @extend %select_rtl_after;
+      }
+
+      span {
+        padding-left: 0;
+        padding-right: 0.3125rem;
+      }
+    }
+
+    ul {
+      padding: 0 $spacing-05;
+
+      li {
+        padding-right: 0;
+      }
+
+      .form-check input {
+        left: $spacing-05;
+        right: inherit;
+      }
+    }
+
+    .has-submenu {
+      button {
+        text-align: right;
+
+        &::after {
+          left: $spacing-05;
+          right: inherit;
+        }
+      }
+    }
+
+    &.open {
+      .radio {
+        span {
+          left: $spacing-05;
+          right: inherit;
+        }
+      }
+
+      ul {
+        ul {
+          padding: 0 $spacing-08 0 0;
+        }
+      }
+    }
+  }
+}
+
+/* multi-select end */

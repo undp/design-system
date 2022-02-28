@@ -1,0 +1,38 @@
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+$backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
+
+.stats-slider {
+  .stats-card.small {
+    max-width: 100%;
+
+    &:hover {
+      background-color: $color-light-yellow;
+
+      @each $name, $color in $backgroundcolors {
+        &.#{$name} {
+          background-color: #{$color};
+        }
+      }
+    }
+  }
+
+  .swiper-scrollbar {
+    @include devicebreak(medium) {
+      padding-right: $spacing-44;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .stats-slider {
+    &.swiper-initialized {
+      .swiper-scrollbar {
+        @include devicebreak(medium) {
+          padding-left: $spacing-44;
+        }
+      }
+    }
+  }
+}

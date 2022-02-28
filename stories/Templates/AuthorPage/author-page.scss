@@ -1,0 +1,60 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+
+/* author page start */
+.author-page {
+  margin-top: $spacing-76;
+
+  @include devicebreak(xlarge) {
+    margin-top: 7.25rem;
+  }
+
+  .authorheading {
+    display: none;
+
+    @include devicebreak(small) {
+      display: block;
+      font-weight: 700;
+      padding: 0 $spacing-06 $spacing-05;
+    }
+  }
+
+  .breadcrumb {
+    margin: $spacing-05 0 2.563rem;
+
+    @include devicebreak(medium) {
+      margin: 4.25rem 0 3.5625rem;
+    }
+  }
+
+  .author-content {
+    margin-bottom: 8rem;
+    margin-top: $spacing-11;
+
+    @include devicebreak(small) {
+      margin-bottom: 2.375rem;
+
+      h2 {
+        font-weight: 600;
+      }
+
+      .button {
+        margin: 0 $spacing-06;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .author-page {
+    .medium-offset-1 {
+      @include devicebreak(small) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+/* author page end */

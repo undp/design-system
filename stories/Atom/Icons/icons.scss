@@ -1,0 +1,159 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+/* icon start */
+
+.icon--bar {
+  cursor: pointer;
+}
+
+.chevron-right-animated {
+  @extend %chevron-right-expanded;
+
+  display: inline-block;
+  max-width: 6rem;
+  width: 100%;
+}
+
+.external-link-animated {
+  box-shadow: -2px 2px 0 0 $color-dark-red, -4px 0 0 -2px $color-dark-red, -3px 3px 0 -1px $color-dark-red;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  height: $spacing-04;
+  margin-left: -2px;
+  position: relative;
+  width: $spacing-04;
+
+  &::before {
+    @extend %pseudo-icon;
+
+    @include transform(rotate(-45deg) translate(0, 0));
+    @include transition(all 0.3s);
+
+    background: $color-dark-red;
+    height: 2px;
+    right: 0;
+    top: 3.5px;
+    width: 0.625rem;
+  }
+
+  &::after {
+    @extend %pseudo-icon;
+
+    @include transition(transform 0.3s);
+    @include transform(translate(0, 0));
+
+    border-right: 2px solid $color-dark-red;
+    border-top: 2px solid $color-dark-red;
+    height: $spacing-03;
+    right: 0;
+    top: 0;
+    width: $spacing-03;
+  }
+
+  &:hover {
+    &::after {
+      @include transform(translate(5px, -5px));
+    }
+
+    &::before {
+      @include transform(rotate(-45deg) translate(7px, 0));
+    }
+  }
+}
+
+.download-animated {
+  align-items: flex-end;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  height: 12px;
+  position: relative;
+
+  i {
+    border: 2px solid $color-dark-red;
+    border-top: 0;
+    box-sizing: content-box;
+    display: block;
+    height: 6px;
+    width: 1.125rem;
+  }
+
+  &::after {
+    @extend %pseudo-icon;
+
+    @include transform(rotate(-45deg) translate(0, 0));
+    @include transition(all 0.3s);
+
+    border-bottom: 2px solid $color-dark-red;
+    border-left: 2px solid $color-dark-red;
+    bottom: 6px;
+    height: 8px;
+    left: 7px;
+    width: 8px;
+  }
+
+  &::before {
+    @extend %pseudo-icon;
+
+    @include transform(translate(0, 0));
+    @include transition(all 0.3s);
+
+    background: $color-dark-red;
+    bottom: 7px;
+    height: 10px;
+    left: 10px;
+    width: 2px;
+  }
+
+  &:hover {
+    &::after {
+      @include transform(rotate(-45deg) translate(7px, -7px));
+    }
+
+    &::before {
+      @include transform(translate(0, -10px));
+    }
+  }
+}
+
+[dir='rtl'] {
+  .chevron-right-animated {
+    @include transform(translate(0) rotate(180deg));
+
+    &:hover {
+      @include transform(translate(-10px) rotate(180deg));
+    }
+  }
+
+  .external-link-animated {
+    @include transform(rotate(270deg));
+
+    &:hover {
+      @include transform(rotate(270deg));
+    }
+  }
+}
+
+// For doc styling only
+#story--foundation-icons--icons > div {
+  align-items: center;
+  background: $color-gray-300;
+  border: 1px solid $color-gray-400;
+  box-shadow: 2px 2px 4px $color-gray-300;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 $spacing-05 $spacing-07;
+  padding: $spacing-05 $spacing-03;
+  text-align: center;
+  width: calc(100% - 2rem);
+
+  @include devicebreak(medium) {
+    width: calc(25% - 2rem);
+  }
+}
+
+/* icon end */

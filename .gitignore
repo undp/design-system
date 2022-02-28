@@ -2,6 +2,11 @@
 /.idea
 npm-debug.log
 yarn-error.log
-/dist
 /vendor
-/.github
+/storybook-static
+/docs-build
+/stories/assets/css/style.css
+/stories/assets/css/style.css.map
+.DS_Store
+.scannerwork
+.vscode/

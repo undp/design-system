@@ -1,0 +1,54 @@
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/breakpoints';
+
+.chip {
+  align-items: center;
+  background: $color-gray-200;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  min-height: 1.875rem;
+  padding: $spacing-02 $spacing-05;
+
+  &:hover {
+    background-color: $color-gray-300;
+  }
+
+  &.chip__cross {
+    &::before {
+      background: url(#{$img-path-Iconfourback}/times-red.svg) no-repeat left;
+      content: '';
+      display: inline-flex;
+      height: 22px;
+      margin-left: -$spacing-02;
+      margin-right: $spacing-03;
+      padding-right: 1.375rem;
+      position: relative;
+      top: 0;
+      width: auto;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .chip__cross::before {
+    margin-left: $spacing-03;
+    margin-right: -$spacing-02;
+  }
+}
+
+:lang(my) {
+  .chip {
+    align-items: flex-end;
+
+    &__cross {
+      align-items: baseline;
+
+      &::before {
+        top: 5px;
+      }
+    }
+  }
+}

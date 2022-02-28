@@ -1,0 +1,88 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/breakpoints';
+
+.expand-search {
+  align-items: flex-end;
+  display: flex;
+  position: relative;
+
+  input[type='text'] {
+    @extend %expand_search;
+
+    @include transition(all 200ms ease-in-out);
+
+    background-color: $color-white;
+    box-sizing: border-box;
+    font-size: $font-size-14;
+    height: 2.675rem;
+    padding: 0;
+    position: relative;
+    width: 0;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  &.open {
+    input {
+      outline: none;
+      padding-left: 0.8125rem;
+      padding-right: $spacing-06;
+      width: calc(100% - 1.6875rem);
+      z-index: 1;
+    }
+  }
+
+  button {
+    @extend %expand_search;
+
+    background: none;
+    height: 2.625rem;
+    padding: 0 0 1px;
+    width: 1.6875rem;
+    z-index: 2;
+
+    img {
+      width: 27px;
+    }
+
+    &.close-button {
+      border: 0;
+      display: none;
+      position: absolute;
+      right: 0;
+
+      &.show {
+        display: block;
+      }
+
+      img {
+        max-width: 30px;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .expand-search {
+    .icon-search-black {
+      left: inherit;
+      right: 0;
+    }
+
+    &.open {
+      input {
+        padding-left: $spacing-06;
+        padding-right: 0.8125rem;
+      }
+    }
+
+    .close-button {
+      left: 0;
+      right: inherit;
+    }
+  }
+}

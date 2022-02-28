@@ -1,0 +1,186 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
+
+/* image card start */
+.image-reveal-card {
+  @extend %img_none;
+
+  background: $color-white;
+  border: 0;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  .image-reveal-card__content {
+    overflow: hidden;
+    position: relative;
+
+    img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    h5 {
+      margin-bottom: 0;
+      padding: $spacing-06 $spacing-06 0;
+
+      @include devicebreak(medium) {
+        padding: $spacing-07 $spacing-06 0;
+      }
+
+      @include devicebreak(large) {
+        @include translate(0, 100%);
+        @include transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
+
+        background: $color-white;
+        bottom: -1px;
+        box-sizing: border-box;
+        left: 0;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        transition-delay: 0.2s;
+        width: 100%;
+      }
+    }
+
+    .image {
+      position: relative;
+      width: 100%;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      &::before {
+        @extend %absolute__content;
+
+        @include transition(all 0.9s);
+
+        opacity: 0;
+      }
+    }
+  }
+
+  .cta__link {
+    margin: $spacing-07 0 0 $spacing-06;
+    width: 100%;
+
+    @include devicebreak(large) {
+      box-sizing: border-box;
+      margin-left: 0;
+      padding-left: $spacing-06;
+    }
+  }
+
+  &:hover {
+    .image-reveal-card__content {
+
+      // color map
+      $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+      @include devicebreak(large) {
+        h5 {
+          height: auto;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .image::before {
+        @include background-image(67.76deg, $color-yellow, transparent 61.11%);
+
+        opacity: 0.75;
+      }
+
+      @each $name, $color in $colors {
+        &.#{$name} {
+          .image::before {
+            @include background-image(67.76deg, #{$color}, transparent 61.11%);
+
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+
+    .cta__link {
+      i {
+        width: 5rem;
+
+        &::before {
+          display: unset;
+        }
+      }
+    }
+
+    .image::before {
+      opacity: 0.75;
+    }
+  }
+}
+
+.small.image-reveal-card {
+  @include devicebreak(medium) {
+    max-width: 13.25rem;
+
+    .cta__link {
+      width: 100%;
+    }
+  }
+
+  h5 {
+    font-size: $font-size-20;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-16;
+    }
+  }
+
+  &:hover {
+    @include devicebreak(medium) {
+      .cta__link.cta--arrow {
+        i {
+          margin-left: 0;
+          width: $spacing-10;
+        }
+      }
+    }
+
+    @include devicebreak(large) {
+      .cta__link.cta--arrow {
+        i {
+          width: calc(100% - #{$spacing-12});
+        }
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .image-reveal-card {
+    .cta__link {
+      margin-right: 0;
+      margin-top: $spacing-07;
+      padding-right: $spacing-06;
+
+      @include devicebreak(medium) {
+        margin-right: 0;
+        padding-right: $spacing-06;
+      }
+    }
+
+    .image {
+      &::before {
+        @include transform(scaleX(-1));
+      }
+    }
+  }
+}
+
+/* image card end */

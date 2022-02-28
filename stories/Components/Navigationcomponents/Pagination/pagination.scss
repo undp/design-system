@@ -1,0 +1,112 @@
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+/* pagination start */
+.pagination ul {
+  align-items: center;
+  display: flex;
+  padding-left: 0;
+
+  li {
+    display: flex;
+    font-size: $font-size-16;
+    margin-bottom: 0;
+    margin-right: $spacing-06;
+    padding-left: 0;
+    position: relative;
+
+    a {
+      @extend %img_none;
+
+      border-bottom: 0;
+      font-size: $font-size-16;
+    }
+
+    span {
+      margin: 0 0.375rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &:first-child,
+    &:last-child {
+      cursor: pointer;
+
+      a {
+        font-size: 0;
+        height: 45px;
+        width: 45px;
+
+        &::before {
+          background: url(#{$img-path-Icon}/chevron-left-circle.svg) no-repeat center center;
+          content: ' ';
+          display: block;
+          height: 45px;
+          width: 45px;
+        }
+      }
+    }
+
+    &.disabled {
+      a {
+        &::before {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      a {
+        &::before {
+          background: url(#{$img-path-Icon}/chevron-right-circle.svg) no-repeat center center;
+        }
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .pagination {
+    ul {
+      padding-right: 0;
+    }
+
+    li {
+      margin-left: $spacing-06;
+      margin-right: 0;
+      padding-right: 0;
+
+      &:first-child {
+        a {
+          &::before {
+            @include transform(rotateZ(180deg));
+          }
+        }
+      }
+
+      &:last-child {
+        margin-left: 0;
+
+        a {
+          &::before {
+            @include transform(rotateZ(180deg));
+          }
+        }
+      }
+
+      span {
+        &:last-child {
+          margin-left: 0;
+          margin-right: 0.375rem;
+        }
+      }
+    }
+  }
+}
+
+/* pagination end */

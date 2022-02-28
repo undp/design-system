@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { HeadingBig } from './HeadingBig'
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {header: ['Our',<br/>,'Mission'], description: 'UNDP works in 170 countries and territories to eradicate poverty while protecting the planet. We help countries develop strong policies, skills, partnerships and institutions so they can sustain their progress.'}; return engText;
+    case 'arabic': const arabicText = {header: ["علامة",<br/>,"المحتو"], description: 'يعمل برنامج الأمم المتحدة الإنمائي في 170 دولة وإقليم للقضاء على الفقر مع حماية كوكب الأرض. نحن نساعد البلدان على تطوير سياسات ومهارات وشراكات ومؤسسات قوية حتى تتمكن من الحفاظ على تقدمها.'}; return arabicText;
+    case 'burmese': const burmeseText = {header: ["အကြောင်",<br/>,"အကြောင်"], description: 'UNDP သည်ကမ္ဘာနှင့်နယ်မြေ ၁၇၀ တွင်ဆင်းရဲနွမ်းပါးမှုပပျောက်ရန်ကမ္ဘာကိုကာကွယ်နေသည်။ သူတို့ရဲ့တိုးတက်မှုတွေကိုဆက်ထိန်းထားနိုင်အောင်ခိုင်မာတဲ့မူဝါဒတွေ၊ ကျွမ်းကျင်မှုတွေ၊ မိတ်ဖက်တွေ၊ အဖွဲ့အစည်းတွေတည်ဆောက်ဖို့ငါတို့ကကူညီပေးတယ်။'}; return burmeseText;
+    case 'japanese': const japaneseText = {header: ["コンテン",<br/>,"ツタグ"], description: 'UNDPは、地球を保護しながら貧困を根絶するために170の国と地域で活動しています。私たちは、各国が進歩を維持できるように、強力な政策、スキル、パートナーシップ、制度を開発するのを支援します。'}; return japaneseText;
+    default:
+      return {header: ['Our',<br/>,'Mission'], description: 'UNDP works in 170 countries and territories to eradicate poverty while protecting the planet. We help countries develop strong policies, skills, partnerships and institutions so they can sustain their progress.'};
+  }
+};
+
+<Meta title="Components/UI components/Text/Heading big block" component={HeadingBig} argTypes={{
+  Emphasize: {
+    options: ['true', 'false'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'true'
+  }
+}}/>
+
+# Heading Big Block 
+
+The Heading Block defines a section of information data with some items - Header title, Description. `H2` `H4` atoms tags are used for creating this section.
+
+<Canvas style={{background: "gray"}}>
+  <Story name="Heading big block">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <HeadingBig headerText={caption.header} descriptionText={caption.description} listData={caption.listData} dataViewport="true" {...args}></HeadingBig>;
+    }}
+  </Story>
+</Canvas>
+
+###
+### Usage
+- Take HTML from the HTML tab in canvas whichever (select variant you like)
+- Include CSS and JS from the 'CSS and JS References' section
+
+### CSS and JS References
+
+#### CSS:
+Add the base style only, located at **dist/css/base-minimal.min.css** along with following:
+- dist/css/components/headingbig.min.css
+
+#### JS:
+- dist/js/viewport.min.js (optional for viewport animation)
+
+### Changelog
+1.0 — Released component

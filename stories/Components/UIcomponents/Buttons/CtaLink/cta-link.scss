@@ -1,0 +1,64 @@
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/breakpoints';
+
+.cta__link {
+  @extend %button;
+  @extend %img_none;
+
+  color: $color-black;
+
+  &.cta--arrow {
+    @extend %chevron-right-expanded;
+
+    padding-left: 0;
+    padding-right: $spacing-06;
+  }
+
+  &.cta--space {
+    &::after {
+      @extend %ctaimg;
+
+      @include transition(0.2s ease);
+
+      background: url(#{$img-path-Iconfourback}/arrow-left-expand-defaut.svg) no-repeat left center;
+    }
+
+    &:hover {
+      &::after {
+        @include translate(70%,0);
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .cta__link {
+    align-items: flex-end;
+
+    &.cta--space {
+      &::after {
+        @include transform(rotate(180deg));
+
+        margin-left: 0;
+        margin-right: $spacing-04;
+      }
+
+      &:hover::after {
+        @include transform(translate(-50%,0) rotate(180deg));
+      }
+    }
+
+    &.cta--arrow {
+      padding-left: $spacing-06;
+      padding-right: 0;
+
+      i {
+        @include transform(translate(0) rotate(180deg));
+
+        left: 0;
+        right: 1.25rem;
+      }
+    }
+  }
+}

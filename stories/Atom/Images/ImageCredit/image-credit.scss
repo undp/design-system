@@ -1,0 +1,11 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/breakpoints';
+
+.credits {
+  font-size: $font-size-14;
+  line-height: 1.4;
+
+  @include devicebreak(medium) {
+    font-size: $font-size-16;
+  }
+}

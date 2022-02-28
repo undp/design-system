@@ -1,0 +1,155 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+/* download card start */
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+div.download-card {
+  display: inline-block;
+
+  @include devicebreak(medium) {
+    min-width: 330px;
+  }
+
+  &:hover {
+    div.publication-thumbnail__image {
+      &::after {
+        @include background-image(27.66deg, $color-yellow, transparent 70.49%);
+
+        opacity: 0.75;
+      }
+
+      @each $name, $color in $colors {
+        &.#{$name}:after {
+          @include background-image(27.66deg, #{$color}, transparent 70.49%);
+
+          opacity: 0.75;
+        }
+      }
+    }
+
+    div.card-thumbnail__image {
+      &::before {
+        @include background-image(67.76deg, $color-yellow, transparent 61.11%);
+
+        opacity: 0.75;
+      }
+
+      @each $name, $color in $colors {
+        &.#{$name}::before {
+          @include background-image(67.76deg, #{$color}, transparent 61.11%);
+
+          opacity: 0.75;
+        }
+      }
+    }
+
+    .download-animated {
+      &::after {
+        @include transform(rotate(-45deg) translate(7px, -7px));
+      }
+
+      &::before {
+        @include transform(translate(0, -10px));
+      }
+    }
+
+    .external-link-animated {
+      &::after {
+        @include transform(translate(5px, -5px));
+      }
+
+      &::before {
+        @include transform(rotate(-45deg) translate(7px, 0));
+      }
+    }
+  }
+
+  .description {
+    background: $color-gray-100;
+    padding: $spacing-06;
+  }
+
+  .title {
+    @extend %paragragh-font-20;
+
+    margin-bottom: $spacing-02;
+  }
+
+  .format {
+    @extend %paragragh-font-16;
+
+    color: $color-gray-600;
+    margin-bottom: $spacing-05;
+  }
+
+  .download {
+    @extend %paragragh-font-16;
+
+    align-items: center;
+    background-image: none;
+    display: flex;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    .download-animated {
+      margin-left: $spacing-04;
+    }
+
+    .external-link-animated {
+      margin-bottom: $spacing-03;
+      margin-left: $spacing-04;
+    }
+  }
+}
+
+[dir='rtl'] {
+  div.download-card {
+    .download-animated,
+    .external-link-animated {
+      margin-left: 0;
+      margin-right: $spacing-04;
+    }
+
+    &:hover {
+      div.publication-thumbnail__image {
+        &::after {
+          @include background-image(318deg, $color-yellow, transparent 70.49%);
+        }
+
+        @each $name, $color in $colors {
+          &.#{$name}:after {
+            @include background-image(318deg, #{$color}, transparent 70.49%);
+          }
+        }
+      }
+
+      div.card-thumbnail__image {
+        &::before {
+          @include background-image(297deg, $color-yellow, transparent 61.11%);
+        }
+
+        @each $name, $color in $colors {
+          &.#{$name}:before {
+            @include background-image(297deg, #{$color}, transparent 61.11%);
+          }
+        }
+      }
+    }
+
+    div.download-card__download {
+      &::after {
+        margin-left: 0;
+        margin-right: 0.75rem;
+      }
+
+      .download-animated {
+        margin-left: 0;
+        margin-right: 0.75rem;
+      }
+    }
+  }
+}
+
+/* download card end */

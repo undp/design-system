@@ -1,0 +1,75 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+@import '../../assets/scss/breakpoints';
+
+.download {
+  &-row {
+    background-color: $color-white;
+    padding: 0 1rem;
+
+    &:hover {
+      background-color: $color-gray-100;
+    }
+
+    &__main {
+      align-items: center;
+      border-bottom: 1px solid $color-gray-400;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+
+      .form-check {
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    &__data {
+      cursor: pointer;
+      flex-grow: 1;
+      font-size: $font-size-16;
+      font-weight: normal;
+      line-height: 1.25;
+      padding: $spacing-05 $spacing-07 $spacing-05 0;
+      text-transform: inherit;
+
+      span {
+        color: $color-gray-500;
+        display: block;
+        font-size: $font-size-16;
+        line-height: 1.4;
+        margin-top: 4px;
+      }
+    }
+
+    .external-link-animated {
+      margin: $spacing-05 0 1.188rem $spacing-05;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .download {
+    &-row {
+      &__data {
+        padding-left: $spacing-07;
+        padding-right: 0;
+      }
+
+      &__main {
+        .form-check {
+          left: 0;
+          right: auto;
+        }
+      }
+
+      .external-link-animated {
+        margin-left: 0;
+      }
+    }
+
+    &-icon {
+      margin-left: 0;
+    }
+  }
+}

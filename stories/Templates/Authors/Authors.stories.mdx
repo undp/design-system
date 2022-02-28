@@ -1,0 +1,551 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import Authors from './Authors';
+import {getCaptionForLocale as breadcrumbData } from "../../Components/Navigationcomponents/Breadcrumbs/Breadcrumbs.stories.mdx"
+import {getCaptionForLocale as contentCardData } from "../../Organism/Blocks/ContentCard/ContentCard.stories.mdx"
+import {getCaptionForLocale as footerData} from "../../Organism/Footer//Footer.stories.mdx";
+import {getCaptionForLocale as authorData} from "../../Components/UIcomponents/Author/AuthorCard/AuthorCard.stories.mdx";
+
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.mdx";
+import {
+  getNavLinks,
+  menuData,
+  getSiteTitle,
+  getLocationDataForLocale,
+  getBackForLocale,
+  getSelectlanguage,
+} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
+
+export const getheadingForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = 'UNDP Authors'; return engText;
+    case 'arabic': const arabicText = 'UNDP المؤلفون'; return arabicText;
+    case 'burmese': const burmeseText = 'UNDP စာရေးသူမျာ'; return burmeseText;
+    case 'japanese': const japaneseText = 'UNDP 著者'; return japaneseText;
+    default: return 'UNDP Authors';
+  }
+};
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {authordata: [
+      {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    }
+    ],
+    paragraph: 'Inventore magni accusantium labore qui. Dolorum numquam nihil labore quis harum dolorum. Sed eligendi ex quis delectus et tempore et eos. Molestias enim necessitatibus incidunt sit ab officiis aut. Qui aspernatur impedit nesciunt inventore quo. Reprehenderit voluptatum nihil voluptates et.',
+    button: 'VIEW 234 POSTS'}; return engText;
+    case 'arabic': const arabicText = {authordata: [
+      {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    }
+    ],
+    paragraph: 'مخترع يتهمه بعمل شاق كبير. لم أشعر أبدًا بأي ألم أو تعب أو أي من هذه الآلام. ولكن أن تختار من المختار والوقت وهم. تحدث المشاكل من الاحتياجات أو من الخدمات. أولئك الذين يرفضون الباحث لا يعرفون كيف يمنعونه. لا يلوم الملذات ولا الملذات.',
+    button: 'عرض 234 وظيفة'}; return arabicText;
+    case 'burmese': const burmeseText = {authordata: [
+      {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    },
+    {
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    }
+    ],
+    paragraph: 'ကြီးကျယ်သောကြိုးစားအားထုတ်မှုကိုစွပ်စွဲသူတီထွင်သူတစ် ဦး ငါနာကျင်တာ၊ ပင်ပန်းတာမရှိဘူး၊ ဒီနာကျင်မှုတစ်ခုမှမရှိခဲ့ဘူး။ ဒါပေမယ့်ရွေးချယ်တဲ့သူတစ်ယောက်ကနေရွေးချယ်ဖို့နဲ့အချိန်နဲ့သူတို့အတွက်ပဲ။ ဒုက္ခများသည်လိုအပ်ချက်များသို့မဟုတ် ၀ န်ဆောင်မှုများမှဖြစ်သည်။ ရှာဖွေသူကိုငြင်းပယ်သူများသည်၎င်းကိုမည်သို့ကာကွယ်ရမည်ကိုမသိပါ။ သူသည်အပျော်အပါးနှင့်အပျော်အပါးကိုအပြစ်မတင်။',
+    button: 'ပိုစ် ၂၃၄ ကိုကြည့်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {authordata: [
+      {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    },
+    {
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: '管理者',
+    }
+    ],
+    paragraph: '大変な努力を非難している発明家。 痛みも、倦怠感も、これらの痛みもありませんでした。 しかし、選択されたものと時間とそれらから選択すること。 トラブルはニーズやサービスから発生します。 ファインダーを拒否する人はそれを防ぐ方法を知りません。 彼は喜びも喜びも非難しません。',
+    button: '234件の投稿を表示'}; return japaneseText;
+    default:
+      const dummy =  {authordata: [
+        {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    },
+    {
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    }
+    ],
+    paragraph: 'Inventore magni accusantium labore qui. Dolorum numquam nihil labore quis harum dolorum. Sed eligendi ex quis delectus et tempore et eos. Molestias enim necessitatibus incidunt sit ab officiis aut. Qui aspernatur impedit nesciunt inventore quo. Reprehenderit voluptatum nihil voluptates et.',
+    button: 'VIEW 234 POSTS'};
+    return dummy
+  }
+};
+export const getButtonForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {view:'View more', close:'Close', sort:'Sort & FILTER'}; return engText;
+    case 'arabic': const arabicText = {view:'عرض المزيد', close:'قريب', sort:'فرز وتصفية'}; return arabicText;
+    case 'burmese': const burmeseText = {view:'ပိုမိုကြည့်ရှုပါ။', close:'ပိတ်လိုက်', sort:'စီရန် & စစ်ထုတ်ပါ။'}; return burmeseText;
+    case 'japanese': const japaneseText = {view:'もっと見る', close:'選ぶ', sort:'ソート＆フィルター'}; return japaneseText;
+    default: return {view:'View more', close:'Close', sort:'Sort & FILTER'};
+  }
+};
+export const getfiltertextForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {sort: 'SORT BY', options:[ 'Most posts', 'Alphabetical']}; return engText;
+    case 'arabic': const arabicText = {sort: 'اختار اللغة', options:[  'معظم المشاركات', 'مرتب حسب الحروف الأبجدية']}; return arabicText;
+    case 'burmese': const burmeseText = {sort: 'အလိုက်စဥ်သည်', options:[ 'ပို့စ်အများစု', 'အက္ခရာစဉ်']}; return burmeseText;
+    case 'japanese': const japaneseText = {sort: '言語を選択する', options:[ 'ほとんどの投稿', 'アルファベット順']}; return japaneseText;
+  default:
+      return {sort: 'SORT BY', options:[ 'Most posts', 'Alphabetical']};
+  }
+};
+
+<Meta title="Templates/Author listing" />
+
+<style>{`
+  .sbdocs-preview {display: none}
+`}</style>
+
+# Authors Listing
+
+An Authors page has all information about every author who is registered in the website.
+
+### Overview
+
+Authors page has all the information about every author who is registered on the website. The user will get every information about the authors at one place.
+
+### Template Structure
+
+The following components are used to create the “Article page” template in the design system
+- Global header
+- Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.
+- Title has author name
+- Expanding search bar - Used to search for any specific author
+- Select menu with options (Most posts and Alphabetical)
+- Author Card grid - Has image of the author
+- View more button in case of more content available
+- Standard footer
+
+### Performance
+The page performance will be optimized by considering following:
+- Lazy load
+- Use appropriate media renditions based on the client’s viewpoint.
+- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
+- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
+- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
+
+- ### Usage
+- Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
+- Initialize navigation, language switcher, accordion, select and filter by calling below mentioned functions.
+  - navigationInitialize();
+  - langSwitch();
+  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+  - expandSearch();
+  - select();
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
+
+#### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/global-header.min.css
+- dist/css/components/language-switcher.min.css
+- dist/css/components/menu.min.css
+- dist/css/components/mega-menu.min.css
+- dist/css/components/mobile-nav.min.css
+- dist/css/components/breadcrumbs.min.css
+- dist/css/components/author-card.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/custom-select.min.css
+- dist/css/components/search-expand.min.css
+- dist/css/components/input-fields.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/newsletter-signup.min.css
+- dist/css/components/accordion.min.css
+- dist/css/components/footer.min.css
+- dist/css/templates/authors.min.css
+
+#### JS:
+- dist/js/animation.min.js
+- dist/js/navigation.min.js
+- dist/js/undp.min.js
+- dist/js/lang-switcher.min.js
+- dist/js/accordion.min.js
+- dist/js/viewport.min.js
+- dist/js/expand-search.min.js
+- dist/js/select.min.js
+- dist/js/author-filter.min.js
+
+
+### Changelog
+1.0 — Released component
+
+
+<Canvas>
+  <Story
+    name="Author listing"
+    parameters={{
+      layout: "fullscreen"
+    }}>
+      {(args, { globals: { locale } }) => {
+        const filtertext = getfiltertextForLocale(locale);
+        const buttonData = getButtonForLocale(locale);
+        const headingData = getheadingForLocale(locale);
+        const navigationData= getNavLinks(locale);
+        const leftNavigationData=navigationData.filter(item=>item.position==='left');
+        const rightNavigationData=navigationData.filter(item=>item.position==='right');
+    return <Authors
+        text={filtertext}
+        buttonData = {buttonData}
+        footerData={footerData(locale)}
+        authorData={getCaptionForLocale(locale)}
+        breadcrumbData={breadcrumbData(locale)}
+        headingData={headingData}
+        contentCardData={contentCardData(locale)}
+            locale={locale}
+            leftNavigationData={leftNavigationData}
+            navigationData={navigationData}
+            rightNavigationData={rightNavigationData}
+            menuData={menuData(locale)}
+            languageswitcherData={Languageswitcher(locale)}
+            locationData={getLocationDataForLocale(locale)}
+            langSelect={getSelectlanguage(locale)}
+            backcaption={getBackForLocale(locale)}
+        ></Authors>;
+      }}
+  </Story>
+</Canvas>

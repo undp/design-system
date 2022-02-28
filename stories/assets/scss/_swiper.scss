@@ -1,0 +1,148 @@
+@import './variables';
+@import './breakpoints';
+@import './mixins';
+
+.swiper {
+  box-sizing: border-box;
+  max-width: 100%;
+  position: relative;
+
+  & * {
+    box-sizing: inherit;
+  }
+
+  @at-root [class*='swiper-slider-'] {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &-wrapper {
+    backface-visibility: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    touch-action: pan-y;
+    transform-style: preserve-3d;
+    transition-property: transform;
+    white-space: nowrap;
+    width: 100%;
+    will-change: transform;
+  }
+
+  &-slide {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+    white-space: normal;
+    width: 100%;
+
+    a {
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+  }
+
+  [class*='swiper-button-'] {
+    cursor: pointer;
+    display: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  @at-root .swiper-arrows {
+    [class*='swiper-button-'] {
+      cursor: pointer;
+    }
+  }
+
+  &-button-disabled {
+    cursor: default;
+    opacity: 0.5;
+
+    img {
+      cursor: default;
+    }
+  }
+
+  @at-root [dir='rtl'] #{&} {
+    direction: rtl;
+  }
+
+  &-scrollbar {
+    background: transparent;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+    height: 4px;
+    margin-bottom: $spacing-07;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &::after {
+      border-bottom: 1px solid $color-black;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: 1px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &-drag {
+      background: $color-black;
+      height: 100%;
+    }
+  }
+
+  &-notification {
+    display: none;
+  }
+
+  &-initialized {
+    padding-right: $spacing-44;
+
+    @include devicebreak(small) {
+      padding-right: $spacing-08;
+    }
+
+    .swiper-scrollbar {
+      @include devicebreak(small) {
+        padding-right: $spacing-08;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .swiper-initialized {
+    padding-left: $spacing-44;
+    padding-right: 0;
+
+    @include devicebreak(small) {
+      padding-left: $spacing-08;
+      padding-right: 0;
+    }
+
+    .swiper-scrollbar {
+      padding-right: 0;
+
+      @include devicebreak(small) {
+        padding-left: $spacing-08;
+        padding-right: 0;
+      }
+    }
+  }
+}

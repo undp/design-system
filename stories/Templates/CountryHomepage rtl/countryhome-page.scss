@@ -1,0 +1,10 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+.switch_btn {
+  left: 50%;
+  position: absolute;
+  top: 200px;
+  transform: translateX(-50%);
+}

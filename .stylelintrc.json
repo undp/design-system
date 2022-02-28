@@ -1,0 +1,27 @@
+{
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "extends": [
+    "stylelint-config-standard", 
+    "stylelint-config-sass-guidelines"
+  ],
+  "defaultSeverity": "warning",
+  "rules": {
+    "max-nesting-depth": 2,
+    "selector-max-compound-selectors": 3,
+    "no-duplicate-selectors": null,
+    "no-descending-specificity": null,
+    "at-rule-no-vendor-prefix": null,
+    "media-feature-name-no-vendor-prefix": null,
+    "property-no-vendor-prefix": null,
+    "selector-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["/box-*/", "/flex-*/"]
+      }
+    ]
+  }
+}

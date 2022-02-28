@@ -1,0 +1,26 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+
+
+/* frosted-background start */
+.frosted-background {
+  position: relative;
+
+  &::before {
+    @extend %frosted-bg;
+
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+  }
+
+  img {
+    display: block;
+    object-fit: cover;
+  }
+}
+
+/* frosted-backfround end */

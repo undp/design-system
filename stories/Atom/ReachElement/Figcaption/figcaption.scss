@@ -1,0 +1,17 @@
+@import '../../../assets/scss/mixins';
+
+/* figure tag start */
+figure {
+  margin: 0;
+
+  img {
+    max-width: 100%;
+    padding-bottom: 0.875rem;
+  }
+
+  figcaption {
+    @extend %paragragh-font-16;
+  }
+}
+
+/* figure tag end */

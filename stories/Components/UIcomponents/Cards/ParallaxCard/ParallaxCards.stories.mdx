@@ -1,0 +1,267 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import ParallaxCards from "./ParallaxCards";
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        data: [
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+        ],
+        title: ["Our",<br/>,"Expertise"],
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        data: [
+          {
+            name: "عنوان",
+            descriptionText:
+              "قد يكون الألم بحد ذاته شديدًا ، لكن السبب الرئيسي هو الألم ، لكنني أعطي الوقت للوقوع فيه مثل بعض الألم والألم الشديد. ولكي يأتي الأقل ، فماذا لنا أن نمارس أي مدرسة عمل إلا للاستفادة من أهدافها لتحقيقها.",
+            btnlabel: "اقرأ أكثر",
+          },
+          {
+            name: "عنوان",
+            descriptionText:
+              "قد يكون الألم بحد ذاته شديدًا ، لكن السبب الرئيسي هو الألم ، لكنني أعطي الوقت للوقوع فيه مثل بعض الألم والألم الشديد. ولكي يأتي الأقل ، فماذا لنا أن نمارس أي مدرسة عمل إلا للاستفادة من أهدافها لتحقيقها.",
+            btnlabel: "اقرأ أكثر",
+          },
+          {
+            name: "عنوان",
+            descriptionText:
+              "قد يكون الألم بحد ذاته شديدًا ، لكن السبب الرئيسي هو الألم ، لكنني أعطي الوقت للوقوع فيه مثل بعض الألم والألم الشديد. ولكي يأتي الأقل ، فماذا لنا أن نمارس أي مدرسة عمل إلا للاستفادة من أهدافها لتحقيقها.",
+            btnlabel: "اقرأ أكثر",
+          },
+          {
+            name: "عنوان",
+            descriptionText:
+              "قد يكون الألم بحد ذاته شديدًا ، لكن السبب الرئيسي هو الألم ، لكنني أعطي الوقت للوقوع فيه مثل بعض الألم والألم الشديد. ولكي يأتي الأقل ، فماذا لنا أن نمارس أي مدرسة عمل إلا للاستفادة من أهدافها لتحقيقها.",
+            btnlabel: "اقرأ أكثر",
+          },
+          {
+            name: "عنوان",
+            descriptionText:
+              "قد يكون الألم بحد ذاته شديدًا ، لكن السبب الرئيسي هو الألم ، لكنني أعطي الوقت للوقوع فيه مثل بعض الألم والألم الشديد. ولكي يأتي الأقل ، فماذا لنا أن نمارس أي مدرسة عمل إلا للاستفادة من أهدافها لتحقيقها.",
+            btnlabel: "اقرأ أكثر",
+          },
+        ],
+        title: ["لنا",<br/>,"خبرة"],
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        data: [
+          {
+            name: "ခေါင်းစီး",
+            descriptionText:
+              "နာကျင်မှုကိုယ်တိုင်က ဝေဒနာအများကြီးဖြစ်နိုင်ပေမယ့် အဓိကအကြောင်းအရင်းကတော့ နာကျင်မှုပဲ၊ ဒါပေမယ့် ကြီးကြီးမားမား နာကျင်ကိုက်ခဲမှုလိုမျိုး ဝေဒနာတစ်ခုလို ကျရောက်ဖို့ အချိန်ပေးပါ။ ယုတ်စွအဆုံး ",
+            btnlabel: "ပိုပြီးဖတ်ပါ",
+          },
+          {
+            name: "ခေါင်းစီး",
+            descriptionText:
+              "နာကျင်မှုကိုယ်တိုင်က ဝေဒနာအများကြီးဖြစ်နိုင်ပေမယ့် အဓိကအကြောင်းအရင်းကတော့ နာကျင်မှုပဲ၊ ဒါပေမယ့် ကြီးကြီးမားမား နာကျင်ကိုက်ခဲမှုလိုမျိုး ဝေဒနာတစ်ခုလို ကျရောက်ဖို့ အချိန်ပေးပါ။ ယုတ်စွအဆုံး ",
+            btnlabel: "ပိုပြီးဖတ်ပါ",
+          },
+          {
+            name: "ခေါင်းစီး",
+            descriptionText:
+              "နာကျင်မှုကိုယ်တိုင်က ဝေဒနာအများကြီးဖြစ်နိုင်ပေမယ့် အဓိကအကြောင်းအရင်းကတော့ နာကျင်မှုပဲ၊ ဒါပေမယ့် ကြီးကြီးမားမား နာကျင်ကိုက်ခဲမှုလိုမျိုး ဝေဒနာတစ်ခုလို ကျရောက်ဖို့ အချိန်ပေးပါ။ ယုတ်စွအဆုံး ",
+            btnlabel: "ပိုပြီးဖတ်ပါ",
+          },
+          {
+            name: "ခေါင်းစီး",
+            descriptionText:
+              "နာကျင်မှုကိုယ်တိုင်က ဝေဒနာအများကြီးဖြစ်နိုင်ပေမယ့် အဓိကအကြောင်းအရင်းကတော့ နာကျင်မှုပဲ၊ ဒါပေမယ့် ကြီးကြီးမားမား နာကျင်ကိုက်ခဲမှုလိုမျိုး ဝေဒနာတစ်ခုလို ကျရောက်ဖို့ အချိန်ပေးပါ။ ယုတ်စွအဆုံး ",
+            btnlabel: "ပိုပြီးဖတ်ပါ",
+          },
+          {
+            name: "ခေါင်းစီး",
+            descriptionText:
+              "နာကျင်မှုကိုယ်တိုင်က ဝေဒနာအများကြီးဖြစ်နိုင်ပေမယ့် အဓိကအကြောင်းအရင်းကတော့ နာကျင်မှုပဲ၊ ဒါပေမယ့် ကြီးကြီးမားမား နာကျင်ကိုက်ခဲမှုလိုမျိုး ဝေဒနာတစ်ခုလို ကျရောက်ဖို့ အချိန်ပေးပါ။ ယုတ်စွအဆုံး ",
+            btnlabel: "ပိုပြီးဖတ်ပါ",
+          },
+        ],
+        title: ["ကျွန်တော်တို့ရဲ့",<br/>,"ကျွမ်းကျင်မှု"],
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        data: [
+          {
+            name: "見出し",
+            descriptionText:
+              "痛み自体はたくさんの痛みかもしれませんが、主な理由は痛みですが、私はいくつかの大きな痛みや痛みのようにそれに陥る時間を与えます。 最小限のことをするために、達成するためにそれからの目的を利用することを除いて、私たちの何が労働の学校を行使するか。",
+            btnlabel: "続きを読む",
+          },
+          {
+            name: "見出し",
+            descriptionText:
+              "痛み自体はたくさんの痛みかもしれませんが、主な理由は痛みですが、私はいくつかの大きな痛みや痛みのようにそれに陥る時間を与えます。 最小限のことをするために、達成するためにそれからの目的を利用することを除いて、私たちの何が労働の学校を行使するか。",
+            btnlabel: "続きを読む",
+          },
+          {
+            name: "見出し",
+            descriptionText:
+              "痛み自体はたくさんの痛みかもしれませんが、主な理由は痛みですが、私はいくつかの大きな痛みや痛みのようにそれに陥る時間を与えます。 最小限のことをするために、達成するためにそれからの目的を利用することを除いて、私たちの何が労働の学校を行使するか。",
+            btnlabel: "続きを読む",
+          },
+          {
+            name: "見出し",
+            descriptionText:
+              "痛み自体はたくさんの痛みかもしれませんが、主な理由は痛みですが、私はいくつかの大きな痛みや痛みのようにそれに陥る時間を与えます。 最小限のことをするために、達成するためにそれからの目的を利用することを除いて、私たちの何が労働の学校を行使するか。",
+            btnlabel: "続きを読む",
+          },
+          {
+            name: "見出し",
+            descriptionText:
+              "痛み自体はたくさんの痛みかもしれませんが、主な理由は痛みですが、私はいくつかの大きな痛みや痛みのようにそれに陥る時間を与えます。 最小限のことをするために、達成するためにそれからの目的を利用することを除いて、私たちの何が労働の学校を行使するか。",
+            btnlabel: "続きを読む",
+          },
+        ],
+        title: ["私たちの",<br/>,"専門知識"],
+      };
+      return japaneseText;
+    default:
+      const dummy = {
+        data: [
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+          {
+            name: "Heading",
+            descriptionText:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            btnlabel: "READ MORE",
+          },
+        ],
+        title: ["Our",<br/>,"Expertise"],
+      };
+      return dummy;
+  }
+};
+
+<Meta title="Components/UI components/Cards/Parallax cards" />
+
+# Parallax Cards
+
+The Parallax Cards component defines a card of information data with some items- Title, Paragraph, and CTA Link. 
+
+### Overview
+Parallax cards consist of textual and imagery sections. While scrolling through the page on desktops text part is scrolled with the normal speed and the image is “racing” along with greater velocity creating a parallax effect. Image can have a hover effect, sliding out the foreground picture and revealing the background image or video.
+
+### When to use:
+
+Can be used for the set of short bullet points accompanied with some imagery to provide an immersive reading experience for users
+
+### Formatting
+
+#### Default
+The Parallax cards are usually used inside the grid to manage the different sizes and card orientations. It can also be accompanied with additional simple text elements 9title, description) and providing visual guide rails for individual cards.
+
+On small screens, the widget collapses to the Carousel.
+
+### Content
+
+### Behaviors
+
+#### States 
+
+Default:
+The Image is placed in either part of the grid and the Title, Paragraph, and CTA Link in the other part. As we scroll the page the image remains constant, while the contents move slightly up or down depending on the direction of the scrolling. The CTA link is expandable. 
+
+<Canvas>
+  <Story name="Parallax cards">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <ParallaxCards alt={"feature card"} data={caption.data} title={caption.title} ></ParallaxCards>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Usage:
+- Copy the HTML from HTML Tab and also include css and js files.
+- Make sure to remove swiper-slider-0 swiper-initialized swiper-horizontal swiper-pointer-events remove these classes, remove ID and aria-label attributes as these are generated by the Swiper library
+- Initialize the parallaxEffect by calling parallaxEffect('.parallax-card', ['.parallax-card__image', '.parallax-card__content'], 'top center', 'bottom+=85 center', 'vertical', 'desktop', 'percent') and swiper by calling swiper('.parallax__content') function on load.
+- Include Swiper (https://swiperjs.com/get-started) and https://greensock.com/docs/v3/Installation GSAP libraries for parallax (include gsap, ScrollTrigger and EasePack) and slider in your html file.
+- Refer [this document](https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration & options
+- Refer [this document](https://github.com/undp/design-system/wiki/Parallax-documentation) for Parallax integration & options
+
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/parallax-cards.min.css
+- dist/css/components/parallax-card.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/swiper.min.css
+
+#### JS:
+- dist/js/swiper.min.js
+- dist/js/parallax.min.js
+- dist/js/smartresize.min.js
+
+3rd Party library dependencies
+- Swiper (https://swiperjs.com/get-started)
+- GSAP (https://greensock.com/docs/v3/Installation)
+
+### Interactions
+- While scrolling the page, the contents of the card move to give a 3D effect.
+- By clicking on the CTA link, the page is redirected to the detailed page.
+
+### Changelog
+1.0 — Released component

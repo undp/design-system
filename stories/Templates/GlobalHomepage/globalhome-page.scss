@@ -1,0 +1,75 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+
+.glabal-page {
+  @include devicebreak(small) {
+    .homepage-hero-tall {
+      margin-top: 7rem;
+    }
+  }
+
+  .featured-card-container {
+    margin-top: 7rem;
+
+    @include devicebreak(medium) {
+      margin-top: $spacing-06;
+    }
+
+    h2 {
+      margin-bottom: $spacing-07;
+    }
+  }
+
+  .parallax {
+    margin-top: -$spacing-11;
+    overflow: hidden;
+    padding-bottom: $spacing-11;
+    position: relative;
+
+    @include devicebreak(medium) {
+      background-image: none;
+      border-right: none;
+      transition: none;
+    }
+
+    @include devicebreak(medium) {
+      &.lines-background {
+        background-image: linear-gradient(90deg, $color-gray-400 1px, rgba(212, 214, 216, 0) 0);
+        border-right: 1px solid $color-gray-400;
+        transition: opacity 0.1s ease-out;
+      }
+    }
+  }
+
+  .stats-grid {
+    border-top: 1px solid hsla(0, 0%, 100%, 0.23);
+  }
+
+  .footer {
+    margin-top: 0;
+  }
+
+  .fixedcarousel {
+    background-color: $color-gray-200;
+    padding-bottom: $spacing-11;
+
+    h2 {
+      @include devicebreak(small) {
+        margin-left: 0.938rem;
+        margin-right: 0.938rem;
+      }
+    }
+
+    .swiper-initialized .swiper-scrollbar {
+      @include devicebreak(medium) {
+        width: calc(100% - #{$spacing-11});
+      }
+    }
+  }
+}
+
+.no-gap {
+  margin-left: -#{$spacing-04};
+  margin-right: -#{$spacing-04};
+}

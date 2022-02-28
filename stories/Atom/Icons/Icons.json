@@ -1,0 +1,139 @@
+{
+  "icons": [
+    {
+      "name": "hamburger",
+      "label": "Hamburger",
+      "type": "img"
+    },
+    {
+      "name": "times",
+      "label": "Times",
+      "type": "img"
+    },
+    {
+      "name": "times-circle",
+      "label": "Times circle",
+      "type": "img"
+    },
+    {
+      "name": "search",
+      "label": "Search",
+      "type": "img"
+    },
+    {
+      "name": "language",
+      "label": "Language",
+      "type": "img"
+    },
+    {
+      "name": "globe",
+      "label": "Globe",
+      "type": "img"
+    },
+    {
+      "name": "calendar",
+      "label": "Calendar",
+      "type": "img"
+    },
+    {
+      "name": "play-circle",
+      "label": "Play circle",
+      "type": "img"
+    },
+    {
+      "name": "chevron-up-circle",
+      "label": "Chevron up circle",
+      "type": "img"
+    },
+    {
+      "name": "chevron-down-circle",
+      "label": "Chevron down circle",
+      "type": "img"
+    },
+    {
+      "name": "chevron-left-circle",
+      "label": "Chevron left circle",
+      "type": "img"
+    },
+    {
+      "name": "chevron-right-circle",
+      "label": "Chevron right circle",
+      "type": "img"
+    },
+    {
+      "name": "chevron-down",
+      "label": "Chevron down",
+      "type": "img"
+    },
+    {
+      "name": "chevron-up",
+      "label": "Chevron up",
+      "type": "img"
+    },
+    {
+      "name": "chevron-left",
+      "label": "Chevron left",
+      "type": "img"
+    },
+    {
+      "name": "chevron-right",
+      "label": "Chevron right",
+      "type": "img"
+    },
+    {
+      "name": "chevron-small-left",
+      "label": "Chevron small left",
+      "type": "img"
+    },
+    {
+      "name": "chevron-small-right",
+      "label": "Chevron small right",
+      "type": "img"
+    },
+    {
+      "name": "chevron-small-up",
+      "label": "Chevron small up",
+      "type": "img"
+    },
+    {
+      "name": "chevron-small-down",
+      "label": "Chevron small down",
+      "type": "img"
+    },
+    {
+      "name": "arrow-right",
+      "label": "Arrow right",
+      "type": "img"
+    },
+    {
+      "name": "arrow-right-white",
+      "label": "Arrow right white",
+      "type": "img"
+    },
+    {
+      "name": "arrow-left",
+      "label": "Arrow left",
+      "type": "img"
+    },
+    {
+      "name": "arrow-left-white",
+      "label": "Arrow left white",
+      "type": "img"
+    },
+    {
+      "name": "chevron-right-animated",
+      "label": "Chevron right animated",
+      "type": "span"
+    },
+    {
+      "name": "external-link-animated",
+      "label": "External link animated",
+      "type": "span"
+    },
+    {
+      "name": "download-animated",
+      "label": "Download animated",
+      "type": "span"
+    }
+  ]
+}

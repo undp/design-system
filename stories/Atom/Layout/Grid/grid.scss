@@ -1,0 +1,44 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+/* layout  */
+.grid_name {
+  color: $color-black;
+  font-size: 1.375rem;
+  margin-bottom: $spacing-05;
+  margin-top: $spacing-05;
+  min-height: 28px;
+
+  @include devicebreak(small) {
+    font-size: 1.625rem;
+  }
+
+  span {
+    font-size: $font-size-14;
+  }
+}
+
+.grid_description {
+  @extend %paragragh-font-14;
+
+  color: $color-black;
+  margin-bottom: 1.25rem;
+}
+
+.grid--layout {
+  background-color: $color-gray-300;
+  height: $spacing-09;
+  margin-bottom: $spacing-03;
+
+  &:nth-child(odd) {
+    background-color: $color-gray-200;
+  }
+
+  .column {
+    font-size: 0.813rem;
+    padding: 0.625rem;
+  }
+}
+
+/* layout end */

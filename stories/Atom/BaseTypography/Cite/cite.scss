@@ -1,0 +1,12 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+cite {
+  @extend %paragragh-font-24;
+
+  display: block;
+  font-style: inherit;
+  font-weight: 400;
+  margin-top: 1.125rem;
+}

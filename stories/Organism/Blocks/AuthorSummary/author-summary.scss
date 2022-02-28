@@ -1,0 +1,98 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+/* author summary start */
+.author-summary {
+  border-top: 2px solid $color-black;
+  padding-top: $spacing-07;
+
+  @include devicebreak(medium) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-wrapper {
+    h4 {
+      margin-bottom: 2.438rem;
+    }
+  }
+
+  &-left {
+    display: flex;
+
+    @include devicebreak(small) {
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    @include devicebreak(medium) {
+      width: 50%;
+    }
+
+    .author__img {
+      margin-right: 0;
+
+      &.large {
+        @include devicebreak(small) {
+          height: 100%;
+        }
+
+        @include devicebreak(medium) {
+          height: fit-content;
+          width: 40%;
+        }
+
+        @include devicebreak(large) {
+          width: $width-180;
+        }
+      }
+
+      &:hover {
+        &.yellow::before {
+          background: none;
+        }
+      }
+    }
+  }
+
+  &-right {
+    @include devicebreak(small) {
+      margin-top: $spacing-04;
+    }
+
+    @include devicebreak(medium) {
+      width: 40%;
+    }
+  }
+
+  &-text {
+    margin-left: $spacing-04;
+    margin-top: 0;
+
+    @include devicebreak(medium) {
+      width: calc(100% - 13.875rem);
+    }
+
+    @include devicebreak(large) {
+      margin-left: $spacing-08;
+    }
+
+    h2 {
+      margin-bottom: $spacing-03;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .author-summary {
+    &-text {
+      @include devicebreak(medium) {
+        margin-left: 0;
+        margin-right: $spacing-08;
+      }
+    }
+  }
+}
+
+/* author summary end */

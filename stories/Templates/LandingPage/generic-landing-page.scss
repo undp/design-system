@@ -1,0 +1,79 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+@import '../PublicationPage/publication-page.scss';
+
+// margin styles
+.margin-top {
+  &-69 {
+    margin-top: 4.3rem;
+  }
+
+  &-32 {
+    margin-top: $spacing-07;
+  }
+}
+
+.landing-page {
+  .multi-select {
+    max-width: 100%;
+
+    .select-control {
+      min-width: 100%;
+    }
+
+    .options {
+      min-width: 100%;
+    }
+  }
+
+  .content-card-container {
+    margin-top: $spacing-06;
+
+    @include devicebreak(medium) {
+      margin-top: 4.313rem;
+    }
+
+    .button {
+      @include devicebreak(small) {
+        margin: 0 $spacing-05;
+      }
+    }
+  }
+
+  .pagehero {
+    @include devicebreak(small) {
+      &-content {
+        h2 {
+          margin-top: 1.75rem;
+        }
+      }
+    }
+
+    &-tall {
+      margin-top: $spacing-08;
+
+      @include devicebreak(medium) {
+        margin-top: 7rem;
+      }
+
+      @include devicebreak(xlarge) {
+        margin-top: 9.125rem;
+      }
+    }
+  }
+
+  .search-filter {
+    .expand-search {
+      max-width: 100%;
+    }
+  }
+
+  .content-bottom {
+    margin-top: $spacing-09;
+
+    @include devicebreak(medium) {
+      margin-top: 8.438rem;
+    }
+  }
+}

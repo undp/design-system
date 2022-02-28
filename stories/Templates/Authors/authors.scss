@@ -1,0 +1,189 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+
+.authors-page {
+  margin-top: 4.75rem;
+
+  @include devicebreak(xlarge) {
+    margin-top: 7.1875rem;
+  }
+
+  .author__label p {
+    font-size: 1rem;
+
+    @include devicebreak(small) {
+      font-size: 0.875rem;
+    }
+  }
+
+  .breadcrumb {
+    margin-top: $spacing-11;
+
+    @include devicebreak(small) {
+      margin-top: $spacing-06;
+    }
+  }
+
+  .align-center {
+    align-items: flex-end;
+    display: flex;
+
+    .exoandablesearch {
+      width: 100%;
+
+      @include devicebreak(large) {
+        margin-left: -0.3125rem;
+        margin-right: -0.3125rem;
+      }
+    }
+  }
+
+  .mobile-author-filter {
+    display: none;
+
+    @include devicebreak(small) {
+      display: block;
+    }
+  }
+
+  .author-filter {
+    @include devicebreak(small) {
+      display: none;
+
+      &.author-filter-show {
+        display: block;
+
+        .expand-search {
+          margin: $spacing-06 0;
+        }
+      }
+    }
+  }
+
+  .hide-sort {
+    display: none;
+  }
+
+  .sort-filter {
+    width: 100%;
+
+    span {
+      display: none;
+      font-size: 1rem;
+    }
+
+    &.close {
+      background-color: $color-gray-300;
+      color: $color-black;
+      font-size: 0;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .button {
+    text-transform: uppercase;
+  }
+
+  .authors-heading {
+    margin: 6.125rem 0 4.1875rem;
+
+    @include devicebreak(small) {
+      margin: 3.3125rem 0 $spacing-10;
+    }
+  }
+
+  .author-content {
+    margin-bottom: $spacing-136;
+    margin-top: $spacing-11;
+  }
+
+  .author-card {
+    margin-top: $spacing-76;
+
+    @include devicebreak(small) {
+      margin-top: 0;
+
+      > div {
+        display: none;
+      }
+
+      > div:nth-child(-n + 6) {
+        display: block;
+      }
+
+      h6 {
+        font-size: $font-size-16;
+
+        @include devicebreak(small) {
+          h6 {
+            font-size: $font-size-16;
+
+            @include devicebreak(small) {
+              font-size: 0.875rem;
+            }
+          }
+        }
+      }
+    }
+
+    > div:first-child {
+      a {
+        @include devicebreak(small) {
+          border-top: 0;
+        }
+      }
+    }
+  }
+
+  .view-btn-cell {
+    margin-bottom: 4.188rem;
+
+    @include devicebreak(medium) {
+      margin-bottom: 13.563rem;
+    }
+  }
+
+  .select-box {
+    height: auto;
+    max-width: 100%;
+
+    &.author-select {
+      .selected {
+        min-width: 100%;
+        width: 100%;
+      }
+    }
+
+    .options-container {
+      min-width: inherit;
+    }
+  }
+}
+
+// rtl css
+[dir='rtl'] {
+  .authors-page {
+    .medium-offset-1 {
+      @include devicebreak(small) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    @media print, screen and (min-width: 48em) {
+      .grid-margin-x > .medium-offset-3 {
+        margin-left: 0.625rem;
+        margin-right: calc(25% + 1.5rem / 2);
+      }
+
+      .medium-offset-3 {
+        margin-left: 0.625rem;
+        margin-right: 25%;
+      }
+    }
+  }
+}

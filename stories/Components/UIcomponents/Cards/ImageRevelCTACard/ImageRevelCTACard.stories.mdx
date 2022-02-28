@@ -1,0 +1,137 @@
+import { Meta, Story, Canvas, Source } from '@storybook/addon-docs';
+import { ImageRevelCard } from './ImageRevelCTACard';
+import img from '../../../../assets/images/cardimage.jpg';
+import imgsmall from '../../../../assets/images/CardImgsmall.jpg';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {
+      data: [{
+        contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+        btnlabel: 'READ MORE',
+        link: '#',
+        size: 'medium-4',
+        imageback: img
+      }],      
+    }; return engText;
+    case 'arabic': const arabicText = {
+      data: [{
+        contentname: 'الألم هو الحب نفسه', 
+        btnlabel: 'متجر',
+        link: '#',
+        size: 'medium-4',
+        imageback: img
+      }],      
+    }; return arabicText;
+    case 'burmese': const burmeseText = {
+      data: [{
+        contentname: 'နာကျင်မှုကအချစ်ပါဘဲ နာကျင်မှုက အချစ်ပါဘဲ နာကျ င်မှုကအချစ်ပါဘဲနာကျင်မှုကအချစ်ပါဘဲ', 
+        btnlabel: 'ပိုပြီးဖတ်ပါ',
+        link: '#',
+        size: 'medium-4',
+        imageback: img
+      }],      
+    }; return burmeseText;
+    case 'japanese': const japaneseText = {
+      data:[{
+        contentname: '痛みは愛そのものです', 
+        btnlabel: '店',
+        link: '#',
+        size: 'medium-4',
+        imageback: img
+      }],      
+    }; return japaneseText;
+    default:
+      const dummy =  {
+        data: [{
+          contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', 
+          btnlabel: 'READ MORE',
+          link: '#',
+          size: 'medium-4',
+          imageback: img
+        }],        
+      };
+    return dummy;
+  }
+};
+
+
+<Meta title="Components/UI components/Cards/Image reveal card" argTypes={{
+  Size: {
+    options: ['Large', 'Small'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'Large'
+  },
+  Hovercolors: {
+    options: ['yellow', 'red', 'green', 'blue'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'yellow'
+  }
+}}/>
+
+# Image Reveal Card
+
+Image reveal cards are cards with information about the image and CTA links for detailed information.
+
+### Overview
+The Image reveals card component is a multi-usage component that creates boxes that are usually teasing some kind of content like- Image, Text, and CTA Link. 
+
+#### When to use:
+
+When text and CTA Link need to be attached with an image.
+
+### Formatting
+
+#### Default
+It consists of a grid with an image, text, and CTA link.
+
+### Content
+There are two types of image reveal card: Medium and Small
+1. Medium: Image Reveal Card of medium-size shows the Image and CTA Link. The Text will show on hover.
+2. Small: Image Reveal Card of small size comes with a different Image and CTA Link. The Text will show on hover.
+ 
+### Behaviors
+
+#### States 
+There are 2 states in the Image Reveal Card: Default and Hover.
+
+Default: It consists of Image and CTA Link.
+1. Medium size
+2. Small size
+
+Hover: It consists of Image, Text, and CTA Link. It changes appearance when the mouse hovers over it.
+1. Medium size
+2. Small size
+
+<Canvas>
+<Story name="Image reveal card">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <ImageRevelCard data={caption.data} {...args}> </ImageRevelCard>;
+  }}
+</Story>
+</Canvas>
+
+### Usage
+- Select size control either Large or Small from the control tab on canvas.
+- Copy the HTML from the HTML tab and include below listed css and js files.
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.
+
+### CSS and JS References
+
+#### CSS:
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- Include dist/css/components/cta-link.min.css
+- Include dist/css/components/image-revel-cta-card.min.css
+
+#### JS:
+- dist/js/viewport.min.js
+
+### Interactions
+- over state applies to the entire card.
+- By clicking on the CTA Link, the page is forwarded to the detailed information page.
+
+### Changelog
+1.0 — Released component

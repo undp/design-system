@@ -1,0 +1,156 @@
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+/* language-switcher start */
+.dropdown-language {
+  display: inline-block;
+  position: relative;
+
+  ul {
+    @include transition(0.3s ease-in-out);
+
+    height: 0;
+    left: $spacing-05;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: calc(100% + 3px);
+    z-index: 9;
+
+    li {
+      list-style: none;
+      margin-bottom: 0;
+      padding-left: 0;
+
+      a {
+        @extend %language_switcher;
+
+        background: $color-gray-200;
+        border-bottom: 1px solid $color-gray-400;
+        box-shadow: 0 3px 4px rgb(0 0 0 / 10%);
+        display: block;
+        padding: $spacing-04 $spacing-05;
+
+        &:hover {
+          color: $color-gray-600;
+        }
+      }
+    }
+  }
+
+  &.active {
+    button::after {
+      @include transform(rotateZ(180deg));
+    }
+
+    ul {
+      height: auto;
+    }
+  }
+
+  button {
+    @extend %language_switcher;
+
+    align-items: center;
+    background-color: transparent;
+    color: $color-blue-600;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+
+    &::before {
+      background-color: $color-blue-600;
+      content: '';
+      height: 26px;
+      margin-right: $spacing-03;
+      -webkit-mask: url(#{$img-path-Icon}/language.svg) no-repeat left center;
+      mask: url(#{$img-path-Icon}/language.svg) no-repeat left center;
+      width: 25px;
+
+      @include devicebreak(small) {
+        background: transparent url(#{$img-path-Icon}/language.svg) no-repeat left center;
+        -webkit-mask: inherit;
+        mask: inherit;
+      }
+    }
+
+    &::after {
+      @include transition(0.2s ease-in-out);
+
+      background-color: $color-blue-600;
+      content: '';
+      height: 10px;
+      margin-left: $spacing-03;
+      -webkit-mask: url(#{$img-path-Icon}/arrow-blue.svg) no-repeat left center;
+      mask: url(#{$img-path-Icon}/arrow-blue.svg) no-repeat left center;
+      width: 15px;
+
+      @include devicebreak(small) {
+        background: transparent url(#{$img-path-Icon}/arrow-blue.svg) no-repeat left center;
+        -webkit-mask: inherit;
+        mask: inherit;
+      }
+    }
+
+    &:hover {
+      color: $color-blue-400;
+
+      &::before {
+        background-color: $color-blue-400;
+      }
+
+      &::after {
+        background-color: $color-blue-400;
+      }
+    }
+
+    &.white {
+      color: $color-white;
+
+      &::before {
+        background: url(#{$img-path-Icon}/language-white.svg) no-repeat left center;
+      }
+
+      &::after {
+        background: url(#{$img-path-Icon}/arrow-white-down.svg) no-repeat left center;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .dropdown-language {
+    ul {
+      left: unset;
+      padding-right: 0;
+      right: 16px;
+
+      li {
+        padding-right: 0;
+      }
+    }
+
+    button::before {
+      margin-left: $spacing-03;
+      margin-right: 0;
+      transform: scaleX(-1);
+    }
+
+    button::after {
+      margin-left: 0;
+      margin-right: $spacing-03;
+    }
+  }
+}
+
+// burmese lang
+:lang(my) {
+  .dropdown-language {
+    button {
+      font-family: $Font-Family-NotoSans;
+    }
+  }
+}
+
+/* language-switcher end */

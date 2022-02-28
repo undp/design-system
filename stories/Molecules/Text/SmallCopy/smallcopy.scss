@@ -1,0 +1,23 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/typography';
+@import '../../../assets/scss/mixins';
+
+/* small copy start */
+.smallcopy__box {
+  margin-bottom: $spacing-02;
+
+  &-locale {
+    margin-bottom: $spacing-07;
+
+    strong {
+      font-size: $font-size-16;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  strong {
+    margin-right: $spacing-02;
+  }
+}
+
+/* small copy end */

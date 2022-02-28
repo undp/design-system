@@ -1,0 +1,27 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+/* block cta start */
+.cta-block {
+  h4 {
+    font-weight: 600;
+    margin-bottom: $spacing-06;
+
+    @include devicebreak(large) {
+      margin-bottom: $spacing-09;
+    }
+  }
+
+  .cta__link {
+    font-size: $font-size-16;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-bottom: $spacing-08;
+  }
+}
+
+/* block cta end */

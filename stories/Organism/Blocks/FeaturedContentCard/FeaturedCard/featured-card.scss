@@ -1,0 +1,60 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
+
+/* featured-card container start */
+.featured-card-container {
+  .feature__card {
+    &-title {
+      display: block;
+      margin-bottom: 2.25rem;
+
+      @include devicebreak(medium) {
+        margin-bottom: 0;
+        margin-top: $spacing-07;
+      }
+    }
+
+    &--large,
+    &--medium {
+      margin-bottom: 1.875rem;
+    }
+
+    &.without-image {
+      .feature__card-image {
+        display: none;
+      }
+
+      &.yellow {
+        .feature__card-slide {
+          background: $color-yellow;
+        }
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .featured-card-container {
+    .feature__card {
+      &-title {
+        @include devicebreak(small) {
+          margin-left: 0.375rem;
+          margin-right: calc(8.33333% + 0.75rem / 2);
+        }
+
+        @include devicebreak(medium) {
+          margin-left: 0.375rem;
+          margin-right: calc(8.33333% + 1.75rem / 2);
+        }
+
+        @include devicebreak(large) {
+          margin-left: 0.75rem;
+          margin-right: calc(8.33333% + 1.5rem / 2);
+        }
+      }
+    }
+  }
+}
+
+/* featured-card container end */

@@ -1,0 +1,40 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/typography';
+@import '../../../assets/scss/mixins';
+
+/* project data start */
+.project-detail {
+  border-bottom: 1px solid $color-gray-400;
+
+  &-4 {
+    border-bottom: 0;
+  }
+
+  h2 {
+    border-bottom: 2px solid $color-black;
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+  }
+
+  &-list {
+    > div {
+      margin-top: $spacing-07;
+
+      @include devicebreak(small) {
+        border-bottom: 1px solid $color-gray-400;
+      }
+
+      p {
+        color: $color-gray-700;
+        line-height: 2;
+        margin-bottom: 2rem;
+      }
+
+      h6 {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+}
+
+/* project data end */

@@ -1,0 +1,62 @@
+@import '../../../assets/scss/mixins';
+
+/* publication_thumbnail */
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+div.publication-thumbnail__image {
+  background: linear-gradient(180deg, #c9d0d6 70%, #c9d0d6 0, #414648 70.5%, #9ea5ac 0, #9ea5ac);
+  display: inline-flex;
+  padding: 2.188rem 2.938rem;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    background: #7b8085;
+    border-radius: 21%;
+    bottom: 37px;
+    content: '';
+    filter: blur(4px);
+    height: 27px;
+    left: 32px;
+    position: absolute;
+    right: 20px;
+    transform: skewX(64deg);
+    width: calc(100% - 100px);
+    z-index: -2;
+  }
+
+  &::after {
+    @extend %absolute__content;
+
+    @include transition(all 0.6s);
+
+    opacity: 0;
+    z-index: 1;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 0.75;
+    }
+
+    @each $name, $color in $colors {
+      &.#{$name}:after {
+        @include background-image(27.66deg, #{$color}, transparent 70.49%);
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  div.publication-thumbnail__image {
+    &:hover {
+      @each $name, $color in $colors {
+        &.#{$name}:after {
+          @include background-image(318deg, #{$color}, transparent 70.49%);
+        }
+      }
+    }
+  }
+}
+
+/* publication thumbnail end */

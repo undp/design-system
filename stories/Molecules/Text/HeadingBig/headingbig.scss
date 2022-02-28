@@ -1,0 +1,64 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+/* heading-big cta start */
+.heading-big {
+  @include transition(all 0.5s);
+
+  justify-content: center;
+  opacity: 1;
+  padding: $width-150 0 10.938rem;
+  z-index: 5;
+
+  @include devicebreak(medium) {
+    padding: $spacing-400 0 $spacing-320;
+  }
+
+  // &.inviewport {
+  //   opacity: 1;
+  // }
+
+  h2 {
+    color: $color-white;
+    margin-bottom: $spacing-09;
+
+    @include devicebreak(medium) {
+      margin-bottom: 0;
+    }
+  }
+
+  h4 {
+    color: $color-white;
+  }
+
+  ul {
+    color: $color-white;
+    margin-top: $spacing-08;
+  }
+}
+
+.color-blue {
+  @include transition(background-color 0.5s ease);
+
+  background-color: $color-ebony-clay;
+}
+
+.change-background {
+  opacity: 1;
+}
+
+:root {
+  --light: $color-white;
+  --blue: #{$color-ebony-clay};
+}
+
+body {
+  background: var(--light);
+}
+
+.color-blue {
+  color: $color-white;
+}
+
+/* heading-big cta end */

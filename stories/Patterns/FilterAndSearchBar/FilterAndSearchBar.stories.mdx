@@ -1,0 +1,160 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import FilterAndSearchBar from "./FilterAndSearchBar";
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = "Category";
+      return engText;
+    case "arabic":
+      const arabicText = "فئة";
+      return arabicText;
+    case "burmese":
+      const burmeseText = "အမျိုးအစား";
+      return burmeseText;
+    case "japanese":
+      const japaneseText = "カテゴリー";
+      return japaneseText;
+    default:
+      return "Category";
+  }
+};
+export const getCaptionForClearLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = "Clear All";
+      return engText;
+    case "arabic":
+      const arabicText = "امسح الكل";
+      return arabicText;
+    case "burmese":
+      const burmeseText = "အားလုံးကိုရှင်း";
+      return burmeseText;
+    case "japanese":
+      const japaneseText = "すべてクリア";
+      return japaneseText;
+    default:
+      return "Clear All";
+  }
+};
+export const getCaptionForActiveLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = "Active Filters:";
+      return engText;
+    case "arabic":
+      const arabicText = "عوامل التصفية النشطة:";
+      return arabicText;
+    case "burmese":
+      const burmeseText = "အသက်ဝင်သော စစ်ထုတ်မှုများ:";
+      return burmeseText;
+    case "japanese":
+      const japaneseText = "すべてクリア:";
+      return japaneseText;
+    default:
+      return "Active Filters:";
+  }
+};
+
+export const getButtonForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {close:'Close', sort:'Search and filter'}; return engText;
+    case 'arabic': const arabicText = {close:'قريب', sort:'البحث والتصفية'}; return arabicText;
+    case 'burmese': const burmeseText = {close:'ပိတ်လိုက်', sort:'ရှာဖွေပြီး စစ်ထုတ်ပါ။'}; return burmeseText;
+    case 'japanese': const japaneseText = {close:'選ぶ', sort:'検索とフィルタリング'}; return japaneseText;
+    default: return {close:'Close', sort:'Search and filter'};
+  }
+};
+
+<Meta
+  title="Patterns/Filter and search sidebar"
+  argTypes={{
+    Height: {
+      options: ["Fix height", "Auto height"],
+      control: { type: "radio" },
+      defaultValue: "Auto height",
+    },
+  }}
+/>
+
+# Filter and search sidebar
+
+The Filter and Search option allows the user to apply filters to the search section.
+
+### Overview
+
+This is the combination of several multi-select boxes with a search input field expanding on focus
+l 
+
+#### When to use:
+
+When filters are to be added to the search bar.
+
+### Formatting
+#### Default
+The search bar is rectangular shaped with a search icon. The active filters are chips with a cross.
+
+
+### Behaviors
+
+#### States 
+
+This is the default state where the user can search using a particular keyword. This indicates the search bar is ready to search. 
+
+Select: The search bar having a horizontal line below the search icon indicates that the search bar is in an open state.
+
+<Canvas>
+  <Story name="Filter and search sidebar">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      const buttonData = getButtonForLocale(locale);
+      const clearText = getCaptionForClearLocale(locale);
+      const activeFilterText = getCaptionForActiveLocale(locale);
+      return (
+        <FilterAndSearchBar
+          locale={locale}
+          buttonData={buttonData}
+          args={args}
+          clearText={clearText}
+          activeFilterText={activeFilterText}
+          data={caption}
+        ></FilterAndSearchBar>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Usage:
+- Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
+- Initialize the search, multi-select and filter by calling functions expandSearch(), multiSelect(), toggleFilter() respectively.
+
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/filter-and-search-bar.min.css
+- dist/css/components/multi-select.min.css
+- dist/css/components/checkbox.min.css
+- dist/css/components/radio.min.css
+- dist/css/components/search-expand.min.css
+
+#### JS:
+- dist/js/filter-seach-bar.min.js
+- dist/js/multi-select.min.js
+- dist/js/expand-search.min.js
+
+### Interactions
+- The checked state is applied to the entire option.
+- The hover state is applied to the entire option. 
+- By clicking on the X icon, the filters are removed.
+
+### Changelog
+1.0 — Released component
+
+
+
+

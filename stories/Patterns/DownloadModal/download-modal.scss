@@ -1,0 +1,116 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/base';
+
+/* download modal start */
+.download {
+  &-body {
+    display: flex;
+
+    @include devicebreak(small) {
+      height: calc(100% - 80px);
+    }
+  }
+
+  &-content {
+    width: 100%;
+
+    @include devicebreak(medium) {
+      padding-left: $spacing-06;
+      width: calc(100% - 358px);
+    }
+
+    .select-box {
+      margin-bottom: $spacing-07;
+      max-width: 100%;
+
+      @include devicebreak(medium) {
+        margin-right: 1.563rem;
+      }
+
+      .selected {
+        min-width: 100%;
+      }
+    }
+  }
+
+  &-list {
+    @extend %custom-scrollbar;
+
+    max-height: calc(100% - 82px);
+
+    @include devicebreak(medium) {
+      max-height: 323px;
+      padding-right: 1.563rem;
+    }
+
+    .download-row {
+      &.hide {
+        display: none;
+      }
+    }
+  }
+
+  &-footer {
+    margin-top: $spacing-07;
+    text-align: right;
+
+    @include devicebreak(medium) {
+      padding-right: $spacing-06;
+    }
+  }
+}
+
+.list-language {
+  max-height: 100%;
+
+  @include devicebreak(medium) {
+    max-height: 404px;
+  }
+}
+
+.modal-download {
+  .modal-content {
+    max-width: 633px;
+  }
+
+  .download-content {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+[dir='rtl'] {
+  .download {
+    @include devicebreak(medium) {
+      &-list {
+        padding-left: 1.563rem;
+        padding-right: 0;
+      }
+    }
+
+    &-content {
+      @include devicebreak(medium) {
+        padding-left: 0;
+        padding-right: $spacing-06;
+
+        .select-box {
+          margin-left: 1.563rem;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &-footer {
+      text-align: left;
+
+      @include devicebreak(medium) {
+        padding-left: $spacing-06;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+/* download modal end */

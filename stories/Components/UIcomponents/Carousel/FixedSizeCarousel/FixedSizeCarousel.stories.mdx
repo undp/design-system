@@ -1,0 +1,204 @@
+import { Meta, Story, Canvas, Anchor } from '@storybook/addon-docs';
+import {FixedSizeCarousel} from './FixedSizeCarousel';
+import { ImageOnlyCarousel } from '../ImageOnlyCarousel/ImageOnlyCarousel';
+import slImage from '../../../../assets/images/carousel1-img.jpg';
+
+
+export const statsArray = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {data: [{
+      slideImage: slImage,
+      tagtext: 'Publication',
+      titleText: 'UNDP Issues Brief on Nature-Based Climate Solutions',
+      descText: 'The conservation, rehabilitation and climate-informed management of biodiversity and ecosystems increases resilience to climate change and provides low-cost and long-term solutions to protect lives, livelihoods and infrastructure, and advance progress toward the Sustainable Development Goals.',
+      buttonText: 'Read More'
+    },
+    {
+      slideImage: slImage,
+      tagtext: 'Publication',
+      titleText: 'UNDP Issues Brief on Nature-Based Climate Solutions',
+      descText: 'The conservation, rehabilitation and climate-informed management of biodiversity and ecosystems increases resilience to climate change and provides low-cost and long-term solutions to protect lives, livelihoods and infrastructure, and advance progress toward the Sustainable Development Goals.',
+      buttonText: 'Read More'
+    },
+    {
+      slideImage: slImage,
+      tagtext: 'Publication',
+      titleText: 'UNDP Issues Brief on Nature-Based Climate Solutions',
+      descText: 'The conservation, rehabilitation and climate-informed management of biodiversity and ecosystems increases resilience to climate change and provides low-cost and long-term solutions to protect lives, livelihoods and infrastructure, and advance progress toward the Sustainable Development Goals.',
+      buttonText: 'Read More'  
+    }],
+    }; return engText;
+    case 'arabic': const arabicText = {data: [{
+      slideImage: slImage,
+      tagtext: 'النشر',
+      titleText: 'برنامج الأمم المتحدة الإنمائي يصدر موجزًا ​​عن الحلول المناخية القائمة على الطبيعة',
+      descText: 'يزيد حفظ التنوع البيولوجي والنظم البيئية وإعادة تأهيله وإدارته المستنيرة من المرونة في مواجهة تغير المناخ ويوفر حلولًا منخفضة التكلفة وطويلة الأجل لحماية الأرواح وسبل العيش والبنية التحتية ، ودفع التقدم نحو أهداف التنمية المستدامة.',
+      buttonText: 'اقرأ أكثر'
+    },
+    {
+      slideImage: slImage,
+      tagtext: 'النشر',
+      titleText: 'برنامج الأمم المتحدة الإنمائي يصدر موجزًا ​​عن الحلول المناخية القائمة على الطبيعة',
+      descText: 'يزيد حفظ التنوع البيولوجي والنظم البيئية وإعادة تأهيله وإدارته المستنيرة من المرونة في مواجهة تغير المناخ ويوفر حلولًا منخفضة التكلفة وطويلة الأجل لحماية الأرواح وسبل العيش والبنية التحتية ، ودفع التقدم نحو أهداف التنمية المستدامة.',
+      buttonText: 'اقرأ أكثر'
+    },
+    {
+      slideImage: slImage,
+      tagtext: 'النشر',
+      titleText: 'برنامج الأمم المتحدة الإنمائي يصدر موجزًا ​​عن الحلول المناخية القائمة على الطبيعة',
+      descText: 'يزيد حفظ التنوع البيولوجي والنظم البيئية وإعادة تأهيله وإدارته المستنيرة من المرونة في مواجهة تغير المناخ ويوفر حلولًا منخفضة التكلفة وطويلة الأجل لحماية الأرواح وسبل العيش والبنية التحتية ، ودفع التقدم نحو أهداف التنمية المستدامة.',
+      buttonText: 'اقرأ أكثر'
+    }],
+    }; return arabicText;
+    case 'burmese': const burmeseText = {data: [{
+      slideImage: slImage,
+      tagtext: 'ထုတ်ဝေခြင်း။',
+      titleText: 'UNDP သည် သဘာဝအခြေခံ ရာသီဥတုဆိုင်ရာ။',
+      descText: 'ဇီဝမျိုးစုံမျိုးကွဲများနှင့် ဂေဟစနစ်များ၏ ရာသီဥတုဆိုင်ရာ စီမံခန့်ခွဲမှု၊ ပြန်လည်ထူထောင်ရေးနှင့် ရာသီဥတုဆိုင်ရာ စီမံခန့်ခွဲမှုသည် ရာသီဥတုပြောင်းလဲမှုဒဏ်ကို ခံနိုင်ရည်အား တိုးမြင့်စေပြီး လူနေမှုဘဝ၊ အသက်မွေးဝမ်းကျောင်းမှုနှင့်',
+      buttonText: 'ပိုပြီးဖတ်ပါ'
+    },
+    {
+      slideImage: slImage,
+      tagtext: 'ထုတ်ဝေခြင်း။',
+      titleText: 'UNDP သည် သဘာဝအခြေခံ ရာသီဥတုဆိုင်ရာ။',
+      descText: 'ဇီဝမျိုးစုံမျိုးကွဲများနှင့် ဂေဟစနစ်များ၏ ရာသီဥတုဆိုင်ရာ စီမံခန့်ခွဲမှု၊ ပြန်လည်ထူထောင်ရေးနှင့် ရာသီဥတုဆိုင်ရာ စီမံခန့်ခွဲမှုသည် ရာသီဥတုပြောင်းလဲမှုဒဏ်ကို ခံနိုင်ရည်အား တိုးမြင့်စေပြီး လူနေမှုဘဝ၊ အသက်မွေးဝမ်းကျောင်းမှုနှင့် ',
+      buttonText: 'ပိုပြီးဖတ်ပါ'
+    },
+    {
+      slideImage: slImage,
+      tagtext: 'ထုတ်ဝေခြင်း။',
+      titleText: 'UNDP သည် သဘာဝအခြေခံ ရာသီဥတုဆိုင်ရာ။',
+      descText: 'ဇီဝမျိုးစုံမျိုးကွဲများနှင့် ဂေဟစနစ်များ၏ ရာသီဥတုဆိုင်ရာ စီမံခန့်ခွဲမှု၊ ပြန်လည်ထူထောင်ရေးနှင့် ရာသီဥတုဆိုင်ရာ စီမံခန့်ခွဲမှုသည် ရာသီဥတုပြောင်းလဲမှုဒဏ်ကို ခံနိုင်ရည်အား တိုးမြင့်စေပြီး လူနေမှုဘဝ၊ အသက်မွေးဝမ်းကျောင်းမှုနှင့် ',
+      buttonText: 'ပိုပြီးဖတ်ပါ'
+    }],
+    }; return burmeseText;
+    case 'japanese': const japaneseText = {data: [{
+      slideImage: slImage,
+      tagtext: '出版物',
+      titleText: 'UNDPが自然に基づく気候ソリューションに関する概要を発表',
+      descText: '生物多様性と生態系の保全、リハビリテーション、気候に基づいた管理は、気候変動に対する回復力を高め、生命、生計、インフラを保護し、持続可能な開発目標に向けて前進するための低コストで長期的なソリューションを提供します。',
+      buttonText: '続きを読む'
+    },
+    {
+      slideImage: slImage,
+      tagtext: '出版物',
+      titleText: 'UNDPが自然に基づく気候ソリューションに関する概要を発表',
+      descText: '生物多様性と生態系の保全、リハビリテーション、気候に基づいた管理は、気候変動に対する回復力を高め、生命、生計、インフラを保護し、持続可能な開発目標に向けて前進するための低コストで長期的なソリューションを提供します。',
+      buttonText: '続きを読む'
+    },
+    {
+      slideImage: slImage,
+      tagtext: '出版物',
+      titleText: 'UNDPが自然に基づく気候ソリューションに関する概要を発表',
+      descText: '生物多様性と生態系の保全、リハビリテーション、気候に基づいた管理は、気候変動に対する回復力を高め、生命、生計、インフラを保護し、持続可能な開発目標に向けて前進するための低コストで長期的なソリューションを提供します。',
+      buttonText: '続きを読む'
+    }],
+    }; return japaneseText;
+    default:
+    const dummy =  {data: [{
+      slideImage: slImage,
+      tagtext: 'Publication',
+      titleText: 'UNDP Issues Brief on Nature-Based Climate Solutions',
+      descText: 'The conservation, rehabilitation and climate-informed management of biodiversity and ecosystems increases resilience to climate change and provides low-cost and long-term solutions to protect lives, livelihoods and infrastructure, and advance progress toward the Sustainable Development Goals.',
+      buttonText: 'Read More'
+    },
+    {
+      slideImage: slImage,
+      tagtext: 'Publication',
+      titleText: 'UNDP Issues Brief on Nature-Based Climate Solutions',
+      descText: 'The conservation, rehabilitation and climate-informed management of biodiversity and ecosystems increases resilience to climate change and provides low-cost and long-term solutions to protect lives, livelihoods and infrastructure, and advance progress toward the Sustainable Development Goals.',
+      buttonText: 'Read More'
+    },
+    {
+      slideImage: slImage,
+      tagtext: 'Publication',
+      titleText: 'UNDP Issues Brief on Nature-Based Climate Solutions',
+      descText: 'The conservation, rehabilitation and climate-informed management of biodiversity and ecosystems increases resilience to climate change and provides low-cost and long-term solutions to protect lives, livelihoods and infrastructure, and advance progress toward the Sustainable Development Goals.',
+      buttonText: 'Read More'
+    }],
+    };
+    return dummy
+  }
+};
+
+<Meta title="Components/UI components/Carousel/Fixed carousel"/>
+
+# carousel - Fixed Image Size Carousel
+
+The Carousel is a slideshow of multiple images or content.
+
+### Overview
+The Carousel component is created for showing sliders, designation, and image in a particular section. It is a multi-usage component that creates teasing kinds of content.
+
+#### When to use:
+
+When multiple images or content is to be displayed in a single slide.
+
+### Formatting
+
+#### Default
+It consists of multiple grids with an image, description, and CTA link.
+
+### Content
+There are 3 types of Carousel: Fluid, Image, and Fixed 
+1. Fluid Image Size Carousel Component:
+In Fluid Image Size Carousel Component, the page layout of the content is adjusted as per the user’s device screen. It consists of a horizontal scroll bar, Image, Text area, CTA Link, Right cursor arrow (left in case of RTL).
+
+2. Image Only Carousel Component:
+In Image Only Carousel Component, only images are available in the slideshow while content and cta links are not included.
+
+3. Fixed Image Size Carousel Component:
+In Fixed Image Size Carousel Component, the size of the image does not change as per the user’s device screen. It consists of a horizontal scroll bar, Image, Text area, Primary button with arrow, Pagination(tablet only), Cursor arrow right (left in case of RTL). The horizontal scroll bar indicates the current position.
+
+
+### Behaviors
+
+#### States 
+FIxed Image Size Carousel Component:
+It has three states: Default, Mobile, and Tablet.
+
+- Default: The Description and Chip are located beside the Image and there is enough space between them. When the user is at the first item, the cursor arrow right is displayed. Clicking the arrow will take the user to the next item in the carousel. When the user is on the last item, the left cursor arrow is displayed. Clicking on it will take the user to the previous item in the carousel.
+- Mobile: The Description and Chip are located below the Image and there is no space between them. Swiping will move the user to the next or previous item.
+- Tablet: The Description and Chip are located beside the Image and there is minimal space between them. There are arrow buttons beside the Chip to slide back or to the next slide. Clicking pagination will take the user to the next/previous item.
+
+<Canvas>	
+ <Story name="Fixed carousel">
+  {(args, { globals: { locale } }) => {
+    const caption = statsArray(locale);
+    return <FixedSizeCarousel data={caption.data} label={caption.label}></FixedSizeCarousel>;
+  }}
+</Story>
+</Canvas>
+
+### Usage:
+- Copy HTML from the HTML tab of canvas.
+- Include Swiper library from here https://swiperjs.com/get-started in your html page.
+- If you use fixed image size carousel then include fluid-image-size-carousel.min.css and initialize carousel by calling swiper('.fixed-carousel', '.fixed-carousel__button-wrap'); functions
+- If you use Fluid image size carousel then include fixed-size-carousel.min.css and initialize carousel by calling swiper('.fluid-carousel', '.slide-content'); functions
+- If you use Image only carousel then include image-only-carousel.min.css and initialize the carousel by calling swiper('.image-carousel', '.slider-slide'); functions.
+- If you want to add left-right animation then add data-viewport=”true” attribute to the HTML element you want to animate and include viewport.min.js file.
+- Refer [this document](https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration & options
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from
+- dist/css/base-minimal.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/fixed-size-carousel.min.css
+- dist/css/components/swiper.min.css
+
+#### JS:
+- dist/js/swiper.min.js
+- dist/js/viewport.min.js
+- 3rd party libraries 
+Swiper (https://swiperjs.com/get-started)
+
+### Interactions
+- By clicking on the Chips and CTA Links user is directed to the detailed information page.
+- By clicking on the Arrows Buttons, the slides can be swiped forward or backward. 
+
+### Changelog
+1.0 — Released component

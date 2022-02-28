@@ -1,0 +1,115 @@
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+.spacing-wrapper .spacing__row {
+  .spacing__title.Primary {
+    font-size: 3.438rem;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: $spacing-10;
+    margin-top: $spacing-03;
+  }
+}
+
+.spacing__define .spacing__name {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+
+  .spacing__label {
+    height: 100px;
+    width: 100px;
+  }
+
+  .spacing__size {
+    height: 100px;
+    width: 100px;
+
+    @include devicebreak(medium) {
+      margin: 0 11rem;
+    }
+  }
+
+  .spacing-1,
+  .spacing-2,
+  .spacing-3,
+  .spacing-4,
+  .spacing-5,
+  .spacing-6,
+  .spacing-7,
+  .spacing-8,
+  .spacing-9,
+  .spacing-10,
+  .spacing-11,
+  .spacing-12,
+  .spacing-13 {
+    background-color: $color-blue-600;
+  }
+
+  .spacing-1 {
+    height: 2px;
+    width: 2px;
+  }
+
+  .spacing-2 {
+    height: 4px;
+    width: 4px;
+  }
+
+  .spacing-3 {
+    height: 8px;
+    width: 8px;
+  }
+
+  .spacing-4 {
+    height: 12px;
+    width: 12px;
+  }
+
+  .spacing-5 {
+    height: 16px;
+    width: 16px;
+  }
+
+  .spacing-6 {
+    height: 24px;
+    width: 24px;
+  }
+
+  .spacing-7 {
+    height: 32px;
+    width: 32px;
+  }
+
+  .spacing-8 {
+    height: 40px;
+    width: 40px;
+  }
+
+  .spacing-9 {
+    height: 48px;
+    width: 48px;
+  }
+
+  .spacing-10 {
+    height: 64px;
+    width: 64px;
+  }
+
+  .spacing-11 {
+    height: 80px;
+    width: 80px;
+  }
+
+  .spacing-12 {
+    height: 96px;
+    width: 96px;
+  }
+
+  .spacing-13 {
+    height: 160px;
+    width: 160px;
+  }
+}

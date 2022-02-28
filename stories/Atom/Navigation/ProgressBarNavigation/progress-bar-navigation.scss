@@ -1,0 +1,73 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+// * progress navigation start *//
+.progress-container {
+  background: $color-gray-300;
+  height: 0.75rem;
+  width: 100%;
+
+  @include devicebreak(medium) {
+    height: 1rem;
+  }
+
+  &.small {
+    height: 0.625rem;
+
+    @include devicebreak(medium) {
+      height: 0.75rem;
+    }
+
+    .progress-bar {
+      height: 0.625rem;
+
+      @include devicebreak(medium) {
+        height: 0.75rem;
+      }
+    }
+  }
+
+  &.yellow {
+    .progress-bar {
+      background: $color-yellow;
+    }
+  }
+
+  &.red {
+    .progress-bar {
+      background: $color-red;
+    }
+  }
+
+  &.green {
+    .progress-bar {
+      background: $color-green;
+    }
+  }
+
+  &.blue {
+    .progress-bar {
+      background: $color-azure;
+    }
+  }
+}
+
+.progress-bar {
+  @include transition(width 0.2s linear);
+
+  height: 0.75rem;
+  min-width: 1%;
+  position: fixed;
+  width: 34%;
+  z-index: 1;
+
+  @include devicebreak(medium) {
+    height: 1rem;
+  }
+}
+
+.progress-top {
+  top: 0;
+}
+// * progress navigation end *//

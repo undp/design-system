@@ -1,0 +1,200 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+label {
+  @extend %paragragh-font-20;
+
+  display: block;
+
+  &.error {
+    @extend %paragragh-font-20;
+
+    color: $color-black;
+    margin-top: 0;
+  }
+
+  &.disabled {
+    color: $color-gray-400;
+  }
+}
+
+.help {
+  color: $color-gray-500;
+  display: block;
+  font-size: $font-size-14;
+  margin-bottom: 0;
+  margin-top: $spacing-03;
+}
+
+.error {
+  color: $color-red;
+  font-size: $font-size-16;
+  margin-bottom: 0;
+  margin-top: $spacing-03;
+}
+
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=date],
+textarea {
+  @extend %background-white;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid $color-black;
+  border-radius: 0;
+  box-sizing: border-box;
+  display: block;
+  font-family: $Font-Family-ProximaNova;
+  font-size: $font-size-16;
+  height: 46px;
+  margin-top: $spacing-03;
+  padding: 0.625rem;
+  width: 100%;
+
+  &::placeholder {
+    color: $color-gray-500;
+  }
+
+  &:focus {
+    box-shadow: 0 0 4px $color-blue-800;
+    outline: 0;
+  }
+
+  input[type=date],
+  input[type=search] {
+    padding-left: $spacing-08;
+    position: relative;
+  }
+
+  &.disabled {
+    background-color: $color-white;
+    border: 2px solid $color-gray-400;
+    color: $color-gray-400;
+
+    &::placeholder {
+      color: $color-gray-400;
+    }
+  }
+
+  &.error {
+    border: 2px solid $color-red;
+  }
+}
+
+input[type=date] {
+  background:
+    url(#{$img-path-Icon}/calender-black.svg) no-repeat left
+    14px bottom 12px;
+  background-color: $color-white;
+  color: $color-gray-500;
+  padding-left: $spacing-08;
+
+  &.disabled {
+    background-image: url(#{$img-path-Icon}/date-disabled.svg);
+  }
+}
+
+input[type=search] {
+  background: url(#{$img-path-Icon}/search-black.svg) no-repeat left 14px bottom 12px;
+  color: #a9b1b7;
+  padding-left: 2.5rem;
+
+  &.disabled {
+    background-image: url(#{$img-path-Icon}/search-gray.svg);
+  }
+}
+
+.help {
+  &.disabled {
+    color: $color-gray-400;
+  }
+}
+
+textarea {
+  height: auto;
+  max-width: 100%;
+  resize: vertical;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  appearance: none;
+  left: 3px;
+  opacity: 0;
+  position: absolute;
+}
+
+[dir='rtl'] {
+  input[type=text],
+  input[type=number],
+  input[type=email],
+  input[type=password],
+  input[type=search],
+  input[type=tel],
+  input[type=date],
+  textarea {
+    @media (hover: none) and (pointer: coarse) {
+      input[type=date] {
+        padding-right: $spacing-06;
+      }
+    }
+  }
+
+  input[type=date],
+  input[type=search] {
+    background:
+      url(#{$img-path-Icon}/calender-black.svg) no-repeat
+      right 14px bottom 12px;
+    background-color: $color-white;
+    padding-left: 0.635rem;
+    padding-right: $spacing-08;
+    text-align: right;
+  }
+
+  input[type=search] {
+    background:
+      url(#{$img-path-Icon}/search-black.svg) no-repeat
+      right 14px bottom 12px;
+  }
+
+  input[type=date] {
+    &.disabled {
+      background-image: url(#{$img-path-Icon}/date-disabled.svg);
+    }
+  }
+
+  input[type='date']::-webkit-calendar-picker-indicator {
+    left: inherit;
+    position: absolute;
+    right: 27px;
+  }
+
+  input::-webkit-date-and-time-value {
+    margin-right: 0;
+    text-align: right;
+  }
+}
+
+// burmese lang
+:lang(my) {
+  .error {
+    line-height: 1.7;
+  }
+
+  input[type=text],
+  input[type=number],
+  input[type=email],
+  input[type=password],
+  input[type=search],
+  input[type=tel],
+  input[type=date],
+  textarea {
+    font-family: $Font-Family-NotoSans;
+  }
+}

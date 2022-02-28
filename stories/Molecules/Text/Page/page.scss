@@ -1,0 +1,26 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+/* page title start */
+.page-title {
+  h2 {
+    font-family: $Font-Family-SohneBreit;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    font-weight: 400;
+    margin-bottom: $spacing-03;
+  }
+
+  &.white {
+    h2,
+    h4 {
+      color: $color-white;
+    }
+  }
+}
+
+/* page title end */

@@ -1,0 +1,259 @@
+import { Meta, Story, Canvas, Source } from "@storybook/addon-docs";
+import { FeaturedCard } from "./FeaturedCard";
+import img from "../../../../assets/images/card2.jpg";
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+       featureddata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            type: "color",
+            scale: "medium",
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            type: "color",
+            scale: "medium",
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            imgback: img,
+            type: "image",
+            scale: "large",
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            type: "color",
+            scale: "medium",
+          },
+        ],
+        headertext: ["Related",<br/>,"Posts"]
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        featureddata: [
+          {
+            contenttile: "علامة المحتوى",
+            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            descriptionText: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            button: "اقرأ أكث",
+            type: "color",
+            scale: "medium",
+          },
+          {
+            contenttile: "علامة المحتوى",
+            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            descriptionText: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            button: "اقرأ أكث",
+            type: "color",
+            scale: "medium",
+          },
+          {
+            contenttile: "علامة المحتوى",
+            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            descriptionText: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            button: "اقرأ أكث",
+            imgback: img,
+            type: "image",
+            scale: "large",
+          },
+          {
+            contenttile: "علامة المحتوى",
+            contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            descriptionText: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
+            button: "اقرأ أكث",
+            type: "color",
+            scale: "medium",
+          },
+        ],
+        headertext: ["علامة",<br/>,"المحتو"]
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        featureddata: [
+          {
+            contenttile: "အကြောင်းအရာ TAG",
+            contentname:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            descriptionText:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            button: "ပိုပြီးဖတ်ပါ",
+            type: "color",
+            scale: "medium"
+          },
+          {
+            contenttile: "အကြောင်းအရာ TAG",
+            contentname:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            descriptionText:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            button: "ပိုပြီးဖတ်ပါ",
+            type: "color",
+            scale: "medium"
+          },
+          {
+            contenttile: "အကြောင်းအရာ TAG",
+            contentname:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            descriptionText:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            button: "ပိုပြီးဖတ်ပါ",
+            imgback: img,
+            type: "image",
+            scale: "large"
+          },
+          {
+            contenttile: "အကြောင်းအရာ TAG",
+            contentname:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            descriptionText:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            button: "ပိုပြီးဖတ်ပါ",
+            type: "color",
+            scale: "medium"
+          },
+        ],
+        headertext:["အကြောင်",<br/>,"အကြောင်"]
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        featureddata: [
+          {
+            contenttile: "コンテンツタグ",
+            contentname: "投稿のタイトルはここにあり、2行です",
+            descriptionText: "投稿のタイトルはここにあり、2行です",
+            button: "続きを読む",
+            type: "color",
+            scale: "medium"
+          },
+          {
+            contenttile: "コンテンツタグ",
+            contentname: "投稿のタイトルはここにあり、2行です",
+            descriptionText: "投稿のタイトルはここにあり、2行です",
+            button: "続きを読む",
+            type: "color",
+            scale: "medium"
+          },
+          {
+            contenttile: "コンテンツタグ",
+            contentname: "投稿のタイトルはここにあり、2行です",
+            descriptionText: "投稿のタイトルはここにあり、2行です",
+            button: "続きを読む",
+            imgback: img,
+            type: "image",
+            scale: "large"
+          },
+          {
+            contenttile: "コンテンツタグ",
+            contentname: "投稿のタイトルはここにあり、2行です",
+            descriptionText: "投稿のタイトルはここにあり、2行です",
+            button: "続きを読む",
+            type: "color",
+            scale: "medium"
+          },
+        ],
+        headertext: ["コンテン",<br/>,"ツタグ"]
+      };
+      return japaneseText;
+    default:
+      const dummy = {
+        featureddata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            type: "color",
+            scale: "medium"
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            type: "color",
+            scale: "medium"
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            imgback: img,
+            type: "image",
+            scale: "large"
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            button: "READ MORE",
+            type: "color",
+            scale: "medium"
+          },
+        ],
+        headertext: ["Related",<br/>,"Posts"],
+      };
+      return dummy;
+  }
+};
+
+<Meta title="Patterns/Card grids/Featured cards" />
+
+# Featured Cards
+
+This is just collection of the [Featured card](/story/components-ui-components-cards-featured-card--featured-card)
+
+<Canvas>
+  <Story name="Featured cards">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <FeaturedCard
+          data={caption.featureddata}
+          headertext={caption.headertext}
+          {...args}
+        ></FeaturedCard>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### 
+### Usage
+- Copy the HTML from the canvas
+- Include the CSS and JS resource defined in the `Featured card`
+- Include the `dist/css/components/featured-card.min.css` file

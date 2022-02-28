@@ -1,0 +1,164 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+@import '../PublicationPage/publication-page.scss';
+
+.generic-page {
+  @include devicebreak(medium) {
+    .button-secondary {
+      margin-left: 0.75rem;
+    }
+  }
+
+  .sidebar {
+    &-width {
+      .sidebar-accordion {
+        @include devicebreak(medium) {
+          margin-top: 0.8rem;
+          width: 90%;
+        }
+
+        &.show-small {
+          display: block;
+        }
+
+        &.scrollbar {
+          height: calc(100vh - 9.375rem);
+          overflow-y: auto;
+        }
+      }
+
+      ul {
+        list-style: none;
+      }
+    }
+
+    &-mobile {
+      display: none;
+      margin-bottom: $spacing-04;
+      margin-top: 5.5rem;
+
+      @media (max-width: 1023px) {
+        display: block;
+
+        .sidebar-accordion {
+          width: 100%;
+
+          ul {
+            display: none;
+          }
+
+          &.show-small {
+            ul {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    &-desktop {
+      display: block;
+
+      @media (max-width: 1023px) {
+        display: none;
+      }
+
+      @include devicebreak(medium) {
+        .sidebar-accordion h6 {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .margin-top {
+    &-32 {
+      margin-top: $spacing-07;
+    }
+
+    &-72 {
+      margin-top: 4.5rem;
+    }
+  }
+
+  .progress {
+    &-container {
+      @extend %progress-bar;
+    }
+
+    &-top {
+      top: inherit;
+    }
+
+    &-bar {
+      width: 0%;
+    }
+  }
+
+  .pagehero-full {
+    margin-top: 0;
+
+    @include devicebreak(large) {
+      margin-top: 5.688rem;
+    }
+
+    @include devicebreak(xlarge) {
+      margin-top: 8.1875rem;
+    }
+
+    .content-box {
+      width: auto;
+    }
+
+    .breadcrumb {
+      @include devicebreak(small) {
+        padding-top: $spacing-04;
+      }
+    }
+  }
+
+  .fluid-carousel {
+    .slide-content {
+      @include devicebreak(xlarge) {
+        flex: 1 0 40%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .genric-slider {
+    margin-right: -#{$spacing-04};
+
+    @include devicebreak(small) {
+      .swiper-initialized .swiper-scrollbar {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .generic-page {
+    @include devicebreak(medium) {
+      .button-secondary {
+        margin-left: unset;
+        margin-right: 0.75rem;
+      }
+    }
+
+    .genric-slider {
+      margin-left: -#{$spacing-04};
+      margin-right: 0;
+
+      @include devicebreak(small) {
+        margin-left: -#{$spacing-06};
+        margin-right: 0;
+
+        .swiper-initialized .swiper-scrollbar {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}

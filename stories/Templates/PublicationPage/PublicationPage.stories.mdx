@@ -1,0 +1,822 @@
+import { Meta, Story, Canvas, Source } from '@storybook/addon-docs';
+import { PublicationPage } from './PublicationPage';
+import {getCaptionForLocale as PublicationCardData} from '../../Molecules/Blocks/PublicationCard/PublicationCard.stories.mdx';
+import { getCaptionForLocale as  ContentCardWithOutImageData } from '../../Components/UIcomponents/Cards/ContentCard/ContentCardWithOutImage.stories.mdx';
+import {getCaptionForLocale as footerData} from '../../Organism/Footer/Footer.stories.mdx';
+import logo from '../../assets/images/undp-logo-blue.svg';
+import logowhite from '../../assets/images/undp-logo-white.svg';
+import { getCaptionForLocale as Languageswitcher } from '../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.mdx';
+import img from '../../assets/images/card2.jpg';
+import {
+  getNavLinks,
+  menuData,
+  getSiteTitle,
+  getLocationDataForLocale,
+  getBackForLocale,
+  getSelectlanguage,
+} from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {
+      postheaderdata: [{
+        text: 'Home'
+      },
+      {
+        text: 'Second-level'
+      },
+      {
+        text: 'Third-level'
+      },
+      {
+        text: 'Page Title'
+      }],
+      download: 'Download', 
+      readmore: 'READ MORE',
+      header: 'UNDP Strategic Plan 2022-2025',
+      description: 'SEPTEMBER 2, 2021',
+      paragraphTop1:'Non incidunt et consequatur ea ut esse. Quis non quos. Et placeat veniam autem ipsam eum dolor ut aspernatur. Odit accusantium molestias quae dicta. Dolorum voluptatem consectetur qui et tenetur eum. Ex et voluptas perspiciatis laborum.',
+      paragraphTop2:'Exercitationem ut enim dolore pariatur magni non fuga. Et enim impedit sit eos dolor cupiditate. Blanditiis eum et velit exercitationem quia est consectetur. Aperiam molestiae aut nam. Unde qui possimus. Perferendis animi natus neque atque ab.',
+      paragraphTop3:'Earum eos eos qui natus unde vero. Dolorem delectus commodi. Quia cupiditate maiores eos sunt quia ratione consequatur voluptate id.',
+      buttonname: "VIEW MORE",
+      PublicationHeading:['Related', <br/>,'Publications'],
+      menuTitle1: 'TOPICS',
+      menuTitle2: ['REGIONS &',<br/>,'COUNTRIES'],
+      menuTitle3: 'SDGS',
+      menuTitle4: 'AUTHORS',
+      menuData1: [
+        {
+          label: "Topic 1",
+        },
+        {
+          label: "Topic 2",
+        },
+        {
+          label: "Topic 3",
+        },
+      ],
+      menuData2: [
+        {
+          label: "Region 1",
+        },
+        {
+          label: "Region 2",
+        },
+        {
+          label: "Region 3",
+        },
+      ],
+      menuData3: [
+        {
+          label: "SGD 1",
+        },
+        {
+          label: "SGD 2",
+        },
+      ],
+      menuData4: [
+        {
+          label: "First Name Last Name",
+        },
+        {
+          label: "First Name Last Name",
+        },
+      ],
+      featuredcontentdata: [
+        {
+          contenttile: "CONTENT TAG",
+          contentname:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          descriptionText:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt",
+          button: "READ MORE",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          descriptionText:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt",
+          button: "READ MORE",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+         {
+          contenttile: "CONTENT TAG",
+          contentname:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          descriptionText:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt",
+          button: "READ MORE",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          descriptionText:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt",
+          button: "READ MORE",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+         {
+          contenttile: "CONTENT TAG",
+          contentname:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          descriptionText:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt",
+          button: "READ MORE",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          descriptionText:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt",
+          button: "READ MORE",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+      ]
+    }; 
+    return engText;
+    case 'arabic': const arabicText = {
+      postheaderdata: [{
+      text: 'الصفحة الرئيسية'
+      },
+      {
+        text: 'المستوى الثاني'
+      },
+      {
+        text: 'المستوى الثالث'
+      },
+      {
+        text: 'عنوان الصفحة'
+      }],
+      download: 'تحميل', 
+      readmore: 'اقرأ أكثر',
+      header: 'الخطة الإستراتيجية لبرنامج الأمم المتحدة الإنمائي 2022-2025',
+      description: '2 سبتمبر 2021',
+      paragraphTop1:'عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما يترتب عليها من أمور.عدم التعرض للحوادث وما يترتب عليها من أمور.',
+      paragraphTop2:'عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما يترتب عليها من أمور.عدم التعرض للحوادث وما يترتب عليها من أمور.',
+      paragraphTop3:'عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما يترتب عليها من أمور.عدم التعرض للحوادث وما يترتب عليها من أمور.',
+      buttonname: "إنجليزي",
+      PublicationHeading:['متعلق ب', <br/>,'المنشورات'],
+      menuTitle1: 'المواضيع',
+      menuTitle2: ['المناطق و',<br/>,'الدول'],
+      menuTitle3: 'أهداف التنمية المستدامة',
+      menuTitle4: 'المؤلفون',
+      menuData1: [
+        {
+          label: "الموضوع 1",
+        },
+        {
+          label: "الموضوع 2",
+        },
+        {
+          label: "الموضوع 3",
+        },
+      ],
+      menuData2: [
+        {
+          label: "المنطقة 1",
+        },
+        {
+          label: "المنطقة 2",
+        },
+        {
+          label: "المنطقة 3",
+        },
+      ],
+      menuData3: [
+        {
+          label: "دولار سنغافوري 1",
+        },
+        {
+          label: "دولار سنغافوري 2",
+        },
+      ],
+      menuData4: [
+        {
+          label: "الاسم الاول الاسم الاخير",
+        },
+        {
+          label: "الاسم الاول الاسم الاخير",
+        },
+      ],
+      featuredcontentdata: [
+        {
+          contenttile: "علامة المحتوى",
+          contentname:
+            " عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما",
+          descriptionText:
+            "عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما",
+          button: "اقرأ أكثر",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "علامة المحتوى",
+          contentname:
+            " عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما",
+          descriptionText:
+            "عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما",
+          button: "اقرأ أكثر",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+         {
+          contenttile: "علامة المحتوى",
+          contentname:
+            " عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما",
+          descriptionText:
+            "عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما",
+          button: "اقرأ أكثر",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "علامة المحتوى",
+          contentname:
+            " عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما",
+          descriptionText:
+            "عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما",
+          button: "اقرأ أكثر",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+         {
+          contenttile: "علامة المحتوى",
+          contentname:
+            " عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما",
+          descriptionText:
+            "عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما",
+          button: "اقرأ أكثر",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "علامة المحتوى",
+          contentname:
+            " عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما",
+          descriptionText:
+            "عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما يترتب عليها من أمور. عدم التعرض للحوادث وما",
+          button: "اقرأ أكثر",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+      ]
+    }; 
+    return arabicText;
+    case 'burmese': const burmeseText = {
+        postheaderdata: [{
+        text: 'အိမ်ပြန်'
+      },
+      {
+        text: 'ဒုတိယအဆင့်'
+      },
+      {
+        text: 'တတိယအဆင့်'
+      },
+      {
+        text: 'စာမျက်နှာခေါင်းစဉ်'
+      }],
+      download: 'ဒေါင်းလုပ်', 
+      readmore: 'ပိုပြီးဖတ်ပါ',
+      header: 'UNDP မဟာဗျူဟာစီမံချက် 2022-2025',
+      description: 'စက်တင်ဘာလ 2 ရက်၊ 2021 ခုနှစ်',
+      paragraphTop1:'ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ',
+      paragraphTop2:'ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ',
+      paragraphTop3:'ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ',
+      buttonname: "ပိုမိုကြည့်ရှုပါ။",
+      PublicationHeading:['ဆက်စပ်', <br/>,'စာစောင်များ'],
+      menuTitle1: 'ခေါင်းစဉ်များ',
+      menuTitle2: ['ဒေသများ &',<br/>,'နိုင်ငံများ'],
+      menuTitle3: 'SDGS',
+      menuTitle4: 'စာရေးသူများ',
+      menuData1: [
+        {
+          label: "ခေါင်းစဉ် ၁",
+        },
+        {
+          label: "ခေါင်းစဉ် ၂",
+        },
+        {
+          label: "ခေါင်းစဉ် ၃",
+        },
+      ],
+      menuData2: [
+        {
+          label: "တိုင်းဒေသကြီး ၁",
+        },
+        {
+          label: "တိုင်းဒေသကြီး ၂",
+        },
+        {
+          label: "တိုင်းဒေသကြီး ၃",
+        },
+      ],
+      menuData3: [
+        {
+          label: "SGD ၁",
+        },
+        {
+          label: "SGD ၂",
+        },
+      ],
+      menuData4: [
+        {
+          label: "ပထမအမည် နောက်ဆုံးအမည်",
+        },
+        {
+          label: "ပထမအမည် နောက်ဆုံးအမည်",
+        },
+      ],
+      featuredcontentdata: [
+        {
+          contenttile: "အကြောင်းအရာ TAG",
+          contentname:
+            "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+          descriptionText:
+            "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+          button: "ဆက်ဖတ်ရန်",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "အကြောင်းအရာ TAG",
+          contentname:
+            "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+          descriptionText:
+            "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+          button: "ဆက်ဖတ်ရန်",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+         {
+          contenttile: "အကြောင်းအရာ TAG",
+          contentname:
+            "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+          descriptionText:
+            "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+          button: "ဆက်ဖတ်ရန်",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "အကြောင်းအရာ TAG",
+          contentname:
+            "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+          descriptionText:
+            "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+          button: "ဆက်ဖတ်ရန်",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+         {
+          contenttile: "အကြောင်းအရာ TAG",
+          contentname:
+            "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+          descriptionText:
+            "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+          button: "ဆက်ဖတ်ရန်",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "အကြောင်းအရာ TAG",
+          contentname:
+            "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+          descriptionText:
+            "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+          button: "ဆက်ဖတ်ရန်",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+      ]
+    }; 
+    return burmeseText;
+    case 'japanese': const japaneseText = {
+        postheaderdata: [{
+        text: 'الصفحة الرئيسية'
+      },
+      {
+        text: 'セカンドレベル'
+      },
+      {
+        text: '第3レベル'
+      },
+      {
+        text: 'ページタイトル'
+      }],
+      download: 'ダウンロード', 
+      readmore: '続きを読む',
+      header: 'UNDP戦略計画2022-2025',
+      description: '2021年9月2日',
+      paragraphTop1:'Weapons for Developmentイニシアチブ-OCWAR-Tプロジェクトは、EUとGFFOが共同出資するECOWASプロジェクトです。 Weapons for Developmentイニシアチブ-OCWAR-Tプロジェクトは、EUとGFFOが共同出資するECOWASプロジェクトです。',
+      paragraphTop2:'Weapons for Developmentイニシアチブ-OCWAR-Tプロジェクトは、EUとGFFOが共同出資するECOWASプロジェクトです。 Weapons for Developmentイニシアチブ-OCWAR-Tプロジェクトは、EUとGFFOが共同出資するECOWASプロジェクトです。',
+      paragraphTop3:'Weapons for Developmentイニシアチブ-OCWAR-Tプロジェクトは、EUとGFFOが共同出資するECOWASプロジェクトです。 Weapons for Developmentイニシアチブ-OCWAR-Tプロジェクトは、EUとGFFOが共同出資するECOWASプロジェクトです。',
+      buttonname: "もっと見る",
+      PublicationHeading:['関連している', <br/>,'出版物'],
+      menuTitle1: 'トピック',
+      menuTitle2: ['地域＆',<br/>,'国'],
+      menuTitle3: 'SDGS',
+      menuTitle4: '著者',
+      menuData1: [
+        {
+          label: "トピック1",
+        },
+        {
+          label: "トピック2",
+        },
+        {
+          label: "トピック3",
+        },
+      ],
+      menuData2: [
+        {
+          label: "リージョン1",
+        },
+        {
+          label: "リージョン2",
+        },
+        {
+          label: "リージョン3",
+        },
+      ],
+      menuData3: [
+        {
+          label: "SGD 1",
+        },
+        {
+          label: "SGD 2",
+        },
+      ],
+      menuData4: [
+        {
+          label: "名前苗字",
+        },
+        {
+          label: "名前苗字",
+        },
+      ],
+      featuredcontentdata: [
+        {
+          contenttile: "コンテンツタグ",
+          contentname:
+            "「開発のための武器」イニシアチブの支援を受けて、シエラレオネの農村コミュニティによって破壊された72の小さな武器",
+          descriptionText:
+            "Weapons for Developmentイニシアチブ-OCWAR-Tプロジェクトは、EUとGFFOが共同出資するECOWASプロジェクトです。 ",
+          button: "続きを読む",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+           contenttile: "コンテンツタグ",
+          contentname:
+            "「開発のための武器」イニシアチブの支援を受けて、シエラレオネの農村コミュニティによって破壊された72の小さな武器",
+          descriptionText:
+            "Weapons for Developmentイニシアチブ-OCWAR-Tプロジェクトは、EUとGFFOが共同出資するECOWASプロジェクトです。 ",
+          button: "続きを読む",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+         {
+           contenttile: "コンテンツタグ",
+          contentname:
+            "「開発のための武器」イニシアチブの支援を受けて、シエラレオネの農村コミュニティによって破壊された72の小さな武器",
+          descriptionText:
+            "Weapons for Developmentイニシアチブ-OCWAR-Tプロジェクトは、EUとGFFOが共同出資するECOWASプロジェクトです。 ",
+          button: "続きを読む",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "コンテンツタグ",
+          contentname:
+            "「開発のための武器」イニシアチブの支援を受けて、シエラレオネの農村コミュニティによって破壊された72の小さな武器",
+          descriptionText:
+            "Weapons for Developmentイニシアチブ-OCWAR-Tプロジェクトは、EUとGFFOが共同出資するECOWASプロジェクトです。 ",
+          button: "続きを読む",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+         {
+           contenttile: "コンテンツタグ",
+          contentname:
+            "「開発のための武器」イニシアチブの支援を受けて、シエラレオネの農村コミュニティによって破壊された72の小さな武器",
+          descriptionText:
+            "Weapons for Developmentイニシアチブ-OCWAR-Tプロジェクトは、EUとGFFOが共同出資するECOWASプロジェクトです。 ",
+          button: "続きを読む",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+           contenttile: "コンテンツタグ",
+          contentname:
+            "「開発のための武器」イニシアチブの支援を受けて、シエラレオネの農村コミュニティによって破壊された72の小さな武器",
+          descriptionText:
+            "Weapons for Developmentイニシアチブ-OCWAR-Tプロジェクトは、EUとGFFOが共同出資するECOWASプロジェクトです。 ",
+          button: "続きを読む",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+      ]
+    }; 
+    return japaneseText;
+    default:
+      return {
+        postheaderdata: [{
+        text: 'Home'
+      },
+      {
+        text: 'Second-level'
+      },
+      {
+        text: 'Third-level'
+      },
+      {
+        text: 'Page Title'
+      }],
+      download: 'Download', 
+      readmore: 'READ MORE',
+      header: 'UNDP Strategic Plan 2022-2025',
+      description: 'SEPTEMBER 2, 2021',
+      paragraphTop1:'Non incidunt et consequatur ea ut esse. Quis non quos. Et placeat veniam autem ipsam eum dolor ut aspernatur. Odit accusantium molestias quae dicta. Dolorum voluptatem consectetur qui et tenetur eum. Ex et voluptas perspiciatis laborum.',
+      paragraphTop2:'Exercitationem ut enim dolore pariatur magni non fuga. Et enim impedit sit eos dolor cupiditate. Blanditiis eum et velit exercitationem quia est consectetur. Aperiam molestiae aut nam. Unde qui possimus. Perferendis animi natus neque atque ab.',
+      paragraphTop3:'Earum eos eos qui natus unde vero. Dolorem delectus commodi. Quia cupiditate maiores eos sunt quia ratione consequatur voluptate id.',
+      buttonname: "VIEW MORE",
+      PublicationHeading:['Related', <br/>,'Publications'],
+      menuTitle1: 'TOPICS',
+      menuTitle2: ['REGIONS &',<br/>,'COUNTRIES'],
+      menuTitle3: 'SDGS',
+      menuTitle4: 'AUTHORS',
+      menuData1: [
+        {
+          label: "Topic 1",
+        },
+        {
+          label: "Topic 2",
+        },
+        {
+          label: "Topic 3",
+        },
+      ],
+      menuData2: [
+        {
+          label: "Region 1",
+        },
+        {
+          label: "Region 2",
+        },
+        {
+          label: "Region 3",
+        },
+      ],
+      menuData3: [
+        {
+          label: "SGD 1",
+        },
+        {
+          label: "SGD 2",
+        },
+      ],
+      menuData4: [
+        {
+          label: "First Name Last Name",
+        },
+        {
+          label: "First Name Last Name",
+        },
+      ],
+      featuredcontentdata: [
+        {
+          contenttile: "CONTENT TAG",
+          contentname:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          descriptionText:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt",
+          button: "READ MORE",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          descriptionText:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt",
+          button: "READ MORE",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+         {
+          contenttile: "CONTENT TAG",
+          contentname:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          descriptionText:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt",
+          button: "READ MORE",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          descriptionText:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt",
+          button: "READ MORE",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+         {
+          contenttile: "CONTENT TAG",
+          contentname:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          descriptionText:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt",
+          button: "READ MORE",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+        {
+          contenttile: "CONTENT TAG",
+          contentname:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit",
+          descriptionText:
+            "Lorem ipsum dolor sit amet, consectetur domus adipiscing elit, sed do eiusmod tempor incididunt",
+          button: "READ MORE",
+          type: "image",
+          scale: "medium",
+          imgback: img,
+        },
+      ]
+    };
+  }
+};
+
+<Meta title="Templates/Publication page"/>
+
+<style>{`
+  .sbdocs-preview {display: none}
+`}</style>
+
+# Publication Page
+
+A Publication page has information about important things like copyright, publication details, and legal disclaimers. 
+
+### Overview
+
+In the Publication Page, the user can get important information such as copyright, publication details, and legal disclaimers. Mockup - https://www.undp.org/publications/fossil-fuel-subsidy-reform-lessons-and-opportunities
+
+### Template Structure
+
+The following components are used to create the “Article Page” template in the design system
+- Global header
+- Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.
+- Download Card - Download the document in the user preferred language
+- Read more links - Help users quickly understand the context in which they are placed
+- Post block without description - Defines a section of information data with some items - Header Title, Date.
+- Paragraph
+- Menu links with label - Consists of multiple clickable items placed at the top of the page
+- Featured Content Cards - Featured card groups that will have CTA links (this can be just #).
+- View more buttons for showing more featured cards:  Call to action that will be performed when the user clicks it.
+- Standard footer 
+
+### Performance
+- The page performance will be optimized by considering the following:
+- Lazy load
+- Use appropriate media renditions based on the client’s viewpoint.
+- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
+- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
+- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.
+
+### Usage
+- Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
+- Initialize navigation, language switcher, accordion, filter by calling below mentioned functions.
+  - navigationInitialize();
+  - langSwitch();
+  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
+
+#### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/global-header.min.css
+- dist/css/components/language-switcher.min.css
+- dist/css/components/menu.min.css
+- dist/css/components/mega-menu.min.css
+- dist/css/components/mobile-nav.min.css
+- dist/css/components/breadcrumbs.min.css
+- dist/css/components/content-card.min.css
+- dist/css/components/cta-link.min.css
+- dist/css/components/publication-card.min.css
+- dist/css/components/input-fields.min.css
+- dist/css/components/buttons.min.css
+- dist/css/components/newsletter-signup.min.css
+- dist/css/components/accordion.min.css
+- dist/css/components/footer.min.css
+- dist/css/templates/publication-page.min.css
+
+#### Js:
+- dist/js/animation.min.js
+- dist/js/navigation.min.js
+- dist/js/undp.min.js
+- dist/js/lang-switcher.min.js
+- dist/js/accordion.min.js
+- dist/js/sticky.min.js
+- dist/js/viewport.min.js
+
+
+### Changelog
+- 1.0 — Released component
+
+
+<Canvas>
+  <Story name="Publication page" parameters={{
+      layout: "fullscreen"
+    }}>
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      const navigationData= getNavLinks(locale);
+      const leftNavigationData=navigationData.filter(item=>item.position==='left');
+      const rightNavigationData=navigationData.filter(item=>item.position==='right');
+      return <PublicationPage
+          data={caption.postheaderdata}
+          active={'default'}
+          download={caption.download} 
+          readmore={caption.readmore} 
+          image
+          blockHeader={caption.header} 
+          blockDescription={caption.description}
+          paragraphTop1={caption.paragraphTop1}
+          paragraphTop2={caption.paragraphTop2}
+          paragraphTop3={caption.paragraphTop3}
+          buttontype={caption.buttonname}
+          relatedPublicationHeading={caption.PublicationHeading}
+          ContentCardWithOutImageData={caption.contentdata}
+          footerData={footerData(locale)}
+          logo={logo}
+          logowhite={logowhite}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          menuTitle1={caption.menuTitle1}
+          menuTitle2={caption.menuTitle2}
+          menuTitle3={caption.menuTitle3}
+          menuTitle4={caption.menuTitle4}
+          menuData1={caption.menuData1}
+          menuData2={caption.menuData2}
+          menuData3={caption.menuData3}
+          menuData4={caption.menuData4}
+          FeaturedCardData={caption.featuredcontentdata}
+      ></PublicationPage>;
+    }}
+  </Story>
+</Canvas>

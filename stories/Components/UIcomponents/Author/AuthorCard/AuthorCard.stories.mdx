@@ -1,0 +1,97 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Authorcard } from './AuthorCard';
+import user from '../../../../assets/images/author.png';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {authordata: [{
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    }],
+    paragraph: 'Inventore magni accusantium labore qui. Dolorum numquam nihil labore quis harum dolorum. Sed eligendi ex quis delectus et tempore et eos. Molestias enim necessitatibus incidunt sit ab officiis aut. Qui aspernatur impedit nesciunt inventore quo. Reprehenderit voluptatum nihil voluptates et.',
+    button: 'VIEW 234 POSTS'}; return engText;
+    case 'arabic': const arabicText = {authordata: [{
+      Authorlabel: 'أكيم شتاينر',
+      Authortext: 'مدير',
+    }],
+    paragraph: 'مخترع يتهمه بعمل شاق كبير. لم أشعر أبدًا بأي ألم أو تعب أو أي من هذه الآلام. ولكن أن تختار من المختار والوقت وهم. تحدث المشاكل من الاحتياجات أو من الخدمات. أولئك الذين يرفضون الباحث لا يعرفون كيف يمنعونه. لا يلوم الملذات ولا الملذات.',
+    button: 'عرض 234 وظيفة'}; return arabicText;
+    case 'burmese': const burmeseText = {authordata: [{
+      Authorlabel: 'အောင်မြင်သည် စတီရီယို',
+      Authortext: 'အုပ်ချုပ်သူ',
+    }],
+    paragraph: 'ကြီးကျယ်သောကြိုးစားအားထုတ်မှုကိုစွပ်စွဲသူတီထွင်သူတစ် ဦး ငါနာကျင်တာ၊ ပင်ပန်းတာမရှိဘူး၊ ဒီနာကျင်မှုတစ်ခုမှမရှိခဲ့ဘူး။ ဒါပေမယ့်ရွေးချယ်တဲ့သူတစ်ယောက်ကနေရွေးချယ်ဖို့နဲ့အချိန်နဲ့သူတို့အတွက်ပဲ။ ဒုက္ခများသည်လိုအပ်ချက်များသို့မဟုတ် ၀ န်ဆောင်မှုများမှဖြစ်သည်။ ရှာဖွေသူကိုငြင်းပယ်သူများသည်၎င်းကိုမည်သို့ကာကွယ်ရမည်ကိုမသိပါ။ သူသည်အပျော်အပါးနှင့်အပျော်အပါးကိုအပြစ်မတင်။',
+    button: 'ပိုစ် ၂၃၄ ကိုကြည့်ပါ'}; return burmeseText;
+    case 'japanese': const japaneseText = {authordata: [{
+      Authorlabel: 'テレサウェッブ',
+      Authortext: '管理者',
+    }],
+    paragraph: '大変な努力を非難している発明家。 痛みも、倦怠感も、これらの痛みもありませんでした。 しかし、選択されたものと時間とそれらから選択すること。 トラブルはニーズやサービスから発生します。 ファインダーを拒否する人はそれを防ぐ方法を知りません。 彼は喜びも喜びも非難しません。',
+    button: '234件の投稿を表示'}; return japaneseText;
+    default:
+      const dummy =  {authordata: [{
+      Authorlabel: 'Achim Steiner',
+      Authortext: 'Administrator',
+    }],
+    paragraph: 'Inventore magni accusantium labore qui. Dolorum numquam nihil labore quis harum dolorum. Sed eligendi ex quis delectus et tempore et eos. Molestias enim necessitatibus incidunt sit ab officiis aut. Qui aspernatur impedit nesciunt inventore quo. Reprehenderit voluptatum nihil voluptates et.',
+    button: 'VIEW 234 POSTS'};
+    return dummy
+  }
+};
+
+<Meta title="Components/UI components/Authors/Author card" />
+
+# Author Card
+
+An author card is a brief summary of an author highlighting their work.
+
+### Overview
+An author card gives a quick overview of an author. It includes their name, title, profile picture- optionally, a summary of their work, and a count of the number of articles they have published on the site. It acts as an entry point to all the articles published by them.
+
+#### When to use:
+Author cards are mainly used in the author directory. 
+
+### Formatting 
+
+#### Default
+
+### Content
+
+An author card contains the first and last name, profile picture (optional), summary, count of the number of articles published by them on the site, and a CTA to a more detailed description and list of their published articles.
+
+### Behaviors
+
+#### States
+There is a single state for the Author card.
+
+<Canvas>
+<Story name="Author card">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Authorcard image= {user} alt= 'Headshot of XYZ' data={caption.authordata} para={caption.paragraph} button={caption.button} link='#' width="medium-12"></Authorcard>;
+  }}
+</Story>
+</Canvas>
+
+### Usage:
+- Copy the HTML from the canvas and also include the below-listed CSS files.
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from 
+
+- dist/css/base-minimal.min.css
+- dist/css/components/author-card.min.css
+- dist/css/components/author-column.min.css
+- dist/css/components/cta-link.min.css
+
+#### JS:
+- NA
+
+### Interactions
+- The entire card is clickable. Clicking any part of the card should take the user to the associated author detail page. 
+
+### Changelog
+1.0 — Released component

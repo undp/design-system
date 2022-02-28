@@ -1,0 +1,31 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+.trusted-partnerships {
+  &__container {
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  &--header {
+    p {
+      margin-top: $spacing-08;
+
+      @include devicebreak(medium) {
+        margin-top: $spacing-11;
+      }
+    }
+
+    .button-arrow {
+      margin-top: $spacing-08;
+
+      @include devicebreak(small) {
+        display: inline-flex;
+      }
+
+      @include devicebreak(medium) {
+        margin-top: $spacing-10;
+      }
+    }
+  }
+}

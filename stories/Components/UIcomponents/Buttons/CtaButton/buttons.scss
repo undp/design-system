@@ -1,0 +1,88 @@
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/breakpoints';
+
+.button {
+  @extend %button;
+
+  color: $color-white;
+  cursor: pointer;
+  justify-content: center;
+  padding: $spacing-05 $spacing-06;
+
+  &:focus-visible {
+    box-shadow: 0 0 4px $color-blue-800;
+    outline: 0;
+  }
+}
+
+button {
+  &:focus-visible {
+    box-shadow: 0 0 4px $color-blue-800;
+    outline: 0;
+  }
+}
+
+.button.button-primary {
+  background-color: $color-dark-red;
+
+  &:hover {
+    background-color: $color-red;
+  }
+
+  &.button-arrow {
+    &::after {
+      @include transition(0.2s ease);
+
+      background: url(#{$img-path-Iconfourback}/chevron-right-black.svg) no-repeat left center;
+      content: '';
+      height: 20px;
+      margin-left: $spacing-04;
+      width: 13px;
+    }
+
+    &:hover::after {
+      @include translate(70%,0);
+    }
+
+    &.disabled {
+      &::after {
+        background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
+        content: '';
+      }
+    }
+  }
+}
+
+.button.button-secondary {
+  background-color: $color-blue-600;
+
+  &:hover {
+    background-color: $color-blue-400;
+  }
+}
+
+.button.disabled {
+  background-color: $color-gray-400;
+  color: $color-gray-300;
+  pointer-events: none;
+}
+
+[dir='rtl'] {
+  .button {
+    &.button-primary {
+      &.button-arrow {
+        &::after {
+          @include transform(rotate(180deg));
+
+          margin-left: 0;
+          margin-right: $spacing-04;
+        }
+
+        &:hover::after {
+          @include transform(translate(-50%,0) rotate(180deg));
+        }
+      }
+    }
+  }
+}

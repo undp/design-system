@@ -1,0 +1,45 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { TextBackground } from './TextBackground';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {header: ['Global',<br/>, 'Impact'],  description: 'Our work in sustainable development, governance, and resilience building.'}; return engText;
+    case 'arabic': const arabicText = {header: ['عالمي',<br/>, 'تأثير'],  description: 'عملنا في التنمية المستدامة والحوكمة وبناء القدرة على الصمود.'}; return arabicText;
+    case 'burmese': const burmeseText = {header: ['ကမ္ဘာလုံးဆိုင်ရာ',<br/>, 'ထိခိုက်မှု'],  description: 'စဉ်ဆက်မပြတ် ဖွံ့ဖြိုးတိုးတက်ရေး၊ အုပ်ချုပ်မှုနှင့် ခံနိုင်ရည်ရှိရေး တည်ဆောက်ရေးတို့တွင် ကျွန်ုပ်တို့၏ လုပ်ဆောင်မှုများ။'}; return burmeseText;
+    case 'japanese': const japaneseText = {header: ['グローバル',<br/>, '影響'],  description: '持続可能な開発、ガバナンス、およびレジリエンス構築における私たちの仕事。'}; return japaneseText;
+    default:
+      return {header: ['Global',<br/>, 'Impact'],  description: 'Our work in sustainable development, governance, and resilience building.'};
+  }
+};
+
+<Meta title="Components/UI components/Text/Text background" />
+
+# Text Background
+
+Text Background block defines a section of information data with some items - title and description. `H2` and `H4` atoms tags are used for creating this section.
+
+<Canvas>
+  <Story name="Text background">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <TextBackground headerText={caption.header} descriptionText={caption.description} ></TextBackground>;
+    }}
+  </Story>
+</Canvas>
+
+###
+### Usage
+- Take HTML from the HTML tab in canvas
+- Include CSS and JS from the 'CSS and JS References' section
+
+### CSS and JS References
+
+#### CSS:
+Add the base style only, located at **dist/css/base-minimal.min.css** along with following:
+- dist/css/components/textbackground.min.css
+
+#### JS:
+- dist/js/viewport.min.js (optional for viewport animation)
+
+### Changelog
+1.0 — Released component

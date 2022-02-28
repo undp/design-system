@@ -1,0 +1,122 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+
+/* Accordian start */
+.accordion {
+  @extend %background-white;
+
+  padding: 0;
+  position: relative;
+
+  li {
+    border-bottom: 1px solid $color-gray-500;
+    cursor: pointer;
+    list-style: none;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding-left: 0;
+    position: relative;
+
+    button {
+      @extend %button;
+
+      font-size: $font-size-25;
+      font-weight: 400;
+      line-height: 1.15;
+      margin: 0 auto;
+      padding: $spacing-05 0 $spacing-06;
+      text-align: left;
+      width: 100%;
+
+      &::before {
+        @include transition(all 0.3s ease);
+
+        background: url(#{$img-path-Icon}/chevron-down.svg) no-repeat center center;
+        border-top-color: #f3f3f3;
+        content: '';
+        height: 1.25rem;
+        margin-left: $spacing-06;
+        position: absolute;
+        right: 0;
+        top: $spacing-06;
+        width: 1.25rem;
+      }
+
+      &.accordion--active {
+        &::before {
+          @include transform(rotateZ(-180deg));
+        }
+      }
+    }
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .accordion {
+    li {
+      button {
+        text-align: right;
+
+        &::before {
+          left: 0;
+          margin-left: 0;
+          right: unset;
+        }
+
+        &.accordion--active {
+          padding-right: 0;
+
+          &::before {
+            @include transform(rotateZ(180deg));
+          }
+        }
+      }
+    }
+  }
+}
+
+.accordion__panel {
+  display: none;
+  height: auto;
+  padding: $spacing-07;
+
+  @include devicebreak(medium) {
+    padding: $spacing-08;
+  }
+}
+
+[data-accordion='mobile'] {
+  .desktop {
+    &-visible {
+      @include devicebreak(medium) {
+        display: block !important;
+      }
+    }
+
+    &-event-none {
+      @include devicebreak(medium) {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+// burmese lang
+:lang(my) {
+  .accordion {
+    li {
+      button {
+        font-family: $Font-Family-NotoSans;
+      }
+    }
+  }
+}
+
+/* Accordian end */

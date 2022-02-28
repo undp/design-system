@@ -1,0 +1,51 @@
+import { Meta, Story, Source} from '@storybook/addon-docs';
+import { Layout } from './Grid'
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {PC: 'Primary colors', AC: 'Accent colors', BC: 'Balance of color palette', PT: 'Primary'}; return engText;
+    case 'arabic': const arabicText = {PC: 'الألوان الأساسية', AC: 'ألوان مميزة', BC: 'توازن لوحة الألوان', PT: 'ابتدائي'}; return arabicText;
+    case 'burmese': const burmeseText = {PC: 'မူလအရောင်များ', AC: 'အရောင်များကိုအလေးပေးပါ', BC: 'အရောင် palette ၏ Balance', PT: 'မူလတန်း'}; return burmeseText;
+    case 'japanese': const japaneseText = {PC: '原色', AC: 'アクセントカラー', BC: 'カラーパレットのバランス', PT: '主要な'}; return japaneseText;
+    default:
+      return {PC: 'Primary colors', AC: 'Accent colors', BC: 'Balance of color palette', PT: 'Primary'};
+  }
+};
+
+<Meta title="Foundation/Layout/Grid" component={Layout} parameters={{
+    viewMode: "docs",
+    previewTabs: {
+      canvas: { hidden: true }
+    }
+  }}/>
+
+# Grid system
+A grid is a series of rows where the developer specifies the content. This Design system is based on Foundation Grid, more you can find about grid system here (https://get.foundation/sites/docs/flex-grid.html)
+
+#### When to use:
+- When the user needs to control the layout in two dimensions. With Grid users have rows and columns, cells, and grid areas (a group of more than one cell) and items must be placed in these cells or Grid areas
+
+<!--
+<Story name="Grid">
+  {(args, { globals: { locale } }) => {
+    const caption = getCaptionForLocale(locale);
+    return <Layout Primarytext={caption.PT} PrimaryColor={caption.PC} AccentColor={caption.AC} Balancepalette={caption.BC} ></Layout>;
+  }}
+</Story>
+-->
+
+### Usage
+Design system is based on [Foundation Grid](https://get.foundation/sites/docs/flex-grid.html), you can get more detail about the layout and grid from their [getting started guide](https://get.foundation/sites/docs/index.html).
+
+**Note**: As the base of the design system is using Foundation grid but component are independent of grid system, that means components can be used with any other grid system (eg: bootstrap) 
+
+### CSS and JS References
+#### CSS:
+Add the base layout style from below path which includes the grid system of Foundation.
+- dist/css/base-minimal.min.css
+
+#### JS:
+- NA
+
+### Changelog
+1.0 — Released component

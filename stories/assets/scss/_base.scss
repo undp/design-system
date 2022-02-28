@@ -1,0 +1,404 @@
+@import './variables';
+@import './mixins';
+@import './breakpoints';
+
+/* base start */
+.color-white {
+  color: $color-white;
+}
+
+.color-black {
+  color: $color-black;
+}
+
+.show-large {
+  display: none;
+
+  @include devicebreak(medium) {
+    display: block;
+  }
+}
+
+.show-small {
+  display: block;
+
+  @include devicebreak(medium) {
+    display: none;
+  }
+}
+
+.height-full {
+  height: 100%;
+}
+
+.overlay-grey {
+  &::before {
+    @extend %absolute__content;
+
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.custom-scrollbar,
+%custom-scrollbar {
+  overflow-x: auto;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $color-black;
+    background-clip: padding-box;
+    border: 2px solid $color-white;
+  }
+
+  &::-webkit-scrollbar-corner {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color-black;
+  }
+}
+
+
+/* animation start */
+*[data-viewport='true'] {
+  @extend %left-to-right;
+
+  &.inviewport {
+    @extend %inviewport_left_right;
+  }
+}
+
+.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.delay-5 {
+  transition-delay: 0.5s;
+}
+
+.scale-up {
+  @extend %scale-up;
+
+  &.inviewport {
+    @include transform(scale(1));
+  }
+}
+
+.opacity-only {
+  @extend %opacity-only;
+
+  &.inviewport {
+    @extend %inviewport_opacity_only;
+  }
+}
+
+.expand-to-size {
+  max-width: calc(100% - 1rem);
+
+  @include devicebreak(medium) {
+    max-width: calc(100% - 3rem);
+  }
+}
+
+[dir='rtl'] {
+  *[data-viewport='true'] {
+    @include transform(translateX(100px));
+
+    &.inviewport {
+      @extend %inviewport_left_right;
+    }
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.background-yellow {
+  background-color: $color-light-yellow;
+}
+
+.background-red {
+  background-color: $color-light-red;
+}
+
+.background-green {
+  background-color: $color-light-green;
+}
+
+.background-blue {
+  background-color: $color-blue-100;
+}
+
+.background-gray {
+  background-color: $color-gray-100;
+}
+
+.background-white {
+  background-color: $color-white;
+}
+
+// global colors
+// color map gradient
+$colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green': rgba(92 222 83 / 82%), 'blue': rgba(94 232 246 / 82%));
+
+@each $name, $color in $colors {
+  .#{$name} {
+    //card-thumbnail
+    .card-thumbnail__image:hover {
+      &::before {
+        @include background-image(42deg, #{$color}, transparent 80%);
+      }
+    }
+
+    //bio-card
+    .bio-card:hover {
+      .card-thumbnail__image::before {
+        @include background-image(67.76deg, #{$color}, transparent 61.11%);
+
+        opacity: 0.75;
+      }
+    }
+
+    //author__img
+    .author__img:hover {
+      &::before {
+        @include background(45deg, #{$color}, transparent 53%);
+      }
+    }
+
+    //publication-thumbnail__image
+    .publication-thumbnail__image:hover {
+      &::after {
+        @include background-image(42deg, #{$color}, transparent 80%);
+      }
+    }
+
+    //download card
+    .download-card:hover {
+      .card-thumbnail__image::before {
+        @include background-image(42deg, #{$color}, transparent 80%);
+
+        opacity: 0.75;
+      }
+
+      .publication-thumbnail__image {
+        &::after {
+          @include background-image(42deg, #{$color}, transparent 80%);
+
+          opacity: 0.75;
+        }
+      }
+    }
+
+    //publication-card
+    .publication-card:hover {
+      .publication-thumbnail__image {
+        &::after {
+          @include background-image(42deg, #{$color}, transparent 80%);
+
+          opacity: 0.75;
+        }
+      }
+    }
+
+    //stats-panel
+    .stats-panel:hover {
+      &::after {
+        @include background-image(0deg, #{$color}, transparent 140%);
+      }
+
+      .stats-card {
+        background-color: transparent;
+      }
+    }
+
+    //wide-card
+    .wide-card__image a:hover {
+      &::before {
+        @include background-image(42deg, #{$color}, transparent 80%);
+
+        opacity: 0.75;
+      }
+    }
+
+    //feature-card
+    .feature__card-slide {
+      &::before {
+        @include background-image(45deg, #{$color}, transparent 67%);
+      }
+    }
+
+    //content-card
+    .content-card {
+      .image {
+        &::before {
+          @include background-image(42deg, #{$color}, transparent 80%);
+        }
+      }
+    }
+
+    .image-reveal-card:hover {
+      .image::before {
+        @include background-image(67.76deg, #{$color}, transparent 61.11%);
+
+        opacity: 0.75;
+      }
+    }
+  }
+}
+
+//rtl
+[dir='rtl'] {
+  @each $name, $color in $colors {
+    .#{$name} {
+      //card-thumbnail
+      .card-thumbnail__image:hover {
+        &::before {
+          @include background-image(297deg, #{$color}, transparent 61.11%);
+        }
+      }
+
+      //bio-card
+      .bio-card:hover {
+        .card-thumbnail__image::before {
+          @include background-image(297deg, #{$color}, transparent 61.11%);
+
+          opacity: 0.75;
+        }
+      }
+
+      //publication-card
+      .publication-card:hover {
+        .publication-thumbnail__image {
+          &::after {
+            @include background-image(318deg, #{$color}, transparent 70.49%);
+
+            opacity: 0.75;
+          }
+        }
+      }
+
+      //download card
+      .download-card:hover {
+        .card-thumbnail__image::before {
+          @include background-image(297deg, #{$color}, transparent 61.11%);
+
+          opacity: 0.75;
+        }
+
+        .publication-thumbnail__image {
+          &::after {
+            @include background-image(318deg, #{$color}, transparent 70.49%);
+
+            opacity: 0.75;
+          }
+        }
+      }
+
+      //publication-card
+      .publication-card:hover {
+        .publication-thumbnail__image {
+          &::after {
+            @include background-image(318deg, #{$color}, transparent 70.49%);
+
+            opacity: 0.75;
+          }
+        }
+      }
+
+      //wide-card
+      .wide-card__image a:hover {
+        &::before {
+          @include background-image(318deg, #{$color}, transparent 80%);
+
+          opacity: 0.75;
+        }
+      }
+
+      //feature-card
+      .feature__card-slide {
+        &::before {
+          @include background-image(318deg, #{$color}, transparent 67.25%);
+        }
+      }
+    }
+  }
+}
+
+// color map solid
+$colors-solid: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+@each $name, $color in $colors-solid {
+  .#{$name} {
+    //statscard
+    .stats-card {
+      &:hover {
+        background-color: #{$color};
+      }
+    }
+
+    //progress-bar
+    .progress-bar {
+      background: #{$color};
+    }
+
+    //.blockquote
+    .blockquote {
+      background-color: #{$color};
+    }
+
+    //content crad
+    .content-card.card:hover {
+      background-color: #{$color};
+
+      .cta--space::after {
+        filter: invert(0) brightness(0);
+      }
+    }
+
+    //content card - Emphasize
+    .content-card.card-color:hover,
+    .content-card.card-emphasize:hover {
+      background-color: #{$color};
+    }
+
+    //feature-card
+    .feature__card-slide {
+      background: #{$color};
+    }
+  }
+}
+
+// color map light-color content card only
+$colors-light: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure);
+
+@each $name, $color in $colors-light {
+  .#{$name} {
+    //content card - Emphasize default state color
+    .content-card.card-emphasize {
+      background-color: #{$color};
+    }
+  }
+}
+
+/* base end */

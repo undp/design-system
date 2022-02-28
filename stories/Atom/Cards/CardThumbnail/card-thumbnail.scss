@@ -1,0 +1,43 @@
+@import '../../../assets/scss/mixins';
+
+/* card_thumbnail__image start */
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+div.card-thumbnail__image {
+  display: inline-flex;
+  position: relative;
+
+  &::before {
+    @extend %absolute__content;
+
+    @include transition(all 0.6s);
+
+    opacity: 0;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0.75;
+    }
+
+    @each $name, $color in $colors {
+      &.#{$name}::before {
+        @include background-image(67.76deg, #{$color}, transparent 61.11%);
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  div.card-thumbnail__image {
+    &:hover {
+      @each $name, $color in $colors {
+        &.#{$name}::before {
+          @include background-image(297deg, #{$color}, transparent 61.11%);
+        }
+      }
+    }
+  }
+}
+
+/* card_thumbnail__image end */

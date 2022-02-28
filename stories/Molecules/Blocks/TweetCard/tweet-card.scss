@@ -1,0 +1,94 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+
+.tweet-card {
+  -webkit-font-smoothing: antialiased;
+
+  @include devicebreak(small) {
+    margin-bottom: $spacing-12;
+  }
+
+  a {
+    align-items: flex-start;
+    display: inline-flex;
+    text-decoration: none;
+
+    img {
+      border-radius: 50%;
+      height: 44px;
+      margin-right: $spacing-05;
+      min-width: 44px;
+      width: 44px;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+    word-break: break-word;
+  }
+
+  &__header {
+    color: $color-white;
+    font-weight: 400;
+
+    &--subtitle {
+      font-size: $font-size-14;
+      font-weight: 600;
+    }
+  }
+
+  &__body {
+    border-top: 3px solid $color-white;
+    margin-top: $spacing-07;
+    padding: $spacing-06 0.313rem 0 0;
+
+    time,
+    p,
+    a {
+      color: $color-gray-500;
+      font-size: $font-size-14;
+      font-weight: 700;
+    }
+
+    p,
+    a {
+      color: $color-white;
+      font-weight: 400;
+    }
+
+    time {
+      margin-top: $spacing-05;
+    }
+
+    p {
+      margin-bottom: 1.125rem;
+    }
+  }
+
+  .cta__link {
+    color: $color-white;
+    font-size: 0.938rem;
+
+    &:hover {
+      color: $color-gray-400;
+    }
+
+    &::after {
+      margin-top: -$spacing-01;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .tweet-card {
+    img {
+      margin-left: $spacing-05;
+      margin-right: 0;
+    }
+
+    &__body {
+      padding: $spacing-06 0 0 0.313rem;
+    }
+  }
+}

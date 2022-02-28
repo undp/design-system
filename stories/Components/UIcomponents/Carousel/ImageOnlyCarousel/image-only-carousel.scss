@@ -1,0 +1,84 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+
+/* image only carousel start */
+.image-carousel {
+  overflow: hidden;
+
+  .slider-slide {
+    @extend %carousel_slider_slide;
+  }
+
+  &__image {
+    height: 30rem;
+    max-width: 65%;
+    object-fit: cover;
+    width: auto;
+
+    @include devicebreak(large) {
+      height: 38.75rem;
+    }
+
+    @include devicebreak(small) {
+      height: 21.875rem;
+      max-width: 100%;
+    }
+  }
+
+  .swiper-scrollbar {
+    @extend %carousel_bar_margin;
+  }
+
+  .slider-arrows {
+    align-self: flex-end;
+    margin-left: 4rem;
+
+    [class*='swiper-button-'] {
+      @extend %carousel_arrow;
+
+      &:first-child {
+        margin-right: 0.75rem;
+      }
+
+      &:last-child {
+        margin-left: 0.75rem;
+      }
+
+      img {
+        vertical-align: bottom;
+        width: 2.813rem;
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .image-carousel {
+    .slider-arrows {
+      margin-left: 0;
+      margin-right: 4rem;
+
+      [class*='swiper-button-'] {
+        &:first-child {
+          margin-left: 0.75rem;
+          margin-right: 0;
+
+          img {
+            @include transform(rotate(180deg));
+          }
+        }
+
+        &:last-child {
+          margin-left: 0;
+          margin-right: 0.75rem;
+
+          img {
+            @include transform(rotate(-180deg));
+          }
+        }
+      }
+    }
+  }
+}
+
+/* image only carousel end */

@@ -1,0 +1,142 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Menu } from './Menu';
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = {
+        data: [
+          {
+            label: "menu item",
+          },
+          {
+            label: "menu item",
+          },
+          {
+            label: "menu item",
+          },
+          {
+            label: "menu item",
+          },
+          {
+            label: "menu item",
+          },
+          {
+            label: "menu item",
+          },
+        ],
+      };
+      return engText.data;
+    case "arabic":
+      const arabicText = {
+        data: [
+          {
+            label: "عنصر القائمة",
+          },
+          {
+            label: "عنصر القائمة",
+          },
+          {
+            label: "عنصر القائمة",
+          },
+          {
+            label: "عنصر القائمة",
+          },
+          {
+            label: "عنصر القائمة",
+          },
+          {
+            label: "عنصر القائمة",
+          },
+        ],
+      };
+      return arabicText.data;
+    case "burmese":
+      const burmeseText = {
+        data: [
+          {
+            label: "မီနူးပစ္စည်းများ",
+          },
+          {
+            label: "မီနူးပစ္စည်းများ",
+          },
+          {
+            label: "မီနူးပစ္စည်းများ",
+          },
+          {
+            label: "မီနူးပစ္စည်းများ",
+          },
+          {
+            label: "မီနူးပစ္စည်းများ",
+          },
+          {
+            label: "မီနူးပစ္စည်းများ",
+          },
+        ],
+      };
+      return burmeseText.data;
+    case "japanese":
+      const japaneseText = {
+        data: [
+          {
+            label: "メニュー項目",
+          },
+          {
+            label: "メニュー項目",
+          },
+          {
+            label: "メニュー項目",
+          },
+          {
+            label: "メニュー項目",
+          },
+          {
+            label: "メニュー項目",
+          },
+          {
+            label: "メニュー項目",
+          },
+        ],
+      };
+      return japaneseText.data;
+    default:
+      const dummy = {
+        data: [
+          {
+            label: "menu item",
+          },
+          {
+            label: "menu item",
+          },
+          {
+            label: "menu item",
+          },
+          {
+            label: "menu item",
+          },
+          {
+            label: "menu item",
+          },
+          {
+            label: "menu item",
+          },
+        ],
+      };
+      return dummy.data;
+  }
+};
+
+<Meta title="Components/Navigation components/Menu" component={Menu} />
+
+# Menu
+
+The Horizontal Menu consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browswing through the site and is present on every page.
+
+<Canvas>
+  <Story name="Menu">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Menu data={caption} role="navigation" arialabel="menu"></Menu>;
+    }}
+  </Story>
+</Canvas>

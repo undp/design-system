@@ -1,0 +1,110 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+/* signup newsletter start */
+.sign-up {
+  label {
+    color: $color-white;
+    display: block;
+    font-size: $font-size-16;
+    line-height: 1.4;
+    margin-bottom: $spacing-04;
+    text-align: left;
+    text-transform: none;
+
+    @include devicebreak(medium) {
+      text-align: right;
+    }
+  }
+
+  &--field {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+    .input-group {
+      margin-top: 0;
+      width: calc(100% - 86px);
+
+      @include devicebreak(medium) {
+        width: calc(100% - 107px);
+      }
+    }
+
+    input[type=email] {
+      background-color: transparent;
+      border-color: $color-white;
+      border-radius: 0;
+      color: $color-white;
+      height: 54px;
+      margin: 0;
+      outline: none;
+
+      &::placeholder {
+        color: $color-white;
+      }
+    }
+  }
+
+  .form-submit {
+    -webkit-appearance: none;
+    background-color: $color-white;
+    border-radius: 0;
+    color: $color-blue-600;
+    height: 54px;
+    margin: 0;
+    min-width: 86px;
+    padding: 0;
+    text-transform: uppercase;
+
+    @include devicebreak(medium) {
+      min-width: 107px;
+    }
+  }
+
+  &.inverted {
+    color: $color-white;
+
+    label {
+      color: $color-black;
+    }
+
+    input[type=email] {
+      background-color: $color-white;
+      border-color: $color-black;
+      color: $color-black;
+
+      &::placeholder {
+        color: $color-black;
+      }
+    }
+
+    .form-submit {
+      background-color: $color-dark-red;
+      color: $color-white;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .sign-up {
+    label {
+      text-align: right;
+    }
+
+    &--field {
+      justify-content: flex-start;
+    }
+  }
+}
+
+//burmese lang
+:lang(my) {
+  .sign-up {
+    label {
+      line-height: 1.7;
+    }
+  }
+}
+
+/* signup newsletter end */

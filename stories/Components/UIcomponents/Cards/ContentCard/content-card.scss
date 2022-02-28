@@ -1,0 +1,197 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+
+/* content-card start */
+$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure, 'gray': $color-gray-100);
+$backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
+
+div.content-card {
+  @include transition(all 0.5s);
+
+  background-color: $color-white;
+  border-top: 2px solid $color-black;
+  height: 100%;
+  word-break: break-word;
+
+  > a {
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    padding-bottom: 2.625rem;
+    position: relative;
+  }
+
+  h6 {
+    @extend %carousel_tag;
+
+    margin-bottom: 0;
+    padding: $spacing-05 $spacing-06 1.625rem $spacing-06;
+  }
+
+  &.card {
+    h6 {
+      padding-bottom: $spacing-05;
+    }
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    &::before {
+      @extend %absolute__content;
+
+      @include transition(all 0.9s);
+
+      opacity: 0;
+    }
+  }
+
+  p {
+    font-size: $font-size-16;
+    margin: 0;
+    padding-top: $spacing-05;
+  }
+
+  &.card {
+    &:hover {
+      background-color: $color-gray-100;
+    }
+  }
+
+  &.card-emphasize {
+    background-color: $color-light-yellow;
+
+    &:hover {
+      background-color: $color-yellow;
+    }
+  }
+
+  &.card,
+  &.card-emphasize {
+    &:hover {
+      &.red {
+        .cta--space::after {
+          filter: invert(0) brightness(0);
+        }
+
+        .cta--arrow::after {
+          background-image: url(#{$img-path-Iconfourback}/arrow-right.svg);
+        }
+      }
+
+      @each $name, $color in $colors {
+        &.#{$name} {
+          background-color: #{$color};
+        }
+      }
+    }
+  }
+
+  &.card-emphasize {
+    @each $name, $color in $backgroundcolors {
+      &.#{$name} {
+        background-color: #{$color};
+      }
+    }
+  }
+
+  &:hover {
+    background-color: $color-gray-100;
+
+    .image::before {
+      opacity: 0.75;
+    }
+
+    .cta--space::after {
+      @include translate(70%, 0);
+    }
+
+    .cta--arrow {
+      i {
+        width: $spacing-11;
+
+        &::before {
+          display: unset;
+        }
+      }
+    }
+  }
+
+  &-wrapper {
+    > div {
+      margin-bottom: $spacing-07;
+    }
+  }
+
+  .image::before {
+    @include background-image(67.76deg, $color-yellow, transparent 61.11%);
+  }
+
+  @each $name, $color in $colors {
+    &.#{$name} {
+      .image::before {
+        @include background-image(67.76deg, #{$color}, transparent 61.11%);
+      }
+    }
+  }
+}
+
+.content-caption {
+  padding: $spacing-05 $spacing-06 $spacing-06 $spacing-06;
+
+  h5,
+  h4 {
+    margin-bottom: 0;
+  }
+
+  .cta__link {
+    bottom: $spacing-06;
+    position: absolute;
+  }
+
+  &_cart {
+    height: 100%;
+
+    h5 {
+      margin-bottom: $spacing-05;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .content-card {
+    .image {
+      &::before {
+        @include transform(scaleX(-1));
+      }
+    }
+
+    &:hover {
+      .cta {
+        &--space::after {
+          @include transform(translate(-50%, 0) rotate(180deg));
+        }
+
+        &--arrow::after {
+          margin-left: 0;
+          margin-right: 0.25rem;
+        }
+      }
+    }
+  }
+}
+
+//burmese lang
+:lang(my) {
+  h6 {
+    font-size: 1rem;
+  }
+}
+
+/* content-card start */

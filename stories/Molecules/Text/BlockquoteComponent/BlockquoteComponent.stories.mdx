@@ -1,0 +1,50 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { BlockquoteComponent } from './BlockquoteComponent';
+
+export const getCaptionForLocale = (locale) => {
+  switch(locale) {
+    case 'english': const engText = {blockquote: '“UNDP works in about 170 countries and territories, helping to achieve the eradication of poverty, and the reduction of inequalities and exclusion.”', cite: '—Firstname Lastname'}; return engText;
+    case 'arabic': const arabicText = {blockquote: '“يعمل برنامج الأمم المتحدة الإنمائي في حوالي 170 دولة ومنطقة ، مما يساعد على تحقيق القضاء على الفقر ، والحد من عدم المساواة والإقصاء”', cite: '-الاسم الاول الاسم الاخير'}; return arabicText;
+    case 'burmese': const burmeseText = {blockquote: '“UNDP သည်နိုင်ငံနှင့်နယ်မြေ ၁၇၀ ခန့်တွင်အလုပ်လုပ်ပြီးဆင်းရဲမွဲတေမှုပပျောက်ရေး၊ မညီမျှမှုများနှင့်ဖယ်ထုတ်မှုလျော့ချရန်ကူညီသည်။”', cite: '—ပထမနာမည် မျိုးနွယ်အမည်'}; return burmeseText;
+    case 'japanese': const japaneseText = {blockquote: '“UNDPは約170の国と地域で活動しており、貧困の撲滅と不平等と排除の削減を支援しています”', cite: '—名前苗字'}; return japaneseText;
+    default:
+      return {blockquote: '“UNDP works in about 170 countries and territories, helping to achieve the eradication of poverty, and the reduction of inequalities and exclusion.”', cite: '—Firstname Lastname'};
+  }
+};
+
+<Meta title="Components/UI components/Text/Callout" component={BlockquoteComponent} argTypes={{
+  Colors: {
+    options: ['default','yellow','red','green','blue','gray'],
+    control: { type: 'inline-radio' },
+    defaultValue: 'default'
+  }
+}}/>
+
+# Callout
+The Callout component indicates that the enclosed text is an extended quotation or information. It is rendered visually by a surrounding box. `Blockquote` and `Cite` atoms tags are used for creating this section.
+
+<Canvas>
+  <Story name="Callout">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <BlockquoteComponent blockquoteText={caption.blockquote} citeText={caption.cite} {...args}></BlockquoteComponent>;
+    }}
+  </Story>
+</Canvas>
+
+###
+### Usage
+- Take HTML from the HTML tab in canvas whichever backgorund color you like
+- Include CSS and JS from the 'CSS and JS References' section
+
+### CSS and JS References
+
+#### CSS:
+Add the base style only, located at **dist/css/base-minimal.min.css** along with following:
+- dist/css/components/blockquotecomp.min.css
+
+#### JS:
+NA
+
+### Changelog
+1.0 — Released component
