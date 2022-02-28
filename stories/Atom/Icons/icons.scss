@@ -8,99 +8,111 @@
 }
 
 .chevron-right-animated {
-  display: inline-block;
-  width: 100%;
-  max-width: 6rem;
-
   @extend %chevron-right-expanded;
+
+  display: inline-block;
+  max-width: 6rem;
+  width: 100%;
 }
 
 .external-link-animated {
-  cursor: pointer;
+  box-shadow: -2px 2px 0 0 $color-dark-red, -4px 0 0 -2px $color-dark-red, -3px 3px 0 -1px $color-dark-red;
   box-sizing: border-box;
-  position: relative;
+  cursor: pointer;
   display: inline-block;
-  width: $spacing-04;
   height: $spacing-04;
-  box-shadow: -2px 2px 0px 0px $color-dark-red, -4px 0px 0px -2px $color-dark-red, -3px 3px 0 -1px $color-dark-red;
   margin-left: -2px;
+  position: relative;
+  width: $spacing-04;
 
-  &:before {
+  &::before {
     @extend %pseudo-icon;
+
+    @include transform(rotate(-45deg) translate(0, 0));
+    @include transition(all 0.3s);
+
+    background: $color-dark-red;
+    height: 2px;
     right: 0;
     top: 3.5px;
-    background: $color-dark-red;
-    @include transform(rotate(-45deg) translate(0, 0));
     width: 0.625rem;
-    height: 2px;
-    @include transition(all 0.3s);
   }
-  &:after {
+
+  &::after {
     @extend %pseudo-icon;
+
+    @include transition(transform 0.3s);
+    @include transform(translate(0, 0));
+
+    border-right: 2px solid $color-dark-red;
+    border-top: 2px solid $color-dark-red;
+    height: $spacing-03;
     right: 0;
     top: 0;
     width: $spacing-03;
-    height: $spacing-03;
-    border-right: 2px solid $color-dark-red;
-    border-top: 2px solid $color-dark-red;
-    @include transition(transform 0.3s);
-    @include transform(translate(0, 0));
   }
 
   &:hover {
-    &:after {
+    &::after {
       @include transform(translate(5px, -5px));
     }
-    &:before {
+
+    &::before {
       @include transform(rotate(-45deg) translate(7px, 0));
     }
   }
 }
 
 .download-animated {
-  cursor: pointer;
-  box-sizing: border-box;
-  position: relative;
-  display: flex;
   align-items: flex-end;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
   height: 12px;
+  position: relative;
 
   i {
-    display: block;
-    width: 1.125rem;
-    height: 6px;
     border: 2px solid $color-dark-red;
     border-top: 0;
-    box-sizing: content-box; 
+    box-sizing: content-box;
+    display: block;
+    height: 6px;
+    width: 1.125rem;
   }
 
   &::after {
     @extend %pseudo-icon;
-    width: 8px;
-    height: 8px;
-    border-left: 2px solid $color-dark-red;
-    border-bottom: 2px solid $color-dark-red;
-    left: 7px;
-    bottom: 6px;
+
     @include transform(rotate(-45deg) translate(0, 0));
     @include transition(all 0.3s);
+
+    border-bottom: 2px solid $color-dark-red;
+    border-left: 2px solid $color-dark-red;
+    bottom: 6px;
+    height: 8px;
+    left: 7px;
+    width: 8px;
   }
 
   &::before {
     @extend %pseudo-icon;
-    width: 2px;
-    height: 10px;
-    background: $color-dark-red;
-    left: 10px;
-    bottom: 7px;
+
     @include transform(translate(0, 0));
     @include transition(all 0.3s);
+
+    background: $color-dark-red;
+    bottom: 7px;
+    height: 10px;
+    left: 10px;
+    width: 2px;
   }
+
   &:hover {
-    &:after {
+    &::after {
       @include transform(rotate(-45deg) translate(7px, -7px));
     }
-    &:before {
+
+    &::before {
       @include transform(translate(0, -10px));
     }
   }

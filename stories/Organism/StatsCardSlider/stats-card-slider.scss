@@ -9,7 +9,7 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
 
     &:hover {
       background-color: $color-light-yellow;
-      
+
       @each $name, $color in $backgroundcolors {
         &.#{$name} {
           background-color: #{$color};

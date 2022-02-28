@@ -38,6 +38,7 @@
         .sdg-modal-dialog {
           @include transform(translateX(0));
         }
+
         &.animation-out {
           .sdg-modal-dialog {
             @include transform(translateX(100%));
@@ -55,7 +56,7 @@
     }
 
     @include devicebreak(small) {
-    .pagehero-full {
+      .pagehero-full {
         .breadcrumb {
           padding-top: $spacing-04;
         }
@@ -86,4 +87,3 @@
     }
   }
 }
-

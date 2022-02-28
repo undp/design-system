@@ -19,11 +19,10 @@
     }
 
     .pagehero-cards-box {
-
       @include devicebreak(large) {
         flex: 0 0 calc(16.66667% - #{$spacing-06});
         max-width: calc(16.66667% - #{$spacing-06});
-        
+
         &.large {
           flex: 0 0 calc(25% - #{$spacing-06});
           max-width: calc(25% - #{$spacing-06});
@@ -152,7 +151,6 @@
 
 [dir='rtl'] {
   .pagehero-cards {
-    
     &-top {
       >:nth-child(2) {
         @include devicebreak(large) {
@@ -167,6 +165,7 @@
           }
         }
       }
+
       h2 {
         @include devicebreak(medium) {
           margin-left: $spacing-04;
@@ -176,17 +175,17 @@
     }
 
     .swiper-initialized {
-      padding-right: 0;
       padding-left: $spacing-10;
-  
+      padding-right: 0;
+
       @include devicebreak(medium) {
         padding-left: $spacing-13;
       }
-  
+
       .swiper-scrollbar {
-        padding-right: 0;
         padding-left: $spacing-10;
-  
+        padding-right: 0;
+
         @include devicebreak(medium) {
           padding-left: $spacing-13;
         }

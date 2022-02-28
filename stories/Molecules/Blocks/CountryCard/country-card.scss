@@ -13,12 +13,12 @@
 
   &-box {
     @include devicebreak(large) {
+      box-shadow: 0 1px 0 1px $color-white;
       flex: 0 0 calc(25% - #{$spacing-06});
-      max-width: calc(25% - #{$spacing-06});
       margin-left: $spacing-04;
       margin-right: $spacing-04;
       margin-top: $spacing-12;
-      box-shadow: 0 1px 0 1px $color-white; 
+      max-width: calc(25% - #{$spacing-06});
 
       &.swiper-slide {
         a {
@@ -39,32 +39,12 @@
     }
 
     &:hover {
-      .cta__link {
-        padding: 0;
-        width: 100%;
-
-        i {
-          @include transition(all .4s);
-          @include transitiondelay(.2s);
-          left: $spacing-05;
-          width: $spacing-11;
-          
-          @include devicebreak(large) { 
-            width: 30%;
-          }
-
-          &::before {
-            display: inline-block;
-          }
-        }
-      }
-
-      @include devicebreak(large) { 
+      @include devicebreak(large) {
         .pagehero {
           &-cards {
             &__caption {
               transform: translateY(calc(-100% + #{$spacing-44}));
-  
+
               p {
                 opacity: 1;
               }
@@ -73,6 +53,26 @@
         }
       }
 
+      .cta__link {
+        padding: 0;
+        width: 100%;
+
+        i {
+          @include transition(all 0.4s);
+          @include transitiondelay(0.2s);
+
+          left: $spacing-05;
+          width: $spacing-11;
+
+          @include devicebreak(large) {
+            width: 30%;
+          }
+
+          &::before {
+            display: inline-block;
+          }
+        }
+      }
     }
 
     a {
@@ -95,12 +95,12 @@
     @include transition(all 0.3s);
 
     background: $color-white;
+    box-shadow: 0 1px 0 1px $color-white;
+    box-sizing: border-box;
     left: 0;
     padding-top: $spacing-06;
     position: absolute;
     width: 100%;
-    box-sizing: border-box;
-    box-shadow: 0 1px 0 1px $color-white; 
     z-index: 2;
 
     p {
@@ -116,21 +116,22 @@
       margin-top: $spacing-07;
     }
   }
-  
+
   .swiper-initialized {
     .pagehero-cards {
-
       &__caption {
+        @include transition(all 0.5s cubic-bezier(0.64,0.05,0.35,1.05));
+        @include transitiondelay(0.3s);
+
         bottom: 0;
-        opacity: 0;
+        box-shadow: 0 1px 0 1px $color-white;
         box-sizing: border-box;
-        box-shadow: 0 1px 0 1px $color-white; 
-        @include transition(all .5s cubic-bezier(.64,.05,.35,1.05));
-        @include transitiondelay(.3s);
+        opacity: 0;
 
         p {
-          @include transition(all .5s cubic-bezier(.64,.05,.35,1.05));
-          @include transitiondelay(.3s)
+          @include transition(all 0.5s cubic-bezier(0.64,0.05,0.35,1.05));
+          @include transitiondelay(0.3s)
+        ;
         }
       }
     }
@@ -161,13 +162,12 @@
         }
 
         + .swiper-slide {
-          
           @include devicebreak(medium) {
             .pagehero {
               &-cards {
                 &__caption {
                   opacity: 1;
-    
+
                   p {
                     opacity: 1;
                   }

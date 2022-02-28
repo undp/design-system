@@ -3,35 +3,44 @@
 @import '../../assets/scss/variables';
 
 /* toggle search start */
-.sort-filter-search{
-  width: 100%;
+.sort-filter-search {
   display: none;
   text-transform: uppercase;
-  span{
-    display: none;
-    font-size: 1rem;}
-  &.close{
-    font-size: 0;
-    background-color: $color-gray-300;
-    color: $color-black;
-    &:hover{
-      background-color: $color-gray-300;
-    }
-    span{
-      display: block;
-    }
-  }
+  width: 100%;
+
   @include devicebreak(small) {
     display: block;
   }
-}
-.search-filter {
-  @include devicebreak(small) {
+
+  span {
     display: none;
-    &.show-filter{
+    font-size: 1rem;
+  }
+
+  &.close {
+    background-color: $color-gray-300;
+    color: $color-black;
+    font-size: 0;
+
+    &:hover {
+      background-color: $color-gray-300;
+    }
+
+    span {
       display: block;
     }
   }
+}
+
+.search-filter {
+  @include devicebreak(small) {
+    display: none;
+
+    &.show-filter {
+      display: block;
+    }
+  }
+
   .expand-search {
     max-width: 296px;
   }
@@ -47,8 +56,8 @@
     padding-top: $spacing-06;
 
     .chip {
-      margin: 0 0.75rem 0.75rem 0;
       cursor: pointer;
+      margin: 0 0.75rem 0.75rem 0;
     }
   }
 
@@ -57,13 +66,13 @@
   }
 
   .clear-search-filter {
-    display: none;
-    border: 0;
     background: none;
-    padding: 0;
+    border: 0;
     border-bottom: 1px solid $color-red;
     cursor: pointer;
+    display: none;
     font-size: $font-size-16;
+    padding: 0;
 
     &.show-clear {
       display: inline-block;
@@ -72,12 +81,12 @@
 
   .active-filter {
     color: $color-gray-600;
+    display: none;
     font-family: $Font-Family-ProximaNova;
     font-size: $font-size-16;
     font-weight: 600;
-    text-transform: uppercase;
-    display: none;
     padding-top: $spacing-05;
+    text-transform: uppercase;
 
     &.show-activefilter {
       display: block;

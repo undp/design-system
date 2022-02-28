@@ -4,30 +4,33 @@
 
 /* author image */
 
-
 div.author__img {
   border-radius: $author-image-radius;
   height: 80px;
-  overflow: hidden;
-  width: 80px;
-  position: relative;
   min-width: 80px;
+  overflow: hidden;
+  position: relative;
+  width: 80px;
 
   &::before {
     @extend %absolute__content;
+
     @include transition(all 0.6s);
+
     border-radius: $author-image-radius;
-    overflow: hidden;
     opacity: 0;
+    overflow: hidden;
   }
 
   &:hover {
-    &::before {
-      opacity: 0.75;
-      @include background-image(45deg, $color-yellow , transparent 53%);
-    }
 
     $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+    &::before {
+      @include background-image(45deg, $color-yellow , transparent 53%);
+
+      opacity: 0.75;
+    }
 
     @each $name, $color in $colors {
       &.#{$name}::before {
@@ -46,9 +49,9 @@ div.author__img {
   }
 }
 
-[dir='rtl'] { 
-  .author__img { 
-    &::before{
+[dir='rtl'] {
+  .author__img {
+    &::before {
       @include transform(scaleX(-1));
     }
   }

@@ -7,21 +7,22 @@
   display: flex;
   position: relative;
 
-  input[type="text"] {
-    @include transition(all 200ms ease-in-out);
+  input[type='text'] {
     @extend %expand_search;
 
+    @include transition(all 200ms ease-in-out);
+
     background-color: $color-white;
-    padding: 0;
     box-sizing: border-box;
     font-size: $font-size-14;
     height: 2.675rem;
+    padding: 0;
     position: relative;
     width: 0;
 
     &:focus {
-      outline: none;
       box-shadow: none;
+      outline: none;
     }
   }
 
@@ -37,23 +38,28 @@
 
   button {
     @extend %expand_search;
+
+    background: none;
     height: 2.625rem;
+    padding: 0 0 1px;
     width: 1.6875rem;
     z-index: 2;
-    background: none;
-    padding:0 0 1px;
-    img{
+
+    img {
       width: 27px;
     }
-    &.close-button{
+
+    &.close-button {
+      border: 0;
       display: none;
       position: absolute;
-      right:0;
-      border: 0;
-      &.show{
+      right: 0;
+
+      &.show {
         display: block;
       }
-      img{
+
+      img {
         max-width: 30px;
       }
     }
@@ -66,15 +72,17 @@
       left: inherit;
       right: 0;
     }
+
     &.open {
       input {
         padding-left: $spacing-06;
         padding-right: 0.8125rem;
       }
     }
-    .close-button{
-      right: inherit;
+
+    .close-button {
       left: 0;
+      right: inherit;
     }
   }
 }

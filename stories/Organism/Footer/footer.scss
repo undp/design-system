@@ -35,6 +35,7 @@
     li {
       padding: 0;
       text-align: right;
+
       @include devicebreak(medium) {
         text-align: left;
       }
@@ -54,8 +55,6 @@
 }
 
 // * footer condition end *//
-
-
 
 // * footer condition 2 start *//
 .footer-lists {
@@ -96,6 +95,7 @@
 [dir='rtl'] {
   .footer-lists {
     padding-right: 0;
+
     @include devicebreak(medium) {
       text-align: left;
     }
@@ -181,7 +181,7 @@
 
     li {
       padding: 0;
-      
+
       a {
         margin-left: $spacing-07;
         margin-right: 0;
@@ -356,8 +356,9 @@
 
   &-head {
     @extend %footer-block;
-    padding-bottom: $spacing-09;
+
     margin-bottom: 1.188rem;
+    padding-bottom: $spacing-09;
 
     @include devicebreak(medium) {
       margin-bottom: $spacing-09;
@@ -366,6 +367,7 @@
 
   &-top {
     @extend %footer-block;
+
     padding-bottom: $spacing-07;
 
     @include devicebreak(medium) {
@@ -437,8 +439,8 @@
   text-align: left;
 
   @include devicebreak(medium) {
-    text-align: right;
     margin: 0 0 $spacing-07 0;
+    text-align: right;
   }
 
   & span {
@@ -459,9 +461,10 @@
     }
 
     & .icon-globe {
-      margin-right: 0;
       margin-left: $spacing-05;
+      margin-right: 0;
     }
   }
 }
+
 /* footer end */

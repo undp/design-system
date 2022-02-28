@@ -1,7 +1,7 @@
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/breakpoints";
-@import "../../assets/scss/variables";
-@import "../PublicationPage/publication-page.scss";
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
+@import '../PublicationPage/publication-page.scss';
 
 // margin styles
 .margin-top {
@@ -17,7 +17,7 @@
 .landing-page {
   .multi-select {
     max-width: 100%;
-    
+
     .select-control {
       min-width: 100%;
     }
@@ -66,7 +66,7 @@
   .search-filter {
     .expand-search {
       max-width: 100%;
-    } 
+    }
   }
 
   .content-bottom {
@@ -75,6 +75,5 @@
     @include devicebreak(medium) {
       margin-top: 8.438rem;
     }
-
   }
 }

@@ -3,6 +3,12 @@
 @import '../../assets/scss/breakpoints';
 
 .glabal-page {
+  @include devicebreak(small) {
+    .homepage-hero-tall {
+      margin-top: 7rem;
+    }
+  }
+
   .featured-card-container {
     margin-top: 7rem;
 
@@ -61,11 +67,9 @@
       }
     }
   }
-
-  @include devicebreak(small) {
-    .homepage-hero-tall {
-      margin-top: 7rem;
-    }
-  }
 }
-.no-gap{margin-left: -#{$spacing-04}; margin-right:-#{$spacing-04};}
+
+.no-gap {
+  margin-left: -#{$spacing-04};
+  margin-right: -#{$spacing-04};
+}

@@ -25,12 +25,12 @@
   }
 
   h2 {
-    margin-top: $spacing-09;
     margin-bottom: $spacing-04;
+    margin-top: $spacing-09;
 
     @include devicebreak(large) {
-      margin-top: $spacing-11;
       margin-bottom: 2.25rem;
+      margin-top: $spacing-11;
     }
   }
 
@@ -150,10 +150,9 @@
     }
 
     @include devicebreak(xlarge) {
-      margin-top: 7.4rem;
       margin-bottom: 4.688rem;
+      margin-top: 7.4rem;
     }
-    
 
     .breadcrumb {
       margin-top: 1.063rem;
@@ -202,13 +201,14 @@
 
     .menu {
       li {
-        margin-top: 0.375rem;
         margin-right: $font-size-20;
+        margin-top: 0.375rem;
 
         a {
-          text-transform: none;
-          font-size: $spacing-05;
           @extend %animate-link;
+
+          font-size: $spacing-05;
+          text-transform: none;
         }
       }
     }

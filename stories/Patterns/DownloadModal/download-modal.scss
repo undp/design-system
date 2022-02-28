@@ -36,8 +36,9 @@
   }
 
   &-list {
-    max-height: calc(100% - 82px);
     @extend %custom-scrollbar;
+
+    max-height: calc(100% - 82px);
 
     @include devicebreak(medium) {
       max-height: 323px;
@@ -88,7 +89,7 @@
         padding-right: 0;
       }
     }
-  
+
     &-content {
       @include devicebreak(medium) {
         padding-left: 0;

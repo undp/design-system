@@ -4,18 +4,19 @@
 
 /* Modal lightbox card start */
 .modal {
+  @extend %frosted-bg;
+
   @include transition(all 0.4s ease-in-out);
 
-  @extend %frosted-bg;
   bottom: 0;
   display: flex;
   justify-content: center;
   left: 0;
   opacity: 0;
-  visibility: hidden;
   position: fixed;
   right: 0;
   top: 0;
+  visibility: hidden;
   z-index: 99;
 
   @include devicebreak(medium) {
@@ -23,22 +24,25 @@
   }
 
   &-content {
+    @extend %custom-scrollbar;
+
     background: $color-white;
     max-width: 64rem;
     padding: $spacing-10 $spacing-04 $spacing-04;
     position: relative;
     width: 100%;
-    @extend %custom-scrollbar;
+
     @include devicebreak(medium) {
-      max-height: calc(100vh - 291px);
       margin-left: $spacing-11;
       margin-right: $spacing-11;
+      max-height: calc(100vh - 291px);
       padding: $spacing-10;
     }
   }
 
   &-close-button {
     background: url(#{$img-path-Icon}/times-circle.svg) no-repeat left center;
+    border: 0;
     cursor: pointer;
     font-size: 0;
     height: 45px;
@@ -46,14 +50,14 @@
     right: $spacing-04;
     top: $spacing-04;
     width: 45px;
-    border: 0;
+
+    @include devicebreak(medium) {
+      right: $spacing-06;
+      top: $spacing-06;
+    }
 
     &:hover {
       @extend %no-animation;
-    }
-    @include devicebreak(medium) { 
-      right: $spacing-06;
-      top: $spacing-06;
     }
   }
 
@@ -78,4 +82,5 @@
     }
   }
 }
+
 /* Modal lightbox card end */

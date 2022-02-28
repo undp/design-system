@@ -57,10 +57,10 @@
   }
 
   &-container {
-    position: relative;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    position: relative;
   }
 
   &-images {

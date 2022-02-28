@@ -10,6 +10,7 @@
 
   &.cta--arrow {
     @extend %chevron-right-expanded;
+
     padding-left: 0;
     padding-right: $spacing-06;
   }
@@ -34,6 +35,7 @@
 [dir='rtl'] {
   .cta__link {
     align-items: flex-end;
+
     &.cta--space {
       &::after {
         @include transform(rotate(180deg));
@@ -52,9 +54,10 @@
       padding-right: 0;
 
       i {
+        @include transform(translate(0) rotate(180deg));
+
         left: 0;
         right: 1.25rem;
-        @include transform(translate(0) rotate(180deg));
       }
     }
   }

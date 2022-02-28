@@ -60,6 +60,7 @@
 
     li {
       @extend %selectoption;
+
       display: block;
       position: relative;
 
@@ -86,9 +87,11 @@
         @extend %select_rtl_after;
       }
     }
+
     ul {
       padding: 0 $spacing-05;
-      li{
+
+      li {
         padding-right: 0;
       }
     }

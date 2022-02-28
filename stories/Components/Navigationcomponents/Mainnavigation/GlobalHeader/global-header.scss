@@ -3,7 +3,7 @@
 @import '../../../../assets/scss/breakpoints';
 
 .global-header {
-  .header{
+  .header {
     @extend %header;
 
     @include devicebreak(mediumonlytab) {
@@ -34,46 +34,52 @@
       display: flex;
       justify-content: center;
       position: relative;
+
       @include devicebreak(xlarge) {
         height: 7.1875rem;
       }
-      nav{
+
+      nav {
         @include devicebreak(mediumonlytab) {
           height: 4.6875rem;
         }
       }
+
       ul {
-        position: absolute;
-        left: 50%;
-        width: 50%;    
-        top: 50%;
         @include transform(translateY(-50%));
-        padding-left: 4.375rem;
+
+        align-items: center;
         display: flex;
         height: 100%;
-        align-items: center;
+        left: 50%;
+        padding-left: 4.375rem;
+        position: absolute;
+        top: 50%;
+        width: 50%;
         z-index: 9;
-
-        &:first-child{
-          right: 50%;
-          left: inherit;
-          justify-content: right;
-          padding-right: 4.375rem;
-          padding-left: 0;
-        }
 
         @include devicebreak(mediumonlytab) {
           display: none;
         }
-        li{
+
+        &:first-child {
+          justify-content: right;
+          left: inherit;
+          padding-left: 0;
+          padding-right: 4.375rem;
+          right: 50%;
+        }
+
+        li {
           margin: 0 2.1875rem;
         }
       }
 
       .logo {
+        @extend %img_none;
+
         position: relative;
         z-index: 1;
-        @extend %img_none;
 
         @include devicebreak(xlarge) {
           @include transform(translateX(-50%));
@@ -111,60 +117,75 @@
 
       .icon-globe {
         @extend %header-icon;
+
         margin-left: 1.75rem;
         -webkit-mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
         mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
+
         @include devicebreak(mediumonlytab) {
-            display: none;
+          display: none;
         }
       }
 
       .icon-search {
         @extend %header-icon;
+
         margin-left: $spacing-05;
         margin-right: $spacing-04;
         -webkit-mask: url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
         mask: url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
 
         @include devicebreak(small) {
-          background:transparent url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
+          background: transparent url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
           margin-left: 0;
-          margin-right:0;
+          margin-right: 0;
           -webkit-mask: inherit;
           mask: inherit;
+
           &:hover {
             background-color: transparent;
           }
         }
       }
     }
-    .mid-nav ul, .top-left, .top-right{
+
+    .mid-nav ul,
+    .top-left,
+    .top-right {
       @include transition(opacity 0.3s ease);
     }
   }
 
-  &.global-load-animation{
-    .header .mid-nav .logo{
-      position: fixed;
-      left:$spacing-04;
-      transform: translateX(0);
-      top:0;
+  &.global-load-animation {
+    .header .mid-nav .logo {
       @include transition(all 0.7s ease);
+
+      left: $spacing-04;
+      position: fixed;
+      top: 0;
+      transform: translateX(0);
     }
-    .mid-nav ul, .top-left, .top-right{
+
+    .mid-nav ul,
+    .top-left,
+    .top-right {
       opacity: 0;
     }
   }
-  &.run-animation{
-    .header .mid-nav .logo{
-      position: fixed;
+
+  &.run-animation {
+    .header .mid-nav .logo {
       left: 50%;
+      position: fixed;
       transform: translateX(-50%);
     }
   }
-  &.show-content{
-    .mid-nav ul, .top-left, .top-right{
-       opacity: 1;
+
+  &.show-content {
+    .mid-nav ul,
+    .top-left,
+    .top-right {
+      opacity: 1;
     }
   }
 }
@@ -174,20 +195,20 @@
     .mid-nav {
       ul {
         left: inherit;
-        right:50%;
-        padding-right: 4.375rem;
         padding-left: 0;
+        padding-right: 4.375rem;
+        right: 50%;
 
-        li{
+        li {
           padding-right: 0;
         }
 
         &:first-child {
+          justify-content: left;
+          left: 50%;
           padding-left: 4.375rem;
           padding-right: 0;
           right: inherit;
-          left:50%;
-          justify-content: left;
         }
       }
     }
@@ -213,16 +234,18 @@
         margin-right: $spacing-04;
       }
     }
-    &.global-load-animation{
-      .header .mid-nav .logo{
-        right:$spacing-04;
-        left:inherit;
+
+    &.global-load-animation {
+      .header .mid-nav .logo {
+        left: inherit;
+        right: $spacing-04;
       }
     }
-    &.run-animation{
-      .header .mid-nav .logo{
-        right: 50%;
+
+    &.run-animation {
+      .header .mid-nav .logo {
         left: inherit;
+        right: 50%;
         transform: translateX(50%);
       }
     }

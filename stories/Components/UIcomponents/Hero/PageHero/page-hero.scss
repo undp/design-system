@@ -9,9 +9,9 @@
     @extend %expand_to_size;
 
     min-height: 642px;
+    overflow: hidden;
     position: relative;
     word-break: break-word;
-    overflow: hidden;
 
     @include devicebreak(medium) {
       min-height: 746px;
@@ -31,16 +31,17 @@
     }
 
     .pagehero-content {
-      position: absolute;
+      align-items: center;
       display: flex;
       height: 100%;
-      align-items: center;
-      top: 0;
       padding-top: 0;
+      position: absolute;
+      top: 0;
 
       h4 {
         padding-top: 0;
       }
+
       h2 {
         margin-top: 0;
       }
@@ -53,14 +54,15 @@
     }
 
     .breadcrumb {
-      padding-top: $spacing-11;
-
       @extend .medium-offset-1;
+
+      padding-top: $spacing-11;
 
       @include devicebreak(small) {
         padding-left: $spacing-04;
         padding-right: $spacing-04;
       }
+
       ul li {
         margin-bottom: 0;
       }
@@ -69,9 +71,9 @@
 
   &-content {
     @include devicebreak(small) {
+      height: auto;
       padding-left: $spacing-04;
       padding-right: $spacing-04;
-      height: auto;
     }
 
     h4 {
@@ -99,9 +101,9 @@
     width: 100%;
 
     @include devicebreak(small) {
+      padding-bottom: 100%;
       position: relative;
       width: 100%;
-      padding-bottom: 100%;
     }
 
     @include devicebreak(medium) {
@@ -111,6 +113,7 @@
     img,
     video {
       @extend %img-cover;
+
       @include devicebreak(small) {
         position: absolute;
       }
@@ -119,12 +122,12 @@
 
   &-tall {
     .pagehero-content {
-      position: relative;
+      align-items: flex-start;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
       height: 100%;
+      justify-content: center;
+      position: relative;
       word-break: break-word;
 
       @include devicebreak(small) {
@@ -143,13 +146,13 @@
     }
 
     .breadcrumb {
-      position: initial;
       margin-top: $spacing-11;
+      position: initial;
 
       @include devicebreak(medium) {
+        margin-top: 0;
         position: absolute;
         top: 30px;
-        margin-top: 0;
       }
 
       @include devicebreak(large) {

@@ -28,6 +28,7 @@
 
   .sdg-modal-dialog {
     @include transition(all 0.4s ease);
+
     height: 100%;
   }
 
@@ -61,7 +62,8 @@
     height: 100%;
     overflow-y: auto;
   }
-  .sdg-card-link{
+
+  .sdg-card-link {
     display: none;
   }
 }
@@ -71,6 +73,25 @@ body.sdgmodal-open {
 }
 
 .sdg-container {
+
+  $sdg-colors: 'sdg-color-1' $sdg-red $sdg-hover-red,
+    'sdg-color-2' $sdg-mustard $sdg-hover-mustard,
+    'sdg-color-3' $sdg-kelly-green $sdg-hover-kelly-green,
+    'sdg-color-4' $sdg-dark-red $sdg-hover-dark-red,
+    'sdg-color-5' $sdg-red-orange $sdg-hover-red-orange,
+    'sdg-color-6' $sdg-bright-blue $sdg-hover-bright-blue,
+    'sdg-color-7' $sdg-yellow $sdg-hover-yellow,
+    'sdg-color-8' $sdg-burgundy-red $sdg-hover-burgundy-red,
+    'sdg-color-9' $sdg-orange $sdg-hover-orange,
+    'sdg-color-10' $sdg-magenta $sdg-hover-magenta,
+    'sdg-color-11' $sdg-golden-yellow $sdg-hover-golden-yellow,
+    'sdg-color-12' $sdg-dark-mustard $sdg-hover-dark-mustard,
+    'sdg-color-13' $sdg-dark-green $sdg-hover-dark-green,
+    'sdg-color-14' $sdg-blue $sdg-hover-blue,
+    'sdg-color-15' $sdg-lime-green $sdg-hover-lime-green,
+    'sdg-color-16' $sdg-royal-blue $sdg-hover-royal-blue,
+    'sdg-color-17' $sdg-navy-blue $sdg-hover-navy-blue;
+
   overflow-x: hidden;
   padding: 4.375rem $spacing-04 0;
   word-break: break-word;
@@ -80,6 +101,8 @@ body.sdgmodal-open {
   }
 
   .heading {
+    @extend %sdg-modal-title;
+
     margin: 0 0 0 1.875rem;
 
     @include devicebreak(medium) {
@@ -90,8 +113,6 @@ body.sdgmodal-open {
       font-family: $Font-Family-SohneBreit;
       text-transform: uppercase;
     }
-
-    @extend %sdg-modal-title;
   }
 
   .description {
@@ -165,25 +186,6 @@ body.sdgmodal-open {
     }
   }
 
-$sdg-colors: 
-  'sdg-color-1' $sdg-red $sdg-hover-red,
-  'sdg-color-2' $sdg-mustard $sdg-hover-mustard,
-  'sdg-color-3' $sdg-kelly-green $sdg-hover-kelly-green,
-  'sdg-color-4' $sdg-dark-red $sdg-hover-dark-red,
-  'sdg-color-5' $sdg-red-orange $sdg-hover-red-orange,
-  'sdg-color-6' $sdg-bright-blue $sdg-hover-bright-blue,
-  'sdg-color-7' $sdg-yellow $sdg-hover-yellow,
-  'sdg-color-8' $sdg-burgundy-red $sdg-hover-burgundy-red,
-  'sdg-color-9' $sdg-orange $sdg-hover-orange,
-  'sdg-color-10' $sdg-magenta $sdg-hover-magenta,
-  'sdg-color-11' $sdg-golden-yellow $sdg-hover-golden-yellow,
-  'sdg-color-12' $sdg-dark-mustard $sdg-hover-dark-mustard,
-  'sdg-color-13' $sdg-dark-green $sdg-hover-dark-green,
-  'sdg-color-14' $sdg-blue $sdg-hover-blue,
-  'sdg-color-15' $sdg-lime-green $sdg-hover-lime-green,
-  'sdg-color-16' $sdg-royal-blue $sdg-hover-royal-blue,
-  'sdg-color-17' $sdg-navy-blue $sdg-hover-navy-blue;
-
   @each $name, $color, $bg in $sdg-colors {
     &.#{$name} {
       .heading {
@@ -192,18 +194,22 @@ $sdg-colors:
           color: $color;
         }
       }
+
       .description,
       .stats-card:hover {
         background-color: $color;
       }
+
       .sdg-content {
         &.color {
           background-color: $bg;
         }
+
         &:hover {
           background-color: $color;
         }
       }
+
       .image::before {
         @include background-image(42deg, $color, transparent 80%);
       }
@@ -273,12 +279,12 @@ $sdg-colors:
   }
 
   ul {
-    padding-top: $spacing-50;
     margin-left: $spacing-03;
+    padding-top: $spacing-50;
 
     @include devicebreak(medium) {
-      padding: 0;
       margin-left: 0;
+      padding: 0;
     }
 
     li {
@@ -353,16 +359,16 @@ $sdg-colors:
       margin-left: 0;
       margin-right: 1.875rem;
 
+      @include devicebreak(medium) {
+        margin-left: 0;
+        margin-right: $spacing-12;
+      }
+
       h2 {
         @include devicebreak(medium) {
           padding-left: 0;
           padding-right: $spacing-05;
         }
-      }
-
-      @include devicebreak(medium) {
-        margin-left: 0;
-        margin-right: $spacing-12;
       }
     }
   }
@@ -414,12 +420,14 @@ $sdg-colors:
     }
 
     ul {
-      margin-right: $spacing-03;
       margin-left: unset;
+      margin-right: $spacing-03;
+
       @include devicebreak(medium) {
-        padding-right: 0;
         margin-right: 0;
+        padding-right: 0;
       }
+
       li {
         padding-left: 0;
         padding-right: $spacing-07;

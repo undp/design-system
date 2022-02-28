@@ -74,7 +74,9 @@
 
 div.wide-card__image {
   $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
   position: relative;
+
   a {
     @include devicebreak(medium) {
       &::before {
@@ -94,8 +96,8 @@ div.wide-card__image {
 
   img {
     height: 100%;
-    width: 100%;
     object-fit: cover;
+    width: 100%;
   }
 
   &:hover {
@@ -103,6 +105,7 @@ div.wide-card__image {
       background-image: linear-gradient(67.76deg, $color-yellow, transparent 61.11%);
       opacity: 0.75;
     }
+
     @each $name, $color in $colors {
       &.#{$name} a::before {
         background-image: linear-gradient(67.76deg, #{$color}, transparent 61.11%);
@@ -110,7 +113,6 @@ div.wide-card__image {
       }
     }
   }
-
 }
 
 [dir='rtl'] {
@@ -128,6 +130,7 @@ div.wide-card__image {
       a::before {
         background-image: linear-gradient(297deg, $color-yellow, transparent 61.11%);
       }
+
       @each $name, $color in $colors {
         &.#{$name} a::before {
           background-image: linear-gradient(297deg, #{$color}, transparent 61.11%);

@@ -4,9 +4,9 @@
 /* scrollbar layout start */
 .scrollbar-horizontal-wrapper {
   float: left;
+  line-height: normal;
   max-width: $width-600;
   width: 100%;
-  line-height: normal;
 }
 
 .scrollbar-data {
@@ -24,8 +24,10 @@
 }
 
 [dir='rtl'] {
-  .scrollbar-horizontal-wrapper, .scrollbar-vertical-wrapper  {
+  .scrollbar-horizontal-wrapper,
+  .scrollbar-vertical-wrapper {
     float: right;
   }
 }
+
 /* scrollbar layout end */

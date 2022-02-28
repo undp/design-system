@@ -1,6 +1,6 @@
-@import "../../../assets/scss/breakpoints";
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
 /* Tab start */
 .tabs {
@@ -24,8 +24,8 @@
       margin-right: $spacing-06;
       margin-top: 0.75rem;
       padding-bottom: $spacing-03;
-      text-transform: uppercase;
       padding-left: 0;
+      text-transform: uppercase;
 
       &.is-active {
         border-bottom: 2px solid $color-dark-red;
@@ -39,6 +39,7 @@
 
       a {
         @extend %img_none;
+
         font-size: $font-size-16;
       }
     }
@@ -65,7 +66,7 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .tabs {
     ul {
       padding-right: 0;

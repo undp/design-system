@@ -26,7 +26,6 @@
     }
   }
 
-
   .author-section {
     border-bottom: 1px solid $color-gray-400;
     margin-bottom: $spacing-70;
@@ -49,7 +48,7 @@
     }
 
     @include devicebreak(xlarge) {
-      margin-top: 11.875rem
+      margin-top: 11.875rem;
     }
   }
 
@@ -84,11 +83,13 @@
       }
     }
   }
+
   .large-article-image {
-    img{
-      width: 100%;;
+    img {
+      width: 100%;
     }
   }
+
   .middle-image {
     margin-bottom: $spacing-07;
     margin-top: 3.063rem;
@@ -96,7 +97,8 @@
     @include devicebreak(medium) {
       margin-top: 2.813rem;
     }
-    img{
+
+    img {
       width: 100%;
     }
   }
@@ -179,4 +181,3 @@ header {
 
 
 /* article page end */
-

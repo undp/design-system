@@ -1,6 +1,6 @@
-@import "../../../../assets/scss/variables";
-@import "../../../../assets/scss/mixins";
-@import "../../../../assets/scss/breakpoints";
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
 
 /* multi-select start */
 .multi-select {
@@ -65,6 +65,7 @@
 
     > li {
       @extend %selectoption;
+
       list-style: none;
 
       .form-check {
@@ -82,8 +83,8 @@
           border: 0;
           border-top: solid 1px $color-gray-400;
           display: block;
-          padding: 0 0 0 $spacing-08;
           overflow: visible;
+          padding: 0 0 0 $spacing-08;
         }
 
         button::after {
@@ -148,14 +149,16 @@
   ul .form-check {
     justify-content: space-between;
     margin: 0 -1rem;
-    padding:0 $spacing-05;
+    padding: 0 $spacing-05;
+
     label {
-      padding:$spacing-05 0;
+      padding: $spacing-05 0;
       width: 100%;
     }
-    input{
+
+    input {
       position: absolute;
-      right:$spacing-05;
+      right: $spacing-05;
     }
   }
 }
@@ -170,18 +173,21 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .multi-select {
     button {
       @extend %select_rtl;
+
       &::after {
         @extend %select_rtl_after;
       }
+
       span {
-        padding-right: 0.3125rem;
         padding-left: 0;
+        padding-right: 0.3125rem;
       }
     }
+
     ul {
       padding: 0 $spacing-05;
 
@@ -189,9 +195,9 @@
         padding-right: 0;
       }
 
-      .form-check input{
-        left:$spacing-05;
-        right:inherit;
+      .form-check input {
+        left: $spacing-05;
+        right: inherit;
       }
     }
 

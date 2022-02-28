@@ -1,6 +1,6 @@
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/base";
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/base';
 
 /* image with caption start */
 .image {
@@ -22,8 +22,8 @@
 
 .image-figcaption.medium {
   @include devicebreak(medium) {
-    width: 58.3333%;
     margin: 0 auto;
+    width: 58.3333%;
 
     .image__caption {
       width: 100%;
@@ -81,7 +81,7 @@
 }
 
 @include devicebreak(medium) {
-  [dir="rtl"] {
+  [dir='rtl'] {
     .image-figcaption.portrait {
       .image {
         &__caption {

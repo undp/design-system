@@ -41,18 +41,19 @@
   }
 
   h6 {
-      background-color: $color-gray-300;
-      cursor: pointer;
-      display: block;
-      margin-bottom: 0;
-      padding: $spacing-05;
-      position: relative;
+    background-color: $color-gray-300;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 0;
+    padding: $spacing-05;
+    position: relative;
+
+    @include devicebreak(medium) {
+      display: none;
+    }
 
     &::after {
       @extend %sidebar-chevron;
-    }
-    @include devicebreak(medium) { 
-      display: none;
     }
   }
 
@@ -84,8 +85,10 @@
 
       & > button::after {
         @include transform(rotateZ(-180deg));
+
         top: 1.125rem;
-         @include devicebreak(medium) { 
+
+        @include devicebreak(medium) {
           top: $spacing-06;
         }
       }
@@ -116,7 +119,9 @@
 
         &::after {
           @extend %sidebar-chevron;
-           top: $spacing-06;
+
+          top: $spacing-06;
+
           @include devicebreak(medium) {
             top: 2.063rem;
           }
@@ -194,7 +199,6 @@
         }
       }
     }
-
   }
 }
 

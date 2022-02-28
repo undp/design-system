@@ -8,15 +8,19 @@
     "build": "webpack --progress",
     "storybook": "start-storybook -p 6006 -s ./stories/assets",
     "build-storybook": "build-storybook -s ./stories/assets",
+	"build-pages": "build-storybook -o docs-build -s ./stories/assets",
+    "build-win": "set NODE_OPTIONS=--openssl-legacy-provider && webpack --progress",
+    "storybook-win": "set NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006 -s ./stories/assets",
+    "build-storybook-win": "set NODE_OPTIONS=--openssl-legacy-provider && build-storybook -s ./stories/assets",
     "scss": "sass --watch ./stories/assets/scss/style.scss ./stories/assets/css/style.css",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint ./stories/**/*.scss --fix",
-    "lint:js": "eslint --ignore-pattern '*.mdx' --ignore-pattern 'table.jsx' ./stories --fix",
+    "lint:js": "eslint --ignore-pattern '*.mdx' --ignore-pattern '**/Table.jsx' ./stories --fix",
     "postinstall": "patch-package"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@storybook/addon-a11y": "^6.3.8",
     "@storybook/addon-actions": "^6.3.7",
@@ -84,6 +88,6 @@
     "svgo": "^1.0.5",
     "svgo-loader": "^2.1.0",
     "swiper": "^7.4.1",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.9.2"
   }
 }

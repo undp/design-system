@@ -3,14 +3,14 @@
 
 .author-card {
   a {
+    border-top: 2px solid $color-black;
     display: block;
     margin-bottom: $spacing-09;
-    word-break: break-word;
     padding-top: $spacing-06;
-    border-top: 2px solid $color-black;
-    
+    word-break: break-word;
+
     @include devicebreak(medium) {
-      margin-bottom:  3.75rem;
+      margin-bottom: 3.75rem;
     }
 
     &:hover {
@@ -19,7 +19,6 @@
       }
 
       .author__img {
-
         &::before {
           opacity: 0.75;
         }
@@ -56,4 +55,5 @@
     }
   }
 }
+
 /* authorcard end */

@@ -40,6 +40,7 @@
 
       &::after {
         @extend %absolute__content;
+
         @include gradient(15deg, #{$yellow-gradient});
         @include transition(opacity 0.4s cubic-bezier(0.64,0.05,0.35,1.05));
       }
@@ -57,12 +58,10 @@
           }
         }
       }
-
-
     }
 
     div.stats-card {
-      background-color: transparent;      
+      background-color: transparent;
       color: $color-white;
       max-width: 100%;
       padding: 0 $spacing-06;
@@ -106,8 +105,9 @@
           -webkit-text-stroke: 2px $color-white;
         }
       }
+
       p {
-        height:$spacing-100;
+        height: $spacing-100;
       }
     }
 
@@ -124,14 +124,14 @@
 [dir='rtl'] {
   .stats {
     .stats-panel {
-      &:hover{
+      &:hover {
         // color map
         $colors: ('red': $red-gradient, 'green': $green-gradient, 'blue': $blue-gradient);
 
         @each $name, $color in $colors {
           &.#{$name} {
             &::after {
-             @include transform(scaleX(-1));
+              @include transform(scaleX(-1));
             }
           }
         }
@@ -139,4 +139,5 @@
     }
   }
 }
+
 /* statspanel card start */

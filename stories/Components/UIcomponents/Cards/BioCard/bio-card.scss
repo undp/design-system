@@ -5,17 +5,22 @@
 /* bio card start */
 div.bio-card {
   a {
-    display: block;
-    background: $color-gray-200; 
     @include transition(0.6s ease);
+
+    background: $color-gray-200;
+    display: block;
   }
 
   &:hover {
 
-    //cta 
+    // color map
+    $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+
+    //cta
     .cta--arrow {
       i {
         width: $spacing-11;
+
         &::before {
           display: unset;
         }
@@ -24,22 +29,20 @@ div.bio-card {
 
     div.card-thumbnail__image::before {
       @include background-image(67.76deg, $color-yellow, transparent 61.11%);
+
       opacity: 0.75;
     }
-
-    // color map
-    $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
 
     @each $name, $color in $colors {
       &.#{$name} {
         div.card-thumbnail__image::before {
           @include background-image(67.76deg, #{$color}, transparent 61.11%);
+
           opacity: 0.75;
         }
       }
     }
   }
-
 
   .bio-card__content {
     background: $color-gray-100;
@@ -52,9 +55,9 @@ div.bio-card {
       display: flex;
       order: inherit;
     }
-    
+
     .bio-card__description {
-      padding: $spacing-07 $spacing-06 0 ;
+      padding: $spacing-07 $spacing-06 0;
     }
 
     .card-thumbnail__image {
@@ -71,6 +74,7 @@ div.bio-card {
 
     h5 {
       margin-bottom: 1.125rem;
+
       @include devicebreak(medium) {
         margin-bottom: 0.75rem;
       }
@@ -78,17 +82,19 @@ div.bio-card {
 
     p {
       @extend %paragragh-font-16;
+
       margin-bottom: 2.063rem;
 
       @include devicebreak(medium) {
-          margin-bottom: 1.5rem;
-        }
+        margin-bottom: 1.5rem;
+      }
     }
 
     .cta__link {
       margin-bottom: 0;
       margin-top: $spacing-06;
       padding: 0  $spacing-06 $spacing-07;
+
       @include devicebreak(medium) {
         margin-top: auto;
       }
@@ -150,8 +156,11 @@ div.bio-card {
 }
 
 [dir='rtl'] {
-  div.bio-card{
+  div.bio-card {
     &:hover {
+
+      // color map
+      $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
       //cta
       .cta--arrow::after {
         @include transform(translate(0, 0) rotate(180deg));
@@ -160,9 +169,6 @@ div.bio-card {
       div.card-thumbnail__image::before {
         @include background-image(297deg, $color-yellow, transparent 61.11%);
       }
-
-      // color map
-      $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
 
       @each $name, $color in $colors {
         &.#{$name} {
@@ -174,4 +180,5 @@ div.bio-card {
     }
   }
 }
+
 /* bio card end */

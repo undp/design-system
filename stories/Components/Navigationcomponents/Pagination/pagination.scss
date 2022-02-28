@@ -11,9 +11,9 @@
   li {
     display: flex;
     font-size: $font-size-16;
+    margin-bottom: 0;
     margin-right: $spacing-06;
     padding-left: 0;
-    margin-bottom: 0;
     position: relative;
 
     a {
@@ -60,6 +60,7 @@
 
     &:last-child {
       margin-right: 0;
+
       a {
         &::before {
           background: url(#{$img-path-Icon}/chevron-right-circle.svg) no-repeat center center;
@@ -89,7 +90,8 @@
       }
 
       &:last-child {
-         margin-left: 0;
+        margin-left: 0;
+
         a {
           &::before {
             @include transform(rotateZ(180deg));

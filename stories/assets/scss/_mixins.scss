@@ -1,5 +1,5 @@
-@import "./variables";
-@import "./breakpoints";
+@import './variables';
+@import './breakpoints';
 
 //background image gradient
 @mixin background-image($deg, $colorname, $opacity) {
@@ -141,22 +141,23 @@
 }
 
 %header-icon {
-  background-color:$color-blue-600;
+  background-color: $color-blue-600;
   border: 0;
+  cursor: pointer;
   display: inline-flex;
   font-size: 0;
-  padding: 0;
-  cursor: pointer;
   height: 26px;
   margin-right: $spacing-03;
+  padding: 0;
   width: 25px;
 
   @include devicebreak(small) {
+    margin-right: 0;
     -webkit-mask: inherit;
     mask: inherit;
-    margin-right:0;
   }
-  &:hover{
+
+  &:hover {
     background-color: $color-blue-400;
   }
 }
@@ -192,13 +193,16 @@
 %sdg-modal-title {
   h2 {
     font-size: $font-size-25;
+
     @include devicebreak(medium) {
       font-size: 3.438rem;
       padding-left: $spacing-05;
     }
   }
+
   h3 {
     font-size: $font-size-20;
+
     @include devicebreak(medium) {
       font-size: 2.188rem;
     }
@@ -232,16 +236,18 @@
 }
 
 %checbox-radio-before {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid $color-dark-red;
   cursor: pointer;
   height: 16px;
-  width: 16px;
-  border: 2px solid $color-dark-red;
-  appearance: none;
-  -webkit-appearance: none;
   margin: 0;
+  width: 16px;
+
   &:hover {
     border-color: $color-light-pink;
   }
+
   &:focus-visible {
     box-shadow: 0 0 4px $color-blue-800;
     outline: 0;
@@ -270,13 +276,14 @@
 }
 
 %ctaimg {
-  content: "";
+  content: '';
   height: 1.188rem;
   margin-left: $spacing-04;
-  width: 0.813rem;
   margin-top: 2px;
+  width: 0.813rem;
+
   @include devicebreak(medium) {
-  margin-top: 0;
+    margin-top: 0;
   }
 }
 
@@ -301,9 +308,10 @@
   @include transform(translateY(-50%));
   @include transition(all 200ms ease-in-out);
 
-  background: url(#{$img-path-Iconfourback}/chevron-down.svg) no-repeat center
+  background:
+    url(#{$img-path-Iconfourback}/chevron-down.svg) no-repeat center
     center;
-  content: "";
+  content: '';
   float: right;
   height: 13px;
   position: absolute;
@@ -313,7 +321,7 @@
 }
 
 %absolute__content {
-  content: "";
+  content: '';
   height: 100%;
   left: 0;
   position: absolute;
@@ -323,17 +331,15 @@
 
 %sidebar-chevron {
   @include transition(all 0.3s ease);
+  @include transform(translateY(-50%));
 
   background: url(#{$img-path-Icon}/chevron-down.svg) no-repeat center center;
-  content: "";
+  content: '';
   height: 0.813rem;
   position: absolute;
   right: 1.188rem;
   top: 50%;
-  @include transform(translateY(-50%));
   width: 20px;
-
-
 }
 
 %language_switcher {
@@ -360,9 +366,9 @@
   cursor: pointer;
   font-size: $font-size-16;
   font-weight: 600;
+  line-height: 1.125rem;
   margin: 0;
   padding: $spacing-05 $spacing-50 $spacing-05 $spacing-05;
-  line-height: 1.125rem;
   position: relative;
   text-transform: uppercase;
   width: 100%;
@@ -377,9 +383,10 @@
   min-height: 100px;
   padding: 0 $spacing-05;
   width: 100%;
-  &:focus{
-    outline:0;
+
+  &:focus {
     box-shadow: 0 0 4px $color-blue-800;
+    outline: 0;
   }
 }
 
@@ -421,7 +428,7 @@
   visibility: visible;
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   %left-to-right {
     @include transform(translateX(100px));
   }
@@ -459,10 +466,10 @@
 }
 
 %carousel_arrow {
-  display: inline-block;
   background: transparent;
   border: none;
   cursor: pointer;
+  display: inline-block;
   height: 2.75rem;
   padding: 0;
   vertical-align: bottom;
@@ -475,8 +482,8 @@
   font-weight: 700;
   letter-spacing: 0.48px;
   line-height: 0.84;
-  text-transform: uppercase;
   margin-bottom: $spacing-05;
+  text-transform: uppercase;
 }
 
 %carousel_title {
@@ -521,7 +528,7 @@
 
 %external {
   align-items: center;
-  content: "";
+  content: '';
   cursor: pointer;
   height: 1.125rem;
   width: 1.25rem;
@@ -553,8 +560,6 @@
   margin-bottom: 0;
   padding: 0;
 }
-
-
 
 //burmese lang
 :lang(my) {
@@ -594,7 +599,9 @@
 
 %logo {
   @include transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
+
   width: 40px;
+
   @include devicebreak(xlarge) {
     height: 7.625rem;
     width: 60px;
@@ -603,8 +610,10 @@
       height: 7.1875rem;
     }
   }
+
   @include devicebreak(mediumonlytab) {
     height: 5.125rem;
+
     &.scrolled {
       height: 4.6875rem;
     }
@@ -616,47 +625,52 @@
 }
 
 %pseudo-icon {
-  content: "";
-  display: block;
   box-sizing: border-box;
+  content: '';
+  display: block;
   position: absolute;
 }
 
 %chevron-right-expanded {
   i {
-    width: 0;
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    left: 1.25rem;
-    height: $spacing-05;
     @include transition(width 0.3s);
+
+    box-sizing: border-box;
+    display: block;
+    height: $spacing-05;
+    left: 1.25rem;
+    position: relative;
+    width: 0;
 
     &::before {
       @extend %pseudo-icon;
-      width: 100%;
-      height: 2px;
+
       background-color: $color-red;
+      display: none;
+      height: 2px;
       right: 0;
       top: 7px;
-      display: none;
+      width: 100%;
     }
 
     &::after {
       @extend %pseudo-icon;
-      width: $spacing-04;
-      height: $spacing-04;
-      border-top: 2px solid $color-red;
-      border-right: 2px solid $color-red;
+
       @include transform(rotate(45deg));
+
+      border-right: 2px solid $color-red;
+      border-top: 2px solid $color-red;
+      height: $spacing-04;
       right: 0;
       top: 2px;
+      width: $spacing-04;
     }
   }
-  
+
   &:hover {
     i {
       width: $spacing-11;
+
       &::before {
         display: unset;
       }
@@ -686,4 +700,5 @@
     @include animation(lineLoop-animation 2s linear infinite);
   }
 }
+
 /* placehoder end */

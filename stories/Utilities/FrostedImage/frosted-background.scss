@@ -9,6 +9,7 @@
 
   &::before {
     @extend %frosted-bg;
+
     content: '';
     height: 100%;
     position: absolute;

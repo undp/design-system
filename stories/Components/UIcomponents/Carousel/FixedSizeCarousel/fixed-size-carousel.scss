@@ -39,7 +39,6 @@
   }
 
   .slide-content {
-
     @include devicebreak(medium) {
       align-content: space-between;
       display: flex;
@@ -113,9 +112,8 @@
   }
 
   .slider-arrows {
-
-    display: flex;
     align-items: center;
+    display: flex;
     margin-left: 2.5rem;
 
     @include devicebreak(large) {

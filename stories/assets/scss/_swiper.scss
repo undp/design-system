@@ -12,10 +12,10 @@
   }
 
   @at-root [class*='swiper-slider-'] {
-    position: relative;
+    box-sizing: border-box;
     max-width: 100%;
     overflow: hidden;
-    box-sizing: border-box;
+    position: relative;
   }
 
   &-wrapper {
@@ -31,10 +31,10 @@
     white-space: nowrap;
     width: 100%;
     will-change: transform;
-
   }
 
   &-slide {
+    box-sizing: border-box;
     flex-shrink: 0;
     height: 100%;
     -webkit-tap-highlight-color: transparent;
@@ -42,7 +42,6 @@
     user-select: none;
     white-space: normal;
     width: 100%;
-    box-sizing: border-box;
 
     a {
       -webkit-user-drag: none;
@@ -82,14 +81,14 @@
 
   &-scrollbar {
     background: transparent;
+    background: transparent;
+    cursor: pointer;
     display: block;
     height: 4px;
     margin-bottom: $spacing-07;
     overflow: hidden;
     position: relative;
     width: 100%;
-    cursor: pointer;
-    background: transparent;
 
     &::after {
       border-bottom: 1px solid $color-black;
@@ -114,9 +113,11 @@
 
   &-initialized {
     padding-right: $spacing-44;
+
     @include devicebreak(small) {
       padding-right: $spacing-08;
     }
+
     .swiper-scrollbar {
       @include devicebreak(small) {
         padding-right: $spacing-08;
@@ -125,17 +126,19 @@
   }
 }
 
-
 [dir='rtl'] {
   .swiper-initialized {
     padding-left: $spacing-44;
     padding-right: 0;
+
     @include devicebreak(small) {
       padding-left: $spacing-08;
       padding-right: 0;
     }
+
     .swiper-scrollbar {
       padding-right: 0;
+
       @include devicebreak(small) {
         padding-left: $spacing-08;
         padding-right: 0;

@@ -6,11 +6,12 @@ $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'bl
 $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
 
 div.content-card {
+  @include transition(all 0.5s);
+
   background-color: $color-white;
   border-top: 2px solid $color-black;
   height: 100%;
   word-break: break-word;
-  @include transition(all 0.5s);
 
   > a {
     box-sizing: border-box;
@@ -57,7 +58,7 @@ div.content-card {
     padding-top: $spacing-05;
   }
 
-  &.card{
+  &.card {
     &:hover {
       background-color: $color-gray-100;
     }
@@ -65,6 +66,7 @@ div.content-card {
 
   &.card-emphasize {
     background-color: $color-light-yellow;
+
     &:hover {
       background-color: $color-yellow;
     }
@@ -73,12 +75,6 @@ div.content-card {
   &.card,
   &.card-emphasize {
     &:hover {
-      @each $name, $color in $colors {
-        &.#{$name} {
-          background-color: #{$color};
-        }
-      }
-
       &.red {
         .cta--space::after {
           filter: invert(0) brightness(0);
@@ -86,6 +82,12 @@ div.content-card {
 
         .cta--arrow::after {
           background-image: url(#{$img-path-Iconfourback}/arrow-right.svg);
+        }
+      }
+
+      @each $name, $color in $colors {
+        &.#{$name} {
+          background-color: #{$color};
         }
       }
     }
@@ -111,13 +113,14 @@ div.content-card {
     }
 
     .cta--arrow {
-        i {
-          width: $spacing-11;
-          &::before {
-            display: unset;
-          }
+      i {
+        width: $spacing-11;
+
+        &::before {
+          display: unset;
         }
       }
+    }
   }
 
   &-wrapper {
@@ -164,7 +167,7 @@ div.content-card {
 [dir='rtl'] {
   .content-card {
     .image {
-      &::before{
+      &::before {
         @include transform(scaleX(-1));
       }
     }

@@ -123,6 +123,7 @@ tbody {
   th,
   td {
     text-align: right;
+
     @include devicebreak(medium) {
       padding: $spacing-04 $spacing-04 $spacing-04 $spacing-08;
     }

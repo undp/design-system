@@ -22,6 +22,6 @@ a {
   text-decoration: none;
 
   &.animated-link {
-   @extend %animate-link;
+    @extend %animate-link;
   }
 }

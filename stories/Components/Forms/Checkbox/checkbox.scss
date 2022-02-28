@@ -1,12 +1,13 @@
-@import "../../../assets/scss/mixins";
-@import "../../../assets/scss/variables";
-@import "../../../assets/scss/breakpoints";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/breakpoints';
 
 /* checkbox */
 .form-check {
-  position: relative;
-  display: flex;
   align-items: center;
+  display: flex;
+  position: relative;
+
   label {
     cursor: pointer;
     font-size: $font-size-16;
@@ -14,8 +15,9 @@
   }
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   @extend %checbox-radio-before;
+
   border-radius: 0;
 
   &:checked {

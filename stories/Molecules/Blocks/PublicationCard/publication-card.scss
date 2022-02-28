@@ -15,11 +15,14 @@ div.publication-card {
     div.publication-thumbnail__image {
       &::after {
         @include background-image(27.66deg, $color-yellow, transparent 70.49%);
+
         opacity: 0.75;
       }
+
       @each $name, $color in $colors {
         &.#{$name}:after {
           @include background-image(27.66deg, $color-yellow, transparent 70.49%);
+
           opacity: 0.75;
         }
       }
@@ -31,7 +34,7 @@ div.publication-card {
     background: $color-gray-100;
     padding: $spacing-06;
 
-    > div{
+    > div {
       align-items: center;
       flex-wrap: unset;
 
@@ -78,10 +81,11 @@ div.publication-card {
       color: $color-shuttle-gray;
 
       .download-animated {
-        &:after {
+        &::after {
           @include transform(rotate(-45deg) translate(7px, -7px));
         }
-        &:before {
+
+        &::before {
           @include transform(translate(0, -10px));
         }
       }
@@ -108,10 +112,11 @@ div.publication-card {
       color: $color-shuttle-gray;
 
       .external-link-animated {
-        &:after {
+        &::after {
           @include transform(translate(5px, -5px));
         }
-        &:before {
+
+        &::before {
           @include transform(rotate(-45deg) translate(7px, 0));
         }
       }
@@ -140,7 +145,7 @@ div.publication-card {
         &:first-child {
           text-align: right;
         }
-        
+
         > :not(:first-of-type) {
           border-left: 0;
           border-right: $spacing-01 solid $color-silvery-moonlight;
@@ -154,6 +159,7 @@ div.publication-card {
         &::after {
           @include background-image(318deg, $color-yellow, transparent 70.49%);
         }
+
         @each $name, $color in $colors {
           &.#{$name}:after {
             @include background-image(318deg, #{$color}, transparent 70.49%);

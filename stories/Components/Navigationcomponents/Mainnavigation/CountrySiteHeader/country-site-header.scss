@@ -3,7 +3,7 @@
 @import '../../../../assets/scss/breakpoints';
 
 .country-header {
-  .header{
+  .header {
     @extend %header;
 
     height: auto;
@@ -12,35 +12,39 @@
     @include devicebreak(mediumonlytab) {
       min-height: 4.6875rem;
     }
+
     .site-title {
       font-size: $font-size-16;
-      margin-top: -0.25rem;
-      width: calc(100% - 52px);
       line-height: $font-size-16;
+      margin-top: -0.25rem;
       padding: 0.438rem 0;
+      width: calc(100% - 52px);
+
       @include devicebreak(mediumonlytab) {
         width: calc(100% - 64px);
       }
+
       @include devicebreak(xlarge) {
-        width: 14.4375rem;
-        margin-right: $spacing-07;
         font-size: $font-size-20;
+        margin-right: $spacing-07;
+        width: 14.4375rem;
       }
-      
+
       span:first-child {
         border-bottom: 1px solid $color-gray-500;
         color: $color-gray-600;
-        font-size: $font-size-12;
-        padding-bottom: 1px;
-        margin: 0;
         display: inline-block;
+        font-size: $font-size-12;
+        margin: 0;
+        padding-bottom: 1px;
       }
 
-      span{
+      span {
         display: flex;
         margin-top: 0.3rem;
       }
     }
+
     .top-left {
       align-items: center;
       display: flex;
@@ -51,9 +55,9 @@
         align-items: flex-start;
         display: flex;
         height: 7.1875rem;
+        margin-right: $spacing-06;
         position: relative;
         z-index: 2;
-        margin-right: $spacing-06;
 
         @include devicebreak(mediumonlytab) {
           height: 4.6875rem;
@@ -76,9 +80,9 @@
 
     .menu {
       align-items: center;
+      align-self: stretch;
       display: flex;
       min-height: 7.1875rem;
-      align-self: stretch;
 
       @include devicebreak(mediumonlytab) {
         display: none;
@@ -98,8 +102,8 @@
       justify-content: flex-end;
 
       @include devicebreak(xlarge) {
-        padding-right: $spacing-90;
         box-sizing: border-box;
+        padding-right: $spacing-90;
       }
 
       @include devicebreak(mediumonlytab) {
@@ -108,55 +112,68 @@
         }
       }
 
-      
-
       .icon-search {
         @extend %header-icon;
+
         margin-left: $spacing-05;
         -webkit-mask: url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
         mask: url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
 
         @include devicebreak(small) {
-          background:transparent url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
+          background: transparent url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
         }
       }
 
       .icon-globe {
         @extend %header-icon;
+
         margin-left: 1.75rem;
         -webkit-mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
         mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
+
         @include devicebreak(mediumonlytab) {
-            display: none;
+          display: none;
         }
       }
     }
-    .menu, .site-title, .top-right{
+
+    .menu,
+    .site-title,
+    .top-right {
       @include transition(opacity 0.3s ease);
     }
   }
-  &.country-load-animation{
-    .header .top-left .logo{
-      position: fixed;
-      left: 50%;
-      transform: translateX(-50%);
-      top:0;
+
+  &.country-load-animation {
+    .header .top-left .logo {
       @include transition(all 0.7s ease);
+
+      left: 50%;
+      position: fixed;
+      top: 0;
+      transform: translateX(-50%);
     }
-    .menu, .site-title, .top-right{
+
+    .menu,
+    .site-title,
+    .top-right {
       opacity: 0;
     }
   }
-  &.run-animation{
-    .header .top-left .logo{
+
+  &.run-animation {
+    .header .top-left .logo {
+      left: $spacing-04;
       position: fixed;
-      left:$spacing-04;
       transform: translateX(0);
     }
   }
-  &.show-content{
-    .menu, .site-title, .top-right{
-       opacity: 1;
+
+  &.show-content {
+    .menu,
+    .site-title,
+    .top-right {
+      opacity: 1;
     }
   }
 }
@@ -166,24 +183,27 @@
     .top-left {
       .logo {
         margin-right: 0;
+
         img {
           margin-left: 1.5rem;
           margin-right: 0;
         }
       }
     }
+
     .site-title {
       @include devicebreak(xlarge) {
-        margin-right: 0;
         margin-left: $spacing-07;
+        margin-right: 0;
       }
     }
-    .top-right {
 
+    .top-right {
       @include devicebreak(xlarge) {
         padding-left: $spacing-90;
         padding-right: 0;
       }
+
       .icon-search {
         margin-left: 0;
         margin-right: 1rem;
@@ -204,9 +224,10 @@
         }
       }
     }
-    &.run-animation{
-      .header .top-left .logo{
-        left:calc(100% - #{$spacing-12});
+
+    &.run-animation {
+      .header .top-left .logo {
+        left: calc(100% - #{$spacing-12});
       }
     }
   }

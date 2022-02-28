@@ -17,13 +17,14 @@
           margin-top: 0.8rem;
           width: 90%;
         }
-        &.show-small{
+
+        &.show-small {
           display: block;
         }
 
-        &.scrollbar{
-          overflow-y: auto;
+        &.scrollbar {
           height: calc(100vh - 9.375rem);
+          overflow-y: auto;
         }
       }
 
@@ -33,19 +34,22 @@
     }
 
     &-mobile {
+      display: none;
       margin-bottom: $spacing-04;
       margin-top: 5.5rem;
 
-      display: none;
-      @media (max-width:1023px){
+      @media (max-width: 1023px) {
         display: block;
-        .sidebar-accordion{
-          width:100%;
-          ul{
+
+        .sidebar-accordion {
+          width: 100%;
+
+          ul {
             display: none;
           }
-          &.show-small{
-            ul{
+
+          &.show-small {
+            ul {
               display: block;
             }
           }
@@ -55,9 +59,11 @@
 
     &-desktop {
       display: block;
-      @media (max-width:1023px){
+
+      @media (max-width: 1023px) {
         display: none;
       }
+
       @include devicebreak(medium) {
         .sidebar-accordion h6 {
           display: none;
@@ -100,9 +106,11 @@
     @include devicebreak(xlarge) {
       margin-top: 8.1875rem;
     }
+
     .content-box {
       width: auto;
     }
+
     .breadcrumb {
       @include devicebreak(small) {
         padding-top: $spacing-04;
@@ -119,7 +127,7 @@
     }
   }
 
-  .genric-slider{
+  .genric-slider {
     margin-right: -#{$spacing-04};
 
     @include devicebreak(small) {
@@ -133,18 +141,20 @@
 [dir='rtl'] {
   .generic-page {
     @include devicebreak(medium) {
-        .button-secondary {
-          margin-left: unset;
-          margin-right: 0.75rem;
-        }
+      .button-secondary {
+        margin-left: unset;
+        margin-right: 0.75rem;
       }
-    
-    .genric-slider{
+    }
+
+    .genric-slider {
       margin-left: -#{$spacing-04};
       margin-right: 0;
+
       @include devicebreak(small) {
         margin-left: -#{$spacing-06};
         margin-right: 0;
+
         .swiper-initialized .swiper-scrollbar {
           padding-left: 0;
         }
@@ -152,4 +162,3 @@
     }
   }
 }
-

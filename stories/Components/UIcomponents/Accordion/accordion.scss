@@ -15,11 +15,12 @@
     list-style: none;
     margin-bottom: 0;
     overflow: hidden;
-    position: relative;
     padding-left: 0;
+    position: relative;
 
     button {
       @extend %button;
+
       font-size: $font-size-25;
       font-weight: 400;
       line-height: 1.15;
@@ -117,4 +118,5 @@
     }
   }
 }
+
 /* Accordian end */

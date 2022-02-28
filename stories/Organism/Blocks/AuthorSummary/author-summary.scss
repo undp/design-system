@@ -22,8 +22,8 @@
     display: flex;
 
     @include devicebreak(small) {
-      justify-content: space-between;
       align-items: flex-start;
+      justify-content: space-between;
     }
 
     @include devicebreak(medium) {
@@ -39,7 +39,7 @@
         }
 
         @include devicebreak(medium) {
-          height:fit-content;
+          height: fit-content;
           width: 40%;
         }
 
@@ -58,7 +58,7 @@
 
   &-right {
     @include devicebreak(small) {
-     margin-top: $spacing-04;
+      margin-top: $spacing-04;
     }
 
     @include devicebreak(medium) {
@@ -67,8 +67,8 @@
   }
 
   &-text {
-    margin-top: 0;
     margin-left: $spacing-04;
+    margin-top: 0;
 
     @include devicebreak(medium) {
       width: calc(100% - 13.875rem);

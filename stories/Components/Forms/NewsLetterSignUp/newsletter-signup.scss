@@ -23,9 +23,9 @@
     position: relative;
 
     .input-group {
-      width: calc(100% - 86px);
       margin-top: 0;
-      
+      width: calc(100% - 86px);
+
       @include devicebreak(medium) {
         width: calc(100% - 107px);
       }

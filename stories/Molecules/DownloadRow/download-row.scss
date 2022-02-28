@@ -1,6 +1,6 @@
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/variables";
-@import "../../assets/scss/breakpoints";
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+@import '../../assets/scss/breakpoints';
 
 .download {
   &-row {
@@ -25,20 +25,20 @@
     }
 
     &__data {
-      padding: $spacing-05 $spacing-07 $spacing-05 0;
-      flex-grow: 1;
-      font-weight: normal;
-      text-transform: inherit;
-      font-size: $font-size-16;
-      line-height: 1.25;
       cursor: pointer;
+      flex-grow: 1;
+      font-size: $font-size-16;
+      font-weight: normal;
+      line-height: 1.25;
+      padding: $spacing-05 $spacing-07 $spacing-05 0;
+      text-transform: inherit;
 
       span {
         color: $color-gray-500;
-        font-size: $font-size-16;
         display: block;
-        margin-top: 4px;
+        font-size: $font-size-16;
         line-height: 1.4;
+        margin-top: 4px;
       }
     }
 
@@ -48,7 +48,7 @@
   }
 }
 
-[dir="rtl"] {
+[dir='rtl'] {
   .download {
     &-row {
       &__data {
@@ -57,10 +57,9 @@
       }
 
       &__main {
-  
         .form-check {
-          right: auto;
           left: 0;
+          right: auto;
         }
       }
 

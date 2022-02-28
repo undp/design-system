@@ -1,6 +1,6 @@
-@import "../../assets/scss/variables";
-@import "../../assets/scss/mixins";
-@import "../../assets/scss/breakpoints";
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
 
 .authors-page {
   margin-top: 4.75rem;
@@ -8,7 +8,7 @@
   @include devicebreak(xlarge) {
     margin-top: 7.1875rem;
   }
-  
+
   .author__label p {
     font-size: 1rem;
 
@@ -53,9 +53,10 @@
 
       &.author-filter-show {
         display: block;
-        .expand-search{
+
+        .expand-search {
           margin: $spacing-06 0;
-        }    
+        }
       }
     }
   }
@@ -64,16 +65,20 @@
     display: none;
   }
 
-  .sort-filter{
-    width:100%;
-    span{
+  .sort-filter {
+    width: 100%;
+
+    span {
       display: none;
-      font-size: 1rem;}
-    &.close{
-      font-size: 0;
+      font-size: 1rem;
+    }
+
+    &.close {
       background-color: $color-gray-300;
       color: $color-black;
-      span{
+      font-size: 0;
+
+      span {
         display: block;
       }
     }
@@ -102,10 +107,11 @@
     @include devicebreak(small) {
       margin-top: 0;
 
-      > div{
+      > div {
         display: none;
       }
-      > div:nth-child(-n + 6){
+
+      > div:nth-child(-n + 6) {
         display: block;
       }
 
@@ -115,6 +121,7 @@
         @include devicebreak(small) {
           h6 {
             font-size: $font-size-16;
+
             @include devicebreak(small) {
               font-size: 0.875rem;
             }
@@ -122,17 +129,19 @@
         }
       }
     }
-    > div:first-child{
-      a{
-          @include devicebreak(small) {
-            border-top: 0;
-          }  
+
+    > div:first-child {
+      a {
+        @include devicebreak(small) {
+          border-top: 0;
+        }
       }
     }
   }
 
   .view-btn-cell {
     margin-bottom: 4.188rem;
+
     @include devicebreak(medium) {
       margin-bottom: 13.563rem;
     }
@@ -156,7 +165,7 @@
 }
 
 // rtl css
-[dir="rtl"] {
+[dir='rtl'] {
   .authors-page {
     .medium-offset-1 {
       @include devicebreak(small) {
@@ -178,4 +187,3 @@
     }
   }
 }
-

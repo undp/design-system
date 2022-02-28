@@ -28,8 +28,8 @@
 
     .heading-big {
       ul li {
-        margin-top: $spacing-08;
         margin-bottom: 0;
+        margin-top: $spacing-08;
       }
 
       a {
@@ -56,7 +56,6 @@
       @include devicebreak(xlarge) {
         margin-top: $spacing-136;
       }
-
 
       .breadcrumb {
         @include devicebreak(small) {
@@ -134,8 +133,8 @@
     }
 
     .swiper-initialized {
-      padding-right: $spacing-09;
       overflow: visible;
+      padding-right: $spacing-09;
 
       @include devicebreak(medium) {
         padding-right: 8rem;
@@ -161,7 +160,7 @@
         margin-left: 0;
         margin-top: $spacing-08;
       }
-    } 
+    }
   }
 }
 
@@ -224,7 +223,7 @@
           }
         }
       }
-  
+
       .swiper-initialized {
         padding-left: $spacing-11;
         padding-right: 0;
