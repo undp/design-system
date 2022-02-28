@@ -1,4 +1,4 @@
-$(document).ready(function () {
+window.onload = function() {
   const lazyClass = "lazy";
   const lazyImg = "img." + lazyClass;
   const lazyPicture = "picture." + lazyClass;
@@ -85,5 +85,5 @@ $(document).ready(function () {
       });
     }
   }
+}
 
-});
