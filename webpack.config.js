@@ -38,7 +38,10 @@ module.exports = [
           test: /\.(svg|png|jpg)$/,
           use: [
             {
-              loader: 'url-loader'
+              loader: 'url-loader',
+              options: {
+                name: 'static/media/[name].[ext]'
+              }
             },
           ],
         },
@@ -129,4 +132,3 @@ module.exports = [
     }
   },
 ];
-
