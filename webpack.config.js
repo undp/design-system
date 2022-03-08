@@ -88,6 +88,7 @@ module.exports = [
       new CopyPlugin({
         patterns: [
           { from: './stories/assets/icons', to: 'images' },
+          { from: './stories/assets/images/(undp|pnud)-logo-(blue|white).svg', to: 'images/[name].[ext]' },
           { from: './stories/assets/fonts', to: 'fonts' },
         ],
       }),
