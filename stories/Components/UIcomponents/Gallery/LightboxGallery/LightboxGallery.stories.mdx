@@ -249,7 +249,7 @@ export const getCaptionForLocale = (locale) => {
 The Lightbox Gallery displays images in the front darkening the rest of the webpage.
 
 ### Overview
-The Lightbox Gallery component when clicked on a particular image, pop-ups that specific image, gaining the users’ attention. 
+The Lightbox Gallery component when clicked on a particular image, pop-ups that specific image, gaining the users’ attention.
 
 #### When to use:
 
@@ -264,10 +264,10 @@ It consists of two sections: text with CTA link section and Image section.
 
 ### Behaviors
 
-#### States 
+#### States
 There will be a set of 2-row images when clicked on a specific image then that image will be displayed in a popup view. The component is compatible with both mobile and tablet.
 
-View of a set of images in a row: 
+View of a set of images in a row:
 
 When selected a specific image:
 
@@ -275,7 +275,7 @@ When selected a specific image:
 <Story name="Lightbox gallery">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <LightboxGallery 
+    return <LightboxGallery
         titleText={caption.titleText}
         descText={caption.descText}
         buttonText={caption.buttonText}
@@ -297,19 +297,19 @@ https://cdn.jsdelivr.net/npm/glightbox@3.1.0/dist/js/glightbox.min.js
 ### CSS and JS References
 
 #### CSS:
-Add the base layout style from 
+Add the base layout style from
 
-- dist/css/base-minimal.min.css
-- dist/css/components/cta-link.min.css
-- dist/css/components/frosted-background.min.css
-- dist/css/components/image-caption.min.css
-- dist/css/components/lightbox.min.css
-- dist/css/components/lightbox-gallery.min.css
-- dist/css/components/swiper.min.css
+- https://undp.github.io/design-system/css/base-minimal.min.css
+- https://undp.github.io/design-system/css/components/cta-link.min.css
+- https://undp.github.io/design-system/css/components/frosted-background.min.css
+- https://undp.github.io/design-system/css/components/image-caption.min.css
+- https://undp.github.io/design-system/css/components/lightbox.min.css
+- https://undp.github.io/design-system/css/components/lightbox-gallery.min.css
+- https://undp.github.io/design-system/css/components/swiper.min.css
 
 
 JS:
-- dist/js/lightbox-gallery.min.js
+- https://undp.github.io/design-system/js/lightbox-gallery.min.js
 
 ### Interactions
 - By clicking on the image, it opens in the lightbox.

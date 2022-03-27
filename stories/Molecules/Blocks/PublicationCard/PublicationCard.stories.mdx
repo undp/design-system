@@ -23,7 +23,7 @@ export const getCaptionForLocale = (locale) => {
 
 # Publication Card
 
-The Publication card defines a card of information data with some items -  Title, Image, format and Downlaod files. 
+The Publication card defines a card of information data with some items -  Title, Image, format and Downlaod files.
 
 ### Overview
 Publication cards show the publication category images, title, format, and download option to related the content in the design with short information
@@ -32,8 +32,8 @@ Publication cards show the publication category images, title, format, and downl
   <Story name="Publication card" >
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
-      return <PublicationCard 
-        download={caption.download} readmore={caption.readmore} image {...args} 
+      return <PublicationCard
+        download={caption.download} readmore={caption.readmore} image {...args}
       ></PublicationCard>;
     }}
   </Story>
@@ -46,10 +46,10 @@ Copy HTML from the HTML tab of canvas and include below listed css file.
 
 #### CSS:
 
-Add the base layout style from 
+Add the base layout style from
 
-- dist/css/base-minimal.min.css
-- dist/css/components/publication-card.min.css
+- https://undp.github.io/design-system/css/base-minimal.min.css
+- https://undp.github.io/design-system/css/components/publication-card.min.css
 
 #### JS:
 

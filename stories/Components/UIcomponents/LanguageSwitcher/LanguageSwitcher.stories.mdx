@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas} from "@storybook/addon-docs";
 import { Languageswitcher } from "./LanguageSwitcher";
- 
+
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
@@ -119,7 +119,7 @@ Language switcher has two colors: Default and White.
 
 ### Behaviors
 
-#### States 
+#### States
 There are two states: Default and Open.
 1. Default: It shows the option to select the language. It has a downward arrow to open the menu.
 2. Open: It shows that the language switcher is opened and the user can select the desired language. It has an upward arrow with an opened menu.
@@ -127,7 +127,7 @@ There are two states: Default and Open.
 <Canvas>
   <Story
     name="Language switcher"
-    parameters={{ 
+    parameters={{
       backgrounds: { default: 'gray'},
       docs: {
         inlineStories: false,
@@ -153,15 +153,15 @@ There are two states: Default and Open.
 - Initialize the Language Switcher by calling langSwitch() function.
 
 ### CSS and JS References
- 
-#### CSS:
-Add the base layout style from 
 
-- dist/css/base-minimal.min.css
-- dist/css/components/language-switcher.min.css
+#### CSS:
+Add the base layout style from
+
+- https://undp.github.io/design-system/css/base-minimal.min.css
+- https://undp.github.io/design-system/css/components/language-switcher.min.css
 
 #### JS:
-- dist/js/lang-switcher.min.js
+- https://undp.github.io/design-system/js/lang-switcher.min.js
 
 ### Interactions
 - By clicking on the drop-down menu, language can be selected.

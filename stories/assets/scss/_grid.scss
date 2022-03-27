@@ -38,19 +38,12 @@
 .grid-x {
   box-direction: normal;
   box-orient: horizontal;
-  display: box;
   display: flex;
-  display: flexbox;
-  display: flex;
-  flex-flow: row wrap;
-  flex-flow: row wrap;
   flex-flow: row wrap;
 }
 
 .cell {
   box-flex: 0;
-  flex: 0 0 auto;
-  flex: 0 0 auto;
   flex: 0 0 auto;
   min-height: 0;
   min-width: 0;
@@ -59,14 +52,10 @@
   &.auto {
     box-flex: 1;
     flex: 1 1 0;
-    flex: 1 1 0;
-    flex: 1 1 0;
   }
 
   &.shrink {
     box-flex: 0;
-    flex: 0 0 auto;
-    flex: 0 0 auto;
     flex: 0 0 auto;
   }
 }
@@ -92,8 +81,7 @@
   >.small-11,
   >.small-12 {
     flex-basis: auto;
-    flex-basis: auto;
-    flex-preferred-size: auto;
+    -ms-flex-preferred-size: auto;
   }
 }
 
@@ -114,8 +102,7 @@
   .grid-x > .medium-11,
   .grid-x > .medium-12 {
     flex-basis: auto;
-    flex-basis: auto;
-    flex-preferred-size: auto;
+    -ms-flex-preferred-size: auto;
   }
 }
 
@@ -136,8 +123,7 @@
   .grid-x > .large-11,
   .grid-x > .large-12 {
     flex-basis: auto;
-    flex-basis: auto;
-    flex-preferred-size: auto;
+    -ms-flex-preferred-size: auto;
   }
 }
 
@@ -155,8 +141,6 @@
   >.small-11,
   >.small-12 {
     box-flex: 0;
-    flex: 0 0 auto;
-    flex: 0 0 auto;
     flex: 0 0 auto;
   }
 
@@ -215,8 +199,6 @@
     >.medium-auto {
       box-flex: 1;
       flex: 1 1 0;
-      flex: 1 1 0;
-      flex: 1 1 0;
       width: auto;
     }
 
@@ -234,8 +216,6 @@
     >.medium-11,
     >.medium-12 {
       box-flex: 0;
-      flex: 0 0 auto;
-      flex: 0 0 auto;
       flex: 0 0 auto;
     }
 
@@ -299,8 +279,6 @@
     >.large-auto {
       box-flex: 1;
       flex: 1 1 0;
-      flex: 1 1 0;
-      flex: 1 1 0;
       width: auto;
     }
 
@@ -318,8 +296,6 @@
     >.large-11,
     >.large-12 {
       box-flex: 0;
-      flex: 0 0 auto;
-      flex: 0 0 auto;
       flex: 0 0 auto;
     }
 
@@ -1696,12 +1672,7 @@
 .grid-y {
   box-direction: normal;
   box-orient: vertical;
-  display: box;
   display: flex;
-  display: flexbox;
-  display: flex;
-  flex-flow: column nowrap;
-  flex-flow: column nowrap;
   flex-flow: column nowrap;
 
   >.cell {
@@ -1731,8 +1702,7 @@
   >.small-11,
   >.small-12 {
     flex-basis: auto;
-    flex-basis: auto;
-    flex-preferred-size: auto;
+    -ms-flex-preferred-size: auto;
   }
 }
 
@@ -1754,8 +1724,7 @@
     >.medium-11,
     >.medium-12 {
       flex-basis: auto;
-      flex-basis: auto;
-      flex-preferred-size: auto;
+      -ms-flex-preferred-size: auto;
     }
   }
 }
@@ -1778,8 +1747,7 @@
     >.large-11,
     >.large-12 {
       flex-basis: auto;
-      flex-basis: auto;
-      flex-preferred-size: auto;
+      -ms-flex-preferred-size: auto;
     }
   }
 }
@@ -1798,8 +1766,6 @@
   >.small-11,
   >.small-12 {
     box-flex: 0;
-    flex: 0 0 auto;
-    flex: 0 0 auto;
     flex: 0 0 auto;
   }
 }
@@ -1859,8 +1825,6 @@
   .grid-y > .medium-auto {
     box-flex: 1;
     flex: 1 1 0;
-    flex: 1 1 0;
-    flex: 1 1 0;
     height: auto;
   }
 
@@ -1878,8 +1842,6 @@
   .grid-y > .medium-11,
   .grid-y > .medium-12 {
     box-flex: 0;
-    flex: 0 0 auto;
-    flex: 0 0 auto;
     flex: 0 0 auto;
   }
 
@@ -1941,8 +1903,6 @@
   .grid-y > .large-auto {
     box-flex: 1;
     flex: 1 1 0;
-    flex: 1 1 0;
-    flex: 1 1 0;
     height: auto;
   }
 
@@ -1960,8 +1920,6 @@
   .grid-y > .large-11,
   .grid-y > .large-12 {
     box-flex: 0;
-    flex: 0 0 auto;
-    flex: 0 0 auto;
     flex: 0 0 auto;
   }
 
@@ -2297,11 +2255,7 @@
 
 .grid-frame {
   align-items: stretch;
-  align-items: stretch;
   box-align: stretch;
-  flex-align: stretch;
-  flex-wrap: nowrap;
-  flex-wrap: nowrap;
   flex-wrap: nowrap;
   overflow: hidden;
   position: relative;
@@ -2330,19 +2284,12 @@
 .cell-block-container {
   box-direction: normal;
   box-orient: vertical;
-  display: box;
   display: flex;
-  display: flexbox;
-  display: flex;
-  flex-direction: column;
-  flex-direction: column;
   flex-direction: column;
   max-height: 100%;
 }
 
 .cell-block-container > .grid-x {
-  flex-wrap: nowrap;
-  flex-wrap: nowrap;
   flex-wrap: nowrap;
   max-height: 100%;
 }
@@ -2351,11 +2298,7 @@
   screen and (min-width: 48em) {
   .medium-grid-frame {
     align-items: stretch;
-    align-items: stretch;
     box-align: stretch;
-    flex-align: stretch;
-    flex-wrap: nowrap;
-    flex-wrap: nowrap;
     flex-wrap: nowrap;
     overflow: hidden;
     position: relative;
@@ -2376,19 +2319,12 @@
   .medium-cell-block-container {
     box-direction: normal;
     box-orient: vertical;
-    display: box;
     display: flex;
-    display: flexbox;
-    display: flex;
-    flex-direction: column;
-    flex-direction: column;
     flex-direction: column;
     max-height: 100%;
   }
 
   .medium-cell-block-container > .grid-x {
-    flex-wrap: nowrap;
-    flex-wrap: nowrap;
     flex-wrap: nowrap;
     max-height: 100%;
   }
@@ -2406,11 +2342,7 @@
   screen and (min-width: 64em) {
   .large-grid-frame {
     align-items: stretch;
-    align-items: stretch;
     box-align: stretch;
-    flex-align: stretch;
-    flex-wrap: nowrap;
-    flex-wrap: nowrap;
     flex-wrap: nowrap;
     overflow: hidden;
     position: relative;
@@ -2431,19 +2363,12 @@
   .large-cell-block-container {
     box-direction: normal;
     box-orient: vertical;
-    display: box;
     display: flex;
-    display: flexbox;
-    display: flex;
-    flex-direction: column;
-    flex-direction: column;
     flex-direction: column;
     max-height: 100%;
   }
 
   .large-cell-block-container > .grid-x {
-    flex-wrap: nowrap;
-    flex-wrap: nowrap;
     flex-wrap: nowrap;
     max-height: 100%;
   }
@@ -2459,11 +2384,7 @@
 
 .grid-y.grid-frame {
   align-items: stretch;
-  align-items: stretch;
   box-align: stretch;
-  flex-align: stretch;
-  flex-wrap: nowrap;
-  flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100vh;
   overflow: hidden;
@@ -2475,11 +2396,7 @@
   screen and (min-width: 48em) {
   .grid-y.medium-grid-frame {
     align-items: stretch;
-    align-items: stretch;
     box-align: stretch;
-    flex-align: stretch;
-    flex-wrap: nowrap;
-    flex-wrap: nowrap;
     flex-wrap: nowrap;
     height: 100vh;
     overflow: hidden;
@@ -2492,11 +2409,7 @@
   screen and (min-width: 64em) {
   .grid-y.large-grid-frame {
     align-items: stretch;
-    align-items: stretch;
     box-align: stretch;
-    flex-align: stretch;
-    flex-wrap: nowrap;
-    flex-wrap: nowrap;
     flex-wrap: nowrap;
     height: 100vh;
     overflow: hidden;

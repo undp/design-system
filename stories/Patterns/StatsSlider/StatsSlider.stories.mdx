@@ -31,7 +31,7 @@ export const statsArray = (locale) => {
     {
         percentname: 'Offices',
         numbername: '9',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'    
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     }]}; return engText.data;
     case 'arabic': const arabicText = {data: [{
       percentname: 'نسبه مئويه',
@@ -61,7 +61,7 @@ export const statsArray = (locale) => {
     {
       percentname: 'مكاتب',
       numbername: '9',
-      text: "الألم بحد ذاته هو الحب ، الزبون الرئيسي"  
+      text: "الألم بحد ذاته هو الحب ، الزبون الرئيسي"
     }]}; return arabicText.data;
     case 'burmese': const burmeseText = {data: [{
       percentname: "ရာခိုင်နှုန်း",
@@ -152,7 +152,7 @@ export const statsArray = (locale) => {
     {
         percentname: 'Offices',
         numbername: '9',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' 
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     }]};
     return dummy.data
   }
@@ -185,7 +185,7 @@ The number of cards will be divided equally into two rows and will fit the grid 
 ### Behaviors
 #### States
 
-A stats card slider has 2 states on larger resolutions. Static and scrolling. 
+A stats card slider has 2 states on larger resolutions. Static and scrolling.
 By default, only the section title of the slider should be displayed. As a user scrolls down the page, the first card from both rows will be shown at the extreme left and right of the page. As the user scrolls further and the slider is in the center of the viewport, all the cards in both rows should be displayed and both rows should be aligned in the center of the page. Additionally, an accent color overlay is displayed on the hover
 
 On mobile, this slider is converted to a standard carousel. The card in the center of the viewport will display the hover effect.
@@ -193,7 +193,7 @@ On mobile, this slider is converted to a standard carousel. The card in the cent
 The following behavior modifiers are available:
 
 A medium or a small stats card is used in sliders
-- Medium: .statscard--md 
+- Medium: .statscard--md
 - Small: .statscard--sm
 
 <Canvas>
@@ -207,11 +207,11 @@ A medium or a small stats card is used in sliders
 
 ### Usage:
 - Copy HTML from the HTML tab of canvas in your HTML page and include CSS and JS in ‘CSS and JS References’ section.
-- Initialize the swiper and parallax effect by calling functions mentioned below 
+- Initialize the swiper and parallax effect by calling functions mentioned below
 - swiper('.stats-card-slider')
 - parallaxEffect('.stats-card-slider')
 
-This widget displays parallax on desktop and slider on mobile, so it has to apply both on load. 
+This widget displays parallax on desktop and slider on mobile, so it has to apply both on load.
 Include Swiper (https://swiperjs.com/get-started) and https://greensock.com/docs/v3/Installation GSAP libraries for parallax (include gsap, ScrollTrigger and EasePack) and slider effects in your HTML file.
 
 - Refer [this document](https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration & options
@@ -220,17 +220,17 @@ Include Swiper (https://swiperjs.com/get-started) and https://greensock.com/docs
 ### CSS and JS References
 
 #### CSS:
-Add the base layout style from 
+Add the base layout style from
 
-- dist/css/base-minimal.min.css
-- dist/css/components/stats-slider.min.css
-- dist/css/components/stats-cards.min.css
-- dist/css/components/swiper.min.css
+- https://undp.github.io/design-system/css/base-minimal.min.css
+- https://undp.github.io/design-system/css/components/stats-slider.min.css
+- https://undp.github.io/design-system/css/components/stats-cards.min.css
+- https://undp.github.io/design-system/css/components/swiper.min.css
 
 #### JS:
 Includes following JS Files:
-- dist/js/swiper.min.js
-- dist/js/parallax.min.js
+- https://undp.github.io/design-system/js/swiper.min.js
+- https://undp.github.io/design-system/js/parallax.min.js
 
 Following external libraries needs to be included as well.
 - Swiper
@@ -244,9 +244,3 @@ The stats card slider follows the hover-over effect of the cards used. These car
 
 ### Changelog
 1.0 — Released component
-
-
-
-
-
-

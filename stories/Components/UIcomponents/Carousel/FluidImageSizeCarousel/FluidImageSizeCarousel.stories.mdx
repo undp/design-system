@@ -23,7 +23,7 @@ export const statsArray = (locale) => {
       tagtext: 'Blog post',
       titleText: 'Entry and Exit Points: Violent Extremism in South-East Asia',
       descText: 'This study summarizes four complementary in-depth papers that explore the localized… ',
-      buttonText: 'Read More' 
+      buttonText: 'Read More'
     }]}; return engText.data;
     case 'arabic': const arabicText = {data: [{
       slideImage: fluidCarouselImg,
@@ -133,7 +133,7 @@ When multiple images or content is to be displayed in a single slide.
 It consists of multiple grids with an image, description, and CTA link.
 
 ### Content
-There are 3 types of Carousel: Fluid, Image, and Fixed 
+There are 3 types of Carousel: Fluid, Image, and Fixed
 1. Fluid Image Size Carousel Component:
 In Fluid Image Size Carousel Component, the page layout of the content is adjusted as per the user’s device screen. It consists of a horizontal scroll bar, Image, Text area, CTA Link, Right cursor arrow (left in case of RTL).
 
@@ -146,12 +146,12 @@ In Fixed Image Size Carousel Component, the size of the image does not change as
 
 ### Behaviors
 
-#### States 
+#### States
 Fluid Image Size Carousel Component:
 - Default state
 - Tablet
 
-<Canvas>	
+<Canvas>
 <Story name="Fluid carousel">
   {(args, { globals: { locale } }) => {
     const caption = statsArray(locale);
@@ -174,21 +174,21 @@ Fluid Image Size Carousel Component:
 #### CSS:
 
 Add the base layout style from
-- dist/css/base-minimal.min.css
-- dist/css/components/fluid-image-size-carousel.min.css
-- dist/css/components/cta-link.min.css
-- dist/css/components/buttons.min.css
-- dist/css/components/swiper.min.css
+- https://undp.github.io/design-system/css/base-minimal.min.css
+- https://undp.github.io/design-system/css/components/fluid-image-size-carousel.min.css
+- https://undp.github.io/design-system/css/components/cta-link.min.css
+- https://undp.github.io/design-system/css/components/buttons.min.css
+- https://undp.github.io/design-system/css/components/swiper.min.css
 
 #### JS:
-- dist/js/swiper.min.js
-- dist/js/viewport.min.js
-- 3rd party libraries 
+- https://undp.github.io/design-system/js/swiper.min.js
+- https://undp.github.io/design-system/js/viewport.min.js
+- 3rd party libraries
 Swiper (https://swiperjs.com/get-started)
 
 ### Interactions
 - By clicking on the Chips and CTA Links user is directed to the detailed information page.
-- By clicking on the Arrows Buttons, the slides can be swiped forward or backward. 
+- By clicking on the Arrows Buttons, the slides can be swiped forward or backward.
 
 ### Changelog
 1.0 — Released component

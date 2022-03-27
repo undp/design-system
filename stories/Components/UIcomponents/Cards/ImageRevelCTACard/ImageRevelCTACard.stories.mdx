@@ -12,44 +12,44 @@ export const getCaptionForLocale = (locale) => {
         link: '#',
         size: 'medium-4',
         imageback: img
-      }],      
+      }],
     }; return engText;
     case 'arabic': const arabicText = {
       data: [{
-        contentname: 'الألم هو الحب نفسه', 
+        contentname: 'الألم هو الحب نفسه',
         btnlabel: 'متجر',
         link: '#',
         size: 'medium-4',
         imageback: img
-      }],      
+      }],
     }; return arabicText;
     case 'burmese': const burmeseText = {
       data: [{
-        contentname: 'နာကျင်မှုကအချစ်ပါဘဲ နာကျင်မှုက အချစ်ပါဘဲ နာကျ င်မှုကအချစ်ပါဘဲနာကျင်မှုကအချစ်ပါဘဲ', 
+        contentname: 'နာကျင်မှုကအချစ်ပါဘဲ နာကျင်မှုက အချစ်ပါဘဲ နာကျ င်မှုကအချစ်ပါဘဲနာကျင်မှုကအချစ်ပါဘဲ',
         btnlabel: 'ပိုပြီးဖတ်ပါ',
         link: '#',
         size: 'medium-4',
         imageback: img
-      }],      
+      }],
     }; return burmeseText;
     case 'japanese': const japaneseText = {
       data:[{
-        contentname: '痛みは愛そのものです', 
+        contentname: '痛みは愛そのものです',
         btnlabel: '店',
         link: '#',
         size: 'medium-4',
         imageback: img
-      }],      
+      }],
     }; return japaneseText;
     default:
       const dummy =  {
         data: [{
-          contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ', 
+          contentname: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
           btnlabel: 'READ MORE',
           link: '#',
           size: 'medium-4',
           imageback: img
-        }],        
+        }],
       };
     return dummy;
   }
@@ -74,7 +74,7 @@ export const getCaptionForLocale = (locale) => {
 Image reveal cards are cards with information about the image and CTA links for detailed information.
 
 ### Overview
-The Image reveals card component is a multi-usage component that creates boxes that are usually teasing some kind of content like- Image, Text, and CTA Link. 
+The Image reveals card component is a multi-usage component that creates boxes that are usually teasing some kind of content like- Image, Text, and CTA Link.
 
 #### When to use:
 
@@ -89,10 +89,10 @@ It consists of a grid with an image, text, and CTA link.
 There are two types of image reveal card: Medium and Small
 1. Medium: Image Reveal Card of medium-size shows the Image and CTA Link. The Text will show on hover.
 2. Small: Image Reveal Card of small size comes with a different Image and CTA Link. The Text will show on hover.
- 
+
 ### Behaviors
 
-#### States 
+#### States
 There are 2 states in the Image Reveal Card: Default and Hover.
 
 Default: It consists of Image and CTA Link.
@@ -120,14 +120,14 @@ Hover: It consists of Image, Text, and CTA Link. It changes appearance when the 
 ### CSS and JS References
 
 #### CSS:
-Add the base layout style from 
+Add the base layout style from
 
-- dist/css/base-minimal.min.css
+- https://undp.github.io/design-system/css/base-minimal.min.css
 - Include dist/css/components/cta-link.min.css
 - Include dist/css/components/image-revel-cta-card.min.css
 
 #### JS:
-- dist/js/viewport.min.js
+- https://undp.github.io/design-system/js/viewport.min.js
 
 ### Interactions
 - over state applies to the entire card.
