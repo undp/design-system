@@ -94,7 +94,7 @@ Parallax Gallery has Default or Gray backgrounds.
 
 ### Behaviors
 
-#### States 
+#### States
 There are two states:  Default and Mobile.
 1. Default
 Default background:
@@ -108,7 +108,7 @@ Gray background:
 <Story name="Parallax gallery">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <ParallaxGallery 
+    return <ParallaxGallery
         titleText={caption.titleText}
         descText={caption.descText}
         buttonText={caption.buttonText}
@@ -122,20 +122,20 @@ Gray background:
 </Story>
 </Canvas>
 
-  
+
 ### Usage:
 - Copy the HTML from the HTML Tab of canvas and include CSS and JS in ‘CSS and JS References’ section.
-- Initialize the parallaxEffect by calling parallaxEffect('.parallax-gallery-images', '.column', 'top center', 'bottom+=15% center', 'vertical', 'all'); function in your JS file. 
+- Initialize the parallaxEffect by calling parallaxEffect('.parallax-gallery-images', '.column', 'top center', 'bottom+=15% center', 'vertical', 'all'); function in your JS file.
 - Refer [this document](https://github.com/undp/design-system/wiki/Parallax-documentation) for Parallax integration & options
 
 ### CSS and JS References
 
 #### CSS:
-Add the base layout style from 
+Add the base layout style from
 
-- dist/css/base-minimal.min.css
-- dist/css/components/parallax-gallery.min.css
-- dist/css/components/cta-link.min.css
+- https://undp.github.io/design-system/css/base-minimal.min.css
+- https://undp.github.io/design-system/css/components/parallax-gallery.min.css
+- https://undp.github.io/design-system/css/components/cta-link.min.css
 
 
 Following external libraries needs to be included first:
@@ -144,7 +144,7 @@ Following external libraries needs to be included first:
 - GSAP EasePack plugin
 
 #### JS:
-- dist/js/parallax.min.js
+- https://undp.github.io/design-system/js/parallax.min.js
 
 
 ### Interactions
