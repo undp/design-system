@@ -1,9 +1,9 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const RemovePlugin = require('remove-files-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 const webpackEntry = require('./webpack.entries');
 const packMode = 'production';
 
@@ -62,10 +62,10 @@ module.exports = [
     resolve: {
       // @TODO: Need to find a valid option to manage these icon to resolve
       alias: {
-        "../../../../../../assets/icons/hamburger.svg": path.resolve(__dirname, 'stories/assets/icons/hamburger.svg'),
-        "../../../../../../assets/icons/chevron-down.svg": path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
-        "../../../../assets/icons/chevron-down.svg": path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
-        "../../../../../../assets/icons/times-blue.svg": path.resolve(__dirname, 'stories/assets/icons/times-blue.svg')
+        '../../../../../../assets/icons/hamburger.svg': path.resolve(__dirname, 'stories/assets/icons/hamburger.svg'),
+        '../../../../../../assets/icons/chevron-down.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
+        '../../../../assets/icons/chevron-down.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
+        '../../../../../../assets/icons/times-blue.svg': path.resolve(__dirname, 'stories/assets/icons/times-blue.svg')
       },
     },
     optimization: {
@@ -73,7 +73,7 @@ module.exports = [
         new CssMinimizerPlugin({
           minimizerOptions: {
             preset: [
-              "default",
+              'default',
               {
                 discardComments: { removeAll: true },
               },
@@ -87,9 +87,10 @@ module.exports = [
       // to dist folder
       new CopyPlugin({
         patterns: [
-          { from: "./stories/assets/icons", to: "images" },
-          { from: "./stories/assets/fonts", to: "fonts" },
-        ]
+          { from: './stories/assets/icons', to: 'images' },
+          { from: './stories/assets/images/(undp|pnud)-logo-(blue|white).svg', to: 'images/[name][ext]' },
+          { from: './stories/assets/fonts', to: 'fonts' },
+        ],
       }),
       // remove .js file which is generated from every css file
       new FixStyleOnlyEntriesPlugin(),
@@ -105,13 +106,16 @@ module.exports = [
           trash: true
         }
       })
-    ]
+    ],
+    output: {
+      path: path.resolve(__dirname, 'docs'),
+    },
   },
   {
     mode: packMode,
     entry: webpackEntry('js'),
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'docs'),
       filename: '[name].min.js',
       libraryTarget: 'umd'
     },

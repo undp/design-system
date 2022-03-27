@@ -1,1 +1,0 @@
-.frosted-background:before{-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);background:hsla(0,0%,96.9%,.8)}.frosted-background{position:relative}.frosted-background:before{content:"";height:100%;position:absolute;width:100%;z-index:9}.frosted-background img{display:block;object-fit:cover}

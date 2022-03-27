@@ -45,9 +45,9 @@ Accordions make information processing and discovering more effective. However, 
     {
       (args, { globals: { locale } }) => {
         const caption = getCaptionForLocale(locale);
-        return <Accordion 
-          headerText={caption.header} 
-          descriptionText={caption.description} 
+        return <Accordion
+          headerText={caption.header}
+          descriptionText={caption.description}
         ></Accordion>;
       }
     }
@@ -56,16 +56,16 @@ Accordions make information processing and discovering more effective. However, 
 
 #### CSS
 Add following CSS in your project
-- [Base layouting CSS](https://github.com/undp/design-system/blob/building-dist/dist/css/base-minimal.min.css).
-- [Copy and add this component CSS in your project](https://github.com/undp/design-system/blob/building-dist/dist/css/components/accordion.css).
+- [Base layouting CSS](https://undp.github.io/design-system/css/base-minimal.min.css).
+- [Copy and add this component CSS in your project](https://undp.github.io/design-system/css/components/accordion.min.css).
 
 
 #### JS
-[Use this JS file in your project ](https://github.com/undp/design-system/blob/building-dist/stories/assets/js/Faq_custom.js)
+[Use this JS file in your project ](https://undp.github.io/design-system/js/accordion.min.js)
 and then use following code:
 ```
 $(document).ready(function(){
-  FaqFun();
+  accordion();
 });
 ```
 
@@ -80,12 +80,12 @@ The contents within an accordion section may utilize multiple paragraphs and sub
 
 #### States
 
-An accordion panel  has two states: collapsed and expanded. The chevron icon at the end of the accordion title should indicate the accordion panel’s state. By default, all panels of an accordion should begin at the collapsed state. The following behavior modifiers are available: 
+An accordion panel  has two states: collapsed and expanded. The chevron icon at the end of the accordion title should indicate the accordion panel’s state. By default, all panels of an accordion should begin at the collapsed state. The following behavior modifiers are available:
 
-- **Multi-expand**. By default only one panel of the accordion can be open at a time. It can be changed by assigning  data-multi-expand=”true”  attribute to the accordion’s outermost element. 
+- **Multi-expand**. By default only one panel of the accordion can be open at a time. It can be changed by assigning  data-multi-expand=”true”  attribute to the accordion’s outermost element.
 - **Disabled**: temporary removing expanding capability of the specific panel while preserving overall look and feel
 - **Active**: while default state of all panels is “close” we can enable certain panels by assigning class  .is-active  to it
-- **Mobile Only**: To shwo the Accordion on mobile device only we have to pass the attribute to the parent div eg: 
+- **Mobile Only**: To shwo the Accordion on mobile device only we have to pass the attribute to the parent div eg:
   ``` <div class="accordion" data-accordion="mobile">```
 
 #### Interactions
