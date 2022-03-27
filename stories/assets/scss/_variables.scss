@@ -51,9 +51,9 @@ $font-size-32: 2rem;
 $font-size-35: 2.188rem;
 
 // FONTS FAMLIY
-$Font-Family-ProximaNova: 'ProximaNova';
-$Font-Family-SohneBreit: 'SohneBreit';
-$Font-Family-NotoSans: 'NotoSans';
+$Font-Family-ProximaNova: 'ProximaNova', sans-serif;
+$Font-Family-SohneBreit: 'SohneBreit', $Font-Family-ProximaNova;
+$Font-Family-NotoSans: 'NotoSans', sans-serif;
 
 // SPACING variables
 $spacing-01: 0.125rem;
