@@ -444,3 +444,23 @@ body.sdgmodal-open {
     }
   }
 }
+
+:lang(my) {
+  .sdg-container {
+    .heading {
+      h2 {
+        font-family: $Font-Family-NotoSans;
+      }
+    }
+  }
+}
+
+#{$cyrillic} {
+  .sdg-container {
+    .heading {
+      h2 {
+        font-family: $Font-Family-ProximaNova;
+      }
+    }
+  }
+}

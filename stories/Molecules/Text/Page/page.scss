@@ -23,4 +23,20 @@
   }
 }
 
+:lang(my) {
+  .page-title {
+    h2 {
+      font-family: $Font-Family-NotoSans;
+    }
+  }
+}
+
+#{$cyrillic} {
+  .page-title {
+    h2 {
+      font-family: $Font-Family-ProximaNova;
+    }
+  }
+}
+
 /* page title end */

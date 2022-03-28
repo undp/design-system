@@ -180,3 +180,19 @@ div.stats-card {
     }
   }
 }
+
+:lang(my) {
+  div.stats-card {
+    h2 {
+      font-family: $Font-Family-NotoSans;
+    }
+  }
+}
+
+#{$cyrillic} {
+  div.stats-card {
+    h2 {
+      font-family: $Font-Family-ProximaNova;
+    }
+  }
+}

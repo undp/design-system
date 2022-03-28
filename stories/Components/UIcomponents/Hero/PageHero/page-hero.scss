@@ -188,4 +188,12 @@
   }
 }
 
+#{$cyrillic} {
+  .pagehero-content {
+    h2 {
+      font-family: $Font-Family-ProximaNova;
+    }
+  }
+}
+
 /* page hero end */

@@ -288,4 +288,12 @@ hr {
   }
 }
 
+/* Cyrillic scripts */
+#{$cyrillic} {
+  h1 {
+    font-family: $Font-Family-ProximaNova;
+  }
+}
+
+
 /* typograpgy end */
