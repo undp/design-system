@@ -19,7 +19,8 @@ a {
   @extend %paragragh-font-20;
 
   color: $color-black;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: red;
 
   &.animated-link {
     @extend %animate-link;
