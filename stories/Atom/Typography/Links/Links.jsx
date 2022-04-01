@@ -1,9 +1,9 @@
 import React from 'react';
-import './link.scss';
+
 
 export const variant_options = {
   default: '',
-  animated: 'animated-link',
+  
 };
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
