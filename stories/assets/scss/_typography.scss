@@ -186,7 +186,7 @@ hr {
 }
 
 a {
-  @extend %paragragh-font-20;
+  @extend %paragragh-font-20 !optional;
 
   color: $color-black;
   text-decoration: underline;
