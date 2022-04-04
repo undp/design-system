@@ -191,6 +191,7 @@ a {
   color: $color-black;
   text-decoration: underline;
   text-decoration-color: red;
+  @extend %animate-link !optional;
 
 }
 
