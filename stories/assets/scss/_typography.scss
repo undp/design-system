@@ -178,7 +178,6 @@ hr {
     background-position: 100% 100%, -30px 100%;
     background-size: 100% 2px, 0 2px;
   }
-
   to {
     background-position: calc(100% + 30px) 100%, 0 100%;
     background-size: 0 2px, 100% 2px;
@@ -186,13 +185,9 @@ hr {
 }
 
 a {
-  @extend %paragragh-font-20 !optional;
-
   color: $color-black;
-  text-decoration: underline;
-  text-decoration-color: red;
+  @extend %paragragh-font-20 !optional;
   @extend %animate-link !optional;
-
 }
 
 
