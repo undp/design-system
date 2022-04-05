@@ -11,6 +11,10 @@ div.download-card {
     min-width: 330px;
   }
 
+  > a {
+    background: none;
+  }
+
   &:hover {
     div.publication-thumbnail__image {
       &::after {
