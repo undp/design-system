@@ -172,6 +172,26 @@ hr {
   border: 1px solid $color-black;
 }
 
+// link animation
+@keyframes lineLoop-animation {
+  0% {
+    background-position: 100% 100%, -30px 100%;
+    background-size: 100% 2px, 0 2px;
+  }
+  to {
+    background-position: calc(100% + 30px) 100%, 0 100%;
+    background-size: 0 2px, 100% 2px;
+  }
+}
+
+a {
+  color: $color-black;
+  text-decoration: none;
+  @extend %paragragh-font-20 !optional;
+  @extend %animate-link !optional;
+}
+
+
 // burmese lang
 :lang(my) {
   body {

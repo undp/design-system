@@ -5,6 +5,7 @@ const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const RemovePlugin = require('remove-files-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpackEntry = require('./webpack.entries');
+
 const packMode = 'production';
 
 /*
