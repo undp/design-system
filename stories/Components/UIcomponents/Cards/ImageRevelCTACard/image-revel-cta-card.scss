@@ -13,6 +13,10 @@
   overflow: hidden;
   position: relative;
 
+  > a {
+    background: none;
+  }
+
   .image-reveal-card__content {
     overflow: hidden;
     position: relative;

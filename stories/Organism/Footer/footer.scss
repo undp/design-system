@@ -315,6 +315,10 @@
   align-items: center;
   display: flex;
 
+  a {
+    background: none;
+  }
+
   h5 {
     color: $color-white;
     margin: 0 $spacing-05;
