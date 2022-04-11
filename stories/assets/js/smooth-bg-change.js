@@ -15,9 +15,9 @@ export function changeBackground(container) {
   // Calculate height for start and end trigger
   const sectionHeight = $('.heading-big').height();
   const sectionFullHeight = $('.heading-big').innerHeight();
-  const sectionStart = Math.round((sectionFullHeight - sectionHeight) / 2) + 40 + 'px';
+  const sectionStart = Math.round((sectionFullHeight - sectionHeight) / 2) - 100  + 'px';
   const sectionEnd = Math.round(sectionFullHeight / 2) - 40 + 'px';
-  const sectionStartReverse = Math.round((sectionFullHeight - sectionHeight) / 2) - 40 + 'px';
+  const sectionStartReverse = Math.round((sectionFullHeight - sectionHeight) / 2) + 100 + 'px';
   const headerHeight = $('.header').innerHeight() + 5 || 120;
 
   // Save Initial ScrollTrigger Styles.
