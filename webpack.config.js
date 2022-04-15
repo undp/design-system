@@ -26,39 +26,27 @@ module.exports = [
               loader: 'resolve-url-loader',
               options: {
                 attempts: 1,
-                sourceMap: true
-              }
+                sourceMap: true,
+              },
             },
             {
               loader: 'sass-loader',
-              options: { sourceMap: true }
-            }
+              options: { sourceMap: true },
+            },
           ],
         },
         {
           test: /\.(svg|png|jpg)$/,
-          use: [
-            {
-              loader: 'url-loader',
-              options: {
-                name: 'static/media/[name].[ext]'
-              }
-            },
-          ],
+          type: 'asset/inline',
         },
         {
           test: /\.(eot|woff|woff2|ttf)([\?]?.*)$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: '[name].[ext]',
-                outputPath: '../fonts' // relative path for CSS file, if change delete the folder
-              }
-            }
-          ]
-        }
-      ]
+          type: 'asset/resource',
+          generator: {
+            filename: '../fonts/[name].[ext]',
+          },
+        },
+      ],
     },
     resolve: {
       // @TODO: Need to find a valid option to manage these icon to resolve
@@ -66,7 +54,7 @@ module.exports = [
         '../../../../../../assets/icons/hamburger.svg': path.resolve(__dirname, 'stories/assets/icons/hamburger.svg'),
         '../../../../../../assets/icons/chevron-down.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
         '../../../../assets/icons/chevron-down.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
-        '../../../../../../assets/icons/times-blue.svg': path.resolve(__dirname, 'stories/assets/icons/times-blue.svg')
+        '../../../../../../assets/icons/times-blue.svg': path.resolve(__dirname, 'stories/assets/icons/times-blue.svg'),
       },
     },
     optimization: {
@@ -102,11 +90,11 @@ module.exports = [
       new RemovePlugin({
         after: {
           include: [
-            'fonts'
+            'fonts',
           ],
-          trash: true
-        }
-      })
+          trash: true,
+        },
+      }),
     ],
     output: {
       path: path.resolve(__dirname, 'docs'),
@@ -118,7 +106,7 @@ module.exports = [
     output: {
       path: path.resolve(__dirname, 'docs'),
       filename: '[name].min.js',
-      libraryTarget: 'umd'
+      libraryTarget: 'umd',
     },
     module: {
       rules: [
@@ -126,14 +114,14 @@ module.exports = [
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader'
-          }
+            loader: 'babel-loader',
+          },
         },
         {
           test: /\.(svg|png|jpg)$/,
-          loader: 'url-loader'
-        }
-      ]
-    }
+          type: 'asset',
+        },
+      ],
+    },
   },
 ];
