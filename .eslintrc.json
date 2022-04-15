@@ -72,7 +72,8 @@
 		"func-names": ["warn", "never"],
 		"no-underscore-dangle": [0],
 		"no-use-before-define": "off",
-		"react/jsx-no-duplicate-props": [1, { "ignoreCase": false }]
+		"react/jsx-no-duplicate-props": [1, { "ignoreCase": false }],
+		"linebreak-style": "off"
 	},
 	"settings": {
 		"mdx/code-blocks": true
@@ -83,4 +84,3 @@
 		}
 	]
 }
-

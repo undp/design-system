@@ -8,9 +8,9 @@ export const navigationInitialize = (locale) => {
     const navId = $(this).parent().attr('data-menu-id');
     const $menuItemId = $(document).find(`[data-menu-item-id='${navId}']`);
     $menuItemId.addClass('show-mega').removeClass('hide').siblings().removeClass('show-mega').addClass('no-effect');
-    $megaMenu.find('.sub-menu-content:first-child').addClass('active-content')
+    $megaMenu.find('.sub-menu-content:first-of-type').addClass('active-content')
       .siblings().removeClass('active-content');
-    $megaMenu.find('.submenu li:first-child').addClass('active').siblings().removeClass('active');
+    $megaMenu.find('.submenu li:first-of-type').addClass('active').siblings().removeClass('active');
 
     if($menuItemId.hasClass('show-mega'))
     {
@@ -44,7 +44,7 @@ export const navigationInitialize = (locale) => {
     $('.mega-nav-option').removeClass('no-effect');
     if (event.type === 'mouseleave') {
       const el = event.toElement;
-      if (el != null && !el.classList.contains('mega-nav-option')) { 
+      if (el != null && !el.classList.contains('mega-nav-option')) {
         if($('.mega-nav-option').hasClass('show-mega')){
           $('.mega-nav-option.show-mega').removeClass('show-mega').addClass('show-mega-back');
           setTimeout(function () {
@@ -76,7 +76,7 @@ export const navigationInitialize = (locale) => {
         $(this).parents('.mega-wrapper').find(`[data-submenu-id='${navId}']`).addClass('active-content')
         .siblings().removeClass('active-content').find('a').attr("tabIndex","0");
         $('.sub-sub-menu li').find('a').attr("tabIndex","0");
-        $(".sub-sub-menu ul:first-child li:first-child a").focus();
+        $(".sub-sub-menu ul:first-of-type li:first-of-type a").focus();
       }
   });
 
@@ -84,18 +84,18 @@ export const navigationInitialize = (locale) => {
     e.stopImmediatePropagation();
     var key = e.which;
     if(key == 37){
-      $(".submenu li.active").find('a').focus();  
+      $(".submenu li.active").find('a').focus();
       $('.submenu li').find('a').attr("tabIndex","0");
       $('.sub-sub-menu li').find('a').attr("tabIndex","-1");
     }
   });
 
-  $('.mega-wrapper').on('focus keydown', '.sub-sub-menu ul:last-child li:last-child a:last-child', function (e) {
+  $('.mega-wrapper').on('focus keydown', '.sub-sub-menu ul:last-of-type li:last-of-type a:last-of-type', function (e) {
     e.stopImmediatePropagation();
     $(".submenu li a").attr("tabIndex","0");
     var key = e.which;
     if(key == 9){
-      $(".submenu li.active").next().find('a').focus();  
+      $(".submenu li.active").next().find('a').focus();
     }
   });
 

@@ -62,7 +62,7 @@
           display: none;
         }
 
-        &:first-child {
+        &:first-of-type {
           justify-content: right;
           left: inherit;
           padding-left: 0;
@@ -203,7 +203,7 @@
           padding-right: 0;
         }
 
-        &:first-child {
+        &:first-of-type {
           justify-content: left;
           left: 50%;
           padding-left: 4.375rem;

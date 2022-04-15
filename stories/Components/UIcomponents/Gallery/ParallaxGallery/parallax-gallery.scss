@@ -72,11 +72,11 @@
       max-width: calc(50% - 0.5rem);
 
       @include devicebreak(medium) {
-        &:first-child {
+        &:first-of-type {
           margin-right: 0.5rem;
         }
 
-        &:last-child {
+        &:last-of-type {
           margin-left: 0.5rem;
         }
       }
@@ -85,11 +85,11 @@
         flex: 0 0 calc(50% - 0.75rem);
         max-width: calc(50% - 0.75rem);
 
-        &:first-child {
+        &:first-of-type {
           margin-right: 0.75rem;
         }
 
-        &:last-child {
+        &:last-of-type {
           margin-left: 0.75rem;
         }
       }
@@ -98,11 +98,11 @@
         flex: 0 0 calc(50% - 0.375rem);
         max-width: calc(50% - 0.375rem);
 
-        &:first-child {
+        &:first-of-type {
           margin-right: 0.375rem;
         }
 
-        &:last-child {
+        &:last-of-type {
           margin-left: 0.375rem;
         }
       }
@@ -126,7 +126,7 @@
         margin-bottom: 0.75rem;
       }
 
-      &:last-child {
+      &:last-of-type {
         margin-bottom: 0;
       }
     }
@@ -138,36 +138,36 @@
     &-images {
       .column {
         @include devicebreak(medium) {
-          &:first-child {
+          &:first-of-type {
             margin-left: 0.5rem;
             margin-right: 0;
           }
 
-          &:last-child {
+          &:last-of-type {
             margin-left: 0;
             margin-right: 0.5rem;
           }
         }
 
         @include devicebreak(large) {
-          &:first-child {
+          &:first-of-type {
             margin-left: 0.75rem;
             margin-right: 0;
           }
 
-          &:last-child {
+          &:last-of-type {
             margin-left: 0;
             margin-right: 0.75rem;
           }
         }
 
         @include devicebreak(small) {
-          &:first-child {
+          &:first-of-type {
             margin-left: 0.375rem;
             margin-right: 0;
           }
 
-          &:last-child {
+          &:last-of-type {
             margin-left: 0;
             margin-right: 0.375rem;
           }

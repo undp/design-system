@@ -4,30 +4,32 @@
 
 /* toggle search start */
 .sort-filter-search {
-  display: none;
-  text-transform: uppercase;
-  width: 100%;
-
-  @include devicebreak(small) {
-    display: block;
-  }
-
-  span {
+  &.button {
     display: none;
-    font-size: 1rem;
-  }
+    text-transform: uppercase;
+    width: 100%;
 
-  &.close {
-    background-color: $color-gray-300;
-    color: $color-black;
-    font-size: 0;
-
-    &:hover {
-      background-color: $color-gray-300;
+    @include devicebreak(small) {
+      display: block;
     }
 
     span {
-      display: block;
+      display: none;
+      font-size: 1rem;
+    }
+
+    &.close {
+      background-color: $color-gray-300;
+      color: $color-black;
+      font-size: 0;
+
+      &:hover {
+        background-color: $color-gray-300;
+      }
+
+      span {
+        display: block;
+      }
     }
   }
 }

@@ -153,7 +153,7 @@
       }
     }
 
-    &:last-child {
+    &:last-of-type {
       a {
         margin-right: 0;
       }
@@ -187,7 +187,7 @@
         margin-right: 0;
       }
 
-      &:last-child {
+      &:last-of-type {
         a {
           margin-left: 0;
         }

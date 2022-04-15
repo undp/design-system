@@ -136,7 +136,7 @@ body.sdgmodal-open {
       > div {
         flex-direction: column-reverse;
 
-        > div:first-child {
+        > div:first-of-type {
           margin-top: $spacing-06;
         }
       }
@@ -292,7 +292,7 @@ body.sdgmodal-open {
       padding-left: $spacing-07;
       position: relative;
 
-      &:not(:last-child) {
+      &:not(:last-of-type) {
         margin-bottom: $spacing-10;
       }
     }

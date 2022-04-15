@@ -38,7 +38,7 @@ div.publication-card {
       align-items: center;
       flex-wrap: unset;
 
-      &:first-child {
+      &:first-of-type {
         text-align: left;
       }
 
@@ -142,7 +142,7 @@ div.publication-card {
 
     .description {
       > div {
-        &:first-child {
+        &:first-of-type {
           text-align: right;
         }
 

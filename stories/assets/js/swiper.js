@@ -7,9 +7,6 @@ import chevronLeftWhite from '../icons/chevron-left-circle.svg';
 
 // Swiper Slider
 export const swiper = (selector, arrowsSelector, options) => {
-
-  'use strict';
-
   // Get Swiper Selector.
   let $swiperSelector = $(selector);
   let dragsize = 'auto';
@@ -57,6 +54,7 @@ export const swiper = (selector, arrowsSelector, options) => {
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+        showOn: 'tablet',
       },
       // And if we need scrollbar
       scrollbar: {
@@ -76,7 +74,7 @@ export const swiper = (selector, arrowsSelector, options) => {
           slidesPerView: $(element).data('swiper-slides-view-desktop') ? $(element).data('swiper-slides-view-desktop') : 1,
           slidesOffsetBefore: $(element).data('swiper-offset') ? $(element).data('swiper-offset') : 0,
           slidesOffsetAfter: $(element).data('swiper-offset') ? -$(element).data('swiper-offset') : 0,
-        }
+        },
       },
     };
 
@@ -84,7 +82,7 @@ export const swiper = (selector, arrowsSelector, options) => {
     options = options || {};
 
     // Merge options into defaults, recursively with `true` option, without modifying defaults.
-    const settings = $.extend( true, {}, defaults, options);
+    const settings = $.extend(true, {}, defaults, options);
 
     // Get scrollbar track width.
     const getTrackSize = () => $(element).find('.swiper-scrollbar').width();
@@ -126,7 +124,7 @@ export const swiper = (selector, arrowsSelector, options) => {
         }
         $(element).find('.swiper-wrapper').css('cursor', 'auto');
       }
-    }
+    };
 
     // Define Swiper Element
     let swiper = new Swiper(element, settings);
@@ -134,11 +132,13 @@ export const swiper = (selector, arrowsSelector, options) => {
     // Before mount
     const beforeSwiperMount = (swiper) => {
       // Update dragSize.
-      let dragsize = getDragSize();
-      swiper.params.scrollbar.dragSize = dragsize;
+      if (swiper.params.scrollbar) {
+        let dragsize = getDragSize();
+        swiper.params.scrollbar.dragSize = dragsize;
+      }
       swiper.on('beforeInit', () => {
         $(element).find('.stats-card-parallax .swiper-slide').unwrap();
-        if (getDeviceType() == "tablet" && $(element).find(arrowsSelector).length) {
+        if (swiper.params.navigation.showOn == getDeviceType() && $(element).find(arrowsSelector).length) {
           $(element).find(arrowsSelector).append(swiperArrow);
         }
       });
@@ -222,7 +222,7 @@ export const swiper = (selector, arrowsSelector, options) => {
           const sliderWidth = $(element).outerWidth();
           const sliderOffset = $(element).offset();
           const ePageXOffset = e.pageX - sliderOffset.left;
-          const sliderCenter = sliderWidth/2;
+          const sliderCenter = sliderWidth / 2;
           let leftCursor = `url(${arrowleft}), auto`;
           let rightCursor = `url(${arrowright}), auto`;
           if (swiper.isBeginning) {
@@ -253,7 +253,7 @@ export const swiper = (selector, arrowsSelector, options) => {
           const sliderWidth = $(element).outerWidth();
           const sliderOffset = $(element).offset();
           const ePageXOffset = e.pageX - sliderOffset.left;
-          const sliderCenter = sliderWidth/2;
+          const sliderCenter = sliderWidth / 2;
           if (!swiper.initialized) return false;
           if (sliderCenter > ePageXOffset) {
             if (swiper.isBeginning) {
@@ -284,10 +284,9 @@ export const swiper = (selector, arrowsSelector, options) => {
         });
 
         // Disable mouse events on Tablet and Mobile
-        if (getDeviceType() == "mobile" || getDeviceType() == "tablet") {
+        if (getDeviceType() == 'mobile' || getDeviceType() == 'tablet') {
           swiperDestroyMouseEvents();
         }
-
       }
     };
 
@@ -299,5 +298,4 @@ export const swiper = (selector, arrowsSelector, options) => {
       swiperInit();
     });
   });
-
 };

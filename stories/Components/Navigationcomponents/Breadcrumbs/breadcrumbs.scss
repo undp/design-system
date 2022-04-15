@@ -25,11 +25,11 @@
         top: 0;
       }
 
-      &:first-child {
+      &:first-of-type {
         margin-left: 0;
       }
 
-      &:last-child {
+      &:last-of-type {
         font-weight: 600;
         letter-spacing: 0.03em;
         margin-right: 0;
@@ -73,8 +73,8 @@
       }
     }
 
-    &:last-child,
-    li:last-child {
+    &:last-of-type,
+    li:last-of-type {
       color: $color-white;
     }
   }
@@ -94,12 +94,12 @@
         margin: 0;
       }
 
-      &:first-child {
+      &:first-of-type {
         margin-left: $spacing-06;
         margin-right: 0;
       }
 
-      &:last-child {
+      &:last-of-type {
         margin-left: 0;
         margin-right: 0;
       }
@@ -117,7 +117,7 @@
 
 // burmese lang
 :lang(my) {
-  .breadcrumb li:last-child {
+  .breadcrumb li:last-of-type {
     font-size: $font-size-12;
   }
 }

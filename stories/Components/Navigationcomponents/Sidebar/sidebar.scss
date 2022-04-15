@@ -150,7 +150,7 @@
           }
         }
 
-        &:first-child a {
+        &:first-of-type a {
           background-color: transparent;
           color: $color-black;
 
@@ -161,7 +161,7 @@
           }
         }
 
-        &:last-child a {
+        &:last-of-type a {
           margin-bottom: 0;
         }
       }
@@ -178,7 +178,7 @@
           }
         }
 
-        &:last-child a {
+        &:last-of-type a {
           @include devicebreak(medium) {
             margin-bottom: $spacing-08;
           }
