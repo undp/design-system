@@ -1,14 +1,1 @@
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./stories/Organism/Blocks/ContentCardWithAndWithoutImage/content-card-with-and-without-image.scss ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************/
-/* variables end */
-/* variables end */
-/* mixing  end */
-/* placehoder start */
-/* placehoder end */
-.content-data > div {
-  margin-bottom: 2rem;
-}
-.content-data .cta-container {
-  margin-top: 5.75rem;
-}
+.content-data>div{margin-bottom:2rem}.content-data .cta-container{margin-top:5.75rem}

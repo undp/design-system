@@ -17,6 +17,7 @@
   }
   .grid-y {
     height: calc(100vh - #{$header-height-medium});
+
     @include devicebreak(xlarge) {
       height: calc(100vh - #{$header-height-xlarge});
     }

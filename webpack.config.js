@@ -6,7 +6,7 @@ const RemovePlugin = require('remove-files-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpackEntry = require('./webpack.entries');
 
-const packMode = 'development';
+const packMode = 'production';
 
 /*
 * Webpack build for scss and js

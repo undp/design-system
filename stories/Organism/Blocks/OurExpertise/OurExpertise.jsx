@@ -12,7 +12,7 @@ if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
 
-export const OurExpertise = () => {
+export function OurExpertise() {
   const titles = [
     'Poverty and Inequality',
     'Governance',
@@ -88,4 +88,4 @@ export const OurExpertise = () => {
       </div>
     </div>
   );
-};
+}
