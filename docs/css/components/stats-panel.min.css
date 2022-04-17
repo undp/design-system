@@ -1,1 +1,176 @@
-.stats-panel img,.stats-panel.active:after,.stats-panel:hover:after{content:"";height:100%;left:0;position:absolute;top:0;width:100%}.stats-panel{align-items:center;background-color:#232e3d;display:flex;justify-content:center;min-height:378px;position:relative;-webkit-transition:all .3s;-moz-transition:all .3s;-ms-transition:all .3s;-o-transition:all .3s;transition:all .3s}@media(min-width:48em){.stats-panel{min-height:787px}}.stats-panel img{object-fit:cover;opacity:0;-webkit-transition:all .3s;-moz-transition:all .3s;-ms-transition:all .3s;-o-transition:all .3s;transition:all .3s}.stats-panel.active img,.stats-panel.active:after,.stats-panel:hover img,.stats-panel:hover:after{opacity:1}.stats-panel.active:after,.stats-panel:hover:after{background:-webkit-linear-gradient(15deg,#ffeb00 30%,rgba(255,235,0,0) 110%);background:-moz-linear-gradient(15deg,#ffeb00 30%,rgba(255,235,0,0) 110%);background:-o-linear-gradient(15deg,#ffeb00 30%,rgba(255,235,0,0) 110%);background:linear-gradient(15deg,#ffeb00 30%,rgba(255,235,0,0) 110%);-webkit-transition:opacity .4s cubic-bezier(.64,.05,.35,1.05);-moz-transition:opacity .4s cubic-bezier(.64,.05,.35,1.05);-ms-transition:opacity .4s cubic-bezier(.64,.05,.35,1.05);-o-transition:opacity .4s cubic-bezier(.64,.05,.35,1.05);transition:opacity .4s cubic-bezier(.64,.05,.35,1.05)}.stats-panel.active div.stats-card,.stats-panel:hover div.stats-card{color:#232e3d}.stats-panel.active div.stats-card h2,.stats-panel:hover div.stats-card h2{color:#232e3d;text-shadow:-1px -1px 0 #232e3d,1px -1px 0 #232e3d,-1px 1px 0 #232e3d,1px 1px 0 #232e3d}@supports(-webkit-text-stroke:2px #232e3d){.stats-panel.active div.stats-card h2,.stats-panel:hover div.stats-card h2{-webkit-text-stroke:transparent;text-shadow:none}}.stats-panel div.stats-card{background-color:transparent;color:#fff;max-width:100%;padding:0 1.5rem;width:100%;word-break:unset;z-index:1}@media(min-width:48em){.stats-panel div.stats-card{padding:0 1rem}}@media(min-width:64em){.stats-panel div.stats-card{padding:0 3rem}}@media(max-width:47.9375em){.stats-panel div.stats-card h4{font-size:2.188rem;margin-bottom:.75rem}}.stats-panel div.stats-card h2{color:#232e3d;text-shadow:-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff,1px 1px 0 #fff}@media(min-width:48em){.stats-panel div.stats-card h2{font-size:6rem}}@media(min-width:64em){.stats-panel div.stats-card h2{font-size:6.875rem}}@media(max-width:47.9375em){.stats-panel div.stats-card h2{margin-bottom:1rem}}@supports(-webkit-text-stroke:2px #fff){.stats-panel div.stats-card h2{-webkit-text-stroke:2px #fff;text-shadow:none}}.stats-panel div.stats-card p{height:6.25rem}.stats-panel.red:after{background:-webkit-linear-gradient(15deg,#ee402d 30%,rgba(240,49,49,0) 110%);background:-moz-linear-gradient(15deg,#ee402d 30%,rgba(240,49,49,0) 110%);background:-o-linear-gradient(15deg,#ee402d 30%,rgba(240,49,49,0) 110%);background:linear-gradient(15deg,#ee402d 30%,rgba(240,49,49,0) 110%)}.stats-panel.green:after{background:-webkit-linear-gradient(15deg,#6de354 30%,transparent 110%);background:-moz-linear-gradient(15deg,#6de354 30%,transparent 110%);background:-o-linear-gradient(15deg,#6de354 30%,transparent 110%);background:linear-gradient(15deg,#6de354 30%,transparent 110%)}.stats-panel.blue:after{background:-webkit-linear-gradient(15deg,#60d4f2 30%,rgba(101,204,244,0) 110%);background:-moz-linear-gradient(15deg,#60d4f2 30%,rgba(101,204,244,0) 110%);background:-o-linear-gradient(15deg,#60d4f2 30%,rgba(101,204,244,0) 110%);background:linear-gradient(15deg,#60d4f2 30%,rgba(101,204,244,0) 110%)}[dir=rtl] .stats .stats-panel:hover.blue:after,[dir=rtl] .stats .stats-panel:hover.green:after,[dir=rtl] .stats .stats-panel:hover.red:after{-webkit-transform:scaleX(-1);-moz-transform:scaleX(-1);-ms-transform:scaleX(-1);-o-transform:scaleX(-1);transition:scaleX(-1)}
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./stories/Molecules/Blocks/StatsPanel/stats-panel.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
+/* variables end */
+/* variables end */
+/* mixing  end */
+/* placehoder start */
+.stats-panel:hover::after, .stats-panel.active::after, .stats-panel img {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* placehoder end */
+/* statspanel card start */
+.stats-panel {
+  -webkit-transition: 300ms all;
+  -moz-transition: 300ms all;
+  -ms-transition: 300ms all;
+  -o-transition: 300ms all;
+  transition: 300ms all;
+  align-items: center;
+  background-color: #232e3d;
+  display: flex;
+  justify-content: center;
+  min-height: 378px;
+  position: relative;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  .stats-panel {
+    min-height: 787px;
+  }
+}
+.stats-panel img {
+  -webkit-transition: 300ms all;
+  -moz-transition: 300ms all;
+  -ms-transition: 300ms all;
+  -o-transition: 300ms all;
+  transition: 300ms all;
+  object-fit: cover;
+  opacity: 0;
+}
+.stats-panel:hover::after,
+.stats-panel:hover img, .stats-panel.active::after,
+.stats-panel.active img {
+  opacity: 1;
+}
+.stats-panel:hover::after, .stats-panel.active::after {
+  background: -webkit-linear-gradient(15deg, #ffeb00 30%, rgba(255, 235, 0, 0) 110%);
+  background: -moz-linear-gradient(15deg, #ffeb00 30%, rgba(255, 235, 0, 0) 110%);
+  background: -o-linear-gradient(15deg, #ffeb00 30%, rgba(255, 235, 0, 0) 110%);
+  background: linear-gradient(15deg, #ffeb00 30%, rgba(255, 235, 0, 0) 110%);
+  -webkit-transition: opacity 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05);
+  -moz-transition: opacity 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05);
+  -ms-transition: opacity 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05);
+  -o-transition: opacity 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05);
+  transition: opacity 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05);
+}
+.stats-panel:hover div.stats-card, .stats-panel.active div.stats-card {
+  color: #232e3d;
+}
+.stats-panel:hover div.stats-card h2, .stats-panel.active div.stats-card h2 {
+  color: #232e3d;
+  text-shadow: -1px -1px 0 #232e3d, 1px -1px 0 #232e3d, -1px 1px 0 #232e3d, 1px 1px 0 #232e3d;
+}
+@supports (-webkit-text-stroke: 2px #232e3d) {
+  .stats-panel:hover div.stats-card h2, .stats-panel.active div.stats-card h2 {
+    text-shadow: none;
+    -webkit-text-stroke: transparent;
+  }
+}
+.stats-panel div.stats-card {
+  background-color: transparent;
+  color: #fff;
+  max-width: 100%;
+  padding: 0 1.5rem;
+  width: 100%;
+  word-break: unset;
+  z-index: 1;
+  /* medium design */
+  /* medium design */
+  /* small design */
+}
+@media (min-width: 48em) {
+  .stats-panel div.stats-card {
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 64em) {
+  .stats-panel div.stats-card {
+    padding: 0 3rem;
+  }
+}
+@media (max-width: 47.9375em) {
+  .stats-panel div.stats-card h4 {
+    font-size: 2.188rem;
+    margin-bottom: 0.75rem;
+  }
+}
+.stats-panel div.stats-card h2 {
+  color: #232e3d;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  /* medium design */
+  /* medium design */
+  /* small design */
+}
+@media (min-width: 48em) {
+  .stats-panel div.stats-card h2 {
+    font-size: 6rem;
+  }
+}
+@media (min-width: 64em) {
+  .stats-panel div.stats-card h2 {
+    font-size: 6.875rem;
+  }
+}
+@media (max-width: 47.9375em) {
+  .stats-panel div.stats-card h2 {
+    margin-bottom: 1rem;
+  }
+}
+@supports (-webkit-text-stroke: 2px #fff) {
+  .stats-panel div.stats-card h2 {
+    text-shadow: none;
+    -webkit-text-stroke: 2px #fff;
+  }
+}
+.stats-panel div.stats-card p {
+  height: 6.25rem;
+}
+.stats-panel.red::after {
+  background: -webkit-linear-gradient(15deg, #ee402d 30%, rgba(240, 49, 49, 0) 110%);
+  background: -moz-linear-gradient(15deg, #ee402d 30%, rgba(240, 49, 49, 0) 110%);
+  background: -o-linear-gradient(15deg, #ee402d 30%, rgba(240, 49, 49, 0) 110%);
+  background: linear-gradient(15deg, #ee402d 30%, rgba(240, 49, 49, 0) 110%);
+}
+.stats-panel.green::after {
+  background: -webkit-linear-gradient(15deg, #6de354 30%, rgba(0, 0, 0, 0) 110%);
+  background: -moz-linear-gradient(15deg, #6de354 30%, rgba(0, 0, 0, 0) 110%);
+  background: -o-linear-gradient(15deg, #6de354 30%, rgba(0, 0, 0, 0) 110%);
+  background: linear-gradient(15deg, #6de354 30%, rgba(0, 0, 0, 0) 110%);
+}
+.stats-panel.blue::after {
+  background: -webkit-linear-gradient(15deg, #60d4f2 30%, rgba(101, 204, 244, 0) 110%);
+  background: -moz-linear-gradient(15deg, #60d4f2 30%, rgba(101, 204, 244, 0) 110%);
+  background: -o-linear-gradient(15deg, #60d4f2 30%, rgba(101, 204, 244, 0) 110%);
+  background: linear-gradient(15deg, #60d4f2 30%, rgba(101, 204, 244, 0) 110%);
+}
+
+[dir=rtl] .stats .stats-panel:hover.red::after {
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transition: scaleX(-1);
+}
+[dir=rtl] .stats .stats-panel:hover.green::after {
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transition: scaleX(-1);
+}
+[dir=rtl] .stats .stats-panel:hover.blue::after {
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transition: scaleX(-1);
+}
+
+/* statspanel card start */

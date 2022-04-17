@@ -1,1 +1,191 @@
-div.publication-card .download,div.publication-card .format,div.publication-card .readmore{font-size:.875rem;line-height:1.4}@media(min-width:48em){div.publication-card .download,div.publication-card .format,div.publication-card .readmore{font-size:1rem}}div.publication-card .title{font-size:1rem}@media(min-width:48em){div.publication-card .title{font-size:1.25rem}}:lang(my) div.publication-card .download,:lang(my) div.publication-card .format,:lang(my) div.publication-card .readmore,div.publication-card :lang(my) .download,div.publication-card :lang(my) .format,div.publication-card :lang(my) .readmore{font-size:.75rem;line-height:1.7}@media(min-width:48em){:lang(my) div.publication-card .download,:lang(my) div.publication-card .format,:lang(my) div.publication-card .readmore,div.publication-card :lang(my) .download,div.publication-card :lang(my) .format,div.publication-card :lang(my) .readmore{font-size:.875rem}}:lang(my) div.publication-card .title,div.publication-card :lang(my) .title{font-size:.875rem}@media(min-width:48em){:lang(my) div.publication-card .title,div.publication-card :lang(my) .title{font-size:1rem}}div.publication-card{display:inline-block}@media(min-width:48em){div.publication-card{min-width:20.625rem}}div.publication-card:hover div.publication-thumbnail__image.blue:after,div.publication-card:hover div.publication-thumbnail__image.green:after,div.publication-card:hover div.publication-thumbnail__image.red:after,div.publication-card:hover div.publication-thumbnail__image.yellow:after,div.publication-card:hover div.publication-thumbnail__image:after{background:linear-gradient(27.66deg,#ffeb00,transparent 70.49%);opacity:.75}div.publication-card .description{align-items:center;background:#fafafa;padding:1.5rem}div.publication-card .description>div{align-items:center;flex-wrap:unset}div.publication-card .description>div:first-of-type{text-align:left}div.publication-card .description>div>:not(:first-of-type){border-left:.125rem solid #ced0d3;text-align:right}div.publication-card .title{margin-bottom:.25rem}div.publication-card .format{color:#55606e;margin-bottom:1rem}div.publication-card .download{align-items:center;background-image:none;cursor:pointer;display:inline-flex;font-weight:700;letter-spacing:.03em;text-transform:uppercase}div.publication-card .download .download-animated{margin-left:.75rem}div.publication-card .download:hover{color:#55606f}div.publication-card .download:hover .download-animated:after{-webkit-transform:rotate(-45deg) translate(7px,-7px);-moz-transform:rotate(-45deg) translate(7px,-7px);-ms-transform:rotate(-45deg) translate(7px,-7px);-o-transform:rotate(-45deg) translate(7px,-7px);transition:rotate(-45deg) translate(7px,-7px)}div.publication-card .download:hover .download-animated:before{-webkit-transform:translateY(-10px);-moz-transform:translateY(-10px);-ms-transform:translateY(-10px);-o-transform:translateY(-10px);transition:translate(0,-10px)}div.publication-card .readmore{align-items:center;background-image:none;cursor:pointer;display:inline;font-weight:700;letter-spacing:.03em;text-transform:uppercase}div.publication-card .readmore .external-link-animated{display:inline-block;margin-left:.75rem}div.publication-card .readmore:hover{color:#55606f}div.publication-card .readmore:hover .external-link-animated:after{-webkit-transform:translate(5px,-5px);-moz-transform:translate(5px,-5px);-ms-transform:translate(5px,-5px);-o-transform:translate(5px,-5px);transition:translate(5px,-5px)}div.publication-card .readmore:hover .external-link-animated:before{-webkit-transform:rotate(-45deg) translate(7px);-moz-transform:rotate(-45deg) translate(7px);-ms-transform:rotate(-45deg) translate(7px);-o-transform:rotate(-45deg) translate(7px);transition:rotate(-45deg) translate(7px,0)}[dir=rtl] .publication-card .download .download-animated,[dir=rtl] .publication-card .readmore .external-link-animated{margin-left:0;margin-right:.75rem}[dir=rtl] .publication-card .description>div:first-of-type{text-align:right}[dir=rtl] .publication-card .description>div>:not(:first-of-type){border-left:0;border-right:.125rem solid #ced0d3;text-align:left}[dir=rtl] .publication-card:hover .publication-thumbnail__image.yellow:after,[dir=rtl] .publication-card:hover .publication-thumbnail__image:after{background:linear-gradient(318deg,#ffeb00,transparent 70.49%)}[dir=rtl] .publication-card:hover .publication-thumbnail__image.red:after{background:linear-gradient(318deg,#ee402d,transparent 70.49%)}[dir=rtl] .publication-card:hover .publication-thumbnail__image.green:after{background:linear-gradient(318deg,#6de354,transparent 70.49%)}[dir=rtl] .publication-card:hover .publication-thumbnail__image.blue:after{background:linear-gradient(318deg,#60d4f2,transparent 70.49%)}
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./stories/Molecules/Blocks/PublicationCard/publication-card.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+/* variables end */
+/* variables end */
+/* mixing  end */
+/* placehoder start */
+div.publication-card .readmore, div.publication-card .download, div.publication-card .format {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  div.publication-card .readmore, div.publication-card .download, div.publication-card .format {
+    font-size: 1rem;
+  }
+}
+
+div.publication-card .title {
+  font-size: 1rem;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  div.publication-card .title {
+    font-size: 1.25rem;
+  }
+}
+
+:lang(my) div.publication-card .readmore, div.publication-card :lang(my) .readmore, :lang(my) div.publication-card .download, div.publication-card :lang(my) .download, :lang(my) div.publication-card .format, div.publication-card :lang(my) .format {
+  font-size: 0.75rem;
+  line-height: 1.7;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  :lang(my) div.publication-card .readmore, div.publication-card :lang(my) .readmore, :lang(my) div.publication-card .download, div.publication-card :lang(my) .download, :lang(my) div.publication-card .format, div.publication-card :lang(my) .format {
+    font-size: 0.875rem;
+  }
+}
+:lang(my) div.publication-card .title, div.publication-card :lang(my) .title {
+  font-size: 0.875rem;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  :lang(my) div.publication-card .title, div.publication-card :lang(my) .title {
+    font-size: 1rem;
+  }
+}
+/* placehoder end */
+div.publication-card {
+  display: inline-block;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  div.publication-card {
+    min-width: 20.625rem;
+  }
+}
+div.publication-card:hover div.publication-thumbnail__image::after {
+  background: linear-gradient(27.66deg, #ffeb00, transparent 70.49%);
+  opacity: 0.75;
+}
+div.publication-card:hover div.publication-thumbnail__image.yellow:after {
+  background: linear-gradient(27.66deg, #ffeb00, transparent 70.49%);
+  opacity: 0.75;
+}
+div.publication-card:hover div.publication-thumbnail__image.red:after {
+  background: linear-gradient(27.66deg, #ffeb00, transparent 70.49%);
+  opacity: 0.75;
+}
+div.publication-card:hover div.publication-thumbnail__image.green:after {
+  background: linear-gradient(27.66deg, #ffeb00, transparent 70.49%);
+  opacity: 0.75;
+}
+div.publication-card:hover div.publication-thumbnail__image.blue:after {
+  background: linear-gradient(27.66deg, #ffeb00, transparent 70.49%);
+  opacity: 0.75;
+}
+div.publication-card .description {
+  align-items: center;
+  background: #fafafa;
+  padding: 1.5rem;
+}
+div.publication-card .description > div {
+  align-items: center;
+  flex-wrap: unset;
+}
+div.publication-card .description > div:first-of-type {
+  text-align: left;
+}
+div.publication-card .description > div > :not(:first-of-type) {
+  border-left: 0.125rem solid #ced0d3;
+  text-align: right;
+}
+div.publication-card .title {
+  margin-bottom: 0.25rem;
+}
+div.publication-card .format {
+  color: #55606e;
+  margin-bottom: 1rem;
+}
+div.publication-card .download {
+  align-items: center;
+  background-image: none;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+div.publication-card .download .download-animated {
+  margin-left: 0.75rem;
+}
+div.publication-card .download:hover {
+  color: #55606f;
+}
+div.publication-card .download:hover .download-animated::after {
+  -webkit-transform: rotate(-45deg) translate(7px, -7px);
+  -moz-transform: rotate(-45deg) translate(7px, -7px);
+  -ms-transform: rotate(-45deg) translate(7px, -7px);
+  -o-transform: rotate(-45deg) translate(7px, -7px);
+  transition: rotate(-45deg) translate(7px, -7px);
+}
+div.publication-card .download:hover .download-animated::before {
+  -webkit-transform: translate(0, -10px);
+  -moz-transform: translate(0, -10px);
+  -ms-transform: translate(0, -10px);
+  -o-transform: translate(0, -10px);
+  transition: translate(0, -10px);
+}
+div.publication-card .readmore {
+  align-items: center;
+  background-image: none;
+  cursor: pointer;
+  display: inline;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+div.publication-card .readmore .external-link-animated {
+  display: inline-block;
+  margin-left: 0.75rem;
+}
+div.publication-card .readmore:hover {
+  color: #55606f;
+}
+div.publication-card .readmore:hover .external-link-animated::after {
+  -webkit-transform: translate(5px, -5px);
+  -moz-transform: translate(5px, -5px);
+  -ms-transform: translate(5px, -5px);
+  -o-transform: translate(5px, -5px);
+  transition: translate(5px, -5px);
+}
+div.publication-card .readmore:hover .external-link-animated::before {
+  -webkit-transform: rotate(-45deg) translate(7px, 0);
+  -moz-transform: rotate(-45deg) translate(7px, 0);
+  -ms-transform: rotate(-45deg) translate(7px, 0);
+  -o-transform: rotate(-45deg) translate(7px, 0);
+  transition: rotate(-45deg) translate(7px, 0);
+}
+
+[dir=rtl] .publication-card .readmore .external-link-animated {
+  margin-left: 0;
+  margin-right: 0.75rem;
+}
+[dir=rtl] .publication-card .download .download-animated {
+  margin-left: 0;
+  margin-right: 0.75rem;
+}
+[dir=rtl] .publication-card .description > div:first-of-type {
+  text-align: right;
+}
+[dir=rtl] .publication-card .description > div > :not(:first-of-type) {
+  border-left: 0;
+  border-right: 0.125rem solid #ced0d3;
+  text-align: left;
+}
+[dir=rtl] .publication-card:hover .publication-thumbnail__image::after {
+  background: linear-gradient(318deg, #ffeb00, transparent 70.49%);
+}
+[dir=rtl] .publication-card:hover .publication-thumbnail__image.yellow:after {
+  background: linear-gradient(318deg, #ffeb00, transparent 70.49%);
+}
+[dir=rtl] .publication-card:hover .publication-thumbnail__image.red:after {
+  background: linear-gradient(318deg, #ee402d, transparent 70.49%);
+}
+[dir=rtl] .publication-card:hover .publication-thumbnail__image.green:after {
+  background: linear-gradient(318deg, #6de354, transparent 70.49%);
+}
+[dir=rtl] .publication-card:hover .publication-thumbnail__image.blue:after {
+  background: linear-gradient(318deg, #60d4f2, transparent 70.49%);
+}

@@ -1,1 +1,31 @@
-.frosted-background:before{-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);background:hsla(0,0%,97%,.8)}.frosted-background{position:relative}.frosted-background:before{content:"";height:100%;position:absolute;width:100%;z-index:9}.frosted-background img{display:block;object-fit:cover}
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./stories/Utilities/FrostedImage/frosted-background.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/* variables end */
+/* mixing  end */
+/* placehoder start */
+.frosted-background::before {
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  background: rgba(247, 247, 247, 0.8);
+}
+
+/* placehoder end */
+/* variables end */
+/* frosted-background start */
+.frosted-background {
+  position: relative;
+}
+.frosted-background::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 9;
+}
+.frosted-background img {
+  display: block;
+  object-fit: cover;
+}
+
+/* frosted-backfround end */

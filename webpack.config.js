@@ -6,7 +6,7 @@ const RemovePlugin = require('remove-files-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpackEntry = require('./webpack.entries');
 
-const packMode = 'production';
+const packMode = 'development';
 
 /*
 * Webpack build for scss and js
@@ -37,7 +37,10 @@ module.exports = [
         },
         {
           test: /\.(svg|png|jpg)$/,
-          type: 'asset/inline',
+          type: 'asset',
+          generator: {
+            filename: 'static/media/[name].[ext]',
+          },
         },
         {
           test: /\.(eot|woff|woff2|ttf)([\?]?.*)$/,

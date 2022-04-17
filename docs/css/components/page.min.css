@@ -1,1 +1,32 @@
-.page-title h2{font-family:SohneBreit,ProximaNova,sans-serif;margin-bottom:1.25rem;text-transform:uppercase}.page-title h4{font-weight:400;margin-bottom:.5rem}.page-title.white h2,.page-title.white h4{color:#fff}:lang(my) .page-title h2{font-family:NotoSans,sans-serif}:lang(be) .page-title h2,:lang(bg) .page-title h2,:lang(kk) .page-title h2,:lang(ky) .page-title h2,:lang(mk) .page-title h2,:lang(mn) .page-title h2,:lang(ru) .page-title h2,:lang(sr) .page-title h2,:lang(uk) .page-title h2{font-family:ProximaNova,sans-serif}
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./stories/Molecules/Text/Page/page.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/* variables end */
+/* mixing  end */
+/* placehoder start */
+/* placehoder end */
+/* variables end */
+/* page title start */
+.page-title h2 {
+  font-family: "SohneBreit", "ProximaNova", sans-serif;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+.page-title h4 {
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.page-title.white h2,
+.page-title.white h4 {
+  color: #fff;
+}
+
+:lang(my) .page-title h2 {
+  font-family: "NotoSans", sans-serif;
+}
+
+:lang(bg) .page-title h2, :lang(be) .page-title h2, :lang(kk) .page-title h2, :lang(ky) .page-title h2, :lang(mk) .page-title h2, :lang(mn) .page-title h2, :lang(ru) .page-title h2, :lang(sr) .page-title h2, :lang(uk) .page-title h2 {
+  font-family: "ProximaNova", sans-serif;
+}
+
+/* page title end */

@@ -1,1 +1,373 @@
-html{-webkit-tap-highlight-color:rgba(0,0,0,0)}body{color:#000;font-family:ProximaNova,sans-serif;font-size:1rem;line-height:1.4}@media(min-width:48em){body{font-size:1.25rem}}button{font-family:ProximaNova,sans-serif}caption,h1,h2,h3,h4,h5,h6{margin:0 0 .75rem;padding:0}@media(min-width:48em){caption,h1,h2,h3,h4,h5,h6{margin-bottom:1rem}}h1{font-family:SohneBreit,ProximaNova,sans-serif;font-size:2.938rem;letter-spacing:.06rem;line-height:1.08;text-transform:uppercase}@media(min-width:48em){h1{font-size:5.125rem}}@media(min-width:64em){h1{font-size:6.25rem}}h2{font-size:2.5rem;font-weight:700;line-height:1.1}@media(min-width:48em){h2{font-size:2.813rem}}@media(min-width:64em){h2{font-size:3.438rem}}h3{font-size:1.875rem;font-weight:600;line-height:1.15}@media(min-width:48em){h3{font-size:2.188rem}}h4{font-size:1.563rem;font-weight:400;line-height:1.15}@media(min-width:48em){h4{font-size:2.188rem}}h5{font-size:1.25rem;font-weight:400;line-height:1.15}@media(min-width:48em){h5{font-size:1.563rem}}h6{font-size:1rem;font-weight:700;letter-spacing:.03rem;line-height:1.15;text-transform:uppercase}p{margin-top:0}ol,ul{margin:0;padding-left:1.125rem}@media(min-width:48em){ol,ul{padding-left:1.313rem}}ol li,ul li{margin-bottom:1rem;padding-left:.875rem}@media(min-width:48em){ol li,ul li{margin-bottom:1.5rem;padding-left:.75rem}}ul li::marker{font-size:1.125rem}@media(min-width:48em){ul li::marker{font-size:1.313rem}}ol li{margin-bottom:1.063rem}dl{font-size:.875rem;line-height:1.37;margin:0}@media(min-width:48em){dl{font-size:1.25rem}}dt{margin-bottom:.5rem}dd{margin-bottom:1rem;margin-inline-start:2.5rem}@media(min-width:48em){dd{margin-bottom:1.5rem;margin-inline-start:3rem}}hr{border:1px solid #000}@keyframes lineLoop-animation{0%{background-position:100% 100%,-30px 100%;background-size:100% 2px,0 2px}to{background-position:calc(100% + 30px) 100%,0 100%;background-size:0 2px,100% 2px}}a{color:#000;text-decoration:none}:lang(my) body{font-family:NotoSans,sans-serif}:lang(my) body,:lang(my) h1,:lang(my) h2,:lang(my) h3,:lang(my) h4,:lang(my) h5,:lang(my) h6{line-height:1.7}:lang(my) h1{font-family:NotoSans,sans-serif;font-size:2.625rem}@media(min-width:48em){:lang(my) h1{font-size:3.875rem}}@media(min-width:64em){:lang(my) h1{font-size:5rem}}:lang(my) h2{font-size:2rem}@media(min-width:48em){:lang(my) h2{font-size:2.188rem}}@media(min-width:64em){:lang(my) h2{font-size:2.813rem}}:lang(my) h4{font-size:1.3rem}@media(min-width:48em){:lang(my) h4{font-size:1.8rem}}:lang(my) h5{font-size:1.25rem}@media(min-width:48em){:lang(my) h5{font-size:1.375rem}}:lang(my) p{font-size:.875rem;line-height:1.7}@media(min-width:48em){:lang(my) p{font-size:1rem}}:lang(my) dl,:lang(my) ol li,:lang(my) ul li{font-size:.875rem;line-height:1.9}@media(min-width:48em){:lang(my) dl,:lang(my) ol li,:lang(my) ul li{font-size:1.125rem}}:lang(my) .sbdocs .sbdocs-content,:lang(my) .sbdocs h1,:lang(my) .sbdocs h2,:lang(my) .sbdocs h3,:lang(my) .sbdocs h4,:lang(my) .sbdocs h5,:lang(my) .sbdocs h6,:lang(my) .sbdocs p{font-family:NotoSans,sans-serif}:lang(my) .sbdocs .sbdocs-h1{font-size:2rem}[dir=rtl] ol,[dir=rtl] ul{padding-left:0;padding-right:1.125rem}@media(min-width:48em){[dir=rtl] ol,[dir=rtl] ul{padding-right:1.313rem}}[dir=rtl] ol li,[dir=rtl] ul li{padding-left:0;padding-right:.875rem}@media(min-width:48em){[dir=rtl] ol li,[dir=rtl] ul li{padding-right:.75rem}}:lang(be) h1,:lang(bg) h1,:lang(kk) h1,:lang(ky) h1,:lang(mk) h1,:lang(mn) h1,:lang(ru) h1,:lang(sr) h1,:lang(uk) h1{font-family:ProximaNova,sans-serif}progress{border:2px solid #000;border-radius:7px;height:14px;width:50%}progress::-webkit-progress-bar{background-color:#fff;border-radius:7px}progress::-webkit-progress-value{background-color:#000}progress::-moz-progress-bar{background-color:#fff}
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./stories/Utilities/ProgressBar/progress-bar.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/* typograpgy start */
+/* variables end */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  color: #000;
+  font-family: "ProximaNova", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  body {
+    font-size: 1.25rem;
+  }
+}
+
+button {
+  font-family: "ProximaNova", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption {
+  margin: 0;
+  margin-bottom: 0.75rem;
+  padding: 0;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+caption {
+    margin-bottom: 1rem;
+  }
+}
+
+h1 {
+  font-family: "SohneBreit", "ProximaNova", sans-serif;
+  font-size: 2.938rem;
+  letter-spacing: 0.06rem;
+  line-height: 1.08;
+  text-transform: uppercase;
+  /* medium design */
+  /* medium design */
+}
+@media (min-width: 48em) {
+  h1 {
+    font-size: 5.125rem;
+  }
+}
+@media (min-width: 64em) {
+  h1 {
+    font-size: 6.25rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  /* medium design */
+  /* medium design */
+}
+@media (min-width: 48em) {
+  h2 {
+    font-size: 2.813rem;
+  }
+}
+@media (min-width: 64em) {
+  h2 {
+    font-size: 3.438rem;
+  }
+}
+
+h3 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.15;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  h3 {
+    font-size: 2.188rem;
+  }
+}
+
+h4 {
+  font-size: 1.563rem;
+  font-weight: 400;
+  line-height: 1.15;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  h4 {
+    font-size: 2.188rem;
+  }
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.15;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  h5 {
+    font-size: 1.563rem;
+  }
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03rem;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+p {
+  margin-top: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 1.125rem;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  ul,
+ol {
+    padding-left: 1.313rem;
+  }
+}
+ul li,
+ol li {
+  margin-bottom: 1rem;
+  padding-left: 0.875rem;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  ul li,
+ol li {
+    margin-bottom: 1.5rem;
+    padding-left: 0.75rem;
+  }
+}
+
+ul li::marker {
+  font-size: 1.125rem;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  ul li::marker {
+    font-size: 1.313rem;
+  }
+}
+
+ol li {
+  margin-bottom: 1.063rem;
+}
+
+dl {
+  font-size: 0.875rem;
+  line-height: 1.37;
+  margin: 0;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  dl {
+    font-size: 1.25rem;
+  }
+}
+
+dt {
+  margin-bottom: 0.5rem;
+}
+
+dd {
+  margin-bottom: 1rem;
+  margin-inline-start: 2.5rem;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  dd {
+    margin-bottom: 1.5rem;
+    margin-inline-start: 3rem;
+  }
+}
+
+hr {
+  border: 1px solid #000;
+}
+
+@keyframes lineLoop-animation {
+  0% {
+    background-position: 100% 100%, -30px 100%;
+    background-size: 100% 2px, 0 2px;
+  }
+  to {
+    background-position: calc(100% + 30px) 100%, 0 100%;
+    background-size: 0 2px, 100% 2px;
+  }
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+:lang(my) body {
+  font-family: "NotoSans", sans-serif;
+  line-height: 1.7;
+}
+:lang(my) h1,
+:lang(my) h2,
+:lang(my) h3,
+:lang(my) h4,
+:lang(my) h5,
+:lang(my) h6 {
+  line-height: 1.7;
+}
+:lang(my) h1 {
+  font-family: "NotoSans", sans-serif;
+  font-size: 2.625rem;
+  /* medium design */
+  /* medium design */
+}
+@media (min-width: 48em) {
+  :lang(my) h1 {
+    font-size: 3.875rem;
+  }
+}
+@media (min-width: 64em) {
+  :lang(my) h1 {
+    font-size: 5rem;
+  }
+}
+:lang(my) h2 {
+  font-size: 2rem;
+  /* medium design */
+  /* medium design */
+}
+@media (min-width: 48em) {
+  :lang(my) h2 {
+    font-size: 2.188rem;
+  }
+}
+@media (min-width: 64em) {
+  :lang(my) h2 {
+    font-size: 2.813rem;
+  }
+}
+:lang(my) h4 {
+  font-size: 1.3rem;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  :lang(my) h4 {
+    font-size: 1.8rem;
+  }
+}
+:lang(my) h5 {
+  font-size: 1.25rem;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  :lang(my) h5 {
+    font-size: 1.375rem;
+  }
+}
+:lang(my) p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  :lang(my) p {
+    font-size: 1rem;
+  }
+}
+:lang(my) ul li,
+:lang(my) ol li,
+:lang(my) dl {
+  font-size: 0.875rem;
+  line-height: 1.9;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  :lang(my) ul li,
+:lang(my) ol li,
+:lang(my) dl {
+    font-size: 1.125rem;
+  }
+}
+:lang(my) .sbdocs .sbdocs-content,
+:lang(my) .sbdocs h1,
+:lang(my) .sbdocs h2,
+:lang(my) .sbdocs h3,
+:lang(my) .sbdocs h4,
+:lang(my) .sbdocs h5,
+:lang(my) .sbdocs h6,
+:lang(my) .sbdocs p {
+  font-family: "NotoSans", sans-serif;
+}
+:lang(my) .sbdocs .sbdocs-h1 {
+  font-size: 2rem;
+}
+
+[dir=rtl] ul,
+[dir=rtl] ol {
+  padding-left: 0;
+  padding-right: 1.125rem;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  [dir=rtl] ul,
+[dir=rtl] ol {
+    padding-right: 1.313rem;
+  }
+}
+[dir=rtl] ul li,
+[dir=rtl] ol li {
+  padding-left: 0;
+  padding-right: 0.875rem;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  [dir=rtl] ul li,
+[dir=rtl] ol li {
+    padding-right: 0.75rem;
+  }
+}
+
+/* Cyrillic scripts */
+:lang(bg) h1, :lang(be) h1, :lang(kk) h1, :lang(ky) h1, :lang(mk) h1, :lang(mn) h1, :lang(ru) h1, :lang(sr) h1, :lang(uk) h1 {
+  font-family: "ProximaNova", sans-serif;
+}
+
+/* typograpgy end */
+/* variables end */
+/* progress start */
+progress {
+  border: 2px solid #000;
+  border-radius: 7px;
+  height: 14px;
+  width: 50%;
+}
+progress::-webkit-progress-bar {
+  background-color: #fff;
+  border-radius: 7px;
+}
+progress::-webkit-progress-value {
+  background-color: #000;
+}
+progress::-moz-progress-bar {
+  background-color: #fff;
+}
+
+/* progress end */

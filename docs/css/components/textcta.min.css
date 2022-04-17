@@ -1,1 +1,35 @@
-.trusted-partnerships__container{padding:3rem 1.5rem 6rem}.trusted-partnerships--header p{margin-top:2.5rem}@media(min-width:48em){.trusted-partnerships--header p{margin-top:5rem}}.trusted-partnerships--header .button-arrow{margin-top:2.5rem}@media(max-width:47.9375em){.trusted-partnerships--header .button-arrow{display:inline-flex}}@media(min-width:48em){.trusted-partnerships--header .button-arrow{margin-top:4rem}}
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./stories/Molecules/Text/TextCta/textcta.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/* variables end */
+/* mixing  end */
+/* placehoder start */
+/* placehoder end */
+/* variables end */
+.trusted-partnerships__container {
+  padding: 3rem 1.5rem 6rem;
+}
+.trusted-partnerships--header p {
+  margin-top: 2.5rem;
+  /* medium design */
+}
+@media (min-width: 48em) {
+  .trusted-partnerships--header p {
+    margin-top: 5rem;
+  }
+}
+.trusted-partnerships--header .button-arrow {
+  margin-top: 2.5rem;
+  /* small design */
+  /* medium design */
+}
+@media (max-width: 47.9375em) {
+  .trusted-partnerships--header .button-arrow {
+    display: inline-flex;
+  }
+}
+@media (min-width: 48em) {
+  .trusted-partnerships--header .button-arrow {
+    margin-top: 4rem;
+  }
+}

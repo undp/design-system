@@ -1,1 +1,91 @@
-.what-goal{padding:6rem 0;word-break:break-word}@media(min-width:48em){.what-goal{padding:10rem 0}}@media(max-width:47.9375em){.what-goal h4{margin-top:4rem}}.sdg-card-list+.footer{margin-top:0}.sdg-card-list .modal-sdg{opacity:0;visibility:hidden}.sdg-card-list .modal-sdg .sdg-modal-dialog{-webkit-transform:translateX(100%);-moz-transform:translateX(100%);-ms-transform:translateX(100%);-o-transform:translateX(100%);transition:translateX(100%)}.sdg-card-list .modal-sdg.sdg-open{opacity:1;visibility:visible}.sdg-card-list .modal-sdg.sdg-open .sdg-modal-dialog{-webkit-transform:translateX(0);-moz-transform:translateX(0);-ms-transform:translateX(0);-o-transform:translateX(0);transition:translateX(0)}.sdg-card-list .modal-sdg.sdg-open.animation-out .sdg-modal-dialog{-webkit-transform:translateX(100%);-moz-transform:translateX(100%);-ms-transform:translateX(100%);-o-transform:translateX(100%);transition:translateX(100%)}.sdg-banner{margin-top:7.1875rem}@media(max-width:89.9375em){.sdg-banner{margin-top:4.6875rem}}@media(max-width:47.9375em){.sdg-banner .pagehero-full .breadcrumb{padding-top:.75rem}}[dir=rtl] .what-goal>div{margin-left:0;margin-right:8.33333%}[dir=rtl] .sdg-card-list .modal-sdg .sdg-modal-dialog{-webkit-transform:translateX(-100%);-moz-transform:translateX(-100%);-ms-transform:translateX(-100%);-o-transform:translateX(-100%);transition:translateX(-100%)}[dir=rtl] .sdg-card-list .modal-sdg.sdg-open .sdg-modal-dialog{-webkit-transform:translateX(0);-moz-transform:translateX(0);-ms-transform:translateX(0);-o-transform:translateX(0);transition:translateX(0)}
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./stories/Templates/Sdg/sdg.scss ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/* variables end */
+/* variables end */
+/* mixing  end */
+/* placehoder start */
+/* placehoder end */
+.what-goal {
+  padding: 6rem 0;
+  word-break: break-word;
+  /* medium design */
+  /* small design */
+}
+@media (min-width: 48em) {
+  .what-goal {
+    padding: 10rem 0;
+  }
+}
+@media (max-width: 47.9375em) {
+  .what-goal h4 {
+    margin-top: 4rem;
+  }
+}
+
+.sdg-card-list + .footer {
+  margin-top: 0;
+}
+.sdg-card-list .modal-sdg {
+  opacity: 0;
+  visibility: hidden;
+}
+.sdg-card-list .modal-sdg .sdg-modal-dialog {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transition: translateX(100%);
+}
+.sdg-card-list .modal-sdg.sdg-open {
+  opacity: 1;
+  visibility: visible;
+}
+.sdg-card-list .modal-sdg.sdg-open .sdg-modal-dialog {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transition: translateX(0);
+}
+.sdg-card-list .modal-sdg.sdg-open.animation-out .sdg-modal-dialog {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transition: translateX(100%);
+}
+.sdg-banner {
+  margin-top: 7.1875rem;
+  /* medium design tab */
+  /* small design */
+}
+@media (max-width: 89.9375em) {
+  .sdg-banner {
+    margin-top: 4.6875rem;
+  }
+}
+@media (max-width: 47.9375em) {
+  .sdg-banner .pagehero-full .breadcrumb {
+    padding-top: 0.75rem;
+  }
+}
+
+[dir=rtl] .what-goal > div {
+  margin-left: 0;
+  margin-right: 8.33333%;
+}
+[dir=rtl] .sdg-card-list .modal-sdg .sdg-modal-dialog {
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transition: translateX(-100%);
+}
+[dir=rtl] .sdg-card-list .modal-sdg.sdg-open .sdg-modal-dialog {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transition: translateX(0);
+}

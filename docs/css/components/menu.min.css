@@ -1,1 +1,26 @@
-.menu ul{padding:0}.menu ul li{display:inline-block;margin:.75rem 3.75rem .75rem 0;padding-left:0}.menu ul li:last-of-type{margin-right:0}[dir=rtl] .menu ul li{margin-left:3.75rem;margin-right:0}[dir=rtl] .menu ul li a{margin:0}[dir=rtl] .menu ul li:last-of-type{margin-left:0}
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./stories/Components/Navigationcomponents/Menu/menu.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/* variables end */
+.menu ul {
+  padding: 0;
+}
+.menu ul li {
+  display: inline-block;
+  margin: 0.75rem 3.75rem 0.75rem 0;
+  padding-left: 0;
+}
+.menu ul li:last-of-type {
+  margin-right: 0;
+}
+
+[dir=rtl] .menu ul li {
+  margin-left: 3.75rem;
+  margin-right: 0;
+}
+[dir=rtl] .menu ul li a {
+  margin: 0;
+}
+[dir=rtl] .menu ul li:last-of-type {
+  margin-left: 0;
+}

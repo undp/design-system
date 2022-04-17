@@ -1,1 +1,48 @@
-.chip{align-items:center;background:#f7f7f7;border:none;border-radius:20px;box-shadow:0 1px 2px rgba(0,0,0,.2);display:inline-flex;min-height:1.875rem;padding:.25rem 1rem}.chip:hover{background-color:#edeff0}.chip.chip__cross:before{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAxNyAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBjbGlwLXBhdGg9InVybCgjYSkiIHN0cm9rZT0iI0QxMjgwMCIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBkPSJtMTIuNzUgNC43NS04LjUgOC41TTEyLjc1IDEzLjI1bC04LjUtOC41Ii8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0iYSI+PHBhdGggZmlsbD0iI2ZmZiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAuNSkiIGQ9Ik0wIDBoMTd2MTdIMHoiLz48L2NsaXBQYXRoPjwvZGVmcz48L3N2Zz4=) no-repeat 0;content:"";display:inline-flex;height:22px;margin-left:-.25rem;margin-right:.5rem;padding-right:1.375rem;position:relative;top:0;width:auto}[dir=rtl] .chip__cross:before{margin-left:.5rem;margin-right:-.25rem}:lang(my) .chip{align-items:flex-end}:lang(my) .chip__cross{align-items:baseline}:lang(my) .chip__cross:before{top:5px}
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./stories/Components/UIcomponents/Buttons/Chips/chips.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+/* variables end */
+/* mixing  end */
+/* placehoder start */
+/* placehoder end */
+/* variables end */
+.chip {
+  align-items: center;
+  background: #f7f7f7;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  min-height: 1.875rem;
+  padding: 0.25rem 1rem;
+}
+.chip:hover {
+  background-color: #edeff0;
+}
+.chip.chip__cross::before {
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAxNyAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiPg0KPHBhdGggZD0iTTEyLjc1IDQuNzQ5NzZMNC4yNDk4NiAxMy4yNDk5IiBzdHJva2U9IiNEMTI4MDAiIHN0cm9rZS13aWR0aD0iMiIvPg0KPHBhdGggZD0iTTEyLjc1MDQgMTMuMjVMNC4yNTAyIDQuNzQ5ODIiIHN0cm9rZT0iI0QxMjgwMCIgc3Ryb2tlLXdpZHRoPSIyIi8+DQo8L2c+DQo8ZGVmcz4NCjxjbGlwUGF0aCBpZD0iY2xpcDAiPg0KPHJlY3Qgd2lkdGg9IjE3IiBoZWlnaHQ9IjE3IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjUpIi8+DQo8L2NsaXBQYXRoPg0KPC9kZWZzPg0KPC9zdmc+DQo=) no-repeat left;
+  content: "";
+  display: inline-flex;
+  height: 22px;
+  margin-left: -0.25rem;
+  margin-right: 0.5rem;
+  padding-right: 1.375rem;
+  position: relative;
+  top: 0;
+  width: auto;
+}
+
+[dir=rtl] .chip__cross::before {
+  margin-left: 0.5rem;
+  margin-right: -0.25rem;
+}
+
+:lang(my) .chip {
+  align-items: flex-end;
+}
+:lang(my) .chip__cross {
+  align-items: baseline;
+}
+:lang(my) .chip__cross::before {
+  top: 5px;
+}

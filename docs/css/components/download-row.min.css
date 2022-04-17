@@ -1,1 +1,60 @@
-.download-row{background-color:#fff;padding:0 1rem}.download-row:hover{background-color:#fafafa}.download-row__main{align-items:center;border-bottom:1px solid #d4d6d8;display:flex;justify-content:space-between;position:relative}.download-row__main .form-check{position:absolute;right:0}.download-row__data{cursor:pointer;flex-grow:1;font-size:1rem;font-weight:400;line-height:1.25;padding:1rem 2rem 1rem 0;text-transform:inherit}.download-row__data span{color:#a9b1b7;display:block;font-size:1rem;line-height:1.4;margin-top:4px}.download-row .external-link-animated{margin:1rem 0 1.188rem 1rem}[dir=rtl] .download-row__data{padding-left:2rem;padding-right:0}[dir=rtl] .download-row__main .form-check{left:0;right:auto}[dir=rtl] .download-icon,[dir=rtl] .download-row .external-link-animated{margin-left:0}
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[0].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[3]!./stories/Molecules/DownloadRow/download-row.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/* variables end */
+/* mixing  end */
+/* placehoder start */
+/* placehoder end */
+/* variables end */
+.download-row {
+  background-color: #fff;
+  padding: 0 1rem;
+}
+.download-row:hover {
+  background-color: #fafafa;
+}
+.download-row__main {
+  align-items: center;
+  border-bottom: 1px solid #d4d6d8;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.download-row__main .form-check {
+  position: absolute;
+  right: 0;
+}
+.download-row__data {
+  cursor: pointer;
+  flex-grow: 1;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.25;
+  padding: 1rem 2rem 1rem 0;
+  text-transform: inherit;
+}
+.download-row__data span {
+  color: #a9b1b7;
+  display: block;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+.download-row .external-link-animated {
+  margin: 1rem 0 1.188rem 1rem;
+}
+
+[dir=rtl] .download-row__data {
+  padding-left: 2rem;
+  padding-right: 0;
+}
+[dir=rtl] .download-row__main .form-check {
+  left: 0;
+  right: auto;
+}
+[dir=rtl] .download-row .external-link-animated {
+  margin-left: 0;
+}
+[dir=rtl] .download-icon {
+  margin-left: 0;
+}
