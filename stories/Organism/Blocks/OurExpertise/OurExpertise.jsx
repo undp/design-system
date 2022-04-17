@@ -43,7 +43,7 @@ export function OurExpertise() {
             $divs.eq(1).removeClass('is-active');
             $divs.eq(0).addClass('is-active');
           }
-          $divs.eq(3).text(`${swiper.realIndex + 1} of ${swiper.slides.length}`);
+          $(swiper.el).find('.swiper-counter span').text(`${swiper.realIndex + 1} `);
         },
       },
     });
@@ -63,16 +63,14 @@ export function OurExpertise() {
 
             {titles.map((item, index) => (
               <div className="swiper-slide">
-                <div className="grid-y">
-                  <div className="cell small-6">
-                    <img src={`https://picsum.photos/960/640?random=5${index}`} alt="" />
-                  </div>
-                  <div className="cell small-6">
-                    <Heading type="3" label={item} />
-                    <P label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia sint vero numquam, reprehenderit dolore quaerat corrupti! Suscipit, non commodi ab iusto labore quibusdam illum laboriosam soluta, fugit a cumque asperiores." />
-                    <div className="stripe" />
-                  </div>
+                <div className="image">
+                  <img src={`https://picsum.photos/960/640?random=5${index}`} alt="" />
                 </div>
+                <div className="content">
+                  <Heading type="3" label={item} />
+                  <P label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia sint vero numquam, reprehenderit dolore quaerat corrupti! Suscipit, non commodi ab iusto labore quibusdam illum laboriosam soluta, fugit a cumque asperiores." />
+                </div>
+                <div className="stripe" />
               </div>
             ))}
 
@@ -81,8 +79,10 @@ export function OurExpertise() {
           <div className="swiper-tabs">
             <div className="is-active">Signature solutions</div>
             <div>Enablers</div>
-            <div />
-            <div>1 of 9</div>
+          </div>
+          <div className="swiper-counter">
+            <span>1 </span>
+            of 9
           </div>
         </div>
       </div>

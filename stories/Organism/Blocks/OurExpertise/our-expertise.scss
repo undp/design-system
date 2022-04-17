@@ -4,7 +4,9 @@
 @import '../../../assets/scss/swiper';
 
 .our-expertise {
-  background: $color-gray-200;
+  @include devicebreak(large) {
+    background: $color-gray-200;
+  }
   .intro {
     display: flex;
     align-items: center;
@@ -15,28 +17,33 @@
       }
     }
   }
-  .grid-y {
-    height: calc(100vh - #{$header-height-medium});
-
-    @include devicebreak(xlarge) {
-      height: calc(100vh - #{$header-height-xlarge});
-    }
-  }
   .swiper {
     background: $color-white;
     .swiper-slide  {
-      .cell {
+      min-height: calc(100vh - #{$header-height-medium});
+      @include devicebreak(xlarge) {
+        min-height: calc(100vh - #{$header-height-xlarge});
+      }
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      .image {
+        height: 40vh;
+        width: 100%;
         position: relative;
         overflow: hidden;
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
       }
-      img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+      .content {
+        flex-grow: 1;
       }
       h3 {
-        margin-top: 12.5vh;
+        margin-top: $spacing-10;
         margin-left: $spacing-04;
         margin-right: $spacing-04;
       }
@@ -46,13 +53,15 @@
       }
       @include devicebreak(large) {
         h3 {
+          margin-top: 12.5vh;
           margin-left: $spacing-08;
           margin-right: $spacing-08;
         }
         p {
           margin-left: $spacing-08;
           margin-right: $spacing-08;
-          max-width: 75%;
+          max-width: calc(50vw - 200px);
+          width: 75%;
         }
       }
       &:nth-of-type(1) {
@@ -107,18 +116,22 @@
   }
   .stripe {
     height: $spacing-04;
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    margin-top: $spacing-10;
     @include devicebreak(large) {
+      position: absolute;
+      bottom: 0;
       height: $spacing-05;
     }
   }
   .swiper-navigation {
     position: absolute;
     bottom: $spacing-07;
-    right: $spacing-05;
-
+    left: $spacing-04;
+    @include devicebreak(large) {
+      left: auto;
+      right: $spacing-05;
+    }
     .swiper-button-prev, .swiper-button-next {
       background: transparentize($color: #FFFFFF, $amount: 1);
       border: 0;
@@ -129,13 +142,13 @@
     position: absolute;
     left: $spacing-04;
     right: $spacing-04;
-    top: calc(50% + #{$spacing-06});
+    top: calc(40vh + #{$spacing-06});
     display: flex;
     border-bottom: 2px solid $color-gray-300;
     @include devicebreak(large) {
       left: $spacing-08;
       right: $spacing-08;
-      top: calc(50% + #{$spacing-08});
+      top: calc(40vh + #{$spacing-08});
     }
     div {
       margin-right: $spacing-06;
@@ -162,16 +175,21 @@
           border-bottom-color: $color-dark-red;
         }
       }
-      &:nth-of-type(3) {
-        flex: 1 0 auto;
-      }
-      &:nth-of-type(4) {
-        display: none;
-        margin: 0;
-        @include devicebreak(large) {
-          display: block;
-        }
-      }
+    }
+  }
+  .swiper-counter {
+    position: absolute;
+    right: $spacing-04;
+    bottom: $spacing-08;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: $font-size-14;
+    white-space: nowrap;
+    @include devicebreak(large) {
+      top: calc(40vh + #{$spacing-08});
+      bottom: auto;
+      font-size: $font-size-16;
+      right: $spacing-08;
     }
   }
 }
@@ -191,5 +209,13 @@
         margin-right: 0;
       }
     }
+    .swiper-counter {
+      right: auto;
+      left: $spacing-04;
+      @include devicebreak(large) {
+        left: $spacing-08;
+      }
+    }
+
   }
 }
