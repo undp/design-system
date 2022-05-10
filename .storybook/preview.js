@@ -1,7 +1,7 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { initializeRTL } from 'storybook-addon-rtl';
-import anysort from 'anysort'
-import { addParameters } from '@storybook/react'
+// import { anysort } from 'anysort'
+// import { addParameters } from '@storybook/react'
 import renderToHTML from './renderToHTML'
 
 // include fonts globally
@@ -31,10 +31,11 @@ export const parameters = {
   docs: {
     transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn),
   },
-   options: {
+  options: {
     storySort: {
       method: 'alphabetical',
-      order: ['Getting started', ['Intro', 'How to use our design system?', 'Browser support'],'Foundation','Components', ,['Navigation components',['Breadcrumbs'],['Main Navigation']],'Patterns', 'Utilities','Templates' ],
+      order: ['Getting started', 'Foundation','Components', 'Patterns', 'Utilities','Templates' ],
+      includeName: true
     },
   },
 }
@@ -59,28 +60,28 @@ export const globalTypes = {
 };
 
 
-addParameters({
-  options: {
-    /**
-     * display the top-level grouping as a "root" in the sidebar
-     * @type {Boolean}
-     */
-    showRoots: true,
-    storySort: (previous, next) => {
-      const [previousStory, previousMeta] = previous
-      const [nextStory, nextMeta] = next
+// addParameters({
+//   options: {
+//     /**
+//      * display the top-level grouping as a "root" in the sidebar
+//      * @type {Boolean}
+//      */
+//     showRoots: true,
+//     storySort: (previous, next) => {
+//       const [previousStory, previousMeta] = previous
+//       const [nextStory, nextMeta] = next
 
-      return anysort(previousMeta.kind, nextMeta.kind, [
-        'Getting started/**',
-        'Foundation/**',
-        'Components/**',
-        'Patterns/**',
-        'Utilities/**',
-        'Templates/**'
-      ])
-    }
-  },
-})
+//       return anysort(previousMeta.kind, nextMeta.kind, [
+//         'Getting started/**',
+//         'Foundation/**',
+//         'Components/**',
+//         'Patterns/**',
+//         'Utilities/**',
+//         'Templates/**'
+//       ])
+//     }
+//   },
+// })
 
 /**
  * Function to get current language code.
@@ -161,7 +162,10 @@ const setDirection = (Story, options) => {
     input.addEventListener('change', checkRTL(input), false);
   }
   // Set window object for iframe.
-  window.UNDP.dir = (window.UNDP) ? direction : window.UNDP= { dir : direction };
+  if (typeof window.UNDP === 'undefined') {
+    window.UNDP = {};
+  }
+  window.UNDP.dir = direction;
 
   return (
     <Story {...options} />
@@ -169,4 +173,4 @@ const setDirection = (Story, options) => {
 }
 
 // Trigger callback in Storybook Addons.
-export const decorators = [getLangCode,sbFrameReset, setDirection];
+export const decorators = [getLangCode, sbFrameReset, setDirection];

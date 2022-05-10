@@ -30,7 +30,7 @@
         width: 14.4375rem;
       }
 
-      span:first-child {
+      span:first-of-type {
         border-bottom: 1px solid $color-gray-500;
         color: $color-gray-600;
         display: inline-block;
@@ -91,7 +91,7 @@
       li {
         margin: $spacing-04 0 $spacing-04 3.6875rem;
 
-        &:first-child {
+        &:first-of-type {
           margin-left: 0;
         }
       }
@@ -219,7 +219,7 @@
       li {
         margin: $spacing-04 3.6875rem $spacing-04 0;
 
-        &:first-child {
+        &:first-of-type {
           margin-right: 0;
         }
       }

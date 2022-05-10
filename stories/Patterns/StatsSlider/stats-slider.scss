@@ -56,7 +56,7 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
       justify-content: center;
     }
 
-    &:last-child {
+    &:last-of-type {
       margin-bottom: 0;
     }
   }

@@ -26,13 +26,13 @@
     span {
       margin: 0 0.375rem;
 
-      &:last-child {
+      &:last-of-type {
         margin-right: 0;
       }
     }
 
-    &:first-child,
-    &:last-child {
+    &:first-of-type,
+    &:last-of-type {
       cursor: pointer;
 
       a {
@@ -58,7 +58,7 @@
       }
     }
 
-    &:last-child {
+    &:last-of-type {
       margin-right: 0;
 
       a {
@@ -81,7 +81,7 @@
       margin-right: 0;
       padding-right: 0;
 
-      &:first-child {
+      &:first-of-type {
         a {
           &::before {
             @include transform(rotateZ(180deg));
@@ -89,7 +89,7 @@
         }
       }
 
-      &:last-child {
+      &:last-of-type {
         margin-left: 0;
 
         a {
@@ -100,7 +100,7 @@
       }
 
       span {
-        &:last-child {
+        &:last-of-type {
           margin-left: 0;
           margin-right: 0.375rem;
         }

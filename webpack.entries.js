@@ -18,7 +18,7 @@ module.exports = (type = 'css') => {
     './stories/**/style.scss', // we don't need this file
     './stories/Atom/**', // merged atom into base styling
     './stories/**/*.mdx',
-    './stories/**/*.jsx'
+    './stories/**/*.jsx',
   ];
 
   // change pattern if finding for JS only
@@ -29,7 +29,7 @@ module.exports = (type = 'css') => {
   // wildcard file discovery
   glob.sync(`./stories${suggestFiles}`, {
     ignore: ignoreFiles,
-  }).map(file => {
+  }).map((file) => {
     let fileName = path.basename(file, path.extname(file));
     let objKey = `${cssPathPrefix}/components/${fileName}`;
 
@@ -51,7 +51,7 @@ module.exports = (type = 'css') => {
     // if scss is a partial then remove the leading '_'.
     if (file.indexOf('/_') > 0) {
       fileName = fileName.replace(/[_]/g, '');
-      objKey = `${cssPathPrefix}/components/${fileName}`
+      objKey = `${cssPathPrefix}/components/${fileName}`;
     }
 
     // add 'css' and 'js' prefix to create auto directory

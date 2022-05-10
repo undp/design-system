@@ -122,7 +122,7 @@
     li {
       margin-top: $spacing-06;
 
-      &:first-child {
+      &:first-of-type {
         margin-top: 0;
       }
     }
@@ -169,8 +169,8 @@ header {
 
   .author-wrapper--3 {
     .author-wrapper__box {
-      &:first-child,
-      &:last-child {
+      &:first-of-type,
+      &:last-of-type {
         margin-left: 0;
         margin-right: 0;
       }

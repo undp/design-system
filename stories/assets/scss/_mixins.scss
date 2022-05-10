@@ -188,6 +188,7 @@
   border: none;
   cursor: pointer;
   display: block;
+  text-transform: uppercase;
 }
 
 %sdg-modal-title {
@@ -603,19 +604,19 @@
   width: 40px;
 
   @include devicebreak(xlarge) {
-    height: 7.625rem;
+    height: ($header-height-xlarge + 7px);
     width: 60px;
 
     &.scrolled {
-      height: 7.1875rem;
+      height: $header-height-xlarge;
     }
   }
 
   @include devicebreak(mediumonlytab) {
-    height: 5.125rem;
+    height: ($header-height-medium + 7px);
 
     &.scrolled {
-      height: 4.6875rem;
+      height: $header-height-medium;
     }
   }
 }
