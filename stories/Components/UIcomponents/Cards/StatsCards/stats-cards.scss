@@ -8,7 +8,7 @@ div.stats-card {
 
   background-color: $color-gray-200;
   box-sizing: border-box;
-  word-break: break-all;
+  overflow-wrap: break-word;
 
   @include devicebreak(small) {
     max-width: 21.938rem;
