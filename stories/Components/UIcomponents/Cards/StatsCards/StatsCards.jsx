@@ -11,7 +11,7 @@ const cls = (...classes) => {
   return classes.filter(Boolean).length > 0 ? classes.filter(Boolean).join(' ') : null;
 };
 
-export const Hovercolors_options = {
+export const Accent_options = {
   yellow: '',
   red: 'red',
   green: 'green',
@@ -45,7 +45,7 @@ export function StatsCards({
     }
   }, []);
 
-  let screen_variant = Hovercolors_options[`${args.Hovercolors}`];
+  let screen_variant = Accent_options[`${args.Accent}`];
   return (
     <div className={cls('stats-card', `${size}`, `${screen_variant}`)}>
       <div>
@@ -59,8 +59,3 @@ export function StatsCards({
     </div>
   );
 }
-
-StatsCards.defaultProps = {
-  Hovercolors: 'yellow',
-  Size: 'medium',
-};
