@@ -1,5 +1,10 @@
 import { Meta, Story } from '@storybook/addon-docs';
-import { PostHeader } from './PostHeader'
+import { PostHeader } from './PostHeader';
+
+export default {
+  component: PostHeader,
+  excludeStories: /.*/,
+}
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {

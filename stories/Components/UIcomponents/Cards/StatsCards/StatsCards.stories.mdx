@@ -3,22 +3,22 @@ import { StatsCards } from './StatsCards';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
-    case 'english': const engText = {titlename: 'Lorem Title', percentname: 'Percent', numbername: '35', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}; return engText;
+    case 'english': const engText = {titlename: 'Lorem ipsum', percentname: 'Percent', numbername: '35', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}; return engText;
     case 'arabic': const arabicText = {titlename: 'عنوان مستقل', percentname: 'نسبه مئويه', numbername: '35', text: 'الألم بحد ذاته هو الحب ، الزبون الرئيسي'}; return arabicText;
     case 'burmese': const burmeseText = {titlename: 'လွတ်လပ်သောခေါင်းစဉ်', percentname: 'ရာခိုင်နှုန်း', numbername: '35', text: 'နာကျင်မှုကိုယ်တိုင်ကအချစ်ကိုအဓိကဖောက်သည်ချသည်'}; return burmeseText;
     case 'japanese': const japaneseText = {titlename: '独立したタイトル', percentname: 'パーセント', numbername: '35', text: '痛み自体は愛、主な顧客です'}; return japaneseText;
     default:
-      return {titlename: 'Lorem Title', percentname: 'Percent', numbername: '35', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'};
+      return {titlename: 'Lorem Title', percentname: 'Percents, with very long subheader, spanning several lines', numbername: '35', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'};
   }
 };
 
-<Meta title="Components/UI components/Cards/Stats card" argTypes={{
+<Meta title="Components/UI components/Cards/Stats card" component={StatsCards} argTypes={{
   Size: {
-    options: ['Small', 'Medium', 'Large', 'Extra_large'],
+    options: ['Small', 'Medium', 'Large', 'Extra large'],
     control: { type: 'inline-radio' },
-    defaultValue: 'Medium'
+    defaultValue: 'Medium',
   },
-  Hovercolors: {
+  Accent: {
     options: ['yellow', 'red', 'green', 'blue'],
     control: { type: 'inline-radio' },
     defaultValue: 'yellow'
@@ -76,6 +76,7 @@ The following size modifiers are available:
 - Choose a different variation from the control tab on canvas.
 - Copy the HTML from the HTML tab in the canvas
 - Include the CSS and JS shared below
+- to dynamically adjust Stat text size to its container init script with `fitText(selector, options` where `options` is an associative array containing maximum sizes for th stat figure for desktop and mobile, i.e. `{desktop: 110, mobile: 80}` for standard medium card}
 
 ### CSS and JS References
 
@@ -86,7 +87,9 @@ Add the base layout style from
 - https://undp.github.io/design-system/css/components/stats-cards.min.css
 
 #### JS:
-- Include dist/js/font-resize.min.js if the larger text (digit in the card) needs to be auto resize based on the container size. Target the text to be resized by initializing the function like this: fontResize('.stats-card h2')
+- https://undp.github.io/design-system/js/fitText.min.js
+
+call fitText(selector, options);
 
 ### Interactions
 The hover state is applied to the entire card

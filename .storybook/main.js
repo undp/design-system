@@ -5,10 +5,19 @@ module.exports = {
     builder: "webpack5"
   },
   staticDirs: ['../stories/assets'],
-  "stories": ["../stories/**/*.stories.mdx", "../stories/**/*.stories.@(js|jsx|ts|tsx)"],
-  "addons": ["@storybook/addon-links", "@storybook/addon-actions", "@storybook/addon-docs", "@storybook/addon-essentials", "@whitespace/storybook-addon-html", "storybook-addon-rtl", "@storybook/addon-a11y"],
+  stories: ["../stories/**/*.stories.mdx", "../stories/**/*.stories.@(js|jsx|ts|tsx)"],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-actions",
+    "@storybook/addon-docs",
+    "@storybook/addon-essentials",
+    "@whitespace/storybook-addon-html",
+    "storybook-addon-rtl",
+    "@storybook/addon-a11y"
+  ],
   features: {
-    storyStoreV7: true
+    storyStoreV7: true,
+    babelModeV7: true,
   },
   webpackFinal: async config => {
     // remove hash from the static file names

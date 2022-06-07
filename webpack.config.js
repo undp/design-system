@@ -2,7 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
-const RemovePlugin = require('remove-files-webpack-plugin');
+// const RemovePlugin = require('remove-files-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpackEntry = require('./webpack.entries');
 
@@ -90,14 +90,14 @@ module.exports = [
         filename: '[name].min.css',
       }),
       // delete fonts from the root directory
-      new RemovePlugin({
-        after: {
-          include: [
-            'fonts',
-          ],
-          trash: true,
-        },
-      }),
+      // new RemovePlugin({
+      //   after: {
+      //     include: [
+      //       'fonts',
+      //     ],
+      //     trash: true,
+      //   },
+      // }),
     ],
     output: {
       path: path.resolve(__dirname, 'docs'),
@@ -118,6 +118,11 @@ module.exports = [
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-react'],
+              ],
+            },
           },
         },
         {
