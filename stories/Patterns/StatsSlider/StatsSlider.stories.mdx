@@ -4,7 +4,7 @@ import { StatsSlider } from './StatsSlider';
 export const statsArray = (locale) => {
   switch(locale) {
     case 'english': const engText = {data: [{
-      percentname: 'Percent',
+      percentname: 'very long Percent subline',
       numbername: '35',
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
@@ -208,6 +208,7 @@ A medium or a small stats card is used in sliders
 ### Usage:
 - Copy HTML from the HTML tab of canvas in your HTML page and include CSS and JS in ‘CSS and JS References’ section.
 - Initialize the swiper and parallax effect by calling functions mentioned below
+- Include the CSS and JS resource and initialize them as defined in the `Stats card`
 - swiper('.stats-card-slider')
 - parallaxEffect('.stats-card-slider')
 
@@ -231,6 +232,7 @@ Add the base layout style from
 Includes following JS Files:
 - https://undp.github.io/design-system/js/swiper.min.js
 - https://undp.github.io/design-system/js/parallax.min.js
+- https://undp.github.io/design-system/js/fitText.min.js
 
 Following external libraries needs to be included as well.
 - Swiper
