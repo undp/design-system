@@ -16,7 +16,8 @@ module.exports = {
     "@storybook/addon-a11y"
   ],
   features: {
-    storyStoreV7: true
+    storyStoreV7: true,
+    babelModeV7: true,
   },
   webpackFinal: async config => {
     // remove hash from the static file names
