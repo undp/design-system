@@ -4,10 +4,11 @@ import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
 import { parallaxEffect } from '../../../../assets/js/parallax';
 import './parallax-gallery.scss';
+import '../../../../assets/scss/_grid.scss';
 
-export const ParallaxGallery = ({
+export function ParallaxGallery({
   titleText, descText, buttonText, galleryimg1, galleryimg2, galleryimg3, galleryimg4, Background,
-}) => {
+}) {
   useEffect(() => {
     parallaxEffect('.parallax-gallery-images', '.column', 'top center', 'bottom+=15% center', 'vertical', 'all');
   }, []);
@@ -47,4 +48,4 @@ export const ParallaxGallery = ({
       </div>
     </div>
   );
-};
+}

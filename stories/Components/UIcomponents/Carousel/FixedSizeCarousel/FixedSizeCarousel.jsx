@@ -4,13 +4,14 @@ import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { CtaButton } from '../../Buttons/CtaButton/CtaButton';
 import { swiper } from '../../../../assets/js/swiper';
 import './fixed-size-carousel.scss';
+import '../../../../assets/scss/_swiper.scss';
 
 // RTL Fix for Storybook.
 let rtl = document.dir || undefined;
 if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
-export const FixedSizeCarousel = ({ data, label }) => {
+export function FixedSizeCarousel({ data, label }) {
   useEffect(() => {
     swiper('.fixed-carousel', '.fixed-carousel__button-wrap');
   }, []);
@@ -37,4 +38,4 @@ export const FixedSizeCarousel = ({ data, label }) => {
       </div>
     </section>
   );
-};
+}

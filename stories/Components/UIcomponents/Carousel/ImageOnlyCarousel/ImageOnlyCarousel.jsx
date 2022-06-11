@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { swiper } from '../../../../assets/js/swiper';
 import './image-only-carousel.scss';
+import '../../../../assets/scss/_swiper.scss';
 
 // RTL Fix for Storybook.
 let rtl = document.dir || undefined;
 if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
-export const ImageOnlyCarousel = ({ data }) => {
+export function ImageOnlyCarousel({ data }) {
   useEffect(() => {
     swiper('.image-carousel', '.slider-slide');
   }, []);
@@ -23,4 +24,4 @@ export const ImageOnlyCarousel = ({ data }) => {
       </div>
     </div>
   );
-};
+}

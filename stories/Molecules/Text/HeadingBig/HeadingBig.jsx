@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './headingbig.scss';
+import '../../../assets/scss/_grid.scss';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import { List } from '../../../Atom/Typography/Lists/Lists';
 import { changeBackground } from '../../../assets/js/smooth-bg-change';
@@ -9,9 +10,9 @@ export const transition_options = {
   false: 'heading-container',
 };
 
-export const HeadingBig = ({
+export function HeadingBig({
   headerText, descriptionText, listData, dataViewport, ...args
-}) => {
+}) {
   useEffect(() => {
     changeBackground('.heading-big');
   }, []);
@@ -31,7 +32,7 @@ export const HeadingBig = ({
       </div>
     </div>
   );
-};
+}
 
 HeadingBig.defaultProps = {
   Emphasize: 'true',

@@ -15,7 +15,7 @@ export const hover_color_options = {
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
-export const Authorimg = ({ image, alt, ...args }) => {
+export function Authorimg({ image, alt, ...args }) {
   let size_variant = size_options[`${args.variant}`];
   let Hovercolors = hover_color_options[`${args.hovercolor}`];
   return (
@@ -23,7 +23,7 @@ export const Authorimg = ({ image, alt, ...args }) => {
       <img src={image} alt={alt} title={alt} />
     </div>
   );
-};
+}
 
 Authorimg.defaultProps = {
   size: 'large',

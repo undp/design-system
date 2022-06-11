@@ -136,8 +136,20 @@
   }
 }
 
+.icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  > div > div {
+    margin: 0 auto;
+  }
+  p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+
 // For doc styling only
-#story--foundation-icons--icons > div {
+#story--foundation-icons--icons > .icons-container > div {
   align-items: center;
   background: $color-gray-300;
   border: 1px solid $color-gray-400;
