@@ -13,19 +13,6 @@ const arrfor = data.icons;
   }}
 />
 
-<style>{`
-  #story--foundation-icons--icons {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  #story--foundation-icons--icons > div > div {
-      margin: 0 auto;
-  }
-  #story--foundation-icons--icons p {
-    font-size: 14px;
-    margin-top: 10px;
-  }
-`}</style>
 
 # Icons
 The Icon components can grab attention and draw users into a piece of content. They can help users quickly understand the context in which they are placed.
@@ -44,6 +31,7 @@ The Icon components can grab attention and draw users into a piece of content. T
          }
       }).join('')
    } } }}>
+    <div className="icons-container">
     {arrfor.map((item, index) => {
       if(item.type == 'img') {
         return (<div key={index}><img src={`icons/${item.name}.svg`} alt="icon"/>
@@ -55,6 +43,7 @@ The Icon components can grab attention and draw users into a piece of content. T
         return (<div key={index}><span className={`${item.name}`}></span><p>{`${item.label}`}</p></div>);
       }
     })}
+    </div>
   </Story>
 </Canvas>
 

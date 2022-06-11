@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Author } from './AuthorColumn';
-import user from '../../../../assets/images/author.png';
+import authorImage from '../../../../assets/images/author.png';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -172,7 +172,7 @@ The following behavior modifiers are available:
 <Story name="Author">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Author image={user} alt= 'Headshot of XYZ' data={caption} {...args}></Author>;
+    return <Author authorImage={authorImage} alt= 'Headshot of XYZ' data={caption} {...args}></Author>;
   }}
 </Story>
 </Canvas>

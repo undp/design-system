@@ -2,16 +2,17 @@ import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { getMegaMenu } from '../../../../assets/js/navigation-data';
 import { navigationInitialize } from '../../../../assets/js/navigation';
-import { desktopView } from '../../../../assets/js/undp';
+// import { desktopView } from '../../../../assets/js/undp';
 import { Logo } from '../../../../Atom/Logo/Logo';
 import { Menu } from '../../Menu/Menu';
 import { Languageswitcher } from '../../../UIcomponents/LanguageSwitcher/LanguageSwitcher';
 import MegaMenu from '../MegaMenu/MegaMenu';
 import MobileNav from '../MobileNav/MobileNav';
 import './country-site-header.scss';
-import '../../../../assets/js/lazyload.js';
+import '../../../../assets/scss/_grid.scss';
+import '../../../../assets/js/lazyload';
 
-const CountrySiteHeader = ({
+function CountrySiteHeader({
   languageswitcherData,
   navigationData,
   locale,
@@ -19,8 +20,8 @@ const CountrySiteHeader = ({
   locationData,
   langSelect,
   siteTitleData,
-}) => {
-  useEffect(() => { 
+}) {
+  useEffect(() => {
     getMegaMenu(locale);
     navigationInitialize(locale);
   }, [locale]);
@@ -70,6 +71,6 @@ const CountrySiteHeader = ({
       </div>
     </header>
   );
-};
+}
 
 export default CountrySiteHeader;

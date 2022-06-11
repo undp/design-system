@@ -1,14 +1,21 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
 @import '../../../../assets/scss/base';
 
 /* bio card start */
-div.bio-card {
+.bio-card {
   a {
     @include transition(0.6s ease);
 
     background: $color-gray-200;
     display: block;
+  }
+  .card-thumbnail__image {
+    img {
+      height: auto;
+      width: 100%;
+    }
   }
 
   &:hover {
@@ -27,7 +34,7 @@ div.bio-card {
       }
     }
 
-    div.card-thumbnail__image::before {
+    .card-thumbnail__image::before {
       @include background-image(67.76deg, $color-yellow, transparent 61.11%);
 
       opacity: 0.75;
@@ -35,7 +42,7 @@ div.bio-card {
 
     @each $name, $color in $colors {
       &.#{$name} {
-        div.card-thumbnail__image::before {
+        .card-thumbnail__image::before {
           @include background-image(67.76deg, #{$color}, transparent 61.11%);
 
           opacity: 0.75;
@@ -156,7 +163,7 @@ div.bio-card {
 }
 
 [dir='rtl'] {
-  div.bio-card {
+  .bio-card {
     &:hover {
 
       // color map
@@ -166,13 +173,13 @@ div.bio-card {
         @include transform(translate(0, 0) rotate(180deg));
       }
 
-      div.card-thumbnail__image::before {
+      .card-thumbnail__image::before {
         @include background-image(297deg, $color-yellow, transparent 61.11%);
       }
 
       @each $name, $color in $colors {
         &.#{$name} {
-          div.card-thumbnail__image::before {
+          .card-thumbnail__image::before {
             @include background-image(297deg, #{$color}, transparent 61.11%);
           }
         }

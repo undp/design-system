@@ -1,3 +1,6 @@
 import React from 'react';
+import './icons.scss';
 
-export const Icons = ({ src, alt }) => <img src={src} alt={alt} />;
+export function Icons({ src, alt }) {
+  return <img src={src} alt={alt} />;
+}
