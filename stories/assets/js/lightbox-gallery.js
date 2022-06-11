@@ -9,8 +9,7 @@ export function lightboxGallery() {
   });
 
   const $windowWidth = $(window).width();
-  const breakpoint = window.UNDP.breakpoints.MEDIUM || 768;
-  if ($windowWidth <= breakpoint) {
+  if ($windowWidth <= 768) {
     // Close lightbox on clicking outside on Mobile Breakpoint.
     $(document).on('click', (e) => {
       // Check if click triggered on parent selectors.

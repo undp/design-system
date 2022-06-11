@@ -129,7 +129,7 @@ export function parallaxlines() {
     // calculates the window width
     const windowWidth = $(window).width();
     $('.parallax .swiper-wrapper').each(function () {
-      if (windowWidth > window.UNDP.breakpoints.SMALL) {
+      if (windowWidth > 767) {
         $('.parallax').removeClass('lines-background');
         if ($(this).isInViewport()) {
           if (stickyTop < diff) {
