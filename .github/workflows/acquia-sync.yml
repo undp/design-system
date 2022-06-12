@@ -36,8 +36,10 @@ jobs:
           # Title of the work item
           title: Integrate Design System release ${{ github.event.release.name }} 
           # Value to put into the System.Description field
-          description: ${{ github.event.release.body }} ${{ github.event.release.html_url }}
+          description: |
+            ${{ github.event.release.html_url }}
+            ${{ github.event.release.body }} 
           # Area Path for the work item e.g. "MyProject\MyArea"
-          areaPath: "Acquia\UNDP"
+          areaPath: "Acquia\\UNDP"
           # Iteration Path for the work item e.g. "MyProject\Iteration 1"
           iterationPath: "Acquia"
