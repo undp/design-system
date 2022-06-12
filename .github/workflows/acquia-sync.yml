@@ -1,0 +1,45 @@
+name: Drupal implementation sync ticket
+
+# Controls when the workflow will run
+on:
+  release: 
+    types: [released]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch: 
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # - uses: actions/checkout@v3
+
+      - name: Create AzDO Work Item
+        # You may pin to the exact commit or the version.
+        # uses: colindembovsky/az-create-work-item@71be05024ada445a31f44288b011a223965e3d8f
+        uses: colindembovsky/az-create-work-item@v1.0.2
+        with:
+          # Azure DevOps Token - must have "WorkItems (Read and Write)" permission
+          token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
+          # Name of the Azure DevOps organization - e.g. colinsalmcorner for dev.azure.com/colinsalmcorner
+          orgName: undp-online-digital
+          # Name of the team project to create the work item in
+          project: Acquia
+          # The work item type name - e.g. User Story
+          type: User Story
+          # Title of the work item
+          title: Integrate Design System release ${{ github.event.release.name }} 
+          # Value to put into the System.Description field
+          description: |
+            ${{ github.event.release.html_url }}
+            ${{ github.event.release.body }} 
+          # Area Path for the work item e.g. "MyProject\MyArea"
+          areaPath: "Acquia\\UNDP"
+          # Iteration Path for the work item e.g. "MyProject\Iteration 1"
+          iterationPath: "Acquia"
