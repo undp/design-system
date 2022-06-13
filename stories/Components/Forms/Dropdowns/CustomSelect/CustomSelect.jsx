@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import './custom-select.scss';
+import '../../../../assets/scss/_typography.scss';
 import { select } from '../../../../assets/js/select';
 
-const CustomSelect = ({ text }) => {
+function CustomSelect({ text }) {
   useEffect(() => {
     select();
   }, []);
@@ -36,6 +37,6 @@ const CustomSelect = ({ text }) => {
       </ul>
     </div>
   );
-};
+}
 
 export default CustomSelect;
