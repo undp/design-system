@@ -11,7 +11,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/Forms/Dropdown/Custom select" />
+<Meta title="Components/Forms/Dropdown/Select" component={CustomSelect} />
 
 # Custom Select
 The custom select dropdown allows the user to select one.
@@ -43,7 +43,7 @@ The Custom dropdown boxes either have auto or fixed height.
 - Open and Fixed Height:
 
 <Canvas>
-<Story name="Custom Select">
+<Story name="Select" >
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <CustomSelect text={caption}></CustomSelect>;

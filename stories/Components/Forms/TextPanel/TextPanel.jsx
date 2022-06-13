@@ -1,10 +1,11 @@
 import React from 'react';
 import './text-panel.scss';
+import '../../../assets/scss/_grid.scss';
 import { Inputcomponent } from '../InputFields/InputFields';
 import { Image } from '../../../Atom/Images/Image/Image';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
-export const FormTypes = ({
+export function FormTypes({
   element,
   typeemail,
   typename,
@@ -22,11 +23,11 @@ export const FormTypes = ({
   anchorTag2,
   para,
   ...args
-}) => (
-  
-  <div className="grid-container form-wrapper">
-    <form>
-      {args.variant === 'text panel and form' && (
+}) {
+  return (
+    <div className="grid-container form-wrapper">
+      <form>
+        {args.variant === 'text panel and form' && (
         <div className="grid-x grid-margin-x text-panel">
           <div className="medium-5 cell large-offset-1">
             <Heading type="2" label={anchorTag} />
@@ -52,14 +53,14 @@ export const FormTypes = ({
             </button>
           </div>
         </div>
-      )}
-      {args.variant === 'form with photo' && (
+        )}
+        {args.variant === 'form with photo' && (
         <div className="grid-x form-photo">
           <div className="medium-5 cell">
             <Image />
           </div>
           <div className="medium-7 cell form-bg stacked-form">
-            
+
             <div className="grid-x">
               <div className="cell medium-8 medium-offset-2">
                 <Heading type="2" label={anchorTag} />
@@ -85,8 +86,8 @@ export const FormTypes = ({
             </div>
           </div>
         </div>
-      )}
-      {args.variant === 'wide form' && (
+        )}
+        {args.variant === 'wide form' && (
         <div className="grid-x grid-margin-x wide-form">
           <div className="large-8 cell">
             <Heading type="2" label={anchorTag2} />
@@ -127,8 +128,8 @@ export const FormTypes = ({
             </div>
           </div>
         </div>
-      )}
-      {args.variant === 'stacked form' && (
+        )}
+        {args.variant === 'stacked form' && (
         <div className="grid-x grid-margin-x grid-margin-y stacked-form">
           <div className="large-4 medium-6 cell">
             <Heading type="2" label={anchorTag} />
@@ -152,7 +153,8 @@ export const FormTypes = ({
             </button>
           </div>
         </div>
-      )}
-    </form>
-  </div>
-);
+        )}
+      </form>
+    </div>
+  );
+}

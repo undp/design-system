@@ -1,40 +1,43 @@
-import React, { useEffect } from "react";
-import "./multi-select.scss";
-import { multiSelect } from "../../../../assets/js/multi-select";
-import { Checkbox } from "../../Checkbox/Checkbox";
-import { Radio } from "../../Radio/Radio";
+import React, { useEffect } from 'react';
+import './multi-select.scss';
+import { multiSelect } from '../../../../assets/js/multi-select';
+import { Checkbox } from '../../Checkbox/Checkbox';
+import { Radio } from '../../Radio/Radio';
 
-const cls = (...classes) =>
-  classes.filter(Boolean).length > 0 ? classes.filter(Boolean).join(" ") : null;
+const cls = (...classes) => (classes.filter(Boolean).length > 0 ? classes.filter(Boolean).join(' ') : null);
 
-const SelectTag = ({ text, eleId, locale, ...args }) => {
+function SelectTag({
+  text, eleId, locale, ...args
+}) {
   useEffect(() => {
     multiSelect(locale);
   }, [locale]);
 
-  let ElementTag = (args.variant === "Radio") ? Radio : Checkbox;
+  let ElementTag = (args.variant === 'Radio') ? Radio : Checkbox;
 
   return (
     <div className="multi-select" data-multi-select="">
       <button
         aria-label="Region"
         aria-expanded="false"
-        data-id={`filter${eleId}`}>
+        data-id={`filter${eleId}`}
+      >
         {text}
       </button>
       <ul
-        className={cls(`${args.Height === "Fix height" ? "fix-height" : ""}`)}
+        className={cls(`${args.Height === 'Fix height' ? 'fix-height' : ''}`)}
         data-type="region"
         role="listbox"
         aria-multiselectable="true"
         aria-hidden="true"
-        aria-modal="true">
+        aria-modal="true"
+      >
         <li role="option">
           <ElementTag
             label={`${text}`}
             value="category1"
             id={`category1${eleId}`}
-            label_pos='before'
+            label_pos="before"
             name={`filter${eleId}`}
           />
         </li>
@@ -43,7 +46,7 @@ const SelectTag = ({ text, eleId, locale, ...args }) => {
             label={`${text}`}
             value="category2"
             id={`category2${eleId}`}
-            label_pos='before'
+            label_pos="before"
             name={`filter${eleId}`}
           />
         </li>
@@ -52,7 +55,7 @@ const SelectTag = ({ text, eleId, locale, ...args }) => {
             label={`${text}`}
             value="category3"
             id={`category3${eleId}`}
-            label_pos='before'
+            label_pos="before"
             name={`filter${eleId}`}
           />
         </li>
@@ -61,7 +64,7 @@ const SelectTag = ({ text, eleId, locale, ...args }) => {
             label={`${text}`}
             value="category4"
             id={`category4${eleId}`}
-            label_pos='before'
+            label_pos="before"
             name={`filter${eleId}`}
           />
         </li>
@@ -70,7 +73,7 @@ const SelectTag = ({ text, eleId, locale, ...args }) => {
             label={`${text}`}
             value="category5"
             id={`category5${eleId}`}
-            label_pos='before'
+            label_pos="before"
             name={`filter${eleId}`}
           />
         </li>
@@ -82,7 +85,7 @@ const SelectTag = ({ text, eleId, locale, ...args }) => {
                 label={`${text}`}
                 value="subcategory1"
                 id={`subcategory1${eleId}`}
-                label_pos='before'
+                label_pos="before"
                 name={`filter${eleId}`}
               />
             </li>
@@ -91,7 +94,7 @@ const SelectTag = ({ text, eleId, locale, ...args }) => {
                 label={`${text}`}
                 value="subcategory2"
                 id={`subcategory2${eleId}`}
-                label_pos='before'
+                label_pos="before"
                 name={`filter${eleId}`}
               />
             </li>
@@ -100,6 +103,6 @@ const SelectTag = ({ text, eleId, locale, ...args }) => {
       </ul>
     </div>
   );
-};
+}
 
 export default SelectTag;
