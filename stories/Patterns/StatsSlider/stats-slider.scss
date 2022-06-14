@@ -7,7 +7,7 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
 
 /* stats-card-grid start */
 .stats-card-slider {
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   @include devicebreak(medium) {
     .swiper {
@@ -50,6 +50,9 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
 
   .stats-card-parallax {
     margin-bottom: 2.625rem;
+    min-width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
 
     @include devicebreak(medium) {
       display: flex;
