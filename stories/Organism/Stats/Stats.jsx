@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { StatsPanel } from '../../Molecules/Blocks/StatsPanel/StatsPanel';
 import { statsHover } from '../../assets/js/stats';
 import './stats.scss';
+import '../../assets/scss/_grid.scss';
 
-export const Stats = ({ data, imageback }) => {
+export function Stats({ data, imageback }) {
   useEffect(() => {
     statsHover();
   }, []);
@@ -16,4 +17,4 @@ export const Stats = ({ data, imageback }) => {
       ))}
     </div>
   );
-};
+}

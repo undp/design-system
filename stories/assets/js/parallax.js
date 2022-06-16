@@ -2,9 +2,6 @@ import './viewport';
 
 // parallaxEffect
 export const parallaxEffect = (trigger, selector, start, end, direction, device, percent) => {
-
-  'use strict';
-
   // Register GSAP required plugins and effects.
   gsap.registerPlugin(ScrollTrigger, SlowMo);
 
@@ -21,7 +18,7 @@ export const parallaxEffect = (trigger, selector, start, end, direction, device,
 
   // RTL Fix for Storybook.
   let rtl = document.dir || 'ltr';
-  if (window.location.href.indexOf("direction=rtl") > -1) {
+  if (window.location.href.indexOf('direction=rtl') > -1) {
     rtl = 'rtl';
   }
 
@@ -29,21 +26,21 @@ export const parallaxEffect = (trigger, selector, start, end, direction, device,
 
   // Parallax Init Function
   function initParallax() {
-
     parallaxContainer.forEach((container, index) => {
-      // Incase of swiper slides in horizontal we wrap slides in group of 3.
       if (direction == 'horizontal') {
-        const swiperSlides = container.querySelectorAll('.swiper-slide');
         // Define empty array to use array.push().
         const holder = [];
+        const { length } = $('.swiper-slide');
         if (container.querySelector('.swiper-wrapper') != undefined) {
-          $(swiperSlides).each(function (index, element) {
-            holder.push(element);
-            if (holder.length === 3) {
-              $(holder).wrapAll('<div class="stats-card-parallax parallax-slide" />');
-              holder.length  = 0;
-            }
-          });
+          if ($(selector).find(trigger).length < 1) {
+            $('.swiper-slide').each((index, element) => {
+              holder.push(element);
+              if (index === Math.floor((length - 1) / 2) || index === length - 1) {
+                $(holder).wrapAll('<div class="stats-card-parallax parallax-slide" />');
+                holder.length = 0;
+              }
+            });
+          }
           // Set the new selector and trigger for wrapped items.
           selector = '.parallax-slide';
           container = container.querySelector('.swiper-wrapper');
@@ -72,51 +69,46 @@ export const parallaxEffect = (trigger, selector, start, end, direction, device,
           }).to(element, {
             xPercent: 10 * (odd ? 1 : -1), duration: 1, ease: 'SlowMo',
           });
+        } else if (percent == 'percent') {
+          timeline.from(element, {
+            yPercent: 10 * (odd ? 1 : -1), duration: 1, ease: 'SlowMo',
+          }).to(element, {
+            yPercent: 10 * (odd ? -1 : 1), duration: 1, ease: 'SlowMo',
+          });
         } else {
-          if (percent == 'percent') {
-            timeline.from(element, {
-              yPercent: 10 * (odd ? 1 : -1), duration: 1, ease: 'SlowMo',
-            }).to(element, {
-              yPercent: 10 * (odd ? -1 : 1), duration: 1, ease: 'SlowMo',
-            });
-          } else {
-            timeline.from(element, {
-              y: 85 * (odd ? -1 : 1), duration: 1, ease: 'SlowMo',
-            }).to(element, {
-              y: 85 * (odd ? 1 : -1), duration: 1, ease: 'SlowMo',
-            });
-          }
+          timeline.from(element, {
+            y: 85 * (odd ? -1 : 1), duration: 1, ease: 'SlowMo',
+          }).to(element, {
+            y: 85 * (odd ? 1 : -1), duration: 1, ease: 'SlowMo',
+          });
         }
       });
-
     });
-
   }
 
   // ScrollTrigger Internal MatchMedia Function.
   // This is useful as we do not need to use any window resize event observer.
   ScrollTrigger.matchMedia({
-    //ScrollTrigger will match the below mediaQueries and incase if there is no match then it will kill itself.
+    // ScrollTrigger will match the below mediaQueries and incase if there is no match then it will kill itself.
     // Desktop.
-    '(min-width: 768px)': function() {
+    '(min-width: 768px)': function () {
       if (device == 'desktop') {
         initParallax();
       }
     },
     // Mobile
-    '(max-width: 768px)': function() {
+    '(max-width: 768px)': function () {
       // Kill on mobile otherwise.
     },
     // Will run both on Desktop and Mobile.
-    "all": function() {
+    all() {
       // We need to explicitly pass the `device` argument for this to work.
       if (device == 'all') {
         initParallax();
       }
-    }
+    },
   });
-
-}
+};
 
 // parallaxlines Function.
 export function parallaxlines() {
@@ -129,7 +121,7 @@ export function parallaxlines() {
     // calculates the window width
     const windowWidth = $(window).width();
     $('.parallax .swiper-wrapper').each(function () {
-      if (windowWidth > window.UNDP.breakpoints.SMALL) {
+      if (windowWidth > 767) {
         $('.parallax').removeClass('lines-background');
         if ($(this).isInViewport()) {
           if (stickyTop < diff) {

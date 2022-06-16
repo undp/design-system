@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
-import pnud from '../../../../assets/images/undp-logo-blue.svg';
+import undpLogoSvg from '../../../../assets/images/undp-logo-blue.svg';
 import { getMegaMenu } from '../../../../assets/js/navigation-data';
 import { navigationInitialize } from '../../../../assets/js/navigation';
-import { desktopView } from '../../../../assets/js/undp';
+// import { desktopView } from '../../../../assets/js/undp';
 import { Logo } from '../../../../Atom/Logo/Logo';
 import { Languageswitcher } from '../../../UIcomponents/LanguageSwitcher/LanguageSwitcher';
 import { Menu } from '../../Menu/Menu';
 import MegaMenu from '../MegaMenu/MegaMenu';
 import MobileNav from '../MobileNav/MobileNav';
 import './global-header.scss';
-import '../../../../assets/js/lazyload.js';
+import '../../../../assets/scss/_grid.scss';
+import '../../../../assets/js/lazyload';
 
-const GlobalHeader = ({
+function GlobalHeader({
   text,
   languageswitcherData,
   navigationData,
@@ -22,7 +23,7 @@ const GlobalHeader = ({
   locationData,
   langSelect,
   backcaption,
-}) => {
+}) {
   useEffect(() => {
     getMegaMenu(locale);
     navigationInitialize(locale);
@@ -47,11 +48,11 @@ const GlobalHeader = ({
             </div>
             <div className="cell large-8 small-8 mid-nav">
               <nav className="menu" role="navigation" aria-label="navigation">
-                <Menu data={leftNavigationData} isGHeader={true} />
-                <a href="https://develop.design-system.pages.dev/iframe?id=components-navigation-components-main-navigation-country-header--country-header&globals=locale:english&args=&viewMode=story" className="logo">
-                  <Logo src={pnud} alt="UNDP Logo" />
+                <Menu data={leftNavigationData} isGHeader />
+                <a href="#" className="logo">
+                  <Logo src={undpLogoSvg} alt="UNDP Logo" />
                 </a>
-                <Menu data={rightNavigationData} isGHeader={true}/>
+                <Menu data={rightNavigationData} isGHeader />
               </nav>
             </div>
             <div className="cell large-2 small-2 top-right">
@@ -74,6 +75,6 @@ const GlobalHeader = ({
       </div>
     </header>
   );
-};
+}
 
 export default GlobalHeader;

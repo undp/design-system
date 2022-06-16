@@ -8,10 +8,10 @@ export const hover_color_options = {
   azure: 'azure',
 };
 
-export const Cardthumb = ({ image, ...args }) => {
+export function Cardthumb({ image, ...args }) {
   return (
     <div className={['card-thumbnail__image'].join(' ')}>
       <img src={image} alt={image} />
     </div>
   );
-};
+}

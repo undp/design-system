@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import './input-fields.scss';
+import '../../../assets/scss/_typography.scss';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
-export const Inputcomponent = ({
+export function Inputcomponent({
   type, element, placeholder, labelText, errorText, helpText, State, id,
-}) => {
+}) {
   const InputTag = `${element}`;
   let state;
   const states = ['Focus', 'Error', 'Disabled'];
@@ -29,10 +30,10 @@ export const Inputcomponent = ({
         placeholder={placeholder}
         name={type}
         id={id}
-        {...(labelText ? '' : {'aria-label': placeholder})}
+        {...(labelText ? '' : { 'aria-label': placeholder })}
       />
       {helpText && <p className="help">{ helpText }</p>}
       {(State == 'Error') && <p className="error">{ errorText }</p>}
     </>
   );
-};
+}

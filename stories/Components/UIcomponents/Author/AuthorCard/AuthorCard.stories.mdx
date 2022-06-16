@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Authorcard } from './AuthorCard';
-import user from '../../../../assets/images/author.png';
+import authorImage from '../../../../assets/images/author.png';
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -68,7 +68,7 @@ There is a single state for the Author card.
 <Story name="Author card">
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
-    return <Authorcard image= {user} alt= 'Headshot of XYZ' data={caption.authordata} para={caption.paragraph} button={caption.button} link='#' width="medium-12"></Authorcard>;
+    return <Authorcard authorImage={authorImage} alt='Headshot of XYZ' data={caption.authordata} para={caption.paragraph} button={caption.button} link='#' width="medium-12"></Authorcard>;
   }}
 </Story>
 </Canvas>

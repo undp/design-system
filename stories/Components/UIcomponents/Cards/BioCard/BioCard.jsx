@@ -4,6 +4,7 @@ import '../../../../assets/scss/_grid.scss';
 import { modal } from '../../../../assets/js/modal';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
+import { Cardthumb } from '../../../../Atom/Cards/CardThumbnail/CardThumbnail';
 import { Modal } from '../../Modal/Modal';
 import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
 
@@ -34,7 +35,7 @@ export const hover_color_options = {
   blue: 'blue',
 };
 
-export const BioCard = ({
+export function BioCard({
   contenttile,
   contentname,
   descriptionText,
@@ -47,7 +48,7 @@ export const BioCard = ({
   large,
   medium,
   ...args
-}) => {
+}) {
   useEffect(() => {
     modal();
   }, []);
@@ -57,50 +58,48 @@ export const BioCard = ({
 
   return (
     <>
-        {args.size === 'large' && (
-          <div className={cls('grid-x grid-margin-x')}>
-            <div className={cls('cell bio-card', `${size_variant}`, `${hovercolor_variant}`)}>
-              <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
-                <div className='grid-x'>
-                  <article className="bio-card__content medium-7">
-                    <div data-viewport="true" className="bio-card__description">
-                      <Heading type="5" label={contentname} />
-                      <P label={descriptionText} />
-                    </div>
-                    <Ctalink label={button} button_option="span"/>
-                  </article>
-                  <div className="card-thumbnail__image medium-5">
-                    <img src={image} alt={image} />
-                  </div>
+      {args.size === 'large' && (
+      <div className={cls('grid-x grid-margin-x')}>
+        <div className={cls('cell bio-card', `${size_variant}`, `${hovercolor_variant}`)}>
+          <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
+            <div className="grid-x">
+              <article className="bio-card__content medium-7">
+                <div data-viewport="true" className="bio-card__description">
+                  <Heading type="5" label={contentname} />
+                  <P label={descriptionText} />
                 </div>
-              </a>
+                <Ctalink label={button} button_option="span" />
+              </article>
+              <div className="medium-5">
+                <Cardthumb image={image} />
+              </div>
             </div>
-          </div>
-        )}
+          </a>
+        </div>
+      </div>
+      )}
 
-          {args.size === 'medium' && (
-            <div className={cls('grid-x')}>
-              <div className={cls('cell bio-card medium' , `${size_variant}`, `${hovercolor_variant}`)}> 
-               <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
-                <div className="card-thumbnail__image">
-                  <img src={image} alt={image} />
-                </div>
-                <article className="bio-card__content">
-                  <div data-viewport="true" className="bio-card__description">
-                    <Heading type="5" label={contentname} />
-                    <P label={descriptionText} />
-                  </div>
-                  <Ctalink label={button} button_option="span"/>
-                </article>
-              </a>
-            </div>
-          </div>
-          )}
-        
+      {args.size === 'medium' && (
+      <div className={cls('grid-x')}>
+        <div className={cls('cell bio-card medium', `${size_variant}`, `${hovercolor_variant}`)}>
+          <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
+            <Cardthumb image={image} />
+            <article className="bio-card__content">
+              <div data-viewport="true" className="bio-card__description">
+                <Heading type="5" label={contentname} />
+                <P label={descriptionText} />
+              </div>
+              <Ctalink label={button} button_option="span" />
+            </article>
+          </a>
+        </div>
+      </div>
+      )}
+
       <Modal id="bioCard" content={biodata(image2, contentname, descriptionText, descriptionText2)} />
     </>
   );
-};
+}
 
 BioCard.defaultProps = {
   size: 'medium',

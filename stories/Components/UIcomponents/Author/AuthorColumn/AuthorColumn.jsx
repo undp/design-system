@@ -4,9 +4,9 @@ import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { Authorimg } from '../../../../Atom/Images/AuthorImage/AuthorImages';
 
-export const Author = ({
-  data, image, alt, Image, Number, Link,
-}) => {
+export function Author({
+  data, authorImage, alt, Image, Number, Link,
+}) {
   let size;
   let decNumber;
   switch (Number) {
@@ -41,7 +41,7 @@ export const Author = ({
               {Link == 'False' ? (
                 <div className="author-box" key={index}>
                   {Image !== 'False' && decNumber <= 3 ? (
-                    <Authorimg image={image} alt={item.Authorlabel} variant="Small" />
+                    <Authorimg image={authorImage} alt={item.Authorlabel} variant="Small" />
                   ) : (<></>)}
                   <div className="author-label">
                     <Heading type="6" label={item.Authorlabel} />
@@ -52,7 +52,7 @@ export const Author = ({
                 <div className="author-box" key={index}>
                   <a href="#">
                     {Image !== 'False' && decNumber <= 3 ? (
-                      <Authorimg image={image} alt={item.Authorlabel} variant="Small" />
+                      <Authorimg image={authorImage} alt={item.Authorlabel} variant="Small" />
                     ) : (<></>)}
                     <div className="author-label">
                       <Heading type="6" label={item.Authorlabel} />
@@ -71,7 +71,7 @@ export const Author = ({
               {Link == 'False' ? (
                 <div className={['author-box', 'cell', `${size}`].join(' ')} key={index}>
                   {Image !== 'False' && decNumber <= 3 ? (
-                    <Authorimg image={image} alt={item.Authorlabel} variant="Small" />
+                    <Authorimg image={authorImage} alt={item.Authorlabel} variant="Small" />
                   ) : (<></>)}
                   <div className="author-label">
                     <Heading type="6" label={item.Authorlabel} />
@@ -82,7 +82,7 @@ export const Author = ({
                 <div className={['author-box', 'cell', `${size}`].join(' ')} key={index}>
                   <a href="#">
                     {Image !== 'False' && decNumber <= 3 ? (
-                      <Authorimg image={image} alt={item.Authorlabel} variant="Small" />
+                      <Authorimg image={authorImage} alt={item.Authorlabel} variant="Small" />
                     ) : (<></>)}
                     <div className="author-label">
                       <Heading type="6" label={item.Authorlabel} />
@@ -97,4 +97,4 @@ export const Author = ({
       )}
     </>
   );
-};
+}
