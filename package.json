@@ -51,7 +51,7 @@
     "eslint-plugin-react": "^7.26.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-spellcheck": "0.0.19",
-    "eslint-plugin-storybook": "^0.5.12",
+    "eslint-plugin-storybook": "^0.5.13",
     "extract-loader": "^5.1.0",
     "glob": "^8.0.1",
     "html-entities": "^2.3.2",
