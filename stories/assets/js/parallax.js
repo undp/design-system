@@ -30,10 +30,11 @@ export const parallaxEffect = (trigger, selector, start, end, direction, device,
       if (direction == 'horizontal') {
         // Define empty array to use array.push().
         const holder = [];
-        const { length } = $('.swiper-slide');
+        const $container = $(container);
+        const { length } = $container.find('.swiper-slide');
         if (container.querySelector('.swiper-wrapper') != undefined) {
-          if ($(selector).find(trigger).length < 1) {
-            $('.swiper-slide').each((index, element) => {
+          if ($container.find(selector).find(trigger).length < 1) {
+            $container.find('.swiper-slide').each((index, element) => {
               holder.push(element);
               if (index === Math.floor((length - 1) / 2) || index === length - 1) {
                 $(holder).wrapAll('<div class="stats-card-parallax parallax-slide" />');
