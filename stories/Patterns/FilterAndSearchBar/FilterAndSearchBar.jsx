@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import toggleFilter from '../../assets/js/filter-search-bar';
 import SelectTag from '../../Components/Forms/Dropdowns/Multiselect/MultiSelect';
 import './filter-and-search-bar.scss';
+import '../../Components/UIcomponents/Buttons/Chips/chips.scss';
 import { SearchExpand } from '../../Components/Forms/SearchExpand/SearchExpand';
 
 const FilterAndSearchBar = ({
