@@ -5,6 +5,7 @@ import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
 import { lightboxGallery } from '../../../../assets/js/lightbox-gallery';
 import './lightbox.scss';
 import './lightbox-gallery.scss';
+import '../../../../Utilities/FrostedImage/frosted-background.scss';
 import { Imagecaption } from '../../../../Molecules/ImageCaption/ImageCaption';
 
 const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
