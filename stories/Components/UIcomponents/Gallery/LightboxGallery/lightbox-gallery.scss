@@ -1,5 +1,6 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/_grid';
 
 // lightbox-gallery start
 .lightbox-gallery {
@@ -80,14 +81,16 @@
 
           background-image: none;
           display: block;
-          line-height: 0;
+        }
+
+        figure {
+          margin: 0;
         }
 
         &:hover,
         &:focus,
         &:focus-within {
           outline: 0;
-
           .image {
             @include devicebreak(xlarge) {
               &::before {
@@ -108,12 +111,12 @@
 
           .image__description {
             @include transition(all 0.3s ease-in);
-
             opacity: 1;
           }
         }
 
         .image {
+          line-height: 0;
           @include devicebreak(medium) {
             overflow: hidden;
           }
@@ -124,8 +127,9 @@
 
           img {
             padding-bottom: 0;
-
+            max-width: 100%;
             @include devicebreak(large) {
+              max-width: none;
               min-height: 200px;
               object-fit: cover;
             }
