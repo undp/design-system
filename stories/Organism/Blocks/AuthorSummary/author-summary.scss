@@ -80,6 +80,8 @@
 
     h2 {
       margin-bottom: $spacing-03;
+      overflow-wrap: break-word;
+      hyphens: manual;
     }
   }
 }
