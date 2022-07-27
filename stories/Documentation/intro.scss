@@ -1,0 +1,51 @@
+@import '../assets/scss/mixins';
+@import '../assets/scss/breakpoints';
+@import '../assets/scss/variables';
+@import '../assets/scss/_grid';
+
+.sbdocs-wrapper {
+  padding: 20px 8px;
+  .sbdocs-content {
+    max-width: none;
+  }
+  video {
+    width: 100%;
+  }
+  .cell {
+    margin-bottom: $spacing-06;
+  }
+  hr {
+    margin-top: $spacing-09;
+    margin-bottom: $spacing-09;
+  }
+  .intro {
+    // justify-content: center;
+    .cell {
+      display: flex;
+      align-items: center;
+      min-height: 400px;
+      // margin-left: $spacing-06;
+      // margin-right: $spacing-06;
+      &.figma {
+        background: $color-black;
+        a {
+          color: $color-white;
+        }
+      }
+      &.github {
+        background: $color-gray-300;
+      }
+      &.figma, &.github {
+        a {
+          background: none;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+        }
+        img {
+          height: 100px;
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,77 @@
-import { Meta, Source } from '@storybook/addon-docs';
+import { Meta, Story } from '@storybook/addon-docs';
+import { Heading } from '../Atom/Typography/Heading/Heading';
+import './intro.scss';
+import { FeaturedContentCard } from "../Components/UIcomponents/Cards/FeaturedCard/FeaturedContentCard";
+import githubLogo from '../assets/images/Github-logo.svg';
+import figmaLogo from '../assets/images/Figma-logo.svg';
+const data = [
+  {
+    contenttile: "01",
+    contentname:
+      "Getting Started",
+    descriptionText:
+      "Everything you need to get up and running with UNDP’s design system",
+    button: "READ MORE",
+    type: "color",
+    scale: "medium",
+    url: "?path=/story/getting-started-how-to-use-our-design-system--page"
+  },
+  {
+    contenttile: "02",
+    contentname:
+      "Foundation",
+    descriptionText:
+      "Color, typography, layout, and other foundational elements of the system.",
+    button: "READ MORE",
+    type: "color",
+    scale: "medium",
+    url: "?path=/story/foundation"
+  },
+  {
+    contenttile: "03",
+    contentname:
+      "Components",
+    descriptionText:
+      "The building blocks of the design system. Their reuse creates consistency across applications",
+    button: "READ MORE",
+    type: "color",
+    scale: "medium",
+    url: "?path=/story/components"
+  },
+  {
+    contenttile: "04",
+    contentname:
+      "Patterns",
+    descriptionText:
+      "Reusable combinations of components that address common  objectives",
+    button: "READ MORE",
+    type: "color",
+    scale: "medium",
+    url: "?path=/story/patterns"
+  },
+  {
+    contenttile: "05",
+    contentname:
+      "Utilities",
+    descriptionText:
+      "Helpers to add specific treatment to your components",
+    button: "READ MORE",
+    type: "color",
+    scale: "medium",
+    url: "?path=/story/utilities"
+  },
+  {
+    contenttile: "06",
+    contentname:
+      "Templates",
+    descriptionText:
+      "The complete page templates used for UNDP’s global and country websites",
+    button: "READ MORE",
+    type: "color",
+    scale: "medium",
+    url: "/?path=/story/templates"
+  },
+];
 
 <!---
 * Documentation for Design System Introduction
@@ -11,37 +84,46 @@ import { Meta, Source } from '@storybook/addon-docs';
 
 <Meta
 	title="Getting started/Intro"
-	parameters={{
+  parameters={{
     viewMode: "docs",
     previewTabs: {
-      canvas: { hidden: true }
+      canvas: { hidden: true },
+      addons: {hidden: true }
     }
   }}/>
 
-# Introduction
-
-The purpose of this project is to create unified user interfaces for UNDP by the designer and developers.
-
-These projects will have a consistent look and feel and are accessible by just following the guidelines in the documentation.
-
-By unifying design elements into reusable components, the development will simplify and accelerate the development of these digital products.
-
-The Guide is a living document created to meet the needs of UNDP's front-end developers and designers. If there is a Component or Pattern that you need, or you have any other feedback, question or comment please contact us.
-
-### Structure
-
-UNDP’s design system uses an atomic design approach. Within the seven thematic groups, each group is further organized by atomic level.
-
-![Atomic design](images/atomic.png)
-
-### Codebase
-
-For developers looking to build with UNDP’s design system, it will soon be available as a StorybookJS package. All front-end code (HTML/CSS/JS) will be architected in a modular and scalable way.
-
-The codebase can be accessed at GitHub https://github.com/undp/design-system
-
-Path location of CSS for Components part of this design system is: https://github.com/undp/design-system/tree/master/docs/css
-
-Path location of JS for Components part of this design system is: https://github.com/undp/design-system/tree/master/docs/jss
-
-#### UNDP Design System  |  Version 1.0.0
+<Story name="Intro">
+  <div className="grid-container">
+    <div className="grid-x grid-margin-x intro">
+      <div className="cell">
+        <video muted loop autoPlay playsInline>
+          <source src="https://player.vimeo.com/progressive_redirect/playback/733755680/rendition/1080p/file.mp4?loc=external&signature=9cb256c79bb8c1e0d65fa7a2436ac01a7055e33b4ee45d9fe6d14ccbf5d9abb0" type="video/mp4"></source>
+        </video>
+      </div>
+      <div className="medium-6 cell">
+        <Heading type="1" label="UNDP Design System"/>
+      </div>
+      <div className="medium-6 cell">
+        <p>Here you can find our design guidelines, component documentation, and resources for building apps with UNDP's design system. It is currently a product led and maintained by UNDP's Digital Communication Studio.</p>
+      </div>
+      <div className="medium-6 cell figma">
+        <a href="https://www.figma.com/community/file/1128400672549109458" target="_blank">
+          <img src={figmaLogo} alt="" />
+          <p>View Figma file</p>
+        </a>
+      </div>
+      <div className="medium-6 cell github">
+        <a href="https://github.com/undp/design-system" target="_blank">
+          <img src={githubLogo} alt="" />
+          <p>View Github repository</p>
+        </a>
+      </div>
+    </div>
+    <hr/>
+    <Heading type="2" label="What's inside"/>
+    <FeaturedContentCard data={data} />
+    <hr/>
+    <Heading type="2" label="Contributing"/>
+    <p>lorem ipsum</p>
+  </div>
+</Story>
