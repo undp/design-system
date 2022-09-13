@@ -1,7 +1,7 @@
 @import '../assets/scss/mixins';
 @import '../assets/scss/breakpoints';
 @import '../assets/scss/variables';
-@import '../assets/scss/_grid';
+@import '../assets/scss/grid';
 
 .sbdocs-wrapper {
   padding: 20px 8px;
@@ -18,12 +18,17 @@
     margin-top: $spacing-09;
     margin-bottom: $spacing-09;
   }
+  @include devicebreak(large) {
+    h1 {
+      font-size: 55px;
+    }
+  }
   .intro {
     // justify-content: center;
     .cell {
       display: flex;
       align-items: center;
-      min-height: 400px;
+      min-height: 300px;
       // margin-left: $spacing-06;
       // margin-right: $spacing-06;
       &.figma {
@@ -38,9 +43,15 @@
       &.figma, &.github {
         a {
           background: none;
-          margin-left: auto;
-          margin-right: auto;
+          width: 100%;
           text-align: center;
+          @include devicebreak(large) {
+            // height: 400px;
+            // display: flex;
+            // align-items: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+          }
         }
         img {
           height: 100px;
