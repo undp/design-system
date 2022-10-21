@@ -30,7 +30,7 @@
     "@storybook/builder-webpack5": "^6.5.9",
     "@storybook/cli": "^6.5.9",
     "@storybook/manager-webpack5": "^6.5.12",
-    "@storybook/react": "^6.5.9",
+    "@storybook/react": "^6.5.12",
     "@whitespace/storybook-addon-html": "^5.0.0",
     "@wordpress/babel-preset-default": "^7.3.0",
     "alter-css-url-loader": "^1.1.3",
