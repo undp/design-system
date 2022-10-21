@@ -85,8 +85,8 @@
   "dependencies": {
     "fitty": "^2.3.6",
     "gsap": "^3.11.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "swiper": "^8.4.4"
   },
   "resolutions": {
