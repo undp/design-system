@@ -8,7 +8,7 @@ import chevronLeftWhite from '../icons/chevron-left-circle.svg';
 // Swiper Slider
 export const swiper = (selector, arrowsSelector, options) => {
   // Get Swiper Selector.
-  let $swiperSelector = $(selector);
+  let $swiperSelector = jQuery(selector);
   let dragsize = 'auto';
 
   // data-swiper-device="mobile" // will work only on mobile
@@ -33,17 +33,17 @@ export const swiper = (selector, arrowsSelector, options) => {
   // Incase of multiple swiper sliders.
   $swiperSelector.each((index, element) => {
     // Add class based on index incase of multiple sliders.
-    $(element).addClass(`swiper-slider-${index}`);
+    jQuery(element).addClass(`swiper-slider-${index}`);
 
     // Default options
     let defaults = {
       // Let us init (element) after loading custom configs.
       init: false,
       // Optional parameters
-      speed: $(element).data('swiper-speed') ? $(element).data('swiper-speed') : 500,
-      slidesPerView: $(element).data('swiper-slides-view-mobile') ? $(element).data('swiper-slides-view-mobile') : 1,
-      spaceBetween: $(element).data('swiper-gutterspace') ? $(element).data('swiper-gutterspace') : 20,
-      loop: $(element).data('swiper-loop') ? $(element).data('swiper-loop') : false,
+      speed: jQuery(element).data('swiper-speed') ? jQuery(element).data('swiper-speed') : 500,
+      slidesPerView: jQuery(element).data('swiper-slides-view-mobile') ? jQuery(element).data('swiper-slides-view-mobile') : 1,
+      spaceBetween: jQuery(element).data('swiper-gutterspace') ? jQuery(element).data('swiper-gutterspace') : 20,
+      loop: jQuery(element).data('swiper-loop') ? jQuery(element).data('swiper-loop') : false,
       // We need to set this to 0 as we don't need extra classes on slides.
       loopAdditionalSlides: 0,
       autoplay: false,
@@ -66,14 +66,14 @@ export const swiper = (selector, arrowsSelector, options) => {
       breakpoints: {
         // This will be enabled on Desktop Breakpoint.
         768: {
-          slidesPerView: $(element).data('swiper-slides-view-tablet') ? $(element).data('swiper-slides-view-tablet') : 1,
-          slidesOffsetBefore: $(element).data('swiper-offset') ? $(element).data('swiper-offset') : 0,
-          slidesOffsetAfter: $(element).data('swiper-offset') ? -$(element).data('swiper-offset') : 0,
+          slidesPerView: jQuery(element).data('swiper-slides-view-tablet') ? jQuery(element).data('swiper-slides-view-tablet') : 1,
+          slidesOffsetBefore: jQuery(element).data('swiper-offset') ? jQuery(element).data('swiper-offset') : 0,
+          slidesOffsetAfter: jQuery(element).data('swiper-offset') ? -jQuery(element).data('swiper-offset') : 0,
         },
         1024: {
-          slidesPerView: $(element).data('swiper-slides-view-desktop') ? $(element).data('swiper-slides-view-desktop') : 1,
-          slidesOffsetBefore: $(element).data('swiper-offset') ? $(element).data('swiper-offset') : 0,
-          slidesOffsetAfter: $(element).data('swiper-offset') ? -$(element).data('swiper-offset') : 0,
+          slidesPerView: jQuery(element).data('swiper-slides-view-desktop') ? jQuery(element).data('swiper-slides-view-desktop') : 1,
+          slidesOffsetBefore: jQuery(element).data('swiper-offset') ? jQuery(element).data('swiper-offset') : 0,
+          slidesOffsetAfter: jQuery(element).data('swiper-offset') ? -jQuery(element).data('swiper-offset') : 0,
         },
       },
     };
@@ -82,13 +82,13 @@ export const swiper = (selector, arrowsSelector, options) => {
     options = options || {};
 
     // Merge options into defaults, recursively with `true` option, without modifying defaults.
-    const settings = $.extend(true, {}, defaults, options);
+    const settings = jQuery.extend(true, {}, defaults, options);
 
     // Get scrollbar track width.
-    const getTrackSize = () => $(element).find('.swiper-scrollbar').width();
+    const getTrackSize = () => jQuery(element).find('.swiper-scrollbar').width();
 
     // Get number of the slides.
-    const getSliderLength = () => $(element).find('.swiper-slide').length;
+    const getSliderLength = () => jQuery(element).find('.swiper-slide').length;
 
     // Get the Slider Bound in case of perView is more than 1.
     const getSliderBound = () => (getSliderLength() - settings.slidesPerView);
@@ -114,15 +114,15 @@ export const swiper = (selector, arrowsSelector, options) => {
     };
 
     const swiperDestroyMouseEvents = () => {
-      const events = $._data($(element).find('.swiper-wrapper')[0], 'events');
+      const events = jQuery._data(jQuery(element).find('.swiper-wrapper')[0], 'events');
       if (events) {
         if (events.click.length > 0) {
-          $(element).find('.swiper-wrapper').off('click');
+          jQuery(element).find('.swiper-wrapper').off('click');
         }
         if (events.mousemove.length > 0) {
-          $(element).find('.swiper-wrapper').off('mousemove');
+          jQuery(element).find('.swiper-wrapper').off('mousemove');
         }
-        $(element).find('.swiper-wrapper').css('cursor', 'auto');
+        jQuery(element).find('.swiper-wrapper').css('cursor', 'auto');
       }
     };
 
@@ -137,9 +137,9 @@ export const swiper = (selector, arrowsSelector, options) => {
         swiper.params.scrollbar.dragSize = dragsize;
       }
       swiper.on('beforeInit', () => {
-        $(element).find('.stats-card-parallax .swiper-slide').unwrap();
-        if (swiper.params.navigation.showOn == getDeviceType() && $(element).find(arrowsSelector).length) {
-          $(element).find(arrowsSelector).append(swiperArrow);
+        jQuery(element).find('.stats-card-parallax .swiper-slide').unwrap();
+        if (swiper.params.navigation.showOn == getDeviceType() && jQuery(element).find(arrowsSelector).length) {
+          jQuery(element).find(arrowsSelector).append(swiperArrow);
         }
       });
     };
@@ -155,8 +155,8 @@ export const swiper = (selector, arrowsSelector, options) => {
         beforeSwiperMount(swiper);
         swiper.init();
       }
-      if (!$(element).find('.swiper-scrollbar').is(':visible')) {
-        $(element).find('.swiper-scrollbar').show();
+      if (!jQuery(element).find('.swiper-scrollbar').is(':visible')) {
+        jQuery(element).find('.swiper-scrollbar').show();
       }
     };
 
@@ -171,7 +171,7 @@ export const swiper = (selector, arrowsSelector, options) => {
         swiper.destroy();
       }
       // Hide the scrollbar if swiper destroyed.
-      $(element).find('.swiper-scrollbar').hide();
+      jQuery(element).find('.swiper-scrollbar').hide();
     };
 
     // Initialise Swiper
@@ -181,9 +181,9 @@ export const swiper = (selector, arrowsSelector, options) => {
 
     // Define swiperInit.
     const swiperInit = () => {
-      const elemData = $(element).data();
+      const elemData = jQuery(element).data();
       if (elemData) {
-        $.each(elemData, function (key, val) {
+        jQuery.each(elemData, function (key, val) {
           if (key == 'swiperDesktop' || key == 'swiperTablet' || key == 'swiperMobile' || key == 'swiperAll') {
             if ((key == 'swiperDesktop') && getDeviceType() == "desktop") {
               if (!swiper.initialized) {
@@ -219,8 +219,8 @@ export const swiper = (selector, arrowsSelector, options) => {
       if (swiper !== undefined) {
         // Update arrows callback.
         const updateArrow = (e) => {
-          const sliderWidth = $(element).outerWidth();
-          const sliderOffset = $(element).offset();
+          const sliderWidth = jQuery(element).outerWidth();
+          const sliderOffset = jQuery(element).offset();
           const ePageXOffset = e.pageX - sliderOffset.left;
           const sliderCenter = sliderWidth / 2;
           let leftCursor = `url(${arrowleft}), auto`;
@@ -234,12 +234,12 @@ export const swiper = (selector, arrowsSelector, options) => {
             rightCursor = swiper.rtl ? `url(${arrowright}), auto` : `url(${arrowleft}), auto`;
           }
           if (!swiper.initialized || swiper.destroyed) {
-            $(element).find('.swiper-wrapper').css('cursor', 'auto');
+            jQuery(element).find('.swiper-wrapper').css('cursor', 'auto');
           } else {
             if (sliderCenter > ePageXOffset) {
-              $(element).find('.swiper-wrapper').css('cursor', leftCursor);
+              jQuery(element).find('.swiper-wrapper').css('cursor', leftCursor);
             } else {
-              $(element).find('.swiper-wrapper').css('cursor', rightCursor);
+              jQuery(element).find('.swiper-wrapper').css('cursor', rightCursor);
             }
           }
         };
@@ -248,10 +248,10 @@ export const swiper = (selector, arrowsSelector, options) => {
         const ignoreClick = 'a, [class*="swiper-button"]';
 
         // Swiper slides click eventlistner.
-        $(element).find('.swiper-wrapper').off('click').on('click', (e) => {
+        jQuery(element).find('.swiper-wrapper').off('click').on('click', (e) => {
           e.preventDefault();
-          const sliderWidth = $(element).outerWidth();
-          const sliderOffset = $(element).offset();
+          const sliderWidth = jQuery(element).outerWidth();
+          const sliderOffset = jQuery(element).offset();
           const ePageXOffset = e.pageX - sliderOffset.left;
           const sliderCenter = sliderWidth / 2;
           if (!swiper.initialized) return false;
@@ -278,7 +278,7 @@ export const swiper = (selector, arrowsSelector, options) => {
         });
 
         // Swiper slides mousemove eventlistner.
-        $(element).find('.swiper-wrapper').off('mousemove').on('mousemove', (e) => {
+        jQuery(element).find('.swiper-wrapper').off('mousemove').on('mousemove', (e) => {
           e.preventDefault();
           updateArrow(e);
         });
@@ -294,7 +294,7 @@ export const swiper = (selector, arrowsSelector, options) => {
     swiperInit();
 
     // Custom windowResize;
-    utility.windowResize($(window), (e) => {
+    utility.windowResize(jQuery(window), (e) => {
       swiperInit();
     });
   });
