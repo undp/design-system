@@ -1,6 +1,6 @@
 export const authorFilter = () => {
-  $('.sort-filter').click(function sortclick() {
-    $(this).toggleClass('close');
-    $('.author-filter').toggleClass('author-filter-show');
+  jQuery('.sort-filter').click(function sortclick() {
+    jQuery(this).toggleClass('close');
+    jQuery('.author-filter').toggleClass('author-filter-show');
   });
 };

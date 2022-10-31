@@ -1,9 +1,10 @@
-class MultiSelect {
+
+  class MultiSelect {
   constructor(element) {
     this.classOpen = 'open';
 
-    this.$window = $(window);
-    this.$currentSelect = $(element);
+    this.$window = jQuery(window);
+    this.$currentSelect = jQuery(element);
     this.$selectTrigger = this.$currentSelect.find('button').first();
   }
 
@@ -21,7 +22,7 @@ class MultiSelect {
     this.$currentSelect.on('click', 'input[type=checkbox]', (ev) => {
       ev.stopImmediatePropagation();
 
-      const $selectedCheckbox = $(ev.target);
+      const $selectedCheckbox = jQuery(ev.target);
       const $selectedOption = $selectedCheckbox.closest('li[role=option]');
 
       $selectedOption.attr('aria-selected', $selectedCheckbox.is(':checked'));
@@ -29,12 +30,12 @@ class MultiSelect {
 
     this.$currentSelect.on('click', '.has-submenu > .checkbox-item', (ev) => {
       ev.stopImmediatePropagation();
-      const $clickedElement = $(ev.target);
+      const $clickedElement = jQuery(ev.target);
 
       if (!$clickedElement.hasClass('checkmark')) {
         ev.preventDefault();
 
-        const $rowHasSubmenu = $(ev.currentTarget).closest('li.has-submenu');
+        const $rowHasSubmenu = jQuery(ev.currentTarget).closest('li.has-submenu');
         const $caretButton = $rowHasSubmenu.find('button.caret');
         $rowHasSubmenu.toggleClass('open');
 
@@ -49,7 +50,7 @@ class MultiSelect {
     });
 
     this.$currentSelect.on('click', '.has-submenu > button.caret', (ev) => {
-      const $caretButton = $(ev.currentTarget);
+      const $caretButton = jQuery(ev.currentTarget);
       $caretButton.siblings('.checkbox-item').trigger('click');
     });
   }
@@ -75,28 +76,29 @@ class MultiSelect {
 }
 
 export function multiSelect() {
-  $(".multi-select").each(function( index ) { 
-    const numberOfCheck = $(this).find('input:checkbox:checked').length;
-    if(numberOfCheck > 0){
-      $(this).find('button').first().find('span').remove();
-      $(this).find('button').first().append('<span> (' + numberOfCheck + ') </span>');
-    }
-  });
-  const searchOption = $('.multi-select li input:checkbox');
-  $(searchOption).on('click', function () {
-    const numberOfChecked = $(this).parents('.multi-select').find('input:checkbox:checked').length;
-    const filterButton = $(this).parents('ul').not('.sub-menu').siblings();
-    if(numberOfChecked > 0){
-      filterButton.find('span').remove();
-      filterButton.append('<span> (' + numberOfChecked + ') </span>');
-    }else{
-      filterButton.find('span').remove();
-    }
-  });
-  const $selects = $('[data-multi-select]');
-  $selects.each((i, select) => {
-    const multiSelect = new MultiSelect(select);
-    multiSelect.init();
-  });
+  (function( $ ) {
+    jQuery(".multi-select").each(function( index ) {
+      const numberOfCheck = jQuery(this).find('input:checkbox:checked').length;
+      if(numberOfCheck > 0){
+        jQuery(this).find('button').first().find('span').remove();
+        jQuery(this).find('button').first().append('<span> (' + numberOfCheck + ') </span>');
+      }
+    });
+    const searchOption = jQuery('.multi-select li input:checkbox');
+    jQuery(searchOption).on('click', function () {
+      const numberOfChecked = jQuery(this).parents('.multi-select').find('input:checkbox:checked').length;
+      const filterButton = jQuery(this).parents('ul').not('.sub-menu').siblings();
+      if(numberOfChecked > 0){
+        filterButton.find('span').remove();
+        filterButton.append('<span> (' + numberOfChecked + ') </span>');
+      }else{
+        filterButton.find('span').remove();
+      }
+    });
+    const $selects = jQuery('[data-multi-select]');
+    $selects.each((i, select) => {
+      const multiSelect = new MultiSelect(select);
+      multiSelect.init();
+    });
+  })(jQuery);
 }
-

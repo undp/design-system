@@ -8,14 +8,14 @@ export function lightboxGallery() {
     moreLength: 0,
   });
 
-  const $windowWidth = $(window).width();
+  const $windowWidth = jQuery(window).width();
   if ($windowWidth <= 768) {
     // Close lightbox on clicking outside on Mobile Breakpoint.
-    $(document).on('click', (e) => {
+    jQuery(document).on('click', (e) => {
       // Check if click triggered on parent selectors.
-      const $triggerClasses = $('.ginner-container, .gslide-inner-content, .gslide, .gslider, .gcontainer, .glightbox-container');
-      const $triggerActive = $($triggerClasses).filter((_, el) => $(el).is(e.target)).length;
-      if ($(e.target).closest('.glightbox-container').length && $triggerActive) {
+      const $triggerClasses = jQuery('.ginner-container, .gslide-inner-content, .gslide, .gslider, .gcontainer, .glightbox-container');
+      const $triggerActive = jQuery($triggerClasses).filter((_, el) => jQuery(el).is(e.target)).length;
+      if (jQuery(e.target).closest('.glightbox-container').length && $triggerActive) {
         // lightbox close() callback.
         lightbox.close();
       }
@@ -23,21 +23,21 @@ export function lightboxGallery() {
   }
   // caption alignment set according image block
   const captionalignment = () => {
-    $('.image__description').each(function () {
+    jQuery('.image__description').each(function () {
       // caption class add
-      var $gDesHeight = $(this).height();
-      var $gImgHeight = $(this).siblings('.image').height();
+      var $gDesHeight = jQuery(this).height();
+      var $gImgHeight = jQuery(this).siblings('.image').height();
       if ($gDesHeight > $gImgHeight) {
-        $(this).addClass('caption_top');
+        jQuery(this).addClass('caption_top');
       } else {
-        $(this).removeClass('caption_top');
+        jQuery(this).removeClass('caption_top');
       }
     });
 
     // frostedbackground class add
-    $('.lightbox-gallery-images li').click(() => {
-      $('.goverlay, .gloader').remove();
-      $('.gcontainer').addClass('frosted-background');
+    jQuery('.lightbox-gallery-images li').click(() => {
+      jQuery('.goverlay, .gloader').remove();
+      jQuery('.gcontainer').addClass('frosted-background');
     });
   };
 
