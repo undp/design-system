@@ -33,17 +33,19 @@
         position: relative;
         overflow: hidden;
         img {
-          position: absolute;
+          position: relative;
           top: 50%;
           left: 50%;
           transform: translate(-50%,-50%);
+          min-width: 100%;
+          min-height: 100%;
         }
       }
       .content {
         flex-grow: 1;
       }
       h3 {
-        margin-top: $spacing-10;
+        margin-top: $spacing-12;
         margin-left: $spacing-04;
         margin-right: $spacing-04;
       }
@@ -53,7 +55,6 @@
       }
       @include devicebreak(large) {
         h3 {
-          margin-top: 12.5vh;
           margin-left: $spacing-08;
           margin-right: $spacing-08;
         }
@@ -62,51 +63,6 @@
           margin-right: $spacing-08;
           max-width: calc(50vw - 200px);
           width: 75%;
-        }
-      }
-      &:nth-of-type(1) {
-        .stripe {
-          background: #E6243C;
-        }
-      }
-      &:nth-of-type(2) {
-        .stripe {
-          background: #036A9C;
-        }
-      }
-      &:nth-of-type(3) {
-        .stripe {
-          background: #EF803B;
-        }
-      }
-      &:nth-of-type(4) {
-        .stripe {
-          background: #3E7F45;
-        }
-      }
-      &:nth-of-type(5) {
-        .stripe {
-          background: #DE9800;
-        }
-      }
-      &:nth-of-type(6) {
-        .stripe {
-          background: #EE402C;
-        }
-      }
-      &:nth-of-type(7) {
-        .stripe {
-          background: #22A4BC;
-        }
-      }
-      &:nth-of-type(8) {
-        .stripe {
-          background: #75D83C;
-        }
-      }
-      &:nth-of-type(9) {
-        .stripe {
-          background: #2A3C95;
         }
       }
     }
@@ -151,12 +107,17 @@
       top: calc(40vh + #{$spacing-08});
     }
     div {
+      cursor: pointer;
       margin-right: $spacing-06;
       text-transform: uppercase;
       font-weight: 700;
       font-size: $font-size-14;
       position: relative;
-      white-space: nowrap;
+      // white-space: nowrap;
+      display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
       @include devicebreak(large) {
         font-size: $font-size-16;
       }
