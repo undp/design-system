@@ -22,7 +22,7 @@ export function OurExpertise({ content }) {
         <div>
           <Heading type="2" label="What we do" />
           <P label="UNDP is the United Nations’ lead agency on international development. We support countries and communities as they work to eradicate poverty, implement the Paris Agreement on climate change and achieve the Sustainable Development Goals. We advocate for transformative change, and we connect countries to the resources they need to help people build a better life." />
-          <Ctalink label="Learn more" Type="Expanding Arrow" />
+          <Ctalink label="Learn more" Type="Space" />
         </div>
       </div>
       <div className="cell large-offset-1 large-6 small-12">
