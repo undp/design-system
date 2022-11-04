@@ -14,14 +14,14 @@ if (window.location.href.indexOf('direction=rtl') > -1) {
 
 export function OurExpertise({ content }) {
   useEffect(() => {
-    ourExpertise('.our-expertise');
+    ourExpertise();
   }, []);
   return (
     <div className="grid-x our-expertise no-gap">
       <div className="cell large-4 medium-10 medium-offset-1 small-10 intro">
         <div>
           <Heading type="2" label="What we do" />
-          <P label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia sint vero numquam, reprehenderit dolore quaerat corrupti! Suscipit, non commodi ab iusto labore quibusdam illum laboriosam soluta, fugit a cumque asperiores." />
+          <P label="UNDP is the United Nations’ lead agency on international development. We support countries and communities as they work to eradicate poverty, implement the Paris Agreement on climate change and achieve the Sustainable Development Goals. We advocate for transformative change, and we connect countries to the resources they need to help people build a better life." />
           <Ctalink label="Learn more" Type="Expanding Arrow" />
         </div>
       </div>
@@ -43,7 +43,16 @@ export function OurExpertise({ content }) {
               ))
             ))}
           </div>
-          <div className="swiper-navigation" />
+          <div className="navigation">
+            <div className="slider-arrows">
+              <button className="prev">
+                <img src="/icons/chevron-left-circle.svg" alt="Previous" />
+              </button>
+              <button className="next">
+                <img src="/icons/chevron-right-circle.svg" alt="Next" />
+              </button>
+            </div>
+          </div>
           <div className="swiper-tabs">
             {content.map((category, c) => (
               <div className={c == 0 ? 'is-active' : ''} data-category={c} key={c}>{category.title}</div>

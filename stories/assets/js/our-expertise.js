@@ -1,16 +1,15 @@
 /**
  * Our Expertise section
  */
-import { swiper } from './swiper';
 
-export function ourExpertise(ele) {
-  swiper(`${ele} .swiper`, '.swiper-navigation', {
-    scrollbar: false,
-    spaceBetween: 0,
+export function ourExpertise() {
+  let settings = {
+    speed: 500,
+    a11y: true,
+    keyboardControl: true,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-      showOn: 'desktop',
+      nextEl: '.our-expertise .next',
+      prevEl: '.our-expertise .prev',
     },
     on: {
       slideChange(slider) {
@@ -20,9 +19,12 @@ export function ourExpertise(ele) {
         jQuery(slider.el).find('.swiper-counter').text(`${$slide.data('panel') + 1} / ${$slide.data('catLength')}`);
       },
     },
-  });
-  jQuery(`${ele} .swiper-tabs div`).on('click', (event) => {
-    const slider = jQuery(`${ele} .swiper`).prop('swiper');
+  };
+
+  let swiper = new Swiper('.our-expertise .swiper', settings);
+
+  jQuery('.our-expertise .swiper-tabs div').on('click', (event) => {
+    const slider = jQuery('.our-expertise .swiper').prop('swiper');
     const cat = jQuery(event.target).data('category');
     slider.slides.some((slide, index) => {
       if (jQuery(slide).data('category') == cat) {
@@ -32,4 +34,9 @@ export function ourExpertise(ele) {
       return false;
     });
   });
+
+  // jQuery('.our-expertise .swiper-slide .image img').on('load', (e) => {
+  //   let $this = jQuery(e.target);
+  //   $this.css({height: $this.prop('naturalHeight'), width: $this.prop('naturalWidth')});
+  // });
 }
