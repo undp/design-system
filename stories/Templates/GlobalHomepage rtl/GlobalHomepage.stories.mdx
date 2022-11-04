@@ -1,14 +1,5 @@
 import { Meta, Story, Canvas, DocsPage, DocsContainer } from "@storybook/addon-docs";
 import { GlobalHomePage } from "./GlobalHomepage";
-import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.mdx";
-import { getCaptionForLocale as featuredcarddata } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard.stories.mdx";
-import { getCaptionForLocale as parallaxdata } from "../../Components/UIcomponents/Cards/ParallaxCard/ParallaxCards.stories.mdx";
-import { getCaptionForLocale as textctadata } from "../../Molecules/Text/TextCta/TextCta.stories.mdx";
-import { getCaptionForLocale as textbackgrounddata } from "../../Molecules/Text/TextBackground/TextBackground.stories.mdx";
-import { statsArray as statsdata } from "../../Organism/Stats/Stats.stories.mdx";
-import { statsArray as fixedcarouseldata } from "../../Components/UIcomponents/Carousel/FixedSizeCarousel/FixedSizeCarousel.stories.mdx";
-import { getCaptionForLocale as tweetdata } from "../../Organism/Blocks/TweetPanel/TweetPanel.stories.js";
-import { getCaptionForLocale as homepagesplit } from "../../Components/UIcomponents/Hero/HomePageHero/HomePageHero.stories.mdx";
 import img from "../../assets/images/card2.jpg";
 
 import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.mdx";
@@ -574,7 +565,7 @@ The following components are used to create the “Article Page” template in t
 2. Page Hero - Creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle, and Breadcrumb.
 3. Group of single content cards with images along with CTA links (this can be just #).
 4. Background image(color) with text
-5. Parallax Gallery - The images move at a different speed than the content.
+5. Our expertise
 6. Title with big image copy and also has CTA button
 7. Background image(color) with text, Header, and Description
 8. Stats panel - displayed as a part of a collection of similar cards highlighting various statistics
@@ -593,15 +584,13 @@ The page performance will be optimized by considering the following:
 
 ### Usage:
 - Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
-- Initialize navigation, language switcher, accordion, statsHover, swiper and parallax effect by calling below mentioned functions.when visible on screen
+- Initialize navigation, language switcher, accordion, statsHover, swiper by calling below mentioned functions.when visible on screen
   - navigationInitialize();
   - langSwitch();
   - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
-  - parallaxEffect('.parallax-card', ['.parallax-card__image', '.parallax-card__content'], 'top center', 'bottom+=85 center', 'vertical', 'desktop', 'percent');
   - statsHover();
-  - swiper(‘.parallax__content'’, '.fixed-carousel', '.fixed-carousel__button-wrap');
+  - swiper('.fixed-carousel', '.fixed-carousel__button-wrap');
 - Refer [this document](https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration & options
-- Refer [this document](https://github.com/undp/design-system/wiki/Parallax-documentation) for Parallax integration & options
 - If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
 
 #### CSS and JS References
@@ -622,7 +611,7 @@ Add the base layout style from
 - https://undp.github.io/design-system/css/components/headingbig.min.css
 - https://undp.github.io/design-system/css/components/textbackground.min.css
 - https://undp.github.io/design-system/css/components/textcta.min.css
-- https://undp.github.io/design-system/css/components/parallax-cards.min.css
+- https://undp.github.io/design-system/css/components/our-expertise.min.css
 - https://undp.github.io/design-system/css/components/stats-cards.min.css
 - https://undp.github.io/design-system/css/components/stats-panel.min.css
 - https://undp.github.io/design-system/css/components/stats.min.css
@@ -641,7 +630,7 @@ Add the base layout style from
 #### JS:
 
 - https://undp.github.io/design-system/js/swiper.min.js
-- https://undp.github.io/design-system/js/parallax.min.js
+- https://undp.github.io/design-system/js/our-expertise.min.js
 - https://undp.github.io/design-system/js/smartresize.min.js
 - https://undp.github.io/design-system/js/navigation.min.js
 - https://undp.github.io/design-system/js/undp.min.js
@@ -676,23 +665,6 @@ Add following external libraries
       );
       return (
         <GlobalHomePage
-          label={caption.label}
-          homepagesplit={homepagesplit(locale)}
-          featuredcarddata={featuredcarddata(locale)}
-          parallaxdata={parallaxdata(locale)}
-          textctadata={textctadata(locale)}
-          textbackgrounddata={textbackgrounddata(locale)}
-          statsdata={statsdata(locale)}
-          fixedcarouseldata={fixedcarouseldata(locale)}
-          featureddata={caption.groupcontentdata}
-          headertext={caption.headertext}
-          BackgroundImg={caption.img}
-          label={caption.label}
-          tweetdata={tweetdata(locale)}
-          footerData={footerData(locale)}
-          languageswitcherData={Languageswitcher(locale)}
-          whatwedoheader={caption.whatwedoheader}
-          whatwedodescription={caption.whatwedodescription}
           locale={locale}
           leftNavigationData={leftNavigationData}
           navigationData={navigationData}

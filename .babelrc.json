@@ -60,7 +60,7 @@
       {
         "method": "usage-global",
         "absoluteImports": "core-js",
-        "version": "3.22.0"
+        "version": "3.25.3"
       }
     ]
   ]

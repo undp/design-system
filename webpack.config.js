@@ -14,7 +14,7 @@ const packMode = 'production';
 module.exports = [
   {
     mode: packMode,
-    entry: webpackEntry(),
+    entry: webpackEntry('css'),
     module: {
       rules: [
         {
@@ -110,6 +110,11 @@ module.exports = [
       path: path.resolve(__dirname, 'docs'),
       filename: '[name].min.js',
       libraryTarget: 'umd',
+    },
+    externals: {
+      jquery: 'jQuery',
+      Swiper: 'Swiper',
+      gsap: 'gsap',
     },
     module: {
       rules: [
