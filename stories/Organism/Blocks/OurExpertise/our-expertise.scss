@@ -49,14 +49,16 @@
         justify-content: center;
         padding: $spacing-12 $spacing-04;
 
+
       // h3 {
       //   margin-left: $spacing-04;
       //   margin-right: $spacing-04;
       // }
-      // p {
+      p {
+        color: $color-gray-600;
       //   margin-left: $spacing-04;
       //   margin-right: $spacing-04;
-      // }
+      }
         @include devicebreak(large) {
           padding: $spacing-12 $spacing-08;
           // h3 {
@@ -108,28 +110,31 @@
   }
   .swiper-tabs {
     position: absolute;
-    left: $spacing-04;
-    right: $spacing-04;
+    inset-inline-start: $spacing-04;
+    // right: $spacing-04;
     top: calc(40vh + #{$spacing-06});
     display: flex;
     border-bottom: 2px solid $color-gray-300;
     @include devicebreak(large) {
-      left: $spacing-08;
-      right: $spacing-08;
+      inset-inline-start: $spacing-08;
+      margin-inline-end: $spacing-12;
+      // right: $spacing-08;
       top: calc(40vh + #{$spacing-08});
     }
     div {
       cursor: pointer;
-      margin-right: $spacing-06;
+      margin-inline-end: $spacing-06;
       text-transform: uppercase;
       font-weight: 700;
       font-size: $font-size-14;
       position: relative;
       // white-space: nowrap;
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      flex-direction: column;
+      // display: flex;
+      // justify-content: end;
+      // flex-direction: column;
+      &:last-of-type {
+        margin-inline-end: 0;
+      }
       @include devicebreak(large) {
         font-size: $font-size-16;
       }
@@ -158,6 +163,9 @@
     font-weight: 700;
     font-size: $font-size-14;
     white-space: nowrap;
+    // display: flex;
+    // justify-content: end;
+    // flex-direction: column;
     @include devicebreak(large) {
       top: calc(40vh + #{$spacing-08});
       bottom: auto;
@@ -176,12 +184,12 @@
       left: $spacing-05;
       right: auto;
     }
-    .swiper-tabs {
-      div {
-        margin-left: $spacing-06;
-        margin-right: 0;
-      }
-    }
+    // .swiper-tabs {
+    //   div {
+    //     margin-left: $spacing-06;
+    //     margin-right: 0;
+    //   }
+    // }
     .swiper-counter {
       right: auto;
       left: $spacing-04;
