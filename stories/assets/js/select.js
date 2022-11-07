@@ -1,15 +1,15 @@
 export function select() {
-  let $selectButton = $('.select-box button');
-  let $selectList = $('.select-box li');
+  let $selectButton = jQuery('.select-box button');
+  let $selectList = jQuery('.select-box li');
 
   $selectButton.on('click', function(){
-    $(this).parent().toggleClass('expanded').find('ul').toggleClass('active');
+    jQuery(this).parent().toggleClass('expanded').find('ul').toggleClass('active');
   });
   $selectList.on('click keypress', function(){
-    $(this).parent().siblings().text($(this).find('span').text());
-    $(this).parent().removeClass('active').parents().removeClass('expanded');
+    jQuery(this).parent().siblings().text(jQuery(this).find('span').text());
+    jQuery(this).parent().removeClass('active').parents().removeClass('expanded');
   });
-  $(document).mouseup(function(e) {
+  jQuery(document).mouseup(function(e) {
     if (!$selectButton.is(e.target) && $selectButton.has(e.target).length === 0) {
       $selectButton.parent().removeClass('expanded').find('ul').removeClass('active');
     }

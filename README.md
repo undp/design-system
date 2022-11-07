@@ -2,9 +2,9 @@
 
 ## Purpose
 
-The purpose of this project is to create unified user interfaces for UNDP by the designer and developers. 
+The purpose of this project is to create unified user interfaces for UNDP by the designer and developers.
 
-These projects will have consistent look and feel and accessible in nature by just following the guidelines in the documentation.  
+These projects will have consistent look and feel and accessible in nature by just following the guidelines in the documentation.
 
 By unifiying design elements into reusable components, development will simplify and accelerate the development of these digital products.
 
@@ -23,16 +23,16 @@ Run the following commands to create/update the code.
 git clone
 
 # install project dependencies
-npm install
+yarn install
 
 # runs storybook locally
-npm run storybook
+yarn run storybook
 
 # build storybook
-npm run build-storybook
+yarn run build-storybook
 
 # linting on codebase
-npm run lint
+yarn run lint
 ```
 
 ## List of components
@@ -50,8 +50,8 @@ The design system is based on:
 ## Assets
 
 - All the icons/images can be found in the ***stories/assets/images/Icon*** directory.
-- CSS directory at: ***dist/css***. 
-- JS directory at: ***dist/js***. 
+- CSS directory at: ***dist/css***.
+- JS directory at: ***dist/js***.
 
 ## Storybook and File references
 

@@ -1,9 +1,9 @@
 /* Modal JS start custom */
 export function modal() {
-  const $modalOverlay = $('.modal');
-  const $modal = $('.modal-content');
-  const $modalClose = $('.modal-close-button');
-  const $modalOpen = $('[data-toggle="modal"]');
+  const $modalOverlay = jQuery('.modal');
+  const $modal = jQuery('.modal-content');
+  const $modalClose = jQuery('.modal-close-button');
+  const $modalOpen = jQuery('[data-toggle="modal"]');
 
   // modal function
   function modalOpen(modal) {
@@ -11,10 +11,10 @@ export function modal() {
     $modalOpen.click((event) => {
       modalSelector = event.currentTarget.getAttribute('data-target-modal');
       event.preventDefault();
-      $(modalSelector).addClass('open');
+      jQuery(modalSelector).addClass('open');
     });
     $modalOverlay.click(() => {
-      $(modalSelector).removeClass('open');
+      jQuery(modalSelector).removeClass('open');
     });
   }
 
@@ -24,7 +24,7 @@ export function modal() {
   });
 
   // handle escape key
-  $(document).keydown(function(e) {
+  jQuery(document).keydown(function(e) {
     if (e.keyCode == 27 && $modalClose) {
       $modalClose.trigger('click');
     }

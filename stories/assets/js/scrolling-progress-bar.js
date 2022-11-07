@@ -1,13 +1,13 @@
-$(window).on('scroll', () => {
-  const $scrollAmount = $(window).scrollTop();
-  const $documentHeight = $(document).height();
-  const $windowHeight = ($(window).height() == $(document).height()) ? window.innerHeight : $(window).height();
+jQuery(window).on('scroll', () => {
+  const $scrollAmount = jQuery(window).scrollTop();
+  const $documentHeight = jQuery(document).height();
+  const $windowHeight = (jQuery(window).height() == jQuery(document).height()) ? window.innerHeight : jQuery(window).height();
   const $scrollPercent = ($scrollAmount / ($documentHeight - $windowHeight)) * 100;
   const $roundScroll = Math.round($scrollPercent);
-  $('div.progress-bar').css('width', `${$roundScroll}%`);
+  jQuery('div.progress-bar').css('width', `${$roundScroll}%`);
   if ($roundScroll > 1) {
-    $('div.progress-bar').addClass('progress-top');
+    jQuery('div.progress-bar').addClass('progress-top');
   } else {
-    $('div.progress-bar').removeClass('progress-top');
+    jQuery('div.progress-bar').removeClass('progress-top');
   }
 });

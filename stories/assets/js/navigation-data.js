@@ -1,13 +1,13 @@
 export const getMegaMenu = (lang) => {
-  $.ajax({
+  jQuery.ajax({
     method: 'GET',
     url: './js/navigation-data.json',
     dataType: 'json',
     success(res) {
       lang = (lang === 'en') ? 'english' : lang;
       const resData = res.find((item) => item.language === lang);
-      const $megaWrapper = $('.mega-wrapper');
-      const $mobileMegaWrapper = $('.mobile-mega-wrapper');
+      const $megaWrapper = jQuery('.mega-wrapper');
+      const $mobileMegaWrapper = jQuery('.mobile-mega-wrapper');
       $megaWrapper.empty();
       $mobileMegaWrapper.empty();
       resData.data.forEach((item, index) => {

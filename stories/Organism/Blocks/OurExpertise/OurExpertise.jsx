@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { swiper } from '../../../assets/js/swiper';
 import '../../../assets/scss/_grid.scss';
 import './our-expertise.scss';
-import { CtaButton } from '../../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
+import { Ctalink } from '../../../Components/UIcomponents/Buttons/CtaLink/CtaLink';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../Atom/BaseTypography/Paragraph/Paragraph';
+import { ourExpertise } from '../../../assets/js/our-expertise';
 
 // RTL Fix for Storybook.
 let rtl = document.dir || undefined;
@@ -12,78 +12,53 @@ if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
 
-export function OurExpertise() {
-  const titles = [
-    'Poverty and Inequality',
-    'Governance',
-    'Resilience',
-    'Environment',
-    'Energy',
-    'Gender equality',
-    'Digitalisation',
-    'Strategic innovation',
-    'Development financing',
-  ];
+export function OurExpertise({ content }) {
   useEffect(() => {
-    swiper('.our-expertise .swiper', '.swiper-navigation', {
-      scrollbar: false,
-      spaceBetween: 0,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        showOn: 'desktop',
-      },
-      on: {
-        slideChange(swiper) {
-          const $divs = $(swiper.el).find('.swiper-tabs div');
-          if (swiper.realIndex > 5) {
-            $divs.eq(0).removeClass('is-active');
-            $divs.eq(1).addClass('is-active');
-          } else {
-            $divs.eq(1).removeClass('is-active');
-            $divs.eq(0).addClass('is-active');
-          }
-          $(swiper.el).find('.swiper-counter span').text(`${swiper.realIndex + 1} `);
-        },
-      },
-    });
+    ourExpertise();
   }, []);
   return (
     <div className="grid-x our-expertise no-gap">
       <div className="cell large-4 medium-10 medium-offset-1 small-10 intro">
         <div>
           <Heading type="2" label="What we do" />
-          <P label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia sint vero numquam, reprehenderit dolore quaerat corrupti! Suscipit, non commodi ab iusto labore quibusdam illum laboriosam soluta, fugit a cumque asperiores." />
-          <CtaButton label="Read more" Type="Expanding Arrow" />
+          <P label="UNDP is the United Nations’ lead agency on international development. We support countries and communities as they work to eradicate poverty, implement the Paris Agreement on climate change and achieve the Sustainable Development Goals. We advocate for transformative change, and we connect countries to the resources they need to help people build a better life." />
+          <Ctalink label="Learn more" Type="Space" />
         </div>
       </div>
       <div className="cell large-offset-1 large-6 small-12">
         <div className="swiper" dir={rtl}>
           <div className="swiper-wrapper">
-
-            {titles.map((item, index) => (
-              <div className="swiper-slide">
-                <div className="image">
-                  <img src={`https://picsum.photos/960/640?random=5${index}`} alt="" />
+            {content.map((category, c) => (
+              category.slides.map((slide, s) => (
+                <div className="swiper-slide" data-category={c} data-panel={s} data-cat-length={category.slides.length} key={`key-${c}-${s}`}>
+                  <div className="image">
+                    {slide.image && <img src={`/images/${slide.image}`} alt="" />}
+                  </div>
+                  <div className="content">
+                    <Heading type="3" label={slide.title} />
+                    <P label={slide.text} />
+                  </div>
+                  <div className="stripe" style={{ backgroundColor: slide.color }} />
                 </div>
-                <div className="content">
-                  <Heading type="3" label={item} />
-                  <P label="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia sint vero numquam, reprehenderit dolore quaerat corrupti! Suscipit, non commodi ab iusto labore quibusdam illum laboriosam soluta, fugit a cumque asperiores." />
-                </div>
-                <div className="stripe" />
-              </div>
+              ))
             ))}
-
           </div>
-          <div className="swiper-navigation" />
+          <div className="navigation">
+            <div className="slider-arrows">
+              <button className="prev">
+                <img src="/icons/chevron-left-circle.svg" alt="Previous" />
+              </button>
+              <button className="next">
+                <img src="/icons/chevron-right-circle.svg" alt="Next" />
+              </button>
+            </div>
+          </div>
           <div className="swiper-tabs">
-            <div className="is-active">Signature solutions</div>
-            <div>Enablers</div>
+            {content.map((category, c) => (
+              <div className={c == 0 ? 'is-active' : ''} data-category={c} key={c}>{category.title}</div>
+            ))}
           </div>
-          <div className="swiper-counter">
-            <span>1 </span>
-            of 9
-          </div>
+          <div className="swiper-counter">{`1 / ${content[0].slides.length}`}</div>
         </div>
       </div>
     </div>

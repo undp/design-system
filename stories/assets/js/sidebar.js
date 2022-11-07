@@ -1,17 +1,17 @@
 export function sidebarNav() {
-  let $accordionNav = $('.sidebar-accordion li');
-  let $accordionPanel = $('.sidebar-accordion .accordion__panel');
+  let $accordionNav = jQuery('.sidebar-accordion li');
+  let $accordionPanel = jQuery('.sidebar-accordion .accordion__panel');
   $accordionNav.each((index, element) => {
-    if ($(element).find('.accordion__panel').length) {
-      if ($(element).hasClass('active')) {
-        $(element).find('.accordion__panel').slideDown();
+    if (jQuery(element).find('.accordion__panel').length) {
+      if (jQuery(element).hasClass('active')) {
+        jQuery(element).find('.accordion__panel').slideDown();
       }
-      $(element).find('button').first().off('click keypress')
+      jQuery(element).find('button').first().off('click keypress')
         .on('click keypress', function (e) {
           e.preventDefault();
           e.stopPropagation();
           const duration = '30';
-          let $activeLi = $(this).closest('li');
+          let $activeLi = jQuery(this).closest('li');
           let $activePanel = $activeLi.find('.accordion__panel');
           if ($activeLi.hasClass('active') && $activePanel.is(':visible')) {
             $activePanel.slideUp(duration);
@@ -28,13 +28,13 @@ export function sidebarNav() {
 }
 
 export function sidebarMenu() {
-  let $accordionWrapper = $('.sidebar-accordion');
+  let $accordionWrapper = jQuery('.sidebar-accordion');
   $accordionWrapper.each((index, element) => {
-    $(element).find('h6').first().off('click')
+    jQuery(element).find('h6').first().off('click')
       .click(function (e) {
         e.preventDefault();
         e.stopPropagation();
-        $(this).closest('.sidebar-accordion').toggleClass('show-small');
+        jQuery(this).closest('.sidebar-accordion').toggleClass('show-small');
       });
   });
 }

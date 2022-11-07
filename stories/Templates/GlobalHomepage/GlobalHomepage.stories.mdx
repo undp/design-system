@@ -2,8 +2,7 @@ import { Meta, Story, Canvas, DocsPage, DocsContainer } from "@storybook/addon-d
 import { GlobalHomePage } from "./GlobalHomepage";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.mdx";
 import { getCaptionForLocale as featuredcarddata } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard.stories.mdx";
-// import { getCaptionForLocale as parallaxdata } from "../../Components/UIcomponents/Cards/ParallaxCard/ParallaxCards.stories.mdx";
-// import { getCaptionForLocale as ourexpertisedata } from "../../Organism/Blocks/OurExpertise/OurExpertise.stories.js";
+import { getCaptionForLocale as ourexpertisedata } from "../../Organism/Blocks/OurExpertise/OurExpertise.stories.mdx";
 import { getCaptionForLocale as textctadata } from "../../Molecules/Text/TextCta/TextCta.stories.mdx";
 import { getCaptionForLocale as textbackgrounddata } from "../../Molecules/Text/TextBackground/TextBackground.stories.mdx";
 import { statsArray as statsdata } from "../../Organism/Stats/Stats.stories.mdx";
@@ -566,16 +565,15 @@ A global page has all dynamic content lists from the website
 ### Overview
 
 A global page has all the content listed. This helps the user to get all the data in one place.
-Mock Up: https://undp-design-system.azurewebsites.net/
 
 ### Template Structure
 
-The following components are used to create the “Article Page” template in the design system
+The following components are used to create the “Global Homepage” template in the design system
 1. Global header
 2. Page Hero - Creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle, and Breadcrumb.
 3. Group of single content cards with images along with CTA links (this can be just #).
 4. Background image(color) with text
-5. Parallax Gallery - The images move at a different speed than the content.
+5. Our Expertise  - two panels with horizontal slider and tabbed navigation
 6. Title with big image copy and also has CTA button
 7. Background image(color) with text, Header, and Description
 8. Stats panel - displayed as a part of a collection of similar cards highlighting various statistics
@@ -594,15 +592,13 @@ The page performance will be optimized by considering the following:
 
 ### Usage:
 - Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
-- Initialize navigation, language switcher, accordion, statsHover, swiper and parallax effect by calling below mentioned functions.when visible on screen
+- Initialize navigation, language switcher, accordion, statsHover, swiper effect by calling below mentioned functions.when visible on screen
   - navigationInitialize();
   - langSwitch();
   - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
-  - parallaxEffect('.parallax-card', ['.parallax-card__image', '.parallax-card__content'], 'top center', 'bottom+=85 center', 'vertical', 'desktop', 'percent');
   - statsHover();
-  - swiper(‘.parallax__content'’, '.fixed-carousel', '.fixed-carousel__button-wrap');
+  - swiper('.fixed-carousel', '.fixed-carousel__button-wrap');
 - Refer [this document](https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration & options
-- Refer [this document](https://github.com/undp/design-system/wiki/Parallax-documentation) for Parallax integration & options
 - If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
 
 #### CSS and JS References
@@ -623,7 +619,7 @@ Add the base layout style from
 - https://undp.github.io/design-system/css/components/headingbig.min.css
 - https://undp.github.io/design-system/css/components/textbackground.min.css
 - https://undp.github.io/design-system/css/components/textcta.min.css
-- https://undp.github.io/design-system/css/components/parallax-cards.min.css
+- https://undp.github.io/design-system/css/components/our-expertise.min.css
 - https://undp.github.io/design-system/css/components/stats-cards.min.css
 - https://undp.github.io/design-system/css/components/stats-panel.min.css
 - https://undp.github.io/design-system/css/components/stats.min.css
@@ -642,7 +638,7 @@ Add the base layout style from
 #### JS:
 
 - https://undp.github.io/design-system/js/swiper.min.js
-- https://undp.github.io/design-system/js/parallax.min.js
+- https://undp.github.io/design-system/js/our-expertise.min.js
 - https://undp.github.io/design-system/js/smartresize.min.js
 - https://undp.github.io/design-system/js/navigation.min.js
 - https://undp.github.io/design-system/js/undp.min.js
@@ -659,6 +655,7 @@ Add following external libraries
 
 ### Changelog
 1.0 — Released component
+1.0.10 - Our Expertise section replaced with new rendering
 
 
 <Canvas>
@@ -683,6 +680,7 @@ Add following external libraries
           textctadata={textctadata(locale)}
           textbackgrounddata={textbackgrounddata(locale)}
           statsdata={statsdata(locale)}
+          ourexpertisedata={ourexpertisedata(locale)}
           fixedcarouseldata={fixedcarouseldata(locale)}
           featureddata={caption.groupcontentdata}
           headertext={caption.headertext}

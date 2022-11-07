@@ -4,7 +4,7 @@
 
 /* Tab start */
 .tabs {
-  ul {
+  > ul {
     background-color: $color-white;
     border-bottom: 2px solid $color-gray-300;
     list-style: none;
@@ -68,7 +68,7 @@
 
 [dir='rtl'] {
   .tabs {
-    ul {
+    > ul {
       padding-right: 0;
 
       @include devicebreak(medium) {
