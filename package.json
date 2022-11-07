@@ -1,6 +1,6 @@
 {
   "name": "design-system-undp",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Design System for UNDP",
   "main": "index.js",
   "scripts": {
