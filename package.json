@@ -113,6 +113,9 @@
     "@storybook/react/webpack": "^5",
     "react-element-to-jsx-string": "14.3.2"
   },
+  "publishConfig": {
+    "@UNDP:registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/undp/design-system.git"
