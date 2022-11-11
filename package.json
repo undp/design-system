@@ -116,7 +116,6 @@
   "publishConfig": {
     "@undp:registry": "https://npm.pkg.github.com"
   },
-  "private": "true",
   "repository": {
     "type": "git",
     "url": "https://github.com/undp/design-system.git"
