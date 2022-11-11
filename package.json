@@ -114,7 +114,7 @@
     "react-element-to-jsx-string": "14.3.2"
   },
   "publishConfig": {
-    "@UNDP:registry": "https://npm.pkg.github.com"
+    "@undp:registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
