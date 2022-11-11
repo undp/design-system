@@ -75,7 +75,7 @@
     json5 "^2.2.1"
     semver "^6.3.0"
 
-"@babel/generator@^7.12.11", "@babel/generator@^7.12.5", "@babel/generator@^7.13.9", "@babel/generator@^7.20.1", "@babel/generator@^7.20.2":
+"@babel/generator@^7.12.11", "@babel/generator@^7.12.5", "@babel/generator@^7.20.1", "@babel/generator@^7.20.2":
   version "7.20.3"
   resolved "https://registry.npmjs.org/@babel/generator/-/generator-7.20.3.tgz"
   dependencies:
@@ -290,7 +290,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.12.11", "@babel/parser@^7.12.7", "@babel/parser@^7.13.12", "@babel/parser@^7.13.16", "@babel/parser@^7.14.7", "@babel/parser@^7.18.10", "@babel/parser@^7.20.1", "@babel/parser@^7.20.2":
+"@babel/parser@^7.12.11", "@babel/parser@^7.12.7", "@babel/parser@^7.13.16", "@babel/parser@^7.14.7", "@babel/parser@^7.18.10", "@babel/parser@^7.20.1", "@babel/parser@^7.20.2":
   version "7.20.3"
   resolved "https://registry.npmjs.org/@babel/parser/-/parser-7.20.3.tgz"
 
@@ -1566,7 +1566,7 @@
     global "^4.4.0"
     regenerator-runtime "^0.13.7"
 
-"@storybook/api@6.5.13", "@storybook/api@^6.1.21":
+"@storybook/api@6.5.13":
   version "6.5.13"
   resolved "https://registry.npmjs.org/@storybook/api/-/api-6.5.13.tgz"
   dependencies:
@@ -1797,7 +1797,7 @@
     recast "^0.19.0"
     regenerator-runtime "^0.13.7"
 
-"@storybook/components@6.5.13", "@storybook/components@^6.1.21":
+"@storybook/components@6.5.13":
   version "6.5.13"
   resolved "https://registry.npmjs.org/@storybook/components/-/components-6.5.13.tgz"
   dependencies:
@@ -2856,16 +2856,10 @@
   version "1.7.0"
   resolved "https://registry.npmjs.org/@webpack-cli/serve/-/serve-1.7.0.tgz"
 
-"@whitespace/storybook-addon-html@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.npmjs.org/@whitespace/storybook-addon-html/-/storybook-addon-html-5.0.0.tgz"
-  dependencies:
-    "@babel/generator" "^7.13.9"
-    "@babel/parser" "^7.13.12"
-    "@storybook/api" "^6.1.21"
-    "@storybook/components" "^6.1.21"
-    prettier "^2.2.1"
-    react-syntax-highlighter "^15.4.3"
+"@whitespace/storybook-addon-html@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@whitespace/storybook-addon-html/-/storybook-addon-html-5.0.3.tgz#f5d9a8af9d7a3ee0f33af71505246157166fa7b3"
+  integrity sha512-aR9eRMST/NxEPxtF0Sne7uyFuieXmBKB3hDbB6L+Vh5c/dPtAM0sVLaA62xW/iJS8P8oLW84fShFHUOv190qCQ==
 
 "@wordpress/babel-plugin-import-jsx-pragma@^4.4.0":
   version "4.4.0"
@@ -6296,7 +6290,8 @@ fastq@^1.6.0:
 
 fault@^1.0.0:
   version "1.0.4"
-  resolved "https://registry.npmjs.org/fault/-/fault-1.0.4.tgz"
+  resolved "https://registry.yarnpkg.com/fault/-/fault-1.0.4.tgz#eafcfc0a6d214fc94601e170df29954a4f842f13"
+  integrity sha512-CJ0HCB5tL5fYTEA7ToAq5+kTwd++Borf1/bifxd9iT70QcXr4MRrO3Llf8Ifs70q+SJcGHFtnIE/Nw6giCtECA==
   dependencies:
     format "^0.2.0"
 
@@ -6539,7 +6534,8 @@ form-data@^3.0.0:
 
 format@^0.2.0:
   version "0.2.2"
-  resolved "https://registry.npmjs.org/format/-/format-0.2.2.tgz"
+  resolved "https://registry.yarnpkg.com/format/-/format-0.2.2.tgz#d6170107e9efdc4ed30c9dc39016df942b5cb58b"
+  integrity sha512-wzsgA6WOq+09wrU1tsJ09udeR/YZRaeArL9e1wPbFg3GG2yDnC2ldKpxs4xunpFF9DgqCqOIra3bc1HWrJ37Ww==
 
 forwarded@0.2.0:
   version "0.2.0"
@@ -7169,7 +7165,8 @@ header-case@^2.0.4:
 
 highlight.js@^10.4.1, highlight.js@~10.7.0:
   version "10.7.3"
-  resolved "https://registry.npmjs.org/highlight.js/-/highlight.js-10.7.3.tgz"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.7.3.tgz#697272e3991356e40c3cac566a74eef681756531"
+  integrity sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==
 
 hmac-drbg@^1.0.1:
   version "1.0.1"
@@ -8483,7 +8480,8 @@ lowercase-keys@^2.0.0:
 
 lowlight@^1.17.0:
   version "1.20.0"
-  resolved "https://registry.npmjs.org/lowlight/-/lowlight-1.20.0.tgz"
+  resolved "https://registry.yarnpkg.com/lowlight/-/lowlight-1.20.0.tgz#ddb197d33462ad0d93bf19d17b6c301aa3941888"
+  integrity sha512-8Ktj+prEb1RoCPkEOrPMYUN/nCggB7qAWe3a7OpMjWQkh3l2RD5wKRQ+o8Q8YuI9RG/xs95waaI/E6ym/7NsTw==
   dependencies:
     fault "^1.0.0"
     highlight.js "~10.7.0"
@@ -10586,9 +10584,10 @@ prettier@^1.7.0:
   version "1.19.1"
   resolved "https://registry.npmjs.org/prettier/-/prettier-1.19.1.tgz"
 
-prettier@^2.2.1, prettier@^2.5.1:
+prettier@^2.5.1, prettier@^2.7.1:
   version "2.7.1"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-2.7.1.tgz"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
 
 pretty-error@^2.1.1:
   version "2.1.2"
@@ -10617,11 +10616,13 @@ pretty-hrtime@^1.0.3:
 
 prismjs@^1.27.0:
   version "1.29.0"
-  resolved "https://registry.npmjs.org/prismjs/-/prismjs-1.29.0.tgz"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.29.0.tgz#f113555a8fa9b57c35e637bba27509dcf802dd12"
+  integrity sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==
 
 prismjs@~1.27.0:
   version "1.27.0"
-  resolved "https://registry.npmjs.org/prismjs/-/prismjs-1.27.0.tgz"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.27.0.tgz#bb6ee3138a0b438a3653dd4d6ce0cc6510a45057"
+  integrity sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==
 
 private@^0.1.6, private@^0.1.8:
   version "0.1.8"
@@ -10907,9 +10908,10 @@ react-sizeme@^3.0.1:
     shallowequal "^1.1.0"
     throttle-debounce "^3.0.1"
 
-react-syntax-highlighter@^15.4.3:
+react-syntax-highlighter@^15.5.0:
   version "15.5.0"
-  resolved "https://registry.npmjs.org/react-syntax-highlighter/-/react-syntax-highlighter-15.5.0.tgz"
+  resolved "https://registry.yarnpkg.com/react-syntax-highlighter/-/react-syntax-highlighter-15.5.0.tgz#4b3eccc2325fa2ec8eff1e2d6c18fa4a9e07ab20"
+  integrity sha512-+zq2myprEnQmH5yw6Gqc8lD55QHnpKaU8TOcFeC/Lg/MQSs8UknEA0JC4nTZGFAXC2J2Hyj/ijJ7NlabyPi2gg==
   dependencies:
     "@babel/runtime" "^7.3.1"
     highlight.js "^10.4.1"
@@ -11064,7 +11066,8 @@ redent@^3.0.0:
 
 refractor@^3.6.0:
   version "3.6.0"
-  resolved "https://registry.npmjs.org/refractor/-/refractor-3.6.0.tgz"
+  resolved "https://registry.yarnpkg.com/refractor/-/refractor-3.6.0.tgz#ac318f5a0715ead790fcfb0c71f4dd83d977935a"
+  integrity sha512-MY9W41IOWxxk31o+YvFCNyNzdkc9M20NoZK5vq6jkv4I/uh2zkWcfudj0Q1fovjUQJrNewS9NMzeTtqPf+n5EA==
   dependencies:
     hastscript "^6.0.0"
     parse-entities "^2.0.0"
