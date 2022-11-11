@@ -1,5 +1,5 @@
 {
-  "name": "design-system-undp",
+  "name": "@undp/design-system",
   "version": "1.0.10",
   "description": "Design System for UNDP",
   "main": "index.js",
@@ -116,6 +116,7 @@
   "publishConfig": {
     "@undp:registry": "https://npm.pkg.github.com"
   },
+  "private": "true",
   "repository": {
     "type": "git",
     "url": "https://github.com/undp/design-system.git"
