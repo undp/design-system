@@ -11,8 +11,10 @@ By unifiying design elements into reusable components, development will simplify
 The Guide is a living document created to meet the needs of UNDP's front-end developers and designers. If there is a Component or Pattern that you need, or you have any other feedback, question or comment please contact us.
 
 ## Demo
-Living Style Guide & Documentation: **[Demo](https://design.undp.org)**
+Living Style Guide & Documentation: [Storybook](https://design.undp.org)
 
+## Starter project
+Static generator using Design System as dependency: [UNDP Design System starter template](https://github.com/undp/design-system-starter-template)
 
 ## Development
 
@@ -47,11 +49,12 @@ The design system is based on:
 - [Storybook](https://storybook.js.org/)
 
 
-## Assets
+## Compiled assets
 
-- All the icons/images can be found in the ***stories/assets/images/Icon*** directory.
-- CSS directory at: ***dist/css***.
-- JS directory at: ***dist/js***.
+- All the icons/images can be found in the ***docs/images*** directory.
+- Fonts: ***docs/fonts***
+- CSS directory at: ***docs/css***
+- JS directory at: ***docs/js***
 
 ## Storybook and File references
 
