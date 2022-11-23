@@ -3326,15 +3326,15 @@
   resolved "https://registry.npmjs.org/@whitespace/storybook-addon-html/-/storybook-addon-html-5.0.3.tgz"
   integrity sha512-aR9eRMST/NxEPxtF0Sne7uyFuieXmBKB3hDbB6L+Vh5c/dPtAM0sVLaA62xW/iJS8P8oLW84fShFHUOv190qCQ==
 
-"@wordpress/babel-plugin-import-jsx-pragma@^4.4.0":
-  version "4.4.0"
-  resolved "https://registry.npmjs.org/@wordpress/babel-plugin-import-jsx-pragma/-/babel-plugin-import-jsx-pragma-4.4.0.tgz"
-  integrity sha512-4bePHGzOjGmJzuq81kSPSinsrKclMQEoaNqZFVzP0vOwvv9eTiBjsoFPQEu4jdIBb9A9wGOYmTK0TO10pV1KlQ==
+"@wordpress/babel-plugin-import-jsx-pragma@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/babel-plugin-import-jsx-pragma/-/babel-plugin-import-jsx-pragma-4.5.0.tgz#6b1a8ac8875b41a800bfc8e78102f8ac85731c3c"
+  integrity sha512-/5TZUHgy4fh7L1aQJPQ8dKjaWBio41uiR4Y9aGH0oeg6pXdQlEOtbAXQtTAHeGyE1vJMYJUVHdRWdLocpGQWgA==
 
-"@wordpress/babel-preset-default@^7.3.0":
-  version "7.5.0"
-  resolved "https://registry.npmjs.org/@wordpress/babel-preset-default/-/babel-preset-default-7.5.0.tgz"
-  integrity sha512-TVHLyoypYu7s7JyasYNw/OU4iqlPNrOYVYD3YMsVriKxT6Oql0L6YRuWdIEmmxwj3Hsr/QcJijx7Dk2f3m6+Nw==
+"@wordpress/babel-preset-default@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/babel-preset-default/-/babel-preset-default-7.6.0.tgz#029665c6c965e0c95b27a0b2ccdab66c581f5865"
+  integrity sha512-DVwF85jvgGR6ExSIOsJKBj2v5vWO2AsrKUs5Vg9vTG7YdkR23JENBOiORYPgYWIdbK7JmSIXEPyfL7HpdvNp9A==
   dependencies:
     "@babel/core" "^7.16.0"
     "@babel/plugin-transform-react-jsx" "^7.16.0"
@@ -3342,43 +3342,43 @@
     "@babel/preset-env" "^7.16.0"
     "@babel/preset-typescript" "^7.16.0"
     "@babel/runtime" "^7.16.0"
-    "@wordpress/babel-plugin-import-jsx-pragma" "^4.4.0"
-    "@wordpress/browserslist-config" "^5.4.0"
-    "@wordpress/element" "^4.19.0"
-    "@wordpress/warning" "^2.21.0"
+    "@wordpress/babel-plugin-import-jsx-pragma" "^4.5.0"
+    "@wordpress/browserslist-config" "^5.5.0"
+    "@wordpress/element" "^4.20.0"
+    "@wordpress/warning" "^2.22.0"
     browserslist "^4.17.6"
     core-js "^3.19.1"
 
-"@wordpress/browserslist-config@^5.4.0":
-  version "5.4.0"
-  resolved "https://registry.npmjs.org/@wordpress/browserslist-config/-/browserslist-config-5.4.0.tgz"
-  integrity sha512-pMDzct5d8vqljwXquo9pQxlbjuDQNfY/g+Aw21qBvzXDApmXQHasr0aritkQkC7yLrk6DoEY5C8+hqzsDW18Gg==
+"@wordpress/browserslist-config@^5.5.0":
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/browserslist-config/-/browserslist-config-5.5.0.tgz#cf54c06e775ba555ba107e226fd46789ab6e8a4b"
+  integrity sha512-M3BhWQ+R8AK2g861hOtLTp/WnjcXPddiNzoMHR5zQOhcuSmgfP4dNJIJUWIVRPhqpES2EGcc30F9MIEyV27WiQ==
 
-"@wordpress/element@^4.19.0":
-  version "4.19.0"
-  resolved "https://registry.npmjs.org/@wordpress/element/-/element-4.19.0.tgz"
-  integrity sha512-5Ul1cpbtgagq0NV6hUiwszeiXtKFa06Po51PGvza62KylCIHCLF2ZlaY2zjeGLO10gKKKpCi7jRODFqOvWH3hQ==
+"@wordpress/element@^4.20.0":
+  version "4.20.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/element/-/element-4.20.0.tgz#d78499521cbb471b97e011a81ec6236daeac24ad"
+  integrity sha512-Ou7EoGtGe4FUL6fKALINXJLKoSfyWTBJzkJfN2HzSgM1wira9EuWahl8MQN0HAUaWeOoDqMKPvnglfS+kC8JLA==
   dependencies:
     "@babel/runtime" "^7.16.0"
     "@types/react" "^17.0.37"
     "@types/react-dom" "^17.0.11"
-    "@wordpress/escape-html" "^2.21.0"
+    "@wordpress/escape-html" "^2.22.0"
     change-case "^4.1.2"
     is-plain-object "^5.0.0"
     react "^17.0.2"
     react-dom "^17.0.2"
 
-"@wordpress/escape-html@^2.21.0":
-  version "2.21.0"
-  resolved "https://registry.npmjs.org/@wordpress/escape-html/-/escape-html-2.21.0.tgz"
-  integrity sha512-P/9wUbIVQPO9gdxeosfYRqiAFQPW0AGy7amaMuHNMICleZflQ79pfvEZV7V8c8ke2VjXcQ3QWHt+mDbyGTT7hg==
+"@wordpress/escape-html@^2.22.0":
+  version "2.22.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/escape-html/-/escape-html-2.22.0.tgz#2fa4e901b0ab96634541ca7d153baf910b741977"
+  integrity sha512-GUo6VLugIZxen1rdYuotvz6Vqa+5fNtVelNjXLwDqRu0iY2RXeoTux9V5bZWXPnGb54ryqfYmR4gH6F8xZhWzQ==
   dependencies:
     "@babel/runtime" "^7.16.0"
 
-"@wordpress/warning@^2.21.0":
-  version "2.21.0"
-  resolved "https://registry.npmjs.org/@wordpress/warning/-/warning-2.21.0.tgz"
-  integrity sha512-XE6ZTcogFA2+geSQRdnFABuNp2/IP/3fe2sndQzt5Fk7CHuEcEjVSS+SI5ywnzAu9g1qbD2X1t5CE77DtZ6w7A==
+"@wordpress/warning@^2.22.0":
+  version "2.22.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/warning/-/warning-2.22.0.tgz#d0ecaa8a5a29a8ccdb4878f833189fcc581779f8"
+  integrity sha512-BMM4GqiJNIZzh5SIK17EOyilp08mQ+DoKfxL+pl/lpA68jxYUTcKJf0atNbxXKPZHDCWGnQzFwr+huNYOtp4CQ==
 
 "@xmldom/xmldom@^0.8.2":
   version "0.8.5"
