@@ -86,7 +86,7 @@
     "react-syntax-highlighter": "^15.5.0",
     "remove-files-webpack-plugin": "^1.5.0",
     "resolve-url-loader": "^5.0.0",
-    "sass": "^1.55.0",
+    "sass": "^1.56.1",
     "sass-loader": "^13.0.0",
     "storybook-addon-rtl": "^0.4.4",
     "style-loader": "^3.3.1",
