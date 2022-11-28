@@ -80,7 +80,7 @@
     "path": "^0.12.7",
     "postcss-cli": "^10.0.0",
     "postcss-loader": "^7.0.1",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.0",
     "prettier-eslint": "^15.0.1",
     "prettier-stylelint": "^0.4.2",
     "react-syntax-highlighter": "^15.5.0",
