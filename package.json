@@ -70,7 +70,7 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-spellcheck": "0.0.19",
-    "eslint-plugin-storybook": "^0.6.6",
+    "eslint-plugin-storybook": "^0.6.8",
     "extract-loader": "^5.1.0",
     "glob": "^8.0.1",
     "html-entities": "^2.3.2",
