@@ -33,7 +33,7 @@
         width: 14.4375rem;
       }
 
-      span:first-of-type {
+      span:first-of-type:not(:last-of-type) {
         border-bottom: 1px solid $color-gray-500;
         color: $color-gray-600;
         display: inline-block;
@@ -45,6 +45,11 @@
       span {
         display: flex;
         margin-top: 0.3rem;
+      }
+
+      a {
+        font-size: inherit !important;
+        background: none !important;
       }
     }
 

@@ -31,13 +31,15 @@ function CountrySiteHeader({
       <section className="header">
         <div className="grid-container fluid">
           <div className="grid-x grid-margin-x align-content-middle">
-            <div className="cell large-9 small-9 align-self-middle top-left">
-              <a href="https://develop.design-system.pages.dev/iframe?id=components-navigation-components-main-navigation-global-header--global-header&globals=locale:english&args=&viewMode=story" className="logo" tabIndex="0">
+            <div className="cell large-9 small-8 align-self-middle top-left">
+              <a href="#" className="logo" tabIndex="0" title="UNDP Logo homepage link">
                 <Logo src={pnud} alt="UNDP Logo" />
               </a>
               <div className="site-title">
-                <span>{siteTitleData.label}</span>
-                <span>{siteTitleData.span}</span>
+                {!!siteTitleData.label && (
+                  <span><a href="#" className="site-title--label" title="UNDP homepage link" aria-hidden="true">{siteTitleData.label}</a></span>
+                )}
+                <span><a href="#" className="site-title--span" title="UNDP homepage link" aria-hidden="true">{siteTitleData.span}</a></span>
               </div>
               <Menu data={navigationData} />
             </div>
