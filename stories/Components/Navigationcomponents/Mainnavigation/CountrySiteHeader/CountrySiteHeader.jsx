@@ -37,9 +37,9 @@ function CountrySiteHeader({
               </a>
               <div className="site-title">
                 {!!siteTitleData.label && (
-                  <span><a href="#" className="site-title--label" title="UNDP homepage link" aria-hidden="true">{siteTitleData.label}</a></span>
+                  <span><a href="#" className="site-title--label" title="UNDP homepage link">{siteTitleData.label}</a></span>
                 )}
-                <span><a href="#" className="site-title--span" title="UNDP homepage link" aria-hidden="true">{siteTitleData.span}</a></span>
+                <span><a href="#" className="site-title--span" title="UNDP homepage link">{siteTitleData.span}</a></span>
               </div>
               <Menu data={navigationData} />
             </div>
