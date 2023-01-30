@@ -72,7 +72,7 @@
     "eslint-plugin-spellcheck": "0.0.20",
     "eslint-plugin-storybook": "^0.6.10",
     "extract-loader": "^5.1.0",
-    "glob": "^8.0.1",
+    "glob": "^8.1.0",
     "html-entities": "^2.3.2",
     "lodash-webpack-plugin": "^0.11.5",
     "mini-css-extract-plugin": "^2.7.0",
