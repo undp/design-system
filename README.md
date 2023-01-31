@@ -83,3 +83,6 @@ The design system is based on:
 
 ## LICENSE
 MIT license.
+
+## Acknowledgments
+Thanks to <a href="https://www.chromatic.com/"><img src="https://avatars.githubusercontent.com/u/24584319?s=20&v=4" alt="Chromatic logo"> Chromatic</a> for providing the visual testing platform that helps us review UI changes and catch visual regressions.
