@@ -58,6 +58,7 @@
     "babel-plugin-polyfill-corejs3": "^0.6.0",
     "babel-plugin-react-transform": "^3.0.0",
     "babel-preset-env": "^1.6.0",
+    "chromatic": "^6.15.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
