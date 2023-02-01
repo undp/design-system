@@ -8,7 +8,7 @@
   position: relative;
 
   &::before {
-    @extend %frosted-bg;
+    background: rgba(247, 247, 247, 0.9);
 
     content: '';
     height: 100%;
@@ -20,7 +20,19 @@
   img {
     display: block;
     object-fit: cover;
+    opacity: 0.5;
   }
 }
 
+// If backdrop filter (blur) is supported, than apply the blurring effects.
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .frosted-background {  
+    &::before {
+      @extend %frosted-bg;
+    }
+    img {
+      opacity: 1;
+    }
+  } 
+}
 /* frosted-backfround end */
