@@ -20,8 +20,8 @@
       font-size: $font-size-16;
       line-height: 1.142;
       margin-top: -0.25rem;
+      margin-right: 1.5rem;
       padding: 0.438rem 0;
-      width: calc(100% - 52px);
 
       @include devicebreak(mediumonlytab) {
         width: calc(100% - 64px);
@@ -82,20 +82,40 @@
     }
 
     .menu {
-      align-items: center;
+      align-items: stretch;
       align-self: stretch;
       display: flex;
       min-height: 7.1875rem;
+      margin: auto;
 
       @include devicebreak(mediumonlytab) {
         display: none;
       }
 
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+
       li {
-        margin: $spacing-04 0 $spacing-04 3.6875rem;
+        margin: 0 0 0 2.25rem;
+        display: flex;
+        align-items: stretch;
+        align-self: stretch;
+
+        @include devicebreak(xlarge) {
+          margin: 0 0 0 3.6875rem;
+        }
 
         &:first-of-type {
           margin-left: 0;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
         }
       }
     }
