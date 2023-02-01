@@ -11,9 +11,10 @@ By unifying design elements into reusable components, development will simplify 
 The Guide is a living document created to meet the needs of UNDP's front-end developers and designers. If there is a Component or Pattern that you need, or you have any other feedback, question or comment please contact us.
 
 ## Demo
-
 Living Style Guide & Documentation: **[Demo](https://design.undp.org)**
 
+## Starter project
+Static generator using Design System as dependency: [UNDP Design System starter template](https://github.com/undp/design-system-starter-template)
 
 ## Development
 
@@ -48,10 +49,12 @@ The design system is based on:
 - [Storybook](https://storybook.js.org/)
 
 ## Assets
+=======
 
-- All the icons/images can be found in the ***stories/assets/images/Icon*** directory.
-- CSS directory at: ***dist/css***.
-- JS directory at: ***dist/js***.
+- All the icons/images can be found in the ***docs/images*** directory.
+- Fonts: ***docs/fonts***
+- CSS directory at: ***docs/css***
+- JS directory at: ***docs/js***
 
 ## Storybook and File references
 
@@ -81,3 +84,6 @@ The design system is based on:
 ## License
 
 MIT license.
+
+## Acknowledgments
+Thanks to <a href="https://www.chromatic.com/"><img src="https://avatars.githubusercontent.com/u/24584319?s=20&v=4" alt="Chromatic logo"> Chromatic</a> for providing the visual testing platform that helps us review UI changes and catch visual regressions.
