@@ -9,7 +9,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook --loglevel verbose",
     "scss": "sass --watch ./stories/assets/scss/style.scss ./stories/assets/css/style.css",
-    "lint": "npm run lint:css && npm run lint:js",
+    "lint": "yarn run lint:css && yarn run lint:js",
     "lint:css": "stylelint ./stories/**/*.scss --fix",
     "lint:js": "eslint --ignore-pattern '*.mdx' --ignore-pattern '**/Table.jsx' ./stories --fix"
   },

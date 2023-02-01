@@ -1,4 +1,4 @@
-# United Nations Development Programme Design system
+# United Nations Development Programme Design System
 
 ## Purpose
 
@@ -6,12 +6,12 @@ The purpose of this project is to create unified user interfaces for UNDP by the
 
 These projects will have consistent look and feel and accessible in nature by just following the guidelines in the documentation.
 
-By unifiying design elements into reusable components, development will simplify and accelerate the development of these digital products.
+By unifying design elements into reusable components, development will simplify and accelerate the development of these digital products.
 
 The Guide is a living document created to meet the needs of UNDP's front-end developers and designers. If there is a Component or Pattern that you need, or you have any other feedback, question or comment please contact us.
 
 ## Demo
-Living Style Guide & Documentation: [Storybook](https://design.undp.org)
+Living Style Guide & Documentation: **[Demo](https://design.undp.org)**
 
 ## Starter project
 Static generator using Design System as dependency: [UNDP Design System starter template](https://github.com/undp/design-system-starter-template)
@@ -34,13 +34,13 @@ yarn run storybook
 yarn run build-storybook
 
 # linting on codebase
+# caution: this will write changes to your files
 yarn run lint
 ```
 
 ## List of components
 
-View available Components [here](https://design.undp.org). Every components have its own documentations page on the link provided.
-
+View available Components [here](https://design.undp.org). Every components has its own documentation page on the link provided.
 
 ## Credits
 
@@ -48,8 +48,8 @@ The design system is based on:
 
 - [Storybook](https://storybook.js.org/)
 
-
-## Compiled assets
+## Assets
+=======
 
 - All the icons/images can be found in the ***docs/images*** directory.
 - Fonts: ***docs/fonts***
@@ -81,7 +81,8 @@ The design system is based on:
 | Components/UI components/Stats Card Slider  | stories/Organism/Statscardslider  |
 | Utilities/Progress Bar Navigation  | stories/Atom/Navigation/ProgressBarNavigation  |
 
-## LICENSE
+## License
+
 MIT license.
 
 ## Acknowledgments
