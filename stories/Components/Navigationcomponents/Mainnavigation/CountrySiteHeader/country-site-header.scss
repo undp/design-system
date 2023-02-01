@@ -215,6 +215,9 @@
     }
 
     .site-title {
+      margin-left: 1.5rem;
+      margin-right: 0;
+
       @include devicebreak(xlarge) {
         margin-left: $spacing-07;
         margin-right: 0;
@@ -240,7 +243,11 @@
 
     .menu {
       li {
-        margin: $spacing-04 3.6875rem $spacing-04 0;
+        margin: 0 2.25rem 0 0;
+
+        @include devicebreak(xlarge) {
+          margin: 0 0 0 3.6875rem;
+        }
 
         &:first-of-type {
           margin-right: 0;
