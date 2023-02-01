@@ -1,10 +1,10 @@
-// image variables
+// Image variables
 $img-path: '../../../assets/images';
 $img-path-Icon: '../../../assets/icons';
 $img-path-Iconback: '../../assets/icons';
 $img-path-Iconfourback: '../../../../assets/icons';
 
-// COLORS
+// Colors
 $color-black: #000;
 $color-white: #fff;
 $color-blue-100: #b5d5f5;
@@ -39,7 +39,7 @@ $color-silvery-moonlight: #ced0d3;
 $color-shuttle-gray: #55606f;
 $color-ebony-clay: #232e3e;
 
-// FONT SIZE
+// Font sizes
 $font-size-12: 0.75rem;
 $font-size-14: 0.875rem;
 $font-size-16: 1rem;
@@ -50,12 +50,12 @@ $font-size-26: 1.625rem;
 $font-size-32: 2rem;
 $font-size-35: 2.188rem;
 
-// FONTS FAMLIY
+// Font families
 $Font-Family-ProximaNova: 'ProximaNova', sans-serif;
 $Font-Family-SohneBreit: 'SohneBreit', $Font-Family-ProximaNova;
 $Font-Family-NotoSans: 'NotoSans', sans-serif;
 
-// SPACING variables
+// Spacing variables
 $spacing-01: 0.125rem;
 $spacing-02: 0.25rem;
 $spacing-03: 0.5rem;
@@ -96,7 +96,7 @@ $width-1440: 90rem;
 $header-height-xlarge: 115px;
 $header-height-medium: 75px;
 
-// GRADIENT COLOR LIST
+// Gradient color list
 $yellow-gradient: $color-yellow 30%, rgba(255, 235, 0, 0) 110%;
 $red-gradient: $color-red 30%, rgb(240, 49, 49, 0) 110%;
 $green-gradient: $color-green 30%, rgba(0, 0, 0, 0) 110%;
@@ -142,7 +142,7 @@ $sdg-hover-navy-blue: #a2c2d8;
 
 $author-image-radius: 50%;
 
-// language selectors
+// Language selectors
 $cyrillic: ":lang(bg),:lang(be),:lang(kk),:lang(ky),:lang(mk),:lang(mn),:lang(ru),:lang(sr),:lang(uk)";
 
 /* variables end */
