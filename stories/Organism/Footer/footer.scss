@@ -15,15 +15,15 @@
 
   .footer-item {
     @include devicebreak(medium) {
-      flex: 0 0 calc((100% / 3) - 1.5rem) !important;
+      flex: 0 0 calc((100% / 3) - 1.5rem);
     }
 
     @include devicebreak(large) {
-      flex: 0 0 calc((100% / 4) - 1.5rem) !important;
+      flex: 0 0 calc((100% / 4) - 1.5rem);
     }
 
     @include devicebreak(xlarge) {
-      flex: 0 0 calc((100% / 6) - 1.5rem) !important;
+      flex: 0 0 calc((100% / 6) - 1.5rem);
     }
   }
 
@@ -31,7 +31,7 @@
     @include devicebreak(medium) {
       margin-left: auto !important;
       align-self: flex-end;
-      flex: 0 1 calc((100% / 3) - 1.5rem) !important;
+      flex: 0 1 calc((100% / 3) - 1.5rem);
       margin-left: auto !important;
     }
   }
