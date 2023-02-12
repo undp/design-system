@@ -5,7 +5,7 @@ import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { Authorimg } from '../../../../Atom/Images/AuthorImage/AuthorImages';
 
 export function Author({
-  data, authorImage, alt, Image, Number, Link,
+  data, authorImage, alt, Image, Number, Link, ...args
 }) {
   let size;
   let decNumber;
@@ -41,7 +41,7 @@ export function Author({
               {Link == 'False' ? (
                 <div className="author-box" key={index}>
                   {Image !== 'False' && decNumber <= 3 ? (
-                    <Authorimg image={authorImage} alt={item.Authorlabel} variant="Small" />
+                    <Authorimg image={authorImage} alt={item.Authorlabel} variant="Small" {...args} />
                   ) : (<></>)}
                   <div className="author-label">
                     <Heading type="6" label={item.Authorlabel} />
@@ -52,7 +52,7 @@ export function Author({
                 <div className="author-box" key={index}>
                   <a href="#">
                     {Image !== 'False' && decNumber <= 3 ? (
-                      <Authorimg image={authorImage} alt={item.Authorlabel} variant="Small" />
+                      <Authorimg image={authorImage} alt={item.Authorlabel} variant="Small" {...args} />
                     ) : (<></>)}
                     <div className="author-label">
                       <Heading type="6" label={item.Authorlabel} />
@@ -71,7 +71,7 @@ export function Author({
               {Link == 'False' ? (
                 <div className={['author-box', 'cell', `${size}`].join(' ')} key={index}>
                   {Image !== 'False' && decNumber <= 3 ? (
-                    <Authorimg image={authorImage} alt={item.Authorlabel} variant="Small" />
+                    <Authorimg image={authorImage} alt={item.Authorlabel} variant="Small" {...args} />
                   ) : (<></>)}
                   <div className="author-label">
                     <Heading type="6" label={item.Authorlabel} />
@@ -82,7 +82,7 @@ export function Author({
                 <div className={['author-box', 'cell', `${size}`].join(' ')} key={index}>
                   <a href="#">
                     {Image !== 'False' && decNumber <= 3 ? (
-                      <Authorimg image={authorImage} alt={item.Authorlabel} variant="Small" />
+                      <Authorimg image={authorImage} alt={item.Authorlabel} variant="Small" {...args} />
                     ) : (<></>)}
                     <div className="author-label">
                       <Heading type="6" label={item.Authorlabel} />

@@ -1,6 +1,6 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { Authorimg } from './AuthorImages';
-import user from '../../../assets/images/author.png';
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Authorimg } from "./AuthorImages";
+import user from "../../../assets/images/author.png";
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
@@ -27,40 +27,53 @@ export const getCaptionForLocale = (locale) => {
     variant: {
       options: ["Large", "Small"],
       control: { type: "inline-radio" },
-      defaultValue: "Small",
     },
     hovercolor: {
-      options: ["yellow", "red", "green", "blue"],
+      options: ["yellow", "red", "green", "blue", "accent"],
       control: { type: "inline-radio" },
-      defaultValue: "yellow",
     },
+  }}
+  args={{
+    hovercolor: "accent",
+    variant: "Small",
   }}
 />
 
 # Author Image
+
 The Author Image component reveals the photo of the author.
 
 ### Overview
+
 The Author Image component displays the author’s image but does not contain any information.
 
 #### When to use:
+
 - When the image of the author is to be displayed.
 
 ### Formatting
+
 #### Default
+
 It’s circular shaped with an image inside it.
 
 ### Behaviors
+
 #### States
+
 There are two states in the Author Image component: Small and Large.
+
 - Small
 - Large
 
 <Canvas>
   <Story name="Author image">
-    {(args, { globals: { locale } }) => {
+    {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      return <Authorimg image={user} alt="Headshot of XYZ" {...args}></Authorimg>;
+      args.accent = accent;
+      return (
+        <Authorimg image={user} alt="Headshot of XYZ" {...args}></Authorimg>
+      );
     }}
   </Story>
 </Canvas>
@@ -68,11 +81,15 @@ There are two states in the Author Image component: Small and Large.
 ### CSS and JS References
 
 #### CSS:
+
 Add the base layout style from
+
 - https://undp.github.io/design-system/css/base-minimal.min.css
 
 #### JS:
+
 - N/A
 
 ### Changelog
+
 1.0 — Released component

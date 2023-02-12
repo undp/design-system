@@ -51,13 +51,30 @@ export const globalTypes = {
     toolbar: {
       icon: 'globe',
       items: [
-        { value: 'english', title: 'English' },
+        { value: 'english', title: 'English', right: 'Default' },
         { value: 'arabic', title: 'Arabic' },
         { value: 'burmese', title: 'Burmese' },
         { value: 'japanese', title: 'Japanese' }
       ],
     },
   },
+  accent: {
+    title: 'Accent color',
+    description: 'Define the accent color.',
+    defaultValue: 'yellow',
+    toolbar: {
+      icon: 'paintbrush',
+      left: 'Accent color',
+      //showName: true,
+      dynamicTitle: true,
+      items: [
+        { value: 'yellow', title: 'Yellow', right: 'Default' },
+        { value: 'green', title: 'Green' },
+        { value: 'red', title: 'Red' },
+        { value: 'blue', title: 'Azure' },
+      ]
+    }
+  }
 };
 
 
@@ -90,7 +107,7 @@ export const globalTypes = {
  * @param {*} context Current context for Addons.
  * @returns Current Language Code.
  */
-const getLangCode=(Story,context)=>{
+const getLangCode = (Story, context) => {
   let activeLang = context.globals.locale;
 
   // trigger onload event
@@ -173,5 +190,17 @@ const setDirection = (Story, options) => {
   )
 }
 
+const setAccent = (Story, context) => {
+  let activeLang = context.globals.accent;
+
+  // // Set HTML lang attribute for iframe.
+  // const htmlElem = document.querySelector('html');
+  // htmlElem.setAttribute('lang', langArr[activeLang]);
+
+  return (
+    <Story {...context} />
+  )
+}
+
 // Trigger callback in Storybook Addons.
-export const decorators = [getLangCode, sbFrameReset, setDirection];
+export const decorators = [getLangCode, sbFrameReset, setDirection, setAccent];

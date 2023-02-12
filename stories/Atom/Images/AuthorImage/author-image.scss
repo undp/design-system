@@ -32,9 +32,10 @@ div.author__img {
       opacity: 0.75;
     }
 
-    @each $name, $color in $colors {
+    @each $name,
+    $color in $colors {
       &.#{$name}::before {
-        @include background-image(45deg, $color-yellow , transparent 53%);
+        @include background-image(45deg, $color , transparent 53%);
       }
     }
   }

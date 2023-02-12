@@ -159,10 +159,17 @@
 
 // global colors
 // color map gradient
-$colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green': rgba(92 222 83 / 82%), 'blue': rgba(94 232 246 / 82%));
+$colors: (
+  'yellow': rgba(255, 235, 0, 0.8),
+  'red': rgba(230 45 45 / 78%),
+  'green': rgba(92 222 83 / 82%),
+  'blue': rgba(94 232 246 / 82%)
+);
 
-@each $name, $color in $colors {
+@each $name,
+$color in $colors {
   .#{$name} {
+
     //card-thumbnail
     .card-thumbnail__image:hover {
       &::before {
@@ -269,8 +276,11 @@ $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green
 
 //rtl
 [dir='rtl'] {
-  @each $name, $color in $colors {
+
+  @each $name,
+  $color in $colors {
     .#{$name} {
+
       //card-thumbnail
       .card-thumbnail__image:hover {
         &::before {
@@ -346,10 +356,17 @@ $colors: ('yellow': rgba(255, 235, 0, 0.8), 'red': rgba(230 45 45 / 78%), 'green
 }
 
 // color map solid
-$colors-solid: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+$colors-solid: (
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure
+);
 
-@each $name, $color in $colors-solid {
+@each $name,
+$color in $colors-solid {
   .#{$name} {
+
     //statscard
     .stats-card {
       &:hover {
@@ -390,10 +407,17 @@ $colors-solid: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-gree
 }
 
 // color map light-color content card only
-$colors-light: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure);
+$colors-light: (
+  'yellow': $color-light-yellow,
+  'red': $color-light-red,
+  'green': $color-light-green,
+  'blue': $color-light-azure
+);
 
-@each $name, $color in $colors-light {
+@each $name,
+$color in $colors-light {
   .#{$name} {
+
     //content card - Emphasize default state color
     .content-card.card-emphasize {
       background-color: #{$color};
