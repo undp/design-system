@@ -14,7 +14,7 @@ export function PublicationCard({
 }) {
   return (
     <div className={['publication-card'].join(' ')}>
-      {image && <Publicationthumb Hovercolors={args.accent} />}
+      {image && <Publicationthumb Hovercolors={args.accent} {...args} />}
       {image2 && <Cardthumb />}
       <div className="description">
         {args.variant === 'Download'

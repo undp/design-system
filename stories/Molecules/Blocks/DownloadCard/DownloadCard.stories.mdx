@@ -1,25 +1,56 @@
-import { Meta, Story,  Canvas, Source, Anchor } from '@storybook/addon-docs';
-import { DownloadCard } from './DownloadCard';
-import img from '../../../assets/images/card-thumbnail.jpg';
+import { Meta, Story, Canvas, Source, Anchor } from "@storybook/addon-docs";
+import { DownloadCard } from "./DownloadCard";
+import img from "../../../assets/images/card-thumbnail.jpg";
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {title: 'Document Title', format: 'PDF (800kb)', download: 'Download'}; return engText;
-    case 'arabic': const arabicText = {title: 'عنوان الوثيقة', format: 'PDF (800 كيلوبايت)', download: 'تحميل'}; return arabicText;
-    case 'burmese': const burmeseText = {title: 'စာတမ်းခေါင်းစဉ်', format: 'PDF (800kb)', download: 'ဒေါင်းလုပ်'}; return burmeseText;
-    case 'japanese': const japaneseText = {title: 'ドキュメントのタイトル', format: 'PDF (800kb)', download: 'ダウンロード'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = {
+        title: "Document Title",
+        format: "PDF (800kb)",
+        download: "Download",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        title: "عنوان الوثيقة",
+        format: "PDF (800 كيلوبايت)",
+        download: "تحميل",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        title: "စာတမ်းခေါင်းစဉ်",
+        format: "PDF (800kb)",
+        download: "ဒေါင်းလုပ်",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        title: "ドキュメントのタイトル",
+        format: "PDF (800kb)",
+        download: "ダウンロード",
+      };
+      return japaneseText;
     default:
-      return {title: 'Document Title', format: 'PDF (800kb)', download: 'Download'};
+      return {
+        title: "Document Title",
+        format: "PDF (800kb)",
+        download: "Download",
+      };
   }
 };
 
-<Meta title="Components/UI components/Cards/Download card"
+<Meta
+  title="Components/UI components/Cards/Download card"
   argTypes={{
     variant: {
       options: ["External Link", "Download"],
       control: { type: "inline-radio" },
-      defaultValue: 'Download'
     },
+  }}
+  args={{
+    variant: "Download",
   }}
 />
 
@@ -32,14 +63,17 @@ Download card has the card with information along with various items like title,
 Download card component will have information of the card with various attributes like title, image related to the card, format of the file implies the file is in the form of pdf or docx, anyother way. There will even be a download link that allows the users to download the file.
 
 #### When to use:
+
 When the user wants to download the file to know the complete details about the card.
 
 ### Formatting
+
 #### Default
 
 It consists of an image with title, file format with file size, and download link.
 
 ### Content
+
 The download card consists of an Image below its title, file format with file size and download link. The image covers the grid. There are 3 types of download card: Publication module, card module, download module.
 
 Publication module: In this the user can see the publication image, title, file format, file size and download link.
@@ -47,7 +81,6 @@ Publication module: In this the user can see the publication image, title, file 
 Card module: In this the user can see image, title, file size and format along with a downloadable link.
 
 Download Module: In this the user will be give title, file format with size and with download link where the user can directly download the file.
-
 
 ### Behaviors
 
@@ -61,42 +94,71 @@ Publication default state view:
 Hover: In this state, when the mouse hovers over the download card, image is displayed along yellow color over the image.
 
 #### Publication module
+
 <Canvas>
-  <Story name="Publication module" >
-    {(args, { globals: { locale } }) => {
+  <Story name="Publication module">
+    {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      return <DownloadCard title={caption.title} format={caption.format}  download={caption.download} image {...args} ></DownloadCard>;
+      args.accent = accent;
+      return (
+        <DownloadCard
+          title={caption.title}
+          format={caption.format}
+          download={caption.download}
+          image
+          {...args}
+        ></DownloadCard>
+      );
     }}
   </Story>
 </Canvas>
 
-<Anchor storyId='components-ui-components-cards-download-card--card-module'></Anchor>
+<Anchor storyId="components-ui-components-cards-download-card--card-module"></Anchor>
 
 #### Card module
 
 <Canvas>
-  <Story name="Card module" >
-    {(args, { globals: { locale } }) => {
+  <Story name="Card module">
+    {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      return <DownloadCard title={caption.title} format={caption.format}  download={caption.download} image2={img} {...args} ></DownloadCard>;
+      args.accent = accent;
+      return (
+        <DownloadCard
+          title={caption.title}
+          format={caption.format}
+          download={caption.download}
+          image2={img}
+          {...args}
+        ></DownloadCard>
+      );
     }}
   </Story>
 </Canvas>
 
-<Anchor storyId='components-ui-components-cards-download-card--download-module'></Anchor>
+<Anchor storyId="components-ui-components-cards-download-card--download-module"></Anchor>
 
 #### Download module
 
 <Canvas>
-  <Story name="Download module" >
-    {(args, { globals: { locale } }) => {
+  <Story name="Download module">
+    {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      return <DownloadCard title={caption.title} format={caption.format}  download={caption.download} alt={'feature card'} {...args} ></DownloadCard>;
+      args.accent = accent;
+      return (
+        <DownloadCard
+          title={caption.title}
+          format={caption.format}
+          download={caption.download}
+          alt={"feature card"}
+          {...args}
+        ></DownloadCard>
+      );
     }}
   </Story>
 </Canvas>
 
 ### Usage:
+
 Copy HTML from the HTML tab of canvas and include below listed css file.
 
 ### CSS and JS References
@@ -113,8 +175,10 @@ Add the base layout style from
 NA
 
 ### Interactions
+
 - Hover state applies to the image only.
 - By clicking on the download Link, the associated file will be downloaded .
 
 ### Changelog
+
 1.0 — Released component
