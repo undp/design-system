@@ -11,11 +11,12 @@ const cls = (...classes) => {
   return classes.filter(Boolean).length > 0 ? classes.filter(Boolean).join(' ') : null;
 };
 
-export const Accent_options = {
-  yellow: '',
+export const color_options = {
+  yellow: 'yellow',
   red: 'red',
   green: 'green',
   blue: 'blue',
+  accent: '',
 };
 
 export function StatsCards({
@@ -45,11 +46,14 @@ export function StatsCards({
     }
   }, []);
 
-  let screen_variant = Accent_options[`${args.Accent}`];
+  let { accent } = args;
+  let color_option = color_options[`${args.Hovercolor}`];
+  let Hovercolor = (Boolean(accent)) && (!color_option) ? accent : color_option;
+
   return (
-    <div className={cls('stats-card', `${size}`, `${screen_variant}`)}>
+    <div className={cls('stats-card', `${size}`, `${Hovercolor}`)}>
       <div>
-        {size == 'x-large' || size == 'large' ? (<Heading type="3" label={title} />) : (<></>)}
+        {size == 'x-large' || size == 'large' ? (<Heading type="3" label={title} />) : null}
         <div><Heading type="2" label={number} /></div>
       </div>
       <div>
