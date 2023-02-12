@@ -19,6 +19,10 @@
 
     .overlay-grey {
       @extend %absolute__content;
+
+      &::before {
+        background: rgba(0, 0, 0, 0.025);
+      }
     }
 
     img {
@@ -34,9 +38,14 @@
       align-items: center;
       display: flex;
       height: 100%;
-      padding-top: 0;
+      padding-top: 0rem;
       position: absolute;
       top: 0;
+
+      @include devicebreak(medium) {
+        flex-direction: row;
+        padding-top: 0;
+      }
 
       h4 {
         padding-top: 0;
@@ -59,6 +68,7 @@
       padding-top: $spacing-11;
 
       @include devicebreak(small) {
+        padding-top: $spacing-11;
         padding-left: $spacing-04;
         padding-right: $spacing-04;
       }
@@ -67,9 +77,15 @@
         margin-bottom: 0;
       }
     }
+
+    &.no-background-media {
+      background-color: $color-gray-200;
+    }
   }
 
   &-content {
+    //position: relative;
+
     @include devicebreak(small) {
       height: auto;
       padding-left: $spacing-04;
@@ -84,7 +100,7 @@
         padding-top: 0;
       }
 
-      + h2 {
+      +h2 {
         margin-top: 0;
       }
     }
@@ -94,6 +110,32 @@
       font-weight: 700;
       margin-bottom: 0;
       text-transform: uppercase;
+    }
+
+    .subtitle {
+      font-size: 1.563rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-top: 1rem;
+      margin-bottom: 0;
+
+      @include devicebreak(medium) {
+        font-size: 2.188rem;
+      }
+    }
+
+    a.button {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 0.75rem;
+      right: 0.75rem;
+
+      @include devicebreak(medium) {
+        margin-top: 3rem;
+        margin-bottom: 0;
+        position: relative;
+        inset: unset;
+      }
     }
   }
 
@@ -121,13 +163,15 @@
   }
 
   &-tall {
+    position: relative;
+
     .pagehero-content {
       align-items: flex-start;
       display: flex;
       flex-direction: column;
       height: 100%;
       justify-content: center;
-      position: relative;
+      //position: relative;
       word-break: break-word;
 
       @include devicebreak(small) {
@@ -135,7 +179,7 @@
         padding: 0 0 $spacing-08;
 
         h4 {
-          padding-top: $spacing-10;
+          padding-top: 0;
         }
       }
 
@@ -143,15 +187,56 @@
         padding-bottom: 0;
         padding-right: 1.438rem;
       }
+
+      a.button {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 0;
+        right: 0;
+
+        @include devicebreak(medium) {
+          display: block;
+          margin-top: 1.5rem;
+          position: relative;
+          inset: unset;
+        }
+      }
+    }
+
+    &.no-background {
+      .pagehero-content {
+        min-height: 650px;
+      }
+    }
+
+    .hero-placeholder,
+    .homepage-hero-image {
+      overflow: hidden;
+
+      @include devicebreak(medium) {
+        overflow: visible;
+      }
+
+      a.button {
+        margin: 2rem 0 1rem;
+        //position: relative;
+        display: none;
+
+        @include devicebreak(medium) {
+          //display: none;
+        }
+      }
     }
 
     .breadcrumb {
       margin-top: $spacing-11;
       position: initial;
+      margin-bottom: $spacing-11;
 
       @include devicebreak(medium) {
         margin-top: 0;
         position: absolute;
+        margin-bottom: 0;
         top: 30px;
       }
 
@@ -163,6 +248,16 @@
       ul li {
         margin-bottom: 0;
         margin-top: 0;
+      }
+    }
+
+    &.has-cta {
+      .homepage-hero-image {
+        margin-bottom: 6.5rem;
+
+        @include devicebreak(medium) {
+          margin-bottom: unset;
+        }
       }
     }
   }

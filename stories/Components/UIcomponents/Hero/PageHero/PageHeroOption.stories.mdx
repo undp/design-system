@@ -143,7 +143,7 @@ export const getCaptionForLocale = (locale) => {
   title="Components/UI components/Hero/Page"
   argTypes={{
     variant: {
-      options: ["video", "image", "no_background"],
+      options: ["video", "image"],
       control: { type: "radio" },
     },
     cta_enabled: {
@@ -158,19 +158,19 @@ export const getCaptionForLocale = (locale) => {
   }}
   args={{
     variant: "image",
-    cta_enabled: false,
+    cta_enabled: true,
     outline_enabled: false,
     subtitle_enabled: false,
   }}
 />
 
-# Page Hero - Full-width
+# Page Hero - Tall Image
 
-The Full-width homepage Hero images are large sized with text in the front of the image and present at the top of the page.
+The Page Hero images are large-sized images with text beside or above the image and present at the top of the homepage.
 
 ### Overview
 
-The Page Hero component is a multi-usage component which creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle and Breadcrumb. Animation and atom tags are used for creating this card.
+The Page Hero component is a multi-usage component that creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle, and Breadcrumb. Animation and atom tags are used for creating this card.
 
 #### When to use:
 
@@ -180,39 +180,41 @@ When the website needs to grab the user's attention to a particular page.
 
 #### Default
 
-It consists of a grid with title, subtitle, image and breadcrumbs.
+It consists of a grid with title, subtitle, image, and breadcrumbs.
 
 ### Content
 
-The Full-width Page Hero image consists of an Image and text, subtitle and breadcrumbs in the front of the image. The image covers the entire grid.
+The Tall Page Hero image consists of an Image situated at either side or at the bottom of the grid. The text is either at the other side of the grid or above the image.
 
 ### Behaviors
 
 #### States
 
-There are two states in the Full-width Page- Default and Mobile.
+There are two states in the Tall Image Page- Default and Mobile.
 
-1. Default: It consists of an image and breadcrumbs in the front of the image at the top and title and subtitle below it.
+1. Default: It consists of an image on either side of the grid and content on the other side.
 
-2. Mobile: It consists of a vertical image with breadcrumbs, title and subtitles in the front of the image.
+2. Mobile: It consists of an image at the bottom of the grid and content above the grid.
 
 <Canvas>
-  <Story name="Page hero - full-width">
+  <Story name="Page hero - tall image">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       const cta = { label: caption.cta, for_primary: "Arrow" };
       return (
-        <PageHero
+        <PageHeroOption
           data={caption.herodata}
           title={caption.title}
           subtitle={caption?.subtitle}
           content={caption?.content}
-          active={"white"}
+          active={"default"}
           imgsrc={caption.imgsrc}
+          imgsrc2={caption.imgsrc2}
           imgalt={caption.imgalt}
+          videosrc={caption.videosrc}
           cta={cta}
           {...args}
-        ></PageHero>
+        ></PageHeroOption>
       );
     }}
   </Story>
@@ -221,28 +223,25 @@ There are two states in the Full-width Page- Default and Mobile.
 ### Usage:
 
 - Choose the variant either video or Image from the control tab on canvas.
-- Grab the HTML form HTML tab and also include css and js files listed below.
-- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.
-- If you want the image to expand size on scroll then include animation.min.js and initialize expandToSize('.pagehero-fulll').
+- Grab the HTML form HTML tab and include css and js files listed below.
+- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
 
 ### CSS and JS References
 
 #### CSS:
 
-Add the base layout style from
+Add the base layout style from dist/css/base-minimal.min.css
 
-- https://undp.github.io/design-system/css/base-minimal.min.css
-- https://undp.github.io/design-system/css/components/pagehero.min.css
+- https://undp.github.io/design-system/css/components/page-hero.min.css
 - https://undp.github.io/design-system/css/components/breadcrumbs.min.css
 
 #### JS:
 
-- https://undp.github.io/design-system/js/animation.min.js
 - https://undp.github.io/design-system/js/viewport.min.js
 
 ### Interactions
 
-- When the page is opened, the contents of the card appears beside the image and the image zooms in.
+- When the page is opened, the contents of the card appears beside the image.
 
 ### Changelog
 
