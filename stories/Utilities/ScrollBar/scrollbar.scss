@@ -7,6 +7,10 @@
   line-height: normal;
   max-width: $width-600;
   width: 100%;
+
+  @supports (scrollbar-width: thin) {
+    border-bottom: 1px solid black;
+  }
 }
 
 .scrollbar-data {
@@ -17,6 +21,10 @@
 .scrollbar-vertical-wrapper {
   height: 70vh;
   width: 65px;
+
+  @supports (scrollbar-width: thin) {
+    border-right: 1px solid black;
+  }
 }
 
 .scrollbar-data__vertical {
@@ -24,6 +32,7 @@
 }
 
 [dir='rtl'] {
+
   .scrollbar-horizontal-wrapper,
   .scrollbar-vertical-wrapper {
     float: right;
