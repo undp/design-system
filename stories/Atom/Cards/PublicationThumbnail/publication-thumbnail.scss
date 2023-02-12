@@ -1,7 +1,12 @@
 @import '../../../assets/scss/mixins';
 
 /* publication_thumbnail */
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+$colors: (
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure
+);
 
 div.publication-thumbnail__image {
   background: linear-gradient(180deg, #c9d0d6 70%, #c9d0d6 0, #414648 70.5%, #9ea5ac 0, #9ea5ac);
@@ -39,7 +44,8 @@ div.publication-thumbnail__image {
       opacity: 0.75;
     }
 
-    @each $name, $color in $colors {
+    @each $name,
+    $color in $colors {
       &.#{$name}:after {
         @include background-image(27.66deg, #{$color}, transparent 70.49%);
       }
@@ -50,7 +56,9 @@ div.publication-thumbnail__image {
 [dir='rtl'] {
   div.publication-thumbnail__image {
     &:hover {
-      @each $name, $color in $colors {
+
+      @each $name,
+      $color in $colors {
         &.#{$name}:after {
           @include background-image(318deg, #{$color}, transparent 70.49%);
         }

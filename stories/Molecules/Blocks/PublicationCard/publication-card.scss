@@ -2,7 +2,12 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+$colors: (
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure
+);
 
 div.publication-card {
   display: inline-block;
@@ -19,9 +24,10 @@ div.publication-card {
         opacity: 0.75;
       }
 
-      @each $name, $color in $colors {
+      @each $name,
+      $color in $colors {
         &.#{$name}:after {
-          @include background-image(27.66deg, $color-yellow, transparent 70.49%);
+          @include background-image(27.66deg, $color, transparent 70.49%);
 
           opacity: 0.75;
         }
@@ -34,7 +40,7 @@ div.publication-card {
     background: $color-gray-100;
     padding: $spacing-06;
 
-    > div {
+    >div {
       align-items: center;
       flex-wrap: unset;
 
@@ -141,7 +147,7 @@ div.publication-card {
     }
 
     .description {
-      > div {
+      >div {
         &:first-of-type {
           text-align: right;
         }
@@ -160,7 +166,8 @@ div.publication-card {
           @include background-image(318deg, $color-yellow, transparent 70.49%);
         }
 
-        @each $name, $color in $colors {
+        @each $name,
+        $color in $colors {
           &.#{$name}:after {
             @include background-image(318deg, #{$color}, transparent 70.49%);
           }
