@@ -41,7 +41,8 @@ export const getCaptionForLocale = (locale) => {
             button: "READ MORE",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "CONTENT TAG",
             contentname: "Title of the post goes here and it’s two lines",
@@ -51,7 +52,8 @@ export const getCaptionForLocale = (locale) => {
             button: "READ MORE",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "CONTENT TAG",
             contentname: "Title of the post goes here and it’s two lines",
@@ -61,7 +63,8 @@ export const getCaptionForLocale = (locale) => {
             button: "READ MORE",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "CONTENT TAG",
             contentname: "Title of the post goes here and it’s two lines",
@@ -108,7 +111,8 @@ export const getCaptionForLocale = (locale) => {
             button: "اقرأ أكث",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "علامة المحتوى",
             contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
@@ -118,7 +122,8 @@ export const getCaptionForLocale = (locale) => {
             button: "اقرأ أكث",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "علامة المحتوى",
             contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
@@ -128,7 +133,8 @@ export const getCaptionForLocale = (locale) => {
             button: "اقرأ أكث",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "علامة المحتوى",
             contentname: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
@@ -181,7 +187,8 @@ export const getCaptionForLocale = (locale) => {
             button: "ပိုပြီးဖတ်ပါ",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "အကြောင်းအရာ TAG",
             contentname:
@@ -193,7 +200,8 @@ export const getCaptionForLocale = (locale) => {
             button: "ပိုပြီးဖတ်ပါ",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "အကြောင်းအရာ TAG",
             contentname:
@@ -205,7 +213,8 @@ export const getCaptionForLocale = (locale) => {
             button: "ပိုပြီးဖတ်ပါ",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "အကြောင်းအရာ TAG",
             contentname:
@@ -254,7 +263,8 @@ export const getCaptionForLocale = (locale) => {
             button: "続きを読む",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "コンテンツタグ",
             contentname: "投稿のタイトルはここにあり、2行です",
@@ -264,7 +274,8 @@ export const getCaptionForLocale = (locale) => {
             button: "続きを読む",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "コンテンツタグ",
             contentname: "投稿のタイトルはここにあり、2行です",
@@ -274,7 +285,8 @@ export const getCaptionForLocale = (locale) => {
             button: "続きを読む",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "コンテンツタグ",
             contentname: "投稿のタイトルはここにあり、2行です",
@@ -321,7 +333,8 @@ export const getCaptionForLocale = (locale) => {
             button: "READ MORE",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "CONTENT TAG",
             contentname: "Title of the post goes here and it’s two lines",
@@ -331,7 +344,8 @@ export const getCaptionForLocale = (locale) => {
             button: "READ MORE",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "CONTENT TAG",
             contentname: "Title of the post goes here and it’s two lines",
@@ -341,7 +355,8 @@ export const getCaptionForLocale = (locale) => {
             button: "READ MORE",
             link: "#",
             imgback: img6,
-          },,
+          },
+          ,
           {
             contenttile: "CONTENT TAG",
             contentname: "Title of the post goes here and it’s two lines",
@@ -359,15 +374,18 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta 
-  title="Patterns/Card grids/Content cards" 
+<Meta
+  title="Patterns/Card grids/Content cards"
   argTypes={{
-  Hovercolors: {
-    options: ['yellow', 'red', 'green', 'blue'],
-    control: { type: 'inline-radio' },
-    defaultValue: 'yellow'
-  }
-}}/>
+    Hovercolors: {
+      options: ["yellow", "red", "green", "blue", "accent"],
+      control: { type: "inline-radio" },
+    },
+  }}
+  args={{
+    Hovercolors: "accent",
+  }}
+/>
 
 # Content Cards
 
@@ -375,8 +393,9 @@ This is just collection of the [Content card](/docs/components-ui-components-car
 
 <Canvas>
   <Story name="Content cards">
-    {(args, { globals: { locale } }) => {
+    {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
+      args.accent = accent;
       return (
         <ContentCard
           data={caption.groupcontentdata}
@@ -388,7 +407,9 @@ This is just collection of the [Content card](/docs/components-ui-components-car
   </Story>
 </Canvas>
 
-### 
+###
+
 ### Usage
+
 - Copy the HTML from the canvas
 - Include the CSS and JS resource defined in the `Content card`

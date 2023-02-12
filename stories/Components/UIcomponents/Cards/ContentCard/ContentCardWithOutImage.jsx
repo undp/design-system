@@ -7,29 +7,36 @@ import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
-export const hovercolors_options = {
-  default: '',
+export const color_options = {
+  default: 'default',
   yellow: 'yellow',
   red: 'red',
   blue: 'blue',
   green: 'green',
+  accent: '',
 };
 
-export const ContentCardWithOutImage = ({
-  data, Hovercolors,
-}) => {
-  let hovercolors_variant = hovercolors_options[`${Hovercolors}`];
+export function ContentCardWithOutImage({
+  data,
+  Hovercolors,
+  ...args
+}) {
+  let { accent } = args;
+  let hovercolor = color_options[`${Hovercolors}`];
+  let Color = (Boolean(accent)) && (!hovercolor) ? accent : hovercolor;
+  Color = (Color == 'default') ? '' : Color;
+
   return (
     <div className="grid-x grid-margin-x">
       {data.map((item, index) => (
         <div key={index} className="cell medium-4">
-          <div className={cls('content-card', 'card', `${hovercolors_variant}`)}>
+          <div className={cls('content-card', 'card', `${Color}`)}>
             <a href={item.link}>
               <Heading type="6" label={item.contenttile} />
               <div className="content-caption">
                 <Heading type="5" label={item.contentname} />
                 <P label={item.paragraph} />
-                <Ctalink label={item.button} Type="Space" button_option="span"/>
+                <Ctalink label={item.button} Type="Space" button_option="span" />
               </div>
             </a>
           </div>
@@ -37,8 +44,4 @@ export const ContentCardWithOutImage = ({
       ))}
     </div>
   );
-};
-
-ContentCardWithOutImage.defaultProps = {
-  Hovercolors: 'default',
-};
+}
