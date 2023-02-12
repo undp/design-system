@@ -1,6 +1,6 @@
-import { Meta, Story,  Canvas, Source } from '@storybook/addon-docs';
-import { FeaturedContentCard } from './FeaturedContentCard';
-import img from '../../../../assets/images/card2.jpg';
+import { Meta, Story, Canvas, Source } from "@storybook/addon-docs";
+import { FeaturedContentCard } from "./FeaturedContentCard";
+import img from "../../../../assets/images/card2.jpg";
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
@@ -9,12 +9,14 @@ export const getCaptionForLocale = (locale) => {
         featuredcontentdata: [
           {
             contenttile: "CONTENT TAG",
-            contentname: "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
-            descriptionText: "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
             button: "READ MORE",
             imgback: img,
-          }
-        ]
+          },
+        ],
       };
       return engText;
     case "arabic":
@@ -26,8 +28,8 @@ export const getCaptionForLocale = (locale) => {
             descriptionText: " عنوان المشاركة يظهر هنا ويتكون من سطرين",
             button: "اقرأ أكث",
             imgback: img,
-          }
-        ]
+          },
+        ],
       };
       return arabicText;
     case "burmese":
@@ -35,12 +37,14 @@ export const getCaptionForLocale = (locale) => {
         featuredcontentdata: [
           {
             contenttile: "အကြောင်းအရာ TAG",
-            contentname: "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
-            descriptionText: "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            contentname:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
+            descriptionText:
+              "ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ၊ နာမည်က ပို့စ်ခေါင်းစဉ်ကဒီမှာပါ၊ အဲဒါကစာကြောင်းနှစ်ကြောင်းပါ",
             button: "ပိုပြီးဖတ်ပါ",
             imgback: img,
-          }
-        ]
+          },
+        ],
       };
       return burmeseText;
     case "japanese":
@@ -52,8 +56,8 @@ export const getCaptionForLocale = (locale) => {
             descriptionText: "投稿のタイトルはここにあり、2行です",
             button: "続きを読む",
             imgback: img,
-          }
-        ]
+          },
+        ],
       };
       return japaneseText;
     default:
@@ -61,40 +65,48 @@ export const getCaptionForLocale = (locale) => {
         featuredcontentdata: [
           {
             contenttile: "CONTENT TAG",
-            contentname: "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
-            descriptionText: "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
+            contentname:
+              "Mongolia receives new $23.1 million GCF grant to strengthen climate resilience",
+            descriptionText:
+              "With the new Green Climate Fund grant, UNDP-supported project will benefit close to one million vulnerable population.",
             button: "READ MORE",
             imgback: img,
-          }
-        ]
+          },
+        ],
       };
       return dummy;
   }
 };
 
-<Meta title="Components/UI components/Cards/Featured card" argTypes={{
-      image: {
-        options: ['image', 'color'],
-        control: { type: 'radio' },
-        defaultValue: 'image'
-      },
-      size: {
-        options: ['large', 'medium', 'small'],
-        control: { type: 'radio' },
-        defaultValue: 'medium'
-      },
-      hovercolor: {
-        options: ['yellow', 'red', 'green', 'blue'],
-        control: { type: 'radio' },
-        defaultValue: 'yellow'
-      }
-    }}/>
+<Meta
+  title="Components/UI components/Cards/Featured card"
+  argTypes={{
+    image: {
+      options: ["image", "color"],
+      control: { type: "radio" },
+    },
+    size: {
+      options: ["large", "medium", "small"],
+      control: { type: "radio" },
+    },
+    hovercolor: {
+      options: ["yellow", "red", "green", "blue", "accent"],
+      control: { type: "radio" },
+    },
+  }}
+  args={{
+    image: "image",
+    size: "medium",
+    hovercolor: "accent",
+  }}
+/>
 
 # Feature Content Card
 
 The Featured Content Card components are cards with information and/or image.
 
 ### Overview
+
 The Featured Content Card component defines a card of information with some items- Tag, Title, Image, Paragraph, and CTA Link. It uses a grid system to manage the different sizes. It is a multi-usage component that creates boxes that are usually teasing some kind of content.
 
 #### When to use:
@@ -104,10 +116,13 @@ When a card with data, CTA link and image is to be displayed.
 ### Formatting
 
 #### Default
+
 It consists of a grid with title, paragraph, cta link, and/or image.
 
 ### Content
+
 There are two types of featured card components: Featured Card with Image and Featured Card without Image. It consists of three sizes: Small, Default, and Large.
+
 1. Small
 2. Default
 3. Large
@@ -115,6 +130,7 @@ There are two types of featured card components: Featured Card with Image and Fe
 ### Behaviors
 
 #### States
+
 There are two states in Featured Cards: Default, Hover.
 
 1. Default: It shows the title, paragraph, CTA link, and image for Featured Card with Image and title, paragraph, and CTA Link for Featured Card without Image.
@@ -122,14 +138,22 @@ There are two states in Featured Cards: Default, Hover.
 
 <Canvas>
   <Story name="Featured card">
-    {(args, { globals: { locale } }) => {
+    {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      return <FeaturedContentCard data={caption.featuredcontentdata} headertext={caption.headertext} {...args} ></FeaturedContentCard>;
+      args.accent = accent;
+      return (
+        <FeaturedContentCard
+          data={caption.featuredcontentdata}
+          headertext={caption.headertext}
+          {...args}
+        ></FeaturedContentCard>
+      );
     }}
   </Story>
 </Canvas>
 
 ### Usage
+
 - From the control tab of canvas, choose Image control either Image or Color, Size control either Large, Medium or Small and Hover color from Yellow, Red, Green or Blue.
 - Copy the HTML from the HTML tab and include the css and js files listed below.
 - If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js.
@@ -137,6 +161,7 @@ There are two states in Featured Cards: Default, Hover.
 ### CSS and JS References
 
 #### CSS:
+
 Add the base layout style from
 
 - https://undp.github.io/design-system/css/base-minimal.min.css
@@ -144,11 +169,14 @@ Add the base layout style from
 - Include dist/css/components/featured-content-card.min.css
 
 #### JS:
+
 - https://undp.github.io/design-system/js/viewport.min.js
 
 ### Interactions
+
 - Hover state applies to the image only.
 - By clicking on the CTA Link, the associated page is opened.
 
 ### Changelog
+
 1.0 — Released component

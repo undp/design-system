@@ -17,50 +17,58 @@ export const image_options = {
 };
 
 export const hovercolor_options = {
-  yellow : '',
-  red : 'red',
+  yellow: 'yellow',
+  red: 'red',
   green: 'green',
-  blue : 'blue',
+  blue: 'blue',
+  accent: '',
 };
 
-const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
 export const FeaturedContentCard = ({
-  type, cell, data, image, headertext, hovercolor, ...args
+  type,
+  cell,
+  data,
+  image,
+  headertext,
+  hovercolor,
+  ...args
 }) => {
   let size_variant = size_options[`${args.size}`];
   let image_variant = image_options[`${image}`];
+  let { accent } = args;
   let hovercolor_variant = hovercolor_options[`${hovercolor}`];
+  let Hovercolor = (Boolean(accent)) && (!hovercolor_variant) ? accent : hovercolor_variant;
+
   return (
     <>
-    <div className='grid-x grid-margin-x'>
-      {headertext && <div data-viewport="true" className="cell small-3 medium-3 large-3 medium-offset-1 small-offset-1 feature__card-title "><Heading type="2" label={headertext} /></div>}
-         {data.map((item, index) => (
-        <div key={index}  className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`, `${item.hovercolor ? `${hovercolor_options[`${item.hovercolor}`]}` : `${hovercolor_variant}`}`)}>
-          <a href="#">
-            <div className="feature__card-slide">
-              {item.imgback && (image === 'image' || (item.type === 'image' && image === 'image')) && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
-            </div>
-            <article className="feature__card-content">
-              <Heading type="6" label={item.contenttile} />
-              <div className="feature__card-description">
-                {(item.scale ? item.scale === 'large' : args.size === 'large') && item.contentname && <Heading type="4" label={item.contentname} />}
-                {(item.scale ? item.scale === 'medium' : args.size === 'medium') && item.contentname && <Heading type="5" label={item.contentname} />}
-                {(item.scale ? item.scale === 'small' : args.size === 'small') && item.contentname && <Heading type="5" label={item.contentname} />}
-                {item.size}
-                {item.descriptionText && <P label={item.descriptionText} />}
+      <div className='grid-x grid-margin-x'>
+        {headertext && <div data-viewport="true" className="cell small-3 medium-3 large-3 medium-offset-1 small-offset-1 feature__card-title ">
+          <Heading type="2" label={headertext} />
+        </div>}
+        {data.map((item, index) => (
+          <div key={index} className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`, `${item.hovercolor ? `${hovercolor_options[`${item.hovercolor}`]}` : `${Hovercolor}`}`)}>
+            <a href="#">
+              <div className="feature__card-slide">
+                {item.imgback && (image === 'image' || (item.type === 'image' && image === 'image')) && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
               </div>
-                <Ctalink label={item.button} button_option="span"/>
-            </article>
-          </a>
-        </div>
+              <article className="feature__card-content">
+                <Heading type="6" label={item.contenttile} />
+                <div className="feature__card-description">
+                  {(item.scale ? item.scale === 'large' : args.size === 'large') && item.contentname && <Heading type="4" label={item.contentname} />}
+                  {(item.scale ? item.scale === 'medium' : args.size === 'medium') && item.contentname && <Heading type="5" label={item.contentname} />}
+                  {(item.scale ? item.scale === 'small' : args.size === 'small') && item.contentname && <Heading type="5" label={item.contentname} />}
+                  {item.size}
+                  {item.descriptionText && <P label={item.descriptionText} />}
+                </div>
+                <Ctalink label={item.button} button_option="span" />
+              </article>
+            </a>
+          </div>
         ))}
-     </div>
-  </>
+      </div>
+    </>
   );
 };
 
-FeaturedContentCard.defaultProps = {
-  image: 'image',
-  hovercolor: 'yellow'
-};

@@ -33,6 +33,7 @@ export const hover_color_options = {
   green: 'green',
   red: 'red',
   blue: 'blue',
+  accent: '',
 };
 
 export function BioCard({
