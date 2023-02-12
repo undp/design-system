@@ -6,7 +6,7 @@ import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Footer } from '../../Organism/Footer/Footer';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 
-export const GenericLandingPage = ({ 
+export const GenericLandingPage = ({
   data, active, herodata, title, imgsrc, videosrc, footerData, content,
   groupcontentdata, buttonname, activeFilterText, clearText,
   buttonData,
@@ -43,7 +43,7 @@ export const GenericLandingPage = ({
             active={active}
             imgsrc={imgsrc}
             imgalt={imgsrc}
-            imgsrc2={heroimgsrc2} 
+            imgsrc2={heroimgsrc2}
             videosrc={videosrc}
           />
         </div>
@@ -61,7 +61,8 @@ export const GenericLandingPage = ({
             <ContentCard
               data={groupcontentdata}
               buttontype={buttonname}
-              Hovercolors="yellow"
+              Hovercolors={args.accent}
+              {...args}
             />
           </div>
         </div>

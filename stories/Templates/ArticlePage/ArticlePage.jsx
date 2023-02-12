@@ -41,7 +41,8 @@ const ArticlePage = ({
   backcaption,
   para,
   logo,
-  logowhite
+  logowhite,
+  ...args
 }) => (
   <div className='article-page'>
     <GlobalHeader
@@ -54,7 +55,7 @@ const ArticlePage = ({
       locationData={locationData}
       langSelect={langSelect}
     />
-    <ProgressBarNavigation Colors="yellow" />
+    <ProgressBarNavigation Colors={args.accent} />
     <div className="grid-container fluid mt-h">
       <div className="grid-x">
         <div className="cell large-9 medium-offset-1 medium-10">
@@ -84,7 +85,7 @@ const ArticlePage = ({
       <div className="grid-x">
         <div className="cell large-7 medium-10 medium-offset-2 author-section">
           <Heading type="5" label={headingData.detail5} />
-          <Author image={user} data={authorCardData} Number="Three" />
+          <Author image={user} data={authorCardData} Number="Three" {...args} />
         </div>
       </div>
       <div className="grid-x">
@@ -98,7 +99,7 @@ const ArticlePage = ({
           <BlockquoteComponent
             blockquoteText={blockquoteData.blockquote}
             citeText={blockquoteData.cite}
-            Colors="yellow"
+            Colors={args.accent}
           />
         </div>
       </div>
@@ -136,6 +137,7 @@ const ArticlePage = ({
     <FeaturedCard
       data={featuredCardContent.featureddata}
       headertext={featuredCardContent.headertext}
+      {...args}
     />
     <Footer
       src={logo}

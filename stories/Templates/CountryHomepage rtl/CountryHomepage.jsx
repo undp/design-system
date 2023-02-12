@@ -22,20 +22,22 @@ export const CountryHomepage = ({
   langSelect,
   backcaption,
   siteTitleData,
+  ...args
 }) => (
-    <div dir="rtl">
-      <CountrySiteHeader
-        siteTitleData={siteTitleData}
-        backcaption={backcaption}
-        locale={locale}
-        leftNavigationData={leftNavigationData}
-        navigationData={navigationData}
-        rightNavigationData={rightNavigationData}
-        languageswitcherData={languageswitcherData}
-        locationData={locationData}
-        langSelect={langSelect}
-      />
+  <div dir="rtl">
+    <CountrySiteHeader
+      siteTitleData={siteTitleData}
+      backcaption={backcaption}
+      locale={locale}
+      leftNavigationData={leftNavigationData}
+      navigationData={navigationData}
+      rightNavigationData={rightNavigationData}
+      languageswitcherData={languageswitcherData}
+      locationData={locationData}
+      langSelect={langSelect}
+      {...args}
+    />
 
-      <a href= "https://develop.design-system.pages.dev/iframe?id=templates-global-homepage-rtl--global-homepage-rtl&direction=ltr&globals=locale:english&viewMode=story" className="switch_btn button button-primary">Click here to switch logo animation</a>
-    </div>
-  );
+    <a href="https://develop.design-system.pages.dev/iframe?id=templates-global-homepage-rtl--global-homepage-rtl&direction=ltr&globals=locale:english&viewMode=story" className="switch_btn button button-primary">Click here to switch logo animation</a>
+  </div>
+);

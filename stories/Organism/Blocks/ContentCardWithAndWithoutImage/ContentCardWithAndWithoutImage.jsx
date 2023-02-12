@@ -26,7 +26,7 @@ export function ContentCardWithAndWithoutImage({
         <div key={index} className={cls('cell', `${item.scale}`)}>
           {item.type === 'image'
             ? (
-              <div className={cls('content-card', `${item.Hovercolors ? accent : ''}`)}>
+              <div className={cls('content-card', `${(item.Hovercolors) ? accent : ''}`)}>
                 <a href={item.link}>
                   <Heading type="6" label={item.contenttile} />
                   <div className="image">

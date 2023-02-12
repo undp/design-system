@@ -48,7 +48,9 @@ export const FeaturedContentCard = ({
           <Heading type="2" label={headertext} />
         </div>}
         {data.map((item, index) => (
-          <div key={index} className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`, `${item.hovercolor ? `${hovercolor_options[`${item.hovercolor}`]}` : `${Hovercolor}`}`)}>
+          <div
+            key={index}
+            className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`, `${item.hovercolor ? `${hovercolor_options[`${Hovercolor}`]}` : `${Hovercolor}`}`)}>
             <a href="#">
               <div className="feature__card-slide">
                 {item.imgback && (image === 'image' || (item.type === 'image' && image === 'image')) && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}

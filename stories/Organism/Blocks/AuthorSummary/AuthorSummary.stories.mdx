@@ -15,7 +15,8 @@ export const getCaptionForLocale = (locale) => {
       return engText;
     case "arabic":
       const arabicText = {
-        paragraph: "سأشرح لك ألمي. غالبًا ما يكون مخترعًا. أو ، الأكثر جدارة ، ولكن التخلي عن اللذة. يقدمون شيئًا مفيدًا. تم تحسينها جميعًا ، لكن التمرين مزعج أيضًا. أو ، الأكثر جدارة ، ولكن التخلي عن اللذة.",
+        paragraph:
+          "سأشرح لك ألمي. غالبًا ما يكون مخترعًا. أو ، الأكثر جدارة ، ولكن التخلي عن اللذة. يقدمون شيئًا مفيدًا. تم تحسينها جميعًا ، لكن التمرين مزعج أيضًا. أو ، الأكثر جدارة ، ولكن التخلي عن اللذة.",
         text1: "ملخص المؤلف",
         text2: "الاسم الاول الاسم الاخير",
         text3: "عنوان وظيفي",
@@ -23,7 +24,8 @@ export const getCaptionForLocale = (locale) => {
       return arabicText;
     case "burmese":
       const burmeseText = {
-        paragraph: "Explico sequi dolorem est saepe ကို တီထွင်ပါ။ Aut et dignissimos ab sed deserunt voluptatem ။ ကုန်စည်ဒိုင် နှင့် အရည်များ။ Omnis quidem consectetur in sed exercitationem molestiae ut vero est. Aut et dignissimos ab sed deserunt voluptatem.",
+        paragraph:
+          "Explico sequi dolorem est saepe ကို တီထွင်ပါ။ Aut et dignissimos ab sed deserunt voluptatem ။ ကုန်စည်ဒိုင် နှင့် အရည်များ။ Omnis quidem consectetur in sed exercitationem molestiae ut vero est. Aut et dignissimos ab sed deserunt voluptatem.",
         text1: "စာရေးသူ အကျဉ်းချုပ်",
         text2: "နံမည် နောက်ဆုံးအမည်",
         text3: "အလုပ်အကိုင်အမည်",
@@ -31,7 +33,8 @@ export const getCaptionForLocale = (locale) => {
       return burmeseText;
     case "japanese":
       const japaneseText = {
-        paragraph: "私の痛みをあなたに説明します。彼はしばしば発明者です。または、最も価値があるが、喜びを放棄します。それらは何か有益なものを提供します。それらはすべて強化されていますが、演習も面倒です。または、最も価値があるが、喜びを放棄します。",
+        paragraph:
+          "私の痛みをあなたに説明します。彼はしばしば発明者です。または、最も価値があるが、喜びを放棄します。それらは何か有益なものを提供します。それらはすべて強化されていますが、演習も面倒です。または、最も価値があるが、喜びを放棄します。",
         text1: "著者の概要",
         text2: "名前苗字",
         text3: "職名",
@@ -49,7 +52,10 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/UI components/Author summary" component={AuthorSummary} />
+<Meta
+  title="Components/UI components/Author summary"
+  component={AuthorSummary}
+/>
 
 # Author Summary
 
@@ -59,8 +65,9 @@ The Author summary is created for showing the authors name, designation, photo a
 
 <Canvas>
   <Story name="Author summary">
-    {(args, { globals: { locale } }) => {
+    {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
+      args.accent = accent;
       return (
         <AuthorSummary
           image={user}
@@ -68,6 +75,7 @@ The Author summary is created for showing the authors name, designation, photo a
           text={caption.text1}
           Authorlabel={caption.text2}
           para1={caption.text3}
+          {...args}
         ></AuthorSummary>
       );
     }}
@@ -75,6 +83,7 @@ The Author summary is created for showing the authors name, designation, photo a
 </Canvas>
 
 ### Usage
+
 - Copy HTML from the Canvas page and add CSS and JS from the 'CSS and JS References' section below.
 
 ### CSS and JS References
@@ -87,7 +96,9 @@ Add the base layout style from
 - https://undp.github.io/design-system/css/components/author-summary.min.css
 
 #### JS:
+
 - NA
 
 ### Changelog
+
 1.0 — Released component

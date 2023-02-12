@@ -28,6 +28,7 @@ const Authors = ({
   locationData,
   langSelect,
   backcaption,
+  ...args
 }) => {
   useEffect(() => {
     select();
@@ -104,6 +105,7 @@ const Authors = ({
               alt="author name"
               link="#"
               width="medium-12"
+              {...args}
             />
             <div className="grid-x grid-margin-x">
               <div className="cell small-12 view-btn-cell">

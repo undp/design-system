@@ -13,7 +13,61 @@ import { Statscardslider } from '../../Organism/StatsCardSlider/StatsCardSlider'
 import './project-page.scss';
 
 export const ProjectPage = ({
-  footerData, siteTitleData, backcaption, locale, leftNavigationData, navigationData, rightNavigationData, languageswitcherData, locationData, langSelect, logo, logowhite, herodata, content, title, imgsrc, imgalt, topHeading, topParagraph, topParagraph1, whatwedoheader, whatwedodescription, relatedHeading, download, downloadTitle, downloadTitle1, downloadTitle2, downloadTitle3, downloadTitle4, downloadTitle5, downloadTitle6, impactHead, title1, title2, title3, title4, title5, title6, title7, subtitle1, subtitle2, subtitle3, subtitle4, subtitle5, subtitle6, subtitle7, buttonProjectInfo, supportHeading, exploreHeading, exploreMoreBtn, exploreMoreData, statsliderdata, listData, readmore
+  footerData,
+  siteTitleData,
+  backcaption,
+  locale,
+  leftNavigationData,
+  navigationData,
+  rightNavigationData,
+  languageswitcherData,
+  locationData,
+  langSelect,
+  logo,
+  logowhite,
+  herodata,
+  content,
+  title,
+  imgsrc,
+  imgalt,
+  topHeading,
+  topParagraph,
+  topParagraph1,
+  whatwedoheader,
+  whatwedodescription,
+  relatedHeading,
+  download,
+  downloadTitle,
+  downloadTitle1,
+  downloadTitle2,
+  downloadTitle3,
+  downloadTitle4,
+  downloadTitle5,
+  downloadTitle6,
+  impactHead,
+  title1,
+  title2,
+  title3,
+  title4,
+  title5,
+  title6,
+  title7,
+  subtitle1,
+  subtitle2,
+  subtitle3,
+  subtitle4,
+  subtitle5,
+  subtitle6,
+  subtitle7,
+  buttonProjectInfo,
+  supportHeading,
+  exploreHeading,
+  exploreMoreBtn,
+  exploreMoreData,
+  statsliderdata,
+  listData,
+  readmore,
+  ...args
 }) => (
   <>
     <CountrySiteHeader
@@ -42,7 +96,7 @@ export const ProjectPage = ({
       <div className="grid-x grid-margin-x">
         <div className="cell large-offset-1 small-offset-1 small-10">
           <div className="column">
-            <Heading type="2" label={topHeading} dataViewport="true"/>
+            <Heading type="2" label={topHeading} dataViewport="true" />
           </div>
         </div>
         <div className="cell large-offset-3 large-7 small-offset-1 small-10 copy-text" data-viewport="true">
@@ -70,17 +124,17 @@ export const ProjectPage = ({
         </div>
         <div className="cell small-10 small-offset-1 large-offset-3 large-6" data-viewport="true">
           <div className="column">
-            <DownloadCard title={downloadTitle} download={readmore}  variant="External Link"/>
+            <DownloadCard title={downloadTitle} download={readmore} variant="External Link" />
           </div>
           <div className="grid-x grid-margin-x margin-top-24">
             <div className="cell large-6">
               <div className="column">
-                <DownloadCard title={downloadTitle1} download={readmore} variant="External Link"/>
+                <DownloadCard title={downloadTitle1} download={readmore} variant="External Link" />
               </div>
             </div>
             <div className="cell large-6">
               <div className="column">
-                <DownloadCard title={downloadTitle2} download={readmore} variant="External Link"/>
+                <DownloadCard title={downloadTitle2} download={readmore} variant="External Link" />
               </div>
             </div>
           </div>
@@ -120,6 +174,7 @@ export const ProjectPage = ({
             subtitle5={subtitle5}
             subtitle6={subtitle6}
             subtitle7={subtitle7}
+            {...args}
           />
           <CtaButton label={buttonProjectInfo} Type="Secondary" />
         </div>
@@ -132,17 +187,17 @@ export const ProjectPage = ({
         </div>
         <div className="cell large-offset-1 large-11" data-viewport="true">
           <div className="column">
-            <Statscardslider data={statsliderdata} gapel="20" gapelsm="20" viewcard="5" perViewtablet="3" focusSpace="0" />
+            <Statscardslider data={statsliderdata} gapel="20" gapelsm="20" viewcard="5" perViewtablet="3" focusSpace="0" {...args} />
           </div>
         </div>
       </div>
       <div className="grid-x project-explore">
         <div className="cell large-offset-1 small-offset-1 small-10">
           <div className="column">
-            <Heading type="2" label={exploreHeading} dataViewport="true"/>
+            <Heading type="2" label={exploreHeading} dataViewport="true" />
           </div>
         </div>
-        <ContentCardWithAndWithoutImage data={exploreMoreData} />
+        <ContentCardWithAndWithoutImage data={exploreMoreData} {...args} />
         <div className="cell cta-container">
           <CtaButton label={exploreMoreBtn} Type="Secondary" />
         </div>

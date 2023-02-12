@@ -5,11 +5,16 @@ import { Authorimg } from '../../../Atom/Images/AuthorImage/AuthorImages';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 
 export const AuthorSummary = ({
-  Authorlabel, para, image, text, para1,
+  Authorlabel,
+  para,
+  image,
+  text,
+  para1,
+  ...args
 }) => (
   <div className="author-summary" data-viewport="true">
     <div className="author-summary-left">
-      <Authorimg image={image} variant="Large" alt="Author" />
+      <Authorimg image={image} variant="Large" alt="Author" {...args} />
       <div className="author-summary-text">
         <Heading type="2" label={Authorlabel} />
         <P label={para1} />

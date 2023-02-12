@@ -28,6 +28,7 @@ export const GenericPage = ({
   locationData,
   langSelect,
   backcaption,
+  ...args
 }) => {
   useEffect(() => {
     sticky('.sidebar-desktop', '.generic-content', '.sidebar-desktop .sidebar-accordion');
@@ -145,7 +146,8 @@ export const GenericPage = ({
                 <ContentCard
                   data={ContentCardData.groupcontentdata}
                   buttontype={ContentCardData.buttonname}
-                  Hovercolors="yellow"
+                  Hovercolors={args.accent}
+                  {...args}
                 />
               </div>
             </div>
