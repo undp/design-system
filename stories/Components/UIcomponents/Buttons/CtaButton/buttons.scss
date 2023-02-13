@@ -71,6 +71,16 @@ button {
     }
   }
 
+  &:hover .external-link-animated {
+    &::after {
+      @include transform(translate(5px, -5px));
+    }
+
+    &::before {
+      @include transform(rotate(-45deg) translate(7px, 0));
+    }
+  }
+
   &.disabled .external-link-animated {
     box-shadow: -2px 2px 0 0 $color-gray-300, -4px 0 0 -2px $color-gray-300, -3px 3px 0 -1px $color-gray-300;
 
@@ -89,6 +99,7 @@ button {
     padding: 1.25rem $spacing-06;
   }
 
+
   .download-animated {
     margin-left: 1rem;
 
@@ -104,6 +115,16 @@ button {
 
     &::before {
       background: $color-black;
+    }
+  }
+
+  &:hover .download-animated {
+    &::after {
+      @include transform(rotate(-45deg) translate(7px, -7px));
+    }
+
+    &::before {
+      @include transform(translate(0, -10px));
     }
   }
 
@@ -173,6 +194,16 @@ button {
     }
   }
 
+  &:hover .external-link-animated {
+    &::after {
+      @include transform(translate(5px, -5px));
+    }
+
+    &::before {
+      @include transform(rotate(-45deg) translate(7px, 0));
+    }
+  }
+
   &.disabled .external-link-animated {
     box-shadow: -2px 2px 0 0 $color-gray-300, -4px 0 0 -2px $color-gray-300, -3px 3px 0 -1px $color-gray-300;
 
@@ -206,6 +237,16 @@ button {
 
     &::before {
       background: $color-white;
+    }
+  }
+
+  &:hover .download-animated {
+    &::after {
+      @include transform(rotate(-45deg) translate(7px, -7px));
+    }
+
+    &::before {
+      @include transform(translate(0, -10px));
     }
   }
 
