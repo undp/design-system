@@ -9,7 +9,7 @@
   width: 100%;
 
   @supports (scrollbar-width: thin) {
-    border-bottom: 1px solid black;
+    box-shadow: inset 0px -4px 0px 0px rgb(255, 255, 255, 1), inset 0px -5px 0px 0px rgb(0, 0, 0, 1);
   }
 }
 
@@ -21,9 +21,10 @@
 .scrollbar-vertical-wrapper {
   height: 70vh;
   width: 65px;
+  position: relative;
 
   @supports (scrollbar-width: thin) {
-    border-right: 1px solid black;
+    box-shadow: inset -4px 0px 0px 0px rgb(255, 255, 255, 1), inset -5px 0px 0px 0px rgb(0, 0, 0, 1);
   }
 }
 
