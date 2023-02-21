@@ -25,10 +25,6 @@
       margin-bottom: $spacing-07;
       max-width: 100%;
 
-      @include devicebreak(medium) {
-        margin-right: 1.563rem;
-      }
-
       .selected {
         min-width: 100%;
       }
@@ -41,7 +37,7 @@
     max-height: calc(100% - 82px);
 
     @include devicebreak(medium) {
-      max-height: 323px;
+      max-height: 473px;
       padding-right: 1.563rem;
     }
 
@@ -94,11 +90,6 @@
       @include devicebreak(medium) {
         padding-left: 0;
         padding-right: $spacing-06;
-
-        .select-box {
-          margin-left: 1.563rem;
-          margin-right: 0;
-        }
       }
     }
 
