@@ -142,25 +142,28 @@ export const getCaptionForLocale = (locale) => {
 <Meta
   title="Components/UI components/Hero/Page"
   argTypes={{
-    variant: {
-      options: ["video", "image"],
+    Variant: {
+      options: ["Video", "Image"],
       control: { type: "radio" },
     },
-    cta_enabled: {
-      control: { type: "boolean" },
+    CTA: {
+      options: ["On", "Off"],
+      control: { type: "inline-radio" },
     },
-    outline_enabled: {
-      control: { type: "boolean" },
+    Overline: {
+      options: ["On", "Off"],
+      control: { type: "inline-radio" },
     },
-    subtitle_enabled: {
-      control: { type: "boolean" },
+    Subtitle: {
+      options: ["On", "Off"],
+      control: { type: "inline-radio" },
     },
   }}
   args={{
-    variant: "image",
-    cta_enabled: true,
-    outline_enabled: false,
-    subtitle_enabled: false,
+    Variant: "Image",
+    CTA: "Off",
+    Overline: "Off",
+    Subtitle: "Off",
   }}
 />
 
@@ -207,6 +210,7 @@ There are two states in the Tall Image Page- Default and Mobile.
           title={caption.title}
           subtitle={caption?.subtitle}
           content={caption?.content}
+          variant={args.Variant}
           active={"default"}
           imgsrc={caption.imgsrc}
           imgsrc2={caption.imgsrc2}

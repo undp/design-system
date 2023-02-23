@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './page-hero.scss';
+// eslint-disable-next-line import/no-named-as-default
 import expandToSize from '../../../../assets/js/animation';
 import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
 import { Video } from '../../../../Atom/Video/Video';
@@ -21,27 +22,27 @@ export function PageHero({
   useEffect(() => {
     expandToSize('.pagehero-full');
   }, []);
-  const mainClasses = variant === 'no_background' ? 'pagehero-full no-background-media' : 'pagehero-full';
-  const textColor = variant === 'no_background' ? 'Black' : 'White';
-  const textColorClass = variant === 'no_background' ? 'color-black' : 'color-white';
+
+  const textColor = variant === 'No background' ? 'Black' : 'White';
+  const textColorClass = variant === 'No background' ? 'color-black' : 'color-white';
 
   return (
-    <div className={mainClasses}>
-      {variant === 'video' && (
+    <div className="pagehero-full">
+      {variant === 'Video' && (
         <Video src={BackgroundVideo} width="100%" height="100%" />
       )}
-      {variant === 'image' && (
+      {variant === 'Image' && (
         <div className="overlay-grey">
           <img src={imgsrc} alt={imgalt} />
         </div>
       )}
       <Breadcrumbcomponent data={data} Color={textColor} />
-      <div className="pagehero-content  medium-offset-1">
-        <div className="content-box">
-          {args.outline_enabled && content && <Heading type="4" className={textColorClass} label={content} dataViewport="true" />}
-          {title && <Heading type="2" className={textColorClass} label={title} dataViewport="true" />}
-          {args.subtitle_enabled && subtitle && <p className={['subtitle', textColorClass].join(' ')}>{subtitle}</p>}
-          {args.cta_enabled && cta.label && <CtaButton label={cta.label} For_Primary={cta.for_primary} />}
+      <div className="pagehero-content medium-offset-1">
+        <div className={['content-box', textColorClass].join(' ')}>
+          {args.Overline == 'On' && content && <Heading type="4" label={content} dataViewport="true" />}
+          {title && <Heading type="2" label={title} dataViewport="true" />}
+          {args.Subtitle == 'On' && subtitle && <p className="subtitle">{subtitle}</p>}
+          {args.CTA == 'On' && cta.label && <CtaButton label={cta.label} For_Primary={cta.for_primary} />}
         </div>
       </div>
     </div>

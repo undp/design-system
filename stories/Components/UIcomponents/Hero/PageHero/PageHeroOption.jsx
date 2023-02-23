@@ -19,24 +19,22 @@ export function PageHeroOption({
   cta,
   ...args
 }) {
-  const heroImageClasses = variant === 'no_background' ? 'hero-placeholder' : 'homepage-hero-image';
-  const noImageWrapperClasses = variant === 'no_background' ? 'no-background' : '';
-  const CtaEnabledClass = args.cta_enabled ? 'has-cta' : '';
+  const CtaEnabledClass = args.CTA == 'On' ? 'has-cta' : '';
   return (
-    <div className={['pagehero-tall', CtaEnabledClass, noImageWrapperClasses].join(' ')}>
+    <div className={['pagehero-tall', CtaEnabledClass].join(' ')}>
       <div className="grid-x">
         <div className="cell medium-4 medium-offset-1">
-          <div className="pagehero-content">
+          <div className="pagehero-content color-black">
             <Breadcrumbcomponent data={data} />
-            {args.outline_enabled && content && <Heading type="4" label={content} className="color-black" dataViewport="true" />}
-            <Heading type="2" label={title} className="color-black" dataViewport="true" />
-            {args.subtitle_enabled && subtitle && <p className={['subtitle', 'color-black'].join(' ')}>{subtitle}</p>}
-            {args.cta_enabled && cta.label && <CtaButton label={cta.label} For_Primary={cta.for_primary} />}
+            {args.Overline == 'On' && content && <Heading type="4" label={content} dataViewport="true" />}
+            <Heading type="2" label={title} dataViewport="true" />
+            {args.Subtitle == 'On' && subtitle && <p className="subtitle">{subtitle}</p>}
+            {args.CTA == 'On' && cta.label && <CtaButton label={cta.label} For_Primary={cta.for_primary} />}
           </div>
         </div>
         <div className="cell medium-7">
-          <div className={heroImageClasses}>
-            {variant === 'video' ? (
+          <div className="homepage-hero-image">
+            {variant === 'Video' ? (
               <Video src={videosrc} width="100%" height="100%" />
             ) : (
               <picture>
@@ -50,4 +48,3 @@ export function PageHeroOption({
     </div>
   );
 }
-

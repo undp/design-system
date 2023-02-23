@@ -8,6 +8,7 @@
   &-full {
     @extend %expand_to_size;
 
+    background-color: $color-gray-200;
     min-height: 642px;
     overflow: hidden;
     position: relative;
@@ -19,10 +20,6 @@
 
     .overlay-grey {
       @extend %absolute__content;
-
-      &::before {
-        background: rgba(0, 0, 0, 0.025);
-      }
     }
 
     img {
@@ -77,14 +74,9 @@
         margin-bottom: 0;
       }
     }
-
-    &.no-background-media {
-      background-color: $color-gray-200;
-    }
   }
 
   &-content {
-    //position: relative;
 
     @include devicebreak(small) {
       height: auto;
@@ -171,7 +163,6 @@
       flex-direction: column;
       height: 100%;
       justify-content: center;
-      //position: relative;
       word-break: break-word;
 
       @include devicebreak(small) {
@@ -219,12 +210,7 @@
 
       a.button {
         margin: 2rem 0 1rem;
-        //position: relative;
         display: none;
-
-        @include devicebreak(medium) {
-          //display: none;
-        }
       }
     }
 

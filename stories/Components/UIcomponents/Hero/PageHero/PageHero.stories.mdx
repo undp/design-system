@@ -142,25 +142,28 @@ export const getCaptionForLocale = (locale) => {
 <Meta
   title="Components/UI components/Hero/Page"
   argTypes={{
-    variant: {
-      options: ["video", "image", "no_background"],
+    Variant: {
+      options: ["Video", "Image", "No background"],
       control: { type: "radio" },
     },
-    cta_enabled: {
-      control: { type: "boolean" },
+    CTA: {
+      options: ["On", "Off"],
+      control: { type: "inline-radio" },
     },
-    outline_enabled: {
-      control: { type: "boolean" },
+    Overline: {
+      options: ["On", "Off"],
+      control: { type: "inline-radio" },
     },
-    subtitle_enabled: {
-      control: { type: "boolean" },
+    Subtitle: {
+      options: ["On", "Off"],
+      control: { type: "inline-radio" },
     },
   }}
   args={{
-    variant: "image",
-    cta_enabled: false,
-    outline_enabled: false,
-    subtitle_enabled: false,
+    Variant: "Image",
+    CTA: "Off",
+    Overline: "Off",
+    Subtitle: "Off",
   }}
 />
 
@@ -207,6 +210,7 @@ There are two states in the Full-width Page- Default and Mobile.
           title={caption.title}
           subtitle={caption?.subtitle}
           content={caption?.content}
+          variant={args.Variant}
           active={"white"}
           imgsrc={caption.imgsrc}
           imgalt={caption.imgalt}
