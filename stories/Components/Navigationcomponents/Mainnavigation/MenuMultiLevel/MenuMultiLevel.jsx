@@ -13,6 +13,11 @@ function MenuMultiLevel({ data, ...args }) {
         {menuData.data.map((menuLevel, idx) => (
           <MenuLevel data={menuLevel} key={idx} level="1" {...args} />
         ))}
+        <li className="menu__overflow__item hidden">
+          <button className="menu__overflow__toggle" aria-hidden="true" aria-controls="navigation-dropdown" aria-label="Menu overflow">
+            <span className="hidden">Menu toggle</span>
+          </button>
+        </li>
       </ul>
     </nav>
   );

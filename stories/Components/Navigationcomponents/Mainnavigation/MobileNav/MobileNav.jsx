@@ -49,7 +49,7 @@ const MobileNav = ({
               {' '}
               {locationData.detail}
             </a>
-            {args.cta_enabled && (
+            {args.cta_enabled == 'On' && (
               <CtaButton
                 label="Donate"
                 href="#"

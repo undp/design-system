@@ -727,16 +727,6 @@
             ]
           }
         ]
-      },
-      {
-        "id": "headerlink5",
-        "title": "Test link",
-        "submenus": []
-      },
-      {
-        "id": "headerlink6",
-        "title": "Another link",
-        "submenus": []
       }
     ]
   },

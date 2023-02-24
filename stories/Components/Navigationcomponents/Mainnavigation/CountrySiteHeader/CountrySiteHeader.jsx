@@ -6,6 +6,7 @@ import {
   navigationMultiLevel,
   languageSwitchToggle,
   scrolledLogoEffect,
+  // priorityPlusNav,
 } from '../../../../assets/js/navigation';
 import { Logo } from '../../../../Atom/Logo/Logo';
 import { CtaButton } from '../../../UIcomponents/Buttons/CtaButton/CtaButton';
@@ -35,6 +36,7 @@ function CountrySiteHeader({
     languageSwitchToggle();
     getMegaMenu(locale);
     navigationInitialize(locale);
+    // priorityPlusNav();
     if (args.menu_type === 'Multi-level dropdown') {
       navigationMultiLevel(locale);
     }
@@ -56,7 +58,12 @@ function CountrySiteHeader({
                 )}
                 <span><a href="#" title="UNDP homepage link">{siteTitleData.span}</a></span>
               </div>
-              <Menu data={navigationData} />
+              {args.menu_type === 'Multi-level dropdown' && (
+                <MenuMultiLevel data={menuJsonData} locale={locale} {...args} />
+              )}
+              {args.menu_type === 'Mega menu' && (
+                <Menu data={navigationData} />
+              )}
             </div>
             <div className="cell large-3 small-3 top-right">
               <Languageswitcher
@@ -71,7 +78,7 @@ function CountrySiteHeader({
               </button>
               <button className="icon-globe">Global</button>
               <button className="icon-search">Search</button>
-              {args.cta_enabled && (
+              {args.cta_enabled == 'On' && (
                 <CtaButton
                   label="Donate"
                   href="#"
@@ -90,12 +97,15 @@ function CountrySiteHeader({
             />
           </div>
         </div>
+        <div className="grid-container full menu__overflow hidden">
+          <Menu data={navigationData} />
+        </div>
       </section>
-      {args.menu_type === 'Multi-level dropdown' && (
+      {/* {args.menu_type === 'Multi-level dropdown' && (
         <div className="dropdown-menu-wrapper">
           <MenuMultiLevel data={menuJsonData} locale={locale} {...args} />
         </div>
-      )}
+      )} */}
       {args.menu_type === 'Mega menu' && (
         <div className="mega-wrapper">
           <MegaMenu locale={locale} />

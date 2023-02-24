@@ -208,3 +208,47 @@ export const navigationMultiLevel = () => {
     }
   });
 };
+
+var nav = document.querySelector('.country-header nav.menu');
+var toggle = document.querySelector('.menu__overflow__toggle');
+var visibleLinks = document.querySelector('.country-header nav.menu > ul');
+var hiddenLinks = document.querySelector('.menu__overflow');
+var breaks = [];
+
+export function priorityPlusNav() {
+  // var e = toggle.scrollWidth;
+  // var t = toggle.classList.contains('hidden') ? nav.scrollWidth : nav.scrollWidth - e;
+
+  // visibleLinks.scrollWidth > t ? (breaks.push(visibleLinks.scrollWidth),
+  // hiddenLinks.prepend(visibleLinks.lastElementChild),
+  // toggle.classList.contains("hidden") && (toggle.classList.remove("hidden"),
+  // toggle.setAttribute("aria-hidden", !1),
+  // visibleLinks.classList.add("has-dropdown"))) : (t > breaks[breaks.length - 1] && (visibleLinks.append(hiddenLinks.firstElementChild),
+  // breaks.pop()),
+  // breaks.length < 1 && (toggle.classList.add("hidden"),
+  // toggle.setAttribute("aria-hidden", !0),
+  // hiddenLinks.classList.add("hidden"),
+  // hiddenLinks.setAttribute("aria-hidden", !0),
+  // visibleLinks.classList.remove("has-dropdown")),
+  // "Less" === toggle.innerHTML && 0 < breaks.length && (hiddenLinks.classList.remove("hidden"),
+  // toggle.setAttribute("aria-hidden", !1),
+  // hiddenLinks.classList.remove("hidden"),
+  // hiddenLinks.setAttribute("aria-hidden", !1),
+  // visibleLinks.classList.add("has-dropdown"))),
+  // visibleLinks.scrollWidth > t && priorityPlusNav()
+}
+
+// null !== toggle && (window.addEventListener("load", function() {
+//   setTimeout(priorityPlusNav, 100)
+// }),
+
+// window.addEventListener("resize", throttle(priorityPlusNav, 100))),
+// null !== toggle && toggle.addEventListener("click", function() {
+//   hiddenLinks.classList.contains("hidden") ? (hiddenLinks.classList.remove("hidden"),
+//   hiddenLinks.setAttribute("aria-hidden", !1),
+//   toggle.setAttribute("aria-expanded", !0),
+//   toggle.innerHTML = "Less") : (hiddenLinks.classList.add("hidden"),
+//   hiddenLinks.setAttribute("aria-hidden", !0),
+//   toggle.setAttribute("aria-expanded", !1),
+//   toggle.innerHTML = "More")
+// });

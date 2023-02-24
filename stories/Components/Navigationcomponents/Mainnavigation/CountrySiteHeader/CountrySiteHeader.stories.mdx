@@ -10,8 +10,6 @@ export const getNavLinks = (locale) => {
         { label: "What we do", id: "headerlink2", position: "left" },
         { label: "Our Impact", id: "headerlink3", position: "right" },
         { label: "Get Involved", id: "headerlink4", position: "right" },
-        { label: "Test linkA", id: "headerlink5", position: "left" },
-        { label: "Another linkB", id: "headerlink6", position: "right" },
       ];
     case "arabic":
       return [
@@ -44,8 +42,6 @@ export const getNavLinks = (locale) => {
         { label: "What we do", id: "headerlink2", position: "left" },
         { label: "Our Impact", id: "headerlink3", position: "right" },
         { label: "Get Involved", id: "headerlink4", position: "right" },
-        { label: "Test linkA", id: "headerlink5", position: "left" },
-        { label: "Another linkB", id: "headerlink6", position: "right" },
       ];
   }
 };
@@ -211,7 +207,8 @@ export const menuData = (locale) => {
   argTypes={{
     cta_enabled: {
       name: "Enable CTA",
-      control: "boolean",
+      control: "inline-radio",
+      options: ["On", "Off"],
     },
     menu_type: {
       name: "Menu type",
@@ -220,7 +217,7 @@ export const menuData = (locale) => {
     },
   }}
   args={{
-    cta_enabled: false,
+    cta_enabled: "Off",
     menu_type: "Mega menu",
   }}
 />
