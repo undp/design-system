@@ -38,7 +38,7 @@ export const parameters = {
       order: ['Getting started',['Intro','How to use our design system?','Browser support'],'Foundation','Components', 'Patterns', 'Utilities','Templates' ],
       includeName: true
     },
-  },
+  }
 }
 
 /* Implementing locale for language switcher */
@@ -59,16 +59,15 @@ export const globalTypes = {
     },
   },
   accent: {
-    title: 'Accent color',
+    name: 'Accent color',
     description: 'Define the accent color.',
-    defaultValue: 'yellow',
+    defaultValue: '',
     toolbar: {
       icon: 'paintbrush',
-      left: 'Accent color',
-      //showName: true,
-      dynamicTitle: true,
+      showName: true,
       items: [
-        { value: 'yellow', title: 'Yellow', right: 'Default' },
+        { value: '', title: 'Default accent', right: 'Default' },
+        { value: 'yellow', title: 'Yellow' },
         { value: 'green', title: 'Green' },
         { value: 'red', title: 'Red' },
         { value: 'blue', title: 'Azure' },
@@ -77,32 +76,9 @@ export const globalTypes = {
   }
 };
 
-
-// addParameters({
-//   options: {
-//     /**
-//      * display the top-level grouping as a "root" in the sidebar
-//      * @type {Boolean}
-//      */
-//     showRoots: true,
-//     storySort: (previous, next) => {
-//       const [previousStory, previousMeta] = previous
-//       const [nextStory, nextMeta] = next
-
-//       return anysort(previousMeta.kind, nextMeta.kind, [
-//         'Getting started/**',
-//         'Foundation/**',
-//         'Components/**',
-//         'Patterns/**',
-//         'Utilities/**',
-//         'Templates/**'
-//       ])
-//     }
-//   },
-// })
-
 /**
  * Function to get current language code.
+ * 
  * @param {*} Story renders Stories in iFrame.
  * @param {*} context Current context for Addons.
  * @returns Current Language Code.
@@ -190,17 +166,34 @@ const setDirection = (Story, options) => {
   )
 }
 
-const setAccent = (Story, context) => {
-  let activeLang = context.globals.accent;
-
-  // // Set HTML lang attribute for iframe.
-  // const htmlElem = document.querySelector('html');
-  // htmlElem.setAttribute('lang', langArr[activeLang]);
-
+/**
+ * Function to set a global "accent-COLOR" class to the body.
+ * 
+ * @param {*} Story renders Stories in iFrame.
+ * @param {*} context Current context for Addons.
+ * @returns Story with accent color processed.
+ */
+const setAccentClass = (Story, context) => {
+  let accent = context.globals.accent;
+  const bodyElem = document.querySelector('body');
+  
+  // Remove any prexisting accent-COLOR items so we can apply the most recent
+  // global selection.
+  bodyElem.classList.forEach((item) => {
+    if (item.startsWith('accent-')) {
+      bodyElem.classList.remove(item);
+    }
+  });
+  
+  if (Boolean(accent)) {
+    // Set accent class on body tag (the most parent of parents).
+    bodyElem.classList.add(`accent-${accent}`);
+  }
+  
   return (
     <Story {...context} />
   )
 }
 
 // Trigger callback in Storybook Addons.
-export const decorators = [getLangCode, sbFrameReset, setDirection, setAccent];
+export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass];

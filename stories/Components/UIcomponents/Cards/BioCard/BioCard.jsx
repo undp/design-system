@@ -28,12 +28,11 @@ export const size_options = {
   medium: 'large-3',
 };
 
-export const hover_color_options = {
+export const accent_color_options = {
   yellow: 'yellow',
   green: 'green',
   red: 'red',
   blue: 'blue',
-  accent: '',
 };
 
 export function BioCard({
@@ -54,16 +53,14 @@ export function BioCard({
     modal();
   }, []);
 
-  let size_variant = size_options[`${args.size}`];
-  let { accent } = args;
-  let hovercolor = hover_color_options[`${args.hovercolor}`];
-  let Hovercolor = (Boolean(accent)) && (!hovercolor) ? accent : hovercolor;
+  let size_variant = size_options[`${args.Size}`];
+  let accent_color = accent_color_options[`${args.Accent}`] ?? '';
 
   return (
     <>
-      {args.size === 'large' && (
+      {args.Size === 'large' && (
         <div className={cls('grid-x grid-margin-x')}>
-          <div className={cls('cell bio-card', `${size_variant}`, `${Hovercolor}`)}>
+          <div className={cls('cell bio-card', `${size_variant}`, `${accent_color}`)}>
             <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
               <div className="grid-x">
                 <article className="bio-card__content medium-7">
@@ -82,9 +79,9 @@ export function BioCard({
         </div>
       )}
 
-      {args.size === 'medium' && (
+      {args.Size === 'medium' && (
         <div className={cls('grid-x')}>
-          <div className={cls('cell bio-card medium', `${size_variant}`, `${Hovercolor}`)}>
+          <div className={cls('cell bio-card medium', `${size_variant}`, `${accent_color}`)}>
             <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
               <Cardthumb image={image} />
               <article className="bio-card__content">

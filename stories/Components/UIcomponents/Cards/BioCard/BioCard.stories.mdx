@@ -60,18 +60,18 @@ export const getCaptionForLocale = (locale) => {
 <Meta
   title="Components/UI components/Cards/Bio card"
   argTypes={{
-    size: {
+    Size: {
       options: ["large", "medium"],
       control: { type: "inline-radio" },
     },
-    hovercolor: {
-      options: ["yellow", "red", "green", "blue", "accent"],
+    Accent: {
+      options: ["global", "yellow", "red", "green", "blue"],
       control: { type: "inline-radio" },
     },
   }}
   args={{
-    size: "medium",
-    hovercolor: "accent",
+    Size: "medium",
+    Accent: "global",
   }}
 />
 
@@ -109,7 +109,6 @@ The bio card has a default and hover state. On hover, an accent color overlay is
   <Story name="Bio card">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <BioCard
           contenttile={caption.title}
