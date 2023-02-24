@@ -19,7 +19,7 @@ export function CtaButton({
   const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
   const type = (Type == 'Secondary') ? 'secondary' : 'primary';
   const state = (State == 'Disabled') ? 'disabled' : '';
-  const for_primary = for_primary_options[`${For_Primary}`];
+  const for_primary = For_Primary ? for_primary_options[`${For_Primary}`] : for_primary_options.Arrow;
   const classes = cls('button', `button-${type}`, `button-${for_primary}`, `${state}`);
 
   return (
