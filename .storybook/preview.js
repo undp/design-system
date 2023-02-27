@@ -39,7 +39,10 @@ export const parameters = {
       includeName: true
     },
   },
-  chromatic: { pauseAnimationAtEnd: true },
+  chromatic: {
+    pauseAnimationAtEnd: true,
+    delay: 1500
+  },
 }
 
 /* Implementing locale for language switcher */
