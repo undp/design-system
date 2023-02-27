@@ -42,7 +42,7 @@ button {
     }
 
     &:hover::after {
-      @include translate(70%,0);
+      @include translate(70%, 0);
     }
 
     &.disabled {
@@ -52,6 +52,98 @@ button {
       }
     }
   }
+
+  &.button-external-link {
+    align-items: baseline;
+  }
+
+  .external-link-animated {
+    box-shadow: -2px 2px 0 0 $color-black, -4px 0 0 -2px $color-black, -3px 3px 0 -1px $color-black;
+    margin-left: 1rem;
+
+    &::before {
+      background: $color-black;
+    }
+
+    &::after {
+      border-right: 2px solid $color-black;
+      border-top: 2px solid $color-black;
+    }
+  }
+
+  &:hover .external-link-animated {
+    &::after {
+      @include transform(translate(5px, -5px));
+    }
+
+    &::before {
+      @include transform(rotate(-45deg) translate(7px, 0));
+    }
+  }
+
+  &.disabled .external-link-animated {
+    box-shadow: -2px 2px 0 0 $color-gray-300, -4px 0 0 -2px $color-gray-300, -3px 3px 0 -1px $color-gray-300;
+
+    &::before {
+      background: $color-gray-300;
+    }
+
+    &::after {
+      border-right: 2px solid $color-gray-300;
+      border-top: 2px solid $color-gray-300;
+    }
+  }
+
+  &.button-download {
+    align-items: baseline;
+    padding: 1.25rem $spacing-06;
+  }
+
+
+  .download-animated {
+    margin-left: 1rem;
+
+    i {
+      border: 2px solid $color-black;
+      border-top: 0;
+    }
+
+    &::after {
+      border-bottom: 2px solid $color-black;
+      border-left: 2px solid $color-black;
+    }
+
+    &::before {
+      background: $color-black;
+    }
+  }
+
+  &:hover .download-animated {
+    &::after {
+      @include transform(rotate(-45deg) translate(7px, -7px));
+    }
+
+    &::before {
+      @include transform(translate(0, -10px));
+    }
+  }
+
+  &.disabled .download-animated {
+    i {
+      border: 2px solid $color-gray-300;
+      border-top: 0;
+    }
+
+    &::after {
+      border-bottom: 2px solid $color-gray-300;
+      border-left: 2px solid $color-gray-300;
+    }
+
+    &::before {
+      background: $color-gray-300;
+    }
+  }
+
 }
 
 .button.button-secondary {
@@ -59,6 +151,119 @@ button {
 
   &:hover {
     background-color: $color-blue-400;
+  }
+
+  &.button-arrow {
+    &::after {
+      @include transition(0.2s ease);
+
+      background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
+      content: '';
+      height: 20px;
+      margin-left: $spacing-04;
+      width: 13px;
+    }
+
+    &:hover::after {
+      @include translate(70%, 0);
+    }
+
+    &.disabled {
+      &::after {
+        background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
+        content: '';
+      }
+    }
+  }
+
+  &.button-external-link {
+    align-items: baseline;
+  }
+
+  .external-link-animated {
+    box-shadow: -2px 2px 0 0 $color-white, -4px 0 0 -2px $color-white, -3px 3px 0 -1px $color-white;
+    margin-left: 1rem;
+
+    &::before {
+      background: $color-white;
+    }
+
+    &::after {
+      border-right: 2px solid $color-white;
+      border-top: 2px solid $color-white;
+    }
+  }
+
+  &:hover .external-link-animated {
+    &::after {
+      @include transform(translate(5px, -5px));
+    }
+
+    &::before {
+      @include transform(rotate(-45deg) translate(7px, 0));
+    }
+  }
+
+  &.disabled .external-link-animated {
+    box-shadow: -2px 2px 0 0 $color-gray-300, -4px 0 0 -2px $color-gray-300, -3px 3px 0 -1px $color-gray-300;
+
+    &::before {
+      background: $color-gray-300;
+    }
+
+    &::after {
+      border-right: 2px solid $color-gray-300;
+      border-top: 2px solid $color-gray-300;
+    }
+  }
+
+  &.button-download {
+    align-items: baseline;
+    padding: 1.25rem $spacing-06;
+  }
+
+  .download-animated {
+    margin-left: 1rem;
+
+    i {
+      border: 2px solid $color-white;
+      border-top: 0;
+    }
+
+    &::after {
+      border-bottom: 2px solid $color-white;
+      border-left: 2px solid $color-white;
+    }
+
+    &::before {
+      background: $color-white;
+    }
+  }
+
+  &:hover .download-animated {
+    &::after {
+      @include transform(rotate(-45deg) translate(7px, -7px));
+    }
+
+    &::before {
+      @include transform(translate(0, -10px));
+    }
+  }
+
+  &.disabled .download-animated {
+    i {
+      border: 2px solid $color-gray-300;
+      border-top: 0;
+    }
+
+    &::after {
+      border-bottom: 2px solid $color-gray-300;
+      border-left: 2px solid $color-gray-300;
+    }
+
+    &::before {
+      background: $color-gray-300;
+    }
   }
 }
 
@@ -70,7 +275,9 @@ button {
 
 [dir='rtl'] {
   .button {
-    &.button-primary {
+
+    &.button-primary,
+    &.button-secondary {
       &.button-arrow {
         &::after {
           @include transform(rotate(180deg));
@@ -80,8 +287,18 @@ button {
         }
 
         &:hover::after {
-          @include transform(translate(-50%,0) rotate(180deg));
+          @include transform(translate(-50%, 0) rotate(180deg));
         }
+      }
+
+      .external-link-animated {
+        margin-right: 1rem;
+        margin-left: 0;
+      }
+
+      .download-animated {
+        margin-right: 1rem;
+        margin-left: 0;
       }
     }
   }

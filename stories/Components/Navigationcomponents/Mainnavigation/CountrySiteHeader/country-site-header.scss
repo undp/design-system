@@ -18,10 +18,10 @@
 
     .site-title {
       font-size: $font-size-16;
-      line-height: $font-size-16;
+      line-height: 1.142;
       margin-top: -0.25rem;
+      margin-right: 1.5rem;
       padding: 0.438rem 0;
-      width: calc(100% - 52px);
 
       @include devicebreak(mediumonlytab) {
         width: calc(100% - 64px);
@@ -33,7 +33,7 @@
         width: 14.4375rem;
       }
 
-      span:first-of-type {
+      span:first-of-type:not(:last-of-type) {
         border-bottom: 1px solid $color-gray-500;
         color: $color-gray-600;
         display: inline-block;
@@ -45,6 +45,11 @@
       span {
         display: flex;
         margin-top: 0.3rem;
+
+        a {
+          font-size: inherit;
+          background: none;
+        }
       }
     }
 
@@ -82,20 +87,40 @@
     }
 
     .menu {
-      align-items: center;
+      align-items: stretch;
       align-self: stretch;
       display: flex;
       min-height: 7.1875rem;
+      margin: auto;
 
       @include devicebreak(mediumonlytab) {
         display: none;
       }
 
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+
       li {
-        margin: $spacing-04 0 $spacing-04 3.6875rem;
+        margin: 0 0 0 2.25rem;
+        display: flex;
+        align-items: stretch;
+        align-self: stretch;
+
+        @include devicebreak(xlarge) {
+          margin: 0 0 0 3.6875rem;
+        }
 
         &:first-of-type {
           margin-left: 0;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
         }
       }
     }
@@ -195,6 +220,9 @@
     }
 
     .site-title {
+      margin-left: 1.5rem;
+      margin-right: 0;
+
       @include devicebreak(xlarge) {
         margin-left: $spacing-07;
         margin-right: 0;
@@ -220,7 +248,11 @@
 
     .menu {
       li {
-        margin: $spacing-04 3.6875rem $spacing-04 0;
+        margin: 0 2.25rem 0 0;
+
+        @include devicebreak(xlarge) {
+          margin: 0 0 0 3.6875rem;
+        }
 
         &:first-of-type {
           margin-right: 0;

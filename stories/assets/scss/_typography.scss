@@ -1,4 +1,4 @@
-/* typograpgy start */
+/* Typography start */
 @import './variables';
 @import './breakpoints';
 @import './mixins';
@@ -188,7 +188,6 @@ hr {
 a {
   color: $color-black;
   text-decoration: none;
-  @extend %paragragh-font-20 !optional;
   @extend %animate-link !optional;
 }
 

@@ -10,10 +10,10 @@
     justify-content: center;
 
     .image__caption {
-      margin: $spacing-05 $spacing-06 0;
+      margin: $spacing-05 $spacing-06 $spacing-07;
 
       @include devicebreak(medium) {
-        margin: $spacing-07 0 0;
+        margin: $spacing-07 0 $spacing-07;
         width: 58.33333%;
       }
     }

@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Footer } from "./Footer";
 import logo from "../../assets/images/undp-logo-blue.svg";
-import logowhite from '../../assets/images/undp-logo-white.svg';
+import logowhite from "../../assets/images/undp-logo-white.svg";
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
@@ -40,19 +40,10 @@ export const getCaptionForLocale = (locale) => {
         ],
         menudata2: [
           {
-            menu: "Report Fraud, Abuse, Misconduct",
-          },
-          {
-            menu: "Scam Alert",
-          },
-          {
             menu: "Terms Of Use",
           },
-          {
-            menu: "Submit Social Or Environmental Complaint",
-          },
         ],
-        headerText: ['United Nations',<br/>,'Development Programme'],
+        headerText: ["United Nations", <br />, "Development Programme"],
         labelname: "Sign up for our newsletter",
         buttonname: "SUBMIT",
         placeholdername: "Email",
@@ -96,19 +87,10 @@ export const getCaptionForLocale = (locale) => {
         ],
         menudata2: [
           {
-            menu: "الإبلاغ عن الاحتيال والإساءة وسوء السلوك",
-          },
-          {
-            menu: "تنبيه احتيال",
-          },
-          {
             menu: "تعليمات الاستخدام",
           },
-          {
-            menu: "إرسال شكوى اجتماعية أو بيئية",
-          },
         ],
-        headerText: ['الأمم المتحدة',<br/>,'برنامج التطوير'],
+        headerText: ["الأمم المتحدة", <br />, "برنامج التطوير"],
         labelname: "سجل للحصول على اخر اخبارنا",
         buttonname: "يقدم",
         placeholdername: "بريد الالكتروني",
@@ -152,19 +134,10 @@ export const getCaptionForLocale = (locale) => {
         ],
         menudata2: [
           {
-            menu: "လိမ်လည်မှု၊ အလွဲသုံးစားမှု၊ အကျင့်ပျက်ခြစားမှုကိုအစီရင်ခံပါ",
-          },
-          {
-            menu: "Scam သတိပေးချက်",
-          },
-          {
             menu: "သတ်မှတ်ချက်များ",
           },
-          {
-            menu: "လူမှုရေးသို့မဟုတ်ပတ်ဝန်းကျင်ဆိုင်ရာတိုင်ကြားစာကိုတင်ပါ",
-          },
         ],
-        headerText: ['ကုလသမဂ္ဂ',<br/>,'ဖွံ့ဖြိုးရေးအစီအစဉ်'],
+        headerText: ["ကုလသမဂ္ဂ", <br />, "ဖွံ့ဖြိုးရေးအစီအစဉ်"],
         labelname: "ကျွန်ုပ်တို့၏သတင်းလွှာအတွက်စာရင်းပေးသွင်းပါ",
         buttonname: "တင်ပေးပါ",
         placeholdername: "အီးမေးလ်",
@@ -208,19 +181,10 @@ export const getCaptionForLocale = (locale) => {
         ],
         menudata2: [
           {
-            menu: "詐欺、虐待、不正行為を報告する",
-          },
-          {
-            menu: "詐欺警告",
-          },
-          {
             menu: "利用規約",
           },
-          {
-            menu: "社会的または環境的苦情を提出する",
-          },
         ],
-        headerText: ['国連',<br/>,'開発プログラム'],
+        headerText: ["国連", <br />, "開発プログラム"],
         labelname: "ニュースレターに登録する",
         buttonname: "送信",
         placeholdername: "Eメール",
@@ -264,19 +228,10 @@ export const getCaptionForLocale = (locale) => {
         ],
         menudata2: [
           {
-            menu: "Report Fraud, Abuse, Misconduct",
-          },
-          {
-            menu: "Scam Alert",
-          },
-          {
             menu: "Terms Of Use",
           },
-          {
-            menu: "Submit Social Or Environmental Complaint",
-          },
         ],
-        headerText: ['United Nations',<br/>,'Development Programme'],
+        headerText: ["United Nations", <br />, "Development Programme"],
         labelname: "Sign up for our newsletter",
         buttonname: "SUBMIT",
         placeholdername: "Email",
@@ -309,16 +264,21 @@ export const getCaptionForLocale = (locale) => {
 A footer has a list of information about the website at the bottom of the page.
 
 ### Overview
+
 A footer has all the information or other web pages that are there in the website. Footer is treated as its own section of the web page that is separated from the header, content and sidebars.This includes the copyright information for the website, the name of the website's author, the business name and address.
 
 #### When to use:
+
 When a standardized footer is required to be placed at the bottom of a webpage
 
 ### Formatting
+
 #### Default
+
 Footer in default state is with blue color background which has newsletter subscription section, Company name logo in white background. It has a list of internal webpages, search and globe icons. Even there will be social media icons like LinkedIn, Twitter, Facebook, Instagram, and youtube. There will be copyright and terms of the company.
 
 ### Content
+
 There are 2 types of footers: Default and Simple
 
 Default: This has a blue background with newsletter subscription section, company name logo in white background, internal webpage links, search and global icon, along with social media logos.
@@ -326,7 +286,9 @@ Default: This has a blue background with newsletter subscription section, compan
 Simple: This has blue background with logo in white background with company name.This will have only social media logos, terms and copyright sections.
 
 ### Behaviors
+
 #### States
+
 Footer has 2 states: Default, and Inverted
 
 Default: In default state footer background will be in blue color. The text will be in white color.
@@ -338,11 +300,16 @@ Mobile view: In this view, the footer will appear in verticle shaped box
 Inverted : In the state the footer has white background and the text will be in blue color rest will be same as default state.
 
 <Canvas>
-  <Story name="Footer" parameters={{
-      layout: "fullscreen"
-    }}>
+  <Story
+    name="Footer"
+    parameters={{
+      layout: "fullscreen",
+    }}
+  >
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
+      const menuData =
+        args["variant"] === "simple" ? caption.menudata2 : caption.menudata;
       return (
         <Footer
           src={logo}
@@ -361,7 +328,7 @@ Inverted : In the state the footer has white background and the text will be in 
           menutitle={caption.pageTitle}
           data={caption.footerdata}
           copyright={caption.copyright}
-          menudata={caption.menudata}
+          menudata={menuData}
           {...args}
         ></Footer>
       );
@@ -370,6 +337,7 @@ Inverted : In the state the footer has white background and the text will be in 
 </Canvas>
 
 ### Usage:
+
 - Choose the control either Default or Inverted from the control tab of canvas.
 - Copy HTML from the HTML tab and include below listed css and js files.
 - Initialize the accordion by calling accordion('[data-accordion="mobile"]', '.footer-panel', 'active'); function, this needs to be called to make links accordion on smaller screen (mobile).
@@ -392,7 +360,9 @@ Add the base layout style from
 - https://undp.github.io/design-system/js/accordion.min.js
 
 ### Interactions
+
 No interactions
 
 ### Changelog
+
 1.0 — Released component
