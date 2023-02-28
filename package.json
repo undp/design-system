@@ -31,7 +31,7 @@
     "@babel/plugin-transform-arrow-functions": "^7.18.6",
     "@babel/plugin-transform-block-scoping": "^7.20.0",
     "@babel/plugin-transform-classes": "^7.19.0",
-    "@babel/plugin-transform-destructuring": "^7.20.0",
+    "@babel/plugin-transform-destructuring": "^7.20.7",
     "@babel/plugin-transform-for-of": "^7.18.8",
     "@babel/plugin-transform-parameters": "^7.20.3",
     "@babel/plugin-transform-shorthand-properties": "^7.18.6",
