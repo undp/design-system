@@ -2,7 +2,7 @@ import React from 'react';
 import './buttons.scss';
 import '../../../../Atom/Icons/icons.scss';
 
-export const for_primary_options = {
+export const icon_options = {
   'No Arrow': 'without-arrow',
   Arrow: 'arrow',
   Download: 'download',
@@ -13,14 +13,17 @@ export function CtaButton({
   label,
   Type,
   State,
-  For_Primary,
+  Icon,
   ...props
 }) {
   const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
   const type = (Type == 'Secondary') ? 'secondary' : 'primary';
   const state = (State == 'Disabled') ? 'disabled' : '';
-  const for_primary = For_Primary ? for_primary_options[`${For_Primary}`] : for_primary_options.Arrow;
-  const classes = cls('button', `button-${type}`, `button-${for_primary}`, `${state}`);
+
+  let default_icon = (Type == 'Secondary') ? icon_options['No Arrow'] : icon_options.Arrow;
+  let icon = Icon ? icon_options[`${Icon}`] : default_icon;
+
+  const classes = cls('button', `button-${type}`, `button-${icon}`, `${state}`);
 
   return (
     <a
@@ -30,10 +33,10 @@ export function CtaButton({
       {...props}
     >
       {label}
-      {For_Primary == 'External link' && (
+      {Icon == 'External link' && (
         <span className="external-link-animated"><i /></span>
       )}
-      {For_Primary == 'Download' && (
+      {Icon == 'Download' && (
         <span className="download-animated"><i /></span>
       )}
     </a>
