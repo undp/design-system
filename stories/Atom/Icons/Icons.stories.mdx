@@ -1,7 +1,6 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Icons } from './Icons';
 import data from './Icons.json';
-const arrfor = data.icons;
 
 <Meta
   title="Foundation/Icons"
@@ -23,7 +22,7 @@ The Icon components can grab attention and draw users into a piece of content. T
 
 <Canvas>
   <Story name="Icons" parameters={{ docs: { source: { code:
-    arrfor.map((item) => {
+    data.icons.map((item) => {
          if(item.type == 'img') {
            return (`<img src="icons/${item.name}.svg" alt="icon"/>\n`);
           } else {
@@ -32,7 +31,7 @@ The Icon components can grab attention and draw users into a piece of content. T
       }).join('')
    } } }}>
     <div className="icons-container">
-    {arrfor.map((item, index) => {
+    {data.icons.map((item, index) => {
       if(item.type == 'img') {
         return (<div key={index}><img src={`icons/${item.name}.svg`} alt="icon"/>
         <p>{`${item.label}`}</p></div>);

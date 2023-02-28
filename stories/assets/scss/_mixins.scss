@@ -150,6 +150,7 @@
   margin-right: $spacing-03;
   padding: 0;
   width: 25px;
+  min-width: 25px;
 
   @include devicebreak(small) {
     margin-right: 0;
@@ -165,7 +166,7 @@
 %frosted-bg {
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
-  background: rgba(247, 247, 247, 0.8);
+  background: rgba(247, 247, 247, 0.9);
 }
 
 %footer-block {
@@ -600,12 +601,10 @@
 
 %logo {
   @include transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
-
-  width: 40px;
+  min-width: 60px;
 
   @include devicebreak(xlarge) {
     height: ($header-height-xlarge + 7px);
-    width: 60px;
 
     &.scrolled {
       height: $header-height-xlarge;
@@ -614,6 +613,7 @@
 
   @include devicebreak(mediumonlytab) {
     height: ($header-height-medium + 7px);
+    min-width: 40px;
 
     &.scrolled {
       height: $header-height-medium;

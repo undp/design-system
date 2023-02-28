@@ -4,7 +4,7 @@
 
 /* Tab start */
 .tabs {
-  ul {
+  >ul {
     background-color: $color-white;
     border-bottom: 2px solid $color-gray-300;
     list-style: none;
@@ -50,17 +50,14 @@
 
     .tabs-panel {
       display: none;
+      padding-top: $spacing-05;
+
+      @include devicebreak(medium) {
+        padding-top: 2.5rem;
+      }
 
       &.is-active {
         display: inherit;
-      }
-
-      p {
-        margin-top: $spacing-05;
-
-        @include devicebreak(medium) {
-          margin-top: 2.5rem;
-        }
       }
     }
   }
@@ -68,7 +65,7 @@
 
 [dir='rtl'] {
   .tabs {
-    ul {
+    >ul {
       padding-right: 0;
 
       @include devicebreak(medium) {

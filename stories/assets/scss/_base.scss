@@ -44,10 +44,13 @@
   overflow-x: auto;
   overflow-y: auto;
   scroll-behavior: smooth;
+  scrollbar-color: #000 transparent;
+  scrollbar-width: thin;
 
   &::-webkit-scrollbar {
     height: 5px;
     width: 5px;
+    border-radius: 0;
   }
 
   &::-webkit-scrollbar-track {

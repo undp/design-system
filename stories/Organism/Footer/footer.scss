@@ -3,6 +3,31 @@
 @import '../../assets/scss/base';
 
 // * footer condition start *//
+.footer-items {
+
+  @include devicebreak(medium) {
+    row-gap: 3rem;
+    display: flex;
+  }
+
+  .footer-item {
+    @include devicebreak(medium) {
+      width: calc((100% / 2) - 1.5rem);
+      flex: 0 0 calc((100% / 2) - 1.5rem);
+    }
+
+    @include devicebreak(large) {
+      width: calc((100% / 3) - 1.5rem);
+      flex: 0 0 calc((100% / 3) - 1.5rem);
+    }
+
+    @include devicebreak(xlarge) {
+      width: calc((100% / 4) - 1.5rem);
+      flex: 0 0 calc((100% / 4) - 1.5rem);
+    }
+  }
+}
+
 .footer-links {
   padding-left: 0;
 
@@ -127,10 +152,11 @@
 .footer-icons {
   display: flex;
   padding-left: 0;
+  flex-wrap: wrap;
 
   li {
     list-style: none;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     padding: 0;
 
     a {
@@ -143,7 +169,8 @@
       display: block;
       font-size: 0;
       height: 20px;
-      margin-right: $spacing-07;
+      margin-inline-start: $spacing-07;
+      margin-block-end: $spacing-05;
       width: 20px;
 
       @each $name in $socials {
@@ -153,11 +180,11 @@
       }
     }
 
-    &:last-of-type {
-      a {
-        margin-right: 0;
-      }
-    }
+    // &:last-of-type {
+    //   a {
+    //     margin-right: 0;
+    //   }
+    // }
   }
 
   &.inverted {
@@ -179,20 +206,20 @@
   .footer-icons {
     padding-right: 0;
 
-    li {
-      padding: 0;
+    // li {
+    //   padding: 0;
 
-      a {
-        margin-left: $spacing-07;
-        margin-right: 0;
-      }
+      // a {
+      //   margin-left: $spacing-07;
+      //   margin-right: 0;
+      // }
 
-      &:last-of-type {
-        a {
-          margin-left: 0;
-        }
-      }
-    }
+      // &:last-of-type {
+      //   a {
+      //     margin-left: 0;
+      //   }
+      // }
+    // }
   }
 }
 // * footer icons end *//

@@ -3,37 +3,37 @@ import * as utility from './resize';
 // stickyScroll handler function.
 export function sticky(stickyArea, stickyMovingSide, StickyScrollBar) {
   const stickyScroll = (state) => {
-    const $sticky = $(stickyArea);
-    const $relatedPublication = $(stickyMovingSide);
-    if ($($sticky).length && $($relatedPublication).length) {
+    const $sticky = jQuery(stickyArea);
+    const $relatedPublication = jQuery(stickyMovingSide);
+    if (jQuery($sticky).length && jQuery($relatedPublication).length) {
       if (state) {
         // Calculate values only if stickyScroll enabled.
-        const $stickyTop = $($sticky).offset().top;
-        const $headerHeight = $('.header').innerHeight() + 15 || 130;
-        const $footerTop = $('.footer').offset().top;
+        const $stickyTop = jQuery($sticky).offset().top;
+        const $headerHeight = jQuery('.header').innerHeight() + 15 || 130;
+        const $footerTop = jQuery('.footer').offset().top;
 
-        $(window).on('scroll', () => {
+        jQuery(window).on('scroll', () => {
           // Calculate this inside scroll after image loads.
-          const $stickyHeight = $($sticky).innerHeight();
-          const $stickyReleaseHeight = $($relatedPublication).innerHeight();
-          const $stickyReleaseOffset = $($relatedPublication).offset().top;
+          const $stickyHeight = jQuery($sticky).innerHeight();
+          const $stickyReleaseHeight = jQuery($relatedPublication).innerHeight();
+          const $stickyReleaseOffset = jQuery($relatedPublication).offset().top;
 
-          let windowTop = Math.round($(window).scrollTop());
+          let windowTop = Math.round(jQuery(window).scrollTop());
           let startPoint = Math.round($stickyTop - $headerHeight) < windowTop;
           let $stickyScrollUp = Math.round(($stickyReleaseOffset + $stickyReleaseHeight) - $stickyHeight);
           let stopPoint = windowTop > $stickyScrollUp - $headerHeight;
           if (startPoint && !stopPoint) {
-            $($sticky).css({ position: 'fixed', top: $headerHeight, width: 'inherit' });
+            jQuery($sticky).css({ position: 'fixed', top: $headerHeight, width: 'inherit' });
           } else if (stopPoint) {
-            $($sticky).css({ position: 'absolute', top: $stickyScrollUp, width: 'inherit' });
+            jQuery($sticky).css({ position: 'absolute', top: $stickyScrollUp, width: 'inherit' });
           } else {
-            $($sticky).css({ position: 'absolute', top: 'initial', width: 'inherit' });
+            jQuery($sticky).css({ position: 'absolute', top: 'initial', width: 'inherit' });
           }
         });
       } else {
         // Unbind window scroll event and Reset sticky position if stickyScroll disabled.
-        $(window).on('scroll', () => {
-          $($sticky).css({ position: '', top: '', width: '100%' });
+        jQuery(window).on('scroll', () => {
+          jQuery($sticky).css({ position: '', top: '', width: '100%' });
         });
       }
     }
@@ -42,13 +42,13 @@ export function sticky(stickyArea, stickyMovingSide, StickyScrollBar) {
   // stickyScrollBar add on Sidebar,if sidebar content is more than [window screen - header Height].
   const stickyScrollBar = () => {
     // initialize stickyScrollBar
-    const $sidebarWrapper = $(StickyScrollBar);
+    const $sidebarWrapper = jQuery(StickyScrollBar);
 
     // stickyScrollBar length check
-    if ($($sidebarWrapper).length) {
+    if (jQuery($sidebarWrapper).length) {
       const $sidebarHeight = $sidebarWrapper.innerHeight();
-      const $windowHeight = $(window).innerHeight();
-      const $headerHeight = $('.header').height();
+      const $windowHeight = jQuery(window).innerHeight();
+      const $headerHeight = jQuery('.header').height();
 
       // stickyScrollBar function condition check.
       if ($sidebarHeight > ($windowHeight - $headerHeight)) {
@@ -60,13 +60,13 @@ export function sticky(stickyArea, stickyMovingSide, StickyScrollBar) {
   };
 
   // initialize stickyScrollBar function.
-  $(window).on('load', () => {
+  jQuery(window).on('load', () => {
     stickyScrollBar();
   });
 
   // initialize stickyScroll function and enable/disable based on mediaQuery breakpoint.
   const initStickyScroll = (params) => {
-    const $windowWidth = $(window).width();
+    const $windowWidth = jQuery(window).width();
     const breakpoint = 1024;
     if ($windowWidth >= breakpoint) {
       // Enable Sticky Scroll.
@@ -78,7 +78,7 @@ export function sticky(stickyArea, stickyMovingSide, StickyScrollBar) {
   };
 
   // Run on doc ready.
-  $(document).ready(() => {
+  jQuery(document).ready(() => {
     let init = false;
     if (!init) {
       initStickyScroll();
@@ -87,7 +87,7 @@ export function sticky(stickyArea, stickyMovingSide, StickyScrollBar) {
   });
 
   // Custom windowResize;
-  utility.windowResize($(window), (e) => {
+  utility.windowResize(jQuery(window), (e) => {
     initStickyScroll();
     stickyScrollBar();
   });

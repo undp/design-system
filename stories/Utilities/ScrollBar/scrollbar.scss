@@ -7,6 +7,10 @@
   line-height: normal;
   max-width: $width-600;
   width: 100%;
+
+  @supports (scrollbar-width: thin) {
+    box-shadow: inset 0px -4px 0px 0px rgb(255, 255, 255, 1), inset 0px -5px 0px 0px rgb(0, 0, 0, 1);
+  }
 }
 
 .scrollbar-data {
@@ -17,6 +21,11 @@
 .scrollbar-vertical-wrapper {
   height: 70vh;
   width: 65px;
+  position: relative;
+
+  @supports (scrollbar-width: thin) {
+    box-shadow: inset -4px 0px 0px 0px rgb(255, 255, 255, 1), inset -5px 0px 0px 0px rgb(0, 0, 0, 1);
+  }
 }
 
 .scrollbar-data__vertical {
@@ -24,6 +33,7 @@
 }
 
 [dir='rtl'] {
+
   .scrollbar-horizontal-wrapper,
   .scrollbar-vertical-wrapper {
     float: right;

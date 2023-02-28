@@ -30,14 +30,14 @@ export const parallaxEffect = (trigger, selector, start, end, direction, device,
       if (direction == 'horizontal') {
         // Define empty array to use array.push().
         const holder = [];
-        const $container = $(container);
+        const $container = jQuery(container);
         const { length } = $container.find('.swiper-slide');
         if (container.querySelector('.swiper-wrapper') != undefined) {
           if ($container.find(selector).find(trigger).length < 1) {
             $container.find('.swiper-slide').each((index, element) => {
               holder.push(element);
               if (index === Math.floor((length - 1) / 2) || index === length - 1) {
-                $(holder).wrapAll('<div class="stats-card-parallax parallax-slide" />');
+                jQuery(holder).wrapAll('<div class="stats-card-parallax parallax-slide" />');
                 holder.length = 0;
               }
             });
@@ -113,20 +113,20 @@ export const parallaxEffect = (trigger, selector, start, end, direction, device,
 
 // parallaxlines Function.
 export function parallaxlines() {
-  $(window).scroll(() => {
+  jQuery(window).scroll(() => {
     // variables
-    var $sticky = $('.parallax .swiper-wrapper');
+    var $sticky = jQuery('.parallax .swiper-wrapper');
     var stickyTop = $sticky.offset().top;
-    var windowTop = $(window).scrollTop();
+    var windowTop = jQuery(window).scrollTop();
     var diff = windowTop + 500;
     // calculates the window width
-    const windowWidth = $(window).width();
-    $('.parallax .swiper-wrapper').each(function () {
+    const windowWidth = jQuery(window).width();
+    jQuery('.parallax .swiper-wrapper').each(function () {
       if (windowWidth > 767) {
-        $('.parallax').removeClass('lines-background');
-        if ($(this).isInViewport()) {
+        jQuery('.parallax').removeClass('lines-background');
+        if (jQuery(this).isInViewport()) {
           if (stickyTop < diff) {
-            $('.parallax').toggleClass('lines-background');
+            jQuery('.parallax').toggleClass('lines-background');
           }
         }
       }

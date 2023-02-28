@@ -1,27 +1,16 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 
-export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {PC: 'Primary colors', AC: 'Accent colors', BC: 'Balance of color palette', PT: 'Primary'}; return engText;
-    case 'arabic': const arabicText = {PC: 'الألوان الأساسية', AC: 'ألوان مميزة', BC: 'توازن لوحة الألوان', PT: 'ابتدائي'}; return arabicText;
-    case 'burmese': const burmeseText = {PC: 'မူလအရောင်များ', AC: 'အရောင်များကိုအလေးပေးပါ', BC: 'အရောင် palette ၏ Balance', PT: 'မူလတန်း'}; return burmeseText;
-    case 'japanese': const japaneseText = {PC: '原色', AC: 'アクセントカラー', BC: 'カラーパレットのバランス', PT: '主要な'}; return japaneseText;
-    default:
-      return {PC: 'Primary colors', AC: 'Accent colors', BC: 'Balance of color palette', PT: 'Primary'};
-  }
-};
-
-<Meta title="Foundation/Colors/Color palette" component={Color} parameters={{
+<Meta title="Foundation/Colors" parameters={{
     viewMode: 'docs',
-    previewTabs: { 
-      canvas: { hidden: true } 
+    previewTabs: {
+      canvas: { hidden: true }
      }
   }}/>
 
 <style>{`
   div#story--atoms-colors--colors {
     display: none;
-} 
+  }
   .color_wrapper{
     display: flex;
   }
@@ -48,7 +37,6 @@ export const getCaptionForLocale = (locale) => {
   .color-wrapper {
     display:none
   }
-
   .blue-100 { background-color: #B5D5F5;}
   .blue-200 {background-color: #94C4F5;}
   .blue-300 { background-color: #6BABEB;}
@@ -56,7 +44,6 @@ export const getCaptionForLocale = (locale) => {
   .blue-500 {background-color: #3288CE;}
   .blue-600 {background-color: #006EB5;}
   .blue-700 {background-color: #1F5A95;}
-
   .gray-100 { background-color: #FAFAFA;}
   .gray-200 {background-color: #F7F7F7;}
   .gray-300 { background-color: #EDEFF0;}
@@ -64,7 +51,6 @@ export const getCaptionForLocale = (locale) => {
   .gray-500 {background-color: #A9B1B7;}
   .gray-600 {background-color: #55606E;}
   .gray-700 {background-color: #232E3D;}
-
   .light-yellow { background-color: #FFE17E;}
   .yellow {background-color: #FFEB00;}
   .dark-yellow  { background-color: #FBC412;}
@@ -77,7 +63,6 @@ export const getCaptionForLocale = (locale) => {
   .light-azure {background-color: #A2DAF3;}
   .azure {background-color: #60D4F2;}
   .dark-azure {background-color: #00C1FF;}
-
 `}</style>
 
 # Colors
@@ -184,7 +169,7 @@ Primary colors: Primary colors are the base colors of the UI, the ones that are 
 </div>
 
 ### Accent Colors
-Accent colors: Accent colors are the colors that are used for emphasis in a color scheme. These colors can often be bold or vivid and used sparingly to emphasize contrast or create rhythm. More toned colors such as neutrals or darker shades can also be used depending on the surroundings. 
+Accent colors: Accent colors are the colors that are used for emphasis in a color scheme. These colors can often be bold or vivid and used sparingly to emphasize contrast or create rhythm. More toned colors such as neutrals or darker shades can also be used depending on the surroundings.
 
 <div className="color_wrapper">
   <div className="color__item">
@@ -262,14 +247,5 @@ Accent colors: Accent colors are the colors that are used for emphasis in a colo
     </div>
 </div>
 
-<Story name="Color palette">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Color></Color>;
-  }}
-</Story>
-
-
 ### Usage
-- You can pick a color by HEX color code. e.g., #B5D5F5. Colors are also defined in the variables **stories/assets/scss/_variables.scss** by the same name like blue-100 it's $color-blue-100 
-
+- You can pick a color by HEX color code. e.g., #B5D5F5. Colors are also defined in the variables **stories/assets/scss/_variables.scss** by the same name like blue-100 it's $color-blue-100

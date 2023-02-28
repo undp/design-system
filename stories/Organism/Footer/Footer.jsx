@@ -42,10 +42,14 @@ export function Footer({
               </div>
             </div>
             <div className="grid-x grid-margin-x" data-accordion="mobile">
-              <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-1" arialabel="footer-item-1" variant={args.color === 'default' ? args.color : 'inverted'} />
-              <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-2" arialabel="footer-item-2" variant={args.color === 'default' ? args.color : 'inverted'} />
-              <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-3" arialabel="footer-item-3" variant={args.color === 'default' ? args.color : 'inverted'} />
-              <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-4" arialabel="footer-item-4" variant={args.color === 'default' ? args.color : 'inverted'} />
+              <div className="cell medium-8">
+                <div className="grid-x grid-margin-x footer-items">
+                  <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-1" arialabel="footer-item-1" variant={args.color === 'default' ? args.color : 'inverted'} />
+                  <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-2" arialabel="footer-item-2" variant={args.color === 'default' ? args.color : 'inverted'} />
+                  <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-3" arialabel="footer-item-3" variant={args.color === 'default' ? args.color : 'inverted'} />
+                  <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-4" arialabel="footer-item-4" variant={args.color === 'default' ? args.color : 'inverted'} />
+                </div>
+              </div>
               <div className="cell medium-4">
                 <div className="icons-search">
                   {args.color === 'default' ? (

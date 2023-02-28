@@ -1,123 +1,179 @@
-import { Meta, Story, Canvas, Anchor } from "@storybook/addon-docs";
+import { ArgsTable, Meta, Story, Canvas, Anchor } from "@storybook/addon-docs";
 import { PageHero } from "./PageHero";
 import { PageHeroOption } from "./PageHeroOption";
-import BackgroundImg from '../../../../assets/images/herooption.jpg';
-import BackgroundImg2 from '../../../../assets/images/herooption.jpg';
-import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
-
+import BackgroundImg from "../../../../assets/images/herooption.jpg";
+import BackgroundImg2 from "../../../../assets/images/herooption.jpg";
+import BackgroundVideo from "../../../../assets/video/video_sample.mp4";
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {herodata: [{
-      text: 'Home'
-    },
-    {
-      text: 'Second-level'
-    },
-    {
-      text: 'Third-level'
-    },
-    {
-      text: 'Page Title'
-    }],
-    title: 'The sdgs in action',
-    content: 'Our Focus',
-    imgsrc: BackgroundImg,
-    imgsrc2: BackgroundImg2,
-    imgalt:BackgroundImg,
-    videosrc: BackgroundVideo}; return engText;
-    case 'arabic': const arabicText = {herodata: [{
-     text: 'الصفحة الرئيسية'
-    },
-    {
-      text: 'المستوى الثاني'
-    },
-    {
-      text: 'المستوى الثالث'
-    },
-    {
-      text: 'عنوان الصفحة'
-    }],
-    title: 'أهداف التنمية المستدامة في العمل',
-    content: 'تركيزنا',
-    imgsrc: BackgroundImg,
-    imgsrc2: BackgroundImg2,
-    imgalt:BackgroundImg,
-    videosrc: BackgroundVideo}; return arabicText;
-    case 'burmese': const burmeseText = {herodata: [{
-      text: 'အိမ်ပြန်'
-    },
-    {
-      text: 'ဒုတိယအဆင့်'
-    },
-    {
-      text: 'တတိယအဆင့်'
-    },
-    {
-      text: 'စာမျက်နှာခေါင်းစဉ်'
-    }],
-    title: 'sdgs သည်လုပ်ဆောင်သည်',
-    content: 'ကျွန်ုပ်တို့၏အာရုံ',
-    imgsrc: BackgroundImg,
-    imgsrc2: BackgroundImg2,
-    imgalt:BackgroundImg,
-    videosrc: BackgroundVideo}; return burmeseText;
-    case 'japanese': const japaneseText = {herodata: [{
-      text: '家'
-    },
-    {
-      text: 'セカンドレベル'
-    },
-    {
-      text: '第3レベル'
-    },
-    {
-      text: 'ページタイトル'
-    }],
-    title: '動作中のsdgs',
-    content: '私たちの焦点',
-    imgsrc: BackgroundImg,
-    imgsrc2: BackgroundImg2,
-    imgalt:BackgroundImg,
-    videosrc: BackgroundVideo}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = {
+        herodata: [
+          {
+            text: "Home",
+          },
+          {
+            text: "Second-level",
+          },
+          {
+            text: "Third-level",
+          },
+          {
+            text: "Page Title",
+          },
+        ],
+        title: "The sdgs in action",
+        subtitle:
+          "Subtitle or excerpt of the story goes below and it is two lines",
+        content: "Our Focus",
+        imgsrc: BackgroundImg,
+        imgsrc2: BackgroundImg2,
+        imgalt: BackgroundImg,
+        videosrc: BackgroundVideo,
+        cta: "Read more",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        herodata: [
+          {
+            text: "الصفحة الرئيسية",
+          },
+          {
+            text: "المستوى الثاني",
+          },
+          {
+            text: "المستوى الثالث",
+          },
+          {
+            text: "عنوان الصفحة",
+          },
+        ],
+        title: "أهداف التنمية المستدامة في العمل",
+        content: "تركيزنا",
+        imgsrc: BackgroundImg,
+        imgsrc2: BackgroundImg2,
+        imgalt: BackgroundImg,
+        videosrc: BackgroundVideo,
+        cta: "اقرأ أكثر",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        herodata: [
+          {
+            text: "အိမ်ပြန်",
+          },
+          {
+            text: "ဒုတိယအဆင့်",
+          },
+          {
+            text: "တတိယအဆင့်",
+          },
+          {
+            text: "စာမျက်နှာခေါင်းစဉ်",
+          },
+        ],
+        title: "sdgs သည်လုပ်ဆောင်သည်",
+        content: "ကျွန်ုပ်တို့၏အာရုံ",
+        imgsrc: BackgroundImg,
+        imgsrc2: BackgroundImg2,
+        imgalt: BackgroundImg,
+        videosrc: BackgroundVideo,
+        cta: "ပိုပြီးဖတ်ပါ",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        herodata: [
+          {
+            text: "家",
+          },
+          {
+            text: "セカンドレベル",
+          },
+          {
+            text: "第3レベル",
+          },
+          {
+            text: "ページタイトル",
+          },
+        ],
+        title: "動作中のsdgs",
+        content: "私たちの焦点",
+        imgsrc: BackgroundImg,
+        imgsrc2: BackgroundImg2,
+        imgalt: BackgroundImg,
+        videosrc: BackgroundVideo,
+        cta: "続きを読む",
+      };
+      return japaneseText;
     default:
-      const dummy =  {herodata: [{
-      text: 'Home'
-    },
-    {
-      text: 'Second-level'
-    },
-    {
-      text: 'Third-level'
-    },
-    {
-      text: 'Page Title'
-    }],
-    title: 'The sdgs in action',
-    content: 'Our Focus',
-    imgsrc: BackgroundImg,
-    imgsrc2: BackgroundImg2,
-    imgalt:BackgroundImg,
-    videosrc: BackgroundVideo};
-    return dummy
+      const dummy = {
+        herodata: [
+          {
+            text: "Home",
+          },
+          {
+            text: "Second-level",
+          },
+          {
+            text: "Third-level",
+          },
+          {
+            text: "Page Title",
+          },
+        ],
+        title: "The sdgs in action",
+        subtitle:
+          "Subtitle or excerpt of the story goes below and it is two lines",
+        content: "Our Focus",
+        imgsrc: BackgroundImg,
+        imgsrc2: BackgroundImg2,
+        imgalt: BackgroundImg,
+        videosrc: BackgroundVideo,
+        cta: "Read more",
+      };
+      return dummy;
   }
 };
 
-<Meta title="Components/UI components/Hero/Page"
+<Meta
+  title="Components/UI components/Hero/Page"
   argTypes={{
-    variant: {
-      options: ["video", "image"],
+    Variant: {
+      options: ["Video", "Image", "No background"],
       control: { type: "radio" },
-      defaultValue: 'image'
     },
-  }}/>
+    CTA: {
+      options: ["On", "Off"],
+      control: { type: "inline-radio" },
+    },
+    Overline: {
+      options: ["On", "Off"],
+      control: { type: "inline-radio" },
+    },
+    Subtitle: {
+      options: ["On", "Off"],
+      control: { type: "inline-radio" },
+    },
+  }}
+  args={{
+    Variant: "Image",
+    CTA: "Off",
+    Overline: "Off",
+    Subtitle: "Off",
+  }}
+/>
 
 # Page Hero - Full-width
 
 The Full-width homepage Hero images are large sized with text in the front of the image and present at the top of the page.
 
 ### Overview
-The Page Hero component is a multi-usage component  which creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle and Breadcrumb. Animation and atom tags are used for creating this card.
+
+The Page Hero component is a multi-usage component which creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle and Breadcrumb. Animation and atom tags are used for creating this card.
 
 #### When to use:
 
@@ -126,15 +182,19 @@ When the website needs to grab the user's attention to a particular page.
 ### Formatting
 
 #### Default
+
 It consists of a grid with title, subtitle, image and breadcrumbs.
 
 ### Content
+
 The Full-width Page Hero image consists of an Image and text, subtitle and breadcrumbs in the front of the image. The image covers the entire grid.
 
 ### Behaviors
 
 #### States
+
 There are two states in the Full-width Page- Default and Mobile.
+
 1. Default: It consists of an image and breadcrumbs in the front of the image at the top and title and subtitle below it.
 
 2. Mobile: It consists of a vertical image with breadcrumbs, title and subtitles in the front of the image.
@@ -143,8 +203,19 @@ There are two states in the Full-width Page- Default and Mobile.
   <Story name="Page hero - full-width">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
+      const cta = { label: caption.cta, for_primary: "Arrow" };
       return (
-        <PageHero data={caption.herodata} title={caption.title} content={caption.content} active={'white'} imgsrc={caption.imgsrc} imgalt={caption.imgalt} {...args}
+        <PageHero
+          data={caption.herodata}
+          title={caption.title}
+          subtitle={caption?.subtitle}
+          content={caption?.content}
+          variant={args.Variant}
+          active={"white"}
+          imgsrc={caption.imgsrc}
+          imgalt={caption.imgalt}
+          cta={cta}
+          {...args}
         ></PageHero>
       );
     }}
@@ -152,6 +223,7 @@ There are two states in the Full-width Page- Default and Mobile.
 </Canvas>
 
 ### Usage:
+
 - Choose the variant either video or Image from the control tab on canvas.
 - Grab the HTML form HTML tab and also include css and js files listed below.
 - If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.
@@ -160,6 +232,7 @@ There are two states in the Full-width Page- Default and Mobile.
 ### CSS and JS References
 
 #### CSS:
+
 Add the base layout style from
 
 - https://undp.github.io/design-system/css/base-minimal.min.css
@@ -172,67 +245,9 @@ Add the base layout style from
 - https://undp.github.io/design-system/js/viewport.min.js
 
 ### Interactions
+
 - When the page is opened, the contents of the card appears beside the image and the image zooms in.
 
-<Anchor storyId='components-ui-components-hero--page-hero-tall-image'></Anchor>
-
-# Page Hero - Tall Image
-
-The Page Hero images are large-sized images with text beside or above the image and present at the top of the homepage.
-
-### Overview
-The Page Hero component is a multi-usage component that creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle, and Breadcrumb. Animation and atom tags are used for creating this card.
-
-#### When to use:
-
-When the website needs to grab the user's attention to a particular page.
-
-### Formatting
-
-#### Default
-It consists of a grid with title, subtitle, image, and breadcrumbs.
-
-### Content
-The Tall Page Hero image consists of an Image situated at either side or at the bottom of the grid. The text is either at the other side of the grid or above the image.
-
-### Behaviors
-
-#### States
-There are two states in the Tall Image Page- Default and Mobile.
-1. Default: It consists of an image on either side of the grid and content on the other side.
-
-2. Mobile: It consists of an image at the bottom of the grid and content above the grid.
-
-<Canvas>
-<Story name="Page hero - tall image">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <PageHeroOption data={caption.herodata} title={caption.title} content={caption.content} active={'default'} imgsrc={caption.imgsrc} imgsrc2={caption.imgsrc2} imgalt={caption.imgalt} videosrc={caption.videosrc} {...args}
-      ></PageHeroOption>
-    );
-  }}
-</Story>
-</Canvas>
-
-### Usage:
-- Choose the variant either video or Image from the control tab on canvas.
-- Grab the HTML form HTML tab and include css and js files listed below.
-- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from dist/css/base-minimal.min.css
-- https://undp.github.io/design-system/css/components/page-hero.min.css
-- https://undp.github.io/design-system/css/components/breadcrumbs.min.css
-
-#### JS:
-- https://undp.github.io/design-system/js/viewport.min.js
-
-### Interactions
-- When the page is opened, the contents of the card appears beside the image.
-
 ### Changelog
+
 1.0 — Released component
