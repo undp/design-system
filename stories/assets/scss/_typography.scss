@@ -194,7 +194,7 @@ a {
 
 // burmese lang
 :lang(my) {
-  body {
+  body, button {
     font-family: $Font-Family-NotoSans;
     line-height: 1.7;
   }
@@ -315,5 +315,10 @@ a {
   }
 }
 
-
-/* typograpgy end */
+/* Bengali */
+:lang(bn) {
+  body, h1 {
+    font-family: $Font-Family-UNBangla;
+  }
+}
+/* typography end */
