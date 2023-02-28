@@ -79,7 +79,7 @@
     "mini-css-extract-plugin": "^2.7.0",
     "patch-package": "^6.4.7",
     "path": "^0.12.7",
-    "postcss-cli": "^10.0.0",
+    "postcss-cli": "^10.1.0",
     "postcss-loader": "^7.0.1",
     "prettier": "^2.8.0",
     "prettier-eslint": "^15.0.1",
