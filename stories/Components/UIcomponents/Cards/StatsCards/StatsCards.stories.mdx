@@ -51,17 +51,19 @@ export const getCaptionForLocale = (locale) => {
   component={StatsCards}
   argTypes={{
     Size: {
+      name: "Size variant",
       options: ["Small", "Medium", "Large", "Extra large"],
       control: { type: "inline-radio" },
     },
     Hovercolor: {
-      options: ["yellow", "red", "green", "blue", "accent"],
+      name: "Hover accent color",
+      options: ["global", "yellow", "red", "green", "blue"],
       control: { type: "inline-radio" },
     },
   }}
   args={{
     Size: "Medium",
-    Hovercolor: "accent",
+    Hovercolor: "global",
   }}
 />
 
@@ -111,7 +113,6 @@ The following size modifiers are available:
   <Story name="Stats card">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <StatsCards
           title={caption.titlename}

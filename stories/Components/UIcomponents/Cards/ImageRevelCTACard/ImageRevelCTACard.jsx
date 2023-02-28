@@ -6,12 +6,11 @@ import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
-export const hovercolor_options = {
+export const accent_color_options = {
   yellow: 'yellow',
   red: 'red',
   blue: 'blue',
   green: 'green',
-  accent: '',
 };
 
 export function ImageRevelCard({
@@ -27,16 +26,19 @@ export function ImageRevelCard({
     size = 'small';
   }
 
-  let { accent } = args;
-  let hovercolor_variant = hovercolor_options[`${args.Hovercolors}`];
-  let Hovercolor = (Boolean(accent)) && (!hovercolor_variant) ? accent : hovercolor_variant;
+  console.log(args.Hovercolor, 'hovercolor');
+  console.log(args.accent, 'accent');
+  let color = (args.Hovercolor) ? accent_color_options[`${args.Hovercolor}`] : accent_color_options[`${args.accent}`];
+  let accent_color = color ? `accent-${color}` : '';
+
+  console.log(accent_color, 'color');
 
   return (
     <div className="grid-x grid-margin-x">
       {data.map((item, index) => (
         <div key={index} data-viewport="true" className={['cell', `${size}`, 'image-reveal-card', `delay-${2 + index++}`].join(' ')}>
           <a href={item.link}>
-            <div className={`image-reveal-card__content ${Hovercolor}`}>
+            <div className={`image-reveal-card__content ${accent_color}`}>
               <div className="image">
                 {item.imageback && (<img src={item.imageback} alt={item.imageback} />)}
               </div>

@@ -67,7 +67,6 @@ The Author summary is created for showing the authors name, designation, photo a
   <Story name="Author summary">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <AuthorSummary
           image={user}

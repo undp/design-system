@@ -26,7 +26,9 @@ div.publication-card {
 
       @each $name,
       $color in $colors {
-        &.#{$name}:after {
+
+        &.accent-#{$name}::after,
+        &.#{$name}::after {
           @include background-image(27.66deg, $color, transparent 70.49%);
 
           opacity: 0.75;
@@ -159,17 +161,45 @@ div.publication-card {
         }
       }
     }
+  }
+}
+
+@each $name,
+$color in $colors {
+  .accent-#{$name} div.publication-card {
 
     &:hover {
-      .publication-thumbnail__image {
+      div.publication-thumbnail__image {
         &::after {
-          @include background-image(318deg, $color-yellow, transparent 70.49%);
+          @include background-image(27.66deg, $color, transparent 70.49%);
         }
 
-        @each $name,
-        $color in $colors {
-          &.#{$name}:after {
-            @include background-image(318deg, #{$color}, transparent 70.49%);
+        @each $name2,
+        $color2 in $colors {
+
+          &.accent-#{$name2}::after,
+          &.#{$name2}::after {
+            @include background-image(27.66deg, $color2, transparent 70.49%);
+          }
+        }
+      }
+    }
+  }
+
+  [dir='rtl'] .accent-#{$name} div.publication-card {
+
+    &:hover {
+      div.publication-thumbnail__image {
+        &::after {
+          @include background-image(318deg, $color, transparent 70.49%);
+        }
+
+        @each $name2,
+        $color2 in $colors {
+
+          &.accent-#{$name2}::after,
+          &.#{$name2}::after {
+            @include background-image(318deg, $color2, transparent 70.49%);
           }
         }
       }

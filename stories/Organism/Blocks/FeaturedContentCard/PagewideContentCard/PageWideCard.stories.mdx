@@ -85,12 +85,13 @@ export const getCaptionForLocale = (locale) => {
   component={PageWideCard}
   argTypes={{
     Hovercolors: {
-      options: ["yellow", "red", "green", "blue", "accent"],
+      name: "Hover accent color",
+      options: ["global", "yellow", "red", "green", "blue"],
       control: { type: "inline-radio" },
     },
   }}
   args={{
-    Hovercolors: "accent",
+    Hovercolors: "global",
   }}
 />
 
@@ -130,7 +131,6 @@ Hover: In hover state, when the mouse hovers over the Card, an image is displaye
   <Story name="Pagewide featured content card">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <PageWideCard
           label={caption.tag}

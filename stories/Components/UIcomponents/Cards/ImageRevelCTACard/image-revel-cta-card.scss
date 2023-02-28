@@ -2,6 +2,14 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
 
+// color map
+$colors: (
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure
+);
+
 /* image card start */
 .image-reveal-card {
   @extend %img_none;
@@ -13,7 +21,7 @@
   overflow: hidden;
   position: relative;
 
-  > a {
+  >a {
     background: none;
   }
 
@@ -85,8 +93,6 @@
   &:hover {
     .image-reveal-card__content {
 
-      // color map
-      $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
 
       @include devicebreak(large) {
         h5 {
@@ -102,7 +108,10 @@
         opacity: 0.75;
       }
 
-      @each $name, $color in $colors {
+      @each $name,
+      $color in $colors {
+
+        &.accent-#{$name},
         &.#{$name} {
           .image::before {
             @include background-image(67.76deg, #{$color}, transparent 61.11%);
@@ -125,6 +134,42 @@
 
     .image::before {
       opacity: 0.75;
+    }
+  }
+}
+
+@each $name,
+$color in $colors {
+
+  .image-reveal-card {
+
+    &.accent-#{$name},
+    &.#{$name} {
+      .image::before {
+        @include background-image(67.76deg, #{$color}, transparent 61.11%);
+      }
+    }
+  }
+
+  .accent-#{$name} .image-reveal-card {
+
+    &:hover {
+      .image-reveal-card__content {
+        .image::before {
+          @include background-image(67.76deg, #{$color}, transparent 61.11%);
+        }
+      }
+
+      @each $name2,
+      $color2 in $colors {
+
+        &.accent-#{$name2},
+        &.#{$name2} {
+          .image::before {
+            @include background-image(67.76deg, #{$color2}, transparent 61.11%);
+          }
+        }
+      }
     }
   }
 }

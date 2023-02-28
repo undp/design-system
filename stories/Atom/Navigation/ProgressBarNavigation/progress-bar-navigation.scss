@@ -2,6 +2,13 @@
 @import '../../../assets/scss/breakpoints';
 @import '../../../assets/scss/variables';
 
+$colors: (
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure
+);
+
 // * progress navigation start *//
 .progress-container {
   background: $color-gray-300;
@@ -28,30 +35,41 @@
     }
   }
 
-  &.yellow {
-    .progress-bar {
-      background: $color-yellow;
-    }
-  }
+  @each $name,
+  $color in $colors {
 
-  &.red {
-    .progress-bar {
-      background: $color-red;
-    }
-  }
-
-  &.green {
-    .progress-bar {
-      background: $color-green;
-    }
-  }
-
-  &.blue {
-    .progress-bar {
-      background: $color-azure;
+    &.accent-#{$name},
+    &.#{$name} {
+      .progress-bar {
+        background: $color;
+      }
     }
   }
 }
+
+@each $name,
+$color in $colors {
+
+  .accent-#{$name} .progress-container,
+  .#{$name} .progress-container {
+
+    .progress-bar {
+      background: $color;
+    }
+
+    @each $name2,
+    $color2 in $colors {
+
+      &.accent-#{$name2},
+      &.#{$name2} {
+        .progress-bar {
+          background: $color2;
+        }
+      }
+    }
+  }
+}
+
 
 .progress-bar {
   @include transition(width 0.2s linear);
@@ -70,4 +88,5 @@
 .progress-top {
   top: 0;
 }
+
 // * progress navigation end *//

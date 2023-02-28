@@ -80,19 +80,19 @@ export const getCaptionForLocale = (locale) => {
   title="Components/UI components/Cards/Image reveal card"
   argTypes={{
     Size: {
+      name: "Size variant",
       options: ["Large", "Small"],
       control: { type: "inline-radio" },
-      defaultValue: "Large",
     },
-    Hovercolors: {
-      options: ["yellow", "red", "green", "blue", "accent"],
+    Hovercolor: {
+      name: "Hover accent color",
+      options: ["global", "yellow", "red", "green", "blue"],
       control: { type: "inline-radio" },
-      defaultValue: "yellow",
     },
   }}
   args={{
     Size: "Large",
-    Hovercolors: "accent",
+    Hovercolor: "global",
   }}
 />
 
@@ -141,7 +141,6 @@ Hover: It consists of Image, Text, and CTA Link. It changes appearance when the 
   <Story name="Image reveal card">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <ImageRevelCard data={caption.data} {...args}>
           {" "}

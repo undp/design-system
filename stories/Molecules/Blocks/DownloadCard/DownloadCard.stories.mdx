@@ -45,6 +45,7 @@ export const getCaptionForLocale = (locale) => {
   title="Components/UI components/Cards/Download card"
   argTypes={{
     variant: {
+      name: "Variant",
       options: ["External Link", "Download"],
       control: { type: "inline-radio" },
     },
@@ -99,7 +100,6 @@ Hover: In this state, when the mouse hovers over the download card, image is dis
   <Story name="Publication module">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <DownloadCard
           title={caption.title}
@@ -121,7 +121,6 @@ Hover: In this state, when the mouse hovers over the download card, image is dis
   <Story name="Card module">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <DownloadCard
           title={caption.title}
@@ -143,7 +142,6 @@ Hover: In this state, when the mouse hovers over the download card, image is dis
   <Story name="Download module">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <DownloadCard
           title={caption.title}

@@ -232,7 +232,6 @@ A medium or a small stats card is used in sliders
   <Story name="Stats slider (two rows)">
     {(args, { globals: { locale, accent } }) => {
       const caption = statsArray(locale);
-      args.accent = accent;
       return <StatsSlider data={caption} {...args}></StatsSlider>;
     }}
   </Story>

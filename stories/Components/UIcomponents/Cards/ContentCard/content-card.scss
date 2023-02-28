@@ -2,8 +2,20 @@
 @import '../../../../assets/scss/mixins';
 
 /* content-card start */
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure, 'gray': $color-gray-100);
-$backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
+$colors: (
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure,
+  'gray': $color-gray-100
+);
+$backgroundcolors: (
+  'yellow': $color-light-yellow,
+  'red': $color-light-red,
+  'green': $color-light-green,
+  'blue': $color-light-azure,
+  'gray': $color-gray-100
+);
 
 div.content-card {
   @include transition(all 0.5s);
@@ -13,7 +25,7 @@ div.content-card {
   height: 100%;
   word-break: break-word;
 
-  > a {
+  >a {
     background: none;
     box-sizing: border-box;
     display: block;
@@ -86,7 +98,10 @@ div.content-card {
         }
       }
 
-      @each $name, $color in $colors {
+      @each $name,
+      $color in $colors {
+
+        &.accent-#{$name},
         &.#{$name} {
           background-color: #{$color};
         }
@@ -95,7 +110,11 @@ div.content-card {
   }
 
   &.card-emphasize {
-    @each $name, $color in $backgroundcolors {
+
+    @each $name,
+    $color in $backgroundcolors {
+
+      &.accent-#{$name},
       &.#{$name} {
         background-color: #{$color};
       }
@@ -107,6 +126,7 @@ div.content-card {
 
     .image::before {
       opacity: 0.75;
+      background: linear-gradient(67.76deg, $color-yellow, transparent 61.11%);
     }
 
     .cta--space::after {
@@ -125,21 +145,102 @@ div.content-card {
   }
 
   &-wrapper {
-    > div {
+    >div {
       margin-bottom: $spacing-07;
     }
   }
 
   .image::before {
     @include background-image(67.76deg, $color-yellow, transparent 61.11%);
+
+    @each $name,
+    $color in $colors {
+      @include background-image(67.76deg, $color, transparent 61.11%);
+    }
   }
 
-  @each $name, $color in $colors {
+  @each $name,
+  $color in $colors {
+
+    &.accent-#{$name},
     &.#{$name} {
       .image::before {
         @include background-image(67.76deg, #{$color}, transparent 61.11%);
       }
     }
+  }
+
+}
+
+@each $name,
+$color in $backgroundcolors {
+  .accent-#{$name} div.content-card {
+
+    &.card-emphasize {
+      background-color: #{$color};
+
+      @each $name2,
+      $color2 in $backgroundcolors {
+
+        &.accent-#{$name2},
+        &.#{$name2} {
+          background-color: #{$color2};
+        }
+      }
+    }
+  }
+}
+
+@each $name,
+$color in $colors {
+
+  .accent-#{$name} div.content-card {
+
+    .image::before {
+      @include background-image(67.76deg, $color, transparent 61.11%);
+    }
+
+    @each $name2,
+    $color2 in $colors {
+
+      &.accent-#{$name2},
+      &.#{$name2} {
+        .image::before {
+          @include background-image(67.76deg, #{$color2}, transparent 61.11%);
+        }
+      }
+    }
+
+    &.card,
+    &.card-emphasize {
+      &:hover {
+        background-color: #{$color};
+
+        @each $name2,
+        $color2 in $colors {
+
+          &.accent-#{$name2},
+          &.#{$name2} {
+            background-color: #{$color2};
+          }
+        }
+      }
+    }
+
+    // &.card {
+    //   &:hover {
+    //     background-color: #{$color};
+
+    //     @each $name2,
+    //     $color2 in $colors {
+
+    //       &.accent-#{$name2},
+    //       &.#{$name2} {
+    //         background-color: #{$color2};
+    //       }
+    //     }
+    //   }
+    // }
   }
 }
 

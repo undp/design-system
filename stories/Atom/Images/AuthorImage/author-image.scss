@@ -4,6 +4,13 @@
 
 /* author image */
 
+$colors: (
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure
+);
+
 div.author__img {
   border-radius: $author-image-radius;
   height: 80px;
@@ -23,9 +30,6 @@ div.author__img {
   }
 
   &:hover {
-
-    $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
-
     &::before {
       @include background-image(45deg, $color-yellow , transparent 53%);
 
@@ -34,6 +38,8 @@ div.author__img {
 
     @each $name,
     $color in $colors {
+
+      &.accent-#{$name}::before,
       &.#{$name}::before {
         @include background-image(45deg, $color , transparent 53%);
       }
@@ -47,6 +53,31 @@ div.author__img {
   &.large {
     height: 180px;
     width: 180px;
+
+    &::before {
+      height: 180px;
+    }
+  }
+}
+
+@each $name,
+$color in $colors {
+  .accent-#{$name} div.author__img {
+    &:hover {
+
+      &::before {
+        @include background-image(45deg, $color , transparent 53%);
+      }
+
+      @each $name2,
+      $color2 in $colors {
+
+        &.accent-#{$name2}::before,
+        &.#{$name2}::before {
+          @include background-image(45deg, $color2 , transparent 53%);
+        }
+      }
+    }
   }
 }
 

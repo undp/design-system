@@ -88,12 +88,13 @@ export const getCaptionForLocale = (locale) => {
   title="Components/UI components/Cards/Content card/Without image/With emphasize"
   argTypes={{
     Hovercolors: {
-      options: ["yellow", "red", "green", "blue", "accent"],
+      name: "Hover accent color",
+      options: ["global", "yellow", "red", "green", "blue"],
       control: { type: "inline-radio" },
     },
   }}
   args={{
-    Hovercolors: "accent",
+    Hovercolors: "global",
   }}
 />
 
@@ -136,7 +137,6 @@ Content Card w/o Image can be presented with the Emphasized title (without descr
   <Story name="With emphasize">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <ContentCardWithOutImageEmphasize
           data={caption.contentdata}

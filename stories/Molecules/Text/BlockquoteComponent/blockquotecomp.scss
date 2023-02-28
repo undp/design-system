@@ -15,18 +15,27 @@ div.blockquote {
     background-color: $color-gray-200;
   }
 
+
+  .accent-yellow &,
+  &.accent-yellow,
   &.yellow {
     background-color: $color-yellow;
   }
 
+  .accent-red &,
+  &.accent-red,
   &.red {
     background-color: $color-red;
   }
 
+  .accent-green &,
+  &.accent-green,
   &.green {
     background-color: $color-green;
   }
 
+  .accent-blue &,
+  &.accent-blue,
   &.blue {
     background-color: $color-azure;
   }

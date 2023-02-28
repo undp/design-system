@@ -61,6 +61,8 @@ $colors: (
 
         @each $name2,
         $color2 in $colors {
+
+          &.accent-#{$name2},
           &.#{$name2} {
             .card-thumbnail__image::before {
               @include background-image(67.76deg, #{$color2}, transparent 61.11%);
@@ -199,9 +201,25 @@ $colors: (
 
       @each $name,
       $color in $colors {
+
+        .accent-#{$name} &,
         &.#{$name} {
           .card-thumbnail__image::before {
             @include background-image(297deg, #{$color}, transparent 61.11%);
+          }
+        }
+
+        .accent-#{$name} & {
+
+          @each $name2,
+          $color2 in $colors {
+
+            &.accent-#{$name2},
+            &.#{$name2} {
+              .card-thumbnail__image::before {
+                @include background-image(297deg, #{$color}, transparent 61.11%);
+              }
+            }
           }
         }
       }

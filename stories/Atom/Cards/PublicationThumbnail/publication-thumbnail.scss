@@ -46,8 +46,22 @@ div.publication-thumbnail__image {
 
     @each $name,
     $color in $colors {
+
+      &.accent-#{$name}:after,
       &.#{$name}:after {
         @include background-image(27.66deg, #{$color}, transparent 70.49%);
+      }
+
+      .accent-#{$name} & {
+
+        @each $name2,
+        $color2 in $colors {
+
+          &.accent-#{$name2}::before,
+          &.#{$name2}::before {
+            @include background-image(27.66deg, #{$color2}, transparent 70.49%);
+          }
+        }
       }
     }
   }
@@ -59,8 +73,22 @@ div.publication-thumbnail__image {
 
       @each $name,
       $color in $colors {
+
+        &.accent-#{$name}:after,
         &.#{$name}:after {
           @include background-image(318deg, #{$color}, transparent 70.49%);
+        }
+
+        .accent-#{$name} & {
+
+          @each $name2,
+          $color2 in $colors {
+
+            &.accent-#{$name2}::before,
+            &.#{$name2}::before {
+              @include background-image(318deg, #{$color2}, transparent 70.49%);
+            }
+          }
         }
       }
     }

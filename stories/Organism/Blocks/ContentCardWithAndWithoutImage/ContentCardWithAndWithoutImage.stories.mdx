@@ -359,7 +359,13 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Patterns/Card grids/Content cards with and without image" />
+<Meta
+  title="Patterns/Card grids/Content cards with and without image"
+  args={{
+    Emphasize: "true",
+    Hovercolors: "global",
+  }}
+/>
 
 # Content Card With and Without Image
 
@@ -373,7 +379,6 @@ This is just collection of the following components:
   <Story name="Content cards with and without image">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <ContentCardWithAndWithoutImage
           data={caption.contentdata}

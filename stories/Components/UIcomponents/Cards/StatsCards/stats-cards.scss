@@ -2,6 +2,14 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 
+// color map
+$colors: (
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure
+);
+
 /* statscard start */
 div.stats-card {
   @include transition(300ms all);
@@ -164,22 +172,42 @@ div.stats-card {
   }
 
   &:hover {
-    // color map
-    $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
-
     background-color: $color-yellow;
 
     & h2 {
       color: $color-black;
     }
 
-    @each $name, $color in $colors {
+    @each $name,
+    $color in $colors {
+
+      &.accent-#{$name},
       &.#{$name} {
         background-color: #{$color};
       }
     }
   }
 }
+
+@each $name,
+$color in $colors {
+
+  .accent-#{$name} div.stats-card {
+    &:hover {
+      background-color: #{$color};
+
+      @each $name2,
+      $color2 in $colors {
+
+        &.accent-#{$name2},
+        &.#{$name2} {
+          background-color: #{$color2};
+        }
+      }
+    }
+  }
+}
+
 
 :lang(my) {
   div.stats-card {

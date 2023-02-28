@@ -12,21 +12,29 @@ export const image_options = {
   color: 'without-image',
 };
 
+export const accent_color_options = {
+  yellow: 'yellow',
+  red: 'red',
+  green: 'green',
+  blue: 'blue',
+};
+
 export function ContentCardWithAndWithoutImage({
   data,
   storyBtn,
   dataViewport,
   ...args
 }) {
-  let { accent } = args;
-  // replace each items "item.Hovercolors" with the accent color.
+  let color = (args.Hovercolors) ? accent_color_options[`${args.Hovercolors}`] : accent_color_options[`${args.accent}`];
+  let accent_color = color ? `accent-${color}` : '';
+
   return (
     <div className="grid-x grid-margin-x content-data" data-viewport={dataViewport}>
       {data.map((item, index) => (
         <div key={index} className={cls('cell', `${item.scale}`)}>
           {item.type === 'image'
             ? (
-              <div className={cls('content-card', `${(item.Hovercolors) ? accent : ''}`)}>
+              <div className={cls('content-card', `${(item.Hovercolors) ? accent_color : ''}`)}>
                 <a href={item.link}>
                   <Heading type="6" label={item.contenttile} />
                   <div className="image">
@@ -42,7 +50,7 @@ export function ContentCardWithAndWithoutImage({
             : (null)}
           {item.type === 'color'
             ? (
-              <div className={cls('content-card', `${item.BackgroundColor}`, `${item.Hovercolors ? accent : ''}`)}>
+              <div className={cls('content-card', `${item.BackgroundColor}`, `${item.Hovercolors ? args.accent : ''}`)}>
                 <a href={item.link}>
                   <Heading type="6" label={item.contenttile} />
                   <div className="content-caption">
@@ -70,8 +78,3 @@ export function ContentCardWithAndWithoutImage({
     </div>
   );
 }
-
-ContentCardWithAndWithoutImage.defaultProps = {
-  Emphasize: 'true',
-  Hovercolors: 'accent',
-};

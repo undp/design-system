@@ -5,16 +5,18 @@ import { ProgressBarNavigation } from "./ProgressBarNavigation";
   title="Utilities/Progress bar navigation"
   argTypes={{
     Type: {
+      name: "Type",
       options: ["Large", "Small"],
       control: { type: "inline-radio" },
     },
     Colors: {
-      options: ["yellow", "red", "green", "blue", "accent"],
+      name: "Accent color",
+      options: ["global", "yellow", "red", "green", "blue"],
       control: { type: "inline-radio" },
     },
   }}
   args={{
-    Colors: "accent",
+    Colors: "global",
     Type: "Large",
   }}
 />
@@ -46,7 +48,6 @@ It has different color variations, which increase the length of the color based 
     }}
   >
     {(args, { globals: { accent } }) => {
-      args.accent = accent;
       return <ProgressBarNavigation {...args}></ProgressBarNavigation>;
     }}
   </Story>

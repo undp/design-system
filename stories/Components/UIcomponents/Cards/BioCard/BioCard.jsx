@@ -24,8 +24,8 @@ export const biodata = (image2, contentname, descriptionText, descriptionText2) 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
 export const size_options = {
-  large: 'large-12',
-  medium: 'large-3',
+  Large: 'large-12',
+  Medium: 'large-3',
 };
 
 export const accent_color_options = {
@@ -53,12 +53,13 @@ export function BioCard({
     modal();
   }, []);
 
-  let size_variant = size_options[`${args.Size}`];
-  let accent_color = accent_color_options[`${args.Accent}`] ?? '';
+  let size_variant = size_options[`${args.size}`];
+  let color = accent_color_options[`${args.accent}`] ?? false;
+  let accent_color = color ? `accent-${color}` : '';
 
   return (
     <>
-      {args.Size === 'large' && (
+      {args.size === 'Large' && (
         <div className={cls('grid-x grid-margin-x')}>
           <div className={cls('cell bio-card', `${size_variant}`, `${accent_color}`)}>
             <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
@@ -79,7 +80,7 @@ export function BioCard({
         </div>
       )}
 
-      {args.Size === 'medium' && (
+      {args.size === 'Medium' && (
         <div className={cls('grid-x')}>
           <div className={cls('cell bio-card medium', `${size_variant}`, `${accent_color}`)}>
             <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">

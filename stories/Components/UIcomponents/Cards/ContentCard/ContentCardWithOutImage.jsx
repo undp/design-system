@@ -7,13 +7,11 @@ import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
-export const color_options = {
-  default: 'default',
+export const accent_color_options = {
   yellow: 'yellow',
   red: 'red',
   blue: 'blue',
   green: 'green',
-  accent: '',
 };
 
 export function ContentCardWithOutImage({
@@ -21,16 +19,14 @@ export function ContentCardWithOutImage({
   Hovercolors,
   ...args
 }) {
-  let { accent } = args;
-  let hovercolor = color_options[`${Hovercolors}`];
-  let Color = (Boolean(accent)) && (!hovercolor) ? accent : hovercolor;
-  Color = (Color == 'default') ? '' : Color;
+  let color = (Hovercolors) ? accent_color_options[`${Hovercolors}`] : accent_color_options[`${args.accent}`];
+  let accent_color = color ? `accent-${color}` : '';
 
   return (
     <div className="grid-x grid-margin-x">
       {data.map((item, index) => (
         <div key={index} className="cell medium-4">
-          <div className={cls('content-card', 'card', `${Color}`)}>
+          <div className={cls('content-card', 'card', `${accent_color}`)}>
             <a href={item.link}>
               <Heading type="6" label={item.contenttile} />
               <div className="content-caption">

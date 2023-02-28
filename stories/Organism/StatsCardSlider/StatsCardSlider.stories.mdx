@@ -196,7 +196,6 @@ This is collection of [Stats card](/docs/components-ui-components-cards-stats-ca
   <Story name="Stats card slider">
     {(args, { globals: { locale, accent } }) => {
       const caption = statsArray(locale);
-      args.accent = accent;
       return <Statscardslider data={caption} {...args}></Statscardslider>;
     }}
   </Story>

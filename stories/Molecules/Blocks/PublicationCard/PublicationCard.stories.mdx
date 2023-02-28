@@ -24,8 +24,9 @@ export const getCaptionForLocale = (locale) => {
   title="Components/UI components/Cards/Publication card"
   argTypes={{
     variant: {
+      name: "Variant",
       options: ["Readmore", "Download", "Both"],
-      control: { type: "radio" },
+      control: { type: "inline-radio" },
     },
   }}
   args={{
@@ -45,7 +46,6 @@ Publication cards show the publication category images, title, format, and downl
   <Story name="Publication card">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <PublicationCard
           download={caption.download}

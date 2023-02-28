@@ -3,7 +3,13 @@
 @import '../../assets/scss/swiper';
 @import '../../assets/scss/mixins';
 
-$backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
+$backgroundcolors: (
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure,
+  'gray': $color-gray-100
+);
 
 /* stats-card-grid start */
 .stats-card-slider {
@@ -32,9 +38,12 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
     .swiper {
       &-slide-active {
         .stats-card {
-          background-color: $color-light-yellow;
+          background-color: $color-yellow;
 
-          @each $name, $color in $backgroundcolors {
+          @each $name,
+          $color in $backgroundcolors {
+
+            &.accent-#{$name},
             &.#{$name} {
               background-color: #{$color};
             }
@@ -74,9 +83,12 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
     }
 
     &:hover {
-      background-color: $color-light-yellow;
+      background-color: $color-yellow;
 
-      @each $name, $color in $backgroundcolors {
+      @each $name,
+      $color in $backgroundcolors {
+
+        &.accent-#{$name},
         &.#{$name} {
           background-color: #{$color};
         }
@@ -114,5 +126,52 @@ $backgroundcolors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'gre
     }
   }
 }
+
+// @each $name,
+// $color in $backgroundcolors {
+//   .accent-#{$name} .stats-card-slider {
+//     .swiper {
+//       &-slide-active {
+//         .stats-card {
+//           &:hover {
+//             background-color: $color;
+
+//             @each $name2,
+//             $color2 in $backgroundcolors {
+
+//               &.accent-#{$name2},
+//               &.#{$name2} {
+//                 background-color: $color2;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     .stats-slider {
+//       .stats-card.small {
+//         &:hover {
+//           background-color: $color-yellow;
+
+//           @each $name,
+//           $color in $backgroundcolors {
+
+//             &.accent-#{$name},
+//             &.#{$name} {
+//               background-color: #{$color};
+//             }
+//           }
+//         }
+//       }
+
+//       .swiper-scrollbar {
+//         @include devicebreak(medium) {
+//           padding-right: $spacing-44;
+//         }
+//       }
+//     }
+//   }
+// }
 
 /* stats-card-grid end */

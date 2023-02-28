@@ -175,7 +175,6 @@ This is just collection of the [Featured card](/docs/components-ui-components-ca
   <Story name="Image reveal cards">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <ImageRevealCards
           data={caption.data}

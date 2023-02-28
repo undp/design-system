@@ -2,13 +2,21 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
+// color map
+$colors: (
+  // 'red': $red-gradient,
+  // 'green': $green-gradient,
+  // 'blue': $blue-gradient,
+  // 'yellow': $yellow-gradient
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure
+);
+
 /* statspanel card start */
 .stats {
   &-panel {
-
-    // color map
-    $colors: ('red': $red-gradient, 'green': $green-gradient, 'blue': $blue-gradient);
-
     @include transition(300ms all);
 
     align-items: center;
@@ -33,6 +41,7 @@
 
     &:hover,
     &.active {
+
       &::after,
       img {
         opacity: 1;
@@ -41,8 +50,8 @@
       &::after {
         @extend %absolute__content;
 
-        @include gradient(15deg, #{$yellow-gradient});
-        @include transition(opacity 0.4s cubic-bezier(0.64,0.05,0.35,1.05));
+        @include gradient(15deg, #{$color-yellow});
+        @include transition(opacity 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
       }
 
       div.stats-card {
@@ -111,10 +120,30 @@
       }
     }
 
-    @each $name, $color in $colors {
+    @each $name,
+    $color in $colors {
+
+      &.accent-#{$name},
       &.#{$name} {
         &::after {
           @include gradient(15deg, #{$color});
+        }
+      }
+
+      .accent-#{$name} & {
+        &::after {
+          @include gradient(15deg, #{$color});
+        }
+
+        @each $name2,
+        $color2 in $colors {
+
+          &.accent-#{$name2},
+          &.#{$name2} {
+            &::after {
+              @include gradient(15deg, #{$color2});
+            }
+          }
         }
       }
     }
@@ -125,10 +154,11 @@
   .stats {
     .stats-panel {
       &:hover {
-        // color map
-        $colors: ('red': $red-gradient, 'green': $green-gradient, 'blue': $blue-gradient);
 
-        @each $name, $color in $colors {
+        @each $name,
+        $color in $colors {
+
+          &.accent-#{$name},
           &.#{$name} {
             &::after {
               @include transform(scaleX(-1));

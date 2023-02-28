@@ -12,7 +12,7 @@ import { sticky } from '../../assets/js/sticky';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 import { FeaturedContentCard } from '../../Components/UIcomponents/Cards/FeaturedCard/FeaturedContentCard';
 
-export const PublicationPage = ({
+export function PublicationPage({
   data,
   download,
   readmore,
@@ -46,7 +46,7 @@ export const PublicationPage = ({
   menuData4,
   FeaturedCardData,
   ...args
-}) => {
+}) {
   useEffect(() => {
     sticky('.sticky', '.related-publication', locale);
   }, [locale]);
@@ -171,4 +171,4 @@ export const PublicationPage = ({
       />
     </>
   );
-};
+}

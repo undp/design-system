@@ -82,22 +82,25 @@ export const getCaptionForLocale = (locale) => {
   title="Components/UI components/Cards/Featured card"
   argTypes={{
     image: {
+      name: "Image",
       options: ["image", "color"],
-      control: { type: "radio" },
+      control: { type: "inline-radio" },
     },
     size: {
+      name: "Size variant",
       options: ["large", "medium", "small"],
-      control: { type: "radio" },
+      control: { type: "inline-radio" },
     },
     hovercolor: {
-      options: ["yellow", "red", "green", "blue", "accent"],
-      control: { type: "radio" },
+      name: "Hover accent color",
+      options: ["global", "yellow", "red", "green", "blue"],
+      control: { type: "inline-radio" },
     },
   }}
   args={{
     image: "image",
     size: "medium",
-    hovercolor: "accent",
+    hovercolor: "global",
   }}
 />
 
@@ -140,7 +143,6 @@ There are two states in Featured Cards: Default, Hover.
   <Story name="Featured card">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <FeaturedContentCard
           data={caption.featuredcontentdata}

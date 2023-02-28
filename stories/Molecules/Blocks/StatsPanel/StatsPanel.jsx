@@ -2,12 +2,11 @@ import React from 'react';
 import './stats-panel.scss';
 import { StatsCards } from '../../../Components/UIcomponents/Cards/StatsCards/StatsCards';
 
-export const color_options = {
+export const accent_color_options = {
   yellow: 'yellow',
   red: 'red',
   green: 'green',
   blue: 'blue',
-  accent: '',
 };
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
@@ -19,11 +18,11 @@ export function StatsPanel({
   imageback,
   ...args
 }) {
-  const { accent } = args;
-  const hovercolor = color_options[`${args.Hovercolors}`];
-  const Color = (Boolean(accent)) && (!hovercolor) ? accent : hovercolor;
+  let color = (args.Hovercolors) ? accent_color_options[`${args.Hovercolors}`] : accent_color_options[`${args.accent}`];
+  let accent_color = color ? `accent-${color}` : '';
+
   return (
-    <div className={cls('stats-panel', `${Color}`)}>
+    <div className={cls('stats-panel', `${accent_color}`)}>
       <img src={imageback} alt={imageback} />
       <StatsCards number={number} percent={percent} content={content} />
     </div>

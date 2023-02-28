@@ -241,7 +241,6 @@ This is just collection of the [Featured card](/story/components-ui-components-c
   <Story name="Featured cards">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <FeaturedCard
           data={caption.featureddata}

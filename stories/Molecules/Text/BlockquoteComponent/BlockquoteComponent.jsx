@@ -12,16 +12,23 @@ export const color_options = {
   accent: '',
 };
 
+export const accent_color_options = {
+  yellow: 'yellow',
+  green: 'green',
+  red: 'red',
+  blue: 'blue',
+};
+
 export function BlockquoteComponent({
   blockquoteText,
   citeText,
   Colors,
   ...args
 }) {
-  const { accent } = args;
   const hovercolor = color_options[`${Colors}`];
-  const Color = (Boolean(accent)) && (!hovercolor) ? accent : hovercolor;
-  const Class = (Color != 'default') ? 'blockquote' : '';
+  const Color = (Boolean(args.accent)) && (!hovercolor) ? args.accent : hovercolor;
+  let Class = (Color != 'default') ? 'blockquote' : '';
+  let ColorClass = accent_color_options[Color] ? `accent-${Color}` : Color;
 
   if (Colors == 'default') {
     return (
@@ -30,7 +37,7 @@ export function BlockquoteComponent({
   }
 
   return (
-    <div className={[Class, `${Color}`].join(' ')}>
+    <div className={[Class, `${ColorClass}`].join(' ')}>
       <Blockquote text={blockquoteText} citeText={citeText} />
     </div>
   );

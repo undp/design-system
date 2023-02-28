@@ -25,16 +25,18 @@ export const getCaptionForLocale = (locale) => {
   title="Foundation/Images/Author image"
   argTypes={{
     variant: {
+      name: "Size variant",
       options: ["Large", "Small"],
       control: { type: "inline-radio" },
     },
-    hovercolor: {
-      options: ["yellow", "red", "green", "blue", "accent"],
+    accent: {
+      name: "Hover accent color",
+      options: ["global", "yellow", "red", "green", "blue"],
       control: { type: "inline-radio" },
     },
   }}
   args={{
-    hovercolor: "accent",
+    accent: "global",
     variant: "Small",
   }}
 />
@@ -70,7 +72,6 @@ There are two states in the Author Image component: Small and Large.
   <Story name="Author image">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <Authorimg image={user} alt="Headshot of XYZ" {...args}></Authorimg>
       );

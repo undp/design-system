@@ -378,12 +378,12 @@ export const getCaptionForLocale = (locale) => {
   title="Patterns/Card grids/Content cards"
   argTypes={{
     Hovercolors: {
-      options: ["yellow", "red", "green", "blue", "accent"],
+      options: ["global", "yellow", "red", "green", "blue"],
       control: { type: "inline-radio" },
     },
   }}
   args={{
-    Hovercolors: "accent",
+    Hovercolors: "global",
   }}
 />
 
@@ -395,7 +395,6 @@ This is just collection of the [Content card](/docs/components-ui-components-car
   <Story name="Content cards">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <ContentCard
           data={caption.groupcontentdata}

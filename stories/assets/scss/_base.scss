@@ -168,6 +168,8 @@ $colors: (
 
 @each $name,
 $color in $colors {
+
+  .accent-#{$name},
   .#{$name} {
 
     //card-thumbnail
@@ -279,6 +281,8 @@ $color in $colors {
 
   @each $name,
   $color in $colors {
+
+    .accent-#{$name},
     .#{$name} {
 
       //card-thumbnail
@@ -365,6 +369,8 @@ $colors-solid: (
 
 @each $name,
 $color in $colors-solid {
+
+  .accent-#{$name},
   .#{$name} {
 
     //statscard
@@ -416,6 +422,8 @@ $colors-light: (
 
 @each $name,
 $color in $colors-light {
+
+  .accent-#{$name},
   .#{$name} {
 
     //content card - Emphasize default state color

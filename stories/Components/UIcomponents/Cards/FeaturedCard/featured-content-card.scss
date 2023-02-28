@@ -1,11 +1,18 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 
-$colors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $color-light-green, 'blue': $color-light-azure, 'gray': $color-gray-100);
+$light-colors: (
+  'yellow': $color-light-yellow,
+  'red': $color-light-red,
+  'green': $color-light-green,
+  'blue': $color-light-azure,
+  'gray': $color-gray-100
+);
 
 /* feature card start */
 .feature__card {
   @include devicebreak(medium) {
+
     //CtaLink
     .cta__link.cta--arrow {
       width: 100%;
@@ -26,13 +33,34 @@ $colors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $colo
     }
 
     //colors
-    @each $name, $color in $colors {
+    @each $name,
+    $color in $light-colors {
+
+      &.accent-#{$name},
       &.#{$name} {
         .feature__card-slide {
           background: $color;
 
           &::before {
             @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
+          }
+        }
+      }
+
+      .accent-#{$name} & {
+
+        @each $name2,
+        $color2 in $light-colors {
+
+          &.accent-#{$name2},
+          &.#{$name2} {
+            .feature__card-slide {
+              background: $color2;
+
+              &::before {
+                @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color2});
+              }
+            }
           }
         }
       }
@@ -52,8 +80,13 @@ $colors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $colo
 
   &.red {
     a:hover {
-      .cta__link.cta--arrow i::before { background-color: #000; }
-      .cta__link.cta--arrow i::after { border-color: #000; }
+      .cta__link.cta--arrow i::before {
+        background-color: #000;
+      }
+
+      .cta__link.cta--arrow i::after {
+        border-color: #000;
+      }
     }
   }
 
@@ -111,6 +144,40 @@ $colors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $colo
   }
 }
 
+//colors
+@each $name,
+$color in $light-colors {
+  .accent-#{$name} {
+
+    .feature__card {
+      &.without-image {
+        .feature__card-slide {
+          background: $color;
+        }
+
+        @each $name2,
+        $color2 in $light-colors {
+
+          &.accent-#{$name2},
+          &.#{$name2} {
+            .feature__card-slide {
+              background: $color2;
+            }
+          }
+        }
+      }
+    }
+
+    .feature__card-slide {
+      background: $color;
+
+      &::before {
+        @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
+      }
+    }
+  }
+}
+
 //feature slide
 .feature__card-slide {
   @extend %feature__card;
@@ -125,7 +192,7 @@ $colors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $colo
     display: none;
     height: 100%;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
   }
 
   @include devicebreak(large) {
@@ -159,6 +226,10 @@ $colors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $colo
       width: 100%;
     }
   }
+}
+
+.image .feature__card-slide {
+  z-index: 1;
 }
 
 //feature content
@@ -239,13 +310,34 @@ $colors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $colo
       }
 
       //colors
-      @each $name, $color in $colors {
+      @each $name,
+      $color in $light-colors {
+
+        &.accent-#{$name}.image,
         &.#{$name}.image {
           .feature__card-slide {
             background-color: #{$color};
 
             &::before {
               @include background(153deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
+            }
+          }
+        }
+
+        .accent-#{$name} & {
+
+          @each $name2,
+          $color2 in $light-colors {
+
+            &.accent-#{$name2},
+            &.#{$name2} {
+              .feature__card-slide {
+                background-color: #{$color2};
+
+                &::before {
+                  @include background(153deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color2});
+                }
+              }
             }
           }
         }
@@ -261,9 +353,9 @@ $colors: ('yellow': $color-light-yellow, 'red': $color-light-red, 'green': $colo
           }
         }
 
-        &::before {
-          @include background(153deg, hsla(0, 0%, 100%, 0.2) 30%, $color-yellow);
-        }
+        // &::before {
+        //   @include background(153deg, hsla(0, 0%, 100%, 0.2) 30%, $color-yellow);
+        // }
       }
     }
   }

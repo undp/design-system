@@ -60,18 +60,20 @@ export const getCaptionForLocale = (locale) => {
 <Meta
   title="Components/UI components/Cards/Bio card"
   argTypes={{
-    Size: {
-      options: ["large", "medium"],
+    size: {
+      name: "Size variant",
+      options: ["Large", "Medium"],
       control: { type: "inline-radio" },
     },
-    Accent: {
+    accent: {
+      name: "Hover accent color",
       options: ["global", "yellow", "red", "green", "blue"],
       control: { type: "inline-radio" },
     },
   }}
   args={{
-    Size: "medium",
-    Accent: "global",
+    size: "Medium",
+    accent: "global",
   }}
 />
 

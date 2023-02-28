@@ -147,7 +147,6 @@ The Stats is created for showing the Statspanel grid, and image in particular se
   <Story name="Stats">
     {(args, { globals: { locale, accent } }) => {
       const caption = statsArray(locale);
-      args.accent = accent;
       return <Stats data={caption} imageback={BackgroundImg} {...args}></Stats>;
     }}
   </Story>

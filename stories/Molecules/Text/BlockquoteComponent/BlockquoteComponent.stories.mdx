@@ -45,7 +45,8 @@ export const getCaptionForLocale = (locale) => {
   component={BlockquoteComponent}
   argTypes={{
     Colors: {
-      options: ["default", "yellow", "red", "green", "blue", "gray", "accent"],
+      name: "Accent color",
+      options: ["default", "global", "yellow", "red", "green", "blue", "gray"],
       control: { type: "inline-radio" },
       defaultValue: "default",
     },
@@ -63,7 +64,6 @@ The Callout component indicates that the enclosed text is an extended quotation 
   <Story name="Callout">
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
-      args.accent = accent;
       return (
         <BlockquoteComponent
           blockquoteText={caption.blockquote}

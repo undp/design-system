@@ -798,6 +798,7 @@ export const getCaptionForCategoryLocale = (locale) => {
       return "Category";
   }
 };
+
 export const getCaptionForClearLocale = (locale) => {
   switch (locale) {
     case "english":
@@ -816,6 +817,7 @@ export const getCaptionForClearLocale = (locale) => {
       return "Clear All";
   }
 };
+
 export const getCaptionForActiveLocale = (locale) => {
   switch (locale) {
     case "english":
@@ -948,7 +950,6 @@ Add the base layout style from
       const rightNavigationData = navigationData.filter(
         (item) => item.position === "right"
       );
-      args.accent = accent;
       return (
         <GenericLandingPage
           args={args}

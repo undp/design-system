@@ -7,26 +7,22 @@ export const size_options = {
   Small: '',
 };
 
-export const hover_color_options = {
+export const accent_color_options = {
   yellow: 'yellow',
   green: 'green',
   red: 'red',
   blue: 'blue',
-  accent: '',
 };
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
 export function Authorimg({ image, alt, ...args }) {
   let size_variant = size_options[`${args.variant}`];
-
-  // If there is a hovercolor set, use that. Otherwise follow the accent if present.
-  let { accent } = args;
-  let hovercolor = hover_color_options[`${args.hovercolor}`];
-  let Hovercolors = (Boolean(accent)) && (!hovercolor) ? accent : hovercolor;
+  let color = accent_color_options[`${args.accent}`] ?? false;
+  let accent_color = color ? `accent-${color}` : '';
 
   return (
-    <div className={cls('author__img', `${size_variant}`, `${Hovercolors}`)}>
+    <div className={cls('author__img', `${size_variant}`, `${accent_color}`)}>
       <img src={image} alt={alt} title={alt} />
     </div>
   );
