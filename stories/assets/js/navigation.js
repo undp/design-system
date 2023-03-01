@@ -2,16 +2,26 @@ export const navigationInitialize = (locale) => {
   const $menu = jQuery('.menu');
   const $menuItem = jQuery('.menu li a');
   const $megaMenu = jQuery('.show-mega');
+  const $megaWrapper = jQuery('.mega-wrapper');
+
+  let hovering_item = false;
 
   $menuItem.on('mouseenter click', function (event) {
+    // Track if a menu item is being hovered.
+    hovering_item = true;
+
+    // Find the panel that matches with the parent menu link item in the main nav.
     const navId = jQuery(this).parent().attr('data-menu-id');
     const $menuItemId = jQuery(document).find(`[data-menu-item-id='${navId}']`);
-    $menuItemId.addClass('show-mega').removeClass('hide').siblings().removeClass('show-mega')
-      .addClass('no-effect');
-    $megaMenu.find('.sub-menu-content:first-of-type').addClass('active-content')
-      .siblings().removeClass('active-content');
+
+    // Show the mega menu panel.
+    $menuItemId.addClass('show-mega').siblings().removeClass('show-mega');
+
+    // Set the first link in the sub menus to the active link.
+    $megaMenu.find('.sub-menu-content:first-of-type').addClass('active-content').siblings().removeClass('active-content');
     $megaMenu.find('.submenu li:first-of-type').addClass('active').siblings().removeClass('active');
 
+    // Set the tabIndex value for sub menu links on displayed mega menu panels.
     if ($menuItemId.hasClass('show-mega')) {
       $menuItem.attr('tabIndex', '-1');
       jQuery('.logo, .top-right button').attr('tabIndex', '-1');
@@ -21,11 +31,10 @@ export const navigationInitialize = (locale) => {
     }
   });
 
-  $menu.on('mouseenter', (event) => {
-    jQuery('.mega-nav-option').removeClass('no-effect');
-  });
-
   $menuItem.on('mouseleave', (event) => {
+    // Track if a menu item is being hovered.
+    hovering_item = false;
+
     $menuItem.attr('tabIndex', '0');
     jQuery('.logo, .top-right button').attr('tabIndex', '0');
   });
@@ -39,13 +48,12 @@ export const navigationInitialize = (locale) => {
     jQuery('.sub-sub-menu li').find('a').attr('tabIndex', '-1');
   });
 
-  jQuery('.mega-wrapper').mouseenter(function () {
-    jQuery('.mega-wrapper').find(this).addClass('show-mega').addClass('show-mega-forward');
-    setTimeout(() => {
-      jQuery('.mega-nav-option.show-mega').removeClass('show-mega-forward');
-    }, 300);
+  /**
+   * Manage the open and closing animation of the mega menu.
+   */
+  $menu.on('mouseenter', (event) => {
+    jQuery('.mega-nav-option').removeClass('no-effect');
   });
-
   $menu.mouseleave((event) => {
     jQuery('.mega-nav-option').removeClass('no-effect');
     if (event.type === 'mouseleave') {
@@ -60,16 +68,32 @@ export const navigationInitialize = (locale) => {
       }
     }
   });
-
-  jQuery('.mega-wrapper').mouseleave(function () {
+  $megaWrapper.mouseleave((event) => {
     jQuery('.mega-nav-option').removeClass('no-effect');
-    jQuery(this).find('.mega-nav-option.show-mega').removeClass('show-mega no-effect').addClass('show-mega-back');
-    setTimeout(() => {
-      jQuery('.mega-nav-option.show-mega-back').removeClass('show-mega-back');
-    }, 300);
+    if (event.type === 'mouseleave') {
+      const el = event.toElement;
+      if (el != null && !el.classList.contains('mega-nav-option')) {
+        if (jQuery('.mega-nav-option').hasClass('show-mega')) {
+          // Set a timeout delay to check if a menu item is hovered before
+          // dismissing the associated mega menu panel.
+          setTimeout(() => {
+            if (!hovering_item) {
+              jQuery('.mega-nav-option.show-mega').removeClass('show-mega')
+                .addClass('show-mega-back');
+              setTimeout(() => {
+                jQuery('.mega-nav-option.show-mega-back').removeClass('show-mega-back');
+              }, 300);
+            }
+          }, 0);
+        }
+      }
+    }
   });
 
-  jQuery('.mega-wrapper').on('mouseenter focus keydown', '.submenu li', function (e) {
+  /**
+   * Work with tab settings and active content states for the mega menu.
+   */
+  $megaWrapper.on('mouseenter focus keydown', '.submenu li', function (e) {
     jQuery('.sub-sub-menu li').find('a').attr('tabIndex', '-1');
     jQuery(this).addClass('active').siblings().removeClass('active');
     const navId = jQuery(this).attr('id');
@@ -89,8 +113,7 @@ export const navigationInitialize = (locale) => {
       jQuery('.sub-sub-menu ul:first-of-type li:first-of-type a').focus();
     }
   });
-
-  jQuery('.mega-wrapper').on('focus keydown', '.sub-sub-menu ul li a', (e) => {
+  $megaWrapper.on('focus keydown', '.sub-sub-menu ul li a', (e) => {
     e.stopImmediatePropagation();
     var key = e.which;
     if (key == 37) {
@@ -99,8 +122,7 @@ export const navigationInitialize = (locale) => {
       jQuery('.sub-sub-menu li').find('a').attr('tabIndex', '-1');
     }
   });
-
-  jQuery('.mega-wrapper').on('focus keydown', '.sub-sub-menu ul:last-of-type li:last-of-type a:last-of-type', (e) => {
+  $megaWrapper.on('focus keydown', '.sub-sub-menu ul:last-of-type li:last-of-type a:last-of-type', (e) => {
     e.stopImmediatePropagation();
     jQuery('.submenu li a').attr('tabIndex', '0');
     var key = e.which;
@@ -109,6 +131,9 @@ export const navigationInitialize = (locale) => {
     }
   });
 
+  /**
+   * Mobile navigation related functionality.
+   */
   jQuery(document).on('click', '.mobile-links .cta__link', function (e) {
     const navId = jQuery(this).attr('id');
     const navText = jQuery(this).text();
@@ -133,6 +158,11 @@ export const navigationInitialize = (locale) => {
     jQuery('.back-nav').trigger('click');
   });
 
+  /**
+   * Animation functionality
+   *
+   * Displays the logo moving into position and then displays the rest of the header content.
+   */
   const headerClass = localStorage.getItem('current-nav');
   if (headerClass == 'global-header') {
     jQuery('.global-header').removeClass('global-load-animation');
@@ -214,7 +244,6 @@ var toggle = document.querySelector('.menu__overflow__toggle');
 var visibleLinks = document.querySelector('.country-header nav.menu > ul');
 var hiddenLinks = document.querySelector('.menu__overflow');
 var breaks = [];
-
 export function priorityPlusNav() {
   // var e = toggle.scrollWidth;
   // var t = toggle.classList.contains('hidden') ? nav.scrollWidth : nav.scrollWidth - e;
