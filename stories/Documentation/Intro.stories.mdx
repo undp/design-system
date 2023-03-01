@@ -5,11 +5,6 @@ import "./documentation.scss";
 import { FeaturedContentCard } from "../Components/UIcomponents/Cards/FeaturedCard/FeaturedContentCard";
 import githubLogo from "../assets/images/Github-logo.svg";
 import figmaLogo from "../assets/images/Figma-logo.svg";
-
-import headerVideo1080p from "../assets/video/intro-header-1080p.mp4";
-import headerVideo720p from "../assets/video/intro-header-720p.mp4";
-import headerVideo480p from "../assets/video/intro-header-480p.mp4";
-import headerVideo360p from "../assets/video/intro-header-360p.mp4";
 const data = [
   {
     contenttile: "01",
@@ -110,25 +105,15 @@ const data = [
         >
           <video
             loop={true}
-            autoPlay={true}
+            autoPlay="autoplay"
+            muted={true}
             playsInline={true}
             style={{ pointerEvents: "none" }}
           >
-            <source src={headerVideo1080p} type="video/mp4" media="all" />
             <source
-              src={headerVideo720p}
+              src="https://undp.widen.net/content/piy26v2s1n/mp4/undp-design-system-roll.mp4?quality=hd&u=cvx5ij"
               type="video/mp4"
-              media="all and (max-width: 720px)"
-            />
-            <source
-              src={headerVideo480p}
-              type="video/mp4"
-              media="all and (max-width: 480px)"
-            />
-            <source
-              src={headerVideo360p}
-              type="video/mp4"
-              media="all and (max-width: 360px)"
+              media="all"
             />
           </video>
         </div>
