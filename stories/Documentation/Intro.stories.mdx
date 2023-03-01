@@ -3,9 +3,13 @@ import { Heading } from "../Atom/Typography/Heading/Heading";
 import { Video } from "../Atom/Video/Video";
 import "./documentation.scss";
 import { FeaturedContentCard } from "../Components/UIcomponents/Cards/FeaturedCard/FeaturedContentCard";
-import headerVideo from "../assets/video/intro-header-lq.mp4";
 import githubLogo from "../assets/images/Github-logo.svg";
 import figmaLogo from "../assets/images/Figma-logo.svg";
+
+import headerVideo1080p from "../assets/video/intro-header-1080p.mp4";
+import headerVideo720p from "../assets/video/intro-header-720p.mp4";
+import headerVideo480p from "../assets/video/intro-header-480p.mp4";
+import headerVideo360p from "../assets/video/intro-header-360p.mp4";
 const data = [
   {
     contenttile: "01",
@@ -41,7 +45,7 @@ const data = [
     contenttile: "04",
     contentname: "Patterns",
     descriptionText:
-      "Reusable combinations of components that address common  objectives",
+      "Reusable combinations of components that address common objectives",
     button: "READ MORE",
     type: "color",
     scale: "medium",
@@ -92,11 +96,42 @@ const data = [
   }
 `}</style>
 
-<div name="IntroTest" class="documentation-page">
+<div name="Intro" class="documentation-page">
   <div class="grid-container full header">
     <div class="grid-x grid-margin-x">
       <div className="cell">
-        <Video src={headerVideo} />
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "0",
+            paddingBottom: "56.25%",
+          }}
+        >
+          <video
+            loop={true}
+            autoPlay={true}
+            playsInline={true}
+            style={{ pointerEvents: "none" }}
+          >
+            <source src={headerVideo1080p} type="video/mp4" media="all" />
+            <source
+              src={headerVideo720p}
+              type="video/mp4"
+              media="all and (max-width: 720px)"
+            />
+            <source
+              src={headerVideo480p}
+              type="video/mp4"
+              media="all and (max-width: 480px)"
+            />
+            <source
+              src={headerVideo360p}
+              type="video/mp4"
+              media="all and (max-width: 360px)"
+            />
+          </video>
+        </div>
       </div>
     </div>
   </div>
