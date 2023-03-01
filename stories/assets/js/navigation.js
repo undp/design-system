@@ -4,10 +4,10 @@ export const navigationInitialize = (locale) => {
   const $megaMenu = jQuery('.show-mega');
   const $megaWrapper = jQuery('.mega-wrapper');
 
+  // Track if a menu item is being hovered.
   let hovering_item = false;
 
   $menuItem.on('mouseenter click', function (event) {
-    // Track if a menu item is being hovered.
     hovering_item = true;
 
     // Find the panel that matches with the parent menu link item in the main nav.
@@ -15,7 +15,7 @@ export const navigationInitialize = (locale) => {
     const $menuItemId = jQuery(document).find(`[data-menu-item-id='${navId}']`);
 
     // Show the mega menu panel.
-    $menuItemId.addClass('show-mega').siblings().removeClass('show-mega');
+    $menuItemId.addClass('show-mega').siblings().removeClass('show-mega').addClass('no-effect');
 
     // Set the first link in the sub menus to the active link.
     $megaMenu.find('.sub-menu-content:first-of-type').addClass('active-content').siblings().removeClass('active-content');
@@ -32,9 +32,7 @@ export const navigationInitialize = (locale) => {
   });
 
   $menuItem.on('mouseleave', (event) => {
-    // Track if a menu item is being hovered.
     hovering_item = false;
-
     $menuItem.attr('tabIndex', '0');
     jQuery('.logo, .top-right button').attr('tabIndex', '0');
   });
@@ -52,15 +50,15 @@ export const navigationInitialize = (locale) => {
    * Manage the open and closing animation of the mega menu.
    */
   $menu.on('mouseenter', (event) => {
-    jQuery('.mega-nav-option').removeClass('no-effect');
+    hovering_item = true;
   });
   $menu.mouseleave((event) => {
-    jQuery('.mega-nav-option').removeClass('no-effect');
     if (event.type === 'mouseleave') {
       const el = event.toElement;
       if (el != null && !el.classList.contains('mega-nav-option')) {
         if (jQuery('.mega-nav-option').hasClass('show-mega')) {
-          jQuery('.mega-nav-option.show-mega').removeClass('show-mega').addClass('show-mega-back');
+          jQuery('.mega-nav-option.show-mega').removeClass('show-mega no-effect')
+            .addClass('show-mega-back');
           setTimeout(() => {
             jQuery('.mega-nav-option.show-mega-back').removeClass('show-mega-back');
           }, 300);
@@ -69,16 +67,15 @@ export const navigationInitialize = (locale) => {
     }
   });
   $megaWrapper.mouseleave((event) => {
-    jQuery('.mega-nav-option').removeClass('no-effect');
     if (event.type === 'mouseleave') {
       const el = event.toElement;
       if (el != null && !el.classList.contains('mega-nav-option')) {
         if (jQuery('.mega-nav-option').hasClass('show-mega')) {
-          // Set a timeout delay to check if a menu item is hovered before
-          // dismissing the associated mega menu panel.
+          // Set a timeout delay to check if the menu or a menu item is hovered
+          // before dismissing the associated mega menu panel.
           setTimeout(() => {
             if (!hovering_item) {
-              jQuery('.mega-nav-option.show-mega').removeClass('show-mega')
+              jQuery('.mega-nav-option.show-mega').removeClass('show-mega no-effect')
                 .addClass('show-mega-back');
               setTimeout(() => {
                 jQuery('.mega-nav-option.show-mega-back').removeClass('show-mega-back');
@@ -185,25 +182,19 @@ export const navigationInitialize = (locale) => {
       localStorage.setItem('current-nav', document.getElementsByTagName('header')[0].classList[0]);
     }, 1000);
   }
-};
 
-/**
- * Language switch toggle effect.
- */
-export const languageSwitchToggle = () => {
+  /**
+   * Language switch toggle effect.
+   */
   jQuery('.mob-lang-switcher').on('click', (ev) => {
     ev.preventDefault();
     jQuery('.mob-sub-lang').addClass('show');
     jQuery('.mobile-links').addClass('hide');
   });
-};
 
-/**
- * Scrolled logo effect.
- */
-export const scrolledLogoEffect = () => {
-  // Add a class to the logo if the page is scrolled.
-  // This effect changes the height of the logo.
+  /**
+   * Scrolled logo effect.
+   */
   jQuery(window).scroll(() => {
     var winScroll = jQuery(window).scrollTop();
     if (winScroll >= 1) {

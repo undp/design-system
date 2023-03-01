@@ -4,8 +4,6 @@ import { getMegaMenu } from '../../../../assets/js/navigation-data';
 import {
   navigationInitialize,
   navigationMultiLevel,
-  languageSwitchToggle,
-  scrolledLogoEffect,
   // priorityPlusNav,
 } from '../../../../assets/js/navigation';
 import { Logo } from '../../../../Atom/Logo/Logo';
@@ -32,11 +30,8 @@ function CountrySiteHeader({
   ...args
 }) {
   useEffect(() => {
-    scrolledLogoEffect();
-    languageSwitchToggle();
     getMegaMenu(locale);
     navigationInitialize(locale);
-    // priorityPlusNav();
     if (args.menu_type === 'Multi-level dropdown') {
       navigationMultiLevel(locale);
     }
