@@ -1,29 +1,75 @@
 import React, { useEffect } from 'react';
 import '../../../../assets/scss/_grid.scss';
 import './menu-multi-level.scss';
+import { MenuItems } from '../../../../Atom/Navigation/MenuItems/MenuItems';
 // import menuJsonData from '../../../../assets/js/navigation-data.json';
 
-function MenuMultiLevel({ data, ...args }) {
+export default MenuMultiLevel;
+
+function MenuMultiLevel({
+  data,
+  role,
+  arialabel,
+  isGHeader,
+  multiLevel,
+  overflow,
+  ...args
+}) {
   let lang = args.locale === 'en' ? 'english' : args.locale;
   const menuData = data.find((item) => item.language === lang);
 
+  if (isGHeader != undefined && isGHeader) {
+    return (
+      <ul>
+        {data.map((item, index) => (
+          <li key={index} data-menu-id={item.id}>
+            <MenuItems text={item.label} />
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  if (!multiLevel) {
+    return (
+      <nav className="menu" role={role} aria-label={arialabel}>
+        <ul>
+          {data.map((item, index) => (
+            <li key={index} data-menu-id={item.id}>
+              <MenuItems text={item.label} />
+            </li>
+          ))}
+
+          {overflow && (
+            <li className="menu__overflow__item hidden">
+              <button className="menu__overflow__toggle" aria-hidden="true" aria-controls="navigation-dropdown" aria-label="Menu overflow">
+                <span className="hidden">Menu toggle</span>
+              </button>
+            </li>
+          )}
+        </ul>
+      </nav>
+    );
+  }
+
   return (
-    <nav className="menu">
+    <nav className="menu" role={role} aria-label={arialabel}>
       <ul className="dropdown" data-dropdown-menu>
         {menuData.data.map((menuLevel, idx) => (
           <MenuLevel data={menuLevel} key={idx} level="1" {...args} />
         ))}
-        <li className="menu__overflow__item hidden">
-          <button className="menu__overflow__toggle" aria-hidden="true" aria-controls="navigation-dropdown" aria-label="Menu overflow">
-            <span className="hidden">Menu toggle</span>
-          </button>
-        </li>
+
+        {overflow && (
+          <li className="menu__overflow__item hidden">
+            <button className="menu__overflow__toggle" aria-hidden="true" aria-controls="navigation-dropdown" aria-label="Menu overflow">
+              <span className="hidden">Menu toggle</span>
+            </button>
+          </li>
+        )}
       </ul>
     </nav>
   );
 }
-
-export default MenuMultiLevel;
 
 function MenuLevel({
   data,

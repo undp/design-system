@@ -6,6 +6,7 @@ export const navigationInitialize = (locale) => {
 
   // Track if a menu item is being hovered.
   let hovering_item = false;
+  let hovering_panel = false;
 
   $menuItem.on('mouseenter click', function (event) {
     hovering_item = true;
@@ -33,11 +34,15 @@ export const navigationInitialize = (locale) => {
 
   $menuItem.on('mouseleave', (event) => {
     hovering_item = false;
+
+    // Alter the tab index of a menu item.
     $menuItem.attr('tabIndex', '0');
     jQuery('.logo, .top-right button').attr('tabIndex', '0');
   });
 
   jQuery(document).on('click', '.show-on-focus', (event) => {
+    // If the user clicks anywhere, close the mega menu panel, and reset the
+    // tab index values.
     jQuery('.mega-nav-option').removeClass('show-mega');
     $menuItem.attr('tabIndex', '0').focus();
     $menuItem.first().focus();
@@ -51,40 +56,48 @@ export const navigationInitialize = (locale) => {
    */
   $menu.on('mouseenter', (event) => {
     hovering_item = true;
+    hovering_panel = false;
   });
-  $menu.mouseleave((event) => {
+  $menu.on('mouseleave', (event) => {
     if (event.type === 'mouseleave') {
       const el = event.toElement;
-      if (el != null && !el.classList.contains('mega-nav-option')) {
-        if (jQuery('.mega-nav-option').hasClass('show-mega')) {
-          jQuery('.mega-nav-option.show-mega').removeClass('show-mega no-effect')
-            .addClass('show-mega-back');
-          setTimeout(() => {
-            jQuery('.mega-nav-option.show-mega-back').removeClass('show-mega-back');
-          }, 300);
+      // Set a timeout delay to check if the mega panel is now hovered after
+      // leaving the menu, before dismissing the associated mega menu panel.
+      setTimeout(() => {
+        if (!hovering_panel) {
+          if (jQuery('.mega-nav-option').hasClass('show-mega')) {
+            jQuery('.mega-nav-option.show-mega').removeClass('show-mega no-effect')
+              .addClass('show-mega-back');
+            setTimeout(() => {
+              jQuery('.mega-nav-option.show-mega-back').removeClass('show-mega-back');
+            }, 300);
+          }
         }
+      }, 0);
+    }
+  });
+  $megaWrapper.on('mouseleave', (event) => {
+    hovering_panel = false;
+    if (event.type === 'mouseleave') {
+      const el = event.toElement;
+      if (jQuery('.mega-nav-option').hasClass('show-mega')) {
+        // Set a timeout delay to check if the menu or a menu item is hovered
+        // after leaving the mega panel, before dismissing the associated 
+        // mega menu panel.
+        setTimeout(() => {
+          if (!hovering_item) {
+            jQuery('.mega-nav-option.show-mega').removeClass('show-mega no-effect')
+              .addClass('show-mega-back');
+            setTimeout(() => {
+              jQuery('.mega-nav-option.show-mega-back').removeClass('show-mega-back');
+            }, 300);
+          }
+        }, 0);
       }
     }
   });
-  $megaWrapper.mouseleave((event) => {
-    if (event.type === 'mouseleave') {
-      const el = event.toElement;
-      if (el != null && !el.classList.contains('mega-nav-option')) {
-        if (jQuery('.mega-nav-option').hasClass('show-mega')) {
-          // Set a timeout delay to check if the menu or a menu item is hovered
-          // before dismissing the associated mega menu panel.
-          setTimeout(() => {
-            if (!hovering_item) {
-              jQuery('.mega-nav-option.show-mega').removeClass('show-mega no-effect')
-                .addClass('show-mega-back');
-              setTimeout(() => {
-                jQuery('.mega-nav-option.show-mega-back').removeClass('show-mega-back');
-              }, 300);
-            }
-          }, 0);
-        }
-      }
-    }
+  $megaWrapper.on('mouseenter', (event) => {
+    hovering_panel = true;
   });
 
   /**

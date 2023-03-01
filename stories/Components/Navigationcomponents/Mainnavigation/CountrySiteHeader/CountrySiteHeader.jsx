@@ -37,6 +37,11 @@ function CountrySiteHeader({
     }
   }, [locale, args.menu_type]);
 
+  const menuType = args.menu_type === 'Mega menu' ? 'mega_menu' : 'dropdown';
+  const menuData = args.menu_type === 'Mega menu' ? navigationData : menuJsonData;
+  const overflow = args.menu_type === 'Multi-level dropdown';
+  const multiLevel = args.menu_type === 'Multi-level dropdown';
+
   return (
     <header className="country-header country-load-animation">
       <section className="header">
@@ -54,10 +59,10 @@ function CountrySiteHeader({
                 <span><a href="#" title="UNDP homepage link">{siteTitleData.span}</a></span>
               </div>
               {args.menu_type === 'Multi-level dropdown' && (
-                <MenuMultiLevel data={menuJsonData} locale={locale} {...args} />
+                <MenuMultiLevel data={menuData} locale={locale} multiLevel overflow {...args} />
               )}
               {args.menu_type === 'Mega menu' && (
-                <Menu data={navigationData} />
+                <Menu data={menuData} type={menuType} {...args} />
               )}
             </div>
             <div className="cell large-3 small-3 top-right">
@@ -96,11 +101,6 @@ function CountrySiteHeader({
           <Menu data={navigationData} />
         </div>
       </section>
-      {/* {args.menu_type === 'Multi-level dropdown' && (
-        <div className="dropdown-menu-wrapper">
-          <MenuMultiLevel data={menuJsonData} locale={locale} {...args} />
-        </div>
-      )} */}
       {args.menu_type === 'Mega menu' && (
         <div className="mega-wrapper">
           <MegaMenu locale={locale} />

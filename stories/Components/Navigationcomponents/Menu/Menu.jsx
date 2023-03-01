@@ -17,6 +17,7 @@ export function Menu({
       </ul>
     );
   }
+
   return (
     <nav className="menu" role={role} aria-label={arialabel}>
       <ul>
