@@ -9,11 +9,11 @@
   .header {
     @extend %header;
 
-    height: auto;
-    min-height: 7.1875rem;
+    //height: auto;
+    height: 7.1875rem;
 
     @include devicebreak(mediumonlytab) {
-      min-height: 4.6875rem;
+      height: 4.6875rem;
     }
 
     .site-title {
@@ -57,6 +57,14 @@
       align-items: center;
       display: flex;
 
+      @include devicebreak(xlarge) {
+        width: calc(66.66667% - 1.5rem);
+      }
+
+      @include devicebreak(mediumonlytab) {
+        width: auto;
+      }
+
       .logo {
         @extend %img_none;
 
@@ -84,6 +92,11 @@
     .align-content-middle {
       align-items: center;
       position: relative;
+      justify-content: space-between;
+
+      @include devicebreak(mediumonlytab) {
+        justify-content: space-between;
+      }
     }
 
     .menu {
@@ -92,26 +105,39 @@
       display: flex;
       min-height: 7.1875rem;
       margin: auto;
+      max-width: 35rem;
 
       @include devicebreak(mediumonlytab) {
         display: none;
       }
 
+      @include devicebreak(xlarge) {
+        margin: auto;
+        max-width: 40rem;
+      }
+
       ul {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        column-gap: $spacing-06;
+        justify-content: space-evenly;
         flex-direction: row;
+
+        @include devicebreak(xlarge) {
+          column-gap: $spacing-07;
+        }
       }
 
       li {
-        margin: 0 0 0 2.25rem;
-        display: flex;
+        margin: 0;
         align-items: stretch;
         align-self: stretch;
+        width: 110px;
+        justify-content: center;
+        display: flex;
 
         @include devicebreak(xlarge) {
-          margin: 0 0 0 3.6875rem;
+          margin: 0;
+          width: 115px;
         }
 
         &:first-of-type {
@@ -128,17 +154,22 @@
     .top-right {
       display: flex;
       justify-content: flex-end;
+      align-items: center;
 
       @include devicebreak(xlarge) {
         box-sizing: border-box;
         padding-right: $spacing-90;
+        width: calc(33.33333% - 1.5rem);
       }
 
-      @include devicebreak(mediumonlytab) {
-        .dropdown-language {
+      .dropdown-language {
+        justify-self: flex-end;
+
+        @include devicebreak(mediumonlytab) {
           display: none;
         }
       }
+
 
       .icon-search {
         @extend %header-icon;
@@ -158,6 +189,15 @@
         margin-left: 1.75rem;
         -webkit-mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
         mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
+
+        @include devicebreak(mediumonlytab) {
+          display: none;
+        }
+      }
+
+      .button {
+        margin-left: $spacing-05;
+        display: block;
 
         @include devicebreak(mediumonlytab) {
           display: none;
@@ -198,6 +238,7 @@
   }
 
   &.show-content {
+
     .menu,
     .site-title,
     .top-right {
@@ -244,18 +285,14 @@
         margin-left: 0;
         margin-right: 1.75rem;
       }
-    }
 
-    .menu {
-      li {
-        margin: 0 2.25rem 0 0;
+      .button {
+        margin-right: $spacing-05;
+        margin-left: 0;
+        display: block;
 
-        @include devicebreak(xlarge) {
-          margin: 0 0 0 3.6875rem;
-        }
-
-        &:first-of-type {
-          margin-right: 0;
+        @include devicebreak(mediumonlytab) {
+          display: none;
         }
       }
     }
