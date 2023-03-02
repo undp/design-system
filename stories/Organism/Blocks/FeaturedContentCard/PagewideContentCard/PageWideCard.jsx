@@ -35,7 +35,7 @@ export function PageWideCard({
             <Heading type="4" label={title} />
             <P label={paragraph} />
           </div>
-          <CtaButton label={button} for_primary="arrow" />
+          <CtaButton label={button} Icon="Arrow" />
         </div>
         <div className={cls('cell medium-6 wide-card__image', `${accent_color}`)}>
           <a href="#">

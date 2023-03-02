@@ -1,16 +1,44 @@
 import React from 'react';
 import './buttons.scss';
+import '../../../../Atom/Icons/icons.scss';
 
-export const CtaButton = ({
-  label, Type, State, For_Primary, ...props
-}) => {
+export const icon_options = {
+  'No Arrow': 'without-arrow',
+  Arrow: 'arrow',
+  Download: 'download',
+  'External link': 'external-link',
+};
+
+export function CtaButton({
+  label,
+  Type,
+  State,
+  Icon,
+  ...props
+}) {
+  const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
   const type = (Type == 'Secondary') ? 'secondary' : 'primary';
   const state = (State == 'Disabled') ? 'disabled' : '';
-  const for_primary = (For_Primary == 'No Arrow') ? 'without-arrow' : 'arrow';
-  const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
+
+  let default_icon = (Type == 'Secondary') ? icon_options['No Arrow'] : icon_options.Arrow;
+  let icon = Icon ? icon_options[`${Icon}`] : default_icon;
+
+  const classes = cls('button', `button-${type}`, `button-${icon}`, `${state}`);
+
   return (
-    <a {...(Type === 'Secondary' ? { className: cls('button', `button-${type}`, `${state}`) } : { className: cls('button', `button-${type}`, `button-${for_primary}`, `${state}`) })} role="button" href="#" {...props}>
+    <a
+      className={classes}
+      role="button"
+      href="#"
+      {...props}
+    >
       {label}
+      {Icon == 'External link' && (
+        <span className="external-link-animated"><i /></span>
+      )}
+      {Icon == 'Download' && (
+        <span className="download-animated"><i /></span>
+      )}
     </a>
   );
-};
+}

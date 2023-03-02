@@ -38,7 +38,11 @@ export const parameters = {
       order: ['Getting started',['Intro','How to use our design system?','Browser support'],'Foundation','Components', 'Patterns', 'Utilities','Templates' ],
       includeName: true
     },
-  }
+  },
+  chromatic: {
+    pauseAnimationAtEnd: true,
+    delay: 1500
+  },
 }
 
 /* Implementing locale for language switcher */
