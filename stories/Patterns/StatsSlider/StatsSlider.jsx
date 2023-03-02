@@ -25,7 +25,7 @@ export function StatsSlider({ data, ...args }) {
               content={item.text}
               Size="Small"
               aria-roledescription="slide"
-              Hovercolors={args.accent}
+              Hovercolors={item.Hovercolors ?? args.accent}
               {...args}
             />
           </div>

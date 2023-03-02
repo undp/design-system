@@ -50,7 +50,7 @@ $colors: (
       &::after {
         @extend %absolute__content;
 
-        @include gradient(15deg, #{$color-yellow});
+        background: linear-gradient(0deg, rgba(255, 235, 0, 0.8), transparent 140%);
         @include transition(opacity 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
       }
 
@@ -77,6 +77,10 @@ $colors: (
       width: 100%;
       word-break: unset;
       z-index: 1;
+
+      &:hover {
+        background-color: transparent;
+      }
 
       @include devicebreak(medium) {
         padding: 0 $spacing-05;

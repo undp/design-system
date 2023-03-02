@@ -23,7 +23,7 @@ export function Statscardslider({ data, ...args }) {
               percent={item.percentname}
               content={item.text}
               Size="Small"
-              Hovercolors="yellow"
+              Hovercolors={args.Hovercolors ?? args.accent}
               {...args}
             />
           </div>

@@ -57,11 +57,11 @@ export function FeaturedContentCard({
       {data.map((item, index) => (
         <div
           key={index}
-          className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`, `${item.hovercolor ? `${hovercolor_options[`${accent_color}`]}` : `${accent_color}`}`)}
+          className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`, `${item.hovercolor ? `${hovercolor_options[`${item.hovercolor}`]}` : `${accent_color}`}`)}
         >
           <a href="#">
             <div className="feature__card-slide">
-              {item.imgback && (image === 'image' || (item.type === 'image' && image === 'image')) && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
+              {item.imgback && item.type === 'image' && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
             </div>
             <article className="feature__card-content">
               <Heading type="6" label={item.contenttile} />

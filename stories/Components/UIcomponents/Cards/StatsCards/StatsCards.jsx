@@ -44,7 +44,7 @@ export function StatsCards({
       fitText('.stats-card h2');
     }
   }, []);
-  let color = (args.Hovercolor) ? accent_color_options[`${args.Hovercolor}`] : accent_color_options[`${args.accent}`];
+  let color = (args.Hovercolors) ? accent_color_options[`${args.Hovercolors}`] : accent_color_options[`${args.accent}`];
   let accent_color = color ? `accent-${color}` : '';
 
   return (

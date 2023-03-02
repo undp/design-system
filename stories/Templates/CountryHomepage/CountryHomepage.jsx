@@ -64,7 +64,7 @@ export function CountryHomepage({
         langSelect={langSelect}
       />
 
-      <div className="grid-container fluid country-page-wrapper green">
+      <div className="grid-container fluid country-page-wrapper">
         <div className="grid-x grid-margin-x hero-container">
           <div className="cell large-12">
             <Homepageherooption
@@ -116,7 +116,7 @@ export function CountryHomepage({
             <Heading type="2" label={statHeading} />
           </div>
           <div className="cell small-12 medium-12 large-12">
-            <StatsSlider data={statdata} />
+            <StatsSlider data={statdata} {...args} />
           </div>
         </div>
         <ImageRevealCards

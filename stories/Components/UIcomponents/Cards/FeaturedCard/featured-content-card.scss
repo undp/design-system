@@ -28,7 +28,7 @@ $light-colors: (
 
     .feature__card-slide {
       &::before {
-        @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, $color-yellow);
+        @include background(207deg, hsla(0, 0%, 100%, 0.2) 30%, $color-light-yellow);
       }
     }
 
@@ -188,7 +188,7 @@ $color in $light-colors {
     @include transform(translateX(-105%));
     @include transition(transform 0.3s);
 
-    background: $color-yellow;
+    background: $color-light-yellow;
     display: none;
     height: 100%;
     position: absolute;
@@ -352,10 +352,6 @@ $color in $light-colors {
             @include transform(translateX(0));
           }
         }
-
-        // &::before {
-        //   @include background(153deg, hsla(0, 0%, 100%, 0.2) 30%, $color-yellow);
-        // }
       }
     }
   }
