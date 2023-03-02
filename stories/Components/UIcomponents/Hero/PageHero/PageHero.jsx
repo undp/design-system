@@ -1,6 +1,7 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { useEffect } from 'react';
 import './page-hero.scss';
-// eslint-disable-next-line import/no-named-as-default
 import expandToSize from '../../../../assets/js/animation';
 import BackgroundVideo from '../../../../assets/video/video_sample.mp4';
 import { Video } from '../../../../Atom/Video/Video';
@@ -28,13 +29,16 @@ export function PageHero({
 
   return (
     <div className="pagehero-full">
-      {variant === 'Video' && (
+      {variant === 'Video' ? (
         <Video src={BackgroundVideo} width="100%" height="100%" />
-      )}
-      {variant === 'Image' && (
-        <div className="overlay-grey">
-          <img src={imgsrc} alt={imgalt} />
-        </div>
+      ) : (
+        <>
+          {variant !== 'No background' && imgsrc && (
+            <div className="overlay-grey">
+              <img src={imgsrc} alt={imgalt} />
+            </div>
+          )}
+        </>
       )}
       <Breadcrumbcomponent data={data} Color={textColor} />
       <div className="pagehero-content medium-offset-1">
