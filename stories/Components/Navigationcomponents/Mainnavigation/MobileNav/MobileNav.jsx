@@ -4,9 +4,10 @@ import Iconsback from '../../../../assets/icons/back.svg';
 import IconsGlobe from '../../../../assets/icons/globe.svg';
 import IconsLanguage from '../../../../assets/icons/language.svg';
 import { navigationInitialize } from '../../../../assets/js/navigation';
+import { CtaButton } from '../../../UIcomponents/Buttons/CtaButton/CtaButton';
 import './mobile-nav.scss';
 
-const MobileNav = ({
+function MobileNav({
   text,
   locale,
   navigationData,
@@ -14,7 +15,8 @@ const MobileNav = ({
   backcaption,
   locationData,
   langSelect,
-}) => {
+  ...args
+}) {
   useEffect(() => {
     navigationInitialize(locale);
   }, [locale]);
@@ -47,6 +49,13 @@ const MobileNav = ({
               {' '}
               {locationData.detail}
             </a>
+            {args.cta_enabled == 'On' && (
+              <CtaButton
+                label="Donate"
+                href="#"
+                Icon="No Arrow"
+              />
+            )}
           </div>
         </div>
 
@@ -98,6 +107,6 @@ const MobileNav = ({
       </div>
     </div>
   );
-};
+}
 
 export default MobileNav;
