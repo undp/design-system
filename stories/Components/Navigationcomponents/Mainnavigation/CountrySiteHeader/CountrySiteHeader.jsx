@@ -4,6 +4,7 @@ import { getMegaMenu } from '../../../../assets/js/navigation-data';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 // import { desktopView } from '../../../../assets/js/undp';
 import { Logo } from '../../../../Atom/Logo/Logo';
+import { CtaButton } from '../../../UIcomponents/Buttons/CtaButton/CtaButton';
 import { Menu } from '../../Menu/Menu';
 import { Languageswitcher } from '../../../UIcomponents/LanguageSwitcher/LanguageSwitcher';
 import MegaMenu from '../MegaMenu/MegaMenu';
@@ -20,6 +21,7 @@ function CountrySiteHeader({
   locationData,
   langSelect,
   siteTitleData,
+  ...args
 }) {
   useEffect(() => {
     getMegaMenu(locale);
@@ -56,6 +58,13 @@ function CountrySiteHeader({
               </button>
               <button className="icon-globe">Global</button>
               <button className="icon-search">Search</button>
+              {args.cta_enabled == 'On' && (
+                <CtaButton
+                  label="Donate"
+                  href="#"
+                  Icon="No Arrow"
+                />
+              )}
             </div>
             <MobileNav
               navigationData={navigationData}
@@ -64,6 +73,7 @@ function CountrySiteHeader({
               backcaption={backcaption}
               langSelect={langSelect}
               text="Mobile Nav"
+              {...args}
             />
           </div>
         </div>

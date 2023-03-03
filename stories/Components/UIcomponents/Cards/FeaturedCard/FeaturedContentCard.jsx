@@ -59,7 +59,7 @@ export function FeaturedContentCard({
           key={index}
           className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`, `${item.hovercolor ? `${hovercolor_options[`${item.hovercolor}`]}` : `${accent_color}`}`)}
         >
-          <a href="#">
+          <a href={item.url ? item.url : '#'}>
             <div className="feature__card-slide">
               {item.imgback && item.type === 'image' && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
             </div>
