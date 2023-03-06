@@ -17,7 +17,7 @@ export function Menu({
     return (
       <ul>
         {menuData.map((item, index) => (
-          <li key={index} data-menu-id={item.id}><MenuItems text={item.title} /></li>
+          <li key={index} data-menu-id={item.id}><MenuItems text={item.title ?? item.label} /></li>
         ))}
       </ul>
     );
@@ -27,7 +27,7 @@ export function Menu({
     <nav className="menu" role={role} aria-label={arialabel}>
       <ul className="dropdown">
         {menuData.map((item, index) => (
-          <li key={index} data-menu-id={item.id}><MenuItems text={item.title} /></li>
+          <li key={index} data-menu-id={item.id}><MenuItems text={item.title ?? item.label} /></li>
         ))}
       </ul>
     </nav>
