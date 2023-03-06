@@ -124,8 +124,8 @@
       display: flex;
       min-height: 7.1875rem;
       margin: auto;
-      overflow: hidden;
-      width: clamp(calc(3 * 140px), (5 * 140px), (5 * 140px));
+      //overflow: hidden;
+      width: clamp(calc(3 * 128px), 100%, (4 * 128px));
       flex-shrink: 1;
       flex-grow: 0;
 
@@ -133,8 +133,14 @@
         display: none;
       }
 
+      @include devicebreak(large) {
+        width: clamp(calc(3 * 128px), 100%, (4 * 128px));
+        margin: 0 2rem 0 auto;
+      }
+
       @include devicebreak(xlarge) {
-        //max-width: 39rem;
+        width: clamp(calc(3 * 144px), 100%, (4 * 144px));
+        margin: 0 2rem 0 auto;
       }
 
       ul {
@@ -143,7 +149,7 @@
         align-items: center;
         justify-content: space-evenly;
         flex-direction: row;
-        margin: 0 2rem 0 auto;
+        margin: 0 0 0 auto;
         position: relative;
 
         @include devicebreak(xlarge) {
@@ -155,13 +161,13 @@
         margin: 0;
         align-items: stretch;
         align-self: stretch;
-        width: 130px;
+        width: 128px;
         justify-content: center;
         display: flex;
 
         @include devicebreak(xlarge) {
           margin: 0;
-          width: 140px;
+          width: 144px;
         }
 
         &:first-of-type {
