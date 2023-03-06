@@ -68,6 +68,14 @@
         width: auto;
       }
 
+      @include devicebreak(xlarge) {
+        width: calc(66.66667% - 1.5rem);
+      }
+
+      @include devicebreak(mediumonlytab) {
+        width: auto;
+      }
+
       .logo {
         @extend %img_none;
 
@@ -139,10 +147,9 @@
         margin: 0;
         align-items: stretch;
         align-self: stretch;
-        width: 120px;
+        width: 130px;
         justify-content: center;
         display: flex;
-        //border: 1px solid orange;
 
         @include devicebreak(xlarge) {
           margin: 0;
@@ -183,6 +190,7 @@
           display: none;
         }
       }
+
 
       .icon-search {
         @extend %header-icon;

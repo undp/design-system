@@ -12,7 +12,7 @@ import { Footer } from '../../Organism/Footer/Footer';
 import './countryhome-page.scss';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 
-export const CountryHomepage = ({
+export function CountryHomepage({
   footerData,
   herotitle,
   herotext,
@@ -47,8 +47,9 @@ export const CountryHomepage = ({
   headingTop,
   takeAcrtionHead,
   storyBtn,
-  statdata
-}) => (
+  statdata,
+}) {
+  return (
     <>
       <CountrySiteHeader
         siteTitleData={siteTitleData}
@@ -89,7 +90,7 @@ export const CountryHomepage = ({
         </div>
         <div className="grid-x wide-card-heading">
           <div className="cell small-12 medium-12 large-11 large-offset-1">
-            <Heading type="2" label={storiesHeading} dataViewport="true"/>
+            <Heading type="2" label={storiesHeading} dataViewport="true" />
           </div>
           <PageWideCard
             label={PagewidecardTag}
@@ -105,7 +106,7 @@ export const CountryHomepage = ({
           dataViewport="true"
         />
         <div className="cell cta-container">
-          <CtaButton label={storyBtn} For_Primary="No Arrow" />
+          <CtaButton label={storyBtn} Icon="No Arrow" />
         </div>
         <div className="grid-x our-impact">
           <div className="cell small-12 medium-12 large-11 large-offset-1" data-viewport="true">
@@ -115,10 +116,10 @@ export const CountryHomepage = ({
             <StatsSlider data={statdata} />
           </div>
         </div>
-          <ImageRevealCards
-            data={takeactioncard.data}
-            label={takeAcrtionHead}
-          />
+        <ImageRevealCards
+          data={takeactioncard.data}
+          label={takeAcrtionHead}
+        />
       </div>
 
       <Footer
@@ -144,3 +145,4 @@ export const CountryHomepage = ({
       />
     </>
   );
+}

@@ -141,62 +141,27 @@ export const menuData = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
-        data: [
-          {
-            text: "menu item",
-          },
-          {
-            text: "menu item",
-          },
-        ],
+        data: [{ text: "menu item" }, { text: "menu item" }],
       };
       return engText.data;
     case "arabic":
       const arabicText = {
-        data: [
-          {
-            text: "عنصر القائمة",
-          },
-          {
-            text: "عنصر القائمة",
-          },
-        ],
+        data: [{ text: "عنصر القائمة" }, { text: "عنصر القائمة" }],
       };
       return arabicText.data;
     case "burmese":
       const burmeseText = {
-        data: [
-          {
-            text: "မီနူးပစ္စည်းများ",
-          },
-          {
-            text: "မီနူးပစ္စည်းများ",
-          },
-        ],
+        data: [{ text: "မီနူးပစ္စည်းများ" }, { text: "မီနူးပစ္စည်းများ" }],
       };
       return burmeseText.data;
     case "japanese":
       const japaneseText = {
-        data: [
-          {
-            text: "メニュー項目",
-          },
-          {
-            text: "メニュー項目",
-          },
-        ],
+        data: [{ text: "メニュー項目" }, { text: "メニュー項目" }],
       };
       return japaneseText.data;
     default:
       const dummy = {
-        data: [
-          {
-            text: "menu item",
-          },
-          {
-            text: "menu item",
-          },
-        ],
+        data: [{ text: "menu item" }, { text: "menu item" }],
       };
       return dummy.data;
   }
@@ -212,8 +177,8 @@ export const menuData = (locale) => {
     },
     menu_type: {
       name: "Menu type",
-      control: "inline-radio",
       options: ["Mega menu", "Multi-level dropdown"],
+      control: "inline-radio",
     },
   }}
   args={{

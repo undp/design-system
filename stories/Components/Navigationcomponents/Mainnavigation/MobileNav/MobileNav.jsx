@@ -7,7 +7,7 @@ import { navigationInitialize } from '../../../../assets/js/navigation';
 import { CtaButton } from '../../../UIcomponents/Buttons/CtaButton/CtaButton';
 import './mobile-nav.scss';
 
-const MobileNav = ({
+function MobileNav({
   text,
   locale,
   navigationData,
@@ -53,7 +53,7 @@ const MobileNav = ({
               <CtaButton
                 label="Donate"
                 href="#"
-                For_Primary="No Arrow"
+                Icon="No Arrow"
               />
             )}
           </div>

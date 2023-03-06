@@ -87,7 +87,7 @@ function CountrySiteHeader({
                 <CtaButton
                   label="Donate"
                   href="#"
-                  For_Primary="No Arrow"
+                  Icon="No Arrow"
                 />
               )}
             </div>

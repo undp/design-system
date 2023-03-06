@@ -24,14 +24,17 @@ export const getCaptionForLocale = (locale) => {
   title="Components/UI components/Buttons/Buttons"
   argTypes={{
     Type: {
+      name: "Type",
       options: ["Primary", "Secondary"],
       control: { type: "inline-radio" },
     },
     State: {
+      name: "State",
       options: ["Active", "Disabled"],
       control: { type: "inline-radio" },
     },
-    For_Primary: {
+    Icon: {
+      name: "Icon",
       options: ["Arrow", "No Arrow", "Download", "External link"],
       control: { type: "inline-radio" },
     },
@@ -39,7 +42,7 @@ export const getCaptionForLocale = (locale) => {
   args={{
     Type: "Primary",
     State: "Active",
-    For_Primary: "Arrow",
+    Icon: "Arrow",
   }}
 />
 
