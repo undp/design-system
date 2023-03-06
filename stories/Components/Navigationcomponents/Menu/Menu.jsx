@@ -11,7 +11,7 @@ export function Menu({
 }) {
   let lang = args.locale === 'en' ? 'english' : args.locale;
   let menuData = data.find((item) => item.language === lang);
-  menuData = (menuData) ? menuData.data : data;
+  menuData = (menuData && typeof (menuData.data) != 'undefined') ? menuData.data : data;
   if (isGHeader != undefined && isGHeader) {
     return (
       <ul>
