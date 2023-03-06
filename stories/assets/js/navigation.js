@@ -83,7 +83,7 @@ export const navigationInitialize = (locale) => {
       const el = event.toElement;
       if (jQuery('.mega-nav-option').hasClass('show-mega')) {
         // Set a timeout delay to check if the menu or a menu item is hovered
-        // after leaving the mega panel, before dismissing the associated 
+        // after leaving the mega panel, before dismissing the associated
         // mega menu panel.
         setTimeout(() => {
           if (!hovering_item) {

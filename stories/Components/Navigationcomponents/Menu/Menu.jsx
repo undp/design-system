@@ -11,12 +11,12 @@ export function Menu({
 }) {
   let lang = args.locale === 'en' ? 'english' : args.locale;
   let menuData = data.find((item) => item.language === lang);
-  menuData = menuData.data ?? data;
+  menuData = menuData.data ? menuData.data : data;
 
   if (isGHeader != undefined && isGHeader) {
     return (
       <ul>
-        {menuData.data.map((item, index) => (
+        {menuData.map((item, index) => (
           <li key={index} data-menu-id={item.id}><MenuItems text={item.title} /></li>
         ))}
       </ul>
@@ -26,7 +26,7 @@ export function Menu({
   return (
     <nav className="menu" role={role} aria-label={arialabel}>
       <ul className="dropdown">
-        {menuData.data.map((item, index) => (
+        {menuData.map((item, index) => (
           <li key={index} data-menu-id={item.id}><MenuItems text={item.title} /></li>
         ))}
       </ul>
