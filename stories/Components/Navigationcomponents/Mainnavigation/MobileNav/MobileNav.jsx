@@ -16,7 +16,7 @@ function MobileNav({
   locationData,
   langSelect,
   ...args
-}) => {
+}) {
   useEffect(() => {
     navigationInitialize(locale);
   }, [locale]);
