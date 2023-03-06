@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 export const navigationInitialize = (locale) => {
   const $menu = jQuery('.menu');
   const $menuItem = jQuery('.menu li a');
@@ -82,7 +83,7 @@ export const navigationInitialize = (locale) => {
       const el = event.toElement;
       if (jQuery('.mega-nav-option').hasClass('show-mega')) {
         // Set a timeout delay to check if the menu or a menu item is hovered
-        // after leaving the mega panel, before dismissing the associated 
+        // after leaving the mega panel, before dismissing the associated
         // mega menu panel.
         setTimeout(() => {
           if (!hovering_item) {
@@ -221,7 +222,7 @@ export const navigationInitialize = (locale) => {
 /**
  * Menu multi-level functionality.
  */
-export const navigationMultiLevel = () => {
+export const navigationMultiLevelEdgeDetection = () => {
   // Determine if a multilevel menu item will go off the screen.
   // Change the side it renders on, if it will go off screen, by
   // adding the "edge" class. The formula to determine changes for
@@ -243,45 +244,104 @@ export const navigationMultiLevel = () => {
   });
 };
 
-var nav = document.querySelector('.country-header nav.menu');
-var toggle = document.querySelector('.menu__overflow__toggle');
-var visibleLinks = document.querySelector('.country-header nav.menu > ul');
-var hiddenLinks = document.querySelector('.menu__overflow');
-var breaks = [];
-export function priorityPlusNav() {
-  // var e = toggle.scrollWidth;
-  // var t = toggle.classList.contains('hidden') ? nav.scrollWidth : nav.scrollWidth - e;
+/**
+ * Navigation overflow functionality.
+ */
+export const navigationOverFlow = () => {
+  // /**
+  //  * Generate the button
+  //  */
+  // let $button = $(document.createElement('button')).prop({
+  //   innerHTML: '<span class="hidden">Menu toggle</span>',
+  //   class: 'menu__overflow__toggle',
+  //   'aria-hidden': 'true',
+  //   'aria-controls': 'navigation-dropdown',
+  //   'aria-label': 'Menu overflow toggle',
+  // });
+  // if (jQuery('.menu__overflow__toggle').length === 0) {
+  //   /**
+  //    * Toggle overflow section via button.
+  //    */
+  //   $(document).ready(() => {
+  //     $('.top-left').append($button);
+  //   });
+  // } else {
+  // }
 
-  // visibleLinks.scrollWidth > t ? (breaks.push(visibleLinks.scrollWidth),
-  // hiddenLinks.prepend(visibleLinks.lastElementChild),
-  // toggle.classList.contains("hidden") && (toggle.classList.remove("hidden"),
-  // toggle.setAttribute("aria-hidden", !1),
-  // visibleLinks.classList.add("has-dropdown"))) : (t > breaks[breaks.length - 1] && (visibleLinks.append(hiddenLinks.firstElementChild),
-  // breaks.pop()),
-  // breaks.length < 1 && (toggle.classList.add("hidden"),
-  // toggle.setAttribute("aria-hidden", !0),
-  // hiddenLinks.classList.add("hidden"),
-  // hiddenLinks.setAttribute("aria-hidden", !0),
-  // visibleLinks.classList.remove("has-dropdown")),
-  // "Less" === toggle.innerHTML && 0 < breaks.length && (hiddenLinks.classList.remove("hidden"),
-  // toggle.setAttribute("aria-hidden", !1),
-  // hiddenLinks.classList.remove("hidden"),
-  // hiddenLinks.setAttribute("aria-hidden", !1),
-  // visibleLinks.classList.add("has-dropdown"))),
-  // visibleLinks.scrollWidth > t && priorityPlusNav()
-}
+  /**
+   * Toggle overflow section via button.
+   */
+  jQuery('.menu__overflow__toggle').on('click', (e) => {
+    if (jQuery('.menu__overflow__container').hasClass('hidden')) {
+      jQuery('.menu__overflow__container').removeClass('hidden');
+    } else {
+      jQuery('.menu__overflow__container').addClass('hidden');
+    }
+  });
 
-// null !== toggle && (window.addEventListener("load", function() {
-//   setTimeout(priorityPlusNav, 100)
-// }),
+  // Define some constants and variables for later use.
+  const $menu_items = jQuery('.menu > ul.dropdown > li');
+  const total_main_level_menu_items = jQuery('.menu > ul.dropdown > li').length;
+  let number_of_menu_items_that_can_fit_in_upper_nav = 0;
+  let number_of_items_to_move_into_overflow = 0;
 
-// window.addEventListener("resize", throttle(priorityPlusNav, 100))),
-// null !== toggle && toggle.addEventListener("click", function() {
-//   hiddenLinks.classList.contains("hidden") ? (hiddenLinks.classList.remove("hidden"),
-//   hiddenLinks.setAttribute("aria-hidden", !1),
-//   toggle.setAttribute("aria-expanded", !0),
-//   toggle.innerHTML = "Less") : (hiddenLinks.classList.add("hidden"),
-//   hiddenLinks.setAttribute("aria-hidden", !0),
-//   toggle.setAttribute("aria-expanded", !1),
-//   toggle.innerHTML = "More")
-// });
+  /**
+   * Add the menu items width as a data attribute.
+   */
+  jQuery('.menu > ul.dropdown > li').each(function () {
+    jQuery(this).attr('data-item-width', jQuery(this).width());
+  });
+
+  jQuery('.menu__overflow__container > ul.dropdown').empty();
+
+  /**
+   * Trigger the overflow navigation setup.
+   * @param {*} menu_container_width
+   */
+  function TriggerOverFlowFunctionality(menu_container_width) {
+    if (typeof (menu_container_width) === 'number') {
+      // Adjust the menu_container_width to always allow at least 1 item, otherwise.
+      // the math breaks.
+      let width_of_single_item = $menu_items.width() ?? $menu_items.attr('data-item-width');
+      menu_container_width = menu_container_width <= width_of_single_item ? width_of_single_item : menu_container_width;
+
+      /**
+       * Move extra menu items to the overflow container.
+       */
+      number_of_menu_items_that_can_fit_in_upper_nav = Math.floor(menu_container_width / width_of_single_item);
+      number_of_items_to_move_into_overflow = total_main_level_menu_items - number_of_menu_items_that_can_fit_in_upper_nav;
+      const $items_to_move_to_overflow = jQuery('.menu > ul.dropdown > li').filter((item) => item > number_of_menu_items_that_can_fit_in_upper_nav - 1);
+      $items_to_move_to_overflow.prependTo('.menu__overflow__container > ul.dropdown');
+
+      /**
+       * Move an overflow item back to the main menu if there is room.
+       *
+       * Set the current menu count to always be at least 1, otherwise math breaks.
+       */
+      let current_main_menu_count = jQuery('.menu > ul.dropdown > li').length ?? 1;
+      let open_pixel_value = menu_container_width - (current_main_menu_count * width_of_single_item);
+      if (open_pixel_value >= width_of_single_item) {
+        if (jQuery('.menu__overflow__container > ul.dropdown > li').length) {
+          jQuery('.menu__overflow__container > ul.dropdown > li').first().appendTo('.menu > ul.dropdown');
+        }
+      }
+
+      /**
+       * Display the overflow button if there are more items then can fit.
+       */
+      jQuery('.menu__overflow__toggle').addClass('hidden');
+      if (number_of_items_to_move_into_overflow > 0) {
+        jQuery('.menu__overflow__toggle').removeClass('hidden');
+      }
+    }
+  }
+
+  // Trigger a recalculation on any resize to figure out if menu items should
+  // be moved to overflow section.
+  const observer = new ResizeObserver((items) => {
+    for (const item of items) {
+      TriggerOverFlowFunctionality(Math.floor(item.contentRect?.width));
+    }
+  });
+  observer.observe(jQuery('.menu')[0], { box: 'border-box' });
+};

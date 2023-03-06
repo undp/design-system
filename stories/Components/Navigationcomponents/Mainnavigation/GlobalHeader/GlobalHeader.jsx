@@ -71,7 +71,7 @@ function GlobalHeader({
         </div>
       </section>
       <div className="mega-wrapper">
-        <MegaMenu />
+        {/* <MegaMenu /> */}
       </div>
     </header>
   );

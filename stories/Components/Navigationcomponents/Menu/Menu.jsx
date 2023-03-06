@@ -7,12 +7,15 @@ export function Menu({
   role,
   arialabel,
   isGHeader,
+  ...args
 }) {
+  let lang = args.locale === 'en' ? 'english' : args.locale;
+  const menuData = data.find((item) => item.language === lang);
   if (isGHeader != undefined && isGHeader) {
     return (
       <ul>
-        {data.map((item, index) => (
-          <li key={index} data-menu-id={item.id}><MenuItems text={item.label} /></li>
+        {menuData.data.map((item, index) => (
+          <li key={index} data-menu-id={item.id}><MenuItems text={item.title} /></li>
         ))}
       </ul>
     );
@@ -20,9 +23,9 @@ export function Menu({
 
   return (
     <nav className="menu" role={role} aria-label={arialabel}>
-      <ul>
-        {data.map((item, index) => (
-          <li key={index} data-menu-id={item.id}><MenuItems text={item.label} /></li>
+      <ul className="dropdown">
+        {menuData.data.map((item, index) => (
+          <li key={index} data-menu-id={item.id}><MenuItems text={item.title} /></li>
         ))}
       </ul>
     </nav>

@@ -3,8 +3,8 @@ import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { getMegaMenu } from '../../../../assets/js/navigation-data';
 import {
   navigationInitialize,
-  navigationMultiLevel,
-  // priorityPlusNav,
+  navigationMultiLevelEdgeDetection,
+  navigationOverFlow,
 } from '../../../../assets/js/navigation';
 import { Logo } from '../../../../Atom/Logo/Logo';
 import { CtaButton } from '../../../UIcomponents/Buttons/CtaButton/CtaButton';
@@ -32,13 +32,12 @@ function CountrySiteHeader({
   useEffect(() => {
     getMegaMenu(locale);
     navigationInitialize(locale);
-    if (args.menu_type === 'Multi-level dropdown') {
-      navigationMultiLevel(locale);
-    }
+    navigationOverFlow();
+    navigationMultiLevelEdgeDetection();
   }, [locale, args.menu_type]);
 
   const menuType = args.menu_type === 'Mega menu' ? 'mega_menu' : 'dropdown';
-  const menuData = args.menu_type === 'Mega menu' ? navigationData : menuJsonData;
+  const menuData = args.menu_type === 'Mega menu' ? menuJsonData : menuJsonData;
   const overflow = args.menu_type === 'Multi-level dropdown';
   const multiLevel = args.menu_type === 'Multi-level dropdown';
 
@@ -62,8 +61,14 @@ function CountrySiteHeader({
                 <MenuMultiLevel data={menuData} locale={locale} multiLevel overflow {...args} />
               )}
               {args.menu_type === 'Mega menu' && (
-                <Menu data={menuData} type={menuType} {...args} />
+                <Menu data={menuData} type={menuType} locale={locale} overflow {...args} />
               )}
+              {/* Need to generate this in jquery */}
+              <div className="menu__overflow__item hidden">
+                <button className="menu__overflow__toggle hidden" aria-hidden="true" aria-controls="navigation-dropdown" aria-label="Menu overflow">
+                  <span className="hidden">Menu toggle</span>
+                </button>
+              </div>
             </div>
             <div className="cell large-3 small-3 top-right">
               <Languageswitcher
@@ -97,8 +102,9 @@ function CountrySiteHeader({
             />
           </div>
         </div>
-        <div className="grid-container full menu__overflow hidden">
-          <Menu data={navigationData} />
+        {/* Need to generate this in jquery */}
+        <div className="grid-container full menu__overflow__container hidden">
+          <ul className="dropdown" />
         </div>
       </section>
       {args.menu_type === 'Mega menu' && (

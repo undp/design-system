@@ -21,8 +21,8 @@ function MenuMultiLevel({
   if (isGHeader != undefined && isGHeader) {
     return (
       <ul>
-        {data.map((item, index) => (
-          <li key={index} data-menu-id={item.id}>
+        {data.map((item, idx) => (
+          <li key={idx} data-menu-id={item.id}>
             <MenuItems text={item.label} />
           </li>
         ))}
@@ -33,20 +33,12 @@ function MenuMultiLevel({
   if (!multiLevel) {
     return (
       <nav className="menu" role={role} aria-label={arialabel}>
-        <ul>
-          {data.map((item, index) => (
-            <li key={index} data-menu-id={item.id}>
+        <ul className="dropdown">
+          {data.map((item, idx) => (
+            <li key={idx} data-menu-id={item.id}>
               <MenuItems text={item.label} />
             </li>
           ))}
-
-          {overflow && (
-            <li className="menu__overflow__item hidden">
-              <button className="menu__overflow__toggle" aria-hidden="true" aria-controls="navigation-dropdown" aria-label="Menu overflow">
-                <span className="hidden">Menu toggle</span>
-              </button>
-            </li>
-          )}
         </ul>
       </nav>
     );
@@ -58,14 +50,6 @@ function MenuMultiLevel({
         {menuData.data.map((menuLevel, idx) => (
           <MenuLevel data={menuLevel} key={idx} level="1" {...args} />
         ))}
-
-        {overflow && (
-          <li className="menu__overflow__item hidden">
-            <button className="menu__overflow__toggle" aria-hidden="true" aria-controls="navigation-dropdown" aria-label="Menu overflow">
-              <span className="hidden">Menu toggle</span>
-            </button>
-          </li>
-        )}
       </ul>
     </nav>
   );
@@ -97,7 +81,7 @@ function MenuLevel({
 
   if (submenu && submenu.length > 0) {
     return (
-      <li className="menu-item has-submenu" role="none">
+      <li className="menu-item has-submenu" role="none" data-menu-id={menu_id}>
         <a href={data?.url ?? '#'}
           className="menu-link"
           tabIndex="0"
@@ -117,7 +101,7 @@ function MenuLevel({
   }
 
   return (
-    <li className="menu-item" role="none">
+    <li className="menu-item" role="none" data-menu-id={menu_id}>
       <a href={data?.url ?? '#'} className="menu-link" tabIndex="0">
         {label}
       </a>
