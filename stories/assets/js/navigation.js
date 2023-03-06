@@ -4,6 +4,7 @@ export const navigationInitialize = (locale) => {
   const $menuItem = jQuery('.menu li a');
   const $megaMenu = jQuery('.show-mega');
   const $megaWrapper = jQuery('.mega-wrapper');
+  let $header = jQuery('.header');
 
   // Track if a menu item is being hovered.
   let hovering_item = false;
@@ -16,8 +17,9 @@ export const navigationInitialize = (locale) => {
     const navId = jQuery(this).parent().attr('data-menu-id');
     const $menuItemId = jQuery(document).find(`[data-menu-item-id='${navId}']`);
 
-    // Show the mega menu panel.
+    // Show the mega menu panel. Position it at the bottom of the header or overflow.
     $menuItemId.addClass('show-mega').siblings().removeClass('show-mega').addClass('no-effect');
+    $menuItemId.css({ top: $header.offsetTop + jQuery($header).outerHeight() });
 
     // Set the first link in the sub menus to the active link.
     $megaMenu.find('.sub-menu-content:first-of-type').addClass('active-content').siblings().removeClass('active-content');

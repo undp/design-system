@@ -19,6 +19,7 @@
 
     .top-left {
       margin-bottom: 7px;
+
       @include devicebreak(xlarge) {
         margin-bottom: 0;
       }
@@ -98,6 +99,7 @@
             display: flex;
             align-items: center;
             margin-top: -15px;
+
             @include devicebreak(xlarge) {
               margin-top: 0;
             }
@@ -139,12 +141,14 @@
       display: flex;
       justify-content: flex-end;
       margin-bottom: 15px;
+
       @include devicebreak(xlarge) {
         margin-bottom: 0;
       }
 
       @include devicebreak(mediumonlytab) {
         margin-bottom: 0;
+
         .icon-globe {
           display: none;
         }
@@ -217,11 +221,16 @@
   }
 
   &.show-content {
+
     .mid-nav ul,
     .top-left,
     .top-right {
       opacity: 1;
     }
+  }
+
+  .mega-nav-option {
+    top: 7.125rem;
   }
 }
 

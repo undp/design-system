@@ -17,8 +17,7 @@
   min-height: 37.5rem;
   padding: $spacing-10 0 0 $spacing-09;
   position: fixed;
-  top: 7.125rem;
-  z-index: 8;
+  z-index: -1;
 
   &.show-mega {
     display: block;

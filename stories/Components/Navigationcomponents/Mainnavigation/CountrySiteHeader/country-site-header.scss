@@ -7,13 +7,14 @@
 
 .country-header {
   .header {
-    @extend %header;
+    background-color: $color-gray-100;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 
     //height: auto;
-    height: 7.1875rem;
+    min-height: 7.1875rem;
 
     @include devicebreak(mediumonlytab) {
-      height: 4.6875rem;
+      min-height: 4.6875rem;
     }
 
     .site-title {
