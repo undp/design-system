@@ -35,17 +35,14 @@ function CountrySiteHeader({
     navigationOverFlow();
     navigationMultiLevelEdgeDetection();
   }, [locale, args.menu_type]);
-
-  const menuType = args.menu_type === 'Mega menu' ? 'mega_menu' : 'dropdown';
-  const menuData = args.menu_type === 'Mega menu' ? menuJsonData : menuJsonData;
+  const menuType = args.menu_type === 'Mega menu' || typeof (args.menu_type) == 'undefined' ? 'mega_menu' : 'dropdown';
+  const menuData = typeof (args.menu_type) == 'undefined' ? navigationData : menuJsonData;
   const overflow = args.menu_type === 'Multi-level dropdown';
   const multiLevel = args.menu_type === 'Multi-level dropdown';
-
   return (
     <header className="country-header country-load-animation">
       <section className="header">
         <div className="grid-container fluid">
-
           <div className="grid-x grid-margin-x align-content-middle">
             <div className="cell large-9 small-8 align-self-middle top-left">
               <a href="#" className="logo" tabIndex="0" title="UNDP Logo homepage link">
@@ -57,10 +54,10 @@ function CountrySiteHeader({
                 )}
                 <span><a href="#" title="UNDP homepage link">{siteTitleData.span}</a></span>
               </div>
-              {args.menu_type === 'Multi-level dropdown' && (
+              {menuType === 'dropdown' && (
                 <MenuMultiLevel data={menuData} locale={locale} multiLevel overflow {...args} />
               )}
-              {args.menu_type === 'Mega menu' && (
+              {menuType === 'mega_menu' && (
                 <Menu data={menuData} type={menuType} locale={locale} overflow {...args} />
               )}
               {/* Need to generate this in jquery */}
@@ -107,7 +104,7 @@ function CountrySiteHeader({
           <ul className="dropdown" />
         </div>
       </section>
-      {args.menu_type === 'Mega menu' && (
+      {menuType === 'mega_menu' && (
         <div className="mega-wrapper">
           <MegaMenu locale={locale} />
         </div>

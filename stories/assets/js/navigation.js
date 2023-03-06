@@ -15,11 +15,11 @@ export const navigationInitialize = (locale) => {
 
     // Find the panel that matches with the parent menu link item in the main nav.
     const navId = jQuery(this).parent().attr('data-menu-id');
-    const $menuItemId = jQuery(document).find(`[data-menu-item-id='${navId}']`);
+    let $menuItemId = jQuery(document).find(`[data-menu-item-id='${navId}']`);
 
     // Show the mega menu panel. Position it at the bottom of the header or overflow.
+    $menuItemId.css({ top: $header.height() });
     $menuItemId.addClass('show-mega').siblings().removeClass('show-mega').addClass('no-effect');
-    $menuItemId.css({ top: $header.offsetTop + jQuery($header).outerHeight() });
 
     // Set the first link in the sub menus to the active link.
     $megaMenu.find('.sub-menu-content:first-of-type').addClass('active-content').siblings().removeClass('active-content');
@@ -345,5 +345,7 @@ export const navigationOverFlow = () => {
       TriggerOverFlowFunctionality(Math.floor(item.contentRect?.width));
     }
   });
-  observer.observe(jQuery('.menu')[0], { box: 'border-box' });
+  if (jQuery('.menu').length !== 0) {
+    observer.observe(jQuery('.menu')[0], { box: 'border-box' });
+  }
 };

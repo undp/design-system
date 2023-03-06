@@ -16,12 +16,12 @@ function MenuMultiLevel({
   ...args
 }) {
   let lang = args.locale === 'en' ? 'english' : args.locale;
-  const menuData = data.find((item) => item.language === lang);
-
+  let menuData = data.find((item) => item.language === lang);
+  menuData = (menuData.data) ? menuData.data : data;
   if (isGHeader != undefined && isGHeader) {
     return (
       <ul>
-        {data.map((item, idx) => (
+        {menuData.map((item, idx) => (
           <li key={idx} data-menu-id={item.id}>
             <MenuItems text={item.label} />
           </li>
@@ -34,7 +34,7 @@ function MenuMultiLevel({
     return (
       <nav className="menu" role={role} aria-label={arialabel}>
         <ul className="dropdown">
-          {data.map((item, idx) => (
+          {menuData.map((item, idx) => (
             <li key={idx} data-menu-id={item.id}>
               <MenuItems text={item.label} />
             </li>
@@ -47,7 +47,7 @@ function MenuMultiLevel({
   return (
     <nav className="menu" role={role} aria-label={arialabel}>
       <ul className="dropdown" data-dropdown-menu>
-        {menuData.data.map((menuLevel, idx) => (
+        {menuData.map((menuLevel, idx) => (
           <MenuLevel data={menuLevel} key={idx} level="1" {...args} />
         ))}
       </ul>

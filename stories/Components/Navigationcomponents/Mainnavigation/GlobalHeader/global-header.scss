@@ -4,8 +4,16 @@
 @import '../../../../assets/scss/base';
 
 .global-header {
+  height: 7.1875rem;
+
+  @include devicebreak(mediumonlytab) {
+    height: 4.6875rem;
+  }
+
   .header {
     @extend %header;
+    height: 7.1875rem;
+    position: fixed;
 
     @include devicebreak(mediumonlytab) {
       height: 4.6875rem;
