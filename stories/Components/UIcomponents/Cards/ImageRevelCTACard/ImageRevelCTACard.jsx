@@ -25,14 +25,8 @@ export function ImageRevelCard({
   if (Size == 'Small') {
     size = 'small';
   }
-
-  console.log(args.Hovercolor, 'hovercolor');
-  console.log(args.accent, 'accent');
   let color = (args.Hovercolor) ? accent_color_options[`${args.Hovercolor}`] : accent_color_options[`${args.accent}`];
   let accent_color = color ? `accent-${color}` : '';
-
-  console.log(accent_color, 'color');
-
   return (
     <div className="grid-x grid-margin-x">
       {data.map((item, index) => (

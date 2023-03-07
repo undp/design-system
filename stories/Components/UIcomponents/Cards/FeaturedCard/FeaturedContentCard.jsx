@@ -61,7 +61,7 @@ export function FeaturedContentCard({
         >
           <a href={item.url ? item.url : '#'}>
             <div className="feature__card-slide">
-              {item.imgback && item.type === 'image' && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
+              {item.imgback && (item.type ? item.type === 'image' : image_variant === 'image') && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
             </div>
             <article className="feature__card-content">
               <Heading type="6" label={item.contenttile} />
