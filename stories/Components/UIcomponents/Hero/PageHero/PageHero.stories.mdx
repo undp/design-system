@@ -10,18 +10,10 @@ export const getCaptionForLocale = (locale) => {
     case "english":
       const engText = {
         herodata: [
-          {
-            text: "Home",
-          },
-          {
-            text: "Second-level",
-          },
-          {
-            text: "Third-level",
-          },
-          {
-            text: "Page Title",
-          },
+          { text: "Home" },
+          { text: "Second-level" },
+          { text: "Third-level" },
+          { text: "Page Title" },
         ],
         title: "The sdgs in action",
         subtitle:
@@ -37,18 +29,10 @@ export const getCaptionForLocale = (locale) => {
     case "arabic":
       const arabicText = {
         herodata: [
-          {
-            text: "الصفحة الرئيسية",
-          },
-          {
-            text: "المستوى الثاني",
-          },
-          {
-            text: "المستوى الثالث",
-          },
-          {
-            text: "عنوان الصفحة",
-          },
+          { text: "الصفحة الرئيسية" },
+          { text: "المستوى الثاني" },
+          { text: "المستوى الثالث" },
+          { text: "عنوان الصفحة" },
         ],
         title: "أهداف التنمية المستدامة في العمل",
         content: "تركيزنا",
@@ -62,18 +46,10 @@ export const getCaptionForLocale = (locale) => {
     case "burmese":
       const burmeseText = {
         herodata: [
-          {
-            text: "အိမ်ပြန်",
-          },
-          {
-            text: "ဒုတိယအဆင့်",
-          },
-          {
-            text: "တတိယအဆင့်",
-          },
-          {
-            text: "စာမျက်နှာခေါင်းစဉ်",
-          },
+          { text: "အိမ်ပြန်" },
+          { text: "ဒုတိယအဆင့်" },
+          { text: "တတိယအဆင့်" },
+          { text: "စာမျက်နှာခေါင်းစဉ်" },
         ],
         title: "sdgs သည်လုပ်ဆောင်သည်",
         content: "ကျွန်ုပ်တို့၏အာရုံ",
@@ -87,18 +63,10 @@ export const getCaptionForLocale = (locale) => {
     case "japanese":
       const japaneseText = {
         herodata: [
-          {
-            text: "家",
-          },
-          {
-            text: "セカンドレベル",
-          },
-          {
-            text: "第3レベル",
-          },
-          {
-            text: "ページタイトル",
-          },
+          { text: "家" },
+          { text: "セカンドレベル" },
+          { text: "第3レベル" },
+          { text: "ページタイトル" },
         ],
         title: "動作中のsdgs",
         content: "私たちの焦点",
@@ -112,18 +80,10 @@ export const getCaptionForLocale = (locale) => {
     default:
       const dummy = {
         herodata: [
-          {
-            text: "Home",
-          },
-          {
-            text: "Second-level",
-          },
-          {
-            text: "Third-level",
-          },
-          {
-            text: "Page Title",
-          },
+          { text: "Home" },
+          { text: "Second-level" },
+          { text: "Third-level" },
+          { text: "Page Title" },
         ],
         title: "The sdgs in action",
         subtitle:
@@ -143,18 +103,22 @@ export const getCaptionForLocale = (locale) => {
   title="Components/UI components/Hero/Page"
   argTypes={{
     Variant: {
+      name: "Variant",
       options: ["Video", "Image", "No background"],
-      control: { type: "radio" },
+      control: { type: "inline-radio" },
     },
     CTA: {
+      name: "Enable CTA",
       options: ["On", "Off"],
       control: { type: "inline-radio" },
     },
     Overline: {
+      name: "Enable Overline",
       options: ["On", "Off"],
       control: { type: "inline-radio" },
     },
     Subtitle: {
+      name: "Enable Subtitle",
       options: ["On", "Off"],
       control: { type: "inline-radio" },
     },
