@@ -39,7 +39,6 @@ export function PageHero({
             </div>
           )}
         </>
-
       )}
       <Breadcrumbcomponent data={data} Color={textColor} />
       <div className="pagehero-content medium-offset-1">
