@@ -25,7 +25,7 @@ export function ContentCardWithOutImageEmphasize({
     <div className="grid-x grid-margin-x">
       {data.map((item, index) => (
         <div key={index} className="cell medium-4">
-          <div className={cls('content-card', 'card-emphasize', `${accent_color}`)}>
+          <div className={cls('content-card', 'card', 'card-emphasize', `${accent_color}`)}>
             <a href={item.link}>
               <Heading type="6" label={item.contenttile} />
               <div className="content-caption">

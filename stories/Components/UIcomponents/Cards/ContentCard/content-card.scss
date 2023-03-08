@@ -211,7 +211,12 @@ $color in $colors {
       }
     }
 
-    &.card,
+    &.card {
+      &:hover {
+        background-color: $color-gray-100;
+      }
+    }
+
     &.card-emphasize {
       &:hover {
         background-color: #{$color};
@@ -227,20 +232,7 @@ $color in $colors {
       }
     }
 
-    // &.card {
-    //   &:hover {
-    //     background-color: #{$color};
 
-    //     @each $name2,
-    //     $color2 in $colors {
-
-    //       &.accent-#{$name2},
-    //       &.#{$name2} {
-    //         background-color: #{$color2};
-    //       }
-    //     }
-    //   }
-    // }
   }
 }
 
