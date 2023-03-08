@@ -8,7 +8,7 @@ let rtl = document.dir || undefined;
 if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
-export function Statscardslider({ data }) {
+export function Statscardslider({ data, ...args }) {
   useEffect(() => {
     swiper('.stats-slider');
   }, []);
@@ -23,7 +23,8 @@ export function Statscardslider({ data }) {
               percent={item.percentname}
               content={item.text}
               Size="Small"
-              Hovercolors="yellow"
+              Hovercolors={args.Hovercolors ?? args.accent}
+              {...args}
             />
           </div>
         ))}

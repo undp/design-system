@@ -10,8 +10,19 @@ import './generic-page.scss';
 import { sticky } from '../../assets/js/sticky';
 import GlobalHeader from '../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader';
 
-export const GenericPage = ({
-  herodata, title, content, active, imgsource, altname, topHeading, topParagraph, footerData, sidebarCaptionData, ContentCardData, headingMissionVision,
+export function GenericPage({
+  herodata,
+  title,
+  content,
+  active,
+  imgsource,
+  altname,
+  topHeading,
+  topParagraph,
+  footerData,
+  sidebarCaptionData,
+  ContentCardData,
+  headingMissionVision,
   paraMissionVision,
   headingHistory,
   paraHistory,
@@ -28,7 +39,8 @@ export const GenericPage = ({
   locationData,
   langSelect,
   backcaption,
-}) => {
+  ...args
+}) {
   useEffect(() => {
     sticky('.sidebar-desktop', '.generic-content', '.sidebar-desktop .sidebar-accordion');
   });
@@ -145,7 +157,8 @@ export const GenericPage = ({
                 <ContentCard
                   data={ContentCardData.groupcontentdata}
                   buttontype={ContentCardData.buttonname}
-                  Hovercolors="yellow"
+                  Hovercolors={args.accent}
+                  {...args}
                 />
               </div>
             </div>
@@ -175,4 +188,4 @@ export const GenericPage = ({
       />
     </div>
   );
-};
+}

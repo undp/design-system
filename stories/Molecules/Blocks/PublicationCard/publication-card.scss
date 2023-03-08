@@ -2,7 +2,12 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+$colors: (
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure
+);
 
 div.publication-card {
   display: inline-block;
@@ -19,9 +24,12 @@ div.publication-card {
         opacity: 0.75;
       }
 
-      @each $name, $color in $colors {
-        &.#{$name}:after {
-          @include background-image(27.66deg, $color-yellow, transparent 70.49%);
+      @each $name,
+      $color in $colors {
+
+        &.accent-#{$name}::after,
+        &.#{$name}::after {
+          @include background-image(27.66deg, $color, transparent 70.49%);
 
           opacity: 0.75;
         }
@@ -34,7 +42,7 @@ div.publication-card {
     background: $color-gray-100;
     padding: $spacing-06;
 
-    > div {
+    >div {
       align-items: center;
       flex-wrap: unset;
 
@@ -141,7 +149,7 @@ div.publication-card {
     }
 
     .description {
-      > div {
+      >div {
         &:first-of-type {
           text-align: right;
         }
@@ -153,16 +161,45 @@ div.publication-card {
         }
       }
     }
+  }
+}
+
+@each $name,
+$color in $colors {
+  .accent-#{$name} div.publication-card {
 
     &:hover {
-      .publication-thumbnail__image {
+      div.publication-thumbnail__image {
         &::after {
-          @include background-image(318deg, $color-yellow, transparent 70.49%);
+          @include background-image(27.66deg, $color, transparent 70.49%);
         }
 
-        @each $name, $color in $colors {
-          &.#{$name}:after {
-            @include background-image(318deg, #{$color}, transparent 70.49%);
+        @each $name2,
+        $color2 in $colors {
+
+          &.accent-#{$name2}::after,
+          &.#{$name2}::after {
+            @include background-image(27.66deg, $color2, transparent 70.49%);
+          }
+        }
+      }
+    }
+  }
+
+  [dir='rtl'] .accent-#{$name} div.publication-card {
+
+    &:hover {
+      div.publication-thumbnail__image {
+        &::after {
+          @include background-image(318deg, $color, transparent 70.49%);
+        }
+
+        @each $name2,
+        $color2 in $colors {
+
+          &.accent-#{$name2}::after,
+          &.#{$name2}::after {
+            @include background-image(318deg, $color2, transparent 70.49%);
           }
         }
       }
