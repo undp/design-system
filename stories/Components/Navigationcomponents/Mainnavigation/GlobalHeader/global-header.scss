@@ -50,6 +50,10 @@
       position: relative;
       height: 7.1875rem;
 
+      @include devicebreak(mediumonlytab) {
+        height: 4.6875rem;
+      }
+
       nav {
         @include devicebreak(mediumonlytab) {
           height: 4.6875rem;
