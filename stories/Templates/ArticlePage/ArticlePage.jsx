@@ -100,7 +100,7 @@ function ArticlePage({
             <BlockquoteComponent
               blockquoteText={blockquoteData.blockquote}
               citeText={blockquoteData.cite}
-              Colors={!args.accent ? 'yellow' : args.accent}
+              Colors={args.accent !== '' ? args.accent : 'yellow'}
             />
           </div>
         </div>
