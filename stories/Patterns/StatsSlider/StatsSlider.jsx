@@ -9,7 +9,7 @@ let rtl = document.dir || undefined;
 if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
-export function StatsSlider({ data }) {
+export function StatsSlider({ data, ...args }) {
   useEffect(() => {
     swiper('.stats-card-slider');
     parallaxEffect('.stats-card-slider', '.parallax-slide', 'top bottom', 'bottom top', 'horizontal');
@@ -25,7 +25,8 @@ export function StatsSlider({ data }) {
               content={item.text}
               Size="Small"
               aria-roledescription="slide"
-              Hovercolors={item.Hovercolors}
+              Hovercolors={item.Hovercolors ?? args.accent}
+              {...args}
             />
           </div>
         ))}
