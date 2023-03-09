@@ -681,7 +681,7 @@
   top: 4.7rem;
   z-index: 5;
 
-  @include devicebreak(xlarge) {
+  @include devicebreak(large) {
     top: 7.1875rem;
   }
 }
