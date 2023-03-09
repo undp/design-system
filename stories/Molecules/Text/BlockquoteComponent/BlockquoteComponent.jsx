@@ -9,7 +9,6 @@ export const color_options = {
   red: 'red',
   blue: 'blue',
   gray: 'gray',
-  accent: '',
 };
 
 export const accent_color_options = {
@@ -25,12 +24,13 @@ export function BlockquoteComponent({
   Colors,
   ...args
 }) {
-  const hovercolor = color_options[`${Colors}`];
-  const Color = (Boolean(args.accent)) && (!hovercolor) ? args.accent : hovercolor;
+  const bgColor = color_options[`${Colors}`];
+  const Color = (Boolean(args.accent)) && (!bgColor) ? args.accent : bgColor;
+
   let Class = (Color != 'default') ? 'blockquote' : '';
   let ColorClass = accent_color_options[Color] ? `accent-${Color}` : Color;
 
-  if (Colors == 'default') {
+  if (bgColor == 'default' || (!bgColor && !args.accent)) {
     return (
       <Blockquote text={blockquoteText} citeText={citeText} />
     );
