@@ -11,24 +11,45 @@ div.blockquote {
     padding: 5.313rem $spacing-12;
   }
 
-  &.gray {
-    background-color: $color-gray-200;
+  .accent-yellow & {
+    background-color: $color-yellow;
   }
 
+  .accent-red & {
+    background-color: $color-red;
+  }
+
+  .accent-green & {
+    background-color: $color-green;
+  }
+
+  .accent-blue & {
+    background-color: $color-azure;
+  }
+
+  &.accent-yellow,
   &.yellow {
     background-color: $color-yellow;
   }
 
+  &.accent-red,
   &.red {
     background-color: $color-red;
   }
 
+  &.accent-green,
   &.green {
     background-color: $color-green;
   }
 
+  &.accent-blue,
   &.blue {
     background-color: $color-azure;
+  }
+
+  &.accent-gray,
+  &.gray {
+    background-color: $color-gray-200;
   }
 }
 

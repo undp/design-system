@@ -2,7 +2,12 @@
 @import '../../../assets/scss/mixins';
 
 /* download card start */
-$colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
+$colors: (
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure
+);
 
 div.download-card {
   display: inline-block;
@@ -11,7 +16,7 @@ div.download-card {
     min-width: 330px;
   }
 
-  > a {
+  >a {
     background: none;
   }
 
@@ -23,7 +28,10 @@ div.download-card {
         opacity: 0.75;
       }
 
-      @each $name, $color in $colors {
+      @each $name,
+      $color in $colors {
+
+        &.accent-#{$name},
         &.#{$name}:after {
           @include background-image(27.66deg, #{$color}, transparent 70.49%);
 
@@ -39,7 +47,10 @@ div.download-card {
         opacity: 0.75;
       }
 
-      @each $name, $color in $colors {
+      @each $name,
+      $color in $colors {
+
+        &.accent-#{$name}::before,
         &.#{$name}::before {
           @include background-image(67.76deg, #{$color}, transparent 61.11%);
 
@@ -110,6 +121,7 @@ div.download-card {
 
 [dir='rtl'] {
   div.download-card {
+
     .download-animated,
     .external-link-animated {
       margin-left: 0;
@@ -122,7 +134,10 @@ div.download-card {
           @include background-image(318deg, $color-yellow, transparent 70.49%);
         }
 
-        @each $name, $color in $colors {
+        @each $name,
+        $color in $colors {
+
+          &.accent-#{$name}:after,
           &.#{$name}:after {
             @include background-image(318deg, #{$color}, transparent 70.49%);
           }
@@ -134,7 +149,10 @@ div.download-card {
           @include background-image(297deg, $color-yellow, transparent 61.11%);
         }
 
-        @each $name, $color in $colors {
+        @each $name,
+        $color in $colors {
+
+          &.accent-#{$name}:before,
           &.#{$name}:before {
             @include background-image(297deg, #{$color}, transparent 61.11%);
           }
@@ -151,6 +169,79 @@ div.download-card {
       .download-animated {
         margin-left: 0;
         margin-right: 0.75rem;
+      }
+    }
+  }
+}
+
+@each $name,
+$color in $colors {
+  .accent-#{$name} div.download-card {
+    &:hover {
+      div.publication-thumbnail__image {
+        &::after {
+          @include background-image(27.66deg, $color, transparent 70.49%);
+        }
+
+        @each $name2,
+        $color2 in $colors {
+
+          &.accent-#{$name2},
+          &.#{$name2}:after {
+            @include background-image(27.66deg, #{$color2}, transparent 70.49%);
+          }
+        }
+      }
+
+      div.card-thumbnail__image {
+        &::before {
+          @include background-image(67.76deg, $color, transparent 61.11%);
+        }
+
+        @each $name2,
+        $color2 in $colors {
+
+          &.accent-#{$name2}::before,
+          &.#{$name2}::before {
+            @include background-image(67.76deg, #{$color2}, transparent 61.11%);
+          }
+        }
+      }
+    }
+  }
+
+  [dir='rtl'] {
+    .accent-#{$name} div.download-card {
+      &:hover {
+        div.publication-thumbnail__image {
+          &::after {
+            @include background-image(318deg, $color, transparent 70.49%);
+          }
+
+          @each $name2,
+          $color2 in $colors {
+
+            &.accent-#{$name2}:after,
+            &.#{$name2}:after {
+              @include background-image(318deg, #{$color2}, transparent 70.49%);
+            }
+          }
+        }
+
+        div.card-thumbnail__image {
+          &::before {
+            @include background-image(297deg, $color, transparent 61.11%);
+          }
+
+          @each $name2,
+          $color2 in $colors {
+
+            &.accent-#{$name}:before,
+            &.#{$name}:before {
+              @include background-image(297deg, #{$color2}, transparent 61.11%);
+            }
+          }
+        }
       }
     }
   }

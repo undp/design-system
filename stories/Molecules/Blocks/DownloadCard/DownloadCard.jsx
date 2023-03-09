@@ -6,13 +6,18 @@ import { Publicationthumb } from '../../../Atom/Cards/PublicationThumbnail/Publi
 import { Cardthumb } from '../../../Atom/Cards/CardThumbnail/CardThumbnail';
 
 export function DownloadCard({
-  image, image2, title, format, download, ...args
+  image,
+  image2,
+  title,
+  format,
+  download,
+  ...args
 }) {
   return (
     <div className="download-card">
       <a href="#">
-        {image && <Publicationthumb />}
-        {image2 && <Cardthumb image={image2} />}
+        {image && <Publicationthumb {...args} />}
+        {image2 && <Cardthumb image={image2} {...args} />}
         <div className="description">
           <p className="title">{title}</p>
           <p className="format">{format}</p>

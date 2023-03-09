@@ -55,46 +55,39 @@ export const globalTypes = {
     toolbar: {
       icon: 'globe',
       items: [
-        { value: 'english', title: 'English' },
+        { value: 'english', title: 'English', right: 'Default' },
         { value: 'arabic', title: 'Arabic' },
         { value: 'burmese', title: 'Burmese' },
         { value: 'japanese', title: 'Japanese' }
       ],
     },
   },
+  accent: {
+    name: 'Accent color',
+    description: 'Define the accent color.',
+    defaultValue: '',
+    toolbar: {
+      icon: 'paintbrush',
+      showName: true,
+      items: [
+        { value: '', title: 'Default accent', right: 'Default' },
+        { value: 'yellow', title: 'Yellow' },
+        { value: 'green', title: 'Green' },
+        { value: 'red', title: 'Red' },
+        { value: 'blue', title: 'Azure' },
+      ]
+    }
+  }
 };
-
-
-// addParameters({
-//   options: {
-//     /**
-//      * display the top-level grouping as a "root" in the sidebar
-//      * @type {Boolean}
-//      */
-//     showRoots: true,
-//     storySort: (previous, next) => {
-//       const [previousStory, previousMeta] = previous
-//       const [nextStory, nextMeta] = next
-
-//       return anysort(previousMeta.kind, nextMeta.kind, [
-//         'Getting started/**',
-//         'Foundation/**',
-//         'Components/**',
-//         'Patterns/**',
-//         'Utilities/**',
-//         'Templates/**'
-//       ])
-//     }
-//   },
-// })
 
 /**
  * Function to get current language code.
+ * 
  * @param {*} Story renders Stories in iFrame.
  * @param {*} context Current context for Addons.
  * @returns Current Language Code.
  */
-const getLangCode=(Story,context)=>{
+const getLangCode = (Story, context) => {
   let activeLang = context.globals.locale;
 
   // trigger onload event
@@ -177,5 +170,34 @@ const setDirection = (Story, options) => {
   )
 }
 
+/**
+ * Function to set a global "accent-COLOR" class to the body.
+ * 
+ * @param {*} Story renders Stories in iFrame.
+ * @param {*} context Current context for Addons.
+ * @returns Story with accent color processed.
+ */
+const setAccentClass = (Story, context) => {
+  let accent = context.globals.accent;
+  const bodyElem = document.querySelector('body');
+  
+  // Remove any prexisting accent-COLOR items so we can apply the most recent
+  // global selection.
+  bodyElem.classList.forEach((item) => {
+    if (item.startsWith('accent-')) {
+      bodyElem.classList.remove(item);
+    }
+  });
+  
+  if (Boolean(accent)) {
+    // Set accent class on body tag (the most parent of parents).
+    bodyElem.classList.add(`accent-${accent}`);
+  }
+  
+  return (
+    <Story {...context} />
+  )
+}
+
 // Trigger callback in Storybook Addons.
-export const decorators = [getLangCode, sbFrameReset, setDirection];
+export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass];

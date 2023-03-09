@@ -20,11 +20,11 @@ import {
   getSelectlanguage,
 } from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.mdx";
 import mongoliaGoat from "../../assets/images/Mongolia-cashmere-goats.jpg";
-import farmlandlg from '../../assets/images/farmland-lg.jpg';
-import farmlandmd from '../../assets/images/farmland-md.jpg';
-import farmlandsm from '../../assets/images/farmland-sm.jpg';
-import logo from '../../assets/images/undp-logo-blue.svg';
-import logowhite from '../../assets/images/undp-logo-white.svg';
+import farmlandlg from "../../assets/images/farmland-lg.jpg";
+import farmlandmd from "../../assets/images/farmland-md.jpg";
+import farmlandsm from "../../assets/images/farmland-sm.jpg";
+import logo from "../../assets/images/undp-logo-blue.svg";
+import logowhite from "../../assets/images/undp-logo-white.svg";
 
 export const getParaForLocale = (locale) => {
   switch (locale) {
@@ -54,8 +54,10 @@ export const getParaForLocale = (locale) => {
       return burmeseText;
     case "japanese":
       const japaneseText = {
-        para1: "プジェフン地区とモヤンバ地区の平和と社会の結束を促進するために、コミュニティは、平和構築基金が支援するマルチステークホルダープロジェクトで、シエラレオネ政府、国連開発計画（UNDP）、世界食糧計画（WFP）を80％以上獲得しています。",
-        para2: "最近、プジェフン地区のマレン首長とマクペレ首長、モヤンバ地区のロワーバンタとアッパーバンタの首長の居住者（若者、女性、首長、その他の地区および首長当局）が、シエラレオネ政府（GoSL）、UNDP、WFPマルチステークホルダープラットフォームを評価しました。 （MSP）平和と社会的結束を促進する資源ベースの地域紛争解決メカニズムとしてのプロジェクト「80％以上成功」。この発見は、UNDPの常駐代表であるDr.が率いるプロジェクトの首長への2日間のスポットチェック訪問中に、地区の利害関係者によって明らかにされました。サミュエル・ドウは、彼のチームが地域のメンバー、地域の地元および伝統的な指導者と協力して、プロジェクトの成果について学びました。",
+        para1:
+          "プジェフン地区とモヤンバ地区の平和と社会の結束を促進するために、コミュニティは、平和構築基金が支援するマルチステークホルダープロジェクトで、シエラレオネ政府、国連開発計画（UNDP）、世界食糧計画（WFP）を80％以上獲得しています。",
+        para2:
+          "最近、プジェフン地区のマレン首長とマクペレ首長、モヤンバ地区のロワーバンタとアッパーバンタの首長の居住者（若者、女性、首長、その他の地区および首長当局）が、シエラレオネ政府（GoSL）、UNDP、WFPマルチステークホルダープラットフォームを評価しました。 （MSP）平和と社会的結束を促進する資源ベースの地域紛争解決メカニズムとしてのプロジェクト「80％以上成功」。この発見は、UNDPの常駐代表であるDr.が率いるプロジェクトの首長への2日間のスポットチェック訪問中に、地区の利害関係者によって明らかにされました。サミュエル・ドウは、彼のチームが地域のメンバー、地域の地元および伝統的な指導者と協力して、プロジェクトの成果について学びました。",
       };
       return japaneseText;
     default:
@@ -176,6 +178,7 @@ The following components are used to create the “Article Page” template in t
 - Standard footer
 
 ### Performance
+
 - The page performance will be optimized by considering the following:
 - Lazy load
 - Use appropriate media renditions based on the client’s viewpoint.
@@ -184,6 +187,7 @@ The following components are used to create the “Article Page” template in t
 - Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
 
 ### Usage
+
 - Copy the HTML from the HTML tab of canvas and include CSS and JS file in ‘CSS and JS References’ section
 - Initialize the navigation, accordion, language switcher by calling below function.
   - navigationInitialize();
@@ -217,8 +221,8 @@ Add the base layout style from
 - https://undp.github.io/design-system/css/components/footer.min.css
 - https://undp.github.io/design-system/css/templates/article-page.min.css
 
-
 #### JS:
+
 - https://undp.github.io/design-system/js/animation.min.js
 - https://undp.github.io/design-system/js/navigation.min.js
 - https://undp.github.io/design-system/js/undp.min.js
@@ -227,6 +231,7 @@ Add the base layout style from
 - https://undp.github.io/design-system/js/viewport.min.js
 
 ### Changelog
+
 1.0 — Released component
 
 <Canvas>
@@ -234,8 +239,9 @@ Add the base layout style from
     name="Article"
     parameters={{
       layout: "fullscreen",
-    }}>
-    {(args, { globals: { locale } }) => {
+    }}
+  >
+    {(args, { globals: { locale, accent } }) => {
       const caption = PostHeadData(locale);
       const headingLabel = getHeadingCaptionForLocale(locale);
       const navigationData = getNavLinks(locale);
@@ -245,6 +251,7 @@ Add the base layout style from
       const rightNavigationData = navigationData.filter(
         (item) => item.position === "right"
       );
+      args.accent = accent;
       return (
         <ArticlePage
           featuredCardContent={featuredCardContent(locale)}
@@ -277,6 +284,7 @@ Add the base layout style from
           farmlandsm={farmlandsm}
           logo={logo}
           logowhite={logowhite}
+          {...args}
         ></ArticlePage>
       );
     }}
