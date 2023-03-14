@@ -100,7 +100,7 @@
     "svg-spritemap-webpack-plugin": "^4.5.0",
     "svgo": "^3.0.0",
     "svgo-loader": "^3.0.1",
-    "webpack": "^5.75.0",
+    "webpack": "^5.76.1",
     "webpack-cli": "^5.0.0",
     "webpack-fix-style-only-entries": "^0.6.1"
   },
