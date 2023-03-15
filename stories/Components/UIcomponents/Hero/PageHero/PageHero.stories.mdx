@@ -164,7 +164,11 @@ There are two states in the Full-width Page- Default and Mobile.
 2. Mobile: It consists of a vertical image with breadcrumbs, title and subtitles in the front of the image.
 
 <Canvas>
-  <Story name="Page hero - full-width">
+  <Story name="Page hero - full-width"
+  parameters={{
+    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+  }}
+>
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       const cta = { label: caption.cta, for_primary: "Arrow" };

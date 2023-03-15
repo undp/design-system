@@ -153,7 +153,11 @@ The Grey colored box with hover state indicates that the sidebar changes appeara
 
 
 <Canvas>
-<Story name="Sidebar">
+<Story name="Sidebar"
+  parameters={{
+    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+  }}
+>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (

@@ -179,7 +179,8 @@ On small screens, the mega menu is transitioning into an off-screen menu accessi
       docs: {
         inlineStories: false,
         iframeHeight: '100%'
-      }
+      },
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}>
     {(args, { globals: { locale } }) => {
     let lang = locale === 'en' ? 'english' : locale;

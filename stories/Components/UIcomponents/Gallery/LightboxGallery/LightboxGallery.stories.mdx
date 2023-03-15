@@ -272,7 +272,11 @@ View of a set of images in a row:
 When selected a specific image:
 
 <Canvas>
-<Story name="Lightbox gallery">
+<Story name="Lightbox gallery"
+  parameters={{
+    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+  }}
+>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <LightboxGallery

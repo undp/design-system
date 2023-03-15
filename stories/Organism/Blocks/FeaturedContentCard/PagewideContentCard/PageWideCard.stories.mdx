@@ -128,7 +128,11 @@ Default: It shows the title, paragraph, CTA link and image for Card with pagewid
 Hover: In hover state, when the mouse hovers over the Card, an image is displayed. The yellow color is displayed with the image.
 
 <Canvas>
-  <Story name="Pagewide featured content card">
+  <Story name="Pagewide featured content card"
+  parameters={{
+    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+  }}
+>
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
       return (
