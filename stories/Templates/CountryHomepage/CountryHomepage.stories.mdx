@@ -803,6 +803,7 @@ Add following external libraries
     name="Country homepage"
     parameters={{
       layout: "fullscreen",
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >
     {(args, { globals: { locale, accent } }) => {

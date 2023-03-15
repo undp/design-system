@@ -1459,6 +1459,7 @@ Add the base layout style from
     name="SDG page"
     parameters={{
       layout: "fullscreen",
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >
     {(args, { globals: { locale } }) => {
