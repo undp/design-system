@@ -32,6 +32,8 @@
         margin: 0;
         min-width: 18rem;
 
+        &.edge:focus>ul.sub-menu,
+        &.edge:focus-within>ul.sub-menu,
         &.edge:hover>ul.sub-menu,
         &.open.edge>ul.submenu {
           right: 100%;
@@ -63,6 +65,8 @@
       }
     }
 
+    &:focus,
+    &:focus-within,
     &:hover,
     &.open {
       >ul.submenu {
@@ -74,6 +78,8 @@
 
     ul.submenu {
 
+      li.menu-item:focus,
+      li.menu-item:focus-within,
       li.menu-item:hover,
       li.menu-item.open {
 
@@ -84,12 +90,16 @@
           left: 100%;
         }
 
+        &.edge:focus>ul.sub-menu,
+        &.edge:focus-within>ul.sub-menu,
         &.edge:hover>ul.sub-menu,
         &.edge>ul.submenu {
           right: 100%;
           left: unset;
         }
 
+        >a.menu-link:focus,
+        >a.menu-link:focus-within,
         >a.menu-link:hover,
         >a.menu-link,
         >a.menu-link.active {
@@ -119,6 +129,8 @@
 
         li.menu-item {
 
+          &:focus,
+          &:focus-within,
           &:hover,
           &.open {
             >ul.submenu {
@@ -135,6 +147,8 @@
           }
         }
 
+        li.menu-item:focus,
+        li.menu-item:focus-within,
         li.menu-item:hover,
         li.menu-item.open {
 
@@ -145,12 +159,16 @@
             right: 100%;
           }
 
+          &.edge:focus>ul.sub-menu,
+          &.edge:focus-within>ul.sub-menu,
           &.edge:hover>ul.sub-menu,
           &.edge>ul.submenu {
             left: 100%;
             right: unset;
           }
 
+          >a.menu-link:focus,
+          >a.menu-link:focus-within,
           >a.menu-link:hover,
           >a.menu-link,
           >a.menu-link.active {
@@ -196,6 +214,8 @@
         margin: 0;
         min-width: 18rem;
 
+        &.edge:focus>ul.sub-menu,
+        &.edge:focus-within>ul.sub-menu,
         &.edge:hover>ul.sub-menu,
         &.open.edge>ul.submenu {
           right: 100%;
@@ -230,6 +250,8 @@
       }
     }
 
+    &:focus,
+    &:focus-within,
     &:hover,
     &.open {
       >ul.submenu {
@@ -241,6 +263,8 @@
 
     ul.submenu {
 
+      li.menu-item:focus,
+      li.menu-item:focus-within,
       li.menu-item:hover,
       li.menu-item.open {
 
@@ -251,12 +275,16 @@
           left: 100%;
         }
 
+        &.edge:focus>ul.sub-menu,
+        &.edge:focus-within>ul.sub-menu,
         &.edge:hover>ul.sub-menu,
         &.edge>ul.submenu {
           right: 100%;
           left: unset;
         }
 
+        >a.menu-link:focus,
+        >a.menu-link:focus-within,
         >a.menu-link:hover,
         >a.menu-link,
         >a.menu-link.active {
@@ -274,6 +302,11 @@
   }
 }
 
+.menu__overflow__item {
+  position: absolute;
+  right: 0;
+  line-height: 0;
+}
 
 .menu__overflow__toggle {
   border: none;
@@ -289,7 +322,7 @@
 
   &:after {
     height: 1.25rem;
-    width: 1.75rem;
+    width: 1.25rem;
     content: '...';
     display: table;
     clear: both;

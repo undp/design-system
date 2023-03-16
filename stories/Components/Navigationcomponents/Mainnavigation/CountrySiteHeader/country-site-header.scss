@@ -36,10 +36,13 @@
         width: calc(100% - 64px);
       }
 
+      @include devicebreak(large) {}
+
       @include devicebreak(xlarge) {
         font-size: $font-size-20;
-        margin-right: $spacing-07;
-        width: 14.4375rem;
+        margin-right: auto;
+        width: auto;
+        //max-width: 212px;
       }
 
       span:first-of-type:not(:last-of-type) {
@@ -65,11 +68,15 @@
     .top-left {
       align-items: center;
       display: flex;
-      flex: 0 0 calc(66.66667% - 1.5rem);
+      //flex: 0 0 calc(66.66667% - 1.5rem);
+
+      @include devicebreak(large) {
+        max-width: 300px;
+      }
 
       @include devicebreak(xlarge) {
-        width: calc(66.66667% - 1.5rem);
-        flex: 0 0 calc(66.66667% - 1.5rem);
+        //width: calc(66.66667% - 1.5rem);
+        //flex: 0 0 calc(66.66667% - 1.5rem);
       }
 
       @include devicebreak(mediumonlytab) {
@@ -77,7 +84,7 @@
       }
 
       @include devicebreak(xlarge) {
-        width: calc(66.66667% - 1.5rem);
+        //width: calc(66.66667% - 1.5rem);
       }
 
       @include devicebreak(mediumonlytab) {
@@ -109,6 +116,7 @@
     }
 
     .align-content-middle {
+      display: flex;
       align-items: center;
       position: relative;
       justify-content: space-between;
@@ -125,7 +133,7 @@
       min-height: 7.1875rem;
       margin: auto;
       //overflow: hidden;
-      width: clamp(calc(3 * 128px), 100%, (4 * 128px));
+      //width: clamp(calc(3 * 128px), 100%, (4 * 128px));
       flex-shrink: 1;
       flex-grow: 0;
 
@@ -134,13 +142,13 @@
       }
 
       @include devicebreak(large) {
-        width: clamp(calc(3 * 128px), 100%, (4 * 128px));
-        margin: 0 2rem 0 auto;
+        //width: clamp(calc(3 * 128px), 100%, (4 * 128px));
+        margin: 0 auto;
       }
 
       @include devicebreak(xlarge) {
-        width: clamp(calc(3 * 144px), 100%, (4 * 144px));
-        margin: 0 2rem 0 auto;
+        //width: clamp(calc(3 * 144px), 100%, (4 * 144px));
+        margin: 0 auto;
       }
 
       ul {
@@ -149,7 +157,7 @@
         align-items: center;
         justify-content: space-evenly;
         flex-direction: row;
-        margin: 0 0 0 auto;
+        margin: 0 auto;
         position: relative;
 
         @include devicebreak(xlarge) {
@@ -161,7 +169,7 @@
         margin: 0;
         align-items: stretch;
         align-self: stretch;
-        width: 128px;
+        width: 144px;
         justify-content: center;
         display: flex;
 
@@ -188,59 +196,66 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      flex: 0 0 calc(33.33333% - 1.5rem);
+      margin-left: 4rem;
+      //flex: 0 0 calc(33.33333% - 1.5rem);
+
+      @include devicebreak(large) {
+        max-width: 400px;
+        min-width: 380px;
+      }
 
       @include devicebreak(xlarge) {
         box-sizing: border-box;
-        padding-right: $spacing-90;
-        width: calc(33.33333% - 1.5rem);
-        flex: 0 0 calc(33.33333% - 1.5rem);
-      }
-
-      .dropdown-language {
-        justify-self: flex-end;
-        display: flex;
-        align-items: center;
-
-        @include devicebreak(mediumonlytab) {
-          display: none;
-        }
-      }
-
-
-      .icon-search {
-        @extend %header-icon;
-
-        margin-left: $spacing-05;
-        -webkit-mask: url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
-        mask: url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
-
-        @include devicebreak(small) {
-          background: transparent url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
-        }
-      }
-
-      .icon-globe {
-        @extend %header-icon;
-
-        margin-left: 1.75rem;
-        -webkit-mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
-        mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
-
-        @include devicebreak(mediumonlytab) {
-          display: none;
-        }
-      }
-
-      .button {
-        margin-left: $spacing-05;
-        display: block;
-
-        @include devicebreak(mediumonlytab) {
-          display: none;
-        }
+        padding-right: $spacing-08;
+        //width: calc(33.33333% - 1.5rem);
+        //flex: 0 0 calc(33.33333% - 1.5rem);
       }
     }
+
+    .dropdown-language {
+      justify-self: flex-end;
+      display: flex;
+      align-items: center;
+
+      @include devicebreak(mediumonlytab) {
+        display: none;
+      }
+    }
+
+
+    .icon-search {
+      @extend %header-icon;
+
+      margin-left: $spacing-05;
+      -webkit-mask: url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
+      mask: url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
+
+      @include devicebreak(small) {
+        background: transparent url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
+      }
+    }
+
+    .icon-globe {
+      @extend %header-icon;
+
+      margin-left: 1.75rem;
+      -webkit-mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
+      mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
+
+      @include devicebreak(mediumonlytab) {
+        display: none;
+      }
+    }
+
+    .button {
+      margin-left: $spacing-05;
+      display: block;
+
+      @include devicebreak(mediumonlytab) {
+        display: none;
+      }
+    }
+
 
     .menu,
     .site-title,

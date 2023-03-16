@@ -44,7 +44,7 @@ function CountrySiteHeader({
       <section className="header">
         <div className="grid-container fluid">
           <div className="grid-x grid-margin-x align-content-middle">
-            <div className="cell large-9 small-8 align-self-middle top-left">
+            <div className="cell small-8 large-2 shrink align-self-middle top-left">
               <a href="#" className="logo" tabIndex="0" title="UNDP Logo homepage link">
                 <Logo src={pnud} alt="UNDP Logo" />
               </a>
@@ -54,6 +54,8 @@ function CountrySiteHeader({
                 )}
                 <span><a href="#" title="UNDP homepage link">{siteTitleData.span}</a></span>
               </div>
+            </div>
+            <div className="cell small-1 large-auto align-content-middle top-center">
               {menuType === 'dropdown' && (
                 <MenuMultiLevel data={menuData} locale={locale} multiLevel overflow {...args} />
               )}
@@ -67,7 +69,7 @@ function CountrySiteHeader({
                 </button>
               </div>
             </div>
-            <div className="cell large-3 small-3 top-right">
+            <div className="cell small-3 large-3 top-right">
               <Languageswitcher
                 data={languageswitcherData.languagedata}
                 headerText={languageswitcherData.headerText}

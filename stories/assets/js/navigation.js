@@ -298,10 +298,18 @@ export const navigationOverFlow = () => {
 
   /**
    * Trigger the overflow navigation setup.
-   * @param {*} menu_container_width
+   * @param {*} header_container_width
    */
-  function TriggerOverFlowFunctionality(menu_container_width) {
-    if (typeof (menu_container_width) === 'number') {
+  function TriggerOverFlowFunctionality(header_container_width) {
+    if (typeof (header_container_width) === 'number') {
+      // let header = jQuery('.header').width();
+      // jQuery('.header').css('width', header);
+      // let left = jQuery('.top-left').width();
+      // jQuery('.top-left').css('width', left);
+      // // let right = jQuery('.top-right').width();
+      // // jQuery('.top-right').css('width', right);
+
+      let menu_container_width = jQuery('.menu').width();
       // Adjust the menu_container_width to always allow at least 1 item, otherwise.
       // the math breaks.
       let width_of_single_item = $menu_items.width() ?? $menu_items.attr('data-item-width');
@@ -342,10 +350,14 @@ export const navigationOverFlow = () => {
   // be moved to overflow section.
   const observer = new ResizeObserver((items) => {
     for (const item of items) {
+      // Set the width of the menu, to the width of the parent.
+      let center = jQuery('.top-center').width();
+      jQuery('.menu').width(center - 40);
+
       TriggerOverFlowFunctionality(Math.floor(item.contentRect?.width));
     }
   });
-  if (jQuery('.menu').length !== 0) {
-    observer.observe(jQuery('.menu')[0], { box: 'border-box' });
+  if (jQuery('.header').length !== 0) {
+    observer.observe(jQuery('.header')[0], { box: 'border-box' });
   }
 };
