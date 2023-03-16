@@ -458,6 +458,7 @@ Add following external libraries
     name="Generic page"
     parameters={{
       layout: "fullscreen",
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >
     {(args, { globals: { locale, accent } }) => {

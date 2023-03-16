@@ -304,6 +304,7 @@ Inverted : In the state the footer has white background and the text will be in 
     name="Footer"
     parameters={{
       layout: "fullscreen",
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >
     {(args, { globals: { locale } }) => {

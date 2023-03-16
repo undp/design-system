@@ -241,7 +241,11 @@ There are two states in the wide Image homepage- Default and Mobile.
 2. Mobile:  It consists of title and subtitle in the top, image below it and the chip in the bottom of the grid.
 
 <Canvas>
-<Story name="Homepage hero - wide image">
+<Story name="Homepage hero - wide image"
+  parameters={{
+    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+  }}
+>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (
