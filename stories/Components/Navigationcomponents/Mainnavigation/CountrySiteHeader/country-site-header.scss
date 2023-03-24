@@ -68,6 +68,7 @@
     .top-left {
       align-items: center;
       display: flex;
+      order: 1;
       //flex: 0 0 calc(66.66667% - 1.5rem);
 
       @include devicebreak(large) {
@@ -113,6 +114,10 @@
           @extend %logo;
         }
       }
+    }
+
+    .top-center {
+      order: 2;
     }
 
     .align-content-middle {
@@ -172,6 +177,10 @@
         width: 144px;
         justify-content: center;
         display: flex;
+        min-width: 100px;
+        width: auto;
+        word-break: keep-all;
+        white-space: nowrap;
 
         @include devicebreak(xlarge) {
           margin: 0;
@@ -197,6 +206,7 @@
       justify-content: flex-end;
       align-items: center;
       margin-left: 4rem;
+      order: 3;
       //flex: 0 0 calc(33.33333% - 1.5rem);
 
       @include devicebreak(large) {
@@ -323,6 +333,7 @@
     }
 
     .top-right {
+
       @include devicebreak(xlarge) {
         padding-left: $spacing-90;
         padding-right: 0;
@@ -356,39 +367,3 @@
     }
   }
 }
-
-
-
-
-
-// Priority nav styling
-// .country-header .header {
-//   // .menu {
-//   //   //max-width: 65%;
-//   //   margin: 0 auto 0 2rem;
-
-//   //   @include devicebreak(xlarge) {
-//   //     margin: 0 auto;
-//   //   }
-//   // }
-
-
-
-// }
-
-// [dir='rtl'] {
-//   .country-header .header {
-//     // .menu {
-//     //   //max-width: 65%;
-//     //   margin: 0 2rem 0 auto;
-
-//     //   @include devicebreak(xlarge) {
-//     //     margin: 0 auto;
-//     //   }
-//     // }
-//   }
-// }
-
-
-
-// End - Priority nav styling

@@ -302,12 +302,11 @@ export const navigationOverFlow = () => {
    */
   function TriggerOverFlowFunctionality(header_container_width) {
     if (typeof (header_container_width) === 'number') {
-      // let header = jQuery('.header').width();
-      // jQuery('.header').css('width', header);
-      // let left = jQuery('.top-left').width();
-      // jQuery('.top-left').css('width', left);
-      // // let right = jQuery('.top-right').width();
-      // // jQuery('.top-right').css('width', right);
+      // let menu_container_width = jQuery('.menu').attr('data-item-width');
+      // let total_item_width = 0;
+      // $menu_items.each(function (index) {
+      //   total_item_width += parseInt($(this).width(), 10);
+      // });
 
       let menu_container_width = jQuery('.menu').width();
       // Adjust the menu_container_width to always allow at least 1 item, otherwise.

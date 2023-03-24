@@ -64,10 +64,14 @@ function CountrySiteHeader({
               )}
               {/* Need to generate this in jquery */}
               <div className="menu__overflow__item hidden">
-                <button className="menu__overflow__toggle hidden" aria-hidden="true" aria-controls="navigation-dropdown" aria-label="Menu overflow">
+                <button className="menu__overflow__toggle hidden" aria-hidden="true" aria-controls="navigation-dropdown" aria-label="Menu overflow" tabIndex="0">
                   <span className="hidden">Menu toggle</span>
                 </button>
               </div>
+            </div>
+            {/* Need to generate this in jquery */}
+            <div className="grid-container full menu__overflow__container hidden">
+              <ul className="dropdown" />
             </div>
             <div className="cell small-3 large-3 top-right">
               <Languageswitcher
@@ -101,10 +105,7 @@ function CountrySiteHeader({
             />
           </div>
         </div>
-        {/* Need to generate this in jquery */}
-        <div className="grid-container full menu__overflow__container hidden">
-          <ul className="dropdown" />
-        </div>
+
       </section>
       {menuType === 'mega_menu' && (
         <div className="mega-wrapper">
