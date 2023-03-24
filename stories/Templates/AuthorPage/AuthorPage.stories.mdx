@@ -638,6 +638,7 @@ Add the base layout style from
     name="Author detail"
     parameters={{
       layout: "fullscreen",
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >
     {(args, { globals: { locale, accent } }) => {

@@ -258,7 +258,11 @@ The Page Hero Card consists of text in the topmost part of the card and images i
 There is only one default state for the page hero card.
 
 <Canvas>
-  <Story name="Page hero - cards">
+  <Story name="Page hero - cards"
+  parameters={{
+    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+  }}
+>
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return (

@@ -244,6 +244,7 @@ There are three states: Default, Tablet, and Mobile.
         inlineStories: false,
         iframeHeight: "100%",
       },
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >
     {(args, { globals: { locale, accent } }) => {

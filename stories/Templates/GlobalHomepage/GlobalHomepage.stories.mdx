@@ -678,6 +678,7 @@ Add following external libraries
     name="Global homepage"
     parameters={{
       layout: "fullscreen",
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >
     {(args, { globals: { locale, accent } }) => {

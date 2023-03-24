@@ -39,5 +39,9 @@ module.exports = {
     });
     return config;
   },
-  framework: "@storybook/react"
+  framework: "@storybook/react",
+  env: (config) => ({
+    ...config,
+    CHROMATIC_VIEWPORTS: [375, 768, 1380, 1920],
+  }),
 };
