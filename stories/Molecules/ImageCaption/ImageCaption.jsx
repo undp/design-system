@@ -15,9 +15,12 @@ export const credit_options = {
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
-export const Imagecaption = ({
-  label, paragraph, opacityOnly, ...args
-}) => {
+export function Imagecaption({
+  label,
+  paragraph,
+  opacityOnly,
+  ...args
+}) {
   let opacityonly = '';
   if (opacityOnly === 'yes') {
     opacityonly = 'opacity-only';
@@ -26,25 +29,21 @@ export const Imagecaption = ({
   let caption_variant = caption_options[`${args.caption}`];
   let credit_variant = credit_options[`${args.credit}`];
 
+  if (args.caption === 'true' || args.credit === 'true') {
+    return (
+      <figcaption className={cls('image__caption', `${opacityonly}`, `${caption_variant}`, `${credit_variant}`)} data-viewport="true">
+        {args.caption === 'true' && (<P label={paragraph} />)}
+        {args.credit === 'true' && <Imagecredit label={label} name={name} />}
+      </figcaption>
+    );
+  }
+
   return (
-    <>
-      {args.caption === 'false' && args.credit === 'false' ? (
-        <></>
-      ) : (
-        <figcaption className={cls('image__caption', `${opacityonly}`, `${caption_variant}`, `${credit_variant}`)} data-viewport='true'>
-          {args.caption === 'true' && (
-          <P label={paragraph} />
-
-          )}
-          {args.credit === 'true' && <Imagecredit label={label} name={name} />}
-        </figcaption>
-      )}
-    </>
+    false
   );
-};
+}
 
-Imagecaption.defaultProps = {
+Imagecaption.args = {
   caption: 'true',
   credit: 'true',
 };
-
