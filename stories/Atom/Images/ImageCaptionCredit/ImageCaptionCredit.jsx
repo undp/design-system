@@ -18,8 +18,8 @@ export function Images({
   const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
   return (
-    <figure data-viewport="true" className={cls('image-figcaption', `${size}`)}>
-      <div data-viewport="true" className="image-figcaption__cart scale-up">
+    <figure data-viewport="true" className={cls(`${size}`)}>
+      <div data-viewport="true" className="scale-up">
         {args.size === 'wide' && <img src={imagelg} alt={alt} />}
         {args.size === 'medium' && <img src={imagemd} alt={alt} />}
         {args.size === 'portrait' && <img src={imagesm} alt={alt} />}
@@ -28,9 +28,3 @@ export function Images({
     </figure>
   );
 }
-
-Images.args = {
-  size: 'wide',
-  caption: 'true',
-  credit: 'true',
-};

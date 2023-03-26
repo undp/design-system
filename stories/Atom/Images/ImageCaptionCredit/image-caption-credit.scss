@@ -3,31 +3,34 @@
 @import '../../../assets/scss/base';
 
 /* image with caption start */
-.image {
-  &-figcaption {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
+figure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+
+  >div {
     width: 100%;
+  }
 
-    .image-figcaption__cart {
+  img {
+    width: 100%;
+  }
+
+  figcaption {
+    margin: $spacing-05 $spacing-06 $spacing-07;
+    line-height: 1.4;
+
+    @include devicebreak(medium) {
+      margin: $spacing-07 0 $spacing-07;
       width: 100%;
-    }
-
-    .image__caption {
-      margin: $spacing-05 $spacing-06 $spacing-07;
-
-      @include devicebreak(medium) {
-        margin: $spacing-07 0 $spacing-07;
-        width: 100%;
-        max-width: 64rem;
-      }
+      max-width: 64rem;
     }
   }
 }
 
-.image-figcaption.medium {
+figure.medium {
   flex-wrap: wrap;
   flex-direction: column;
   max-width: 64rem;
@@ -38,17 +41,22 @@
     margin: 0 auto;
     width: 100%;
 
-    .image-figcaption__cart {
+    >div {
       width: 100%;
     }
 
-    .image__caption {
+    img {
+      max-width: 100%;
+    }
+
+    figcaption {
       width: 100%;
+      line-height: 1.4;
     }
   }
 }
 
-.image-figcaption.portrait {
+figure.portrait {
   align-items: flex-end;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -59,19 +67,22 @@
   @include devicebreak(medium) {
     flex-direction: row;
 
-    .image-figcaption__cart {
+    img {
+      width: 100%;
+    }
+
+    >div,
+    >img {
       width: 50%;
     }
 
-    .image__caption {
+    figcaption {
       display: block;
       margin: 0 0 0 $spacing-06;
       padding-bottom: 0;
       width: 50%;
 
       p {
-        font-size: $font-size-14;
-        line-height: 1.4;
         margin-bottom: $spacing-05;
         padding: 0;
 
@@ -106,11 +117,9 @@
 
 @include devicebreak(medium) {
   [dir='rtl'] {
-    .image-figcaption.portrait {
-      .image {
-        &__caption {
-          margin: 0 $spacing-06 0 0;
-        }
+    figure.portrait {
+      figcaption {
+        margin: 0 $spacing-06 0 0;
       }
 
       .credits {

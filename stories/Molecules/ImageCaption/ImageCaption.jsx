@@ -31,9 +31,9 @@ export function Imagecaption({
 
   if (args.caption === 'true' || args.credit === 'true') {
     return (
-      <figcaption className={cls('image__caption', `${opacityonly}`, `${caption_variant}`, `${credit_variant}`)} data-viewport="true">
+      <figcaption className={cls(`${opacityonly}`, `${caption_variant}`, `${credit_variant}`)} data-viewport="true">
         {args.caption === 'true' && (<P label={paragraph} />)}
-        {args.credit === 'true' && <Imagecredit label={label} name={name} />}
+        {args.credit === 'true' && <Imagecredit label={label} />}
       </figcaption>
     );
   }
@@ -43,7 +43,7 @@ export function Imagecaption({
   );
 }
 
-Imagecaption.args = {
+Imagecaption.defaultProps = {
   caption: 'true',
   credit: 'true',
 };
