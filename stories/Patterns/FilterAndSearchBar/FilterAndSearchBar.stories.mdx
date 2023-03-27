@@ -57,12 +57,21 @@ export const getCaptionForActiveLocale = (locale) => {
 };
 
 export const getButtonForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {close:'Close', sort:'Search and filter'}; return engText;
-    case 'arabic': const arabicText = {close:'قريب', sort:'البحث والتصفية'}; return arabicText;
-    case 'burmese': const burmeseText = {close:'ပိတ်လိုက်', sort:'ရှာဖွေပြီး စစ်ထုတ်ပါ။'}; return burmeseText;
-    case 'japanese': const japaneseText = {close:'選ぶ', sort:'検索とフィルタリング'}; return japaneseText;
-    default: return {close:'Close', sort:'Search and filter'};
+  switch (locale) {
+    case "english":
+      const engText = { close: "Close", sort: "Search and filter" };
+      return engText;
+    case "arabic":
+      const arabicText = { close: "قريب", sort: "البحث والتصفية" };
+      return arabicText;
+    case "burmese":
+      const burmeseText = { close: "ပိတ်လိုက်", sort: "ရှာဖွေပြီး စစ်ထုတ်ပါ။" };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = { close: "選ぶ", sort: "検索とフィルタリング" };
+      return japaneseText;
+    default:
+      return { close: "Close", sort: "Search and filter" };
   }
 };
 
@@ -91,9 +100,10 @@ l
 When filters are to be added to the search bar.
 
 ### Formatting
-#### Default
-The search bar is rectangular shaped with a search icon. The active filters are chips with a cross.
 
+#### Default
+
+The search bar is rectangular shaped with a search icon. The active filters are chips with a cross.
 
 ### Behaviors
 
@@ -125,9 +135,22 @@ Select: The search bar having a horizontal line below the search icon indicates 
 </Canvas>
 
 ### Usage:
+
 - Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
 - Initialize the search, multi-select and filter by calling functions expandSearch(), multiSelect(), toggleFilter() respectively.
-
+- Available events:
+  - A checkbox in the multi-select is toggled on or off:
+    ```
+    $(...).on('filterSearchMultiSelectToggle', ...)
+    ```
+  - A Search chip is removed:
+    ```
+    $(...).on('filterSearchChipRemoval', ...)
+    ```
+  - The Search clear all link is clicked:
+    ```
+    $(...).on('filterSearchClear', ...)
+    ```
 
 ### CSS and JS References
 
@@ -144,14 +167,17 @@ Add the base layout style from
 - https://undp.github.io/design-system/css/components/chips.min.css
 
 #### JS:
+
 - https://undp.github.io/design-system/js/filter-seach-bar.min.js
 - https://undp.github.io/design-system/js/multi-select.min.js
 - https://undp.github.io/design-system/js/expand-search.min.js
 
 ### Interactions
+
 - The checked state is applied to the entire option.
 - The hover state is applied to the entire option.
 - By clicking on the X icon, the filters are removed.
 
 ### Changelog
+
 1.0 — Released component
