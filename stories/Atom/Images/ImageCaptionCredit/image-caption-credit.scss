@@ -60,7 +60,6 @@ figure.portrait {
   align-items: flex-end;
   flex-wrap: nowrap;
   flex-direction: column;
-  max-width: 64rem;
   margin-left: auto;
   margin-right: auto;
 
@@ -81,6 +80,7 @@ figure.portrait {
       margin: 0 0 0 $spacing-06;
       padding-bottom: 0;
       width: 50%;
+      max-width: 64rem;
 
       p {
         margin-bottom: $spacing-05;

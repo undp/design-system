@@ -30,8 +30,17 @@ export function Imagecaption({
   let credit_variant = credit_options[`${args.credit}`];
 
   if (args.caption === 'true' || args.credit === 'true') {
+    if (args.animation === 'true') {
+      return (
+        <figcaption className={cls(`${opacityonly}`, `${caption_variant}`, `${credit_variant}`)} data-viewport="true">
+          {args.caption === 'true' && (<P label={paragraph} />)}
+          {args.credit === 'true' && <Imagecredit label={label} />}
+        </figcaption>
+      );
+    }
+
     return (
-      <figcaption className={cls(`${opacityonly}`, `${caption_variant}`, `${credit_variant}`)} data-viewport="true">
+      <figcaption>
         {args.caption === 'true' && (<P label={paragraph} />)}
         {args.credit === 'true' && <Imagecredit label={label} />}
       </figcaption>
@@ -43,7 +52,8 @@ export function Imagecaption({
   );
 }
 
-Imagecaption.defaultProps = {
+Imagecaption.args = {
   caption: 'true',
   credit: 'true',
+  animation: 'false',
 };
