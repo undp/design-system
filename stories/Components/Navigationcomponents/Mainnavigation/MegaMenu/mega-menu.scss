@@ -138,7 +138,7 @@
     color: #000;
     font-size: 0;
     height: $spacing-08;
-    opacity: 0;
+    opacity: 0.3;
     position: absolute;
     right: 0.625rem;
     top: 0.625rem;
@@ -146,6 +146,7 @@
     z-index: 9;
   }
 
+  .show-on-focus:hover,
   .show-on-focus:focus {
     opacity: 1;
   }

@@ -17,7 +17,8 @@ import './country-site-header.scss';
 import '../../../../assets/scss/_grid.scss';
 import '../../../../assets/js/lazyload';
 import '../../../../Utilities/FrostedImage/frosted-background.scss';
-import menuJsonData from '../../../../assets/js/navigation-data.json';
+import menuJsonDefaultData from '../../../../assets/js/navigation-data.json';
+import menuJsonDropDownData from '../../../../assets/js/navigation-dropdown-data.json';
 
 function CountrySiteHeader({
   languageswitcherData,
@@ -36,7 +37,7 @@ function CountrySiteHeader({
     navigationMultiLevelEdgeDetection();
   }, [locale, args.menu_type]);
   const menuType = args.menu_type === 'Mega menu' || typeof (args.menu_type) == 'undefined' ? 'mega_menu' : 'dropdown';
-  const menuData = typeof (args.menu_type) == 'undefined' ? navigationData : menuJsonData;
+  const menuData = typeof (args.menu_type) == 'undefined' ? navigationData : menuJsonDefaultData;
   const overflow = args.menu_type === 'Multi-level dropdown';
   const multiLevel = args.menu_type === 'Multi-level dropdown';
   return (
@@ -57,21 +58,11 @@ function CountrySiteHeader({
             </div>
             <div className="cell small-1 large-auto align-content-middle top-center">
               {menuType === 'dropdown' && (
-                <MenuMultiLevel data={menuData} locale={locale} multiLevel overflow {...args} />
+                <MenuMultiLevel data={menuJsonDropDownData} locale={locale} multiLevel overflow {...args} />
               )}
               {menuType === 'mega_menu' && (
                 <Menu data={menuData} type={menuType} locale={locale} overflow {...args} />
               )}
-              {/* Need to generate this in jquery */}
-              <div className="menu__overflow__item hidden">
-                <button className="menu__overflow__toggle hidden" aria-hidden="true" aria-controls="navigation-dropdown" aria-label="Menu overflow" tabIndex="0">
-                  <span className="hidden">Menu toggle</span>
-                </button>
-              </div>
-            </div>
-            {/* Need to generate this in jquery */}
-            <div className="grid-container full menu__overflow__container hidden">
-              <ul className="dropdown" />
             </div>
             <div className="cell small-3 large-3 top-right">
               <Languageswitcher
@@ -93,6 +84,10 @@ function CountrySiteHeader({
                   Icon="No Arrow"
                 />
               )}
+            </div>
+            {/* Need to generate this in jquery */}
+            <div className="grid-container full menu__overflow__container hidden">
+              <ul className="dropdown" />
             </div>
             <MobileNav
               navigationData={navigationData}

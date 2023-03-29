@@ -8,14 +8,25 @@
   margin-top: 7.1875rem;
 }
 
+// 1st level
 .menu ul.dropdown {
   display: flex;
 
-  >li.menu-item {
+  // 1st level items
+  >li {
     position: relative;
-    display: flex;
-    justify-content: center;
+    display: block;
+    text-align: center;
 
+    &.menu__overflow__item {
+      line-height: 0;
+      width: 3rem;
+      min-width: 3rem;
+      max-width: 3rem;
+      order: 100;
+    }
+
+    // 2nd level
     ul.submenu {
       @extend %frosted-bg;
       box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
@@ -25,12 +36,20 @@
       z-index: 10;
       flex-direction: column;
       display: none;
+      width: 18rem;
 
-      li.menu-item {
+      // 2nd level items
+      li {
+        display: block;
+        width: 100%;
+        text-align: left;
         position: relative;
         padding: 0;
         margin: 0;
-        min-width: 18rem;
+        transition: 0.2s ease;
+        word-break: keep-all;
+        white-space: wrap;
+        letter-spacing: normal;
 
         &.edge:focus>ul.sub-menu,
         &.edge:focus-within>ul.sub-menu,
@@ -40,31 +59,45 @@
           left: unset;
         }
 
-        a.menu-link {
+        a {
+          display: flex;
+          width: auto;
           transition: 0.2s ease;
-          line-height: 112.5%;
-          width: 100%;
           padding: 1.25rem;
+          column-gap: 1rem;
+          justify-content: space-between;
+          align-items: center;
+          line-height: 1.25;
           font-size: 1rem;
           font-weight: normal;
           text-transform: none;
+          text-align: left;
           border-bottom: 1px solid #d4d6d8;
         }
 
         &.has-submenu>a:after {
           transition: 0.2s ease;
-          background: url(#{$img-path-Iconfourback}/chevron-right.svg) no-repeat left center;
+          background: url(#{$img-path-Iconfourback}/chevron-right.svg) no-repeat right center;
           content: "";
           height: 18px;
           margin-left: 0.75rem;
-          width: 12px;
+          min-width: 20px;
           display: flex;
           margin-left: auto;
           color: $color-dark-red;
         }
+
+        >a.external .external-link-animated {
+          min-width: 0.75rem;
+        }
+
+        >a.external .download-animated {
+          min-width: 1.25rem;
+        }
       }
     }
 
+    // hover/focus on first level items
     &:focus,
     &:focus-within,
     &:hover,
@@ -72,20 +105,23 @@
       >ul.submenu {
         position: absolute;
         display: flex;
-        flex-direction: column;
       }
     }
 
     ul.submenu {
 
-      li.menu-item:focus,
-      li.menu-item:focus-within,
-      li.menu-item:hover,
-      li.menu-item.open {
+      li:focus,
+      li:focus-within,
+      li:hover,
+      li.open {
+        transition: 0.2s ease;
+        background: $color-blue-600;
+        color: $color-white;
 
         >ul.submenu {
           position: absolute;
-          display: block;
+          display: flex;
+          flex-direction: column;
           top: 0%;
           left: 100%;
         }
@@ -98,19 +134,56 @@
           left: unset;
         }
 
-        >a.menu-link:focus,
-        >a.menu-link:focus-within,
-        >a.menu-link:hover,
-        >a.menu-link,
-        >a.menu-link.active {
-          transition: 0.2s ease;
-          background: $color-blue-600;
+
+        >a:focus,
+        >a:focus-within,
+        >a:hover,
+        >a,
+        >a.active {
           color: $color-white;
         }
 
-        &.has-submenu>a.menu-link.active:after,
-        &.has-submenu>a.menu-link:after {
-          background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
+        >a:not(.external, .download) {
+          padding-right: .75rem;
+        }
+
+        &.has-submenu>a.active:after,
+        &.has-submenu>a:after {
+          background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat right center;
+        }
+
+        >a.external .external-link-animated {
+          box-shadow: -2px 2px 0 0 $color-white, -4px 0 0 -2px $color-white, -3px 3px 0 -1px $color-white;
+
+          &:before {
+            transition: transform 0.2s;
+            background-color: $color-white;
+          }
+
+          &:after {
+            transition: transform 0.2s;
+            border-right: 2px solid $color-white;
+            border-top: 2px solid $color-white;
+          }
+        }
+
+        >a.download .download-animated {
+          &:before {
+            transition: transform 0.2s;
+            background-color: $color-white;
+          }
+
+          i {
+            transition: transform 0.2s;
+            border: 2px solid $color-white;
+            border-top: 0;
+          }
+
+          &:after {
+            transition: transform 0.2s;
+            border-bottom: 2px solid $color-white;
+            border-left: 2px solid $color-white;
+          }
         }
       }
     }
@@ -120,14 +193,14 @@
 [dir='rtl'] {
   .menu ul.dropdown {
 
-    >li.menu-item {
+    >li {
 
       ul.submenu {
         padding: 0;
         left: unset;
         right: 0;
 
-        li.menu-item {
+        li {
 
           &:focus,
           &:focus-within,
@@ -147,10 +220,10 @@
           }
         }
 
-        li.menu-item:focus,
-        li.menu-item:focus-within,
-        li.menu-item:hover,
-        li.menu-item.open {
+        li:focus,
+        li:focus-within,
+        li:hover,
+        li.open {
 
           >ul.submenu {
             position: absolute;
@@ -167,18 +240,18 @@
             right: unset;
           }
 
-          >a.menu-link:focus,
-          >a.menu-link:focus-within,
-          >a.menu-link:hover,
-          >a.menu-link,
-          >a.menu-link.active {
+          >a:focus,
+          >a:focus-within,
+          >a:hover,
+          >a,
+          >a.active {
             transition: 0.2s ease;
             background: $color-blue-600;
             color: $color-white;
           }
 
-          &.has-submenu>a.menu-link.active:after,
-          &.has-submenu>a.menu-link:after {
+          &.has-submenu>a.active:after,
+          &.has-submenu>a:after {
             background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
           }
         }
@@ -192,7 +265,7 @@
   order: 12;
   width: 100%;
 
-  >li.menu-item {
+  >li {
     position: relative;
     display: flex;
     justify-content: center;
@@ -210,7 +283,7 @@
       margin: 0;
       list-style-type: none;
 
-      li.menu-item {
+      li {
         position: relative;
         padding: 0;
         margin: 0;
@@ -224,7 +297,7 @@
           left: unset;
         }
 
-        a.menu-link {
+        a {
           transition: 0.2s ease;
           line-height: 112.5%;
           width: auto;
@@ -265,10 +338,10 @@
 
     ul.submenu {
 
-      li.menu-item:focus,
-      li.menu-item:focus-within,
-      li.menu-item:hover,
-      li.menu-item.open {
+      li:focus,
+      li:focus-within,
+      li:hover,
+      li.open {
 
         >ul.submenu {
           position: absolute;
@@ -285,29 +358,23 @@
           left: unset;
         }
 
-        >a.menu-link:focus,
-        >a.menu-link:focus-within,
-        >a.menu-link:hover,
-        >a.menu-link,
-        >a.menu-link.active {
+        >a:focus,
+        >a:focus-within,
+        >a:hover,
+        >a,
+        >a.active {
           transition: 0.2s ease;
           background: $color-blue-600;
           color: $color-white;
         }
 
-        &.has-submenu>a.menu-link.active:after,
-        &.has-submenu>a.menu-link:after {
+        &.has-submenu>a.active:after,
+        &.has-submenu>a:after {
           background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
         }
       }
     }
   }
-}
-
-.menu__overflow__item {
-  position: absolute;
-  right: 0;
-  line-height: 0;
 }
 
 .menu__overflow__toggle {
@@ -360,6 +427,7 @@
   background-color: $color-gray-200;
   box-shadow: 0 3px 6px rgb(0 0 0 / 10%);
   order: 100;
+  min-width: 100%;
 
   @include devicebreak(mediumonlytab) {
     display: none;
@@ -394,10 +462,19 @@
         font-size: 0.875rem;
         text-transform: uppercase;
         height: 4.125rem;
+        color: $color-black;
+      }
+
+      &.edge:focus>ul.sub-menu,
+      &.edge:focus-within>ul.sub-menu,
+      &.edge:hover>ul.sub-menu,
+      &.edge>ul.submenu {
+        right: 100%;
+        left: unset;
       }
 
       &:hover {
-        a {
+        >a {
           color: #55606e;
         }
       }

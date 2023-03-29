@@ -229,7 +229,7 @@ export const navigationMultiLevelEdgeDetection = () => {
   // Change the side it renders on, if it will go off screen, by
   // adding the "edge" class. The formula to determine changes for
   // the language direction.
-  jQuery('.menu ul.dropdown li.menu-item').on('mouseenter mouseleave', 'li.menu-item', function (e) {
+  jQuery('ul.dropdown li').on('mouseenter mouseleave', 'li', function (e) {
     let $this = jQuery(this);
     $this.removeClass('edge');
     if (jQuery('ul.submenu', $this).length) {

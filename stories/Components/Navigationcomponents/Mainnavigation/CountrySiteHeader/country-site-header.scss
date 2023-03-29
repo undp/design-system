@@ -136,9 +136,7 @@
       align-self: stretch;
       display: flex;
       min-height: 7.1875rem;
-      margin: auto;
-      //overflow: hidden;
-      //width: clamp(calc(3 * 128px), 100%, (4 * 128px));
+      margin: 0;
       flex-shrink: 1;
       flex-grow: 0;
 
@@ -147,16 +145,14 @@
       }
 
       @include devicebreak(large) {
-        //width: clamp(calc(3 * 128px), 100%, (4 * 128px));
-        margin: 0 auto;
+        margin: 0;
       }
 
       @include devicebreak(xlarge) {
-        //width: clamp(calc(3 * 144px), 100%, (4 * 144px));
-        margin: 0 auto;
+        margin: 0;
       }
 
-      ul {
+      >ul {
         display: flex;
         column-gap: 0; //$spacing-06;
         align-items: center;
@@ -168,36 +164,39 @@
         @include devicebreak(xlarge) {
           column-gap: 0; //$spacing-07;
         }
+
+        >li {
+          margin: 0;
+          align-items: stretch;
+          align-self: stretch;
+          width: 144px;
+          justify-content: center;
+          display: flex;
+          word-break: keep-all;
+
+          @include devicebreak(xlarge) {
+            margin: 0;
+            width: 144px;
+          }
+
+          &:first-of-type {
+            margin-left: 0;
+          }
+
+          >a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1.75rem;
+            text-align: center;
+            width: 100%;
+            white-space: nowrap;
+          }
+        }
       }
 
-      li {
-        margin: 0;
-        align-items: stretch;
-        align-self: stretch;
-        width: 144px;
-        justify-content: center;
-        display: flex;
-        min-width: 100px;
-        width: auto;
-        word-break: keep-all;
-        white-space: nowrap;
-
-        @include devicebreak(xlarge) {
-          margin: 0;
-          width: 144px;
-        }
-
-        &:first-of-type {
-          margin-left: 0;
-        }
-
-        a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0 1rem;
-          text-align: center;
-        }
+      &.menu__overflow__container>ul {
+        margin: 0 auto;
       }
     }
 
@@ -205,9 +204,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      margin-left: 4rem;
       order: 3;
-      //flex: 0 0 calc(33.33333% - 1.5rem);
 
       @include devicebreak(large) {
         max-width: 400px;
@@ -217,8 +214,6 @@
       @include devicebreak(xlarge) {
         box-sizing: border-box;
         padding-right: $spacing-08;
-        //width: calc(33.33333% - 1.5rem);
-        //flex: 0 0 calc(33.33333% - 1.5rem);
       }
     }
 
@@ -231,7 +226,6 @@
         display: none;
       }
     }
-
 
     .icon-search {
       @extend %header-icon;

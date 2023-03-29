@@ -33,7 +33,7 @@ function MenuMultiLevel({
   if (!multiLevel) {
     return (
       <nav className="menu" role={role} aria-label={arialabel}>
-        <ul className="dropdown">
+        <ul>
           {menuData.map((item, idx) => (
             <li key={idx} data-menu-id={item.id}>
               <MenuItems text={item.label} />
@@ -47,6 +47,12 @@ function MenuMultiLevel({
   return (
     <nav className="menu" role={role} aria-label={arialabel}>
       <ul className="dropdown" data-dropdown-menu>
+        {/* Need to generate this in jquery */}
+        <li className="menu__overflow__item hidden">
+          <button className="menu__overflow__toggle hidden" aria-hidden="true" aria-controls="navigation-dropdown" aria-label="Menu overflow" tabIndex="0">
+            <span className="hidden">Menu toggle</span>
+          </button>
+        </li>
         {menuData.map((menuLevel, idx) => (
           <MenuLevel data={menuLevel} key={idx} level="1" {...args} />
         ))}
@@ -78,18 +84,23 @@ function MenuLevel({
 
   const label = data?.title ?? data?.label;
   const menu_id = data?.id ?? data?.link?.id;
+  const link_type = data?.type ?? data?.link?.type ?? '';
 
   if (submenu && submenu.length > 0) {
     return (
-      <li className="menu-item has-submenu" role="none" data-menu-id={menu_id}>
+      <li className={['has-submenu'].join(' ')}>
         <a href={data?.url ?? '#'}
-          className="menu-link"
+          className={[link_type].join(' ')}
           tabIndex="0"
-          aria-haspopup="true"
           aria-expanded="true"
-          data-menu-id={menu_id}
         >
           {label}
+          {link_type == 'external' && (
+            <span className="external-link-animated"><i /></span>
+          )}
+          {link_type == 'download' && (
+            <span className="download-animated"><i /></span>
+          )}
         </a>
         <ul className="submenu" data-submenu>
           {submenu.map((subdata, idx) => (
@@ -101,9 +112,15 @@ function MenuLevel({
   }
 
   return (
-    <li className="menu-item" role="none" data-menu-id={menu_id}>
-      <a href={data?.url ?? '#'} className="menu-link" tabIndex="0">
+    <li className={[].join(' ')}>
+      <a href={data?.url ?? '#'} className={[link_type].join(' ')} tabIndex="0">
         {label}
+        {link_type == 'external' && (
+          <span className="external-link-animated"><i /></span>
+        )}
+        {link_type == 'download' && (
+          <span className="download-animated"><i /></span>
+        )}
       </a>
     </li>
   );
