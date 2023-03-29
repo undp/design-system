@@ -229,7 +229,7 @@ export const navigationMultiLevelEdgeDetection = () => {
   // Change the side it renders on, if it will go off screen, by
   // adding the "edge" class. The formula to determine changes for
   // the language direction.
-  jQuery('ul.dropdown li').on('mouseenter mouseleave', 'li', function (e) {
+  jQuery('.menu ul li').on('mouseenter mouseleave', 'li', function (e) {
     let $this = jQuery(this);
     $this.removeClass('edge');
     if (jQuery('ul.submenu', $this).length) {
@@ -250,25 +250,21 @@ export const navigationMultiLevelEdgeDetection = () => {
  * Navigation overflow functionality.
  */
 export const navigationOverFlow = () => {
-  // /**
-  //  * Generate the button
-  //  */
-  // let $button = $(document.createElement('button')).prop({
-  //   innerHTML: '<span class="hidden">Menu toggle</span>',
-  //   class: 'menu__overflow__toggle',
-  //   'aria-hidden': 'true',
-  //   'aria-controls': 'navigation-dropdown',
-  //   'aria-label': 'Menu overflow toggle',
-  // });
-  // if (jQuery('.menu__overflow__toggle').length === 0) {
-  //   /**
-  //    * Toggle overflow section via button.
-  //    */
-  //   $(document).ready(() => {
-  //     $('.top-left').append($button);
-  //   });
-  // } else {
-  // }
+  /**
+   * Generate the button and add to navigation
+   */
+  let $button = jQuery(document.createElement('button')).prop({
+    innerHTML: '<span class="hidden">Menu toggle</span>',
+    class: 'menu__overflow__toggle',
+    'aria-hidden': 'false',
+    'aria-controls': 'navigation-overflow',
+    'aria-label': 'Menu overflow toggle',
+  });
+  let $item = jQuery(document.createElement('li')).prop({
+    class: 'menu__overflow__item hidden',
+  });
+
+  jQuery('.menu > ul.overflow').prepend($item.append($button));
 
   /**
    * Toggle overflow section via button.
@@ -281,20 +277,17 @@ export const navigationOverFlow = () => {
     }
   });
 
-  // Define some constants and variables for later use.
-  const $menu_items = jQuery('.menu > ul.dropdown > li');
-  const total_main_level_menu_items = jQuery('.menu > ul.dropdown > li').length;
-  let number_of_menu_items_that_can_fit_in_upper_nav = 0;
-  let number_of_items_to_move_into_overflow = 0;
-
   /**
    * Add the menu items width as a data attribute.
    */
-  jQuery('.menu > ul.dropdown > li').each(function () {
+  jQuery('.menu > ul.overflow > li').each(function () {
     jQuery(this).attr('data-item-width', jQuery(this).width());
   });
 
-  jQuery('.menu__overflow__container > ul.dropdown').empty();
+  /**
+   * Clear out the overflow before deciding what goes in there.
+   */
+  jQuery('.menu__overflow__container > ul.overflow').empty();
 
   /**
    * Trigger the overflow navigation setup.
@@ -302,45 +295,47 @@ export const navigationOverFlow = () => {
    */
   function TriggerOverFlowFunctionality(header_container_width) {
     if (typeof (header_container_width) === 'number') {
-      // let menu_container_width = jQuery('.menu').attr('data-item-width');
-      // let total_item_width = 0;
-      // $menu_items.each(function (index) {
-      //   total_item_width += parseInt($(this).width(), 10);
-      // });
-
+      // Get the width of the holding menu container.
       let menu_container_width = jQuery('.menu').width();
-      // Adjust the menu_container_width to always allow at least 1 item, otherwise.
-      // the math breaks.
-      let width_of_single_item = $menu_items.width() ?? $menu_items.attr('data-item-width');
-      menu_container_width = menu_container_width <= width_of_single_item ? width_of_single_item : menu_container_width;
 
       /**
        * Move extra menu items to the overflow container.
        */
-      number_of_menu_items_that_can_fit_in_upper_nav = Math.floor(menu_container_width / width_of_single_item);
-      number_of_items_to_move_into_overflow = total_main_level_menu_items - number_of_menu_items_that_can_fit_in_upper_nav;
-      const $items_to_move_to_overflow = jQuery('.menu > ul.dropdown > li').filter((item) => item > number_of_menu_items_that_can_fit_in_upper_nav - 1);
-      $items_to_move_to_overflow.prependTo('.menu__overflow__container > ul.dropdown');
+      let current_combined_width = 0;
+      let $items_to_move_to_overflow = [];
+      jQuery('.menu > ul.overflow > li').each(function (index, value) {
+        current_combined_width += parseInt(jQuery(this).width(), 10);
+        if (current_combined_width > menu_container_width) {
+          $items_to_move_to_overflow.push($(this));
+        }
+      });
+
+      jQuery('.menu__overflow__container > ul.overflow').prepend($items_to_move_to_overflow);
 
       /**
        * Move an overflow item back to the main menu if there is room.
-       *
-       * Set the current menu count to always be at least 1, otherwise math breaks.
+       * Calculate the open pixel value by comparing the main menu container
+       * with the combined total of all active main menu items. When the open
+       * space is greater than the width of the first item in the overflow,
+       * move that item back into the active main nav.
        */
-      let current_main_menu_count = jQuery('.menu > ul.dropdown > li').length ?? 1;
-      let open_pixel_value = menu_container_width - (current_main_menu_count * width_of_single_item);
-      if (open_pixel_value >= width_of_single_item) {
-        if (jQuery('.menu__overflow__container > ul.dropdown > li').length) {
-          jQuery('.menu__overflow__container > ul.dropdown > li').first().appendTo('.menu > ul.dropdown');
+      if (jQuery('.menu__overflow__container > ul.overflow > li').length) {
+        let total_width_of_active_main_nav_items = 0;
+        jQuery('.menu > ul.overflow > li').each(function (index) {
+          total_width_of_active_main_nav_items += parseInt($(this).width(), 10);
+        });
+        let open_pixel_value = menu_container_width - total_width_of_active_main_nav_items;
+        if (open_pixel_value >= jQuery('.menu__overflow__container > ul.overflow > li').first().attr('data-item-width')) {
+          jQuery('.menu__overflow__container > ul.overflow > li').first().appendTo('.menu > ul.overflow');
         }
       }
 
       /**
        * Display the overflow button if there are more items then can fit.
        */
-      jQuery('.menu__overflow__toggle').addClass('hidden');
-      if (number_of_items_to_move_into_overflow > 0) {
-        jQuery('.menu__overflow__toggle').removeClass('hidden');
+      jQuery('.menu__overflow__item').addClass('hidden');
+      if (jQuery('.menu__overflow__container > ul.overflow > li').length > 0) {
+        jQuery('.menu__overflow__item').removeClass('hidden');
       }
     }
   }
@@ -350,8 +345,7 @@ export const navigationOverFlow = () => {
   const observer = new ResizeObserver((items) => {
     for (const item of items) {
       // Set the width of the menu, to the width of the parent.
-      let center = jQuery('.top-center').width();
-      jQuery('.menu').width(center - 40);
+      jQuery('.menu').width(jQuery('.top-center').width() - 40);
 
       TriggerOverFlowFunctionality(Math.floor(item.contentRect?.width));
     }

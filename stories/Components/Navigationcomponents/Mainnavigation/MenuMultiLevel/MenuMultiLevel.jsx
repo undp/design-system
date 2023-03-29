@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../../../../assets/scss/_grid.scss';
 import './menu-multi-level.scss';
 import { MenuItems } from '../../../../Atom/Navigation/MenuItems/MenuItems';
-// import menuJsonData from '../../../../assets/js/navigation-data.json';
 
 export default MenuMultiLevel;
 
@@ -18,6 +17,7 @@ function MenuMultiLevel({
   let lang = args.locale === 'en' ? 'english' : args.locale;
   let menuData = data.find((item) => item.language === lang);
   menuData = (menuData.data) ? menuData.data : data;
+
   if (isGHeader != undefined && isGHeader) {
     return (
       <ul>
@@ -30,29 +30,9 @@ function MenuMultiLevel({
     );
   }
 
-  if (!multiLevel) {
-    return (
-      <nav className="menu" role={role} aria-label={arialabel}>
-        <ul>
-          {menuData.map((item, idx) => (
-            <li key={idx} data-menu-id={item.id}>
-              <MenuItems text={item.label} />
-            </li>
-          ))}
-        </ul>
-      </nav>
-    );
-  }
-
   return (
     <nav className="menu" role={role} aria-label={arialabel}>
-      <ul className="dropdown" data-dropdown-menu>
-        {/* Need to generate this in jquery */}
-        <li className="menu__overflow__item hidden">
-          <button className="menu__overflow__toggle hidden" aria-hidden="true" aria-controls="navigation-dropdown" aria-label="Menu overflow" tabIndex="0">
-            <span className="hidden">Menu toggle</span>
-          </button>
-        </li>
+      <ul className="overflow">
         {menuData.map((menuLevel, idx) => (
           <MenuLevel data={menuLevel} key={idx} level="1" {...args} />
         ))}

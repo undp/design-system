@@ -101,10 +101,6 @@
         ]
       },
       {
-        "title": "Test Link solo",
-        "submenus": []
-      },
-      {
         "id": "headerlink3",
         "title": "Our Impact",
         "submenus": [
@@ -203,59 +199,11 @@
         ]
       },
       {
-        "title": "Test Link with sub",
-        "submenus": [
-          {
-            "title": "Page Title 1 with extended text that is on two lines",
-            "url": "",
-            "type": "",
-            "linksCol1": [
-              {
-                "label": "Sub Page with extended text that is on two lines",
-                "url": "",
-                "type": "external"
-              },
-              {
-                "label": "Sub Page",
-                "url": "",
-                "type": "download"
-              },
-              {
-                "label": "Sub Page with extended text that is on two lines",
-                "url": ""
-              },
-              {
-                "label": "Sub Page",
-                "url": ""
-              }
-            ]
-          },
-          {
-            "title": "Page Title 2",
-            "url": "",
-            "type": "external",
-            "linksCol1": []
-          },
-          {
-            "title": "Page Title 3",
-            "url": "",
-            "type": "download",
-            "linksCol1": []
-          },
-          {
-            "title": "Page Title 2",
-            "url": "",
-            "type": "",
-            "linksCol1": []
-          }
-        ]
-      },
-      {
-        "title": "Test Link",
+        "title": "Test Link with wide text",
         "submenus": []
       },
       {
-        "title": "Test Link Wide total text",
+        "title": "Small",
         "submenus": []
       },
       {

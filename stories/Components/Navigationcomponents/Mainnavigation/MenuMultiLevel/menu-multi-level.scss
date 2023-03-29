@@ -9,7 +9,7 @@
 }
 
 // 1st level
-.menu ul.dropdown {
+.menu ul {
   display: flex;
 
   // 1st level items
@@ -191,7 +191,7 @@
 }
 
 [dir='rtl'] {
-  .menu ul.dropdown {
+  .menu ul {
 
     >li {
 
@@ -260,7 +260,7 @@
   }
 }
 
-.menu__overflow__container ul.dropdown {
+.menu__overflow__container ul {
   display: flex;
   order: 12;
   width: 100%;
@@ -433,7 +433,7 @@
     display: none;
   }
 
-  ul.dropdown {
+  ul {
     display: flex;
     flex-wrap: wrap;
     max-width: 75%;

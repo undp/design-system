@@ -37,9 +37,9 @@ function CountrySiteHeader({
     navigationMultiLevelEdgeDetection();
   }, [locale, args.menu_type]);
   const menuType = args.menu_type === 'Mega menu' || typeof (args.menu_type) == 'undefined' ? 'mega_menu' : 'dropdown';
-  const menuData = typeof (args.menu_type) == 'undefined' ? navigationData : menuJsonDefaultData;
-  const overflow = args.menu_type === 'Multi-level dropdown';
-  const multiLevel = args.menu_type === 'Multi-level dropdown';
+  const menuDefaultData = typeof (args.menu_type) == 'undefined' ? navigationData : menuJsonDefaultData;
+  const menuData = args.menu_type === 'Multi-level dropdown' ? menuJsonDropDownData : menuJsonDefaultData;
+  const multiLevel = true;
   return (
     <header className="country-header country-load-animation">
       <section className="header">
@@ -58,11 +58,15 @@ function CountrySiteHeader({
             </div>
             <div className="cell small-1 large-auto align-content-middle top-center">
               {menuType === 'dropdown' && (
-                <MenuMultiLevel data={menuJsonDropDownData} locale={locale} multiLevel overflow {...args} />
+                <MenuMultiLevel data={menuData} locale={locale} multiLevel {...args} />
               )}
               {menuType === 'mega_menu' && (
-                <Menu data={menuData} type={menuType} locale={locale} overflow {...args} />
+                <Menu data={menuData} type={menuType} locale={locale} {...args} />
               )}
+            </div>
+            {/* Need to generate this in jquery */}
+            <div className="grid-container full menu__overflow__container hidden">
+              <ul className="overflow" />
             </div>
             <div className="cell small-3 large-3 top-right">
               <Languageswitcher
@@ -84,10 +88,6 @@ function CountrySiteHeader({
                   Icon="No Arrow"
                 />
               )}
-            </div>
-            {/* Need to generate this in jquery */}
-            <div className="grid-container full menu__overflow__container hidden">
-              <ul className="dropdown" />
             </div>
             <MobileNav
               navigationData={navigationData}
