@@ -1,9 +1,10 @@
 const selectCount = [];
 const toggleFilter = function () {
+  const $multiSelect = jQuery('.multi-select');
   const $searchOption = jQuery('.multi-select li input:checkbox');
   const $chipWrapper = jQuery('.search-filter .selected-chips');
 
-  jQuery('.multi-select').each(function (index) {
+  $multiSelect.each(function (index) {
     const $el = jQuery(this);
     const $numberOfCheck = $el.find('input:checkbox:checked').length;
     if ($numberOfCheck > 0) {
@@ -13,9 +14,8 @@ const toggleFilter = function () {
     }
   });
 
-  $searchOption.on('click', function (e) {
-    e.stopImmediatePropagation();
-
+  $searchOption.on('multiSelectInputToggle', function (e) {
+    // e.stopImmediatePropagation();
     const $el = jQuery(this);
     const $currentchipWrapper = $el.parents('.select-wrapper').find('.selected-chips');
     const $eleId = $el.attr('id');
@@ -45,20 +45,11 @@ const toggleFilter = function () {
       }
       $el.parents('.select-wrapper').find(`[option-name='${$eleId}']`).remove();
     }
-
-    // Add checkbox toggle event watcher.
-    jQuery(this).trigger({
-      type: 'filterSearchMultiSelectToggle',
-      bubbles: true,
-      cancelable: false,
-      state: $el[0].checked,
-      toggle_state: ($el.is(':checked')) ? 'checked' : 'unchecked',
-      checkbox_id: $eleId,
-    });
   });
 
-  $chipWrapper.on('click', '.chip__cross', function (event) {
-    event.preventDefault();
+  $chipWrapper.on('click', '.chip__cross', function (e) {
+    e.preventDefault();
+
     const $el = jQuery(this);
     const $currentchipWrapper = $el.parents('.select-wrapper').find('.selected-chips');
     if ($currentchipWrapper.find('.chip__cross').length < 2) {
@@ -88,7 +79,7 @@ const toggleFilter = function () {
     $el.remove();
   });
 
-  jQuery(document).on('click', '.clear-search-filter', function () {
+  jQuery(document).on('click', '.clear-search-filter', function (e) {
     const $el = jQuery(this);
     const $currentchipWrapper = $el.parents('.select-wrapper').find('.selected-chips');
     jQuery($currentchipWrapper).find('.chip').remove();
@@ -103,25 +94,13 @@ const toggleFilter = function () {
       bubbles: true,
       cancelable: false,
     });
+    e.stopImmediatePropagation();
   });
 
-  jQuery(document).on('click', '.sort-filter-search', function () {
+  jQuery(document).on('click', '.sort-filter-search', function (e) {
     const $el = jQuery(this);
     $el.toggleClass('close');
     $el.next('.search-filter').toggleClass('show-filter');
-  });
-
-  // For testing custom events
-  jQuery(document).on('filterSearchChipRemoval', (event) => {
-    // console.log('I fire on Chip removal');
-  });
-
-  jQuery(document).on('filterSearchMultiSelectToggle', (event) => {
-    // console.log('I fire on multi-select toggle');
-  });
-
-  jQuery(document).on('filterSearchClear', (event) => {
-    // console.log('I fire on search filter clearing');
   });
 };
 
