@@ -91,6 +91,7 @@
         &:focus,
         &:focus-within {
           outline: 0;
+
           .image {
             @include devicebreak(xlarge) {
               &::before {
@@ -117,6 +118,7 @@
 
         .image {
           line-height: 0;
+
           @include devicebreak(medium) {
             overflow: hidden;
           }
@@ -128,6 +130,7 @@
           img {
             padding-bottom: 0;
             max-width: 100%;
+
             @include devicebreak(large) {
               max-width: none;
               min-height: 200px;
@@ -149,7 +152,9 @@
         display: block;
       }
 
-      .image__caption {
+      figcaption {
+        width: auto;
+
         @include devicebreak(xlarge) {
           border-bottom: 0;
           display: block;
@@ -162,7 +167,7 @@
           margin-bottom: $spacing-05;
           padding-right: 0;
 
-          + .credits {
+          +.credits {
             @include devicebreak(large) {
               margin-left: 0;
             }
@@ -176,7 +181,7 @@
         }
       }
 
-      &.caption_top {
+      &.caption_on_top {
         bottom: inherit;
         height: 100%;
         -webkit-mask-image: linear-gradient(to bottom, $color-black 50%, transparent 100%);
@@ -206,7 +211,7 @@
         padding-right: 0;
       }
 
-      .image__caption p + .credits {
+      figcaption p+.credits {
         border-right: none;
         margin-right: 0;
         padding-right: 0;
@@ -214,4 +219,5 @@
     }
   }
 }
+
 // lightbox-gallery end
