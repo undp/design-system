@@ -80,6 +80,8 @@ function ArticlePage({
               label={imageCaptionData.label}
               name={imageCaptionData.name}
               paragraph={imageCaptionData.paragraph}
+              caption="true"
+              credit="true"
             />
           </div>
         </div>
@@ -115,8 +117,9 @@ function ArticlePage({
           <div className="cell medium-7 medium-offset-2 middle-caption">
             <Imagecaption
               label={imageCaptionData.label}
-              name={imageCaptionData.name}
               paragraph={imageCaptionData.paragraph}
+              caption="true"
+              credit="true"
             />
           </div>
           <div className="cell medium-7 medium-offset-2">

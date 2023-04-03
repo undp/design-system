@@ -3,55 +3,90 @@
 @import '../../../assets/scss/base';
 
 /* image with caption start */
-.image {
-  &-figcaption {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+figure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
 
-    .image__caption {
-      margin: $spacing-05 $spacing-06 $spacing-07;
+  >div {
+    width: 100%;
+  }
 
-      @include devicebreak(medium) {
-        margin: $spacing-07 0 $spacing-07;
-        width: 58.33333%;
-      }
+  img {
+    width: 100%;
+  }
+
+  figcaption {
+    margin: $spacing-05 $spacing-06 $spacing-07;
+    line-height: 1.4;
+
+    @include devicebreak(medium) {
+      margin: $spacing-07 0 $spacing-07;
+      width: 100%;
+      max-width: 64rem;
     }
   }
 }
 
-.image-figcaption.medium {
+figure.medium {
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+
   @include devicebreak(medium) {
     margin: 0 auto;
-    width: 58.3333%;
+    width: 100%;
 
-    .image__caption {
+    >div {
       width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    figcaption {
+      width: 100%;
+      line-height: 1.4;
     }
   }
 }
 
-.image-figcaption.portrait {
+figure.portrait {
   align-items: flex-end;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 
   @include devicebreak(medium) {
-    .image-figcaption__cart {
-      width: 33.33333%;
+    flex-direction: row;
+
+    img {
+      width: 100%;
     }
 
-    .image__caption {
+    >div,
+    >img {
+      width: 50%;
+    }
+
+    figcaption {
       display: block;
       margin: 0 0 0 $spacing-06;
       padding-bottom: 0;
-      width: 25%;
+      width: 50%;
+      max-width: 64rem;
 
       p {
-        font-size: $font-size-14;
-        line-height: 1.4;
         margin-bottom: $spacing-05;
         padding: 0;
 
-        + .credits {
+        +.credits {
           border-top: 1px solid $color-gray-500;
           margin-left: 0;
           padding: $spacing-05 0 0 0;
@@ -82,11 +117,9 @@
 
 @include devicebreak(medium) {
   [dir='rtl'] {
-    .image-figcaption.portrait {
-      .image {
-        &__caption {
-          margin: 0 $spacing-06 0 0;
-        }
+    figure.portrait {
+      figcaption {
+        margin: 0 $spacing-06 0 0;
       }
 
       .credits {
