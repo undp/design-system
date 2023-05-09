@@ -105,7 +105,11 @@ Default background:
 Gray background:
 
 <Canvas>
-<Story name="Parallax gallery">
+<Story name="Parallax gallery"
+  parameters={{
+    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+  }}
+>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return <ParallaxGallery

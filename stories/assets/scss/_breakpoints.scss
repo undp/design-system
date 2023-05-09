@@ -7,9 +7,10 @@
   }
 
   @else if $point==mediumonlytab {
+
     /* medium design tab */
-    @media (max-width: 89.9375em) {
-      @content;
+    @media (max-width: 63.9375em) {
+       @content;
     }
   }
 
@@ -21,14 +22,14 @@
   }
 
   @else if $point==large {
-    /* medium design */
+    /* large design */
     @media (min-width: 64em) {
       @content;
     }
   }
 
   @else if $point==xlarge {
-    /* large design */
+    /* xlarge design */
     @media (min-width: 90em) {
       @content;
     }

@@ -7,18 +7,31 @@
   .header {
     @extend %header;
 
+    height: 7.1875rem;
+
     @include devicebreak(mediumonlytab) {
       height: 4.6875rem;
     }
 
-    @include devicebreak(xlarge) {
-      .fluid {
+    .fluid {
+      height: 7.1875rem;
+
+      @include devicebreak(xlarge) {
         margin: 0 $spacing-70;
+      }
+
+      @include devicebreak(mediumonlytab) {
+        height: 4.6875rem;
       }
     }
 
     .top-left {
+      @include devicebreak(xlarge) {
+        margin-bottom: 0;
+      }
+
       @include devicebreak(mediumonlytab) {
+        margin-bottom: 0;
         display: flex;
 
         .dropdown-language {
@@ -28,6 +41,12 @@
 
       .dropdown-language {
         margin-left: $spacing-04;
+        display: flex;
+        align-items: center;
+
+        @include devicebreak(mediumonlytab) {
+          display: none;
+        }
       }
     }
 
@@ -35,9 +54,10 @@
       display: flex;
       justify-content: center;
       position: relative;
+      height: 7.1875rem;
 
-      @include devicebreak(xlarge) {
-        height: 7.1875rem;
+      @include devicebreak(mediumonlytab) {
+        height: 4.6875rem;
       }
 
       nav {
@@ -49,15 +69,20 @@
       ul {
         @include transform(translateY(-50%));
 
-        align-items: center;
+        align-items: stretch;
         display: flex;
         height: 100%;
+        max-height: 7.1875rem;
         left: 50%;
-        padding-left: 4.375rem;
+        padding-left: 3.375rem;
         position: absolute;
         top: 50%;
         width: 50%;
         z-index: 9;
+
+        @include devicebreak(xlarge) {
+          padding-left: 4.375rem;
+        }
 
         @include devicebreak(mediumonlytab) {
           display: none;
@@ -67,12 +92,32 @@
           justify-content: right;
           left: inherit;
           padding-left: 0;
-          padding-right: 4.375rem;
+          padding-right: 3.375rem;
           right: 50%;
+
+          @include devicebreak(xlarge) {
+            padding-right: 4.375rem;
+          }
         }
 
         li {
-          margin: 0 2.1875rem;
+          margin: 0 1.5rem;
+          display: flex;
+          align-items: stretch;
+
+          @include devicebreak(xlarge) {
+            margin: 0 2.1875rem;
+          }
+
+          a {
+            display: flex;
+            align-items: center;
+            //margin-top: -15px;
+
+            @include devicebreak(xlarge) {
+              margin-top: 0;
+            }
+          }
         }
       }
 
@@ -80,7 +125,7 @@
         @extend %img_none;
 
         position: relative;
-        z-index: 1;
+        z-index: 10;
 
         @include devicebreak(xlarge) {
           @include transform(translateX(-50%));
@@ -110,7 +155,13 @@
       display: flex;
       justify-content: flex-end;
 
+      @include devicebreak(xlarge) {
+        margin-bottom: 0;
+      }
+
       @include devicebreak(mediumonlytab) {
+        margin-bottom: 0;
+
         .icon-globe {
           display: none;
         }
@@ -183,6 +234,7 @@
   }
 
   &.show-content {
+
     .mid-nav ul,
     .top-left,
     .top-right {

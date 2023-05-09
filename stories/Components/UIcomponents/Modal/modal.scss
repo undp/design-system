@@ -52,8 +52,8 @@
     width: 45px;
 
     @include devicebreak(medium) {
-      right: $spacing-06;
-      top: $spacing-06;
+      right: $spacing-05;
+      top: $spacing-05;
     }
 
     &:hover {

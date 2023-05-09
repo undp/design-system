@@ -12,6 +12,10 @@ blockquote {
     font-size: $font-size-35;
     line-height: 1.15;
   }
+
+  a {
+    font-size: inherit;
+  }
 }
 
 //burmese lang

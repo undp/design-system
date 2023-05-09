@@ -9,7 +9,7 @@ import { ContentCard } from '../../Organism/Blocks/ContentCard/ContentCard';
 import { Footer } from '../../Organism/Footer/Footer';
 import './author-page.scss';
 
-const AuthorPage = ({
+function AuthorPage({
   breadcrumbData,
   authorSummaryData,
   footerData,
@@ -23,67 +23,71 @@ const AuthorPage = ({
   backcaption,
   groupcontentdata,
   buttonname,
-}) => (
-  <div>
-    <GlobalHeader
-      backcaption={backcaption}
-      locale={locale}
-      leftNavigationData={leftNavigationData}
-      navigationData={navigationData}
-      rightNavigationData={rightNavigationData}
-      languageswitcherData={languageswitcherData}
-      locationData={locationData}
-      langSelect={langSelect}
-    />
-    <div className="grid-container fluid author-page">
-      <div className="grid-x">
-        <div className="cell medium-offset-1 medium-10 small-12">
-          <Breadcrumbcomponent data={breadcrumbData} />
+  ...args
+}) {
+  return (
+    <div>
+      <GlobalHeader
+        backcaption={backcaption}
+        locale={locale}
+        leftNavigationData={leftNavigationData}
+        navigationData={navigationData}
+        rightNavigationData={rightNavigationData}
+        languageswitcherData={languageswitcherData}
+        locationData={locationData}
+        langSelect={langSelect}
+      />
+      <div className="grid-container fluid author-page">
+        <div className="grid-x">
+          <div className="cell medium-offset-1 medium-10 small-12">
+            <Breadcrumbcomponent data={breadcrumbData} />
+          </div>
+        </div>
+        <div className="grid-x">
+          <div className="cell medium-offset-1 medium-10 small-12">
+            <AuthorSummary
+              image={user}
+              Authorlabel={authorSummaryData.text2}
+              para={authorSummaryData.paragraph}
+              para1={authorSummaryData.text3}
+            />
+          </div>
+        </div>
+        <div className="grid-x">
+          <div className="cell medium-offset-2 medium-9 small-12 author-content">
+            <ContentCard
+              data={groupcontentdata}
+              buttontype={buttonname}
+              Hovercolors={args.accent}
+              {...args}
+            />
+          </div>
         </div>
       </div>
-      <div className="grid-x">
-        <div className="cell medium-offset-1 medium-10 small-12">
-          <AuthorSummary
-            image={user}
-            Authorlabel={authorSummaryData.text2}
-            para={authorSummaryData.paragraph}
-            para1={authorSummaryData.text3}
-          />
-        </div>
-      </div>
-      <div className="grid-x">
-        <div className="cell medium-offset-2 medium-9 small-12 author-content">
-        <ContentCard
-            data={groupcontentdata}
-            buttontype={buttonname}
-            Hovercolors="yellow"
-          />
-        </div>
-      </div>
-    </div>
 
-    <Footer
-      src={logo}
-      srctwo={logowhite}
-      headerText={footerData.headerText}
-      headerText2={footerData.headerText2}
-      style="default"
-      alt="UNDP Logo"
-      element="input"
-      type="email"
-      required="required"
-      mode="form-email"
-      errorText={footerData.errorLabel}
-      label={footerData.labelname}
-      button={footerData.buttonname}
-      placeholder={footerData.placeholdername}
-      menutitle={footerData.pageTitle}
-      data={footerData.footerdata}
-      copyright={footerData.copyright}
-      menudata={footerData.menudata}
-      {...{ color: 'default' }}
-    />
-  </div>
-);
+      <Footer
+        src={logo}
+        srctwo={logowhite}
+        headerText={footerData.headerText}
+        headerText2={footerData.headerText2}
+        style="default"
+        alt="UNDP Logo"
+        element="input"
+        type="email"
+        required="required"
+        mode="form-email"
+        errorText={footerData.errorLabel}
+        label={footerData.labelname}
+        button={footerData.buttonname}
+        placeholder={footerData.placeholdername}
+        menutitle={footerData.pageTitle}
+        data={footerData.footerdata}
+        copyright={footerData.copyright}
+        menudata={footerData.menudata}
+        {...{ color: 'default' }}
+      />
+    </div>
+  );
+}
 
 export default AuthorPage;
