@@ -8,32 +8,41 @@ export const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
-        label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+        label: ["UNDP/Angola", <br />, <strong>Jerome Bell</strong>],
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
       };
       return engText;
     case "arabic":
       const arabicText = {
-        label: ['برنامج الأمم المتحدة الإنمائي / أنغولا',<br/>,<strong>جيروم بيل</strong>],
-        paragraph: "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Morbi lorem tortor، fermentum eu lorem at، venenatis malesuada laughter.",
+        label: [
+          "برنامج الأمم المتحدة الإنمائي / أنغولا",
+          <br />,
+          <strong>جيروم بيل</strong>,
+        ],
+        paragraph:
+          "الألم بحد ذاته يسبب الكثير من الألم ، لكن التركيز الأساسي ينصب على العميل. Morbi lorem tortor، fermentum eu lorem at، venenatis malesuada laughter.",
       };
       return arabicText;
     case "burmese":
       const burmeseText = {
-        label: ['UNDP/အန်ဂိုလာ',<br/>,<strong>ဂျရုမ်း ဘဲလ်</strong>],
-        paragraph: "နာကျင်မှုကိုယ်တိုင်က နာကျင်ပေမယ့် အဓိက အာရုံစိုက်တာက ဖောက်သည်အပေါ်ပါ။ Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada ရယ်မောခြင်း။",
+        label: ["UNDP/အန်ဂိုလာ", <br />, <strong>ဂျရုမ်း ဘဲလ်</strong>],
+        paragraph:
+          "နာကျင်မှုကိုယ်တိုင်က နာကျင်ပေမယ့် အဓိက အာရုံစိုက်တာက ဖောက်သည်အပေါ်ပါ။ Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada ရယ်မောခြင်း။",
       };
       return burmeseText;
     case "japanese":
       const japaneseText = {
-        label: ['UNDP /アンゴラ',<br/>,<strong>ジェロームベル</strong>],
-        paragraph: "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 Morbi lorem tortor、fermentum eu lorem at、venenatismalesuadaの笑い声。",
+        label: ["UNDP /アンゴラ", <br />, <strong>ジェロームベル</strong>],
+        paragraph:
+          "痛み自体は多くの痛みですが、主な焦点は顧客にあります。 Morbi lorem tortor、fermentum eu lorem at、venenatismalesuadaの笑い声。",
       };
       return japaneseText;
     default:
       return {
-        label: ['UNDP/Angola',<br/>,<strong>Jerome Bell</strong>],
-        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
+        label: ["UNDP/Angola", <br />, <strong>Jerome Bell</strong>],
+        paragraph:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
       };
   }
 };
@@ -44,18 +53,25 @@ export const getCaptionForLocale = (locale) => {
     size: {
       options: ["wide", "medium", "portrait"],
       control: { type: "inline-radio" },
-      defaultValue: "wide"
     },
     caption: {
       options: ["true", "false"],
       control: { type: "inline-radio" },
-      defaultValue: "true"
     },
     credit: {
       options: ["true", "false"],
       control: { type: "inline-radio" },
-      defaultValue: "true"
     },
+    animation: {
+      options: ["true", "false"],
+      control: { type: "inline-radio" },
+    },
+  }}
+  args={{
+    size: "wide",
+    caption: "true",
+    credit: "true",
+    animation: "false",
   }}
 />
 
@@ -88,7 +104,6 @@ export const getCaptionForLocale = (locale) => {
 
 The Image with Caption and Credit describes the image and gives credit to it’s source.
 
-
 ## Overview
 
 The Image with caption and credit creates boxes that are usually teasing some kind of content like- Image, Text, and Image author name. A grid system is used to manage the different types of sizes and caption molecules are used for creating the card.
@@ -98,12 +113,15 @@ The Image with caption and credit creates boxes that are usually teasing some ki
 - When description and credit for the source of the image are to be added.
 
 ### Formatting
+
 #### Default
+
 It consists of a grid with an image and the description and the source of the image mentioned below or beside the image.
 
 ### Behaviors
 
 #### States
+
 It consists of three states: Wide, Medium, and Portrait.
 
 - Wide: In the wide state, the image is large-sized and the caption and credit are mentioned below the image.
@@ -111,31 +129,18 @@ It consists of three states: Wide, Medium, and Portrait.
 - Portrait: In portrait state, the image is situated on either side of the grid, and the caption and credit beside the image.
 
 <Canvas>
-  <Story name="Image with credit + caption" parameters={{ docs: { source: { code: `<div class="grid-x image-section">
-    <div class="cell image__cart medium-12">
-      <img
-        src="static/media/stories/assets/images/farmland-lg.jpg"
-        alt="farmland"
-      />
-    </div>
-    <div class="cell image__description medium-7">
-      <figcaption class="image__caption">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem
-          tortor, fermentum eu lorem at, venenatis malesuada risus.
-        </p>
-        <div class="image--author">
-          <span class="author__caption author--label">UNDP/Angola</span>
-          <span class="author__caption author--name">Firstname Lastname</span>
-        </div>
-      </figcaption>
-    </div>
-    </div>`} } }}>
+  <Story name="Image with credit + caption">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return (
         <Images
-          imagelg={farmlandlg} imagemd={farmlandmd} imagesm={farmlandsm} alt="farmland" label={caption.label}  paragraph={caption.paragraph} {...args}
+          imagelg={farmlandlg}
+          imagemd={farmlandmd}
+          imagesm={farmlandsm}
+          alt="farmland"
+          label={caption.label}
+          paragraph={caption.paragraph}
+          {...args}
         ></Images>
       );
     }}
@@ -143,6 +148,7 @@ It consists of three states: Wide, Medium, and Portrait.
 </Canvas>
 
 ### Usage:
+
 - Choose the size controls as either wide, medium or portrait from the Canvas. Caption and Credit controls as true or false from the control tab of canvas.
 - Copy the HTML from the HTML tab and include below listed css file.
 - If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js.
@@ -161,7 +167,9 @@ Add the base layout style from
 - https://undp.github.io/design-system/js/viewport.min.js
 
 ### Interactions
+
 When the page containing the image is opened, the image zooms out and gives a 3-D effect.
 
 ### Changelog
+
 1.0 — Released component

@@ -150,6 +150,7 @@
   margin-right: $spacing-03;
   padding: 0;
   width: 25px;
+  min-width: 25px;
 
   @include devicebreak(small) {
     margin-right: 0;
@@ -165,7 +166,7 @@
 %frosted-bg {
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
-  background: rgba(247, 247, 247, 0.8);
+  background: rgba(247, 247, 247, 0.9);
 }
 
 %footer-block {
@@ -309,9 +310,7 @@
   @include transform(translateY(-50%));
   @include transition(all 200ms ease-in-out);
 
-  background:
-    url(#{$img-path-Iconfourback}/chevron-down.svg) no-repeat center
-    center;
+  background: url(#{$img-path-Iconfourback}/chevron-down.svg) no-repeat center center;
   content: '';
   float: right;
   height: 13px;
@@ -413,10 +412,8 @@
 
 %left-to-right {
   @include transform(translateX(-100px));
-  @include transition(
-    transform 1.2s cubic-bezier(0.34, 0.41, 0.03, 1),
-    opacity 1.2s cubic-bezier(0.34, 0.41, 0.03, 1)
-  );
+  @include transition(transform 1.2s cubic-bezier(0.34, 0.41, 0.03, 1),
+    opacity 1.2s cubic-bezier(0.34, 0.41, 0.03, 1));
 
   opacity: 0;
   visibility: hidden;
@@ -593,6 +590,7 @@
       font-size: $font-size-24;
     }
   }
+
   %button {
     font-size: $font-size-14;
   }
@@ -600,12 +598,10 @@
 
 %logo {
   @include transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
+  min-width: 60px;
 
-  width: 40px;
-
-  @include devicebreak(xlarge) {
+  @include devicebreak(large) {
     height: ($header-height-xlarge + 7px);
-    width: 60px;
 
     &.scrolled {
       height: $header-height-xlarge;
@@ -614,6 +610,7 @@
 
   @include devicebreak(mediumonlytab) {
     height: ($header-height-medium + 7px);
+    min-width: 40px;
 
     &.scrolled {
       height: $header-height-medium;
@@ -684,7 +681,7 @@
   top: 4.7rem;
   z-index: 5;
 
-  @include devicebreak(xlarge) {
+  @include devicebreak(large) {
     top: 7.1875rem;
   }
 }

@@ -113,7 +113,11 @@ The following behavior modifiers are available:
 4. Stacked form:
 
 <Canvas>
-<Story name="Text panel">
+<Story name="Text panel"
+  parameters={{
+    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+  }}
+>
   {(args, { globals: { locale } }) => {
     const caption = getCaptionForLocale(locale);
     return (

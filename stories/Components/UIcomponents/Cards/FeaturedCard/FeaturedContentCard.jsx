@@ -17,29 +17,51 @@ export const image_options = {
 };
 
 export const hovercolor_options = {
-  yellow : '',
-  red : 'red',
+  yellow: 'yellow',
+  red: 'red',
   green: 'green',
-  blue : 'blue',
+  blue: 'blue',
 };
 
-const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+export const accent_color_options = {
+  yellow: 'yellow',
+  red: 'red',
+  blue: 'blue',
+  green: 'green',
+};
 
-export const FeaturedContentCard = ({
-  type, cell, data, image, headertext, hovercolor, ...args
-}) => {
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
+
+export function FeaturedContentCard({
+  type,
+  cell,
+  data,
+  image,
+  headertext,
+  hovercolor,
+  ...args
+}) {
   let size_variant = size_options[`${args.size}`];
   let image_variant = image_options[`${image}`];
-  let hovercolor_variant = hovercolor_options[`${hovercolor}`];
+
+  let color = (hovercolor) ? accent_color_options[`${hovercolor}`] : accent_color_options[`${args.accent}`];
+  let accent_color = color ? `accent-${color}` : '';
+
   return (
-    <>
-    <div className='grid-x grid-margin-x'>
-      {headertext && <div data-viewport="true" className="cell small-3 medium-3 large-3 medium-offset-1 small-offset-1 feature__card-title "><Heading type="2" label={headertext} /></div>}
-         {data.map((item, index) => (
-        <div key={index}  className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`, `${item.hovercolor ? `${hovercolor_options[`${item.hovercolor}`]}` : `${hovercolor_variant}`}`)}>
-          <a href="#">
+    <div className="grid-x grid-margin-x">
+      {headertext && (
+        <div data-viewport="true" className="cell small-3 medium-3 large-3 medium-offset-1 small-offset-1 feature__card-title ">
+          <Heading type="2" label={headertext} />
+        </div>
+      )}
+      {data.map((item, index) => (
+        <div
+          key={index}
+          className={cls('cell', `${item.scale ? size_options[`${item.scale}`] : size_variant}`, 'feature__card', `${item.type ? `${image_options[`${item.type}`]}` : `${image_variant}`}`, `${item.hovercolor ? `${hovercolor_options[`${item.hovercolor}`]}` : `${accent_color}`}`)}
+        >
+          <a href={item.url ? item.url : '#'}>
             <div className="feature__card-slide">
-              {item.imgback && (image === 'image' || (item.type === 'image' && image === 'image')) && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
+              {item.imgback && (item.type ? item.type === 'image' : image_variant === 'image') && <div className="feature__card-image"><img src={item.imgback} alt={item.imgback} /></div>}
             </div>
             <article className="feature__card-content">
               <Heading type="6" label={item.contenttile} />
@@ -50,17 +72,11 @@ export const FeaturedContentCard = ({
                 {item.size}
                 {item.descriptionText && <P label={item.descriptionText} />}
               </div>
-                <Ctalink label={item.button} button_option="span"/>
+              <Ctalink label={item.button} button_option="span" />
             </article>
           </a>
         </div>
-        ))}
-     </div>
-  </>
+      ))}
+    </div>
   );
-};
-
-FeaturedContentCard.defaultProps = {
-  image: 'image',
-  hovercolor: 'yellow'
-};
+}

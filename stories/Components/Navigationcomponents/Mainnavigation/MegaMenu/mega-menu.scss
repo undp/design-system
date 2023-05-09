@@ -159,33 +159,33 @@
     &.show-mega {
       @include animation(circle-square-transition forwards 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
 
-      > div {
+      >div {
         @include animation(transition-opacity forwards 0.3s 0.3s);
       }
     }
 
     &.show-mega-back {
-      @include animation(circle-square-transition-back 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
+      @include animation(circle-square-transition-back forwards 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
 
       box-shadow: none;
       display: block;
 
-      > div {
-        animation-direction: alternate;
+      >div {
+        animation-direction: reverse;
       }
     }
 
     &.no-effect {
       @include animation(none 0s 0s);
 
-      > div {
+      >div {
         @include animation(none 0s 0s);
 
         opacity: 1;
       }
     }
 
-    > div {
+    >div {
       opacity: 0;
     }
   }

@@ -38,6 +38,7 @@ export function GlobalHomePage({
   locationData,
   langSelect,
   backcaption,
+  ...args
 }) {
   return (
     <>
@@ -66,6 +67,7 @@ export function GlobalHomePage({
             <FeaturedCard
               data={featuredcarddata.featureddata}
               headertext={featuredcarddata.headertext}
+              {...args}
             />
           </div>
         </div>
@@ -102,7 +104,7 @@ export function GlobalHomePage({
         </div>
         <div className="grid-x no-gap">
           <div className="cell large-12">
-            <Stats data={statsdata} imageback={BackgroundImg} />
+            <Stats data={statsdata} imageback={BackgroundImg} {...args} />
           </div>
         </div>
         <div className="grid-x fixedcarousel no-gap">
@@ -112,7 +114,7 @@ export function GlobalHomePage({
         </div>
         <div className="grid-x">
           <div className="cell large-12">
-            <FeaturedCard data={featureddata} headertext={headertext} />
+            <FeaturedCard data={featureddata} headertext={headertext} {...args} />
           </div>
         </div>
         <TweetPanel

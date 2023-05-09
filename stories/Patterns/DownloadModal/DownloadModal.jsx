@@ -20,9 +20,16 @@ export const Category_options = {
   Multiplelanguages: '',
 };
 
-export const DownloadModal = ({
-  data, button, select, modalbtn, content, Image, Category, ...props
-}) => {
+export function DownloadModal({
+  data,
+  button,
+  select,
+  modalbtn,
+  content,
+  Image,
+  Category,
+  ...props
+}) {
   useEffect(() => {
     checkbox('.form-check input', '.download-footer .button-primary');
     selectFilter();
@@ -33,16 +40,16 @@ export const DownloadModal = ({
   return (
     <>
       {content === '' && <CtaButton label={modalbtn} data-toggle="modal" data-target-modal="#downloadModal" />}
-      <Modal 
+      <Modal
         id="downloadModal"
         css_class={image_variant}
-        content={
+        content={(
           <>
             <div className="download-body">
               {Image === 'True' && (
-              <div className="show-large">
-                <Publicationthumb Hovercolors="yellow" />
-              </div>
+                <div className="show-large">
+                  <Publicationthumb Hovercolors="yellow" />
+                </div>
               )}
               <div className="download-content">
                 {Category === 'Multiplelanguages' && <CustomSelect text={select} />}
@@ -54,16 +61,11 @@ export const DownloadModal = ({
               </div>
             </div>
             <div className="download-footer">
-              <CtaButton label={button} For_Primary="No Arrow" State="Disabled" />
-            </div>  
+              <CtaButton label={button} Type="Primary" Icon="Download" State="Disabled" />
+            </div>
           </>
-        }
+        )}
       />
     </>
   );
-};
-
-DownloadModal.defaultProps = {
-  Image: 'True',
-  Category: 'Multiplelanguages',
-};
+}

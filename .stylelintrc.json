@@ -3,7 +3,7 @@
     "stylelint-scss"
   ],
   "extends": [
-    "stylelint-config-standard", 
+    "stylelint-config-standard",
     "stylelint-config-sass-guidelines"
   ],
   "defaultSeverity": "warning",
@@ -17,6 +17,7 @@
     "property-no-vendor-prefix": null,
     "selector-no-vendor-prefix": null,
     "value-no-vendor-prefix": null,
+    "import-notation": "string",
     "property-no-unknown": [
       true,
       {

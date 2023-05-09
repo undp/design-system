@@ -65,25 +65,30 @@
       display: block;
     }
 
-    & > .active {
+    &>.active {
       border-bottom: none;
+
+      button::after {
+        background: url(#{$img-path-Icon}/chevron-down-white.svg) no-repeat center center;
+      }
 
       @include devicebreak(medium) {
         button::after {
-          background:
-            url(#{$img-path-Icon}/chevron-down-white.svg) no-repeat
-            center center;
+          background: url(#{$img-path-Icon}/chevron-down-white.svg) no-repeat center center;
         }
       }
 
-      & > a {
+      &>a {
+        background-color: $color-blue-600;
+        color: $color-white;
+
         @include devicebreak(medium) {
           background-color: $color-blue-600;
           color: $color-white;
         }
       }
 
-      & > button::after {
+      &>button::after {
         @include transform(rotateZ(-180deg));
 
         top: 1.125rem;
@@ -94,7 +99,7 @@
       }
     }
 
-    & > li {
+    &>li {
       background-color: $color-gray-300;
       position: relative;
 
@@ -186,7 +191,7 @@
       }
     }
 
-    ul > li button::after {
+    ul>li button::after {
       @include devicebreak(medium) {
         top: 1.625rem;
       }
@@ -203,8 +208,9 @@
 }
 
 [dir='rtl'] {
+
   .sidebar-accordion h6,
-  .sidebar-accordion ul li > button {
+  .sidebar-accordion ul li>button {
     &::after {
       left: 24px;
       right: unset;
@@ -212,6 +218,7 @@
   }
 
   .sidebar-accordion {
+
     ul,
     li {
       padding-right: 0;

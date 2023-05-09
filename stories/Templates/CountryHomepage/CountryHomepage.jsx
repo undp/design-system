@@ -12,7 +12,7 @@ import { Footer } from '../../Organism/Footer/Footer';
 import './countryhome-page.scss';
 import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 
-export const CountryHomepage = ({
+export function CountryHomepage({
   footerData,
   herotitle,
   herotext,
@@ -47,8 +47,10 @@ export const CountryHomepage = ({
   headingTop,
   takeAcrtionHead,
   storyBtn,
-  statdata
-}) => (
+  statdata,
+  ...args
+}) {
+  return (
     <>
       <CountrySiteHeader
         siteTitleData={siteTitleData}
@@ -62,7 +64,7 @@ export const CountryHomepage = ({
         langSelect={langSelect}
       />
 
-      <div className="grid-container fluid country-page-wrapper green">
+      <div className="grid-container fluid country-page-wrapper">
         <div className="grid-x grid-margin-x hero-container">
           <div className="cell large-12">
             <Homepageherooption
@@ -89,13 +91,14 @@ export const CountryHomepage = ({
         </div>
         <div className="grid-x wide-card-heading">
           <div className="cell small-12 medium-12 large-11 large-offset-1">
-            <Heading type="2" label={storiesHeading} dataViewport="true"/>
+            <Heading type="2" label={storiesHeading} dataViewport="true" />
           </div>
           <PageWideCard
             label={PagewidecardTag}
             title={PagewidecardTitle}
             paragraph={PagewidecardParagraph}
             button={PagewidecardBtnlabel}
+            {...args}
           />
         </div>
 
@@ -103,22 +106,24 @@ export const CountryHomepage = ({
           data={featureddataafterwedo.contentdata}
           storyBtn={featureddataafterwedo.storyBtn}
           dataViewport="true"
+          {...args}
         />
         <div className="cell cta-container">
-          <CtaButton label={storyBtn} For_Primary="No Arrow" />
+          <CtaButton label={storyBtn} Icon="No Arrow" />
         </div>
         <div className="grid-x our-impact">
           <div className="cell small-12 medium-12 large-11 large-offset-1" data-viewport="true">
             <Heading type="2" label={statHeading} />
           </div>
           <div className="cell small-12 medium-12 large-12">
-            <StatsSlider data={statdata} />
+            <StatsSlider data={statdata} {...args} />
           </div>
         </div>
-          <ImageRevealCards
-            data={takeactioncard.data}
-            label={takeAcrtionHead}
-          />
+        <ImageRevealCards
+          data={takeactioncard.data}
+          label={takeAcrtionHead}
+          {...args}
+        />
       </div>
 
       <Footer
@@ -144,3 +149,4 @@ export const CountryHomepage = ({
       />
     </>
   );
+}

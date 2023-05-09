@@ -13,7 +13,7 @@ import { Authorcard } from '../../Components/UIcomponents/Author/AuthorCard/Auth
 import { CtaButton } from '../../Components/UIcomponents/Buttons/CtaButton/CtaButton';
 import { SearchExpand } from '../../Components/Forms/SearchExpand/SearchExpand';
 
-const Authors = ({
+function Authors({
   breadcrumbData,
   footerData,
   buttonData,
@@ -28,7 +28,8 @@ const Authors = ({
   locationData,
   langSelect,
   backcaption,
-}) => {
+  ...args
+}) {
   useEffect(() => {
     select();
     authorFilter();
@@ -55,7 +56,8 @@ const Authors = ({
         <div className="grid-x grid-margin-x mobile-author-filter">
           <div className="cell small-12 ">
             <button className="button button-secondary sort-filter">
-              {buttonData.sort}<span>{buttonData.close}</span>
+              {buttonData.sort}
+              <span>{buttonData.close}</span>
             </button>
           </div>
         </div>
@@ -104,6 +106,7 @@ const Authors = ({
               alt="author name"
               link="#"
               width="medium-12"
+              {...args}
             />
             <div className="grid-x grid-margin-x">
               <div className="cell small-12 view-btn-cell">
@@ -137,6 +140,6 @@ const Authors = ({
       />
     </div>
   );
-};
+}
 
 export default Authors;
