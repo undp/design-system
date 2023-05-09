@@ -8,17 +8,24 @@ import BackgroundImg from '../../../../assets/images/Pagewide.jpg';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
-export const hovercolors_options = {
-  yellow: '',
+export const accent_color_options = {
+  yellow: 'yellow',
   red: 'red',
   blue: 'blue',
   green: 'green',
 };
 
 export function PageWideCard({
-  label, title, paragraph, button, Hovercolors,
+  label,
+  title,
+  paragraph,
+  button,
+  Hovercolors,
+  ...args
 }) {
-  let hovercolors_variant = hovercolors_options[`${Hovercolors}`];
+  let color = (Hovercolors) ? accent_color_options[`${Hovercolors}`] : accent_color_options[`${args.accent}`];
+  let accent_color = color ? `accent-${color}` : '';
+
   return (
     <div className="wide-card">
       <Heading type="6" label={label} dataViewport="true" />
@@ -28,9 +35,9 @@ export function PageWideCard({
             <Heading type="4" label={title} />
             <P label={paragraph} />
           </div>
-          <CtaButton label={button} for_primary="arrow" />
+          <CtaButton label={button} Icon="Arrow" />
         </div>
-        <div className={cls('cell medium-6 wide-card__image', `${hovercolors_variant}`)}>
+        <div className={cls('cell medium-6 wide-card__image', `${accent_color}`)}>
           <a href="#">
             <img src={BackgroundImg} alt={BackgroundImg} />
           </a>
@@ -39,7 +46,3 @@ export function PageWideCard({
     </div>
   );
 }
-
-PageWideCard.defaultProps = {
-  Hovercolors: 'yellow',
-};

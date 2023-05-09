@@ -11,6 +11,7 @@ export function GlobalHomePage({
   locationData,
   langSelect,
   backcaption,
+  ...args
 }) {
   useEffect(() => {
   }, []);
@@ -25,6 +26,7 @@ export function GlobalHomePage({
         languageswitcherData={languageswitcherData}
         locationData={locationData}
         langSelect={langSelect}
+        {...args}
       />
       <a href="/iframe?id=templates-country-homepage-rtl--country-homepage-rtl&direction=ltr&globals=locale:english&args=&viewMode=story" className="switch_btn button button-primary">Click here to switch logo animation</a>
     </div>

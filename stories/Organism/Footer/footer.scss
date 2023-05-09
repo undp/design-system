@@ -3,6 +3,31 @@
 @import '../../assets/scss/base';
 
 // * footer condition start *//
+.footer-items {
+
+  @include devicebreak(medium) {
+    row-gap: 3rem;
+    display: flex;
+  }
+
+  .footer-item {
+    @include devicebreak(medium) {
+      width: calc((100% / 2) - 1.5rem);
+      flex: 0 0 calc((100% / 2) - 1.5rem);
+    }
+
+    @include devicebreak(large) {
+      width: calc((100% / 3) - 1.5rem);
+      flex: 0 0 calc((100% / 3) - 1.5rem);
+    }
+
+    @include devicebreak(xlarge) {
+      width: calc((100% / 4) - 1.5rem);
+      flex: 0 0 calc((100% / 4) - 1.5rem);
+    }
+  }
+}
+
 .footer-links {
   padding-left: 0;
 

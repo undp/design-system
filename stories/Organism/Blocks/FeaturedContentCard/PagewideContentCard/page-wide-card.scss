@@ -2,6 +2,13 @@
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/base';
 
+$colors: (
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure
+);
+
 /* page-wide-card start */
 .wide-card {
   border-top: 2px solid $color-black;
@@ -73,8 +80,6 @@
 }
 
 div.wide-card__image {
-  $colors: ('yellow': $color-yellow, 'red': $color-red, 'green': $color-green, 'blue': $color-azure);
-
   position: relative;
 
   a {
@@ -106,10 +111,15 @@ div.wide-card__image {
       opacity: 0.75;
     }
 
-    @each $name, $color in $colors {
-      &.#{$name} a::before {
-        background-image: linear-gradient(67.76deg, #{$color}, transparent 61.11%);
-        opacity: 0.75;
+    @each $name,
+    $color in $colors {
+
+      &.accent-#{$name},
+      &.#{$name} {
+        a::before {
+          background-image: linear-gradient(67.76deg, $color, transparent 61.11%);
+          opacity: 0.75;
+        }
       }
     }
   }
@@ -131,9 +141,55 @@ div.wide-card__image {
         background-image: linear-gradient(297deg, $color-yellow, transparent 61.11%);
       }
 
-      @each $name, $color in $colors {
-        &.#{$name} a::before {
-          background-image: linear-gradient(297deg, #{$color}, transparent 61.11%);
+      @each $name,
+      $color in $colors {
+
+        &.accent-#{$name},
+        &.#{$name} {
+          a::before {
+            background-image: linear-gradient(297deg, $color, transparent 61.11%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $name,
+$color in $colors {
+  .accent-#{$name} .wide-card__image {
+    &:hover {
+      a::before {
+        background-image: linear-gradient(67.76deg, $color, transparent 61.11%);
+      }
+
+      @each $name2,
+      $color2 in $colors {
+
+        &.accent-#{$name2},
+        &.#{$name2} {
+          a::before {
+            background-image: linear-gradient(67.76deg, $color2, transparent 61.11%);
+          }
+        }
+      }
+    }
+  }
+
+  [dir='rtl'] .accent-#{$name} .wide-card__image {
+    &:hover {
+      a::before {
+        background-image: linear-gradient(297deg, $color, transparent 61.11%);
+      }
+
+      @each $name,
+      $color in $colors {
+
+        &.accent-#{$name},
+        &.#{$name} {
+          a::before {
+            background-image: linear-gradient(297deg, $color, transparent 61.11%);
+          }
         }
       }
     }

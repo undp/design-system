@@ -12,16 +12,29 @@ export const image_options = {
   color: 'without-image',
 };
 
+export const accent_color_options = {
+  yellow: 'yellow',
+  red: 'red',
+  green: 'green',
+  blue: 'blue',
+};
+
 export function ContentCardWithAndWithoutImage({
-  data, storyBtn, dataViewport, ...args
+  data,
+  storyBtn,
+  dataViewport,
+  ...args
 }) {
+  let color = (args.Hovercolors) ? accent_color_options[`${args.Hovercolors}`] : accent_color_options[`${args.accent}`];
+  let accent_color = color ? `accent-${color}` : '';
+
   return (
     <div className="grid-x grid-margin-x content-data" data-viewport={dataViewport}>
       {data.map((item, index) => (
         <div key={index} className={cls('cell', `${item.scale}`)}>
           {item.type === 'image'
             ? (
-              <div className={cls('content-card', `${item.Hovercolors}`)}>
+              <div className={cls('content-card', `${(item.Hovercolors) ? accent_color : ''}`)}>
                 <a href={item.link}>
                   <Heading type="6" label={item.contenttile} />
                   <div className="image">
@@ -34,47 +47,34 @@ export function ContentCardWithAndWithoutImage({
                 </a>
               </div>
             )
-            : (
-              <></>
-            )}
+            : (null)}
           {item.type === 'color'
             ? (
-              <div className={cls('content-card', `${item.BackgroundColor}`, `${item.Hovercolors}`)}>
+              <div className={cls('content-card', `${item.BackgroundColor}`, `${item.Hovercolors ? args.accent : ''}`)}>
                 <a href={item.link}>
                   <Heading type="6" label={item.contenttile} />
                   <div className="content-caption">
                     {item.Emphasize === 'true'
-                  ? (
-                      <Heading type="4" label={item.contentnametwo} />
-                  )
-                  : (
-                      <></>
-                  )}
+                      ? (
+                        <Heading type="4" label={item.contentnametwo} />
+                      )
+                      : (null)}
                     {item.Emphasize === 'false'
-                  ? (
-                      <>
-                        <Heading type="5" label={item.contentname} />
-                        <P label={item.paragraph} />
-                      </>
-                  )
-                  : (
-                      <></>
-                  )}
+                      ? (
+                        <>
+                          <Heading type="5" label={item.contentname} />
+                          <P label={item.paragraph} />
+                        </>
+                      )
+                      : (null)}
                     <Ctalink label={item.button} button_option="span" />
                   </div>
                 </a>
               </div>
             )
-            : (
-              <></>
-            )}
+            : (null)}
         </div>
       ))}
     </div>
   );
 }
-
-ContentCardWithAndWithoutImage.defaultProps = {
-  Emphasize: 'true',
-  Hovercolors: 'green',
-};

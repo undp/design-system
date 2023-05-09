@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import React, { useEffect } from 'react';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
@@ -8,11 +9,14 @@ import './lightbox-gallery.scss';
 import '../../../../Utilities/FrostedImage/frosted-background.scss';
 import { Imagecaption } from '../../../../Molecules/ImageCaption/ImageCaption';
 
-const cls = (...classes) => (classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null;
+const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
-export const LightboxGallery = ({
-  titleText, descText, buttonText, data
-}) => {
+export function LightboxGallery({
+  titleText,
+  descText,
+  buttonText,
+  data,
+}) {
   useEffect(() => {
     lightboxGallery();
   }, []);
@@ -26,25 +30,28 @@ export const LightboxGallery = ({
         </div>
       </div>
       <div className="medium-8 large-9 cell lightbox-gallery__right">
-            <ul className="lightbox-gallery-images">
-              {data.map((item, index) => {
-                 return (
-                    <>
-                    <li key={index}>
-                      <a href={item.galleryimg} className="glightbox" data-glightbox={"description:.glightbox-"+`${index}`+";"} descPosition="bottom">
-                        <figure>
-                          <div className="image"><img src={item.gallerythum} alt="image"/></div>
-                            <div className={cls('image__description', `glightbox-${index}`)}>
-                              <Imagecaption label={item.label} paragraph={item.paragraph} />
-                            </div>
-                          </figure>
-                        </a>
-                      </li>
-                    </>
-                  );
-              })}
-            </ul>
+        <ul className="lightbox-gallery-images">
+          {data.map((item, index) => (
+            <li key={index}>
+              <a href={item.galleryimg} className="glightbox" data-glightbox={`description:.glightbox-${index};`} descPosition="bottom">
+                <figure>
+                  <div className="image">
+                    <img src={item.gallerythum} alt="image" />
+                  </div>
+                  <div className={cls('image__description', 'caption_on_top', `glightbox-${index}`)}>
+                    <Imagecaption
+                      label={item.label}
+                      paragraph={item.paragraph}
+                      caption="true"
+                      credit="true"
+                    />
+                  </div>
+                </figure>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
-};
+}

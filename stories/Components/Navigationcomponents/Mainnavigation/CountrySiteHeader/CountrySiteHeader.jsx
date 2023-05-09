@@ -4,6 +4,7 @@ import { getMegaMenu } from '../../../../assets/js/navigation-data';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 // import { desktopView } from '../../../../assets/js/undp';
 import { Logo } from '../../../../Atom/Logo/Logo';
+import { CtaButton } from '../../../UIcomponents/Buttons/CtaButton/CtaButton';
 import { Menu } from '../../Menu/Menu';
 import { Languageswitcher } from '../../../UIcomponents/LanguageSwitcher/LanguageSwitcher';
 import MegaMenu from '../MegaMenu/MegaMenu';
@@ -20,6 +21,7 @@ function CountrySiteHeader({
   locationData,
   langSelect,
   siteTitleData,
+  ...args
 }) {
   useEffect(() => {
     getMegaMenu(locale);
@@ -31,13 +33,15 @@ function CountrySiteHeader({
       <section className="header">
         <div className="grid-container fluid">
           <div className="grid-x grid-margin-x align-content-middle">
-            <div className="cell large-9 small-9 align-self-middle top-left">
-              <a href="https://develop.design-system.pages.dev/iframe?id=components-navigation-components-main-navigation-global-header--global-header&globals=locale:english&args=&viewMode=story" className="logo" tabIndex="0">
+            <div className="cell large-9 small-8 align-self-middle top-left">
+              <a href="#" className="logo" tabIndex="0" title="UNDP Logo homepage link">
                 <Logo src={pnud} alt="UNDP Logo" />
               </a>
               <div className="site-title">
-                <span>{siteTitleData.label}</span>
-                <span>{siteTitleData.span}</span>
+                {!!siteTitleData.label && (
+                  <span><a href="#" title="UNDP homepage link">{siteTitleData.label}</a></span>
+                )}
+                <span><a href="#" title="UNDP homepage link">{siteTitleData.span}</a></span>
               </div>
               <Menu data={navigationData} />
             </div>
@@ -54,6 +58,13 @@ function CountrySiteHeader({
               </button>
               <button className="icon-globe">Global</button>
               <button className="icon-search">Search</button>
+              {args.cta_enabled == 'On' && (
+                <CtaButton
+                  label="Donate"
+                  href="#"
+                  Icon="No Arrow"
+                />
+              )}
             </div>
             <MobileNav
               navigationData={navigationData}
@@ -62,6 +73,7 @@ function CountrySiteHeader({
               backcaption={backcaption}
               langSelect={langSelect}
               text="Mobile Nav"
+              {...args}
             />
           </div>
         </div>

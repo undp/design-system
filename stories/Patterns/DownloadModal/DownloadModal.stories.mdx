@@ -1,451 +1,480 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DownloadModal } from './DownloadModal';
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { DownloadModal } from "./DownloadModal";
 
 export const statsArray = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {data: [{
-      title: 'Title of the publication quite long - Pasto',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'pasto'
-    },
-    {
-      title: 'Title of the publication quite long - Pasto',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'pasto'
-    },
-    {
-      title: 'Title of the publication quite long - Pasto',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'pasto'
-    },
-    {
-      title: 'Title of the publication quite long - Dari',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'dari'
-    },
-    {
-      title: 'Title of the publication quite long - Dari',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'dari'
-    },
-    {
-      title: 'Title of the publication quite long - Dari',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'dari'
-    },
-    {
-      title: 'Title of the publication quite long - English',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'en'
-    },
-    {
-      title: 'Title of the publication quite long - English',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'en'
-    },
-    {
-      title: 'Title of the publication quite long - English',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'en'
-    },
-    {
-      title: 'Title of the publication quite long - Albanian',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'albanian'
-    },
-    {
-      title: 'Title of the publication quite long - Albanian',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'albanian'
-    },
-    {
-      title: 'Title of the publication quite long - Albanian',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'albanian'
-    },
-    {
-      title: 'Title of the publication quite long - Arabic',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'arabic'
-    },
-    {
-      title: 'Title of the publication quite long - Arabic',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'arabic'
-    },
-    {
-      title: 'Title of the publication quite long - Portuguese',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'portuguese'
-    },
-    {
-      title: 'Title of the publication quite long - Portuguese',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'portuguese'
-    }],
-    button: 'DOWNLOAD',
-    select: 'Select language',
-    modalbtn: 'Modal',
-    content: ''
-    }; return engText;
-    case 'arabic': const arabicText = {data: [{
-      title: 'عنوان المنشور طويل جدا - باستو',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'pasto'
-    },
-    {
-      title: 'عنوان المنشور طويل جدا - باستو',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'pasto'
-    },
-    {
-      title: 'عنوان المنشور طويل جدا - باستو',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'pasto'
-    },
-    {
-      title: 'عنوان المنشور طويل جدا - داري',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'dari'
-    },
-    {
-      title: 'عنوان المنشور طويل جدا - داري',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'dari'
-    },
-    {
-      title: 'عنوان المنشور طويل جدا - داري',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'dari'
-    },
-    {
-      title: 'عنوان المنشور طويل جدًا - إنجليزي',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'en'
-    },
-    {
-      title: 'عنوان المنشور طويل جدًا - إنجليزي',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'en'
-    },
-    {
-      title: 'عنوان المنشور طويل جدًا - إنجليزي',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'en'
-    },
-    {
-      title: 'عنوان المنشور طويل جدا - ألباني',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'albanian'
-    },
-    {
-      title: 'عنوان المنشور طويل جدا - ألباني',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'albanian'
-    },
-    {
-      title: 'عنوان المنشور طويل جدا - ألباني',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'albanian'
-    },
-    {
-      title: 'عنوان المنشور طويل جدا - عربي',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'arabic'
-    },
-    {
-      title: 'عنوان المنشور طويل جدا - عربي',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'arabic'
-    },
-    {
-      title: 'عنوان المنشور طويل جدًا - برتغالي',
-      subtitle: 'PDF (1.2)ميجابايت',
-      dataValue: 'portuguese'
-    },
-    {
-      title: 'عنوان المنشور طويل جدًا - برتغالي',
-      subtitle: 'PDF (1.2) ميجابايت',
-      dataValue: 'portuguese'
-    }],
-    button: 'تحميل',
-    select: 'اختار اللغة',
-    modalbtn: 'مشروط',
-    content: ''
-    }; return arabicText;
-    case 'burmese': const burmeseText = {data: [{
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ခေါက်ဆွဲ',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'pasto'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ခေါက်ဆွဲ',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'pasto'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ခေါက်ဆွဲ',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'pasto'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ဒါ',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'dari'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ဒါ',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'dari'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ဒါ',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'dari'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အင်္ဂလိပ်',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'en'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အင်္ဂလိပ်',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'en'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အင်္ဂလိပ်',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'en'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အယ်လ်ဘေးနီးယန်း',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'albanian'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အယ်လ်ဘေးနီးယန်း',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'albanian'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အယ်လ်ဘေးနီးယန်း',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'albanian'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အာရဗီ',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'arabic'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အာရဗီ',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'arabic'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ပေါ်တူဂီ',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'portuguese'
-    },
-    {
-      title: 'စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ပေါ်တူဂီ',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'portuguese'
-    }],
-    button: 'ဒေါင်းလုဒ်လုပ်ပါ။',
-    select: 'ဘာသာစကားကို ရွေးပါ။',
-    modalbtn: 'မော်ဒယ်',
-    content: ''
-    }; return burmeseText;
-    case 'japanese': const japaneseText = {data: [{
-      title: '出版物のタイトルはかなり長い - パスト',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'pasto'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - パスト',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'pasto'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - パスト',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'pasto'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - ダリー語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'dari'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - ダリー語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'dari'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - ダリー語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'dari'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - 英語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'en'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - 英語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'en'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - 英語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'en'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - アルバニア語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'albanian'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - アルバニア語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'albanian'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - アルバニア語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'albanian'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - アラビア語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'arabic'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - アラビア語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'arabic'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - -ポルトガル語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'portuguese'
-    },
-    {
-      title: '出版物のタイトルはかなり長い - -ポルトガル語',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'portuguese'
-    }],
-    button: 'ダウンロード',
-    select: '言語を選択する',
-    modalbtn: 'モーダル',
-    content: ''
-    }; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = {
+        data: [
+          {
+            title: "Title of the publication quite long - Pasto",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "Title of the publication quite long - Pasto",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "Title of the publication quite long - Pasto",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "Title of the publication quite long - Dari",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "Title of the publication quite long - Dari",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "Title of the publication quite long - Dari",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "Title of the publication quite long - English",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "Title of the publication quite long - English",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "Title of the publication quite long - English",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "Title of the publication quite long - Albanian",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "Title of the publication quite long - Albanian",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "Title of the publication quite long - Albanian",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "Title of the publication quite long - Arabic",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "arabic",
+          },
+          {
+            title: "Title of the publication quite long - Arabic",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "arabic",
+          },
+          {
+            title: "Title of the publication quite long - Portuguese",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "portuguese",
+          },
+          {
+            title: "Title of the publication quite long - Portuguese",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "portuguese",
+          },
+        ],
+        button: "DOWNLOAD",
+        select: "Select language",
+        modalbtn: "Modal",
+        content: "",
+      };
+      return engText;
+    case "arabic":
+      const arabicText = {
+        data: [
+          {
+            title: "عنوان المنشور طويل جدا - باستو",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "pasto",
+          },
+          {
+            title: "عنوان المنشور طويل جدا - باستو",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "pasto",
+          },
+          {
+            title: "عنوان المنشور طويل جدا - باستو",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "pasto",
+          },
+          {
+            title: "عنوان المنشور طويل جدا - داري",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "dari",
+          },
+          {
+            title: "عنوان المنشور طويل جدا - داري",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "dari",
+          },
+          {
+            title: "عنوان المنشور طويل جدا - داري",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "dari",
+          },
+          {
+            title: "عنوان المنشور طويل جدًا - إنجليزي",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "en",
+          },
+          {
+            title: "عنوان المنشور طويل جدًا - إنجليزي",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "en",
+          },
+          {
+            title: "عنوان المنشور طويل جدًا - إنجليزي",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "en",
+          },
+          {
+            title: "عنوان المنشور طويل جدا - ألباني",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "albanian",
+          },
+          {
+            title: "عنوان المنشور طويل جدا - ألباني",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "albanian",
+          },
+          {
+            title: "عنوان المنشور طويل جدا - ألباني",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "albanian",
+          },
+          {
+            title: "عنوان المنشور طويل جدا - عربي",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "arabic",
+          },
+          {
+            title: "عنوان المنشور طويل جدا - عربي",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "arabic",
+          },
+          {
+            title: "عنوان المنشور طويل جدًا - برتغالي",
+            subtitle: "PDF (1.2)ميجابايت",
+            dataValue: "portuguese",
+          },
+          {
+            title: "عنوان المنشور طويل جدًا - برتغالي",
+            subtitle: "PDF (1.2) ميجابايت",
+            dataValue: "portuguese",
+          },
+        ],
+        button: "تحميل",
+        select: "اختار اللغة",
+        modalbtn: "مشروط",
+        content: "",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        data: [
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ခေါက်ဆွဲ",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ခေါက်ဆွဲ",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ခေါက်ဆွဲ",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ဒါ",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ဒါ",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ဒါ",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အင်္ဂလိပ်",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အင်္ဂလိပ်",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အင်္ဂလိပ်",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အယ်လ်ဘေးနီးယန်း",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အယ်လ်ဘေးနီးယန်း",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အယ်လ်ဘေးနီးယန်း",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အာရဗီ",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "arabic",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - အာရဗီ",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "arabic",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ပေါ်တူဂီ",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "portuguese",
+          },
+          {
+            title: "စာအုပ်ခေါင်းစဉ်က တော်တော်ရှည်တယ်။ - ပေါ်တူဂီ",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "portuguese",
+          },
+        ],
+        button: "ဒေါင်းလုဒ်လုပ်ပါ။",
+        select: "ဘာသာစကားကို ရွေးပါ။",
+        modalbtn: "မော်ဒယ်",
+        content: "",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        data: [
+          {
+            title: "出版物のタイトルはかなり長い - パスト",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - パスト",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - パスト",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - ダリー語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - ダリー語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - ダリー語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - 英語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - 英語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - 英語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - アルバニア語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - アルバニア語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - アルバニア語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - アラビア語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "arabic",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - アラビア語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "arabic",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - -ポルトガル語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "portuguese",
+          },
+          {
+            title: "出版物のタイトルはかなり長い - -ポルトガル語",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "portuguese",
+          },
+        ],
+        button: "ダウンロード",
+        select: "言語を選択する",
+        modalbtn: "モーダル",
+        content: "",
+      };
+      return japaneseText;
     default:
-    const dummy =  {data: [{
-      title: 'Title of the publication quite long - Pasto',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'pasto'
-    },
-    {
-      title: 'Title of the publication quite long - Pasto',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'pasto'
-    },
-    {
-      title: 'Title of the publication quite long - Pasto',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'pasto'
-    },
-    {
-      title: 'Title of the publication quite long - Dari',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'dari'
-    },
-    {
-      title: 'Title of the publication quite long - Dari',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'dari'
-    },
-    {
-      title: 'Title of the publication quite long - Dari',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'dari'
-    },
-    {
-      title: 'Title of the publication quite long - English',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'en'
-    },
-    {
-      title: 'Title of the publication quite long - English',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'en'
-    },
-    {
-      title: 'Title of the publication quite long - English',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'en'
-    },
-    {
-      title: 'Title of the publication quite long - Albanian',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'albanian'
-    },
-    {
-      title: 'Title of the publication quite long - Albanian',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'albanian'
-    },
-    {
-      title: 'Title of the publication quite long - Albanian',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'albanian'
-    },
-    {
-      title: 'Title of the publication quite long - Arabic',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'arabic'
-    },
-    {
-      title: 'Title of the publication quite long - Arabic',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'arabic'
-    },
-    {
-      title: 'Title of the publication quite long - Portuguese',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'portuguese'
-    },
-    {
-      title: 'Title of the publication quite long - Portuguese',
-      subtitle: 'PDF (1.2MB)',
-      dataValue: 'portuguese'
-    }],
-    button: 'DOWNLOAD',
-    select: 'Select language',
-    modalbtn: 'Modal',
-    content: ''
-    };
-    return dummy
+      const dummy = {
+        data: [
+          {
+            title: "Title of the publication quite long - Pasto",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "Title of the publication quite long - Pasto",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "Title of the publication quite long - Pasto",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "Title of the publication quite long - Dari",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "Title of the publication quite long - Dari",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "Title of the publication quite long - Dari",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "Title of the publication quite long - English",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "Title of the publication quite long - English",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "Title of the publication quite long - English",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "Title of the publication quite long - Albanian",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "Title of the publication quite long - Albanian",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "Title of the publication quite long - Albanian",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "Title of the publication quite long - Arabic",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "arabic",
+          },
+          {
+            title: "Title of the publication quite long - Arabic",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "arabic",
+          },
+          {
+            title: "Title of the publication quite long - Portuguese",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "portuguese",
+          },
+          {
+            title: "Title of the publication quite long - Portuguese",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "portuguese",
+          },
+        ],
+        button: "DOWNLOAD",
+        select: "Select language",
+        modalbtn: "Modal",
+        content: "",
+      };
+      return dummy;
   }
 };
 
-<Meta title="Patterns/Download modal"
+<Meta
+  title="Patterns/Download modal"
   argTypes={{
     Image: {
+      name: "Display image",
       options: ["True", "False"],
-      control: { type: "radio" },
-      defaultValue: "True"
+      control: { type: "inline-radio" },
     },
     Category: {
+      name: "Category",
       options: ["Singlelanguage", "Multiplelanguages"],
-      control: { type: "radio" },
-      defaultValue: "Multiplelanguages"
-    }
-  }}/>
+      control: { type: "inline-radio" },
+    },
+  }}
+  args={{
+    Image: "True",
+    Category: "Multiplelanguages",
+  }}
+/>
 
 # Download Modal
 
@@ -468,6 +497,7 @@ In this, the user will be given a list where he can select one or more assets to
 ### Behaviors
 
 #### States
+
 There are two state for download modal: Default and Select
 Default: In this, the user will be given options to choose the language for downloading the document. When no checkboxes are checked - The download button is in a disabled state.
 
@@ -479,12 +509,23 @@ Close button dismisses the entire modal window and resets filter states and chec
   <Story name="Download modal">
     {(args, { globals: { locale } }) => {
       const caption = statsArray(locale);
-      return <DownloadModal data={caption.data} button={caption.button} select={caption.select} id="downloadModal" modalbtn={caption.modalbtn} content={caption.content} {...args}></DownloadModal>;
+      return (
+        <DownloadModal
+          data={caption.data}
+          button={caption.button}
+          select={caption.select}
+          id="downloadModal"
+          modalbtn={caption.modalbtn}
+          content={caption.content}
+          {...args}
+        ></DownloadModal>
+      );
     }}
   </Story>
 </Canvas>
 
 ### Usage
+
 - Choose the image either true or false and Category either Single or Multiple Languages from the control tab on canvas.
 - Grab the HTML from the HTML tab in the canvas and include css and js files listed below.
 - Make sure to add data-toggle='modal' and data-target-modal='&lt;your-modal-id&gt;' in your button or link which will open the modal box.
@@ -508,12 +549,15 @@ Add the base layout style from
 - https://undp.github.io/design-system/css/components/download-row.min.css
 
 #### JS
+
 - https://undp.github.io/design-system/js/modal.min.js.
 - https://undp.github.io/design-system/js/select.min.js.
 - https://undp.github.io/design-system/js/download-modal.min.js.
 
 ### Interactions
+
 There will be a checkbox where the user can click on it to select the asset and then click on the download button to download the document.
 
 ### Changelog
+
 1.0 — Released component

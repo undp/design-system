@@ -1,42 +1,57 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { CtaButton } from './CtaButton';
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { CtaButton } from "./CtaButton";
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {detail: 'READ MORE'}; return engText;
-    case 'arabic': const arabicText = {detail: 'اقرأ أكثر'}; return arabicText;
-    case 'burmese': const burmeseText = {detail: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
-    case 'japanese': const japaneseText = {detail: '続きを読む'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = { detail: "READ MORE" };
+      return engText;
+    case "arabic":
+      const arabicText = { detail: "اقرأ أكثر" };
+      return arabicText;
+    case "burmese":
+      const burmeseText = { detail: "ပိုပြီးဖတ်ပါ" };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = { detail: "続きを読む" };
+      return japaneseText;
     default:
-      return {detail: 'READ MORE'};
+      return { detail: "READ MORE" };
   }
 };
 
-<Meta title="Components/UI components/Buttons/Buttons"
+<Meta
+  title="Components/UI components/Buttons/Buttons"
   argTypes={{
     Type: {
+      name: "Type",
       options: ["Primary", "Secondary"],
       control: { type: "inline-radio" },
-      defaultValue: 'Primary'
-      },
-      State: {
+    },
+    State: {
+      name: "State",
       options: ["Active", "Disabled"],
       control: { type: "inline-radio" },
-      defaultValue: 'Active'
-      },
-      For_Primary: {
-      options: ["Arrow", "No Arrow"],
+    },
+    Icon: {
+      name: "Icon",
+      options: ["Arrow", "No Arrow", "Download", "External link"],
       control: { type: "inline-radio" },
-      defaultValue: 'Arrow'
-      },
-  }}/>
-
+    },
+  }}
+  args={{
+    Type: "Primary",
+    State: "Active",
+    Icon: "Arrow",
+  }}
+/>
 
 # Buttons and Labels
 
 A button describes what action will be performed when a user clicks or touches it.
 
 ### Overview
+
 A button describes the call to action that will be performed when the user clicks/touches it. It has a label and an optional animation.
 
 #### When to use:
@@ -49,61 +64,57 @@ A button describes the call to action that will be performed when the user click
 ### Formatting
 
 #### Default
+
 There are multiple button types in our design system
+
 1. Primary button with arrow and without arrows
 2. Secondary buttons without the arrow
 3. CTA links with and without expanding arrows
 4. Chips
 
 ### Content
+
 Button”s color and text indicate the default setting and call of action of the button.
 Primary CTA: Dark Red: Default call of action button
-                      Red: Hover overcall of action button
-                      Gray: Disabled call of action button
+Red: Hover overcall of action button
+Gray: Disabled call of action button
 Secondary Button: Blue-600: Default secondary button
-                      Blue-400: Hover over the secondary button
-                      Gray-400: Disabled secondary button
+Blue-400: Hover over the secondary button
+Gray-400: Disabled secondary button
 
 ### Behaviors
 
 #### States
+
 The following size modifiers are available:
 
 Primary CTA:
 The Dark Red Primary button with an arrow is the default button displayed on the website with default breakpoint which indicates the main task to be completed.
 
-
 CSS
-
 
 The Red Primary button with an arrow is a hover over button with a default breakpoint which changes its appearance once a mouse hovers over it, even if it is not selected.
 
-
-
 The Gray-400 Primary button is disabled with an arrow and default breakpoint which will be disabled if there is an error and the error needs to be cleared for abling it.
-
 
 Secondary Buttons:
 The Blue-600 Secondary Button is the default secondary button which is used as an alternative to the primary button. Its color is different from the Primary button as the viewers won’t get confused with the Primary button.
 
-
-
 The Blue-400 Secondary button is a hover button that changes its appearance once the mouse hovers over it.
-
-
 
 The Gray-400 Secondary button is in a disabled state and will require error corrections for enabling it to select the alternative option.
 
 <Canvas>
-<Story name="Buttons">
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <CtaButton label={caption.detail} {...args} ></CtaButton>;
-  }}
-</Story>
+  <Story name="Buttons">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <CtaButton label={caption.detail} {...args}></CtaButton>;
+    }}
+  </Story>
 </Canvas>
 
 ### Usage
+
 - Copy the HTML from the HTML Tab of canvas for either Chips, CTA Button, and CTA Link from the controls.
 - Include the CSS files listed below concerning the button you choose.
 
@@ -112,15 +123,19 @@ The Gray-400 Secondary button is in a disabled state and will require error corr
 #### CSS:
 
 Add the base layout style from dist/css/base-minimal.min.css
+
 - https://undp.github.io/design-system/css/components/buttons.min.css
 
 Use above CSS concerning CTA Button
 
 #### JS:
+
 NA
 
 ### Interactions
+
 - The hover state is applied to the entire button.
 
 ### Changelog
+
 1.0 — Released component
