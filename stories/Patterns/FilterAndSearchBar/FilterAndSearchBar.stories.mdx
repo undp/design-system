@@ -140,55 +140,63 @@ Select: The search bar having a horizontal line below the search icon indicates 
 
 - Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
 - Initialize the search, multi-select and filter by calling functions expandSearch(), multiSelect(), toggleFilter() respectively.
+- Custom code can be triggered by available Custom Events on the filter items. See **Custom Events** and **Custom Event Data** below.
 
-### Events:
+---
 
-- A multi-select is toggled open or closed:
+### Custom Events:
+
+- **multiSelectToggle**: When a multi-select item is toggled open or closed:
   ```
   $(document).on('multiSelectToggle', (e) => {
-    ...
+    ...Your custom code...
   })
   ```
-- A checkbox in the multi-select is toggled on or off:
+- **multiSelectInputToggle**: When a checkbox in the multi-select is toggled on or off:
   ```
   $(document).on('multiSelectInputToggle', (e) => {
-    ...
+    ...Your custom code...
   })
   ```
-- A Search chip is removed:
+- **filterSearchChipRemoval**: When a search chip is removed:
   ```
   $(document).on('filterSearchChipRemoval', (e) => {
-    ...
+    ...Your custom code...
   })
   ```
-- The Search clear all link is clicked:
+- **filterSearchClear**: When the Search "Clear all" link is clicked:
   ```
   $(document).on('filterSearchClear', (e) => {
-    ...
+    ...Your custom code...
   })
   ```
 
-### Data:
+### Custom Event Data:
 
-The event data for each of the custom events contain specific data.
+Each of the custom events contains specific data.
 
-- The `multiSelectInputToggle` event data contains:
+The **multiSelectInputToggle** event data contains:
 
-  - `checkbox_id`: (string) The ID of the triggering input.
-  - `state`: (boolean) The current state of the triggering input, true or false.
-  - `toggle_state`: (string) whether the triggering input is "checked" or "unchecked".
-  - `selected`: (boolean) true if the input is selected.
-  - `unselected`: (boolean) true if the input is unselected,
+- `checkbox_id`: (string) The ID of the triggering input.
+- `state`: (boolean) The current state of the triggering input, true or false.
+- `toggle_state`: (string) whether the triggering input is "checked" or "unchecked".
+- `selected`: (boolean) true if the input is selected.
+- `unselected`: (boolean) true if the input is unselected,
 
-- The `multiSelectToggle` event data contains:
+The **multiSelectToggle** event data contains:
 
-  - `checkbox_id`: (string) The ID of the triggering input.
-  - `state`: (string) The current state of the triggering select group, "open" or "closed".
-  - `open`: (boolean) true if the list is open.
-  - `closed`: (boolean) true if the list is closed,
+- `checkbox_id`: (string) The ID of the triggering input.
+- `state`: (string) The current state of the triggering select group, "open" or "closed".
+- `open`: (boolean) true if the list is open.
+- `closed`: (boolean) true if the list is closed,
 
-- The `filterSearchChipRemoval` event data contains:
-  - `chip_id`: (string) The ID of chip being removed.
+The **filterSearchChipRemoval** event data contains:
+
+- `chip_id`: (string) The ID of chip being removed.
+
+The **filterSearchClear** event does not contain any specific data:
+
+---
 
 ### CSS and JS References
 
