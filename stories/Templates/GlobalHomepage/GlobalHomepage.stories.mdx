@@ -565,9 +565,11 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Templates/Global homepage" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Global Homepage
 
@@ -678,6 +680,12 @@ Add following external libraries
     name="Global homepage"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

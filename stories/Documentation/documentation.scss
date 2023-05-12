@@ -2,7 +2,6 @@
 @import '../assets/scss/breakpoints';
 @import '../assets/scss/variables';
 
-// .sb-show-main.sb-main-fullscreen,
 .documentation-page {
 
   .grid-container:not(.full) {
@@ -40,7 +39,12 @@
     color: $color-black;
     margin-top: $spacing-10;
     margin-bottom: $spacing-07;
-    font-size: 55px;
+
+    div {
+      font-family: "SohneBreit", "ProximaNova", sans-serif;
+      font-weight: 900;
+      font-size: 55px;
+    }
 
     @include devicebreak(large) {
       font-size: 55px;
@@ -65,7 +69,7 @@
 
   .subtitle {
     font-size: 1.25rem;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   video {

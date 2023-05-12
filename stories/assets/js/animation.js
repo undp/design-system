@@ -9,5 +9,5 @@ export default function expandToSize(ele) {
   });
 }
 // for webpack build
-export {expandToSize as expandToSize}
+export { expandToSize };
 /* expand animation end custom */

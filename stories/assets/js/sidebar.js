@@ -6,6 +6,7 @@ export function sidebarNav() {
       if (jQuery(element).hasClass('active')) {
         jQuery(element).find('.accordion__panel').slideDown();
       }
+
       jQuery(element).find('button').first().off('click keypress')
         .on('click keypress', function (e) {
           e.preventDefault();

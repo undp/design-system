@@ -4,7 +4,7 @@ import { getCaptionForLocale as imageCaptionData } from "../../Atom/Images/Image
 import { getCaptionForLocale as PostHeadData } from "../../Organism/Text/PostHeader/PostHeader.stories.js";
 import { getCaptionForLocale as AuthorCardData } from "../../Components/UIcomponents/Author/AuthorColumn/AuthorColumn.stories.mdx";
 import { getCaptionForLocale as blockquoteData } from "../../Molecules/Text/BlockquoteComponent/BlockquoteComponent.stories.mdx";
-import { getCaptionForLocale as paraLabel } from "../../Atom/BaseTypography/Paragraph/Paragarph.mdx";
+import { getCaptionForLocale as paraLabel } from "../../Atom/BaseTypography/Paragraph/Paragraph.stories.mdx";
 import { getCaptionForLocale as headingData } from "../../Atom/Typography/Heading/Heading.mdx";
 import { getCaptionForLocale as listData } from "../../Atom/Typography/Lists/Lists.mdx";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer//Footer.stories.mdx";
@@ -146,9 +146,11 @@ export const getHeadingCaptionForLocale = (locale) => {
 
 <Meta title="Templates/Article" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Article Page
 
@@ -239,6 +241,12 @@ Add the base layout style from
     name="Article"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

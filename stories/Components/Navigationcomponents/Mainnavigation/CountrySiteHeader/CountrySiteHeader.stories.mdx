@@ -181,11 +181,13 @@ export const menuData = (locale) => {
   }}
 />
 
-<style>{`
+<style>
+  {`
   iframe {
     min-height: 400px;
   }
-`}</style>
+  `}
+</style>
 
 # Country Header
 
@@ -235,8 +237,10 @@ There are three states: Default, Tablet, and Mobile.
     parameters={{
       layout: "fullscreen",
       docs: {
-        inlineStories: false,
-        iframeHeight: "100%",
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
       },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}

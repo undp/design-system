@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas} from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Languageswitcher } from "./LanguageSwitcher";
 
 export const getCaptionForLocale = (locale) => {
@@ -87,8 +87,10 @@ export const getCaptionForLocale = (locale) => {
     variant: {
       options: ["blue", "white"],
       control: { type: "radio" },
-       defaultValue: 'blue'
     },
+  }}
+  args={{
+    variant: "blue",
   }}
   parameters={{
     backgrounds: {
@@ -103,6 +105,7 @@ export const getCaptionForLocale = (locale) => {
 The Language Switcher changes the language of the page.
 
 ### Overview
+
 The Language Switcher component allows visitors to select the language in which they want to read your content. It is constructed with a Language icon, current language title and dropdown with other language options.
 
 #### When to use:
@@ -112,15 +115,19 @@ To change the language of the page.
 ### Formatting
 
 #### Default
+
 It consists of a drop-down menu of languages to select.Language labels provided in the respective languages, not the language of the page
 
 ### Content
+
 Language switcher has two colors: Default and White.
 
 ### Behaviors
 
 #### States
+
 There are two states: Default and Open.
+
 1. Default: It shows the option to select the language. It has a downward arrow to open the menu.
 2. Open: It shows that the language switcher is opened and the user can select the desired language. It has an upward arrow with an opened menu.
 
@@ -128,12 +135,15 @@ There are two states: Default and Open.
   <Story
     name="Language switcher"
     parameters={{
-      backgrounds: { default: 'gray'},
+      backgrounds: { default: "gray" },
       docs: {
-        inlineStories: false,
-        iframeHeight: '100%'
-      }
-    }}>
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
+    }}
+  >
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return (
@@ -148,6 +158,7 @@ There are two states: Default and Open.
 </Canvas>
 
 ### Usage:
+
 - Choose the color variant either Blue or White from the control tab of canvas.
 - Copy HTML from the HTML tab and also include css and js files listed below.
 - Initialize the Language Switcher by calling langSwitch() function.
@@ -155,17 +166,21 @@ There are two states: Default and Open.
 ### CSS and JS References
 
 #### CSS:
+
 Add the base layout style from
 
 - https://undp.github.io/design-system/css/base-minimal.min.css
 - https://undp.github.io/design-system/css/components/language-switcher.min.css
 
 #### JS:
+
 - https://undp.github.io/design-system/js/lang-switcher.min.js
 
 ### Interactions
+
 - By clicking on the drop-down menu, language can be selected.
 - After selecting the language, the language of the entire page is changed.
 
 ### Changelog
+
 1.0 — Released component

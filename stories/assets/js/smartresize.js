@@ -4,7 +4,7 @@
   const debounce = function (func, threshold, execAsap) {
     let timeout;
 
-    return function debounced() {
+    return function () {
       const obj = this; const
         args = arguments;
       function delayed() {

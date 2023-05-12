@@ -6,9 +6,13 @@ import './sidebar.scss';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
-export const Sidebar = ({
-  headerText, label, data, size, Height,
-}) => {
+export function Sidebar({
+  headerText,
+  label,
+  data,
+  size,
+  Height,
+}) {
   useEffect(() => {
     sidebarNav();
     sidebarMenu();
@@ -45,4 +49,4 @@ export const Sidebar = ({
       </div>
     </nav>
   );
-};
+}

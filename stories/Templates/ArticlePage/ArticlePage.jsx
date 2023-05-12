@@ -43,7 +43,6 @@ function ArticlePage({
   logowhite,
   ...args
 }) {
-  console.log(args.accent);
   return (
     <div className="article-page">
       <GlobalHeader

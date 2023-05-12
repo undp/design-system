@@ -61,6 +61,7 @@ module.exports = [
         // '../../../../../../assets/icons/times-blue.svg': path.resolve(__dirname, 'stories/assets/icons/times-blue.svg'),
         // '../../../assets/icons/chevron-small-right.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-small-right.svg'),
       },
+      extensions: ['.ts', '.js'],
     },
     optimization: {
       minimizer: [

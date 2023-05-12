@@ -3,6 +3,7 @@ import { initializeRTL } from 'storybook-addon-rtl';
 // import { anysort } from 'anysort'
 // import { addParameters } from '@storybook/react'
 import renderToHTML from './renderToHTML'
+import { DocsContainer } from '@storybook/blocks';
 
 // include base styling globally
 import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss';
@@ -49,11 +50,12 @@ export const parameters = {
 // Note: Languages added to items array need to be added to the getLangCode() function below.
 export const globalTypes = {
   locale: {
-    name: 'Locale',
+    title: 'Locale',
     description: 'locale',
     defaultValue: 'en',
     toolbar: {
       icon: 'globe',
+      title: 'Locale',
       items: [
         { value: 'english', title: 'English', right: 'Default' },
         { value: 'arabic', title: 'Arabic' },
@@ -63,12 +65,12 @@ export const globalTypes = {
     },
   },
   accent: {
-    name: 'Accent color',
+    title: 'Accent color',
     description: 'Define the accent color.',
     defaultValue: '',
     toolbar: {
       icon: 'paintbrush',
-      showName: true,
+      title: 'Accent color',
       items: [
         { value: '', title: 'Default accent', right: 'Default' },
         { value: 'yellow', title: 'Yellow' },

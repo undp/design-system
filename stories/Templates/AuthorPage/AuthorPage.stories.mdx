@@ -553,9 +553,11 @@ export const getCaptionDataLocale = (locale) => {
 
 <Meta title="Templates" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Author Page
 
@@ -638,6 +640,12 @@ Add the base layout style from
     name="Author detail"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

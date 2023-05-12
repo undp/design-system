@@ -1,20 +1,26 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { ProgressBar } from './ProgressBar'
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { ProgressBar } from "./ProgressBar";
 
-<Meta title="Utilities/Progress bar" component={ProgressBar}
-   argTypes={{
-     Percentage: {
-       options: ["0", "25", "50", "100"],
-       control: { type: "radio" },
-       defaultValue: "25",
-     },
-   }}
- />
+<Meta
+  title="Utilities/Progress bar"
+  component={ProgressBar}
+  argTypes={{
+    Percentage: {
+      options: ["0", "25", "50", "100"],
+      control: { type: "radio" },
+    },
+  }}
+  args={{
+    Percentage: "25",
+  }}
+/>
 
 # Progress bar
+
 The Progress Bar provides a visual representation of a user’s progress on-page.
 
 ### Overview
+
 A progress bar is a graphical content element that shows the progress of an ongoing task on a computer.
 
 #### When to use:
@@ -22,18 +28,21 @@ A progress bar is a graphical content element that shows the progress of an ongo
 When the process requires more time to complete the user gets the exact progress.
 
 ### Formatting
+
 #### Default
+
 The progress bar is an elongated rectangular bar that displays the progress of an extended computer operation.
 
 ### Behaviors
+
 #### States
+
 The progress bar has two states: default and short.
 
 The following behavior modifiers are available:
 
 Progress Bar 0:
 Progressbar provides a visual representation of a user’s progress on a page indicating the progress bar is in 0 state showing the progress bar is in the initial state.
-
 
 Progress Bar 25:
 Progressbar provides a visual representation of a user’s progress on a page indicating the progress bar is in 25% progress.
@@ -47,14 +56,13 @@ Progressbar provides a visual representation of a user’s progress on a page in
 <Canvas>
   <Story name="Progress bar">
     {(args) => {
-      return (
-        <ProgressBar {...args}></ProgressBar>
-      );
+      return <ProgressBar {...args}></ProgressBar>;
     }}
   </Story>
 </Canvas>
 
 ### Usage
+
 - Copy the HTML from the HTML tab of canvas and include the CSS file.
 - To change the visual on progressbar need to change the value of value attribute [0 to 100] .
 
@@ -71,7 +79,9 @@ Add the base layout style from dist/css/base-minimal.min.css
 NA
 
 ### Interactions
+
 No interactions are needed with the progress bar.
 
 ### Changelog
+
 1.0 — Released component

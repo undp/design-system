@@ -144,11 +144,12 @@ export const statsArray = (locale) => {
 The Stats is created for showing the Statspanel grid, and image in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
 
 <Canvas>
-  <Story name="Stats"
-  parameters={{
-    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-  }}
->
+  <Story
+    name="Stats"
+    parameters={{
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+    }}
+  >
     {(args, { globals: { locale, accent } }) => {
       const caption = statsArray(locale);
       return <Stats data={caption} imageback={BackgroundImg} {...args}></Stats>;
