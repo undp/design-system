@@ -139,17 +139,20 @@
 .icons-container {
   display: flex;
   flex-wrap: wrap;
-  > div > div {
+
+  >div>div {
     margin: 0 auto;
   }
-  p {
+
+  >div p {
+    font-family: $Font-Family-ProximaNova;
     font-size: 14px;
     margin-top: 10px;
   }
 }
 
 // For doc styling only
-.icons-container > div {
+.icons-container>div {
   align-items: center;
   background: $color-gray-300;
   border: 1px solid $color-gray-400;
@@ -157,7 +160,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   margin: 0 $spacing-05 $spacing-07;
   padding: $spacing-05 $spacing-03;
   text-align: center;

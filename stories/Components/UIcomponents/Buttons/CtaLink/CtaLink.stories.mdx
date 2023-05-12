@@ -1,29 +1,40 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { Ctalink } from './CtaLink';
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Ctalink } from "./CtaLink";
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {detail1: 'READ MORE'}; return engText;
-    case 'arabic': const arabicText = {detail1: 'اقرأ أكثر'}; return arabicText;
-    case 'burmese': const burmeseText = {detail1: 'ပိုပြီးဖတ်ပါ'}; return burmeseText;
-    case 'japanese': const japaneseText = {detail1: '続きを読む'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = { detail1: "READ MORE" };
+      return engText;
+    case "arabic":
+      const arabicText = { detail1: "اقرأ أكثر" };
+      return arabicText;
+    case "burmese":
+      const burmeseText = { detail1: "ပိုပြီးဖတ်ပါ" };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = { detail1: "続きを読む" };
+      return japaneseText;
     default:
-    return {detail1: 'READ MORE'};
+      return { detail1: "READ MORE" };
   }
 };
 
-<Meta title="Components/UI components/Buttons/CTA link"
+<Meta
+  title="Components/UI components/Buttons/CTA link"
   argTypes={{
     Type: {
       options: ["Expanding Arrow", "Space"],
       control: { type: "inline-radio" },
-      defaultValue: 'Expanding Arrow'
     },
     Tag: {
-      options: ['Hyperlink', 'Inline'],
-      control: { type: 'inline-radio' },
-      defaultValue: 'Hyperlink'
+      options: ["Hyperlink", "Inline"],
+      control: { type: "inline-radio" },
     },
+  }}
+  args={{
+    Type: "Expanding Arrow",
+    Tag: "Hyperlink",
   }}
 />
 
@@ -32,6 +43,7 @@ export const getCaptionForLocale = (locale) => {
 A button describes what action will be performed when a user clicks or touches it.
 
 ### Overview
+
 A button describes the call to action that will be performed when the user clicks/touches it. It has a label and an optional animation.
 
 #### When to use:
@@ -44,7 +56,9 @@ A button describes the call to action that will be performed when the user click
 ### Formatting
 
 #### Default
+
 There are multiple button types in our design system
+
 1. Primary button with arrow and without arrows
 2. Secondary buttons without the arrow
 3. CTA links with and without expanding arrows
@@ -55,6 +69,7 @@ There are multiple button types in our design system
 ### Behaviors
 
 #### States
+
 CTA Link:
 The CTA link with the arrow prompts the users to take action. and is in default state but the arrow does not expand.
 
@@ -65,25 +80,19 @@ The CTA link with space expand in default state is a space expand link where the
 The CTA link with the arrow expand is in a hover state. When the mouse hovers over the link the text changes its appearance and the arrow expands.
 
 <Canvas>
-<Story
-  name="CTA link"
->
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    // replace key
-    args['button_option'] = args['Tag'];
-    delete args['Tag'];
-    return (
-      <Ctalink
-        label={caption.detail1}
-        {...args}
-      ></Ctalink>
-    );
-  }}
-</Story>
+  <Story name="CTA link">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      // replace key
+      args["button_option"] = args["Tag"];
+      delete args["Tag"];
+      return <Ctalink label={caption.detail1} {...args}></Ctalink>;
+    }}
+  </Story>
 </Canvas>
 
 ### Usage
+
 - Copy the HTML from the HTML Tab of canvas for either Chips, CTA Button, and CTA Link from the controls.
 - Include the CSS files listed below concerning the button you choose.
 
@@ -99,10 +108,13 @@ Add the base layout style from
 Use above CSS concerning CTA link.
 
 #### JS:
+
 NA
 
 ### Interactions
+
 - The hover state is applied to the entire button.
 
 ### Changelog
+
 1.0 — Released component

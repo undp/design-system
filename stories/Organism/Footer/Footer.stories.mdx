@@ -249,13 +249,15 @@ export const getCaptionForLocale = (locale) => {
     variant: {
       options: ["default", "simple"],
       control: { type: "inline-radio" },
-      defaultValue: "default",
     },
     color: {
       options: ["default", "inverted"],
       control: { type: "inline-radio" },
-      defaultValue: "default",
     },
+  }}
+  args={{
+    variant: "default",
+    color: "default",
   }}
 />
 

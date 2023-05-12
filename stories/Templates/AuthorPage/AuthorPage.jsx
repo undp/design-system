@@ -64,7 +64,6 @@ function AuthorPage({
           </div>
         </div>
       </div>
-
       <Footer
         src={logo}
         srctwo={logowhite}

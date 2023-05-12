@@ -5,7 +5,7 @@ export const expandSearch = () => {
   const $expand = jQuery('.expand-search');
   const $expandInput = jQuery('.expand-search input');
 
-  $expandInput.on('input', function() {
+  $expandInput.on('input', function () {
     if (jQuery(this).val().length >= 1) {
       jQuery(this).parent($expand).find('.close-button').addClass('show');
     } else {
@@ -17,19 +17,21 @@ export const expandSearch = () => {
     if (jQuery(this).siblings('input').val().length >= 1) {
       jQuery(this).siblings('.close-button').addClass('show');
     }
+
     jQuery(this).parent($expand).toggleClass('open');
     if (jQuery(this).parent($expand).hasClass('open')) {
       jQuery(this).siblings('input').focus();
-    }
-    else {
+    } else {
       jQuery(this).siblings($expandInput).focusout();
       jQuery(this).siblings('.close-button').removeClass('show');
     }
   });
+
   jQuery(document).on('click', '.expand-search .close-button', function () {
     jQuery(this).siblings('input').val('');
     jQuery(this).removeClass('show');
   });
+
   jQuery(document).mouseup((e) => {
     var $container = jQuery('.expand-search');
     var $input = $container.find('input');

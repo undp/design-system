@@ -1,9 +1,10 @@
 import React from 'react';
 import './cite.scss';
 
-export const Cite = ({ label }) => (
-  <cite>
-    { label }
-  </cite>
-);
-
+export function Cite({ label }) {
+  return (
+    <cite>
+      {label}
+    </cite>
+  );
+}

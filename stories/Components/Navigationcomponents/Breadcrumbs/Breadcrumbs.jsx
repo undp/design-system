@@ -1,14 +1,14 @@
 import React from 'react';
 import './breadcrumbs.scss';
 
-export const Breadcrumbcomponent = ({ data, Color, ...args }) => {
+export function Breadcrumbcomponent({ data, Color, ...args }) {
   const lastIndex = data.length - 1;
 
   let color = '';
   if (Color == 'White') {
     color = 'white';
   }
-  
+
   return (
     <nav aria-label="breadcrumbs" data-viewport="true" className={['breadcrumb', `${color}`].join(' ')}>
       <ul>
@@ -28,4 +28,4 @@ export const Breadcrumbcomponent = ({ data, Color, ...args }) => {
       </ul>
     </nav>
   );
-};
+}

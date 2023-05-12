@@ -27,95 +27,95 @@ export function Footer({
   return (
     <>
       {variant === 'default' && (
-      <footer className={cls('footer', `${args.color === 'inverted' ? args.color : ''}`)}>
-        <div className="grid-x">
-          <div className="cell medium-10 medium-offset-1">
-            <div className="grid-x footer-head">
-              <div className="cell medium-5">
-                {args.color === 'default' ? (
-                  <FooterLogo src={srctwo} headerText={headerText} alt={alt} logolink={logolink} style="" />
-                ) : (
-                  <FooterLogo src={src} headerText={headerText} alt={alt} logolink={logolink} style={args.color} />
-                )}
-              </div>
-              <div className="cell medium-4">
-                <SignUp element={element} type={type} required={required} mode={mode} label={label} button={button} errorText={errorText} placeholder={placeholder} variant={args.color === 'default' ? args.color : 'inverted'} />
-              </div>
-            </div>
-            <div className="grid-x grid-margin-x" data-accordion="mobile">
-              <div className="cell medium-8">
-                <div className="grid-x grid-margin-x footer-items">
-                  <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-1" arialabel="footer-item-1" variant={args.color === 'default' ? args.color : 'inverted'} />
-                  <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-2" arialabel="footer-item-2" variant={args.color === 'default' ? args.color : 'inverted'} />
-                  <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-3" arialabel="footer-item-3" variant={args.color === 'default' ? args.color : 'inverted'} />
-                  <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-4" arialabel="footer-item-4" variant={args.color === 'default' ? args.color : 'inverted'} />
-                </div>
-              </div>
-              <div className="cell medium-4">
-                <div className="icons-search">
+        <footer className={cls('footer', `${args.color === 'inverted' ? args.color : ''}`)}>
+          <div className="grid-x">
+            <div className="cell medium-10 medium-offset-1">
+              <div className="grid-x footer-head">
+                <div className="cell medium-5">
                   {args.color === 'default' ? (
-                    <>
-                      <span className="icon-globe">
-                      <Icons src={IconsGlobeWhite} alt="icon-global" />
-                    </span>
-                      <span className="icon-search">
-                      <Icons src={IconsSearchWhite} alt="icon-search" />
-                    </span>
-                    </>
+                    <FooterLogo src={srctwo} headerText={headerText} alt={alt} logolink={logolink} style="" />
                   ) : (
-                    <>
-                    <span className="icon-globe">
-                       <Icons src={IconsGlobe} alt="icon-global" />
-                     </span>
-                    <span className="icon-search">
-                       <Icons src={IconsSearch} alt="icon-search" />
-                     </span>
-                  </>
+                    <FooterLogo src={src} headerText={headerText} alt={alt} logolink={logolink} style={args.color} />
                   )}
-
                 </div>
-                <FooterConditions footerdata={menudata} variant={args.color === 'default' ? args.color : 'inverted'} />
-                <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
+                <div className="cell medium-4">
+                  <SignUp element={element} type={type} required={required} mode={mode} label={label} button={button} errorText={errorText} placeholder={placeholder} variant={args.color === 'default' ? args.color : 'inverted'} />
+                </div>
               </div>
-            </div>
-            <div className="footer-copyright">
-              <P label={copyright} tabIndex="0" />
-            </div>
-          </div>
-        </div>
-      </footer>
-      )}
+              <div className="grid-x grid-margin-x" data-accordion="mobile">
+                <div className="cell medium-8">
+                  <div className="grid-x grid-margin-x footer-items">
+                    <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-1" arialabel="footer-item-1" variant={args.color === 'default' ? args.color : 'inverted'} />
+                    <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-2" arialabel="footer-item-2" variant={args.color === 'default' ? args.color : 'inverted'} />
+                    <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-3" arialabel="footer-item-3" variant={args.color === 'default' ? args.color : 'inverted'} />
+                    <FooterLists data={data} headerText={menutitle} ariacontrol="footer-panel-4" arialabel="footer-item-4" variant={args.color === 'default' ? args.color : 'inverted'} />
+                  </div>
+                </div>
+                <div className="cell medium-4">
+                  <div className="icons-search">
+                    {args.color === 'default' ? (
+                      <>
+                        <span className="icon-globe">
+                          <Icons src={IconsGlobeWhite} alt="icon-global" />
+                        </span>
+                        <span className="icon-search">
+                          <Icons src={IconsSearchWhite} alt="icon-search" />
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="icon-globe">
+                          <Icons src={IconsGlobe} alt="icon-global" />
+                        </span>
+                        <span className="icon-search">
+                          <Icons src={IconsSearch} alt="icon-search" />
+                        </span>
+                      </>
+                    )}
 
-      {variant === 'simple' && (
-      <footer className={cls('footer', `${args.color === 'inverted' ? args.color : ''}`)}>
-        <div className="grid-x">
-          <div className="cell medium-10 medium-offset-1">
-            <div className="grid-x footer-top">
-              <div className="cell medium-5">
-                {args.color === 'default' ? (
-                  <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style="" />
-                ) : (
-                  <FooterLogo src={src} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style={args.color} />
-                )}
-              </div>
-              <div className="cell medium-5 show-large">
-                <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
-              </div>
-            </div>
-            <div className="grid-x footer-bottom">
-              <div className="cell medium-5">
-                <P label={copyright} tabIndex="0" />
-              </div>
-              <div className="cell medium-6">
-                <FooterConditions2 footerdata2={menudata} variant={args.color === 'default' ? args.color : 'inverted'} />
-                <div className="show-small">
+                  </div>
+                  <FooterConditions footerdata={menudata} variant={args.color === 'default' ? args.color : 'inverted'} />
                   <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
                 </div>
               </div>
+              <div className="footer-copyright">
+                <P label={copyright} tabIndex="0" />
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      )}
+
+      {variant === 'simple' && (
+        <footer className={cls('footer', `${args.color === 'inverted' ? args.color : ''}`)}>
+          <div className="grid-x">
+            <div className="cell medium-10 medium-offset-1">
+              <div className="grid-x footer-top">
+                <div className="cell medium-5">
+                  {args.color === 'default' ? (
+                    <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style="" />
+                  ) : (
+                    <FooterLogo src={src} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style={args.color} />
+                  )}
+                </div>
+                <div className="cell medium-5 show-large">
+                  <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
+                </div>
+              </div>
+              <div className="grid-x footer-bottom">
+                <div className="cell medium-5">
+                  <P label={copyright} tabIndex="0" />
+                </div>
+                <div className="cell medium-6">
+                  <FooterConditions2 footerdata2={menudata} variant={args.color === 'default' ? args.color : 'inverted'} />
+                  <div className="show-small">
+                    <FooterIcons variant={args.color === 'default' ? args.color : 'inverted'} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
       )}
 
     </>

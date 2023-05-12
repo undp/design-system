@@ -94,42 +94,51 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Components/Navigation components/Sidebar"
+<Meta
+  title="Components/Navigation components/Sidebar"
   argTypes={{
     Height: {
-      options: ['Default', 'Narrow'],
-      control: { type: 'inline-radio' },
-      defaultValue: 'Default'
-    }
+      options: ["Default", "Narrow"],
+      control: { type: "inline-radio" },
+    },
+  }}
+  args={{
+    Height: "Default",
   }}
 />
 
 # Sidebar
+
 The Sidebar Component is a shorter piece of text that appears next to and accompanies a longer article.
 
 ### Overview
+
 A sidebar is a column on the left or right side of a page which highlights the extra information related to the page.
 
 When to use:
+
 - When an extra piece of information needs to be added to the page.
 - When links to the supplementary information need to be added.
 
 ### Formatting
+
 #### Default
+
 The sidebar is a column that displays the supplementary information or links related to the page.
 
 ### Behaviors
-#### States
-The sidebar First level row has two types: default and mobile with three states: default, hover, and selected. The mobile sidebar is used for mobile applications.
 
+#### States
+
+The sidebar First level row has two types: default and mobile with three states: default, hover, and selected. The mobile sidebar is used for mobile applications.
 
 The following behavior modifiers are available:
 
 ##### Default state:
 
-  1. The White colored box with the default state indicates that the sidebar is not opened or expanded yet.
-  2. The White colored box with down arrow and default state indicates that the sidebar isn’t open but expanded.
-	3. The White colored box with the up arrow and default state indicates that the sidebar is opened and expanded.
+1. The White colored box with the default state indicates that the sidebar is not opened or expanded yet.
+2. The White colored box with down arrow and default state indicates that the sidebar isn’t open but expanded.
+3. The White colored box with the up arrow and default state indicates that the sidebar is opened and expanded.
 
 ##### Hover state:
 
@@ -145,41 +154,45 @@ The following behavior modifiers are available:
 4. The Second level row has two types: default and mobile with two states: default and hover. The font size is smaller for the mobile sidebar to make it more convenient as the mobile screen is smaller than the laptop/desktop.
 
 ### Default state:
+
 1. The White colored box with the default state indicates the second sidebar which contains more information regarding the page.
 
-
 ### Hover state:
+
 The Grey colored box with hover state indicates that the sidebar changes appearance once the mouse hovers over it.
 
-
 <Canvas>
-<Story name="Sidebar"
-  parameters={{
-    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-  }}
->
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <Sidebar
-        data={caption.sidebardata}
-        headerText={caption.headerText}
-        label={caption.label}
-        size="medium-4"
-        active={"default"}
-        {...args}
-      ></Sidebar>
-    );
-  }}
-</Story>
+  <Story
+    name="Sidebar"
+    parameters={{
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+    }}
+  >
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return (
+        <Sidebar
+          data={caption.sidebardata}
+          headerText={caption.headerText}
+          label={caption.label}
+          size="medium-4"
+          active={"default"}
+          {...args}
+        ></Sidebar>
+      );
+    }}
+  </Story>
 </Canvas>
 
 ### Usage:
+
 1. Copy HTML from the HTML tab of canvas and also include css and js files listed below
 2. Initialize the sidebar for mobile and desktop by calling sidebarNav(), sidebarMenu() functions
 
 ### CSS and JS References
+
 #### CSS:
+
 Add the base layout style from
 
 - https://undp.github.io/design-system/css/base-minimal.min.css
@@ -187,12 +200,14 @@ Add the base layout style from
 - https://undp.github.io/design-system/css/components/sidebar.min.css
 
 #### JS:
+
 - https://undp.github.io/design-system//js/sidebar.min.js
 
 ### Interactions
+
 - The hover state is applied to the entire button.
 - The selected state is applied to the entire button.
 
-
 ### Changelog
+
 1.0 — Released component
