@@ -7407,10 +7407,10 @@ eslint-plugin-spellcheck@0.0.20:
     hunspell-spellchecker "^1.0.2"
     lodash "^4.17.15"
 
-eslint-plugin-storybook@^0.6.10:
-  version "0.6.10"
-  resolved "https://registry.npmjs.org/eslint-plugin-storybook/-/eslint-plugin-storybook-0.6.10.tgz"
-  integrity sha512-3DKXRey06EhwnTKaG6fgMqGTy4C3z6Ikyv6VVixO5BvaExWQe3yGWIAufrC2Et0OaAMIaMwx9KWjqb/Wq+JxPg==
+eslint-plugin-storybook@^0.6.12:
+  version "0.6.12"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-storybook/-/eslint-plugin-storybook-0.6.12.tgz#7bdb3392bb03bebde40ed19accfd61246e9d6301"
+  integrity sha512-XbIvrq6hNVG6rpdBr+eBw63QhOMLpZneQVSooEDow8aQCWGCk/5vqtap1yxpVydNfSxi3S/3mBBRLQqKUqQRww==
   dependencies:
     "@storybook/csf" "^0.0.1"
     "@typescript-eslint/utils" "^5.45.0"
