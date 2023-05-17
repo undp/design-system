@@ -1,9 +1,8 @@
 @import '../assets/scss/mixins';
 @import '../assets/scss/breakpoints';
 @import '../assets/scss/variables';
-@import '../assets/scss/grid';
 
-// .sb-show-main.sb-main-fullscreen, 
+// .sb-show-main.sb-main-fullscreen,
 .documentation-page {
 
   .grid-container:not(.full) {
@@ -80,7 +79,7 @@
   }
 
   .intro {
-    row-gap: $spacing-06;
+    // row-gap: $spacing-06;
 
     .cell {
       display: flex;
@@ -129,8 +128,8 @@
     margin-top: $spacing-09;
     margin-bottom: $spacing-05;
 
-    .grid-x.grid-margin-x {
-      row-gap: $spacing-06;
-    }
+    // .grid-x.grid-margin-x {
+    //   row-gap: $spacing-06;
+    // }
   }
 }

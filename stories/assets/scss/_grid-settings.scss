@@ -1,0 +1,57 @@
+@import 'node_modules/foundation-sites/scss/util/util';
+
+// 1. Global
+// ---------
+
+$global-width: rem-calc(1440);
+
+// 2. Breakpoints
+// --------------
+
+$breakpoints: (
+  small: 0,
+  medium: 480px,
+  large: 1024px,
+  xlarge: 1440px,
+  xxlarge: 1920px,
+);
+$breakpoints-hidpi: (
+  hidpi-1: 1,
+  hidpi-1-5: 1.5,
+  hidpi-2: 2,
+  retina: 2,
+  hidpi-3: 3
+);
+$print-breakpoint: large;
+$breakpoint-classes: (small medium large xlarge xxlarge);
+
+// 3. The Grid
+// -----------
+
+$grid-row-width: $global-width;
+$grid-column-count: 12;
+$grid-column-gutter: (
+  small: 12px,
+  medium: 24px,
+);
+$grid-column-align-edge: true;
+$grid-column-alias: 'columns';
+$block-grid-max: 8;
+
+// 56. Xy Grid
+// -----------
+
+$xy-grid: true;
+$grid-container: $global-width;
+$grid-columns: 12;
+$grid-margin-gutters: (
+  small: 12px,
+  medium: 24px
+);
+$grid-padding-gutters: $grid-margin-gutters;
+$grid-container-padding: (
+  small: 24px,
+  medium: 48px
+);;
+$grid-container-max: $global-width;
+$xy-block-grid-max: 8;

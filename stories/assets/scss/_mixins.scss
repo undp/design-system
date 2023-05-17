@@ -310,7 +310,7 @@
   @include transform(translateY(-50%));
   @include transition(all 200ms ease-in-out);
 
-  background: url(#{$img-path-Iconfourback}/chevron-down.svg) no-repeat center center;
+  background: url(~icons/chevron-down.svg) no-repeat center center;
   content: '';
   float: right;
   height: 13px;
@@ -333,7 +333,7 @@
   @include transition(all 0.3s ease);
   @include transform(translateY(-50%));
 
-  background: url(#{$img-path-Icon}/chevron-down.svg) no-repeat center center;
+  background: url(~icons/chevron-down.svg) no-repeat center center;
   content: '';
   height: 0.813rem;
   position: absolute;
@@ -699,4 +699,31 @@
   }
 }
 
+%custom-scrollbar {
+  overflow-x: auto;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-color: #000 transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+    border-radius: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $color-black;
+    background-clip: padding-box;
+    border: 2px solid $color-white;
+  }
+
+  &::-webkit-scrollbar-corner {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color-black;
+  }
+}
 /* placehoder end */
