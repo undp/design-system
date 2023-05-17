@@ -115,7 +115,7 @@
 }
 
 .expand-to-size {
-  max-width: calc(100% - 1rem);
+  max-width: calc(100% - 1.5rem);
 
   @include devicebreak(medium) {
     max-width: calc(100% - 3rem);
