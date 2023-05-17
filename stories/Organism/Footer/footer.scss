@@ -1,6 +1,5 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/mixins';
-@import '../../assets/scss/base';
 
 // * footer condition start *//
 .footer-items {
@@ -175,7 +174,7 @@
 
       @each $name in $socials {
         &.#{$name} {
-          background: url(#{$img-path-Iconback}/#{$name}-white.svg) no-repeat center bottom;
+          background: url(~icons/#{$name}-white.svg) no-repeat center bottom;
         }
       }
     }
@@ -194,7 +193,7 @@
 
         @each $name in $socials {
           &.#{$name} {
-            background: url(#{$img-path-Iconback}/#{$name}.svg) no-repeat center bottom;
+            background: url(~icons/#{$name}.svg) no-repeat center bottom;
           }
         }
       }
@@ -243,7 +242,7 @@
         color: $color-black;
 
         &::before {
-          background: url(#{$img-path-Iconback}/chevron-down.svg) no-repeat center center;
+          background: url(~icons/chevron-down.svg) no-repeat center center;
         }
       }
 
@@ -279,7 +278,7 @@
     &::before {
       @include transition(0.1s ease);
 
-      background: url(#{$img-path-Iconback}/chevron-down-white.svg) no-repeat center center;
+      background: url(~icons/chevron-down-white.svg) no-repeat center center;
       content: '';
       display: block;
       float: right;

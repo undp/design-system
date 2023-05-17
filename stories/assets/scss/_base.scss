@@ -39,34 +39,10 @@
   }
 }
 
-.custom-scrollbar,
-%custom-scrollbar {
-  overflow-x: auto;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  scrollbar-color: #000 transparent;
-  scrollbar-width: thin;
-
-  &::-webkit-scrollbar {
-    height: 5px;
-    width: 5px;
-    border-radius: 0;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: $color-black;
-    background-clip: padding-box;
-    border: 2px solid $color-white;
-  }
-
-  &::-webkit-scrollbar-corner {
-    display: none;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: $color-black;
-  }
+.custom-scrollbar {
+  @extend %custom-scrollbar;
 }
+
 
 
 /* animation start */

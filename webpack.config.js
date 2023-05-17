@@ -37,9 +37,9 @@ module.exports = [
         },
         {
           test: /\.(svg|png|jpg)$/,
-          type: 'asset',
+          type: 'asset/resource',
           generator: {
-            filename: 'static/media/[name][ext]',
+            filename: 'images/[name][ext]',
           },
         },
         {
@@ -54,10 +54,12 @@ module.exports = [
     resolve: {
       // @TODO: Need to find a valid option to manage these icon to resolve
       alias: {
-        '../../../../../../assets/icons/hamburger.svg': path.resolve(__dirname, 'stories/assets/icons/hamburger.svg'),
-        '../../../../../../assets/icons/chevron-down.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
-        '../../../../assets/icons/chevron-down.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
-        '../../../../../../assets/icons/times-blue.svg': path.resolve(__dirname, 'stories/assets/icons/times-blue.svg'),
+        icons: path.resolve(__dirname, 'stories/assets/icons'),
+        // '../../../../../../assets/icons/hamburger.svg': path.resolve(__dirname, 'stories/assets/icons/hamburger.svg'),
+        // '../../../../../../assets/icons/chevron-down.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
+        // '../../../../assets/icons/chevron-down.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-down.svg'),
+        // '../../../../../../assets/icons/times-blue.svg': path.resolve(__dirname, 'stories/assets/icons/times-blue.svg'),
+        // '../../../assets/icons/chevron-small-right.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-small-right.svg'),
       },
     },
     optimization: {
@@ -106,6 +108,11 @@ module.exports = [
   {
     mode: packMode,
     entry: webpackEntry('js'),
+    resolve: {
+      alias: {
+        icons: path.resolve(__dirname, 'stories/assets/icons'),
+      },
+    },
     output: {
       path: path.resolve(__dirname, 'docs'),
       filename: '[name].min.js',

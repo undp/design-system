@@ -14,7 +14,7 @@
     position: relative;
 
     @include devicebreak(medium) {
-      cursor: url(#{$img-path-Iconback}/arrow-right-white.svg), auto;
+      cursor: url(~icons/arrow-right-white.svg), auto;
       display: flex;
       min-height: 160px;
       padding: 0;
@@ -50,7 +50,7 @@
 
     &-link {
       @include devicebreak(medium) {
-        cursor: url(#{$img-path-Iconback}/arrow-right.svg), auto;
+        cursor: url(~icons/arrow-right.svg), auto;
       }
 
       h4 {
@@ -320,7 +320,7 @@
   [dir='rtl'] {
     .sdg {
       &-card {
-        cursor: url(#{$img-path-Iconback}/arrow-left-white.svg), auto;
+        cursor: url(~icons/arrow-left-white.svg), auto;
 
         strong {
           padding: 0 8.75rem 0 0;
@@ -332,7 +332,7 @@
         }
 
         &-link {
-          cursor: url(#{$img-path-Iconback}/arrow-left.svg), auto;
+          cursor: url(~icons/arrow-left.svg), auto;
 
           img {
             padding: 0 8.75rem 0 0;
