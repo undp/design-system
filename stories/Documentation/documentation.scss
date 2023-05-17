@@ -3,7 +3,7 @@
 @import '../assets/scss/variables';
 @import '../assets/scss/grid';
 
-// .sb-show-main.sb-main-fullscreen, 
+// .sb-show-main.sb-main-fullscreen,
 .documentation-page {
 
   .grid-container:not(.full) {
@@ -80,7 +80,7 @@
   }
 
   .intro {
-    row-gap: $spacing-06;
+    // row-gap: $spacing-06;
 
     .cell {
       display: flex;
