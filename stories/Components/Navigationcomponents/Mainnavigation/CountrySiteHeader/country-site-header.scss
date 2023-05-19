@@ -1,9 +1,6 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
-@import '../../../../assets/scss/base';
-
-
 
 .country-header {
   height: 7.1875rem;
@@ -229,11 +226,11 @@
       @extend %header-icon;
 
       margin-left: $spacing-05;
-      -webkit-mask: url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
-      mask: url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
+      -webkit-mask: url(~icons/search.svg) no-repeat left center;
+      mask: url(~icons/search.svg) no-repeat left center;
 
       @include devicebreak(small) {
-        background: transparent url(#{$img-path-Iconfourback}/search.svg) no-repeat left center;
+        background: transparent url(~icons/search.svg) no-repeat left center;
       }
     }
 
@@ -241,8 +238,8 @@
       @extend %header-icon;
 
       margin-left: 1.75rem;
-      -webkit-mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
-      mask: url(#{$img-path-Iconfourback}/globe.svg) no-repeat left center;
+      -webkit-mask: url(~icons/globe.svg) no-repeat left center;
+      mask: url(~icons/globe.svg) no-repeat left center;
 
       @include devicebreak(mediumonlytab) {
         display: none;

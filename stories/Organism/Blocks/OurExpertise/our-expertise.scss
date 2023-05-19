@@ -1,7 +1,6 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 @import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/swiper';
 
 .our-expertise {
   @include devicebreak(large) {

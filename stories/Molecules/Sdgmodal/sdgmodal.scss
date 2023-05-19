@@ -45,7 +45,7 @@
     }
 
     .close {
-      background: url(#{$img-path-Iconback}/times-circle.svg) no-repeat left center;
+      background: url(~icons/times-circle.svg) no-repeat left center;
       border: 0;
       border-radius: 50%;
       cursor: pointer;
@@ -255,7 +255,7 @@ body.sdgmodal-open {
         }
 
         &::after {
-          background: url(#{$img-path-Iconback}/chevron-right-white.svg) no-repeat center center;
+          background: url(~icons/chevron-right-white.svg) no-repeat center center;
           content: '';
           height: 20px;
           position: absolute;

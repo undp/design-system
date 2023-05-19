@@ -30,6 +30,10 @@ module.exports = {
     //     config.module.rules[index].options.name = 'static/media/[name].[ext]';
     //   }
     // });
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      icons: path.resolve(__dirname, "../stories/assets/icons"),
+    };
     // add SCSS support for CSS Modules
     config.module.rules.push({
       test: /\.scss$/,

@@ -4,8 +4,8 @@ import { initializeRTL } from 'storybook-addon-rtl';
 // import { addParameters } from '@storybook/react'
 import renderToHTML from './renderToHTML'
 
-// include fonts globally
-import '../stories/assets/scss/_fonts.scss';
+// include base styling globally
+import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss';
 
 // initialise RTL
 initializeRTL();
@@ -82,7 +82,7 @@ export const globalTypes = {
 
 /**
  * Function to get current language code.
- * 
+ *
  * @param {*} Story renders Stories in iFrame.
  * @param {*} context Current context for Addons.
  * @returns Current Language Code.
@@ -172,7 +172,7 @@ const setDirection = (Story, options) => {
 
 /**
  * Function to set a global "accent-COLOR" class to the body.
- * 
+ *
  * @param {*} Story renders Stories in iFrame.
  * @param {*} context Current context for Addons.
  * @returns Story with accent color processed.
@@ -180,7 +180,7 @@ const setDirection = (Story, options) => {
 const setAccentClass = (Story, context) => {
   let accent = context.globals.accent;
   const bodyElem = document.querySelector('body');
-  
+
   // Remove any prexisting accent-COLOR items so we can apply the most recent
   // global selection.
   bodyElem.classList.forEach((item) => {
@@ -188,12 +188,12 @@ const setAccentClass = (Story, context) => {
       bodyElem.classList.remove(item);
     }
   });
-  
+
   if (Boolean(accent)) {
     // Set accent class on body tag (the most parent of parents).
     bodyElem.classList.add(`accent-${accent}`);
   }
-  
+
   return (
     <Story {...context} />
   )

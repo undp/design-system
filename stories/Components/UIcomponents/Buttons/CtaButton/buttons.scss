@@ -34,7 +34,7 @@ button {
     &::after {
       @include transition(0.2s ease);
 
-      background: url(#{$img-path-Iconfourback}/chevron-right-black.svg) no-repeat left center;
+      background: url(~icons/chevron-right-black.svg) no-repeat left center;
       content: '';
       height: 20px;
       margin-left: $spacing-04;
@@ -47,7 +47,7 @@ button {
 
     &.disabled {
       &::after {
-        background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
+        background: url(~icons/chevron-right-white.svg) no-repeat left center;
         content: '';
       }
     }
@@ -157,7 +157,7 @@ button {
     &::after {
       @include transition(0.2s ease);
 
-      background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
+      background: url(~icons/chevron-right-white.svg) no-repeat left center;
       content: '';
       height: 20px;
       margin-left: $spacing-04;
@@ -170,7 +170,7 @@ button {
 
     &.disabled {
       &::after {
-        background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
+        background: url(~icons/chevron-right-white.svg) no-repeat left center;
         content: '';
       }
     }
