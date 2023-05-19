@@ -25,6 +25,8 @@ class MultiSelect {
         type: 'multiSelectToggle',
         bubbles: true,
         cancelable: false,
+        select_trigger_dataset_id: this.$selectTrigger?.[0]?.dataset?.id ?? false,
+        select_trigger_id: this.$selectTrigger?.[0]?.id ?? false,
         state: (this.$currentSelect.hasClass('open')) ? 'open' : 'closed',
         open: (this.$currentSelect.hasClass('open')),
         closed: (!this.$currentSelect.hasClass('open')),

@@ -150,25 +150,25 @@ Select: The search bar having a horizontal line below the search icon indicates 
   ```
   $(document).on('multiSelectToggle', (e) => {
     ...Your custom code...
-  })
+  });
   ```
 - **multiSelectInputToggle**: When a checkbox in the multi-select is toggled on or off:
   ```
   $(document).on('multiSelectInputToggle', (e) => {
     ...Your custom code...
-  })
+  });
   ```
 - **filterSearchChipRemoval**: When a search chip is removed:
   ```
   $(document).on('filterSearchChipRemoval', (e) => {
     ...Your custom code...
-  })
+  });
   ```
 - **filterSearchClear**: When the Search "Clear all" link is clicked:
   ```
   $(document).on('filterSearchClear', (e) => {
     ...Your custom code...
-  })
+  });
   ```
 
 ### Custom Event Data:
@@ -181,14 +181,16 @@ The **multiSelectInputToggle** event data contains:
 - `state`: (boolean) The current state of the triggering input, true or false.
 - `toggle_state`: (string) whether the triggering input is "checked" or "unchecked".
 - `selected`: (boolean) true if the input is selected.
-- `unselected`: (boolean) true if the input is unselected,
+- `unselected`: (boolean) true if the input is unselected.
 
 The **multiSelectToggle** event data contains:
 
-- `checkbox_id`: (string) The ID of the triggering input.
+- `select_trigger_dataset_id`: (string) The Dataset ID of the triggering button (if one is set).
+- `select_trigger_id`: (string) The ID of the triggering button, (if one is set).
 - `state`: (string) The current state of the triggering select group, "open" or "closed".
 - `open`: (boolean) true if the list is open.
-- `closed`: (boolean) true if the list is closed,
+- `closed`: (boolean) true if the list is closed.
+- `target`: The target select item that is toggled open and closed by the triggering button.
 
 The **filterSearchChipRemoval** event data contains:
 
@@ -214,7 +216,7 @@ Add the base layout style from
 
 #### JS:
 
-- https://undp.github.io/design-system/js/filter-seach-bar.min.js
+- https://undp.github.io/design-system/js/filter-search-bar.min.js
 - https://undp.github.io/design-system/js/multi-select.min.js
 - https://undp.github.io/design-system/js/expand-search.min.js
 

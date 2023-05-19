@@ -5,15 +5,6 @@ export function select() {
   $selectButton.on('click', function () {
     jQuery(this).parent().toggleClass('expanded').find('ul')
       .toggleClass('active');
-
-    jQuery(this).trigger({
-      type: 'selectToggle',
-      bubbles: true,
-      cancelable: false,
-      state: (jQuery(this).hasClass('expanded')) ? 'open' : 'closed',
-      open: (jQuery(this).hasClass('expanded')),
-      closed: (!jQuery(this).hasClass('expanded')),
-    });
   });
 
   $selectList.on('click keypress', function () {
