@@ -1,7 +1,6 @@
 @import '../../../assets/scss/mixins';
 @import '../../../assets/scss/breakpoints';
 @import '../../../assets/scss/variables';
-@import '../../../assets/scss/base';
 
 /* sidebar start */
 .sidebar-accordion {
@@ -69,12 +68,12 @@
       border-bottom: none;
 
       button::after {
-        background: url(#{$img-path-Icon}/chevron-down-white.svg) no-repeat center center;
+        background: url(~icons/chevron-down-white.svg) no-repeat center center;
       }
 
       @include devicebreak(medium) {
         button::after {
-          background: url(#{$img-path-Icon}/chevron-down-white.svg) no-repeat center center;
+          background: url(~icons/chevron-down-white.svg) no-repeat center center;
         }
       }
 

@@ -1,6 +1,5 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
-@import '../../../assets/scss/base';
 
 /* Modal lightbox card start */
 .modal {
@@ -41,7 +40,7 @@
   }
 
   &-close-button {
-    background: url(#{$img-path-Icon}/times-circle.svg) no-repeat left center;
+    background: url(~icons/times-circle.svg) no-repeat left center;
     border: 0;
     cursor: pointer;
     font-size: 0;

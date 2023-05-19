@@ -1,8 +1,6 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
-@import '../../../../assets/scss/base';
-@import '../../../../assets/scss/typography';
 
 .mega-nav-option {
   @extend %frosted-bg;
@@ -134,7 +132,7 @@
   }
 
   .show-on-focus {
-    background: url(#{$img-path-Iconfourback}/times.svg) no-repeat center center;
+    background: url(~icons/times.svg) no-repeat center center;
     border: 0;
     color: #000;
     font-size: 0;

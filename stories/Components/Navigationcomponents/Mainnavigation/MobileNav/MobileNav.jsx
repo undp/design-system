@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
+import Iconsback from 'icons/back.svg';
+import IconsGlobe from 'icons/globe.svg';
+import IconsLanguage from 'icons/language.svg';
 import { Icons } from '../../../../Atom/Icons/Icons';
-import Iconsback from '../../../../assets/icons/back.svg';
-import IconsGlobe from '../../../../assets/icons/globe.svg';
-import IconsLanguage from '../../../../assets/icons/language.svg';
 import { navigationInitialize } from '../../../../assets/js/navigation';
 import { CtaButton } from '../../../UIcomponents/Buttons/CtaButton/CtaButton';
 import './mobile-nav.scss';

@@ -11,7 +11,12 @@ $light-colors: (
 
 /* feature card start */
 .feature__card {
+
+  margin-block-end: $spacing-04;
+
   @include devicebreak(medium) {
+
+    margin-block-end: $spacing-06;
 
     //CtaLink
     .cta__link.cta--arrow {
