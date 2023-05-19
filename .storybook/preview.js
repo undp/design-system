@@ -1,9 +1,6 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { initializeRTL } from 'storybook-addon-rtl';
-// import { anysort } from 'anysort'
-// import { addParameters } from '@storybook/react'
 import renderToHTML from './renderToHTML'
-import { DocsContainer } from '@storybook/blocks';
 
 // include base styling globally
 import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss';
