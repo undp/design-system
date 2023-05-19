@@ -57,12 +57,21 @@ export const getCaptionForActiveLocale = (locale) => {
 };
 
 export const getButtonForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {close:'Close', sort:'Search and filter'}; return engText;
-    case 'arabic': const arabicText = {close:'قريب', sort:'البحث والتصفية'}; return arabicText;
-    case 'burmese': const burmeseText = {close:'ပိတ်လိုက်', sort:'ရှာဖွေပြီး စစ်ထုတ်ပါ။'}; return burmeseText;
-    case 'japanese': const japaneseText = {close:'選ぶ', sort:'検索とフィルタリング'}; return japaneseText;
-    default: return {close:'Close', sort:'Search and filter'};
+  switch (locale) {
+    case "english":
+      const engText = { close: "Close", sort: "Search and filter" };
+      return engText;
+    case "arabic":
+      const arabicText = { close: "قريب", sort: "البحث والتصفية" };
+      return arabicText;
+    case "burmese":
+      const burmeseText = { close: "ပိတ်လိုက်", sort: "ရှာဖွေပြီး စစ်ထုတ်ပါ။" };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = { close: "選ぶ", sort: "検索とフィルタリング" };
+      return japaneseText;
+    default:
+      return { close: "Close", sort: "Search and filter" };
   }
 };
 
@@ -72,8 +81,10 @@ export const getButtonForLocale = (locale) => {
     Height: {
       options: ["Fix height", "Auto height"],
       control: { type: "radio" },
-      defaultValue: "Auto height",
     },
+  }}
+  args={{
+    Height: "Auto height",
   }}
 />
 
@@ -91,9 +102,10 @@ l
 When filters are to be added to the search bar.
 
 ### Formatting
-#### Default
-The search bar is rectangular shaped with a search icon. The active filters are chips with a cross.
 
+#### Default
+
+The search bar is rectangular shaped with a search icon. The active filters are chips with a cross.
 
 ### Behaviors
 
@@ -125,9 +137,68 @@ Select: The search bar having a horizontal line below the search icon indicates 
 </Canvas>
 
 ### Usage:
+
 - Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
 - Initialize the search, multi-select and filter by calling functions expandSearch(), multiSelect(), toggleFilter() respectively.
+- Custom code can be triggered by available Custom Events on the filter items. See **Custom Events** and **Custom Event Data** below.
 
+---
+
+### Custom Events:
+
+- **multiSelectToggle**: When a multi-select item is toggled open or closed:
+  ```
+  $(document).on('multiSelectToggle', (e) => {
+    ...Your custom code...
+  });
+  ```
+- **multiSelectInputToggle**: When a checkbox in the multi-select is toggled on or off:
+  ```
+  $(document).on('multiSelectInputToggle', (e) => {
+    ...Your custom code...
+  });
+  ```
+- **filterSearchChipRemoval**: When a search chip is removed:
+  ```
+  $(document).on('filterSearchChipRemoval', (e) => {
+    ...Your custom code...
+  });
+  ```
+- **filterSearchClear**: When the Search "Clear all" link is clicked:
+  ```
+  $(document).on('filterSearchClear', (e) => {
+    ...Your custom code...
+  });
+  ```
+
+### Custom Event Data:
+
+Each of the custom events contains specific data.
+
+The **multiSelectInputToggle** event data contains:
+
+- `checkbox_id`: (string) The ID of the triggering input.
+- `state`: (boolean) The current state of the triggering input, true or false.
+- `toggle_state`: (string) whether the triggering input is "checked" or "unchecked".
+- `selected`: (boolean) true if the input is selected.
+- `unselected`: (boolean) true if the input is unselected.
+
+The **multiSelectToggle** event data contains:
+
+- `select_trigger_dataset_id`: (string) The Dataset ID of the triggering button (if one is set).
+- `select_trigger_id`: (string) The ID of the triggering button, (if one is set).
+- `state`: (string) The current state of the triggering select group, "open" or "closed".
+- `open`: (boolean) true if the list is open.
+- `closed`: (boolean) true if the list is closed.
+- `target`: The target select item that is toggled open and closed by the triggering button.
+
+The **filterSearchChipRemoval** event data contains:
+
+- `chip_id`: (string) The ID of chip being removed.
+
+The **filterSearchClear** event does not contain any specific data:
+
+---
 
 ### CSS and JS References
 
@@ -144,14 +215,17 @@ Add the base layout style from
 - https://undp.github.io/design-system/css/components/chips.min.css
 
 #### JS:
-- https://undp.github.io/design-system/js/filter-seach-bar.min.js
+
+- https://undp.github.io/design-system/js/filter-search-bar.min.js
 - https://undp.github.io/design-system/js/multi-select.min.js
 - https://undp.github.io/design-system/js/expand-search.min.js
 
 ### Interactions
+
 - The checked state is applied to the entire option.
 - The hover state is applied to the entire option.
 - By clicking on the X icon, the filters are removed.
 
 ### Changelog
+
 1.0 — Released component
