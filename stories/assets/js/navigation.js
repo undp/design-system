@@ -258,7 +258,7 @@ export const navigationMultiLevelEdgeDetection = () => {
  */
 export const navigationOverFlow = () => {
   /**
-   * Generate the button and add to navigation
+   * Generate the button and add to navigation if it doesn't exist.
    */
   let $button = jQuery(document.createElement('button')).prop({
     innerHTML: '<span class="hidden">Menu toggle</span>',
@@ -267,21 +267,23 @@ export const navigationOverFlow = () => {
     'aria-controls': 'navigation-overflow',
     'aria-label': 'Menu overflow toggle',
   });
-  let $item = jQuery(document.createElement('li')).prop({
-    class: 'menu__overflow__item hidden',
-  });
 
-  jQuery('.menu > ul.overflow').prepend($item.append($button));
+  if (jQuery('.menu__overflow__item').length === 0) {
+    let $item = jQuery(document.createElement('li')).prop({
+      class: 'menu__overflow__item hidden',
+    });
+    jQuery('.menu > ul.overflow').prepend($item.append($button));
+  }
 
   /**
    * Toggle overflow section via button.
    */
-  jQuery('.menu__overflow__toggle').on('click', (e) => {
+  $button.on('click', (e) => {
     if (jQuery('.menu__overflow__container').hasClass('hidden')) {
-      jQuery('.menu__overflow__toggle').addClass('toggled');
+      $button.addClass('toggled');
       jQuery('.menu__overflow__container').removeClass('hidden');
     } else {
-      jQuery('.menu__overflow__toggle').removeClass('toggled');
+      $button.removeClass('toggled');
       jQuery('.menu__overflow__container').addClass('hidden');
     }
   });
