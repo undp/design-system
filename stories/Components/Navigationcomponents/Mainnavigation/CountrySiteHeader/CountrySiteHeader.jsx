@@ -64,11 +64,7 @@ function CountrySiteHeader({
                 <Menu data={menuData} type={menuType} locale={locale} {...args} />
               )}
             </div>
-            {/* Need to generate this in jquery */}
-            <div className="grid-container full menu__overflow__container hidden">
-              <ul className="overflow" />
-            </div>
-            <div className="cell small-3 large-3 top-right">
+            <div className="cell small-3 large-auto top-right">
               <Languageswitcher
                 data={languageswitcherData.languagedata}
                 headerText={languageswitcherData.headerText}
@@ -88,6 +84,10 @@ function CountrySiteHeader({
                   Icon="No Arrow"
                 />
               )}
+            </div>
+            {/* Need to generate this in jquery */}
+            <div className="grid-container full menu__overflow__container hidden">
+              <ul className="overflow" />
             </div>
             <MobileNav
               navigationData={navigationData}

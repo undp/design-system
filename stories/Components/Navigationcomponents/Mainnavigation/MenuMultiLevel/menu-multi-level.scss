@@ -5,10 +5,10 @@
 @import '../../../../assets/scss/typography';
 
 .dropdown-menu-wrapper {
-  margin-top: 7.1875rem;
+  margin-block-start: 7.1875rem;
 }
 
-// 1st level
+// Dropdown menu styling.
 .menu ul {
   display: flex;
 
@@ -20,9 +20,7 @@
 
     &.menu__overflow__item {
       line-height: 0;
-      width: 3rem;
-      min-width: 3rem;
-      max-width: 3rem;
+      width: 2rem;
       order: 100;
     }
 
@@ -31,14 +29,14 @@
       @extend %frosted-bg;
       box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
       position: absolute;
-      top: calc(100% - 2rem);
-      left: calc(0% - 1rem);
+      inset-block-start: calc(100% - 2rem);
+      inset-inline-start: calc(0% - 1rem);
+      padding-inline: 0;
       z-index: 10;
       flex-direction: column;
       display: none;
       width: 18rem;
 
-      // 2nd level items
       li {
         display: block;
         width: 100%;
@@ -73,6 +71,7 @@
           text-transform: none;
           text-align: left;
           border-bottom: 1px solid #d4d6d8;
+          letter-spacing: unset;
         }
 
         &.has-submenu>a:after {
@@ -80,11 +79,18 @@
           background: url(#{$img-path-Iconfourback}/chevron-right.svg) no-repeat right center;
           content: "";
           height: 18px;
-          margin-left: 0.75rem;
           min-width: 20px;
           display: flex;
-          margin-left: auto;
+          margin-inline-start: auto;
           color: $color-dark-red;
+        }
+
+        >a:not(.external, .download) {
+          padding-inline-end: 1.25rem;
+        }
+
+        &.has-submenu>a.active:after {
+          margin-inline-start: 0.5rem;
         }
 
         >a.external .external-link-animated {
@@ -122,18 +128,17 @@
           position: absolute;
           display: flex;
           flex-direction: column;
-          top: 0%;
-          left: 100%;
+          inset-block-start: 0%;
+          inset-inline-start: 100%;
         }
 
         &.edge:focus>ul.sub-menu,
         &.edge:focus-within>ul.sub-menu,
         &.edge:hover>ul.sub-menu,
         &.edge>ul.submenu {
-          right: 100%;
-          left: unset;
+          inset-inline-end: 100%;
+          inset-inline-start: unset;
         }
-
 
         >a:focus,
         >a:focus-within,
@@ -144,12 +149,13 @@
         }
 
         >a:not(.external, .download) {
-          padding-right: .75rem;
+          padding-inline-end: 0.75rem;
         }
 
         &.has-submenu>a.active:after,
         &.has-submenu>a:after {
           background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat right center;
+          margin-inline-start: 0.5rem;
         }
 
         >a.external .external-link-animated {
@@ -162,8 +168,8 @@
 
           &:after {
             transition: transform 0.2s;
-            border-right: 2px solid $color-white;
-            border-top: 2px solid $color-white;
+            border-inline-end: 2px solid $color-white;
+            border-block-start: 2px solid $color-white;
           }
         }
 
@@ -176,13 +182,13 @@
           i {
             transition: transform 0.2s;
             border: 2px solid $color-white;
-            border-top: 0;
+            border-block-start: 0;
           }
 
           &:after {
             transition: transform 0.2s;
-            border-bottom: 2px solid $color-white;
-            border-left: 2px solid $color-white;
+            border-block-end: 2px solid $color-white;
+            border-inline-start: 2px solid $color-white;
           }
         }
       }
@@ -190,33 +196,21 @@
   }
 }
 
+// RIGHT TO LEFT - Dropdown menu styling.
 [dir='rtl'] {
   .menu ul {
 
     >li {
 
       ul.submenu {
-        padding: 0;
-        left: unset;
-        right: 0;
 
         li {
-
-          &:focus,
-          &:focus-within,
-          &:hover,
-          &.open {
-            >ul.submenu {
-              padding: 0;
-              left: unset;
-              right: 100%;
-            }
+          &.has-submenu>a:after {
+            background: url(#{$img-path-Iconfourback}/chevron-left.svg) no-repeat left center;
           }
 
-          &.has-submenu>a:after {
-            background: url(#{$img-path-Iconfourback}/chevron-right.svg) no-repeat left center;
-            margin-right: auto;
-            margin-left: unset;
+          a {
+            text-align: right;
           }
         }
 
@@ -228,31 +222,11 @@
           >ul.submenu {
             position: absolute;
             display: block;
-            top: 0%;
-            right: 100%;
-          }
-
-          &.edge:focus>ul.sub-menu,
-          &.edge:focus-within>ul.sub-menu,
-          &.edge:hover>ul.sub-menu,
-          &.edge>ul.submenu {
-            left: 100%;
-            right: unset;
-          }
-
-          >a:focus,
-          >a:focus-within,
-          >a:hover,
-          >a,
-          >a.active {
-            transition: 0.2s ease;
-            background: $color-blue-600;
-            color: $color-white;
           }
 
           &.has-submenu>a.active:after,
           &.has-submenu>a:after {
-            background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
+            background: url(#{$img-path-Iconfourback}/chevron-left-white.svg) no-repeat left center;
           }
         }
       }
@@ -260,228 +234,93 @@
   }
 }
 
-.menu__overflow__container ul {
-  display: flex;
-  order: 12;
-  width: 100%;
-
-  >li {
-    position: relative;
-    display: flex;
-    justify-content: center;
-
-    ul.submenu {
-      @extend %frosted-bg;
-      box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
-      position: absolute;
-      top: calc(100% - 2rem);
-      left: calc(0% - 1rem);
-      z-index: 10;
-      flex-direction: column;
-      display: none;
-      padding: 0;
-      margin: 0;
-      list-style-type: none;
-
-      li {
-        position: relative;
-        padding: 0;
-        margin: 0;
-        min-width: 18rem;
-
-        &.edge:focus>ul.sub-menu,
-        &.edge:focus-within>ul.sub-menu,
-        &.edge:hover>ul.sub-menu,
-        &.open.edge>ul.submenu {
-          right: 100%;
-          left: unset;
-        }
-
-        a {
-          transition: 0.2s ease;
-          line-height: 112.5%;
-          width: auto;
-          padding: 1.25rem;
-          font-size: 1rem;
-          font-weight: normal;
-          text-transform: none;
-          border-bottom: 1px solid #d4d6d8;
-          max-height: 1rem;
-          background: none;
-          display: flex;
-        }
-
-        &.has-submenu>a:after {
-          transition: 0.2s ease;
-          background: url(#{$img-path-Iconfourback}/chevron-right.svg) no-repeat left center;
-          content: "";
-          height: 18px;
-          margin-left: 0.75rem;
-          width: 12px;
-          display: flex;
-          margin-left: auto;
-          color: $color-dark-red;
-        }
-      }
-    }
-
-    &:focus,
-    &:focus-within,
-    &:hover,
-    &.open {
-      >ul.submenu {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-      }
-    }
-
-    ul.submenu {
-
-      li:focus,
-      li:focus-within,
-      li:hover,
-      li.open {
-
-        >ul.submenu {
-          position: absolute;
-          display: block;
-          top: 0%;
-          left: 100%;
-        }
-
-        &.edge:focus>ul.sub-menu,
-        &.edge:focus-within>ul.sub-menu,
-        &.edge:hover>ul.sub-menu,
-        &.edge>ul.submenu {
-          right: 100%;
-          left: unset;
-        }
-
-        >a:focus,
-        >a:focus-within,
-        >a:hover,
-        >a,
-        >a.active {
-          transition: 0.2s ease;
-          background: $color-blue-600;
-          color: $color-white;
-        }
-
-        &.has-submenu>a.active:after,
-        &.has-submenu>a:after {
-          background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
-        }
-      }
-    }
-  }
-}
-
-.menu__overflow__toggle {
-  border: none;
-  background: transparent;
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: red;
-  line-height: 0;
-  margin: auto;
-  border-radius: 100%;
-  cursor: pointer;
-  position: relative;
-
-  &:after {
-    height: 1.25rem;
-    width: 1.25rem;
-    content: '...';
-    display: table;
-    clear: both;
-    border-radius: 100%;
-  }
-
-  &:hover {
-    background: rgba(0 0 0 / 5%);
-  }
-
-  &:active {
-    background: rgba(0 0 0 / 10%);
-    color: white;
-  }
-
-  span.hidden {
-    display: none;
-  }
-
-  &.hidden {
-    display: none;
-  }
-
-  @include devicebreak(mediumonlytab) {
-    display: none;
-  }
-}
-
+// Animate the icons in the dropdown menu on link hover.
+.menu,
 .menu__overflow__container {
-  position: relative;
-  min-height: 4.125rem;
-  height: unset;
-  background-color: $color-gray-200;
-  box-shadow: 0 3px 6px rgb(0 0 0 / 10%);
-  order: 100;
-  min-width: 100%;
+  li>a.external {
+    .external-link-animated {
+      &::after {
+        @include transform(rotate(0deg) translate(0, 0));
+      }
 
-  @include devicebreak(mediumonlytab) {
-    display: none;
+      &::before {
+        @include transform(rotate(-45deg) translate(0, 0));
+      }
+    }
   }
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 75%;
-    margin: 0 auto;
-    padding: 0;
-    justify-content: center;
-    align-content: center;
-    list-style: none;
+  li:hover>a.external {
+    .external-link-animated {
+      &::after {
+        @include transform(rotate(0deg) translate(5px, -5px));
+      }
 
-    >li.menu-item ul.submenu {
-      top: calc(100% - 1rem);
+      &::before {
+        @include transform(rotate(-45deg) translate(7px, 0));
+      }
     }
+  }
 
-    >li {
-      padding: 0;
-      margin: 0;
-
-      >a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 1rem;
-        text-align: center;
-        border: none;
-        background: none;
-        font-size: 0.875rem;
-        text-transform: uppercase;
-        height: 4.125rem;
-        color: $color-black;
+  li:hover>a.download {
+    .download-animated {
+      &::after {
+        @include transform(rotate(-45deg) translate(7px, -7px));
       }
 
-      &.edge:focus>ul.sub-menu,
-      &.edge:focus-within>ul.sub-menu,
-      &.edge:hover>ul.sub-menu,
-      &.edge>ul.submenu {
-        right: 100%;
-        left: unset;
+      &::before {
+        @include transform(translate(0, -10px));
       }
+    }
+  }
+}
 
-      &:hover {
-        >a {
-          color: #55606e;
+// RIGHT TO LEFT - Animate the icons in the dropdown menu on link hover.
+[dir='rtl'] {
+
+  .menu,
+  .menu__overflow__container {
+    li>a.external {
+      .external-link-animated {
+        @include transform(rotate(270deg));
+
+        &::before {
+          @include transform(rotate(-45deg) translate(1px, 1px));
+        }
+
+        &::after {
+          @include transform(rotate(90deg) translate(-1px, -4px));
         }
       }
     }
-  }
 
-  &.hidden {
-    display: none;
+    li:hover>a.external {
+      .external-link-animated {
+        @include transform(rotate(270deg));
+
+        &::before {
+          @include transform(rotate(-45deg) translate(7px, 0));
+        }
+
+        &::after {
+          @include transform(rotate(90deg) translate(-6px, -8px));
+        }
+      }
+    }
+
+    li>a.download {
+      .download-animated {
+        &::after {
+          @include transform(rotate(45deg) translate(0, 0));
+        }
+      }
+    }
+
+    li:hover>a.download {
+      .download-animated {
+        &::after {
+          @include transform(rotate(45deg) translate(-7px, -7px));
+        }
+      }
+    }
   }
 }

@@ -17,6 +17,10 @@
   position: fixed;
   z-index: 8;
 
+  &.float-higher {
+    z-index: 16;
+  }
+
   &.show-mega {
     display: block;
   }
@@ -27,9 +31,9 @@
 
     li {
       list-style: none;
-      margin-bottom: 0;
-      padding-left: 0;
-      padding-right: $spacing-09;
+      margin-block-end: 0;
+      padding-inline-start: 0;
+      padding-inline-end: $spacing-09;
 
       &.active {
         a {
@@ -44,8 +48,8 @@
             }
 
             &::after {
-              border-right: 2px solid $color-white;
-              border-top: 2px solid $color-white;
+              border-inline-end: 2px solid $color-white;
+              border-block-start: 2px solid $color-white;
             }
           }
 
@@ -69,7 +73,7 @@
 
       a {
         background: none;
-        border-bottom: 1px solid $color-gray-400;
+        border-block-end: 1px solid $color-gray-400;
         display: flex;
         font-size: $spacing-05;
         font-weight: 700;
@@ -94,7 +98,7 @@
 
     .sub-sub-menu {
       display: flex;
-      margin-top: $spacing-09;
+      margin-block-start: $spacing-09;
 
       ul {
         margin: 0;
@@ -104,19 +108,19 @@
         li {
           line-height: 0;
           list-style-type: none;
-          margin-bottom: $spacing-06;
+          margin-block-end: $spacing-06;
           text-transform: uppercase;
         }
       }
     }
 
     h3 {
-      margin-bottom: $spacing-06;
+      margin-block-end: $spacing-06;
     }
 
     .mega-image {
       box-sizing: border-box;
-      padding-left: $spacing-09;
+      padding-inline-start: $spacing-09;
 
       img {
         height: 100%;

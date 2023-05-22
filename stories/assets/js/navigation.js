@@ -5,6 +5,7 @@ export const navigationInitialize = (locale) => {
   const $megaMenu = jQuery('.show-mega');
   const $megaWrapper = jQuery('.mega-wrapper');
   let $header = jQuery('.header');
+  let $main_nav_height = jQuery('.header nav.menu');
 
   // Track if a menu item is being hovered.
   let hovering_item = false;
@@ -18,8 +19,14 @@ export const navigationInitialize = (locale) => {
     let $menuItemId = jQuery(document).find(`[data-menu-item-id='${navId}']`);
 
     // Show the mega menu panel. Position it at the bottom of the header or overflow.
-    $menuItemId.css({ top: $header.height() });
+    $menuItemId.css({ top: $main_nav_height.height() });
     $menuItemId.addClass('show-mega').siblings().removeClass('show-mega').addClass('no-effect');
+
+    // If the overflow is open, z-index the mega menu above everything.
+    $menuItemId.removeClass('float-higher');
+    if (!jQuery('.menu__overflow__container').hasClass('hidden')) {
+      $menuItemId.addClass('float-higher');
+    }
 
     // Set the first link in the sub menus to the active link.
     $megaMenu.find('.sub-menu-content:first-of-type').addClass('active-content').siblings().removeClass('active-content');
@@ -271,8 +278,10 @@ export const navigationOverFlow = () => {
    */
   jQuery('.menu__overflow__toggle').on('click', (e) => {
     if (jQuery('.menu__overflow__container').hasClass('hidden')) {
+      jQuery('.menu__overflow__toggle').addClass('toggled');
       jQuery('.menu__overflow__container').removeClass('hidden');
     } else {
+      jQuery('.menu__overflow__toggle').removeClass('toggled');
       jQuery('.menu__overflow__container').addClass('hidden');
     }
   });

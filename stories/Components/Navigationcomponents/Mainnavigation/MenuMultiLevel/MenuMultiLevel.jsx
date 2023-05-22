@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../../../assets/scss/_grid.scss';
 import './menu-multi-level.scss';
+import './menu-overflow.scss';
+
 import { MenuItems } from '../../../../Atom/Navigation/MenuItems/MenuItems';
 
 export default MenuMultiLevel;
