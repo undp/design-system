@@ -4,6 +4,15 @@
 @import '../../../../assets/scss/base';
 @import '../../../../assets/scss/typography';
 
+// Toggle overflow button.
+.menu__overflow__item .menu__overflow__toggle {
+  display: block;
+}
+
+.menu__overflow__item.hidden .menu__overflow__toggle {
+  display: none;
+}
+
 // Overflow toggle button styling.
 .menu__overflow__toggle {
   border: none;
