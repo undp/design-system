@@ -1,7 +1,7 @@
 /* eslint-disable no-inner-declarations */
 /* eslint-disable no-restricted-syntax */
 export const navigationInitialize = (locale) => {
-  const $menu = jQuery('.menu');
+  const $menu = jQuery('.menu >ul');
   const $menuItem = jQuery('.menu li a');
   const $megaMenu = jQuery('.show-mega');
   const $megaWrapper = jQuery('.mega-wrapper');

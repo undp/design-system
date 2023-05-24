@@ -17,6 +17,7 @@ function MenuMultiLevel({
   ...args
 }) {
   let lang = args.locale === 'en' ? 'english' : args.locale;
+  let overflow_class = args.overflow || overflow ? 'overflow' : '';
   let menuData = data.find((item) => item.language === lang);
   menuData = (menuData.data) ? menuData.data : data;
 
@@ -34,7 +35,7 @@ function MenuMultiLevel({
 
   return (
     <nav className="menu" role={role} aria-label={arialabel}>
-      <ul className="overflow">
+      <ul className={overflow_class}>
         {menuData.map((menuLevel, idx) => (
           <MenuLevel data={menuLevel} key={idx} level="1" {...args} />
         ))}

@@ -58,6 +58,9 @@ function CountrySiteHeader({
     }
   });
 
+  let overflow = (args.menu_extended === 'On');
+  args.overflow = overflow;
+
   return (
     <header className="country-header country-load-animation">
       <section className="header">
@@ -76,16 +79,16 @@ function CountrySiteHeader({
             </div>
             <div className="cell small-1 large-auto align-content-middle top-center">
               {menuType === 'dropdown' && !menuExtended && (
-                <MenuMultiLevel data={menuJsonDropDownData} locale={locale} multilevel={multiLevel} {...args} />
+                <MenuMultiLevel data={menuJsonDropDownData} locale={locale} multilevel={multiLevel} overflow={overflow} {...args} />
               )}
               {menuType === 'dropdown' && menuExtended && (
-                <MenuMultiLevel data={menuJsonDropDownExtendedData} locale={locale} multilevel={multiLevel} {...args} />
+                <MenuMultiLevel data={menuJsonDropDownExtendedData} locale={locale} multilevel={multiLevel} overflow={overflow} {...args} />
               )}
               {menuType === 'mega_menu' && !menuExtended && (
-                <Menu data={menuJsonDefaultData} type={menuType} locale={locale} multilevel={multiLevel} {...args} />
+                <Menu data={menuJsonDefaultData} type={menuType} locale={locale} multilevel={multiLevel} overflow={overflow} {...args} />
               )}
               {menuType === 'mega_menu' && menuExtended && (
-                <Menu data={menuJsonDefaultExtendedData} type={menuType} locale={locale} multilevel={multiLevel} {...args} />
+                <Menu data={menuJsonDefaultExtendedData} type={menuType} locale={locale} multilevel={multiLevel} overflow={overflow} {...args} />
               )}
             </div>
             <div className="cell small-3 large-auto top-right">
