@@ -156,7 +156,7 @@ export const navigationInitialize = (locale) => {
   /**
    * Mobile navigation related functionality.
    */
-  jQuery(document).on('click', '.mobile-links .cta__link', function (e) {
+  jQuery(document).on('click', '.mobile-links .cta__link:not(.no-submenu)', function (e) {
     const navId = jQuery(this).attr('id');
     const navText = jQuery(this).text();
     e.preventDefault();
@@ -350,6 +350,10 @@ export const navigationOverFlow = () => {
         jQuery('.menu__overflow__item').addClass('hidden');
         if (jQuery('.menu__overflow__container > ul.overflow > li').length > 0) {
           jQuery('.menu__overflow__item').removeClass('hidden');
+        }
+
+        if (!jQuery('.menu__overflow__container > ul.overflow > li').length) {
+          jQuery('.menu__overflow__container').addClass('hidden');
         }
       }
     }

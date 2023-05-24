@@ -173,6 +173,10 @@
       display: block;
     }
   }
+
+  .cta__link.cta--space.no-submenu:after {
+    display: none;
+  }
 }
 
 .menu-hamburger {

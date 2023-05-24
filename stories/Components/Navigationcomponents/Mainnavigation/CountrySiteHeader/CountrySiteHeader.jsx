@@ -18,6 +18,7 @@ import '../../../../assets/scss/_grid.scss';
 import '../../../../assets/js/lazyload';
 import '../../../../Utilities/FrostedImage/frosted-background.scss';
 import menuJsonDefaultData from '../../../../assets/js/navigation-data.json';
+import menuJsonDefaultExtendedData from '../../../../assets/js/navigation-extended-data.json';
 import menuJsonDropDownData from '../../../../assets/js/navigation-dropdown-data.json';
 import menuJsonDropDownExtendedData from '../../../../assets/js/navigation-dropdown-extended-data.json';
 
@@ -41,17 +42,16 @@ function CountrySiteHeader({
   const menuType = args.menu_type === 'Mega menu' || typeof (args.menu_type) == 'undefined' ? 'mega_menu' : 'dropdown';
   const menuExtended = !(args.menu_extended === 'Off' || typeof (args.menu_extended) == 'undefined');
   const multiLevel = menuType === 'dropdown';
+  // const menuDefaultData = menuType === 'mega_menu' ? menuJsonDefaultData : navigationData;
+  // let menuData = args.menu_type === 'Multi-level dropdown' ? menuJsonDropDownData : menuJsonDefaultData;
 
-  const menuDefaultData = menuType === 'mega_menu' ? menuJsonDefaultData : navigationData;
-  let menuData = args.menu_type === 'Multi-level dropdown' ? menuJsonDropDownData : menuJsonDefaultData;
-
-  // if (args.menu_type === 'Multi-level dropdown' && args.menu_extended === 'On') {
-  //   menuData = menuJsonDropDownExtendedData;
-  // }
-
-  // if (args.menu_type === 'Multi-level dropdown' && args.menu_extended === 'Off') {
-  //   menuData = menuJsonDropDownData;
-  // }
+  let menuData;
+  let dataSource = menuExtended ? menuJsonDefaultExtendedData : menuJsonDefaultData;
+  dataSource.forEach((source) => {
+    if (source.language === locale) {
+      menuData = source.data;
+    }
+  });
 
   return (
     <header className="country-header country-load-animation">
@@ -76,8 +76,11 @@ function CountrySiteHeader({
               {menuType === 'dropdown' && menuExtended && (
                 <MenuMultiLevel data={menuJsonDropDownExtendedData} locale={locale} multilevel={multiLevel} {...args} />
               )}
-              {menuType === 'mega_menu' && (
+              {menuType === 'mega_menu' && !menuExtended && (
                 <Menu data={menuData} type={menuType} locale={locale} multilevel={multiLevel} {...args} />
+              )}
+              {menuType === 'mega_menu' && menuExtended && (
+                <Menu data={menuJsonDefaultExtendedData} type={menuType} locale={locale} multilevel={multiLevel} {...args} />
               )}
             </div>
             <div className="cell small-3 large-auto top-right">
@@ -107,7 +110,7 @@ function CountrySiteHeader({
               </div>
             )}
             <MobileNav
-              navigationData={navigationData}
+              navigationData={menuData}
               languageswitcherData={languageswitcherData}
               locationData={locationData}
               backcaption={backcaption}
