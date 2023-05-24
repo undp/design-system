@@ -57,6 +57,8 @@
 
       &.button {
         color: $color-white;
+        display: flex;
+        margin-inline: 0;
       }
     }
   }

@@ -37,19 +37,24 @@ function CountrySiteHeader({
     navigationInitialize(locale);
     navigationOverFlow();
     navigationMultiLevelEdgeDetection();
-  }, [locale, args.menu_type, args.menu_extended]);
+  }, [locale, args.menu_type, args.menu_extended, args.cta_enabled]);
 
   const menuType = args.menu_type === 'Mega menu' || typeof (args.menu_type) == 'undefined' ? 'mega_menu' : 'dropdown';
   const menuExtended = !(args.menu_extended === 'Off' || typeof (args.menu_extended) == 'undefined');
   const multiLevel = menuType === 'dropdown';
-  // const menuDefaultData = menuType === 'mega_menu' ? menuJsonDefaultData : navigationData;
-  // let menuData = args.menu_type === 'Multi-level dropdown' ? menuJsonDropDownData : menuJsonDefaultData;
+  const locale_fixed = locale == 'en' ? 'english' : locale;
 
-  let menuData;
-  let dataSource = menuExtended ? menuJsonDefaultExtendedData : menuJsonDefaultData;
+  let dataSource;
+  let menuMobileData = navigationData;
+  if (menuType === 'dropdown') {
+    dataSource = menuExtended ? menuJsonDropDownExtendedData : menuJsonDropDownData;
+  }
+  if (menuType === 'mega_menu') {
+    dataSource = menuExtended ? menuJsonDefaultExtendedData : menuJsonDefaultData;
+  }
   dataSource.forEach((source) => {
-    if (source.language === locale) {
-      menuData = source.data;
+    if (source.language === locale_fixed && source.data.length > 0) {
+      menuMobileData = source.data;
     }
   });
 
@@ -77,7 +82,7 @@ function CountrySiteHeader({
                 <MenuMultiLevel data={menuJsonDropDownExtendedData} locale={locale} multilevel={multiLevel} {...args} />
               )}
               {menuType === 'mega_menu' && !menuExtended && (
-                <Menu data={menuData} type={menuType} locale={locale} multilevel={multiLevel} {...args} />
+                <Menu data={menuJsonDefaultData} type={menuType} locale={locale} multilevel={multiLevel} {...args} />
               )}
               {menuType === 'mega_menu' && menuExtended && (
                 <Menu data={menuJsonDefaultExtendedData} type={menuType} locale={locale} multilevel={multiLevel} {...args} />
@@ -101,6 +106,7 @@ function CountrySiteHeader({
                   label="Donate"
                   href="#"
                   Icon="No Arrow"
+                  Type="Primary"
                 />
               )}
             </div>
@@ -110,7 +116,7 @@ function CountrySiteHeader({
               </div>
             )}
             <MobileNav
-              navigationData={menuData}
+              navigationData={menuMobileData}
               languageswitcherData={languageswitcherData}
               locationData={locationData}
               backcaption={backcaption}

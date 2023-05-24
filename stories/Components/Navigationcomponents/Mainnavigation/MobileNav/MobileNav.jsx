@@ -49,11 +49,12 @@ function MobileNav({
               {' '}
               {locationData.detail}
             </a>
-            {args.cta_enabled == 'On' && (
+            {args.cta_enabled === 'On' && (
               <CtaButton
                 label="Donate"
                 href="#"
                 Icon="No Arrow"
+                Type="Primary"
               />
             )}
           </div>
