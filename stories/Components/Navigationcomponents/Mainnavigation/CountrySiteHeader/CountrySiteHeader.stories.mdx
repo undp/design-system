@@ -6,42 +6,38 @@ export const getNavLinks = (locale) => {
   switch (locale) {
     case "english":
       return [
-        { label: "Who we are", id: "headerlink1", position: "left" },
-        { label: "What we do", id: "headerlink2", position: "left" },
-        { label: "Our Impact", id: "headerlink3", position: "right" },
-        { label: "Get Involved", id: "headerlink4", position: "right" },
+        { label: "Who we are", id: "headerlink1" },
+        { label: "What we do", id: "headerlink2" },
+        { label: "Our Impact", id: "headerlink3" },
+        { label: "Get Involved", id: "headerlink4" },
       ];
     case "arabic":
       return [
-        { label: "من نحن", id: "headerlink1", position: "left" },
-        { label: "الذي نفعله", id: "headerlink2", position: "left" },
-        { label: "تأثيرنا", id: "headerlink3", position: "right" },
-        { label: "شارك", id: "headerlink4", position: "right" },
+        { label: "من نحن", id: "headerlink1" },
+        { label: "الذي نفعله", id: "headerlink2" },
+        { label: "تأثيرنا", id: "headerlink3" },
+        { label: "شارك", id: "headerlink4" },
       ];
     case "burmese":
       return [
-        { label: "ငါတို့ဘယ်သူလဲ။", id: "headerlink1", position: "left" },
-        { label: "ငါတို့ဘာလုပ်မလဲ။", id: "headerlink2", position: "left" },
-        {
-          label: "ကျွန်ုပ်တို့၏သက်ရောက်မှု",
-          id: "headerlink3",
-          position: "right",
-        },
-        { label: "ပါဝင်လိုက်ပါ။", id: "headerlink4", position: "right" },
+        { label: "ငါတို့ဘယ်သူလဲ။", id: "headerlink1" },
+        { label: "ငါတို့ဘာလုပ်မလဲ။", id: "headerlink2" },
+        { label: "ကျွန်ုပ်တို့၏သက်ရောက်မှု", id: "headerlink3" },
+        { label: "ပါဝင်လိုက်ပါ။", id: "headerlink4" },
       ];
     case "japanese":
       return [
-        { label: "私たちは誰ですか", id: "headerlink1", position: "left" },
-        { label: "私達がすること", id: "headerlink2", position: "left" },
-        { label: "私たちの影響", id: "headerlink3", position: "left" },
-        { label: "参加する", id: "headerlink4", position: "left" },
+        { label: "私たちは誰ですか", id: "headerlink1" },
+        { label: "私達がすること", id: "headerlink2" },
+        { label: "私たちの影響", id: "headerlink3" },
+        { label: "参加する", id: "headerlink4" },
       ];
     default:
       return [
-        { label: "Who we are", id: "headerlink1", position: "left" },
-        { label: "What we do", id: "headerlink2", position: "left" },
-        { label: "Our Impact", id: "headerlink3", position: "right" },
-        { label: "Get Involved", id: "headerlink4", position: "right" },
+        { label: "Who we are", id: "headerlink1" },
+        { label: "What we do", id: "headerlink2" },
+        { label: "Our Impact", id: "headerlink3" },
+        { label: "Get Involved", id: "headerlink4" },
       ];
   }
 };
@@ -180,18 +176,20 @@ export const menuData = (locale) => {
       options: ["Mega menu", "Multi-level dropdown"],
       control: "inline-radio",
     },
+    menu_extended: {
+      name: "Extended menu",
+      control: "inline-radio",
+      options: ["On", "Off"],
+    },
   }}
   args={{
     cta_enabled: "Off",
     menu_type: "Mega menu",
+    menu_extended: "Off",
   }}
 />
 
-<style>{`
-  iframe {
-    min-height: 400px;
-  }
-`}</style>
+<style>{`iframe {min-height: 400px;}`}</style>
 
 # Country Header
 
@@ -251,12 +249,6 @@ There are three states: Default, Tablet, and Mobile.
       let lang = locale === "en" ? "english" : locale;
       const caption = getCaptionForLocale(locale);
       const navigationData = getNavLinks(locale);
-      const leftNavigationData = navigationData.filter(
-        (item) => item.position === "left"
-      );
-      const rightNavigationData = navigationData.filter(
-        (item) => item.position === "right"
-      );
       const backcaption = getBackForLocale(locale);
       const siteTitleData = getSiteTitle(locale);
       return (
@@ -264,9 +256,7 @@ There are three states: Default, Tablet, and Mobile.
           siteTitleData={siteTitleData}
           backcaption={backcaption}
           locale={locale}
-          leftNavigationData={leftNavigationData}
           navigationData={navigationData}
-          rightNavigationData={rightNavigationData}
           menuData={navigationData}
           languageswitcherData={Languageswitcher(locale)}
           text={caption}

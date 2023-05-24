@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { getMegaMenu } from '../../../../assets/js/navigation-data';
 import {
@@ -19,6 +19,7 @@ import '../../../../assets/js/lazyload';
 import '../../../../Utilities/FrostedImage/frosted-background.scss';
 import menuJsonDefaultData from '../../../../assets/js/navigation-data.json';
 import menuJsonDropDownData from '../../../../assets/js/navigation-dropdown-data.json';
+import menuJsonDropDownExtendedData from '../../../../assets/js/navigation-dropdown-extended-data.json';
 
 function CountrySiteHeader({
   languageswitcherData,
@@ -35,11 +36,23 @@ function CountrySiteHeader({
     navigationInitialize(locale);
     navigationOverFlow();
     navigationMultiLevelEdgeDetection();
-  }, [locale, args.menu_type]);
+  }, [locale, args.menu_type, args.menu_extended]);
+
   const menuType = args.menu_type === 'Mega menu' || typeof (args.menu_type) == 'undefined' ? 'mega_menu' : 'dropdown';
-  const menuDefaultData = typeof (args.menu_type) == 'undefined' ? navigationData : menuJsonDefaultData;
-  const menuData = args.menu_type === 'Multi-level dropdown' ? menuJsonDropDownData : menuJsonDefaultData;
-  const multiLevel = true;
+  const menuExtended = !(args.menu_extended === 'Off' || typeof (args.menu_extended) == 'undefined');
+  const multiLevel = menuType === 'dropdown';
+
+  const menuDefaultData = menuType === 'mega_menu' ? menuJsonDefaultData : navigationData;
+  let menuData = args.menu_type === 'Multi-level dropdown' ? menuJsonDropDownData : menuJsonDefaultData;
+
+  // if (args.menu_type === 'Multi-level dropdown' && args.menu_extended === 'On') {
+  //   menuData = menuJsonDropDownExtendedData;
+  // }
+
+  // if (args.menu_type === 'Multi-level dropdown' && args.menu_extended === 'Off') {
+  //   menuData = menuJsonDropDownData;
+  // }
+
   return (
     <header className="country-header country-load-animation">
       <section className="header">
@@ -57,11 +70,14 @@ function CountrySiteHeader({
               </div>
             </div>
             <div className="cell small-1 large-auto align-content-middle top-center">
-              {menuType === 'dropdown' && (
-                <MenuMultiLevel data={menuData} locale={locale} multiLevel {...args} />
+              {menuType === 'dropdown' && !menuExtended && (
+                <MenuMultiLevel data={menuJsonDropDownData} locale={locale} multilevel={multiLevel} {...args} />
+              )}
+              {menuType === 'dropdown' && menuExtended && (
+                <MenuMultiLevel data={menuJsonDropDownExtendedData} locale={locale} multilevel={multiLevel} {...args} />
               )}
               {menuType === 'mega_menu' && (
-                <Menu data={menuData} type={menuType} locale={locale} {...args} />
+                <Menu data={menuData} type={menuType} locale={locale} multilevel={multiLevel} {...args} />
               )}
             </div>
             <div className="cell small-3 large-auto top-right">
@@ -85,10 +101,11 @@ function CountrySiteHeader({
                 />
               )}
             </div>
-            {/* Need to generate this in jquery */}
-            <div className="grid-container full menu__overflow__container hidden">
-              <ul className="overflow" />
-            </div>
+            {args.menu_extended == 'On' && (
+              <div className="grid-container full menu__overflow__container hidden">
+                <ul className="overflow" />
+              </div>
+            )}
             <MobileNav
               navigationData={navigationData}
               languageswitcherData={languageswitcherData}

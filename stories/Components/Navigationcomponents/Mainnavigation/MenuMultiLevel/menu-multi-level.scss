@@ -251,24 +251,37 @@
 
   li:hover>a.external {
     .external-link-animated {
+      box-shadow: -2px 2px 0 0 $color-white, -4px 0 0 -2px $color-white, -3px 3px 0 -1px $color-white;
+
       &::after {
         @include transform(rotate(0deg) translate(5px, -5px));
+        border-inline-end-color: $color-white;
+        border-block-start-color: $color-white;
       }
 
       &::before {
         @include transform(rotate(-45deg) translate(7px, 0));
+        background: $color-white;
       }
     }
   }
 
   li:hover>a.download {
     .download-animated {
+
+      i {
+        border-color: $color-white;
+      }
+
       &::after {
         @include transform(rotate(-45deg) translate(7px, -7px));
+        border-block-end-color: $color-white;
+        border-inline-start-color: $color-white;
       }
 
       &::before {
         @include transform(translate(0, -10px));
+        background: $color-white;
       }
     }
   }

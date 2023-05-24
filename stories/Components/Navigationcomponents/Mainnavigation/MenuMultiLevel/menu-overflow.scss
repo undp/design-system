@@ -37,6 +37,8 @@
     clear: both;
     border-radius: 100%;
     padding-inline: 6px;
+    line-height: 0;
+    font-family: "ProximaNova", sans-serif;
   }
 
   &:hover::after {
@@ -188,6 +190,7 @@
         padding: 0;
         margin: 0;
         justify-content: flex-start;
+        width: 100%;
 
         &.edge:focus>ul.sub-menu,
         &.edge:focus-within>ul.sub-menu,
@@ -207,6 +210,7 @@
           border-bottom: 1px solid #d4d6d8;
           background: none;
           text-align: inherit;
+          min-inline-size: 1rem;
         }
 
         &.has-submenu>a:after {
@@ -220,9 +224,10 @@
           color: $color-dark-red;
         }
 
-        // &.has-submenu:hover>a:after {
-        //   //background: url(#{$img-path-Iconfourback}/chevron-white-right.svg) no-repeat left center;
-        // }
+        .external-link-animated {
+          display: block;
+          min-width: 0.75rem;
+        }
       }
     }
 
@@ -247,16 +252,16 @@
         >ul.submenu {
           position: absolute;
           display: block;
-          top: 0%;
-          left: 100%;
+          inset-block-start: 0%;
+          inset-inline-start: 100%;
         }
 
         &.edge:focus>ul.sub-menu,
         &.edge:focus-within>ul.sub-menu,
         &.edge:hover>ul.sub-menu,
         &.edge>ul.submenu {
-          right: 100%;
-          left: unset;
+          inset-inline-end: 100%;
+          inset-inline-start: unset;
         }
 
         >a:focus,
@@ -269,10 +274,10 @@
           color: $color-white;
         }
 
-        // &.has-submenu>a.active:after,
-        // &.has-submenu>a:after {
-        //   //background: url(#{$img-path-Iconfourback}/chevron-white-left.svg) no-repeat left center;
-        // }
+        &.has-submenu>a.active:after,
+        &.has-submenu>a:after {
+          background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
+        }
       }
     }
   }
