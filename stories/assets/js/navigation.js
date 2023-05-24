@@ -21,7 +21,11 @@ export const navigationInitialize = (locale) => {
     let $triggering_menu_item = $(event.target);
 
     // Show the mega menu panel. Position it at the bottom of the header or overflow.
-    $menuItemId.css({ top: ($triggering_menu_item.offset().top + $triggering_menu_item.height()) });
+    let extra = 0;
+    if ($triggering_menu_item.parents('.menu__overflow__container').length) {
+      extra = $triggering_menu_item.height();
+    }
+    $menuItemId.css({ top: ($main_nav_height.height() + extra) });
     $menuItemId.addClass('show-mega').siblings().removeClass('show-mega').addClass('no-effect');
 
     // If the overflow is open, z-index the mega menu above everything.
