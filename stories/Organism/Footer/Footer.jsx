@@ -15,7 +15,6 @@ import { P } from '../../Atom/BaseTypography/Paragraph/Paragraph';
 import { accordion } from '../../assets/js/accordion';
 import { Icons } from '../../Atom/Icons/Icons';
 
-
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
 export function Footer({
@@ -33,9 +32,9 @@ export function Footer({
               <div className="grid-x footer-head">
                 <div className="cell medium-5">
                   {args.color === 'default' ? (
-                    <FooterLogo src={srctwo} headerText={headerText} alt={alt} logolink={logolink} style="" />
+                    <FooterLogo src={srctwo} headerText={headerText} alt={alt} logolink={logolink} style="" key="default" />
                   ) : (
-                    <FooterLogo src={src} headerText={headerText} alt={alt} logolink={logolink} style={args.color} />
+                    <FooterLogo src={src} headerText={headerText} alt={alt} logolink={logolink} style={args.color} key="color" />
                   )}
                 </div>
                 <div className="cell medium-4">
@@ -93,9 +92,9 @@ export function Footer({
               <div className="grid-x footer-top">
                 <div className="cell medium-5">
                   {args.color === 'default' ? (
-                    <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style="" />
+                    <FooterLogo src={srctwo} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style="" key="default" />
                   ) : (
-                    <FooterLogo src={src} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style={args.color} />
+                    <FooterLogo src={src} headerText={headerText} headerText2={headerText2} alt={alt} logolink={logolink} style={args.color} key="color" />
                   )}
                 </div>
                 <div className="cell medium-5 show-large">

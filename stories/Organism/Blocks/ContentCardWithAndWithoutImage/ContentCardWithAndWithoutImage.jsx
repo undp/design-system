@@ -50,7 +50,7 @@ export function ContentCardWithAndWithoutImage({
             : (null)}
           {item.type === 'color'
             ? (
-              <div className={cls('content-card', `${item.BackgroundColor}`, `${item.Hovercolors ? args.accent : ''}`)}>
+              <div className={cls('content-card', `${item.BackgroundColor}`, `${item.Hovercolors ? accent_color : ''}`)}>
                 <a href={item.link}>
                   <Heading type="6" label={item.contenttile} />
                   <div className="content-caption">

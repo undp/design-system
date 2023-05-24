@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { useEffect } from 'react';
 import './parallax-cards.scss';
 import { swiper } from '../../../../assets/js/swiper';
@@ -12,7 +13,7 @@ let rtl = document.dir || undefined;
 if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
-const ParallaxCards = ({ data, alt, title }) => {
+function ParallaxCards({ data, alt, title }) {
   useEffect(() => {
     swiper('.parallax__content');
     parallaxEffect('.parallax-card', ['.parallax-card__image', '.parallax-card__content'], 'top center', 'bottom+=85 center', 'vertical', 'desktop', 'percent');
@@ -27,13 +28,17 @@ const ParallaxCards = ({ data, alt, title }) => {
         <div className="swiper-wrapper">
           {data.map((item, index) => (
             <>
-              {index % 2 == 0 ? <ParallaxCard swipeClass="yes" Image="Right" name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} /> : <ParallaxCard swipeClass="yes" name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} />}
+              {index % 2 == 0 ? (
+                <ParallaxCard key={index} swipeClass="yes" Image="Right" name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} />
+              ) : (
+                <ParallaxCard key={index} swipeClass="yes" name={item.name} descrption={item.descriptionText} button={item.btnlabel} alt={alt} src={Img} />
+              )}
             </>
           ))}
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default ParallaxCards;
