@@ -26,7 +26,7 @@ export const navigationInitialize = (locale) => {
 
     // If the overflow is open, z-index the mega menu above everything.
     $menuItemId.removeClass('float-higher');
-    if (!jQuery('.menu__overflow__container').hasClass('hidden')) {
+    if (jQuery('.menu__overflow__container').length && !jQuery('.menu__overflow__container').hasClass('hidden')) {
       $menuItemId.addClass('float-higher');
     }
 
