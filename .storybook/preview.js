@@ -28,7 +28,9 @@ export const parameters = {
     viewports: INITIAL_VIEWPORTS,
   },
   docs: {
-    transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn),
+    source: {
+      transform: (src, storyContext) => renderToHTML(storyContext.storyFn),
+    }
   },
   options: {
     storySort: {

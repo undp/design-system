@@ -361,6 +361,18 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta
   title="Patterns/Card grids/Content cards with and without image"
+  argTypes={{
+    Emphasize: {
+      control: "boolean",
+    },
+    Hovercolors: {
+      options: ["global", "yellow", "red", "green", "blue"],
+      control: { type: "inline-radio" },
+    },
+  }}
+  args={{
+    Hovercolors: "global",
+  }}
   args={{
     Emphasize: "true",
     Hovercolors: "global",
