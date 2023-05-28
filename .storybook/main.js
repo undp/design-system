@@ -6,13 +6,13 @@ module.exports = {
     "../stories/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   addons: [
-    "@storybook/addon-links", 
-    "@storybook/addon-actions", 
-    "@storybook/addon-docs", 
-    "@storybook/addon-essentials", 
-    "@whitespace/storybook-addon-html", 
-    "storybook-addon-rtl", 
-    "@storybook/addon-a11y", 
+    "@storybook/addon-links",
+    "@storybook/addon-actions",
+    "@storybook/addon-docs",
+    "@storybook/addon-essentials",
+    "@whitespace/storybook-addon-html",
+    "storybook-addon-rtl",
+    "@storybook/addon-a11y",
     "@storybook/addon-mdx-gfm"
   ],
   features: {
@@ -32,7 +32,7 @@ module.exports = {
     // });
     config.resolve.alias = {
       ...config.resolve.alias,
-      icons: path.resolve(__dirname, "../stories/assets/icons"),
+      icons: path.resolve(__dirname, "../stories/assets/icons")
     };
     // add SCSS support for CSS Modules
     config.module.rules.push({
