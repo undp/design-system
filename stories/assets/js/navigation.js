@@ -305,7 +305,7 @@ export const navigationOverFlow = () => {
     /**
    * Clear out the overflow before deciding what goes in there.
    */
-    jQuery('.menu__overflow__container > ul.overflow').empty();
+    // jQuery('.menu__overflow__container > ul.overflow').empty();
 
     /**
    * Trigger the overflow navigation setup.
@@ -364,7 +364,7 @@ export const navigationOverFlow = () => {
 
     // Trigger a recalculation on any resize to figure out if menu items should
     // be moved to overflow section.
-    const observer = new ResizeObserver((items) => {
+    const resize_observer = new ResizeObserver((items) => {
       for (const item of items) {
       // Set the width of the menu, to the width of the parent.
         jQuery('.menu').width(jQuery('.top-center').width() - 40);
@@ -372,8 +372,9 @@ export const navigationOverFlow = () => {
         TriggerOverFlowFunctionality(Math.floor(item.contentRect?.width));
       }
     });
+
     if (jQuery('.header').length !== 0) {
-      observer.observe(jQuery('.header')[0], { box: 'border-box' });
+      resize_observer.observe(jQuery('.header')[0], { box: 'border-box' });
     }
   }
 };

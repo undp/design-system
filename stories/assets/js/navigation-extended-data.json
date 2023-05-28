@@ -760,8 +760,8 @@
     "language": "arabic",
     "data": [
       {
-        "title": "مَوْقِع",
-        "url": "#",
+        "title": "الصفحة الرئيسية",
+        "url": "/",
         "submenus": []
       },
       {
@@ -1495,29 +1495,28 @@
         ]
       },
       {
-        "title": "Test Link with wide text",
+        "title": "اختبار الارتباط بنص عريض",
         "url": "#",
         "submenus": []
       },
       {
-        "title": "Test Link withWideWord",
+        "title": "رابط الاختبار",
         "url": "#",
         "submenus": []
       },
       {
-        "title": "Test Link",
+        "title": "رابط الاختبار",
         "url": "#",
         "submenus": []
       }
     ]
-
   },
   {
     "language": "burmese",
     "data": [
       {
         "title": "ပင်မစာမျက်နှာ",
-        "url": "#",
+        "url": "/",
         "submenus": []
       },
       {
@@ -2251,17 +2250,17 @@
         ]
       },
       {
-        "title": "Test Link with wide text",
+        "title": "ကျယ်ပြန့်သောစာသားဖြင့်စမ်းသပ်လင့်ခ်",
         "url": "#",
         "submenus": []
       },
       {
-        "title": "Test Link withWideWord",
+        "title": "စမ်းသပ်လင့်ခ် withWideWord",
         "url": "#",
         "submenus": []
       },
       {
-        "title": "Test Link",
+        "title": "စမ်းသပ်လင့်ခ်",
         "url": "#",
         "submenus": []
       }
@@ -2271,8 +2270,8 @@
     "language": "japanese",
     "data": [
       {
-        "title": "帰宅",
-        "url": "#",
+        "title": "ホームページ",
+        "url": "/",
         "submenus": []
       },
       {
@@ -3006,17 +3005,17 @@
         ]
       },
       {
-        "title": "Test Link with wide text",
+        "title": "ワイドテキストのリンクをテストする",
         "url": "#",
         "submenus": []
       },
       {
-        "title": "Test Link withWideWord",
+        "title": "テストリンク withWideWord",
         "url": "#",
         "submenus": []
       },
       {
-        "title": "Test Link",
+        "title": "テストリンク",
         "url": "#",
         "submenus": []
       }

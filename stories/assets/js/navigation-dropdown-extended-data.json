@@ -10,6 +10,7 @@
       {
         "id": "headerlink1",
         "title": "Who we are",
+        "url": "",
         "type": "",
         "submenus": [
           {
@@ -60,6 +61,7 @@
       {
         "id": "headerlink2",
         "title": "What we do",
+        "url": "",
         "type": "",
         "submenus": [
           {
@@ -110,6 +112,7 @@
       {
         "id": "headerlink3",
         "title": "Our Impact",
+        "url": "",
         "type": "",
         "submenus": [
           {
@@ -160,6 +163,7 @@
       {
         "id": "headerlink4",
         "title": "Get Involved",
+        "url": "",
         "type": "",
         "submenus": [
           {
@@ -209,15 +213,18 @@
       },
       {
         "title": "Test Link with wide text",
+        "url": "",
         "submenus": []
       },
       {
         "title": "Test Link withWideWord",
+        "url": "",
         "submenus": []
       },
       {
         "id": "headerlink5",
         "title": "Test Link",
+        "url": "",
         "submenus": [
           {
             "title": "Page Title 1 with extended text that is on two lines",
@@ -270,13 +277,14 @@
     "language": "arabic",
     "data": [
       {
-        "title": "مَوْقِع",
+        "title": "الصفحة الرئيسية",
         "url": "/",
         "submenus": []
       },
       {
         "id": "headerlink1",
         "title": "من نحن",
+        "url": "",
         "type": "",
         "submenus": [
           {
@@ -324,6 +332,7 @@
       {
         "id": "headerlink2",
         "title": "الذي نفعله",
+        "url": "",
         "type": "",
         "submenus": [
           {
@@ -371,6 +380,7 @@
       {
         "id": "headerlink3",
         "title": "تأثيرنا",
+        "url": "",
         "type": "",
         "submenus": [
           {
@@ -418,6 +428,7 @@
       {
         "id": "headerlink4",
         "title": "شارك",
+        "url": "",
         "type": "",
         "submenus": [
           {
@@ -463,16 +474,19 @@
         ]
       },
       {
-        "title": "Test Link with wide text",
+        "title": "اختبار الارتباط بنص عريض",
+        "url": "",
         "submenus": []
       },
       {
-        "title": "Test Link withWideWord",
+        "title": "رابط الاختبار",
+        "url": "",
         "submenus": []
       },
       {
         "id": "headerlink5",
-        "title": "Test Link",
+        "url": "",
+        "title": "رابط الاختبار",
         "submenus": [
           {
             "title": "Page Title 1 with extended text that is on two lines",
@@ -532,6 +546,7 @@
       {
         "id": "headerlink1",
         "title": "ငါတို့ဘယ်သူလဲ။",
+        "url": "#",
         "type": "",
         "submenus": [
           {
@@ -579,26 +594,27 @@
       {
         "id": "headerlink2",
         "title": "ငါတို့ဘာလုပ်မလဲ။",
+        "url": "#",
         "type": "",
         "submenus": [
           {
             "title": "စာမျက်နှာခွဲ",
-            "url":"",
+            "url": "#",
             "type": "",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
-                "url": "",
+                "url": "#",
                 "type": "external"
               },
               {
                 "label": "စာမျက်နှာခွဲ",
-                "url": "",
+                "url": "#",
                 "type": "download"
               },
               {
                 "label": "စာမျက်နှာခွဲ",
-                "url": "",
+                "url": "#",
                 "type": ""
               }
             ]
@@ -606,18 +622,18 @@
           {
             "title": "စာမျက်နှာခွဲ",
             "type": "download",
-            "url": "",
+            "url": "#",
             "linksCol1": []
           },
           {
             "title": "စာမျက်နှာခွဲ",
-            "url": "",
+            "url": "#",
             "type": "external",
             "linksCol1": []
           },
           {
             "title": "စာမျက်နှာခွဲ",
-            "url": "",
+            "url": "#",
             "type": "",
             "linksCol1": []
           }
@@ -626,26 +642,27 @@
       {
         "id": "headerlink3",
         "title": "ကျွန်ုပ်တို့၏သက်ရောက်မှု",
+        "url": "#",
         "type": "",
         "submenus": [
           {
             "title": "စာမျက်နှာခွဲ",
-            "url":"",
+            "url": "#",
             "type": "",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
-                "url": "",
+                "url": "#",
                 "type": "external"
               },
               {
                 "label": "စာမျက်နှာခွဲ",
-                "url": "",
+                "url": "#",
                 "type": "download"
               },
               {
                 "label": "စာမျက်နှာခွဲ",
-                "url": "",
+                "url": "#",
                 "type": ""
               }
             ]
@@ -653,18 +670,18 @@
           {
             "title": "စာမျက်နှာခွဲ",
             "type": "download",
-            "url": "",
+            "url": "#",
             "linksCol1": []
           },
           {
             "title": "စာမျက်နှာခွဲ",
-            "url": "",
+            "url": "#",
             "type": "external",
             "linksCol1": []
           },
           {
             "title": "စာမျက်နှာခွဲ",
-            "url": "",
+            "url": "#",
             "type": "",
             "linksCol1": []
           }
@@ -673,26 +690,27 @@
       {
         "id": "headerlink4",
         "title": "ပါဝင်လိုက်ပါ။",
+        "url": "#",
         "type": "",
         "submenus": [
           {
             "title": "စာမျက်နှာခွဲ",
-            "url":"",
+            "url": "#",
             "type": "",
             "linksCol1": [
               {
                 "label": "စာမျက်နှာခွဲ",
-                "url": "",
+                "url": "#",
                 "type": "external"
               },
               {
                 "label": "စာမျက်နှာခွဲ",
-                "url": "",
+                "url": "#",
                 "type": "download"
               },
               {
                 "label": "စာမျက်နှာခွဲ",
-                "url": "",
+                "url": "#",
                 "type": ""
               }
             ]
@@ -700,57 +718,60 @@
           {
             "title": "စာမျက်နှာခွဲ",
             "type": "download",
-            "url": "",
+            "url": "#",
             "linksCol1": []
           },
           {
             "title": "စာမျက်နှာခွဲ",
-            "url": "",
+            "url": "#",
             "type": "external",
             "linksCol1": []
           },
           {
             "title": "စာမျက်နှာခွဲ",
-            "url": "",
+            "url": "#",
             "type": "",
             "linksCol1": []
           }
         ]
       },
       {
-        "title": "Test Link with wide text",
+        "title": "ကျယ်ပြန့်သောစာသားဖြင့်စမ်းသပ်လင့်ခ်",
+        "url": "#",
         "submenus": []
       },
       {
-        "title": "Test Link withWideWord",
+        "title": "စမ်းသပ်လင့်ခ် withWideWord",
+        "url": "#",
         "submenus": []
       },
       {
         "id": "headerlink5",
-        "title": "Test Link",
+        "url": "#",
+        "title": "စမ်းသပ်လင့်ခ်",
         "submenus": [
           {
             "title": "Page Title 1 with extended text that is on two lines",
-            "url": "",
+            "url": "#",
             "type": "",
             "linksCol1": [
               {
                 "label": "Sub Page with extended text that is on two lines",
-                "url": "",
+                "url": "#",
                 "type": "external"
               },
               {
                 "label": "Sub Page",
-                "url": "",
+                "url": "#",
                 "type": "download"
               },
               {
                 "label": "Sub Page with extended text that is on two lines",
-                "url": ""
+                "url": "#"
               },
               {
                 "label": "Sub Page",
-                "url": ""
+                "url": "#"
               }
             ]
           },
@@ -780,52 +801,53 @@
     "language": "japanese",
     "data": [
       {
-        "title": "帰宅",
+        "title": "ホームページ",
         "url": "/",
         "submenus": []
       },
       {
         "id": "headerlink1",
         "title": "私たちは誰ですか",
+        "url": "#",
         "type": "",
         "submenus": [
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "",
             "linksCol1": [
               {
                 "label": "サブページ",
-                "url": "",
+                "url": "#",
                 "type": "external"
               },
               {
                 "label": "サブページ",
-                "url": "",
+                "url": "#",
                 "type": "download"
               },
               {
                 "label": "サブページ",
-                "url": "",
+                "url": "#",
                 "type": ""
               }
             ]
           },
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "external",
             "linksCol1": []
           },
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "download",
             "linksCol1": []
           },
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "",
             "linksCol1": []
           }
@@ -834,45 +856,46 @@
       {
         "id": "headerlink2",
         "title": "私達がすること",
+        "url": "#",
         "type": "",
         "submenus": [
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "",
             "linksCol1": [
               {
                 "label": "サブページ",
-                "url": "",
+                "url": "#",
                 "type": "external"
               },
               {
                 "label": "サブページ",
-                "url": "",
+                "url": "#",
                 "type": "download"
               },
               {
                 "label": "サブページ",
-                "url": "",
+                "url": "#",
                 "type": ""
               }
             ]
           },
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "external",
             "linksCol1": []
           },
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "download",
             "linksCol1": []
           },
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "",
             "linksCol1": []
           }
@@ -881,45 +904,46 @@
       {
         "id": "headerlink3",
         "title": "私たちの影響",
+        "url": "#",
         "type": "",
         "submenus": [
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "",
             "linksCol1": [
               {
                 "label": "サブページ",
-                "url": "",
+                "url": "#",
                 "type": "external"
               },
               {
                 "label": "サブページ",
-                "url": "",
+                "url": "#",
                 "type": "download"
               },
               {
                 "label": "サブページ",
-                "url": "",
+                "url": "#",
                 "type": ""
               }
             ]
           },
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "external",
             "linksCol1": []
           },
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "download",
             "linksCol1": []
           },
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "",
             "linksCol1": []
           }
@@ -928,102 +952,106 @@
       {
         "id": "headerlink4",
         "title": "参加する",
+        "url": "#",
         "type": "",
         "submenus": [
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "",
             "linksCol1": [
               {
                 "label": "サブページ",
-                "url": "",
+                "url": "#",
                 "type": "external"
               },
               {
                 "label": "サブページ",
-                "url": "",
+                "url": "#",
                 "type": "download"
               },
               {
                 "label": "サブページ",
-                "url": "",
+                "url": "#",
                 "type": ""
               }
             ]
           },
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "external",
             "linksCol1": []
           },
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "download",
             "linksCol1": []
           },
           {
             "title": "サブページ",
-            "url":"",
+            "url": "#",
             "type": "",
             "linksCol1": []
           }
         ]
       },
       {
-        "title": "Test Link with wide text",
+        "title": "ワイドテキストのリンクをテストする",
+        "url": "#",
         "submenus": []
       },
       {
-        "title": "Test Link withWideWord",
+        "title": "テストリンク withWideWord",
+        "url": "#",
         "submenus": []
       },
       {
         "id": "headerlink5",
-        "title": "Test Link",
+        "title": "テストリンク",
+        "url": "#",
         "submenus": [
           {
             "title": "Page Title 1 with extended text that is on two lines",
-            "url": "",
+            "url": "#",
             "type": "",
             "linksCol1": [
               {
                 "label": "Sub Page with extended text that is on two lines",
-                "url": "",
+                "url": "#",
                 "type": "external"
               },
               {
                 "label": "Sub Page",
-                "url": "",
+                "url": "#",
                 "type": "download"
               },
               {
                 "label": "Sub Page with extended text that is on two lines",
-                "url": ""
+                "url": "#"
               },
               {
                 "label": "Sub Page",
-                "url": ""
+                "url": "#"
               }
             ]
           },
           {
             "title": "Page Title 2",
-            "url": "",
+            "url": "#",
             "type": "external",
             "linksCol1": []
           },
           {
             "title": "Page Title 3",
-            "url": "",
+            "url": "#",
             "type": "download",
             "linksCol1": []
           },
           {
             "title": "Page Title 2",
-            "url": "",
+            "url": "#",
             "type": "",
             "linksCol1": []
           }
