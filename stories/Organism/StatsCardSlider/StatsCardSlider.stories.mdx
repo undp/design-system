@@ -190,7 +190,7 @@ export const statsArray = (locale) => {
 
 # Stats card slider
 
-This is collection of [Stats card](/docs/components-ui-components-cards-stats-card--stats-card) with slider
+This is collection of [Stats cards](/docs/components-ui-components-cards-stats-card--stats-card) organized in slider
 
 <Canvas>
   <Story name="Stats card slider">
@@ -205,12 +205,23 @@ This is collection of [Stats card](/docs/components-ui-components-cards-stats-ca
 
 ### Usage
 
-- Copy the HTML from the canvas
-- Include the CSS and JS resource defined in the `Stats card`
-- Include the `dist/css/components/stats-card-slider.min.css` file
-- In you JS file initiliase following JS function
-  - swiper('.stats-slider');
-- Add following JS files too
-  - Swiper (https://swiperjs.com/)
-  - https://undp.github.io/design-system/js/swiper.min.js
+- Copy HTML from the HTML tab of canvas and also include the css and Js files listed below. Remove all inline styling (added by Swiper)
+- Include the CSS and JS resource defined in the [Stats card](/docs/components-ui-components-cards-stats-card--stats-card#css-and-js-references). Pay attention to any JS initiation required for them.
+- include the CSS and JS files listed below.
+- Initiliase swiper calling following function: `swiper('.stats-slider');`
 - Refer [this document](https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration & options
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from
+
+- https://undp.github.io/design-system/css/base-minimal.min.css (only once)
+- https://undp.github.io/design-system/css/components/swiper.min.css
+- https://undp.github.io/design-system/css/components/stats-card-slider.min.css
+
+#### JS:
+
+- https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js
+- https://undp.github.io/design-system/js/swiper.min.js
