@@ -187,47 +187,20 @@ export const menuData = (locale) => {
 
 # Country Header
 
-## With mega menu
+## With mega menu and menu overflow
 
 The Country Site Header is a header that contains the site name.
 
 ### Overview
 
-The Country Site Header component is a navigation bar that allows access to important functions across the website. It is present at the top of the page. This version of the header uses the dropdown/multilevel version of the menu.
+The Country Site Header component is a navigation bar that allows access to important functions across the website.
+It is present at the top of the page.
+This version of the header uses the mega menu version of the menu.
 
-#### When to use:
+### When to use:
 
 - To indicate the location of the current page and to navigate back to each of the previously visited pages.
-
-#### Formatting:
-
-##### Default
-
-It consists of a navigation bar with drop-down menus, CTA links, search bar, logo, and site name. The Logo is situated at the left-hand corner of the bar followed by the site title.
-
-### Content
-
-There are two types of Country Header: Without Progress Bar and With Progress Bar
-
-### Behaviors
-
-States
-There are three states: Default, Tablet, and Mobile.
-
-1. Default
-
-- Without Progress Bar:
-- With Progress Bar:
-
-2. Tablet
-
-- Without Progress Bar:
-- With Progress Bar:
-
-3. Mobile
-
-- Without Progress Bar:
-- With Progress Bar:
+- When a large descriptive mega menu is desired for further menu navigation.
 
 <Canvas>
   <Story
@@ -265,18 +238,178 @@ There are three states: Default, Tablet, and Mobile.
   </Story>
 </Canvas>
 
+---
+
+### Formatting:
+
+#### Default
+
+Default country header consists of a navigation bar with mega menus (optional), a Call to action link (optional), a search bar, logo, and the site name. The Logo is situated at the left-hand corner of the bar followed by the site title.
+
+#### Overflow
+
+In addition to the items above, The header can be set up to allow for more parent menu items. Currently the max is 4 items, but with "Overflow" an unlimited amount of top level parent menu items can be added. The menu items that overflow the header container are moved into an "overflow section" and can be observed by clicking a 3 dot (...) button that appears at the end of the header menu.
+
+---
+
+### Setting up your HTML:
+
+#### New Header Structure (**Recommended**)
+
+The new pattern for the html structure has three main divs (`.top-left`, `.top-center` and `.top-right`),
+an optional `.menu__overflow__container` div for overflow menu items, addition and a `.mobile-nav div` to contain all the mobile elements.
+This setup is recommended for a more flexible structure and it can implement the overflow functionality if desired.
+
+```
+<header class="country-header">
+  <section class="header">
+    <div class="grid-container fluid">
+      <div class="grid-x grid-margin-x align-content-middle">
+
+        <div class="cell small-8 large-2 shrink align-self-middle top-left">
+          ... Logo and sitename ...
+        </div>
+
+        <div class="cell small-1 large-auto align-content-middle top-center">
+          .. Main menu ...
+        </div>
+
+        <div class="cell small-3 large-auto top-right">
+         ... Language selector, globe link, and search link icon and call to action link ...
+        </div>
+
+        <div class="grid-container full menu__overflow__container">
+          <ul class="overflow">
+            ... Add this menu__overflow__container section and empty ul.overflow div
+            ... if you want the menu overflow functionality.
+          </ul>
+        </div>
+
+        <div class="mobile-nav">
+         ... Mobile navigation, menu, and links go in here ...
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+</header>
+```
+
+**Note:** When updating to the new recommended structure, make sure to adjust the foundation classes in the main divs. Example: old top-left had
+`cell large-9 small-8 align-self-middle top-left` classes and new top-left has `cell small-8 **large-2** **shrink** align-self-middle top-left`
+
+#### Old Header Structure (Deprecated)
+
+The old, existing pattern for the html structure had two main divs (`.top-left` and `.top-right`) and a `.mobile-nav` div to contain all the mobile elements. This setup is deprecated for the more flexible structure above and can't implement the overflow functionality
+**This setup is deprecated and should be updated to the recommended structure as soon as possible.**
+
+```
+<header class="country-header">
+  <section class="header">
+    <div class="grid-container fluid">
+      <div class="grid-x grid-margin-x align-content-middle">
+
+        <div class="cell large-9 small-8 align-self-middle top-left">
+          ...Logo and sitename...
+          .. Main menu
+        </div>
+
+        <div class="cell large-3 small-3 top-right">
+         ...Language selector, globe link, and search link icon and call to action link...
+        </div>
+
+        <div class="mobile-nav">
+         ...Mobile navigation, menu, and links go in here...
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+</header>
+```
+
+---
+
+### Content
+
+There are several types of Country Header:
+
+- Without Progress Bar and With Progress Bar
+- Without overflow menu funcionality and with overflow menu functionality
+
+---
+
+### Behaviors
+
+### Setting up overflow
+
+The overflow functionality works by calculating the space available for the main menu, adding up the width of all the menu items,
+and if that width is greater than available space, it moves its into the `menu__overflow__container` until everything fits.
+
+The most important parts are making sure the main menu ul has an `overflow` class applied, and that the `menu__overflow__container`
+div exists in the right place. Then just make sure the right css files and the `navigation.min.js` file is loaded.
+
+```
+<div class="cell small-1 large-auto align-content-middle top-center">
+  <ul class="overflow">
+    ... Menu items go here. It is important to add the overflow class to the parent ul, otherwise overflow wont trigger.
+  </ul>
+</div>
+
+...top-right container here...
+
+<div class="grid-container full menu__overflow__container">
+  <ul class="overflow">
+    ... Add this menu__overflow__container section after the top-right div and before the mobile-nav div.
+  </ul>
+</div>
+
+... mobile nav container here ...
+```
+
+---
+
+### States
+
+There are three states: Default, Tablet, and Mobile.
+
+1. Default
+
+- Without Progress Bar
+- With Progress Bar
+- Without overflow menu functionality
+- With overflow menu functionality
+
+2. Tablet
+
+- Without Progress Bar
+- With Progress Bar
+- Without overflow menu functionality
+- With overflow menu functionality
+
+3. Mobile
+
+- Without Progress Bar
+- With Progress Bar
+
+---
+
 ### Usage:
 
-### Default mega menu Usage:
+#### Default mega menu Usage:
 
 1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
 2. Initialize the navigationInitialize(), langSwitch() function in your js file’s document ready
 
-### Overflow Usage:
+#### Overflow Usage:
 
-21. In addition to the steps above, Initialize the navigationOverFlow() function in your js file’s document ready.
+1. In addition to the steps above, Initialize the navigationOverFlow() function in your js file’s document ready.
 
-### CSS and JS References
+---
+
+### CSS and JS References:
 
 #### CSS:
 
@@ -289,17 +422,24 @@ Add the base layout style from
 - https://undp.github.io/design-system/css/components/mega-menu.min.css
 - https://undp.github.io/design-system//css/components/mobile-nav.min.css
 
-### JS:
+If adding the menu overflow functionality, add the style from
+
+- https://undp.github.io/design-system/css/components/menu-overflow.min.css
+
+#### JS:
 
 - https://undp.github.io/design-system/js/navigation.min.js
 - https://undp.github.io/design-system/js/undp.min.js
 - https://undp.github.io/design-system//js/lang-switcher.min.js
 
+Menu overflow functionality is included in the navigation.min.js file. It only triggers if the overflow classes are in place. Please see "Implementing menu overflow" for instructions on setting up overflow menu functionality for the main header menu.
+
 ### Interactions
 
 - By clicking on the CTA Link, the page is directed to the subsequent link page.
 - By clicking on the search icon, the search tab opens.
+- If overflow is enabled, clicking on the 3 dot button will open overflow container.
 
 ### Changelog
 
-1.0 — Released component
+1.3 — Released component

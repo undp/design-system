@@ -5,6 +5,12 @@
 @import '../../../../assets/scss/typography';
 
 // Toggle overflow button.
+.menu__overflow__item {
+  line-height: 0;
+  width: 2rem;
+  order: 100;
+}
+
 .menu__overflow__item .menu__overflow__toggle {
   display: block;
 }
@@ -277,6 +283,107 @@
         &.has-submenu>a.active:after,
         &.has-submenu>a:after {
           background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
+        }
+      }
+    }
+  }
+}
+
+// Animate the icons in the dropdown menu on link hover.
+.menu__overflow__container {
+  li>a.external {
+    .external-link-animated {
+      &::after {
+        @include transform(rotate(0deg) translate(0, 0));
+      }
+
+      &::before {
+        @include transform(rotate(-45deg) translate(0, 0));
+      }
+    }
+  }
+
+  li:hover>a.external {
+    .external-link-animated {
+      box-shadow: -2px 2px 0 0 $color-white, -4px 0 0 -2px $color-white, -3px 3px 0 -1px $color-white;
+
+      &::after {
+        @include transform(rotate(0deg) translate(5px, -5px));
+        border-inline-end-color: $color-white;
+        border-block-start-color: $color-white;
+      }
+
+      &::before {
+        @include transform(rotate(-45deg) translate(7px, 0));
+        background: $color-white;
+      }
+    }
+  }
+
+  li:hover>a.download {
+    .download-animated {
+
+      i {
+        border-color: $color-white;
+      }
+
+      &::after {
+        @include transform(rotate(-45deg) translate(7px, -7px));
+        border-block-end-color: $color-white;
+        border-inline-start-color: $color-white;
+      }
+
+      &::before {
+        @include transform(translate(0, -10px));
+        background: $color-white;
+      }
+    }
+  }
+}
+
+// RIGHT TO LEFT - Animate the icons in the dropdown menu on link hover.
+[dir='rtl'] {
+  .menu__overflow__container {
+    li>a.external {
+      .external-link-animated {
+        @include transform(rotate(270deg));
+
+        &::before {
+          @include transform(rotate(-45deg) translate(1px, 1px));
+        }
+
+        &::after {
+          @include transform(rotate(90deg) translate(-1px, -4px));
+        }
+      }
+    }
+
+    li:hover>a.external {
+      .external-link-animated {
+        @include transform(rotate(270deg));
+
+        &::before {
+          @include transform(rotate(-45deg) translate(7px, 0));
+        }
+
+        &::after {
+          @include transform(rotate(90deg) translate(-6px, -8px));
+        }
+      }
+    }
+
+    li>a.download {
+      .download-animated {
+        &::after {
+          @include transform(rotate(45deg) translate(0, 0));
+        }
+      }
+    }
+
+    li:hover>a.download {
+      .download-animated {
+        &::after {
+          @include transform(rotate(45deg) translate(-7px, -7px));
         }
       }
     }

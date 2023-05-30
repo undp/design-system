@@ -18,12 +18,6 @@
     display: block;
     text-align: center;
 
-    &.menu__overflow__item {
-      line-height: 0;
-      width: 2rem;
-      order: 100;
-    }
-
     // 2nd level
     ul.submenu {
       @extend %frosted-bg;
@@ -235,8 +229,7 @@
 }
 
 // Animate the icons in the dropdown menu on link hover.
-.menu,
-.menu__overflow__container {
+.menu {
   li>a.external {
     .external-link-animated {
       &::after {
@@ -290,8 +283,7 @@
 // RIGHT TO LEFT - Animate the icons in the dropdown menu on link hover.
 [dir='rtl'] {
 
-  .menu,
-  .menu__overflow__container {
+  .menu {
     li>a.external {
       .external-link-animated {
         @include transform(rotate(270deg));
