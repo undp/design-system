@@ -263,10 +263,10 @@ export const navigationMultiLevelEdgeDetection = () => {
  * Navigation overflow functionality.
  */
 export const navigationOverFlow = () => {
-  if (jQuery('.menu ul.overflow').length !== 0) {
+  if (jQuery('.menu > ul.overflow').length !== 0) {
     /**
-   * Generate the button and add to navigation if it doesn't exist.
-   */
+     * Generate the button and add to navigation if it doesn't exist.
+     */
     let $button = jQuery(document.createElement('button')).prop({
       innerHTML: '<span class="hidden">Menu toggle</span>',
       class: 'menu__overflow__toggle',
@@ -275,6 +275,7 @@ export const navigationOverFlow = () => {
       'aria-label': 'Menu overflow toggle',
     });
 
+    // Add the button to an overflow item in the main nav.
     if (jQuery('.menu__overflow__item').length === 0) {
       let $item = jQuery(document.createElement('li')).prop({
         class: 'menu__overflow__item hidden',
@@ -283,8 +284,8 @@ export const navigationOverFlow = () => {
     }
 
     /**
-   * Toggle overflow section via button.
-   */
+     * Toggle overflow section via button.
+     */
     $button.on('click', (e) => {
       if (jQuery('.menu__overflow__container').hasClass('hidden')) {
         $button.addClass('toggled');
@@ -296,29 +297,29 @@ export const navigationOverFlow = () => {
     });
 
     /**
-   * Add the menu items width as a data attribute.
-   */
+     * Add the menu items width as a data attribute.
+     */
     jQuery('.menu > ul.overflow > li').each(function () {
       jQuery(this).attr('data-item-width', jQuery(this).width());
     });
 
     /**
-   * Clear out the overflow before deciding what goes in there.
-   */
+     * Clear out the overflow before deciding what goes in there.
+     */
     // jQuery('.menu__overflow__container > ul.overflow').empty();
 
     /**
-   * Trigger the overflow navigation setup.
-   * @param {*} header_container_width
-   */
+     * Trigger the overflow navigation setup.
+     * @param {*} header_container_width
+     */
     function TriggerOverFlowFunctionality(header_container_width) {
       if (typeof (header_container_width) === 'number') {
-      // Get the width of the holding menu container.
+        // Get the width of the holding menu container.
         let menu_container_width = jQuery('.menu').width();
 
         /**
-       * Move extra menu items to the overflow container.
-       */
+         * Move extra menu items to the overflow container.
+         */
         let current_combined_width = 0;
         let $items_to_move_to_overflow = [];
         jQuery('.menu > ul.overflow > li').each(function (index, value) {
@@ -327,16 +328,15 @@ export const navigationOverFlow = () => {
             $items_to_move_to_overflow.push($(this));
           }
         });
-
         jQuery('.menu__overflow__container > ul.overflow').prepend($items_to_move_to_overflow);
 
         /**
-       * Move an overflow item back to the main menu if there is room.
-       * Calculate the open pixel value by comparing the main menu container
-       * with the combined total of all active main menu items. When the open
-       * space is greater than the width of the first item in the overflow,
-       * move that item back into the active main nav.
-       */
+         * Move an overflow item back to the main menu if there is room.
+         * Calculate the open pixel value by comparing the main menu container
+         * with the combined total of all active main menu items. When the open
+         * space is greater than the width of the first item in the overflow,
+         * move that item back into the active main nav.
+         */
         if (jQuery('.menu__overflow__container > ul.overflow > li').length) {
           let total_width_of_active_main_nav_items = 0;
           jQuery('.menu > ul.overflow > li').each(function (index) {
@@ -349,8 +349,8 @@ export const navigationOverFlow = () => {
         }
 
         /**
-       * Display the overflow button if there are more items then can fit.
-       */
+         * Display the overflow button if there are more items then can fit.
+         */
         jQuery('.menu__overflow__item').addClass('hidden');
         if (jQuery('.menu__overflow__container > ul.overflow > li').length > 0) {
           jQuery('.menu__overflow__item').removeClass('hidden');
@@ -366,9 +366,10 @@ export const navigationOverFlow = () => {
     // be moved to overflow section.
     const resize_observer = new ResizeObserver((items) => {
       for (const item of items) {
-      // Set the width of the menu, to the width of the parent.
+        // Set the width of the menu, to the width of the parent.
         jQuery('.menu').width(jQuery('.top-center').width() - 40);
 
+        // Trigger the overflow rebuild.
         TriggerOverFlowFunctionality(Math.floor(item.contentRect?.width));
       }
     });

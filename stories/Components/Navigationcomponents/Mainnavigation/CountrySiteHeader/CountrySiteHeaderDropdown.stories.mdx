@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
-import CountrySiteHeader from "./CountrySiteHeader";
+import CountrySiteHeaderDropdown from "./CountrySiteHeaderDropdown";
 import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.mdx";
 
 export const getNavLinks = (locale) => {
@@ -164,7 +164,7 @@ export const menuData = (locale) => {
 };
 
 <Meta
-  title="Components/Navigation components/Main navigation/Country header"
+  title="Components/Navigation components/Main navigation/Country header - Dropdown menu"
   argTypes={{
     cta_enabled: {
       name: "Enable CTA",
@@ -187,21 +187,21 @@ export const menuData = (locale) => {
 
 # Country Header
 
-## With mega menu
+## With dropdown menu
 
 The Country Site Header is a header that contains the site name.
 
 ### Overview
 
-The Country Site Header component is a navigation bar that allows access to important functions across the website. It is present at the top of the page. This version of the header uses the dropdown/multilevel version of the menu.
+The Country Site Header component is a navigation bar that allows access to important functions across the website. It is present at the top of the page.
 
-#### When to use:
+When to use:
 
 - To indicate the location of the current page and to navigate back to each of the previously visited pages.
 
-#### Formatting:
+Formatting
 
-##### Default
+#### Default
 
 It consists of a navigation bar with drop-down menus, CTA links, search bar, logo, and site name. The Logo is situated at the left-hand corner of the bar followed by the site title.
 
@@ -231,7 +231,7 @@ There are three states: Default, Tablet, and Mobile.
 
 <Canvas>
   <Story
-    name="Country header"
+    name="Country header - Dropdown menu"
     parameters={{
       layout: "fullscreen",
       docs: {
@@ -248,7 +248,7 @@ There are three states: Default, Tablet, and Mobile.
       const backcaption = getBackForLocale(locale);
       const siteTitleData = getSiteTitle(locale);
       return (
-        <CountrySiteHeader
+        <CountrySiteHeaderDropdown
           siteTitleData={siteTitleData}
           backcaption={backcaption}
           locale={locale}
@@ -259,7 +259,7 @@ There are three states: Default, Tablet, and Mobile.
           locationData={getLocationDataForLocale(locale)}
           langSelect={getSelectlanguage(locale)}
           {...args}
-        ></CountrySiteHeader>
+        ></CountrySiteHeaderDropdown>
       );
     }}
   </Story>
@@ -271,6 +271,11 @@ There are three states: Default, Tablet, and Mobile.
 
 1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
 2. Initialize the navigationInitialize(), langSwitch() function in your js file’s document ready
+
+### Dropdown menu Usage:
+
+1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
+2. Initialize the navigationInitialize(), navigationMultiLevelEdgeDetection(), and langSwitch() function in your js file’s document ready
 
 ### Overflow Usage:
 
