@@ -104,7 +104,10 @@ It is present under the main navigation bar.
 There is only a Default state.
 
 <Canvas>
-  <Story name="Breadcrumbs" parameters={{ backgrounds: { default: "gray" } }}>
+  <Story
+    name="Breadcrumbs"
+    parameters={{ backgrounds: { default: "Light gray" } }}
+  >
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return (

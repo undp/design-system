@@ -54,7 +54,7 @@
       }
 
       @include devicebreak(xlarge) {
-        margin-top: $spacing-136;
+        margin-top: calc($spacing-136 - 1.25rem);
       }
 
       .breadcrumb {
