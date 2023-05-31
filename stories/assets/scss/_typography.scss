@@ -179,6 +179,7 @@ hr {
     background-position: 100% 100%, -30px 100%;
     background-size: 100% 2px, 0 2px;
   }
+
   to {
     background-position: calc(100% + 30px) 100%, 0 100%;
     background-size: 0 2px, 100% 2px;
@@ -191,10 +192,60 @@ a {
   @extend %animate-link !optional;
 }
 
+// Documentation styles
+.sbdocs {
+  font-family: $Font-Family-ProximaNova;
+
+  h1,
+  &-h1 {
+    font-family: $Font-Family-SohneBreit;
+    font-weight: 900;
+  }
+
+  &-li {
+    font-size: 1rem;
+  }
+}
+
+.sbdocs-content {
+
+  p {
+    font-size: 1rem;
+  }
+
+  code {
+    font-size: 1rem;
+    padding-inline: 1rem;
+    padding-block: 0.25rem;
+    color: #555;
+  }
+
+  a {
+    text-decoration: none;
+    background: none;
+  }
+
+  ul,
+  ol {
+    li {
+      font-size: 1rem;
+    }
+  }
+
+  table {
+
+    th,
+    td {
+      font-size: 1rem;
+    }
+  }
+}
 
 // burmese lang
 :lang(my) {
-  body, button {
+
+  body,
+  button {
     font-family: $Font-Family-NotoSans;
     line-height: 1.7;
   }
@@ -270,6 +321,7 @@ a {
   }
 
   .sbdocs {
+
     .sbdocs-content,
     h1,
     h2,
@@ -288,6 +340,7 @@ a {
 }
 
 [dir='rtl'] {
+
   ul,
   ol {
     padding-left: 0;
@@ -317,8 +370,11 @@ a {
 
 /* Bengali */
 :lang(bn) {
-  body, h1 {
+
+  body,
+  h1 {
     font-family: $Font-Family-UNBangla;
   }
 }
+
 /* typography end */

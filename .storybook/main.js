@@ -12,8 +12,8 @@ module.exports = {
     "@storybook/addon-essentials",
     "@whitespace/storybook-addon-html",
     "storybook-addon-rtl",
-    "@storybook/addon-a11y",
-    "@storybook/addon-mdx-gfm"
+    "@storybook/addon-a11y"
+    // "@storybook/addon-mdx-gfm"
   ],
   features: {
     storyStoreV7: true,
