@@ -17,6 +17,8 @@ module.exports = {
   ],
   features: {
     storyStoreV7: true,
+    buildStoriesJson: true,
+    legacyMdx1: true,
     babelModeV7: true
   },
   webpackFinal: async config => {
