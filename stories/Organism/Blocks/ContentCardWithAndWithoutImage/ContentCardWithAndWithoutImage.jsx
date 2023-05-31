@@ -54,12 +54,12 @@ export function ContentCardWithAndWithoutImage({
                 <a href={item.link}>
                   <Heading type="6" label={item.contenttile} />
                   <div className="content-caption">
-                    {item.Emphasize === 'true'
+                    {args.Emphasize
                       ? (
                         <Heading type="4" label={item.contentnametwo} />
                       )
                       : (null)}
-                    {item.Emphasize === 'false'
+                    {!args.Emphasize
                       ? (
                         <>
                           <Heading type="5" label={item.contentname} />
