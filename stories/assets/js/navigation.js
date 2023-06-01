@@ -286,12 +286,12 @@ export const navigationOverFlow = () => {
     /**
      * Toggle overflow section via button.
      */
-    $button.on('click', (e) => {
+    jQuery('.menu__overflow__toggle').on('click', (e) => {
       if (jQuery('.menu__overflow__container').hasClass('hidden')) {
-        $button.addClass('toggled');
+        jQuery('.menu__overflow__toggle').addClass('toggled');
         jQuery('.menu__overflow__container').removeClass('hidden');
       } else {
-        $button.removeClass('toggled');
+        jQuery('.menu__overflow__toggle').removeClass('toggled');
         jQuery('.menu__overflow__container').addClass('hidden');
       }
     });
