@@ -341,24 +341,26 @@ It is not recommended beyond 3-4 levels of menus, including the main parent laye
 ```
 <div class="... top-center"> // Main parent div in header to set the menu
 
-  <ul> // add class="overflow"
-    <li>
-      <a href="">Link title here</a> // Links without children links need no special classes or settings.
-    </li>
-    <li class="has-submenu">
-      <a href="">Link with children</a>
-      <ul class="submenu">
-        <li class="has-submenu">
-          <a href="">Link with children</a>
-          <ul class="submenu">
-            <li>
-              <a>Link with children</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
+  <nav class="menu"> // Important to have the .menu class
+    <ul> // add class="overflow"
+      <li>
+        <a href="">Link title here</a> // Links without children links need no special classes or settings.
+      </li>
+      <li class="has-submenu">
+        <a href="">Link with children</a>
+        <ul class="submenu">
+          <li class="has-submenu">
+            <a href="">Child link with children</a>
+            <ul class="submenu">
+              <li>
+                <a>Deep child link</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
 </div>
 ```
@@ -434,16 +436,23 @@ There are three states: Default, Tablet, and Mobile.
 ### Default Dropdown Usage:
 
 1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
-2. Initialize the navigationInitialize(), langSwitch() function in your js file’s document ready
+2. Initialize the `navigationInitialize()`, `langSwitch()` function in your js file’s document ready
 
 ### Dropdown menu Usage:
 
 1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
-2. Initialize the navigationInitialize(), navigationMultiLevelEdgeDetection(), and langSwitch() function in your js file’s document ready
+2. Initialize the `navigationInitialize()`, `navigationMultiLevelEdgeDetection()`, and `langSwitch()` function in your js file’s document ready. For example:
+
+```
+$(document).ready(function(){
+  navigationInitialize();
+  navigationMultiLevelEdgeDetection();
+});
+```
 
 ### Overflow Usage:
 
-1. In addition to the steps above, Initialize the navigationOverFlow() function in your js file’s document ready.
+1. In addition to the steps above, Initialize the `navigationOverFlow()` function in your js file’s document ready.
 
 ---
 
