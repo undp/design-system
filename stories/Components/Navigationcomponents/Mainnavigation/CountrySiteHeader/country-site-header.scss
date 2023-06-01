@@ -171,6 +171,7 @@
         flex-direction: row;
         margin: 0 auto;
         position: relative;
+        padding-inline: 0;
 
         @include devicebreak(xlarge) {
           column-gap: 0; //$spacing-07;
@@ -183,6 +184,7 @@
           justify-content: center;
           display: flex;
           word-break: keep-all;
+          padding-inline: 0;
 
           @include devicebreak(xlarge) {
             margin: 0;

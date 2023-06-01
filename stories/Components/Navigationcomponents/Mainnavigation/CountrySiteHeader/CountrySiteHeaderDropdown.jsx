@@ -12,6 +12,7 @@ import { Languageswitcher } from '../../../UIcomponents/LanguageSwitcher/Languag
 import MenuMultiLevel from '../MenuMultiLevel/MenuMultiLevel';
 import MobileNav from '../MobileNav/MobileNav';
 import './country-site-header.scss';
+import '../MobileNav/mobile-nav.scss';
 import '../../../../assets/scss/_grid.scss';
 import '../../../../assets/js/lazyload';
 import '../../../../Utilities/FrostedImage/frosted-background.scss';
