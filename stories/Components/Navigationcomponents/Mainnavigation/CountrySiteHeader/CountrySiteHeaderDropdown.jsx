@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { getMegaMenu } from '../../../../assets/js/navigation-data';
 import {
@@ -8,7 +8,6 @@ import {
 } from '../../../../assets/js/navigation';
 import { Logo } from '../../../../Atom/Logo/Logo';
 import { CtaButton } from '../../../UIcomponents/Buttons/CtaButton/CtaButton';
-import { Menu } from '../../Menu/Menu';
 import { Languageswitcher } from '../../../UIcomponents/LanguageSwitcher/LanguageSwitcher';
 import MenuMultiLevel from '../MenuMultiLevel/MenuMultiLevel';
 import MobileNav from '../MobileNav/MobileNav';

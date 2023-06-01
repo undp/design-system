@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { getMegaMenu } from '../../../../assets/js/navigation-data';
 import {

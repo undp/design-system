@@ -343,6 +343,16 @@
       }
     }
 
+    .menu {
+      >ul {
+        padding-inline: 0;
+
+        >li {
+          padding-inline: 0;
+        }
+      }
+    }
+
     // &.run-animation {
     //   .header .top-left .logo {
     //     left: calc(100% - #{$spacing-12});
