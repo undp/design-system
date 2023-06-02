@@ -19,7 +19,7 @@
 
 .sdg {
   &-card-list {
-    + .footer {
+    +.footer {
       margin-top: 0;
     }
 
@@ -49,10 +49,10 @@
   }
 
   &-banner {
-    margin-top: 7.1875rem;
+    //margin-top: 7.1875rem;
 
     @include devicebreak(mediumonlytab) {
-      margin-top: 4.6875rem;
+      //margin-top: 4.6875rem;
     }
 
     @include devicebreak(small) {
@@ -67,7 +67,7 @@
 
 [dir='rtl'] {
   .what-goal {
-    > div {
+    >div {
       margin-left: 0;
       margin-right: 8.33333%;
     }

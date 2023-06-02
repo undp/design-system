@@ -13,7 +13,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@whitespace/storybook-addon-html",
     "storybook-addon-rtl",
-    "@storybook/addon-a11y"
+    "@storybook/addon-a11y",
   ],
   features: {
     storyStoreV7: true,

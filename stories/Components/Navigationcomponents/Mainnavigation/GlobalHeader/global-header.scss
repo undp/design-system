@@ -3,8 +3,16 @@
 @import '../../../../assets/scss/breakpoints';
 
 .global-header {
+  height: 7.1875rem;
+
+  @include devicebreak(mediumonlytab) {
+    height: 4.6875rem;
+  }
+
   .header {
     @extend %header;
+    height: 7.1875rem;
+    position: fixed;
 
     height: 7.1875rem;
 
@@ -111,8 +119,6 @@
           a {
             display: flex;
             align-items: center;
-            //margin-top: -15px;
-
             @include devicebreak(xlarge) {
               margin-top: 0;
             }
@@ -239,6 +245,10 @@
     .top-right {
       opacity: 1;
     }
+  }
+
+  .mega-nav-option {
+    top: 7.125rem;
   }
 }
 

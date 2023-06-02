@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
-import CountrySiteHeader from "./CountrySiteHeader";
+import CountrySiteHeaderDropdown from "./CountrySiteHeaderDropdown";
 import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.mdx";
 
 export const getNavLinks = (locale) => {
@@ -164,7 +164,7 @@ export const menuData = (locale) => {
 };
 
 <Meta
-  title="Components/Navigation components/Main navigation/Country header"
+  title="Components/Navigation components/Main navigation/Country header - Dropdown menu"
   argTypes={{
     cta_enabled: {
       name: "Enable CTA",
@@ -187,7 +187,7 @@ export const menuData = (locale) => {
 
 # Country Header
 
-## With mega menu and menu overflow
+## With dropdown menu and menu overflow
 
 The Country Site Header is a header that contains the site name.
 
@@ -195,16 +195,16 @@ The Country Site Header is a header that contains the site name.
 
 The Country Site Header component is a navigation bar that allows access to important functions across the website.
 It is present at the top of the page.
-This version of the header uses the mega menu version of the menu.
+This version of the header uses the dropdown/multilevel version of the menu.
 
 ### When to use:
 
 - To indicate the location of the current page and to navigate back to each of the previously visited pages.
-- When a large descriptive mega menu is desired for further menu navigation.
+- When a dropdown listing of child menu items is desired for further menu navigation.
 
 <Canvas>
   <Story
-    name="Country header"
+    name="Country header - Dropdown menu"
     parameters={{
       layout: "fullscreen",
       docs: {
@@ -221,7 +221,7 @@ This version of the header uses the mega menu version of the menu.
       const backcaption = getBackForLocale(locale);
       const siteTitleData = getSiteTitle(locale);
       return (
-        <CountrySiteHeader
+        <CountrySiteHeaderDropdown
           siteTitleData={siteTitleData}
           backcaption={backcaption}
           locale={locale}
@@ -232,7 +232,7 @@ This version of the header uses the mega menu version of the menu.
           locationData={getLocationDataForLocale(locale)}
           langSelect={getSelectlanguage(locale)}
           {...args}
-        ></CountrySiteHeader>
+        ></CountrySiteHeaderDropdown>
       );
     }}
   </Story>
@@ -240,11 +240,11 @@ This version of the header uses the mega menu version of the menu.
 
 ---
 
-### Formatting:
+### Formatting
 
 #### Default
 
-Default country header consists of a navigation bar with mega menus (optional), a Call to action link (optional), a search bar, logo, and the site name. The Logo is situated at the left-hand corner of the bar followed by the site title.
+Default country header consists of a navigation bar with dropdown menus (optional), a Call to action link (optional), a search bar, logo, and the site name. The Logo is situated at the left-hand corner of the bar followed by the site title.
 
 #### Overflow
 
@@ -302,6 +302,7 @@ This setup is recommended for a more flexible structure and it can implement the
 #### Old Header Structure (Deprecated)
 
 The old, existing pattern for the html structure had two main divs (`.top-left` and `.top-right`) and a `.mobile-nav` div to contain all the mobile elements. This setup is deprecated for the more flexible structure above and can't implement the overflow functionality
+
 **This setup is deprecated and should be updated to the recommended structure as soon as possible.**
 
 ```
@@ -328,6 +329,40 @@ The old, existing pattern for the html structure had two main divs (`.top-left` 
 
   </section>
 </header>
+```
+
+#### Dropdown menu structure
+
+To build a dropdown style of menus, apply a class of `has-submenu` to the parent li item. Then and a class of `submenu` to the ul list of children links.
+Make sure to add the `overflow` class to the top level parent `ul` tag if the overflow functionality is desired.
+
+It is not recommended beyond 3-4 levels of menus, including the main parent layer visible in the header.
+
+```
+<div class="... top-center"> // Main parent div in header to set the menu
+
+  <nav class="menu"> // Important to have the .menu class
+    <ul> // add class="overflow"
+      <li>
+        <a href="">Link title here</a> // Links without children links need no special classes or settings.
+      </li>
+      <li class="has-submenu">
+        <a href="">Link with children</a>
+        <ul class="submenu">
+          <li class="has-submenu">
+            <a href="">Child link with children</a>
+            <ul class="submenu">
+              <li>
+                <a>Deep child link</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+</div>
 ```
 
 ---
@@ -398,24 +433,30 @@ There are three states: Default, Tablet, and Mobile.
 
 ### Usage:
 
-#### Default mega menu Usage:
+### Default Dropdown Usage:
 
 1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
-2. Initialize the `navigationInitialize()`, `langSwitch()` function in your js file’s document ready, For example:
+2. Initialize the `navigationInitialize()`, `langSwitch()` function in your js file’s document ready
+
+### Dropdown menu Usage:
+
+1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
+2. Initialize the `navigationInitialize()`, `navigationMultiLevelEdgeDetection()`, and `langSwitch()` function in your js file’s document ready. For example:
 
 ```
 $(document).ready(function(){
   navigationInitialize();
+  navigationMultiLevelEdgeDetection();
 });
 ```
 
-#### Overflow Usage:
+### Overflow Usage:
 
 1. In addition to the steps above, Initialize the `navigationOverFlow()` function in your js file’s document ready.
 
 ---
 
-### CSS and JS References:
+### CSS and JS References
 
 #### CSS:
 
@@ -425,7 +466,7 @@ Add the base layout style from
 - https://undp.github.io/design-system/css/components/country-site-header.min.css
 - https://undp.github.io/design-system/css/components/language-switcher.min.css
 - https://undp.github.io/design-system/css/components/menu.min.css
-- https://undp.github.io/design-system/css/components/mega-menu.min.css
+- https://undp.github.io/design-system/css/components/menu-multi-level.min.css
 - https://undp.github.io/design-system//css/components/mobile-nav.min.css
 
 If adding the menu overflow functionality, add the style from
@@ -438,12 +479,13 @@ If adding the menu overflow functionality, add the style from
 - https://undp.github.io/design-system/js/undp.min.js
 - https://undp.github.io/design-system//js/lang-switcher.min.js
 
-Menu overflow functionality is included in the navigation.min.js file. It only triggers if the overflow classes are in place. Please see "Implementing menu overflow" for instructions on setting up overflow menu functionality for the main header menu.
+---
 
 ### Interactions
 
 - By clicking on the CTA Link, the page is directed to the subsequent link page.
 - By clicking on the search icon, the search tab opens.
+- Hovering over the main menu items will display dropdown items, if they exist.
 - If overflow is enabled, clicking on the 3 dot button will open overflow container.
 
 ### Changelog

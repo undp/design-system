@@ -147,13 +147,13 @@
   display: inline-flex;
   font-size: 0;
   height: 26px;
-  margin-right: $spacing-03;
+  margin-inline-end: $spacing-03;
   padding: 0;
   width: 25px;
   min-width: 25px;
 
   @include devicebreak(small) {
-    margin-right: 0;
+    margin-inline-end: 0;
     -webkit-mask: inherit;
     mask: inherit;
   }
@@ -726,4 +726,5 @@
     background: $color-black;
   }
 }
+
 /* placehoder end */

@@ -68,7 +68,7 @@ export const globalTypes = {
     defaultValue: '',
     toolbar: {
       icon: 'paintbrush',
-      showName: true,
+      title: 'Accent color',
       items: [
         { value: '', title: 'Default accent', right: 'Default' },
         { value: 'yellow', title: 'Yellow' },

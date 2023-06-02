@@ -3,6 +3,12 @@
     "language": "english",
     "data": [
       {
+        "title": "Home",
+        "url": "#",
+        "type": "",
+        "submenus": []
+      },
+      {
         "id": "headerlink1",
         "title": "Who we are",
         "type": "",
@@ -731,12 +737,33 @@
             ]
           }
         ]
+      },
+      {
+        "title": "Test Link with wide text",
+        "url": "#",
+        "submenus": []
+      },
+      {
+        "title": "Test Link withWideWord",
+        "url": "#",
+        "submenus": []
+      },
+      {
+        "title": "Test Link",
+        "url": "#",
+        "submenus": [
+        ]
       }
     ]
   },
   {
     "language": "arabic",
     "data": [
+      {
+        "title": "الصفحة الرئيسية",
+        "url": "/",
+        "submenus": []
+      },
       {
         "id": "headerlink1",
         "title": "من نحن",
@@ -1466,13 +1493,32 @@
             ]
           }
         ]
+      },
+      {
+        "title": "اختبار الارتباط بنص عريض",
+        "url": "#",
+        "submenus": []
+      },
+      {
+        "title": "رابط الاختبار",
+        "url": "#",
+        "submenus": []
+      },
+      {
+        "title": "رابط الاختبار",
+        "url": "#",
+        "submenus": []
       }
     ]
-
   },
   {
     "language": "burmese",
     "data": [
+      {
+        "title": "ပင်မစာမျက်နှာ",
+        "url": "/",
+        "submenus": []
+      },
       {
         "id": "headerlink1",
         "title": "ငါတို့ဘယ်သူလဲ။",
@@ -2202,12 +2248,32 @@
             ]
           }
         ]
+      },
+      {
+        "title": "ကျယ်ပြန့်သောစာသားဖြင့်စမ်းသပ်လင့်ခ်",
+        "url": "#",
+        "submenus": []
+      },
+      {
+        "title": "စမ်းသပ်လင့်ခ် withWideWord",
+        "url": "#",
+        "submenus": []
+      },
+      {
+        "title": "စမ်းသပ်လင့်ခ်",
+        "url": "#",
+        "submenus": []
       }
     ]
   },
   {
     "language": "japanese",
     "data": [
+      {
+        "title": "ホームページ",
+        "url": "/",
+        "submenus": []
+      },
       {
         "id": "headerlink1",
         "title": "私たちは誰ですか",
@@ -2937,6 +3003,21 @@
             ]
           }
         ]
+      },
+      {
+        "title": "ワイドテキストのリンクをテストする",
+        "url": "#",
+        "submenus": []
+      },
+      {
+        "title": "テストリンク withWideWord",
+        "url": "#",
+        "submenus": []
+      },
+      {
+        "title": "テストリンク",
+        "url": "#",
+        "submenus": []
       }
     ]
   }
