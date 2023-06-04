@@ -192,55 +192,6 @@ a {
   @extend %animate-link !optional;
 }
 
-// Documentation styles
-.sbdocs {
-  font-family: $Font-Family-ProximaNova;
-
-  h1,
-  &-h1 {
-    font-family: $Font-Family-SohneBreit;
-    font-weight: 900;
-  }
-
-  &-li {
-    font-size: 1rem;
-  }
-}
-
-.sbdocs-content {
-
-  p {
-    font-size: 1rem;
-  }
-
-  code {
-    font-size: 1rem;
-    padding-inline: 1rem;
-    padding-block: 0.25rem;
-    color: #555;
-  }
-
-  a {
-    text-decoration: none;
-    background: none;
-  }
-
-  ul,
-  ol {
-    li {
-      font-size: 1rem;
-    }
-  }
-
-  table {
-
-    th,
-    td {
-      font-size: 1rem;
-    }
-  }
-}
-
 // burmese lang
 :lang(my) {
 

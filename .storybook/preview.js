@@ -4,6 +4,7 @@ import renderToHTML from './renderToHTML'
 
 // include base styling globally
 import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss';
+import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css';
 
 // initialise RTL
 initializeRTL();
