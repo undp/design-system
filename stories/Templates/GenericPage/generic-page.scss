@@ -99,7 +99,7 @@
   .pagehero-full {
 
     @include devicebreak(xlarge) {
-      margin-top: 7.1875rem;
+      margin-top: 0;
     }
 
     .content-box {
