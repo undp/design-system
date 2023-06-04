@@ -8,9 +8,8 @@ import {
 } from '../../../../assets/js/navigation';
 import { Logo } from '../../../../Atom/Logo/Logo';
 import { CtaButton } from '../../../UIcomponents/Buttons/CtaButton/CtaButton';
-import { Menu } from '../../Menu/Menu';
 import { Languageswitcher } from '../../../UIcomponents/LanguageSwitcher/LanguageSwitcher';
-import MegaMenu from '../MegaMenu/MegaMenu';
+import MenuMultiLevel from '../MenuMultiLevel/MenuMultiLevel';
 import MobileNav from '../MobileNav/MobileNav';
 import './country-site-header.scss';
 import '../MobileNav/mobile-nav.scss';
@@ -18,8 +17,8 @@ import '../../../UIcomponents/Buttons/CtaLink/cta-link.scss';
 import '../../../../assets/scss/_grid.scss';
 import '../../../../assets/js/lazyload';
 import '../../../../Utilities/FrostedImage/frosted-background.scss';
-import menuJsonDefaultData from '../../../../assets/js/navigation-data.json';
-import menuJsonDefaultExtendedData from '../../../../assets/js/navigation-extended-data.json';
+import menuJsonDropDownData from '../../../../assets/js/navigation-dropdown-data.json';
+import menuJsonDropDownExtendedData from '../../../../assets/js/navigation-dropdown-extended-data.json';
 
 function CountrySiteHeader({
   languageswitcherData,
@@ -36,15 +35,16 @@ function CountrySiteHeader({
     navigationInitialize(locale);
     navigationOverFlow();
     navigationMultiLevelEdgeDetection();
-  }, [locale, args.menu_type, args.menu_extended, args.cta_enabled]);
+  }, [locale, args.menu_extended, args.cta_enabled]);
 
   const menuExtended = !(args.menu_extended === 'Off' || typeof (args.menu_extended) == 'undefined');
-  const multiLevel = false;
+  const multiLevel = true;
   const locale_fixed = locale == 'en' ? 'english' : locale;
 
   let dataSource;
   let menuMobileData = navigationData;
-  dataSource = menuExtended ? menuJsonDefaultExtendedData : menuJsonDefaultData;
+  dataSource = menuExtended ? menuJsonDropDownExtendedData : menuJsonDropDownData;
+
   dataSource.forEach((source) => {
     if (source.language === locale_fixed && source.data.length > 0) {
       menuMobileData = source.data;
@@ -72,10 +72,10 @@ function CountrySiteHeader({
             </div>
             <div className="cell small-1 large-auto align-content-middle top-center">
               {!menuExtended && (
-                <Menu data={menuJsonDefaultData} locale={locale} multilevel={multiLevel} overflow={overflow} {...args} />
+                <MenuMultiLevel data={menuJsonDropDownData} locale={locale} multilevel={multiLevel} overflow={overflow} {...args} />
               )}
               {menuExtended && (
-                <Menu data={menuJsonDefaultExtendedData} locale={locale} multilevel={multiLevel} overflow={overflow} {...args} />
+                <MenuMultiLevel data={menuJsonDropDownExtendedData} locale={locale} multilevel={multiLevel} overflow={overflow} {...args} />
               )}
             </div>
             <div className="cell small-3 large-auto top-right">
@@ -118,9 +118,6 @@ function CountrySiteHeader({
         </div>
 
       </section>
-      <div className="mega-wrapper">
-        <MegaMenu locale={locale} />
-      </div>
     </header>
   );
 }

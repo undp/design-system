@@ -13,7 +13,6 @@ module.exports = {
     "@whitespace/storybook-addon-html",
     "storybook-addon-rtl",
     "@storybook/addon-a11y"
-    // "@storybook/addon-mdx-gfm"
   ],
   features: {
     storyStoreV7: true,

@@ -1,5 +1,8 @@
-@import '../../../assets/scss/breakpoints';
 @import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/base';
+@import '../../../assets/scss/typography';
 
 .menu ul {
   padding: 0;

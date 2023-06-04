@@ -41,14 +41,14 @@
   }
 
   .mt-h {
-    margin-top: 5.25rem;
+    margin-top: 5rem;
 
     @include devicebreak(medium) {
-      margin-top: 8.75rem;
+      //margin-top: 8.75rem;
     }
 
     @include devicebreak(xlarge) {
-      margin-top: 11.875rem;
+      margin-top: 5rem;
     }
   }
 

@@ -57,6 +57,8 @@
 
       &.button {
         color: $color-white;
+        display: flex;
+        margin-inline: 0;
       }
     }
   }
@@ -172,6 +174,10 @@
     &.show-content {
       display: block;
     }
+  }
+
+  .cta__link.cta--space.no-submenu:after {
+    display: none;
   }
 }
 

@@ -1,8 +1,12 @@
+/* eslint-disable no-inner-declarations */
+/* eslint-disable no-restricted-syntax */
 export const navigationInitialize = (locale) => {
-  const $menu = jQuery('.menu');
+  const $menu = jQuery('.menu >ul');
   const $menuItem = jQuery('.menu li a');
   const $megaMenu = jQuery('.show-mega');
   const $megaWrapper = jQuery('.mega-wrapper');
+  let $header = jQuery('.header');
+  let $main_nav_height = jQuery('.header nav.menu');
 
   // Track if a menu item is being hovered.
   let hovering_item = false;
@@ -13,10 +17,22 @@ export const navigationInitialize = (locale) => {
 
     // Find the panel that matches with the parent menu link item in the main nav.
     const navId = jQuery(this).parent().attr('data-menu-id');
-    const $menuItemId = jQuery(document).find(`[data-menu-item-id='${navId}']`);
+    let $menuItemId = jQuery(document).find(`[data-menu-item-id='${navId}']`);
+    let $triggering_menu_item = $(event.target);
 
-    // Show the mega menu panel.
+    // Show the mega menu panel. Position it at the bottom of the header or overflow.
+    let extra = 0;
+    if ($triggering_menu_item.parents('.menu__overflow__container').length) {
+      extra = $triggering_menu_item.height();
+    }
+    $menuItemId.css({ top: ($main_nav_height.height() + extra) });
     $menuItemId.addClass('show-mega').siblings().removeClass('show-mega').addClass('no-effect');
+
+    // If the overflow is open, z-index the mega menu above everything.
+    $menuItemId.removeClass('float-higher');
+    if (jQuery('.menu__overflow__container').length && !jQuery('.menu__overflow__container').hasClass('hidden')) {
+      $menuItemId.addClass('float-higher');
+    }
 
     // Set the first link in the sub menus to the active link.
     $megaMenu.find('.sub-menu-content:first-of-type').addClass('active-content').siblings().removeClass('active-content');
@@ -144,7 +160,7 @@ export const navigationInitialize = (locale) => {
   /**
    * Mobile navigation related functionality.
    */
-  jQuery(document).on('click', '.mobile-links .cta__link', function (e) {
+  jQuery(document).on('click', '.mobile-links .cta__link:not(.no-submenu)', function (e) {
     const navId = jQuery(this).attr('id');
     const navText = jQuery(this).text();
     e.preventDefault();
@@ -220,4 +236,150 @@ export const navigationInitialize = (locale) => {
       jQuery('.logo img').removeClass('scrolled');
     }
   });
+};
+
+/**
+ * Menu multi-level functionality.
+ */
+export const navigationMultiLevelEdgeDetection = () => {
+  // Determine if a multilevel menu item will go off the screen.
+  // Change the side it renders on, if it will go off screen, by
+  // adding the "edge" class. The formula to determine changes for
+  // the language direction.
+  jQuery('.menu ul li').on('mouseenter mouseleave', 'li', function (e) {
+    let $this = jQuery(this);
+    $this.removeClass('edge');
+    if (jQuery('ul.submenu', $this).length) {
+      let dir = getComputedStyle(document.body).direction;
+      let elm = $('ul:first', $this);
+      let offset = elm.offset();
+      let elm_w = elm.width();
+      let docW = $('.header').width();
+      let isEntirelyVisible = (dir === 'rtl') ? (offset.left >= elm_w) : (offset.left + elm.width() <= docW);
+      if (!isEntirelyVisible) {
+        $this.addClass('edge');
+      }
+    }
+  });
+};
+
+/**
+ * Navigation overflow functionality.
+ */
+export const navigationOverFlow = () => {
+  if (jQuery('.menu > ul.overflow').length !== 0) {
+    /**
+     * Generate the button and add to navigation if it doesn't exist.
+     */
+    let $button = jQuery(document.createElement('button')).prop({
+      innerHTML: '<span class="hidden">Menu toggle</span>',
+      class: 'menu__overflow__toggle',
+      'aria-hidden': 'false',
+      'aria-controls': 'navigation-overflow',
+      'aria-label': 'Menu overflow toggle',
+    });
+
+    // Add the button to an overflow item in the main nav.
+    if (jQuery('.menu__overflow__item').length === 0) {
+      let $item = jQuery(document.createElement('li')).prop({
+        class: 'menu__overflow__item hidden',
+      });
+      jQuery('.menu > ul.overflow').prepend($item.append($button));
+    }
+
+    /**
+     * Toggle overflow section via button.
+     */
+    jQuery('.menu__overflow__toggle').on('click', (e) => {
+      if (jQuery('.menu__overflow__container').hasClass('hidden')) {
+        jQuery('.menu__overflow__toggle').addClass('toggled');
+        jQuery('.menu__overflow__container').removeClass('hidden');
+      } else {
+        jQuery('.menu__overflow__toggle').removeClass('toggled');
+        jQuery('.menu__overflow__container').addClass('hidden');
+      }
+    });
+
+    /**
+     * Add the menu items width as a data attribute.
+     */
+    jQuery('.menu > ul.overflow > li').each(function () {
+      jQuery(this).attr('data-item-width', jQuery(this).width());
+    });
+
+    /**
+     * Clear out the overflow before deciding what goes in there.
+     */
+    // jQuery('.menu__overflow__container > ul.overflow').empty();
+
+    /**
+     * Trigger the overflow navigation setup.
+     * @param {*} header_container_width
+     */
+    function TriggerOverFlowFunctionality(header_container_width) {
+      if (typeof (header_container_width) === 'number') {
+        // Get the width of the holding menu container.
+        let menu_container_width = jQuery('.menu').width();
+
+        /**
+         * Move extra menu items to the overflow container.
+         */
+        let current_combined_width = 0;
+        let $items_to_move_to_overflow = [];
+        jQuery('.menu > ul.overflow > li').each(function (index, value) {
+          current_combined_width += parseInt(jQuery(this).width(), 10);
+          if (current_combined_width > menu_container_width) {
+            $items_to_move_to_overflow.push($(this));
+          }
+        });
+        jQuery('.menu__overflow__container > ul.overflow').prepend($items_to_move_to_overflow);
+
+        /**
+         * Move an overflow item back to the main menu if there is room.
+         * Calculate the open pixel value by comparing the main menu container
+         * with the combined total of all active main menu items. When the open
+         * space is greater than the width of the first item in the overflow,
+         * move that item back into the active main nav.
+         */
+        if (jQuery('.menu__overflow__container > ul.overflow > li').length) {
+          let total_width_of_active_main_nav_items = 0;
+          jQuery('.menu > ul.overflow > li').each(function (index) {
+            total_width_of_active_main_nav_items += parseInt($(this).width(), 10);
+          });
+          let open_pixel_value = menu_container_width - total_width_of_active_main_nav_items;
+          if (open_pixel_value >= jQuery('.menu__overflow__container > ul.overflow > li').first().attr('data-item-width')) {
+            jQuery('.menu__overflow__container > ul.overflow > li').first().appendTo('.menu > ul.overflow');
+          }
+        }
+
+        /**
+         * Display the overflow button if there are more items then can fit.
+         */
+        jQuery('.menu__overflow__item').addClass('hidden');
+        if (jQuery('.menu__overflow__container > ul.overflow > li').length > 0) {
+          jQuery('.menu__overflow__item').removeClass('hidden');
+        }
+
+        if (!jQuery('.menu__overflow__container > ul.overflow > li').length) {
+          jQuery('.menu__overflow__container').addClass('hidden');
+        }
+      }
+    }
+
+    // Trigger a recalculation on any resize to figure out if menu items should
+    // be moved to overflow section.
+    const resize_observer = new ResizeObserver((items) => {
+      for (const item of items) {
+        // Set the width of the menu, to the width of the parent.
+        jQuery('.menu').width(jQuery('.top-center').width() - 40);
+
+        // Trigger the overflow rebuild.
+        TriggerOverFlowFunctionality(Math.floor(item.contentRect?.width));
+      }
+    });
+
+    if (jQuery('.header').length !== 0) {
+      resize_observer.observe(jQuery('.header')[0], { box: 'border-box' });
+    }
+  }
 };

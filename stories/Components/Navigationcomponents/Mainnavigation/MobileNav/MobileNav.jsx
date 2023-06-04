@@ -29,11 +29,11 @@ function MobileNav({
             {navigationData.map((item, index) => (
               <li key={index}>
                 <a
-                  className="cta__link cta--space"
-                  href="#"
+                  className={!(item.id) || (item.url === '#') ? 'cta__link cta--space no-submenu' : 'cta__link cta--space'}
+                  href={!(item.url) || (item.url === '#') ? '#' : (item.url)}
                   id={item.id}
                 >
-                  {item.label}
+                  {item.title ?? item.label}
                 </a>
               </li>
             ))}
@@ -49,11 +49,12 @@ function MobileNav({
               {' '}
               {locationData.detail}
             </a>
-            {args.cta_enabled == 'On' && (
+            {args.cta_enabled === 'On' && (
               <CtaButton
                 label="Donate"
                 href="#"
                 Icon="No Arrow"
+                Type="Primary"
               />
             )}
           </div>
