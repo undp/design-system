@@ -11,7 +11,8 @@
     "scss": "sass --watch ./stories/assets/scss/style.scss ./stories/assets/css/style.css",
     "lint": "yarn run lint:css && yarn run lint:js",
     "lint:css": "stylelint ./stories/**/*.scss --fix",
-    "lint:js": "eslint --ignore-pattern '*.mdx' --ignore-pattern '**/Table.jsx' ./stories --fix"
+    "lint:js": "eslint --ignore-pattern '*.mdx' --ignore-pattern '**/Table.jsx' ./stories --fix",
+    "postinstall": "patch-package"
   },
   "keywords": [],
   "author": "",
