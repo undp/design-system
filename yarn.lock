@@ -1760,7 +1760,7 @@
     lodash "^4.17.21"
     react-resize-detector "^7.1.2"
 
-"@storybook/addon-actions@7.0.21", "@storybook/addon-actions@^7.0.18":
+"@storybook/addon-actions@7.0.21", "@storybook/addon-actions@^7.0.21":
   version "7.0.21"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.0.21.tgz#e1604d3dc7f11a37312482bb8cbdd338c0a5f834"
   integrity sha512-wYH1rDHY4KzLkNeXiMonrAZ4uIZFJVjo3E439mWylnJRqs6lKukCU3iHUx02J0KKeJH+GywRg87B/i42qQK62g==
