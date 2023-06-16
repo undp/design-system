@@ -175,6 +175,7 @@
 
     .grid-x.grid-margin-x {
       row-gap: $spacing-06;
+      margin-inline: -0.75rem;
     }
   }
 }
@@ -207,9 +208,20 @@
     color: #555;
   }
 
+  pre code {
+    display: block;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    line-height: 1.5rem;
+  }
+
   a {
     text-decoration: none;
     background: none;
+  }
+
+  h4 {
+    font-weight: 600;
   }
 
   ul,
