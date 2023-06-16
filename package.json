@@ -113,7 +113,7 @@
     "gsap": "^3.11.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "swiper": "^9.3.1"
+    "swiper": "^9.4.1"
   },
   "resolutions": {
     "@storybook/react/webpack": "^5",
