@@ -2463,7 +2463,7 @@
     "@storybook/react" "7.0.21"
     "@types/node" "^16.0.0"
 
-"@storybook/react@7.0.21", "@storybook/react@^7.0.18":
+"@storybook/react@7.0.21", "@storybook/react@^7.0.21":
   version "7.0.21"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-7.0.21.tgz#35a4fdb31e5fdf916da31e41e6a5ccb88c45512e"
   integrity sha512-yXh/KoMPaaC0pntHxfahsz0lLAW9yN7EIP7puvbBQv0WL4y7Ohi0ggPrWTLxPrGwddaNMJLM1PQlqnh7TXDGyQ==
@@ -2664,15 +2664,15 @@
   dependencies:
     "@types/estree" "*"
 
-"@types/estree@*", "@types/estree@^0.0.51":
-  version "0.0.51"
-  resolved "https://registry.npmjs.org/@types/estree/-/estree-0.0.51.tgz"
-  integrity sha512-CuPgU6f3eT/XgKKPqKd/gLZV1Xmvf1a2R5POBOGQa6uv82xpls89HU5zKeVoyR8XzHd1RGNOlQlvUe3CFkjWNQ==
-
-"@types/estree@^1.0.0":
+"@types/estree@*", "@types/estree@^1.0.0":
   version "1.0.1"
   resolved "https://registry.npmjs.org/@types/estree/-/estree-1.0.1.tgz"
   integrity sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==
+
+"@types/estree@^0.0.51":
+  version "0.0.51"
+  resolved "https://registry.npmjs.org/@types/estree/-/estree-0.0.51.tgz"
+  integrity sha512-CuPgU6f3eT/XgKKPqKd/gLZV1Xmvf1a2R5POBOGQa6uv82xpls89HU5zKeVoyR8XzHd1RGNOlQlvUe3CFkjWNQ==
 
 "@types/express-serve-static-core@^4.17.33":
   version "4.17.35"
