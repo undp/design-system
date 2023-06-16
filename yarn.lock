@@ -2083,7 +2083,7 @@
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-7.0.21.tgz#5a399e13b0bc4eefe52c5499ace2ca02e39d0b23"
   integrity sha512-8h4lvGQsdWrn/eLW9D9ZGB8FGTzRuC1almykVThb9SkATKZjUyUvtRT+BklsDIinptham83+0QiSdTrv52kAfA==
 
-"@storybook/cli@7.0.21", "@storybook/cli@^7.0.18":
+"@storybook/cli@7.0.21", "@storybook/cli@^7.0.21":
   version "7.0.21"
   resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-7.0.21.tgz#388fd334d39092af6438c2231ae610b1966b2279"
   integrity sha512-emLFo3CUKFvJJscuJZPTHDPqw7xfV06DAnTH2HskQQN6lhscWYuY+fK804iyk+FTRYZwaHJSyECYmYm06Q1H9w==

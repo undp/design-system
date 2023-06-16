@@ -45,7 +45,7 @@
     "@storybook/addon-docs": "^7.0.18",
     "@storybook/addon-essentials": "^7.0.18",
     "@storybook/addon-links": "^7.0.18",
-    "@storybook/cli": "^7.0.18",
+    "@storybook/cli": "^7.0.21",
     "@storybook/mdx1-csf": "^1.0.0",
     "@storybook/react": "^7.0.18",
     "@storybook/react-webpack5": "^7.0.18",
