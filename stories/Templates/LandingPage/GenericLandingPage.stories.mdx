@@ -839,9 +839,11 @@ export const getCaptionForActiveLocale = (locale) => {
 
 <Meta title="Templates/Generic landing page" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Landing Page
 
@@ -936,6 +938,12 @@ Add the base layout style from
     name="Generic landing page"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

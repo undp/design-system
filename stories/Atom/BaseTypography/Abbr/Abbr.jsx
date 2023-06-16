@@ -1,9 +1,10 @@
 import React from 'react';
 import './abbr.scss';
 
-export const Abbreviation = ({ label }) => (
-  <abbr>
-    { label }
-  </abbr>
-);
-
+export function Abbreviation({ label }) {
+  return (
+    <abbr>
+      {label}
+    </abbr>
+  );
+}

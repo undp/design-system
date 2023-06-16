@@ -198,7 +198,9 @@ export const navigationInitialize = (locale) => {
     }, 800);
     setTimeout(() => {
       jQuery('.country-header').removeClass('show-content');
-      localStorage.setItem('current-nav', document.getElementsByTagName('header')[0].classList[0]);
+      if (document.getElementsByTagName('header')[0].classList.length) {
+        localStorage.setItem('current-nav', document.getElementsByTagName('header')[0].classList[0]);
+      }
     }, 1000);
   } else {
     jQuery('.country-header').removeClass('country-load-animation');
@@ -208,7 +210,9 @@ export const navigationInitialize = (locale) => {
     }, 800);
     setTimeout(() => {
       jQuery('.global-header').removeClass('show-content');
-      localStorage.setItem('current-nav', document.getElementsByTagName('header')[0].classList[0]);
+      if (document.getElementsByTagName('header')[0].classList.length) {
+        localStorage.setItem('current-nav', document.getElementsByTagName('header')[0].classList[0]);
+      }
     }, 1000);
   }
 

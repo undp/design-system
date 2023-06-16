@@ -1,11 +1,10 @@
 const path = require("path");
-
 module.exports = {
-  core: {
-    builder: "webpack5"
-  },
   staticDirs: ['../stories/assets'],
-  stories: ["../stories/**/*.stories.mdx", "../stories/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: [
+    "../stories/**/*.stories.mdx", 
+    "../stories/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-actions",
@@ -13,11 +12,13 @@ module.exports = {
     "@storybook/addon-essentials",
     "@whitespace/storybook-addon-html",
     "storybook-addon-rtl",
-    "@storybook/addon-a11y",
+    "@storybook/addon-a11y"
   ],
   features: {
     storyStoreV7: true,
-    babelModeV7: true,
+    buildStoriesJson: true,
+    legacyMdx1: true,
+    babelModeV7: true
   },
   webpackFinal: async config => {
     // remove hash from the static file names
@@ -32,7 +33,7 @@ module.exports = {
     // });
     config.resolve.alias = {
       ...config.resolve.alias,
-      icons: path.resolve(__dirname, "../stories/assets/icons"),
+      icons: path.resolve(__dirname, "../stories/assets/icons")
     };
     // add SCSS support for CSS Modules
     config.module.rules.push({
@@ -43,9 +44,15 @@ module.exports = {
     });
     return config;
   },
-  framework: "@storybook/react",
-  env: (config) => ({
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {}
+  },
+  env: config => ({
     ...config,
-    CHROMATIC_VIEWPORTS: [375, 768, 1380, 1920],
+    CHROMATIC_VIEWPORTS: [375, 768, 1380, 1920]
   }),
+  docs: {
+    autodocs: true
+  }
 };

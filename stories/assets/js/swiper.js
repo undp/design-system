@@ -183,37 +183,35 @@ export const swiper = (selector, arrowsSelector, options) => {
     const swiperInit = () => {
       const elemData = jQuery(element).data();
       if (elemData) {
-        jQuery.each(elemData, function (key, val) {
+        jQuery.each(elemData, (key, val) => {
           if (key == 'swiperDesktop' || key == 'swiperTablet' || key == 'swiperMobile' || key == 'swiperAll') {
-            if ((key == 'swiperDesktop') && getDeviceType() == "desktop") {
+            if ((key == 'swiperDesktop') && getDeviceType() == 'desktop') {
               if (!swiper.initialized) {
                 swiperEnable();
               }
               return false;
-            } else if ((key == 'swiperTablet') && getDeviceType() == "tablet") {
+            } if ((key == 'swiperTablet') && getDeviceType() == 'tablet') {
               if (!swiper.initialized) {
                 swiperEnable();
               }
               return false;
-            } else if ((key == 'swiperMobile') && getDeviceType() == "mobile") {
+            } if ((key == 'swiperMobile') && getDeviceType() == 'mobile') {
               if (!swiper.initialized) {
                 swiperEnable();
               }
               return false;
-            } else if (key == 'swiperAll') {
+            } if (key == 'swiperAll') {
               if (!swiper.initialized) {
                 swiperEnable();
               }
               return false;
-            } else {
-              swiperDisable();
             }
+            swiperDisable();
           }
+          return false;
         });
-      } else {
-        if (!swiper.initialized) {
-          swiperEnable();
-        }
+      } else if (!swiper.initialized) {
+        swiperEnable();
       }
 
       if (swiper !== undefined) {
@@ -235,12 +233,10 @@ export const swiper = (selector, arrowsSelector, options) => {
           }
           if (!swiper.initialized || swiper.destroyed) {
             jQuery(element).find('.swiper-wrapper').css('cursor', 'auto');
+          } else if (sliderCenter > ePageXOffset) {
+            jQuery(element).find('.swiper-wrapper').css('cursor', leftCursor);
           } else {
-            if (sliderCenter > ePageXOffset) {
-              jQuery(element).find('.swiper-wrapper').css('cursor', leftCursor);
-            } else {
-              jQuery(element).find('.swiper-wrapper').css('cursor', rightCursor);
-            }
+            jQuery(element).find('.swiper-wrapper').css('cursor', rightCursor);
           }
         };
 
@@ -260,22 +256,27 @@ export const swiper = (selector, arrowsSelector, options) => {
               swiper.slideNext();
             } else if (swiper.isEnd) {
               swiper.slidePrev();
-            } else {
-              swiper.rtl ? swiper.slideNext() : swiper.slidePrev();
-            }
-          } else {
-            if (swiper.isBeginning) {
+            } else if (swiper.rtl) {
               swiper.slideNext();
-            } else if (swiper.isEnd) {
-              swiper.slidePrev();
             } else {
-              swiper.rtl ? swiper.slidePrev() : swiper.slideNext();
+              swiper.slidePrev();
             }
+          } else if (swiper.isBeginning) {
+            swiper.slideNext();
+          } else if (swiper.isEnd) {
+            swiper.slidePrev();
+          } else if (swiper.rtl) {
+            swiper.slidePrev();
+          } else {
+            swiper.slideNext();
           }
           updateArrow(e);
-        }).find(ignoreClick).on('click', (e) => {
-          e.stopPropagation();
-        });
+          return false;
+        })
+          .find(ignoreClick)
+          .on('click', (e) => {
+            e.stopPropagation();
+          });
 
         // Swiper slides mousemove eventlistner.
         jQuery(element).find('.swiper-wrapper').off('mousemove').on('mousemove', (e) => {

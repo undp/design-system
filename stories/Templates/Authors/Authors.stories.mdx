@@ -508,11 +508,13 @@ export const getfiltertextForLocale = (locale) => {
   }
 };
 
-<Meta title="Templates/Author listing" />
+<Meta title="Templates/Author listing page" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Authors Listing
 
@@ -597,9 +599,15 @@ Add the base layout style from
 
 <Canvas>
   <Story
-    name="Author listing"
+    name="Author listing page"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

@@ -1909,9 +1909,11 @@ export const statsArray = (locale) => {
 
 <Meta title="Templates/Project page" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Project Page
 
@@ -2021,6 +2023,12 @@ Add following external libraries
     name="Project page"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

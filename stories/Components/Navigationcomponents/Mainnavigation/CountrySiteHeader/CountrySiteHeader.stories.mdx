@@ -183,7 +183,7 @@ export const menuData = (locale) => {
   }}
 />
 
-<style>{`iframe {min-height: 400px;}`}</style>
+<style>{`iframe {min-height: 400px;}  `}</style>
 
 # Country Header
 
@@ -208,8 +208,10 @@ This version of the header uses the mega menu version of the menu.
     parameters={{
       layout: "fullscreen",
       docs: {
-        inlineStories: false,
-        iframeHeight: "100%",
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
       },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
@@ -256,8 +258,8 @@ In addition to the items above, The header can be set up to allow for more paren
 
 #### New Header Structure (**Recommended**)
 
-The new pattern for the html structure has three main divs (`.top-left`, `.top-center` and `.top-right`),
-an optional `.menu__overflow__container` div for overflow menu items, addition and a `.mobile-nav div` to contain all the mobile elements.
+The new pattern for the html structure has three main divs (**.top-left**, **.top-center** and **.top-right**),
+an optional **.menu\_\_overflow\_\_container** div for overflow menu items, addition and a **.mobile-nav** div to contain all the mobile elements.
 This setup is recommended for a more flexible structure and it can implement the overflow functionality if desired.
 
 ```
@@ -267,7 +269,7 @@ This setup is recommended for a more flexible structure and it can implement the
       <div class="grid-x grid-margin-x align-content-middle">
 
         <div class="cell small-8 large-2 shrink align-self-middle top-left">
-          ... Logo and sitename ...
+          Logo and sitename ...
         </div>
 
         <div class="cell small-1 large-auto align-content-middle top-center">
@@ -275,18 +277,18 @@ This setup is recommended for a more flexible structure and it can implement the
         </div>
 
         <div class="cell small-3 large-auto top-right">
-         ... Language selector, globe link, and search link icon and call to action link ...
+          Language selector, globe link, and search link icon and call to action link ...
         </div>
 
         <div class="grid-container full menu__overflow__container">
           <ul class="overflow">
-            ... Add this menu__overflow__container section and empty ul.overflow div
-            ... if you want the menu overflow functionality.
+            Add this menu__overflow__container section and empty ul.overflow div
+            if you want the menu overflow functionality.
           </ul>
         </div>
 
         <div class="mobile-nav">
-         ... Mobile navigation, menu, and links go in here ...
+          Mobile navigation, menu, and links go in here ...
         </div>
 
       </div>
@@ -297,11 +299,11 @@ This setup is recommended for a more flexible structure and it can implement the
 ```
 
 **Note:** When updating to the new recommended structure, make sure to adjust the foundation classes in the main divs. Example: old top-left had
-`cell large-9 small-8 align-self-middle top-left` classes and new top-left has `cell small-8 **large-2** **shrink** align-self-middle top-left`
+**"cell large-9 small-8 align-self-middle top-left"** classes and new top-left has **"cell small-8 large-2 shrink align-self-middle top-left"**
 
 #### Old Header Structure (Deprecated)
 
-The old, existing pattern for the html structure had two main divs (`.top-left` and `.top-right`) and a `.mobile-nav` div to contain all the mobile elements. This setup is deprecated for the more flexible structure above and can't implement the overflow functionality
+The old, existing pattern for the html structure had two main divs (**.top-left** and **.top-right**) and a **.mobile-nav** div to contain all the mobile elements. This setup is deprecated for the more flexible structure above and can't implement the overflow functionality.
 **This setup is deprecated and should be updated to the recommended structure as soon as possible.**
 
 ```
@@ -311,16 +313,16 @@ The old, existing pattern for the html structure had two main divs (`.top-left` 
       <div class="grid-x grid-margin-x align-content-middle">
 
         <div class="cell large-9 small-8 align-self-middle top-left">
-          ...Logo and sitename...
-          .. Main menu
+          Logo and sitename...
+          Main menu
         </div>
 
         <div class="cell large-3 small-3 top-right">
-         ...Language selector, globe link, and search link icon and call to action link...
+          Language selector, globe link, and search link icon and call to action link...
         </div>
 
         <div class="mobile-nav">
-         ...Mobile navigation, menu, and links go in here...
+          Mobile navigation, menu, and links go in here...
         </div>
 
       </div>
@@ -346,15 +348,15 @@ There are several types of Country Header:
 ### Setting up overflow
 
 The overflow functionality works by calculating the space available for the main menu, adding up the width of all the menu items,
-and if that width is greater than available space, it moves its into the `menu__overflow__container` until everything fits.
+and if that width is greater than available space, it moves its into the **menu\_\_overflow\_\_container** until everything fits.
 
-The most important parts are making sure the main menu ul has an `overflow` class applied, and that the `menu__overflow__container`
-div exists in the right place. Then just make sure the right css files and the `navigation.min.js` file is loaded.
+The most important parts are making sure the main menu ul has an **overflow** class applied, and that the **menu\_\_overflow\_\_container**
+div exists in the right place. Then just make sure the right css files and the **navigation.min.js** file is loaded.
 
 ```
 <div class="cell small-1 large-auto align-content-middle top-center">
   <ul class="overflow">
-    ... Menu items go here. It is important to add the overflow class to the parent ul, otherwise overflow wont trigger.
+    Menu items go here. It is important to add the overflow class to the parent ul, otherwise overflow wont trigger.
   </ul>
 </div>
 
@@ -362,7 +364,7 @@ div exists in the right place. Then just make sure the right css files and the `
 
 <div class="grid-container full menu__overflow__container">
   <ul class="overflow">
-    ... Add this menu__overflow__container section after the top-right div and before the mobile-nav div.
+    Add this menu__overflow__container section after the top-right div and before the mobile-nav div.
   </ul>
 </div>
 
@@ -401,7 +403,7 @@ There are three states: Default, Tablet, and Mobile.
 #### Default mega menu Usage:
 
 1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
-2. Initialize the `navigationInitialize()`, `langSwitch()` function in your js file’s document ready, For example:
+2. Initialize the **navigationInitialize()**, **langSwitch()** function in your js file’s document ready, For example:
 
 ```
 $(document).ready(function(){
@@ -411,7 +413,7 @@ $(document).ready(function(){
 
 #### Overflow Usage:
 
-1. In addition to the steps above, Initialize the `navigationOverFlow()` function in your js file’s document ready.
+1. In addition to the steps above, Initialize the **navigationOverFlow()** function in your js file’s document ready.
 
 ---
 

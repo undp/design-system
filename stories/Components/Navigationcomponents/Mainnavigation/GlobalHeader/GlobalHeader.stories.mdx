@@ -204,11 +204,13 @@ export const menuData = (locale) => {
 
 <Meta title="Components/Navigation components/Main navigation/Global header" />
 
-<style>{`
+<style>
+  {`
   iframe {
     min-height: 400px;
   }
-`}</style>
+  `}
+</style>
 
 # Global Header
 
@@ -251,8 +253,10 @@ The filled part of the Progress bar (in the current page’s accent color) is de
     parameters={{
       layout: "fullscreen",
       docs: {
-        inlineStories: false,
-        iframeHeight: "100%",
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
       },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}

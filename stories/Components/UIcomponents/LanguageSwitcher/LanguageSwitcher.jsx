@@ -7,9 +7,9 @@ export const variant_options = {
   white: 'white',
 };
 
-export const Languageswitcher = ({
+export function Languageswitcher({
   headerText, data, lang, ...args
-}) => {
+}) {
   useEffect(() => {
     langSwitch();
   }, []);
@@ -28,9 +28,8 @@ export const Languageswitcher = ({
       </ul>
     </div>
   );
-};
+}
 
 Languageswitcher.defaultProps = {
   variant: 'blue',
 };
-

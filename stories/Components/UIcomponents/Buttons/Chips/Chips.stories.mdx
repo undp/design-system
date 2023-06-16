@@ -1,15 +1,22 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { Chips } from './Chips';
-
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Chips } from "./Chips";
 
 export const getCaptionForLocale = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {detail: 'Label'}; return engText;
-    case 'arabic': const arabicText = {detail: 'ملصق'}; return arabicText;
-    case 'burmese': const burmeseText = {detail: 'တံဆိပ်'}; return burmeseText;
-    case 'japanese': const japaneseText = {detail: 'ラベル'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = { detail: "Label" };
+      return engText;
+    case "arabic":
+      const arabicText = { detail: "ملصق" };
+      return arabicText;
+    case "burmese":
+      const burmeseText = { detail: "တံဆိပ်" };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = { detail: "ラベル" };
+      return japaneseText;
     default:
-      return {detail: 'Label'};
+      return { detail: "Label" };
   }
 };
 
@@ -19,8 +26,10 @@ export const getCaptionForLocale = (locale) => {
     Type: {
       options: ["Without X", "With X"],
       control: { type: "inline-radio" },
-      defaultValue: 'Without X'
     },
+  }}
+  args={{
+    Type: "Without X",
   }}
 />
 
@@ -29,6 +38,7 @@ export const getCaptionForLocale = (locale) => {
 A button describes what action will be performed when a user clicks or touches it.
 
 ### Overview
+
 A button describes the call to action that will be performed when the user clicks/touches it. It has a label and an optional animation.
 
 #### When to use:
@@ -41,7 +51,9 @@ A button describes the call to action that will be performed when the user click
 ### Formatting
 
 #### Default
+
 There are multiple button types in our design system
+
 1. Primary button with arrow and without arrows
 2. Secondary buttons without the arrow
 3. CTA links with and without expanding arrows
@@ -64,28 +76,23 @@ Chip with default state and no close icon which means it doesn’t provide the o
 Chip with hover state and close icon. Changes appearance once the mouse moves over it.
 
 <Canvas>
-<Story
-  name="Chips"
->
-  {(args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <Chips
-        label={caption.detail}
-        {...args}
-      ></Chips>
-    );
-  }}
-</Story>
+  <Story name="Chips">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      return <Chips label={caption.detail} {...args}></Chips>;
+    }}
+  </Story>
 </Canvas>
 
 ### Usage
+
 - Copy the HTML from the HTML Tab of canvas for either Chips, CTA Button, and CTA Link from the controls.
 - Include the CSS files listed below concerning the button you choose.
 
 ### CSS and JS References
 
 #### CSS:
+
 Add the base layout style from
 
 - https://undp.github.io/design-system/css/base-minimal.min.css
@@ -94,10 +101,13 @@ Add the base layout style from
 Use above CSS concerning Chips
 
 #### JS:
+
 NA
 
 ### Interactions
+
 - The hover state is applied to the entire button.
 
 ### Changelog
+
 1.0 — Released component

@@ -507,7 +507,7 @@ Close button dismisses the entire modal window and resets filter states and chec
 
 <Canvas>
   <Story name="Download modal">
-    {(args, { globals: { locale } }) => {
+    {(args, { globals: { locale, accent } }) => {
       const caption = statsArray(locale);
       return (
         <DownloadModal

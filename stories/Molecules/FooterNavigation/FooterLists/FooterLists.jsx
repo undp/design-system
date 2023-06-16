@@ -8,9 +8,9 @@ export const variant_options = {
 
 const cls = (...classes) => (classes.filter(Boolean).length > 0 ? classes.filter(Boolean).join(' ') : null);
 
-export const FooterLists = ({
+export function FooterLists({
   type, headerText, text, style, ariacontrol, arialabel, data, ...args
-}) => {
+}) {
   let screen_variant = variant_options[`${args.variant}`];
   return (
     <div className={cls('cell', 'footer-item', `${screen_variant}`)}>
@@ -22,7 +22,7 @@ export const FooterLists = ({
       </div>
     </div>
   );
-};
+}
 
 FooterLists.defaultProps = {
   variant: 'default',

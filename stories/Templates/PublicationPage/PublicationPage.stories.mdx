@@ -722,9 +722,11 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Templates/Publication page" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Publication Page
 
@@ -809,6 +811,12 @@ Add the base layout style from
     name="Publication page"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

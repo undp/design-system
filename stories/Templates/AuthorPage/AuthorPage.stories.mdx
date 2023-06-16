@@ -551,11 +551,13 @@ export const getCaptionDataLocale = (locale) => {
   }
 };
 
-<Meta title="Templates" />
+<Meta title="Templates/Author detail page" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Author Page
 
@@ -635,9 +637,15 @@ Add the base layout style from
 
 <Canvas>
   <Story
-    name="Author detail"
+    name="Author detail page"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

@@ -144,7 +144,8 @@
     margin: 0 auto;
   }
 
-  p {
+  >div p {
+    font-family: $Font-Family-ProximaNova;
     font-size: 14px;
     margin-top: 10px;
   }
@@ -159,7 +160,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   margin: 0 $spacing-05 $spacing-07;
   padding: $spacing-05 $spacing-03;
   text-align: center;

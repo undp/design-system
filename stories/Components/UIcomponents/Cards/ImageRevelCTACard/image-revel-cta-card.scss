@@ -158,15 +158,15 @@ $color in $colors {
         .image::before {
           @include background-image(67.76deg, #{$color}, transparent 61.11%);
         }
-      }
 
-      @each $name2,
-      $color2 in $colors {
+        @each $name2,
+        $color2 in $colors {
 
-        &.accent-#{$name2},
-        &.#{$name2} {
-          .image::before {
-            @include background-image(67.76deg, #{$color2}, transparent 61.11%);
+          &.accent-#{$name2},
+          &.#{$name2} {
+            .image::before {
+              @include background-image(67.76deg, #{$color2}, transparent 61.11%);
+            }
           }
         }
       }

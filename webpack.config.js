@@ -43,7 +43,7 @@ module.exports = [
           },
         },
         {
-          test: /\.(eot|woff|woff2|ttf)([\?]?.*)$/,
+          test: /\.(eot|woff|woff2|ttf)([?]?.*)$/,
           type: 'asset/resource',
           generator: {
             filename: 'fonts/[name][ext]',
@@ -61,6 +61,7 @@ module.exports = [
         // '../../../../../../assets/icons/times-blue.svg': path.resolve(__dirname, 'stories/assets/icons/times-blue.svg'),
         // '../../../assets/icons/chevron-small-right.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-small-right.svg'),
       },
+      extensions: ['.ts', '.js'],
     },
     optimization: {
       minimizer: [

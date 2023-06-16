@@ -97,14 +97,9 @@
   }
 
   .pagehero-full {
-    //margin-top: 0;
-
-    @include devicebreak(large) {
-      //margin-top: 5.688rem;
-    }
 
     @include devicebreak(xlarge) {
-      //margin-top: 8.1875rem;
+      margin-top: 0;
     }
 
     .content-box {

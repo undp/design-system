@@ -8,9 +8,9 @@ export function modal() {
   // modal function
   function modalOpen(modal) {
     let modalSelector = '';
-    $modalOpen.click((event) => {
-      modalSelector = event.currentTarget.getAttribute('data-target-modal');
-      event.preventDefault();
+    $modalOpen.click((e) => {
+      modalSelector = e.currentTarget.getAttribute('data-target-modal');
+      e.preventDefault();
       jQuery(modalSelector).addClass('open');
     });
     $modalOverlay.click(() => {
@@ -24,15 +24,15 @@ export function modal() {
   });
 
   // handle escape key
-  jQuery(document).keydown(function(e) {
+  jQuery(document).keydown((e) => {
     if (e.keyCode == 27 && $modalClose) {
       $modalClose.trigger('click');
     }
   });
 
   // Close icon function
-  $modalClose.click((event) => {
-    event.preventDefault();
+  $modalClose.click((e) => {
+    e.preventDefault();
     $modalOverlay.click();
   });
 
