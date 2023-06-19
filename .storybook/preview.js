@@ -31,6 +31,7 @@ export const parameters = {
   docs: {
     source: {
       transform: (src, storyContext) => renderToHTML(storyContext.storyFn),
+      type: 'code',
     }
   },
   options: {
