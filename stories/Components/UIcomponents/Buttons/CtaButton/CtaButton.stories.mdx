@@ -4,8 +4,9 @@ import { CtaButton } from "./CtaButton";
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
-      const engText = { detail: "READ MORE" };
-      return engText;
+      return { detail: "READ MORE" };
+    case "ukrainian":
+      return { detail: "ЧИТАТИ ДАЛІ" };
     case "arabic":
       const arabicText = { detail: "اقرأ أكثر" };
       return arabicText;

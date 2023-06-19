@@ -60,7 +60,8 @@ export const globalTypes = {
         { value: 'english', title: 'English', right: 'Default' },
         { value: 'arabic', title: 'Arabic' },
         { value: 'burmese', title: 'Burmese' },
-        { value: 'japanese', title: 'Japanese' }
+        { value: 'japanese', title: 'Japanese' },
+        { value: 'ukrainian', title: 'Ukrainian' }
       ],
     },
   },
@@ -108,7 +109,8 @@ const getLangCode = (Story, context) => {
     'english' : 'en',
     'arabic': 'ar',
     'burmese': 'my',
-    'japanese': 'ja'
+    'japanese': 'ja',
+    'ukrainian': 'uk'
   };
 
   // Check if language exists.

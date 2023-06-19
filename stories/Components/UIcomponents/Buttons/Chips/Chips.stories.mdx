@@ -4,8 +4,9 @@ import { Chips } from "./Chips";
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
-      const engText = { detail: "Label" };
-      return engText;
+      return { detail: "Label" };
+    case "ukrainian":
+      return { detail: "Мітка" };
     case "arabic":
       const arabicText = { detail: "ملصق" };
       return arabicText;

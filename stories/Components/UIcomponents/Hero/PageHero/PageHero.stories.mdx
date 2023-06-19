@@ -26,6 +26,25 @@ export const getCaptionForLocale = (locale) => {
         cta: "Read more",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        herodata: [
+          { text: "Home" },
+          { text: "Другий рівень" },
+          { text: "Третій рівень" },
+          { text: "Назва сторінки" },
+        ],
+        title: "ЦСР У ДІЇ",
+        subtitle:
+          "Програма ПРООН із підвищення стійкості та відновлення",
+        content: "Наші теми",
+        imgsrc: BackgroundImg,
+        imgsrc2: BackgroundImg2,
+        imgalt: BackgroundImg,
+        videosrc: BackgroundVideo,
+        cta: "ЧИТАТИ ДАЛІ",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         herodata: [
@@ -100,7 +119,7 @@ export const getCaptionForLocale = (locale) => {
 };
 
 <Meta
-  title="Components/UI components/Hero/PageHero"
+  title="Components/UI components/Hero/Page/PageHero"
   argTypes={{
     Variant: {
       name: "Variant",

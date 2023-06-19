@@ -4,8 +4,9 @@ import { PublicationCard } from "./PublicationCard";
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
-      const engText = { download: "Download", readmore: "READ MORE" };
-      return engText;
+      return { download: "Download", readmore: "READ MORE" };
+    case "ukrainian":
+      return { download: "Завантажити", readmore: "ЧИТАТИ ДАЛІ" };
     case "arabic":
       const arabicText = { download: "تحميل", readmore: "اقرأ أكثر" };
       return arabicText;
