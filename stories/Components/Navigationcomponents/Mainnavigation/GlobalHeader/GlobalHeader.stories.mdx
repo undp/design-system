@@ -11,6 +11,13 @@ export const getNavLinks = (locale) => {
         { label: "Our Impact", id: "headerlink3", position: "right" },
         { label: "Get Involved", id: "headerlink4", position: "right" },
       ];
+    case "ukrainian":
+      return [
+        { title: "ПРООН в Україні", id: "headerlink1", position: "left"  },
+        { title: "Чим ми займаємося", id: "headerlink2", position: "left"  },
+        { title: "Наші результати", id: "headerlink3", position: "right" },
+        { title: "Долучайтеся", id: "headerlink4", position: "right" },
+      ];
     case "arabic":
       return [
         { label: "من نحن", id: "headerlink1", position: "left" },
@@ -50,6 +57,8 @@ export const getSiteTitle = (locale) => {
   switch (locale) {
     case "english":
       return { label: "GLOBAL", span: "Site Title" };
+    case "ukrainian":
+      return { label: "ГЛОБАЛЬНИЙ", span: "Заголовок сайту" };
     case "arabic":
       return { label: "عالمي", span: "عنوان الموقع" };
     case "burmese":
@@ -66,6 +75,8 @@ export const getLocationDataForLocale = (locale) => {
     case "english":
       const engText = { detail: "Locations" };
       return engText;
+    case "ukrainian":
+      return { detail: "Розташування" };
     case "arabic":
       const arabicText = { detail: "المواقع" };
       return arabicText;
@@ -85,6 +96,8 @@ export const getBackForLocale = (locale) => {
     case "english":
       const engText = { detail: "Back" };
       return engText;
+    case "ukrainian":
+      return { detail: "назад" };
     case "arabic":
       const arabicText = { detail: "الى الخلف" };
       return arabicText;
@@ -104,6 +117,8 @@ export const getCaptionForLocale = (locale) => {
     case "english":
       const engText = "Select Language";
       return engText;
+    case "ukrainian":
+      return "Оберіть мову";
     case "arabic":
       const arabicText = "اختار اللغة";
       return arabicText;
@@ -123,6 +138,8 @@ export const getSelectlanguage = (locale) => {
     case "english":
       const engText = "Select Language";
       return engText;
+    case "ukrainian":
+      return "Оберіть мову";
     case "arabic":
       const arabicText = "اختار اللغة";
       return arabicText;
@@ -151,6 +168,11 @@ export const menuData = (locale) => {
         ],
       };
       return engText.data;
+    case "ukrainian":
+      const ukText = {
+        data: [{ text: "пункт меню" }, { text: "пункт меню" }],
+      };
+      return ukText.data;
     case "arabic":
       const arabicText = {
         data: [

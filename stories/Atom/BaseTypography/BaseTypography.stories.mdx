@@ -19,12 +19,12 @@ export const getCaptionForLocaleHeading = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
-        detail1: "HEADLINE 1",
+        detail1: "Headline 1",
         detail2: "Headline 2",
         detail3: "Headline 3",
         detail4: "Headline 4",
         detail5: "Headline 5",
-        detail6: "HEADLINE 6",
+        detail6: "Headline 6",
       };
       return engText;
     case "arabic":
@@ -57,14 +57,24 @@ export const getCaptionForLocaleHeading = (locale) => {
         detail6: "見出し6",
       };
       return japaneseText;
+    case "ukrainian":
+      const ukrainianText = {
+        detail1: "Заголовок 1",
+        detail2: "Заголовок 2",
+        detail3: "Заголовок 3",
+        detail4: "Заголовок 4",
+        detail5: "Заголовок 5",
+        detail6: "Заголовок 6",
+      };
+      return ukrainianText;
     default:
       return {
-        detail1: "HEADLINE 1",
+        detail1: "Headline 1",
         detail2: "Headline 2",
         detail3: "Headline 3",
         detail4: "Headline 4",
         detail5: "Headline 5",
-        detail6: "HEADLINE 6",
+        detail6: "Headline 6",
       };
   }
 };
@@ -97,6 +107,14 @@ export const getCaptionForLocaleAbbr = (locale) => {
         text2: "to style your",
       };
       return engText;
+    case "ukrainian":
+      const ukrainianText = {
+        detail1: "Мова розмітки гіпертексту",
+        detail2: "Каскадні таблиці стилів",
+        text1: "Ви можете використовувати",
+        text2: "стилізувати свій",
+      };
+      return ukrainianText;
     case "arabic":
       const arabicText = {
         detail1: "لغة ترميز النصوص التشعبية",
@@ -159,6 +177,13 @@ export const getCaptionForLocaleBlockquote = (locale) => {
         citeText: "-Firstname Lastname",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        detail:
+          "“Мудра людина залишається на задньому плані й саме завдяки цьому опиняється попереду інших”",
+        citeText: "-Лао Цзи",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         detail:
@@ -218,6 +243,9 @@ export const getCaptionForLocaleCite = (locale) => {
     case "english":
       const engText = { detail: "-Firstname Lastname" };
       return engText;
+    case "ukrainian":
+      const ukText = { detail: "-Лао Цзи" };
+      return ukText;
     case "arabic":
       const arabicText = { detail: "الاسم الاول الاسم الاخير-" };
       return arabicText;
@@ -267,6 +295,16 @@ export const getCaptionForLocaleCode = (locale) => {
           "object contains the length of the string. It can also serve as a character counter.",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        detail1: "Властивість",
+        detail2: "length()",
+        detail3: "об'єкта",
+        detail4: "String",
+        detail5:
+          "містить довжину рядка у кодових одиницях UTF-16.",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         detail1: "ال",
@@ -362,6 +400,13 @@ export const getLocaleForDetails = (locale) => {
           "Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        summary: "Київ",
+        details:
+          "столиця та найбільше місто України. Розташований у середній течії Дніпра, у північній Наддніпрянщині",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         summary: "مركز Epcot",
@@ -420,6 +465,12 @@ export const getLocaleForFigcaption = (locale) => {
           "Dummy text refers to the bits of content that are used to fill a website mock-up. This text helps web designers better envision how the website will look as a finished product. ",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        details:
+          "Підпис до зображення. Завжди розміщується всередині елемента <figure>.",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         details:
@@ -493,6 +544,12 @@ export const getCaptionForLocaleHr = (locale) => {
           "Large paragraph lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices. Quisque eget placerat odio, vel viverra ipsum. Sed pharetra varius dignissim. Cras varius luctus est sit amet sollicitudin. Donec eget dui eget nulla luctus ultrices. Sed eu turpis quam. Nulla facilisi.",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        detail:
+          "Будучи агентством Організації Об'єднаних Націй, що спеціалізується на питаннях розвитку, ПРООН підтримує стратегічні ініціативи, спрямовані на розвиток потенціалу, аби сприяти всебічному зростанню і сталому людському розвитку. Завдяки партнерству з національними, обласними та місцевими органами влади, громадянським суспільством і приватним сектором, ПРООН прагне підтримати Україну на шляху до подолання бідності, розвитку людського потенціалу, досягнення справедливих результатів, захисту довкілля і просування демократичного врядування.",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         detail:
@@ -543,6 +600,8 @@ export const getCaptionForLocaleMark = (locale) => {
     case "english":
       const engText = { detail: "Eos nulla molestiae" };
       return engText;
+    case "ukrainian":
+      return { detail: "Розвиток ніколи не спиняється. Не спиняємось і ми." };
     case "arabic":
       const arabicText = { detail: "لا إزعاج" };
       return arabicText;
@@ -614,6 +673,8 @@ export const getCaptionForLocaleParagraph = (locale) => {
           "Large paragraph lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices. Quisque eget placerat odio, vel viverra ipsum. Sed pharetra varius dignissim. Cras varius luctus est sit amet sollicitudin. Donec eget dui eget nulla luctus ultrices. Sed eu turpis quam. Nulla facilisi.",
       };
       return engText;
+    case "ukrainian":
+      return {detail: "Будучи агентством Організації Об'єднаних Націй, що спеціалізується на питаннях розвитку, ПРООН підтримує стратегічні ініціативи, спрямовані на розвиток потенціалу, аби сприяти всебічному зростанню і сталому людському розвитку. Завдяки партнерству з національними, обласними та місцевими органами влади, громадянським суспільством і приватним сектором, ПРООН прагне підтримати Україну на шляху до подолання бідності, розвитку людського потенціалу, досягнення справедливих результатів, захисту довкілля і просування демократичного врядування."}
     case "arabic":
       const arabicText = {
         detail:
@@ -667,6 +728,8 @@ export const getCaptionForLocaleQuotation = (locale) => {
           "Scientists are considering whether the Earth has entered an entirely new geological epoch: the Anthropocene, or the age of humans.",
       };
       return engText;
+    case "ukrainian":
+      return {detail: "Еней був парубок моторний I хлопець хоть куди козак, Удавсь на всеє зле проворний, Завзятіший од всіх бурлак."}
     case "arabic":
       const arabicText = {
         detail:
@@ -717,9 +780,11 @@ export const getCaptionForLocaleSmall = (locale) => {
     case "english":
       const engText = { detail: "Et occaecati eos nulla molestiae repellat." };
       return engText;
+    case "ukrainian":
+      return {detail: "Програма ПРООН із підвищення стійкості та відновлення"}
     case "arabic":
       const arabicText = {
-        detail: "Et Occaecati eos nulla molestiae repellat.",
+        detail: "برنامج الأمم المتحدة الإنمائي في الدول العربية",
       };
       return arabicText;
     case "burmese":
@@ -772,6 +837,21 @@ export const getCaptionForLocaleList = (locale) => {
         ],
       };
       return engText.data;
+    case "ukrainian":
+      return [
+          {
+            label: "НАПРЯМ 1",
+            text: "Можливості Уряду реагувати на кризові ситуації та вирішувати їх.",
+          },
+          {
+            label: "НАПРЯМ 2",
+            text: "Безперервне надання державних послуг.",
+          },
+          {
+            label: "НАПРЯМ 3",
+            text: "Аварійні роботи, що сприяють відновленню та відбудові.",
+          },
+      ];
     case "arabic":
       const arabicText = {
         data: [

@@ -18,15 +18,30 @@ export const getCaptionForLocale = (locale) => {
         headerText: "English",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        languagedata: [
+          {
+            descriptionText: "Français",
+            lang: "fr",
+          },
+          {
+            descriptionText: "Español",
+            lang: "es",
+          },
+        ],
+        headerText: "Українська",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         languagedata: [
           {
-            descriptionText: "فرنسي",
+            descriptionText: "Français",
             lang: "fr",
           },
           {
-            descriptionText: "الاسبانية",
+            descriptionText: "Español",
             lang: "es",
           },
         ],
@@ -37,11 +52,11 @@ export const getCaptionForLocale = (locale) => {
       const burmeseText = {
         languagedata: [
           {
-            descriptionText: "ပြင်သစ်",
+            descriptionText: "Français",
             lang: "fr",
           },
           {
-            descriptionText: "ငပိ",
+            descriptionText: "Español",
             lang: "es",
           },
         ],
@@ -52,11 +67,11 @@ export const getCaptionForLocale = (locale) => {
       const japaneseText = {
         languagedata: [
           {
-            descriptionText: "フランス語",
+            descriptionText: "Français",
             lang: "fr",
           },
           {
-            descriptionText: "スペイン語",
+            descriptionText: "Español",
             lang: "es",
           },
         ],

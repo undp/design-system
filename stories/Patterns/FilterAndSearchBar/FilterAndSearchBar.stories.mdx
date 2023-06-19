@@ -4,8 +4,9 @@ import FilterAndSearchBar from "./FilterAndSearchBar";
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
-      const engText = "Category";
-      return engText;
+      return "Category";
+    case "ukrainian":
+      return "Категорія";
     case "arabic":
       const arabicText = "فئة";
       return arabicText;
@@ -24,6 +25,8 @@ export const getCaptionForClearLocale = (locale) => {
     case "english":
       const engText = "Clear All";
       return engText;
+    case "ukrainian":
+      return "Очистити все";
     case "arabic":
       const arabicText = "امسح الكل";
       return arabicText;
@@ -42,6 +45,8 @@ export const getCaptionForActiveLocale = (locale) => {
     case "english":
       const engText = "Active Filters:";
       return engText;
+    case "ukrainian":
+      return "Активні фільтри:";
     case "arabic":
       const arabicText = "عوامل التصفية النشطة:";
       return arabicText;
@@ -61,6 +66,9 @@ export const getButtonForLocale = (locale) => {
     case "english":
       const engText = { close: "Close", sort: "Search and filter" };
       return engText;
+    case "ukrainian":
+      const ukText = { close: "Закрити", sort: "Пошук і фільтр" };
+      return ukText;
     case "arabic":
       const arabicText = { close: "قريب", sort: "البحث والتصفية" };
       return arabicText;
