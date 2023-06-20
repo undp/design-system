@@ -36,7 +36,7 @@
     &-mobile {
       display: none;
       margin-bottom: $spacing-04;
-      margin-top: 5.5rem;
+      margin-top: 1rem;
 
       @media (max-width: 1023px) {
         display: block;
@@ -64,7 +64,7 @@
         display: none;
       }
 
-      @include devicebreak(medium) {
+      @include devicebreak(large) {
         .sidebar-accordion h6 {
           display: none;
         }
