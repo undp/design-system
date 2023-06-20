@@ -35,7 +35,7 @@ export function sidebarMenu() {
       .click(function (e) {
         e.preventDefault();
         e.stopPropagation();
-        jQuery(this).closest('.sidebar-accordion').toggleClass('show-small');
+        jQuery(this).closest('.sidebar-accordion').toggleClass('show-medium');
       });
   });
 }
