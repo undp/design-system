@@ -18,7 +18,7 @@ export const navigationInitialize = (locale) => {
     // Find the panel that matches with the parent menu link item in the main nav.
     const navId = jQuery(this).parent().attr('data-menu-id');
     let $menuItemId = jQuery(document).find(`[data-menu-item-id='${navId}']`);
-    let $triggering_menu_item = $(event.target);
+    let $triggering_menu_item = jQuery(event.target);
 
     // Show the mega menu panel. Position it at the bottom of the header or overflow.
     let extra = 0;
@@ -251,10 +251,10 @@ export const navigationMultiLevelEdgeDetection = () => {
     $this.removeClass('edge');
     if (jQuery('ul.submenu', $this).length) {
       let dir = getComputedStyle(document.body).direction;
-      let elm = $('ul:first', $this);
+      let elm = jQuery('ul:first', $this);
       let offset = elm.offset();
       let elm_w = elm.width();
-      let docW = $('.header').width();
+      let docW = jQuery('.header').width();
       let isEntirelyVisible = (dir === 'rtl') ? (offset.left >= elm_w) : (offset.left + elm.width() <= docW);
       if (!isEntirelyVisible) {
         $this.addClass('edge');
@@ -329,7 +329,7 @@ export const navigationOverFlow = () => {
         jQuery('.menu > ul.overflow > li').each(function (index, value) {
           current_combined_width += parseInt(jQuery(this).width(), 10);
           if (current_combined_width > menu_container_width) {
-            $items_to_move_to_overflow.push($(this));
+            $items_to_move_to_overflow.push(jQuery(this));
           }
         });
         jQuery('.menu__overflow__container > ul.overflow').prepend($items_to_move_to_overflow);
@@ -344,7 +344,7 @@ export const navigationOverFlow = () => {
         if (jQuery('.menu__overflow__container > ul.overflow > li').length) {
           let total_width_of_active_main_nav_items = 0;
           jQuery('.menu > ul.overflow > li').each(function (index) {
-            total_width_of_active_main_nav_items += parseInt($(this).width(), 10);
+            total_width_of_active_main_nav_items += parseInt(jQuery(this).width(), 10);
           });
           let open_pixel_value = menu_container_width - total_width_of_active_main_nav_items;
           if (open_pixel_value >= jQuery('.menu__overflow__container > ul.overflow > li').first().attr('data-item-width')) {
