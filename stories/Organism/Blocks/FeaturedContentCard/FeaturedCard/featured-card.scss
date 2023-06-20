@@ -4,6 +4,10 @@
 
 /* featured-card container start */
 .featured-card-container {
+  >div {
+    row-gap: 1.5rem;
+  }
+
   .feature__card {
     &-title {
       display: block;

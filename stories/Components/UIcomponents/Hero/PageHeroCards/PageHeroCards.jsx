@@ -14,7 +14,7 @@ if (window.location.href.indexOf('direction=rtl') > -1) {
 }
 export function CountryCardHero({ data, title, subtitle }) {
   useEffect(() => {
-    swiper('.pagehero-cards-items', false, { breakpoints: { 768: { slidesPerView: 2 } } });
+    swiper('.pagehero-cards-items', false);
   }, []);
   return (
     <div className="pagehero-cards">
@@ -26,7 +26,7 @@ export function CountryCardHero({ data, title, subtitle }) {
           <Heading type="3" label={subtitle} dataViewport="true" />
         </div>
       </div>
-      <div className="pagehero-cards-items" data-swiper-tablet data-swiper-mobile dir={rtl}>
+      <div className="pagehero-cards-items" data-swiper-tablet data-swiper-slides-view-tablet="2" data-swiper-mobile dir={rtl}>
         <div className="swiper-scrollbar" />
         <CountryCard data={data} />
       </div>

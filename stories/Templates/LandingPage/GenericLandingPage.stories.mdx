@@ -173,6 +173,147 @@ export const getCaptionForLocale = (locale) => {
         searchData: "Select Language",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        herodata: [
+          { text: "Home" },
+          { text: "Другий рівень" },
+          { text: "Третій рівень" },
+          { text: "Назва сторінки" },
+        ],
+        title: "Новини",
+        imgsrc: BackgroundImg,
+        imgsrc2: BackgroundImg,
+        videosrc: BackgroundVideo,
+        groupcontentdata: [
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link: "#",
+            imgback: img,
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link: "#",
+            imgback: img2,
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link: "#",
+            imgback: img3,
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link: "#",
+            imgback: img4,
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link: "#",
+            imgback: img5,
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link: "#",
+            imgback: img6,
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link: "#",
+            imgback: img,
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link: "#",
+            imgback: img2,
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link: "#",
+            imgback: img3,
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link: "#",
+            imgback: img4,
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link: "#",
+            imgback: img5,
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Title of the post goes here and it’s two lines",
+            contentnametwo: "Title of the post goes here and it’s two lines",
+            paragraph:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mollis pharetra ex, a laoreet purus vulputate eget.",
+            button: "READ MORE",
+            link: "#",
+            imgback: img6,
+          },
+        ],
+        buttonname: "VIEW MORE",
+        titlename: "Title of the hero story",
+        text: "Subtitle or excerpt of the story goes below and it is two lines",
+        btnlabel: "READ MORE",
+        searchData: "Select Language",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         herodata: [
@@ -839,9 +980,11 @@ export const getCaptionForActiveLocale = (locale) => {
 
 <Meta title="Templates/Generic landing page" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Landing Page
 
@@ -936,6 +1079,12 @@ Add the base layout style from
     name="Generic landing page"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

@@ -4,7 +4,7 @@ import { getCaptionForLocale as imageCaptionData } from "../../Atom/Images/Image
 import { getCaptionForLocale as PostHeadData } from "../../Organism/Text/PostHeader/PostHeader.stories.js";
 import { getCaptionForLocale as AuthorCardData } from "../../Components/UIcomponents/Author/AuthorColumn/AuthorColumn.stories.mdx";
 import { getCaptionForLocale as blockquoteData } from "../../Molecules/Text/BlockquoteComponent/BlockquoteComponent.stories.mdx";
-import { getCaptionForLocale as paraLabel } from "../../Atom/BaseTypography/Paragraph/Paragarph.mdx";
+import { getCaptionForLocale as paraLabel } from "../../Atom/BaseTypography/Paragraph/Paragraph.stories.mdx";
 import { getCaptionForLocale as headingData } from "../../Atom/Typography/Heading/Heading.mdx";
 import { getCaptionForLocale as listData } from "../../Atom/Typography/Lists/Lists.mdx";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer//Footer.stories.mdx";
@@ -36,6 +36,14 @@ export const getParaForLocale = (locale) => {
           "Residents (youth, women, chiefs and other district and chiefdom authorities) of Malen and Makpele chiefdoms of Pujehun District and of Lower Banta and Upper Banta Chiefdoms in Moyamba district recently rated the Government of Sierra Leone (GoSL), UNDP and WFP Multi Stakeholder Platform (MSP) Project “over 80% successful” as a resource based and local conflict resolution mechanism that promotes peace and social cohesion. This finding was revealed by district stakeholders during a two-day spot-check visit to the project chiefdoms led by UNDP’s Resident Representative-Dr. Samuel Doe, where his team engaged with community members, local and traditional leaders of the areas to learn about the outcomes of the project.",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        para1:
+          "Згідно з останніми оцінками середньостатистичному домогосподарству в Україні довелося провести в цілому п'ять тижнів без електроенергії протягом зими 2022 року. Це дорівнює 35 дням у темряві, інколи за мінусової температури. На початку 2023 року полегшення майже не відчувалося – температура продовжувала падати у довгі зимові місяці.",
+        para2:
+          "Найжахливішим у цій ситуації, в кризі, яка розгорнулася на тлі іншої кризи, було те, що відключення світла означало більше, аніж просто неможливість ввімкнути світло. Електроенергія впливає на всі аспекти повсякденного життя, а її відсутність має дуже негативні наслідки для громад. Відсутність електрики ускладнює процеси надання медичної допомоги, виконання робіт і навчання дітей. Але, напевно, найбільш руйнівні наслідки відсутності електропостачання під часі війни – це порушення комунікацій.",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         para1:
@@ -82,6 +90,16 @@ export const getAuthorCaptionForLocale = (locale) => {
         detail6: "HEADLINE 6",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        detail1: "Заголовок 1",
+        detail2: "Заголовок 2",
+        detail3: "Заголовок 3",
+        detail4: "Заголовок 4",
+        detail5: "Автори",
+        detail6: "Заголовок 6",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         detail1: "العنوان 1.",
@@ -127,8 +145,9 @@ export const getAuthorCaptionForLocale = (locale) => {
 export const getHeadingCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
-      const engText = "Some achievements of the project include the following:";
-      return engText;
+      return "Some achievements of the project include the following:";
+    case "ukrainian":
+      return "Розвиток ніколи не спиняється. Не спиняємось і ми.";
     case "arabic":
       const arabicText = "تشمل بعض إنجازات المشروع ما يلي:";
       return arabicText;
@@ -144,11 +163,13 @@ export const getHeadingCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Templates/Article" />
+<Meta title="Templates/Article page" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Article Page
 
@@ -236,9 +257,15 @@ Add the base layout style from
 
 <Canvas>
   <Story
-    name="Article"
+    name="Article page"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

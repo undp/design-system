@@ -18,8 +18,9 @@ import {
 export const getheadingForLocale = (locale) => {
   switch (locale) {
     case "english":
-      const engText = "UNDP Authors";
-      return engText;
+      return "UNDP Authors";
+    case "ukrainian":
+      return "Автори ПРООН";
     case "arabic":
       const arabicText = "UNDP المؤلفون";
       return arabicText;
@@ -117,6 +118,91 @@ export const getCaptionForLocale = (locale) => {
         button: "VIEW 234 POSTS",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        authordata: [
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+          {
+            Authorlabel: "Наталiя Бойко",
+            Authortext: "Керівник проекту",
+          },
+        ],
+        paragraph:
+          "Будучи агентством Організації Об'єднаних Націй, що спеціалізується на питаннях розвитку, ПРООН підтримує стратегічні ініціативи, спрямовані на розвиток потенціалу, аби сприяти всебічному зростанню і сталому людському розвитку.",
+        button: "ЧИТАЙТЕ ДАЛІ",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         authordata: [
@@ -452,6 +538,13 @@ export const getButtonForLocale = (locale) => {
         sort: "Sort & FILTER",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        view: "ЧИТАТИ ДАЛІ",
+        close: "Закрити",
+        sort: "Пошук і фільтр",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         view: "عرض المزيد",
@@ -485,6 +578,12 @@ export const getfiltertextForLocale = (locale) => {
         options: ["Most posts", "Alphabetical"],
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        sort: "СОРТУВАТИ ЗА",
+        options: ["найбільшою кількістю дописів", "алфавітом"],
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         sort: "اختار اللغة",
@@ -508,11 +607,13 @@ export const getfiltertextForLocale = (locale) => {
   }
 };
 
-<Meta title="Templates/Author listing" />
+<Meta title="Templates/Author listing page" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Authors Listing
 
@@ -597,9 +698,15 @@ Add the base layout style from
 
 <Canvas>
   <Story
-    name="Author listing"
+    name="Author listing page"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

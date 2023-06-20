@@ -16,12 +16,12 @@
     }
 
     .hero-container {
-      margin-top: $spacing-70;
+      //margin-top: $spacing-70;
       padding-bottom: 1.875rem;
       padding-top: 1.875rem;
 
       @include devicebreak(medium) {
-        margin-top: 7.188rem;
+        //margin-top: 7.188rem;
         padding-bottom: $spacing-50;
         padding-top: $spacing-70;
       }
@@ -64,7 +64,7 @@
         padding-right: $spacing-06;
       }
 
-      > div:first-of-type {
+      >div:first-of-type {
         margin-bottom: 4.125rem;
       }
     }

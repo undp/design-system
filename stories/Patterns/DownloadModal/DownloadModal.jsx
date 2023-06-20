@@ -28,7 +28,7 @@ export function DownloadModal({
   content,
   Image,
   Category,
-  ...props
+  ...args
 }) {
   useEffect(() => {
     checkbox('.form-check input', '.download-footer .button-primary');
@@ -48,7 +48,10 @@ export function DownloadModal({
             <div className="download-body">
               {Image === 'True' && (
                 <div className="show-large">
-                  <Publicationthumb Hovercolors="yellow" />
+                  <Publicationthumb
+                    Hovercolors={args.accent}
+                    {...args}
+                  />
                 </div>
               )}
               <div className="download-content">

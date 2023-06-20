@@ -33,7 +33,7 @@ export function LightboxGallery({
         <ul className="lightbox-gallery-images">
           {data.map((item, index) => (
             <li key={index}>
-              <a href={item.galleryimg} className="glightbox" data-glightbox={`description:.glightbox-${index};`} descPosition="bottom">
+              <a href={item.galleryimg} className="glightbox" data-glightbox={`description:.glightbox-${index};`} descposition="bottom">
                 <figure>
                   <div className="image">
                     <img src={item.gallerythum} alt="image" />

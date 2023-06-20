@@ -13,6 +13,15 @@ export const getCaptionForLocale = (locale) => {
         text3: "Job title",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        paragraph:
+          "Будучи агентством Організації Об'єднаних Націй, що спеціалізується на питаннях розвитку, ПРООН підтримує стратегічні ініціативи, спрямовані на розвиток потенціалу, аби сприяти всебічному зростанню і сталому людському розвитку.",
+        text1: "Author summary",
+        text2: "Наталiя Бойко",
+        text3: "Керівник проекту",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         paragraph:
@@ -64,11 +73,12 @@ export const getCaptionForLocale = (locale) => {
 The Author summary is created for showing the authors name, designation, photo and bio in particular section. It is a multi-usage component that creates are usually teasing some kind of content.
 
 <Canvas>
-  <Story name="Author summary"
-  parameters={{
-    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-  }}
->
+  <Story
+    name="Author summary"
+    parameters={{
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+    }}
+  >
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
       return (

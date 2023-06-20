@@ -1346,9 +1346,11 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Templates/SDG page" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # SDG Page
 
@@ -1459,6 +1461,12 @@ Add the base layout style from
     name="SDG page"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

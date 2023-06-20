@@ -1,0 +1,331 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/breakpoints';
+@import '../../../../assets/scss/base';
+@import '../../../../assets/scss/typography';
+
+.dropdown-menu-wrapper {
+  margin-block-start: 7.1875rem;
+}
+
+// Dropdown menu styling.
+.menu ul {
+  display: flex;
+
+  // 1st level items
+  >li {
+    position: relative;
+    display: block;
+    text-align: center;
+
+    // 2nd level
+    ul.submenu {
+      @extend %frosted-bg;
+      box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+      position: absolute;
+      inset-block-start: calc(100% - 2rem);
+      inset-inline-start: calc(0% - 1rem);
+      padding-inline: 0;
+      z-index: 10;
+      flex-direction: column;
+      display: none;
+      width: 18rem;
+
+      li {
+        display: block;
+        width: 100%;
+        text-align: left;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        transition: 0.2s ease;
+        word-break: keep-all;
+        white-space: wrap;
+        letter-spacing: normal;
+
+        &.edge:focus>ul.sub-menu,
+        &.edge:focus-within>ul.sub-menu,
+        &.edge:hover>ul.sub-menu,
+        &.open.edge>ul.submenu {
+          right: 100%;
+          left: unset;
+        }
+
+        a {
+          display: flex;
+          width: auto;
+          transition: 0.2s ease;
+          padding: 1.25rem;
+          column-gap: 1rem;
+          justify-content: space-between;
+          align-items: center;
+          line-height: 1.25;
+          font-size: 1rem;
+          font-weight: normal;
+          text-transform: none;
+          text-align: left;
+          border-bottom: 1px solid #d4d6d8;
+          letter-spacing: unset;
+        }
+
+        &.has-submenu>a:after {
+          transition: 0.2s ease;
+          background: url(#{$img-path-Iconfourback}/chevron-right.svg) no-repeat right center;
+          content: "";
+          height: 18px;
+          min-width: 20px;
+          display: flex;
+          margin-inline-start: auto;
+          color: $color-dark-red;
+        }
+
+        >a:not(.external, .download) {
+          padding-inline-end: 1.25rem;
+        }
+
+        &.has-submenu>a.active:after {
+          margin-inline-start: 0.5rem;
+        }
+
+        >a.external .external-link-animated {
+          min-width: 0.75rem;
+        }
+
+        >a.external .download-animated {
+          min-width: 1.25rem;
+        }
+      }
+    }
+
+    // hover/focus on first level items
+    &:focus,
+    &:focus-within,
+    &:hover,
+    &.open {
+      >ul.submenu {
+        position: absolute;
+        display: flex;
+      }
+    }
+
+    ul.submenu {
+
+      li:focus,
+      li:focus-within,
+      li:hover,
+      li.open {
+        transition: 0.2s ease;
+        background: $color-blue-600;
+        color: $color-white;
+
+        >ul.submenu {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          inset-block-start: 0%;
+          inset-inline-start: 100%;
+        }
+
+        &.edge:focus>ul.sub-menu,
+        &.edge:focus-within>ul.sub-menu,
+        &.edge:hover>ul.sub-menu,
+        &.edge>ul.submenu {
+          inset-inline-end: 100%;
+          inset-inline-start: unset;
+        }
+
+        >a:focus,
+        >a:focus-within,
+        >a:hover,
+        >a,
+        >a.active {
+          color: $color-white;
+        }
+
+        >a:not(.external, .download) {
+          padding-inline-end: 0.75rem;
+        }
+
+        &.has-submenu>a.active:after,
+        &.has-submenu>a:after {
+          background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat right center;
+          margin-inline-start: 0.5rem;
+        }
+
+        >a.external .external-link-animated {
+          box-shadow: -2px 2px 0 0 $color-white, -4px 0 0 -2px $color-white, -3px 3px 0 -1px $color-white;
+
+          &:before {
+            transition: transform 0.2s;
+            background-color: $color-white;
+          }
+
+          &:after {
+            transition: transform 0.2s;
+            border-inline-end: 2px solid $color-white;
+            border-block-start: 2px solid $color-white;
+          }
+        }
+
+        >a.download .download-animated {
+          &:before {
+            transition: transform 0.2s;
+            background-color: $color-white;
+          }
+
+          i {
+            transition: transform 0.2s;
+            border: 2px solid $color-white;
+            border-block-start: 0;
+          }
+
+          &:after {
+            transition: transform 0.2s;
+            border-block-end: 2px solid $color-white;
+            border-inline-start: 2px solid $color-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// RIGHT TO LEFT - Dropdown menu styling.
+[dir='rtl'] {
+  .menu ul {
+
+    >li {
+
+      ul.submenu {
+
+        li {
+          &.has-submenu>a:after {
+            background: url(#{$img-path-Iconfourback}/chevron-left.svg) no-repeat left center;
+          }
+
+          a {
+            text-align: right;
+          }
+        }
+
+        li:focus,
+        li:focus-within,
+        li:hover,
+        li.open {
+
+          >ul.submenu {
+            position: absolute;
+            display: block;
+          }
+
+          &.has-submenu>a.active:after,
+          &.has-submenu>a:after {
+            background: url(#{$img-path-Iconfourback}/chevron-left-white.svg) no-repeat left center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animate the icons in the dropdown menu on link hover.
+.menu {
+  li>a.external {
+    .external-link-animated {
+      &::after {
+        @include transform(rotate(0deg) translate(0, 0));
+      }
+
+      &::before {
+        @include transform(rotate(-45deg) translate(0, 0));
+      }
+    }
+  }
+
+  li:hover>a.external {
+    .external-link-animated {
+      box-shadow: -2px 2px 0 0 $color-white, -4px 0 0 -2px $color-white, -3px 3px 0 -1px $color-white;
+
+      &::after {
+        @include transform(rotate(0deg) translate(5px, -5px));
+        border-inline-end-color: $color-white;
+        border-block-start-color: $color-white;
+      }
+
+      &::before {
+        @include transform(rotate(-45deg) translate(7px, 0));
+        background: $color-white;
+      }
+    }
+  }
+
+  li:hover>a.download {
+    .download-animated {
+
+      i {
+        border-color: $color-white;
+      }
+
+      &::after {
+        @include transform(rotate(-45deg) translate(7px, -7px));
+        border-block-end-color: $color-white;
+        border-inline-start-color: $color-white;
+      }
+
+      &::before {
+        @include transform(translate(0, -10px));
+        background: $color-white;
+      }
+    }
+  }
+}
+
+// RIGHT TO LEFT - Animate the icons in the dropdown menu on link hover.
+[dir='rtl'] {
+
+  .menu {
+    li>a.external {
+      .external-link-animated {
+        @include transform(rotate(270deg));
+
+        &::before {
+          @include transform(rotate(-45deg) translate(1px, 1px));
+        }
+
+        &::after {
+          @include transform(rotate(90deg) translate(-1px, -4px));
+        }
+      }
+    }
+
+    li:hover>a.external {
+      .external-link-animated {
+        @include transform(rotate(270deg));
+
+        &::before {
+          @include transform(rotate(-45deg) translate(7px, 0));
+        }
+
+        &::after {
+          @include transform(rotate(90deg) translate(-6px, -8px));
+        }
+      }
+    }
+
+    li>a.download {
+      .download-animated {
+        &::after {
+          @include transform(rotate(45deg) translate(0, 0));
+        }
+      }
+    }
+
+    li:hover>a.download {
+      .download-animated {
+        &::after {
+          @include transform(rotate(45deg) translate(-7px, -7px));
+        }
+      }
+    }
+  }
+}

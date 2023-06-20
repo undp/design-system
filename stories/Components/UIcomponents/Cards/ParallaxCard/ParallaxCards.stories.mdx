@@ -37,9 +37,46 @@ export const getCaptionForLocale = (locale) => {
             btnlabel: "READ MORE",
           },
         ],
-        title: ["Our",<br/>,"Expertise"],
+        title: ["Our", <br />, "Expertise"],
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        data: [
+          {
+            name: "Заголовок",
+            descriptionText:
+              "Будучи агентством Організації Об'єднаних Націй, що спеціалізується на питаннях розвитку, ПРООН підтримує стратегічні ініціативи, спрямовані на розвиток потенціалу, аби сприяти всебічному зростанню і сталому людському розвитку.",
+            btnlabel: "ЧИТАТИ ДАЛІ",
+          },
+          {
+            name: "Заголовок",
+            descriptionText:
+              "Будучи агентством Організації Об'єднаних Націй, що спеціалізується на питаннях розвитку, ПРООН підтримує стратегічні ініціативи, спрямовані на розвиток потенціалу, аби сприяти всебічному зростанню і сталому людському розвитку.",
+            btnlabel: "ЧИТАТИ ДАЛІ",
+          },
+          {
+            name: "Заголовок",
+            descriptionText:
+              "Будучи агентством Організації Об'єднаних Націй, що спеціалізується на питаннях розвитку, ПРООН підтримує стратегічні ініціативи, спрямовані на розвиток потенціалу, аби сприяти всебічному зростанню і сталому людському розвитку.",
+            btnlabel: "ЧИТАТИ ДАЛІ",
+          },
+          {
+            name: "Заголовок",
+            descriptionText:
+              "Будучи агентством Організації Об'єднаних Націй, що спеціалізується на питаннях розвитку, ПРООН підтримує стратегічні ініціативи, спрямовані на розвиток потенціалу, аби сприяти всебічному зростанню і сталому людському розвитку.",
+            btnlabel: "ЧИТАТИ ДАЛІ",
+          },
+          {
+            name: "Заголовок",
+            descriptionText:
+              "Будучи агентством Організації Об'єднаних Націй, що спеціалізується на питаннях розвитку, ПРООН підтримує стратегічні ініціативи, спрямовані на розвиток потенціалу, аби сприяти всебічному зростанню і сталому людському розвитку.",
+            btnlabel: "ЧИТАТИ ДАЛІ",
+          },
+        ],
+        title: ["Наші", <br />, "теми"],
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         data: [
@@ -74,7 +111,7 @@ export const getCaptionForLocale = (locale) => {
             btnlabel: "اقرأ أكثر",
           },
         ],
-        title: ["لنا",<br/>,"خبرة"],
+        title: ["لنا", <br />, "خبرة"],
       };
       return arabicText;
     case "burmese":
@@ -111,7 +148,7 @@ export const getCaptionForLocale = (locale) => {
             btnlabel: "ပိုပြီးဖတ်ပါ",
           },
         ],
-        title: ["ကျွန်တော်တို့ရဲ့",<br/>,"ကျွမ်းကျင်မှု"],
+        title: ["ကျွန်တော်တို့ရဲ့", <br />, "ကျွမ်းကျင်မှု"],
       };
       return burmeseText;
     case "japanese":
@@ -148,7 +185,7 @@ export const getCaptionForLocale = (locale) => {
             btnlabel: "続きを読む",
           },
         ],
-        title: ["私たちの",<br/>,"専門知識"],
+        title: ["私たちの", <br />, "専門知識"],
       };
       return japaneseText;
     default:
@@ -185,7 +222,7 @@ export const getCaptionForLocale = (locale) => {
             btnlabel: "READ MORE",
           },
         ],
-        title: ["Our",<br/>,"Expertise"],
+        title: ["Our", <br />, "Expertise"],
       };
       return dummy;
   }
@@ -198,6 +235,7 @@ export const getCaptionForLocale = (locale) => {
 The Parallax Cards component defines a card of information data with some items- Title, Paragraph, and CTA Link.
 
 ### Overview
+
 Parallax cards consist of textual and imagery sections. While scrolling through the page on desktops text part is scrolled with the normal speed and the image is “racing” along with greater velocity creating a parallax effect. Image can have a hover effect, sliding out the foreground picture and revealing the background image or video.
 
 ### When to use:
@@ -207,6 +245,7 @@ Can be used for the set of short bullet points accompanied with some imagery to 
 ### Formatting
 
 #### Default
+
 The Parallax cards are usually used inside the grid to manage the different sizes and card orientations. It can also be accompanied with additional simple text elements 9title, description) and providing visual guide rails for individual cards.
 
 On small screens, the widget collapses to the Carousel.
@@ -225,16 +264,21 @@ The Image is placed in either part of the grid and the Title, Paragraph, and CTA
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       return (
-        <ParallaxCards alt={"feature card"} data={caption.data} title={caption.title} ></ParallaxCards>
+        <ParallaxCards
+          alt={"feature card"}
+          data={caption.data}
+          title={caption.title}
+        ></ParallaxCards>
       );
     }}
   </Story>
 </Canvas>
 
 ### Usage:
+
 - Copy the HTML from HTML Tab and also include css and js files.
 - Make sure to remove swiper-slider-0 swiper-initialized swiper-horizontal swiper-pointer-events remove these classes, remove ID and aria-label attributes as these are generated by the Swiper library
-- Initialize the parallaxEffect by calling parallaxEffect('.parallax-card', ['.parallax-card__image', '.parallax-card__content'], 'top center', 'bottom+=85 center', 'vertical', 'desktop', 'percent') and swiper by calling swiper('.parallax__content') function on load.
+- Initialize the parallaxEffect by calling parallaxEffect('.parallax-card', ['.parallax-card__image', '.parallax-card__content'], 'top center', 'bottom+=85 center', 'vertical', 'desktop', 'percent') and swiper by calling swiper('.parallax\_\_content') function on load.
 - Include Swiper (https://swiperjs.com/get-started) and https://greensock.com/docs/v3/Installation GSAP libraries for parallax (include gsap, ScrollTrigger and EasePack) and slider in your html file.
 - Refer [this document](https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration & options
 - Refer [this document](https://github.com/undp/design-system/wiki/Parallax-documentation) for Parallax integration & options
@@ -242,6 +286,7 @@ The Image is placed in either part of the grid and the Title, Paragraph, and CTA
 ### CSS and JS References
 
 #### CSS:
+
 Add the base layout style from
 
 - https://undp.github.io/design-system/css/base-minimal.min.css
@@ -251,17 +296,21 @@ Add the base layout style from
 - https://undp.github.io/design-system/css/components/swiper.min.css
 
 #### JS:
+
 - https://undp.github.io/design-system/js/swiper.min.js
 - https://undp.github.io/design-system/js/parallax.min.js
 - https://undp.github.io/design-system/js/smartresize.min.js
 
 3rd Party library dependencies
+
 - Swiper (https://swiperjs.com/get-started)
 - GSAP (https://greensock.com/docs/v3/Installation)
 
 ### Interactions
+
 - While scrolling the page, the contents of the card move to give a 3D effect.
 - By clicking on the CTA link, the page is redirected to the detailed page.
 
 ### Changelog
+
 1.0 — Released component

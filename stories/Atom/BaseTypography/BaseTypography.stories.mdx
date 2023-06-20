@@ -12,20 +12,19 @@ import { Quotation } from "./Quotation/Quotation";
 import { Small } from "./Small/Small";
 import { List } from "./../Typography/Lists/Lists";
 import { Descriptionlist } from "./../Typography/Lists/Descriptionlist";
-import { DetailsTag } from '../ReachElement/Details/Details';
-import { Figcaption } from '../ReachElement/Figcaption/Figcaption';
-
+import { DetailsTag } from "../ReachElement/Details/Details";
+import { Figcaption } from "../ReachElement/Figcaption/Figcaption";
 
 export const getCaptionForLocaleHeading = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
-        detail1: "HEADLINE 1",
+        detail1: "Headline 1",
         detail2: "Headline 2",
         detail3: "Headline 3",
         detail4: "Headline 4",
         detail5: "Headline 5",
-        detail6: "HEADLINE 6",
+        detail6: "Headline 6",
       };
       return engText;
     case "arabic":
@@ -58,14 +57,24 @@ export const getCaptionForLocaleHeading = (locale) => {
         detail6: "見出し6",
       };
       return japaneseText;
+    case "ukrainian":
+      const ukrainianText = {
+        detail1: "Заголовок 1",
+        detail2: "Заголовок 2",
+        detail3: "Заголовок 3",
+        detail4: "Заголовок 4",
+        detail5: "Заголовок 5",
+        detail6: "Заголовок 6",
+      };
+      return ukrainianText;
     default:
       return {
-        detail1: "HEADLINE 1",
+        detail1: "Headline 1",
         detail2: "Headline 2",
         detail3: "Headline 3",
         detail4: "Headline 4",
         detail5: "Headline 5",
-        detail6: "HEADLINE 6",
+        detail6: "Headline 6",
       };
   }
 };
@@ -81,9 +90,10 @@ export const getCaptionForLocaleHeading = (locale) => {
 />
 
 # Base Typography
+
 Basic elements which the design system has some styling listed here, you can use the elements as it is, without any specific CSS classes.
 
-<Anchor storyId='foundation-typography-basetypography--abbreviation'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--abbreviation"></Anchor>
 
 ### Abbreviation
 
@@ -97,6 +107,14 @@ export const getCaptionForLocaleAbbr = (locale) => {
         text2: "to style your",
       };
       return engText;
+    case "ukrainian":
+      const ukrainianText = {
+        detail1: "Мова розмітки гіпертексту",
+        detail2: "Каскадні таблиці стилів",
+        text1: "Ви можете використовувати",
+        text2: "стилізувати свій",
+      };
+      return ukrainianText;
     case "arabic":
       const arabicText = {
         detail1: "لغة ترميز النصوص التشعبية",
@@ -146,7 +164,7 @@ Typographic scale when using abbreviation in text component:
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--blockquote'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--blockquote"></Anchor>
 
 ### Blockquote
 
@@ -159,6 +177,13 @@ export const getCaptionForLocaleBlockquote = (locale) => {
         citeText: "-Firstname Lastname",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        detail:
+          "“Мудра людина залишається на задньому плані й саме завдяки цьому опиняється попереду інших”",
+        citeText: "-Лао Цзи",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         detail:
@@ -209,7 +234,7 @@ Typographic scale when using blockquote in text component:
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--cite'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--cite"></Anchor>
 
 ### Cite
 
@@ -218,6 +243,9 @@ export const getCaptionForLocaleCite = (locale) => {
     case "english":
       const engText = { detail: "-Firstname Lastname" };
       return engText;
+    case "ukrainian":
+      const ukText = { detail: "-Лао Цзи" };
+      return ukText;
     case "arabic":
       const arabicText = { detail: "الاسم الاول الاسم الاخير-" };
       return arabicText;
@@ -242,12 +270,16 @@ Typographic scale when using cite in text component:
   <Story name="Cite">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocaleCite(locale);
-      return <p><Cite label={caption.detail}></Cite></p>;
+      return (
+        <p>
+          <Cite label={caption.detail}></Cite>
+        </p>
+      );
     }}
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--code'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--code"></Anchor>
 
 ### Code
 
@@ -263,6 +295,16 @@ export const getCaptionForLocaleCode = (locale) => {
           "object contains the length of the string. It can also serve as a character counter.",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        detail1: "Властивість",
+        detail2: "length()",
+        detail3: "об'єкта",
+        detail4: "String",
+        detail5:
+          "містить довжину рядка у кодових одиницях UTF-16.",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         detail1: "ال",
@@ -326,9 +368,10 @@ Typographic scale when using code in text component:
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--description-list'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--description-list"></Anchor>
 
 ### Description List
+
 A description list is a list of terms, with a description of each term.
 
 The <code>dl</code> tag defines the description list, the <code>dt</code> tag defines the term (name), and the <code>dd</code> tag describes each term.
@@ -342,20 +385,55 @@ The <code>dl</code> tag defines the description list, the <code>dt</code> tag de
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--details'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--details"></Anchor>
 
 ### Details
 
 The details tag creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.
 
 export const getLocaleForDetails = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {summary: 'Epcot Center', details: 'Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.'}; return engText;
-    case 'arabic': const arabicText = {summary: 'مركز Epcot', details: 'pcot هي حديقة ترفيهية في Walt Disney World Resort تضم معالم جذب مثيرة وأجنحة دولية وألعاب نارية حائزة على جوائز ومناسبات موسمية خاصة.'}; return arabicText;
-    case 'burmese': const burmeseText = {summary: 'Epcot စင်တာ', details: 'pcot သည်စိတ်လှုပ်ရှားဖွယ်ဆွဲဆောင်မှုများ၊ နိုင်ငံတကာမဏ္ionsပ်များ၊ ဆုရမီးရှူးမီးပန်းများနှင့်ရာသီအလိုက်အထူးအစီအစဉ်များပါ ၀ င်သော Walt Disney World Resort တွင်အဓိကပန်းခြံဖြစ်သည်။'}; return burmeseText;
-    case 'japanese': const japaneseText = {summary: 'エプコットセンター', details: 'pcotは、エキサイティングなアトラクション、国際的なパビリオン、受賞歴のある花火、季節の特別イベントを備えたウォルトディズニーワールドリゾートのテーマパークです。'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = {
+        summary: "Epcot Center",
+        details:
+          "Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.",
+      };
+      return engText;
+    case "ukrainian":
+      const ukText = {
+        summary: "Київ",
+        details:
+          "столиця та найбільше місто України. Розташований у середній течії Дніпра, у північній Наддніпрянщині",
+      };
+      return ukText;
+    case "arabic":
+      const arabicText = {
+        summary: "مركز Epcot",
+        details:
+          "pcot هي حديقة ترفيهية في Walt Disney World Resort تضم معالم جذب مثيرة وأجنحة دولية وألعاب نارية حائزة على جوائز ومناسبات موسمية خاصة.",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        summary: "Epcot စင်တာ",
+        details:
+          "pcot သည်စိတ်လှုပ်ရှားဖွယ်ဆွဲဆောင်မှုများ၊ နိုင်ငံတကာမဏ္ionsပ်များ၊ ဆုရမီးရှူးမီးပန်းများနှင့်ရာသီအလိုက်အထူးအစီအစဉ်များပါ ၀ င်သော Walt Disney World Resort တွင်အဓိကပန်းခြံဖြစ်သည်။",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        summary: "エプコットセンター",
+        details:
+          "pcotは、エキサイティングなアトラクション、国際的なパビリオン、受賞歴のある花火、季節の特別イベントを備えたウォルトディズニーワールドリゾートのテーマパークです。",
+      };
+      return japaneseText;
     default:
-      return {summary: 'Epcot Center', details: 'Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.'};
+      return {
+        summary: "Epcot Center",
+        details:
+          "Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.",
+      };
   }
 };
 
@@ -363,25 +441,59 @@ export const getLocaleForDetails = (locale) => {
   <Story name="Details">
     {(args, { globals: { locale } }) => {
       const caption = getLocaleForDetails(locale);
-      return <DetailsTag summary={caption.summary} details={caption.details}></DetailsTag>;
+      return (
+        <DetailsTag
+          summary={caption.summary}
+          details={caption.details}
+        ></DetailsTag>
+      );
     }}
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--figcaption'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--figcaption"></Anchor>
 
 ### Figcaption
+
 The <code>figcaption</code> tag is used to caption the image. The <code>figcaption</code> tag is used with the <code>figure</code> tag.
 
-
 export const getLocaleForFigcaption = (locale) => {
-  switch(locale) {
-    case 'english': const engText = {details: 'Dummy text refers to the bits of content that are used to fill a website mock-up. This text helps web designers better envision how the website will look as a finished product. '}; return engText;
-    case 'arabic': const arabicText = {details: 'يشير النص الوهمي إلى أجزاء المحتوى المستخدمة لملء نموذج موقع الويب. يساعد هذا النص مصممي الويب على تصور أفضل لكيفية ظهور موقع الويب كمنتج نهائي.'}; return arabicText;
-    case 'burmese': const burmeseText = {details: 'Dummy စာသားသည် ၀ က်ဘ်ဆိုက်၏လှောင်ပြောင်မှုကိုဖြည့်ရန်အသုံးပြုသောအကြောင်းအရာအနည်းငယ်ကိုရည်ညွှန်းသည်။ ဤစာသားသည် ၀ က်ဘ်ဒီဇိုင်နာများအနေဖြင့် ၀ က်ဘ်ဆိုက်သည်အချောထည်ထုတ်ကုန်တစ်ခုအဖြစ်မည်သို့ပုံဖော်ရန်စိတ်ကူးကောင်းမြင်နိုင်စေသည်။'}; return burmeseText;
-    case 'japanese': const japaneseText = {details: 'ダミーテキストとは、Webサイトのモックアップを埋めるために使用されるコンテンツの一部を指します。このテキストは、WebデザイナーがWebサイトが完成品としてどのように見えるかをよりよく想像するのに役立ちます。'}; return japaneseText;
+  switch (locale) {
+    case "english":
+      const engText = {
+        details:
+          "Dummy text refers to the bits of content that are used to fill a website mock-up. This text helps web designers better envision how the website will look as a finished product. ",
+      };
+      return engText;
+    case "ukrainian":
+      const ukText = {
+        details:
+          "Підпис до зображення. Завжди розміщується всередині елемента <figure>.",
+      };
+      return ukText;
+    case "arabic":
+      const arabicText = {
+        details:
+          "يشير النص الوهمي إلى أجزاء المحتوى المستخدمة لملء نموذج موقع الويب. يساعد هذا النص مصممي الويب على تصور أفضل لكيفية ظهور موقع الويب كمنتج نهائي.",
+      };
+      return arabicText;
+    case "burmese":
+      const burmeseText = {
+        details:
+          "Dummy စာသားသည် ၀ က်ဘ်ဆိုက်၏လှောင်ပြောင်မှုကိုဖြည့်ရန်အသုံးပြုသောအကြောင်းအရာအနည်းငယ်ကိုရည်ညွှန်းသည်။ ဤစာသားသည် ၀ က်ဘ်ဒီဇိုင်နာများအနေဖြင့် ၀ က်ဘ်ဆိုက်သည်အချောထည်ထုတ်ကုန်တစ်ခုအဖြစ်မည်သို့ပုံဖော်ရန်စိတ်ကူးကောင်းမြင်နိုင်စေသည်။",
+      };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = {
+        details:
+          "ダミーテキストとは、Webサイトのモックアップを埋めるために使用されるコンテンツの一部を指します。このテキストは、WebデザイナーがWebサイトが完成品としてどのように見えるかをよりよく想像するのに役立ちます。",
+      };
+      return japaneseText;
     default:
-      return {details: 'Dummy text refers to the bits of content that are used to fill a website mock-up. This text helps web designers better envision how the website will look as a finished product. '};
+      return {
+        details:
+          "Dummy text refers to the bits of content that are used to fill a website mock-up. This text helps web designers better envision how the website will look as a finished product. ",
+      };
   }
 };
 
@@ -394,9 +506,10 @@ export const getLocaleForFigcaption = (locale) => {
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--headings'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--headings"></Anchor>
 
 ### Headings
+
 We can use the <code>h1/h2/h3/h4/h5/h6 tags</code> in any component to display the headings. h1 for most important heading to h6 for least important heading.
 
 Typographic scale when using headings in text component:
@@ -405,19 +518,21 @@ Typographic scale when using headings in text component:
   <Story name="Headings">
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocaleHeading(locale);
-      return <>
-        <Heading type="1" label={caption.detail1}></Heading>
-        <Heading type="2" label={caption.detail2}></Heading>
-        <Heading type="3" label={caption.detail3}></Heading>
-        <Heading type="4" label={caption.detail4}></Heading>
-        <Heading type="5" label={caption.detail5}></Heading>
-        <Heading type="6" label={caption.detail6}></Heading>
-      </>;
+      return (
+        <>
+          <Heading type="1" label={caption.detail1}></Heading>
+          <Heading type="2" label={caption.detail2}></Heading>
+          <Heading type="3" label={caption.detail3}></Heading>
+          <Heading type="4" label={caption.detail4}></Heading>
+          <Heading type="5" label={caption.detail5}></Heading>
+          <Heading type="6" label={caption.detail6}></Heading>
+        </>
+      );
     }}
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--hr'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--hr"></Anchor>
 
 ### HR
 
@@ -429,6 +544,12 @@ export const getCaptionForLocaleHr = (locale) => {
           "Large paragraph lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices. Quisque eget placerat odio, vel viverra ipsum. Sed pharetra varius dignissim. Cras varius luctus est sit amet sollicitudin. Donec eget dui eget nulla luctus ultrices. Sed eu turpis quam. Nulla facilisi.",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        detail:
+          "Будучи агентством Організації Об'єднаних Націй, що спеціалізується на питаннях розвитку, ПРООН підтримує стратегічні ініціативи, спрямовані на розвиток потенціалу, аби сприяти всебічному зростанню і сталому людському розвитку. Завдяки партнерству з національними, обласними та місцевими органами влади, громадянським суспільством і приватним сектором, ПРООН прагне підтримати Україну на шляху до подолання бідності, розвитку людського потенціалу, досягнення справедливих результатів, захисту довкілля і просування демократичного врядування.",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         detail:
@@ -470,7 +591,7 @@ Typographic scale when using hr in text component:
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--mark'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--mark"></Anchor>
 
 ### Mark
 
@@ -479,6 +600,8 @@ export const getCaptionForLocaleMark = (locale) => {
     case "english":
       const engText = { detail: "Eos nulla molestiae" };
       return engText;
+    case "ukrainian":
+      return { detail: "Розвиток ніколи не спиняється. Не спиняємось і ми." };
     case "arabic":
       const arabicText = { detail: "لا إزعاج" };
       return arabicText;
@@ -519,15 +642,15 @@ Typographic scale when using mark in text component:
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--ordered-list'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--ordered-list"></Anchor>
 
 ### Ordered List
+
 An ordered list is used if there is a relation/hierarchy between list items. Ordered list items begin with a number generally.
 
 Start an ordered list with the <code>o1</code> tag.
 
 Add a <code>li</code> tag for each list item
-
 
 <Canvas>
   <Story name="Ordered list">
@@ -538,7 +661,7 @@ Add a <code>li</code> tag for each list item
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--p'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--p"></Anchor>
 
 ### Paragraph
 
@@ -550,6 +673,8 @@ export const getCaptionForLocaleParagraph = (locale) => {
           "Large paragraph lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porttitor mauris quis pulvinar ultrices. Quisque eget placerat odio, vel viverra ipsum. Sed pharetra varius dignissim. Cras varius luctus est sit amet sollicitudin. Donec eget dui eget nulla luctus ultrices. Sed eu turpis quam. Nulla facilisi.",
       };
       return engText;
+    case "ukrainian":
+      return {detail: "Будучи агентством Організації Об'єднаних Націй, що спеціалізується на питаннях розвитку, ПРООН підтримує стратегічні ініціативи, спрямовані на розвиток потенціалу, аби сприяти всебічному зростанню і сталому людському розвитку. Завдяки партнерству з національними, обласними та місцевими органами влади, громадянським суспільством і приватним сектором, ПРООН прагне підтримати Україну на шляху до подолання бідності, розвитку людського потенціалу, досягнення справедливих результатів, захисту довкілля і просування демократичного врядування."}
     case "arabic":
       const arabicText = {
         detail:
@@ -591,7 +716,7 @@ Typographic scale when using paragraph in text component:
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--quotation'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--quotation"></Anchor>
 
 ### Quotation
 
@@ -603,6 +728,8 @@ export const getCaptionForLocaleQuotation = (locale) => {
           "Scientists are considering whether the Earth has entered an entirely new geological epoch: the Anthropocene, or the age of humans.",
       };
       return engText;
+    case "ukrainian":
+      return {detail: "Еней був парубок моторний I хлопець хоть куди козак, Удавсь на всеє зле проворний, Завзятіший од всіх бурлак."}
     case "arabic":
       const arabicText = {
         detail:
@@ -644,7 +771,7 @@ Typographic scale when using quotation in text component:
   </Story>
 </Canvas>
 
-<Anchor storyId='foundation-typography-basetypography--small'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--small"></Anchor>
 
 ### Small
 
@@ -653,9 +780,11 @@ export const getCaptionForLocaleSmall = (locale) => {
     case "english":
       const engText = { detail: "Et occaecati eos nulla molestiae repellat." };
       return engText;
+    case "ukrainian":
+      return {detail: "Програма ПРООН із підвищення стійкості та відновлення"}
     case "arabic":
       const arabicText = {
-        detail: "Et Occaecati eos nulla molestiae repellat.",
+        detail: "برنامج الأمم المتحدة الإنمائي في الدول العربية",
       };
       return arabicText;
     case "burmese":
@@ -688,7 +817,6 @@ Typographic scale when using small in text component:
   </Story>
 </Canvas>
 
-
 export const getCaptionForLocaleList = (locale) => {
   switch (locale) {
     case "english":
@@ -696,39 +824,48 @@ export const getCaptionForLocaleList = (locale) => {
         data: [
           {
             label: "United Nations Development Programme",
-            text:
-              "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
+            text: "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
           },
           {
             label: "United Nations Development Programme",
-            text:
-              "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
+            text: "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
           },
           {
             label: "United Nations Development Programme",
-            text:
-              "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
+            text: "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
           },
         ],
       };
       return engText.data;
+    case "ukrainian":
+      return [
+          {
+            label: "НАПРЯМ 1",
+            text: "Можливості Уряду реагувати на кризові ситуації та вирішувати їх.",
+          },
+          {
+            label: "НАПРЯМ 2",
+            text: "Безперервне надання державних послуг.",
+          },
+          {
+            label: "НАПРЯМ 3",
+            text: "Аварійні роботи, що сприяють відновленню та відбудові.",
+          },
+      ];
     case "arabic":
       const arabicText = {
         data: [
           {
             label: "برنامج الأمم المتحدة الإنمائي",
-            text:
-              "برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.",
+            text: "برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.",
           },
           {
             label: "برنامج الأمم المتحدة الإنمائي",
-            text:
-              "برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.",
+            text: "برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.",
           },
           {
             label: "برنامج الأمم المتحدة الإنمائي",
-            text:
-              "برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.",
+            text: "برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.",
           },
         ],
       };
@@ -738,18 +875,15 @@ export const getCaptionForLocaleList = (locale) => {
         data: [
           {
             label: "ကုလသမဂ္ဂဖွံ့ဖြိုးရေးအစီအစဉ်",
-            text:
-              "ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးအားမြှောက် ပြု၍ ပြောင်းလဲမှုအတွက်ထောက်ခံသူများနှင့်နိုင်ငံများအားလူတို့အတွက်ပိုမိုကောင်းမွန်သောဘ ၀ ကိုတည်ဆောက်ရန်အကူအညီများ၊ အတွေ့အကြုံများနှင့်အရင်းအမြစ်များသို့ချိတ်ဆက်ပေးသည်။",
+            text: "ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးအားမြှောက် ပြု၍ ပြောင်းလဲမှုအတွက်ထောက်ခံသူများနှင့်နိုင်ငံများအားလူတို့အတွက်ပိုမိုကောင်းမွန်သောဘ ၀ ကိုတည်ဆောက်ရန်အကူအညီများ၊ အတွေ့အကြုံများနှင့်အရင်းအမြစ်များသို့ချိတ်ဆက်ပေးသည်။",
           },
           {
             label: "ကုလသမဂ္ဂဖွံ့ဖြိုးရေးအစီအစဉ်",
-            text:
-              "ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးအားမြှောက် ပြု၍ ပြောင်းလဲမှုအတွက်ထောက်ခံသူများနှင့်နိုင်ငံများအားလူတို့အတွက်ပိုမိုကောင်းမွန်သောဘ ၀ ကိုတည်ဆောက်ရန်အကူအညီများ၊ အတွေ့အကြုံများနှင့်အရင်းအမြစ်များသို့ချိတ်ဆက်ပေးသည်။",
+            text: "ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးအားမြှောက် ပြု၍ ပြောင်းလဲမှုအတွက်ထောက်ခံသူများနှင့်နိုင်ငံများအားလူတို့အတွက်ပိုမိုကောင်းမွန်သောဘ ၀ ကိုတည်ဆောက်ရန်အကူအညီများ၊ အတွေ့အကြုံများနှင့်အရင်းအမြစ်များသို့ချိတ်ဆက်ပေးသည်။",
           },
           {
             label: "ကုလသမဂ္ဂဖွံ့ဖြိုးရေးအစီအစဉ်",
-            text:
-              "ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးအားမြှောက် ပြု၍ ပြောင်းလဲမှုအတွက်ထောက်ခံသူများနှင့်နိုင်ငံများအားလူတို့အတွက်ပိုမိုကောင်းမွန်သောဘ ၀ ကိုတည်ဆောက်ရန်အကူအညီများ၊ အတွေ့အကြုံများနှင့်အရင်းအမြစ်များသို့ချိတ်ဆက်ပေးသည်။",
+            text: "ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်သည်ကုလသမဂ္ဂ၏ကမ္ဘာလုံးဆိုင်ရာဖွံ့ဖြိုးရေးကွန်ယက်ဖြစ်သည်။ ၎င်းသည်နိုင်ငံများအကြားနည်းပညာနှင့်ရင်းနှီးမြှုပ်နှံမှုပူးပေါင်းဆောင်ရွက်မှုကိုအားပေးအားမြှောက် ပြု၍ ပြောင်းလဲမှုအတွက်ထောက်ခံသူများနှင့်နိုင်ငံများအားလူတို့အတွက်ပိုမိုကောင်းမွန်သောဘ ၀ ကိုတည်ဆောက်ရန်အကူအညီများ၊ အတွေ့အကြုံများနှင့်အရင်းအမြစ်များသို့ချိတ်ဆက်ပေးသည်။",
           },
         ],
       };
@@ -759,18 +893,15 @@ export const getCaptionForLocaleList = (locale) => {
         data: [
           {
             label: "国連開発計画",
-            text:
-              "国連開発計画は、国連のグローバルな開発ネットワークです。 それは、国家間の技術的および投資協力を促進し、変化を提唱し、人々がより良い生活を築くのを助けるために、国家を知識、経験および資源に結び付けます。",
+            text: "国連開発計画は、国連のグローバルな開発ネットワークです。 それは、国家間の技術的および投資協力を促進し、変化を提唱し、人々がより良い生活を築くのを助けるために、国家を知識、経験および資源に結び付けます。",
           },
           {
             label: "国連開発計画",
-            text:
-              "国連開発計画は、国連のグローバルな開発ネットワークです。 それは、国家間の技術的および投資協力を促進し、変化を提唱し、人々がより良い生活を築くのを助けるために、国家を知識、経験および資源に結び付けます。",
+            text: "国連開発計画は、国連のグローバルな開発ネットワークです。 それは、国家間の技術的および投資協力を促進し、変化を提唱し、人々がより良い生活を築くのを助けるために、国家を知識、経験および資源に結び付けます。",
           },
           {
             label: "国連開発計画",
-            text:
-              "国連開発計画は、国連のグローバルな開発ネットワークです。 それは、国家間の技術的および投資協力を促進し、変化を提唱し、人々がより良い生活を築くのを助けるために、国家を知識、経験および資源に結び付けます。",
+            text: "国連開発計画は、国連のグローバルな開発ネットワークです。 それは、国家間の技術的および投資協力を促進し、変化を提唱し、人々がより良い生活を築くのを助けるために、国家を知識、経験および資源に結び付けます。",
           },
         ],
       };
@@ -780,18 +911,15 @@ export const getCaptionForLocaleList = (locale) => {
         data: [
           {
             label: "United Nations Development Programme",
-            text:
-              "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
+            text: "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
           },
           {
             label: "United Nations Development Programme",
-            text:
-              "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
+            text: "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
           },
           {
             label: "United Nations Development Programme",
-            text:
-              "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
+            text: "The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.",
           },
         ],
       };
@@ -799,11 +927,10 @@ export const getCaptionForLocaleList = (locale) => {
   }
 };
 
-
-
-<Anchor storyId='foundation-typography-basetypography--unordered-list'></Anchor>
+<Anchor storyId="foundation-typography-basetypography--unordered-list"></Anchor>
 
 ### Unordered List
+
 An unordered list is used if there is no hierarchy required. Unordered lists start with a bullet.
 
 Start an unordered list with the <code>u1</code> tag.
@@ -820,4 +947,5 @@ Add a <code>li</code> tag for each list item
 </Canvas>
 
 ### Usage
+
 - Include **https://undp.github.io/design-system/css/base-minimal.min.css** file in your HTML file, no other CSS and JS file required.

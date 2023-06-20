@@ -41,14 +41,14 @@
   }
 
   .mt-h {
-    margin-top: 5.25rem;
+    margin-top: 1.5rem;
 
     @include devicebreak(medium) {
-      margin-top: 8.75rem;
+      //margin-top: 8.75rem;
     }
 
     @include devicebreak(xlarge) {
-      margin-top: 11.875rem;
+      margin-top: 5rem;
     }
   }
 
@@ -136,14 +136,14 @@
     margin-bottom: $spacing-10;
   }
 
-  .feature__card {
-    margin-bottom: $spacing-06;
-  }
+  // .feature__card {
+  //   margin-bottom: $spacing-06;
+  // }
 }
 
 header {
-  ~ .featured-card-container {
-    > div {
+  ~.featured-card-container {
+    >div {
       margin-left: 0;
       margin-right: 0;
     }
@@ -169,6 +169,7 @@ header {
 
   .author-wrapper--3 {
     .author-wrapper__box {
+
       &:first-of-type,
       &:last-of-type {
         margin-left: 0;

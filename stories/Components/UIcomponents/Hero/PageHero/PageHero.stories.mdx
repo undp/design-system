@@ -26,6 +26,25 @@ export const getCaptionForLocale = (locale) => {
         cta: "Read more",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        herodata: [
+          { text: "Home" },
+          { text: "Другий рівень" },
+          { text: "Третій рівень" },
+          { text: "Назва сторінки" },
+        ],
+        title: "ЦСР У ДІЇ",
+        subtitle:
+          "Програма ПРООН із підвищення стійкості та відновлення",
+        content: "Наші теми",
+        imgsrc: BackgroundImg,
+        imgsrc2: BackgroundImg2,
+        imgalt: BackgroundImg,
+        videosrc: BackgroundVideo,
+        cta: "ЧИТАТИ ДАЛІ",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         herodata: [
@@ -100,7 +119,7 @@ export const getCaptionForLocale = (locale) => {
 };
 
 <Meta
-  title="Components/UI components/Hero/Page"
+  title="Components/UI components/Hero/Page/PageHero"
   argTypes={{
     Variant: {
       name: "Variant",
@@ -164,11 +183,12 @@ There are two states in the Full-width Page- Default and Mobile.
 2. Mobile: It consists of a vertical image with breadcrumbs, title and subtitles in the front of the image.
 
 <Canvas>
-  <Story name="Page hero - full-width"
-  parameters={{
-    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-  }}
->
+  <Story
+    name="Page hero full-width"
+    parameters={{
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+    }}
+  >
     {(args, { globals: { locale } }) => {
       const caption = getCaptionForLocale(locale);
       const cta = { label: caption.cta, for_primary: "Arrow" };

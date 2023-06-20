@@ -52,6 +52,53 @@ export const getCaptionForLocale = (locale) => {
         copyright: "© 2021 United Nations Development Programme",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        footerdata: [
+          {
+            text: "Назва сторінки",
+          },
+          {
+            text: "Назва сторінки",
+          },
+          {
+            text: "Назва сторінки",
+          },
+          {
+            text: "Назва сторінки",
+          },
+          {
+            text: "Назва сторінки",
+          },
+        ],
+        menudata: [
+          {
+            menu: "Повідомити про обман, порушення або неналежну поведінку",
+          },
+          {
+            menu: "Гаряча лінія з соціальних та екологічних питань",
+          },
+          {
+            menu: "Запобігання шахрайству",
+          },
+          {
+            menu: "Умови використання",
+          },
+        ],
+        menudata2: [
+          {
+            menu: "Умови використання",
+          },
+        ],
+        headerText: ["United Nations", <br />, "Development Programme"],
+        labelname: "Підпишіться на наші новини",
+        buttonname: "SUBMIT",
+        placeholdername: "Email",
+        errorLabel: "*Помилка: це поле обов'язкове",
+        pageTitle: "Назва сторінки",
+        copyright: "© 2023 ПРООН",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         footerdata: [
@@ -249,13 +296,15 @@ export const getCaptionForLocale = (locale) => {
     variant: {
       options: ["default", "simple"],
       control: { type: "inline-radio" },
-      defaultValue: "default",
     },
     color: {
       options: ["default", "inverted"],
       control: { type: "inline-radio" },
-      defaultValue: "default",
     },
+  }}
+  args={{
+    variant: "default",
+    color: "default",
   }}
 />
 

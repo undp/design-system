@@ -76,6 +76,76 @@ export const getCaptionForLocale = (locale) => {
         storyBtn: "SEE ALL STORIES",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        contentdata: [
+          {
+            contenttile: " Реагування на війну в Україні ",
+            contentname:
+              " Програма ПРООН із підвищення стійкості та відновлення ",
+            button: "Читати далі ",
+            link: "#",
+            imgback: img,
+            scale: "medium-3",
+            btnType: "Arrow",
+            Emphasize: "false",
+            Hovercolors: "green",
+            type: "image",
+          },
+          {
+            contenttile: " Блог ",
+            contentname: "Сприяючи гендерній рівності: Як ми допомогаємо жінкам досягти успіху в STEM ",
+            contentnametwo: "Сприяючи гендерній рівності: Як ми допомогаємо жінкам досягти успіху в STEM",
+            paragraph:
+              "Три ініціативи від Програми розвитку ООН за фінансування Швеції прагнуть залучити більше жінок у технічні професії та надихнути їх не боятися вивчати STEM-спеціальності",
+            button: "Більше ",
+            link: "#",
+            imgback: img,
+            scale: "medium-3",
+            btnType: "Arrow",
+            Emphasize: "false",
+            Hovercolors: "gray",
+            type: "color",
+            BackgroundColor: "card",
+          },
+          {
+            contenttile: " Фоторепортаж ",
+            contentname:
+              " Світ дуже бурхливий, і ти адаптуєшся ",
+            contentnametwo:
+              " Світ дуже бурхливий, і ти адаптуєшся ",
+            paragraph:
+              "Просуваючи цифрову рівність під час війни",
+            button: "Більше ",
+            link: "#",
+            imgback: img,
+            scale: "medium-3",
+            btnType: "Arrow",
+            Emphasize: "true",
+            Hovercolors: "green",
+            type: "color",
+            BackgroundColor: "card-emphasize",
+          },
+          {
+            contenttile: " Блог ",
+            contentname: " Виявлення реального стану енергетичної інфраструктури України після руйнівних обстрілів ",
+            contentnametwo: " Виявлення реального стану енергетичної інфраструктури України після руйнівних обстрілів ",
+            paragraph:
+              "Нова оцінка стану енергетичного сектора в усій країні підтвердила, що нанесені збитки перевищують 10 млрд дол. США, а здатність України виробляти електроенергію знизилася на 61%. Оскільки інтенсивність обстрілів енергосистеми не вщухає, що чекає на Україну в майбутньому?",
+            button: "Більше ",
+            link: "#",
+            imgback: img,
+            scale: "medium-3",
+            btnType: "Arrow",
+            Emphasize: "false",
+            Hovercolors: "gray",
+            type: "color",
+            BackgroundColor: "card",
+          },
+        ],
+        storyBtn: "ПЕРЕГЛЯНУТИ БІЛЬШЕ",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         contentdata: [
@@ -361,8 +431,20 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta
   title="Patterns/Card grids/Content cards with and without image"
+  argTypes={{
+    Emphasize: {
+      control: "boolean",
+    },
+    Hovercolors: {
+      options: ["global", "yellow", "red", "green", "blue"],
+      control: { type: "inline-radio" },
+    },
+  }}
   args={{
-    Emphasize: "true",
+    Hovercolors: "global",
+  }}
+  args={{
+    Emphasize: false,
     Hovercolors: "global",
   }}
 />
@@ -373,7 +455,7 @@ This is just collection of the following components:
 
 - [Content card](/docs/components-ui-components-cards-content-card-with-image--with-image)
 - [Content card without Emphasize](/docs/components-ui-components-cards-content-card-without-image--without-emphasize)
-- [Content card without Emphasize](/story/components-ui-components-cards-content-card-without-image--with-emphasize)
+- [Content card with Emphasize](/story/components-ui-components-cards-content-card-without-image--with-emphasize)
 
 <Canvas>
   <Story name="Content cards with and without image">

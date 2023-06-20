@@ -1,11 +1,10 @@
 export function langSwitch() {
   jQuery('.dropdown-language').click(() => {
     jQuery('.dropdown-language').toggleClass('active');
-    if(jQuery('.dropdown-language').hasClass('active'))
-    {
-      jQuery('.dropdown-language').find("a").attr("tabIndex","0");
-    }else{
-      jQuery('.dropdown-language').find("a").attr("tabIndex","-1");
+    if (jQuery('.dropdown-language').hasClass('active')) {
+      jQuery('.dropdown-language').find('a').attr('tabIndex', '0');
+    } else {
+      jQuery('.dropdown-language').find('a').attr('tabIndex', '-1');
     }
   });
 

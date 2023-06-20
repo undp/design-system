@@ -4,10 +4,10 @@
 
 /* author page start */
 .author-page {
-  margin-top: $spacing-76;
+  //margin-top: $spacing-76;
 
   @include devicebreak(xlarge) {
-    margin-top: 7.25rem;
+    //margin-top: 7.25rem;
   }
 
   .authorheading {

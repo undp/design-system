@@ -116,6 +116,101 @@ export const getCaptionForLocale = (locale) => {
         storyBtn: "SEE ALL STORIES",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        titlename: [
+          "«НІХТО НЕ ЗЛЯКАВСЯ ",
+          <br />,
+          "ВІДПОВІДАЛЬНОСТІ»",
+        ],
+        text: "Україна",
+        btnlabel: "ЧИТАТИ ДАЛІ",
+        subtitle:
+          "Незважаючи на небезпеку, українські енергетики продовжують працювати",
+        imgsrc: "https://www.undp.org/sites/g/files/zskgke326/files/styles/full_hero_1392x940/public/2023-05/IMG_9127.jpg?h=e5aec6c8&itok=-J1yZOFX",
+        imgsrc2: "https://www.undp.org/sites/g/files/zskgke326/files/styles/full_hero_1392x940/public/2023-05/IMG_9127.jpg?h=e5aec6c8&itok=-J1yZOFX",
+        imgalt: "https://www.undp.org/sites/g/files/zskgke326/files/styles/full_hero_1392x940/public/2023-05/IMG_9127.jpg?h=e5aec6c8&itok=-J1yZOFX",
+        videosrc: BackgroundVideo,
+        featureddata: [
+          {
+            contenttile: "SUCCESS STORY",
+            contentname:
+              "Communities score joint UNDP-WFP supported Peacebuilding Fund Project 80%",
+            descriptionText:
+              "Building peace and livelihoods to achieve and sustain development.",
+            button: "READ MORE",
+            type: "color",
+            scale: "medium",
+          },
+          {
+            contenttile: "PUBLICATION",
+            contentname:
+              "Sierra Leone COVID-19: United Nations Socio-economic Response Plan Response",
+            descriptionText:
+              "A UN country plan to help position Sierra Leone on a surer path towards attaining sustainable development in the wake of COVID-19",
+            button: "DOWNLOAD",
+            type: "color",
+            scale: "medium",
+          },
+          {
+            contenttile: "Article",
+            contentname:
+              "72 small arms destroyed by rural communities in Sierra Leone with support from the ‘Weapons for Development’ Initiative",
+            descriptionText:
+              "The Weapons for Development initiative - OCWAR-T project is an ECOWAS project co-funded by the EU and the GFFO",
+            button: "READ MORE",
+            imgback: img,
+            type: "image",
+            scale: "large",
+          },
+          {
+            contenttile: "COVID-19 Response",
+            contentname:
+              "UNDP Supports Joint Border Simulation Exercise to Promote Safe Trade for Women on Sierra Leone/Liberia",
+            descriptionText:
+              "As we ‘come to our feet’ to respond to public health issues at the borders, key messages on Covid-19 should be reinforced, border security enhanced",
+            button: "READ MORE",
+            type: "color",
+            scale: "medium",
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Sierra Leone National Human Development Report 2019",
+            descriptionText:
+              "“Even in the face of several human tragedies and financial resource constraints, Sierra Leone has demonstrated resilience that",
+            button: "READ MORE",
+            type: "color",
+            scale: "medium",
+          },
+          {
+            contenttile: "CONTENT TAG",
+            contentname: "Sierra Leone National Human Development Report 2019",
+            descriptionText:
+              "“Even in the face of several human tragedies and financial resource constraints, Sierra Leone has demonstrated resilience that",
+            button: "READ MORE",
+            imgback: img,
+            type: "image",
+            scale: "medium",
+          },
+        ],
+        headertext: ["В фокусі уваги"],
+        tag: "VIDEO",
+        label1: "UNDP’s Country Programme for Sierra Leone: 2020 to 2023",
+        label2: [
+          "The UNDP Executive Board approved the Sierra Leone’s 4-year Country Programme Document (CPD) on the 4th September 2020. The CPD is a core strategic document that guides UNDP’s development assistance to the Government of Sierra Leone (GOSL).",
+          <br />,
+          "The CPD will focus on enhancing the ability of state institutions to deliver services to citizens using a coordinated and sustainable",
+        ],
+        pagewidecardbtn: "WATCH VIDEO",
+        whatwedoheader: ["Наша місія"],
+        whatwedodescription:
+          "Місія Програми розвитку ООН в Україні – підтримка стійкості країни в умовах війни та сприяння інклюзивному, цифровому та сталому відновленню.",
+        statHeading: "Наша діяльність",
+        storiesHeading: "Останні новини",
+        takeAcrtionHead: "На пульсі подій",
+        storyBtn: "ЧИТАТИ ДАЛІ",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         titlename: [
@@ -505,9 +600,11 @@ export const getCaptionForLocale = (locale) => {
 
 <Meta title="Templates/Country homepage rtl" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Country Homepage
 
@@ -613,6 +710,12 @@ Add following external libraries
     name="Country homepage rtl"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

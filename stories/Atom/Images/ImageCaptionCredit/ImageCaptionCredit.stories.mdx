@@ -13,6 +13,12 @@ export const getCaptionForLocale = (locale) => {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem tortor, fermentum eu lorem at, venenatis malesuada risus.",
       };
       return engText;
+    case "ukrainian":
+      return {
+        label: ["ПРООН в Україні", <br />, <strong>Андрій Крєпкіх</strong>],
+        paragraph:
+          "Аварійні роботи, що сприяють відновленню та відбудові",
+      };
     case "arabic":
       const arabicText = {
         label: [
@@ -75,7 +81,8 @@ export const getCaptionForLocale = (locale) => {
   }}
 />
 
-<style>{`
+<style>
+  {`
  .subheading {
     font-weight: 600;
     font-size: 20px;
@@ -98,7 +105,8 @@ export const getCaptionForLocale = (locale) => {
     line-height: 16px;
       background: black;
   }
-`}</style>
+  `}
+</style>
 
 # Image with caption and credit component
 

@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import pnud from '../../../../assets/images/undp-logo-blue.svg';
 import { getMegaMenu } from '../../../../assets/js/navigation-data';
-import { navigationInitialize } from '../../../../assets/js/navigation';
-// import { desktopView } from '../../../../assets/js/undp';
+import {
+  navigationInitialize,
+  navigationMultiLevelEdgeDetection,
+  navigationOverFlow,
+} from '../../../../assets/js/navigation';
 import { Logo } from '../../../../Atom/Logo/Logo';
 import { CtaButton } from '../../../UIcomponents/Buttons/CtaButton/CtaButton';
 import { Menu } from '../../Menu/Menu';
@@ -10,8 +13,13 @@ import { Languageswitcher } from '../../../UIcomponents/LanguageSwitcher/Languag
 import MegaMenu from '../MegaMenu/MegaMenu';
 import MobileNav from '../MobileNav/MobileNav';
 import './country-site-header.scss';
+import '../MobileNav/mobile-nav.scss';
+import '../../../UIcomponents/Buttons/CtaLink/cta-link.scss';
 import '../../../../assets/scss/_grid.scss';
 import '../../../../assets/js/lazyload';
+import '../../../../Utilities/FrostedImage/frosted-background.scss';
+import menuJsonDefaultData from '../../../../assets/js/navigation-data.json';
+import menuJsonDefaultExtendedData from '../../../../assets/js/navigation-extended-data.json';
 
 function CountrySiteHeader({
   languageswitcherData,
@@ -26,14 +34,32 @@ function CountrySiteHeader({
   useEffect(() => {
     getMegaMenu(locale);
     navigationInitialize(locale);
-  }, [locale]);
+    navigationOverFlow();
+    navigationMultiLevelEdgeDetection();
+  }, [locale, args.menu_type, args.menu_extended, args.cta_enabled]);
+
+  const menuExtended = !(args.menu_extended === 'Off' || typeof (args.menu_extended) == 'undefined');
+  const multiLevel = false;
+  const locale_fixed = locale == 'en' ? 'english' : locale;
+
+  let dataSource;
+  let menuMobileData = navigationData;
+  dataSource = menuExtended ? menuJsonDefaultExtendedData : menuJsonDefaultData;
+  dataSource.forEach((source) => {
+    if (source.language === locale_fixed && source.data.length > 0) {
+      menuMobileData = source.data;
+    }
+  });
+
+  let overflow = (args.menu_extended === 'On');
+  args.overflow = overflow;
 
   return (
     <header className="country-header country-load-animation">
       <section className="header">
         <div className="grid-container fluid">
           <div className="grid-x grid-margin-x align-content-middle">
-            <div className="cell large-9 small-8 align-self-middle top-left">
+            <div className="cell small-8 large-2 shrink align-self-middle top-left">
               <a href="#" className="logo" tabIndex="0" title="UNDP Logo homepage link">
                 <Logo src={pnud} alt="UNDP Logo" />
               </a>
@@ -43,9 +69,16 @@ function CountrySiteHeader({
                 )}
                 <span><a href="#" title="UNDP homepage link">{siteTitleData.span}</a></span>
               </div>
-              <Menu data={navigationData} />
             </div>
-            <div className="cell large-3 small-3 top-right">
+            <div className="cell small-1 large-auto align-content-middle top-center">
+              {!menuExtended && (
+                <Menu data={menuJsonDefaultData} locale={locale} multilevel={multiLevel} overflow={overflow} {...args} />
+              )}
+              {menuExtended && (
+                <Menu data={menuJsonDefaultExtendedData} locale={locale} multilevel={multiLevel} overflow={overflow} {...args} />
+              )}
+            </div>
+            <div className="cell small-3 large-auto top-right">
               <Languageswitcher
                 data={languageswitcherData.languagedata}
                 headerText={languageswitcherData.headerText}
@@ -63,11 +96,17 @@ function CountrySiteHeader({
                   label="Donate"
                   href="#"
                   Icon="No Arrow"
+                  Type="Primary"
                 />
               )}
             </div>
+            {args.menu_extended == 'On' && (
+              <div className="grid-container full menu__overflow__container hidden">
+                <ul className="overflow" />
+              </div>
+            )}
             <MobileNav
-              navigationData={navigationData}
+              navigationData={menuMobileData}
               languageswitcherData={languageswitcherData}
               locationData={locationData}
               backcaption={backcaption}
@@ -77,9 +116,10 @@ function CountrySiteHeader({
             />
           </div>
         </div>
+
       </section>
       <div className="mega-wrapper">
-        <MegaMenu />
+        <MegaMenu locale={locale} />
       </div>
     </header>
   );

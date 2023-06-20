@@ -93,7 +93,97 @@ export const statsArray = (locale) => {
         content: "",
       };
       return engText;
-    case "arabic":
+    case "ukrainian":
+      const ukText = {
+        data: [
+          {
+            title: "Title of the publication quite long - Pasto",
+            subtitle: "PDF (1.2Mб)",
+            dataValue: "pasto",
+          },
+          {
+            title: "Title of the publication quite long - Pasto",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "Title of the publication quite long - Pasto",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "pasto",
+          },
+          {
+            title: "Title of the publication quite long - Dari",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "Title of the publication quite long - Dari",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "Title of the publication quite long - Dari",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "dari",
+          },
+          {
+            title: "Title of the publication quite long - English",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "Title of the publication quite long - English",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "Title of the publication quite long - English",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "en",
+          },
+          {
+            title: "Title of the publication quite long - Albanian",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "Title of the publication quite long - Albanian",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "Title of the publication quite long - Albanian",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "albanian",
+          },
+          {
+            title: "Title of the publication quite long - Arabic",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "arabic",
+          },
+          {
+            title: "Title of the publication quite long - Arabic",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "arabic",
+          },
+          {
+            title: "Title of the publication quite long - Portuguese",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "portuguese",
+          },
+          {
+            title: "Title of the publication quite long - Portuguese",
+            subtitle: "PDF (1.2MB)",
+            dataValue: "portuguese",
+          },
+        ],
+        button: "ЗАВАНТАЖИТИ",
+        select: "Оберіть мову",
+        modalbtn: "кнопка",
+        content: "",
+      };
+      return ukText;
+      case "arabic":
       const arabicText = {
         data: [
           {
@@ -507,7 +597,7 @@ Close button dismisses the entire modal window and resets filter states and chec
 
 <Canvas>
   <Story name="Download modal">
-    {(args, { globals: { locale } }) => {
+    {(args, { globals: { locale, accent } }) => {
       const caption = statsArray(locale);
       return (
         <DownloadModal

@@ -1,11 +1,10 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { initializeRTL } from 'storybook-addon-rtl';
-// import { anysort } from 'anysort'
-// import { addParameters } from '@storybook/react'
 import renderToHTML from './renderToHTML'
 
 // include base styling globally
 import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss';
+import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css';
 
 // initialise RTL
 initializeRTL();
@@ -30,7 +29,10 @@ export const parameters = {
     viewports: INITIAL_VIEWPORTS,
   },
   docs: {
-    transformSource: (src, storyContext) => renderToHTML(storyContext.storyFn),
+    source: {
+      transform: (src, storyContext) => renderToHTML(storyContext.storyFn),
+      type: 'code',
+    }
   },
   options: {
     storySort: {
@@ -49,26 +51,28 @@ export const parameters = {
 // Note: Languages added to items array need to be added to the getLangCode() function below.
 export const globalTypes = {
   locale: {
-    name: 'Locale',
+    title: 'Locale',
     description: 'locale',
     defaultValue: 'en',
     toolbar: {
       icon: 'globe',
+      title: 'Locale',
       items: [
         { value: 'english', title: 'English', right: 'Default' },
         { value: 'arabic', title: 'Arabic' },
         { value: 'burmese', title: 'Burmese' },
-        { value: 'japanese', title: 'Japanese' }
+        { value: 'japanese', title: 'Japanese' },
+        { value: 'ukrainian', title: 'Ukrainian' }
       ],
     },
   },
   accent: {
-    name: 'Accent color',
+    title: 'Accent color',
     description: 'Define the accent color.',
     defaultValue: '',
     toolbar: {
       icon: 'paintbrush',
-      showName: true,
+      title: 'Accent color',
       items: [
         { value: '', title: 'Default accent', right: 'Default' },
         { value: 'yellow', title: 'Yellow' },
@@ -106,7 +110,8 @@ const getLangCode = (Story, context) => {
     'english' : 'en',
     'arabic': 'ar',
     'burmese': 'my',
-    'japanese': 'ja'
+    'japanese': 'ja',
+    'ukrainian': 'uk'
   };
 
   // Check if language exists.

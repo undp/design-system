@@ -55,6 +55,33 @@ export const getCaptionForLocale = (locale) => {
           "UNDP is based on the merging of the United Nations Expanded Programme of Technical Assistance, created in 1949, and the United Nations Special Fund, established in 1958. UNDP, as we know it now, was established in 1965 by the General Assembly of the United Nations.",
       };
       return engText;
+    case "ukrainian":
+      const ukText = {
+        herodata: [
+          { text: "Home" },
+          { text: "Другий рівень" },
+          { text: "Третій рівень" },
+          { text: "Назва сторінки" },
+        ],
+        title: "ПРООН В УКРАЇНІ",
+        content: "ПРО НАС",
+        imgsrc: "https://www.undp.org/sites/g/files/zskgke326/files/styles/full_hero_1392x940/public/2022-05/15724686425_15e35b8031_b.jpg?h=199d8c1f&itok=mqpiXlb5",
+        imgalt: "https://www.undp.org/sites/g/files/zskgke326/files/styles/full_hero_1392x940/public/2022-05/15724686425_15e35b8031_b.jpg?h=199d8c1f&itok=mqpiXlb5",
+        videosrc: BackgroundVideo,
+        detail2: "Про Програму розвитку ООН в Україні",
+        topParagraph:
+          "Будучи агентством Організації Об'єднаних Націй, що спеціалізується на питаннях розвитку, ПРООН підтримує стратегічні ініціативи, спрямовані на розвиток потенціалу, аби сприяти всебічному зростанню і сталому людському розвитку. Завдяки партнерству з національними, обласними та місцевими органами влади, громадянським суспільством і приватним сектором, ПРООН прагне підтримати Україну на шляху до подолання бідності, розвитку людського потенціалу, досягнення справедливих результатів, захисту довкілля і просування демократичного врядування.",
+        headingMissionVision: "Чого ми прагнемо досягти?",
+        paraMissionVision:
+          "ПРООН працює у партнерстві з Урядом України, іншими агентствами ООН, організаціями, що займаються питаннями розвитку, громадянським суспільством та місцевими громадами, допомагаючи знаходити рішення для глобальних і національних викликів у сфері розвитку через впровадження низки ініціатив, що базуються на досвіді ПРООН та порівняльному аналізі.",
+        headingHistory: "Якими є результати нашої діяльності?",
+        paraHistory:
+          "Починаючи з 1993 р. ПРООН надає допомогу Уряду України у розробці рішень для здійснення переходу від планової до ринкової економіки та розвитку демократичної системи. Партнерство ПРООН  з центральними, обласними та місцевими органами влади сприяло прийняттю низки законів та стратегій, а також зміцненню потенціалу цих органів у контексті ширшої інтеграції України до світових процесів.",
+        headingUNcharter: "Хто ухвалює рішення?",
+        paraUNcharter:
+          "Координатор системи ООН в Україні координує роботу агентств ООН, представлених в Україні. ПРООН працює у тісному партнерстві з Урядом України через низку Міністерств, департаментів та відомств. Впровадження програмної діяльності ПРООН здійснюється відповідними виконавчими партнерами, зокрема партнерами з числа центральних та місцевих органів влади та організаціями громадянського суспільства.",
+      };
+      return ukText;
     case "arabic":
       const arabicText = {
         herodata: [
@@ -234,6 +261,39 @@ export const statsArray = (locale) => {
         ],
       };
       return engText.data;
+    case "ukrainian":
+      const ukText = {
+        data: [
+          {
+            slideImage: fluidCarouselImg,
+            tagtext: "Блог",
+            titleText:
+              "Виявлення реального стану енергетичної інфраструктури України після руйнівних обстрілів",
+            descText:
+              "Нова оцінка стану енергетичного сектора в усій країні підтвердила, що нанесені збитки перевищують 10 млрд дол. США, ...",
+            buttonText: "ЧИТАТИ ДАЛІ",
+          },
+          {
+            slideImage: fluidCarouselImg,
+            tagtext: "Блог",
+            titleText:
+              "Виявлення реального стану енергетичної інфраструктури України після руйнівних обстрілів",
+            descText:
+              "Нова оцінка стану енергетичного сектора в усій країні підтвердила, що нанесені збитки перевищують 10 млрд дол. США, ...",
+            buttonText: "ЧИТАТИ ДАЛІ",
+          },
+          {
+            slideImage: fluidCarouselImg,
+            tagtext: "Блог",
+            titleText:
+              "Виявлення реального стану енергетичної інфраструктури України після руйнівних обстрілів",
+            descText:
+              "Нова оцінка стану енергетичного сектора в усій країні підтвердила, що нанесені збитки перевищують 10 млрд дол. США, ...",
+            buttonText: "ЧИТАТИ ДАЛІ",
+          },
+        ],
+      };
+      return ukText.data;
     case "arabic":
       const arabicText = {
         data: [
@@ -362,9 +422,11 @@ export const statsArray = (locale) => {
 
 <Meta title="Templates/Generic page" />
 
-<style>{`
+<style>
+  {`
   .sbdocs-preview {display: none}
-`}</style>
+  `}
+</style>
 
 # Generic Page
 
@@ -458,6 +520,12 @@ Add following external libraries
     name="Generic page"
     parameters={{
       layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
       chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
     }}
   >

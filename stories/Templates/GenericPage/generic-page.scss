@@ -18,7 +18,7 @@
           width: 90%;
         }
 
-        &.show-small {
+        &.show-medium {
           display: block;
         }
 
@@ -36,7 +36,7 @@
     &-mobile {
       display: none;
       margin-bottom: $spacing-04;
-      margin-top: 5.5rem;
+      margin-top: 1rem;
 
       @media (max-width: 1023px) {
         display: block;
@@ -48,7 +48,7 @@
             display: none;
           }
 
-          &.show-small {
+          &.show-medium {
             ul {
               display: block;
             }
@@ -64,7 +64,7 @@
         display: none;
       }
 
-      @include devicebreak(medium) {
+      @include devicebreak(large) {
         .sidebar-accordion h6 {
           display: none;
         }
@@ -97,14 +97,9 @@
   }
 
   .pagehero-full {
-    margin-top: 0;
-
-    @include devicebreak(large) {
-      margin-top: 5.688rem;
-    }
 
     @include devicebreak(xlarge) {
-      margin-top: 8.1875rem;
+      margin-top: 0;
     }
 
     .content-box {

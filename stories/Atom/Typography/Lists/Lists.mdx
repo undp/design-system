@@ -16,6 +16,21 @@ export const getCaptionForLocale = (locale) => {
   label : 'United Nations Development Programme',
   text : 'The United Nations Development Programme is the global development network of the United Nations. It promotes technical and investment cooperation among nations and advocates for change and connects countries to knowledge, experience and resources to help people build a better life for themselves.'
 }]}; return engText.data;
+    case "ukrainian":
+      return [
+          {
+            label: "НАПРЯМ 1",
+            text: "Можливості Уряду реагувати на кризові ситуації та вирішувати їх.",
+          },
+          {
+            label: "НАПРЯМ 2",
+            text: "Безперервне надання державних послуг.",
+          },
+          {
+            label: "НАПРЯМ 3",
+            text: "Аварійні роботи, що сприяють відновленню та відбудові.",
+          },
+      ];
     case 'arabic': const arabicText = {data: [{
   label : 'برنامج الأمم المتحدة الإنمائي',
   text : 'برنامج الأمم المتحدة الإنمائي هو شبكة التنمية العالمية للأمم المتحدة. وهي تعزز التعاون التقني والاستثماري بين الدول وتدعو للتغيير وتربط البلدان بالمعرفة والخبرة والموارد لمساعدة الناس على بناء حياة أفضل لأنفسهم.'

@@ -5,10 +5,9 @@
 .glabal-page {
   @include devicebreak(small) {
     .homepage-hero-tall {
-      margin-top: 7rem;
+      margin-top: 1rem;
     }
   }
-
   .featured-card-container {
     margin-top: 7rem;
 

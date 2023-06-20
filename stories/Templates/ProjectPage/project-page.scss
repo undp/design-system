@@ -43,19 +43,14 @@
     }
 
     &-hero {
-      margin-top: $spacing-11;
 
-      @include devicebreak(small) {
-        padding: $spacing-04;
-      }
+      // @include devicebreak(small) {
+      //   padding: $spacing-04;
+      // }
 
-      @include devicebreak(medium) {
-        margin-top: $spacing-11;
-      }
-
-      @include devicebreak(xlarge) {
-        margin-top: $spacing-136;
-      }
+      // @include devicebreak(xlarge) {
+      //   margin-top: calc($spacing-136 - 1.25rem);
+      // }
 
       .breadcrumb {
         @include devicebreak(small) {
