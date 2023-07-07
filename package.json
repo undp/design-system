@@ -47,7 +47,7 @@
     "@storybook/addon-links": "^7.0.22",
     "@storybook/cli": "^7.0.22",
     "@storybook/mdx1-csf": "^1.0.0",
-    "@storybook/react": "^7.0.22",
+    "@storybook/react": "^7.0.26",
     "@storybook/react-webpack5": "^7.0.22",
     "@whitespace/storybook-addon-html": "^5.1.6",
     "@wordpress/babel-preset-default": "^7.18.0",

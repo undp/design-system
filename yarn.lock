@@ -2231,6 +2231,14 @@
     "@storybook/client-logger" "7.0.22"
     "@storybook/preview-api" "7.0.22"
 
+"@storybook/core-client@7.0.26":
+  version "7.0.26"
+  resolved "https://registry.yarnpkg.com/@storybook/core-client/-/core-client-7.0.26.tgz#d2c4f66c6147937c3455b1227faacbd9f4eebb50"
+  integrity sha512-1DA8mLnr0f6EuL74859IDK99a7CGNgMIN0/cAVNgYxq0WA4j+9ajsJ+/RIAgnS2NLVLR9kbezUtBEx4/H88IRA==
+  dependencies:
+    "@storybook/client-logger" "7.0.26"
+    "@storybook/preview-api" "7.0.26"
+
 "@storybook/core-common@7.0.22":
   version "7.0.22"
   resolved "https://registry.npmjs.org/@storybook/core-common/-/core-common-7.0.22.tgz"
@@ -2245,6 +2253,33 @@
     esbuild "^0.17.0"
     esbuild-register "^3.4.0"
     file-system-cache "^2.0.0"
+    find-up "^5.0.0"
+    fs-extra "^11.1.0"
+    glob "^8.1.0"
+    glob-promise "^6.0.2"
+    handlebars "^4.7.7"
+    lazy-universal-dotenv "^4.0.0"
+    node-fetch "^2.0.0"
+    picomatch "^2.3.0"
+    pkg-dir "^5.0.0"
+    pretty-hrtime "^1.0.3"
+    resolve-from "^5.0.0"
+    ts-dedent "^2.0.0"
+
+"@storybook/core-common@7.0.26":
+  version "7.0.26"
+  resolved "https://registry.yarnpkg.com/@storybook/core-common/-/core-common-7.0.26.tgz#9b3f3378e80fe981a48d268edb560a440128629d"
+  integrity sha512-rojZblzB0egNXX0bZ7R3TuPDiBSIhxpZCrorrDMHOZ8F+zuBxyTiZ0yMxEDn7i46T2n1vX+hUHhwZVxZrLn/ZQ==
+  dependencies:
+    "@storybook/node-logger" "7.0.26"
+    "@storybook/types" "7.0.26"
+    "@types/node" "^16.0.0"
+    "@types/node-fetch" "^2.6.4"
+    "@types/pretty-hrtime" "^1.0.0"
+    chalk "^4.1.0"
+    esbuild "^0.17.0"
+    esbuild-register "^3.4.0"
+    file-system-cache "2.3.0"
     find-up "^5.0.0"
     fs-extra "^11.1.0"
     glob "^8.1.0"
@@ -2381,6 +2416,19 @@
     doctrine "^3.0.0"
     lodash "^4.17.21"
 
+"@storybook/docs-tools@7.0.26":
+  version "7.0.26"
+  resolved "https://registry.yarnpkg.com/@storybook/docs-tools/-/docs-tools-7.0.26.tgz#6299f9da5d95a5792e223596eec2216b1ad88b15"
+  integrity sha512-Ibpm/OTR2XmJgix5w+wMYbDwN0zp5e/pcqSHy36OvkBOG588IKSSzYdBjGdTLPHWBoehp2Kyndw/5dL/09ftXA==
+  dependencies:
+    "@babel/core" "^7.12.10"
+    "@storybook/core-common" "7.0.26"
+    "@storybook/preview-api" "7.0.26"
+    "@storybook/types" "7.0.26"
+    "@types/doctrine" "^0.0.3"
+    doctrine "^3.0.0"
+    lodash "^4.17.21"
+
 "@storybook/global@^5.0.0":
   version "5.0.0"
   resolved "https://registry.npmjs.org/@storybook/global/-/global-5.0.0.tgz"
@@ -2450,6 +2498,16 @@
   version "7.0.22"
   resolved "https://registry.npmjs.org/@storybook/node-logger/-/node-logger-7.0.22.tgz"
   integrity sha512-k+RtRhxGxssIByTQ8maiXPc8WaXQcq1zAoSskNOIfi2f47JsZ7v81HJw8JaQ+cxNmafGBcKYW3Lla49wz1t8JQ==
+  dependencies:
+    "@types/npmlog" "^4.1.2"
+    chalk "^4.1.0"
+    npmlog "^5.0.1"
+    pretty-hrtime "^1.0.3"
+
+"@storybook/node-logger@7.0.26":
+  version "7.0.26"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-7.0.26.tgz#e536c970b6a9c43796cad203bfdf859afa93ee3f"
+  integrity sha512-3Jqv3fRb8+Mn/aNl4IztgUAS/pvouVzpfHDc8+6KYAoFMeDXwHVlfF/+gRCpd/fbYaTHGrycIs5G48bC190Dgg==
   dependencies:
     "@types/npmlog" "^4.1.2"
     chalk "^4.1.0"
@@ -2548,6 +2606,11 @@
   resolved "https://registry.npmjs.org/@storybook/react-dom-shim/-/react-dom-shim-7.0.22.tgz"
   integrity sha512-AnsTQfPs7lDXhAcc6VU8Rk8dkffAe3gq+Z6Zd3FRgA7hnuyg8ccpiFTS3vjOKubfuqy0tNm0gOZnALBKlHLcRA==
 
+"@storybook/react-dom-shim@7.0.26":
+  version "7.0.26"
+  resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-7.0.26.tgz#ca6c392fb5838b5a50d5b0cfcf9bc8fc22e7f841"
+  integrity sha512-heobG4IovYAD9fo7qmUHylCSQjDd1eXDCOaTiy+XVKobHAJgkz1gKqbaFSP6KLkPE4cKyScku2K9mY0tcKIhMw==
+
 "@storybook/react-webpack5@^7.0.22":
   version "7.0.22"
   resolved "https://registry.npmjs.org/@storybook/react-webpack5/-/react-webpack5-7.0.22.tgz"
@@ -2558,7 +2621,7 @@
     "@storybook/react" "7.0.22"
     "@types/node" "^16.0.0"
 
-"@storybook/react@7.0.22", "@storybook/react@^7.0.22":
+"@storybook/react@7.0.22":
   version "7.0.22"
   resolved "https://registry.npmjs.org/@storybook/react/-/react-7.0.22.tgz"
   integrity sha512-aZQv7wSFrny7FqamnhVFNkOOeJe+rGKfhG2IUc5+LW3g0+zqfwN3QIWq6aILau4x5XCPYTObaHX3g0HA7ZSmdA==
@@ -2570,6 +2633,33 @@
     "@storybook/preview-api" "7.0.22"
     "@storybook/react-dom-shim" "7.0.22"
     "@storybook/types" "7.0.22"
+    "@types/escodegen" "^0.0.6"
+    "@types/estree" "^0.0.51"
+    "@types/node" "^16.0.0"
+    acorn "^7.4.1"
+    acorn-jsx "^5.3.1"
+    acorn-walk "^7.2.0"
+    escodegen "^2.0.0"
+    html-tags "^3.1.0"
+    lodash "^4.17.21"
+    prop-types "^15.7.2"
+    react-element-to-jsx-string "^15.0.0"
+    ts-dedent "^2.0.0"
+    type-fest "^2.19.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/react@^7.0.26":
+  version "7.0.26"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-7.0.26.tgz#49da48e62cd1a9daf008f33b509dbcad0ba9c4bd"
+  integrity sha512-+YK/1vF2Pd/PX7Ss5yPCIh9hee7iMVbu86gdjV9n9r6G244jQ7HLtdA01JKfq92/UgoysSWUjUECrxrUvcsh5w==
+  dependencies:
+    "@storybook/client-logger" "7.0.26"
+    "@storybook/core-client" "7.0.26"
+    "@storybook/docs-tools" "7.0.26"
+    "@storybook/global" "^5.0.0"
+    "@storybook/preview-api" "7.0.26"
+    "@storybook/react-dom-shim" "7.0.26"
+    "@storybook/types" "7.0.26"
     "@types/escodegen" "^0.0.6"
     "@types/estree" "^0.0.51"
     "@types/node" "^16.0.0"
@@ -2788,15 +2878,15 @@
   dependencies:
     "@types/estree" "*"
 
-"@types/estree@*", "@types/estree@^0.0.51":
-  version "0.0.51"
-  resolved "https://registry.npmjs.org/@types/estree/-/estree-0.0.51.tgz"
-  integrity sha512-CuPgU6f3eT/XgKKPqKd/gLZV1Xmvf1a2R5POBOGQa6uv82xpls89HU5zKeVoyR8XzHd1RGNOlQlvUe3CFkjWNQ==
-
-"@types/estree@^1.0.0":
+"@types/estree@*", "@types/estree@^1.0.0":
   version "1.0.1"
   resolved "https://registry.npmjs.org/@types/estree/-/estree-1.0.1.tgz"
   integrity sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==
+
+"@types/estree@^0.0.51":
+  version "0.0.51"
+  resolved "https://registry.npmjs.org/@types/estree/-/estree-0.0.51.tgz"
+  integrity sha512-CuPgU6f3eT/XgKKPqKd/gLZV1Xmvf1a2R5POBOGQa6uv82xpls89HU5zKeVoyR8XzHd1RGNOlQlvUe3CFkjWNQ==
 
 "@types/express-serve-static-core@^4.17.33":
   version "4.17.35"
