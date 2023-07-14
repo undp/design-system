@@ -732,10 +732,12 @@
     "@babel/helper-plugin-utils" "^7.18.6"
     "@babel/helper-replace-supers" "^7.18.6"
 
-"@babel/plugin-transform-parameters@^7.12.1", "@babel/plugin-transform-parameters@^7.20.7", "@babel/plugin-transform-parameters@^7.21.3":
-  "version" "7.21.3"
+"@babel/plugin-transform-parameters@^7.12.1", "@babel/plugin-transform-parameters@^7.20.7", "@babel/plugin-transform-parameters@^7.21.3", "@babel/plugin-transform-parameters@^7.22.5":
+  "integrity" "sha512-AVkFUBurORBREOmHRKo06FjHYgjrabpdqRSwq6+C7R5iTCZOsM4QbcB27St0a4U6fffyAOqh3s/qEfybAhfivg=="
+  "resolved" "https://registry.npmjs.org/@babel/plugin-transform-parameters/-/plugin-transform-parameters-7.22.5.tgz"
+  "version" "7.22.5"
   dependencies:
-    "@babel/helper-plugin-utils" "^7.20.2"
+    "@babel/helper-plugin-utils" "^7.22.5"
 
 "@babel/plugin-transform-property-literals@^7.18.6":
   "version" "7.18.6"
@@ -2867,14 +2869,20 @@
     "@webassemblyjs/ast" "1.11.6"
     "@xtuc/long" "4.2.2"
 
-"@webpack-cli/configtest@^2.1.0":
-  "version" "2.1.0"
+"@webpack-cli/configtest@^2.1.1":
+  "integrity" "sha512-wy0mglZpDSiSS0XHrVR+BAdId2+yxPSoJW8fsna3ZpYSlufjvxnP4YbKTCBZnNIcGN4r6ZPXV55X4mYExOfLmw=="
+  "resolved" "https://registry.npmjs.org/@webpack-cli/configtest/-/configtest-2.1.1.tgz"
+  "version" "2.1.1"
 
-"@webpack-cli/info@^2.0.1":
-  "version" "2.0.1"
+"@webpack-cli/info@^2.0.2":
+  "integrity" "sha512-zLHQdI/Qs1UyT5UBdWNqsARasIA+AaF8t+4u2aS2nEpBQh2mWIVb8qAklq0eUENnC5mOItrIB4LiS9xMtph18A=="
+  "resolved" "https://registry.npmjs.org/@webpack-cli/info/-/info-2.0.2.tgz"
+  "version" "2.0.2"
 
-"@webpack-cli/serve@^2.0.4":
-  "version" "2.0.4"
+"@webpack-cli/serve@^2.0.5":
+  "integrity" "sha512-lqaoKnRYBdo1UgDX8uF24AfGMifWK19TxPmM5FHc2vAGxrJ/qtyUyFBWoY1tISZdelsQ5fBcOusifo5o5wSJxQ=="
+  "resolved" "https://registry.npmjs.org/@webpack-cli/serve/-/serve-2.0.5.tgz"
+  "version" "2.0.5"
 
 "@whitespace/storybook-addon-html@^5.1.6":
   "integrity" "sha512-NWO8nsWScMZ6hdn5Br0htTP2qMDnvA22xy06i1EUB4f62jzqLGMy5WLEYK/A21QeikBY4mapeqoAg8KtE4dIUg=="
@@ -7451,8 +7459,10 @@
   dependencies:
     "lru-cache" "^6.0.0"
 
-"html-entities@^2.1.0", "html-entities@^2.3.3":
-  "version" "2.3.3"
+"html-entities@^2.1.0", "html-entities@^2.4.0":
+  "integrity" "sha512-igBTJcNNNhvZFRtm8uA6xMY6xYleeDwn3PeBCkDz7tHttv4F2hsDI2aPgNERWzvRcNYHNT3ymRaQzllmXj4YsQ=="
+  "resolved" "https://registry.npmjs.org/html-entities/-/html-entities-2.4.0.tgz"
+  "version" "2.4.0"
 
 "html-escaper@^2.0.0":
   "integrity" "sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg=="
@@ -12044,10 +12054,11 @@
   "resolved" "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
   "version" "2.1.2"
 
-"sass-loader@^13.2.2":
-  "version" "13.3.0"
+"sass-loader@^13.3.2":
+  "integrity" "sha512-CQbKl57kdEv+KDLquhC+gE3pXt74LEAzm+tzywcA0/aHZuub8wTErbjAoNI57rPUWRYRNC5WUnNl8eGJNbDdwg=="
+  "resolved" "https://registry.npmjs.org/sass-loader/-/sass-loader-13.3.2.tgz"
+  "version" "13.3.2"
   dependencies:
-    "klona" "^2.0.6"
     "neo-async" "^2.6.2"
 
 "sass@^1.62.1":
@@ -12791,6 +12802,11 @@
   "resolved" "https://registry.npmjs.org/stylelint-config-recommended/-/stylelint-config-recommended-12.0.0.tgz"
   "version" "12.0.0"
 
+"stylelint-config-recommended@^13.0.0":
+  "integrity" "sha512-EH+yRj6h3GAe/fRiyaoO2F9l9Tgg50AOFhaszyfov9v6ayXJ1IkSHwTxd7lB48FmOeSGDPLjatjO11fJpmarkQ=="
+  "resolved" "https://registry.npmjs.org/stylelint-config-recommended/-/stylelint-config-recommended-13.0.0.tgz"
+  "version" "13.0.0"
+
 "stylelint-config-sass-guidelines@^10.0.0":
   "integrity" "sha512-+Rr2Dd4b72CWA4qoj1Kk+y449nP/WJsrD0nzQAWkmPPIuyVcy2GMIcfNr0Z8JJOLjRvtlkKxa49FCNXMePBikQ=="
   "resolved" "https://registry.npmjs.org/stylelint-config-sass-guidelines/-/stylelint-config-sass-guidelines-10.0.0.tgz"
@@ -12799,12 +12815,12 @@
     "postcss-scss" "^4.0.6"
     "stylelint-scss" "^4.4.0"
 
-"stylelint-config-standard@^33.0.0":
-  "integrity" "sha512-eyxnLWoXImUn77+ODIuW9qXBDNM+ALN68L3wT1lN2oNspZ7D9NVGlNHb2QCUn4xDug6VZLsh0tF8NyoYzkgTzg=="
-  "resolved" "https://registry.npmjs.org/stylelint-config-standard/-/stylelint-config-standard-33.0.0.tgz"
-  "version" "33.0.0"
+"stylelint-config-standard@^34.0.0":
+  "integrity" "sha512-u0VSZnVyW9VSryBG2LSO+OQTjN7zF9XJaAJRX/4EwkmU0R2jYwmBSN10acqZisDitS0CLiEiGjX7+Hrq8TAhfQ=="
+  "resolved" "https://registry.npmjs.org/stylelint-config-standard/-/stylelint-config-standard-34.0.0.tgz"
+  "version" "34.0.0"
   dependencies:
-    "stylelint-config-recommended" "^12.0.0"
+    "stylelint-config-recommended" "^13.0.0"
 
 "stylelint-scss@^4.4.0":
   "integrity" "sha512-TSUgIeS0H3jqDZnby1UO1Qv3poi1N8wUYIJY6D1tuUq2MN3lwp/rITVo0wD+1SWTmRm0tNmGO0b7nKInnqF6Hg=="
@@ -14092,13 +14108,15 @@
   "resolved" "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-3.0.1.tgz"
   "version" "3.0.1"
 
-"webpack-cli@^5.1.1":
-  "version" "5.1.1"
+"webpack-cli@^5.1.4":
+  "integrity" "sha512-pIDJHIEI9LR0yxHXQ+Qh95k2EvXpWzZ5l+d+jIo+RdSm9MiHfzazIxwwni/p7+x4eJZuvG1AJwgC4TNQ7NRgsg=="
+  "resolved" "https://registry.npmjs.org/webpack-cli/-/webpack-cli-5.1.4.tgz"
+  "version" "5.1.4"
   dependencies:
     "@discoveryjs/json-ext" "^0.5.0"
-    "@webpack-cli/configtest" "^2.1.0"
-    "@webpack-cli/info" "^2.0.1"
-    "@webpack-cli/serve" "^2.0.4"
+    "@webpack-cli/configtest" "^2.1.1"
+    "@webpack-cli/info" "^2.0.2"
+    "@webpack-cli/serve" "^2.0.5"
     "colorette" "^2.0.14"
     "commander" "^10.0.1"
     "cross-spawn" "^7.0.3"
