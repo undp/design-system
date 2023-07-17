@@ -118,9 +118,6 @@
   "resolutions": {
     "@storybook/react/webpack": "^5"
   },
-  "publishConfig": {
-    "@undp:registry": "https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/undp/design-system.git"
