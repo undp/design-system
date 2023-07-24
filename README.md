@@ -27,35 +27,25 @@ Run the following commands to create/update the code.
 git clone
 
 # install project dependencies
-yarn install
-or
 npm install
 
 # runs storybook locally
-yarn run storybook
-or
 npm run storybook
 
 # build storybook
-yarn run build-storybook
-or
 npm run build-storybook
 
 # build compiled css and js
-yarn run build
-or
 npm run build
 
 # linting on codebase
 # caution: this will write changes to your files
-yarn run lint
-or
 npm run lint
 ```
 
 ### Important
 
-Make sure to run `yarn run build` or `npm run build` to compile production ready css and js files and include them with your development work. This will help save some extra steps when it comes time to deploy to production.
+Make sure to run `npm run build` to compile production ready css and js files and include them with your development work. This will help save some extra steps when it comes time to deploy to production.
 
 ## List of components
 
