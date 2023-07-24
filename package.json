@@ -1,6 +1,6 @@
 {
   "name": "@undp/design-system",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "UNDP Design System",
   "homepage": "https://design.undp.org",
   "main": "index.js",
@@ -9,13 +9,15 @@
     "build": "webpack --progress",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --loglevel verbose",
-    "scss": "sass --watch ./stories/assets/scss/style.scss ./stories/assets/css/style.css",
-    "lint": "yarn run lint:css && yarn run lint:js",
-    "lint:css": "stylelint ./stories/**/*.scss --fix",
-    "lint:js": "eslint --ignore-pattern '*.mdx' --ignore-pattern '**/Table.jsx' ./stories --fix",
     "postinstall": "patch-package"
   },
-  "keywords": ["UNDP", "United Nations", "Design System", "React", "Storybook"],
+  "keywords": [
+    "UNDP",
+    "United Nations",
+    "Design System",
+    "React",
+    "Storybook"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
