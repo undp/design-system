@@ -1,6 +1,6 @@
 {
   "name": "@undp/design-system",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "UNDP Design System",
   "homepage": "https://design.undp.org",
   "main": "index.js",
