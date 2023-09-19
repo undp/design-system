@@ -1,12 +1,8 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { TweetPanel } from './TweetPanel';
 import img from '../../../assets/images/undp-twitter.jpg';
 import { Link } from '../../../Atom/Typography/Links/Links';
 
-export default {
-  component: TweetPanel,
-  excludeStories: /.*/,
-};
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
@@ -244,3 +240,16 @@ export const getCaptionForLocale = (locale) => {
       return dummy;
   }
 };
+
+<Meta title="Components/Twitter panel" component={TwitterPanel} />
+
+### Overview
+
+<Canvas>
+  <Story name="Twitter panel">
+    {(args, { globals: { locale } }) => {
+      const content = getCaptionForLocale(locale);
+      return <TwitterPanel data={content.tweetpaneldata} headertext={content.headertext}></TwitterPanel>;
+    }}
+  </Story>
+</Canvas>
