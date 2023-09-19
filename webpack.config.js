@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+const RemoveEmptyScripts = require('webpack-remove-empty-scripts');
 // const RemovePlugin = require('remove-files-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpackEntry = require('./webpack.entries');
@@ -88,7 +88,7 @@ module.exports = [
         ],
       }),
       // remove .js file which is generated from every css file
-      new FixStyleOnlyEntriesPlugin(),
+      new RemoveEmptyScripts(),
       new MiniCssExtractPlugin({
         filename: '[name].min.css',
       }),
