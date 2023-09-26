@@ -60,25 +60,18 @@ figure.medium {
 }
 
 figure.portrait {
-  // align-items: flex-end;
-  // flex-wrap: nowrap;
-  // flex-direction: column;
   margin-left: auto;
   margin-right: auto;
 
   img {
     width: 100%;
+    margin-top: auto;
   }
 
   @container figure (width > #{$container-size}) {
-    // flex-direction: row;
-    >div,
-    >img {
+    > div,
+    > img {
       width: 50%;
-      display: inline-block;
-    }
-    img {
-      float: left;
     }
     figcaption {
       display: flex;
@@ -88,7 +81,14 @@ figure.portrait {
       padding: 0 0 0 $spacing-06;
       width: calc(50% - #{$spacing-06});
       max-width: 64rem;
-
+      border: 0;
+      &::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $color-black;
+      }
       p {
         margin-bottom: $spacing-05;
         padding: 0;
@@ -125,9 +125,6 @@ figure.portrait {
 [dir='rtl'] {
   figure.portrait {
     @container figure (width > #{$container-size}) {
-      // figcaption {
-      //   margin: 0 $spacing-06 0 0;
-      // }
       .credits {
         border-right: 0;
         margin-right: 0;
