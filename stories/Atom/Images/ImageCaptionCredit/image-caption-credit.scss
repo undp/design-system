@@ -1,8 +1,12 @@
 @import '../../../assets/scss/variables';
 @import '../../../assets/scss/mixins';
 
+$container-size: 30em;
+
 /* image with caption start */
 figure {
+  container-type: inline-size;
+  container-name: figure;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -21,7 +25,7 @@ figure {
     margin: $spacing-05 $spacing-06 $spacing-07;
     line-height: 1.4;
 
-    @include devicebreak(medium) {
+    @container figure (width > #{$container-size}) {
       margin: $spacing-07 0 $spacing-07;
       width: 100%;
       max-width: 64rem;
@@ -36,7 +40,7 @@ figure.medium {
   margin-left: auto;
   margin-right: auto;
 
-  @include devicebreak(medium) {
+  @container figure (width > #{$container-size}) {
     margin: 0 auto;
     width: 100%;
 
@@ -56,31 +60,35 @@ figure.medium {
 }
 
 figure.portrait {
-  align-items: flex-end;
-  flex-wrap: nowrap;
-  flex-direction: column;
   margin-left: auto;
   margin-right: auto;
 
-  @include devicebreak(medium) {
-    flex-direction: row;
+  img {
+    width: 100%;
+    margin-top: auto;
+  }
 
-    img {
-      width: 100%;
-    }
-
-    >div,
-    >img {
+  @container figure (width > #{$container-size}) {
+    > div,
+    > img {
       width: 50%;
     }
-
     figcaption {
-      display: block;
-      margin: 0 0 0 $spacing-06;
-      padding-bottom: 0;
-      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin: 0;
+      padding: 0 0 0 $spacing-06;
+      width: calc(50% - #{$spacing-06});
       max-width: 64rem;
-
+      border: 0;
+      &::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $color-black;
+      }
       p {
         margin-bottom: $spacing-05;
         padding: 0;
@@ -114,13 +122,9 @@ figure.portrait {
   }
 }
 
-@include devicebreak(medium) {
-  [dir='rtl'] {
-    figure.portrait {
-      figcaption {
-        margin: 0 $spacing-06 0 0;
-      }
-
+[dir='rtl'] {
+  figure.portrait {
+    @container figure (width > #{$container-size}) {
       .credits {
         border-right: 0;
         margin-right: 0;

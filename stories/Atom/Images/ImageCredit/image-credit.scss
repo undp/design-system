@@ -6,7 +6,7 @@
   line-height: 1.4;
   margin-left: auto;
 
-  @include devicebreak(medium) {
+  @container (width > 30em) {
     font-size: $font-size-16;
   }
 }

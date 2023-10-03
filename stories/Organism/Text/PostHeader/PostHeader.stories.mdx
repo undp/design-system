@@ -1,10 +1,5 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { PostHeader } from './PostHeader';
-
-export default {
-  component: PostHeader,
-  excludeStories: /.*/,
-}
 
 export const getCaptionForLocale = (locale) => {
   switch(locale) {
@@ -87,3 +82,17 @@ export const getCaptionForLocale = (locale) => {
     return dummy
   }
 };
+
+
+<Meta title="Components/Post header" component={PostHeader} />
+
+### Overview
+
+<Canvas>
+  <Story name="Post header">
+    {(args, { globals: { locale } }) => {
+      const content = getCaptionForLocale(locale);
+      return <PostHeader data={content.postheaderdata} active={content.active} header={content.header} country={content.country} description={content.description}></PostHeader>;
+    }}
+  </Story>
+</Canvas>
