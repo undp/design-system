@@ -10,10 +10,16 @@ By unifying design elements into reusable components, development will simplify 
 
 The Guide is a living document created to meet the needs of UNDP's front-end developers and designers. If there is a Component or Pattern that you need, or you have any other feedback, question or comment please contact us.
 
+
 ## Demo
 
 Living Style Guide & Documentation: **[Demo](https://design.undp.org)**
 
+## Install from NPM
+```bash
+npm install @undp/design-system
+```
+See Starter project at the link below for details of implementaiton
 ## Starter project
 
 Static generator using Design System as dependency: [UNDP Design System starter template](https://github.com/undp/design-system-starter-template)
