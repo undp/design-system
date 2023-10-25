@@ -32,7 +32,7 @@ jobs:
         env:
           WORKFLOW: .github/workflows/release-package.yml
         run: |
-          touch docs/$WORKFLOW
+          echo "" > docs/$WORKFLOW
           curl --location --request GET "https://raw.githubusercontent.com/undp/design-system-assets/main/$WORKFLOW" -o docs/$WORKFLOW
       # Exclude Github workflow definitions from NPM package
       - name: Create .npmignore file
