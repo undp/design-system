@@ -29,8 +29,11 @@ jobs:
           echo "{\"name\": \"@undp/design-system-assets\", \"version\": \"${{ steps.package-version.outputs.current-version}}\"}" > docs/package.json
       # Preserve NPM publishing workflow
       - name: get workflow definition
+        env:
+          WORKFLOW: .github/workflows/release-package.yml
         run: |
-          curl --location --request GET "https://raw.githubusercontent.com/undp/design-system-assets/main/.github/workflows/release-package.yml" -o docs/.github/workflows/release-package.yml
+          touch docs/$WORKFLOW
+          curl --location --request GET "https://raw.githubusercontent.com/undp/design-system-assets/main/$WORKFLOW" -o docs/$WORKFLOW
       # Exclude Github workflow definitions from NPM package
       - name: Create .npmignore file
         run: |
