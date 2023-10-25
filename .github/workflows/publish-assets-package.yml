@@ -19,10 +19,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      # Extract current package version
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
       # create package.json with updated version
       - name: Create package.json for assets package
         run: |
-          echo "{\"name\": \"@undp/design-system-assets\", \"version\": \"${{ github.event.release.name }}\"}" > docs/package.json
+          echo "{\"name\": \"@undp/design-system-assets\", \"version\": \"${{ steps.package-version.outputs.current-version}}\"}" > docs/package.json
+      # Push assets to their own repo
       - name: Push files to @undp/design-system-assets repo
         uses: cpina/github-action-push-to-another-repository@main
         env:
