@@ -1,0 +1,35 @@
+name: Publish assets package
+
+# Controls when the workflow will run
+on:
+  release:
+    types: [released]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      # create package.json with updated version
+      - name: Create package.json for assets package
+        run: |
+          echo "{\"name\": \"@undp/design-system-assets\", \"version\": \"${{ github.event.release.name }}\"}" > docs/package.json
+      - name: Push files to @undp/design-system-assets repo
+        uses: nkoppel/push-files-to-another-repository@v1.1.2
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-files: 'docs/**/*'
+          destination-username: 'undp'
+          destination-repository: 'design-system-assets'
+          destination-branch: 'main'
+          commit-email: 'jura.khrapunov@undp.org'
