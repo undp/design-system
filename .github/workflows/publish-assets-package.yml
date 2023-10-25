@@ -30,7 +30,7 @@ jobs:
       # Preserve NPM publishing workflow
       - name: get workflow definition
         run: |
-          echo "" > docs/.github/workflows/release-package.yml
+          mkdir -p docs/.github/workflows
           curl --location --request GET "https://raw.githubusercontent.com/undp/design-system-assets/main/.github/workflows/release-package.yml" -o docs/.github/workflows/release-package.yml
       # Exclude Github workflow definitions from NPM package
       - name: Create .npmignore file
