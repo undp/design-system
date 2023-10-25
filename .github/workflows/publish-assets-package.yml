@@ -24,12 +24,12 @@ jobs:
         run: |
           echo "{\"name\": \"@undp/design-system-assets\", \"version\": \"${{ github.event.release.name }}\"}" > docs/package.json
       - name: Push files to @undp/design-system-assets repo
-        uses: nkoppel/push-files-to-another-repository@v1.1.2
+        uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-files: 'docs/**/*'
-          destination-username: 'undp'
-          destination-repository: 'design-system-assets'
-          destination-branch: 'main'
-          commit-email: 'jura.khrapunov@undp.org'
+          source-directory: 'docs/'
+          destination-github-username: 'undp'
+          destination-repository-name: 'design-system-assets'
+          user-email: 'jura.khrapunov@undp.org'
+          
