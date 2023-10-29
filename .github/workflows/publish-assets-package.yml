@@ -1,0 +1,48 @@
+name: Publish assets package
+
+# Controls when the workflow will run
+on:
+  release:
+    types: [released]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      # Extract current package version
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+      # create package.json with updated version
+      - name: Create package.json for assets package
+        run: |
+          echo "{\"name\": \"@undp/design-system-assets\", \"version\": \"${{ steps.package-version.outputs.current-version}}\"}" > docs/package.json
+      # Preserve NPM publishing workflow
+      - name: get workflow definition
+        run: |
+          mkdir -p docs/.github/workflows
+          curl --location --request GET "https://raw.githubusercontent.com/undp/design-system-assets/main/.github/workflows/release-package.yml" -o docs/.github/workflows/release-package.yml
+      # Exclude Github workflow definitions from NPM package
+      - name: Create .npmignore file
+        run: |
+          echo ".github" > docs/.npmignore
+      # Push assets to their own repo
+      - name: Push files to @undp/design-system-assets repo
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'docs/'
+          destination-github-username: 'undp'
+          destination-repository-name: 'design-system-assets'
+          user-email: 'jura.khrapunov@undp.org'
