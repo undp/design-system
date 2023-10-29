@@ -1,4 +1,5 @@
 import React from 'react';
+import './checkbox-radio-common.scss';
 import './checkbox.scss';
 import '../../../assets/scss/_typography.scss';
 

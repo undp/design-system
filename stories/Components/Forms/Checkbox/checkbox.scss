@@ -3,18 +3,6 @@
 @import '../../../assets/scss/breakpoints';
 
 /* checkbox */
-.form-check {
-  align-items: center;
-  display: flex;
-  position: relative;
-
-  label {
-    cursor: pointer;
-    font-size: $font-size-16;
-    padding: 0 7px;
-  }
-}
-
 input[type='checkbox'] {
   @extend %checbox-radio-before;
 
