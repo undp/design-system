@@ -75,25 +75,21 @@
       }
     }
 
-    .homepage-hero-image {
-      img,
-      video {
+      img {
         @extend %img-cover;
 
-        // styles for mobile image positioning
         &.mobile-position-left {
-          object-position: left;
+          object-position: left 100px;
         }
-
+  
         &.mobile-position-center {
           object-position: center;
         }
-
+  
         &.mobile-position-right {
           object-position: right;
         }
       }
-    }
   }
 
   &-content {
@@ -170,6 +166,19 @@
 
       @include devicebreak(small) {
         position: absolute;
+      }
+
+      // styles for mobile image positioning
+      &.mobile-position-left {
+        object-position: left 100px;
+      }
+
+      &.mobile-position-center {
+        object-position: center;
+      }
+
+      &.mobile-position-right {
+        object-position: right;
       }
     }
   }
