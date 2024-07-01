@@ -43,7 +43,7 @@ export function PageHero({
       )}
       <Breadcrumbcomponent data={data} Color={textColor} />
       <div className="pagehero-content medium-offset-1">
-        <div className={['content-box', textColorClass, ].join(' ')}>
+        <div className={['content-box', textColorClass].join(' ')}>
           {args.Overline == 'On' && content && <Heading type="4" label={content} dataViewport="true" />}
           {title && <Heading type="2" label={title} dataViewport="true" />}
           {args.Subtitle == 'On' && subtitle && <p className="subtitle">{subtitle}</p>}
