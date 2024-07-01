@@ -17,11 +17,9 @@ export function PageHeroOption({
   imgalt,
   videosrc,
   cta,
-  mobileImagePosition = 'center',
   ...args
 }) {
   const CtaEnabledClass = args.CTA == 'On' ? 'has-cta' : '';
-  const mobilePositionClass = `mobile-position-${mobileImagePosition}`;
   return (
     <div className={['pagehero-tall', CtaEnabledClass].join(' ')}>
       <div className="grid-x">
@@ -42,7 +40,6 @@ export function PageHeroOption({
               <picture>
                 <source media="(min-width: 767px)" srcSet={imgsrc} />
                 <img 
-                className={mobilePositionClass}
                 src={imgsrc2} alt={imgalt} />
               </picture>
             )}

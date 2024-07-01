@@ -141,18 +141,12 @@ export const getCaptionForLocale = (locale) => {
       options: ["On", "Off"],
       control: { type: "inline-radio" },
     },
-    MobileImagePosition: {
-      name: "Mobile Image Position",
-      options: ["left", "center", "right"],
-      control: { type: "inline-radio" },
-    },
   }}
   args={{
     Variant: "Image",
     CTA: "Off",
     Overline: "Off",
     Subtitle: "Off",
-    MobileImagePosition: "center",
   }}
 />
 
@@ -206,7 +200,6 @@ There are two states in the Tall Image Page- Default and Mobile.
           imgalt={caption.imgalt}
           videosrc={caption.videosrc}
           cta={cta}
-          mobileImagePosition={args.MobileImagePosition}
           {...args}
         ></PageHeroOption>
       );
