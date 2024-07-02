@@ -1,0 +1,137 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+
+.switch {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+
+  &__track {
+    background-color: $color-gray-400;
+    border-radius: 20px;
+    position: relative;
+    width: 60px;
+    height: 30px;
+    padding: 3px 4px 3px 4px;
+    gap: 5px;
+    border-radius: 20px;
+
+    .switch--small & {
+      width: 40px;
+      height: 20px;
+    }
+
+    &:focus {
+      box-shadow: 0 0 4px $color-blue-800;
+      outline: none;
+    }
+
+  }
+
+  &__thumb {
+    width: 22px;
+    height: 22px;
+    background-color: $color-white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-10%, -50%);
+
+    .switch--small & {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    transform: translate(-20%, -50%);
+    top: 50%;
+    display: flex;
+    align-items: center;
+
+    .switch--small & {
+      width: 8px;
+    }
+  }
+
+  &__label {
+    font-size: 20px;
+    display: block;
+    margin-bottom: $spacing-03;
+
+    .switch--small & {
+      font-size: 16px;
+    }
+  }
+
+  &__value {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &--toggled {
+    .switch__track {
+      background-color: $color-blue-800;
+    }
+
+    .switch__icon {
+      color: $color-gray-400;
+      left: 20%;
+      width: 13px;
+    }
+
+    &.switch--small .switch__icon {
+      width: 10px;
+    }
+
+    .switch__thumb {
+      right: 5%;
+    }
+  }
+
+  &--untoggled {
+    .switch__icon {
+      width: 10px;
+      right: 15%;
+      color: $color-gray-600;
+    }
+
+    &.switch--small .switch__icon {
+      width: 8px;
+    }
+
+    .switch__thumb {
+      left: 10%;
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+
+    .switch__track {
+      background-color: $color-gray-400;
+
+      &:focus {
+        box-shadow: none; 
+        outline: none;
+      }
+    }
+
+    .switch__thumb {
+      background-color: $color-gray-500;
+    }
+
+    &.switch--toggled .switch__icon {
+      // Not a fan of this but couldn't get the color to change even though it was being applied
+      filter: invert(35%) sepia(19%) saturate(407%) hue-rotate(174deg) brightness(95%) contrast(87%);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
