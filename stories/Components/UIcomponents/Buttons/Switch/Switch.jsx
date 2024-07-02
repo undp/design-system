@@ -19,6 +19,10 @@ export function Switch({
   }) {
     const [toggled, setToggled] = useState(isToggled);
   
+    useEffect(() => {
+        setToggled(isToggled);
+      }, [isToggled]);
+
     const handleToggle = () => {
       if (state !== 'disabled') {
         setToggled(!toggled);
