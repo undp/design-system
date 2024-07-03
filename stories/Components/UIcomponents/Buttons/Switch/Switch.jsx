@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './switch.scss';
 import '../../../../Atom/Icons/icons.scss';
-import check from '../../../../assets/icons/checkmark-regular.svg';
-import cross from '../../../../assets/icons/disabled-x-regular.svg';
 
 export function Switch({
     size = 'default',
@@ -15,7 +13,7 @@ export function Switch({
     label = 'Label:',
     valueOn = 'On',
     valueOff = 'Off',
-    ...props
+    ...args
   }) {
     const [toggled, setToggled] = useState(isToggled);
   
@@ -29,7 +27,7 @@ export function Switch({
         if (onToggle) onToggle(!toggled);
       }
     };
-  
+ 
     const switchClass = `
       switch
       switch--${size}
@@ -38,13 +36,11 @@ export function Switch({
     `;
 
     return (
-      <div className={switchClass} onClick={handleToggle} {...props}>
+      <div className={switchClass} onClick={handleToggle} {...args}>
         {showLabel && <div className="switch__label">{label}</div>}
         <div className='switch__wrapper'>
         <div className="switch__track" tabIndex={0}>
-            {showIcon && (
-                <img className='switch__icon' src={toggled ? check : cross} alt="" />
-            )}
+        {showIcon && <div className='switch__icon'/>}
           <div className="switch__thumb">
           </div>
         </div>

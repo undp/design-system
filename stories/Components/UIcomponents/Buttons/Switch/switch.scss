@@ -11,15 +11,15 @@
     background-color: $color-gray-400;
     border-radius: 20px;
     position: relative;
-    width: 60px;
-    height: 30px;
+    width: 52px;
+    height: 1.5rem;
     padding: 3px 4px 3px 4px;
     gap: 5px;
     border-radius: 20px;
 
     .switch--small & {
-      width: 40px;
-      height: 20px;
+      width: 2rem;
+      height: 14px;
     }
 
     &:focus {
@@ -30,19 +30,28 @@
   }
 
   &__thumb {
-    width: 22px;
-    height: 22px;
-    background-color: $color-white;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-10%, -50%);
-
-    .switch--small & {
-      width: 14px;
-      height: 14px;
+      width: 22px;
+      height: 22px;
+      background-color: $color-white;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-10%, -50%);
+      transition: left 250ms ease;
+  
+      .switch--small & {
+        width: 14px;
+        height: 14px;
+      }
+      
+      .switch--toggled & {
+        left: 60%;
+      }
+  
+      .switch--untoggled & {
+        left: 10%;
+      }
     }
-  }
 
   &__icon {
     position: absolute;
@@ -50,7 +59,7 @@
     top: 50%;
     display: flex;
     align-items: center;
-
+   
     .switch--small & {
       width: 8px;
     }
@@ -67,7 +76,7 @@
   }
 
   &__value {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
   }
 
@@ -77,33 +86,32 @@
     }
 
     .switch__icon {
+      background: transparent url(~icons/checkmark-regular.svg) no-repeat left center;
       color: $color-gray-400;
       left: 20%;
       width: 13px;
+      height: 13px;
     }
 
     &.switch--small .switch__icon {
+      background: transparent url(~icons/checkmark-small.svg) no-repeat left center;
       width: 10px;
-    }
-
-    .switch__thumb {
-      right: 5%;
+      height: 10px;
     }
   }
 
   &--untoggled {
     .switch__icon {
+      background: transparent url(~icons/disabled-x-regular.svg) no-repeat right center;
       width: 10px;
+      height: 10px;
       right: 15%;
       color: $color-gray-600;
     }
 
     &.switch--small .switch__icon {
-      width: 8px;
-    }
-
-    .switch__thumb {
-      left: 10%;
+      background: transparent url(~icons/disabled-x-small.svg) no-repeat right center;
+      width: 0.5rem;
     }
   }
 
@@ -123,9 +131,20 @@
       background-color: $color-gray-500;
     }
 
-    &.switch--toggled .switch__icon {
-      // Not a fan of this but couldn't get the color to change even though it was being applied
-      filter: invert(35%) sepia(19%) saturate(407%) hue-rotate(174deg) brightness(95%) contrast(87%);
+    &.switch--toggled {
+        &.switch--small {
+            .switch__icon {
+              background: transparent url(~icons/disabled-checkmark-small.svg) no-repeat left center;
+              width: 10px;
+              height: 10px;
+            }
+        }
+
+        .switch__icon {
+          background: transparent url(~icons/disabled-checkmark-regular.svg) no-repeat left center;
+          width: 13px;
+          height: 13px;
+        }
     }
   }
 
