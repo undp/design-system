@@ -11,15 +11,16 @@
     background-color: $color-gray-400;
     border-radius: 20px;
     position: relative;
-    width: 52px;
-    height: 1.5rem;
-    padding: 3px 4px 3px 4px;
+    width: 60px;
+    height: 30px;
     gap: 5px;
     border-radius: 20px;
+    border: none;
+    cursor: pointer;
 
     .switch--small & {
-      width: 2rem;
-      height: 14px;
+      width: 40px;
+      height: 20px;
     }
 
     &:focus {

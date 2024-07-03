@@ -39,11 +39,14 @@ export function Switch({
       <div className={switchClass} onClick={handleToggle} {...args}>
         {showLabel && <div className="switch__label">{label}</div>}
         <div className='switch__wrapper'>
-        <div className="switch__track" tabIndex={0}>
+        <button 
+          className="switch__track" 
+          tabIndex={0}
+        >
         {showIcon && <div className='switch__icon'/>}
           <div className="switch__thumb">
           </div>
-        </div>
+        </button>
         {showValue && (
           <span className="switch__value">
             {toggled ? valueOn : valueOff}
