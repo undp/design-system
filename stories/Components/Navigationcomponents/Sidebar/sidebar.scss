@@ -33,7 +33,8 @@
     @include devicebreak(large) {
       a {
         &:hover {
-          background-color: $color-gray-300;
+          // background-color: $color-gray-300;
+          background-color: $color-gray-400;
         }
       }
     }
@@ -160,7 +161,8 @@
 
           @include devicebreak(large) {
             &:hover {
-              background-color: $color-gray-300;
+              // background-color: $color-gray-300;
+              background-color: $color-gray-400;
             }
           }
         }

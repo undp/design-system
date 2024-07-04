@@ -33,7 +33,9 @@
         padding: $spacing-04 $spacing-05;
 
         &:hover {
-          color: $color-gray-600;
+          // color: $color-gray-600;
+          color: $color-blue-600;
+          background-color: $color-gray-400;
         }
       }
     }
