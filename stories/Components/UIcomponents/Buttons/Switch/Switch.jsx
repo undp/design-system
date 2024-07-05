@@ -35,6 +35,10 @@ export function Switch({
       ${toggled ? 'switch--toggled' : 'switch--untoggled'}
     `;
 
+    useEffect(() => {
+      console.log('toggled', toggled);
+    }, [toggled]);
+
     return (
       <div className={switchClass} onClick={handleToggle} {...args}>
         {showLabel && <div className="switch__label">{label}</div>}
@@ -42,6 +46,8 @@ export function Switch({
         <button 
           className="switch__track" 
           tabIndex={0}
+          aria-label={label}
+          aria-pressed={toggled}
         >
         {showIcon && <div className='switch__icon'/>}
           <div className="switch__thumb">
