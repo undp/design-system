@@ -35,10 +35,6 @@ export function Switch({
       ${toggled ? 'switch--toggled' : 'switch--untoggled'}
     `;
 
-    useEffect(() => {
-      console.log('toggled', toggled);
-    }, [toggled]);
-
     return (
       <div className={switchClass} onClick={handleToggle} {...args}>
         {showLabel && <div className="switch__label">{label}</div>}
