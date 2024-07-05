@@ -39,7 +39,8 @@ export function PageHeroOption({
             ) : (
               <picture>
                 <source media="(min-width: 767px)" srcSet={imgsrc} />
-                <img src={imgsrc2} alt={imgalt} />
+                <img 
+                src={imgsrc2} alt={imgalt} />
               </picture>
             )}
           </div>
