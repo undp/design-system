@@ -11,16 +11,15 @@
     background-color: $color-gray-400;
     border-radius: 20px;
     position: relative;
-    width: 60px;
-    height: 30px;
+    width: 3.75rem;
+    height: 1.875rem;
     gap: 5px;
-    border-radius: 20px;
     border: none;
     cursor: pointer;
 
     .switch--small & {
-      width: 40px;
-      height: 20px;
+      width: 2.5rem;
+      height: 1.25rem;
     }
 
     &:focus {
@@ -31,8 +30,8 @@
   }
 
   &__thumb {
-      width: 22px;
-      height: 22px;
+      width: 1.375rem;
+      height: 1.375rem;
       background-color: $color-white;
       border-radius: 50%;
       position: absolute;
@@ -41,8 +40,8 @@
       transition: left 250ms ease;
   
       .switch--small & {
-        width: 14px;
-        height: 14px;
+        width: 0.875rem;
+        height: 0.875rem;
       }
       
       .switch--toggled & {
@@ -62,17 +61,17 @@
     align-items: center;
    
     .switch--small & {
-      width: 8px;
+      width: 0.5rem;
     }
   }
 
   &__label {
-    font-size: 20px;
+    font-size: 1.25rem;
     display: block;
     margin-bottom: $spacing-03;
 
     .switch--small & {
-      font-size: 16px;
+      font-size: 1rem;
     }
   }
 
@@ -96,16 +95,16 @@
 
     &.switch--small .switch__icon {
       background: transparent url(~icons/checkmark-small.svg) no-repeat left center;
-      width: 10px;
-      height: 10px;
+      width: 0.625rem;
+      height: 0.625rem;
     }
   }
 
   &--untoggled {
     .switch__icon {
       background: transparent url(~icons/disabled-x-regular.svg) no-repeat right center;
-      width: 10px;
-      height: 10px;
+      width: 0.625rem;
+      height: 0.625rem;
       right: 15%;
       color: $color-gray-600;
     }
@@ -136,8 +135,8 @@
         &.switch--small {
             .switch__icon {
               background: transparent url(~icons/disabled-checkmark-small.svg) no-repeat left center;
-              width: 10px;
-              height: 10px;
+              width: 0.625rem;
+              height: 0.625rem;
             }
         }
 
