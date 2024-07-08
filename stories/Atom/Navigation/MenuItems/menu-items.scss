@@ -13,6 +13,7 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
 
+    &:focus,
     &:hover {
       color: $color-gray-600;
       cursor: pointer;
