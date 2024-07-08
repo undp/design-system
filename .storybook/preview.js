@@ -11,7 +11,7 @@ initializeRTL();
 
 // Configure Storybook
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { disable: true },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -206,3 +206,4 @@ const setAccentClass = (Story, context) => {
 
 // Trigger callback in Storybook Addons.
 export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass];
+export const tags = ['autodocs'];

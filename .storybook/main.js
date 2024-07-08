@@ -2,21 +2,21 @@ const path = require("path");
 module.exports = {
   staticDirs: ['../stories/assets'],
   stories: [
-    "../stories/**/*.stories.mdx"
+    '../stories/**/*.mdx',
+    '../stories/**/*.stories.@(js|jsx|ts|tsx)'
   ],
+  
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-actions",
     "@storybook/addon-docs",
     "@storybook/addon-essentials",
-    "@whitespace/storybook-addon-html",
     "storybook-addon-rtl",
-    "@storybook/addon-a11y"
+    "@storybook/addon-a11y",
+    "@storybook/addon-webpack5-compiler-babel"
   ],
   features: {
-    storyStoreV7: true,
     buildStoriesJson: true,
-    legacyMdx1: true,
     babelModeV7: true
   },
   webpackFinal: async config => {
@@ -51,7 +51,5 @@ module.exports = {
     ...config,
     CHROMATIC_VIEWPORTS: [375, 768, 1380, 1920]
   }),
-  docs: {
-    autodocs: true
-  }
+  docs: {}
 };
