@@ -16,7 +16,7 @@ export const data = [
     button: "READ MORE",
     type: "color",
     scale: "medium",
-    url: "/?path=/story/getting-started-how-to-use-our-design-system--page",
+    url: "/?path=/docs/getting-started-how-to-use-our-design-system--docs",
   },
   {
     contenttile: "02",
