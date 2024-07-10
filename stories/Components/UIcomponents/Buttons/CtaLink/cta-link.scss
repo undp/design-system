@@ -24,7 +24,9 @@
       background: url(~icons/arrow-left-expand-defaut.svg) no-repeat left center;
     }
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       &::after {
         @include translate(70%,0);
       }

@@ -32,8 +32,10 @@
         display: block;
         padding: $spacing-04 $spacing-05;
 
-        &:hover {
-          color: $color-gray-600;
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: $color-gray-400;
         }
       }
     }
@@ -93,16 +95,15 @@
       }
     }
 
+    &:focus,
     &:hover {
       color: $color-blue-400;
 
-      &::before {
-        background-color: $color-blue-400;
+      &::before,
+      &::after {
+        filter: brightness(0) saturate(100%) invert(57%) sepia(92%) saturate(1476%) hue-rotate(186deg) brightness(90%) contrast(92%);
       }
 
-      &::after {
-        background-color: $color-blue-400;
-      }
     }
 
     &.white {

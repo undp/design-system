@@ -118,6 +118,11 @@
         background: $color-blue-600;
         color: $color-white;
 
+        &:not(.has-submenu) {
+          background: $color-gray-400;
+          color: $color-black;
+        }
+
         >ul.submenu {
           position: absolute;
           display: flex;
@@ -139,6 +144,10 @@
         >a:hover,
         >a,
         >a.active {
+          color: $color-black;
+        }
+
+        &.has-submenu > a {
           color: $color-white;
         }
 
@@ -153,36 +162,36 @@
         }
 
         >a.external .external-link-animated {
-          box-shadow: -2px 2px 0 0 $color-white, -4px 0 0 -2px $color-white, -3px 3px 0 -1px $color-white;
+          box-shadow: -2px 2px 0 0 $color-dark-red, -4px 0 0 -2px $color-dark-red, -3px 3px 0 -1px $color-dark-red;
 
           &:before {
             transition: transform 0.2s;
-            background-color: $color-white;
+            background-color: $color-dark-red;
           }
 
           &:after {
             transition: transform 0.2s;
-            border-inline-end: 2px solid $color-white;
-            border-block-start: 2px solid $color-white;
+            border-inline-end: 2px solid $color-dark-red;
+            border-block-start: 2px solid $color-dark-red;
           }
         }
 
         >a.download .download-animated {
           &:before {
             transition: transform 0.2s;
-            background-color: $color-white;
+            background-color: $color-dark-red;
           }
 
           i {
             transition: transform 0.2s;
-            border: 2px solid $color-white;
+            border: 2px solid $color-dark-red;
             border-block-start: 0;
           }
 
           &:after {
             transition: transform 0.2s;
-            border-block-end: 2px solid $color-white;
-            border-inline-start: 2px solid $color-white;
+            border-block-end: 2px solid $color-dark-red;
+            border-inline-start: 2px solid $color-dark-red;
           }
         }
       }

@@ -13,6 +13,12 @@
     h6 {
       border-bottom: 2px solid $color-black;
 
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $color-gray-400;
+      }
+
       &::after {
         @include transform(translateY(-50%) rotateZ(-180deg));
       }
@@ -30,12 +36,21 @@
     margin-bottom: 0;
     padding-left: 0;
 
-    @include devicebreak(large) {
-      a {
-        &:hover {
-          background-color: $color-gray-300;
-        }
-      }
+    a {
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $color-gray-400;
+    }
+
+    // @include devicebreak(large) {
+
+    //     &:hover {
+    //       // background-color: $color-gray-300;
+    //       background-color: $color-gray-400;
+    //     }
+    //   }
     }
   }
 
@@ -158,11 +173,18 @@
           background-color: transparent;
           color: $color-black;
 
-          @include devicebreak(large) {
-            &:hover {
-              background-color: $color-gray-300;
-            }
+          &:hover,
+          &:focus,
+          &:active {
+            background-color: $color-gray-400;
           }
+
+          // @include devicebreak(large) {
+          //   &:hover {
+          //     // background-color: $color-gray-300;
+          //     background-color: $color-gray-400;
+          //   }
+          // }
         }
 
         &:last-of-type a {
