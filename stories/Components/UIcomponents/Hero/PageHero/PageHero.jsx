@@ -18,6 +18,7 @@ export function PageHero({
   imgsrc,
   imgalt,
   cta,
+  mobileImagePosition = 'center',
   ...args
 }) {
   useEffect(() => {
@@ -26,7 +27,7 @@ export function PageHero({
 
   const textColor = variant === 'No background' ? 'Black' : 'White';
   const textColorClass = variant === 'No background' ? 'color-black' : 'color-white';
-
+  const mobilePositionClass = `mobile-position-${mobileImagePosition}`;
   return (
     <div className="pagehero-full">
       {variant === 'Video' ? (
@@ -35,7 +36,7 @@ export function PageHero({
         <>
           {variant !== 'No background' && imgsrc && (
             <div className="overlay-grey">
-              <img src={imgsrc} alt={imgalt} />
+              <img className={mobilePositionClass} src={imgsrc} alt={imgalt} />
             </div>
           )}
         </>

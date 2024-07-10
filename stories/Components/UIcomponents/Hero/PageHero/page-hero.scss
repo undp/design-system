@@ -74,6 +74,24 @@
         margin-bottom: 0;
       }
     }
+
+      img {
+        @include devicebreak(small) {
+          @extend %img-cover;
+
+          &.mobile-position-left {
+            object-position: left;
+          }
+    
+          &.mobile-position-center {
+            object-position: center;
+          }
+    
+          &.mobile-position-right {
+            object-position: right;
+          }
+        }
+      }
   }
 
   &-content {
@@ -142,15 +160,6 @@
 
     @include devicebreak(medium) {
       height: 100%;
-    }
-
-    img,
-    video {
-      @extend %img-cover;
-
-      @include devicebreak(small) {
-        position: absolute;
-      }
     }
   }
 
