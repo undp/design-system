@@ -156,9 +156,9 @@ export const menuData = (locale) => {
   }
 };
 
-<Meta
-  title="Components/Navigation components/Main navigation/Country header - Dropdown menu"
-  argTypes={{
+export default {
+  title: "Components/Navigation components/Main navigation/Country header - Dropdown menu",
+  argTypes: {
     cta_enabled: {
       name: "Enable CTA",
       control: "inline-radio",
@@ -169,20 +169,50 @@ export const menuData = (locale) => {
       control: "inline-radio",
       options: ["On", "Off"],
     },
-  }}
-  args={{
+  },
+  args: {
     cta_enabled: "Off",
     menu_extended: "Off",
-  }}
-/>
+  }
+}
 
-const styles = `
-  iframe { min-height: 400px; }
-`;
+const Template = (args, { globals: { locale } }) => {
 
-const CountrySiteHeader = () => (
-  <>
-    <style>{styles}</style>
+  const caption = getCaptionForLocale(locale);
+  const navigationData = getNavLinks(locale);
+  const backcaption = getBackForLocale(locale);
+  const siteTitleData = getSiteTitle(locale);
+  return (
+    <CountrySiteHeaderDropdown
+
+      siteTitleData={siteTitleData}
+      backcaption={backcaption}
+      locale={locale}
+      navigationData={navigationData}
+      menuData={menuData(locale)}
+      languageswitcherData={Languageswitcher(locale)}
+      text={caption}
+      locationData={getLocationDataForLocale(locale)}
+      langSelect={getSelectlanguage(locale)}
+      {...args}
+    ></CountrySiteHeaderDropdown>
+  );
+};
+
+export const CountryHeaderDropdownStory = Template.bind({});
+
+CountryHeaderDropdownStory.args = {
+  cta_enabled: "Off",
+  menu_extended: "Off",
+};
+
+CountryHeaderDropdownStory.parameters = {
+  docs: {
+    description: {
+      component: `
+
+
+    <style>"iframe { min-height: 400px; }"</style>
     <h1>Country Header</h1>
     <h2>With dropdown menu and menu overflow</h2>
     <p>
@@ -257,36 +287,34 @@ const CountrySiteHeader = () => (
     </p>
     <pre>
       <code>
-        {`
-<header class="country-header">
-  <section class="header">
-    <div class="grid-container fluid">
-      <div class="grid-x grid-margin-x align-content-middle">
-        <div class="cell small-8 large-2 shrink align-self-middle top-left">
-          Logo and sitename ...
-        </div>
-        <div class="cell small-1 large-auto align-content-middle top-center">
-          Main menu ...
-        </div>
-        <div class="cell small-3 large-auto top-right">
-          Language selector, globe link, and search link icon and
-          call to action link ...
-        </div>
-        <div class="grid-container full menu__overflow__container">
-          <ul class="overflow">
-            Add this menu__overflow__container section and
-            empty ul.overflow div if you want the menu
-            overflow functionality.
-          </ul>
-        </div>
-        <div class="mobile-nav">
-          Mobile navigation, menu, and links go in here ...
-        </div>
-      </div>
-    </div>
-  </section>
-</header>
-        `}
+        &lt;header class="country-header"&gt;
+          &lt;section class="header"&gt;
+            &lt;div class="grid-container fluid"&gt;
+              &lt;div class="grid-x grid-margin-x align-content-middle"&gt;
+                &lt;div class="cell small-8 large-2 shrink align-self-middle top-left"&gt;
+                  Logo and sitename ...
+                &lt;/div&gt;
+                &lt;div class="cell small-1 large-auto align-content-middle top-center"&gt;
+                  Main menu ...
+                &lt;/div&gt;
+                &lt;div class="cell small-3 large-auto top-right"&gt;
+                  Language selector, globe link, and search link icon and
+                  call to action link ...
+                &lt;/div&gt;
+                &lt;div class="grid-container full menu__overflow__container"&gt;
+                  &lt;ul class="overflow"&gt;
+                    Add this menu__overflow__container section and
+                    empty ul.overflow div if you want the menu
+                    overflow functionality.
+                  &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class="mobile-nav"&gt;
+                  Mobile navigation, menu, and links go in here ...
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/section&gt;
+        &lt;/header&gt;
       </code>
     </pre>
     <p>
@@ -300,27 +328,25 @@ const CountrySiteHeader = () => (
     </p>
     <pre>
       <code>
-        {`
-<header class="country-header">
-  <section class="header">
-    <div class="grid-container fluid">
-      <div class="grid-x grid-margin-x align-content-middle">
-        <div class="cell large-9 small-8 align-self-middle top-left">
-          Logo and sitename...
-          Main menu
-        </div>
-        <div class="cell large-3 small-3 top-right">
-          Language selector, globe link, and search link icon and
-          call to action link...
-        </div>
-        <div class="mobile-nav">
-          Mobile navigation, menu, and links go in here...
-        </div>
-      </div>
-    </div>
-  </section>
-</header>
-        `}
+        &lt;header class="country-header"&gt;
+          &lt;section class="header"&gt;
+            &lt;div class="grid-container fluid"&gt;
+              &lt;div class="grid-x grid-margin-x align-content-middle"&gt;
+                &lt;div class="cell large-9 small-8 align-self-middle top-left"&gt;
+                  Logo and sitename...
+                  Main menu
+                &lt;/div&gt;
+                &lt;div class="cell large-3 small-3 top-right"&gt;
+                  Language selector, globe link, and search link icon and
+                  call to action link...
+                &lt;/div&gt;
+                &lt;div class="mobile-nav"&gt;
+                  Mobile navigation, menu, and links go in here...
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/section&gt;
+        &lt;/header&gt;
       </code>
     </pre>
     <h3>Dropdown menu structure</h3>
@@ -332,31 +358,29 @@ const CountrySiteHeader = () => (
     </p>
     <pre>
       <code>
-        {`
-<div class="... top-center"> // Main parent div in header to set the menu
-  <nav class="menu"> // Important to have the .menu class
-    <ul> // add class="overflow"
-      <li>
-        // Links without children links need no special classes or settings.
-        <a href="">Link title here</a>
-      </li>
-      <li class="has-submenu">
-        <a href="">Link with children</a>
-        <ul class="submenu">
-          <li class="has-submenu">
-            <a href="">Child link with children</a>
-            <ul class="submenu">
-              <li>
-                <a>Deep child link</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-</div>
-        `}
+        &lt;div class="... top-center"&gt; // Main parent div in header to set the menu
+          &lt;nav class="menu"&gt; // Important to have the .menu class
+            &lt;ul&gt; // add class="overflow"
+              &lt;li&gt;
+                // Links without children links need no special classes or settings.
+                &lt;a href=""&gt;Link title here&lt;/a&gt;
+              &lt;/li&gt;
+              &lt;li class="has-submenu"&gt;
+                &lt;a href=""&gt;Link with children&lt;/a&gt;
+                &lt;ul class="submenu"&gt;
+                  &lt;li class="has-submenu"&gt;
+                    &lt;a href=""&gt;Child link with children&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                      &lt;li&gt;
+                        &lt;a&gt;Deep child link&lt;/a&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/nav&gt;
+        &lt;/div&gt;
       </code>
     </pre>
     <h2>Content</h2>
@@ -377,25 +401,23 @@ const CountrySiteHeader = () => (
     </p>
     <pre>
       <code>
-        {`
-<div class="cell small-1 large-auto align-content-middle top-center">
-  <ul class="overflow">
-    Menu items go here. It is important to add the overflow class to the parent ul,
-    otherwise overflow wont trigger.
-  </ul>
-</div>
+        &lt;div class="cell small-1 large-auto align-content-middle top-center"&gt;
+          &lt;ul class="overflow"&gt;
+            Menu items go here. It is important to add the overflow class to the parent ul,
+            otherwise overflow wont trigger.
+          &lt;/ul&gt;
+        &lt;/div&gt;
 
-top-right container here...
+        top-right container here...
 
-<div class="grid-container full menu__overflow__container">
-  <ul class="overflow">
-    Add this menu__overflow__container section after the top-right div and before
-    the mobile-nav div.
-  </ul>
-</div>
+        &lt;div class="grid-container full menu__overflow__container"&gt;
+          &lt;ul class="overflow"&gt;
+            Add this menu__overflow__container section after the top-right div and before
+            the mobile-nav div.
+          &lt;/ul&gt;
+        &lt;/div&gt;
 
-mobile nav container here ...
-        `}
+        mobile nav container here ...
       </code>
     </pre>
     <h2>States</h2>
@@ -438,66 +460,48 @@ mobile nav container here ...
     <h3>Dropdown menu Usage</h3>
     <ol>
       <li>Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.</li>
-
----
-
-### Usage:
-
-### Default Dropdown Usage:
-
-1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
-2. Initialize the **navigationInitialize()**, **langSwitch()** function in your js file’s document ready
-
-### Dropdown menu Usage:
-
-1. Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
-2. Initialize the **navigationInitialize()**, **navigationMultiLevelEdgeDetection()**, and **langSwitch()** function in your js file’s document ready. For example:
-
-```
-$(document).ready(function(){
-  navigationInitialize();
-  navigationMultiLevelEdgeDetection();
-});
-```
-
-### Overflow Usage:
-
-1. In addition to the steps above, Initialize the **navigationOverFlow()** function in your js file’s document ready.
-
----
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu-multi-level.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css
-
-If adding the menu overflow functionality, add the style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu-overflow.min.css
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js
-
----
-
-### Interactions
-
-- By clicking on the CTA Link, the page is directed to the subsequent link page.
-- By clicking on the search icon, the search tab opens.
-- Hovering over the main menu items will display dropdown items, if they exist.
-- If overflow is enabled, clicking on the 3 dot button will open overflow container.
-
-### Changelog
-
-1.3 — Released component
+      <li>Initialize the navigationInitialize(), navigationMultiLevelEdgeDetection(), and langSwitch() function in your js file’s document ready. For example:</li>
+    </ol>
+    <pre>
+      <code>
+        $(document).ready(function(){
+          navigationInitialize();
+          navigationMultiLevelEdgeDetection();
+        });
+      </code>
+    </pre>
+    <h3>Overflow Usage:</h3>
+    <ol>
+      <li>In addition to the steps above, Initialize the navigationOverFlow() function in your js file’s document ready.</li>
+    </ol>
+    <h2>CSS and JS References</h2>
+    <h4>CSS:</h4>
+    <ul>
+      <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</li>
+      <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css</li>
+      <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css</li>
+      <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css</li>
+      <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu-multi-level.min.css</li>
+      <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css</li>
+      <li>If adding the menu overflow functionality, add the style from:</li>
+      <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu-overflow.min.css</li>
+    </ul>
+    <h4>JS:</h4>
+    <ul>
+      <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js</li>
+      <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js</li>
+      <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js</li>
+    </ul>
+    <h2>Interactions</h2>
+    <ul>
+      <li>By clicking on the CTA Link, the page is directed to the subsequent link page.</li>
+      <li>By clicking on the search icon, the search tab opens.</li>
+      <li>Hovering over the main menu items will display dropdown items, if they exist.</li>
+      <li>If overflow is enabled, clicking on the 3 dot button will open overflow container.</li>
+    </ul>
+    <h2>Changelog</h2>
+    <p>1.3 — Released component</p>
+  `,
+    },
+  },
+};

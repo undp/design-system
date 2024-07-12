@@ -19,6 +19,19 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
+export default {
+  title: 'Components/UI components/Buttons/Chips',
+  argTypes: {
+    Type: {
+      options: ['Without X', 'With X'],
+      control: { type: 'inline-radio' },
+    },
+  },
+  args: {
+    Type: 'Without X',
+  },
+};
+
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
   return <Chips label={caption.detail} {...args}></Chips>;

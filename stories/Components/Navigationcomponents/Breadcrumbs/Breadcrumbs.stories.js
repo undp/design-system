@@ -169,3 +169,8 @@ export const BreadcrumbsComponent = () => (
     <p>1.0 — Released component</p>
   </>
 );
+
+export default {
+  title: 'Components/Navigation components/Breadcrumbs',
+  parameters,
+};

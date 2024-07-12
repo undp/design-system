@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import Sidebar from './Sidebar'; // Assuming Sidebar component is imported correctly
-import { getCaptionForLocale } from './utils'; // Assuming getCaptionForLocale is imported correctly from utils
+import { Sidebar } from './Sidebar';
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {

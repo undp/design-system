@@ -150,11 +150,15 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
+export default {
+  title: "Components/Navigation components/Menu",
+  component: Menu,
+};
+
 MenuStory.parameters = {
   docs: {
     source: {
       code: `
-<Meta title="Components/Navigation components/Menu" component={Menu} />
 
 <Canvas>
   <Story name="Menu">

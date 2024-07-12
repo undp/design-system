@@ -1,0 +1,78 @@
+import React from 'react';
+import { Meta, Story } from '@storybook/addon-docs';
+import { Loader } from './Loader';
+
+export default {
+  title: 'Utilities/Loader',
+  component: Loader,
+};
+
+const Template = (args) => <Loader {...args} />;
+
+export const LoaderStory = Template.bind({});
+LoaderStory.storyName = 'Loader';
+
+LoaderStory.parameters = {
+  docs: {
+    description: {
+      component: `
+# Loader
+
+A loading spinner is a utility that shows a loading page overlay when clicking a link or button.
+
+### Overview
+
+A loading spinner displays a loading page overlay to inform the user of some background activity happening in response to their action on a page. This helps the user understand that they need to wait for the activity to finish before proceeding further.
+
+#### When to use:
+
+- To inform the user that some background activity is happening when they encounter a delay in response to a button or link click.
+
+### Formatting
+
+#### Default
+
+The loading spinner is a simple animation that informs the user that the page is loading. It will be displayed until the full page has been loaded.
+
+### Content
+
+The loading spinner is a simple circle animation. The size varies depending on the screen size.
+
+### Behaviors
+
+#### States
+
+The loading spinner has just one state - spinning. As soon as the page loads, the loading spinner is removed.
+
+### Usage
+
+To use this component, follow these steps:
+
+- Copy the HTML from the canvas.
+- Add it to your HTML page.
+- Include the CSS and JS listed below.
+- You should have loader-ready.
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from dist/css/base-minimal.min.css.
+
+- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/loader.css
+
+#### JS:
+
+NA
+
+### Interactions
+
+- No interactions are needed with the loader.
+
+### Changelog
+
+1.0 — Released component.
+`,
+    },
+  },
+};

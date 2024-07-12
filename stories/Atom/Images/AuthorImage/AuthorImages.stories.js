@@ -23,28 +23,24 @@ export default {
   },
 };
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case 'english':
-      const engText = {};
-      return engText;
+      return {};
     case 'ukrainian':
       return { detail: '' };
     case 'arabic':
-      const arabicText = {};
-      return arabicText;
+      return {};
     case 'burmese':
-      const burmeseText = {};
-      return burmeseText;
+      return {};
     case 'japanese':
-      const japaneseText = {};
-      return japaneseText;
+      return {};
     default:
       return {};
   }
 };
 
-const Template = (args, { globals: { locale, accent } }) => {
+const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
   return <Authorimg image={user} alt="Headshot of XYZ" {...args} />;
 };
@@ -55,7 +51,6 @@ AuthorImageStory.args = {
   variant: 'Small',
 };
 
-// Documentation content
 AuthorImageStory.parameters = {
   docs: {
     description: {

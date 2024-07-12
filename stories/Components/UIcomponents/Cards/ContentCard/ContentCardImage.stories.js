@@ -1,6 +1,37 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
-import { ContentCardImage } from "./ContentCardImage";
-import img from "../../../../assets/images/card-thumbnail.jpg";
+
+import React from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ContentCardImage } from './ContentCardImage';
+import img from '../../../../assets/images/card-thumbnail.jpg';
+
+export default {
+  title: 'Components/UI components/Cards/Content card/With image',
+  argTypes: {
+    Hovercolors: {
+      name: 'Hover accent color',
+      options: ['global', 'yellow', 'red', 'green', 'blue'],
+      control: { type: 'inline-radio' },
+    },
+  },
+  args: {
+    Hovercolors: 'global',
+  },
+};
+
+const Template = (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale);
+  return (
+    <ContentCardImage
+      data={caption.contentdata}
+      {...args}
+    ></ContentCardImage>
+  );
+};
+
+export const ContentCardWithImageStory = Template.bind({});
+ContentCardWithImageStory.args = {
+  Hovercolors: 'global',
+};
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {
@@ -86,20 +117,11 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta
-  title="Components/UI components/Cards/Content card/With image"
-  argTypes={{
-    Hovercolors: {
-      name: "Hover accent color",
-      options: ["global", "yellow", "red", "green", "blue"],
-      control: { type: "inline-radio" },
-    },
-  }}
-  args={{
-    Hovercolors: "global",
-  }}
-/>
-
+// Documentation content
+ContentCardWithImageStory.parameters = {
+  docs: {
+    description: {
+      component: `
 # Content Cards
 
 The Content Card components are cards with information and/or image.
@@ -142,20 +164,6 @@ Hover: In the hover state, when the mouse hovers over the content Card will disp
 
 Content Card w/o Image can be presented with the Emphasized title (without description). In this content, the card will display the title and CTA link. On hover, the background color will be changed to the accent of the page.
 
-<Canvas>
-  <Story name="With image">
-    {(args, { globals: { locale, accent } }) => {
-      const caption = getCaptionForLocale(locale);
-      return (
-        <ContentCardImage
-          data={caption.contentdata}
-          {...args}
-        ></ContentCardImage>
-      );
-    }}
-  </Story>
-</Canvas>
-
 ### Usage
 
 - Choose the Hover color and emphasize options from the control tab of canvas.
@@ -185,3 +193,7 @@ NA
 ### Changelog
 
 1.0 — Released component
+`,
+    },
+  },
+};

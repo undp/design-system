@@ -10,8 +10,6 @@ const meta = {
   },
 };
 
-export const metaComponent = () => <Meta {...meta} />;
-
 export default {
   title: "Documentation/Accessibility",
   parameters: {

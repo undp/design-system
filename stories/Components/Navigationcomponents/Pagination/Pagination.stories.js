@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import Pagination from './Pagination';
-import { getCaptionForLocale } from './utils';
+import { Pagination } from './Pagination';
 
 export const getCaptionForLocale = (locale) => {
   switch (locale) {

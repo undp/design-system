@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import CountrySiteHeader from "./CountrySiteHeader";
-import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.mdx";
+import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js";
 
 export const getNavLinks = (locale) => {
   switch (locale) {
@@ -169,7 +169,14 @@ export const menuData = (locale) => {
   }
 };
 
-export const CountryHeader = () => {
+export default { 
+  title: "Components/Navigation components/Main navigation/Country header",
+};
+
+CountryHeader.parameters = {
+  docs: {
+    description: {
+      component: `
   return (
     <Canvas>
       <Story
@@ -209,6 +216,12 @@ export const CountryHeader = () => {
       </Story>
     </Canvas>
   );
+
+  `,
+    },
+  },
 };
 
-export default CountryHeader;
+
+
+

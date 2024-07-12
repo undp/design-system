@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
-import { Icons } from "./Icons.stories"; // Assuming Icons component is defined in Icons.js
+import { Icons } from "./Icons"; 
 import data from "./Icons.json";
 import "./icons.scss";
 
@@ -102,4 +102,9 @@ export const parameters = {
       </>
     ),
   },
+};
+
+export default {
+  title: 'Foundation/Icons',
+  parameters,
 };

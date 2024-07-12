@@ -19,6 +19,29 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
+export default {
+  title: 'Components/UI components/Buttons/CTA button',
+  argTypes: {
+    Type: {
+      options: ['Primary', 'Secondary'],
+      control: { type: 'inline-radio' },
+    },
+    State: {
+      options: ['Active', 'Hover', 'Disabled'],
+      control: { type: 'inline-radio' },
+    },
+    Icon: {
+      options: ['Arrow', 'None'],
+      control: { type: 'inline-radio' },
+    },
+  },
+  args: {
+    Type: 'Primary',
+    State: 'Active',
+    Icon: 'Arrow',
+  },
+};
+
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
   args['button_option'] = args['Type'];

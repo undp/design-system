@@ -125,3 +125,21 @@ export const parameters = {
     ),
   },
 };
+
+export default {
+  title: "Components/UI components/Accordion",
+  component: Accordion,
+  argTypes: {
+    headerText: {
+      control: {
+        type: "text",
+      },
+    },
+    descriptionText: {
+      control: {
+        type: "text",
+      },
+    },
+  },
+};
+

@@ -85,3 +85,7 @@ return dummy.data
 };
 
 <Meta title="Foundation/Typography/Lists"/>
+
+export default {
+  title: 'Foundation/Typography/Lists',
+};

@@ -1,6 +1,5 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
-import GlobalHeader from "./GlobalHeader";
-import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.mdx";
+
 
 export const getNavLinks = (locale) => {
   switch (locale) {
@@ -294,4 +293,13 @@ export const GlobalHeaderStories = () => {
   );
 };
 
-export default GlobalHeaderStories;
+export default {
+  title: "Components/Navigation components/Main navigation/Global header",
+  component: GlobalHeaderStories,
+  parameters: {
+    actions: {
+      handles: ["click .menu-item"],
+    },
+  },
+};
+

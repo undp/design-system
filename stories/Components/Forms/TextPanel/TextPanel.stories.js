@@ -203,3 +203,8 @@ export const TextPanelComponent = () => (
     <p>1.0 — Released component</p>
   </>
 );
+
+export default {
+  title: "Components/Forms/Text panel",
+  parameters,
+}

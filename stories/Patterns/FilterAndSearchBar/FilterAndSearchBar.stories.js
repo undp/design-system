@@ -1,0 +1,260 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import FilterAndSearchBar from "./FilterAndSearchBar";
+
+export const getCaptionForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      return "Category";
+    case "ukrainian":
+      return "Категорія";
+    case "arabic":
+      const arabicText = "فئة";
+      return arabicText;
+    case "burmese":
+      const burmeseText = "အမျိုးအစား";
+      return burmeseText;
+    case "japanese":
+      const japaneseText = "カテゴリー";
+      return japaneseText;
+    default:
+      return "Category";
+  }
+};
+export const getCaptionForClearLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = "Clear All";
+      return engText;
+    case "ukrainian":
+      return "Очистити все";
+    case "arabic":
+      const arabicText = "امسح الكل";
+      return arabicText;
+    case "burmese":
+      const burmeseText = "အားလုံးကိုရှင်း";
+      return burmeseText;
+    case "japanese":
+      const japaneseText = "すべてクリア";
+      return japaneseText;
+    default:
+      return "Clear All";
+  }
+};
+export const getCaptionForActiveLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = "Active Filters:";
+      return engText;
+    case "ukrainian":
+      return "Активні фільтри:";
+    case "arabic":
+      const arabicText = "عوامل التصفية النشطة:";
+      return arabicText;
+    case "burmese":
+      const burmeseText = "အသက်ဝင်သော စစ်ထုတ်မှုများ:";
+      return burmeseText;
+    case "japanese":
+      const japaneseText = "すべてクリア:";
+      return japaneseText;
+    default:
+      return "Active Filters:";
+  }
+};
+
+export const getButtonForLocale = (locale) => {
+  switch (locale) {
+    case "english":
+      const engText = { close: "Close", sort: "Search and filter" };
+      return engText;
+    case "ukrainian":
+      const ukText = { close: "Закрити", sort: "Пошук і фільтр" };
+      return ukText;
+    case "arabic":
+      const arabicText = { close: "قريب", sort: "البحث والتصفية" };
+      return arabicText;
+    case "burmese":
+      const burmeseText = { close: "ပိတ်လိုက်", sort: "ရှာဖွေပြီး စစ်ထုတ်ပါ။" };
+      return burmeseText;
+    case "japanese":
+      const japaneseText = { close: "選ぶ", sort: "検索とフィルタリング" };
+      return japaneseText;
+    default:
+      return { close: "Close", sort: "Search and filter" };
+  }
+};
+
+export default {
+  title: "Patterns/Filter and search sidebar",
+  argTypes: {
+    Height: {
+      options: ["Fix height", "Auto height"],
+      control: { type: "radio" },
+    },
+  },
+  args: {
+    Height: "Auto height",
+  }
+}
+
+const Template = (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale);
+  return <FilterAndSearchBar label={caption.detail1} {...args}></FilterAndSearchBar>;
+}
+
+export const FilterAndSearchBarStory = Template.bind({});
+FilterAndSearchBarStory.args = {
+  Height: "Auto height",
+};
+// Documentation content
+FilterAndSearchBarStory.parameters = {
+  docs: {
+    description: {
+      component: `
+
+
+# Filter and search sidebar
+
+The Filter and Search option allows the user to apply filters to the search section.
+
+### Overview
+
+This is the combination of several multi-select boxes with a search input field expanding on focus
+l
+
+#### When to use:
+
+When filters are to be added to the search bar.
+
+### Formatting
+
+#### Default
+
+The search bar is rectangular shaped with a search icon. The active filters are chips with a cross.
+
+### Behaviors
+
+#### States
+
+This is the default state where the user can search using a particular keyword. This indicates the search bar is ready to search.
+
+Select: The search bar having a horizontal line below the search icon indicates that the search bar is in an open state.
+
+<Canvas>
+  <Story name="Filter and search sidebar">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      const buttonData = getButtonForLocale(locale);
+      const clearText = getCaptionForClearLocale(locale);
+      const activeFilterText = getCaptionForActiveLocale(locale);
+      return (
+        <FilterAndSearchBar
+          locale={locale}
+          buttonData={buttonData}
+          args={args}
+          clearText={clearText}
+          activeFilterText={activeFilterText}
+          data={caption}
+        ></FilterAndSearchBar>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Usage:
+
+- Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
+- Initialize the search, multi-select and filter by calling functions expandSearch(), multiSelect(), toggleFilter() respectively.
+- Custom code can be triggered by available Custom Events on the filter items. See **Custom Events** and **Custom Event Data** below.
+
+---
+
+### Custom Events:
+
+- **multiSelectToggle**: When a multi-select item is toggled open or closed:
+  
+  $(document).on('multiSelectToggle', (e) => {
+    ...Your custom code...
+  });
+  
+- **multiSelectInputToggle**: When a checkbox in the multi-select is toggled on or off:
+  
+  $(document).on('multiSelectInputToggle', (e) => {
+    ...Your custom code...
+  });
+  
+- **filterSearchChipRemoval**: When a search chip is removed:
+  
+  $(document).on('filterSearchChipRemoval', (e) => {
+    ...Your custom code...
+  });
+  
+- **filterSearchClear**: When the Search "Clear all" link is clicked:
+  
+  $(document).on('filterSearchClear', (e) => {
+    ...Your custom code...
+  });
+  
+
+### Custom Event Data:
+
+Each of the custom events contains specific data.
+
+The **multiSelectInputToggle** event data contains:
+
+- checkbox_id: (string) The ID of the triggering input.
+- state: (boolean) The current state of the triggering input, true or false.
+- toggle_state: (string) whether the triggering input is "checked" or "unchecked".
+- selected: (boolean) true if the input is selected.
+- unselected: (boolean) true if the input is unselected.
+
+The **multiSelectToggle** event data contains:
+
+- select_trigger_dataset_id: (string) The Dataset ID of the triggering button (if one is set).
+- select_trigger_id: (string) The ID of the triggering button, (if one is set).
+- state: (string) The current state of the triggering select group, "open" or "closed".
+- open: (boolean) true if the list is open.
+- closed: (boolean) true if the list is closed.
+- target: The target select item that is toggled open and closed by the triggering button.
+
+The **filterSearchChipRemoval** event data contains:
+
+- chip_id: (string) The ID of chip being removed.
+
+The **filterSearchClear** event does not contain any specific data:
+
+---
+
+### CSS and JS References
+
+#### CSS:
+
+Add the base layout style from
+
+- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
+- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/filter-and-search-bar.min.css
+- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/multi-select.min.css
+- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/checkbox.min.css
+- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/radio.min.css
+- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/search-expand.min.css
+- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/chips.min.css
+
+#### JS:
+
+- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/filter-search-bar.min.js
+- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/multi-select.min.js
+- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/expand-search.min.js
+
+### Interactions
+
+- The checked state is applied to the entire option.
+- The hover state is applied to the entire option.
+- By clicking on the X icon, the filters are removed.
+
+### Changelog
+
+1.0 — Released component
+
+`,
+    },
+  },
+};

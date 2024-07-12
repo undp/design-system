@@ -1,13 +1,22 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { initializeRTL } from 'storybook-addon-rtl';
-import renderToHTML from './renderToHTML'
+import * as RTLAddon from 'storybook-addon-rtl';
+import renderToHTML from './renderToHTML';
 
 // include base styling globally
 import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss';
 import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css';
 
-// initialise RTL
-initializeRTL();
+// Log the contents of RTLAddon for debugging
+console.log(RTLAddon);
+
+const { initializeRTL } = RTLAddon;
+
+// Check if initializeRTL is a function before calling it
+if (typeof initializeRTL === 'function') {
+  initializeRTL();
+} else {
+  console.error('initializeRTL is not a function');
+}
 
 // Configure Storybook
 export const parameters = {
@@ -48,7 +57,6 @@ export const parameters = {
 }
 
 /* Implementing locale for language switcher */
-// Note: Languages added to items array need to be added to the getLangCode() function below.
 export const globalTypes = {
   locale: {
     title: 'Locale',
@@ -84,28 +92,17 @@ export const globalTypes = {
   }
 };
 
-/**
- * Function to get current language code.
- *
- * @param {*} Story renders Stories in iFrame.
- * @param {*} context Current context for Addons.
- * @returns Current Language Code.
- */
 const getLangCode = (Story, context) => {
   let activeLang = context.globals.locale;
 
-  // trigger onload event
-  // UI has some animation element which trigger on load.
   let delay = 10;
   setTimeout(function() {
     const evt = new Event('load');
     window.dispatchEvent(evt);
   }, delay);
 
-  // Set window object for iframe.
   window.UNDP.langCode = (window.UNDP) ? activeLang : window.UNDP= { langCode : activeLang };
 
-  // Language Array to map language alpha code.
   const langArr = {
     'english' : 'en',
     'arabic': 'ar',
@@ -114,12 +111,10 @@ const getLangCode = (Story, context) => {
     'ukrainian': 'uk'
   };
 
-  // Check if language exists.
   if (typeof langArr[activeLang] == 'undefined') {
     activeLang = 'english';
   }
 
-  // Set HTML lang attribute for iframe.
   const htmlElem = document.querySelector('html');
   htmlElem.setAttribute('lang', langArr[activeLang]);
 
@@ -129,16 +124,11 @@ const getLangCode = (Story, context) => {
 }
 
 const sbFrameReset = (Story, context) => {
-  // Get Storybook Iframe's body element.
   const iframeBody = document.querySelector('body');
-  // Get Storybook sidebar items in an array.
   const sidebarItem = parent.document.querySelectorAll('.sidebar-item');
-  // Add click event listner on each sidebar item.
   sidebarItem.forEach(function (item, i) {
     item.addEventListener('click', function (e) {
-      // Classes to remove.
       const classNames = ['sdgmodal-open', 'color-blue'];
-      // Check if above classes exist in `body` element and remove them.
       if (classNames.some(className => iframeBody.classList.contains(className))) {
         iframeBody.classList.remove(...classNames);
       }
@@ -150,21 +140,16 @@ const sbFrameReset = (Story, context) => {
 }
 
 const setDirection = (Story, options) => {
-  // Set default direction.
   let direction = 'ltr';
-  // LTR-RTL Toggle button.
   const input = parent.document.querySelector('[aria-controls="rtl-status"]');
-  // Callback function for LTR-RTL Toggle.
   const checkRTL = (elem) => {
     if (elem.checked) {
       direction = 'rtl';
     }
   }
-  // Change direction on LTR-RTL Toggle.
   if (input && input.checked) {
     input.addEventListener('change', checkRTL(input), false);
   }
-  // Set window object for iframe.
   if (typeof window.UNDP === 'undefined') {
     window.UNDP = {};
   }
@@ -175,19 +160,10 @@ const setDirection = (Story, options) => {
   )
 }
 
-/**
- * Function to set a global "accent-COLOR" class to the body.
- *
- * @param {*} Story renders Stories in iFrame.
- * @param {*} context Current context for Addons.
- * @returns Story with accent color processed.
- */
 const setAccentClass = (Story, context) => {
   let accent = context.globals.accent;
   const bodyElem = document.querySelector('body');
 
-  // Remove any prexisting accent-COLOR items so we can apply the most recent
-  // global selection.
   bodyElem.classList.forEach((item) => {
     if (item.startsWith('accent-')) {
       bodyElem.classList.remove(item);
@@ -195,7 +171,6 @@ const setAccentClass = (Story, context) => {
   });
 
   if (Boolean(accent)) {
-    // Set accent class on body tag (the most parent of parents).
     bodyElem.classList.add(`accent-${accent}`);
   }
 
@@ -204,6 +179,5 @@ const setAccentClass = (Story, context) => {
   )
 }
 
-// Trigger callback in Storybook Addons.
 export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass];
 export const tags = ['autodocs'];
