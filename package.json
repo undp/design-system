@@ -1,6 +1,6 @@
 {
   "name": "@undp/design-system",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "UNDP Design System",
   "homepage": "https://design.undp.org",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "build": "webpack --progress",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --loglevel verbose",
-    "postinstall": "patch-package"
+    "windows-patch-package": "patch-package"
   },
   "keywords": [
     "UNDP",
