@@ -20,6 +20,7 @@ Living Style Guide & Documentation: **[Demo](https://design.undp.org)**
 npm install @undp/design-system
 ```
 See Starter project at the link below for details of implementaiton
+
 ## Starter project
 
 Static generator using Design System as dependency: [UNDP Design System starter template](https://github.com/undp/design-system-starter-template)
@@ -35,6 +36,10 @@ git clone
 # install project dependencies
 npm install
 
+# In Windows environment apply patch to the mdx1-csf plugin.
+# This can be omitted when this PR is merged: https://github.com/storybookjs/mdx1-csf/pull/27
+npm run windows-patch-package
+
 # runs storybook locally
 npm run storybook
 
@@ -43,10 +48,6 @@ npm run build-storybook
 
 # build compiled css and js
 npm run build
-
-# linting on codebase
-# caution: this will write changes to your files
-npm run lint
 ```
 
 ### Important
