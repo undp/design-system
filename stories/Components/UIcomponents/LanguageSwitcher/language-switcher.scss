@@ -78,7 +78,7 @@
     }
 
     &::after {
-      @include transition(0.2s ease-in-out);
+      // @include transition(0.2s ease-in-out);
 
       background-color: $color-blue-600;
       content: '';
@@ -115,6 +115,11 @@
 
       &::after {
         background: url(~icons/arrow-white-down.svg) no-repeat left center;
+      }
+
+      &:focus,
+      &:hover {
+        color: $color-blue-400;
       }
     }
   }
