@@ -78,7 +78,7 @@
     }
 
     &::after {
-      // @include transition(0.2s ease-in-out);
+      @include transition(transform 0.2s ease-in-out);
 
       background-color: $color-blue-600;
       content: '';
@@ -109,17 +109,17 @@
     &.white {
       color: $color-white;
 
+      &:focus,
+      &:hover {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);;
+      }
+
       &::before {
         background: url(~icons/language-white.svg) no-repeat left center;
       }
 
       &::after {
         background: url(~icons/arrow-white-down.svg) no-repeat left center;
-      }
-
-      &:focus,
-      &:hover {
-        color: $color-blue-400;
       }
     }
   }
