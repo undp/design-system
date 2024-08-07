@@ -136,18 +136,18 @@ textarea {
 
 input[type='date']::-webkit-calendar-picker-indicator {
   appearance: none;
-  // left: 3px;
   opacity: 1;
   position: absolute;
-  margin-left: -27px;
-  // top: 0;
-  // left: 0;
-  // right: 0;
-  // bottom: 0;
-  // width: auto;
-  // height: auto;
-  color: transparent;
-  background: transparent;
+  // -moz-position: absolute;
+  margin-inline-start: -1.7rem;
+  // -moz-top: 0;
+  // -moz-left: 0;
+  // -moz-right: 0;
+  // -moz-bottom: 0;
+  width: 1rem;
+  height: 1rem;
+  color: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
 
@@ -195,15 +195,17 @@ input[type='date']::-webkit-calendar-picker-indicator {
     position: absolute;
     text-align: initial;
     opacity: 1;
-    margin-left: 95%;
-    padding: auto 0;
+    margin-right: 0.75rem;
+    // padding: auto 0;
     // right: 27px;
-    top: 0;
-    left: 0;
+    top: 1;
+    left: 1;
     right: 0;
-    bottom: 0;
-    width: auto;
-    height: auto;
+    bottom: 1;
+    width: 1rem;
+    height: 1rem;
+    color: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
   }
 
   input::-webkit-date-and-time-value {
