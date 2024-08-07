@@ -10,6 +10,8 @@ module.exports = {
     '@storybook/addon-essentials',
     'storybook-addon-rtl',
     '@storybook/addon-a11y',
+    '@storybook/react-webpack5',
+    '@chromatic-com/storybook',
     '@storybook/addon-webpack5-compiler-babel'
   ],
   features: {
@@ -24,19 +26,16 @@ module.exports = {
 
     config.module.rules.push({
       test: /\.scss$/,
-      exclude: /node_modules/,
       use: ['style-loader', 'css-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../')
     });
 
-    // Ensure JavaScript and JSX files are handled correctly
     config.module.rules.push({
       test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env', '@babel/preset-react']
+          presets: ['@babel/preset-env', ['@babel/preset-react', { "runtime": "automatic" }]]
         }
       }
     });
@@ -51,5 +50,5 @@ module.exports = {
     ...config,
     CHROMATIC_VIEWPORTS: [375, 768, 1380, 1920]
   }),
-  docs: {}
+  docs: {},
 };

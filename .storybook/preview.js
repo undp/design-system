@@ -2,20 +2,19 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import * as RTLAddon from 'storybook-addon-rtl';
 import renderToHTML from './renderToHTML';
 
+
 // include base styling globally
 import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss';
 import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css';
 
 // Log the contents of RTLAddon for debugging
+
 console.log(RTLAddon);
 
-const { initializeRTL } = RTLAddon;
-
-// Check if initializeRTL is a function before calling it
-if (typeof initializeRTL === 'function') {
-  initializeRTL();
+if (RTLAddon && typeof RTLAddon.default === 'function') {
+  RTLAddon.default(); // Use the default export if it is a function
 } else {
-  console.error('initializeRTL is not a function');
+  console.error('RTL initialization method not found.');
 }
 
 // Configure Storybook
@@ -180,4 +179,5 @@ const setAccentClass = (Story, context) => {
 }
 
 export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass];
-export const tags = ['autodocs'];
+export const tags = ['autodocs', 'autodocs'];
+

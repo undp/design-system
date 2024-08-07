@@ -2,102 +2,76 @@ import React from 'react';
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Authorimg } from './AuthorImages';
 import user from '../../../assets/images/author.png';
+import './author-image.scss';
 
 export default {
   title: 'Foundation/Images/Author image',
+  component: Authorimg,
   argTypes: {
     variant: {
-      name: 'Size variant',
-      options: ['Large', 'Small'],
-      control: { type: 'inline-radio' },
+      name: "Size variant",
+      options: ["Large", "Small"],
+      control: { type: "inline-radio" },
     },
     accent: {
-      name: 'Hover accent color',
-      options: ['global', 'yellow', 'red', 'green', 'blue'],
-      control: { type: 'inline-radio' },
+      name: "Hover accent color",
+      options: ["global", "yellow", "red", "green", "blue"],
+      control: { type: "inline-radio" },
     },
   },
-  args: {
-    accent: 'global',
-    variant: 'Small',
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <section>
+            <h1>Author Image</h1>
+            <p>
+              The Author Image component reveals the photo of the author.
+            </p>
+            <h3>When to use:</h3>
+            <ul>
+              <li>When the image of the author is to be displayed.</li>
+            </ul>
+            <h3>Formatting</h3>
+            <p>
+              It’s circular shaped with an image inside it.
+            </p>
+            <h3>Behaviors</h3>
+            <p>
+              There are two states in the Author Image component: Small and Large.
+            </p>
+            <ul>
+              <li>Small</li>
+              <li>Large</li>
+            </ul>
+            <Canvas>
+              <Story
+                name="Author Image"
+              >
+                {args => <Authorimg image={user} alt="Headshot of XYZ" {...args} />}
+              </Story>
+            </Canvas>
+            <h3>CSS and JS References</h3>
+            <h4>CSS:</h4>
+            <p>
+              Add the base layout style from{' '}
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">
+                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
+              </a>
+            </p>
+            <h4>JS:</h4>
+            <p>NA</p>
+          </section>
+        </>
+      ),
+    },
   },
 };
 
-const getCaptionForLocale = (locale) => {
-  switch (locale) {
-    case 'english':
-      return {};
-    case 'ukrainian':
-      return { detail: '' };
-    case 'arabic':
-      return {};
-    case 'burmese':
-      return {};
-    case 'japanese':
-      return {};
-    default:
-      return {};
-  }
-};
+const Template = (args) => <Authorimg image={user} {...args} />;
 
-const Template = (args, { globals: { locale } }) => {
-  const caption = getCaptionForLocale(locale);
-  return <Authorimg image={user} alt="Headshot of XYZ" {...args} />;
-};
-
-export const AuthorImageStory = Template.bind({});
-AuthorImageStory.args = {
+export const AuthorImage = Template.bind({});
+AuthorImage.args = {
   accent: 'global',
   variant: 'Small',
-};
-
-AuthorImageStory.parameters = {
-  docs: {
-    description: {
-      component: `
-# Author Image
-
-The Author Image component reveals the photo of the author.
-
-### Overview
-
-The Author Image component displays the author’s image but does not contain any information.
-
-#### When to use:
-
-- When the image of the author is to be displayed.
-
-### Formatting
-
-#### Default
-
-It’s circular shaped with an image inside it.
-
-### Behaviors
-
-#### States
-
-There are two states in the Author Image component: Small and Large.
-
-- Small
-- Large
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-
-#### JS:
-
-- N/A
-
-### Changelog
-
-1.0 — Released component
-`,
-    },
-  },
 };

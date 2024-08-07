@@ -1,16 +1,20 @@
 {
   "sourceType": "unambiguous",
   "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "shippedProposals": true,
-          "loose": true
-        }
-      ],
-      "@babel/preset-react",
-      "@babel/preset-typescript"
+    [
+      "@babel/preset-env",
+      {
+        "shippedProposals": true,
+        "loose": true
+      }
     ],
+    [
+      "@babel/preset-typescript",
+      {
+        "runtime": "automatic"
+      }
+    ]
+  ],
   "plugins": [
     "@babel/plugin-transform-shorthand-properties",
     "@babel/plugin-transform-block-scoping",
