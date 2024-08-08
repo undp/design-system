@@ -9,6 +9,7 @@ module.exports = {
     '@storybook/addon-docs',
     '@storybook/addon-essentials',
     'storybook-addon-rtl',
+    '@storybook/blocks',
     '@storybook/addon-a11y',
     '@storybook/react-webpack5',
     '@chromatic-com/storybook',

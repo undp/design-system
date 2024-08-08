@@ -15,87 +15,404 @@ import { Descriptionlist } from "../Typography/Lists/Descriptionlist";
 import { DetailsTag } from "../ReachElement/Details/Details";
 import { Figcaption } from "../ReachElement/Figcaption/Figcaption";
 
-export const getCaptionForLocaleHeading = (locale) => {
-  switch (locale) {
-    case "english":
-      const engText = {
-        detail1: "Headline 1",
-        detail2: "Headline 2",
-        detail3: "Headline 3",
-        detail4: "Headline 4",
-        detail5: "Headline 5",
-        detail6: "Headline 6",
-      };
-      return engText;
-    case "arabic":
-      const arabicText = {
-        detail1: "العنوان 1.",
-        detail2: "العنوان 2",
-        detail3: "العنوان 3",
-        detail4: "العنوان 4",
-        detail5: "العنوان 5",
-        detail6: "العنوان 6",
-      };
-      return arabicText;
-    case "burmese":
-      const burmeseText = {
-        detail1: "ခခေါင်းစီး ၁",
-        detail2: "ခေါင်းစဉ် ၂",
-        detail3: "ခေါင်းစဉ် ၃",
-        detail4: "ခေါင်းစဉ် ၄",
-        detail5: "ခေါင်းစဉ် ၅",
-        detail6: "ခေါင်းစီး ၆",
-      };
-      return burmeseText;
-    case "japanese":
-      const japaneseText = {
-        detail1: "見出し1",
-        detail2: "見出し2",
-        detail3: "見出し3",
-        detail4: "見出し4",
-        detail5: "見出し5",
-        detail6: "見出し6",
-      };
-      return japaneseText;
-    case "ukrainian":
-      const ukrainianText = {
-        detail1: "Заголовок 1",
-        detail2: "Заголовок 2",
-        detail3: "Заголовок 3",
-        detail4: "Заголовок 4",
-        detail5: "Заголовок 5",
-        detail6: "Заголовок 6",
-      };
-      return ukrainianText;
-    default:
-      return {
-        detail1: "Headline 1",
-        detail2: "Headline 2",
-        detail3: "Headline 3",
-        detail4: "Headline 4",
-        detail5: "Headline 5",
-        detail6: "Headline 6",
-      };
+
+export default {
+    title: "Foundation/Typography/Base typography",
+    parameters: {
+    docs: {
+      page: () => (
+        <section>
+        <h1>Base Typography</h1>
+        <p>Basic elements which the design system has some styling listed here, you can use the elements as it is, without any specific CSS classes.</p>
+        <Anchor storyId="foundation-typography-basetypography--abbreviation"></Anchor>
+        <h3>Abbreviation</h3>
+        <p>Abbreviation component defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".</p>
+        <ul>
+            <li>We can use the <code>abbr tag</code> in any component, to display as a tooltip when you hover over the element.</li>
+        </ul>
+        <p>Typographic scale when using abbreviation in text component:</p>
+
+        <Canvas>
+            <Story name="Abbreviation">
+                {(args, { globals: { locale } }) => renderComponentForStory("Abbreviation", locale)}
+            </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--blockquote"></Anchor>
+        <h3>Blockquote</h3>
+        <p>The blockquote component is used to define a section that is quoted from another source.</p>
+        <ul>
+            <li>We can use the <code>blockquote tag</code> in any component to render the text found within the <code>blockquote tag</code>.</li>
+        </ul>
+        <p>Typographic scale when using blockquote in text component:</p>
+
+        <Canvas>
+            <Story name="Blockquote">
+                {(args, { globals: { locale } }) => renderComponentForStory("Blockquote", locale)}
+            </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--cite"></Anchor>
+        <h3>Cite</h3>
+        <p>The Cite component defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.).</p>
+        <ul>
+            <li>We can use <code>cite</code> in any component to render the text found within the <code>cite tag</code>.</li>
+        </ul>
+        <p>Typographic scale when using cite in text component:</p>
+
+        <Canvas>
+            <Story name="Cite">
+                {(args, { globals: { locale } }) => renderComponentForStory("Cite", locale)}
+            </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--code"></Anchor>
+        <h3>Code</h3>
+        <p>The code component is used to define a piece of computer code. The content inside is displayed in the browser's default monospace font.</p>
+        <ul>
+            <li>We can use the <code>code tag</code> in any component to render the text found within the <code>code tag</code> in monospace font.</li>
+        </ul>
+        <p>Typographic scale when using code in text component:</p>
+
+        <Canvas>
+            <Story name="Code">
+                {(args, { globals: { locale } }) => renderComponentForStory("Code", locale)}
+            </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--description-list"></Anchor>
+        <h3>Description List</h3>
+        <p>A description list is a list of terms, with a description of each term.</p>
+        <ul>
+            <li>The <code>dl tag</code> defines the description list, the <code>dt tag</code> defines the term (name), and the <code>dd tag</code> describes each term.</li>
+        </ul>
+
+        <Canvas>
+            <Story name="Description list">
+                {(args, { globals: { locale } }) => renderComponentForStory("Description list", locale)}
+            </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--details"></Anchor>
+        <h3>Details</h3>
+        <p>The details tag creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.</p>
+
+        <Canvas>
+            <Story name="Details">
+                {(args, { globals: { locale } }) => renderComponentForStory("Details", locale)}
+            </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--figcaption"></Anchor>
+        <h3>Figcaption</h3>
+        <p>The <code>figcaption</code> tag is used to caption the image. The <code>figcaption</code> tag is used with the <code>figure</code> tag.</p>
+
+        <Canvas>
+            <Story name="Figcaption">
+                {(args, { globals: { locale } }) => renderComponentForStory("Figcaption", locale)}
+            </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--headings"></Anchor>
+        <h3>Headings</h3>
+        <p>We can use the <code>h1/h2/h3/h4/h5/h6 tags</code> in any component to display the headings. h1 for most important heading to h6 for least important heading.</p>
+        <p>Typographic scale when using headings in text component:</p>
+
+        <Canvas>
+            <Story name="Headings">
+                {(args, { globals: { locale } }) => renderComponentForStory("Headings", locale)}
+            </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--hr"></Anchor>
+        <h3>Horizontal Rule</h3>
+        <p>The <code>hr tag</code> defines a thematic break in an HTML page, and is most often displayed as a horizontal rule.</p>
+        <ul>
+            <li>We can use the <code>hr tag</code> in any component to render a horizontal line.</li>
+        </ul>
+        <p>Typographic scale when using hr in text component:</p>
+
+        <Canvas>
+            <Story name="Hr">
+                {(args, { globals: { locale } }) => renderComponentForStory("Hr", locale)}
+            </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--mark"></Anchor>
+        <h3>Mark</h3>
+        <p>The <code>mark tag</code> defines marked or highlighted text.</p>
+        <ul>
+            <li>We can use the <code>mark tag</code> in any component to render the text found within the <code>mark tag</code> in a highlighted style.</li>
+        </ul>
+        <p>Typographic scale when using mark in text component:</p>
+
+        <Canvas>
+            <Story name="Mark">
+                {(args, { globals: { locale } }) => renderComponentForStory("Mark", locale)}
+            </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--ordered-list"></Anchor>
+        <h3>Ordered List</h3>
+        <p>The <code>ol tag</code> defines an ordered list. An ordered list can be numerical or alphabetical.</p>
+        <ul>
+            <li>We can use the <code>ol tag</code> in any component to render the text found within the <code>ol tag</code> in a numerical or alphabetical list.</li>
+        </ul>
+
+        <Canvas>
+            <Story name="Ordered list">
+                {(args, { globals: { locale } }) => renderComponentForStory("Ordered list", locale)}
+            </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--p"></Anchor>
+        <h3>Paragraph</h3>
+        <p>The <code>p tag</code> defines a paragraph.</p>
+        <ul>
+            <li>We can use the <code>p tag</code> in any component to render the text found within the <code>p tag</code> in a paragraph.</li>
+        </ul>
+        <p>Typographic scale when using paragraph in text component:</p>
+
+        <Canvas>
+            <Story name="P">
+                {(args, { globals: { locale } }) => renderComponentForStory("P", locale)}
+            </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--quotation"></Anchor>
+        <h3>Quotation</h3>
+        <p>The <code>q tag</code> defines a short quotation.</p>
+        <ul>
+            <li>We can use the <code>q tag</code> in any component to render the text found within the <code>q tag</code> in a short quotation.</li>
+        </ul>
+        <p>Typographic scale when using quotation in text component:</p>
+
+        <Canvas>
+            <Story name="Quotation">
+                {(args, { globals: { locale } }) => renderComponentForStory("Quotation", locale)}
+            </Story>
+        </Canvas>
+
+          <Anchor storyId="foundation-typography-basetypography--small"></Anchor>
+
+          <h3>Small</h3>
+
+          <p>The <code>small tag</code> defines smaller text.</p>
+          <ul>
+            <li>We can use the <code>small tag</code> in any component to render the text found within the <code>small tag</code> in a smaller font size.</li>
+          </ul>
+          <p>Typographic scale when using small in text component:</p>
+
+                  <Canvas>
+                    <Story name="Small">
+                      {(args, { globals: { locale } }) => renderComponentForStory("Small", locale)}
+                    </Story>
+        </Canvas>
+
+        <Anchor storyId="foundation-typography-basetypography--unordered-list"></Anchor>
+            
+
+            <h3>Unordered List</h3>
+
+            <p>The <code>ul tag</code> defines an unordered list. An unordered list can be bulleted.</p>
+            <ul>
+              <li>We can use the <code>ul tag</code> in any component to render the text found within the <code>ul tag</code> in a bulleted list.</li>
+            </ul>
+
+            <Anchor storyId="foundation-typography-basetypography--unordered-list"></Anchor>
+
+
+            <Canvas>
+              <Story name="Unordered list">
+                {(args, { globals: { locale } }) => renderComponentForStory("Unordered list", locale)}
+              </Story>
+            </Canvas>
+
+
+
+            <h3>Usage</h3>
+
+            <p>- Include **https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css** file in your HTML file, no other CSS and JS file required.</p>
+          </section>
+          )
+        }
+    }
   }
-};
 
-<Meta
-  title="Foundation/Typography/Base typography"
-  parameters={{
-    viewMode: "docs",
-    previewTabs: {
-      canvas: { hidden: true },
-    },
-  }}
-/>
+  const renderComponentForStory = (StoryName, locale) => {
+    switch (StoryName) {
+      case "Abbreviation":
+        const captionAbbr = getCaptionForLocaleAbbr(locale);
+        return <Abbreviation label={captionAbbr.detail1} />;
+      case "Blockquote":
+        const captionBlockquote = getCaptionForLocaleBlockquote(locale);
+        return (
+          <Blockquote
+            text={captionBlockquote.detail}
+            citeText={captionBlockquote.citeText}
+          />
+        );
+      case "Cite":
+        const captionCite = getCaptionForLocaleCite(locale);
+        return <Cite text={captionCite.detail} />;
+      case "Code":
+        const captionCode = getCaptionForLocaleCode(locale);
+        return (
+          <p>
+            {captionCode.detail1} <Code label={captionCode.detail2}></Code> {
+              captionCode.detail3
+            } <Code label={captionCode.detail4}></Code> {captionCode.detail5}
+          </p>
+        );
+      case "Description list":
+        const captionList = getCaptionForLocaleList(locale);
+        return <Descriptionlist data={captionList} />;
+      case "Details":
+        const captionDetails = getLocaleForDetails(locale);
+        return (
+          <DetailsTag
+            summary={captionDetails.summary}
+            details={captionDetails.details}
+          />
+        );
+      case "Figcaption":
+        const captionFigcaption = getLocaleForFigcaption(locale);
+        return <Figcaption details={captionFigcaption.details} />;
+      case "Headings":
+        const captionHeading = getCaptionForLocaleHeading(locale);
+        return (
+          <>
+            <Heading type="1" label={captionHeading.detail1}></Heading>
+            <Heading type="2" label={captionHeading.detail2}></Heading>
+            <Heading type="3" label={captionHeading.detail3}></Heading>
+            <Heading type="4" label={captionHeading.detail4}></Heading>
+            <Heading type="5" label={captionHeading.detail5}></Heading>
+            <Heading type="6" label={captionHeading.detail6}></Heading>
+          </>
+        );
+      case "Hr":
+        const captionHr = getCaptionForLocaleHr(locale);
+        return <Hr detailsText={captionHr.detail} />;
+      case "Mark":
+        const captionMark = getCaptionForLocaleMark(locale);
+        return <Mark label={captionMark.detail} />;
+      case "Ordered list":
+        const captionOrderedList = getCaptionForLocaleList(locale);
+        return <List data={captionOrderedList} type="ol" />;
+      case "P":
+        const captionParagraph = getCaptionForLocaleParagraph(locale);
+        return <P label={captionParagraph.detail} />;
+      case "Quotation":
+        const captionQuotation = getCaptionForLocaleQuotation(locale);
+        return <Quotation label={captionQuotation.detail} />;
+      case "Small":
+        const captionSmall = getCaptionForLocaleSmall(locale);
+        return <Small label={captionSmall.detail} />;
+      case "Unordered list":
+        const captionUnorderedList = getCaptionForLocaleList(locale);
+        return <List data={captionUnorderedList} type="ul" />;
+      default:
+        return null;
+    }
+  };
 
-# Base Typography
+  const TemplateHeading  = (args) => <Heading {...args} />;
+  const TemplateAbbreviation  = (args) => <Abbreviation {...args} />;
+  const TemplateBlockquote  = (args) => <Blockquote {...args} />;
+  const TemplateCite  = (args) => <Cite {...args} />;
+  const TemplateCode  = (args) => <Code {...args} />;
+  const TemplateHr  = (args) => <Hr {...args} />;
+  const TemplateMark  = (args) => <Mark {...args} />;
+  const TemplateP  = (args) => <P {...args} />;
+  const TemplateQuotation  = (args) => <Quotation {...args} />;
+  const TemplateSmall  = (args) => <Small {...args} />;
+  const TemplateList  = (args) => <List {...args} />;
+  const TemplateDescriptionlist  = (args) => <Descriptionlist {...args} />;
+  const TemplateDetailsTag  = (args) => <DetailsTag {...args} />;
+  const TemplateFigcaption  = (args) => <Figcaption {...args} />;
+  
+  export const AbbreviationComponent = TemplateAbbreviation.bind({});  
+  export const HeadingComponent = TemplateHeading.bind({});
+  export const BlockquoteComponent = TemplateBlockquote.bind({});
+  export const CiteComponent = TemplateCite.bind({});
+  export const CodeComponent = TemplateCode.bind({});
+  export const HrComponent = TemplateHr.bind({});
+  export const MarkComponent = TemplateMark.bind({});
+  export const PComponent = TemplateP.bind({});
+  export const QuotationComponent = TemplateQuotation.bind({});
+  export const SmallComponent = TemplateSmall.bind({});
+  export const ListComponent = TemplateList.bind({});
+  export const DescriptionlistComponent = TemplateDescriptionlist.bind({});
+  export const DetailsTagComponent = TemplateDetailsTag.bind({});
+  export const FigcaptionComponent = TemplateFigcaption.bind({});
 
-Basic elements which the design system has some styling listed here, you can use the elements as it is, without any specific CSS classes.
 
-<Anchor storyId="foundation-typography-basetypography--abbreviation"></Anchor>
 
-### Abbreviation
+  export const getCaptionForLocaleHeading = (locale) => {
+    switch (locale) {
+      case "english":
+        const engText = {
+          detail1: "Headline 1",
+          detail2: "Headline 2",
+          detail3: "Headline 3",
+          detail4: "Headline 4",
+          detail5: "Headline 5",
+          detail6: "Headline 6",
+        };
+        return engText;
+      case "arabic":
+        const arabicText = {
+          detail1: "العنوان 1.",
+          detail2: "العنوان 2",
+          detail3: "العنوان 3",
+          detail4: "العنوان 4",
+          detail5: "العنوان 5",
+          detail6: "العنوان 6",
+        };
+        return arabicText;
+      case "burmese":
+        const burmeseText = {
+          detail1: "ခခေါင်းစီး ၁",
+          detail2: "ခေါင်းစဉ် ၂",
+          detail3: "ခေါင်းစဉ် ၃",
+          detail4: "ခေါင်းစဉ် ၄",
+          detail5: "ခေါင်းစဉ် ၅",
+          detail6: "ခေါင်းစီး ၆",
+        };
+        return burmeseText;
+      case "japanese":
+        const japaneseText = {
+          detail1: "見出し1",
+          detail2: "見出し2",
+          detail3: "見出し3",
+          detail4: "見出し4",
+          detail5: "見出し5",
+          detail6: "見出し6",
+        };
+        return japaneseText;
+      case "ukrainian":
+        const ukrainianText = {
+          detail1: "Заголовок 1",
+          detail2: "Заголовок 2",
+          detail3: "Заголовок 3",
+          detail4: "Заголовок 4",
+          detail5: "Заголовок 5",
+          detail6: "Заголовок 6",
+        };
+        return ukrainianText;
+      default:
+        return {
+          detail1: "Headline 1",
+          detail2: "Headline 2",
+          detail3: "Headline 3",
+          detail4: "Headline 4",
+          detail5: "Headline 5",
+          detail6: "Headline 6",
+        };
+    }
+  };
+
+
 
 export const getCaptionForLocaleAbbr = (locale) => {
   switch (locale) {
@@ -149,24 +466,7 @@ export const getCaptionForLocaleAbbr = (locale) => {
   }
 };
 
-Abbreviation component defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".
 
-- We can use the <code>abbr tag</code> in any component, to display as a tooltip when you hover over the element.
-
-Typographic scale when using abbreviation in text component:
-
-<Canvas>
-  <Story name="Abbreviation">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleAbbr(locale);
-      return <Abbreviation type="1" label={caption.detail1}></Abbreviation>;
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--blockquote"></Anchor>
-
-### Blockquote
 
 export const getCaptionForLocaleBlockquote = (locale) => {
   switch (locale) {
@@ -214,29 +514,6 @@ export const getCaptionForLocaleBlockquote = (locale) => {
   }
 };
 
-The Blockquote component specifies a section that is quoted from another source.
-
-- We can use <code>blockquote</code> in any component to render the text found within the <code>blockquote tag</code> as indented text
-
-Typographic scale when using blockquote in text component:
-
-<Canvas>
-  <Story name="Blockquote">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleBlockquote(locale);
-      return (
-        <Blockquote
-          text={caption.detail}
-          citeText={caption.citeText}
-        ></Blockquote>
-      );
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--cite"></Anchor>
-
-### Cite
 
 export const getCaptionForLocaleCite = (locale) => {
   switch (locale) {
@@ -260,28 +537,6 @@ export const getCaptionForLocaleCite = (locale) => {
   }
 };
 
-The Cite component defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.).
-
-- We can use <code>cite</code> in any component to render the text found within the <code>cite tag</code>.
-
-Typographic scale when using cite in text component:
-
-<Canvas>
-  <Story name="Cite">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleCite(locale);
-      return (
-        <p>
-          <Cite label={caption.detail}></Cite>
-        </p>
-      );
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--code"></Anchor>
-
-### Code
 
 export const getCaptionForLocaleCode = (locale) => {
   switch (locale) {
@@ -347,49 +602,6 @@ export const getCaptionForLocaleCode = (locale) => {
   }
 };
 
-The code component is used to define a piece of computer code. The content inside is displayed in the browser's default monospace font.
-
-- We can use the <code>code</code> in any component to render the text found within the <code>code tag</code> in monospace font.
-
-Typographic scale when using code in text component:
-
-<Canvas>
-  <Story name="Code">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleCode(locale);
-      return (
-        <p>
-          {caption.detail1} <Code label={caption.detail2}></Code> {
-            caption.detail3
-          } <Code label={caption.detail4}></Code> {caption.detail5}
-        </p>
-      );
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--description-list"></Anchor>
-
-### Description List
-
-A description list is a list of terms, with a description of each term.
-
-The <code>dl</code> tag defines the description list, the <code>dt</code> tag defines the term (name), and the <code>dd</code> tag describes each term.
-
-<Canvas>
-  <Story name="Description list">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleList(locale);
-      return <Descriptionlist data={caption}></Descriptionlist>;
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--details"></Anchor>
-
-### Details
-
-The details tag creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.
 
 export const getLocaleForDetails = (locale) => {
   switch (locale) {
@@ -437,26 +649,6 @@ export const getLocaleForDetails = (locale) => {
   }
 };
 
-<Canvas>
-  <Story name="Details">
-    {(args, { globals: { locale } }) => {
-      const caption = getLocaleForDetails(locale);
-      return (
-        <DetailsTag
-          summary={caption.summary}
-          details={caption.details}
-        ></DetailsTag>
-      );
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--figcaption"></Anchor>
-
-### Figcaption
-
-The <code>figcaption</code> tag is used to caption the image. The <code>figcaption</code> tag is used with the <code>figure</code> tag.
-
 export const getLocaleForFigcaption = (locale) => {
   switch (locale) {
     case "english":
@@ -496,45 +688,6 @@ export const getLocaleForFigcaption = (locale) => {
       };
   }
 };
-
-<Canvas>
-  <Story name="Figcaption">
-    {(args, { globals: { locale } }) => {
-      const caption = getLocaleForFigcaption(locale);
-      return <Figcaption details={caption.details}></Figcaption>;
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--headings"></Anchor>
-
-### Headings
-
-We can use the <code>h1/h2/h3/h4/h5/h6 tags</code> in any component to display the headings. h1 for most important heading to h6 for least important heading.
-
-Typographic scale when using headings in text component:
-
-<Canvas>
-  <Story name="Headings">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleHeading(locale);
-      return (
-        <>
-          <Heading type="1" label={caption.detail1}></Heading>
-          <Heading type="2" label={caption.detail2}></Heading>
-          <Heading type="3" label={caption.detail3}></Heading>
-          <Heading type="4" label={caption.detail4}></Heading>
-          <Heading type="5" label={caption.detail5}></Heading>
-          <Heading type="6" label={caption.detail6}></Heading>
-        </>
-      );
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--hr"></Anchor>
-
-### HR
 
 export const getCaptionForLocaleHr = (locale) => {
   switch (locale) {
@@ -576,24 +729,6 @@ export const getCaptionForLocaleHr = (locale) => {
   }
 };
 
-The Hr component defines a thematic break in an HTML page (e.g. a shift of topic).
-
-- We can use the <code>hr tag</code> in any component to display the horizontal break.
-
-Typographic scale when using hr in text component:
-
-<Canvas>
-  <Story name="Hr">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleHr(locale);
-      return <Hr detailsText={caption.detail}></Hr>;
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--mark"></Anchor>
-
-### Mark
 
 export const getCaptionForLocaleMark = (locale) => {
   switch (locale) {
@@ -615,55 +750,6 @@ export const getCaptionForLocaleMark = (locale) => {
       return { detail: "Eos nulla molestiae" };
   }
 };
-
-The Mark component define the marked text. It is used to highlight the part of the text in a paragraph.
-
-- We can use the <code>mark</code> in any component to render the text found within the <code>mark tag</code> as text with a light yellow background
-
-Typographic scale when using mark in text component:
-
-<Canvas>
-  <Story
-    name="Mark"
-    parameters={{
-      docs: {
-        source: {
-          code: `
-          <p><mark>Eos nulla molestiae</mark></p>
-        `,
-        },
-      },
-    }}
-  >
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleMark(locale);
-      return <Mark label={caption.detail}></Mark>;
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--ordered-list"></Anchor>
-
-### Ordered List
-
-An ordered list is used if there is a relation/hierarchy between list items. Ordered list items begin with a number generally.
-
-Start an ordered list with the <code>o1</code> tag.
-
-Add a <code>li</code> tag for each list item
-
-<Canvas>
-  <Story name="Ordered list">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleList(locale);
-      return <List data={caption} type="ol"></List>;
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--p"></Anchor>
-
-### Paragraph
 
 export const getCaptionForLocaleParagraph = (locale) => {
   switch (locale) {
@@ -701,24 +787,6 @@ export const getCaptionForLocaleParagraph = (locale) => {
   }
 };
 
-The Paragraph component defines a paragraph.
-
-- We can use the <code>p tag</code> in any component to define a paragraph.
-
-Typographic scale when using paragraph in text component:
-
-<Canvas>
-  <Story name="P">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleParagraph(locale);
-      return <P label={caption.detail}></P>;
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--quotation"></Anchor>
-
-### Quotation
 
 export const getCaptionForLocaleQuotation = (locale) => {
   switch (locale) {
@@ -756,24 +824,7 @@ export const getCaptionForLocaleQuotation = (locale) => {
   }
 };
 
-The Quotation component defines a short quotation.
 
-- We can use the <code>q</code> in any component to render quotation marks around the text found within the <code>q tag</code>.
-
-Typographic scale when using quotation in text component:
-
-<Canvas>
-  <Story name="Quotation">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleQuotation(locale);
-      return <Quotation label={caption.detail}></Quotation>;
-    }}
-  </Story>
-</Canvas>
-
-<Anchor storyId="foundation-typography-basetypography--small"></Anchor>
-
-### Small
 
 export const getCaptionForLocaleSmall = (locale) => {
   switch (locale) {
@@ -802,20 +853,7 @@ export const getCaptionForLocaleSmall = (locale) => {
   }
 };
 
-The Small component defines smaller text (like copyright and other side-comments).
 
-- We can use the <code>small</code> in any component to makes text one font size smaller in the HTML document.
-
-Typographic scale when using small in text component:
-
-<Canvas>
-  <Story name="Small">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleSmall(locale);
-      return <Small label={caption.detail}></Small>;
-    }}
-  </Story>
-</Canvas>
 
 export const getCaptionForLocaleList = (locale) => {
   switch (locale) {
@@ -927,25 +965,3 @@ export const getCaptionForLocaleList = (locale) => {
   }
 };
 
-<Anchor storyId="foundation-typography-basetypography--unordered-list"></Anchor>
-
-### Unordered List
-
-An unordered list is used if there is no hierarchy required. Unordered lists start with a bullet.
-
-Start an unordered list with the <code>u1</code> tag.
-
-Add a <code>li</code> tag for each list item
-
-<Canvas>
-  <Story name="Unordered list">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocaleList(locale);
-      return <List data={caption} type="ul"></List>;
-    }}
-  </Story>
-</Canvas>
-
-### Usage
-
-- Include **https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css** file in your HTML file, no other CSS and JS file required.
