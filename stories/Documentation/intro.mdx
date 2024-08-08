@@ -1,4 +1,4 @@
-import { Meta, Source, Canvas, Story, Preview } from "@storybook/addon-docs";
+import { Meta, Source, Canvas, Story, Preview } from "@storybook/blocks";
 import { Heading } from "../Atom/Typography/Heading/Heading";
 import { Video } from "../Atom/Video/Video";
 import "./documentation.scss";
@@ -69,9 +69,9 @@ export const data = [
   },
 ];
 
-export default {
-  title: "Getting started/Intro",
-  parameters: {
+<Meta
+  title="Getting started/Intro"
+  parameters={{
     layout: "fullscreen",
     viewMode: "docs",
     previewTabs: {
@@ -84,14 +84,11 @@ export default {
         iframeHeight: "100%",
       },
     },
-  }
-}
-
-
-export const IntroStory = `
+  }}
+/>
 
 <style>
-  
+  {`
   .sbdocs-wrapper {
     padding: 20px 8px;
   }
@@ -101,7 +98,7 @@ export const IntroStory = `
   .sbdocs div[class*="css-"] {
     margin: inherit;
   }
-  
+  `}
 </style>
 
 <div name="Intro" className="documentation-page">
@@ -144,9 +141,9 @@ export const IntroStory = `
       </div>
       <div className="medium-6 cell">
         <p className="subtitle">
-          {Here you can find our design guidelines, component documentation, and
+          {`Here you can find our design guidelines, component documentation, and
           resources for building apps with UNDP's design system. It is currently
-          a product led and maintained by UNDP's Digital Communication Studio.}
+          a product led and maintained by UNDP's Digital Communication Studio.`}
         </p>
       </div>
       <div className="medium-6 cell figma">
@@ -175,39 +172,39 @@ export const IntroStory = `
         <hr />
         <Heading type="2" label="Contributing" />
         <p>
-          {The Guide is a living document created to meet the needs of UNDP's
+          {`The Guide is a living document created to meet the needs of UNDP's
           front-end developers and designers. If there is a Component or Pattern
           that you need, or you have any other feedback, question or comment
-          please contact us.}
+          please contact us.`}
         </p>
         <p>
-          {For developers looking to build with UNDPs design system, it will soon
+          {`For developers looking to build with UNDPs design system, it will soon
           be available as a StorybookJS package. All front-end code
-          (HTML/CSS/JS) will be architected in a modular and scalable way.}
+          (HTML/CSS/JS) will be architected in a modular and scalable way.`}
         </p>
         <Heading type="3" label="Codebase" />
         <p>
-          {The codebase can be accessed at GitHub }
+          {`The codebase can be accessed at GitHub `}
           <a href="https://github.com/undp/design-system" target="_blank">
-            {https://github.com/undp/design-system}
+            {`https://github.com/undp/design-system`}
           </a>
         </p>
         <p>
-          {Path location of CSS for Components part of this design system is: }
+          {`Path location of CSS for Components part of this design system is: `}
           <a
             href="https://github.com/undp/design-system/tree/master/docs/css"
             target="_blank"
           >
-            {https://github.com/undp/design-system/tree/master/docs/css}
+            {`https://github.com/undp/design-system/tree/master/docs/css`}
           </a>
         </p>
         <p>
-          {Path location of JS for Components part of this design system is: }
+          {`Path location of JS for Components part of this design system is: `}
           <a
             href="https://github.com/undp/design-system/tree/master/docs/jss"
             target="_blank"
           >
-            {https://github.com/undp/design-system/tree/master/docs/jss}
+            {`https://github.com/undp/design-system/tree/master/docs/jss`}
           </a>
         </p>
         <hr />
@@ -226,5 +223,3 @@ export const IntroStory = `
     </div>
   </div>
 </div>
-
-`;

@@ -1,16 +1,9 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story } from "@storybook/blocks";
 
-export default {  
-  title: "Getting started/Browser support",
-  parameters: {
-    viewMode: "docs",
-    previewTabs: {
-      canvas: { hidden: true },
-    },
-  }
-};
+<Meta
+  title="Getting started/Browser support"
+/>
 
-export const BrowserSupportStory = `
 # Browser support
 
 UNDP Design system's components are compatible and tested in major modern browsers. Browsers and devices we support as follow.
@@ -34,5 +27,3 @@ List of mobile browsers and OS supported.
 | ------- | ------------- | --------------- |
 | Chrome  | Latest stable | Android and iOS |
 | Safari  | Latest stable | Android and iOS |
-`;
-

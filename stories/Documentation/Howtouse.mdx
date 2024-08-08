@@ -1,16 +1,8 @@
-import { Meta, Story } from "@storybook/addon-docs";
+import { Meta, Story } from "@storybook/blocks";
 
-export default {
-  title: "Getting started/How to use our design system?",
-  parameters: {
-    viewMode: "docs",
-    previewTabs: {
-      canvas: { hidden: true },
-    },
-  }
-}
-
-export const HowToUseStory = `
+<Meta
+  title="Getting started/How to use our design system?"
+/>
 
 # How to use our design system?
 
@@ -32,39 +24,39 @@ If you want to develop this Design System, follow these steps and you will be re
 
 1. Checkout the codebase
 
-bash
+```bash
 git clone
-
+```
 
 2. Install project dependencies
 
-bash
+```bash
 yarn install
-
+```
 
 3. Runs storybook locally
 
-bash
+```bash
 yarn run storybook
-
+```
 
 4. Build storybook
 
-bash
+```bash
 yarn run build-storybook
-
+```
 
 5. Linting on codebase
 
-bash
+```bash
 yarn run lint
-
+```
 
 6. Run this command whenever compiling CSS and JS
 
-bash
+```bash
 yarn run build
-
+```
 
 ### Dependencies
 
@@ -86,5 +78,3 @@ The design system is based on:
 ### LICENSE
 
 This codebase has MIT license.
-
-`;

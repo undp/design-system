@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/blocks";
 import { Switch } from "./Switch";
 
 export const getCaptionForLocale = (locale) => {
@@ -18,45 +18,6 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta
-  title="Components/UI components/Switch"
-  argTypes={{
-    size: {
-      name: "Size",
-      options: ["default", "small"],
-      control: { type: "inline-radio" },
-    },
-    state: {
-      name: "State",
-      options: ["default", "disabled"],
-      control: { type: "inline-radio" },
-    },
-    isToggled: {
-      name: "Is Toggled",
-      control: { type: "boolean" },
-    },
-    showIcon: {
-      name: "Show Icon",
-      control: { type: "boolean" },
-    },
-    showLabel: {
-      name: "Show Label",
-      control: { type: "boolean" },
-    },
-    showValue: {
-      name: "Show Value",
-      control: { type: "boolean" },
-    },
-  }}
-  args={{
-    size: "default",
-    state: "default",
-    isToggled: true,
-    showIcon: false,
-    showLabel: false,
-    showValue: false,
-  }}
-/>
 
 # Switch Component
 
