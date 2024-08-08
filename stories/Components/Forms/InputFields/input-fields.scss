@@ -95,10 +95,21 @@ input[type=date] {
   background-color: $color-white;
   color: $color-gray-500;
   padding-left: $spacing-08;
+  position: relative;
+  appearance: none;
 
   &.disabled {
     background-image: url(~icons/date-disabled.svg);
   }
+
+  &.empty {
+    color: $color-gray-500;
+  }
+
+  &.filled {
+    color: $color-black;
+  }
+
 }
 
 input[type=search] {
@@ -125,9 +136,19 @@ textarea {
 
 input[type='date']::-webkit-calendar-picker-indicator {
   appearance: none;
-  left: 3px;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
+  // -moz-position: absolute;
+  margin-inline-start: -1.7rem;
+  // -moz-top: 0;
+  // -moz-left: 0;
+  // -moz-right: 0;
+  // -moz-bottom: 0;
+  width: 1rem;
+  height: 1rem;
+  color: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
 }
 
 [dir='rtl'] {
@@ -170,9 +191,21 @@ input[type='date']::-webkit-calendar-picker-indicator {
   }
 
   input[type='date']::-webkit-calendar-picker-indicator {
-    left: inherit;
+    // left: inherit;
     position: absolute;
-    right: 27px;
+    text-align: initial;
+    opacity: 1;
+    margin-right: 0.75rem;
+    // padding: auto 0;
+    // right: 27px;
+    top: 1;
+    left: 1;
+    right: 0;
+    bottom: 1;
+    width: 1rem;
+    height: 1rem;
+    color: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
   }
 
   input::-webkit-date-and-time-value {

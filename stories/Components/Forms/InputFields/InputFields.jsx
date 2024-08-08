@@ -18,7 +18,27 @@ export function Inputcomponent({
     } else {
       inputElement.current.blur();
     }
+    // State initialization when the page is loaded
+    updateInputState();
+
+    // Update state when the value changes
+    inputElement.current.addEventListener('input', updateInputState);
+
+    return () => {
+      inputElement.current.removeEventListener('input', updateInputState);
+    };
   }, [state]);
+
+  const updateInputState = () => {
+    if (inputElement.current.value) {
+      inputElement.current.classList.remove('empty');
+      inputElement.current.classList.add('filled');
+    } else {
+      inputElement.current.classList.remove('filled');
+      inputElement.current.classList.add('empty');
+    }
+  };
+
   return (
     <>
       {labelText && <label className={cls((`${state}` == 'disabled') ? `${state}` : '')} htmlFor={[`${type}`]}>{ labelText }</label>}
