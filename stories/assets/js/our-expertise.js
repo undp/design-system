@@ -1,6 +1,7 @@
-/**
- * Our Expertise section
- */
+ 
+
+//  Our Expertise section
+ 
 
 export function ourExpertise() {
   // init slider
