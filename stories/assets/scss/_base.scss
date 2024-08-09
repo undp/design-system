@@ -2,14 +2,13 @@
 @import './mixins';
 @import './breakpoints';
 
-
 /* base start */
 .color-white {
-  color: $color-white;
+  color: var(--undpds-color-white);
 }
 
 .color-black {
-  color: $color-black;
+  color: var(--undpds-color-black);
 }
 
 .show-large {
@@ -113,27 +112,27 @@
 }
 
 .background-yellow {
-  background-color: $color-light-yellow;
+  background-color: var(--undpds-color-light-yellow);
 }
 
 .background-red {
-  background-color: $color-light-red;
+  background-color: var(--undpds-color-light-red);
 }
 
 .background-green {
-  background-color: $color-light-green;
+  background-color: var(--undpds-color-light-green);
 }
 
 .background-blue {
-  background-color: $color-blue-100;
+  background-color: var(--undpds-color-blue-100);
 }
 
 .background-gray {
-  background-color: $color-gray-100;
+  background-color: var(--undpds-color-gray-100);
 }
 
 .background-white {
-  background-color: $color-white;
+  background-color: var(--undpds-color-white);
 }
 
 // global colors
@@ -340,10 +339,10 @@ $color in $colors {
 
 // color map solid
 $colors-solid: (
-  'yellow': $color-yellow,
-  'red': $color-red,
-  'green': $color-green,
-  'blue': $color-azure
+  'yellow': var(--undpds-color-yellow),
+  'red': var(--undpds-color-red),
+  'green': var(--undpds-color-green),
+  'blue': var(--undpds-color-azure)
 );
 
 @each $name,
@@ -393,10 +392,10 @@ $color in $colors-solid {
 
 // color map light-color content card only
 $colors-light: (
-  'yellow': $color-light-yellow,
-  'red': $color-light-red,
-  'green': $color-light-green,
-  'blue': $color-light-azure
+  'yellow': var(--undpds-color-light-yellow),
+  'red': var(--undpds-color-light-red),
+  'green': var(--undpds-color-light-green),
+  'blue': var(--undpds-color-light-azure)
 );
 
 @each $name,
