@@ -1,0 +1,11 @@
+@use "sass:meta";
+@use "sass:string";
+@use 'variables';
+
+:root {
+  @each $key, $value in meta.module-variables('variables') {
+    @if (string.index($key, 'cyrillic')==null and string.index($key, 'img-path')==null) {
+      --undpds-#{string.to-lower-case($key)}: #{$value};
+    }
+  }
+}
