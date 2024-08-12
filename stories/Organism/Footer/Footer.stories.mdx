@@ -49,7 +49,7 @@ export const getCaptionForLocale = (locale) => {
         placeholdername: "Email",
         errorLabel: "*Error: this field is required",
         pageTitle: "Page Title",
-        copyright: "© 2021 United Nations Development Programme",
+        copyright: "© United Nations Development Programme",
       };
       return engText;
     case "ukrainian":
@@ -96,7 +96,7 @@ export const getCaptionForLocale = (locale) => {
         placeholdername: "Email",
         errorLabel: "*Помилка: це поле обов'язкове",
         pageTitle: "Назва сторінки",
-        copyright: "© 2023 ПРООН",
+        copyright: "© ПРООН",
       };
       return ukText;
     case "arabic":
@@ -143,7 +143,7 @@ export const getCaptionForLocale = (locale) => {
         placeholdername: "بريد الالكتروني",
         errorLabel: "* خطأ: هذا الحقل مطلوب",
         pageTitle: "عنوان الصفحة",
-        copyright: "© برنامج الأمم المتحدة الإنمائي 2021",
+        copyright: "© برنامج الأمم المتحدة الإنمائي ",
       };
       return arabicText;
     case "burmese":
@@ -190,7 +190,7 @@ export const getCaptionForLocale = (locale) => {
         placeholdername: "အီးမေးလ်",
         errorLabel: "*အမှား - ဤအကွက်လိုအပ်သည်",
         pageTitle: "စာမျက်နှာခေါင်းစဉ်",
-        copyright: "© 2021 ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်",
+        copyright: "© ကုလသမဂ္ဂဖွံ့ဖြိုးမှုအစီအစဉ်",
       };
       return burmeseText;
     case "japanese":
@@ -237,7 +237,7 @@ export const getCaptionForLocale = (locale) => {
         placeholdername: "Eメール",
         errorLabel: "*エラー：このフィールドは必須です",
         pageTitle: "ページタイトル",
-        copyright: "© 2021 国連開発計画",
+        copyright: "© 国連開発計画",
       };
       return japaneseText;
     default:
@@ -284,7 +284,7 @@ export const getCaptionForLocale = (locale) => {
         placeholdername: "Email",
         errorLabel: "*Error: this field is required",
         pageTitle: "Page Title",
-        copyright: "© 2021 United Nations Development Programme",
+        copyright: "© United Nations Development Programme",
       };
       return dummy;
   }
