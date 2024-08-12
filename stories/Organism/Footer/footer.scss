@@ -32,7 +32,7 @@
 
   li {
     list-style: none;
-    margin-bottom: $spacing-04;
+    margin-bottom: var(--undpds-spacing-04);
     padding: 0;
     text-align: left;
 
@@ -90,12 +90,12 @@
   }
 
   @include devicebreak(small) {
-    margin: 0 $spacing-05 $spacing-07;
+    margin: 0 var(--undpds-spacing-05) var(--undpds-spacing-07);
   }
 
   li {
     list-style: none;
-    margin-bottom: $spacing-04;
+    margin-bottom: var(--undpds-spacing-04);
     padding-left: 0;
 
     @include devicebreak(medium) {
@@ -145,6 +145,7 @@
     }
   }
 }
+
 // * footer condition 2 end *//
 
 // * footer icons start *//
@@ -160,45 +161,59 @@
 
     a {
 
-      $socials: ('facebook', 'instagram', 'linkedin', 'twitter', 'youtube');
+      $socials: (
+        'facebook',
+        'instagram',
+        'linkedin',
+        'twitter',
+        'twitter-x',
+        'youtube'
+      );
 
-      @extend %border-none;
-      @extend %no-animation;
+    @extend %border-none;
+    @extend %no-animation;
 
-      display: block;
-      font-size: 0;
-      height: 20px;
-      margin-inline-start: $spacing-07;
-      margin-block-end: $spacing-05;
-      width: 20px;
+    display: block;
+    font-size: 0;
+    height: 20px;
+    margin-inline-start: var(--undpds-spacing-07);
+    margin-block-end: var(--undpds-spacing-05);
+    width: 20px;
 
-      @each $name in $socials {
-        &.#{$name} {
-          background: url(~icons/#{$name}-white.svg) no-repeat center bottom;
-        }
-      }
-    }
-
-    // &:last-of-type {
-    //   a {
-    //     margin-right: 0;
-    //   }
-    // }
-  }
-
-  &.inverted {
-    li {
-      a {
-        $socials: ('facebook', 'instagram', 'linkedin', 'twitter', 'youtube');
-
-        @each $name in $socials {
-          &.#{$name} {
-            background: url(~icons/#{$name}.svg) no-repeat center bottom;
-          }
-        }
+    @each $name in $socials {
+      &.#{$name} {
+        background: url(~icons/#{$name}-white.svg) no-repeat center bottom;
       }
     }
   }
+
+  // &:last-of-type {
+  //   a {
+  //     margin-right: 0;
+  //   }
+  // }
+}
+
+&.inverted {
+  li {
+    a {
+      $socials: (
+        'facebook',
+        'instagram',
+        'linkedin',
+        'twitter',
+        'twitter-x',
+        'youtube'
+      );
+
+    @each $name in $socials {
+      &.#{$name} {
+        background: url(~icons/#{$name}.svg) no-repeat center bottom;
+      }
+    }
+  }
+}
+}
 }
 
 [dir='rtl'] {
@@ -208,19 +223,20 @@
     // li {
     //   padding: 0;
 
-      // a {
-      //   margin-left: $spacing-07;
-      //   margin-right: 0;
-      // }
+    // a {
+    //   margin-left: $spacing-07;
+    //   margin-right: 0;
+    // }
 
-      // &:last-of-type {
-      //   a {
-      //     margin-left: 0;
-      //   }
-      // }
+    // &:last-of-type {
+    //   a {
+    //     margin-left: 0;
+    //   }
+    // }
     // }
   }
 }
+
 // * footer icons end *//
 
 /* footer items start */
@@ -230,7 +246,7 @@
 
     @include devicebreak(small) {
       &::after {
-        border-bottom: 2px solid $color-gray-400;
+        border-bottom: 2px solid var(--undpds-color-gray-400);
         content: '';
         position: absolute;
         width: calc(100% - 1.3rem);
@@ -239,7 +255,7 @@
 
     &.inverted {
       .footer-heading {
-        color: $color-black;
+        color: var(--undpds-color-black);
 
         &::before {
           background: url(~icons/chevron-down.svg) no-repeat center center;
@@ -257,13 +273,13 @@
   &-heading {
     background: transparent;
     border: 0;
-    color: $color-white;
+    color: var(--undpds-color-white);
     display: block;
-    font-size: $font-size-16;
+    font-size: var(--undpds-font-size-16);
     font-weight: 700;
     letter-spacing: 0.03rem;
     line-height: 1.15;
-    padding: $spacing-05;
+    padding: var(--undpds-spacing-05);
     position: relative;
     text-align: left;
     text-transform: uppercase;
@@ -299,7 +315,7 @@
 
   &-panel {
     display: none;
-    padding: 0 $spacing-05 $spacing-03;
+    padding: 0 var(--undpds-spacing-05) var(--undpds-spacing-03);
 
     @include devicebreak(medium) {
       display: block;
@@ -310,7 +326,7 @@
       @extend %footerlink;
 
       display: block;
-      margin-bottom: $spacing-05;
+      margin-bottom: var(--undpds-spacing-05);
     }
   }
 }
@@ -346,41 +362,42 @@
   }
 
   h5 {
-    color: $color-white;
-    margin: 0 $spacing-05;
+    color: var(--undpds-color-white);
+    margin: 0 var(--undpds-spacing-05);
   }
 
   &.inverted {
     h5 {
-      color: $color-black;
+      color: var(--undpds-color-black);
     }
   }
 }
+
 // * footer Logo end *//
 
 /* footer start */
 .footer {
-  background-color: $color-gray-100;
-  background-color: $color-blue-600;
-  color: $color-white;
-  padding: $spacing-09 $spacing-04 $spacing-08;
+  background-color: var(--undpds-color-gray-100);
+  background-color: var(--undpds-color-blue-600);
+  color: var(--undpds-color-white);
+  padding: var(--undpds-spacing-09) var(--undpds-spacing-04) var(--undpds-spacing-08);
 
   @include devicebreak(medium) {
-    padding: 3.25rem 0 $spacing-09;
+    padding: 3.25rem 0 var(--undpds-spacing-09);
   }
 
   @include devicebreak(small) {
     & .sign-up {
-      margin-top: $spacing-06;
+      margin-top: var(--undpds-spacing-06);
     }
   }
 
   p {
-    font-size: $font-size-14;
+    font-size: var(--undpds-font-size-14);
     margin: 0;
 
     @include devicebreak(medium) {
-      font-size: $font-size-16;
+      font-size: var(--undpds-font-size-16);
     }
   }
 
@@ -388,21 +405,21 @@
     @extend %footer-block;
 
     margin-bottom: 1.188rem;
-    padding-bottom: $spacing-09;
+    padding-bottom: var(--undpds-spacing-09);
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-09;
+      margin-bottom: var(--undpds-spacing-09);
     }
   }
 
   &-top {
     @extend %footer-block;
 
-    padding-bottom: $spacing-07;
+    padding-bottom: var(--undpds-spacing-07);
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-07;
-      padding-bottom: $spacing-09;
+      margin-bottom: var(--undpds-spacing-07);
+      padding-bottom: var(--undpds-spacing-09);
     }
   }
 
@@ -413,37 +430,37 @@
       flex-direction: column-reverse;
 
       p {
-        margin: 0 $spacing-05 0;
+        margin: 0 var(--undpds-spacing-05) 0;
       }
     }
   }
 
   &-copyright {
-    margin: 0 $spacing-05;
+    margin: 0 var(--undpds-spacing-05);
 
     @include devicebreak(medium) {
-      margin: $spacing-11 0 0;
+      margin: var(--undpds-spacing-11) 0 0;
     }
   }
 
   &-links {
-    margin: $spacing-07 $spacing-05;
+    margin: var(--undpds-spacing-07) var(--undpds-spacing-05);
 
     @include devicebreak(medium) {
-      margin: 0 0 $spacing-07 0;
+      margin: 0 0 var(--undpds-spacing-07) 0;
     }
 
     &_text {
-      margin: 0 $spacing-05 $spacing-07;
+      margin: 0 var(--undpds-spacing-05) var(--undpds-spacing-07);
 
       @include devicebreak(medium) {
-        margin: 0 0 $spacing-07 0;
+        margin: 0 0 var(--undpds-spacing-07) 0;
       }
     }
   }
 
   .footer-icons {
-    margin: 0 1.25rem $spacing-07;
+    margin: 0 1.25rem var(--undpds-spacing-07);
 
     @include devicebreak(medium) {
       justify-content: flex-end;
@@ -452,24 +469,25 @@
   }
 
   &.inverted {
-    background-color: $color-gray-100;
-    color: $color-black;
+    background-color: var(--undpds-color-gray-100);
+    color: var(--undpds-color-black);
 
     .footer {
+
       &-head,
       &-top {
-        border-color: $color-gray-700;
+        border-color: var(--undpds-color-gray-700);
       }
     }
   }
 }
 
 .icons-search {
-  margin: $spacing-07 $spacing-05 0;
+  margin: var(--undpds-spacing-07) var(--undpds-spacing-05) 0;
   text-align: left;
 
   @include devicebreak(medium) {
-    margin: 0 0 $spacing-07 0;
+    margin: 0 0 var(--undpds-spacing-07) 0;
     text-align: right;
   }
 
@@ -478,7 +496,7 @@
   }
 
   & .icon-globe {
-    margin-right: $spacing-05;
+    margin-right: var(--undpds-spacing-05);
   }
 }
 
@@ -491,7 +509,7 @@
     }
 
     & .icon-globe {
-      margin-left: $spacing-05;
+      margin-left: var(--undpds-spacing-05);
       margin-right: 0;
     }
   }
