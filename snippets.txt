@@ -6,7 +6,10 @@ parameters: {
             </>
         )
     }
+  }
 }
 
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
+
+}

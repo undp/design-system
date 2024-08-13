@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Tertiary } from "./Tertiary";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -55,7 +55,56 @@ export const getCaptionForLocale = (locale) => {
 
 export default {
   title: "Components/UI components/Text/Tertiary block",
-  component: {Tertiary}
+  component: Tertiary,
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+              <h1>Tertiary Block</h1>
+
+              <p>The Tertiary Block defines a section of information data with some items - location, country, and description. <code>H2</code>, <code>H4</code>, and <code>P</code> atom tags are used for creating this section.</p>
+
+              <Canvas>
+                <Story name="Tertiary block">
+                  {(args, { globals: { locale } }) => {
+                    const caption = getCaptionForLocale(locale);
+                    return (
+                      <Tertiary
+                        headerText={caption.header}
+                        countryText={caption.country}
+                        descriptionText={caption.description}
+                      ></Tertiary>
+                    );
+                  }}
+                </Story>
+              </Canvas>
+
+              <h3>Usage</h3>
+
+              <ul>
+                <li>Take HTML from the HTML tab in canvas.</li>
+                <li>Include CSS and JS from the 'CSS and JS References' section.</li>
+              </ul>
+
+              <h3>CSS and JS References</h3>
+
+              <h4>CSS:</h4>
+              <p>Add the base style only, located at <strong>dist/css/base-minimal.min.css</strong> along with the following:</p>
+              <ul>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/teritiary.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/teritiary.min.css</a></li>
+              </ul>
+
+              <h4>JS:</h4>
+              <p>NA</p>
+
+              <h3>Changelog</h3>
+
+              <p>1.0 — Released component</p>
+
+            </>
+        )
+    }
+  }
 }
 
 const Template = (args, { globals: { locale } }) => {
@@ -69,62 +118,5 @@ const Template = (args, { globals: { locale } }) => {
   );
 }
 
-export const TertiaryStory = Template.bind({});
-TertiaryStory.args = {
-  headerText: "Location",
-  countryText: "Algeria",
-  descriptionText:
-    "Dummy text refers to the bits of content that are used to fill a website mock-up. This text helps web designers better envision how the website will look as a finished product. It is important to understand that dummy text has no meaning whatsoever. Its sole purpose is to fill out blank spaces with “word-like” content, without making any copyright infringements.",
-};
-
-TertiaryStory.parameters = {
-  docs: {
-    description: {
-    component: `
-  
-# Tertiary Bloack
-
-Tertiary Block defines a section of information data with some items - location, country and description. H2 H4 P atoms tags are used for creating this section.
-
-<Canvas>
-  <Story name="Tertiary block">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocale(locale);
-      return (
-        <Tertiary
-          headerText={caption.header}
-          countryText={caption.country}
-          descriptionText={caption.description}
-        ></Tertiary>
-      );
-    }}
-  </Story>
-</Canvas>
-
-###
-
-### Usage
-
-- Take HTML from the HTML tab in canvas
-- Include CSS and JS from the 'CSS and JS References' section
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base style only, located at **dist/css/base-minimal.min.css** along with following:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/teritiary.min.css
-
-#### JS:
-
-NA
-
-### Changelog
-
-1.0 — Released component
-
-`,
-    },
-  },
-}
+export const TertiaryBlockStory = Template.bind({});
+TertiaryBlockStory.storyName = "Tertiary block";

@@ -11,7 +11,7 @@ import galleryImg4 from "../../../../assets/images/parallax-gallery-img4.jpg";
 import galleryThum8 from "../../../../assets/images/parallax-gallery-thumb8.jpg";
 import galleryImg8 from "../../../../assets/images/parallax-gallery-img8.jpg";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -354,151 +354,176 @@ export const getCaptionForLocale = (locale) => {
 };
 
 export default {
- title: "Components/UI components/Gallery/Lightbox gallery"
-};
-
-const Template = (args, { globals: { locale } }) => {
-  const caption = statsArray(locale);
-  return <LightboxGallery data={caption} />;
-};
-
-export const LightGallery = Template.bind({});
-LightGallery.args = {};
-LightGallery.parameters = {
-  docs: {
-    page: () => (
-      <>
-        <h1>Lightbox Gallery</h1>
-
-        <h3>Overview</h3>
-
-        <p>
-          The Lightbox Gallery displays images in the front darkening the rest
-          of the webpage.
-        </p>
-
-        <h4>When to use:</h4>
-
-        <p>To gain the attention of the user.</p>
-
-        <h3>Formatting</h3>
-
-        <h4>Default</h4>
-
-        <p>
-          It consists of two sections: text with CTA link section and Image
-          section.
-        </p>
-
-        <h3>Content</h3>
-
-        <h3>Behaviors</h3>
-
-        <h4>States</h4>
-
-        <p>
-          There will be a set of 2-row images when clicked on a specific image
-          then that image will be displayed in a popup view. The component is
-          compatible with both mobile and tablet.
-        </p>
-
-        <p>View of a set of images in a row:</p>
-
-        <p>When selected a specific image:</p>
-
-        <div>
-          <h3>Usage:</h3>
-
-          <ul>
-            <li>
-              Copy HTML from the HTML tab of canvas and also include css and js
-              files.
-            </li>
-            <li>
-              Initialize lightbox gallery by calling lightboxGallery()
-              function.
-            </li>
-            <li>Include below library files as well.</li>
-            <li>
-              Refer{" "}
-              <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">
-                this document
-              </a>{" "}
-              for Swiper integration & options
-            </li>
-          </ul>
-
-          <h3>CSS and JS References</h3>
-
-          <h4>CSS:</h4>
-
+ title: "Components/UI components/Gallery/Lightbox gallery",
+  component: LightboxGallery,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <h1>Lightbox Gallery</h1>
+  
+          <h3>Overview</h3>
+  
           <p>
-            Add the base layout style from
+            The Lightbox Gallery displays images in the front darkening the rest
+            of the webpage.
+          </p>
+  
+          <h4>When to use:</h4>
+  
+          <p>To gain the attention of the user.</p>
+  
+          <h3>Formatting</h3>
+  
+          <h4>Default</h4>
+  
+          <p>
+            It consists of two sections: text with CTA link section and Image
+            section.
+          </p>
+  
+          <h3>Content</h3>
+  
+          <h3>Behaviors</h3>
+  
+          <h4>States</h4>
+  
+          <p>
+            There will be a set of 2-row images when clicked on a specific image
+            then that image will be displayed in a popup view. The component is
+            compatible with both mobile and tablet.
+          </p>
+  
+          <p>View of a set of images in a row:</p>
+  
+          <p>When selected a specific image:</p>
+  
+          <Canvas>
+            <Story name="Lightbox Gallery">
+            {(args, { globals: { locale } }) => {
+              const caption = getCaptionForLocale(locale);
+              return (
+                <LightboxGallery
+                  titleText={caption.titleText}
+                  descText={caption.descText}
+                  buttonText={caption.buttonText}
+                  data={caption.featureddata}
+                  {...args}
+                ></LightboxGallery>
+              );
+            }}
+            </Story>
+          </Canvas>
+
+          <div>
+            <h3>Usage:</h3>
+  
             <ul>
               <li>
-                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">
-                  base-minimal.min.css
-                </a>
+                Copy HTML from the HTML tab of canvas and also include css and js
+                files.
               </li>
               <li>
-                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">
-                  cta-link.min.css
-                </a>
+                Initialize lightbox gallery by calling lightboxGallery()
+                function.
               </li>
+              <li>Include below library files as well.</li>
               <li>
-                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/frosted-background.min.css">
-                  frosted-background.min.css
-                </a>
+                Refer{" "}
+                <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">
+                  this document
+                </a>{" "}
+                for Swiper integration & options
               </li>
+            </ul>
+  
+            <h3>CSS and JS References</h3>
+  
+            <h4>CSS:</h4>
+  
+            <p>
+              Add the base layout style from
+              <ul>
+                <li>
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">
+                    base-minimal.min.css
+                  </a>
+                </li>
+                <li>
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">
+                    cta-link.min.css
+                  </a>
+                </li>
+                <li>
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/frosted-background.min.css">
+                    frosted-background.min.css
+                  </a>
+                </li>
+                <li>
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-caption.min.css">
+                    image-caption.min.css
+                  </a>
+                </li>
+                <li>
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/lightbox.min.css">
+                    lightbox.min.css
+                  </a>
+                </li>
+                <li>
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/lightbox-gallery.min.css">
+                    lightbox-gallery.min.css
+                  </a>
+                </li>
+                <li>
+                  <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">
+                    swiper.min.css
+                  </a>
+                </li>
+              </ul>
+            </p>
+  
+            <h4>JS:</h4>
+  
+            <ul>
               <li>
-                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-caption.min.css">
-                  image-caption.min.css
-                </a>
-              </li>
-              <li>
-                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/lightbox.min.css">
-                  lightbox.min.css
-                </a>
-              </li>
-              <li>
-                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/lightbox-gallery.min.css">
-                  lightbox-gallery.min.css
-                </a>
-              </li>
-              <li>
-                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">
-                  swiper.min.css
+                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lightbox-gallery.min.js">
+                  lightbox-gallery.min.js
                 </a>
               </li>
             </ul>
-          </p>
-
-          <h4>JS:</h4>
-
-          <ul>
-            <li>
-              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lightbox-gallery.min.js">
-                lightbox-gallery.min.js
-              </a>
-            </li>
-          </ul>
-
-          <h3>Interactions</h3>
-
-          <ul>
-            <li>By clicking on the image, it opens in the lightbox.</li>
-            <li>By clicking on the close option, it can be closed.</li>
-            <li>
-              By swiping left/right or by using keyboard arrows, the images can
-              be navigated.
-            </li>
-          </ul>
-
-          <h3>Changelog</h3>
-
-          <p>1.0 — Released component</p>
-        </div>
-      </>
-    ),
-  },
+  
+            <h3>Interactions</h3>
+  
+            <ul>
+              <li>By clicking on the image, it opens in the lightbox.</li>
+              <li>By clicking on the close option, it can be closed.</li>
+              <li>
+                By swiping left/right or by using keyboard arrows, the images can
+                be navigated.
+              </li>
+            </ul>
+  
+            <h3>Changelog</h3>
+  
+            <p>1.0 — Released component</p>
+          </div>
+        </>
+      ),
+    },
+  }
 };
+
+const Template = (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale);
+ return (
+  <LightboxGallery
+  titleText={caption.titleText}
+  descText={caption.descText}
+  buttonText={caption.buttonText}
+  data={caption.featureddata}
+  {...args}
+></LightboxGallery>
+ )
+};
+
+export const LightGallery = Template.bind({});

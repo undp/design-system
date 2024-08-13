@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { HeadingBig } from "./HeadingBig";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -49,7 +49,7 @@ export const getCaptionForLocale = (locale) => {
 
 export default {
   title: "Components/UI components/Text/Heading big block",
-  component: {HeadingBig},
+  component: HeadingBig,
   argTypes: {
     Emphasize: {
       options: ["true", "false"],
@@ -59,65 +59,71 @@ export default {
   args: {
     Emphasize: "true",
   },
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+              <h1>Heading Big Block</h1>
+
+              <p>The Heading Block defines a section of information data with some items - Header title, Description. <code>H2</code> <code>H4</code> atoms tags are used for creating this section.</p>
+
+              <Canvas style="background: gray">
+                <Story name="Heading big block">
+                  {(args, { globals: { locale } }) => {
+                    const caption = getCaptionForLocale(locale);
+                    return (
+                      <HeadingBig
+                        headerText={caption.header}
+                        descriptionText={caption.description}
+                        listData={caption.listData}
+                        dataViewport="true"
+                        {...args}
+                      ></HeadingBig>
+                    );
+                  }}
+                </Story>
+              </Canvas>
+
+              <h3>Usage</h3>
+
+              <ul>
+                  <li>Take HTML from the HTML tab in canvas whichever (select variant you like).</li>
+                  <li>Include CSS and JS from the 'CSS and JS References' section.</li>
+              </ul>
+
+              <h3>CSS and JS References</h3>
+
+              <h4>CSS:</h4>
+              <p>Add the base style only, located at <strong>dist/css/base-minimal.min.css</strong> along with the following:</p>
+              <ul>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css</a></li>
+              </ul>
+
+              <h4>JS:</h4>
+              <p><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a> (optional for viewport animation)</p>
+
+              <h3>Changelog</h3>
+
+              <p>1.0 — Released component</p>
+
+            </>
+        )
+    }
+  }
 }
 
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
-  return <HeadingBig headerText={caption.header} descriptionText={caption.description} {...args}></HeadingBig>;
-};
+  return (
+    <HeadingBig
+      headerText={caption.header}
+      descriptionText={caption.description}
+      listData={caption.listData}
+      dataViewport="true"
+      {...args}
+    ></HeadingBig>
+  );
+}
 
 export const HeadingBigStory = Template.bind({});
-// Documentation content
-HeadingBigStory.parameters = {
-  docs: {
-    description: {
-      component: `
-
-# Heading Big Block
-
-The Heading Block defines a section of information data with some items - Header title, Description. H2 H4 atoms tags are used for creating this section.
-
-<Canvas style={{ background: "gray" }}>
-  <Story name="Heading big block">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocale(locale);
-      return (
-        <HeadingBig
-          headerText={caption.header}
-          descriptionText={caption.description}
-          listData={caption.listData}
-          dataViewport="true"
-          {...args}
-        ></HeadingBig>
-      );
-    }}
-  </Story>
-</Canvas>
-
-###
-
-### Usage
-
-- Take HTML from the HTML tab in canvas whichever (select variant you like)
-- Include CSS and JS from the 'CSS and JS References' section
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base style only, located at **dist/css/base-minimal.min.css** along with following:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js (optional for viewport animation)
-
-### Changelog
-
-1.0 — Released component
-
-`,
-    },
-  },
-}
+HeadingBigStory.storyName = "Heading big block";

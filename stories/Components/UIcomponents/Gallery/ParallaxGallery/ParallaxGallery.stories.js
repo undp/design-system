@@ -5,7 +5,7 @@ import galleryImg2 from "../../../../assets/images/parallax-gallery-img2.jpg";
 import galleryImg3 from "../../../../assets/images/parallax-gallery-img3.jpg";
 import galleryImg4 from "../../../../assets/images/parallax-gallery-img4.jpg";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -92,108 +92,137 @@ export default {
   args: {
     Background: "Default",
   },
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+              <h1>Parallax Gallery</h1>
+
+              <p>The Parallax Gallery is a trend where the images move at a different speed than the content.</p>
+
+              <h3>Overview</h3>
+
+              <p>The Parallax Gallery component is created for showing gallery, designation, and images in a particular section. It is a multi-usage component that creates teasing kinds of content.</p>
+
+              <h3>When to use:</h3>
+
+              <p>To create engaging and interactive content.</p>
+
+              <h3>Formatting</h3>
+
+              <h4>Default</h4>
+
+              <p>It consists of a gallery of images, descriptions, and CTA links.</p>
+
+              <h3>Content</h3>
+
+              <p>Parallax Gallery has Default or Gray backgrounds.</p>
+
+              <h3>Behaviors</h3>
+
+              <h4>States</h4>
+
+              <p>There are two states: Default and Mobile.</p>
+
+              <ul>
+                <li><strong>Default</strong>
+                  <ul>
+                    <li>Default background:</li>
+                    <li>Gray background:</li>
+                  </ul>
+                </li>
+                <li><strong>Mobile</strong>
+                  <ul>
+                    <li>Default background:</li>
+                    <li>Gray background:</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <Canvas>
+                <Story
+                  name="Parallax gallery"
+                >
+                  {(args, { globals: { locale } }) => {
+                    const caption = getCaptionForLocale(locale);
+                    return (
+                      <ParallaxGallery
+                        titleText={caption.titleText}
+                        descText={caption.descText}
+                        buttonText={caption.buttonText}
+                        galleryimg1={caption.galleryimg1}
+                        galleryimg2={caption.galleryimg2}
+                        galleryimg3={caption.galleryimg3}
+                        galleryimg4={caption.galleryimg4}
+                        {...args}
+                      ></ParallaxGallery>
+                    );
+                  }}
+                </Story>
+              </Canvas>
+
+              <h3>Usage:</h3>
+
+              <ul>
+                <li>Copy the HTML from the HTML Tab of canvas and include CSS and JS in the ‘CSS and JS References’ section.</li>
+                <li>Initialize the parallaxEffect by calling <code>parallaxEffect('.parallax-gallery-images', '.column', 'top center', 'bottom+=15% center', 'vertical', 'all');</code> function in your JS file.</li>
+                <li>Refer to <a href="https://github.com/undp/design-system/wiki/Parallax-documentation">this document</a> for Parallax integration & options.</li>
+              </ul>
+
+              <h3>CSS and JS References</h3>
+
+              <h4>CSS:</h4>
+                  
+              <p>Add the base layout style from</p>
+
+              <ul>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">Base Layout Style</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/parallax-gallery.min.css">Parallax Gallery CSS</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">CTA Link CSS</a></li>
+              </ul>
+
+              <h4>JS:</h4>
+
+              <ul>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js">Parallax JS</a></li>
+              </ul>
+
+              <p>Following external libraries need to be included first:</p>
+              <ul>
+                <li>GSAP core library</li>
+                <li>GSAP ScrollTrigger plugin</li>
+                <li>GSAP EasePack plugin</li>
+              </ul>
+
+              <h3>Interactions</h3>
+
+              <p>On the opening of the page and scrolling, images move.</p>
+
+              <h3>Changelog</h3>
+
+              <p>1.0 — Released component</p>
+
+            </>
+        )
+    }
+}
 }
 
 const Template = (args, { globals: { locale } }) => {
-  const caption = statsArray(locale);
-  return <ParallaxGallery data={caption} />;
-};
+  const caption = getCaptionForLocale(locale);
+  return (
+    <ParallaxGallery
+      titleText={caption.titleText}
+      descText={caption.descText}
+      buttonText={caption.buttonText}
+      galleryimg1={caption.galleryimg1}
+      galleryimg2={caption.galleryimg2}
+      galleryimg3={caption.galleryimg3}
+      galleryimg4={caption.galleryimg4}
+      {...args}
+    ></ParallaxGallery>
+  );
+}
 
-export const ParallaxGalleryBind = Template.bind({});
-ImageCarousel.args = {};
-ImageCarousel.parameters = {
-  docs: {
-    page: () => (
-      <>
-        <h1>Parallax Gallery</h1>
-
-        <h3>Overview</h3>
-
-        <p>
-          The Parallax Gallery is a trend where the images move at a different speed than the content.
-        </p>
-
-        <h4>When to use:</h4>
-
-        <p>To create engaging and interactive content.</p>
-
-        <h4>Formatting</h4>
-
-        <h5>Default</h5>
-
-        <p>It consists of a gallery of images, descriptions, and CTA links.</p>
-
-        <h5>Content</h5>
-
-        <p>Parallax Gallery has Default or Gray backgrounds.</p>
-
-        <h4>Behaviors</h4>
-
-        <h5>States</h5>
-
-        <p>
-          There are two states: Default and Mobile.
-        </p>
-
-        <ol>
-          <li>
-            <strong>Default</strong>
-            <ul>
-              <li>Default background:</li>
-              <li>Gray background:</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Mobile</strong>
-            <ul>
-              <li>Default background:</li>
-              <li>Gray background:</li>
-            </ul>
-          </li>
-        </ol>
-
-        <h3>Usage:</h3>
-
-        <ul>
-          <li>Copy the HTML from the HTML Tab of canvas and include CSS and JS in ‘CSS and JS References’ section.</li>
-          <li>Initialize the parallaxEffect by calling parallaxEffect('.parallax-gallery-images', '.column', 'top center', 'bottom+=15% center', 'vertical', 'all'); function in your JS file.</li>
-          <li>Refer <a href="https://github.com/undp/design-system/wiki/Parallax-documentation">this document</a> for Parallax integration & options</li>
-        </ul>
-
-        <h4>CSS and JS References</h4>
-
-        <h5>CSS:</h5>
-
-        <p>Add the base layout style from</p>
-
-        <ul>
-          <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-          <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/parallax-gallery.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/parallax-gallery.min.css</a></li>
-          <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
-        </ul>
-
-        <p>Following external libraries need to be included first:</p>
-
-        <ul>
-          <li>GSAP core library</li>
-          <li>GSAP ScrollTrigger plugin</li>
-          <li>GSAP EasePack plugin</li>
-        </ul>
-
-        <h5>JS:</h5>
-
-        <ul>
-          <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js</a></li>
-        </ul>
-
-        <h4>Interactions</h4>
-
-        <p>On the opening of the page and scrolling, images move.</p>
-
-        <h4>Changelog</h4>
-
-        <p>1.0 — Released component</p>
-      </>
-    ),
-  },
-};
+export const ParallaxGalleryStory = Template.bind({});
+ParallaxGalleryStory.storyName = "Parallax Gallery";

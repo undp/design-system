@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, Source } from "@storybook/addon-docs";
 import { PageWideCard } from "./PageWideCard";
 // import user from '../../../../assets/images/Pagewide.jpg';
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -104,107 +104,117 @@ export default {
   },
   args: {
     Hovercolors: "global",
+  },
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+              <h1>Pagewide Card</h1>
+
+              <p>The Card pagewide components are cards with information along with an image and CTA link.</p>
+
+              <h3>Overview</h3>
+
+              <p>The Card pagewide component defines a card of information with some items: Tag, Title, Image, Paragraph, and CTA Link.</p>
+
+              <h4>When to use:</h4>
+
+              <p>When a card with data, CTA link, and image is to be displayed.</p>
+
+              <h3>Formatting</h3>
+
+              <h4>Default</h4>
+
+              <p>It consists of a grid with title tag, paragraph, CTA link, and image.</p>
+
+              <h3>Content</h3>
+
+              <p>The card pagewide requires an image, some information, a title, a content tag, and a CTA that opens with more information.</p>
+
+              <h3>Behaviors</h3>
+
+              <h4>States</h4>
+
+              <p>There are two states for card pagewide components: Default and Hover.</p>
+
+              <ul>
+                  <li><strong>Default:</strong> It shows the title, paragraph, CTA link, and image for the card with pagewide.</li>
+                  <li><strong>Hover:</strong> In the hover state, when the mouse hovers over the card, an image is displayed. The yellow color is displayed with the image.</li>
+              </ul>
+
+              <Canvas>
+                <Story
+                  name="Pagewide featured content card"
+                >
+                  {(args, { globals: { locale, accent } }) => {
+                    const caption = getCaptionForLocale(locale);
+                    return (
+                      <PageWideCard
+                        label={caption.tag}
+                        title={caption.label1}
+                        paragraph={caption.label2}
+                        button={caption.btnlabel}
+                        {...args}
+                      ></PageWideCard>
+                    );
+                  }}
+                </Story>
+              </Canvas>
+
+              <h3>Usage:</h3>
+
+              <ul>
+                  <li>Copy the HTML from the HTML tab into your HTML file.</li>
+                  <li>If you want to add visibility animation, then add <code>data-viewport=”true”</code> attribute to your HTML element and include the <code>viewport.min.js</code> file.</li>
+              </ul>
+
+              <h3>CSS and JS References</h3>
+
+              <h4>CSS:</h4>
+
+              <p>Add the base layout style from:</p>
+
+              <ul>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+              </ul>
+
+              <h4>JS:</h4>
+
+              <ul>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+              </ul>
+
+              <h3>Interactions</h3>
+
+              <ul>
+                  <li>Hover state applies to the image only.</li>
+                  <li>By clicking on the CTA Link, the associated page is opened.</li>
+              </ul>
+
+              <h3>Changelog</h3>
+
+              <p>1.0 — Released component</p>
+
+            </>
+        )
+    }
   }
 }
 
-const Template = (args, { globals: { locale, accent } }) => {
+const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
-  return <PageWideCard label={caption.tag} title={caption.label1} paragraph={caption.label2} button={caption.btnlabel} {...args}></PageWideCard>;
+  return (
+    <PageWideCard
+      label={caption.tag}
+      title={caption.label1}
+      paragraph={caption.label2}
+      button={caption.btnlabel}
+      {...args}
+    ></PageWideCard>
+  );
 }
 
-export const PagewideCardStory = Template.bind({});
-PagewideCardStory.args = {
-  Hovercolors: "global",
-};
-
-PagewideCardStory.parameters = {
-  docs: {
-    description: {
-      component: `
-
-# Pagewide Card
-
-The Card page wide components are cards with information along with image and CTA link.
-
-### Overview
-
-The Card pagewide component defines a card of information with some items- Tag, Title, Image, Paragraph and CTA Link.
-
-#### When to use:
-
-When a card with data, CTA link and image is to be displayed.
-
-### Formatting
-
-#### Default
-
-It consists of a grid with title tag, paragraph, cta link and image.
-
-### Content
-
-The card pagewide requires a image, some information, title, content tag and a CTA that opens with more information.
-
-### Behaviors
-
-#### States
-
-There are two states for card pagewide components. Default and hover
-
-Default: It shows the title, paragraph, CTA link and image for Card with pagewide.
-
-Hover: In hover state, when the mouse hovers over the Card, an image is displayed. The yellow color is displayed with the image.
-
-<Canvas>
-  <Story
-    name="Pagewide featured content card"
-    parameters={{
-      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-    }}
-  >
-    {(args, { globals: { locale, accent } }) => {
-      const caption = getCaptionForLocale(locale);
-      return (
-        <PageWideCard
-          label={caption.tag}
-          title={caption.label1}
-          paragraph={caption.label2}
-          button={caption.btnlabel}
-          {...args}
-        ></PageWideCard>
-      );
-    }}
-  </Story>
-</Canvas>
-
-### Usage:
-
-- Copy HTML from the HTML tab in your HTML file
-- If you want to add visibility animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
-
-### Interactions
-
-Hover state applies to the image only.
-By clicking on the CTA Link, the associated page is opened.
-
-### Changelog
-
-1.0 — Released component
-
-`,
-    },
-  },
-};
+export const PageWideCardStory = Template.bind({});
+PageWideCardStory.storyName = "Pagewide featured content card";

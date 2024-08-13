@@ -3,7 +3,7 @@ import { ModalSample } from "./ModalSample";
 import img from "../../../assets/images/bio.jpg";
 import img2 from "../../../assets/images/modal.png";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -74,8 +74,103 @@ export const getCaptionForLocale = (locale) => {
 };
 
 export default {
-  title: "Components/UI components/Modal" 
-};
+  title: "Components/UI components/Modal" ,
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+              <h1>Modal</h1>
+
+              <p>The Modal is a popup window or dialog box that appears on the top of the current page.</p>
+
+              <h3>Overview</h3>
+
+              <p>The Modal component is a popup window or dialog box, which is a secondary window that appears over the primary window, disabling the primary window but keeping it visible. An overlay with the “frosty” effect is applied to the underlying page if the modal window size is smaller than the viewport.</p>
+
+              <h4>When to use:</h4>
+
+              <p>To direct the user’s attention to other important actions that need to be completed before operating the primary window.</p>
+
+              <h3>Formatting</h3>
+
+              <h4>Default</h4>
+
+              <p>It consists of a dialog box or popup window.</p>
+
+              <h3>Content</h3>
+
+              <p>Any image, information, or image with information can be placed in the modal window.</p>
+
+              <h3>Behaviors</h3>
+
+              <h4>States</h4>
+
+              <p>There is only one state in Modal.</p>
+
+              <Canvas>
+                <Story name="Modal">
+                  {(args, { globals: { locale } }) => {
+                    const caption = getCaptionForLocale(locale);
+                    return (
+                      <ModalSample
+                        contenttile={caption.title}
+                        contentname={caption.name}
+                        descriptionText={caption.descriptionText}
+                        descriptionText2={caption.descriptionText2}
+                        button={caption.btnlabel}
+                        alt={"modal image"}
+                        image={img}
+                        image2={img2}
+                        {...args}
+                      ></ModalSample>
+                    );
+                  }}
+                </Story>
+              </Canvas>
+
+              <h3>Usage</h3>
+
+              <ul>
+                  <li>Grab the HTML from the HTML tab in the canvas and include the JS and CSS in the ‘CSS and JS References’ section.</li>
+                  <li>Make sure to add <code>data-toggle=’modal’</code> and <code>data-target-modal=’your-modal-id’</code> to your button or link that will open the modal box.</li>
+                  <li>Include <code>modal.min.js</code> file and initialize <code>modal()</code>.</li>
+              </ul>
+
+              <h3>CSS and JS References</h3>
+
+              <h4>CSS:</h4>
+
+              <p>Add the base layout style from:</p>
+
+              <ul>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/bio-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/bio-card.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/modal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/modal.min.css</a></li>
+              </ul>
+
+              <h4>JS:</h4>
+
+              <ul>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js</a></li>
+              </ul>
+
+              <h3>Interactions</h3>
+
+              <ul>
+                  <li>By clicking on the image/text, it pops up.</li>
+                  <li>The pop-up window can be closed by clicking on the cross icon or anywhere outside of the modal container.</li>
+              </ul>
+
+              <h3>Changelog</h3>
+
+              <p>1.0 — Released component</p>
+
+            </>
+        )
+    }
+  }
+}
 
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
@@ -92,108 +187,7 @@ const Template = (args, { globals: { locale } }) => {
       {...args}
     ></ModalSample>
   );
-};
+}
 
-export const ModalStory = Template.bind({});
-ModalStory.storyName = "Modal";
-ModalStory.args = {
-  contenttile: "Title",
-  contentname: "Name",
-  descriptionText: "Description",
-  descriptionText2: "Description",
-  button: "Button",
-  alt: "modal image",
-  image: img,
-  image2: img2,
-};
-
-// Documentation content
-ModalStory.parameters = {
-  docs: {
-    description: {
-      component: `
-
-
-# Modal
-
-The Modal is a popup window or dialog box which appears on the top of the current page.
-
-### Overview
-
-The Modal component is a popup window or dialog box which is a secondary window that appears over the primary window, disabling the primary window but keeping it visible. Overlay with the “frosty” effect is applied to the underlying page if the modal window size is smaller than the viewport.
-
-#### When to use:
-
-To direct the user’s attention to other important actions which need to be completed before operating the primary window.
-
-### Formatting
-
-#### Default
-
-It consists of a dialog box or popup window.
-
-### Content
-
-Any image or information or image with information can be placed in the modal window.
-
-### Behaviors
-
-### States
-
-There is only one state in Modal.
-
-<Canvas>
-  <Story name="Modal">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocale(locale);
-      return (
-        <ModalSample
-          contenttile={caption.title}
-          contentname={caption.name}
-          descriptionText={caption.descriptionText}
-          descriptionText2={caption.descriptionText2}
-          button={caption.btnlabel}
-          alt={"modal image"}
-          image={img}
-          image2={img2}
-          {...args}
-        ></ModalSample>
-      );
-    }}
-  </Story>
-</Canvas>
-
-### Usage
-
-- Grab the HTML from the HTML tab in the canvas and include JS and CSS in ‘CSS and JS References’ section.
-- Make sure to add data-toggle=’modal’ and data-target-modal=’your-modal-id’ in your button or link which will open the modal box.
-- Include modal.min.js file and initialize modal();
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css.
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/bio-card.min.css.
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/modal.min.css.
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js.
-
-### Interactions
-
-- By clicking on the image/text, it pops up.
-- The pop-up window can be closed by clicking on the cross icon or anywhere outside of the modal container.
-
-### Changelog
-
-1.0 — Released component
-
-`,
-    },
-  },
-};
+export const ModalSampleStory = Template.bind({});
+ModalSampleStory.storyName = "Modal";

@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Tab } from "./Tab";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -133,102 +133,105 @@ export const getCaptionForLocale = (locale) => {
 };
 
 export default {
-  title: "Components/UI components/Tabs"
+  title: "Components/UI components/Tabs",
+  component: Tab,
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+              <h1>Tab</h1>
+
+              <p>The Tabs are used to navigate through the same groups of content.</p>
+
+              <h3>Overview</h3>
+
+              <p>The Tab components are used to show the tabs to alternate between views within the same content, not to navigate to different areas. The active tab is highlighted with the red color.</p>
+
+              <h4>When to use:</h4>
+
+              <p>To navigate through the same groups of content.</p>
+
+              <h3>Formatting</h3>
+
+              <h4>Default</h4>
+
+              <p>It consists of different tabs and a tab border.</p>
+
+              <h4>Content</h4>
+
+              <p>There are two types of tabs: single tab and tab bar with wrapping.</p>
+
+              <ol>
+                  <li><strong>Single tab:</strong></li>
+                  <li><strong>Tab bar with wrapping:</strong></li>
+              </ol>
+
+              <h3>Behaviors</h3>
+
+              <h4>States</h4>
+
+              <p>There are three states: Default, Hover, and Selected.</p>
+
+              <ol>
+                  <li><strong>Default:</strong> It is the tab bar that is displayed when the page opens.</li>
+                  <li><strong>Hover:</strong> It changes appearance once the mouse hovers over it.</li>
+                  <li><strong>Selected:</strong> It is a selected state with a red horizontal line below it.</li>
+              </ol>
+
+              <Canvas>
+                <Story name="Tabs">
+                  {(args, { globals: { locale } }) => {
+                    const caption = getCaptionForLocale(locale);
+                    return <Tab tabdata={caption}></Tab>;
+                  }}
+                </Story>
+              </Canvas>
+
+              <h3>Usage:</h3>
+
+              <ul>
+                  <li>Copy the HTML from the HTML tab (Canvas) into your HTML file.</li>
+                  <li>Include Foundation’s core and tabs JavaScript from <a href="https://github.com/foundation/foundation-sites/tree/develop/dist/js/plugins">Foundation’s GitHub repository</a>.</li>
+                  <li>Initialize the tab function in document ready or window load by calling <code>tabs()</code> function.</li>
+                  <li><strong>Optional:</strong> If you want to add left-right animation then add <code>data-viewport="true"</code> attribute to your HTML element and include <code>viewport.min.js</code>.</li>
+                  <li>Add other resources in your HTML file given below.</li>
+              </ul>
+
+              <h3>CSS and JS References</h3>
+
+              <h4>CSS:</h4>
+              <ul>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/tab.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/tab.min.css</a></li>
+              </ul>
+
+              <h4>JS:</h4>
+              <ul>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/tabs.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/tabs.min.js</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+              </ul>
+
+              <h3>Interactions</h3>
+
+              <ul>
+                  <li>Hover state applies to the entire tab.</li>
+                  <li>By clicking on the tab, the particular tab opens.</li>
+              </ul>
+
+              <h3>Changelog</h3>
+
+              <p>1.0 — Released component</p>
+
+            </>
+        )
+    }
+  }
 }
 
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
   return <Tab tabdata={caption}></Tab>;
-};
+}
 
 export const TabStory = Template.bind({});
-TabStory.args = {
-};
-
-// Documentation content
-TabStory.parameters = {
-  docs: {
-    description: {
-      component: `
-# Tab
-
-The Tabs are used to navigate through the same groups of content.
-
-### Overview
-
-The Tab components are used to show the tabs to alternate between views within the same content, not to navigate to different areas. The active tab is the highlight with the red color.
-
-#### When to use:
-
-To navigate through the same groups of content.
-
-### Formatting
-
-#### Default
-
-It consists of different tabs and a tab border.
-
-### Content
-
-There are two types of tabs: single tab and tab bar with wrapping.
-
-1. Single tab:
-
-2. Tab bar with wrapping:
-
-### Behaviors
-
-#### States
-
-There are three states: Default, Hover, and Selected.
-
-1. Default: It is the tab bar that is displayed when the page opens.
-
-2. Hover: It changes appearance once the mouse hovers over it.
-
-3. Selected: It is a selected state with a red horizontal line below it.
-
-<Canvas>
-  <Story name="Tabs">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocale(locale);
-      return <Tab tabdata={caption}></Tab>;
-    }}
-  </Story>
-</Canvas>
-
-### Usage:
-
-- Copy the HTML from the HTML tab (Canvas) into your html file
-- Include Foundation’s core and tabs javascript from https://github.com/foundation/foundation-sites/tree/develop/dist/js/plugins
-- Initialize the tab function in document ready or window load by calling tabs() function.
-- Optional: If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js.
-- Add other resources in your html file given below
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/tab.min.css
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/tabs.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
-
-### Interactions
-
-- Hover state appears to the entire tab.
-- By clicking on the tab the particular tab opens.
-
-### Changelog
-
-1.0 — Released component
-
-`,
-    },
-  },
-};
+TabStory.storyName = "Tabs";

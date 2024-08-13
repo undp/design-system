@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { CtaBlock } from "./CtaBlock";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -55,7 +55,55 @@ export const getCaptionForLocale = (locale) => {
 
 export default {
   title: "Components/UI components/Text/CTA block",
-  component: {CtaBlock}
+  component: {CtaBlock},
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+              <h1>CTA Block</h1>
+
+              <p>CTA Block Component defines a section of information data with some items - header title, description. <code>H4</code> <code>P</code> atoms tags are used for creating this section.</p>
+
+              <Canvas>
+                <Story name="CTA block">
+                  {(args, { globals: { locale } }) => {
+                    const caption = getCaptionForLocale(locale);
+                    return (
+                      <CtaBlock
+                        headerText={caption.header}
+                        descriptionText={caption.description}
+                        ctaText={caption.cta}
+                      ></CtaBlock>
+                    );
+                  }}
+                </Story>
+              </Canvas>
+
+              <h3>Usage</h3>
+
+              <ul>
+                  <li>Take HTML from the HTML tab in canvas.</li>
+                  <li>Include CSS and JS from the 'CSS and JS References' section.</li>
+              </ul>
+
+              <h3>CSS and JS References</h3>
+
+              <h4>CSS:</h4>
+              <p>Add the base style only, located at <strong>dist/css/base-minimal.min.css</strong> along with the following:</p>
+              <ul>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-block.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-block.min.css</a></li>
+              </ul>
+
+              <h4>JS:</h4>
+              <p>NA</p>
+
+              <h3>Changelog</h3>
+
+              <p>1.0 — Released component</p>
+            </>
+        )
+    }
+  }
 }
 
 const Template = (args, { globals: { locale } }) => {
@@ -67,64 +115,7 @@ const Template = (args, { globals: { locale } }) => {
       ctaText={caption.cta}
     ></CtaBlock>
   );
-};
-
-export const CTABlockStory = Template.bind({});
-CTABlockStory.args = {
-  headerText: "UNDP Hope",
-  descriptionText:
-    "UNDP works in about 170 countries and territories, helping to achieve the eradication of poverty, and the reduction of inequalities and exclusion. We help countries to develop policies, leadership skills, partnering abilities, institutional capabilities and build resilience in order to sustain development results.",
-  ctaText: "Read More",
-};
-
-CTABlockStory.parameters = {
-  docs: {
-    description: {
-      component: `
-
-# CTA Block
-
-CTA Block Component defines a section of information data with some items - header title, description. H4 P atoms tags are used for creating this section.
-
-<Canvas>
-  <Story name="CTA block">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocale(locale);
-      return (
-        <CtaBlock
-          headerText={caption.header}
-          descriptionText={caption.description}
-          ctaText={caption.cta}
-        ></CtaBlock>
-      );
-    }}
-  </Story>
-</Canvas>
-
-###
-
-### Usage
-
-- Take HTML from the HTML tab in canvas
-- Include CSS and JS from the 'CSS and JS References' section
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base style only, located at **dist/css/base-minimal.min.css** along with following:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-block.min.css
-
-#### JS:
-
-NA
-
-### Changelog
-
-1.0 — Released component
-
-`,
-    }
-  }
 }
+
+export const CtaBlockStory = Template.bind({});
+CtaBlockStory.storyName = "CTA block";

@@ -4,7 +4,7 @@ import field_2 from "../../../../assets/images/field_2.jpg";
 import field from "../../../../assets/images/field.jpg";
 import garden from "../../../../assets/images/garden.jpg";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -269,111 +269,117 @@ export const getCaptionForLocale = (locale) => {
 
 export default {
   title: "Components/UI components/Hero/Page/Page hero - cards",
-  component: {CountryCardHero}
+  component: {CountryCardHero},
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+              <h1>Page hero - Cards</h1>
+
+              <p>The Page Hero Cards are cards with text and images.</p>
+
+              <h3>Overview</h3>
+
+              <p>The Page Hero Card component is a multi-usage component that creates boxes that are usually teasing some kind of content like Image, Text, Subtitle, and Breadcrumb. Animation and country card molecules are used for creating this card.</p>
+
+              <h4>When to use:</h4>
+
+              <p>When the website needs to grab the user's attention to a particular page.</p>
+
+              <h3>Formatting</h3>
+
+              <h4>Default</h4>
+
+              <p>It consists of a grid with title, subtitle, and image.</p>
+
+              <h3>Content</h3>
+
+              <p>The Page Hero Card consists of text in the topmost part of the card and images in the bottom part of the card.</p>
+
+              <h3>Behaviors</h3>
+
+              <h4>States</h4>
+
+              <p>There is only one default state for the page hero card.</p>
+
+              <Canvas>
+                <Story
+                  name="Page hero - cards"
+                >
+                  {(args, { globals: { locale } }) => {
+                    const caption = getCaptionForLocale(locale);
+                    return (
+                      <CountryCardHero
+                        data={caption.countrydata}
+                        title={caption.title}
+                        subtitle={caption.subtitle}
+                      ></CountryCardHero>
+                    );
+                  }}
+                </Story>
+              </Canvas>
+
+              <h3>Usage:</h3>
+
+              <ul>
+                <li>Copy HTML from the HTML tab of canvas.</li>
+                <li>Make sure to remove <code>swiper-slider-0 swiper-initialized swiper-horizontal swiper-pointer-events</code> classes, remove ID and <code>aria-label</code> attribute.</li>
+                <li>Include CSS and JS files listed below.</li>
+                <li>Include Swiper library from here: <a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a> in your HTML page.</li>
+                <li>Initialize swiper by calling <code>swiper('.pagehero-cards-items')</code> function.</li>
+                <li>If you are using left-to-right animation, please add <code>data-viewport="true"</code> attribute to your HTML element and include <code>viewport.min.js</code>.</li>
+                <li>Refer to <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</li>
+              </ul>
+
+              <h3>CSS and JS References</h3>
+
+              <h4>CSS:</h4>
+
+              <p>Add the base layout style from:</p>
+
+              <ul>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/pagehero-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/pagehero-cards.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-card.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css</a></li>
+              </ul>
+
+              <h4>JS:</h4>
+
+              <ul>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smartresize.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smartresize.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+              </ul>
+
+              <h3>Interactions</h3>
+
+              <ul>
+                <li>When the page is opened, the text appears over the image.</li>
+                <li>When clicked on the image, the image lifts up a bit.</li>
+              </ul>
+
+              <h3>Changelog</h3>
+
+              <p>1.0 — Released component</p>
+
+            </>
+        )
+    }
+  }
 }
 
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
-  return <CountryCardHero data={caption.countrydata} title={caption.title} subtitle={caption.subtitle}></CountryCardHero>;
-};
+  return (
+    <CountryCardHero
+      data={caption.countrydata}
+      title={caption.title}
+      subtitle={caption.subtitle}
+    ></CountryCardHero>
+  );
+}
 
 export const PageHeroCardsStory = Template.bind({});
-PageHeroCardsStory.args = {
-};
-
-// Documentation content
-PageHeroCardsStory.parameters = {
-  docs: {
-    description: {
-      component: `
-
-
-# Page hero - Cards
-
-The Page Hero Cards are cards with text and images.
-
-### Overview
-
-The Page Hero Card component is a multi-usage component that creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle, and Breadcrumb. Animation and country card molecules are used for creating this card.
-
-#### When to use:
-
-When the website needs to grab the user's attention to a particular page.
-
-### Formatting
-
-#### Default
-
-It consists of a grid with title, subtitle and image.
-
-### Content
-
-The Page Hero Card consists of text in the topmost part of the card and images in the bottom part of the card.
-
-### Behaviors
-
-#### States
-
-There is only one default state for the page hero card.
-
-<Canvas>
-  <Story
-    name="Page hero - cards"
-    parameters={{
-      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-    }}
-  >
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocale(locale);
-      return (
-        <CountryCardHero
-          data={caption.countrydata}
-          title={caption.title}
-          subtitle={caption.subtitle}
-        ></CountryCardHero>
-      );
-    }}
-  </Story>
-</Canvas>
-
-### Usage:
-
-- Copy HTML from the HTML tab of canvas.
-- Make sure to remove swiper-slider-0 swiper-initialized swiper-horizontal swiper-pointer-events remove these classes, remove ID and aria-label attribute
-- Include css and js files listed below.
-- Include Swiper library from here https://swiperjs.com/get-started in your html page.
-- Initialize swiper by calling swiper('.pagehero-cards-items') function.
-- If you are using left to right animation, please add data-viewport=”true” attribute to your HTML element and include viewport.min.js.
-- Refer [this document](https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration & options
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/pagehero-cards.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smartresize.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
-
-### Interactions
-
-- When the page is opened, the text appears over the image.
-- When clicked on the image, the image lifts up a bit.
-
-### Changelog
-
-1.0 — Released component
-
-`,
-    },
-  },
-};
+PageHeroCardsStory.storyName = "Page Hero - Cards";

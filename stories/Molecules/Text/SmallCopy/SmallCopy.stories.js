@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Smallcopy } from "./SmallCopy";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -96,7 +96,58 @@ export const getCaptionForLocale = (locale) => {
 };
 
 export default { 
-  title: "Components/UI components/Text/Small copy lockup"
+  title: "Components/UI components/Text/Small copy lockup",
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+              <h1>Small Copy Lockup</h1>
+
+              <p>The Small Copy Lockup component defines a section of information data with some items - location, phone number, and email ID.</p>
+
+              <Canvas>
+                <Story name="Small copy lockup">
+                  {(args, { globals: { locale } }) => {
+                    const caption = getCaptionForLocale(locale);
+                    return (
+                      <Smallcopy
+                        locationName={caption.locationlabel}
+                        phoneName={caption.phonelabel}
+                        phonenumber={caption.phone}
+                        emailName={caption.emaillabel}
+                        emailid={caption.email}
+                      ></Smallcopy>
+                    );
+                  }}
+                </Story>
+              </Canvas>
+
+              <h3>Usage</h3>
+
+              <ul>
+                <li>Take HTML from the HTML tab in canvas whichever background color you like.</li>
+                <li>Include CSS and JS from the 'CSS and JS References' section.</li>
+              </ul>
+
+              <h3>CSS and JS References</h3>
+
+              <h4>CSS:</h4>
+              <p>Add the base style only, located at <strong>dist/css/base-minimal.min.css</strong> along with the following:</p>
+              <ul>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/smallcopy.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/smallcopy.min.css</a></li>
+              </ul>
+
+              <h4>JS:</h4>
+              <p>NA</p>
+
+              <h3>Changelog</h3>
+
+              <p>1.0 — Released component</p>
+
+            </>
+        )
+    }
+  }
 }
 
 const Template = (args, { globals: { locale } }) => {
@@ -113,60 +164,5 @@ const Template = (args, { globals: { locale } }) => {
 }
 
 export const SmallCopyStory = Template.bind({});
-SmallCopyStory.args = {
-};
+SmallCopyStory.storyName = "Small copy lockup";
 
-// Documentation content
-SmallCopyStory.parameters = {
-  docs: {
-    description: {
-      component: `
-   
-# Small Copy Lockup
-
-Small Copy Lockup component defines a section of information data with some items - location, phone number and email ID.
-
-<Canvas>
-  <Story name="Small copy lockup">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocale(locale);
-      return (
-        <Smallcopy
-          locationName={caption.locationlabel}
-          phoneName={caption.phonelabel}
-          phonenumber={caption.phone}
-          emailName={caption.emaillabel}
-          emailid={caption.email}
-        ></Smallcopy>
-      );
-    }}
-  </Story>
-</Canvas>
-
-###
-
-### Usage
-
-- Take HTML from the HTML tab in canvas whichever backgorund color you like
-- Include CSS and JS from the 'CSS and JS References' section
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base style only, located at **dist/css/base-minimal.min.css** along with following:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/smallcopy.min.css
-
-#### JS:
-
-NA
-
-### Changelog
-
-1.0 — Released component
-
-`,
-    },
-  },
-}
