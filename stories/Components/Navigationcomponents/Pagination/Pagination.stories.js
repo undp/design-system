@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Pagination } from './Pagination';
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case 'english':
       const engText = { text: 'Page', text2: 'of' };
@@ -28,92 +28,76 @@ export default {
   component: Pagination,
   parameters: {
     docs: {
-      description: {
-        component: `
-# Pagination
+      page: () => (
+        <>
+           <h1>Pagination</h1>
+    <p>The Pagination component divides the content of the website into different pages.</p>
 
-The Pagination component divides the content of the website into different pages.
+    <h3>Overview</h3>
+    <p>The Pagination component allows users to make large amounts of content easy to find and breaks up several entries or web content into multiple pages.</p>
+    <p><strong>When to use:</strong></p>
+    <ul>
+        <li>When web content needs to be divided into pages.</li>
+    </ul>
 
-### Overview
+    <h3>Formatting</h3>
+    <h4>Default</h4>
+    <p>The Pagination component displays the number of the page and contains navigational arrows to flip through the pages. The dark colored arrow represents that there are more pages to go backward or forwards. The light colored arrow represents the last or first page.</p>
 
-The Pagination component allows users to make large amounts of content easy to find and breaks up several entries or web content into multiple pages.
+    <h3>Behaviors</h3>
+    <h4>States</h4>
+    <p>There is only the default state of Pagination.</p>
 
-When to use:
+      <Canvas>
+        <Story name="Pagination">
+          {(args) => (
+            <Pagination
+              text={getCaptionForLocale("english")}
+              text2={getCaptionForLocale("english")}
+              {...args}
+            />
+          )}
+        </Story>
+      </Canvas>
 
-- When web content needs to be divided into pages.
+    <h3>Usage:</h3>
+    <ol>
+        <li>Copy the HTML from the HTML tab of canvas and add it in your HTML file.</li>
+        <li>Include below listed CSS files.</li>
+    </ol>
 
-Formatting
+    <h3>CSS and JS References</h3>
+    <h4>CSS:</h4>
+    <ul>
+        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/pagination.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/pagination.min.css</a></li>
+    </ul>
+    <h4>JS:</h4>
+    <p>NA</p>
 
-#### Default
+    <h3>Interactions</h3>
+    <p>By clicking on the forward or backward arrow, the pages are flipped forwards or backwards.</p>
 
-The Pagination component displays the number of the page and contains navigational arrows to flip through the pages. The dark colored arrow represents that there are more pages to go backward or forwards. The Light colored arrow represents the last or first page.
-
-### Behaviors
-
-#### States
-
-There is only the default state of Pagination.
-
-### Usage:
-
-1. Copy the HTML from the HTML tab of canvas and add it in your html file
-2. Include below listed CSS files
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/pagination.min.css
-
-#### JS:
-
-NA
-
-### Interactions
-
-By clicking on the forward or backward arrow, the pages are flipped forwards or backwards.
-
-### Changelog
-
-1.0 — Released component
-        `,
-      },
-    },
-  },
+    <h3>Changelog</h3>
+    <p>1.0 — Released component</p>
+        </>
+      )
+    }
+  }
 };
 
-export const PaginationStory = (args, { globals: { locale } }) => {
+const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
-
   return (
-    <Canvas>
-      <Story name="Pagination">
-        {(args) => (
-          <Pagination text={caption.text} text2={caption.text2} {...args} />
-        )}
-      </Story>
-    </Canvas>
+    <Pagination
+      text={caption.text}
+      text2={caption.text2}
+      {...args}
+    />
   );
-};
+}
 
-PaginationStory.parameters = {
-  docs: {
-    source: {
-      code: `
-<Meta title="Components/Navigation components/Pagination" />
+export const PaginationStory = Template.bind({});
+PaginationStory.storyName = 'Pagination';
 
-<Canvas>
-  <Story name="Pagination">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocale(locale);
-      return <Pagination text={caption.text} text2={caption.text2}></Pagination>;
-    }}
-  </Story>
-</Canvas>
-      `,
-    },
-  },
-};
+      

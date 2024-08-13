@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { Menu } from "./Menu";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -153,22 +153,46 @@ export const getCaptionForLocale = (locale) => {
 export default {
   title: "Components/Navigation components/Menu",
   component: Menu,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <h1>Menu</h1>
+          <p>
+          The Horizontal Menu consists of multiple clickable items placed at the top of the page. The navigation stays unchanged when browswing through the site and is present on every page.
+          </p>
+
+          <Canvas>
+            <Story name="Menu">
+              {(args) => (
+                <Menu
+                  data={getCaptionForLocale("english")}
+                  role="navigation"
+                  arialabel="menu"
+                  {...args}
+                />
+              )}
+            </Story>
+          </Canvas>
+        </>
+      )
+    }
+  }
 };
 
-MenuStory.parameters = {
-  docs: {
-    source: {
-      code: `
+const Template =  (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale);
+  return (
+    <Menu
+      data={caption}
+      role="navigation"
+      arialabel="menu"
+      {...args}
+    />
+  );
+}
 
-<Canvas>
-  <Story name="Menu">
-    {(args, { globals: { locale } }) => {
-      const caption = getCaptionForLocale(locale);
-      return <Menu data={caption} role="navigation" aria-label="menu"></Menu>;
-    }}
-  </Story>
-</Canvas>
-      `,
-    },
-  },
-};
+export const MenuStory = Template.bind({});
+MenuStory.storyNamer = "Menu";
+
+

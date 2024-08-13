@@ -1,7 +1,7 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas, ArgTypes } from "@storybook/addon-docs";
 import { FormTypes } from "./TextPanel";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       return {
@@ -84,10 +84,11 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-export const parameters = {
-  title: 'Components/Forms/Text panel',
+export default {
+  title: "Components/Forms/Text panel",
+  component: FormTypes,
   argTypes: {
-    variant: {
+    varient: {
       options: [
         "text panel and form",
         "form with photo",
@@ -95,116 +96,112 @@ export const parameters = {
         "stacked form",
       ],
       control: { type: "radio" },
-    },
+  },
   },
   args: {
     variant: "text panel and form",
   },
-};
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <h1>Text Panel</h1>
+            <p>On the text panel, it shows all the forms structures.</p>
 
-export const TextPanelComponent = () => (
-  <>
-    <Meta
-      title="Components/Forms/Text panel"
-      argTypes={{
-        variant: {
-          options: [
-            "text panel and form",
-            "form with photo",
-            "wide form",
-            "stacked form",
-          ],
-          control: { type: "radio" },
-        },
-      }}
-      args={{
-        variant: "text panel and form",
-      }}
-    />
+            <h3>Overview</h3>
+            <p>The text panel is the page for form structure that shows how input fields can be used in various ways.</p>
 
-    <h1>Text Panel</h1>
+            <h4>When to use:</h4>
+            <ul>
+              <li>When the user needs to create a form.</li>
+            </ul>
 
-    <p>On the text panel, it shows all the forms structures.</p>
+            <h3>Behaviors</h3>
 
-    <h2>Overview</h2>
+            <h4>States</h4>
+            <p>The following behavior modifiers are available:</p>
+            <ol>
+              <li>Text panel and form</li>
+              <li>Form with photo</li>
+              <li>Wide form</li>
+              <li>Stacked form</li>
+            </ol>
 
-    <p>Text panel is the page for form structue that shows that we can use the input fields with many ways.</p>
+            <Canvas>
+              <Story
+                name="Text panel"
+              >
+                {(args) => (
+                    <FormTypes
+                      element="input"
+                      typeemail="email"
+                      typename="text"
+                      typelname="text"
+                      required="required"
+                      mode="form-email"
+                      errorText={caption.errorLabel}
+                      label={caption.labelname}
+                      button={caption.buttonname}
+                      placeholder={caption.placeholdername}
+                      placeholderemail={caption.placeholderemail}
+                      placeholderfirst={caption.firstname}
+                      placeholderlast={caption.lastname}
+                      anchorTag={caption.heading}
+                      anchorTag2={caption.heading2}
+                      para={caption.para}
+                      {...args}
+                    ></FormTypes>
+                )}
+              </Story>
+            </Canvas>
 
-    <h3>When to use:</h3>
+            <h3>Usage</h3>
+            <p>Copy the HTML from the HTML tab of the canvas and include the CSS files mentioned below.</p>
 
-    <p>When the user needs to create a form.</p>
+            <h3>CSS and JS References</h3>
 
-    <h2>Behaviors</h2>
+            <h4>CSS:</h4>
+            <p>Add the base layout style from:</p>
+            <ul>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/text-panel.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/text-panel.min.css</a></li>
+            </ul>
 
-    <h3>States</h3>
+            <h4>JS:</h4>
+            <p>NA</p>
 
-    <p>The following behavior modifiers are available:</p>
-
-    <ol>
-      <li>Text panel and form</li>
-      <li>Form with photo</li>
-      <li>Wide form</li>
-      <li>Stacked form</li>
-    </ol>
-
-    <Canvas>
-      <Story
-        name="Text panel"
-        parameters={{
-          chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-        }}
-      >
-        {(args, { globals: { locale } }) => {
-          const caption = getCaptionForLocale(locale);
-          return (
-            <FormTypes
-              element="input"
-              typeemail="email"
-              typename="text"
-              typelname="text"
-              required="required"
-              mode="form-email"
-              errorText={caption.errorLabel}
-              label={caption.labelname}
-              button={caption.buttonname}
-              placeholder={caption.placeholdername}
-              placeholderemail={caption.placeholderemail}
-              placeholderfirst={caption.firstname}
-              placeholderlast={caption.lastname}
-              anchorTag={caption.heading}
-              anchorTag2={caption.heading2}
-              para={caption.para}
-              {...args}
-            />
-          );
-        }}
-      </Story>
-    </Canvas>
-
-    <h2>Usage</h2>
-
-    <p>Copy the HTML from the HTML tab of canvas and include the css files mentioned below.</p>
-
-    <h3>CSS and JS References</h3>
-
-    <h4>CSS:</h4>
-
-    <ul>
-      <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-      <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/text-panel.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/text-panel.min.css</a></li>
-    </ul>
-
-    <h4>JS:</h4>
-
-    <p>NA</p>
-
-    <h2>Changelog</h2>
-
-    <p>1.0 — Released component</p>
-  </>
-);
-
-export default {
-  title: "Components/Forms/Text panel",
-  parameters,
+            <h3>Changelog</h3>
+            <p>1.0 — Released component</p>
+        </>
+      )
+    }
+  }
 }
+
+const Template = (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale);
+  return (
+    <FormTypes
+      element="input"
+      typeemail="email"
+      typename="text"
+      typelname="text"
+      required="required"
+      mode="form-email"
+      errorText={caption.errorLabel}
+      label={caption.labelname}
+      button={caption.buttonname}
+      placeholder={caption.placeholdername}
+      placeholderemail={caption.placeholderemail}
+      placeholderfirst={caption.firstname}
+      placeholderlast={caption.lastname}
+      anchorTag={caption.heading}
+      anchorTag2={caption.heading2}
+      para={caption.para}
+      {...args}
+    ></FormTypes>
+  );
+}
+
+export const TextPanelStory = Template.bind({});
+TextPanelStory.storyName = 'Text panel';

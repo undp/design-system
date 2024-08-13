@@ -348,7 +348,7 @@ export default {
 
 
 
-  export const getCaptionForLocaleHeading = (locale) => {
+  const getCaptionForLocaleHeading = (locale) => {
     switch (locale) {
       case "english":
         const engText = {
@@ -414,7 +414,7 @@ export default {
 
 
 
-export const getCaptionForLocaleAbbr = (locale) => {
+const getCaptionForLocaleAbbr = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -468,7 +468,7 @@ export const getCaptionForLocaleAbbr = (locale) => {
 
 
 
-export const getCaptionForLocaleBlockquote = (locale) => {
+const getCaptionForLocaleBlockquote = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -515,7 +515,7 @@ export const getCaptionForLocaleBlockquote = (locale) => {
 };
 
 
-export const getCaptionForLocaleCite = (locale) => {
+const getCaptionForLocaleCite = (locale) => {
   switch (locale) {
     case "english":
       const engText = { detail: "-Firstname Lastname" };
@@ -538,7 +538,7 @@ export const getCaptionForLocaleCite = (locale) => {
 };
 
 
-export const getCaptionForLocaleCode = (locale) => {
+const getCaptionForLocaleCode = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -689,7 +689,7 @@ export const getLocaleForFigcaption = (locale) => {
   }
 };
 
-export const getCaptionForLocaleHr = (locale) => {
+const getCaptionForLocaleHr = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -730,7 +730,7 @@ export const getCaptionForLocaleHr = (locale) => {
 };
 
 
-export const getCaptionForLocaleMark = (locale) => {
+const getCaptionForLocaleMark = (locale) => {
   switch (locale) {
     case "english":
       const engText = { detail: "Eos nulla molestiae" };
@@ -751,7 +751,7 @@ export const getCaptionForLocaleMark = (locale) => {
   }
 };
 
-export const getCaptionForLocaleParagraph = (locale) => {
+const getCaptionForLocaleParagraph = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -788,7 +788,7 @@ export const getCaptionForLocaleParagraph = (locale) => {
 };
 
 
-export const getCaptionForLocaleQuotation = (locale) => {
+const getCaptionForLocaleQuotation = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -826,7 +826,7 @@ export const getCaptionForLocaleQuotation = (locale) => {
 
 
 
-export const getCaptionForLocaleSmall = (locale) => {
+const getCaptionForLocaleSmall = (locale) => {
   switch (locale) {
     case "english":
       const engText = { detail: "Et occaecati eos nulla molestiae repellat." };
@@ -855,7 +855,7 @@ export const getCaptionForLocaleSmall = (locale) => {
 
 
 
-export const getCaptionForLocaleList = (locale) => {
+const getCaptionForLocaleList = (locale) => {
   switch (locale) {
     case "english":
       const engText = {

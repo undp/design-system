@@ -1,8 +1,8 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/addon-docs';
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import CustomSelect from './CustomSelect';
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case 'english':
       return 'Select Language';
@@ -24,79 +24,95 @@ export default {
   component: CustomSelect,
   parameters: {
     docs: {
-      title: 'Components/Forms/Dropdown/Select',
+      page: () => (
+        <>
+          <h1>Custom Select</h1>
+          <p>The custom select dropdown allows the user to select one.</p>
+
+          <h3>Overview</h3>
+          <p>The custom select dropdown element allows users to choose a single option from a list. It is used in forms when there are single choices that can be collapsed under one title.</p>
+
+          <h4>When to use:</h4>
+          <ul>
+            <li>When single or custom options are to be grouped under a single title.</li>
+          </ul>
+
+          <h3>Formatting</h3>
+
+          <h4>Default</h4>
+          <p>It consists of a dropdown with an arrow from which the user can select any one option.</p>
+
+          <h3>Content</h3>
+          <p>In the custom dropdown select, only one option can be selected.</p>
+          <p>The direction of the arrow indicates if one option is selected. The downward arrow indicates a closed box and the upward arrow indicates an open box.</p>
+
+          <h3>Behaviors</h3>
+
+          <h4>States</h4>
+          <p>The Dropdown boxes are either opened or closed. The Custom dropdown boxes either have auto or fixed height.</p>
+
+          <ul>
+            <li>Closed and Auto Height:</li>
+            <li>Closed and Fixed Height:</li>
+            <li>Open and Auto Height:</li>
+            <li>Open and Fixed Height:</li>
+          </ul>
+
+          <Canvas>
+            <Story name="Select">
+              {(args) => (
+                <CustomSelect
+                  label={caption.label}
+                  value={caption.value}
+                  id="edit-select"
+                  {...args}
+                />
+              )}
+            </Story>
+          </Canvas>
+
+          <h3>Usage:</h3>
+          <p>Copy the HTML from the HTML tab of Canvas. Include the CSS and JS files listed below. Initialize the select by calling the <code>select()</code> function. If you need a fixed height dropdown, then apply height to the <code>&lt;ul&gt;</code> tag of the dropdown. It will scroll inside the dropdown.</p>
+
+          <h3>CSS and JS References</h3>
+
+          <h4>CSS:</h4>
+          <p>Add the base layout style from:</p>
+          <ul>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/custom-select.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/custom-select.min.css</a></li>
+          </ul>
+
+          <h4>JS:</h4>
+          <ul>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js</a></li>
+          </ul>
+
+          <h3>Interactions</h3>
+          <ul>
+            <li>By clicking on the arrow, the custom select dropdown box can be opened or closed.</li>
+            <li>By clicking on the option/options, those can be selected.</li>
+          </ul>
+
+          <h3>Changelog</h3>
+          <p>1.0 — Released component</p>
+
+        </>
+      ),
     },
   },
 };
 
-const Template = () => {
-  const locale = 'english'; // Set default locale here or via controls in Storybook
+const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
-
   return (
-    <div>
-      <h1>Custom Select</h1>
-
-      <h2>Overview</h2>
-      <p>
-        The custom select dropdown element allows users to choose a single option from a list. It is used in forms when there are single choices that can be collapsed under one title.
-      </p>
-
-      <h3>When to use:</h3>
-      <p>Use the custom select dropdown when single or custom options are to be grouped under a single title.</p>
-
-      <h2>Formatting</h2>
-      <h3>Default</h3>
-      <p>It consists of a dropdown with an arrow from which the user can select any one option.</p>
-
-      <h2>Content</h2>
-      <p>In the custom dropdown select, only one option can be selected.</p>
-      <p>The direction of the arrow indicates if one option is selected. The downward arrow indicates a closed box and the upward arrow indicates an open box.</p>
-
-      <h2>Behaviors</h2>
-      <h3>States</h3>
-      <ul>
-        <li>Closed and Auto Height</li>
-        <li>Closed and Fixed Height</li>
-        <li>Open and Auto Height</li>
-        <li>Open and Fixed Height</li>
-      </ul>
-
-      <h2>Canvas</h2>
-      <Story name="Select">
-        {(args) => <CustomSelect text={caption} {...args} />}
-      </Story>
-
-      <h2>Usage</h2>
-      <ol>
-        <li>Copy the HTML from the HTML tab of Canvas.</li>
-        <li>Include the CSS and JS files listed below.</li>
-        <li>Initialize the select by calling `select()` function.</li>
-        <li>If you need a fixed height dropdown then apply Height to the "ul" tag of dropdown. It will scroll inside the dropdown.</li>
-      </ol>
-
-      <h2>CSS and JS References</h2>
-      <h3>CSS:</h3>
-      <ul>
-        <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</li>
-        <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/custom-select.min.css</li>
-      </ul>
-
-      <h3>JS:</h3>
-      <ul>
-        <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js</li>
-      </ul>
-
-      <h2>Interactions</h2>
-      <ul>
-        <li>By clicking on the arrow, the custom select dropdown box can be opened or closed.</li>
-        <li>By clicking on the option/options, those can be selected.</li>
-      </ul>
-
-      <h2>Changelog</h2>
-      <p>1.0 — Released component</p>
-    </div>
+    <CustomSelect
+      text={caption}
+      {...args}
+    />
   );
-};
+}
 
-export const CustomSelectComponent = Template.bind({});
+export const CustomSelectStory = Template.bind({});
+CustomSelectStory.storyName = 'Custom Select';
+

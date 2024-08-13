@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Textarea } from './Textarea';
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case 'english':
       return {
@@ -91,7 +91,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-export const parameters = {
+export default {
   title: 'Components/Forms/Textarea',
   argTypes: {
     State: {
@@ -102,117 +102,99 @@ export const parameters = {
   args: {
     State: 'Default',
   },
-};
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <h1>Textarea</h1>
+            <p>The Text Area is a multi-line section used to enter text.</p>
 
-export const TextareaComponent = () => (
-  <>
-    <Meta
-      title="Components/Forms/Textarea"
-      argTypes={{
-        State: {
-          options: ['Default', 'Focus', 'Error', 'Disabled'],
-          control: { type: 'inline-radio' },
-        },
-      }}
-      args={{
-        State: 'Default',
-      }}
+            <h3>Overview</h3>
+            <p>The TextArea element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizable amount of free-form text.</p>
+
+            <h4>When to use:</h4>
+            <ul>
+              <li>To enter multi-line texts.</li>
+            </ul>
+
+            <h3>Formatting</h3>
+
+            <h4>Default</h4>
+            <p>It consists of a textbox used to enter data.</p>
+
+            <h3>Behaviors</h3>
+
+            <h4>States</h4>
+            <p>There are four states in Textarea: Default, Focus, Error, and Disabled</p>
+
+            <ul>
+              <li><strong>Default:</strong> The default state is the default textarea that is used to enter data.</li>
+              <li><strong>Focus:</strong> The Focused state is the state in which the textarea is focused when the page is opened.</li>
+              <li><strong>Error:</strong> In the Error state, an error message appears below the text area if mandatory data is to be filled in the textbox and it is not entered or if incorrect data is entered.</li>
+              <li><strong>Disabled:</strong> In the Disabled state, the textbox is disabled and cannot be used.</li>
+            </ul>
+
+            <Canvas>
+              <Story name="Textarea">
+                {(args) => (
+                  <Textarea
+                    labelText={getCaptionForLocale('english').detail10}
+                    errorText={getCaptionForLocale('english').detail2}
+                    id="textarea"
+                    type="textarea"
+                    cols="40"
+                    rows="10"
+                    required="required"
+                    placeholder={getCaptionForLocale('english').text2}
+                    {...args}
+                  />
+                )}
+              </Story>
+            </Canvas>
+
+            <h3>Usage</h3>
+            <p>Copy the HTML from the HTML tab of the canvas and include the CSS file mentioned below.</p>
+
+            <h3>CSS and JS References</h3>
+
+            <h4>CSS:</h4>
+            <p>Add the base layout style from:</p>
+            <ul>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css</a></li>
+            </ul>
+
+            <h4>JS:</h4>
+            <p>NA</p>
+
+            <h3>Interactions</h3>
+            <p>By clicking on the text area, data can be entered into it.</p>
+
+            <h3>Changelog</h3>
+            <p>1.0 — Released component</p>
+        </>
+      )
+    }
+  }
+}
+
+const Template = (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale);
+  return (
+    <Textarea
+      labelText={caption.detail10}
+      errorText={caption.detail2}
+      id="textarea"
+      type="textarea"
+      cols="40"
+      rows="10"
+      required="required"
+      placeholder={caption.text2}
+      {...args}
     />
+  );
+}
 
-    <h1>Textarea</h1>
+export const TextareaStory = Template.bind({});
+TextareaStory.storyName = 'Textarea';
 
-    <p>The Text Area is a multi-line section used to enter text.</p>
-
-    <h2>Overview</h2>
-
-    <p>
-      The TextArea element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizable amount of free-form text.
-    </p>
-
-    <h3>When to use:</h3>
-
-    <ul>
-      <li>To enter multi-line texts.</li>
-    </ul>
-
-    <h3>Formatting</h3>
-
-    <h4>Default</h4>
-
-    <p>It consists of a textbox used to enter data.</p>
-
-    <h2>Behaviors</h2>
-
-    <h3>States</h3>
-
-    <p>There are four states in Textarea: Default, Focus, Error, and Disabled.</p>
-
-    <h4>Default:</h4>
-
-    <p>The default state is the default textarea that is used to enter data.</p>
-
-    <h4>Focus:</h4>
-
-    <p>The Focused state is the state in which the textarea is focused when the page is opened.</p>
-
-    <h4>Error:</h4>
-
-    <p>
-      In the Error state, an error message appears below the text area if mandatory data is to be filled in the textbox and it is not entered or if incorrect data is entered.
-    </p>
-
-    <h4>Disabled:</h4>
-
-    <p>In the Disabled state, the textbox is disabled and needs to be able used it.</p>
-
-    <Canvas>
-      <Story name="Textarea">
-        {(args, { globals: { locale } }) => {
-          const caption = getCaptionForLocale(locale);
-          return (
-            <Textarea
-              labelText={caption.detail10}
-              errorText={caption.detail2}
-              id="textarea"
-              type="textarea"
-              cols="40"
-              rows="10"
-              required="required"
-              placeholder={caption.text2}
-              {...args}
-            />
-          );
-        }}
-      </Story>
-    </Canvas>
-
-    <h2>Usage:</h2>
-
-    <p>Copy HTML from the HTML tab of canvas and also include the css file mentioned below.</p>
-
-    <h2>CSS and JS References</h2>
-
-    <h3>CSS:</h3>
-
-    <ul>
-      <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</li>
-      <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css</li>
-    </ul>
-
-    <h3>JS:</h3>
-
-    <p>NA</p>
-
-    <h2>Interactions</h2>
-
-    <p>By clicking on the text area, data can be entered into it.</p>
-
-    <h2>Changelog</h2>
-
-    <p>1.0 — Released component</p>
-  </>
-);
-
-export default {
-  title: 'Components/Forms/Textarea',
-};
