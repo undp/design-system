@@ -2,25 +2,7 @@ import { Meta, Canvas, Story } from '@storybook/addon-docs';
 import { Authorcard } from './AuthorCard';
 import authorImage from '../../../../assets/images/author.png';
 
-export default {
-  title: 'Components/UI components/Author/Author Card',
-  argTypes: {
-    Type: {
-      options: ['Expanding Arrow', 'Space'],
-      control: { type: 'inline-radio' },
-    },
-    button_option: {
-      options: ['Hyperlink', 'Inline'],
-      control: { type: 'inline-radio' },
-    },
-  },
-  args: {
-    Type: 'Expanding Arrow',
-    button_option: 'Hyperlink',
-  },
-};
-
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case 'english':
       return {
@@ -97,99 +79,124 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
+export default {
+  title: 'Components/UI components/Authors/Author Card',
+  argTypes: {
+    Type: {
+      options: ['Expanding Arrow', 'Space'],
+      control: { type: 'inline-radio' },
+    },
+    button_option: {
+      options: ['Hyperlink', 'Inline'],
+      control: { type: 'inline-radio' },
+    },
+  },
+  args: {
+    Type: 'Expanding Arrow',
+    button_option: 'Hyperlink',
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <h1>Author Card</h1>
+
+            <p>An author card is a brief summary of an author highlighting their work.</p>
+
+            <h3>Overview</h3>
+
+            <p>An author card gives a quick overview of an author. It includes their name, title, profile picture—optionally, a summary of their work, and a count of the number of articles they have published on the site. It acts as an entry point to all the articles published by them.</p>
+
+            <h4>When to use:</h4>
+
+            <p>Author cards are mainly used in the author directory.</p>
+
+            <h3>Formatting</h3>
+
+            <h4>Default</h4>
+
+            <h3>Content</h3>
+
+            <p>An author card contains the first and last name, profile picture (optional), summary, count of the number of articles published by them on the site, and a CTA to a more detailed description and list of their published articles.</p>
+
+            <h3>Behaviors</h3>
+
+            <h4>States</h4>
+
+            <p>There is a single state for the Author card.</p>
+
+            <Canvas>
+              <Story name="Author Card">
+                {(args) => (
+                  <Authorcard
+                  authorImage={authorImage}
+                  alt="Headshot of XYZ"
+                  data={caption.authordata}
+                  para={caption.paragraph}
+                  button={caption.button}
+                  link="#"
+                  width="medium-12"
+                    {...args}
+                  />
+                )}
+              </Story>
+            </Canvas>
+
+            <h3>Usage:</h3>
+
+            <ul>
+              <li>Copy the HTML from the canvas and also include the below-listed CSS files.</li>
+            </ul>
+
+            <h3>CSS and JS References</h3>
+
+            <h4>CSS:</h4>
+
+            <p>Add the base layout style from:</p>
+
+            <ul>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-card.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-column.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-column.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+            </ul>
+
+            <h4>JS:</h4>
+
+            <p>NA</p>
+
+            <h3>Interactions</h3>
+
+            <ul>
+              <li>The entire card is clickable. Clicking any part of the card should take the user to the associated author detail page.</li>
+            </ul>
+
+            <h3>Changelog</h3>
+
+            <p>1.0 — Released component</p>
+
+        </>
+      )
+    }
+  }
+};
+
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
-  // Replace key
-  args['button_option'] = args['Tag'];
-  delete args['Tag'];
-  return <Authorcard label={caption.detail1} {...args}></Authorcard>;
-};
-
-export const AuthorCardStory = Template.bind({});
-AuthorCardStory.args = {
-  Type: 'Expanding Arrow',
-  Tag: 'Hyperlink',
-};
-
-AuthorCardStory.parameters = {
-  docs: {
-    description: {
-      component: `
-
-# Author Card
-
-An author card is a brief summary of an author highlighting their work.
-
-### Overview
-
-An author card gives a quick overview of an author. It includes their name, title, profile picture- optionally, a summary of their work, and a count of the number of articles they have published on the site. It acts as an entry point to all the articles published by them.
-
-#### When to use:
-
-Author cards are mainly used in the author directory.
-
-### Formatting
-
-#### Default
-
-### Content
-
-An author card contains the first and last name, profile picture (optional), summary, count of the number of articles published by them on the site, and a CTA to a more detailed description and list of their published articles.
-
-### Behaviors
-
-#### States
-
-There is a single state for the Author card.
-
-<Canvas>
-  <Story name="Author card">
-    {(args, { globals: { locale, accent } }) => {
-      const caption = getCaptionForLocale(locale);
-      args.accent = accent;
-      return (
-        <Authorcard
-          authorImage={authorImage}
+  return (
+    <Authorcard
+    authorImage={authorImage}
           alt="Headshot of XYZ"
           data={caption.authordata}
           para={caption.paragraph}
           button={caption.button}
           link="#"
           width="medium-12"
-          {...args}
-        ></Authorcard>
-      );
-    }}
-  </Story>
-</Canvas>
-
-### Usage:
-
-- Copy the HTML from the canvas and also include the below-listed CSS files.
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-column.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css
-
-#### JS:
-
-- NA
-
-### Interactions
-
-- The entire card is clickable. Clicking any part of the card should take the user to the associated author detail page.
-
-### Changelog
-
-1.0 — Released component
-`,
-    },
-  },
+      {...args}
+    />
+  );
 };
+
+export const AuthorcardStory = Template.bind({});
+AuthorcardStory.storyName = 'Author Card';
+

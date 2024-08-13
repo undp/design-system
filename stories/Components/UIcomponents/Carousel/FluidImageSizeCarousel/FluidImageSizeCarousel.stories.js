@@ -2,18 +2,7 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { FluidImageSizeCarousel } from "./FluidImageSizeCarousel";
 import fluidCarouselImg from "../../../../assets/images/fluid-carousel-img.jpg";
 
-export default {
-  title: 'Components/UI components/Carousel/Fluid carousel',
-};
-
-const Template = (args, { globals: { locale } }) => {
-  const caption = statsArray(locale);
-  return <FluidImageSizeCarousel data={args.data}></FluidImageSizeCarousel>;
-};
-
-export const FluidCarouselStory = Template.bind({});
-
-export const statsArray = (locale) => {
+const statsArray = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -207,88 +196,118 @@ export const statsArray = (locale) => {
   }
 };
 
-FluidCarouselStory.parameters = {
-  docs: {
-    description: {
-      component: `
-# carousel - Fluid image size carousel
+export default {
+  title: 'Components/UI components/Carousel/Fluid carousel',
+  component: FluidImageSizeCarousel,
+  parameters: {
+    docs: {
+        page: () => (
+            <>  
+              <h1>Carousel - Fluid Image Size Carousel</h1>
 
-The Carousel is a slideshow of multiple images or content.
+              <p>The Carousel is a slideshow of multiple images or content.</p>
 
-### Overview
+              <h3>Overview</h3>
 
-The Carousel component is created for showing sliders, designation, and image in a particular section. It is a multi-usage component that creates teasing kinds of content.
+              <p>The Carousel component is created for showing sliders, designations, and images in a particular section. It is a multi-usage component that creates teasing kinds of content.</p>
 
-#### When to use:
+              <h3>When to use:</h3>
 
-When multiple images or content is to be displayed in a single slide.
+              <p>When multiple images or content is to be displayed in a single slide.</p>
 
-### Formatting
+              <h3>Formatting</h3>
 
-#### Default
+              <h4>Default</h4>
 
-It consists of multiple grids with an image, description, and CTA link.
+              <p>It consists of multiple grids with an image, description, and CTA link.</p>
 
-### Content
+              <h3>Content</h3>
 
-There are 3 types of Carousel: Fluid, Image, and Fixed
+              <p>There are 3 types of Carousel: Fluid, Image, and Fixed.</p>
 
-1. Fluid Image Size Carousel Component:
-   In Fluid Image Size Carousel Component, the page layout of the content is adjusted as per the user’s device screen. It consists of a horizontal scroll bar, Image, Text area, CTA Link, Right cursor arrow (left in case of RTL).
+              <ul>
+                <li><strong>Fluid Image Size Carousel Component:</strong> In Fluid Image Size Carousel Component, the page layout of the content is adjusted as per the user’s device screen. It consists of a horizontal scroll bar, Image, Text area, CTA Link, and Right cursor arrow (left in case of RTL).</li>
+                <li><strong>Image Only Carousel Component:</strong> In Image Only Carousel Component, only images are available in the slideshow while content and CTA links are not included.</li>
+                <li><strong>Fixed Image Size Carousel Component:</strong> In Fixed Image Size Carousel Component, the size of the image does not change as per the user’s device screen. It consists of a horizontal scroll bar, Image, Text area, Primary button with arrow, Pagination (tablet only), and Cursor arrow right (left in case of RTL). The horizontal scroll bar indicates the current position.</li>
+              </ul>
 
-2. Image Only Carousel Component:
-   In Image Only Carousel Component, only images are available in the slideshow while content and cta links are not included.
+              <h3>Behaviors</h3>
 
-3. Fixed Image Size Carousel Component:
-   In Fixed Image Size Carousel Component, the size of the image does not change as per the user’s device screen. It consists of a horizontal scroll bar, Image, Text area, Primary button with arrow, Pagination(tablet only), Cursor arrow right (left in case of RTL). The horizontal scroll bar indicates the current position.
+              <h4>States</h4>
 
-### Behaviors
+              <p>Fluid Image Size Carousel Component:</p>
 
-#### States
+              <ul>
+                <li>Default state</li>
+                <li>Tablet</li>
+              </ul>
 
-Fluid Image Size Carousel Component:
+              <Canvas>
+                <Story name="Fluid carousel">
+                  {(args, { globals: { locale } }) => {
+                    const caption = statsArray(locale);
+                    return <FluidImageSizeCarousel data={caption}></FluidImageSizeCarousel>;
+                  }}
+                </Story>
+              </Canvas>
 
-- Default state
-- Tablet
+              <h3>Usage:</h3>
 
-### Usage:
+              <ul>
+                <li>Copy HTML from the HTML tab of canvas.</li>
+                <li>Include Swiper library from <a href="https://swiperjs.com/get-started">here</a> in your HTML page.</li>
+                <li>If you use fixed image size carousel, include <code>fluid-image-size-carousel.min.css</code> and initialize carousel by calling <code>swiper('.fixed-carousel', '.fixed-carousel__button-wrap');</code> functions.</li>
+                <li>If you use Fluid image size carousel, include <code>fixed-size-carousel.min.css</code> and initialize carousel by calling <code>swiper('.fluid-carousel', '.slide-content');</code> functions.</li>
+                <li>If you use Image only carousel, include <code>image-only-carousel.min.css</code> and initialize the carousel by calling <code>swiper('.image-carousel', '.slider-slide');</code> functions.</li>
+                <li>If you want to add left-right animation, add <code>data-viewport="true"</code> attribute to the HTML element you want to animate and include <code>viewport.min.js</code> file.</li>
+                <li>Refer to <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</li>
+              </ul>
 
-- Copy HTML from the HTML tab of canvas.
-- Include Swiper library from here https://swiperjs.com/get-started in your html page.
-- If you use fixed image size carousel then include fluid-image-size-carousel.min.css and initialize carousel by calling swiper('.fixed-carousel', '.fixed-carousel__button-wrap'); functions
-- If you use Fluid image size carousel then include fixed-size-carousel.min.css and initialize carousel by calling swiper('.fluid-carousel', '.slide-content'); functions
-- If you use Image only carousel then include image-only-carousel.min.css and initialize the carousel by calling swiper('.image-carousel', '.slider-slide'); functions.
-- If you want to add left-right animation then add data-viewport=”true” attribute to the HTML element you want to animate and include viewport.min.js file.
-- Refer [this document](https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration & options
+              <h3>CSS and JS References</h3>
 
-### CSS and JS References
+              <h4>CSS:</h4>
 
-#### CSS:
+              <ul>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/fluid-image-size-carousel.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/fluid-image-size-carousel.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css</a></li>
+              </ul>
 
-Add the base layout style from
+              <h4>JS:</h4>
 
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/fluid-image-size-carousel.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css
+              <ul>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+              </ul>
 
-#### JS:
+              <p>3rd party libraries:</p>
+              <ul>
+                <li><a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a></li>
+              </ul>
 
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
-- 3rd party libraries
-  Swiper (https://swiperjs.com/get-started)
+              <h3>Interactions</h3>
 
-### Interactions
+              <ul>
+                <li>By clicking on the Chips and CTA Links, the user is directed to the detailed information page.</li>
+                <li>By clicking on the Arrow Buttons, the slides can be swiped forward or backward.</li>
+              </ul>
 
-- By clicking on the Chips and CTA Links user is directed to the detailed information page.
-- By clicking on the Arrows Buttons, the slides can be swiped forward or backward.
+              <h3>Changelog</h3>
 
-### Changelog
+              <p>1.0 — Released component</p>
 
-1.0 — Released component
-`,
-    },
-  },
+            </>
+        )
+    }
+}
 };
+
+const Template = (args, { globals: { locale } }) => {
+  const caption = statsArray(locale);
+  return <FluidImageSizeCarousel data={caption}></FluidImageSizeCarousel>;
+}
+
+export const FluidCarouselStory = Template.bind({});
+FluidCarouselStory.storyName = 'Fluid carousel';

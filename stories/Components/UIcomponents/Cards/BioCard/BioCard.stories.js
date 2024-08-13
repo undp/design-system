@@ -1,31 +1,10 @@
 import React from 'react';
-import { Meta } from '@storybook/addon-docs';
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { BioCard } from './BioCard';
 import img from '../../../../assets/images/bio.jpg';
 import img2 from '../../../../assets/images/modal.png';
 
-export default {
-  title: "Components/UI components/Cards/Bio card",
-  argTypes: {
-    size: {
-      name: "Size variant",
-      options: ["Large", "Medium"],
-      control: { type: "inline-radio" },
-    },
-    accent: {
-      name: "Hover accent color",
-      options: ["global", "yellow", "red", "green", "blue"],
-      control: { type: "inline-radio" },
-    },
-  },
-  args: {
-    size: "Medium",
-    accent: "global",
-  },
-};
-
-
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -89,98 +68,139 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
+export default {
+  title: "Components/UI components/Cards/Bio card",
+  argTypes: {
+    size: {
+      name: "Size variant",
+      options: ["Large", "Medium"],
+      control: { type: "inline-radio" },
+    },
+    accent: {
+      name: "Hover accent color",
+      options: ["global", "yellow", "red", "green", "blue"],
+      control: { type: "inline-radio" },
+    },
+  },
+  args: {
+    size: "Medium",
+    accent: "global",
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <h1>Bio Content Card</h1>
+
+          <p>A bio card is a profile summary of an author/leader along with their profile picture.</p>
+
+          <h3>Overview</h3>
+
+          <p>A bio card showcases a contributor’s name, title, photo, and a summary of their background and work. It also contains a CTA to open more information in a lightbox modal.</p>
+
+          <p>A bio card is usually displayed with a story or article that the user has contributed to. It is an entry point to a more detailed description of the contributor when clicked on.</p>
+
+          <h4>When to use:</h4>
+
+          <p>To give a brief introduction of the author/contributor of the article or story and act as an entry point to more information in a lightbox modal.</p>
+
+          <h3>Formatting</h3>
+
+          <h4>Default</h4>
+
+          <p>The bio card consists of a user’s first and last names, title, a summary of their background/work, a profile picture, and a CTA that opens up a lightbox modal highlighting salient information about the user.</p>
+
+          <h3>Content</h3>
+
+          <p>The bio card requires a profile image, first and last name, title, profile summary, and a CTA that opens the lightbox modal with more information.</p>
+
+          <h3>Behaviors</h3>
+
+          <h4>States</h4>
+
+          <p>The bio card has a default and hover state. On hover, an accent color overlay is displayed over the profile photo.</p>
+
+          <Canvas>
+            <Story name="BioCard">
+              {(args) => (
+                <BioCard
+                contenttile={caption.title}
+                contentname={caption.name}
+                descriptionText={caption.descriptionText}
+                descriptionText2={caption.descriptionText2}
+                button={caption.btnlabel}
+                alt={"feature card"}
+                image={img}
+                image2={img2}
+                {...args}
+              ></BioCard>
+              )}
+            </Story>
+          </Canvas>
+
+          <h3>Usage</h3>
+
+          <ul>
+            <li>Choose the size either large or medium from the control tab on canvas.</li>
+            <li>Copy the HTML from the HTML tab in the canvas and include the CSS and JS files listed below.</li>
+            <li>If you want left-right animation, add <code>data-viewport=”true”</code> attribute to your HTML element and include <code>viewport.min.js</code> file.</li>
+            <li>If you want to add a modal on click, include <code>modal.min.js</code> and initialize <code>modal();</code> on load.</li>
+          </ul>
+
+          <h3>CSS and JS References</h3>
+
+          <h4>CSS:</h4>
+
+          <p>Add the base layout style from:</p>
+
+          <ul>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/bio-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/bio-card.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/modal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/modal.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+          </ul>
+
+          <h4>JS:</h4>
+
+          <ul>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+          </ul>
+
+          <h3>Interactions</h3>
+
+          <ul>
+            <li>The hover state is applied to the profile image only.</li>
+            <li>Clicking the bio card opens the information in a lightbox modal.</li>
+            <li>The bio card should never be used without the modal.</li>
+          </ul>
+
+          <h3>Changelog</h3>
+
+          <p>1.0 — Released component</p>
+
+        </>
+      ),
+    }
+  }
+};
 
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
   return (
     <BioCard
-      contenttile={caption.title}
-      contentname={caption.name}
-      descriptionText={caption.descriptionText}
-      descriptionText2={caption.descriptionText2}
-      button={caption.btnlabel}
-      alt={"feature card"}
-      image={img}
-      image2={img2}
-      {...args}
-    />
+          contenttile={caption.title}
+          contentname={caption.name}
+          descriptionText={caption.descriptionText}
+          descriptionText2={caption.descriptionText2}
+          button={caption.btnlabel}
+          alt={"feature card"}
+          image={img}
+          image2={img2}
+          {...args}
+        ></BioCard>
   );
-};
+}
 
 export const BioCardStory = Template.bind({});
-BioCardStory.args = {
-  size: "Medium",
-  accent: "global",
-};
-
-// Documentation content
-BioCardStory.parameters = {
-  docs: {
-    description: {
-      component: `
-# Bio Content Card
-
-A bio card is a profile summary of an author/leader along with their profile picture
-
-### Overview
-
-A bio card showcases a contributor’s name, title, photo, and a summary of their background and work. It also contains a CTA to open more information in a lightbox modal.
-
-A bio card is usually displayed with a story, article that the user has contributed to. It is an entry point to a more detailed description of the contributor when clicked on.
-
-#### When to use:
-
-To give a brief introduction of the author/contributor of the article or story and act as an entry point to more information in a lightbox modal
-
-### Formatting
-
-#### Default
-
-The bio card consists of a user’s first and last names, title, a summary of their background/work, a profile picture, and a CTA that opens up a lightbox modal highlighting salient information about the user.
-
-### Content
-
-The bio card requires a profile image, first and last name, title, profile summary, and a CTA that opens the lightbox modal with more information.
-
-### Behaviors
-
-#### States
-
-The bio card has a default and hover state. On hover, an accent color overlay is displayed over the profile photo.
-
-### Usage
-
-- Choose the size either large or medium from the control tab on canvas.
-- Copy the HTML from the HTML tab in the canvas and include css and js files listed below.
-- If you want left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.
-- If you want the add modal on click then include modal.min.js and initialize modal(); on load.
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/bio-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/modal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
-
-### Interactions
-
-- The hover state is applied to the profile image only.
-- Clicking the bio card opens the information in a lightbox modal
-- The bio card should never be used without the modal
-
-### Changelog
-
-1.0 — Released component
-`,
-    },
-  },
-};
+BioCardStory.storyName = "Bio Card";

@@ -1,9 +1,9 @@
 import React from "react";
-import { Meta } from "@storybook/addon-docs";
+import { Meta, Canvas, Story } from "@storybook/addon-docs";
 import { ImageOnlyCarousel } from "./ImageOnlyCarousel";
 import fluidCarouselImg from "../../../../assets/images/carousel3-img.jpg";
 
-export const statsArray = (locale) => {
+const statsArray = (locale) => {
   switch (locale) {
     case "english":
       return [
@@ -40,20 +40,12 @@ export const statsArray = (locale) => {
 
 export default {
   title: "Components/UI components/Carousel/Image carousel",
-};
-
-const Template = (args, { globals: { locale } }) => {
-  const caption = statsArray(locale);
-  return <ImageOnlyCarousel data={caption} />;
-};
-
-export const ImageCarousel = Template.bind({});
-ImageCarousel.args = {};
-ImageCarousel.parameters = {
-  docs: {
-    page: () => (
-      <>
-        <h1>carousel - Image only carousel component</h1>
+  component: ImageOnlyCarousel,
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+           <h1>carousel - Image only carousel component</h1>
         <p>The Carousel is a slideshow of multiple images or content.</p>
 
         <h3>Overview</h3>
@@ -91,6 +83,15 @@ ImageCarousel.parameters = {
           <li>Mobile</li>
         </ul>
 
+        <Canvas>
+        <Story name="Image carousel">
+          {(args, { globals: { locale } }) => {
+            const caption = statsArray(locale);
+            return <ImageOnlyCarousel data={caption}></ImageOnlyCarousel>;
+          }}
+        </Story>
+      </Canvas>
+
         <h3>Usage</h3>
         <p>Copy HTML from the HTML tab of canvas.</p>
         <p>Include Swiper library from here <a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a> in your html page.</p>
@@ -123,7 +124,16 @@ ImageCarousel.parameters = {
 
         <h3>Changelog</h3>
         <p>1.0 — Released component</p>
-      </>
-    ),
+        </>
+      )
+    },
   },
 };
+
+const Template = (args, { globals: { locale } }) => {
+  const caption = statsArray(locale);
+  return <ImageOnlyCarousel data={caption}></ImageOnlyCarousel>;
+};
+
+export const ImageCarousel = Template.bind({});
+ImageCarousel.storyName = "Image carousel";

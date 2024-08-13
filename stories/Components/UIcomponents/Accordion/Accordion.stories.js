@@ -2,7 +2,7 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { Accordion } from "./Accordion";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -54,11 +54,25 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-export const parameters = {
+export default {
+  title: "Components/UI components/Accordion",
+  component: Accordion,
+  argTypes: {
+    headerText: {
+      control: {
+        type: "text",
+      },
+    },
+    descriptionText: {
+      control: {
+        type: "text",
+      },
+    },
+  },
+  parameters: {
   docs: {
     page: () => (
       <>
-        <Meta title="Components/UI components/Accordion" component={Accordion} />
         <h1>Accordion</h1>
         <p>
           An accordion is a vertically stacked list of titles that reveal or hide additional content when selected.
@@ -124,22 +138,22 @@ export const parameters = {
       </>
     ),
   },
-};
+}
+}
 
-export default {
-  title: "Components/UI components/Accordion",
-  component: Accordion,
-  argTypes: {
-    headerText: {
-      control: {
-        type: "text",
-      },
-    },
-    descriptionText: {
-      control: {
-        type: "text",
-      },
-    },
-  },
-};
+const Template = (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale);
+  return (
+    <Accordion
+      headerText={caption.header}
+      descriptionText={caption.description}
+    >
+    </Accordion>
+  )
+}
+
+export const AccordionStory = Template.bind({});
+AccordionStory.storyName = "Accordion";
+
+  
 

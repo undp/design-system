@@ -2,25 +2,7 @@ import React from 'react';
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Ctalink } from './CtaLink';
 
-export default {
-  title: 'Components/UI components/Buttons/CTA link',
-  argTypes: {
-    Type: {
-      options: ['Expanding Arrow', 'Space'],
-      control: { type: 'inline-radio' },
-    },
-    Tag: {
-      options: ['Hyperlink', 'Inline'],
-      control: { type: 'inline-radio' },
-    },
-  },
-  args: {
-    Type: 'Expanding Arrow',
-    Tag: 'Hyperlink',
-  },
-};
-
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case 'english':
       return { detail1: 'READ MORE' };
@@ -37,94 +19,131 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-const Template = (args, { globals: { locale } }) => {
-  const caption = getCaptionForLocale(locale);
-  // Replace key
-  args['button_option'] = args['Tag'];
-  delete args['Tag'];
-  return <Ctalink label={caption.detail1} {...args}></Ctalink>;
-};
+export default {
+  title: 'Components/UI components/Buttons/CTA link',
+  argTypes: {
+    Type: {
+      options: ['Expanding Arrow', 'Space'],
+      control: { type: 'inline-radio' },
+    },
+    Tag: {
+      options: ['Hyperlink', 'Inline'],
+      control: { type: 'inline-radio' },
+    },
+  },
+  args: {
+    Type: 'Expanding Arrow',
+    Tag: 'Hyperlink',
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <h1>Buttons and Labels</h1>
 
-export const CtaLinkStory = Template.bind({});
-CtaLinkStory.args = {
-  Type: 'Expanding Arrow',
-  Tag: 'Hyperlink',
-};
+          <p>A button describes what action will be performed when a user clicks or touches it.</p>
 
-// Documentation content
-CtaLinkStory.parameters = {
-  docs: {
-    description: {
-      component: `
-# Buttons and Labels
+          <h3>Overview</h3>
 
-A button describes what action will be performed when a user clicks or touches it.
+          <p>A button describes the call to action that will be performed when the user clicks/touches it. It has a label and an optional animation.</p>
 
-### Overview
+          <h4>When to use:</h4>
 
-A button describes the call to action that will be performed when the user clicks/touches it. It has a label and an optional animation.
+          <ul>
+            <li>Buttons should be used as primary or secondary calls to actions</li>
+            <li>Ideally, a page should have one or two primary buttons only. Other call-to-actions should be shown as secondary buttons</li>
+            <li>Examples of buttons can be to “VIEW MORE” or “READ MORE” or “SIGN UP”</li>
+            <li>If there are multiple choices for an action item, one default button should be active and the other buttons inactive</li>
+          </ul>
 
-#### When to use:
+          <h3>Formatting</h3>
 
-- Buttons should be used as primary or secondary calls to actions
-- Ideally, a page should have one or two primary buttons only. Other call-to-actions should be shown as secondary buttons
-- Examples of buttons can be to “VIEW MORE” or “READ MORE” or “SIGN UP”
-- If there are multiple choices for an action item, one default button should be active and the other buttons inactive
+          <h4>Default</h4>
 
-### Formatting
+          <p>There are multiple button types in our design system:</p>
 
-#### Default
+          <ol>
+            <li>Primary button with arrow and without arrows</li>
+            <li>Secondary buttons without the arrow</li>
+            <li>CTA links with and without expanding arrows</li>
+            <li>Chips</li>
+          </ol>
 
-There are multiple button types in our design system
+          <h3>Content</h3>
 
-1. Primary button with arrow and without arrows
-2. Secondary buttons without the arrow
-3. CTA links with and without expanding arrows
-4. Chips
+          <h3>Behaviors</h3>
 
-### Content
+          <h4>States</h4>
 
-### Behaviors
+          <p><strong>CTA Link:</strong><br />
+          The CTA link with the arrow prompts the users to take action and is in the default state, but the arrow does not expand.</p>
 
-#### States
+          <p>The CTA link with the arrow in the hover state changes its appearance once the mouse hovers over it, but the arrow does not expand.</p>
 
-CTA Link:
-The CTA link with the arrow prompts the users to take action and is in default state but the arrow does not expand.
+          <p>The CTA link with space expand in the default state is a space expand link where the space after the text expands, but the arrow does not.</p>
 
-The CTA links with the arrow in the hover state which changes its appearance once the mouse hovers over it but the arrow does not expand.
+          <p>The CTA link with the arrow expand is in a hover state. When the mouse hovers over the link, the text changes its appearance and the arrow expands.</p>
 
-The CTA link with space expand in default state is a space expand link where the space after the text expands but the arrow does not.
+            <Canvas>
+            <Story name="CTA link">
+              {(args, { globals: { locale } }) => {
+                const caption = getCaptionForLocale(locale);
+                // replace key
+                args["button_option"] = args["Tag"];
+                delete args["Tag"];
+                return <Ctalink label={caption.detail1} {...args}></Ctalink>;
+              }}
+            </Story>
+            </Canvas>
 
-The CTA link with the arrow expand is in a hover state. When the mouse hovers over the link the text changes its appearance and the arrow expands.
+          <h3>Usage</h3>
 
-### Usage
+          <ul>
+            <li>Copy the HTML from the HTML Tab of Canvas for either Chips, CTA Button, or CTA Link from the controls.</li>
+            <li>Include the CSS files listed below concerning the button you choose.</li>
+          </ul>
 
-- Copy the HTML from the HTML Tab of canvas for either Chips, CTA Button, and CTA Link from the controls.
-- Include the CSS files listed below concerning the button you choose.
+          <h3>CSS and JS References</h3>
 
-### CSS and JS References
+          <h4>CSS:</h4>
 
-#### CSS:
+          <p>Add the base layout style from:</p>
 
-Add the base layout style from
+          <ul>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+          </ul>
 
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css
+          <p>Use the above CSS concerning CTA link.</p>
 
-Use above CSS concerning CTA link.
+          <h4>JS:</h4>
 
-#### JS:
+          <p>NA</p>
 
-NA
+          <h3>Interactions</h3>
 
-### Interactions
+          <ul>
+            <li>The hover state is applied to the entire button.</li>
+          </ul>
 
-- The hover state is applied to the entire button.
+          <h3>Changelog</h3>
 
-### Changelog
+          <p>1.0 — Released component</p>
 
-1.0 — Released component
-`,
+        </>
+      ),
     },
   },
 };
+
+const Template = (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale);
+  args["button_option"] = args["Tag"];
+  delete args["Tag"];
+  return (
+   <Ctalink label={caption.detail1} {...args}></Ctalink>
+  );
+}
+
+export const CtaLinkStory = Template.bind({});
+CtaLinkStory.storyName = 'CTA Link';

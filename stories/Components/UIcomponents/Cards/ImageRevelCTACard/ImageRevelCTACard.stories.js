@@ -4,34 +4,7 @@ import { ImageRevelCard } from './ImageRevelCTACard';
 import img from '../../../../assets/images/cardimage.jpg';
 import imgsmall from '../../../../assets/images/CardImgsmall.jpg';
 
-export default {
-  title: 'Components/UI components/Cards/Image reveal card',
-  argTypes: {
-    Size: {
-      name: 'Size variant',
-      options: ['Large', 'Small'],
-      control: { type: 'inline-radio' },
-    },
-    Hovercolor: {
-      name: 'Hover accent color',
-      options: ['global', 'yellow', 'red', 'green', 'blue'],
-      control: { type: 'inline-radio' },
-    },
-  },
-  args: {
-    Size: 'Large',
-    Hovercolor: 'global',
-  },
-};
-
-const Template = (args, { globals: { locale } }) => {
-  const caption = getCaptionForLocale(locale);
-  return <ImageRevelCard data={caption.data} {...args}></ImageRevelCard>;
-};
-
-export const ImageRevealCardStory = Template.bind({});
-
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -117,81 +90,143 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-// Documentation content
-ImageRevealCardStory.parameters = {
-  docs: {
-    description: {
-      component: `
-# Image Reveal Card
-
-Image reveal cards are cards with information about the image and CTA links for detailed information.
-
-### Overview
-
-The Image reveals card component is a multi-usage component that creates boxes that are usually teasing some kind of content like- Image, Text, and CTA Link.
-
-#### When to use:
-
-When text and CTA Link need to be attached with an image.
-
-### Formatting
-
-#### Default
-
-It consists of a grid with an image, text, and CTA link.
-
-### Content
-
-There are two types of image reveal card: Medium and Small
-
-1. Medium: Image Reveal Card of medium-size shows the Image and CTA Link. The Text will show on hover.
-2. Small: Image Reveal Card of small size comes with a different Image and CTA Link. The Text will show on hover.
-
-### Behaviors
-
-#### States
-
-There are 2 states in the Image Reveal Card: Default and Hover.
-
-Default: It consists of Image and CTA Link.
-
-1. Medium size
-2. Small size
-
-Hover: It consists of Image, Text, and CTA Link. It changes appearance when the mouse hovers over it.
-
-1. Medium size
-2. Small size
-
-### Usage
-
-- Select size control either Large or Small from the control tab on canvas.
-- Copy the HTML from the HTML tab and include below listed css and js files.
-- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- Include dist/css/components/cta-link.min.css
-- Include dist/css/components/image-revel-cta-card.min.css
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
-
-### Interactions
-
-- Hover state applies to the entire card.
-- By clicking on the CTA Link, the page is forwarded to the detailed information page.
-
-### Changelog
-
-1.0 — Released component
-`,
+export default {
+  title: 'Components/UI components/Cards/Image reveal card',
+  argTypes: {
+    Size: {
+      name: 'Size variant',
+      options: ['Large', 'Small'],
+      control: { type: 'inline-radio' },
+    },
+    Hovercolor: {
+      name: 'Hover accent color',
+      options: ['global', 'yellow', 'red', 'green', 'blue'],
+      control: { type: 'inline-radio' },
     },
   },
+  args: {
+    Size: 'Large',
+    Hovercolor: 'global',
+  },
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+            <h1>Image Reveal Card</h1>
+
+            <p>Image reveal cards are cards with information about the image and CTA links for detailed information.</p>
+
+            <h3>Overview</h3>
+
+            <p>The Image reveals card component is a multi-usage component that creates boxes that are usually teasing some kind of content like- Image, Text, and CTA Link.</p>
+
+            <h4>When to use:</h4>
+
+            <p>When text and CTA Link need to be attached with an image.</p>
+
+            <h3>Formatting</h3>
+
+            <h4>Default</h4>
+
+            <p>It consists of a grid with an image, text, and CTA link.</p>
+
+            <h3>Content</h3>
+
+            <p>There are two types of image reveal card: Medium and Small</p>
+
+            <ul>
+              <li><strong>Medium:</strong> Image Reveal Card of medium-size shows the Image and CTA Link. The Text will show on hover.</li>
+              <li><strong>Small:</strong> Image Reveal Card of small size comes with a different Image and CTA Link. The Text will show on hover.</li>
+            </ul>
+
+            <h3>Behaviors</h3>
+
+            <h4>States</h4>
+
+            <p>There are 2 states in the Image Reveal Card: Default and Hover.</p>
+
+            <ul>
+              <li><strong>Default:</strong> It consists of Image and CTA Link.
+                <ul>
+                  <li>Medium size</li>
+                  <li>Small size</li>
+                </ul>
+              </li>
+              <li><strong>Hover:</strong> It consists of Image, Text, and CTA Link. It changes appearance when the mouse hovers over it.
+                <ul>
+                  <li>Medium size</li>
+                  <li>Small size</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h4>Image reveal card</h4>
+
+            <Canvas>
+              <Story name="Image reveal card">
+                {(args, { globals: { locale, accent } }) => {
+                  const caption = getCaptionForLocale(locale);
+                  return (
+                    <ImageRevelCard data={caption.data} {...args}>
+                      {" "}
+                    </ImageRevelCard>
+                  );
+                }}
+              </Story>
+            </Canvas>
+
+            <h3>Usage</h3>
+
+            <ul>
+              <li>Select size control either Large or Small from the control tab on canvas.</li>
+              <li>Copy the HTML from the HTML tab and include the below listed CSS and JS files.</li>
+              <li>If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.</li>
+            </ul>
+
+            <h3>CSS and JS References</h3>
+
+            <h4>CSS:</h4>
+
+            <p>Add the base layout style from:</p>
+
+            <ul>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+              <li>Include <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">dist/css/components/cta-link.min.css</a></li>
+              <li>Include <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-revel-cta-card.min.css">dist/css/components/image-revel-cta-card.min.css</a></li>
+            </ul>
+
+            <h4>JS:</h4>
+
+            <ul>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+            </ul>
+
+            <h3>Interactions</h3>
+
+            <ul>
+              <li>Hover state applies to the entire card.</li>
+              <li>By clicking on the CTA Link, the page is forwarded to the detailed information page.</li>
+            </ul>
+
+            <h3>Changelog</h3>
+
+            <p>1.0 — Released component</p>
+
+            </>
+        )
+    }
+}
 };
+
+const Template = (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale);
+  return (
+    <ImageRevelCard data={caption.data} {...args}>
+    {" "}
+    </ImageRevelCard>
+  );
+}
+
+export const ImageRevelCTACard = Template.bind({});
+ImageRevelCTACard.storyName = 'Image reveal card';
+

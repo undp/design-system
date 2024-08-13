@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas, Source } from "@storybook/addon-docs";
 import { PublicationCard } from "./PublicationCard";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       return { download: "Download", readmore: "READ MORE" };
@@ -32,76 +32,83 @@ export default {
   },
   args: {
     variant: "Both",
-  }
+  },
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+            <h1>Publication Card</h1>
+
+            <p>The Publication card defines a card of information data with some items - Title, Image, Format, and Download files.</p>
+
+            <h3>Overview</h3>
+
+            <p>Publication cards show the publication category images, title, format, and download option related to the content in the design with short information.</p>
+
+            <Canvas>
+              <Story name="Publication card">
+                {(args, { globals: { locale, accent } }) => {
+                  const caption = getCaptionForLocale(locale);
+                  return (
+                    <PublicationCard
+                      download={caption.download}
+                      readmore={caption.readmore}
+                      image
+                      {...args}
+                    ></PublicationCard>
+                  );
+                }}
+              </Story>
+            </Canvas>
+
+            <h3>Usage</h3>
+
+            <p>Copy HTML from the HTML tab of canvas and include the below listed CSS file.</p>
+
+            <h3>CSS and JS References</h3>
+
+            <h4>CSS:</h4>
+
+            <p>Add the base layout style from:</p>
+
+            <ul>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/publication-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/publication-card.min.css</a></li>
+            </ul>
+
+            <h4>JS:</h4>
+
+            <p>NA</p>
+
+            <h3>Interactions</h3>
+
+            <ul>
+              <li>Hover state applies to the entire card.</li>
+              <li>By clicking on the download link, the associated file will be downloaded.</li>
+              <li>By clicking on the read more link, the associated URL will be opened.</li>
+            </ul>
+
+            <h3>Changelog</h3>
+
+            <p>1.0 — Released component</p>
+            </>
+        )
+    }
+}
 }
 
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
-  return <PublicationCard download={caption.download} readmore={caption.readmore} {...args}></PublicationCard>;
-};
+  return (
+    <PublicationCard
+      download={caption.download}
+      readmore={caption.readmore}
+      image
+      {...args}
+    ></PublicationCard>
+  );
+}
 
 export const PublicationCardStory = Template.bind({});
-PublicationCardStory.args = {
-  variant: "Both",
-};
-// Documentation content
-PublicationCardStory.parameters = {
-  docs: {
-    description: {
-      component: `
+PublicationCardStory.storyName = "Publication card";
 
-# Publication Card
-
-The Publication card defines a card of information data with some items - Title, Image, format and Downlaod files.
-
-### Overview
-
-Publication cards show the publication category images, title, format, and download option to related the content in the design with short information
-
-<Canvas>
-  <Story name="Publication card">
-    {(args, { globals: { locale, accent } }) => {
-      const caption = getCaptionForLocale(locale);
-      return (
-        <PublicationCard
-          download={caption.download}
-          readmore={caption.readmore}
-          image
-          {...args}
-        ></PublicationCard>
-      );
-    }}
-  </Story>
-</Canvas>
-
-### Usage:
-
-Copy HTML from the HTML tab of canvas and include below listed css file.
-
-### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/publication-card.min.css
-
-#### JS:
-
-NA
-
-### Interactions
-
-- Hover state applies to entire
-- By clicking on the download Link, the associated file will be downloaded
-- By clicking on the read more Link, the associated URL will be opened
-
-### Changelog
-
-1.0 — Released component
-
-`,
-    },
-  },
-};
