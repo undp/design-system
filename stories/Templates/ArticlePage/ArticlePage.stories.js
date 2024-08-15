@@ -26,6 +26,7 @@ import farmlandsm from "../../assets/images/farmland-sm.jpg";
 import logo from "../../assets/images/undp-logo-blue.svg";
 import logowhite from "../../assets/images/undp-logo-white.svg";
 
+
 const getParaForLocale = (locale) => {
   switch (locale) {
     case "english":
@@ -325,6 +326,7 @@ export default {
 }
 
 const Template = (args, { globals: { locale, accent } }) => {
+
   const caption = PostHeadData(locale);
   const headingLabel = getHeadingCaptionForLocale(locale);
   const navigationData = getNavLinks(locale);
@@ -337,38 +339,38 @@ const Template = (args, { globals: { locale, accent } }) => {
   args.accent = accent;
   return (
     <ArticlePage
-      featuredCardContent={featuredCardContent(locale)}
-      headingLabel={headingLabel}
-      para={getParaForLocale(locale)}
-      footerData={footerData(locale)}
-      listData={listData(locale)}
-      headingData={getAuthorCaptionForLocale(locale)}
-      paraLabel={paraLabel(locale)}
-      blockquoteData={blockquoteData(locale)}
-      authorCardData={AuthorCardData(locale)}
-      imageCaptionData={imageCaptionData(locale)}
-      data={caption.postheaderdata}
-      header={caption.header}
-      country={caption.country}
-      description={caption.description}
-      active={"default"}
-      locale={locale}
-      leftNavigationData={leftNavigationData}
-      navigationData={navigationData}
-      rightNavigationData={rightNavigationData}
-      menuData={menuData(locale)}
-      languageswitcherData={Languageswitcher(locale)}
-      locationData={getLocationDataForLocale(locale)}
-      langSelect={getSelectlanguage(locale)}
-      backcaption={getBackForLocale(locale)}
-      mongoliaGoat={mongoliaGoat}
-      farmlandlg={farmlandlg}
-      farmlandmd={farmlandmd}
-      farmlandsm={farmlandsm}
-      logo={logo}
-      logowhite={logowhite}
-      {...args}
-    ></ArticlePage>
+    featuredCardContent={featuredCardContent(locale)}
+    headingLabel={headingLabel}
+    para={getParaForLocale(locale)}
+    footerData={footerData(locale)}
+    listData={listData(locale)}
+    headingData={getAuthorCaptionForLocale(locale)}
+    paraLabel={paraLabel(locale)}
+    blockquoteData={blockquoteData(locale)}
+    authorCardData={AuthorCardData(locale)}
+    imageCaptionData={imageCaptionData(locale)}
+    data={caption.postheaderdata}
+    header={caption.header}
+    country={caption.country}
+    description={caption.description}
+    active={"default"}
+    locale={locale}
+    leftNavigationData={leftNavigationData}
+    navigationData={navigationData}
+    rightNavigationData={rightNavigationData}
+    menuData={menuData(locale)}
+    languageswitcherData={Languageswitcher(locale)}
+    locationData={getLocationDataForLocale(locale)}
+    langSelect={getSelectlanguage(locale)}
+    backcaption={getBackForLocale(locale)}
+    mongoliaGoat={mongoliaGoat}
+    farmlandlg={farmlandlg}
+    farmlandmd={farmlandmd}
+    farmlandsm={farmlandsm}
+    logo={logo}
+    logowhite={logowhite}
+    {...args}
+  ></ArticlePage>
   );
 
 }

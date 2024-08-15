@@ -4,7 +4,7 @@ import img from '../../../assets/images/undp-twitter.jpg';
 import { Link } from '../../../Atom/Typography/Links/Links';
 
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case 'english':
       const engText = {
@@ -243,35 +243,32 @@ export const getCaptionForLocale = (locale) => {
 
 export default {
   title: "Components/Twitter panel",
-  component: {TwitterPanel}
+  component: {TwitterPanel},
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+              <h3>Overview</h3>
+
+              <Canvas>
+                <Story name="Twitter panel">
+                  {(args, { globals: { locale } }) => {
+                    const content = getCaptionForLocale(locale);
+                    return <TwitterPanel data={content.tweetpaneldata} headertext={content.headertext}></TwitterPanel>;
+                  }}
+                </Story>
+              </Canvas>
+            </>
+        )
+    }
+  }
 }
 
 const Template = (args, { globals: { locale } }) => {
-  const caption = getCaptionForLocale(locale);
-  return <TwitterPanel data={caption.tweetpaneldata} headertext={caption.headertext}></TwitterPanel>;
+  const content = getCaptionForLocale(locale);
+  return <TwitterPanel data={content.tweetpaneldata} headertext={content.headertext}></TwitterPanel>;
+              
 }
 
 export const TwitterPanelStory = Template.bind({});
-TwitterPanelStory.args = {
-};
-
-TwitterPanelStory.parameters = {
-  docs: {
-    description: {
-      component: `
-
-### Overview
-
-<Canvas>
-  <Story name="Twitter panel">
-    {(args, { globals: { locale } }) => {
-      const content = getCaptionForLocale(locale);
-      return <TwitterPanel data={content.tweetpaneldata} headertext={content.headertext}></TwitterPanel>;
-    }}
-  </Story>
-</Canvas>
-
-`,
-    },
-  },
-};
+TwitterPanelStory.storyName = 'Twitter panel';

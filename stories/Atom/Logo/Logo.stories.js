@@ -99,6 +99,7 @@ export default {
             <Story
               name="UNDP Logo - White"
               parameters={{
+                
                 backgrounds: { default: 'gray' },
                 docs: {
                   story: {

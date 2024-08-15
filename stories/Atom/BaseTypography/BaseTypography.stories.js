@@ -33,10 +33,13 @@ export default {
         <p>Typographic scale when using abbreviation in text component:</p>
 
         <Canvas>
-            <Story name="Abbreviation">
-                {(args, { globals: { locale } }) => renderComponentForStory("Abbreviation", locale)}
-            </Story>
-        </Canvas>
+  <Story name="Abbreviation">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleAbbr(locale);
+      return <Abbreviation type="1" label={caption.detail1}></Abbreviation>;
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--blockquote"></Anchor>
         <h3>Blockquote</h3>
@@ -47,10 +50,18 @@ export default {
         <p>Typographic scale when using blockquote in text component:</p>
 
         <Canvas>
-            <Story name="Blockquote">
-                {(args, { globals: { locale } }) => renderComponentForStory("Blockquote", locale)}
-            </Story>
-        </Canvas>
+  <Story name="Blockquote">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleBlockquote(locale);
+      return (
+        <Blockquote
+          text={caption.detail}
+          citeText={caption.citeText}
+        ></Blockquote>
+      );
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--cite"></Anchor>
         <h3>Cite</h3>
@@ -61,10 +72,17 @@ export default {
         <p>Typographic scale when using cite in text component:</p>
 
         <Canvas>
-            <Story name="Cite">
-                {(args, { globals: { locale } }) => renderComponentForStory("Cite", locale)}
-            </Story>
-        </Canvas>
+  <Story name="Cite">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleCite(locale);
+      return (
+        <p>
+          <Cite label={caption.detail}></Cite>
+        </p>
+      );
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--code"></Anchor>
         <h3>Code</h3>
@@ -75,10 +93,19 @@ export default {
         <p>Typographic scale when using code in text component:</p>
 
         <Canvas>
-            <Story name="Code">
-                {(args, { globals: { locale } }) => renderComponentForStory("Code", locale)}
-            </Story>
-        </Canvas>
+  <Story name="Code">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleCode(locale);
+      return (
+        <p>
+          {caption.detail1} <Code label={caption.detail2}></Code> {
+            caption.detail3
+          } <Code label={caption.detail4}></Code> {caption.detail5}
+        </p>
+      );
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--description-list"></Anchor>
         <h3>Description List</h3>
@@ -88,30 +115,44 @@ export default {
         </ul>
 
         <Canvas>
-            <Story name="Description list">
-                {(args, { globals: { locale } }) => renderComponentForStory("Description list", locale)}
-            </Story>
-        </Canvas>
+  <Story name="Description list">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleList(locale);
+      return <Descriptionlist data={caption}></Descriptionlist>;
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--details"></Anchor>
         <h3>Details</h3>
         <p>The details tag creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.</p>
 
         <Canvas>
-            <Story name="Details">
-                {(args, { globals: { locale } }) => renderComponentForStory("Details", locale)}
-            </Story>
-        </Canvas>
+  <Story name="Details">
+    {(args, { globals: { locale } }) => {
+      const caption = getLocaleForDetails(locale);
+      return (
+        <DetailsTag
+          summary={caption.summary}
+          details={caption.details}
+        ></DetailsTag>
+      );
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--figcaption"></Anchor>
         <h3>Figcaption</h3>
         <p>The <code>figcaption</code> tag is used to caption the image. The <code>figcaption</code> tag is used with the <code>figure</code> tag.</p>
 
         <Canvas>
-            <Story name="Figcaption">
-                {(args, { globals: { locale } }) => renderComponentForStory("Figcaption", locale)}
-            </Story>
-        </Canvas>
+  <Story name="Figcaption">
+    {(args, { globals: { locale } }) => {
+      const caption = getLocaleForFigcaption(locale);
+      return <Figcaption details={caption.details}></Figcaption>;
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--headings"></Anchor>
         <h3>Headings</h3>
@@ -119,10 +160,22 @@ export default {
         <p>Typographic scale when using headings in text component:</p>
 
         <Canvas>
-            <Story name="Headings">
-                {(args, { globals: { locale } }) => renderComponentForStory("Headings", locale)}
-            </Story>
-        </Canvas>
+  <Story name="Headings">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleHeading(locale);
+      return (
+        <>
+          <Heading type="1" label={caption.detail1}></Heading>
+          <Heading type="2" label={caption.detail2}></Heading>
+          <Heading type="3" label={caption.detail3}></Heading>
+          <Heading type="4" label={caption.detail4}></Heading>
+          <Heading type="5" label={caption.detail5}></Heading>
+          <Heading type="6" label={caption.detail6}></Heading>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--hr"></Anchor>
         <h3>Horizontal Rule</h3>
@@ -133,10 +186,13 @@ export default {
         <p>Typographic scale when using hr in text component:</p>
 
         <Canvas>
-            <Story name="Hr">
-                {(args, { globals: { locale } }) => renderComponentForStory("Hr", locale)}
-            </Story>
-        </Canvas>
+  <Story name="Hr">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleHr(locale);
+      return <Hr detailsText={caption.detail}></Hr>;
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--mark"></Anchor>
         <h3>Mark</h3>
@@ -147,10 +203,24 @@ export default {
         <p>Typographic scale when using mark in text component:</p>
 
         <Canvas>
-            <Story name="Mark">
-                {(args, { globals: { locale } }) => renderComponentForStory("Mark", locale)}
-            </Story>
-        </Canvas>
+  <Story
+    name="Mark"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+          <p><mark>Eos nulla molestiae</mark></p>
+        `,
+        },
+      },
+    }}
+  >
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleMark(locale);
+      return <Mark label={caption.detail}></Mark>;
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--ordered-list"></Anchor>
         <h3>Ordered List</h3>
@@ -160,10 +230,13 @@ export default {
         </ul>
 
         <Canvas>
-            <Story name="Ordered list">
-                {(args, { globals: { locale } }) => renderComponentForStory("Ordered list", locale)}
-            </Story>
-        </Canvas>
+  <Story name="Ordered list">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleList(locale);
+      return <List data={caption} type="ol"></List>;
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--p"></Anchor>
         <h3>Paragraph</h3>
@@ -174,10 +247,13 @@ export default {
         <p>Typographic scale when using paragraph in text component:</p>
 
         <Canvas>
-            <Story name="P">
-                {(args, { globals: { locale } }) => renderComponentForStory("P", locale)}
-            </Story>
-        </Canvas>
+  <Story name="P">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleParagraph(locale);
+      return <P label={caption.detail}></P>;
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--quotation"></Anchor>
         <h3>Quotation</h3>
@@ -188,10 +264,13 @@ export default {
         <p>Typographic scale when using quotation in text component:</p>
 
         <Canvas>
-            <Story name="Quotation">
-                {(args, { globals: { locale } }) => renderComponentForStory("Quotation", locale)}
-            </Story>
-        </Canvas>
+  <Story name="Quotation">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleQuotation(locale);
+      return <Quotation label={caption.detail}></Quotation>;
+    }}
+  </Story>
+</Canvas>
 
           <Anchor storyId="foundation-typography-basetypography--small"></Anchor>
 
@@ -203,11 +282,14 @@ export default {
           </ul>
           <p>Typographic scale when using small in text component:</p>
 
-                  <Canvas>
-                    <Story name="Small">
-                      {(args, { globals: { locale } }) => renderComponentForStory("Small", locale)}
-                    </Story>
-        </Canvas>
+          <Canvas>
+  <Story name="Small">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleSmall(locale);
+      return <Small label={caption.detail}></Small>;
+    }}
+  </Story>
+</Canvas>
 
         <Anchor storyId="foundation-typography-basetypography--unordered-list"></Anchor>
             
@@ -223,10 +305,13 @@ export default {
 
 
             <Canvas>
-              <Story name="Unordered list">
-                {(args, { globals: { locale } }) => renderComponentForStory("Unordered list", locale)}
-              </Story>
-            </Canvas>
+  <Story name="Unordered list">
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocaleList(locale);
+      return <List data={caption} type="ul"></List>;
+    }}
+  </Story>
+</Canvas>
 
 
 
@@ -316,37 +401,124 @@ export default {
     }
   };
 
-  const TemplateHeading  = (args) => <Heading {...args} />;
-  const TemplateAbbreviation  = (args) => <Abbreviation {...args} />;
-  const TemplateBlockquote  = (args) => <Blockquote {...args} />;
-  const TemplateCite  = (args) => <Cite {...args} />;
-  const TemplateCode  = (args) => <Code {...args} />;
-  const TemplateHr  = (args) => <Hr {...args} />;
-  const TemplateMark  = (args) => <Mark {...args} />;
-  const TemplateP  = (args) => <P {...args} />;
-  const TemplateQuotation  = (args) => <Quotation {...args} />;
-  const TemplateSmall  = (args) => <Small {...args} />;
-  const TemplateList  = (args) => <List {...args} />;
-  const TemplateDescriptionlist  = (args) => <Descriptionlist {...args} />;
-  const TemplateDetailsTag  = (args) => <DetailsTag {...args} />;
-  const TemplateFigcaption  = (args) => <Figcaption {...args} />;
+
+
+  const TemplateHeading  = (args, {globals: {locale} }) => {
+    const caption = getCaptionForLocaleHeading(locale);
+    return (
+      <>
+        <Heading type="1" label={caption.detail1}></Heading>
+        <Heading type="2" label={caption.detail2}></Heading>
+        <Heading type="3" label={caption.detail3}></Heading>
+        <Heading type="4" label={caption.detail4}></Heading>
+        <Heading type="5" label={caption.detail5}></Heading>
+        <Heading type="6" label={caption.detail6}></Heading>
+      </>
+    );
+  }
+  const TemplateAbbreviation  = (args, {globals: {locale} }) => {
+    const caption = getCaptionForLocaleAbbr(locale);
+    return <Abbreviation type="1" label={caption.detail1}></Abbreviation>;
+  }
+  const TemplateBlockquote  = (args, {globals: {locale} }) => {
+    const caption = getCaptionForLocaleBlockquote(locale);
+    return (
+      <Blockquote
+        text={caption.detail}
+        citeText={caption.citeText}
+      ></Blockquote>
+    );
+  }
+  const TemplateCite  = (args, {globals: {locale} }) => {
+    const caption = getCaptionForLocaleCite(locale);
+    return (
+      <p>
+        <Cite label={caption.detail}></Cite>
+      </p>
+    );
+  }
+  const TemplateCode  = (args, {globals: {locale} }) => {
+    const caption = getCaptionForLocaleCode(locale);
+    return (
+      <p>
+        {caption.detail1} <Code label={caption.detail2}></Code> {
+          caption.detail3
+        } <Code label={caption.detail4}></Code> {caption.detail5}
+      </p>
+    );
+  }
+  const TemplateHr  = (args, {globals: {locale} }) => {
+    const caption = getCaptionForLocaleHr(locale);
+    return <Hr detailsText={caption.detail}></Hr>;
+  }
+  const TemplateMark  = (args, {globals: {locale} }) => {
+    const caption = getCaptionForLocaleMark(locale);
+    return <Mark label={caption.detail}></Mark>;
+  }
+  const TemplateP  = (args, {globals: {locale} }) => {
+    const caption = getCaptionForLocaleParagraph(locale);
+    return <P label={caption.detail}></P>;
+  }
+  const TemplateQuotation  = (args, {globals: {locale} }) => {
+    const caption = getCaptionForLocaleQuotation(locale);
+    return <Quotation label={caption.detail}></Quotation>;
+  }
+  const TemplateSmall  = (args, {globals: {locale} }) => {
+    const caption = getCaptionForLocaleSmall(locale);
+    return <Small label={caption.detail}></Small>;
+  }
+  const TemplateList  = (args, {globals: {locale} }) => {
+    const caption = getCaptionForLocaleList(locale);
+    return <List data={caption} type="ul"></List>;
+  }
+  const TemplateDescriptionlist  = (args, {globals: {locale} }) => {
+    const caption = getCaptionForLocaleList(locale);
+    return <Descriptionlist data={caption}></Descriptionlist>;
+  }
+  const TemplateDetailsTag  = (args, {globals: {locale} }) => {
+    const caption = getLocaleForDetails(locale);
+    return (
+      <DetailsTag
+        summary={caption.summary}
+        details={caption.details}
+      ></DetailsTag>
+    );
+  }
+  const TemplateFigcaption  = (args, {globals: {locale} }) => {
+    const caption = getLocaleForFigcaption(locale);
+    return <Figcaption details={caption.details}></Figcaption>;
+  }
+  
+
   
   export const AbbreviationComponent = TemplateAbbreviation.bind({});  
+  AbbreviationComponent.storyName = "Abbreviation";
   export const HeadingComponent = TemplateHeading.bind({});
+  HeadingComponent.storyName = "Headings";
   export const BlockquoteComponent = TemplateBlockquote.bind({});
+  BlockquoteComponent.storyName = "Blockquote";
   export const CiteComponent = TemplateCite.bind({});
+  CiteComponent.storyName = "Cite";
   export const CodeComponent = TemplateCode.bind({});
+  CodeComponent.storyName = "Code";
   export const HrComponent = TemplateHr.bind({});
+  HrComponent.storyName = "Horizontal Rule";
   export const MarkComponent = TemplateMark.bind({});
+  MarkComponent.storyName = "Mark";
   export const PComponent = TemplateP.bind({});
+  PComponent.storyName = "Paragraph";
   export const QuotationComponent = TemplateQuotation.bind({});
+  QuotationComponent.storyName = "Quotation";
   export const SmallComponent = TemplateSmall.bind({});
+  SmallComponent.storyName = "Small";
   export const ListComponent = TemplateList.bind({});
+  ListComponent.storyName = "Unordered List";
   export const DescriptionlistComponent = TemplateDescriptionlist.bind({});
+  DescriptionlistComponent.storyName = "Description List";
   export const DetailsTagComponent = TemplateDetailsTag.bind({});
+  DetailsTagComponent.storyName = "Details";
   export const FigcaptionComponent = TemplateFigcaption.bind({});
-
-
+  FigcaptionComponent.storyName = "Figcaption";
 
   const getCaptionForLocaleHeading = (locale) => {
     switch (locale) {
@@ -603,7 +775,7 @@ const getCaptionForLocaleCode = (locale) => {
 };
 
 
-export const getLocaleForDetails = (locale) => {
+const getLocaleForDetails = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -649,7 +821,7 @@ export const getLocaleForDetails = (locale) => {
   }
 };
 
-export const getLocaleForFigcaption = (locale) => {
+const getLocaleForFigcaption = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
