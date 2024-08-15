@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/addon-docs';
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = {detail1: 'HEADLINE 1', detail2: 'Headline 2', detail3: 'Headline 3', detail4: 'Headline 4', detail5: 'Headline 5', detail6: 'HEADLINE 6'}; return engText;
     case "ukrainian": return {detail1: "Заголовок 1", detail2: "Заголовок 2", detail3: "Заголовок 3", detail4: "Заголовок 4", detail5: "Заголовок 5", detail6: "Заголовок 6"};
@@ -12,7 +12,6 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-<Meta title="Foundation/Typography/Headers"  />
 
 export default {
   title: 'Foundation/Typography/Headers',

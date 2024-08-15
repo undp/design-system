@@ -7,7 +7,7 @@ import img4 from "../../../assets/images/CardImage4.jpg";
 import img5 from "../../../assets/images/CardImage5.jpg";
 import img6 from "../../../assets/images/CardImage6.jpg";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -445,31 +445,13 @@ export const getCaptionForLocale = (locale) => {
 };
 
 export default { 
-  title: "Patterns/Card grids/Content cards"
-}
-
-const Template = (args, { globals: { locale } }) => {
-  const caption = getCaptionForLocale(locale);
-  return (
-    <ContentCard
-      data={caption.groupcontentdata}
-      buttontype={caption.buttonname}
-      {...args}
-    ></ContentCard>
-  );
-}
-
-export const ContentCardStory = Template.bind({});
-ContentCardStory.storyName = "Content cards";
-
-ContentCardStory.parameters = {
-  docs: {
-    description: {
-      component: `
-
-# Content Cards
-
-This is just collection of the [Content card](/docs/components-ui-components-cards-content-card-with-image--with-image)
+  title: "Patterns/Card grids/Content cards",
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+<h1>Content Cards</h1>
+<p>This is just a collection of the <a href="/docs/components-ui-components-cards-content-card-with-image--with-image">Content card</a></p>
 
 <Canvas>
   <Story name="Content cards">
@@ -486,14 +468,32 @@ This is just collection of the [Content card](/docs/components-ui-components-car
   </Story>
 </Canvas>
 
-###
+<hr />
 
-### Usage
+<h3>Usage</h3>
+<ul>
+  <li>Copy the HTML from the canvas</li>
+  <li>Include the CSS and JS resource defined in the <em>Content card</em></li>
+</ul>
 
-- Copy the HTML from the canvas
-- Include the CSS and JS resource defined in the Content card
 
-`,
-    },
-  },
-};
+            </>
+        )
+    }
+  }
+}
+
+const Template = (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale);
+  return (
+    <ContentCard
+      data={caption.groupcontentdata}
+      buttontype={caption.buttonname}
+      {...args}
+    ></ContentCard>
+  );
+}
+
+export const ContentCardStory = Template.bind({});
+ContentCardStory.storyName = "Content cards";
+

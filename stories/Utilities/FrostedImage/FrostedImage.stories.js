@@ -1,45 +1,53 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { FrostedImage } from './FrostedImage';
 
 export default {
   title: 'Utilities/Frosted background',
   component: FrostedImage,
-};
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+<h1>Frosted background</h1>
+<p>The Frosted background is used to embed an overlay in a web page.</p>
 
-const Template = (args) => <FrostedImage {...args} />;
+<Canvas>
+  <Story name="Frosted background">
+    <FrostedImage></FrostedImage>
+  </Story>
+</Canvas>
 
-export const FrostedBackgroundStory = Template.bind({});
-FrostedBackgroundStory.storyName = 'Frosted background';
+<h3>Usage</h3>
+<ul>
+    <li>Take HTML from the HTML tab in canvas.</li>
+</ul>
 
-FrostedBackgroundStory.parameters = {
-  docs: {
-    description: {
-      component: `
-# Frosted background
+<h3>CSS and JS References</h3>
 
-The Frosted background is used to embed an overlay in a web page.
+<h4>CSS:</h4>
+<p>Add the base style only, located at <strong>dist/css/base-minimal.min.css</strong> along with the following:</p>
+<ul>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/froasted-background.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/froasted-background.min.css</a></li>
+</ul>
 
-### Usage
+<h4>JS:</h4>
+<p>NA</p>
 
-- Take HTML from the HTML tab in canvas.
+<h3>Changelog</h3>
+<p>1.0 — Released component</p>
 
-### CSS and JS References
+            </>
+        )
+    }
+  }
+}
 
-#### CSS:
+const Template = (args, { globals: { locale } }) => {
+return <FrostedImage></FrostedImage>;
+}
 
-Add the base style only, located at **dist/css/base-minimal.min.css** along with the following:
+export const FrostedImageStory = Template.bind({});
+FrostedImageStory.storyName = 'Frosted background';
 
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/froasted-background.min.css
 
-#### JS:
-
-NA
-
-### Changelog
-
-1.0 — Released component.
-`,
-    },
-  },
-};

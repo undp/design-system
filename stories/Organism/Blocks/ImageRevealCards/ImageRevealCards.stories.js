@@ -4,7 +4,7 @@ import img from "../../../assets/images/shop.png";
 import img2 from "../../../assets/images/donate.png";
 import img3 from "../../../assets/images/explore.png";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -199,51 +199,55 @@ export const getCaptionForLocale = (locale) => {
 };
 
 export default { 
-  title: "Patterns/Card grids/Image reveal cards"
+  title: "Patterns/Card grids/Image reveal cards",
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+              <h1>Image Reveal Cards</h1>
+              <p>This is just a collection of the <a href="/docs/components-ui-components-cards-image-reveal-card--image-reveal-card">Featured card</a></p>
+
+              <Canvas>
+                <Story name="Image reveal cards">
+                  {(args, { globals: { locale, accent } }) => {
+                    const caption = getCaptionForLocale(locale);
+                    return (
+                      <ImageRevealCards
+                        data={caption.data}
+                        label={caption.label}
+                        {...args}
+                      ></ImageRevealCards>
+                    );
+                  }}
+                </Story>
+              </Canvas>
+
+              <hr />
+
+              <h3>Usage</h3>
+              <ul>
+                <li>Copy the HTML from the canvas</li>
+                <li>Include the CSS and JS resource defined in the <em>Image reveal card</em></li>
+                <li>Include the <code>dist/css/components/image-reveal-cards.min.css</code> file</li>
+              </ul>
+
+            </>
+        )
+    }
+  }
 }
 
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
-  return <ImageRevealCards data={caption.data} label={caption.label} {...args}></ImageRevealCards>;
+  return (
+    <ImageRevealCards
+      data={caption.data}
+      label={caption.label}
+      {...args}
+    ></ImageRevealCards>
+  );
 }
 
 export const ImageRevealCardsStory = Template.bind({});
-ImageRevealCardsStory.args = {
-};
+ImageRevealCardsStory.storyName = "Image Reveal Cards";
 
-ImageRevealCardsStory.parameters = {
-  docs: {
-    description: {
-      component: `
-
-# Image Reveal Cards
-
-This is just collection of the [Featured card](/docs/components-ui-components-cards-image-reveal-card--image-reveal-card)
-
-<Canvas>
-  <Story name="Image reveal cards">
-    {(args, { globals: { locale, accent } }) => {
-      const caption = getCaptionForLocale(locale);
-      return (
-        <ImageRevealCards
-          data={caption.data}
-          label={caption.label}
-          {...args}
-        ></ImageRevealCards>
-      );
-    }}
-  </Story>
-</Canvas>
-
-###
-
-### Usage
-
-- Copy the HTML from the canvas
-- Include the CSS and JS resource defined in the Image reveal card
-- Include the dist/css/components/image-reveal-cards.min.css file
-
-`,
-    },
-  },
-};

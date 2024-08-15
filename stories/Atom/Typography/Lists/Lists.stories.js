@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/addon-docs';
 import { List } from './Lists.stories';
 import { Descriptionlist } from './Descriptionlist';
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch(locale) {
     case 'english': const engText = {data: [{
   label : 'United Nations Development Programme',
@@ -84,8 +84,18 @@ return dummy.data
   }
 };
 
-<Meta title="Foundation/Typography/Lists"/>
-
 export default {
   title: 'Foundation/Typography/Lists',
 };
+
+const Template = (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale);
+  return (
+    <>
+      <List data={caption} {...args}></List>
+    </>
+  );
+}
+
+export const ListStory = Template.bind({});
+ListStory.storyName = 'List';

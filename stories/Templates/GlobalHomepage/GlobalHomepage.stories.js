@@ -27,7 +27,7 @@ import {
   getSelectlanguage,
 } from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.js";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {

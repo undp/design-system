@@ -7,7 +7,7 @@ import { getCaptionForLocale as blockquoteData } from "../../Molecules/Text/Bloc
 import { getCaptionForLocale as paraLabel } from "../../Atom/BaseTypography/Paragraph/Paragraph.stories.js";
 import { getCaptionForLocale as headingData } from "../../Atom/Typography/Heading/Heading.stories.js";
 import { getCaptionForLocale as listData } from "../../Atom/Typography/Lists/Lists.stories.js";
-import { getCaptionForLocale as footerData } from "../../Organism/Footer//Footer.stories.js";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
 import { getCaptionForLocale as featuredCardContent } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard.stories.js";
 
 import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js";
@@ -26,7 +26,7 @@ import farmlandsm from "../../assets/images/farmland-sm.jpg";
 import logo from "../../assets/images/undp-logo-blue.svg";
 import logowhite from "../../assets/images/undp-logo-white.svg";
 
-export const getParaForLocale = (locale) => {
+const getParaForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -78,7 +78,7 @@ export const getParaForLocale = (locale) => {
   }
 };
 
-export const getAuthorCaptionForLocale = (locale) => {
+const getAuthorCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -142,7 +142,7 @@ export const getAuthorCaptionForLocale = (locale) => {
   }
 };
 
-export const getHeadingCaptionForLocale = (locale) => {
+const getHeadingCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       return "Some achievements of the project include the following:";
@@ -164,172 +164,109 @@ export const getHeadingCaptionForLocale = (locale) => {
 };
 
 export default {
-  title: "Templates/Article page"
-}
-
-const Template = (args, { globals: { locale } }) => {
-  const caption = PostHeadData(locale);
-  const headingLabel = getHeadingCaptionForLocale(locale);
-  const navigationData = getNavLinks(locale);
-  const leftNavigationData = navigationData.filter(
-    (item) => item.position === "left"
-  );
-  const rightNavigationData = navigationData.filter(
-    (item) => item.position === "right"
-  );
-  args.accent = accent;
-  return (
-    <ArticlePage
-      featuredCardContent={featuredCardContent(locale)}
-      headingLabel={headingLabel}
-      para={getParaForLocale(locale)}
-      footerData={footerData(locale)}
-      listData={listData(locale)}
-      headingData={getAuthorCaptionForLocale(locale)}
-      paraLabel={paraLabel(locale)}
-      blockquoteData={blockquoteData(locale)}
-      authorCardData={AuthorCardData(locale)}
-      imageCaptionData={imageCaptionData(locale)}
-      logo={logo}
-      logowhite={logowhite}
-      navigationData={navigationData}
-      leftNavigationData={leftNavigationData}
-      rightNavigationData={rightNavigationData}
-    />
-  );
-};
-
-export const ArticlePageStory = Template.bind({});
-ArticlePageStory.args = {
-  featuredCardContent: featuredCardContent("english"),
-  headingLabel: "Some achievements of the project include the following:",
-  para: getParaForLocale("english"),
-  footerData: footerData("english"),
-  listData: listData("english"),
-  headingData: getAuthorCaptionForLocale("english"),
-  paraLabel: paraLabel("english"),
-  blockquoteData: blockquoteData("english"),
-  authorCardData: AuthorCardData("english"),
-  imageCaptionData: imageCaptionData("english"),
-  logo: logo,
-  logowhite: logowhite,
-  navigationData: getNavLinks("english"),
-  leftNavigationData: getNavLinks("english").filter(
-    (item) => item.position === "left"
-  ),
-  rightNavigationData: getNavLinks("english").filter(
-    (item) => item.position === "right"
-  ),
-};
-
-ArticlePageStory.parameters = {
-  docs: {
-    description: {
-      component: `
+  title: "Templates/Article page",
+  parameters: {
+    docs: {
+        page: () => (
+            <>
 
 <style>
-  {
+  {`
   .sbdocs-preview {display: none}
-  }
+  `}
 </style>
+<h1>Article Page</h1>
+<p>On an Article page, it shows all the blogs and articles that are written by authors.</p>
 
-# Article Page
+<h3>Overview</h3>
+<p>Article Page is the template for all the articles and blogs that are written by authors. The user can also see the related and featured articles or blogs in this. This helps the users to get related and featured articles or blogs directly on the article page.</p>
+<p><a href="https://undp-design-system.azurewebsites.net/article-deepdive">Mockup</a></p>
 
-On an Article page, it shows all the blogs and articles that are written by authors.
+<h3>Template Structure</h3>
+<p>The following components are used to create the “Article Page” template in the design system:</p>
+<ul>
+    <li>Global header</li>
+    <li>Progress bar - reading meter, updated on scroll based on the amount of text remaining in the article. The related content part is not counted, only the actual Article’s content.</li>
+    <li>Breadcrumbs</li>
+    <li>Post Title along with date and subtitle</li>
+    <li>Image with caption (Wide) will expand the size animation when the user refreshes/page loads.</li>
+    <li>Author information</li>
+    <li>Text with variations - simple paragraph, a grid showing two columns, etc.</li>
+    <li>Blockquote</li>
+    <li>Image with caption(Medium) will expand the size animation on page load/refresh</li>
+    <li>Section header which will be pulled out. This will be the LTR transition.</li>
+    <li>Gallery example with 3 photos</li>
+    <li>Featured card groups which will have CTA links (this can be just #).</li>
+    <li>Standard footer</li>
+</ul>
 
-### Overview
+<h3>Performance</h3>
+<ul>
+    <li>The page performance will be optimized by considering the following:</li>
+    <ul>
+        <li>Lazy load</li>
+        <li>Use appropriate media renditions based on the client’s viewpoint.</li>
+        <li>Load common/static elements asynchronously (static navigation, menus, countries list, etc)</li>
+        <li>Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)</li>
+        <li>Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed</li>
+    </ul>
+</ul>
 
-Article Page is the template for all the articles and blogs that are written by authors. The user can also see the related and featured articles or blogs in this. This helps the users to get related and featured articles or blogs directly on the article page.
-Mockup: https://undp-design-system.azurewebsites.net/article-deepdive
+<h3>Usage</h3>
+<ul>
+    <li>Copy the HTML from the HTML tab of canvas and include CSS and JS file in ‘CSS and JS References’ section</li>
+    <li>Initialize the navigation, accordion, language switcher by calling below function.</li>
+    <ul>
+        <li><code>navigationInitialize();</code></li>
+        <li><code>langSwitch();</code></li>
+        <li><code>accordion(‘[data-accordion="mobile"]', '.footer-panel', 'active');</code></li>
+    </ul>
+    <li>If you want to add left-right animation then add <code>data-viewport=”true”</code> attribute to your HTML element.</li>
+</ul>
 
-### Template Structure
+<h3>CSS and JS References</h3>
 
-The following components are used to create the “Article Page” template in the design system
+<h4>CSS:</h4>
+<p>Add the base layout style from</p>
+<ul>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/global-header.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/global-header.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/post-header.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/post-header.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-caption.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-caption.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/blockquotecomp.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/blockquotecomp.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/authors.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/authors.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css</a></li>
+</ul>
 
-- Global header
-- Progress bar - reading meter, updated on scroll based on the amount of text remaining in the article. The related content part is not counted, only the actual Article’s content.
-- Breadcrumbs
-- Post Title along with date and subtitle
-- Image with caption (Wide) will expand the size animation when the user refreshes/page loads.
-- Author information
-- Text with variations - simple paragraph, a grid showing two columns, etc.
-- Blockquote
-- Image with caption(Medium) will expand the size animation on page load/refresh
-- Section header which will be pulled out. This will be the LTR transition.
-- Gallery example with 3 photos
-- Featured card groups which will have CTA links (this can be just #).
-- Standard footer
+<h4>JS:</h4>
+<ul>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+</ul>
 
-### Performance
-
-- The page performance will be optimized by considering the following:
-- Lazy load
-- Use appropriate media renditions based on the client’s viewpoint.
-- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
-- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
-- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
-
-### Usage
-
-- Copy the HTML from the HTML tab of canvas and include CSS and JS file in ‘CSS and JS References’ section
-- Initialize the navigation, accordion, language switcher by calling below function.
-  - navigationInitialize();
-  - langSwitch();
-  - accordion(‘[data-accordion="mobile"]', '.footer-panel', 'active');
-- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
-
-#### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/global-header.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/post-header.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-caption.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/blockquotecomp.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/authors.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
-
-### Changelog
-
-1.0 — Released component
+<h3>Changelog</h3>
+<p>1.0 — Released component</p>
 
 <Canvas>
   <Story
     name="Article page"
-    parameters={{
-      layout: "fullscreen",
-      docs: {
-        story: {
-          inline: false,
-          iframeHeight: "100%",
-        },
-      },
-      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-    }}
+    
   >
     {(args, { globals: { locale, accent } }) => {
       const caption = PostHeadData(locale);
@@ -381,7 +318,60 @@ Add the base layout style from
   </Story>
 </Canvas>
 
-`,
+            </>
+        )
     }
   }
 }
+
+const Template = (args, { globals: { locale, accent } }) => {
+  const caption = PostHeadData(locale);
+  const headingLabel = getHeadingCaptionForLocale(locale);
+  const navigationData = getNavLinks(locale);
+  const leftNavigationData = navigationData.filter(
+    (item) => item.position === "left"
+  );
+  const rightNavigationData = navigationData.filter(
+    (item) => item.position === "right"
+  );
+  args.accent = accent;
+  return (
+    <ArticlePage
+      featuredCardContent={featuredCardContent(locale)}
+      headingLabel={headingLabel}
+      para={getParaForLocale(locale)}
+      footerData={footerData(locale)}
+      listData={listData(locale)}
+      headingData={getAuthorCaptionForLocale(locale)}
+      paraLabel={paraLabel(locale)}
+      blockquoteData={blockquoteData(locale)}
+      authorCardData={AuthorCardData(locale)}
+      imageCaptionData={imageCaptionData(locale)}
+      data={caption.postheaderdata}
+      header={caption.header}
+      country={caption.country}
+      description={caption.description}
+      active={"default"}
+      locale={locale}
+      leftNavigationData={leftNavigationData}
+      navigationData={navigationData}
+      rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)}
+      languageswitcherData={Languageswitcher(locale)}
+      locationData={getLocationDataForLocale(locale)}
+      langSelect={getSelectlanguage(locale)}
+      backcaption={getBackForLocale(locale)}
+      mongoliaGoat={mongoliaGoat}
+      farmlandlg={farmlandlg}
+      farmlandmd={farmlandmd}
+      farmlandsm={farmlandsm}
+      logo={logo}
+      logowhite={logowhite}
+      {...args}
+    ></ArticlePage>
+  );
+
+}
+
+export const ArticlePageStory = Template.bind({});
+ArticlePageStory.storyName = "Article page";

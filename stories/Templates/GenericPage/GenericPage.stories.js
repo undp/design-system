@@ -18,7 +18,7 @@ import {
   getSelectlanguage,
 } from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.js";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -226,7 +226,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-export const statsArray = (locale) => {
+const statsArray = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -421,150 +421,119 @@ export const statsArray = (locale) => {
 };
 
 export default {
-  title: "Templates/Generic page"
-};
-
-const Template = (args, { globals: { locale } }) => {
-  const data = statsArray(locale);
-  const {
-    herodata,
-    title,
-    content,
-    imgsrc,
-    imgalt,
-    videosrc,
-    detail2,
-    topParagraph,
-    headingMissionVision,
-    paraMissionVision,
-    headingHistory,
-    paraHistory,
-    headingUNcharter,
-    paraUNcharter,
-  } = pageContent(locale);
-
-  return (
-    <GenericPage
-
-      herodata={herodata}
-      title={title}
-      content={content}
-      imgsrc={imgsrc}
-      imgalt={imgalt}
-      videosrc={videosrc}
-      detail2={detail2}
-      topParagraph={topParagraph}
-      headingMissionVision={headingMissionVision}
-      paraMissionVision={paraMissionVision}
-      headingHistory={headingHistory}
-      paraHistory={paraHistory}
-      headingUNcharter={headingUNcharter}
-      paraUNcharter={paraUNcharter}
-      data={data}
-    />
-  );
-};
-
-export const GerericPageStory = Template.bind({});
-GerericPageStory.args = {};
-
-GerericPageStory.parameters = {
-  docs: {
-    description: {
-      component: `
-
+  title: "Templates/Generic page",
+  parameters: {
+    docs: {
+        page: () => (
+            <>
 <style>
-  {
+  {`
   .sbdocs-preview {display: none}
-  }
+  `}
 </style>
 
-# Generic Page
+<h1>Generic Page</h1>
 
-In the generic page, it shows all the information about the company or author.
+<p>In the generic page, it shows all the information about the company or author.</p>
 
-### Overview
+<h3>Overview</h3>
 
-Generic Page is the template for all the information about the company or author. The user can also see the related information in this. This helps the users to get complete information about the company or author. Mockup - https://www.undp.org/partners/united-nations-system
+<p>Generic Page is the template for all the information about the company or author. The user can also see the related information in this. This helps the users to get complete information about the company or author. Mockup - <a href="https://www.undp.org/partners/united-nations-system">https://www.undp.org/partners/united-nations-system</a></p>
 
-### Template Structure
+<h3>Template Structure</h3>
 
-- The following components are used to create the “Article Page” template in the design system
-- Global header
-- Progress bar - reading meter, updated on scroll based on the amount of text remaining in the article. The related content part is not counted, only actual Article’s content.
-- Page Hero - Creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle, and Breadcrumb.
-- Sidebar menu (3 columns wide) - Column on the left or right side of a page which highlights the extra information related to the page.
-- H2 Title along with large Paragraphs
-- Fluid image size carousel - Shows sliders, designation, and image in a particular section. It is a multi-usage component that creates teasing kinds of content.
-- Text/paragraphs about company or author
-- Group of single content cards with images along with CTA links (this can be just #).
-- Standard footer
+<ul>
+  <li>The following components are used to create the “Article Page” template in the design system</li>
+  <li>Global header</li>
+  <li>Progress bar - reading meter, updated on scroll based on the amount of text remaining in the article. The related content part is not counted, only actual Article’s content.</li>
+  <li>Page Hero - Creates boxes that are usually teasing some kind of content like- Image, Text, Subtitle, and Breadcrumb.</li>
+  <li>Sidebar menu (3 columns wide) - Column on the left or right side of a page which highlights the extra information related to the page.</li>
+  <li>H2 Title along with large Paragraphs</li>
+  <li>Fluid image size carousel - Shows sliders, designation, and image in a particular section. It is a multi-usage component that creates teasing kinds of content.</li>
+  <li>Text/paragraphs about company or author</li>
+  <li>Group of single content cards with images along with CTA links (this can be just #).</li>
+  <li>Standard footer</li>
+</ul>
 
-### Performance
+<h3>Performance</h3>
 
-The page performance will be optimized by considering the following:
+<p>The page performance will be optimized by considering the following:</p>
 
-- Lazy load
-- Use appropriate media renditions based on the client’s viewpoint.
-- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
-- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
-- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
+<ul>
+  <li>Lazy load</li>
+  <li>Use appropriate media renditions based on the client’s viewpoint.</li>
+  <li>Load common/static elements asynchronously (static navigation, menus, countries list, etc)</li>
+  <li>Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)</li>
+  <li>Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.</li>
+</ul>
 
-### Usage
+<h3>Usage</h3>
 
-- Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
-- Initialize navigation, language switcher, accordion, sidebar and swiper by calling below mentioned functions.
-  - navigationInitialize();
-  - langSwitch();
-  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
-  - expandToSize('.pagehero-full');
-  - sidebarNav();
-  - sidebarMenu();
-  - swiper('.fluid-carousel', '.slide-content'); on load (Include swiper library from here https://swiperjs.com/get-started in your html page).
-- Refer [this document](https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration & options
-- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
+<ul>
+  <li>Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section.</li>
+  <li>Initialize navigation, language switcher, accordion, sidebar and swiper by calling below mentioned functions.</li>
+  <ul>
+    <li>navigationInitialize();</li>
+    <li>langSwitch();</li>
+    <li>accordion('[data-accordion="mobile"]', '.footer-panel', 'active');</li>
+    <li>expandToSize('.pagehero-full');</li>
+    <li>sidebarNav();</li>
+    <li>sidebarMenu();</li>
+    <li>swiper('.fluid-carousel', '.slide-content'); on load (Include swiper library from <a href="https://swiperjs.com/get-started">here</a> in your html page).</li>
+  </ul>
+  <li>Refer <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</li>
+  <li>If you want to add left-right animation then add <code>data-viewport="true"</code> attribute to your HTML element.</li>
+</ul>
 
-#### CSS and JS References
+<h4>CSS and JS References</h4>
 
-#### CSS:
+<h5>CSS:</h5>
 
-Add the base layout style from
+<p>Add the base layout style from:</p>
 
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/progress.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar-data.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/fluid-image-size-carousel.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/generic-page.min.css
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/progress.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/progress.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar-data.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar-data.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/fluid-image-size-carousel.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/fluid-image-size-carousel.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/generic-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/generic-page.min.css</a></li>
+</ul>
 
-- #### JS:
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/scrolling-progressbar.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
+<h5>JS:</h5>
 
-Add following external libraries
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/scrolling-progressbar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/scrolling-progressbar.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+</ul>
 
-- Swiper (https://swiperjs.com/get-started)
-- GSAP (https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo)
+<p>Add the following external libraries:</p>
 
-### Changelog
+<ul>
+  <li>Swiper - <a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a></li>
+  <li>GSAP - <a href="https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo">https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo</a></li>
+</ul>
 
-1.0 — Released component
+<h3>Changelog</h3>
+
+<p>1.0 — Released component</p>
+
 
 <Canvas>
   <Story
@@ -627,8 +596,58 @@ Add following external libraries
     }}
   </Story>
 </Canvas>
+            </>
+        )
+    }
+  }
+}
 
-      `,
-    },
-  },
-};
+const Template = (args, { globals: { locale, accent } }) => {
+  const caption = getCaptionForLocale(locale);
+  const carouselData = statsArray(locale);
+  const navigationData = getNavLinks(locale);
+  const leftNavigationData = navigationData.filter(
+    (item) => item.position === "left"
+  );
+  const rightNavigationData = navigationData.filter(
+    (item) => item.position === "right"
+  );
+  return (
+    <GenericPage
+      active={"white"}
+      herodata={caption.herodata}
+      title={caption.title}
+      content={caption.content}
+      imgsource={caption.imgsrc}
+      altname={caption.imgalt}
+      topHeading={caption.detail2}
+      topParagraph={caption.topParagraph}
+      carouselData={carouselData}
+      headingMissionVision={caption.headingMissionVision}
+      paraMissionVision={caption.paraMissionVision}
+      headingHistory={caption.headingHistory}
+      paraHistory={caption.paraHistory}
+      headingUNcharter={caption.headingUNcharter}
+      paraUNcharter={caption.paraUNcharter}
+      sidebarCaptionData={sidebarCaptionData(locale)}
+      ContentCardData={ContentCardData(locale)}
+      footerData={footerData(locale)}
+      locale={locale}
+      leftNavigationData={leftNavigationData}
+      navigationData={navigationData}
+      rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)}
+      languageswitcherData={Languageswitcher(locale)}
+      locationData={getLocationDataForLocale(locale)}
+      langSelect={getSelectlanguage(locale)}
+      backcaption={getBackForLocale(locale)}
+      logo={logo}
+      logowhite={logowhite}
+      {...args}
+    ></GenericPage>
+  );
+}
+
+export const GenericPageStory = Template.bind({});
+GenericPageStory.storyName = "Generic Page";
+

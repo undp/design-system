@@ -40,7 +40,7 @@ import img5 from "../../assets/images/CardImage5.jpg";
 import img6 from "../../assets/images/CardImage6.jpg";
 import sdgimg from "../../assets/images/sdgmodalimg.png";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -1355,167 +1355,264 @@ export default {
       },
     },
   },
-};
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+<style>
+  {`
+  .sbdocs-preview {display: none}
+  `}
+</style>
+
+<h1>SDG Page</h1>
+
+<p>An SDG page has a collection of 17 interlinked global goals designed.</p>
+
+<h3>Overview</h3>
+
+<p>SDG page is a collection of 17 interlinked global goals designed to be a blueprint to achieve a better and more sustainable future for all. Mock Up: <a href="https://www.undp.org/sustainable-development-goals">https://www.undp.org/sustainable-development-goals</a></p>
+
+<h3>Template Structure</h3>
+
+<p>The following components are used to create the “Article Page” template in the design system:</p>
+
+<ul>
+  <li>Country header</li>
+  <li>Homepage Hero - full width - Homepage Hero images are large-sized images with text in front of the image and present at the top of the homepage.</li>
+  <li>Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.</li>
+  <li>Text - Title + Description</li>
+  <li>SDG card molecule 1-17 + white background</li>
+  <li>Standard footer</li>
+</ul>
+
+<h3>Behavior</h3>
+
+<p>Clicking any of the SDG cards will open a modal/lightbox:</p>
+
+<ul>
+  <li>Individual SDG goals appear as a modal and modal window that includes a transparent overlay by blurring the original page on the back. It also includes a floating close X button.</li>
+  <li>Individual goal details are displayed on a white background having the following components:</li>
+  <ul>
+    <li>Title + subtitle - Title text color should match the individual goal’s color.</li>
+    <li>Every individual SDG goal invocation should change the URL of the page adding the <code>#sdgX-title-of-the-goal</code> anchor. The goal here is to provide deep links for individual Goals so when a page is accessed via URL with a hash anchor - the respective goal is popped right after the page load.</li>
+    <li>Color - Matches card background-color.</li>
+    <li>Text</li>
+    <li>Image</li>
+    <li>Group of stats cards - glide - Group of cards arranged horizontally in two rows that slide in from opposite directions on page scroll.</li>
+    <li>Note: Stats cards should have the same accent color as the background color of the SDG card molecule.</li>
+    <li>Text: Title</li>
+    <li>List items: Consists of related items grouped together.</li>
+    <li>Title: SDGs in Action</li>
+    <li>Group of featured content cards - Featured card groups that will have CTA links (this can be just #).</li>
+    <li>SDG card molecule - Next card color</li>
+    <ul>
+      <li>No image with gradient</li>
+      <li>On hover - show an arrow</li>
+      <li>On click - Open next card content in the right section of the modal and scroll to the top. The left section remains as is.</li>
+      <li>The transition between goals should also change the address according to the currently displaying Goal.</li>
+      <li>If the current SDG card is the last one on the page, don’t show the next SDG card molecule.</li>
+    </ul>
+  </ul>
+  <li>Clicking X in the left panel closes both modals.</li>
+  <li>Clicking ESC also closes both modals.</li>
+</ul>
+
+<h3>Performance</h3>
+
+<p>The page performance will be optimized by considering the following:</p>
+
+<ul>
+  <li>Lazy load</li>
+  <li>Use appropriate media renditions based on the client’s viewpoint.</li>
+  <li>Load common/static elements asynchronously (static navigation, menus, countries list, etc.)</li>
+  <li>Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc.</li>
+  <li>Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.</li>
+</ul>
+
+<h3>Usage</h3>
+
+<ul>
+  <li>Copy HTML from the HTML tab of Canvas and include CSS and JS files in the ‘CSS and JS References’ section.</li>
+  <li>Initialize navigation, language switcher, accordion, and sdgModal by calling the below-mentioned functions:</li>
+  <ul>
+    <li>langSwitch();</li>
+    <li>navigationInitialize(locale);</li>
+    <li>sdgModal();</li>
+    <li>accordion('[data-accordion="mobile"]', '.footer-panel', 'active');</li>
+  </ul>
+  <li>If you want to add left-right animation then add <code>data-viewport=”true”</code> attribute to your HTML element.</li>
+</ul>
+
+
+<h4>CSS and JS References</h4>
+
+<h5>CSS:</h5>
+<p>Add the base layout style from <code>dist/css/base-minimal.min.css</code></p>
+<ul>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css">Country Site Header</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css">Language Switcher</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css">Menu</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css">Mega Menu</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css">Mobile Nav</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepage-hero.min.css">Homepage Hero</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">Breadcrumbs</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css">Heading Big</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css">Content Card</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card-with-and-without-image.min.css">Content Card With and Without Image</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css">Featured Content Card</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">CTA Link</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css">Page Wide Card</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-card.min.css">Image Card</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-reveal-cards.min.css">Image Reveal Cards</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats.min.css">Stats</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css">Stats Cards</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css">Stats Slider</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-group.min.css">Input Group</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">Buttons</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">Newsletter Signup</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">Accordion</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">Footer</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/countryhome-page.min.css">Country Homepage</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css">Article Page</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">Swiper</a></li>
+</ul>
+
+<h5>JS:</h5>
+<ul>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">Navigation</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">UNDP</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">Language Switcher</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">Accordion</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smooth-bg-change.min.js">Smooth BG Change</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">Swiper</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js">Parallax</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">Viewport</a></li>
+</ul>
+
+<p>Add following external libraries:</p>
+<ul>
+    <li><a href="https://swiperjs.com/get-started">Swiper</a></li>
+    <li><a href="https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo">GSAP</a></li>
+</ul>
+
+<h3>Changelog</h3>
+<p>1.0 — Released component</p>
+
+<Canvas>
+  <Story
+    name="SDG page"
+    parameters={{
+      layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+    }}
+  >
+    {(args, { globals: { locale } }) => {
+      const caption = getCaptionForLocale(locale);
+      const navigationData = getNavLinks(locale);
+      const leftNavigationData = navigationData.filter(
+        (item) => item.position === "left"
+      );
+      const rightNavigationData = navigationData.filter(
+        (item) => item.position === "right"
+      );
+      return (
+        <SdgPage
+          active={"white"}
+          herodata={caption.herodata}
+          title={caption.title}
+          imgsource={caption.imgsrc}
+          altname={caption.imgalt}
+          footerData={footerData(locale)}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          Sdgnewdata={caption.Sdgdata}
+          imgsrcsdg={sdglinkimage}
+          sdgtitle={caption.sdgtitle}
+          goaltitle={caption.goaltitle}
+          goalpara={caption.goalpara}
+          statsData={statsData(locale)}
+          goaldata={caption.goaldata}
+          contentdata={caption.contentdata}
+          storyBtn={caption.storyBtn}
+          Sdgcontenttitle={caption.Sdgcontenttitle}
+          nextcardtitle={caption.nextcardtitle}
+          goalcount={caption.goalcount}
+          modaltitle={caption.modaltitle}
+          description={caption.description}
+          modalgoaltitle={caption.modalgoaltitle}
+          modalsdgimg={sdgimg}
+          modalsdgimgalt="sdg image"
+        ></SdgPage>
+      );
+    }}
+  </Story>
+</Canvas>
+            </>
+        )
+    }
+  }
+}
 
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
-  const navigationData = getNavLinks(locale);
-  const leftNavigationData = navigationData.filter(
-    (item) => item.position === 'left'
-  );
-  const rightNavigationData = navigationData.filter(
-    (item) => item.position === 'right'
-  );
-  return (
-    <SdgPage
-      active={'white'}
-      herodata={caption.herodata}
-      title={caption.title}
-      imgsource={caption.imgsrc}
-      altname={caption.imgalt}
-      footerData={footerData(locale)}
-      locale={locale}
-      leftNavigationData={leftNavigationData}
-      navigationData={navigationData}
-      rightNavigationData={rightNavigationData}
-      menuData={menuData(locale)}
-      locationData={getLocationDataForLocale(locale)}
-      langSelect={getSelectlanguage(locale)}
-      backcaption={getBackForLocale(locale)}
-      languageswitcherData={Languageswitcher(locale)}
-      Sdgnewdata={caption.Sdgdata}
-      imgsrcsdg={sdglinkimage}
-      sdgtitle={caption.sdgtitle}
-      goaltitle={caption.goaltitle}
-      goalpara={caption.goalpara}
-      statsData={statsData(locale)}
-      goaldata={caption.goaldata}
-      contentdata={caption.contentdata}
-      storyBtn={caption.storyBtn}
-      Sdgcontenttitle={caption.Sdgcontenttitle}
-      nextcardtitle={caption.nextcardtitle}
-      goalcount={caption.goalcount}
-      modaltitle={caption.modaltitle}
-      description={caption.description}
-      modalgoaltitle={caption.modalgoaltitle}
-      modalsdgimg={sdgimg}
-      modalsdgimgalt="sdg image"
-    ></SdgPage>
-  );
-};
+      const navigationData = getNavLinks(locale);
+      const leftNavigationData = navigationData.filter(
+        (item) => item.position === "left"
+      );
+      const rightNavigationData = navigationData.filter(
+        (item) => item.position === "right"
+      );
+      return (
+        <SdgPage
+          active={"white"}
+          herodata={caption.herodata}
+          title={caption.title}
+          imgsource={caption.imgsrc}
+          altname={caption.imgalt}
+          footerData={footerData(locale)}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          Sdgnewdata={caption.Sdgdata}
+          imgsrcsdg={sdglinkimage}
+          sdgtitle={caption.sdgtitle}
+          goaltitle={caption.goaltitle}
+          goalpara={caption.goalpara}
+          statsData={statsData(locale)}
+          goaldata={caption.goaldata}
+          contentdata={caption.contentdata}
+          storyBtn={caption.storyBtn}
+          Sdgcontenttitle={caption.Sdgcontenttitle}
+          nextcardtitle={caption.nextcardtitle}
+          goalcount={caption.goalcount}
+          modaltitle={caption.modaltitle}
+          description={caption.description}
+          modalgoaltitle={caption.modalgoaltitle}
+          modalsdgimg={sdgimg}
+          modalsdgimgalt="sdg image"
+        ></SdgPage>
+      );
+}
 
-export const SdgPageStory = Template.bind({});
-SdgPageStory.args = {};
-
-// Documentation content
-SdgPageStory.parameters = {
-  docs: {
-    description: {
-      component: `
-# SDG Page
-
-An SDG page has a collection of 17 interlinked global goals designed.
-
-### Overview
-
-SDG page is a collection of 17 interlinked global goals designed to be a blueprint to achieve a better and more sustainable future for all.
-Mock Up: https://www.undp.org/sustainable-development-goals
-
-### Template Structure
-
-The following components are used to create the “Article Page” template in the design system
-
-- Country header
-- Homepage Hero - full width - Homepage Hero images are large-sized images with text in front of the image and present at the top of the homepage.
-- Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.
-- Text - Title + Description
-- SDG card molecule 1-17 + white background
-- Standard footer
-
-### Behavior
-
-- Clicking any of the SDG cards will open a modal/lightbox
-  - Individual SDG goals appear as a modal and modal window that includes transparent overlay by blurring the original page on the back. It also includes a floating close X button.
-    - It includes a floating closing X button.
-    - Individual goal details are displayed on a white background having the following components
-      - Title + subtitle -Title text color should match individual goal’s color
-      - Every individual SDG goal invocation should change the URL of the page adding the #sdgX-title-of-the-goal anchor. The goal here is to provide deep links for individual Goals so when a page is accessed via URL with a hash anchor - the respective goal is popped right after the page load.
-      - Color - Matches card background-color
-      - Text
-      - Image
-      - Group of stats cards - glide - Group of cards arranged horizontally in two rows that slide in from opposite directions on page scroll.
-      - Note: Stats cards should have the same accent color as the background color of the SDG card molecule
-      - Text: Title
-      - List items: Consists of related items grouped together
-      - Title: SDGs in Action
-      - Group of featured content cards- Featured card groups that will have CTA links (this can be just #)
-      - SDG card molecule - Next card color
-        - No image with gradient
-        - On hover - show an arrow
-        - On click - Open next card content in the right section of the modal and scroll to the top. The left section remains as is
-        - The transition between goals should also change the address according to the currently displaying Goal.
-      - If the current SDG card is the last one on the page, don’t show the next SDG card molecule
-  - Clicking X in the left panel closes both modals
-  - Clicking ESC also closes both modals
-
-### Performance
-
-- The page performance will be optimized by considering the following:
-- Lazy load
-- Use appropriate media renditions based on the client’s viewpoint.
-- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
-- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
-- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.
-
-### Usage:
-
-- Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
-- Initialize navigation, language switcher, accordion and sdgModal by calling below mentioned functions.
-  - langSwitch();
-  - navigationInitialize(locale);
-  - sdgModal();
-  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
-- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
-
-#### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/global-header.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sdg.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sdgmodal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-card-slider.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/sdg.min.css
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sdgmodal.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sdg-modal.min.js
-
-### Changelog
-
-1.0 — Released component
-      `,
-    },
-  },
-};
+export const SdgpageStory = Template.bind({});
+SdgpageStory.storyName = "SDG page";

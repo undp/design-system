@@ -17,7 +17,7 @@ import BackgroundVideo from "../../assets/video/video_sample.mp4";
 import img from "../../assets/images/card2.jpg";
 import img1 from "../../assets/images/explore1.png";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -1782,7 +1782,7 @@ export const getCaptionForLocale = (locale) => {
   }
 };
 
-export const statsArray = (locale) => {
+const statsArray = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -1909,207 +1909,295 @@ export const statsArray = (locale) => {
 
 export default {
   title: "Templates/Project page",
-};
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+<style>
+  {`
+  .sbdocs-preview {display: none}
+  `}
+</style>
+
+<h1>Project Page</h1>
+
+<p>A Project page has the list of projects that the company is dealing with.</p>
+
+<h3>Overview</h3>
+
+<p>A project page has all the projects listed. This helps the user to get all the list of projects in one place. Mockup: <a href="https://undp-design-system.azurewebsites.net/project-page">https://undp-design-system.azurewebsites.net/project-page</a></p>
+
+<h3>Template Structure</h3>
+
+<p>The following components are used to create the “Article page” template in the design system:</p>
+
+<ul>
+  <li>Country header</li>
+  <li>Homepage Hero - Homepage Hero images are large-sized images with text in front of the image and present at the top of the homepage.</li>
+  <li>Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.</li>
+  <li>Title of the project</li>
+  <li>Text</li>
+  <li>Text with background image</li>
+  <li>Title</li>
+  <li>Group of download modules where the document can be downloaded.</li>
+  <li>Title</li>
+  <li>Project Details - Complete details about the project like status, start date, Project office, contribution amount, donors, Implementing partners.</li>
+  <li>Secondary button with text: “FULL PROJECT INFORMATION”</li>
+  <li>Title</li>
+  <li>Grid of content cards with image, without image, with emphasis</li>
+  <li>Secondary button, no arrow</li>
+  <li>Standard footer</li>
+</ul>
+
+<h3>Performance</h3>
+
+<p>The page performance will be optimized by considering the following:</p>
+
+<ul>
+  <li>Lazy load</li>
+  <li>Use appropriate media renditions based on the client’s viewpoint.</li>
+  <li>Load common/static elements asynchronously (static navigation, menus, countries list, etc.)</li>
+  <li>Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc.</li>
+  <li>Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.</li>
+</ul>
+
+<h3>Usage</h3>
+
+<ul>
+  <li>Copy HTML from the HTML tab of Canvas and include CSS and JS file in the ‘CSS and JS References’ section.</li>
+  <li>Initialize navigation, language switcher, accordion, swiper, and animation by calling the below-mentioned functions:</li>
+  <ul>
+    <li>expandToSize('.pagehero-full');</li>
+    <li>navigationInitialize();</li>
+    <li>langSwitch();</li>
+    <li>accordion('[data-accordion="mobile"]', '.footer-panel', 'active');</li>
+    <li>swiper('.stats-slider');</li>
+  </ul>
+  <li>Refer to <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</li>
+  <li>If you want to add left-right animation then add <code>data-viewport="true"</code> attribute to your HTML element.</li>
+</ul>
+
+
+<h4>CSS and JS References</h4>
+
+<h5>CSS:</h5>
+
+<p>Add the base layout style from:</p>
+
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/progress.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/progress.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar-data.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar-data.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/fluid-image-size-carousel.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/fluid-image-size-carousel.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/generic-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/generic-page.min.css</a></li>
+</ul>
+
+<h5>JS:</h5>
+
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/scrolling-progressbar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/scrolling-progressbar.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+</ul>
+
+<p>Add the following external libraries:</p>
+
+<ul>
+  <li>Swiper - <a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a></li>
+  <li>GSAP - <a href="https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo">https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo</a></li>
+</ul>
+
+<h3>Changelog</h3>
+
+<p>1.0 — Released component</p>
+
+<Canvas>
+  <Story
+    name="Project page"
+    parameters={{
+      layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+    }}
+  >
+    {(args, { globals: { locale, accent } }) => {
+      const caption = getCaptionForLocale(locale);
+      const navigationData = getNavLinks(locale);
+      const leftNavigationData = navigationData.filter(
+        (item) => item.position === "left"
+      );
+      const rightNavigationData = navigationData.filter(
+        (item) => item.position === "right"
+      );
+      const siteTitleData = getSiteTitle(locale);
+      const statCaption = statsArray(locale);
+      return (
+        <ProjectPage
+          herodata={caption.herodata}
+          title={caption.title}
+          content={caption.content}
+          active={"default"}
+          imgsrc={caption.imgsrc}
+          imgalt={caption.imgalt}
+          videosrc={caption.videosrc}
+          topHeading={caption.topHeading}
+          topParagraph={caption.topParagraph}
+          topParagraph1={caption.topParagraph1}
+          whatwedoheader={caption.whatwedoheader}
+          relatedHeading={caption.relatedHeading}
+          whatwedodescription={caption.whatwedodescription}
+          download={caption.download}
+          readmore={caption.readmore}
+          downloadTitle={caption.downloadTitle}
+          downloadTitle1={caption.downloadTitle1}
+          downloadTitle2={caption.downloadTitle2}
+          downloadTitle3={caption.downloadTitle3}
+          downloadTitle4={caption.downloadTitle4}
+          downloadTitle5={caption.downloadTitle5}
+          downloadTitle6={caption.downloadTitle6}
+          footerData={footerData(locale)}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          siteTitleData={getSiteTitle(locale)}
+          logo={logo}
+          logowhite={logowhite}
+          impactHead={caption.impactHead}
+          title1={caption.title1}
+          title2={caption.title2}
+          title3={caption.title3}
+          title4={caption.title4}
+          title5={caption.title5}
+          title6={caption.title6}
+          title7={caption.title7}
+          subtitle1={caption.subtitle1}
+          subtitle2={caption.subtitle2}
+          subtitle3={caption.subtitle3}
+          subtitle4={caption.subtitle4}
+          subtitle5={caption.subtitle5}
+          subtitle6={caption.subtitle6}
+          subtitle7={caption.subtitle7}
+          buttonProjectInfo={caption.buttonProjectInfo}
+          supportHeading={caption.supportHeading}
+          exploreHeading={caption.exploreHeading}
+          exploreMoreData={caption.contentdata}
+          exploreMoreBtn={caption.storyBtn}
+          statsliderdata={statCaption}
+          listData={caption.listData}
+          {...args}
+        ></ProjectPage>
+      );
+    }}
+  </Story>
+</Canvas>
+            </>
+        )
+    }
+  }
+}
 
 const Template = (args, { globals: { locale, accent } }) => {
   const caption = getCaptionForLocale(locale);
-  const navigationData = getNavLinks(locale);
-  const leftNavigationData = navigationData.filter((item) => item.position === "left");
-  const rightNavigationData = navigationData.filter((item) => item.position === "right");
-  const siteTitleData = getSiteTitle(locale);
-  const statCaption = statsArray(locale);
-
-  return (
-    <>
-      <style>
-        {`
-        .sbdocs-preview {display: none}
-        `}
-      </style>
-
-      <h1>Project Page</h1>
-
-      <p>A Project page has the list of projects that the company is dealing with.</p>
-
-      <h2>Overview</h2>
-      <p>
-        A project page has all the projects listed. This helps the user to get all the list of projects at one place.
-        Mock Up: <a href="https://undp-design-system.azurewebsites.net/project-page">https://undp-design-system.azurewebsites.net/project-page</a>
-      </p>
-
-      <h2>Template Structure</h2>
-      <p>The following components are used to create the “Article page” template in the design system:</p>
-      <ul>
-        <li>Country header</li>
-        <li>Homepage Hero - Homepage Hero images are large-sized images with text in front of the image and present at the top of the homepage.</li>
-        <li>Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.</li>
-        <li>Title of the project</li>
-        <li>Text</li>
-        <li>Text with background image</li>
-        <li>Title</li>
-        <li>Group of download modules where the document can be downloaded.</li>
-        <li>Title</li>
-        <li>Project Details - Complete details about the project like status, start date, Project office, contribution amount, donors, Implementing partners.</li>
-        <li>Secondary button with text: “FULL PROJECT INFORMATION</li>
-        <li>Title</li>
-        <li>Grid of content cards with image, without image, with emphasis</li>
-        <li>Secondary button, no arrow</li>
-        <li>Standard footer</li>
-      </ul>
-
-      <h2>Performance</h2>
-      <p>The page performance will be optimized by considering the following:</p>
-      <ul>
-        <li>Lazy load</li>
-        <li>Use appropriate media renditions based on the client’s viewpoint.</li>
-        <li>Load common/static elements asynchronously (static navigation, menus, countries list, etc)</li>
-        <li>Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)</li>
-        <li>Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed</li>
-      </ul>
-
-      <h2>Usage</h2>
-      <p>
-        Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section Initialize navigation, language switcher, accordion, swiper and animation by calling below mentioned functions.
-      </p>
-      <ul>
-        <li>expandToSize('.pagehero-full');</li>
-        <li>navigationInitialize();</li>
-        <li>langSwitch();</li>
-        <li>accordion('[data-accordion="mobile"]', '.footer-panel', 'active');</li>
-        <li>swiper('.stats-slider');</li>
-      </ul>
-      <p>Refer <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options</p>
-      <p>If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.</p>
-
-      <h3>CSS and JS References</h3>
-
-      <h4>CSS:</h4>
-      <p>Add the base layout style from:</p>
-      <ul>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/download-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/download-card.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/project-detail.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/project-detail.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/projectdetails.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/projectdetails.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card-with-and-without-image.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card-with-and-without-image.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-card-slider.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-card-slider.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/project-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/project-page.min.css</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css</a></li>
-      </ul>
-
-      <h4>JS:</h4>
-      <ul>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smoothbgchange.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smoothbgchange.min.js</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/font-resize.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/font-resize.min.js</a></li>
-        <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
-      </ul>
-
-      <p>Add the following external libraries:</p>
-      <ul>
-        <li>Swiper (<a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a>)</li>
-        <li>GSAP (<a href="https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo">https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo</a>)</li>
-      </ul>
-
-      <h2>Changelog</h2>
-      <p>1.0 — Released component</p>
-
-      <ProjectPage
-        herodata={caption.herodata}
-        title={caption.title}
-        content={caption.content}
-        active={"default"}
-        imgsrc={caption.imgsrc}
-        imgalt={caption.imgalt}
-        videosrc={caption.videosrc}
-        topHeading={caption.topHeading}
-        topParagraph={caption.topParagraph}
-        topParagraph1={caption.topParagraph1}
-        whatwedoheader={caption.whatwedoheader}
-        relatedHeading={caption.relatedHeading}
-        whatwedodescription={caption.whatwedodescription}
-        download={caption.download}
-        readmore={caption.readmore}
-        downloadTitle={caption.downloadTitle}
-        downloadTitle1={caption.downloadTitle1}
-        downloadTitle2={caption.downloadTitle2}
-        downloadTitle3={caption.downloadTitle3}
-        downloadTitle4={caption.downloadTitle4}
-        downloadTitle5={caption.downloadTitle5}
-        downloadTitle6={caption.downloadTitle6}
-        footerData={footerData(locale)}
-        locale={locale}
-        leftNavigationData={leftNavigationData}
-        navigationData={navigationData}
-        rightNavigationData={rightNavigationData}
-        menuData={menuData(locale)}
-        languageswitcherData={Languageswitcher(locale)}
-        locationData={getLocationDataForLocale(locale)}
-        langSelect={getSelectlanguage(locale)}
-        backcaption={getBackForLocale(locale)}
-        siteTitleData={getSiteTitle(locale)}
-        logo={logo}
-        logowhite={logowhite}
-        impactHead={caption.impactHead}
-        title1={caption.title1}
-        title2={caption.title2}
-        title3={caption.title3}
-        title4={caption.title4}
-        title5={caption.title5}
-        title6={caption.title6}
-        title7={caption.title7}
-        subtitle1={caption.subtitle1}
-        subtitle2={caption.subtitle2}
-        subtitle3={caption.subtitle3}
-        subtitle4={caption.subtitle4}
-        subtitle5={caption.subtitle5}
-        subtitle6={caption.subtitle6}
-        subtitle7={caption.subtitle7}
-        buttonProjectInfo={caption.buttonProjectInfo}
-        supportHeading={caption.supportHeading}
-        exploreHeading={caption.exploreHeading}
-        exploreMoreData={caption.contentdata}
-        exploreMoreBtn={caption.storyBtn}
-        statsliderdata={statCaption}
-        listData={caption.listData}
-        {...args}
-      ></ProjectPage>
-    </>
-  );
-};
+      const navigationData = getNavLinks(locale);
+      const leftNavigationData = navigationData.filter(
+        (item) => item.position === "left"
+      );
+      const rightNavigationData = navigationData.filter(
+        (item) => item.position === "right"
+      );
+      const siteTitleData = getSiteTitle(locale);
+      const statCaption = statsArray(locale);
+      return (
+        <ProjectPage
+          herodata={caption.herodata}
+          title={caption.title}
+          content={caption.content}
+          active={"default"}
+          imgsrc={caption.imgsrc}
+          imgalt={caption.imgalt}
+          videosrc={caption.videosrc}
+          topHeading={caption.topHeading}
+          topParagraph={caption.topParagraph}
+          topParagraph1={caption.topParagraph1}
+          whatwedoheader={caption.whatwedoheader}
+          relatedHeading={caption.relatedHeading}
+          whatwedodescription={caption.whatwedodescription}
+          download={caption.download}
+          readmore={caption.readmore}
+          downloadTitle={caption.downloadTitle}
+          downloadTitle1={caption.downloadTitle1}
+          downloadTitle2={caption.downloadTitle2}
+          downloadTitle3={caption.downloadTitle3}
+          downloadTitle4={caption.downloadTitle4}
+          downloadTitle5={caption.downloadTitle5}
+          downloadTitle6={caption.downloadTitle6}
+          footerData={footerData(locale)}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          siteTitleData={getSiteTitle(locale)}
+          logo={logo}
+          logowhite={logowhite}
+          impactHead={caption.impactHead}
+          title1={caption.title1}
+          title2={caption.title2}
+          title3={caption.title3}
+          title4={caption.title4}
+          title5={caption.title5}
+          title6={caption.title6}
+          title7={caption.title7}
+          subtitle1={caption.subtitle1}
+          subtitle2={caption.subtitle2}
+          subtitle3={caption.subtitle3}
+          subtitle4={caption.subtitle4}
+          subtitle5={caption.subtitle5}
+          subtitle6={caption.subtitle6}
+          subtitle7={caption.subtitle7}
+          buttonProjectInfo={caption.buttonProjectInfo}
+          supportHeading={caption.supportHeading}
+          exploreHeading={caption.exploreHeading}
+          exploreMoreData={caption.contentdata}
+          exploreMoreBtn={caption.storyBtn}
+          statsliderdata={statCaption}
+          listData={caption.listData}
+          {...args}
+        ></ProjectPage>
+      );
+}
 
 export const ProjectPageStory = Template.bind({});
+ProjectPageStory.storyName = "Project page";
 
-<ProjectPageStory
-  args={{}}
-  parameters={{
-    layout: "fullscreen",
-    docs: {
-      story: {
-        inline: false,
-        iframeHeight: "100%",
-      },
-    },
-    chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-  }}
-/>;

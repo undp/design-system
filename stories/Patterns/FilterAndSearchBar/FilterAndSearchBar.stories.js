@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import FilterAndSearchBar from "./FilterAndSearchBar";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       return "Category";
@@ -20,7 +20,7 @@ export const getCaptionForLocale = (locale) => {
       return "Category";
   }
 };
-export const getCaptionForClearLocale = (locale) => {
+const getCaptionForClearLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = "Clear All";
@@ -40,7 +40,7 @@ export const getCaptionForClearLocale = (locale) => {
       return "Clear All";
   }
 };
-export const getCaptionForActiveLocale = (locale) => {
+const getCaptionForActiveLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = "Active Filters:";
@@ -61,7 +61,7 @@ export const getCaptionForActiveLocale = (locale) => {
   }
 };
 
-export const getButtonForLocale = (locale) => {
+const getButtonForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = { close: "Close", sort: "Search and filter" };
@@ -93,51 +93,30 @@ export default {
   },
   args: {
     Height: "Auto height",
-  }
-}
+  },
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+<h1>Filter and Search Sidebar</h1>
+<p>The Filter and Search option allows the user to apply filters to the search section.</p>
 
-const Template = (args, { globals: { locale } }) => {
-  const caption = getCaptionForLocale(locale);
-  return <FilterAndSearchBar label={caption.detail1} {...args}></FilterAndSearchBar>;
-}
+<h3>Overview</h3>
+<p>This is a combination of several multi-select boxes with a search input field expanding on focus.</p>
 
-export const FilterAndSearchBarStory = Template.bind({});
-FilterAndSearchBarStory.args = {
-  Height: "Auto height",
-};
-// Documentation content
-FilterAndSearchBarStory.parameters = {
-  docs: {
-    description: {
-      component: `
+<h4>When to use:</h4>
+<p>When filters are to be added to the search bar.</p>
 
+<h3>Formatting</h3>
 
-# Filter and search sidebar
+<h4>Default</h4>
+<p>The search bar is rectangular-shaped with a search icon. The active filters are chips with a cross.</p>
 
-The Filter and Search option allows the user to apply filters to the search section.
+<h3>Behaviors</h3>
 
-### Overview
-
-This is the combination of several multi-select boxes with a search input field expanding on focus
-l
-
-#### When to use:
-
-When filters are to be added to the search bar.
-
-### Formatting
-
-#### Default
-
-The search bar is rectangular shaped with a search icon. The active filters are chips with a cross.
-
-### Behaviors
-
-#### States
-
-This is the default state where the user can search using a particular keyword. This indicates the search bar is ready to search.
-
-Select: The search bar having a horizontal line below the search icon indicates that the search bar is in an open state.
+<h4>States</h4>
+<p>This is the default state where the user can search using a particular keyword. This indicates the search bar is ready to search.</p>
+<p><strong>Select:</strong> The search bar having a horizontal line below the search icon indicates that the search bar is in an open state.</p>
 
 <Canvas>
   <Story name="Filter and search sidebar">
@@ -160,101 +139,141 @@ Select: The search bar having a horizontal line below the search icon indicates 
   </Story>
 </Canvas>
 
-### Usage:
+<h3>Usage:</h3>
+<ul>
+  <li>Copy HTML from the HTML tab of the canvas and also include the CSS and JS files listed below.</li>
+  <li>Initialize the search, multi-select, and filter by calling functions <code>expandSearch()</code>, <code>multiSelect()</code>, and <code>toggleFilter()</code> respectively.</li>
+  <li>Custom code can be triggered by available Custom Events on the filter items. See <strong>Custom Events</strong> and <strong>Custom Event Data</strong> below.</li>
+</ul>
 
-- Copy HTML from the HTML tab of canvas and also include the css and Js files listed below.
-- Initialize the search, multi-select and filter by calling functions expandSearch(), multiSelect(), toggleFilter() respectively.
-- Custom code can be triggered by available Custom Events on the filter items. See **Custom Events** and **Custom Event Data** below.
+<hr />
 
----
+<h3>Custom Events:</h3>
 
-### Custom Events:
-
-- **multiSelectToggle**: When a multi-select item is toggled open or closed:
+<ul>
+  <li><strong>multiSelectToggle:</strong> When a multi-select item is toggled open or closed:
+    <pre>
+<code>
+{/* $(document).on('multiSelectToggle', (e) => {
+  ...Your custom code...
+}); */}
+</code>
+    </pre>
+  </li>
+  <li><strong>multiSelectInputToggle:</strong> When a checkbox in the multi-select is toggled on or off:
+    <pre>
+<code>
   
-  $(document).on('multiSelectToggle', (e) => {
-    ...Your custom code...
-  });
-  
-- **multiSelectInputToggle**: When a checkbox in the multi-select is toggled on or off:
-  
-  $(document).on('multiSelectInputToggle', (e) => {
-    ...Your custom code...
-  });
-  
-- **filterSearchChipRemoval**: When a search chip is removed:
-  
-  $(document).on('filterSearchChipRemoval', (e) => {
-    ...Your custom code...
-  });
-  
-- **filterSearchClear**: When the Search "Clear all" link is clicked:
-  
-  $(document).on('filterSearchClear', (e) => {
-    ...Your custom code...
-  });
-  
+{/* $(document).on('multiSelectInputToggle', (e) => {
+  ...Your custom code...
+}); */}
+</code>
+    </pre>
+  </li>
+  <li><strong>filterSearchChipRemoval:</strong> When a search chip is removed:
+    <pre>
+<code>
+  {/* $(document).on('filterSearchChipRemoval', (e) => {
+  ...Your custom code...
+}); */}
+</code>
+    </pre>
+  </li>
+  <li><strong>filterSearchClear:</strong> When the Search "Clear all" link is clicked:
+    <pre>
+<code>
+  {/* $(document).on('filterSearchClear', (e) => {
+  ...Your custom code...
+}); */}
+</code>
+    </pre>
+  </li>
+</ul>
 
-### Custom Event Data:
+<h3>Custom Event Data:</h3>
+<p>Each of the custom events contains specific data.</p>
 
-Each of the custom events contains specific data.
+<h4>The <code>multiSelectInputToggle</code> event data contains:</h4>
+<ul>
+  <li><code>checkbox_id:</code> (string) The ID of the triggering input.</li>
+  <li><code>state:</code> (boolean) The current state of the triggering input, true or false.</li>
+  <li><code>toggle_state:</code> (string) whether the triggering input is "checked" or "unchecked".</li>
+  <li><code>selected:</code> (boolean) true if the input is selected.</li>
+  <li><code>unselected:</code> (boolean) true if the input is unselected.</li>
+</ul>
 
-The **multiSelectInputToggle** event data contains:
+<h4>The <code>multiSelectToggle</code> event data contains:</h4>
+<ul>
+  <li><code>select_trigger_dataset_id:</code> (string) The Dataset ID of the triggering button (if one is set).</li>
+  <li><code>select_trigger_id:</code> (string) The ID of the triggering button, (if one is set).</li>
+  <li><code>state:</code> (string) The current state of the triggering select group, "open" or "closed".</li>
+  <li><code>open:</code> (boolean) true if the list is open.</li>
+  <li><code>closed:</code> (boolean) true if the list is closed.</li>
+  <li><code>target:</code> The target select item that is toggled open and closed by the triggering button.</li>
+</ul>
 
-- checkbox_id: (string) The ID of the triggering input.
-- state: (boolean) The current state of the triggering input, true or false.
-- toggle_state: (string) whether the triggering input is "checked" or "unchecked".
-- selected: (boolean) true if the input is selected.
-- unselected: (boolean) true if the input is unselected.
+<h4>The <code>filterSearchChipRemoval</code> event data contains:</h4>
+<ul>
+  <li><code>chip_id:</code> (string) The ID of the chip being removed.</li>
+</ul>
 
-The **multiSelectToggle** event data contains:
+<h4>The <code>filterSearchClear</code> event does not contain any specific data:</h4>
 
-- select_trigger_dataset_id: (string) The Dataset ID of the triggering button (if one is set).
-- select_trigger_id: (string) The ID of the triggering button, (if one is set).
-- state: (string) The current state of the triggering select group, "open" or "closed".
-- open: (boolean) true if the list is open.
-- closed: (boolean) true if the list is closed.
-- target: The target select item that is toggled open and closed by the triggering button.
+<hr />
 
-The **filterSearchChipRemoval** event data contains:
+<h3>CSS and JS References</h3>
 
-- chip_id: (string) The ID of chip being removed.
+<h4>CSS:</h4>
+<p>Add the base layout style from:</p>
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/filter-and-search-bar.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/filter-and-search-bar.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/multi-select.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/multi-select.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/checkbox.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/checkbox.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/radio.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/radio.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/search-expand.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/search-expand.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/chips.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/chips.min.css</a></li>
+</ul>
 
-The **filterSearchClear** event does not contain any specific data:
+<h4>JS:</h4>
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/filter-search-bar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/filter-search-bar.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/multi-select.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/multi-select.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/expand-search.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/expand-search.min.js</a></li>
+</ul>
 
----
+<h3>Interactions</h3>
+<ul>
+  <li>The checked state is applied to the entire option.</li>
+  <li>The hover state is applied to the entire option.</li>
+  <li>By clicking on the X icon, the filters are removed.</li>
+</ul>
 
-### CSS and JS References
+<h3>Changelog</h3>
+<p>1.0 — Released component</p>
 
-#### CSS:
+            </>
+        )
+    }
+  }
+}
 
-Add the base layout style from
+const Template = (args, { globals: { locale } }) => {
+  const caption = getCaptionForLocale(locale);
+  const buttonData = getButtonForLocale(locale);
+  const clearText = getCaptionForClearLocale(locale);
+  const activeFilterText = getCaptionForActiveLocale(locale);
+  return (
+    <FilterAndSearchBar
+      locale={locale}
+      buttonData={buttonData}
+      args={args}
+      clearText={clearText}
+      activeFilterText={activeFilterText}
+      data={caption}
+    ></FilterAndSearchBar>
+  );
+}
 
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/filter-and-search-bar.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/multi-select.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/checkbox.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/radio.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/search-expand.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/chips.min.css
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/filter-search-bar.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/multi-select.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/expand-search.min.js
-
-### Interactions
-
-- The checked state is applied to the entire option.
-- The hover state is applied to the entire option.
-- By clicking on the X icon, the filters are removed.
-
-### Changelog
-
-1.0 — Released component
-
-`,
-    },
-  },
-};
+export const FilterAndSearchBarStory = Template.bind({});
+FilterAndSearchBarStory.storyName = "Filter and Search Bar";

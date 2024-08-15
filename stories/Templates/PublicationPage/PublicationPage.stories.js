@@ -16,7 +16,7 @@ import {
   getSelectlanguage,
 } from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.js";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -731,149 +731,236 @@ export default {
       },
     },
   },
-};
+  parameters: {
+    docs: {
+        page: () => (
+            <>
+<style>
+  {`
+  .sbdocs-preview {display: none}
+  `}
+</style>
 
-const Template = (args, { globals: { locale, accent } }) => {
+<h1>Publication Page</h1>
+
+<p>A Publication page has information about important things like copyright, publication details, and legal disclaimers.</p>
+
+<h3>Overview</h3>
+
+<p>In the Publication Page, the user can get important information such as copyright, publication details, and legal disclaimers. Mockup - <a href="https://www.undp.org/publications/fossil-fuel-subsidy-reform-lessons-and-opportunities">https://www.undp.org/publications/fossil-fuel-subsidy-reform-lessons-and-opportunities</a></p>
+
+<h3>Template Structure</h3>
+
+<p>The following components are used to create the “Article Page” template in the design system:</p>
+
+<ul>
+  <li>Global header</li>
+  <li>Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.</li>
+  <li>Download Card - Download the document in the user preferred language.</li>
+  <li>Read more links - Help users quickly understand the context in which they are placed.</li>
+  <li>Post block without description - Defines a section of information data with some items - Header Title, Date.</li>
+  <li>Paragraph</li>
+  <li>Menu links with label - Consists of multiple clickable items placed at the top of the page.</li>
+  <li>Featured Content Cards - Featured card groups that will have CTA links (this can be just #).</li>
+  <li>View more buttons for showing more featured cards - Call to action that will be performed when the user clicks it.</li>
+  <li>Standard footer</li>
+</ul>
+
+<h3>Performance</h3>
+
+<p>The page performance will be optimized by considering the following:</p>
+
+<ul>
+  <li>Lazy load</li>
+  <li>Use appropriate media renditions based on the client’s viewpoint.</li>
+  <li>Load common/static elements asynchronously (static navigation, menus, countries list, etc.)</li>
+  <li>Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc.</li>
+  <li>Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.</li>
+</ul>
+
+<h3>Usage</h3>
+
+<ul>
+  <li>Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section.</li>
+  <li>Initialize navigation, language switcher, accordion, filter by calling the below-mentioned functions:</li>
+  <ul>
+    <li>navigationInitialize();</li>
+    <li>langSwitch();</li>
+    <li>accordion('[data-accordion="mobile"]', '.footer-panel', 'active');</li>
+  </ul>
+  <li>If you want to add left-right animation then add <code>data-viewport="true"</code> attribute to your HTML element.</li>
+</ul>
+
+
+<h4>CSS and JS References</h4>
+
+<h5>CSS:</h5>
+
+<p>Add the base layout style from:</p>
+
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/progress.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/progress.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar-data.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/sidebar-data.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/fluid-image-size-carousel.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/fluid-image-size-carousel.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/generic-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/generic-page.min.css</a></li>
+</ul>
+
+<h5>JS:</h5>
+
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/scrolling-progressbar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/scrolling-progressbar.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+</ul>
+
+<p>Add the following external libraries:</p>
+
+<ul>
+  <li>Swiper - <a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a></li>
+  <li>GSAP - <a href="https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo">https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo</a></li>
+</ul>
+
+<h3>Changelog</h3>
+
+<p>1.0 — Released component</p>
+
+<Canvas>
+  <Story
+    name="Publication page"
+    parameters={{
+      layout: "fullscreen",
+      docs: {
+        story: {
+          inline: false,
+          iframeHeight: "100%",
+        },
+      },
+      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
+    }}
+  >
+    {(args, { globals: { locale, accent } }) => {
+      const caption = getCaptionForLocale(locale);
+      const navigationData = getNavLinks(locale);
+      const leftNavigationData = navigationData.filter(
+        (item) => item.position === "left"
+      );
+      const rightNavigationData = navigationData.filter(
+        (item) => item.position === "right"
+      );
+      return (
+        <PublicationPage
+          data={caption.postheaderdata}
+          active={"default"}
+          download={caption.download}
+          readmore={caption.readmore}
+          image
+          blockHeader={caption.header}
+          blockDescription={caption.description}
+          paragraphTop1={caption.paragraphTop1}
+          paragraphTop2={caption.paragraphTop2}
+          paragraphTop3={caption.paragraphTop3}
+          buttontype={caption.buttonname}
+          relatedPublicationHeading={caption.PublicationHeading}
+          ContentCardWithOutImageData={caption.contentdata}
+          footerData={footerData(locale)}
+          logo={logo}
+          logowhite={logowhite}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          menuTitle1={caption.menuTitle1}
+          menuTitle2={caption.menuTitle2}
+          menuTitle3={caption.menuTitle3}
+          menuTitle4={caption.menuTitle4}
+          menuData1={caption.menuData1}
+          menuData2={caption.menuData2}
+          menuData3={caption.menuData3}
+          menuData4={caption.menuData4}
+          FeaturedCardData={caption.featuredcontentdata}
+          {...args}
+        ></PublicationPage>
+      );
+    }}
+  </Story>
+</Canvas>
+            </>
+        )
+    }
+  }
+}
+
+const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
-  const navigationData = getNavLinks(locale);
-  const leftNavigationData = navigationData.filter(
-    (item) => item.position === 'left'
-  );
-  const rightNavigationData = navigationData.filter(
-    (item) => item.position === 'right'
-  );
-
-<style>{`
-  .sbdocs-preview { display: none; }
-`}</style>
-
-  return (
-    <PublicationPage
-      data={caption.postheaderdata}
-      active={'default'}
-      download={caption.download}
-      readmore={caption.readmore}
-      image
-      blockHeader={caption.header}
-      blockDescription={caption.description}
-      paragraphTop1={caption.paragraphTop1}
-      paragraphTop2={caption.paragraphTop2}
-      paragraphTop3={caption.paragraphTop3}
-      buttontype={caption.buttonname}
-      relatedPublicationHeading={caption.PublicationHeading}
-      ContentCardWithOutImageData={caption.contentdata}
-      footerData={footerData(locale)}
-      logo={logo}
-      logowhite={logowhite}
-      locale={locale}
-      leftNavigationData={leftNavigationData}
-      navigationData={navigationData}
-      rightNavigationData={rightNavigationData}
-      menuData={menuData(locale)}
-      languageswitcherData={Languageswitcher(locale)}
-      locationData={getLocationDataForLocale(locale)}
-      langSelect={getSelectlanguage(locale)}
-      backcaption={getBackForLocale(locale)}
-      menuTitle1={caption.menuTitle1}
-      menuTitle2={caption.menuTitle2}
-      menuTitle3={caption.menuTitle3}
-      menuTitle4={caption.menuTitle4}
-      menuData1={caption.menuData1}
-      menuData2={caption.menuData2}
-      menuData3={caption.menuData3}
-      menuData4={caption.menuData4}
-      FeaturedCardData={caption.featuredcontentdata}
-      {...args}
-    ></PublicationPage>
-  );
-};
+      const navigationData = getNavLinks(locale);
+      const leftNavigationData = navigationData.filter(
+        (item) => item.position === "left"
+      );
+      const rightNavigationData = navigationData.filter(
+        (item) => item.position === "right"
+      );
+      return (
+        <PublicationPage
+          data={caption.postheaderdata}
+          active={"default"}
+          download={caption.download}
+          readmore={caption.readmore}
+          image
+          blockHeader={caption.header}
+          blockDescription={caption.description}
+          paragraphTop1={caption.paragraphTop1}
+          paragraphTop2={caption.paragraphTop2}
+          paragraphTop3={caption.paragraphTop3}
+          buttontype={caption.buttonname}
+          relatedPublicationHeading={caption.PublicationHeading}
+          ContentCardWithOutImageData={caption.contentdata}
+          footerData={footerData(locale)}
+          logo={logo}
+          logowhite={logowhite}
+          locale={locale}
+          leftNavigationData={leftNavigationData}
+          navigationData={navigationData}
+          rightNavigationData={rightNavigationData}
+          menuData={menuData(locale)}
+          languageswitcherData={Languageswitcher(locale)}
+          locationData={getLocationDataForLocale(locale)}
+          langSelect={getSelectlanguage(locale)}
+          backcaption={getBackForLocale(locale)}
+          menuTitle1={caption.menuTitle1}
+          menuTitle2={caption.menuTitle2}
+          menuTitle3={caption.menuTitle3}
+          menuTitle4={caption.menuTitle4}
+          menuData1={caption.menuData1}
+          menuData2={caption.menuData2}
+          menuData3={caption.menuData3}
+          menuData4={caption.menuData4}
+          FeaturedCardData={caption.featuredcontentdata}
+          {...args}
+        ></PublicationPage>
+      );
+}
 
 export const PublicationPageStory = Template.bind({});
-PublicationPageStory.args = {};
-
-// Documentation content
-PublicationPageStory.parameters = {
-  docs: {
-    description: {
-      component: `
-# Publication Page
-
-A Publication page has information about important things like copyright, publication details, and legal disclaimers.
-
-### Overview
-
-In the Publication Page, the user can get important information such as copyright, publication details, and legal disclaimers. Mockup - https://www.undp.org/publications/fossil-fuel-subsidy-reform-lessons-and-opportunities
-
-### Template Structure
-
-The following components are used to create the “Article Page” template in the design system
-
-- Global header
-- Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.
-- Download Card - Download the document in the user preferred language
-- Read more links - Help users quickly understand the context in which they are placed
-- Post block without description - Defines a section of information data with some items - Header Title, Date.
-- Paragraph
-- Menu links with label - Consists of multiple clickable items placed at the top of the page
-- Featured Content Cards - Featured card groups that will have CTA links (this can be just #).
-- View more buttons for showing more featured cards: Call to action that will be performed when the user clicks it.
-- Standard footer
-
-### Performance
-
-- The page performance will be optimized by considering the following:
-- Lazy load
-- Use appropriate media renditions based on the client’s viewpoint.
-- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
-- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
-- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.
-
-### Usage
-
-- Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
-- Initialize navigation, language switcher, accordion, filter by calling below mentioned functions.
-  - navigationInitialize();
-  - langSwitch();
-  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
-- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
-
-#### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/global-header.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/publication-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/publication-page.min.css
-
-#### Js:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sticky.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
-
-### Changelog
-
-- 1.0 — Released component
-      `,
-    },
-  },
-};
+PublicationPageStory.storyName = "Publication page";

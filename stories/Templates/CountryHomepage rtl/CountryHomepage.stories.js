@@ -19,7 +19,7 @@ import {
   getSelectlanguage,
 } from "../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader.stories.js";
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -600,257 +600,123 @@ export const getCaptionForLocale = (locale) => {
 };
 
 export default {
-  title: "Templates/Country homepage rtl"
-};
-
-const Template = (args, { globals: { locale } }) => {
-  const captions = getCaptions(locale);
-  return (
-    <CountryHomepage
-      {...args}
-      titlename={captions.titlename}
-      text={captions.text}
-      btnlabel={captions.btnlabel}
-      subtitle={captions.subtitle}
-      imgsrc={captions.imgsrc}
-      imgalt={captions.imgalt}
-      videosrc={captions.videosrc}
-      featureddata={captions.featureddata}
-      headertext={captions.headertext}
-      tag={captions.tag}
-      label1={captions.label1}
-      label2={captions.label2}
-      pagewidecardbtn={captions.pagewidecardbtn}
-      whatwedoheader={captions.whatwedoheader}
-      whatwedodescription={captions.whatwedodescription}
-      statHeading={captions.statHeading}
-      storiesHeading={captions.storiesHeading}
-      takeAcrtionHead={captions.takeAcrtionHead}
-      storyBtn={captions.storyBtn}
-    />
-
-  );
-};
-
-export const CountryHomepageStory = Template.bind({});
-CountryHomepageStory.args = {
-  titlename: [
-    "Sierra Leone Youth",
-    <br />,
-    "Minister Launches",
-    <br />,
-    "2020 Social Good Summit",
-  ],
-  text: "Sierra Leone",
-  btnlabel: "READ MORE",
-  subtitle:
-    "As we ‘come to our feet’ to respond to public health issues at the borders, key messages on Covid-19 should be reinforced, border security enhanced…",
-  imgsrc: BackgroundImg,
-  imgalt: BackgroundImg,
-  videosrc: BackgroundVideo,
-  featureddata: [
-    {
-      contenttile: "SUCCESS STORY",
-      contentname:
-        "Communities score joint UNDP-WFP supported Peacebuilding Fund Project 80%",
-      descriptionText:
-        "Building peace and livelihoods to achieve and sustain development.",
-      button: "READ MORE",
-      type: "color",
-      scale: "medium",
-    },
-    {
-      contenttile: "PUBLICATION",
-      contentname:
-        "Sierra Leone COVID-19: United Nations Socio-economic Response Plan Response",
-      descriptionText:
-        "A UN country plan to help position Sierra Leone on a surer path towards attaining sustainable development in the wake of COVID-19",
-      button: "DOWNLOAD",
-      type: "color",
-      scale: "medium",
-    },
-    {
-      contenttile: "Article",
-      contentname:
-        "72 small arms destroyed by rural communities in Sierra Leone with support from the ‘Weapons for Development’ Initiative",
-      descriptionText:
-        "The Weapons for Development initiative - OCWAR-T project is an ECOWAS project co-funded by the EU and the GFFO",
-      button: "READ MORE",
-      imgback: img,
-      type: "Image",
-      scale: "large",
-    },
-    {
-      contenttile: "COVID-19 Response",
-      contentname:
-        "UNDP Supports Joint Border Simulation Exercise to Promote Safe Trade",
-      descriptionText: "As we 'come to our feet’ to respond to public health issues at the borders, key messages on Covid-19 should be reinforced, border security enhanced",
-      button: "READ MORE",
-      type: "color",
-      scale: "medium",
-    },
-    {
-      contenttile: "CONTENT TAG",
-      contentname: "Sierra Leone National Human Development Report 2019",
-      descriptionText:
-        " “Even in the face of several human tragedies and financial resource constraints, Sierra Leone has demonstrated resilience that",
-      button: "READ MORE",
-      type: "color",
-      scale: "medium",
-    },
-    {
-      contenttile: "CONTENT TAG",
-      contentname: "Sierra Leone National Human Development Report 2019",
-      descriptionText:
-        " “Even in the face of several human tragedies and financial resource constraints, Sierra Leone has demonstrated resilience that",
-      button: "READ MORE",
-      imgback: img,
-      type: "image",
-      scale: "medium",
-    },
-  ],
-  headertext: ["Featured", <br />, "Local", <br />, "Stories"],
-  tag: "VIDEO",
-  label1: "UNDP’s Country Programme for Sierra Leone: 2020 to 2023",
-  label2: [
-    "The UNDP Executive Board approved the Sierra Leone’s 4-year Country Programme Document (CPD) on the 4th September 2020. The CPD is a core strategic document that guides UNDP’s development assistance to the Government of Sierra Leone (GOSL).",
-    <br />,
-    "The CPD will focus on enhancing the ability of state institutions to deliver services to citizens using a coordinated and sustainable",
-  ],
-  pagewidecardbtn: "WATCH VIDEO",
-  whatwedoheader: ["What", <br />, "We do"],
-  whatwedodescription:
-    "UNDP has had a presence in Sierra Leone since 1965, working in partnership with the Government of Sierra Leone, development partners, UN agencies, civil society and local communities, contributing to inclusive growth, sustainabily, and efficient democratic governance.",
-  statHeading: "Our Impact",
-  storiesHeading: "Stories",
-  takeAcrtionHead: "Take Action",
-  storyBtn: "SEE ALL STORIES",
-};
-
-CountryHomepageStory.parameters = {
-  docs: {
-    description: {
-      component: `
- 
+  title: "Templates/Country homepage rtl",
+  parameters: {
+    docs: {
+        page: () => (
+            <>
 
 <style>
-  {
+  {`
   .sbdocs-preview {display: none}
-  }
+  `}
 </style>
+ <h1>Country Homepage</h1>
 
-# Country Homepage
+<p>A country homepage has all the list of content related to one particular country.</p>
 
-A country homepage has all the list of content related to one particular country.
+<h3>Overview</h3>
+<p>
+    A country homepage has a content list related to one specific country. This includes content lists like articles, publications, success stories, blogs, etc.
+    Mock Up: <a href="https://undp-design-system.azurewebsites.net/country-page">Country Page Mockup</a>
+</p>
 
-### Overview
+<h3>Template Structure</h3>
+<p>The following components are used to create the “Article Page” template in the design system:</p>
+<ul>
+    <li>Country header</li>
+    <li>Homepage Hero - Homepage Hero images are large sized images with text in front of the image and present at the top of the homepage.</li>
+    <li>Group of featured cards - Featured card groups that will have CTA links (this can be just #).</li>
+    <li>Background image(color) with text</li>
+    <li>Title for success stories</li>
+    <li>Pagewide featured content card</li>
+    <li>Group of content cards</li>
+    <li>Secondary button, no arrow</li>
+    <li>Stats slider - Group of cards arranged horizontally in two rows that slide in from opposite directions on page scroll.</li>
+    <li>Text title - Take action</li>
+    <li>Group of image reveal cards</li>
+    <li>Standard footer</li>
+    <li>Performance</li>
+</ul>
+<p>The page performance will be optimized by considering the following:</p>
+<ul>
+    <li>Lazy load</li>
+    <li>Use appropriate media renditions based on the client’s viewpoint.</li>
+    <li>Load common/static elements asynchronously (static navigation, menus, countries list, etc)</li>
+    <li>Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)</li>
+    <li>Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.</li>
+</ul>
 
-A country homepage has a content list related to one specific country. This includes content lists like articles, publications, success stories, blogs, etc.
-Mock Up: https://undp-design-system.azurewebsites.net/country-page
+<h3>Usage</h3>
+<p>Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section.</p>
+<p>Initialize navigation, language switcher, accordion, statsHover, swiper, and parallax effect by calling below mentioned functions:</p>
+<ul>
+    <li>navigationInitialize();</li>
+    <li>langSwitch();</li>
+    <li>accordion('[data-accordion="mobile"]', '.footer-panel', 'active');</li>
+    <li>swiper('.stats-card-slider');</li>
+    <li>parallaxEffect('.stats-card-slider');</li>
+</ul>
+<p>Refer <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</p>
+<p>Refer <a href="https://github.com/undp/design-system/wiki/Parallax-documentation">this document</a> for Parallax integration & options.</p>
+<p>If you want to add left-right animation then add <code>data-viewport=”true”</code> attribute to your HTML element.</p>
 
-### Template Structure
+<h4>CSS and JS References</h4>
 
-The following components are used to create the “Article Page” template in the design system
+<h5>CSS:</h5>
+<p>Add the base layout style from <code>dist/css/base-minimal.min.css</code></p>
+<ul>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css">Country Site Header</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css">Language Switcher</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css">Menu</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css">Mega Menu</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css">Mobile Nav</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepage-hero.min.css">Homepage Hero</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">Breadcrumbs</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css">Heading Big</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css">Content Card</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card-with-and-without-image.min.css">Content Card With and Without Image</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css">Featured Content Card</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">CTA Link</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css">Page Wide Card</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-card.min.css">Image Card</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-reveal-cards.min.css">Image Reveal Cards</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats.min.css">Stats</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css">Stats Cards</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css">Stats Slider</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-group.min.css">Input Group</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">Buttons</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">Newsletter Signup</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">Accordion</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">Footer</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/countryhome-page.min.css">Country Homepage</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css">Article Page</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">Swiper</a></li>
+</ul>
 
-- Country header
-- Homepage Hero - Homepage Hero images are large sized images with text in front of the image and present at the top of the homepage.
-- Group of featured cards - Featured card groups that will have CTA links (this can be just #).
-- Background image(color) with text
-- Title for success stories
-- Pagewide featured content card
-- Group of content cards
-- Secondary button, no arrow
-- Stats slider - Group of cards arranged horizontally in two rows that slide in from opposite directions on page scroll.
-- Text title - Take action
-- Group of image reveal cards
-- Standard footer
-- Performance
-- The page performance will be optimized by considering the following:
-- Lazy load
-- Use appropriate media renditions based on the client’s viewpoint.
-- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
-- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
-- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.
+<h5>JS:</h5>
+<ul>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">Navigation</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">UNDP</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">Language Switcher</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">Accordion</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smooth-bg-change.min.js">Smooth BG Change</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">Swiper</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js">Parallax</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">Viewport</a></li>
+</ul>
 
-### Usage
+<p>Add following external libraries:</p>
+<ul>
+    <li><a href="https://swiperjs.com/get-started">Swiper</a></li>
+    <li><a href="https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo">GSAP</a></li>
+</ul>
 
-- Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
-- Initialize navigation, language switcher, accordion, statsHover, swiper and parallax effect by calling below mentioned functions.
-  - navigationInitialize();
-  - langSwitch();
-  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
-  - swiper('.stats-card-slider');
-  - parallaxEffect('.stats-card-slider');
-- Refer [this document](https://github.com/undp/design-system/wiki/Swiper-documentation) for Swiper integration & options
-- Refer [this document](https://github.com/undp/design-system/wiki/Parallax-documentation) for Parallax integration & options
-- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
-
-#### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from dist/css/base-minimal.min.css
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepage-hero.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card-with-and-without-image.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-reveal-cards.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-group.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/countryhome-page.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smooth-bg-change.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
-
-Add following external libraries
-
-- Swiper (https://swiperjs.com/get-started)
-- GSAP (https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo)
-
-### Changelog
-
-1.0 — Released component
-
+<h3>Changelog</h3>
+<p>1.0 — Released component</p>
 <Canvas>
   <Story
     name="Country homepage rtl"
-    parameters={{
-      layout: "fullscreen",
-      docs: {
-        story: {
-          inline: false,
-          iframeHeight: "100%",
-        },
-      },
-      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-    }}
   >
     {(args, { globals: { locale, accent } }) => {
       const caption = getCaptionForLocale(locale);
@@ -882,7 +748,7 @@ Add following external libraries
           takeactioncard={takeactioncard(locale)}
           statHeading={caption.statHeading}
           storiesHeading={caption.storiesHeading}
-          featureddataafterwedo={contentcardimagesdata(locale)}
+          // featureddataafterwedo={contentcardimagesdata(locale)}
           StatsSliderData={statssliderdata(locale)}
           footerData={footerData(locale)}
           locale={locale}
@@ -906,7 +772,65 @@ Add following external libraries
   </Story>
 </Canvas>
 
-`,
-      },
-    },
-  };
+            </>
+            
+        )
+    }
+  }
+}
+
+const Template = (args, { globals: { locale, accent } }) => {
+  const caption = getCaptionForLocale(locale);
+  const navigationData = getNavLinks(locale);
+  const leftNavigationData = navigationData.filter(
+    (item) => item.position === "left"
+  );
+  const rightNavigationData = navigationData.filter(
+    (item) => item.position === "right"
+  );
+  const siteTitleData = getSiteTitle(locale);
+  return (
+    <CountryHomepage
+      herotitle={caption.titlename}
+      headingTop={caption.text}
+      herobtnlabel={caption.btnlabel}
+      herosubtitle={caption.subtitle}
+      heroimgsrc={caption.imgsrc}
+      heroimgalt={caption.imgalt}
+      featureddata={caption.featureddata}
+      featureddataafterwedo={caption.featureddataafterwedo}
+      headertext={caption.headertext}
+      PagewidecardTag={caption.tag}
+      PagewidecardTitle={caption.label1}
+      PagewidecardParagraph={caption.label2}
+      PagewidecardBtnlabel={caption.pagewidecardbtn}
+      whatwedoheader={caption.whatwedoheader}
+      whatwedodescription={caption.whatwedodescription}
+      takeactioncard={takeactioncard(locale)}
+      statHeading={caption.statHeading}
+      storiesHeading={caption.storiesHeading}
+      // featureddataafterwedo={contentcardimagesdata(locale)}
+      StatsSliderData={statssliderdata(locale)}
+      footerData={footerData(locale)}
+      locale={locale}
+      leftNavigationData={leftNavigationData}
+      navigationData={navigationData}
+      rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)}
+      languageswitcherData={Languageswitcher(locale)}
+      locationData={getLocationDataForLocale(locale)}
+      langSelect={getSelectlanguage(locale)}
+      backcaption={getBackForLocale(locale)}
+      siteTitleData={getSiteTitle(locale)}
+      logo={logo}
+      logowhite={logowhite}
+      takeAcrtionHead={caption.takeAcrtionHead}
+      storyBtn={caption.storyBtn}
+      {...args}
+    ></CountryHomepage>
+  );
+}
+
+export const CountryHomepageRTL = Template.bind({});
+CountryHomepageRTL.storyName = "Country Homepage RTL";
+

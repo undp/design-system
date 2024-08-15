@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/addon-docs';
 import { Link } from './Links';
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case 'english':
       return { detail: 'Default link' };
@@ -24,60 +24,73 @@ export default {
   component: Link,
   parameters: {
     docs: {
-      title: 'Foundation/Typography/Links',
+      page: () => (
+        <>
+        <h1>Link</h1>
+          <p>The Link component is used to attach links to the text component.</p>
+
+          <h3>Overview</h3>
+          <p>The Link component defines a hyperlink that is used to link one page to another.</p>
+
+          <h4>When to use:</h4>
+          <p>When hyperlinks are to be attached.</p>
+
+          <h3>Formatting</h3>
+
+          <h4>Default</h4>
+          <p>The Link component consists of the link with a red horizontal line below it.</p>
+
+          <h3>Behaviors</h3>
+
+          <h4>States</h4>
+          <p>There are three states in the Link component: Desktop & Laptop. The component is compatible with tablets and mobile.</p>
+          <p>Desktop & Laptop: The font size of the Link is biggest in Desktop and Laptop.</p>
+
+          <Canvas>
+            <Story name="Links">
+              {(args, { globals: { locale } }) => {
+                const caption = getCaptionForLocale(locale);
+                return (
+                  <>
+                    <Link label={caption.detail} {...args}></Link>
+                  </>
+                );
+              }}
+            </Story>
+          </Canvas>
+
+          <h3>Usage</h3>
+          <ul>
+            <li>Copy the HTML from Canvas page</li>
+          </ul>
+
+          <h3>CSS and JS References</h3>
+
+          <h4>CSS:</h4>
+          <p>Add the base layout style from</p>
+          <ul>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+          </ul>
+
+          <h4>JS:</h4>
+          <p>NA</p>
+
+          <h3>Interactions</h3>
+          <p>By clicking on the link, the current page is forwarded to the next page.</p>
+
+          <h3>Changelog</h3>
+          <p>1.0 — Released component</p>
+
+        </>
+      )
     },
   },
 };
 
-const Template = () => {
-  const locale = 'english'; // Set default locale here or via controls in Storybook
+const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
+  return <Link label={caption.detail} {...args} />;
+}
 
-  return (
-    <div>
-      <h1>Link</h1>
-
-      <h2>Overview</h2>
-      <p>The Link component is used to attach links to the text component.</p>
-
-      <h3>When to use:</h3>
-      <p>Use the Link component to create hyperlinks.</p>
-
-      <h2>Formatting</h2>
-      <h3>Default</h3>
-      <p>The Link component displays a hyperlink with a red horizontal line below it.</p>
-
-      <h2>Behaviors</h2>
-      <h3>States</h3>
-      <p>The Link component has different states for Desktop & Laptop.</p>
-
-      <h4>Desktop & Laptop</h4>
-      <p>The font size of the Link is larger on Desktop and Laptop.</p>
-
-      <Story name="Links">
-        {(args) => <Link label={caption.detail} {...args} />}
-      </Story>
-
-      <h2>Usage</h2>
-      <p>Copy the HTML from the Canvas page to use the Link component.</p>
-
-      <h2>CSS and JS References</h2>
-      <h3>CSS:</h3>
-      <p>Add the base layout style from:</p>
-      <ul>
-        <li>https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</li>
-      </ul>
-
-      <h3>JS:</h3>
-      <p>N/A</p>
-
-      <h2>Interactions</h2>
-      <p>Clicking on the link forwards the current page to the linked page.</p>
-
-      <h2>Changelog</h2>
-      <p>1.0 — Released component</p>
-    </div>
-  );
-};
-
-export const Links = Template.bind({});
+export const LinkStory = Template.bind({});
+LinkStory.storyName = 'Link';

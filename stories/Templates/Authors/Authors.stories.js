@@ -15,7 +15,7 @@ import {
   getSelectlanguage,
 } from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.js";
 
-export const getheadingForLocale = (locale) => {
+const getheadingForLocale = (locale) => {
   switch (locale) {
     case "english":
       return "UNDP Authors";
@@ -35,7 +35,7 @@ export const getheadingForLocale = (locale) => {
   }
 };
 
-export const getCaptionForLocale = (locale) => {
+const getCaptionForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -529,7 +529,7 @@ export const getCaptionForLocale = (locale) => {
       return dummy;
   }
 };
-export const getButtonForLocale = (locale) => {
+const getButtonForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -570,7 +570,7 @@ export const getButtonForLocale = (locale) => {
       return { view: "View more", close: "Close", sort: "Sort & FILTER" };
   }
 };
-export const getfiltertextForLocale = (locale) => {
+const getfiltertextForLocale = (locale) => {
   switch (locale) {
     case "english":
       const engText = {
@@ -608,140 +608,103 @@ export const getfiltertextForLocale = (locale) => {
 };
 
 export default {
-  title: "Templates/Author listing page"
-}
-
-const Template = (args, { globals: { locale } }) => {
-  const filtertext = getfiltertextForLocale(locale);
-  const buttonData = getButtonForLocale(locale);
-  const headingData = getheadingForLocale(locale);
-  const navigationData = getNavLinks(locale);
-  const leftNavigationData = navigationData.filter(
-    (item) => item.position === "left"
-  );
-  const rightNavigationData = navigationData.filter(
-    (item) => item.position === "right"
-  );
-  return (
-    <Authors
-      text={filtertext}
-      buttonData={buttonData}
-      footerData={footerData(locale)}
-      authorData={getCaptionForLocale(locale)}
-      breadcrumbData={breadcrumbData(locale)}
-      headingData={headingData}
-    />
-  );
-};
-
-export const AuthorStory = Template.bind({});
-AuthorStory.args = {};
-AuthorStory.parameters = {
-  docs: {
-    description: {
-    component:
-      `
-
+  title: "Templates/Author listing page",
+  parameters: {
+    docs: {
+        page: () => (
+            <>
 <style>
-  {
+  {`
   .sbdocs-preview {display: none}
-  }
+  `}
 </style>
 
-# Authors Listing
+<h1>Authors Listing</h1>
+<p>An Authors page has all information about every author who is registered on the website.</p>
 
-An Authors page has all information about every author who is registered in the website.
+<h3>Overview</h3>
+<p>Authors page has all the information about every author who is registered on the website. The user will get every information about the authors at one place.</p>
 
-### Overview
+<h3>Template Structure</h3>
+<p>The following components are used to create the “Authors Listing” template in the design system:</p>
+<ul>
+    <li>Global header</li>
+    <li>Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.</li>
+    <li>Title has author name</li>
+    <li>Expanding search bar - Used to search for any specific author</li>
+    <li>Select menu with options (Most posts and Alphabetical)</li>
+    <li>Author Card grid - Has image of the author</li>
+    <li>View more button in case of more content available</li>
+    <li>Standard footer</li>
+</ul>
 
-Authors page has all the information about every author who is registered on the website. The user will get every information about the authors at one place.
+<h3>Performance</h3>
+<p>The page performance will be optimized by considering the following:</p>
+<ul>
+    <li>Lazy load</li>
+    <li>Use appropriate media renditions based on the client’s viewpoint.</li>
+    <li>Load common/static elements asynchronously (static navigation, menus, countries list, etc)</li>
+    <li>Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)</li>
+    <li>Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed</li>
+</ul>
 
-### Template Structure
+<h3>Usage</h3>
+<ul>
+    <li>Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section</li>
+    <li>Initialize navigation, language switcher, accordion, select and filter by calling below mentioned functions.</li>
+    <ul>
+        <li><code>navigationInitialize();</code></li>
+        <li><code>langSwitch();</code></li>
+        <li><code>accordion('[data-accordion="mobile"]', '.footer-panel', 'active');</code></li>
+        <li><code>expandSearch();</code></li>
+        <li><code>select();</code></li>
+    </ul>
+    <li>If you want to add left-right animation then add <code>data-viewport=”true”</code> attribute to your HTML element.</li>
+</ul>
 
-The following components are used to create the “Article page” template in the design system
+<h3>CSS and JS References</h3>
 
-- Global header
-- Breadcrumbs - Creates navigation links for the current pathname based on an opinionated configuration object.
-- Title has author name
-- Expanding search bar - Used to search for any specific author
-- Select menu with options (Most posts and Alphabetical)
-- Author Card grid - Has image of the author
-- View more button in case of more content available
-- Standard footer
+<h4>CSS:</h4>
+<p>Add the base layout style from</p>
+<ul>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/global-header.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/global-header.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-card.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/custom-select.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/custom-select.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/search-expand.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/search-expand.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/authors.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/authors.min.css</a></li>
+</ul>
 
-### Performance
+<h4>JS:</h4>
+<ul>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/expand-search.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/expand-search.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js</a></li>
+    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/author-filter.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/author-filter.min.js</a></li>
+</ul>
 
-The page performance will be optimized by considering following:
-
-- Lazy load
-- Use appropriate media renditions based on the client’s viewpoint.
-- Load common/static elements asynchronously (static navigation, menus, countries list, etc)
-- Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)
-- Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed
-
-- ### Usage
-- Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section
-- Initialize navigation, language switcher, accordion, select and filter by calling below mentioned functions.
-  - navigationInitialize();
-  - langSwitch();
-  - accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
-  - expandSearch();
-  - select();
-- If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element.
-
-#### CSS and JS References
-
-#### CSS:
-
-Add the base layout style from
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/global-header.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/author-card.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/custom-select.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/search-expand.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/authors.min.css
-
-#### JS:
-
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/expand-search.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js
-- https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/author-filter.min.js
-
-### Changelog
-
-1.0 — Released component
+<h3>Changelog</h3>
+<p>1.0 — Released component</p>
 
 <Canvas>
   <Story
     name="Author listing page"
-    parameters={{
-      layout: "fullscreen",
-      docs: {
-        story: {
-          inline: false,
-          iframeHeight: "100%",
-        },
-      },
-      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-    }}
   >
     {(args, { globals: { locale, accent } }) => {
       const filtertext = getfiltertextForLocale(locale);
@@ -779,7 +742,46 @@ Add the base layout style from
   </Story>
 </Canvas>
 
-`,
-    },
-  },
-};
+            </>
+        )
+    }
+  }
+}
+
+const Template = (args, { globals: { locale } }) => {
+  const filtertext = getfiltertextForLocale(locale);
+  const buttonData = getButtonForLocale(locale);
+  const headingData = getheadingForLocale(locale);
+  const navigationData = getNavLinks(locale);
+  const leftNavigationData = navigationData.filter(
+    (item) => item.position === "left"
+  );
+  const rightNavigationData = navigationData.filter(
+    (item) => item.position === "right"
+  );
+  return (
+    <Authors
+      text={filtertext}
+      buttonData={buttonData}
+      footerData={footerData(locale)}
+      authorData={getCaptionForLocale(locale)}
+      breadcrumbData={breadcrumbData(locale)}
+      headingData={headingData}
+      contentCardData={contentCardData(locale)}
+      locale={locale}
+      leftNavigationData={leftNavigationData}
+      navigationData={navigationData}
+      rightNavigationData={rightNavigationData}
+      menuData={menuData(locale)}
+      languageswitcherData={Languageswitcher(locale)}
+      locationData={getLocationDataForLocale(locale)}
+      langSelect={getSelectlanguage(locale)}
+      backcaption={getBackForLocale(locale)}
+      {...args}
+    ></Authors>
+  );
+}
+
+export const AuthorsStory = Template.bind({});
+AuthorsStory.storyName = "Authors";
+
