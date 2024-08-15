@@ -106,63 +106,17 @@ export default {
 
         <h4>Publication module</h4>
 
-        <Canvas>
-          <Story name="Publication module">
-            {(args, { globals: { locale, accent } }) => {
-              const caption = getCaptionForLocale(locale);
-              return (
-                <DownloadCard
-                title={caption.title}
-                format={caption.format}
-                download={caption.download}
-                image
-                {...args}
-              ></DownloadCard>
-              );
-            }}
-          </Story>
-        </Canvas>
+        <Canvas of={PublicationModule} />
 
         <h4>Card module</h4>
 
-        <Canvas>
-          <Story name="Card module">
-            {(args, { globals: { locale, accent } }) => {
-              const caption = getCaptionForLocale(locale);
-              return (
-                <DownloadCard
-                  title={caption.title}
-                  format={caption.format}
-                  download={caption.download}
-                  image2={img}
-                  {...args}
-                ></DownloadCard>
-              );
-            }}
-          </Story>
-        </Canvas>
+        <Canvas of={CardModule} />
 
         <anchor storyId="components-ui-components-cards-download-card--download-module"></anchor>
 
         <h4>Download module</h4>
 
-        <Canvas>
-          <Story name="Download module">
-            {(args, { globals: { locale, accent } }) => {
-              const caption = getCaptionForLocale(locale);
-              return (
-                <DownloadCard
-                    title={caption.title}
-                    format={caption.format}
-                    download={caption.download}
-                    alt={"feature card"}
-                    {...args}
-                  ></DownloadCard>
-              );
-            }
-            }
-          </Story>
-        </Canvas>
+        <Canvas of={DownloadModule} />
 
         <h3>Usage:</h3>
 

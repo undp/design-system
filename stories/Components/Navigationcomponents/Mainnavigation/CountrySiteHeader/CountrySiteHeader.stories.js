@@ -178,6 +178,18 @@ export default {
       page: () => (
         <>
          
+         <style>
+            {` 
+              pre code {
+                white-space: pre-wrap;  
+                word-wrap: break-word;  
+                overflow-x: auto;      
+                max-width: 100%;       
+                box-sizing: border-box; 
+}
+            `}
+          </style>
+
           <h1>Country Header</h1>
           <h2>With mega menu and menu overflow</h2>
 
@@ -233,7 +245,8 @@ export default {
           <h4>New Header Structure (<strong>Recommended</strong>)</h4>
           <p>The new pattern for the HTML structure has three main divs (<code>.top-left</code>, <code>.top-center</code>, and <code>.top-right</code>), an optional <code>.menu__overflow__container</code> div for overflow menu items, and a <code>.mobile-nav</code> div to contain all the mobile elements. This setup is recommended for a more flexible structure and can implement the overflow functionality if desired.</p>
 
-          <pre><code>&lt;header class="country-header"&gt; 
+          <pre>
+            <code>&lt;header class="country-header"&gt;
             &lt;section class="header"&gt;
               &lt;div class="grid-container fluid"&gt;
                 &lt;div class="grid-x grid-margin-x align-content-middle"&gt;
@@ -266,7 +279,8 @@ export default {
 
             &lt;/section&gt;
           &lt;/header&gt;
-          </code></pre>
+          </code>
+        </pre>
 
           <p><strong>Note:</strong> When updating to the new recommended structure, make sure to adjust the foundation classes in the main divs. Example: old top-left had <code>"cell large-9 small-8 align-self-middle top-left"</code> classes and new top-left has <code>"cell small-8 large-2 shrink align-self-middle top-left"</code></p>
 

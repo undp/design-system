@@ -76,36 +76,11 @@ export default {
 
               <h4>Post Block with Description</h4>
 
-              <Canvas>
-                <Story name="Post block with description">
-                  {(args, { globals: { locale } }) => {
-                    const caption = getCaptionForLocale(locale);
-                    return (
-                      <Post
-                        headerText={caption.header}
-                        countryText={caption.country}
-                        descriptionText={caption.description}
-                      ></Post>
-                    );
-                  }}
-                </Story>
-              </Canvas>
+              <Canvas of={PostWithDescription} />
 
               <h4>Post Block without Description</h4>
 
-              <Canvas>
-                <Story name="Post block without description">
-                  {(args, { globals: { locale } }) => {
-                    const caption = getCaptionForLocale(locale);
-                    return (
-                      <Post
-                        headerText={caption.header}
-                        descriptionText={caption.description}
-                      ></Post>
-                    );
-                  }}
-                </Story>
-              </Canvas>
+              <Canvas of={PostWithoutDescription} />
 
               <h3>Usage</h3>
 

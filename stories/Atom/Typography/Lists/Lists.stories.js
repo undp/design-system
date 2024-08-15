@@ -1,5 +1,5 @@
-import { Meta, Story } from '@storybook/addon-docs';
-import { List } from './Lists.stories';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { List } from './Lists';
 import { Descriptionlist } from './Descriptionlist';
 
 const getCaptionForLocale = (locale) => {
@@ -86,16 +86,13 @@ return dummy.data
 
 export default {
   title: 'Foundation/Typography/Lists',
-};
+  parameters: {
+    docs: {
+        page: () => (
+            <>
 
-const Template = (args, { globals: { locale } }) => {
-  const caption = getCaptionForLocale(locale);
-  return (
-    <>
-      <List data={caption} {...args}></List>
-    </>
-  );
+            </>
+        )
+    }
+  }
 }
-
-export const ListStory = Template.bind({});
-ListStory.storyName = 'List';

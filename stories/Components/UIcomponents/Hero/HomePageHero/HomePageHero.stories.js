@@ -136,21 +136,7 @@ export default {
                   <li>Mobile: It consists of a vertical image.</li>
               </ol>
 
-              <Canvas>
-                <Story name="Homepage hero - full-width">
-                  {(args, { globals: { locale } }) => {
-                    const caption = getCaptionForLocale(locale);
-                    return (
-                      <Homepagehero
-                        title={caption.titlename}
-                        content={caption.text}
-                        button={caption.btnlabel}
-                        {...args}
-                      ></Homepagehero>
-                    );
-                  }}
-                </Story>
-              </Canvas>
+              <Canvas of={HomePageHeroStory} />
 
               <h3>Usage:</h3>
 
@@ -215,21 +201,7 @@ export default {
                   <li>Mobile: It consists of title and subtitle in the top, image below it and the chip in the bottom in vertical position.</li>
               </ol>
 
-              <Canvas>
-                <Story name="Homepage hero - tall image">
-                  {(args, { globals: { locale } }) => {
-                    const caption = getCaptionForLocale(locale);
-                    return (
-                      <Homepageherosplit
-                        title={caption.titlename}
-                        content={caption.text}
-                        button={caption.btnlabel}
-                        {...args}
-                      ></Homepageherosplit>
-                    );
-                  }}
-                </Story>
-              </Canvas>
+              <Canvas of={HomePageHeroSplitStory} />
 
               <h3>Usage:</h3>
 
@@ -295,28 +267,8 @@ export default {
                   <li>Mobile: It consists of title and subtitle in the top, image below it and the chip in the bottom of the grid.</li>
               </ol>
 
-              <Canvas>
-                <Story
-                  name="Homepage hero - wide image"
-                >
-                  {(args, { globals: { locale } }) => {
-                    const caption = getCaptionForLocale(locale);
-                    return (
-                      <Homepageherooption
-                        title={caption.titlename}
-                        content={caption.text}
-                        button={caption.btnlabel}
-                        subtitle={caption.subtitle}
-                        imgsrc={caption.imgsrc}
-                        imgsrc2={caption.imgsrc2}
-                        imgalt={caption.imgalt}
-                        headingTop={caption.headingTop}
-                        {...args}
-                      ></Homepageherooption>
-                    );
-                  }}
-                </Story>
-              </Canvas>
+              <Canvas of={HomePageHeroOptionStory} />
+
 
               <h3>Usage:</h3>
 

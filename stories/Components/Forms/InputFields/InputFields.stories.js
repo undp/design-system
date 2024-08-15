@@ -157,104 +157,15 @@ export default {
             <h4>States</h4>
             <p>The Input Field has four states: Default, Focus, Error, and Disabled.</p>
 
-            <Canvas>
-              <Story name="Date">
-                {(args, { globals: { locale } }) => {
-                  const caption = getCaptionForLocale(locale);
-                  return (
-                    <Inputcomponent
-                      labelText={caption.text}
-                      errorText={caption.detail2}
-                      element="input"
-                      type="date"
-                      id="date"
-                      placeholder="dd/mm/yyyy"
-                      {...args}
-                    ></Inputcomponent>
-                  );
-                }}
-              </Story>
-            </Canvas>
+            <Canvas of={InputcomponentDate} />
 
-            <Canvas>
-              <Story name="Number">
-                {(args, { globals: { locale } }) => {
-                  const caption = getCaptionForLocale(locale);
-                  return (
-                    <Inputcomponent
-                      labelText={caption.detail5}
-                      errorText={caption.detail2}
-                      element="input"
-                      type="number"
-                      id="number"
-                      pattern="[0-9]*"
-                      placeholder={caption.text3}
-                      {...args}
-                    ></Inputcomponent>
-                  );
-                }}
-              </Story>
-            </Canvas>
+            <Canvas of={InputcomponentNumber} />
 
-            <Canvas>
-              <Story name="Password">
-                {(args, { globals: { locale } }) => {
-                  const caption = getCaptionForLocale(locale);
-                  return (
-                    <Inputcomponent
-                      labelText={caption.detail6}
-                      element="input"
-                      helpText={caption.detail8}
-                      errorText={caption.detail2}
-                      type="password"
-                      id="password"
-                      minlength="8"
-                      placeholder={caption.detail7}
-                      {...args}
-                    ></Inputcomponent>
-                  );
-                }}
-              </Story>
-            </Canvas>
+            <Canvas of={InputcomponentPassword} />
 
-            <Canvas>
-              <Story name="Telephone">
-                {(args, { globals: { locale } }) => {
-                  const caption = getCaptionForLocale(locale);
-                  return (
-                    <Inputcomponent
-                      labelText={caption.detail9}
-                      element="input"
-                      type="tel"
-                      id="tel"
-                      errorText={caption.detail2}
-                      placeholder="+234 000 000 0000"
-                      pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                      {...args}
-                    ></Inputcomponent>
-                  );
-                }}
-              </Story>
-            </Canvas>
+            <Canvas of={InputcomponentTelephone} />
 
-            <Canvas>
-              <Story name="Text">
-                {(args, { globals: { locale } }) => {
-                  const caption = getCaptionForLocale(locale);
-                  return (
-                    <Inputcomponent
-                      labelText={caption.detail1}
-                      errorText={caption.detail2}
-                      element="input"
-                      type="text"
-                      id="text"
-                      placeholder={caption.text3}
-                      {...args}
-                    ></Inputcomponent>
-                  );
-                }}
-              </Story>
-            </Canvas>
+            <Canvas of={InputcomponentText} />
 
             <h3>Usage</h3>
             <ol>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Link } from './Links';
 
 const getCaptionForLocale = (locale) => {

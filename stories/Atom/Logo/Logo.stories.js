@@ -59,59 +59,30 @@ export default {
           <Anchor storyId="foundation-logos--pnud-logo-blue"></Anchor>
 
           <h4>1. PNUD logo - Blue <a href="images/pnud-logo-blue.svg" download>Download</a></h4>
-          <Canvas>
-            <Story
-              name="PNUD logo - Blue"
-              parameters={{ backgrounds: { default: 'white' }, disable: true }}
-            >
-              <Logo src={pnud} alt="PNUD Logo - Blue" />
-            </Story>
-          </Canvas>
+     
+
+          <Canvas of={PNUDLogoBlue} />
 
           <Anchor storyId="foundation-logos--pnud-logo-white"></Anchor>
 
           <h4>2. PNUD logo - White <a href="images/pnud-logo-white.svg" download>Download</a></h4>
-          <Canvas>
-            <Story
-              name="PNUD logo - white"
-              parameters={{ backgrounds: { default: 'gray' }, disable: true }}
-            >
-              <Logo src={pnudwhite} alt={"UNDP Logo"}></Logo>
-            </Story>
-          </Canvas>
+   
+
+          <Canvas of={PNUDLogoWhite} />
 
           <Anchor storyId="foundation-logos--undp-logo-blue"></Anchor>
 
           <h4>3. UNDP Logo - Blue</h4>
-          <Canvas>
-            <Story
-              name="UNDP Logo - Blue"
-              parameters={{ backgrounds: { default: 'white' } }}
-            >
-              <Logo src={logo} alt="UNDP Logo - Blue" />
-            </Story>
-          </Canvas>
+       
+
+          <Canvas of={UNDPLogoBlue} />
 
           <Anchor storyId="foundation-logos--undp-logo-white"></Anchor>
 
           <h4>4. UNDP Logo - White</h4>
-          <Canvas>
-            <Story
-              name="UNDP Logo - White"
-              parameters={{
-                
-                backgrounds: { default: 'gray' },
-                docs: {
-                  story: {
-                    inline: false,
-                    iframeHeight: '100%',
-                  },
-                },
-              }}
-            >
-              <Logo src={logowhite} alt="UNDP Logo - White" />
-            </Story>
-          </Canvas>
+
+
+          <Canvas of={UNDPLogoWhite} />
 
           <h3>Interactions</h3>
           <p>By clicking on the logo, the website is redirected to the homepage.</p>

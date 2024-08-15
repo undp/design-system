@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Meta, Story, Canvas } from "@storybook/blocks";
 import { HeadingBig } from "./HeadingBig";
 
 const getCaptionForLocale = (locale) => {
@@ -63,26 +63,19 @@ export default {
     docs: {
         page: () => (
             <>
+              <style>
+                {`
+                  .background_gray {
+                    background-color: #A9B1B7;
+                  }
+                `}
+              </style>
+
               <h1>Heading Big Block</h1>
 
               <p>The Heading Block defines a section of information data with some items - Header title, Description. <code>H2</code> <code>H4</code> atoms tags are used for creating this section.</p>
 
-              <Canvas style="background: gray">
-                <Story name="Heading big block">
-                  {(args, { globals: { locale } }) => {
-                    const caption = getCaptionForLocale(locale);
-                    return (
-                      <HeadingBig
-                        headerText={caption.header}
-                        descriptionText={caption.description}
-                        listData={caption.listData}
-                        dataViewport="true"
-                        {...args}
-                      ></HeadingBig>
-                    );
-                  }}
-                </Story>
-              </Canvas>
+              <Canvas className="background_gray" of={HeadingBigStory} />
 
               <h3>Usage</h3>
 
