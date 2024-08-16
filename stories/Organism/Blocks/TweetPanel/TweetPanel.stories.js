@@ -243,7 +243,7 @@ const getCaptionForLocale = (locale) => {
 
 export default {
   title: "Components/Twitter panel",
-  component: {TwitterPanel},
+  component: {TweetPanel},
   parameters: {
     docs: {
         page: () => (
@@ -254,7 +254,7 @@ export default {
                 <Story name="Twitter panel">
                   {(args, { globals: { locale } }) => {
                     const content = getCaptionForLocale(locale);
-                    return <TwitterPanel data={content.tweetpaneldata} headertext={content.headertext}></TwitterPanel>;
+                    return <TweetPanel data={content.tweetpaneldata} headertext={content.headertext}></TweetPanel>;
                   }}
                 </Story>
               </Canvas>
@@ -266,9 +266,9 @@ export default {
 
 const Template = (args, { globals: { locale } }) => {
   const content = getCaptionForLocale(locale);
-  return <TwitterPanel data={content.tweetpaneldata} headertext={content.headertext}></TwitterPanel>;
+  return <TweetPanel data={content.tweetpaneldata} headertext={content.headertext}></TweetPanel>;
               
 }
 
-export const TwitterPanelStory = Template.bind({});
-TwitterPanelStory.storyName = 'Twitter panel';
+export const TweetPanelStory = Template.bind({});
+TweetPanelStory.storyName = 'Twitter panel';
