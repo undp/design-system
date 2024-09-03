@@ -16,14 +16,14 @@
 }
 
 .external-link-animated {
-  box-shadow: -2px 2px 0 0 $color-dark-red, -4px 0 0 -2px $color-dark-red, -3px 3px 0 -1px $color-dark-red;
+  box-shadow: -2px 2px 0 0 var(--undpds-color-dark-red), -4px 0 0 -2px var(--undpds-color-dark-red), -3px 3px 0 -1px var(--undpds-color-dark-red);
   box-sizing: border-box;
   cursor: pointer;
   display: inline-block;
-  height: $spacing-04;
+  height: var(--undpds-spacing-04);
   margin-inline-start: -2px;
   position: relative;
-  width: $spacing-04;
+  width: var(--undpds-spacing-04);
 
   &::before {
     @extend %pseudo-icon;
@@ -31,7 +31,7 @@
     @include transform(rotate(-45deg) translate(0, 0));
     @include transition(all 0.3s);
 
-    background: $color-dark-red;
+    background: var(--undpds-color-dark-red);
     height: 2px;
     inset-inline-end: 0;
     inset-block-start: 3.5px;
@@ -44,12 +44,12 @@
     @include transition(transform 0.3s);
     @include transform(translate(0, 0));
 
-    border-inline-end: 2px solid $color-dark-red;
-    border-block-start: 2px solid $color-dark-red;
-    height: $spacing-03;
+    border-inline-end: 2px solid var(--undpds-color-dark-red);
+    border-block-start: 2px solid var(--undpds-color-dark-red);
+    height: var(--undpds-spacing-03);
     inset-inline-end: 0;
     inset-block-start: 0;
-    width: $spacing-03;
+    width: var(--undpds-spacing-03);
   }
 
   &:hover {
@@ -72,7 +72,7 @@
   position: relative;
 
   i {
-    border: 2px solid $color-dark-red;
+    border: 2px solid var(--undpds-color-dark-red);
     border-block-start: 0;
     box-sizing: content-box;
     display: block;
@@ -86,8 +86,8 @@
     @include transform(rotate(-45deg) translate(0, 0));
     @include transition(all 0.3s);
 
-    border-block-end: 2px solid $color-dark-red;
-    border-inline-start: 2px solid $color-dark-red;
+    border-block-end: 2px solid var(--undpds-color-dark-red);
+    border-inline-start: 2px solid var(--undpds-color-dark-red);
     inset-block-end: 6px;
     height: 8px;
     inset-inline-start: 7px;
@@ -100,7 +100,7 @@
     @include transform(translate(0, 0));
     @include transition(all 0.3s);
 
-    background: $color-dark-red;
+    background: var(--undpds-color-dark-red);
     inset-block-end: 7px;
     height: 10px;
     inset-inline-start: 10px;
@@ -145,7 +145,7 @@
   }
 
   >div p {
-    font-family: $Font-Family-ProximaNova;
+    font-family: var(--undpds-font-family-proximanova);
     font-size: 14px;
     margin-top: 10px;
   }
@@ -154,15 +154,15 @@
 // For doc styling only
 .icons-container>div {
   align-items: center;
-  background: $color-gray-300;
-  border: 1px solid $color-gray-400;
-  box-shadow: 2px 2px 4px $color-gray-300;
+  background: var(--undpds-color-gray-300);
+  border: 1px solid var(--undpds-color-gray-400);
+  box-shadow: 2px 2px 4px var(--undpds-color-gray-300);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin: 0 $spacing-05 $spacing-07;
-  padding: $spacing-05 $spacing-03;
+  margin: 0 var(--undpds-spacing-05) var(--undpds-spacing-07);
+  padding: var(--undpds-spacing-05) var(--undpds-spacing-03);
   text-align: center;
   width: calc(100% - 2rem);
 

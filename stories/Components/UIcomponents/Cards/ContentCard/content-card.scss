@@ -3,25 +3,25 @@
 
 /* content-card start */
 $colors: (
-  'yellow': $color-yellow,
-  'red': $color-red,
-  'green': $color-green,
-  'blue': $color-azure,
-  'gray': $color-gray-100
+  'yellow': var(--undpds-color-yellow),
+  'red': var(--undpds-color-red),
+  'green': var(--undpds-color-green),
+  'blue': var(--undpds-color-azure),
+  'gray': var(--undpds-color-gray-100)
 );
 $backgroundcolors: (
-  'yellow': $color-light-yellow,
-  'red': $color-light-red,
-  'green': $color-light-green,
-  'blue': $color-light-azure,
-  'gray': $color-gray-100
+  'yellow': var(--undpds-color-light-yellow),
+  'red': var(--undpds-color-light-red),
+  'green': var(--undpds-color-light-green),
+  'blue': var(--undpds-color-light-azure),
+  'gray': var(--undpds-color-gray-100)
 );
 
 div.content-card {
   @include transition(all 0.5s);
 
-  background-color: $color-white;
-  border-top: 2px solid $color-black;
+  background-color: var(--undpds-color-white);
+  border-top: 2px solid var(--undpds-color-black);
   height: 100%;
   word-break: break-word;
 
@@ -38,12 +38,12 @@ div.content-card {
     @extend %carousel_tag;
 
     margin-bottom: 0;
-    padding: $spacing-05 $spacing-06 1.625rem $spacing-06;
+    padding: var(--undpds-spacing-05) var(--undpds-spacing-06) 1.625rem;
   }
 
   &.card {
     h6 {
-      padding-bottom: $spacing-05;
+      padding-bottom: var(--undpds-spacing-05);
     }
   }
 
@@ -66,22 +66,22 @@ div.content-card {
   }
 
   p {
-    font-size: $font-size-16;
+    font-size: var(--undpds-font-size-16);
     margin: 0;
-    padding-top: $spacing-05;
+    padding-top: var(--undpds-spacing-05);
   }
 
   &.card {
     &:hover {
-      background-color: $color-gray-100;
+      background-color: var(--undpds-color-gray-100);
     }
   }
 
   &.card-emphasize {
-    background-color: $color-light-yellow;
+    background-color: var(--undpds-color-light-yellow);
 
     &:hover {
-      background-color: $color-yellow;
+      background-color: var(--undpds-color-yellow);
     }
   }
 
@@ -122,11 +122,11 @@ div.content-card {
   }
 
   &:hover {
-    background-color: $color-gray-100;
+    background-color: var(--undpds-color-gray-100);
 
     .image::before {
       opacity: 0.75;
-      background: linear-gradient(67.76deg, $color-yellow, transparent 61.11%);
+      background: linear-gradient(67.76deg, var(--undpds-color-yellow), transparent 61.11%);
     }
 
     .cta--space::after {
@@ -135,7 +135,7 @@ div.content-card {
 
     .cta--arrow {
       i {
-        width: $spacing-11;
+        width: var(--undpds-spacing-11);
 
         &::before {
           display: unset;
@@ -146,16 +146,16 @@ div.content-card {
 
   &-wrapper {
     >div {
-      margin-bottom: $spacing-07;
+      margin-bottom: var(--undpds-spacing-07);
     }
   }
 
   .image::before {
-    @include background-image(67.76deg, $color-yellow, transparent 61.11%);
+    @include background-image(67.76deg, var(--undpds-color-yellow), transparent 61.11%);
 
     @each $name,
     $color in $colors {
-      @include background-image(67.76deg, $color, transparent 61.11%);
+      @include background-image(67.76deg, #{$color}, transparent 61.11%);
     }
   }
 
@@ -197,7 +197,7 @@ $color in $colors {
   .accent-#{$name} div.content-card {
 
     .image::before {
-      @include background-image(67.76deg, $color, transparent 61.11%);
+      @include background-image(67.76deg, #{$color}, transparent 61.11%);
     }
 
     @each $name2,
@@ -213,7 +213,7 @@ $color in $colors {
 
     &.card {
       &:hover {
-        background-color: $color-gray-100;
+        background-color: var(--undpds-color-gray-100);
       }
     }
 
@@ -237,7 +237,7 @@ $color in $colors {
 }
 
 .content-caption {
-  padding: $spacing-05 $spacing-06 $spacing-06 $spacing-06;
+  padding: var(--undpds-spacing-05) var(--undpds-spacing-06) var(--undpds-spacing-06);
 
   h5,
   h4 {
@@ -245,7 +245,7 @@ $color in $colors {
   }
 
   .cta__link {
-    bottom: $spacing-06;
+    bottom: var(--undpds-spacing-06);
     position: absolute;
   }
 
@@ -253,7 +253,7 @@ $color in $colors {
     height: 100%;
 
     h5 {
-      margin-bottom: $spacing-05;
+      margin-bottom: var(--undpds-spacing-05);
     }
   }
 }
@@ -274,7 +274,7 @@ $color in $colors {
 
         &--arrow::after {
           margin-left: 0;
-          margin-right: 0.25rem;
+          margin-right: var(--undpds-spacing-02);
         }
       }
     }
@@ -284,7 +284,7 @@ $color in $colors {
 //burmese lang
 :lang(my) {
   h6 {
-    font-size: 1rem;
+    font-size: var(--undpds-font-size-16);
   }
 }
 

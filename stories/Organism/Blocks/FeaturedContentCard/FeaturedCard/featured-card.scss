@@ -15,7 +15,7 @@
 
       @include devicebreak(medium) {
         margin-bottom: 0;
-        margin-top: $spacing-07;
+        margin-top: var(--undpds-spacing-07);
       }
     }
 
@@ -31,7 +31,7 @@
 
       &.yellow {
         .feature__card-slide {
-          background: $color-yellow;
+          background: var(--undpds-color-yellow);
         }
       }
     }

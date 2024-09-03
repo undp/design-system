@@ -4,25 +4,28 @@
 
 // Color map
 $colors: (
-  'yellow': $color-yellow,
-  'red': $color-red,
-  'green': $color-green,
-  'blue': $color-azure
+  'yellow': var(--undpds-color-yellow),
+  'red': var(--undpds-color-red),
+  'green': var(--undpds-color-green),
+  'blue': var(--undpds-color-azure)
 );
 
 /* bio card start */
 .bio-card {
+  container: biocard / inline-size;
+
   a {
     @include transition(0.6s ease);
 
-    background: $color-gray-200;
+    background: var(--undpds-color-gray-200);
     display: block;
   }
 
   .card-thumbnail__image {
+    height: 100%;
+
     img {
-      height: auto;
-      width: 100%;
+      object-fit: cover;
     }
   }
 
@@ -31,7 +34,7 @@ $colors: (
     //cta
     .cta--arrow {
       i {
-        width: $spacing-11;
+        width: var(--undpds-spacing-11);
 
         &::before {
           display: unset;
@@ -40,7 +43,7 @@ $colors: (
     }
 
     .card-thumbnail__image::before {
-      @include background-image(67.76deg, $color-yellow, transparent 61.11%);
+      @include background-image(67.76deg, var(--undpds-color-yellow), transparent 61.11%);
 
       opacity: 0.75;
     }
@@ -74,28 +77,33 @@ $colors: (
   }
 
   .bio-card__content {
-    background: $color-gray-100;
+    // background: var(--undpds-color-gray-100);
     flex-direction: column;
     order: 2;
     position: relative;
     overflow: hidden;
 
-    @include devicebreak(medium) {
-      background: none;
+    // @include devicebreak(medium) {
+    //   // background: none;
+    //   display: flex;
+    //   order: inherit;
+    // }
+
+    @include container(medium, biocard) {
       display: flex;
       order: inherit;
     }
 
     .bio-card__description {
-      padding: $spacing-07 $spacing-06 0;
+      padding: var(--undpds-spacing-07) var(--undpds-spacing-06) 0;
     }
 
     .card-thumbnail__image {
-      order: 1;
+      // order: 1;
 
-      @include devicebreak(medium) {
-        order: inherit;
-      }
+      // @include devicebreak(medium) {
+      //   order: inherit;
+      // }
 
       &::before {
         opacity: 0;
@@ -103,29 +111,37 @@ $colors: (
     }
 
     h5 {
-      margin-bottom: 1.125rem;
+      margin-bottom: var(--undpds-spacing-05);
 
-      @include devicebreak(medium) {
-        margin-bottom: 0.75rem;
+      // @include devicebreak(medium) {
+      @include container(medium, biocard) {
+        margin-bottom: var(--undpds-spacing-04);
       }
     }
 
     p {
-      @extend %paragragh-font-16;
+      font-size: $font-size-14;
+      line-height: 1.4;
+      margin-bottom: var(--undpds-spacing-07);
 
-      margin-bottom: 2.063rem;
+      // @include devicebreak(medium) {
+      @include container(medium, biocard) {
+        font-size: $font-size-16;
+        margin-bottom: var(--undpds-spacing-06);
+      }
 
-      @include devicebreak(medium) {
-        margin-bottom: 1.5rem;
+      &.small {
+        font-size: $font-size-14;
       }
     }
 
     .cta__link {
       margin-bottom: 0;
-      margin-top: $spacing-06;
-      padding: 0 $spacing-06 $spacing-07;
+      margin-top: var(--undpds-spacing-06);
+      padding: 0 var(--undpds-spacing-06) var(--undpds-spacing-07);
 
-      @include devicebreak(medium) {
+      // @include devicebreak(medium) {
+      @include container(medium, biocard) {
         margin-top: auto;
       }
     }
@@ -143,6 +159,8 @@ $colors: (
 .bio-card-wrapper {
   @extend %custom-scrollbar;
 
+  container: biocardwrapper / inline-size;
+
   display: block;
   height: 100%;
   overflow-y: scroll;
@@ -151,38 +169,53 @@ $colors: (
   @include devicebreak(medium) {
     display: flex;
   }
+
+  p {
+    &.small {
+      font-size: $font-size-16;
+    }
+  }
 }
 
 .bio-card-image {
   width: 100%;
 
-  @include devicebreak(medium) {
+  // @include devicebreak(medium) {
+  @include container(medium, biocardwrapper) {
     min-width: 338px;
   }
 
   img {
     width: 100%;
 
-    @include devicebreak(medium) {
+    // @include devicebreak(medium) {
+    @include container(medium, biocard) {
       width: auto;
     }
   }
 }
 
 .bio-card-content {
-  padding: $spacing-07 $spacing-06;
+  padding: var(--undpds-spacing-07) var(--undpds-spacing-06);
 
-  @include devicebreak(medium) {
-    padding: 0 $spacing-06 0;
+  // @include devicebreak(medium) {
+  @include container(medium) {
+    padding: 0 var(--undpds-spacing-06) 0;
   }
 
-  p {
-    margin-bottom: $spacing-07;
+  // p {
+  //   margin-bottom: var(--undpds-spacing-07);
 
-    &.small {
-      @extend %paragragh-font-16;
-    }
-  }
+  //   &.small {
+  //     // @extend %paragragh-font-16;
+  //     font-size: $font-size-14;
+  //     line-height: 1.4;
+
+  //     @include container(medium, biocard) {
+  //       font-size: $font-size-16;
+  //     }
+  //   }
+  // }
 }
 
 [dir='rtl'] {
@@ -195,7 +228,7 @@ $colors: (
       }
 
       .card-thumbnail__image::before {
-        @include background-image(297deg, $color-yellow, transparent 61.11%);
+        @include background-image(297deg, var(--undpds-color-yellow), transparent 61.11%);
       }
 
       @each $name,
