@@ -579,7 +579,7 @@
   }
 
   @include devicebreak(mediumonlytab) {
-    height: calc(var(--undpds-header-height-medium + 7px));
+    height: calc(var(--undpds-header-height-medium) + 7px);
     min-width: 40px;
 
     &.scrolled {
