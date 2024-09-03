@@ -4,17 +4,19 @@
 
 // color map
 $colors: (
-  'yellow': $color-yellow,
-  'red': $color-red,
-  'green': $color-green,
-  'blue': $color-azure
+  'yellow': var(--undpds-color-yellow),
+  'red': var(--undpds-color-red),
+  'green': var(--undpds-color-green),
+  'blue': var(--undpds-color-azure)
 );
 
 /* image card start */
 .image-reveal-card {
   @extend %img_none;
 
-  background: $color-white;
+  container: imagerevealcard / inline-size;
+
+  background: var(--undpds-color-white);
   border: 0;
   display: block;
   height: 100%;
@@ -38,17 +40,18 @@ $colors: (
 
     h5 {
       margin-bottom: 0;
-      padding: $spacing-06 $spacing-06 0;
+      padding: var(--undpds-spacing-06) var(--undpds-spacing-06) 0;
 
-      @include devicebreak(medium) {
-        padding: $spacing-07 $spacing-06 0;
+      // @include devicebreak(medium) {
+      @include container(medium, imagerevealcard) {
+        padding: var(--undpds-spacing-07) var(--undpds-spacing-06) 0;
       }
 
       @include devicebreak(large) {
         @include translate(0, 100%);
         @include transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
 
-        background: $color-white;
+        background: var(--undpds-color-white);
         bottom: -1px;
         box-sizing: border-box;
         left: 0;
@@ -80,13 +83,14 @@ $colors: (
   }
 
   .cta__link {
-    margin: $spacing-07 0 0 $spacing-06;
+    margin: var(--undpds-spacing-07) 0 0 var(--undpds-spacing-06);
     width: 100%;
 
-    @include devicebreak(large) {
+    // @include devicebreak(large) {
+    @include container(large, imagerevealcard) {
       box-sizing: border-box;
       margin-left: 0;
-      padding-left: $spacing-06;
+      padding-left: var(--undpds-spacing-06);
     }
   }
 
@@ -95,6 +99,8 @@ $colors: (
 
 
       @include devicebreak(large) {
+
+        // @include container(large, imagerevealcard) {
         h5 {
           height: auto;
           opacity: 1;
@@ -103,7 +109,7 @@ $colors: (
       }
 
       .image::before {
-        @include background-image(67.76deg, $color-yellow, transparent 61.11%);
+        @include background-image(67.76deg, var(--undpds-color-yellow), transparent 61.11%);
 
         opacity: 0.75;
       }
@@ -175,6 +181,7 @@ $color in $colors {
 }
 
 .small.image-reveal-card {
+
   @include devicebreak(medium) {
     max-width: 13.25rem;
 
@@ -184,30 +191,29 @@ $color in $colors {
   }
 
   h5 {
-    font-size: $font-size-20;
-
-    @include devicebreak(medium) {
-      font-size: $font-size-16;
-    }
+    font-size: var(--undpds-font-size-16);
   }
 
   &:hover {
+
     @include devicebreak(medium) {
       .cta__link.cta--arrow {
         i {
           margin-left: 0;
-          width: $spacing-10;
+          width: var(--undpds-spacing-10);
         }
       }
+
     }
 
-    @include devicebreak(large) {
-      .cta__link.cta--arrow {
-        i {
-          width: calc(100% - #{$spacing-12});
-        }
-      }
-    }
+    // @include devicebreak(large) {
+    //   .cta__link.cta--arrow {
+    //     i {
+    //       width: calc(100% - var(--undpds-spacing-12));
+    //     }
+    //   }
+
+    // }
   }
 }
 
@@ -215,12 +221,13 @@ $color in $colors {
   .image-reveal-card {
     .cta__link {
       margin-right: 0;
-      margin-top: $spacing-07;
-      padding-right: $spacing-06;
+      margin-top: var(--undpds-spacing-07);
+      padding-right: var(--undpds-spacing-06);
 
-      @include devicebreak(medium) {
+      // @include devicebreak(medium) {
+      @include container(medium, imagerevealcard) {
         margin-right: 0;
-        padding-right: $spacing-06;
+        padding-right: var(--undpds-spacing-06);
       }
     }
 

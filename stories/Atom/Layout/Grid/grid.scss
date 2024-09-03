@@ -4,10 +4,10 @@
 
 /* layout  */
 .grid_name {
-  color: $color-black;
+  color: var(--undpds-color-black);
   font-size: 1.375rem;
-  margin-bottom: $spacing-05;
-  margin-top: $spacing-05;
+  margin-bottom: var(--undpds-spacing-05);
+  margin-top: var(--undpds-spacing-05);
   min-height: 28px;
 
   @include devicebreak(small) {
@@ -15,24 +15,24 @@
   }
 
   span {
-    font-size: $font-size-14;
+    font-size: var(--undpds-font-size-14);
   }
 }
 
 .grid_description {
   @extend %paragragh-font-14;
 
-  color: $color-black;
+  color: var(--undpds-color-black);
   margin-bottom: 1.25rem;
 }
 
 .grid--layout {
-  background-color: $color-gray-300;
-  height: $spacing-09;
-  margin-bottom: $spacing-03;
+  background-color: var(--undpds-color-gray-300);
+  height: var(--undpds-spacing-09);
+  margin-bottom: var(--undpds-spacing-03);
 
   &:nth-child(odd) {
-    background-color: $color-gray-200;
+    background-color: var(--undpds-color-gray-200);
   }
 
   .column {

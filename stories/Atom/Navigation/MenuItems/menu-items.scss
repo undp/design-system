@@ -15,14 +15,15 @@
 
     &:focus,
     &:hover {
-      color: $color-gray-600;
+      color: var(--undpds-color-gray-600);
       cursor: pointer;
     }
 
     &.selected {
-      border-bottom: 2px solid $color-dark-red;
-      padding-bottom: $spacing-02;
+      border-bottom: 2px solid var(--undpds-color-dark-red);
+      padding-bottom: var(--undpds-spacing-02);
     }
   }
 }
+
 // * menu item row end *//

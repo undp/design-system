@@ -8,7 +8,7 @@
   position: relative;
 
   &.open {
-    > button {
+    >button {
       border-bottom: 0;
 
       &::after {
@@ -19,7 +19,7 @@
     }
 
     ul {
-      background-color: $color-white;
+      background-color: var(--undpds-color-white);
       border-top: 0;
       display: block;
 
@@ -31,7 +31,7 @@
         border: 0;
         display: none;
         overflow: hidden;
-        padding: 0 0 0 $spacing-08;
+        padding: 0 0 0 var(--undpds-spacing-08);
       }
 
       li {
@@ -40,10 +40,10 @@
     }
   }
 
-  > button {
+  >button {
     @extend %select_default;
 
-    background: $color-white;
+    background: var(--undpds-color-white);
     display: flex;
     max-width: 100%;
     text-align: left;
@@ -63,14 +63,14 @@
     -ms-overflow-style: -ms-autohiding-scrollbar;
     overflow-y: auto;
 
-    > li {
+    >li {
       @extend %selectoption;
 
       list-style: none;
 
       .form-check {
         &:hover {
-          background-color: $color-gray-100;
+          background-color: var(--undpds-color-gray-100);
         }
       }
     }
@@ -81,10 +81,10 @@
       &.open {
         ul {
           border: 0;
-          border-top: solid 1px $color-gray-400;
+          border-top: solid 1px var(--undpds-color-gray-400);
           display: block;
           overflow: visible;
-          padding: 0 0 0 $spacing-08;
+          padding: 0 0 0 var(--undpds-spacing-08);
         }
 
         button::after {
@@ -95,19 +95,19 @@
       }
 
       button {
-        background: $color-white;
+        background: var(--undpds-color-white);
         border: 0;
         cursor: pointer;
         display: block;
-        font-size: $font-size-16;
+        font-size: var(--undpds-font-size-16);
         margin: 0 -1rem;
-        padding: $spacing-05;
+        padding: var(--undpds-spacing-05);
         position: relative;
         text-align: left;
         width: calc(100% + 2rem);
 
         &:hover {
-          background-color: $color-gray-100;
+          background-color: var(--undpds-color-gray-100);
         }
 
         &::after {
@@ -122,16 +122,16 @@
       display: none;
       list-style: none;
 
-      > li {
-        border-top: 1px solid $color-gray-400;
+      >li {
+        border-top: 1px solid var(--undpds-color-gray-400);
         margin-bottom: 0;
 
         &:first-of-type {
           border-top: 0;
         }
 
-        > .checkbox-wrapper:hover {
-          background-color: $color-gray-100;
+        >.checkbox-wrapper:hover {
+          background-color: var(--undpds-color-gray-100);
         }
       }
     }
@@ -149,16 +149,16 @@
   ul .form-check {
     justify-content: space-between;
     margin: 0 -1rem;
-    padding: 0 $spacing-05;
+    padding: 0 var(--undpds-spacing-05);
 
     label {
-      padding: $spacing-05 0;
+      padding: var(--undpds-spacing-05) 0;
       width: 100%;
     }
 
     input {
       position: absolute;
-      right: $spacing-05;
+      right: var(--undpds-spacing-05);
     }
   }
 }
@@ -166,9 +166,10 @@
 // burmese lang
 :lang(my) {
   .multi-select {
+
     ul li,
     button {
-      font-family: $Font-Family-NotoSans;
+      font-family: var(--undpds-font-family-notosans);
     }
   }
 }
@@ -189,14 +190,14 @@
     }
 
     ul {
-      padding: 0 $spacing-05;
+      padding: 0 var(--undpds-spacing-05);
 
       li {
         padding-right: 0;
       }
 
       .form-check input {
-        left: $spacing-05;
+        left: var(--undpds-spacing-05);
         right: inherit;
       }
     }
@@ -206,7 +207,7 @@
         text-align: right;
 
         &::after {
-          left: $spacing-05;
+          left: var(--undpds-spacing-05);
           right: inherit;
         }
       }
@@ -215,14 +216,14 @@
     &.open {
       .radio {
         span {
-          left: $spacing-05;
+          left: var(--undpds-spacing-05);
           right: inherit;
         }
       }
 
       ul {
         ul {
-          padding: 0 $spacing-08 0 0;
+          padding: 0 var(--undpds-spacing-08) 0 0;
         }
       }
     }
