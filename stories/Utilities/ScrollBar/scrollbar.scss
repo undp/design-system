@@ -5,7 +5,7 @@
 .scrollbar-horizontal-wrapper {
   float: left;
   line-height: normal;
-  max-width: $width-600;
+  max-width: var(--undpds-width-600);
   width: 100%;
 
   @supports (scrollbar-width: thin) {

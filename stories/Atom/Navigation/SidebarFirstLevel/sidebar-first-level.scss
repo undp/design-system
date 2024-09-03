@@ -8,7 +8,7 @@
   @extend %sidebar;
 
   &:hover {
-    background-color: $color-gray-200;
+    background-color: var(--undpds-color-gray-200);
   }
 
   &.open {

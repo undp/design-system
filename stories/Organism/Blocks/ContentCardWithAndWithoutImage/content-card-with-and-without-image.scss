@@ -3,8 +3,8 @@
 @import '../../../assets/scss/breakpoints';
 
 .content-data {
-  > div {
-    margin-bottom: $spacing-07;
+  >div {
+    margin-bottom: var(--undpds-spacing-07);
   }
 
   .cta-container {
