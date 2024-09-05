@@ -11,9 +11,9 @@ import BackgroundImg from "../../assets/images/lady.jpg";
 import BackgroundVideo from "../../assets/video/video_sample.mp4";
 import logo from "../../assets/images/undp-logo-blue.svg";
 import logowhite from "../../assets/images/undp-logo-white.svg";
-import { getButtonForLocale as buttonData } from "../../Patterns/FilterAndSearchBar/FilterAndSearchBar.stories.js";
+import { getButtonForLocale as buttonData } from "../../Patterns/FilterAndSearchBar/FilterAndSearchBarUtils.js";
 
-import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js";
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
 import {
   getNavLinks,
   menuData,

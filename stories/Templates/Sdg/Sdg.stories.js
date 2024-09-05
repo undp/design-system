@@ -4,8 +4,8 @@ import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.
 import { getCaptionForLocale as sdgsmodaldata } from "../../Molecules/Sdgmodal/Sdgmodal";
 import heroImage from "../../assets/images/garden.jpg";
 import BackgroundVideo from "../../assets/video/video_sample.mp4";
-import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js";
-import { statsArray as statsData } from "../../Organism/StatsCardSlider/StatsCardSlider.stories.js";
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
+import { statsArray as statsData } from "../../Organism/StatsCardSlider/StatsCardSliderUtils.js";
 import {
   getNavLinks,
   menuData,

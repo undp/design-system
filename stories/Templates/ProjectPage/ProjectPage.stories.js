@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { ProjectPage } from "./ProjectPage";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
-import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js";
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
 import {
   getNavLinks,
   menuData,
@@ -9,7 +9,7 @@ import {
   getLocationDataForLocale,
   getBackForLocale,
   getSelectlanguage,
-} from "../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader.stories.js";
+} from "../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeaderUtils.js";
 import logo from "../../assets/images/undp-logo-blue.svg";
 import logowhite from "../../assets/images/undp-logo-white.svg";
 import BackgroundImg from "../../assets/images/prjbackground.jpg";

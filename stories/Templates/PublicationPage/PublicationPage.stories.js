@@ -5,7 +5,7 @@ import { getCaptionForLocale as ContentCardWithOutImageData } from "../../Compon
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
 import logo from "../../assets/images/undp-logo-blue.svg";
 import logowhite from "../../assets/images/undp-logo-white.svg";
-import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js";
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
 import img from "../../assets/images/card2.jpg";
 import {
   getNavLinks,

@@ -17,7 +17,7 @@ import { getCaptionForLocale as tweetdata } from "../../Organism/Blocks/TweetPan
 import { getCaptionForLocale as homepagesplit } from "../../Components/UIcomponents/Hero/HomePageHero/HomePageHero.stories.js";
 import img from "../../assets/images/card2.jpg";
 
-import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js";
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
 import {
   getNavLinks,
   menuData,

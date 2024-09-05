@@ -1,14 +1,14 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { CountryHomepage } from "./CountryHomepage";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
-import { getCaptionForLocale as takeactioncard } from "../../Organism/Blocks/ImageRevealCards/ImageRevealCards.stories.js";
+import { getCaptionForLocale as takeactioncard } from "../../Organism/Blocks/ImageRevealCards/ImageRevealCardsUtils.js";
 import { getCaptionForLocale as contentcardimagesdata } from "../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage.stories.js";
 import BackgroundImg from "../../assets/images/country-hero-img.jpg";
 import BackgroundVideo from "../../assets/video/video_sample.mp4";
 import img from "../../assets/images/card2.jpg";
 import logo from "../../assets/images/undp-logo-blue.svg";
 import logowhite from "../../assets/images/undp-logo-white.svg";
-import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js";
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
 import {
   getNavLinks,
   menuData,
@@ -16,7 +16,7 @@ import {
   getLocationDataForLocale,
   getBackForLocale,
   getSelectlanguage,
-} from "../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeader.stories.js";
+} from "../../Components/Navigationcomponents/Mainnavigation/CountrySiteHeader/CountrySiteHeaderUtils.js";
 
 const getCaptionForLocale = (locale) => {
   switch (locale) {

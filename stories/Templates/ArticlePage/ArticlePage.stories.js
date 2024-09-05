@@ -1,16 +1,16 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import ArticlePage from "./ArticlePage";
-import { getCaptionForLocale as imageCaptionData } from "../../Atom/Images/ImageCaptionCredit/ImageCaptionCredit.stories.js";
+import { getCaptionForLocale as imageCaptionData } from "../../Atom/Images/ImageCaptionCredit/ImageCaptionCreditUtils.js";
 import { getCaptionForLocale as PostHeadData } from "../../Organism/Text/PostHeader/PostHeader.stories.js";
-import { getCaptionForLocale as AuthorCardData } from "../../Components/UIcomponents/Author/AuthorColumn/AuthorColumn.stories.js";
-import { getCaptionForLocale as blockquoteData } from "../../Molecules/Text/BlockquoteComponent/BlockquoteComponent.stories.js";
-import { getCaptionForLocale as paraLabel } from "../../Atom/BaseTypography/Paragraph/Paragraph.stories.js";
+import { getCaptionForLocale as AuthorCardData } from "../../Components/UIcomponents/Author/AuthorColumn/AuthorUtils.js";
+import { getCaptionForLocale as blockquoteData } from "../../Molecules/Text/BlockquoteComponent/BlockquoteComponentUtils.js";
+import { getCaptionForLocale as paraLabel } from "../../Atom/BaseTypography/Paragraph/ParagraphUtils.js";
 import { getCaptionForLocale as headingData } from "../../Atom/Typography/Heading/Heading.stories.js";
-import { getCaptionForLocale as listData } from "../../Atom/Typography/Lists/Lists.stories.js";
+import { getCaptionForLocale as listData } from "../../Atom/Typography/Lists/ListsUtils.js";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
-import { getCaptionForLocale as featuredCardContent } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard.stories.js";
+import { getCaptionForLocale as featuredCardContent } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedContentCardUtils.js";
 
-import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js";
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
 import {
   getNavLinks,
   menuData,
