@@ -1,5 +1,6 @@
 @mixin devicebreak($point) {
   @if $point==small {
+
     /* small design */
     @media (max-width: 47.9375em) {
       @content;
@@ -10,11 +11,12 @@
 
     /* medium design tab */
     @media (max-width: 63.9375em) {
-       @content;
+      @content;
     }
   }
 
   @else if $point==medium {
+
     /* medium design */
     @media (min-width: 48em) {
       @content;
@@ -22,6 +24,7 @@
   }
 
   @else if $point==large {
+
     /* large design */
     @media (min-width: 64em) {
       @content;
@@ -29,8 +32,51 @@
   }
 
   @else if $point==xlarge {
+
     /* xlarge design */
     @media (min-width: 90em) {
+      @content;
+    }
+  }
+}
+
+@mixin container($point, $name: '') {
+  @if $point ==small {
+
+    /* small design */
+    @container #{$name} (max-width: 47.9375em) {
+      @content;
+    }
+  }
+
+  @else if $point ==mediumonlytab {
+
+    /* medium design tab */
+    @container #{$name} (max-width: 63.9375em) {
+      @content;
+    }
+  }
+
+  @else if $point ==medium {
+
+    /* medium design */
+    @container #{$name} (min-width: 48em) {
+      @content;
+    }
+  }
+
+  @else if $point ==large {
+
+    /* large design */
+    @container #{$name} (min-width: 64em) {
+      @content;
+    }
+  }
+
+  @else if $point ==xlarge {
+
+    /* xlarge design */
+    @container #{$name} (min-width: 90em) {
       @content;
     }
   }

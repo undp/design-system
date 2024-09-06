@@ -4,11 +4,11 @@
 /* signup newsletter start */
 .sign-up {
   label {
-    color: $color-white;
+    color: var(--undpds-color-white);
     display: block;
-    font-size: $font-size-16;
+    font-size: var(--undpds-font-size-16);
     line-height: 1.4;
-    margin-bottom: $spacing-04;
+    margin-bottom: var(--undpds-spacing-04);
     text-align: left;
     text-transform: none;
 
@@ -33,24 +33,24 @@
 
     input[type=email] {
       background-color: transparent;
-      border-color: $color-white;
+      border-color: var(--undpds-color-white);
       border-radius: 0;
-      color: $color-white;
+      color: var(--undpds-color-white);
       height: 54px;
       margin: 0;
       outline: none;
 
       &::placeholder {
-        color: $color-white;
+        color: var(--undpds-color-white);
       }
     }
   }
 
   .form-submit {
     -webkit-appearance: none;
-    background-color: $color-white;
+    background-color: var(--undpds-color-white);
     border-radius: 0;
-    color: $color-blue-600;
+    color: var(--undpds-color-blue-600);
     height: 54px;
     margin: 0;
     min-width: 86px;
@@ -63,25 +63,25 @@
   }
 
   &.inverted {
-    color: $color-white;
+    color: var(--undpds-color-white);
 
     label {
-      color: $color-black;
+      color: var(--undpds-color-black);
     }
 
     input[type=email] {
-      background-color: $color-white;
-      border-color: $color-black;
-      color: $color-black;
+      background-color: var(--undpds-color-white);
+      border-color: var(--undpds-color-black);
+      color: var(--undpds-color-black);
 
       &::placeholder {
-        color: $color-black;
+        color: var(--undpds-color-black);
       }
     }
 
     .form-submit {
-      background-color: $color-dark-red;
-      color: $color-white;
+      background-color: var(--undpds-color-dark-red);
+      color: var(--undpds-color-white);
     }
   }
 }

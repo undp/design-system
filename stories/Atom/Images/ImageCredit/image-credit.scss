@@ -2,11 +2,11 @@
 @import '../../../assets/scss/breakpoints';
 
 .credits {
-  font-size: $font-size-14;
+  font-size: var(--undpds-font-size-14);
   line-height: 1.4;
   margin-left: auto;
 
   @container (width > 30em) {
-    font-size: $font-size-16;
+    font-size: var(--undpds-font-size-16);
   }
 }

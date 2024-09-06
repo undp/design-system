@@ -9,9 +9,9 @@
 }
 
 .reveal-head {
-  margin-bottom: $spacing-06;
+  margin-bottom: var(--undpds-spacing-06);
 
   @include devicebreak(medium) {
-    margin-bottom: $spacing-08;
+    margin-bottom: var(--undpds-spacing-08);
   }
 }

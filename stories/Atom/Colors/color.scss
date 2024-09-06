@@ -25,12 +25,12 @@
   }
 
   .color__title {
-    color: $color-black;
+    color: var(--undpds-color-black);
     font-size: 0.813rem;
     min-height: 28px;
 
     @include devicebreak(medium) {
-      font-size: $font-size-16;
+      font-size: var(--undpds-font-size-16);
     }
   }
 
@@ -40,8 +40,8 @@
 }
 
 .Primary-text {
-  color: $color-black;
-  font-size: $font-size-12;
+  color: var(--undpds-color-black);
+  font-size: var(--undpds-font-size-12);
   margin-top: -1.538rem;
   text-align: center;
 
@@ -65,7 +65,7 @@
   .color__name {
     flex-basis: 0;
     flex-grow: 1;
-    margin: $spacing-03 0;
+    margin: var(--undpds-spacing-03) 0;
     text-align: center;
 
     @include devicebreak(medium) {
@@ -88,107 +88,107 @@
       }
 
       &.p-blue-100 {
-        background-color: $color-blue-100;
+        background-color: var(--undpds-color-blue-100);
       }
 
       &.p-blue-200 {
-        background-color: $color-blue-200;
+        background-color: var(--undpds-color-blue-200);
       }
 
       &.p-blue-300 {
-        background-color: $color-blue-300;
+        background-color: var(--undpds-color-blue-300);
       }
 
       &.p-blue-400 {
-        background-color: $color-blue-400;
+        background-color: var(--undpds-color-blue-400);
       }
 
       &.p-blue-500 {
-        background-color: $color-blue-500;
+        background-color: var(--undpds-color-blue-500);
       }
 
       &.p-blue-600 {
-        background-color: $color-blue-600;
+        background-color: var(--undpds-color-blue-600);
       }
 
       &.p-blue-700 {
-        background-color: $color-blue-700;
+        background-color: var(--undpds-color-blue-700);
       }
 
       &.p-gray-100 {
-        background-color: $color-gray-100;
+        background-color: var(--undpds-color-gray-100);
       }
 
       &.p-gray-200 {
-        background-color: $color-gray-200;
+        background-color: var(--undpds-color-gray-200);
       }
 
       &.p-gray-300 {
-        background-color: $color-gray-300;
+        background-color: var(--undpds-color-gray-300);
       }
 
       &.p-gray-400 {
-        background-color: $color-gray-400;
+        background-color: var(--undpds-color-gray-400);
       }
 
       &.p-gray-500 {
-        background-color: $color-gray-500;
+        background-color: var(--undpds-color-gray-500);
       }
 
       &.p-gray-600 {
-        background-color: $color-gray-600;
+        background-color: var(--undpds-color-gray-600);
       }
 
       &.p-gray-700 {
-        background-color: $color-gray-700;
+        background-color: var(--undpds-color-gray-700);
       }
 
       &.light-yellow {
-        background-color: $color-light-yellow;
+        background-color: var(--undpds-color-light-yellow);
       }
 
       &.yellow {
-        background-color: $color-yellow;
+        background-color: var(--undpds-color-yellow);
       }
 
       &.dark-yellow {
-        background-color: $color-dark-yellow;
+        background-color: var(--undpds-color-dark-yellow);
       }
 
       &.light-red {
-        background-color: $color-light-red;
+        background-color: var(--undpds-color-light-red);
       }
 
       &.red {
-        background-color: $color-red;
+        background-color: var(--undpds-color-red);
       }
 
       &.dark-red {
-        background-color: $color-dark-red;
+        background-color: var(--undpds-color-dark-red);
       }
 
       &.light-green {
-        background-color: $color-light-green;
+        background-color: var(--undpds-color-light-green);
       }
 
       &.green {
-        background-color: $color-green;
+        background-color: var(--undpds-color-green);
       }
 
       &.dark-green {
-        background-color: $color-dark-green;
+        background-color: var(--undpds-color-dark-green);
       }
 
       &.light-azure {
-        background-color: $color-light-azure;
+        background-color: var(--undpds-color-light-azure);
       }
 
       &.azure {
-        background-color: $color-azure;
+        background-color: var(--undpds-color-azure);
       }
 
       &.dark-azure {
-        background-color: $color-dark-azure;
+        background-color: var(--undpds-color-dark-azure);
       }
     }
 
@@ -208,7 +208,7 @@
   width: 100%;
 
   .color__name {
-    margin: $spacing-03 0;
+    margin: var(--undpds-spacing-03) 0;
     text-align: center;
 
     .color__box {
@@ -226,27 +226,27 @@
       }
 
       &.p-gray-100 {
-        background-color: $color-gray-100;
+        background-color: var(--undpds-color-gray-100);
       }
 
       &.p-gray-200 {
-        background-color: $color-gray-200;
+        background-color: var(--undpds-color-gray-200);
       }
 
       &.p-gray-400 {
-        background-color: $color-gray-400;
+        background-color: var(--undpds-color-gray-400);
       }
 
       &.p-gray-700 {
-        background-color: $color-gray-700;
+        background-color: var(--undpds-color-gray-700);
       }
 
       &.p-blue-600 {
-        background-color: $color-blue-600;
+        background-color: var(--undpds-color-blue-600);
       }
 
       &.dark-red {
-        background-color: $color-dark-red;
+        background-color: var(--undpds-color-dark-red);
       }
     }
 

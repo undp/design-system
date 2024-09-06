@@ -5,6 +5,6 @@
 abbr[title] {
   @extend %paragragh-font-20;
 
-  border-bottom: 2px dashed $color-dark-red;
+  border-bottom: 2px dashed var(--undpds-color-dark-red);
   text-decoration: none;
 }
