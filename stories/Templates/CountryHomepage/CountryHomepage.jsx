@@ -103,8 +103,8 @@ export function CountryHomepage({
         </div>
 
         <ContentCardWithAndWithoutImage
-          data={featureddataafterwedo.contentdata}
-          storyBtn={featureddataafterwedo.storyBtn}
+          data={featureddataafterwedo?.contentdata}
+          storyBtn={featureddataafterwedo?.storyBtn}
           dataViewport="true"
           {...args}
         />

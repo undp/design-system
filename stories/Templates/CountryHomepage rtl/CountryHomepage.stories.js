@@ -3,7 +3,7 @@ import { CountryHomepage } from "./CountryHomepage";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
 import { statsArray as statssliderdata } from "../../Patterns/StatsSlider/StatsSliderUtils.js";
 import { getCaptionForLocale as takeactioncard } from "../../Organism/Blocks/ImageRevealCards/ImageRevealCardsUtils.js";
-import { getCaptionForLocale as contentcardimagesdata } from "../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage.stories.js";
+import { getCaptionForLocale as contentcardimagesdata } from "../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImageUtils.js";
 import BackgroundImg from "../../assets/images/country-hero-img.jpg";
 import BackgroundVideo from "../../assets/video/video_sample.mp4";
 import img from "../../assets/images/card2.jpg";
@@ -798,7 +798,7 @@ const Template = (args, { globals: { locale, accent } }) => {
       heroimgsrc={caption.imgsrc}
       heroimgalt={caption.imgalt}
       featureddata={caption.featureddata}
-      featureddataafterwedo={caption.featureddataafterwedo}
+      featureddataafterwedo={{ ...caption.featureddataafterwedo, ...contentcardimagesdata(locale) }}
       headertext={caption.headertext}
       PagewidecardTag={caption.tag}
       PagewidecardTitle={caption.label1}
@@ -809,7 +809,6 @@ const Template = (args, { globals: { locale, accent } }) => {
       takeactioncard={takeactioncard(locale)}
       statHeading={caption.statHeading}
       storiesHeading={caption.storiesHeading}
-      // featureddataafterwedo={contentcardimagesdata(locale)}
       StatsSliderData={statssliderdata(locale)}
       footerData={footerData(locale)}
       locale={locale}

@@ -2,7 +2,7 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { CountryHomepage } from "./CountryHomepage";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
 import { getCaptionForLocale as takeactioncard } from "../../Organism/Blocks/ImageRevealCards/ImageRevealCardsUtils.js";
-import { getCaptionForLocale as contentcardimagesdata } from "../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImage.stories.js";
+import { getCaptionForLocale as contentcardimagesdata } from "../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImageUtils.js";
 import BackgroundImg from "../../assets/images/country-hero-img.jpg";
 import BackgroundVideo from "../../assets/video/video_sample.mp4";
 import img from "../../assets/images/card2.jpg";
@@ -826,191 +826,181 @@ const statsArray = (locale) => {
 
 export default {
   title: "Templates/Country homepage",
-  parameters: {
-    docs: {
+    parameters: {
+      docs: {
         page: () => (
             <>
-<style>
-  {`
-  .sbdocs-preview {display: none}
-  `}
-</style>
+            <style>
+              {`
+              .sbdocs-preview {display: none}
+              `}
+            </style>
 
-<h1>Country Homepage</h1>
-<p>A country homepage has all the list of content related to one particular country.</p>
+            <h1>Country Homepage</h1>
+            <p>A country homepage has all the list of content related to one particular country.</p>
 
-<h3>Overview</h3>
-<p>A country homepage has a content list related to one specific country. This includes content lists like articles, publications, success stories, blogs, etc.</p>
-<p>Mock Up: <a href="https://undp-design-system.azurewebsites.net/country-page">https://undp-design-system.azurewebsites.net/country-page</a></p>
+            <h3>Overview</h3>
+            <p>A country homepage has a content list related to one specific country. This includes content lists like articles, publications, success stories, blogs, etc.</p>
+            <p>Mock Up: <a href="https://undp-design-system.azurewebsites.net/country-page">https://undp-design-system.azurewebsites.net/country-page</a></p>
 
-<h3>Template Structure</h3>
-<p>The following components are used to create the “Country Homepage” template in the design system:</p>
-<ul>
-    <li>Country header</li>
-    <li>Homepage Hero - Homepage Hero images are large sized images with text in front of the image and present at the top of the homepage.</li>
-    <li>Group of featured cards - Featured card groups that will have CTA links (this can be just #).</li>
-    <li>Background image(color) with text</li>
-    <li>Title for success stories</li>
-    <li>Pagewide featured content card</li>
-    <li>Group of content cards</li>
-    <li>Secondary button, no arrow</li>
-    <li>Stats slider - Group of cards arranged horizontally in two rows that slide in from opposite directions on page scroll.</li>
-    <li>Text title - Take action</li>
-    <li>Group of image reveal cards</li>
-    <li>Standard footer</li>
-</ul>
+            <h3>Template Structure</h3>
+            <p>The following components are used to create the “Country Homepage” template in the design system:</p>
+            <ul>
+                <li>Country header</li>
+                <li>Homepage Hero - Homepage Hero images are large sized images with text in front of the image and present at the top of the homepage.</li>
+                <li>Group of featured cards - Featured card groups that will have CTA links (this can be just #).</li>
+                <li>Background image(color) with text</li>
+                <li>Title for success stories</li>
+                <li>Pagewide featured content card</li>
+                <li>Group of content cards</li>
+                <li>Secondary button, no arrow</li>
+                <li>Stats slider - Group of cards arranged horizontally in two rows that slide in from opposite directions on page scroll.</li>
+                <li>Text title - Take action</li>
+                <li>Group of image reveal cards</li>
+                <li>Standard footer</li>
+            </ul>
 
-<h3>Performance</h3>
-<p>The page performance will be optimized by considering the following:</p>
-<ul>
-    <li>Lazy load</li>
-    <li>Use appropriate media renditions based on the client’s viewpoint.</li>
-    <li>Load common/static elements asynchronously (static navigation, menus, countries list, etc)</li>
-    <li>Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)</li>
-    <li>Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.</li>
-</ul>
+            <h3>Performance</h3>
+            <p>The page performance will be optimized by considering the following:</p>
+            <ul>
+                <li>Lazy load</li>
+                <li>Use appropriate media renditions based on the client’s viewpoint.</li>
+                <li>Load common/static elements asynchronously (static navigation, menus, countries list, etc)</li>
+                <li>Optimize assets loading - inline important CSS, defer bulky assets calls, preconnect to required origins, etc)</li>
+                <li>Optimize transitions and animations so above-the-fold elements are always loaded first and available for viewers before the rest of the page is processed.</li>
+            </ul>
 
-<h3>Usage</h3>
-<ul>
-    <li>Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section</li>
-    <li>Initialize navigation, language switcher, accordion, statsHover, swiper, and parallax effect by calling below mentioned functions.</li>
-    <ul>
-        <li><code>navigationInitialize();</code></li>
-        <li><code>langSwitch();</code></li>
-        <li><code>accordion('[data-accordion="mobile"]', '.footer-panel', 'active');</code></li>
-        <li><code>swiper('.stats-card-slider');</code></li>
-        <li><code>parallaxEffect('.stats-card-slider');</code></li>
-    </ul>
-    <li>Refer <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options</li>
-    <li>Refer <a href="https://github.com/undp/design-system/wiki/Parallax-documentation">this document</a> for Parallax integration & options</li>
-    <li>If you want to add left-right animation then add <code>data-viewport=”true”</code> attribute to your HTML element.</li>
-</ul>
+            <h3>Usage</h3>
+            <ul>
+                <li>Copy HTML from the HTML tab of Canvas and include CSS and JS file in ‘CSS and JS References’ section</li>
+                <li>Initialize navigation, language switcher, accordion, statsHover, swiper, and parallax effect by calling below mentioned functions.</li>
+                <ul>
+                    <li><code>navigationInitialize();</code></li>
+                    <li><code>langSwitch();</code></li>
+                    <li><code>accordion('[data-accordion="mobile"]', '.footer-panel', 'active');</code></li>
+                    <li><code>swiper('.stats-card-slider');</code></li>
+                    <li><code>parallaxEffect('.stats-card-slider');</code></li>
+                </ul>
+                <li>Refer <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options</li>
+                <li>Refer <a href="https://github.com/undp/design-system/wiki/Parallax-documentation">this document</a> for Parallax integration & options</li>
+                <li>If you want to add left-right animation then add <code>data-viewport=”true”</code> attribute to your HTML element.</li>
+            </ul>
 
-<h3>CSS and JS References</h3>
+            <h3>CSS and JS References</h3>
 
-<h4>CSS:</h4>
-<p>Add the base layout style from</p>
-<ul>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepage-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepage-hero.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card-with-and-without-image.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card-with-and-without-image.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-card.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-reveal-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-reveal-cards.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/countryhome-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/countryhome-page.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css</a></li>
-</ul>
+            <h4>CSS:</h4>
+            <p>Add the base layout style from</p>
+            <ul>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/country-site-header.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/language-switcher.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/menu.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mega-menu.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/mobile-nav.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepage-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/homepage-hero.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/headingbig.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card-with-and-without-image.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/content-card-with-and-without-image.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-wide-card.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-card.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-reveal-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-reveal-cards.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-cards.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/stats-slider.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/input-fields.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/buttons.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/newsletter-signup.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/accordion.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/footer.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/countryhome-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/countryhome-page.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/templates/article-page.min.css</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/swiper.min.css</a></li>
+            </ul>
 
-<h4>JS:</h4>
-<ul>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smooth-bg-change.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smooth-bg-change.min.js</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js</a></li>
-    <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
-</ul>
-<p>Add following external libraries</p>
-<ul>
-    <li>Swiper (<a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a>)</li>
-    <li>GSAP (<a href="https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo">https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo</a>)</li>
-</ul>
+            <h4>JS:</h4>
+            <ul>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smooth-bg-change.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smooth-bg-change.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/parallax.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+            </ul>
+            <p>Add following external libraries</p>
+            <ul>
+                <li>Swiper (<a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a>)</li>
+                <li>GSAP (<a href="https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo">https://greensock.com/docs/v3/Installation?checked=core,scrollTrigger,easePack,slowMo</a>)</li>
+            </ul>
 
-<h3>Changelog</h3>
-<p>1.0 — Released component</p>
+            <h3>Changelog</h3>
+            <p>1.0 — Released component</p>
 
-<Canvas>
-  <Story
-    name="Country homepage"
-    parameters={{
-      layout: "fullscreen",
-      docs: {
-        story: {
-          inline: false,
-          iframeHeight: "100%",
-        },
-      },
-      chromatic: { viewports: process.env.CHROMATIC_VIEWPORTS },
-    }}
-  >
-    {(args, { globals: { locale, accent } }) => {
-      const caption = getCaptionForLocale(locale);
-      const navigationData = getNavLinks(locale);
-      const leftNavigationData = navigationData.filter(
-        (item) => item.position === "left"
-      );
-      const rightNavigationData = navigationData.filter(
-        (item) => item.position === "right"
-      );
-      const siteTitleData = getSiteTitle(locale);
-      const statCaption = statsArray(locale);
-      return (
-        <CountryHomepage
-          herotitle={caption.titlename}
-          headingTop={caption.text}
-          herobtnlabel={caption.btnlabel}
-          herosubtitle={caption.subtitle}
-          heroimgsrc={caption.imgsrc}
-          heroimgsrc2={caption.imgsrc2}
-          heroimgalt={caption.imgalt}
-          featureddata={caption.featureddata}
-          featureddataafterwedo={caption.featureddataafterwedo}
-          headertext={caption.headertext}
-          PagewidecardTag={caption.tag}
-          PagewidecardTitle={caption.label1}
-          PagewidecardParagraph={caption.label2}
-          PagewidecardBtnlabel={caption.pagewidecardbtn}
-          whatwedoheader={caption.whatwedoheader}
-          whatwedodescription={caption.whatwedodescription}
-          takeactioncard={takeactioncard(locale)}
-          statHeading={caption.statHeading}
-          storiesHeading={caption.storiesHeading}
-          footerData={footerData(locale)}
-          locale={locale}
-          leftNavigationData={leftNavigationData}
-          navigationData={navigationData}
-          rightNavigationData={rightNavigationData}
-          menuData={menuData(locale)}
-          languageswitcherData={Languageswitcher(locale)}
-          locationData={getLocationDataForLocale(locale)}
-          langSelect={getSelectlanguage(locale)}
-          backcaption={getBackForLocale(locale)}
-          siteTitleData={getSiteTitle(locale)}
-          logo={logo}
-          logowhite={logowhite}
-          takeAcrtionHead={caption.takeAcrtionHead}
-          storyBtn={caption.storyBtn}
-          statdata={statCaption}
-          {...args}
-        ></CountryHomepage>
-      );
-    }}
-  </Story>
-</Canvas>
+            <Canvas>
+              <Story
+                name="Country homepage"
+              >
+                {(args, { globals: { locale, accent } }) => {
+                  const caption = getCaptionForLocale(locale);
+                  const navigationData = getNavLinks(locale);
+                  const leftNavigationData = navigationData.filter(
+                    (item) => item.position === "left"
+                  );
+                  const rightNavigationData = navigationData.filter(
+                    (item) => item.position === "right"
+                  );
+                  const siteTitleData = getSiteTitle(locale);
+                  const statCaption = statsArray(locale);
+                  return (
+                    <CountryHomepage
+                      herotitle={caption.titlename}
+                      headingTop={caption.text}
+                      herobtnlabel={caption.btnlabel}
+                      herosubtitle={caption.subtitle}
+                      heroimgsrc={caption.imgsrc}
+                      heroimgsrc2={caption.imgsrc2}
+                      heroimgalt={caption.imgalt}
+                      featureddata={caption.featureddata}
+                      featureddataafterwedo={{ ...caption.featureddataafterwedo, ...contentcardimagesdata(locale) }}
+                      headertext={caption.headertext}
+                      PagewidecardTag={caption.tag}
+                      PagewidecardTitle={caption.label1}
+                      PagewidecardParagraph={caption.label2}
+                      PagewidecardBtnlabel={caption.pagewidecardbtn}
+                      whatwedoheader={caption.whatwedoheader}
+                      whatwedodescription={caption.whatwedodescription}
+                      takeactioncard={takeactioncard(locale)}
+                      statHeading={caption.statHeading}
+                      storiesHeading={caption.storiesHeading}
+                      footerData={footerData(locale)}
 
-            </>
-        )
+                      locale={locale}
+                      leftNavigationData={leftNavigationData}
+                      navigationData={navigationData}
+                      rightNavigationData={rightNavigationData}
+                      menuData={menuData(locale)}
+                      languageswitcherData={Languageswitcher(locale)}
+                      locationData={getLocationDataForLocale(locale)}
+                      langSelect={getSelectlanguage(locale)}
+                      backcaption={getBackForLocale(locale)}
+                      siteTitleData={getSiteTitle(locale)}
+                      logo={logo}
+                      logowhite={logowhite}
+                      takeAcrtionHead={caption.takeAcrtionHead}
+                      storyBtn={caption.storyBtn}
+                      statdata={statCaption}
+                      {...args}
+                    ></CountryHomepage>
+                  );
+                }}
+              </Story>
+            </Canvas>
+          </>
+        ),
     }
   }
 }
@@ -1036,7 +1026,7 @@ const Template = (args, { globals: { locale, accent } }) => {
       heroimgsrc2={caption.imgsrc2}
       heroimgalt={caption.imgalt}
       featureddata={caption.featureddata}
-      featureddataafterwedo={caption.featureddataafterwedo}
+      featureddataafterwedo={{ ...caption.featureddataafterwedo, ...contentcardimagesdata(locale) }}
       headertext={caption.headertext}
       PagewidecardTag={caption.tag}
       PagewidecardTitle={caption.label1}
