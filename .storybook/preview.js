@@ -1,5 +1,5 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import * as RTLAddon from 'storybook-addon-rtl';
+// import * as RTLAddon from 'storybook-addon-rtl';
 import renderToHTML from './renderToHTML';
 
 
@@ -9,17 +9,17 @@ import '!style-loader!css-loader!sass-loader!../docs/css/components/documentatio
 
 // Log the contents of RTLAddon for debugging
 
-console.log(RTLAddon);
+// console.log(RTLAddon);
 
-if (RTLAddon && typeof RTLAddon.default === 'function') {
-  RTLAddon.default(); // Use the default export if it is a function
-} else {
-  console.error('RTL initialization method not found.');
-}
+// if (RTLAddon && typeof RTLAddon.default === 'function') {
+//   RTLAddon.default(); // Use the default export if it is a function
+// } else {
+//   console.error('RTL initialization method not found.');
+// }
 
 // Configure Storybook
 export const parameters = {
-  actions: { disable: true },
+  // actions: { disable: true },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -34,7 +34,14 @@ export const parameters = {
     },
   },
   viewport: {
-    viewports: INITIAL_VIEWPORTS,
+    // viewports: INITIAL_VIEWPORTS,
+    viewports: {
+      small: { name: "Small", styles: { width: "375px", height: "812px" } },
+      medium: { name: "Medium", styles: { width: "768px", height: "900px" } },
+      large: { name: "Large", styles: { width: "1380px", height: "768px" } },
+      xlarge: { name: "XLarge", styles: { width: "1600px", height: "900px" } },
+      hd: { name: "HD", styles: { width: "1920px", height: "1080px" } },
+    },
   },
   docs: {
     source: {
@@ -45,14 +52,14 @@ export const parameters = {
   options: {
     storySort: {
       method: 'alphabetical',
-      order: ['Getting started',['Intro','How to use our design system?','Browser support'],'Foundation','Components', 'Patterns', 'Utilities','Templates' ],
+      order: ['Getting started', ['Intro', 'How to use our design system?', 'Browser support'], 'Foundation', 'Components', 'Patterns', 'Utilities', 'Templates'],
       includeName: true
     },
   },
-  chromatic: {
-    pauseAnimationAtEnd: true,
-    delay: 1500
-  },
+  // chromatic: {
+  //   pauseAnimationAtEnd: true,
+  //   delay: 1500
+  // },
 }
 
 /* Implementing locale for language switcher */
@@ -95,15 +102,15 @@ const getLangCode = (Story, context) => {
   let activeLang = context.globals.locale;
 
   let delay = 10;
-  setTimeout(function() {
+  setTimeout(function () {
     const evt = new Event('load');
     window.dispatchEvent(evt);
   }, delay);
 
-  window.UNDP.langCode = (window.UNDP) ? activeLang : window.UNDP= { langCode : activeLang };
+  window.UNDP.langCode = (window.UNDP) ? activeLang : window.UNDP = { langCode: activeLang };
 
   const langArr = {
-    'english' : 'en',
+    'english': 'en',
     'arabic': 'ar',
     'burmese': 'my',
     'japanese': 'ja',
@@ -180,4 +187,3 @@ const setAccentClass = (Story, context) => {
 
 export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass];
 export const tags = ['autodocs', 'autodocs'];
-
