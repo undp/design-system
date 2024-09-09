@@ -5,14 +5,17 @@ module.exports = {
   stories: ['../stories/**/*.stories.@(js|jsx|ts|tsx)', '../stories/**/*.mdx'],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-actions',
-    '@storybook/addon-docs',
-    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false, // 👈 disable the actions addon
+      },
+    },
     'storybook-addon-rtl',
     '@storybook/blocks',
     '@storybook/addon-a11y',
     '@storybook/react-webpack5',
-    '@chromatic-com/storybook',
+    // '@chromatic-com/storybook',
     '@storybook/addon-webpack5-compiler-babel'
   ],
   features: {
@@ -47,9 +50,9 @@ module.exports = {
     name: '@storybook/react-webpack5',
     options: {}
   },
-  env: config => ({
-    ...config,
-    CHROMATIC_VIEWPORTS: [375, 768, 1380, 1920]
-  }),
+  // env: config => ({
+  //   ...config,
+  //   CHROMATIC_VIEWPORTS: [375, 768, 1380, 1920]
+  // }),
   docs: {},
 };
