@@ -7,14 +7,14 @@ import {
 } from "@storybook/addon-docs";
 import { GlobalHomePage } from "./GlobalHomepage";
 import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
-import { getCaptionForLocale as featuredcarddata } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedCard.stories.js";
-import { getCaptionForLocale as ourexpertisedata } from "../../Organism/Blocks/OurExpertise/OurExpertise.stories.js";
-import { getCaptionForLocale as textctadata } from "../../Molecules/Text/TextCta/TextCta.stories.js";
-import { getCaptionForLocale as textbackgrounddata } from "../../Molecules/Text/TextBackground/TextBackground.stories.js";
-import { statsArray as statsdata } from "../../Organism/Stats/Stats.stories.js";
-import { statsArray as fixedcarouseldata } from "../../Components/UIcomponents/Carousel/FixedSizeCarousel/FixedSizeCarousel.stories.js";
-import { getCaptionForLocale as tweetdata } from "../../Organism/Blocks/TweetPanel/TweetPanel.stories.js";
-import { getCaptionForLocale as homepagesplit } from "../../Components/UIcomponents/Hero/HomePageHero/HomePageHero.stories.js";
+import { getCaptionForLocale as featuredcarddata } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedContentCardUtils.js";
+import { getCaptionForLocale as ourexpertisedata } from "../../Organism/Blocks/OurExpertise/OurExpertiseUtils.js";
+import { getCaptionForLocale as textctadata } from "../../Molecules/Text/TextCta/TextCtaUtils.js";
+import { getCaptionForLocale as textbackgrounddata } from "../../Molecules/Text/TextBackground/TextBackgroundUtils.js";
+import { statsArray as statsdata } from "../../Organism/Stats/StatsUtils.js";
+import { statsArray as fixedcarouseldata } from "../../Components/UIcomponents/Carousel/FixedSizeCarousel/FixedSizeCarouselUtils.js";
+import { getCaptionForLocale as tweetdata } from "../../Organism/Blocks/TweetPanel/TweetPanelUtils.js";
+import { getCaptionForLocale as homepagesplit } from "../../Components/UIcomponents/Hero/HomePageHero/HomePageHeroUtils.js";
 import img from "../../assets/images/card2.jpg";
 
 import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
@@ -765,7 +765,6 @@ const Template = (args, { globals: { locale } }) => {
       navigationData={navigationData}
       rightNavigationData={rightNavigationData}
       menuData={menuData(locale)}
-      // languageswitcherData={Languageswitcher(locale)}
       locationData={getLocationDataForLocale(locale)}
       langSelect={getSelectlanguage(locale)}
       backcaption={getBackForLocale(locale)}

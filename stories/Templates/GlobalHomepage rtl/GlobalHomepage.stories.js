@@ -8,7 +8,7 @@ import {
 import { GlobalHomePage } from "./GlobalHomepage.jsx";
 import img from "../../assets/images/card2.jpg";
 
-import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js";
+import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
 import {
   getNavLinks,
   menuData,
@@ -556,7 +556,7 @@ export const getCaptionForLocale = (locale) => {
 
 export default {
   title: "Templates/Global Homepage RTL",
-  component: GlobalHomepage,
+  component: GlobalHomePage,
   parameters: {
     docs: {
         page: () => (
