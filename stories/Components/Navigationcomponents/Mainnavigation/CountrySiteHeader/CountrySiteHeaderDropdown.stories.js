@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import CountrySiteHeaderDropdown from './CountrySiteHeaderDropdown';
 import { Canvas } from '@storybook/blocks';
-import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js";
+import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
 
 
 const getNavLinks = (locale) => {
@@ -209,7 +209,7 @@ This version of the header uses the dropdown/multilevel version of the menu.</p>
   <Story name="CountrySiteHeaderDropdown">
   {(args, { globals: { locale, accent } }) => {
       let lang = locale === "en" ? "english" : locale;
-      const caption = getCaptionForLocale(locale);
+      // const caption = getCaptionForLocale(locale);
       const navigationData = getNavLinks(locale);
       const backcaption = getBackForLocale(locale);
       const siteTitleData = getSiteTitle(locale);

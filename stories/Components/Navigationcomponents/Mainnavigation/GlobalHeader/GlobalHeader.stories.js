@@ -1,6 +1,5 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 
-
 export const getNavLinks = (locale) => {
   switch (locale) {
     case "english":
@@ -192,11 +191,13 @@ export const menuData = (locale) => {
   }
 };
 
-export const GlobalHeaderStories = () => {
-  return (
+export default {
+  title: "Components/Navigation components/Main navigation/Global header",
+  parameters: { 
+    docs: {
+      page: () => (
+    
     <>
-      <Meta title="Components/Navigation components/Main navigation/Global header" />
-
       <style>
         {`
         iframe {
@@ -290,16 +291,9 @@ export const GlobalHeaderStories = () => {
 
       <p>1.0 — Released component</p>
     </>
-  );
-};
-
-export default {
-  title: "Components/Navigation components/Main navigation/Global header",
-  component: GlobalHeaderStories,
-  parameters: {
-    actions: {
-      handles: ["click .menu-item"],
-    },
+  )
+}
   },
-};
+};  
+
 

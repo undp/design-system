@@ -1,8 +1,8 @@
 import React from "react";
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import  CountrySiteHeader  from "./CountrySiteHeader";
-import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcher.stories.js";
-import { getNavLinks, getSiteTitle, getLocationDataForLocale, getBackForLocale, getSelectlanguage, menuData } from "./CountrySiteHeaderUtils"
+import { getCaptionForLocale as Languageswitcher } from "../../../UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
+import { getNavLinks, getSiteTitle, getLocationDataForLocale, getBackForLocale, getCaptionForLocale, getSelectlanguage, menuData } from "./CountrySiteHeaderUtils"
 
 
 
