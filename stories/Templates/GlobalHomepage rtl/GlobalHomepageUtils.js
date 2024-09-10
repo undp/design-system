@@ -1,3 +1,5 @@
+import img from "../../assets/images/card2.jpg";
+
 export const getCaptionForLocale = (locale) => {
     switch (locale) {
       case "english":

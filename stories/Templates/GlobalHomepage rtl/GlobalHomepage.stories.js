@@ -6,7 +6,6 @@ import {
   DocsContainer,
 } from "@storybook/addon-docs";
 import { GlobalHomePage } from "./GlobalHomepage.jsx";
-import img from "../../assets/images/card2.jpg";
 
 import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
 import {
