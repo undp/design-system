@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { ProjectPage } from "./ProjectPage";
-import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer/FooterUtils.js";
 import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
 import {
   getNavLinks,

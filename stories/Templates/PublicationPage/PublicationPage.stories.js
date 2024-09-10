@@ -2,7 +2,7 @@ import { Meta, Story, Canvas, Source } from "@storybook/addon-docs";
 import { PublicationPage } from "./PublicationPage";
 import { getCaptionForLocale as PublicationCardData } from "../../Molecules/Blocks/PublicationCard/PublicationCard.stories.js";
 import { getCaptionForLocale as ContentCardWithOutImageData } from "../../Components/UIcomponents/Cards/ContentCard/ContentCardWithOutImage.stories.js";
-import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer/FooterUtils.js";
 import logo from "../../assets/images/undp-logo-blue.svg";
 import logowhite from "../../assets/images/undp-logo-white.svg";
 import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";

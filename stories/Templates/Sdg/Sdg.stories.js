@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { SdgPage } from "./Sdg";
-import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer/FooterUtils.js";
 import { getCaptionForLocale as sdgsmodaldata } from "../../Molecules/Sdgmodal/Sdgmodal";
 import heroImage from "../../assets/images/garden.jpg";
 import BackgroundVideo from "../../assets/video/video_sample.mp4";

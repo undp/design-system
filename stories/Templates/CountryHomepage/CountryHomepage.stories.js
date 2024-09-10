@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { CountryHomepage } from "./CountryHomepage";
-import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer/FooterUtils.js";
 import { getCaptionForLocale as takeactioncard } from "../../Organism/Blocks/ImageRevealCards/ImageRevealCardsUtils.js";
 import { getCaptionForLocale as contentcardimagesdata } from "../../Organism/Blocks/ContentCardWithAndWithoutImage/ContentCardWithAndWithoutImageUtils.js";
 import BackgroundImg from "../../assets/images/country-hero-img.jpg";

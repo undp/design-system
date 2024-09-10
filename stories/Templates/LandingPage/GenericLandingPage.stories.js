@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { GenericLandingPage } from "./GenericLandingPage";
-import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer/FooterUtils.js";
 import img from "../../assets/images/card-thumbnail.jpg";
 import img2 from "../../assets/images/CardImage2.jpg";
 import img3 from "../../assets/images/CardImage3.jpg";

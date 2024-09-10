@@ -3,7 +3,7 @@ import AuthorPage from "./AuthorPage.jsx";
 import { getCaptionForLocale as breadcrumbData } from "../../Components/Navigationcomponents/Breadcrumbs/BreadcrumbsUtils.js";
 import { getCaptionForLocale as authorSummaryData } from "../../Organism/Blocks/AuthorSummary/AuthorSummaryUtils.js";
 import { getCaptionForLocale as contentCardData } from "../../Organism/Blocks/ContentCard/ContentCard.stories.js";
-import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer/FooterUtils.js";
 import img from "../../assets/images/card-thumbnail.jpg";
 import img2 from "../../assets/images/CardImage2.jpg";
 import img3 from "../../assets/images/CardImage3.jpg";

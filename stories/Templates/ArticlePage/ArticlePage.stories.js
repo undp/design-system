@@ -7,7 +7,7 @@ import { getCaptionForLocale as blockquoteData } from "../../Molecules/Text/Bloc
 import { getCaptionForLocale as paraLabel } from "../../Atom/BaseTypography/Paragraph/ParagraphUtils.js";
 import { getCaptionForLocale as headingData } from "../../Atom/Typography/Heading/Heading.stories.js";
 import { getCaptionForLocale as listData } from "../../Atom/Typography/Lists/ListsUtils.js";
-import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer/FooterUtils.js";
 import { getCaptionForLocale as featuredCardContent } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedContentCardUtils.js";
 
 import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";

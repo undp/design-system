@@ -6,7 +6,7 @@ import {
   DocsContainer,
 } from "@storybook/addon-docs";
 import { GlobalHomePage } from "./GlobalHomepage";
-import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer/FooterUtils.js";
 import { getCaptionForLocale as featuredcarddata } from "../../Organism/Blocks/FeaturedContentCard/FeaturedCard/FeaturedContentCardUtils.js";
 import { getCaptionForLocale as ourexpertisedata } from "../../Organism/Blocks/OurExpertise/OurExpertiseUtils.js";
 import { getCaptionForLocale as textctadata } from "../../Molecules/Text/TextCta/TextCtaUtils.js";

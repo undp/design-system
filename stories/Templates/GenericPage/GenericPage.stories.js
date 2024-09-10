@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import { GenericPage } from "./GenericPage";
-import { getCaptionForLocale as footerData } from "../../Organism/Footer/Footer.stories.js";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer/FooterUtils.js";
 import { getCaptionForLocale as sidebarCaptionData } from "../../Components/Navigationcomponents/Sidebar/sidebarUtils.js";
 import { getCaptionForLocale as ContentCardData } from "../../Organism/Blocks/ContentCard/ContentCardUtils.js";
 import heroImage from "../../assets/images/generic_page_hero.jpg";

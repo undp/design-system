@@ -2,7 +2,7 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import Authors from "./Authors";
 import { getCaptionForLocale as breadcrumbData } from "../../Components/Navigationcomponents/Breadcrumbs/BreadcrumbsUtils.js";
 import { getCaptionForLocale as contentCardData } from "../../Organism/Blocks/ContentCard/ContentCardUtils.js";
-import { getCaptionForLocale as footerData } from "../../Organism/Footer//Footer.stories.js";
+import { getCaptionForLocale as footerData } from "../../Organism/Footer/FooterUtils.js";
 import { getCaptionForLocale as authorData } from "../../Components/UIcomponents/Author/AuthorCard/AuthorCard.stories.js";
 
 import { getCaptionForLocale as Languageswitcher } from "../../Components/UIcomponents/LanguageSwitcher/LanguageSwitcherUtils.js";
