@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs";
 import ArticlePage from "./ArticlePage";
 import { getCaptionForLocale as imageCaptionData } from "../../Atom/Images/ImageCaptionCredit/ImageCaptionCreditUtils.js";
-import { getCaptionForLocale as PostHeadData } from "../../Organism/Text/PostHeader/PostHeader.stories.js";
+import { getCaptionForLocale as PostHeadData } from "../../Organism/Text/PostHeader/PostHeaderUtils.js";
 import { getCaptionForLocale as AuthorCardData } from "../../Components/UIcomponents/Author/AuthorColumn/AuthorUtils.js";
 import { getCaptionForLocale as blockquoteData } from "../../Molecules/Text/BlockquoteComponent/BlockquoteComponentUtils.js";
 import { getCaptionForLocale as paraLabel } from "../../Atom/BaseTypography/Paragraph/ParagraphUtils.js";

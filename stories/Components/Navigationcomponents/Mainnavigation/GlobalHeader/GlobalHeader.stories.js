@@ -85,17 +85,6 @@ export default {
       );
       const backcaption = getBackForLocale(locale);
       const siteTitleData = getSiteTitle(locale);
-      // console.log('locale:', locale);
-      // console.log('siteTitleData:', siteTitleData);
-      // console.log('backcaption:', backcaption);
-      // console.log('caption:', caption);
-      // console.log('navigationData:', navigationData);
-      // console.log('leftNavigationData:', leftNavigationData);
-      // console.log('rightNavigationData:', rightNavigationData);
-      // console.log('menuData:', menuData(locale));
-      // console.log('Languageswitcher:', Languageswitcher(locale));
-      // console.log('getLocationDataForLocale:', getLocationDataForLocale(locale));
-      // console.log('getSelectlanguage:', getSelectlanguage(locale));
       return (
         <GlobalHeader
           siteTitleData={siteTitleData}
@@ -177,8 +166,6 @@ const Template = (args, {globals: { locale } }) => {
     const siteTitleData = getSiteTitle(locale);
   
     return (
-      <Canvas>
-        <Story>
           <GlobalHeader
             siteTitleData={siteTitleData}
             backcaption={backcaption}
@@ -192,8 +179,6 @@ const Template = (args, {globals: { locale } }) => {
             locationData={getLocationDataForLocale(locale)}
             langSelect={getSelectlanguage(locale)}
           ></GlobalHeader>
-        </Story>
-      </Canvas>
   );
 }
 
