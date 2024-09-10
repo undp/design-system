@@ -13,7 +13,7 @@ import {
   getLocationDataForLocale,
   getBackForLocale,
   getSelectlanguage,
-} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.js";
+} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeaderUtils.js";
 import sdglinkimage from "../../assets/images/sdg-link-image.png";
 import sdg1 from "../../assets/images/sdg1.png";
 import sdg2 from "../../assets/images/sdg2.jpeg";

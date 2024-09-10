@@ -13,7 +13,7 @@ import {
   getLocationDataForLocale,
   getBackForLocale,
   getSelectlanguage,
-} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.js";
+} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeaderUtils.js";
 
 const getheadingForLocale = (locale) => {
   switch (locale) {

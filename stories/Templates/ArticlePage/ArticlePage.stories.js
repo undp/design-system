@@ -18,7 +18,7 @@ import {
   getLocationDataForLocale,
   getBackForLocale,
   getSelectlanguage,
-} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeader.stories.js";
+} from "../../Components/Navigationcomponents/Mainnavigation/GlobalHeader/GlobalHeaderUtils.js";
 import mongoliaGoat from "../../assets/images/Mongolia-cashmere-goats.jpg";
 import farmlandlg from "../../assets/images/farmland-lg.jpg";
 import farmlandmd from "../../assets/images/farmland-md.jpg";
