@@ -8,7 +8,12 @@
         "loose": true
       }
     ],
-    "@babel/preset-typescript"
+    [
+      "@babel/preset-typescript",
+      {
+        "runtime": "automatic"
+      }
+    ]
   ],
   "plugins": [
     "@babel/plugin-transform-shorthand-properties",
