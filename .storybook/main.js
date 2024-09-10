@@ -16,7 +16,8 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/react-webpack5',
     // '@chromatic-com/storybook',
-    '@storybook/addon-webpack5-compiler-babel'
+    '@storybook/addon-webpack5-compiler-babel',
+    '@whitespace/storybook-addon-html'
   ],
   features: {
     buildStoriesJson: true,
