@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = {
+export default {
   staticDirs: ['../stories/assets'],
   stories: ['../stories/**/*.stories.@(js|jsx|ts|tsx)', '../stories/**/*.mdx'],
   addons: [
@@ -19,10 +19,6 @@ module.exports = {
     '@storybook/addon-webpack5-compiler-babel',
     '@whitespace/storybook-addon-html'
   ],
-  features: {
-    buildStoriesJson: true,
-    babelModeV7: true
-  },
   webpackFinal: async config => {
     config.resolve.alias = {
       ...config.resolve.alias,
