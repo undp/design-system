@@ -1,6 +1,7 @@
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+// import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 // import * as RTLAddon from 'storybook-addon-rtl';
 import renderToHTML from './renderToHTML';
+import { allModes } from './modes';
 
 
 // include base styling globally
@@ -56,10 +57,17 @@ export const parameters = {
       includeName: true
     },
   },
-  // chromatic: {
-  //   pauseAnimationAtEnd: true,
-  //   delay: 1500
-  // },
+  chromatic: {
+    modes: {
+      small: allModes["small"],
+      medium: allModes["medium"],
+      large: allModes["large"],
+      xlarge: allModes["xlarge"],
+      hd: allModes["hd"],
+    },
+    pauseAnimationAtEnd: true,
+    delay: 1500
+  },
 }
 
 /* Implementing locale for language switcher */
