@@ -110,123 +110,122 @@ export default {
   },
   parameters: {
     docs: {
-        page: () => (
-            <>
-            <h1>Image Reveal Card</h1>
+      page: () => (
+        <>
+          <h1>Image Reveal Card</h1>
 
-            <p>Image reveal cards are cards with information about the image and CTA links for detailed information.</p>
+          <p>Image reveal cards are cards with information about the image and CTA links for detailed information.</p>
 
-            <h3>Overview</h3>
+          <h3>Overview</h3>
 
-            <p>The Image reveals card component is a multi-usage component that creates boxes that are usually teasing some kind of content like- Image, Text, and CTA Link.</p>
+          <p>The Image reveals card component is a multi-usage component that creates boxes that are usually teasing some kind of content like- Image, Text, and CTA Link.</p>
 
-            <h4>When to use:</h4>
+          <h4>When to use:</h4>
 
-            <p>When text and CTA Link need to be attached with an image.</p>
+          <p>When text and CTA Link need to be attached with an image.</p>
 
-            <h3>Formatting</h3>
+          <h3>Formatting</h3>
 
-            <h4>Default</h4>
+          <h4>Default</h4>
 
-            <p>It consists of a grid with an image, text, and CTA link.</p>
+          <p>It consists of a grid with an image, text, and CTA link.</p>
 
-            <h3>Content</h3>
+          <h3>Content</h3>
 
-            <p>There are two types of image reveal card: Medium and Small</p>
+          <p>There are two types of image reveal card: Medium and Small</p>
 
-            <ul>
-              <li><strong>Medium:</strong> Image Reveal Card of medium-size shows the Image and CTA Link. The Text will show on hover.</li>
-              <li><strong>Small:</strong> Image Reveal Card of small size comes with a different Image and CTA Link. The Text will show on hover.</li>
-            </ul>
+          <ul>
+            <li><strong>Medium:</strong> Image Reveal Card of medium-size shows the Image and CTA Link. The Text will show on hover.</li>
+            <li><strong>Small:</strong> Image Reveal Card of small size comes with a different Image and CTA Link. The Text will show on hover.</li>
+          </ul>
 
-            <h3>Behaviors</h3>
+          <h3>Behaviors</h3>
 
-            <h4>States</h4>
+          <h4>States</h4>
 
-            <p>There are 2 states in the Image Reveal Card: Default and Hover.</p>
+          <p>There are 2 states in the Image Reveal Card: Default and Hover.</p>
 
-            <ul>
-              <li><strong>Default:</strong> It consists of Image and CTA Link.
-                <ul>
-                  <li>Medium size</li>
-                  <li>Small size</li>
-                </ul>
-              </li>
-              <li><strong>Hover:</strong> It consists of Image, Text, and CTA Link. It changes appearance when the mouse hovers over it.
-                <ul>
-                  <li>Medium size</li>
-                  <li>Small size</li>
-                </ul>
-              </li>
-            </ul>
+          <ul>
+            <li><strong>Default:</strong> It consists of Image and CTA Link.
+              <ul>
+                <li>Medium size</li>
+                <li>Small size</li>
+              </ul>
+            </li>
+            <li><strong>Hover:</strong> It consists of Image, Text, and CTA Link. It changes appearance when the mouse hovers over it.
+              <ul>
+                <li>Medium size</li>
+                <li>Small size</li>
+              </ul>
+            </li>
+          </ul>
 
-            <h4>Image reveal card</h4>
+          <h4>Image reveal card</h4>
 
-            <Canvas>
-              <Story name="Image reveal card">
-                {(args, { globals: { locale, accent } }) => {
-                  const caption = getCaptionForLocale(locale);
-                  return (
-                    <ImageRevelCard data={caption.data} {...args}>
-                      {" "}
-                    </ImageRevelCard>
-                  );
-                }}
-              </Story>
-            </Canvas>
+          <Canvas>
+            <Story name="Image reveal card">
+              {(args, { globals: { locale, accent } }) => {
+                const caption = getCaptionForLocale(locale);
+                return (
+                  <ImageRevelCard data={caption.data} {...args}>
+                    {" "}
+                  </ImageRevelCard>
+                );
+              }}
+            </Story>
+          </Canvas>
 
-            <h3>Usage</h3>
+          <h3>Usage</h3>
 
-            <ul>
-              <li>Select size control either Large or Small from the control tab on canvas.</li>
-              <li>Copy the HTML from the HTML tab and include the below listed CSS and JS files.</li>
-              <li>If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.</li>
-            </ul>
+          <ul>
+            <li>Select size control either Large or Small from the control tab on canvas.</li>
+            <li>Copy the HTML from the HTML tab and include the below listed CSS and JS files.</li>
+            <li>If you want to add left-right animation then add data-viewport=”true” attribute to your HTML element and include viewport.min.js file.</li>
+          </ul>
 
-            <h3>CSS and JS References</h3>
+          <h3>CSS and JS References</h3>
 
-            <h4>CSS:</h4>
+          <h4>CSS:</h4>
 
-            <p>Add the base layout style from:</p>
+          <p>Add the base layout style from:</p>
 
-            <ul>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-              <li>Include <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">dist/css/components/cta-link.min.css</a></li>
-              <li>Include <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-revel-cta-card.min.css">dist/css/components/image-revel-cta-card.min.css</a></li>
-            </ul>
+          <ul>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-revel-cta-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/image-revel-cta-card.min.css</a></li>
+          </ul>
 
-            <h4>JS:</h4>
+          <h4>JS:</h4>
 
-            <ul>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
-            </ul>
+          <ul>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+          </ul>
 
-            <h3>Interactions</h3>
+          <h3>Interactions</h3>
 
-            <ul>
-              <li>Hover state applies to the entire card.</li>
-              <li>By clicking on the CTA Link, the page is forwarded to the detailed information page.</li>
-            </ul>
+          <ul>
+            <li>Hover state applies to the entire card.</li>
+            <li>By clicking on the CTA Link, the page is forwarded to the detailed information page.</li>
+          </ul>
 
-            <h3>Changelog</h3>
+          <h3>Changelog</h3>
 
-            <p>1.0 — Released component</p>
+          <p>1.0 — Released component</p>
 
-            </>
-        )
+        </>
+      )
     }
-}
+  }
 };
 
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
   return (
     <ImageRevelCard data={caption.data} {...args}>
-    {" "}
+      {" "}
     </ImageRevelCard>
   );
 }
 
 export const ImageRevelCTACard = Template.bind({});
 ImageRevelCTACard.storyName = 'Image reveal card';
-
