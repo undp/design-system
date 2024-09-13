@@ -55,13 +55,13 @@ export function BioCard({
 
   let size_variant = size_options[`${args.size}`];
   let color = accent_color_options[`${args.accent}`] ?? false;
-  let accent_color = color ? `accent-${color}` : '';
+  // let accent_color = color ? `accent-${color}` : '';
 
   return (
     <>
       {args.size === 'Large' && (
         <div className={cls('grid-x grid-margin-x')}>
-          <div className={cls('cell bio-card', `${size_variant}`, `${accent_color}`)}>
+          <div className={cls('cell bio-card', `${size_variant}`)}>
             <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
               <div className="grid-x">
                 <article className="bio-card__content medium-7">
@@ -72,7 +72,7 @@ export function BioCard({
                   <Ctalink label={button} button_option="span" />
                 </article>
                 <div className="medium-5">
-                  <Cardthumb image={image} />
+                  <Cardthumb image={image} accent={color} />
                 </div>
               </div>
             </a>
@@ -82,9 +82,9 @@ export function BioCard({
 
       {args.size === 'Medium' && (
         <div className={cls('grid-x')}>
-          <div className={cls('cell bio-card medium', `${size_variant}`, `${accent_color}`)}>
+          <div className={cls('cell bio-card medium', `${size_variant}`)}>
             <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
-              <Cardthumb image={image} />
+              <Cardthumb image={image} accent={color} />
               <article className="bio-card__content">
                 <div data-viewport="true" className="bio-card__description">
                   <Heading type="5" label={contentname} />
