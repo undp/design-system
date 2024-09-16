@@ -94,3 +94,6 @@ const Template = (args, { globals: { locale } }) => {
 
 export const LinkStory = Template.bind({});
 LinkStory.storyName = 'Link';
+LinkStory.argTypes = {
+  variant: { table: { disable: true } },
+};

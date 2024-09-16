@@ -12,6 +12,10 @@ export default {
   
   
   parameters: {
+    args: {
+      src: logo,
+      alt: 'UNDP Logo',
+    },
     backgrounds: {
       default: 'white',
       values: [
@@ -92,12 +96,16 @@ export default {
   },
 };
 
-const Template = (args, src) => <Logo src={src} {...args} />;
+const Template = (args) => <Logo {...args} />;
 
 export const PNUDLogoBlue = Template.bind({});
 PNUDLogoBlue.args = {
   src: pnud,
   alt: 'PNUD Logo - Blue',
+};
+PNUDLogoBlue.argTypes = {
+  src: { table: { disable: true } },
+  alt: { table: { disable: true } },
 };
 PNUDLogoBlue.parameters = {
   docs: {
@@ -112,6 +120,10 @@ export const PNUDLogoWhite = Template.bind({});
 PNUDLogoWhite.args = {
   src: pnudwhite,
   alt: 'PNUD Logo - White',
+};
+PNUDLogoWhite.argTypes = {
+  src: { table: { disable: true } },
+  alt: { table: { disable: true } },
 };
 PNUDLogoWhite.parameters = {
   backgrounds: { default: 'gray' },
@@ -128,6 +140,10 @@ UNDPLogoBlue.args = {
   src: logo,
   alt: 'UNDP Logo - Blue',
 };
+UNDPLogoBlue.argTypes = {
+  src: { table: { disable: true } },
+  alt: { table: { disable: true } },
+};
 UNDPLogoBlue.parameters = {
   docs: {
     story: {
@@ -141,6 +157,10 @@ export const UNDPLogoWhite = Template.bind({});
 UNDPLogoWhite.args = {
   src: logowhite,
   alt: 'UNDP Logo - White',
+};
+UNDPLogoWhite.argTypes = {
+  src: { table: { disable: true } },
+  alt: { table: { disable: true } },
 };
 UNDPLogoWhite.parameters = {
   backgrounds: { default: 'gray' },

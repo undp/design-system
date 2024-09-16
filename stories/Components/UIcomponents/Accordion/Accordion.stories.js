@@ -154,6 +154,10 @@ const Template = (args, { globals: { locale } }) => {
 
 export const AccordionStory = Template.bind({});
 AccordionStory.storyName = "Accordion";
+AccordionStory.argTypes = {
+  headerText: { table: { disable: true } },
+  descriptionText: { table: { disable: true } },
+};
 
   
 
