@@ -21,6 +21,9 @@ export default {
           ],
         },
         args: {
+          backgrounds: {
+            default: "Light gray",
+          },
           Color: "Black",
         },
       docs: {
