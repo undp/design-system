@@ -114,6 +114,13 @@ export default {
         </ul>
         <h4>JS</h4>
         <p>Use this JS file in your project <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/accordion.min.js">accordion.min.js</a> and then use following code:</p>
+        <pre>
+          <code>
+          $(document).ready(function() &#123; <br />
+          &emsp;&emsp; accordion(); <br />
+          &#125;);
+          </code>
+        </pre>
         <h3>Content</h3>
         <p>The accordion is made up of a title and body copy. Accordion titles should use a short amount of text that describes the content of the body copy.</p>
         <p>The contents within an accordion section may utilize multiple paragraphs and subsections as needed.</p>
