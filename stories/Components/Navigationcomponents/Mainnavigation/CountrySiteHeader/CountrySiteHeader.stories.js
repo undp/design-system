@@ -10,6 +10,22 @@ import { getNavLinks, getSiteTitle, getLocationDataForLocale, getBackForLocale, 
 export default {
   title: "Components/Navigation components/Main navigation/Country Site Header",
   component: CountrySiteHeader,
+  argTypes: {
+    cta_enabled: {
+      name: "Enable CTA",
+      control: "inline-radio",
+      options: ["On", "Off"],
+    },
+    menu_extended: {
+      name: "Extended menu",
+      control: "inline-radio",
+      options: ["On", "Off"],
+    },
+  },
+  args: {
+    cta_enabled: "Off",
+    menu_extended: "Off",
+  },
   parameters: {
     docs: {
       page: () => (
