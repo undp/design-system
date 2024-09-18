@@ -28,7 +28,7 @@ export default {
   },
   parameters: {
     docs: {
-      page: () => (
+      page: () => 
         <>
          
          <style>
@@ -99,39 +99,40 @@ export default {
           <p>The new pattern for the HTML structure has three main divs (<code>.top-left</code>, <code>.top-center</code>, and <code>.top-right</code>), an optional <code>.menu__overflow__container</code> div for overflow menu items, and a <code>.mobile-nav</code> div to contain all the mobile elements. This setup is recommended for a more flexible structure and can implement the overflow functionality if desired.</p>
 
           <pre>
-            <code>&lt;header class="country-header"&gt;
-            &lt;section class="header"&gt;
-              &lt;div class="grid-container fluid"&gt;
-                &lt;div class="grid-x grid-margin-x align-content-middle"&gt;
+            <code>
+              &lt;header class="country-header"&gt; <br />
+              &emsp;&emsp;&lt;section class="header"&gt; <br />
+              &emsp;&emsp;&emsp;&emsp;&lt;div class="grid-container fluid"&gt; <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="grid-x grid-margin-x align-content-middle"&gt; <br />
 
-                  &lt;div class="cell small-8 large-2 shrink align-self-middle top-left"&gt;
-                    Logo and sitename ...
-                  &lt;/div&gt;
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="cell small-8 large-2 shrink align-self-middle top-left"&gt; <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Logo and sitename ... <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
 
-                  &lt;div class="cell small-1 large-auto align-content-middle top-center"&gt;
-                    .. Main menu ...
-                  &lt;/div&gt;
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="cell small-1 large-auto align-content-middle top-center"&gt; <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;.. Main menu ... <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
 
-                  &lt;div class="cell small-3 large-auto top-right"&gt;
-                    Language selector, globe link, and search link icon and call to action link ...
-                  &lt;/div&gt;
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="cell small-3 large-auto top-right"&gt; <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Language selector, globe link, and search link icon and call to action link ... <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
 
-                  &lt;div class="grid-container full menu__overflow__container"&gt;
-                    &lt;ul class="overflow"&gt;
-                      Add this menu__overflow__container section and empty ul.overflow div
-                      if you want the menu overflow functionality.
-                    &lt;/ul&gt;
-                  &lt;/div&gt;
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="grid-container full menu__overflow__container"&gt; <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;ul class="overflow"&gt; <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Add this menu__overflow__container section and empty ul.overflow div <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if you want the menu overflow functionality. <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/ul&gt; <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
 
-                  &lt;div class="mobile-nav"&gt;
-                    Mobile navigation, menu, and links go in here ...
-                  &lt;/div&gt;
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="mobile-nav"&gt; <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Mobile navigation, menu, and links go in here ... <br />
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &lt;/div&gt; <br />
 
-                &lt;/div&gt;
-              &lt;/div&gt;
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+              &emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
 
-            &lt;/section&gt;
-          &lt;/header&gt;
+              &emsp;&emsp;&lt;/section&gt; <br />
+              &lt;/header&gt; <br />
           </code>
         </pre>
 
@@ -140,29 +141,30 @@ export default {
           <h4>Old Header Structure (<strong>Deprecated</strong>)</h4>
           <p>The old, existing pattern for the HTML structure had two main divs (<code>.top-left</code> and <code>.top-right</code>) and a <code>.mobile-nav</code> div to contain all the mobile elements. This setup is deprecated for the more flexible structure above and can't implement the overflow functionality. This setup is deprecated and should be updated to the recommended structure as soon as possible.</p>
 
-          <pre><code>&lt;header class="country-header"&gt;
-            &lt;section class="header"&gt;
-              &lt;div class="grid-container fluid"&gt;
-                &lt;div class="grid-x grid-margin-x align-content-middle"&gt;
+          <pre><code>
+            &lt;header class="country-header"&gt; <br />
+            &emsp;&emsp;&lt;section class="header"&gt; <br />
+            &emsp;&emsp;&emsp;&emsp;&lt;div class="grid-container fluid"&gt; <br />
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="grid-x grid-margin-x align-content-middle"&gt; <br />
 
-                  &lt;div class="cell large-9 small-8 align-self-middle top-left"&gt;
-                    Logo and sitename...
-                    Main menu
-                  &lt;/div&gt;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="cell large-9 small-8 align-self-middle top-left"&gt; <br />
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Logo and sitename... <br />
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Main menu <br />
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
 
-                  &lt;div class="cell large-3 small-3 top-right"&gt;
-                    Language selector, globe link, and search link icon and call to action link...
-                  &lt;/div&gt;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="cell large-3 small-3 top-right"&gt; <br />
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Language selector, globe link, and search link icon and call to action link... <br />
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
 
-                  &lt;div class="mobile-nav"&gt;
-                    Mobile navigation, menu, and links go in here...
-                  &lt;/div&gt;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="mobile-nav"&gt; <br />
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Mobile navigation, menu, and links go in here... <br />
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
 
-                &lt;/div&gt;
-              &lt;/div&gt;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+            &emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
 
-            &lt;/section&gt;
-          &lt;/header&gt;
+            &emsp;&emsp;&lt;/section&gt; <br />
+            &lt;/header&gt; <br />
           </code></pre>
 
 
@@ -180,21 +182,22 @@ export default {
           <p>The overflow functionality works by calculating the space available for the main menu, adding up the width of all the menu items, and if that width is greater than available space, it moves them into the <code>menu__overflow__container</code> until everything fits.</p>
           <p>The most important parts are making sure the main menu <code>ul</code> has an <code>overflow</code> class applied, and that the <code>menu__overflow__container</code> div exists in the right place. Then just make sure the right CSS files and the <code>navigation.min.js</code> file is loaded.</p>
 
-          <pre><code>&lt;div class="cell small-1 large-auto align-content-middle top-center"&gt;
-            &lt;ul class="overflow"&gt;
-              Menu items go here. It is important to add the overflow class to the parent ul, otherwise overflow won't trigger.
-            &lt;/ul&gt;
-          &lt;/div&gt;
-
-          ...top-right container here...
-
-          &lt;div class="grid-container full menu__overflow__container"&gt;
-            &lt;ul class="overflow"&gt;
-              Add this menu__overflow__container section after the top-right div and before the mobile-nav div.
-            &lt;/ul&gt;
-          &lt;/div&gt;
-
-          ... mobile nav container here ...
+          <pre><code>
+            &lt;div class="cell small-1 large-auto align-content-middle top-center"&gt; <br />
+            &emsp;&emsp;&lt;ul class="overflow"&gt; <br />
+            &emsp;&emsp;&emsp;&emsp;Menu items go here. It is important to add the overflow class to the parent ul, otherwise overflow won't trigger. <br />
+            &emsp;&emsp;&lt;/ul&gt; <br />
+            &lt;/div&gt; <br />
+            <br />
+          ...top-right container here... <br />
+            <br />
+            &lt;div class="grid-container full menu__overflow__container"&gt; <br />
+            &emsp;&emsp;&lt;ul class="overflow"&gt; <br />
+            &emsp;&emsp;&emsp;&emsp;Add this menu__overflow__container section after the top-right div and before the mobile-nav div. <br />
+            &emsp;&emsp;&lt;/ul&gt; <br />
+            &lt;/div&gt; <br />
+            <br />
+          ... mobile nav container here ... <br />
           </code></pre>
 
 
@@ -231,11 +234,11 @@ export default {
             <li>Initialize the <code>navigationInitialize()</code>, <code>langSwitch()</code> functions in your JS file’s document ready, For example:</li>
           </ol>
 
-          {/* <pre><code>
-            $(document).ready(function() {
-              navigationInitialize();
-            });
-          </code></pre> */}
+          <pre><code>
+            $(document).ready(function() &#123; <br />
+              &emsp;&emsp;navigationInitialize(); <br />
+            &#125;);
+          </code></pre>
 
           <h4>Overflow Usage:</h4>
           <ol>
@@ -277,7 +280,7 @@ export default {
           <p>1.3 — Released component</p>
 
         </>
-      )
+      
     }
   }
 }
