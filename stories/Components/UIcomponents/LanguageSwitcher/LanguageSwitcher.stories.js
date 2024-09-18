@@ -130,4 +130,13 @@ const Template = (args, { globals: { locale } }) => {
 }
 
 export const LanguageSwitcherStory = Template.bind({});
+LanguageSwitcherStory.parameters = {
+  backgrounds: { default: 'gray' },
+  docs: {
+    story: {
+      inline: false,
+      iframeHeight: '100%',
+    },
+  },
+}
 LanguageSwitcherStory.storyName = "Language switcher";

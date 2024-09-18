@@ -101,6 +101,15 @@ const Template = (args, { globals: { locale } }) => {
 }
 
 export const Breadcrumbs = Template.bind({});
+Breadcrumbs.parameters = {
+  backgrounds: { default: 'Light gray' },
+  docs: {
+    story: {
+      inline: false,
+      iframeHeight: '100%',
+    },
+  },
+}
 Breadcrumbs.storyName = "Breadcrumbs";
 
 
