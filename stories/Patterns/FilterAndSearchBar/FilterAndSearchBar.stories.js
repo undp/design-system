@@ -74,9 +74,9 @@ export default {
   <li><strong>multiSelectToggle:</strong> When a multi-select item is toggled open or closed:
     <pre>
 <code>
-{/* $(document).on('multiSelectToggle', (e) => {
-  ...Your custom code...
-}); */}
+$(document).on('multiSelectToggle', (e) =&gt; &#123; <br />
+   &emsp;&emsp;...Your custom code... <br />
+&#125;);
 </code>
     </pre>
   </li>
@@ -84,27 +84,28 @@ export default {
     <pre>
 <code>
   
-{/* $(document).on('multiSelectInputToggle', (e) => {
-  ...Your custom code...
-}); */}
+$(document).on('multiSelectInputToggle', (e) =&gt;  &#123; <br />
+&emsp;&emsp;...Your custom code... <br />
+  &#125;);
+  
 </code>
     </pre>
   </li>
   <li><strong>filterSearchChipRemoval:</strong> When a search chip is removed:
     <pre>
 <code>
-  {/* $(document).on('filterSearchChipRemoval', (e) => {
-  ...Your custom code...
-}); */}
+  $(document).on('filterSearchChipRemoval', (e) =&gt; &#123; <br />
+   &emsp;&emsp;...Your custom code... <br />
+&#125;);
 </code>
     </pre>
   </li>
   <li><strong>filterSearchClear:</strong> When the Search "Clear all" link is clicked:
     <pre>
 <code>
-  {/* $(document).on('filterSearchClear', (e) => {
-  ...Your custom code...
-}); */}
+  $(document).on('filterSearchClear', (e) =&gt; &#123; <br />
+   &emsp;&emsp;...Your custom code... <br />
+&#125;);
 </code>
     </pre>
   </li>
