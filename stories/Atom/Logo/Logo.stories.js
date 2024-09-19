@@ -60,33 +60,25 @@ export default {
           <h4>States</h4>
           <p>The UNDP and PNUD logos are available in blue or white and used as per the page background.</p>
 
-          <Anchor storyId="foundation-logos--pnud-logo-blue"></Anchor>
-
           <h4>1. PNUD logo - Blue <a href="images/pnud-logo-blue.svg" download>Download</a></h4>
      
 
-          <Canvas of={PNUDLogoBlue} />
-
-          <Anchor storyId="foundation-logos--pnud-logo-white"></Anchor>
+          <Story><Canvas  of={PNUDLogoBlue} /></Story>
 
           <h4>2. PNUD logo - White <a href="images/pnud-logo-white.svg" download>Download</a></h4>
    
 
-          <Canvas of={PNUDLogoWhite} />
-
-          <Anchor storyId="foundation-logos--undp-logo-blue"></Anchor>
+          <Story of={PNUDLogoWhite}><Canvas of={PNUDLogoWhite} /></Story>
 
           <h4>3. UNDP Logo - Blue</h4>
        
 
-          <Canvas of={UNDPLogoBlue} />
-
-          <Anchor storyId="foundation-logos--undp-logo-white"></Anchor>
+          <Story of={UNDPLogoBlue}><Canvas of={UNDPLogoBlue} /></Story>
 
           <h4>4. UNDP Logo - White</h4>
 
 
-          <Canvas of={UNDPLogoWhite} />
+          <Story of={UNDPLogoWhite}><Canvas of={UNDPLogoWhite} /></Story>
 
           <h3>Interactions</h3>
           <p>By clicking on the logo, the website is redirected to the homepage.</p>
@@ -161,6 +153,7 @@ UNDPLogoWhite.args = {
 UNDPLogoWhite.argTypes = {
   src: { table: { disable: true } },
   alt: { table: { disable: true } },
+  
 };
 UNDPLogoWhite.parameters = {
   backgrounds: { default: 'gray' },
@@ -170,4 +163,5 @@ UNDPLogoWhite.parameters = {
       iframeHeight: '100%',
     },
   },
+
 };
