@@ -1,7 +1,7 @@
 import { renderToStaticMarkup } from 'react-dom/server'
 import { decode } from 'html-entities'
-import prettier from 'prettier'
-import HTMLParser from 'prettier/parser-html'
+import * as prettier from 'prettier'
+import * as HTMLParser from 'prettier/parser-html'
 
 export default (story) => {
 	let html = prettier.format(decode(renderToStaticMarkup(story)), {

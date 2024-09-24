@@ -32,7 +32,7 @@ export default {
         </ul>
         <p>Typographic scale when using abbreviation in text component:</p>
 
-        <Story of={AbbreviationComponent}><Canvas of={AbbreviationComponent} /></Story>
+        <Canvas of={AbbreviationComponent} />
 
         <h3>Blockquote</h3>
         <p>The blockquote component is used to define a section that is quoted from another source.</p>
@@ -41,7 +41,7 @@ export default {
         </ul>
         <p>Typographic scale when using blockquote in text component:</p>
 
-        <Story of={BlockquoteComponent}><Canvas of={BlockquoteComponent} /></Story>
+        <Canvas of={BlockquoteComponent} />
 
         <h3>Cite</h3>
         <p>The Cite component defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.).</p>
@@ -50,7 +50,7 @@ export default {
         </ul>
         <p>Typographic scale when using cite in text component:</p>
 
-        <Story of={CiteComponent}><Canvas of={CiteComponent} /></Story>
+        <Canvas of={CiteComponent} />
 
         <h3>Code</h3>
         <p>The code component is used to define a piece of computer code. The content inside is displayed in the browser's default monospace font.</p>
@@ -59,7 +59,7 @@ export default {
         </ul>
         <p>Typographic scale when using code in text component:</p>
 
-        <Story of={CodeComponent}><Canvas of={CodeComponent} /></Story>
+        <Canvas of={CodeComponent} />
 
         <h3>Description List</h3>
         <p>A description list is a list of terms, with a description of each term.</p>
@@ -67,23 +67,23 @@ export default {
             <li>The <code>dl tag</code> defines the description list, the <code>dt tag</code> defines the term (name), and the <code>dd tag</code> describes each term.</li>
         </ul>
 
-        <Story of={DescriptionlistComponent}><Canvas of={DescriptionlistComponent} /></Story>
+        <Canvas of={DescriptionlistComponent} />
 
         <h3>Details</h3>
         <p>The details tag creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.</p>
 
-        <Story of={DetailsTagComponent}><Canvas of={DetailsTagComponent} /></Story>
+        <Canvas of={DetailsTagComponent} />
 
         <h3>Figcaption</h3>
         <p>The <code>figcaption</code> tag is used to caption the image. The <code>figcaption</code> tag is used with the <code>figure</code> tag.</p>
 
-        <Story of={FigcaptionComponent}><Canvas of={FigcaptionComponent} /></Story>
+        <Canvas of={FigcaptionComponent} />
 
         <h3>Headings</h3>
         <p>We can use the <code>h1/h2/h3/h4/h5/h6 tags</code> in any component to display the headings. h1 for most important heading to h6 for least important heading.</p>
         <p>Typographic scale when using headings in text component:</p>
 
-        <Story of={HeadingComponent}><Canvas of={HeadingComponent} /></Story>
+        <Canvas of={HeadingComponent} />
 
         <h3>Horizontal Rule</h3>
         <p>The <code>hr tag</code> defines a thematic break in an HTML page, and is most often displayed as a horizontal rule.</p>
@@ -92,7 +92,7 @@ export default {
         </ul>
         <p>Typographic scale when using hr in text component:</p>
 
-        <Story of={HrComponent}><Canvas of={HrComponent} /></Story>
+        <Canvas of={HrComponent} />
 
         <h3>Mark</h3>
         <p>The <code>mark tag</code> defines marked or highlighted text.</p>
@@ -101,7 +101,7 @@ export default {
         </ul>
         <p>Typographic scale when using mark in text component:</p>
 
-        <Story of={MarkComponent}><Canvas of={MarkComponent} /></Story>
+        <Canvas of={MarkComponent} />
 
         <h3>Ordered List</h3>
         <p>The <code>ol tag</code> defines an ordered list. An ordered list can be numerical or alphabetical.</p>
@@ -109,7 +109,7 @@ export default {
             <li>We can use the <code>ol tag</code> in any component to render the text found within the <code>ol tag</code> in a numerical or alphabetical list.</li>
         </ul>
 
-        <Story of={ListComponent}><Canvas of={ListComponent} /></Story>
+        <Canvas of={ListComponent} />
 
         <h3>Paragraph</h3>
         <p>The <code>p tag</code> defines a paragraph.</p>
@@ -118,7 +118,7 @@ export default {
         </ul>
         <p>Typographic scale when using paragraph in text component:</p>
 
-        <Story of={PComponent}><Canvas of={PComponent} /></Story>
+        <Canvas of={PComponent} />
 
         <h3>Quotation</h3>
         <p>The <code>q tag</code> defines a short quotation.</p>
@@ -127,7 +127,7 @@ export default {
         </ul>
         <p>Typographic scale when using quotation in text component:</p>
 
-        <Story of={QuotationComponent}><Canvas of={QuotationComponent} /></Story>
+        <Canvas of={QuotationComponent} />
 
           <h3>Small</h3>
 
@@ -137,7 +137,7 @@ export default {
           </ul>
           <p>Typographic scale when using small in text component:</p>
 
-          <Story of={SmallComponent}><Canvas of={SmallComponent} /></Story>            
+          <Canvas of={SmallComponent} />            
 
             <h3>Unordered List</h3>
 
@@ -146,7 +146,7 @@ export default {
               <li>We can use the <code>ul tag</code> in any component to render the text found within the <code>ul tag</code> in a bulleted list.</li>
             </ul>
 
-            <Story of={ListComponent}><Canvas of={ListComponent} /></Story>
+            <Canvas of={ListComponent} />
 
             <h3>Usage</h3>
 

@@ -63,22 +63,22 @@ export default {
           <h4>1. PNUD logo - Blue <a href="images/pnud-logo-blue.svg" download>Download</a></h4>
      
 
-          <Story><Canvas  of={PNUDLogoBlue} /></Story>
+          <Canvas  of={PNUDLogoBlue} />
 
           <h4>2. PNUD logo - White <a href="images/pnud-logo-white.svg" download>Download</a></h4>
    
 
-          <Story of={PNUDLogoWhite}><Canvas of={PNUDLogoWhite} /></Story>
+          <Canvas of={PNUDLogoWhite} />
 
           <h4>3. UNDP Logo - Blue</h4>
        
 
-          <Story of={UNDPLogoBlue}><Canvas of={UNDPLogoBlue} /></Story>
+          <Canvas of={UNDPLogoBlue} />
 
           <h4>4. UNDP Logo - White</h4>
 
 
-          <Story of={UNDPLogoWhite}><Canvas of={UNDPLogoWhite} /></Story>
+          <Canvas of={UNDPLogoWhite} />
 
           <h3>Interactions</h3>
           <p>By clicking on the logo, the website is redirected to the homepage.</p>
