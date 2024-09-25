@@ -1,44 +1,43 @@
 /*
 * Expand search
 */
-export const expandSearch = () => {
-  const $expand = jQuery('.expand-search');
-  const $expandInput = jQuery('.expand-search input');
+export const expandSearch = ($container) => {
+  const $expandInput = $container.find('input');
 
   $expandInput.on('input', function () {
     if (jQuery(this).val().length >= 1) {
-      jQuery(this).parent($expand).find('.close-button').addClass('show');
+      $container.find('.close-button').addClass('show');
     } else {
-      jQuery(this).parent($expand).find('.close-button').removeClass('show');
+      $container.find('.close-button').removeClass('show');
     }
   });
 
-  jQuery(document).on('click', '.expand-button', function () {
+  $container.on('click', '.expand-button', function () {
     if (jQuery(this).siblings('input').val().length >= 1) {
-      jQuery(this).siblings('.close-button').addClass('show');
+      $container.find('.close-button').addClass('show');
     }
 
-    jQuery(this).parent($expand).toggleClass('open');
-    if (jQuery(this).parent($expand).hasClass('open')) {
-      jQuery(this).siblings('input').focus();
+    $container.toggleClass('open');
+    if ($container.hasClass('open')) {
+      $container.find('input').focus();
     } else {
-      jQuery(this).siblings($expandInput).focusout();
-      jQuery(this).siblings('.close-button').removeClass('show');
+      $container.find('input').focusout();
+      $container.find('.close-button').removeClass('show');
     }
   });
 
-  jQuery(document).on('click', '.expand-search .close-button', function () {
-    jQuery(this).siblings('input').val('');
-    jQuery(this).removeClass('show');
+  $container.on('click', '.close-button', function () {
+    $container.find('input').val('');
+    $container.find('.close-button').removeClass('show');
   });
 
   jQuery(document).mouseup((e) => {
-    var $container = jQuery('.expand-search');
-    var $input = $container.find('input');
-    if ($input.length < 1 || $input.val().length < 1) {
+    const $input = $container.find('input');
+    if ($input.val().length < 1) {
       if (!$container.is(e.target) && $container.has(e.target).length === 0) {
         $container.removeClass('open');
       }
     }
   });
 };
+

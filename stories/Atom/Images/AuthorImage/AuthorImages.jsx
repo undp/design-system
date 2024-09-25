@@ -1,6 +1,5 @@
 import React from 'react';
 import './author-image.scss';
-import { useGlobals } from '@storybook/api';
 
 export const size_options = {
   Large: 'large',

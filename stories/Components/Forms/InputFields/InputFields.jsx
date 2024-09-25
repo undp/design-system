@@ -25,7 +25,7 @@ export function Inputcomponent({
     inputElement.current.addEventListener('input', updateInputState);
 
     return () => {
-      inputElement.current.removeEventListener('input', updateInputState);
+      inputElement.current?.removeEventListener('input', updateInputState);
     };
   }, [state]);
 
@@ -41,7 +41,7 @@ export function Inputcomponent({
 
   return (
     <>
-      {labelText && <label className={cls((`${state}` == 'disabled') ? `${state}` : '')} htmlFor={[`${type}`]}>{ labelText }</label>}
+      {labelText && <label className={cls((`${state}` == 'disabled') ? `${state}` : '')} htmlFor={[`${type}`]}>{labelText}</label>}
       <InputTag
         className={cls((`${state}` !== 'focus') ? `${state}` : '')}
         ref={inputElement}
@@ -52,8 +52,8 @@ export function Inputcomponent({
         id={id}
         {...(labelText ? '' : { 'aria-label': placeholder })}
       />
-      {helpText && <p className="help">{ helpText }</p>}
-      {(State == 'Error') && <p className="error">{ errorText }</p>}
+      {helpText && <p className="help">{helpText}</p>}
+      {(State == 'Error') && <p className="error">{errorText}</p>}
     </>
   );
 }
