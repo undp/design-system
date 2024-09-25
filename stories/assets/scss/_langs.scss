@@ -1,0 +1,311 @@
+// burmese lang
+:lang(my) {
+
+  body,
+  button {
+    font-family: $Font-Family-NotoSans;
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.7;
+  }
+
+  h1 {
+    font-family: $Font-Family-NotoSans;
+    font-size: 2.625rem;
+
+    @include devicebreak(medium) {
+      font-size: 3.875rem;
+    }
+
+    @include devicebreak(large) {
+      font-size: 5rem;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+
+    @include devicebreak(medium) {
+      font-size: 2.188rem;
+    }
+
+    @include devicebreak(large) {
+      font-size: 2.813rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.3rem;
+
+    @include devicebreak(medium) {
+      font-size: 1.8rem;
+    }
+  }
+
+  h5 {
+    font-size: $font-size-20;
+
+    @include devicebreak(medium) {
+      font-size: 1.375rem;
+    }
+  }
+
+  p {
+    font-size: $font-size-14;
+    line-height: 1.7;
+
+    @include devicebreak(medium) {
+      font-size: $font-size-16;
+    }
+  }
+
+  ul li,
+  ol li,
+  dl {
+    font-size: 0.875rem;
+    line-height: 1.9;
+
+    @include devicebreak(medium) {
+      font-size: 1.125rem;
+    }
+  }
+
+  .sbdocs {
+
+    .sbdocs-content,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      font-family: $Font-Family-NotoSans;
+    }
+
+    .sbdocs-h1 {
+      font-size: $spacing-07;
+    }
+  }
+}
+
+[dir='rtl'] {
+
+  ul,
+  ol {
+    padding-left: 0;
+    padding-right: 1.125rem;
+
+    @include devicebreak(medium) {
+      padding-right: 1.313rem;
+    }
+
+    li {
+      padding-left: 0;
+      padding-right: 0.875rem;
+
+      @include devicebreak(medium) {
+        padding-right: $spacing-04;
+      }
+    }
+  }
+}
+
+/* Cyrillic scripts */
+#{$cyrillic} {
+  h1 {
+    font-family: $Font-Family-ProximaNova;
+  }
+}
+
+/* Bengali */
+:lang(bn) {
+
+  body,
+  h1 {
+    font-family: $Font-Family-UNBangla;
+  }
+}
+
+/* Arabic */
+:lang(ar) {
+
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: $Font-Family-NotoSans-Arabic;
+  }
+}
+
+/* Azerbaijani */
+:lang(az) {
+
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: $Font-Family-NotoSans;
+  }
+}
+
+/* Chinese */
+:lang(zh) {
+
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: $Font-Family-NotoSans-Chinese;
+  }
+}
+
+/* Japanese */
+:lang(ja) {
+
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: $Font-Family-NotoSans-Japanese;
+  }
+
+  body {
+    font-weight: 350;
+  }
+}
+
+/* Georgian */
+:lang(ka) {
+
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: $Font-Family-NotoSans-Georgian;
+  }
+}
+
+/* Khmer */
+:lang(km) {
+
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: $Font-Family-NotoSans-Khmer;
+  }
+}
+
+/* Korean */
+:lang(ko) {
+
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: $Font-Family-NotoSans-Korean;
+  }
+}
+
+/* Kurdish */
+:lang(ku) {
+
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: $Font-Family-NotoSans-Arabic;
+  }
+}
+
+/* Nepali */
+:lang(ne) {
+
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: $Font-Family-NotoSans;
+  }
+}
+
