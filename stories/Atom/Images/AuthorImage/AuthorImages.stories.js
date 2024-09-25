@@ -48,7 +48,7 @@ export default {
               <Story
                 name="Author Image"
               >
-                {args => <Authorimg image={user} alt="Headshot of XYZ" {...args} />}
+                {args => <Authorimg image={user} alt="Headshot of XYZ" title="Headshot of XYZ" {...args} />}
               </Story>
             </Canvas>
             <h3>CSS and JS References</h3>
@@ -68,7 +68,7 @@ export default {
   },
 };
 
-const Template = (args) => <Authorimg image={user} {...args} />;
+const Template = (args) => <Authorimg image={user} alt="Headshot of XYZ" title="Headshot of XYZ" {...args} />;
 
 export const AuthorImage = Template.bind({});
 AuthorImage.args = {

@@ -88,7 +88,7 @@ export default {
   title: "Components/Forms/Text panel",
   component: FormTypes,
   argTypes: {
-    varient: {
+    variant: {
       options: [
         "text panel and form",
         "form with photo",
@@ -96,7 +96,7 @@ export default {
         "stacked form",
       ],
       control: { type: "radio" },
-  },
+    },
   },
   args: {
     variant: "text panel and form",
@@ -106,72 +106,72 @@ export default {
       page: () => (
         <>
           <h1>Text Panel</h1>
-            <p>On the text panel, it shows all the forms structures.</p>
+          <p>On the text panel, it shows all the forms structures.</p>
 
-            <h3>Overview</h3>
-            <p>The text panel is the page for form structure that shows how input fields can be used in various ways.</p>
+          <h3>Overview</h3>
+          <p>The text panel is the page for form structure that shows how input fields can be used in various ways.</p>
 
-            <h4>When to use:</h4>
-            <ul>
-              <li>When the user needs to create a form.</li>
-            </ul>
+          <h4>When to use:</h4>
+          <ul>
+            <li>When the user needs to create a form.</li>
+          </ul>
 
-            <h3>Behaviors</h3>
+          <h3>Behaviors</h3>
 
-            <h4>States</h4>
-            <p>The following behavior modifiers are available:</p>
-            <ol>
-              <li>Text panel and form</li>
-              <li>Form with photo</li>
-              <li>Wide form</li>
-              <li>Stacked form</li>
-            </ol>
+          <h4>States</h4>
+          <p>The following behavior modifiers are available:</p>
+          <ol>
+            <li>Text panel and form</li>
+            <li>Form with photo</li>
+            <li>Wide form</li>
+            <li>Stacked form</li>
+          </ol>
 
-            <Canvas>
-              <Story
-                name="Text panel"
-              >
-                {(args) => (
-                    <FormTypes
-                      element="input"
-                      typeemail="email"
-                      typename="text"
-                      typelname="text"
-                      required="required"
-                      mode="form-email"
-                      errorText={caption.errorLabel}
-                      label={caption.labelname}
-                      button={caption.buttonname}
-                      placeholder={caption.placeholdername}
-                      placeholderemail={caption.placeholderemail}
-                      placeholderfirst={caption.firstname}
-                      placeholderlast={caption.lastname}
-                      anchorTag={caption.heading}
-                      anchorTag2={caption.heading2}
-                      para={caption.para}
-                      {...args}
-                    ></FormTypes>
-                )}
-              </Story>
-            </Canvas>
+          <Canvas>
+            <Story
+              name="Text panel"
+            >
+              {(args) => (
+                <FormTypes
+                  element="input"
+                  typeemail="email"
+                  typename="text"
+                  typelname="text"
+                  required="required"
+                  mode="form-email"
+                  errorText={caption.errorLabel}
+                  label={caption.labelname}
+                  button={caption.buttonname}
+                  placeholder={caption.placeholdername}
+                  placeholderemail={caption.placeholderemail}
+                  placeholderfirst={caption.firstname}
+                  placeholderlast={caption.lastname}
+                  anchorTag={caption.heading}
+                  anchorTag2={caption.heading2}
+                  para={caption.para}
+                  {...args}
+                ></FormTypes>
+              )}
+            </Story>
+          </Canvas>
 
-            <h3>Usage</h3>
-            <p>Copy the HTML from the HTML tab of the canvas and include the CSS files mentioned below.</p>
+          <h3>Usage</h3>
+          <p>Copy the HTML from the HTML tab of the canvas and include the CSS files mentioned below.</p>
 
-            <h3>CSS and JS References</h3>
+          <h3>CSS and JS References</h3>
 
-            <h4>CSS:</h4>
-            <p>Add the base layout style from:</p>
-            <ul>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-              <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/text-panel.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/text-panel.min.css</a></li>
-            </ul>
+          <h4>CSS:</h4>
+          <p>Add the base layout style from:</p>
+          <ul>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/text-panel.min.css" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/text-panel.min.css</a></li>
+          </ul>
 
-            <h4>JS:</h4>
-            <p>NA</p>
+          <h4>JS:</h4>
+          <p>NA</p>
 
-            <h3>Changelog</h3>
-            <p>1.0 — Released component</p>
+          <h3>Changelog</h3>
+          <p>1.0 — Released component</p>
         </>
       )
     }

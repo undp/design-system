@@ -118,5 +118,7 @@ const Template = (args, { globals: { locale } }) => {
 };
 
 export const CheckboxStory = Template.bind({});
-
 CheckboxStory.storyName = 'Checkbox';
+CheckboxStory.argTypes = {
+  label_pos: {table : {disable: true}},
+};

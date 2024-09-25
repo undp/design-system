@@ -359,3 +359,6 @@ const Template = (args, { globals: { locale } }) => {
 
 export const ParallaxCardsStory = Template.bind({});
 ParallaxCardsStory.storyName = "Parallax cards";
+ParallaxCardsStory.argTypes = {
+  locale: {table: {disable: true}}
+}

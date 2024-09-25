@@ -12,6 +12,10 @@ export default {
   
   
   parameters: {
+    args: {
+      src: logo,
+      alt: 'UNDP Logo',
+    },
     backgrounds: {
       default: 'white',
       values: [
@@ -56,28 +60,20 @@ export default {
           <h4>States</h4>
           <p>The UNDP and PNUD logos are available in blue or white and used as per the page background.</p>
 
-          <Anchor storyId="foundation-logos--pnud-logo-blue"></Anchor>
-
           <h4>1. PNUD logo - Blue <a href="images/pnud-logo-blue.svg" download>Download</a></h4>
      
 
-          <Canvas of={PNUDLogoBlue} />
-
-          <Anchor storyId="foundation-logos--pnud-logo-white"></Anchor>
+          <Canvas  of={PNUDLogoBlue} />
 
           <h4>2. PNUD logo - White <a href="images/pnud-logo-white.svg" download>Download</a></h4>
    
 
           <Canvas of={PNUDLogoWhite} />
 
-          <Anchor storyId="foundation-logos--undp-logo-blue"></Anchor>
-
           <h4>3. UNDP Logo - Blue</h4>
        
 
           <Canvas of={UNDPLogoBlue} />
-
-          <Anchor storyId="foundation-logos--undp-logo-white"></Anchor>
 
           <h4>4. UNDP Logo - White</h4>
 
@@ -92,12 +88,16 @@ export default {
   },
 };
 
-const Template = (args, src) => <Logo src={src} {...args} />;
+const Template = (args) => <Logo {...args} />;
 
 export const PNUDLogoBlue = Template.bind({});
 PNUDLogoBlue.args = {
   src: pnud,
   alt: 'PNUD Logo - Blue',
+};
+PNUDLogoBlue.argTypes = {
+  src: { table: { disable: true } },
+  alt: { table: { disable: true } },
 };
 PNUDLogoBlue.parameters = {
   docs: {
@@ -112,6 +112,10 @@ export const PNUDLogoWhite = Template.bind({});
 PNUDLogoWhite.args = {
   src: pnudwhite,
   alt: 'PNUD Logo - White',
+};
+PNUDLogoWhite.argTypes = {
+  src: { table: { disable: true } },
+  alt: { table: { disable: true } },
 };
 PNUDLogoWhite.parameters = {
   backgrounds: { default: 'gray' },
@@ -128,6 +132,10 @@ UNDPLogoBlue.args = {
   src: logo,
   alt: 'UNDP Logo - Blue',
 };
+UNDPLogoBlue.argTypes = {
+  src: { table: { disable: true } },
+  alt: { table: { disable: true } },
+};
 UNDPLogoBlue.parameters = {
   docs: {
     story: {
@@ -142,6 +150,11 @@ UNDPLogoWhite.args = {
   src: logowhite,
   alt: 'UNDP Logo - White',
 };
+UNDPLogoWhite.argTypes = {
+  src: { table: { disable: true } },
+  alt: { table: { disable: true } },
+  
+};
 UNDPLogoWhite.parameters = {
   backgrounds: { default: 'gray' },
   docs: {
@@ -150,4 +163,5 @@ UNDPLogoWhite.parameters = {
       iframeHeight: '100%',
     },
   },
+
 };

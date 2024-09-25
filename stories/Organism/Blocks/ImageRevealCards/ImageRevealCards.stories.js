@@ -35,7 +35,6 @@ export default {
                 <li>Include the CSS and JS resource defined in the <em>Image reveal card</em></li>
                 <li>Include the <code>dist/css/components/image-reveal-cards.min.css</code> file</li>
               </ul>
-              <Source dark language="html" code="<ImageRevealCards data={...} label={...} />" />
           </>
       )
     }

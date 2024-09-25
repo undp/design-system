@@ -121,7 +121,7 @@ export default {
     docs: {
       page: () => (
         <>
-          <h1>Feature Content Card</h1>
+          <h1>Featured Content Card</h1>
 
           <p>The Featured Content Card components are cards with information and/or image.</p>
 
@@ -163,19 +163,19 @@ export default {
           <h4>Featured card</h4>
 
           <Canvas>
-          <Story name="Featured card">
-            {(args, { globals: { locale, accent } }) => {
-              const caption = getCaptionForLocale(locale);
-              return (
-                <FeaturedContentCard
-                  data={caption.featuredcontentdata}
-                  headertext={caption.headertext}
-                  {...args}
-                ></FeaturedContentCard>
-              );
-            }}
-          </Story>
-        </Canvas>
+            <Story name="Featured card">
+              {(args, { globals: { locale, accent } }) => {
+                const caption = getCaptionForLocale(locale);
+                return (
+                  <FeaturedContentCard
+                    data={caption.featuredcontentdata}
+                    headertext={caption.headertext}
+                    {...args}
+                  ></FeaturedContentCard>
+                );
+              }}
+            </Story>
+          </Canvas>
 
           <h3>Usage</h3>
 
@@ -193,8 +193,8 @@ export default {
 
           <ul>
             <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css</a></li>
-            <li>Include <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">dist/css/components/cta-link.min.css</a></li>
-            <li>Include <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css">dist/css/components/featured-content-card.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/cta-link.min.css</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/featured-content-card.min.css</a></li>
           </ul>
 
           <h4>JS:</h4>

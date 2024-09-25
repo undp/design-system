@@ -1,4 +1,5 @@
 import { Canvas, Meta, Story, Source, Anchor } from "@storybook/addon-docs";
+import React from "react";
 
 import { Heading } from "../Typography/Heading/Heading";
 import { Abbreviation } from "./Abbr/Abbr";
@@ -24,7 +25,6 @@ export default {
         <section>
         <h1>Base Typography</h1>
         <p>Basic elements which the design system has some styling listed here, you can use the elements as it is, without any specific CSS classes.</p>
-        <Anchor storyId="foundation-typography-basetypography--abbreviation"></Anchor>
         <h3>Abbreviation</h3>
         <p>Abbreviation component defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".</p>
         <ul>
@@ -34,7 +34,6 @@ export default {
 
         <Canvas of={AbbreviationComponent} />
 
-        <Anchor storyId="foundation-typography-basetypography--blockquote"></Anchor>
         <h3>Blockquote</h3>
         <p>The blockquote component is used to define a section that is quoted from another source.</p>
         <ul>
@@ -44,7 +43,6 @@ export default {
 
         <Canvas of={BlockquoteComponent} />
 
-        <Anchor storyId="foundation-typography-basetypography--cite"></Anchor>
         <h3>Cite</h3>
         <p>The Cite component defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.).</p>
         <ul>
@@ -54,7 +52,6 @@ export default {
 
         <Canvas of={CiteComponent} />
 
-        <Anchor storyId="foundation-typography-basetypography--code"></Anchor>
         <h3>Code</h3>
         <p>The code component is used to define a piece of computer code. The content inside is displayed in the browser's default monospace font.</p>
         <ul>
@@ -64,7 +61,6 @@ export default {
 
         <Canvas of={CodeComponent} />
 
-        <Anchor storyId="foundation-typography-basetypography--description-list"></Anchor>
         <h3>Description List</h3>
         <p>A description list is a list of terms, with a description of each term.</p>
         <ul>
@@ -73,26 +69,22 @@ export default {
 
         <Canvas of={DescriptionlistComponent} />
 
-        <Anchor storyId="foundation-typography-basetypography--details"></Anchor>
         <h3>Details</h3>
         <p>The details tag creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.</p>
 
         <Canvas of={DetailsTagComponent} />
 
-        <Anchor storyId="foundation-typography-basetypography--figcaption"></Anchor>
         <h3>Figcaption</h3>
         <p>The <code>figcaption</code> tag is used to caption the image. The <code>figcaption</code> tag is used with the <code>figure</code> tag.</p>
 
         <Canvas of={FigcaptionComponent} />
 
-        <Anchor storyId="foundation-typography-basetypography--headings"></Anchor>
         <h3>Headings</h3>
         <p>We can use the <code>h1/h2/h3/h4/h5/h6 tags</code> in any component to display the headings. h1 for most important heading to h6 for least important heading.</p>
         <p>Typographic scale when using headings in text component:</p>
 
         <Canvas of={HeadingComponent} />
 
-        <Anchor storyId="foundation-typography-basetypography--hr"></Anchor>
         <h3>Horizontal Rule</h3>
         <p>The <code>hr tag</code> defines a thematic break in an HTML page, and is most often displayed as a horizontal rule.</p>
         <ul>
@@ -102,7 +94,6 @@ export default {
 
         <Canvas of={HrComponent} />
 
-        <Anchor storyId="foundation-typography-basetypography--mark"></Anchor>
         <h3>Mark</h3>
         <p>The <code>mark tag</code> defines marked or highlighted text.</p>
         <ul>
@@ -112,7 +103,6 @@ export default {
 
         <Canvas of={MarkComponent} />
 
-        <Anchor storyId="foundation-typography-basetypography--ordered-list"></Anchor>
         <h3>Ordered List</h3>
         <p>The <code>ol tag</code> defines an ordered list. An ordered list can be numerical or alphabetical.</p>
         <ul>
@@ -121,7 +111,6 @@ export default {
 
         <Canvas of={ListComponent} />
 
-        <Anchor storyId="foundation-typography-basetypography--p"></Anchor>
         <h3>Paragraph</h3>
         <p>The <code>p tag</code> defines a paragraph.</p>
         <ul>
@@ -131,7 +120,6 @@ export default {
 
         <Canvas of={PComponent} />
 
-        <Anchor storyId="foundation-typography-basetypography--quotation"></Anchor>
         <h3>Quotation</h3>
         <p>The <code>q tag</code> defines a short quotation.</p>
         <ul>
@@ -141,8 +129,6 @@ export default {
 
         <Canvas of={QuotationComponent} />
 
-          <Anchor storyId="foundation-typography-basetypography--small"></Anchor>
-
           <h3>Small</h3>
 
           <p>The <code>small tag</code> defines smaller text.</p>
@@ -151,10 +137,7 @@ export default {
           </ul>
           <p>Typographic scale when using small in text component:</p>
 
-          <Canvas of={SmallComponent} />
-
-        <Anchor storyId="foundation-typography-basetypography--unordered-list"></Anchor>
-            
+          <Canvas of={SmallComponent} />            
 
             <h3>Unordered List</h3>
 
@@ -162,8 +145,6 @@ export default {
             <ul>
               <li>We can use the <code>ul tag</code> in any component to render the text found within the <code>ul tag</code> in a bulleted list.</li>
             </ul>
-
-            <Anchor storyId="foundation-typography-basetypography--unordered-list"></Anchor>
 
             <Canvas of={ListComponent} />
 

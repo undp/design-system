@@ -199,4 +199,8 @@ const Template = (args, { globals: { locale } }) => {
 
 export const AuthorcardStory = Template.bind({});
 AuthorcardStory.storyName = 'Author Card';
+AuthorcardStory.argTypes = {
+  Type: { table: { disable: true } },
+  button_option: { table: { disable: true } },
+};
 

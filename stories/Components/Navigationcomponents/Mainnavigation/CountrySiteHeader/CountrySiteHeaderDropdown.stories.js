@@ -252,34 +252,34 @@ This setup is recommended for a more flexible structure and it can implement the
 
 <pre>
 <code>
-&lt;header class="country-header"&gt;
-  &lt;section class="header"&gt;
-    &lt;div class="grid-container fluid"&gt;
-      &lt;div class="grid-x grid-margin-x align-content-middle"&gt;
-        &lt;div class="cell small-8 large-2 shrink align-self-middle top-left"&gt;
-          Logo and sitename ...
-        &lt;/div&gt;
-        &lt;div class="cell small-1 large-auto align-content-middle top-center"&gt;
-          Main menu ...
-        &lt;/div&gt;
-        &lt;div class="cell small-3 large-auto top-right"&gt;
-          Language selector, globe link, and search link icon and
-          call to action link ...
-        &lt;/div&gt;
-        &lt;div class="grid-container full menu__overflow__container"&gt;
-          &lt;ul class="overflow"&gt;
-            Add this menu__overflow__container section and
-            empty ul.overflow div if you want the menu
-            overflow functionality.
-          &lt;/ul&gt;
-        &lt;/div&gt;
-        &lt;div class="mobile-nav"&gt;
-          Mobile navigation, menu, and links go in here ...
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-&lt;/header&gt;
+&lt;header class="country-header"&gt; <br />
+  &emsp;&emsp;&lt;section class="header"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&lt;div class="grid-container fluid"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="grid-x grid-margin-x align-content-middle"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="cell small-8 large-2 shrink align-self-middle top-left"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Logo and sitename ... <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="cell small-1 large-auto align-content-middle top-center"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Main menu ... <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="cell small-3 large-auto top-right"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Language selector, globe link, and search link icon and <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;call to action link ... <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="grid-container full menu__overflow__container"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;ul class="overflow"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Add this menu__overflow__container section and <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;empty ul.overflow div if you want the menu <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;overflow functionality. <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/ul&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="mobile-nav"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Mobile navigation, menu, and links go in here ... <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+  &emsp;&emsp;&lt;/section&gt; <br />
+&lt;/header&gt; <br />
 </code>
 </pre>
 
@@ -294,25 +294,25 @@ This setup is recommended for a more flexible structure and it can implement the
 
 <pre>
 <code>
-&lt;header class="country-header"&gt;
-  &lt;section class="header"&gt;
-    &lt;div class="grid-container fluid"&gt;
-      &lt;div class="grid-x grid-margin-x align-content-middle"&gt;
-        &lt;div class="cell large-9 small-8 align-self-middle top-left"&gt;
-          Logo and sitename...
-          Main menu
-        &lt;/div&gt;
-        &lt;div class="cell large-3 small-3 top-right"&gt;
-          Language selector, globe link, and search link icon and
-          call to action link...
-        &lt;/div&gt;
-        &lt;div class="mobile-nav"&gt;
-          Mobile navigation, menu, and links go in here...
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-&lt;/header&gt;
+&lt;header class="country-header"&gt; <br />
+  &emsp;&emsp;&lt;section class="header"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&lt;div class="grid-container fluid"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="grid-x grid-margin-x align-content-middle"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="cell large-9 small-8 align-self-middle top-left"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Logo and sitename... <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Main menu <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="cell large-3 small-3 top-right"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Language selector, globe link, and search link icon and <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;call to action link... <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div class="mobile-nav"&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Mobile navigation, menu, and links go in here... <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+  &emsp;&emsp;&emsp;&emsp;&lt;/div&gt; <br />
+  &emsp;&emsp;&lt;/section&gt; <br />
+&lt;/header&gt; <br />
 </code>
 </pre>
 
@@ -325,28 +325,28 @@ Make sure to add the <strong>.overflow</strong> class to the top level parent <s
 
 <pre>
 <code>
-&lt;div class="... top-center"&gt; &lt;!-- Main parent div in header to set the menu --&gt;
-  &lt;nav class="menu"&gt; &lt;!-- Important to have the .menu class --&gt;
-    &lt;ul&gt; &lt;!-- add class="overflow" --&gt;
-      &lt;li&gt;
-        &lt;a href=""&gt;Link title here&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li class="has-submenu"&gt;
-        &lt;a href=""&gt;Link with children&lt;/a&gt;
-        &lt;ul class="submenu"&gt;
-          &lt;li class="has-submenu"&gt;
-            &lt;a href=""&gt;Child link with children&lt;/a&gt;
-            &lt;ul class="submenu"&gt;
-              &lt;li&gt;
-                &lt;a&gt;Deep child link&lt;/a&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/nav&gt;
-&lt;/div&gt;
+&lt;div class="... top-center"&gt; &lt;!-- Main parent div in header to set the menu --&gt; <br />
+&emsp;&emsp;&lt;nav class="menu"&gt; &lt;!-- Important to have the .menu class --&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&lt;ul&gt; &lt;!-- add class="overflow" --&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;a href=""&gt;Link title here&lt;/a&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/li&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li class="has-submenu"&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;a href=""&gt;Link with children&lt;/a&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &lt;ul class="submenu"&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li class="has-submenu"&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;a href=""&gt;Child link with children&lt;/a&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;ul class="submenu"&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;li&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;a&gt;Deep child link&lt;/a&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/li&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/ul&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/li&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/ul&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;/li&gt; <br />
+&emsp;&emsp;&emsp;&emsp;&lt;/ul&gt; <br />
+&emsp;&emsp;&lt;/nav&gt; <br />
+&lt;/div&gt; <br />
 </code>
 </pre>
 
@@ -373,23 +373,23 @@ div exists in the right place. Then just make sure the right css files and the <
 
 <pre>
 <code>
-&lt;div class="cell small-1 large-auto align-content-middle top-center"&gt;
-  &lt;ul class="overflow"&gt;
-    Menu items go here. It is important to add the overflow class to the parent ul,
-    otherwise overflow wont trigger.
-  &lt;/ul&gt;
-&lt;/div&gt;
-
-top-right container here...
-
-&lt;div class="grid-container full menu__overflow__container"&gt;
-  &lt;ul class="overflow"&gt;
-    Add this menu__overflow__container section after the top-right div and before
-    the mobile-nav div.
-  &lt;/ul&gt;
-&lt;/div&gt;
-
-mobile nav container here ...
+&lt;div class="cell small-1 large-auto align-content-middle top-center"&gt; <br />
+&emsp;&emsp;&lt;ul class="overflow"&gt; <br />
+&emsp;&emsp;&emsp;&emsp;Menu items go here. It is important to add the overflow class to the parent ul, <br />
+&emsp;&emsp;&emsp;&emsp;otherwise overflow wont trigger. <br />
+&emsp;&emsp;&lt;/ul&gt; <br />
+&lt;/div&gt; <br />
+ <br />
+top-right container here... <br />
+ <br />
+&lt;div class="grid-container full menu__overflow__container"&gt; <br />
+&emsp;&emsp;&lt;ul class="overflow"&gt; <br />
+&emsp;&emsp;&emsp;&emsp;Add this menu__overflow__container section after the top-right div and before <br />
+&emsp;&emsp;&emsp;&emsp;the mobile-nav div. <br />
+&emsp;&emsp;&lt;/ul&gt; <br />
+&lt;/div&gt; <br />
+ <br />
+mobile nav container here ... <br />
 </code>
 </pre>
 
@@ -442,7 +442,10 @@ mobile nav container here ...
 
 <pre>
 <code>
-
+$(document).ready(function() &#123; <br />
+  &emsp;&emsp;navigationInitialize(); <br />
+  &emsp;&emsp;navigationMultiLevelEdgeDetection(); <br />
+&#125;);
 </code>
 </pre>
 
