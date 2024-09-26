@@ -13,9 +13,10 @@ export function accordion(accordionSelector, accordionSiblingSelector, accordion
       jQuery(currentElem).siblings(accordinSiblingElement).slideDown('fast').attr('aria-hidden', false);
 
       // Close all other list items and panels.
-      jQuery(accordionListItem).not(jQuery(currentElem)).removeClass(accordionActiveElem).attr('aria-expanded', false);
-      jQuery(accordionListItem).not(jQuery(currentElem)).siblings(accordinSiblingElement).slideUp('fast')
-        .attr('aria-hidden', true);
+      if (!jQuery(accordionElement).data('multiExpand')) {
+        jQuery(accordionListItem).not(jQuery(currentElem)).removeClass(accordionActiveElem).attr('aria-expanded', false);
+        jQuery(accordionListItem).not(jQuery(currentElem)).siblings(accordinSiblingElement).slideUp('fast').attr('aria-hidden', true);
+      }
     } else {
       // Close active list item if open.
       jQuery(currentElem).removeClass(accordionActiveElem).attr('aria-expanded', false);
@@ -30,7 +31,7 @@ export function accordion(accordionSelector, accordionSiblingSelector, accordion
       if (hasMobileAttr) {
         jQuery(accordionListItem).addClass('desktop-event-none').siblings(accordionSibling).addClass('desktop-visible');
       }
-      jQuery(accordionListItem).click(function (e) {
+      jQuery(accordionListItem, element).click(function (e) {
         e.preventDefault();
 
         // Callback function for Accordion Trigger.
@@ -42,7 +43,7 @@ export function accordion(accordionSelector, accordionSiblingSelector, accordion
         // Check if 'Enter' key is pressed.
         if (keycode == 13) accordionTrigger(jQuery(this), accordionListItem, accordionSibling, accordionActiveClass);
       });
-    });
+    }).find('.is-active button').first().trigger('click');
   };
 
   accordionClick(accordionElement, accordionPanel, accordionActiveElement);
