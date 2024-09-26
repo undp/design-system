@@ -128,10 +128,10 @@ export default {
         <h4>States</h4>
         <p>An accordion panel has two states: collapsed and expanded. The chevron icon at the end of the accordion title should indicate the accordion panel’s state. By default, all panels of an accordion should begin at the collapsed state. The following behavior modifiers are available:</p>
         <ul>
-          <li><strong>Multi-expand</strong>. By default only one panel of the accordion can be open at a time. It can be changed by assigning data-multi-expand=”true” attribute to the accordion’s outermost element.</li>
-          <li><strong>Disabled</strong>: temporary removing expanding capability of the specific panel while preserving overall look and feel</li>
-          <li><strong>Active</strong>: while default state of all panels is “close” we can enable certain panels by assigning class .is-active to it</li>
-          <li><strong>Mobile Only</strong>: To shwo the Accordion on mobile device only we have to pass the attribute to the parent div eg: <code>&lt;div class="accordion" data-accordion="mobile"&gt;</code></li>
+          <li><strong>Multi-expand</strong>. By default only one panel of the accordion can be open at a time. It can be changed by assigning data-multi-expand=”true” attribute to the accordion’s outermost element. <code>&lt;div class="accordion" data-multi-expand="true"&gt;</code></li>
+          {/* <li><strong>Disabled</strong>: temporary removing expanding capability of the specific panel while preserving overall look and feel</li> */}
+          <li><strong>Active</strong>: while default state of all panels is “close” we can enable certain panels by assigning class .is-active to it: <code>&lt;li class="is-active"&gt;</code></li>
+          <li><strong>Mobile Only</strong>: To show the Accordion on mobile device only we have to pass the attribute to the parent div eg: <code>&lt;div class="accordion" data-accordion="mobile"&gt;</code></li>
         </ul>
         <h4>Interactions</h4>
         <p>The entire accordion title and chevron is selectable. Users can click anywhere in the title area to expand or collapse the content, providing a large, easy to manipulate target.</p>
@@ -166,5 +166,5 @@ AccordionStory.argTypes = {
   descriptionText: { table: { disable: true } },
 };
 
-  
+
 
