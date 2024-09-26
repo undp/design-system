@@ -14,7 +14,7 @@ export const FooterIcons = ({ ...args }) => {
       <li><a href="#" className="facebook" title="Facebook">facebook</a></li>
       <li><a href="#" className="linkedin" title="LinkedIn">linkedIn</a></li>
       <li><a href="#" className="instagram" title="Instagram">instagram</a></li>
-      <li><a href="#" className="twitter" title="Twitter">twitter</a></li>
+      <li><a href="#" className="twitter-x" title="X">twitter</a></li>
       <li><a href="#" className="youtube" title="Youtube">youtube</a></li>
     </ul>
   );

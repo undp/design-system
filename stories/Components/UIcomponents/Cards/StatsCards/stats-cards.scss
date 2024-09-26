@@ -4,69 +4,71 @@
 
 // color map
 $colors: (
-  'yellow': $color-yellow,
-  'red': $color-red,
-  'green': $color-green,
-  'blue': $color-azure
+  'yellow': var(--undpds-color-yellow),
+  'red': var(--undpds-color-red),
+  'green': var(--undpds-color-green),
+  'blue': var(--undpds-color-azure)
 );
 
 /* statscard start */
-div.stats-card {
+.stats-card {
+
   @include transition(300ms all);
 
-  background-color: $color-gray-200;
+  background-color: var(--undpds-color-gray-200);
   box-sizing: border-box;
   overflow-wrap: break-word;
 
   @include devicebreak(small) {
     max-width: 21.938rem;
-    padding: $spacing-08;
   }
+
+  padding: var(--undpds-spacing-08);
 
   h3 {
     font-weight: 600;
-    margin-bottom: $spacing-08;
+    margin-bottom: var(--undpds-spacing-08);
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-11;
+      margin-bottom: var(--undpds-spacing-11);
     }
   }
 
   h2 {
     @include transition(300ms all);
 
-    color: $color-gray-200;
-    font-family: $Font-Family-SohneBreit;
+    color: var(--undpds-color-gray-200);
+    font-family: var(--undpds-font-family-sohnebreit);
     font-weight: 700;
-    font-size: $spacing-11;
+    font-size: var(--undpds-spacing-11);
     letter-spacing: 0.05rem;
     line-height: 1.1;
-    margin-bottom: $spacing-06;
+    margin-bottom: var(--undpds-spacing-06);
     text-shadow:
-      -1px -1px 0 $color-black,
-      1px -1px 0 $color-black,
-      -1px 1px 0 $color-black,
-      1px 1px 0 $color-black;
+      -1px -1px 0 var(--undpds-color-black),
+      1px -1px 0 var(--undpds-color-black),
+      -1px 1px 0 var(--undpds-color-black),
+      1px 1px 0 var(--undpds-color-black);
 
-    @supports (-webkit-text-stroke: 2px $color-black) {
+    @supports (-webkit-text-stroke: 2px var(--undpds-color-black)) {
       text-shadow: none;
-      -webkit-text-stroke: 2px $color-black;
+      -webkit-text-stroke: 2px var(--undpds-color-black);
     }
 
     @include devicebreak(medium) {
       font-size: 6.875rem;
       line-height: 1.09;
-      margin-bottom: $spacing-07;
+      margin-bottom: var(--undpds-spacing-07);
     }
   }
 
   h4 {
     letter-spacing: 0;
     line-height: 1.15;
-    margin-bottom: $spacing-03;
+    margin-bottom: var(--undpds-spacing-03);
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-05;
+      margin-bottom: var(--undpds-spacing-05);
     }
   }
 
@@ -74,20 +76,20 @@ div.stats-card {
     margin: 0;
 
     @include devicebreak(medium) {
-      font-size: $font-size-25;
+      font-size: var(--undpds-font-size-25);
     }
   }
 
   &.x-large {
-    padding: $spacing-08;
+    padding: var(--undpds-spacing-08);
 
     @include devicebreak(medium) {
       max-width: 42.75rem;
-      padding: $spacing-12;
+      padding: var(--undpds-spacing-12);
     }
 
     h2 {
-      font-size: $spacing-90;
+      font-size: var(--undpds-spacing-90);
 
       @include devicebreak(medium) {
         font-size: 7.5rem;
@@ -95,7 +97,7 @@ div.stats-card {
     }
 
     h3 {
-      font-size: $spacing-08;
+      font-size: var(--undpds-spacing-08);
       font-weight: 700;
 
       @include devicebreak(medium) {
@@ -113,17 +115,18 @@ div.stats-card {
   }
 
   &.large {
+
     @include devicebreak(medium) {
       max-width: 28rem;
-      padding: $spacing-12 $spacing-10;
+      padding: var(--undpds-spacing-12) var(--undpds-spacing-10);
     }
   }
 
   &.medium {
-    padding: $spacing-09;
+    padding: var(--undpds-spacing-09);
 
     @include devicebreak(medium) {
-      max-width: $spacing-330;
+      max-width: var(--undpds-spacing-330);
 
       h4 {
         font-weight: 600;
@@ -131,52 +134,52 @@ div.stats-card {
     }
 
     p {
-      font-size: $font-size-20;
+      font-size: var(--undpds-font-size-20);
     }
   }
 
   &.small {
     max-width: 10.625rem;
-    padding: $spacing-06;
+    padding: var(--undpds-spacing-06);
 
     @include devicebreak(medium) {
       max-width: 13.25rem;
-      padding: $spacing-07;
+      padding: var(--undpds-spacing-07);
     }
 
     h2 {
-      font-size: $spacing-50;
-      height: $spacing-10;
+      font-size: var(--undpds-spacing-50);
+      height: var(--undpds-spacing-10);
       white-space: nowrap;
 
       @include devicebreak(medium) {
-        font-size: $spacing-70;
+        font-size: var(--undpds-spacing-70);
       }
     }
 
     h4 {
-      font-size: $font-size-20;
+      font-size: var(--undpds-font-size-20);
 
       @include devicebreak(medium) {
-        font-size: $font-size-25;
+        font-size: var(--undpds-font-size-25);
       }
     }
 
     p {
-      font-size: $font-size-14;
+      font-size: var(--undpds-font-size-14);
       word-break: normal;
 
       @include devicebreak(medium) {
-        font-size: $font-size-16;
+        font-size: var(--undpds-font-size-16);
       }
     }
   }
 
   &:hover {
-    background-color: $color-yellow;
+    background-color: var(--undpds-color-yellow);
 
     & h2 {
-      color: $color-black;
+      color: var(--undpds-color-black);
     }
 
     @each $name,
@@ -213,7 +216,7 @@ $color in $colors {
 :lang(my) {
   div.stats-card {
     h2 {
-      font-family: $Font-Family-NotoSans;
+      font-family: var(--undpds-font-family-notosans);
     }
   }
 }
@@ -221,7 +224,7 @@ $color in $colors {
 #{$cyrillic} {
   div.stats-card {
     h2 {
-      font-family: $Font-Family-ProximaNova;
+      font-family: var(--undpds-font-family-proximanova);
     }
   }
 }

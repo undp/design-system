@@ -16,12 +16,11 @@ details {
 
     &::before {
       background:
-        url(~icons/chevron-small-right.svg)
-        no-repeat left center;
+        url(~icons/chevron-small-right.svg) no-repeat left center;
       content: '';
       display: inline-block;
       height: 14px;
-      margin-right: $spacing-02;
+      margin-right: var(--undpds-spacing-02);
       width: 14px;
     }
   }
@@ -36,8 +35,7 @@ details {
 
       &::before {
         background:
-          url(~icons/chevron-small-down.svg)
-          no-repeat left center;
+          url(~icons/chevron-small-down.svg) no-repeat left center;
         content: '';
         display: inline-block;
         height: 14px;
@@ -52,7 +50,7 @@ details {
     summary::before {
       @include transform(translate(0) rotate(180deg));
 
-      margin-left: $spacing-02;
+      margin-left: var(--undpds-spacing-02);
       margin-right: 0;
     }
 

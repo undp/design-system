@@ -4,8 +4,8 @@
 
 /* author summary start */
 .author-summary {
-  border-top: 2px solid $color-black;
-  padding-top: $spacing-07;
+  border-top: 2px solid var(--undpds-color-black);
+  padding-top: var(--undpds-spacing-07);
 
   @include devicebreak(medium) {
     display: flex;
@@ -44,7 +44,7 @@
         }
 
         @include devicebreak(large) {
-          width: $width-180;
+          width: var(--undpds-width-180);
         }
       }
 
@@ -58,7 +58,7 @@
 
   &-right {
     @include devicebreak(small) {
-      margin-top: $spacing-04;
+      margin-top: var(--undpds-spacing-04);
     }
 
     @include devicebreak(medium) {
@@ -67,7 +67,7 @@
   }
 
   &-text {
-    margin-left: $spacing-04;
+    margin-left: var(--undpds-spacing-04);
     margin-top: 0;
 
     @include devicebreak(medium) {
@@ -75,11 +75,11 @@
     }
 
     @include devicebreak(large) {
-      margin-left: $spacing-08;
+      margin-left: var(--undpds-spacing-08);
     }
 
     h2 {
-      margin-bottom: $spacing-03;
+      margin-bottom: var(--undpds-spacing-03);
       overflow-wrap: break-word;
       hyphens: manual;
     }
@@ -91,7 +91,7 @@
     &-text {
       @include devicebreak(medium) {
         margin-left: 0;
-        margin-right: $spacing-08;
+        margin-right: var(--undpds-spacing-08);
       }
     }
   }

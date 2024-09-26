@@ -13,9 +13,10 @@ table {
   }
 
   &.small {
+
     th,
     td {
-      font-size: $font-size-16;
+      font-size: var(--undpds-font-size-16);
       -webkit-text-size-adjust: 100%;
     }
   }
@@ -25,7 +26,7 @@ table {
       @extend %border-none;
 
       &:nth-child(even) {
-        background-color: $color-gray-200;
+        background-color: var(--undpds-color-gray-200);
       }
     }
   }
@@ -35,11 +36,12 @@ table {
 
     th,
     td {
-      border: 1px solid $color-gray-400;
+      border: 1px solid var(--undpds-color-gray-400);
     }
   }
 
   &.stacked {
+
     th,
     td {
       display: block;
@@ -61,14 +63,14 @@ table {
 
     &.border {
       tr {
-        border: 1px solid $color-gray-400;
+        border: 1px solid var(--undpds-color-gray-400);
 
         th,
         td {
           @extend %border-none;
 
           @include devicebreak(medium) {
-            border: 1px solid $color-gray-400;
+            border: 1px solid var(--undpds-color-gray-400);
           }
         }
       }
@@ -78,20 +80,20 @@ table {
 
 th,
 td {
-  font-size: $font-size-20;
+  font-size: var(--undpds-font-size-20);
   line-height: 1.4;
-  padding: $spacing-04;
+  padding: var(--undpds-spacing-04);
   vertical-align: top;
 
   @include devicebreak(medium) {
-    padding: $spacing-04 $spacing-08 $spacing-04 $spacing-04;
+    padding: var(--undpds-spacing-04) var(--undpds-spacing-08) var(--undpds-spacing-04) var(--undpds-spacing-04);
   }
 }
 
 thead {
   tr {
     th {
-      background-color: $color-gray-300;
+      background-color: var(--undpds-color-gray-300);
       font-weight: 600;
       text-align: left;
     }
@@ -120,18 +122,20 @@ tbody {
 }
 
 [dir='rtl'] {
+
   th,
   td {
     text-align: right;
 
     @include devicebreak(medium) {
-      padding: $spacing-04 $spacing-04 $spacing-04 $spacing-08;
+      padding: var(--undpds-spacing-04) var(--undpds-spacing-04) var(--undpds-spacing-04) var(--undpds-spacing-08);
     }
   }
 }
 
 // burmese lang
 :lang(my) {
+
   th,
   td {
     line-height: 1.7;

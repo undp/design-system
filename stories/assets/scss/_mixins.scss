@@ -8,54 +8,32 @@
 
 // select box appearance
 @mixin x-appearance($value) {
-  -webkit-appearance: $value;
-  -moz-appearance: $value;
   appearance: $value;
 }
 
 //animation
 @mixin animation($animation) {
-  -webkit-animation: $animation;
-  -moz-animation: $animation;
-  -ms-animation: $animation;
-  -o-animation: $animation;
   animation: $animation;
 }
 
 //keyframe
 @mixin keyframes($keyframes...) {
-  -webkit-keyframes: $keyframes;
-  -moz-keyframes: $keyframes;
-  -ms-keyframes: $keyframes;
-  -o-keyframes: $keyframes;
   keyframes: $keyframes;
 }
 
 //transition
 @mixin transition($transitions...) {
-  -webkit-transition: $transitions;
-  -moz-transition: $transitions;
-  -ms-transition: $transitions;
-  -o-transition: $transitions;
   transition: $transitions;
 }
 
 //transition-delay
 @mixin transitiondelay($transitiondelay...) {
-  -webkit-transition-delay: $transitiondelay;
-  -moz-transition-delay: $transitiondelay;
-  -ms-transition-delay: $transitiondelay;
-  -o-transition-delay: $transitiondelay;
   transition-delay: $transitiondelay;
 }
 
 //transform
 @mixin transform($transforms) {
-  -webkit-transform: $transforms;
-  -moz-transform: $transforms;
-  -ms-transform: $transforms;
-  -o-transform: $transforms;
-  transition: $transforms;
+  transform: $transforms;
 }
 
 // Rotate
@@ -80,9 +58,6 @@
 
 //gradient color
 @mixin gradient($direction, $list) {
-  background: -webkit-linear-gradient($direction, $list);
-  background: -moz-linear-gradient($direction, $list);
-  background: -o-linear-gradient($direction, $list);
   background: linear-gradient($direction, $list);
 }
 
@@ -90,41 +65,41 @@
 
 /* placehoder start */
 %paragragh-font-14 {
-  font-size: $font-size-12;
+  font-size: var(--undpds-font-size-12);
 
   @include devicebreak(medium) {
-    font-size: $font-size-14;
+    font-size: var(--undpds-font-size-14);
   }
 }
 
 %paragragh-font-16 {
-  font-size: $font-size-14;
+  font-size: var(--undpds-font-size-14);
   line-height: 1.4;
 
   @include devicebreak(medium) {
-    font-size: $font-size-16;
+    font-size: var(--undpds-font-size-16);
   }
 }
 
 %paragragh-font-20 {
-  font-size: $font-size-16;
+  font-size: var(--undpds-font-size-16);
 
   @include devicebreak(medium) {
-    font-size: $font-size-20;
+    font-size: var(--undpds-font-size-20);
   }
 }
 
 %paragragh-font-24 {
-  font-size: $font-size-20;
+  font-size: var(--undpds-font-size-20);
   line-height: 1.1;
 
   @include devicebreak(medium) {
-    font-size: $font-size-24;
+    font-size: var(--undpds-font-size-24);
   }
 }
 
 %border-bottom {
-  border-bottom: 1px solid $color-gray-400;
+  border-bottom: 1px solid var(--undpds-color-gray-400);
 }
 
 %img-cover {
@@ -141,13 +116,13 @@
 }
 
 %header-icon {
-  background-color: $color-blue-600;
+  background-color: var(--undpds-color-blue-600);
   border: 0;
   cursor: pointer;
   display: inline-flex;
   font-size: 0;
   height: 26px;
-  margin-inline-end: $spacing-03;
+  margin-inline-end: var(--undpds-spacing-03);
   padding: 0;
   width: 25px;
   min-width: 25px;
@@ -159,7 +134,7 @@
   }
 
   &:hover {
-    background-color: $color-blue-400;
+    background-color: var(--undpds-color-blue-400);
   }
 }
 
@@ -171,9 +146,9 @@
 
 %footer-block {
   align-items: center;
-  border-bottom: 1px solid $color-white;
+  border-bottom: 1px solid var(--undpds-color-white);
   justify-content: space-between;
-  margin-bottom: $spacing-07;
+  margin-bottom: var(--undpds-spacing-07);
 }
 
 %mobile-nav {
@@ -194,16 +169,16 @@
 
 %sdg-modal-title {
   h2 {
-    font-size: $font-size-25;
+    font-size: var(--undpds-font-size-25);
 
     @include devicebreak(medium) {
       font-size: 3.438rem;
-      padding-left: $spacing-05;
+      padding-left: var(--undpds-spacing-05);
     }
   }
 
   h3 {
-    font-size: $font-size-20;
+    font-size: var(--undpds-font-size-20);
 
     @include devicebreak(medium) {
       font-size: 2.188rem;
@@ -217,41 +192,40 @@
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  padding: $spacing-05;
+  padding: var(--undpds-spacing-05);
   position: relative;
 
   @include devicebreak(medium) {
-    padding: $spacing-06;
+    padding: var(--undpds-spacing-06);
   }
 }
 
 %sidebar-selected {
-  background-color: $color-blue-600;
+  background-color: var(--undpds-color-blue-600);
 
   h6 {
-    color: $color-white;
+    color: var(--undpds-color-white);
   }
 
   &:hover {
-    background-color: $color-blue-600;
+    background-color: var(--undpds-color-blue-600);
   }
 }
 
 %checbox-radio-before {
-  -webkit-appearance: none;
   appearance: none;
-  border: 2px solid $color-dark-red;
+  border: 2px solid var(--undpds-color-dark-red);
   cursor: pointer;
   height: 16px;
   margin: 0;
   width: 16px;
 
   &:hover {
-    border-color: $color-light-pink;
+    border-color: var(--undpds-color-light-pink);
   }
 
   &:focus-visible {
-    box-shadow: 0 0 4px $color-blue-800;
+    box-shadow: 0 0 4px var(--undpds-color-blue-800);
     outline: 0;
   }
 }
@@ -259,7 +233,7 @@
 %img-hover-effect {
   @include transition(opacity 0.5s ease);
 
-  background-image: linear-gradient(42deg, $color-yellow, transparent 80%);
+  background-image: linear-gradient(42deg, var(--undpds-color-yellow), transparent 80%);
   opacity: 0;
 }
 
@@ -267,7 +241,7 @@
   align-items: center;
   border: none;
   display: flex;
-  font-size: $font-size-16;
+  font-size: var(--undpds-font-size-16);
   font-weight: 700;
   letter-spacing: 0.03em;
   line-height: 1;
@@ -280,7 +254,7 @@
 %ctaimg {
   content: '';
   height: 1.188rem;
-  margin-left: $spacing-04;
+  margin-left: var(--undpds-spacing-04);
   margin-top: 2px;
   width: 0.813rem;
 
@@ -344,7 +318,7 @@
 
 %language_switcher {
   border: none;
-  font-size: $font-size-14;
+  font-size: var(--undpds-font-size-14);
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -361,38 +335,38 @@
 }
 
 %select_default {
-  border: 2px solid $color-black;
-  color: $color-black;
+  border: 2px solid var(--undpds-color-black);
+  color: var(--undpds-color-black);
   cursor: pointer;
-  font-size: $font-size-16;
+  font-size: var(--undpds-font-size-16);
   font-weight: 600;
   line-height: 1.125rem;
   margin: 0;
-  padding: $spacing-05 $spacing-50 $spacing-05 $spacing-05;
+  padding: var(--undpds-spacing-05) var(--undpds-spacing-50) var(--undpds-spacing-05) var(--undpds-spacing-05);
   position: relative;
   text-transform: uppercase;
   width: 100%;
 }
 
 %select_option {
-  border: 2px solid $color-black;
+  border: 2px solid var(--undpds-color-black);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: none;
   min-height: 100px;
-  padding: 0 $spacing-05;
+  padding: 0 var(--undpds-spacing-05);
   width: 100%;
 
   &:focus {
-    box-shadow: 0 0 4px $color-blue-800;
+    box-shadow: 0 0 4px var(--undpds-color-blue-800);
     outline: 0;
   }
 }
 
 %select_rtl {
   padding-left: 3.125rem;
-  padding-right: $spacing-05;
+  padding-right: var(--undpds-spacing-05);
   text-align: right;
 }
 
@@ -403,10 +377,6 @@
 }
 
 %no-animation {
-  -webkit-animation: none;
-  -moz-animation: none;
-  -ms-animation: none;
-  -o-animation: none;
   animation: none;
 }
 
@@ -458,7 +428,7 @@
 
 %expand_search {
   border: 0;
-  border-bottom: 1px solid $color-black;
+  border-bottom: 1px solid var(--undpds-color-black);
   border-radius: 0;
   cursor: pointer;
 }
@@ -475,12 +445,12 @@
 }
 
 %carousel_tag {
-  color: $color-black;
+  color: var(--undpds-color-black);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.48px;
   line-height: 0.84;
-  margin-bottom: $spacing-05;
+  margin-bottom: var(--undpds-spacing-05);
   text-transform: uppercase;
 }
 
@@ -495,7 +465,7 @@
 }
 
 %carousel_bar_margin {
-  margin-bottom: $spacing-09;
+  margin-bottom: var(--undpds-spacing-09);
 }
 
 %carousel_slider_slide {
@@ -505,7 +475,7 @@
 }
 
 %header {
-  background-color: $color-gray-100;
+  background-color: var(--undpds-color-gray-100);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   height: 7.1875rem;
   left: 0;
@@ -516,7 +486,7 @@
 }
 
 %background-white {
-  background-color: white;
+  background-color: var(--undpds-color-white);
 }
 
 %sub-external {
@@ -535,25 +505,25 @@
 %footerlink {
   @extend %img_none;
 
-  color: $color-white;
-  font-size: $font-size-16;
+  color: var(--undpds-color-white);
+  font-size: var(--undpds-font-size-16);
   line-height: 1.4;
 
   &:hover {
-    color: $color-blue-100;
+    color: var(--undpds-color-blue-100);
   }
 }
 
 %footerlinkinvert {
-  color: $color-black;
+  color: var(--undpds-color-black);
 
   &:hover {
-    color: $color-gray-600;
+    color: var(--undpds-color-gray-600);
   }
 }
 
 %selectoption {
-  border-top: 1px solid $color-gray-400;
+  border-top: 1px solid var(--undpds-color-gray-400);
   cursor: pointer;
   margin-bottom: 0;
   padding: 0;
@@ -566,33 +536,33 @@
   }
 
   %paragragh-font-16 {
-    font-size: $font-size-12;
+    font-size: var(--undpds-font-size-12);
     line-height: 1.7;
 
     @include devicebreak(medium) {
-      font-size: $font-size-14;
+      font-size: var(--undpds-font-size-14);
     }
   }
 
   %paragragh-font-20 {
-    font-size: $font-size-14;
+    font-size: var(--undpds-font-size-14);
 
     @include devicebreak(medium) {
-      font-size: $font-size-16;
+      font-size: var(--undpds-font-size-16);
     }
   }
 
   %paragragh-font-24 {
-    font-size: $font-size-20;
+    font-size: var(--undpds-font-size-20);
     line-height: 1.1;
 
     @include devicebreak(medium) {
-      font-size: $font-size-24;
+      font-size: var(--undpds-font-size-24);
     }
   }
 
   %button {
-    font-size: $font-size-14;
+    font-size: var(--undpds-font-size-14);
   }
 }
 
@@ -601,19 +571,19 @@
   min-width: 60px;
 
   @include devicebreak(large) {
-    height: ($header-height-xlarge + 7px);
+    height: calc(var(--undpds-header-height-xlarge) + 7px);
 
     &.scrolled {
-      height: $header-height-xlarge;
+      height: var(--undpds-header-height-xlarge);
     }
   }
 
   @include devicebreak(mediumonlytab) {
-    height: ($header-height-medium + 7px);
+    height: calc(var(--undpds-header-height-medium) + 7px);
     min-width: 40px;
 
     &.scrolled {
-      height: $header-height-medium;
+      height: var(--undpds-header-height-medium);
     }
   }
 }
@@ -635,7 +605,7 @@
 
     box-sizing: border-box;
     display: block;
-    height: $spacing-05;
+    height: var(--undpds-spacing-05);
     left: 1.25rem;
     position: relative;
     width: 0;
@@ -643,7 +613,7 @@
     &::before {
       @extend %pseudo-icon;
 
-      background-color: $color-red;
+      background-color: var(--undpds-color-red);
       display: none;
       height: 2px;
       right: 0;
@@ -656,18 +626,18 @@
 
       @include transform(rotate(45deg));
 
-      border-right: 2px solid $color-red;
-      border-top: 2px solid $color-red;
-      height: $spacing-04;
+      border-right: 2px solid var(--undpds-color-red);
+      border-top: 2px solid var(--undpds-color-red);
+      height: var(--undpds-spacing-04);
       right: 0;
       top: 2px;
-      width: $spacing-04;
+      width: var(--undpds-spacing-04);
     }
   }
 
   &:hover {
     i {
-      width: $spacing-11;
+      width: var(--undpds-spacing-11);
 
       &::before {
         display: unset;
@@ -687,9 +657,8 @@
 }
 
 %animate-link {
-  background-image:
-    linear-gradient($color-dark-red, $color-dark-red),
-    linear-gradient($color-dark-red, $color-dark-red);
+  background-image: linear-gradient(var(--undpds-color-dark-red), var(--undpds-color-dark-red)),
+    linear-gradient(var(--undpds-color-dark-red), var(--undpds-color-dark-red));
   background-position: 100% 100%, -30px 100%;
   background-repeat: no-repeat;
   background-size: 100% 2px, 0 1px;
@@ -703,7 +672,7 @@
   overflow-x: auto;
   overflow-y: auto;
   scroll-behavior: smooth;
-  scrollbar-color: #000 transparent;
+  scrollbar-color: var(--undpds-color-black) transparent;
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
@@ -713,9 +682,9 @@
   }
 
   &::-webkit-scrollbar-track {
-    background: $color-black;
+    background: var(--undpds-color-black);
     background-clip: padding-box;
-    border: 2px solid $color-white;
+    border: 2px solid var(--undpds-color-white);
   }
 
   &::-webkit-scrollbar-corner {
@@ -723,7 +692,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $color-black;
+    background: var(--undpds-color-black);
   }
 }
 

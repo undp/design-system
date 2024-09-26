@@ -10,28 +10,28 @@ label {
   &.error {
     @extend %paragragh-font-20;
 
-    color: $color-black;
+    color: var(--undpds-color-black);
     margin-top: 0;
   }
 
   &.disabled {
-    color: $color-gray-400;
+    color: var(--undpds-color-gray-400);
   }
 }
 
 .help {
-  color: $color-gray-500;
+  color: var(--undpds-color-gray-500);
   display: block;
-  font-size: $font-size-14;
+  font-size: var(--undpds-font-size-14);
   margin-bottom: 0;
-  margin-top: $spacing-03;
+  margin-top: var(--undpds-spacing-03);
 }
 
 .error {
-  color: $color-red;
-  font-size: $font-size-16;
+  color: var(--undpds-color-red);
+  font-size: var(--undpds-font-size-16);
   margin-bottom: 0;
-  margin-top: $spacing-03;
+  margin-top: var(--undpds-spacing-03);
 }
 
 input[type=text],
@@ -47,54 +47,53 @@ textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  border: 2px solid $color-black;
+  border: 2px solid var(--undpds-color-black);
   border-radius: 0;
   box-sizing: border-box;
   display: block;
-  font-family: $Font-Family-ProximaNova;
-  font-size: $font-size-16;
+  font-family: var(--undpds-font-family-proximanova);
+  font-size: var(--undpds-font-size-16);
   height: 46px;
-  margin-top: $spacing-03;
+  margin-top: var(--undpds-spacing-03);
   padding: 0.625rem;
   width: 100%;
 
   &::placeholder {
-    color: $color-gray-500;
+    color: var(--undpds-color-gray-500);
   }
 
   &:focus {
-    box-shadow: 0 0 4px $color-blue-800;
+    box-shadow: 0 0 4px var(--undpds-color-blue-800);
     outline: 0;
   }
 
   input[type=date],
   input[type=search] {
-    padding-left: $spacing-08;
+    padding-left: var(--undpds-spacing-08);
     position: relative;
   }
 
   &.disabled {
-    background-color: $color-white;
-    border: 2px solid $color-gray-400;
-    color: $color-gray-400;
+    background-color: var(--undpds-color-white);
+    border: 2px solid var(--undpds-color-gray-400);
+    color: var(--undpds-color-gray-400);
 
     &::placeholder {
-      color: $color-gray-400;
+      color: var(--undpds-color-gray-400);
     }
   }
 
   &.error {
-    border: 2px solid $color-red;
+    border: 2px solid var(--undpds-color-red);
   }
 }
 
 input[type=date] {
   background:
-    url(~icons/calender-black.svg) no-repeat left
-    14px bottom 12px;
-  background-color: $color-white;
-  color: $color-gray-500;
-  padding-left: $spacing-08;
+    url(~icons/calender-black.svg) no-repeat left 14px bottom 12px;
+  background-color: var(--undpds-color-white);
+  color: var(--undpds-color-gray-500);
+  padding-left: var(--undpds-spacing-08);
   position: relative;
   appearance: none;
 
@@ -103,11 +102,11 @@ input[type=date] {
   }
 
   &.empty {
-    color: $color-gray-500;
+    color: var(--undpds-color-gray-500);
   }
 
   &.filled {
-    color: $color-black;
+    color: var(--undpds-color-black);
   }
 
 }
@@ -124,7 +123,7 @@ input[type=search] {
 
 .help {
   &.disabled {
-    color: $color-gray-400;
+    color: var(--undpds-color-gray-400);
   }
 }
 
@@ -138,12 +137,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
   appearance: none;
   opacity: 1;
   position: absolute;
-  // -moz-position: absolute;
   margin-inline-start: -1.7rem;
-  // -moz-top: 0;
-  // -moz-left: 0;
-  // -moz-right: 0;
-  // -moz-bottom: 0;
   width: 1rem;
   height: 1rem;
   color: rgba(0, 0, 0, 0);
@@ -152,6 +146,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
 }
 
 [dir='rtl'] {
+
   input[type=text],
   input[type=number],
   input[type=email],
@@ -162,7 +157,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
   textarea {
     @media (hover: none) and (pointer: coarse) {
       input[type=date] {
-        padding-right: $spacing-06;
+        padding-right: var(--undpds-spacing-06);
       }
     }
   }
@@ -170,18 +165,16 @@ input[type='date']::-webkit-calendar-picker-indicator {
   input[type=date],
   input[type=search] {
     background:
-      url(~icons/calender-black.svg) no-repeat
-      right 14px bottom 12px;
-    background-color: $color-white;
+      url(~icons/calender-black.svg) no-repeat right 14px bottom 12px;
+    background-color: var(--undpds-color-white);
     padding-left: 0.635rem;
-    padding-right: $spacing-08;
+    padding-right: var(--undpds-spacing-08);
     text-align: right;
   }
 
   input[type=search] {
     background:
-      url(~icons/search-black.svg) no-repeat
-      right 14px bottom 12px;
+      url(~icons/search-black.svg) no-repeat right 14px bottom 12px;
   }
 
   input[type=date] {
@@ -191,13 +184,10 @@ input[type='date']::-webkit-calendar-picker-indicator {
   }
 
   input[type='date']::-webkit-calendar-picker-indicator {
-    // left: inherit;
     position: absolute;
     text-align: initial;
     opacity: 1;
     margin-right: 0.75rem;
-    // padding: auto 0;
-    // right: 27px;
     top: 1;
     left: 1;
     right: 0;
@@ -228,6 +218,6 @@ input[type='date']::-webkit-calendar-picker-indicator {
   input[type=tel],
   input[type=date],
   textarea {
-    font-family: $Font-Family-NotoSans;
+    font-family: var(--undpds-font-family-notosans);
   }
 }

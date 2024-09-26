@@ -1,4 +1,3 @@
-
 @font-face {
   font-display: swap;
   font-family: 'ProximaNova';
@@ -25,8 +24,8 @@
   font-style: normal;
   font-weight: 600;
   src:
-    url('../fonts/proximanova-semibold-webfont.woff2') format('woff2'),
-    url('../fonts/proximanova-semibold-webfont.woff') format('woff');
+    url('../fonts/proximanova-semibold-webfont-2.woff2') format('woff2'),
+    url('../fonts/proximanova-semibold-webfont-2.woff') format('woff');
 }
 
 @font-face {
@@ -35,8 +34,8 @@
   font-style: italic;
   font-weight: 600;
   src:
-    url('../fonts/proximanova-semiboldit-webfont.woff2') format('woff2'),
-    url('../fonts/proximanova-semiboldit-webfont.woff') format('woff');
+    url('../fonts/proximanova-semiboldit-webfont-2.woff2') format('woff2'),
+    url('../fonts/proximanova-semiboldit-webfont-2.woff') format('woff');
 }
 
 @font-face {
@@ -150,6 +149,7 @@
     url('../fonts/UNBangla-Thin.woff2') format('woff2'),
     url('../fonts/UNBangla-Thin.woff') format('woff');
 }
+
 @font-face {
   font-display: swap;
   font-family: 'UNBangla';
@@ -168,6 +168,7 @@
     url('../fonts/UNBangla-Regular.woff2') format('woff2'),
     url('../fonts/UNBangla-Regular.woff') format('woff');
 }
+
 @font-face {
   font-display: swap;
   font-family: 'UNBangla';
@@ -186,6 +187,7 @@
     url('../fonts/UNBangla-Bold.woff2') format('woff2'),
     url('../fonts/UNBangla-Bold.woff') format('woff');
 }
+
 @font-face {
   font-display: swap;
   font-family: 'UNBangla';

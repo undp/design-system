@@ -12,16 +12,33 @@ jobs:
     # Operating System
     runs-on: ubuntu-latest
     # Job steps
+    # steps:
+    #   - uses: actions/checkout@v1
+    #   - name: Install dependencies
+    #     # 👇 Install dependencies with the same package manager used in the project (replace it as needed), e.g. yarn, npm, pnpm
+    #     run: yarn
+    #     # 👇 Adds Chromatic as a step in the workflow
+    #   - name: Publish to Chromatic
+    #     uses: chromaui/action@v1
+    #     # Chromatic GitHub Action options
+    #     with:
+    #       # 👇 Chromatic projectToken, refer to the manage page to obtain it.
+    #       projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+    #       exitOnceUploaded: true
     steps:
-      - uses: actions/checkout@v1
-      - name: Install dependencies
-        # 👇 Install dependencies with the same package manager used in the project (replace it as needed), e.g. yarn, npm, pnpm
-        run: yarn
-        # 👇 Adds Chromatic as a step in the workflow
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        # Chromatic GitHub Action options
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          # 👇 Chromatic projectToken, refer to the manage page to obtain it.
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        # ⚠️ See your package manager's documentation for the correct command to install dependencies in a CI environment.
+        run: npm ci
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          # ⚠️ Make sure to configure a `CHROMATIC_PROJECT_TOKEN` repository secret
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true
