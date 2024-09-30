@@ -1,138 +1,139 @@
+@import 'variables';
+
 // burmese lang
-:lang(my) {
+// :lang(my) {
 
-  body,
-  button {
-    font-family: $Font-Family-NotoSans;
-    line-height: 1.7;
-  }
+//   body,
+//   button {
+//     font-family: var(--undpds-font-family-notosans);
+//     line-height: 1.7;
+//   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    line-height: 1.7;
-  }
+//   h1,
+//   h2,
+//   h3,
+//   h4,
+//   h5,
+//   h6 {
+//     line-height: 1.7;
+//   }
 
-  h1 {
-    font-family: $Font-Family-NotoSans;
-    font-size: 2.625rem;
+//   h1 {
+//     font-family: var(--undpds-font-family-notosans);
+//     font-size: 2.625rem;
 
-    @include devicebreak(medium) {
-      font-size: 3.875rem;
-    }
+//     @include devicebreak(medium) {
+//       font-size: 3.875rem;
+//     }
 
-    @include devicebreak(large) {
-      font-size: 5rem;
-    }
-  }
+//     @include devicebreak(large) {
+//       font-size: 5rem;
+//     }
+//   }
 
-  h2 {
-    font-size: 2rem;
+//   h2 {
+//     font-size: 2rem;
 
-    @include devicebreak(medium) {
-      font-size: 2.188rem;
-    }
+//     @include devicebreak(medium) {
+//       font-size: 2.188rem;
+//     }
 
-    @include devicebreak(large) {
-      font-size: 2.813rem;
-    }
-  }
+//     @include devicebreak(large) {
+//       font-size: 2.813rem;
+//     }
+//   }
 
-  h4 {
-    font-size: 1.3rem;
+//   h4 {
+//     font-size: 1.3rem;
 
-    @include devicebreak(medium) {
-      font-size: 1.8rem;
-    }
-  }
+//     @include devicebreak(medium) {
+//       font-size: 1.8rem;
+//     }
+//   }
 
-  h5 {
-    font-size: $font-size-20;
+//   h5 {
+//     font-size: var(--undpds-font-size-20);
 
-    @include devicebreak(medium) {
-      font-size: 1.375rem;
-    }
-  }
+//     @include devicebreak(medium) {
+//       font-size: 1.375rem;
+//     }
+//   }
 
-  p {
-    font-size: $font-size-14;
-    line-height: 1.7;
+//   p {
+//     font-size: var(--undpds-font-size-14);
+//     line-height: 1.7;
 
-    @include devicebreak(medium) {
-      font-size: $font-size-16;
-    }
-  }
+//     @include devicebreak(medium) {
+//       font-size: var(--undpds-font-size-16);
+//     }
+//   }
 
-  ul li,
-  ol li,
-  dl {
-    font-size: 0.875rem;
-    line-height: 1.9;
+//   ul li,
+//   ol li,
+//   dl {
+//     font-size: 0.875rem;
+//     line-height: 1.9;
 
-    @include devicebreak(medium) {
-      font-size: 1.125rem;
-    }
-  }
+//     @include devicebreak(medium) {
+//       font-size: 1.125rem;
+//     }
+//   }
 
-  .sbdocs {
+//   .sbdocs {
+//     .sbdocs-content,
+//     h1,
+//     h2,
+//     h3,
+//     h4,
+//     h5,
+//     h6,
+//     p {
+//       font-family: var(--undpds-font-family-notosans);
+//     }
 
-    .sbdocs-content,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p {
-      font-family: $Font-Family-NotoSans;
-    }
+//     .sbdocs-h1 {
+//       font-size: var(--undpds-spacing-07);
+//     }
+//   }
+// }
 
-    .sbdocs-h1 {
-      font-size: $spacing-07;
-    }
-  }
-}
+// [dir='rtl'] {
 
-[dir='rtl'] {
+//   ul,
+//   ol {
+//     padding-left: 0;
+//     padding-right: 1.125rem;
 
-  ul,
-  ol {
-    padding-left: 0;
-    padding-right: 1.125rem;
+//     @include devicebreak(medium) {
+//       padding-right: 1.313rem;
+//     }
 
-    @include devicebreak(medium) {
-      padding-right: 1.313rem;
-    }
+//     li {
+//       padding-left: 0;
+//       padding-right: 0.875rem;
 
-    li {
-      padding-left: 0;
-      padding-right: 0.875rem;
+//       @include devicebreak(medium) {
+//         padding-right: var(--undpds-spacing-04);
+//       }
+//     }
+//   }
+// }
 
-      @include devicebreak(medium) {
-        padding-right: $spacing-04;
-      }
-    }
-  }
-}
+// /* Cyrillic scripts */
+// #{$cyrillic} {
+//   h1 {
+//     font-family: var(--undpds-font-family-proximanova);
+//   }
+// }
 
-/* Cyrillic scripts */
-#{$cyrillic} {
-  h1 {
-    font-family: $Font-Family-ProximaNova;
-  }
-}
+// /* Bengali */
+// :lang(bn) {
 
-/* Bengali */
-:lang(bn) {
-
-  body,
-  h1 {
-    font-family: $Font-Family-UNBangla;
-  }
-}
+//   body,
+//   h1 {
+//     font-family: var(--undpds-font-family-unbangla);
+//   }
+// }
 
 /* Arabic */
 :lang(ar) {
