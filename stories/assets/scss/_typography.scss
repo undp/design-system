@@ -194,101 +194,6 @@ a {
   @extend %animate-link !optional;
 }
 
-// the code below is moved to the _langs.scss file
-
-// burmese lang
-:lang(my) {
-
-  body,
-  button,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--undpds-font-family-notosans);
-    line-height: 1.7;
-  }
-
-  h1 {
-    font-size: 2.625rem;
-
-    @include devicebreak(medium) {
-      font-size: 3.875rem;
-    }
-
-    @include devicebreak(large) {
-      font-size: 5rem;
-    }
-  }
-
-  h2 {
-    font-size: var(--undpds-font-size-32);
-
-    @include devicebreak(medium) {
-      font-size: var(--undpds-font-size-35);
-    }
-
-    @include devicebreak(large) {
-      font-size: 2.813rem;
-    }
-  }
-
-  h4 {
-    font-size: 1.3rem;
-
-    @include devicebreak(medium) {
-      font-size: 1.8rem;
-    }
-  }
-
-  h5 {
-    font-size: var(--undpds-font-size-20);
-
-    @include devicebreak(medium) {
-      font-size: 1.375rem;
-    }
-  }
-
-  p {
-    font-size: var(--undpds-font-size-14);
-    line-height: 1.7;
-
-    @include devicebreak(medium) {
-      font-size: var(--undpds-font-size-16);
-    }
-  }
-
-  ul li,
-  ol li,
-  dl {
-    font-size: var(--undpds-font-size-14);
-    line-height: 1.9;
-
-    @include devicebreak(medium) {
-      font-size: 1.125rem;
-    }
-  }
-
-  .sbdocs {
-    .sbdocs-content,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p {
-      font-family: var(--undpds-font-family-notosans);
-    }
-
-    .sbdocs-h1 {
-      font-size: var(--undpds-font-size-32);
-    }
-  }
-}
-
 [dir='rtl'] {
 
   ul,
@@ -311,20 +216,115 @@ a {
   }
 }
 
-/* Cyrillic scripts */
-#{$cyrillic} {
-  h1 {
-    font-family: var(--undpds-font-family-proximanova);
-  }
-}
+// the code below is moved to the _langs.scss file
 
-/* Bengali */
-:lang(bn) {
+// burmese lang
+// :lang(my) {
 
-  body,
-  h1 {
-    font-family: var(--undpds-font-family-unbangla);
-  }
-}
+//   body,
+//   button,
+//   h1,
+//   h2,
+//   h3,
+//   h4,
+//   h5,
+//   h6 {
+//     font-family: var(--undpds-font-family-notosans);
+//     line-height: 1.7;
+//   }
+
+//   h1 {
+//     font-size: 2.625rem;
+
+//     @include devicebreak(medium) {
+//       font-size: 3.875rem;
+//     }
+
+//     @include devicebreak(large) {
+//       font-size: 5rem;
+//     }
+//   }
+
+//   h2 {
+//     font-size: var(--undpds-font-size-32);
+
+//     @include devicebreak(medium) {
+//       font-size: var(--undpds-font-size-35);
+//     }
+
+//     @include devicebreak(large) {
+//       font-size: 2.813rem;
+//     }
+//   }
+
+//   h4 {
+//     font-size: 1.3rem;
+
+//     @include devicebreak(medium) {
+//       font-size: 1.8rem;
+//     }
+//   }
+
+//   h5 {
+//     font-size: var(--undpds-font-size-20);
+
+//     @include devicebreak(medium) {
+//       font-size: 1.375rem;
+//     }
+//   }
+
+//   p {
+//     font-size: var(--undpds-font-size-14);
+//     line-height: 1.7;
+
+//     @include devicebreak(medium) {
+//       font-size: var(--undpds-font-size-16);
+//     }
+//   }
+
+//   ul li,
+//   ol li,
+//   dl {
+//     font-size: var(--undpds-font-size-14);
+//     line-height: 1.9;
+
+//     @include devicebreak(medium) {
+//       font-size: 1.125rem;
+//     }
+//   }
+
+//   // .sbdocs {
+//   //   .sbdocs-content,
+//   //   h1,
+//   //   h2,
+//   //   h3,
+//   //   h4,
+//   //   h5,
+//   //   h6,
+//   //   p {
+//   //     font-family: var(--undpds-font-family-notosans);
+//   //   }
+
+//   //   .sbdocs-h1 {
+//   //     font-size: var(--undpds-font-size-32);
+//   //   }
+//   // }
+// }
+
+// /* Cyrillic scripts */
+// #{$cyrillic} {
+//   h1 {
+//     font-family: var(--undpds-font-family-sohnebreit);
+//   }
+// }
+
+// /* Bengali */
+// :lang(bn) {
+
+//   body,
+//   h1 {
+//     font-family: var(--undpds-font-family-unbangla);
+//   }
+// }
 
 /* typography end */

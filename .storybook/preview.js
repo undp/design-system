@@ -1,12 +1,12 @@
 // import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 // import * as RTLAddon from 'storybook-addon-rtl';
-import renderToHTML from './renderToHTML';
-import { allModes } from './modes';
+import { allModes } from './modes'
+import renderToHTML from './renderToHTML'
 
 
 // include base styling globally
-import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss';
-import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css';
+import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css'
+import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss'
 
 // Log the contents of RTLAddon for debugging
 
@@ -205,5 +205,37 @@ const setAccentClass = (Story, context) => {
   )
 }
 
-export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass];
+const loadFont = (Story, context) => {
+  const langArr = {
+    'english': 'en',
+    'arabic': 'ar',
+    'burmese': 'my',
+    'japanese': 'ja',
+    'ukrainian': 'uk',
+  };
+
+  const activeLang = context.globals.locale;
+  const langCode = langArr[activeLang] || 'en';
+
+  if (langCode === 'ar') {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+  }
+  if (langCode === 'ja') {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+  }
+
+  const htmlElem = document.querySelector('html');
+  htmlElem.setAttribute('lang', langCode);
+
+  return <Story {...context} />;
+};
+
+
+export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass, loadFont];
 export const tags = ['autodocs', 'autodocs'];
