@@ -75,96 +75,96 @@ const getCaptionForLocale = (locale) => {
         ],
       };
       return japaneseText;
-    case "azerbaijani":
-      const azerbaijaniText = {
-        featuredcontentdata: [
-          {
-            contenttile: "MƏZMUN ETİKETİ",
-            contentname:
-              "Monqolustan iqlimə davamlılığı gücləndirmək üçün 23,1 milyon dollarlıq yeni GCF qrantı alır",
-            descriptionText:
-              "Yeni Yaşıl İqlim Fondunun qrantı ilə BMTİP tərəfindən dəstəklənən layihə bir milyona yaxın həssas əhaliyə fayda verəcək.",
-            button: "ƏTRAFLI OXUYUN",
-            imgback: img,
-          },
-        ],
-      };
-      return azerbaijaniText;
-    case "georgian":
-      const georgianText = {
-        featuredcontentdata: [
-          {
-            contenttile: "კონტენტის ტეგი",
-            contentname:
-              "მონღოლეთი იღებს ახალ 23,1 მილიონი აშშ დოლარის GCF გრანტს კლიმატის მდგრადობის გასაძლიერებლად",
-            descriptionText:
-              "მწვანე კლიმატის ფონდის ახალი გრანტით, გაეროს განვითარების პროგრამის მიერ მხარდაჭერილი პროექტი სარგებელს მიიღებს მილიონზე მეტ სოციალურად დაუცველ მოსახლეობას.",
-            button: "წაიკითხეთ მეტი",
-            imgback: img,
-          },
-        ],
-      };
-      return georgianText;
-    case "khmer":
-      const khmerText = {
-        featuredcontentdata: [
-          {
-            contenttile: "ស្លាកមាតិកា",
-            contentname:
-              "ប្រទេសម៉ុងហ្គោលីទទួលបានជំនួយ GCF ថ្មីចំនួន 23.1 លានដុល្លារ ដើម្បីពង្រឹងភាពធន់នឹងអាកាសធាតុ",
-            descriptionText:
-              "ជាមួយនឹងជំនួយមូលនិធិអាកាសធាតុបៃតងថ្មី គម្រោងដែលគាំទ្រដោយ UNDP នឹងផ្តល់អត្ថប្រយោជន៍ជិតមួយលាននាក់ដែលងាយរងគ្រោះ។",
-            button: "អានបន្ថែម",
-            imgback: img,
-          },
-        ],
-      };
-      return khmerText;
-    case "nepali":
-      const nepaliText = {
-        featuredcontentdata: [
-          {
-            contenttile: "सामग्री ट्याग",
-            contentname:
-              "मङ्गोलियाले जलवायु लचिलोपनलाई बलियो बनाउन नयाँ $ 23.1 मिलियन GCF अनुदान प्राप्त गर्दछ",
-            descriptionText:
-              "नयाँ हरित जलवायु कोष अनुदानबाट, UNDP-समर्थित परियोजनाले करिब १० लाख जोखिममा परेका जनसंख्यालाई फाइदा पुर्‍याउनेछ।",
-            button: "थप पढ्नुहोस्",
-            imgback: img,
-          },
-        ],
-      };
-      return nepaliText;
-    case "chinese":
-      const chineseText = {
-        featuredcontentdata: [
-          {
-            contenttile: "内容标签",
-            contentname:
-              "蒙古获得 2310 万美元绿色气候基金新拨款，以增强气候适应能力",
-            descriptionText:
-              "借助绿色气候基金的新拨款，联合国开发计划署支持的项目将使近一百万弱势群体受益。",
-            button: "阅读更多",
-            imgback: img,
-          },
-        ],
-      };
-      return chineseText;
-    case "korean":
-      const koreanText = {
-        featuredcontentdata: [
-          {
-            contenttile: "콘텐츠 태그",
-            contentname:
-              "몽골, ​​기후 회복력 강화를 위해 새로운 2,310만 달러 GCF 보조금 수령",
-            descriptionText:
-              "새로운 Green Climate Fund 보조금으로 UNDP 지원 프로젝트는 약 100만 명의 취약 계층에게 혜택을 제공합니다.",
-            button: "더 읽기",
-            imgback: img,
-          },
-        ],
-      };
-      return koreanText;
+    // case "azerbaijani":
+    //   const azerbaijaniText = {
+    //     featuredcontentdata: [
+    //       {
+    //         contenttile: "MƏZMUN ETİKETİ",
+    //         contentname:
+    //           "Monqolustan iqlimə davamlılığı gücləndirmək üçün 23,1 milyon dollarlıq yeni GCF qrantı alır",
+    //         descriptionText:
+    //           "Yeni Yaşıl İqlim Fondunun qrantı ilə BMTİP tərəfindən dəstəklənən layihə bir milyona yaxın həssas əhaliyə fayda verəcək.",
+    //         button: "ƏTRAFLI OXUYUN",
+    //         imgback: img,
+    //       },
+    //     ],
+    //   };
+    //   return azerbaijaniText;
+    // case "georgian":
+    //   const georgianText = {
+    //     featuredcontentdata: [
+    //       {
+    //         contenttile: "კონტენტის ტეგი",
+    //         contentname:
+    //           "მონღოლეთი იღებს ახალ 23,1 მილიონი აშშ დოლარის GCF გრანტს კლიმატის მდგრადობის გასაძლიერებლად",
+    //         descriptionText:
+    //           "მწვანე კლიმატის ფონდის ახალი გრანტით, გაეროს განვითარების პროგრამის მიერ მხარდაჭერილი პროექტი სარგებელს მიიღებს მილიონზე მეტ სოციალურად დაუცველ მოსახლეობას.",
+    //         button: "წაიკითხეთ მეტი",
+    //         imgback: img,
+    //       },
+    //     ],
+    //   };
+    //   return georgianText;
+    // case "khmer":
+    //   const khmerText = {
+    //     featuredcontentdata: [
+    //       {
+    //         contenttile: "ស្លាកមាតិកា",
+    //         contentname:
+    //           "ប្រទេសម៉ុងហ្គោលីទទួលបានជំនួយ GCF ថ្មីចំនួន 23.1 លានដុល្លារ ដើម្បីពង្រឹងភាពធន់នឹងអាកាសធាតុ",
+    //         descriptionText:
+    //           "ជាមួយនឹងជំនួយមូលនិធិអាកាសធាតុបៃតងថ្មី គម្រោងដែលគាំទ្រដោយ UNDP នឹងផ្តល់អត្ថប្រយោជន៍ជិតមួយលាននាក់ដែលងាយរងគ្រោះ។",
+    //         button: "អានបន្ថែម",
+    //         imgback: img,
+    //       },
+    //     ],
+    //   };
+    //   return khmerText;
+    // case "nepali":
+    //   const nepaliText = {
+    //     featuredcontentdata: [
+    //       {
+    //         contenttile: "सामग्री ट्याग",
+    //         contentname:
+    //           "मङ्गोलियाले जलवायु लचिलोपनलाई बलियो बनाउन नयाँ $ 23.1 मिलियन GCF अनुदान प्राप्त गर्दछ",
+    //         descriptionText:
+    //           "नयाँ हरित जलवायु कोष अनुदानबाट, UNDP-समर्थित परियोजनाले करिब १० लाख जोखिममा परेका जनसंख्यालाई फाइदा पुर्‍याउनेछ।",
+    //         button: "थप पढ्नुहोस्",
+    //         imgback: img,
+    //       },
+    //     ],
+    //   };
+    //   return nepaliText;
+    // case "chinese":
+    //   const chineseText = {
+    //     featuredcontentdata: [
+    //       {
+    //         contenttile: "内容标签",
+    //         contentname:
+    //           "蒙古获得 2310 万美元绿色气候基金新拨款，以增强气候适应能力",
+    //         descriptionText:
+    //           "借助绿色气候基金的新拨款，联合国开发计划署支持的项目将使近一百万弱势群体受益。",
+    //         button: "阅读更多",
+    //         imgback: img,
+    //       },
+    //     ],
+    //   };
+    //   return chineseText;
+    // case "korean":
+    //   const koreanText = {
+    //     featuredcontentdata: [
+    //       {
+    //         contenttile: "콘텐츠 태그",
+    //         contentname:
+    //           "몽골, ​​기후 회복력 강화를 위해 새로운 2,310만 달러 GCF 보조금 수령",
+    //         descriptionText:
+    //           "새로운 Green Climate Fund 보조금으로 UNDP 지원 프로젝트는 약 100만 명의 취약 계층에게 혜택을 제공합니다.",
+    //         button: "더 읽기",
+    //         imgback: img,
+    //       },
+    //     ],
+    //   };
+    //   return koreanText;
     default:
       const dummy = {
         featuredcontentdata: [

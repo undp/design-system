@@ -85,12 +85,12 @@ export const globalTypes = {
         { value: 'burmese', title: 'Burmese' },
         { value: 'japanese', title: 'Japanese' },
         { value: 'ukrainian', title: 'Ukrainian' },
-        { value: 'azerbaijani', title: 'Azerbaijani' },
-        { value: 'georgian', title: 'Georgian' },
-        { value: 'khmer', title: 'Khmer' },
-        { value: 'nepali', title: 'Nepali' },
-        { value: 'chinese', title: 'Chinese' },
-        { value: 'korean', title: 'Korean' }
+        // { value: 'azerbaijani', title: 'Azerbaijani' },
+        // { value: 'georgian', title: 'Georgian' },
+        // { value: 'khmer', title: 'Khmer' },
+        // { value: 'nepali', title: 'Nepali' },
+        // { value: 'chinese', title: 'Chinese' },
+        // { value: 'korean', title: 'Korean' }
       ],
     },
   },
@@ -129,12 +129,12 @@ const getLangCode = (Story, context) => {
     'burmese': 'my',
     'japanese': 'ja',
     'ukrainian': 'uk',
-    'azerbaijani': 'az',
-    'georgian': 'ka',
-    'khmer': 'km',
-    'nepali': 'ne',
-    'chinese': 'zh',
-    'korean': 'ko'
+    // 'azerbaijani': 'az',
+    // 'georgian': 'ka',
+    // 'khmer': 'km',
+    // 'nepali': 'ne',
+    // 'chinese': 'zh',
+    // 'korean': 'ko'
   };
 
   if (typeof langArr[activeLang] == 'undefined') {
