@@ -1,6 +1,6 @@
 @import 'variables';
 
-// burmese lang
+/* Burmese */
 :lang(my) {
 
   body,
@@ -11,7 +11,7 @@
   h4,
   h5,
   h6 {
-    font-family: var(--undpds-font-family-notosans);
+    font-family: var(--undpds-font-family-notosans-burmese);
     line-height: 1.7;
   }
 
@@ -112,84 +112,87 @@
 /* Arabic */
 :lang(ar) {
 
-  .sbdocs-preview,
-  .sb-unstyled,
-  .sb-main-padded {
-    body,
-    input[type=text],
-    pre,
-    button,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    caption,
-    div {
-      font-family: 'Noto Sans Arabic', sans-serif;
-    }
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: var(--undpds-font-family-notosans-arabic);
   }
 }
 
 /* Azerbaijani */
-// :lang(az) {
+:lang(az) {
 
-//   body,
-//   input[type=text],
-//   pre,
-//   button,
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5,
-//   h6,
-//   caption,
-//   div {
-//     font-family: $Font-Family-NotoSans;
-//   }
-// }
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: var(--undpds-font-family-notosans);
+  }
+}
+
+/* Burmese */
+:lang(my) {
+
+  input[type=text],
+  pre,
+  caption,
+  div {
+    font-family: var(--undpds-font-family-notosans-burmese);
+  }
+}
 
 /* Chinese */
-// :lang(zh) {
+:lang(zh) {
 
-//   body,
-//   input[type=text],
-//   pre,
-//   button,
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5,
-//   h6,
-//   caption,
-//   div {
-//     font-family: $Font-Family-NotoSans-Chinese;
-//   }
-// }
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: var(--undpds-font-family-notosans-chinese);
+  }
+}
 
 /* Japanese */
 :lang(ja) {
 
-  .sbdocs-preview,
-  .sb-unstyled,
-  .sb-main-padded {
-    body,
-    input[type=text],
-    pre,
-    button,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    caption,
-    div {
-      font-family: "Noto Sans JP", sans-serif;;
-    }
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: var(--undpds-font-family-notosans-japanese);
   }
 
   body {
@@ -198,96 +201,96 @@
 }
 
 /* Georgian */
-// :lang(ka) {
+:lang(ka) {
 
-//   body,
-//   input[type=text],
-//   pre,
-//   button,
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5,
-//   h6,
-//   caption,
-//   div {
-//     font-family: $Font-Family-NotoSans-Georgian;
-//   }
-// }
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: var(--undpds-font-family-notosans-georgian);
+  }
+}
 
 /* Khmer */
-// :lang(km) {
+:lang(km) {
 
-//   body,
-//   input[type=text],
-//   pre,
-//   button,
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5,
-//   h6,
-//   caption,
-//   div {
-//     font-family: $Font-Family-NotoSans-Khmer;
-//   }
-// }
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: var(--undpds-font-family-notosans-khmer);
+  }
+}
 
 /* Korean */
-// :lang(ko) {
+:lang(ko) {
 
-//   body,
-//   input[type=text],
-//   pre,
-//   button,
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5,
-//   h6,
-//   caption,
-//   div {
-//     font-family: $Font-Family-NotoSans-Korean;
-//   }
-// }
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: var(--undpds-font-family-notosans-korean);
+  }
+}
 
 /* Kurdish */
-// :lang(ku) {
+:lang(ku) {
 
-//   body,
-//   input[type=text],
-//   pre,
-//   button,
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5,
-//   h6,
-//   caption,
-//   div {
-//     font-family: $Font-Family-NotoSans-Arabic;
-//   }
-// }
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: var(--undpds-font-family-notosans-arabic);
+  }
+}
 
 /* Nepali */
-// :lang(ne) {
+:lang(ne) {
 
-//   body,
-//   input[type=text],
-//   pre,
-//   button,
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5,
-//   h6,
-//   caption,
-//   div {
-//     font-family: $Font-Family-NotoSans;
-//   }
-// }
+  body,
+  input[type=text],
+  pre,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  div {
+    font-family: var(--undpds-font-family-notosans);
+  }
+}

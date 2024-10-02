@@ -223,6 +223,12 @@ const loadFont = (Story, context) => {
     link.rel = 'stylesheet';
     document.head.appendChild(link);
   }
+  if (langCode === 'my') {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+  }
   if (langCode === 'ja') {
     const link = document.createElement('link');
     link.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap';
