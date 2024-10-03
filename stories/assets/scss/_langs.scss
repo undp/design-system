@@ -4,7 +4,11 @@
 :lang(my) {
 
   body,
+  input,
+  pre,
   button,
+  p,
+  div,
   h1,
   h2,
   h3,
@@ -75,28 +79,12 @@
     }
   }
 
-  // .sbdocs {
-  //   .sbdocs-content,
-  //   h1,
-  //   h2,
-  //   h3,
-  //   h4,
-  //   h5,
-  //   h6,
-  //   p {
-  //     font-family: var(--undpds-font-family-notosans);
-  //   }
-
-  //   .sbdocs-h1 {
-  //     font-size: var(--undpds-font-size-32);
-  //   }
-  // }
 }
 
 /* Cyrillic scripts */
 #{$cyrillic} {
   h1 {
-    font-family: var(--undpds-font-family-sohnebreit);
+    font-family: var(--undpds-font-family-proximanova);
   }
 }
 
@@ -104,7 +92,17 @@
 :lang(bn) {
 
   body,
-  h1 {
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--undpds-font-family-unbangla);
   }
 }
@@ -113,17 +111,17 @@
 :lang(ar) {
 
   body,
-  input[type=text],
+  input,
   pre,
   button,
+  p,
+  div,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  caption,
-  div {
+  h6 {
     font-family: var(--undpds-font-family-notosans-arabic);
   }
 }
@@ -132,29 +130,18 @@
 :lang(az) {
 
   body,
-  input[type=text],
+  input,
   pre,
   button,
+  p,
+  div,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  caption,
-  div {
+  h6 {
     font-family: var(--undpds-font-family-notosans);
-  }
-}
-
-/* Burmese */
-:lang(my) {
-
-  input[type=text],
-  pre,
-  caption,
-  div {
-    font-family: var(--undpds-font-family-notosans-burmese);
   }
 }
 
@@ -162,17 +149,17 @@
 :lang(zh) {
 
   body,
-  input[type=text],
+  input,
   pre,
   button,
+  p,
+  div,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  caption,
-  div {
+  h6 {
     font-family: var(--undpds-font-family-notosans-chinese);
   }
 }
@@ -181,21 +168,21 @@
 :lang(ja) {
 
   body,
-  input[type=text],
+  input,
   pre,
   button,
+  p,
+  div,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  caption,
-  div {
+  h6 {
     font-family: var(--undpds-font-family-notosans-japanese);
   }
 
-  body {
+  body, div {
     font-weight: 350;
   }
 }
@@ -204,17 +191,17 @@
 :lang(ka) {
 
   body,
-  input[type=text],
+  input,
   pre,
   button,
+  p,
+  div,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  caption,
-  div {
+  h6 {
     font-family: var(--undpds-font-family-notosans-georgian);
   }
 }
@@ -223,17 +210,17 @@
 :lang(km) {
 
   body,
-  input[type=text],
+  input,
   pre,
   button,
+  p,
+  div,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  caption,
-  div {
+  h6 {
     font-family: var(--undpds-font-family-notosans-khmer);
   }
 }
@@ -242,17 +229,17 @@
 :lang(ko) {
 
   body,
-  input[type=text],
+  input,
   pre,
   button,
+  p,
+  div,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  caption,
-  div {
+  h6 {
     font-family: var(--undpds-font-family-notosans-korean);
   }
 }
@@ -261,17 +248,17 @@
 :lang(ku) {
 
   body,
-  input[type=text],
+  input,
   pre,
   button,
+  p,
+  div,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  caption,
-  div {
+  h6 {
     font-family: var(--undpds-font-family-notosans-arabic);
   }
 }
@@ -280,17 +267,17 @@
 :lang(ne) {
 
   body,
-  input[type=text],
+  input,
   pre,
   button,
+  p,
+  div,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  caption,
-  div {
+  h6 {
     font-family: var(--undpds-font-family-notosans);
   }
 }
