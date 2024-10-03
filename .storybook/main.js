@@ -17,7 +17,8 @@ export default {
     '@storybook/react-webpack5',
     // '@chromatic-com/storybook',
     '@storybook/addon-webpack5-compiler-babel',
-    '@whitespace/storybook-addon-html'
+    '@whitespace/storybook-addon-html',
+    '@storybook/addon-designs',
   ],
   webpackFinal: async config => {
     config.resolve.alias = {
