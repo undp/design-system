@@ -31,7 +31,13 @@ module.exports = [
             },
             {
               loader: 'sass-loader',
-              options: { sourceMap: true },
+              options: {
+                api: 'modern',
+                sourceMap: true,
+                sassOptions: {
+                  silenceDeprecations: ['legacy-js-api'],
+                },
+              },
             },
           ],
         },
