@@ -197,45 +197,36 @@
 
 .sbdocs-content {
 
-  p {
+  p:not(.sbdocs-preview p) {
     font-size: 1rem;
   }
 
-  code {
+  pre code {
     font-size: 1rem;
     padding-inline: 1rem;
     padding-block: 0.25rem;
     color: #555;
-  }
-
-  pre code {
     display: block;
-    padding: 1rem 2rem;
     border-radius: 0.5rem;
     line-height: 1.5rem;
   }
 
-  a {
+  a:not(.sbdocs-preview a) {
     text-decoration: none;
-    background: none;
+    background-image: none;
   }
 
-  h4 {
+  h4:not(.sbdocs-preview h4) {
     font-weight: 600;
   }
 
-  ul,
-  ol {
-    li {
-      font-size: 1rem;
-    }
+  li:not(.sbdocs-preview li) {
+    font-size: 1rem;
   }
 
-  table {
-
-    th,
-    td {
-      font-size: 1rem;
-    }
+  th:not(.sbdocs-preview th),
+  td:not(.sbdocs-preview td) {
+    font-size: 1rem;
   }
+
 }
