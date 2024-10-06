@@ -136,7 +136,10 @@ const getLangCode = (Story, context) => {
   }
 
   const htmlElem = document.querySelectorAll('#storybook-root, .sb-story');
-  htmlElem.forEach(ele => ele.setAttribute('lang', langArr[activeLang]));
+  htmlElem.forEach(ele => {
+    ele.setAttribute('lang', langArr[activeLang]);
+    ele.setAttribute('dir', activeLang === 'arabic' ? 'rtl' : 'ltr');
+  });
 
   return (
     <Story {...context} />

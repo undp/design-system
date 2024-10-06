@@ -51,10 +51,12 @@ $font-size-32: 2rem;
 $font-size-35: 2.188rem;
 
 // Font families
+// Local fonts
 $Font-Family-ProximaNova: 'ProximaNova', sans-serif;
 $Font-Family-SohneBreit: 'SohneBreit', $Font-Family-ProximaNova;
 $Font-Family-UNBangla: 'UNBangla', sans-serif;
-
+// Remote fonts, require additional setup
+// https://design.undp.org/?path=/docs/getting-started-internationalization--docs
 $Font-Family-NotoSans: 'Noto Sans', sans-serif;
 $Font-Family-NotoSans-Arabic: 'Noto Sans Arabic', sans-serif;
 $Font-Family-NotoSans-Burmese: 'Noto Sans Myanmar', sans-serif;
