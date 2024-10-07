@@ -30,8 +30,9 @@ export default {
       use: ['style-loader', 'css-loader', {
         loader: 'sass-loader',
         options: {
-          api: 'modern',
+          // api: 'modern',
           sassOptions: {
+            // includePaths: ['./node_modules/foundation-sites/scss'],
             silenceDeprecations: ['legacy-js-api'],
           },
         },

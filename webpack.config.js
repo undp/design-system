@@ -36,7 +36,7 @@ module.exports = [
                 // api: 'modern',
                 sourceMap: true,
                 sassOptions: {
-                  includePaths: ['node_modules/foundation-sites/scss'],
+                  // includePaths: ['node_modules/foundation-sites/scss'],
                   silenceDeprecations: ['legacy-js-api'],
                 },
               },
