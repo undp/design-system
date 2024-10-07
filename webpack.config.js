@@ -7,6 +7,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const webpackEntry = require('./webpack.entries');
 
 const packMode = 'production';
+// const packMode = 'development';
 
 /*
 * Webpack build for scss and js
@@ -32,9 +33,10 @@ module.exports = [
             {
               loader: 'sass-loader',
               options: {
-                api: 'modern',
+                // api: 'modern',
                 sourceMap: true,
                 sassOptions: {
+                  includePaths: ['node_modules/foundation-sites/scss'],
                   silenceDeprecations: ['legacy-js-api'],
                 },
               },
