@@ -18,12 +18,11 @@ $colors: (
   background-color: var(--undpds-color-gray-200);
   box-sizing: border-box;
   overflow-wrap: break-word;
+  padding: var(--undpds-spacing-08);
 
   @include devicebreak(small) {
     max-width: 21.938rem;
   }
-
-  padding: var(--undpds-spacing-08);
 
   h3 {
     font-weight: 600;

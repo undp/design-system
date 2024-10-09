@@ -27,7 +27,16 @@ export default {
 
     config.module.rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
+      use: ['style-loader', 'css-loader', {
+        loader: 'sass-loader',
+        options: {
+          // api: 'modern',
+          sassOptions: {
+            // includePaths: ['./node_modules/foundation-sites/scss'],
+            silenceDeprecations: ['legacy-js-api'],
+          },
+        },
+      }],
       include: path.resolve(__dirname, '../')
     });
 
