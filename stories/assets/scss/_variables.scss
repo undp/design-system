@@ -51,10 +51,20 @@ $font-size-32: 2rem;
 $font-size-35: 2.188rem;
 
 // Font families
+// Local fonts
 $Font-Family-ProximaNova: 'ProximaNova', sans-serif;
 $Font-Family-SohneBreit: 'SohneBreit', $Font-Family-ProximaNova;
-$Font-Family-NotoSans: 'NotoSans', sans-serif;
 $Font-Family-UNBangla: 'UNBangla', sans-serif;
+// Remote fonts, require additional setup
+// https://design.undp.org/?path=/docs/getting-started-internationalization--docs
+$Font-Family-NotoSans: 'Noto Sans', sans-serif;
+$Font-Family-NotoSans-Arabic: 'Noto Sans Arabic', sans-serif;
+$Font-Family-NotoSans-Burmese: 'Noto Sans Myanmar', sans-serif;
+$Font-Family-NotoSans-Chinese: 'Noto Sans SC', sans-serif;
+$Font-Family-NotoSans-Japanese: 'Noto Sans JP', sans-serif;
+$Font-Family-NotoSans-Georgian: 'Noto Sans Georgian', sans-serif;
+$Font-Family-NotoSans-Khmer: 'Noto Sans Khmer', sans-serif;
+$Font-Family-NotoSans-Korean: 'Noto Sans KR', sans-serif;
 
 // Spacing variables
 $spacing-01: 0.125rem;

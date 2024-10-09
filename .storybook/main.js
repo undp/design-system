@@ -11,7 +11,7 @@ export default {
         actions: false, // 👈 disable the actions addon
       },
     },
-    'storybook-addon-rtl',
+    // 'storybook-addon-rtl',
     '@storybook/blocks',
     '@storybook/addon-a11y',
     '@storybook/react-webpack5',
