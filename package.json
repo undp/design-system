@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build --debug-webpack --loglevel verbose"
+    "build-storybook": "storybook build --loglevel verbose"
   },
   "keywords": [
     "UNDP",
@@ -97,7 +97,7 @@
     "remove-files-webpack-plugin": "^1.5.0",
     "resolve-url-loader": "^5.0.0",
     "sass-embedded": "^1.79.4",
-    "sass-loader": "^13.3.2",
+    "sass-loader": "^16.0.2",
     "storybook": "^8.3.5",
     "style-loader": "^4.0",
     "stylelint": "^16.9.0",
