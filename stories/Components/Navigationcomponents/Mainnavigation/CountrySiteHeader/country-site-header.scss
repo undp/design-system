@@ -22,7 +22,7 @@
     }
 
     .grid-container.fluid>.grid-margin-x {
-      margin-inline: -1.5rem;
+      // margin-inline: -1.5rem;
       justify-content: space-between;
       @include devicebreak(small) {
         margin-inline: -0.75rem;
