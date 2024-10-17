@@ -26,7 +26,7 @@ export const navigationInitialize = (locale) => {
       extra = $triggering_menu_item.height();
     }
     $menuItemId.css({ top: ($main_nav_height.height() + extra) });
-    $menuItemId.addClass('show-mega').addClass('no-effect').siblings().addClass('no-effect');
+    $menuItemId.addClass('show-mega no-effect').siblings().removeClass('show-mega').addClass('no-effect');
 
     // If the overflow is open, z-index the mega menu above everything.
     $menuItemId.removeClass('float-higher');
