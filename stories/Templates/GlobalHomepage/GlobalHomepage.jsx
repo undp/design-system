@@ -52,7 +52,7 @@ export function GlobalHomePage({
         locationData={locationData}
         langSelect={langSelect}
       />
-      <div className="grid-container fluid glabal-page">
+      <div className="grid-container fluid global-page">
         <div className="grid-x">
           <div className="cell large-12">
             <Homepageherosplit

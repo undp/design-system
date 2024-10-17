@@ -2,7 +2,7 @@
 @import '../../assets/scss/mixins';
 @import '../../assets/scss/breakpoints';
 
-.glabal-page {
+.global-page {
   @include devicebreak(small) {
     .homepage-hero-tall {
       margin-top: 1rem;

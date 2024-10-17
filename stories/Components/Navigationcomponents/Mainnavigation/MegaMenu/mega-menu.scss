@@ -160,7 +160,7 @@
     animation-fill-mode: backwards;
 
     &.show-mega {
-      @include animation(circle-square-transition forwards 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
+      // @include animation(circle-square-transition forwards 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
 
       >div {
         @include animation(transition-opacity forwards 0.3s 0.3s);

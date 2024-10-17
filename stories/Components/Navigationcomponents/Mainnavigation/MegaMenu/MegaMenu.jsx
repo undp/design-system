@@ -9,7 +9,7 @@ function MegaMenu({ text }) {
   return (
     <div className="cell large-12 mega-nav-option" data-menu-item-id="headerlink2">
       <div className="grid-x">
-        <div className="cell large-3">
+        <div className="cell large-3 bg-red">
           <ul className="submenu">
             <li id="submenu1-headerlink1" className="active"><a href="#" className="sub-link">Page Title</a></li>
             {' '}
