@@ -1,55 +1,55 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
 
 /* blockquote cta start */
 div.blockquote {
   background-color: none;
-  padding: $spacing-07 $spacing-06;
+  padding: variables.$spacing-07 variables.$spacing-06;
 
-  @include devicebreak(medium) {
-    padding: 5.313rem $spacing-12;
+  @include breakpoints.devicebreak(medium) {
+    padding: 5.313rem variables.$spacing-12;
   }
 
   .accent-yellow & {
-    background-color: $color-yellow;
+    background-color: variables.$color-yellow;
   }
 
   .accent-red & {
-    background-color: $color-red;
+    background-color: variables.$color-red;
   }
 
   .accent-green & {
-    background-color: $color-green;
+    background-color: variables.$color-green;
   }
 
   .accent-blue & {
-    background-color: $color-azure;
+    background-color: variables.$color-azure;
   }
 
   &.accent-yellow,
   &.yellow {
-    background-color: $color-yellow;
+    background-color: variables.$color-yellow;
   }
 
   &.accent-red,
   &.red {
-    background-color: $color-red;
+    background-color: variables.$color-red;
   }
 
   &.accent-green,
   &.green {
-    background-color: $color-green;
+    background-color: variables.$color-green;
   }
 
   &.accent-blue,
   &.blue {
-    background-color: $color-azure;
+    background-color: variables.$color-azure;
   }
 
   &.accent-gray,
   &.gray {
-    background-color: $color-gray-200;
+    background-color: variables.$color-gray-200;
   }
 }
 

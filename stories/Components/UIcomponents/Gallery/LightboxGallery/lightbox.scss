@@ -1,6 +1,6 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/breakpoints';
 
 // backgroundoverlay
 .goverlay {
@@ -86,12 +86,12 @@
       position: absolute;
       top: 47%;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         left: 20px;
         top: 45%;
       }
 
-      @include devicebreak(xlarge) {
+      @include breakpoints.devicebreak(xlarge) {
         left: 40px;
       }
     }
@@ -102,12 +102,12 @@
       right: 3px;
       top: 47%;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         right: 20px;
         top: 45%;
       }
 
-      @include devicebreak(xlarge) {
+      @include breakpoints.devicebreak(xlarge) {
         right: 40px;
       }
     }
@@ -187,7 +187,7 @@
             position: relative;
             width: 100%;
 
-            @include devicebreak(medium) {
+            @include breakpoints.devicebreak(medium) {
               display: inherit;
               height: auto;
             }
@@ -201,7 +201,7 @@
               max-height: 200px;
               overflow: hidden;
 
-              @include devicebreak(medium) {
+              @include breakpoints.devicebreak(medium) {
                 display: contents;
                 margin-top: 40px;
                 max-height: inherit;
@@ -213,12 +213,12 @@
                 height: 100%;
                 margin: auto;
 
-                @include devicebreak(medium) {
+                @include breakpoints.devicebreak(medium) {
                   height: auto;
-                  margin-top: $spacing-06;
+                  margin-top: variables.$spacing-06;
                 }
 
-                @include devicebreak(xlarge) {
+                @include breakpoints.devicebreak(xlarge) {
                   max-height: calc(100vh - 150px);
                 }
 
@@ -237,7 +237,7 @@
               -ms-flex: 1 0 100%;
               flex: 1 0 100%;
 
-              @include devicebreak(large) {
+              @include breakpoints.devicebreak(large) {
                 position: relative;
               }
 
@@ -250,7 +250,7 @@
               .gdesc-inner {
                 padding: 48px 20px;
 
-                @include devicebreak(large) {
+                @include breakpoints.devicebreak(large) {
                   padding: 32px 20px;
                 }
 
@@ -271,6 +271,7 @@
 
   //closing
   &.glightbox-closing {
+
     .gprev,
     .gnext,
     .gclose {
@@ -286,13 +287,13 @@
       position: absolute;
       top: calc(50% + 65px);
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         position: relative;
       }
     }
 
     .gslide-title {
-      color: $color-white;
+      color: variables.$color-white;
       font-size: 1em;
     }
 

@@ -1,9 +1,7 @@
-@import 'node_modules/foundation-sites/scss/util/util';
-
 // 1. Global
 // ---------
 
-$global-width: rem-calc(1440);
+$global-width: 90rem; // rem-calc(1440);
 
 // 2. Breakpoints
 // --------------
@@ -23,7 +21,9 @@ $breakpoints-hidpi: (
   hidpi-3: 3
 );
 $print-breakpoint: large;
-$breakpoint-classes: (small medium large xlarge xxlarge);
+$breakpoint-classes: (
+  small medium large xlarge xxlarge
+);
 
 // 3. The Grid
 // -----------
@@ -52,6 +52,7 @@ $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: (
   small: 24px,
   medium: 48px
-);;
+);
+;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;

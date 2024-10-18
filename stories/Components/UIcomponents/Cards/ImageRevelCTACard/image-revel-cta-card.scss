@@ -1,6 +1,6 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/breakpoints';
 
 // color map
 $colors: (
@@ -42,14 +42,14 @@ $colors: (
       margin-bottom: 0;
       padding: var(--undpds-spacing-06) var(--undpds-spacing-06) 0;
 
-      // @include devicebreak(medium) {
-      @include container(medium, imagerevealcard) {
+      // @include breakpoints.devicebreak(medium) {
+      @include breakpoints.container(medium, imagerevealcard) {
         padding: var(--undpds-spacing-07) var(--undpds-spacing-06) 0;
       }
 
-      @include devicebreak(large) {
-        @include translate(0, 100%);
-        @include transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
+      @include breakpoints.devicebreak(large) {
+        @include mixins.translate(0, 100%);
+        @include mixins.transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
 
         background: var(--undpds-color-white);
         bottom: -1px;
@@ -75,7 +75,7 @@ $colors: (
       &::before {
         @extend %absolute__content;
 
-        @include transition(all 0.9s);
+        @include mixins.transition(all 0.9s);
 
         opacity: 0;
       }
@@ -86,8 +86,8 @@ $colors: (
     margin: var(--undpds-spacing-07) 0 0 var(--undpds-spacing-06);
     width: 100%;
 
-    // @include devicebreak(large) {
-    @include container(large, imagerevealcard) {
+    // @include breakpoints.devicebreak(large) {
+    @include breakpoints.container(large, imagerevealcard) {
       box-sizing: border-box;
       margin-left: 0;
       padding-left: var(--undpds-spacing-06);
@@ -98,7 +98,7 @@ $colors: (
     .image-reveal-card__content {
 
 
-      @include devicebreak(large) {
+      @include breakpoints.devicebreak(large) {
 
         // @include container(large, imagerevealcard) {
         h5 {
@@ -109,7 +109,7 @@ $colors: (
       }
 
       .image::before {
-        @include background-image(67.76deg, var(--undpds-color-yellow), transparent 61.11%);
+        @include mixins.background-image(67.76deg, var(--undpds-color-yellow), transparent 61.11%);
 
         opacity: 0.75;
       }
@@ -120,7 +120,7 @@ $colors: (
         &.accent-#{$name},
         &.#{$name} {
           .image::before {
-            @include background-image(67.76deg, #{$color}, transparent 61.11%);
+            @include mixins.background-image(67.76deg, #{$color}, transparent 61.11%);
 
             opacity: 0.75;
           }
@@ -152,7 +152,7 @@ $color in $colors {
     &.accent-#{$name},
     &.#{$name} {
       .image::before {
-        @include background-image(67.76deg, #{$color}, transparent 61.11%);
+        @include mixins.background-image(67.76deg, #{$color}, transparent 61.11%);
       }
     }
   }
@@ -162,7 +162,7 @@ $color in $colors {
     &:hover {
       .image-reveal-card__content {
         .image::before {
-          @include background-image(67.76deg, #{$color}, transparent 61.11%);
+          @include mixins.background-image(67.76deg, #{$color}, transparent 61.11%);
         }
 
         @each $name2,
@@ -171,7 +171,7 @@ $color in $colors {
           &.accent-#{$name2},
           &.#{$name2} {
             .image::before {
-              @include background-image(67.76deg, #{$color2}, transparent 61.11%);
+              @include mixins.background-image(67.76deg, #{$color2}, transparent 61.11%);
             }
           }
         }
@@ -182,7 +182,7 @@ $color in $colors {
 
 .small.image-reveal-card {
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     max-width: 13.25rem;
 
     .cta__link {
@@ -196,7 +196,7 @@ $color in $colors {
 
   &:hover {
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       .cta__link.cta--arrow {
         i {
           margin-left: 0;
@@ -206,7 +206,7 @@ $color in $colors {
 
     }
 
-    // @include devicebreak(large) {
+    // @include breakpoints.devicebreak(large) {
     //   .cta__link.cta--arrow {
     //     i {
     //       width: calc(100% - var(--undpds-spacing-12));
@@ -224,8 +224,8 @@ $color in $colors {
       margin-top: var(--undpds-spacing-07);
       padding-right: var(--undpds-spacing-06);
 
-      // @include devicebreak(medium) {
-      @include container(medium, imagerevealcard) {
+      // @include breakpoints.devicebreak(medium) {
+      @include breakpoints.container(medium, imagerevealcard) {
         margin-right: 0;
         padding-right: var(--undpds-spacing-06);
       }
@@ -233,7 +233,7 @@ $color in $colors {
 
     .image {
       &::before {
-        @include transform(scaleX(-1));
+        @include mixins.transform(scaleX(-1));
       }
     }
   }

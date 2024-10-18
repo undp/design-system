@@ -1,6 +1,4 @@
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/mixins';
 
 .select-box {
   color: var(--undpds-color-black);
@@ -14,7 +12,7 @@
   &.expanded {
     button {
       &::after {
-        @include transform(translateY(-50%) rotate(-180deg));
+        @include mixins.transform(translateY(-50%) rotate(-180deg));
       }
     }
   }
@@ -33,7 +31,7 @@
   ul {
     @extend %select_option;
 
-    @include transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
+    @include mixins.transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
 
     background-color: var(--undpds-color-white);
     order: 1;

@@ -1,11 +1,8 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
 
 // * breadcrumb start *//
 .breadcrumb__item {
   @extend %border-none;
-  @extend %img_none;
 
   color: var(--undpds-color-dark-red);
   font-size: var(--undpds-font-size-12);

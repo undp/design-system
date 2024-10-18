@@ -1,5 +1,6 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/breakpoints';
 
 $colors: (
   'yellow': var(--undpds-color-yellow),
@@ -15,7 +16,7 @@ $colors: (
   &__wrapper {
     position: relative;
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       display: flex;
       flex-direction: column-reverse;
     }
@@ -27,7 +28,7 @@ $colors: (
     margin-bottom: 0;
     padding: var(--undpds-spacing-05) var(--undpds-spacing-05) 1.125rem var(--undpds-spacing-05);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       padding: var(--undpds-spacing-05) var(--undpds-spacing-06);
     }
   }
@@ -37,14 +38,14 @@ $colors: (
   }
 
   .button-primary {
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin: 0 1.5rem;
     }
   }
 }
 
 .wide-card__description {
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -54,7 +55,7 @@ $colors: (
   h4 {
     margin: var(--undpds-spacing-05);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin: var(--undpds-spacing-09) var(--undpds-spacing-06) var(--undpds-spacing-07);
     }
 
@@ -66,13 +67,13 @@ $colors: (
   p {
     margin: var(--undpds-spacing-05) var(--undpds-spacing-05) var(--undpds-spacing-07);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin: 0 var(--undpds-spacing-06) var(--undpds-spacing-07);
     }
   }
 
   .button-arrow {
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin-left: var(--undpds-spacing-06);
     }
   }
@@ -82,9 +83,9 @@ div.wide-card__image {
   position: relative;
 
   a {
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       &::before {
-        @include transition(0.5s ease);
+        @include mixins.transition(0.5s ease);
 
         content: '';
         display: block;
@@ -127,7 +128,7 @@ div.wide-card__image {
 [dir='rtl'] {
   .wide-card__description {
     .button-arrow {
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         margin-left: 0;
         margin-right: var(--undpds-spacing-06);
       }

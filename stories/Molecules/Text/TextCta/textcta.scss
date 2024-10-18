@@ -1,6 +1,6 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
 
 .trusted-partnerships {
   &__container {
@@ -9,22 +9,22 @@
 
   &--header {
     p {
-      margin-top: $spacing-08;
+      margin-top: variables.$spacing-08;
 
-      @include devicebreak(medium) {
-        margin-top: $spacing-11;
+      @include breakpoints.devicebreak(medium) {
+        margin-top: variables.$spacing-11;
       }
     }
 
     .button-arrow {
-      margin-top: $spacing-08;
+      margin-top: variables.$spacing-08;
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         display: inline-flex;
       }
 
-      @include devicebreak(medium) {
-        margin-top: $spacing-10;
+      @include breakpoints.devicebreak(medium) {
+        margin-top: variables.$spacing-10;
       }
     }
   }

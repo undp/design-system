@@ -1,29 +1,29 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
+@use '../../assets/scss/variables';
+@use '../../assets/scss/mixins';
+@use '../../assets/scss/breakpoints';
 
 /* parallax card start */
 .parallax-card {
   align-items: center;
 
   &__content {
-    > a {
+    >a {
       @extend %img_none;
       @extend %img_none;
 
       display: block;
 
-      @include devicebreak(small) {
-        padding: $spacing-06 0 0 $spacing-06;
+      @include breakpoints.devicebreak(small) {
+        padding: variables.$spacing-06 0 0 variables.$spacing-06;
       }
 
-      @include devicebreak(medium) {
-        padding-right: $spacing-04;
+      @include breakpoints.devicebreak(medium) {
+        padding-right: variables.$spacing-04;
       }
 
       &:hover {
         .cta__link::after {
-          @include translate(70%,0);
+          @include mixins.translate(70%, 0);
         }
       }
     }
@@ -35,7 +35,7 @@
 
       display: block;
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         height: 17.875rem;
       }
     }
@@ -44,28 +44,28 @@
   .cta__link {
     @extend %img_none;
 
-    @include devicebreak(medium) {
-      padding-left: $spacing-06;
+    @include breakpoints.devicebreak(medium) {
+      padding-left: variables.$spacing-06;
     }
   }
 
   h3 {
-    margin-bottom: $spacing-06;
+    margin-bottom: variables.$spacing-06;
 
-    @include devicebreak(medium) {
-      padding-left: $spacing-06;
+    @include breakpoints.devicebreak(medium) {
+      padding-left: variables.$spacing-06;
     }
   }
 
   p {
-    font-size: $font-size-16;
+    font-size: variables.$font-size-16;
     line-height: 1.4;
-    margin-bottom: $spacing-06;
-    padding-bottom: $spacing-06;
+    margin-bottom: variables.$spacing-06;
+    padding-bottom: variables.$spacing-06;
 
-    @include devicebreak(medium) {
-      border-bottom: solid 2px $color-black;
-      padding: 0 0 $spacing-06 $spacing-06;
+    @include breakpoints.devicebreak(medium) {
+      border-bottom: solid 2px variables.$color-black;
+      padding: 0 0 variables.$spacing-06 variables.$spacing-06;
     }
   }
 
@@ -73,71 +73,71 @@
     .parallax-card__content {
       order: -1;
 
-      @include devicebreak(medium) {
-        > a {
-          padding-left: $spacing-04;
+      @include breakpoints.devicebreak(medium) {
+        >a {
+          padding-left: variables.$spacing-04;
           padding-right: 0;
         }
 
         .cta__link {
           padding-left: 0;
-          padding-right: $spacing-06;
+          padding-right: variables.$spacing-06;
         }
 
         h3 {
           padding-left: 0;
-          padding-right: $spacing-06;
+          padding-right: variables.$spacing-06;
         }
 
         p {
-          padding: 0 $spacing-06 $spacing-06 0;
+          padding: 0 variables.$spacing-06 variables.$spacing-06 0;
         }
       }
     }
   }
 
   &.image-right {
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       flex-direction: row-reverse;
 
       .cta__link {
         padding-left: 0;
-        padding-right: $spacing-06;
+        padding-right: variables.$spacing-06;
       }
 
       h3 {
         padding-left: 0;
-        padding-right: $spacing-06;
+        padding-right: variables.$spacing-06;
       }
 
       p {
-        padding: 0 $spacing-06 $spacing-06 0;
+        padding: 0 variables.$spacing-06 variables.$spacing-06 0;
       }
 
-      .parallax-card__content > a {
-        padding-left: $spacing-04;
+      .parallax-card__content>a {
+        padding-left: variables.$spacing-04;
         padding-right: 0;
       }
 
       &.text-left {
         .parallax-card__content {
-          > a {
+          >a {
             padding-left: 0;
-            padding-right: $spacing-04;
+            padding-right: variables.$spacing-04;
           }
 
           .cta__link {
-            padding-left: $spacing-06;
+            padding-left: variables.$spacing-06;
             padding-right: 0;
           }
 
           h3 {
-            padding-left: $spacing-06;
+            padding-left: variables.$spacing-06;
             padding-right: 0;
           }
 
           p {
-            padding: 0 0 $spacing-06 $spacing-06;
+            padding: 0 0 variables.$spacing-06 variables.$spacing-06;
           }
         }
       }
@@ -147,57 +147,57 @@
 
 [dir='rtl'] {
   .parallax-card {
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       h3 {
         padding-left: 0;
-        padding-right: $spacing-06;
+        padding-right: variables.$spacing-06;
       }
 
       p {
-        padding: 0 $spacing-06 $spacing-06 0;
+        padding: 0 variables.$spacing-06 variables.$spacing-06 0;
       }
 
       .cta__link {
-        padding-right: $spacing-06;
+        padding-right: variables.$spacing-06;
       }
 
       &.image-right,
       &.text-left {
         .cta__link {
-          padding-left: $spacing-06;
+          padding-left: variables.$spacing-06;
           padding-right: 0;
         }
 
         h3 {
-          padding-left: $spacing-06;
+          padding-left: variables.$spacing-06;
           padding-right: 0;
         }
 
         p {
-          padding: 0 0 $spacing-06 $spacing-06;
+          padding: 0 0 variables.$spacing-06 variables.$spacing-06;
         }
 
-        .parallax-card__content > a {
+        .parallax-card__content>a {
           padding-left: 0;
-          padding-right: $spacing-04;
+          padding-right: variables.$spacing-04;
         }
       }
     }
 
     &__content {
-      > a {
-        @include devicebreak(medium) {
-          padding-left: $spacing-04;
+      >a {
+        @include breakpoints.devicebreak(medium) {
+          padding-left: variables.$spacing-04;
           padding-right: 0;
         }
 
-        @include devicebreak(small) {
-          padding: $spacing-06 $spacing-06 0 0;
+        @include breakpoints.devicebreak(small) {
+          padding: variables.$spacing-06 variables.$spacing-06 0 0;
         }
 
         &:hover {
           .cta__link::after {
-            @include transform(translate(-50%,0) rotate(180deg));
+            @include mixins.transform(translate(-50%, 0) rotate(180deg));
           }
         }
       }

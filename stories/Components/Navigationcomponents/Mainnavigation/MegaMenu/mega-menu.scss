@@ -1,11 +1,11 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/breakpoints';
 
 .mega-nav-option {
   @extend %frosted-bg;
 
-  @include transform(translateX(-50%));
+  @include mixins.transform(translateX(-50%));
 
   box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
   box-sizing: border-box;
@@ -13,7 +13,7 @@
   left: 50%;
   max-width: 75.5rem;
   min-height: 37.5rem;
-  padding: $spacing-10 0 0 $spacing-09;
+  padding: variables.$spacing-10 0 0 variables.$spacing-09;
   position: fixed;
   z-index: 8;
 
@@ -33,34 +33,34 @@
       list-style: none;
       margin-block-end: 0;
       padding-inline-start: 0;
-      padding-inline-end: $spacing-09;
+      padding-inline-end: variables.$spacing-09;
 
       &.active {
         a {
-          background: $color-blue-600;
-          color: $color-white;
+          background: variables.$color-blue-600;
+          color: variables.$color-white;
 
           .external-link-animated {
-            box-shadow: -2px 2px 0 0 $color-white, -4px 0 0 -2px $color-white, -3px 3px 0 -1px $color-white;
+            box-shadow: -2px 2px 0 0 variables.$color-white, -4px 0 0 -2px variables.$color-white, -3px 3px 0 -1px variables.$color-white;
 
             &::before {
-              background: $color-white;
+              background: variables.$color-white;
             }
 
             &::after {
-              border-inline-end: 2px solid $color-white;
-              border-block-start: 2px solid $color-white;
+              border-inline-end: 2px solid variables.$color-white;
+              border-block-start: 2px solid variables.$color-white;
             }
           }
 
           &:hover {
             .external-link-animated {
               &::after {
-                @include transform(translate(5px, -5px));
+                @include mixins.transform(translate(5px, -5px));
               }
 
               &::before {
-                @include transform(rotate(-45deg) translate(7px, 0));
+                @include mixins.transform(rotate(-45deg) translate(7px, 0));
               }
             }
           }
@@ -73,20 +73,20 @@
 
       a {
         background: none;
-        border-block-end: 1px solid $color-gray-400;
+        border-block-end: 1px solid variables.$color-gray-400;
         display: flex;
-        font-size: $spacing-05;
+        font-size: variables.$spacing-05;
         font-weight: 700;
-        padding: $spacing-06;
+        padding: variables.$spacing-06;
         text-transform: uppercase;
 
         .external-link-animated {
-          margin: 2px 0 0 $spacing-05;
+          margin: 2px 0 0 variables.$spacing-05;
         }
 
         &:hover {
-          background: $color-blue-600;
-          color: $color-white;
+          background: variables.$color-blue-600;
+          color: variables.$color-white;
         }
       }
     }
@@ -98,7 +98,7 @@
 
     .sub-sub-menu {
       display: flex;
-      margin-block-start: $spacing-09;
+      margin-block-start: variables.$spacing-09;
 
       ul {
         margin: 0;
@@ -108,19 +108,19 @@
         li {
           line-height: 0;
           list-style-type: none;
-          margin-block-end: $spacing-06;
+          margin-block-end: variables.$spacing-06;
           text-transform: uppercase;
         }
       }
     }
 
     h3 {
-      margin-block-end: $spacing-06;
+      margin-block-end: variables.$spacing-06;
     }
 
     .mega-image {
       box-sizing: border-box;
-      padding-inline-start: $spacing-09;
+      padding-inline-start: variables.$spacing-09;
 
       img {
         height: 100%;
@@ -139,12 +139,12 @@
     border: 0;
     color: #000;
     font-size: 0;
-    height: $spacing-08;
+    height: variables.$spacing-08;
     opacity: 0.3;
     position: absolute;
     right: 0.625rem;
     top: 0.625rem;
-    width: $spacing-08;
+    width: variables.$spacing-08;
     z-index: 9;
   }
 
@@ -160,15 +160,15 @@
     animation-fill-mode: backwards;
 
     &.show-mega {
-      @include animation(circle-square-transition forwards 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
+      @include mixins.animation(circle-square-transition forwards 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
 
       >div {
-        @include animation(transition-opacity forwards 0.3s 0.3s);
+        @include mixins.animation(transition-opacity forwards 0.3s 0.3s);
       }
     }
 
     &.show-mega-back {
-      @include animation(circle-square-transition-back forwards 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
+      @include mixins.animation(circle-square-transition-back forwards 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
 
       box-shadow: none;
       display: block;
@@ -179,10 +179,10 @@
     }
 
     &.no-effect {
-      @include animation(none 0s 0s);
+      @include mixins.animation(none 0s 0s);
 
       >div {
-        @include animation(none 0s 0s);
+        @include mixins.animation(none 0s 0s);
 
         opacity: 1;
       }
@@ -196,7 +196,7 @@
 
 [dir='rtl'] {
   .mega-nav-option {
-    padding: $spacing-10 $spacing-09 0 0;
+    padding: variables.$spacing-10 variables.$spacing-09 0 0;
 
     .submenu li {
       padding-left: 3rem;
@@ -204,7 +204,7 @@
 
       a {
         .external-link-animated {
-          margin: 2px $spacing-05 0 0;
+          margin: 2px variables.$spacing-05 0 0;
         }
       }
     }
@@ -220,47 +220,47 @@
 @-webkit-keyframes circle-square-transition {
   0% {
     border-radius: 50%;
-    height: $spacing-50;
-    margin-top: -$spacing-70;
+    height: variables.$spacing-50;
+    margin-top: -(variables.$spacing-70);
     opacity: 0.4;
-    width: $spacing-100;
+    width: variables.$spacing-100;
   }
 
   15% {
     border-radius: 50%;
-    height: $width-150;
-    margin-top: -$spacing-70;
+    height: variables.$width-150;
+    margin-top: -(variables.$spacing-70);
     opacity: 0.25;
-    width: $width-180;
+    width: variables.$width-180;
   }
 
   30% {
     border-radius: 50%;
-    height: $width-600;
-    margin-top: -$spacing-330;
+    height: variables.$width-600;
+    margin-top: -(variables.$spacing-330);
     opacity: 0.5;
-    width: $width-600;
+    width: variables.$width-600;
   }
 
   45% {
     border-radius: 45%;
-    height: $width-705;
-    margin-top: -$spacing-330;
-    width: $width-705;
+    height: variables.$width-705;
+    margin-top: -(variables.$spacing-330);
+    width: variables.$width-705;
   }
 
   60% {
     border-radius: 0 0 80% 80%/0 0 70% 70%;
-    height: $width-840;
-    margin-top: -$spacing-330;
-    width: $width-900;
+    height: variables.$width-840;
+    margin-top: -(variables.$spacing-330);
+    width: variables.$width-900;
   }
 
   75% {
     border-radius: 0 0 50% 50%/0 0 20% 20%;
-    height: $width-900;
-    margin-top: -$spacing-330;
-    max-width: $width-1096;
+    height: variables.$width-900;
+    margin-top: -(variables.$spacing-330);
+    max-width: variables.$width-1096;
   }
 
   to {
@@ -272,47 +272,47 @@
 @keyframes circle-square-transition {
   0% {
     border-radius: 50%;
-    height: $spacing-50;
-    margin-top: -$spacing-70;
+    height: variables.$spacing-50;
+    margin-top: -(variables.$spacing-70);
     opacity: 0.4;
-    width: $spacing-100;
+    width: variables.$spacing-100;
   }
 
   15% {
     border-radius: 50%;
-    height: $width-150;
-    margin-top: -$spacing-70;
+    height: variables.$width-150;
+    margin-top: -(variables.$spacing-70);
     opacity: 0.25;
-    width: $width-180;
+    width: variables.$width-180;
   }
 
   30% {
     border-radius: 50%;
-    height: $width-600;
-    margin-top: -$spacing-330;
+    height: variables.$width-600;
+    margin-top: -(variables.$spacing-330);
     opacity: 0.5;
-    width: $width-600;
+    width: variables.$width-600;
   }
 
   45% {
     border-radius: 45%;
-    height: $width-705;
-    margin-top: -$spacing-330;
-    width: $width-705;
+    height: variables.$width-705;
+    margin-top: -(variables.$spacing-330);
+    width: variables.$width-705;
   }
 
   60% {
     border-radius: 0 0 80% 80%/0 0 70% 70%;
-    height: $width-840;
-    margin-top: -$spacing-330;
-    width: $width-900;
+    height: variables.$width-840;
+    margin-top: -(variables.$spacing-330);
+    width: variables.$width-900;
   }
 
   75% {
     border-radius: 0 0 50% 50%/0 0 20% 20%;
-    height: $width-900;
-    margin-top: -$spacing-330;
-    max-width: $width-1096;
+    height: variables.$width-900;
+    margin-top: -(variables.$spacing-330);
+    max-width: variables.$width-1096;
   }
 
   to {
@@ -329,47 +329,47 @@
 
   15% {
     border-radius: 0 0 50% 50%/0 0 20% 20%;
-    height: $width-900;
-    margin-top: -$spacing-330;
-    max-width: $width-1096;
+    height: variables.$width-900;
+    margin-top: -(variables.$spacing-330);
+    max-width: variables.$width-1096;
   }
 
   30% {
     border-radius: 0 0 80% 80%/0 0 70% 70%;
-    height: $width-840;
-    margin-top: -$spacing-330;
-    width: $width-900;
+    height: variables.$width-840;
+    margin-top: -(variables.$spacing-330);
+    width: variables.$width-900;
   }
 
   45% {
     border-radius: 45%;
-    height: $width-705;
-    margin-top: -$spacing-330;
-    width: $width-705;
+    height: variables.$width-705;
+    margin-top: -(variables.$spacing-330);
+    width: variables.$width-705;
   }
 
   60% {
     border-radius: 50%;
-    height: $width-600;
-    margin-top: -$spacing-330;
+    height: variables.$width-600;
+    margin-top: -(variables.$spacing-330);
     opacity: 0.5;
-    width: $width-600;
+    width: variables.$width-600;
   }
 
   75% {
     border-radius: 50%;
-    height: $width-150;
-    margin-top: -$spacing-70;
+    height: variables.$width-150;
+    margin-top: -(variables.$spacing-70);
     opacity: 0.25;
-    width: $width-180;
+    width: variables.$width-180;
   }
 
   to {
     border-radius: 50%;
-    height: $spacing-50;
-    margin-top: -$spacing-70;
+    height: variables.$spacing-50;
+    margin-top: -(variables.$spacing-70);
     opacity: 0.4;
-    width: $spacing-100;
+    width: variables.$spacing-100;
   }
 }
 
@@ -381,47 +381,47 @@
 
   15% {
     border-radius: 0 0 50% 50%/0 0 20% 20%;
-    height: $width-900;
-    margin-top: -$spacing-330;
-    max-width: $width-1096;
+    height: variables.$width-900;
+    margin-top: -(variables.$spacing-330);
+    max-width: variables.$width-1096;
   }
 
   30% {
     border-radius: 0 0 80% 80%/0 0 70% 70%;
-    height: $width-840;
-    margin-top: -$spacing-330;
-    width: $width-900;
+    height: variables.$width-840;
+    margin-top: -(variables.$spacing-330);
+    width: variables.$width-900;
   }
 
   45% {
     border-radius: 45%;
-    height: $width-705;
-    margin-top: -$spacing-330;
-    width: $width-705;
+    height: variables.$width-705;
+    margin-top: -(variables.$spacing-330);
+    width: variables.$width-705;
   }
 
   60% {
     border-radius: 50%;
-    height: $width-600;
-    margin-top: -$spacing-330;
+    height: variables.$width-600;
+    margin-top: -(variables.$spacing-330);
     opacity: 0.5;
-    width: $width-600;
+    width: variables.$width-600;
   }
 
   75% {
     border-radius: 50%;
-    height: $width-150;
-    margin-top: -$spacing-70;
+    height: variables.$width-150;
+    margin-top: -(variables.$spacing-70);
     opacity: 0.25;
-    width: $width-180;
+    width: variables.$width-180;
   }
 
   to {
     border-radius: 50%;
-    height: $spacing-50;
-    margin-top: -$spacing-70;
+    height: variables.$spacing-50;
+    margin-top: -(variables.$spacing-70);
     opacity: 0.4;
-    width: $spacing-100;
+    width: variables.$spacing-100;
   }
 }
 

@@ -1,18 +1,18 @@
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@use '../../assets/scss/breakpoints';
+@use '../../assets/scss/variables';
+@use '../../assets/scss/mixins';
 
 .what-goal {
-  padding: $spacing-12 0;
+  padding: variables.$spacing-12 0;
   word-break: break-word;
 
-  @include devicebreak(medium) {
-    padding: $spacing-13 0;
+  @include breakpoints.devicebreak(medium) {
+    padding: variables.$spacing-13 0;
   }
 
-  @include devicebreak(small) {
+  @include breakpoints.devicebreak(small) {
     h4 {
-      margin-top: $spacing-10;
+      margin-top: variables.$spacing-10;
     }
   }
 }
@@ -28,7 +28,7 @@
       visibility: hidden;
 
       .sdg-modal-dialog {
-        @include transform(translateX(100%));
+        @include mixins.transform(translateX(100%));
       }
 
       &.sdg-open {
@@ -36,12 +36,12 @@
         visibility: visible;
 
         .sdg-modal-dialog {
-          @include transform(translateX(0));
+          @include mixins.transform(translateX(0));
         }
 
         &.animation-out {
           .sdg-modal-dialog {
-            @include transform(translateX(100%));
+            @include mixins.transform(translateX(100%));
           }
         }
       }
@@ -51,14 +51,14 @@
   &-banner {
     //margin-top: 7.1875rem;
 
-    @include devicebreak(mediumonlytab) {
+    @include breakpoints.devicebreak(mediumonlytab) {
       //margin-top: 4.6875rem;
     }
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       .pagehero-full {
         .breadcrumb {
-          padding-top: $spacing-04;
+          padding-top: variables.$spacing-04;
         }
       }
     }
@@ -76,12 +76,12 @@
   .sdg-card-list {
     .modal-sdg {
       .sdg-modal-dialog {
-        @include transform(translateX(-100%));
+        @include mixins.transform(translateX(-100%));
       }
 
       &.sdg-open {
         .sdg-modal-dialog {
-          @include transform(translateX(0));
+          @include mixins.transform(translateX(0));
         }
       }
     }

@@ -1,6 +1,6 @@
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
+@use '../../assets/scss/mixins';
+@use '../../assets/scss/breakpoints';
+@use '../../assets/scss/variables';
 
 /* table tag start */
 table {
@@ -8,7 +8,7 @@ table {
   border-spacing: 0;
   width: 100%;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     width: auto;
   }
 
@@ -46,7 +46,7 @@ table {
     td {
       display: block;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         display: table-cell;
       }
     }
@@ -55,7 +55,7 @@ table {
       tr {
         display: none;
 
-        @include devicebreak(medium) {
+        @include breakpoints.devicebreak(medium) {
           display: table-row;
         }
       }
@@ -69,7 +69,7 @@ table {
         td {
           @extend %border-none;
 
-          @include devicebreak(medium) {
+          @include breakpoints.devicebreak(medium) {
             border: 1px solid var(--undpds-color-gray-400);
           }
         }
@@ -85,7 +85,7 @@ td {
   padding: var(--undpds-spacing-04);
   vertical-align: top;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     padding: var(--undpds-spacing-04) var(--undpds-spacing-08) var(--undpds-spacing-04) var(--undpds-spacing-04);
   }
 }
@@ -127,7 +127,7 @@ tbody {
   td {
     text-align: right;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       padding: var(--undpds-spacing-04) var(--undpds-spacing-04) var(--undpds-spacing-04) var(--undpds-spacing-08);
     }
   }

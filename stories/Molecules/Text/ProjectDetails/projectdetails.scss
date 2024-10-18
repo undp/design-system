@@ -5,7 +5,7 @@
 .project-data {
   border-bottom: 1px solid $color-gray-400;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     border: 0;
   }
 
@@ -14,7 +14,7 @@
     margin-bottom: $spacing-07;
     width: 50%;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       width: 100%;
     }
   }

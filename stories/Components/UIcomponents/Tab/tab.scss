@@ -1,17 +1,17 @@
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
 
 /* Tab start */
 .tabs {
   >ul {
-    background-color: $color-white;
-    border-bottom: 2px solid $color-gray-300;
+    background-color: variables.$color-white;
+    border-bottom: 2px solid variables.$color-gray-300;
     list-style: none;
     padding-left: 0;
 
-    @include devicebreak(medium) {
-      padding-left: $spacing-09;
+    @include breakpoints.devicebreak(medium) {
+      padding-left: variables.$spacing-09;
     }
 
     li {
@@ -21,38 +21,38 @@
       font-weight: 700;
       letter-spacing: 0.03em;
       margin-bottom: -0.125rem;
-      margin-right: $spacing-06;
+      margin-right: variables.$spacing-06;
       margin-top: 0.75rem;
-      padding-bottom: $spacing-03;
+      padding-bottom: variables.$spacing-03;
       padding-left: 0;
       text-transform: uppercase;
 
       &.is-active {
-        border-bottom: 2px solid $color-dark-red;
+        border-bottom: 2px solid variables.$color-dark-red;
       }
 
       &:hover {
-        @include devicebreak(large) {
-          border-bottom: 2px solid $color-gray-500;
+        @include breakpoints.devicebreak(large) {
+          border-bottom: 2px solid variables.$color-gray-500;
         }
       }
 
       a {
         @extend %img_none;
 
-        font-size: $font-size-16;
+        font-size: variables.$font-size-16;
       }
     }
   }
 
   .tabs-content {
-    background-color: $color-white;
+    background-color: variables.$color-white;
 
     .tabs-panel {
       display: none;
-      padding-top: $spacing-05;
+      padding-top: variables.$spacing-05;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         padding-top: 2.5rem;
       }
 
@@ -68,12 +68,12 @@
     >ul {
       padding-right: 0;
 
-      @include devicebreak(medium) {
-        padding-right: $spacing-09;
+      @include breakpoints.devicebreak(medium) {
+        padding-right: variables.$spacing-09;
       }
 
       li {
-        margin-left: $spacing-06;
+        margin-left: variables.$spacing-06;
         margin-right: 0;
         padding-right: 0;
       }

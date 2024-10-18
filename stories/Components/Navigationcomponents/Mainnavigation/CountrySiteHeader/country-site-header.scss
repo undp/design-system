@@ -1,63 +1,65 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/breakpoints';
 
 .country-header {
   height: 7.1875rem;
 
-  @include devicebreak(mediumonlytab) {
+  @include breakpoints.devicebreak(mediumonlytab) {
     height: 4.6875rem;
   }
 
   .header {
     @extend %header;
     position: fixed;
-    background-color: $color-gray-100;
+    background-color: variables.$color-gray-100;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     height: unset;
     min-height: 7.1875rem;
 
-    @include devicebreak(mediumonlytab) {
+    @include breakpoints.devicebreak(mediumonlytab) {
       min-height: 4.6875rem;
     }
 
     .grid-container.fluid>.grid-margin-x {
       margin-inline: -1.5rem;
       justify-content: space-between;
-      @include devicebreak(small) {
+
+      @include breakpoints.devicebreak(small) {
         margin-inline: -0.75rem;
       }
     }
 
     .site-title {
-      font-size: $font-size-16;
+      font-size: variables.$font-size-16;
       line-height: 1.142;
       margin-block-start: -0.25rem;
       margin-inline-end: 1.5rem;
       padding: 0.438rem 0;
       flex-shrink: 0;
 
-      @include devicebreak(mediumonlytab) {
+      @include breakpoints.devicebreak(mediumonlytab) {
         width: calc(100% - 64px);
       }
 
-      @include devicebreak(large) {}
+      @include breakpoints.devicebreak(large) {}
 
-      @include devicebreak(xlarge) {
-        font-size: $font-size-20;
+      @include breakpoints.devicebreak(xlarge) {
+        font-size: variables.$font-size-20;
         margin-inline-end: auto;
         width: auto;
         //max-width: 212px;
       }
 
       span:first-of-type:not(:last-of-type) {
-        border-bottom: 1px solid $color-gray-500;
+        border-bottom: 1px solid variables.$color-gray-500;
         display: inline-block;
-        font-size: $font-size-12;
+        font-size: variables.$font-size-12;
         margin: 0;
         padding-block-end: 1px;
+
         a {
-          color: $color-gray-600;
+          color: variables.$color-gray-600;
         }
       }
 
@@ -78,16 +80,16 @@
       order: 1;
 
       &:not(.large-9) {
-        @include devicebreak(large) {
+        @include breakpoints.devicebreak(large) {
           max-width: 14rem;
           width: auto;
         }
 
-        @include devicebreak(mediumonlytab) {
+        @include breakpoints.devicebreak(mediumonlytab) {
           width: auto;
         }
 
-        @include devicebreak(mediumonlytab) {
+        @include breakpoints.devicebreak(mediumonlytab) {
           width: auto;
         }
       }
@@ -100,7 +102,7 @@
         .menu {
           margin: 0 auto;
 
-          @include devicebreak(mediumonlytab) {
+          @include breakpoints.devicebreak(mediumonlytab) {
             margin: 0 auto;
           }
         }
@@ -112,16 +114,16 @@
         align-items: flex-start;
         display: flex;
         height: 7.1875rem;
-        margin-inline-end: $spacing-06;
+        margin-inline-end: variables.$spacing-06;
         position: relative;
         z-index: 2;
 
-        @include devicebreak(mediumonlytab) {
+        @include breakpoints.devicebreak(mediumonlytab) {
           height: 4.6875rem;
         }
 
-        @include devicebreak(small) {
-          margin-inline-end: $spacing-04;
+        @include breakpoints.devicebreak(small) {
+          margin-inline-end: variables.$spacing-04;
         }
 
         img {
@@ -142,7 +144,7 @@
       position: relative;
       //justify-content: center;
 
-      @include devicebreak(mediumonlytab) {
+      @include breakpoints.devicebreak(mediumonlytab) {
         //justify-content: space-between;
       }
     }
@@ -156,15 +158,15 @@
       flex-shrink: 1;
       flex-grow: 0;
 
-      @include devicebreak(mediumonlytab) {
+      @include breakpoints.devicebreak(mediumonlytab) {
         display: none;
       }
 
-      @include devicebreak(large) {
+      @include breakpoints.devicebreak(large) {
         margin: 0;
       }
 
-      @include devicebreak(xlarge) {
+      @include breakpoints.devicebreak(xlarge) {
         margin: 0;
       }
 
@@ -178,7 +180,7 @@
         position: relative;
         padding-inline: 0;
 
-        @include devicebreak(xlarge) {
+        @include breakpoints.devicebreak(xlarge) {
           column-gap: 0; //$spacing-07;
         }
 
@@ -191,7 +193,7 @@
           word-break: keep-all;
           padding-inline: 0;
 
-          @include devicebreak(xlarge) {
+          @include breakpoints.devicebreak(xlarge) {
             margin: 0;
           }
 
@@ -222,11 +224,11 @@
       align-items: center;
       order: 3;
 
-      @include devicebreak(large) {
+      @include breakpoints.devicebreak(large) {
         flex: 0 1 auto;
       }
 
-      @include devicebreak(xlarge) {
+      @include breakpoints.devicebreak(xlarge) {
         box-sizing: border-box;
 
         >*:last-child {
@@ -240,7 +242,7 @@
       display: flex;
       align-items: center;
 
-      @include devicebreak(mediumonlytab) {
+      @include breakpoints.devicebreak(mediumonlytab) {
         display: none;
       }
     }
@@ -248,11 +250,11 @@
     .icon-search {
       @extend %header-icon;
 
-      margin-inline-start: $spacing-05;
+      margin-inline-start: variables.$spacing-05;
       -webkit-mask: url(~icons/search.svg) no-repeat left center;
       mask: url(~icons/search.svg) no-repeat left center;
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         background: transparent url(~icons/search.svg) no-repeat left center;
       }
     }
@@ -264,16 +266,16 @@
       -webkit-mask: url(~icons/globe.svg) no-repeat left center;
       mask: url(~icons/globe.svg) no-repeat left center;
 
-      @include devicebreak(mediumonlytab) {
+      @include breakpoints.devicebreak(mediumonlytab) {
         display: none;
       }
     }
 
     .button {
-      margin-inline-start: $spacing-05;
+      margin-inline-start: variables.$spacing-05;
       display: block;
 
-      @include devicebreak(mediumonlytab) {
+      @include breakpoints.devicebreak(mediumonlytab) {
         display: none;
       }
     }
@@ -281,13 +283,13 @@
     .menu,
     .site-title,
     .top-right {
-      @include transition(opacity 0.3s ease);
+      @include mixins.transition(opacity 0.3s ease);
     }
   }
 
   &.country-load-animation {
     .header .top-left .logo {
-      @include transition(all 0.7s ease);
+      @include mixins.transition(all 0.7s ease);
 
       left: 50%;
       position: fixed;
@@ -304,7 +306,7 @@
 
   &.run-animation {
     .header .top-left .logo {
-      inset-inline-start: $spacing-04;
+      inset-inline-start: variables.$spacing-04;
       position: fixed;
       transform: translateX(0);
     }
@@ -337,15 +339,15 @@
       margin-inline-start: 1.5rem;
       margin-inline-end: 0;
 
-      @include devicebreak(xlarge) {
-        margin-inline-start: $spacing-07;
+      @include breakpoints.devicebreak(xlarge) {
+        margin-inline-start: variables.$spacing-07;
         margin-inline-end: 0;
       }
     }
 
     .top-right {
 
-      @include devicebreak(xlarge) {
+      @include breakpoints.devicebreak(xlarge) {
         padding-inline: 0;
       }
     }

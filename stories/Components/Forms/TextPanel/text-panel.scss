@@ -1,13 +1,13 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/variables';
-
+@use '../../../assets/scss/mixins';
+@use '../../../assets/scss/variables';
+@use '../../../assets/scss/breakpoints';
 
 .form-wrapper {
   .text-panel {
     .button {
       margin-top: var(--undpds-spacing-06);
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         margin-top: var(--undpds-spacing-07);
       }
     }
@@ -16,13 +16,13 @@
   h2 {
     margin-bottom: var(--undpds-spacing-08);
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       margin-bottom: var(--undpds-spacing-04);
     }
   }
 
   p {
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       margin-bottom: var(--undpds-spacing-03);
     }
   }
@@ -46,7 +46,7 @@
       h2 {
         margin-bottom: var(--undpds-spacing-05);
 
-        @include devicebreak(small) {
+        @include breakpoints.devicebreak(small) {
           margin-bottom: var(--undpds-spacing-04);
         }
       }
@@ -54,7 +54,7 @@
       p {
         margin-bottom: var(--undpds-spacing-09);
 
-        @include devicebreak(small) {
+        @include breakpoints.devicebreak(small) {
           margin-bottom: var(--undpds-spacing-07);
         }
       }
@@ -62,7 +62,7 @@
       .button {
         margin-top: var(--undpds-spacing-09);
 
-        @include devicebreak(small) {
+        @include breakpoints.devicebreak(small) {
           margin-top: var(--undpds-spacing-07);
         }
       }
@@ -74,13 +74,13 @@
     box-sizing: border-box;
     padding: var(--undpds-spacing-12) 0;
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       padding: var(--undpds-spacing-09) var(--undpds-spacing-06);
     }
   }
 
   .button {
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       width: 100%;
     }
   }
@@ -89,7 +89,7 @@
     h2 {
       margin-bottom: var(--undpds-spacing-06);
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         margin-bottom: var(--undpds-spacing-03);
       }
     }
@@ -103,7 +103,7 @@
     .button {
       margin-top: var(--undpds-spacing-09);
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         margin-top: var(--undpds-spacing-07);
       }
     }
@@ -113,7 +113,7 @@
     h2 {
       margin-bottom: var(--undpds-spacing-05);
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         margin-bottom: var(--undpds-spacing-04);
       }
     }
@@ -121,7 +121,7 @@
     p {
       margin-bottom: var(--undpds-spacing-09);
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         margin-bottom: var(--undpds-spacing-07);
       }
     }
@@ -135,7 +135,7 @@
     .button {
       margin-top: var(--undpds-spacing-09);
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         margin-top: var(--undpds-spacing-07);
       }
     }

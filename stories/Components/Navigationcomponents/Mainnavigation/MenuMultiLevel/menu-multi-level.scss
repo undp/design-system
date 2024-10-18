@@ -1,8 +1,6 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
-@import '../../../../assets/scss/base';
-@import '../../../../assets/scss/typography';
 
 .dropdown-menu-wrapper {
   margin-block-start: 7.1875rem;
@@ -147,7 +145,7 @@
           color: $color-black;
         }
 
-        &.has-submenu > a {
+        &.has-submenu>a {
           color: $color-white;
         }
 

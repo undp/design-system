@@ -1,10 +1,10 @@
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
-@import '../PublicationPage/publication-page.scss';
+@use '../../assets/scss/mixins';
+@use '../../assets/scss/breakpoints';
+@use '../../assets/scss/variables';
+@use '../PublicationPage/publication-page.scss';
 
 .generic-page {
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     .button-secondary {
       margin-left: 0.75rem;
     }
@@ -13,7 +13,7 @@
   .sidebar {
     &-width {
       .sidebar-accordion {
-        @include devicebreak(medium) {
+        @include breakpoints.devicebreak(medium) {
           margin-top: 0.8rem;
           width: 90%;
         }
@@ -35,7 +35,7 @@
 
     &-mobile {
       display: none;
-      margin-bottom: $spacing-04;
+      margin-bottom: variables.$spacing-04;
       margin-top: 1rem;
 
       @media (max-width: 1023px) {
@@ -64,7 +64,7 @@
         display: none;
       }
 
-      @include devicebreak(large) {
+      @include breakpoints.devicebreak(large) {
         .sidebar-accordion h6 {
           display: none;
         }
@@ -74,7 +74,7 @@
 
   .margin-top {
     &-32 {
-      margin-top: $spacing-07;
+      margin-top: variables.$spacing-07;
     }
 
     &-72 {
@@ -98,7 +98,7 @@
 
   .pagehero-full {
 
-    @include devicebreak(xlarge) {
+    @include breakpoints.devicebreak(xlarge) {
       margin-top: 0;
     }
 
@@ -107,15 +107,15 @@
     }
 
     .breadcrumb {
-      @include devicebreak(small) {
-        padding-top: $spacing-04;
+      @include breakpoints.devicebreak(small) {
+        padding-top: variables.$spacing-04;
       }
     }
   }
 
   .fluid-carousel {
     .slide-content {
-      @include devicebreak(xlarge) {
+      @include breakpoints.devicebreak(xlarge) {
         flex: 1 0 40%;
         max-width: 100%;
       }
@@ -123,9 +123,9 @@
   }
 
   .genric-slider {
-    margin-right: -#{$spacing-04};
+    margin-right: -#{variables.$spacing-04};
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       .swiper-initialized .swiper-scrollbar {
         padding-right: 0;
       }
@@ -135,7 +135,7 @@
 
 [dir='rtl'] {
   .generic-page {
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       .button-secondary {
         margin-left: unset;
         margin-right: 0.75rem;
@@ -143,11 +143,11 @@
     }
 
     .genric-slider {
-      margin-left: -#{$spacing-04};
+      margin-left: -#{variables.$spacing-04};
       margin-right: 0;
 
-      @include devicebreak(small) {
-        margin-left: -#{$spacing-06};
+      @include breakpoints.devicebreak(small) {
+        margin-left: -#{variables.$spacing-06};
         margin-right: 0;
 
         .swiper-initialized .swiper-scrollbar {

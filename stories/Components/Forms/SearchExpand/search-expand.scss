@@ -1,6 +1,4 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/mixins';
 
 .expand-search {
   align-items: flex-end;
@@ -10,7 +8,7 @@
   input[type='text'] {
     @extend %expand_search;
 
-    @include transition(all 200ms ease-in-out);
+    @include mixins.transition(all 200ms ease-in-out);
 
     background-color: var(--undpds-color-white);
     box-sizing: border-box;

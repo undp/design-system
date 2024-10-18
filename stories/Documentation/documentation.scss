@@ -1,6 +1,6 @@
-@import '../assets/scss/mixins';
-@import '../assets/scss/breakpoints';
-@import '../assets/scss/variables';
+@use '../assets/scss/mixins';
+@use '../assets/scss/breakpoints';
+@use '../assets/scss/variables';
 
 // Homepage documentation styles
 .documentation-page {
@@ -16,7 +16,7 @@
     margin-right: auto;
     padding: 0 0.75rem;
 
-    @include devicebreak(large) {
+    @include breakpoints.devicebreak(large) {
       padding: 0 0.25rem;
     }
   }
@@ -37,9 +37,9 @@
   h1.title {
     font-family: "SohneBreit", "ProximaNova", sans-serif;
     font-weight: 900;
-    color: $color-black;
-    margin-top: $spacing-10;
-    margin-bottom: $spacing-07;
+    color: variables.$color-black;
+    margin-top: variables.$spacing-10;
+    margin-bottom: variables.$spacing-07;
 
     div {
       font-family: "SohneBreit", "ProximaNova", sans-serif;
@@ -47,7 +47,7 @@
       font-size: 55px;
     }
 
-    @include devicebreak(large) {
+    @include breakpoints.devicebreak(large) {
       font-size: 55px;
     }
   }
@@ -64,14 +64,14 @@
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: $spacing-06;
+    margin-bottom: variables.$spacing-06;
     border-block-end: 0;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       font-size: 2.813rem;
     }
 
-    @include devicebreak(large) {
+    @include breakpoints.devicebreak(large) {
       font-size: 3.438rem;
     }
   }
@@ -80,10 +80,10 @@
     font-size: 1.875rem;
     font-weight: 600;
     line-height: 1.15;
-    margin-top: $spacing-08;
-    margin-bottom: $spacing-05;
+    margin-top: variables.$spacing-08;
+    margin-bottom: variables.$spacing-05;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       font-size: 2.188rem;
     }
   }
@@ -93,7 +93,7 @@
     font-weight: 400;
     line-height: 1.15;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       font-size: 2.188rem;
     }
   }
@@ -103,7 +103,7 @@
     font-weight: 400;
     line-height: 1.15;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       font-size: 1.563rem;
     }
   }
@@ -118,8 +118,8 @@
   }
 
   hr {
-    margin-top: $spacing-11;
-    margin-bottom: $spacing-06;
+    margin-top: variables.$spacing-11;
+    margin-bottom: variables.$spacing-06;
     border-top: 2px solid rgba(0, 0, 0, 1);
   }
 
@@ -131,16 +131,16 @@
       align-items: center;
 
       &.figma {
-        background: $color-black;
+        background: variables.$color-black;
 
         p,
         a {
-          color: $color-white;
+          color: variables.$color-white;
         }
       }
 
       &.github {
-        background: $color-gray-300;
+        background: variables.$color-gray-300;
       }
 
       &.figma,
@@ -149,12 +149,12 @@
           background: none;
           width: 100%;
           text-align: center;
-          padding-top: $spacing-08;
-          padding-bottom: $spacing-06;
+          padding-top: variables.$spacing-08;
+          padding-bottom: variables.$spacing-06;
 
-          @include devicebreak(large) {
-            padding-top: $spacing-09;
-            padding-bottom: $spacing-07;
+          @include breakpoints.devicebreak(large) {
+            padding-top: variables.$spacing-09;
+            padding-bottom: variables.$spacing-07;
           }
 
           p {
@@ -170,11 +170,11 @@
   }
 
   .featured-content-cards__wrapper {
-    margin-top: $spacing-09;
-    margin-bottom: $spacing-05;
+    margin-top: variables.$spacing-09;
+    margin-bottom: variables.$spacing-05;
 
     .grid-x.grid-margin-x {
-      row-gap: $spacing-06;
+      row-gap: variables.$spacing-06;
       margin-inline: -0.75rem;
     }
   }
@@ -182,11 +182,11 @@
 
 // Documentation styles
 .sbdocs {
-  font-family: $Font-Family-ProximaNova;
+  font-family: variables.$Font-Family-ProximaNova;
 
   h1,
   &-h1 {
-    font-family: $Font-Family-SohneBreit;
+    font-family: variables.$Font-Family-SohneBreit;
     font-weight: 900;
   }
 

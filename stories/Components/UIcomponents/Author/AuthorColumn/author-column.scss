@@ -1,11 +1,11 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/breakpoints';
-@import '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/mixins';
 
 .author {
   &-box {
     display: inline-flex;
-    margin-bottom: $spacing-06;
+    margin-bottom: variables.$spacing-06;
     width: 100%;
 
     a {
@@ -24,23 +24,23 @@
   }
 
   &__img {
-    margin-right: $spacing-06;
+    margin-right: variables.$spacing-06;
   }
 
   &-label {
-    padding-top: $spacing-02;
+    padding-top: variables.$spacing-02;
 
     h6 {
-      margin-bottom: $spacing-03;
+      margin-bottom: variables.$spacing-03;
       text-transform: uppercase;
     }
 
     p {
-      font-size: $font-size-14;
+      font-size: variables.$font-size-14;
       margin-bottom: 0;
 
-      @include devicebreak(medium) {
-        font-size: $font-size-16;
+      @include breakpoints.devicebreak(medium) {
+        font-size: variables.$font-size-16;
       }
     }
   }
@@ -53,7 +53,7 @@
     }
 
     &__img {
-      margin-left: $spacing-06;
+      margin-left: variables.$spacing-06;
       margin-right: 0;
     }
   }

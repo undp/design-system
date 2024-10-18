@@ -1,12 +1,12 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
 
 .tweet-card {
   -webkit-font-smoothing: antialiased;
 
-  @include devicebreak(small) {
-    margin-bottom: $spacing-12;
+  @include breakpoints.devicebreak(small) {
+    margin-bottom: variables.$spacing-12;
   }
 
   a {
@@ -18,7 +18,7 @@
     img {
       border-radius: 50%;
       height: 44px;
-      margin-right: $spacing-05;
+      margin-right: variables.$spacing-05;
       min-width: 44px;
       width: 44px;
     }
@@ -30,36 +30,36 @@
   }
 
   &__header {
-    color: $color-white;
+    color: variables.$color-white;
     font-weight: 400;
 
     &--subtitle {
-      font-size: $font-size-14;
+      font-size: variables.$font-size-14;
       font-weight: 600;
     }
   }
 
   &__body {
-    border-top: 3px solid $color-white;
-    margin-top: $spacing-07;
-    padding: $spacing-06 0.313rem 0 0;
+    border-top: 3px solid variables.$color-white;
+    margin-top: variables.$spacing-07;
+    padding: variables.$spacing-06 0.313rem 0 0;
 
     time,
     p,
     a {
-      color: $color-gray-500;
-      font-size: $font-size-14;
+      color: variables.$color-gray-500;
+      font-size: variables.$font-size-14;
       font-weight: 700;
     }
 
     p,
     a {
-      color: $color-white;
+      color: variables.$color-white;
       font-weight: 400;
     }
 
     time {
-      margin-top: $spacing-05;
+      margin-top: variables.$spacing-05;
     }
 
     p {
@@ -68,15 +68,15 @@
   }
 
   .cta__link {
-    color: $color-white;
+    color: variables.$color-white;
     font-size: 0.938rem;
 
     &:hover {
-      color: $color-gray-400;
+      color: variables.$color-gray-400;
     }
 
     &::after {
-      margin-top: -$spacing-01;
+      margin-top: -(variables.$spacing-01);
     }
   }
 }
@@ -84,12 +84,12 @@
 [dir='rtl'] {
   .tweet-card {
     img {
-      margin-left: $spacing-05;
+      margin-left: variables.$spacing-05;
       margin-right: 0;
     }
 
     &__body {
-      padding: $spacing-06 0 0 0.313rem;
+      padding: variables.$spacing-06 0 0 0.313rem;
     }
   }
 }

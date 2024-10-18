@@ -1,26 +1,26 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
+@use '../../../assets/scss/breakpoints';
 
 .heading-container {
   background-color: #232e3e;
-  color: $color-white;
+  color: variables.$color-white;
   justify-content: center;
   overflow: hidden;
-  padding-bottom: $spacing-12;
-  padding-top: $spacing-12;
+  padding-bottom: variables.$spacing-12;
+  padding-top: variables.$spacing-12;
 
   h4 {
-    margin-top: $spacing-50;
+    margin-top: variables.$spacing-50;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin-top: 0;
     }
   }
 
   h2,
   h4 {
-    @include devicebreak(small) {
-      padding: 0 $spacing-06;
+    @include breakpoints.devicebreak(small) {
+      padding: 0 variables.$spacing-06;
     }
   }
 }
