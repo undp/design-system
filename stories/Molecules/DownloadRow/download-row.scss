@@ -1,19 +1,15 @@
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/variables';
-@import '../../assets/scss/breakpoints';
-
 .download {
   &-row {
-    background-color: $color-white;
+    background-color: var(--undpds-color-white);
     padding: 0 1rem;
 
     &:hover {
-      background-color: $color-gray-100;
+      background-color: var(--undpds-color-gray-100);
     }
 
     &__main {
       align-items: center;
-      border-bottom: 1px solid $color-gray-400;
+      border-bottom: 1px solid var(--undpds-color-gray-400);
       display: flex;
       justify-content: space-between;
       position: relative;
@@ -27,23 +23,23 @@
     &__data {
       cursor: pointer;
       flex-grow: 1;
-      font-size: $font-size-16;
+      font-size: var(--undpds-font-size-16);
       font-weight: normal;
       line-height: 1.25;
-      padding: $spacing-05 $spacing-07 $spacing-05 0;
+      padding: var(--undpds-spacing-05) var(--undpds-spacing-07) var(--undpds-spacing-05) 0;
       text-transform: inherit;
 
       span {
-        color: $color-gray-500;
+        color: var(--undpds-color-gray-500);
         display: block;
-        font-size: $font-size-16;
+        font-size: var(--undpds-font-size-16);
         line-height: 1.4;
         margin-top: 4px;
       }
     }
 
     .external-link-animated {
-      margin: $spacing-05 0 1.188rem $spacing-05;
+      margin: var(--undpds-spacing-05) 0 1.188rem var(--undpds-spacing-05);
     }
   }
 }
@@ -52,7 +48,7 @@
   .download {
     &-row {
       &__data {
-        padding-left: $spacing-07;
+        padding-left: var(--undpds-spacing-07);
         padding-right: 0;
       }
 

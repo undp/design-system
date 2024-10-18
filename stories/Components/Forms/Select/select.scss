@@ -1,11 +1,9 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/mixins';
 
 .select-default {
   @extend %select_default;
 
-  @include x-appearance(none);
+  @include mixins.x-appearance(none);
 
   background: var(--undpds-color-white) url(~icons/chevron-down.svg) no-repeat right 22px center;
   border-radius: 0;

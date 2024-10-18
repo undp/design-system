@@ -1,19 +1,18 @@
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
 
 /* pagination start */
 .pagination ul {
   align-items: center;
   display: flex;
   padding-left: 0;
-  font-family: "ProximaNova", sans-serif;
 
   li {
     display: flex;
-    font-size: $font-size-16;
+    font-size: var(--undpds-font-size-16);
     margin-bottom: 0;
-    margin-right: $spacing-06;
+    margin-right: var(--undpds-spacing-06);
     padding-left: 0;
     position: relative;
 
@@ -22,8 +21,8 @@
 
       border-bottom: 0;
       text-decoration: none;
-      font-size: $font-size-16;
-      color: $color-black;
+      font-size: var(--undpds-font-size-16);
+      color: var(--undpds-color-black);
     }
 
     span {
@@ -80,14 +79,14 @@
     }
 
     li {
-      margin-left: $spacing-06;
+      margin-left: var(--undpds-spacing-06);
       margin-right: 0;
       padding-right: 0;
 
       &:first-of-type {
         a {
           &::before {
-            @include transform(rotateZ(180deg));
+            @include mixins.transform(rotateZ(180deg));
           }
         }
       }
@@ -97,7 +96,7 @@
 
         a {
           &::before {
-            @include transform(rotateZ(180deg));
+            @include mixins.transform(rotateZ(180deg));
           }
         }
       }

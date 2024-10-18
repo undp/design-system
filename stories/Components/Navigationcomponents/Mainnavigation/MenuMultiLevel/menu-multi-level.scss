@@ -1,6 +1,6 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/breakpoints';
 
 .dropdown-menu-wrapper {
   margin-block-start: 7.1875rem;
@@ -68,13 +68,13 @@
 
         &.has-submenu>a:after {
           transition: 0.2s ease;
-          background: url(#{$img-path-Iconfourback}/chevron-right.svg) no-repeat right center;
+          background: url(#{variables.$img-path-Iconfourback}/chevron-right.svg) no-repeat right center;
           content: "";
           height: 18px;
           min-width: 20px;
           display: flex;
           margin-inline-start: auto;
-          color: $color-dark-red;
+          color: var(--undpds-color-dark-red);
         }
 
         >a:not(.external, .download) {
@@ -113,12 +113,12 @@
       li:hover,
       li.open {
         transition: 0.2s ease;
-        background: $color-blue-600;
-        color: $color-white;
+        background: var(--undpds-color-blue-600);
+        color: var(--undpds-color-white);
 
         &:not(.has-submenu) {
-          background: $color-gray-400;
-          color: $color-black;
+          background: var(--undpds-color-gray-400);
+          color: var(--undpds-color-black);
         }
 
         >ul.submenu {
@@ -142,11 +142,11 @@
         >a:hover,
         >a,
         >a.active {
-          color: $color-black;
+          color: var(--undpds-color-black);
         }
 
         &.has-submenu>a {
-          color: $color-white;
+          color: var(--undpds-color-white);
         }
 
         >a:not(.external, .download) {
@@ -155,41 +155,41 @@
 
         &.has-submenu>a.active:after,
         &.has-submenu>a:after {
-          background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat right center;
+          background: url(#{variables.$img-path-Iconfourback}/chevron-right-white.svg) no-repeat right center;
           margin-inline-start: 0.5rem;
         }
 
         >a.external .external-link-animated {
-          box-shadow: -2px 2px 0 0 $color-dark-red, -4px 0 0 -2px $color-dark-red, -3px 3px 0 -1px $color-dark-red;
+          box-shadow: -2px 2px 0 0 var(--undpds-color-dark-red), -4px 0 0 -2px var(--undpds-color-dark-red), -3px 3px 0 -1px var(--undpds-color-dark-red);
 
           &:before {
             transition: transform 0.2s;
-            background-color: $color-dark-red;
+            background-color: var(--undpds-color-dark-red);
           }
 
           &:after {
             transition: transform 0.2s;
-            border-inline-end: 2px solid $color-dark-red;
-            border-block-start: 2px solid $color-dark-red;
+            border-inline-end: 2px solid var(--undpds-color-dark-red);
+            border-block-start: 2px solid var(--undpds-color-dark-red);
           }
         }
 
         >a.download .download-animated {
           &:before {
             transition: transform 0.2s;
-            background-color: $color-dark-red;
+            background-color: var(--undpds-color-dark-red);
           }
 
           i {
             transition: transform 0.2s;
-            border: 2px solid $color-dark-red;
+            border: 2px solid var(--undpds-color-dark-red);
             border-block-start: 0;
           }
 
           &:after {
             transition: transform 0.2s;
-            border-block-end: 2px solid $color-dark-red;
-            border-inline-start: 2px solid $color-dark-red;
+            border-block-end: 2px solid var(--undpds-color-dark-red);
+            border-inline-start: 2px solid var(--undpds-color-dark-red);
           }
         }
       }
@@ -207,7 +207,7 @@
 
         li {
           &.has-submenu>a:after {
-            background: url(#{$img-path-Iconfourback}/chevron-left.svg) no-repeat left center;
+            background: url(#{variables.$img-path-Iconfourback}/chevron-left.svg) no-repeat left center;
           }
 
           a {
@@ -227,7 +227,7 @@
 
           &.has-submenu>a.active:after,
           &.has-submenu>a:after {
-            background: url(#{$img-path-Iconfourback}/chevron-left-white.svg) no-repeat left center;
+            background: url(#{variables.$img-path-Iconfourback}/chevron-left-white.svg) no-repeat left center;
           }
         }
       }
@@ -240,28 +240,28 @@
   li>a.external {
     .external-link-animated {
       &::after {
-        @include transform(rotate(0deg) translate(0, 0));
+        @include mixins.transform(rotate(0deg) translate(0, 0));
       }
 
       &::before {
-        @include transform(rotate(-45deg) translate(0, 0));
+        @include mixins.transform(rotate(-45deg) translate(0, 0));
       }
     }
   }
 
   li:hover>a.external {
     .external-link-animated {
-      box-shadow: -2px 2px 0 0 $color-white, -4px 0 0 -2px $color-white, -3px 3px 0 -1px $color-white;
+      box-shadow: -2px 2px 0 0 var(--undpds-color-white), -4px 0 0 -2px var(--undpds-color-white), -3px 3px 0 -1px var(--undpds-color-white);
 
       &::after {
-        @include transform(rotate(0deg) translate(5px, -5px));
-        border-inline-end-color: $color-white;
-        border-block-start-color: $color-white;
+        @include mixins.transform(rotate(0deg) translate(5px, -5px));
+        border-inline-end-color: var(--undpds-color-white);
+        border-block-start-color: var(--undpds-color-white);
       }
 
       &::before {
-        @include transform(rotate(-45deg) translate(7px, 0));
-        background: $color-white;
+        @include mixins.transform(rotate(-45deg) translate(7px, 0));
+        background: var(--undpds-color-white);
       }
     }
   }
@@ -270,18 +270,18 @@
     .download-animated {
 
       i {
-        border-color: $color-white;
+        border-color: var(--undpds-color-white);
       }
 
       &::after {
-        @include transform(rotate(-45deg) translate(7px, -7px));
-        border-block-end-color: $color-white;
-        border-inline-start-color: $color-white;
+        @include mixins.transform(rotate(-45deg) translate(7px, -7px));
+        border-block-end-color: var(--undpds-color-white);
+        border-inline-start-color: var(--undpds-color-white);
       }
 
       &::before {
-        @include transform(translate(0, -10px));
-        background: $color-white;
+        @include mixins.transform(translate(0, -10px));
+        background: var(--undpds-color-white);
       }
     }
   }
@@ -293,28 +293,28 @@
   .menu {
     li>a.external {
       .external-link-animated {
-        @include transform(rotate(270deg));
+        @include mixins.transform(rotate(270deg));
 
         &::before {
-          @include transform(rotate(-45deg) translate(1px, 1px));
+          @include mixins.transform(rotate(-45deg) translate(1px, 1px));
         }
 
         &::after {
-          @include transform(rotate(90deg) translate(-1px, -4px));
+          @include mixins.transform(rotate(90deg) translate(-1px, -4px));
         }
       }
     }
 
     li:hover>a.external {
       .external-link-animated {
-        @include transform(rotate(270deg));
+        @include mixins.transform(rotate(270deg));
 
         &::before {
-          @include transform(rotate(-45deg) translate(7px, 0));
+          @include mixins.transform(rotate(-45deg) translate(7px, 0));
         }
 
         &::after {
-          @include transform(rotate(90deg) translate(-6px, -8px));
+          @include mixins.transform(rotate(90deg) translate(-6px, -8px));
         }
       }
     }
@@ -322,7 +322,7 @@
     li>a.download {
       .download-animated {
         &::after {
-          @include transform(rotate(45deg) translate(0, 0));
+          @include mixins.transform(rotate(45deg) translate(0, 0));
         }
       }
     }
@@ -330,7 +330,7 @@
     li:hover>a.download {
       .download-animated {
         &::after {
-          @include transform(rotate(45deg) translate(-7px, -7px));
+          @include mixins.transform(rotate(45deg) translate(-7px, -7px));
         }
       }
     }

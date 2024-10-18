@@ -1,7 +1,4 @@
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
-
+@use '../../assets/scss/mixins';
 
 /* frosted-background start */
 .frosted-background {
@@ -26,13 +23,15 @@
 
 // If backdrop filter (blur) is supported, than apply the blurring effects.
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .frosted-background {  
+  .frosted-background {
     &::before {
       @extend %frosted-bg;
     }
+
     img {
       opacity: 1;
     }
-  } 
+  }
 }
+
 /* frosted-backfround end */

@@ -1,6 +1,5 @@
-@use '../../../../assets/scss/variables';
 @use '../../../../assets/scss/mixins';
-@use '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/variables';
 
 .mega-nav-option {
   @extend %frosted-bg;
@@ -265,7 +264,7 @@
 
   to {
     border-radius: 0;
-    height: $width-900;
+    height: variables.$width-900;
     opacity: 1;
   }
 }
@@ -273,7 +272,7 @@
 @keyframes circle-square-transition-back {
   0% {
     border-radius: 0;
-    height: $width-900;
+    height: variables.$width-900;
     opacity: 1;
   }
 

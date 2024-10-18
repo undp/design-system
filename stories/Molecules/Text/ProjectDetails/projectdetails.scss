@@ -1,9 +1,9 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
+@use '../../../assets/scss/breakpoints';
 
 /* project details start */
 .project-data {
-  border-bottom: 1px solid $color-gray-400;
+  border-bottom: 1px solid var(--undpds-color-gray-400);
 
   @include breakpoints.devicebreak(medium) {
     border: 0;
@@ -11,7 +11,7 @@
 
   &__col {
     display: inline-block;
-    margin-bottom: $spacing-07;
+    margin-bottom: var(--undpds-spacing-07);
     width: 50%;
 
     @include breakpoints.devicebreak(medium) {
@@ -21,15 +21,15 @@
 
   &__label {
     display: block;
-    font-size: $font-size-16;
+    font-size: var(--undpds-font-size-16);
     font-weight: 700;
     letter-spacing: 0.03em;
     line-height: 1.15;
-    margin-bottom: $spacing-02;
+    margin-bottom: var(--undpds-spacing-02);
   }
 
   &__text {
-    color: $color-gray-700;
+    color: var(--undpds-color-gray-700);
   }
 }
 

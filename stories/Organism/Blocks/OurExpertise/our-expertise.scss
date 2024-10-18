@@ -27,15 +27,14 @@
 
     .swiper-slide {
       min-height: calc(100vh - var(--undpds-header-height-medium));
-
-      @include breakpoints.devicebreak(xlarge) {
-        min-height: calc(100vh - var(--undpds-header-height-xlarge));
-      }
-
       display: flex;
       flex-direction: column;
       height: auto;
       cursor: grab;
+
+      @include breakpoints.devicebreak(xlarge) {
+        min-height: calc(100vh - var(--undpds-header-height-xlarge));
+      }
 
       .image {
         height: 40vh;

@@ -1,19 +1,19 @@
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/breakpoints';
 
 .chip {
   align-items: center;
-  background: $color-gray-200;
+  background: var(--undpds-color-gray-200);
   border: none;
   border-radius: 20px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   display: inline-flex;
   min-height: 1.875rem;
-  padding: $spacing-02 $spacing-05;
+  padding: var(--undpds-spacing-02) var(--undpds-spacing-05);
 
   &:hover {
-    background-color: $color-gray-300;
+    background-color: var(--undpds-color-gray-300);
   }
 
   &.chip__cross {
@@ -22,20 +22,12 @@
       content: '';
       display: inline-flex;
       height: 22px;
-      margin-left: -$spacing-02;
-      margin-right: $spacing-03;
+      margin-inline: -(variables.$spacing-02) var(--undpds-spacing-03);
       padding-right: 1.375rem;
       position: relative;
       top: 0;
       width: auto;
     }
-  }
-}
-
-[dir='rtl'] {
-  .chip__cross::before {
-    margin-left: $spacing-03;
-    margin-right: -$spacing-02;
   }
 }
 

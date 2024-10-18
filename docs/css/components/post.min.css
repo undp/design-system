@@ -1,1 +1,1 @@
-.post-wrapper h2{margin-bottom:1rem}.post-wrapper h5{color:#55606e;margin-bottom:3rem}
+.post-wrapper h2{margin-bottom:var(--undpds-spacing-05)}.post-wrapper h5{color:var(--undpds-color-gray-600);margin-bottom:var(--undpds-spacing-09)}
