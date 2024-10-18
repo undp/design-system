@@ -1,8 +1,6 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/breakpoints';
-@import '../../../../assets/scss/base';
-@import '../../../../assets/scss/typography';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/breakpoints';
 
 // Toggle overflow button.
 .menu__overflow__item {
@@ -64,7 +62,7 @@
     display: none;
   }
 
-  @include devicebreak(mediumonlytab) {
+  @include breakpoints.devicebreak(mediumonlytab) {
     display: none;
   }
 
@@ -79,7 +77,7 @@
     inset-block-end: 1px;
     border-width: 3rem;
     border: 1rem solid transparent;
-    border-block-end-color: $color-gray-200;
+    border-block-end-color: variables.$color-gray-200;
     box-shadow: none;
     margin: auto;
   }
@@ -90,12 +88,12 @@
   position: relative;
   min-height: 4.125rem;
   height: unset;
-  background-color: $color-gray-200;
+  background-color: variables.$color-gray-200;
   box-shadow: 0 3px 6px rgb(0 0 0 / 10%);
   order: 100;
   min-width: 100%;
 
-  @include devicebreak(mediumonlytab) {
+  @include breakpoints.devicebreak(mediumonlytab) {
     display: none;
   }
 
@@ -137,7 +135,7 @@
         font-size: 0.875rem;
         text-transform: uppercase;
         height: 4.125rem;
-        color: $color-black;
+        color: variables.$color-black;
       }
 
       &.edge:focus>ul.sub-menu,
@@ -221,13 +219,13 @@
 
         &.has-submenu>a:after {
           transition: 0.2s ease;
-          background: url(#{$img-path-Iconfourback}/chevron-right.svg) no-repeat left center;
+          background: url(#{variables.$img-path-Iconfourback}/chevron-right.svg) no-repeat left center;
           content: "";
           height: 18px;
           width: 1.25rem;
           display: flex;
           margin-inline-start: auto;
-          color: $color-dark-red;
+          color: variables.$color-dark-red;
         }
 
         .external-link-animated {
@@ -276,13 +274,13 @@
         >a,
         >a.active {
           transition: 0.2s ease;
-          background: $color-blue-600;
-          color: $color-white;
+          background: variables.$color-blue-600;
+          color: variables.$color-white;
         }
 
         &.has-submenu>a.active:after,
         &.has-submenu>a:after {
-          background: url(#{$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
+          background: url(#{variables.$img-path-Iconfourback}/chevron-right-white.svg) no-repeat left center;
         }
       }
     }
@@ -294,28 +292,28 @@
   li>a.external {
     .external-link-animated {
       &::after {
-        @include transform(rotate(0deg) translate(0, 0));
+        @include mixins.transform(rotate(0deg) translate(0, 0));
       }
 
       &::before {
-        @include transform(rotate(-45deg) translate(0, 0));
+        @include mixins.transform(rotate(-45deg) translate(0, 0));
       }
     }
   }
 
   li:hover>a.external {
     .external-link-animated {
-      box-shadow: -2px 2px 0 0 $color-white, -4px 0 0 -2px $color-white, -3px 3px 0 -1px $color-white;
+      box-shadow: -2px 2px 0 0 variables.$color-white, -4px 0 0 -2px variables.$color-white, -3px 3px 0 -1px variables.$color-white;
 
       &::after {
-        @include transform(rotate(0deg) translate(5px, -5px));
-        border-inline-end-color: $color-white;
-        border-block-start-color: $color-white;
+        @include mixins.transform(rotate(0deg) translate(5px, -5px));
+        border-inline-end-color: variables.$color-white;
+        border-block-start-color: variables.$color-white;
       }
 
       &::before {
-        @include transform(rotate(-45deg) translate(7px, 0));
-        background: $color-white;
+        @include mixins.transform(rotate(-45deg) translate(7px, 0));
+        background: variables.$color-white;
       }
     }
   }
@@ -324,18 +322,18 @@
     .download-animated {
 
       i {
-        border-color: $color-white;
+        border-color: variables.$color-white;
       }
 
       &::after {
-        @include transform(rotate(-45deg) translate(7px, -7px));
-        border-block-end-color: $color-white;
-        border-inline-start-color: $color-white;
+        @include mixins.transform(rotate(-45deg) translate(7px, -7px));
+        border-block-end-color: variables.$color-white;
+        border-inline-start-color: variables.$color-white;
       }
 
       &::before {
-        @include transform(translate(0, -10px));
-        background: $color-white;
+        @include mixins.transform(translate(0, -10px));
+        background: variables.$color-white;
       }
     }
   }
@@ -346,28 +344,28 @@
   .menu__overflow__container {
     li>a.external {
       .external-link-animated {
-        @include transform(rotate(270deg));
+        @include mixins.transform(rotate(270deg));
 
         &::before {
-          @include transform(rotate(-45deg) translate(1px, 1px));
+          @include mixins.transform(rotate(-45deg) translate(1px, 1px));
         }
 
         &::after {
-          @include transform(rotate(90deg) translate(-1px, -4px));
+          @include mixins.transform(rotate(90deg) translate(-1px, -4px));
         }
       }
     }
 
     li:hover>a.external {
       .external-link-animated {
-        @include transform(rotate(270deg));
+        @include mixins.transform(rotate(270deg));
 
         &::before {
-          @include transform(rotate(-45deg) translate(7px, 0));
+          @include mixins.transform(rotate(-45deg) translate(7px, 0));
         }
 
         &::after {
-          @include transform(rotate(90deg) translate(-6px, -8px));
+          @include mixins.transform(rotate(90deg) translate(-6px, -8px));
         }
       }
     }
@@ -375,7 +373,7 @@
     li>a.download {
       .download-animated {
         &::after {
-          @include transform(rotate(45deg) translate(0, 0));
+          @include mixins.transform(rotate(45deg) translate(0, 0));
         }
       }
     }
@@ -383,7 +381,7 @@
     li:hover>a.download {
       .download-animated {
         &::after {
-          @include transform(rotate(45deg) translate(-7px, -7px));
+          @include mixins.transform(rotate(45deg) translate(-7px, -7px));
         }
       }
     }

@@ -1,14 +1,14 @@
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
+@use '../../assets/scss/mixins';
+@use '../../assets/scss/breakpoints';
+@use '../../assets/scss/variables';
 
 .country-page {
   &-wrapper {
-    margin-bottom: $spacing-70;
+    margin-bottom: variables.$spacing-70;
 
     .wide-card {
       margin-top: 2.688rem;
-      padding-top: $font-size-20;
+      padding-top: variables.$font-size-20;
 
       h6 {
         padding-top: 0;
@@ -20,48 +20,48 @@
       padding-bottom: 1.875rem;
       padding-top: 1.875rem;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         //margin-top: 7.188rem;
-        padding-bottom: $spacing-50;
-        padding-top: $spacing-70;
+        padding-bottom: variables.$spacing-50;
+        padding-top: variables.$spacing-70;
       }
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         .homepage-hero-wide {
-          border-left: $spacing-05 solid $color-gray-300;
-          padding-left: calc(8.33333% + #{$spacing-06} / 2);
+          border-left: variables.$spacing-05 solid variables.$color-gray-300;
+          padding-left: calc(8.33333% + #{variables.$spacing-06} / 2);
         }
       }
 
       h1 {
         font-size: 1.8rem;
 
-        @include devicebreak(medium) {
-          font-size: $spacing-10;
+        @include breakpoints.devicebreak(medium) {
+          font-size: variables.$spacing-10;
         }
       }
     }
 
     .featured-card-container {
-      margin-bottom: $spacing-06;
+      margin-bottom: variables.$spacing-06;
       margin-top: 7.5rem;
 
-      @include devicebreak(medium) {
-        margin-top: $spacing-06;
+      @include breakpoints.devicebreak(medium) {
+        margin-top: variables.$spacing-06;
       }
     }
 
     .wide-card-heading {
-      margin-bottom: $spacing-08;
+      margin-bottom: variables.$spacing-08;
       margin-top: 5.563rem;
     }
 
     .our-impact {
       margin-top: 8.313rem;
 
-      @include devicebreak(small) {
-        padding-left: $spacing-06;
-        padding-right: $spacing-06;
+      @include breakpoints.devicebreak(small) {
+        padding-left: variables.$spacing-06;
+        padding-right: variables.$spacing-06;
       }
 
       >div:first-of-type {
@@ -74,22 +74,22 @@
         margin-top: 7.313rem;
         text-align: center;
 
-        @include devicebreak(medium) {
-          margin-top: $width-150;
+        @include breakpoints.devicebreak(medium) {
+          margin-top: variables.$width-150;
         }
       }
 
       &-cards {
-        margin-top: $spacing-60;
+        margin-top: variables.$spacing-60;
 
-        @include devicebreak(medium) {
-          margin-top: $spacing-08;
+        @include breakpoints.devicebreak(medium) {
+          margin-top: variables.$spacing-08;
         }
       }
     }
 
     .cta-container {
-      margin-top: $spacing-60;
+      margin-top: variables.$spacing-60;
     }
   }
 }
@@ -97,20 +97,20 @@
 [dir='rtl'] {
   .hero-container {
     .homepage-hero-wide {
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         border-left: none;
-        border-right: $spacing-05 solid $color-gray-300;
+        border-right: variables.$spacing-05 solid variables.$color-gray-300;
         padding-left: 0;
-        padding-right: calc(8.33333% + #{$spacing-06}/ 2);
+        padding-right: calc(8.33333% + #{variables.$spacing-06}/ 2);
       }
     }
   }
 
   .country-page-wrapper {
     .large-offset-1 {
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         margin-left: 0;
-        margin-right: calc(8.33333% + #{$spacing-06} / 2);
+        margin-right: calc(8.33333% + #{variables.$spacing-06} / 2);
       }
     }
   }

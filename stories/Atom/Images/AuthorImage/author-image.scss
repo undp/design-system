@@ -1,10 +1,12 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use "../../../assets/scss/base";
+
 
 /* author image */
 
-$colors: (
+base.$colors: (
   'yellow': var(--undpds-color-yellow),
   'red': var(--undpds-color-red),
   'green': var(--undpds-color-green),
@@ -22,7 +24,7 @@ div.author__img {
   &::before {
     @extend %absolute__content;
 
-    @include transition(all 0.6s);
+    @include mixins.transition(all 0.6s);
 
     border-radius: var(--undpds-author-image-radius);
     opacity: 0;
@@ -31,17 +33,17 @@ div.author__img {
 
   &:hover {
     &::before {
-      @include background-image(45deg, var(--undpds-color-yellow), transparent 53%);
+      @include mixins.background-image(45deg, var(--undpds-color-yellow), transparent 53%);
 
       opacity: 0.75;
     }
 
     @each $name,
-    $color in $colors {
+    $color in base.$colors {
 
       &.accent-#{$name}::before,
       &.#{$name}::before {
-        @include background-image(45deg, $color , transparent 53%);
+        @include mixins.background-image(45deg, $color , transparent 53%);
       }
     }
   }
@@ -61,20 +63,20 @@ div.author__img {
 }
 
 @each $name,
-$color in $colors {
+$color in base.$colors {
   .accent-#{$name} div.author__img {
     &:hover {
 
       &::before {
-        @include background-image(45deg, $color , transparent 53%);
+        @include mixins.background-image(45deg, $color , transparent 53%);
       }
 
       @each $name2,
-      $color2 in $colors {
+      $color2 in base.$colors {
 
         &.accent-#{$name2}::before,
         &.#{$name2}::before {
-          @include background-image(45deg, $color2 , transparent 53%);
+          @include mixins.background-image(45deg, $color2 , transparent 53%);
         }
       }
     }
@@ -84,7 +86,7 @@ $color in $colors {
 [dir='rtl'] {
   .author__img {
     &::before {
-      @include transform(scaleX(-1));
+      @include mixins.transform(scaleX(-1));
     }
   }
 }

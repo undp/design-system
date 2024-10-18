@@ -1,5 +1,7 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@use '../../assets/scss/variables';
+@use '../../assets/scss/mixins';
+@use "../../assets/scss/breakpoints";
+
 
 /* icon start */
 
@@ -28,8 +30,8 @@
   &::before {
     @extend %pseudo-icon;
 
-    @include transform(rotate(-45deg) translate(0, 0));
-    @include transition(all 0.3s);
+    @include mixins.transform(rotate(-45deg) translate(0, 0));
+    @include mixins.transition(all 0.3s);
 
     background: var(--undpds-color-dark-red);
     height: 2px;
@@ -41,8 +43,8 @@
   &::after {
     @extend %pseudo-icon;
 
-    @include transition(transform 0.3s);
-    @include transform(translate(0, 0));
+    @include mixins.transition(transform 0.3s);
+    @include mixins.transform(translate(0, 0));
 
     border-inline-end: 2px solid var(--undpds-color-dark-red);
     border-block-start: 2px solid var(--undpds-color-dark-red);
@@ -54,11 +56,11 @@
 
   &:hover {
     &::after {
-      @include transform(translate(5px, -5px));
+      @include mixins.transform(translate(5px, -5px));
     }
 
     &::before {
-      @include transform(rotate(-45deg) translate(7px, 0));
+      @include mixins.transform(rotate(-45deg) translate(7px, 0));
     }
   }
 }
@@ -83,8 +85,8 @@
   &::after {
     @extend %pseudo-icon;
 
-    @include transform(rotate(-45deg) translate(0, 0));
-    @include transition(all 0.3s);
+    @include mixins.transform(rotate(-45deg) translate(0, 0));
+    @include mixins.transition(all 0.3s);
 
     border-block-end: 2px solid var(--undpds-color-dark-red);
     border-inline-start: 2px solid var(--undpds-color-dark-red);
@@ -97,8 +99,8 @@
   &::before {
     @extend %pseudo-icon;
 
-    @include transform(translate(0, 0));
-    @include transition(all 0.3s);
+    @include mixins.transform(translate(0, 0));
+    @include mixins.transition(all 0.3s);
 
     background: var(--undpds-color-dark-red);
     inset-block-end: 7px;
@@ -109,29 +111,29 @@
 
   &:hover {
     &::after {
-      @include transform(rotate(-45deg) translate(7px, -7px));
+      @include mixins.transform(rotate(-45deg) translate(7px, -7px));
     }
 
     &::before {
-      @include transform(translate(0, -10px));
+      @include mixins.transform(translate(0, -10px));
     }
   }
 }
 
 [dir='rtl'] {
   .chevron-right-animated {
-    @include transform(translate(0) rotate(180deg));
+    @include mixins.transform(translate(0) rotate(180deg));
 
     &:hover {
-      @include transform(translate(-10px) rotate(180deg));
+      @include mixins.transform(translate(-10px) rotate(180deg));
     }
   }
 
   .external-link-animated {
-    @include transform(rotate(270deg));
+    @include mixins.transform(rotate(270deg));
 
     &:hover {
-      @include transform(rotate(270deg));
+      @include mixins.transform(rotate(270deg));
     }
   }
 }
@@ -166,7 +168,7 @@
   text-align: center;
   width: calc(100% - 2rem);
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     width: calc(25% - 2rem);
   }
 }

@@ -1,35 +1,35 @@
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
-@import '../../assets/scss/swiper';
-@import '../../assets/scss/mixins';
+@use '../../assets/scss/breakpoints';
+@use '../../assets/scss/variables';
+@use '../../assets/scss/swiper';
+@use '../../assets/scss/mixins';
 
 $backgroundcolors: (
-  'yellow': $color-yellow,
-  'red': $color-red,
-  'green': $color-green,
-  'blue': $color-azure,
-  'gray': $color-gray-100
+  'yellow': variables.$color-yellow,
+  'red': variables.$color-red,
+  'green': variables.$color-green,
+  'blue': variables.$color-azure,
+  'gray': variables.$color-gray-100
 );
 
 /* stats-card-grid start */
 .stats-card-slider {
   // overflow-x: hidden;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     .swiper {
       &-wrapper {
         display: block;
       }
 
       &-slide {
-        padding-left: $spacing-04;
-        padding-right: $spacing-04;
+        padding-left: variables.$spacing-04;
+        padding-right: variables.$spacing-04;
         width: initial;
       }
     }
   }
 
-  @include devicebreak(small) {
+  @include breakpoints.devicebreak(small) {
     .stats-card.small {
       max-width: 100%;
       pointer-events: none;
@@ -38,7 +38,7 @@ $backgroundcolors: (
     .swiper {
       &-slide-active {
         .stats-card {
-          background-color: $color-yellow;
+          background-color: variables.$color-yellow;
 
           @each $name,
           $color in $backgroundcolors {
@@ -50,7 +50,7 @@ $backgroundcolors: (
           }
 
           h2 {
-            color: $color-black;
+            color: variables.$color-black;
           }
         }
       }
@@ -63,7 +63,7 @@ $backgroundcolors: (
     width: -moz-fit-content;
     width: fit-content;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       display: flex;
       justify-content: center;
       margin-bottom: 1.5rem;
@@ -75,7 +75,7 @@ $backgroundcolors: (
   }
 
   .stats-card {
-    @include devicebreak(large) {
+    @include breakpoints.devicebreak(large) {
       &.small {
         box-sizing: border-box;
         max-width: 18.75rem;
@@ -84,7 +84,7 @@ $backgroundcolors: (
     }
 
     &:hover {
-      background-color: $color-yellow;
+      background-color: variables.$color-yellow;
 
       @each $name,
       $color in $backgroundcolors {
@@ -98,13 +98,13 @@ $backgroundcolors: (
   }
 
   &.swiper-initialized {
-    @include devicebreak(small) {
-      padding-right: $spacing-10;
+    @include breakpoints.devicebreak(small) {
+      padding-right: variables.$spacing-10;
     }
 
     .swiper-scrollbar {
-      @include devicebreak(small) {
-        padding-right: $spacing-10;
+      @include breakpoints.devicebreak(small) {
+        padding-right: variables.$spacing-10;
       }
     }
   }
@@ -113,14 +113,14 @@ $backgroundcolors: (
 [dir='rtl'] {
   .stats-card-slider {
     &.swiper-initialized {
-      @include devicebreak(small) {
-        padding-left: $spacing-10;
+      @include breakpoints.devicebreak(small) {
+        padding-left: variables.$spacing-10;
         padding-right: 0;
       }
 
       .swiper-scrollbar {
-        @include devicebreak(small) {
-          padding-left: $spacing-10;
+        @include breakpoints.devicebreak(small) {
+          padding-left: variables.$spacing-10;
           padding-right: 0;
         }
       }
@@ -167,7 +167,7 @@ $backgroundcolors: (
 //       }
 
 //       .swiper-scrollbar {
-//         @include devicebreak(medium) {
+//         @include breakpoints.devicebreak(medium) {
 //           padding-right: $spacing-44;
 //         }
 //       }

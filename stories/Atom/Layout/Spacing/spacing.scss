@@ -1,5 +1,5 @@
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
 
 .spacing-wrapper .spacing__row {
   .spacing__title.Primary {
@@ -27,7 +27,7 @@
     height: 100px;
     width: 100px;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin: 0 11rem;
     }
   }

@@ -1,6 +1,4 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/mixins';
 
 /* multi-select start */
 .multi-select {
@@ -12,7 +10,7 @@
       border-bottom: 0;
 
       &::after {
-        @include transform(translateY(-50%) rotate(-180deg));
+        @include mixins.transform(translateY(-50%) rotate(-180deg));
 
         top: 50%;
       }
@@ -88,7 +86,7 @@
         }
 
         button::after {
-          @include transform(translateY(-50%) rotate(-180deg));
+          @include mixins.transform(translateY(-50%) rotate(-180deg));
 
           top: 50%;
         }

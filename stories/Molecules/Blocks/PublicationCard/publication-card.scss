@@ -1,25 +1,25 @@
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
 
 $colors: (
-  'yellow': $color-yellow,
-  'red': $color-red,
-  'green': $color-green,
-  'blue': $color-azure
+  'yellow': variables.$color-yellow,
+  'red': variables.$color-red,
+  'green': variables.$color-green,
+  'blue': variables.$color-azure
 );
 
 div.publication-card {
   display: inline-block;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     min-width: 20.625rem;
   }
 
   &:hover {
     div.publication-thumbnail__image {
       &::after {
-        @include background-image(27.66deg, $color-yellow, transparent 70.49%);
+        @include mixins.background-image(27.66deg, variables.$color-yellow, transparent 70.49%);
 
         opacity: 0.75;
       }
@@ -29,7 +29,7 @@ div.publication-card {
 
         &.accent-#{$name}::after,
         &.#{$name}::after {
-          @include background-image(27.66deg, $color, transparent 70.49%);
+          @include mixins.background-image(27.66deg, $color, transparent 70.49%);
 
           opacity: 0.75;
         }
@@ -39,8 +39,8 @@ div.publication-card {
 
   .description {
     align-items: center;
-    background: $color-gray-100;
-    padding: $spacing-06;
+    background: variables.$color-gray-100;
+    padding: variables.$spacing-06;
 
     >div {
       align-items: center;
@@ -51,7 +51,7 @@ div.publication-card {
       }
 
       > :not(:first-of-type) {
-        border-left: $spacing-01 solid $color-silvery-moonlight;
+        border-left: variables.$spacing-01 solid variables.$color-silvery-moonlight;
         text-align: right;
       }
     }
@@ -60,14 +60,14 @@ div.publication-card {
   .title {
     @extend %paragragh-font-20;
 
-    margin-bottom: $spacing-02;
+    margin-bottom: variables.$spacing-02;
   }
 
   .format {
     @extend %paragragh-font-16;
 
-    color: $color-gray-600;
-    margin-bottom: $spacing-05;
+    color: variables.$color-gray-600;
+    margin-bottom: variables.$spacing-05;
   }
 
   .download {
@@ -82,19 +82,19 @@ div.publication-card {
     text-transform: uppercase;
 
     .download-animated {
-      margin-left: $spacing-04;
+      margin-left: variables.$spacing-04;
     }
 
     &:hover {
-      color: $color-shuttle-gray;
+      color: variables.$color-shuttle-gray;
 
       .download-animated {
         &::after {
-          @include transform(rotate(-45deg) translate(7px, -7px));
+          @include mixins.transform(rotate(-45deg) translate(7px, -7px));
         }
 
         &::before {
-          @include transform(translate(0, -10px));
+          @include mixins.transform(translate(0, -10px));
         }
       }
     }
@@ -113,19 +113,19 @@ div.publication-card {
 
     .external-link-animated {
       display: inline-block;
-      margin-left: $spacing-04;
+      margin-left: variables.$spacing-04;
     }
 
     &:hover {
-      color: $color-shuttle-gray;
+      color: variables.$color-shuttle-gray;
 
       .external-link-animated {
         &::after {
-          @include transform(translate(5px, -5px));
+          @include mixins.transform(translate(5px, -5px));
         }
 
         &::before {
-          @include transform(rotate(-45deg) translate(7px, 0));
+          @include mixins.transform(rotate(-45deg) translate(7px, 0));
         }
       }
     }
@@ -137,14 +137,14 @@ div.publication-card {
     .readmore {
       .external-link-animated {
         margin-left: 0;
-        margin-right: $spacing-04;
+        margin-right: variables.$spacing-04;
       }
     }
 
     .download {
       .download-animated {
         margin-left: 0;
-        margin-right: $spacing-04;
+        margin-right: variables.$spacing-04;
       }
     }
 
@@ -156,7 +156,7 @@ div.publication-card {
 
         > :not(:first-of-type) {
           border-left: 0;
-          border-right: $spacing-01 solid $color-silvery-moonlight;
+          border-right: variables.$spacing-01 solid variables.$color-silvery-moonlight;
           text-align: left;
         }
       }
@@ -171,7 +171,7 @@ $color in $colors {
     &:hover {
       div.publication-thumbnail__image {
         &::after {
-          @include background-image(27.66deg, $color, transparent 70.49%);
+          @include mixins.background-image(27.66deg, $color, transparent 70.49%);
         }
 
         @each $name2,
@@ -179,7 +179,7 @@ $color in $colors {
 
           &.accent-#{$name2}::after,
           &.#{$name2}::after {
-            @include background-image(27.66deg, $color2, transparent 70.49%);
+            @include mixins.background-image(27.66deg, $color2, transparent 70.49%);
           }
         }
       }
@@ -191,7 +191,7 @@ $color in $colors {
     &:hover {
       div.publication-thumbnail__image {
         &::after {
-          @include background-image(318deg, $color, transparent 70.49%);
+          @include mixins.background-image(318deg, $color, transparent 70.49%);
         }
 
         @each $name2,
@@ -199,7 +199,7 @@ $color in $colors {
 
           &.accent-#{$name2}::after,
           &.#{$name2}::after {
-            @include background-image(318deg, $color2, transparent 70.49%);
+            @include mixins.background-image(318deg, $color2, transparent 70.49%);
           }
         }
       }

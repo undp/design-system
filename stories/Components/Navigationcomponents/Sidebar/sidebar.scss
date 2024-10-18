@@ -1,6 +1,6 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
 
 /* sidebar start */
 .sidebar-accordion {
@@ -11,16 +11,16 @@
 
   &.show-medium {
     h6 {
-      border-bottom: 2px solid $color-black;
+      border-bottom: 2px solid variables.$color-black;
 
       &:hover,
       &:focus,
       &:active {
-        background-color: $color-gray-400;
+        background-color: variables.$color-gray-400;
       }
 
       &::after {
-        @include transform(translateY(-50%) rotateZ(-180deg));
+        @include mixins.transform(translateY(-50%) rotateZ(-180deg));
       }
     }
 
@@ -38,31 +38,31 @@
 
     a {
 
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: $color-gray-400;
-    }
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: variables.$color-gray-400;
+      }
 
-    // @include devicebreak(large) {
+      // @include breakpoints.devicebreak(large) {
 
-    //     &:hover {
-    //       // background-color: $color-gray-300;
-    //       background-color: $color-gray-400;
-    //     }
-    //   }
+      //     &:hover {
+      //       // background-color: $color-gray-300;
+      //       background-color: $color-gray-400;
+      //     }
+      //   }
     }
   }
 
   h6 {
-    background-color: $color-gray-300;
+    background-color: variables.$color-gray-300;
     cursor: pointer;
     display: block;
     margin-bottom: 0;
-    padding: $spacing-05;
+    padding: variables.$spacing-05;
     position: relative;
 
-    @include devicebreak(large) {
+    @include breakpoints.devicebreak(large) {
       display: none;
     }
 
@@ -75,7 +75,7 @@
     display: none;
     padding: 0;
 
-    @include devicebreak(large) {
+    @include breakpoints.devicebreak(large) {
       display: block;
     }
 
@@ -86,38 +86,38 @@
         background: url(~icons/chevron-down-white.svg) no-repeat center center;
       }
 
-      @include devicebreak(large) {
+      @include breakpoints.devicebreak(large) {
         button::after {
           background: url(~icons/chevron-down-white.svg) no-repeat center center;
         }
       }
 
       &>a {
-        background-color: $color-blue-600;
-        color: $color-white;
+        background-color: variables.$color-blue-600;
+        color: variables.$color-white;
 
-        @include devicebreak(large) {
-          background-color: $color-blue-600;
-          color: $color-white;
+        @include breakpoints.devicebreak(large) {
+          background-color: variables.$color-blue-600;
+          color: variables.$color-white;
         }
       }
 
       &>button::after {
-        @include transform(rotateZ(-180deg));
+        @include mixins.transform(rotateZ(-180deg));
 
         top: 1.125rem;
 
-        @include devicebreak(large) {
-          top: $spacing-06;
+        @include breakpoints.devicebreak(large) {
+          top: variables.$spacing-06;
         }
       }
     }
 
     &>li {
-      background-color: $color-gray-300;
+      background-color: variables.$color-gray-300;
       position: relative;
 
-      @include devicebreak(large) {
+      @include breakpoints.devicebreak(large) {
         background-color: transparent;
         padding: 0;
       }
@@ -131,7 +131,7 @@
         margin-top: -2.188rem;
         width: 1.25rem;
 
-        @include devicebreak(large) {
+        @include breakpoints.devicebreak(large) {
           margin-top: -2.688rem;
           top: 2.063rem;
         }
@@ -139,9 +139,9 @@
         &::after {
           @extend %sidebar-chevron;
 
-          top: $spacing-06;
+          top: variables.$spacing-06;
 
-          @include devicebreak(large) {
+          @include breakpoints.devicebreak(large) {
             top: 2.063rem;
           }
         }
@@ -159,27 +159,27 @@
 
           border: none;
           display: block;
-          font-size: $font-size-14;
+          font-size: variables.$font-size-14;
           font-weight: 400;
-          padding: $spacing-05 $spacing-06 $spacing-05 $spacing-07;
+          padding: variables.$spacing-05 variables.$spacing-06 variables.$spacing-05 variables.$spacing-07;
 
-          @include devicebreak(large) {
-            font-size: $font-size-16;
-            padding-left: $spacing-09;
+          @include breakpoints.devicebreak(large) {
+            font-size: variables.$font-size-16;
+            padding-left: variables.$spacing-09;
           }
         }
 
         &:first-of-type a {
           background-color: transparent;
-          color: $color-black;
+          color: variables.$color-black;
 
           &:hover,
           &:focus,
           &:active {
-            background-color: $color-gray-400;
+            background-color: variables.$color-gray-400;
           }
 
-          // @include devicebreak(large) {
+          // @include breakpoints.devicebreak(large) {
           //   &:hover {
           //     // background-color: $color-gray-300;
           //     background-color: $color-gray-400;
@@ -198,29 +198,29 @@
     ul.accordion__panel {
       li {
         a {
-          @include devicebreak(large) {
+          @include breakpoints.devicebreak(large) {
             font-size: 0.875rem;
-            padding-left: $spacing-07;
+            padding-left: variables.$spacing-07;
           }
         }
 
         &:last-of-type a {
-          @include devicebreak(large) {
-            margin-bottom: $spacing-08;
+          @include breakpoints.devicebreak(large) {
+            margin-bottom: variables.$spacing-08;
           }
         }
       }
     }
 
     ul>li button::after {
-      @include devicebreak(large) {
+      @include breakpoints.devicebreak(large) {
         top: 1.625rem;
       }
     }
 
     li.active {
       button::after {
-        @include devicebreak(large) {
+        @include breakpoints.devicebreak(large) {
           top: 1.125rem;
         }
       }
@@ -247,7 +247,7 @@
 
     button {
       float: left;
-      margin-left: $spacing-06;
+      margin-left: variables.$spacing-06;
       margin-right: 0;
     }
 
@@ -255,9 +255,9 @@
       ul.accordion__panel {
         li {
           a {
-            @include devicebreak(large) {
-              padding-left: $spacing-06;
-              padding-right: $spacing-07;
+            @include breakpoints.devicebreak(large) {
+              padding-left: variables.$spacing-06;
+              padding-right: variables.$spacing-07;
             }
           }
         }

@@ -1,13 +1,13 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
 
 /* author summary start */
 .author-summary {
   border-top: 2px solid var(--undpds-color-black);
   padding-top: var(--undpds-spacing-07);
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     display: flex;
     justify-content: space-between;
   }
@@ -21,12 +21,12 @@
   &-left {
     display: flex;
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       align-items: flex-start;
       justify-content: space-between;
     }
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       width: 50%;
     }
 
@@ -34,16 +34,16 @@
       margin-right: 0;
 
       &.large {
-        @include devicebreak(small) {
+        @include breakpoints.devicebreak(small) {
           height: 100%;
         }
 
-        @include devicebreak(medium) {
+        @include breakpoints.devicebreak(medium) {
           height: fit-content;
           width: 40%;
         }
 
-        @include devicebreak(large) {
+        @include breakpoints.devicebreak(large) {
           width: var(--undpds-width-180);
         }
       }
@@ -57,11 +57,11 @@
   }
 
   &-right {
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       margin-top: var(--undpds-spacing-04);
     }
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       width: 40%;
     }
   }
@@ -70,11 +70,11 @@
     margin-left: var(--undpds-spacing-04);
     margin-top: 0;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       width: calc(100% - 13.875rem);
     }
 
-    @include devicebreak(large) {
+    @include breakpoints.devicebreak(large) {
       margin-left: var(--undpds-spacing-08);
     }
 
@@ -89,7 +89,7 @@
 [dir='rtl'] {
   .author-summary {
     &-text {
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         margin-left: 0;
         margin-right: var(--undpds-spacing-08);
       }

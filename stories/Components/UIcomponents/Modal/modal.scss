@@ -1,11 +1,12 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@use '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
 
 /* Modal lightbox card start */
 .modal {
   @extend %frosted-bg;
 
-  @include transition(all 0.4s ease-in-out);
+  @include mixins.transition(all 0.4s ease-in-out);
 
   bottom: 0;
   display: flex;
@@ -18,24 +19,24 @@
   visibility: hidden;
   z-index: 99;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     align-items: center;
   }
 
   &-content {
     @extend %custom-scrollbar;
 
-    background: $color-white;
+    background: variables.$color-white;
     max-width: 64rem;
-    padding: $spacing-10 $spacing-04 $spacing-04;
+    padding: variables.$spacing-10 variables.$spacing-04 variables.$spacing-04;
     position: relative;
     width: 100%;
 
-    @include devicebreak(medium) {
-      margin-left: $spacing-11;
-      margin-right: $spacing-11;
+    @include breakpoints.devicebreak(medium) {
+      margin-left: variables.$spacing-11;
+      margin-right: variables.$spacing-11;
       max-height: calc(100vh - 291px);
-      padding: $spacing-10;
+      padding: variables.$spacing-10;
     }
   }
 
@@ -46,13 +47,13 @@
     font-size: 0;
     height: 45px;
     position: absolute;
-    right: $spacing-04;
-    top: $spacing-04;
+    right: variables.$spacing-04;
+    top: variables.$spacing-04;
     width: 45px;
 
-    @include devicebreak(medium) {
-      right: $spacing-05;
-      top: $spacing-05;
+    @include breakpoints.devicebreak(medium) {
+      right: variables.$spacing-05;
+      top: variables.$spacing-05;
     }
 
     &:hover {

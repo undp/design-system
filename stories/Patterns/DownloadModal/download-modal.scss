@@ -1,13 +1,13 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
+@use '../../assets/scss/variables';
+@use '../../assets/scss/mixins';
+@use '../../assets/scss/breakpoints';
 
 /* download modal start */
 .download {
   &-body {
     display: flex;
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       height: calc(100% - 80px);
     }
   }
@@ -15,13 +15,13 @@
   &-content {
     width: 100%;
 
-    @include devicebreak(medium) {
-      padding-left: $spacing-06;
+    @include breakpoints.devicebreak(medium) {
+      padding-left: variables.$spacing-06;
       width: calc(100% - 358px);
     }
 
     .select-box {
-      margin-bottom: $spacing-07;
+      margin-bottom: variables.$spacing-07;
       max-width: 100%;
 
       .selected {
@@ -35,7 +35,7 @@
 
     max-height: calc(100% - 82px);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       max-height: 473px;
       padding-right: 1.563rem;
     }
@@ -48,11 +48,11 @@
   }
 
   &-footer {
-    margin-top: $spacing-07;
+    margin-top: variables.$spacing-07;
     text-align: right;
 
-    @include devicebreak(medium) {
-      padding-right: $spacing-06;
+    @include breakpoints.devicebreak(medium) {
+      padding-right: variables.$spacing-06;
     }
   }
 }
@@ -60,7 +60,7 @@
 .list-language {
   max-height: 100%;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     max-height: 404px;
   }
 }
@@ -78,7 +78,7 @@
 
 [dir='rtl'] {
   .download {
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       &-list {
         padding-left: 1.563rem;
         padding-right: 0;
@@ -86,17 +86,17 @@
     }
 
     &-content {
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         padding-left: 0;
-        padding-right: $spacing-06;
+        padding-right: variables.$spacing-06;
       }
     }
 
     &-footer {
       text-align: left;
 
-      @include devicebreak(medium) {
-        padding-left: $spacing-06;
+      @include breakpoints.devicebreak(medium) {
+        padding-left: variables.$spacing-06;
         padding-right: 0;
       }
     }

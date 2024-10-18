@@ -1,29 +1,26 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/breakpoints';
-
 $container-size: 30em;
 
 /* image caption start */
 figcaption {
-  color: $color-gray-600;
-  border-bottom: 2px solid $color-black;
-  font-size: $font-size-16;
+  color: var(--undpds-color-gray-600);
+  border-bottom: 2px solid var(--undpds-color-black);
+  font-size: var(--undpds-font-size-16);
 
   @container (width > #{$container-size}) {
     display: flex;
     justify-content: space-between;
-    padding-bottom: $spacing-07;
+    padding-bottom: var(--undpds-spacing-07);
   }
 
   .credits {
-    border-top: 1px solid $color-gray-500;
+    border-top: 1px solid var(--undpds-color-gray-500);
     display: flex;
     flex-shrink: 0;
     flex-wrap: wrap;
-    margin-top: $spacing-05;
-    margin-bottom: $spacing-05;
-    padding-top: $spacing-05;
-    color: $color-black;
+    margin-top: var(--undpds-spacing-05);
+    margin-bottom: var(--undpds-spacing-05);
+    padding-top: var(--undpds-spacing-05);
+    color: var(--undpds-color-black);
 
     @container (width > #{$container-size}) {
       //border-left: 1px solid $color-gray-500;
@@ -37,7 +34,7 @@ figcaption {
     }
 
     strong {
-      margin-left: $spacing-02;
+      margin-left: var(--undpds-spacing-02);
 
       @container (width > #{$container-size}) {
         margin-left: 0;
@@ -46,8 +43,8 @@ figcaption {
   }
 
   p {
-    color: $color-gray-600;
-    margin-bottom: $spacing-05;
+    color: var(--undpds-color-gray-600);
+    margin-bottom: var(--undpds-spacing-05);
 
     @container (width > #{$container-size}) {
       border: 0;
@@ -55,9 +52,9 @@ figcaption {
 
 
       +.credits {
-          border-left: 1px solid $color-gray-500;
-          padding-left: $spacing-07;
-          margin-left: $spacing-07;
+        border-left: 1px solid var(--undpds-color-gray-500);
+        padding-left: var(--undpds-spacing-07);
+        margin-left: var(--undpds-spacing-07);
       }
     }
   }
@@ -67,23 +64,26 @@ figcaption {
   figcaption {
     .credits {
       strong {
-        margin-right: $spacing-02;
+        margin-right: var(--undpds-spacing-02);
       }
     }
+
     @container (width > #{$container-size}) {
       p {
         padding-right: 0;
       }
+
       .credits {
-        border-right: 1px solid $color-gray-500;
+        border-right: 1px solid var(--undpds-color-gray-500);
         border-top: 0;
         display: block;
-        margin-right: $spacing-07;
-        padding-right: $spacing-07;
+        margin-right: var(--undpds-spacing-07);
+        padding-right: var(--undpds-spacing-07);
         padding-top: 0;
         border-left: none;
         margin-left: 0;
         padding-left: 0;
+
         strong {
           margin-right: 0;
         }

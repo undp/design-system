@@ -1,9 +1,9 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
+@use '../../assets/scss/variables';
+@use '../../assets/scss/mixins';
+@use '../../assets/scss/breakpoints';
 
 .glabal-page {
-  @include devicebreak(small) {
+  @include breakpoints.devicebreak(small) {
     .homepage-hero-tall {
       margin-top: 1rem;
     }
@@ -12,8 +12,8 @@
   .featured-card-container {
     margin-top: 7rem;
 
-    @include devicebreak(medium) {
-      margin-top: $spacing-06;
+    @include breakpoints.devicebreak(medium) {
+      margin-top: variables.$spacing-06;
     }
 
     h2 {
@@ -22,21 +22,21 @@
   }
 
   .parallax {
-    margin-top: -$spacing-11;
+    margin-top: -(variables.$spacing-11);
     overflow: hidden;
-    padding-bottom: $spacing-11;
+    padding-bottom: variables.$spacing-11;
     position: relative;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       background-image: none;
       border-right: none;
       transition: none;
     }
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       &.lines-background {
-        background-image: linear-gradient(90deg, $color-gray-400 1px, rgba(212, 214, 216, 0) 0);
-        border-right: 1px solid $color-gray-400;
+        background-image: linear-gradient(90deg, variables.$color-gray-400 1px, rgba(212, 214, 216, 0) 0);
+        border-right: 1px solid variables.$color-gray-400;
         transition: opacity 0.1s ease-out;
       }
     }
@@ -51,11 +51,11 @@
   }
 
   .fixedcarousel {
-    background-color: $color-gray-200;
-    padding-bottom: $spacing-11;
+    background-color: variables.$color-gray-200;
+    padding-bottom: variables.$spacing-11;
 
     h2 {
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         margin-left: 15px;
         margin-right: 15px;
       }
