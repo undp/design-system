@@ -41,7 +41,6 @@ export default {
       }
     });
 
-    config.cache = false;
     return config;
   },
   framework: '@storybook/react-webpack5',
@@ -50,7 +49,6 @@ export default {
       name: '@storybook/builder-webpack5',
       options: {
         fsCache: true,
-        lazyCompilation: true,
       },
     },
   },
