@@ -16,6 +16,11 @@ export const Homepageherosplit = ({
       <div className="homepage-hero-tall-content">
           {content && <Heading type="1" label={title} dataViewport="true"/>}
           {content && <Heading type="4" label={content} dataViewport="true"/>}
+        <div className="show-small">
+          <div className='show-small-button'>
+            <CtaButton label={button} />
+          </div>
+        </div>
           <div className="show-large">
             <CtaButton label={button} />
           </div>
@@ -33,9 +38,6 @@ export const Homepageherosplit = ({
               <img src={BackgroundImg2} alt={BackgroundImg} />
             </picture>
           )}
-        </div>
-        <div className="show-small">
-          <CtaButton label={button} />
         </div>
       </div>
     </div>

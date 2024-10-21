@@ -86,7 +86,7 @@
   padding-left: 0;
 
   @include breakpoints.devicebreak(medium) {
-    max-width: 690px;
+    // max-width: 690px;
     text-align: right;
   }
 
