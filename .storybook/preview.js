@@ -8,6 +8,8 @@ import { allModes } from './modes';
 import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss';
 import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css';
 
+import './preview.scss';
+
 // Log the contents of RTLAddon for debugging
 
 // console.log(RTLAddon);

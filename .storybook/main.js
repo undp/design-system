@@ -19,6 +19,7 @@ export default {
     '@storybook/addon-webpack5-compiler-babel',
     '@whitespace/storybook-addon-html',
     '@storybook/addon-designs',
+    'storybook-addon-sass-postcss',
   ],
   webpackFinal: async config => {
     config.resolve.alias = {
