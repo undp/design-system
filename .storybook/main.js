@@ -41,6 +41,7 @@ export default {
       }
     });
 
+    config.cache = false;
     return config;
   },
   framework: '@storybook/react-webpack5',
