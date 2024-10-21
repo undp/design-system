@@ -126,5 +126,6 @@
   },
   "bugs": {
     "url": "https://github.com/undp/design-system/issues"
-  }
+  },
+  "packageManager": "pnpm@8.6.6+sha512.6b9d5b209c829afb2d802bec59fe928199ec5df5a6c005b5a47584687da0377bea4060b9f322c52ffa0a070719587d268e9333056457752f5d2dd37a1802b647"
 }

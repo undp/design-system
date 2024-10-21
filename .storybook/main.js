@@ -27,7 +27,7 @@ export default {
 
     config.module.rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
+      use: ['style-loader', 'css-loader', { loader: 'sass-loader', options: { implementation: 'sass-embedded', sourceMap: false, sassOptions: { quietDeps: true, silenceDeprecations: ['import', 'global-builtin'] } } }],
       include: path.resolve(__dirname, '../')
     });
 
@@ -43,9 +43,15 @@ export default {
 
     return config;
   },
-  framework: {
-    name: '@storybook/react-webpack5',
-    options: {}
+  framework: '@storybook/react-webpack5',
+  core: {
+    builder: {
+      name: '@storybook/builder-webpack5',
+      options: {
+        fsCache: true,
+        lazyCompilation: true,
+      },
+    },
   },
   // env: config => ({
   //   ...config,
