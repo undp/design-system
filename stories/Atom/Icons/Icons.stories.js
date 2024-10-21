@@ -77,6 +77,9 @@ export default {
                 webpage.
               </li>
               <li>
+                To get other icons, for example, the Threads Icon, use the Icon library <a href="https://remixicon.com/" target="_blank">here</a>
+              </li>
+              <li>
                 For CSS based icons eg: .chevron-right-animated,
                 .external-link-animated and .download-animated use these classes
                 in <strong>span</strong> element.
