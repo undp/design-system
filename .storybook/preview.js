@@ -1,12 +1,12 @@
 // import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 // import * as RTLAddon from 'storybook-addon-rtl';
-import renderToHTML from './renderToHTML';
-import { allModes } from './modes';
+import { allModes } from './modes'
+import renderToHTML from './renderToHTML'
 
 
 // include base styling globally
-import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss';
-import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css';
+import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css'
+import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss'
 
 import './preview.scss';
 
@@ -86,7 +86,13 @@ export const globalTypes = {
         { value: 'arabic', title: 'Arabic' },
         { value: 'burmese', title: 'Burmese' },
         { value: 'japanese', title: 'Japanese' },
-        { value: 'ukrainian', title: 'Ukrainian' }
+        { value: 'ukrainian', title: 'Ukrainian' },
+        // { value: 'azerbaijani', title: 'Azerbaijani' },
+        // { value: 'georgian', title: 'Georgian' },
+        // { value: 'khmer', title: 'Khmer' },
+        // { value: 'nepali', title: 'Nepali' },
+        // { value: 'chinese', title: 'Chinese' },
+        // { value: 'korean', title: 'Korean' }
       ],
     },
   },
@@ -124,15 +130,18 @@ const getLangCode = (Story, context) => {
     'arabic': 'ar',
     'burmese': 'my',
     'japanese': 'ja',
-    'ukrainian': 'uk'
+    'ukrainian': 'uk',
   };
 
   if (typeof langArr[activeLang] == 'undefined') {
     activeLang = 'english';
   }
 
-  const htmlElem = document.querySelector('html');
-  htmlElem.setAttribute('lang', langArr[activeLang]);
+  const htmlElem = document.querySelectorAll('#storybook-root, .sb-story');
+  htmlElem.forEach(ele => {
+    ele.setAttribute('lang', langArr[activeLang]);
+    ele.setAttribute('dir', activeLang === 'arabic' ? 'rtl' : 'ltr');
+  });
 
   return (
     <Story {...context} />

@@ -1,0 +1,280 @@
+@import 'variables';
+@import 'mixins';
+
+/* Burmese */
+:lang(my) {
+
+  body,
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--undpds-font-family-notosans-burmese);
+    line-height: 1.7;
+  }
+
+  h1 {
+    font-size: 2.625rem;
+
+    @include devicebreak(medium) {
+      font-size: 3.875rem;
+    }
+
+    @include devicebreak(large) {
+      font-size: 5rem;
+    }
+  }
+
+  h2 {
+    font-size: var(--undpds-font-size-32);
+
+    @include devicebreak(medium) {
+      font-size: var(--undpds-font-size-35);
+    }
+
+    @include devicebreak(large) {
+      font-size: 2.813rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.3rem;
+
+    @include devicebreak(medium) {
+      font-size: 1.8rem;
+    }
+  }
+
+  h5 {
+    font-size: var(--undpds-font-size-20);
+
+    @include devicebreak(medium) {
+      font-size: 1.375rem;
+    }
+  }
+
+  p {
+    @extend %paragragh-font-16;
+  }
+
+  ul li,
+  ol li,
+  dl {
+    font-size: var(--undpds-font-size-14);
+    line-height: 1.9;
+
+    @include devicebreak(medium) {
+      font-size: 1.125rem;
+    }
+  }
+
+}
+
+/* Cyrillic scripts */
+#{$cyrillic} {
+  h1 {
+    font-family: var(--undpds-font-family-proximanova);
+  }
+}
+
+/* Bengali */
+:lang(bn) {
+
+  body,
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--undpds-font-family-unbangla);
+  }
+}
+
+/* Arabic */
+:lang(ar) {
+
+  body,
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--undpds-font-family-notosans-arabic);
+  }
+}
+
+/* Azerbaijani */
+:lang(az) {
+
+  body,
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--undpds-font-family-notosans);
+  }
+}
+
+/* Chinese */
+:lang(zh) {
+
+  body,
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--undpds-font-family-notosans-chinese);
+  }
+}
+
+/* Japanese */
+:lang(ja) {
+
+  body,
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--undpds-font-family-notosans-japanese);
+  }
+
+  body,
+  div {
+    font-weight: 350;
+  }
+}
+
+/* Georgian */
+:lang(ka) {
+
+  body,
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--undpds-font-family-notosans-georgian);
+  }
+}
+
+/* Khmer */
+:lang(km) {
+
+  body,
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--undpds-font-family-notosans-khmer);
+  }
+}
+
+/* Korean */
+:lang(ko) {
+
+  body,
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--undpds-font-family-notosans-korean);
+  }
+}
+
+/* Kurdish */
+:lang(ku) {
+
+  body,
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--undpds-font-family-notosans-arabic);
+  }
+}
+
+/* Nepali */
+:lang(ne) {
+
+  body,
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--undpds-font-family-notosans);
+  }
+}

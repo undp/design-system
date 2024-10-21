@@ -102,6 +102,7 @@
     "storybook": "^8.3.0",
     "storybook-addon-rtl": "^1.0.1",
     "style-loader": "^3.3.4",
+    "style-loader": "^3.3.2",
     "stylelint": "^16.9.0",
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-recommended-scss": "^11.0",
