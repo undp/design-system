@@ -1,0 +1,17 @@
+name: Generate scss vars from figma tokens
+on: [push]
+
+jobs:
+  build_tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.4.0
+      - run: npm install
+      - run: npx token-transformer figma-tokens/input/design-tokens.json _variables
+      - run: node build-figma-tokens.js
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: build tokens
+          token: ${{ secrets.FIGMA_PAT }}

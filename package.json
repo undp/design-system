@@ -99,6 +99,7 @@
     "sass": "^1.62.1",
     "sass-loader": "^13.3.2",
     "storybook": "^8.3.6",
+    "style-dictionary": "^4.1.4",
     "style-loader": "^3.3.2",
     "stylelint": "^16.9.0",
     "stylelint-config-prettier": "^9.0.5",
@@ -118,7 +119,6 @@
     "gsap": "^3.12.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "style-dictionary": "^4.1.4",
     "swiper": "^9.4.1"
   },
   "repository": {
