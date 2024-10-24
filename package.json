@@ -9,7 +9,7 @@
     "build": "webpack --progress",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --loglevel verbose",
-    "build-tokens": "node stories/assets/js/build-figma-tokens.mjs"
+    "build-tokens": "node stories/assets/js/build-figma-tokens.js"
   },
   "keywords": [
     "UNDP",
