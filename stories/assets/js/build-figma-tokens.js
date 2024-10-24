@@ -1,4 +1,4 @@
-import StyleDictionary from 'style-dictionary';
+const StyleDictionary = require('style-dictionary');
 
 const config = {
   source: ['../../../figma-tokens/input/**/*.json'],
