@@ -27,6 +27,16 @@ jobs:
       - name: Build Figma tokens to SCSS
         run: npm run build-tokens
 
+      # Automatically add and commit all changes including SCSS
+      - name: Auto commit updated tokens and SCSS
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "build: update SCSS variables and tokens"
+          file_pattern: |
+            figma-tokens/input/tokens-transformed.json
+            stories/assets/scss/figma-scss/_figma-variables.scss
+          branch: update-figma-tokens # Commit to the new branch
+
       # Automatic pull request
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
