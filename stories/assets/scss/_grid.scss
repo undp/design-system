@@ -1,13 +1,13 @@
 @use 'grid-settings';
-@import '../../../node_modules/foundation-sites/scss/foundation';
+@use '../../../node_modules/foundation-sites/scss/foundation';
 // @use "../../../node_modules/foundation-sites/scss/components/flex";
 // @use "../../../node_modules/foundation-sites/scss/components/float";
 // @use "../../../node_modules/foundation-sites/scss/components/visibility";
 // @use "../../../node_modules/foundation-sites/scss/xy-grid/classes";
 
 
-@include foundation-xy-grid-classes();
+@include foundation.foundation-xy-grid-classes;
 
-@include foundation-float-classes;
-@include foundation-flex-classes;
-@include foundation-visibility-classes;
+@include foundation.foundation-float-classes;
+@include foundation.foundation-flex-classes;
+@include foundation.foundation-visibility-classes;

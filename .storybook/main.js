@@ -41,6 +41,8 @@ export default {
       }
     });
 
+    console.log(config);
+
     return config;
   },
   framework: '@storybook/react-webpack5',
