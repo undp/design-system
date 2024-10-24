@@ -4,7 +4,11 @@
 name: 'Chromatic'
 
 # Event for the workflow
-on: push
+on: 
+  push:
+    branches-ignore:
+      - 'dependabot/**'
+      - 'update-figma-tokens'
 
 # List of jobs
 jobs:
