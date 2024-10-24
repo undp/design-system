@@ -1,11 +1,11 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/breakpoints';
 
 .global-header {
   height: 7.1875rem;
 
-  @include devicebreak(mediumonlytab) {
+  @include breakpoints.devicebreak(mediumonlytab) {
     height: 4.6875rem;
   }
 
@@ -16,28 +16,28 @@
 
     height: 7.1875rem;
 
-    @include devicebreak(mediumonlytab) {
+    @include breakpoints.devicebreak(mediumonlytab) {
       height: 4.6875rem;
     }
 
     .fluid {
       height: 7.1875rem;
 
-      @include devicebreak(xlarge) {
-        margin: 0 $spacing-70;
+      @include breakpoints.devicebreak(xlarge) {
+        margin: 0 variables.$spacing-70;
       }
 
-      @include devicebreak(mediumonlytab) {
+      @include breakpoints.devicebreak(mediumonlytab) {
         height: 4.6875rem;
       }
     }
 
     .top-left {
-      @include devicebreak(xlarge) {
+      @include breakpoints.devicebreak(xlarge) {
         margin-bottom: 0;
       }
 
-      @include devicebreak(mediumonlytab) {
+      @include breakpoints.devicebreak(mediumonlytab) {
         margin-bottom: 0;
         display: flex;
 
@@ -47,11 +47,11 @@
       }
 
       .dropdown-language {
-        margin-left: $spacing-04;
+        margin-left: variables.$spacing-04;
         display: flex;
         align-items: center;
 
-        @include devicebreak(mediumonlytab) {
+        @include breakpoints.devicebreak(mediumonlytab) {
           display: none;
         }
       }
@@ -63,18 +63,18 @@
       position: relative;
       height: 7.1875rem;
 
-      @include devicebreak(mediumonlytab) {
+      @include breakpoints.devicebreak(mediumonlytab) {
         height: 4.6875rem;
       }
 
       nav {
-        @include devicebreak(mediumonlytab) {
+        @include breakpoints.devicebreak(mediumonlytab) {
           height: 4.6875rem;
         }
       }
 
       ul {
-        @include transform(translateY(-50%));
+        @include mixins.transform(translateY(-50%));
 
         align-items: stretch;
         display: flex;
@@ -87,11 +87,11 @@
         width: 50%;
         z-index: 9;
 
-        @include devicebreak(xlarge) {
+        @include breakpoints.devicebreak(xlarge) {
           padding-left: 4.375rem;
         }
 
-        @include devicebreak(mediumonlytab) {
+        @include breakpoints.devicebreak(mediumonlytab) {
           display: none;
         }
 
@@ -102,7 +102,7 @@
           padding-right: 3.375rem;
           right: 50%;
 
-          @include devicebreak(xlarge) {
+          @include breakpoints.devicebreak(xlarge) {
             padding-right: 4.375rem;
           }
         }
@@ -112,14 +112,15 @@
           display: flex;
           align-items: stretch;
 
-          @include devicebreak(xlarge) {
+          @include breakpoints.devicebreak(xlarge) {
             margin: 0 2.1875rem;
           }
 
           a {
             display: flex;
             align-items: center;
-            @include devicebreak(xlarge) {
+
+            @include breakpoints.devicebreak(xlarge) {
               margin-top: 0;
             }
           }
@@ -132,15 +133,15 @@
         position: relative;
         z-index: 10;
 
-        @include devicebreak(xlarge) {
-          @include transform(translateX(-50%));
+        @include breakpoints.devicebreak(xlarge) {
+          @include mixins.transform(translateX(-50%));
 
           left: 50%;
           position: fixed;
           z-index: 10;
         }
 
-        @include devicebreak(mediumonlytab) {
+        @include breakpoints.devicebreak(mediumonlytab) {
           height: 4.6875rem;
           margin: 0;
         }
@@ -160,11 +161,11 @@
       display: flex;
       justify-content: flex-end;
 
-      @include devicebreak(xlarge) {
+      @include breakpoints.devicebreak(xlarge) {
         margin-bottom: 0;
       }
 
-      @include devicebreak(mediumonlytab) {
+      @include breakpoints.devicebreak(mediumonlytab) {
         margin-bottom: 0;
 
         .icon-globe {
@@ -179,7 +180,7 @@
         -webkit-mask: url(~icons/globe.svg) no-repeat left center;
         mask: url(~icons/globe.svg) no-repeat left center;
 
-        @include devicebreak(mediumonlytab) {
+        @include breakpoints.devicebreak(mediumonlytab) {
           display: none;
         }
       }
@@ -187,12 +188,12 @@
       .icon-search {
         @extend %header-icon;
 
-        margin-left: $spacing-05;
-        margin-right: $spacing-04;
+        margin-left: variables.$spacing-05;
+        margin-right: variables.$spacing-04;
         -webkit-mask: url(~icons/search.svg) no-repeat left center;
         mask: url(~icons/search.svg) no-repeat left center;
 
-        @include devicebreak(small) {
+        @include breakpoints.devicebreak(small) {
           background: transparent url(~icons/search.svg) no-repeat left center;
           margin-left: 0;
           margin-right: 0;
@@ -209,15 +210,15 @@
     .mid-nav ul,
     .top-left,
     .top-right {
-      @include transition(opacity 0.3s ease);
+      @include mixins.transition(opacity 0.3s ease);
     }
   }
 
   &.global-load-animation {
     .header .mid-nav .logo {
-      @include transition(all 0.7s ease);
+      @include mixins.transition(all 0.7s ease);
 
-      left: $spacing-04;
+      left: variables.$spacing-04;
       position: fixed;
       top: 0;
       transform: translateX(0);
@@ -289,18 +290,18 @@
     .top-left {
       .dropdown-language {
         margin-left: 0;
-        margin-right: $spacing-04;
+        margin-right: variables.$spacing-04;
       }
 
       .icon-bar {
-        margin-right: $spacing-04;
+        margin-right: variables.$spacing-04;
       }
     }
 
     &.global-load-animation {
       .header .mid-nav .logo {
         left: inherit;
-        right: $spacing-04;
+        right: variables.$spacing-04;
       }
     }
 

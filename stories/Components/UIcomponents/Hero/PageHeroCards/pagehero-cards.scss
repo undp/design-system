@@ -1,9 +1,10 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/breakpoints';
 
 /* pagehero card hero start */
 .pagehero-cards {
-  @include devicebreak(small) {
+  @include breakpoints.devicebreak(small) {
     &-items {
       .swiper-wrapper {
         margin-left: 0;
@@ -13,35 +14,35 @@
   }
 
   &-items {
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       overflow: hidden;
     }
 
     .pagehero-cards-box {
-      @include devicebreak(large) {
-        flex: 0 0 calc(16.66667% - #{$spacing-06});
-        max-width: calc(16.66667% - #{$spacing-06});
+      @include breakpoints.devicebreak(large) {
+        flex: 0 0 calc(16.66667% - #{variables.$spacing-06});
+        max-width: calc(16.66667% - #{variables.$spacing-06});
 
         &.large {
-          flex: 0 0 calc(25% - #{$spacing-06});
-          max-width: calc(25% - #{$spacing-06});
+          flex: 0 0 calc(25% - #{variables.$spacing-06});
+          max-width: calc(25% - #{variables.$spacing-06});
         }
       }
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         margin-left: 0;
       }
     }
   }
 
   &-box {
-    @include devicebreak(medium) {
-      margin-bottom: $spacing-06;
+    @include breakpoints.devicebreak(medium) {
+      margin-bottom: variables.$spacing-06;
 
       &.swiper-slide {
         height: auto;
         margin-left: 0;
-        margin-right: $font-size-20;
+        margin-right: variables.$font-size-20;
       }
     }
   }
@@ -54,22 +55,22 @@
       padding-bottom: 1.875rem;
       text-transform: uppercase;
 
-      @include devicebreak(medium) {
-        margin-right: $spacing-04;
+      @include breakpoints.devicebreak(medium) {
+        margin-right: variables.$spacing-04;
       }
 
-      @include devicebreak(large) {
+      @include breakpoints.devicebreak(large) {
         padding-bottom: 0;
       }
     }
 
     h3 {
-      font-size: $font-size-25;
+      font-size: variables.$font-size-25;
       font-weight: 700;
-      margin-bottom: $font-size-35;
-      padding-top: $font-size-20;
+      margin-bottom: variables.$font-size-35;
+      padding-top: variables.$font-size-20;
 
-      @include devicebreak(large) {
+      @include breakpoints.devicebreak(large) {
         font-size: 1.875rem;
         padding-top: 0;
       }
@@ -78,23 +79,23 @@
     >:nth-child(2) {
       position: relative;
 
-      @include devicebreak(large) {
-        margin-left: $spacing-10;
+      @include breakpoints.devicebreak(large) {
+        margin-left: variables.$spacing-10;
       }
 
       &::before {
         @extend %absolute__content;
 
-        @include transform(rotate(90deg));
+        @include mixins.transform(rotate(90deg));
 
-        background-color: $color-dark-red;
+        background-color: variables.$color-dark-red;
         height: 7rem;
         left: 3.5rem;
         top: -4rem;
         width: 3px;
 
-        @include devicebreak(large) {
-          @include transform(rotate(0));
+        @include breakpoints.devicebreak(large) {
+          @include mixins.transform(rotate(0));
 
           height: 80%;
           left: -60px;
@@ -108,21 +109,21 @@
     margin-left: 0;
     position: relative;
 
-    @include devicebreak(medium) {
-      margin-left: $spacing-10;
+    @include breakpoints.devicebreak(medium) {
+      margin-left: variables.$spacing-10;
     }
 
     &::before {
       @extend %absolute__content;
 
-      background: $color-dark-red;
+      background: variables.$color-dark-red;
       height: 7rem;
       left: 3.5rem;
       top: -4rem;
       transform: rotate(90deg);
       width: 3px;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         height: 80%;
         left: -60px;
         top: 0;
@@ -132,17 +133,17 @@
   }
 
   .swiper-initialized {
-    padding-right: $spacing-10;
+    padding-right: variables.$spacing-10;
 
-    @include devicebreak(medium) {
-      padding-right: $spacing-13;
+    @include breakpoints.devicebreak(medium) {
+      padding-right: variables.$spacing-13;
     }
 
     .swiper-scrollbar {
-      padding-right: $spacing-10;
+      padding-right: variables.$spacing-10;
 
-      @include devicebreak(medium) {
-        padding-right: $spacing-13;
+      @include breakpoints.devicebreak(medium) {
+        padding-right: variables.$spacing-13;
       }
     }
   }
@@ -152,49 +153,49 @@
   .pagehero-cards {
     &-top {
       >:nth-child(2) {
-        @include devicebreak(large) {
-          margin-right: $spacing-10;
+        @include breakpoints.devicebreak(large) {
+          margin-right: variables.$spacing-10;
         }
 
         &::before {
           right: 3.5rem;
 
-          @include devicebreak(large) {
+          @include breakpoints.devicebreak(large) {
             right: -60px;
           }
         }
       }
 
       h2 {
-        @include devicebreak(medium) {
-          margin-left: $spacing-04;
+        @include breakpoints.devicebreak(medium) {
+          margin-left: variables.$spacing-04;
           margin-right: 0;
         }
       }
     }
 
     .swiper-initialized {
-      padding-left: $spacing-10;
+      padding-left: variables.$spacing-10;
       padding-right: 0;
 
-      @include devicebreak(medium) {
-        padding-left: $spacing-13;
+      @include breakpoints.devicebreak(medium) {
+        padding-left: variables.$spacing-13;
       }
 
       .swiper-scrollbar {
-        padding-left: $spacing-10;
+        padding-left: variables.$spacing-10;
         padding-right: 0;
 
-        @include devicebreak(medium) {
-          padding-left: $spacing-13;
+        @include breakpoints.devicebreak(medium) {
+          padding-left: variables.$spacing-13;
         }
       }
 
-      .swiper-slide-active + .swiper-slide {
+      .swiper-slide-active+.swiper-slide {
         .cta__link {
           i {
             left: unset;
-            right: $spacing-05;
+            right: variables.$spacing-05;
           }
         }
       }

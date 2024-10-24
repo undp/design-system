@@ -1,6 +1,6 @@
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@use '../../assets/scss/breakpoints';
+@use '../../assets/scss/variables';
+@use '../../assets/scss/mixins';
 
 .sdg {
   &-card {
@@ -8,13 +8,13 @@
 
     align-items: center;
     display: block;
-    font-family: $Font-Family-SohneBreit;
+    font-family: variables.$Font-Family-SohneBreit;
     font-weight: 700;
     min-height: 210px;
-    padding: 2.188rem $spacing-06 $spacing-05;
+    padding: 2.188rem variables.$spacing-06 variables.$spacing-05;
     position: relative;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       cursor: url(~icons/arrow-right-white.svg), auto;
       display: flex;
       min-height: 160px;
@@ -22,25 +22,25 @@
     }
 
     strong {
-      color: $color-white;
+      color: variables.$color-white;
       display: inline-block;
       font-size: 2.938rem;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         font-size: 6.875rem;
         padding-left: 6.313rem;
       }
     }
 
     h4 {
-      color: $color-white;
-      font-size: $font-size-25;
+      color: variables.$color-white;
+      font-size: variables.$font-size-25;
       letter-spacing: 0.078rem;
       margin: 1.375rem 0 0;
       text-transform: uppercase;
       z-index: 1;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         font-size: 1.875rem;
         left: 18rem;
         letter-spacing: 0.094rem;
@@ -50,19 +50,19 @@
     }
 
     &-link {
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         cursor: url(~icons/arrow-right.svg), auto;
       }
 
       h4 {
-        color: $color-black;
+        color: variables.$color-black;
       }
 
       img {
         height: 50px;
         width: 50px;
 
-        @include devicebreak(medium) {
+        @include breakpoints.devicebreak(medium) {
           height: 130px;
           padding-left: 6.313rem;
           width: 130px;
@@ -71,211 +71,211 @@
     }
 
     &.sdg-color-1 {
-      background-color: $sdg-red;
+      background-color: variables.$sdg-red;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(228, 37, 58, 0),
-          rgba(228, 37, 58, 0) 10%,
-          $sdg-red);
+            rgba(228, 37, 58, 0),
+            rgba(228, 37, 58, 0) 10%,
+            variables.$sdg-red);
       }
     }
 
     &.sdg-color-2 {
-      background-color: $sdg-mustard;
+      background-color: variables.$sdg-mustard;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(222, 168, 60, 0),
-          rgba(222, 168, 60, 0) 80%,
-          $sdg-mustard);
+            rgba(222, 168, 60, 0),
+            rgba(222, 168, 60, 0) 80%,
+            variables.$sdg-mustard);
       }
     }
 
     &.sdg-color-3 {
-      background-color: $sdg-kelly-green;
+      background-color: variables.$sdg-kelly-green;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(78, 159, 56, 0),
-          rgba(78, 159, 56, 0) 80%,
-          $sdg-kelly-green);
+            rgba(78, 159, 56, 0),
+            rgba(78, 159, 56, 0) 80%,
+            variables.$sdg-kelly-green);
       }
     }
 
     &.sdg-color-4 {
-      background-color: $sdg-dark-red;
+      background-color: variables.$sdg-dark-red;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(197, 26, 45, 0),
-          rgba(197, 26, 45, 0) 80%,
-          $sdg-dark-red);
+            rgba(197, 26, 45, 0),
+            rgba(197, 26, 45, 0) 80%,
+            variables.$sdg-dark-red);
       }
     }
 
     &.sdg-color-5 {
-      background-color: $sdg-red-orange;
+      background-color: variables.$sdg-red-orange;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(255, 60, 35, 0),
-          rgba(255, 60, 35, 0) 80%,
-          $sdg-red-orange);
+            rgba(255, 60, 35, 0),
+            rgba(255, 60, 35, 0) 80%,
+            variables.$sdg-red-orange);
       }
     }
 
     &.sdg-color-6 {
-      background-color: $sdg-bright-blue;
+      background-color: variables.$sdg-bright-blue;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(39, 189, 227, 0),
-          rgba(39, 189, 227, 0) 80%,
-          $sdg-bright-blue);
+            rgba(39, 189, 227, 0),
+            rgba(39, 189, 227, 0) 80%,
+            variables.$sdg-bright-blue);
       }
     }
 
     &.sdg-color-7 {
-      background-color: $sdg-yellow;
+      background-color: variables.$sdg-yellow;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(253, 195, 10, 0),
-          rgba(253, 195, 10, 0) 80%,
-          $sdg-yellow);
+            rgba(253, 195, 10, 0),
+            rgba(253, 195, 10, 0) 80%,
+            variables.$sdg-yellow);
       }
     }
 
     &.sdg-color-8 {
-      background-color: $sdg-burgundy-red;
+      background-color: variables.$sdg-burgundy-red;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(162, 24, 67, 0),
-          rgba(162, 24, 67, 0) 80%,
-          $sdg-burgundy-red);
+            rgba(162, 24, 67, 0),
+            rgba(162, 24, 67, 0) 80%,
+            variables.$sdg-burgundy-red);
       }
     }
 
     &.sdg-color-9 {
-      background-color: $sdg-orange;
+      background-color: variables.$sdg-orange;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(254, 105, 36, 0),
-          rgba(254, 105, 36, 0) 80%,
-          $sdg-orange);
+            rgba(254, 105, 36, 0),
+            rgba(254, 105, 36, 0) 80%,
+            variables.$sdg-orange);
       }
     }
 
     &.sdg-color-10 {
-      background-color: $sdg-magenta;
+      background-color: variables.$sdg-magenta;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(222, 21, 104, 0),
-          rgba(222, 21, 104, 0) 80%,
-          $sdg-magenta);
+            rgba(222, 21, 104, 0),
+            rgba(222, 21, 104, 0) 80%,
+            variables.$sdg-magenta);
       }
     }
 
     &.sdg-color-11 {
-      background-color: $sdg-golden-yellow;
+      background-color: variables.$sdg-golden-yellow;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(254, 156, 37, 0),
-          rgba(254, 156, 37, 0) 80%,
-          $sdg-golden-yellow);
+            rgba(254, 156, 37, 0),
+            rgba(254, 156, 37, 0) 80%,
+            variables.$sdg-golden-yellow);
       }
     }
 
     &.sdg-color-12 {
-      background-color: $sdg-dark-mustard;
+      background-color: variables.$sdg-dark-mustard;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(191, 139, 46, 0),
-          rgba(191, 139, 46, 0) 80%,
-          $sdg-dark-mustard);
+            rgba(191, 139, 46, 0),
+            rgba(191, 139, 46, 0) 80%,
+            variables.$sdg-dark-mustard);
       }
     }
 
     &.sdg-color-13 {
-      background-color: $sdg-dark-green;
+      background-color: variables.$sdg-dark-green;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(62, 128, 69, 0),
-          rgba(62, 128, 69, 0) 80%,
-          $sdg-dark-green);
+            rgba(62, 128, 69, 0),
+            rgba(62, 128, 69, 0) 80%,
+            variables.$sdg-dark-green);
       }
     }
 
     &.sdg-color-14 {
-      background-color: $sdg-blue;
+      background-color: variables.$sdg-blue;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(12, 152, 218, 0),
-          rgba(12, 152, 218, 0) 80%,
-          $sdg-blue);
+            rgba(12, 152, 218, 0),
+            rgba(12, 152, 218, 0) 80%,
+            variables.$sdg-blue);
       }
     }
 
     &.sdg-color-15 {
-      background-color: $sdg-lime-green;
+      background-color: variables.$sdg-lime-green;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(88, 193, 44, 0),
-          rgba(88, 193, 44, 0) 80%,
-          $sdg-lime-green);
+            rgba(88, 193, 44, 0),
+            rgba(88, 193, 44, 0) 80%,
+            variables.$sdg-lime-green);
       }
     }
 
     &.sdg-color-16 {
-      background-color: $sdg-royal-blue;
+      background-color: variables.$sdg-royal-blue;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(3, 104, 157, 0),
-          rgba(3, 104, 157, 0) 80%,
-          $sdg-royal-blue);
+            rgba(3, 104, 157, 0),
+            rgba(3, 104, 157, 0) 80%,
+            variables.$sdg-royal-blue);
       }
     }
 
     &.sdg-color-17 {
-      background-color: $sdg-navy-blue;
+      background-color: variables.$sdg-navy-blue;
 
       .sdg-image::before {
         background-image:
           linear-gradient(270deg,
-          rgba(26, 73, 107, 0),
-          rgba(26, 73, 107, 0) 80%,
-          $sdg-navy-blue);
+            rgba(26, 73, 107, 0),
+            rgba(26, 73, 107, 0) 80%,
+            variables.$sdg-navy-blue);
       }
     }
 
     &.color-white {
-      background-color: $color-white;
+      background-color: variables.$color-white;
     }
 
     &:hover {
@@ -297,27 +297,27 @@
     &::before {
       @extend %absolute__content;
 
-      @include transition(background-color 0.5s linear);
+      @include mixins.transition(background-color 0.5s linear);
 
       z-index: 1;
     }
 
     img {
-      @include transition(opacity 0.5s ease);
+      @include mixins.transition(opacity 0.5s ease);
 
       display: none;
       height: 160px;
       opacity: 0;
       width: 100%;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         display: block;
       }
     }
   }
 }
 
-@include devicebreak(medium) {
+@include breakpoints.devicebreak(medium) {
   [dir='rtl'] {
     .sdg {
       &-card {
@@ -346,7 +346,7 @@
         margin-right: auto;
 
         &::before {
-          @include transform(scaleX(-1));
+          @include mixins.transform(scaleX(-1));
         }
       }
     }
@@ -357,15 +357,15 @@
 :lang(my) {
   .sdg-card {
     h4 {
-      font-family: $Font-Family-NotoSans;
+      font-family: variables.$Font-Family-NotoSans;
     }
   }
 }
 
-#{$cyrillic} {
+#{variables.$cyrillic} {
   .sdg-card {
     h4 {
-      font-family: $Font-Family-ProximaNova;
+      font-family: variables.$Font-Family-ProximaNova;
     }
   }
 }

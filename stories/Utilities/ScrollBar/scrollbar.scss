@@ -1,9 +1,6 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-
 /* scrollbar layout start */
 .scrollbar-horizontal-wrapper {
-  float: left;
+  float: inline-start;
   line-height: normal;
   max-width: var(--undpds-width-600);
   width: 100%;
@@ -34,9 +31,8 @@
 
 [dir='rtl'] {
 
-  .scrollbar-horizontal-wrapper,
   .scrollbar-vertical-wrapper {
-    float: right;
+    float: inline-start;
   }
 }
 

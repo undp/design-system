@@ -1,11 +1,10 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/variables';
 
 .mega-nav-option {
   @extend %frosted-bg;
 
-  @include transform(translateX(-50%));
+  @include mixins.transform(translateX(-50%));
 
   box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
   box-sizing: border-box;
@@ -56,11 +55,11 @@
           &:hover {
             .external-link-animated {
               &::after {
-                @include transform(translate(5px, -5px));
+                @include mixins.transform(translate(5px, -5px));
               }
 
               &::before {
-                @include transform(rotate(-45deg) translate(7px, 0));
+                @include mixins.transform(rotate(-45deg) translate(7px, 0));
               }
             }
           }
@@ -160,15 +159,15 @@
     animation-fill-mode: backwards;
 
     &.show-mega {
-      @include animation(circle-square-transition forwards 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
+      @include mixins.animation(circle-square-transition forwards 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
 
       >div {
-        @include animation(transition-opacity forwards 0.3s 0.3s);
+        @include mixins.animation(transition-opacity forwards 0.3s 0.3s);
       }
     }
 
     &.show-mega-back {
-      @include animation(circle-square-transition-back forwards 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
+      @include mixins.animation(circle-square-transition-back forwards 0.3s cubic-bezier(0.25, 0.27, 0.11, 0.99));
 
       box-shadow: none;
       display: block;
@@ -179,10 +178,10 @@
     }
 
     &.no-effect {
-      @include animation(none 0s 0s);
+      @include mixins.animation(none 0s 0s);
 
       >div {
-        @include animation(none 0s 0s);
+        @include mixins.animation(none 0s 0s);
 
         opacity: 1;
       }
@@ -220,52 +219,52 @@
 @keyframes circle-square-transition {
   0% {
     border-radius: 50%;
-    height: $spacing-50;
-    margin-top: -$spacing-70;
+    height: variables.$spacing-50;
+    margin-top: -(variables.$spacing-70);
     opacity: 0.4;
-    width: $spacing-100;
+    width: variables.$spacing-100;
   }
 
   15% {
     border-radius: 50%;
-    height: $width-150;
-    margin-top: -$spacing-70;
+    height: variables.$width-150;
+    margin-top: -(variables.$spacing-70);
     opacity: 0.25;
-    width: $width-180;
+    width: variables.$width-180;
   }
 
   30% {
     border-radius: 50%;
-    height: $width-600;
-    margin-top: -$spacing-330;
+    height: variables.$width-600;
+    margin-top: -(variables.$spacing-330);
     opacity: 0.5;
-    width: $width-600;
+    width: variables.$width-600;
   }
 
   45% {
     border-radius: 45%;
-    height: $width-705;
-    margin-top: -$spacing-330;
-    width: $width-705;
+    height: variables.$width-705;
+    margin-top: -(variables.$spacing-330);
+    width: variables.$width-705;
   }
 
   60% {
     border-radius: 0 0 80% 80%/0 0 70% 70%;
-    height: $width-840;
-    margin-top: -$spacing-330;
-    width: $width-900;
+    height: variables.$width-840;
+    margin-top: -(variables.$spacing-330);
+    width: variables.$width-900;
   }
 
   75% {
     border-radius: 0 0 50% 50%/0 0 20% 20%;
-    height: $width-900;
-    margin-top: -$spacing-330;
-    max-width: $width-1096;
+    height: variables.$width-900;
+    margin-top: -(variables.$spacing-330);
+    max-width: variables.$width-1096;
   }
 
   to {
     border-radius: 0;
-    height: $width-900;
+    height: variables.$width-900;
     opacity: 1;
   }
 }
@@ -273,53 +272,53 @@
 @keyframes circle-square-transition-back {
   0% {
     border-radius: 0;
-    height: $width-900;
+    height: variables.$width-900;
     opacity: 1;
   }
 
   15% {
     border-radius: 0 0 50% 50%/0 0 20% 20%;
-    height: $width-900;
-    margin-top: -$spacing-330;
-    max-width: $width-1096;
+    height: variables.$width-900;
+    margin-top: -(variables.$spacing-330);
+    max-width: variables.$width-1096;
   }
 
   30% {
     border-radius: 0 0 80% 80%/0 0 70% 70%;
-    height: $width-840;
-    margin-top: -$spacing-330;
-    width: $width-900;
+    height: variables.$width-840;
+    margin-top: -(variables.$spacing-330);
+    width: variables.$width-900;
   }
 
   45% {
     border-radius: 45%;
-    height: $width-705;
-    margin-top: -$spacing-330;
-    width: $width-705;
+    height: variables.$width-705;
+    margin-top: -(variables.$spacing-330);
+    width: variables.$width-705;
   }
 
   60% {
     border-radius: 50%;
-    height: $width-600;
-    margin-top: -$spacing-330;
+    height: variables.$width-600;
+    margin-top: -(variables.$spacing-330);
     opacity: 0.5;
-    width: $width-600;
+    width: variables.$width-600;
   }
 
   75% {
     border-radius: 50%;
-    height: $width-150;
-    margin-top: -$spacing-70;
+    height: variables.$width-150;
+    margin-top: -(variables.$spacing-70);
     opacity: 0.25;
-    width: $width-180;
+    width: variables.$width-180;
   }
 
   to {
     border-radius: 50%;
-    height: $spacing-50;
-    margin-top: -$spacing-70;
+    height: variables.$spacing-50;
+    margin-top: -(variables.$spacing-70);
     opacity: 0.4;
-    width: $spacing-100;
+    width: variables.$spacing-100;
   }
 }
 

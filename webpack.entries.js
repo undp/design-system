@@ -44,12 +44,12 @@ module.exports = (type = 'css') => {
     }
 
     // if base styling keep it in root
-    if (file.indexOf('assets/scss') > 0) {
+    if (file.indexOf('base-minimal') > 0) {
       objKey = `${cssPathPrefix}/${fileName}`;
     }
 
     // if scss is a partial then remove the leading '_'.
-    if (file.indexOf('/_') > 0) {
+    if (file.indexOf('_') > 0) {
       fileName = fileName.replace(/[_]/g, '');
       objKey = `${cssPathPrefix}/components/${fileName}`;
     }

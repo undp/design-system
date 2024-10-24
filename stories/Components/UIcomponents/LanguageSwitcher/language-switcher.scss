@@ -1,6 +1,6 @@
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
 
 /* language-switcher start */
 .dropdown-language {
@@ -8,10 +8,10 @@
   position: relative;
 
   ul {
-    @include transition(0.3s ease-in-out);
+    @include mixins.transition(0.3s ease-in-out);
 
     height: 0;
-    left: $spacing-05;
+    left: variables.$spacing-05;
     overflow: hidden;
     padding: 0;
     position: absolute;
@@ -26,16 +26,16 @@
       a {
         @extend %language_switcher;
 
-        background: $color-gray-200;
-        border-bottom: 1px solid $color-gray-400;
+        background: variables.$color-gray-200;
+        border-bottom: 1px solid variables.$color-gray-400;
         box-shadow: 0 3px 4px rgb(0 0 0 / 10%);
         display: block;
-        padding: $spacing-04 $spacing-05;
+        padding: variables.$spacing-04 variables.$spacing-05;
 
         &:hover,
         &:focus,
         &:active {
-          background-color: $color-gray-400;
+          background-color: variables.$color-gray-400;
         }
       }
     }
@@ -43,7 +43,7 @@
 
   &.active {
     button::after {
-      @include transform(rotateZ(180deg));
+      @include mixins.transform(rotateZ(180deg));
     }
 
     ul {
@@ -56,21 +56,21 @@
 
     align-items: center;
     background-color: transparent;
-    color: $color-blue-600;
+    color: variables.$color-blue-600;
     cursor: pointer;
     display: flex;
     padding: 0;
 
     &::before {
-      background-color: $color-blue-600;
+      background-color: variables.$color-blue-600;
       content: '';
       height: 26px;
-      margin-right: $spacing-03;
+      margin-right: variables.$spacing-03;
       -webkit-mask: url(~icons/language.svg) no-repeat left center;
       mask: url(~icons/language.svg) no-repeat left center;
       width: 25px;
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         background: transparent url(~icons/language.svg) no-repeat left center;
         -webkit-mask: inherit;
         mask: inherit;
@@ -78,17 +78,17 @@
     }
 
     &::after {
-      @include transition(transform 0.2s ease-in-out);
+      @include mixins.transition(transform 0.2s ease-in-out);
 
-      background-color: $color-blue-600;
+      background-color: variables.$color-blue-600;
       content: '';
       height: 10px;
-      margin-left: $spacing-03;
+      margin-left: variables.$spacing-03;
       -webkit-mask: url(~icons/arrow-blue.svg) no-repeat left center;
       mask: url(~icons/arrow-blue.svg) no-repeat left center;
       width: 15px;
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         background: transparent url(~icons/arrow-blue.svg) no-repeat left center;
         -webkit-mask: inherit;
         mask: inherit;
@@ -97,7 +97,7 @@
 
     &:focus,
     &:hover {
-      color: $color-blue-400;
+      color: variables.$color-blue-400;
 
       &::before,
       &::after {
@@ -107,11 +107,12 @@
     }
 
     &.white {
-      color: $color-white;
+      color: variables.$color-white;
 
       &:focus,
       &:hover {
-        filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);;
+        filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+        ;
       }
 
       &::before {
@@ -138,14 +139,14 @@
     }
 
     button::before {
-      margin-left: $spacing-03;
+      margin-left: variables.$spacing-03;
       margin-right: 0;
       transform: scaleX(-1);
     }
 
     button::after {
       margin-left: 0;
-      margin-right: $spacing-03;
+      margin-right: variables.$spacing-03;
     }
   }
 }
@@ -154,7 +155,7 @@
 :lang(my) {
   .dropdown-language {
     button {
-      font-family: $Font-Family-NotoSans;
+      font-family: variables.$Font-Family-NotoSans;
     }
   }
 }

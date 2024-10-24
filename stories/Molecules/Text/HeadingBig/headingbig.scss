@@ -1,18 +1,18 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
 
 /* heading-big cta start */
 .heading-big {
-  @include transition(all 0.5s);
+  @include mixins.transition(all 0.5s);
 
   justify-content: center;
   opacity: 1;
-  padding: $width-150 0 10.938rem;
+  padding: variables.$width-150 0 10.938rem;
   z-index: 5;
 
-  @include devicebreak(medium) {
-    padding: $spacing-400 0 $spacing-320;
+  @include breakpoints.devicebreak(medium) {
+    padding: variables.$spacing-400 0 variables.$spacing-320;
   }
 
   // &.inviewport {
@@ -20,28 +20,28 @@
   // }
 
   h2 {
-    color: $color-white;
-    margin-bottom: $spacing-09;
+    color: variables.$color-white;
+    margin-bottom: variables.$spacing-09;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin-bottom: 0;
     }
   }
 
   h4 {
-    color: $color-white;
+    color: variables.$color-white;
   }
 
   ul {
-    color: $color-white;
-    margin-top: $spacing-08;
+    color: variables.$color-white;
+    margin-top: variables.$spacing-08;
   }
 }
 
 .color-blue {
-  @include transition(background-color 0.5s ease);
+  @include mixins.transition(background-color 0.5s ease);
 
-  background-color: $color-ebony-clay;
+  background-color: variables.$color-ebony-clay;
 }
 
 .change-background {
@@ -50,7 +50,7 @@
 
 :root {
   --light: $color-white;
-  --blue: #{$color-ebony-clay};
+  --blue: #{variables.$color-ebony-clay};
 }
 
 body {
@@ -58,7 +58,7 @@ body {
 }
 
 .color-blue {
-  color: $color-white;
+  color: variables.$color-white;
 }
 
 /* heading-big cta end */

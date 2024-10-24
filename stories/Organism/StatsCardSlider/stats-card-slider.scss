@@ -1,12 +1,12 @@
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
+@use '../../assets/scss/breakpoints';
+@use '../../assets/scss/variables';
 
 $backgroundcolors: (
-  'yellow': $color-yellow,
-  'red': $color-red,
-  'green': $color-green,
-  'blue': $color-azure,
-  'gray': $color-gray-100
+  'yellow': variables.$color-yellow,
+  'red': variables.$color-red,
+  'green': variables.$color-green,
+  'blue': variables.$color-azure,
+  'gray': variables.$color-gray-100
 );
 
 .stats-slider {
@@ -26,8 +26,8 @@ $backgroundcolors: (
   }
 
   .swiper-scrollbar {
-    @include devicebreak(medium) {
-      padding-right: $spacing-44;
+    @include breakpoints.devicebreak(medium) {
+      padding-right: variables.$spacing-44;
     }
   }
 }
@@ -36,8 +36,8 @@ $backgroundcolors: (
   .stats-slider {
     &.swiper-initialized {
       .swiper-scrollbar {
-        @include devicebreak(medium) {
-          padding-left: $spacing-44;
+        @include breakpoints.devicebreak(medium) {
+          padding-left: variables.$spacing-44;
         }
       }
     }

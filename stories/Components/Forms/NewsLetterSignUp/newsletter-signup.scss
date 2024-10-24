@@ -1,5 +1,6 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@use '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
 
 /* signup newsletter start */
 .sign-up {
@@ -9,10 +10,10 @@
     font-size: var(--undpds-font-size-16);
     line-height: 1.4;
     margin-bottom: var(--undpds-spacing-04);
-    text-align: left;
+    text-align: start;
     text-transform: none;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       text-align: right;
     }
   }
@@ -26,7 +27,7 @@
       margin-top: 0;
       width: calc(100% - 86px);
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         width: calc(100% - 107px);
       }
     }
@@ -47,7 +48,7 @@
   }
 
   .form-submit {
-    -webkit-appearance: none;
+    appearance: none;
     background-color: var(--undpds-color-white);
     border-radius: 0;
     color: var(--undpds-color-blue-600);
@@ -57,7 +58,7 @@
     padding: 0;
     text-transform: uppercase;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       min-width: 107px;
     }
   }
@@ -88,9 +89,6 @@
 
 [dir='rtl'] {
   .sign-up {
-    label {
-      text-align: right;
-    }
 
     &--field {
       justify-content: flex-start;

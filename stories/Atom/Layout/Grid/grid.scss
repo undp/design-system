@@ -1,6 +1,6 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
 
 /* layout  */
 .grid_name {
@@ -10,7 +10,7 @@
   margin-top: var(--undpds-spacing-05);
   min-height: 28px;
 
-  @include devicebreak(small) {
+  @include breakpoints.devicebreak(small) {
     font-size: 1.625rem;
   }
 

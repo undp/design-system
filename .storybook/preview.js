@@ -35,8 +35,7 @@ export const parameters = {
     },
   },
   viewport: {
-    // viewports: INITIAL_VIEWPORTS,
-    viewports: {
+    options: {
       small: { name: "Small", styles: { width: "375px", height: "812px" } },
       medium: { name: "Medium", styles: { width: "768px", height: "900px" } },
       large: { name: "Large", styles: { width: "1380px", height: "768px" } },

@@ -1,6 +1,6 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/breakpoints';
 
 // Color map
 $colors: (
@@ -15,7 +15,7 @@ $colors: (
   container: biocard / inline-size;
 
   a {
-    @include transition(0.6s ease);
+    @include mixins.transition(0.6s ease);
 
     background: var(--undpds-color-gray-200);
     display: block;
@@ -43,7 +43,7 @@ $colors: (
     }
 
     .card-thumbnail__image::before {
-      @include background-image(67.76deg, var(--undpds-color-yellow), transparent 61.11%);
+      @include mixins.background-image(67.76deg, var(--undpds-color-yellow), transparent 61.11%);
 
       opacity: 0.75;
     }
@@ -54,7 +54,7 @@ $colors: (
       .accent-#{$name} &,
       &.#{$name} {
         .card-thumbnail__image::before {
-          @include background-image(67.76deg, #{$color}, transparent 61.11%);
+          @include mixins.background-image(67.76deg, #{$color}, transparent 61.11%);
           opacity: 0.75;
         }
       }
@@ -67,7 +67,7 @@ $colors: (
           &.accent-#{$name2},
           &.#{$name2} {
             .card-thumbnail__image::before {
-              @include background-image(67.76deg, #{$color2}, transparent 61.11%);
+              @include mixins.background-image(67.76deg, #{$color2}, transparent 61.11%);
               opacity: 0.75;
             }
           }
@@ -83,13 +83,13 @@ $colors: (
     position: relative;
     overflow: hidden;
 
-    // @include devicebreak(medium) {
+    // @include breakpoints.devicebreak(medium) {
     //   // background: none;
     //   display: flex;
     //   order: inherit;
     // }
 
-    @include container(medium, biocard) {
+    @include breakpoints.container(medium, biocard) {
       display: flex;
       order: inherit;
     }
@@ -101,7 +101,7 @@ $colors: (
     .card-thumbnail__image {
       // order: 1;
 
-      // @include devicebreak(medium) {
+      // @include breakpoints.devicebreak(medium) {
       //   order: inherit;
       // }
 
@@ -113,25 +113,25 @@ $colors: (
     h5 {
       margin-bottom: var(--undpds-spacing-05);
 
-      // @include devicebreak(medium) {
-      @include container(medium, biocard) {
+      // @include breakpoints.devicebreak(medium) {
+      @include breakpoints.container(medium, biocard) {
         margin-bottom: var(--undpds-spacing-04);
       }
     }
 
     p {
-      font-size: $font-size-14;
+      font-size: variables.$font-size-14;
       line-height: 1.4;
       margin-bottom: var(--undpds-spacing-07);
 
-      // @include devicebreak(medium) {
-      @include container(medium, biocard) {
-        font-size: $font-size-16;
+      // @include breakpoints.devicebreak(medium) {
+      @include breakpoints.container(medium, biocard) {
+        font-size: variables.$font-size-16;
         margin-bottom: var(--undpds-spacing-06);
       }
 
       &.small {
-        font-size: $font-size-14;
+        font-size: variables.$font-size-14;
       }
     }
 
@@ -140,8 +140,8 @@ $colors: (
       margin-top: var(--undpds-spacing-06);
       padding: 0 var(--undpds-spacing-06) var(--undpds-spacing-07);
 
-      // @include devicebreak(medium) {
-      @include container(medium, biocard) {
+      // @include breakpoints.devicebreak(medium) {
+      @include breakpoints.container(medium, biocard) {
         margin-top: auto;
       }
     }
@@ -166,13 +166,13 @@ $colors: (
   overflow-y: scroll;
   overflow-y: auto;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     display: flex;
   }
 
   p {
     &.small {
-      font-size: $font-size-16;
+      font-size: variables.$font-size-16;
     }
   }
 }
@@ -180,16 +180,16 @@ $colors: (
 .bio-card-image {
   width: 100%;
 
-  // @include devicebreak(medium) {
-  @include container(medium, biocardwrapper) {
+  // @include breakpoints.devicebreak(medium) {
+  @include breakpoints.container(medium, biocardwrapper) {
     min-width: 338px;
   }
 
   img {
     width: 100%;
 
-    // @include devicebreak(medium) {
-    @include container(medium, biocard) {
+    // @include breakpoints.devicebreak(medium) {
+    @include breakpoints.container(medium, biocard) {
       width: auto;
     }
   }
@@ -198,8 +198,8 @@ $colors: (
 .bio-card-content {
   padding: var(--undpds-spacing-07) var(--undpds-spacing-06);
 
-  // @include devicebreak(medium) {
-  @include container(medium) {
+  // @include breakpoints.devicebreak(medium) {
+  @include breakpoints.container(medium) {
     padding: 0 var(--undpds-spacing-06) 0;
   }
 
@@ -224,11 +224,11 @@ $colors: (
 
       //cta
       .cta--arrow::after {
-        @include transform(translate(0, 0) rotate(180deg));
+        @include mixins.transform(translate(0, 0) rotate(180deg));
       }
 
       .card-thumbnail__image::before {
-        @include background-image(297deg, var(--undpds-color-yellow), transparent 61.11%);
+        @include mixins.background-image(297deg, var(--undpds-color-yellow), transparent 61.11%);
       }
 
       @each $name,
@@ -237,7 +237,7 @@ $colors: (
         .accent-#{$name} &,
         &.#{$name} {
           .card-thumbnail__image::before {
-            @include background-image(297deg, #{$color}, transparent 61.11%);
+            @include mixins.background-image(297deg, #{$color}, transparent 61.11%);
           }
         }
 
@@ -249,7 +249,7 @@ $colors: (
             &.accent-#{$name2},
             &.#{$name2} {
               .card-thumbnail__image::before {
-                @include background-image(297deg, #{$color}, transparent 61.11%);
+                @include mixins.background-image(297deg, #{$color}, transparent 61.11%);
               }
             }
           }

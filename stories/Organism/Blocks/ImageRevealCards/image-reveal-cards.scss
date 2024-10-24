@@ -1,9 +1,9 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
 
 .image-reveal-card {
-  @include devicebreak(small) {
+  @include breakpoints.devicebreak(small) {
     margin-top: 3.75rem;
   }
 }
@@ -11,7 +11,7 @@
 .reveal-head {
   margin-bottom: var(--undpds-spacing-06);
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     margin-bottom: var(--undpds-spacing-08);
   }
 }

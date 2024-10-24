@@ -1,38 +1,38 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-@import '../../assets/scss/breakpoints';
+@use '../../assets/scss/variables';
+@use '../../assets/scss/mixins';
+@use '../../assets/scss/breakpoints';
 
 /* author page start */
 .author-page {
   //margin-top: $spacing-76;
 
-  @include devicebreak(xlarge) {
+  @include breakpoints.devicebreak(xlarge) {
     //margin-top: 7.25rem;
   }
 
   .authorheading {
     display: none;
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       display: block;
       font-weight: 700;
-      padding: 0 $spacing-06 $spacing-05;
+      padding: 0 variables.$spacing-06 variables.$spacing-05;
     }
   }
 
   .breadcrumb {
-    margin: $spacing-05 0 2.563rem;
+    margin: variables.$spacing-05 0 2.563rem;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin: 4.25rem 0 3.5625rem;
     }
   }
 
   .author-content {
     margin-bottom: 8rem;
-    margin-top: $spacing-11;
+    margin-top: variables.$spacing-11;
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       margin-bottom: 2.375rem;
 
       h2 {
@@ -40,7 +40,7 @@
       }
 
       .button {
-        margin: 0 $spacing-06;
+        margin: 0 variables.$spacing-06;
       }
     }
   }
@@ -49,7 +49,7 @@
 [dir='rtl'] {
   .author-page {
     .medium-offset-1 {
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         margin-left: 0;
         margin-right: 0;
       }

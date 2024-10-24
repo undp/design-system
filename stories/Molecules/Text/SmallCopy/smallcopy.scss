@@ -1,21 +1,18 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
-
 /* small copy start */
 .smallcopy__box {
-  margin-bottom: $spacing-02;
+  margin-bottom: var(--undpds-spacing-02);
 
   &-locale {
-    margin-bottom: $spacing-07;
+    margin-bottom: var(--undpds-spacing-07);
 
     strong {
-      font-size: $font-size-16;
+      font-size: var(--undpds-font-size-16);
       letter-spacing: 0.03em;
     }
   }
 
   strong {
-    margin-right: $spacing-02;
+    margin-right: var(--undpds-spacing-02);
   }
 }
 
