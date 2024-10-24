@@ -8,8 +8,6 @@ import renderToHTML from './renderToHTML'
 import '!style-loader!css-loader!sass-loader!../docs/css/components/documentation.min.css'
 import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss'
 
-import './preview.scss';
-
 // Log the contents of RTLAddon for debugging
 
 // console.log(RTLAddon);

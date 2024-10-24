@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build --loglevel verbose"
+    "build-storybook": "storybook build --loglevel verbose",
+    "build-tokens": "node build-figma-tokens.js"
   },
   "keywords": [
     "UNDP",
@@ -110,6 +111,7 @@
     "svg-spritemap-webpack-plugin": "^4.5.0",
     "svgo": "^3.0.2",
     "svgo-loader": "^4.0.0",
+    "token-transformer": "^0.0.33",
     "webpack": "^5.85.0",
     "webpack-cli": "^5.1.4",
     "webpack-remove-empty-scripts": "^1.0.4"
