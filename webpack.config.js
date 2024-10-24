@@ -69,6 +69,7 @@ module.exports = [
         // '../../../assets/icons/chevron-small-right.svg': path.resolve(__dirname, 'stories/assets/icons/chevron-small-right.svg'),
       },
       extensions: ['.ts', '.js'],
+      preferRelative: true,
     },
     optimization: {
       minimizer: [
@@ -98,6 +99,7 @@ module.exports = [
       new RemoveEmptyScripts(),
       new MiniCssExtractPlugin({
         filename: '[name].min.css',
+        experimentalUseImportModule: true,
       }),
       // delete fonts from the root directory
       // new RemovePlugin({
@@ -120,11 +122,14 @@ module.exports = [
       alias: {
         icons: path.resolve(__dirname, 'stories/assets/icons'),
       },
+      preferRelative: true,
     },
     output: {
       path: path.resolve(__dirname, 'docs'),
       filename: '[name].min.js',
-      libraryTarget: 'umd',
+      library: {
+        type: 'umd',
+      },
     },
     externals: {
       jquery: 'jQuery',
