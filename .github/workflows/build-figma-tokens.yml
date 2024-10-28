@@ -61,5 +61,4 @@ jobs:
           title: "Update SCSS variables from Figma tokens"
           body: "This PR updates SCSS variables based on the latest Figma tokens."
           base: develop
-          delete-branch: true # Delete branch after merge
-
+          # delete-branch: true # Delete branch after merge
