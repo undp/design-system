@@ -6,7 +6,7 @@ on:
       - 'figma-tokens/input/**'
 
 jobs:
-  build_tokens:
+  transform_tokens:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,10 +23,19 @@ jobs:
       - name: Transform Figma tokens
         run: npx token-transformer figma-tokens/input/tokens.json figma-tokens/input/tokens-transformed.json
 
+
+  build_tokens:
+    runs-on: ubuntu-latest
+    needs: [transform_tokens]
+    steps:
       # Run script for Style Dictionary, convert JSON to SCSS
       - name: Build Figma tokens to SCSS
         run: npm run build-tokens
 
+  commit_and_pull_request:
+    runs-on: ubuntu-latest
+    needs: [build_tokens]
+    steps:
       # Automatically add and commit all changes including SCSS
       - name: Auto commit updated tokens and SCSS
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -46,3 +55,4 @@ jobs:
           body: "This PR updates SCSS variables based on the latest Figma tokens."
           base: develop
           delete-branch: true # Delete branch after merge
+
