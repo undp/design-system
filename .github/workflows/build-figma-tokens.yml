@@ -28,6 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [transform_tokens]
     steps:
+      - name: Print working directory
+        run: pwd
       # Run script for Style Dictionary, convert JSON to SCSS
       - name: Build Figma tokens to SCSS
         run: npm run build-tokens
