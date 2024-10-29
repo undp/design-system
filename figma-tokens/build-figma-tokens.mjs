@@ -1,5 +1,3 @@
-import StyleDictionary from 'style-dictionary';
+const StyleDictionary = require('style-dictionary').extend('./config/config.json');
 
-const sd = StyleDictionary.extend('./config/config.json');
-
-await sd.buildAllPlatforms();
+StyleDictionary.buildAllPlatforms();
