@@ -1,3 +1,4 @@
-const StyleDictionary = require('style-dictionary').extend('./config/config.json');
+import StyleDictionary from 'style-dictionary';
 
-StyleDictionary.buildAllPlatforms();
+const sd = new StyleDictionary('./figma-tokens/config/config.json');
+await sd.buildAllPlatforms();
