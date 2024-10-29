@@ -1,0 +1,15 @@
+{
+  "source": ["../../figma-tokens/input/**/*.json"],
+  "platforms": {
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "../../../stories/assets/scss/figma-scss/",
+      "files": [
+        {
+          "destination": "_figma-variables.scss",
+          "format": "scss/variables"
+        }
+      ]
+    }
+  }
+}
