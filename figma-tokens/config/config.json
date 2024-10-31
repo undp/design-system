@@ -1,9 +1,9 @@
 {
-  "source": ["../transformed-tokens/*.json"],
+  "source": ["./figma-tokens/transformed-tokens/**/*.json"],
   "platforms": {
     "scss": {
       "transformGroup": "scss",
-      "buildPath": "../../stories/assets/scss/figma-scss/",
+      "buildPath": "./stories/assets/scss/figma-scss/",
       "files": [
         {
           "destination": "_figma-variables.scss",
