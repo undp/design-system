@@ -37,9 +37,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "build: update SCSS variables and tokens"
-          file_pattern: |
-            stories/assets/scss/figma-scss/_figma-variables.scss
-            figma-tokens/transformed-tokens/tokens-transformed.json
+          file_pattern: stories/assets/scss/figma-scss/_figma-variables.scss
           branch: update-figma-tokens # Commit to the new branch
 
       # Automatic pull request
@@ -52,4 +50,3 @@ jobs:
           commit-message: "build: update SCSS variables from Figma tokens"
           title: "Update SCSS variables from Figma tokens"
           body: "This PR updates SCSS variables based on the latest Figma tokens."
-          delete-branch: true
