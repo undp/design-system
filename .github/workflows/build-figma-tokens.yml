@@ -28,11 +28,16 @@ jobs:
       - name: Build Figma tokens to SCSS
         run: npm run build-tokens
 
-      # Create a new branch for the pull request
-      - name: Create new branch
+      # Create a new branch or checkout the existing one
+      - name: Create or checkout branch
         run: |
-          git checkout -b update-figma-tokens
-          git push origin update-figma-tokens
+          git fetch origin
+          if git show-ref --quiet refs/heads/update-figma-tokens; then
+            git checkout update-figma-tokens
+            git pull origin update-figma-tokens # Pull changes from remote
+          else
+            git checkout -b update-figma-tokens
+          fi
 
       # Automatically add and commit all changes including SCSS
       - name: Auto commit updated tokens and SCSS
