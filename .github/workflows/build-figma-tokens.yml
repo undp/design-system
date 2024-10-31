@@ -45,9 +45,9 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: update-figma-tokens # Branch to be created for pull request
+          branch: update-figma-tokens
+          base: develop  # Target branch for the PR
           commit-message: "build: update SCSS variables from Figma tokens"
           title: "Update SCSS variables from Figma tokens"
           body: "This PR updates SCSS variables based on the latest Figma tokens."
-          base: develop
-          delete-branch: true # Delete branch after merge
+          delete-branch: true
