@@ -28,6 +28,10 @@ jobs:
       - name: Build Figma tokens to SCSS
         run: npm run build-tokens
 
+      # Ensure the branch exists before committing
+      - name: Create or switch to branch
+        run: git switch -C update-figma-tokens
+
       # Automatically add and commit all changes including SCSS
       - name: Auto commit updated tokens and SCSS
         uses: stefanzweifel/git-auto-commit-action@v4
