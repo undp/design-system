@@ -37,54 +37,41 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin
 
-          # Create directories if they do not exist
-          mkdir -p figma-tokens/transformed-tokens
-          mkdir -p stories/assets/scss/figma-scss
-
-          # Create files if they do not exist
-          if [ ! -f figma-tokens/transformed-tokens/tokens-transformed.json ]; then
-            echo "{}" > figma-tokens/transformed-tokens/tokens-transformed.json
-          fi
-
-          if [ ! -f stories/assets/scss/figma-scss/_figma-variables.scss ]; then
-            touch stories/assets/scss/figma-scss/_figma-variables.scss
-          fi
-
           # Add and commit changes before creating or updating a branch
-          git add figma-tokens/transformed-tokens/tokens-transformed.json
+          # git add figma-tokens/transformed-tokens/tokens-transformed.json
           git add stories/assets/scss/figma-scss/_figma-variables.scss
           git commit -m "Save changes before switching branch" || echo "No changes to commit"
 
-          # Check if remote branch exists
-          if git ls-remote --exit-code --heads origin update-figma-tokens; then
-            git checkout update-figma-tokens
-            git pull --rebase origin update-figma-tokens
-          else
-            git checkout -b update-figma-tokens
-          fi
+          # # Check if remote branch exists
+          # if git ls-remote --exit-code --heads origin update-figma-tokens; then
+          #   git checkout update-figma-tokens
+          #   git pull --rebase origin update-figma-tokens
+          # else
+          #   git checkout -b update-figma-tokens
+          # fi
 
-          git add stories/assets/scss/figma-scss/_figma-variables.scss
-          git commit -m "Save changes in new branch" || echo "No changes to commit"
+          # git add stories/assets/scss/figma-scss/_figma-variables.scss
+          # git commit -m "Save changes in new branch" || echo "No changes to commit"
 
       # Push changes to `update-figma-tokens` branch
       - name: Push changes
         run: |
-          git push origin update-figma-tokens || echo "No changes to push"
+          git push origin ${{ github.ref_name }} || echo "No changes to push"
 
-      # Automatically add and commit all changes including SCSS
-      - name: Auto commit updated tokens and SCSS
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "build: update SCSS variables and tokens"
-          file_pattern: stories/assets/scss/figma-scss/_figma-variables.scss
-          branch: update-figma-tokens # Commit to the new branch
+      # # Automatically add and commit all changes including SCSS
+      # - name: Auto commit updated tokens and SCSS
+      #   uses: stefanzweifel/git-auto-commit-action@v4
+      #   with:
+      #     commit_message: "build: update SCSS variables and tokens"
+      #     file_pattern: stories/assets/scss/figma-scss/_figma-variables.scss
+      #     branch: update-figma-tokens # Commit to the new branch
 
       # Automatic pull request
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: update-figma-tokens
+          branch: ${{ github.ref_name }}
           base: develop  # Target branch for the PR
           commit-message: "build: update SCSS variables from Figma tokens"
           title: "Update SCSS variables from Figma tokens"
