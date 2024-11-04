@@ -11,12 +11,12 @@
 
   &.show-medium {
     h6 {
-      border-bottom: 2px solid variables.$color-black;
+      border-bottom: 2px solid var(--undpds-color-black);
 
       &:hover,
       &:focus,
       &:active {
-        background-color: variables.$color-gray-400;
+        background-color: var(--undpds-color-gray-400);
       }
 
       &::after {
@@ -41,25 +41,25 @@
       &:hover,
       &:focus,
       &:active {
-        background-color: variables.$color-gray-400;
+        background-color: var(--undpds-color-gray-400);
       }
 
-      // @include breakpoints.devicebreak(large) {
+      // @include devicebreak(large) {
 
       //     &:hover {
-      //       // background-color: $color-gray-300;
-      //       background-color: $color-gray-400;
+      //       // background-color: var(--undpds-color-gray-300);
+      //       background-color: var(--undpds-color-gray-400);
       //     }
       //   }
     }
   }
 
   h6 {
-    background-color: variables.$color-gray-300;
+    background-color: var(--undpds-color-gray-300);
     cursor: pointer;
     display: block;
     margin-bottom: 0;
-    padding: variables.$spacing-05;
+    padding: var(--undpds-spacing-05);
     position: relative;
 
     @include breakpoints.devicebreak(large) {
@@ -93,12 +93,12 @@
       }
 
       &>a {
-        background-color: variables.$color-blue-600;
-        color: variables.$color-white;
+        background-color: var(--undpds-color-blue-600);
+        color: var(--undpds-color-white);
 
-        @include breakpoints.devicebreak(large) {
-          background-color: variables.$color-blue-600;
-          color: variables.$color-white;
+        @include devicebreak(large) {
+          background-color: var(--undpds-color-blue-600);
+          color: var(--undpds-color-white);
         }
       }
 
@@ -107,14 +107,14 @@
 
         top: 1.125rem;
 
-        @include breakpoints.devicebreak(large) {
-          top: variables.$spacing-06;
+        @include devicebreak(large) {
+          top: var(--undpds-spacing-06);
         }
       }
     }
 
     &>li {
-      background-color: variables.$color-gray-300;
+      background-color: var(--undpds-color-gray-300);
       position: relative;
 
       @include breakpoints.devicebreak(large) {
@@ -139,7 +139,7 @@
         &::after {
           @extend %sidebar-chevron;
 
-          top: variables.$spacing-06;
+          top: var(--undpds-spacing-06);
 
           @include breakpoints.devicebreak(large) {
             top: 2.063rem;
@@ -159,30 +159,30 @@
 
           border: none;
           display: block;
-          font-size: variables.$font-size-14;
+          font-size: var(--undpds-font-size-14);
           font-weight: 400;
-          padding: variables.$spacing-05 variables.$spacing-06 variables.$spacing-05 variables.$spacing-07;
+          padding: var(--undpds-spacing-05) var(--undpds-spacing-06) var(--undpds-spacing-05) var(--undpds-spacing-07);
 
-          @include breakpoints.devicebreak(large) {
-            font-size: variables.$font-size-16;
-            padding-left: variables.$spacing-09;
+          @include devicebreak(large) {
+            font-size: var(--undpds-font-size-16);
+            padding-left: var(--undpds-spacing-09);
           }
         }
 
         &:first-of-type a {
           background-color: transparent;
-          color: variables.$color-black;
+          color: var(--undpds-color-black);
 
           &:hover,
           &:focus,
           &:active {
-            background-color: variables.$color-gray-400;
+            background-color: var(--undpds-color-gray-400);
           }
 
           // @include breakpoints.devicebreak(large) {
           //   &:hover {
-          //     // background-color: $color-gray-300;
-          //     background-color: $color-gray-400;
+          //     // background-color: var(--undpds-color-gray-300;
+          //     background-color: var(--undpds-color-gray-400;
           //   }
           // }
         }
@@ -200,13 +200,13 @@
         a {
           @include breakpoints.devicebreak(large) {
             font-size: 0.875rem;
-            padding-left: variables.$spacing-07;
+            padding-left: var(--undpds-spacing-07);
           }
         }
 
         &:last-of-type a {
-          @include breakpoints.devicebreak(large) {
-            margin-bottom: variables.$spacing-08;
+          @include devicebreak(large) {
+            margin-bottom: var(--undpds-spacing-08);
           }
         }
       }
@@ -247,7 +247,7 @@
 
     button {
       float: left;
-      margin-left: variables.$spacing-06;
+      margin-left: var(--undpds-spacing-06);
       margin-right: 0;
     }
 
@@ -255,9 +255,9 @@
       ul.accordion__panel {
         li {
           a {
-            @include breakpoints.devicebreak(large) {
-              padding-left: variables.$spacing-06;
-              padding-right: variables.$spacing-07;
+            @include devicebreak(large) {
+              padding-left: var(--undpds-spacing-06);
+              padding-right: var(--undpds-spacing-07);
             }
           }
         }

@@ -11,7 +11,7 @@
     @include mixins.transition(0.3s ease-in-out);
 
     height: 0;
-    left: variables.$spacing-05;
+    left: var(--undpds-spacing-05);
     overflow: hidden;
     padding: 0;
     position: absolute;
@@ -26,16 +26,16 @@
       a {
         @extend %language_switcher;
 
-        background: variables.$color-gray-200;
-        border-bottom: 1px solid variables.$color-gray-400;
+        background: var(--undpds-color-gray-200);
+        border-bottom: 1px solid var(--undpds-color-gray-400);
         box-shadow: 0 3px 4px rgb(0 0 0 / 10%);
         display: block;
-        padding: variables.$spacing-04 variables.$spacing-05;
+        padding: var(--undpds-spacing-04) var(--undpds-spacing-05);
 
         &:hover,
         &:focus,
         &:active {
-          background-color: variables.$color-gray-400;
+          background-color: var(--undpds-color-gray-400);
         }
       }
     }
@@ -56,16 +56,16 @@
 
     align-items: center;
     background-color: transparent;
-    color: variables.$color-blue-600;
+    color: var(--undpds-color-blue-600);
     cursor: pointer;
     display: flex;
     padding: 0;
 
     &::before {
-      background-color: variables.$color-blue-600;
+      background-color: var(--undpds-color-blue-600);
       content: '';
       height: 26px;
-      margin-right: variables.$spacing-03;
+      margin-right: var(--undpds-spacing-03);
       -webkit-mask: url(~icons/language.svg) no-repeat left center;
       mask: url(~icons/language.svg) no-repeat left center;
       width: 25px;
@@ -80,10 +80,10 @@
     &::after {
       @include mixins.transition(transform 0.2s ease-in-out);
 
-      background-color: variables.$color-blue-600;
+      background-color: var(--undpds-color-blue-600);
       content: '';
       height: 10px;
-      margin-left: variables.$spacing-03;
+      margin-left: var(--undpds-spacing-03);
       -webkit-mask: url(~icons/arrow-blue.svg) no-repeat left center;
       mask: url(~icons/arrow-blue.svg) no-repeat left center;
       width: 15px;
@@ -97,7 +97,7 @@
 
     &:focus,
     &:hover {
-      color: variables.$color-blue-400;
+      color: var(--undpds-color-blue-400);
 
       &::before,
       &::after {
@@ -107,7 +107,7 @@
     }
 
     &.white {
-      color: variables.$color-white;
+      color: var(--undpds-color-white);
 
       &:focus,
       &:hover {
@@ -139,14 +139,14 @@
     }
 
     button::before {
-      margin-left: variables.$spacing-03;
+      margin-left: var(--undpds-spacing-03);
       margin-right: 0;
       transform: scaleX(-1);
     }
 
     button::after {
       margin-left: 0;
-      margin-right: variables.$spacing-03;
+      margin-right: var(--undpds-spacing-03);
     }
   }
 }
@@ -155,7 +155,7 @@
 :lang(my) {
   .dropdown-language {
     button {
-      font-family: variables.$Font-Family-NotoSans;
+      font-family: var(--undpds-font-family-notosans);
     }
   }
 }
