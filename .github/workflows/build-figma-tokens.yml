@@ -34,6 +34,9 @@ jobs:
       - name: Create or update branch
         run: |
           git fetch origin
+          git add figma-tokens/transformed-tokens/tokens-transformed.json
+          git add stories/assets/scss/figma-scss/_figma-variables.scss
+          git commit -m "Save changes before switching branch"
           if git ls-remote --exit-code --heads origin update-figma-tokens; then
             git checkout update-figma-tokens
             git pull --rebase origin update-figma-tokens
