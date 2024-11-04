@@ -2,6 +2,8 @@ name: Generate scss vars from figma tokens
 
 on:
   push:
+    branches:
+      - issue-995-design-tokens
     paths:
       - 'figma-tokens/input/**'
 
@@ -28,16 +30,25 @@ jobs:
       - name: Build Figma tokens to SCSS
         run: npm run build-tokens
 
-      # Create a new branch or checkout the existing one
-      - name: Create or checkout branch
+      # Create or update the `update-figma-tokens` branch
+      - name: Create or update branch
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin
-          if git show-ref --quiet refs/heads/update-figma-tokens; then
+          if git ls-remote --exit-code --heads origin update-figma-tokens; then
             git checkout update-figma-tokens
-            git pull origin update-figma-tokens # Pull changes from remote
+            git pull --rebase origin update-figma-tokens
           else
             git checkout -b update-figma-tokens
           fi
+          git add stories/assets/scss/figma-scss/_figma-variables.scss
+          git commit -m "build: update SCSS variables and tokens" || echo "No changes to commit"
+
+      # Push changes to `update-figma-tokens` branch
+      - name: Push changes
+        run: |
+          git push origin update-figma-tokens
 
       # Automatically add and commit all changes including SCSS
       - name: Auto commit updated tokens and SCSS
