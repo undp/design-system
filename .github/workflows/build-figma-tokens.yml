@@ -33,8 +33,6 @@ jobs:
       # Create or update the `update-figma-tokens` branch
       - name: Create or update branch
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin
           if git ls-remote --exit-code --heads origin update-figma-tokens; then
             git checkout update-figma-tokens
