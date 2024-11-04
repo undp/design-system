@@ -37,7 +37,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin
 
-          # Створення директорій, якщо вони не існують
+          # Створення директорій та файлів, якщо вони не існують
           mkdir -p figma-tokens/transformed-tokens
           mkdir -p stories/assets/scss/figma-scss
 
@@ -52,22 +52,13 @@ jobs:
             echo "Created an empty stories/assets/scss/figma-scss/_figma-variables.scss file."
           fi
 
+          # Переконайтесь, що створення файлів відбулось, перш ніж додавати їх до коміту
+          ls -la stories/assets/scss/figma-scss
+
           # Додавання та коміт змін перед створенням чи оновленням гілки
           git add figma-tokens/transformed-tokens/tokens-transformed.json
           git add stories/assets/scss/figma-scss/_figma-variables.scss
           git commit -m "Save changes before switching branch" || echo "No changes to commit"
-
-          # Перевірка наявності гілки та відповідні дії
-          if git ls-remote --exit-code --heads origin update-figma-tokens; then
-            git checkout update-figma-tokens
-            git pull --rebase origin update-figma-tokens
-          else
-            git checkout -b update-figma-tokens
-          fi
-
-          # Додавання та коміт для фінального оновлення, якщо є зміни
-          git add stories/assets/scss/figma-scss/_figma-variables.scss
-          git commit -m "build: update SCSS variables and tokens" || echo "No changes to commit"
 
       # Push changes to `update-figma-tokens` branch
       - name: Push changes
