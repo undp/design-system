@@ -33,6 +33,7 @@ jobs:
       # Ensure figma-scss directory and file exist
       - name: Ensure figma-scss directory and _figma-variables.scss file exist
         run: |
+          git checkout update-figma-tokens
           mkdir -p stories/assets/scss/figma-scss
           touch stories/assets/scss/figma-scss/_figma-variables.scss
 
@@ -46,6 +47,7 @@ jobs:
       - name: Create or update branch
         run: |
           git fetch origin
+          git checkout issue-995-design-tokens
           git add figma-tokens/transformed-tokens/tokens-transformed.json
           git add stories/assets/scss/figma-scss/_figma-variables.scss
           git commit -m "Save changes before switching branch"
