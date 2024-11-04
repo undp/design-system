@@ -63,7 +63,6 @@ jobs:
             git checkout -b update-figma-tokens
           fi
 
-          git add figma-tokens/transformed-tokens/tokens-transformed.json
           git add stories/assets/scss/figma-scss/_figma-variables.scss
           git commit -m "Save changes in new branch" || echo "No changes to commit"
 
