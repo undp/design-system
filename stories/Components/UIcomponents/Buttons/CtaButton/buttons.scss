@@ -5,29 +5,29 @@
 .button {
   @extend %button;
 
-  color: $color-white;
+  color: var(--undpds-color-white);
   cursor: pointer;
   justify-content: center;
-  padding: $spacing-05 $spacing-06;
+  padding: var(--undpds-spacing-05) var(--undpds-spacing-06);
 
   &:focus-visible {
-    box-shadow: 0 0 4px $color-blue-800;
+    box-shadow: 0 0 4px var(--undpds-color-blue-800);
     outline: 0;
   }
 }
 
 button {
   &:focus-visible {
-    box-shadow: 0 0 4px $color-blue-800;
+    box-shadow: 0 0 4px var(--undpds-color-blue-800);
     outline: 0;
   }
 }
 
 .button.button-primary {
-  background-color: $color-dark-red;
+  background-color: var(--undpds-color-dark-red);
 
   &:hover {
-    background-color: $color-red;
+    background-color: var(--undpds-color-red);
   }
 
   &.button-arrow {
@@ -37,7 +37,7 @@ button {
       background: url(~icons/chevron-right-black.svg) no-repeat left center;
       content: '';
       height: 20px;
-      margin-left: $spacing-04;
+      margin-left: var(--undpds-spacing-04);
       width: 13px;
     }
 
@@ -58,16 +58,16 @@ button {
   }
 
   .external-link-animated {
-    box-shadow: -2px 2px 0 0 $color-black, -4px 0 0 -2px $color-black, -3px 3px 0 -1px $color-black;
+    box-shadow: -2px 2px 0 0 var(--undpds-color-black), -4px 0 0 -2px var(--undpds-color-black), -3px 3px 0 -1px var(--undpds-color-black);
     margin-left: 1rem;
 
     &::before {
-      background: $color-black;
+      background: var(--undpds-color-black);
     }
 
     &::after {
-      border-right: 2px solid $color-black;
-      border-top: 2px solid $color-black;
+      border-right: 2px solid var(--undpds-color-black);
+      border-top: 2px solid var(--undpds-color-black);
     }
   }
 
@@ -82,21 +82,21 @@ button {
   }
 
   &.disabled .external-link-animated {
-    box-shadow: -2px 2px 0 0 $color-gray-300, -4px 0 0 -2px $color-gray-300, -3px 3px 0 -1px $color-gray-300;
+    box-shadow: -2px 2px 0 0 var(--undpds-color-gray-300), -4px 0 0 -2px var(--undpds-color-gray-300), -3px 3px 0 -1px var(--undpds-color-gray-300);
 
     &::before {
-      background: $color-gray-300;
+      background: var(--undpds-color-gray-300);
     }
 
     &::after {
-      border-right: 2px solid $color-gray-300;
-      border-top: 2px solid $color-gray-300;
+      border-right: 2px solid var(--undpds-color-gray-300);
+      border-top: 2px solid var(--undpds-color-gray-300);
     }
   }
 
   &.button-download {
     align-items: baseline;
-    padding: 1.25rem $spacing-06;
+    padding: 1.25rem var(--undpds-spacing-06);
   }
 
 
@@ -104,17 +104,17 @@ button {
     margin-left: 1rem;
 
     i {
-      border: 2px solid $color-black;
+      border: 2px solid var(--undpds-color-black);
       border-top: 0;
     }
 
     &::after {
-      border-bottom: 2px solid $color-black;
-      border-left: 2px solid $color-black;
+      border-bottom: 2px solid var(--undpds-color-black);
+      border-left: 2px solid var(--undpds-color-black);
     }
 
     &::before {
-      background: $color-black;
+      background: var(--undpds-color-black);
     }
   }
 
@@ -130,27 +130,27 @@ button {
 
   &.disabled .download-animated {
     i {
-      border: 2px solid $color-gray-300;
+      border: 2px solid var(--undpds-color-gray-300);
       border-top: 0;
     }
 
     &::after {
-      border-bottom: 2px solid $color-gray-300;
-      border-left: 2px solid $color-gray-300;
+      border-bottom: 2px solid var(--undpds-color-gray-300);
+      border-left: 2px solid var(--undpds-color-gray-300);
     }
 
     &::before {
-      background: $color-gray-300;
+      background: var(--undpds-color-gray-300);
     }
   }
 
 }
 
 .button.button-secondary {
-  background-color: $color-blue-600;
+  background-color: var(--undpds-color-blue-600);
 
   &:hover {
-    background-color: $color-blue-400;
+    background-color: var(--undpds-color-blue-400);
   }
 
   &.button-arrow {
@@ -160,7 +160,7 @@ button {
       background: url(~icons/chevron-right-white.svg) no-repeat left center;
       content: '';
       height: 20px;
-      margin-left: $spacing-04;
+      margin-left: var(--undpds-spacing-04);
       width: 13px;
     }
 
@@ -181,16 +181,16 @@ button {
   }
 
   .external-link-animated {
-    box-shadow: -2px 2px 0 0 $color-white, -4px 0 0 -2px $color-white, -3px 3px 0 -1px $color-white;
+    box-shadow: -2px 2px 0 0 var(--undpds-color-white), -4px 0 0 -2px var(--undpds-color-white), -3px 3px 0 -1px var(--undpds-color-white);
     margin-left: 1rem;
 
     &::before {
-      background: $color-white;
+      background: var(--undpds-color-white);
     }
 
     &::after {
-      border-right: 2px solid $color-white;
-      border-top: 2px solid $color-white;
+      border-right: 2px solid var(--undpds-color-white);
+      border-top: 2px solid var(--undpds-color-white);
     }
   }
 
@@ -205,38 +205,38 @@ button {
   }
 
   &.disabled .external-link-animated {
-    box-shadow: -2px 2px 0 0 $color-gray-300, -4px 0 0 -2px $color-gray-300, -3px 3px 0 -1px $color-gray-300;
+    box-shadow: -2px 2px 0 0 var(--undpds-color-gray-300), -4px 0 0 -2px var(--undpds-color-gray-300), -3px 3px 0 -1px var(--undpds-color-gray-300);
 
     &::before {
-      background: $color-gray-300;
+      background: var(--undpds-color-gray-300);
     }
 
     &::after {
-      border-right: 2px solid $color-gray-300;
-      border-top: 2px solid $color-gray-300;
+      border-right: 2px solid var(--undpds-color-gray-300);
+      border-top: 2px solid var(--undpds-color-gray-300);
     }
   }
 
   &.button-download {
     align-items: baseline;
-    padding: 1.25rem $spacing-06;
+    padding: 1.25rem var(--undpds-spacing-06);
   }
 
   .download-animated {
     margin-left: 1rem;
 
     i {
-      border: 2px solid $color-white;
+      border: 2px solid var(--undpds-color-white);
       border-top: 0;
     }
 
     &::after {
-      border-bottom: 2px solid $color-white;
-      border-left: 2px solid $color-white;
+      border-bottom: 2px solid var(--undpds-color-white);
+      border-left: 2px solid var(--undpds-color-white);
     }
 
     &::before {
-      background: $color-white;
+      background: var(--undpds-color-white);
     }
   }
 
@@ -252,24 +252,24 @@ button {
 
   &.disabled .download-animated {
     i {
-      border: 2px solid $color-gray-300;
+      border: 2px solid var(--undpds-color-gray-300);
       border-top: 0;
     }
 
     &::after {
-      border-bottom: 2px solid $color-gray-300;
-      border-left: 2px solid $color-gray-300;
+      border-bottom: 2px solid var(--undpds-color-gray-300);
+      border-left: 2px solid var(--undpds-color-gray-300);
     }
 
     &::before {
-      background: $color-gray-300;
+      background: var(--undpds-color-gray-300);
     }
   }
 }
 
 .button.disabled {
-  background-color: $color-gray-400;
-  color: $color-gray-300;
+  background-color: var(--undpds-color-gray-400);
+  color: var(--undpds-color-gray-300);
   pointer-events: none;
 }
 
@@ -283,7 +283,7 @@ button {
           @include transform(rotate(180deg));
 
           margin-left: 0;
-          margin-right: $spacing-04;
+          margin-right: var(--undpds-spacing-04);
         }
 
         &:hover::after {
