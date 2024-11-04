@@ -36,15 +36,34 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin
-          git add figma-tokens/transformed-tokens/tokens-transformed.json
-          git add stories/assets/scss/figma-scss/_figma-variables.scss
-          git commit -m "Save changes before switching branch"
+
+          # Перевірка наявності файлів перед додаванням
+          if [ -f figma-tokens/transformed-tokens/tokens-transformed.json ]; then
+            git add figma-tokens/transformed-tokens/tokens-transformed.json
+          fi
+
+          if [ -f stories/assets/scss/figma-scss/_figma-variables.scss ]; then
+            git add stories/assets/scss/figma-scss/_figma-variables.scss
+          else
+            echo "File _figma-variables.scss does not exist. Skipping..."
+          fi
+
+          # Коміт змін, якщо є що комітити
+          if ! git diff-index --quiet HEAD --; then
+            git commit -m "Save changes before switching branch"
+          else
+            echo "No changes to commit before switching branches."
+          fi
+
+          # Перевірка наявності гілки та перемикання
           if git ls-remote --exit-code --heads origin update-figma-tokens; then
             git checkout update-figma-tokens
             git pull --rebase origin update-figma-tokens
           else
             git checkout -b update-figma-tokens
           fi
+
+          # Додаємо та комітимо зміни в гілці update-figma-tokens
           git add stories/assets/scss/figma-scss/_figma-variables.scss
           git commit -m "build: update SCSS variables and tokens" || echo "No changes to commit"
 
