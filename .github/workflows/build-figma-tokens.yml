@@ -30,40 +30,31 @@ jobs:
       - name: Build Figma tokens to SCSS
         run: npm run build-tokens
 
-      # Create or update the `update-figma-tokens` branch
-      - name: Create or update branch
+      # Ensure figma-scss directory and file exist
+      - name: Ensure figma-scss directory and _figma-variables.scss file exist
+        run: |
+          mkdir -p stories/assets/scss/figma-scss
+          touch stories/assets/scss/figma-scss/_figma-variables.scss
+
+      # Configure git user for GitHub Actions
+      - name: Set GitHub Actions as committer
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Create or update the `update-figma-tokens` branch
+      - name: Create or update branch
+        run: |
           git fetch origin
-
-          # Перевірка наявності файлів перед додаванням
-          if [ -f figma-tokens/transformed-tokens/tokens-transformed.json ]; then
-            git add figma-tokens/transformed-tokens/tokens-transformed.json
-          fi
-
-          if [ -f stories/assets/scss/figma-scss/_figma-variables.scss ]; then
-            git add stories/assets/scss/figma-scss/_figma-variables.scss
-          else
-            echo "File _figma-variables.scss does not exist. Skipping..."
-          fi
-
-          # Коміт змін, якщо є що комітити
-          if ! git diff-index --quiet HEAD --; then
-            git commit -m "Save changes before switching branch"
-          else
-            echo "No changes to commit before switching branches."
-          fi
-
-          # Перевірка наявності гілки та перемикання
+          git add figma-tokens/transformed-tokens/tokens-transformed.json
+          git add stories/assets/scss/figma-scss/_figma-variables.scss
+          git commit -m "Save changes before switching branch"
           if git ls-remote --exit-code --heads origin update-figma-tokens; then
             git checkout update-figma-tokens
             git pull --rebase origin update-figma-tokens
           else
             git checkout -b update-figma-tokens
           fi
-
-          # Додаємо та комітимо зміни в гілці update-figma-tokens
           git add stories/assets/scss/figma-scss/_figma-variables.scss
           git commit -m "build: update SCSS variables and tokens" || echo "No changes to commit"
 
