@@ -96,7 +96,7 @@
         background-color: var(--undpds-color-blue-600);
         color: var(--undpds-color-white);
 
-        @include devicebreak(large) {
+        @include breakpoints.devicebreak(large) {
           background-color: var(--undpds-color-blue-600);
           color: var(--undpds-color-white);
         }
@@ -107,7 +107,7 @@
 
         top: 1.125rem;
 
-        @include devicebreak(large) {
+        @include breakpoints.devicebreak(large) {
           top: var(--undpds-spacing-06);
         }
       }
@@ -163,7 +163,7 @@
           font-weight: 400;
           padding: var(--undpds-spacing-05) var(--undpds-spacing-06) var(--undpds-spacing-05) var(--undpds-spacing-07);
 
-          @include devicebreak(large) {
+          @include breakpoints.devicebreak(large) {
             font-size: var(--undpds-font-size-16);
             padding-left: var(--undpds-spacing-09);
           }
@@ -205,7 +205,7 @@
         }
 
         &:last-of-type a {
-          @include devicebreak(large) {
+          @include breakpoints.devicebreak(large) {
             margin-bottom: var(--undpds-spacing-08);
           }
         }
@@ -255,7 +255,7 @@
       ul.accordion__panel {
         li {
           a {
-            @include devicebreak(large) {
+            @include breakpoints.devicebreak(large) {
               padding-left: var(--undpds-spacing-06);
               padding-right: var(--undpds-spacing-07);
             }
