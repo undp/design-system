@@ -44,26 +44,29 @@ jobs:
           # Створення файлів, якщо вони не існують
           if [ ! -f figma-tokens/transformed-tokens/tokens-transformed.json ]; then
             echo "{}" > figma-tokens/transformed-tokens/tokens-transformed.json
-            echo "Created an empty figma-tokens/transformed-tokens/tokens-transformed.json file."
           fi
 
           if [ ! -f stories/assets/scss/figma-scss/_figma-variables.scss ]; then
             touch stories/assets/scss/figma-scss/_figma-variables.scss
-            echo "Created an empty stories/assets/scss/figma-scss/_figma-variables.scss file."
           fi
-
-          # Переконайтесь, що створення файлів відбулось, перш ніж додавати їх до коміту
-          ls -la stories/assets/scss/figma-scss
 
           # Додавання та коміт змін перед створенням чи оновленням гілки
           git add figma-tokens/transformed-tokens/tokens-transformed.json
           git add stories/assets/scss/figma-scss/_figma-variables.scss
           git commit -m "Save changes before switching branch" || echo "No changes to commit"
 
+          # Перевірка, чи існує віддалена гілка, та відповідні дії
+          if git ls-remote --exit-code --heads origin update-figma-tokens; then
+            git checkout update-figma-tokens
+            git pull --rebase origin update-figma-tokens
+          else
+            git checkout -b update-figma-tokens
+          fi
+
       # Push changes to `update-figma-tokens` branch
       - name: Push changes
         run: |
-          git push origin update-figma-tokens
+          git push origin update-figma-tokens || echo "No changes to push"
 
       # Automatically add and commit all changes including SCSS
       - name: Auto commit updated tokens and SCSS
