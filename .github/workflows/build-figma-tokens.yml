@@ -44,7 +44,6 @@ jobs:
       - name: Push changes
         run: |
           git push origin ${{ github.ref_name }} || echo "No changes to push"
-          git status
 
       # Automatic pull request
       - name: Create Pull Request
