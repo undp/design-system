@@ -44,15 +44,7 @@ jobs:
       - name: Push changes
         run: |
           git push origin ${{ github.ref_name }} || echo "No changes to push"
-
-      # Attempt to automatically resolve conflicts by removing the file if needed
-      - name: Resolve conflicts
-        run: |
           git status
-          if git ls-files -u | grep -q "figma-tokens/transformed-tokens/tokens-transformed.json"; then
-            git rm figma-tokens/transformed-tokens/tokens-transformed.json
-            git commit -m "Resolved conflict by removing tokens-transformed.json"
-          fi
 
       # Automatic pull request
       - name: Create Pull Request
