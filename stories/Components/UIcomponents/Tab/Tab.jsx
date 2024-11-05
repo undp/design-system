@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
-import { tabs } from '../../../assets/js/tabs';
 import './tab.scss';
 import { BodyColumnTwo } from '../../../Molecules/Text/BodyColumn/BodyColumn';
+import loader from '../../../assets/js/loader';
+import { tabs } from '../../../assets/js/tabs';
 
 export function Tab({ tabdata }) {
   useEffect(() => {
-    tabs();
+    if (loader) {
+      loader();
+    } 
   }, []);
   return (
-    <div className="tabs" data-viewport="true">
+    <div className="tabs" data-viewport="true" data-undpds="data-undpds-tab">
       <ul data-deep-link="true" data-tabs id="tablist_1" role="tablist">
         {tabdata.map((item, index) => (
           <li key={index} className={index == 0 ? 'tabs-title is-active' : 'tabs-title'}>

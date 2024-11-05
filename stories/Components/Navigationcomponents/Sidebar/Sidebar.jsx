@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { sidebarNav, sidebarMenu } from '../../../assets/js/sidebar';
 import { Sidebardata } from '../../../Molecules/SidebarData/SidebarData';
 import { Heading } from '../../../Atom/Typography/Heading/Heading';
 import './sidebar.scss';
+import loader from '../../../assets/js/loader';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
@@ -14,8 +14,9 @@ export function Sidebar({
   Height,
 }) {
   useEffect(() => {
-    sidebarNav();
-    sidebarMenu();
+    if (loader) {
+      loader();
+    }
   }, []);
 
   let height = '';
@@ -24,7 +25,7 @@ export function Sidebar({
   }
 
   return (
-    <nav role="navigation" aria-label="Sidebar" className={cls('sidebar-accordion', `${height}`)}>
+    <nav role="navigation" aria-label="Sidebar" className={cls('sidebar-accordion', `${height}`)} data-undpds="data-undpds-sidebar">
       <div className="grid-x">
         <div className={['cell', `${size}`].join(' ')}>
           <Heading type="6" label={label} />

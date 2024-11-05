@@ -3,11 +3,11 @@ import React, { useEffect } from 'react';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import { P } from '../../../../Atom/BaseTypography/Paragraph/Paragraph';
 import { Ctalink } from '../../Buttons/CtaLink/CtaLink';
-import { lightboxGallery } from '../../../../assets/js/lightbox-gallery';
 import './lightbox.scss';
 import './lightbox-gallery.scss';
 import '../../../../Utilities/FrostedImage/frosted-background.scss';
 import { Imagecaption } from '../../../../Molecules/ImageCaption/ImageCaption';
+import loader from '../../../../assets/js/loader';
 
 const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
 
@@ -18,10 +18,12 @@ export function LightboxGallery({
   data,
 }) {
   useEffect(() => {
-    lightboxGallery();
+    if (loader) {
+      loader();
+    } 
   }, []);
   return (
-    <div className="grid-x grid-margin-x lightbox-gallery">
+    <div className="grid-x grid-margin-x lightbox-gallery" data-undpds='data-undpds-lightbox-gallery'>
       <div className={['medium-4 large-3 cell lightbox-gallery__left'].join(' ')}>
         <div className="lightbox-gallery__content">
           <Heading type="5" label={titleText} />

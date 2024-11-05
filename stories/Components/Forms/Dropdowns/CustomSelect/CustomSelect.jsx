@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import './custom-select.scss';
 import '../../../../assets/scss/_typography.scss';
-import { select } from '../../../../assets/js/select';
+import loader from '../../../../assets/js/loader';
 
 function CustomSelect({ text }) {
   useEffect(() => {
-    select();
+    if (loader) {
+      loader();
+    }
   }, []);
   return (
-    <div className="select-box" data-select="">
+    <div className="select-box" data-undpds="data-undpds-select">
       <button type="button" aria-haspopup="listbox" aria-label="Select" data-select-open="">
         {text}
       </button>

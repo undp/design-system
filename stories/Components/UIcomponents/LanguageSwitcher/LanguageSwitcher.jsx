@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { langSwitch } from '../../../assets/js/lang-switcher';
 import './language-switcher.scss';
+import loader from '../../../assets/js/loader';
 
 export const variant_options = {
   blue: 'blue',
@@ -11,11 +11,13 @@ export function Languageswitcher({
   headerText, data, lang, ...args
 }) {
   useEffect(() => {
-    langSwitch();
+    if (loader) {
+      loader();
+    } 
   }, []);
   let color_variant = variant_options[`${args.variant}`];
   return (
-    <div className="dropdown-language">
+    <div className="dropdown-language" data-undpds="data-undpds-language-switcher">
       <button className={[`${color_variant}`].join(' ')} aria-label="English, Select your language" aria-expanded="false">{headerText}</button>
       <ul role="menu">
         {data.map((item, index) => (
