@@ -37,6 +37,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin
 
+          git add figma-tokens/transformed-tokens/tokens-transformed.json
           git add stories/assets/scss/figma-scss/_figma-variables.scss
           git commit -m "Save changes in the branch" || echo "No changes to commit"
 
