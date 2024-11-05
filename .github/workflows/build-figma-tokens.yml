@@ -26,9 +26,6 @@ jobs:
       - name: Transform Figma tokens
         run: npx token-transformer figma-tokens/input/tokens.json figma-tokens/transformed-tokens/tokens-transformed.json
 
-      - name: Clean transformed tokens
-        run: rm -f figma-tokens/transformed-tokens/tokens-transformed.json
-
       # Run script for Style Dictionary, convert JSON to SCSS
       - name: Build Figma tokens to SCSS
         run: npm run build-tokens
