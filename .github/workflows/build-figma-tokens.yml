@@ -1,58 +1,58 @@
-name: Generate scss vars from figma tokens
+# name: Generate scss vars from figma tokens
 
-on:
-  push:
-    branches:
-      - update-figma-tokens
-    paths:
-      - 'figma-tokens/input/**'
+# on:
+#   push:
+#     branches:
+#       - update-figma-tokens
+#     paths:
+#       - 'figma-tokens/input/**'
 
-jobs:
-  build_tokens:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+# jobs:
+#   build_tokens:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      # Configuring Node.js Environment
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.4.0
+#       # Configuring Node.js Environment
+#       - name: Setup Node.js environment
+#         uses: actions/setup-node@v2.4.0
 
-      # Setting dependencies
-      - name: Install dependencies
-        run: npm ci
+#       # Setting dependencies
+#       - name: Install dependencies
+#         run: npm ci
 
-      # Token conversion using token-transformer
-      - name: Transform Figma tokens
-        run: npx token-transformer figma-tokens/input/tokens.json figma-tokens/transformed-tokens/tokens-transformed.json
+#       # Token conversion using token-transformer
+#       - name: Transform Figma tokens
+#         run: npx token-transformer figma-tokens/input/tokens.json figma-tokens/transformed-tokens/tokens-transformed.json
 
-      # Run script for Style Dictionary, convert JSON to SCSS
-      - name: Build Figma tokens to SCSS
-        run: npm run build-tokens
+#       # Run script for Style Dictionary, convert JSON to SCSS
+#       - name: Build Figma tokens to SCSS
+#         run: npm run build-tokens
 
-      # Create or update the `update-figma-tokens` branch
-      - name: Create or update branch
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          # git fetch
+#       # Create or update the `update-figma-tokens` branch
+#       - name: Create or update branch
+#         run: |
+#           git config user.name "github-actions[bot]"
+#           git config user.email "github-actions[bot]@users.noreply.github.com"
+#           # git fetch
 
-          git add figma-tokens/transformed-tokens/tokens-transformed.json
-          git add stories/assets/scss/figma-scss/_figma-variables.scss
-          git commit -m "Save changes in the branch" || echo "No changes to commit"
+#           git add figma-tokens/transformed-tokens/tokens-transformed.json
+#           git add stories/assets/scss/figma-scss/_figma-variables.scss
+#           git commit -m "Save changes in the branch" || echo "No changes to commit"
 
-      # Push changes to `update-figma-tokens` branch
-      - name: Push changes
-        run: |
-          git push origin ${{ github.ref_name }} || echo "No changes to push"
+#       # Push changes to `update-figma-tokens` branch
+#       - name: Push changes
+#         run: |
+#           git push origin ${{ github.ref_name }} || echo "No changes to push"
 
-      # Automatic pull request
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref_name }}
-          base: develop  # Target branch for the PR
-          commit-message: "build: update SCSS variables from Figma tokens"
-          title: "Update SCSS variables from Figma tokens"
-          body: "This PR updates SCSS variables based on the latest Figma tokens."
+#       # Automatic pull request
+#       - name: Create Pull Request
+#         uses: peter-evans/create-pull-request@v5
+#         with:
+#           token: ${{ secrets.GITHUB_TOKEN }}
+#           branch: ${{ github.ref_name }}
+#           base: develop  # Target branch for the PR
+#           commit-message: "build: update SCSS variables from Figma tokens"
+#           title: "Update SCSS variables from Figma tokens"
+#           body: "This PR updates SCSS variables based on the latest Figma tokens."
