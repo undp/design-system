@@ -3,7 +3,7 @@ name: Generate scss vars from figma tokens
 on:
   push:
     branches:
-      - issue-995-design-tokens
+      - update-figma-tokens
     paths:
       - 'figma-tokens/input/**'
 
@@ -30,7 +30,7 @@ jobs:
       - name: Build Figma tokens to SCSS
         run: npm run build-tokens
 
-      # Create or update the `issue-995-design-tokens` branch
+      # Create or update the `update-figma-tokens` branch
       - name: Create or update branch
         run: |
           git config user.name "github-actions[bot]"
@@ -41,7 +41,7 @@ jobs:
           git add stories/assets/scss/figma-scss/_figma-variables.scss
           git commit -m "Save changes in the branch" || echo "No changes to commit"
 
-      # Push changes to `issue-995-design-tokens` branch
+      # Push changes to `update-figma-tokens` branch
       - name: Push changes
         run: |
           git push origin ${{ github.ref_name }} || echo "No changes to push"
