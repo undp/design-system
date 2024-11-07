@@ -15,4 +15,3 @@ build-storybook.log
 chromatic.log
 chromatic-build-*.xml
 chromatic-diagnostics.json
-figma-tokens/transformed-tokens/tokens-transformed.json
