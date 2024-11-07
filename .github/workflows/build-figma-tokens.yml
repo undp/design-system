@@ -41,10 +41,10 @@ jobs:
           git add stories/assets/scss/figma-scss/_figma-variables.scss
           git commit -m "Save changes in the branch" || echo "No changes to commit"
 
-      # Push changes to `update-figma-tokens` branch
-      - name: Push changes
-        run: |
-          git push origin ${{ github.ref_name }} || echo "No changes to push"
+      # # Push changes to `update-figma-tokens` branch
+      # - name: Push changes
+      #   run: |
+      #     git push origin ${{ github.ref_name }} || echo "No changes to push"
 
       # Automatic pull request
       - name: Create Pull Request
