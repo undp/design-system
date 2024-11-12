@@ -1,18 +1,18 @@
 {
-  "black": {
-    "value": "#000000",
-    "type": "color"
-  },
   "white": {
     "value": "#ffffff",
     "type": "color"
   },
-  "yellow": {
-    "value": "#ffeb00",
+  "black": {
+    "value": "#000000",
     "type": "color"
   },
   "red": {
     "value": "#ee402d",
+    "type": "color"
+  },
+  "yellow": {
+    "value": "#ffeb00",
     "type": "color"
   },
   "green": {
