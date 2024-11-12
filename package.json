@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build --loglevel verbose"
+    "build-storybook": "storybook build --loglevel verbose",
+    "build-tokens": "node figma-tokens/build-figma-tokens.mjs"
   },
   "keywords": [
     "UNDP",
@@ -68,7 +69,7 @@
     "chromatic": "^11.7.1",
     "copy-webpack-plugin": "^11.0.0",
     "core-js": "^3.32",
-    "css-loader": "^6.7.3",
+    "css-loader": "^6.11.0",
     "css-minimizer-webpack-plugin": "^5.0.0",
     "eslint": "^8.40.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -99,6 +100,8 @@
     "sass": "^1.62.1",
     "sass-loader": "^13.3.2",
     "storybook": "^8.3.6",
+    "style-dictionary": "^4.1.4",
+    "style-dictionary-utils": "^4.0.0",
     "style-loader": "^3.3.2",
     "stylelint": "^16.9.0",
     "stylelint-config-prettier": "^9.0.5",
@@ -109,6 +112,7 @@
     "svg-spritemap-webpack-plugin": "^4.5.0",
     "svgo": "^3.0.2",
     "svgo-loader": "^4.0.0",
+    "token-transformer": "^0.0.33",
     "webpack": "^5.85.0",
     "webpack-cli": "^5.1.4",
     "webpack-remove-empty-scripts": "^1.0.4"
