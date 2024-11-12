@@ -46,11 +46,17 @@ jobs:
 
       # Automatic pull request
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref_name }}
-          base: develop  # Target branch for the PR
-          commit-message: "build: update SCSS variables from Figma tokens"
-          title: "Update SCSS variables from Figma tokens"
-          body: "This PR updates SCSS variables based on the latest Figma tokens."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_DATA=$(jq -n \
+            --arg title "Update SCSS variables from Figma tokens" \
+            --arg body "This PR updates SCSS variables based on the latest Figma tokens." \
+            --arg head "${GITHUB_REF#refs/heads/}" \
+            --arg base "develop" \
+            '{title: $title, body: $body, head: $head, base: $base}')
+
+          curl -s -X POST -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/pulls \
+            -d "$PR_DATA"
