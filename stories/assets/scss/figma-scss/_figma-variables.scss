@@ -1,7 +1,10 @@
 
 // Do not edit directly, this file was auto-generated.
 
-$black-from-global: #000000;
+$fontfamily-primary: Proxima Nova;
+$fontfamily-secondary: Söhne Breit;
+$fontfamily-proximanova: Proxima Nova;
+$fontfamily-sohnebreit: Söhne Breit;
 $black: #000000;
 $white: #ffffff;
 $spacing-10: 64;
@@ -17,5 +20,19 @@ $spacing-06: 24;
 $spacing-07: 32;
 $spacing-08: 40;
 $spacing-09: 48;
+$fontsize-14: 14;
+$fontsize-16: 16;
+$fontsize-20: 20;
+$fontsize-25: 25;
+$fontsize-30: 30;
+$fontsize-32: 32;
+$fontsize-35: 35;
+$fontsize-40: 40;
+$fontsize-45: 45;
+$fontsize-47: 47;
+$fontsize-55: 55;
+$fontsize-82: 82;
+$fontsize-100: 100;
 $token-set-order-0: primitive-tokens;
-$token-set-order-1: Functional Tokens;
+$token-set-order-1: semantic-tokens;
+$token-set-order-2: component-tokens;
