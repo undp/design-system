@@ -169,38 +169,9 @@ export default {
 
             </>
         )
-    },
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/WJSRV3CbcHuVWRQApwvWIm/UNDP-Design-System?node-id=18682-41233&t=Mo165CNMoIASN3TS-4',
-    },
+    }
   }
 }
-
-export const Example = {
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/WJSRV3CbcHuVWRQApwvWIm/UNDP-Design-System?node-id=18682-41233&t=Mo165CNMoIASN3TS-4',
-    },
-  },
-  render: (args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return (
-      <ModalSample
-        contenttile={caption.title}
-        contentname={caption.name}
-        descriptionText={caption.descriptionText}
-        descriptionText2={caption.descriptionText2}
-        button={caption.btnlabel}
-        alt={"modal image"}
-        image={img}
-        image2={img2}
-        {...args}
-      />
-    );
-  },
-};
 
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
@@ -221,12 +192,3 @@ const Template = (args, { globals: { locale } }) => {
 
 export const ModalSampleStory = Template.bind({});
 ModalSampleStory.storyName = "Modal";
-
-// export const Example = {
-//   parameters: {
-//     design: {
-//       type: 'figma',
-//       url: 'https://www.figma.com/design/WJSRV3CbcHuVWRQApwvWIm/UNDP-Design-System?m=auto&node-id=31-697&t=sq6iQxtXbxfnEi1v-1',
-//     },
-//   },
-// };
