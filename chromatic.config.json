@@ -2,5 +2,6 @@
   "$schema": "https://www.chromatic.com/config-file.schema.json",
   "projectId": "UNDP Design System",
   "exitOnceUploaded": true,
-  "skip": "dependabot/**"
+  "skip": "dependabot/**",
+  "onlyChanged": true
 }

@@ -2,10 +2,45 @@
   font-display: swap;
   font-family: 'ProximaNova';
   font-style: normal;
+  font-weight: 100;
+  src:
+    url('../fonts/proximanova-thin-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'ProximaNova';
+  font-style: italic;
+  font-weight: 100;
+  src:
+    url('../fonts/proximanova-thinit-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'ProximaNova';
+  font-style: normal;
+  font-weight: 200;
+  src:
+    url('../fonts/proximanova-light-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'ProximaNova';
+  font-style: italic;
+  font-weight: 200 300;
+  src:
+    url('../fonts/proximanova-lightit-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'ProximaNova';
+  font-style: normal;
   font-weight: 400;
   src:
-    url('../fonts/proximanova-regular-webfont.woff2') format('woff2'),
-    url('../fonts/proximanova-regular-webfont.woff') format('woff');
+    url('../fonts/proximanova-regular-webfont.woff2') format('woff2');
 }
 
 @font-face {
@@ -14,8 +49,25 @@
   font-style: italic;
   font-weight: 400;
   src:
-    url('../fonts/proximanova-regularit-webfont.woff2') format('woff2'),
-    url('../fonts/proximanova-regularit-webfont.woff') format('woff');
+    url('../fonts/proximanova-regularit-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'ProximaNova';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url('../fonts/proximanova-medium-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'ProximaNova';
+  font-style: italic;
+  font-weight: 500;
+  src:
+    url('../fonts/proximanova-mediumit-webfont.woff2') format('woff2');
 }
 
 @font-face {
@@ -24,8 +76,7 @@
   font-style: normal;
   font-weight: 600;
   src:
-    url('../fonts/proximanova-semibold-webfont-2.woff2') format('woff2'),
-    url('../fonts/proximanova-semibold-webfont-2.woff') format('woff');
+    url('../fonts/proximanova-semibold-webfont-2.woff2') format('woff2');
 }
 
 @font-face {
@@ -34,8 +85,7 @@
   font-style: italic;
   font-weight: 600;
   src:
-    url('../fonts/proximanova-semiboldit-webfont-2.woff2') format('woff2'),
-    url('../fonts/proximanova-semiboldit-webfont-2.woff') format('woff');
+    url('../fonts/proximanova-semiboldit-webfont-2.woff2') format('woff2');
 }
 
 @font-face {
@@ -44,8 +94,7 @@
   font-style: normal;
   font-weight: 700;
   src:
-    url('../fonts/proximanova-bold-webfont.woff2') format('woff2'),
-    url('../fonts/proximanova-bold-webfont.woff') format('woff');
+    url('../fonts/proximanova-bold-webfont.woff2') format('woff2');
 }
 
 @font-face {
@@ -54,8 +103,43 @@
   font-style: italic;
   font-weight: 700;
   src:
-    url('../fonts/proximanova-boldit-webfont.woff2') format('woff2'),
-    url('../fonts/proximanova-boldit-webfont.woff') format('woff');
+    url('../fonts/proximanova-boldit-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'ProximaNova';
+  font-style: normal;
+  font-weight: 800;
+  src:
+    url('../fonts/proximanova-extrabold-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'ProximaNova';
+  font-style: italic;
+  font-weight: 800;
+  src:
+    url('../fonts/proximanova-extraboldit-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'ProximaNova';
+  font-style: normal;
+  font-weight: 900;
+  src:
+    url('../fonts/proximanova-black-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'ProximaNova';
+  font-style: italic;
+  font-weight: 900;
+  src:
+    url('../fonts/proximanova-blackit-webfont.woff2') format('woff2');
 }
 
 /* SohneBreit */
@@ -63,10 +147,9 @@
   font-display: swap;
   font-family: 'SohneBreit';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 100 700;
   src:
-    url('../fonts/soehne-breit-web-dreiviertelfett.woff2') format('woff2'),
-    url('../fonts/soehne-breit-web-dreiviertelfett.woff') format('woff');
+    url('../fonts/soehne-breit-web-dreiviertelfett.woff2') format('woff2');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2070-209F;
 }
 
@@ -74,10 +157,9 @@
   font-display: swap;
   font-family: 'SohneBreit';
   font-style: italic;
-  font-weight: 700;
+  font-weight: 100 700;
   src:
-    url('../fonts/soehne-breit-web-dreiviertelfett-kursiv.woff2') format('woff2'),
-    url('../fonts/soehne-breit-web-dreiviertelfett-kursiv.woff') format('woff');
+    url('../fonts/soehne-breit-web-dreiviertelfett-kursiv.woff2') format('woff2');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2070-209F;
 }
 
@@ -85,10 +167,9 @@
   font-display: swap;
   font-family: 'SohneBreit';
   font-style: normal;
-  font-weight: 800;
+  font-weight: 800 900;
   src:
-    url('../fonts/soehne-breit-web-fett.woff2') format('woff2'),
-    url('../fonts/soehne-breit-web-fett.woff') format('woff');
+    url('../fonts/soehne-breit-web-fett.woff2') format('woff2');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+2070-209F;
 }
 
@@ -96,9 +177,62 @@
   font-display: swap;
   font-family: 'SohneBreit';
   font-style: italic;
-  font-weight: 800;
+  font-weight: 800 900;
   src:
-    url('../fonts/soehne-breit-web-fett-kursiv.woff2') format('woff2'),
-    url('../fonts/soehne-breit-web-fett-kursiv.woff') format('woff');
+    url('../fonts/soehne-breit-web-fett-kursiv.woff2') format('woff2');
   unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-20CF;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'UNBangla';
+  font-style: normal;
+  font-weight: 100 300;
+  src:
+    url('../fonts/UNBangla-Thin.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'UNBangla';
+  font-style: italic;
+  font-weight: 100 300;
+  src:
+    url('../fonts/UNBangla-ThinItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'UNBangla';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('../fonts/UNBangla-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'UNBangla';
+  font-style: italic;
+  font-weight: 400;
+  src:
+    url('../fonts/UNBangla-Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'UNBangla';
+  font-style: normal;
+  font-weight: 500 900;
+  src:
+    url('../fonts/UNBangla-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'UNBangla';
+  font-style: italic;
+  font-weight: 500 900;
+  src:
+    url('../fonts/UNBangla-BoldItalic.woff2') format('woff2');
 }
