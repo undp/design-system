@@ -13,13 +13,13 @@
 
   h4 {
     font-weight: 400;
-    margin-bottom: $spacing-03;
+    margin-bottom: var(--undpds-spacing-03);
   }
 
   &.white {
     h2,
     h4 {
-      color: $color-white;
+      color: var(--undpds-color-white);
     }
   }
 }
@@ -27,7 +27,7 @@
 :lang(my) {
   .page-title {
     h2 {
-      font-family: $var(--undpds-font-family-notosans);
+      font-family: var(--undpds-font-family-notosans);
     }
   }
 }
