@@ -203,4 +203,4 @@ const setAccentClass = (Story, context) => {
 }
 
 export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass];
-export const tags = ['autodocs', 'autodocs'];
+export const tags = ['autodocs'];

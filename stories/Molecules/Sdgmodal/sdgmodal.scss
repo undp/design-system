@@ -110,7 +110,7 @@ body.sdgmodal-open {
     }
 
     h2 {
-      font-family: $Font-Family-SohneBreit;
+      font-family: var(--undpds-font-family-sohnebreit);
       font-weight: 700;
       text-transform: uppercase;
     }
@@ -450,7 +450,7 @@ body.sdgmodal-open {
   .sdg-container {
     .heading {
       h2 {
-        font-family: $Font-Family-NotoSans;
+        font-family: var(--undpds-font-family-notosans);
       }
     }
   }
@@ -460,7 +460,7 @@ body.sdgmodal-open {
   .sdg-container {
     .heading {
       h2 {
-        font-family: $Font-Family-ProximaNova;
+        font-family: var(--undpds-font-family-proximanova);
       }
     }
   }

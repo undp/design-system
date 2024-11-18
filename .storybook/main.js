@@ -1,6 +1,6 @@
 const path = require('path');
 
-export default {
+const config = {
   staticDirs: ['../stories/assets'],
   stories: ['../stories/**/*.stories.@(js|jsx|ts|tsx)', '../stories/**/*.mdx'],
   addons: [
@@ -44,12 +44,8 @@ export default {
     return config;
   },
   framework: {
-    name: '@storybook/react-webpack5',
-    options: {}
+    name: '@storybook/react-webpack5'
   },
-  // env: config => ({
-  //   ...config,
-  //   CHROMATIC_VIEWPORTS: [375, 768, 1380, 1920]
-  // }),
-  docs: {},
 };
+
+export default config;

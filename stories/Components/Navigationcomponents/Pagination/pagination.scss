@@ -7,13 +7,13 @@
   align-items: center;
   display: flex;
   padding-left: 0;
-  font-family: "ProximaNova", sans-serif;
+  font-family: var(--undpds-font-family-proximanova);
 
   li {
     display: flex;
-    font-size: $font-size-16;
+    font-size: var(--undpds-font-size-16);
     margin-bottom: 0;
-    margin-right: $spacing-06;
+    margin-right: var(--undpds-spacing-06);
     padding-left: 0;
     position: relative;
 
@@ -22,8 +22,8 @@
 
       border-bottom: 0;
       text-decoration: none;
-      font-size: $font-size-16;
-      color: $color-black;
+      font-size: var(--undpds-font-size-16);
+      color: var(--undpds-color-black);
     }
 
     span {
@@ -80,7 +80,7 @@
     }
 
     li {
-      margin-left: $spacing-06;
+      margin-left: var(--undpds-spacing-06);
       margin-right: 0;
       padding-right: 0;
 

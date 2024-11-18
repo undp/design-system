@@ -8,7 +8,7 @@
 
     align-items: center;
     display: block;
-    font-family: $Font-Family-SohneBreit;
+    font-family: var(--undpds-font-family-sohnebreit);
     font-weight: 700;
     min-height: 210px;
     padding: 2.188rem $spacing-06 $spacing-05;
@@ -357,7 +357,7 @@
 :lang(my) {
   .sdg-card {
     h4 {
-      font-family: $Font-Family-NotoSans;
+      font-family: var(--undpds-font-family-notosans);
     }
   }
 }
@@ -365,7 +365,7 @@
 #{$cyrillic} {
   .sdg-card {
     h4 {
-      font-family: $Font-Family-ProximaNova;
+      font-family: var(--undpds-font-family-proximanova);
     }
   }
 }
