@@ -69,13 +69,13 @@
     "copy-webpack-plugin": "^11.0.0",
     "core-js": "^3.32",
     "css-loader": "^6.7.3",
-    "css-minimizer-webpack-plugin": "^5.0.0",
+    "css-minimizer-webpack-plugin": "^7.0.0",
     "eslint": "^8.40.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-mdx": "^2.1.0",
+    "eslint-plugin-mdx": "^3.1.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-spellcheck": "0.0.20",
@@ -120,7 +120,7 @@
     "gsap": "^3.12.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "swiper": "^9.4.1"
+    "swiper": "^11.1.15"
   },
   "repository": {
     "type": "git",
