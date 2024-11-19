@@ -1,15 +1,443 @@
 {
-  "white": {
-    "value": "#ffffff",
-    "type": "color"
+  "color": {
+    "CTA": {
+      "default": {
+        "value": "#D12800",
+        "type": "color"
+      },
+      "hover": {
+        "value": "#EE402D",
+        "type": "color"
+      },
+      "disabled": {
+        "value": "#D4D6D8",
+        "type": "color"
+      }
+    },
+    "blue": {
+      "100": {
+        "value": "#B5D5F5",
+        "type": "color"
+      },
+      "200": {
+        "value": "#94C4F5",
+        "type": "color"
+      },
+      "300": {
+        "value": "#6BABEB",
+        "type": "color"
+      },
+      "400": {
+        "value": "#4F95DD",
+        "type": "color"
+      },
+      "500": {
+        "value": "#3288CE",
+        "type": "color"
+      },
+      "600": {
+        "value": "#006EB5",
+        "type": "color"
+      },
+      "700": {
+        "value": "#1F5A95",
+        "type": "color"
+      }
+    },
+    "gray": {
+      "100": {
+        "value": "#FAFAFA",
+        "type": "color"
+      },
+      "200": {
+        "value": "#F7F7F7",
+        "type": "color"
+      },
+      "300": {
+        "value": "#EDEFF0",
+        "type": "color"
+      },
+      "400": {
+        "value": "#D4D6D8",
+        "type": "color"
+      },
+      "500": {
+        "value": "#A9B1B7",
+        "type": "color"
+      },
+      "600": {
+        "value": "#55606E",
+        "type": "color"
+      },
+      "700": {
+        "value": "#232E3D",
+        "type": "color"
+      }
+    },
+    "yellow": {
+      "200": {
+        "value": "#FFE17E",
+        "type": "color"
+      },
+      "400": {
+        "value": "#FFEB00",
+        "type": "color"
+      },
+      "600": {
+        "value": "#FBC412",
+        "type": "color"
+      }
+    },
+    "red": {
+      "200": {
+        "value": "#FFBCB7",
+        "type": "color"
+      },
+      "400": {
+        "value": "#EE402D",
+        "type": "color"
+      },
+      "600": {
+        "value": "#D12800",
+        "type": "color"
+      }
+    },
+    "green": {
+      "200": {
+        "value": "#B8ECB6",
+        "type": "color"
+      },
+      "400": {
+        "value": "#6DE354",
+        "type": "color"
+      },
+      "600": {
+        "value": "#59BA47",
+        "type": "color"
+      }
+    },
+    "azure": {
+      "200": {
+        "value": "#A2DAF3",
+        "type": "color"
+      },
+      "400": {
+        "value": "#60D4F2",
+        "type": "color"
+      },
+      "600": {
+        "value": "#00C1FF",
+        "type": "color"
+      }
+    },
+    "black": {
+      "black": {
+        "value": "#000000",
+        "type": "color"
+      }
+    }
   },
-  "black": {
-    "value": "#000000",
-    "type": "color"
+  "fontfamily": {
+    "primary": {
+      "value": "Proxima Nova",
+      "type": "text"
+    },
+    "secondary": {
+      "value": "Söhne Breit",
+      "type": "text"
+    },
+    "proximanova": {
+      "value": "Proxima Nova",
+      "type": "fontFamilies"
+    },
+    "sohnebreit": {
+      "value": "Söhne Breit",
+      "type": "fontFamilies"
+    },
+    "notosans": {
+      "value": "Noto Sans",
+      "type": "fontFamilies"
+    },
+    "notosans-arabic": {
+      "value": "Noto Sans Arabic",
+      "type": "fontFamilies"
+    },
+    "notosans-burmese": {
+      "value": "Noto Sans Myanmar",
+      "type": "fontFamilies"
+    },
+    "notosans-chinese": {
+      "value": "Noto Sans SC",
+      "type": "fontFamilies"
+    },
+    "notosans-japanese": {
+      "value": "Noto Sans JP",
+      "type": "fontFamilies"
+    },
+    "notosans-georgian": {
+      "value": "Noto Sans Georgian",
+      "type": "fontFamilies"
+    },
+    "notosans-khmer": {
+      "value": "Noto Sans Khmer",
+      "type": "fontFamilies"
+    },
+    "notosans-korean": {
+      "value": "Noto Sans KR",
+      "type": "fontFamilies"
+    }
+  },
+  "fontsize": {
+    "14": {
+      "value": "14px",
+      "type": "fontSizes"
+    },
+    "16": {
+      "value": "16px",
+      "type": "fontSizes"
+    },
+    "20": {
+      "value": "20px",
+      "type": "fontSizes"
+    },
+    "25": {
+      "value": "25px",
+      "type": "fontSizes"
+    },
+    "30": {
+      "value": "30px",
+      "type": "fontSizes"
+    },
+    "32": {
+      "value": "32px",
+      "type": "fontSizes"
+    },
+    "35": {
+      "value": "35px",
+      "type": "fontSizes"
+    },
+    "40": {
+      "value": "40px",
+      "type": "fontSizes"
+    },
+    "45": {
+      "value": "45px",
+      "type": "fontSizes"
+    },
+    "47": {
+      "value": "47px",
+      "type": "fontSizes"
+    },
+    "55": {
+      "value": "55px",
+      "type": "fontSizes"
+    },
+    "82": {
+      "value": "82px",
+      "type": "fontSizes"
+    },
+    "100": {
+      "value": "100px",
+      "type": "fontSizes"
+    },
+    "heading": {
+      "h1": {
+        "value": "100px",
+        "type": "number"
+      },
+      "h2": {
+        "value": "55px",
+        "type": "number"
+      },
+      "h3": {
+        "value": "35px",
+        "type": "number"
+      },
+      "h4": {
+        "value": "35px",
+        "type": "number"
+      },
+      "h5": {
+        "value": "25px",
+        "type": "number"
+      },
+      "h6": {
+        "value": "16px",
+        "type": "number"
+      }
+    },
+    "body": {
+      "default": {
+        "value": "20px",
+        "type": "number"
+      },
+      "small": {
+        "value": "16px",
+        "type": "number"
+      }
+    }
+  },
+  "lineheight": {
+    "body": {
+      "value": "137,5%",
+      "type": "number"
+    },
+    "heading": {
+      "value": "110%",
+      "type": "lineHeights"
+    },
+    "110%": {
+      "value": "110%",
+      "type": "lineHeights"
+    },
+    "137,5%": {
+      "value": "137,5%",
+      "type": "lineHeights"
+    }
+  },
+  "spacing": {
+    "10": {
+      "value": "64px",
+      "type": "spacing"
+    },
+    "11": {
+      "value": "80px",
+      "type": "spacing"
+    },
+    "12": {
+      "value": "96px",
+      "type": "spacing"
+    },
+    "13": {
+      "value": "160px",
+      "type": "spacing"
+    },
+    "01": {
+      "value": "2px",
+      "type": "spacing"
+    },
+    "02": {
+      "value": "4px",
+      "type": "spacing"
+    },
+    "03": {
+      "value": "8px",
+      "type": "spacing"
+    },
+    "04": {
+      "value": "12px",
+      "type": "spacing"
+    },
+    "05": {
+      "value": "16px",
+      "type": "spacing"
+    },
+    "06": {
+      "value": "24px",
+      "type": "spacing"
+    },
+    "07": {
+      "value": "32px",
+      "type": "spacing"
+    },
+    "08": {
+      "value": "40px",
+      "type": "spacing"
+    },
+    "09": {
+      "value": "48px",
+      "type": "spacing"
+    }
+  },
+  "sizing": {
+    "01": {
+      "value": "8px",
+      "type": "sizing"
+    },
+    "02": {
+      "value": "16px",
+      "type": "sizing"
+    },
+    "03": {
+      "value": "24px",
+      "type": "sizing"
+    },
+    "04": {
+      "value": "32px",
+      "type": "sizing"
+    },
+    "05": {
+      "value": "64px",
+      "type": "sizing"
+    },
+    "06": {
+      "value": "128px",
+      "type": "sizing"
+    },
+    "07": {
+      "value": "256px",
+      "type": "sizing"
+    },
+    "08": {
+      "value": "512px",
+      "type": "sizing"
+    },
+    "09": {
+      "value": "1024px",
+      "type": "sizing"
+    }
+  },
+  "fontweight": {
+    "bold": {
+      "value": 700,
+      "type": "fontWeights"
+    },
+    "semibold": {
+      "value": 600,
+      "type": "fontWeights"
+    },
+    "regular": {
+      "value": 400,
+      "type": "fontWeights"
+    }
+  },
+  "textcase": {
+    "none": {
+      "value": "none",
+      "type": "textCase"
+    },
+    "uppercase": {
+      "value": "uppercase",
+      "type": "textCase"
+    }
   },
   "tokenSetOrder": {
     "0": {
-      "value": "global",
+      "value": "primitive-tokens",
+      "type": "other"
+    },
+    "1": {
+      "value": "semantic-tokens",
+      "type": "other"
+    },
+    "2": {
+      "value": "semantic-tokens/desktop",
+      "type": "other"
+    },
+    "3": {
+      "value": "semantic-tokens/tablet",
+      "type": "other"
+    },
+    "4": {
+      "value": "semantic-tokens/mobile",
+      "type": "other"
+    },
+    "5": {
+      "value": "semantic-tokens/semantic-tokens",
+      "type": "other"
+    },
+    "6": {
+      "value": "component-tokens",
       "type": "other"
     }
   }
