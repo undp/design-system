@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build --debug-webpack --loglevel verbose"
+    "build-storybook": "storybook build --loglevel verbose"
   },
   "keywords": [
     "UNDP",
@@ -127,5 +127,6 @@
   },
   "bugs": {
     "url": "https://github.com/undp/design-system/issues"
-  }
+  },
+  "packageManager": "npm@10.9.0+sha512.65a9c38a8172948f617a53619762cd77e12b9950fe1f9239debcb8d62c652f2081824b986fee7c0af6c0a7df615becebe4bf56e17ec27214a87aa29d9e038b4b"
 }
