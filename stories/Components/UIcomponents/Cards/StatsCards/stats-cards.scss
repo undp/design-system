@@ -228,3 +228,9 @@ $color in $colors {
     }
   }
 }
+
+:lang(ro) {
+  .stats-card h3, .stats-card h4 {
+    font-weight: 700!important;
+  }
+}

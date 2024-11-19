@@ -19,12 +19,12 @@
     }
 
     &.close {
-      background-color: $color-gray-300;
-      color: $color-black;
+      background-color: var(--undpds-color-gray-300);
+      color: var(--undpds-color-black);
       font-size: 0;
 
       &:hover {
-        background-color: $color-gray-300;
+        background-color: var(--undpds-color-gray-300);
       }
 
       span {
@@ -49,13 +49,13 @@
 
   .select-wrapper {
     .multi-select {
-      padding-top: $spacing-06;
+      padding-top: var(--undpds-spacing-06);
     }
   }
 
   .selected-chips {
     max-width: 296px;
-    padding-top: $spacing-06;
+    padding-top: var(--undpds-spacing-06);
 
     .chip {
       cursor: pointer;
@@ -64,16 +64,16 @@
   }
 
   .chip {
-    font-size: $font-size-16;
+    font-size: var(--undpds-font-size-16);
   }
 
   .clear-search-filter {
     background: none;
     border: 0;
-    border-bottom: 1px solid $color-red;
+    border-bottom: 1px solid var(--undpds-color-red);
     cursor: pointer;
     display: none;
-    font-size: $font-size-16;
+    font-size: var(--undpds-font-size-16);
     padding: 0;
 
     &.show-clear {
@@ -82,12 +82,12 @@
   }
 
   .active-filter {
-    color: $color-gray-600;
+    color: var(--undpds-color-gray-600);
     display: none;
-    font-family: $Font-Family-ProximaNova;
-    font-size: $font-size-16;
+    font-family: var(--undpds-font-family-proximanova);
+    font-size: var(--undpds-font-size-16);
     font-weight: 600;
-    padding-top: $spacing-05;
+    padding-top: var(--undpds-spacing-05);
     text-transform: uppercase;
 
     &.show-activefilter {
@@ -99,9 +99,13 @@
 [dir='rtl'] {
   .selected-chips {
     .chip {
-      margin: 0 0 $spacing-04 $spacing-04;
+      margin: 0 0 var(--undpds-spacing-04) var(--undpds-spacing-04);
     }
   }
 }
-
+:lang(ro) {
+  .search-filter .active-filter {
+    font-weight: 700;
+  }
+}
 /* toggle search end */
