@@ -1,11 +1,10 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
 
 /* post header start */
 .post-wrapper {
-  margin-top: $spacing-05;
+  margin-top: var(--undpds-spacing-05);
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     margin-top: 4.563rem;
   }
 }

@@ -31,7 +31,14 @@ module.exports = [
             },
             {
               loader: 'sass-loader',
-              options: { sourceMap: true },
+              options: {
+                implementation: 'sass-embedded',
+                sourceMap: true,
+                sassOptions: {
+                  quietDeps: true,
+                  silenceDeprecations: ['import', 'global-builtin'],
+                },
+              },
             },
           ],
         },

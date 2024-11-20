@@ -1,5 +1,5 @@
-@import './variables';
-@import './breakpoints';
+@use 'variables';
+@use 'breakpoints';
 
 //background image gradient
 @mixin background-image($deg, $colorname, $opacity) {
@@ -67,7 +67,7 @@
 %paragragh-font-14 {
   font-size: var(--undpds-font-size-12);
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     font-size: var(--undpds-font-size-14);
   }
 }
@@ -76,7 +76,7 @@
   font-size: var(--undpds-font-size-14);
   line-height: 1.4;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     font-size: var(--undpds-font-size-16);
   }
 }
@@ -84,7 +84,7 @@
 %paragragh-font-20 {
   font-size: var(--undpds-font-size-16);
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     font-size: var(--undpds-font-size-20);
   }
 }
@@ -93,7 +93,7 @@
   font-size: var(--undpds-font-size-20);
   line-height: 1.1;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     font-size: var(--undpds-font-size-24);
   }
 }
@@ -102,16 +102,19 @@
   border-bottom: 1px solid var(--undpds-color-gray-400);
 }
 
-%img-cover {
+@mixin img-cover {
   height: 100%;
   object-fit: cover;
   padding: 0;
   width: 100%;
 }
 
+%img-cover {
+  @include img-cover;
+}
+
 %border-none {
   @extend %img_none;
-
   border: none;
 }
 
@@ -127,7 +130,7 @@
   width: 25px;
   min-width: 25px;
 
-  @include devicebreak(small) {
+  @include breakpoints.devicebreak(small) {
     margin-inline-end: 0;
     -webkit-mask: inherit;
     mask: inherit;
@@ -171,7 +174,7 @@
   h2 {
     font-size: var(--undpds-font-size-25);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       font-size: 3.438rem;
       padding-left: var(--undpds-spacing-05);
     }
@@ -180,7 +183,7 @@
   h3 {
     font-size: var(--undpds-font-size-20);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       font-size: 2.188rem;
     }
   }
@@ -195,7 +198,7 @@
   padding: var(--undpds-spacing-05);
   position: relative;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     padding: var(--undpds-spacing-06);
   }
 }
@@ -246,7 +249,7 @@
   letter-spacing: 0.03em;
   line-height: 1;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     display: inline-flex;
   }
 }
@@ -258,7 +261,7 @@
   margin-top: 2px;
   width: 0.813rem;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     margin-top: 0;
   }
 }
@@ -469,7 +472,7 @@
 }
 
 %carousel_slider_slide {
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     display: flex;
   }
 }
@@ -539,7 +542,7 @@
     font-size: var(--undpds-font-size-12);
     line-height: 1.7;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       font-size: var(--undpds-font-size-14);
     }
   }
@@ -547,7 +550,7 @@
   %paragragh-font-20 {
     font-size: var(--undpds-font-size-14);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       font-size: var(--undpds-font-size-16);
     }
   }
@@ -556,7 +559,7 @@
     font-size: var(--undpds-font-size-20);
     line-height: 1.1;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       font-size: var(--undpds-font-size-24);
     }
   }
@@ -570,7 +573,7 @@
   @include transition(all 0.4s cubic-bezier(0.64, 0.05, 0.35, 1.05));
   min-width: 60px;
 
-  @include devicebreak(large) {
+  @include breakpoints.devicebreak(large) {
     height: calc(var(--undpds-header-height-xlarge) + 7px);
 
     &.scrolled {
@@ -578,7 +581,7 @@
     }
   }
 
-  @include devicebreak(mediumonlytab) {
+  @include breakpoints.devicebreak(mediumonlytab) {
     height: calc(var(--undpds-header-height-medium) + 7px);
     min-width: 40px;
 
@@ -651,7 +654,7 @@
   top: 4.7rem;
   z-index: 5;
 
-  @include devicebreak(large) {
+  @include breakpoints.devicebreak(large) {
     top: 7.1875rem;
   }
 }

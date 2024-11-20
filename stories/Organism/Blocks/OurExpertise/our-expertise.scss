@@ -26,15 +26,14 @@
 
     .swiper-slide {
       min-height: calc(100vh - var(--undpds-header-height-medium));
-
-      @include devicebreak(xlarge) {
-        min-height: calc(100vh - var(--undpds-header-height-xlarge));
-      }
-
       display: flex;
       flex-direction: column;
       height: auto;
       cursor: grab;
+
+      @include devicebreak(xlarge) {
+        min-height: calc(100vh - var(--undpds-header-height-xlarge));
+      }
 
       .image {
         height: 40vh;
@@ -103,7 +102,7 @@
 
     .prev,
     .next {
-      background: transparentize($color: #FFFFFF, $amount: 1);
+      background: transparent;
       border: 0;
       display: inline-block;
 
