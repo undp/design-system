@@ -3,22 +3,16 @@ const path = require('path');
 const config = {
   staticDirs: ['../stories/assets'],
   stories: ['../stories/**/*.stories.@(js|jsx|ts|tsx)', '../stories/**/*.mdx'],
-  addons: [
-    '@storybook/addon-links',
-    {
-      name: '@storybook/addon-essentials',
-      options: {
-        actions: false, // 👈 disable the actions addon
-      },
+
+  addons: ['@storybook/addon-links', {
+    name: '@storybook/addon-essentials',
+    options: {
+      actions: false, // 👈 disable the actions addon
     },
-    // 'storybook-addon-rtl',
-    '@storybook/blocks',
-    '@storybook/addon-a11y',
-    '@storybook/react-webpack5',
-    // '@chromatic-com/storybook',
-    '@storybook/addon-webpack5-compiler-babel',
-    '@whitespace/storybook-addon-html'
-  ],
+  }, // 'storybook-addon-rtl',
+  '@storybook/blocks', '@storybook/addon-a11y', '@storybook/react-webpack5', // '@chromatic-com/storybook',
+  '@storybook/addon-webpack5-compiler-babel', '@whitespace/storybook-addon-html'],
+
   webpackFinal: async config => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -27,7 +21,7 @@ const config = {
 
     config.module.rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
+      use: ['style-loader', 'css-loader', { loader: 'sass-loader', options: { implementation: 'sass-embedded', sourceMap: false, sassOptions: { quietDeps: true, silenceDeprecations: ['import', 'global-builtin'] } } }],
       include: path.resolve(__dirname, '../')
     });
 
@@ -43,9 +37,16 @@ const config = {
 
     return config;
   },
+
   framework: {
     name: '@storybook/react-webpack5'
   },
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
+  }
 };
 
 export default config;

@@ -1,26 +1,26 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@use '../../assets/scss/breakpoints';
+@use '../../assets/scss/mixins';
 
 // * footer condition start *//
 .footer-items {
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     row-gap: 3rem;
     display: flex;
   }
 
   .footer-item {
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       width: calc((100% / 2) - 1.5rem);
       flex: 0 0 calc((100% / 2) - 1.5rem);
     }
 
-    @include devicebreak(large) {
+    @include breakpoints.devicebreak(large) {
       width: calc((100% / 3) - 1.5rem);
       flex: 0 0 calc((100% / 3) - 1.5rem);
     }
 
-    @include devicebreak(xlarge) {
+    @include breakpoints.devicebreak(xlarge) {
       width: calc((100% / 4) - 1.5rem);
       flex: 0 0 calc((100% / 4) - 1.5rem);
     }
@@ -36,7 +36,7 @@
     padding: 0;
     text-align: left;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       text-align: right;
     }
 
@@ -60,7 +60,7 @@
       padding: 0;
       text-align: right;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         text-align: left;
       }
     }
@@ -84,12 +84,12 @@
 .footer-lists {
   padding-left: 0;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     // max-width: 690px;
     text-align: right;
   }
 
-  @include devicebreak(small) {
+  @include breakpoints.devicebreak(small) {
     margin: 0 var(--undpds-spacing-05) var(--undpds-spacing-07);
   }
 
@@ -98,7 +98,7 @@
     margin-bottom: var(--undpds-spacing-04);
     padding-left: 0;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       display: inline-flex;
       margin-bottom: 1.125rem;
       margin-left: 2.25rem;
@@ -120,14 +120,14 @@
   .footer-lists {
     padding-right: 0;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       text-align: left;
     }
 
     li {
       padding-right: 0;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         margin-left: 0;
         margin-right: 2.25rem;
       }
@@ -244,7 +244,7 @@
   &-item {
     position: relative;
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       &::after {
         border-bottom: 2px solid var(--undpds-color-gray-400);
         content: '';
@@ -285,14 +285,14 @@
     text-transform: uppercase;
     width: 100%;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin-bottom: 1.25rem;
       padding: 0;
       pointer-events: none;
     }
 
     &::before {
-      @include transition(0.1s ease);
+      @include mixins.transition(0.1s ease);
 
       background: url(~icons/chevron-down-white.svg) no-repeat center center;
       content: '';
@@ -301,14 +301,14 @@
       height: 20px;
       width: 20px;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         display: none;
       }
     }
 
     &.active {
       &::before {
-        @include transform(rotateZ(180deg));
+        @include mixins.transform(rotateZ(180deg));
       }
     }
   }
@@ -317,7 +317,7 @@
     display: none;
     padding: 0 var(--undpds-spacing-05) var(--undpds-spacing-03);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       display: block;
       padding: 0;
     }
@@ -382,11 +382,11 @@
   color: var(--undpds-color-white);
   padding: var(--undpds-spacing-09) var(--undpds-spacing-04) var(--undpds-spacing-08);
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     padding: 3.25rem 0 var(--undpds-spacing-09);
   }
 
-  @include devicebreak(small) {
+  @include breakpoints.devicebreak(small) {
     & .sign-up {
       margin-top: var(--undpds-spacing-06);
     }
@@ -396,7 +396,7 @@
     font-size: var(--undpds-font-size-14);
     margin: 0;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       font-size: var(--undpds-font-size-16);
     }
   }
@@ -407,7 +407,7 @@
     margin-bottom: 1.188rem;
     padding-bottom: var(--undpds-spacing-09);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin-bottom: var(--undpds-spacing-09);
     }
   }
@@ -417,7 +417,7 @@
 
     padding-bottom: var(--undpds-spacing-07);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin-bottom: var(--undpds-spacing-07);
       padding-bottom: var(--undpds-spacing-09);
     }
@@ -426,7 +426,7 @@
   &-bottom {
     justify-content: space-between;
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       flex-direction: column-reverse;
 
       p {
@@ -438,7 +438,7 @@
   &-copyright {
     margin: 0 var(--undpds-spacing-05);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin: var(--undpds-spacing-11) 0 0;
     }
   }
@@ -446,14 +446,14 @@
   &-links {
     margin: var(--undpds-spacing-07) var(--undpds-spacing-05);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin: 0 0 var(--undpds-spacing-07) 0;
     }
 
     &_text {
       margin: 0 var(--undpds-spacing-05) var(--undpds-spacing-07);
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         margin: 0 0 var(--undpds-spacing-07) 0;
       }
     }
@@ -462,7 +462,7 @@
   .footer-icons {
     margin: 0 1.25rem var(--undpds-spacing-07);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       justify-content: flex-end;
       margin: 0;
     }
@@ -486,7 +486,7 @@
   margin: var(--undpds-spacing-07) var(--undpds-spacing-05) 0;
   text-align: left;
 
-  @include devicebreak(medium) {
+  @include breakpoints.devicebreak(medium) {
     margin: 0 0 var(--undpds-spacing-07) 0;
     text-align: right;
   }
@@ -504,7 +504,7 @@
   .icons-search {
     text-align: right;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       text-align: left;
     }
 

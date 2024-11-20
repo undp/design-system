@@ -209,5 +209,5 @@ export default {
   parameters: parameters,
   globalTypes: globalTypes,
   decorators: [getLangCode, sbFrameReset, setDirection, setAccentClass],
-  tags: ['autodocs'],
+  tags: ['autodocs', 'autodocs'],
 }

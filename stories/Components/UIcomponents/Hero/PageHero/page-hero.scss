@@ -1,7 +1,6 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/base';
-@import '../../../../assets/scss/grid';
+@use '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/mixins';
 
 /* page hero start */
 .pagehero {
@@ -14,7 +13,7 @@
     position: relative;
     word-break: break-word;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       min-height: 746px;
     }
 
@@ -23,12 +22,12 @@
     }
 
     img {
-      @extend %img-cover;
+      @include mixins.img-cover;
     }
 
     video {
       @extend %absolute__content;
-      @extend %img-cover;
+      @include mixins.img-cover;
     }
 
     .pagehero-content {
@@ -39,7 +38,7 @@
       position: absolute;
       top: 0;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         flex-direction: row;
         padding-top: 0;
       }
@@ -54,17 +53,17 @@
     }
 
     .content-box {
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         width: 65%;
       }
     }
 
     .breadcrumb {
-      @extend .medium-offset-1;
+      @extend .medium-offset-1 !optional;
 
       padding-top: var(--undpds-spacing-11);
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         padding-top: var(--undpds-spacing-11);
         padding-left: var(--undpds-spacing-04);
         padding-right: var(--undpds-spacing-04);
@@ -76,8 +75,8 @@
     }
 
       img {
-        @include devicebreak(small) {
-          @extend %img-cover;
+        @include breakpoints.devicebreak(small) {
+          @include mixins.img-cover;
 
           &.mobile-position-left {
             object-position: left;
@@ -96,7 +95,7 @@
 
   &-content {
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       height: auto;
       padding-inline: var(--undpds-spacing-04);
     }
@@ -105,7 +104,7 @@
       margin-bottom: var(--undpds-spacing-03);
       padding-top: 6.313rem;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         padding-top: 0;
       }
 
@@ -128,7 +127,7 @@
       margin-top: 1rem;
       margin-bottom: 0;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         font-size: 2.188rem;
       }
     }
@@ -139,7 +138,7 @@
       left: 0.75rem;
       right: 0.75rem;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         margin-top: 3rem;
         margin-bottom: 0;
         position: relative;
@@ -151,13 +150,13 @@
   &-image {
     width: 100%;
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       padding-bottom: 100%;
       position: relative;
       width: 100%;
     }
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       height: 100%;
     }
   }
@@ -173,7 +172,7 @@
       justify-content: center;
       word-break: break-word;
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         height: auto;
         padding: 0 0 var(--undpds-spacing-08);
 
@@ -182,7 +181,7 @@
         }
       }
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         padding-bottom: 0;
         padding-right: 1.438rem;
       }
@@ -193,7 +192,7 @@
         left: 0;
         right: 0;
 
-        @include devicebreak(medium) {
+        @include breakpoints.devicebreak(medium) {
           display: block;
           margin-top: 1.5rem;
           position: relative;
@@ -212,7 +211,7 @@
     .homepage-hero-image {
       overflow: hidden;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         overflow: visible;
       }
 
@@ -226,14 +225,14 @@
       margin-block: var(--undpds-spacing-11);
       position: initial;
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         margin-top: 0;
         position: absolute;
         margin-bottom: 0;
         top: 30px;
       }
 
-      @include devicebreak(large) {
+      @include breakpoints.devicebreak(large) {
         position: absolute;
         top: 80px;
       }
@@ -248,7 +247,7 @@
       .homepage-hero-image {
         margin-bottom: 6.5rem;
 
-        @include devicebreak(medium) {
+        @include breakpoints.devicebreak(medium) {
           margin-bottom: unset;
         }
       }
@@ -256,7 +255,7 @@
   }
 }
 
-@include devicebreak(medium) {
+@include breakpoints.devicebreak(medium) {
   [dir='rtl'] {
     .pagehero-tall {
       .pagehero-content {
@@ -276,7 +275,7 @@
   }
 }
 
-#{$cyrillic} {
+#{variables.$cyrillic} {
   .pagehero-content {
     h2 {
       font-family: var(--undpds-font-family-proximanova);

@@ -1,5 +1,6 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@use '../../../assets/scss/breakpoints';
+@use '../../../assets/scss/variables';
+@use '../../../assets/scss/mixins';
 
 /* signup newsletter start */
 .sign-up {
@@ -12,7 +13,7 @@
     text-align: left;
     text-transform: none;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       text-align: right;
     }
   }
@@ -26,7 +27,7 @@
       margin-top: 0;
       width: calc(100% - 86px);
 
-      @include devicebreak(medium) {
+      @include breakpoints.devicebreak(medium) {
         width: calc(100% - 107px);
       }
     }
@@ -57,7 +58,7 @@
     padding: 0;
     text-transform: uppercase;
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       min-width: 107px;
     }
   }
