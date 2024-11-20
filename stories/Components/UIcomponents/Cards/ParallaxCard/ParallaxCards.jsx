@@ -1,12 +1,11 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React, { useEffect } from 'react';
 import './parallax-cards.scss';
-import { swiper } from '../../../../assets/js/swiper';
-import { parallaxEffect } from '../../../../assets/js/parallax';
 import Img from '../../../../assets/images/parallax-card.jpg';
 import { Heading } from '../../../../Atom/Typography/Heading/Heading';
 import ParallaxCard from '../../../../Molecules/ParallaxCard/ParallaxCard';
 import '../../../../assets/js/smartresize';
+import loader from '../../../../assets/js/loader';
 
 // RTL Fix for Storybook.
 let rtl = document.dir || undefined;
@@ -15,11 +14,10 @@ if (window.location.href.indexOf('direction=rtl') > -1) {
 }
 function ParallaxCards({ data, alt, title }) {
   useEffect(() => {
-    swiper('.parallax__content');
-    parallaxEffect('.parallax-card', ['.parallax-card__image', '.parallax-card__content'], 'top center', 'bottom+=85 center', 'vertical', 'desktop', 'percent');
+    loader();
   }, []);
   return (
-    <section className="parallax">
+    <section className="parallax" data-undpds="data-undpds-swiper">
       <div className="parallax__heading small-offset-1">
         <Heading type="2" label={title} />
       </div>

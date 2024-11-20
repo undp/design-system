@@ -5,7 +5,11 @@ import { tabs } from './tabs';
 import { accordion } from './accordion';
 import { sidebarNav, sidebarMenu } from './sidebar';
 import { select } from './select';
-
+import { expandSearch } from './expand-search';
+import { navigationInitialize } from './navigation';
+import { statsHover } from './stats';
+import { swiper } from './swiper';
+import { parallaxEffect } from './parallax';
 
 const loader = () => {
     // Select all elements with the attribute data-undpds and convert to an array
@@ -18,27 +22,13 @@ const loader = () => {
         const undpdsValue = $(element).attr('data-undpds');
         // Use switch statement to check the value and call appropriate functions
         switch (undpdsValue) {
-            case 'data-undpds-carousel':
-                carousel();
-                break;
-            case 'data-undpds-tooltip':
-                tooltip();
-                break;
             case 'data-undpds-tab':
                 tabs();
                 console.log('tabs');
                 break;
-            case 'data-undpds-dropdown':
-                dropdown();
-                break;
-            case 'data-undpds-progress-bar':
-                progressBar();
-                break;
             case 'data-undpds-expand-search':
-                expandSearch();      
-                break;
-            case 'data-undpds-multi-select':
-                multiSelect();
+                expandSearch($(element));
+                console.log('expandSearch');      
                 break;
             case 'data-undpds-select':
                 select();
@@ -51,6 +41,7 @@ const loader = () => {
                 break;
             case 'data-undpds-navigation':
                 navigationInitialize();
+                console.log('navigation');
                 break;
             case 'data-undpds-accordion':
                 accordion();
@@ -70,9 +61,37 @@ const loader = () => {
                 break;
             case 'data-undpds-stats-hover':
                 statsHover();
+                console.log('statsHover');
                 break;
-            
-                // TODO MORE COMPLEX EXAMPLES
+            case 'data-undpds-swiper':
+                swiper('.parallax__content');
+                parallaxEffect('.parallax-card', ['.parallax-cardimage', '.parallax-cardcontent'], 'top center', 'bottom+=85 center', 'vertical', 'desktop', 'percent');
+                console.log('swiper');
+                break;
+            case 'data-undpds-fit-text':
+                fitText('.stats-card.medium', {desktop: 110, mobile: 80});
+                break;
+            case 'data-undpds-swiper-fixed-carousel':
+                swiper('.fixed-carousel', '.fixed-carousel__button-wrap');
+                break;
+            case 'data-undpds-swiper-fluid-carousel':
+                swiper('.fluid-carousel', '.slide-content');
+                break;
+            case 'data-undpds-swiper-image-carousel':
+                swiper('.image-carousel', '.slider-slide');
+                break;
+            case 'data-undpds-parralax-effect-images':
+                parallaxEffect('.parallax-gallery-images', '.column', 'top center', 'bottom+=15% center', 'vertical', 'all');
+                break;
+            case 'data-undpds-expand-to-size-homepage-hero-full':
+                expandToSize('.homepage-hero-full');
+                break;
+            case 'data-undpds-expand-to-size-page-hero-full':
+                expandToSize('.pagehero-fulll');
+                break;
+            case 'data-undpds-swiper-page-hero-cards':
+                swiper('.pagehero-cards-items')
+                break;
             
             default:
                 console.warn(`No function defined for ${undpdsValue}`);

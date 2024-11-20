@@ -10,7 +10,9 @@ import MegaMenu from '../MegaMenu/MegaMenu';
 import MobileNav from '../MobileNav/MobileNav';
 import './global-header.scss';
 import '../../../../assets/scss/_grid.scss';
+import loader from '../../../../assets/js/loader';
 import '../../../../assets/js/lazyload';
+
 
 function GlobalHeader({
   text,
@@ -26,11 +28,11 @@ function GlobalHeader({
 }) {
   useEffect(() => {
     getMegaMenu(locale);
-    navigationInitialize(locale);
+    loader(locale);
   }, [locale]);
 
   return (
-    <header className="global-header global-load-animation">
+    <header className="global-header global-load-animation" data-undpds="data-undpds-navigation">
       <section className="header">
         <div className="grid-container fluid">
           <div className="grid-x grid-margin-x align-content-middle">

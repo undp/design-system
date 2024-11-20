@@ -3,8 +3,8 @@ import Iconsback from 'icons/back.svg';
 import IconsGlobe from 'icons/globe.svg';
 import IconsLanguage from 'icons/language.svg';
 import { Icons } from '../../../../Atom/Icons/Icons';
-import { navigationInitialize } from '../../../../assets/js/navigation';
 import { CtaButton } from '../../../UIcomponents/Buttons/CtaButton/CtaButton';
+import loader from '../../../../assets/js/loader';
 import './mobile-nav.scss';
 
 function MobileNav({
@@ -18,11 +18,11 @@ function MobileNav({
   ...args
 }) {
   useEffect(() => {
-    navigationInitialize(locale);
+    loader(locale);
   }, [locale]);
 
   return (
-    <div className="mobile-nav">
+    <div className="mobile-nav" data-undpds="data-undpds-navigation">
       <div className="grid-x">
         <div className="cell mobile-links">
           <ul>

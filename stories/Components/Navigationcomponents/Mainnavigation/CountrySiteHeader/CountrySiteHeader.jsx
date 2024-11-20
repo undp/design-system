@@ -6,6 +6,7 @@ import {
   navigationMultiLevelEdgeDetection,
   navigationOverFlow,
 } from '../../../../assets/js/navigation';
+import loader from '../../../../assets/js/loader';
 import { Logo } from '../../../../Atom/Logo/Logo';
 import { CtaButton } from '../../../UIcomponents/Buttons/CtaButton/CtaButton';
 import { Menu } from '../../Menu/Menu';
@@ -33,7 +34,7 @@ function CountrySiteHeader({
 }) {
   useEffect(() => {
     getMegaMenu(locale);
-    navigationInitialize(locale);
+    loader(locale);
     navigationOverFlow();
     navigationMultiLevelEdgeDetection();
   }, [locale, args.menu_type, args.menu_extended, args.cta_enabled]);
@@ -55,7 +56,7 @@ function CountrySiteHeader({
   args.overflow = overflow;
 
   return (
-    <header className="country-header country-load-animation">
+    <header className="country-header country-load-animation" data-undpds="data-undpds-navigation">
       <section className="header">
         <div className="grid-container fluid">
           <div className="grid-x grid-margin-x align-content-middle">
