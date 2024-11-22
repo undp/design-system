@@ -114,7 +114,7 @@
   .accordion {
     li {
       button {
-        font-family: $Font-Family-NotoSans;
+        font-family: var(--undpds-font-family-notosans);
       }
     }
   }

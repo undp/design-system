@@ -1,5 +1,6 @@
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
+@use '../../../../assets/scss/breakpoints';
+@use '../../../../assets/scss/variables';
+@use '../../../../assets/scss/mixins';
 
 // lightbox-gallery start
 .lightbox-gallery {
@@ -7,28 +8,28 @@
     align-items: center;
     display: flex;
 
-    @include devicebreak(small) {
+    @include breakpoints.devicebreak(small) {
       margin-bottom: 0.75rem;
     }
   }
 
   &__content {
-    padding: 0 $spacing-04 $spacing-06;
+    padding: 0 var(--undpds-spacing-04) var(--undpds-spacing-06);
 
-    @include devicebreak(medium) {
+    @include breakpoints.devicebreak(medium) {
       margin: auto;
       max-width: 28rem;
       padding: 1.5rem 0.5rem;
     }
 
-    @include devicebreak(xlarge) {
+    @include breakpoints.devicebreak(xlarge) {
       padding: 0;
     }
 
     h5 {
       margin-bottom: 2rem;
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         margin-bottom: 1rem;
       }
     }
@@ -37,7 +38,7 @@
       font-size: 1rem;
       margin-bottom: 3rem;
 
-      @include devicebreak(small) {
+      @include breakpoints.devicebreak(small) {
         font-size: 0.875rem;
         margin-bottom: 2rem;
       }
@@ -54,25 +55,25 @@
     //gallery image list
     .lightbox-gallery-images {
       column-count: 2;
-      column-gap: $spacing-04;
+      column-gap: var(--undpds-spacing-04);
       margin: auto;
       padding-left: 0;
       width: 100%;
 
-      @include devicebreak(xlarge) {
+      @include breakpoints.devicebreak(xlarge) {
         column-count: 3;
-        column-gap: $spacing-06;
+        column-gap: var(--undpds-spacing-06);
       }
 
       li {
         list-style: none;
-        margin-bottom: $spacing-04;
+        margin-bottom: var(--undpds-spacing-04);
         padding-left: 0;
         position: relative;
         width: 100%;
 
-        @include devicebreak(xlarge) {
-          margin-bottom: $spacing-06;
+        @include breakpoints.devicebreak(xlarge) {
+          margin-bottom: var(--undpds-spacing-06);
         }
 
         a {
@@ -92,11 +93,11 @@
           outline: 0;
 
           .image {
-            @include devicebreak(xlarge) {
+            @include breakpoints.devicebreak(xlarge) {
               &::before {
-                @include transition(all 0.3s ease-in);
+                @include mixins.transition(all 0.3s ease-in);
 
-                background-color: $color-black;
+                background-color: var(--undpds-color-black);
                 content: '';
                 height: 100%;
                 left: 0;
@@ -110,7 +111,7 @@
           }
 
           .image__description {
-            @include transition(all 0.3s ease-in);
+            @include mixins.transition(all 0.3s ease-in);
             opacity: 1;
           }
         }
@@ -118,11 +119,11 @@
         .image {
           line-height: 0;
 
-          @include devicebreak(medium) {
+          @include breakpoints.devicebreak(medium) {
             overflow: hidden;
           }
 
-          @include devicebreak(xlarge) {
+          @include breakpoints.devicebreak(xlarge) {
             min-height: 200px;
           }
 
@@ -130,7 +131,7 @@
             padding-bottom: 0;
             max-width: 100%;
 
-            @include devicebreak(large) {
+            @include breakpoints.devicebreak(large) {
               max-width: none;
               min-height: 200px;
               object-fit: cover;
@@ -147,27 +148,27 @@
       position: absolute;
       z-index: 2;
 
-      @include devicebreak(xlarge) {
+      @include breakpoints.devicebreak(xlarge) {
         display: block;
       }
 
       figcaption {
         width: auto;
 
-        @include devicebreak(xlarge) {
+        @include breakpoints.devicebreak(xlarge) {
           border-bottom: 0;
           display: block;
           margin-top: 0;
-          padding: $spacing-07 $spacing-06;
+          padding: var(--undpds-spacing-07) var(--undpds-spacing-06);
         }
 
         p {
-          color: $color-white;
-          margin-bottom: $spacing-05;
+          color: var(--undpds-color-white);
+          margin-bottom: var(--undpds-spacing-05);
           padding-right: 0;
 
           +.credits {
-            @include devicebreak(large) {
+            @include breakpoints.devicebreak(large) {
               margin-left: 0;
             }
           }
@@ -175,7 +176,7 @@
 
         .credits {
           border-left: 0;
-          color: $color-white;
+          color: var(--undpds-color-white);
           padding-left: 0;
         }
       }
@@ -183,8 +184,7 @@
       &.caption_on_top {
         bottom: inherit;
         height: 100%;
-        -webkit-mask-image: linear-gradient(to bottom, $color-black 50%, transparent 100%);
-        mask-image: linear-gradient(to bottom, $color-black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, var(--undpds-color-black) 50%, transparent 100%);
         overflow-y: hidden;
         top: 0;
       }
@@ -205,7 +205,7 @@
 
       .credits {
         border-right: 0;
-        color: $color-white;
+        color: var(--undpds-color-white);
         margin-right: 0;
         padding-right: 0;
       }

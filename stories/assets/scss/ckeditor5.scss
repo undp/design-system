@@ -1,0 +1,21 @@
+@use "sass:meta";
+@use './variables';
+@use './custom_properties';
+@use './mixins';
+@use './fonts';
+
+.ck.ck-content {
+    @include meta.load-css("grid");
+    @include meta.load-css("typography");
+    @include meta.load-css("base");
+    @include meta.load-css("components");
+
+    input,
+    pre,
+    button,
+    p,
+    div {
+        @extend body;
+    }
+
+}

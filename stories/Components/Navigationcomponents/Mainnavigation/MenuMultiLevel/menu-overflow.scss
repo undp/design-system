@@ -1,8 +1,6 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/mixins';
 @import '../../../../assets/scss/breakpoints';
-@import '../../../../assets/scss/base';
-@import '../../../../assets/scss/typography';
 
 // Toggle overflow button.
 .menu__overflow__item {
@@ -25,7 +23,7 @@
   background: transparent;
   font-size: 2rem;
   text-transform: uppercase;
-  color: red;
+  color: var(--undpds-color-red);
   line-height: 0;
   margin: auto 0;
   border-radius: 100%;
@@ -44,7 +42,7 @@
     border-radius: 100%;
     padding-inline: 6px;
     line-height: 0;
-    font-family: "ProximaNova", sans-serif;
+    font-family: var(--undpds-font-family-proximanova);
   }
 
   &:hover::after {
@@ -79,7 +77,7 @@
     inset-block-end: 1px;
     border-width: 3rem;
     border: 1rem solid transparent;
-    border-block-end-color: $color-gray-200;
+    border-block-end-color: var(--undpds-color-gray-200);
     box-shadow: none;
     margin: auto;
   }
@@ -90,7 +88,7 @@
   position: relative;
   min-height: 4.125rem;
   height: unset;
-  background-color: $color-gray-200;
+  background-color: var(--undpds-color-gray-200);
   box-shadow: 0 3px 6px rgb(0 0 0 / 10%);
   order: 100;
   min-width: 100%;
@@ -102,10 +100,10 @@
   &:before {
     position: absolute;
     z-index: 100;
-    background-color: red;
+    background-color: var(--undpds-color-red);
     height: 1rem;
     width: 1rem;
-    border: 1rem solid gray;
+    border: 1rem solid var(--undpds-color-gray-600);
   }
 
   ul {
@@ -137,7 +135,7 @@
         font-size: 0.875rem;
         text-transform: uppercase;
         height: 4.125rem;
-        color: $color-black;
+        color: var(--undpds-color-black);
       }
 
       &.edge:focus>ul.sub-menu,
@@ -150,7 +148,7 @@
 
       &:hover {
         >a {
-          color: #55606e;
+          color: var(--undpds-color-gray-600);
         }
       }
     }
@@ -227,7 +225,7 @@
           width: 1.25rem;
           display: flex;
           margin-inline-start: auto;
-          color: $color-dark-red;
+          color: var(--undpds-color-dark-red);
         }
 
         .external-link-animated {
@@ -276,8 +274,8 @@
         >a,
         >a.active {
           transition: 0.2s ease;
-          background: $color-blue-600;
-          color: $color-white;
+          background: var(--undpds-color-blue-600);
+          color: var(--undpds-color-white);
         }
 
         &.has-submenu>a.active:after,
@@ -305,17 +303,17 @@
 
   li:hover>a.external {
     .external-link-animated {
-      box-shadow: -2px 2px 0 0 $color-white, -4px 0 0 -2px $color-white, -3px 3px 0 -1px $color-white;
+      box-shadow: -2px 2px 0 0 var(--undpds-color-white), -4px 0 0 -2px var(--undpds-color-white), -3px 3px 0 -1px var(--undpds-color-white);
 
       &::after {
         @include transform(rotate(0deg) translate(5px, -5px));
-        border-inline-end-color: $color-white;
-        border-block-start-color: $color-white;
+        border-inline-end-color: var(--undpds-color-white);
+        border-block-start-color: var(--undpds-color-white);
       }
 
       &::before {
         @include transform(rotate(-45deg) translate(7px, 0));
-        background: $color-white;
+        background: var(--undpds-color-white);
       }
     }
   }
@@ -324,18 +322,18 @@
     .download-animated {
 
       i {
-        border-color: $color-white;
+        border-color: var(--undpds-color-white);
       }
 
       &::after {
         @include transform(rotate(-45deg) translate(7px, -7px));
-        border-block-end-color: $color-white;
-        border-inline-start-color: $color-white;
+        border-block-end-color: var(--undpds-color-white);
+        border-inline-start-color: var(--undpds-color-white);
       }
 
       &::before {
         @include transform(translate(0, -10px));
-        background: $color-white;
+        background: var(--undpds-color-white);
       }
     }
   }

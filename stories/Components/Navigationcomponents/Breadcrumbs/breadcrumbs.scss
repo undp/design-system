@@ -117,7 +117,13 @@
 
 // burmese lang
 :lang(my) {
-  .breadcrumb li:last-of-type {
+  .breadcrumb ul li:last-of-type {
     font-size: $font-size-12;
+  }
+}
+
+:lang(ro) {
+  .breadcrumb ul li:last-of-type, .breadcrumb ul li a{
+    font-weight: 700;
   }
 }
