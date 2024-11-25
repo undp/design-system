@@ -473,15 +473,15 @@
   },
   "tokenSetOrder": {
     "0": {
-      "value": "primitive-tokens",
+      "value": "primitive",
       "type": "other"
     },
     "1": {
-      "value": "semantic-tokens",
+      "value": "semantic",
       "type": "other"
     },
     "2": {
-      "value": "component-tokens",
+      "value": "component",
       "type": "other"
     }
   }
