@@ -1,7 +1,7 @@
-@use 'grid-settings';
-@use '../../../node_modules/foundation-sites/scss/foundation';
+@import 'grid-settings';
+@import '../../../node_modules/foundation-sites/scss/foundation';
 
-@include foundation.foundation-xy-grid-classes(
+@include foundation-xy-grid-classes(
   $base-grid: true,
   $margin-grid: true,
   $padding-grid: true,
@@ -12,6 +12,6 @@
   $frame-grid: true
 );
 
-@include foundation.foundation-float-classes;
-@include foundation.foundation-flex-classes;
-@include foundation.foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
