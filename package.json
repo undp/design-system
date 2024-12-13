@@ -67,7 +67,7 @@
     "babel-plugin-react-transform": "^3.0.0",
     "babel-preset-env": "^1.7.0",
     "chromatic": "^11.7.1",
-    "copy-webpack-plugin": "^11.0.0",
+    "copy-webpack-plugin": "^12.0.2",
     "core-js": "^3.32",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^7.0.0",
