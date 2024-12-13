@@ -9,8 +9,10 @@ export function Breadcrumbcomponent({ data, Color, ...args }) {
     color = 'white';
   }
 
+  let moreClasses = args.Cls || '';
+
   return (
-    <nav aria-label="breadcrumbs" data-viewport="true" className={['breadcrumb', `${color}`].join(' ')}>
+    <nav aria-label="breadcrumbs" data-viewport="true" className={['breadcrumb', `${color}`, moreClasses].join(' ')}>
       <ul>
         {data.map((item, i) => {
           if (i === lastIndex) {
