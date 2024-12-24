@@ -49,7 +49,7 @@
           }
 
           &.show-medium {
-            ul {
+            ul:not(.accordion__panel) {
               display: block;
             }
           }
