@@ -1,6 +1,6 @@
-@use '../../../../assets/scss/breakpoints';
-@use '../../../../assets/scss/variables';
-@use '../../../../assets/scss/mixins';
+@use "../../../../assets/scss/breakpoints";
+@use "../../../../assets/scss/variables";
+@use "../../../../assets/scss/mixins";
 
 /* page hero start */
 .pagehero {
@@ -74,27 +74,26 @@
       }
     }
 
-      img {
-        @include breakpoints.devicebreak(small) {
-          @include mixins.img-cover;
+    img {
+      @include breakpoints.devicebreak(small) {
+        @include mixins.img-cover;
 
-          &.mobile-position-left {
-            object-position: left;
-          }
+        &.mobile-position-left {
+          object-position: left;
+        }
 
-          &.mobile-position-center {
-            object-position: center;
-          }
+        &.mobile-position-center {
+          object-position: center;
+        }
 
-          &.mobile-position-right {
-            object-position: right;
-          }
+        &.mobile-position-right {
+          object-position: right;
         }
       }
+    }
   }
 
   &-content {
-
     @include breakpoints.devicebreak(small) {
       height: auto;
       padding-inline: var(--undpds-spacing-04);
@@ -108,7 +107,7 @@
         padding-top: 0;
       }
 
-      +h2 {
+      + h2 {
         margin-top: 0;
       }
     }
@@ -118,6 +117,13 @@
       font-weight: 700;
       margin-bottom: 0;
       text-transform: uppercase;
+    }
+
+    .fit-text {
+      padding-right: 2rem;
+      display: inline-block;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     .subtitle {
@@ -256,7 +262,7 @@
 }
 
 @include breakpoints.devicebreak(medium) {
-  [dir='rtl'] {
+  [dir="rtl"] {
     .pagehero-tall {
       .pagehero-content {
         padding-left: 1.438rem;
