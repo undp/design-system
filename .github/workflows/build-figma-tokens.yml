@@ -1,0 +1,62 @@
+name: Generate scss vars from figma tokens
+
+on:
+  push:
+    branches:
+      - update-figma-tokens
+    paths:
+      - 'figma-tokens/input/**'
+
+jobs:
+  build_tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Configuring Node.js Environment
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.4.0
+
+      # Setting dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # Token conversion using token-transformer
+      - name: Transform Figma tokens
+        run: npx token-transformer figma-tokens/input/tokens.json figma-tokens/transformed-tokens/tokens-transformed.json
+
+      # Run script for Style Dictionary, convert JSON to SCSS
+      - name: Build Figma tokens to SCSS
+        run: npm run build-tokens
+
+      # Create or update the `update-figma-tokens` branch
+      - name: Create or update branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add stories/assets/scss/figma-scss/_figma-variables.scss figma-tokens/transformed-tokens/tokens-transformed.json
+          git commit -m "Save changes in the branch" || echo "No changes to commit"
+
+      # Push changes to `update-figma-tokens` branch
+      - name: Push changes
+        run: |
+          git push origin ${{ github.ref_name }} || echo "No changes to push"
+
+      # Automatic pull request
+      - name: Create Pull Request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_DATA=$(jq -n \
+            --arg title "Update SCSS variables from Figma tokens" \
+            --arg body "This PR updates SCSS variables based on the latest Figma tokens." \
+            --arg head "${GITHUB_REF#refs/heads/}" \
+            --arg base "develop" \
+            '{title: $title, body: $body, head: $head, base: $base}')
+
+          curl -s -X POST -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/pulls \
+            -d "$PR_DATA"
