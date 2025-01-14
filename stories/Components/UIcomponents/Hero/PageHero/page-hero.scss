@@ -119,13 +119,6 @@
       text-transform: uppercase;
     }
 
-    .fit-text {
-      padding-right: 2rem;
-      display: inline-block;
-      overflow-wrap: break-word;
-      word-break: break-word;
-    }
-
     .subtitle {
       font-size: 1.563rem;
       font-weight: 400;
@@ -178,6 +171,13 @@
       justify-content: center;
       word-break: break-word;
 
+      .fit-text {
+        white-space: normal; /* 줄바꿈 허용 */
+        word-break: normal;
+        overflow-wrap: break-word; /* 긴 단어를 자름 */
+        text-align: left; /* 텍스트 정렬 */
+        padding-right: 2rem;
+      }
       @include breakpoints.devicebreak(small) {
         height: auto;
         padding: 0 0 var(--undpds-spacing-08);

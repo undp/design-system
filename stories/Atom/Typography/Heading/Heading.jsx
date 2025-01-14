@@ -10,18 +10,24 @@ export function Heading({
   dataViewport,
   isFitHeading,
 }) {
+  // use setTimeout to apply Fitty after the DOM has stabilized.
+  // If you don’t use setTimeout, the heading may overlap the top of
+  // the right image when refreshing the page or loading the homepage
+  // for the first time.
   useEffect(() => {
     if (isFitHeading) {
-      // use setTimeout to apply Fitty after the DOM has stabilized.
-      // If you don’t use setTimeout, the heading may overlap the top of
-      // the right image when refreshing the page or loading the homepage
-      // for the first time.
       const timeoutId = setTimeout(() => {
-        const headingFunction = fitHeading(".fit-text");
-        return headingFunction;
+        fitHeading(".pagehero-content", ".fit-text");
       }, 100);
+
+      const handleResize = () => {
+        fitHeading(".pagehero-content", ".fit-text");
+      };
+      window.addEventListener("resize", handleResize);
+
       return () => {
         clearTimeout(timeoutId);
+        window.removeEventListener("resize", handleResize);
       };
     }
   }, [isFitHeading]);

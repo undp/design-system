@@ -20,25 +20,94 @@ export const fitText = (selector) => {
   });
 };
 
-export const fitHeading = (selector) => {
-  const items =
-    typeof selector === "string"
-      ? document.querySelectorAll(selector)
-      : [selector];
+//-------------------------------------------------------------------
 
-  const getMinSize = () => (window.innerWidth > 480 ? 24 : 16);
+let fittyInstance = null; //tracks the current instance of Fitty applied
+let initialWindowWidth = null; //stores the window width at the time Fitty is first applied
+let isFittyApplied = false; // tracks wheteher Fitty is currently active for the text element
 
-  items.forEach((ele) => {
-    if (ele.style.removeProperty) {
-      ele.style.removeProperty("font-size");
-    } else {
-      ele.style.removeAttribute("font-size");
+export const fitHeading = (parentSelector, childSelector) => {
+  const parent = document.querySelector(parentSelector);
+  const child = document.querySelector(childSelector);
+
+  if (!parent || !child) {
+    console.error("Parent or child element not found.");
+    return;
+  }
+
+  //checks if the child's total width exceeds the width of the parent
+  const isWidthOverflow = child.scrollWidth > parent.offsetWidth;
+
+  const parentRect = parent.getBoundingClientRect();
+  const childRect = child.getBoundingClientRect();
+
+  //checks if the child's right edge extends beyond the parent's right edge
+  const isPositionOverflow = childRect.right > parentRect.right;
+
+  //Fitty deactivation for small screens
+  if (window.innerWidth <= 480) {
+    if (fittyInstance) {
+      console.log("Window width <= 480px Unsubscribing Fitty.");
+      fittyInstance.unsubscribe();
+      fittyInstance = null;
+      isFittyApplied = false;
     }
 
-    ele.style.whiteSpace = "normal";
-    fitty(ele, {
+    child.style.wordBreak = "";
+    return;
+  }
+
+  //Fitty reapplying after window resizes bigger than 480px(small screens)
+  if (window.innerWidth > 480 && !isFittyApplied && isWidthOverflow) {
+    console.log("Window width > 480px: Reapplying Fitty...");
+    fittyInstance = fitty(child, {
+      minSize: 24,
       multiLine: true,
-      minSize: getMinSize(),
     });
-  });
+
+    if (initialWindowWidth === null) {
+      initialWindowWidth = window.innerWidth;
+    }
+    child.style.wordBreak = "break-word";
+    isFittyApplied = true;
+  }
+
+  //Fitty applications based on overflow
+  //if the text is overflowing and Fitty is not active
+  if ((isWidthOverflow || isPositionOverflow) && !isFittyApplied) {
+    console.log(
+      "Child element is overflowing the parent container. Applying Fitty...",
+    );
+
+    if (initialWindowWidth === null) {
+      //save the initialwindowiwdth
+      initialWindowWidth = window.innerWidth;
+    }
+
+    fittyInstance = fitty(child, {
+      minSize: 24,
+      multiLine: true,
+    });
+
+    child.style.wordBreak = "break-word";
+    isFittyApplied = true;
+  }
+
+  //Fitty reset if the window width is larger than initial window width
+  if (initialWindowWidth !== null && window.innerWidth > initialWindowWidth) {
+    console.log(
+      "Window width exceeded initial Fitty width. Resetting Fitty...",
+    );
+    if (fittyInstance) {
+      fittyInstance.unsubscribe();
+      fittyInstance = null;
+    }
+    initialWindowWidth = null;
+    isFittyApplied = false;
+
+    child.style.wordBreak = "";
+    child.style.whiteSpace = "";
+    child.style.overflowWrap = "";
+    child.style.fontSize = "";
+  }
 };

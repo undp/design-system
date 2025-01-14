@@ -283,6 +283,11 @@ export default {
                 https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
               </a>
             </li>
+            <li>
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/fitText.min.js">
+                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/fitText.min.js
+              </a>
+            </li>
           </ul>
 
           <h3>Interactions</h3>
