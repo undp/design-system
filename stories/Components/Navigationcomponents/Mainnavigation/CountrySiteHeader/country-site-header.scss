@@ -12,7 +12,7 @@
   .header {
     @extend %header;
     position: fixed;
-    background-color: $color-gray-100;
+    background-color: var(--undpds-color-gray-100);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     height: unset;
     min-height: 7.1875rem;
@@ -24,13 +24,15 @@
     .grid-container.fluid>.grid-margin-x {
       // margin-inline: -1.5rem;
       justify-content: space-between;
+
       @include devicebreak(small) {
         // margin-inline: -0.75rem;
       }
     }
 
     .site-title {
-      font-size: $font-size-16;
+      font-size: var(--undpds-font-size-16);
+      font-weight: 600;
       line-height: 1.142;
       margin-block-start: -0.25rem;
       margin-inline-end: 1.5rem;
@@ -44,20 +46,21 @@
       @include devicebreak(large) {}
 
       @include devicebreak(xlarge) {
-        font-size: $font-size-20;
+        font-size: var(--undpds-font-size-20);
         margin-inline-end: auto;
         width: auto;
         //max-width: 212px;
       }
 
       span:first-of-type:not(:last-of-type) {
-        border-bottom: 1px solid $color-gray-500;
+        border-bottom: 1px solid var(--undpds-color-gray-500);
         display: inline-block;
-        font-size: $font-size-12;
+        font-size: var(--undpds-font-size-12);
         margin: 0;
         padding-block-end: 1px;
+
         a {
-          color: $color-gray-600;
+          color: var(--undpds-color-gray-600);
         }
       }
 
@@ -112,7 +115,7 @@
         align-items: flex-start;
         display: flex;
         height: 7.1875rem;
-        margin-inline-end: $spacing-06;
+        margin-inline-end: var(--undpds-spacing-06);
         position: relative;
         z-index: 2;
 
@@ -121,7 +124,7 @@
         }
 
         @include devicebreak(small) {
-          margin-inline-end: $spacing-04;
+          margin-inline-end: var(--undpds-spacing-04);
         }
 
         img {
@@ -170,7 +173,7 @@
 
       >ul {
         display: flex;
-        column-gap: 0; //$spacing-06;
+        column-gap: 0; //var(--undpds-spacing-06;
         align-items: center;
         justify-content: space-evenly;
         flex-direction: row;
@@ -179,7 +182,7 @@
         padding-inline: 0;
 
         @include devicebreak(xlarge) {
-          column-gap: 0; //$spacing-07;
+          column-gap: 0; //var(--undpds-spacing-07;
         }
 
         >li {
@@ -205,6 +208,7 @@
             justify-content: center;
             padding: 0 1.5rem;
             text-align: center;
+            // font-weight: 600;
             width: 100%;
             white-space: nowrap;
           }
@@ -248,7 +252,7 @@
     .icon-search {
       @extend %header-icon;
 
-      margin-inline-start: $spacing-05;
+      margin-inline-start: var(--undpds-spacing-05);
       -webkit-mask: url(~icons/search.svg) no-repeat left center;
       mask: url(~icons/search.svg) no-repeat left center;
 
@@ -270,7 +274,7 @@
     }
 
     .button {
-      margin-inline-start: $spacing-05;
+      margin-inline-start: var(--undpds-spacing-05);
       display: block;
 
       @include devicebreak(mediumonlytab) {
@@ -304,7 +308,7 @@
 
   &.run-animation {
     .header .top-left .logo {
-      inset-inline-start: $spacing-04;
+      inset-inline-start: var(--undpds-spacing-04);
       position: fixed;
       transform: translateX(0);
     }
@@ -338,7 +342,7 @@
       margin-inline-end: 0;
 
       @include devicebreak(xlarge) {
-        margin-inline-start: $spacing-07;
+        margin-inline-start: var(--undpds-spacing-07);
         margin-inline-end: 0;
       }
     }

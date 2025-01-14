@@ -6,20 +6,25 @@
 .tertiary {
   h4 {
     font-weight: 600;
-    margin-bottom: $spacing-06;
+    margin-bottom: var(--undpds-spacing-06);
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-09;
+      margin-bottom: var(--undpds-spacing-09);
     }
   }
 
   h5 {
-    margin-bottom: $spacing-04;
+    margin-bottom: var(--undpds-spacing-04);
 
     @include devicebreak(medium) {
-      margin-bottom: $spacing-06;
+      margin-bottom: var(--undpds-spacing-06);
     }
   }
 }
 
+:lang(ro) {
+  .tertiary h4 {
+    font-weight: 700;
+  }
+}
 /* tertiary end */

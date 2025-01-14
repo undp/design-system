@@ -6,7 +6,7 @@
   -webkit-font-smoothing: antialiased;
 
   @include devicebreak(small) {
-    margin-bottom: $spacing-12;
+    margin-bottom: var(--undpds-spacing-12);
   }
 
   a {
@@ -18,7 +18,7 @@
     img {
       border-radius: 50%;
       height: 44px;
-      margin-right: $spacing-05;
+      margin-right: var(--undpds-spacing-05);
       min-width: 44px;
       width: 44px;
     }
@@ -30,36 +30,36 @@
   }
 
   &__header {
-    color: $color-white;
+    color: var(--undpds-color-white);
     font-weight: 400;
 
     &--subtitle {
-      font-size: $font-size-14;
+      font-size: var(--undpds-font-size-14);
       font-weight: 600;
     }
   }
 
   &__body {
-    border-top: 3px solid $color-white;
-    margin-top: $spacing-07;
-    padding: $spacing-06 0.313rem 0 0;
+    border-top: 3px solid var(--undpds-color-white);
+    margin-top: var(--undpds-spacing-07);
+    padding: var(--undpds-spacing-06) 0.313rem 0 0;
 
     time,
     p,
     a {
-      color: $color-gray-500;
-      font-size: $font-size-14;
+      color: var(--undpds-color-gray-500);
+      font-size: var(--undpds-font-size-14);
       font-weight: 700;
     }
 
     p,
     a {
-      color: $color-white;
+      color: var(--undpds-color-white);
       font-weight: 400;
     }
 
     time {
-      margin-top: $spacing-05;
+      margin-top: var(--undpds-spacing-05);
     }
 
     p {
@@ -68,15 +68,15 @@
   }
 
   .cta__link {
-    color: $color-white;
+    color: var(--undpds-color-white);
     font-size: 0.938rem;
 
     &:hover {
-      color: $color-gray-400;
+      color: var(--undpds-color-gray-400);
     }
 
     &::after {
-      margin-top: -$spacing-01;
+      margin-top: -var(--undpds-spacing-01);
     }
   }
 }
@@ -84,12 +84,18 @@
 [dir='rtl'] {
   .tweet-card {
     img {
-      margin-left: $spacing-05;
+      margin-left: var(--undpds-spacing-05);
       margin-right: 0;
     }
 
     &__body {
-      padding: $spacing-06 0 0 0.313rem;
+      padding: var(--undpds-spacing-06) 0 0 0.313rem;
     }
+  }
+}
+
+:lang(ro) {
+  .tweet_card__header--subtitle {
+    font-weight: 700;
   }
 }

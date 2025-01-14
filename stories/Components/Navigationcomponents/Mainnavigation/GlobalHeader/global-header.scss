@@ -24,7 +24,7 @@
       height: 7.1875rem;
 
       @include devicebreak(xlarge) {
-        margin: 0 $spacing-70;
+        margin: 0 var(--undpds-spacing-70);
       }
 
       @include devicebreak(mediumonlytab) {
@@ -47,7 +47,7 @@
       }
 
       .dropdown-language {
-        margin-left: $spacing-04;
+        margin-left: var(--undpds-spacing-04);
         display: flex;
         align-items: center;
 
@@ -119,6 +119,7 @@
           a {
             display: flex;
             align-items: center;
+
             @include devicebreak(xlarge) {
               margin-top: 0;
             }
@@ -176,7 +177,6 @@
         @extend %header-icon;
 
         margin-left: 1.75rem;
-        -webkit-mask: url(~icons/globe.svg) no-repeat left center;
         mask: url(~icons/globe.svg) no-repeat left center;
 
         @include devicebreak(mediumonlytab) {
@@ -187,16 +187,13 @@
       .icon-search {
         @extend %header-icon;
 
-        margin-left: $spacing-05;
-        margin-right: $spacing-04;
-        -webkit-mask: url(~icons/search.svg) no-repeat left center;
+        margin-left: var(--undpds-spacing-05);
+        margin-right: var(--undpds-spacing-04);
         mask: url(~icons/search.svg) no-repeat left center;
 
         @include devicebreak(small) {
           background: transparent url(~icons/search.svg) no-repeat left center;
-          margin-left: 0;
-          margin-right: 0;
-          -webkit-mask: inherit;
+          margin-inline: 0;
           mask: inherit;
 
           &:hover {
@@ -217,7 +214,7 @@
     .header .mid-nav .logo {
       @include transition(all 0.7s ease);
 
-      left: $spacing-04;
+      left: var(--undpds-spacing-04);
       position: fixed;
       top: 0;
       transform: translateX(0);
@@ -289,18 +286,18 @@
     .top-left {
       .dropdown-language {
         margin-left: 0;
-        margin-right: $spacing-04;
+        margin-right: var(--undpds-spacing-04);
       }
 
       .icon-bar {
-        margin-right: $spacing-04;
+        margin-right: var(--undpds-spacing-04);
       }
     }
 
     &.global-load-animation {
       .header .mid-nav .logo {
         left: inherit;
-        right: $spacing-04;
+        right: var(--undpds-spacing-04);
       }
     }
 
