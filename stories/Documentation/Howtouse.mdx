@@ -1,4 +1,5 @@
 import { Meta, Story } from "@storybook/blocks";
+import { Link } from '@storybook/addon-links/react';
 
 <Meta
   title="Getting started/How to use our design system?"
@@ -10,7 +11,7 @@ Using the UNDP design system is very simple. To use the design system you need t
 
 ### Steps to integrate
 
-- Include the base styling CSS file in your project [https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css](https://cdn.jsdelivr.net/npm/@undp/design-system-assets/css/base-minimal.min.css).
+- Include the base styling CSS file in your project [https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css](https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/base-minimal.min.css).
 - Browse the component which you want to integrate.
 - Check out the documentation page of the component.
 - Copy the HTML of the component in your project.
@@ -32,33 +33,36 @@ git clone
 2. Install project dependencies
 
 ```bash
-npm install
+yarn install
 ```
 
 3. Runs storybook locally
 
 ```bash
-npm run storybook
+yarn run storybook
 ```
 
 4. Build storybook
 
 ```bash
-npm run build-storybook
+yarn run build-storybook
 ```
 
-5. Run this command whenever compiling CSS and JS
+5. Linting on codebase
 
 ```bash
-npm run build
+yarn run lint
+```
+
+6. Run this command whenever compiling CSS and JS
+
+```bash
+yarn run build
 ```
 
 ### Dependencies
-(need to be loaded separately)
 
 - jQuery [(https://www.jquery.com/)](https://www.jquery.com/)
-- GSAP [(https://greensock.com/gsap/)](https://greensock.com/gsap/)
-- Swiper [(https://swiperjs.com/)](https://swiperjs.com/)
 
 ### Assets (CSS/JS/Icons) Path
 

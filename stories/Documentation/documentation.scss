@@ -35,14 +35,14 @@
   }
 
   h1.title {
-    font-family: var(--undpds-font-family-sohnebreit);
+    font-family: "SohneBreit", "ProximaNova", sans-serif;
     font-weight: 900;
-    color: var(--undpds-color-black);
-    margin-top: var(--undpds-spacing-10);
-    margin-bottom: var(--undpds-spacing-07);
+    color: $color-black;
+    margin-top: $spacing-10;
+    margin-bottom: $spacing-07;
 
     div {
-      font-family: var(--undpds-font-family-sohnebreit);
+      font-family: "SohneBreit", "ProximaNova", sans-serif;
       font-weight: 900;
       font-size: 55px;
     }
@@ -57,14 +57,14 @@
   h4,
   h5,
   h6 {
-    font-family: var(--undpds-font-family-proximanova);
+    font-family: "ProximaNova", sans-serif;
   }
 
   h2 {
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: var(--undpds-spacing-06);
+    margin-bottom: $spacing-06;
     border-block-end: 0;
 
     @include devicebreak(medium) {
@@ -80,8 +80,8 @@
     font-size: 1.875rem;
     font-weight: 600;
     line-height: 1.15;
-    margin-top: var(--undpds-spacing-08);
-    margin-bottom: var(--undpds-spacing-05);
+    margin-top: $spacing-08;
+    margin-bottom: $spacing-05;
 
     @include devicebreak(medium) {
       font-size: 2.188rem;
@@ -118,29 +118,29 @@
   }
 
   hr {
-    margin-top: var(--undpds-spacing-11);
-    margin-bottom: var(--undpds-spacing-06);
-    border-top: 2px solid var(--undpds-color-black);
+    margin-top: $spacing-11;
+    margin-bottom: $spacing-06;
+    border-top: 2px solid rgba(0, 0, 0, 1);
   }
 
   .intro {
-    // row-gap: var(--undpds-spacing-06;
+    // row-gap: $spacing-06;
 
     .cell {
       display: flex;
       align-items: center;
 
       &.figma {
-        background: var(--undpds-color-black);
+        background: $color-black;
 
         p,
         a {
-          color: var(--undpds-color-white);
+          color: $color-white;
         }
       }
 
       &.github {
-        background: var(--undpds-color-gray-300);
+        background: $color-gray-300;
       }
 
       &.figma,
@@ -149,12 +149,12 @@
           background: none;
           width: 100%;
           text-align: center;
-          padding-top: var(--undpds-spacing-08);
-          padding-bottom: var(--undpds-spacing-06);
+          padding-top: $spacing-08;
+          padding-bottom: $spacing-06;
 
           @include devicebreak(large) {
-            padding-top: var(--undpds-spacing-09);
-            padding-bottom: var(--undpds-spacing-07);
+            padding-top: $spacing-09;
+            padding-bottom: $spacing-07;
           }
 
           p {
@@ -170,11 +170,11 @@
   }
 
   .featured-content-cards__wrapper {
-    margin-top: var(--undpds-spacing-09);
-    margin-bottom: var(--undpds-spacing-05);
+    margin-top: $spacing-09;
+    margin-bottom: $spacing-05;
 
     .grid-x.grid-margin-x {
-      row-gap: var(--undpds-spacing-06);
+      row-gap: $spacing-06;
       margin-inline: -0.75rem;
     }
   }
@@ -182,11 +182,11 @@
 
 // Documentation styles
 .sbdocs {
-  font-family: var(--undpds-font-family-proximanova);
+  font-family: $Font-Family-ProximaNova;
 
   h1,
   &-h1 {
-    font-family: var(--undpds-font-family-sohnebreit);
+    font-family: $Font-Family-SohneBreit;
     font-weight: 900;
   }
 

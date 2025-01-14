@@ -1,10 +1,8 @@
-@use '../../../assets/scss/mixins';
-@use '../../../assets/scss/breakpoints';
-@use '../../../assets/scss/variables';
-@use "../../../assets/scss/base";
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
-
-base.$colors: (
+$colors: (
   'yellow': var(--undpds-color-yellow),
   'red': var(--undpds-color-red),
   'green': var(--undpds-color-green),
@@ -17,7 +15,7 @@ base.$colors: (
   height: 0.75rem;
   width: 100%;
 
-  @include breakpoints.devicebreak(medium) {
+  @include devicebreak(medium) {
     height: 1rem;
   }
 
@@ -28,21 +26,21 @@ base.$colors: (
   &.small {
     height: 0.625rem;
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       height: 0.75rem;
     }
 
     .progress-bar {
       height: 0.625rem;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         height: 0.75rem;
       }
     }
   }
 
   @each $name,
-  $color in base.$colors {
+  $color in $colors {
 
     &.accent-#{$name},
     &.#{$name} {
@@ -54,7 +52,7 @@ base.$colors: (
 }
 
 @each $name,
-$color in base.$colors {
+$color in $colors {
 
   .accent-#{$name} .progress-container,
   .#{$name} .progress-container {
@@ -64,7 +62,7 @@ $color in base.$colors {
     }
 
     @each $name2,
-    $color2 in base.$colors {
+    $color2 in $colors {
 
       &.accent-#{$name2},
       &.#{$name2} {
@@ -78,7 +76,7 @@ $color in base.$colors {
 
 
 .progress-bar {
-  @include mixins.transition(width 0.2s linear);
+  @include transition(width 0.2s linear);
 
   height: 0.75rem;
   min-width: 1%;
@@ -86,7 +84,7 @@ $color in base.$colors {
   width: 34%;
   z-index: 1;
 
-  @include breakpoints.devicebreak(medium) {
+  @include devicebreak(medium) {
     height: 1rem;
   }
 }

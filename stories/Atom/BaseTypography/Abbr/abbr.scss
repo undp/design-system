@@ -1,6 +1,6 @@
-@use '../../../assets/scss/mixins';
-@use '../../../assets/scss/breakpoints';
-@use '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 abbr[title] {
   @extend %paragragh-font-20;

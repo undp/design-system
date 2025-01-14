@@ -1,7 +1,9 @@
+@import 'node_modules/foundation-sites/scss/util/util';
+
 // 1. Global
 // ---------
 
-$global-width: 90rem;
+$global-width: rem-calc(1440);
 
 // 2. Breakpoints
 // --------------

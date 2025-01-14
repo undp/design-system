@@ -1,6 +1,6 @@
-@use 'variables';
-@use 'mixins';
-@use 'breakpoints';
+@import './variables';
+@import './mixins';
+@import './breakpoints';
 
 /* base start */
 .color-white {
@@ -14,7 +14,7 @@
 .show-large {
   display: none;
 
-  @include breakpoints.devicebreak(medium) {
+  @include devicebreak(medium) {
     display: block;
   }
 }
@@ -22,7 +22,7 @@
 .show-small {
   display: block;
 
-  @include breakpoints.devicebreak(medium) {
+  @include devicebreak(medium) {
     display: none;
   }
 }
@@ -77,7 +77,7 @@
   @extend %scale-up;
 
   &.inviewport {
-    @include mixins.transform(scale(1));
+    @include transform(scale(1));
   }
 }
 
@@ -92,14 +92,14 @@
 .expand-to-size {
   max-width: calc(100% - 1.5rem);
 
-  @include breakpoints.devicebreak(medium) {
+  @include devicebreak(medium) {
     max-width: calc(100% - 3rem);
   }
 }
 
 [dir='rtl'] {
   *[data-viewport='true'] {
-    @include mixins.transform(translateX(100px));
+    @include transform(translateX(100px));
 
     &.inviewport {
       @extend %inviewport_left_right;
@@ -153,14 +153,14 @@ $color in $colors {
     //card-thumbnail
     .card-thumbnail__image:hover {
       &::before {
-        @include mixins.background-image(42deg, #{$color}, transparent 80%);
+        @include background-image(42deg, #{$color}, transparent 80%);
       }
     }
 
     //bio-card
     .bio-card:hover {
       .card-thumbnail__image::before {
-        @include mixins.background-image(67.76deg, #{$color}, transparent 61.11%);
+        @include background-image(67.76deg, #{$color}, transparent 61.11%);
 
         opacity: 0.75;
       }
@@ -169,28 +169,28 @@ $color in $colors {
     //author__img
     .author__img:hover {
       &::before {
-        @include mixins.background(45deg, #{$color}, transparent 53%);
+        @include background(45deg, #{$color}, transparent 53%);
       }
     }
 
     //publication-thumbnail__image
     .publication-thumbnail__image:hover {
       &::after {
-        @include mixins.background-image(42deg, #{$color}, transparent 80%);
+        @include background-image(42deg, #{$color}, transparent 80%);
       }
     }
 
     //download card
     .download-card:hover {
       .card-thumbnail__image::before {
-        @include mixins.background-image(42deg, #{$color}, transparent 80%);
+        @include background-image(42deg, #{$color}, transparent 80%);
 
         opacity: 0.75;
       }
 
       .publication-thumbnail__image {
         &::after {
-          @include mixins.background-image(42deg, #{$color}, transparent 80%);
+          @include background-image(42deg, #{$color}, transparent 80%);
 
           opacity: 0.75;
         }
@@ -201,7 +201,7 @@ $color in $colors {
     .publication-card:hover {
       .publication-thumbnail__image {
         &::after {
-          @include mixins.background-image(42deg, #{$color}, transparent 80%);
+          @include background-image(42deg, #{$color}, transparent 80%);
 
           opacity: 0.75;
         }
@@ -211,7 +211,7 @@ $color in $colors {
     //stats-panel
     .stats-panel:hover {
       &::after {
-        @include mixins.background-image(0deg, #{$color}, transparent 140%);
+        @include background-image(0deg, #{$color}, transparent 140%);
       }
 
       .stats-card {
@@ -222,7 +222,7 @@ $color in $colors {
     //wide-card
     .wide-card__image a:hover {
       &::before {
-        @include mixins.background-image(42deg, #{$color}, transparent 80%);
+        @include background-image(42deg, #{$color}, transparent 80%);
 
         opacity: 0.75;
       }
@@ -231,7 +231,7 @@ $color in $colors {
     //feature-card
     .feature__card-slide {
       &::before {
-        @include mixins.background-image(45deg, #{$color}, transparent 67%);
+        @include background-image(45deg, #{$color}, transparent 67%);
       }
     }
 
@@ -239,14 +239,14 @@ $color in $colors {
     .content-card {
       .image {
         &::before {
-          @include mixins.background-image(42deg, #{$color}, transparent 80%);
+          @include background-image(42deg, #{$color}, transparent 80%);
         }
       }
     }
 
     .image-reveal-card:hover {
       .image::before {
-        @include mixins.background-image(67.76deg, #{$color}, transparent 61.11%);
+        @include background-image(67.76deg, #{$color}, transparent 61.11%);
 
         opacity: 0.75;
       }
@@ -266,14 +266,14 @@ $color in $colors {
       //card-thumbnail
       .card-thumbnail__image:hover {
         &::before {
-          @include mixins.background-image(297deg, #{$color}, transparent 61.11%);
+          @include background-image(297deg, #{$color}, transparent 61.11%);
         }
       }
 
       //bio-card
       .bio-card:hover {
         .card-thumbnail__image::before {
-          @include mixins.background-image(297deg, #{$color}, transparent 61.11%);
+          @include background-image(297deg, #{$color}, transparent 61.11%);
 
           opacity: 0.75;
         }
@@ -283,7 +283,7 @@ $color in $colors {
       .publication-card:hover {
         .publication-thumbnail__image {
           &::after {
-            @include mixins.background-image(318deg, #{$color}, transparent 70.49%);
+            @include background-image(318deg, #{$color}, transparent 70.49%);
 
             opacity: 0.75;
           }
@@ -293,14 +293,14 @@ $color in $colors {
       //download card
       .download-card:hover {
         .card-thumbnail__image::before {
-          @include mixins.background-image(297deg, #{$color}, transparent 61.11%);
+          @include background-image(297deg, #{$color}, transparent 61.11%);
 
           opacity: 0.75;
         }
 
         .publication-thumbnail__image {
           &::after {
-            @include mixins.background-image(318deg, #{$color}, transparent 70.49%);
+            @include background-image(318deg, #{$color}, transparent 70.49%);
 
             opacity: 0.75;
           }
@@ -311,7 +311,7 @@ $color in $colors {
       .publication-card:hover {
         .publication-thumbnail__image {
           &::after {
-            @include mixins.background-image(318deg, #{$color}, transparent 70.49%);
+            @include background-image(318deg, #{$color}, transparent 70.49%);
 
             opacity: 0.75;
           }
@@ -321,7 +321,7 @@ $color in $colors {
       //wide-card
       .wide-card__image a:hover {
         &::before {
-          @include mixins.background-image(318deg, #{$color}, transparent 80%);
+          @include background-image(318deg, #{$color}, transparent 80%);
 
           opacity: 0.75;
         }
@@ -330,7 +330,7 @@ $color in $colors {
       //feature-card
       .feature__card-slide {
         &::before {
-          @include mixins.background-image(318deg, #{$color}, transparent 67.25%);
+          @include background-image(318deg, #{$color}, transparent 67.25%);
         }
       }
     }

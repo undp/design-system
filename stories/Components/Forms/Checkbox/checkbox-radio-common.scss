@@ -1,4 +1,4 @@
-@use '../../../assets/scss/variables';
+@import '../../../assets/scss/variables';
 
 .form-check {
   align-items: center;
@@ -7,7 +7,7 @@
 
   label {
     cursor: pointer;
-    font-size: variables.$font-size-16;
+    font-size: $font-size-16;
     padding: 0 7px;
   }
 }

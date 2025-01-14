@@ -1,23 +1,22 @@
-@use '../../../../assets/scss/breakpoints';
-@use '../../../../assets/scss/mixins';
-@use '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
 
 .author-card {
   a {
     background: none;
-    border-top: 2px solid var(--undpds-color-black);
+    border-top: 2px solid $color-black;
     display: block;
-    margin-bottom: var(--undpds-spacing-09);
-    padding-top: var(--undpds-spacing-06);
+    margin-bottom: $spacing-09;
+    padding-top: $spacing-06;
     word-break: break-word;
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       margin-bottom: 3.75rem;
     }
 
     &:hover {
       .cta__link::after {
-        @include mixins.translate(70%,0);
+        @include translate(70%,0);
       }
 
       .author__img {
@@ -29,18 +28,18 @@
   }
 
   p {
-    font-size: var(--undpds-font-size-14);
+    font-size: $font-size-14;
     line-height: 1.4;
-    margin-bottom: var(--undpds-spacing-06);
+    margin-bottom: $spacing-06;
 
-    @include breakpoints.devicebreak(medium) {
-      font-size: var(--undpds-font-size-16);
+    @include devicebreak(medium) {
+      font-size: $font-size-16;
     }
   }
 
   h6 {
-    @include breakpoints.devicebreak(small) {
-      font-size: var(--undpds-font-size-14);
+    @include devicebreak(small) {
+      font-size: $font-size-14;
       line-height: 1.2;
     }
   }
@@ -51,7 +50,7 @@
     a {
       &:hover {
         .cta__link::after {
-          @include mixins.transform(translate(-50%,0) rotate(180deg));
+          @include transform(translate(-50%,0) rotate(180deg));
         }
       }
     }

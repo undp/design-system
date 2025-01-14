@@ -1,7 +1,5 @@
-@use 'variables';
-@use 'mixins';
-@use "breakpoints";
-
+@import 'variables';
+@import 'mixins';
 
 /* Burmese */
 :lang(my) {
@@ -25,11 +23,11 @@
   h1 {
     font-size: 2.625rem;
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       font-size: 3.875rem;
     }
 
-    @include breakpoints.devicebreak(large) {
+    @include devicebreak(large) {
       font-size: 5rem;
     }
   }
@@ -37,11 +35,11 @@
   h2 {
     font-size: var(--undpds-font-size-32);
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       font-size: var(--undpds-font-size-35);
     }
 
-    @include breakpoints.devicebreak(large) {
+    @include devicebreak(large) {
       font-size: 2.813rem;
     }
   }
@@ -49,7 +47,7 @@
   h4 {
     font-size: 1.3rem;
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       font-size: 1.8rem;
     }
   }
@@ -57,7 +55,7 @@
   h5 {
     font-size: var(--undpds-font-size-20);
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       font-size: 1.375rem;
     }
   }
@@ -72,7 +70,7 @@
     font-size: var(--undpds-font-size-14);
     line-height: 1.9;
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       font-size: 1.125rem;
     }
   }
@@ -80,7 +78,7 @@
 }
 
 /* Cyrillic scripts */
-#{variables.$cyrillic} {
+#{$cyrillic} {
   h1 {
     font-family: var(--undpds-font-family-proximanova);
   }
@@ -278,12 +276,5 @@
   h5,
   h6 {
     font-family: var(--undpds-font-family-notosans);
-  }
-}
-
-/* Romanian */
-:lang(ro) {
-  h3 {
-    font-weight: 700;
   }
 }

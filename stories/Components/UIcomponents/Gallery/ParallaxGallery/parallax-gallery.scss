@@ -1,17 +1,16 @@
-@use '../../../../assets/scss/breakpoints';
-@use '../../../../assets/scss/variables';
-@use '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
 
 .parallax-gallery {
   &-left {
     display: flex;
 
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       margin-bottom: 0.75rem;
     }
 
     &.gray {
-      background: var(--undpds-color-gray-200);
+      background: $color-gray-200;
     }
   }
 
@@ -21,23 +20,23 @@
   }
 
   &-content {
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       padding: 1.5rem 1rem;
     }
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       margin: auto 2.5rem;
       max-width: 28rem;
     }
 
-    @include breakpoints.devicebreak(large) {
+    @include devicebreak(large) {
       margin: auto 7.375rem;
     }
 
     h5 {
       margin-bottom: 2rem;
 
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         margin-bottom: 1rem;
       }
     }
@@ -46,7 +45,7 @@
       font-size: 1rem;
       margin-bottom: 3rem;
 
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         font-size: 0.875rem;
         margin-bottom: 2rem;
       }
@@ -72,7 +71,7 @@
       flex: 0 0 calc(50% - 0.5rem);
       max-width: calc(50% - 0.5rem);
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         &:first-of-type {
           margin-right: 0.5rem;
         }
@@ -82,7 +81,7 @@
         }
       }
 
-      @include breakpoints.devicebreak(large) {
+      @include devicebreak(large) {
         flex: 0 0 calc(50% - 0.75rem);
         max-width: calc(50% - 0.75rem);
 
@@ -95,7 +94,7 @@
         }
       }
 
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         flex: 0 0 calc(50% - 0.375rem);
         max-width: calc(50% - 0.375rem);
 
@@ -117,12 +116,12 @@
       object-fit: cover;
       width: 100%;
 
-      @include breakpoints.devicebreak(large) {
+      @include devicebreak(large) {
         height: 25.313rem;
         margin-bottom: 1.5rem;
       }
 
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         height: 13.875rem;
         margin-bottom: 0.75rem;
       }
@@ -138,7 +137,7 @@
   .parallax-gallery {
     &-images {
       .column {
-        @include breakpoints.devicebreak(medium) {
+        @include devicebreak(medium) {
           &:first-of-type {
             margin-left: 0.5rem;
             margin-right: 0;
@@ -150,7 +149,7 @@
           }
         }
 
-        @include breakpoints.devicebreak(large) {
+        @include devicebreak(large) {
           &:first-of-type {
             margin-left: 0.75rem;
             margin-right: 0;
@@ -162,7 +161,7 @@
           }
         }
 
-        @include breakpoints.devicebreak(small) {
+        @include devicebreak(small) {
           &:first-of-type {
             margin-left: 0.375rem;
             margin-right: 0;

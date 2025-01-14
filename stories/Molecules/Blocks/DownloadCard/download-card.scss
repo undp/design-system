@@ -1,19 +1,18 @@
-@use '../../../assets/scss/breakpoints';
-@use '../../../assets/scss/variables';
-@use '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
 
 /* download card start */
 $colors: (
-  'yellow': variables.$color-yellow,
-  'red': variables.$color-red,
-  'green': variables.$color-green,
-  'blue': variables.$color-azure
+  'yellow': $color-yellow,
+  'red': $color-red,
+  'green': $color-green,
+  'blue': $color-azure
 );
 
 div.download-card {
   display: inline-block;
 
-  @include breakpoints.devicebreak(medium) {
+  @include devicebreak(medium) {
     min-width: 330px;
   }
 
@@ -24,7 +23,7 @@ div.download-card {
   &:hover {
     div.publication-thumbnail__image {
       &::after {
-        @include mixins.background-image(27.66deg, variables.$color-yellow, transparent 70.49%);
+        @include background-image(27.66deg, $color-yellow, transparent 70.49%);
 
         opacity: 0.75;
       }
@@ -34,7 +33,7 @@ div.download-card {
 
         &.accent-#{$name},
         &.#{$name}:after {
-          @include mixins.background-image(27.66deg, #{$color}, transparent 70.49%);
+          @include background-image(27.66deg, #{$color}, transparent 70.49%);
 
           opacity: 0.75;
         }
@@ -43,7 +42,7 @@ div.download-card {
 
     div.card-thumbnail__image {
       &::before {
-        @include mixins.background-image(67.76deg, variables.$color-yellow, transparent 61.11%);
+        @include background-image(67.76deg, $color-yellow, transparent 61.11%);
 
         opacity: 0.75;
       }
@@ -53,7 +52,7 @@ div.download-card {
 
         &.accent-#{$name}::before,
         &.#{$name}::before {
-          @include mixins.background-image(67.76deg, #{$color}, transparent 61.11%);
+          @include background-image(67.76deg, #{$color}, transparent 61.11%);
 
           opacity: 0.75;
         }
@@ -62,41 +61,41 @@ div.download-card {
 
     .download-animated {
       &::after {
-        @include mixins.transform(rotate(-45deg) translate(7px, -7px));
+        @include transform(rotate(-45deg) translate(7px, -7px));
       }
 
       &::before {
-        @include mixins.transform(translate(0, -10px));
+        @include transform(translate(0, -10px));
       }
     }
 
     .external-link-animated {
       &::after {
-        @include mixins.transform(translate(5px, -5px));
+        @include transform(translate(5px, -5px));
       }
 
       &::before {
-        @include mixins.transform(rotate(-45deg) translate(7px, 0));
+        @include transform(rotate(-45deg) translate(7px, 0));
       }
     }
   }
 
   .description {
-    background: variables.$color-gray-100;
-    padding: variables.$spacing-06;
+    background: $color-gray-100;
+    padding: $spacing-06;
   }
 
   .title {
     @extend %paragragh-font-20;
 
-    margin-bottom: variables.$spacing-02;
+    margin-bottom: $spacing-02;
   }
 
   .format {
     @extend %paragragh-font-16;
 
-    color: variables.$color-gray-600;
-    margin-bottom: variables.$spacing-05;
+    color: $color-gray-600;
+    margin-bottom: $spacing-05;
   }
 
   .download {
@@ -110,12 +109,12 @@ div.download-card {
     text-transform: uppercase;
 
     .download-animated {
-      margin-left: variables.$spacing-04;
+      margin-left: $spacing-04;
     }
 
     .external-link-animated {
-      margin-bottom: variables.$spacing-03;
-      margin-left: variables.$spacing-04;
+      margin-bottom: $spacing-03;
+      margin-left: $spacing-04;
     }
   }
 }
@@ -126,13 +125,13 @@ div.download-card {
     .download-animated,
     .external-link-animated {
       margin-left: 0;
-      margin-right: variables.$spacing-04;
+      margin-right: $spacing-04;
     }
 
     &:hover {
       div.publication-thumbnail__image {
         &::after {
-          @include mixins.background-image(318deg, variables.$color-yellow, transparent 70.49%);
+          @include background-image(318deg, $color-yellow, transparent 70.49%);
         }
 
         @each $name,
@@ -140,14 +139,14 @@ div.download-card {
 
           &.accent-#{$name}:after,
           &.#{$name}:after {
-            @include mixins.background-image(318deg, #{$color}, transparent 70.49%);
+            @include background-image(318deg, #{$color}, transparent 70.49%);
           }
         }
       }
 
       div.card-thumbnail__image {
         &::before {
-          @include mixins.background-image(297deg, variables.$color-yellow, transparent 61.11%);
+          @include background-image(297deg, $color-yellow, transparent 61.11%);
         }
 
         @each $name,
@@ -155,7 +154,7 @@ div.download-card {
 
           &.accent-#{$name}:before,
           &.#{$name}:before {
-            @include mixins.background-image(297deg, #{$color}, transparent 61.11%);
+            @include background-image(297deg, #{$color}, transparent 61.11%);
           }
         }
       }
@@ -181,7 +180,7 @@ $color in $colors {
     &:hover {
       div.publication-thumbnail__image {
         &::after {
-          @include mixins.background-image(27.66deg, $color, transparent 70.49%);
+          @include background-image(27.66deg, $color, transparent 70.49%);
         }
 
         @each $name2,
@@ -189,14 +188,14 @@ $color in $colors {
 
           &.accent-#{$name2},
           &.#{$name2}:after {
-            @include mixins.background-image(27.66deg, #{$color2}, transparent 70.49%);
+            @include background-image(27.66deg, #{$color2}, transparent 70.49%);
           }
         }
       }
 
       div.card-thumbnail__image {
         &::before {
-          @include mixins.background-image(67.76deg, $color, transparent 61.11%);
+          @include background-image(67.76deg, $color, transparent 61.11%);
         }
 
         @each $name2,
@@ -204,7 +203,7 @@ $color in $colors {
 
           &.accent-#{$name2}::before,
           &.#{$name2}::before {
-            @include mixins.background-image(67.76deg, #{$color2}, transparent 61.11%);
+            @include background-image(67.76deg, #{$color2}, transparent 61.11%);
           }
         }
       }
@@ -216,7 +215,7 @@ $color in $colors {
       &:hover {
         div.publication-thumbnail__image {
           &::after {
-            @include mixins.background-image(318deg, $color, transparent 70.49%);
+            @include background-image(318deg, $color, transparent 70.49%);
           }
 
           @each $name2,
@@ -224,14 +223,14 @@ $color in $colors {
 
             &.accent-#{$name2}:after,
             &.#{$name2}:after {
-              @include mixins.background-image(318deg, #{$color2}, transparent 70.49%);
+              @include background-image(318deg, #{$color2}, transparent 70.49%);
             }
           }
         }
 
         div.card-thumbnail__image {
           &::before {
-            @include mixins.background-image(297deg, $color, transparent 61.11%);
+            @include background-image(297deg, $color, transparent 61.11%);
           }
 
           @each $name2,
@@ -239,7 +238,7 @@ $color in $colors {
 
             &.accent-#{$name}:before,
             &.#{$name}:before {
-              @include mixins.background-image(297deg, #{$color2}, transparent 61.11%);
+              @include background-image(297deg, #{$color2}, transparent 61.11%);
             }
           }
         }

@@ -18,11 +18,12 @@ $colors: (
   background-color: var(--undpds-color-gray-200);
   box-sizing: border-box;
   overflow-wrap: break-word;
-  padding: var(--undpds-spacing-08);
 
   @include devicebreak(small) {
     max-width: 21.938rem;
   }
+
+  padding: var(--undpds-spacing-08);
 
   h3 {
     font-weight: 600;
@@ -225,11 +226,5 @@ $color in $colors {
     h2 {
       font-family: var(--undpds-font-family-proximanova);
     }
-  }
-}
-
-:lang(ro) {
-  .stats-card h3, .stats-card h4 {
-    font-weight: 700!important;
   }
 }
