@@ -186,22 +186,9 @@ $colors: (
       }
     }
   }
-}
-
-// Apply full-width style when max-width is set to "No"
-.stats-card.full-width {
-  max-width: none;
-  width: 100%;
-  padding: var(--undpds-spacing-08);
-}
-
-.stats-card.full-width {
-  @include devicebreak(small) {
-    width: 100%;
-  }
-
-  @include devicebreak(medium) {
-    width: 100%;
+  // Apply full-width style when max-width is set to "No"
+  &.full-width {
+    max-width: none;
   }
 }
 
