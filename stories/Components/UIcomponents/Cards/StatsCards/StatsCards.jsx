@@ -22,7 +22,15 @@ export const accent_color_options = {
   blue: "blue",
 };
 
-export function StatsCards({ title, number, percent, content, Size, ...args }) {
+export function StatsCards({
+  title,
+  number,
+  percent,
+  content,
+  Size,
+  MaxWidth,
+  ...args
+}) {
   let size;
   switch (Size) {
     case "Small":
@@ -50,7 +58,7 @@ export function StatsCards({ title, number, percent, content, Size, ...args }) {
     ? accent_color_options[`${args.Hovercolor}`]
     : accent_color_options[`${args.accent}`];
   let accent_color = color ? `accent-${color}` : "";
-  let max_width = args.MaxWidth === "No" ? "full-width" : "";
+  let max_width = MaxWidth === "No" ? "full-width" : "";
 
   return (
     <div
