@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./stats-card-slider.scss";
+import "../../../stories/assets/scss/_swiper.scss";
 import { swiper } from "../../assets/js/swiper";
 import { StatsCards } from "../../Components/UIcomponents/Cards/StatsCards/StatsCards";
 
@@ -13,7 +14,6 @@ export function Statscardslider({ data, ...args }) {
     swiper(".stats-slider");
   }, []);
 
-  console.log(args);
   return (
     <div
       className="stats-slider"
@@ -33,7 +33,6 @@ export function Statscardslider({ data, ...args }) {
               content={item.text}
               Size="Small"
               Hovercolors={args.Hovercolors ?? args.accent}
-              MaxWidth="No"
               {...args}
             />
           </div>
