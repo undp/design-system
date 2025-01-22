@@ -1,6 +1,5 @@
-@use '../../../../assets/scss/breakpoints';
-@use '../../../../assets/scss/variables';
-@use '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
 
 /* image only carousel start */
 .image-carousel {
@@ -16,11 +15,11 @@
     object-fit: cover;
     width: auto;
 
-    @include breakpoints.devicebreak(large) {
+    @include devicebreak(large) {
       height: 38.75rem;
     }
 
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       height: 21.875rem;
       max-width: 100%;
     }
@@ -65,7 +64,7 @@
           margin-right: 0;
 
           img {
-            @include mixins.transform(rotate(180deg));
+            @include transform(rotate(180deg));
           }
         }
 
@@ -74,7 +73,7 @@
           margin-right: 0.75rem;
 
           img {
-            @include mixins.transform(rotate(-180deg));
+            @include transform(rotate(-180deg));
           }
         }
       }

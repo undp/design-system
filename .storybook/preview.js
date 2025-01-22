@@ -19,7 +19,7 @@ import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal
 // }
 
 // Configure Storybook
-const parameters = {
+export const parameters = {
   // actions: { disable: true },
   controls: {
     matchers: {
@@ -53,8 +53,8 @@ const parameters = {
   options: {
     storySort: {
       method: 'alphabetical',
-      order: ['Getting started', ['Intro', 'How to use our design system?', 'Browser support', 'Internationalization'], 'Foundation', 'Components', 'Patterns', 'Utilities', 'Templates'],
-      includeNames: true
+      order: ['Getting started', ['Intro', 'How to use our design system?', 'Browser support'], 'Foundation', 'Components', 'Patterns', 'Utilities', 'Templates'],
+      includeName: true
     },
   },
   chromatic: {
@@ -71,7 +71,7 @@ const parameters = {
 }
 
 /* Implementing locale for language switcher */
-const globalTypes = {
+export const globalTypes = {
   locale: {
     title: 'Locale',
     description: 'locale',
@@ -202,12 +202,5 @@ const setAccentClass = (Story, context) => {
   )
 }
 
-// export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass];
-// export const tags = ['autodocs'];
-
-export default {
-  parameters: parameters,
-  globalTypes: globalTypes,
-  decorators: [getLangCode, sbFrameReset, setDirection, setAccentClass],
-  tags: ['autodocs', 'autodocs'],
-}
+export const decorators = [getLangCode, sbFrameReset, setDirection, setAccentClass];
+export const tags = ['autodocs', 'autodocs'];

@@ -110,6 +110,10 @@
       "small": {
         "value": "16px",
         "type": "fontSizes"
+      },
+      "xsmall": {
+        "value": "14px",
+        "type": "fontSizes"
       }
     },
     "heading": {
@@ -482,10 +486,6 @@
     },
     "1": {
       "value": "semantic",
-      "type": "other"
-    },
-    "2": {
-      "value": "component",
       "type": "other"
     }
   }

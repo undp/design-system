@@ -1,19 +1,20 @@
-@use '../../../../assets/scss/breakpoints';
-@use '../../../../assets/scss/variables';
-@use '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/base';
+@import '../../../../assets/scss/grid';
 
 /* page hero start */
 .pagehero {
   &-full {
     @extend %expand_to_size;
 
-    background-color: var(--undpds-color-gray-200);
+    background-color: $color-gray-200;
     min-height: 642px;
     overflow: hidden;
     position: relative;
     word-break: break-word;
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       min-height: 746px;
     }
 
@@ -22,12 +23,12 @@
     }
 
     img {
-      @include mixins.img-cover;
+      @extend %img-cover;
     }
 
     video {
       @extend %absolute__content;
-      @include mixins.img-cover;
+      @extend %img-cover;
     }
 
     .pagehero-content {
@@ -38,7 +39,7 @@
       position: absolute;
       top: 0;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         flex-direction: row;
         padding-top: 0;
       }
@@ -53,20 +54,20 @@
     }
 
     .content-box {
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         width: 65%;
       }
     }
 
     .breadcrumb {
-      @extend .medium-offset-1 !optional;
+      @extend .medium-offset-1;
 
-      padding-top: var(--undpds-spacing-11);
+      padding-top: $spacing-11;
 
-      @include breakpoints.devicebreak(small) {
-        padding-top: var(--undpds-spacing-11);
-        padding-left: var(--undpds-spacing-04);
-        padding-right: var(--undpds-spacing-04);
+      @include devicebreak(small) {
+        padding-top: $spacing-11;
+        padding-left: $spacing-04;
+        padding-right: $spacing-04;
       }
 
       ul li {
@@ -75,17 +76,17 @@
     }
 
       img {
-        @include breakpoints.devicebreak(small) {
-          @include mixins.img-cover;
+        @include devicebreak(small) {
+          @extend %img-cover;
 
           &.mobile-position-left {
             object-position: left;
           }
-
+    
           &.mobile-position-center {
             object-position: center;
           }
-
+    
           &.mobile-position-right {
             object-position: right;
           }
@@ -95,16 +96,17 @@
 
   &-content {
 
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       height: auto;
-      padding-inline: var(--undpds-spacing-04);
+      padding-left: $spacing-04;
+      padding-right: $spacing-04;
     }
 
     h4 {
-      margin-bottom: var(--undpds-spacing-03);
+      margin-bottom: $spacing-03;
       padding-top: 6.313rem;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         padding-top: 0;
       }
 
@@ -114,7 +116,7 @@
     }
 
     h2 {
-      font-family: var(--undpds-font-family-sohnebreit);
+      font-family: $Font-Family-SohneBreit;
       font-weight: 700;
       margin-bottom: 0;
       text-transform: uppercase;
@@ -127,7 +129,7 @@
       margin-top: 1rem;
       margin-bottom: 0;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         font-size: 2.188rem;
       }
     }
@@ -138,7 +140,7 @@
       left: 0.75rem;
       right: 0.75rem;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         margin-top: 3rem;
         margin-bottom: 0;
         position: relative;
@@ -150,13 +152,13 @@
   &-image {
     width: 100%;
 
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       padding-bottom: 100%;
       position: relative;
       width: 100%;
     }
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       height: 100%;
     }
   }
@@ -172,16 +174,16 @@
       justify-content: center;
       word-break: break-word;
 
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         height: auto;
-        padding: 0 0 var(--undpds-spacing-08);
+        padding: 0 0 $spacing-08;
 
         h4 {
           padding-top: 0;
         }
       }
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         padding-bottom: 0;
         padding-right: 1.438rem;
       }
@@ -192,7 +194,7 @@
         left: 0;
         right: 0;
 
-        @include breakpoints.devicebreak(medium) {
+        @include devicebreak(medium) {
           display: block;
           margin-top: 1.5rem;
           position: relative;
@@ -211,7 +213,7 @@
     .homepage-hero-image {
       overflow: hidden;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         overflow: visible;
       }
 
@@ -222,17 +224,18 @@
     }
 
     .breadcrumb {
-      margin-block: var(--undpds-spacing-11);
+      margin-top: $spacing-11;
       position: initial;
+      margin-bottom: $spacing-11;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         margin-top: 0;
         position: absolute;
         margin-bottom: 0;
         top: 30px;
       }
 
-      @include breakpoints.devicebreak(large) {
+      @include devicebreak(large) {
         position: absolute;
         top: 80px;
       }
@@ -247,7 +250,7 @@
       .homepage-hero-image {
         margin-bottom: 6.5rem;
 
-        @include breakpoints.devicebreak(medium) {
+        @include devicebreak(medium) {
           margin-bottom: unset;
         }
       }
@@ -255,7 +258,7 @@
   }
 }
 
-@include breakpoints.devicebreak(medium) {
+@include devicebreak(medium) {
   [dir='rtl'] {
     .pagehero-tall {
       .pagehero-content {
@@ -270,15 +273,15 @@
 :lang(my) {
   .pagehero-content {
     h2 {
-      font-family: var(--undpds-font-family-notosans);
+      font-family: $Font-Family-NotoSans;
     }
   }
 }
 
-#{variables.$cyrillic} {
+#{$cyrillic} {
   .pagehero-content {
     h2 {
-      font-family: var(--undpds-font-family-proximanova);
+      font-family: $Font-Family-ProximaNova;
     }
   }
 }

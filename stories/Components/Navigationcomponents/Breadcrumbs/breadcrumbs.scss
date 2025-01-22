@@ -3,23 +3,21 @@
 @import '../../../assets/scss/mixins';
 
 .breadcrumb {
-
   ul {
     align-items: baseline;
     display: flex;
     flex-wrap: wrap;
-    font-size: var(--undpds-font-size-12);
+    font-size: $font-size-12;
     padding: 0;
 
     li {
       display: inline-block;
-      margin-inline: var(--undpds-spacing-06) 0;
-      margin-block: var(--undpds-spacing-04);
-      padding-inline-start: 0;
+      margin: $spacing-04 $spacing-06 $spacing-04 0;
+      padding-left: 0;
       position: relative;
 
       &::after {
-        color: var(--undpds-color-dark-red);
+        color: $color-dark-red;
         content: '/';
         font-weight: bold;
         position: absolute;
@@ -28,13 +26,13 @@
       }
 
       &:first-of-type {
-        margin-inline-start: 0;
+        margin-left: 0;
       }
 
       &:last-of-type {
         font-weight: 600;
         letter-spacing: 0.03em;
-        margin-inline-end: 0;
+        margin-right: 0;
         max-width: calc(100vw - 2rem);
         text-transform: uppercase;
 
@@ -45,15 +43,15 @@
 
       a {
         background: none;
-        color: var(--undpds-color-dark-red);
-        font-size: var(--undpds-font-size-12);
+        color: $color-dark-red;
+        font-size: $font-size-12;
         font-weight: 600;
         letter-spacing: 0.03em;
         text-transform: uppercase;
         transition: opacity 0.2s ease;
 
         &:hover {
-          color: var(--undpds-color-red);
+          color: $color-red;
         }
       }
     }
@@ -62,14 +60,14 @@
   &.white {
     li {
       &::after {
-        color: var(--undpds-color-white);
+        color: $color-white;
       }
 
       a {
-        color: var(--undpds-color-white);
+        color: $color-white;
 
         &:hover {
-          color: var(--undpds-color-white);
+          color: $color-white;
           opacity: 0.7;
         }
       }
@@ -77,29 +75,34 @@
 
     &:last-of-type,
     li:last-of-type {
-      color: var(--undpds-color-white);
+      color: $color-white;
     }
   }
 }
 
 [dir='rtl'] {
   .breadcrumb {
+    ul {
+      padding: 0;
+    }
 
     li {
+      margin: $spacing-04 0 $spacing-04 $spacing-06;
+      padding-right: 0;
 
-      // a {
-      //   margin: 0;
-      // }
+      a {
+        margin: 0;
+      }
 
-      // &:first-of-type {
-      //   margin-inline: var(--undpds-spacing-06) ;
-      //   margin-right: 0;
-      // }
+      &:first-of-type {
+        margin-left: $spacing-06;
+        margin-right: 0;
+      }
 
-      // &:last-of-type {
-      //   margin-left: 0;
-      //   margin-right: 0;
-      // }
+      &:last-of-type {
+        margin-left: 0;
+        margin-right: 0;
+      }
 
       &::after {
         @include transform(translate(0,-63%) rotate(140deg));
@@ -114,13 +117,7 @@
 
 // burmese lang
 :lang(my) {
-  .breadcrumb ul li:last-of-type {
-    font-size: var(--undpds-font-size-12);
-  }
-}
-
-:lang(ro) {
-  .breadcrumb ul li:last-of-type, .breadcrumb ul li a{
-    font-weight: 700;
+  .breadcrumb li:last-of-type {
+    font-size: $font-size-12;
   }
 }

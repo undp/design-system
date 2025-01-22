@@ -1,11 +1,12 @@
-@use '../../../assets/scss/mixins';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 // * breadcrumb start *//
 .breadcrumb__item {
-
   @extend %border-none;
+  @extend %img_none;
 
-  background-image: none;
   color: var(--undpds-color-dark-red);
   font-size: var(--undpds-font-size-12);
   font-weight: 600;
@@ -16,9 +17,4 @@
   }
 }
 
-:lang(ro) {
-  .breadcrumb__item {
-    font-weight: 700;
-  }
-}
 // * breadcrumb end *//

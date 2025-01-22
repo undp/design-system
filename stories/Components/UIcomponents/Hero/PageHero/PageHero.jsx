@@ -28,7 +28,6 @@ export function PageHero({
   const textColor = variant === 'No background' ? 'Black' : 'White';
   const textColorClass = variant === 'No background' ? 'color-black' : 'color-white';
   const mobilePositionClass = `mobile-position-${mobileImagePosition}`;
-  const navPositionClass = 'medium-offset-1';
   return (
     <div className="pagehero-full">
       {variant === 'Video' ? (
@@ -42,7 +41,7 @@ export function PageHero({
           )}
         </>
       )}
-      <Breadcrumbcomponent data={data} Color={textColor} Cls={navPositionClass} />
+      <Breadcrumbcomponent data={data} Color={textColor} />
       <div className="pagehero-content medium-offset-1">
         <div className={['content-box', textColorClass].join(' ')}>
           {args.Overline == 'On' && content && <Heading type="4" label={content} dataViewport="true" />}

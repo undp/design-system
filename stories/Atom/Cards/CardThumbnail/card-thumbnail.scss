@@ -1,9 +1,7 @@
-@use '../../../assets/scss/mixins';
-@use "../../../assets/scss/base";
-
+@import '../../../assets/scss/mixins';
 
 /* card_thumbnail__image start */
-base.$colors: (
+$colors: (
   'yellow': var(--undpds-color-yellow),
   'red': var(--undpds-color-red),
   'green': var(--undpds-color-green),
@@ -17,7 +15,7 @@ div.card-thumbnail__image {
   &::before {
     @extend %absolute__content;
 
-    @include mixins.transition(all 0.6s);
+    @include transition(all 0.6s);
 
     opacity: 0;
   }
@@ -28,21 +26,21 @@ div.card-thumbnail__image {
     }
 
     @each $name,
-    $color in base.$colors {
+    $color in $colors {
 
       &.accent-#{$name}::before,
       &.#{$name}::before {
-        @include mixins.background-image(67.76deg, #{$color}, transparent 61.11%);
+        @include background-image(67.76deg, #{$color}, transparent 61.11%);
       }
 
       .accent-#{$name} & {
 
         @each $name2,
-        $color2 in base.$colors {
+        $color2 in $colors {
 
           &.accent-#{$name2}::before,
           &.#{$name2}::before {
-            @include mixins.background-image(67.76deg, #{$color2}, transparent 61.11%);
+            @include background-image(67.76deg, #{$color2}, transparent 61.11%);
           }
         }
       }
@@ -55,21 +53,21 @@ div.card-thumbnail__image {
     &:hover {
 
       @each $name,
-      $color in base.$colors {
+      $color in $colors {
 
         &.accent-#{$name}::before,
         &.#{$name}::before {
-          @include mixins.background-image(297deg, #{$color}, transparent 61.11%);
+          @include background-image(297deg, #{$color}, transparent 61.11%);
         }
 
         .accent-#{$name} & {
 
           @each $name2,
-          $color2 in base.$colors {
+          $color2 in $colors {
 
             &.accent-#{$name2}::before,
             &.#{$name2}::before {
-              @include mixins.background-image(297deg, #{$color2}, transparent 61.11%);
+              @include background-image(297deg, #{$color2}, transparent 61.11%);
             }
           }
         }

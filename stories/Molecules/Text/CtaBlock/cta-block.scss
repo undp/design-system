@@ -6,27 +6,22 @@
 .cta-block {
   h4 {
     font-weight: 600;
-    margin-bottom: var(--undpds-spacing-06);
+    margin-bottom: $spacing-06;
 
     @include devicebreak(large) {
-      margin-bottom: var(--undpds-spacing-09);
+      margin-bottom: $spacing-09;
     }
   }
 
   .cta__link {
-    font-size: var(--undpds-font-size-16);
+    font-size: $font-size-16;
     font-weight: 700;
     text-transform: uppercase;
   }
 
   p {
-    margin-bottom: var(--undpds-spacing-08);
+    margin-bottom: $spacing-08;
   }
 }
 
-:lang(ro) {
-  .cta-block h4 {
-    font-weight: 700;
-  }
-}
 /* block cta end */

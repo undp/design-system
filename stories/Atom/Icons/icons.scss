@@ -1,7 +1,5 @@
-@use '../../assets/scss/variables';
-@use '../../assets/scss/mixins';
-@use "../../assets/scss/breakpoints";
-
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
 
 /* icon start */
 
@@ -30,8 +28,8 @@
   &::before {
     @extend %pseudo-icon;
 
-    @include mixins.transform(rotate(-45deg) translate(0, 0));
-    @include mixins.transition(all 0.3s);
+    @include transform(rotate(-45deg) translate(0, 0));
+    @include transition(all 0.3s);
 
     background: var(--undpds-color-dark-red);
     height: 2px;
@@ -43,8 +41,8 @@
   &::after {
     @extend %pseudo-icon;
 
-    @include mixins.transition(transform 0.3s);
-    @include mixins.transform(translate(0, 0));
+    @include transition(transform 0.3s);
+    @include transform(translate(0, 0));
 
     border-inline-end: 2px solid var(--undpds-color-dark-red);
     border-block-start: 2px solid var(--undpds-color-dark-red);
@@ -56,11 +54,11 @@
 
   &:hover {
     &::after {
-      @include mixins.transform(translate(5px, -5px));
+      @include transform(translate(5px, -5px));
     }
 
     &::before {
-      @include mixins.transform(rotate(-45deg) translate(7px, 0));
+      @include transform(rotate(-45deg) translate(7px, 0));
     }
   }
 }
@@ -85,8 +83,8 @@
   &::after {
     @extend %pseudo-icon;
 
-    @include mixins.transform(rotate(-45deg) translate(0, 0));
-    @include mixins.transition(all 0.3s);
+    @include transform(rotate(-45deg) translate(0, 0));
+    @include transition(all 0.3s);
 
     border-block-end: 2px solid var(--undpds-color-dark-red);
     border-inline-start: 2px solid var(--undpds-color-dark-red);
@@ -99,8 +97,8 @@
   &::before {
     @extend %pseudo-icon;
 
-    @include mixins.transform(translate(0, 0));
-    @include mixins.transition(all 0.3s);
+    @include transform(translate(0, 0));
+    @include transition(all 0.3s);
 
     background: var(--undpds-color-dark-red);
     inset-block-end: 7px;
@@ -111,29 +109,29 @@
 
   &:hover {
     &::after {
-      @include mixins.transform(rotate(-45deg) translate(7px, -7px));
+      @include transform(rotate(-45deg) translate(7px, -7px));
     }
 
     &::before {
-      @include mixins.transform(translate(0, -10px));
+      @include transform(translate(0, -10px));
     }
   }
 }
 
 [dir='rtl'] {
   .chevron-right-animated {
-    @include mixins.transform(translate(0) rotate(180deg));
+    @include transform(translate(0) rotate(180deg));
 
     &:hover {
-      @include mixins.transform(translate(-10px) rotate(180deg));
+      @include transform(translate(-10px) rotate(180deg));
     }
   }
 
   .external-link-animated {
-    @include mixins.transform(rotate(270deg));
+    @include transform(rotate(270deg));
 
     &:hover {
-      @include mixins.transform(rotate(270deg));
+      @include transform(rotate(270deg));
     }
   }
 }
@@ -168,7 +166,7 @@
   text-align: center;
   width: calc(100% - 2rem);
 
-  @include breakpoints.devicebreak(medium) {
+  @include devicebreak(medium) {
     width: calc(25% - 2rem);
   }
 }

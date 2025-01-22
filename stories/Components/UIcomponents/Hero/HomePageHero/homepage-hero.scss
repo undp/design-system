@@ -1,6 +1,5 @@
-@use '../../../../assets/scss/breakpoints';
-@use '../../../../assets/scss/variables';
-@use '../../../../assets/scss/mixins';
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
 
 /* global homepage hero */
 .homepage-hero {
@@ -23,37 +22,37 @@
     }
 
     h1 {
-      margin-bottom: var(--undpds-spacing-08);
+      margin-bottom: $spacing-08;
     }
 
     h4 {
       margin-bottom: 0;
-      padding-bottom: var(--undpds-spacing-10);
+      padding-bottom: $spacing-10;
     }
 
     .button {
-      margin-bottom: var(--undpds-spacing-06);
+      margin-bottom: $spacing-06;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         margin-bottom: 10.188rem;
       }
 
-      @include breakpoints.devicebreak(small) {
-        margin-top: var(--undpds-spacing-10);
+      @include devicebreak(small) {
+        margin-top: $spacing-10;
       }
     }
   }
 
   &-content {
-    @include breakpoints.devicebreak(small) {
-      padding: 0 var(--undpds-spacing-06);
+    @include devicebreak(small) {
+      padding: 0 $spacing-06;
     }
 
     & > div {
       padding-top: 10.438rem;
       position: relative;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         padding-top: 13.688rem;
       }
     }
@@ -62,7 +61,7 @@
   &-tall,
   &-wide {
     &-content {
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         align-items: flex-start;
         display: flex;
         flex-direction: column;
@@ -77,18 +76,18 @@
 
     &-content {
       h1 {
-        margin-bottom: var(--undpds-spacing-05);
+        margin-bottom: $spacing-05;
 
-        @include breakpoints.devicebreak(medium) {
-          margin-bottom: var(--undpds-spacing-08);
+        @include devicebreak(medium) {
+          margin-bottom: $spacing-08;
         }
       }
 
       h4 {
-        margin-bottom: var(--undpds-spacing-07);
+        margin-bottom: $spacing-07;
 
-        @include breakpoints.devicebreak(medium) {
-          margin-bottom: var(--undpds-spacing-10);
+        @include devicebreak(medium) {
+          margin-bottom: $spacing-10;
         }
       }
     }
@@ -97,14 +96,14 @@
   &-image {
     width: 100%;
 
-    @include breakpoints.devicebreak(small) {
+    @include devicebreak(small) {
       margin-bottom: 2rem;
       padding-bottom: 100%;
       position: relative;
       width: 100%;
     }
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       height: 100%;
     }
 
@@ -116,7 +115,7 @@
     video {
       @extend %img-cover;
 
-      @include breakpoints.devicebreak(small) {
+      @include devicebreak(small) {
         position: absolute;
       }
     }
@@ -125,8 +124,8 @@
   &-wide {
     position: relative;
 
-    @include breakpoints.devicebreak(medium) {
-      border-left: 3rem solid var(--undpds-color-gray-300);
+    @include devicebreak(medium) {
+      border-left: 3rem solid $color-gray-300;
     }
 
     &-content {
@@ -134,16 +133,16 @@
     }
 
     h1 {
-      margin-bottom: var(--undpds-spacing-05);
+      margin-bottom: $spacing-05;
 
-      @include breakpoints.devicebreak(medium) {
-        margin-bottom: var(--undpds-spacing-11);
+      @include devicebreak(medium) {
+        margin-bottom: $spacing-11;
         padding-top: 4.688rem;
       }
     }
 
     h3 {
-      margin-bottom: var(--undpds-spacing-06);
+      margin-bottom: $spacing-06;
 
       + h1 {
         padding-top: 0;
@@ -151,9 +150,9 @@
     }
 
     h5 {
-      margin-bottom: var(--undpds-spacing-07);
+      margin-bottom: $spacing-07;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         margin-bottom: 7.75rem;
         padding-right: 1.625rem;
       }
@@ -163,7 +162,7 @@
 
 [dir=rtl] {
   .homepage-hero {
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       &-tall-content {
         padding-left: 1.375rem;
         padding-right: 0;
@@ -171,7 +170,7 @@
 
       &-wide {
         border-left: 0;
-        border-right: 3rem solid var(--undpds-color-gray-300);
+        border-right: 3rem solid $color-gray-300;
 
         h5 {
           padding-left: 1.625rem;

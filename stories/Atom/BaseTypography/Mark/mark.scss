@@ -1,6 +1,6 @@
-@use '../../../assets/scss/mixins';
-@use '../../../assets/scss/breakpoints';
-@use '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/breakpoints';
+@import '../../../assets/scss/variables';
 
 mark {
   @extend %paragragh-font-20;
@@ -9,7 +9,7 @@ mark {
   font-size: var(--undpds-font-size-14);
   padding: var(--undpds-spacing-01);
 
-  @include breakpoints.devicebreak(medium) {
+  @include devicebreak(medium) {
     font-size: var(--undpds-font-size-20);
   }
 }

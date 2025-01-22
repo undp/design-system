@@ -1,12 +1,12 @@
-@use '../../assets/scss/mixins';
-@use '../../assets/scss/breakpoints';
-@use '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/breakpoints';
+@import '../../assets/scss/variables';
 
 /* color  */
 .color-wrapper {
   display: block;
 
-  @include breakpoints.devicebreak(medium) {
+  @include devicebreak(medium) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -16,7 +16,7 @@
 .color__row {
   width: calc(100%);
 
-  @include breakpoints.devicebreak(medium) {
+  @include devicebreak(medium) {
     width: calc(100% / 2 - 10px);
   }
 
@@ -29,7 +29,7 @@
     font-size: 0.813rem;
     min-height: 28px;
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       font-size: var(--undpds-font-size-16);
     }
   }
@@ -45,7 +45,7 @@
   margin-top: -1.538rem;
   text-align: center;
 
-  @include breakpoints.devicebreak(medium) {
+  @include devicebreak(medium) {
     margin-top: -1.55rem;
   }
 
@@ -68,7 +68,7 @@
     margin: var(--undpds-spacing-03) 0;
     text-align: center;
 
-    @include breakpoints.devicebreak(medium) {
+    @include devicebreak(medium) {
       flex-basis: 0;
       flex-grow: 1;
     }
@@ -78,11 +78,11 @@
       margin-bottom: 0.625rem;
       width: 100%;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         height: 70px;
       }
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         height: 85px;
         width: 100%;
       }
@@ -195,7 +195,7 @@
     .color__code {
       font-size: 0.563rem;
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         display: flex;
         font-size: 0.625rem;
       }
@@ -216,11 +216,11 @@
       height: 48px;
       margin-bottom: 0.625rem;
 
-      @include breakpoints.devicebreak(large) {
+      @include devicebreak(large) {
         height: 70px;
       }
 
-      @include breakpoints.devicebreak(medium) {
+      @include devicebreak(medium) {
         height: 85px;
         width: 100%;
       }
