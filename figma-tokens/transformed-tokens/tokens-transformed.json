@@ -110,6 +110,10 @@
       "small": {
         "value": "16px",
         "type": "fontSizes"
+      },
+      "xsmall": {
+        "value": "14px",
+        "type": "fontSizes"
       }
     },
     "heading": {
