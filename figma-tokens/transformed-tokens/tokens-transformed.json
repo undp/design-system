@@ -389,7 +389,7 @@
         "type": "other"
       },
       "$value": {
-        "value": "{lineheight.137,5%}",
+        "value": "{lineheight.138%}",
         "type": "other",
         "failedToResolve": true
       }
@@ -411,9 +411,19 @@
         "type": "other"
       },
       "$value": {
-        "value": "{lineheight.110%}",
+        "value": "{lineheight.100%}",
         "type": "other",
         "failedToResolve": true
+      }
+    },
+    "100%": {
+      "$type": {
+        "value": "lineHeights",
+        "type": "other"
+      },
+      "$value": {
+        "value": "100%",
+        "type": "other"
       }
     },
     "110%": {
@@ -426,13 +436,13 @@
         "type": "other"
       }
     },
-    "137,5%": {
+    "138%": {
       "$type": {
         "value": "lineHeights",
         "type": "other"
       },
       "$value": {
-        "value": "137,5%",
+        "value": "138%",
         "type": "other"
       }
     }
