@@ -345,6 +345,41 @@
           "failedToResolve": true
         }
       }
+    },
+    "display": {
+      "xxlarge": {
+        "$type": {
+          "value": "fontSizes",
+          "type": "other"
+        },
+        "$value": {
+          "value": "{fontsize.100}",
+          "type": "other",
+          "failedToResolve": true
+        }
+      },
+      "xlarge": {
+        "$type": {
+          "value": "fontSizes",
+          "type": "other"
+        },
+        "$value": {
+          "value": "{fontsize.82}",
+          "type": "other",
+          "failedToResolve": true
+        }
+      },
+      "large": {
+        "$type": {
+          "value": "fontSizes",
+          "type": "other"
+        },
+        "$value": {
+          "value": "{fontsize.55}",
+          "type": "other",
+          "failedToResolve": true
+        }
+      }
     }
   },
   "lineheight": {
@@ -360,6 +395,17 @@
       }
     },
     "heading": {
+      "$type": {
+        "value": "lineHeights",
+        "type": "other"
+      },
+      "$value": {
+        "value": "{lineheight.110%}",
+        "type": "other",
+        "failedToResolve": true
+      }
+    },
+    "display": {
       "$type": {
         "value": "lineHeights",
         "type": "other"
