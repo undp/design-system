@@ -181,7 +181,12 @@
   }
 
   body,
-  div {
+  div,
+  p,
+  ul li,
+  ol li,
+  dl,
+  input {
     font-weight: 350;
   }
 }
