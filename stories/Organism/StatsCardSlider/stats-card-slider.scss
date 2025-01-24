@@ -1,12 +1,12 @@
-@import '../../assets/scss/breakpoints';
-@import '../../assets/scss/variables';
+@import "../../assets/scss/breakpoints";
+@import "../../assets/scss/variables";
 
 $backgroundcolors: (
-  'yellow': $color-yellow,
-  'red': $color-red,
-  'green': $color-green,
-  'blue': $color-azure,
-  'gray': $color-gray-100
+  "yellow": $color-yellow,
+  "red": $color-red,
+  "green": $color-green,
+  "blue": $color-azure,
+  "gray": $color-gray-100,
 );
 
 .stats-slider {
@@ -16,8 +16,7 @@ $backgroundcolors: (
     &:hover {
       //background-color: $color-yellow;
 
-      @each $name,
-      $color in $backgroundcolors {
+      @each $name, $color in $backgroundcolors {
         &.#{$name} {
           background-color: #{$color};
         }
@@ -32,7 +31,7 @@ $backgroundcolors: (
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .stats-slider {
     &.swiper-initialized {
       .swiper-scrollbar {
