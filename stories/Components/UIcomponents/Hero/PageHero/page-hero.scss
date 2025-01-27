@@ -1,6 +1,6 @@
-@use '../../../../assets/scss/breakpoints';
-@use '../../../../assets/scss/variables';
-@use '../../../../assets/scss/mixins';
+@use "../../../../assets/scss/breakpoints";
+@use "../../../../assets/scss/variables";
+@use "../../../../assets/scss/mixins";
 
 /* page hero start */
 .pagehero {
@@ -74,27 +74,26 @@
       }
     }
 
-      img {
-        @include breakpoints.devicebreak(small) {
-          @include mixins.img-cover;
+    img {
+      @include breakpoints.devicebreak(small) {
+        @include mixins.img-cover;
 
-          &.mobile-position-left {
-            object-position: left;
-          }
+        &.mobile-position-left {
+          object-position: left;
+        }
 
-          &.mobile-position-center {
-            object-position: center;
-          }
+        &.mobile-position-center {
+          object-position: center;
+        }
 
-          &.mobile-position-right {
-            object-position: right;
-          }
+        &.mobile-position-right {
+          object-position: right;
         }
       }
+    }
   }
 
   &-content {
-
     @include breakpoints.devicebreak(small) {
       height: auto;
       padding-inline: var(--undpds-spacing-04);
@@ -108,7 +107,7 @@
         padding-top: 0;
       }
 
-      +h2 {
+      + h2 {
         margin-top: 0;
       }
     }
@@ -172,6 +171,13 @@
       justify-content: center;
       word-break: break-word;
 
+      .fit-text {
+        white-space: normal; /* 줄바꿈 허용 */
+        word-break: normal;
+        overflow-wrap: break-word; /* 긴 단어를 자름 */
+        text-align: left; /* 텍스트 정렬 */
+        padding-right: 2rem;
+      }
       @include breakpoints.devicebreak(small) {
         height: auto;
         padding: 0 0 var(--undpds-spacing-08);
@@ -256,7 +262,7 @@
 }
 
 @include breakpoints.devicebreak(medium) {
-  [dir='rtl'] {
+  [dir="rtl"] {
     .pagehero-tall {
       .pagehero-content {
         padding-left: 1.438rem;

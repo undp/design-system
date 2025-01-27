@@ -1,8 +1,8 @@
 /* Typography start */
-@use 'variables';
-@use 'breakpoints';
-@use 'mixins';
-@use 'langs';
+@use "variables";
+@use "breakpoints";
+@use "mixins";
+@use "langs";
 
 html {
   -webkit-tap-highlight-color: transparent;
@@ -178,13 +178,21 @@ hr {
 // link animation
 @keyframes lineLoop-animation {
   0% {
-    background-position: 100% 100%, -30px 100%;
-    background-size: 100% 2px, 0 2px;
+    background-position:
+      100% 100%,
+      -30px 100%;
+    background-size:
+      100% 2px,
+      0 2px;
   }
 
   to {
-    background-position: calc(100% + 30px) 100%, 0 100%;
-    background-size: 0 2px, 100% 2px;
+    background-position:
+      calc(100% + 30px) 100%,
+      0 100%;
+    background-size:
+      0 2px,
+      100% 2px;
   }
 }
 
@@ -194,8 +202,7 @@ a {
   @extend %animate-link !optional;
 }
 
-[dir='rtl'] {
-
+[dir="rtl"] {
   ul,
   ol {
     padding-left: 0;
