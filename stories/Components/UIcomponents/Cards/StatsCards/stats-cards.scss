@@ -1,18 +1,17 @@
-@import '../../../../assets/scss/breakpoints';
-@import '../../../../assets/scss/variables';
-@import '../../../../assets/scss/mixins';
+@import "../../../../assets/scss/breakpoints";
+@import "../../../../assets/scss/variables";
+@import "../../../../assets/scss/mixins";
 
 // color map
 $colors: (
-  'yellow': var(--undpds-color-yellow),
-  'red': var(--undpds-color-red),
-  'green': var(--undpds-color-green),
-  'blue': var(--undpds-color-azure)
+  "yellow": var(--undpds-color-yellow),
+  "red": var(--undpds-color-red),
+  "green": var(--undpds-color-green),
+  "blue": var(--undpds-color-azure),
 );
 
 /* statscard start */
 .stats-card {
-
   @include transition(300ms all);
 
   background-color: var(--undpds-color-gray-200);
@@ -114,7 +113,6 @@ $colors: (
   }
 
   &.large {
-
     @include devicebreak(medium) {
       max-width: 28rem;
       padding: var(--undpds-spacing-12) var(--undpds-spacing-10);
@@ -181,27 +179,25 @@ $colors: (
       color: var(--undpds-color-black);
     }
 
-    @each $name,
-    $color in $colors {
-
+    @each $name, $color in $colors {
       &.accent-#{$name},
       &.#{$name} {
         background-color: #{$color};
       }
     }
   }
+  /* Apply full-width style when max-width is set to "No" */
+  &.full-width {
+    max-width: none;
+  }
 }
 
-@each $name,
-$color in $colors {
-
+@each $name, $color in $colors {
   .accent-#{$name} div.stats-card {
     &:hover {
       background-color: #{$color};
 
-      @each $name2,
-      $color2 in $colors {
-
+      @each $name2, $color2 in $colors {
         &.accent-#{$name2},
         &.#{$name2} {
           background-color: #{$color2};
@@ -210,7 +206,6 @@ $color in $colors {
     }
   }
 }
-
 
 :lang(my) {
   div.stats-card {
@@ -229,7 +224,8 @@ $color in $colors {
 }
 
 :lang(ro) {
-  .stats-card h3, .stats-card h4 {
-    font-weight: 700!important;
+  .stats-card h3,
+  .stats-card h4 {
+    font-weight: 700 !important;
   }
 }
