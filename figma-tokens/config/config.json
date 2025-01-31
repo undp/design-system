@@ -7,7 +7,7 @@
       "files": [
         {
           "destination": "_figma-variables.scss",
-          "format": "scss/variables"
+          "format": "scss/custom-variables"
         }
       ]
     }

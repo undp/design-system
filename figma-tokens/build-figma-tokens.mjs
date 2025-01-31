@@ -1,79 +1,134 @@
-import StyleDictionary from 'style-dictionary';
+import StyleDictionary from "style-dictionary";
 
-// function kebabIt(str) {
-//   return str
-//       .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-//       .join('-')
-//       .toLowerCase();
-// }
+const sd = new StyleDictionary("./figma-tokens/config/config.json");
+const CONFIG = {
+  BASE_FONT_SIZE: 16,
+  CONVERTIBLE_TYPES: ["fontSizes", "spacing", "sizing"],
+  PATH_SEPARATOR: "-",
+};
 
-// StyleDictionaryPackage.registerFormat({
-//   name: 'scss/variables',
-//   formatter: function (dictionary, config) {
-//     return `${this.selector} {
-//       ${dictionary.allProperties.map(prop => `${prop.name}: ${prop.value};`).join('\n')}
-//     }`
-//   }
-// });
+// Utility functions
+const utils = {
+  pxToRem: (value) => {
+    if (typeof value !== "string" || !value.includes("px")) return value;
+    const number = parseFloat(value);
+    return `${number / CONFIG.BASE_FONT_SIZE}rem`;
+  },
 
-const sd = new StyleDictionary('./figma-tokens/config/config.json');
+  extractReference: (value) => {
+    const stringValue = JSON.stringify(value);
+    const refValue = stringValue.match(/"value":"([^"]+)"/)?.[1];
+    if (!refValue) return null;
+
+    const match = refValue.match(/\{([^.]+)\.([^}]+)\}/);
+    return match
+      ? { category: match[1], name: match[2] }
+      : { directValue: refValue };
+  },
+
+  cleanPath: (path) => path.join(CONFIG.PATH_SEPARATOR),
+};
+
+// Token value resolver
+class TokenResolver {
+  constructor(dictionary) {
+    this.dictionary = dictionary;
+  }
+
+  resolve(token) {
+    if (!token?.$value) return "";
+
+    if (
+      token.$value.failedToResolve &&
+      typeof token.$value.value === "object"
+    ) {
+      const reference = utils.extractReference(token.$value.value);
+
+      if (!reference) return "";
+      if (reference.directValue) return reference.directValue;
+
+      const refToken =
+        this.dictionary.tokens[reference.category]?.[reference.name];
+      return refToken?.$value?.value || "";
+    }
+
+    return token.$value.value;
+  }
+
+  transformValue(value, type) {
+    return CONFIG.CONVERTIBLE_TYPES.includes(type)
+      ? utils.pxToRem(value)
+      : value;
+  }
+}
+
+// Token formatters
+const formatters = {
+  fontFamilies: (name, value) => `$font-family-${name}: '${value}';`,
+  lineHeights: (name, value) =>
+    `$lineheight-${name.replace(/%/g, "")}: ${value};`,
+  color: (path, value) => `$color-${utils.cleanPath(path.slice(1))}: ${value};`,
+  fontSizes: (path, value) => `$fontsize-${utils.cleanPath(path)}: ${value};`,
+  spacing: (name, value) => `$spacing-${name}: ${value};`,
+  sizing: (name, value) => `$sizing-${name}: ${value};`,
+  default: (path, value) => `$${utils.cleanPath(path)}: ${value};`,
+};
+
+// Register custom format
+StyleDictionary.registerFormat({
+  name: "scss/custom-variables",
+  format: function ({ dictionary }) {
+    const resolver = new TokenResolver(dictionary);
+    const header = [
+      "/**",
+      " * Do not edit directly",
+      " * Generated on " + new Date().toLocaleString(),
+      " */",
+      '@forward "../variables";\n\n',
+    ].join("\n");
+
+    return (
+      header +
+      dictionary.allTokens
+        .map((token) => {
+          const value = resolver.resolve(token);
+          const transformedValue = resolver.transformValue(
+            value,
+            token.$type?.value,
+          );
+          const formatter =
+            formatters[token.$type?.value] || formatters.default;
+
+          switch (token.$type?.value) {
+            case "fontFamilies":
+              return formatter(
+                token.path[token.path.length - 1],
+                transformedValue,
+              );
+            case "lineHeights":
+              return formatter(
+                token.path[token.path.length - 1],
+                transformedValue,
+              );
+            case "color":
+              return formatter(token.path, transformedValue);
+            case "fontSizes":
+              const sizePath =
+                token.path[0] === "fontsize" ? token.path.slice(1) : token.path;
+              return formatter(sizePath, transformedValue);
+            case "spacing":
+            case "sizing":
+              return formatter(
+                token.path[token.path.length - 1],
+                transformedValue,
+              );
+            default:
+              return formatter(token.path, transformedValue);
+          }
+        })
+        .join("\n")
+    );
+  },
+});
+
 await sd.buildAllPlatforms();
-
-//
-
-// import {StyleDictionary} from 'style-dictionary-utils'
-
-// const myStyleDictionary = new StyleDictionary()
-
-// // when using style dictionary 4 you whave to await the extend method
-// const extendedSd = await myStyleDictionary.extend({
-//   "source": ["../transformed-tokens/**/*.json"],
-//   "platforms": {
-//     "scss": {
-//       "transformGroup": "scss",
-//       "buildPath": "../../stories/assets/scss/figma-scss/",
-//       "files": [
-//         {
-//           "destination": "_figma-variables.scss",
-//           "format": "scss/variables"
-//         }
-//       ]
-//     }
-//   }
-// });
-
-// extendedSd.buildAllPlatforms();
-
-//Px To Rem
-
-// function fontPxToRem(token, options) {
-//   const baseFont = getBasePxFontSize(options);
-//   const floatVal = parseFloat(token.value);
-//   if (isNaN(floatVal)) {
-//     console.log('NaN error', token.name, token.value, 'rem');
-//   }
-//   if (floatVal === 0) {
-//     return '0';
-//   }
-//   return `${floatVal / baseFont}rem`;
-// }
-
-// StyleDictionaryPackage.registerTransform({
-//   name: 'size/pxToRem',
-//   type: 'value',
-//   matcher: (token) => ['fontSizes'].includes(token.type),
-//   transformer: (token, options) => fontPxToRem(token, options)
-// })
-// //
-// StyleDictionaryPackage.registerTransform({
-//   name: 'sizes/px',
-//   type: 'value',
-//   matcher: function(prop) {
-//       // You can be more specific here if you only want 'em' units for font sizes
-//       return ["fontSize", "spacing", "borderRadius", "borderWidth", "sizing"].includes(prop.attributes.category);
-//   },
-//   transformer: function(prop) {
-//       // You can also modify the value here if you want to convert pixels to ems
-//       return parseFloat(prop.original.value) + 'px';
-//   }
-// });
