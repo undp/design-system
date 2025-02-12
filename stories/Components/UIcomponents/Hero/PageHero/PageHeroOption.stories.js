@@ -15,7 +15,7 @@ const getCaptionForLocale = (locale) => {
           { text: "Third-level" },
           { text: "Page Title" },
         ],
-        title: "The sdgs in action",
+        title: "Sussssssstainable Devvvveeeellloooppppmmmment The sdgs in action",
         subtitle:
           "Subtitle or excerpt of the story goes below and it is two lines",
         content: "Our Focus",
@@ -104,7 +104,7 @@ const getCaptionForLocale = (locale) => {
           { text: "Third-level" },
           { text: "Page Title" },
         ],
-        title: "The sdgs in action",
+        title: "Sustainable Development The sdgs in action",
         subtitle:
           "Subtitle or excerpt of the story goes below and it is two lines",
         content: "Our Focus",
