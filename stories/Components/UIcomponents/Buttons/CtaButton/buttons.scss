@@ -1,5 +1,5 @@
 @import '../../../../assets/scss/mixins';
-@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/figma-scss/figma-variables';
 @import '../../../../assets/scss/breakpoints';
 
 .button {
@@ -11,14 +11,14 @@
   padding: var(--undpds-spacing-05) var(--undpds-spacing-06);
 
   &:focus-visible {
-    box-shadow: 0 0 4px var(--undpds-color-blue-800);
+    box-shadow: 0 0 4px var(--undpds-color-blue-600);
     outline: 0;
   }
 }
 
 button {
   &:focus-visible {
-    box-shadow: 0 0 4px var(--undpds-color-blue-800);
+    box-shadow: 0 0 4px var(--undpds-color-blue-600);
     outline: 0;
   }
 }

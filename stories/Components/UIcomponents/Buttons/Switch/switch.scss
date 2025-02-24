@@ -1,4 +1,4 @@
-@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/figma-scss/figma-variables';
 @import '../../../../assets/scss/mixins';
 
 .switch {
@@ -23,7 +23,7 @@
     }
 
     &:focus {
-      box-shadow: 0 0 4px $color-blue-800;
+      box-shadow: 0 0 4px $color-blue-600;
       outline: none;
     }
 
@@ -82,7 +82,7 @@
 
   &--toggled {
     .switch__track {
-      background-color: $color-blue-800;
+      background-color: $color-blue-600;
     }
 
     .switch__icon {

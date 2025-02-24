@@ -64,9 +64,12 @@ class TokenResolver {
 
 // Token formatters
 const formatters = {
-  fontFamilies: (name, value) => `$font-family-${name}: '${value}';`,
+  fontFamilies: (name, value) => {
+    const fonts = Array.isArray(value) ? value.join(", ") : value;
+    return `$font-family-${name}: '${fonts}', sans-serif;`;
+  },
   lineHeights: (name, value) =>
-    `$lineheight-${name.replace(/%/g, "")}: ${value};`,
+    `$lineheight-${name.replace(/%/g, "")}: ${parseFloat(value) / 100};`,
   color: (path, value) => `$color-${utils.cleanPath(path.slice(1))}: ${value};`,
   fontSizes: (path, value) => `$fontsize-${utils.cleanPath(path)}: ${value};`,
   spacing: (name, value) => `$spacing-${name}: ${value};`,
