@@ -1,6 +1,6 @@
 @import '../../../assets/scss/mixins';
 @import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/figma-scss/figma-variables';
+@import '../../../assets/scss/variables';
 
 label {
   @extend %paragragh-font-20;
@@ -63,7 +63,7 @@ textarea {
   }
 
   &:focus {
-    box-shadow: 0 0 4px var(--undpds-color-blue-600);
+    box-shadow: 0 0 4px var(--undpds-color-blue-800);
     outline: 0;
   }
 

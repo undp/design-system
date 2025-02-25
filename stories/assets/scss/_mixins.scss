@@ -1,4 +1,4 @@
-@import './figma-scss/figma-variables';
+@import './variables';
 @import './breakpoints';
 
 //background image gradient
@@ -225,7 +225,7 @@
   }
 
   &:focus-visible {
-    box-shadow: 0 0 4px var(--undpds-color-blue-600);
+    box-shadow: 0 0 4px var(--undpds-color-blue-800);
     outline: 0;
   }
 }
@@ -359,7 +359,7 @@
   width: 100%;
 
   &:focus {
-    box-shadow: 0 0 4px var(--undpds-color-blue-600);
+    box-shadow: 0 0 4px var(--undpds-color-blue-800);
     outline: 0;
   }
 }
