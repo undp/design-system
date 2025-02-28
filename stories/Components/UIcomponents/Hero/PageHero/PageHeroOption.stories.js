@@ -15,7 +15,7 @@ const getCaptionForLocale = (locale) => {
           { text: "Third-level" },
           { text: "Page Title" },
         ],
-        title: "Sussssssstainable Devvvveeeellloooppppmmmment The sdgs in action",
+        title: "The sdgs in action",
         subtitle:
           "Subtitle or excerpt of the story goes below and it is two lines",
         content: "Our Focus",
@@ -35,8 +35,7 @@ const getCaptionForLocale = (locale) => {
           { text: "Назва сторінки" },
         ],
         title: "ЦСР У ДІЇ",
-        subtitle:
-          "Програма ПРООН із підвищення стійкості та відновлення",
+        subtitle: "Програма ПРООН із підвищення стійкості та відновлення",
         content: "Наші теми",
         imgsrc: BackgroundImg,
         imgsrc2: BackgroundImg2,
@@ -104,7 +103,7 @@ const getCaptionForLocale = (locale) => {
           { text: "Third-level" },
           { text: "Page Title" },
         ],
-        title: "Sustainable Development The sdgs in action",
+        title: "The sdgs in action",
         subtitle:
           "Subtitle or excerpt of the story goes below and it is two lines",
         content: "Our Focus",
@@ -150,104 +149,152 @@ export default {
   },
   parameters: {
     docs: {
-        page: () => (
-            <>
-              <h1>Page Hero - Tall Image</h1>
+      page: () => (
+        <>
+          <h1>Page Hero - Tall Image</h1>
 
-              <p>The Page Hero images are large-sized images with text beside or above the image and present at the top of the homepage.</p>
+          <p>
+            The Page Hero images are large-sized images with text beside or
+            above the image and present at the top of the homepage.
+          </p>
 
-              <h3>Overview</h3>
+          <h3>Overview</h3>
 
-              <p>The Page Hero component is a multi-usage component that creates boxes that are usually teasing some kind of content like Image, Text, Subtitle, and Breadcrumb. Animation and atom tags are used for creating this card.</p>
+          <p>
+            The Page Hero component is a multi-usage component that creates
+            boxes that are usually teasing some kind of content like Image,
+            Text, Subtitle, and Breadcrumb. Animation and atom tags are used for
+            creating this card.
+          </p>
 
-              <h4>When to use:</h4>
+          <h4>When to use:</h4>
 
-              <p>When the website needs to grab the user's attention to a particular page.</p>
+          <p>
+            When the website needs to grab the user's attention to a particular
+            page.
+          </p>
 
-              <h3>Formatting</h3>
+          <h3>Formatting</h3>
 
-              <h4>Default</h4>
+          <h4>Default</h4>
 
-              <p>It consists of a grid with title, subtitle, image, and breadcrumbs.</p>
+          <p>
+            It consists of a grid with title, subtitle, image, and breadcrumbs.
+          </p>
 
-              <h3>Content</h3>
+          <h3>Content</h3>
 
-              <p>The Tall Page Hero image consists of an Image situated at either side or at the bottom of the grid. The text is either at the other side of the grid or above the image.</p>
+          <p>
+            The Tall Page Hero image consists of an Image situated at either
+            side or at the bottom of the grid. The text is either at the other
+            side of the grid or above the image.
+          </p>
 
-              <h3>Behaviors</h3>
+          <h3>Behaviors</h3>
 
-              <h4>States</h4>
+          <h4>States</h4>
 
-              <p>There are two states in the Tall Image Page: Default and Mobile.</p>
+          <p>
+            There are two states in the Tall Image Page: Default and Mobile.
+          </p>
 
-              <ol>
-                  <li><strong>Default:</strong> It consists of an image on either side of the grid and content on the other side.</li>
-                  <li><strong>Mobile:</strong> It consists of an image at the bottom of the grid and content above the grid.</li>
-              </ol>
+          <ol>
+            <li>
+              <strong>Default:</strong> It consists of an image on either side
+              of the grid and content on the other side.
+            </li>
+            <li>
+              <strong>Mobile:</strong> It consists of an image at the bottom of
+              the grid and content above the grid.
+            </li>
+          </ol>
 
-              <Canvas>
-                <Story name="Page hero tall image">
-                  {(args, { globals: { locale } }) => {
-                    const caption = getCaptionForLocale(locale);
-                    const cta = { label: caption.cta, for_primary: "Arrow" };
-                    return (
-                      <PageHeroOption
-                        data={caption.herodata}
-                        title={caption.title}
-                        subtitle={caption?.subtitle}
-                        content={caption?.content}
-                        variant={args.Variant}
-                        active={"default"}
-                        imgsrc={caption.imgsrc}
-                        imgsrc2={caption.imgsrc2}
-                        imgalt={caption.imgalt}
-                        videosrc={caption.videosrc}
-                        cta={cta}
-                        {...args}
-                      ></PageHeroOption>
-                    );
-                  }}
-                </Story>
-              </Canvas>
+          <Canvas>
+            <Story name="Page hero tall image">
+              {(args, { globals: { locale } }) => {
+                const caption = getCaptionForLocale(locale);
+                const cta = { label: caption.cta, for_primary: "Arrow" };
+                return (
+                  <PageHeroOption
+                    data={caption.herodata}
+                    title={caption.title}
+                    subtitle={caption?.subtitle}
+                    content={caption?.content}
+                    variant={args.Variant}
+                    active={"default"}
+                    imgsrc={caption.imgsrc}
+                    imgsrc2={caption.imgsrc2}
+                    imgalt={caption.imgalt}
+                    videosrc={caption.videosrc}
+                    cta={cta}
+                    {...args}
+                  ></PageHeroOption>
+                );
+              }}
+            </Story>
+          </Canvas>
 
-              <h3>Usage:</h3>
+          <h3>Usage:</h3>
 
-              <ul>
-                  <li>Choose the variant either video or Image from the control tab on canvas.</li>
-                  <li>Grab the HTML from the HTML tab and include the CSS and JS files listed below.</li>
-                  <li>If you want to add left-right animation then add <code>data-viewport="true"</code> attribute to your HTML element.</li>
-              </ul>
+          <ul>
+            <li>
+              Choose the variant either video or Image from the control tab on
+              canvas.
+            </li>
+            <li>
+              Grab the HTML from the HTML tab and include the CSS and JS files
+              listed below.
+            </li>
+            <li>
+              If you want to add left-right animation then add{" "}
+              <code>data-viewport="true"</code> attribute to your HTML element.
+            </li>
+          </ul>
 
-              <h3>CSS and JS References</h3>
+          <h3>CSS and JS References</h3>
 
-              <h4>CSS:</h4>
+          <h4>CSS:</h4>
 
-              <p>Add the base layout style from dist/css/base-minimal.min.css</p>
+          <p>Add the base layout style from dist/css/base-minimal.min.css</p>
 
-              <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css</a></li>
-              </ul>
+          <ul>
+            <li>
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css">
+                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/page-hero.min.css
+              </a>
+            </li>
+            <li>
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css">
+                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/css/components/breadcrumbs.min.css
+              </a>
+            </li>
+          </ul>
 
-              <h4>JS:</h4>
+          <h4>JS:</h4>
 
-              <ul>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
-              </ul>
+          <ul>
+            <li>
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">
+                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js
+              </a>
+            </li>
+          </ul>
 
-              <h3>Interactions</h3>
+          <h3>Interactions</h3>
 
-              <p>When the page is opened, the contents of the card appear beside the image.</p>
+          <p>
+            When the page is opened, the contents of the card appear beside the
+            image.
+          </p>
 
-              <h3>Changelog</h3>
+          <h3>Changelog</h3>
 
-              <p>1.0 — Released component</p>
-
-            </>
-        )
-    }
-  }
-}
+          <p>1.0 — Released component</p>
+        </>
+      ),
+    },
+  },
+};
 
 const Template = (args, { globals: { locale } }) => {
   const caption = getCaptionForLocale(locale);
@@ -268,7 +315,7 @@ const Template = (args, { globals: { locale } }) => {
       {...args}
     ></PageHeroOption>
   );
-}
+};
 
 export const PageHeroOptionStory = Template.bind({});
 PageHeroOptionStory.storyName = "Page Hero Tall Option";

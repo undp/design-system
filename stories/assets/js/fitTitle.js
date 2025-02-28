@@ -37,6 +37,10 @@ export const fitTitle = (selector, sizes = { small: 16, medium: 24 }) => {
     let width = $ele.parent().width();
     let style = window.getComputedStyle(ele);
 
+    // When there is only one word, the parent element may shrink to fit the content length,
+    // so we force its width to 100% to ensure consistent behavior.
+    let $parent = $ele.parent();
+    $parent.css("width", "100%");
     // Removes the previously applied font size and resets it to the default value
     $ele.css("font-size", "");
     // find the longest word
@@ -47,7 +51,7 @@ export const fitTitle = (selector, sizes = { small: 16, medium: 24 }) => {
         let wordWidth = word.length > 0 ? renderedWidth(style, word) : 0;
         return wordWidth > longest ? wordWidth : longest;
       }, "");
-
+    // console.log("parent width:", width);
     // console.log(longestWord, width);
     if (longestWord > width) {
       let fontSize = Math.max(
@@ -62,7 +66,7 @@ export const fitTitle = (selector, sizes = { small: 16, medium: 24 }) => {
       if ($ele.data("fitted") != true) {
         $ele.data("fitted", true);
         $(window).on("resize orientationchange", (e) => {
-          console.log(e);
+          // console.log(e);
           fitTitle(ele, sizes);
         });
       }
