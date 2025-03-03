@@ -4,12 +4,12 @@ import "./accordion.scss";
 import { P } from "../../../Atom/BaseTypography/Paragraph/Paragraph";
 
 export const Accordion = ({ headerText, descriptionText }) => {
-  useEffect(() => {
-    accordion();
-  }, []);
+  // useEffect(() => {
+  //   accordion();
+  // }, []);
 
   return (
-    <ul className="accordion" aria-label="accordion">
+    <ul className="accordion" aria-label="accordion" data-component="accordion">
       <li>
         <button tabIndex="0" aria-expanded="false">
           {headerText}
