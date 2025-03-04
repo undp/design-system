@@ -9,18 +9,27 @@ import '../../../../assets/scss/_grid.scss';
 export function ParallaxGallery({
   titleText, descText, buttonText, galleryimg1, galleryimg2, galleryimg3, galleryimg4, Background,
 }) {
-  useEffect(() => {
-    parallaxEffect('.parallax-gallery-images', '.column', 'top center', 'bottom+=15% center', 'vertical', 'all');
-  }, []);
+  // useEffect(() => {
+  //   parallaxEffect('.parallax-gallery-images', '.column', 'top center', 'bottom+=15% center', 'vertical', 'all');
+  // }, []);
 
   let background;
   const backgrounds = ['Gray'];
   background = backgrounds.includes(Background) ? Background.toLowerCase() : '';
 
   const cls = (...classes) => ((classes.filter(Boolean).length > 0) ? classes.filter(Boolean).join(' ') : null);
+  const parallaxOptions = JSON.stringify({
+    triggerElement: '.parallax-gallery-images',
+    targetSelector: '.column',
+    triggerHook: 'top center',
+    endTriggerHook: 'bottom+=15% center',
+    direction: 'vertical',
+    breakpoints: 'all'
+  });
 
   return (
-    <div className="grid-x grid-margin-x parallax-gallery">
+    <div className="grid-x grid-margin-x parallax-gallery" data-component="parallax"
+    data-options={parallaxOptions}>
       <div className={cls('medium-6', 'cell', 'parallax-gallery-left', `${background}`)}>
         <div className="parallax-gallery-content">
           <Heading type="5" label={titleText} />

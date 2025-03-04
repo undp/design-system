@@ -12,11 +12,11 @@ if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
 export const FluidImageSizeCarousel = ({ data }) => {
-  useEffect(() => {
-    swiper('.fluid-carousel', '.slide-content');
-  }, []);
+  // useEffect(() => {
+  //   swiper('.fluid-carousel', '.slide-content');
+  // }, []);
   return (
-    <section data-viewport="true" className="fluid-carousel" dir={rtl}>
+    <section data-viewport="true" className="fluid-carousel" dir={rtl} data-component="swiper" data-selector=".fluid-carousel" data-arrows-selector=".slide-content">
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (

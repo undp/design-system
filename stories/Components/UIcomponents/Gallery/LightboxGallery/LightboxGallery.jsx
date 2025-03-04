@@ -21,7 +21,7 @@ export function LightboxGallery({
     lightboxGallery();
   }, []);
   return (
-    <div className="grid-x grid-margin-x lightbox-gallery">
+    <div className="grid-x grid-margin-x lightbox-gallery" data-component="lightbox-gallery">
       <div className={['medium-4 large-3 cell lightbox-gallery__left'].join(' ')}>
         <div className="lightbox-gallery__content">
           <Heading type="5" label={titleText} />

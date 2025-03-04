@@ -9,11 +9,11 @@ if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
 export function ImageOnlyCarousel({ data }) {
-  useEffect(() => {
-    swiper('.image-carousel', '.slider-slide');
-  }, []);
+  // useEffect(() => {
+  //   swiper('.image-carousel', '.slider-slide');
+  // }, []);
   return (
-    <div data-viewport="true" className="image-carousel" dir={rtl}>
+    <div data-viewport="true" className="image-carousel" dir={rtl} data-component="swiper" data-selector=".image-carousel" data-arrows-selector=".slider-slide">
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (

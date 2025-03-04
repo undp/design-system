@@ -12,11 +12,11 @@ if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
 export function FixedSizeCarousel({ data, label }) {
-  useEffect(() => {
-    swiper('.fixed-carousel', '.fixed-carousel__button-wrap');
-  }, []);
+  // useEffect(() => {
+  //   swiper('.fixed-carousel', '.fixed-carousel__button-wrap');
+  // }, []);
   return (
-    <section data-viewport="true" className="fixed-carousel" dir={rtl}>
+    <section data-viewport="true" className="fixed-carousel" dir={rtl} data-component="swiper" data-selector=".fixed-carousel" data-arrows-selector=".fixed-carousel__button-wrap">
       {label && <Heading type="2" label={label} />}
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">

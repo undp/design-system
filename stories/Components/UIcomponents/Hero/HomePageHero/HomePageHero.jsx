@@ -10,11 +10,11 @@ import { CtaButton } from '../../Buttons/CtaButton/CtaButton';
 export const Homepagehero = ({
   title, content, button, variant, ...args
 }) => {
-  useEffect(() => {
-    expandToSize('.homepage-hero-full');
-  }, []);
+  // useEffect(() => {
+  //   expandToSize('.homepage-hero-full');
+  // }, []);
   return (
-    <div className="homepage-hero-full">
+    <div className="homepage-hero-full" data-component="expandToSize" data-selector=".homepage-hero-full">
       {variant === 'video'
         ? (
           <Video src={BackgroundVideo} width="100%" height="100%" />
