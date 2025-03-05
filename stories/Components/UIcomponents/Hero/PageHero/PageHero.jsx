@@ -21,16 +21,16 @@ export function PageHero({
   mobileImagePosition = 'center',
   ...args
 }) {
-  useEffect(() => {
-    expandToSize('.pagehero-full');
-  }, []);
+  // useEffect(() => {
+  //   expandToSize('.pagehero-full');
+  // }, []);
 
   const textColor = variant === 'No background' ? 'Black' : 'White';
   const textColorClass = variant === 'No background' ? 'color-black' : 'color-white';
   const mobilePositionClass = `mobile-position-${mobileImagePosition}`;
   const navPositionClass = 'medium-offset-1';
   return (
-    <div className="pagehero-full">
+    <div className="pagehero-full" data-undps-component="expandToSize" data-selector=".pagehero-full">
       {variant === 'Video' ? (
         <Video src={BackgroundVideo} width="100%" height="100%" />
       ) : (
