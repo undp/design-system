@@ -1,49 +1,133 @@
 /* accordion JS start custom */
-export function accordion(accordionSelector, accordionSiblingSelector, accordionActiveSelector) {
-  const accordionElement = accordionSelector || '.accordion';
-  const accordionPanel = accordionSiblingSelector || '.accordion__panel';
-  const accordionActiveElement = accordionActiveSelector || 'accordion--active';
+export function accordion(
+  accordionSelector,
+  accordionSiblingSelector,
+  accordionActiveSelector,
+) {
+  const accordionElement = accordionSelector || ".accordion";
+  const accordionPanel = accordionSiblingSelector || ".accordion__panel";
+  const accordionActiveElement = accordionActiveSelector || "accordion--active";
 
   // Accordion Trigger Function as callback for Click and Keypress Events.
-  const accordionTrigger = (currentElem, accordionListItem, accordinSiblingElement, accordionActiveElem) => {
+  const accordionTrigger = (
+    currentElem,
+    accordionListItem,
+    accordinSiblingElement,
+    accordionActiveElem,
+    allowMultiExpand,
+  ) => {
     // Check if 'accordion--active' class exists on current list item button.
     if (!jQuery(currentElem).hasClass(accordionActiveElem)) {
       // Add active class and show the accordion panel
-      jQuery(currentElem).addClass(accordionActiveElem).attr('aria-expanded', true);
-      jQuery(currentElem).siblings(accordinSiblingElement).slideDown('fast').attr('aria-hidden', false);
-
+      jQuery(currentElem)
+        .addClass(accordionActiveElem)
+        .attr("aria-expanded", true);
+      jQuery(currentElem)
+        .siblings(accordinSiblingElement)
+        .slideDown("fast")
+        .attr("aria-hidden", false);
       // Close all other list items and panels.
-      if (!jQuery(accordionElement).data('multiExpand')) {
-        jQuery(accordionListItem).not(jQuery(currentElem)).removeClass(accordionActiveElem).attr('aria-expanded', false);
-        jQuery(accordionListItem).not(jQuery(currentElem)).siblings(accordinSiblingElement).slideUp('fast').attr('aria-hidden', true);
+      if (!allowMultiExpand) {
+        jQuery(accordionListItem)
+          .not(jQuery(currentElem))
+          .removeClass(accordionActiveElem)
+          .attr("aria-expanded", false);
+        jQuery(accordionListItem)
+          .not(jQuery(currentElem))
+          .siblings(accordinSiblingElement)
+          .slideUp("fast")
+          .attr("aria-hidden", true);
       }
     } else {
-      // Close active list item if open.
-      jQuery(currentElem).removeClass(accordionActiveElem).attr('aria-expanded', false);
-      jQuery(currentElem).siblings(accordinSiblingElement).slideUp('fast').attr('aria-hidden', true);
+      jQuery(currentElem)
+        // Close active list item if open.
+        .removeClass(accordionActiveElem)
+        .attr("aria-expanded", false);
+      jQuery(currentElem)
+        .siblings(accordinSiblingElement)
+        .slideUp("fast")
+        .attr("aria-hidden", true);
     }
   };
 
-  const accordionClick = (accordion, accordionSibling, accordionActiveClass) => {
-    const hasMobileAttr = jQuery(accordion).attr('data-accordion') == 'mobile';
-    jQuery(accordion).each((index, element) => {
-      const accordionListItem = jQuery(element).find('button');
-      if (hasMobileAttr) {
-        jQuery(accordionListItem).addClass('desktop-event-none').siblings(accordionSibling).addClass('desktop-visible');
-      }
-      jQuery(accordionListItem, element).click(function (e) {
-        e.preventDefault();
+  const accordionClick = (
+    accordion,
+    accordionSibling,
+    accordionActiveClass,
+  ) => {
+    const allowMultiExpand = jQuery(accordion).data("multi-expand") === true;
+    const hasMobileAttr = jQuery(accordion).attr("data-accordion") == "mobile";
 
-        // Callback function for Accordion Trigger.
-        accordionTrigger(jQuery(this), accordionListItem, accordionSibling, accordionActiveClass);
-      }).keypress(function (e) {
-        e.preventDefault();
-        const keycode = (e.keyCode ? e.keyCode : e.which);
+    jQuery(accordion)
+      .each((index, element) => {
+        const accordionListItem = jQuery(element).find("button");
+        const activePanels = jQuery(element).find(".is-active");
 
-        // Check if 'Enter' key is pressed.
-        if (keycode == 13) accordionTrigger(jQuery(this), accordionListItem, accordionSibling, accordionActiveClass);
+        if (hasMobileAttr) {
+          jQuery(accordionListItem)
+            .addClass("desktop-event-none")
+            .siblings(accordionSibling)
+            .addClass("desktop-visible");
+        }
+        // Keep only the first .is-active if multi-expand=false
+        if (!allowMultiExpand && activePanels.length > 1) {
+          activePanels.each((i, panel) => {
+            if (i === 0) {
+              jQuery(panel)
+                .attr("aria-expanded", true)
+                .siblings(accordionSibling)
+                .attr("aria-hidden", false)
+                .show();
+            } else {
+              jQuery(panel)
+                .removeClass("is-active")
+                .attr("aria-expanded", false)
+                .siblings(accordionSibling)
+                .attr("aria-hidden", true)
+                .hide();
+            }
+          });
+        }
+
+        jQuery(accordionListItem, element)
+          .click(function (e) {
+            e.preventDefault();
+
+            // Callback function for Accordion Trigger
+            accordionTrigger(
+              jQuery(this),
+              accordionListItem,
+              accordionSibling,
+              accordionActiveClass,
+              allowMultiExpand,
+            );
+          })
+          .keypress(function (e) {
+            e.preventDefault();
+            const keycode = e.keyCode ? e.keyCode : e.which;
+
+            // Check if 'Enter' key is pressed
+            if (keycode == 13)
+              accordionTrigger(
+                jQuery(this),
+                accordionListItem,
+                accordionSibling,
+                accordionActiveClass,
+                allowMultiExpand,
+              );
+          });
+      })
+
+      .find(".is-active button")
+      .each(function () {
+        accordionTrigger(
+          jQuery(this),
+          jQuery(this).closest(accordionElement).find("button"),
+          accordionPanel,
+          accordionActiveElement,
+          true,
+        );
       });
-    }).find('.is-active button').first().trigger('click');
   };
 
   accordionClick(accordionElement, accordionPanel, accordionActiveElement);
