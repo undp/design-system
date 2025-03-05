@@ -14,7 +14,7 @@ export const Homepagehero = ({
   //   expandToSize('.homepage-hero-full');
   // }, []);
   return (
-    <div className="homepage-hero-full" data-undps-component="expandToSize" data-selector=".homepage-hero-full">
+    <div className="homepage-hero-full" data-undpds-component="expandToSize" data-selector=".homepage-hero-full">
       {variant === 'video'
         ? (
           <Video src={BackgroundVideo} width="100%" height="100%" />

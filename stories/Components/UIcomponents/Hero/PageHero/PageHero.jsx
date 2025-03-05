@@ -30,7 +30,7 @@ export function PageHero({
   const mobilePositionClass = `mobile-position-${mobileImagePosition}`;
   const navPositionClass = 'medium-offset-1';
   return (
-    <div className="pagehero-full" data-undps-component="expandToSize" data-selector=".pagehero-full">
+    <div className="pagehero-full" data-undpds-component="expandToSize" data-selector=".pagehero-full">
       {variant === 'Video' ? (
         <Video src={BackgroundVideo} width="100%" height="100%" />
       ) : (

@@ -2,10 +2,10 @@ export const initializeComponents = (Story, context) => {
   
     setTimeout(() => {
      
-      const componentElements = document.querySelectorAll('[data-undps-component]');
+      const componentElements = document.querySelectorAll('[data-undpds-component]');
       
       componentElements.forEach(element => {
-        const componentType = element.getAttribute('data-undps-component');
+        const componentType = element.getAttribute('data-undpds-component');
         if (element.hasAttribute('data-initialized')) {
           return;
         }

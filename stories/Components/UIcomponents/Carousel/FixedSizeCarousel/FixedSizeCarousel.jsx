@@ -16,7 +16,7 @@ export function FixedSizeCarousel({ data, label }) {
   //   swiper('.fixed-carousel', '.fixed-carousel__button-wrap');
   // }, []);
   return (
-    <section data-viewport="true" className="fixed-carousel" dir={rtl} data-undps-component="swiper" data-selector=".fixed-carousel" data-arrows-selector=".fixed-carousel__button-wrap">
+    <section data-viewport="true" className="fixed-carousel" dir={rtl} data-undpds-component="swiper" data-selector=".fixed-carousel" data-arrows-selector=".fixed-carousel__button-wrap">
       {label && <Heading type="2" label={label} />}
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">

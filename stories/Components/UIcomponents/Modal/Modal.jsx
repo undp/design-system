@@ -11,7 +11,7 @@ export function Modal({
   //   modal();
   // }, []);
   return (
-    <div className={cls('modal', `${css_class}`)} role="dialog" aria-label="modal" aria-modal="true" id={id} data-undps-component="modal">
+    <div className={cls('modal', `${css_class}`)} role="dialog" aria-label="modal" aria-modal="true" id={id} data-undpds-component="modal">
       <div className="modal-content" aria-describedby="content">
         <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close">Close</button>
         {content}

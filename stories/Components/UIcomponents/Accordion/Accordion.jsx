@@ -9,7 +9,7 @@ export const Accordion = ({ headerText, descriptionText }) => {
   // }, []);
 
   return (
-    <ul className="accordion" aria-label="accordion" data-undps-component="accordion">
+    <ul className="accordion" aria-label="accordion" data-undpds-component="accordion">
       <li>
         <button tabIndex="0" aria-expanded="false">
           {headerText}

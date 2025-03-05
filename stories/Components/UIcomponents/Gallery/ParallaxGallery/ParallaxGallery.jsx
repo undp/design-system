@@ -28,7 +28,7 @@ export function ParallaxGallery({
   });
 
   return (
-    <div className="grid-x grid-margin-x parallax-gallery" data-undps-component="parallax" data-options={parallaxOptions}>
+    <div className="grid-x grid-margin-x parallax-gallery" data-undpds-component="parallax" data-options={parallaxOptions}>
       <div className={cls('medium-6', 'cell', 'parallax-gallery-left', `${background}`)}>
         <div className="parallax-gallery-content">
           <Heading type="5" label={titleText} />

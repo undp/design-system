@@ -16,7 +16,7 @@ export const FluidImageSizeCarousel = ({ data }) => {
   //   swiper('.fluid-carousel', '.slide-content');
   // }, []);
   return (
-    <section data-viewport="true" className="fluid-carousel" dir={rtl} data-undps-component="swiper" data-selector=".fluid-carousel" data-arrows-selector=".slide-content">
+    <section data-viewport="true" className="fluid-carousel" dir={rtl} data-undpds-component="swiper" data-selector=".fluid-carousel" data-arrows-selector=".slide-content">
       <div className="swiper-scrollbar" />
       <div className="swiper-wrapper">
         {data.map((item, index) => (

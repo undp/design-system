@@ -8,7 +8,7 @@ export function Tab({ tabdata }) {
   //   tabs();
   // }, []);
   return (
-    <div className="tabs" data-viewport="true" data-undps-component="tabs">
+    <div className="tabs" data-viewport="true" data-undpds-component="tabs">
       <ul data-deep-link="true" data-tabs id="tablist_1" role="tablist">
         {tabdata.map((item, index) => (
           <li key={index} className={index == 0 ? 'tabs-title is-active' : 'tabs-title'}>
