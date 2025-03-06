@@ -1,9 +1,8 @@
-@use '../../assets/scss/breakpoints';
-@use '../../assets/scss/mixins';
+@use "../../assets/scss/breakpoints";
+@use "../../assets/scss/mixins";
 
 // * footer condition start *//
 .footer-items {
-
   @include breakpoints.devicebreak(medium) {
     row-gap: 3rem;
     display: flex;
@@ -52,7 +51,7 @@
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .footer-links {
     padding-right: 0;
 
@@ -116,7 +115,7 @@
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .footer-lists {
     padding-right: 0;
 
@@ -160,63 +159,62 @@
     padding: 0;
 
     a {
-
       $socials: (
-        'facebook',
-        'instagram',
-        'linkedin',
-        'twitter',
-        'twitter-x',
-        'youtube'
+        "facebook",
+        "instagram",
+        "linkedin",
+        "twitter",
+        "twitter-x",
+        "youtube"
       );
 
-    @extend %border-none;
-    @extend %no-animation;
+      @extend %border-none;
+      @extend %no-animation;
 
-    display: block;
-    font-size: 0;
-    height: 20px;
-    margin-inline-start: var(--undpds-spacing-07);
-    margin-block-end: var(--undpds-spacing-05);
-    width: 20px;
+      display: block;
+      font-size: 0;
+      height: 20px;
+      margin-inline-start: var(--undpds-spacing-07);
+      margin-block-end: var(--undpds-spacing-05);
+      width: 20px;
 
-    @each $name in $socials {
-      &.#{$name} {
-        background: url(~icons/#{$name}-white.svg) no-repeat center bottom;
+      @each $name in $socials {
+        &.#{$name} {
+          background: url(~icons/#{$name}-white.svg) no-repeat center bottom;
+        }
+      }
+    }
+
+    // &:last-of-type {
+    //   a {
+    //     margin-right: 0;
+    //   }
+    // }
+  }
+
+  &.inverted {
+    li {
+      a {
+        $socials: (
+          "facebook",
+          "instagram",
+          "linkedin",
+          "twitter",
+          "twitter-x",
+          "youtube"
+        );
+
+        @each $name in $socials {
+          &.#{$name} {
+            background: url(~icons/#{$name}.svg) no-repeat center bottom;
+          }
+        }
       }
     }
   }
-
-  // &:last-of-type {
-  //   a {
-  //     margin-right: 0;
-  //   }
-  // }
 }
 
-&.inverted {
-  li {
-    a {
-      $socials: (
-        'facebook',
-        'instagram',
-        'linkedin',
-        'twitter',
-        'twitter-x',
-        'youtube'
-      );
-
-    @each $name in $socials {
-      &.#{$name} {
-        background: url(~icons/#{$name}.svg) no-repeat center bottom;
-      }
-    }
-  }
-}
-}
-}
-
-[dir='rtl'] {
+[dir="rtl"] {
   .footer-icons {
     padding-right: 0;
 
@@ -247,7 +245,7 @@
     @include breakpoints.devicebreak(small) {
       &::after {
         border-bottom: 2px solid var(--undpds-color-gray-400);
-        content: '';
+        content: "";
         position: absolute;
         width: calc(100% - 1.3rem);
       }
@@ -295,7 +293,7 @@
       @include mixins.transition(0.1s ease);
 
       background: url(~icons/chevron-down-white.svg) no-repeat center center;
-      content: '';
+      content: "";
       display: block;
       float: right;
       height: 20px;
@@ -331,7 +329,7 @@
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .footer-heading {
     text-align: right;
 
@@ -380,7 +378,8 @@
   background-color: var(--undpds-color-gray-100);
   background-color: var(--undpds-color-blue-600);
   color: var(--undpds-color-white);
-  padding: var(--undpds-spacing-09) var(--undpds-spacing-04) var(--undpds-spacing-08);
+  padding: var(--undpds-spacing-09) var(--undpds-spacing-04)
+    var(--undpds-spacing-08);
 
   @include breakpoints.devicebreak(medium) {
     padding: 3.25rem 0 var(--undpds-spacing-09);
@@ -473,7 +472,6 @@
     color: var(--undpds-color-black);
 
     .footer {
-
       &-head,
       &-top {
         border-color: var(--undpds-color-gray-700);
@@ -500,7 +498,7 @@
   }
 }
 
-[dir=rtl] {
+[dir="rtl"] {
   .icons-search {
     text-align: right;
 
@@ -516,3 +514,8 @@
 }
 
 /* footer end */
+
+/* Adjust footer inner items to the middle in RTL. */
+[dir="rtl"] .footer-inner {
+  margin: 0 auto;
+}
