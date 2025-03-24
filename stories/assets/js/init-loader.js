@@ -118,21 +118,6 @@ export const initializeComponents = (Story, context) => {
             }).catch(err => console.error('Error initializing lightbox gallery :', err));
             }
             break;
-        case 'parallax':
-            if (typeof parallaxEffect === 'function') {
-                const { triggerElement, targetSelector, triggerHook, endTriggerHook, direction, breakpoints } = options;
-                parallaxEffect(triggerElement, targetSelector, triggerHook, endTriggerHook, direction, breakpoints);
-                element.setAttribute('data-initialized', 'true');
-            } else {
-                import("../js/parallax.js").then(module => {
-                    if (module && typeof module.parallaxEffect === 'function') {
-                        const { triggerElement, targetSelector, triggerHook, endTriggerHook, direction, breakpoints } = options;
-                        module.parallaxEffect(triggerElement, targetSelector, triggerHook, endTriggerHook, direction, breakpoints);
-                    }
-                    element.setAttribute('data-initialized', 'true');
-                }).catch(err => console.error('Error initializing parallax effect:', err));
-            }
-            break;
         case 'expandToSize':
             if (typeof expandToSize === 'function') {
                 const selector = element.getAttribute('data-selector');
@@ -159,6 +144,96 @@ export const initializeComponents = (Story, context) => {
                     }
                     element.setAttribute('data-initialized', 'true');
                 }).catch(err => console.error('Error initializing tabs:', err));
+            }
+            break;
+        case 'stats-cards':
+            if (typeof fitText === 'function') {
+                // Get options with proper error handling
+                let fitTextSelector = '.stats-card h2'; // Default selector
+                
+                if (options && options.selector) {
+                    fitTextSelector = options.selector;
+                }
+                
+                // Apply fitText with the selector
+                fitText(fitTextSelector);
+                element.setAttribute('data-initialized', 'true');
+            } else {
+                import("../js/fitText.js").then(module => {
+                    if (module && typeof module.fitText === 'function') {
+                        // Get options with proper error handling
+                        let fitTextSelector = '.stats-card h2'; // Default selector
+                        
+                        if (options && options.selector) {
+                            fitTextSelector = options.selector;
+                        }
+                        
+                        // Apply fitText with the selector
+                        module.fitText(fitTextSelector);
+                    }
+                    element.setAttribute('data-initialized', 'true');
+                }).catch(err => console.error('Error initializing stats-cards:', err));
+            }
+            break;
+        case 'parallax':
+            if (typeof parallaxEffect === 'function') {
+                const options = element.getAttribute('data-options') ? JSON.parse(element.getAttribute('data-options')) : {};
+                parallaxEffect(
+                    options.selector || '.parallax-card',
+                    options.elements || ['.parallax-card__image', '.parallax-card__content'],
+                    options.trigger || 'top center',
+                    options.endTrigger || 'bottom+=85 center',
+                    options.direction || 'vertical',
+                    options.breakpoint || 'desktop',
+                    options.unit || 'percent'
+                );
+                element.setAttribute('data-initialized', 'true');
+            } else {
+                import("../js/parallax.js").then(module => {
+                    if (module && typeof module.parallaxEffect === 'function') {
+                        const options = element.getAttribute('data-options') ? JSON.parse(element.getAttribute('data-options')) : {};
+                        module.parallaxEffect(
+                            options.selector || '.parallax-card',
+                            options.elements || ['.parallax-card__image', '.parallax-card__content'],
+                            options.trigger || 'top center',
+                            options.endTrigger || 'bottom+=85 center',
+                            options.direction || 'vertical',
+                            options.breakpoint || 'desktop',
+                            options.unit || 'percent'
+                        );
+                    }
+                    element.setAttribute('data-initialized', 'true');
+                }).catch(err => console.error('Error initializing parallax:', err));
+            }
+            break;
+        case 'custom-select':
+            if (typeof select === 'function') {
+                select();
+                element.setAttribute('data-initialized', 'true');
+            } else {
+                import("../js/select.js").then(module => {
+                    if (module && typeof module.select === 'function') {
+                        module.select();
+                    }
+                    element.setAttribute('data-initialized', 'true');
+                }).catch(err => console.error('Error initializing custom-select:', err));
+            }
+            break;
+        case 'multi-select':
+            if (typeof multiSelect === 'function') {
+                // Get locale from options if available
+                const locale = options && options.locale ? options.locale : undefined;
+                multiSelect(locale);
+                element.setAttribute('data-initialized', 'true');
+            } else {
+                import("../js/multi-select.js").then(module => {
+                    if (module && typeof module.multiSelect === 'function') {
+                        // Get locale from options if available
+                        const locale = options && options.locale ? options.locale : undefined;
+                        module.multiSelect(locale);
+                    }
+                    element.setAttribute('data-initialized', 'true');
+                }).catch(err => console.error('Error initializing multi-select:', err));
             }
             break;
         }

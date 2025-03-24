@@ -4,11 +4,11 @@ import '../../../../assets/scss/_typography.scss';
 import { select } from '../../../../assets/js/select';
 
 function CustomSelect({ text }) {
-  useEffect(() => {
-    select();
-  }, []);
+  // useEffect(() => {
+  //   select();
+  // }, []);
   return (
-    <div className="select-box" data-select="">
+    <div className="select-box" data-select="" data-undpds-component="custom-select">
       <button type="button" aria-haspopup="listbox" aria-label="Select" data-select-open="">
         {text}
       </button>
