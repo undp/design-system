@@ -1,29 +1,43 @@
-import React from 'react';
-import './breadcrumbs.scss';
+import React from "react";
+import "./breadcrumbs.scss";
 
-export function Breadcrumbcomponent({ data, Color, ...args }) {
+export function Breadcrumbcomponent({ data, Color, rlt_offset, ...args }) {
   const lastIndex = data.length - 1;
+  console.log(rlt_offset);
 
-  let color = '';
-  if (Color == 'White') {
-    color = 'white';
+  let color = "";
+  if (Color == "White") {
+    color = "white";
   }
 
-  let moreClasses = args.Cls || '';
+  let moreClasses = args.Cls || "";
 
   return (
-    <nav aria-label="breadcrumbs" data-viewport="true" className={['breadcrumb', `${color}`, moreClasses].join(' ')}>
+    <nav
+      aria-label="breadcrumbs"
+      data-viewport="true"
+      className={[
+        "breadcrumb",
+        `${color}`,
+        moreClasses,
+        rlt_offset === false ? "" : "rtl-offset-medium-1",
+      ].join(" ")}
+    >
       <ul>
         {data.map((item, i) => {
           if (i === lastIndex) {
             return (
-              <li key={i} aria-current={item.text}>{item.text}</li>
+              <li key={i} aria-current={item.text}>
+                {item.text}
+              </li>
             );
           }
 
           return (
             <li key={i}>
-              <a href="#" aria-label={item.text}>{item.text}</a>
+              <a href="#" aria-label={item.text}>
+                {item.text}
+              </a>
             </li>
           );
         })}

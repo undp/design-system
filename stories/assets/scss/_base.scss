@@ -1,6 +1,6 @@
-@use 'variables';
-@use 'mixins';
-@use 'breakpoints';
+@use "variables";
+@use "mixins";
+@use "breakpoints";
 
 /* base start */
 .color-white {
@@ -42,10 +42,8 @@
   @extend %custom-scrollbar;
 }
 
-
-
 /* animation start */
-*[data-viewport='true'] {
+*[data-viewport="true"] {
   @extend %left-to-right;
 
   &.inviewport {
@@ -97,8 +95,8 @@
   }
 }
 
-[dir='rtl'] {
-  *[data-viewport='true'] {
+[dir="rtl"] {
+  *[data-viewport="true"] {
     @include mixins.transform(translateX(100px));
 
     &.inviewport {
@@ -138,18 +136,15 @@
 // global colors
 // color map gradient
 $colors: (
-  'yellow': rgba(255, 235, 0, 0.8),
-  'red': rgba(230 45 45 / 78%),
-  'green': rgba(92 222 83 / 82%),
-  'blue': rgba(94 232 246 / 82%)
+  "yellow": rgba(255, 235, 0, 0.8),
+  "red": rgba(230 45 45 / 78%),
+  "green": rgba(92 222 83 / 82%),
+  "blue": rgba(94 232 246 / 82%),
 );
 
-@each $name,
-$color in $colors {
-
+@each $name, $color in $colors {
   .accent-#{$name},
   .#{$name} {
-
     //card-thumbnail
     .card-thumbnail__image:hover {
       &::before {
@@ -160,7 +155,11 @@ $color in $colors {
     //bio-card
     .bio-card:hover {
       .card-thumbnail__image::before {
-        @include mixins.background-image(67.76deg, #{$color}, transparent 61.11%);
+        @include mixins.background-image(
+          67.76deg,
+          #{$color},
+          transparent 61.11%
+        );
 
         opacity: 0.75;
       }
@@ -246,7 +245,11 @@ $color in $colors {
 
     .image-reveal-card:hover {
       .image::before {
-        @include mixins.background-image(67.76deg, #{$color}, transparent 61.11%);
+        @include mixins.background-image(
+          67.76deg,
+          #{$color},
+          transparent 61.11%
+        );
 
         opacity: 0.75;
       }
@@ -255,25 +258,29 @@ $color in $colors {
 }
 
 //rtl
-[dir='rtl'] {
-
-  @each $name,
-  $color in $colors {
-
+[dir="rtl"] {
+  @each $name, $color in $colors {
     .accent-#{$name},
     .#{$name} {
-
       //card-thumbnail
       .card-thumbnail__image:hover {
         &::before {
-          @include mixins.background-image(297deg, #{$color}, transparent 61.11%);
+          @include mixins.background-image(
+            297deg,
+            #{$color},
+            transparent 61.11%
+          );
         }
       }
 
       //bio-card
       .bio-card:hover {
         .card-thumbnail__image::before {
-          @include mixins.background-image(297deg, #{$color}, transparent 61.11%);
+          @include mixins.background-image(
+            297deg,
+            #{$color},
+            transparent 61.11%
+          );
 
           opacity: 0.75;
         }
@@ -283,7 +290,11 @@ $color in $colors {
       .publication-card:hover {
         .publication-thumbnail__image {
           &::after {
-            @include mixins.background-image(318deg, #{$color}, transparent 70.49%);
+            @include mixins.background-image(
+              318deg,
+              #{$color},
+              transparent 70.49%
+            );
 
             opacity: 0.75;
           }
@@ -293,14 +304,22 @@ $color in $colors {
       //download card
       .download-card:hover {
         .card-thumbnail__image::before {
-          @include mixins.background-image(297deg, #{$color}, transparent 61.11%);
+          @include mixins.background-image(
+            297deg,
+            #{$color},
+            transparent 61.11%
+          );
 
           opacity: 0.75;
         }
 
         .publication-thumbnail__image {
           &::after {
-            @include mixins.background-image(318deg, #{$color}, transparent 70.49%);
+            @include mixins.background-image(
+              318deg,
+              #{$color},
+              transparent 70.49%
+            );
 
             opacity: 0.75;
           }
@@ -311,7 +330,11 @@ $color in $colors {
       .publication-card:hover {
         .publication-thumbnail__image {
           &::after {
-            @include mixins.background-image(318deg, #{$color}, transparent 70.49%);
+            @include mixins.background-image(
+              318deg,
+              #{$color},
+              transparent 70.49%
+            );
 
             opacity: 0.75;
           }
@@ -330,27 +353,36 @@ $color in $colors {
       //feature-card
       .feature__card-slide {
         &::before {
-          @include mixins.background-image(318deg, #{$color}, transparent 67.25%);
+          @include mixins.background-image(
+            318deg,
+            #{$color},
+            transparent 67.25%
+          );
         }
       }
+    }
+  }
+
+  /* Custom offset class for RTL: adds right margin instead of left on medium screens */
+  @include breakpoints.devicebreak(medium) {
+    .rtl-offset-medium-1 {
+      margin-left: 0;
+      margin-right: 8.3333333333%;
     }
   }
 }
 
 // color map solid
 $colors-solid: (
-  'yellow': var(--undpds-color-yellow),
-  'red': var(--undpds-color-red),
-  'green': var(--undpds-color-green),
-  'blue': var(--undpds-color-azure)
+  "yellow": var(--undpds-color-yellow),
+  "red": var(--undpds-color-red),
+  "green": var(--undpds-color-green),
+  "blue": var(--undpds-color-azure),
 );
 
-@each $name,
-$color in $colors-solid {
-
+@each $name, $color in $colors-solid {
   .accent-#{$name},
   .#{$name} {
-
     //statscard
     .stats-card {
       &:hover {
@@ -392,18 +424,15 @@ $color in $colors-solid {
 
 // color map light-color content card only
 $colors-light: (
-  'yellow': var(--undpds-color-light-yellow),
-  'red': var(--undpds-color-light-red),
-  'green': var(--undpds-color-light-green),
-  'blue': var(--undpds-color-light-azure)
+  "yellow": var(--undpds-color-light-yellow),
+  "red": var(--undpds-color-light-red),
+  "green": var(--undpds-color-light-green),
+  "blue": var(--undpds-color-light-azure),
 );
 
-@each $name,
-$color in $colors-light {
-
+@each $name, $color in $colors-light {
   .accent-#{$name},
   .#{$name} {
-
     //content card - Emphasize default state color
     .content-card.card-emphasize {
       background-color: #{$color};
