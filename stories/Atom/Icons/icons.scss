@@ -110,6 +110,11 @@
     width: 8px;
   }
 
+  // RTL
+  [dir="rtl"] &::after {
+    @include mixins.transform(rotate(45deg) translate(0, 0));
+  }
+
   &::before {
     @extend %pseudo-icon;
 
