@@ -236,9 +236,40 @@ export const initializeComponents = (Story, context) => {
                 }).catch(err => console.error('Error initializing multi-select:', err));
             }
             break;
+        case 'expand-search':
+            if (typeof expandSearch === 'function') {
+                // Pass the jQuery element to expandSearch
+                expandSearch(jQuery(element));
+                element.setAttribute('data-initialized', 'true');
+            } else {
+                import("../js/expand-search.js").then(module => {
+                    if (module && typeof module.expandSearch === 'function') {
+                        // Pass the jQuery element to expandSearch
+                        module.expandSearch(jQuery(element));
+                    }
+                    element.setAttribute('data-initialized', 'true');
+                }).catch(err => console.error('Error initializing expand-search:', err));
+            }
+            break;
+        case 'sidebar':
+            if (typeof sidebarNav === 'function' && typeof sidebarMenu === 'function') {
+                sidebarNav();
+                sidebarMenu();
+                element.setAttribute('data-initialized', 'true');
+            } else {
+                import("../js/sidebar.js").then(module => {
+                    if (module && typeof module.sidebarNav === 'function' && 
+                        typeof module.sidebarMenu === 'function') {
+                        module.sidebarNav();
+                        module.sidebarMenu();
+                    }
+                    element.setAttribute('data-initialized', 'true');
+                }).catch(err => console.error('Error initializing sidebar:', err));
+            }
+            break;
         }
       });
     }, 100);
     
-    return <Story {...context} />;
+    return Story(Object.assign({}, context));
 };
