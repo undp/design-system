@@ -10,12 +10,12 @@ export const variant_options = {
 export function Languageswitcher({
   headerText, data, lang, ...args
 }) {
-  useEffect(() => {
-    langSwitch();
-  }, []);
+  // useEffect(() => {
+  //   langSwitch();
+  // }, []);
   let color_variant = variant_options[`${args.variant}`];
   return (
-    <div className="dropdown-language">
+    <div className="dropdown-language" data-undpds-component="language-switcher">
       <button className={[`${color_variant}`].join(' ')} aria-label="English, Select your language" aria-expanded="false">{headerText}</button>
       <ul role="menu">
         {data.map((item, index) => (

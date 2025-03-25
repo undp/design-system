@@ -41,18 +41,29 @@ export function StatsCards({ title, number, percent, content, Size, ...args }) {
       size = "medium";
   }
 
-  useEffect(() => {
-    if (typeof fitText == "function") {
-      fitText(".stats-card h2");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof fitText == "function") {
+  //     fitText(".stats-card h2");
+  //   }
+  // }, []);
   let color = args.Hovercolor
     ? accent_color_options[`${args.Hovercolor}`]
     : accent_color_options[`${args.accent}`];
   let accent_color = color ? `accent-${color}` : "";
   let max_width = args.MaxWidth === "No" ? "full-width" : "";
 
+  const fitTextSelector = ".stats-card h2";
+
   return (
+    <>
+      {/* This hidden div initializes the fitText functionality */}
+      <div 
+        data-undpds-component="stats-cards"
+        data-options={JSON.stringify({
+          selector: fitTextSelector
+        })}
+        style={{ display: "none" }}
+      />
     <div
       className={cls(
         "stats-card",
@@ -60,7 +71,7 @@ export function StatsCards({ title, number, percent, content, Size, ...args }) {
         `${accent_color}`,
         `${max_width}`,
       )}
-    >
+      >
       <div>
         {size == "x-large" || size == "large" ? (
           <Heading type="3" label={title} />
@@ -74,5 +85,6 @@ export function StatsCards({ title, number, percent, content, Size, ...args }) {
         <P label={content} />
       </div>
     </div>
+    </>
   );
 }
