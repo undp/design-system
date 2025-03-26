@@ -362,12 +362,11 @@ $colors: (
       }
     }
   }
-
-  /* Custom offset class for RTL: adds right margin instead of left on medium screens */
+  /* RTL: adds right margin instead of left on medium screens */
   @include breakpoints.devicebreak(medium) {
-    .rtl-offset-medium-1 {
-      margin-left: 0;
-      margin-right: 8.3333333333%;
+    .medium-offset-1 {
+      margin-inline-start: 8.333333%;
+      margin-inline-end: 0;
     }
   }
 }

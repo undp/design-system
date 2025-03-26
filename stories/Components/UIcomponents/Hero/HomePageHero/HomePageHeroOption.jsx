@@ -20,19 +20,19 @@ export const Homepageherooption = ({
     {headingTop && (
       <Heading
         type="3"
-        className="medium-offset-1 rtl-offset-medium-1 "
+        className="medium-offset-1 "
         label={headingTop}
         dataViewport="true"
       />
     )}
     <Heading
       type="1"
-      className="medium-offset-1 rtl-offset-medium-1 "
+      className="medium-offset-1 "
       label={title}
       dataViewport="true"
     />
     <div className="grid-x">
-      <div className="cell large-4 medium-4 medium-offset-1 rtl-offset-medium-1  ">
+      <div className="cell large-4 medium-4 medium-offset-1 ">
         <div className="homepage-hero-wide-content">
           <Heading type="5" label={subtitle} dataViewport="true" />
           <div className="show-large">

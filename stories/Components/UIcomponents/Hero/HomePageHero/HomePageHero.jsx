@@ -21,7 +21,7 @@ export const Homepagehero = ({ title, content, button, variant, ...args }) => {
         </div>
       )}
       <div className="grid-x homepage-hero-content">
-        <div className="cell large-7 medium-9 medium-offset-1 rtl-offset-medium-1">
+        <div className="cell large-7 medium-9 medium-offset-1">
           <Heading
             type="1"
             className="color-white"

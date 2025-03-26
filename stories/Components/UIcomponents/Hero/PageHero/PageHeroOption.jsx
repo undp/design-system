@@ -23,9 +23,9 @@ export function PageHeroOption({
   return (
     <div className={["pagehero-tall", CtaEnabledClass].join(" ")}>
       <div className="grid-x">
-        <div className="cell medium-4 medium-offset-1 rtl-offset-medium-1">
+        <div className="cell medium-4 medium-offset-1 ">
           <div className="pagehero-content color-black">
-            <Breadcrumbcomponent data={data} rlt_offset={false} />
+            <Breadcrumbcomponent data={data} />
             {args.Overline == "On" && content && (
               <Heading type="4" label={content} dataViewport="true" />
             )}

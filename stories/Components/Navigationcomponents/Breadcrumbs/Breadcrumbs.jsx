@@ -16,12 +16,7 @@ export function Breadcrumbcomponent({ data, Color, rlt_offset, ...args }) {
     <nav
       aria-label="breadcrumbs"
       data-viewport="true"
-      className={[
-        "breadcrumb",
-        `${color}`,
-        moreClasses,
-        rlt_offset === false ? "" : "rtl-offset-medium-1",
-      ].join(" ")}
+      className={["breadcrumb", `${color}`, moreClasses].join(" ")}
     >
       <ul>
         {data.map((item, i) => {

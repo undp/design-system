@@ -48,7 +48,7 @@ export function PageHero({
         Color={textColor}
         Cls={navPositionClass}
       />
-      <div className="pagehero-content medium-offset-1 rtl-offset-medium-1">
+      <div className="pagehero-content medium-offset-1">
         <div className={["content-box", textColorClass].join(" ")}>
           {args.Overline == "On" && content && (
             <Heading type="4" label={content} dataViewport="true" />

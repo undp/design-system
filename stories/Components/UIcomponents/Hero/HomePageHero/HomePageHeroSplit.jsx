@@ -10,7 +10,7 @@ import { CtaButton } from "../../Buttons/CtaButton/CtaButton";
 export const Homepageherosplit = ({ title, content, button, variant }) => (
   <div className="homepage-hero-tall">
     <div className="grid-x">
-      <div className="cell medium-5 medium-offset-1 rtl-offset-medium-1">
+      <div className="cell medium-5 medium-offset-1">
         <div className="homepage-hero-tall-content">
           {content && <Heading type="1" label={title} dataViewport="true" />}
           {content && <Heading type="4" label={content} dataViewport="true" />}
