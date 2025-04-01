@@ -31,7 +31,55 @@
             }
             break;
             
-          // Additional components will be added here in the future
+          case 'custom-select':
+            if (typeof select === 'function') {
+              select();
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Custom Select component requires select function');
+            }
+            break;
+          case 'multi-select':
+            if (typeof multiSelect === 'function') {
+              multiSelect();
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Multi Select component requires multiSelect function');
+            }
+            break;
+          case 'country-header':
+            if (typeof navigationInitialize === 'function' && 
+                typeof langSwitch === 'function') {
+              navigationInitialize();
+              
+              // Initialize overflow if the element has overflow attribute
+              if (element.hasAttribute('data-overflow') && 
+                  element.getAttribute('data-overflow') === 'true') {
+                if (typeof navigationOverFlow === 'function') {
+                  navigationOverFlow();
+                } else {
+                  console.warn('Country Header overflow requires navigationOverFlow function');
+                }
+              }
+              
+              // Initialize multi-level edge detection
+              if (typeof navigationMultiLevelEdgeDetection === 'function') {
+                navigationMultiLevelEdgeDetection();
+              } else {
+                console.warn('Country Header multi-level edge detection requires navigationMultiLevelEdgeDetection function');
+              }
+              
+              // Initialize language switcher
+              if (typeof langSwitch === 'function') {
+                langSwitch();
+                console.log("inside langSwitch");
+              }
+              
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Country Header component requires navigationInitialize and langSwitch functions');
+            }
+            break;
         }
       });
     }

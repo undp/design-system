@@ -89,8 +89,9 @@ export default {
 
           <h3>Usage:</h3>
           <ol>
-            <li>Copy HTML from the HTML tab of canvas and also include CSS and JS files listed below.</li>
-            <li>Initialize the sidebar for mobile and desktop by calling <code>sidebarNav()</code>, <code>sidebarMenu()</code> functions.</li>
+            <li>Copy HTML from the HTML tab of canvas including the `data-undpds-component="sidebar"` attribute on the sidebar navigation element.</li>
+            <li>Include the CSS and JS files listed below.</li>
+            {/* <li>Initialize the sidebar for mobile and desktop by calling <code>sidebarNav()</code>, <code>sidebarMenu()</code> functions.</li> */}
           </ol>
 
           <h3>CSS and JS References</h3>
@@ -104,6 +105,7 @@ export default {
           <h4>JS:</h4>
           <ul>
             <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js</a></li>
+            <li> Import the ext-comp-loader.js</li>
           </ul>
 
           <h3>Interactions</h3>

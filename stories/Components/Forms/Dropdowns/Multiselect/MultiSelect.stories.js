@@ -97,7 +97,8 @@ export default {
           <h3>Usage:</h3>
           <ol>
             <li>Select the variant either Checkbox or Radio button and height option for dropdown which has Fixed Height or Auto Height from the control tab on Canvas.</li>
-            <li>Then grab the HTML from the HTML tab and include the CSS and JS files listed below.</li>
+            <li>Then grab the HTML from the HTML tab and add the <code>data-undpds-component="multi-select"</code> attribute to the multi-select element.</li>
+            <li>Include the CSS and JS files listed below, as well as the component initializer script.</li>
             <li>If you choose the Checkbox variant, then include <code>checkbox.min.css</code>.</li>
             <li>If you choose the Radio button variant, then include <code>radio.min.css</code>.</li>
             <li>Initialize the multi-select by calling the <code>multiSelect()</code> function.</li>
@@ -117,6 +118,7 @@ export default {
           <h4>JS:</h4>
           <ul>
             <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/multi-select.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/multi-select.min.js</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.js -- To be updated</a></li>
           </ul>
 
           <h3>Interactions</h3>
