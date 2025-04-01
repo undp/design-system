@@ -1,18 +1,17 @@
-@use '../../../../assets/scss/breakpoints';
-@use '../../../../assets/scss/variables';
-@use '../../../../assets/scss/mixins';
+@use "../../../../assets/scss/breakpoints";
+@use "../../../../assets/scss/variables";
+@use "../../../../assets/scss/mixins";
 
 $light-colors: (
-  'yellow': var(--undpds-color-light-yellow),
-  'red': var(--undpds-color-light-red),
-  'green': var(--undpds-color-light-green),
-  'blue': var(--undpds-color-light-azure),
-  'gray': var(--undpds-color-gray-100)
+  "yellow": var(--undpds-color-light-yellow),
+  "red": var(--undpds-color-light-red),
+  "green": var(--undpds-color-light-green),
+  "blue": var(--undpds-color-light-azure),
+  "gray": var(--undpds-color-gray-100),
 );
 
 /* feature card start */
 .feature__card {
-
   container: featurecard / inline-size;
 
   margin-block-end: 0;
@@ -37,37 +36,44 @@ $light-colors: (
 
     .feature__card-slide {
       &::before {
-        @include mixins.background(207deg, hsla(0, 0%, 100%, 0.2) 30%, var(--undpds-color-light-yellow));
+        @include mixins.background(
+          207deg,
+          hsla(0, 0%, 100%, 0.2) 30%,
+          var(--undpds-color-light-yellow)
+        );
       }
     }
 
     //colors
-    @each $name,
-    $color in $light-colors {
-
+    @each $name, $color in $light-colors {
       &.accent-#{$name},
       &.#{$name} {
         .feature__card-slide {
           background: $color;
 
           &::before {
-            @include mixins.background(207deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
+            @include mixins.background(
+              207deg,
+              hsla(0, 0%, 100%, 0.2) 30%,
+              #{$color}
+            );
           }
         }
       }
 
       .accent-#{$name} & {
-
-        @each $name2,
-        $color2 in $light-colors {
-
+        @each $name2, $color2 in $light-colors {
           &.accent-#{$name2},
           &.#{$name2} {
             .feature__card-slide {
               background: $color2;
 
               &::before {
-                @include mixins.background(207deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color2});
+                @include mixins.background(
+                  207deg,
+                  hsla(0, 0%, 100%, 0.2) 30%,
+                  #{$color2}
+                );
               }
             }
           }
@@ -158,19 +164,15 @@ $light-colors: (
 }
 
 //colors
-@each $name,
-$color in $light-colors {
+@each $name, $color in $light-colors {
   .accent-#{$name} {
-
     .feature__card {
       &.without-image {
         .feature__card-slide {
           background: $color;
         }
 
-        @each $name2,
-        $color2 in $light-colors {
-
+        @each $name2, $color2 in $light-colors {
           &.accent-#{$name2},
           &.#{$name2} {
             .feature__card-slide {
@@ -185,7 +187,11 @@ $color in $light-colors {
       background: $color;
 
       &::before {
-        @include mixins.background(207deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
+        @include mixins.background(
+          207deg,
+          hsla(0, 0%, 100%, 0.2) 30%,
+          #{$color}
+        );
       }
     }
   }
@@ -218,7 +224,7 @@ $color in $light-colors {
     @extend %feature__card;
 
     bottom: 0;
-    content: '';
+    content: "";
 
     @include breakpoints.devicebreak(medium) {
       // @include container(medium, featurecard) {
@@ -318,9 +324,8 @@ $color in $light-colors {
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .feature__card {
-
     // @include devicebreak(medium) {
     @include breakpoints.container(medium, featurecard) {
       .cta__link.cta--arrow {
@@ -334,32 +339,35 @@ $color in $light-colors {
       }
 
       //colors
-      @each $name,
-      $color in $light-colors {
-
+      @each $name, $color in $light-colors {
         &.accent-#{$name}.image,
         &.#{$name}.image {
           .feature__card-slide {
             background-color: #{$color};
 
             &::before {
-              @include mixins.background(153deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color});
+              @include mixins.background(
+                153deg,
+                hsla(0, 0%, 100%, 0.2) 30%,
+                #{$color}
+              );
             }
           }
         }
 
         .accent-#{$name} & {
-
-          @each $name2,
-          $color2 in $light-colors {
-
+          @each $name2, $color2 in $light-colors {
             &.accent-#{$name2},
             &.#{$name2} {
               .feature__card-slide {
                 background-color: #{$color2};
 
                 &::before {
-                  @include mixins.background(153deg, hsla(0, 0%, 100%, 0.2) 30%, #{$color2});
+                  @include mixins.background(
+                    153deg,
+                    hsla(0, 0%, 100%, 0.2) 30%,
+                    #{$color2}
+                  );
                 }
               }
             }
@@ -369,7 +377,6 @@ $color in $light-colors {
 
       //feature__card-slide
       .feature__card-slide {
-
         @include breakpoints.devicebreak(medium) {
           // @include container(medium, featurecard) {
           @include mixins.transform(translateX(105%));
@@ -377,6 +384,18 @@ $color in $light-colors {
           &:hover {
             @include mixins.transform(translateX(0));
           }
+        }
+      }
+    }
+
+    //feature__card-slide When it is above a medium screen size
+    .feature__card-slide {
+      @include breakpoints.devicebreak(medium) {
+        // @include container(medium, featurecard) {
+        @include mixins.transform(translateX(105%));
+
+        &:hover {
+          @include mixins.transform(translateX(0));
         }
       }
     }
