@@ -13,11 +13,11 @@ if (window.location.href.indexOf('direction=rtl') > -1) {
   rtl = 'rtl';
 }
 export function CountryCardHero({ data, title, subtitle }) {
-  useEffect(() => {
-    swiper('.pagehero-cards-items', false);
-  }, []);
+  // useEffect(() => {
+  //   swiper('.pagehero-cards-items', false);
+  // }, []);
   return (
-    <div className="pagehero-cards">
+    <div className="pagehero-cards" data-undpds-component="swiper" data-selector=".pagehero-cards-items" data-arrows-selector="false">
       <div className="grid-x pagehero-cards-top">
         <div className="cell large-5 medium-12">
           <Heading type="2" label={title} dataViewport="true" />

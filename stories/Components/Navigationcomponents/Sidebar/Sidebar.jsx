@@ -13,10 +13,10 @@ export function Sidebar({
   size,
   Height,
 }) {
-  useEffect(() => {
-    sidebarNav();
-    sidebarMenu();
-  }, []);
+  // useEffect(() => {
+  //   sidebarNav();
+  //   sidebarMenu();
+  // }, []);
 
   let height = '';
   if (Height == 'Narrow') {
@@ -24,7 +24,7 @@ export function Sidebar({
   }
 
   return (
-    <nav role="navigation" aria-label="Sidebar" className={cls('sidebar-accordion', `${height}`)}>
+    <nav role="navigation" aria-label="Sidebar" className={cls('sidebar-accordion', `${height}`)} data-undpds-component="sidebar">
       <div className="grid-x">
         <div className={['cell', `${size}`].join(' ')}>
           <Heading type="6" label={label} />

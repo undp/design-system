@@ -7,14 +7,14 @@ import { expandSearch } from '../../../assets/js/expand-search';
 export const SearchExpand = () => {
   const expandContainerRef = useRef(null);
 
-  useEffect(() => {
-    if (expandContainerRef.current) {
-      expandSearch(jQuery(expandContainerRef.current));
-    }
-  }, []);
-
+  // useEffect(() => {
+  //   if (expandContainerRef.current) {
+  //     expandSearch(jQuery(expandContainerRef.current));
+  //   }
+  // }, []);
+//ref={expandContainerRef}
   return (
-    <div className="expand-search" ref={expandContainerRef}>
+    <div className="expand-search" data-undpds-component="expand-search" > 
       <button className='expand-button'>
         <img src={img} alt="search expand" />
       </button>

@@ -231,7 +231,8 @@ export default {
           <h4>Default mega menu Usage:</h4>
           <ol>
             <li>Copy HTML from the HTML tab of canvas and also include the CSS and JS files listed below.</li>
-            <li>Initialize the <code>navigationInitialize()</code>, <code>langSwitch()</code> functions in your JS file’s document ready, For example:</li>
+            <li>Add the <code>data-undpds-component="country-site-header"</code> attribute to the header element.</li>
+            {/* <li>Initialize the <code>navigationInitialize()</code>, <code>langSwitch()</code> functions in your JS file’s document ready, For example:</li> */}
           </ol>
 
           <pre><code>
