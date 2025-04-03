@@ -21,6 +21,15 @@
         
         // Initialize based on component type
         switch (componentType) {
+          case 'accordion':
+            // Check if the accordion function exists in the global scope
+            if (typeof accordion === 'function') {
+              accordion();
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Accordion component requires accordion function. Make sure accordion.min.js is loaded.');
+            }
+            break;
           case 'sidebar':
             if (typeof sidebarNav === 'function' && typeof sidebarMenu === 'function') {
               sidebarNav();
@@ -47,37 +56,57 @@
               console.warn('Multi Select component requires multiSelect function');
             }
             break;
+          case 'language-switcher':
+            if (typeof langSwitch === 'function') {
+              langSwitch();
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Language Switcher component requires langSwitch function');
+            }
+            break;
+            
           case 'country-header':
-            if (typeof navigationInitialize === 'function' && 
-                typeof langSwitch === 'function') {
+            if (typeof navigationInitialize === 'function') {
               navigationInitialize();
-              
-              // Initialize overflow if the element has overflow attribute
-              if (element.hasAttribute('data-overflow') && 
-                  element.getAttribute('data-overflow') === 'true') {
-                if (typeof navigationOverFlow === 'function') {
-                  navigationOverFlow();
-                } else {
-                  console.warn('Country Header overflow requires navigationOverFlow function');
-                }
-              }
-              
-              // Initialize multi-level edge detection
+              navigationOverFlow();
+
+              // Add edge detection for multi-level menus
               if (typeof navigationMultiLevelEdgeDetection === 'function') {
                 navigationMultiLevelEdgeDetection();
-              } else {
-                console.warn('Country Header multi-level edge detection requires navigationMultiLevelEdgeDetection function');
+              }
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Country Header requires navigationInitialize function');
+            }
+            break;
+          case 'country-site-header':
+            // Initialize functions based on the documented approach for external users
+            if (typeof navigationInitialize === 'function') {
+              // Call navigationInitialize without locale parameter as shown in documentation
+              navigationInitialize();
+              
+              // Call navigationOverFlow if needed
+              if (typeof navigationOverFlow === 'function') {
+                navigationOverFlow();
               }
               
-              // Initialize language switcher
-              if (typeof langSwitch === 'function') {
-                langSwitch();
-                console.log("inside langSwitch");
+              // Call navigationMultiLevelEdgeDetection
+              if (typeof navigationMultiLevelEdgeDetection === 'function') {
+                navigationMultiLevelEdgeDetection();
               }
               
               element.setAttribute('data-initialized', 'true');
             } else {
-              console.warn('Country Header component requires navigationInitialize and langSwitch functions');
+              console.warn('CountrySiteHeader component requires navigationInitialize function');
+            }
+            break;
+          case 'modal':
+            // Initialize modal functionality
+            if (typeof modal === 'function') {
+              modal();
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Modal component requires modal function');
             }
             break;
         }
@@ -91,7 +120,7 @@
       initializeComponents();
     }
     
-    // Also run when the window loads (as a fallback)
+    // Also run when the window loads (as a fallback) // wait until whole dom is loaded
     window.addEventListener('load', function() {
       // Check for any components that weren't initialized yet
       const uninitializedComponents = document.querySelectorAll('[data-undpds-component]:not([data-initialized])');

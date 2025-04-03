@@ -101,7 +101,7 @@ export default {
             <li>Include the CSS and JS files listed below, as well as the component initializer script.</li>
             <li>If you choose the Checkbox variant, then include <code>checkbox.min.css</code>.</li>
             <li>If you choose the Radio button variant, then include <code>radio.min.css</code>.</li>
-            <li>Initialize the multi-select by calling the <code>multiSelect()</code> function.</li>
+            {/* <li>Initialize the multi-select by calling the <code>multiSelect()</code> function.</li> */}
           </ol>
 
           <h3>CSS and JS References</h3>
