@@ -1,7 +1,6 @@
-@use '../../assets/scss/variables';
-@use '../../assets/scss/mixins';
+@use "../../assets/scss/variables";
+@use "../../assets/scss/mixins";
 @use "../../assets/scss/breakpoints";
-
 
 /* icon start */
 
@@ -16,9 +15,11 @@
   max-width: 6rem;
   width: 100%;
 }
-
 .external-link-animated {
-  box-shadow: -2px 2px 0 0 var(--undpds-color-dark-red), -4px 0 0 -2px var(--undpds-color-dark-red), -3px 3px 0 -1px var(--undpds-color-dark-red);
+  box-shadow:
+    -2px 2px 0 0 var(--undpds-color-dark-red),
+    -4px 0 0 -2px var(--undpds-color-dark-red),
+    -3px 3px 0 -1px var(--undpds-color-dark-red);
   box-sizing: border-box;
   cursor: pointer;
   display: inline-block;
@@ -29,7 +30,6 @@
 
   &::before {
     @extend %pseudo-icon;
-
     @include mixins.transform(rotate(-45deg) translate(0, 0));
     @include mixins.transition(all 0.3s);
 
@@ -42,7 +42,6 @@
 
   &::after {
     @extend %pseudo-icon;
-
     @include mixins.transition(transform 0.3s);
     @include mixins.transform(translate(0, 0));
 
@@ -61,6 +60,21 @@
 
     &::before {
       @include mixins.transform(rotate(-45deg) translate(7px, 0));
+    }
+  }
+
+  // RTL
+  [dir="rtl"] & {
+    &::before {
+      inset-inline-start: 0;
+      inset-block-start: 3px;
+      z-index: 1;
+    }
+
+    &::after {
+      @include mixins.transform(translate(0px, 0px));
+      inset-inline-start: 0px;
+      inset-block-start: -1px;
     }
   }
 }
@@ -96,6 +110,11 @@
     width: 8px;
   }
 
+  // RTL
+  [dir="rtl"] &::after {
+    @include mixins.transform(rotate(45deg) translate(0, 0));
+  }
+
   &::before {
     @extend %pseudo-icon;
 
@@ -120,7 +139,7 @@
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   .chevron-right-animated {
     @include mixins.transform(translate(0) rotate(180deg));
 
@@ -142,11 +161,11 @@
   display: flex;
   flex-wrap: wrap;
 
-  >div>div {
+  > div > div {
     margin: 0 auto;
   }
 
-  >div p {
+  > div p {
     font-family: var(--undpds-font-family-proximanova);
     font-size: 14px;
     margin-top: 10px;
@@ -154,7 +173,7 @@
 }
 
 // For doc styling only
-.icons-container>div {
+.icons-container > div {
   align-items: center;
   background: var(--undpds-color-gray-300);
   border: 1px solid var(--undpds-color-gray-400);

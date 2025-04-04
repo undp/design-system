@@ -1,6 +1,6 @@
-@import '../../../assets/scss/mixins';
-@import '../../../assets/scss/breakpoints';
-@import '../../../assets/scss/variables';
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/breakpoints";
+@import "../../../assets/scss/variables";
 
 label {
   @extend %paragragh-font-20;
@@ -34,13 +34,13 @@ label {
   margin-top: var(--undpds-spacing-03);
 }
 
-input[type=text],
-input[type=number],
-input[type=email],
-input[type=password],
-input[type=search],
-input[type=tel],
-input[type=date],
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="date"],
 textarea {
   @extend %background-white;
 
@@ -67,8 +67,8 @@ textarea {
     outline: 0;
   }
 
-  input[type=date],
-  input[type=search] {
+  input[type="date"],
+  input[type="search"] {
     padding-left: var(--undpds-spacing-08);
     position: relative;
   }
@@ -88,9 +88,8 @@ textarea {
   }
 }
 
-input[type=date] {
-  background:
-    url(~icons/calender-black.svg) no-repeat left 14px bottom 12px;
+input[type="date"] {
+  background: url(~icons/calender-black.svg) no-repeat left 14px bottom 12px;
   background-color: var(--undpds-color-white);
   color: var(--undpds-color-gray-500);
   padding-left: var(--undpds-spacing-08);
@@ -108,10 +107,9 @@ input[type=date] {
   &.filled {
     color: var(--undpds-color-black);
   }
-
 }
 
-input[type=search] {
+input[type="search"] {
   background: url(~icons/search-black.svg) no-repeat left 14px bottom 12px;
   color: #a9b1b7;
   padding-left: 2.5rem;
@@ -133,7 +131,7 @@ textarea {
   resize: vertical;
 }
 
-input[type='date']::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-calendar-picker-indicator {
   appearance: none;
   opacity: 1;
   position: absolute;
@@ -145,45 +143,43 @@ input[type='date']::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
-[dir='rtl'] {
-
-  input[type=text],
-  input[type=number],
-  input[type=email],
-  input[type=password],
-  input[type=search],
-  input[type=tel],
-  input[type=date],
+[dir="rtl"] {
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="date"],
   textarea {
+    direction: rtl;
     @media (hover: none) and (pointer: coarse) {
-      input[type=date] {
+      input[type="date"] {
         padding-right: var(--undpds-spacing-06);
       }
     }
   }
 
-  input[type=date],
-  input[type=search] {
-    background:
-      url(~icons/calender-black.svg) no-repeat right 14px bottom 12px;
+  input[type="date"],
+  input[type="search"] {
+    background: url(~icons/calender-black.svg) no-repeat right 14px bottom 12px;
     background-color: var(--undpds-color-white);
     padding-left: 0.635rem;
     padding-right: var(--undpds-spacing-08);
     text-align: right;
   }
 
-  input[type=search] {
-    background:
-      url(~icons/search-black.svg) no-repeat right 14px bottom 12px;
+  input[type="search"] {
+    background: url(~icons/search-black.svg) no-repeat right 14px bottom 12px;
   }
 
-  input[type=date] {
+  input[type="date"] {
     &.disabled {
       background-image: url(~icons/date-disabled.svg);
     }
   }
 
-  input[type='date']::-webkit-calendar-picker-indicator {
+  input[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
     text-align: initial;
     opacity: 1;
@@ -210,13 +206,13 @@ input[type='date']::-webkit-calendar-picker-indicator {
     line-height: 1.7;
   }
 
-  input[type=text],
-  input[type=number],
-  input[type=email],
-  input[type=password],
-  input[type=search],
-  input[type=tel],
-  input[type=date],
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="date"],
   textarea {
     font-family: var(--undpds-font-family-notosans);
   }

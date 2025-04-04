@@ -27,9 +27,9 @@ export function PageHeroOption({
   }, []);
   const CtaEnabledClass = args.CTA == 'On' ? 'has-cta' : '';
   return (
-    <div className={['pagehero-tall', CtaEnabledClass].join(' ')}>
+    <div className={["pagehero-tall", CtaEnabledClass].join(" ")}>
       <div className="grid-x">
-        <div className="cell medium-4 medium-offset-1">
+        <div className="cell medium-4 medium-offset-1 ">
           <div className="pagehero-content color-black">
             <Breadcrumbcomponent data={data} />
             {args.Overline == 'On' && content && <Heading type="4" label={content} dataViewport="true" />}
@@ -40,7 +40,7 @@ export function PageHeroOption({
         </div>
         <div className="cell medium-7">
           <div className="homepage-hero-image">
-            {variant === 'Video' ? (
+            {variant === "Video" ? (
               <Video src={videosrc} width="100%" height="100%" />
             ) : (
               <picture>

@@ -59,6 +59,10 @@
     }
 
     .breadcrumb {
+      // prevent breadcrumbs overlapping with the hero content
+      position: relative;
+      z-index: 1;
+
       @extend .medium-offset-1 !optional;
 
       padding-top: var(--undpds-spacing-11);
