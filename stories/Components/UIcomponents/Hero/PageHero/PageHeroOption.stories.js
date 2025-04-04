@@ -103,7 +103,7 @@ const getCaptionForLocale = (locale) => {
           { text: "Third-level" },
           { text: "Page Title" },
         ],
-        title: "The sdgs in action",
+        title: "Sustainable Development Goals in action",
         subtitle:
           "Subtitle or excerpt of the story goes below and it is two lines",
         content: "Our Focus",
@@ -248,6 +248,14 @@ export default {
             <li>
               If you want to add left-right animation then add{" "}
               <code>data-viewport="true"</code> attribute to your HTML element.
+            </li>
+            <li>
+              If title wraps unexpectedly because of the long words - you can use fitTitle utility:
+              include JS file:<br></br>
+              <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/fitTitle.min.js">
+                https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/fitTitle.min.js
+              </a><br></br>
+              and call following function in your JS file <code>fitTitle(".pagehero-content h2")</code>
             </li>
           </ul>
 

@@ -1,7 +1,6 @@
 import "./undp";
 
 export const fitTitle = (selector, sizes = { small: 16, medium: 24 }) => {
-  // console.time('fitTitle');
   const items =
     typeof selector === "string"
       ? document.querySelectorAll(selector)
@@ -27,15 +26,15 @@ export const fitTitle = (selector, sizes = { small: 16, medium: 24 }) => {
       top: 0,
     });
     $("body").append(pseudo);
-    let renderedWidth = pseudo.width();
+    const renderedWidth = pseudo.width();
     pseudo.remove();
     return Math.ceil(renderedWidth);
   };
 
   items.forEach((ele) => {
     let $ele = $(ele);
-    let width = $ele.parent().width();
     let style = window.getComputedStyle(ele);
+    let width = ele.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
 
     // When there is only one word, the parent element may shrink to fit the content length,
     // so we force its width to 100% to ensure consistent behavior.
@@ -51,26 +50,22 @@ export const fitTitle = (selector, sizes = { small: 16, medium: 24 }) => {
         let wordWidth = word.length > 0 ? renderedWidth(style, word) : 0;
         return wordWidth > longest ? wordWidth : longest;
       }, "");
-    // console.log("parent width:", width);
-    // console.log(longestWord, width);
     if (longestWord > width) {
       let fontSize = Math.max(
         size,
         Math.floor(
-          (parseInt(window.getComputedStyle(ele).fontSize.replace("px", "")) *
+          (parseFloat(style.fontSize.replace("px", "")) *
             width) /
             longestWord,
-        ),
+        ) - 1,
       );
       $ele.css("font-size", fontSize + "px");
       if ($ele.data("fitted") != true) {
         $ele.data("fitted", true);
         $(window).on("resize orientationchange", (e) => {
-          // console.log(e);
           fitTitle(ele, sizes);
         });
       }
     }
   });
-  // console.timeEnd('fitTitle');
 };
