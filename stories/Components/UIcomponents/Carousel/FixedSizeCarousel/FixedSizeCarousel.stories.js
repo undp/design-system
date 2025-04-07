@@ -69,13 +69,38 @@ export default {
               <ul>
                 <li>Copy HTML from the HTML tab of the canvas.</li>
                 <li>Include Swiper library from <a href="https://swiperjs.com/get-started">here</a> in your HTML page.</li>
-                <li>If you use fixed image size carousel, include <code>fluid-image-size-carousel.min.css</code> and initialize carousel by calling <code>swiper('.fixed-carousel', '.fixed-carousel__button-wrap');</code> functions.</li>
+                <li>Include the CSS files listed below.</li>
+                <li>Choose one of the following initialization methods:</li>
+                {/* <li>If you use fixed image size carousel, include <code>fluid-image-size-carousel.min.css</code> and initialize carousel by calling <code>swiper('.fixed-carousel', '.fixed-carousel__button-wrap');</code> functions.</li>
                 <li>If you use Fluid image size carousel, include <code>fixed-size-carousel.min.css</code> and initialize carousel by calling <code>swiper('.fluid-carousel', '.slide-content');</code> functions.</li>
                 <li>If you use Image only carousel, include <code>image-only-carousel.min.css</code> and initialize the carousel by calling <code>swiper('.image-carousel', '.slider-slide');</code> functions.</li>
                 <li>If you want to add left-right animation, add <code>data-viewport="true"</code> attribute to the HTML element you want to animate and include <code>viewport.min.js</code> file.</li>
-                <li>Refer to <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</li>
+                <li>Refer to <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</li> */}
+              </ul>
+              
+              <h4>Method 1: Automatic Initialization (Recommended)</h4>
+              <ul>
+                <li>Include the component initializer script:
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js"&gt;&lt;/script&gt;</code>
+                </li>
+                <li>Add the required data attributes to your carousel element:
+                  <code>data-undpds-component="swiper" data-selector=".fixed-carousel" data-arrows-selector=".fixed-carousel__button-wrap"</code>
+                </li>
+                <li>The carousel will initialize automatically when the page loads - no JavaScript calls required!</li>
               </ul>
 
+              <p>Additional options:</p>
+              <ul>
+                <li>If you want to add left-right animation, add <code>data-viewport="true"</code> attribute to the HTML element you want to animate and include <code>viewport.min.js</code> file.</li>
+                <li>Refer to <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</li>
+              </ul>
+              <h4>Method 2: Manual Initialization (Traditional)</h4>
+              <ul>
+                <li>Include <code>swiper.min.js</code> in your HTML.</li>
+                <li>Call the initialization function directly in your JavaScript:
+                  <code>swiper('.fixed-carousel', '.fixed-carousel__button-wrap');</code>
+                </li>
+              </ul>
               <h3>CSS and JS References</h3>
 
               <h4>CSS:</h4>

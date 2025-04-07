@@ -418,25 +418,40 @@ export default {
           <div>
             <h3>Usage:</h3>
   
-            <ul>
-              <li>
-                Copy HTML from the HTML tab of canvas and also include css and js
-                files.
-              </li>
-              <li>
-                Initialize lightbox gallery by calling lightboxGallery()
-                function.
-              </li>
-              <li>Include below library files as well.</li>
-              <li>
+            
+          <ul>
+            <li>Copy HTML from the HTML tab of the canvas.</li>
+            <li>Include the CSS and JS files listed below.</li>
+            <li>
                 Refer{" "}
                 <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">
                   this document
                 </a>{" "}
                 for Swiper integration & options
               </li>
-            </ul>
-  
+            <li>Choose one of the following initialization methods:</li>
+          </ul>
+
+          
+
+          <h4>Method 1: Automatic Initialization (Recommended)</h4>
+          <ul>
+            <li>Include the component initializer script:
+              <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js"&gt;&lt;/script&gt;</code>
+            </li>
+            <li>Add the required data attribute to your lightbox gallery element:
+              <code>data-undpds-component="lightbox-gallery"</code>
+            </li>
+            <li>The lightbox gallery will initialize automatically when the page loads - no JavaScript calls required!</li>
+          </ul>
+          <h4>Method 2: Manual Initialization (Traditional)</h4>
+          <ul>
+            <li>Include <code>lightbox-gallery.min.js</code> in your HTML.</li>
+            <li>Call the initialization function directly in your JavaScript:
+              <code>lightboxGallery();</code>
+            </li>
+          </ul>
+
             <h3>CSS and JS References</h3>
   
             <h4>CSS:</h4>
@@ -489,6 +504,11 @@ export default {
                 <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lightbox-gallery.min.js">
                   lightbox-gallery.min.js
                 </a>
+              </li>
+              <li>
+                <a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js">
+                  ext-comp-loader.min.js
+                </a> (for automatic initialization)
               </li>
             </ul>
   

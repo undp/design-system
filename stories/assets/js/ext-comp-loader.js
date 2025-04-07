@@ -109,7 +109,85 @@
               console.warn('Modal component requires modal function');
             }
             break;
-        }
+          case 'swiper':
+            if (typeof swiper === 'function') {
+              // Get the selectors from data attributes
+              const selector = element.getAttribute('data-selector');
+              const arrowsSelector = element.getAttribute('data-arrows-selector');
+              
+              if (selector && arrowsSelector) {
+                // Initialize swiper with the provided selectors
+                swiper(selector, arrowsSelector);
+                element.setAttribute('data-initialized', 'true');
+              } else {
+                console.warn('Swiper component requires data-selector and data-arrows-selector attributes');
+              }
+            } else {
+              console.warn('Swiper component requires swiper function. Make sure swiper.min.js is loaded.');
+            }
+            break;
+          case 'lightbox-gallery':
+            if (typeof lightboxGallery === 'function') {
+              // Initialize the lightbox gallery
+              lightboxGallery();
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Lightbox Gallery component requires lightboxGallery function. Make sure lightbox-gallery.min.js is loaded.');
+            }
+            break;
+          case 'parallax':
+            if (typeof parallaxEffect === 'function') {
+              // Get options if provided
+              let options = {
+                triggerElement: '.parallax-gallery-images',
+                targetSelector: '.column',
+                triggerHook: 'top center',
+                endTriggerHook: 'bottom+=15% center',
+                direction: 'vertical',
+                breakpoints: 'all'
+              };
+              
+              if (element.hasAttribute('data-options')) {
+                try {
+                  const customOptions = JSON.parse(element.getAttribute('data-options'));
+                  options = { ...options, ...customOptions };
+                } catch (e) {
+                  console.warn('Invalid JSON in data-options for parallax');
+                }
+              }
+              
+              // Initialize parallax with the configured options
+              parallaxEffect(
+                options.triggerElement, 
+                options.targetSelector, 
+                options.triggerHook, 
+                options.endTriggerHook, 
+                options.direction, 
+                options.breakpoints
+              );
+              
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Parallax component requires parallaxEffect function. Make sure parallax.min.js is loaded.');
+            }
+            break;
+          case 'expandToSize':
+            if (typeof expandToSize === 'function') {
+              // Get the selector from data attribute
+              const selector = element.getAttribute('data-selector');
+              
+              if (selector) {
+                // Initialize expandToSize with the provided selector
+                expandToSize(selector);
+                element.setAttribute('data-initialized', 'true');
+              } else {
+                console.warn('expandToSize component requires data-selector attribute');
+              }
+            } else {
+              console.warn('expandToSize component requires expandToSize function. Make sure animation.min.js is loaded.');
+            }
+            break;
+      }
       });
     }
     
