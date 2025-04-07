@@ -222,8 +222,30 @@ export default {
               <ul>
                   <li>Choose the variant either video or Image from the control tab on canvas.</li>
                   <li>Grab the HTML from the HTML tab and also include the CSS and JS files listed below.</li>
-                  <li>If you want to add left-right animation then add <code>data-viewport="true"</code> attribute to your HTML element and include <code>viewport.min.js</code> file.</li>
-                  <li>If you want the image to expand size on scroll, then include <code>animation.min.js</code> and initialize <code>expandToSize('.pagehero-fulll')</code>.</li>
+                  {/* <li>If you want to add left-right animation then add <code>data-viewport="true"</code> attribute to your HTML element and include <code>viewport.min.js</code> file.</li> */}
+                  <li>Choose one of the following initialization methods for the expandToSize effect:</li>
+              </ul>
+              <h4>Method 1: Automatic Initialization (Recommended)</h4>
+              <ul>
+                <li>Include the component initializer script:
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js"&gt;&lt;/script&gt;</code>
+                </li>
+                <li>Add the required data attributes to your hero element:
+                  <code>data-undpds-component="expandToSize" data-selector=".pagehero-full"</code>
+                </li>
+                <li>The expand effect will initialize automatically when the page loads - no JavaScript calls required!</li>
+              </ul>
+              <h4>Method 2: Manual Initialization (Traditional)</h4>
+              <ul>
+                <li>Include <code>animation.min.js</code> in your HTML.</li>
+                <li>Call the initialization function directly in your JavaScript:
+                  <code>expandToSize('.pagehero-full');</code>
+                </li>
+              </ul>
+
+              <p>Additional options:</p>
+              <ul>
+                <li>If you want to add left-right animation, add <code>data-viewport="true"</code> attribute to your HTML element and include <code>viewport.min.js</code> file.</li>
               </ul>
 
               <h3>CSS and JS References</h3>
@@ -243,6 +265,7 @@ export default {
               <ul>
                   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/animation.min.js</a></li>
                   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js</a> (for automatic initialization)</li>
               </ul>
 
               <h3>Interactions</h3>

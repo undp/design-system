@@ -192,11 +192,31 @@ export default {
               <ul>
                   <li>Copy the HTML from the HTML tab (Canvas) into your HTML file.</li>
                   <li>Include Foundation’s core and tabs JavaScript from <a href="https://github.com/foundation/foundation-sites/tree/develop/dist/js/plugins">Foundation’s GitHub repository</a>.</li>
-                  <li>Initialize the tab function in document ready or window load by calling <code>tabs()</code> function.</li>
+                  {/* <li>Initialize the tab function in document ready or window load by calling <code>tabs()</code> function.</li> */}
                   <li><strong>Optional:</strong> If you want to add left-right animation then add <code>data-viewport="true"</code> attribute to your HTML element and include <code>viewport.min.js</code>.</li>
                   <li>Add other resources in your HTML file given below.</li>
+                  <li>Choose one of the following initialization methods:</li>
+              </ul>
+              
+              <h4>Method 1: Automatic Initialization (Recommended)</h4>
+              <ul>
+                <li>Include the component initializer script:
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js"&gt;&lt;/script&gt;</code>
+                </li>
+                <li>Add the required data attribute to your tabs element:
+                  <code>data-undpds-component="tabs"</code>
+                </li>
+                <li>The tabs will initialize automatically when the page loads - no JavaScript calls required!</li>
               </ul>
 
+              <h4>Method 2: Manual Initialization (Traditional)</h4>
+              <ul>
+                <li>Include <code>tabs.min.js</code> in your HTML.</li>
+                <li>Call the initialization function directly in your JavaScript:
+                  <code>tabs();</code>
+                </li>
+              </ul>
+              
               <h3>CSS and JS References</h3>
 
               <h4>CSS:</h4>

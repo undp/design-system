@@ -65,10 +65,29 @@ export default {
     <li>Copy HTML from the HTML tab of canvas in your HTML page and include CSS and JS in the ‘CSS and JS References’ section.</li>
     <li>Initialize the swiper and parallax effect by calling functions mentioned below.</li>
     <li>Include the CSS and JS resource and initialize them as defined in the `Stats card`.</li>
-    <li><code>swiper('.stats-card-slider')</code></li>
-    <li><code>parallaxEffect('.stats-card-slider')</code></li>
+    {/* <li><code>swiper('.stats-card-slider')</code></li>
+    <li><code>parallaxEffect('.stats-card-slider')</code></li> */}
 </ul>
-
+<h4>Method 1: Automatic Initialization (Recommended)</h4>
+<ul>
+   <li>Include Swiper library from <a href="https://swiperjs.com/get-started">here</a> and GSAP libraries (gsap, ScrollTrigger, and EasePack) from <a href="https://greensock.com/docs/v3/Installation">here</a> in your HTML page.</li>
+   <li>Include the component initializer script:
+      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js"&gt;&lt;/script&gt;</code>
+   </li>
+   <li>Add the required data attribute to your stats slider element:
+      <code>data-undpds-component="stats-slider"</code>
+   </li>
+   <li>The stats slider will initialize automatically when the page loads - no JavaScript calls required!</li>
+</ul>
+<h4>Method 2: Manual Initialization (Traditional)</h4>
+<ul>
+   <li>Include Swiper library from <a href="https://swiperjs.com/get-started">here</a> and GSAP libraries (gsap, ScrollTrigger, and EasePack) from <a href="https://greensock.com/docs/v3/Installation">here</a> in your HTML page.</li>
+   <li>Include the required JS files as listed in the CSS and JS References section.</li>
+   <li>Call the initialization functions directly in your JavaScript:
+      <code>swiper('.stats-card-slider');</code>
+      <code>parallaxEffect('.stats-card-slider');</code>
+   </li>
+</ul>
 <p>This widget displays parallax on desktop and slider on mobile, so it has to apply both on load. Include Swiper (<a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a>) and <a href="https://greensock.com/docs/v3/Installation">GSAP libraries</a> for parallax (include gsap, ScrollTrigger, and EasePack) and slider effects in your HTML file.</p>
 
 <ul>

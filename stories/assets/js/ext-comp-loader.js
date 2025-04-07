@@ -115,12 +115,15 @@
               const selector = element.getAttribute('data-selector');
               const arrowsSelector = element.getAttribute('data-arrows-selector');
               
-              if (selector && arrowsSelector) {
+              if (selector) {
+                // Handle the special case when arrowsSelector is 'false'
+                const arrows = arrowsSelector === 'false' ? false : arrowsSelector;
+                
                 // Initialize swiper with the provided selectors
-                swiper(selector, arrowsSelector);
+                swiper(selector, arrows);
                 element.setAttribute('data-initialized', 'true');
               } else {
-                console.warn('Swiper component requires data-selector and data-arrows-selector attributes');
+                console.warn('Swiper component requires data-selector attribute');
               }
             } else {
               console.warn('Swiper component requires swiper function. Make sure swiper.min.js is loaded.');
@@ -187,7 +190,93 @@
               console.warn('expandToSize component requires expandToSize function. Make sure animation.min.js is loaded.');
             }
             break;
-      }
+          case 'tabs':
+            if (typeof tabs === 'function') {
+              // Initialize tabs
+              tabs();
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Tabs component requires tabs function. Make sure tabs.min.js is loaded.');
+            }
+            break;
+          case 'stats':
+            if (typeof statsHover === 'function') {
+              // Initialize stats
+              statsHover();
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Stats component requires statsHover function. Make sure stats.min.js is loaded.');
+            }
+            break;
+          case 'download-modal':
+            if (typeof checkbox === 'function' && typeof selectFilter === 'function' && typeof modal === 'function') {
+              // Get selectors from data attributes or use defaults
+              const checkboxSelector = element.getAttribute('data-checkbox-selector') || '.form-check input';
+              const buttonSelector = element.getAttribute('data-button-selector') || '.download-footer .button-primary';
+              
+              // Initialize all required functions
+              checkbox(checkboxSelector, buttonSelector);
+              selectFilter();
+              modal();
+              
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              if (typeof checkbox !== 'function') {
+                console.warn('Download Modal component requires checkbox function. Make sure download-modal.min.js is loaded.');
+              }
+              if (typeof selectFilter !== 'function') {
+                console.warn('Download Modal component requires selectFilter function. Make sure download-modal.min.js is loaded.');
+              }
+              if (typeof modal !== 'function') {
+                console.warn('Download Modal component requires modal function. Make sure modal.min.js is loaded.');
+              }
+            }
+            break;
+          case 'filter-search-bar':
+            if (typeof toggleFilter === 'function') {
+              // Check if locale attribute is provided
+              if (element.hasAttribute('data-locale')) {
+                const locale = element.getAttribute('data-locale');
+                toggleFilter(locale);
+              } else {
+                toggleFilter();
+              }
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Filter Search Bar component requires toggleFilter function. Make sure filter-search-bar.min.js is loaded.');
+            }
+            break;
+          case 'stats-slider':
+            if (typeof swiper === 'function' && typeof parallaxEffect === 'function') {
+              swiper('.stats-card-slider');
+              parallaxEffect('.stats-card-slider');
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              if (typeof swiper !== 'function') {
+                console.warn('Stats Slider component requires swiper function. Make sure swiper.min.js is loaded.');
+              }
+              if (typeof parallaxEffect !== 'function') {
+                console.warn('Stats Slider component requires parallaxEffect function. Make sure parallax.min.js is loaded.');
+              }
+            }
+            break;
+          case 'footer':
+            if (typeof accordion === 'function') {
+              accordion('[data-accordion="mobile"]', '.footer-panel', 'active');
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Footer component requires accordion function. Make sure accordion.min.js is loaded.');
+            }
+            break;
+          case 'our-expertise':
+            if (typeof ourExpertise === 'function') {
+              ourExpertise();
+              element.setAttribute('data-initialized', 'true');
+            } else {
+              console.warn('Our Expertise component requires ourExpertise function. Make sure our-expertise.min.js is loaded.');
+            }
+            break;
+    }
       });
     }
     
