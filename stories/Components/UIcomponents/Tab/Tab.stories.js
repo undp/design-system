@@ -201,7 +201,7 @@ export default {
               <h4>Method 1: Automatic Initialization (Recommended)</h4>
               <ul>
                 <li>Include the component initializer script:
-                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js"&gt;&lt;/script&gt;</code>
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
                 </li>
                 <li>Add the required data attribute to your tabs element:
                   <code>data-undpds-component="tabs"</code>
@@ -216,7 +216,7 @@ export default {
                   <code>tabs();</code>
                 </li>
               </ul>
-              
+
               <h3>CSS and JS References</h3>
 
               <h4>CSS:</h4>

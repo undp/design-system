@@ -118,7 +118,7 @@ export default {
           <h4>JS:</h4>
           <ul>
             <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/multi-select.min.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/multi-select.min.js</a></li>
-            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.js -- To be updated</a></li>
+            <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js</a></li>
           </ul>
 
           <h3>Interactions</h3>

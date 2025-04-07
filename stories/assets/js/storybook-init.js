@@ -26,7 +26,7 @@ export const initializeComponents = (Story, context) => {
                 langSwitch();
                 element.setAttribute('data-initialized', 'true');
             } else {
-            import("../js/lang-switcher.js").then(module => {
+            import("./lang-switcher.js").then(module => {
                 if (module && typeof module.langSwitch === 'function') {
                     module.langSwitch();
                 }
@@ -40,7 +40,7 @@ export const initializeComponents = (Story, context) => {
                 accordion();
                 element.setAttribute('data-initialized', 'true');
             } else {
-            import("../js/accordion.js").then(module => {
+            import("./accordion.js").then(module => {
                 if (module && typeof module.accordion === 'function') {
                     module.accordion();
                 }
@@ -54,7 +54,7 @@ export const initializeComponents = (Story, context) => {
                 modal();
                 element.setAttribute('data-initialized', 'true');
             } else {
-                import("../js/modal.js").then(module => {
+                import("./modal.js").then(module => {
                 if (module && typeof module.modal === 'function') {
                     module.modal();
                 }
@@ -82,7 +82,7 @@ export const initializeComponents = (Story, context) => {
                 swiper(targetSelector, arrowsSelector, swiperOptions);
                 element.setAttribute('data-initialized', 'true');
             } else {
-                import("../js/swiper.js").then(module => {
+                import("./swiper.js").then(module => {
                 if (module && typeof module.swiper === 'function') {
                     const targetSelector = element.getAttribute('data-selector');
                     let arrowsSelector = element.getAttribute('data-arrows-selector');
@@ -110,7 +110,7 @@ export const initializeComponents = (Story, context) => {
                 lightboxGallery();
                 element.setAttribute('data-initialized', 'true');
             } else {
-                import("../js/lightbox-gallery.js").then(module => {
+                import("./lightbox-gallery.js").then(module => {
                     if (module && typeof module.lightboxGallery === 'function') {
                     module.lightboxGallery();
                 }
@@ -124,7 +124,7 @@ export const initializeComponents = (Story, context) => {
                 expandToSize(selector);
                 element.setAttribute('data-initialized', 'true');
             } else {
-                import("../js/animation.js").then(module => {
+                import("./animation.js").then(module => {
                     if (module && typeof module.default === 'function') {
                         const selector = element.getAttribute('data-selector');
                         module.default(selector);
@@ -138,7 +138,7 @@ export const initializeComponents = (Story, context) => {
                 tabs();
                 element.setAttribute('data-initialized', 'true');
             } else {
-                import("../js/tabs.js").then(module => {
+                import("./tabs.js").then(module => {
                     if (module && typeof module.tabs === 'function') {
                         module.tabs();
                     }
@@ -159,7 +159,7 @@ export const initializeComponents = (Story, context) => {
                 fitText(fitTextSelector);
                 element.setAttribute('data-initialized', 'true');
             } else {
-                import("../js/fitText.js").then(module => {
+                import("./fitText.js").then(module => {
                     if (module && typeof module.fitText === 'function') {
                         // Get options with proper error handling
                         let fitTextSelector = '.stats-card h2'; // Default selector
@@ -189,7 +189,7 @@ export const initializeComponents = (Story, context) => {
                 );
                 element.setAttribute('data-initialized', 'true');
             } else {
-                import("../js/parallax.js").then(module => {
+                import("./parallax.js").then(module => {
                     if (module && typeof module.parallaxEffect === 'function') {
                         const options = element.getAttribute('data-options') ? JSON.parse(element.getAttribute('data-options')) : {};
                         module.parallaxEffect(
@@ -211,7 +211,7 @@ export const initializeComponents = (Story, context) => {
                 select();
                 element.setAttribute('data-initialized', 'true');
             } else {
-                import("../js/select.js").then(module => {
+                import("./select.js").then(module => {
                     if (module && typeof module.select === 'function') {
                         module.select();
                     }
@@ -226,7 +226,7 @@ export const initializeComponents = (Story, context) => {
                 multiSelect(locale);
                 element.setAttribute('data-initialized', 'true');
             } else {
-                import("../js/multi-select.js").then(module => {
+                import("./multi-select.js").then(module => {
                     if (module && typeof module.multiSelect === 'function') {
                         // Get locale from options if available
                         const locale = options && options.locale ? options.locale : undefined;
@@ -242,7 +242,7 @@ export const initializeComponents = (Story, context) => {
                 expandSearch(jQuery(element));
                 element.setAttribute('data-initialized', 'true');
             } else {
-                import("../js/expand-search.js").then(module => {
+                import("./expand-search.js").then(module => {
                     if (module && typeof module.expandSearch === 'function') {
                         // Pass the jQuery element to expandSearch
                         module.expandSearch(jQuery(element));
@@ -257,7 +257,7 @@ export const initializeComponents = (Story, context) => {
                 sidebarMenu();
                 element.setAttribute('data-initialized', 'true');
             } else {
-                import("../js/sidebar.js").then(module => {
+                import("./sidebar.js").then(module => {
                     if (module && typeof module.sidebarNav === 'function' && 
                         typeof module.sidebarMenu === 'function') {
                         module.sidebarNav();

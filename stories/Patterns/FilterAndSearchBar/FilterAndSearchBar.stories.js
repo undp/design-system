@@ -69,7 +69,7 @@ export default {
 <ul>
    <li>Include the required CSS and JS files listed in the CSS and JS References section below.</li>
    <li>Include the component initializer script:
-      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js"&gt;&lt;/script&gt;</code>
+      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
    </li>
    <li>Add the required data attributes to your filter and search bar elements:
       <code>data-undpds-component="filter-search-bar"</code> for the main container,
@@ -80,7 +80,7 @@ export default {
 </ul>
 <h4>Method 2: Manual Initialization (Traditional)</h4>
 <ul>
-   <li>Include the required CSS and JS files listed in the CSS and JS References section below (excluding ext-comp-loader.min.js).</li>
+   <li>Include the required CSS and JS files listed in the CSS and JS References section below (excluding init.min.js).</li>
    <li>Call the initialization functions directly in your JavaScript:
       <code>expandSearch();</code> for the search functionality,
       <code>multiSelect();</code> for the filter dropdowns, and

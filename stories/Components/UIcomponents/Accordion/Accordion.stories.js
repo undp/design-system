@@ -153,7 +153,7 @@ export default {
           </p>
           <pre>
             <code>
-              &lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.js"&gt;&lt;/script&gt;
+              &lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js"&gt;&lt;/script&gt;
             </code>
           </pre>
           

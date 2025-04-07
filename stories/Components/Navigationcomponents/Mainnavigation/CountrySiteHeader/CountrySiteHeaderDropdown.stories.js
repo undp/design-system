@@ -486,6 +486,7 @@ $(document).ready(function() &#123; <br />
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/navigation.min.js">navigation.min.js</a></li>
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/undp.min.js">undp.min.js</a></li>
   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/lang-switcher.min.js">lang-switcher.min.js</a></li>
+  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js" target="_blank" rel="noopener noreferrer">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js</a></li>
 </ul>
 
 

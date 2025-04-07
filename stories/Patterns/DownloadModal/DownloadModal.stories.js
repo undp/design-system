@@ -623,7 +623,7 @@ export default {
               <h4>Method 1: Automatic Initialization (Recommended)</h4>
               <ul>
                 <li>Include the component initializer script:
-                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js"&gt;&lt;/script&gt;</code>
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
                 </li>
                 <li>Add the required data attribute to your download modal container:
                   <code>data-undpds-component="download-modal"</code>
@@ -665,7 +665,7 @@ export default {
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/modal.min.js</a></li>
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/select.min.js</a></li>
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/download-modal.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/download-modal.min.js</a></li>
-                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js</a> (for automatic initialization)</li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js</a> (for automatic initialization)</li>
               </ul>
 
               <h3>Interactions</h3>

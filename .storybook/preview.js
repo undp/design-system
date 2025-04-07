@@ -9,7 +9,7 @@ import '!style-loader!css-loader!sass-loader!../docs/css/components/documentatio
 import '!style-loader!css-loader!sass-loader!../stories/assets/scss/base-minimal.scss'
 
 //import init-loader
-import { initializeComponents } from '../stories/assets/js/init-loader';
+import { initializeComponents } from '../stories/assets/js/storybook-init';
 
 // Log the contents of RTLAddon for debugging
 

@@ -105,7 +105,7 @@ export default {
           <h4>JS:</h4>
           <ul>
             <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/sidebar.min.js</a></li>
-            <li> Import the ext-comp-loader.js</li>
+            <li> Import the init.js</li>
           </ul>
 
           <h3>Interactions</h3>

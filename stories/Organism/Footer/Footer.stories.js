@@ -109,7 +109,7 @@ export default {
 <ul>
    <li>Include the required CSS and JS files listed in the CSS and JS References section.</li>
    <li>Include the component initializer script:
-      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js"&gt;&lt;/script&gt;</code>
+      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
    </li>
    <li>Add the required data attribute to your footer element:
       <code>data-undpds-component="footer"</code>

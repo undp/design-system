@@ -66,7 +66,7 @@ export default {
               <ul>
                 <li>Include <code>animation.min.js</code> in your HTML.</li>
                 <li>Include the component initializer script:
-                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js"&gt;&lt;/script&gt;</code>
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
                 </li>
                 <li>Add the required data attributes to your hero element:
                   <code>data-undpds-component="expandToSize" data-selector=".homepage-hero-full"</code>
@@ -149,7 +149,7 @@ export default {
               <ul>
                 <li>Include <code>animation.min.js</code> in your HTML.</li>
                 <li>Include the component initializer script:
-                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js"&gt;&lt;/script&gt;</code>
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
                 </li>
                 <li>Add the required data attributes to your hero element:
                   <code>data-undpds-component="expandToSize" data-selector=".homepage-hero-full"</code>
@@ -178,7 +178,7 @@ export default {
 
               <ul>
                   <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
-                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js</a> (for automatic initialization)</li>
+                  <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js</a> (for automatic initialization)</li>
               </ul>
 
               <h3>Interactions</h3>

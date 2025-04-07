@@ -72,7 +72,7 @@ export default {
 <ul>
    <li>Include Swiper library from <a href="https://swiperjs.com/get-started">here</a> and GSAP libraries (gsap, ScrollTrigger, and EasePack) from <a href="https://greensock.com/docs/v3/Installation">here</a> in your HTML page.</li>
    <li>Include the component initializer script:
-      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.min.js"&gt;&lt;/script&gt;</code>
+      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
    </li>
    <li>Add the required data attribute to your stats slider element:
       <code>data-undpds-component="stats-slider"</code>
