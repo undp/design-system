@@ -1,0 +1,201 @@
+import { Meta, Story } from "@storybook/blocks";
+
+<Meta
+  title="Getting started/Automatic Component Initialization"
+/>
+
+# Automatic Component Initialization
+
+The UNDP Design System now includes an automatic initialization system that simplifies component integration by eliminating the need to manually call JavaScript initialization functions.
+
+## Overview
+
+Components in the UNDP Design System often require JavaScript initialization to enable their full functionality. Traditionally, this required manually calling initialization functions in your JavaScript code:
+
+```javascript
+$(document).ready(function() {
+  // Initialize components manually
+  select();
+  accordion();
+  modal();
+  // And so on...
+});
+```
+
+With the automatic initialization system, you can now simply add data attributes to your HTML elements, and the components will initialize themselves when the page loads:
+
+```html
+<div class="select-box" data-undpds-component="custom-select">
+  <!-- Component content -->
+</div>
+```
+
+## Benefits
+
+- **Simplified Integration**: No need to write JavaScript initialization code
+- **Reduced Errors**: Prevents forgetting to initialize components
+- **Consistent Behavior**: Components are initialized at the appropriate time in the page lifecycle
+- **Independent Components**: Each component can be initialized separately
+- **Automatic Error Handling**: Provides useful console warnings if initialization fails
+
+## How to Use
+
+### 1. Include the Component Initializer
+
+Add the component initializer script to your HTML after including jQuery and the component-specific JS files:
+
+```html
+<!-- jQuery (required) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Component JS files -->
+<script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/component-name.min.js"></script>
+
+<!-- Component Initializer (add this last) -->
+<script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/ext-comp-loader.js" defer></script>
+```
+
+### 2. Add Data Attributes to Your HTML
+
+Add the appropriate `data-undpds-component` attribute to your component elements:
+
+```html
+<element class="component-class" data-undpds-component="component-name">
+  <!-- Component content -->
+</element>
+```
+
+### 3. That's it!
+
+The components will automatically initialize when the page loads. No additional JavaScript is required.
+
+## Supported Components
+
+The following components can be initialized automatically using data attributes:
+
+- Custom Select
+- Multi Select
+- Expand Search
+- Language Switcher
+- Country Header
+- Country Site Header
+- Accordion
+- Modal (for BioCards)
+- Filter and Search Bar
+- Stats Slider
+- Footer
+- Our Expertise
+- Stats Cards
+- Parallax Gallery
+- HomePage Hero
+- PageHero Cards
+- Lightbox Gallery
+- Language Switcher
+- Modal 
+- Tabs 
+- Stats 
+- Stats Card Slider
+- Download Modal
+
+## Additional Component Attributes
+
+Some components support additional data attributes to configure their behavior:
+
+### Accordion
+
+```html
+<ul class="accordion" data-undpds-component="accordion" data-multi-expand="true">
+  <!-- Allows multiple accordion panels to be open simultaneously -->
+</ul>
+```
+
+### Country Header
+
+```html
+<header class="country-header" data-undpds-component="country-header" data-overflow="true">
+  <!-- Enables overflow menu functionality -->
+</header>
+```
+
+## Examples
+
+### Custom Select
+
+```html
+<div class="select-box" data-select="" data-undpds-component="custom-select">
+  <button type="button" aria-haspopup="listbox" aria-label="Select" data-select-open="">
+    Select Language
+  </button>
+  <ul role="listbox" data-select-options="">
+    <li role="option" tabIndex="0" data-value="default">
+      <span>All</span>
+    </li>
+    <li role="option" tabIndex="0" data-value="en">
+      <span>English</span>
+    </li>
+  </ul>
+</div>
+```
+
+### Accordion
+
+```html
+<ul class="accordion" aria-label="accordion" data-undpds-component="accordion">
+  <li>
+    <button tabIndex="0" aria-expanded="false">
+      Section Header
+    </button>
+    <div class="accordion__panel" aria-hidden="true" role="region">
+      <p>Panel content goes here</p>
+    </div>
+  </li>
+  <li>
+    <button tabIndex="0" aria-expanded="false">
+      Another Section
+    </button>
+    <div class="accordion__panel" aria-hidden="true" role="region">
+      <p>More content here</p>
+    </div>
+  </li>
+</ul>
+```
+
+### Modal (BioCard)
+
+```html
+<div class="grid-x" data-undpds-component="modal">
+  <div class="cell bio-card medium large-3">
+    <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
+      <!-- BioCard content -->
+    </a>
+  </div>
+</div>
+```
+
+## How It Works
+
+The component initializer:
+
+1. Finds all elements with `data-undpds-component` attributes
+2. Calls the appropriate initialization function based on the attribute value
+3. Checks for any additional configuration attributes
+4. Marks the element as initialized to prevent duplicate initialization
+5. Provides console warnings if initialization functions aren't available
+
+## Migration Guide
+
+If you're updating from a previous version of the UNDP Design System, you can easily migrate to the automatic initialization system:
+
+1. Add the component initializer script to your HTML
+2. Add the appropriate `data-undpds-component` attributes to your component elements
+3. Remove manual initialization function calls from your JavaScript
+
+Your components will now initialize automatically while maintaining the same functionality.
+
+## Browser Support
+
+The automatic initialization system is supported in all browsers supported by the UNDP Design System. See the [Browser Support](?path=/docs/getting-started-browser-support--docs) page for details.
+
+## Changelog
+
+1.0 — Released automatic initialization system
