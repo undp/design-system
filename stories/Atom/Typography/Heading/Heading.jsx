@@ -10,18 +10,18 @@ export function Heading({ type, label, className, tabIndex, dataViewport }) {
 
   const headingRef = useRef(null);
 
-  useEffect(() => {
-    fitTitle(headingRef.current);
+  // useEffect(() => {
+  //   fitTitle(headingRef.current);
 
-    const handleResize = () => {
-      if (headingRef.current) {
-        fitTitle(headingRef.current);
-      }
-    };
+  //   const handleResize = () => {
+  //     if (headingRef.current) {
+  //       fitTitle(headingRef.current);
+  //     }
+  //   };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
   return (
     <HeadingTag

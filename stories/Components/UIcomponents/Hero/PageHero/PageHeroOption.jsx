@@ -33,7 +33,7 @@ export function PageHeroOption({
           <div className="pagehero-content color-black">
             <Breadcrumbcomponent data={data} />
             {args.Overline == 'On' && content && <Heading type="4" label={content} dataViewport="true" />}
-            <div><Heading type="2" label={title} dataViewport="true" /></div>
+            <Heading type="2" label={title} dataViewport="true" />
             {args.Subtitle == 'On' && subtitle && <p className="subtitle">{subtitle}</p>}
             {args.CTA == 'On' && cta.label && <CtaButton label={cta.label} For_Primary={cta.for_primary} />}
           </div>

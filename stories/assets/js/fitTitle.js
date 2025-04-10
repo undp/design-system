@@ -36,12 +36,13 @@ export const fitTitle = (selector, sizes = { small: 16, medium: 24 }) => {
     let style = window.getComputedStyle(ele);
     let width = ele.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
 
-    // When there is only one word, the parent element may shrink to fit the content length,
-    // so we force its width to 100% to ensure consistent behavior.
-    let $parent = $ele.parent();
-    $parent.css("width", "100%");
     // Removes the previously applied font size and resets it to the default value
     $ele.css("font-size", "");
+    // When there is only one word, the parent element may shrink to fit the content length,
+    // so we add a wrapper and force its width to 100% to ensure consistent behavior.
+    if (!$ele.parent().hasClass("fit-title-wrapper")) {
+      $ele.wrap('<div class="fit-title-wrapper" style="width: 100%;"></div>');
+    }
     // find the longest word
     let longestWord = $ele
       .text()
@@ -62,7 +63,7 @@ export const fitTitle = (selector, sizes = { small: 16, medium: 24 }) => {
       $ele.css("font-size", fontSize + "px");
       if ($ele.data("fitted") != true) {
         $ele.data("fitted", true);
-        $(window).on("resize orientationchange", (e) => {
+        $(window).on("resize orientationchange", () => {
           fitTitle(ele, sizes);
         });
       }
