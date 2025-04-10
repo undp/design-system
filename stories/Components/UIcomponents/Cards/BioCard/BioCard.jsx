@@ -49,9 +49,9 @@ export function BioCard({
   medium,
   ...args
 }) {
-  useEffect(() => {
-    modal();
-  }, []);
+  // useEffect(() => {
+  //   modal();
+  // }, []);
 
   let size_variant = size_options[`${args.size}`];
   let color = accent_color_options[`${args.accent}`] ?? false;
@@ -60,7 +60,7 @@ export function BioCard({
   return (
     <>
       {args.size === 'Large' && (
-        <div className={cls('grid-x grid-margin-x')}>
+        <div className={cls('grid-x grid-margin-x')} data-undps-component="modal">
           <div className={cls('cell bio-card', `${size_variant}`)}>
             <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
               <div className="grid-x">
@@ -81,7 +81,7 @@ export function BioCard({
       )}
 
       {args.size === 'Medium' && (
-        <div className={cls('grid-x')}>
+        <div className={cls('grid-x')} data-undps-component="modal">
           <div className={cls('cell bio-card medium', `${size_variant}`)}>
             <a href="#" title="bio-card" role="button" data-toggle="modal" data-target-modal="#bioCard">
               <Cardthumb image={image} accent={color} />

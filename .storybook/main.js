@@ -38,8 +38,16 @@ const config = {
     return config;
   },
 
-  framework: {
-    name: '@storybook/react-webpack5'
+  framework: '@storybook/react-webpack5',
+
+  core: {
+    builder: {
+      name: '@storybook/builder-webpack5',
+      options: {
+        fsCache: true,
+        lazyCompilation: true,
+      },
+    },
   },
 
   docs: {},

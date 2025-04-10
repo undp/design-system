@@ -143,10 +143,18 @@ export default {
           <ul>
             <li>Choose the size either large or medium from the control tab on canvas.</li>
             <li>Copy the HTML from the HTML tab in the canvas and include the CSS and JS files listed below.</li>
+            <li>Add the <code>data-undpds-component="modal"</code> attribute to the container element to enable automatic initialization.</li>
             <li>If you want left-right animation, add <code>data-viewport=”true”</code> attribute to your HTML element and include <code>viewport.min.js</code> file.</li>
-            <li>If you want to add a modal on click, include <code>modal.min.js</code> and initialize <code>modal();</code> on load.</li>
+            <li>If you want to add a modal on click, include <code>modal.min.js</code>. </li>
           </ul>
-
+          <h4>Example:</h4>
+          <pre>
+            <code>
+              &lt;div class="grid-x" data-undpds-component="modal"&gt;
+                &lt;!-- BioCard content --&gt;
+              &lt;/div&gt;
+            </code>
+          </pre>
           <h3>CSS and JS References</h3>
 
           <h4>CSS:</h4>

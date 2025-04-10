@@ -326,11 +326,35 @@ export default {
                 <li>Make sure to remove <code>swiper-slider-0 swiper-initialized swiper-horizontal swiper-pointer-events</code> classes, remove ID and <code>aria-label</code> attribute.</li>
                 <li>Include CSS and JS files listed below.</li>
                 <li>Include Swiper library from here: <a href="https://swiperjs.com/get-started">https://swiperjs.com/get-started</a> in your HTML page.</li>
-                <li>Initialize swiper by calling <code>swiper('.pagehero-cards-items')</code> function.</li>
-                <li>If you are using left-to-right animation, please add <code>data-viewport="true"</code> attribute to your HTML element and include <code>viewport.min.js</code>.</li>
+                {/* <li>Initialize swiper by calling <code>swiper('.pagehero-cards-items')</code> function.</li> */}
+                {/* <li>If you are using left-to-right animation, please add <code>data-viewport="true"</code> attribute to your HTML element and include <code>viewport.min.js</code>.</li> */}
                 <li>Refer to <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</li>
               </ul>
+              <h4>Method 1: Automatic Initialization (Recommended)</h4>
+              <ul>
+                <li>Include Swiper library from <a href="https://swiperjs.com/get-started">here</a> in your HTML page.</li>
+                <li>Include the component initializer script:
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                </li>
+                <li>Add the required data attributes to your hero cards element:
+                  <code>data-undpds-component="swiper" data-selector=".pagehero-cards-items" data-arrows-selector="false"</code>
+                </li>
+                <li>The swiper will initialize automatically when the page loads - no JavaScript calls required!</li>
+              </ul>
 
+              <h4>Method 2: Manual Initialization (Traditional)</h4>
+              <ul>
+                <li>Include Swiper library from <a href="https://swiperjs.com/get-started">here</a> in your HTML page.</li>
+                <li>Include <code>swiper.min.js</code> in your HTML.</li>
+                <li>Call the initialization function directly in your JavaScript:
+                  <code>swiper('.pagehero-cards-items', false);</code>
+                </li>
+              </ul>
+              <p>Additional options:</p>
+              <ul>
+                <li>If you are using left-to-right animation, please add <code>data-viewport="true"</code> attribute to your HTML element and include <code>viewport.min.js</code>.</li>
+                <li>Refer to <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration & options.</li>
+              </ul>    
               <h3>CSS and JS References</h3>
 
               <h4>CSS:</h4>
@@ -351,6 +375,7 @@ export default {
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/swiper.min.js</a></li>
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smartresize.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/smartresize.min.js</a></li>
                 <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/viewport.min.js</a></li>
+                <li><a href="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js">https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js</a> (for automatic initialization)</li>
               </ul>
 
               <h3>Interactions</h3>

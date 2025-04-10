@@ -26,9 +26,26 @@ export default {
 <h3>Usage</h3>
 <ul>
   <li>Copy HTML from the Canvas page and add CSS and JS from the 'CSS and JS References' section below.</li>
-  <li>Initialize the slider in document ready or window load by calling the <code>ourExpertise()</code> function.</li>
+  {/* <li>Initialize the slider in document ready or window load by calling the <code>ourExpertise()</code> function.</li> */}
 </ul>
-
+<h4>Method 1: Automatic Initialization (Recommended)</h4>
+<ul>
+   <li>Include the required CSS and JS files listed in the CSS and JS References section.</li>
+   <li>Include the component initializer script:
+      <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+   </li>
+   <li>Add the required data attribute to your Our Expertise element:
+      <code>data-undpds-component="our-expertise"</code>
+   </li>
+   <li>The Our Expertise component will initialize automatically when the page loads - no JavaScript calls required!</li>
+</ul>
+<h4>Method 2: Manual Initialization (Traditional)</h4>
+<ul>
+   <li>Include the required CSS and JS files listed in the CSS and JS References section.</li>
+   <li>Call the initialization function directly in your JavaScript:
+      <code>ourExpertise();</code>
+   </li>
+</ul>
 <h3>CSS and JS References</h3>
 
 <h4>CSS:</h4>

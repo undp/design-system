@@ -165,9 +165,30 @@ export default {
 
               <ul>
                 <li>Copy the HTML from the HTML Tab of canvas and include CSS and JS in the ‘CSS and JS References’ section.</li>
-                <li>Initialize the parallaxEffect by calling <code>parallaxEffect('.parallax-gallery-images', '.column', 'top center', 'bottom+=15% center', 'vertical', 'all');</code> function in your JS file.</li>
+                {/* <li>Initialize the parallaxEffect by calling <code>parallaxEffect('.parallax-gallery-images', '.column', 'top center', 'bottom+=15% center', 'vertical', 'all');</code> function in your JS file.</li> */}
                 <li>Refer to <a href="https://github.com/undp/design-system/wiki/Parallax-documentation">this document</a> for Parallax integration & options.</li>
               </ul>
+              <h4>Method 1: Automatic Initialization (Recommended)</h4>
+              <ul>
+                <li>Include the component initializer script:
+                  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+                </li>
+                <li>Add the required data attributes to your parallax gallery element:
+                  <code>data-undpds-component="parallax"</code> and <code>data-options</code> with a JSON configuration.
+                </li>
+                <li>The data-options should contain values for: triggerElement, targetSelector, triggerHook, endTriggerHook, direction, and breakpoints.</li>
+                <li>The parallax effect will initialize automatically when the page loads - no JavaScript calls required!</li>
+                
+              </ul>
+              <p>See the component code for an example of the data-options format.</p>
+              <h4>Method 2: Manual Initialization (Traditional)</h4>
+              <ul>
+                <li>Include <code>parallax.min.js</code> in your HTML.</li>
+                <li>Call the initialization function directly in your JavaScript:
+                  <code>parallaxEffect('.parallax-gallery-images', '.column', 'top center', 'bottom+=15% center', 'vertical', 'all');</code>
+                </li>
+              </ul>
+
 
               <h3>CSS and JS References</h3>
 

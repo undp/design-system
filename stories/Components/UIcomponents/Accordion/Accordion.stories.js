@@ -144,6 +144,21 @@ export default {
             </a>{" "}
             and then use following code:
           </p>
+          <h4>Initialization</h4>
+          <p>There are two ways to initialize the accordion component:</p>
+          
+          <h5>Method 1: Automatic Initialization (Recommended)</h5>
+          <p>
+            Add the <code>data-undpds-component="accordion"</code> attribute to the accordion element and include the component initializer script:
+          </p>
+          <pre>
+            <code>
+              &lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.js"&gt;&lt;/script&gt;
+            </code>
+          </pre>
+          
+          <h5>Method 2: Manual Initialization</h5>
+          <p>Call the <code>accordion()</code> function in your JavaScript:</p>
           <pre>
             <code>
               $(document).ready(function() &#123; <br />

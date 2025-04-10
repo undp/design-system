@@ -31,9 +31,28 @@ export default {
                 <li>Copy the HTML from the HTML tab of the canvas and include the CSS and JS files listed below. Remove all inline styling added by Swiper.</li>
                 <li>Include the CSS and JS resources defined in the <a href="/docs/components-ui-components-cards-stats-card--stats-card#css-and-js-references">Stats card</a> documentation. Pay attention to any required JS initialization.</li>
                 <li>Include the CSS and JS files listed below.</li>
-                <li>Initialize the swiper by calling the following function: <code>swiper('.stats-slider');</code></li>
+                {/* <li>Initialize the swiper by calling the following function: <code>swiper('.stats-slider');</code></li> */}
                 <li>Refer to <a href="https://github.com/undp/design-system/wiki/Swiper-documentation">this document</a> for Swiper integration and options.</li>
+                <li>Choose one of the following initialization methods:</li>
             </ul>
+            <h4>Method 1: Automatic Initialization (Recommended)</h4>
+            <ul>
+              <li>Include the component initializer script:
+                <code>&lt;script src="https://cdn.jsdelivr.net/npm/@undp/design-system/docs/js/init.min.js"&gt;&lt;/script&gt;</code>
+              </li>
+              <li>Add the required data attributes to your slider element:
+                <code>data-undpds-component="swiper" data-selector=".stats-slider"</code>
+              </li>
+              <li>The slider will initialize automatically when the page loads - no JavaScript calls required!</li>
+            </ul>
+            <h4>Method 2: Manual Initialization (Traditional)</h4>
+            <ul>
+              <li>Include <code>swiper.min.js</code> in your HTML.</li>
+              <li>Call the initialization function directly in your JavaScript:
+                <code>swiper('.stats-slider');</code>
+              </li>
+            </ul>
+
 
             <h4>CSS and JS References</h4>
 
