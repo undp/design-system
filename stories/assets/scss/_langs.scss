@@ -292,3 +292,22 @@
     font-weight: 700;
   }
 }
+
+/* Thai */
+:lang(th) {
+
+  body,
+  input,
+  pre,
+  button,
+  p,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--undpds-font-family-notosans-thai);
+  }
+}
